@@ -12,6 +12,8 @@ namespace LOSA.RecepcionMP
 {
     public partial class frmRecepcionMP : Form
     {
+        int IdSerie;
+        int NumBoleta;
         public frmRecepcionMP()
         {
             InitializeComponent();
@@ -21,6 +23,17 @@ namespace LOSA.RecepcionMP
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void cmdSelectBoleta_Click(object sender, EventArgs e)
+        {
+            FrmBoleta frm = new FrmBoleta();
+            if(frm.ShowDialog() == DialogResult.OK)
+            {
+                txtNumBoleta.Text = frm.NumBoleta.ToString();
+                this.IdSerie = frm.IdSerie;
+                this.NumBoleta = frm.NumBoleta;
+            }
         }
     }
 }

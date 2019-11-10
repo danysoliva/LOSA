@@ -30,6 +30,7 @@ namespace LOSA
             Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Logistica;
             frmOpciones frm = new frmOpciones(Log1);
             frm.Show();
+            //this.Close();
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)

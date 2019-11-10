@@ -30,7 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.basculaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.basculaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dsRecepcionMP = new LOSA.RecepcionMP.dsRecepcionMP();
             this.gvBascula = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colIDSerie = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNBoleta = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -40,34 +41,41 @@
             this.colestadoDescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSeleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.basculaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.dsRecepcionMP = new LOSA.RecepcionMP.dsRecepcionMP();
-            this.basculaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.basculaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.basculaBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvBascula)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSeleccionar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMP)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.basculaBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.basculaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
             // 
+            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl1.DataSource = this.basculaBindingSource1;
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridControl1.Location = new System.Drawing.Point(0, 148);
+            this.gridControl1.Location = new System.Drawing.Point(0, 103);
             this.gridControl1.MainView = this.gvBascula;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnSeleccionar});
-            this.gridControl1.Size = new System.Drawing.Size(622, 373);
+            this.gridControl1.Size = new System.Drawing.Size(622, 418);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvBascula});
             // 
-            // basculaBindingSource
+            // basculaBindingSource1
             // 
-            this.basculaBindingSource.DataMember = "Bascula";
+            this.basculaBindingSource1.DataMember = "Bascula";
+            this.basculaBindingSource1.DataSource = this.dsRecepcionMP;
+            // 
+            // dsRecepcionMP
+            // 
+            this.dsRecepcionMP.DataSetName = "dsRecepcionMP";
+            this.dsRecepcionMP.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gvBascula
             // 
@@ -91,6 +99,7 @@
             this.gvBascula.Name = "gvBascula";
             this.gvBascula.OptionsView.ShowAutoFilterRow = true;
             this.gvBascula.OptionsView.ShowGroupPanel = false;
+            this.gvBascula.DoubleClick += new System.EventHandler(this.gvBascula_DoubleClick);
             // 
             // colIDSerie
             // 
@@ -157,8 +166,13 @@
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
+            // basculaBindingSource
+            // 
+            this.basculaBindingSource.DataMember = "Bascula";
+            // 
             // simpleButton1
             // 
+            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
@@ -166,18 +180,8 @@
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(199, 71);
             this.simpleButton1.TabIndex = 4;
-            this.simpleButton1.Text = "Cerrar";
+            this.simpleButton1.Text = "Cancelar";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_1);
-            // 
-            // dsRecepcionMP
-            // 
-            this.dsRecepcionMP.DataSetName = "dsRecepcionMP";
-            this.dsRecepcionMP.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // basculaBindingSource1
-            // 
-            this.basculaBindingSource1.DataMember = "Bascula";
-            this.basculaBindingSource1.DataSource = this.dsRecepcionMP;
             // 
             // FrmBoleta
             // 
@@ -190,14 +194,16 @@
             this.Controls.Add(this.gridControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmBoleta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FrmBascula";
+            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.basculaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.basculaBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvBascula)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSeleccionar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMP)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.basculaBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.basculaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
