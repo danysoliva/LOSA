@@ -34,6 +34,7 @@ namespace ACS.Classes
                                                    user Id=" + Globals.LOSA_DB_User + @";
                                                    Password=" + Globals.LOSA_DB_Pass + ";";
 
+        internal string ConnectionStringLOSA_LOCAL_RE = @"Data Source=ADRE5079CP\MSSEXPRESSS2014;Initial Catalog=BASCULA_DEV;Trusted_Connection=True";
         //        internal string ConnectionStringCostos_History = @"Server=" + Globals.CTSH_ServerAddress + @";
         //                                                           Database=" + Globals.CTSH_ActiveDB + @";
         //                                                           User Id=" + Globals.CTSH_DB_User + @";
@@ -226,7 +227,7 @@ namespace ACS.Classes
             catch (Exception ec)
             {
                 date = DateTime.Today;
-                CajaDialogo.Error(ec.Message);
+                //CajaDialogo.Error(ec.Message);
             }
             return date;
         }
@@ -297,7 +298,7 @@ namespace ACS.Classes
             }
             catch (Exception ex)
             {
-                CajaDialogo.Error(ex.Message);
+                //CajaDialogo.Error(ex.Message);
             }
         }
 
@@ -404,7 +405,7 @@ namespace ACS.Classes
             catch (Exception ex)
             {
 
-                CajaDialogo.Error(ex.Message);
+                //CajaDialogo.Error(ex.Message);
             }
         }
         public string Isnulldata(object x)
@@ -502,7 +503,7 @@ namespace ACS.Classes
             catch (Exception)
             {
                 return result;
-                CajaDialogo.Error("Error en operacion");
+                //CajaDialogo.Error("Error en operacion");
             }
         }
 
@@ -521,7 +522,7 @@ namespace ACS.Classes
             catch (Exception)
             {
                 return result;
-                CajaDialogo.Error("Error en operacion");
+                //CajaDialogo.Error("Error en operacion");
             }
         }
         public string Nexcode(int id_secuencia) // Generar codigo para Bascula!

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsRecepcionMP" targetNamespace="http://tempuri.org/dsRecepcionMP.xsd" xmlns:mstns="http://tempuri.org/dsRecepcionMP.xsd" xmlns="http://tempuri.org/dsRecepcionMP.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsRecepcionMP" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsRecepcionMP" msprop:Generator_UserDSName="dsRecepcionMP">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Bascula" msprop:Generator_TableClassName="BasculaDataTable" msprop:Generator_TableVarName="tableBascula" msprop:Generator_TablePropName="Bascula" msprop:Generator_RowDeletingName="BasculaRowDeleting" msprop:Generator_RowChangingName="BasculaRowChanging" msprop:Generator_RowEvHandlerName="BasculaRowChangeEventHandler" msprop:Generator_RowDeletedName="BasculaRowDeleted" msprop:Generator_UserTableName="Bascula" msprop:Generator_RowChangedName="BasculaRowChanged" msprop:Generator_RowEvArgName="BasculaRowChangeEvent" msprop:Generator_RowClassName="BasculaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDSerie" msprop:Generator_ColumnVarNameInTable="columnIDSerie" msprop:Generator_ColumnPropNameInRow="IDSerie" msprop:Generator_ColumnPropNameInTable="IDSerieColumn" msprop:Generator_UserColumnName="IDSerie" type="xs:string" minOccurs="0" />
+              <xs:element name="NBoleta" msprop:Generator_ColumnVarNameInTable="columnNBoleta" msprop:Generator_ColumnPropNameInRow="NBoleta" msprop:Generator_ColumnPropNameInTable="NBoletaColumn" msprop:Generator_UserColumnName="NBoleta" type="xs:string" minOccurs="0" />
+              <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion" type="xs:string" minOccurs="0" />
+              <xs:element name="idtipo" msprop:Generator_ColumnVarNameInTable="columnidtipo" msprop:Generator_ColumnPropNameInRow="idtipo" msprop:Generator_ColumnPropNameInTable="idtipoColumn" msprop:Generator_UserColumnName="idtipo" type="xs:string" minOccurs="0" />
+              <xs:element name="estado" msprop:Generator_ColumnVarNameInTable="columnestado" msprop:Generator_ColumnPropNameInRow="estado" msprop:Generator_ColumnPropNameInTable="estadoColumn" msprop:Generator_UserColumnName="estado" type="xs:string" minOccurs="0" />
+              <xs:element name="estadoDescripcion" msprop:Generator_ColumnVarNameInTable="columnestadoDescripcion" msprop:Generator_ColumnPropNameInRow="estadoDescripcion" msprop:Generator_ColumnPropNameInTable="estadoDescripcionColumn" msprop:Generator_UserColumnName="estadoDescripcion" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
