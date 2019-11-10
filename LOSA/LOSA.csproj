@@ -74,6 +74,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\CajaDialogo.cs" />
     <Compile Include="Clases\DataOperations.cs" />
     <Compile Include="Clases\Globals.cs" />
     <Compile Include="Clases\UserLogin.cs" />
@@ -124,6 +125,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RecepcionMP\frmRecepcionMP.resx">
+      <DependentUpon>frmRecepcionMP.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

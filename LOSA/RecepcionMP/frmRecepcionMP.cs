@@ -16,5 +16,11 @@ namespace LOSA.RecepcionMP
         {
             InitializeComponent();
         }
+
+        private void cmdHome_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
     }
 }

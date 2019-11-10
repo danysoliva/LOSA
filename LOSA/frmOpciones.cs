@@ -1,4 +1,5 @@
 ﻿using LOSA.Clases;
+using LOSA.RecepcionMP;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,7 +35,9 @@ namespace LOSA
 
         private void cmdRecepcionMPLogistica_Click(object sender, EventArgs e)
         {
-
+            //
+            frmRecepcionMP frm = new frmRecepcionMP();
+            frm.Show();
         }
     }
 }

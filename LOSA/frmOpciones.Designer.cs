@@ -35,10 +35,10 @@
             this.tabOpciones = new DevExpress.XtraTab.XtraTabControl();
             this.TabMontacarga = new DevExpress.XtraTab.XtraTabPage();
             this.TabLogistica = new DevExpress.XtraTab.XtraTabPage();
-            this.TabCalidad = new DevExpress.XtraTab.XtraTabPage();
-            this.TabAdmin = new DevExpress.XtraTab.XtraTabPage();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdRecepcionMPLogistica = new DevExpress.XtraEditors.SimpleButton();
+            this.TabCalidad = new DevExpress.XtraTab.XtraTabPage();
+            this.TabAdmin = new DevExpress.XtraTab.XtraTabPage();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -59,7 +59,9 @@
             // 
             // cmdHome
             // 
+            this.cmdHome.Appearance.BackColor = System.Drawing.Color.White;
             this.cmdHome.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdHome.Appearance.Options.UseBackColor = true;
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdHome.ImageOptions.Image")));
@@ -67,7 +69,7 @@
             this.cmdHome.Name = "cmdHome";
             this.cmdHome.Size = new System.Drawing.Size(199, 71);
             this.cmdHome.TabIndex = 6;
-            this.cmdHome.Text = "Home";
+            this.cmdHome.Text = "Cerrar";
             this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
             // 
             // simpleButton2
@@ -115,6 +117,29 @@
             this.TabLogistica.Size = new System.Drawing.Size(629, 441);
             this.TabLogistica.Text = "Logistica";
             // 
+            // simpleButton3
+            // 
+            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton3.Appearance.Options.UseFont = true;
+            this.simpleButton3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton3.Location = new System.Drawing.Point(424, 48);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton3.TabIndex = 8;
+            this.simpleButton3.Text = "Mantenimiento";
+            // 
+            // cmdRecepcionMPLogistica
+            // 
+            this.cmdRecepcionMPLogistica.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdRecepcionMPLogistica.Appearance.Options.UseFont = true;
+            this.cmdRecepcionMPLogistica.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdRecepcionMPLogistica.Location = new System.Drawing.Point(207, 48);
+            this.cmdRecepcionMPLogistica.Name = "cmdRecepcionMPLogistica";
+            this.cmdRecepcionMPLogistica.Size = new System.Drawing.Size(199, 71);
+            this.cmdRecepcionMPLogistica.TabIndex = 9;
+            this.cmdRecepcionMPLogistica.Text = "Recepción MP";
+            this.cmdRecepcionMPLogistica.Click += new System.EventHandler(this.cmdRecepcionMPLogistica_Click);
+            // 
             // TabCalidad
             // 
             this.TabCalidad.Name = "TabCalidad";
@@ -128,29 +153,6 @@
             this.TabAdmin.PageVisible = false;
             this.TabAdmin.Size = new System.Drawing.Size(629, 441);
             this.TabAdmin.Text = "Administrador";
-            // 
-            // simpleButton3
-            // 
-            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton3.Location = new System.Drawing.Point(205, 41);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(199, 71);
-            this.simpleButton3.TabIndex = 8;
-            this.simpleButton3.Text = "Mantenimiento";
-            // 
-            // cmdRecepcionMPLogistica
-            // 
-            this.cmdRecepcionMPLogistica.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdRecepcionMPLogistica.Appearance.Options.UseFont = true;
-            this.cmdRecepcionMPLogistica.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdRecepcionMPLogistica.Location = new System.Drawing.Point(205, 131);
-            this.cmdRecepcionMPLogistica.Name = "cmdRecepcionMPLogistica";
-            this.cmdRecepcionMPLogistica.Size = new System.Drawing.Size(199, 71);
-            this.cmdRecepcionMPLogistica.TabIndex = 9;
-            this.cmdRecepcionMPLogistica.Text = "Recepción MP";
-            this.cmdRecepcionMPLogistica.Click += new System.EventHandler(this.cmdRecepcionMPLogistica_Click);
             // 
             // frmOpciones
             // 
