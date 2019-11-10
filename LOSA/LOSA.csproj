@@ -74,6 +74,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\DataOperations.cs" />
+    <Compile Include="Clases\Globals.cs" />
     <Compile Include="Clases\UserLogin.cs" />
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
