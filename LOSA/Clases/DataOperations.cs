@@ -34,7 +34,7 @@ namespace ACS.Classes
                                                    user Id=" + Globals.LOSA_DB_User + @";
                                                    Password=" + Globals.LOSA_DB_Pass + ";";
 
-        internal string ConnectionStringLOSA_LOCAL_RE = @"Data Source=ADRE5079CP\MSSEXPRESSS2014;Initial Catalog=BASCULA_DEV;Trusted_Connection=True";
+        internal string ConnectionStringLOSA_LOCAL_RE = @"Data Source=ADRE5079CP\MSSEXPRESSS2014;Initial Catalog=LOSA;Trusted_Connection=True";
         //        internal string ConnectionStringCostos_History = @"Server=" + Globals.CTSH_ServerAddress + @";
         //                                                           Database=" + Globals.CTSH_ActiveDB + @";
         //                                                           User Id=" + Globals.CTSH_DB_User + @";

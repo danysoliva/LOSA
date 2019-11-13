@@ -24,8 +24,8 @@ namespace LOSA.RecepcionMP
         private int _idSerie;
         private int _NumBoleta;
 
-        public int IdSerie { get => _idSerie; set => _idSerie = value; }
-        public int NumBoleta { get => _NumBoleta; set => _NumBoleta = value; }
+        public int IdSerie { get { return _idSerie; } set { _idSerie = value; } }
+        public int NumBoleta { get { return _NumBoleta; } set { _NumBoleta = value; } }
 
         public FrmBoleta()
         {
@@ -43,7 +43,7 @@ namespace LOSA.RecepcionMP
             try
             {
 
-                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA_LOCAL_RE);
 
                 string SQL = @"exec sp_getBoletasBascula";
 

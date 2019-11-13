@@ -53,29 +53,41 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Data.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.Data.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DevExpress 17.1\Components\Bin\Framework\DevExpress.Data.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DevExpress 17.1\Components\Bin\Framework\DevExpress.Printing.v17.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DevExpress 17.1\Components\Bin\Framework\DevExpress.Sparkline.v17.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.Utils.v17.1.UI, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DevExpress 17.1\Components\Bin\Framework\DevExpress.Utils.v17.1.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DevExpress 17.1\Components\Bin\Framework\DevExpress.XtraEditors.v17.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Sparkline.v17.1.Core, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.XtraLayout.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Utils.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="DevExpress.XtraBars.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="DevExpress.XtraEditors.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="DevExpress.XtraGrid.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
@@ -89,7 +101,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clases\CajaDialogo.cs" />
     <Compile Include="Clases\DataOperations.cs" />
     <Compile Include="Clases\Globals.cs" />
     <Compile Include="Clases\UserLogin.cs" />
@@ -106,12 +117,82 @@
       <DependentUpon>frmOpciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\GrupoUser.cs" />
+    <Compile Include="Mantenimientos\dsMantenimiento.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsMantenimiento.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\frmBodega.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\frmBodega.Designer.cs">
+      <DependentUpon>frmBodega.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\frmBodegaCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\frmBodegaCRUD.Designer.cs">
+      <DependentUpon>frmBodegaCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\frmEstadoProgramacionRequisicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\frmEstadoProgramacionRequisicion.Designer.cs">
+      <DependentUpon>frmEstadoProgramacionRequisicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\frmEstadoProgramacionRequisicionCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\frmEstadoProgramacionRequisicionCRUD.Designer.cs">
+      <DependentUpon>frmEstadoProgramacionRequisicionCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\frmEstadoRequisicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\frmEstadoRequisicion.Designer.cs">
+      <DependentUpon>frmEstadoRequisicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\frmEstadoRequisicionCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\frmEstadoRequisicionCRUD.Designer.cs">
+      <DependentUpon>frmEstadoRequisicionCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\frmKardexTipoTransaccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\frmKardexTipoTransaccion.Designer.cs">
+      <DependentUpon>frmKardexTipoTransaccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\frmKardexTipoTransaccionCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\frmKardexTipoTransaccionCRUD.Designer.cs">
+      <DependentUpon>frmKardexTipoTransaccionCRUD.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimientos\frmMantenimiento.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Mantenimientos\frmMantenimiento.Designer.cs">
       <DependentUpon>frmMantenimiento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimientos\frmTipoPresentacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\frmTipoPresentacion.Designer.cs">
+      <DependentUpon>frmTipoPresentacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\frmTipoPresentacionCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\frmTipoPresentacionCRUD.Designer.cs">
+      <DependentUpon>frmTipoPresentacionCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\Modelos\Bodega.cs" />
+    <Compile Include="Mantenimientos\Modelos\EstadoProgramacionRequisicion.cs" />
+    <Compile Include="Mantenimientos\Modelos\EstadoRequisicion.cs" />
+    <Compile Include="Mantenimientos\Modelos\KardexTipoTransaccion.cs" />
+    <Compile Include="Mantenimientos\Modelos\TipoPresentacion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecepcionMP\dsRecepcionMP.Designer.cs">
@@ -137,8 +218,38 @@
     <EmbeddedResource Include="frmOpciones.resx">
       <DependentUpon>frmOpciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\frmBodega.resx">
+      <DependentUpon>frmBodega.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\frmBodegaCRUD.resx">
+      <DependentUpon>frmBodegaCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\frmEstadoProgramacionRequisicion.resx">
+      <DependentUpon>frmEstadoProgramacionRequisicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\frmEstadoProgramacionRequisicionCRUD.resx">
+      <DependentUpon>frmEstadoProgramacionRequisicionCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\frmEstadoRequisicion.resx">
+      <DependentUpon>frmEstadoRequisicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\frmEstadoRequisicionCRUD.resx">
+      <DependentUpon>frmEstadoRequisicionCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\frmKardexTipoTransaccion.resx">
+      <DependentUpon>frmKardexTipoTransaccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\frmKardexTipoTransaccionCRUD.resx">
+      <DependentUpon>frmKardexTipoTransaccionCRUD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\frmMantenimiento.resx">
       <DependentUpon>frmMantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\frmTipoPresentacion.resx">
+      <DependentUpon>frmTipoPresentacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\frmTipoPresentacionCRUD.resx">
+      <DependentUpon>frmTipoPresentacionCRUD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -157,6 +268,17 @@
     <EmbeddedResource Include="RecepcionMP\frmRecepcionMP.resx">
       <DependentUpon>frmRecepcionMP.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Mantenimientos\dsMantenimiento.xsc">
+      <DependentUpon>dsMantenimiento.xsd</DependentUpon>
+    </None>
+    <None Include="Mantenimientos\dsMantenimiento.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsMantenimiento.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Mantenimientos\dsMantenimiento.xss">
+      <DependentUpon>dsMantenimiento.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -184,6 +306,19 @@
     </None>
     <None Include="Resources\Users-Group-icon64px.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\admin.png" />
+    <Content Include="Resources\box.png" />
+    <Content Include="Resources\cancel.png" />
+    <Content Include="Resources\cargo.png" />
+    <Content Include="Resources\check-in.png" />
+    <Content Include="Resources\edit.png" />
+    <Content Include="Resources\key.png" />
+    <Content Include="Resources\medal.png" />
+    <Content Include="Resources\plus.png" />
+    <Content Include="Resources\tap.png" />
+    <Content Include="Resources\user.png" />
+    <Content Include="Resources\wrench.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -79,14 +79,21 @@
             // 
             // gvBascula
             // 
-            this.gvBascula.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvBascula.Appearance.FocusedCell.BackColor = System.Drawing.Color.LightGreen;
+            this.gvBascula.Appearance.FocusedCell.Options.UseBackColor = true;
+            this.gvBascula.Appearance.FocusedRow.BackColor = System.Drawing.Color.LightGreen;
+            this.gvBascula.Appearance.FocusedRow.BackColor2 = System.Drawing.Color.LightGreen;
+            this.gvBascula.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvBascula.Appearance.FocusedRow.Options.UseBackColor = true;
             this.gvBascula.Appearance.FocusedRow.Options.UseFont = true;
             this.gvBascula.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvBascula.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gvBascula.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvBascula.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvBascula.Appearance.Row.Options.UseFont = true;
-            this.gvBascula.Appearance.SelectedRow.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvBascula.Appearance.SelectedRow.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvBascula.Appearance.SelectedRow.Options.UseFont = true;
+            this.gvBascula.Appearance.TopNewRow.BackColor = System.Drawing.Color.White;
+            this.gvBascula.Appearance.TopNewRow.Options.UseBackColor = true;
             this.gvBascula.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colIDSerie,
             this.colNBoleta,
@@ -176,6 +183,7 @@
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton1.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
             this.simpleButton1.Location = new System.Drawing.Point(411, 26);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(199, 71);
