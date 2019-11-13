@@ -66,6 +66,7 @@ namespace LOSA.RecepcionMP
         private void gvBascula_DoubleClick(object sender, EventArgs e)
         {
             //Seleccion del lote
+            //bib
             var gridView = (GridView)gridControl1.FocusedView;
             var row = (dsRecepcionMP.BasculaRow)gridView.GetFocusedDataRow();
 
