@@ -27,7 +27,7 @@ namespace LOSA
         private void cmdButtonSaltarLogin_Click(object sender, EventArgs e)
         {
             UserLogin Log1 = new UserLogin();
-            Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Logistica;
+            Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Administradores;
             frmOpciones frm = new frmOpciones(Log1);
             frm.Show();
             //this.Close();

@@ -75,6 +75,7 @@
             this.txtClave.Name = "txtClave";
             this.txtClave.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.txtClave.Properties.Appearance.Options.UseFont = true;
+            this.txtClave.Properties.ContextImageOptions.Image = global::LOSA.Properties.Resources.key;
             this.txtClave.Properties.UseSystemPasswordChar = true;
             this.txtClave.Size = new System.Drawing.Size(222, 30);
             this.txtClave.TabIndex = 1;
@@ -83,9 +84,11 @@
             // 
             this.txtUsuario.Location = new System.Drawing.Point(195, 156);
             this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Properties.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
             this.txtUsuario.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.txtUsuario.Properties.Appearance.Options.UseFont = true;
-            this.txtUsuario.Properties.UseSystemPasswordChar = true;
+            this.txtUsuario.Properties.ContextImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
+            this.txtUsuario.Properties.ContextImageOptions.Image = global::LOSA.Properties.Resources.user;
             this.txtUsuario.Size = new System.Drawing.Size(222, 30);
             this.txtUsuario.TabIndex = 0;
             // 

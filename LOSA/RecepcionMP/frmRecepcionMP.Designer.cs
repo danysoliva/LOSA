@@ -65,6 +65,7 @@
             this.txtNumBoleta.Name = "txtNumBoleta";
             this.txtNumBoleta.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumBoleta.Properties.Appearance.Options.UseFont = true;
+            this.txtNumBoleta.Properties.ReadOnly = true;
             this.txtNumBoleta.Size = new System.Drawing.Size(331, 26);
             this.txtNumBoleta.TabIndex = 8;
             // 
@@ -73,7 +74,7 @@
             this.cmdSelectBoleta.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdSelectBoleta.Appearance.Options.UseFont = true;
             this.cmdSelectBoleta.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdSelectBoleta.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.cmdSelectBoleta.ImageOptions.Image = global::LOSA.Properties.Resources.tap;
             this.cmdSelectBoleta.Location = new System.Drawing.Point(482, 130);
             this.cmdSelectBoleta.Name = "cmdSelectBoleta";
             this.cmdSelectBoleta.Size = new System.Drawing.Size(42, 40);
