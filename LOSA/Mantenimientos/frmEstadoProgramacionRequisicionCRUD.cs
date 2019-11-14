@@ -38,7 +38,7 @@ namespace LOSA.Mantenimientos
             estadoProgramacionRequisicion.Descripcion = memoDescripcion.Text;
             estadoProgramacionRequisicion.Enable = chkEnable.Checked;
 
-            using (SqlConnection conexionLOSA = new SqlConnection(dp.ConnectionStringLOSA_LOCAL_RE))
+            using (SqlConnection conexionLOSA = new SqlConnection(dp.ConnectionStringLOSA))
             {
                 try
                 {

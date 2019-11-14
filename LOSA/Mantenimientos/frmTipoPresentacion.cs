@@ -19,7 +19,7 @@ namespace LOSA.Mantenimientos
         {
             try
             {
-                using (SqlConnection conexionLOSA = new SqlConnection(dp.ConnectionStringLOSA_LOCAL_RE))
+                using (SqlConnection conexionLOSA = new SqlConnection(dp.ConnectionStringLOSA))
                 {
                     dsMantenimiento.TiposPresentacionesDataTable.Clear();
                     SqlDataAdapter adapter = new SqlDataAdapter("exec spObtenerTiposPresentaciones", conexionLOSA);

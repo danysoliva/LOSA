@@ -40,7 +40,7 @@ namespace LOSA.Mantenimientos
             bodega.DescripcionCorta = txtDescripcionCorta.Text;
             bodega.Enable = chkEnable.Checked;
 
-            using (SqlConnection conexionLOSA = new SqlConnection(dp.ConnectionStringLOSA_LOCAL_RE))
+            using (SqlConnection conexionLOSA = new SqlConnection(dp.ConnectionStringLOSA))
             {
                 try
                 {

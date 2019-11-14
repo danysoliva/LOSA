@@ -19,7 +19,7 @@ namespace LOSA.Mantenimientos
         {
             try
             {
-                using (SqlConnection conexionLOSA = new SqlConnection(dp.ConnectionStringLOSA_LOCAL_RE))
+                using (SqlConnection conexionLOSA = new SqlConnection(dp.ConnectionStringLOSA))
                 {
                     dsMantenimiento.EstadosRequisicionesDataTable.Clear();
                     SqlDataAdapter adapter = new SqlDataAdapter("exec spObtenerEstadosRequisiciones", conexionLOSA);

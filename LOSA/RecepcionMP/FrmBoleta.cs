@@ -43,7 +43,7 @@ namespace LOSA.RecepcionMP
             try
             {
 
-                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA_LOCAL_RE);
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
 
                 string SQL = @"exec sp_getBoletasBascula";
 

@@ -38,7 +38,7 @@ namespace LOSA.Mantenimientos
             tipoPresentacion.Descripcion = memoDescripcion.Text;
             tipoPresentacion.Enable = chkEnable.Checked;
 
-            using (SqlConnection conexionLOSA = new SqlConnection(dp.ConnectionStringLOSA_LOCAL_RE))
+            using (SqlConnection conexionLOSA = new SqlConnection(dp.ConnectionStringLOSA))
             {
                 try
                 {

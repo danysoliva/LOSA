@@ -38,7 +38,7 @@ namespace LOSA.Mantenimientos
             kardexTipoTransaccion.Descripcion = memoDescripcion.Text;
             kardexTipoTransaccion.Enable = chkEnable.Checked;
 
-            using (SqlConnection conexionLOSA = new SqlConnection(dp.ConnectionStringLOSA_LOCAL_RE))
+            using (SqlConnection conexionLOSA = new SqlConnection(dp.ConnectionStringLOSA))
             {
                 try
                 {
