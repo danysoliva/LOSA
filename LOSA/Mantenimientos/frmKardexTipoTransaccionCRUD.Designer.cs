@@ -57,7 +57,7 @@
             this.memoDescripcion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.memoDescripcion.Properties.Appearance.Options.UseFont = true;
             this.memoDescripcion.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.memoDescripcion.Size = new System.Drawing.Size(518, 51);
+            this.memoDescripcion.Size = new System.Drawing.Size(518, 96);
             this.memoDescripcion.TabIndex = 0;
             // 
             // btnGuardar

@@ -42,18 +42,28 @@ namespace LOSA.Mantenimientos
             {
                 try
                 {
-                    conexionLOSA.Open();
-                    using (SqlCommand command = new SqlCommand("spInsertarActualizarEstadosProgramacionesRequisiciones", conexionLOSA))
+
+                    if ( memoDescripcion.Text.Length <= 0)
                     {
-                        command.CommandType = CommandType.StoredProcedure;
-                        command.Parameters.Add("@Id", SqlDbType.Int).Value = estadoProgramacionRequisicion.Id;
-                        command.Parameters.Add("@Descripcion", SqlDbType.VarChar).Value = estadoProgramacionRequisicion.Descripcion;
-                        command.Parameters.Add("@Enable", SqlDbType.Bit).Value = estadoProgramacionRequisicion.Enable;
-                        command.Parameters.Add("@Fecha", SqlDbType.DateTime).Value = estadoProgramacionRequisicion.Fecha;
-                        command.ExecuteNonQuery();
+                        CajaDialogo.Error("Debe de llenar todos los campos del formulario");
+                        return;
 
-                        this.DialogResult = DialogResult.OK;
+                    }
+                    else
+                    {
+                        conexionLOSA.Open();
+                        using (SqlCommand command = new SqlCommand("spInsertarActualizarEstadosProgramacionesRequisiciones", conexionLOSA))
+                        {
+                            command.CommandType = CommandType.StoredProcedure;
+                            command.Parameters.Add("@Id", SqlDbType.Int).Value = estadoProgramacionRequisicion.Id;
+                            command.Parameters.Add("@Descripcion", SqlDbType.VarChar).Value = estadoProgramacionRequisicion.Descripcion;
+                            command.Parameters.Add("@Enable", SqlDbType.Bit).Value = estadoProgramacionRequisicion.Enable;
+                            command.Parameters.Add("@Fecha", SqlDbType.DateTime).Value = estadoProgramacionRequisicion.Fecha;
+                            command.ExecuteNonQuery();
 
+                            this.DialogResult = DialogResult.OK;
+
+                        }
                     }
                 }
                 catch (Exception ex)

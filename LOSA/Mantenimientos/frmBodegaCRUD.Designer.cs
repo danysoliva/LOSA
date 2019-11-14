@@ -45,7 +45,7 @@
             // 
             this.txtDescripcionCorta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDescripcionCorta.Location = new System.Drawing.Point(12, 222);
+            this.txtDescripcionCorta.Location = new System.Drawing.Point(12, 265);
             this.txtDescripcionCorta.Name = "txtDescripcionCorta";
             this.txtDescripcionCorta.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcionCorta.Properties.Appearance.Options.UseFont = true;
@@ -67,7 +67,7 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(12, 198);
+            this.labelControl1.Location = new System.Drawing.Point(12, 241);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(149, 24);
             this.labelControl1.TabIndex = 13;
@@ -76,7 +76,7 @@
             // chkEnable
             // 
             this.chkEnable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkEnable.Location = new System.Drawing.Point(546, 223);
+            this.chkEnable.Location = new System.Drawing.Point(546, 266);
             this.chkEnable.Name = "chkEnable";
             this.chkEnable.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.chkEnable.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
@@ -96,7 +96,7 @@
             this.memoDescripcion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.memoDescripcion.Properties.Appearance.Options.UseFont = true;
             this.memoDescripcion.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.memoDescripcion.Size = new System.Drawing.Size(614, 51);
+            this.memoDescripcion.Size = new System.Drawing.Size(614, 91);
             this.memoDescripcion.TabIndex = 0;
             // 
             // btnAtras
