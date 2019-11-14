@@ -11,6 +11,7 @@ namespace LOSA.Mantenimientos
     {
         DataOperations dp = new DataOperations();
         private Bodega bodega;
+        CajaDialogo CajaDialogo = new CajaDialogo();
         public frmBodegaCRUD()
         {
             InitializeComponent();
@@ -44,19 +45,28 @@ namespace LOSA.Mantenimientos
             {
                 try
                 {
-                    conexionLOSA.Open();
-                    using (SqlCommand command = new SqlCommand("spInsertarActualizarBodegas", conexionLOSA))
+                    if (txtDescripcionCorta.Text.Length <= 0 || memoDescripcion.Text.Length <= 0)
+                        {
+                        CajaDialogo.Error("Debe de llenar todos los campos del formulario");
+                        return;
+                       
+                    }
+                    else
                     {
-                        command.CommandType = CommandType.StoredProcedure;
-                        command.Parameters.Add("@Id", SqlDbType.Int).Value = bodega.Id;
-                        command.Parameters.Add("@Descripcion", SqlDbType.VarChar).Value = bodega.Descripcion;
-                        command.Parameters.Add("@DescripcionCorta", SqlDbType.VarChar).Value = bodega.DescripcionCorta;
-                        command.Parameters.Add("@Enable", SqlDbType.Bit).Value = bodega.Enable;
-                        command.Parameters.Add("@Fecha", SqlDbType.DateTime).Value = bodega.Fecha;
-                        command.ExecuteNonQuery();
+                        conexionLOSA.Open();
+                        using (SqlCommand command = new SqlCommand("spInsertarActualizarBodegas", conexionLOSA))
+                        {
+                            command.CommandType = CommandType.StoredProcedure;
+                            command.Parameters.Add("@Id", SqlDbType.Int).Value = bodega.Id;
+                            command.Parameters.Add("@Descripcion", SqlDbType.VarChar).Value = bodega.Descripcion;
+                            command.Parameters.Add("@DescripcionCorta", SqlDbType.VarChar).Value = bodega.DescripcionCorta;
+                            command.Parameters.Add("@Enable", SqlDbType.Bit).Value = bodega.Enable;
+                            command.Parameters.Add("@Fecha", SqlDbType.DateTime).Value = bodega.Fecha;
+                            command.ExecuteNonQuery();
 
-                        this.DialogResult = DialogResult.OK;
-                        
+                            this.DialogResult = DialogResult.OK;
+
+                        }
                     }
                 }
                 catch (Exception ex)

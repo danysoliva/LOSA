@@ -42,18 +42,27 @@ namespace LOSA.Mantenimientos
             {
                 try
                 {
-                    conexionLOSA.Open();
-                    using (SqlCommand command = new SqlCommand("spInsertarActualizarKardexTiposTransacciones", conexionLOSA))
+                    if (memoDescripcion.Text.Length <= 0)
                     {
-                        command.CommandType = CommandType.StoredProcedure;
-                        command.Parameters.Add("@Id", SqlDbType.Int).Value = kardexTipoTransaccion.Id;
-                        command.Parameters.Add("@Descripcion", SqlDbType.VarChar).Value = kardexTipoTransaccion.Descripcion;
-                        command.Parameters.Add("@Enable", SqlDbType.Bit).Value = kardexTipoTransaccion.Enable;
-                        command.Parameters.Add("@Fecha", SqlDbType.DateTime).Value = kardexTipoTransaccion.Fecha;
-                        command.ExecuteNonQuery();
+                        CajaDialogo.Error("Debe de llenar todos los campos del formulario");
+                        return;
 
-                        this.DialogResult = DialogResult.OK;
+                    }
+                    else
+                    {
+                        conexionLOSA.Open();
+                        using (SqlCommand command = new SqlCommand("spInsertarActualizarKardexTiposTransacciones", conexionLOSA))
+                        {
+                            command.CommandType = CommandType.StoredProcedure;
+                            command.Parameters.Add("@Id", SqlDbType.Int).Value = kardexTipoTransaccion.Id;
+                            command.Parameters.Add("@Descripcion", SqlDbType.VarChar).Value = kardexTipoTransaccion.Descripcion;
+                            command.Parameters.Add("@Enable", SqlDbType.Bit).Value = kardexTipoTransaccion.Enable;
+                            command.Parameters.Add("@Fecha", SqlDbType.DateTime).Value = kardexTipoTransaccion.Fecha;
+                            command.ExecuteNonQuery();
 
+                            this.DialogResult = DialogResult.OK;
+
+                        }
                     }
                 }
                 catch (Exception ex)

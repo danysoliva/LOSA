@@ -101,6 +101,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\CajaDialogo.cs" />
     <Compile Include="Clases\DataOperations.cs" />
     <Compile Include="Clases\Globals.cs" />
     <Compile Include="Clases\UserLogin.cs" />

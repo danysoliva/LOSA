@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEstadoRequisicion));
             this.gcEstadosRequisiciones = new DevExpress.XtraGrid.GridControl();
             this.estadosRequisicionesDataTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -43,6 +43,7 @@
             this.btnEditar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btnAgregar = new DevExpress.XtraEditors.SimpleButton();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.gcEstadosRequisiciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estadosRequisicionesDataTableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMantenimiento)).BeginInit();
@@ -58,13 +59,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcEstadosRequisiciones.DataSource = this.estadosRequisicionesDataTableBindingSource;
             this.gcEstadosRequisiciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.gcEstadosRequisiciones.Location = new System.Drawing.Point(0, 89);
+            this.gcEstadosRequisiciones.Location = new System.Drawing.Point(0, 136);
             this.gcEstadosRequisiciones.MainView = this.gvEstadosRequisiciones;
             this.gcEstadosRequisiciones.Name = "gcEstadosRequisiciones";
             this.gcEstadosRequisiciones.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnEditar,
             this.repositoryItemCheckEdit1});
-            this.gcEstadosRequisiciones.Size = new System.Drawing.Size(638, 471);
+            this.gcEstadosRequisiciones.Size = new System.Drawing.Size(638, 424);
             this.gcEstadosRequisiciones.TabIndex = 29;
             this.gcEstadosRequisiciones.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvEstadosRequisiciones});
@@ -81,14 +82,23 @@
             // 
             // gvEstadosRequisiciones
             // 
-            this.gvEstadosRequisiciones.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.gvEstadosRequisiciones.Appearance.FocusedCell.BackColor = System.Drawing.Color.LightGreen;
+            this.gvEstadosRequisiciones.Appearance.FocusedCell.Options.UseBackColor = true;
+            this.gvEstadosRequisiciones.Appearance.FocusedRow.BackColor = System.Drawing.Color.LightGreen;
+            this.gvEstadosRequisiciones.Appearance.FocusedRow.BackColor2 = System.Drawing.Color.LightGreen;
+            this.gvEstadosRequisiciones.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.gvEstadosRequisiciones.Appearance.FocusedRow.Options.UseBackColor = true;
             this.gvEstadosRequisiciones.Appearance.FocusedRow.Options.UseFont = true;
             this.gvEstadosRequisiciones.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.gvEstadosRequisiciones.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gvEstadosRequisiciones.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.gvEstadosRequisiciones.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.LightGreen;
+            this.gvEstadosRequisiciones.Appearance.HideSelectionRow.Options.UseBackColor = true;
+            this.gvEstadosRequisiciones.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.gvEstadosRequisiciones.Appearance.Row.Options.UseFont = true;
-            this.gvEstadosRequisiciones.Appearance.SelectedRow.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.gvEstadosRequisiciones.Appearance.SelectedRow.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.gvEstadosRequisiciones.Appearance.SelectedRow.Options.UseFont = true;
+            this.gvEstadosRequisiciones.Appearance.TopNewRow.BackColor = System.Drawing.Color.White;
+            this.gvEstadosRequisiciones.Appearance.TopNewRow.Options.UseBackColor = true;
             this.gvEstadosRequisiciones.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colid,
             this.coldescripcion,
@@ -96,6 +106,7 @@
             this.coleditar});
             this.gvEstadosRequisiciones.GridControl = this.gcEstadosRequisiciones;
             this.gvEstadosRequisiciones.Name = "gvEstadosRequisiciones";
+            this.gvEstadosRequisiciones.OptionsView.RowAutoHeight = true;
             this.gvEstadosRequisiciones.OptionsView.ShowGroupPanel = false;
             // 
             // colid
@@ -149,9 +160,9 @@
             // btnEditar
             // 
             this.btnEditar.AutoHeight = false;
-            editorButtonImageOptions1.Image = global::LOSA.Properties.Resources.edit;
+            editorButtonImageOptions2.Image = global::LOSA.Properties.Resources.edit;
             this.btnEditar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -164,7 +175,7 @@
             this.btnAgregar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAgregar.ImageOptions.Image = global::LOSA.Properties.Resources.plus;
             this.btnAgregar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAgregar.Location = new System.Drawing.Point(427, 12);
+            this.btnAgregar.Location = new System.Drawing.Point(427, 59);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(199, 71);
             this.btnAgregar.TabIndex = 28;
@@ -178,12 +189,28 @@
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(12, 12);
+            this.btnAtras.Location = new System.Drawing.Point(12, 59);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(199, 71);
             this.btnAtras.TabIndex = 27;
             this.btnAtras.Text = "Atras";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Appearance.Options.UseTextOptions = true;
+            this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl1.Location = new System.Drawing.Point(0, -2);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(638, 46);
+            this.labelControl1.TabIndex = 30;
+            this.labelControl1.Text = "Mantenimiento de Estado de Requisición";
             // 
             // frmEstadoRequisicion
             // 
@@ -191,6 +218,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(638, 560);
+            this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.gcEstadosRequisiciones);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnAtras);
@@ -222,5 +250,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnEditar;
         private DevExpress.XtraEditors.SimpleButton btnAgregar;
         private DevExpress.XtraEditors.SimpleButton btnAtras;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }
