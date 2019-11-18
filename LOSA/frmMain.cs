@@ -1,4 +1,5 @@
-﻿using LOSA.Clases;
+﻿using DevExpress.Utils.TouchHelpers;
+using LOSA.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,8 @@ namespace LOSA
         public frmMain()
         {
             InitializeComponent();
+            TouchKeyboardSupport.EnableTouchKeyboard = true;
+            TouchKeyboardSupport.CheckEnableTouchSupport(this);
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)

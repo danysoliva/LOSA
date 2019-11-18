@@ -39,11 +39,11 @@
             this.cmdRecepcionMPLogistica = new DevExpress.XtraEditors.SimpleButton();
             this.TabCalidad = new DevExpress.XtraTab.XtraTabPage();
             this.TabAdmin = new DevExpress.XtraTab.XtraTabPage();
+            this.btnEstadosRequisiciones = new DevExpress.XtraEditors.SimpleButton();
             this.btnKardexTiposTransacciones = new DevExpress.XtraEditors.SimpleButton();
             this.btnEstadosProgramacionesRequisiciones = new DevExpress.XtraEditors.SimpleButton();
             this.btnTiposPresentaciones = new DevExpress.XtraEditors.SimpleButton();
             this.btnBodegas = new DevExpress.XtraEditors.SimpleButton();
-            this.btnEstadosRequisiciones = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -175,16 +175,30 @@
             this.TabAdmin.Size = new System.Drawing.Size(629, 422);
             this.TabAdmin.Text = "Administrador";
             // 
+            // btnEstadosRequisiciones
+            // 
+            this.btnEstadosRequisiciones.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstadosRequisiciones.Appearance.Options.UseFont = true;
+            this.btnEstadosRequisiciones.Appearance.Options.UseTextOptions = true;
+            this.btnEstadosRequisiciones.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnEstadosRequisiciones.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnEstadosRequisiciones.Location = new System.Drawing.Point(419, 44);
+            this.btnEstadosRequisiciones.Name = "btnEstadosRequisiciones";
+            this.btnEstadosRequisiciones.Size = new System.Drawing.Size(204, 71);
+            this.btnEstadosRequisiciones.TabIndex = 11;
+            this.btnEstadosRequisiciones.Text = "Estados de Requisiciones";
+            this.btnEstadosRequisiciones.Click += new System.EventHandler(this.BtnEstadosRequisiciones_Click);
+            // 
             // btnKardexTiposTransacciones
             // 
-            this.btnKardexTiposTransacciones.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKardexTiposTransacciones.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btnKardexTiposTransacciones.Appearance.Options.UseFont = true;
             this.btnKardexTiposTransacciones.Appearance.Options.UseTextOptions = true;
             this.btnKardexTiposTransacciones.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnKardexTiposTransacciones.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnKardexTiposTransacciones.Location = new System.Drawing.Point(45, 126);
+            this.btnKardexTiposTransacciones.Location = new System.Drawing.Point(419, 140);
             this.btnKardexTiposTransacciones.Name = "btnKardexTiposTransacciones";
-            this.btnKardexTiposTransacciones.Size = new System.Drawing.Size(154, 81);
+            this.btnKardexTiposTransacciones.Size = new System.Drawing.Size(204, 71);
             this.btnKardexTiposTransacciones.TabIndex = 10;
             this.btnKardexTiposTransacciones.Text = "Tipos de Transacción (Kardex)";
             this.btnKardexTiposTransacciones.Click += new System.EventHandler(this.BtnKardexTiposTransacciones_Click);
@@ -196,7 +210,7 @@
             this.btnEstadosProgramacionesRequisiciones.Appearance.Options.UseTextOptions = true;
             this.btnEstadosProgramacionesRequisiciones.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnEstadosProgramacionesRequisiciones.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnEstadosProgramacionesRequisiciones.Location = new System.Drawing.Point(389, 28);
+            this.btnEstadosProgramacionesRequisiciones.Location = new System.Drawing.Point(419, 239);
             this.btnEstadosProgramacionesRequisiciones.Name = "btnEstadosProgramacionesRequisiciones";
             this.btnEstadosProgramacionesRequisiciones.Size = new System.Drawing.Size(204, 71);
             this.btnEstadosProgramacionesRequisiciones.TabIndex = 9;
@@ -208,9 +222,9 @@
             this.btnTiposPresentaciones.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTiposPresentaciones.Appearance.Options.UseFont = true;
             this.btnTiposPresentaciones.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnTiposPresentaciones.Location = new System.Drawing.Point(197, 28);
+            this.btnTiposPresentaciones.Location = new System.Drawing.Point(9, 140);
             this.btnTiposPresentaciones.Name = "btnTiposPresentaciones";
-            this.btnTiposPresentaciones.Size = new System.Drawing.Size(176, 71);
+            this.btnTiposPresentaciones.Size = new System.Drawing.Size(204, 71);
             this.btnTiposPresentaciones.TabIndex = 8;
             this.btnTiposPresentaciones.Text = "Tipos Presentación";
             this.btnTiposPresentaciones.Click += new System.EventHandler(this.BtnTiposPresentaciones_Click);
@@ -220,26 +234,12 @@
             this.btnBodegas.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBodegas.Appearance.Options.UseFont = true;
             this.btnBodegas.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnBodegas.Location = new System.Drawing.Point(45, 28);
+            this.btnBodegas.Location = new System.Drawing.Point(9, 44);
             this.btnBodegas.Name = "btnBodegas";
-            this.btnBodegas.Size = new System.Drawing.Size(133, 71);
+            this.btnBodegas.Size = new System.Drawing.Size(204, 71);
             this.btnBodegas.TabIndex = 5;
             this.btnBodegas.Text = "Bodegas";
             this.btnBodegas.Click += new System.EventHandler(this.BtnBodegas_Click);
-            // 
-            // btnEstadosRequisiciones
-            // 
-            this.btnEstadosRequisiciones.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstadosRequisiciones.Appearance.Options.UseFont = true;
-            this.btnEstadosRequisiciones.Appearance.Options.UseTextOptions = true;
-            this.btnEstadosRequisiciones.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnEstadosRequisiciones.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnEstadosRequisiciones.Location = new System.Drawing.Point(214, 126);
-            this.btnEstadosRequisiciones.Name = "btnEstadosRequisiciones";
-            this.btnEstadosRequisiciones.Size = new System.Drawing.Size(159, 71);
-            this.btnEstadosRequisiciones.TabIndex = 11;
-            this.btnEstadosRequisiciones.Text = "Estados de Requisiciones";
-            this.btnEstadosRequisiciones.Click += new System.EventHandler(this.BtnEstadosRequisiciones_Click);
             // 
             // frmOpciones
             // 
