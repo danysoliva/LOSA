@@ -80,6 +80,7 @@
             this.txtClave.Properties.UseSystemPasswordChar = true;
             this.txtClave.Size = new System.Drawing.Size(222, 30);
             this.txtClave.TabIndex = 1;
+            this.txtClave.Enter += new System.EventHandler(this.txtClave_Enter);
             // 
             // txtUsuario
             // 
@@ -92,6 +93,7 @@
             this.txtUsuario.Properties.ContextImageOptions.Image = global::LOSA.Properties.Resources.user;
             this.txtUsuario.Size = new System.Drawing.Size(222, 30);
             this.txtUsuario.TabIndex = 0;
+            this.txtUsuario.Enter += new System.EventHandler(this.txtUsuario_Enter);
             // 
             // labelControl1
             // 
@@ -102,6 +104,7 @@
             this.labelControl1.Size = new System.Drawing.Size(64, 24);
             this.labelControl1.TabIndex = 8;
             this.labelControl1.Text = "Usuario";
+            this.labelControl1.Click += new System.EventHandler(this.labelControl1_Click);
             // 
             // labelControl2
             // 
@@ -112,6 +115,7 @@
             this.labelControl2.Size = new System.Drawing.Size(47, 24);
             this.labelControl2.TabIndex = 9;
             this.labelControl2.Text = "Clave";
+            this.labelControl2.Click += new System.EventHandler(this.labelControl2_Click);
             // 
             // cmdButtonSaltarLogin
             // 
@@ -138,6 +142,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // labelControl3
             // 
@@ -153,6 +158,7 @@
             this.labelControl3.Size = new System.Drawing.Size(402, 27);
             this.labelControl3.TabIndex = 12;
             this.labelControl3.Text = "Bienvenido";
+            this.labelControl3.Click += new System.EventHandler(this.labelControl1_Click);
             // 
             // frmMain
             // 
@@ -174,6 +180,7 @@
             this.Name = "frmMain";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Click += new System.EventHandler(this.frmMain_Click);
             ((System.ComponentModel.ISupportInitialize)(this.txtClave.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsuario.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
