@@ -1,6 +1,6 @@
-﻿using DevExpress.Utils.TouchHelpers;
+﻿using Core.Clases.Herramientas;
+using DevExpress.Utils.TouchHelpers;
 using LOSA.Clases;
-using LOSA.RecepcionMP;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,8 +19,8 @@ namespace LOSA
         public frmMain()
         {
             InitializeComponent();
-            TouchKeyboardSupport.EnableTouchKeyboard = true;
-            TouchKeyboardSupport.CheckEnableTouchSupport(this);
+            //TouchKeyboardSupport.EnableTouchKeyboard = true;
+            //TouchKeyboardSupport.CheckEnableTouchSupport(this);
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -30,8 +30,9 @@ namespace LOSA
 
         private void cmdButtonSaltarLogin_Click(object sender, EventArgs e)
         {
+            Teclado.cerrarTeclado();
             UserLogin Log1 = new UserLogin();
-            Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Montacarga;
+            Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Administradores;
             frmOpciones frm = new frmOpciones(Log1);
             frm.Show();
             //this.Close();
@@ -51,8 +52,34 @@ namespace LOSA
 
         }
 
-        
+        private void txtUsuario_Enter(object sender, EventArgs e)
+        {
+            Teclado.abrirTeclado();
+        }
 
-        
+        private void frmMain_Click(object sender, EventArgs e)
+        {
+            Teclado.cerrarTeclado();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Teclado.cerrarTeclado();
+        }
+
+        private void labelControl2_Click(object sender, EventArgs e)
+        {
+            Teclado.cerrarTeclado();
+        }
+
+        private void labelControl1_Click(object sender, EventArgs e)
+        {
+            Teclado.cerrarTeclado();
+        }
+
+        private void txtClave_Enter(object sender, EventArgs e)
+        {
+            Teclado.abrirTeclado();
+        }
     }
 }

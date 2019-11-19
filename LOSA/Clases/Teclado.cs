@@ -3,6 +3,7 @@ using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -18,7 +19,11 @@ namespace Core.Clases.Herramientas
         static extern IntPtr SendMessage(IntPtr hWnd, UInt32 Msg, IntPtr wParam, IntPtr lParam);
         public static void abrirTeclado()
         {
-            Process.Start("TabTip.exe");
+            //Process.Start("TabTip.exe");
+            var progFiles = @"C:\Program Files\Common Files\Microsoft Shared\ink";
+            var keyboardPath = Path.Combine(progFiles, "TabTip.exe");
+            //keyboardProc = 
+            Process.Start(keyboardPath);
         }
 
         public static void cerrarTeclado()
