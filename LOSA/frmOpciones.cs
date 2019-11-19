@@ -70,5 +70,11 @@ namespace LOSA
             frmEstadoRequisicion frm = new frmEstadoRequisicion();
             frm.Show();
         }
+
+        private void BtnTarima_Click(object sender, EventArgs e)
+        {
+            frmEntradaMP frm = new frmEntradaMP();
+            frm.Show();
+        }
     }
 }

@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.basculaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.dsRecepcionMP = new LOSA.RecepcionMP.dsRecepcionMP();
+            this.dsRecepcionMP = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.gvBascula = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colIDSerie = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNBoleta = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -232,6 +232,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSeleccionar;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnSeleccionar;
         private System.Windows.Forms.BindingSource basculaBindingSource1;
-        private RecepcionMP.dsRecepcionMP dsRecepcionMP;
+        private RecepcionMP.dsRecepcionMPx dsRecepcionMP;
     }
 }

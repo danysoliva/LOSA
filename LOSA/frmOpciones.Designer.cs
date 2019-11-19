@@ -44,6 +44,7 @@
             this.btnEstadosProgramacionesRequisiciones = new DevExpress.XtraEditors.SimpleButton();
             this.btnTiposPresentaciones = new DevExpress.XtraEditors.SimpleButton();
             this.btnBodegas = new DevExpress.XtraEditors.SimpleButton();
+            this.btnTarima = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -111,6 +112,7 @@
             // 
             // TabMontacarga
             // 
+            this.TabMontacarga.Controls.Add(this.btnTarima);
             this.TabMontacarga.Controls.Add(this.simpleButton1);
             this.TabMontacarga.Controls.Add(this.simpleButton2);
             this.TabMontacarga.Image = ((System.Drawing.Image)(resources.GetObject("TabMontacarga.Image")));
@@ -241,6 +243,18 @@
             this.btnBodegas.Text = "Bodegas";
             this.btnBodegas.Click += new System.EventHandler(this.BtnBodegas_Click);
             // 
+            // btnTarima
+            // 
+            this.btnTarima.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTarima.Appearance.Options.UseFont = true;
+            this.btnTarima.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnTarima.Location = new System.Drawing.Point(36, 23);
+            this.btnTarima.Name = "btnTarima";
+            this.btnTarima.Size = new System.Drawing.Size(199, 71);
+            this.btnTarima.TabIndex = 8;
+            this.btnTarima.Text = "Tarima";
+            this.btnTarima.Click += new System.EventHandler(this.BtnTarima_Click);
+            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -279,5 +293,6 @@
         private DevExpress.XtraEditors.SimpleButton btnEstadosProgramacionesRequisiciones;
         private DevExpress.XtraEditors.SimpleButton btnKardexTiposTransacciones;
         private DevExpress.XtraEditors.SimpleButton btnEstadosRequisiciones;
+        private DevExpress.XtraEditors.SimpleButton btnTarima;
     }
 }

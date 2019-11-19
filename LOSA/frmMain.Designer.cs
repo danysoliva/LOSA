@@ -44,6 +44,7 @@
             // 
             // cmdCerrar
             // 
+            this.cmdCerrar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cmdCerrar.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdCerrar.Appearance.Options.UseFont = true;
             this.cmdCerrar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
@@ -56,6 +57,7 @@
             // 
             // cmdLogin
             // 
+            this.cmdLogin.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cmdLogin.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
             this.cmdLogin.Appearance.BorderColor = System.Drawing.Color.LightSkyBlue;
             this.cmdLogin.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -72,6 +74,7 @@
             // 
             // txtClave
             // 
+            this.txtClave.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtClave.Location = new System.Drawing.Point(195, 220);
             this.txtClave.Name = "txtClave";
             this.txtClave.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
@@ -83,6 +86,7 @@
             // 
             // txtUsuario
             // 
+            this.txtUsuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtUsuario.Location = new System.Drawing.Point(195, 162);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Properties.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
@@ -95,6 +99,7 @@
             // 
             // labelControl1
             // 
+            this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Location = new System.Drawing.Point(125, 165);
@@ -105,6 +110,7 @@
             // 
             // labelControl2
             // 
+            this.labelControl2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Location = new System.Drawing.Point(128, 223);
@@ -115,6 +121,7 @@
             // 
             // cmdButtonSaltarLogin
             // 
+            this.cmdButtonSaltarLogin.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cmdButtonSaltarLogin.Appearance.BackColor = System.Drawing.Color.MediumAquamarine;
             this.cmdButtonSaltarLogin.Appearance.BorderColor = System.Drawing.Color.MediumAquamarine;
             this.cmdButtonSaltarLogin.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -131,6 +138,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox1.Image = global::LOSA.Properties.Resources.Users_Group_icon64px;
             this.pictureBox1.Location = new System.Drawing.Point(431, 156);
             this.pictureBox1.Name = "pictureBox1";

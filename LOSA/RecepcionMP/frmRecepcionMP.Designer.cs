@@ -29,25 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRecepcionMP));
-            this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtNumBoleta = new DevExpress.XtraEditors.TextEdit();
             this.cmdSelectBoleta = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumBoleta.Properties)).BeginInit();
             this.SuspendLayout();
-            // 
-            // cmdHome
-            // 
-            this.cmdHome.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdHome.Appearance.Options.UseFont = true;
-            this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdHome.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdHome.ImageOptions.Image")));
-            this.cmdHome.Location = new System.Drawing.Point(12, 12);
-            this.cmdHome.Name = "cmdHome";
-            this.cmdHome.Size = new System.Drawing.Size(199, 71);
-            this.cmdHome.TabIndex = 6;
-            this.cmdHome.Text = "Home";
-            this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
             // 
             // labelControl1
             // 
@@ -81,6 +68,19 @@
             this.cmdSelectBoleta.TabIndex = 9;
             this.cmdSelectBoleta.Click += new System.EventHandler(this.cmdSelectBoleta_Click);
             // 
+            // cmdHome
+            // 
+            this.cmdHome.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdHome.Appearance.Options.UseFont = true;
+            this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdHome.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdHome.ImageOptions.Image")));
+            this.cmdHome.Location = new System.Drawing.Point(12, 12);
+            this.cmdHome.Name = "cmdHome";
+            this.cmdHome.Size = new System.Drawing.Size(199, 71);
+            this.cmdHome.TabIndex = 6;
+            this.cmdHome.Text = "Home";
+            this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
+            // 
             // frmRecepcionMP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -96,6 +96,7 @@
             this.Name = "frmRecepcionMP";
             this.Text = "frmRecepcionMP";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmRecepcionMP_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtNumBoleta.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -68,7 +68,7 @@ namespace LOSA.RecepcionMP
             //Seleccion del lote
             //bib
             var gridView = (GridView)gridControl1.FocusedView;
-            var row = (dsRecepcionMP.BasculaRow)gridView.GetFocusedDataRow();
+            var row = (dsRecepcionMPx.BasculaRow)gridView.GetFocusedDataRow();
 
             this.IdSerie = row.IDSerie;
             this.NumBoleta = row.NBoleta;

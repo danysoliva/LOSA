@@ -1,5 +1,6 @@
 ﻿using DevExpress.Utils.TouchHelpers;
 using LOSA.Clases;
+using LOSA.RecepcionMP;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,7 +31,7 @@ namespace LOSA
         private void cmdButtonSaltarLogin_Click(object sender, EventArgs e)
         {
             UserLogin Log1 = new UserLogin();
-            Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Administradores;
+            Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Montacarga;
             frmOpciones frm = new frmOpciones(Log1);
             frm.Show();
             //this.Close();
@@ -49,5 +50,9 @@ namespace LOSA
 
 
         }
+
+        
+
+        
     }
 }

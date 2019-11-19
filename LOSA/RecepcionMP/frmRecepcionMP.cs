@@ -12,8 +12,8 @@ namespace LOSA.RecepcionMP
 {
     public partial class frmRecepcionMP : Form
     {
-        int IdSerie;
-        int NumBoleta;
+       private int IdSerie;
+       private int NumBoleta;
         public frmRecepcionMP()
         {
             InitializeComponent();
@@ -34,6 +34,11 @@ namespace LOSA.RecepcionMP
                 this.IdSerie = frm.IdSerie;
                 this.NumBoleta = frm.NumBoleta;
             }
+        }
+
+        private void FrmRecepcionMP_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
