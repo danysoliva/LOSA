@@ -96,6 +96,7 @@
             this.Name = "frmRecepcionMP";
             this.Text = "frmRecepcionMP";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmRecepcionMP_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtNumBoleta.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -227,7 +227,7 @@ namespace ACS.Classes
             catch (Exception ec)
             {
                 date = DateTime.Today;
-                //CajaDialogo.Error(ec.Message);
+                CajaDialogo.Error(ec.Message);
             }
             return date;
         }
@@ -298,7 +298,7 @@ namespace ACS.Classes
             }
             catch (Exception ex)
             {
-                //CajaDialogo.Error(ex.Message);
+                CajaDialogo.Error(ex.Message);
             }
         }
 
@@ -405,7 +405,7 @@ namespace ACS.Classes
             catch (Exception ex)
             {
 
-                //CajaDialogo.Error(ex.Message);
+                CajaDialogo.Error(ex.Message);
             }
         }
         public string Isnulldata(object x)
@@ -485,7 +485,7 @@ namespace ACS.Classes
             }
             catch (Exception ex)
             {
-
+                CajaDialogo.Error(ex.Message);
             }
         }
         public int basculaDB_Return_int(String quere)

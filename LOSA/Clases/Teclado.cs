@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using ACS.Classes;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -71,6 +72,7 @@ namespace Core.Clases.Herramientas
             }
             catch (Exception ex)
             {
+                CajaDialogo.Information(ex.ToString());
             }
         }
 
@@ -85,6 +87,7 @@ namespace Core.Clases.Herramientas
             }
             catch (Exception ex)
             {
+                CajaDialogo.Error(ex.Message);
             }
         }
 
