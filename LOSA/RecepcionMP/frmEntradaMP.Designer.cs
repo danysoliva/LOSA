@@ -34,37 +34,21 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.txtTarima = new DevExpress.XtraEditors.TextEdit();
-            this.txtProveedor = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.txtLote = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.txtPresentacion = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.txtProfundidad = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.txtRack = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.txtPasillo = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.btnUbicacion = new DevExpress.XtraEditors.SimpleButton();
             this.cmdSelectTarima = new DevExpress.XtraEditors.SimpleButton();
             this.beTarima = new DevExpress.XtraEditors.ButtonEdit();
             this.beUbicacion = new DevExpress.XtraEditors.ButtonEdit();
-            this.txtAltura = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTarima.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtProveedor.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtLote.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPresentacion.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtProfundidad.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRack.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPasillo.Properties)).BeginInit();
+            this.gcTarima = new DevExpress.XtraGrid.GridControl();
+            this.gvTarima = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gcUbicacion = new DevExpress.XtraGrid.GridControl();
+            this.gvUbicacion = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.beTarima.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.beUbicacion.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAltura.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcTarima)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvTarima)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcUbicacion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvUbicacion)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -73,7 +57,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(156, 113);
+            this.labelControl1.Location = new System.Drawing.Point(72, 113);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(57, 21);
             this.labelControl1.TabIndex = 4;
@@ -85,7 +69,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(132, 328);
+            this.labelControl2.Location = new System.Drawing.Point(72, 328);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(81, 21);
             this.labelControl2.TabIndex = 5;
@@ -105,174 +89,6 @@
             this.labelControl3.Size = new System.Drawing.Size(402, 21);
             this.labelControl3.TabIndex = 12;
             this.labelControl3.Text = "Entrada de Materia Prima";
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(156, 159);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(57, 21);
-            this.labelControl4.TabIndex = 13;
-            this.labelControl4.Text = "Tarima:";
-            // 
-            // txtTarima
-            // 
-            this.txtTarima.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTarima.Location = new System.Drawing.Point(219, 156);
-            this.txtTarima.Name = "txtTarima";
-            this.txtTarima.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTarima.Properties.Appearance.Options.UseFont = true;
-            this.txtTarima.Properties.ReadOnly = true;
-            this.txtTarima.Size = new System.Drawing.Size(293, 28);
-            this.txtTarima.TabIndex = 14;
-            // 
-            // txtProveedor
-            // 
-            this.txtProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtProveedor.Location = new System.Drawing.Point(219, 190);
-            this.txtProveedor.Name = "txtProveedor";
-            this.txtProveedor.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProveedor.Properties.Appearance.Options.UseFont = true;
-            this.txtProveedor.Properties.ReadOnly = true;
-            this.txtProveedor.Size = new System.Drawing.Size(293, 28);
-            this.txtProveedor.TabIndex = 16;
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(130, 193);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(83, 21);
-            this.labelControl5.TabIndex = 15;
-            this.labelControl5.Text = "Proveedor:";
-            // 
-            // txtLote
-            // 
-            this.txtLote.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLote.Location = new System.Drawing.Point(219, 224);
-            this.txtLote.Name = "txtLote";
-            this.txtLote.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLote.Properties.Appearance.Options.UseFont = true;
-            this.txtLote.Properties.ReadOnly = true;
-            this.txtLote.Size = new System.Drawing.Size(293, 28);
-            this.txtLote.TabIndex = 18;
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(176, 227);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(37, 21);
-            this.labelControl6.TabIndex = 17;
-            this.labelControl6.Text = "Lote:";
-            // 
-            // txtPresentacion
-            // 
-            this.txtPresentacion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPresentacion.Location = new System.Drawing.Point(219, 258);
-            this.txtPresentacion.Name = "txtPresentacion";
-            this.txtPresentacion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPresentacion.Properties.Appearance.Options.UseFont = true;
-            this.txtPresentacion.Properties.ReadOnly = true;
-            this.txtPresentacion.Size = new System.Drawing.Size(293, 28);
-            this.txtPresentacion.TabIndex = 20;
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(110, 261);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(103, 21);
-            this.labelControl7.TabIndex = 19;
-            this.labelControl7.Text = "Presentación:";
-            // 
-            // txtProfundidad
-            // 
-            this.txtProfundidad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtProfundidad.Location = new System.Drawing.Point(219, 482);
-            this.txtProfundidad.Name = "txtProfundidad";
-            this.txtProfundidad.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProfundidad.Properties.Appearance.Options.UseFont = true;
-            this.txtProfundidad.Properties.ReadOnly = true;
-            this.txtProfundidad.Size = new System.Drawing.Size(293, 28);
-            this.txtProfundidad.TabIndex = 26;
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl8.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(113, 481);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(100, 21);
-            this.labelControl8.TabIndex = 25;
-            this.labelControl8.Text = "Profundidad:";
-            // 
-            // txtRack
-            // 
-            this.txtRack.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtRack.Location = new System.Drawing.Point(219, 414);
-            this.txtRack.Name = "txtRack";
-            this.txtRack.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRack.Properties.Appearance.Options.UseFont = true;
-            this.txtRack.Properties.ReadOnly = true;
-            this.txtRack.Size = new System.Drawing.Size(293, 28);
-            this.txtRack.TabIndex = 24;
-            // 
-            // labelControl9
-            // 
-            this.labelControl9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl9.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(171, 417);
-            this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(40, 21);
-            this.labelControl9.TabIndex = 23;
-            this.labelControl9.Text = "Rack:";
-            // 
-            // txtPasillo
-            // 
-            this.txtPasillo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPasillo.Location = new System.Drawing.Point(219, 380);
-            this.txtPasillo.Name = "txtPasillo";
-            this.txtPasillo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPasillo.Properties.Appearance.Options.UseFont = true;
-            this.txtPasillo.Properties.ReadOnly = true;
-            this.txtPasillo.Size = new System.Drawing.Size(293, 28);
-            this.txtPasillo.TabIndex = 22;
-            // 
-            // labelControl10
-            // 
-            this.labelControl10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl10.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(158, 383);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(55, 21);
-            this.labelControl10.TabIndex = 21;
-            this.labelControl10.Text = "Pasillo:";
             // 
             // cmdHome
             // 
@@ -315,10 +131,11 @@
             // 
             // beTarima
             // 
+            this.beTarima.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.True;
             this.beTarima.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.beTarima.EditValue = "";
-            this.beTarima.Location = new System.Drawing.Point(219, 105);
+            this.beTarima.Location = new System.Drawing.Point(135, 105);
             this.beTarima.Name = "beTarima";
             this.beTarima.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.beTarima.Properties.Appearance.Options.UseFont = true;
@@ -326,75 +143,375 @@
             this.beTarima.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.beTarima.Properties.NullText = "Escanee o selecciona una tarima";
-            this.beTarima.Size = new System.Drawing.Size(243, 38);
+            this.beTarima.Size = new System.Drawing.Size(327, 38);
             this.beTarima.TabIndex = 28;
-            this.beTarima.Click += new System.EventHandler(this.BeTarima_Click);
+            this.beTarima.ToolTip = "Hola";
+            this.beTarima.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.BeTarima_ButtonClick);
             this.beTarima.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BeTarima_KeyDown);
             // 
             // beUbicacion
             // 
             this.beUbicacion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.beUbicacion.Location = new System.Drawing.Point(219, 320);
+            this.beUbicacion.Location = new System.Drawing.Point(159, 320);
             this.beUbicacion.Name = "beUbicacion";
             this.beUbicacion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.beUbicacion.Properties.Appearance.Options.UseFont = true;
             editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.beUbicacion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
-            this.beUbicacion.Size = new System.Drawing.Size(243, 38);
+            this.beUbicacion.Size = new System.Drawing.Size(303, 38);
             this.beUbicacion.TabIndex = 29;
+            this.beUbicacion.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.BeUbicacion_ButtonClick);
             this.beUbicacion.Click += new System.EventHandler(this.BeUbicacion_Click);
             this.beUbicacion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BeUbicacion_KeyDown);
             // 
-            // txtAltura
+            // gcTarima
             // 
-            this.txtAltura.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtAltura.Location = new System.Drawing.Point(219, 448);
-            this.txtAltura.Name = "txtAltura";
-            this.txtAltura.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAltura.Properties.Appearance.Options.UseFont = true;
-            this.txtAltura.Properties.ReadOnly = true;
-            this.txtAltura.Size = new System.Drawing.Size(293, 28);
-            this.txtAltura.TabIndex = 31;
+            this.gcTarima.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.gcTarima.EmbeddedNavigator.Appearance.BackColor = System.Drawing.SystemColors.Control;
+            this.gcTarima.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
+            this.gcTarima.Location = new System.Drawing.Point(69, 154);
+            this.gcTarima.MainView = this.gvTarima;
+            this.gcTarima.Name = "gcTarima";
+            this.gcTarima.Size = new System.Drawing.Size(485, 116);
+            this.gcTarima.TabIndex = 32;
+            this.gcTarima.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvTarima});
             // 
-            // labelControl11
+            // gvTarima
             // 
-            this.labelControl11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl11.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl11.Appearance.Options.UseFont = true;
-            this.labelControl11.Location = new System.Drawing.Point(160, 451);
-            this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(51, 21);
-            this.labelControl11.TabIndex = 30;
-            this.labelControl11.Text = "Altura:";
+            this.gvTarima.Appearance.ColumnFilterButton.BackColor = System.Drawing.Color.Silver;
+            this.gvTarima.Appearance.ColumnFilterButton.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.gvTarima.Appearance.ColumnFilterButton.BorderColor = System.Drawing.Color.Silver;
+            this.gvTarima.Appearance.ColumnFilterButton.ForeColor = System.Drawing.Color.Gray;
+            this.gvTarima.Appearance.ColumnFilterButton.Options.UseBackColor = true;
+            this.gvTarima.Appearance.ColumnFilterButton.Options.UseBorderColor = true;
+            this.gvTarima.Appearance.ColumnFilterButton.Options.UseForeColor = true;
+            this.gvTarima.Appearance.ColumnFilterButtonActive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.gvTarima.Appearance.ColumnFilterButtonActive.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
+            this.gvTarima.Appearance.ColumnFilterButtonActive.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.gvTarima.Appearance.ColumnFilterButtonActive.ForeColor = System.Drawing.Color.Blue;
+            this.gvTarima.Appearance.ColumnFilterButtonActive.Options.UseBackColor = true;
+            this.gvTarima.Appearance.ColumnFilterButtonActive.Options.UseBorderColor = true;
+            this.gvTarima.Appearance.ColumnFilterButtonActive.Options.UseForeColor = true;
+            this.gvTarima.Appearance.Empty.BackColor = System.Drawing.SystemColors.Control;
+            this.gvTarima.Appearance.Empty.Options.UseBackColor = true;
+            this.gvTarima.Appearance.EvenRow.BackColor = System.Drawing.Color.White;
+            this.gvTarima.Appearance.EvenRow.BackColor2 = System.Drawing.Color.White;
+            this.gvTarima.Appearance.EvenRow.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvTarima.Appearance.EvenRow.ForeColor = System.Drawing.Color.Black;
+            this.gvTarima.Appearance.EvenRow.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.gvTarima.Appearance.EvenRow.Options.UseBackColor = true;
+            this.gvTarima.Appearance.EvenRow.Options.UseFont = true;
+            this.gvTarima.Appearance.EvenRow.Options.UseForeColor = true;
+            this.gvTarima.Appearance.FilterCloseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(208)))), ((int)(((byte)(200)))));
+            this.gvTarima.Appearance.FilterCloseButton.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(170)))), ((int)(((byte)(225)))));
+            this.gvTarima.Appearance.FilterCloseButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(208)))), ((int)(((byte)(200)))));
+            this.gvTarima.Appearance.FilterCloseButton.ForeColor = System.Drawing.Color.Black;
+            this.gvTarima.Appearance.FilterCloseButton.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.gvTarima.Appearance.FilterCloseButton.Options.UseBackColor = true;
+            this.gvTarima.Appearance.FilterCloseButton.Options.UseBorderColor = true;
+            this.gvTarima.Appearance.FilterCloseButton.Options.UseForeColor = true;
+            this.gvTarima.Appearance.FilterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(80)))), ((int)(((byte)(135)))));
+            this.gvTarima.Appearance.FilterPanel.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(208)))), ((int)(((byte)(200)))));
+            this.gvTarima.Appearance.FilterPanel.ForeColor = System.Drawing.Color.White;
+            this.gvTarima.Appearance.FilterPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.gvTarima.Appearance.FilterPanel.Options.UseBackColor = true;
+            this.gvTarima.Appearance.FilterPanel.Options.UseForeColor = true;
+            this.gvTarima.Appearance.FixedLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
+            this.gvTarima.Appearance.FixedLine.Options.UseBackColor = true;
+            this.gvTarima.Appearance.FocusedCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(225)))));
+            this.gvTarima.Appearance.FocusedCell.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvTarima.Appearance.FocusedCell.ForeColor = System.Drawing.Color.Black;
+            this.gvTarima.Appearance.FocusedCell.Options.UseBackColor = true;
+            this.gvTarima.Appearance.FocusedCell.Options.UseFont = true;
+            this.gvTarima.Appearance.FocusedCell.Options.UseForeColor = true;
+            this.gvTarima.Appearance.FocusedRow.BackColor = System.Drawing.Color.Transparent;
+            this.gvTarima.Appearance.FocusedRow.BackColor2 = System.Drawing.Color.Transparent;
+            this.gvTarima.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvTarima.Appearance.FocusedRow.ForeColor = System.Drawing.Color.Black;
+            this.gvTarima.Appearance.FocusedRow.Options.UseBackColor = true;
+            this.gvTarima.Appearance.FocusedRow.Options.UseFont = true;
+            this.gvTarima.Appearance.FocusedRow.Options.UseForeColor = true;
+            this.gvTarima.Appearance.FooterPanel.BackColor = System.Drawing.Color.Silver;
+            this.gvTarima.Appearance.FooterPanel.BorderColor = System.Drawing.Color.Silver;
+            this.gvTarima.Appearance.FooterPanel.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gvTarima.Appearance.FooterPanel.ForeColor = System.Drawing.Color.Black;
+            this.gvTarima.Appearance.FooterPanel.Options.UseBackColor = true;
+            this.gvTarima.Appearance.FooterPanel.Options.UseBorderColor = true;
+            this.gvTarima.Appearance.FooterPanel.Options.UseFont = true;
+            this.gvTarima.Appearance.FooterPanel.Options.UseForeColor = true;
+            this.gvTarima.Appearance.GroupButton.BackColor = System.Drawing.Color.Silver;
+            this.gvTarima.Appearance.GroupButton.BorderColor = System.Drawing.Color.Silver;
+            this.gvTarima.Appearance.GroupButton.ForeColor = System.Drawing.Color.Black;
+            this.gvTarima.Appearance.GroupButton.Options.UseBackColor = true;
+            this.gvTarima.Appearance.GroupButton.Options.UseBorderColor = true;
+            this.gvTarima.Appearance.GroupButton.Options.UseForeColor = true;
+            this.gvTarima.Appearance.GroupFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.gvTarima.Appearance.GroupFooter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.gvTarima.Appearance.GroupFooter.ForeColor = System.Drawing.Color.Black;
+            this.gvTarima.Appearance.GroupFooter.Options.UseBackColor = true;
+            this.gvTarima.Appearance.GroupFooter.Options.UseBorderColor = true;
+            this.gvTarima.Appearance.GroupFooter.Options.UseForeColor = true;
+            this.gvTarima.Appearance.GroupPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(110)))), ((int)(((byte)(165)))));
+            this.gvTarima.Appearance.GroupPanel.BackColor2 = System.Drawing.Color.White;
+            this.gvTarima.Appearance.GroupPanel.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gvTarima.Appearance.GroupPanel.ForeColor = System.Drawing.Color.White;
+            this.gvTarima.Appearance.GroupPanel.Options.UseBackColor = true;
+            this.gvTarima.Appearance.GroupPanel.Options.UseFont = true;
+            this.gvTarima.Appearance.GroupPanel.Options.UseForeColor = true;
+            this.gvTarima.Appearance.GroupRow.BackColor = System.Drawing.Color.Gray;
+            this.gvTarima.Appearance.GroupRow.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gvTarima.Appearance.GroupRow.ForeColor = System.Drawing.Color.Silver;
+            this.gvTarima.Appearance.GroupRow.Options.UseBackColor = true;
+            this.gvTarima.Appearance.GroupRow.Options.UseFont = true;
+            this.gvTarima.Appearance.GroupRow.Options.UseForeColor = true;
+            this.gvTarima.Appearance.HeaderPanel.BackColor = System.Drawing.Color.Silver;
+            this.gvTarima.Appearance.HeaderPanel.BorderColor = System.Drawing.Color.Silver;
+            this.gvTarima.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gvTarima.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
+            this.gvTarima.Appearance.HeaderPanel.Options.UseBackColor = true;
+            this.gvTarima.Appearance.HeaderPanel.Options.UseBorderColor = true;
+            this.gvTarima.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gvTarima.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.gvTarima.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.White;
+            this.gvTarima.Appearance.HideSelectionRow.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvTarima.Appearance.HideSelectionRow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(208)))), ((int)(((byte)(200)))));
+            this.gvTarima.Appearance.HideSelectionRow.Options.UseBackColor = true;
+            this.gvTarima.Appearance.HideSelectionRow.Options.UseFont = true;
+            this.gvTarima.Appearance.HideSelectionRow.Options.UseForeColor = true;
+            this.gvTarima.Appearance.HorzLine.BackColor = System.Drawing.Color.DarkGray;
+            this.gvTarima.Appearance.HorzLine.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvTarima.Appearance.HorzLine.Options.UseBackColor = true;
+            this.gvTarima.Appearance.HorzLine.Options.UseFont = true;
+            this.gvTarima.Appearance.OddRow.BackColor = System.Drawing.Color.White;
+            this.gvTarima.Appearance.OddRow.BackColor2 = System.Drawing.Color.White;
+            this.gvTarima.Appearance.OddRow.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvTarima.Appearance.OddRow.ForeColor = System.Drawing.Color.Black;
+            this.gvTarima.Appearance.OddRow.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
+            this.gvTarima.Appearance.OddRow.Options.UseBackColor = true;
+            this.gvTarima.Appearance.OddRow.Options.UseFont = true;
+            this.gvTarima.Appearance.OddRow.Options.UseForeColor = true;
+            this.gvTarima.Appearance.Preview.BackColor = System.Drawing.Color.White;
+            this.gvTarima.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvTarima.Appearance.Preview.ForeColor = System.Drawing.Color.Navy;
+            this.gvTarima.Appearance.Preview.Options.UseBackColor = true;
+            this.gvTarima.Appearance.Preview.Options.UseFont = true;
+            this.gvTarima.Appearance.Preview.Options.UseForeColor = true;
+            this.gvTarima.Appearance.Row.BackColor = System.Drawing.Color.White;
+            this.gvTarima.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvTarima.Appearance.Row.ForeColor = System.Drawing.Color.Black;
+            this.gvTarima.Appearance.Row.Options.UseBackColor = true;
+            this.gvTarima.Appearance.Row.Options.UseFont = true;
+            this.gvTarima.Appearance.Row.Options.UseForeColor = true;
+            this.gvTarima.Appearance.RowSeparator.BackColor = System.Drawing.Color.White;
+            this.gvTarima.Appearance.RowSeparator.BackColor2 = System.Drawing.Color.White;
+            this.gvTarima.Appearance.RowSeparator.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvTarima.Appearance.RowSeparator.Options.UseBackColor = true;
+            this.gvTarima.Appearance.RowSeparator.Options.UseFont = true;
+            this.gvTarima.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(138)))));
+            this.gvTarima.Appearance.SelectedRow.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvTarima.Appearance.SelectedRow.ForeColor = System.Drawing.Color.White;
+            this.gvTarima.Appearance.SelectedRow.Options.UseBackColor = true;
+            this.gvTarima.Appearance.SelectedRow.Options.UseFont = true;
+            this.gvTarima.Appearance.SelectedRow.Options.UseForeColor = true;
+            this.gvTarima.Appearance.TopNewRow.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gvTarima.Appearance.TopNewRow.Options.UseFont = true;
+            this.gvTarima.Appearance.VertLine.BackColor = System.Drawing.Color.Silver;
+            this.gvTarima.Appearance.VertLine.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvTarima.Appearance.VertLine.Options.UseBackColor = true;
+            this.gvTarima.Appearance.VertLine.Options.UseFont = true;
+            this.gvTarima.GridControl = this.gcTarima;
+            this.gvTarima.Name = "gvTarima";
+            this.gvTarima.OptionsBehavior.AutoSelectAllInEditor = false;
+            this.gvTarima.OptionsBehavior.Editable = false;
+            this.gvTarima.OptionsView.EnableAppearanceEvenRow = true;
+            this.gvTarima.OptionsView.EnableAppearanceOddRow = true;
+            this.gvTarima.OptionsView.ShowColumnHeaders = false;
+            this.gvTarima.OptionsView.ShowGroupPanel = false;
+            this.gvTarima.OptionsView.ShowIndicator = false;
+            this.gvTarima.PaintStyleName = "Flat";
+            this.gvTarima.InitNewRow += new DevExpress.XtraGrid.Views.Grid.InitNewRowEventHandler(this.GridView1_InitNewRow);
+            // 
+            // gcUbicacion
+            // 
+            this.gcUbicacion.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.gcUbicacion.EmbeddedNavigator.Appearance.BackColor = System.Drawing.SystemColors.Control;
+            this.gcUbicacion.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
+            this.gcUbicacion.Location = new System.Drawing.Point(69, 364);
+            this.gcUbicacion.MainView = this.gvUbicacion;
+            this.gcUbicacion.Name = "gcUbicacion";
+            this.gcUbicacion.Size = new System.Drawing.Size(485, 116);
+            this.gcUbicacion.TabIndex = 33;
+            this.gcUbicacion.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvUbicacion});
+            // 
+            // gvUbicacion
+            // 
+            this.gvUbicacion.Appearance.ColumnFilterButton.BackColor = System.Drawing.Color.Silver;
+            this.gvUbicacion.Appearance.ColumnFilterButton.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.gvUbicacion.Appearance.ColumnFilterButton.BorderColor = System.Drawing.Color.Silver;
+            this.gvUbicacion.Appearance.ColumnFilterButton.ForeColor = System.Drawing.Color.Gray;
+            this.gvUbicacion.Appearance.ColumnFilterButton.Options.UseBackColor = true;
+            this.gvUbicacion.Appearance.ColumnFilterButton.Options.UseBorderColor = true;
+            this.gvUbicacion.Appearance.ColumnFilterButton.Options.UseForeColor = true;
+            this.gvUbicacion.Appearance.ColumnFilterButtonActive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.gvUbicacion.Appearance.ColumnFilterButtonActive.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
+            this.gvUbicacion.Appearance.ColumnFilterButtonActive.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.gvUbicacion.Appearance.ColumnFilterButtonActive.ForeColor = System.Drawing.Color.Blue;
+            this.gvUbicacion.Appearance.ColumnFilterButtonActive.Options.UseBackColor = true;
+            this.gvUbicacion.Appearance.ColumnFilterButtonActive.Options.UseBorderColor = true;
+            this.gvUbicacion.Appearance.ColumnFilterButtonActive.Options.UseForeColor = true;
+            this.gvUbicacion.Appearance.Empty.BackColor = System.Drawing.SystemColors.Control;
+            this.gvUbicacion.Appearance.Empty.Options.UseBackColor = true;
+            this.gvUbicacion.Appearance.EvenRow.BackColor = System.Drawing.Color.White;
+            this.gvUbicacion.Appearance.EvenRow.BackColor2 = System.Drawing.Color.White;
+            this.gvUbicacion.Appearance.EvenRow.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvUbicacion.Appearance.EvenRow.ForeColor = System.Drawing.Color.Black;
+            this.gvUbicacion.Appearance.EvenRow.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.gvUbicacion.Appearance.EvenRow.Options.UseBackColor = true;
+            this.gvUbicacion.Appearance.EvenRow.Options.UseFont = true;
+            this.gvUbicacion.Appearance.EvenRow.Options.UseForeColor = true;
+            this.gvUbicacion.Appearance.FilterCloseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(208)))), ((int)(((byte)(200)))));
+            this.gvUbicacion.Appearance.FilterCloseButton.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(170)))), ((int)(((byte)(225)))));
+            this.gvUbicacion.Appearance.FilterCloseButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(208)))), ((int)(((byte)(200)))));
+            this.gvUbicacion.Appearance.FilterCloseButton.ForeColor = System.Drawing.Color.Black;
+            this.gvUbicacion.Appearance.FilterCloseButton.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.gvUbicacion.Appearance.FilterCloseButton.Options.UseBackColor = true;
+            this.gvUbicacion.Appearance.FilterCloseButton.Options.UseBorderColor = true;
+            this.gvUbicacion.Appearance.FilterCloseButton.Options.UseForeColor = true;
+            this.gvUbicacion.Appearance.FilterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(80)))), ((int)(((byte)(135)))));
+            this.gvUbicacion.Appearance.FilterPanel.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(208)))), ((int)(((byte)(200)))));
+            this.gvUbicacion.Appearance.FilterPanel.ForeColor = System.Drawing.Color.White;
+            this.gvUbicacion.Appearance.FilterPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.gvUbicacion.Appearance.FilterPanel.Options.UseBackColor = true;
+            this.gvUbicacion.Appearance.FilterPanel.Options.UseForeColor = true;
+            this.gvUbicacion.Appearance.FixedLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
+            this.gvUbicacion.Appearance.FixedLine.Options.UseBackColor = true;
+            this.gvUbicacion.Appearance.FocusedCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(225)))));
+            this.gvUbicacion.Appearance.FocusedCell.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvUbicacion.Appearance.FocusedCell.ForeColor = System.Drawing.Color.Black;
+            this.gvUbicacion.Appearance.FocusedCell.Options.UseBackColor = true;
+            this.gvUbicacion.Appearance.FocusedCell.Options.UseFont = true;
+            this.gvUbicacion.Appearance.FocusedCell.Options.UseForeColor = true;
+            this.gvUbicacion.Appearance.FocusedRow.BackColor = System.Drawing.Color.Transparent;
+            this.gvUbicacion.Appearance.FocusedRow.BackColor2 = System.Drawing.Color.Transparent;
+            this.gvUbicacion.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvUbicacion.Appearance.FocusedRow.ForeColor = System.Drawing.Color.Black;
+            this.gvUbicacion.Appearance.FocusedRow.Options.UseBackColor = true;
+            this.gvUbicacion.Appearance.FocusedRow.Options.UseFont = true;
+            this.gvUbicacion.Appearance.FocusedRow.Options.UseForeColor = true;
+            this.gvUbicacion.Appearance.FooterPanel.BackColor = System.Drawing.Color.Silver;
+            this.gvUbicacion.Appearance.FooterPanel.BorderColor = System.Drawing.Color.Silver;
+            this.gvUbicacion.Appearance.FooterPanel.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gvUbicacion.Appearance.FooterPanel.ForeColor = System.Drawing.Color.Black;
+            this.gvUbicacion.Appearance.FooterPanel.Options.UseBackColor = true;
+            this.gvUbicacion.Appearance.FooterPanel.Options.UseBorderColor = true;
+            this.gvUbicacion.Appearance.FooterPanel.Options.UseFont = true;
+            this.gvUbicacion.Appearance.FooterPanel.Options.UseForeColor = true;
+            this.gvUbicacion.Appearance.GroupButton.BackColor = System.Drawing.Color.Silver;
+            this.gvUbicacion.Appearance.GroupButton.BorderColor = System.Drawing.Color.Silver;
+            this.gvUbicacion.Appearance.GroupButton.ForeColor = System.Drawing.Color.Black;
+            this.gvUbicacion.Appearance.GroupButton.Options.UseBackColor = true;
+            this.gvUbicacion.Appearance.GroupButton.Options.UseBorderColor = true;
+            this.gvUbicacion.Appearance.GroupButton.Options.UseForeColor = true;
+            this.gvUbicacion.Appearance.GroupFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.gvUbicacion.Appearance.GroupFooter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.gvUbicacion.Appearance.GroupFooter.ForeColor = System.Drawing.Color.Black;
+            this.gvUbicacion.Appearance.GroupFooter.Options.UseBackColor = true;
+            this.gvUbicacion.Appearance.GroupFooter.Options.UseBorderColor = true;
+            this.gvUbicacion.Appearance.GroupFooter.Options.UseForeColor = true;
+            this.gvUbicacion.Appearance.GroupPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(110)))), ((int)(((byte)(165)))));
+            this.gvUbicacion.Appearance.GroupPanel.BackColor2 = System.Drawing.Color.White;
+            this.gvUbicacion.Appearance.GroupPanel.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gvUbicacion.Appearance.GroupPanel.ForeColor = System.Drawing.Color.White;
+            this.gvUbicacion.Appearance.GroupPanel.Options.UseBackColor = true;
+            this.gvUbicacion.Appearance.GroupPanel.Options.UseFont = true;
+            this.gvUbicacion.Appearance.GroupPanel.Options.UseForeColor = true;
+            this.gvUbicacion.Appearance.GroupRow.BackColor = System.Drawing.Color.Gray;
+            this.gvUbicacion.Appearance.GroupRow.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gvUbicacion.Appearance.GroupRow.ForeColor = System.Drawing.Color.Silver;
+            this.gvUbicacion.Appearance.GroupRow.Options.UseBackColor = true;
+            this.gvUbicacion.Appearance.GroupRow.Options.UseFont = true;
+            this.gvUbicacion.Appearance.GroupRow.Options.UseForeColor = true;
+            this.gvUbicacion.Appearance.HeaderPanel.BackColor = System.Drawing.Color.Silver;
+            this.gvUbicacion.Appearance.HeaderPanel.BorderColor = System.Drawing.Color.Silver;
+            this.gvUbicacion.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gvUbicacion.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
+            this.gvUbicacion.Appearance.HeaderPanel.Options.UseBackColor = true;
+            this.gvUbicacion.Appearance.HeaderPanel.Options.UseBorderColor = true;
+            this.gvUbicacion.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gvUbicacion.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.gvUbicacion.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.White;
+            this.gvUbicacion.Appearance.HideSelectionRow.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvUbicacion.Appearance.HideSelectionRow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(208)))), ((int)(((byte)(200)))));
+            this.gvUbicacion.Appearance.HideSelectionRow.Options.UseBackColor = true;
+            this.gvUbicacion.Appearance.HideSelectionRow.Options.UseFont = true;
+            this.gvUbicacion.Appearance.HideSelectionRow.Options.UseForeColor = true;
+            this.gvUbicacion.Appearance.HorzLine.BackColor = System.Drawing.Color.DarkGray;
+            this.gvUbicacion.Appearance.HorzLine.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvUbicacion.Appearance.HorzLine.Options.UseBackColor = true;
+            this.gvUbicacion.Appearance.HorzLine.Options.UseFont = true;
+            this.gvUbicacion.Appearance.OddRow.BackColor = System.Drawing.Color.White;
+            this.gvUbicacion.Appearance.OddRow.BackColor2 = System.Drawing.Color.White;
+            this.gvUbicacion.Appearance.OddRow.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvUbicacion.Appearance.OddRow.ForeColor = System.Drawing.Color.Black;
+            this.gvUbicacion.Appearance.OddRow.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
+            this.gvUbicacion.Appearance.OddRow.Options.UseBackColor = true;
+            this.gvUbicacion.Appearance.OddRow.Options.UseFont = true;
+            this.gvUbicacion.Appearance.OddRow.Options.UseForeColor = true;
+            this.gvUbicacion.Appearance.Preview.BackColor = System.Drawing.Color.White;
+            this.gvUbicacion.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvUbicacion.Appearance.Preview.ForeColor = System.Drawing.Color.Navy;
+            this.gvUbicacion.Appearance.Preview.Options.UseBackColor = true;
+            this.gvUbicacion.Appearance.Preview.Options.UseFont = true;
+            this.gvUbicacion.Appearance.Preview.Options.UseForeColor = true;
+            this.gvUbicacion.Appearance.Row.BackColor = System.Drawing.Color.White;
+            this.gvUbicacion.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvUbicacion.Appearance.Row.ForeColor = System.Drawing.Color.Black;
+            this.gvUbicacion.Appearance.Row.Options.UseBackColor = true;
+            this.gvUbicacion.Appearance.Row.Options.UseFont = true;
+            this.gvUbicacion.Appearance.Row.Options.UseForeColor = true;
+            this.gvUbicacion.Appearance.RowSeparator.BackColor = System.Drawing.Color.White;
+            this.gvUbicacion.Appearance.RowSeparator.BackColor2 = System.Drawing.Color.White;
+            this.gvUbicacion.Appearance.RowSeparator.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvUbicacion.Appearance.RowSeparator.Options.UseBackColor = true;
+            this.gvUbicacion.Appearance.RowSeparator.Options.UseFont = true;
+            this.gvUbicacion.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(138)))));
+            this.gvUbicacion.Appearance.SelectedRow.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvUbicacion.Appearance.SelectedRow.ForeColor = System.Drawing.Color.White;
+            this.gvUbicacion.Appearance.SelectedRow.Options.UseBackColor = true;
+            this.gvUbicacion.Appearance.SelectedRow.Options.UseFont = true;
+            this.gvUbicacion.Appearance.SelectedRow.Options.UseForeColor = true;
+            this.gvUbicacion.Appearance.TopNewRow.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gvUbicacion.Appearance.TopNewRow.Options.UseFont = true;
+            this.gvUbicacion.Appearance.VertLine.BackColor = System.Drawing.Color.Silver;
+            this.gvUbicacion.Appearance.VertLine.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvUbicacion.Appearance.VertLine.Options.UseBackColor = true;
+            this.gvUbicacion.Appearance.VertLine.Options.UseFont = true;
+            this.gvUbicacion.GridControl = this.gcUbicacion;
+            this.gvUbicacion.Name = "gvUbicacion";
+            this.gvUbicacion.OptionsBehavior.AutoSelectAllInEditor = false;
+            this.gvUbicacion.OptionsBehavior.Editable = false;
+            this.gvUbicacion.OptionsView.EnableAppearanceEvenRow = true;
+            this.gvUbicacion.OptionsView.EnableAppearanceOddRow = true;
+            this.gvUbicacion.OptionsView.ShowColumnHeaders = false;
+            this.gvUbicacion.OptionsView.ShowGroupPanel = false;
+            this.gvUbicacion.OptionsView.ShowIndicator = false;
+            this.gvUbicacion.PaintStyleName = "Flat";
+            this.gvUbicacion.InitNewRow += new DevExpress.XtraGrid.Views.Grid.InitNewRowEventHandler(this.GvUbicacion_InitNewRow);
             // 
             // frmEntradaMP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(622, 521);
-            this.Controls.Add(this.txtAltura);
-            this.Controls.Add(this.labelControl11);
+            this.Controls.Add(this.gcUbicacion);
+            this.Controls.Add(this.gcTarima);
             this.Controls.Add(this.beUbicacion);
             this.Controls.Add(this.beTarima);
             this.Controls.Add(this.cmdHome);
-            this.Controls.Add(this.txtProfundidad);
-            this.Controls.Add(this.labelControl8);
-            this.Controls.Add(this.txtRack);
-            this.Controls.Add(this.labelControl9);
-            this.Controls.Add(this.txtPasillo);
-            this.Controls.Add(this.labelControl10);
-            this.Controls.Add(this.txtPresentacion);
-            this.Controls.Add(this.labelControl7);
-            this.Controls.Add(this.txtLote);
-            this.Controls.Add(this.labelControl6);
-            this.Controls.Add(this.txtProveedor);
-            this.Controls.Add(this.labelControl5);
-            this.Controls.Add(this.txtTarima);
-            this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.btnUbicacion);
             this.Controls.Add(this.cmdSelectTarima);
@@ -405,17 +522,12 @@
             this.Text = "frmEntradaMP";
             this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FrmEntradaMP_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.txtTarima.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtProveedor.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtLote.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPresentacion.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtProfundidad.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRack.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPasillo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.beTarima.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.beUbicacion.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAltura.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcTarima)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvTarima)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcUbicacion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvUbicacion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -427,24 +539,12 @@
         private DevExpress.XtraEditors.SimpleButton cmdSelectTarima;
         private DevExpress.XtraEditors.SimpleButton btnUbicacion;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.TextEdit txtTarima;
-        private DevExpress.XtraEditors.TextEdit txtProveedor;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.TextEdit txtLote;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.TextEdit txtPresentacion;
-        private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.TextEdit txtProfundidad;
-        private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraEditors.TextEdit txtRack;
-        private DevExpress.XtraEditors.LabelControl labelControl9;
-        private DevExpress.XtraEditors.TextEdit txtPasillo;
-        private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.SimpleButton cmdHome;
         private DevExpress.XtraEditors.ButtonEdit beTarima;
         private DevExpress.XtraEditors.ButtonEdit beUbicacion;
-        private DevExpress.XtraEditors.TextEdit txtAltura;
-        private DevExpress.XtraEditors.LabelControl labelControl11;
+        private DevExpress.XtraGrid.GridControl gcTarima;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvTarima;
+        private DevExpress.XtraGrid.GridControl gcUbicacion;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvUbicacion;
     }
 }

@@ -30,12 +30,15 @@ namespace LOSA.RecepcionMP
             {
                 idTarima = frm.idTarima;
                 beTarima.Text= frm.idTarima.ToString();
-                txtProveedor.Text = frm.proveedor;
-                txtTarima.Text = frm.nombreTarima;
-                txtLote.Text = frm.lote;
-                txtPresentacion.Text = frm.presentacion.ToString();
+                //txtProveedor.Text = frm.proveedor;
+                //txtTarima.Text = frm.nombreTarima;
+                //txtLote.Text = frm.lote;
+                //txtPresentacion.Text = frm.presentacion;
 
-                
+                gcTarima.DataSource = CreateDataTarima(frm.proveedor, frm.nombreTarima, frm.lote, frm.presentacion);
+                gvTarima.InitNewRow += GridView1_InitNewRow;
+                gvTarima.Columns[0].AppearanceCell.Font= new Font(gvTarima.Columns[0].AppearanceCell.Font, FontStyle.Bold);
+
             }
         }
 
@@ -70,16 +73,20 @@ namespace LOSA.RecepcionMP
                         while (dr.Read())
                         {
                             idTarima = dr.GetInt32(0);
-                            txtTarima.Text = dr.GetString(1);
-                            txtProveedor.Text = dr.GetString(2);
-                            txtLote.Text = dr.GetString(5);
-                            txtPresentacion.Text = dr.GetString(6);
+                            //txtTarima.Text = dr.GetString(1);
+                            //txtProveedor.Text = dr.GetString(2);
+                            //txtLote.Text = dr.GetString(5);
+                            //txtPresentacion.Text = dr.GetString(6);
+
+                            gcTarima.DataSource = CreateDataTarima(dr.GetString(2), dr.GetString(1), dr.GetString(5), dr.GetString(6));
+                            gvTarima.InitNewRow += GridView1_InitNewRow;
+                            gvTarima.Columns[0].AppearanceCell.Font = new Font("Segoe UI",11, FontStyle.Bold);
                         }
                     }
                     else
                     {
                         CajaDialogo.Error("TARIMA NO ENCONTRADA");
-                        txtTarima.Text = "";
+                        //txtTarima.Text = "";
                     }
 
                     cn.Close();
@@ -88,7 +95,7 @@ namespace LOSA.RecepcionMP
             }
             catch (Exception error)
             {
-                
+                CajaDialogo.Error(error.Message);
             }
         }
 
@@ -116,10 +123,11 @@ namespace LOSA.RecepcionMP
                         while (dr.Read())
                         {
                             idUbicacion = dr.GetInt32(0);
-                            txtPasillo.Text = dr.GetString(1);
-                            txtAltura.Text = dr.GetString(3);
-                            txtProfundidad.Text = dr.GetString(4);
-                            txtRack.Text = dr.GetString(2);
+                           
+
+                            gcUbicacion.DataSource = CreateDataUbicacion(dr.GetString(2), dr.GetString(4), dr.GetString(3), dr.GetString(1));
+                            gvUbicacion.InitNewRow += GvUbicacion_InitNewRow;
+                            gvUbicacion.Columns[0].AppearanceCell.Font = new Font("Segoe UI", 11, FontStyle.Bold);
 
                         }
                     }
@@ -135,17 +143,10 @@ namespace LOSA.RecepcionMP
             }
             catch (Exception error)
             {
-
+                CajaDialogo.Error(error.Message);
             }
         }
-        private void BeTarima_Click(object sender, EventArgs e)
-        {
-            beTarima.Text = "";
-            txtPresentacion.Text = "";
-            txtProveedor.Text = "";
-            txtLote.Text = "";
-           
-        }
+       
 
         private void BeTarima_KeyDown(object sender, KeyEventArgs e)
         {
@@ -164,10 +165,11 @@ namespace LOSA.RecepcionMP
             {
                 idUbicacion = frm.idUbicacion;
                 beUbicacion.Text = frm.idUbicacion.ToString();
-                txtAltura.Text = frm.altura;
-                txtRack.Text = frm.rack;
-                txtProfundidad.Text = frm.profundidad;
-                txtPasillo.Text = frm.pasillo;
+               
+
+                gcUbicacion.DataSource = CreateDataUbicacion(frm.rack, frm.profundidad, frm.altura, frm.pasillo);
+                gvUbicacion.InitNewRow += GvUbicacion_InitNewRow;
+                gvUbicacion.Columns[0].AppearanceCell.Font = new Font("Segoe UI", 11, FontStyle.Bold);
             }
         }
 
@@ -182,19 +184,65 @@ namespace LOSA.RecepcionMP
             }
         }
 
-        private void FrmEntradaMP_Load(object sender, EventArgs e)
+         private void BeUbicacion_Click(object sender, EventArgs e)
         {
-            dtTarima.Columns.Add();
-            dtTarima.Columns.Add();
+           
+            beUbicacion.Text = "";
         }
 
-        private void BeUbicacion_Click(object sender, EventArgs e)
+        private void GridView1_InitNewRow(object sender, DevExpress.XtraGrid.Views.Grid.InitNewRowEventArgs e)
         {
-            txtRack.Text = "";
-            txtProfundidad.Text = "";
-            txtAltura.Text = "";
-            txtPasillo.Text = "";
-            beUbicacion.Text = "";
+            gvTarima.SetRowCellValue(e.RowHandle, gvTarima.Columns["Detalle"], true);
+        }
+
+        private void BeTarima_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            beTarima.Text = "";
+            gcTarima.DataSource = null;
+        
+        }
+
+        private DataTable CreateDataTarima(string pProveedor, string pNombreTarima, string pLote, string pPpresentacion)
+        {
+            DataTable dt = new DataTable();
+
+            dt.Columns.Add("Detalle", typeof(string));
+            dt.Columns.Add("Valor", typeof(string));
+
+          
+            dt.Rows.Add("TARIMA", pNombreTarima);
+            dt.Rows.Add("PROVEEDOR" ,pProveedor);
+            dt.Rows.Add("LOTE" ,pLote);
+            dt.Rows.Add("PRESENTACION",pPpresentacion);
+
+            return dt;
+        }
+
+        private void GvUbicacion_InitNewRow(object sender, DevExpress.XtraGrid.Views.Grid.InitNewRowEventArgs e)
+        {
+           gvUbicacion.SetRowCellValue(e.RowHandle, gvUbicacion.Columns["Detalle"], true);
+        }
+
+        private void BeUbicacion_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+           beUbicacion.Text = "";
+           gcUbicacion.DataSource = null;
+        }
+
+        private DataTable CreateDataUbicacion(string pRack, string pProfundidad, string pAltura, string pPasillo)
+        {
+            DataTable dt = new DataTable();
+
+            dt.Columns.Add("Detalle", typeof(string));
+            dt.Columns.Add("Valor", typeof(string));
+
+
+            dt.Rows.Add("PASILLO", pPasillo);
+            dt.Rows.Add("RACK", pRack);
+            dt.Rows.Add("ALTURA", pAltura);
+            dt.Rows.Add("PROFUNDIDAD", pProfundidad);
+
+            return dt;
         }
     }
 }

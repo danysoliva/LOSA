@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTarimas));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.gcTarima = new DevExpress.XtraGrid.GridControl();
             this.detalleTarimaBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -44,9 +44,9 @@
             this.collote_materia_prima = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltipo_tarima = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_boleta = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPresentacion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSeleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.colPresentacion = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gcTarima)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleTarimaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMP)).BeginInit();
@@ -200,9 +200,18 @@
             this.colid_boleta.Caption = "Id Boleta";
             this.colid_boleta.FieldName = "id_boleta";
             this.colid_boleta.Name = "colid_boleta";
+            this.colid_boleta.OptionsColumn.AllowEdit = false;
             this.colid_boleta.Visible = true;
             this.colid_boleta.VisibleIndex = 7;
             this.colid_boleta.Width = 103;
+            // 
+            // colPresentacion
+            // 
+            this.colPresentacion.FieldName = "presentacion";
+            this.colPresentacion.Name = "colPresentacion";
+            this.colPresentacion.OptionsColumn.AllowEdit = false;
+            this.colPresentacion.Visible = true;
+            this.colPresentacion.VisibleIndex = 5;
             // 
             // colSeleccionar
             // 
@@ -218,20 +227,12 @@
             // btnSeleccionar
             // 
             this.btnSeleccionar.AutoHeight = false;
-            editorButtonImageOptions2.Image = global::LOSA.Properties.Resources.tap;
+            editorButtonImageOptions1.Image = global::LOSA.Properties.Resources.tap;
             this.btnSeleccionar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnSeleccionar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.BtnSeleccionar_ButtonClick);
-            // 
-            // colPresentacion
-            // 
-            this.colPresentacion.FieldName = "presentacion";
-            this.colPresentacion.Name = "colPresentacion";
-            this.colPresentacion.OptionsColumn.AllowEdit = false;
-            this.colPresentacion.Visible = true;
-            this.colPresentacion.VisibleIndex = 5;
             // 
             // frmTarimas
             // 

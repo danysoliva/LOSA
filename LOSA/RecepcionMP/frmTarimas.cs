@@ -38,12 +38,11 @@ namespace LOSA.RecepcionMP
 
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
 
-                string SQL = @"exec obtenerTarimas @opcion, @codigo_barra";
+                string SQL = @"exec obtenerTarimas @codigo_barra";
 
                 dsRecepcionMP.DetalleTarima.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(SQL, cn);
 
-                adat.SelectCommand.Parameters.AddWithValue("@opcion", 0);
                 adat.SelectCommand.Parameters.AddWithValue("@codigo_barra", "");
 
                 adat.Fill(dsRecepcionMP.DetalleTarima);

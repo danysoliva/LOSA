@@ -87,6 +87,7 @@ namespace Core.Clases.Herramientas
             }
             catch (Exception ex)
             {
+                CajaDialogo.Error(ex.Message);
             }
         }
 
