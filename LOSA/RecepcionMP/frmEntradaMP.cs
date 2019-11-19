@@ -52,13 +52,12 @@ namespace LOSA.RecepcionMP
             {
                 using (connection)
                 {
-                    string SQL = "exec obtenerTarimas @opcionQuery, @codigo_barra";
+                    string SQL = "exec obtenerTarimas  @codigo_barra";
                     SqlCommand cmd = new SqlCommand();
                     SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                     cmd.Connection = connection;
                     cmd.CommandText = SQL;
 
-                    cmd.Parameters.AddWithValue("@opcionQuery", 1); //opcionQuery =1 realiza la consulta por el codigo de barra
                     cmd.Parameters.AddWithValue("@codigo_barra", beTarima.Text);
 
                     connection.Open();
