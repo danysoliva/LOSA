@@ -35,8 +35,8 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.cmdButtonSaltarLogin = new DevExpress.XtraEditors.SimpleButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.txtClave.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsuario.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -47,7 +47,7 @@
             this.cmdCerrar.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdCerrar.Appearance.Options.UseFont = true;
             this.cmdCerrar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdCerrar.Location = new System.Drawing.Point(331, 283);
+            this.cmdCerrar.Location = new System.Drawing.Point(325, 228);
             this.cmdCerrar.Name = "cmdCerrar";
             this.cmdCerrar.Size = new System.Drawing.Size(199, 71);
             this.cmdCerrar.TabIndex = 3;
@@ -63,7 +63,7 @@
             this.cmdLogin.Appearance.Options.UseBorderColor = true;
             this.cmdLogin.Appearance.Options.UseFont = true;
             this.cmdLogin.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdLogin.Location = new System.Drawing.Point(126, 283);
+            this.cmdLogin.Location = new System.Drawing.Point(120, 228);
             this.cmdLogin.Name = "cmdLogin";
             this.cmdLogin.Size = new System.Drawing.Size(199, 71);
             this.cmdLogin.TabIndex = 2;
@@ -72,7 +72,7 @@
             // 
             // txtClave
             // 
-            this.txtClave.Location = new System.Drawing.Point(195, 220);
+            this.txtClave.Location = new System.Drawing.Point(189, 165);
             this.txtClave.Name = "txtClave";
             this.txtClave.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.txtClave.Properties.Appearance.Options.UseFont = true;
@@ -84,7 +84,7 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(195, 162);
+            this.txtUsuario.Location = new System.Drawing.Point(189, 107);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Properties.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
             this.txtUsuario.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
@@ -99,7 +99,7 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(125, 165);
+            this.labelControl1.Location = new System.Drawing.Point(119, 110);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(64, 24);
             this.labelControl1.TabIndex = 8;
@@ -110,7 +110,7 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(128, 223);
+            this.labelControl2.Location = new System.Drawing.Point(122, 168);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(47, 24);
             this.labelControl2.TabIndex = 9;
@@ -126,23 +126,12 @@
             this.cmdButtonSaltarLogin.Appearance.Options.UseBorderColor = true;
             this.cmdButtonSaltarLogin.Appearance.Options.UseFont = true;
             this.cmdButtonSaltarLogin.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdButtonSaltarLogin.Location = new System.Drawing.Point(230, 371);
+            this.cmdButtonSaltarLogin.Location = new System.Drawing.Point(224, 316);
             this.cmdButtonSaltarLogin.Name = "cmdButtonSaltarLogin";
             this.cmdButtonSaltarLogin.Size = new System.Drawing.Size(199, 71);
             this.cmdButtonSaltarLogin.TabIndex = 11;
             this.cmdButtonSaltarLogin.Text = "Next";
             this.cmdButtonSaltarLogin.Click += new System.EventHandler(this.cmdButtonSaltarLogin_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::LOSA.Properties.Resources.Users_Group_icon64px;
-            this.pictureBox1.Location = new System.Drawing.Point(431, 156);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(99, 94);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // labelControl3
             // 
@@ -153,12 +142,23 @@
             this.labelControl3.Appearance.Options.UseTextOptions = true;
             this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl3.Location = new System.Drawing.Point(128, 117);
+            this.labelControl3.Location = new System.Drawing.Point(122, 62);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(402, 27);
             this.labelControl3.TabIndex = 12;
             this.labelControl3.Text = "Bienvenido";
             this.labelControl3.Click += new System.EventHandler(this.labelControl1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::LOSA.Properties.Resources.Users_Group_icon64px;
+            this.pictureBox1.Location = new System.Drawing.Point(425, 101);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(99, 94);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // frmMain
             // 

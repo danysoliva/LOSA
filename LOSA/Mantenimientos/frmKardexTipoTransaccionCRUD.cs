@@ -1,4 +1,5 @@
 ﻿using ACS.Classes;
+using Core.Clases.Herramientas;
 using LOSA.Mantenimientos.Modelos;
 using System;
 using System.Data;
@@ -70,6 +71,11 @@ namespace LOSA.Mantenimientos
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void memoDescripcion_Enter(object sender, EventArgs e)
+        {
+            Teclado.abrirTeclado();
         }
     }
 }

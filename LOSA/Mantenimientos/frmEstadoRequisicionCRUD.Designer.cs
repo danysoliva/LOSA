@@ -88,6 +88,7 @@
             this.memoDescripcion.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.memoDescripcion.Size = new System.Drawing.Size(508, 94);
             this.memoDescripcion.TabIndex = 0;
+            this.memoDescripcion.Enter += new System.EventHandler(this.memoDescripcion_Enter);
             // 
             // chkEnable
             // 

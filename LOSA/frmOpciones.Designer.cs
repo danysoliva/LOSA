@@ -44,6 +44,7 @@
             this.btnEstadosProgramacionesRequisiciones = new DevExpress.XtraEditors.SimpleButton();
             this.btnTiposPresentaciones = new DevExpress.XtraEditors.SimpleButton();
             this.btnBodegas = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdRegistroLote = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -53,6 +54,7 @@
             // 
             // simpleButton1
             // 
+            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
@@ -81,6 +83,7 @@
             // 
             // simpleButton2
             // 
+            this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton2.Appearance.Options.UseFont = true;
             this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
@@ -121,6 +124,7 @@
             // 
             // TabLogistica
             // 
+            this.TabLogistica.Controls.Add(this.cmdRegistroLote);
             this.TabLogistica.Controls.Add(this.simpleButton3);
             this.TabLogistica.Controls.Add(this.cmdRecepcionMPLogistica);
             this.TabLogistica.Image = global::LOSA.Properties.Resources.box;
@@ -131,6 +135,7 @@
             // 
             // simpleButton3
             // 
+            this.simpleButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton3.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton3.Appearance.Options.UseFont = true;
             this.simpleButton3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
@@ -140,18 +145,21 @@
             this.simpleButton3.Size = new System.Drawing.Size(199, 71);
             this.simpleButton3.TabIndex = 8;
             this.simpleButton3.Text = "Mantenimiento";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // cmdRecepcionMPLogistica
             // 
+            this.cmdRecepcionMPLogistica.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdRecepcionMPLogistica.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdRecepcionMPLogistica.Appearance.Options.UseFont = true;
             this.cmdRecepcionMPLogistica.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdRecepcionMPLogistica.ImageOptions.Image = global::LOSA.Properties.Resources.check_in;
-            this.cmdRecepcionMPLogistica.Location = new System.Drawing.Point(207, 48);
+            this.cmdRecepcionMPLogistica.Location = new System.Drawing.Point(424, 223);
             this.cmdRecepcionMPLogistica.Name = "cmdRecepcionMPLogistica";
             this.cmdRecepcionMPLogistica.Size = new System.Drawing.Size(199, 71);
             this.cmdRecepcionMPLogistica.TabIndex = 9;
             this.cmdRecepcionMPLogistica.Text = "Recepción MP";
+            this.cmdRecepcionMPLogistica.Visible = false;
             this.cmdRecepcionMPLogistica.Click += new System.EventHandler(this.cmdRecepcionMPLogistica_Click);
             // 
             // TabCalidad
@@ -241,6 +249,20 @@
             this.btnBodegas.Text = "Bodegas";
             this.btnBodegas.Click += new System.EventHandler(this.BtnBodegas_Click);
             // 
+            // cmdRegistroLote
+            // 
+            this.cmdRegistroLote.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdRegistroLote.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdRegistroLote.Appearance.Options.UseFont = true;
+            this.cmdRegistroLote.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdRegistroLote.ImageOptions.Image = global::LOSA.Properties.Resources.edit_table_1_;
+            this.cmdRegistroLote.Location = new System.Drawing.Point(424, 137);
+            this.cmdRegistroLote.Name = "cmdRegistroLote";
+            this.cmdRegistroLote.Size = new System.Drawing.Size(199, 71);
+            this.cmdRegistroLote.TabIndex = 10;
+            this.cmdRegistroLote.Text = "Registro Lote";
+            this.cmdRegistroLote.Click += new System.EventHandler(this.cmdRegistroLote_Click);
+            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -279,5 +301,6 @@
         private DevExpress.XtraEditors.SimpleButton btnEstadosProgramacionesRequisiciones;
         private DevExpress.XtraEditors.SimpleButton btnKardexTiposTransacciones;
         private DevExpress.XtraEditors.SimpleButton btnEstadosRequisiciones;
+        private DevExpress.XtraEditors.SimpleButton cmdRegistroLote;
     }
 }

@@ -33,24 +33,31 @@ namespace LOSA.RecepcionMP
             cargarDatos();
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            
-        }
+        private void simpleButton1_Click(object sender, EventArgs e){ }
 
        void cargarDatos()
         {
             try
             {
+                //Roger
+                //SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
 
-                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                //string SQL = @"exec sp_getBoletasBascula";
 
-                string SQL = @"exec sp_getBoletasBascula";
+                //dsRecepcionMP.Bascula.Clear();
+                //SqlDataAdapter adat = new SqlDataAdapter(SQL, cn);
+                //adat.Fill(dsRecepcionMP.Bascula);
 
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_getBoletasBascula", con);
+                cmd.CommandType = CommandType.StoredProcedure;
                 dsRecepcionMP.Bascula.Clear();
-                SqlDataAdapter adat = new SqlDataAdapter(SQL, cn);
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 adat.Fill(dsRecepcionMP.Bascula);
-
+                con.Close();
             }
             catch (Exception ec)
             {

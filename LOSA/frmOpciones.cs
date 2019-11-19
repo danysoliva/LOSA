@@ -37,7 +37,8 @@ namespace LOSA
         private void cmdRecepcionMPLogistica_Click(object sender, EventArgs e)
         {
             //
-            frmRecepcionMP frm = new frmRecepcionMP();
+            //frmRecepcionMP frm = new frmRecepcionMP();
+            frmTarima frm = new frmTarima();
             frm.Show();
         }
 
@@ -68,6 +69,23 @@ namespace LOSA
         private void BtnEstadosRequisiciones_Click(object sender, EventArgs e)
         {
             frmEstadoRequisicion frm = new frmEstadoRequisicion();
+            frm.Show();
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmdRegistroLote_Click(object sender, EventArgs e)
+        {
+            frmTarima frm = new frmTarima();
+            frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
     }

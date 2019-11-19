@@ -101,6 +101,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Boleta.cs" />
     <Compile Include="Clases\CajaDialogo.cs" />
     <Compile Include="Clases\DataOperations.cs" />
     <Compile Include="Clases\Globals.cs" />
@@ -214,6 +215,12 @@
     <Compile Include="RecepcionMP\frmRecepcionMP.Designer.cs">
       <DependentUpon>frmRecepcionMP.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecepcionMP\frmTarima.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmTarima.Designer.cs">
+      <DependentUpon>frmTarima.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -270,6 +277,9 @@
     <EmbeddedResource Include="RecepcionMP\frmRecepcionMP.resx">
       <DependentUpon>frmRecepcionMP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frmTarima.resx">
+      <DependentUpon>frmTarima.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Mantenimientos\dsMantenimiento.xsc">
       <DependentUpon>dsMantenimiento.xsd</DependentUpon>
     </None>
@@ -314,6 +324,7 @@
     <Content Include="Resources\cancel.png" />
     <Content Include="Resources\cargo.png" />
     <Content Include="Resources\check-in.png" />
+    <None Include="Resources\edit-table%281%29.png" />
     <Content Include="Resources\edit.png" />
     <Content Include="Resources\key.png" />
     <Content Include="Resources\medal.png" />

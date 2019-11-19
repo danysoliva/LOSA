@@ -52,6 +52,7 @@
             this.txtDescripcionCorta.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDescripcionCorta.Size = new System.Drawing.Size(512, 28);
             this.txtDescripcionCorta.TabIndex = 1;
+            this.txtDescripcionCorta.Enter += new System.EventHandler(this.txtDescripcionCorta_Enter);
             // 
             // labelControl3
             // 
@@ -98,6 +99,7 @@
             this.memoDescripcion.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.memoDescripcion.Size = new System.Drawing.Size(614, 91);
             this.memoDescripcion.TabIndex = 0;
+            this.memoDescripcion.Enter += new System.EventHandler(this.memoDescripcion_Enter);
             // 
             // btnAtras
             // 

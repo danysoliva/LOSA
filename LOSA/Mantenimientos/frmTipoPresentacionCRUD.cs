@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using LOSA.Mantenimientos.Modelos;
 using System.Data.SqlClient;
 using ACS.Classes;
+using Core.Clases.Herramientas;
 
 namespace LOSA.Mantenimientos
 {
@@ -69,6 +70,11 @@ namespace LOSA.Mantenimientos
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void memoDescripcion_EditValueChanged(object sender, EventArgs e)
+        {
+            Teclado.abrirTeclado();
         }
     }
 }

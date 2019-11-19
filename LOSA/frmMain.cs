@@ -32,7 +32,7 @@ namespace LOSA
         {
             Teclado.cerrarTeclado();
             UserLogin Log1 = new UserLogin();
-            Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Administradores;
+            Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Logistica;
             frmOpciones frm = new frmOpciones(Log1);
             frm.Show();
             //this.Close();
