@@ -35,6 +35,7 @@
             this.tabOpciones = new DevExpress.XtraTab.XtraTabControl();
             this.TabMontacarga = new DevExpress.XtraTab.XtraTabPage();
             this.TabLogistica = new DevExpress.XtraTab.XtraTabPage();
+            this.cmdRegistroLote = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdRecepcionMPLogistica = new DevExpress.XtraEditors.SimpleButton();
             this.TabCalidad = new DevExpress.XtraTab.XtraTabPage();
@@ -44,7 +45,6 @@
             this.btnEstadosProgramacionesRequisiciones = new DevExpress.XtraEditors.SimpleButton();
             this.btnTiposPresentaciones = new DevExpress.XtraEditors.SimpleButton();
             this.btnBodegas = new DevExpress.XtraEditors.SimpleButton();
-            this.cmdRegistroLote = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -93,6 +93,7 @@
             this.simpleButton2.Size = new System.Drawing.Size(199, 71);
             this.simpleButton2.TabIndex = 7;
             this.simpleButton2.Text = "Recepción MP";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // tabOpciones
             // 
@@ -132,6 +133,20 @@
             this.TabLogistica.PageVisible = false;
             this.TabLogistica.Size = new System.Drawing.Size(629, 422);
             this.TabLogistica.Text = "Logistica";
+            // 
+            // cmdRegistroLote
+            // 
+            this.cmdRegistroLote.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdRegistroLote.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdRegistroLote.Appearance.Options.UseFont = true;
+            this.cmdRegistroLote.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdRegistroLote.ImageOptions.Image = global::LOSA.Properties.Resources.edit_table_1_;
+            this.cmdRegistroLote.Location = new System.Drawing.Point(424, 137);
+            this.cmdRegistroLote.Name = "cmdRegistroLote";
+            this.cmdRegistroLote.Size = new System.Drawing.Size(199, 71);
+            this.cmdRegistroLote.TabIndex = 10;
+            this.cmdRegistroLote.Text = "Registro Lote";
+            this.cmdRegistroLote.Click += new System.EventHandler(this.cmdRegistroLote_Click);
             // 
             // simpleButton3
             // 
@@ -248,20 +263,6 @@
             this.btnBodegas.TabIndex = 5;
             this.btnBodegas.Text = "Bodegas";
             this.btnBodegas.Click += new System.EventHandler(this.BtnBodegas_Click);
-            // 
-            // cmdRegistroLote
-            // 
-            this.cmdRegistroLote.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmdRegistroLote.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdRegistroLote.Appearance.Options.UseFont = true;
-            this.cmdRegistroLote.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdRegistroLote.ImageOptions.Image = global::LOSA.Properties.Resources.edit_table_1_;
-            this.cmdRegistroLote.Location = new System.Drawing.Point(424, 137);
-            this.cmdRegistroLote.Name = "cmdRegistroLote";
-            this.cmdRegistroLote.Size = new System.Drawing.Size(199, 71);
-            this.cmdRegistroLote.TabIndex = 10;
-            this.cmdRegistroLote.Text = "Registro Lote";
-            this.cmdRegistroLote.Click += new System.EventHandler(this.cmdRegistroLote_Click);
             // 
             // frmOpciones
             // 

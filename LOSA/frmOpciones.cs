@@ -15,9 +15,11 @@ namespace LOSA
 {
     public partial class frmOpciones : Form
     {
+        UserLogin UsuarioLogeado;
         public frmOpciones(UserLogin pUser)
         {
             InitializeComponent();
+            UsuarioLogeado = pUser;
             int i = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
             tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
             tabOpciones.TabPages[i].PageVisible = true;
@@ -38,7 +40,7 @@ namespace LOSA
         {
             //
             //frmRecepcionMP frm = new frmRecepcionMP();
-            frmTarima frm = new frmTarima();
+            frmTarima frm = new frmTarima(UsuarioLogeado);
             frm.Show();
         }
 
@@ -84,7 +86,14 @@ namespace LOSA
 
         private void cmdRegistroLote_Click(object sender, EventArgs e)
         {
-            frmTarima frm = new frmTarima();
+            frmTarima frm = new frmTarima(UsuarioLogeado);
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            frmEntradaMP frm = new frmEntradaMP();
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }

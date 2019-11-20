@@ -172,6 +172,25 @@ namespace ACS.Classes
         //    return oCmp;
         //}
 
+        public DateTime dNow()
+        {
+            DateTime val = DateTime.Now;
+            try
+            {
+                SqlConnection con = new SqlConnection(ConnectionStringLOSA);
+                con.Open();
+                string sql = @"SELECT getdate()";
+                SqlCommand cmd = new SqlCommand(sql, con);
+                //cmd.CommandType = CommandType.StoredProcedure;
+                val = Convert.ToDateTime(cmd.ExecuteScalar());
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+            return val;
+        }
 
         public string GetConnectionString() 
         {
