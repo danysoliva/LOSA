@@ -23,14 +23,17 @@ namespace LOSA.RecepcionMP
         SqlConnection cnn1 = new SqlConnection();
         private int _idSerie;
         private int _NumBoleta;
+        private string _ItemCode;
 
         public int IdSerie { get { return _idSerie; } set { _idSerie = value; } }
         public int NumBoleta { get { return _NumBoleta; } set { _NumBoleta = value; } }
 
+        public string ItemCode { get => _ItemCode; set => _ItemCode = value; }
+
         public FrmBoleta()
         {
             InitializeComponent();
-            cargarDatos();
+            //cargarDatos();
         }
 
         private void simpleButton1_Click(object sender, EventArgs e){ }
@@ -61,7 +64,7 @@ namespace LOSA.RecepcionMP
             }
             catch (Exception ec)
             {
-                MessageBox.Show(ec.Message);
+                CajaDialogo.Error(ec.Message);
             }
         }
 
@@ -79,8 +82,14 @@ namespace LOSA.RecepcionMP
 
             this.IdSerie = row.IDSerie;
             this.NumBoleta = row.NBoleta;
+            this.ItemCode = row.itemcode;
             this.DialogResult = DialogResult.OK;
             this.Close();
+        }
+
+        private void FrmBoleta_Load(object sender, EventArgs e)
+        {
+            cargarDatos();
         }
     }
 }

@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.basculaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.basculaBindingSource1 = new System.Windows.Forms.BindingSource();
             this.dsRecepcionMP = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.gvBascula = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colIDSerie = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -41,8 +40,9 @@
             this.colestadoDescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSeleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.basculaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.basculaBindingSource = new System.Windows.Forms.BindingSource();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.colitemcode = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.basculaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMP)).BeginInit();
@@ -101,7 +101,8 @@
             this.colidtipo,
             this.colestado,
             this.colestadoDescripcion,
-            this.colSeleccionar});
+            this.colSeleccionar,
+            this.colitemcode});
             this.gvBascula.GridControl = this.gridControl1;
             this.gvBascula.Name = "gvBascula";
             this.gvBascula.OptionsView.ShowAutoFilterRow = true;
@@ -191,6 +192,11 @@
             this.simpleButton1.Text = "Cancelar";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_1);
             // 
+            // colitemcode
+            // 
+            this.colitemcode.FieldName = "itemcode";
+            this.colitemcode.Name = "colitemcode";
+            // 
             // FrmBoleta
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -206,6 +212,7 @@
             this.Text = "FrmBascula";
             this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmBoleta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.basculaBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMP)).EndInit();
@@ -233,5 +240,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnSeleccionar;
         private System.Windows.Forms.BindingSource basculaBindingSource1;
         private RecepcionMP.dsRecepcionMPx dsRecepcionMP;
+        private DevExpress.XtraGrid.Columns.GridColumn colitemcode;
     }
 }

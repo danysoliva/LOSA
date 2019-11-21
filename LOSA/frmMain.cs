@@ -15,7 +15,7 @@ namespace LOSA
 {
     public partial class frmMain : Form
     {
-        
+        int IdUser;
         public frmMain()
         {
             InitializeComponent();
@@ -32,7 +32,15 @@ namespace LOSA
         {
             Teclado.cerrarTeclado();
             UserLogin Log1 = new UserLogin();
-            Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Logistica;
+            if (Log1.RecuperarRegistro(1035))
+            {
+                Log1.GrupoUsuario.GrupoUsuarioActivo = (GrupoUser.GrupoUsuario)Log1.IdGrupo;
+            }
+            else
+            {
+                Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Montacarga;
+            }
+            
             frmOpciones frm = new frmOpciones(Log1);
             frm.Show();
             //this.Close();

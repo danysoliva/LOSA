@@ -18,20 +18,50 @@ namespace LOSA.RecepcionMP
     {
         int IdSerie;
         int NumBoleta;
-        public frmTarima()
+        int IdMP;
+        string ItemCode;
+        UserLogin UsuarioLogeado;
+        public frmTarima(UserLogin pUser)
         {
             InitializeComponent();
+            DataOperations dp = new DataOperations();
+            dtFechaIngreso.EditValue = dp.dNow();
+            UsuarioLogeado = pUser;
+            LoadPresentaciones();
+
+        }
+
+        private void LoadPresentaciones()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_presentaciones_activas", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                dsRecepcionMPx1.presentaciones.Clear();
+                adat.Fill(dsRecepcionMPx1.presentaciones);
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             FrmBoleta frm = new FrmBoleta();
+            frm.WindowState = FormWindowState.Maximized;
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 txtIdBoleta.Text = frm.NumBoleta.ToString();
                 this.IdSerie = frm.IdSerie;
                 this.NumBoleta = frm.NumBoleta;
-
+                this.ItemCode = frm.ItemCode;
                 LoadDatosBoleta();
             }
         }
@@ -120,6 +150,83 @@ namespace LOSA.RecepcionMP
         private void btnAtras_Click_1(object sender, EventArgs e)
         {
             Teclado.cerrarTeclado();
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+
+        private void frmTarima_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmdGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmm = new SqlCommand("sp_generar_codigo_from_tables_id", con);
+                cmm.CommandType = CommandType.StoredProcedure;
+                cmm.Parameters.AddWithValue("@id", 1);
+                string barcode = cmm.ExecuteScalar().ToString();
+
+                SqlCommand cmd = new SqlCommand("sp_insert_new_tarima", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_proveedor", txtCodigoProveedor.Text);
+                cmd.Parameters.AddWithValue("@fecha_ingreso", dtFechaIngreso.EditValue);
+                cmd.Parameters.AddWithValue("@numero_transaccion", txtNumIngreso.Text);
+                cmd.Parameters.AddWithValue("@fecha_vencimiento", dtFechaVencimiento.EditValue);
+                cmd.Parameters.AddWithValue("@fecha_produccion_materia_prima", dtFechaProduccion.EditValue);
+                cmd.Parameters.AddWithValue("@lote_materia_prima", txtLote.Text);
+                cmd.Parameters.AddWithValue("@id_presentacion", gridLookUpEditPresentacion.EditValue);
+                cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
+                cmd.Parameters.AddWithValue("@id_boleta", txtNumIngreso.Text);
+                cmd.Parameters.AddWithValue("@codigo_barra", barcode);
+                cmd.Parameters.AddWithValue("@cant", txtCantidadT.Text);
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
+
+        private void txtCantidadT_Enter(object sender, EventArgs e)
+        {
+            Teclado.abrirTeclado();
+        }
+
+        private void txtNumIngreso_Enter(object sender, EventArgs e)
+        {
+            Teclado.abrirTeclado();
+        }
+
+        private void txtLote_Enter(object sender, EventArgs e)
+        {
+            Teclado.abrirTeclado();
+        }
+
+        private void txtCantidadT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }
