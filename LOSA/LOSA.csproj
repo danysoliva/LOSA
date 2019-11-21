@@ -79,7 +79,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>logo1.ico</ApplicationIcon>
@@ -137,7 +137,10 @@
     <Compile Include="Clases\CajaDialogo.cs" />
     <Compile Include="Clases\DataOperations.cs" />
     <Compile Include="Clases\Globals.cs" />
+    <Compile Include="Clases\Tarima.cs" />
     <Compile Include="Clases\Teclado.cs" />
+    <Compile Include="Clases\Ubicaciones.cs" />
+    <Compile Include="Clases\Ubicacion_Tarima.cs" />
     <Compile Include="Clases\UserLogin.cs" />
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -244,6 +247,12 @@
     <Compile Include="RecepcionMP\FrmBoleta.Designer.cs">
       <DependentUpon>FrmBoleta.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecepcionMP\frmCambiarUbicacionTarima.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmCambiarUbicacionTarima.Designer.cs">
+      <DependentUpon>frmCambiarUbicacionTarima.cs</DependentUpon>
+    </Compile>
     <Compile Include="RecepcionMP\frmEntradaMP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -326,6 +335,9 @@
     </Compile>
     <EmbeddedResource Include="RecepcionMP\FrmBoleta.resx">
       <DependentUpon>FrmBoleta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frmCambiarUbicacionTarima.resx">
+      <DependentUpon>frmCambiarUbicacionTarima.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmEntradaMP.resx">
       <DependentUpon>frmEntradaMP.cs</DependentUpon>

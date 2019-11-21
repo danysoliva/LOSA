@@ -93,8 +93,14 @@ namespace LOSA
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            frmEntradaMP frm = new frmEntradaMP();
+            frmEntradaMP frm = new frmEntradaMP(UsuarioLogeado);
             frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+        private void BtnCambiarUbicacion_Click(object sender, EventArgs e)
+        {
+            frmCambiarUbicacionTarima frm = new frmCambiarUbicacionTarima();
             frm.Show();
         }
     }

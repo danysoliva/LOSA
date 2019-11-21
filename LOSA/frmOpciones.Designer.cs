@@ -45,6 +45,7 @@
             this.btnEstadosProgramacionesRequisiciones = new DevExpress.XtraEditors.SimpleButton();
             this.btnTiposPresentaciones = new DevExpress.XtraEditors.SimpleButton();
             this.btnBodegas = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCambiarUbicacion = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -115,6 +116,7 @@
             // 
             // TabMontacarga
             // 
+            this.TabMontacarga.Controls.Add(this.btnCambiarUbicacion);
             this.TabMontacarga.Controls.Add(this.simpleButton1);
             this.TabMontacarga.Controls.Add(this.simpleButton2);
             this.TabMontacarga.Image = ((System.Drawing.Image)(resources.GetObject("TabMontacarga.Image")));
@@ -264,6 +266,22 @@
             this.btnBodegas.Text = "Bodegas";
             this.btnBodegas.Click += new System.EventHandler(this.BtnBodegas_Click);
             // 
+            // btnCambiarUbicacion
+            // 
+            this.btnCambiarUbicacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCambiarUbicacion.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCambiarUbicacion.Appearance.Options.UseFont = true;
+            this.btnCambiarUbicacion.Appearance.Options.UseTextOptions = true;
+            this.btnCambiarUbicacion.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnCambiarUbicacion.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnCambiarUbicacion.ImageOptions.Image = global::LOSA.Properties.Resources.check_in;
+            this.btnCambiarUbicacion.Location = new System.Drawing.Point(415, 200);
+            this.btnCambiarUbicacion.Name = "btnCambiarUbicacion";
+            this.btnCambiarUbicacion.Size = new System.Drawing.Size(199, 71);
+            this.btnCambiarUbicacion.TabIndex = 8;
+            this.btnCambiarUbicacion.Text = "Cambiar Ubicacion";
+            this.btnCambiarUbicacion.Click += new System.EventHandler(this.BtnCambiarUbicacion_Click);
+            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -303,5 +321,6 @@
         private DevExpress.XtraEditors.SimpleButton btnKardexTiposTransacciones;
         private DevExpress.XtraEditors.SimpleButton btnEstadosRequisiciones;
         private DevExpress.XtraEditors.SimpleButton cmdRegistroLote;
+        private DevExpress.XtraEditors.SimpleButton btnCambiarUbicacion;
     }
 }

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEntradaMP));
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -43,12 +43,17 @@
             this.gvTarima = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gcUbicacion = new DevExpress.XtraGrid.GridControl();
             this.gvUbicacion = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
+            this.dtFecha = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.beTarima.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.beUbicacion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcTarima)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTarima)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcUbicacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvUbicacion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFecha.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFecha.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -57,7 +62,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(72, 113);
+            this.labelControl1.Location = new System.Drawing.Point(15, 167);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(57, 21);
             this.labelControl1.TabIndex = 4;
@@ -69,7 +74,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(72, 328);
+            this.labelControl2.Location = new System.Drawing.Point(13, 358);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(81, 21);
             this.labelControl2.TabIndex = 5;
@@ -110,7 +115,7 @@
             this.btnUbicacion.Appearance.Options.UseFont = true;
             this.btnUbicacion.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnUbicacion.ImageOptions.Image = global::LOSA.Properties.Resources.tap;
-            this.btnUbicacion.Location = new System.Drawing.Point(468, 318);
+            this.btnUbicacion.Location = new System.Drawing.Point(413, 350);
             this.btnUbicacion.Name = "btnUbicacion";
             this.btnUbicacion.Size = new System.Drawing.Size(42, 40);
             this.btnUbicacion.TabIndex = 11;
@@ -123,7 +128,7 @@
             this.cmdSelectTarima.Appearance.Options.UseFont = true;
             this.cmdSelectTarima.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdSelectTarima.ImageOptions.Image = global::LOSA.Properties.Resources.tap;
-            this.cmdSelectTarima.Location = new System.Drawing.Point(468, 103);
+            this.cmdSelectTarima.Location = new System.Drawing.Point(411, 160);
             this.cmdSelectTarima.Name = "cmdSelectTarima";
             this.cmdSelectTarima.Size = new System.Drawing.Size(42, 40);
             this.cmdSelectTarima.TabIndex = 10;
@@ -135,13 +140,13 @@
             this.beTarima.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.beTarima.EditValue = "";
-            this.beTarima.Location = new System.Drawing.Point(135, 105);
+            this.beTarima.Location = new System.Drawing.Point(78, 162);
             this.beTarima.Name = "beTarima";
             this.beTarima.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.beTarima.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
             this.beTarima.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions3, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.beTarima.Properties.NullText = "Escanee o selecciona una tarima";
             this.beTarima.Size = new System.Drawing.Size(327, 38);
             this.beTarima.TabIndex = 28;
@@ -153,13 +158,13 @@
             // 
             this.beUbicacion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.beUbicacion.Location = new System.Drawing.Point(159, 320);
+            this.beUbicacion.Location = new System.Drawing.Point(104, 352);
             this.beUbicacion.Name = "beUbicacion";
             this.beUbicacion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.beUbicacion.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.beUbicacion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.beUbicacion.Size = new System.Drawing.Size(303, 38);
             this.beUbicacion.TabIndex = 29;
             this.beUbicacion.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.BeUbicacion_ButtonClick);
@@ -171,10 +176,10 @@
             this.gcTarima.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gcTarima.EmbeddedNavigator.Appearance.BackColor = System.Drawing.SystemColors.Control;
             this.gcTarima.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
-            this.gcTarima.Location = new System.Drawing.Point(69, 154);
+            this.gcTarima.Location = new System.Drawing.Point(12, 211);
             this.gcTarima.MainView = this.gvTarima;
             this.gcTarima.Name = "gcTarima";
-            this.gcTarima.Size = new System.Drawing.Size(485, 116);
+            this.gcTarima.Size = new System.Drawing.Size(441, 116);
             this.gcTarima.TabIndex = 32;
             this.gcTarima.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTarima});
@@ -339,10 +344,10 @@
             this.gcUbicacion.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gcUbicacion.EmbeddedNavigator.Appearance.BackColor = System.Drawing.SystemColors.Control;
             this.gcUbicacion.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
-            this.gcUbicacion.Location = new System.Drawing.Point(69, 364);
+            this.gcUbicacion.Location = new System.Drawing.Point(14, 396);
             this.gcUbicacion.MainView = this.gvUbicacion;
             this.gcUbicacion.Name = "gcUbicacion";
-            this.gcUbicacion.Size = new System.Drawing.Size(485, 116);
+            this.gcUbicacion.Size = new System.Drawing.Size(441, 116);
             this.gcUbicacion.TabIndex = 33;
             this.gcUbicacion.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvUbicacion});
@@ -502,11 +507,55 @@
             this.gvUbicacion.PaintStyleName = "Flat";
             this.gvUbicacion.InitNewRow += new DevExpress.XtraGrid.Views.Grid.InitNewRowEventHandler(this.GvUbicacion_InitNewRow);
             // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardar.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Appearance.Options.UseFont = true;
+            this.btnGuardar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.Image")));
+            this.btnGuardar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
+            this.btnGuardar.Location = new System.Drawing.Point(479, 97);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(131, 71);
+            this.btnGuardar.TabIndex = 34;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
+            // 
+            // dtFecha
+            // 
+            this.dtFecha.EditValue = null;
+            this.dtFecha.Location = new System.Drawing.Point(69, 94);
+            this.dtFecha.Name = "dtFecha";
+            this.dtFecha.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtFecha.Properties.Appearance.Options.UseFont = true;
+            this.dtFecha.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtFecha.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtFecha.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.TouchUI;
+            this.dtFecha.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.dtFecha.Size = new System.Drawing.Size(142, 30);
+            this.dtFecha.TabIndex = 40;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Location = new System.Drawing.Point(15, 99);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(48, 21);
+            this.labelControl4.TabIndex = 41;
+            this.labelControl4.Text = "Fecha:";
+            // 
             // frmEntradaMP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(622, 521);
+            this.Controls.Add(this.labelControl4);
+            this.Controls.Add(this.dtFecha);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.gcUbicacion);
             this.Controls.Add(this.gcTarima);
             this.Controls.Add(this.beUbicacion);
@@ -528,6 +577,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvTarima)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcUbicacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvUbicacion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFecha.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFecha.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -546,5 +597,8 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gvTarima;
         private DevExpress.XtraGrid.GridControl gcUbicacion;
         private DevExpress.XtraGrid.Views.Grid.GridView gvUbicacion;
+        private DevExpress.XtraEditors.SimpleButton btnGuardar;
+        private DevExpress.XtraEditors.DateEdit dtFecha;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
     }
 }
