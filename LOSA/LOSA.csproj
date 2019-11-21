@@ -209,6 +209,12 @@
     <Compile Include="RecepcionMP\FrmBoleta.Designer.cs">
       <DependentUpon>FrmBoleta.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecepcionMP\frmEntradaMP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmEntradaMP.Designer.cs">
+      <DependentUpon>frmEntradaMP.cs</DependentUpon>
+    </Compile>
     <Compile Include="RecepcionMP\frmRecepcionMP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,6 +226,18 @@
     </Compile>
     <Compile Include="RecepcionMP\frmTarima.Designer.cs">
       <DependentUpon>frmTarima.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecepcionMP\frmTarimas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmTarimas.Designer.cs">
+      <DependentUpon>frmTarimas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecepcionMP\frmUbicacionTarima.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmUbicacionTarima.Designer.cs">
+      <DependentUpon>frmUbicacionTarima.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -274,11 +292,20 @@
     <EmbeddedResource Include="RecepcionMP\FrmBoleta.resx">
       <DependentUpon>FrmBoleta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frmEntradaMP.resx">
+      <DependentUpon>frmEntradaMP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmRecepcionMP.resx">
       <DependentUpon>frmRecepcionMP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmTarima.resx">
       <DependentUpon>frmTarima.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frmTarimas.resx">
+      <DependentUpon>frmTarimas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frmUbicacionTarima.resx">
+      <DependentUpon>frmUbicacionTarima.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Mantenimientos\dsMantenimiento.xsc">
       <DependentUpon>dsMantenimiento.xsd</DependentUpon>
