@@ -195,8 +195,6 @@
             // 
             // txtMP_Name
             // 
-            this.txtMP_Name.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMP_Name.EditValue = "";
             this.txtMP_Name.Enabled = false;
             this.txtMP_Name.Location = new System.Drawing.Point(335, 161);
@@ -211,8 +209,6 @@
             // 
             // txtProveedorName
             // 
-            this.txtProveedorName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtProveedorName.EditValue = "";
             this.txtProveedorName.Enabled = false;
             this.txtProveedorName.Location = new System.Drawing.Point(335, 193);
@@ -270,6 +266,7 @@
             this.dtFechaIngreso.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtFechaIngreso.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.TouchUI;
+            this.dtFechaIngreso.Properties.MinValue = new System.DateTime(2019, 11, 1, 0, 0, 0, 0);
             this.dtFechaIngreso.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
             this.dtFechaIngreso.Size = new System.Drawing.Size(142, 30);
             this.dtFechaIngreso.TabIndex = 39;
@@ -286,14 +283,14 @@
             // 
             // txtNumIngreso
             // 
-            this.txtNumIngreso.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNumIngreso.EditValue = "";
             this.txtNumIngreso.Location = new System.Drawing.Point(456, 286);
             this.txtNumIngreso.Name = "txtNumIngreso";
             this.txtNumIngreso.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumIngreso.Properties.Appearance.Options.UseFont = true;
             this.txtNumIngreso.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtNumIngreso.Properties.ReadOnly = true;
+            this.txtNumIngreso.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtNumIngreso.Size = new System.Drawing.Size(170, 32);
             this.txtNumIngreso.TabIndex = 41;
             this.txtNumIngreso.Enter += new System.EventHandler(this.txtNumIngreso_Enter);
@@ -310,12 +307,13 @@
             // 
             // txtCantidadT
             // 
-            this.txtCantidadT.EditValue = "";
+            this.txtCantidadT.EditValue = "0";
             this.txtCantidadT.Location = new System.Drawing.Point(187, 286);
             this.txtCantidadT.Name = "txtCantidadT";
             this.txtCantidadT.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCantidadT.Properties.Appearance.Options.UseFont = true;
             this.txtCantidadT.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCantidadT.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtCantidadT.Size = new System.Drawing.Size(142, 32);
             this.txtCantidadT.TabIndex = 42;
             this.txtCantidadT.Enter += new System.EventHandler(this.txtCantidadT_Enter);
@@ -333,6 +331,7 @@
             this.dtFechaProduccion.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtFechaProduccion.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.TouchUI;
+            this.dtFechaProduccion.Properties.MinValue = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
             this.dtFechaProduccion.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
             this.dtFechaProduccion.Size = new System.Drawing.Size(142, 30);
             this.dtFechaProduccion.TabIndex = 45;
@@ -393,12 +392,14 @@
             this.txtLote.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLote.Properties.Appearance.Options.UseFont = true;
             this.txtLote.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtLote.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtLote.Size = new System.Drawing.Size(170, 32);
             this.txtLote.TabIndex = 48;
             this.txtLote.Enter += new System.EventHandler(this.txtLote_Enter);
             // 
             // cmdGuardar
             // 
+            this.cmdGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdGuardar.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
             this.cmdGuardar.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdGuardar.Appearance.Options.UseBackColor = true;
@@ -441,6 +442,8 @@
             // 
             // gridLookUpEdit1View
             // 
+            this.gridLookUpEdit1View.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridLookUpEdit1View.Appearance.Row.Options.UseFont = true;
             this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colid,
             this.coldescripcion});

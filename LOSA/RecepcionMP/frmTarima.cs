@@ -26,9 +26,30 @@ namespace LOSA.RecepcionMP
             InitializeComponent();
             DataOperations dp = new DataOperations();
             dtFechaIngreso.EditValue = dp.dNow();
+            dtFechaVencimiento.Properties.MinValue = dtFechaIngreso.Properties.MinValue = dp.Now();
             UsuarioLogeado = pUser;
             LoadPresentaciones();
+            LoadNumeroTransaccion();
+        }
 
+        private void LoadNumeroTransaccion()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+                SqlCommand cmm2 = new SqlCommand("sp_generar_codigo_from_tables_id", con);
+                cmm2.CommandType = CommandType.StoredProcedure;
+                cmm2.Parameters.AddWithValue("@id", 2);
+                string num_ingreso = cmm2.ExecuteScalar().ToString();
+                txtNumIngreso.Text = num_ingreso;
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
         }
 
         private void LoadPresentaciones()
@@ -161,6 +182,42 @@ namespace LOSA.RecepcionMP
 
         private void cmdGuardar_Click(object sender, EventArgs e)
         {
+            if (IdSerie <= 0)
+            {
+                CajaDialogo.Error("No se puede registrar una tarima sin la boleta de bascula!");
+                return;
+            }
+
+            if (Convert.ToDecimal(txtCantidadT.Text) <= 0)
+            {
+                CajaDialogo.Error("No se puede registrar una tarima con cantidad de materia en cero (0)!");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(gridLookUpEditPresentacion.Text))
+            {
+                CajaDialogo.Error("Es necesario seleccionar la presentacion de la Materia Prima!");
+                return;
+            }
+            
+            if (string.IsNullOrEmpty(txtLote.Text))
+            {
+                CajaDialogo.Error("Es obligatorio llenar el lote para la tarima!");
+                return;
+            }
+            //
+            //if (string.IsNullOrEmpty(dtFechaProduccion.Text))
+            //{
+            //    CajaDialogo.Error("Es obligatorio llenar el lote para la tarima!");
+            //    return;
+            //}
+            
+            if (string.IsNullOrEmpty(dtFechaVencimiento.Text))
+            {
+                CajaDialogo.Error("Es obligatorio llenar la fecha de vencimiento de la materia prima!");
+                return;
+            }
+
             try
             {
                 DataOperations dp = new DataOperations();
@@ -174,6 +231,7 @@ namespace LOSA.RecepcionMP
 
                 SqlCommand cmd = new SqlCommand("sp_insert_new_tarima", con);
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@itemcode", this.ItemCode);
                 cmd.Parameters.AddWithValue("@id_proveedor", txtCodigoProveedor.Text);
                 cmd.Parameters.AddWithValue("@fecha_ingreso", dtFechaIngreso.EditValue);
                 cmd.Parameters.AddWithValue("@numero_transaccion", txtNumIngreso.Text);
@@ -187,6 +245,8 @@ namespace LOSA.RecepcionMP
                 cmd.Parameters.AddWithValue("@cant", txtCantidadT.Text);
                 cmd.ExecuteNonQuery();
                 con.Close();
+                //CajaDialogo.InformationAuto();
+                this.Close();
             }
             catch (Exception ec)
             {
