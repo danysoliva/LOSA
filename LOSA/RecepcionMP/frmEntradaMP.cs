@@ -1,4 +1,5 @@
 ﻿using ACS.Classes;
+using Core.Clases.Herramientas;
 using LOSA.Clases;
 using System;
 using System.Collections.Generic;
@@ -293,6 +294,16 @@ namespace LOSA.RecepcionMP
                 CajaDialogo.Error("DEBE DE SELECCIONAR UNA FECHA CORRECTA");
             else
             insertarData();
+        }
+
+        private void BeTarima_Enter(object sender, EventArgs e)
+        {
+            Teclado.abrirTeclado();
+        }
+
+        private void BeUbicacion_Enter(object sender, EventArgs e)
+        {
+            Teclado.abrirTeclado();
         }
 
         private DataTable CreateDataUbicacion(string pRack, string pProfundidad, string pAltura, string pPasillo)

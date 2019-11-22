@@ -86,6 +86,7 @@
             this.beIdTarima.TabIndex = 31;
             this.beIdTarima.ToolTip = "Hola";
             this.beIdTarima.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.BeUbicacionActual_ButtonClick);
+            this.beIdTarima.Enter += new System.EventHandler(this.BeIdTarima_Enter);
             this.beIdTarima.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BeTarima_KeyDown);
             // 
             // cmdSelectTarima
@@ -520,6 +521,7 @@
             this.beNuevaUbicacion.TabIndex = 39;
             this.beNuevaUbicacion.ToolTip = "Hola";
             this.beNuevaUbicacion.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.BeNuevaUbicacion_ButtonClick);
+            this.beNuevaUbicacion.Enter += new System.EventHandler(this.BeNuevaUbicacion_Enter);
             this.beNuevaUbicacion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BeNuevaUbicacion_KeyDown);
             // 
             // btnUbicacion
