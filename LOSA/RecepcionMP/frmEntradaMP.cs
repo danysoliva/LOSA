@@ -1,4 +1,5 @@
 ﻿using ACS.Classes;
+using LOSA.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,9 +19,11 @@ namespace LOSA.RecepcionMP
        
         DataOperations dp = new DataOperations();
         DataTable dtTarima = new DataTable();
-        public frmEntradaMP()
+        UserLogin Usuariologeado;
+        public frmEntradaMP(UserLogin pUser)
         {
             InitializeComponent();
+            Usuariologeado = pUser;
         }
 
         private void CmdSelectTarima_Click(object sender, EventArgs e)
@@ -37,7 +40,7 @@ namespace LOSA.RecepcionMP
 
                 gcTarima.DataSource = CreateDataTarima(frm.proveedor, frm.nombreTarima, frm.lote, frm.presentacion);
                 gvTarima.InitNewRow += GridView1_InitNewRow;
-                gvTarima.Columns[0].AppearanceCell.Font= new Font(gvTarima.Columns[0].AppearanceCell.Font, FontStyle.Bold);
+                gvTarima.Columns[0].AppearanceCell.Font= new Font("Segoe UI", 11, FontStyle.Bold);
 
             }
         }
@@ -111,7 +114,7 @@ namespace LOSA.RecepcionMP
                     cmd.Connection = connection;
                     cmd.CommandText = SQL;
 
-                   cmd.Parameters.AddWithValue("@codigo_barra", beTarima.Text);
+                   cmd.Parameters.AddWithValue("@codigo_barra", beUbicacion.Text);
 
                     connection.Open();
 
@@ -227,6 +230,59 @@ namespace LOSA.RecepcionMP
         {
            beUbicacion.Text = "";
            gcUbicacion.DataSource = null;
+        }
+
+        
+
+        void insertarData()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+
+                SqlCommand cmd = new SqlCommand("sp_insertMP", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                Tarima tam1 = new Tarima();
+                string id_um = "NULL";
+                int cantidadMP = 0;
+                if (tam1.RecuperarRegistro(idTarima,""))
+                { id_um = tam1.IdUnidadMedida.ToString();
+                    cantidadMP = tam1.Cantidad;
+                
+                cmd.Parameters.AddWithValue("@idTarima", idTarima);
+                cmd.Parameters.AddWithValue("@cantidad", cantidadMP);
+                cmd.Parameters.AddWithValue("@unidad_medida",id_um);
+                cmd.Parameters.AddWithValue("@id_usuario", Usuariologeado.Id);
+                cmd.Parameters.AddWithValue("@fecha", dtFecha.EditValue);
+                cmd.Parameters.AddWithValue("@id_bodega_destino", 1);
+                cmd.Parameters.AddWithValue("@id_bodega_origen", 1);
+                cmd.Parameters.AddWithValue("@idUbicacion", this.idUbicacion);
+                    cmd.ExecuteNonQuery();
+                }
+                con.Close();
+                CajaDialogo.Information("DATOS GUARDADOS");
+
+               BeTarima_ButtonClick(null, null);
+               BeUbicacion_ButtonClick(null, null);
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
+
+        private void BtnGuardar_Click(object sender, EventArgs e)
+        {
+            if (gvTarima.RowCount <= 0 || gvUbicacion.RowCount <= 0)
+                CajaDialogo.Error("DEBE DE SELECCIONAR UNA TARIMA Y SU UBICACIÓN");
+            else
+                if (dtFecha.EditValue==null)
+                CajaDialogo.Error("DEBE DE SELECCIONAR UNA FECHA CORRECTA");
+            else
+            insertarData();
         }
 
         private DataTable CreateDataUbicacion(string pRack, string pProfundidad, string pAltura, string pPasillo)

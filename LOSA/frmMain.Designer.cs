@@ -180,6 +180,7 @@
             this.Name = "frmMain";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmMain_Load);
             this.Click += new System.EventHandler(this.frmMain_Click);
             ((System.ComponentModel.ISupportInitialize)(this.txtClave.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsuario.Properties)).EndInit();
