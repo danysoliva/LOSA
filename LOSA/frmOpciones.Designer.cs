@@ -60,11 +60,12 @@
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton1.ImageOptions.Image = global::LOSA.Properties.Resources.wrench;
-            this.simpleButton1.Location = new System.Drawing.Point(415, 23);
+            this.simpleButton1.Location = new System.Drawing.Point(424, 186);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(199, 71);
             this.simpleButton1.TabIndex = 4;
             this.simpleButton1.Text = "Mantenimiento";
+            this.simpleButton1.Visible = false;
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // cmdHome
@@ -90,7 +91,7 @@
             this.simpleButton2.Appearance.Options.UseFont = true;
             this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton2.ImageOptions.Image = global::LOSA.Properties.Resources.check_in;
-            this.simpleButton2.Location = new System.Drawing.Point(415, 113);
+            this.simpleButton2.Location = new System.Drawing.Point(424, 12);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(199, 71);
             this.simpleButton2.TabIndex = 7;
@@ -135,7 +136,7 @@
             this.btnCambiarUbicacion.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnCambiarUbicacion.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnCambiarUbicacion.ImageOptions.Image = global::LOSA.Properties.Resources.check_in;
-            this.btnCambiarUbicacion.Location = new System.Drawing.Point(415, 200);
+            this.btnCambiarUbicacion.Location = new System.Drawing.Point(424, 99);
             this.btnCambiarUbicacion.Name = "btnCambiarUbicacion";
             this.btnCambiarUbicacion.Size = new System.Drawing.Size(199, 71);
             this.btnCambiarUbicacion.TabIndex = 8;
