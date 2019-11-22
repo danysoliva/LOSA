@@ -40,9 +40,9 @@
             this.colestadoDescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSeleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colitemcode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.basculaBindingSource = new System.Windows.Forms.BindingSource();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.colitemcode = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.basculaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMP)).BeginInit();
@@ -83,12 +83,12 @@
             this.gvBascula.Appearance.FocusedCell.Options.UseBackColor = true;
             this.gvBascula.Appearance.FocusedRow.BackColor = System.Drawing.Color.LightGreen;
             this.gvBascula.Appearance.FocusedRow.BackColor2 = System.Drawing.Color.LightGreen;
-            this.gvBascula.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvBascula.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvBascula.Appearance.FocusedRow.Options.UseBackColor = true;
             this.gvBascula.Appearance.FocusedRow.Options.UseFont = true;
             this.gvBascula.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvBascula.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gvBascula.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvBascula.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvBascula.Appearance.Row.Options.UseFont = true;
             this.gvBascula.Appearance.SelectedRow.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvBascula.Appearance.SelectedRow.Options.UseFont = true;
@@ -174,6 +174,11 @@
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
+            // colitemcode
+            // 
+            this.colitemcode.FieldName = "itemcode";
+            this.colitemcode.Name = "colitemcode";
+            // 
             // basculaBindingSource
             // 
             this.basculaBindingSource.DataMember = "Bascula";
@@ -191,11 +196,6 @@
             this.simpleButton1.TabIndex = 4;
             this.simpleButton1.Text = "Cancelar";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_1);
-            // 
-            // colitemcode
-            // 
-            this.colitemcode.FieldName = "itemcode";
-            this.colitemcode.Name = "colitemcode";
             // 
             // FrmBoleta
             // 

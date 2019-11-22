@@ -99,7 +99,7 @@ namespace LOSA.RecepcionMP
             if (e.KeyCode == Keys.Enter)
             {
 
-                gcTarima.DataSource = CreateDataTarima(0, beIdTarima.Text);
+                gcTarima.DataSource = CreateDataTarima(0, beIdTarima.Text.Replace("H", ""));
                 gvTarima.InitNewRow += GvTarima_InitNewRow;
                 gvTarima.Columns[0].AppearanceCell.Font = new Font("Segoe UI", 11, FontStyle.Bold);
 

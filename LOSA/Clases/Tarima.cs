@@ -14,7 +14,7 @@ namespace LOSA.Clases
         int _id;
         String _nombreTarima;
         int _id_materiaprima;
-        int _cantidad;
+        decimal _cantidad;
         string _idProveedor;
         DateTime _FechaIngreso;
         int _numeroTransaccion;
@@ -35,6 +35,7 @@ namespace LOSA.Clases
         int _idUnidadMedida;
         String _Proveedor;
         bool _Recuperad;
+        string _MateriaPrima;
 
         public Tarima()
         {
@@ -45,13 +46,19 @@ namespace LOSA.Clases
         public int Id_materiaprima { get => _id_materiaprima; set => _id_materiaprima = value; }
         public int IdUnidadMedida { get => _idUnidadMedida; set => _idUnidadMedida = value; }
         public bool Recuperado { get => _Recuperad; set => _Recuperad = value; }
-        public int Cantidad { get => _cantidad; set => _cantidad = value; }
+        public decimal Cantidad { get => _cantidad; set => _cantidad = value; }
         public string Descripcionpresentacion { get => _Descripcionpresentacion; set => _Descripcionpresentacion = value; }
         public string TipoTarimaDescripcion { get => _tipoTarimaDescripcion; set => _tipoTarimaDescripcion = value; }
         public string Proveedor { get => _Proveedor; set => _Proveedor = value; }
         public string LoteMP { get => _LoteMP; set => _LoteMP = value; }
         public string NombreTarima { get => _nombreTarima; set => _nombreTarima = value; }
         public string CodigoBarra { get => _CodigoBarra; set => _CodigoBarra = value; }
+        public string MateriaPrima { get => _MateriaPrima; set => _MateriaPrima = value; }
+        public DateTime FechaIngreso { get => _FechaIngreso; set => _FechaIngreso = value; }
+        public int NumeroTransaccion { get => _numeroTransaccion; set => _numeroTransaccion = value; }
+        public DateTime FechaProduccion { get => _fechaProduccion; set => _fechaProduccion = value; }
+        public DateTime FechaVencimiento { get => _fechaVencimiento; set => _fechaVencimiento = value; }
+        public int IdBoleta { get => _idBoleta; set => _idBoleta = value; }
 
         public bool RecuperarRegistro(int pIdTarima, string pCodigoBarra)
         {
@@ -70,12 +77,20 @@ namespace LOSA.Clases
                 {
                     Id = dr.GetInt32(0);
                     IdUnidadMedida = dr.GetInt32(1);
-                    Cantidad = 1;
-                    NombreTarima = dr.GetString(2);
+                    //Cantidad = 1;
+                    _nombreTarima = dr.GetString(2);
                     TipoTarimaDescripcion= dr.GetString(3);
                     Proveedor= dr.GetString(4);
                     LoteMP = dr.GetString(5);
-                    Cantidad= dr.GetInt32(7);
+                    Cantidad= dr.GetDecimal(7);
+                    Id_materiaprima = dr.GetInt32(8);
+                    MateriaPrima = dr.GetString(9);
+                    FechaIngreso = dr.GetDateTime(10);
+                    NumeroTransaccion = dr.GetInt32(11);
+                    FechaProduccion = dr.GetDateTime(12);
+                    FechaVencimiento = dr.GetDateTime(13);
+                    IdBoleta = dr.GetInt32(14);
+                    CodigoBarra = dr.GetString(15);
                     Recuperado = true;
                 }
                 dr.Close();

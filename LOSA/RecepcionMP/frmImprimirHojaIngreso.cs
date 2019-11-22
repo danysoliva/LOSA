@@ -1,5 +1,6 @@
 ﻿using ACS.Classes;
 using Core.Clases.Herramientas;
+using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraReports.UI;
 using LOSA.Clases;
 using System;
@@ -15,36 +16,37 @@ using System.Windows.Forms;
 
 namespace LOSA.RecepcionMP
 {
-    public partial class frmTarima : Form
+    public partial class frmImprimirHojaIngreso : Form
     {
         int IdSerie;
         int NumBoleta;
         int IdMP;
         string ItemCode;
         UserLogin UsuarioLogeado;
-        public frmTarima(UserLogin pUser)
+        public frmImprimirHojaIngreso(UserLogin pUser)
         {
             InitializeComponent();
             DataOperations dp = new DataOperations();
-            dtFechaIngreso.EditValue = dp.dNow();
-            dtFechaVencimiento.Properties.MinValue = dtFechaIngreso.Properties.MinValue = dp.Now();
+            //dtFechaIngreso.EditValue = dp.dNow();
+            //dtFechaVencimiento.Properties.MinValue = dtFechaIngreso.Properties.MinValue = dp.Now();
             UsuarioLogeado = pUser;
-            LoadPresentaciones();
-            LoadNumeroTransaccion();
+            //LoadPresentaciones();
+            LoadData();
         }
 
-        private void LoadNumeroTransaccion()
+        private void LoadData()
         {
             try
             {
                 DataOperations dp = new DataOperations();
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
-                SqlCommand cmm2 = new SqlCommand("sp_generar_codigo_from_tables_id", con);
+                SqlCommand cmm2 = new SqlCommand("sp_get_tarimas_ingresadas_resumen", con);
                 cmm2.CommandType = CommandType.StoredProcedure;
-                cmm2.Parameters.AddWithValue("@id", 2);
-                string num_ingreso = cmm2.ExecuteScalar().ToString();
-                txtNumIngreso.Text = num_ingreso;
+                //cmm2.Parameters.AddWithValue("@id", 2);
+                dsRecepcionMPx1.lista_tarimas.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmm2);
+                adat.Fill(dsRecepcionMPx1.lista_tarimas);
                 con.Close();
             }
             catch (Exception ec)
@@ -80,7 +82,7 @@ namespace LOSA.RecepcionMP
             frm.WindowState = FormWindowState.Maximized;
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                txtIdBoleta.Text = frm.NumBoleta.ToString();
+                //txtIdBoleta.Text = frm.NumBoleta.ToString();
                 this.IdSerie = frm.IdSerie;
                 this.NumBoleta = frm.NumBoleta;
                 this.ItemCode = frm.ItemCode;
@@ -102,10 +104,10 @@ namespace LOSA.RecepcionMP
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    txtCodigoMP.Text = dr.GetString(1);
-                    txtMP_Name.Text = dr.GetString(2);
-                    txtCodigoProveedor.Text = dr.GetString(3);
-                    txtProveedorName.Text = dr.GetString(4);
+                    //txtCodigoMP.Text = dr.GetString(1);
+                    //txtMP_Name.Text = dr.GetString(2);
+                    //txtCodigoProveedor.Text = dr.GetString(3);
+                    //txtProveedorName.Text = dr.GetString(4);
 
                 }
                 dr.Close();
@@ -123,9 +125,9 @@ namespace LOSA.RecepcionMP
             this.Close();
         }
 
-        private void frmTarima_Activated(object sender, EventArgs e)
+        private void frmImprimirHojaIngreso_Activated(object sender, EventArgs e)
         {
-            txtIdBoleta.Focus();
+            //txtIdBoleta.Focus();
         }
 
         private void txtDescripcionCorta_KeyDown(object sender, KeyEventArgs e)
@@ -135,7 +137,7 @@ namespace LOSA.RecepcionMP
                 int id_b = 0;
                 try
                 {
-                    id_b = Convert.ToInt32(txtIdBoleta.Text);
+                    //id_b = Convert.ToInt32(txtIdBoleta.Text);
                 }
                 catch{}
 
@@ -143,7 +145,7 @@ namespace LOSA.RecepcionMP
                 Boleta bol1 = new Boleta();
                 if (bol1.RecuperarRegistro(this.IdSerie))
                 {
-                    txtIdBoleta.Text = bol1.NumID.ToString();
+                    //txtIdBoleta.Text = bol1.NumID.ToString();
                 }
                 LoadDatosBoleta();
             }
@@ -164,7 +166,7 @@ namespace LOSA.RecepcionMP
             Teclado.cerrarTeclado();
         }
 
-        private void frmTarima_Click(object sender, EventArgs e)
+        private void frmImprimirHojaIngreso_Click(object sender, EventArgs e)
         {
             Teclado.cerrarTeclado();
         }
@@ -176,7 +178,7 @@ namespace LOSA.RecepcionMP
             this.Close();
         }
 
-        private void frmTarima_Load(object sender, EventArgs e)
+        private void frmImprimirHojaIngreso_Load(object sender, EventArgs e)
         {
 
         }
@@ -189,23 +191,23 @@ namespace LOSA.RecepcionMP
                 return;
             }
 
-            if (Convert.ToDecimal(txtCantidadT.Text) <= 0)
-            {
-                CajaDialogo.Error("No se puede registrar una tarima con cantidad de materia en cero (0)!");
-                return;
-            }
+            //if (Convert.ToDecimal(txtCantidadT.Text) <= 0)
+            //{
+            //    CajaDialogo.Error("No se puede registrar una tarima con cantidad de materia en cero (0)!");
+            //    return;
+            //}
 
-            if (string.IsNullOrEmpty(gridLookUpEditPresentacion.Text))
-            {
-                CajaDialogo.Error("Es necesario seleccionar la presentacion de la Materia Prima!");
-                return;
-            }
+            //if (string.IsNullOrEmpty(gridLookUpEditPresentacion.Text))
+            //{
+            //    CajaDialogo.Error("Es necesario seleccionar la presentacion de la Materia Prima!");
+            //    return;
+            //}
             
-            if (string.IsNullOrEmpty(txtLote.Text))
-            {
-                CajaDialogo.Error("Es obligatorio llenar el lote para la tarima!");
-                return;
-            }
+            //if (string.IsNullOrEmpty(txtLote.Text))
+            //{
+            //    CajaDialogo.Error("Es obligatorio llenar el lote para la tarima!");
+            //    return;
+            //}
             //
             //if (string.IsNullOrEmpty(dtFechaProduccion.Text))
             //{
@@ -213,13 +215,12 @@ namespace LOSA.RecepcionMP
             //    return;
             //}
             
-            if (string.IsNullOrEmpty(dtFechaVencimiento.Text))
-            {
-                CajaDialogo.Error("Es obligatorio llenar la fecha de vencimiento de la materia prima!");
-                return;
-            }
-            bool Guardo = false;
-            int vid_tarima = 0;
+            //if (string.IsNullOrEmpty(dtFechaVencimiento.Text))
+            //{
+            //    CajaDialogo.Error("Es obligatorio llenar la fecha de vencimiento de la materia prima!");
+            //    return;
+            //}
+
             try
             {
                 DataOperations dp = new DataOperations();
@@ -231,22 +232,21 @@ namespace LOSA.RecepcionMP
                 cmm.Parameters.AddWithValue("@id", 1);
                 string barcode = cmm.ExecuteScalar().ToString();
 
-                SqlCommand cmd = new SqlCommand("sp_insert_new_tarima", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@itemcode", this.ItemCode);
-                cmd.Parameters.AddWithValue("@id_proveedor", txtCodigoProveedor.Text);
-                cmd.Parameters.AddWithValue("@fecha_ingreso", dtFechaIngreso.EditValue);
-                cmd.Parameters.AddWithValue("@numero_transaccion", txtNumIngreso.Text);
-                cmd.Parameters.AddWithValue("@fecha_vencimiento", dtFechaVencimiento.EditValue);
-                cmd.Parameters.AddWithValue("@fecha_produccion_materia_prima", dtFechaProduccion.EditValue);
-                cmd.Parameters.AddWithValue("@lote_materia_prima", txtLote.Text);
-                cmd.Parameters.AddWithValue("@id_presentacion", gridLookUpEditPresentacion.EditValue);
-                cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
-                cmd.Parameters.AddWithValue("@id_boleta", this.IdSerie);
-                cmd.Parameters.AddWithValue("@codigo_barra", barcode);
-                cmd.Parameters.AddWithValue("@cant", txtCantidadT.Text);
-                vid_tarima = Convert.ToInt32(cmd.ExecuteScalar());
-                Guardo = true;
+                //SqlCommand cmd = new SqlCommand("sp_insert_new_tarima", con);
+                //cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@itemcode", this.ItemCode);
+                //cmd.Parameters.AddWithValue("@id_proveedor", txtCodigoProveedor.Text);
+                //cmd.Parameters.AddWithValue("@fecha_ingreso", dtFechaIngreso.EditValue);
+                //cmd.Parameters.AddWithValue("@numero_transaccion", txtNumIngreso.Text);
+                //cmd.Parameters.AddWithValue("@fecha_vencimiento", dtFechaVencimiento.EditValue);
+                //cmd.Parameters.AddWithValue("@fecha_produccion_materia_prima", dtFechaProduccion.EditValue);
+                //cmd.Parameters.AddWithValue("@lote_materia_prima", txtLote.Text);
+                //cmd.Parameters.AddWithValue("@id_presentacion", gridLookUpEditPresentacion.EditValue);
+                //cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
+                //cmd.Parameters.AddWithValue("@id_boleta", txtNumIngreso.Text);
+                //cmd.Parameters.AddWithValue("@codigo_barra", barcode);
+                //cmd.Parameters.AddWithValue("@cant", txtCantidadT.Text);
+                //cmd.ExecuteNonQuery();
                 con.Close();
                 //CajaDialogo.InformationAuto();
                 this.Close();
@@ -254,18 +254,6 @@ namespace LOSA.RecepcionMP
             catch (Exception ec)
             {
                 CajaDialogo.Error(ec.Message);
-            }
-
-            if (Guardo)
-            {
-                DialogResult r = CajaDialogo.Pregunta("Desea Imprimir la Hoja de Ingreso?");
-                if(r == DialogResult.Yes)
-                {
-                    rptReporteIngresoTarima report = new rptReporteIngresoTarima(vid_tarima);
-                    report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
-                    ReportPrintTool printReport = new ReportPrintTool(report);
-                    printReport.ShowPreview();
-                }
             }
         }
 
@@ -302,6 +290,17 @@ namespace LOSA.RecepcionMP
             {
                 e.Handled = true;
             }
+        }
+
+        private void btnPrint_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            //imprimir
+            var gridView = (GridView)gridControl1.FocusedView;
+            var row = (dsRecepcionMPx.lista_tarimasRow)gridView.GetFocusedDataRow();
+            rptReporteIngresoTarima report = new rptReporteIngresoTarima(row.id);
+            report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+            ReportPrintTool printReport = new ReportPrintTool(report);
+            printReport.ShowPreview();
         }
     }
 }

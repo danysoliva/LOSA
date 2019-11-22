@@ -34,6 +34,7 @@
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.tabOpciones = new DevExpress.XtraTab.XtraTabControl();
             this.TabMontacarga = new DevExpress.XtraTab.XtraTabPage();
+            this.btnCambiarUbicacion = new DevExpress.XtraEditors.SimpleButton();
             this.TabLogistica = new DevExpress.XtraTab.XtraTabPage();
             this.cmdRegistroLote = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
@@ -45,7 +46,6 @@
             this.btnEstadosProgramacionesRequisiciones = new DevExpress.XtraEditors.SimpleButton();
             this.btnTiposPresentaciones = new DevExpress.XtraEditors.SimpleButton();
             this.btnBodegas = new DevExpress.XtraEditors.SimpleButton();
-            this.btnCambiarUbicacion = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -69,6 +69,7 @@
             // 
             // cmdHome
             // 
+            this.cmdHome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdHome.Appearance.BackColor = System.Drawing.Color.White;
             this.cmdHome.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdHome.Appearance.Options.UseBackColor = true;
@@ -125,6 +126,22 @@
             this.TabMontacarga.Size = new System.Drawing.Size(629, 422);
             this.TabMontacarga.Text = "MontaCarga";
             // 
+            // btnCambiarUbicacion
+            // 
+            this.btnCambiarUbicacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCambiarUbicacion.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCambiarUbicacion.Appearance.Options.UseFont = true;
+            this.btnCambiarUbicacion.Appearance.Options.UseTextOptions = true;
+            this.btnCambiarUbicacion.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnCambiarUbicacion.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnCambiarUbicacion.ImageOptions.Image = global::LOSA.Properties.Resources.check_in;
+            this.btnCambiarUbicacion.Location = new System.Drawing.Point(415, 200);
+            this.btnCambiarUbicacion.Name = "btnCambiarUbicacion";
+            this.btnCambiarUbicacion.Size = new System.Drawing.Size(199, 71);
+            this.btnCambiarUbicacion.TabIndex = 8;
+            this.btnCambiarUbicacion.Text = "Cambiar Ubicacion";
+            this.btnCambiarUbicacion.Click += new System.EventHandler(this.BtnCambiarUbicacion_Click);
+            // 
             // TabLogistica
             // 
             this.TabLogistica.Controls.Add(this.cmdRegistroLote);
@@ -170,13 +187,12 @@
             this.cmdRecepcionMPLogistica.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdRecepcionMPLogistica.Appearance.Options.UseFont = true;
             this.cmdRecepcionMPLogistica.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdRecepcionMPLogistica.ImageOptions.Image = global::LOSA.Properties.Resources.check_in;
+            this.cmdRecepcionMPLogistica.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdRecepcionMPLogistica.ImageOptions.Image")));
             this.cmdRecepcionMPLogistica.Location = new System.Drawing.Point(424, 223);
             this.cmdRecepcionMPLogistica.Name = "cmdRecepcionMPLogistica";
             this.cmdRecepcionMPLogistica.Size = new System.Drawing.Size(199, 71);
             this.cmdRecepcionMPLogistica.TabIndex = 9;
-            this.cmdRecepcionMPLogistica.Text = "Recepción MP";
-            this.cmdRecepcionMPLogistica.Visible = false;
+            this.cmdRecepcionMPLogistica.Text = "Ver Tarimas";
             this.cmdRecepcionMPLogistica.Click += new System.EventHandler(this.cmdRecepcionMPLogistica_Click);
             // 
             // TabCalidad
@@ -265,22 +281,6 @@
             this.btnBodegas.TabIndex = 5;
             this.btnBodegas.Text = "Bodegas";
             this.btnBodegas.Click += new System.EventHandler(this.BtnBodegas_Click);
-            // 
-            // btnCambiarUbicacion
-            // 
-            this.btnCambiarUbicacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCambiarUbicacion.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCambiarUbicacion.Appearance.Options.UseFont = true;
-            this.btnCambiarUbicacion.Appearance.Options.UseTextOptions = true;
-            this.btnCambiarUbicacion.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnCambiarUbicacion.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnCambiarUbicacion.ImageOptions.Image = global::LOSA.Properties.Resources.check_in;
-            this.btnCambiarUbicacion.Location = new System.Drawing.Point(415, 200);
-            this.btnCambiarUbicacion.Name = "btnCambiarUbicacion";
-            this.btnCambiarUbicacion.Size = new System.Drawing.Size(199, 71);
-            this.btnCambiarUbicacion.TabIndex = 8;
-            this.btnCambiarUbicacion.Text = "Cambiar Ubicacion";
-            this.btnCambiarUbicacion.Click += new System.EventHandler(this.BtnCambiarUbicacion_Click);
             // 
             // frmOpciones
             // 
