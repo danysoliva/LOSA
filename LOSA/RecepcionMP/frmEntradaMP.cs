@@ -251,26 +251,44 @@ namespace LOSA.RecepcionMP
                 Tarima tam1 = new Tarima();
                 Ubicaciones infoUbicacion = new Ubicaciones();
                 
-                string id_um = "NULL";
                 decimal cantidadMP = 0;
-                if (tam1.RecuperarRegistro(idTarima,""))
-                { id_um = tam1.IdUnidadMedida.ToString();
-                    cantidadMP = tam1.Cantidad;
-                
-                cmd.Parameters.AddWithValue("@idTarima", idTarima);
-                cmd.Parameters.AddWithValue("@cantidad", cantidadMP);
-                cmd.Parameters.AddWithValue("@unidad_medida",id_um);
-                cmd.Parameters.AddWithValue("@id_usuario", Usuariologeado.Id);
-                cmd.Parameters.AddWithValue("@fecha", dtFecha.EditValue);
-                    if(infoUbicacion.RecuperarRegistro(idUbicacion ,""))
-                        {
-                        cmd.Parameters.AddWithValue("@id_bodega_destino", infoUbicacion.IdBodega);
+                if (tam1.RecuperarRegistro(idTarima, ""))
+                {
+                    if (tam1.IdUnidadMedida > 0)
+                    { 
+                        cmd.Parameters.AddWithValue("@unidad_medida", tam1.IdUnidadMedida);
                     }
                     else
-                        cmd.Parameters.AddWithValue("@id_bodega_destino", null);
+                    {
+                        cmd.Parameters.AddWithValue("@unidad_medida", DBNull.Value);
+                    }
 
-                    cmd.Parameters.AddWithValue("@id_bodega_origen", 1);
-                cmd.Parameters.AddWithValue("@idUbicacion", this.idUbicacion);
+                    cantidadMP = tam1.Cantidad;
+
+                    cmd.Parameters.AddWithValue("@idTarima", idTarima);
+                    cmd.Parameters.AddWithValue("@cantidad", cantidadMP);
+                    
+                    cmd.Parameters.AddWithValue("@id_usuario", Usuariologeado.Id);
+                    cmd.Parameters.AddWithValue("@fecha", dtFecha.EditValue);
+                    if (infoUbicacion.RecuperarRegistro(idUbicacion, ""))
+                    {
+                        if (infoUbicacion.IdBodega > 0)
+                        {
+                            cmd.Parameters.AddWithValue("@id_bodega_destino", infoUbicacion.IdBodega);
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@id_bodega_destino", DBNull.Value);
+                        }
+                        
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@id_bodega_destino", DBNull.Value);
+                    }
+
+                    cmd.Parameters.AddWithValue("@id_bodega_origen",DBNull.Value);
+                    cmd.Parameters.AddWithValue("@idUbicacion", this.idUbicacion);
                     cmd.ExecuteNonQuery();
                 }
                 con.Close();
