@@ -58,7 +58,7 @@ namespace LOSA.RecepcionMP
                 //id_um = tam1.IdUnidadMedida.ToString();
                 //cantidadMP = tam1.Cantidad;
 
-                dt.Rows.Add("NOMBRE TARIMA", infoTarima.NombreTarima);
+                dt.Rows.Add("TARIMA", infoTarima.Id);
                 dt.Rows.Add("PROVEEDOR", infoTarima.Proveedor);
                 dt.Rows.Add("LOTE", infoTarima.LoteMP);
                 dt.Rows.Add("PRESENTACION", infoTarima.TipoTarimaDescripcion);

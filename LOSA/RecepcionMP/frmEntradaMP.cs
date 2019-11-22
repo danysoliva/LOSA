@@ -37,7 +37,7 @@ namespace LOSA.RecepcionMP
             {
                 idTarima = frm.idTarima;
                 beTarima.Text= frm.idTarima.ToString();
-                               gcTarima.DataSource = CreateDataTarima(frm.proveedor, frm.nombreTarima, frm.lote, frm.presentacion);
+                               gcTarima.DataSource = CreateDataTarima(frm.idTarima, frm.proveedor, frm.nombreTarima, frm.lote, frm.presentacion);
                 gvTarima.InitNewRow += GridView1_InitNewRow;
                 gvTarima.Columns[0].AppearanceCell.Font= new Font("Segoe UI", 11, FontStyle.Bold);
 
@@ -80,7 +80,7 @@ namespace LOSA.RecepcionMP
                             //txtLote.Text = dr.GetString(5);
                             //txtPresentacion.Text = dr.GetString(6);
 
-                            gcTarima.DataSource = CreateDataTarima(dr.GetString(2), dr.GetString(1), dr.GetString(5), dr.GetString(6));
+                            gcTarima.DataSource = CreateDataTarima(dr.GetInt32(0),dr.GetString(2), dr.GetString(1), dr.GetString(5), dr.GetString(6));
                             gvTarima.InitNewRow += GridView1_InitNewRow;
                             gvTarima.Columns[0].AppearanceCell.Font = new Font("Segoe UI",11, FontStyle.Bold);
                         }
@@ -207,7 +207,7 @@ namespace LOSA.RecepcionMP
         
         }
 
-        private DataTable CreateDataTarima(string pProveedor, string pNombreTarima, string pLote, string pPpresentacion)
+        private DataTable CreateDataTarima(int idTarima, string pProveedor, string pNombreTarima, string pLote, string pPpresentacion)
         {
             DataTable dt = new DataTable();
 
@@ -215,7 +215,7 @@ namespace LOSA.RecepcionMP
             dt.Columns.Add("Valor", typeof(string));
 
           
-            dt.Rows.Add("TARIMA", pNombreTarima);
+            dt.Rows.Add("TARIMA", idTarima);
             dt.Rows.Add("PROVEEDOR" ,pProveedor);
             dt.Rows.Add("LOTE" ,pLote);
             dt.Rows.Add("PRESENTACION",pPpresentacion);
