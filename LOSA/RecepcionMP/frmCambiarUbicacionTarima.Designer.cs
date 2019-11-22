@@ -80,6 +80,7 @@
             editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.beIdTarima.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            this.beIdTarima.Properties.MaxLength = 20;
             this.beIdTarima.Properties.NullText = "Escanee o selecciona una tarima";
             this.beIdTarima.Size = new System.Drawing.Size(312, 28);
             this.beIdTarima.TabIndex = 31;
@@ -513,6 +514,7 @@
             editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.beNuevaUbicacion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            this.beNuevaUbicacion.Properties.MaxLength = 20;
             this.beNuevaUbicacion.Properties.NullText = "Escanee o selecciona una tarima";
             this.beNuevaUbicacion.Size = new System.Drawing.Size(325, 28);
             this.beNuevaUbicacion.TabIndex = 39;
@@ -773,7 +775,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCambiarUbicacionTarima";
             this.Text = "frmCambiarUbicacionTarima";
-            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.beIdTarima.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcUbicacionActual)).EndInit();

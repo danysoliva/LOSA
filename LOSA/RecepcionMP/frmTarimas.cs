@@ -16,8 +16,9 @@ namespace LOSA.RecepcionMP
     public partial class frmTarimas : Form
     {
         DataOperations dp = new DataOperations();
-
-
+        int OpcionVentana = 0;
+        
+        
         int _idTarima;
         public int idTarima { get { return _idTarima; } set { _idTarima=value; } }
         public string nombreTarima { get; set; }
@@ -25,9 +26,10 @@ namespace LOSA.RecepcionMP
 
         public string lote { get; set; }
         public string presentacion { get; set; }
-        public frmTarimas()
+        public frmTarimas(int pOpcionVentana)
         {
-            InitializeComponent();
+            InitializeComponent();           
+            OpcionVentana = pOpcionVentana;
             cargarDatos();
         }
 
@@ -37,8 +39,13 @@ namespace LOSA.RecepcionMP
             {
 
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                string SQL="";
 
-                string SQL = @"exec obtenerTarimas @codigo_barra";
+                if (OpcionVentana == 1)
+                    SQL = @"exec sp_obtener_tarimas_sin_ubicacion @codigo_barra";
+                else
+                    if (OpcionVentana == 2)
+                    SQL = @"exec sp_obtener_tarimas_con_ubicacion @codigo_barra";
 
                 dsRecepcionMP.DetalleTarima.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(SQL, cn);
@@ -92,5 +99,7 @@ namespace LOSA.RecepcionMP
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
+
+       
     }
 }

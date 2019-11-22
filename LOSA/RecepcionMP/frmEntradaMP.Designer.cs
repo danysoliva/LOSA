@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEntradaMP));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -144,11 +144,12 @@
             this.beTarima.Name = "beTarima";
             this.beTarima.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.beTarima.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.beTarima.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions3, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            this.beTarima.Properties.MaxLength = 20;
             this.beTarima.Properties.NullText = "Escanee o selecciona una tarima";
-            this.beTarima.Size = new System.Drawing.Size(327, 38);
+            this.beTarima.Size = new System.Drawing.Size(327, 28);
             this.beTarima.TabIndex = 28;
             this.beTarima.ToolTip = "Hola";
             this.beTarima.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.BeTarima_ButtonClick);
@@ -162,10 +163,11 @@
             this.beUbicacion.Name = "beUbicacion";
             this.beUbicacion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.beUbicacion.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.beUbicacion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
-            this.beUbicacion.Size = new System.Drawing.Size(303, 38);
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            this.beUbicacion.Properties.MaxLength = 20;
+            this.beUbicacion.Size = new System.Drawing.Size(303, 28);
             this.beUbicacion.TabIndex = 29;
             this.beUbicacion.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.BeUbicacion_ButtonClick);
             this.beUbicacion.Click += new System.EventHandler(this.BeUbicacion_Click);
@@ -569,7 +571,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmEntradaMP";
             this.Text = "frmEntradaMP";
-            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.beTarima.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.beUbicacion.Properties)).EndInit();

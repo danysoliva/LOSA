@@ -16,7 +16,11 @@ namespace LOSA.RecepcionMP
     public partial class frmEntradaMP : Form
     {
         private int idTarima, idUbicacion;
-       
+        public enum VentanaTarima
+        {
+            asignarUbicacion = 1,
+            cambiarUbicacion = 2
+        };
         DataOperations dp = new DataOperations();
         DataTable dtTarima = new DataTable();
         UserLogin Usuariologeado;
@@ -28,17 +32,12 @@ namespace LOSA.RecepcionMP
 
         private void CmdSelectTarima_Click(object sender, EventArgs e)
         {
-            frmTarimas frm = new frmTarimas();
+            frmTarimas frm = new frmTarimas((int) VentanaTarima.asignarUbicacion);
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 idTarima = frm.idTarima;
                 beTarima.Text= frm.idTarima.ToString();
-                //txtProveedor.Text = frm.proveedor;
-                //txtTarima.Text = frm.nombreTarima;
-                //txtLote.Text = frm.lote;
-                //txtPresentacion.Text = frm.presentacion;
-
-                gcTarima.DataSource = CreateDataTarima(frm.proveedor, frm.nombreTarima, frm.lote, frm.presentacion);
+                               gcTarima.DataSource = CreateDataTarima(frm.proveedor, frm.nombreTarima, frm.lote, frm.presentacion);
                 gvTarima.InitNewRow += GridView1_InitNewRow;
                 gvTarima.Columns[0].AppearanceCell.Font= new Font("Segoe UI", 11, FontStyle.Bold);
 
@@ -58,7 +57,7 @@ namespace LOSA.RecepcionMP
             {
                 using (connection)
                 {
-                    string SQL = "exec obtenerTarimas  @codigo_barra";
+                    string SQL = "exec sp_obtener_tarimas_sin_ubicacion  @codigo_barra";
                     SqlCommand cmd = new SqlCommand();
                     SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                     cmd.Connection = connection;
@@ -89,6 +88,8 @@ namespace LOSA.RecepcionMP
                     else
                     {
                         CajaDialogo.Error("TARIMA NO ENCONTRADA");
+                        gcTarima.DataSource = null;
+                        beTarima.Text = "";
                         //txtTarima.Text = "";
                     }
 
@@ -138,6 +139,7 @@ namespace LOSA.RecepcionMP
                     {
                         CajaDialogo.Error("UBICACIÓN NO ENCONTRADA");
                        beUbicacion.Text = "";
+                        gcUbicacion.DataSource = null;
                     }
 
                     cn.Close();
@@ -246,6 +248,8 @@ namespace LOSA.RecepcionMP
                 SqlCommand cmd = new SqlCommand("sp_insertMP", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 Tarima tam1 = new Tarima();
+                Ubicaciones infoUbicacion = new Ubicaciones();
+                
                 string id_um = "NULL";
                 int cantidadMP = 0;
                 if (tam1.RecuperarRegistro(idTarima,""))
@@ -257,8 +261,14 @@ namespace LOSA.RecepcionMP
                 cmd.Parameters.AddWithValue("@unidad_medida",id_um);
                 cmd.Parameters.AddWithValue("@id_usuario", Usuariologeado.Id);
                 cmd.Parameters.AddWithValue("@fecha", dtFecha.EditValue);
-                cmd.Parameters.AddWithValue("@id_bodega_destino", 1);
-                cmd.Parameters.AddWithValue("@id_bodega_origen", 1);
+                    if(infoUbicacion.RecuperarRegistro(idUbicacion ,""))
+                        {
+                        cmd.Parameters.AddWithValue("@id_bodega_destino", infoUbicacion.IdBodega);
+                    }
+                    else
+                        cmd.Parameters.AddWithValue("@id_bodega_destino", null);
+
+                    cmd.Parameters.AddWithValue("@id_bodega_origen", 1);
                 cmd.Parameters.AddWithValue("@idUbicacion", this.idUbicacion);
                     cmd.ExecuteNonQuery();
                 }
