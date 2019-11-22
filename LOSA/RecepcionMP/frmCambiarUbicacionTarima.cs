@@ -17,6 +17,12 @@ namespace LOSA.RecepcionMP
     {
         int idUbicacionTarimaActual = 0;
         int idUbicacionNueva = 0;
+
+        public enum VentanaTarima
+        {
+            asignarUbicacion = 1,
+            cambiarUbicacion = 2
+        };
         public frmCambiarUbicacionTarima()
         {
             InitializeComponent();
@@ -52,7 +58,7 @@ namespace LOSA.RecepcionMP
                 //id_um = tam1.IdUnidadMedida.ToString();
                 //cantidadMP = tam1.Cantidad;
 
-                dt.Rows.Add("NOMBRE TARIMA", infoTarima.NombreTarima);
+                dt.Rows.Add("TARIMA", infoTarima.Id);
                 dt.Rows.Add("PROVEEDOR", infoTarima.Proveedor);
                 dt.Rows.Add("LOTE", infoTarima.LoteMP);
                 dt.Rows.Add("PRESENTACION", infoTarima.TipoTarimaDescripcion);
@@ -197,13 +203,13 @@ namespace LOSA.RecepcionMP
 
         private void CmdSelectTarima_Click(object sender, EventArgs e)
         {
-            frmTarimas frm = new frmTarimas();
+            frmTarimas frm = new frmTarimas( (int)VentanaTarima.cambiarUbicacion);
             DataOperations dp = new DataOperations();
             Ubicacion_Tarima infoUbicacionTarima = new Ubicacion_Tarima();
 
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                gcTarima.DataSource = CreateDataTarima(frm.idTarima, beIdTarima.Text);
+                gcTarima.DataSource = CreateDataTarima(frm.idTarima,"");
                 gvTarima.InitNewRow += GvTarima_InitNewRow;
                 gvTarima.Columns[0].AppearanceCell.Font = new Font("Segoe UI", 11, FontStyle.Bold);
                 if (infoUbicacionTarima.RecuperarRegistro(frm.idTarima, beIdTarima.Text))

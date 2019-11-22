@@ -17,6 +17,7 @@ namespace LOSA.Clases
         string _altura;
         string _profundidad;
         bool _Recuperado;
+        int _IdBodega;
         public Ubicaciones()
         {
 
@@ -28,6 +29,7 @@ namespace LOSA.Clases
         public string Profundidad { get => _profundidad; set => _profundidad = value; }
         public bool Recuperado { get => _Recuperado; set => _Recuperado = value; }
         public string Rack { get => _rack; set => _rack = value; }
+        public int IdBodega { get => _IdBodega; set => _IdBodega = value; }
 
         public bool RecuperarRegistro(int pIdUbicacion, string pCodigoBarra)
         {
@@ -49,6 +51,7 @@ namespace LOSA.Clases
                     Rack= dr.GetString(2);
                     Altura= dr.GetString(3);
                     Profundidad= dr.GetString(4);
+                    IdBodega= dr.GetInt32(7);
                     Recuperado = true;
                 }
                 dr.Close();
