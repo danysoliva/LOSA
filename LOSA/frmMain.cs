@@ -32,11 +32,11 @@ namespace LOSA
         {
             Teclado.cerrarTeclado();
             UserLogin Log1 = new UserLogin();
-            //if (Log1.RecuperarRegistro(1035))
-            //{
-            //    Log1.GrupoUsuario.GrupoUsuarioActivo = (GrupoUser.GrupoUsuario)Log1.IdGrupo;
-            //}
-            //else
+            if (Log1.RecuperarRegistro(1035))
+            {
+                Log1.GrupoUsuario.GrupoUsuarioActivo = (GrupoUser.GrupoUsuario)Log1.IdGrupo;
+            }
+            else
             {
                 Log1.Id = 1035;
                 Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Montacarga;

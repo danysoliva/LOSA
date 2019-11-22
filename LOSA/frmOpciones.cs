@@ -39,8 +39,8 @@ namespace LOSA
         private void cmdRecepcionMPLogistica_Click(object sender, EventArgs e)
         {
             //
-            //frmRecepcionMP frm = new frmRecepcionMP();
-            frmTarima frm = new frmTarima(UsuarioLogeado);
+            frmImprimirHojaIngreso frm = new frmImprimirHojaIngreso(UsuarioLogeado);
+            frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
 

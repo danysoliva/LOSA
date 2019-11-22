@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>11</ApplicationRevision>
+    <ApplicationRevision>15</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -132,6 +132,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -275,6 +276,12 @@
     <Compile Include="RecepcionMP\frmRecepcionMP.Designer.cs">
       <DependentUpon>frmRecepcionMP.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecepcionMP\frmImprimirHojaIngreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmImprimirHojaIngreso.Designer.cs">
+      <DependentUpon>frmImprimirHojaIngreso.cs</DependentUpon>
+    </Compile>
     <Compile Include="RecepcionMP\frmTarima.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -360,6 +367,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmRecepcionMP.resx">
       <DependentUpon>frmRecepcionMP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frmImprimirHojaIngreso.resx">
+      <DependentUpon>frmImprimirHojaIngreso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmTarima.resx">
       <DependentUpon>frmTarima.cs</DependentUpon>

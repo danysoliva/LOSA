@@ -13,15 +13,21 @@ namespace LOSA.RecepcionMP
         {
             InitializeComponent();
             Tarima tar1 = new Tarima();
-            if (tar1.RecuperarRegistro(idTarima, null))
+            if (tar1.RecuperarRegistro(idTarima, ""))
             {
                 //IdUnidadMedida = dr.GetInt32(1);
                 lblCantidad.Text = string.Format("{0:0.00}", tar1.Cantidad);
-                 NombreTarima = dr.GetString(2);
-                TipoTarimaDescripcion = dr.GetString(3);
-                Proveedor = dr.GetString(4);
-                LoteMP = dr.GetString(5);
-                Cantidad = dr.GetInt32(7);
+                //NombreTarima = dr.GetString(2);
+                //TipoTarimaDescripcion = dr.GetString(3);
+                lblProveedor.Text = tar1.Proveedor;
+                lblLote.Text = tar1.LoteMP;
+                lblCantidad.Text = tar1.Cantidad.ToString();
+                lblNombreProducto.Text = tar1.MateriaPrima;
+                lblFechaIngreso.Text = string.Format("{0:MM/dd/yyyy}", tar1.FechaIngreso);
+                lblNumeroIngreso.Text = tar1.NumeroTransaccion.ToString();
+                lblFechaProduccion.Text = string.Format("{0:MM/dd/yyyy}", tar1.FechaProduccion);
+                lblFechadeVencimiento.Text = string.Format("{0:MM/dd/yyyy}", tar1.FechaVencimiento);
+                BarCode1.Text = BarCode2.Text = tar1.CodigoBarra;
             }
 
         }

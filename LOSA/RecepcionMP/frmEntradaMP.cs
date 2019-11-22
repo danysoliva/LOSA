@@ -64,7 +64,8 @@ namespace LOSA.RecepcionMP
                     cmd.Connection = connection;
                     cmd.CommandText = SQL;
 
-                    cmd.Parameters.AddWithValue("@codigo_barra", beTarima.Text);
+
+                    cmd.Parameters.AddWithValue("@codigo_barra", beTarima.Text.Replace("H",""));
 
                     connection.Open();
                
@@ -247,20 +248,21 @@ namespace LOSA.RecepcionMP
                 cmd.CommandType = CommandType.StoredProcedure;
                 Tarima tam1 = new Tarima();
                 string id_um = "NULL";
-                int cantidadMP = 0;
+                decimal cantidadMP = 0;
                 if (tam1.RecuperarRegistro(idTarima,""))
-                { id_um = tam1.IdUnidadMedida.ToString();
+                {
+                    id_um = tam1.IdUnidadMedida.ToString();
                     cantidadMP = tam1.Cantidad;
                 
-                cmd.Parameters.AddWithValue("@idTarima", idTarima);
-                cmd.Parameters.AddWithValue("@cantidad", cantidadMP);
-                cmd.Parameters.AddWithValue("@unidad_medida",id_um);
-                cmd.Parameters.AddWithValue("@id_usuario", Usuariologeado.Id);
-                cmd.Parameters.AddWithValue("@fecha", dtFecha.EditValue);
-                cmd.Parameters.AddWithValue("@id_bodega_destino", 1);
-                cmd.Parameters.AddWithValue("@id_bodega_origen", 1);
-                cmd.Parameters.AddWithValue("@idUbicacion", this.idUbicacion);
-                    cmd.ExecuteNonQuery();
+                    cmd.Parameters.AddWithValue("@idTarima", idTarima);
+                    cmd.Parameters.AddWithValue("@cantidad", cantidadMP);
+                    cmd.Parameters.AddWithValue("@unidad_medida",id_um);
+                    cmd.Parameters.AddWithValue("@id_usuario", Usuariologeado.Id);
+                    cmd.Parameters.AddWithValue("@fecha", dtFecha.EditValue);
+                    cmd.Parameters.AddWithValue("@id_bodega_destino", 1);
+                    cmd.Parameters.AddWithValue("@id_bodega_origen", 1);
+                    cmd.Parameters.AddWithValue("@idUbicacion", this.idUbicacion);
+                        cmd.ExecuteNonQuery();
                 }
                 con.Close();
                 CajaDialogo.Information("DATOS GUARDADOS");
