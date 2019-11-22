@@ -1,4 +1,5 @@
 ﻿using ACS.Classes;
+using Core.Clases.Herramientas;
 using LOSA.Clases;
 using System;
 using System.Collections.Generic;
@@ -285,6 +286,16 @@ namespace LOSA.RecepcionMP
                 gvNuevaUbicacion.Columns[0].AppearanceCell.Font = new Font("Segoe UI", 11, FontStyle.Bold);
 
             }
+        }
+
+        private void BeIdTarima_Enter(object sender, EventArgs e)
+        {
+            Teclado.abrirTeclado();
+        }
+
+        private void BeNuevaUbicacion_Enter(object sender, EventArgs e)
+        {
+            Teclado.abrirTeclado();
         }
     }
 }
