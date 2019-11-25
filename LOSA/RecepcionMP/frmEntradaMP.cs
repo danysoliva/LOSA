@@ -252,7 +252,7 @@ namespace LOSA.RecepcionMP
                 Ubicaciones infoUbicacion = new Ubicaciones();
                 
                 string id_um = "NULL";
-                int cantidadMP = 0;
+                decimal cantidadMP = 0;
                 if (tam1.RecuperarRegistro(idTarima,""))
                 { id_um = tam1.IdUnidadMedida.ToString();
                     cantidadMP = tam1.Cantidad;
