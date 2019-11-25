@@ -39,7 +39,7 @@ namespace LOSA
             else
             {
                 Log1.Id = 1035;
-                Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Montacarga;
+                Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Logistica;
             }
             
             frmOpciones frm = new frmOpciones(Log1);

@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.basculaBindingSource1 = new System.Windows.Forms.BindingSource();
+            this.basculaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dsRecepcionMP = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.gvBascula = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colIDSerie = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -41,8 +42,11 @@
             this.colSeleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colitemcode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.basculaBindingSource = new System.Windows.Forms.BindingSource();
+            this.basculaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.colFurgon = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMateriaPrima = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProveedor = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.basculaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMP)).BeginInit();
@@ -102,9 +106,13 @@
             this.colestado,
             this.colestadoDescripcion,
             this.colSeleccionar,
-            this.colitemcode});
+            this.colitemcode,
+            this.colFurgon,
+            this.colMateriaPrima,
+            this.colProveedor});
             this.gvBascula.GridControl = this.gridControl1;
             this.gvBascula.Name = "gvBascula";
+            this.gvBascula.OptionsCustomization.AllowFilter = false;
             this.gvBascula.OptionsView.ShowAutoFilterRow = true;
             this.gvBascula.OptionsView.ShowGroupPanel = false;
             this.gvBascula.DoubleClick += new System.EventHandler(this.gvBascula_DoubleClick);
@@ -129,8 +137,6 @@
             this.colDescripcion.FieldName = "Descripcion";
             this.colDescripcion.Name = "colDescripcion";
             this.colDescripcion.OptionsColumn.AllowEdit = false;
-            this.colDescripcion.Visible = true;
-            this.colDescripcion.VisibleIndex = 1;
             this.colDescripcion.Width = 140;
             // 
             // colidtipo
@@ -144,8 +150,6 @@
             this.colestado.FieldName = "estado";
             this.colestado.Name = "colestado";
             this.colestado.OptionsColumn.AllowEdit = false;
-            this.colestado.Visible = true;
-            this.colestado.VisibleIndex = 2;
             this.colestado.Width = 140;
             // 
             // colestadoDescripcion
@@ -197,6 +201,33 @@
             this.simpleButton1.Text = "Cancelar";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_1);
             // 
+            // colFurgon
+            // 
+            this.colFurgon.Caption = "Furgón";
+            this.colFurgon.FieldName = "furgon";
+            this.colFurgon.Name = "colFurgon";
+            this.colFurgon.OptionsColumn.AllowEdit = false;
+            this.colFurgon.Visible = true;
+            this.colFurgon.VisibleIndex = 2;
+            // 
+            // colMateriaPrima
+            // 
+            this.colMateriaPrima.Caption = "Materia Prima";
+            this.colMateriaPrima.FieldName = "itemdescrip";
+            this.colMateriaPrima.Name = "colMateriaPrima";
+            this.colMateriaPrima.OptionsColumn.AllowEdit = false;
+            this.colMateriaPrima.Visible = true;
+            this.colMateriaPrima.VisibleIndex = 3;
+            // 
+            // colProveedor
+            // 
+            this.colProveedor.Caption = "Proveedor";
+            this.colProveedor.FieldName = "proveedor";
+            this.colProveedor.Name = "colProveedor";
+            this.colProveedor.OptionsColumn.AllowEdit = false;
+            this.colProveedor.Visible = true;
+            this.colProveedor.VisibleIndex = 4;
+            // 
             // FrmBoleta
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -241,5 +272,8 @@
         private System.Windows.Forms.BindingSource basculaBindingSource1;
         private RecepcionMP.dsRecepcionMPx dsRecepcionMP;
         private DevExpress.XtraGrid.Columns.GridColumn colitemcode;
+        private DevExpress.XtraGrid.Columns.GridColumn colFurgon;
+        private DevExpress.XtraGrid.Columns.GridColumn colMateriaPrima;
+        private DevExpress.XtraGrid.Columns.GridColumn colProveedor;
     }
 }
