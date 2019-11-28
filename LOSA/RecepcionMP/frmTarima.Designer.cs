@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTarima));
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnAgregar = new DevExpress.XtraEditors.SimpleButton();
@@ -46,7 +47,7 @@
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.txtNumIngreso = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.txtCantidadT = new DevExpress.XtraEditors.TextEdit();
+            this.txtUnidades = new DevExpress.XtraEditors.TextEdit();
             this.dtFechaProduccion = new DevExpress.XtraEditors.DateEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.dtFechaVencimiento = new DevExpress.XtraEditors.DateEdit();
@@ -56,11 +57,15 @@
             this.cmdGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.gridLookUpEditPresentacion = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.bindingSourcePresentaciones = new System.Windows.Forms.BindingSource(this.components);
             this.dsRecepcionMPx1 = new LOSA.RecepcionMP.dsRecepcionMPx();
-            this.bindingSourcePresentaciones = new System.Windows.Forms.BindingSource();
+            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
+            this.txtPesoKg = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
+            this.txtCantidadTarimasTotal = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdBoleta.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigoMP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMP_Name.Properties)).BeginInit();
@@ -69,16 +74,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaIngreso.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaIngreso.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumIngreso.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCantidadT.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUnidades.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaProduccion.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaProduccion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaVencimiento.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaVencimiento.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLote.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditPresentacion.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePresentaciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPesoKg.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCantidadTarimasTotal.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -127,7 +134,7 @@
             this.btnAtras.Location = new System.Drawing.Point(12, 45);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(167, 47);
-            this.btnAtras.TabIndex = 26;
+            this.btnAtras.TabIndex = 9;
             this.btnAtras.Text = "Atras";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click_1);
             // 
@@ -150,7 +157,7 @@
             this.txtIdBoleta.Properties.Appearance.Options.UseFont = true;
             this.txtIdBoleta.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtIdBoleta.Size = new System.Drawing.Size(142, 32);
-            this.txtIdBoleta.TabIndex = 29;
+            this.txtIdBoleta.TabIndex = 0;
             this.txtIdBoleta.Enter += new System.EventHandler(this.txtIdBoleta_Enter);
             this.txtIdBoleta.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDescripcionCorta_KeyDown);
             // 
@@ -166,7 +173,7 @@
             this.simpleButton1.Location = new System.Drawing.Point(335, 114);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(48, 41);
-            this.simpleButton1.TabIndex = 31;
+            this.simpleButton1.TabIndex = 1;
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // labelControl3
@@ -301,28 +308,29 @@
             this.labelControl7.Appearance.Options.UseFont = true;
             this.labelControl7.Location = new System.Drawing.Point(16, 290);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(96, 24);
+            this.labelControl7.Size = new System.Drawing.Size(80, 24);
             this.labelControl7.TabIndex = 43;
-            this.labelControl7.Text = "Cantidad T.";
+            this.labelControl7.Text = "Unidades";
             // 
-            // txtCantidadT
+            // txtUnidades
             // 
-            this.txtCantidadT.EditValue = "0";
-            this.txtCantidadT.Location = new System.Drawing.Point(187, 286);
-            this.txtCantidadT.Name = "txtCantidadT";
-            this.txtCantidadT.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCantidadT.Properties.Appearance.Options.UseFont = true;
-            this.txtCantidadT.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCantidadT.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtCantidadT.Size = new System.Drawing.Size(142, 32);
-            this.txtCantidadT.TabIndex = 42;
-            this.txtCantidadT.Enter += new System.EventHandler(this.txtCantidadT_Enter);
-            this.txtCantidadT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidadT_KeyPress);
+            this.txtUnidades.EditValue = "0";
+            this.txtUnidades.Location = new System.Drawing.Point(187, 286);
+            this.txtUnidades.Name = "txtUnidades";
+            this.txtUnidades.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUnidades.Properties.Appearance.Options.UseFont = true;
+            this.txtUnidades.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtUnidades.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtUnidades.Size = new System.Drawing.Size(142, 32);
+            this.txtUnidades.TabIndex = 3;
+            this.txtUnidades.TextChanged += new System.EventHandler(this.txtUnidades_TextChanged);
+            this.txtUnidades.Enter += new System.EventHandler(this.txtCantidadT_Enter);
+            this.txtUnidades.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidadT_KeyPress);
             // 
             // dtFechaProduccion
             // 
             this.dtFechaProduccion.EditValue = null;
-            this.dtFechaProduccion.Location = new System.Drawing.Point(187, 333);
+            this.dtFechaProduccion.Location = new System.Drawing.Point(187, 373);
             this.dtFechaProduccion.Name = "dtFechaProduccion";
             this.dtFechaProduccion.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFechaProduccion.Properties.Appearance.Options.UseFont = true;
@@ -334,13 +342,13 @@
             this.dtFechaProduccion.Properties.MinValue = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
             this.dtFechaProduccion.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
             this.dtFechaProduccion.Size = new System.Drawing.Size(142, 30);
-            this.dtFechaProduccion.TabIndex = 45;
+            this.dtFechaProduccion.TabIndex = 5;
             // 
             // labelControl8
             // 
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(16, 336);
+            this.labelControl8.Location = new System.Drawing.Point(16, 376);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(156, 24);
             this.labelControl8.TabIndex = 44;
@@ -349,7 +357,7 @@
             // dtFechaVencimiento
             // 
             this.dtFechaVencimiento.EditValue = null;
-            this.dtFechaVencimiento.Location = new System.Drawing.Point(187, 372);
+            this.dtFechaVencimiento.Location = new System.Drawing.Point(187, 412);
             this.dtFechaVencimiento.Name = "dtFechaVencimiento";
             this.dtFechaVencimiento.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFechaVencimiento.Properties.Appearance.Options.UseFont = true;
@@ -360,7 +368,7 @@
             this.dtFechaVencimiento.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.TouchUI;
             this.dtFechaVencimiento.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
             this.dtFechaVencimiento.Size = new System.Drawing.Size(142, 30);
-            this.dtFechaVencimiento.TabIndex = 47;
+            this.dtFechaVencimiento.TabIndex = 6;
             // 
             // labelControl9
             // 
@@ -368,7 +376,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(16, 375);
+            this.labelControl9.Location = new System.Drawing.Point(16, 415);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(165, 24);
             this.labelControl9.TabIndex = 46;
@@ -378,7 +386,7 @@
             // 
             this.labelControl10.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(394, 375);
+            this.labelControl10.Location = new System.Drawing.Point(394, 333);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(56, 24);
             this.labelControl10.TabIndex = 49;
@@ -387,14 +395,14 @@
             // txtLote
             // 
             this.txtLote.EditValue = "";
-            this.txtLote.Location = new System.Drawing.Point(456, 371);
+            this.txtLote.Location = new System.Drawing.Point(456, 329);
             this.txtLote.Name = "txtLote";
             this.txtLote.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLote.Properties.Appearance.Options.UseFont = true;
             this.txtLote.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtLote.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtLote.Size = new System.Drawing.Size(170, 32);
-            this.txtLote.TabIndex = 48;
+            this.txtLote.TabIndex = 4;
             this.txtLote.Enter += new System.EventHandler(this.txtLote_Enter);
             // 
             // cmdGuardar
@@ -405,12 +413,12 @@
             this.cmdGuardar.Appearance.Options.UseBackColor = true;
             this.cmdGuardar.Appearance.Options.UseFont = true;
             this.cmdGuardar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.cmdGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdGuardar.ImageOptions.Image")));
             this.cmdGuardar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.cmdGuardar.Location = new System.Drawing.Point(459, 45);
             this.cmdGuardar.Name = "cmdGuardar";
             this.cmdGuardar.Size = new System.Drawing.Size(167, 47);
-            this.cmdGuardar.TabIndex = 50;
+            this.cmdGuardar.TabIndex = 8;
             this.cmdGuardar.Text = "Guardar";
             this.cmdGuardar.Click += new System.EventHandler(this.cmdGuardar_Click);
             // 
@@ -438,7 +446,18 @@
             this.gridLookUpEditPresentacion.Properties.ValueMember = "id";
             this.gridLookUpEditPresentacion.Properties.View = this.gridLookUpEdit1View;
             this.gridLookUpEditPresentacion.Size = new System.Drawing.Size(170, 30);
-            this.gridLookUpEditPresentacion.TabIndex = 52;
+            this.gridLookUpEditPresentacion.TabIndex = 2;
+            this.gridLookUpEditPresentacion.EditValueChanged += new System.EventHandler(this.gridLookUpEditPresentacion_EditValueChanged);
+            // 
+            // bindingSourcePresentaciones
+            // 
+            this.bindingSourcePresentaciones.DataMember = "presentaciones";
+            this.bindingSourcePresentaciones.DataSource = this.dsRecepcionMPx1;
+            // 
+            // dsRecepcionMPx1
+            // 
+            this.dsRecepcionMPx1.DataSetName = "dsRecepcionMPx";
+            this.dsRecepcionMPx1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridLookUpEdit1View
             // 
@@ -451,16 +470,6 @@
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
-            // dsRecepcionMPx1
-            // 
-            this.dsRecepcionMPx1.DataSetName = "dsRecepcionMPx";
-            this.dsRecepcionMPx1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bindingSourcePresentaciones
-            // 
-            this.bindingSourcePresentaciones.DataMember = "presentaciones";
-            this.bindingSourcePresentaciones.DataSource = this.dsRecepcionMPx1;
             // 
             // colid
             // 
@@ -475,12 +484,65 @@
             this.coldescripcion.Visible = true;
             this.coldescripcion.VisibleIndex = 0;
             // 
+            // labelControl12
+            // 
+            this.labelControl12.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.labelControl12.Appearance.Options.UseFont = true;
+            this.labelControl12.Location = new System.Drawing.Point(16, 337);
+            this.labelControl12.Name = "labelControl12";
+            this.labelControl12.Size = new System.Drawing.Size(57, 18);
+            this.labelControl12.TabIndex = 53;
+            this.labelControl12.Text = "Peso Kg";
+            this.labelControl12.Click += new System.EventHandler(this.labelControl12_Click);
+            // 
+            // txtPesoKg
+            // 
+            this.txtPesoKg.EditValue = "0";
+            this.txtPesoKg.Enabled = false;
+            this.txtPesoKg.Location = new System.Drawing.Point(187, 329);
+            this.txtPesoKg.Name = "txtPesoKg";
+            this.txtPesoKg.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPesoKg.Properties.Appearance.Options.UseFont = true;
+            this.txtPesoKg.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPesoKg.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtPesoKg.Size = new System.Drawing.Size(142, 32);
+            this.txtPesoKg.TabIndex = 54;
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl13.Appearance.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.labelControl13.Appearance.Options.UseFont = true;
+            this.labelControl13.Appearance.Options.UseForeColor = true;
+            this.labelControl13.Location = new System.Drawing.Point(345, 415);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Size = new System.Drawing.Size(173, 24);
+            this.labelControl13.TabIndex = 56;
+            this.labelControl13.Text = "Cantidad de Tarimas";
+            // 
+            // txtCantidadTarimasTotal
+            // 
+            this.txtCantidadTarimasTotal.EditValue = "1";
+            this.txtCantidadTarimasTotal.Location = new System.Drawing.Point(524, 411);
+            this.txtCantidadTarimasTotal.Name = "txtCantidadTarimasTotal";
+            this.txtCantidadTarimasTotal.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCantidadTarimasTotal.Properties.Appearance.Options.UseFont = true;
+            this.txtCantidadTarimasTotal.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCantidadTarimasTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtCantidadTarimasTotal.Size = new System.Drawing.Size(102, 32);
+            this.txtCantidadTarimasTotal.TabIndex = 7;
+            this.txtCantidadTarimasTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textEdit1_KeyPress);
+            // 
             // frmTarima
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(638, 560);
+            this.Controls.Add(this.labelControl13);
+            this.Controls.Add(this.txtCantidadTarimasTotal);
+            this.Controls.Add(this.txtPesoKg);
+            this.Controls.Add(this.labelControl12);
             this.Controls.Add(this.gridLookUpEditPresentacion);
             this.Controls.Add(this.labelControl11);
             this.Controls.Add(this.cmdGuardar);
@@ -491,7 +553,7 @@
             this.Controls.Add(this.dtFechaProduccion);
             this.Controls.Add(this.labelControl8);
             this.Controls.Add(this.labelControl7);
-            this.Controls.Add(this.txtCantidadT);
+            this.Controls.Add(this.txtUnidades);
             this.Controls.Add(this.txtNumIngreso);
             this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.dtFechaIngreso);
@@ -522,16 +584,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaIngreso.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaIngreso.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumIngreso.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCantidadT.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUnidades.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaProduccion.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaProduccion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaVencimiento.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaVencimiento.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLote.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditPresentacion.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePresentaciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPesoKg.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCantidadTarimasTotal.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -556,7 +620,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.TextEdit txtNumIngreso;
         private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.TextEdit txtCantidadT;
+        private DevExpress.XtraEditors.TextEdit txtUnidades;
         private DevExpress.XtraEditors.DateEdit dtFechaProduccion;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.DateEdit dtFechaVencimiento;
@@ -571,5 +635,9 @@
         private System.Windows.Forms.BindingSource bindingSourcePresentaciones;
         private DevExpress.XtraGrid.Columns.GridColumn colid;
         private DevExpress.XtraGrid.Columns.GridColumn coldescripcion;
+        private DevExpress.XtraEditors.LabelControl labelControl12;
+        private DevExpress.XtraEditors.TextEdit txtPesoKg;
+        private DevExpress.XtraEditors.LabelControl labelControl13;
+        private DevExpress.XtraEditors.TextEdit txtCantidadTarimasTotal;
     }
 }
