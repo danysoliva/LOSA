@@ -34,8 +34,11 @@
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.memoDescripcion = new DevExpress.XtraEditors.MemoEdit();
             this.chkEnable = new DevExpress.XtraEditors.CheckEdit();
+            this.txtFactor = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.memoDescripcion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkEnable.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFactor.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl3
@@ -104,12 +107,39 @@
             this.chkEnable.Size = new System.Drawing.Size(80, 28);
             this.chkEnable.TabIndex = 27;
             // 
+            // txtFactor
+            // 
+            this.txtFactor.Location = new System.Drawing.Point(13, 289);
+            this.txtFactor.Name = "txtFactor";
+            this.txtFactor.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.txtFactor.Properties.Appearance.Options.UseFont = true;
+            this.txtFactor.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtFactor.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txtFactor.Properties.Mask.EditMask = "n";
+            this.txtFactor.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtFactor.Properties.NullText = "0";
+            this.txtFactor.Size = new System.Drawing.Size(165, 32);
+            this.txtFactor.TabIndex = 28;
+            this.txtFactor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextEdit1_KeyPress);
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(16, 259);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(53, 24);
+            this.labelControl1.TabIndex = 29;
+            this.labelControl1.Text = "Factor";
+            // 
             // frmTipoPresentacionCRUD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(638, 560);
+            this.Controls.Add(this.labelControl1);
+            this.Controls.Add(this.txtFactor);
             this.Controls.Add(this.chkEnable);
             this.Controls.Add(this.memoDescripcion);
             this.Controls.Add(this.btnGuardar);
@@ -122,6 +152,7 @@
             this.Load += new System.EventHandler(this.frmTipoPresentacionCRUD_Load);
             ((System.ComponentModel.ISupportInitialize)(this.memoDescripcion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkEnable.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFactor.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,5 +165,7 @@
         private DevExpress.XtraEditors.SimpleButton btnAtras;
         private DevExpress.XtraEditors.MemoEdit memoDescripcion;
         private DevExpress.XtraEditors.CheckEdit chkEnable;
+        private DevExpress.XtraEditors.TextEdit txtFactor;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }

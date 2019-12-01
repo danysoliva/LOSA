@@ -36,7 +36,7 @@ namespace LOSA.Clases
         String _Proveedor;
         bool _Recuperad;
         string _MateriaPrima;
-
+        decimal _Factor;
         public Tarima()
         {
 
@@ -59,6 +59,7 @@ namespace LOSA.Clases
         public DateTime FechaProduccion { get => _fechaProduccion; set => _fechaProduccion = value; }
         public DateTime FechaVencimiento { get => _fechaVencimiento; set => _fechaVencimiento = value; }
         public int IdBoleta { get => _idBoleta; set => _idBoleta = value; }
+        public decimal Factor { get => _Factor; set => _Factor = value; }
 
         public bool RecuperarRegistro(int pIdTarima, string pCodigoBarra)
         {
@@ -91,6 +92,7 @@ namespace LOSA.Clases
                     FechaVencimiento = dr.GetDateTime(13);
                     IdBoleta = dr.GetInt32(14);
                     CodigoBarra = dr.GetString(15);
+                    Factor = dr.GetDecimal(16);
                     Recuperado = true;
                 }
                 dr.Close();

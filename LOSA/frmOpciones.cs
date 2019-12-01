@@ -103,5 +103,17 @@ namespace LOSA
             frmCambiarUbicacionTarima frm = new frmCambiarUbicacionTarima();
             frm.Show();
         }
+
+        private void BtnAjusteKardex_Click(object sender, EventArgs e)
+        {
+            frmAjustesKardex frm = new frmAjustesKardex(UsuarioLogeado);
+            frm.Show();
+        }
+
+        private void BtnDevoluciones_Click(object sender, EventArgs e)
+        {
+            frmDevolucionKardex frm = new frmDevolucionKardex(UsuarioLogeado);
+            frm.Show();
+        }
     }
 }
