@@ -191,7 +191,7 @@ namespace LOSA.RecepcionMP
                 return;
             }
 
-            if (Convert.ToDecimal(txtUnidades.Text) <= 0)
+            if (Convert.ToDecimal(txtCantidadT .Text) <= 0)
             {
                 CajaDialogo.Error("No se puede registrar una tarima con unidades de materia en cero (0)!");
                 return;
@@ -224,7 +224,7 @@ namespace LOSA.RecepcionMP
             int cant = 0;
             try
             {
-                cant = Convert.ToInt32(txtCantidadTarimasTotal.Text);
+                cant = Convert.ToInt32(txtCantidadT.Text);
             }
             catch 
             {
@@ -268,7 +268,7 @@ namespace LOSA.RecepcionMP
                     cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
                     cmd.Parameters.AddWithValue("@id_boleta", this.IdSerie);
                     cmd.Parameters.AddWithValue("@codigo_barra", barcode);
-                    cmd.Parameters.AddWithValue("@cant", txtUnidades.Text);
+                    cmd.Parameters.AddWithValue("@cant", txtCantidadT.Text);
                     cmd.Parameters.AddWithValue("@peso", Convert.ToDecimal(txtPesoKg.Text));
                     vid_tarima = Convert.ToInt32(cmd.ExecuteScalar());
 
@@ -368,7 +368,7 @@ namespace LOSA.RecepcionMP
             if (pre1.RecuperarRegistro(Convert.ToInt32(gridLookUpEditPresentacion.EditValue)))
             {
                 factor = pre1.Factor;
-                txtPesoKg.Text = string.Format("{0:###,##0.00}", (factor * Convert.ToDecimal(txtUnidades.Text)));
+                txtPesoKg.Text = string.Format("{0:###,##0.00}", (factor * Convert.ToDecimal(txtCantidadT.Text)));
             }
         }
 
@@ -376,7 +376,7 @@ namespace LOSA.RecepcionMP
         {
             try
             {
-                txtPesoKg.Text = string.Format("{0:###,##0.00}", (factor * Convert.ToDecimal(txtUnidades.Text)));
+                txtPesoKg.Text = string.Format("{0:###,##0.00}", (factor * Convert.ToDecimal(txtCantidadT.Text)));
             }
             catch
             {

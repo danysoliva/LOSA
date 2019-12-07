@@ -16,6 +16,7 @@ namespace LOSA.RecepcionMP
 {
     public partial class frmDevolucionKardex : Form
     {
+        opcionAbrirVentanaTarima windowTarimaOption = new opcionAbrirVentanaTarima();
         private int idTarima;
         private decimal factorPresentacion;
         UserLogin usuarioLogueado = new UserLogin();
@@ -27,7 +28,7 @@ namespace LOSA.RecepcionMP
 
         private void CmdSelectTarima_Click(object sender, EventArgs e)
         {
-            frmTarimas frm = new frmTarimas((int)opcionAbrirVentanaTarima.Opciones.ventanaDevoluciones);
+            frmTarimas frm = new frmTarimas((int) opcionAbrirVentanaTarima .Opciones.ventanaDevoluciones);
             Tarima InfoTarima = new Tarima();
 
             if (frm.ShowDialog() == DialogResult.OK)
