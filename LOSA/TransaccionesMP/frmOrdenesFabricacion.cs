@@ -1,4 +1,5 @@
 ﻿using ACS.Classes;
+using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -51,7 +52,12 @@ namespace LOSA.TransaccionesMP
         private void btnVer_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             //boton ver
+            var gridView = (GridView)grOrdenFabricacion.FocusedView;
+            var row = (dsTransaccionesMP.ordenes_fabricacion_hRow)gridView.GetFocusedDataRow();
 
+            frmOrdenFabricacionDetalle frm = new frmOrdenFabricacionDetalle();
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
         }
     }
 }
