@@ -18,7 +18,7 @@ namespace LOSA.RecepcionMP
     {
         int idUbicacionTarimaActual = 0;
         int idUbicacionNueva = 0;
-
+        private bool EncontroTarima = false;
         public enum VentanaTarima
         {
             asignarUbicacion = 1,
@@ -56,16 +56,17 @@ namespace LOSA.RecepcionMP
 
             if (infoTarima.RecuperarRegistro(idTarima, pCodigoBarra))
             {
-                //id_um = tam1.IdUnidadMedida.ToString();
-                //cantidadMP = tam1.Cantidad;
-
                 dt.Rows.Add("TARIMA", infoTarima.Id);
                 dt.Rows.Add("PROVEEDOR", infoTarima.Proveedor);
                 dt.Rows.Add("LOTE", infoTarima.LoteMP);
                 dt.Rows.Add("PRESENTACION", infoTarima.TipoTarimaDescripcion);
+                EncontroTarima = true;
             }
             else
+            {
                 CajaDialogo.Error("NO SE ENCONTRÓ LA TARIMA");
+                EncontroTarima = false;
+            }
             return dt;
         }
 
@@ -207,18 +208,23 @@ namespace LOSA.RecepcionMP
             frmTarimas frm = new frmTarimas( (int)VentanaTarima.cambiarUbicacion);
             DataOperations dp = new DataOperations();
             Ubicacion_Tarima infoUbicacionTarima = new Ubicacion_Tarima();
+            
 
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                gcTarima.DataSource = CreateDataTarima(frm.idTarima,"");
+                gcTarima.DataSource = CreateDataTarima(frm.idTarima,"NULL");
                 gvTarima.InitNewRow += GvTarima_InitNewRow;
                 gvTarima.Columns[0].AppearanceCell.Font = new Font("Segoe UI", 11, FontStyle.Bold);
-                if (infoUbicacionTarima.RecuperarRegistro(frm.idTarima, beIdTarima.Text))
+
+                if (EncontroTarima)//Si encontro tarima, buscar ubicacion
                 {
-                    idUbicacionTarimaActual = infoUbicacionTarima.Id;
-                    gcUbicacionActual.DataSource = CreateDataUbicacion(infoUbicacionTarima.Rack, infoUbicacionTarima.Profundidad, infoUbicacionTarima.Altura, infoUbicacionTarima.Pasillo);
-                    gvUbicacionActual.InitNewRow += GvUbicacionActual_InitNewRow;
-                    gvUbicacionActual.Columns[0].AppearanceCell.Font = new Font("Segoe UI", 11, FontStyle.Bold);
+                    if (infoUbicacionTarima.RecuperarRegistro(frm.idTarima, beIdTarima.Text))
+                    {
+                        idUbicacionTarimaActual = infoUbicacionTarima.Id;
+                        gcUbicacionActual.DataSource = CreateDataUbicacion(infoUbicacionTarima.Rack, infoUbicacionTarima.Profundidad, infoUbicacionTarima.Altura, infoUbicacionTarima.Pasillo);
+                        gvUbicacionActual.InitNewRow += GvUbicacionActual_InitNewRow;
+                        gvUbicacionActual.Columns[0].AppearanceCell.Font = new Font("Segoe UI", 11, FontStyle.Bold);
+                    }
                 }
             }
         }

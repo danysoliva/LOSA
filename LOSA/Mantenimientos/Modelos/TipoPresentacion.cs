@@ -9,6 +9,8 @@ namespace LOSA.Mantenimientos.Modelos
         public bool Enable { get; set; }
         public DateTime Fecha { get; set; }
 
+        public decimal Factor { get; set; }
+
         public TipoPresentacion()
         {
             Enable = true;

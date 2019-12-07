@@ -32,7 +32,7 @@ namespace LOSA.Clases
             try
             {
                 DataOperations dp = new DataOperations();
-                SqlConnection con = new SqlConnection(dp.ConnectionStringCostos);
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
                 string sql = @"SELECT id, 
                                        nombre, 
