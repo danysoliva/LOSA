@@ -1,6 +1,7 @@
 ﻿using LOSA.Clases;
 using LOSA.Mantenimientos;
 using LOSA.RecepcionMP;
+using LOSA.TransaccionesMP;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -104,15 +105,10 @@ namespace LOSA
             frm.Show();
         }
 
-        private void BtnAjusteKardex_Click(object sender, EventArgs e)
+        private void cmdProgramaRequisiciones_Click(object sender, EventArgs e)
         {
-            frmAjustesKardex frm = new frmAjustesKardex(UsuarioLogeado);
-            frm.Show();
-        }
-
-        private void BtnDevoluciones_Click(object sender, EventArgs e)
-        {
-            frmDevolucionKardex frm = new frmDevolucionKardex(UsuarioLogeado);
+            frmOrdenesFabricacion frm = new frmOrdenesFabricacion();
+            frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
     }

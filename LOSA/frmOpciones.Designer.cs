@@ -36,8 +36,6 @@
             this.TabMontacarga = new DevExpress.XtraTab.XtraTabPage();
             this.btnCambiarUbicacion = new DevExpress.XtraEditors.SimpleButton();
             this.TabLogistica = new DevExpress.XtraTab.XtraTabPage();
-            this.btnDevoluciones = new DevExpress.XtraEditors.SimpleButton();
-            this.btnAjusteKardex = new DevExpress.XtraEditors.SimpleButton();
             this.cmdRegistroLote = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdRecepcionMPLogistica = new DevExpress.XtraEditors.SimpleButton();
@@ -48,6 +46,8 @@
             this.btnEstadosProgramacionesRequisiciones = new DevExpress.XtraEditors.SimpleButton();
             this.btnTiposPresentaciones = new DevExpress.XtraEditors.SimpleButton();
             this.btnBodegas = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdRequisiciones = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdProgramaRequisiciones = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -57,12 +57,11 @@
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton1.ImageOptions.Image = global::LOSA.Properties.Resources.wrench;
-            this.simpleButton1.Location = new System.Drawing.Point(424, 186);
+            this.simpleButton1.Location = new System.Drawing.Point(9, 271);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(199, 71);
             this.simpleButton1.TabIndex = 4;
@@ -88,16 +87,15 @@
             // 
             // simpleButton2
             // 
-            this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton2.Appearance.Options.UseFont = true;
             this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton2.ImageOptions.Image = global::LOSA.Properties.Resources.check_in;
-            this.simpleButton2.Location = new System.Drawing.Point(424, 12);
+            this.simpleButton2.Location = new System.Drawing.Point(9, 11);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(199, 71);
             this.simpleButton2.TabIndex = 7;
-            this.simpleButton2.Text = "Recepción MP";
+            this.simpleButton2.Text = "Ingreso MP";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // tabOpciones
@@ -120,6 +118,7 @@
             // 
             // TabMontacarga
             // 
+            this.TabMontacarga.Controls.Add(this.cmdRequisiciones);
             this.TabMontacarga.Controls.Add(this.btnCambiarUbicacion);
             this.TabMontacarga.Controls.Add(this.simpleButton1);
             this.TabMontacarga.Controls.Add(this.simpleButton2);
@@ -131,14 +130,13 @@
             // 
             // btnCambiarUbicacion
             // 
-            this.btnCambiarUbicacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCambiarUbicacion.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCambiarUbicacion.Appearance.Options.UseFont = true;
             this.btnCambiarUbicacion.Appearance.Options.UseTextOptions = true;
             this.btnCambiarUbicacion.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnCambiarUbicacion.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnCambiarUbicacion.ImageOptions.Image = global::LOSA.Properties.Resources.check_in;
-            this.btnCambiarUbicacion.Location = new System.Drawing.Point(424, 99);
+            this.btnCambiarUbicacion.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCambiarUbicacion.ImageOptions.Image")));
+            this.btnCambiarUbicacion.Location = new System.Drawing.Point(9, 98);
             this.btnCambiarUbicacion.Name = "btnCambiarUbicacion";
             this.btnCambiarUbicacion.Size = new System.Drawing.Size(199, 71);
             this.btnCambiarUbicacion.TabIndex = 8;
@@ -147,8 +145,7 @@
             // 
             // TabLogistica
             // 
-            this.TabLogistica.Controls.Add(this.btnDevoluciones);
-            this.TabLogistica.Controls.Add(this.btnAjusteKardex);
+            this.TabLogistica.Controls.Add(this.cmdProgramaRequisiciones);
             this.TabLogistica.Controls.Add(this.cmdRegistroLote);
             this.TabLogistica.Controls.Add(this.simpleButton3);
             this.TabLogistica.Controls.Add(this.cmdRecepcionMPLogistica);
@@ -158,42 +155,13 @@
             this.TabLogistica.Size = new System.Drawing.Size(629, 422);
             this.TabLogistica.Text = "Logistica";
             // 
-            // btnDevoluciones
-            // 
-            this.btnDevoluciones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDevoluciones.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDevoluciones.Appearance.Options.UseFont = true;
-            this.btnDevoluciones.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnDevoluciones.ImageOptions.Image = global::LOSA.Properties.Resources.shipping;
-            this.btnDevoluciones.Location = new System.Drawing.Point(204, 137);
-            this.btnDevoluciones.Name = "btnDevoluciones";
-            this.btnDevoluciones.Size = new System.Drawing.Size(199, 71);
-            this.btnDevoluciones.TabIndex = 12;
-            this.btnDevoluciones.Text = "Devoluciones";
-            this.btnDevoluciones.Click += new System.EventHandler(this.BtnDevoluciones_Click);
-            // 
-            // btnAjusteKardex
-            // 
-            this.btnAjusteKardex.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAjusteKardex.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAjusteKardex.Appearance.Options.UseFont = true;
-            this.btnAjusteKardex.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnAjusteKardex.ImageOptions.Image = global::LOSA.Properties.Resources.settings;
-            this.btnAjusteKardex.Location = new System.Drawing.Point(204, 48);
-            this.btnAjusteKardex.Name = "btnAjusteKardex";
-            this.btnAjusteKardex.Size = new System.Drawing.Size(199, 71);
-            this.btnAjusteKardex.TabIndex = 11;
-            this.btnAjusteKardex.Text = "Ajuste Kardex";
-            this.btnAjusteKardex.Click += new System.EventHandler(this.BtnAjusteKardex_Click);
-            // 
             // cmdRegistroLote
             // 
-            this.cmdRegistroLote.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdRegistroLote.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdRegistroLote.Appearance.Options.UseFont = true;
             this.cmdRegistroLote.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdRegistroLote.ImageOptions.Image = global::LOSA.Properties.Resources.edit_table_1_;
-            this.cmdRegistroLote.Location = new System.Drawing.Point(424, 137);
+            this.cmdRegistroLote.Location = new System.Drawing.Point(9, 15);
             this.cmdRegistroLote.Name = "cmdRegistroLote";
             this.cmdRegistroLote.Size = new System.Drawing.Size(199, 71);
             this.cmdRegistroLote.TabIndex = 10;
@@ -207,7 +175,7 @@
             this.simpleButton3.Appearance.Options.UseFont = true;
             this.simpleButton3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton3.ImageOptions.Image = global::LOSA.Properties.Resources.wrench;
-            this.simpleButton3.Location = new System.Drawing.Point(424, 48);
+            this.simpleButton3.Location = new System.Drawing.Point(424, 15);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(199, 71);
             this.simpleButton3.TabIndex = 8;
@@ -216,12 +184,11 @@
             // 
             // cmdRecepcionMPLogistica
             // 
-            this.cmdRecepcionMPLogistica.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdRecepcionMPLogistica.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdRecepcionMPLogistica.Appearance.Options.UseFont = true;
             this.cmdRecepcionMPLogistica.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdRecepcionMPLogistica.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdRecepcionMPLogistica.ImageOptions.Image")));
-            this.cmdRecepcionMPLogistica.Location = new System.Drawing.Point(424, 223);
+            this.cmdRecepcionMPLogistica.Location = new System.Drawing.Point(9, 101);
             this.cmdRecepcionMPLogistica.Name = "cmdRecepcionMPLogistica";
             this.cmdRecepcionMPLogistica.Size = new System.Drawing.Size(199, 71);
             this.cmdRecepcionMPLogistica.TabIndex = 9;
@@ -315,6 +282,33 @@
             this.btnBodegas.Text = "Bodegas";
             this.btnBodegas.Click += new System.EventHandler(this.BtnBodegas_Click);
             // 
+            // cmdRequisiciones
+            // 
+            this.cmdRequisiciones.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdRequisiciones.Appearance.Options.UseFont = true;
+            this.cmdRequisiciones.Appearance.Options.UseTextOptions = true;
+            this.cmdRequisiciones.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.cmdRequisiciones.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdRequisiciones.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image1")));
+            this.cmdRequisiciones.Location = new System.Drawing.Point(9, 185);
+            this.cmdRequisiciones.Name = "cmdRequisiciones";
+            this.cmdRequisiciones.Size = new System.Drawing.Size(199, 71);
+            this.cmdRequisiciones.TabIndex = 9;
+            this.cmdRequisiciones.Text = "Requisiciones";
+            // 
+            // cmdProgramaRequisiciones
+            // 
+            this.cmdProgramaRequisiciones.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdProgramaRequisiciones.Appearance.Options.UseFont = true;
+            this.cmdProgramaRequisiciones.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdProgramaRequisiciones.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.cmdProgramaRequisiciones.Location = new System.Drawing.Point(9, 188);
+            this.cmdProgramaRequisiciones.Name = "cmdProgramaRequisiciones";
+            this.cmdProgramaRequisiciones.Size = new System.Drawing.Size(199, 71);
+            this.cmdProgramaRequisiciones.TabIndex = 11;
+            this.cmdProgramaRequisiciones.Text = "Ordenes de\r\nFabricación";
+            this.cmdProgramaRequisiciones.Click += new System.EventHandler(this.cmdProgramaRequisiciones_Click);
+            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -355,7 +349,7 @@
         private DevExpress.XtraEditors.SimpleButton btnEstadosRequisiciones;
         private DevExpress.XtraEditors.SimpleButton cmdRegistroLote;
         private DevExpress.XtraEditors.SimpleButton btnCambiarUbicacion;
-        private DevExpress.XtraEditors.SimpleButton btnAjusteKardex;
-        private DevExpress.XtraEditors.SimpleButton btnDevoluciones;
+        private DevExpress.XtraEditors.SimpleButton cmdRequisiciones;
+        private DevExpress.XtraEditors.SimpleButton cmdProgramaRequisiciones;
     }
 }

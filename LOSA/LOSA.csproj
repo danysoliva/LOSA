@@ -337,6 +337,17 @@
     <Compile Include="Tools\frmInputBox.Designer.cs">
       <DependentUpon>frmInputBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\dsTransaccionesMP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsTransaccionesMP.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmOrdenesFabricacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmOrdenesFabricacion.Designer.cs">
+      <DependentUpon>frmOrdenesFabricacion.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -426,6 +437,9 @@
     <EmbeddedResource Include="Tools\frmInputBox.resx">
       <DependentUpon>frmInputBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmOrdenesFabricacion.resx">
+      <DependentUpon>frmOrdenesFabricacion.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="LOSA_TemporaryKey.pfx" />
     <None Include="Mantenimientos\dsMantenimiento.xsc">
       <DependentUpon>dsMantenimiento.xsd</DependentUpon>
@@ -447,6 +461,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="TransaccionesMP\dsTransaccionesMP.xsc">
+      <DependentUpon>dsTransaccionesMP.xsd</DependentUpon>
+    </None>
+    <None Include="TransaccionesMP\dsTransaccionesMP.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsTransaccionesMP.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TransaccionesMP\dsTransaccionesMP.xss">
+      <DependentUpon>dsTransaccionesMP.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -493,5 +518,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
