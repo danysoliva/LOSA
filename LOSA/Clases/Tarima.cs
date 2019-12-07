@@ -15,6 +15,7 @@ namespace LOSA.Clases
         String _nombreTarima;
         int _id_materiaprima;
         decimal _cantidad;
+        decimal _peso;
         string _idProveedor;
         DateTime _FechaIngreso;
         int _numeroTransaccion;
@@ -36,7 +37,7 @@ namespace LOSA.Clases
         String _Proveedor;
         bool _Recuperad;
         string _MateriaPrima;
-        decimal _Factor;
+
         public Tarima()
         {
 
@@ -59,7 +60,9 @@ namespace LOSA.Clases
         public DateTime FechaProduccion { get => _fechaProduccion; set => _fechaProduccion = value; }
         public DateTime FechaVencimiento { get => _fechaVencimiento; set => _fechaVencimiento = value; }
         public int IdBoleta { get => _idBoleta; set => _idBoleta = value; }
-        public decimal Factor { get => _Factor; set => _Factor = value; }
+        public decimal Peso { get => _peso; set => _peso = value; }
+        public string IdProveedor { get => _idProveedor; set => _idProveedor = value; }
+        public int IdPresentacion { get => _idPresentacion; set => _idPresentacion = value; }
 
         public bool RecuperarRegistro(int pIdTarima, string pCodigoBarra)
         {
@@ -80,10 +83,10 @@ namespace LOSA.Clases
                     IdUnidadMedida = dr.GetInt32(1);
                     //Cantidad = 1;
                     _nombreTarima = dr.GetString(2);
-                    TipoTarimaDescripcion= dr.GetString(3);
-                    Proveedor= dr.GetString(4);
+                    TipoTarimaDescripcion = dr.GetString(3);
+                    IdProveedor = dr.GetString(4);
                     LoteMP = dr.GetString(5);
-                    Cantidad= dr.GetDecimal(7);
+                    Cantidad = dr.GetDecimal(7);
                     Id_materiaprima = dr.GetInt32(8);
                     MateriaPrima = dr.GetString(9);
                     FechaIngreso = dr.GetDateTime(10);
@@ -92,7 +95,6 @@ namespace LOSA.Clases
                     FechaVencimiento = dr.GetDateTime(13);
                     IdBoleta = dr.GetInt32(14);
                     CodigoBarra = dr.GetString(15);
-                    Factor = dr.GetDecimal(16);
                     Recuperado = true;
                 }
                 dr.Close();
@@ -105,6 +107,55 @@ namespace LOSA.Clases
             return Recuperado;
         }
 
+
+        public bool RecuperarRegistro(int pIdTarima)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_row_tarima_from_id", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", pIdTarima);
+                //cmd.Parameters.AddWithValue("@codigo_barra", pCodigoBarra);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    Id = dr.GetInt32(0);
+                    Id_materiaprima = dr.GetInt32(1);
+                    IdProveedor = dr.GetString(2);
+                    FechaIngreso = dr.GetDateTime(3);
+                    NumeroTransaccion = dr.GetInt32(4);
+                    FechaVencimiento = dr.GetDateTime(5);
+                    _fechaProduccion = dr.GetDateTime(6);
+                    _LoteMP = dr.GetString(7);
+                    _LotePT = dr.GetInt32(8);
+                    _Enable = dr.GetBoolean(9);
+                    IdPresentacion = dr.GetInt32(10);
+                    _idUsuario = dr.GetInt32(11);
+                    _tipotarimaid = dr.GetInt32(12);
+                    _idProductoterminado = dr.GetInt32(13);
+                    _fechaProductoTerminadoProduccion = dr.GetDateTime(14);
+                    IdBoleta = dr.GetInt32(15);
+                    CodigoBarra = dr.GetString(16);
+                    Cantidad = dr.GetDecimal(17);//ó unidades
+                    IdUnidadMedida = dr.GetInt32(18);
+                    _peso = dr.GetDecimal(19);
+
+
+                    Recuperado = true;
+                }
+                dr.Close();
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+            return Recuperado;
+        }
 
 
 
