@@ -34,7 +34,7 @@ namespace LOSA.RecepcionMP
             {
                 if (InfoTarima.RecuperarRegistro(frm.idTarima, ""))
                 {
-                    factorPresentacion = InfoTarima.Factor;
+                    //factorPresentacion = InfoTarima.Factor;
 
 
                     this.idTarima = frm.idTarima;
