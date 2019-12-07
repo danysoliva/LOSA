@@ -259,6 +259,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsRecepcionMP.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RecepcionMP\frmAjustesKardex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmAjustesKardex.Designer.cs">
+      <DependentUpon>frmAjustesKardex.cs</DependentUpon>
+    </Compile>
     <Compile Include="RecepcionMP\FrmBoleta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -271,11 +277,23 @@
     <Compile Include="RecepcionMP\frmCambiarUbicacionTarima.Designer.cs">
       <DependentUpon>frmCambiarUbicacionTarima.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecepcionMP\frmDevolucionKardex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmDevolucionKardex.Designer.cs">
+      <DependentUpon>frmDevolucionKardex.cs</DependentUpon>
+    </Compile>
     <Compile Include="RecepcionMP\frmEntradaMP.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RecepcionMP\frmEntradaMP.Designer.cs">
       <DependentUpon>frmEntradaMP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecepcionMP\frmMP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmMP.Designer.cs">
+      <DependentUpon>frmMP.cs</DependentUpon>
     </Compile>
     <Compile Include="RecepcionMP\frmRecepcionMP.cs">
       <SubType>Form</SubType>
@@ -369,14 +387,23 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RecepcionMP\frmAjustesKardex.resx">
+      <DependentUpon>frmAjustesKardex.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\FrmBoleta.resx">
       <DependentUpon>FrmBoleta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmCambiarUbicacionTarima.resx">
       <DependentUpon>frmCambiarUbicacionTarima.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frmDevolucionKardex.resx">
+      <DependentUpon>frmDevolucionKardex.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmEntradaMP.resx">
       <DependentUpon>frmEntradaMP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frmMP.resx">
+      <DependentUpon>frmMP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmRecepcionMP.resx">
       <DependentUpon>frmRecepcionMP.cs</DependentUpon>
