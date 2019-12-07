@@ -29,6 +29,7 @@ namespace LOSA.RecepcionMP
         {
             InitializeComponent();
             Usuariologeado = pUser;
+            dtFecha.DateTime = dp.Now();
         }
 
         private void CmdSelectTarima_Click(object sender, EventArgs e)
@@ -239,10 +240,13 @@ namespace LOSA.RecepcionMP
 
         void insertarData()
         {
+            bool Guardado = false;
             try
             {
                 DataOperations dp = new DataOperations();
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+
+                
                 con.Open();
 
 
@@ -290,16 +294,22 @@ namespace LOSA.RecepcionMP
                     cmd.Parameters.AddWithValue("@id_bodega_origen",DBNull.Value);
                     cmd.Parameters.AddWithValue("@idUbicacion", this.idUbicacion);
                     cmd.ExecuteNonQuery();
+                    Guardado = true;
                 }
                 con.Close();
-                CajaDialogo.Information("DATOS GUARDADOS");
-
-               BeTarima_ButtonClick(null, null);
-               BeUbicacion_ButtonClick(null, null);
+    
             }
             catch (Exception ec)
             {
                 CajaDialogo.Error(ec.Message);
+            }
+
+            if(Guardado)
+            {
+                CajaDialogo.Information("DATOS GUARDADOS EXITOSAMENTE");
+
+                BeTarima_ButtonClick(null, null);
+                BeUbicacion_ButtonClick(null, null);
             }
         }
 

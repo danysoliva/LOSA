@@ -27,6 +27,7 @@ namespace LOSA.Mantenimientos
         {
             memoDescripcion.Text = tipoPresentacion.Descripcion;
             chkEnable.Checked = tipoPresentacion.Enable;
+            txtFactor.Text = tipoPresentacion.Factor.ToString();
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
@@ -38,6 +39,7 @@ namespace LOSA.Mantenimientos
         {
             tipoPresentacion.Descripcion = memoDescripcion.Text;
             tipoPresentacion.Enable = chkEnable.Checked;
+            tipoPresentacion.Factor = Convert.ToDecimal(txtFactor.Text);
 
             using (SqlConnection conexionLOSA = new SqlConnection(dp.ConnectionStringLOSA))
             {
@@ -59,6 +61,7 @@ namespace LOSA.Mantenimientos
                             command.Parameters.Add("@Descripcion", SqlDbType.VarChar).Value = tipoPresentacion.Descripcion;
                             command.Parameters.Add("@Enable", SqlDbType.Bit).Value = tipoPresentacion.Enable;
                             command.Parameters.Add("@Fecha", SqlDbType.DateTime).Value = tipoPresentacion.Fecha;
+                            command.Parameters.Add("@factor", SqlDbType.Decimal).Value = tipoPresentacion.Factor;
                             command.ExecuteNonQuery();
 
                             this.DialogResult = DialogResult.OK;
@@ -67,7 +70,7 @@ namespace LOSA.Mantenimientos
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    CajaDialogo.Error(ex.Message);
                 }
             }
         }
@@ -75,6 +78,26 @@ namespace LOSA.Mantenimientos
         private void memoDescripcion_EditValueChanged(object sender, EventArgs e)
         {
             Teclado.abrirTeclado();
+        }
+
+        private void TextEdit1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //if (Char.IsDigit(e.KeyChar))
+            //{
+            //    e.Handled = false;
+            //}
+            //else if (Char.IsControl(e.KeyChar))
+            //{
+            //    e.Handled = false;
+            //}
+            //else if (Char.IsSeparator(e.KeyChar))
+            //{
+            //    e.Handled = false;
+            //}
+            //  else
+            //{
+            //    e.Handled = true;
+            //}
         }
     }
 }

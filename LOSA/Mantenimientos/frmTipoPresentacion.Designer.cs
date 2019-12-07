@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTipoPresentacion));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.tiposPresentacionesDataTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsMantenimiento = new LOSA.Mantenimientos.dsMantenimiento();
             this.btnAgregar = new DevExpress.XtraEditors.SimpleButton();
@@ -41,6 +41,7 @@
             this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colenable = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.colFactor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coleditar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnEditar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -132,6 +133,7 @@
             this.colid,
             this.coldescripcion,
             this.colenable,
+            this.colFactor,
             this.coleditar});
             this.gvTiposPresentaciones.GridControl = this.gcTiposPresentaciones;
             this.gvTiposPresentaciones.Name = "gvTiposPresentaciones";
@@ -166,7 +168,7 @@
             this.colenable.OptionsColumn.AllowEdit = false;
             this.colenable.OptionsColumn.ReadOnly = true;
             this.colenable.Visible = true;
-            this.colenable.VisibleIndex = 2;
+            this.colenable.VisibleIndex = 3;
             this.colenable.Width = 67;
             // 
             // repositoryItemCheckEdit1
@@ -175,22 +177,33 @@
             this.repositoryItemCheckEdit1.AutoHeight = false;
             this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
             // 
+            // colFactor
+            // 
+            this.colFactor.Caption = "Factor";
+            this.colFactor.FieldName = "factor";
+            this.colFactor.Name = "colFactor";
+            this.colFactor.OptionsColumn.AllowEdit = false;
+            this.colFactor.OptionsFilter.AllowFilter = false;
+            this.colFactor.Visible = true;
+            this.colFactor.VisibleIndex = 2;
+            // 
             // coleditar
             // 
             this.coleditar.Caption = "Editar";
             this.coleditar.ColumnEdit = this.btnEditar;
             this.coleditar.FieldName = "editar";
+            this.coleditar.MaxWidth = 60;
             this.coleditar.Name = "coleditar";
             this.coleditar.Visible = true;
-            this.coleditar.VisibleIndex = 3;
+            this.coleditar.VisibleIndex = 4;
             this.coleditar.Width = 53;
             // 
             // btnEditar
             // 
             this.btnEditar.AutoHeight = false;
-            editorButtonImageOptions2.Image = global::LOSA.Properties.Resources.edit;
+            editorButtonImageOptions3.Image = global::LOSA.Properties.Resources.edit;
             this.btnEditar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions3, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -249,5 +262,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn coleditar;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnEditar;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraGrid.Columns.GridColumn colFactor;
     }
 }

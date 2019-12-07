@@ -54,7 +54,8 @@ namespace LOSA.Mantenimientos
             {
                 Id = Convert.ToInt32(gvTiposPresentaciones.GetRowCellValue(gvTiposPresentaciones.GetRowHandle(gvTiposPresentaciones.GetSelectedRows()[0]), colid)),
                 Descripcion = gvTiposPresentaciones.GetRowCellValue(gvTiposPresentaciones.GetRowHandle(gvTiposPresentaciones.GetSelectedRows()[0]), coldescripcion).ToString(),
-                Enable = Convert.ToBoolean(gvTiposPresentaciones.GetRowCellValue(gvTiposPresentaciones.GetRowHandle(gvTiposPresentaciones.GetSelectedRows()[0]), colenable))
+                Enable = Convert.ToBoolean(gvTiposPresentaciones.GetRowCellValue(gvTiposPresentaciones.GetRowHandle(gvTiposPresentaciones.GetSelectedRows()[0]), colenable)),
+                Factor = Convert.ToDecimal(gvTiposPresentaciones.GetFocusedRowCellValue(gvTiposPresentaciones.Columns[3]).ToString())
             };
 
             frmTipoPresentacionCRUD frm = new frmTipoPresentacionCRUD(tipoPresentacion);

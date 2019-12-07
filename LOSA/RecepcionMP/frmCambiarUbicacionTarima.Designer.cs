@@ -50,6 +50,7 @@
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.gcTarima = new DevExpress.XtraGrid.GridControl();
             this.gvTarima = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.beIdTarima.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcUbicacionActual)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvUbicacionActual)).BeginInit();
@@ -65,6 +66,7 @@
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcTarima)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTarima)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // beIdTarima
@@ -144,14 +146,13 @@
             // 
             // gcUbicacionActual
             // 
-            this.gcUbicacionActual.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gcUbicacionActual.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gcUbicacionActual.EmbeddedNavigator.Appearance.BackColor = System.Drawing.SystemColors.Control;
             this.gcUbicacionActual.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
-            this.gcUbicacionActual.Location = new System.Drawing.Point(6, 23);
+            this.gcUbicacionActual.Location = new System.Drawing.Point(2, 22);
             this.gcUbicacionActual.MainView = this.gvUbicacionActual;
             this.gcUbicacionActual.Name = "gcUbicacionActual";
-            this.gcUbicacionActual.Size = new System.Drawing.Size(276, 116);
+            this.gcUbicacionActual.Size = new System.Drawing.Size(287, 117);
             this.gcUbicacionActual.TabIndex = 34;
             this.gcUbicacionActual.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvUbicacionActual});
@@ -316,14 +317,17 @@
             this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
             this.groupControl1.Controls.Add(this.gcUbicacionActual);
-            this.groupControl1.Location = new System.Drawing.Point(315, 164);
+            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl1.Location = new System.Drawing.Point(299, 3);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(294, 147);
+            this.groupControl1.Size = new System.Drawing.Size(291, 141);
             this.groupControl1.TabIndex = 35;
             this.groupControl1.Text = "Ubicación Actual";
             // 
             // groupControl2
             // 
+            this.groupControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupControl2.AppearanceCaption.Options.UseFont = true;
             this.groupControl2.Controls.Add(this.gcNuevaUbicación);
@@ -581,22 +585,22 @@
             this.groupControl3.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupControl3.AppearanceCaption.Options.UseFont = true;
             this.groupControl3.Controls.Add(this.gcTarima);
-            this.groupControl3.Location = new System.Drawing.Point(12, 164);
+            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl3.Location = new System.Drawing.Point(3, 3);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(294, 147);
+            this.groupControl3.Size = new System.Drawing.Size(290, 141);
             this.groupControl3.TabIndex = 36;
             this.groupControl3.Text = "Información Tarima";
             // 
             // gcTarima
             // 
-            this.gcTarima.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gcTarima.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gcTarima.EmbeddedNavigator.Appearance.BackColor = System.Drawing.SystemColors.Control;
             this.gcTarima.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
-            this.gcTarima.Location = new System.Drawing.Point(6, 23);
+            this.gcTarima.Location = new System.Drawing.Point(2, 22);
             this.gcTarima.MainView = this.gvTarima;
             this.gcTarima.Name = "gcTarima";
-            this.gcTarima.Size = new System.Drawing.Size(276, 116);
+            this.gcTarima.Size = new System.Drawing.Size(286, 117);
             this.gcTarima.TabIndex = 34;
             this.gcTarima.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTarima});
@@ -756,19 +760,34 @@
             this.gvTarima.PaintStyleName = "Flat";
             this.gvTarima.InitNewRow += new DevExpress.XtraGrid.Views.Grid.InitNewRowEventHandler(this.GvTarima_InitNewRow);
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.groupControl3, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.groupControl1, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 166);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(593, 147);
+            this.tableLayoutPanel1.TabIndex = 43;
+            // 
             // frmCambiarUbicacionTarima
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(622, 521);
-            this.Controls.Add(this.groupControl3);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.separatorControl1);
             this.Controls.Add(this.beNuevaUbicacion);
             this.Controls.Add(this.btnUbicacion);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.groupControl2);
-            this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.cmdHome);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.beIdTarima);
@@ -793,6 +812,7 @@
             this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcTarima)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTarima)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -819,5 +839,6 @@
         private DevExpress.XtraEditors.GroupControl groupControl3;
         private DevExpress.XtraGrid.GridControl gcTarima;
         private DevExpress.XtraGrid.Views.Grid.GridView gvTarima;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
