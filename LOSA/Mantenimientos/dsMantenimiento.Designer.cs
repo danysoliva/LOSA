@@ -1595,6 +1595,8 @@ namespace LOSA.Mantenimientos {
             
             private global::System.Data.DataColumn columnenable;
             
+            private global::System.Data.DataColumn columnfactor;
+            
             private global::System.Data.DataColumn columneditar;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1656,6 +1658,14 @@ namespace LOSA.Mantenimientos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn factorColumn {
+                get {
+                    return this.columnfactor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn editarColumn {
                 get {
                     return this.columneditar;
@@ -1699,12 +1709,13 @@ namespace LOSA.Mantenimientos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TiposPresentacionesDataTableRow AddTiposPresentacionesDataTableRow(string id, string descripcion, bool enable, string editar) {
+            public TiposPresentacionesDataTableRow AddTiposPresentacionesDataTableRow(string id, string descripcion, bool enable, string factor, string editar) {
                 TiposPresentacionesDataTableRow rowTiposPresentacionesDataTableRow = ((TiposPresentacionesDataTableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
                         descripcion,
                         enable,
+                        factor,
                         editar};
                 rowTiposPresentacionesDataTableRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTiposPresentacionesDataTableRow);
@@ -1731,6 +1742,7 @@ namespace LOSA.Mantenimientos {
                 this.columnid = base.Columns["id"];
                 this.columndescripcion = base.Columns["descripcion"];
                 this.columnenable = base.Columns["enable"];
+                this.columnfactor = base.Columns["factor"];
                 this.columneditar = base.Columns["editar"];
             }
             
@@ -1743,6 +1755,8 @@ namespace LOSA.Mantenimientos {
                 base.Columns.Add(this.columndescripcion);
                 this.columnenable = new global::System.Data.DataColumn("enable", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnenable);
+                this.columnfactor = new global::System.Data.DataColumn("factor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfactor);
                 this.columneditar = new global::System.Data.DataColumn("editar", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columneditar);
             }
@@ -2487,6 +2501,23 @@ namespace LOSA.Mantenimientos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string factor {
+                get {
+                    try {
+                        return ((string)(this[this.tableTiposPresentacionesDataTable.factorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'factor\' de la tabla \'TiposPresentacionesDataTable\' es DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTiposPresentacionesDataTable.factorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string editar {
                 get {
                     try {
@@ -2536,6 +2567,18 @@ namespace LOSA.Mantenimientos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetenableNull() {
                 this[this.tableTiposPresentacionesDataTable.enableColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsfactorNull() {
+                return this.IsNull(this.tableTiposPresentacionesDataTable.factorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetfactorNull() {
+                this[this.tableTiposPresentacionesDataTable.factorColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

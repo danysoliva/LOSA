@@ -1,6 +1,7 @@
 ﻿using LOSA.Clases;
 using LOSA.Mantenimientos;
 using LOSA.RecepcionMP;
+using LOSA.TransaccionesMP;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -101,6 +102,13 @@ namespace LOSA
         private void BtnCambiarUbicacion_Click(object sender, EventArgs e)
         {
             frmCambiarUbicacionTarima frm = new frmCambiarUbicacionTarima();
+            frm.Show();
+        }
+
+        private void cmdProgramaRequisiciones_Click(object sender, EventArgs e)
+        {
+            frmOrdenesFabricacion frm = new frmOrdenesFabricacion();
+            frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
     }

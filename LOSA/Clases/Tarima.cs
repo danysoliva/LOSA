@@ -83,10 +83,10 @@ namespace LOSA.Clases
                     IdUnidadMedida = dr.GetInt32(1);
                     //Cantidad = 1;
                     _nombreTarima = dr.GetString(2);
-                    TipoTarimaDescripcion= dr.GetString(3);
-                    IdProveedor= dr.GetString(4);
+                    TipoTarimaDescripcion = dr.GetString(3);
+                    IdProveedor = dr.GetString(4);
                     LoteMP = dr.GetString(5);
-                    Cantidad= dr.GetDecimal(7);
+                    Cantidad = dr.GetDecimal(7);
                     Id_materiaprima = dr.GetInt32(8);
                     MateriaPrima = dr.GetString(9);
                     FechaIngreso = dr.GetDateTime(10);
@@ -141,10 +141,10 @@ namespace LOSA.Clases
                     IdBoleta = dr.GetInt32(15);
                     CodigoBarra = dr.GetString(16);
                     Cantidad = dr.GetDecimal(17);//ó unidades
-                    IdUnidadMedida = dr.GetInt32(18);  
+                    IdUnidadMedida = dr.GetInt32(18);
                     _peso = dr.GetDecimal(19);
-                    
-                    
+
+
                     Recuperado = true;
                 }
                 dr.Close();
