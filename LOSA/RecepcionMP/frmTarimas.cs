@@ -41,13 +41,13 @@ namespace LOSA.RecepcionMP
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 string SQL="";
 
-                if (OpcionVentana == 1)//se abre de ventana de ubicar tarima
+                if (OpcionVentana == 1)//se abre de ventana desde ubicar tarima
                     SQL = @"exec sp_obtener_tarimas_sin_ubicacion @codigo_barra";
                 else
-                    if (OpcionVentana == 2)//Se abre de venatana de reubicar tarima
+                    if (OpcionVentana == 2)//Se abre de venatana desde reubicar tarima
                     SQL = @"exec sp_obtener_tarimas_con_ubicacion @codigo_barra";
                 else
-                     if (OpcionVentana == 3)//Se abre de ventana de devoluciones
+                     if (OpcionVentana == 3)//Se abre de ventana desde devoluciones
                     SQL = @"exec sp_obtener_tarimas_sin_ubicacion @codigo_barra";
 
                 dsRecepcionMP.DetalleTarima.Clear();
@@ -63,6 +63,8 @@ namespace LOSA.RecepcionMP
                 MessageBox.Show(ec.Message);
             }
         }
+
+
 
         private void BtnAtras_Click(object sender, EventArgs e)
         {

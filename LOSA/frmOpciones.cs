@@ -111,5 +111,17 @@ namespace LOSA
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
+
+        private void BtnDevolciones_Click(object sender, EventArgs e)
+        {
+            frmDevolucionKardex frm = new frmDevolucionKardex(UsuarioLogeado);
+            frm.Show();
+        }
+
+        private void BtnAjustesKardex_Click(object sender, EventArgs e)
+        {
+            frmAjustesKardex frm = new frmAjustesKardex(UsuarioLogeado);
+            frm.Show();
+        }
     }
 }
