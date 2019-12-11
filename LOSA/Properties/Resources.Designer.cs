@@ -73,6 +73,26 @@ namespace LOSA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ajustes_kardex {
+            get {
+                object obj = ResourceManager.GetObject("ajustes_kardex", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap alimentacion_manual {
+            get {
+                object obj = ResourceManager.GetObject("alimentacion_manual", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap box {
             get {
                 object obj = ResourceManager.GetObject("box", resourceCulture);
@@ -106,6 +126,16 @@ namespace LOSA.Properties {
         internal static System.Drawing.Bitmap check_in {
             get {
                 object obj = ResourceManager.GetObject("check-in", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap devoluciones {
+            get {
+                object obj = ResourceManager.GetObject("devoluciones", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -156,6 +186,16 @@ namespace LOSA.Properties {
         internal static System.Drawing.Bitmap plus {
             get {
                 object obj = ResourceManager.GetObject("plus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap production {
+            get {
+                object obj = ResourceManager.GetObject("production", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -216,6 +256,16 @@ namespace LOSA.Properties {
         internal static System.Drawing.Bitmap Users_Group_icon64px {
             get {
                 object obj = ResourceManager.GetObject("Users-Group-icon64px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wheat {
+            get {
+                object obj = ResourceManager.GetObject("wheat", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

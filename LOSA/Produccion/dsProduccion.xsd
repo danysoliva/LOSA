@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsProduccion" targetNamespace="http://tempuri.org/dsProduccion.xsd" xmlns:mstns="http://tempuri.org/dsProduccion.xsd" xmlns="http://tempuri.org/dsProduccion.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsProduccion" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsProduccion" msprop:Generator_UserDSName="dsProduccion">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Tolva" msprop:Generator_TableClassName="TolvaDataTable" msprop:Generator_TableVarName="tableTolva" msprop:Generator_TablePropName="Tolva" msprop:Generator_RowDeletingName="TolvaRowDeleting" msprop:Generator_RowChangingName="TolvaRowChanging" msprop:Generator_RowEvHandlerName="TolvaRowChangeEventHandler" msprop:Generator_RowDeletedName="TolvaRowDeleted" msprop:Generator_UserTableName="Tolva" msprop:Generator_RowChangedName="TolvaRowChanged" msprop:Generator_RowEvArgName="TolvaRowChangeEvent" msprop:Generator_RowClassName="TolvaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="code" msprop:Generator_ColumnVarNameInTable="columncode" msprop:Generator_ColumnPropNameInRow="code" msprop:Generator_ColumnPropNameInTable="codeColumn" msprop:Generator_UserColumnName="code" type="xs:string" minOccurs="0" />
+              <xs:element name="long_name" msprop:Generator_ColumnVarNameInTable="columnlong_name" msprop:Generator_ColumnPropNameInRow="long_name" msprop:Generator_ColumnPropNameInTable="long_nameColumn" msprop:Generator_UserColumnName="long_name" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

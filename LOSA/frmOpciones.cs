@@ -1,5 +1,7 @@
 ﻿using LOSA.Clases;
+using LOSA.Logistica;
 using LOSA.Mantenimientos;
+using LOSA.Produccion;
 using LOSA.RecepcionMP;
 using LOSA.TransaccionesMP;
 using System;
@@ -121,6 +123,18 @@ namespace LOSA
         private void BtnAjustesKardex_Click(object sender, EventArgs e)
         {
             frmAjustesKardex frm = new frmAjustesKardex(UsuarioLogeado);
+            frm.Show();
+        }
+
+        private void BtnAlimentacionManual_Click(object sender, EventArgs e)
+        {
+            frmAlimentacionManual frm = new frmAlimentacionManual();
+            frm.Show();
+        }
+
+        private void BtnLote_Click(object sender, EventArgs e)
+        {
+            frmLotesXProveedor frm = new frmLotesXProveedor();
             frm.Show();
         }
     }

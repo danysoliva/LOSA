@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAjustesKardex));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAjustesKardex));
             this.gridLookUpEditPresentacion = new DevExpress.XtraEditors.GridLookUpEdit();
             this.presentacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsRecepcionMPx = new LOSA.RecepcionMP.dsRecepcionMPx();
@@ -351,7 +351,7 @@
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(6, 111);
+            this.labelControl3.Location = new System.Drawing.Point(6, 108);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(92, 18);
             this.labelControl3.TabIndex = 54;
@@ -359,12 +359,12 @@
             // 
             // txtMP_Name
             // 
-            this.txtMP_Name.Location = new System.Drawing.Point(177, 108);
+            this.txtMP_Name.Location = new System.Drawing.Point(177, 105);
             this.txtMP_Name.Name = "txtMP_Name";
             this.txtMP_Name.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.txtMP_Name.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
-            serializableAppearanceObject1.BackColor = System.Drawing.Color.LightBlue;
+            editorButtonImageOptions1.Image = global::LOSA.Properties.Resources.wheat;
+            serializableAppearanceObject1.BackColor = System.Drawing.Color.Transparent;
             serializableAppearanceObject1.Options.UseBackColor = true;
             serializableAppearanceObject2.BackColor = System.Drawing.Color.LightBlue;
             serializableAppearanceObject2.Options.UseBackColor = true;
@@ -376,7 +376,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null)});
             this.txtMP_Name.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.txtMP_Name.Properties.ReadOnly = true;
-            this.txtMP_Name.Size = new System.Drawing.Size(439, 26);
+            this.txtMP_Name.Size = new System.Drawing.Size(439, 30);
             this.txtMP_Name.TabIndex = 0;
             this.txtMP_Name.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.TxtMP_Name_ButtonClick);
             // 
@@ -386,9 +386,9 @@
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Location = new System.Drawing.Point(6, 278);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(43, 24);
+            this.labelControl1.Size = new System.Drawing.Size(83, 24);
             this.labelControl1.TabIndex = 76;
-            this.labelControl1.Text = "Peso";
+            this.labelControl1.Text = "Peso (Kg)";
             // 
             // txtPeso
             // 

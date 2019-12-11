@@ -174,6 +174,20 @@
       <DependentUpon>frmOpciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\GrupoUser.cs" />
+    <Compile Include="Logistica\dsLogistica.cs">
+      <DependentUpon>dsLogistica.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\dsLogistica.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLogistica.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\frmLotesXProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\frmLotesXProveedor.Designer.cs">
+      <DependentUpon>frmLotesXProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimientos\dsMantenimiento.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -250,6 +264,23 @@
     <Compile Include="Mantenimientos\Modelos\EstadoRequisicion.cs" />
     <Compile Include="Mantenimientos\Modelos\KardexTipoTransaccion.cs" />
     <Compile Include="Mantenimientos\Modelos\TipoPresentacion.cs" />
+    <Compile Include="Produccion\dsProduccion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsProduccion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\frmAlimentacionManual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\frmAlimentacionManual.Designer.cs">
+      <DependentUpon>frmAlimentacionManual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\frmTolva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\frmTolva.Designer.cs">
+      <DependentUpon>frmTolva.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecepcionMP\dsRecepcionMP.cs">
@@ -361,6 +392,9 @@
     <EmbeddedResource Include="frmOpciones.resx">
       <DependentUpon>frmOpciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\frmLotesXProveedor.resx">
+      <DependentUpon>frmLotesXProveedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\frmBodega.resx">
       <DependentUpon>frmBodega.cs</DependentUpon>
     </EmbeddedResource>
@@ -393,6 +427,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\frmTipoPresentacionCRUD.resx">
       <DependentUpon>frmTipoPresentacionCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\frmAlimentacionManual.resx">
+      <DependentUpon>frmAlimentacionManual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\frmTolva.resx">
+      <DependentUpon>frmTolva.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -450,6 +490,17 @@
     <EmbeddedResource Include="TransaccionesMP\frmOrdenFabricacionDetalle.resx">
       <DependentUpon>frmOrdenFabricacionDetalle.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Logistica\dsLogistica.xsc">
+      <DependentUpon>dsLogistica.xsd</DependentUpon>
+    </None>
+    <None Include="Logistica\dsLogistica.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLogistica.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Logistica\dsLogistica.xss">
+      <DependentUpon>dsLogistica.xsd</DependentUpon>
+    </None>
     <None Include="LOSA_TemporaryKey.pfx" />
     <None Include="Mantenimientos\dsMantenimiento.xsc">
       <DependentUpon>dsMantenimiento.xsd</DependentUpon>
@@ -461,6 +512,17 @@
     </None>
     <None Include="Mantenimientos\dsMantenimiento.xss">
       <DependentUpon>dsMantenimiento.xsd</DependentUpon>
+    </None>
+    <None Include="Produccion\dsProduccion.xsc">
+      <DependentUpon>dsProduccion.xsd</DependentUpon>
+    </None>
+    <None Include="Produccion\dsProduccion.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsProduccion.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Produccion\dsProduccion.xss">
+      <DependentUpon>dsProduccion.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -503,17 +565,23 @@
   <ItemGroup>
     <Content Include="logo1.ico" />
     <Content Include="Resources\admin.png" />
+    <None Include="Resources\alimentacion_manual.png" />
+    <None Include="Resources\ajustes_kardex.png" />
+    <None Include="Resources\ajustes_kardex2.png" />
     <Content Include="Resources\box.png" />
     <Content Include="Resources\cancel.png" />
     <Content Include="Resources\cargo.png" />
     <Content Include="Resources\check-in.png" />
     <None Include="Resources\edit-table%281%29.png" />
+    <None Include="Resources\devoluciones.png" />
     <Content Include="Resources\edit.png" />
     <Content Include="Resources\key.png" />
     <Content Include="Resources\medal.png" />
     <Content Include="Resources\plus.png" />
+    <None Include="Resources\production.png" />
     <Content Include="Resources\tap.png" />
     <Content Include="Resources\user.png" />
+    <None Include="Resources\wheat.png" />
     <Content Include="Resources\wrench.png" />
   </ItemGroup>
   <ItemGroup>

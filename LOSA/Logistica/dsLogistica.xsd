@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsLogistica" targetNamespace="http://tempuri.org/dsLogistica.xsd" xmlns:mstns="http://tempuri.org/dsLogistica.xsd" xmlns="http://tempuri.org/dsLogistica.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsLogistica" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsLogistica" msprop:Generator_UserDSName="dsLogistica">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Proveedores" msprop:Generator_TableClassName="ProveedoresDataTable" msprop:Generator_TableVarName="tableProveedores" msprop:Generator_TablePropName="Proveedores" msprop:Generator_RowDeletingName="ProveedoresRowDeleting" msprop:Generator_RowChangingName="ProveedoresRowChanging" msprop:Generator_RowEvHandlerName="ProveedoresRowChangeEventHandler" msprop:Generator_RowDeletedName="ProveedoresRowDeleted" msprop:Generator_UserTableName="Proveedores" msprop:Generator_RowChangedName="ProveedoresRowChanged" msprop:Generator_RowEvArgName="ProveedoresRowChangeEvent" msprop:Generator_RowClassName="ProveedoresRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="carcode" msprop:Generator_ColumnVarNameInTable="columncarcode" msprop:Generator_ColumnPropNameInRow="carcode" msprop:Generator_ColumnPropNameInTable="carcodeColumn" msprop:Generator_UserColumnName="carcode" type="xs:string" minOccurs="0" />
+              <xs:element name="cardname" msprop:Generator_ColumnVarNameInTable="columncardname" msprop:Generator_ColumnPropNameInRow="cardname" msprop:Generator_ColumnPropNameInTable="cardnameColumn" msprop:Generator_UserColumnName="cardname" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="LotesXProveedor" msprop:Generator_TableClassName="LotesXProveedorDataTable" msprop:Generator_TableVarName="tableLotesXProveedor" msprop:Generator_TablePropName="LotesXProveedor" msprop:Generator_RowDeletingName="LotesXProveedorRowDeleting" msprop:Generator_RowChangingName="LotesXProveedorRowChanging" msprop:Generator_RowEvHandlerName="LotesXProveedorRowChangeEventHandler" msprop:Generator_RowDeletedName="LotesXProveedorRowDeleted" msprop:Generator_UserTableName="LotesXProveedor" msprop:Generator_RowChangedName="LotesXProveedorRowChanged" msprop:Generator_RowEvArgName="LotesXProveedorRowChangeEvent" msprop:Generator_RowClassName="LotesXProveedorRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" minOccurs="0" />
+              <xs:element name="lote_materia_prima" msprop:Generator_ColumnVarNameInTable="columnlote_materia_prima" msprop:Generator_ColumnPropNameInRow="lote_materia_prima" msprop:Generator_ColumnPropNameInTable="lote_materia_primaColumn" msprop:Generator_UserColumnName="lote_materia_prima" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha_ingreso" msprop:Generator_ColumnVarNameInTable="columnfecha_ingreso" msprop:Generator_ColumnPropNameInRow="fecha_ingreso" msprop:Generator_ColumnPropNameInTable="fecha_ingresoColumn" msprop:Generator_UserColumnName="fecha_ingreso" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="cantidad" msprop:Generator_ColumnVarNameInTable="columncantidad" msprop:Generator_ColumnPropNameInRow="cantidad" msprop:Generator_ColumnPropNameInTable="cantidadColumn" msprop:Generator_UserColumnName="cantidad" type="xs:decimal" minOccurs="0" />
+              <xs:element name="fecha_vencimiento" msprop:Generator_ColumnVarNameInTable="columnfecha_vencimiento" msprop:Generator_ColumnPropNameInRow="fecha_vencimiento" msprop:Generator_ColumnPropNameInTable="fecha_vencimientoColumn" msprop:Generator_UserColumnName="fecha_vencimiento" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="materia_prima" msprop:Generator_ColumnVarNameInTable="columnmateria_prima" msprop:Generator_ColumnPropNameInRow="materia_prima" msprop:Generator_ColumnPropNameInTable="materia_primaColumn" msprop:Generator_UserColumnName="materia_prima" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Materia_prima_por_proveedor" msprop:Generator_TableClassName="Materia_prima_por_proveedorDataTable" msprop:Generator_TableVarName="tableMateria_prima_por_proveedor" msprop:Generator_TablePropName="Materia_prima_por_proveedor" msprop:Generator_RowDeletingName="Materia_prima_por_proveedorRowDeleting" msprop:Generator_RowChangingName="Materia_prima_por_proveedorRowChanging" msprop:Generator_RowEvHandlerName="Materia_prima_por_proveedorRowChangeEventHandler" msprop:Generator_RowDeletedName="Materia_prima_por_proveedorRowDeleted" msprop:Generator_UserTableName="Materia_prima_por_proveedor" msprop:Generator_RowChangedName="Materia_prima_por_proveedorRowChanged" msprop:Generator_RowEvArgName="Materia_prima_por_proveedorRowChangeEvent" msprop:Generator_RowClassName="Materia_prima_por_proveedorRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_materia_prima" msprop:Generator_ColumnVarNameInTable="columnid_materia_prima" msprop:Generator_ColumnPropNameInRow="id_materia_prima" msprop:Generator_ColumnPropNameInTable="id_materia_primaColumn" msprop:Generator_UserColumnName="id_materia_prima" type="xs:int" minOccurs="0" />
+              <xs:element name="materia_prima" msprop:Generator_ColumnVarNameInTable="columnmateria_prima" msprop:Generator_ColumnPropNameInRow="materia_prima" msprop:Generator_ColumnPropNameInTable="materia_primaColumn" msprop:Generator_UserColumnName="materia_prima" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

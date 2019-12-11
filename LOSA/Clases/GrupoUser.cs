@@ -16,7 +16,9 @@ namespace LOSA
             Montacarga = 0,
             Logistica = 1,
             Calidad = 2,
-            Administradores = 3
+            Administradores = 3,
+            Produccion=4
+
         }
 
         public GrupoUsuario GrupoUsuarioActivo;
