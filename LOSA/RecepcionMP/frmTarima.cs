@@ -224,7 +224,7 @@ namespace LOSA.RecepcionMP
             int cant = 0;
             try
             {
-                cant = Convert.ToInt32(txtUnidades .Text);
+                cant = Convert.ToInt32(txtCantidadTarimasTotal.Text);
             }
             catch 
             {
