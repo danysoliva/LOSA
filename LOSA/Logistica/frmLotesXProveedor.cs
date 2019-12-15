@@ -84,12 +84,12 @@ namespace LOSA.Logistica
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 string SQL = @"exec sp_get_materia_prima_por_proveedor @id_proveedor";
 
-                dsLogistica.Materia_prima_por_proveedor.Clear();
+                dsLogistica.Materia_prima.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(SQL, cn);
 
                 adat.SelectCommand.Parameters.AddWithValue("@id_proveedor", pIdProveedor);
 
-                adat.Fill(dsLogistica.Materia_prima_por_proveedor);
+                adat.Fill(dsLogistica.Materia_prima);
 
             }
             catch (Exception ec)
@@ -107,7 +107,7 @@ namespace LOSA.Logistica
 
         private void CbMateriaPrima_EditValueChanged(object sender, EventArgs e)
         {
-          gvLotes.ActiveFilterString = "[materia_prima] = '" + cbMateriaPrima.Text + "'";
+            gvLotes.ActiveFilterString = "[itemcode] = '" + cbMateriaPrima.EditValue + "'";
         }
     }
 }

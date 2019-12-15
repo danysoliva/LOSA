@@ -137,5 +137,17 @@ namespace LOSA
             frmLotesXProveedor frm = new frmLotesXProveedor();
             frm.Show();
         }
+
+        private void btnLotesXMP_Click(object sender, EventArgs e)
+        {
+            frmLotesXMP frm = new frmLotesXMP();
+            frm.Show();
+        }
+
+        private void btnVerLotes_Click(object sender, EventArgs e)
+        {
+            frmLotes frm = new frmLotes();
+            frm.Show();
+        }
     }
 }

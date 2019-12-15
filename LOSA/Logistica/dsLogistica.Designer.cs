@@ -28,7 +28,7 @@ namespace LOSA.Logistica {
         
         private LotesXProveedorDataTable tableLotesXProveedor;
         
-        private Materia_prima_por_proveedorDataTable tableMateria_prima_por_proveedor;
+        private Materia_primaDataTable tableMateria_prima;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -64,8 +64,8 @@ namespace LOSA.Logistica {
                 if ((ds.Tables["LotesXProveedor"] != null)) {
                     base.Tables.Add(new LotesXProveedorDataTable(ds.Tables["LotesXProveedor"]));
                 }
-                if ((ds.Tables["Materia_prima_por_proveedor"] != null)) {
-                    base.Tables.Add(new Materia_prima_por_proveedorDataTable(ds.Tables["Materia_prima_por_proveedor"]));
+                if ((ds.Tables["Materia_prima"] != null)) {
+                    base.Tables.Add(new Materia_primaDataTable(ds.Tables["Materia_prima"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -109,9 +109,9 @@ namespace LOSA.Logistica {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public Materia_prima_por_proveedorDataTable Materia_prima_por_proveedor {
+        public Materia_primaDataTable Materia_prima {
             get {
-                return this.tableMateria_prima_por_proveedor;
+                return this.tableMateria_prima;
             }
         }
         
@@ -188,8 +188,8 @@ namespace LOSA.Logistica {
                 if ((ds.Tables["LotesXProveedor"] != null)) {
                     base.Tables.Add(new LotesXProveedorDataTable(ds.Tables["LotesXProveedor"]));
                 }
-                if ((ds.Tables["Materia_prima_por_proveedor"] != null)) {
-                    base.Tables.Add(new Materia_prima_por_proveedorDataTable(ds.Tables["Materia_prima_por_proveedor"]));
+                if ((ds.Tables["Materia_prima"] != null)) {
+                    base.Tables.Add(new Materia_primaDataTable(ds.Tables["Materia_prima"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -236,10 +236,10 @@ namespace LOSA.Logistica {
                     this.tableLotesXProveedor.InitVars();
                 }
             }
-            this.tableMateria_prima_por_proveedor = ((Materia_prima_por_proveedorDataTable)(base.Tables["Materia_prima_por_proveedor"]));
+            this.tableMateria_prima = ((Materia_primaDataTable)(base.Tables["Materia_prima"]));
             if ((initTable == true)) {
-                if ((this.tableMateria_prima_por_proveedor != null)) {
-                    this.tableMateria_prima_por_proveedor.InitVars();
+                if ((this.tableMateria_prima != null)) {
+                    this.tableMateria_prima.InitVars();
                 }
             }
         }
@@ -256,8 +256,8 @@ namespace LOSA.Logistica {
             base.Tables.Add(this.tableProveedores);
             this.tableLotesXProveedor = new LotesXProveedorDataTable();
             base.Tables.Add(this.tableLotesXProveedor);
-            this.tableMateria_prima_por_proveedor = new Materia_prima_por_proveedorDataTable();
-            base.Tables.Add(this.tableMateria_prima_por_proveedor);
+            this.tableMateria_prima = new Materia_primaDataTable();
+            base.Tables.Add(this.tableMateria_prima);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -274,7 +274,7 @@ namespace LOSA.Logistica {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeMateria_prima_por_proveedor() {
+        private bool ShouldSerializeMateria_prima() {
             return false;
         }
         
@@ -340,7 +340,7 @@ namespace LOSA.Logistica {
         public delegate void LotesXProveedorRowChangeEventHandler(object sender, LotesXProveedorRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void Materia_prima_por_proveedorRowChangeEventHandler(object sender, Materia_prima_por_proveedorRowChangeEvent e);
+        public delegate void Materia_primaRowChangeEventHandler(object sender, Materia_primaRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -622,6 +622,8 @@ namespace LOSA.Logistica {
             
             private global::System.Data.DataColumn columnmateria_prima;
             
+            private global::System.Data.DataColumn columnitemcode;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public LotesXProveedorDataTable() {
@@ -705,6 +707,14 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn itemcodeColumn {
+                get {
+                    return this.columnitemcode;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -740,7 +750,7 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public LotesXProveedorRow AddLotesXProveedorRow(string id, string lote_materia_prima, System.DateTime fecha_ingreso, decimal cantidad, System.DateTime fecha_vencimiento, string materia_prima) {
+            public LotesXProveedorRow AddLotesXProveedorRow(string id, string lote_materia_prima, System.DateTime fecha_ingreso, decimal cantidad, System.DateTime fecha_vencimiento, string materia_prima, string itemcode) {
                 LotesXProveedorRow rowLotesXProveedorRow = ((LotesXProveedorRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -748,7 +758,8 @@ namespace LOSA.Logistica {
                         fecha_ingreso,
                         cantidad,
                         fecha_vencimiento,
-                        materia_prima};
+                        materia_prima,
+                        itemcode};
                 rowLotesXProveedorRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowLotesXProveedorRow);
                 return rowLotesXProveedorRow;
@@ -777,6 +788,7 @@ namespace LOSA.Logistica {
                 this.columncantidad = base.Columns["cantidad"];
                 this.columnfecha_vencimiento = base.Columns["fecha_vencimiento"];
                 this.columnmateria_prima = base.Columns["materia_prima"];
+                this.columnitemcode = base.Columns["itemcode"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -794,6 +806,8 @@ namespace LOSA.Logistica {
                 base.Columns.Add(this.columnfecha_vencimiento);
                 this.columnmateria_prima = new global::System.Data.DataColumn("materia_prima", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmateria_prima);
+                this.columnitemcode = new global::System.Data.DataColumn("itemcode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnitemcode);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -925,16 +939,16 @@ namespace LOSA.Logistica {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class Materia_prima_por_proveedorDataTable : global::System.Data.TypedTableBase<Materia_prima_por_proveedorRow> {
+        public partial class Materia_primaDataTable : global::System.Data.TypedTableBase<Materia_primaRow> {
             
-            private global::System.Data.DataColumn columnid_materia_prima;
+            private global::System.Data.DataColumn columnitemcode;
             
-            private global::System.Data.DataColumn columnmateria_prima;
+            private global::System.Data.DataColumn columnitemdescrip;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Materia_prima_por_proveedorDataTable() {
-                this.TableName = "Materia_prima_por_proveedor";
+            public Materia_primaDataTable() {
+                this.TableName = "Materia_prima";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -942,7 +956,7 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal Materia_prima_por_proveedorDataTable(global::System.Data.DataTable table) {
+            internal Materia_primaDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -959,24 +973,24 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected Materia_prima_por_proveedorDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected Materia_primaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn id_materia_primaColumn {
+            public global::System.Data.DataColumn itemcodeColumn {
                 get {
-                    return this.columnid_materia_prima;
+                    return this.columnitemcode;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn materia_primaColumn {
+            public global::System.Data.DataColumn itemdescripColumn {
                 get {
-                    return this.columnmateria_prima;
+                    return this.columnitemdescrip;
                 }
             }
             
@@ -991,46 +1005,46 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Materia_prima_por_proveedorRow this[int index] {
+            public Materia_primaRow this[int index] {
                 get {
-                    return ((Materia_prima_por_proveedorRow)(this.Rows[index]));
+                    return ((Materia_primaRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event Materia_prima_por_proveedorRowChangeEventHandler Materia_prima_por_proveedorRowChanging;
+            public event Materia_primaRowChangeEventHandler Materia_primaRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event Materia_prima_por_proveedorRowChangeEventHandler Materia_prima_por_proveedorRowChanged;
+            public event Materia_primaRowChangeEventHandler Materia_primaRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event Materia_prima_por_proveedorRowChangeEventHandler Materia_prima_por_proveedorRowDeleting;
+            public event Materia_primaRowChangeEventHandler Materia_primaRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event Materia_prima_por_proveedorRowChangeEventHandler Materia_prima_por_proveedorRowDeleted;
+            public event Materia_primaRowChangeEventHandler Materia_primaRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddMateria_prima_por_proveedorRow(Materia_prima_por_proveedorRow row) {
+            public void AddMateria_primaRow(Materia_primaRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Materia_prima_por_proveedorRow AddMateria_prima_por_proveedorRow(int id_materia_prima, string materia_prima) {
-                Materia_prima_por_proveedorRow rowMateria_prima_por_proveedorRow = ((Materia_prima_por_proveedorRow)(this.NewRow()));
+            public Materia_primaRow AddMateria_primaRow(string itemcode, string itemdescrip) {
+                Materia_primaRow rowMateria_primaRow = ((Materia_primaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        id_materia_prima,
-                        materia_prima};
-                rowMateria_prima_por_proveedorRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowMateria_prima_por_proveedorRow);
-                return rowMateria_prima_por_proveedorRow;
+                        itemcode,
+                        itemdescrip};
+                rowMateria_primaRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowMateria_primaRow);
+                return rowMateria_primaRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                Materia_prima_por_proveedorDataTable cln = ((Materia_prima_por_proveedorDataTable)(base.Clone()));
+                Materia_primaDataTable cln = ((Materia_primaDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -1038,49 +1052,49 @@ namespace LOSA.Logistica {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new Materia_prima_por_proveedorDataTable();
+                return new Materia_primaDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnid_materia_prima = base.Columns["id_materia_prima"];
-                this.columnmateria_prima = base.Columns["materia_prima"];
+                this.columnitemcode = base.Columns["itemcode"];
+                this.columnitemdescrip = base.Columns["itemdescrip"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnid_materia_prima = new global::System.Data.DataColumn("id_materia_prima", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid_materia_prima);
-                this.columnmateria_prima = new global::System.Data.DataColumn("materia_prima", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmateria_prima);
+                this.columnitemcode = new global::System.Data.DataColumn("itemcode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnitemcode);
+                this.columnitemdescrip = new global::System.Data.DataColumn("itemdescrip", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnitemdescrip);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Materia_prima_por_proveedorRow NewMateria_prima_por_proveedorRow() {
-                return ((Materia_prima_por_proveedorRow)(this.NewRow()));
+            public Materia_primaRow NewMateria_primaRow() {
+                return ((Materia_primaRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new Materia_prima_por_proveedorRow(builder);
+                return new Materia_primaRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(Materia_prima_por_proveedorRow);
+                return typeof(Materia_primaRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.Materia_prima_por_proveedorRowChanged != null)) {
-                    this.Materia_prima_por_proveedorRowChanged(this, new Materia_prima_por_proveedorRowChangeEvent(((Materia_prima_por_proveedorRow)(e.Row)), e.Action));
+                if ((this.Materia_primaRowChanged != null)) {
+                    this.Materia_primaRowChanged(this, new Materia_primaRowChangeEvent(((Materia_primaRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1088,8 +1102,8 @@ namespace LOSA.Logistica {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.Materia_prima_por_proveedorRowChanging != null)) {
-                    this.Materia_prima_por_proveedorRowChanging(this, new Materia_prima_por_proveedorRowChangeEvent(((Materia_prima_por_proveedorRow)(e.Row)), e.Action));
+                if ((this.Materia_primaRowChanging != null)) {
+                    this.Materia_primaRowChanging(this, new Materia_primaRowChangeEvent(((Materia_primaRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1097,8 +1111,8 @@ namespace LOSA.Logistica {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.Materia_prima_por_proveedorRowDeleted != null)) {
-                    this.Materia_prima_por_proveedorRowDeleted(this, new Materia_prima_por_proveedorRowChangeEvent(((Materia_prima_por_proveedorRow)(e.Row)), e.Action));
+                if ((this.Materia_primaRowDeleted != null)) {
+                    this.Materia_primaRowDeleted(this, new Materia_primaRowChangeEvent(((Materia_primaRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1106,14 +1120,14 @@ namespace LOSA.Logistica {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.Materia_prima_por_proveedorRowDeleting != null)) {
-                    this.Materia_prima_por_proveedorRowDeleting(this, new Materia_prima_por_proveedorRowChangeEvent(((Materia_prima_por_proveedorRow)(e.Row)), e.Action));
+                if ((this.Materia_primaRowDeleting != null)) {
+                    this.Materia_primaRowDeleting(this, new Materia_primaRowChangeEvent(((Materia_primaRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveMateria_prima_por_proveedorRow(Materia_prima_por_proveedorRow row) {
+            public void RemoveMateria_primaRow(Materia_primaRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -1140,7 +1154,7 @@ namespace LOSA.Logistica {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "Materia_prima_por_proveedorDataTable";
+                attribute2.FixedValue = "Materia_primaDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1366,6 +1380,22 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string itemcode {
+                get {
+                    try {
+                        return ((string)(this[this.tableLotesXProveedor.itemcodeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'itemcode\' de la tabla \'LotesXProveedor\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLotesXProveedor.itemcodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableLotesXProveedor.idColumn);
             }
@@ -1435,78 +1465,88 @@ namespace LOSA.Logistica {
             public void Setmateria_primaNull() {
                 this[this.tableLotesXProveedor.materia_primaColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsitemcodeNull() {
+                return this.IsNull(this.tableLotesXProveedor.itemcodeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetitemcodeNull() {
+                this[this.tableLotesXProveedor.itemcodeColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class Materia_prima_por_proveedorRow : global::System.Data.DataRow {
+        public partial class Materia_primaRow : global::System.Data.DataRow {
             
-            private Materia_prima_por_proveedorDataTable tableMateria_prima_por_proveedor;
+            private Materia_primaDataTable tableMateria_prima;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal Materia_prima_por_proveedorRow(global::System.Data.DataRowBuilder rb) : 
+            internal Materia_primaRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableMateria_prima_por_proveedor = ((Materia_prima_por_proveedorDataTable)(this.Table));
+                this.tableMateria_prima = ((Materia_primaDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int id_materia_prima {
+            public string itemcode {
                 get {
                     try {
-                        return ((int)(this[this.tableMateria_prima_por_proveedor.id_materia_primaColumn]));
+                        return ((string)(this[this.tableMateria_prima.itemcodeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_materia_prima\' de la tabla \'Materia_prima_por_proveedo" +
-                                "r\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'itemcode\' de la tabla \'Materia_prima\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableMateria_prima_por_proveedor.id_materia_primaColumn] = value;
+                    this[this.tableMateria_prima.itemcodeColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string materia_prima {
+            public string itemdescrip {
                 get {
                     try {
-                        return ((string)(this[this.tableMateria_prima_por_proveedor.materia_primaColumn]));
+                        return ((string)(this[this.tableMateria_prima.itemdescripColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'materia_prima\' de la tabla \'Materia_prima_por_proveedor\' " +
-                                "es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'itemdescrip\' de la tabla \'Materia_prima\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableMateria_prima_por_proveedor.materia_primaColumn] = value;
+                    this[this.tableMateria_prima.itemdescripColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isid_materia_primaNull() {
-                return this.IsNull(this.tableMateria_prima_por_proveedor.id_materia_primaColumn);
+            public bool IsitemcodeNull() {
+                return this.IsNull(this.tableMateria_prima.itemcodeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setid_materia_primaNull() {
-                this[this.tableMateria_prima_por_proveedor.id_materia_primaColumn] = global::System.Convert.DBNull;
+            public void SetitemcodeNull() {
+                this[this.tableMateria_prima.itemcodeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Ismateria_primaNull() {
-                return this.IsNull(this.tableMateria_prima_por_proveedor.materia_primaColumn);
+            public bool IsitemdescripNull() {
+                return this.IsNull(this.tableMateria_prima.itemdescripColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setmateria_primaNull() {
-                this[this.tableMateria_prima_por_proveedor.materia_primaColumn] = global::System.Convert.DBNull;
+            public void SetitemdescripNull() {
+                this[this.tableMateria_prima.itemdescripColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1582,22 +1622,22 @@ namespace LOSA.Logistica {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class Materia_prima_por_proveedorRowChangeEvent : global::System.EventArgs {
+        public class Materia_primaRowChangeEvent : global::System.EventArgs {
             
-            private Materia_prima_por_proveedorRow eventRow;
+            private Materia_primaRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Materia_prima_por_proveedorRowChangeEvent(Materia_prima_por_proveedorRow row, global::System.Data.DataRowAction action) {
+            public Materia_primaRowChangeEvent(Materia_primaRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Materia_prima_por_proveedorRow Row {
+            public Materia_primaRow Row {
                 get {
                     return this.eventRow;
                 }

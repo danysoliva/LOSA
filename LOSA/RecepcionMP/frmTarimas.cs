@@ -105,6 +105,9 @@ namespace LOSA.RecepcionMP
             this.Close();
         }
 
-       
+        private void gvTarimas_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+        }
     }
 }

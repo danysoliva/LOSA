@@ -37,12 +37,13 @@
             this.cmdRequisiciones = new DevExpress.XtraEditors.SimpleButton();
             this.btnCambiarUbicacion = new DevExpress.XtraEditors.SimpleButton();
             this.TabLogistica = new DevExpress.XtraTab.XtraTabPage();
+            this.btnLotesXMP = new DevExpress.XtraEditors.SimpleButton();
             this.btnLote = new DevExpress.XtraEditors.SimpleButton();
             this.btnAjustesKardex = new DevExpress.XtraEditors.SimpleButton();
             this.btnDevolciones = new DevExpress.XtraEditors.SimpleButton();
             this.cmdProgramaRequisiciones = new DevExpress.XtraEditors.SimpleButton();
             this.cmdRegistroLote = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMantenimientoLogistica = new DevExpress.XtraEditors.SimpleButton();
             this.cmdRecepcionMPLogistica = new DevExpress.XtraEditors.SimpleButton();
             this.TabCalidad = new DevExpress.XtraTab.XtraTabPage();
             this.TabAdmin = new DevExpress.XtraTab.XtraTabPage();
@@ -53,6 +54,7 @@
             this.btnBodegas = new DevExpress.XtraEditors.SimpleButton();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.btnAlimentacionManual = new DevExpress.XtraEditors.SimpleButton();
+            this.btnVerLotes = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -166,18 +168,36 @@
             // 
             // TabLogistica
             // 
+            this.TabLogistica.Controls.Add(this.btnVerLotes);
+            this.TabLogistica.Controls.Add(this.btnLotesXMP);
             this.TabLogistica.Controls.Add(this.btnLote);
             this.TabLogistica.Controls.Add(this.btnAjustesKardex);
             this.TabLogistica.Controls.Add(this.btnDevolciones);
             this.TabLogistica.Controls.Add(this.cmdProgramaRequisiciones);
             this.TabLogistica.Controls.Add(this.cmdRegistroLote);
-            this.TabLogistica.Controls.Add(this.simpleButton3);
+            this.TabLogistica.Controls.Add(this.btnMantenimientoLogistica);
             this.TabLogistica.Controls.Add(this.cmdRecepcionMPLogistica);
             this.TabLogistica.Image = global::LOSA.Properties.Resources.box;
             this.TabLogistica.Name = "TabLogistica";
             this.TabLogistica.PageVisible = false;
             this.TabLogistica.Size = new System.Drawing.Size(629, 422);
             this.TabLogistica.Text = "Logistica";
+            // 
+            // btnLotesXMP
+            // 
+            this.btnLotesXMP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLotesXMP.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLotesXMP.Appearance.Options.UseFont = true;
+            this.btnLotesXMP.Appearance.Options.UseTextOptions = true;
+            this.btnLotesXMP.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnLotesXMP.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnLotesXMP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLotesXMP.ImageOptions.Image")));
+            this.btnLotesXMP.Location = new System.Drawing.Point(424, 96);
+            this.btnLotesXMP.Name = "btnLotesXMP";
+            this.btnLotesXMP.Size = new System.Drawing.Size(199, 71);
+            this.btnLotesXMP.TabIndex = 15;
+            this.btnLotesXMP.Text = "Ver Lotes por Materia Prima";
+            this.btnLotesXMP.Click += new System.EventHandler(this.btnLotesXMP_Click);
             // 
             // btnLote
             // 
@@ -247,19 +267,19 @@
             this.cmdRegistroLote.Text = "Registro Lote";
             this.cmdRegistroLote.Click += new System.EventHandler(this.cmdRegistroLote_Click);
             // 
-            // simpleButton3
+            // btnMantenimientoLogistica
             // 
-            this.simpleButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton3.ImageOptions.Image = global::LOSA.Properties.Resources.wrench;
-            this.simpleButton3.Location = new System.Drawing.Point(424, 96);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(199, 71);
-            this.simpleButton3.TabIndex = 8;
-            this.simpleButton3.Text = "Mantenimiento";
-            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
+            this.btnMantenimientoLogistica.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMantenimientoLogistica.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMantenimientoLogistica.Appearance.Options.UseFont = true;
+            this.btnMantenimientoLogistica.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnMantenimientoLogistica.ImageOptions.Image = global::LOSA.Properties.Resources.wrench;
+            this.btnMantenimientoLogistica.Location = new System.Drawing.Point(424, 258);
+            this.btnMantenimientoLogistica.Name = "btnMantenimientoLogistica";
+            this.btnMantenimientoLogistica.Size = new System.Drawing.Size(199, 71);
+            this.btnMantenimientoLogistica.TabIndex = 8;
+            this.btnMantenimientoLogistica.Text = "Mantenimiento";
+            this.btnMantenimientoLogistica.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // cmdRecepcionMPLogistica
             // 
@@ -385,6 +405,22 @@
             this.btnAlimentacionManual.Text = "Alimentación Manual";
             this.btnAlimentacionManual.Click += new System.EventHandler(this.BtnAlimentacionManual_Click);
             // 
+            // btnVerLotes
+            // 
+            this.btnVerLotes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnVerLotes.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerLotes.Appearance.Options.UseFont = true;
+            this.btnVerLotes.Appearance.Options.UseTextOptions = true;
+            this.btnVerLotes.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnVerLotes.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnVerLotes.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.btnVerLotes.Location = new System.Drawing.Point(424, 177);
+            this.btnVerLotes.Name = "btnVerLotes";
+            this.btnVerLotes.Size = new System.Drawing.Size(199, 71);
+            this.btnVerLotes.TabIndex = 16;
+            this.btnVerLotes.Text = "Ver Lotes";
+            this.btnVerLotes.Click += new System.EventHandler(this.btnVerLotes_Click);
+            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -417,7 +453,7 @@
         private DevExpress.XtraTab.XtraTabPage TabLogistica;
         private DevExpress.XtraTab.XtraTabPage TabCalidad;
         private DevExpress.XtraTab.XtraTabPage TabAdmin;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton btnMantenimientoLogistica;
         private DevExpress.XtraEditors.SimpleButton cmdRecepcionMPLogistica;
         private DevExpress.XtraEditors.SimpleButton btnBodegas;
         private DevExpress.XtraEditors.SimpleButton btnTiposPresentaciones;
@@ -433,5 +469,7 @@
         private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
         private DevExpress.XtraEditors.SimpleButton btnAlimentacionManual;
         private DevExpress.XtraEditors.SimpleButton btnLote;
+        private DevExpress.XtraEditors.SimpleButton btnLotesXMP;
+        private DevExpress.XtraEditors.SimpleButton btnVerLotes;
     }
 }

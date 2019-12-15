@@ -130,6 +130,7 @@
             this.gvTarimas.OptionsView.ShowAutoFilterRow = true;
             this.gvTarimas.OptionsView.ShowGroupPanel = false;
             this.gvTarimas.RowHeight = 20;
+            this.gvTarimas.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gvTarimas_KeyDown);
             this.gvTarimas.DoubleClick += new System.EventHandler(this.GvTarimas_DoubleClick);
             // 
             // colid
