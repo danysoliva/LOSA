@@ -27,6 +27,40 @@ namespace LOSA.Clases
             GrupoUsuario = new GrupoUser();
         }
 
+        public bool RecuperarRegistroFromUser(string pUser)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+                string sql = @"SELECT top 1 id, 
+                                       nombre, 
+	                                   id_grupo_losa
+                                FROM [ACS].dbo.conf_usuarios 
+                                where [usuario] ='" + pUser + "'";
+                SqlCommand cmd = new SqlCommand(sql, con);
+                //cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    Id = dr.GetInt32(0);
+                    nombreUser = dr.GetString(1);
+                    idGrupo = dr.GetInt32(2);
+                    recuperado = true;
+                }
+                dr.Close();
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                recuperado = false;
+                CajaDialogo.Error(ec.Message);
+            }
+            return Recuperado;
+        }
+
+
         public bool RecuperarRegistro(int pId)
         {
             try
