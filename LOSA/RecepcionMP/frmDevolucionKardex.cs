@@ -29,40 +29,16 @@ namespace LOSA.RecepcionMP
 
         private void CmdSelectTarima_Click(object sender, EventArgs e)
         {
-            //frmTarimas frm = new frmTarimas((int) opcionAbrirVentanaTarima .Opciones.ventanaDevoluciones);
-            //Tarima InfoTarima = new Tarima();
-
-            //if (frm.ShowDialog() == DialogResult.OK)
-            //{
-            //    if (InfoTarima.RecuperarRegistro(frm.idTarima, ""))
-            //    {
-            //        //factorPresentacion = InfoTarima.Factor;
-
-
-            //        this.idTarima = frm.idTarima;
-            //        beTarima.Text = frm.idTarima.ToString();
-            //        factorPresentacion = InfoTarima.Factor;
-            //        gcTarima.DataSource = CreateDataTarima(frm.idTarima, frm.proveedor, frm.nombreTarima, frm.lote, frm.presentacion);
-            //        //gvTarima.InitNewRow += GridView1_InitNewRow;
-            //        gvTarima.Columns[0].AppearanceCell.Font = new Font("Segoe UI", 11, FontStyle.Bold);
-
-            //        TxtCantidadT_Leave(sender, e);
-            //    }
-
-            //}
-        }
+                   }
 
         void datosTarimaPorCodBarra(SqlConnection connection)
         {
             Tarima InfoTarima = new Tarima();
             try
             {
-                
-
-
                 using (connection)
                 {
-                    string SQL = "exec sp_getTarimas_from_devoluciones @codigo_barra";
+                    string SQL = "exec sp_getTarimas_without_filters @codigo_barra";
                     SqlCommand cmd = new SqlCommand();
                     SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                     cmd.Connection = connection;
@@ -85,11 +61,7 @@ namespace LOSA.RecepcionMP
                             {
                                 factorPresentacion = InfoTarima.Factor;
                             }
-                            //txtTarima.Text = dr.GetString(1);
-                            //txtProveedor.Text = dr.GetString(2);
-                            //txtLote.Text = dr.GetString(5);
-                            //txtPresentacion.Text = dr.GetString(6);
-
+                           
                             gcTarima.DataSource = CreateDataTarima(dr.GetInt32(0), dr.GetString(2), dr.GetString(1), dr.GetString(5), dr.GetString(6));
                             //gvTarima.InitNewRow += GridView1_InitNewRow;
                             gvTarima.Columns[0].AppearanceCell.Font = new Font("Segoe UI", 11, FontStyle.Bold);
@@ -100,7 +72,6 @@ namespace LOSA.RecepcionMP
                         CajaDialogo.Error("TARIMA NO ENCONTRADA");
                         gcTarima.DataSource = null;
                         beTarima.Text = "";
-                        //txtTarima.Text = "";
                     }
 
                     cn.Close();

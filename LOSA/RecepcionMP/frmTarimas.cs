@@ -48,7 +48,7 @@ namespace LOSA.RecepcionMP
                     SQL = @"exec sp_obtener_tarimas_con_ubicacion @codigo_barra";
                 else
                      if (OpcionVentana == 3)//Se abre de ventana desde devoluciones
-                    SQL = @"exec sp_obtener_tarimas_sin_ubicacion @codigo_barra";
+                    SQL = @"exec sp_getTarimas_without_filters @codigo_barra";
 
                 dsRecepcionMP.DetalleTarima.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(SQL, cn);
