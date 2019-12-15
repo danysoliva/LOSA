@@ -138,6 +138,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -154,8 +155,10 @@
     <Compile Include="Clases\CajaDialogo.cs" />
     <Compile Include="Clases\DataOperations.cs" />
     <Compile Include="Clases\Globals.cs" />
+    <Compile Include="Clases\MateriaPrima.cs" />
     <Compile Include="Clases\opcionAbrirVentanaTarima.cs" />
     <Compile Include="Clases\PresentacionX.cs" />
+    <Compile Include="Clases\Security.cs" />
     <Compile Include="Clases\Tarima.cs" />
     <Compile Include="Clases\Teclado.cs" />
     <Compile Include="Clases\Ubicaciones.cs" />
@@ -332,6 +335,12 @@
     <Compile Include="RecepcionMP\rptReporteIngresoTarima.Designer.cs">
       <DependentUpon>rptReporteIngresoTarima.cs</DependentUpon>
     </Compile>
+    <Compile Include="SplashForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashForm.Designer.cs">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tools\frmInputBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -354,6 +363,24 @@
     </Compile>
     <Compile Include="TransaccionesMP\frmOrdenFabricacionDetalle.Designer.cs">
       <DependentUpon>frmOrdenFabricacionDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmRequisicionesDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmRequisicionesDetalle.Designer.cs">
+      <DependentUpon>frmRequisicionesDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmRequisiciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmRequisiciones.Designer.cs">
+      <DependentUpon>frmRequisiciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmSeleccionLote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmSeleccionLote.Designer.cs">
+      <DependentUpon>frmSeleccionLote.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -441,6 +468,9 @@
     <EmbeddedResource Include="RecepcionMP\rptReporteIngresoTarima.resx">
       <DependentUpon>rptReporteIngresoTarima.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SplashForm.resx">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tools\frmInputBox.resx">
       <DependentUpon>frmInputBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -449,6 +479,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmOrdenFabricacionDetalle.resx">
       <DependentUpon>frmOrdenFabricacionDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmRequisicionesDetalle.resx">
+      <DependentUpon>frmRequisicionesDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmRequisiciones.resx">
+      <DependentUpon>frmRequisiciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmSeleccionLote.resx">
+      <DependentUpon>frmSeleccionLote.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="LOSA_TemporaryKey.pfx" />
     <None Include="Mantenimientos\dsMantenimiento.xsc">

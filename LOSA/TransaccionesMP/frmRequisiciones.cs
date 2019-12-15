@@ -14,17 +14,17 @@ using System.Windows.Forms;
 
 namespace LOSA.TransaccionesMP
 {
-    public partial class frmOrdenesFabricacion : Form
+    public partial class frmRequisiciones : Form
     {
         UserLogin UsuarioLogeado;
-        public frmOrdenesFabricacion(UserLogin pUser)
+        public frmRequisiciones(UserLogin pUsuarioLogeado)
         {
             InitializeComponent();
-            UsuarioLogeado = pUser;
-            LoadData();
+            UsuarioLogeado = pUsuarioLogeado;
+            LoadDatos();
         }
 
-        private void LoadData()
+        private void LoadDatos()
         {
             try
             {
@@ -32,12 +32,12 @@ namespace LOSA.TransaccionesMP
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_orders_fabrication", con);
+                SqlCommand cmd = new SqlCommand("sp_get_requisiciones_pendientes_h", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 //cmd.Parameters.AddWithValue("@LastName", txtlastname.Text);
+                dsTransaccionesMP1.requisiciones_h.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                dsTransaccionesMP1.ordenes_fabricacion_h.Clear();
-                adat.Fill(dsTransaccionesMP1.ordenes_fabricacion_h);
+                adat.Fill(dsTransaccionesMP1.requisiciones_h);
                 con.Close();
             }
             catch (Exception ec)
@@ -46,24 +46,24 @@ namespace LOSA.TransaccionesMP
             }
         }
 
+        private void btnVerD_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            //Boton ver
+            var gridView = (GridView)grRequisicoinesMP.FocusedView;
+            var row = (dsTransaccionesMP.requisiciones_hRow)gridView.GetFocusedDataRow();
+
+            frmRequisicionesDetalle frm = new frmRequisicionesDetalle(UsuarioLogeado, row.id);
+            frm.WindowState = FormWindowState.Maximized;
+            if(frm.ShowDialog()== DialogResult.OK)
+            {
+                LoadDatos();
+            }
+        }
+
         private void btnAtras_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
-        }
-
-        private void btnVer_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
-        {
-            //boton ver
-            var gridView = (GridView)grOrdenFabricacion.FocusedView;
-            var row = (dsTransaccionesMP.ordenes_fabricacion_hRow)gridView.GetFocusedDataRow();
-
-            frmOrdenFabricacionDetalle frm = new frmOrdenFabricacionDetalle(row.DocEntry, this.UsuarioLogeado, row.Comments);
-            frm.WindowState = FormWindowState.Maximized;
-            if(frm.ShowDialog() == DialogResult.OK)
-            {
-                LoadData();
-            }
         }
     }
 }

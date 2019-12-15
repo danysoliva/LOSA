@@ -107,7 +107,7 @@ namespace LOSA
 
         private void cmdProgramaRequisiciones_Click(object sender, EventArgs e)
         {
-            frmOrdenesFabricacion frm = new frmOrdenesFabricacion();
+            frmOrdenesFabricacion frm = new frmOrdenesFabricacion(this.UsuarioLogeado);
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
@@ -121,6 +121,18 @@ namespace LOSA
         private void BtnAjustesKardex_Click(object sender, EventArgs e)
         {
             frmAjustesKardex frm = new frmAjustesKardex(UsuarioLogeado);
+            frm.Show();
+        }
+
+        private void cmdRequisiciones_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmdRequisiciones__Click(object sender, EventArgs e)
+        {
+            frmRequisiciones frm = new frmRequisiciones(UsuarioLogeado);
+            frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
     }
