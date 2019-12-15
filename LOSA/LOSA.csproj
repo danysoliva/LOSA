@@ -278,11 +278,6 @@
     <Compile Include="Mantenimientos\Modelos\KardexTipoTransaccion.cs" />
     <Compile Include="Mantenimientos\Modelos\TipoPresentacion.cs" />
     <Compile Include="Produccion\dsProduccion.Designer.cs" />
-    <Compile Include="Produccion\dsProduccion1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsProduccion.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Produccion\frmAlimentacionManual.cs">
       <SubType>Form</SubType>
     </Compile>

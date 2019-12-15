@@ -1,4 +1,5 @@
 ﻿using LOSA.Clases;
+using LOSA.Logistica;
 using LOSA.Mantenimientos;
 using LOSA.RecepcionMP;
 using LOSA.TransaccionesMP;
