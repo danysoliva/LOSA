@@ -177,11 +177,10 @@
       <DependentUpon>frmOpciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\GrupoUser.cs" />
-    <Compile Include="Logistica\dsLogistica.cs">
-      <DependentUpon>dsLogistica.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Logistica\dsLogistica.Designer.cs">
-      <DependentUpon>dsLogistica.cs</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLogistica.xsd</DependentUpon>
     </Compile>
     <Compile Include="Logistica\frmLotes.cs">
       <SubType>Form</SubType>
@@ -277,12 +276,22 @@
     <Compile Include="Mantenimientos\Modelos\EstadoRequisicion.cs" />
     <Compile Include="Mantenimientos\Modelos\KardexTipoTransaccion.cs" />
     <Compile Include="Mantenimientos\Modelos\TipoPresentacion.cs" />
-    <Compile Include="Produccion\dsProduccion.Designer.cs" />
+    <Compile Include="Produccion\dsProduccion1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsProduccion.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Produccion\frmAlimentacionManual.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Produccion\frmAlimentacionManual.Designer.cs">
       <DependentUpon>frmAlimentacionManual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\frmCantidadMP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\frmCantidadMP.Designer.cs">
+      <DependentUpon>frmCantidadMP.cs</DependentUpon>
     </Compile>
     <Compile Include="Produccion\frmTolva.cs">
       <SubType>Form</SubType>
@@ -470,6 +479,9 @@
     <EmbeddedResource Include="Produccion\frmAlimentacionManual.resx">
       <DependentUpon>frmAlimentacionManual.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\frmCantidadMP.resx">
+      <DependentUpon>frmCantidadMP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Produccion\frmTolva.resx">
       <DependentUpon>frmTolva.cs</DependentUpon>
     </EmbeddedResource>
@@ -544,7 +556,11 @@
     <None Include="Logistica\dsLogistica.xsc">
       <DependentUpon>dsLogistica.xsd</DependentUpon>
     </None>
-    <None Include="Logistica\dsLogistica.xsd" />
+    <None Include="Logistica\dsLogistica.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLogistica.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Logistica\dsLogistica.xss">
       <DependentUpon>dsLogistica.xsd</DependentUpon>
     </None>
