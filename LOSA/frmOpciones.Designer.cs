@@ -32,6 +32,8 @@
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.tabOpciones = new DevExpress.XtraTab.XtraTabControl();
             this.TabMontacarga = new DevExpress.XtraTab.XtraTabPage();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.cmdPT = new DevExpress.XtraEditors.SimpleButton();
             this.cmdMP = new DevExpress.XtraEditors.SimpleButton();
             this.TabLogistica = new DevExpress.XtraTab.XtraTabPage();
@@ -49,13 +51,18 @@
             this.btnEstadosProgramacionesRequisiciones = new DevExpress.XtraEditors.SimpleButton();
             this.btnTiposPresentaciones = new DevExpress.XtraEditors.SimpleButton();
             this.btnBodegas = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.tabProduccion = new DevExpress.XtraTab.XtraTabPage();
+            this.btnAlimentacionManual = new DevExpress.XtraEditors.SimpleButton();
+            this.btnLotesPorProveedor = new DevExpress.XtraEditors.SimpleButton();
+            this.btnLotesXMP = new DevExpress.XtraEditors.SimpleButton();
+            this.btnLotes = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCantidadMP = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
             this.TabLogistica.SuspendLayout();
             this.TabAdmin.SuspendLayout();
+            this.tabProduccion.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -90,7 +97,8 @@
             this.TabMontacarga,
             this.TabLogistica,
             this.TabCalidad,
-            this.TabAdmin});
+            this.TabAdmin,
+            this.tabProduccion});
             // 
             // TabMontacarga
             // 
@@ -103,6 +111,26 @@
             this.TabMontacarga.PageVisible = false;
             this.TabMontacarga.Size = new System.Drawing.Size(629, 422);
             this.TabMontacarga.Text = "MontaCarga";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(367, 366);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(214, 29);
+            this.labelControl2.TabIndex = 13;
+            this.labelControl2.Text = "Producto Terminado";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(95, 366);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(148, 29);
+            this.labelControl1.TabIndex = 12;
+            this.labelControl1.Text = "Materia Prima";
             // 
             // cmdPT
             // 
@@ -138,6 +166,10 @@
             // 
             // TabLogistica
             // 
+            this.TabLogistica.Controls.Add(this.btnCantidadMP);
+            this.TabLogistica.Controls.Add(this.btnLotes);
+            this.TabLogistica.Controls.Add(this.btnLotesXMP);
+            this.TabLogistica.Controls.Add(this.btnLotesPorProveedor);
             this.TabLogistica.Controls.Add(this.cmdRequisiciones_);
             this.TabLogistica.Controls.Add(this.btnAjustesKardex);
             this.TabLogistica.Controls.Add(this.btnDevolciones);
@@ -166,11 +198,11 @@
             // 
             // btnAjustesKardex
             // 
-            this.btnAjustesKardex.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAjustesKardex.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAjustesKardex.Appearance.Options.UseFont = true;
             this.btnAjustesKardex.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnAjustesKardex.Location = new System.Drawing.Point(424, 96);
+            this.btnAjustesKardex.ImageOptions.Image = global::LOSA.Properties.Resources.ajustes_kardex;
+            this.btnAjustesKardex.Location = new System.Drawing.Point(9, 335);
             this.btnAjustesKardex.Name = "btnAjustesKardex";
             this.btnAjustesKardex.Size = new System.Drawing.Size(199, 71);
             this.btnAjustesKardex.TabIndex = 13;
@@ -179,11 +211,11 @@
             // 
             // btnDevolciones
             // 
-            this.btnDevolciones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDevolciones.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDevolciones.Appearance.Options.UseFont = true;
             this.btnDevolciones.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnDevolciones.Location = new System.Drawing.Point(424, 177);
+            this.btnDevolciones.ImageOptions.Image = global::LOSA.Properties.Resources.devoluciones;
+            this.btnDevolciones.Location = new System.Drawing.Point(214, 15);
             this.btnDevolciones.Name = "btnDevolciones";
             this.btnDevolciones.Size = new System.Drawing.Size(199, 71);
             this.btnDevolciones.TabIndex = 12;
@@ -330,25 +362,89 @@
             this.btnBodegas.Text = "Bodegas";
             this.btnBodegas.Click += new System.EventHandler(this.BtnBodegas_Click);
             // 
-            // labelControl1
+            // tabProduccion
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(95, 366);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(148, 29);
-            this.labelControl1.TabIndex = 12;
-            this.labelControl1.Text = "Materia Prima";
+            this.tabProduccion.Controls.Add(this.btnAlimentacionManual);
+            this.tabProduccion.Image = global::LOSA.Properties.Resources.produccion;
+            this.tabProduccion.Name = "tabProduccion";
+            this.tabProduccion.PageVisible = false;
+            this.tabProduccion.Size = new System.Drawing.Size(629, 422);
+            this.tabProduccion.Text = "Producción";
             // 
-            // labelControl2
+            // btnAlimentacionManual
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(367, 366);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(214, 29);
-            this.labelControl2.TabIndex = 13;
-            this.labelControl2.Text = "Producto Terminado";
+            this.btnAlimentacionManual.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlimentacionManual.Appearance.Options.UseFont = true;
+            this.btnAlimentacionManual.Appearance.Options.UseTextOptions = true;
+            this.btnAlimentacionManual.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnAlimentacionManual.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnAlimentacionManual.ImageOptions.Image = global::LOSA.Properties.Resources.alimentacion_manual;
+            this.btnAlimentacionManual.Location = new System.Drawing.Point(19, 23);
+            this.btnAlimentacionManual.Name = "btnAlimentacionManual";
+            this.btnAlimentacionManual.Size = new System.Drawing.Size(199, 71);
+            this.btnAlimentacionManual.TabIndex = 9;
+            this.btnAlimentacionManual.Text = "Alimentación Manual";
+            this.btnAlimentacionManual.Click += new System.EventHandler(this.btnAlimentacionManual_Click);
+            // 
+            // btnLotesPorProveedor
+            // 
+            this.btnLotesPorProveedor.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLotesPorProveedor.Appearance.Options.UseFont = true;
+            this.btnLotesPorProveedor.Appearance.Options.UseTextOptions = true;
+            this.btnLotesPorProveedor.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnLotesPorProveedor.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnLotesPorProveedor.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnLotesPorProveedor.Location = new System.Drawing.Point(214, 96);
+            this.btnLotesPorProveedor.Name = "btnLotesPorProveedor";
+            this.btnLotesPorProveedor.Size = new System.Drawing.Size(199, 71);
+            this.btnLotesPorProveedor.TabIndex = 15;
+            this.btnLotesPorProveedor.Text = "Ver Lotes Por Proveedor";
+            this.btnLotesPorProveedor.Click += new System.EventHandler(this.btnLotesPorProveedor_Click);
+            // 
+            // btnLotesXMP
+            // 
+            this.btnLotesXMP.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLotesXMP.Appearance.Options.UseFont = true;
+            this.btnLotesXMP.Appearance.Options.UseTextOptions = true;
+            this.btnLotesXMP.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnLotesXMP.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnLotesXMP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btnLotesXMP.Location = new System.Drawing.Point(214, 177);
+            this.btnLotesXMP.Name = "btnLotesXMP";
+            this.btnLotesXMP.Size = new System.Drawing.Size(199, 71);
+            this.btnLotesXMP.TabIndex = 16;
+            this.btnLotesXMP.Text = "Ver Lotes Por Materia Prima";
+            this.btnLotesXMP.Click += new System.EventHandler(this.btnLotesXMP_Click);
+            // 
+            // btnLotes
+            // 
+            this.btnLotes.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLotes.Appearance.Options.UseFont = true;
+            this.btnLotes.Appearance.Options.UseTextOptions = true;
+            this.btnLotes.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnLotes.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnLotes.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.btnLotes.Location = new System.Drawing.Point(214, 258);
+            this.btnLotes.Name = "btnLotes";
+            this.btnLotes.Size = new System.Drawing.Size(199, 71);
+            this.btnLotes.TabIndex = 17;
+            this.btnLotes.Text = "Ver Lotes";
+            this.btnLotes.Click += new System.EventHandler(this.btnLotes_Click);
+            // 
+            // btnCantidadMP
+            // 
+            this.btnCantidadMP.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCantidadMP.Appearance.Options.UseFont = true;
+            this.btnCantidadMP.Appearance.Options.UseTextOptions = true;
+            this.btnCantidadMP.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnCantidadMP.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnCantidadMP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
+            this.btnCantidadMP.Location = new System.Drawing.Point(214, 335);
+            this.btnCantidadMP.Name = "btnCantidadMP";
+            this.btnCantidadMP.Size = new System.Drawing.Size(199, 71);
+            this.btnCantidadMP.TabIndex = 18;
+            this.btnCantidadMP.Text = "Materia Prima En Existencia";
+            this.btnCantidadMP.Click += new System.EventHandler(this.btnCantidadMP_Click);
             // 
             // frmOpciones
             // 
@@ -368,6 +464,7 @@
             this.TabMontacarga.PerformLayout();
             this.TabLogistica.ResumeLayout(false);
             this.TabAdmin.ResumeLayout(false);
+            this.tabProduccion.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -395,5 +492,11 @@
         private DevExpress.XtraEditors.SimpleButton cmdPT;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraTab.XtraTabPage tabProduccion;
+        private DevExpress.XtraEditors.SimpleButton btnAlimentacionManual;
+        private DevExpress.XtraEditors.SimpleButton btnCantidadMP;
+        private DevExpress.XtraEditors.SimpleButton btnLotes;
+        private DevExpress.XtraEditors.SimpleButton btnLotesXMP;
+        private DevExpress.XtraEditors.SimpleButton btnLotesPorProveedor;
     }
 }

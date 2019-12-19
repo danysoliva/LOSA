@@ -678,6 +678,7 @@
     <Content Include="Resources\key.png" />
     <Content Include="Resources\medal.png" />
     <Content Include="Resources\plus.png" />
+    <None Include="Resources\produccion.png" />
     <Content Include="Resources\tap.png" />
     <Content Include="Resources\user.png" />
     <Content Include="Resources\wrench.png" />

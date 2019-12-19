@@ -65,7 +65,7 @@ namespace LOSA.RecepcionMP
                     cmd.Connection = connection;
                     cmd.CommandText = SQL;
 
-                    cmd.Parameters.AddWithValue("@codigo_barra", beTarima.Text.Replace("H",""));
+                    cmd.Parameters.AddWithValue("@codigo_barra", beTarima.Text);
 
                     connection.Open();
                

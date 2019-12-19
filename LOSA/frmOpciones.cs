@@ -1,5 +1,7 @@
 ﻿using LOSA.Clases;
+using LOSA.Logistica;
 using LOSA.Mantenimientos;
+using LOSA.Produccion;
 using LOSA.RecepcionMP;
 using LOSA.TransaccionesMP;
 using System;
@@ -148,6 +150,36 @@ namespace LOSA
         {
             frmOptionMontaCarga frm = new frmOptionMontaCarga(UsuarioLogeado, 1);//MP
             frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+        private void btnAlimentacionManual_Click(object sender, EventArgs e)
+        {
+            frmAlimentacionManual frm = new frmAlimentacionManual();
+            frm.Show();
+        }
+
+        private void btnLotesPorProveedor_Click(object sender, EventArgs e)
+        {
+            frmLotesXProveedor frm = new frmLotesXProveedor();
+            frm.Show();
+        }
+
+        private void btnLotesXMP_Click(object sender, EventArgs e)
+        {
+            frmLotesXMP frm = new frmLotesXMP();
+            frm.Show();
+        }
+
+        private void btnLotes_Click(object sender, EventArgs e)
+        {
+            frmLotes frm = new frmLotes();
+            frm.Show();
+        }
+
+        private void btnCantidadMP_Click(object sender, EventArgs e)
+        {
+            frmCantidadMP frm = new frmCantidadMP();
             frm.Show();
         }
     }

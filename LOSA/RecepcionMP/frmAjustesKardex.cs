@@ -204,13 +204,13 @@ namespace LOSA.RecepcionMP
 
             this.factorValue = Convert.ToDecimal(gvLookUpEditPresentacion.GetFocusedRowCellValue(gvLookUpEditPresentacion.Columns[2]).ToString());
 
-            if (Convert.ToDecimal(txtCantidadT.Text) > 0)
+            //if (Convert.ToDecimal(txtCantidadT.Text) > 0)
                 txtPeso.Text = (factorValue * Convert.ToDecimal(txtCantidadT.Text)).ToString();
-            else
-            {
-                CajaDialogo.Error("Debe ingresar unidades mayores que cero (0)");
-                txtCantidadT.Focus();
-            }
+            //else
+            //{
+            //    CajaDialogo.Error("Debe ingresar unidades mayores que cero (0)");
+            //    txtCantidadT.Focus();
+            //}
         }
 
         private void TxtCantidadT_Leave(object sender, EventArgs e)
