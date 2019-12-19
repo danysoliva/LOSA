@@ -37,6 +37,7 @@
             this.cmdRequisiciones = new DevExpress.XtraEditors.SimpleButton();
             this.btnCambiarUbicacion = new DevExpress.XtraEditors.SimpleButton();
             this.TabLogistica = new DevExpress.XtraTab.XtraTabPage();
+            this.btnCantidadMP = new DevExpress.XtraEditors.SimpleButton();
             this.btnVerLotes = new DevExpress.XtraEditors.SimpleButton();
             this.btnLotesXMP = new DevExpress.XtraEditors.SimpleButton();
             this.btnLotesXProveedor = new DevExpress.XtraEditors.SimpleButton();
@@ -54,12 +55,14 @@
             this.btnEstadosProgramacionesRequisiciones = new DevExpress.XtraEditors.SimpleButton();
             this.btnTiposPresentaciones = new DevExpress.XtraEditors.SimpleButton();
             this.btnBodegas = new DevExpress.XtraEditors.SimpleButton();
-            this.btnCantidadMP = new DevExpress.XtraEditors.SimpleButton();
+            this.tbProduccion = new DevExpress.XtraTab.XtraTabPage();
+            this.btnAlimentacionManual = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
             this.TabLogistica.SuspendLayout();
             this.TabAdmin.SuspendLayout();
+            this.tbProduccion.SuspendLayout();
             this.SuspendLayout();
             // 
             // simpleButton1
@@ -121,7 +124,8 @@
             this.TabMontacarga,
             this.TabLogistica,
             this.TabCalidad,
-            this.TabAdmin});
+            this.TabAdmin,
+            this.tbProduccion});
             // 
             // TabMontacarga
             // 
@@ -183,6 +187,22 @@
             this.TabLogistica.PageVisible = false;
             this.TabLogistica.Size = new System.Drawing.Size(629, 422);
             this.TabLogistica.Text = "Logistica";
+            // 
+            // btnCantidadMP
+            // 
+            this.btnCantidadMP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCantidadMP.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCantidadMP.Appearance.Options.UseFont = true;
+            this.btnCantidadMP.Appearance.Options.UseTextOptions = true;
+            this.btnCantidadMP.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnCantidadMP.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnCantidadMP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCantidadMP.ImageOptions.Image")));
+            this.btnCantidadMP.Location = new System.Drawing.Point(424, 326);
+            this.btnCantidadMP.Name = "btnCantidadMP";
+            this.btnCantidadMP.Size = new System.Drawing.Size(199, 71);
+            this.btnCantidadMP.TabIndex = 18;
+            this.btnCantidadMP.Text = "Ver Existencia Materia Prima";
+            this.btnCantidadMP.Click += new System.EventHandler(this.btnCantidadMP_Click);
             // 
             // btnVerLotes
             // 
@@ -265,7 +285,7 @@
             this.btnDevolciones.Appearance.Options.UseFont = true;
             this.btnDevolciones.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnDevolciones.ImageOptions.Image = global::LOSA.Properties.Resources.devoluciones;
-            this.btnDevolciones.Location = new System.Drawing.Point(424, 15);
+            this.btnDevolciones.Location = new System.Drawing.Point(424, 16);
             this.btnDevolciones.Name = "btnDevolciones";
             this.btnDevolciones.Size = new System.Drawing.Size(199, 71);
             this.btnDevolciones.TabIndex = 12;
@@ -300,12 +320,11 @@
             // 
             // simpleButton3
             // 
-            this.simpleButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton3.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton3.Appearance.Options.UseFont = true;
             this.simpleButton3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton3.ImageOptions.Image = global::LOSA.Properties.Resources.wrench;
-            this.simpleButton3.Location = new System.Drawing.Point(424, 327);
+            this.simpleButton3.Location = new System.Drawing.Point(214, 16);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(199, 71);
             this.simpleButton3.TabIndex = 8;
@@ -412,20 +431,27 @@
             this.btnBodegas.Text = "Bodegas";
             this.btnBodegas.Click += new System.EventHandler(this.BtnBodegas_Click);
             // 
-            // btnCantidadMP
+            // tbProduccion
             // 
-            this.btnCantidadMP.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCantidadMP.Appearance.Options.UseFont = true;
-            this.btnCantidadMP.Appearance.Options.UseTextOptions = true;
-            this.btnCantidadMP.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnCantidadMP.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnCantidadMP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
-            this.btnCantidadMP.Location = new System.Drawing.Point(214, 15);
-            this.btnCantidadMP.Name = "btnCantidadMP";
-            this.btnCantidadMP.Size = new System.Drawing.Size(199, 71);
-            this.btnCantidadMP.TabIndex = 18;
-            this.btnCantidadMP.Text = "Ver Existencia Materia Prima";
-            this.btnCantidadMP.Click += new System.EventHandler(this.btnCantidadMP_Click);
+            this.tbProduccion.Controls.Add(this.btnAlimentacionManual);
+            this.tbProduccion.Name = "tbProduccion";
+            this.tbProduccion.Size = new System.Drawing.Size(629, 422);
+            this.tbProduccion.Text = "Producción";
+            // 
+            // btnAlimentacionManual
+            // 
+            this.btnAlimentacionManual.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlimentacionManual.Appearance.Options.UseFont = true;
+            this.btnAlimentacionManual.Appearance.Options.UseTextOptions = true;
+            this.btnAlimentacionManual.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnAlimentacionManual.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnAlimentacionManual.ImageOptions.Image = global::LOSA.Properties.Resources.alimentacion_manual;
+            this.btnAlimentacionManual.Location = new System.Drawing.Point(18, 17);
+            this.btnAlimentacionManual.Name = "btnAlimentacionManual";
+            this.btnAlimentacionManual.Size = new System.Drawing.Size(199, 71);
+            this.btnAlimentacionManual.TabIndex = 13;
+            this.btnAlimentacionManual.Text = "Alimentación Manual";
+            this.btnAlimentacionManual.Click += new System.EventHandler(this.btnAlimentacionManual_Click);
             // 
             // frmOpciones
             // 
@@ -444,6 +470,7 @@
             this.TabMontacarga.ResumeLayout(false);
             this.TabLogistica.ResumeLayout(false);
             this.TabAdmin.ResumeLayout(false);
+            this.tbProduccion.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -476,5 +503,7 @@
         private DevExpress.XtraEditors.SimpleButton btnLotesXProveedor;
         private DevExpress.XtraEditors.SimpleButton btnVerLotes;
         private DevExpress.XtraEditors.SimpleButton btnCantidadMP;
+        private DevExpress.XtraTab.XtraTabPage tbProduccion;
+        private DevExpress.XtraEditors.SimpleButton btnAlimentacionManual;
     }
 }

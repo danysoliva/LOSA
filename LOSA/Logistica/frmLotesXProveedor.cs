@@ -49,9 +49,9 @@ namespace LOSA.Logistica
 
         private void GlueProveedor_EditValueChanged(object sender, EventArgs e)
         {
-
-            cargarDatosTarimas(gvProveedores.GetFocusedRowCellValue(gvProveedores.Columns[0]).ToString());
             cargarMateriaPrimaXProveedor(gvProveedores.GetFocusedRowCellValue(gvProveedores.Columns[0]).ToString());
+            cargarDatosTarimas(gvProveedores.GetFocusedRowCellValue(gvProveedores.Columns[0]).ToString());
+            
         }
 
         private void cargarDatosTarimas(string pIdProveedor)

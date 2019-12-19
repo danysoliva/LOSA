@@ -173,5 +173,11 @@ namespace LOSA
             frmCantidadMP frm = new frmCantidadMP();
             frm.Show();
         }
+
+        private void btnAlimentacionManual_Click(object sender, EventArgs e)
+        {
+            frmAlimentacionManual frm = new frmAlimentacionManual();
+            frm.Show();
+        }
     }
 }
