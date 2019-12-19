@@ -177,6 +177,29 @@
       <DependentUpon>frmOpciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\GrupoUser.cs" />
+    <Compile Include="Logistica\dsLogistica.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLogistica.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\frmLotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\frmLotes.Designer.cs">
+      <DependentUpon>frmLotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\frmLotesXMP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\frmLotesXMP.Designer.cs">
+      <DependentUpon>frmLotesXMP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\frmLotesXProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\frmLotesXProveedor.Designer.cs">
+      <DependentUpon>frmLotesXProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimientos\dsMantenimiento.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -253,6 +276,29 @@
     <Compile Include="Mantenimientos\Modelos\EstadoRequisicion.cs" />
     <Compile Include="Mantenimientos\Modelos\KardexTipoTransaccion.cs" />
     <Compile Include="Mantenimientos\Modelos\TipoPresentacion.cs" />
+    <Compile Include="Produccion\dsProduccion1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsProduccion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\frmAlimentacionManual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\frmAlimentacionManual.Designer.cs">
+      <DependentUpon>frmAlimentacionManual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\frmCantidadMP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\frmCantidadMP.Designer.cs">
+      <DependentUpon>frmCantidadMP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\frmTolva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\frmTolva.Designer.cs">
+      <DependentUpon>frmTolva.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecepcionMP\dsRecepcionMP.cs">
@@ -412,6 +458,15 @@
     <EmbeddedResource Include="frmOpciones.resx">
       <DependentUpon>frmOpciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\frmLotes.resx">
+      <DependentUpon>frmLotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\frmLotesXMP.resx">
+      <DependentUpon>frmLotesXMP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\frmLotesXProveedor.resx">
+      <DependentUpon>frmLotesXProveedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\frmBodega.resx">
       <DependentUpon>frmBodega.cs</DependentUpon>
     </EmbeddedResource>
@@ -444,6 +499,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\frmTipoPresentacionCRUD.resx">
       <DependentUpon>frmTipoPresentacionCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\frmAlimentacionManual.resx">
+      <DependentUpon>frmAlimentacionManual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\frmCantidadMP.resx">
+      <DependentUpon>frmCantidadMP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\frmTolva.resx">
+      <DependentUpon>frmTolva.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -525,6 +589,17 @@
     <EmbeddedResource Include="TransaccionesMP\frmSeleccionLote.resx">
       <DependentUpon>frmSeleccionLote.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Logistica\dsLogistica.xsc">
+      <DependentUpon>dsLogistica.xsd</DependentUpon>
+    </None>
+    <None Include="Logistica\dsLogistica.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLogistica.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Logistica\dsLogistica.xss">
+      <DependentUpon>dsLogistica.xsd</DependentUpon>
+    </None>
     <None Include="LOSA_TemporaryKey.pfx" />
     <None Include="Mantenimientos\dsMantenimiento.xsc">
       <DependentUpon>dsMantenimiento.xsd</DependentUpon>
@@ -536,6 +611,17 @@
     </None>
     <None Include="Mantenimientos\dsMantenimiento.xss">
       <DependentUpon>dsMantenimiento.xsd</DependentUpon>
+    </None>
+    <None Include="Produccion\dsProduccion.xsc">
+      <DependentUpon>dsProduccion.xsd</DependentUpon>
+    </None>
+    <None Include="Produccion\dsProduccion.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsProduccion1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Produccion\dsProduccion.xss">
+      <DependentUpon>dsProduccion.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -326,6 +326,7 @@
             this.txtUnidades.TextChanged += new System.EventHandler(this.txtUnidades_TextChanged);
             this.txtUnidades.Enter += new System.EventHandler(this.txtCantidadT_Enter);
             this.txtUnidades.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidadT_KeyPress);
+            this.txtUnidades.Leave += new System.EventHandler(this.txtUnidades_Leave);
             // 
             // dtFechaProduccion
             // 

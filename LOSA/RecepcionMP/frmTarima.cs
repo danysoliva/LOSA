@@ -385,10 +385,9 @@ namespace LOSA.RecepcionMP
             //txtPesoTM.Text = string.Format("{0:0.00}", (factor * Convert.ToDecimal(txtUnidades.Text)));
         }
 
+        private void txtUnidades_Leave(object sender, EventArgs e)
+        {
 
-
-
-
-
+        }
     }
 }

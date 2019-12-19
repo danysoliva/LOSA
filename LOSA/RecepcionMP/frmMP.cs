@@ -22,6 +22,23 @@ namespace LOSA.RecepcionMP
             cargarDatos();
         }
         DataOperations dp = new DataOperations();
+
+        private void btnSeleccionar_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            //Seleccion del lote
+            //bib
+            var gridView = (GridView)gcMP.FocusedView;
+            var row = (dsRecepcionMPx.Materia_PrimaRow)gridView.GetFocusedDataRow();
+
+            this.idProveedor = row.carcode;
+            this.NombreProveedor = row.cardname;
+            this.MateriaPrima = row.itemdescrip;
+            this.ItemCode = row.itemcode;
+            //this.lote = row.lote_materia_prima;
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
         private void BtnAtras_Click(object sender, EventArgs e)
         {
             this.Close();
