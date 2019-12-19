@@ -28,8 +28,7 @@ namespace LOSA.RecepcionMP
         }
 
         private void CmdSelectTarima_Click(object sender, EventArgs e)
-        {
-                   }
+        {}
 
         void datosTarimaPorCodBarra(SqlConnection connection)
         {

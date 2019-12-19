@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSeleccionLote));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.txtMP_Name = new DevExpress.XtraEditors.TextEdit();
@@ -54,6 +54,8 @@
             this.btnVerD = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.lblUnidad = new DevExpress.XtraEditors.LabelControl();
             this.chkAutoSelect = new System.Windows.Forms.CheckBox();
+            this.cmdGuardar = new DevExpress.XtraEditors.SimpleButton();
+            this.colcants = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtMP_Name.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigoMP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadPendiente.Properties)).BeginInit();
@@ -204,7 +206,8 @@
             this.colcantidad,
             this.colunidad,
             this.colpeso_total,
-            this.colseleccionado});
+            this.colseleccionado,
+            this.colcants});
             this.gvTarimas.GridControl = this.grRequisicoinesMP;
             this.gvTarimas.Name = "gvTarimas";
             this.gvTarimas.OptionsCustomization.AllowFilter = false;
@@ -306,9 +309,9 @@
             // btnVerD
             // 
             this.btnVerD.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.btnVerD.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.btnVerD.Name = "btnVerD";
             this.btnVerD.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -335,12 +338,38 @@
             this.chkAutoSelect.UseVisualStyleBackColor = true;
             this.chkAutoSelect.CheckedChanged += new System.EventHandler(this.chkAutoSelect_CheckedChanged);
             // 
+            // cmdGuardar
+            // 
+            this.cmdGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdGuardar.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.cmdGuardar.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdGuardar.Appearance.Options.UseBackColor = true;
+            this.cmdGuardar.Appearance.Options.UseFont = true;
+            this.cmdGuardar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdGuardar.ImageOptions.Image")));
+            this.cmdGuardar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.cmdGuardar.Location = new System.Drawing.Point(469, 8);
+            this.cmdGuardar.Name = "cmdGuardar";
+            this.cmdGuardar.Size = new System.Drawing.Size(167, 47);
+            this.cmdGuardar.TabIndex = 46;
+            this.cmdGuardar.Text = "Planificar";
+            this.cmdGuardar.Click += new System.EventHandler(this.cmdGuardar_Click);
+            // 
+            // colcants
+            // 
+            this.colcants.Caption = "Cantidad a Enviar";
+            this.colcants.FieldName = "cants";
+            this.colcants.Name = "colcants";
+            this.colcants.Visible = true;
+            this.colcants.VisibleIndex = 9;
+            // 
             // frmSeleccionLote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(638, 560);
+            this.Controls.Add(this.cmdGuardar);
             this.Controls.Add(this.chkAutoSelect);
             this.Controls.Add(this.lblUnidad);
             this.Controls.Add(this.grRequisicoinesMP);
@@ -392,5 +421,7 @@
         private DevExpress.XtraEditors.LabelControl lblUnidad;
         private System.Windows.Forms.CheckBox chkAutoSelect;
         private DevExpress.XtraGrid.Columns.GridColumn colseleccionado;
+        private DevExpress.XtraEditors.SimpleButton cmdGuardar;
+        private DevExpress.XtraGrid.Columns.GridColumn colcants;
     }
 }

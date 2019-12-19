@@ -34,6 +34,7 @@ namespace LOSA
 
         private void cmdHome_Click(object sender, EventArgs e)
         {
+            
             this.Close();
         }
 
@@ -132,6 +133,20 @@ namespace LOSA
         private void cmdRequisiciones__Click(object sender, EventArgs e)
         {
             frmRequisiciones frm = new frmRequisiciones(UsuarioLogeado);
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+        private void cmdPT_Click(object sender, EventArgs e)
+        {
+            frmOptionMontaCarga frm = new frmOptionMontaCarga(UsuarioLogeado, 2);//pt
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+        private void cmdMP_Click(object sender, EventArgs e)
+        {
+            frmOptionMontaCarga frm = new frmOptionMontaCarga(UsuarioLogeado, 1);//MP
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }

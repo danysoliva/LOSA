@@ -1,6 +1,6 @@
 ﻿namespace LOSA.TransaccionesMP
 {
-    partial class frmRequisicionesDetalle
+    partial class frmEntregaDeComponentesReq
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRequisicionesDetalle));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEntregaDeComponentesReq));
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
+            this.beIdTarima = new DevExpress.XtraEditors.ButtonEdit();
+            this.cmdSelectTarima = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.grDetalleLote = new DevExpress.XtraGrid.GridControl();
-            this.dsTransaccionesMP1 = new LOSA.TransaccionesMP.dsTransaccionesMP();
+            this.btnEdit = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gvTarimas = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_materia_prima = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -47,67 +49,82 @@
             this.colunidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcode_sap = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnEdit = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colasignado = new DevExpress.XtraGrid.Columns.GridColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.grDetalleLote)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvTarimas)).BeginInit();
+            this.grDetalleLote = new DevExpress.XtraGrid.GridControl();
+            ((System.ComponentModel.ISupportInitialize)(this.beIdTarima.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvTarimas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grDetalleLote)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnAtras
+            // cmdHome
             // 
-            this.btnAtras.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnAtras.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtras.Appearance.Options.UseBackColor = true;
-            this.btnAtras.Appearance.Options.UseFont = true;
-            this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
-            this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(4, 3);
-            this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(167, 47);
-            this.btnAtras.TabIndex = 33;
-            this.btnAtras.Text = "Atras";
-            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
+            this.cmdHome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdHome.Appearance.BackColor = System.Drawing.Color.White;
+            this.cmdHome.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdHome.Appearance.Options.UseBackColor = true;
+            this.cmdHome.Appearance.Options.UseFont = true;
+            this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
+            this.cmdHome.Location = new System.Drawing.Point(459, 12);
+            this.cmdHome.Name = "cmdHome";
+            this.cmdHome.Size = new System.Drawing.Size(175, 71);
+            this.cmdHome.TabIndex = 8;
+            this.cmdHome.Text = "Cerrar";
+            this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
+            // 
+            // beIdTarima
+            // 
+            this.beIdTarima.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.True;
+            this.beIdTarima.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.beIdTarima.EditValue = "";
+            this.beIdTarima.Location = new System.Drawing.Point(120, 36);
+            this.beIdTarima.Name = "beIdTarima";
+            this.beIdTarima.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.beIdTarima.Properties.Appearance.Options.UseFont = true;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            this.beIdTarima.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            this.beIdTarima.Properties.MaxLength = 20;
+            this.beIdTarima.Properties.NullText = "Escanee o selecciona una tarima";
+            this.beIdTarima.Size = new System.Drawing.Size(257, 44);
+            this.beIdTarima.TabIndex = 38;
+            this.beIdTarima.ToolTip = "Hola";
+            // 
+            // cmdSelectTarima
+            // 
+            this.cmdSelectTarima.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdSelectTarima.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdSelectTarima.Appearance.Options.UseFont = true;
+            this.cmdSelectTarima.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdSelectTarima.ImageOptions.Image = global::LOSA.Properties.Resources.tap;
+            this.cmdSelectTarima.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.cmdSelectTarima.Location = new System.Drawing.Point(383, 12);
+            this.cmdSelectTarima.Name = "cmdSelectTarima";
+            this.cmdSelectTarima.Size = new System.Drawing.Size(62, 69);
+            this.cmdSelectTarima.TabIndex = 37;
             // 
             // labelControl1
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Appearance.Options.UseTextOptions = true;
-            this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(172, 10);
+            this.labelControl1.Location = new System.Drawing.Point(4, 41);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(348, 40);
-            this.labelControl1.TabIndex = 35;
-            this.labelControl1.Text = "Detalle MP Solicitada";
+            this.labelControl1.Size = new System.Drawing.Size(110, 37);
+            this.labelControl1.TabIndex = 36;
+            this.labelControl1.Text = "Tarima:";
             // 
-            // grDetalleLote
+            // btnEdit
             // 
-            this.grDetalleLote.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.grDetalleLote.DataMember = "requisiciones_d";
-            this.grDetalleLote.DataSource = this.dsTransaccionesMP1;
-            this.grDetalleLote.Location = new System.Drawing.Point(2, 56);
-            this.grDetalleLote.MainView = this.gvTarimas;
-            this.grDetalleLote.Name = "grDetalleLote";
-            this.grDetalleLote.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.btnEdit});
-            this.grDetalleLote.Size = new System.Drawing.Size(635, 502);
-            this.grDetalleLote.TabIndex = 34;
-            this.grDetalleLote.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvTarimas});
-            // 
-            // dsTransaccionesMP1
-            // 
-            this.dsTransaccionesMP1.DataSetName = "dsTransaccionesMP";
-            this.dsTransaccionesMP1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.btnEdit.AutoHeight = false;
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            this.btnEdit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
             // gvTarimas
             // 
@@ -149,7 +166,6 @@
             this.gvTarimas.OptionsView.ShowFooter = true;
             this.gvTarimas.OptionsView.ShowGroupPanel = false;
             this.gvTarimas.RowHeight = 20;
-            this.gvTarimas.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.gvTarimas_RowStyle);
             // 
             // colid
             // 
@@ -238,16 +254,6 @@
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 7;
             // 
-            // btnEdit
-            // 
-            this.btnEdit.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
-            this.btnEdit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.btnEdit.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnVerD_ButtonClick);
-            // 
             // colasignado
             // 
             this.colasignado.Caption = "Cant. Asignada";
@@ -256,35 +262,53 @@
             this.colasignado.Visible = true;
             this.colasignado.VisibleIndex = 2;
             // 
-            // frmRequisicionesDetalle
+            // grDetalleLote
+            // 
+            this.grDetalleLote.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grDetalleLote.DataMember = "requisiciones_d";
+            this.grDetalleLote.Location = new System.Drawing.Point(4, 89);
+            this.grDetalleLote.MainView = this.gvTarimas;
+            this.grDetalleLote.Name = "grDetalleLote";
+            this.grDetalleLote.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.btnEdit});
+            this.grDetalleLote.Size = new System.Drawing.Size(629, 467);
+            this.grDetalleLote.TabIndex = 35;
+            this.grDetalleLote.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvTarimas});
+            // 
+            // frmEntregaDeComponentesReq
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightGray;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(638, 560);
-            this.ControlBox = false;
-            this.Controls.Add(this.btnAtras);
+            this.Controls.Add(this.beIdTarima);
+            this.Controls.Add(this.cmdSelectTarima);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.grDetalleLote);
+            this.Controls.Add(this.cmdHome);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmRequisicionesDetalle";
-            this.Text = "frmRequisicionesDetalle";
-            ((System.ComponentModel.ISupportInitialize)(this.grDetalleLote)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvTarimas)).EndInit();
+            this.Name = "frmEntregaDeComponentesReq";
+            this.Text = "frmEntregaDeComponentesReq";
+            ((System.ComponentModel.ISupportInitialize)(this.beIdTarima.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvTarimas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grDetalleLote)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private DevExpress.XtraEditors.SimpleButton btnAtras;
+        private DevExpress.XtraEditors.SimpleButton cmdHome;
+        private DevExpress.XtraEditors.ButtonEdit beIdTarima;
+        private DevExpress.XtraEditors.SimpleButton cmdSelectTarima;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraGrid.GridControl grDetalleLote;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvTarimas;
-        private dsTransaccionesMP dsTransaccionesMP1;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnEdit;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvTarimas;
         private DevExpress.XtraGrid.Columns.GridColumn colid;
         private DevExpress.XtraGrid.Columns.GridColumn colid_materia_prima;
         private DevExpress.XtraGrid.Columns.GridColumn colmp;
@@ -298,5 +322,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colcode_sap;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn colasignado;
+        private DevExpress.XtraGrid.GridControl grDetalleLote;
     }
 }

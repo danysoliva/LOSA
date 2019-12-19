@@ -58,7 +58,14 @@ namespace LOSA.TransaccionesMP
             var gridView = (GridView)grOrdenFabricacion.FocusedView;
             var row = (dsTransaccionesMP.ordenes_fabricacion_hRow)gridView.GetFocusedDataRow();
 
-            frmOrdenFabricacionDetalle frm = new frmOrdenFabricacionDetalle(row.DocEntry, this.UsuarioLogeado, row.Comments);
+            string comment = "";
+            try
+            {
+                comment = row.Comments;
+            }
+            catch {}
+
+            frmOrdenFabricacionDetalle frm = new frmOrdenFabricacionDetalle(row.DocEntry, this.UsuarioLogeado, comment);
             frm.WindowState = FormWindowState.Maximized;
             if(frm.ShowDialog() == DialogResult.OK)
             {

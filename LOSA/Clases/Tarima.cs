@@ -44,6 +44,9 @@ namespace LOSA.Clases
 
         }
 
+        /// <summary>
+        /// Id tarima
+        /// </summary>
         public int Id { get => _id; set => _id = value; }
         public int Id_materiaprima { get => _id_materiaprima; set => _id_materiaprima = value; }
         public int IdUnidadMedida { get => _idUnidadMedida; set => _idUnidadMedida = value; }
@@ -65,6 +68,7 @@ namespace LOSA.Clases
         public string IdProveedor { get => _idProveedor; set => _idProveedor = value; }
         public int IdPresentacion { get => _idPresentacion; set => _idPresentacion = value; }
         public decimal Factor { get => _factor; set => _factor = value; }
+        public bool Enable { get => _Enable; set => _Enable = value; }
 
         public bool RecuperarRegistro(int pIdTarima, string pCodigoBarra)
         {
@@ -98,6 +102,8 @@ namespace LOSA.Clases
                     IdBoleta = dr.GetInt32(14);
                     CodigoBarra = dr.GetString(15);
                     Factor = dr.GetDecimal(16);
+                    Enable = dr.GetBoolean(17);
+                    Peso = dr.GetDecimal(18);
                     Recuperado = true;
                 }
                 dr.Close();
@@ -135,7 +141,7 @@ namespace LOSA.Clases
                     _fechaProduccion = dr.GetDateTime(6);
                     _LoteMP = dr.GetString(7);
                     _LotePT = dr.GetInt32(8);
-                    _Enable = dr.GetBoolean(9);
+                    Enable = dr.GetBoolean(9);
                     IdPresentacion = dr.GetInt32(10);
                     _idUsuario = dr.GetInt32(11);
                     _tipotarimaid = dr.GetInt32(12);

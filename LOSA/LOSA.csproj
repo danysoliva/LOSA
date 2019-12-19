@@ -352,6 +352,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsTransaccionesMP.xsd</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\frmEntregaDeComponentesReq.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmEntregaDeComponentesReq.Designer.cs">
+      <DependentUpon>frmEntregaDeComponentesReq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmEntregaMontaCarga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmEntregaMontaCarga.Designer.cs">
+      <DependentUpon>frmEntregaMontaCarga.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmEntregaTarimaReq.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmEntregaTarimaReq.Designer.cs">
+      <DependentUpon>frmEntregaTarimaReq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmOptionMontaCarga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmOptionMontaCarga.Designer.cs">
+      <DependentUpon>frmOptionMontaCarga.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesMP\frmOrdenesFabricacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -474,6 +498,18 @@
     <EmbeddedResource Include="Tools\frmInputBox.resx">
       <DependentUpon>frmInputBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmEntregaDeComponentesReq.resx">
+      <DependentUpon>frmEntregaDeComponentesReq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmEntregaMontaCarga.resx">
+      <DependentUpon>frmEntregaMontaCarga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmEntregaTarimaReq.resx">
+      <DependentUpon>frmEntregaTarimaReq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmOptionMontaCarga.resx">
+      <DependentUpon>frmOptionMontaCarga.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmOrdenesFabricacion.resx">
       <DependentUpon>frmOrdenesFabricacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -547,7 +583,12 @@
     <Content Include="Resources\cargo.png" />
     <Content Include="Resources\check-in.png" />
     <None Include="Resources\edit-table%281%29.png" />
+    <None Include="Resources\Container-icon32px.png" />
+    <None Include="Resources\Containers-icon.png" />
+    <None Include="Resources\Checklist-icon.png" />
     <Content Include="Resources\edit.png" />
+    <None Include="Resources\hapag-4-icon.png" />
+    <None Include="Resources\Forklift-icon.png" />
     <Content Include="Resources\key.png" />
     <Content Include="Resources\medal.png" />
     <Content Include="Resources\plus.png" />

@@ -70,6 +70,7 @@
               <xs:element name="id_unidad_medida" msprop:Generator_ColumnVarNameInTable="columnid_unidad_medida" msprop:Generator_ColumnPropNameInRow="id_unidad_medida" msprop:Generator_ColumnPropNameInTable="id_unidad_medidaColumn" msprop:Generator_UserColumnName="id_unidad_medida" type="xs:int" minOccurs="0" />
               <xs:element name="unidad" msprop:Generator_ColumnVarNameInTable="columnunidad" msprop:Generator_ColumnPropNameInRow="unidad" msprop:Generator_ColumnPropNameInTable="unidadColumn" msprop:Generator_UserColumnName="unidad" type="xs:string" minOccurs="0" />
               <xs:element name="code_sap" msprop:Generator_ColumnVarNameInTable="columncode_sap" msprop:Generator_ColumnPropNameInRow="code_sap" msprop:Generator_ColumnPropNameInTable="code_sapColumn" msprop:Generator_UserColumnName="code_sap" type="xs:string" minOccurs="0" />
+              <xs:element name="asignado" msprop:Generator_ColumnVarNameInTable="columnasignado" msprop:Generator_ColumnPropNameInRow="asignado" msprop:Generator_ColumnPropNameInTable="asignadoColumn" msprop:Generator_UserColumnName="asignado" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -87,6 +88,7 @@
               <xs:element name="unidad" msprop:Generator_ColumnVarNameInTable="columnunidad" msprop:Generator_ColumnPropNameInRow="unidad" msprop:Generator_ColumnPropNameInTable="unidadColumn" msprop:Generator_UserColumnName="unidad" type="xs:string" minOccurs="0" />
               <xs:element name="peso_total" msprop:Generator_ColumnVarNameInTable="columnpeso_total" msprop:Generator_ColumnPropNameInRow="peso_total" msprop:Generator_ColumnPropNameInTable="peso_totalColumn" msprop:Generator_UserColumnName="peso_total" type="xs:decimal" minOccurs="0" />
               <xs:element name="seleccionado" msprop:Generator_ColumnVarNameInTable="columnseleccionado" msprop:Generator_ColumnPropNameInRow="seleccionado" msprop:Generator_ColumnPropNameInTable="seleccionadoColumn" msprop:Generator_UserColumnName="seleccionado" type="xs:boolean" minOccurs="0" />
+              <xs:element name="cants" msprop:Generator_ColumnVarNameInTable="columncants" msprop:Generator_ColumnPropNameInRow="cants" msprop:Generator_ColumnPropNameInTable="cantsColumn" msprop:Generator_UserColumnName="cants" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

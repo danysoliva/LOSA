@@ -29,13 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOpciones));
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.tabOpciones = new DevExpress.XtraTab.XtraTabControl();
             this.TabMontacarga = new DevExpress.XtraTab.XtraTabPage();
-            this.cmdRequisiciones = new DevExpress.XtraEditors.SimpleButton();
-            this.btnCambiarUbicacion = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdPT = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdMP = new DevExpress.XtraEditors.SimpleButton();
             this.TabLogistica = new DevExpress.XtraTab.XtraTabPage();
             this.cmdRequisiciones_ = new DevExpress.XtraEditors.SimpleButton();
             this.btnAjustesKardex = new DevExpress.XtraEditors.SimpleButton();
@@ -51,26 +49,14 @@
             this.btnEstadosProgramacionesRequisiciones = new DevExpress.XtraEditors.SimpleButton();
             this.btnTiposPresentaciones = new DevExpress.XtraEditors.SimpleButton();
             this.btnBodegas = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
             this.TabLogistica.SuspendLayout();
             this.TabAdmin.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton1.ImageOptions.Image = global::LOSA.Properties.Resources.wrench;
-            this.simpleButton1.Location = new System.Drawing.Point(9, 271);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(199, 71);
-            this.simpleButton1.TabIndex = 4;
-            this.simpleButton1.Text = "Mantenimiento";
-            this.simpleButton1.Visible = false;
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // cmdHome
             // 
@@ -87,19 +73,6 @@
             this.cmdHome.TabIndex = 6;
             this.cmdHome.Text = "Cerrar";
             this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton2.ImageOptions.Image = global::LOSA.Properties.Resources.check_in;
-            this.simpleButton2.Location = new System.Drawing.Point(9, 11);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(199, 71);
-            this.simpleButton2.TabIndex = 7;
-            this.simpleButton2.Text = "Ingreso MP";
-            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // tabOpciones
             // 
@@ -121,45 +94,47 @@
             // 
             // TabMontacarga
             // 
-            this.TabMontacarga.Controls.Add(this.cmdRequisiciones);
-            this.TabMontacarga.Controls.Add(this.btnCambiarUbicacion);
-            this.TabMontacarga.Controls.Add(this.simpleButton1);
-            this.TabMontacarga.Controls.Add(this.simpleButton2);
+            this.TabMontacarga.Controls.Add(this.labelControl2);
+            this.TabMontacarga.Controls.Add(this.labelControl1);
+            this.TabMontacarga.Controls.Add(this.cmdPT);
+            this.TabMontacarga.Controls.Add(this.cmdMP);
             this.TabMontacarga.Image = ((System.Drawing.Image)(resources.GetObject("TabMontacarga.Image")));
             this.TabMontacarga.Name = "TabMontacarga";
             this.TabMontacarga.PageVisible = false;
             this.TabMontacarga.Size = new System.Drawing.Size(629, 422);
             this.TabMontacarga.Text = "MontaCarga";
             // 
-            // cmdRequisiciones
+            // cmdPT
             // 
-            this.cmdRequisiciones.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdRequisiciones.Appearance.Options.UseFont = true;
-            this.cmdRequisiciones.Appearance.Options.UseTextOptions = true;
-            this.cmdRequisiciones.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.cmdRequisiciones.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdRequisiciones.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdRequisiciones.ImageOptions.Image")));
-            this.cmdRequisiciones.Location = new System.Drawing.Point(9, 185);
-            this.cmdRequisiciones.Name = "cmdRequisiciones";
-            this.cmdRequisiciones.Size = new System.Drawing.Size(199, 71);
-            this.cmdRequisiciones.TabIndex = 9;
-            this.cmdRequisiciones.Text = "Requisiciones";
-            this.cmdRequisiciones.Click += new System.EventHandler(this.cmdRequisiciones_Click);
+            this.cmdPT.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdPT.Appearance.Options.UseFont = true;
+            this.cmdPT.Appearance.Options.UseTextOptions = true;
+            this.cmdPT.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cmdPT.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.cmdPT.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.cmdPT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdPT.ImageOptions.Image = global::LOSA.Properties.Resources.hapag_4_icon;
+            this.cmdPT.Location = new System.Drawing.Point(331, 29);
+            this.cmdPT.Name = "cmdPT";
+            this.cmdPT.Size = new System.Drawing.Size(274, 331);
+            this.cmdPT.TabIndex = 11;
+            this.cmdPT.Click += new System.EventHandler(this.cmdPT_Click);
             // 
-            // btnCambiarUbicacion
+            // cmdMP
             // 
-            this.btnCambiarUbicacion.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCambiarUbicacion.Appearance.Options.UseFont = true;
-            this.btnCambiarUbicacion.Appearance.Options.UseTextOptions = true;
-            this.btnCambiarUbicacion.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnCambiarUbicacion.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnCambiarUbicacion.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCambiarUbicacion.ImageOptions.Image")));
-            this.btnCambiarUbicacion.Location = new System.Drawing.Point(9, 98);
-            this.btnCambiarUbicacion.Name = "btnCambiarUbicacion";
-            this.btnCambiarUbicacion.Size = new System.Drawing.Size(199, 71);
-            this.btnCambiarUbicacion.TabIndex = 8;
-            this.btnCambiarUbicacion.Text = "Cambiar Ubicacion";
-            this.btnCambiarUbicacion.Click += new System.EventHandler(this.BtnCambiarUbicacion_Click);
+            this.cmdMP.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdMP.Appearance.Options.UseFont = true;
+            this.cmdMP.Appearance.Options.UseTextOptions = true;
+            this.cmdMP.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cmdMP.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.cmdMP.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.cmdMP.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdMP.ImageOptions.Image = global::LOSA.Properties.Resources.Containers_icon;
+            this.cmdMP.Location = new System.Drawing.Point(33, 29);
+            this.cmdMP.Name = "cmdMP";
+            this.cmdMP.Size = new System.Drawing.Size(274, 331);
+            this.cmdMP.TabIndex = 10;
+            this.cmdMP.Click += new System.EventHandler(this.cmdMP_Click);
             // 
             // TabLogistica
             // 
@@ -355,6 +330,26 @@
             this.btnBodegas.Text = "Bodegas";
             this.btnBodegas.Click += new System.EventHandler(this.BtnBodegas_Click);
             // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(95, 366);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(148, 29);
+            this.labelControl1.TabIndex = 12;
+            this.labelControl1.Text = "Materia Prima";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(367, 366);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(214, 29);
+            this.labelControl2.TabIndex = 13;
+            this.labelControl2.Text = "Producto Terminado";
+            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -370,6 +365,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).EndInit();
             this.tabOpciones.ResumeLayout(false);
             this.TabMontacarga.ResumeLayout(false);
+            this.TabMontacarga.PerformLayout();
             this.TabLogistica.ResumeLayout(false);
             this.TabAdmin.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -377,10 +373,7 @@
         }
 
         #endregion
-
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton cmdHome;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraTab.XtraTabControl tabOpciones;
         private DevExpress.XtraTab.XtraTabPage TabMontacarga;
         private DevExpress.XtraTab.XtraTabPage TabLogistica;
@@ -394,11 +387,13 @@
         private DevExpress.XtraEditors.SimpleButton btnKardexTiposTransacciones;
         private DevExpress.XtraEditors.SimpleButton btnEstadosRequisiciones;
         private DevExpress.XtraEditors.SimpleButton cmdRegistroLote;
-        private DevExpress.XtraEditors.SimpleButton btnCambiarUbicacion;
-        private DevExpress.XtraEditors.SimpleButton cmdRequisiciones;
         private DevExpress.XtraEditors.SimpleButton cmdOrdenesFabricacion;
         private DevExpress.XtraEditors.SimpleButton btnDevolciones;
         private DevExpress.XtraEditors.SimpleButton btnAjustesKardex;
         private DevExpress.XtraEditors.SimpleButton cmdRequisiciones_;
+        private DevExpress.XtraEditors.SimpleButton cmdMP;
+        private DevExpress.XtraEditors.SimpleButton cmdPT;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }

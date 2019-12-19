@@ -57,7 +57,8 @@ namespace LOSA.Clases
                     Altura = dr.GetString(3);
                     Profundidad = dr.GetString(4);
                     Id = dr.GetInt32(5);
-                   
+                    IdBodega = dr.GetInt32(6);
+
                     Recuperado = true;
                 }
                 dr.Close();

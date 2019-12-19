@@ -9,8 +9,8 @@
     <Shape ID="DesignTable:ordenes_fabricacion_h" ZOrder="5" X="661" Y="392" Height="181" Width="194" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="177" />
     <Shape ID="DesignTable:orden_fabricacion_d" ZOrder="4" X="901" Y="611" Height="181" Width="182" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="177" />
     <Shape ID="DesignTable:requisiciones_h" ZOrder="3" X="1163" Y="492" Height="219" Width="154" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="215" />
-    <Shape ID="DesignTable:requisiciones_d" ZOrder="2" X="1182" Y="782" Height="238" Width="154" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="234" />
-    <Shape ID="DesignTable:detalle_lote_mp" ZOrder="1" X="561" Y="764" Height="238" Width="157" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="234" />
+    <Shape ID="DesignTable:requisiciones_d" ZOrder="2" X="1182" Y="782" Height="257" Width="154" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="234" />
+    <Shape ID="DesignTable:detalle_lote_mp" ZOrder="1" X="561" Y="764" Height="257" Width="157" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="253" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

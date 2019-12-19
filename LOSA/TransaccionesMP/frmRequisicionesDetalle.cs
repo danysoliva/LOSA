@@ -66,5 +66,22 @@ namespace LOSA.TransaccionesMP
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
+
+        private void gvTarimas_RowStyle(object sender, RowStyleEventArgs e)
+        {
+            if (e.RowHandle >= 0)
+            {
+                var gridView = (GridView)grDetalleLote.FocusedView;
+                //var row = (dsNotas.notas_resumenRow)gridView.GetFocusedDataRow();
+                var row = (dsTransaccionesMP.requisiciones_dRow)gridView.GetDataRow(e.RowHandle);
+                if (row != null)
+                {
+                    if (row.solicitada == row.asignado)
+                        e.Appearance.BackColor = Color.FromArgb(113, 220, 200);
+                    else
+                        e.Appearance.BackColor = Color.FromArgb(255, 255, 255); 
+                }
+            }
+        }
     }
 }
