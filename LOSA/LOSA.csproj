@@ -182,6 +182,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsLogistica.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Logistica\frmEventosTarima.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\frmEventosTarima.Designer.cs">
+      <DependentUpon>frmEventosTarima.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logistica\frmLotes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +205,12 @@
     </Compile>
     <Compile Include="Logistica\frmLotesXProveedor.Designer.cs">
       <DependentUpon>frmLotesXProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\frmTrazabilidadLote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\frmTrazabilidadLote.Designer.cs">
+      <DependentUpon>frmTrazabilidadLote.cs</DependentUpon>
     </Compile>
     <Compile Include="Mantenimientos\dsMantenimiento.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -298,6 +310,12 @@
     </Compile>
     <Compile Include="Produccion\frmTolva.Designer.cs">
       <DependentUpon>frmTolva.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\ctl_keypadNumber.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Produccion\ctl_keypadNumber.Designer.cs">
+      <DependentUpon>ctl_keypadNumber.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -458,6 +476,9 @@
     <EmbeddedResource Include="frmOpciones.resx">
       <DependentUpon>frmOpciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\frmEventosTarima.resx">
+      <DependentUpon>frmEventosTarima.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Logistica\frmLotes.resx">
       <DependentUpon>frmLotes.cs</DependentUpon>
     </EmbeddedResource>
@@ -466,6 +487,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Logistica\frmLotesXProveedor.resx">
       <DependentUpon>frmLotesXProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\frmTrazabilidadLote.resx">
+      <DependentUpon>frmTrazabilidadLote.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\frmBodega.resx">
       <DependentUpon>frmBodega.cs</DependentUpon>
@@ -499,6 +523,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\frmTipoPresentacionCRUD.resx">
       <DependentUpon>frmTipoPresentacionCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\ctl_keypadNumber.resx">
+      <DependentUpon>ctl_keypadNumber.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\frmAlimentacionManual.resx">
       <DependentUpon>frmAlimentacionManual.cs</DependentUpon>
@@ -664,6 +691,7 @@
   <ItemGroup>
     <Content Include="logo1.ico" />
     <Content Include="Resources\admin.png" />
+    <None Include="Resources\backspace.png" />
     <Content Include="Resources\box.png" />
     <Content Include="Resources\cancel.png" />
     <Content Include="Resources\cargo.png" />
@@ -672,14 +700,20 @@
     <None Include="Resources\Container-icon32px.png" />
     <None Include="Resources\Containers-icon.png" />
     <None Include="Resources\Checklist-icon.png" />
+    <None Include="Resources\devoluciones2.png" />
     <Content Include="Resources\edit.png" />
     <None Include="Resources\hapag-4-icon.png" />
     <None Include="Resources\Forklift-icon.png" />
+    <None Include="Resources\eventos.png" />
+    <None Include="Resources\enter.png" />
     <Content Include="Resources\key.png" />
+    <None Include="Resources\Materia_Prima.png" />
     <Content Include="Resources\medal.png" />
     <Content Include="Resources\plus.png" />
     <None Include="Resources\produccion.png" />
+    <None Include="Resources\Producto_terminado.png" />
     <Content Include="Resources\tap.png" />
+    <None Include="Resources\trazabilidad.png" />
     <Content Include="Resources\user.png" />
     <Content Include="Resources\wrench.png" />
   </ItemGroup>

@@ -103,7 +103,7 @@
             this.cmdHome.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdHome.ImageOptions.Image")));
             this.cmdHome.Location = new System.Drawing.Point(12, 11);
             this.cmdHome.Name = "cmdHome";
-            this.cmdHome.Size = new System.Drawing.Size(199, 71);
+            this.cmdHome.Size = new System.Drawing.Size(176, 60);
             this.cmdHome.TabIndex = 27;
             this.cmdHome.Text = "Home";
             this.cmdHome.Click += new System.EventHandler(this.CmdHome_Click);

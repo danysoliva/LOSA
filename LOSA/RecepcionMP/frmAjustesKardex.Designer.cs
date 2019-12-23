@@ -28,15 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAjustesKardex));
             this.gridLookUpEditPresentacion = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.presentacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.presentacionesBindingSource = new System.Windows.Forms.BindingSource();
             this.dsRecepcionMPx = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.gvLookUpEditPresentacion = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -63,7 +62,7 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtPeso = new DevExpress.XtraEditors.TextEdit();
             this.glTipoTransaccion = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.tipotransaccioneskardexBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tipotransaccioneskardexBindingSource = new System.Windows.Forms.BindingSource();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -182,6 +181,7 @@
             this.txtLote.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtLote.Size = new System.Drawing.Size(170, 32);
             this.txtLote.TabIndex = 8;
+            this.txtLote.Enter += new System.EventHandler(this.txtLote_Enter);
             // 
             // dtFechaVencimiento
             // 
@@ -261,6 +261,7 @@
             this.txtCantidadT.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtCantidadT.Size = new System.Drawing.Size(142, 32);
             this.txtCantidadT.TabIndex = 5;
+            this.txtCantidadT.Enter += new System.EventHandler(this.txtCantidadT_Enter);
             this.txtCantidadT.Leave += new System.EventHandler(this.TxtCantidadT_Leave);
             // 
             // txtNumIngreso
@@ -363,17 +364,17 @@
             this.txtMP_Name.Name = "txtMP_Name";
             this.txtMP_Name.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.txtMP_Name.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions1.Image = global::LOSA.Properties.Resources.wheat;
-            serializableAppearanceObject1.BackColor = System.Drawing.Color.Transparent;
-            serializableAppearanceObject1.Options.UseBackColor = true;
-            serializableAppearanceObject2.BackColor = System.Drawing.Color.LightBlue;
-            serializableAppearanceObject2.Options.UseBackColor = true;
-            serializableAppearanceObject3.BackColor = System.Drawing.Color.LightBlue;
-            serializableAppearanceObject3.Options.UseBackColor = true;
-            serializableAppearanceObject4.BackColor = System.Drawing.Color.LightBlue;
-            serializableAppearanceObject4.Options.UseBackColor = true;
+            editorButtonImageOptions2.Image = global::LOSA.Properties.Resources.wheat;
+            serializableAppearanceObject5.BackColor = System.Drawing.Color.Transparent;
+            serializableAppearanceObject5.Options.UseBackColor = true;
+            serializableAppearanceObject6.BackColor = System.Drawing.Color.LightBlue;
+            serializableAppearanceObject6.Options.UseBackColor = true;
+            serializableAppearanceObject7.BackColor = System.Drawing.Color.LightBlue;
+            serializableAppearanceObject7.Options.UseBackColor = true;
+            serializableAppearanceObject8.BackColor = System.Drawing.Color.LightBlue;
+            serializableAppearanceObject8.Options.UseBackColor = true;
             this.txtMP_Name.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null)});
             this.txtMP_Name.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.txtMP_Name.Properties.ReadOnly = true;
             this.txtMP_Name.Size = new System.Drawing.Size(439, 30);
@@ -526,6 +527,7 @@
             this.Name = "frmAjustesKardex";
             this.Text = "frmAjustesKardex";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Click += new System.EventHandler(this.frmAjustesKardex_Click);
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditPresentacion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.presentacionesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).EndInit();

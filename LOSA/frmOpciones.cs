@@ -182,5 +182,17 @@ namespace LOSA
             frmCantidadMP frm = new frmCantidadMP();
             frm.Show();
         }
+
+        private void btnDevolciones_Click_1(object sender, EventArgs e)
+        {
+            frmDevolucionKardex frm = new frmDevolucionKardex(UsuarioLogeado);
+            frm.Show();
+        }
+
+        private void btnTrazabilidad_Click(object sender, EventArgs e)
+        {
+            frmTrazabilidadLote frm = new frmTrazabilidadLote();
+            frm.Show();
+        }
     }
 }

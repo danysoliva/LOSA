@@ -1,4 +1,6 @@
 ﻿using ACS.Classes;
+using DevExpress.Utils.Win;
+using DevExpress.XtraEditors;
 using LOSA.Clases;
 using System;
 using System.Collections.Generic;
@@ -155,6 +157,37 @@ namespace LOSA.Produccion
             }
 
 
+        }
+
+        private void txtCantidad_Popup(object sender, EventArgs e)
+        {
+            //Control.ControlCollection buttons = ((IPopupControl)sender).PopupWindow.Controls;
+            //((IPopupControl)sender).PopupWindow.Width -= 30;
+            //for (int i = 0; i < buttons.Count; i++)
+            //{
+            //    HideButtonIfNeeded(buttons[i] as CalculatorButton);
+            //    OffsetButtons(buttons[i], 30);
+            //}
+        }
+
+        private void ctl_keypadNumber1_OnItemSeleccionado(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ctl_keypadNumber1_OnItemSeleccionado_1(object sender, EventArgs e)
+        {
+            txtCantidad.Text = ctl_keypadNumber1.KeySeleccionado;
+        }
+
+        private void txtCantidad_Click(object sender, EventArgs e)
+        {
+            ctl_keypadNumber1.Visible = true;
+        }
+
+        private void txtCantidad_Leave(object sender, EventArgs e)
+        {
+            //ctl_keypadNumber1.Visible = false;
         }
 
         private DataTable CreateDataTarima(int idTarima, string pProveedor, string pNombreTarima, string pLote, string pPpresentacion)

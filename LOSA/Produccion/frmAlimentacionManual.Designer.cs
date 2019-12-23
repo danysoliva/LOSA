@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAlimentacionManual));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.beTarima = new DevExpress.XtraEditors.ButtonEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.beTolva = new DevExpress.XtraEditors.ButtonEdit();
@@ -39,9 +39,10 @@
             this.gcTarima = new DevExpress.XtraGrid.GridControl();
             this.gvTarima = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
-            this.txtCantidad = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
+            this.txtCantidad = new DevExpress.XtraEditors.TextEdit();
+            this.ctl_keypadNumber1 = new LOSA.Produccion.ctl_keypadNumber();
             ((System.ComponentModel.ISupportInitialize)(this.beTarima.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.beTolva.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcTarima)).BeginInit();
@@ -59,9 +60,9 @@
             this.beTarima.Name = "beTarima";
             this.beTarima.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.beTarima.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
             this.beTarima.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions3, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.beTarima.Properties.MaxLength = 20;
             this.beTarima.Properties.NullText = "Escanee o selecciona una tarima";
             this.beTarima.Size = new System.Drawing.Size(327, 38);
@@ -91,9 +92,9 @@
             this.beTolva.Name = "beTolva";
             this.beTolva.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.beTolva.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.beTolva.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.beTolva.Properties.MaxLength = 20;
             this.beTolva.Properties.NullText = "Escanee o selecciona una tarima";
             this.beTolva.Size = new System.Drawing.Size(327, 38);
@@ -306,23 +307,6 @@
             this.cmdHome.Text = "Home";
             this.cmdHome.Click += new System.EventHandler(this.CmdHome_Click);
             // 
-            // txtCantidad
-            // 
-            this.txtCantidad.EditValue = "0";
-            this.txtCantidad.Location = new System.Drawing.Point(108, 402);
-            this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.txtCantidad.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCantidad.Properties.Appearance.Options.UseFont = true;
-            this.txtCantidad.Properties.Appearance.Options.UseTextOptions = true;
-            this.txtCantidad.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.txtCantidad.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCantidad.Properties.Mask.EditMask = "n0";
-            this.txtCantidad.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtCantidad.Properties.NullText = "0";
-            this.txtCantidad.Size = new System.Drawing.Size(161, 36);
-            this.txtCantidad.TabIndex = 2;
-            // 
             // labelControl3
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -350,14 +334,39 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
+            // txtCantidad
+            // 
+            this.txtCantidad.EditValue = "0";
+            this.txtCantidad.Location = new System.Drawing.Point(109, 408);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCantidad.Properties.Appearance.Options.UseFont = true;
+            this.txtCantidad.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtCantidad.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txtCantidad.Properties.ReadOnly = true;
+            this.txtCantidad.Size = new System.Drawing.Size(283, 32);
+            this.txtCantidad.TabIndex = 86;
+            this.txtCantidad.Click += new System.EventHandler(this.txtCantidad_Click);
+            this.txtCantidad.Leave += new System.EventHandler(this.txtCantidad_Leave);
+            // 
+            // ctl_keypadNumber1
+            // 
+            this.ctl_keypadNumber1.KeySeleccionado = null;
+            this.ctl_keypadNumber1.Location = new System.Drawing.Point(108, 441);
+            this.ctl_keypadNumber1.Name = "ctl_keypadNumber1";
+            this.ctl_keypadNumber1.Size = new System.Drawing.Size(296, 221);
+            this.ctl_keypadNumber1.TabIndex = 87;
+            this.ctl_keypadNumber1.OnItemSeleccionado += new System.EventHandler(this.ctl_keypadNumber1_OnItemSeleccionado_1);
+            // 
             // frmAlimentacionManual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(622, 521);
+            this.Controls.Add(this.ctl_keypadNumber1);
+            this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.labelControl3);
-            this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.cmdHome);
             this.Controls.Add(this.gcTarima);
             this.Controls.Add(this.beTolva);
@@ -389,8 +398,9 @@
         private DevExpress.XtraGrid.GridControl gcTarima;
         private DevExpress.XtraGrid.Views.Grid.GridView gvTarima;
         private DevExpress.XtraEditors.SimpleButton cmdHome;
-        private DevExpress.XtraEditors.TextEdit txtCantidad;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.SimpleButton btnGuardar;
+        private DevExpress.XtraEditors.TextEdit txtCantidad;
+        private ctl_keypadNumber ctl_keypadNumber1;
     }
 }

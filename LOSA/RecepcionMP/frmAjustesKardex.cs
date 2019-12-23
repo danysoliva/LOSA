@@ -1,4 +1,5 @@
 ﻿using ACS.Classes;
+using Core.Clases.Herramientas;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using LOSA.Clases;
@@ -141,7 +142,7 @@ namespace LOSA.RecepcionMP
                 CajaDialogo.Error("Es obligatorio llenar el lote para la tarima!");
                 return;
             }
-           
+
             if (string.IsNullOrEmpty(dtFechaVencimiento.Text))
             {
                 CajaDialogo.Error("Es obligatorio llenar la fecha de vencimiento de la materia prima!");
@@ -198,14 +199,16 @@ namespace LOSA.RecepcionMP
 
             if (gvLookUpEditPresentacion.RowCount <= 0)
             {
-                CajaDialogo.Error("Debe seleccionar una presentación");
-                return;
+                //CajaDialogo.Error("Debe seleccionar una presentación");
+                //gridLookUpEditPresentacion.Focus();
+                //return;
+                this.factorValue = 0;
             }
-
-            this.factorValue = Convert.ToDecimal(gvLookUpEditPresentacion.GetFocusedRowCellValue(gvLookUpEditPresentacion.Columns[2]).ToString());
+            else
+                this.factorValue = Convert.ToDecimal(gvLookUpEditPresentacion.GetFocusedRowCellValue(gvLookUpEditPresentacion.Columns[2]).ToString());
 
             //if (Convert.ToDecimal(txtCantidadT.Text) > 0)
-                txtPeso.Text = (factorValue * Convert.ToDecimal(txtCantidadT.Text)).ToString();
+            txtPeso.Text = (factorValue * Convert.ToDecimal(txtCantidadT.Text)).ToString();
             //else
             //{
             //    CajaDialogo.Error("Debe ingresar unidades mayores que cero (0)");
@@ -218,8 +221,20 @@ namespace LOSA.RecepcionMP
             GridLookUpEditPresentacion_EditValueChanged(sender, e);
         }
 
-    
+        private void txtCantidadT_Enter(object sender, EventArgs e)
+        {
+            Teclado.abrirTeclado();
+        }
 
+        private void frmAjustesKardex_Click(object sender, EventArgs e)
+        {
+            Teclado.cerrarTeclado();
+        }
 
+        
+        private void txtLote_Enter(object sender, EventArgs e)
+        {
+            Teclado.abrirTeclado();
+        }
     }
 }
