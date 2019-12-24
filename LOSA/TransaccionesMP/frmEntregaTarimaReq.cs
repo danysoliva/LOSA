@@ -26,10 +26,12 @@ namespace LOSA.TransaccionesMP
             usuarioLogueado = pUsuarioLogueado;
         }
 
-        public frmEntregaTarimaReq(UserLogin pUsuarioLogueado, int pIdTarima)
+        public frmEntregaTarimaReq(UserLogin pUsuarioLogueado, string pCode)
         {
             InitializeComponent();
             usuarioLogueado = pUsuarioLogueado;
+            beTarima.Text = pCode;
+            EntregarTarima();
         }
 
         void datosTarimaPorCodBarra(SqlConnection connection)
@@ -45,7 +47,7 @@ namespace LOSA.TransaccionesMP
                     cmd.Connection = connection;
                     cmd.CommandText = SQL;
 
-                    cmd.Parameters.AddWithValue("@codigo_barra", beTarima.Text.Replace("H", ""));
+                    cmd.Parameters.AddWithValue("@codigo_barra", beTarima.Text);
 
                     connection.Open();
 
