@@ -144,20 +144,27 @@ namespace LOSA.Produccion
         }
 
         private void btnBackSpace_Click(object sender, EventArgs e)
-        {
-            if (displayNumber.Length > 0)
+        {try
             {
-                displayNumber = displayNumber.Remove(displayNumber.Length - 1);
-                KeySeleccionado = displayNumber;
-                OnItemSeleccionado.Invoke(sender, e);
+                if (displayNumber.Length > 0)
+                {
+                    displayNumber = displayNumber.Remove(displayNumber.Length - 1);
+                    displayNumberAsDecimal = Convert.ToDecimal(displayNumber);
+                    KeySeleccionado = displayNumberAsDecimal.ToString();
+                    OnItemSeleccionado.Invoke(sender, e);
+                }
+                else
+                {
+                    displayNumber = "0";
+                    displayNumberAsDecimal = Convert.ToDecimal(displayNumber);
+                    KeySeleccionado = displayNumberAsDecimal.ToString();
+                    OnItemSeleccionado.Invoke(sender, e);
+                }
             }
-            else
+            catch(Exception )
             {
-                displayNumber = "0";
-                KeySeleccionado = displayNumber;
-                OnItemSeleccionado.Invoke(sender, e);
-            }
 
+            }
         }
     }
 }

@@ -23,8 +23,8 @@ namespace LOSA
         {
             InitializeComponent();
             UsuarioLogeado = pUser;
-            int i = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
-            //int i = Convert.ToInt32(4);
+            //int i = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
+            int i = Convert.ToInt32(4);
             tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
             tabOpciones.TabPages[i].PageVisible = true;
         }
