@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTarimasHome));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblLote = new System.Windows.Forms.Label();
@@ -39,7 +40,6 @@
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.btnTarima = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collote_producto_termiado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colenable = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -51,10 +51,15 @@
             this.colpeso = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcantidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfecha_ingreso = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRow = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnTarima = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.print = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnImprimir = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProduccion1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnTarima)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnImprimir)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -146,7 +151,8 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.btnTarima});
+            this.btnTarima,
+            this.btnImprimir});
             this.gridControl1.Size = new System.Drawing.Size(616, 432);
             this.gridControl1.TabIndex = 33;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -169,19 +175,12 @@
             this.colcodigo_barra,
             this.colpeso,
             this.colcantidad,
-            this.colfecha_ingreso});
+            this.colfecha_ingreso,
+            this.colRow,
+            this.print});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // btnTarima
-            // 
-            this.btnTarima.AutoHeight = false;
-            editorButtonImageOptions3.Image = global::LOSA.Properties.Resources.pallet_pallet_solo;
-            this.btnTarima.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions3, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
-            this.btnTarima.Name = "btnTarima";
-            this.btnTarima.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
             // colid
             // 
@@ -194,7 +193,8 @@
             this.collote_producto_termiado.FieldName = "lote_producto_termiado";
             this.collote_producto_termiado.Name = "collote_producto_termiado";
             this.collote_producto_termiado.Visible = true;
-            this.collote_producto_termiado.VisibleIndex = 0;
+            this.collote_producto_termiado.VisibleIndex = 1;
+            this.collote_producto_termiado.Width = 105;
             // 
             // colenable
             // 
@@ -212,7 +212,8 @@
             this.colpresentacion.FieldName = "presentacion";
             this.colpresentacion.Name = "colpresentacion";
             this.colpresentacion.Visible = true;
-            this.colpresentacion.VisibleIndex = 1;
+            this.colpresentacion.VisibleIndex = 2;
+            this.colpresentacion.Width = 105;
             // 
             // colid_producto_termiado
             // 
@@ -225,7 +226,8 @@
             this.colproducto.FieldName = "producto";
             this.colproducto.Name = "colproducto";
             this.colproducto.Visible = true;
-            this.colproducto.VisibleIndex = 2;
+            this.colproducto.VisibleIndex = 3;
+            this.colproducto.Width = 105;
             // 
             // colcodigo_barra
             // 
@@ -243,7 +245,8 @@
             this.colcantidad.FieldName = "cantidad";
             this.colcantidad.Name = "colcantidad";
             this.colcantidad.Visible = true;
-            this.colcantidad.VisibleIndex = 3;
+            this.colcantidad.VisibleIndex = 4;
+            this.colcantidad.Width = 105;
             // 
             // colfecha_ingreso
             // 
@@ -251,7 +254,44 @@
             this.colfecha_ingreso.FieldName = "fecha_ingreso";
             this.colfecha_ingreso.Name = "colfecha_ingreso";
             this.colfecha_ingreso.Visible = true;
-            this.colfecha_ingreso.VisibleIndex = 4;
+            this.colfecha_ingreso.VisibleIndex = 5;
+            this.colfecha_ingreso.Width = 111;
+            // 
+            // colRow
+            // 
+            this.colRow.Caption = "#";
+            this.colRow.FieldName = "Row";
+            this.colRow.Name = "colRow";
+            this.colRow.Visible = true;
+            this.colRow.VisibleIndex = 0;
+            this.colRow.Width = 67;
+            // 
+            // btnTarima
+            // 
+            this.btnTarima.AutoHeight = false;
+            editorButtonImageOptions2.Image = global::LOSA.Properties.Resources.pallet_pallet_solo;
+            this.btnTarima.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            this.btnTarima.Name = "btnTarima";
+            this.btnTarima.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            // 
+            // print
+            // 
+            this.print.Caption = "Imprimir";
+            this.print.ColumnEdit = this.btnImprimir;
+            this.print.Name = "print";
+            this.print.Visible = true;
+            this.print.VisibleIndex = 6;
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            this.btnImprimir.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnImprimir.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnImprimir_ButtonClick);
             // 
             // frmTarimasHome
             // 
@@ -273,6 +313,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnTarima)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnImprimir)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,5 +342,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colpeso;
         private DevExpress.XtraGrid.Columns.GridColumn colcantidad;
         private DevExpress.XtraGrid.Columns.GridColumn colfecha_ingreso;
+        private DevExpress.XtraGrid.Columns.GridColumn colRow;
+        private DevExpress.XtraGrid.Columns.GridColumn print;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnImprimir;
     }
 }

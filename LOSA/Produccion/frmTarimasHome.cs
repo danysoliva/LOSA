@@ -1,6 +1,8 @@
 ﻿using ACS.Classes;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraReports.UI;
 using LOSA.Clases;
+using LOSA.RecepcionMP;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -64,7 +66,22 @@ namespace LOSA.Produccion
 
             frmAddTarimaPT frm = new frmAddTarimaPT(UsuarioLogeado, IdLote, idProducto);
             frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
+            if(frm.ShowDialog()== DialogResult.OK)
+            {
+                LoadData();
+            }
+        }
+
+        private void btnImprimir_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)gridControl1.FocusedView;
+            var row = (dsProduccion.tarima_listRow)gridView.GetFocusedDataRow();
+
+            int id_tarimax = row.id;
+            rptReporteTarimaPT report = new rptReporteTarimaPT(id_tarimax);
+            report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+            ReportPrintTool printReport = new ReportPrintTool(report);
+            printReport.ShowPreview();
         }
     }
 }

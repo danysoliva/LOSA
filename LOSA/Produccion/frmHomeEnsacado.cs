@@ -68,7 +68,10 @@ namespace LOSA.Produccion
 
             frmTarimasHome frm = new frmTarimasHome(UsuarioLogeado, row.fp_lot_number, row.finish_product, row.acs_id);
             frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
+            if(frm.ShowDialog()== DialogResult.OK)
+            {
+                LoadData();
+            }
         }
     }
 }

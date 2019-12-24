@@ -340,6 +340,12 @@
     <Compile Include="Produccion\ctl_keypadNumber.Designer.cs">
       <DependentUpon>ctl_keypadNumber.cs</DependentUpon>
     </Compile>
+    <Compile Include="Produccion\rptReporteTarimaPT.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Produccion\rptReporteTarimaPT.Designer.cs">
+      <DependentUpon>rptReporteTarimaPT.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecepcionMP\dsRecepcionMP.cs">
@@ -567,6 +573,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\frmTolva.resx">
       <DependentUpon>frmTolva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\rptReporteTarimaPT.resx">
+      <DependentUpon>rptReporteTarimaPT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
