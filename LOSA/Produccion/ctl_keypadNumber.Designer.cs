@@ -56,7 +56,7 @@
             // btn3
             // 
             this.btn3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btn3.Location = new System.Drawing.Point(196, 52);
+            this.btn3.Location = new System.Drawing.Point(195, 52);
             this.btn3.Name = "btn3";
             this.btn3.Size = new System.Drawing.Size(89, 37);
             this.btn3.TabIndex = 6;
@@ -66,7 +66,7 @@
             // btn2
             // 
             this.btn2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btn2.Location = new System.Drawing.Point(103, 52);
+            this.btn2.Location = new System.Drawing.Point(102, 52);
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(89, 37);
             this.btn2.TabIndex = 5;
@@ -76,7 +76,7 @@
             // btn1
             // 
             this.btn1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btn1.Location = new System.Drawing.Point(10, 52);
+            this.btn1.Location = new System.Drawing.Point(9, 52);
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(89, 37);
             this.btn1.TabIndex = 4;

@@ -14,6 +14,7 @@ namespace LOSA.Produccion
     public partial class ctl_keypadNumber : UserControl
     {
         string displayNumber = "";
+        decimal displayNumberAsDecimal;
         public ctl_keypadNumber()
         {
             InitializeComponent();
@@ -26,14 +27,16 @@ namespace LOSA.Produccion
         private void btn1_Click(object sender, EventArgs e)
         {
             displayNumber = displayNumber+ "1" ;
-           KeySeleccionado =displayNumber;
+            displayNumberAsDecimal = Convert.ToDecimal(displayNumber);
+           KeySeleccionado = displayNumberAsDecimal.ToString();
             OnItemSeleccionado.Invoke(sender, e);
         }
 
         private void btn2_Click(object sender, EventArgs e)
         {
-            displayNumber = displayNumber+"2"  ;
-            KeySeleccionado = displayNumber;
+            displayNumber = displayNumber+"2";
+            displayNumberAsDecimal = Convert.ToDecimal(displayNumber);
+            KeySeleccionado = displayNumberAsDecimal.ToString();
             OnItemSeleccionado.Invoke(sender, e);
 
 
@@ -42,7 +45,8 @@ namespace LOSA.Produccion
         private void btn3_Click(object sender, EventArgs e)
         {
             displayNumber = displayNumber+"3";
-            KeySeleccionado = displayNumber;
+            displayNumberAsDecimal = Convert.ToDecimal(displayNumber);
+            KeySeleccionado = displayNumberAsDecimal.ToString();
             OnItemSeleccionado.Invoke(sender, e);
 
 
@@ -52,7 +56,8 @@ namespace LOSA.Produccion
         {
 
             displayNumber = displayNumber+ "4" ;
-            KeySeleccionado = displayNumber;
+            displayNumberAsDecimal = Convert.ToDecimal(displayNumber);
+            KeySeleccionado = displayNumberAsDecimal.ToString();
             OnItemSeleccionado.Invoke(sender, e);
 
         }
@@ -60,7 +65,8 @@ namespace LOSA.Produccion
         private void btn5_Click(object sender, EventArgs e)
         {
             displayNumber = displayNumber+ "5" ;
-            KeySeleccionado = displayNumber;
+            displayNumberAsDecimal = Convert.ToDecimal(displayNumber);
+            KeySeleccionado = displayNumberAsDecimal.ToString();
             OnItemSeleccionado.Invoke(sender, e);
 
         }
@@ -68,14 +74,16 @@ namespace LOSA.Produccion
         private void btn6_Click(object sender, EventArgs e)
         {
             displayNumber = displayNumber + "6";
-            KeySeleccionado = displayNumber;
+            displayNumberAsDecimal = Convert.ToDecimal(displayNumber);
+            KeySeleccionado = displayNumberAsDecimal.ToString();
             OnItemSeleccionado.Invoke(sender, e);
         }
 
         private void btn7_Click(object sender, EventArgs e)
         {
             displayNumber = displayNumber + "7";
-            KeySeleccionado = displayNumber;
+            displayNumberAsDecimal = Convert.ToDecimal(displayNumber);
+            KeySeleccionado = displayNumberAsDecimal.ToString();
             OnItemSeleccionado.Invoke(sender, e);
 
         }
@@ -92,7 +100,8 @@ namespace LOSA.Produccion
         private void btn8_Click(object sender, EventArgs e)
         {
             displayNumber = displayNumber + "8";
-            KeySeleccionado = displayNumber;
+            displayNumberAsDecimal = Convert.ToDecimal(displayNumber);
+            KeySeleccionado = displayNumberAsDecimal.ToString();
             OnItemSeleccionado.Invoke(sender, e);
 
         }
@@ -100,7 +109,8 @@ namespace LOSA.Produccion
         private void btn9_Click(object sender, EventArgs e)
         {
             displayNumber = displayNumber + "9";
-            KeySeleccionado = displayNumber;
+            displayNumberAsDecimal = Convert.ToDecimal(displayNumber);
+            KeySeleccionado = displayNumberAsDecimal.ToString();
             OnItemSeleccionado.Invoke(sender, e);
 
         }
@@ -119,14 +129,15 @@ namespace LOSA.Produccion
         private void btn0_Click(object sender, EventArgs e)
         {
             displayNumber = displayNumber + "0";
-            KeySeleccionado = displayNumber;
+            displayNumberAsDecimal = Convert.ToDecimal(displayNumber);
+            KeySeleccionado = displayNumberAsDecimal.ToString();
             OnItemSeleccionado.Invoke(sender, e);
 
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            displayNumber = "";
+            displayNumber = "0";
             KeySeleccionado = displayNumber;
             OnItemSeleccionado.Invoke(sender, e);
 
@@ -137,6 +148,12 @@ namespace LOSA.Produccion
             if (displayNumber.Length > 0)
             {
                 displayNumber = displayNumber.Remove(displayNumber.Length - 1);
+                KeySeleccionado = displayNumber;
+                OnItemSeleccionado.Invoke(sender, e);
+            }
+            else
+            {
+                displayNumber = "0";
                 KeySeleccionado = displayNumber;
                 OnItemSeleccionado.Invoke(sender, e);
             }
