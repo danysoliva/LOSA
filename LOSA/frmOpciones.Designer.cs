@@ -56,6 +56,7 @@
             this.btnTiposPresentaciones = new DevExpress.XtraEditors.SimpleButton();
             this.btnBodegas = new DevExpress.XtraEditors.SimpleButton();
             this.tabProduccion = new DevExpress.XtraTab.XtraTabPage();
+            this.cmdTarimasPT = new DevExpress.XtraEditors.SimpleButton();
             this.btnAlimentacionManual = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
@@ -447,12 +448,28 @@
             // 
             // tabProduccion
             // 
+            this.tabProduccion.Controls.Add(this.cmdTarimasPT);
             this.tabProduccion.Controls.Add(this.btnAlimentacionManual);
             this.tabProduccion.Image = global::LOSA.Properties.Resources.produccion;
             this.tabProduccion.Name = "tabProduccion";
             this.tabProduccion.PageVisible = false;
             this.tabProduccion.Size = new System.Drawing.Size(629, 422);
             this.tabProduccion.Text = "Producción";
+            // 
+            // cmdTarimasPT
+            // 
+            this.cmdTarimasPT.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdTarimasPT.Appearance.Options.UseFont = true;
+            this.cmdTarimasPT.Appearance.Options.UseTextOptions = true;
+            this.cmdTarimasPT.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.cmdTarimasPT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdTarimasPT.ImageOptions.Image = global::LOSA.Properties.Resources.pallet32px;
+            this.cmdTarimasPT.Location = new System.Drawing.Point(19, 114);
+            this.cmdTarimasPT.Name = "cmdTarimasPT";
+            this.cmdTarimasPT.Size = new System.Drawing.Size(199, 71);
+            this.cmdTarimasPT.TabIndex = 10;
+            this.cmdTarimasPT.Text = "Tarimas PT";
+            this.cmdTarimasPT.Click += new System.EventHandler(this.cmdTarimasPT_Click);
             // 
             // btnAlimentacionManual
             // 
@@ -520,5 +537,6 @@
         private DevExpress.XtraEditors.SimpleButton btnLotesXMP;
         private DevExpress.XtraEditors.SimpleButton btnLotesPorProveedor;
         private DevExpress.XtraEditors.SimpleButton btnTrazabilidad;
+        private DevExpress.XtraEditors.SimpleButton cmdTarimasPT;
     }
 }

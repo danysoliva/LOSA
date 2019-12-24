@@ -194,5 +194,12 @@ namespace LOSA
             frmTrazabilidadLote frm = new frmTrazabilidadLote();
             frm.Show();
         }
+
+        private void cmdTarimasPT_Click(object sender, EventArgs e)
+        {
+            frmHomeEnsacado frm = new frmHomeEnsacado(UsuarioLogeado);
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
     }
 }
