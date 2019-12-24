@@ -36,7 +36,7 @@
             this.colitemdescrip = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltotal = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
-            this.dsLogistica = new LOSA.Logistica.dsLogistica();
+            this.dsLogistica = new LOSA.Logistica.dsLogistica2();
             this.cantidadmateriaprimaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gcMateriaPrima)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMateriaPrima)).BeginInit();
@@ -163,6 +163,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colitemdescrip;
         private DevExpress.XtraGrid.Columns.GridColumn coltotal;
         private System.Windows.Forms.BindingSource cantidadmateriaprimaBindingSource;
-        private Logistica.dsLogistica dsLogistica;
+        private Logistica.dsLogistica2 dsLogistica;
     }
 }

@@ -344,8 +344,8 @@ namespace LOSA.RecepcionMP
 
             dt.Rows.Add("PASILLO", pPasillo);
             dt.Rows.Add("RACK", pRack);
-            dt.Rows.Add("ALTURA", pAltura);
-            dt.Rows.Add("PROFUNDIDAD", pProfundidad);
+            //dt.Rows.Add("ALTURA", pAltura);
+            //dt.Rows.Add("PROFUNDIDAD", pProfundidad);
 
             return dt;
         }

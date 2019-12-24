@@ -34,7 +34,7 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.glueProveedor = new DevExpress.XtraEditors.GridLookUpEdit();
             this.proveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsLogistica = new LOSA.Logistica.dsLogistica();
+            this.dsLogistica = new LOSA.Logistica.dsLogistica2();
             this.gvProveedores = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIdProveedor = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -410,7 +410,7 @@
 
         private DevExpress.XtraEditors.SimpleButton cmdHome;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private dsLogistica dsLogistica;
+        private dsLogistica2 dsLogistica;
         private System.Windows.Forms.BindingSource proveedoresBindingSource;
         private DevExpress.XtraEditors.GridLookUpEdit glueProveedor;
         private DevExpress.XtraGrid.Views.Grid.GridView gvProveedores;

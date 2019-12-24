@@ -191,7 +191,7 @@ namespace LOSA
 
         private void btnTrazabilidad_Click(object sender, EventArgs e)
         {
-            frmTrazabilidadLote frm = new frmTrazabilidadLote();
+           frmTrazabilidadLote frm = new frmTrazabilidadLote();
             frm.Show();
         }
     }

@@ -127,7 +127,7 @@
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(198, 29);
             this.labelControl3.TabIndex = 15;
-            this.labelControl3.Text = "Materia Prima";
+            this.labelControl3.Text = "Devoluciones";
             // 
             // btnDevolciones
             // 
