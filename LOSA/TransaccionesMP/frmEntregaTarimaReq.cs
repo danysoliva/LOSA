@@ -26,6 +26,14 @@ namespace LOSA.TransaccionesMP
             usuarioLogueado = pUsuarioLogueado;
         }
 
+        public frmEntregaTarimaReq(UserLogin pUsuarioLogueado, string pCode)
+        {
+            InitializeComponent();
+            usuarioLogueado = pUsuarioLogueado;
+            beTarima.Text = pCode;
+            EntregarTarima();
+        }
+
         void datosTarimaPorCodBarra(SqlConnection connection)
         {
             Tarima InfoTarima = new Tarima();
@@ -39,7 +47,7 @@ namespace LOSA.TransaccionesMP
                     cmd.Connection = connection;
                     cmd.CommandText = SQL;
 
-                    cmd.Parameters.AddWithValue("@codigo_barra", beTarima.Text.Replace("H", ""));
+                    cmd.Parameters.AddWithValue("@codigo_barra", beTarima.Text);
 
                     connection.Open();
 
@@ -109,56 +117,28 @@ namespace LOSA.TransaccionesMP
 
 
 
-
-
-
-        private void beIdTarima_KeyDown(object sender, KeyEventArgs e)
+        public void EntregarTarima()
         {
-            if (e.KeyCode == Keys.Enter)
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            datosTarimaPorCodBarra(cn);
+
+            //Entrega de tarima
+            bool Guardo = false;
+            bool error = false;
+            bool disponible = false;
+            string mensaje = "";
+            if (tarimaEncontrada != null)
             {
-                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-                datosTarimaPorCodBarra(cn);
-
-                //Entrega de tarima
-                bool Guardo = false;
-                bool error = false;
-                if (tarimaEncontrada != null)
+                if (tarimaEncontrada.Recuperado)
                 {
-                    if (tarimaEncontrada.Recuperado)
-                    {
-                        if (!tarimaEncontrada.Enable)
-                            error = true;
-
-                        txtCantidadT.Text = string.Format("{0:###,##0.00}", tarimaEncontrada.Cantidad);
-                        txtPeso.Text = string.Format("{0:###,##0.00}", tarimaEncontrada.Peso);
-
-                        if (!error)//Si error sigue en false evaluaremos la ubicacion.
-                        {
-                            Ubicacion_Tarima ub1 = new Ubicacion_Tarima();
-                            if (ub1.RecuperarRegistro(tarimaEncontrada.Id, ""))
-                            {
-                                if (ub1.IdBodega > 1)
-                                    error = true;
-                            }
-                            else
-                            {
-                                error = true;
-                            }
-                        }
-                    }
-                    else
+                    if (!tarimaEncontrada.Enable)
                     {
                         error = true;
+                        mensaje = "La tarima no esta activa!";
                     }
 
-                    if (error)
-                    {
-                        lblMensaje.Text = "No puede entregar una tarima deshabilitada, sin ubicación o No disponible para entrega a Producción!";
-                        panelNotificacion.BackColor = Color.Red;
-                        timerLimpiarMensaje.Enabled = true;
-                        timerLimpiarMensaje.Start();
-                        return;
-                    }
+                    txtCantidadT.Text = string.Format("{0:###,##0.00}", tarimaEncontrada.Cantidad);
+                    txtPeso.Text = string.Format("{0:###,##0.00}", tarimaEncontrada.Peso);
 
                     try
                     {
@@ -166,39 +146,103 @@ namespace LOSA.TransaccionesMP
                         SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                         con.Open();
 
-                        SqlCommand cmd = new SqlCommand("sp_set_insert_salida_tarima_bodega_mp", con);
+                        SqlCommand cmd = new SqlCommand("sp_verifica_diponibilidad_tarima_entrega", con);
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@idtarima", tarimaEncontrada.Id);
-                        cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
-                        Guardo = Convert.ToBoolean(cmd.ExecuteScalar());
+                        cmd.Parameters.AddWithValue("@id", tarimaEncontrada.Id);
+                        disponible = Convert.ToBoolean(cmd.ExecuteScalar());
                         con.Close();
                     }
                     catch (Exception ec)
                     {
-                        //CajaDialogo.Error(ec.Message);
-                        lblMensaje.Text = ec.Message;
-                        panelNotificacion.BackColor = Color.Red;
-                        timerLimpiarMensaje.Enabled = true;
-                        timerLimpiarMensaje.Start();
+                        CajaDialogo.Error(ec.Message);
                     }
 
-                    if (Guardo)
+                    if (!disponible)
                     {
-                        //Mensaje de transaccion exitosa
-                        lblMensaje.Text = "Transacción Exitosa!";
-                        panelNotificacion.BackColor = Color.MediumSeaGreen;
-                        timerLimpiarMensaje.Enabled = true;
-                        timerLimpiarMensaje.Start();
+                        error = true;
+                        mensaje = "La tarima no esta disponible para entrega!";
+                    }
+
+                    if (!error)//Si error sigue en false evaluaremos la ubicacion.
+                    {
+                        Ubicacion_Tarima ub1 = new Ubicacion_Tarima();
+                        if (ub1.RecuperarRegistro(tarimaEncontrada.Id, ""))
+                        {
+                            if (ub1.IdBodega > 1)
+                            {
+                                error = true;
+                                mensaje = "La tarima no esta en la bodega de MP, no se puede entregar!";
+                            }
+                        }
+                        else
+                        {
+                            error = true;
+                            mensaje = "La tarima no tiene una ubicacion valida, aun esta en proceso de recepción!";
+                        }
                     }
                 }
                 else
                 {
-                    lblMensaje.Text = "No se encontro el registro de la tarima!";
+                    error = true;
+                    mensaje = "El codigo de barra leido no es correcto!";
+                }
+
+                if (error)
+                {
+                    lblMensaje.Text = mensaje;
+                    panelNotificacion.BackColor = Color.Red;
+                    timerLimpiarMensaje.Enabled = true;
+                    timerLimpiarMensaje.Start();
+                    return;
+                }
+
+                try
+                {
+                    DataOperations dp = new DataOperations();
+                    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                    con.Open();
+
+                    SqlCommand cmd = new SqlCommand("sp_set_insert_salida_tarima_bodega_mp", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@idtarima", tarimaEncontrada.Id);
+                    cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
+                    Guardo = Convert.ToBoolean(cmd.ExecuteScalar());
+                    con.Close();
+                }
+                catch (Exception ec)
+                {
+                    //CajaDialogo.Error(ec.Message);
+                    lblMensaje.Text = ec.Message;
                     panelNotificacion.BackColor = Color.Red;
                     timerLimpiarMensaje.Enabled = true;
                     timerLimpiarMensaje.Start();
                 }
 
+                if (Guardo)
+                {
+                    //Mensaje de transaccion exitosa
+                    lblMensaje.Text = "Transacción Exitosa!";
+                    panelNotificacion.BackColor = Color.MediumSeaGreen;
+                    timerLimpiarMensaje.Enabled = true;
+                    timerLimpiarMensaje.Start();
+                }
+            }
+            else
+            {
+                lblMensaje.Text = "No se encontro el registro de la tarima!";
+                panelNotificacion.BackColor = Color.Red;
+                timerLimpiarMensaje.Enabled = true;
+                timerLimpiarMensaje.Start();
+            }
+
+        }
+
+
+        private void beIdTarima_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                EntregarTarima();
             }
         }
 

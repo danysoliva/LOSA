@@ -1,0 +1,56 @@
+﻿using ACS.Classes;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LOSA.Clases
+{
+    public class BagsPT
+    {
+        public bool recuperado;
+        public string Descripcion;
+        public decimal net;
+
+        public BagsPT()
+        {
+
+        }
+
+
+        public bool RecuperarRegistro(int pid)
+        {
+            recuperado = false;
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_bags_pt_from_acs", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", pid);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    Descripcion = dr.GetString(0);
+                    net = dr.GetDecimal(1);
+                    recuperado = true;
+                }
+                dr.Close();
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+            return recuperado;
+        }
+
+
+
+    }
+}

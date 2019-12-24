@@ -94,7 +94,7 @@ namespace LOSA.RecepcionMP
                         beTarima.Text = "";
                         //txtTarima.Text = "";
                     }
-
+                    dr.Close();
                     cn.Close();
                   
                 }

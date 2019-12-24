@@ -30,8 +30,8 @@ namespace LOSA
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            frmMantenimiento frm = new frmMantenimiento();
-            frm.Show();
+            //frmMantenimiento frm = new frmMantenimiento();
+            //frm.Show();
         }
 
         private void cmdHome_Click(object sender, EventArgs e)
@@ -50,32 +50,32 @@ namespace LOSA
 
         private void BtnBodegas_Click(object sender, EventArgs e)
         {
-            frmBodega frm = new frmBodega();
-            frm.Show();
+            //frmBodega frm = new frmBodega();
+            //frm.Show();
         }
 
         private void BtnTiposPresentaciones_Click(object sender, EventArgs e)
         {
-            frmTipoPresentacion frm = new frmTipoPresentacion();
-            frm.Show();
+            //frmTipoPresentacion frm = new frmTipoPresentacion();
+            //frm.Show();
         }
 
         private void BtnEstadosProgramacionesRequisiciones_Click(object sender, EventArgs e)
         {
-            frmEstadoProgramacionRequisicion frm = new frmEstadoProgramacionRequisicion();
-            frm.Show();
+            //frmEstadoProgramacionRequisicion frm = new frmEstadoProgramacionRequisicion();
+            //frm.Show();
         }
 
         private void BtnKardexTiposTransacciones_Click(object sender, EventArgs e)
         {
-            frmKardexTipoTransaccion frm = new frmKardexTipoTransaccion();
-            frm.Show();
+            //frmKardexTipoTransaccion frm = new frmKardexTipoTransaccion();
+            //frm.Show();
         }
 
         private void BtnEstadosRequisiciones_Click(object sender, EventArgs e)
         {
-            frmEstadoRequisicion frm = new frmEstadoRequisicion();
-            frm.Show();
+            //frmEstadoRequisicion frm = new frmEstadoRequisicion();
+            //frm.Show();
         }
 
         private void simpleButton4_Click(object sender, EventArgs e)
@@ -155,7 +155,7 @@ namespace LOSA
 
         private void btnAlimentacionManual_Click(object sender, EventArgs e)
         {
-            frmAlimentacionManual frm = new frmAlimentacionManual();
+            frmAlimentacionManual frm = new frmAlimentacionManual(UsuarioLogeado);
             frm.Show();
         }
 
@@ -192,6 +192,13 @@ namespace LOSA
         private void btnTrazabilidad_Click(object sender, EventArgs e)
         {
            frmTrazabilidadLote frm = new frmTrazabilidadLote();
+            frm.Show();
+        }
+
+        private void cmdTarimasPT_Click(object sender, EventArgs e)
+        {
+            frmHomeEnsacado frm = new frmHomeEnsacado(UsuarioLogeado);
+            frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
     }

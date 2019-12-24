@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.basculaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.basculaBindingSource1 = new System.Windows.Forms.BindingSource();
             this.dsRecepcionMP = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.gvBascula = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colIDSerie = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -42,11 +41,11 @@
             this.colSeleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colitemcode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.basculaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.colFurgon = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMateriaPrima = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProveedor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.basculaBindingSource = new System.Windows.Forms.BindingSource();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.basculaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMP)).BeginInit();
@@ -159,7 +158,7 @@
             this.colestadoDescripcion.Name = "colestadoDescripcion";
             this.colestadoDescripcion.OptionsColumn.AllowEdit = false;
             this.colestadoDescripcion.Visible = true;
-            this.colestadoDescripcion.VisibleIndex = 3;
+            this.colestadoDescripcion.VisibleIndex = 2;
             this.colestadoDescripcion.Width = 142;
             // 
             // colSeleccionar
@@ -183,24 +182,6 @@
             this.colitemcode.FieldName = "itemcode";
             this.colitemcode.Name = "colitemcode";
             // 
-            // basculaBindingSource
-            // 
-            this.basculaBindingSource.DataMember = "Bascula";
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton1.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.simpleButton1.Location = new System.Drawing.Point(411, 26);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(199, 71);
-            this.simpleButton1.TabIndex = 4;
-            this.simpleButton1.Text = "Cancelar";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_1);
-            // 
             // colFurgon
             // 
             this.colFurgon.Caption = "Furgón";
@@ -208,7 +189,7 @@
             this.colFurgon.Name = "colFurgon";
             this.colFurgon.OptionsColumn.AllowEdit = false;
             this.colFurgon.Visible = true;
-            this.colFurgon.VisibleIndex = 2;
+            this.colFurgon.VisibleIndex = 1;
             // 
             // colMateriaPrima
             // 
@@ -228,6 +209,24 @@
             this.colProveedor.Visible = true;
             this.colProveedor.VisibleIndex = 4;
             // 
+            // basculaBindingSource
+            // 
+            this.basculaBindingSource.DataMember = "Bascula";
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton1.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
+            this.simpleButton1.Location = new System.Drawing.Point(411, 26);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton1.TabIndex = 4;
+            this.simpleButton1.Text = "Cancelar";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_1);
+            // 
             // FrmBoleta
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -241,7 +240,6 @@
             this.Name = "FrmBoleta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FrmBascula";
-            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmBoleta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
