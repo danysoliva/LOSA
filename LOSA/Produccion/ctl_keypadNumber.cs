@@ -70,9 +70,6 @@ namespace LOSA.Produccion
             displayNumber = displayNumber + "6";
             KeySeleccionado = displayNumber;
             OnItemSeleccionado.Invoke(sender, e);
-
-
-
         }
 
         private void btn7_Click(object sender, EventArgs e)
@@ -110,9 +107,12 @@ namespace LOSA.Produccion
 
         private void btnPunto_Click(object sender, EventArgs e)
         {
-            displayNumber = displayNumber + ".";
-            KeySeleccionado = displayNumber;
-            OnItemSeleccionado.Invoke(sender, e);
+            if (!displayNumber.Contains('.'))
+            {
+                displayNumber = displayNumber + ".";
+                KeySeleccionado = displayNumber;
+                OnItemSeleccionado.Invoke(sender, e);
+            }
 
         }
 
@@ -134,9 +134,12 @@ namespace LOSA.Produccion
 
         private void btnBackSpace_Click(object sender, EventArgs e)
         {
-            displayNumber = displayNumber.Remove(displayNumber.Length-1);
-            KeySeleccionado = displayNumber;
-            OnItemSeleccionado.Invoke(sender, e);
+            if (displayNumber.Length > 0)
+            {
+                displayNumber = displayNumber.Remove(displayNumber.Length - 1);
+                KeySeleccionado = displayNumber;
+                OnItemSeleccionado.Invoke(sender, e);
+            }
 
         }
     }

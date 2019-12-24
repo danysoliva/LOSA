@@ -24,6 +24,7 @@ namespace LOSA
             InitializeComponent();
             UsuarioLogeado = pUser;
             int i = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
+            //int i = Convert.ToInt32(4);
             tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
             tabOpciones.TabPages[i].PageVisible = true;
         }
@@ -199,6 +200,12 @@ namespace LOSA
         {
             frmHomeEnsacado frm = new frmHomeEnsacado(UsuarioLogeado);
             frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+        private void btnDevoluciones_Click(object sender, EventArgs e)
+        {
+            frmDevolucionKardex frm = new frmDevolucionKardex(UsuarioLogeado);
             frm.Show();
         }
     }

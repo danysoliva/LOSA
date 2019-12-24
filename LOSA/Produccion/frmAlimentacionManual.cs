@@ -194,6 +194,16 @@ namespace LOSA.Produccion
             //ctl_keypadNumber1.Visible = false;
         }
 
+        private void ctl_keypadNumber2_OnItemSeleccionado(object sender, EventArgs e)
+        {
+            txtCantidad.Text = ctl_keypadNumber1.KeySeleccionado;
+        }
+
+        private void ctl_keypadNumber2_OnItemSeleccionado_1(object sender, EventArgs e)
+        {
+            txtCantidad.Text = ctl_keypadNumber2.KeySeleccionado;
+        }
+
         private DataTable CreateDataTarima(int idTarima, string pProveedor, string pNombreTarima, string pLote, string pPpresentacion)
         {
             DataTable dt = new DataTable();
