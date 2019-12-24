@@ -58,8 +58,6 @@
             this.tabProduccion = new DevExpress.XtraTab.XtraTabPage();
             this.cmdTarimasPT = new DevExpress.XtraEditors.SimpleButton();
             this.btnAlimentacionManual = new DevExpress.XtraEditors.SimpleButton();
-            this.btnDevoluciones = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -105,8 +103,6 @@
             // 
             // TabMontacarga
             // 
-            this.TabMontacarga.Controls.Add(this.labelControl3);
-            this.TabMontacarga.Controls.Add(this.btnDevoluciones);
             this.TabMontacarga.Controls.Add(this.labelControl2);
             this.TabMontacarga.Controls.Add(this.labelControl1);
             this.TabMontacarga.Controls.Add(this.cmdPT);
@@ -125,7 +121,7 @@
             this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl2.Location = new System.Drawing.Point(218, 265);
+            this.labelControl2.Location = new System.Drawing.Point(304, 327);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(196, 63);
             this.labelControl2.TabIndex = 13;
@@ -138,7 +134,7 @@
             this.labelControl1.Appearance.Options.UseTextOptions = true;
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(12, 265);
+            this.labelControl1.Location = new System.Drawing.Point(26, 330);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(196, 29);
             this.labelControl1.TabIndex = 12;
@@ -164,9 +160,9 @@
             this.cmdPT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdPT.ImageOptions.Image = global::LOSA.Properties.Resources.Producto_terminado;
             this.cmdPT.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
-            this.cmdPT.Location = new System.Drawing.Point(216, 29);
+            this.cmdPT.Location = new System.Drawing.Point(286, 29);
             this.cmdPT.Name = "cmdPT";
-            this.cmdPT.Size = new System.Drawing.Size(198, 230);
+            this.cmdPT.Size = new System.Drawing.Size(239, 295);
             this.cmdPT.TabIndex = 11;
             this.cmdPT.Click += new System.EventHandler(this.cmdPT_Click);
             // 
@@ -187,7 +183,7 @@
             this.cmdMP.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
             this.cmdMP.Location = new System.Drawing.Point(10, 29);
             this.cmdMP.Name = "cmdMP";
-            this.cmdMP.Size = new System.Drawing.Size(198, 230);
+            this.cmdMP.Size = new System.Drawing.Size(238, 295);
             this.cmdMP.TabIndex = 10;
             this.cmdMP.Click += new System.EventHandler(this.cmdMP_Click);
             // 
@@ -490,45 +486,6 @@
             this.btnAlimentacionManual.Text = "Alimentación Manual";
             this.btnAlimentacionManual.Click += new System.EventHandler(this.btnAlimentacionManual_Click);
             // 
-            // btnDevoluciones
-            // 
-            this.btnDevoluciones.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnDevoluciones.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDevoluciones.Appearance.Options.UseBackColor = true;
-            this.btnDevoluciones.Appearance.Options.UseFont = true;
-            this.btnDevoluciones.Appearance.Options.UseImage = true;
-            this.btnDevoluciones.Appearance.Options.UseTextOptions = true;
-            this.btnDevoluciones.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.btnDevoluciones.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
-            this.btnDevoluciones.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnDevoluciones.AppearanceHovered.BackColor = System.Drawing.Color.Transparent;
-            this.btnDevoluciones.AppearanceHovered.BackColor2 = System.Drawing.Color.Transparent;
-            this.btnDevoluciones.AppearanceHovered.Image = global::LOSA.Properties.Resources.hapag_4_icon;
-            this.btnDevoluciones.AppearanceHovered.Options.UseBackColor = true;
-            this.btnDevoluciones.AppearanceHovered.Options.UseImage = true;
-            this.btnDevoluciones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnDevoluciones.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnDevoluciones.ImageOptions.Image = global::LOSA.Properties.Resources.devoluciones2;
-            this.btnDevoluciones.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
-            this.btnDevoluciones.Location = new System.Drawing.Point(421, 29);
-            this.btnDevoluciones.Name = "btnDevoluciones";
-            this.btnDevoluciones.Size = new System.Drawing.Size(198, 230);
-            this.btnDevoluciones.TabIndex = 14;
-            this.btnDevoluciones.Click += new System.EventHandler(this.btnDevoluciones_Click);
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Appearance.Options.UseTextOptions = true;
-            this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl3.Location = new System.Drawing.Point(421, 265);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(196, 29);
-            this.labelControl3.TabIndex = 15;
-            this.labelControl3.Text = "Devoluciones";
-            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -581,7 +538,5 @@
         private DevExpress.XtraEditors.SimpleButton btnLotesPorProveedor;
         private DevExpress.XtraEditors.SimpleButton btnTrazabilidad;
         private DevExpress.XtraEditors.SimpleButton cmdTarimasPT;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.SimpleButton btnDevoluciones;
     }
 }

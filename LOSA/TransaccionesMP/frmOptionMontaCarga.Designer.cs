@@ -40,6 +40,7 @@
             this.cmdOrdenesCargaPT = new DevExpress.XtraEditors.SimpleButton();
             this.cmdCambiarUbicacionPT = new DevExpress.XtraEditors.SimpleButton();
             this.cmdIngresoPT = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMateriaPrima.SuspendLayout();
@@ -80,6 +81,7 @@
             // 
             // TabMateriaPrima
             // 
+            this.TabMateriaPrima.Controls.Add(this.simpleButton2);
             this.TabMateriaPrima.Controls.Add(this.cmdRequisiciones);
             this.TabMateriaPrima.Controls.Add(this.btnCambiarUbicacion);
             this.TabMateriaPrima.Controls.Add(this.simpleButton1);
@@ -126,7 +128,7 @@
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton1.ImageOptions.Image = global::LOSA.Properties.Resources.wrench;
-            this.simpleButton1.Location = new System.Drawing.Point(7, 300);
+            this.simpleButton1.Location = new System.Drawing.Point(422, 345);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(199, 71);
             this.simpleButton1.TabIndex = 4;
@@ -200,6 +202,21 @@
             this.cmdIngresoPT.Text = "Ingreso PT";
             this.cmdIngresoPT.Click += new System.EventHandler(this.cmdIngresoPT_Click);
             // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton2.Appearance.Options.UseFont = true;
+            this.simpleButton2.Appearance.Options.UseTextOptions = true;
+            this.simpleButton2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton2.ImageOptions.Image = global::LOSA.Properties.Resources.devoluciones;
+            this.simpleButton2.Location = new System.Drawing.Point(7, 291);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton2.TabIndex = 10;
+            this.simpleButton2.Text = "Devoluciones";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
             // frmOptionMontaCarga
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -232,5 +249,6 @@
         private DevExpress.XtraEditors.SimpleButton cmdOrdenesCargaPT;
         private DevExpress.XtraEditors.SimpleButton cmdCambiarUbicacionPT;
         private DevExpress.XtraEditors.SimpleButton cmdIngresoPT;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
     }
 }

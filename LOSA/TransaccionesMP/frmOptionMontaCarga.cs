@@ -76,8 +76,14 @@ namespace LOSA.TransaccionesMP
 
         private void cmdCambiarUbicacionPT_Click(object sender, EventArgs e)
         {
-            frmCambiarUbicacionTarima frm = new frmCambiarUbicacionTarima();
+            frmCambiarUbicacionTarimaPT frm = new frmCambiarUbicacionTarimaPT();
             frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            frmDevolucionKardex frm = new frmDevolucionKardex(UsuarioLogeado);
             frm.Show();
         }
     }
