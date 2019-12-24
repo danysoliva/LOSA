@@ -212,10 +212,13 @@
     <Compile Include="Logistica\frmTrazabilidadLote.Designer.cs">
       <DependentUpon>frmTrazabilidadLote.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mantenimientos\dsMantenimiento.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
+    <Compile Include="Mantenimientos\dsMantenimiento.cs">
       <DependentUpon>dsMantenimiento.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\dsMantenimiento.Designer.cs">
+      <DependentUpon>dsMantenimiento.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Mantenimientos\frmBodega.cs">
       <SubType>Form</SubType>
@@ -293,6 +296,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsProduccion.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Produccion\frmAddTarimaPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\frmAddTarimaPT.Designer.cs">
+      <DependentUpon>frmAddTarimaPT.cs</DependentUpon>
+    </Compile>
     <Compile Include="Produccion\frmAlimentacionManual.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -304,6 +313,18 @@
     </Compile>
     <Compile Include="Logistica\frmCantidadMP.Designer.cs">
       <DependentUpon>frmCantidadMP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\frmHomeEnsacado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\frmHomeEnsacado.Designer.cs">
+      <DependentUpon>frmHomeEnsacado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\frmTarimasHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\frmTarimasHome.Designer.cs">
+      <DependentUpon>frmTarimasHome.cs</DependentUpon>
     </Compile>
     <Compile Include="Produccion\frmTolva.cs">
       <SubType>Form</SubType>
@@ -527,11 +548,20 @@
     <EmbeddedResource Include="Produccion\ctl_keypadNumber.resx">
       <DependentUpon>ctl_keypadNumber.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\frmAddTarimaPT.resx">
+      <DependentUpon>frmAddTarimaPT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Produccion\frmAlimentacionManual.resx">
       <DependentUpon>frmAlimentacionManual.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logistica\frmCantidadMP.resx">
       <DependentUpon>frmCantidadMP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\frmHomeEnsacado.resx">
+      <DependentUpon>frmHomeEnsacado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\frmTarimasHome.resx">
+      <DependentUpon>frmTarimasHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\frmTolva.resx">
       <DependentUpon>frmTolva.cs</DependentUpon>
@@ -632,9 +662,9 @@
       <DependentUpon>dsMantenimiento.xsd</DependentUpon>
     </None>
     <None Include="Mantenimientos\dsMantenimiento.xsd">
+      <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>dsMantenimiento.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </None>
     <None Include="Mantenimientos\dsMantenimiento.xss">
       <DependentUpon>dsMantenimiento.xsd</DependentUpon>
@@ -712,6 +742,11 @@
     <Content Include="Resources\plus.png" />
     <None Include="Resources\produccion.png" />
     <None Include="Resources\Producto_terminado.png" />
+    <Content Include="Resources\production.png" />
+    <Content Include="Resources\raw-material.png" />
+    <Content Include="Resources\raw-material1.png" />
+    <Content Include="Resources\settings.png" />
+    <Content Include="Resources\shipping.png" />
     <Content Include="Resources\tap.png" />
     <None Include="Resources\trazabilidad.png" />
     <Content Include="Resources\user.png" />

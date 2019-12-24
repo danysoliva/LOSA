@@ -17,6 +17,8 @@ namespace LOSA.Produccion
     {
         public int idTolva;
         public string shortNameTolva;
+        public string NombreMP;
+
         public frmTolva()
         {
             InitializeComponent();
@@ -53,7 +55,7 @@ namespace LOSA.Produccion
 
             this.idTolva = row.id;
             this.shortNameTolva = row.code;
-           this.DialogResult = DialogResult.OK;
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
 
@@ -64,11 +66,17 @@ namespace LOSA.Produccion
 
         private void BtnSeleccionar_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
+            
+        }
+
+        private void repositoryItemButtonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
             var gridView = (GridView)gcTolva.FocusedView;
             var row = (dsProduccion.TolvaRow)gridView.GetFocusedDataRow();
 
             this.idTolva = row.id;
             this.shortNameTolva = row.code;
+            this.NombreMP = row.long_name;
             this.DialogResult = DialogResult.OK;
             this.Close();
         }

@@ -212,7 +212,7 @@ namespace LOSA.RecepcionMP
 
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                gcTarima.DataSource = CreateDataTarima(frm.idTarima,"NULL");
+                gcTarima.DataSource = CreateDataTarima(frm.idTarima,"");
                 gvTarima.InitNewRow += GvTarima_InitNewRow;
                 gvTarima.Columns[0].AppearanceCell.Font = new Font("Segoe UI", 11, FontStyle.Bold);
 

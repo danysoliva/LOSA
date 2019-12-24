@@ -32,8 +32,6 @@
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.tabOpciones = new DevExpress.XtraTab.XtraTabControl();
             this.TabMontacarga = new DevExpress.XtraTab.XtraTabPage();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.btnDevolciones = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.cmdPT = new DevExpress.XtraEditors.SimpleButton();
@@ -104,8 +102,6 @@
             // 
             // TabMontacarga
             // 
-            this.TabMontacarga.Controls.Add(this.labelControl3);
-            this.TabMontacarga.Controls.Add(this.btnDevolciones);
             this.TabMontacarga.Controls.Add(this.labelControl2);
             this.TabMontacarga.Controls.Add(this.labelControl1);
             this.TabMontacarga.Controls.Add(this.cmdPT);
@@ -116,31 +112,6 @@
             this.TabMontacarga.Size = new System.Drawing.Size(629, 422);
             this.TabMontacarga.Text = "MontaCarga";
             // 
-            // labelControl3
-            // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Appearance.Options.UseTextOptions = true;
-            this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl3.Location = new System.Drawing.Point(427, 263);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(198, 29);
-            this.labelControl3.TabIndex = 15;
-            this.labelControl3.Text = "Materia Prima";
-            // 
-            // btnDevolciones
-            // 
-            this.btnDevolciones.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDevolciones.Appearance.Options.UseFont = true;
-            this.btnDevolciones.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnDevolciones.ImageOptions.Image = global::LOSA.Properties.Resources.devoluciones2;
-            this.btnDevolciones.Location = new System.Drawing.Point(426, 29);
-            this.btnDevolciones.Name = "btnDevolciones";
-            this.btnDevolciones.Size = new System.Drawing.Size(199, 228);
-            this.btnDevolciones.TabIndex = 14;
-            this.btnDevolciones.Click += new System.EventHandler(this.btnDevolciones_Click_1);
-            // 
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -149,9 +120,9 @@
             this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.labelControl2.Location = new System.Drawing.Point(218, 263);
+            this.labelControl2.Location = new System.Drawing.Point(362, 361);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(200, 58);
+            this.labelControl2.Size = new System.Drawing.Size(237, 29);
             this.labelControl2.TabIndex = 13;
             this.labelControl2.Text = "Producto Terminado";
             // 
@@ -162,7 +133,7 @@
             this.labelControl1.Appearance.Options.UseTextOptions = true;
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(10, 263);
+            this.labelControl1.Location = new System.Drawing.Point(59, 361);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(200, 29);
             this.labelControl1.TabIndex = 12;
@@ -188,9 +159,9 @@
             this.cmdPT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdPT.ImageOptions.Image = global::LOSA.Properties.Resources.Producto_terminado;
             this.cmdPT.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
-            this.cmdPT.Location = new System.Drawing.Point(218, 29);
+            this.cmdPT.Location = new System.Drawing.Point(339, 29);
             this.cmdPT.Name = "cmdPT";
-            this.cmdPT.Size = new System.Drawing.Size(200, 228);
+            this.cmdPT.Size = new System.Drawing.Size(274, 326);
             this.cmdPT.TabIndex = 11;
             this.cmdPT.Click += new System.EventHandler(this.cmdPT_Click);
             // 
@@ -211,7 +182,7 @@
             this.cmdMP.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
             this.cmdMP.Location = new System.Drawing.Point(10, 29);
             this.cmdMP.Name = "cmdMP";
-            this.cmdMP.Size = new System.Drawing.Size(200, 228);
+            this.cmdMP.Size = new System.Drawing.Size(274, 326);
             this.cmdMP.TabIndex = 10;
             this.cmdMP.Click += new System.EventHandler(this.cmdMP_Click);
             // 
@@ -548,8 +519,6 @@
         private DevExpress.XtraEditors.SimpleButton btnLotes;
         private DevExpress.XtraEditors.SimpleButton btnLotesXMP;
         private DevExpress.XtraEditors.SimpleButton btnLotesPorProveedor;
-        private DevExpress.XtraEditors.SimpleButton btnDevolciones;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.SimpleButton btnTrazabilidad;
     }
 }

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAlimentacionManual));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAlimentacionManual));
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.beTarima = new DevExpress.XtraEditors.ButtonEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.beTolva = new DevExpress.XtraEditors.ButtonEdit();
@@ -41,12 +41,14 @@
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
+            this.txtNombreMP = new DevExpress.XtraEditors.ButtonEdit();
             this.txtCantidad = new DevExpress.XtraEditors.TextEdit();
             this.ctl_keypadNumber1 = new LOSA.Produccion.ctl_keypadNumber();
             ((System.ComponentModel.ISupportInitialize)(this.beTarima.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.beTolva.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcTarima)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTarima)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNombreMP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidad.Properties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,17 +58,17 @@
             this.beTarima.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.beTarima.EditValue = "";
-            this.beTarima.Location = new System.Drawing.Point(108, 209);
+            this.beTarima.Location = new System.Drawing.Point(107, 250);
             this.beTarima.Name = "beTarima";
             this.beTarima.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.beTarima.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.beTarima.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions3, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.beTarima.Properties.MaxLength = 20;
             this.beTarima.Properties.NullText = "Escanee o selecciona una tarima";
             this.beTarima.Size = new System.Drawing.Size(327, 38);
-            this.beTarima.TabIndex = 1;
+            this.beTarima.TabIndex = 0;
             this.beTarima.ToolTip = "Hola";
             this.beTarima.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BeTarima_KeyDown);
             // 
@@ -74,31 +76,29 @@
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(42, 152);
+            this.labelControl1.Location = new System.Drawing.Point(20, 165);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(59, 30);
+            this.labelControl1.Size = new System.Drawing.Size(83, 40);
             this.labelControl1.TabIndex = 29;
             this.labelControl1.Text = "Tolva:";
             // 
             // beTolva
             // 
             this.beTolva.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.True;
-            this.beTolva.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.beTolva.EditValue = "";
-            this.beTolva.Location = new System.Drawing.Point(108, 148);
+            this.beTolva.Location = new System.Drawing.Point(109, 156);
             this.beTolva.Name = "beTolva";
-            this.beTolva.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.beTolva.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.beTolva.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.beTolva.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.beTolva.Properties.MaxLength = 20;
             this.beTolva.Properties.NullText = "Escanee o selecciona una tarima";
-            this.beTolva.Size = new System.Drawing.Size(327, 38);
-            this.beTolva.TabIndex = 0;
+            this.beTolva.Size = new System.Drawing.Size(223, 54);
+            this.beTolva.TabIndex = 1;
             this.beTolva.ToolTip = "Hola";
             // 
             // labelControl2
@@ -107,7 +107,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(30, 212);
+            this.labelControl2.Location = new System.Drawing.Point(29, 253);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(73, 30);
             this.labelControl2.TabIndex = 32;
@@ -120,10 +120,12 @@
             this.btnSelectTolva.Appearance.Options.UseFont = true;
             this.btnSelectTolva.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnSelectTolva.ImageOptions.Image = global::LOSA.Properties.Resources.tap;
-            this.btnSelectTolva.Location = new System.Drawing.Point(441, 148);
+            this.btnSelectTolva.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.btnSelectTolva.Location = new System.Drawing.Point(477, 128);
             this.btnSelectTolva.Name = "btnSelectTolva";
-            this.btnSelectTolva.Size = new System.Drawing.Size(42, 40);
-            this.btnSelectTolva.TabIndex = 33;
+            this.btnSelectTolva.Size = new System.Drawing.Size(133, 89);
+            this.btnSelectTolva.TabIndex = 3;
+            this.btnSelectTolva.Text = "Ver Tolvas";
             this.btnSelectTolva.Click += new System.EventHandler(this.BtnSelectTolva_Click);
             // 
             // gcTarima
@@ -132,11 +134,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcTarima.EmbeddedNavigator.Appearance.BackColor = System.Drawing.SystemColors.Control;
             this.gcTarima.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
-            this.gcTarima.Location = new System.Drawing.Point(32, 259);
+            this.gcTarima.Location = new System.Drawing.Point(31, 300);
             this.gcTarima.MainView = this.gvTarima;
             this.gcTarima.Name = "gcTarima";
             this.gcTarima.Size = new System.Drawing.Size(558, 116);
-            this.gcTarima.TabIndex = 82;
+            this.gcTarima.TabIndex = 2;
             this.gcTarima.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTarima});
             // 
@@ -303,7 +305,7 @@
             this.cmdHome.Location = new System.Drawing.Point(30, 12);
             this.cmdHome.Name = "cmdHome";
             this.cmdHome.Size = new System.Drawing.Size(199, 71);
-            this.cmdHome.TabIndex = 83;
+            this.cmdHome.TabIndex = 5;
             this.cmdHome.Text = "Home";
             this.cmdHome.Click += new System.EventHandler(this.CmdHome_Click);
             // 
@@ -313,7 +315,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(9, 405);
+            this.labelControl3.Location = new System.Drawing.Point(8, 446);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(94, 30);
             this.labelControl3.TabIndex = 85;
@@ -327,22 +329,43 @@
             this.btnGuardar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.Image")));
             this.btnGuardar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.btnGuardar.Location = new System.Drawing.Point(459, 12);
+            this.btnGuardar.Location = new System.Drawing.Point(412, 9);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(131, 71);
-            this.btnGuardar.TabIndex = 3;
+            this.btnGuardar.Size = new System.Drawing.Size(198, 71);
+            this.btnGuardar.TabIndex = 4;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
+            // 
+            // txtNombreMP
+            // 
+            this.txtNombreMP.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.True;
+            this.txtNombreMP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNombreMP.EditValue = "";
+            this.txtNombreMP.Location = new System.Drawing.Point(338, 156);
+            this.txtNombreMP.Name = "txtNombreMP";
+            this.txtNombreMP.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreMP.Properties.Appearance.Options.UseFont = true;
+            this.txtNombreMP.Properties.MaxLength = 20;
+            this.txtNombreMP.Properties.NullText = "Escanee o selecciona una tarima";
+            this.txtNombreMP.Size = new System.Drawing.Size(133, 54);
+            this.txtNombreMP.TabIndex = 2;
+            this.txtNombreMP.ToolTip = "Hola";
             // 
             // txtCantidad
             // 
             this.txtCantidad.EditValue = "0";
-            this.txtCantidad.Location = new System.Drawing.Point(109, 408);
+            this.txtCantidad.Location = new System.Drawing.Point(109, 443);
             this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtCantidad.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCantidad.Properties.Appearance.Options.UseFont = true;
             this.txtCantidad.Properties.Appearance.Options.UseTextOptions = true;
             this.txtCantidad.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txtCantidad.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCantidad.Properties.Mask.EditMask = "n0";
+            this.txtCantidad.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtCantidad.Properties.NullText = "0";
             this.txtCantidad.Properties.ReadOnly = true;
             this.txtCantidad.Size = new System.Drawing.Size(283, 32);
             this.txtCantidad.TabIndex = 86;
@@ -363,7 +386,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(622, 521);
-            this.Controls.Add(this.ctl_keypadNumber1);
+            this.Controls.Add(this.txtNombreMP);
             this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.labelControl3);
@@ -382,6 +405,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.beTolva.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcTarima)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTarima)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNombreMP.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidad.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -400,7 +424,11 @@
         private DevExpress.XtraEditors.SimpleButton cmdHome;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.SimpleButton btnGuardar;
+
+        private DevExpress.XtraEditors.ButtonEdit txtNombreMP;
+
         private DevExpress.XtraEditors.TextEdit txtCantidad;
         private ctl_keypadNumber ctl_keypadNumber1;
+//>>>>>>> f8578e409cd760559c021792609d9acada59819b
     }
 }

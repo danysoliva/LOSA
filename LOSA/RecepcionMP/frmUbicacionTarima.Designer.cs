@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUbicacionTarima));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.gcUbicacion = new DevExpress.XtraGrid.GridControl();
-            this.ubicacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ubicacionesBindingSource = new System.Windows.Forms.BindingSource();
             this.dsRecepcionMPx = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.gvUbicacion = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -215,7 +214,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmUbicacionTarima";
             this.Text = "frmUbicacionTarima";
-            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.gcUbicacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ubicacionesBindingSource)).EndInit();

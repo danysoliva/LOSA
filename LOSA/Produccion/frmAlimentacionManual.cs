@@ -21,9 +21,11 @@ namespace LOSA.Produccion
         private string shortNameTolva;
 
         private DataOperations dp = new DataOperations();
-        public frmAlimentacionManual()
+        UserLogin UsuarioLogeado;
+        public frmAlimentacionManual(UserLogin pUsuarioLogeado)
         {
             InitializeComponent();
+            UsuarioLogeado = pUsuarioLogeado;
         }
 
         private void BtnSelectTolva_Click(object sender, EventArgs e)
@@ -34,6 +36,8 @@ namespace LOSA.Produccion
             {
                 this.idTolva = frm.idTolva;
                 beTolva.Text = frm.shortNameTolva;
+                txtNombreMP.Text = frm.NombreMP;
+                beTarima.Focus();
             }
         }
 

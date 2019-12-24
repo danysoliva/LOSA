@@ -1,6 +1,6 @@
 ﻿namespace LOSA.Produccion
 {
-    partial class frmTolva
+    partial class frmHomeEnsacado
     {
         /// <summary>
         /// Required designer variable.
@@ -28,59 +28,66 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHomeEnsacado));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTolva));
-            this.btnSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.gcTolva = new DevExpress.XtraGrid.GridControl();
-            this.dsProduccion = new LOSA.Produccion.dsProduccion();
-            this.gvTolva = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colset_rm_id = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colshort_name = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colrm_acs_id = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.collong_name = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSeleccionar)).BeginInit();
+            this.gcTolva = new DevExpress.XtraGrid.GridControl();
+            this.dsProduccion1 = new LOSA.Produccion.dsProduccion();
+            this.gvTolva = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colfp_lot_number = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfinish_product = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colformula = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colstatus = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnTarimas = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colacs_id = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gcTolva)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsProduccion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsProduccion1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTolva)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnTarimas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnSeleccionar
+            // btnAtras
             // 
-            this.btnSeleccionar.AutoHeight = false;
-            editorButtonImageOptions1.Image = global::LOSA.Properties.Resources.tap;
-            this.btnSeleccionar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
-            this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnAtras.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnAtras.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtras.Appearance.Options.UseBackColor = true;
+            this.btnAtras.Appearance.Options.UseFont = true;
+            this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
+            this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnAtras.Location = new System.Drawing.Point(4, 4);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(167, 66);
+            this.btnAtras.TabIndex = 11;
+            this.btnAtras.Text = "Atras";
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click_1);
             // 
             // gcTolva
             // 
             this.gcTolva.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcTolva.DataMember = "Tolva";
-            this.gcTolva.DataSource = this.dsProduccion;
-            this.gcTolva.Location = new System.Drawing.Point(-1, 87);
+            this.gcTolva.DataMember = "home_sacos_pt";
+            this.gcTolva.DataSource = this.dsProduccion1;
+            this.gcTolva.Location = new System.Drawing.Point(1, 76);
             this.gcTolva.MainView = this.gvTolva;
             this.gcTolva.Name = "gcTolva";
             this.gcTolva.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemButtonEdit1});
-            this.gcTolva.Size = new System.Drawing.Size(624, 434);
-            this.gcTolva.TabIndex = 0;
+            this.repositoryItemButtonEdit1,
+            this.btnTarimas});
+            this.gcTolva.Size = new System.Drawing.Size(620, 443);
+            this.gcTolva.TabIndex = 12;
             this.gcTolva.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTolva});
             // 
-            // dsProduccion
+            // dsProduccion1
             // 
-            this.dsProduccion.DataSetName = "dsProduccion";
-            this.dsProduccion.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dsProduccion1.DataSetName = "dsProduccion";
+            this.dsProduccion1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gvTolva
             // 
@@ -102,58 +109,70 @@
             this.gvTolva.Appearance.TopNewRow.BackColor = System.Drawing.Color.White;
             this.gvTolva.Appearance.TopNewRow.Options.UseBackColor = true;
             this.gvTolva.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colid,
-            this.colcode,
-            this.colset_rm_id,
-            this.colshort_name,
-            this.colrm_acs_id,
+            this.colfp_lot_number,
+            this.colfinish_product,
+            this.colformula,
+            this.colstatus,
             this.gridColumn1,
-            this.collong_name});
+            this.colacs_id});
             this.gvTolva.GridControl = this.gcTolva;
             this.gvTolva.Name = "gvTolva";
             this.gvTolva.OptionsView.ShowGroupPanel = false;
-            this.gvTolva.DoubleClick += new System.EventHandler(this.GvTolva_DoubleClick);
             // 
-            // colid
+            // colfp_lot_number
             // 
-            this.colid.FieldName = "id";
-            this.colid.Name = "colid";
+            this.colfp_lot_number.Caption = "Lote";
+            this.colfp_lot_number.FieldName = "fp_lot_number";
+            this.colfp_lot_number.Name = "colfp_lot_number";
+            this.colfp_lot_number.OptionsColumn.AllowEdit = false;
+            this.colfp_lot_number.Visible = true;
+            this.colfp_lot_number.VisibleIndex = 0;
             // 
-            // colcode
+            // colfinish_product
             // 
-            this.colcode.Caption = "Código Tolva";
-            this.colcode.FieldName = "code";
-            this.colcode.Name = "colcode";
-            this.colcode.Visible = true;
-            this.colcode.VisibleIndex = 0;
-            this.colcode.Width = 277;
+            this.colfinish_product.Caption = "Producto";
+            this.colfinish_product.FieldName = "finish_product";
+            this.colfinish_product.Name = "colfinish_product";
+            this.colfinish_product.OptionsColumn.AllowEdit = false;
+            this.colfinish_product.Visible = true;
+            this.colfinish_product.VisibleIndex = 1;
             // 
-            // colset_rm_id
+            // colformula
             // 
-            this.colset_rm_id.FieldName = "set_rm_id";
-            this.colset_rm_id.Name = "colset_rm_id";
+            this.colformula.Caption = "Formula";
+            this.colformula.FieldName = "formula";
+            this.colformula.Name = "colformula";
+            this.colformula.OptionsColumn.AllowEdit = false;
+            this.colformula.Visible = true;
+            this.colformula.VisibleIndex = 2;
             // 
-            // colshort_name
+            // colstatus
             // 
-            this.colshort_name.Caption = "Materia Prima";
-            this.colshort_name.FieldName = "short_name";
-            this.colshort_name.Name = "colshort_name";
-            this.colshort_name.Width = 281;
-            // 
-            // colrm_acs_id
-            // 
-            this.colrm_acs_id.Caption = "Material";
-            this.colrm_acs_id.FieldName = "rm_acs_id";
-            this.colrm_acs_id.Name = "colrm_acs_id";
+            this.colstatus.FieldName = "status";
+            this.colstatus.Name = "colstatus";
             // 
             // gridColumn1
             // 
-            this.gridColumn1.Caption = "Seleccionar";
-            this.gridColumn1.ColumnEdit = this.repositoryItemButtonEdit1;
+            this.gridColumn1.Caption = "Tarimas";
+            this.gridColumn1.ColumnEdit = this.btnTarimas;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 2;
-            this.gridColumn1.Width = 122;
+            this.gridColumn1.VisibleIndex = 3;
+            // 
+            // btnTarimas
+            // 
+            this.btnTarimas.AutoHeight = false;
+            //editorButtonImageOptions1.Image = global::LOSA.Properties.Resources.pallet_pallet_solo;
+            this.btnTarimas.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            this.btnTarimas.Name = "btnTarimas";
+            this.btnTarimas.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnTarimas.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnTarimas_ButtonClick);
+            // 
+            // colacs_id
+            // 
+            this.colacs_id.FieldName = "acs_id";
+            this.colacs_id.Name = "colacs_id";
             // 
             // repositoryItemButtonEdit1
             // 
@@ -163,48 +182,22 @@
             new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.repositoryItemButtonEdit1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEdit1_ButtonClick);
             // 
-            // collong_name
-            // 
-            this.collong_name.Caption = "Materia Prima";
-            this.collong_name.FieldName = "long_name";
-            this.collong_name.Name = "collong_name";
-            this.collong_name.Visible = true;
-            this.collong_name.VisibleIndex = 1;
-            this.collong_name.Width = 207;
-            // 
-            // btnAtras
-            // 
-            this.btnAtras.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnAtras.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtras.Appearance.Options.UseBackColor = true;
-            this.btnAtras.Appearance.Options.UseFont = true;
-            this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
-            this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(5, 3);
-            this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(167, 69);
-            this.btnAtras.TabIndex = 10;
-            this.btnAtras.Text = "Atras";
-            this.btnAtras.Click += new System.EventHandler(this.BtnAtras_Click);
-            // 
-            // frmTolva
+            // frmHomeEnsacado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(622, 521);
-            this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.gcTolva);
+            this.Controls.Add(this.btnAtras);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmTolva";
-            this.Text = "frmTolva";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)(this.btnSeleccionar)).EndInit();
+            this.Name = "frmHomeEnsacado";
+            this.Text = "frmHomeEnsacado";
             ((System.ComponentModel.ISupportInitialize)(this.gcTolva)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsProduccion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsProduccion1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTolva)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnTarimas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             this.ResumeLayout(false);
 
@@ -212,18 +205,17 @@
 
         #endregion
 
+        private DevExpress.XtraEditors.SimpleButton btnAtras;
         private DevExpress.XtraGrid.GridControl gcTolva;
         private DevExpress.XtraGrid.Views.Grid.GridView gvTolva;
-        private dsProduccion dsProduccion;
-        private DevExpress.XtraEditors.SimpleButton btnAtras;
-        private DevExpress.XtraGrid.Columns.GridColumn colid;
-        private DevExpress.XtraGrid.Columns.GridColumn colcode;
-        private DevExpress.XtraGrid.Columns.GridColumn colset_rm_id;
-        private DevExpress.XtraGrid.Columns.GridColumn colshort_name;
-        private DevExpress.XtraGrid.Columns.GridColumn colrm_acs_id;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn collong_name;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnSeleccionar;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
+        private dsProduccion dsProduccion1;
+        private DevExpress.XtraGrid.Columns.GridColumn colfp_lot_number;
+        private DevExpress.XtraGrid.Columns.GridColumn colfinish_product;
+        private DevExpress.XtraGrid.Columns.GridColumn colformula;
+        private DevExpress.XtraGrid.Columns.GridColumn colstatus;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnTarimas;
+        private DevExpress.XtraGrid.Columns.GridColumn colacs_id;
     }
 }
