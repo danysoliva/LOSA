@@ -1,4 +1,5 @@
 ﻿using ACS.Classes;
+using DevExpress.XtraGrid.Views.Grid;
 using LOSA.Clases;
 using System;
 using System.Collections.Generic;
@@ -16,9 +17,13 @@ namespace LOSA.Produccion
     public partial class frmTarimasHome : Form
     {
         UserLogin UsuarioLogeado;
-        public frmTarimasHome(UserLogin pUsuarioLogeado, int pLote, string producto)
+        int IdLote;
+        int idProducto;
+        public frmTarimasHome(UserLogin pUsuarioLogeado, int pLote, string producto, int idProd)
         {
             InitializeComponent();
+            IdLote = pLote;
+            idProducto = idProd;
             UsuarioLogeado = pUsuarioLogeado;
             lblLote.Text = pLote.ToString();
             lblProducto.Text = producto;
@@ -54,7 +59,12 @@ namespace LOSA.Produccion
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            var gridView = (GridView)gridControl1.FocusedView;
+            var row = (dsProduccion.tarima_listRow)gridView.GetFocusedDataRow();
 
+            frmAddTarimaPT frm = new frmAddTarimaPT(UsuarioLogeado, IdLote, idProducto);
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
         }
     }
 }

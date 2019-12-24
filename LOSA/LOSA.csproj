@@ -151,6 +151,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\BagsPT.cs" />
     <Compile Include="Clases\Boleta.cs" />
     <Compile Include="Clases\CajaDialogo.cs" />
     <Compile Include="Clases\DataOperations.cs" />
@@ -158,6 +159,7 @@
     <Compile Include="Clases\MateriaPrima.cs" />
     <Compile Include="Clases\opcionAbrirVentanaTarima.cs" />
     <Compile Include="Clases\PresentacionX.cs" />
+    <Compile Include="Clases\ProductoTerminado.cs" />
     <Compile Include="Clases\Security.cs" />
     <Compile Include="Clases\Tarima.cs" />
     <Compile Include="Clases\Teclado.cs" />

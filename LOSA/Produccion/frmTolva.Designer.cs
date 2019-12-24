@@ -124,6 +124,7 @@
             this.colcode.Caption = "Código Tolva";
             this.colcode.FieldName = "code";
             this.colcode.Name = "colcode";
+            this.colcode.OptionsColumn.AllowEdit = false;
             this.colcode.Visible = true;
             this.colcode.VisibleIndex = 0;
             this.colcode.Width = 277;
@@ -170,6 +171,7 @@
             this.collong_name.Caption = "Materia Prima";
             this.collong_name.FieldName = "long_name";
             this.collong_name.Name = "collong_name";
+            this.collong_name.OptionsColumn.AllowEdit = false;
             this.collong_name.Visible = true;
             this.collong_name.VisibleIndex = 1;
             this.collong_name.Width = 207;

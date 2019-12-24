@@ -66,7 +66,7 @@ namespace LOSA.Produccion
             var gridView = (GridView)gridControl1.FocusedView;
             var row = (dsProduccion.home_sacos_ptRow)gridView.GetFocusedDataRow();
 
-            frmTarimasHome frm = new frmTarimasHome(UsuarioLogeado, row.fp_lot_number, row.finish_product);
+            frmTarimasHome frm = new frmTarimasHome(UsuarioLogeado, row.fp_lot_number, row.finish_product, row.acs_id);
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
