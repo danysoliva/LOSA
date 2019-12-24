@@ -26,6 +26,12 @@ namespace LOSA.TransaccionesMP
             usuarioLogueado = pUsuarioLogueado;
         }
 
+        public frmEntregaTarimaReq(UserLogin pUsuarioLogueado, int pIdTarima)
+        {
+            InitializeComponent();
+            usuarioLogueado = pUsuarioLogueado;
+        }
+
         void datosTarimaPorCodBarra(SqlConnection connection)
         {
             Tarima InfoTarima = new Tarima();

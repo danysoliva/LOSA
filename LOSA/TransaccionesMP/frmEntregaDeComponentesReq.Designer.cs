@@ -28,33 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEntregaDeComponentesReq));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.beIdTarima = new DevExpress.XtraEditors.ButtonEdit();
             this.cmdSelectTarima = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnEdit = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gvTarimas = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grDetalleLote = new DevExpress.XtraGrid.GridControl();
+            this.dsProduccion1 = new LOSA.Produccion.dsProduccion();
+            this.dsTransaccionesMP1 = new LOSA.TransaccionesMP.dsTransaccionesMP();
+            this.colid_tarima_s = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_materia_prima = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colmp = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colsolicitada = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colprogramada = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colentregada = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colpendiente = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colenable = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colid_unidad_medida = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colunidad = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcode_sap = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colasignado = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.grDetalleLote = new DevExpress.XtraGrid.GridControl();
+            this.collote_mp = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colubicacion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcantidad = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colbarcode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colproc = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.beIdTarima.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTarimas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grDetalleLote)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsProduccion1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -83,9 +82,9 @@
             this.beIdTarima.Name = "beIdTarima";
             this.beIdTarima.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.beIdTarima.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
             this.beIdTarima.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions3, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.beIdTarima.Properties.MaxLength = 20;
             this.beIdTarima.Properties.NullText = "Escanee o selecciona una tarima";
             this.beIdTarima.Size = new System.Drawing.Size(257, 44);
@@ -104,6 +103,7 @@
             this.cmdSelectTarima.Name = "cmdSelectTarima";
             this.cmdSelectTarima.Size = new System.Drawing.Size(62, 69);
             this.cmdSelectTarima.TabIndex = 37;
+            this.cmdSelectTarima.Visible = false;
             // 
             // labelControl1
             // 
@@ -120,9 +120,9 @@
             // btnEdit
             // 
             this.btnEdit.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.btnEdit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -146,19 +146,14 @@
             this.gvTarimas.Appearance.TopNewRow.BackColor = System.Drawing.Color.White;
             this.gvTarimas.Appearance.TopNewRow.Options.UseBackColor = true;
             this.gvTarimas.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colid,
+            this.colid_tarima_s,
             this.colid_materia_prima,
             this.colmp,
-            this.colsolicitada,
-            this.colprogramada,
-            this.colentregada,
-            this.colpendiente,
-            this.colenable,
-            this.colid_unidad_medida,
-            this.colunidad,
-            this.colcode_sap,
-            this.gridColumn1,
-            this.colasignado});
+            this.collote_mp,
+            this.colubicacion,
+            this.colcantidad,
+            this.colbarcode,
+            this.colproc});
             this.gvTarimas.GridControl = this.grDetalleLote;
             this.gvTarimas.Name = "gvTarimas";
             this.gvTarimas.OptionsCustomization.AllowFilter = false;
@@ -167,107 +162,13 @@
             this.gvTarimas.OptionsView.ShowGroupPanel = false;
             this.gvTarimas.RowHeight = 20;
             // 
-            // colid
-            // 
-            this.colid.FieldName = "id";
-            this.colid.Name = "colid";
-            // 
-            // colid_materia_prima
-            // 
-            this.colid_materia_prima.FieldName = "id_materia_prima";
-            this.colid_materia_prima.Name = "colid_materia_prima";
-            // 
-            // colmp
-            // 
-            this.colmp.Caption = "MP";
-            this.colmp.FieldName = "mp";
-            this.colmp.Name = "colmp";
-            this.colmp.OptionsColumn.AllowEdit = false;
-            this.colmp.Visible = true;
-            this.colmp.VisibleIndex = 0;
-            // 
-            // colsolicitada
-            // 
-            this.colsolicitada.Caption = "Solicitada";
-            this.colsolicitada.FieldName = "solicitada";
-            this.colsolicitada.Name = "colsolicitada";
-            this.colsolicitada.OptionsColumn.AllowEdit = false;
-            this.colsolicitada.Visible = true;
-            this.colsolicitada.VisibleIndex = 1;
-            // 
-            // colprogramada
-            // 
-            this.colprogramada.FieldName = "programada";
-            this.colprogramada.Name = "colprogramada";
-            // 
-            // colentregada
-            // 
-            this.colentregada.Caption = "Entregada";
-            this.colentregada.FieldName = "entregada";
-            this.colentregada.Name = "colentregada";
-            this.colentregada.OptionsColumn.AllowEdit = false;
-            this.colentregada.Visible = true;
-            this.colentregada.VisibleIndex = 3;
-            // 
-            // colpendiente
-            // 
-            this.colpendiente.Caption = "Pendiente";
-            this.colpendiente.FieldName = "pendiente";
-            this.colpendiente.Name = "colpendiente";
-            this.colpendiente.OptionsColumn.AllowEdit = false;
-            this.colpendiente.Visible = true;
-            this.colpendiente.VisibleIndex = 4;
-            // 
-            // colenable
-            // 
-            this.colenable.FieldName = "enable";
-            this.colenable.Name = "colenable";
-            // 
-            // colid_unidad_medida
-            // 
-            this.colid_unidad_medida.FieldName = "id_unidad_medida";
-            this.colid_unidad_medida.Name = "colid_unidad_medida";
-            // 
-            // colunidad
-            // 
-            this.colunidad.Caption = "Unidad Medida";
-            this.colunidad.FieldName = "unidad";
-            this.colunidad.Name = "colunidad";
-            this.colunidad.OptionsColumn.AllowEdit = false;
-            this.colunidad.Visible = true;
-            this.colunidad.VisibleIndex = 5;
-            // 
-            // colcode_sap
-            // 
-            this.colcode_sap.Caption = "Cod. MP SAP";
-            this.colcode_sap.FieldName = "code_sap";
-            this.colcode_sap.Name = "colcode_sap";
-            this.colcode_sap.OptionsColumn.AllowEdit = false;
-            this.colcode_sap.Visible = true;
-            this.colcode_sap.VisibleIndex = 6;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Editar";
-            this.gridColumn1.ColumnEdit = this.btnEdit;
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 7;
-            // 
-            // colasignado
-            // 
-            this.colasignado.Caption = "Cant. Asignada";
-            this.colasignado.FieldName = "asignado";
-            this.colasignado.Name = "colasignado";
-            this.colasignado.Visible = true;
-            this.colasignado.VisibleIndex = 2;
-            // 
             // grDetalleLote
             // 
             this.grDetalleLote.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grDetalleLote.DataMember = "requisiciones_d";
+            this.grDetalleLote.DataMember = "entregacomp";
+            this.grDetalleLote.DataSource = this.dsTransaccionesMP1;
             this.grDetalleLote.Location = new System.Drawing.Point(4, 89);
             this.grDetalleLote.MainView = this.gvTarimas;
             this.grDetalleLote.Name = "grDetalleLote";
@@ -277,6 +178,72 @@
             this.grDetalleLote.TabIndex = 35;
             this.grDetalleLote.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTarimas});
+            // 
+            // dsProduccion1
+            // 
+            this.dsProduccion1.DataSetName = "dsProduccion";
+            this.dsProduccion1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dsTransaccionesMP1
+            // 
+            this.dsTransaccionesMP1.DataSetName = "dsTransaccionesMP";
+            this.dsTransaccionesMP1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // colid_tarima_s
+            // 
+            this.colid_tarima_s.FieldName = "id_tarima_s";
+            this.colid_tarima_s.Name = "colid_tarima_s";
+            this.colid_tarima_s.Visible = true;
+            this.colid_tarima_s.VisibleIndex = 0;
+            // 
+            // colid_materia_prima
+            // 
+            this.colid_materia_prima.FieldName = "id_materia_prima";
+            this.colid_materia_prima.Name = "colid_materia_prima";
+            this.colid_materia_prima.Visible = true;
+            this.colid_materia_prima.VisibleIndex = 1;
+            // 
+            // colmp
+            // 
+            this.colmp.FieldName = "mp";
+            this.colmp.Name = "colmp";
+            this.colmp.Visible = true;
+            this.colmp.VisibleIndex = 2;
+            // 
+            // collote_mp
+            // 
+            this.collote_mp.FieldName = "lote_mp";
+            this.collote_mp.Name = "collote_mp";
+            this.collote_mp.Visible = true;
+            this.collote_mp.VisibleIndex = 3;
+            // 
+            // colubicacion
+            // 
+            this.colubicacion.FieldName = "ubicacion";
+            this.colubicacion.Name = "colubicacion";
+            this.colubicacion.Visible = true;
+            this.colubicacion.VisibleIndex = 4;
+            // 
+            // colcantidad
+            // 
+            this.colcantidad.FieldName = "cantidad";
+            this.colcantidad.Name = "colcantidad";
+            this.colcantidad.Visible = true;
+            this.colcantidad.VisibleIndex = 5;
+            // 
+            // colbarcode
+            // 
+            this.colbarcode.FieldName = "barcode";
+            this.colbarcode.Name = "colbarcode";
+            this.colbarcode.Visible = true;
+            this.colbarcode.VisibleIndex = 6;
+            // 
+            // colproc
+            // 
+            this.colproc.FieldName = "proc";
+            this.colproc.Name = "colproc";
+            this.colproc.Visible = true;
+            this.colproc.VisibleIndex = 7;
             // 
             // frmEntregaDeComponentesReq
             // 
@@ -296,6 +263,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTarimas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grDetalleLote)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsProduccion1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -309,19 +278,16 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnEdit;
         private DevExpress.XtraGrid.Views.Grid.GridView gvTarimas;
-        private DevExpress.XtraGrid.Columns.GridColumn colid;
+        private DevExpress.XtraGrid.GridControl grDetalleLote;
+        private dsTransaccionesMP dsTransaccionesMP1;
+        private Produccion.dsProduccion dsProduccion1;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_tarima_s;
         private DevExpress.XtraGrid.Columns.GridColumn colid_materia_prima;
         private DevExpress.XtraGrid.Columns.GridColumn colmp;
-        private DevExpress.XtraGrid.Columns.GridColumn colsolicitada;
-        private DevExpress.XtraGrid.Columns.GridColumn colprogramada;
-        private DevExpress.XtraGrid.Columns.GridColumn colentregada;
-        private DevExpress.XtraGrid.Columns.GridColumn colpendiente;
-        private DevExpress.XtraGrid.Columns.GridColumn colenable;
-        private DevExpress.XtraGrid.Columns.GridColumn colid_unidad_medida;
-        private DevExpress.XtraGrid.Columns.GridColumn colunidad;
-        private DevExpress.XtraGrid.Columns.GridColumn colcode_sap;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn colasignado;
-        private DevExpress.XtraGrid.GridControl grDetalleLote;
+        private DevExpress.XtraGrid.Columns.GridColumn collote_mp;
+        private DevExpress.XtraGrid.Columns.GridColumn colubicacion;
+        private DevExpress.XtraGrid.Columns.GridColumn colcantidad;
+        private DevExpress.XtraGrid.Columns.GridColumn colbarcode;
+        private DevExpress.XtraGrid.Columns.GridColumn colproc;
     }
 }
