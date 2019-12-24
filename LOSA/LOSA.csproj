@@ -739,6 +739,7 @@
     <Content Include="Resources\key.png" />
     <None Include="Resources\Materia_Prima.png" />
     <Content Include="Resources\medal.png" />
+    <None Include="Resources\pallet pallet solo.png" />
     <Content Include="Resources\plus.png" />
     <None Include="Resources\produccion.png" />
     <None Include="Resources\Producto_terminado.png" />

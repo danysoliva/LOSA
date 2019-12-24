@@ -48,14 +48,7 @@ namespace LOSA.Produccion
 
         private void btnTarimas_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            var gridView = (GridView)gcTolva.FocusedView;
-            var row = (dsProduccion.home_sacos_ptRow)gridView.GetFocusedDataRow();
-
-            frmTarimasHome frm = new frmTarimasHome(UsuarioLogeado, row.fp_lot_number, row.finish_product);
-            frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
-
-
+            
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
@@ -66,6 +59,16 @@ namespace LOSA.Produccion
         private void btnAtras_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void repositoryItemButtonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)gridControl1.FocusedView;
+            var row = (dsProduccion.home_sacos_ptRow)gridView.GetFocusedDataRow();
+
+            frmTarimasHome frm = new frmTarimasHome(UsuarioLogeado, row.fp_lot_number, row.finish_product);
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
         }
     }
 }
