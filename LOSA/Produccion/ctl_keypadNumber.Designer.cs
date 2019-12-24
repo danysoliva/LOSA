@@ -192,7 +192,7 @@
             this.Controls.Add(this.btnBackSpace);
             this.Controls.Add(this.btnClear);
             this.Name = "ctl_keypadNumber";
-            this.Size = new System.Drawing.Size(296, 221);
+            this.Size = new System.Drawing.Size(292, 221);
             this.ResumeLayout(false);
 
         }

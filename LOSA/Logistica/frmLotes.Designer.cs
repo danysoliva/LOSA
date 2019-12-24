@@ -33,7 +33,7 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.gcLotes = new DevExpress.XtraGrid.GridControl();
             this.lotesXProveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsLogistica = new LOSA.Logistica.dsLogistica();
+            this.dsLogistica = new LOSA.Logistica.dsLogistica2();
             this.gvLotes = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collote_materia_prima = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -261,7 +261,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colidMateriaPrima;
         private DevExpress.XtraEditors.SimpleButton cmdHome;
         private System.Windows.Forms.BindingSource lotesXProveedorBindingSource;
-        private dsLogistica dsLogistica;
+        private dsLogistica2 dsLogistica;
         private DevExpress.XtraEditors.TextEdit teLote;
     }
 }

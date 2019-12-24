@@ -184,12 +184,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsLogistica.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Logistica\frmEventosTarima.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Logistica\frmEventosTarima.Designer.cs">
-      <DependentUpon>frmEventosTarima.cs</DependentUpon>
-    </Compile>
     <Compile Include="Logistica\frmLotes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -510,9 +504,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmOpciones.resx">
       <DependentUpon>frmOpciones.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Logistica\frmEventosTarima.resx">
-      <DependentUpon>frmEventosTarima.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logistica\frmLotes.resx">
       <DependentUpon>frmLotes.cs</DependentUpon>

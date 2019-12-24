@@ -44,6 +44,7 @@
             this.txtNombreMP = new DevExpress.XtraEditors.ButtonEdit();
             this.txtCantidad = new DevExpress.XtraEditors.TextEdit();
             this.ctl_keypadNumber1 = new LOSA.Produccion.ctl_keypadNumber();
+            this.ctl_keypadNumber2 = new LOSA.Produccion.ctl_keypadNumber();
             ((System.ComponentModel.ISupportInitialize)(this.beTarima.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.beTolva.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcTarima)).BeginInit();
@@ -381,11 +382,21 @@
             this.ctl_keypadNumber1.TabIndex = 87;
             this.ctl_keypadNumber1.OnItemSeleccionado += new System.EventHandler(this.ctl_keypadNumber1_OnItemSeleccionado_1);
             // 
+            // ctl_keypadNumber2
+            // 
+            this.ctl_keypadNumber2.KeySeleccionado = null;
+            this.ctl_keypadNumber2.Location = new System.Drawing.Point(101, 481);
+            this.ctl_keypadNumber2.Name = "ctl_keypadNumber2";
+            this.ctl_keypadNumber2.Size = new System.Drawing.Size(297, 221);
+            this.ctl_keypadNumber2.TabIndex = 87;
+            this.ctl_keypadNumber2.OnItemSeleccionado += new System.EventHandler(this.ctl_keypadNumber2_OnItemSeleccionado_1);
+            // 
             // frmAlimentacionManual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(622, 521);
+            this.Controls.Add(this.ctl_keypadNumber2);
             this.Controls.Add(this.txtNombreMP);
             this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.btnGuardar);
@@ -429,6 +440,7 @@
 
         private DevExpress.XtraEditors.TextEdit txtCantidad;
         private ctl_keypadNumber ctl_keypadNumber1;
-//>>>>>>> f8578e409cd760559c021792609d9acada59819b
+        private ctl_keypadNumber ctl_keypadNumber2;
+        //>>>>>>> f8578e409cd760559c021792609d9acada59819b
     }
 }

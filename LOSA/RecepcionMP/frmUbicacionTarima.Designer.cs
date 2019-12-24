@@ -166,16 +166,12 @@
             this.colaltura.FieldName = "altura";
             this.colaltura.Name = "colaltura";
             this.colaltura.OptionsColumn.AllowEdit = false;
-            this.colaltura.Visible = true;
-            this.colaltura.VisibleIndex = 2;
             // 
             // colprofundidad
             // 
             this.colprofundidad.FieldName = "profundidad";
             this.colprofundidad.Name = "colprofundidad";
             this.colprofundidad.OptionsColumn.AllowEdit = false;
-            this.colprofundidad.Visible = true;
-            this.colprofundidad.VisibleIndex = 3;
             // 
             // colenable
             // 
@@ -190,7 +186,7 @@
             this.colSeleccionar.MaxWidth = 50;
             this.colSeleccionar.Name = "colSeleccionar";
             this.colSeleccionar.Visible = true;
-            this.colSeleccionar.VisibleIndex = 4;
+            this.colSeleccionar.VisibleIndex = 2;
             this.colSeleccionar.Width = 50;
             // 
             // btnSeleccionar

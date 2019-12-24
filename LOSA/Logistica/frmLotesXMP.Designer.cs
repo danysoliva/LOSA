@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLotesXMP));
             this.gcLotes = new DevExpress.XtraGrid.GridControl();
             this.lotesXProveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsLogistica = new LOSA.Logistica.dsLogistica();
+            this.dsLogistica = new LOSA.Logistica.dsLogistica2();
             this.gvLotes = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collote_materia_prima = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -333,7 +333,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraEditors.SimpleButton cmdHome;
         private RecepcionMP.dsRecepcionMPx dsRecepcionMPx;
-        private dsLogistica dsLogistica;
+        private dsLogistica2 dsLogistica;
         private System.Windows.Forms.BindingSource lotesXProveedorBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn colidMateriaPrima;
         private System.Windows.Forms.BindingSource materiaprimaBindingSource;

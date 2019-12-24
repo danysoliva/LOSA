@@ -16,29 +16,30 @@ namespace LOSA.Logistica
     public partial class frmTrazabilidadLote : Form
     {
         DataOperations dp = new DataOperations();
+        string NumeroLote;
+        DateTime fechaCreacion;
         public frmTrazabilidadLote()
         {
             InitializeComponent();
-            cargarDatosTarimas();
+            //NumeroLote = pNumeroLote;
+            cargarEventosLote();
+            
         }
 
-        private void cmdHome_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void cargarDatosTarimas()
+        private void cargarEventosLote()
         {
             try
             {
 
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-                string SQL = @"exec sp_get_lotes_by_MP";
+                string SQL = @"exec sp_trazabilidad_lotes @numero_lote";
 
-                 dsLogistica1.Lotes.Clear();
+                dsLogistica2.EventosLote.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(SQL, cn);
 
-                adat.Fill(dsLogistica1.Lotes);
+                adat.SelectCommand.Parameters.AddWithValue("@numero_lote", teLote.Text);
+
+                adat.Fill(dsLogistica2.EventosLote);
 
             }
             catch (Exception ec)
@@ -47,39 +48,25 @@ namespace LOSA.Logistica
             }
         }
 
-        private void frmTrazabilidadLote_Load(object sender, EventArgs e)
+
+        private void btnAtras_Click(object sender, EventArgs e)
         {
-            gvLotes.Columns[1].GroupIndex = 1;
+            this.Close();
         }
 
         private void teLote_EditValueChanged(object sender, EventArgs e)
         {
-            gvLotes.ActiveFilterString = "[lote_materia_prima] LIKE '%" + teLote.Text + "%'";
+            cargarEventosLote();
+        }
+
+        private void frmTrazabilidadLote_Load(object sender, EventArgs e)
+        {
+            Teclado.cerrarTeclado();
         }
 
         private void teLote_Enter(object sender, EventArgs e)
         {
             Teclado.abrirTeclado();
-        }
-
-        private void btnEvento_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
-        {
-            try
-            {
-                frmEventosTarima frm = new frmEventosTarima(Convert.ToInt32(gvLotes.GetFocusedRowCellValue(gvLotes.Columns[0]).ToString()
-                                                            ), Convert.ToDateTime(gvLotes.GetFocusedRowCellValue(gvLotes.Columns["fecha_ingreso"]).ToString()));
-                frm.Show();
-            }
-            catch(Exception error)
-            {
-                CajaDialogo.Error(error.Message);
-            }
-
-            }
-
-        private void frmTrazabilidadLote_Click(object sender, EventArgs e)
-        {
-            Teclado.cerrarTeclado();
         }
     }
 }

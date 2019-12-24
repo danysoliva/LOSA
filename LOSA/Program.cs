@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LOSA.Produccion;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace LOSA
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmMain());
-            //Application.Run(new RecepcionMP.frmAjustesKardex());
+            //Application.Run(new frmAlimentacionManual());
         }
     }
 }

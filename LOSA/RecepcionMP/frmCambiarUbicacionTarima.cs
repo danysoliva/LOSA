@@ -39,8 +39,8 @@ namespace LOSA.RecepcionMP
 
             dt.Rows.Add("PASILLO", pPasillo);
             dt.Rows.Add("RACK", pRack);
-            dt.Rows.Add("ALTURA", pAltura);
-            dt.Rows.Add("PROFUNDIDAD", pProfundidad);
+            //dt.Rows.Add("ALTURA", pAltura);
+            //dt.Rows.Add("PROFUNDIDAD", pProfundidad);
 
             return dt;
         }
@@ -85,8 +85,8 @@ namespace LOSA.RecepcionMP
                 idUbicacionNueva = infoUbicaciones.Id;
                 dt.Rows.Add("PASILLO", infoUbicaciones.Pasillo);
                 dt.Rows.Add("RACK", infoUbicaciones.Rack);
-                dt.Rows.Add("ALTURA", infoUbicaciones.Altura);
-                dt.Rows.Add("PROFUNDIDAD", infoUbicaciones.Profundidad);
+                //dt.Rows.Add("ALTURA", infoUbicaciones.Altura);
+                //dt.Rows.Add("PROFUNDIDAD", infoUbicaciones.Profundidad);
             }
 
             return dt;
