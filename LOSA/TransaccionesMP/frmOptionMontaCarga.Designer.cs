@@ -37,9 +37,13 @@
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdEntradaMP = new DevExpress.XtraEditors.SimpleButton();
             this.TabProductoTerminado = new DevExpress.XtraTab.XtraTabPage();
+            this.cmdOrdenesCargaPT = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdCambiarUbicacionPT = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdIngresoPT = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMateriaPrima.SuspendLayout();
+            this.TabProductoTerminado.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -145,11 +149,56 @@
             // 
             // TabProductoTerminado
             // 
+            this.TabProductoTerminado.Controls.Add(this.cmdOrdenesCargaPT);
+            this.TabProductoTerminado.Controls.Add(this.cmdCambiarUbicacionPT);
+            this.TabProductoTerminado.Controls.Add(this.cmdIngresoPT);
             this.TabProductoTerminado.Image = global::LOSA.Properties.Resources.Container_icon32px;
             this.TabProductoTerminado.Name = "TabProductoTerminado";
             this.TabProductoTerminado.PageVisible = false;
             this.TabProductoTerminado.Size = new System.Drawing.Size(629, 422);
             this.TabProductoTerminado.Text = "Producto Terminado";
+            // 
+            // cmdOrdenesCargaPT
+            // 
+            this.cmdOrdenesCargaPT.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdOrdenesCargaPT.Appearance.Options.UseFont = true;
+            this.cmdOrdenesCargaPT.Appearance.Options.UseTextOptions = true;
+            this.cmdOrdenesCargaPT.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.cmdOrdenesCargaPT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdOrdenesCargaPT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdOrdenesCargaPT.ImageOptions.Image")));
+            this.cmdOrdenesCargaPT.Location = new System.Drawing.Point(7, 190);
+            this.cmdOrdenesCargaPT.Name = "cmdOrdenesCargaPT";
+            this.cmdOrdenesCargaPT.Size = new System.Drawing.Size(199, 71);
+            this.cmdOrdenesCargaPT.TabIndex = 12;
+            this.cmdOrdenesCargaPT.Text = "Ordenes de Carga";
+            // 
+            // cmdCambiarUbicacionPT
+            // 
+            this.cmdCambiarUbicacionPT.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdCambiarUbicacionPT.Appearance.Options.UseFont = true;
+            this.cmdCambiarUbicacionPT.Appearance.Options.UseTextOptions = true;
+            this.cmdCambiarUbicacionPT.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.cmdCambiarUbicacionPT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdCambiarUbicacionPT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdCambiarUbicacionPT.ImageOptions.Image")));
+            this.cmdCambiarUbicacionPT.Location = new System.Drawing.Point(7, 103);
+            this.cmdCambiarUbicacionPT.Name = "cmdCambiarUbicacionPT";
+            this.cmdCambiarUbicacionPT.Size = new System.Drawing.Size(199, 71);
+            this.cmdCambiarUbicacionPT.TabIndex = 11;
+            this.cmdCambiarUbicacionPT.Text = "Cambiar Ubicacion";
+            this.cmdCambiarUbicacionPT.Click += new System.EventHandler(this.cmdCambiarUbicacionPT_Click);
+            // 
+            // cmdIngresoPT
+            // 
+            this.cmdIngresoPT.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdIngresoPT.Appearance.Options.UseFont = true;
+            this.cmdIngresoPT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdIngresoPT.ImageOptions.Image = global::LOSA.Properties.Resources.pallet32px1;
+            this.cmdIngresoPT.Location = new System.Drawing.Point(7, 16);
+            this.cmdIngresoPT.Name = "cmdIngresoPT";
+            this.cmdIngresoPT.Size = new System.Drawing.Size(199, 71);
+            this.cmdIngresoPT.TabIndex = 10;
+            this.cmdIngresoPT.Text = "Ingreso PT";
+            this.cmdIngresoPT.Click += new System.EventHandler(this.cmdIngresoPT_Click);
             // 
             // frmOptionMontaCarga
             // 
@@ -165,6 +214,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).EndInit();
             this.tabOpciones.ResumeLayout(false);
             this.TabMateriaPrima.ResumeLayout(false);
+            this.TabProductoTerminado.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -179,5 +229,8 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton cmdEntradaMP;
         private DevExpress.XtraTab.XtraTabPage TabProductoTerminado;
+        private DevExpress.XtraEditors.SimpleButton cmdOrdenesCargaPT;
+        private DevExpress.XtraEditors.SimpleButton cmdCambiarUbicacionPT;
+        private DevExpress.XtraEditors.SimpleButton cmdIngresoPT;
     }
 }

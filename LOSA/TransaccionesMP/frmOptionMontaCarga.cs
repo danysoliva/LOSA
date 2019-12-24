@@ -66,5 +66,19 @@ namespace LOSA.TransaccionesMP
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
+
+        private void cmdIngresoPT_Click(object sender, EventArgs e)
+        {
+            frmEntradaPT frm = new frmEntradaPT(this.UsuarioLogeado);
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+        private void cmdCambiarUbicacionPT_Click(object sender, EventArgs e)
+        {
+            frmCambiarUbicacionTarima frm = new frmCambiarUbicacionTarima();
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
     }
 }
