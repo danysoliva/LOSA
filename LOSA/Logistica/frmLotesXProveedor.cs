@@ -27,7 +27,7 @@ namespace LOSA.Logistica
             {
 
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-                string SQL = @"exec sp_get_providers";
+                string SQL = @"exec sp_get_providersv2";
               
 
                 dsLogistica.Proveedores.Clear();
@@ -50,7 +50,7 @@ namespace LOSA.Logistica
         private void GlueProveedor_EditValueChanged(object sender, EventArgs e)
         {
             cargarMateriaPrimaXProveedor(gvProveedores.GetFocusedRowCellValue(gvProveedores.Columns[0]).ToString());
-            cargarDatosTarimas(gvProveedores.GetFocusedRowCellValue(gvProveedores.Columns[0]).ToString());
+           // cargarDatosTarimas(gvProveedores.GetFocusedRowCellValue(gvProveedores.Columns[0]).ToString());
             
         }
 
@@ -60,15 +60,17 @@ namespace LOSA.Logistica
             {
 
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-                string SQL = @"exec sp_get_tarimas_from_idProveedor @id_proveedor";
+                cn.Open();
+                //string SQL = @"exec sp_get_tarimas_from_idProveedor @id_proveedor";
+                SqlCommand cmd = new SqlCommand("sp_get_tarimas_from_idProveedor", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_proveedor", pIdProveedor);
+                cmd.Parameters.AddWithValue("@id_mp", cbMateriaPrima.EditValue.ToString());
 
                 dsLogistica.LotesXProveedor.Clear();
-                SqlDataAdapter adat = new SqlDataAdapter(SQL, cn);
-
-                adat.SelectCommand.Parameters.AddWithValue("@id_proveedor", pIdProveedor);
-
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 adat.Fill(dsLogistica.LotesXProveedor);
-
+                cn.Close();
             }
             catch (Exception ec)
             {
@@ -85,6 +87,7 @@ namespace LOSA.Logistica
                 string SQL = @"exec sp_get_materia_prima_por_proveedor @id_proveedor";
 
                 dsLogistica.Materia_prima.Clear();
+                dsLogistica.LotesXProveedor.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(SQL, cn);
 
                 adat.SelectCommand.Parameters.AddWithValue("@id_proveedor", pIdProveedor);
@@ -101,13 +104,14 @@ namespace LOSA.Logistica
 
         private void FrmLotesXProveedor_Load(object sender, EventArgs e)
         {
-          gvLotes.Columns[1].GroupIndex = 1;
+            gvLotes.Columns[1].GroupIndex = 1;
             //gvLotes.Columns["materia_prima"].GroupIndex = 2;
         }
 
         private void CbMateriaPrima_EditValueChanged(object sender, EventArgs e)
         {
-            gvLotes.ActiveFilterString = "[itemcode] = '" + cbMateriaPrima.EditValue + "'";
+            //gvLotes.ActiveFilterString = "[itemcode] = '" + cbMateriaPrima.EditValue + "'";
+            cargarDatosTarimas(glueProveedor.EditValue.ToString());
         }
     }
 }

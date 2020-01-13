@@ -54,7 +54,7 @@
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnAgregar = new DevExpress.XtraEditors.SimpleButton();
-            this.lOSA_ubicacion_tarimaTableAdapter = new LOSA.Mantenimientos.dsMantenimientoTableAdapters.LOSA_ubicacion_tarimaTableAdapter();
+            //this.lOSA_ubicacion_tarimaTableAdapter = new LOSA.Mantenimientos.dsMantenimientoTableAdapters.LOSA_ubicacion_tarimaTableAdapter();
             this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
             this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.gcBodegas)).BeginInit();

@@ -76,6 +76,7 @@
             this.gcLotes.TabIndex = 1;
             this.gcLotes.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvLotes});
+            this.gcLotes.Click += new System.EventHandler(this.gcLotes_Click);
             // 
             // lotesXProveedorBindingSource
             // 
@@ -126,7 +127,6 @@
             this.gvLotes.Name = "gvLotes";
             this.gvLotes.OptionsView.ShowFooter = true;
             this.gvLotes.OptionsView.ShowGroupPanel = false;
-            //this.gvLotes.Click += new System.EventHandler(this.gvLotes_Click);
             // 
             // colid
             // 

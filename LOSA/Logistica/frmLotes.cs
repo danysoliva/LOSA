@@ -72,6 +72,9 @@ namespace LOSA.Logistica
             Teclado.cerrarTeclado();
         }
 
-      
+        private void gcLotes_Click(object sender, EventArgs e)
+        {
+            Teclado.cerrarTeclado();
+        }
     }
 }

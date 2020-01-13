@@ -92,7 +92,9 @@ namespace LOSA.Clases
                     //Cantidad = 1;
                     _nombreTarima = dr.GetString(2);
                     TipoTarimaDescripcion = dr.GetString(3);
-                    IdProveedor = dr.GetString(4);
+                    //IdProveedor = dr.GetString(4);
+                    Proveedor = dr.GetString(4);
+
                     LoteMP = dr.GetString(5);
                     Cantidad = dr.GetDecimal(7);
                     Id_materiaprima = dr.GetInt32(8);
@@ -108,6 +110,7 @@ namespace LOSA.Clases
                     Peso = dr.GetDecimal(18);
                     IdProductoterminado = dr.GetInt32(19);
                     LotePT = dr.GetInt32(20);
+                    
                     Recuperado = true;
                 }
                 dr.Close();

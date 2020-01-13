@@ -79,7 +79,7 @@
             this.gcTarima.Name = "gcTarima";
             this.gcTarima.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnSeleccionar});
-            this.gcTarima.Size = new System.Drawing.Size(606, 381);
+            this.gcTarima.Size = new System.Drawing.Size(606, 342);
             this.gcTarima.TabIndex = 6;
             this.gcTarima.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTarimas});
@@ -153,6 +153,7 @@
             this.colFechaIngreso.OptionsColumn.AllowEdit = false;
             this.colFechaIngreso.Visible = true;
             this.colFechaIngreso.VisibleIndex = 0;
+            this.colFechaIngreso.Width = 68;
             // 
             // colnombreProveedor
             // 
@@ -162,7 +163,7 @@
             this.colnombreProveedor.OptionsColumn.AllowEdit = false;
             this.colnombreProveedor.Visible = true;
             this.colnombreProveedor.VisibleIndex = 1;
-            this.colnombreProveedor.Width = 93;
+            this.colnombreProveedor.Width = 84;
             // 
             // colnumero_transaccion
             // 
@@ -172,7 +173,7 @@
             this.colnumero_transaccion.OptionsColumn.AllowEdit = false;
             this.colnumero_transaccion.Visible = true;
             this.colnumero_transaccion.VisibleIndex = 2;
-            this.colnumero_transaccion.Width = 93;
+            this.colnumero_transaccion.Width = 84;
             // 
             // collote_materia_prima
             // 
@@ -182,7 +183,7 @@
             this.collote_materia_prima.OptionsColumn.AllowEdit = false;
             this.collote_materia_prima.Visible = true;
             this.collote_materia_prima.VisibleIndex = 3;
-            this.collote_materia_prima.Width = 93;
+            this.collote_materia_prima.Width = 84;
             // 
             // coltipo_tarima
             // 
@@ -192,7 +193,7 @@
             this.coltipo_tarima.OptionsColumn.AllowEdit = false;
             this.coltipo_tarima.Visible = true;
             this.coltipo_tarima.VisibleIndex = 5;
-            this.coltipo_tarima.Width = 93;
+            this.coltipo_tarima.Width = 84;
             // 
             // colid_boleta
             // 
@@ -202,7 +203,7 @@
             this.colid_boleta.OptionsColumn.AllowEdit = false;
             this.colid_boleta.Visible = true;
             this.colid_boleta.VisibleIndex = 6;
-            this.colid_boleta.Width = 103;
+            this.colid_boleta.Width = 78;
             // 
             // colPresentacion
             // 
@@ -211,6 +212,7 @@
             this.colPresentacion.OptionsColumn.AllowEdit = false;
             this.colPresentacion.Visible = true;
             this.colPresentacion.VisibleIndex = 4;
+            this.colPresentacion.Width = 68;
             // 
             // colSeleccionar
             // 
@@ -221,7 +223,7 @@
             this.colSeleccionar.Name = "colSeleccionar";
             this.colSeleccionar.Visible = true;
             this.colSeleccionar.VisibleIndex = 7;
-            this.colSeleccionar.Width = 20;
+            this.colSeleccionar.Width = 38;
             // 
             // btnSeleccionar
             // 

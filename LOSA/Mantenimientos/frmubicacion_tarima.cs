@@ -27,7 +27,7 @@ namespace LOSA.Mantenimientos
         {
             try
             {
-                this.lOSA_ubicacion_tarimaTableAdapter.FillBy(this.dsMantenimiento.LOSA_ubicacion_tarima);
+                //this.lOSA_ubicacion_tarimaTableAdapter.FillBy(this.dsMantenimiento.LOSA_ubicacion_tarima);
             }
             catch (System.Exception ex)
             {

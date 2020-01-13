@@ -108,7 +108,7 @@ namespace LOSA.Produccion
         {
             bool Guardado = false;
 
-            if (Convert.ToInt32(txtCantidad.Text) <= 0)
+            if (Convert.ToDecimal(txtCantidad.Text) <= 0)
             {
                 CajaDialogo.Error("Debe ingresar una cantidad");
                 txtCantidad.Focus();

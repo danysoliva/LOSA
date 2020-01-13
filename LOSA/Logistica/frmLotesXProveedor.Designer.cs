@@ -47,6 +47,7 @@
             this.colcantidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfecha_vencimiento = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMateriaPrima = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCodItem = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dsRecepcionMPx = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.cbMateriaPrima = new DevExpress.XtraEditors.GridLookUpEdit();
             this.materiaprimaBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -54,7 +55,6 @@
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.colCodItem = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.glueProveedor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsLogistica)).BeginInit();
@@ -286,6 +286,12 @@
             this.colMateriaPrima.FieldName = "materia_prima";
             this.colMateriaPrima.Name = "colMateriaPrima";
             // 
+            // colCodItem
+            // 
+            this.colCodItem.Caption = "Item Code";
+            this.colCodItem.FieldName = "itemcode";
+            this.colCodItem.Name = "colCodItem";
+            // 
             // dsRecepcionMPx
             // 
             this.dsRecepcionMPx.DataSetName = "dsRecepcionMPx";
@@ -368,20 +374,14 @@
             this.labelControl2.TabIndex = 89;
             this.labelControl2.Text = "Materia Prima:";
             // 
-            // colCodItem
-            // 
-            this.colCodItem.Caption = "Item Code";
-            this.colCodItem.FieldName = "itemcode";
-            this.colCodItem.Name = "colCodItem";
-            // 
             // frmLotesXProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(606, 482);
+            this.Controls.Add(this.gcLotes);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.cbMateriaPrima);
-            this.Controls.Add(this.gcLotes);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.cmdHome);
             this.Controls.Add(this.glueProveedor);

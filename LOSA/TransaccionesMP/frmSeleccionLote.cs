@@ -149,6 +149,7 @@ namespace LOSA.TransaccionesMP
                         cmd.Parameters.AddWithValue("@id_detalle_req", IdRequisicionDetalle);
                         cmd.Parameters.AddWithValue("@cantidad", row.cants);
                         cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
+                        cmd.Parameters.AddWithValue("@id_tarima", row.id);
                         cmd.ExecuteNonQuery();
                     }
                 }
