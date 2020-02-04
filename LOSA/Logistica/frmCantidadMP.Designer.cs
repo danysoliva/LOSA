@@ -31,17 +31,19 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCantidadMP));
             this.gcMateriaPrima = new DevExpress.XtraGrid.GridControl();
+            this.cantidadmateriaprimaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsLogistica = new LOSA.Logistica.dsLogistica2();
             this.gvMateriaPrima = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colitemcode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colitemdescrip = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltotal = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltipo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
-            this.dsLogistica = new LOSA.Logistica.dsLogistica2();
-            this.cantidadmateriaprimaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.colfila = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gcMateriaPrima)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvMateriaPrima)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsLogistica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cantidadmateriaprimaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsLogistica)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvMateriaPrima)).BeginInit();
             this.SuspendLayout();
             // 
             // gcMateriaPrima
@@ -57,6 +59,16 @@
             this.gcMateriaPrima.TabIndex = 0;
             this.gcMateriaPrima.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvMateriaPrima});
+            // 
+            // cantidadmateriaprimaBindingSource
+            // 
+            this.cantidadmateriaprimaBindingSource.DataMember = "cantidad_materia_prima";
+            this.cantidadmateriaprimaBindingSource.DataSource = this.dsLogistica;
+            // 
+            // dsLogistica
+            // 
+            this.dsLogistica.DataSetName = "dsLogistica2";
+            this.dsLogistica.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gvMateriaPrima
             // 
@@ -80,9 +92,13 @@
             this.gvMateriaPrima.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colitemcode,
             this.colitemdescrip,
-            this.coltotal});
+            this.coltotal,
+            this.colfila,
+            this.coltipo});
             this.gvMateriaPrima.GridControl = this.gcMateriaPrima;
             this.gvMateriaPrima.Name = "gvMateriaPrima";
+            this.gvMateriaPrima.OptionsView.ShowAutoFilterRow = true;
+            this.gvMateriaPrima.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
             this.gvMateriaPrima.OptionsView.ShowGroupPanel = false;
             // 
             // colitemcode
@@ -97,20 +113,30 @@
             this.colitemdescrip.Name = "colitemdescrip";
             this.colitemdescrip.OptionsColumn.AllowEdit = false;
             this.colitemdescrip.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-            this.colitemdescrip.OptionsFilter.AllowAutoFilter = false;
             this.colitemdescrip.Visible = true;
-            this.colitemdescrip.VisibleIndex = 0;
+            this.colitemdescrip.VisibleIndex = 1;
+            this.colitemdescrip.Width = 192;
             // 
             // coltotal
             // 
             this.coltotal.Caption = "Total";
+            this.coltotal.DisplayFormat.FormatString = "###,##0.00";
+            this.coltotal.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.coltotal.FieldName = "total";
             this.coltotal.Name = "coltotal";
             this.coltotal.OptionsColumn.AllowEdit = false;
             this.coltotal.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-            this.coltotal.OptionsFilter.AllowAutoFilter = false;
             this.coltotal.Visible = true;
-            this.coltotal.VisibleIndex = 1;
+            this.coltotal.VisibleIndex = 3;
+            this.coltotal.Width = 195;
+            // 
+            // coltipo
+            // 
+            this.coltipo.Caption = "Tipo";
+            this.coltipo.FieldName = "tipo";
+            this.coltipo.Name = "coltipo";
+            this.coltipo.OptionsColumn.AllowEdit = false;
+            this.coltipo.Width = 192;
             // 
             // cmdHome
             // 
@@ -125,15 +151,15 @@
             this.cmdHome.Text = "Home";
             this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
             // 
-            // dsLogistica
+            // colfila
             // 
-            this.dsLogistica.DataSetName = "dsLogistica2";
-            this.dsLogistica.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cantidadmateriaprimaBindingSource
-            // 
-            this.cantidadmateriaprimaBindingSource.DataMember = "cantidad_materia_prima";
-            this.cantidadmateriaprimaBindingSource.DataSource = this.dsLogistica;
+            this.colfila.Caption = "#";
+            this.colfila.FieldName = "fila";
+            this.colfila.Name = "colfila";
+            this.colfila.OptionsColumn.AllowEdit = false;
+            this.colfila.Visible = true;
+            this.colfila.VisibleIndex = 0;
+            this.colfila.Width = 42;
             // 
             // frmCantidadMP
             // 
@@ -147,9 +173,9 @@
             this.Text = "frmCantidadMP";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.gcMateriaPrima)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvMateriaPrima)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsLogistica)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cantidadmateriaprimaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsLogistica)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvMateriaPrima)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -164,5 +190,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn coltotal;
         private System.Windows.Forms.BindingSource cantidadmateriaprimaBindingSource;
         private Logistica.dsLogistica2 dsLogistica;
+        private DevExpress.XtraGrid.Columns.GridColumn coltipo;
+        private DevExpress.XtraGrid.Columns.GridColumn colfila;
     }
 }

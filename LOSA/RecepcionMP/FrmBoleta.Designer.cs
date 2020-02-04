@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.basculaBindingSource1 = new System.Windows.Forms.BindingSource();
+            this.basculaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dsRecepcionMP = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.gvBascula = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colIDSerie = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -44,8 +45,9 @@
             this.colFurgon = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMateriaPrima = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProveedor = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.basculaBindingSource = new System.Windows.Forms.BindingSource();
+            this.basculaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.colfecha = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.basculaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMP)).BeginInit();
@@ -108,7 +110,8 @@
             this.colitemcode,
             this.colFurgon,
             this.colMateriaPrima,
-            this.colProveedor});
+            this.colProveedor,
+            this.colfecha});
             this.gvBascula.GridControl = this.gridControl1;
             this.gvBascula.Name = "gvBascula";
             this.gvBascula.OptionsCustomization.AllowFilter = false;
@@ -123,13 +126,13 @@
             // 
             // colNBoleta
             // 
-            this.colNBoleta.Caption = "Num. Boleta";
+            this.colNBoleta.Caption = "#Boleta";
             this.colNBoleta.FieldName = "NBoleta";
             this.colNBoleta.Name = "colNBoleta";
             this.colNBoleta.OptionsColumn.AllowEdit = false;
             this.colNBoleta.Visible = true;
             this.colNBoleta.VisibleIndex = 0;
-            this.colNBoleta.Width = 115;
+            this.colNBoleta.Width = 81;
             // 
             // colDescripcion
             // 
@@ -159,7 +162,7 @@
             this.colestadoDescripcion.OptionsColumn.AllowEdit = false;
             this.colestadoDescripcion.Visible = true;
             this.colestadoDescripcion.VisibleIndex = 2;
-            this.colestadoDescripcion.Width = 142;
+            this.colestadoDescripcion.Width = 154;
             // 
             // colSeleccionar
             // 
@@ -190,6 +193,7 @@
             this.colFurgon.OptionsColumn.AllowEdit = false;
             this.colFurgon.Visible = true;
             this.colFurgon.VisibleIndex = 1;
+            this.colFurgon.Width = 87;
             // 
             // colMateriaPrima
             // 
@@ -199,6 +203,7 @@
             this.colMateriaPrima.OptionsColumn.AllowEdit = false;
             this.colMateriaPrima.Visible = true;
             this.colMateriaPrima.VisibleIndex = 3;
+            this.colMateriaPrima.Width = 90;
             // 
             // colProveedor
             // 
@@ -208,6 +213,7 @@
             this.colProveedor.OptionsColumn.AllowEdit = false;
             this.colProveedor.Visible = true;
             this.colProveedor.VisibleIndex = 4;
+            this.colProveedor.Width = 98;
             // 
             // basculaBindingSource
             // 
@@ -226,6 +232,16 @@
             this.simpleButton1.TabIndex = 4;
             this.simpleButton1.Text = "Cancelar";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_1);
+            // 
+            // colfecha
+            // 
+            this.colfecha.DisplayFormat.FormatString = "g";
+            this.colfecha.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.colfecha.FieldName = "fecha";
+            this.colfecha.Name = "colfecha";
+            this.colfecha.Visible = true;
+            this.colfecha.VisibleIndex = 5;
+            this.colfecha.Width = 94;
             // 
             // FrmBoleta
             // 
@@ -273,5 +289,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colFurgon;
         private DevExpress.XtraGrid.Columns.GridColumn colMateriaPrima;
         private DevExpress.XtraGrid.Columns.GridColumn colProveedor;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecha;
     }
 }

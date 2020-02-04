@@ -19,7 +19,7 @@ namespace LOSA.Logistica
         {
             InitializeComponent();
             cargarMateriaPrima();
-            cargarDatosTarimas();
+            //cargarDatosTarimas();
         }
 
         private void cargarDatosTarimas()
@@ -27,13 +27,24 @@ namespace LOSA.Logistica
             try
             {
 
-                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-                string SQL = @"exec sp_get_lotes_by_MP";
+                //SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                //string SQL = @"exec sp_get_lotes_by_MP";
 
+                //dsLogistica.LotesXProveedor.Clear();
+                //SqlDataAdapter adat = new SqlDataAdapter(SQL, cn);
+
+                //adat.Fill(dsLogistica.LotesXProveedor);
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_lotes_by_MP", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_mp", cbMateriaPrima.EditValue.ToString());
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 dsLogistica.LotesXProveedor.Clear();
-                SqlDataAdapter adat = new SqlDataAdapter(SQL, cn);
-
                 adat.Fill(dsLogistica.LotesXProveedor);
+                con.Close();
 
             }
             catch (Exception ec)
@@ -74,7 +85,8 @@ namespace LOSA.Logistica
 
         private void cbMateriaPrima_EditValueChanged(object sender, EventArgs e)
         {
-           gvLotes.ActiveFilterString = "[itemcode] = '" + cbMateriaPrima.EditValue + "'";
+            //gvLotes.ActiveFilterString = "[itemcode] = '" + cbMateriaPrima.EditValue + "'";
+            cargarDatosTarimas();
         }
     }
 }

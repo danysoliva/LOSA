@@ -43,12 +43,12 @@
             this.colMateriaPrima = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colidMateriaPrima = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
-            this.teLote = new DevExpress.XtraEditors.TextEdit();
+            this.txtLote = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gcLotes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lotesXProveedorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsLogistica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvLotes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teLote.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLote.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl2
@@ -210,24 +210,24 @@
             this.cmdHome.Text = "Home";
             this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
             // 
-            // teLote
+            // txtLote
             // 
-            this.teLote.Location = new System.Drawing.Point(67, 93);
-            this.teLote.Name = "teLote";
-            this.teLote.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.teLote.Properties.Appearance.Options.UseFont = true;
-            this.teLote.Size = new System.Drawing.Size(359, 32);
-            this.teLote.TabIndex = 0;
-            this.teLote.EditValueChanged += new System.EventHandler(this.teLote_EditValueChanged);
-            this.teLote.Enter += new System.EventHandler(this.teLote_Enter);
-            this.teLote.Leave += new System.EventHandler(this.teLote_Leave);
+            this.txtLote.Location = new System.Drawing.Point(67, 93);
+            this.txtLote.Name = "txtLote";
+            this.txtLote.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLote.Properties.Appearance.Options.UseFont = true;
+            this.txtLote.Size = new System.Drawing.Size(359, 32);
+            this.txtLote.TabIndex = 0;
+            this.txtLote.EditValueChanged += new System.EventHandler(this.teLote_EditValueChanged);
+            this.txtLote.Enter += new System.EventHandler(this.teLote_Enter);
+            this.txtLote.Leave += new System.EventHandler(this.teLote_Leave);
             // 
             // frmLotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(606, 482);
-            this.Controls.Add(this.teLote);
+            this.Controls.Add(this.txtLote);
             this.Controls.Add(this.cmdHome);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.gcLotes);
@@ -241,7 +241,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.lotesXProveedorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsLogistica)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvLotes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teLote.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLote.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -262,6 +262,6 @@
         private DevExpress.XtraEditors.SimpleButton cmdHome;
         private System.Windows.Forms.BindingSource lotesXProveedorBindingSource;
         private dsLogistica2 dsLogistica;
-        private DevExpress.XtraEditors.TextEdit teLote;
+        private DevExpress.XtraEditors.TextEdit txtLote;
     }
 }

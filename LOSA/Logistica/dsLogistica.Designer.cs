@@ -791,6 +791,10 @@ namespace LOSA.Logistica {
             
             private global::System.Data.DataColumn columntotal;
             
+            private global::System.Data.DataColumn columntipo;
+            
+            private global::System.Data.DataColumn columnfila;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public cantidad_materia_primaDataTable() {
@@ -850,6 +854,22 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn tipoColumn {
+                get {
+                    return this.columntipo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn filaColumn {
+                get {
+                    return this.columnfila;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -885,12 +905,14 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public cantidad_materia_primaRow Addcantidad_materia_primaRow(string itemcode, string itemdescrip, decimal total) {
+            public cantidad_materia_primaRow Addcantidad_materia_primaRow(string itemcode, string itemdescrip, decimal total, string tipo, int fila) {
                 cantidad_materia_primaRow rowcantidad_materia_primaRow = ((cantidad_materia_primaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         itemcode,
                         itemdescrip,
-                        total};
+                        total,
+                        tipo,
+                        fila};
                 rowcantidad_materia_primaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowcantidad_materia_primaRow);
                 return rowcantidad_materia_primaRow;
@@ -916,6 +938,8 @@ namespace LOSA.Logistica {
                 this.columnitemcode = base.Columns["itemcode"];
                 this.columnitemdescrip = base.Columns["itemdescrip"];
                 this.columntotal = base.Columns["total"];
+                this.columntipo = base.Columns["tipo"];
+                this.columnfila = base.Columns["fila"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -927,6 +951,10 @@ namespace LOSA.Logistica {
                 base.Columns.Add(this.columnitemdescrip);
                 this.columntotal = new global::System.Data.DataColumn("total", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntotal);
+                this.columntipo = new global::System.Data.DataColumn("tipo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntipo);
+                this.columnfila = new global::System.Data.DataColumn("fila", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfila);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1923,6 +1951,8 @@ namespace LOSA.Logistica {
             
             private global::System.Data.DataColumn columncantidad;
             
+            private global::System.Data.DataColumn columnnum;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public EventosLoteDataTable() {
@@ -1998,6 +2028,14 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn numColumn {
+                get {
+                    return this.columnnum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2033,14 +2071,15 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public EventosLoteRow AddEventosLoteRow(string evento, System.DateTime fecha, string lote_materia_prima, string usuario, decimal cantidad) {
+            public EventosLoteRow AddEventosLoteRow(string evento, System.DateTime fecha, string lote_materia_prima, string usuario, decimal cantidad, int num) {
                 EventosLoteRow rowEventosLoteRow = ((EventosLoteRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         evento,
                         fecha,
                         lote_materia_prima,
                         usuario,
-                        cantidad};
+                        cantidad,
+                        num};
                 rowEventosLoteRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowEventosLoteRow);
                 return rowEventosLoteRow;
@@ -2068,6 +2107,7 @@ namespace LOSA.Logistica {
                 this.columnlote_materia_prima = base.Columns["lote_materia_prima"];
                 this.columnusuario = base.Columns["usuario"];
                 this.columncantidad = base.Columns["cantidad"];
+                this.columnnum = base.Columns["num"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2083,6 +2123,8 @@ namespace LOSA.Logistica {
                 base.Columns.Add(this.columnusuario);
                 this.columncantidad = new global::System.Data.DataColumn("cantidad", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncantidad);
+                this.columnnum = new global::System.Data.DataColumn("num", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnum);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2484,6 +2526,38 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string tipo {
+                get {
+                    try {
+                        return ((string)(this[this.tablecantidad_materia_prima.tipoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'tipo\' in table \'cantidad_materia_prima\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecantidad_materia_prima.tipoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int fila {
+                get {
+                    try {
+                        return ((int)(this[this.tablecantidad_materia_prima.filaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'fila\' in table \'cantidad_materia_prima\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecantidad_materia_prima.filaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsitemcodeNull() {
                 return this.IsNull(this.tablecantidad_materia_prima.itemcodeColumn);
             }
@@ -2516,6 +2590,30 @@ namespace LOSA.Logistica {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SettotalNull() {
                 this[this.tablecantidad_materia_prima.totalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IstipoNull() {
+                return this.IsNull(this.tablecantidad_materia_prima.tipoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SettipoNull() {
+                this[this.tablecantidad_materia_prima.tipoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsfilaNull() {
+                return this.IsNull(this.tablecantidad_materia_prima.filaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetfilaNull() {
+                this[this.tablecantidad_materia_prima.filaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2968,6 +3066,22 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int num {
+                get {
+                    try {
+                        return ((int)(this[this.tableEventosLote.numColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'num\' in table \'EventosLote\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEventosLote.numColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IseventoNull() {
                 return this.IsNull(this.tableEventosLote.eventoColumn);
             }
@@ -3024,6 +3138,18 @@ namespace LOSA.Logistica {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetcantidadNull() {
                 this[this.tableEventosLote.cantidadColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsnumNull() {
+                return this.IsNull(this.tableEventosLote.numColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetnumNull() {
+                this[this.tableEventosLote.numColumn] = global::System.Convert.DBNull;
             }
         }
         

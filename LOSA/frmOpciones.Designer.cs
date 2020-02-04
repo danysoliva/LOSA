@@ -214,7 +214,7 @@
             this.btnTrazabilidad.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnTrazabilidad.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnTrazabilidad.ImageOptions.Image = global::LOSA.Properties.Resources.trazabilidad;
-            this.btnTrazabilidad.Location = new System.Drawing.Point(419, 15);
+            this.btnTrazabilidad.Location = new System.Drawing.Point(214, 335);
             this.btnTrazabilidad.Name = "btnTrazabilidad";
             this.btnTrazabilidad.Size = new System.Drawing.Size(199, 71);
             this.btnTrazabilidad.TabIndex = 19;
@@ -339,11 +339,12 @@
             this.simpleButton3.Appearance.Options.UseFont = true;
             this.simpleButton3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton3.ImageOptions.Image = global::LOSA.Properties.Resources.wrench;
-            this.simpleButton3.Location = new System.Drawing.Point(214, 335);
+            this.simpleButton3.Location = new System.Drawing.Point(419, 15);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(199, 71);
             this.simpleButton3.TabIndex = 8;
             this.simpleButton3.Text = "Mantenimiento";
+            this.simpleButton3.Visible = false;
             this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // cmdRecepcionMPLogistica

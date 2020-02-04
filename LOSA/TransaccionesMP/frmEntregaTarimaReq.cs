@@ -137,47 +137,57 @@ namespace LOSA.TransaccionesMP
                         mensaje = "La tarima no esta activa!";
                     }
 
-                    txtCantidadT.Text = string.Format("{0:###,##0.00}", tarimaEncontrada.Cantidad);
-                    txtPeso.Text = string.Format("{0:###,##0.00}", tarimaEncontrada.Peso);
-
-                    try
-                    {
-                        DataOperations dp = new DataOperations();
-                        SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                        con.Open();
-
-                        SqlCommand cmd = new SqlCommand("sp_verifica_diponibilidad_tarima_entrega", con);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@id", tarimaEncontrada.Id);
-                        disponible = Convert.ToBoolean(cmd.ExecuteScalar());
-                        con.Close();
-                    }
-                    catch (Exception ec)
-                    {
-                        CajaDialogo.Error(ec.Message);
-                    }
-
-                    if (!disponible)
+                    if (tarimaEncontrada.Id_estadoCalidad > 1)
                     {
                         error = true;
-                        mensaje = "La tarima no esta disponible para entrega!";
+                        mensaje = "La tarima no esta Disponible por parte de Calidad!";
                     }
 
-                    if (!error)//Si error sigue en false evaluaremos la ubicacion.
+                    if (!error)
                     {
-                        Ubicacion_Tarima ub1 = new Ubicacion_Tarima();
-                        if (ub1.RecuperarRegistro(tarimaEncontrada.Id, ""))
+                        txtCantidadT.Text = string.Format("{0:###,##0.00}", tarimaEncontrada.Cantidad);
+                        txtPeso.Text = string.Format("{0:###,##0.00}", tarimaEncontrada.Peso);
+
+                        try
                         {
-                            if (ub1.IdBodega > 1)
-                            {
-                                error = true;
-                                mensaje = "La tarima no esta en la bodega de MP, no se puede entregar!";
-                            }
+                            DataOperations dp = new DataOperations();
+                            SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                            con.Open();
+
+                            SqlCommand cmd = new SqlCommand("sp_verifica_diponibilidad_tarima_entrega", con);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@id", tarimaEncontrada.Id);
+                            disponible = Convert.ToBoolean(cmd.ExecuteScalar());
+                            con.Close();
                         }
-                        else
+                        catch (Exception ec)
+                        {
+                            CajaDialogo.Error(ec.Message);
+                        }
+
+
+                        if (!disponible)
                         {
                             error = true;
-                            mensaje = "La tarima no tiene una ubicacion valida, aun esta en proceso de recepción!";
+                            mensaje = "La tarima no esta disponible para entrega!";
+                        }
+
+                        if (!error)//Si error sigue en false evaluaremos la ubicacion.
+                        {
+                            Ubicacion_Tarima ub1 = new Ubicacion_Tarima();
+                            if (ub1.RecuperarRegistro(tarimaEncontrada.Id, ""))
+                            {
+                                if (ub1.IdBodega > 1)
+                                {
+                                    error = true;
+                                    mensaje = "La tarima no esta en la bodega de MP, no se puede entregar!";
+                                }
+                            }
+                            else
+                            {
+                                error = true;
+                                mensaje = "La tarima no tiene una ubicacion valida, aun esta en proceso de recepción!";
+                            }
                         }
                     }
                 }

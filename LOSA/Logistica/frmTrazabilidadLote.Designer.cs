@@ -42,6 +42,7 @@
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.teLote = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.colnum = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gcEventos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventosLoteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsLogistica2)).BeginInit();
@@ -97,7 +98,8 @@
             this.colfecha,
             this.collote_materia_prima,
             this.colusuario,
-            this.colcantidad});
+            this.colcantidad,
+            this.colnum});
             this.gvEventos.GridControl = this.gcEventos;
             this.gvEventos.Name = "gvEventos";
             this.gvEventos.OptionsView.ShowGroupPanel = false;
@@ -112,11 +114,13 @@
             this.colevento.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.colevento.OptionsFilter.AllowFilter = false;
             this.colevento.Visible = true;
-            this.colevento.VisibleIndex = 0;
+            this.colevento.VisibleIndex = 1;
             // 
             // colfecha
             // 
             this.colfecha.Caption = "Fecha";
+            this.colfecha.DisplayFormat.FormatString = "g";
+            this.colfecha.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colfecha.FieldName = "fecha";
             this.colfecha.Name = "colfecha";
             this.colfecha.OptionsColumn.AllowEdit = false;
@@ -124,7 +128,7 @@
             this.colfecha.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.colfecha.OptionsFilter.AllowFilter = false;
             this.colfecha.Visible = true;
-            this.colfecha.VisibleIndex = 1;
+            this.colfecha.VisibleIndex = 2;
             // 
             // collote_materia_prima
             // 
@@ -136,7 +140,7 @@
             this.collote_materia_prima.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.collote_materia_prima.OptionsFilter.AllowFilter = false;
             this.collote_materia_prima.Visible = true;
-            this.collote_materia_prima.VisibleIndex = 2;
+            this.collote_materia_prima.VisibleIndex = 3;
             // 
             // colusuario
             // 
@@ -149,7 +153,7 @@
             this.colusuario.OptionsFilter.AllowAutoFilter = false;
             this.colusuario.OptionsFilter.AllowFilter = false;
             this.colusuario.Visible = true;
-            this.colusuario.VisibleIndex = 3;
+            this.colusuario.VisibleIndex = 4;
             // 
             // colcantidad
             // 
@@ -162,7 +166,7 @@
             this.colcantidad.OptionsFilter.AllowAutoFilter = false;
             this.colcantidad.OptionsFilter.AllowFilter = false;
             this.colcantidad.Visible = true;
-            this.colcantidad.VisibleIndex = 4;
+            this.colcantidad.VisibleIndex = 5;
             // 
             // btnAtras
             // 
@@ -203,6 +207,14 @@
             this.labelControl2.TabIndex = 103;
             this.labelControl2.Text = "Lote:";
             // 
+            // colnum
+            // 
+            this.colnum.Caption = "# Tarima";
+            this.colnum.FieldName = "num";
+            this.colnum.Name = "colnum";
+            this.colnum.Visible = true;
+            this.colnum.VisibleIndex = 0;
+            // 
             // frmTrazabilidadLote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,5 +252,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colcantidad;
         private DevExpress.XtraEditors.TextEdit teLote;
         private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraGrid.Columns.GridColumn colnum;
     }
 }

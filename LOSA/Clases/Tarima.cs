@@ -38,6 +38,7 @@ namespace LOSA.Clases
         bool _Recuperad;
         string _MateriaPrima;
         decimal _factor;
+        int id_estadoCalidad;
 
         public Tarima()
         {
@@ -71,6 +72,7 @@ namespace LOSA.Clases
         public bool Enable { get => _Enable; set => _Enable = value; }
         public int IdProductoterminado { get => _idProductoterminado; set => _idProductoterminado = value; }
         public int LotePT { get => _LotePT; set => _LotePT = value; }
+        public int Id_estadoCalidad { get => id_estadoCalidad; set => id_estadoCalidad = value; }
 
         public bool RecuperarRegistro(int pIdTarima, string pCodigoBarra)
         {
@@ -110,7 +112,8 @@ namespace LOSA.Clases
                     Peso = dr.GetDecimal(18);
                     IdProductoterminado = dr.GetInt32(19);
                     LotePT = dr.GetInt32(20);
-                    
+                    id_estadoCalidad = dr.GetInt32(21);
+
                     Recuperado = true;
                 }
                 dr.Close();
@@ -157,6 +160,9 @@ namespace LOSA.Clases
                     Enable = dr.GetBoolean(17);
                     Peso = dr.GetDecimal(18);
                     IdProductoterminado = dr.GetInt32(19);
+                    LotePT = dr.GetInt32(20);
+                    id_estadoCalidad = dr.GetInt32(21);
+
                     Recuperado = true;
                 }
                 dr.Close();
@@ -205,7 +211,7 @@ namespace LOSA.Clases
                     Cantidad = dr.GetDecimal(17);//ó unidades
                     IdUnidadMedida = dr.GetInt32(18);
                     _peso = dr.GetDecimal(19);
-
+                    id_estadoCalidad = dr.GetInt32(20);
 
                     Recuperado = true;
                 }
