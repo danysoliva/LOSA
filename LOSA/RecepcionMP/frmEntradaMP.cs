@@ -130,8 +130,8 @@ namespace LOSA.RecepcionMP
                         {
                             idUbicacion = dr.GetInt32(0);
                            
-
-                            gcUbicacion.DataSource = CreateDataUbicacion(dr.GetString(2), dr.GetString(4), dr.GetString(3), dr.GetString(1));
+                            //                                            RACK           Bodega             Pasillo
+                            gcUbicacion.DataSource = CreateDataUbicacion(dr.GetString(2), dr.GetString(7), dr.GetString(8));
                             gvUbicacion.InitNewRow += GvUbicacion_InitNewRow;
                             gvUbicacion.Columns[0].AppearanceCell.Font = new Font("Segoe UI", 11, FontStyle.Bold);
 
@@ -166,15 +166,18 @@ namespace LOSA.RecepcionMP
 
         private void BtnUbicacion_Click(object sender, EventArgs e)
         {
-            frmUbicacionTarima frm = new frmUbicacionTarima();
+            //frmUbicacionTarima frm = new frmUbicacionTarima();
+            frmUbicacionTarima2 frm = new frmUbicacionTarima2();
 
             if (frm.ShowDialog()==DialogResult.OK)
             {
                 idUbicacion = frm.idUbicacion;
                 beUbicacion.Text = frm.idUbicacion.ToString();
-               
 
-                gcUbicacion.DataSource = CreateDataUbicacion(frm.rack, frm.profundidad, frm.altura, frm.pasillo);
+
+                //gcUbicacion.DataSource = CreateDataUbicacion(frm.rack, frm.profundidad, frm.altura, frm.pasillo);
+                //                                            RACK           Bodega             Pasillo
+                gcUbicacion.DataSource = CreateDataUbicacion(frm.rack, frm.BodegaNombre, frm.pasillo);
                 gvUbicacion.InitNewRow += GvUbicacion_InitNewRow;
                 gvUbicacion.Columns[0].AppearanceCell.Font = new Font("Segoe UI", 11, FontStyle.Bold);
             }
@@ -334,17 +337,16 @@ namespace LOSA.RecepcionMP
             Teclado.abrirTeclado();
         }
 
-        private DataTable CreateDataUbicacion(string pRack, string pProfundidad, string pAltura, string pPasillo)
+        private DataTable CreateDataUbicacion(string pRack, string pBodega, string pPasillo)
         {
             DataTable dt = new DataTable();
 
             dt.Columns.Add("Detalle", typeof(string));
             dt.Columns.Add("Valor", typeof(string));
 
-
+            dt.Rows.Add("Bodega", pBodega);
             dt.Rows.Add("PASILLO", pPasillo);
             dt.Rows.Add("RACK", pRack);
-            //dt.Rows.Add("ALTURA", pAltura);
             //dt.Rows.Add("PROFUNDIDAD", pProfundidad);
 
             return dt;

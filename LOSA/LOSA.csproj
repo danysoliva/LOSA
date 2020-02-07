@@ -428,6 +428,12 @@
     <Compile Include="RecepcionMP\frmTarimas.Designer.cs">
       <DependentUpon>frmTarimas.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecepcionMP\frmUbicacionTarima2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmUbicacionTarima2.Designer.cs">
+      <DependentUpon>frmUbicacionTarima2.cs</DependentUpon>
+    </Compile>
     <Compile Include="RecepcionMP\frmUbicacionTarima.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -641,6 +647,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmTarimas.resx">
       <DependentUpon>frmTarimas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frmUbicacionTarima2.resx">
+      <DependentUpon>frmUbicacionTarima2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmUbicacionTarima.resx">
       <DependentUpon>frmUbicacionTarima.cs</DependentUpon>
