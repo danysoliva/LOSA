@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>24</ApplicationRevision>
+    <ApplicationRevision>25</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -114,6 +114,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Program Files (x86)\DevExpress 17.1\Components\Bin\Framework\DevExpress.Utils.v17.1.UI.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.XtraBars.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -155,6 +156,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsCalidad.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\frmEstadosTarimaCalidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmEstadosTarimaCalidad.Designer.cs">
+      <DependentUpon>frmEstadosTarimaCalidad.cs</DependentUpon>
     </Compile>
     <Compile Include="Calidad\frmLotesStatus.cs">
       <SubType>Form</SubType>
@@ -403,12 +410,6 @@
     <Compile Include="RecepcionMP\frmMP.Designer.cs">
       <DependentUpon>frmMP.cs</DependentUpon>
     </Compile>
-    <Compile Include="RecepcionMP\frmRecepcionMP.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RecepcionMP\frmRecepcionMP.Designer.cs">
-      <DependentUpon>frmRecepcionMP.cs</DependentUpon>
-    </Compile>
     <Compile Include="RecepcionMP\frmImprimirHojaIngreso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -522,6 +523,9 @@
     <Compile Include="TransaccionesMP\frmSeleccionLote.Designer.cs">
       <DependentUpon>frmSeleccionLote.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Calidad\frmEstadosTarimaCalidad.resx">
+      <DependentUpon>frmEstadosTarimaCalidad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmLotesStatus.resx">
       <DependentUpon>frmLotesStatus.cs</DependentUpon>
     </EmbeddedResource>
@@ -628,9 +632,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmMP.resx">
       <DependentUpon>frmMP.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RecepcionMP\frmRecepcionMP.resx">
-      <DependentUpon>frmRecepcionMP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmImprimirHojaIngreso.resx">
       <DependentUpon>frmImprimirHojaIngreso.cs</DependentUpon>

@@ -37,9 +37,10 @@
             this.colitemcode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colitemdescrip = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltotal = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfila = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltipo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
-            this.colfila = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpeso = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gcMateriaPrima)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cantidadmateriaprimaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsLogistica)).BeginInit();
@@ -94,7 +95,8 @@
             this.colitemdescrip,
             this.coltotal,
             this.colfila,
-            this.coltipo});
+            this.coltipo,
+            this.colpeso});
             this.gvMateriaPrima.GridControl = this.gcMateriaPrima;
             this.gvMateriaPrima.Name = "gvMateriaPrima";
             this.gvMateriaPrima.OptionsView.ShowAutoFilterRow = true;
@@ -119,7 +121,7 @@
             // 
             // coltotal
             // 
-            this.coltotal.Caption = "Total";
+            this.coltotal.Caption = "Total Unidades";
             this.coltotal.DisplayFormat.FormatString = "###,##0.00";
             this.coltotal.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.coltotal.FieldName = "total";
@@ -127,8 +129,18 @@
             this.coltotal.OptionsColumn.AllowEdit = false;
             this.coltotal.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.coltotal.Visible = true;
-            this.coltotal.VisibleIndex = 3;
+            this.coltotal.VisibleIndex = 2;
             this.coltotal.Width = 195;
+            // 
+            // colfila
+            // 
+            this.colfila.Caption = "#";
+            this.colfila.FieldName = "fila";
+            this.colfila.Name = "colfila";
+            this.colfila.OptionsColumn.AllowEdit = false;
+            this.colfila.Visible = true;
+            this.colfila.VisibleIndex = 0;
+            this.colfila.Width = 42;
             // 
             // coltipo
             // 
@@ -151,15 +163,15 @@
             this.cmdHome.Text = "Home";
             this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
             // 
-            // colfila
+            // colpeso
             // 
-            this.colfila.Caption = "#";
-            this.colfila.FieldName = "fila";
-            this.colfila.Name = "colfila";
-            this.colfila.OptionsColumn.AllowEdit = false;
-            this.colfila.Visible = true;
-            this.colfila.VisibleIndex = 0;
-            this.colfila.Width = 42;
+            this.colpeso.Caption = "Total Kg";
+            this.colpeso.DisplayFormat.FormatString = "###,##0.00";
+            this.colpeso.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colpeso.FieldName = "peso";
+            this.colpeso.Name = "colpeso";
+            this.colpeso.Visible = true;
+            this.colpeso.VisibleIndex = 3;
             // 
             // frmCantidadMP
             // 
@@ -192,5 +204,6 @@
         private Logistica.dsLogistica2 dsLogistica;
         private DevExpress.XtraGrid.Columns.GridColumn coltipo;
         private DevExpress.XtraGrid.Columns.GridColumn colfila;
+        private DevExpress.XtraGrid.Columns.GridColumn colpeso;
     }
 }

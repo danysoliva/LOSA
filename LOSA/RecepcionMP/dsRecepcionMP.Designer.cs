@@ -1263,6 +1263,10 @@ namespace LOSA.RecepcionMP {
             
             private global::System.Data.DataColumn columnseleccionar;
             
+            private global::System.Data.DataColumn columnbodega;
+            
+            private global::System.Data.DataColumn columnidbodega;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public UbicacionesDataTable() {
@@ -1354,6 +1358,22 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn bodegaColumn {
+                get {
+                    return this.columnbodega;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn idbodegaColumn {
+                get {
+                    return this.columnidbodega;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1389,7 +1409,7 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public UbicacionesRow AddUbicacionesRow(int id, string pasillo, string rack, string altura, string profundidad, bool enable, string seleccionar) {
+            public UbicacionesRow AddUbicacionesRow(int id, string pasillo, string rack, string altura, string profundidad, bool enable, string seleccionar, string bodega, int idbodega) {
                 UbicacionesRow rowUbicacionesRow = ((UbicacionesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -1398,7 +1418,9 @@ namespace LOSA.RecepcionMP {
                         altura,
                         profundidad,
                         enable,
-                        seleccionar};
+                        seleccionar,
+                        bodega,
+                        idbodega};
                 rowUbicacionesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowUbicacionesRow);
                 return rowUbicacionesRow;
@@ -1428,6 +1450,8 @@ namespace LOSA.RecepcionMP {
                 this.columnprofundidad = base.Columns["profundidad"];
                 this.columnenable = base.Columns["enable"];
                 this.columnseleccionar = base.Columns["seleccionar"];
+                this.columnbodega = base.Columns["bodega"];
+                this.columnidbodega = base.Columns["idbodega"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1447,6 +1471,10 @@ namespace LOSA.RecepcionMP {
                 base.Columns.Add(this.columnenable);
                 this.columnseleccionar = new global::System.Data.DataColumn("seleccionar", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnseleccionar);
+                this.columnbodega = new global::System.Data.DataColumn("bodega", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbodega);
+                this.columnidbodega = new global::System.Data.DataColumn("idbodega", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidbodega);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3503,6 +3531,38 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string bodega {
+                get {
+                    try {
+                        return ((string)(this[this.tableUbicaciones.bodegaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'bodega\' in table \'Ubicaciones\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUbicaciones.bodegaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int idbodega {
+                get {
+                    try {
+                        return ((int)(this[this.tableUbicaciones.idbodegaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'idbodega\' in table \'Ubicaciones\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUbicaciones.idbodegaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableUbicaciones.idColumn);
             }
@@ -3583,6 +3643,30 @@ namespace LOSA.RecepcionMP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetseleccionarNull() {
                 this[this.tableUbicaciones.seleccionarColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsbodegaNull() {
+                return this.IsNull(this.tableUbicaciones.bodegaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetbodegaNull() {
+                this[this.tableUbicaciones.bodegaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsidbodegaNull() {
+                return this.IsNull(this.tableUbicaciones.idbodegaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetidbodegaNull() {
+                this[this.tableUbicaciones.idbodegaColumn] = global::System.Convert.DBNull;
             }
         }
         

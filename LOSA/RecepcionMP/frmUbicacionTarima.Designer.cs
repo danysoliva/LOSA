@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUbicacionTarima));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.gcUbicacion = new DevExpress.XtraGrid.GridControl();
-            this.ubicacionesBindingSource = new System.Windows.Forms.BindingSource();
+            this.ubicacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsRecepcionMPx = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.gvUbicacion = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -44,6 +45,8 @@
             this.colenable = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSeleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colbodega = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colidbodega = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gcUbicacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ubicacionesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).BeginInit();
@@ -132,7 +135,9 @@
             this.colaltura,
             this.colprofundidad,
             this.colenable,
-            this.colSeleccionar});
+            this.colSeleccionar,
+            this.colbodega,
+            this.colidbodega});
             this.gvUbicacion.GridControl = this.gcUbicacion;
             this.gvUbicacion.Name = "gvUbicacion";
             this.gvUbicacion.OptionsCustomization.AllowFilter = false;
@@ -147,19 +152,21 @@
             // 
             // colpasillo
             // 
+            this.colpasillo.Caption = "Pasillo";
             this.colpasillo.FieldName = "pasillo";
             this.colpasillo.Name = "colpasillo";
             this.colpasillo.OptionsColumn.AllowEdit = false;
             this.colpasillo.Visible = true;
-            this.colpasillo.VisibleIndex = 0;
+            this.colpasillo.VisibleIndex = 1;
             // 
             // colrack
             // 
+            this.colrack.Caption = "Rack";
             this.colrack.FieldName = "rack";
             this.colrack.Name = "colrack";
             this.colrack.OptionsColumn.AllowEdit = false;
             this.colrack.Visible = true;
-            this.colrack.VisibleIndex = 1;
+            this.colrack.VisibleIndex = 2;
             // 
             // colaltura
             // 
@@ -186,18 +193,31 @@
             this.colSeleccionar.MaxWidth = 50;
             this.colSeleccionar.Name = "colSeleccionar";
             this.colSeleccionar.Visible = true;
-            this.colSeleccionar.VisibleIndex = 2;
+            this.colSeleccionar.VisibleIndex = 3;
             this.colSeleccionar.Width = 50;
             // 
             // btnSeleccionar
             // 
             this.btnSeleccionar.AutoHeight = false;
-            editorButtonImageOptions1.Image = global::LOSA.Properties.Resources.tap;
+            editorButtonImageOptions2.Image = global::LOSA.Properties.Resources.tap;
             this.btnSeleccionar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnSeleccionar.Click += new System.EventHandler(this.BtnSeleccionar_Click);
+            // 
+            // colbodega
+            // 
+            this.colbodega.Caption = "Bodega";
+            this.colbodega.FieldName = "bodega";
+            this.colbodega.Name = "colbodega";
+            this.colbodega.Visible = true;
+            this.colbodega.VisibleIndex = 0;
+            // 
+            // colidbodega
+            // 
+            this.colidbodega.FieldName = "idbodega";
+            this.colidbodega.Name = "colidbodega";
             // 
             // frmUbicacionTarima
             // 
@@ -236,5 +256,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colenable;
         private DevExpress.XtraGrid.Columns.GridColumn colSeleccionar;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnSeleccionar;
+        private DevExpress.XtraGrid.Columns.GridColumn colbodega;
+        private DevExpress.XtraGrid.Columns.GridColumn colidbodega;
     }
 }

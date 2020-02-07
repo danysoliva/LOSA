@@ -1,4 +1,5 @@
-﻿using LOSA.Clases;
+﻿using LOSA.Calidad;
+using LOSA.Clases;
 using LOSA.Logistica;
 using LOSA.Mantenimientos;
 using LOSA.Produccion;
@@ -86,6 +87,7 @@ namespace LOSA
 
         private void simpleButton3_Click(object sender, EventArgs e)
         {
+            //Mantenimientos
 
         }
 
@@ -206,6 +208,12 @@ namespace LOSA
         private void btnDevoluciones_Click(object sender, EventArgs e)
         {
             frmDevolucionKardex frm = new frmDevolucionKardex(UsuarioLogeado);
+            frm.Show();
+        }
+
+        private void cmdLotesCalidad_Click(object sender, EventArgs e)
+        {
+            frmLotesStatus frm = new frmLotesStatus();
             frm.Show();
         }
     }

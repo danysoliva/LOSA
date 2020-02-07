@@ -163,7 +163,7 @@
             // 
             // colcantidad
             // 
-            this.colcantidad.Caption = "Cantidad";
+            this.colcantidad.Caption = "Unidades (Sacos)";
             this.colcantidad.FieldName = "cantidad";
             this.colcantidad.Name = "colcantidad";
             this.colcantidad.OptionsColumn.AllowEdit = false;

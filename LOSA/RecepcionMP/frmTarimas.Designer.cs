@@ -63,7 +63,7 @@
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnAtras.Location = new System.Drawing.Point(12, 12);
             this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(199, 71);
+            this.btnAtras.Size = new System.Drawing.Size(156, 52);
             this.btnAtras.TabIndex = 5;
             this.btnAtras.Text = "Atrás";
             this.btnAtras.Click += new System.EventHandler(this.BtnAtras_Click);
@@ -74,12 +74,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcTarima.DataSource = this.detalleTarimaBindingSource;
-            this.gcTarima.Location = new System.Drawing.Point(0, 101);
+            this.gcTarima.Location = new System.Drawing.Point(0, 70);
             this.gcTarima.MainView = this.gvTarimas;
             this.gcTarima.Name = "gcTarima";
             this.gcTarima.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnSeleccionar});
-            this.gcTarima.Size = new System.Drawing.Size(606, 342);
+            this.gcTarima.Size = new System.Drawing.Size(606, 373);
             this.gcTarima.TabIndex = 6;
             this.gcTarima.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTarimas});

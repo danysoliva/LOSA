@@ -272,6 +272,13 @@ namespace LOSA.RecepcionMP
                     cmd.Parameters.AddWithValue("@peso", Convert.ToDecimal(txtPesoKg.Text));
                     vid_tarima = Convert.ToInt32(cmd.ExecuteScalar());
 
+                    SqlCommand cmdx = new SqlCommand("sp_insert_ubicacion_default", con);
+                    cmdx.CommandType = CommandType.StoredProcedure;
+                    cmdx.Parameters.AddWithValue("@id_tarima", vid_tarima);
+                    cmdx.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
+                    cmdx.Parameters.AddWithValue("@codigo_barra", barcode);
+                    cmdx.ExecuteNonQuery();
+
                     List.Add(vid_tarima);
 
                     Guardo = true;

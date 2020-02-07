@@ -49,6 +49,7 @@
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdRecepcionMPLogistica = new DevExpress.XtraEditors.SimpleButton();
             this.TabCalidad = new DevExpress.XtraTab.XtraTabPage();
+            this.cmdLotesCalidad = new DevExpress.XtraEditors.SimpleButton();
             this.TabAdmin = new DevExpress.XtraTab.XtraTabPage();
             this.btnEstadosRequisiciones = new DevExpress.XtraEditors.SimpleButton();
             this.btnKardexTiposTransacciones = new DevExpress.XtraEditors.SimpleButton();
@@ -62,6 +63,7 @@
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
             this.TabLogistica.SuspendLayout();
+            this.TabCalidad.SuspendLayout();
             this.TabAdmin.SuspendLayout();
             this.tabProduccion.SuspendLayout();
             this.SuspendLayout();
@@ -344,7 +346,6 @@
             this.simpleButton3.Size = new System.Drawing.Size(199, 71);
             this.simpleButton3.TabIndex = 8;
             this.simpleButton3.Text = "Mantenimiento";
-            this.simpleButton3.Visible = false;
             this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // cmdRecepcionMPLogistica
@@ -362,11 +363,25 @@
             // 
             // TabCalidad
             // 
+            this.TabCalidad.Controls.Add(this.cmdLotesCalidad);
             this.TabCalidad.Image = global::LOSA.Properties.Resources.medal;
             this.TabCalidad.Name = "TabCalidad";
             this.TabCalidad.PageVisible = false;
             this.TabCalidad.Size = new System.Drawing.Size(629, 422);
             this.TabCalidad.Text = "Calidad";
+            // 
+            // cmdLotesCalidad
+            // 
+            this.cmdLotesCalidad.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdLotesCalidad.Appearance.Options.UseFont = true;
+            this.cmdLotesCalidad.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdLotesCalidad.ImageOptions.Image = global::LOSA.Properties.Resources.edit_table_1_;
+            this.cmdLotesCalidad.Location = new System.Drawing.Point(9, 23);
+            this.cmdLotesCalidad.Name = "cmdLotesCalidad";
+            this.cmdLotesCalidad.Size = new System.Drawing.Size(199, 71);
+            this.cmdLotesCalidad.TabIndex = 11;
+            this.cmdLotesCalidad.Text = "Lotes MP";
+            this.cmdLotesCalidad.Click += new System.EventHandler(this.cmdLotesCalidad_Click);
             // 
             // TabAdmin
             // 
@@ -503,6 +518,7 @@
             this.tabOpciones.ResumeLayout(false);
             this.TabMontacarga.ResumeLayout(false);
             this.TabLogistica.ResumeLayout(false);
+            this.TabCalidad.ResumeLayout(false);
             this.TabAdmin.ResumeLayout(false);
             this.tabProduccion.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -539,5 +555,6 @@
         private DevExpress.XtraEditors.SimpleButton btnLotesPorProveedor;
         private DevExpress.XtraEditors.SimpleButton btnTrazabilidad;
         private DevExpress.XtraEditors.SimpleButton cmdTarimasPT;
+        private DevExpress.XtraEditors.SimpleButton cmdLotesCalidad;
     }
 }
