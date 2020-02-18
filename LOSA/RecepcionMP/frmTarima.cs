@@ -208,13 +208,13 @@ namespace LOSA.RecepcionMP
                 CajaDialogo.Error("Es obligatorio llenar el lote para la tarima!");
                 return;
             }
-            //
-            //if (string.IsNullOrEmpty(dtFechaProduccion.Text))
-            //{
-            //    CajaDialogo.Error("Es obligatorio llenar el lote para la tarima!");
-            //    return;
-            //}
-            
+
+            if (string.IsNullOrEmpty(dtFechaProduccion.Text))
+            {
+                CajaDialogo.Error("Es obligatorio llenar la fecha de producción!");
+                return;
+            }
+
             if (string.IsNullOrEmpty(dtFechaVencimiento.Text))
             {
                 CajaDialogo.Error("Es obligatorio llenar la fecha de vencimiento de la materia prima!");

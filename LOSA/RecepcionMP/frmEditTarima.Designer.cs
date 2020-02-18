@@ -34,7 +34,11 @@
             this.txtCantidadTarimasTotal = new DevExpress.XtraEditors.TextEdit();
             this.txtPesoKg = new DevExpress.XtraEditors.TextEdit();
             this.gridLookUpEditPresentacion = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dsRecepcionMPx1 = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.cmdGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
@@ -59,15 +63,13 @@
             this.txtIdBoleta = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
-            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.dsRecepcionMPx1 = new LOSA.RecepcionMP.dsRecepcionMPx();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadTarimasTotal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPesoKg.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditPresentacion.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLote.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaVencimiento.Properties.CalendarTimeProperties)).BeginInit();
@@ -83,8 +85,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtMP_Name.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigoMP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdBoleta.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl13
@@ -141,6 +141,17 @@
             this.gridLookUpEditPresentacion.Properties.View = this.gridLookUpEdit1View;
             this.gridLookUpEditPresentacion.Size = new System.Drawing.Size(170, 30);
             this.gridLookUpEditPresentacion.TabIndex = 59;
+            this.gridLookUpEditPresentacion.EditValueChanged += new System.EventHandler(this.gridLookUpEditPresentacion_EditValueChanged);
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataMember = "presentaciones";
+            this.bindingSource1.DataSource = this.dsRecepcionMPx1;
+            // 
+            // dsRecepcionMPx1
+            // 
+            this.dsRecepcionMPx1.DataSetName = "dsRecepcionMPx";
+            this.dsRecepcionMPx1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridLookUpEdit1View
             // 
@@ -153,6 +164,19 @@
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // colid
+            // 
+            this.colid.FieldName = "id";
+            this.colid.Name = "colid";
+            // 
+            // coldescripcion
+            // 
+            this.coldescripcion.Caption = "Presentaciones";
+            this.coldescripcion.FieldName = "descripcion";
+            this.coldescripcion.Name = "coldescripcion";
+            this.coldescripcion.Visible = true;
+            this.coldescripcion.VisibleIndex = 0;
             // 
             // labelControl11
             // 
@@ -179,6 +203,7 @@
             this.cmdGuardar.Size = new System.Drawing.Size(167, 47);
             this.cmdGuardar.TabIndex = 65;
             this.cmdGuardar.Text = "Guardar";
+            this.cmdGuardar.Click += new System.EventHandler(this.cmdGuardar_Click);
             // 
             // labelControl10
             // 
@@ -278,6 +303,7 @@
             this.txtUnidades.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtUnidades.Size = new System.Drawing.Size(142, 32);
             this.txtUnidades.TabIndex = 60;
+            this.txtUnidades.TextChanged += new System.EventHandler(this.txtUnidades_TextChanged);
             // 
             // txtNumIngreso
             // 
@@ -305,6 +331,7 @@
             // dtFechaIngreso
             // 
             this.dtFechaIngreso.EditValue = null;
+            this.dtFechaIngreso.Enabled = false;
             this.dtFechaIngreso.Location = new System.Drawing.Point(182, 239);
             this.dtFechaIngreso.Name = "dtFechaIngreso";
             this.dtFechaIngreso.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -332,6 +359,7 @@
             // txtProveedorName
             // 
             this.txtProveedorName.EditValue = "";
+            this.txtProveedorName.Enabled = false;
             this.txtProveedorName.Location = new System.Drawing.Point(330, 194);
             this.txtProveedorName.Name = "txtProveedorName";
             this.txtProveedorName.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -343,6 +371,7 @@
             // txtCodigoProveedor
             // 
             this.txtCodigoProveedor.EditValue = "";
+            this.txtCodigoProveedor.Enabled = false;
             this.txtCodigoProveedor.Location = new System.Drawing.Point(182, 194);
             this.txtCodigoProveedor.Name = "txtCodigoProveedor";
             this.txtCodigoProveedor.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -354,6 +383,7 @@
             // txtMP_Name
             // 
             this.txtMP_Name.EditValue = "";
+            this.txtMP_Name.Enabled = false;
             this.txtMP_Name.Location = new System.Drawing.Point(330, 162);
             this.txtMP_Name.Name = "txtMP_Name";
             this.txtMP_Name.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -375,6 +405,7 @@
             // txtCodigoMP
             // 
             this.txtCodigoMP.EditValue = "";
+            this.txtCodigoMP.Enabled = false;
             this.txtCodigoMP.Location = new System.Drawing.Point(182, 162);
             this.txtCodigoMP.Name = "txtCodigoMP";
             this.txtCodigoMP.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -452,29 +483,6 @@
             this.btnAtras.Text = "Atras";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click_1);
             // 
-            // colid
-            // 
-            this.colid.FieldName = "id";
-            this.colid.Name = "colid";
-            // 
-            // coldescripcion
-            // 
-            this.coldescripcion.Caption = "Presentaciones";
-            this.coldescripcion.FieldName = "descripcion";
-            this.coldescripcion.Name = "coldescripcion";
-            this.coldescripcion.Visible = true;
-            this.coldescripcion.VisibleIndex = 0;
-            // 
-            // dsRecepcionMPx1
-            // 
-            this.dsRecepcionMPx1.DataSetName = "dsRecepcionMPx";
-            this.dsRecepcionMPx1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataMember = "presentaciones";
-            this.bindingSource1.DataSource = this.dsRecepcionMPx1;
-            // 
             // labelControl12
             // 
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
@@ -537,6 +545,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadTarimasTotal.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPesoKg.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditPresentacion.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLote.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaVencimiento.Properties.CalendarTimeProperties)).EndInit();
@@ -552,8 +562,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtMP_Name.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigoMP.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdBoleta.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

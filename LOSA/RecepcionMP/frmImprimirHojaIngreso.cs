@@ -217,7 +217,7 @@ namespace LOSA.RecepcionMP
             var gridView = (GridView)gridControl1.FocusedView;
             var row = (dsRecepcionMPx.lista_tarimasRow)gridView.GetFocusedDataRow();
 
-            frmEditTarima frm = new frmEditTarima(row.id);
+            frmEditTarima frm = new frmEditTarima(row.id, this.UsuarioLogeado);
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
