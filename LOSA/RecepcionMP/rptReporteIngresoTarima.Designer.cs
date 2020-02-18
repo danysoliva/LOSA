@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraPrinting.BarCode.QRCodeGenerator qrCodeGenerator1 = new DevExpress.XtraPrinting.BarCode.QRCodeGenerator();
             DevExpress.XtraPrinting.BarCode.Code39ExtendedGenerator code39ExtendedGenerator1 = new DevExpress.XtraPrinting.BarCode.Code39ExtendedGenerator();
+            DevExpress.XtraPrinting.BarCode.Code39ExtendedGenerator code39ExtendedGenerator2 = new DevExpress.XtraPrinting.BarCode.Code39ExtendedGenerator();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rptReporteIngresoTarima));
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
@@ -78,21 +78,21 @@
             // 
             // Detail
             // 
-            this.Detail.HeightF = 2.083333F;
+            this.Detail.HeightF = 14.58333F;
             this.Detail.Name = "Detail";
             this.Detail.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // TopMargin
             // 
-            this.TopMargin.HeightF = 4F;
+            this.TopMargin.HeightF = 31.08333F;
             this.TopMargin.Name = "TopMargin";
             this.TopMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // BottomMargin
             // 
-            this.BottomMargin.HeightF = 11F;
+            this.BottomMargin.HeightF = 9.958331F;
             this.BottomMargin.Name = "BottomMargin";
             this.BottomMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
@@ -129,7 +129,8 @@
             this.BarCode2.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 10, 0, 0, 100F);
             this.BarCode2.SizeF = new System.Drawing.SizeF(374.4166F, 114F);
             this.BarCode2.StylePriority.UseTextAlignment = false;
-            this.BarCode2.Symbology = qrCodeGenerator1;
+            code39ExtendedGenerator1.WideNarrowRatio = 3F;
+            this.BarCode2.Symbology = code39ExtendedGenerator1;
             this.BarCode2.Text = "TM0000000009";
             this.BarCode2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
@@ -421,8 +422,8 @@
             this.BarCode1.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 10, 0, 0, 100F);
             this.BarCode1.SizeF = new System.Drawing.SizeF(374.4166F, 136.5F);
             this.BarCode1.StylePriority.UseTextAlignment = false;
-            code39ExtendedGenerator1.WideNarrowRatio = 3F;
-            this.BarCode1.Symbology = code39ExtendedGenerator1;
+            code39ExtendedGenerator2.WideNarrowRatio = 3F;
+            this.BarCode1.Symbology = code39ExtendedGenerator2;
             this.BarCode1.Text = "TM0000000009";
             this.BarCode1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
@@ -753,7 +754,8 @@
             this.BottomMargin,
             this.PageHeader,
             this.ReportHeader});
-            this.Margins = new System.Drawing.Printing.Margins(36, 38, 4, 11);
+            this.Margins = new System.Drawing.Printing.Margins(36, 38, 31, 10);
+            this.ShowPrintMarginsWarning = false;
             this.Version = "17.1";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 

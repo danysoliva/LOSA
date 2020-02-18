@@ -239,6 +239,7 @@ namespace LOSA.RecepcionMP
         {
           
             this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
 
         private void GvUbicacion_DoubleClick(object sender, EventArgs e)

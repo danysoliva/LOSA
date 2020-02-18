@@ -278,7 +278,7 @@
             this.gvTarima.Appearance.GroupRow.Options.UseForeColor = true;
             this.gvTarima.Appearance.HeaderPanel.BackColor = System.Drawing.Color.Silver;
             this.gvTarima.Appearance.HeaderPanel.BorderColor = System.Drawing.Color.Silver;
-            this.gvTarima.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gvTarima.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvTarima.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
             this.gvTarima.Appearance.HeaderPanel.Options.UseBackColor = true;
             this.gvTarima.Appearance.HeaderPanel.Options.UseBorderColor = true;
@@ -309,7 +309,7 @@
             this.gvTarima.Appearance.Preview.Options.UseFont = true;
             this.gvTarima.Appearance.Preview.Options.UseForeColor = true;
             this.gvTarima.Appearance.Row.BackColor = System.Drawing.Color.White;
-            this.gvTarima.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvTarima.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvTarima.Appearance.Row.ForeColor = System.Drawing.Color.Black;
             this.gvTarima.Appearance.Row.Options.UseBackColor = true;
             this.gvTarima.Appearance.Row.Options.UseFont = true;
@@ -446,7 +446,7 @@
             this.gvUbicacion.Appearance.GroupRow.Options.UseForeColor = true;
             this.gvUbicacion.Appearance.HeaderPanel.BackColor = System.Drawing.Color.Silver;
             this.gvUbicacion.Appearance.HeaderPanel.BorderColor = System.Drawing.Color.Silver;
-            this.gvUbicacion.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gvUbicacion.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvUbicacion.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
             this.gvUbicacion.Appearance.HeaderPanel.Options.UseBackColor = true;
             this.gvUbicacion.Appearance.HeaderPanel.Options.UseBorderColor = true;
@@ -477,7 +477,7 @@
             this.gvUbicacion.Appearance.Preview.Options.UseFont = true;
             this.gvUbicacion.Appearance.Preview.Options.UseForeColor = true;
             this.gvUbicacion.Appearance.Row.BackColor = System.Drawing.Color.White;
-            this.gvUbicacion.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvUbicacion.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvUbicacion.Appearance.Row.ForeColor = System.Drawing.Color.Black;
             this.gvUbicacion.Appearance.Row.Options.UseBackColor = true;
             this.gvUbicacion.Appearance.Row.Options.UseFont = true;

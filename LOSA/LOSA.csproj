@@ -178,6 +178,7 @@
     <Compile Include="Clases\opcionAbrirVentanaTarima.cs" />
     <Compile Include="Clases\PresentacionX.cs" />
     <Compile Include="Clases\ProductoTerminado.cs" />
+    <Compile Include="Clases\Proveedor.cs" />
     <Compile Include="Clases\Security.cs" />
     <Compile Include="Clases\Tarima.cs" />
     <Compile Include="Clases\Teclado.cs" />
@@ -397,6 +398,12 @@
     </Compile>
     <Compile Include="RecepcionMP\frmDevolucionKardex.Designer.cs">
       <DependentUpon>frmDevolucionKardex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecepcionMP\frmEditTarima.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmEditTarima.Designer.cs">
+      <DependentUpon>frmEditTarima.cs</DependentUpon>
     </Compile>
     <Compile Include="RecepcionMP\frmEntradaMP.cs">
       <SubType>Form</SubType>
@@ -632,6 +639,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmDevolucionKardex.resx">
       <DependentUpon>frmDevolucionKardex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frmEditTarima.resx">
+      <DependentUpon>frmEditTarima.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmEntradaMP.resx">
       <DependentUpon>frmEntradaMP.cs</DependentUpon>

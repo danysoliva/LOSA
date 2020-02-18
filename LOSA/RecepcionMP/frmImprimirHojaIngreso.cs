@@ -212,8 +212,14 @@ namespace LOSA.RecepcionMP
             }//end dialog result == ok
         }//end void function
 
+        private void btnEditar_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)gridControl1.FocusedView;
+            var row = (dsRecepcionMPx.lista_tarimasRow)gridView.GetFocusedDataRow();
 
-
-
+            frmEditTarima frm = new frmEditTarima(row.id);
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
     }
 }
