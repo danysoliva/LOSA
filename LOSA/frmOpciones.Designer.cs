@@ -59,6 +59,7 @@
             this.tabProduccion = new DevExpress.XtraTab.XtraTabPage();
             this.cmdTarimasPT = new DevExpress.XtraEditors.SimpleButton();
             this.btnAlimentacionManual = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -191,6 +192,7 @@
             // 
             // TabLogistica
             // 
+            this.TabLogistica.Controls.Add(this.simpleButton1);
             this.TabLogistica.Controls.Add(this.btnTrazabilidad);
             this.TabLogistica.Controls.Add(this.btnCantidadMP);
             this.TabLogistica.Controls.Add(this.btnLotes);
@@ -502,6 +504,20 @@
             this.btnAlimentacionManual.Text = "Alimentación Manual";
             this.btnAlimentacionManual.Click += new System.EventHandler(this.btnAlimentacionManual_Click);
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.Appearance.Options.UseTextOptions = true;
+            this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(419, 335);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton1.TabIndex = 20;
+            this.simpleButton1.Text = "Requerido vs Entregado";
+            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -556,5 +572,6 @@
         private DevExpress.XtraEditors.SimpleButton btnTrazabilidad;
         private DevExpress.XtraEditors.SimpleButton cmdTarimasPT;
         private DevExpress.XtraEditors.SimpleButton cmdLotesCalidad;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }
