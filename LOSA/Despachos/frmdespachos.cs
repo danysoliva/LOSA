@@ -1,0 +1,55 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using DevExpress.XtraEditors;
+using LOSA.Clases;
+using System.Data.SqlClient;
+using ACS.Classes;
+
+namespace LOSA.Despachos
+{
+    public partial class frmdespachos : DevExpress.XtraEditors.XtraForm
+    {
+        DataOperations op = new DataOperations();
+        UserLogin ULogin;
+        public frmdespachos(UserLogin UsuarioLogeado)
+        {
+            InitializeComponent();
+            load_data_orden_de_ventas();
+            ULogin = UsuarioLogeado;
+
+
+        }
+        public void load_data_orden_de_ventas()
+        {
+            SqlConnection sqlConnection = new SqlConnection(op.ConnectionStringLOSA);
+            try
+            {
+                string qry = @"EXEC [dbo].[orden_venta_load_despachos]";//Query que obtiene la informacion de las Ordenes de ventas.
+                sqlConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand(qry, sqlConnection);
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlCommand);
+                ds_despachos.orden_venta.Clear();
+                dataAdapter.Fill(ds_despachos.orden_venta);
+                sqlConnection.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+    }
+}

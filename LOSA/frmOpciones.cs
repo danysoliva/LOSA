@@ -216,5 +216,11 @@ namespace LOSA
             frmLotesStatus frm = new frmLotesStatus();
             frm.Show();
         }
+
+        private void btndespachos_Click(object sender, EventArgs e)
+        {
+            LOSA.Despachos.frmdespachos frm = new LOSA.Despachos.frmdespachos(UsuarioLogeado);
+            frm.Show();
+        }
     }
 }
