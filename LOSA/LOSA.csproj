@@ -178,6 +178,9 @@
     <Compile Include="Clases\Ubicaciones.cs" />
     <Compile Include="Clases\Ubicacion_Tarima.cs" />
     <Compile Include="Clases\UserLogin.cs" />
+    <Compile Include="Despachos\ds_despachos.cs">
+      <DependentUpon>ds_despachos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Despachos\ds_despachos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

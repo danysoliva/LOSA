@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using LOSA.Clases;
 using System.Data.SqlClient;
 using ACS.Classes;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace LOSA.Despachos
 {
@@ -50,6 +51,21 @@ namespace LOSA.Despachos
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void btn_ver_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var gridview = (GridView)grd_despachos.FocusedView;
+                var row = (ds_despachos.orden_ventaRow)gridview.GetFocusedDataRow();
+                frmplandespacho frm = new frmplandespacho(row.id, ULogin, row.CardCode, row.CardName , row.DocNum);
+                frm.Show();
+            }
+            catch (Exception ex)
+            {
+                
+            }
         }
     }
 }
