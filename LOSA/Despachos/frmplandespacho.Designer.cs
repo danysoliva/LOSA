@@ -90,7 +90,7 @@
             this.btncancel.Appearance.Options.UseBackColor = true;
             this.btncancel.Appearance.Options.UseFont = true;
             this.btncancel.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btncancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
+            this.btncancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btncancel.ImageOptions.Image")));
             this.btncancel.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btncancel.Location = new System.Drawing.Point(127, 12);
             this.btncancel.Margin = new System.Windows.Forms.Padding(4);
@@ -256,6 +256,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.btnlotes.Name = "btnlotes";
             this.btnlotes.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnlotes.Click += new System.EventHandler(this.btnlotes_Click);
             // 
             // labelControl2
             // 
@@ -350,13 +351,12 @@
             // 
             // btnatras
             // 
-            this.btnatras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnatras.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnatras.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnatras.Appearance.Options.UseBackColor = true;
             this.btnatras.Appearance.Options.UseFont = true;
             this.btnatras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnatras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btnatras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnatras.ImageOptions.Image")));
             this.btnatras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnatras.Location = new System.Drawing.Point(4, 12);
             this.btnatras.Margin = new System.Windows.Forms.Padding(4);
