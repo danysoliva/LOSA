@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using System.Data.SqlClient;
 using ACS.Classes;
 using LOSA.Clases;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace LOSA.Despachos
 {
@@ -128,7 +129,17 @@ namespace LOSA.Despachos
 
         private void btnlotes_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                var gridview = (GridView)grd_detalle.FocusedView;
+                var row = (ds_despachos.plan_despachoRow)gridview.GetFocusedDataRow();
+                LOSA.Despachos.frmseleccionlote frm = new frmseleccionlote(row.U_Sacos,row.ItemCode, row.Dscription, row.id);
+                frm.Show();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
     }
 }

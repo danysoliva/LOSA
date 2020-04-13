@@ -18,9 +18,17 @@ namespace LOSA.Despachos
     {
         DataOperations dp = new DataOperations();
         private int CantidadPendiente;
-        public frmseleccionlote(int CantidadPendiente, string itemcode, string Dscripcion)
+        private int Pid_detalle;
+        public frmseleccionlote(int CantidadPendiente, string itemcode, string Dscripcion, int id_detalle)
         {
             InitializeComponent();
+            txtunidades.Text = CantidadPendiente.ToString();
+            this.CantidadPendiente = CantidadPendiente;
+            txtitem.Text = "(" + itemcode + ") - " + Dscripcion;
+            Pid_detalle = id_detalle;
+            LoadDetalleLotes();
+
+
 
         }
         private void LoadDetalleLotes()
@@ -55,16 +63,16 @@ namespace LOSA.Despachos
 
                 foreach (ds_despachos.detalle_lote_ptRow row in ds_despachos.detalle_lote_pt.Rows)
                 {
-                    if (row.peso_total == cantidaPendiente)
+                    if (row.cantidad == cantidaPendiente)
                     {
                         row.seleccionado = true;
                         cantidaPendiente = 0;
-                        row.cants = row.peso_total;
+                        row.cants = row.cantidad;
                         break;
                     }
-                    if (row.peso_total > cantidaPendiente && cantidaPendiente > 0)
+                    if (row.cantidad > cantidaPendiente && cantidaPendiente > 0)
                     {
-                        if (row.peso_total > cantidaPendiente)
+                        if (row.cantidad > cantidaPendiente)
                             row.cants = cantidaPendiente;
                         else
                             row.cants = total_solicitado - cantidaPendiente;
@@ -83,6 +91,12 @@ namespace LOSA.Despachos
                     row.seleccionado = false;
                 }
             }
+        }
+
+        private void btnatras_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

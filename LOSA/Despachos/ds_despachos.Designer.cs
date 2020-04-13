@@ -1105,7 +1105,7 @@ namespace LOSA.Despachos {
             
             private global::System.Data.DataColumn columnvence;
             
-            private global::System.Data.DataColumn columnlote_mp;
+            private global::System.Data.DataColumn columnlote_pt;
             
             private global::System.Data.DataColumn columnpresentacion;
             
@@ -1194,9 +1194,9 @@ namespace LOSA.Despachos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn lote_mpColumn {
+            public global::System.Data.DataColumn lote_ptColumn {
                 get {
-                    return this.columnlote_mp;
+                    return this.columnlote_pt;
                 }
             }
             
@@ -1285,7 +1285,7 @@ namespace LOSA.Despachos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public detalle_lote_ptRow Adddetalle_lote_ptRow(int id, string id_proveedor, string Nombre, System.DateTime ingreso, System.DateTime vence, string lote_mp, string presentacion, decimal cantidad, string unidad, decimal peso_total, bool seleccionado, decimal cants) {
+            public detalle_lote_ptRow Adddetalle_lote_ptRow(int id, string id_proveedor, string Nombre, System.DateTime ingreso, System.DateTime vence, string lote_pt, string presentacion, decimal cantidad, string unidad, decimal peso_total, bool seleccionado, decimal cants) {
                 detalle_lote_ptRow rowdetalle_lote_ptRow = ((detalle_lote_ptRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -1293,7 +1293,7 @@ namespace LOSA.Despachos {
                         Nombre,
                         ingreso,
                         vence,
-                        lote_mp,
+                        lote_pt,
                         presentacion,
                         cantidad,
                         unidad,
@@ -1327,7 +1327,7 @@ namespace LOSA.Despachos {
                 this.columnNombre = base.Columns["Nombre"];
                 this.columningreso = base.Columns["ingreso"];
                 this.columnvence = base.Columns["vence"];
-                this.columnlote_mp = base.Columns["lote_mp"];
+                this.columnlote_pt = base.Columns["lote_pt"];
                 this.columnpresentacion = base.Columns["presentacion"];
                 this.columncantidad = base.Columns["cantidad"];
                 this.columnunidad = base.Columns["unidad"];
@@ -1349,8 +1349,8 @@ namespace LOSA.Despachos {
                 base.Columns.Add(this.columningreso);
                 this.columnvence = new global::System.Data.DataColumn("vence", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnvence);
-                this.columnlote_mp = new global::System.Data.DataColumn("lote_mp", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnlote_mp);
+                this.columnlote_pt = new global::System.Data.DataColumn("lote_pt", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlote_pt);
                 this.columnpresentacion = new global::System.Data.DataColumn("presentacion", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpresentacion);
                 this.columncantidad = new global::System.Data.DataColumn("cantidad", typeof(decimal), null, global::System.Data.MappingType.Element);
@@ -2176,17 +2176,17 @@ namespace LOSA.Despachos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string lote_mp {
+            public string lote_pt {
                 get {
                     try {
-                        return ((string)(this[this.tabledetalle_lote_pt.lote_mpColumn]));
+                        return ((string)(this[this.tabledetalle_lote_pt.lote_ptColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'lote_mp\' de la tabla \'detalle_lote_pt\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'lote_pt\' de la tabla \'detalle_lote_pt\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabledetalle_lote_pt.lote_mpColumn] = value;
+                    this[this.tabledetalle_lote_pt.lote_ptColumn] = value;
                 }
             }
             
@@ -2348,14 +2348,14 @@ namespace LOSA.Despachos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Islote_mpNull() {
-                return this.IsNull(this.tabledetalle_lote_pt.lote_mpColumn);
+            public bool Islote_ptNull() {
+                return this.IsNull(this.tabledetalle_lote_pt.lote_ptColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Setlote_mpNull() {
-                this[this.tabledetalle_lote_pt.lote_mpColumn] = global::System.Convert.DBNull;
+            public void Setlote_ptNull() {
+                this[this.tabledetalle_lote_pt.lote_ptColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

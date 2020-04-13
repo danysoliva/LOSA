@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmseleccionlote));
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.grd_lote = new DevExpress.XtraGrid.GridControl();
             this.ds_despachos = new LOSA.Despachos.ds_despachos();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.grdv_lote = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_proveedor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNombre = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -48,15 +49,17 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txtitem = new DevExpress.XtraEditors.TextEdit();
             this.txtunidades = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.txtAsignadas = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.chkTodos = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            this.btnatras = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_lote)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds_despachos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_lote)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtitem.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtunidades.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAsignadas.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -76,46 +79,46 @@
             this.labelControl1.TabIndex = 37;
             this.labelControl1.Text = "Planificacion de Despacho";
             // 
-            // gridControl1
+            // grd_lote
             // 
-            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.grd_lote.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.DataMember = "detalle_lote_pt";
-            this.gridControl1.DataSource = this.ds_despachos;
-            this.gridControl1.Location = new System.Drawing.Point(0, 201);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(851, 488);
-            this.gridControl1.TabIndex = 38;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.grd_lote.DataMember = "detalle_lote_pt";
+            this.grd_lote.DataSource = this.ds_despachos;
+            this.grd_lote.Location = new System.Drawing.Point(0, 201);
+            this.grd_lote.MainView = this.grdv_lote;
+            this.grd_lote.Name = "grd_lote";
+            this.grd_lote.Size = new System.Drawing.Size(851, 488);
+            this.grd_lote.TabIndex = 38;
+            this.grd_lote.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grdv_lote});
             // 
             // ds_despachos
             // 
             this.ds_despachos.DataSetName = "ds_despachos";
             this.ds_despachos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // gridView1
+            // grdv_lote
             // 
-            this.gridView1.Appearance.FocusedCell.BackColor = System.Drawing.Color.LightGreen;
-            this.gridView1.Appearance.FocusedCell.Options.UseBackColor = true;
-            this.gridView1.Appearance.FocusedRow.BackColor = System.Drawing.Color.LightGreen;
-            this.gridView1.Appearance.FocusedRow.BackColor2 = System.Drawing.Color.LightGreen;
-            this.gridView1.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.gridView1.Appearance.FocusedRow.Options.UseBackColor = true;
-            this.gridView1.Appearance.FocusedRow.Options.UseFont = true;
-            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gridView1.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.LightGreen;
-            this.gridView1.Appearance.HideSelectionRow.Options.UseBackColor = true;
-            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.gridView1.Appearance.Row.Options.UseFont = true;
-            this.gridView1.Appearance.SelectedRow.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.gridView1.Appearance.SelectedRow.Options.UseFont = true;
-            this.gridView1.Appearance.TopNewRow.BackColor = System.Drawing.Color.White;
-            this.gridView1.Appearance.TopNewRow.Options.UseBackColor = true;
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.grdv_lote.Appearance.FocusedCell.BackColor = System.Drawing.Color.LightGreen;
+            this.grdv_lote.Appearance.FocusedCell.Options.UseBackColor = true;
+            this.grdv_lote.Appearance.FocusedRow.BackColor = System.Drawing.Color.LightGreen;
+            this.grdv_lote.Appearance.FocusedRow.BackColor2 = System.Drawing.Color.LightGreen;
+            this.grdv_lote.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.grdv_lote.Appearance.FocusedRow.Options.UseBackColor = true;
+            this.grdv_lote.Appearance.FocusedRow.Options.UseFont = true;
+            this.grdv_lote.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.grdv_lote.Appearance.HeaderPanel.Options.UseFont = true;
+            this.grdv_lote.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.LightGreen;
+            this.grdv_lote.Appearance.HideSelectionRow.Options.UseBackColor = true;
+            this.grdv_lote.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.grdv_lote.Appearance.Row.Options.UseFont = true;
+            this.grdv_lote.Appearance.SelectedRow.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.grdv_lote.Appearance.SelectedRow.Options.UseFont = true;
+            this.grdv_lote.Appearance.TopNewRow.BackColor = System.Drawing.Color.White;
+            this.grdv_lote.Appearance.TopNewRow.Options.UseBackColor = true;
+            this.grdv_lote.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colid,
             this.colid_proveedor,
             this.colNombre,
@@ -128,13 +131,13 @@
             this.colpeso_total,
             this.colseleccionado,
             this.colcants});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsCustomization.AllowFilter = false;
-            this.gridView1.OptionsView.ShowAutoFilterRow = true;
-            this.gridView1.OptionsView.ShowFooter = true;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.RowHeight = 20;
+            this.grdv_lote.GridControl = this.grd_lote;
+            this.grdv_lote.Name = "grdv_lote";
+            this.grdv_lote.OptionsCustomization.AllowFilter = false;
+            this.grdv_lote.OptionsView.ShowAutoFilterRow = true;
+            this.grdv_lote.OptionsView.ShowFooter = true;
+            this.grdv_lote.OptionsView.ShowGroupPanel = false;
+            this.grdv_lote.RowHeight = 20;
             // 
             // colid
             // 
@@ -145,6 +148,8 @@
             // 
             this.colid_proveedor.FieldName = "id_proveedor";
             this.colid_proveedor.Name = "colid_proveedor";
+            this.colid_proveedor.Visible = true;
+            this.colid_proveedor.VisibleIndex = 10;
             // 
             // colNombre
             // 
@@ -175,8 +180,8 @@
             // 
             // collote_mp
             // 
-            this.collote_mp.Caption = "Lote MP";
-            this.collote_mp.FieldName = "lote_mp";
+            this.collote_mp.Caption = "Lote PM";
+            this.collote_mp.FieldName = "lote_pt";
             this.collote_mp.Name = "collote_mp";
             this.collote_mp.OptionsColumn.AllowEdit = false;
             this.collote_mp.Visible = true;
@@ -256,6 +261,7 @@
             // 
             // txtitem
             // 
+            this.txtitem.Enabled = false;
             this.txtitem.Location = new System.Drawing.Point(251, 73);
             this.txtitem.Name = "txtitem";
             this.txtitem.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -265,6 +271,7 @@
             // 
             // txtunidades
             // 
+            this.txtunidades.Enabled = false;
             this.txtunidades.Location = new System.Drawing.Point(251, 116);
             this.txtunidades.Name = "txtunidades";
             this.txtunidades.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -272,14 +279,15 @@
             this.txtunidades.Size = new System.Drawing.Size(100, 30);
             this.txtunidades.TabIndex = 42;
             // 
-            // textEdit1
+            // txtAsignadas
             // 
-            this.textEdit1.Location = new System.Drawing.Point(593, 116);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Size = new System.Drawing.Size(100, 30);
-            this.textEdit1.TabIndex = 44;
+            this.txtAsignadas.Enabled = false;
+            this.txtAsignadas.Location = new System.Drawing.Point(593, 116);
+            this.txtAsignadas.Name = "txtAsignadas";
+            this.txtAsignadas.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAsignadas.Properties.Appearance.Options.UseFont = true;
+            this.txtAsignadas.Size = new System.Drawing.Size(100, 30);
+            this.txtAsignadas.TabIndex = 44;
             // 
             // labelControl4
             // 
@@ -293,44 +301,78 @@
             // 
             // chkTodos
             // 
-            this.chkTodos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkTodos.AutoSize = true;
             this.chkTodos.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkTodos.Location = new System.Drawing.Point(519, 165);
+            this.chkTodos.Location = new System.Drawing.Point(24, 165);
             this.chkTodos.Margin = new System.Windows.Forms.Padding(4);
             this.chkTodos.Name = "chkTodos";
             this.chkTodos.Size = new System.Drawing.Size(174, 29);
             this.chkTodos.TabIndex = 46;
             this.chkTodos.Text = "Autoseleccionar";
             this.chkTodos.UseVisualStyleBackColor = true;
-            this.chkTodos.Visible = false;
             this.chkTodos.CheckedChanged += new System.EventHandler(this.chkTodos_CheckedChanged);
+            // 
+            // btnatras
+            // 
+            this.btnatras.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnatras.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnatras.Appearance.Options.UseBackColor = true;
+            this.btnatras.Appearance.Options.UseFont = true;
+            this.btnatras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnatras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnatras.ImageOptions.Image")));
+            this.btnatras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnatras.Location = new System.Drawing.Point(13, 11);
+            this.btnatras.Margin = new System.Windows.Forms.Padding(4);
+            this.btnatras.Name = "btnatras";
+            this.btnatras.Size = new System.Drawing.Size(118, 54);
+            this.btnatras.TabIndex = 47;
+            this.btnatras.Text = "Atras";
+            this.btnatras.Click += new System.EventHandler(this.btnatras_Click);
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.Options.UseBackColor = true;
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.simpleButton1.Location = new System.Drawing.Point(690, 7);
+            this.simpleButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(118, 55);
+            this.simpleButton1.TabIndex = 48;
+            this.simpleButton1.Text = "Guardar";
             // 
             // frmseleccionlote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(851, 689);
+            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.btnatras);
             this.Controls.Add(this.chkTodos);
-            this.Controls.Add(this.textEdit1);
+            this.Controls.Add(this.txtAsignadas);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.txtunidades);
             this.Controls.Add(this.txtitem);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
-            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.grd_lote);
             this.Controls.Add(this.labelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmseleccionlote";
             this.Text = "frmseleccionlote";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_lote)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds_despachos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_lote)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtitem.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtunidades.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAsignadas.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -339,13 +381,13 @@
         #endregion
 
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl grd_lote;
+        private DevExpress.XtraGrid.Views.Grid.GridView grdv_lote;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.TextEdit txtitem;
         private DevExpress.XtraEditors.TextEdit txtunidades;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit txtAsignadas;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private System.Windows.Forms.CheckBox chkTodos;
         private ds_despachos ds_despachos;
@@ -361,5 +403,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colpeso_total;
         private DevExpress.XtraGrid.Columns.GridColumn colseleccionado;
         private DevExpress.XtraGrid.Columns.GridColumn colcants;
+        private DevExpress.XtraEditors.SimpleButton btnatras;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }
