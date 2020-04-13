@@ -198,6 +198,12 @@
     <Compile Include="Despachos\frmplandespacho.Designer.cs">
       <DependentUpon>frmplandespacho.cs</DependentUpon>
     </Compile>
+    <Compile Include="Despachos\frmplanesdecarga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Despachos\frmplanesdecarga.Designer.cs">
+      <DependentUpon>frmplanesdecarga.cs</DependentUpon>
+    </Compile>
     <Compile Include="Despachos\frmseleccionlote.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -566,6 +572,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frmplandespacho.resx">
       <DependentUpon>frmplandespacho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Despachos\frmplanesdecarga.resx">
+      <DependentUpon>frmplanesdecarga.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frmseleccionlote.resx">
       <DependentUpon>frmseleccionlote.cs</DependentUpon>
