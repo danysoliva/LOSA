@@ -30,6 +30,7 @@ namespace LOSA.TransaccionesMP
             IdRequisicionDetalle = pIdRequisicionDetalle;
             CantidadPendiente = pCantidad;
             txtCantidadPendiente.Text = string.Format("{0:###,##0.00}", CantidadPendiente);
+            txtSolicitada.Text = string.Format("{0:###,##0.00}", CantidadPendiente);
             id_unidad = pIdUnidad;
             lblUnidad.Text = pUnidadName;
 
@@ -77,6 +78,7 @@ namespace LOSA.TransaccionesMP
         {
             decimal total_solicitado = CantidadPendiente;
             decimal cantidaPendiente = CantidadPendiente;
+            decimal cantidad_conseguida = 0;
             if (chkAutoSelect.Checked)
             {
                 //var gridView = (GridView)grRequisicoinesMP.FocusedView;
@@ -103,6 +105,30 @@ namespace LOSA.TransaccionesMP
                         row.seleccionado = true;
                         break;
                     }
+                    else
+                    {
+                        //en el row tenemos un valor menor que el solicitado
+                        //Necesitaremos mas de un row para satisfaser la cantidad requerida.
+                        if (row.peso_total < cantidaPendiente && cantidaPendiente > 0)
+                        {
+                            //seleccionamos la cantidad total del row para acumular el valor solictado.
+                            row.cants = row.peso_total;
+                            
+                            //Restamos la cantidad conseguida o asignada.
+                            cantidaPendiente -= row.cants;
+
+                            //Marcamos el row seleccionado porque se utilizaria dicho lote para la requisicion.
+                            row.seleccionado = true;
+                        }
+                    }
+
+                    //Calculo de totales.
+                    if (row.seleccionado)
+                        cantidad_conseguida += row.cants;
+
+                    txtCantidadPendiente.Text = string.Format("{0:###,##0.00}", CantidadPendiente - cantidad_conseguida);
+                    txtAsignada.Text = string.Format("{0:###,##0.00}", cantidad_conseguida);
+                    //end block foreach
                 }
             }
             else
@@ -131,6 +157,15 @@ namespace LOSA.TransaccionesMP
                 CajaDialogo.Error("Debe seleccionar al menos un lote");
                 return;
             }
+
+            decimal pendiente = 0;
+            if (Convert.ToDecimal(txtCantidadPendiente.Text) > 0)
+            {
+                DialogResult r = CajaDialogo.Pregunta("Las cantidades seleccionadas no abastecen el total requerido!!\nDesea Guardar el avance seleccionado?");
+                if (r != DialogResult.Yes)
+                    return;
+            }
+
 
             try
             {

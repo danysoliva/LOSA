@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSeleccionLote));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.txtMP_Name = new DevExpress.XtraEditors.TextEdit();
@@ -51,11 +51,16 @@
             this.colunidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colpeso_total = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colseleccionado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcants = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnVerD = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.lblUnidad = new DevExpress.XtraEditors.LabelControl();
             this.chkAutoSelect = new System.Windows.Forms.CheckBox();
             this.cmdGuardar = new DevExpress.XtraEditors.SimpleButton();
-            this.colcants = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.txtAsignada = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.txtSolicitada = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txtMP_Name.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigoMP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadPendiente.Properties)).BeginInit();
@@ -63,6 +68,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTarimas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnVerD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAsignada.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSolicitada.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -83,6 +90,7 @@
             // 
             // btnAtras
             // 
+            this.btnAtras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAtras.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnAtras.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAtras.Appearance.Options.UseBackColor = true;
@@ -90,7 +98,7 @@
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(10, 7);
+            this.btnAtras.Location = new System.Drawing.Point(469, 6);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(167, 47);
             this.btnAtras.TabIndex = 36;
@@ -135,7 +143,7 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(12, 131);
+            this.labelControl2.Location = new System.Drawing.Point(12, 204);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(149, 24);
             this.labelControl2.TabIndex = 42;
@@ -145,7 +153,7 @@
             // 
             this.txtCantidadPendiente.EditValue = "0.00";
             this.txtCantidadPendiente.Enabled = false;
-            this.txtCantidadPendiente.Location = new System.Drawing.Point(187, 127);
+            this.txtCantidadPendiente.Location = new System.Drawing.Point(187, 200);
             this.txtCantidadPendiente.Name = "txtCantidadPendiente";
             this.txtCantidadPendiente.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCantidadPendiente.Properties.Appearance.Options.UseFont = true;
@@ -161,7 +169,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grRequisicoinesMP.DataMember = "detalle_lote_mp";
             this.grRequisicoinesMP.DataSource = this.dsTransaccionesMP1;
-            this.grRequisicoinesMP.Location = new System.Drawing.Point(1, 179);
+            this.grRequisicoinesMP.Location = new System.Drawing.Point(1, 238);
             this.grRequisicoinesMP.MainView = this.gvTarimas;
             this.grRequisicoinesMP.Name = "grRequisicoinesMP";
             this.grRequisicoinesMP.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -306,12 +314,20 @@
             this.colseleccionado.Visible = true;
             this.colseleccionado.VisibleIndex = 8;
             // 
+            // colcants
+            // 
+            this.colcants.Caption = "Cantidad a Enviar";
+            this.colcants.FieldName = "cants";
+            this.colcants.Name = "colcants";
+            this.colcants.Visible = true;
+            this.colcants.VisibleIndex = 9;
+            // 
             // btnVerD
             // 
             this.btnVerD.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
             this.btnVerD.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions3, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.btnVerD.Name = "btnVerD";
             this.btnVerD.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -319,18 +335,21 @@
             // 
             this.lblUnidad.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUnidad.Appearance.Options.UseFont = true;
-            this.lblUnidad.Location = new System.Drawing.Point(335, 131);
+            this.lblUnidad.Appearance.Options.UseTextOptions = true;
+            this.lblUnidad.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.lblUnidad.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblUnidad.Location = new System.Drawing.Point(485, 127);
             this.lblUnidad.Name = "lblUnidad";
             this.lblUnidad.Size = new System.Drawing.Size(141, 24);
             this.lblUnidad.TabIndex = 44;
-            this.lblUnidad.Text = "Unidad Medida";
+            this.lblUnidad.Text = "Kg";
             // 
             // chkAutoSelect
             // 
             this.chkAutoSelect.AutoSize = true;
             this.chkAutoSelect.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkAutoSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkAutoSelect.Location = new System.Drawing.Point(477, 133);
+            this.chkAutoSelect.Location = new System.Drawing.Point(351, 170);
             this.chkAutoSelect.Name = "chkAutoSelect";
             this.chkAutoSelect.Size = new System.Drawing.Size(149, 24);
             this.chkAutoSelect.TabIndex = 45;
@@ -340,7 +359,6 @@
             // 
             // cmdGuardar
             // 
-            this.cmdGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdGuardar.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
             this.cmdGuardar.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdGuardar.Appearance.Options.UseBackColor = true;
@@ -348,20 +366,71 @@
             this.cmdGuardar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdGuardar.ImageOptions.Image")));
             this.cmdGuardar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.cmdGuardar.Location = new System.Drawing.Point(469, 8);
+            this.cmdGuardar.Location = new System.Drawing.Point(5, 6);
             this.cmdGuardar.Name = "cmdGuardar";
             this.cmdGuardar.Size = new System.Drawing.Size(167, 47);
             this.cmdGuardar.TabIndex = 46;
             this.cmdGuardar.Text = "Planificar";
             this.cmdGuardar.Click += new System.EventHandler(this.cmdGuardar_Click);
             // 
-            // colcants
+            // labelControl4
             // 
-            this.colcants.Caption = "Cantidad a Enviar";
-            this.colcants.FieldName = "cants";
-            this.colcants.Name = "colcants";
-            this.colcants.Visible = true;
-            this.colcants.VisibleIndex = 9;
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Location = new System.Drawing.Point(12, 166);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(141, 24);
+            this.labelControl4.TabIndex = 48;
+            this.labelControl4.Text = "Cant. Asignada";
+            // 
+            // txtAsignada
+            // 
+            this.txtAsignada.EditValue = "0.00";
+            this.txtAsignada.Enabled = false;
+            this.txtAsignada.Location = new System.Drawing.Point(187, 162);
+            this.txtAsignada.Name = "txtAsignada";
+            this.txtAsignada.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAsignada.Properties.Appearance.Options.UseFont = true;
+            this.txtAsignada.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtAsignada.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtAsignada.Size = new System.Drawing.Size(142, 32);
+            this.txtAsignada.TabIndex = 47;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Location = new System.Drawing.Point(12, 127);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(144, 24);
+            this.labelControl5.TabIndex = 50;
+            this.labelControl5.Text = "Cant. Solicitada";
+            // 
+            // txtSolicitada
+            // 
+            this.txtSolicitada.EditValue = "0.00";
+            this.txtSolicitada.Enabled = false;
+            this.txtSolicitada.Location = new System.Drawing.Point(187, 123);
+            this.txtSolicitada.Name = "txtSolicitada";
+            this.txtSolicitada.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSolicitada.Properties.Appearance.Options.UseFont = true;
+            this.txtSolicitada.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtSolicitada.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtSolicitada.Size = new System.Drawing.Size(142, 32);
+            this.txtSolicitada.TabIndex = 49;
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl6.Appearance.Options.UseFont = true;
+            this.labelControl6.Appearance.Options.UseTextOptions = true;
+            this.labelControl6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl6.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl6.Location = new System.Drawing.Point(335, 127);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(147, 24);
+            this.labelControl6.TabIndex = 51;
+            this.labelControl6.Text = "Unidad Medida:";
             // 
             // frmSeleccionLote
             // 
@@ -369,6 +438,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(638, 560);
+            this.Controls.Add(this.labelControl6);
+            this.Controls.Add(this.labelControl5);
+            this.Controls.Add(this.txtSolicitada);
+            this.Controls.Add(this.labelControl4);
+            this.Controls.Add(this.txtAsignada);
             this.Controls.Add(this.cmdGuardar);
             this.Controls.Add(this.chkAutoSelect);
             this.Controls.Add(this.lblUnidad);
@@ -390,6 +464,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTarimas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnVerD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAsignada.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSolicitada.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -423,5 +499,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn colseleccionado;
         private DevExpress.XtraEditors.SimpleButton cmdGuardar;
         private DevExpress.XtraGrid.Columns.GridColumn colcants;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.TextEdit txtAsignada;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.TextEdit txtSolicitada;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
     }
 }
