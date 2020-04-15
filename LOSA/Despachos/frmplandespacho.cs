@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using System.Data.SqlClient;
 using ACS.Classes;
 using LOSA.Clases;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace LOSA.Despachos
 {
@@ -56,9 +57,15 @@ namespace LOSA.Despachos
         }
         private void recorrido_get_id()
         {
+            string valor = "";
             foreach (DataRow row in ds_despachos.plan_despacho.Rows)
             {
                 IdOfPlan = Convert.ToInt32(row["id"].ToString());
+                valor = row["date_plafinificada"].ToString();
+                if (valor != "")
+                {
+                    dtfechaplan.EditValue = Convert.ToDateTime(row["date_plafinificada"].ToString());
+                }
             }
         }
 
@@ -99,7 +106,40 @@ namespace LOSA.Despachos
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+            string query = @"UPDATE [dbo].[LOSA_orden_venta_programacion_header]
+                               SET [date_plafinificada] = @Date
+                             WHERE id = @idplan";
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            try
+            {
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query,cn);
+                cmd.Parameters.Add("@Date", SqlDbType.DateTime).Value = dtfechaplan.DateTime;
+                cmd.Parameters.Add("@idplan", SqlDbType.Int).Value = IdOfPlan;
+                cmd.ExecuteNonQuery();
+                cn.Close();
+                CajaDialogo.Information("Guardado con exito!");
 
+            }
+            catch (Exception ex )
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void btnlotes_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var gridview = (GridView)grd_detalle.FocusedView;
+                var row = (ds_despachos.plan_despachoRow)gridview.GetFocusedDataRow();
+                LOSA.Despachos.frmseleccionlote frm = new frmseleccionlote(row.U_Sacos,row.ItemCode, row.Dscription, row.id, ParUser);
+                frm.Show();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
     }
 }

@@ -86,5 +86,10 @@ namespace LOSA.TransaccionesMP
             frmDevolucionKardex frm = new frmDevolucionKardex(UsuarioLogeado);
             frm.Show();
         }
+
+        private void cmdOrdenesCargaPT_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
