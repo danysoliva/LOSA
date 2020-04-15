@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTrazabilidadLote));
             this.gcEventos = new DevExpress.XtraGrid.GridControl();
-            this.eventosLoteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.eventosLoteBindingSource = new System.Windows.Forms.BindingSource();
             this.dsLogistica2 = new LOSA.Logistica.dsLogistica2();
             this.gvEventos = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colevento = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -39,10 +38,10 @@
             this.collote_materia_prima = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colusuario = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcantidad = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnum = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.teLote = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.colnum = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gcEventos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventosLoteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsLogistica2)).BeginInit();
@@ -168,8 +167,17 @@
             this.colcantidad.Visible = true;
             this.colcantidad.VisibleIndex = 5;
             // 
+            // colnum
+            // 
+            this.colnum.Caption = "# Tarima";
+            this.colnum.FieldName = "num";
+            this.colnum.Name = "colnum";
+            this.colnum.Visible = true;
+            this.colnum.VisibleIndex = 0;
+            // 
             // btnAtras
             // 
+            this.btnAtras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAtras.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnAtras.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAtras.Appearance.Options.UseBackColor = true;
@@ -177,9 +185,9 @@
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(12, 12);
+            this.btnAtras.Location = new System.Drawing.Point(481, 12);
             this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(167, 47);
+            this.btnAtras.Size = new System.Drawing.Size(145, 47);
             this.btnAtras.TabIndex = 2;
             this.btnAtras.Text = "Atras";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
@@ -206,14 +214,6 @@
             this.labelControl2.Size = new System.Drawing.Size(44, 25);
             this.labelControl2.TabIndex = 103;
             this.labelControl2.Text = "Lote:";
-            // 
-            // colnum
-            // 
-            this.colnum.Caption = "# Tarima";
-            this.colnum.FieldName = "num";
-            this.colnum.Name = "colnum";
-            this.colnum.Visible = true;
-            this.colnum.VisibleIndex = 0;
             // 
             // frmTrazabilidadLote
             // 

@@ -83,5 +83,17 @@ namespace LOSA.TransaccionesMP
                 }
             }
         }
+
+        private void chkAutoSelect_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkAutoSelect.Checked)
+            {
+
+            }
+            else
+            {
+
+            }
+        }
     }
 }

@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLotesXMP));
             this.gcLotes = new DevExpress.XtraGrid.GridControl();
-            this.lotesXProveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lotesXProveedorBindingSource = new System.Windows.Forms.BindingSource();
             this.dsLogistica = new LOSA.Logistica.dsLogistica2();
             this.gvLotes = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -43,20 +42,20 @@
             this.colidMateriaPrima = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.cbMateriaPrima = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.dsRecepcionMPx = new LOSA.RecepcionMP.dsRecepcionMPx();
+            this.materiaprimaBindingSource = new System.Windows.Forms.BindingSource();
             this.gvMateriaPrima = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dsRecepcionMPx = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
-            this.materiaprimaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gcLotes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lotesXProveedorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsLogistica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvLotes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbMateriaPrima.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvMateriaPrima)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.materiaprimaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvMateriaPrima)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).BeginInit();
             this.SuspendLayout();
             // 
             // gcLotes
@@ -224,10 +223,10 @@
             this.cbMateriaPrima.TabIndex = 93;
             this.cbMateriaPrima.EditValueChanged += new System.EventHandler(this.cbMateriaPrima_EditValueChanged);
             // 
-            // dsRecepcionMPx
+            // materiaprimaBindingSource
             // 
-            this.dsRecepcionMPx.DataSetName = "dsRecepcionMPx";
-            this.dsRecepcionMPx.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.materiaprimaBindingSource.DataMember = "Materia_prima";
+            this.materiaprimaBindingSource.DataSource = this.dsLogistica;
             // 
             // gvMateriaPrima
             // 
@@ -271,23 +270,26 @@
             this.gridColumn3.FieldName = "itemcode";
             this.gridColumn3.Name = "gridColumn3";
             // 
+            // dsRecepcionMPx
+            // 
+            this.dsRecepcionMPx.DataSetName = "dsRecepcionMPx";
+            this.dsRecepcionMPx.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // cmdHome
             // 
+            this.cmdHome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdHome.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.cmdHome.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdHome.Appearance.Options.UseBackColor = true;
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdHome.ImageOptions.Image")));
-            this.cmdHome.Location = new System.Drawing.Point(30, 11);
+            this.cmdHome.Location = new System.Drawing.Point(450, 12);
             this.cmdHome.Name = "cmdHome";
             this.cmdHome.Size = new System.Drawing.Size(144, 59);
             this.cmdHome.TabIndex = 90;
             this.cmdHome.Text = "Home";
             this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
-            // 
-            // materiaprimaBindingSource
-            // 
-            this.materiaprimaBindingSource.DataMember = "Materia_prima";
-            this.materiaprimaBindingSource.DataSource = this.dsLogistica;
             // 
             // frmLotesXMP
             // 
@@ -308,9 +310,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dsLogistica)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvLotes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbMateriaPrima.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvMateriaPrima)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.materiaprimaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvMateriaPrima)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

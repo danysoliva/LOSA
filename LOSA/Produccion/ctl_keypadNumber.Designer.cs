@@ -45,6 +45,8 @@
             // 
             // btnClear
             // 
+            this.btnClear.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Appearance.Options.UseFont = true;
             this.btnClear.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnClear.Location = new System.Drawing.Point(103, 10);
             this.btnClear.Name = "btnClear";
@@ -55,6 +57,8 @@
             // 
             // btn3
             // 
+            this.btn3.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn3.Appearance.Options.UseFont = true;
             this.btn3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btn3.Location = new System.Drawing.Point(195, 52);
             this.btn3.Name = "btn3";
@@ -65,6 +69,8 @@
             // 
             // btn2
             // 
+            this.btn2.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn2.Appearance.Options.UseFont = true;
             this.btn2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btn2.Location = new System.Drawing.Point(102, 52);
             this.btn2.Name = "btn2";
@@ -75,6 +81,8 @@
             // 
             // btn1
             // 
+            this.btn1.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn1.Appearance.Options.UseFont = true;
             this.btn1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btn1.Location = new System.Drawing.Point(9, 52);
             this.btn1.Name = "btn1";
@@ -85,6 +93,8 @@
             // 
             // btn6
             // 
+            this.btn6.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn6.Appearance.Options.UseFont = true;
             this.btn6.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btn6.Location = new System.Drawing.Point(195, 93);
             this.btn6.Name = "btn6";
@@ -95,6 +105,8 @@
             // 
             // btn5
             // 
+            this.btn5.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn5.Appearance.Options.UseFont = true;
             this.btn5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btn5.Location = new System.Drawing.Point(102, 93);
             this.btn5.Name = "btn5";
@@ -105,6 +117,8 @@
             // 
             // btn4
             // 
+            this.btn4.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn4.Appearance.Options.UseFont = true;
             this.btn4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btn4.Location = new System.Drawing.Point(9, 93);
             this.btn4.Name = "btn4";
@@ -115,6 +129,8 @@
             // 
             // btn9
             // 
+            this.btn9.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn9.Appearance.Options.UseFont = true;
             this.btn9.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btn9.Location = new System.Drawing.Point(195, 133);
             this.btn9.Name = "btn9";
@@ -125,6 +141,8 @@
             // 
             // btn8
             // 
+            this.btn8.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn8.Appearance.Options.UseFont = true;
             this.btn8.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btn8.Location = new System.Drawing.Point(102, 133);
             this.btn8.Name = "btn8";
@@ -135,6 +153,8 @@
             // 
             // btn7
             // 
+            this.btn7.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn7.Appearance.Options.UseFont = true;
             this.btn7.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btn7.Location = new System.Drawing.Point(9, 133);
             this.btn7.Name = "btn7";
@@ -145,6 +165,8 @@
             // 
             // btn0
             // 
+            this.btn0.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn0.Appearance.Options.UseFont = true;
             this.btn0.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btn0.Location = new System.Drawing.Point(195, 174);
             this.btn0.Name = "btn0";
@@ -155,6 +177,8 @@
             // 
             // btnPunto
             // 
+            this.btnPunto.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPunto.Appearance.Options.UseFont = true;
             this.btnPunto.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnPunto.Location = new System.Drawing.Point(102, 174);
             this.btnPunto.Name = "btnPunto";
@@ -165,6 +189,8 @@
             // 
             // btnBackSpace
             // 
+            this.btnBackSpace.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackSpace.Appearance.Options.UseFont = true;
             this.btnBackSpace.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnBackSpace.ImageOptions.Image = global::LOSA.Properties.Resources.backspace;
             this.btnBackSpace.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
