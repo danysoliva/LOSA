@@ -223,11 +223,35 @@
     <Compile Include="Despachos\frmplanesdecarga.Designer.cs">
       <DependentUpon>frmplanesdecarga.cs</DependentUpon>
     </Compile>
+    <Compile Include="Despachos\frmRequesicionesDetalle_PT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Despachos\frmRequesicionesDetalle_PT.Designer.cs">
+      <DependentUpon>frmRequesicionesDetalle_PT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Despachos\frmRequisicion_Seleccion_Lote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Despachos\frmRequisicion_Seleccion_Lote.Designer.cs">
+      <DependentUpon>frmRequisicion_Seleccion_Lote.cs</DependentUpon>
+    </Compile>
     <Compile Include="Despachos\frmseleccionlote.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Despachos\frmseleccionlote.Designer.cs">
       <DependentUpon>frmseleccionlote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Despachos\frm_Reqresumen_pt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Despachos\frm_Reqresumen_pt.Designer.cs">
+      <DependentUpon>frm_Reqresumen_pt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Despachos\fromdespacho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Despachos\fromdespacho.Designer.cs">
+      <DependentUpon>fromdespacho.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -604,8 +628,20 @@
     <EmbeddedResource Include="Despachos\frmplanesdecarga.resx">
       <DependentUpon>frmplanesdecarga.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Despachos\frmRequesicionesDetalle_PT.resx">
+      <DependentUpon>frmRequesicionesDetalle_PT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Despachos\frmRequisicion_Seleccion_Lote.resx">
+      <DependentUpon>frmRequisicion_Seleccion_Lote.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frmseleccionlote.resx">
       <DependentUpon>frmseleccionlote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Despachos\frm_Reqresumen_pt.resx">
+      <DependentUpon>frm_Reqresumen_pt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Despachos\fromdespacho.resx">
+      <DependentUpon>fromdespacho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>

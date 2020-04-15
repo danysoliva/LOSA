@@ -25,11 +25,13 @@ namespace LOSA.Despachos
         {
             InitializeComponent();
             usuarioLogueado = pUsuarioLogueado;
+            beTarima.Focus();
         }
         public frmEntregaTarimaReqPT(UserLogin pUsuarioLogueado, string pCode)
         {
             InitializeComponent();
             usuarioLogueado = pUsuarioLogueado;
+            beTarima.Focus();
             beTarima.Text = pCode;
             EntregarTarima();
         }
@@ -45,7 +47,7 @@ namespace LOSA.Despachos
             {
                 using (connection)
                 {
-                    string SQL = "exec sp_getTarimas_without_filters @codigo_barra";
+                    string SQL = "exec sp_getTarimas_without_filters_PT @codigo_barra";
                     SqlCommand cmd = new SqlCommand();
                     SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                     cmd.Connection = connection;
@@ -70,7 +72,7 @@ namespace LOSA.Despachos
                                 tarimaEncontrada = InfoTarima;
                             }
 
-                            gcTarima.DataSource = CreateDataTarima(dr.GetInt32(0), dr.GetString(2), dr.GetString(1), dr.GetString(5), dr.GetString(6));
+                            gcTarima.DataSource = CreateDataTarima(dr.GetInt32(0), dr.GetString(2), dr.GetString(1), dr.GetInt32(5).ToString(), dr.GetDecimal(6).ToString());
                             //gvTarima.InitNewRow += GridView1_InitNewRow;
                             gvTarima.Columns[0].AppearanceCell.Font = new Font("Segoe UI", 11, FontStyle.Bold);
                         }
@@ -103,7 +105,7 @@ namespace LOSA.Despachos
 
 
                 dt.Rows.Add("TARIMA", idTarima);
-                dt.Rows.Add("PROVEEDOR", pProveedor);
+                dt.Rows.Add("Cliente", pProveedor);
                 dt.Rows.Add("LOTE", pLote);
                 dt.Rows.Add("PRESENTACION", pPpresentacion);
 
@@ -153,7 +155,7 @@ namespace LOSA.Despachos
                             SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                             con.Open();
 
-                            SqlCommand cmd = new SqlCommand("sp_verifica_diponibilidad_tarima_entrega", con);
+                            SqlCommand cmd = new SqlCommand("sp_verifica_diponibilidad_tarima_entrega_pt", con);
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.AddWithValue("@id", tarimaEncontrada.Id);
                             disponible = Convert.ToBoolean(cmd.ExecuteScalar());
@@ -176,16 +178,16 @@ namespace LOSA.Despachos
                             Ubicacion_Tarima ub1 = new Ubicacion_Tarima();
                             if (ub1.RecuperarRegistro(tarimaEncontrada.Id, ""))
                             {
-                                if (ub1.IdBodega > 1)
+                                if (ub1.IdBodega != 10)
                                 {
                                     error = true;
-                                    mensaje = "La tarima no esta en la bodega de MP, no se puede entregar!";
+                                    mensaje = "La tarima no esta en la bodega de Producto Terminado, no se puede entregar!";
                                 }
                             }
                             else
                             {
                                 error = true;
-                                mensaje = "La tarima no tiene una ubicacion valida, aun esta en proceso de recepción!";
+                                mensaje = "La tarima no tiene una ubicacion valida, aun esta en proceso de colocacion!";
                             }
                         }
                     }
@@ -211,7 +213,7 @@ namespace LOSA.Despachos
                     SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                     con.Open();
 
-                    SqlCommand cmd = new SqlCommand("sp_set_insert_salida_tarima_bodega_mp", con);
+                    SqlCommand cmd = new SqlCommand("sp_set_insert_salida_tarima_pt", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@idtarima", tarimaEncontrada.Id);
                     cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
@@ -262,6 +264,11 @@ namespace LOSA.Despachos
             beTarima.Text = "";
             gcTarima.DataSource = null;
             lblMensaje.Text = "";
+            beTarima.Focus();
+        }
+
+        private void frmEntregaTarimaReqPT_Activated(object sender, EventArgs e)
+        {
             beTarima.Focus();
         }
     }

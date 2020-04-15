@@ -46,6 +46,7 @@
             this.colDsCription = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcant_selected = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colQuantityTm = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coliddetalle = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colQuantityKg = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colprioridad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colU_Sacos = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -156,6 +157,7 @@
             this.colDsCription,
             this.colcant_selected,
             this.colQuantityTm,
+            this.coliddetalle,
             this.colQuantityKg,
             this.colprioridad,
             this.colU_Sacos,
@@ -205,7 +207,7 @@
             this.colItemCode.Name = "colItemCode";
             this.colItemCode.OptionsColumn.AllowEdit = false;
             this.colItemCode.Visible = true;
-            this.colItemCode.VisibleIndex = 1;
+            this.colItemCode.VisibleIndex = 0;
             this.colItemCode.Width = 110;
             // 
             // colDsCription
@@ -215,7 +217,7 @@
             this.colDsCription.Name = "colDsCription";
             this.colDsCription.OptionsColumn.AllowEdit = false;
             this.colDsCription.Visible = true;
-            this.colDsCription.VisibleIndex = 2;
+            this.colDsCription.VisibleIndex = 1;
             this.colDsCription.Width = 223;
             // 
             // colcant_selected
@@ -223,8 +225,9 @@
             this.colcant_selected.Caption = "Unidades Seleccionada";
             this.colcant_selected.FieldName = "cant_selected";
             this.colcant_selected.Name = "colcant_selected";
+            this.colcant_selected.OptionsColumn.AllowEdit = false;
             this.colcant_selected.Visible = true;
-            this.colcant_selected.VisibleIndex = 3;
+            this.colcant_selected.VisibleIndex = 2;
             this.colcant_selected.Width = 141;
             // 
             // colQuantityTm
@@ -234,6 +237,11 @@
             this.colQuantityTm.Name = "colQuantityTm";
             this.colQuantityTm.OptionsColumn.AllowEdit = false;
             this.colQuantityTm.Width = 148;
+            // 
+            // coliddetalle
+            // 
+            this.coliddetalle.FieldName = "iddetalle";
+            this.coliddetalle.Name = "coliddetalle";
             // 
             // colQuantityKg
             // 
@@ -248,8 +256,6 @@
             this.colprioridad.Caption = "Prioridad";
             this.colprioridad.FieldName = "prioridad";
             this.colprioridad.Name = "colprioridad";
-            this.colprioridad.Visible = true;
-            this.colprioridad.VisibleIndex = 0;
             this.colprioridad.Width = 80;
             // 
             // colU_Sacos
@@ -259,7 +265,7 @@
             this.colU_Sacos.Name = "colU_Sacos";
             this.colU_Sacos.OptionsColumn.AllowEdit = false;
             this.colU_Sacos.Visible = true;
-            this.colU_Sacos.VisibleIndex = 4;
+            this.colU_Sacos.VisibleIndex = 3;
             this.colU_Sacos.Width = 110;
             // 
             // colU_Peso
@@ -269,7 +275,7 @@
             this.colU_Peso.Name = "colU_Peso";
             this.colU_Peso.OptionsColumn.AllowEdit = false;
             this.colU_Peso.Visible = true;
-            this.colU_Peso.VisibleIndex = 5;
+            this.colU_Peso.VisibleIndex = 4;
             this.colU_Peso.Width = 100;
             // 
             // collotes
@@ -278,7 +284,7 @@
             this.collotes.ColumnEdit = this.btnlotess;
             this.collotes.Name = "collotes";
             this.collotes.Visible = true;
-            this.collotes.VisibleIndex = 6;
+            this.collotes.VisibleIndex = 5;
             this.collotes.Width = 63;
             // 
             // btnlotess
@@ -464,5 +470,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colcant_selected;
         private DevExpress.XtraGrid.Columns.GridColumn colprioridad;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnlotess;
+        private DevExpress.XtraGrid.Columns.GridColumn coliddetalle;
     }
 }

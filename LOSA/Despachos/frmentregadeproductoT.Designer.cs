@@ -67,6 +67,7 @@
             this.cmdEntrega.Name = "cmdEntrega";
             this.cmdEntrega.Size = new System.Drawing.Size(365, 407);
             this.cmdEntrega.TabIndex = 20;
+            this.cmdEntrega.Click += new System.EventHandler(this.cmdEntrega_Click);
             // 
             // cmdDetalleMP
             // 

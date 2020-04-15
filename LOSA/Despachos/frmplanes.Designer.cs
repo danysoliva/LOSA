@@ -40,11 +40,14 @@
             this.colCardName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCardCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldate_plafinificada = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldscripcion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colver = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnver = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colejecutar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnejecutar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colid_orden_de_venta = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colitemcode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colprioridad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grd_planes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds_despachos)).BeginInit();
@@ -107,11 +110,15 @@
             this.colCardName,
             this.colCardCode,
             this.coldate_plafinificada,
+            this.coldscripcion,
             this.colver,
             this.colejecutar,
-            this.colid_orden_de_venta});
+            this.colid_orden_de_venta,
+            this.colitemcode,
+            this.colprioridad});
             this.grdv_planes.GridControl = this.grd_planes;
             this.grdv_planes.Name = "grdv_planes";
+            this.grdv_planes.OptionsBehavior.AutoExpandAllGroups = true;
             this.grdv_planes.OptionsView.ShowAutoFilterRow = true;
             // 
             // colDocNum
@@ -122,7 +129,7 @@
             this.colDocNum.OptionsColumn.AllowEdit = false;
             this.colDocNum.Visible = true;
             this.colDocNum.VisibleIndex = 0;
-            this.colDocNum.Width = 79;
+            this.colDocNum.Width = 66;
             // 
             // colid
             // 
@@ -136,8 +143,6 @@
             this.colCardName.FieldName = "CardName";
             this.colCardName.Name = "colCardName";
             this.colCardName.OptionsColumn.AllowEdit = false;
-            this.colCardName.Visible = true;
-            this.colCardName.VisibleIndex = 1;
             this.colCardName.Width = 196;
             // 
             // colCardCode
@@ -146,8 +151,6 @@
             this.colCardCode.FieldName = "CardCode";
             this.colCardCode.Name = "colCardCode";
             this.colCardCode.OptionsColumn.AllowEdit = false;
-            this.colCardCode.Visible = true;
-            this.colCardCode.VisibleIndex = 2;
             this.colCardCode.Width = 133;
             // 
             // coldate_plafinificada
@@ -158,7 +161,17 @@
             this.coldate_plafinificada.OptionsColumn.AllowEdit = false;
             this.coldate_plafinificada.Visible = true;
             this.coldate_plafinificada.VisibleIndex = 3;
-            this.coldate_plafinificada.Width = 150;
+            this.coldate_plafinificada.Width = 158;
+            // 
+            // coldscripcion
+            // 
+            this.coldscripcion.Caption = "Producto T.";
+            this.coldscripcion.FieldName = "dscripcion";
+            this.coldscripcion.Name = "coldscripcion";
+            this.coldscripcion.OptionsColumn.AllowEdit = false;
+            this.coldscripcion.Visible = true;
+            this.coldscripcion.VisibleIndex = 1;
+            this.coldscripcion.Width = 121;
             // 
             // colver
             // 
@@ -166,8 +179,8 @@
             this.colver.ColumnEdit = this.btnver;
             this.colver.Name = "colver";
             this.colver.Visible = true;
-            this.colver.VisibleIndex = 4;
-            this.colver.Width = 126;
+            this.colver.VisibleIndex = 5;
+            this.colver.Width = 148;
             // 
             // btnver
             // 
@@ -185,8 +198,8 @@
             this.colejecutar.ColumnEdit = this.btnejecutar;
             this.colejecutar.Name = "colejecutar";
             this.colejecutar.Visible = true;
-            this.colejecutar.VisibleIndex = 5;
-            this.colejecutar.Width = 129;
+            this.colejecutar.VisibleIndex = 6;
+            this.colejecutar.Width = 106;
             // 
             // btnejecutar
             // 
@@ -202,6 +215,25 @@
             // 
             this.colid_orden_de_venta.FieldName = "id_orden_de_venta";
             this.colid_orden_de_venta.Name = "colid_orden_de_venta";
+            // 
+            // colitemcode
+            // 
+            this.colitemcode.Caption = "Cod.  PT.";
+            this.colitemcode.FieldName = "itemcode";
+            this.colitemcode.Name = "colitemcode";
+            this.colitemcode.OptionsColumn.AllowEdit = false;
+            this.colitemcode.Visible = true;
+            this.colitemcode.VisibleIndex = 2;
+            this.colitemcode.Width = 87;
+            // 
+            // colprioridad
+            // 
+            this.colprioridad.Caption = "Prioridad";
+            this.colprioridad.FieldName = "prioridad";
+            this.colprioridad.Name = "colprioridad";
+            this.colprioridad.Visible = true;
+            this.colprioridad.VisibleIndex = 4;
+            this.colprioridad.Width = 127;
             // 
             // btnAtras
             // 
@@ -259,5 +291,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colejecutar;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnejecutar;
         private DevExpress.XtraGrid.Columns.GridColumn colid_orden_de_venta;
+        private DevExpress.XtraGrid.Columns.GridColumn coldscripcion;
+        private DevExpress.XtraGrid.Columns.GridColumn colitemcode;
+        private DevExpress.XtraGrid.Columns.GridColumn colprioridad;
     }
 }

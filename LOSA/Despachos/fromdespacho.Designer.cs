@@ -1,0 +1,529 @@
+﻿namespace LOSA.Despachos
+{
+    partial class fromdespacho
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fromdespacho));
+            this.grd_lotes = new DevExpress.XtraGrid.GridControl();
+            this.ds_despachos = new LOSA.Despachos.ds_despachos();
+            this.grdv_lotes = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_detalle_requisicion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcantidad_entregada = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpresentacion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_tarima = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collote_producto_termiado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coliduser = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colse_despacho = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grd_boleta = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.boletaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNumID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colvehiculo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfurgon = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcardname = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcarcode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.txtCardCode = new DevExpress.XtraEditors.TextEdit();
+            this.txtCardName = new DevExpress.XtraEditors.TextEdit();
+            this.txtItemName = new DevExpress.XtraEditors.TextEdit();
+            this.txtItemCode = new DevExpress.XtraEditors.TextEdit();
+            this.txtcantidad = new DevExpress.XtraEditors.TextEdit();
+            this.txtcantidadEnviar = new DevExpress.XtraEditors.TextEdit();
+            this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
+            this.btnguardado = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_lotes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ds_despachos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_lotes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_boleta.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.boletaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCardCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCardName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtItemName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtItemCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtcantidad.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtcantidadEnviar.Properties)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // grd_lotes
+            // 
+            this.grd_lotes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grd_lotes.DataMember = "lote_entregado";
+            this.grd_lotes.DataSource = this.ds_despachos;
+            this.grd_lotes.Location = new System.Drawing.Point(-1, 262);
+            this.grd_lotes.MainView = this.grdv_lotes;
+            this.grd_lotes.Name = "grd_lotes";
+            this.grd_lotes.Size = new System.Drawing.Size(817, 333);
+            this.grd_lotes.TabIndex = 0;
+            this.grd_lotes.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grdv_lotes});
+            // 
+            // ds_despachos
+            // 
+            this.ds_despachos.DataSetName = "ds_despachos";
+            this.ds_despachos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // grdv_lotes
+            // 
+            this.grdv_lotes.Appearance.FocusedRow.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdv_lotes.Appearance.FocusedRow.Options.UseFont = true;
+            this.grdv_lotes.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdv_lotes.Appearance.HeaderPanel.Options.UseFont = true;
+            this.grdv_lotes.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdv_lotes.Appearance.Row.Options.UseFont = true;
+            this.grdv_lotes.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid,
+            this.colid_detalle_requisicion,
+            this.colcantidad_entregada,
+            this.colfecha,
+            this.colpresentacion,
+            this.colid_tarima,
+            this.collote_producto_termiado,
+            this.coliduser,
+            this.colse_despacho});
+            this.grdv_lotes.GridControl = this.grd_lotes;
+            this.grdv_lotes.Name = "grdv_lotes";
+            this.grdv_lotes.OptionsView.ShowAutoFilterRow = true;
+            // 
+            // colid
+            // 
+            this.colid.FieldName = "id";
+            this.colid.Name = "colid";
+            this.colid.Width = 113;
+            // 
+            // colid_detalle_requisicion
+            // 
+            this.colid_detalle_requisicion.FieldName = "id_detalle_requisicion";
+            this.colid_detalle_requisicion.Name = "colid_detalle_requisicion";
+            // 
+            // colcantidad_entregada
+            // 
+            this.colcantidad_entregada.Caption = "Entregado";
+            this.colcantidad_entregada.FieldName = "cantidad_entregada";
+            this.colcantidad_entregada.Name = "colcantidad_entregada";
+            this.colcantidad_entregada.Visible = true;
+            this.colcantidad_entregada.VisibleIndex = 1;
+            this.colcantidad_entregada.Width = 140;
+            // 
+            // colfecha
+            // 
+            this.colfecha.Caption = "Fecha ";
+            this.colfecha.FieldName = "fecha";
+            this.colfecha.Name = "colfecha";
+            this.colfecha.Visible = true;
+            this.colfecha.VisibleIndex = 2;
+            this.colfecha.Width = 107;
+            // 
+            // colpresentacion
+            // 
+            this.colpresentacion.Caption = "Presentacion";
+            this.colpresentacion.FieldName = "presentacion";
+            this.colpresentacion.Name = "colpresentacion";
+            this.colpresentacion.Visible = true;
+            this.colpresentacion.VisibleIndex = 3;
+            this.colpresentacion.Width = 107;
+            // 
+            // colid_tarima
+            // 
+            this.colid_tarima.Caption = "Tarima";
+            this.colid_tarima.FieldName = "id_tarima";
+            this.colid_tarima.Name = "colid_tarima";
+            this.colid_tarima.Width = 107;
+            // 
+            // collote_producto_termiado
+            // 
+            this.collote_producto_termiado.Caption = "Lote";
+            this.collote_producto_termiado.FieldName = "lote_producto_termiado";
+            this.collote_producto_termiado.Name = "collote_producto_termiado";
+            this.collote_producto_termiado.Visible = true;
+            this.collote_producto_termiado.VisibleIndex = 0;
+            this.collote_producto_termiado.Width = 116;
+            // 
+            // coliduser
+            // 
+            this.coliduser.FieldName = "iduser";
+            this.coliduser.Name = "coliduser";
+            // 
+            // colse_despacho
+            // 
+            this.colse_despacho.Caption = "Despachado";
+            this.colse_despacho.FieldName = "se_despacho";
+            this.colse_despacho.Name = "colse_despacho";
+            this.colse_despacho.Width = 107;
+            // 
+            // grd_boleta
+            // 
+            this.grd_boleta.Location = new System.Drawing.Point(265, 218);
+            this.grd_boleta.Name = "grd_boleta";
+            this.grd_boleta.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grd_boleta.Properties.Appearance.Options.UseFont = true;
+            this.grd_boleta.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.grd_boleta.Properties.DataSource = this.boletaBindingSource;
+            this.grd_boleta.Properties.DisplayMember = "NumID";
+            this.grd_boleta.Properties.ValueMember = "id";
+            this.grd_boleta.Properties.View = this.gridLookUpEdit1View;
+            this.grd_boleta.Size = new System.Drawing.Size(515, 30);
+            this.grd_boleta.TabIndex = 1;
+            this.grd_boleta.EditValueChanged += new System.EventHandler(this.grd_boleta_EditValueChanged);
+            // 
+            // boletaBindingSource
+            // 
+            this.boletaBindingSource.DataMember = "boleta";
+            this.boletaBindingSource.DataSource = this.ds_despachos;
+            // 
+            // gridLookUpEdit1View
+            // 
+            this.gridLookUpEdit1View.Appearance.FocusedRow.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridLookUpEdit1View.Appearance.FocusedRow.Options.UseFont = true;
+            this.gridLookUpEdit1View.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridLookUpEdit1View.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridLookUpEdit1View.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridLookUpEdit1View.Appearance.Row.Options.UseFont = true;
+            this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid1,
+            this.colNumID,
+            this.colvehiculo,
+            this.colfurgon,
+            this.colcardname,
+            this.colcarcode});
+            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
+            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit1View.OptionsView.ShowAutoFilterRow = true;
+            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // colid1
+            // 
+            this.colid1.Caption = "Serial";
+            this.colid1.FieldName = "id";
+            this.colid1.Name = "colid1";
+            this.colid1.Visible = true;
+            this.colid1.VisibleIndex = 0;
+            // 
+            // colNumID
+            // 
+            this.colNumID.Caption = "N Boleta";
+            this.colNumID.FieldName = "NumID";
+            this.colNumID.Name = "colNumID";
+            this.colNumID.Visible = true;
+            this.colNumID.VisibleIndex = 1;
+            // 
+            // colvehiculo
+            // 
+            this.colvehiculo.Caption = "Placa";
+            this.colvehiculo.FieldName = "vehiculo";
+            this.colvehiculo.Name = "colvehiculo";
+            this.colvehiculo.Visible = true;
+            this.colvehiculo.VisibleIndex = 2;
+            // 
+            // colfurgon
+            // 
+            this.colfurgon.Caption = "Furgon";
+            this.colfurgon.FieldName = "furgon";
+            this.colfurgon.Name = "colfurgon";
+            this.colfurgon.Visible = true;
+            this.colfurgon.VisibleIndex = 3;
+            // 
+            // colcardname
+            // 
+            this.colcardname.FieldName = "cardname";
+            this.colcardname.Name = "colcardname";
+            // 
+            // colcarcode
+            // 
+            this.colcarcode.FieldName = "carcode";
+            this.colcarcode.Name = "colcarcode";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(33, 221);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(64, 24);
+            this.labelControl1.TabIndex = 2;
+            this.labelControl1.Text = "Boleta:";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(33, 72);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(69, 24);
+            this.labelControl2.TabIndex = 3;
+            this.labelControl2.Text = "Cliente:";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Location = new System.Drawing.Point(33, 106);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(85, 24);
+            this.labelControl3.TabIndex = 4;
+            this.labelControl3.Text = "Producto:";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Location = new System.Drawing.Point(33, 144);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(178, 24);
+            this.labelControl4.TabIndex = 5;
+            this.labelControl4.Text = "Cantidad Solicitada:";
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Location = new System.Drawing.Point(33, 181);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(164, 24);
+            this.labelControl5.TabIndex = 6;
+            this.labelControl5.Text = "Cantidad a enviar:";
+            // 
+            // txtCardCode
+            // 
+            this.txtCardCode.Enabled = false;
+            this.txtCardCode.Location = new System.Drawing.Point(265, 70);
+            this.txtCardCode.Name = "txtCardCode";
+            this.txtCardCode.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCardCode.Properties.Appearance.Options.UseFont = true;
+            this.txtCardCode.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.White;
+            this.txtCardCode.Properties.AppearanceDisabled.Options.UseBackColor = true;
+            this.txtCardCode.Size = new System.Drawing.Size(100, 30);
+            this.txtCardCode.TabIndex = 7;
+            // 
+            // txtCardName
+            // 
+            this.txtCardName.Enabled = false;
+            this.txtCardName.Location = new System.Drawing.Point(371, 70);
+            this.txtCardName.Name = "txtCardName";
+            this.txtCardName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCardName.Properties.Appearance.Options.UseFont = true;
+            this.txtCardName.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.White;
+            this.txtCardName.Properties.AppearanceDisabled.Options.UseBackColor = true;
+            this.txtCardName.Size = new System.Drawing.Size(409, 30);
+            this.txtCardName.TabIndex = 8;
+            // 
+            // txtItemName
+            // 
+            this.txtItemName.Enabled = false;
+            this.txtItemName.Location = new System.Drawing.Point(371, 106);
+            this.txtItemName.Name = "txtItemName";
+            this.txtItemName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtItemName.Properties.Appearance.Options.UseFont = true;
+            this.txtItemName.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.White;
+            this.txtItemName.Properties.AppearanceDisabled.Options.UseBackColor = true;
+            this.txtItemName.Size = new System.Drawing.Size(409, 30);
+            this.txtItemName.TabIndex = 10;
+            // 
+            // txtItemCode
+            // 
+            this.txtItemCode.Enabled = false;
+            this.txtItemCode.Location = new System.Drawing.Point(265, 106);
+            this.txtItemCode.Name = "txtItemCode";
+            this.txtItemCode.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtItemCode.Properties.Appearance.Options.UseFont = true;
+            this.txtItemCode.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.White;
+            this.txtItemCode.Properties.AppearanceDisabled.Options.UseBackColor = true;
+            this.txtItemCode.Size = new System.Drawing.Size(100, 30);
+            this.txtItemCode.TabIndex = 9;
+            // 
+            // txtcantidad
+            // 
+            this.txtcantidad.Enabled = false;
+            this.txtcantidad.Location = new System.Drawing.Point(265, 142);
+            this.txtcantidad.Name = "txtcantidad";
+            this.txtcantidad.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcantidad.Properties.Appearance.Options.UseFont = true;
+            this.txtcantidad.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.White;
+            this.txtcantidad.Properties.AppearanceDisabled.Options.UseBackColor = true;
+            this.txtcantidad.Size = new System.Drawing.Size(515, 30);
+            this.txtcantidad.TabIndex = 11;
+            // 
+            // txtcantidadEnviar
+            // 
+            this.txtcantidadEnviar.Enabled = false;
+            this.txtcantidadEnviar.Location = new System.Drawing.Point(265, 179);
+            this.txtcantidadEnviar.Name = "txtcantidadEnviar";
+            this.txtcantidadEnviar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcantidadEnviar.Properties.Appearance.Options.UseFont = true;
+            this.txtcantidadEnviar.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.White;
+            this.txtcantidadEnviar.Properties.AppearanceDisabled.Options.UseBackColor = true;
+            this.txtcantidadEnviar.Size = new System.Drawing.Size(515, 30);
+            this.txtcantidadEnviar.TabIndex = 12;
+            // 
+            // btnAtras
+            // 
+            this.btnAtras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAtras.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnAtras.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtras.Appearance.Options.UseBackColor = true;
+            this.btnAtras.Appearance.Options.UseFont = true;
+            this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
+            this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnAtras.Location = new System.Drawing.Point(654, 5);
+            this.btnAtras.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(151, 56);
+            this.btnAtras.TabIndex = 38;
+            this.btnAtras.Text = "Atras";
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
+            // 
+            // btnguardado
+            // 
+            this.btnguardado.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnguardado.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnguardado.Appearance.Options.UseBackColor = true;
+            this.btnguardado.Appearance.Options.UseFont = true;
+            this.btnguardado.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnguardado.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnguardado.ImageOptions.Image")));
+            this.btnguardado.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnguardado.Location = new System.Drawing.Point(13, 8);
+            this.btnguardado.Margin = new System.Windows.Forms.Padding(4);
+            this.btnguardado.Name = "btnguardado";
+            this.btnguardado.Size = new System.Drawing.Size(143, 55);
+            this.btnguardado.TabIndex = 49;
+            this.btnguardado.Text = "Guardar";
+            this.btnguardado.Click += new System.EventHandler(this.btnguardado_Click);
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl6.Appearance.Options.UseFont = true;
+            this.labelControl6.Appearance.Options.UseTextOptions = true;
+            this.labelControl6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl6.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.labelControl6.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl6.Location = new System.Drawing.Point(177, 13);
+            this.labelControl6.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(454, 49);
+            this.labelControl6.TabIndex = 50;
+            this.labelControl6.Text = "Orden de Carga";
+            // 
+            // fromdespacho
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(815, 595);
+            this.Controls.Add(this.labelControl6);
+            this.Controls.Add(this.btnguardado);
+            this.Controls.Add(this.btnAtras);
+            this.Controls.Add(this.txtcantidadEnviar);
+            this.Controls.Add(this.txtcantidad);
+            this.Controls.Add(this.txtItemName);
+            this.Controls.Add(this.txtItemCode);
+            this.Controls.Add(this.txtCardName);
+            this.Controls.Add(this.txtCardCode);
+            this.Controls.Add(this.labelControl5);
+            this.Controls.Add(this.labelControl4);
+            this.Controls.Add(this.labelControl3);
+            this.Controls.Add(this.labelControl2);
+            this.Controls.Add(this.labelControl1);
+            this.Controls.Add(this.grd_boleta);
+            this.Controls.Add(this.grd_lotes);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "fromdespacho";
+            this.Text = "fromdespacho";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.fromdespacho_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.grd_lotes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ds_despachos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_lotes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_boleta.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.boletaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCardCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCardName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtItemName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtItemCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtcantidad.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtcantidadEnviar.Properties)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private DevExpress.XtraGrid.GridControl grd_lotes;
+        private DevExpress.XtraGrid.Views.Grid.GridView grdv_lotes;
+        private ds_despachos ds_despachos;
+        private DevExpress.XtraGrid.Columns.GridColumn colid;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_detalle_requisicion;
+        private DevExpress.XtraGrid.Columns.GridColumn colcantidad_entregada;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecha;
+        private DevExpress.XtraGrid.Columns.GridColumn colpresentacion;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_tarima;
+        private DevExpress.XtraGrid.Columns.GridColumn coliduser;
+        private DevExpress.XtraGrid.Columns.GridColumn colse_despacho;
+        private DevExpress.XtraGrid.Columns.GridColumn collote_producto_termiado;
+        private DevExpress.XtraEditors.GridLookUpEdit grd_boleta;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.TextEdit txtCardCode;
+        private DevExpress.XtraEditors.TextEdit txtCardName;
+        private DevExpress.XtraEditors.TextEdit txtItemName;
+        private DevExpress.XtraEditors.TextEdit txtItemCode;
+        private DevExpress.XtraEditors.TextEdit txtcantidad;
+        private DevExpress.XtraEditors.TextEdit txtcantidadEnviar;
+        private DevExpress.XtraEditors.SimpleButton btnAtras;
+        private System.Windows.Forms.BindingSource boletaBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colid1;
+        private DevExpress.XtraGrid.Columns.GridColumn colNumID;
+        private DevExpress.XtraGrid.Columns.GridColumn colvehiculo;
+        private DevExpress.XtraGrid.Columns.GridColumn colfurgon;
+        private DevExpress.XtraGrid.Columns.GridColumn colcardname;
+        private DevExpress.XtraGrid.Columns.GridColumn colcarcode;
+        private DevExpress.XtraEditors.SimpleButton btnguardado;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+    }
+}

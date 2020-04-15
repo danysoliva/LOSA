@@ -79,13 +79,15 @@ namespace LOSA.Despachos
                     var row = (ds_despachos.planes_creadosRow)gridview.GetFocusedDataRow();
 
                     string query = @"EXEC	[dbo].[sp_orden_venta_validacion]
-		                            @Idofplan = @idofplan";
+		                            @Idofplan = @idofplan
+                                    ,@iddetalle = @detalle";
                     SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                     try
                     {
                         cn.Open();
                         SqlCommand cmd = new SqlCommand(query, cn);
                         cmd.Parameters.Add("@idofplan", SqlDbType.Int).Value = row.id;
+                        cmd.Parameters.Add("@detalle", SqlDbType.Int).Value = row.iddetalle;
                         SqlDataReader dr = cmd.ExecuteReader();
                         if (dr.Read())
                         {
@@ -102,10 +104,14 @@ namespace LOSA.Despachos
                                 cn.Open();
                                 query = @"EXEC [dbo].[sp_insert_en_requesiciones_pt]
 		                        @idplan = @idplan,
-		                        @iduser = @userid";
+		                        @iduser = @userid,
+                                @iddetalle = @detalle
+                                ,@prioridad = @prioridad";
                                 SqlCommand sqlCommand = new SqlCommand(query, cn);
                                 sqlCommand.Parameters.Add("@idplan", SqlDbType.Int).Value = row.id;
                                 sqlCommand.Parameters.Add("@userid", SqlDbType.Int).Value = Uslogin.Id;
+                                sqlCommand.Parameters.Add("@detalle", SqlDbType.Int).Value = row.iddetalle;
+                                sqlCommand.Parameters.Add("@prioridad", SqlDbType.Int).Value = row.prioridad;
                                 sqlCommand.ExecuteNonQuery();
                                 CajaDialogo.Information("Transaccion exitosa!.");
                             }

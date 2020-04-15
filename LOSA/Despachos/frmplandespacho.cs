@@ -135,8 +135,12 @@ namespace LOSA.Despachos
             {
                 var gridview = (GridView)grd_detalle.FocusedView;
                 var row = (ds_despachos.plan_despachoRow)gridview.GetFocusedDataRow();
-                LOSA.Despachos.frmseleccionlote frm = new frmseleccionlote(row.U_Sacos, row.ItemCode, row.Dscription, row.id, ParUser);
-                frm.Show();
+                LOSA.Despachos.frmseleccionlote frm = new frmseleccionlote(row.U_Sacos, row.ItemCode, row.Dscription, row.iddetalle, ParUser);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+
+                    exe_sp_get_plan();
+                }
             }
             catch (Exception ex)
             {

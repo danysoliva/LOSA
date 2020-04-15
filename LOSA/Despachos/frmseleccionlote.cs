@@ -46,10 +46,20 @@ namespace LOSA.Despachos
                 SqlCommand cmd = new SqlCommand("sp_get_detalle_lotes_pt_req", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@itemcode", itemcode);
+                cmd.Parameters.AddWithValue("@idDetalle", Pid_detalle);
                 ds_despachos.detalle_lote_pt.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 adat.Fill(ds_despachos.detalle_lote_pt);
                 con.Close();
+                Boolean Solounavez = false;
+                foreach (ds_despachos.detalle_lote_ptRow row in ds_despachos.detalle_lote_pt.Rows)
+                {
+                    
+                    txtCantidadPendiente.Text = string.Format("{0:###,##0.00}", CantidadPendiente - row.totalcants);
+                     txtAsignada.Text = string.Format("{0:###,##0.00}", row.totalcants);
+                    break;
+                    
+                }
             }
             catch (Exception ec)
             {

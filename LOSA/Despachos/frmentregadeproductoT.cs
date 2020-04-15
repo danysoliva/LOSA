@@ -32,5 +32,11 @@ namespace LOSA.Despachos
         {
             this.Close();
         }
+
+        private void cmdEntrega_Click(object sender, EventArgs e)
+        {
+            frmEntregaTarimaReqPT frm = new frmEntregaTarimaReqPT(User);
+            frm.Show();
+        }
     }
 }
