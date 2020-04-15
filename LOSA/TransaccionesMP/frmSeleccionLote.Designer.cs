@@ -510,9 +510,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colunidad;
         private DevExpress.XtraGrid.Columns.GridColumn colpeso_total;
         private DevExpress.XtraEditors.LabelControl lblUnidad;
-        private System.Windows.Forms.CheckBox chkAutoSelect;
         private DevExpress.XtraGrid.Columns.GridColumn colseleccionado;
-        private DevExpress.XtraEditors.SimpleButton cmdGuardar;
         private DevExpress.XtraGrid.Columns.GridColumn colcants;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.TextEdit txtAsignada;
@@ -521,5 +519,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl6;
         public DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider dxErrorProvider1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        public System.Windows.Forms.CheckBox chkAutoSelect;
+        public DevExpress.XtraEditors.SimpleButton cmdGuardar;
     }
 }

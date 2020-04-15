@@ -173,6 +173,7 @@
     <Compile Include="Clases\ProductoTerminado.cs" />
     <Compile Include="Clases\Proveedor.cs" />
     <Compile Include="Clases\Security.cs" />
+    <Compile Include="Clases\SeleccionLoteMPAuto.cs" />
     <Compile Include="Clases\Tarima.cs" />
     <Compile Include="Clases\Teclado.cs" />
     <Compile Include="Clases\Ubicaciones.cs" />
