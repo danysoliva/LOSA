@@ -222,5 +222,11 @@ namespace LOSA
             LOSA.Despachos.frmdespachos frm = new LOSA.Despachos.frmdespachos(UsuarioLogeado);
             frm.Show();
         }
+
+        private void btnplanesdespachos_Click(object sender, EventArgs e)
+        {
+            LOSA.Despachos.frmplanes FRM = new Despachos.frmplanes(UsuarioLogeado);
+            FRM.Show();
+        }
     }
 }

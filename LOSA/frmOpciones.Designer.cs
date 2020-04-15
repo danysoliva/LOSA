@@ -61,6 +61,7 @@
             this.tabProduccion = new DevExpress.XtraTab.XtraTabPage();
             this.cmdTarimasPT = new DevExpress.XtraEditors.SimpleButton();
             this.btnAlimentacionManual = new DevExpress.XtraEditors.SimpleButton();
+            this.btnplanesdespachos = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -200,6 +201,7 @@
             // 
             // TabLogistica
             // 
+            this.TabLogistica.Controls.Add(this.btnplanesdespachos);
             this.TabLogistica.Controls.Add(this.btndespachos);
             this.TabLogistica.Controls.Add(this.simpleButton1);
             this.TabLogistica.Controls.Add(this.btnTrazabilidad);
@@ -565,6 +567,20 @@
             this.btnAlimentacionManual.Text = "Alimentación Manual";
             this.btnAlimentacionManual.Click += new System.EventHandler(this.btnAlimentacionManual_Click);
             // 
+            // btnplanesdespachos
+            // 
+            this.btnplanesdespachos.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnplanesdespachos.Appearance.Options.UseFont = true;
+            this.btnplanesdespachos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnplanesdespachos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btnplanesdespachos.Location = new System.Drawing.Point(558, 215);
+            this.btnplanesdespachos.Margin = new System.Windows.Forms.Padding(4);
+            this.btnplanesdespachos.Name = "btnplanesdespachos";
+            this.btnplanesdespachos.Size = new System.Drawing.Size(265, 87);
+            this.btnplanesdespachos.TabIndex = 22;
+            this.btnplanesdespachos.Text = "Plan Despachos";
+            this.btnplanesdespachos.Click += new System.EventHandler(this.btnplanesdespachos_Click);
+            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -622,5 +638,6 @@
         private DevExpress.XtraEditors.SimpleButton cmdLotesCalidad;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton btndespachos;
+        private DevExpress.XtraEditors.SimpleButton btnplanesdespachos;
     }
 }

@@ -192,11 +192,29 @@
     <Compile Include="Despachos\frmdespachos.Designer.cs">
       <DependentUpon>frmdespachos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Despachos\frmentregadeproductoT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Despachos\frmentregadeproductoT.Designer.cs">
+      <DependentUpon>frmentregadeproductoT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Despachos\frmEntregaTarimaReqPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Despachos\frmEntregaTarimaReqPT.Designer.cs">
+      <DependentUpon>frmEntregaTarimaReqPT.cs</DependentUpon>
+    </Compile>
     <Compile Include="Despachos\frmplandespacho.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Despachos\frmplandespacho.Designer.cs">
       <DependentUpon>frmplandespacho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Despachos\frmplanes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Despachos\frmplanes.Designer.cs">
+      <DependentUpon>frmplanes.cs</DependentUpon>
     </Compile>
     <Compile Include="Despachos\frmplanesdecarga.cs">
       <SubType>Form</SubType>
@@ -570,8 +588,17 @@
     <EmbeddedResource Include="Despachos\frmdespachos.resx">
       <DependentUpon>frmdespachos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Despachos\frmentregadeproductoT.resx">
+      <DependentUpon>frmentregadeproductoT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Despachos\frmEntregaTarimaReqPT.resx">
+      <DependentUpon>frmEntregaTarimaReqPT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frmplandespacho.resx">
       <DependentUpon>frmplandespacho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Despachos\frmplanes.resx">
+      <DependentUpon>frmplanes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frmplanesdecarga.resx">
       <DependentUpon>frmplanesdecarga.cs</DependentUpon>
