@@ -77,10 +77,42 @@ namespace LOSA.TransaccionesMP
                 if (row != null)
                 {
                     if (row.solicitada == row.asignado)
+                    {
                         e.Appearance.BackColor = Color.FromArgb(113, 220, 200);
+                    }
                     else
-                        e.Appearance.BackColor = Color.FromArgb(255, 255, 255); 
+                    {
+                        if (row.asignado > 0)
+                        {
+                            //
+                            e.Appearance.BackColor = Color.FromArgb(255, 255, 192);
+                        }
+                        else
+                        {
+                            e.Appearance.BackColor = Color.FromArgb(255, 255, 255);
+                        }
+                    }
                 }
+            }
+        }
+
+        private void chkAutoSelect_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkAutoSelect.Checked)
+            {
+                //SeleccionLoteMPAuto
+                foreach(dsTransaccionesMP.requisiciones_dRow row in dsTransaccionesMP1.requisiciones_d.Rows)
+                {
+                    SeleccionLoteMPAuto sele = new SeleccionLoteMPAuto(row.id_materia_prima, row.id, row.solicitada, this.UsuarioLogeado.Id);
+                    if(sele.Guardar_SeleccionLoteAuto())
+                    {
+                        LoadDatos();
+                    }
+                }
+            }
+            else
+            {
+
             }
         }
     }

@@ -67,12 +67,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcTolva.DataMember = "Tolva";
             this.gcTolva.DataSource = this.dsProduccion;
-            this.gcTolva.Location = new System.Drawing.Point(-1, 87);
+            this.gcTolva.Location = new System.Drawing.Point(-1, 64);
             this.gcTolva.MainView = this.gvTolva;
             this.gcTolva.Name = "gcTolva";
             this.gcTolva.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1});
-            this.gcTolva.Size = new System.Drawing.Size(624, 434);
+            this.gcTolva.Size = new System.Drawing.Size(624, 457);
             this.gcTolva.TabIndex = 0;
             this.gcTolva.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTolva});
@@ -178,6 +178,7 @@
             // 
             // btnAtras
             // 
+            this.btnAtras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAtras.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnAtras.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAtras.Appearance.Options.UseBackColor = true;
@@ -185,9 +186,9 @@
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(5, 3);
+            this.btnAtras.Location = new System.Drawing.Point(443, 12);
             this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(167, 69);
+            this.btnAtras.Size = new System.Drawing.Size(167, 46);
             this.btnAtras.TabIndex = 10;
             this.btnAtras.Text = "Atras";
             this.btnAtras.Click += new System.EventHandler(this.BtnAtras_Click);

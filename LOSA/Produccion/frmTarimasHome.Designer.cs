@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTarimasHome));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblLote = new System.Windows.Forms.Label();
@@ -52,14 +52,14 @@
             this.colcantidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfecha_ingreso = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRow = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnTarima = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.print = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnImprimir = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.btnTarima = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProduccion1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnTarima)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnImprimir)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnTarima)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -109,7 +109,6 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAgregar.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnAgregar.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.Appearance.Options.UseBackColor = true;
@@ -117,7 +116,7 @@
             this.btnAgregar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAgregar.ImageOptions.Image = global::LOSA.Properties.Resources.plus;
             this.btnAgregar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAgregar.Location = new System.Drawing.Point(453, 4);
+            this.btnAgregar.Location = new System.Drawing.Point(3, 4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(167, 66);
             this.btnAgregar.TabIndex = 28;
@@ -126,6 +125,7 @@
             // 
             // btnAtras
             // 
+            this.btnAtras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAtras.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnAtras.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAtras.Appearance.Options.UseBackColor = true;
@@ -133,7 +133,7 @@
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(3, 4);
+            this.btnAtras.Location = new System.Drawing.Point(452, 4);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(167, 66);
             this.btnAtras.TabIndex = 12;
@@ -266,15 +266,6 @@
             this.colRow.VisibleIndex = 0;
             this.colRow.Width = 67;
             // 
-            // btnTarima
-            // 
-            this.btnTarima.AutoHeight = false;
-            editorButtonImageOptions2.Image = global::LOSA.Properties.Resources.pallet_pallet_solo;
-            this.btnTarima.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
-            this.btnTarima.Name = "btnTarima";
-            this.btnTarima.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            // 
             // print
             // 
             this.print.Caption = "Imprimir";
@@ -293,27 +284,36 @@
             this.btnImprimir.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnImprimir.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnImprimir_ButtonClick);
             // 
+            // btnTarima
+            // 
+            this.btnTarima.AutoHeight = false;
+            editorButtonImageOptions2.Image = global::LOSA.Properties.Resources.pallet_pallet_solo;
+            this.btnTarima.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            this.btnTarima.Name = "btnTarima";
+            this.btnTarima.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            // 
             // frmTarimasHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(622, 521);
+            this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.lblProducto);
             this.Controls.Add(this.lblLote);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.btnAtras);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmTarimasHome";
             this.Text = "frmTarimasHome";
             ((System.ComponentModel.ISupportInitialize)(this.dsProduccion1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnTarima)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnImprimir)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnTarima)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

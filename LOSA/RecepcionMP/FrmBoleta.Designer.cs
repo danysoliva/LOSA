@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.basculaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.basculaBindingSource1 = new System.Windows.Forms.BindingSource();
             this.dsRecepcionMP = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.gvBascula = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colIDSerie = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -45,9 +44,9 @@
             this.colFurgon = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMateriaPrima = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProveedor = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.basculaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.colfecha = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.basculaBindingSource = new System.Windows.Forms.BindingSource();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.basculaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMP)).BeginInit();
@@ -62,12 +61,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl1.DataSource = this.basculaBindingSource1;
-            this.gridControl1.Location = new System.Drawing.Point(0, 103);
+            this.gridControl1.Location = new System.Drawing.Point(0, 74);
             this.gridControl1.MainView = this.gvBascula;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnSeleccionar});
-            this.gridControl1.Size = new System.Drawing.Size(622, 418);
+            this.gridControl1.Size = new System.Drawing.Size(622, 447);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvBascula});
@@ -215,6 +214,16 @@
             this.colProveedor.VisibleIndex = 4;
             this.colProveedor.Width = 98;
             // 
+            // colfecha
+            // 
+            this.colfecha.DisplayFormat.FormatString = "g";
+            this.colfecha.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.colfecha.FieldName = "fecha";
+            this.colfecha.Name = "colfecha";
+            this.colfecha.Visible = true;
+            this.colfecha.VisibleIndex = 5;
+            this.colfecha.Width = 94;
+            // 
             // basculaBindingSource
             // 
             this.basculaBindingSource.DataMember = "Bascula";
@@ -226,22 +235,12 @@
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton1.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.simpleButton1.Location = new System.Drawing.Point(411, 26);
+            this.simpleButton1.Location = new System.Drawing.Point(423, 12);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton1.Size = new System.Drawing.Size(199, 56);
             this.simpleButton1.TabIndex = 4;
             this.simpleButton1.Text = "Cancelar";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_1);
-            // 
-            // colfecha
-            // 
-            this.colfecha.DisplayFormat.FormatString = "g";
-            this.colfecha.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.colfecha.FieldName = "fecha";
-            this.colfecha.Name = "colfecha";
-            this.colfecha.Visible = true;
-            this.colfecha.VisibleIndex = 5;
-            this.colfecha.Width = 94;
             // 
             // FrmBoleta
             // 
