@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using ACS.Classes;
 using LOSA.Clases;
 using System.Data.SqlClient;
+using DevExpress.XtraReports.UI;
 
 namespace LOSA.Despachos
 {
@@ -35,7 +36,6 @@ namespace LOSA.Despachos
             idDetalle = detalle;
             load_data();
             load_encabezado();
-            load_boleta_in_place();
         }
         public void load_data()
         {
@@ -57,27 +57,10 @@ namespace LOSA.Despachos
                 CajaDialogo.Error(ex.Message);
             }
         }
-        public void load_boleta_in_place()
-        {
-            string query = @"EXEC [dbo].[sp_get_boletas_en_predio]";
-            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-            try
-            {
-                cn.Open();
-                SqlCommand cmd = new SqlCommand(query, cn);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                ds_despachos.boleta.Clear();
-                da.Fill(ds_despachos.boleta);
-                cn.Close();
-            }
-            catch (Exception ex)
-            {
-                CajaDialogo.Error(ex.Message);
-            }
-        }
+      
         public void load_encabezado()
         {
-            string query = @"EXEC [dbo].[sp_load_info_encabezado]
+            string query = @"EXEC [dbo].[sp_load_info_encabezado_despacho]
 		                    @iddetalle = @iddetalle";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             try
@@ -117,41 +100,29 @@ namespace LOSA.Despachos
 
         }
 
-        private void grd_boleta_EditValueChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                idSerial = Convert.ToInt32(grd_boleta.EditValue);
-                foreach (ds_despachos.boletaRow row in ds_despachos.boleta.Rows)
-                {
-
-                    if (row.id == idSerial)
-                    {
-                        CardCode = row.carcode;
-                        CardName = row.cardname;
-                        idboleta = row.NumID;
-                        break;
-                    }
-
-                }
-                txtCardCode.Text = CardCode;
-                txtCardName.Text = CardName;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                
-            }
-        }
+       
 
         private void btnguardado_Click(object sender, EventArgs e)
         {
+
+            int rows = 0;
+            rows = ds_despachos.lote_entregado.Rows.Count;
+            if (rows == 0)
+            {
+                CajaDialogo.Error("No hay tarimas para asignar a este despacho.");
+                return;
+            }
+            if (txtboleta.Text == "")
+            {
+                CajaDialogo.Error("No se ha seleccionado ninguna boleta para enlazar.");
+                return;
+            }
             try
             {
                 string query = @"EXEC [dbo].sp_insert_into_despacho
                                 @iddetalle = @Viddetalle
                                 ,@iduser = @VUsuario
-	                            ,@CardCode = @Vitemcode
+	                            ,@CardCode = @Vcardcode
 	                            ,@CardName = @Vcardname
 	                            ,@idserie = @VidserieBol
 	                            ,@idboleta = @VidBoleta
@@ -162,27 +133,45 @@ namespace LOSA.Despachos
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.Parameters.Add("@Viddetalle", SqlDbType.Int).Value = idDetalle;
                 cmd.Parameters.Add("@VUsuario", SqlDbType.Int).Value = UsuarioLogeado.Id;
-                cmd.Parameters.Add("@Vitemcode", SqlDbType.VarChar).Value = ItemCode;
-                cmd.Parameters.Add("@Vcardname", SqlDbType.VarChar).Value = ItemName;
+                cmd.Parameters.Add("@Vcardcode", SqlDbType.VarChar).Value = CardCode;
+                cmd.Parameters.Add("@Vcardname", SqlDbType.VarChar).Value = CardName;
                 cmd.Parameters.Add("@VidserieBol", SqlDbType.Int).Value = idSerial;
                 cmd.Parameters.Add("@VidBoleta", SqlDbType.Int).Value = idboleta;
                 cmd.Parameters.Add("@VCantidad", SqlDbType.Int).Value = cant_aenviar;
                 cmd.Parameters.Add("@VFactor", SqlDbType.Decimal).Value = factor;
-               int result = Convert.ToInt32(cmd.ExecuteScalar());
-                if (result == 1)
-                {//Sacar impresion
-                    CajaDialogo.Information("Hola");
-                }
-                else
-                {
-                    CajaDialogo.Error("Error en el proceso, contactar al departamente de IT");
-                }
 
+               int result = Convert.ToInt32(cmd.ExecuteScalar());
+                    Reportes.rpt_despacho cp = new Reportes.rpt_despacho(result);
+                    cp.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                    ReportPrintTool printReport = new ReportPrintTool(cp);
+                    printReport.ShowPreview();
+                this.Close();
             }
             catch (Exception ex)
             {
                 CajaDialogo.Error(ex.Message);
             }
+        }
+
+        private void btnboleta_Click(object sender, EventArgs e)
+        {
+            frmloadboleta frm = new frmloadboleta();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                idboleta = frm.IdBoleta;
+                idSerial = frm.IdSerial;
+                CardCode = frm.CardCode;
+                CardName = frm.CardName;
+                txtboleta.Text = idboleta.ToString();
+                txtCardCode.Text = CardCode;
+                txtCardName.Text = CardName;
+
+            }
+        }
+
+        private void btnactualizar_Click(object sender, EventArgs e)
+        {
+            load_data();
         }
     }
 }

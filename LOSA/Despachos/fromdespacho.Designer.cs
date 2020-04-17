@@ -42,15 +42,7 @@
             this.collote_producto_termiado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coliduser = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colse_despacho = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.grd_boleta = new DevExpress.XtraEditors.GridLookUpEdit();
             this.boletaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNumID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colvehiculo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colfurgon = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcardname = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcarcode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -65,18 +57,20 @@
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.btnguardado = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.txtboleta = new DevExpress.XtraEditors.TextEdit();
+            this.btnboleta = new DevExpress.XtraEditors.SimpleButton();
+            this.btnactualizar = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grd_lotes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds_despachos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_lotes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grd_boleta.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.boletaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCardCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCardName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtItemName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtItemCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtcantidad.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtcantidadEnviar.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtboleta.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // grd_lotes
@@ -86,10 +80,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_lotes.DataMember = "lote_entregado";
             this.grd_lotes.DataSource = this.ds_despachos;
-            this.grd_lotes.Location = new System.Drawing.Point(-1, 262);
+            this.grd_lotes.Location = new System.Drawing.Point(-1, 316);
             this.grd_lotes.MainView = this.grdv_lotes;
             this.grd_lotes.Name = "grd_lotes";
-            this.grd_lotes.Size = new System.Drawing.Size(817, 333);
+            this.grd_lotes.Size = new System.Drawing.Size(817, 279);
             this.grd_lotes.TabIndex = 0;
             this.grd_lotes.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_lotes});
@@ -187,95 +181,16 @@
             this.colse_despacho.Name = "colse_despacho";
             this.colse_despacho.Width = 107;
             // 
-            // grd_boleta
-            // 
-            this.grd_boleta.Location = new System.Drawing.Point(265, 218);
-            this.grd_boleta.Name = "grd_boleta";
-            this.grd_boleta.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grd_boleta.Properties.Appearance.Options.UseFont = true;
-            this.grd_boleta.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.grd_boleta.Properties.DataSource = this.boletaBindingSource;
-            this.grd_boleta.Properties.DisplayMember = "NumID";
-            this.grd_boleta.Properties.ValueMember = "id";
-            this.grd_boleta.Properties.View = this.gridLookUpEdit1View;
-            this.grd_boleta.Size = new System.Drawing.Size(515, 30);
-            this.grd_boleta.TabIndex = 1;
-            this.grd_boleta.EditValueChanged += new System.EventHandler(this.grd_boleta_EditValueChanged);
-            // 
             // boletaBindingSource
             // 
             this.boletaBindingSource.DataMember = "boleta";
             this.boletaBindingSource.DataSource = this.ds_despachos;
             // 
-            // gridLookUpEdit1View
-            // 
-            this.gridLookUpEdit1View.Appearance.FocusedRow.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridLookUpEdit1View.Appearance.FocusedRow.Options.UseFont = true;
-            this.gridLookUpEdit1View.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridLookUpEdit1View.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gridLookUpEdit1View.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridLookUpEdit1View.Appearance.Row.Options.UseFont = true;
-            this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colid1,
-            this.colNumID,
-            this.colvehiculo,
-            this.colfurgon,
-            this.colcardname,
-            this.colcarcode});
-            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
-            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridLookUpEdit1View.OptionsView.ShowAutoFilterRow = true;
-            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
-            // colid1
-            // 
-            this.colid1.Caption = "Serial";
-            this.colid1.FieldName = "id";
-            this.colid1.Name = "colid1";
-            this.colid1.Visible = true;
-            this.colid1.VisibleIndex = 0;
-            // 
-            // colNumID
-            // 
-            this.colNumID.Caption = "N Boleta";
-            this.colNumID.FieldName = "NumID";
-            this.colNumID.Name = "colNumID";
-            this.colNumID.Visible = true;
-            this.colNumID.VisibleIndex = 1;
-            // 
-            // colvehiculo
-            // 
-            this.colvehiculo.Caption = "Placa";
-            this.colvehiculo.FieldName = "vehiculo";
-            this.colvehiculo.Name = "colvehiculo";
-            this.colvehiculo.Visible = true;
-            this.colvehiculo.VisibleIndex = 2;
-            // 
-            // colfurgon
-            // 
-            this.colfurgon.Caption = "Furgon";
-            this.colfurgon.FieldName = "furgon";
-            this.colfurgon.Name = "colfurgon";
-            this.colfurgon.Visible = true;
-            this.colfurgon.VisibleIndex = 3;
-            // 
-            // colcardname
-            // 
-            this.colcardname.FieldName = "cardname";
-            this.colcardname.Name = "colcardname";
-            // 
-            // colcarcode
-            // 
-            this.colcarcode.FieldName = "carcode";
-            this.colcarcode.Name = "colcarcode";
-            // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(33, 221);
+            this.labelControl1.Location = new System.Drawing.Point(33, 226);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(64, 24);
             this.labelControl1.TabIndex = 2;
@@ -329,7 +244,9 @@
             this.txtCardCode.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCardCode.Properties.Appearance.Options.UseFont = true;
             this.txtCardCode.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.White;
+            this.txtCardCode.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.txtCardCode.Properties.AppearanceDisabled.Options.UseBackColor = true;
+            this.txtCardCode.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.txtCardCode.Size = new System.Drawing.Size(100, 30);
             this.txtCardCode.TabIndex = 7;
             // 
@@ -341,7 +258,9 @@
             this.txtCardName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCardName.Properties.Appearance.Options.UseFont = true;
             this.txtCardName.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.White;
+            this.txtCardName.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.txtCardName.Properties.AppearanceDisabled.Options.UseBackColor = true;
+            this.txtCardName.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.txtCardName.Size = new System.Drawing.Size(409, 30);
             this.txtCardName.TabIndex = 8;
             // 
@@ -353,7 +272,9 @@
             this.txtItemName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtItemName.Properties.Appearance.Options.UseFont = true;
             this.txtItemName.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.White;
+            this.txtItemName.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.txtItemName.Properties.AppearanceDisabled.Options.UseBackColor = true;
+            this.txtItemName.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.txtItemName.Size = new System.Drawing.Size(409, 30);
             this.txtItemName.TabIndex = 10;
             // 
@@ -365,7 +286,9 @@
             this.txtItemCode.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtItemCode.Properties.Appearance.Options.UseFont = true;
             this.txtItemCode.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.White;
+            this.txtItemCode.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.txtItemCode.Properties.AppearanceDisabled.Options.UseBackColor = true;
+            this.txtItemCode.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.txtItemCode.Size = new System.Drawing.Size(100, 30);
             this.txtItemCode.TabIndex = 9;
             // 
@@ -377,7 +300,9 @@
             this.txtcantidad.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcantidad.Properties.Appearance.Options.UseFont = true;
             this.txtcantidad.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.White;
+            this.txtcantidad.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.txtcantidad.Properties.AppearanceDisabled.Options.UseBackColor = true;
+            this.txtcantidad.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.txtcantidad.Size = new System.Drawing.Size(515, 30);
             this.txtcantidad.TabIndex = 11;
             // 
@@ -389,8 +314,10 @@
             this.txtcantidadEnviar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcantidadEnviar.Properties.Appearance.Options.UseFont = true;
             this.txtcantidadEnviar.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.White;
+            this.txtcantidadEnviar.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.txtcantidadEnviar.Properties.AppearanceDisabled.Options.UseBackColor = true;
-            this.txtcantidadEnviar.Size = new System.Drawing.Size(515, 30);
+            this.txtcantidadEnviar.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.txtcantidadEnviar.Size = new System.Drawing.Size(289, 30);
             this.txtcantidadEnviar.TabIndex = 12;
             // 
             // btnAtras
@@ -445,11 +372,62 @@
             this.labelControl6.TabIndex = 50;
             this.labelControl6.Text = "Orden de Carga";
             // 
+            // txtboleta
+            // 
+            this.txtboleta.Enabled = false;
+            this.txtboleta.Location = new System.Drawing.Point(265, 223);
+            this.txtboleta.Name = "txtboleta";
+            this.txtboleta.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtboleta.Properties.Appearance.Options.UseFont = true;
+            this.txtboleta.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.White;
+            this.txtboleta.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.txtboleta.Properties.AppearanceDisabled.Options.UseBackColor = true;
+            this.txtboleta.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.txtboleta.Size = new System.Drawing.Size(289, 30);
+            this.txtboleta.TabIndex = 51;
+            // 
+            // btnboleta
+            // 
+            this.btnboleta.Appearance.BackColor = System.Drawing.Color.White;
+            this.btnboleta.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnboleta.Appearance.Options.UseBackColor = true;
+            this.btnboleta.Appearance.Options.UseFont = true;
+            this.btnboleta.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnboleta.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnboleta.ImageOptions.Image")));
+            this.btnboleta.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnboleta.Location = new System.Drawing.Point(574, 226);
+            this.btnboleta.Margin = new System.Windows.Forms.Padding(4);
+            this.btnboleta.Name = "btnboleta";
+            this.btnboleta.Size = new System.Drawing.Size(206, 36);
+            this.btnboleta.TabIndex = 52;
+            this.btnboleta.Text = "Buscar ";
+            this.btnboleta.Click += new System.EventHandler(this.btnboleta_Click);
+            // 
+            // btnactualizar
+            // 
+            this.btnactualizar.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnactualizar.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnactualizar.Appearance.Options.UseBackColor = true;
+            this.btnactualizar.Appearance.Options.UseFont = true;
+            this.btnactualizar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnactualizar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnactualizar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnactualizar.Location = new System.Drawing.Point(574, 179);
+            this.btnactualizar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnactualizar.Name = "btnactualizar";
+            this.btnactualizar.Size = new System.Drawing.Size(206, 39);
+            this.btnactualizar.TabIndex = 53;
+            this.btnactualizar.Text = "Actualizar";
+            this.btnactualizar.Click += new System.EventHandler(this.btnactualizar_Click);
+            // 
             // fromdespacho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(815, 595);
+            this.Controls.Add(this.btnactualizar);
+            this.Controls.Add(this.btnboleta);
+            this.Controls.Add(this.txtboleta);
             this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.btnguardado);
             this.Controls.Add(this.btnAtras);
@@ -464,7 +442,6 @@
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
-            this.Controls.Add(this.grd_boleta);
             this.Controls.Add(this.grd_lotes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fromdespacho";
@@ -474,15 +451,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.grd_lotes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds_despachos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_lotes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grd_boleta.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.boletaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCardCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCardName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtItemName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtItemCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtcantidad.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtcantidadEnviar.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtboleta.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -502,8 +478,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn coliduser;
         private DevExpress.XtraGrid.Columns.GridColumn colse_despacho;
         private DevExpress.XtraGrid.Columns.GridColumn collote_producto_termiado;
-        private DevExpress.XtraEditors.GridLookUpEdit grd_boleta;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl3;
@@ -517,13 +491,10 @@
         private DevExpress.XtraEditors.TextEdit txtcantidadEnviar;
         private DevExpress.XtraEditors.SimpleButton btnAtras;
         private System.Windows.Forms.BindingSource boletaBindingSource;
-        private DevExpress.XtraGrid.Columns.GridColumn colid1;
-        private DevExpress.XtraGrid.Columns.GridColumn colNumID;
-        private DevExpress.XtraGrid.Columns.GridColumn colvehiculo;
-        private DevExpress.XtraGrid.Columns.GridColumn colfurgon;
-        private DevExpress.XtraGrid.Columns.GridColumn colcardname;
-        private DevExpress.XtraGrid.Columns.GridColumn colcarcode;
         private DevExpress.XtraEditors.SimpleButton btnguardado;
         private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.TextEdit txtboleta;
+        private DevExpress.XtraEditors.SimpleButton btnboleta;
+        private DevExpress.XtraEditors.SimpleButton btnactualizar;
     }
 }
