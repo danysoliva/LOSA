@@ -14,7 +14,7 @@ namespace LOSA.Clases
     {
         public SeleccionLoteMPAuto(int pIdMP_ACS, int pIdReqDetlle, decimal pCantidadRequerida, int pIdusuario)
         {
-            dsTransaccionesMP1 = new dsTransaccionesMP();
+            dsTransaccionesMP2 = new dsTransaccionesMP();
             IdMP_ACS = pIdMP_ACS;
             IdReqDetlle = pIdReqDetlle;
             CantidadPendiente = pCantidadRequerida;
@@ -24,7 +24,7 @@ namespace LOSA.Clases
         }
 
         #region Miembros
-        dsTransaccionesMP dsTransaccionesMP1;
+        dsTransaccionesMP dsTransaccionesMP2;
         int IdMP_ACS, IdReqDetlle, idUsuario;
         decimal CantidadPendiente;
         #endregion
@@ -39,7 +39,7 @@ namespace LOSA.Clases
         {
             bool result = false;
             int Seleccionados = 0;
-            foreach (dsTransaccionesMP.detalle_lote_mpRow row in dsTransaccionesMP1.detalle_lote_mp.Rows)
+            foreach (dsTransaccionesMP.detalle_lote_mpRow row in dsTransaccionesMP2.detalle_lote_mp.Rows)
             {
                 if (row.seleccionado)
                 {
@@ -64,7 +64,7 @@ namespace LOSA.Clases
                 cmd1.Parameters.AddWithValue("@id_detalle_req", IdReqDetlle);
                 cmd1.ExecuteNonQuery();
 
-                foreach (dsTransaccionesMP.detalle_lote_mpRow row in dsTransaccionesMP1.detalle_lote_mp.Rows)
+                foreach (dsTransaccionesMP.detalle_lote_mpRow row in dsTransaccionesMP2.detalle_lote_mp.Rows)
                 {
                     if (row.seleccionado)
                     {
@@ -114,9 +114,9 @@ namespace LOSA.Clases
                 cmd.Parameters.AddWithValue("@idmp", IdMP_ACS);
                 cmd.Parameters.AddWithValue("@id_detalle_req", IdMP_ACS);
 
-                dsTransaccionesMP1.detalle_lote_mp.Clear();
+                dsTransaccionesMP2.detalle_lote_mp.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                adat.Fill(dsTransaccionesMP1.detalle_lote_mp);
+                adat.Fill(dsTransaccionesMP2.detalle_lote_mp);
 
                 con.Close();
             }
@@ -133,7 +133,7 @@ namespace LOSA.Clases
             decimal total_solicitado = CantidadPendiente;
             decimal cantidaPendiente = CantidadPendiente;
 
-            foreach (dsTransaccionesMP.detalle_lote_mpRow row in dsTransaccionesMP1.detalle_lote_mp.Rows)
+            foreach (dsTransaccionesMP.detalle_lote_mpRow row in dsTransaccionesMP2.detalle_lote_mp.Rows)
             {
                 if (row.peso_total == cantidaPendiente)
                 {

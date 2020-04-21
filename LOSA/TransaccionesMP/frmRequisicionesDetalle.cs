@@ -106,9 +106,12 @@ namespace LOSA.TransaccionesMP
                     SeleccionLoteMPAuto sele = new SeleccionLoteMPAuto(row.id_materia_prima, row.id, row.solicitada, this.UsuarioLogeado.Id);
                     if(sele.Guardar_SeleccionLoteAuto())
                     {
-                        LoadDatos();
+                        //LoadDatos();
                     }
                 }
+                
+                LoadDatos();
+                CajaDialogo.Information("Autoseleccion finalizada con Exito!");
             }
             else
             {
