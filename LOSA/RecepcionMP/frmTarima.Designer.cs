@@ -304,13 +304,13 @@
             // 
             // labelControl7
             // 
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(16, 290);
+            this.labelControl7.Location = new System.Drawing.Point(16, 293);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(80, 24);
+            this.labelControl7.Size = new System.Drawing.Size(147, 20);
             this.labelControl7.TabIndex = 43;
-            this.labelControl7.Text = "Unidades";
+            this.labelControl7.Text = "Unidades por Tarima";
             // 
             // txtUnidades
             // 
@@ -486,13 +486,13 @@
             // 
             // labelControl12
             // 
-            this.labelControl12.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.labelControl12.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl12.Appearance.Options.UseFont = true;
-            this.labelControl12.Location = new System.Drawing.Point(16, 333);
+            this.labelControl12.Location = new System.Drawing.Point(16, 337);
             this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(71, 24);
+            this.labelControl12.Size = new System.Drawing.Size(134, 20);
             this.labelControl12.TabIndex = 53;
-            this.labelControl12.Text = "Peso Kg";
+            this.labelControl12.Text = "Peso Kg por tarima";
             this.labelControl12.Click += new System.EventHandler(this.labelControl12_Click);
             // 
             // txtPesoKg
