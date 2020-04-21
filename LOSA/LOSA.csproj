@@ -89,14 +89,20 @@
     </StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Charts.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Program Files (x86)\DevExpress 17.1\Components\Bin\Framework\DevExpress.Data.v17.1.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.Office.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Program Files (x86)\DevExpress 17.1\Components\Bin\Framework\DevExpress.Printing.v17.1.Core.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.RichEdit.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v17.1.Export, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Sparkline.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Program Files (x86)\DevExpress 17.1\Components\Bin\Framework\DevExpress.Sparkline.v17.1.Core.dll</HintPath>
@@ -108,13 +114,13 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Program Files (x86)\DevExpress 17.1\Components\Bin\Framework\DevExpress.Utils.v17.1.UI.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.XtraBars.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
+    <Reference Include="DevExpress.XtraBars.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Program Files (x86)\DevExpress 17.1\Components\Bin\Framework\DevExpress.XtraEditors.v17.1.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.XtraGauges.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
@@ -127,6 +133,7 @@
     <Reference Include="DevExpress.XtraReports.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="DevExpress.XtraReports.v17.1.Extensions, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -193,11 +200,35 @@
     <Compile Include="Despachos\frmdespachos.Designer.cs">
       <DependentUpon>frmdespachos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Despachos\frmentregadeproductoT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Despachos\frmentregadeproductoT.Designer.cs">
+      <DependentUpon>frmentregadeproductoT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Despachos\frmEntregaTarimaReqPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Despachos\frmEntregaTarimaReqPT.Designer.cs">
+      <DependentUpon>frmEntregaTarimaReqPT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Despachos\frmloadboleta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Despachos\frmloadboleta.Designer.cs">
+      <DependentUpon>frmloadboleta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Despachos\frmplandespacho.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Despachos\frmplandespacho.Designer.cs">
       <DependentUpon>frmplandespacho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Despachos\frmplanes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Despachos\frmplanes.Designer.cs">
+      <DependentUpon>frmplanes.cs</DependentUpon>
     </Compile>
     <Compile Include="Despachos\frmplanesdecarga.cs">
       <SubType>Form</SubType>
@@ -205,11 +236,41 @@
     <Compile Include="Despachos\frmplanesdecarga.Designer.cs">
       <DependentUpon>frmplanesdecarga.cs</DependentUpon>
     </Compile>
+    <Compile Include="Despachos\frmRequesicionesDetalle_PT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Despachos\frmRequesicionesDetalle_PT.Designer.cs">
+      <DependentUpon>frmRequesicionesDetalle_PT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Despachos\frmRequisicion_Seleccion_Lote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Despachos\frmRequisicion_Seleccion_Lote.Designer.cs">
+      <DependentUpon>frmRequisicion_Seleccion_Lote.cs</DependentUpon>
+    </Compile>
     <Compile Include="Despachos\frmseleccionlote.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Despachos\frmseleccionlote.Designer.cs">
       <DependentUpon>frmseleccionlote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Despachos\frm_Reqresumen_pt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Despachos\frm_Reqresumen_pt.Designer.cs">
+      <DependentUpon>frm_Reqresumen_pt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Despachos\fromdespacho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Despachos\fromdespacho.Designer.cs">
+      <DependentUpon>fromdespacho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Despachos\Reportes\rpt_despacho.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Despachos\Reportes\rpt_despacho.Designer.cs">
+      <DependentUpon>rpt_despacho.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -571,14 +632,41 @@
     <EmbeddedResource Include="Despachos\frmdespachos.resx">
       <DependentUpon>frmdespachos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Despachos\frmentregadeproductoT.resx">
+      <DependentUpon>frmentregadeproductoT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Despachos\frmEntregaTarimaReqPT.resx">
+      <DependentUpon>frmEntregaTarimaReqPT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Despachos\frmloadboleta.resx">
+      <DependentUpon>frmloadboleta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frmplandespacho.resx">
       <DependentUpon>frmplandespacho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Despachos\frmplanes.resx">
+      <DependentUpon>frmplanes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frmplanesdecarga.resx">
       <DependentUpon>frmplanesdecarga.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Despachos\frmRequesicionesDetalle_PT.resx">
+      <DependentUpon>frmRequesicionesDetalle_PT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Despachos\frmRequisicion_Seleccion_Lote.resx">
+      <DependentUpon>frmRequisicion_Seleccion_Lote.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frmseleccionlote.resx">
       <DependentUpon>frmseleccionlote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Despachos\frm_Reqresumen_pt.resx">
+      <DependentUpon>frm_Reqresumen_pt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Despachos\fromdespacho.resx">
+      <DependentUpon>fromdespacho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Despachos\Reportes\rpt_despacho.resx">
+      <DependentUpon>rpt_despacho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>

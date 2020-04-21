@@ -89,7 +89,8 @@ namespace LOSA.TransaccionesMP
 
         private void cmdOrdenesCargaPT_Click(object sender, EventArgs e)
         {
-
+            LOSA.Despachos.frmentregadeproductoT frm = new Despachos.frmentregadeproductoT(UsuarioLogeado);
+            frm.Show();
         }
     }
 }

@@ -46,10 +46,20 @@ namespace LOSA.Despachos
                 SqlCommand cmd = new SqlCommand("sp_get_detalle_lotes_pt_req", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@itemcode", itemcode);
+                cmd.Parameters.AddWithValue("@idDetalle", Pid_detalle);
                 ds_despachos.detalle_lote_pt.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 adat.Fill(ds_despachos.detalle_lote_pt);
                 con.Close();
+                Boolean Solounavez = false;
+                foreach (ds_despachos.detalle_lote_ptRow row in ds_despachos.detalle_lote_pt.Rows)
+                {
+                    
+                    txtCantidadPendiente.Text = string.Format("{0:###,##0.00}", CantidadPendiente - row.totalcants);
+                     txtAsignada.Text = string.Format("{0:###,##0.00}", row.totalcants);
+                    break;
+                    
+                }
             }
             catch (Exception ec)
             {
@@ -167,7 +177,7 @@ namespace LOSA.Despachos
                 {
                     if (row.seleccionado)
                     {
-                        SqlCommand cmd = new SqlCommand("sp_get_insert_lotes_req_mp", con);
+                        SqlCommand cmd = new SqlCommand("orden_venta_sp_insert_lotes_req_pt", con);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@lote_mp", row.lote_pt);
                         cmd.Parameters.AddWithValue("@id_detalle_req", Pid_detalle);

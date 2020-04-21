@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmplandespacho));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmplandespacho));
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            this.btnlotes = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btncancel = new DevExpress.XtraEditors.SimpleButton();
             this.grd_detalle = new DevExpress.XtraGrid.GridControl();
@@ -42,12 +44,15 @@
             this.colDocNum = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colItemCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDsCription = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcant_selected = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colQuantityTm = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coliddetalle = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colQuantityKg = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colprioridad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colU_Sacos = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colU_Peso = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collotes = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnlotes = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.btnlotess = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtcliente = new DevExpress.XtraEditors.TextEdit();
             this.txtdocnum = new DevExpress.XtraEditors.TextEdit();
@@ -56,15 +61,25 @@
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.dtfechaplan = new DevExpress.XtraEditors.DateEdit();
             this.btnatras = new DevExpress.XtraEditors.SimpleButton();
+            ((System.ComponentModel.ISupportInitialize)(this.btnlotes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_detalle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds_despachos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_detalle)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnlotes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnlotess)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtcliente.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtdocnum.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtfechaplan.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtfechaplan.Properties)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btnlotes
+            // 
+            this.btnlotes.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            this.btnlotes.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            this.btnlotes.Name = "btnlotes";
+            this.btnlotes.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
             // labelControl1
             // 
@@ -113,7 +128,7 @@
             this.grd_detalle.MainView = this.grdv_detalle;
             this.grd_detalle.Name = "grd_detalle";
             this.grd_detalle.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.btnlotes});
+            this.btnlotess});
             this.grd_detalle.Size = new System.Drawing.Size(847, 479);
             this.grd_detalle.TabIndex = 38;
             this.grd_detalle.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -140,8 +155,11 @@
             this.colDocNum,
             this.colItemCode,
             this.colDsCription,
+            this.colcant_selected,
             this.colQuantityTm,
+            this.coliddetalle,
             this.colQuantityKg,
+            this.colprioridad,
             this.colU_Sacos,
             this.colU_Peso,
             this.collotes});
@@ -190,7 +208,7 @@
             this.colItemCode.OptionsColumn.AllowEdit = false;
             this.colItemCode.Visible = true;
             this.colItemCode.VisibleIndex = 0;
-            this.colItemCode.Width = 102;
+            this.colItemCode.Width = 110;
             // 
             // colDsCription
             // 
@@ -200,7 +218,17 @@
             this.colDsCription.OptionsColumn.AllowEdit = false;
             this.colDsCription.Visible = true;
             this.colDsCription.VisibleIndex = 1;
-            this.colDsCription.Width = 207;
+            this.colDsCription.Width = 223;
+            // 
+            // colcant_selected
+            // 
+            this.colcant_selected.Caption = "Unidades Seleccionada";
+            this.colcant_selected.FieldName = "cant_selected";
+            this.colcant_selected.Name = "colcant_selected";
+            this.colcant_selected.OptionsColumn.AllowEdit = false;
+            this.colcant_selected.Visible = true;
+            this.colcant_selected.VisibleIndex = 2;
+            this.colcant_selected.Width = 141;
             // 
             // colQuantityTm
             // 
@@ -208,9 +236,12 @@
             this.colQuantityTm.FieldName = "QuantityTm";
             this.colQuantityTm.Name = "colQuantityTm";
             this.colQuantityTm.OptionsColumn.AllowEdit = false;
-            this.colQuantityTm.Visible = true;
-            this.colQuantityTm.VisibleIndex = 2;
             this.colQuantityTm.Width = 148;
+            // 
+            // coliddetalle
+            // 
+            this.coliddetalle.FieldName = "iddetalle";
+            this.coliddetalle.Name = "coliddetalle";
             // 
             // colQuantityKg
             // 
@@ -218,9 +249,14 @@
             this.colQuantityKg.FieldName = "QuantityKg";
             this.colQuantityKg.Name = "colQuantityKg";
             this.colQuantityKg.OptionsColumn.AllowEdit = false;
-            this.colQuantityKg.Visible = true;
-            this.colQuantityKg.VisibleIndex = 3;
             this.colQuantityKg.Width = 138;
+            // 
+            // colprioridad
+            // 
+            this.colprioridad.Caption = "Prioridad";
+            this.colprioridad.FieldName = "prioridad";
+            this.colprioridad.Name = "colprioridad";
+            this.colprioridad.Width = 80;
             // 
             // colU_Sacos
             // 
@@ -229,8 +265,8 @@
             this.colU_Sacos.Name = "colU_Sacos";
             this.colU_Sacos.OptionsColumn.AllowEdit = false;
             this.colU_Sacos.Visible = true;
-            this.colU_Sacos.VisibleIndex = 4;
-            this.colU_Sacos.Width = 106;
+            this.colU_Sacos.VisibleIndex = 3;
+            this.colU_Sacos.Width = 110;
             // 
             // colU_Peso
             // 
@@ -239,26 +275,27 @@
             this.colU_Peso.Name = "colU_Peso";
             this.colU_Peso.OptionsColumn.AllowEdit = false;
             this.colU_Peso.Visible = true;
-            this.colU_Peso.VisibleIndex = 5;
-            this.colU_Peso.Width = 126;
+            this.colU_Peso.VisibleIndex = 4;
+            this.colU_Peso.Width = 100;
             // 
             // collotes
             // 
             this.collotes.Caption = "Lotes";
-            this.collotes.ColumnEdit = this.btnlotes;
+            this.collotes.ColumnEdit = this.btnlotess;
             this.collotes.Name = "collotes";
             this.collotes.Visible = true;
-            this.collotes.VisibleIndex = 6;
+            this.collotes.VisibleIndex = 5;
+            this.collotes.Width = 63;
             // 
-            // btnlotes
+            // btnlotess
             // 
-            this.btnlotes.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
-            this.btnlotes.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
-            this.btnlotes.Name = "btnlotes";
-            this.btnlotes.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.btnlotes.Click += new System.EventHandler(this.btnlotes_Click);
+            this.btnlotess.AutoHeight = false;
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            this.btnlotess.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            this.btnlotess.Name = "btnlotess";
+            this.btnlotess.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnlotess.Click += new System.EventHandler(this.btnlotess_Click);
             // 
             // labelControl2
             // 
@@ -326,10 +363,10 @@
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
             this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(729, 12);
+            this.simpleButton1.Location = new System.Drawing.Point(703, 9);
             this.simpleButton1.Margin = new System.Windows.Forms.Padding(4);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(118, 55);
+            this.simpleButton1.Size = new System.Drawing.Size(135, 55);
             this.simpleButton1.TabIndex = 44;
             this.simpleButton1.Text = "Guardar";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -388,10 +425,11 @@
             this.Name = "frmplandespacho";
             this.Text = "frmplandespacho";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            ((System.ComponentModel.ISupportInitialize)(this.btnlotes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_detalle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds_despachos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_detalle)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnlotes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnlotess)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtcliente.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtdocnum.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtfechaplan.Properties.CalendarTimeProperties)).EndInit();
@@ -427,7 +465,11 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.DateEdit dtfechaplan;
         private DevExpress.XtraGrid.Columns.GridColumn collotes;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnlotes;
         private DevExpress.XtraEditors.SimpleButton btnatras;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnlotes;
+        private DevExpress.XtraGrid.Columns.GridColumn colcant_selected;
+        private DevExpress.XtraGrid.Columns.GridColumn colprioridad;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnlotess;
+        private DevExpress.XtraGrid.Columns.GridColumn coliddetalle;
     }
 }

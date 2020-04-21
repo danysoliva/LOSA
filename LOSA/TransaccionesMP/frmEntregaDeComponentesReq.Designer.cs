@@ -65,9 +65,10 @@
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.cmdHome.Location = new System.Drawing.Point(459, 12);
+            this.cmdHome.Location = new System.Drawing.Point(612, 15);
+            this.cmdHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmdHome.Name = "cmdHome";
-            this.cmdHome.Size = new System.Drawing.Size(175, 71);
+            this.cmdHome.Size = new System.Drawing.Size(233, 87);
             this.cmdHome.TabIndex = 1;
             this.cmdHome.Text = "Cerrar";
             this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
@@ -78,7 +79,8 @@
             this.beIdTarima.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.beIdTarima.EditValue = "";
-            this.beIdTarima.Location = new System.Drawing.Point(120, 36);
+            this.beIdTarima.Location = new System.Drawing.Point(160, 44);
+            this.beIdTarima.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.beIdTarima.Name = "beIdTarima";
             this.beIdTarima.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.beIdTarima.Properties.Appearance.Options.UseFont = true;
@@ -88,7 +90,7 @@
             this.beIdTarima.Properties.MaxLength = 20;
             this.beIdTarima.Properties.NullText = "Escanee o selecciona una tarima";
             this.beIdTarima.Properties.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.beIdTarima_Properties_ButtonClick);
-            this.beIdTarima.Size = new System.Drawing.Size(308, 44);
+            this.beIdTarima.Size = new System.Drawing.Size(411, 52);
             this.beIdTarima.TabIndex = 0;
             this.beIdTarima.ToolTip = "Hola";
             this.beIdTarima.KeyDown += new System.Windows.Forms.KeyEventHandler(this.beIdTarima_KeyDown);
@@ -101,9 +103,10 @@
             this.cmdSelectTarima.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdSelectTarima.ImageOptions.Image = global::LOSA.Properties.Resources.tap;
             this.cmdSelectTarima.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.cmdSelectTarima.Location = new System.Drawing.Point(470, 11);
+            this.cmdSelectTarima.Location = new System.Drawing.Point(627, 14);
+            this.cmdSelectTarima.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmdSelectTarima.Name = "cmdSelectTarima";
-            this.cmdSelectTarima.Size = new System.Drawing.Size(62, 69);
+            this.cmdSelectTarima.Size = new System.Drawing.Size(83, 85);
             this.cmdSelectTarima.TabIndex = 37;
             this.cmdSelectTarima.Visible = false;
             // 
@@ -113,9 +116,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(4, 41);
+            this.labelControl1.Location = new System.Drawing.Point(5, 50);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(110, 37);
+            this.labelControl1.Size = new System.Drawing.Size(134, 46);
             this.labelControl1.TabIndex = 36;
             this.labelControl1.Text = "Tarima:";
             // 
@@ -231,12 +235,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grDetalleLote.DataMember = "entregacomp";
             this.grDetalleLote.DataSource = this.dsTransaccionesMP1;
-            this.grDetalleLote.Location = new System.Drawing.Point(4, 89);
+            this.grDetalleLote.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grDetalleLote.Location = new System.Drawing.Point(5, 110);
             this.grDetalleLote.MainView = this.gvTarimas;
+            this.grDetalleLote.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grDetalleLote.Name = "grDetalleLote";
             this.grDetalleLote.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnEdit});
-            this.grDetalleLote.Size = new System.Drawing.Size(629, 467);
+            this.grDetalleLote.Size = new System.Drawing.Size(839, 575);
             this.grDetalleLote.TabIndex = 2;
             this.grDetalleLote.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTarimas});
@@ -253,16 +259,17 @@
             // 
             // frmEntregaDeComponentesReq
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(638, 560);
+            this.ClientSize = new System.Drawing.Size(851, 689);
             this.Controls.Add(this.cmdHome);
             this.Controls.Add(this.beIdTarima);
             this.Controls.Add(this.cmdSelectTarima);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.grDetalleLote);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmEntregaDeComponentesReq";
             this.Text = "frmEntregaDeComponentesReq";
             ((System.ComponentModel.ISupportInitialize)(this.beIdTarima.Properties)).EndInit();
