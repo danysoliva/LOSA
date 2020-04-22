@@ -58,6 +58,7 @@
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.dtFechaDesde = new DevExpress.XtraEditors.DateEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.colnum = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePresentaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -152,7 +153,8 @@
             this.colid_boleta,
             this.colPrint,
             this.colDuplicar,
-            this.Editar});
+            this.Editar,
+            this.colnum});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -174,7 +176,8 @@
             this.colmateriaprima.Name = "colmateriaprima";
             this.colmateriaprima.OptionsColumn.AllowEdit = false;
             this.colmateriaprima.Visible = true;
-            this.colmateriaprima.VisibleIndex = 0;
+            this.colmateriaprima.VisibleIndex = 1;
+            this.colmateriaprima.Width = 63;
             // 
             // colid_proveedor
             // 
@@ -188,7 +191,8 @@
             this.colproveedor.Name = "colproveedor";
             this.colproveedor.OptionsColumn.AllowEdit = false;
             this.colproveedor.Visible = true;
-            this.colproveedor.VisibleIndex = 1;
+            this.colproveedor.VisibleIndex = 2;
+            this.colproveedor.Width = 63;
             // 
             // colfecha_ingreso
             // 
@@ -197,7 +201,8 @@
             this.colfecha_ingreso.Name = "colfecha_ingreso";
             this.colfecha_ingreso.OptionsColumn.AllowEdit = false;
             this.colfecha_ingreso.Visible = true;
-            this.colfecha_ingreso.VisibleIndex = 2;
+            this.colfecha_ingreso.VisibleIndex = 3;
+            this.colfecha_ingreso.Width = 63;
             // 
             // colnumero_transaccion
             // 
@@ -206,7 +211,8 @@
             this.colnumero_transaccion.Name = "colnumero_transaccion";
             this.colnumero_transaccion.OptionsColumn.AllowEdit = false;
             this.colnumero_transaccion.Visible = true;
-            this.colnumero_transaccion.VisibleIndex = 3;
+            this.colnumero_transaccion.VisibleIndex = 4;
+            this.colnumero_transaccion.Width = 63;
             // 
             // collote_materia_prima
             // 
@@ -215,7 +221,8 @@
             this.collote_materia_prima.Name = "collote_materia_prima";
             this.collote_materia_prima.OptionsColumn.AllowEdit = false;
             this.collote_materia_prima.Visible = true;
-            this.collote_materia_prima.VisibleIndex = 4;
+            this.collote_materia_prima.VisibleIndex = 5;
+            this.collote_materia_prima.Width = 63;
             // 
             // colid_boleta
             // 
@@ -224,7 +231,8 @@
             this.colid_boleta.Name = "colid_boleta";
             this.colid_boleta.OptionsColumn.AllowEdit = false;
             this.colid_boleta.Visible = true;
-            this.colid_boleta.VisibleIndex = 5;
+            this.colid_boleta.VisibleIndex = 6;
+            this.colid_boleta.Width = 63;
             // 
             // colPrint
             // 
@@ -232,7 +240,8 @@
             this.colPrint.ColumnEdit = this.btnPrint;
             this.colPrint.Name = "colPrint";
             this.colPrint.Visible = true;
-            this.colPrint.VisibleIndex = 6;
+            this.colPrint.VisibleIndex = 7;
+            this.colPrint.Width = 63;
             // 
             // btnPrint
             // 
@@ -250,7 +259,8 @@
             this.colDuplicar.ColumnEdit = this.cmdDuplicar;
             this.colDuplicar.Name = "colDuplicar";
             this.colDuplicar.Visible = true;
-            this.colDuplicar.VisibleIndex = 7;
+            this.colDuplicar.VisibleIndex = 8;
+            this.colDuplicar.Width = 63;
             // 
             // cmdDuplicar
             // 
@@ -268,7 +278,8 @@
             this.Editar.ColumnEdit = this.btnEditar;
             this.Editar.Name = "Editar";
             this.Editar.Visible = true;
-            this.Editar.VisibleIndex = 8;
+            this.Editar.VisibleIndex = 9;
+            this.Editar.Width = 71;
             // 
             // btnEditar
             // 
@@ -353,6 +364,15 @@
             this.labelControl8.TabIndex = 54;
             this.labelControl8.Text = "Fecha Desde:";
             // 
+            // colnum
+            // 
+            this.colnum.Caption = "#";
+            this.colnum.FieldName = "num";
+            this.colnum.Name = "colnum";
+            this.colnum.Visible = true;
+            this.colnum.VisibleIndex = 0;
+            this.colnum.Width = 45;
+            // 
             // frmImprimirHojaIngreso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -417,5 +437,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdDuplicar;
         private DevExpress.XtraGrid.Columns.GridColumn Editar;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnEditar;
+        private DevExpress.XtraGrid.Columns.GridColumn colnum;
     }
 }
