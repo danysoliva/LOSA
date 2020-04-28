@@ -46,7 +46,8 @@ namespace LOSA.Clases
                     IdMP_ACS = dr.GetInt32(0);
                     Codigo = dr.GetString(1);
                     Name = dr.GetString(2);
-                    CodeMP_SAP = dr.GetString(3);
+                    //name sap = dr.GetString(3);
+                    CodeMP_SAP = dr.GetString(4);
                 }
                 dr.Close();
                 Recuperado = true;

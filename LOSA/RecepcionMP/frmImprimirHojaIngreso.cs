@@ -161,11 +161,17 @@ namespace LOSA.RecepcionMP
                             cmm.Parameters.AddWithValue("@id", 1);
                             string barcode = cmm.ExecuteScalar().ToString();
 
+                            string vItemCodeMP = "";
+                            MateriaPrima mpx = new MateriaPrima();
+                            if (mpx.RecuperarRegistroFromID_RM(row.id_materia_prima))
+                            {
+                                vItemCodeMP = mpx.CodeMP_SAP;
+                            }
                             
 
                             SqlCommand cmd = new SqlCommand("sp_insert_new_tarima", con);
                             cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("@itemcode", row.id_materia_prima);
+                            cmd.Parameters.AddWithValue("@itemcode", vItemCodeMP);
                             cmd.Parameters.AddWithValue("@id_proveedor", tar1.IdProveedor);
                             cmd.Parameters.AddWithValue("@fecha_ingreso", tar1.FechaIngreso);
                             cmd.Parameters.AddWithValue("@numero_transaccion", tar1.NumeroTransaccion);
