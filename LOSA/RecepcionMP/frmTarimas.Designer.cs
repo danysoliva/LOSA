@@ -46,6 +46,7 @@
             this.colPresentacion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSeleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colnum = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gcTarima)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleTarimaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMP)).BeginInit();
@@ -125,7 +126,8 @@
             this.coltipo_tarima,
             this.colid_boleta,
             this.colPresentacion,
-            this.colSeleccionar});
+            this.colSeleccionar,
+            this.colnum});
             this.gvTarimas.GridControl = this.gcTarima;
             this.gvTarimas.Name = "gvTarimas";
             this.gvTarimas.OptionsCustomization.AllowFilter = false;
@@ -154,8 +156,8 @@
             this.colFechaIngreso.Name = "colFechaIngreso";
             this.colFechaIngreso.OptionsColumn.AllowEdit = false;
             this.colFechaIngreso.Visible = true;
-            this.colFechaIngreso.VisibleIndex = 0;
-            this.colFechaIngreso.Width = 68;
+            this.colFechaIngreso.VisibleIndex = 1;
+            this.colFechaIngreso.Width = 61;
             // 
             // colnombreProveedor
             // 
@@ -164,8 +166,8 @@
             this.colnombreProveedor.Name = "colnombreProveedor";
             this.colnombreProveedor.OptionsColumn.AllowEdit = false;
             this.colnombreProveedor.Visible = true;
-            this.colnombreProveedor.VisibleIndex = 1;
-            this.colnombreProveedor.Width = 84;
+            this.colnombreProveedor.VisibleIndex = 2;
+            this.colnombreProveedor.Width = 77;
             // 
             // colnumero_transaccion
             // 
@@ -174,8 +176,8 @@
             this.colnumero_transaccion.Name = "colnumero_transaccion";
             this.colnumero_transaccion.OptionsColumn.AllowEdit = false;
             this.colnumero_transaccion.Visible = true;
-            this.colnumero_transaccion.VisibleIndex = 2;
-            this.colnumero_transaccion.Width = 84;
+            this.colnumero_transaccion.VisibleIndex = 3;
+            this.colnumero_transaccion.Width = 77;
             // 
             // collote_materia_prima
             // 
@@ -184,8 +186,8 @@
             this.collote_materia_prima.Name = "collote_materia_prima";
             this.collote_materia_prima.OptionsColumn.AllowEdit = false;
             this.collote_materia_prima.Visible = true;
-            this.collote_materia_prima.VisibleIndex = 3;
-            this.collote_materia_prima.Width = 84;
+            this.collote_materia_prima.VisibleIndex = 4;
+            this.collote_materia_prima.Width = 77;
             // 
             // coltipo_tarima
             // 
@@ -194,8 +196,8 @@
             this.coltipo_tarima.Name = "coltipo_tarima";
             this.coltipo_tarima.OptionsColumn.AllowEdit = false;
             this.coltipo_tarima.Visible = true;
-            this.coltipo_tarima.VisibleIndex = 5;
-            this.coltipo_tarima.Width = 84;
+            this.coltipo_tarima.VisibleIndex = 6;
+            this.coltipo_tarima.Width = 77;
             // 
             // colid_boleta
             // 
@@ -204,8 +206,8 @@
             this.colid_boleta.Name = "colid_boleta";
             this.colid_boleta.OptionsColumn.AllowEdit = false;
             this.colid_boleta.Visible = true;
-            this.colid_boleta.VisibleIndex = 6;
-            this.colid_boleta.Width = 78;
+            this.colid_boleta.VisibleIndex = 7;
+            this.colid_boleta.Width = 72;
             // 
             // colPresentacion
             // 
@@ -213,19 +215,19 @@
             this.colPresentacion.Name = "colPresentacion";
             this.colPresentacion.OptionsColumn.AllowEdit = false;
             this.colPresentacion.Visible = true;
-            this.colPresentacion.VisibleIndex = 4;
-            this.colPresentacion.Width = 68;
+            this.colPresentacion.VisibleIndex = 5;
+            this.colPresentacion.Width = 61;
             // 
             // colSeleccionar
             // 
-            this.colSeleccionar.Caption = "#";
+            this.colSeleccionar.Caption = "Select";
             this.colSeleccionar.ColumnEdit = this.btnSeleccionar;
             this.colSeleccionar.FieldName = "seleccionar";
             this.colSeleccionar.MaxWidth = 50;
             this.colSeleccionar.Name = "colSeleccionar";
             this.colSeleccionar.Visible = true;
-            this.colSeleccionar.VisibleIndex = 7;
-            this.colSeleccionar.Width = 38;
+            this.colSeleccionar.VisibleIndex = 8;
+            this.colSeleccionar.Width = 50;
             // 
             // btnSeleccionar
             // 
@@ -236,6 +238,15 @@
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnSeleccionar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.BtnSeleccionar_ButtonClick);
+            // 
+            // colnum
+            // 
+            this.colnum.Caption = "#";
+            this.colnum.FieldName = "num";
+            this.colnum.Name = "colnum";
+            this.colnum.Visible = true;
+            this.colnum.VisibleIndex = 0;
+            this.colnum.Width = 36;
             // 
             // frmTarimas
             // 
@@ -275,5 +286,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnSeleccionar;
         private DevExpress.XtraGrid.Columns.GridColumn colPresentacion;
         private DevExpress.XtraGrid.Columns.GridColumn colFechaIngreso;
+        private DevExpress.XtraGrid.Columns.GridColumn colnum;
     }
 }
