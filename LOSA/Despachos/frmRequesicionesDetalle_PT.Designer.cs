@@ -245,6 +245,8 @@
             this.gridColumn1.Caption = "Editar";
             this.gridColumn1.ColumnEdit = this.btnedit;
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 7;
             // 
             // btnedit
             // 
@@ -270,7 +272,7 @@
             this.colDespacho.ColumnEdit = this.btndespacho;
             this.colDespacho.Name = "colDespacho";
             this.colDespacho.Visible = true;
-            this.colDespacho.VisibleIndex = 7;
+            this.colDespacho.VisibleIndex = 8;
             // 
             // btndespacho
             // 

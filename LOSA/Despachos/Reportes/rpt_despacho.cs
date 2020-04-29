@@ -37,11 +37,9 @@ namespace LOSA.Despachos.Reportes
                     txtCardName.Text = dr.GetString(2);
                     txtItemCode.Text = dr.GetString(3);
                     txtItemName.Text = dr.GetString(4);
-                    txtfator.Text = dr.GetDecimal(5).ToString();
                     txtcantidad.Text = dr.GetInt32(7).ToString();
-                    txtcantidadKg.Text = dr.GetDecimal(8).ToString();
-                    txtplaca.Text = dr.GetString(9);
-                    txtfurgon.Text = dr.GetString(10);
+                    txtplaca.Text    = dr.GetString(9);
+                    txtfurgon.Text   = dr.GetString(10);
                 }
                 dr.Close();
                 cn.Close();

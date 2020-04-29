@@ -113,7 +113,7 @@
             this.grdv_lote.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.grdv_lote.Appearance.FocusedRow.Options.UseBackColor = true;
             this.grdv_lote.Appearance.FocusedRow.Options.UseFont = true;
-            this.grdv_lote.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.grdv_lote.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdv_lote.Appearance.HeaderPanel.Options.UseFont = true;
             this.grdv_lote.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.LightGreen;
             this.grdv_lote.Appearance.HideSelectionRow.Options.UseBackColor = true;
@@ -163,7 +163,7 @@
             // 
             // colingreso
             // 
-            this.colingreso.Caption = "Fecha Ingreso";
+            this.colingreso.Caption = "Fecha In.";
             this.colingreso.FieldName = "ingreso";
             this.colingreso.Name = "colingreso";
             this.colingreso.OptionsColumn.AllowEdit = false;
@@ -217,7 +217,7 @@
             // 
             // colpeso_total
             // 
-            this.colpeso_total.Caption = "Peso por tarima";
+            this.colpeso_total.Caption = "Peso tarima";
             this.colpeso_total.FieldName = "peso_total";
             this.colpeso_total.Name = "colpeso_total";
             this.colpeso_total.OptionsColumn.AllowEdit = false;
@@ -234,7 +234,7 @@
             // 
             // colcants
             // 
-            this.colcants.Caption = "Cantidad a Enviar";
+            this.colcants.Caption = "Cant. a Enviar";
             this.colcants.FieldName = "cants";
             this.colcants.Name = "colcants";
             this.colcants.Visible = true;
@@ -266,7 +266,7 @@
             this.chkTodos.AutoSize = true;
             this.chkTodos.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkTodos.Location = new System.Drawing.Point(535, 152);
+            this.chkTodos.Location = new System.Drawing.Point(616, 152);
             this.chkTodos.Margin = new System.Windows.Forms.Padding(4);
             this.chkTodos.Name = "chkTodos";
             this.chkTodos.Size = new System.Drawing.Size(222, 33);
@@ -300,7 +300,7 @@
             this.btnguardado.Appearance.Options.UseBackColor = true;
             this.btnguardado.Appearance.Options.UseFont = true;
             this.btnguardado.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnguardado.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnguardado.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnguardado.ImageOptions.Image")));
             this.btnguardado.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnguardado.Location = new System.Drawing.Point(677, 7);
             this.btnguardado.Margin = new System.Windows.Forms.Padding(4);

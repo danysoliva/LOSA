@@ -45,6 +45,7 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txtCodigoMP = new DevExpress.XtraEditors.TextEdit();
             this.grd_lotes = new DevExpress.XtraGrid.GridControl();
+            this.ds_despachos = new LOSA.Despachos.ds_despachos();
             this.grdv_lotes = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_proveedor = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -60,7 +61,6 @@
             this.colcants = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dxErrorProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.ds_despachos = new LOSA.Despachos.ds_despachos();
             this.cmdGuardar = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtSolicitada.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAsignada.Properties)).BeginInit();
@@ -68,10 +68,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtMP_Name.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigoMP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_lotes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ds_despachos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_lotes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ds_despachos)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -111,15 +111,16 @@
             // 
             // labelControl6
             // 
+            this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
             this.labelControl6.Appearance.Options.UseTextOptions = true;
             this.labelControl6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl6.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl6.Location = new System.Drawing.Point(444, 143);
+            this.labelControl6.Location = new System.Drawing.Point(510, 142);
             this.labelControl6.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(196, 30);
+            this.labelControl6.Size = new System.Drawing.Size(210, 30);
             this.labelControl6.TabIndex = 63;
             this.labelControl6.Text = "Unidad Medida:";
             // 
@@ -175,10 +176,11 @@
             // 
             // chkAutoSelect
             // 
+            this.chkAutoSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkAutoSelect.AutoSize = true;
             this.chkAutoSelect.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkAutoSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkAutoSelect.Location = new System.Drawing.Point(466, 196);
+            this.chkAutoSelect.Location = new System.Drawing.Point(640, 195);
             this.chkAutoSelect.Margin = new System.Windows.Forms.Padding(4);
             this.chkAutoSelect.Name = "chkAutoSelect";
             this.chkAutoSelect.Size = new System.Drawing.Size(180, 29);
@@ -188,15 +190,16 @@
             // 
             // lblUnidad
             // 
+            this.lblUnidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUnidad.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUnidad.Appearance.Options.UseFont = true;
             this.lblUnidad.Appearance.Options.UseTextOptions = true;
             this.lblUnidad.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.lblUnidad.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblUnidad.Location = new System.Drawing.Point(644, 143);
+            this.lblUnidad.Location = new System.Drawing.Point(747, 142);
             this.lblUnidad.Margin = new System.Windows.Forms.Padding(4);
             this.lblUnidad.Name = "lblUnidad";
-            this.lblUnidad.Size = new System.Drawing.Size(188, 30);
+            this.lblUnidad.Size = new System.Drawing.Size(78, 30);
             this.lblUnidad.TabIndex = 57;
             this.lblUnidad.Text = "Ud";
             // 
@@ -227,6 +230,7 @@
             // 
             // txtMP_Name
             // 
+            this.txtMP_Name.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMP_Name.EditValue = "";
             this.txtMP_Name.Enabled = false;
             this.txtMP_Name.Location = new System.Drawing.Point(438, 88);
@@ -277,6 +281,11 @@
             this.grd_lotes.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_lotes});
             // 
+            // ds_despachos
+            // 
+            this.ds_despachos.DataSetName = "ds_despachos";
+            this.ds_despachos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // grdv_lotes
             // 
             this.grdv_lotes.Appearance.FocusedCell.BackColor = System.Drawing.Color.LightGreen;
@@ -286,7 +295,7 @@
             this.grdv_lotes.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.grdv_lotes.Appearance.FocusedRow.Options.UseBackColor = true;
             this.grdv_lotes.Appearance.FocusedRow.Options.UseFont = true;
-            this.grdv_lotes.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.grdv_lotes.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdv_lotes.Appearance.HeaderPanel.Options.UseFont = true;
             this.grdv_lotes.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.LightGreen;
             this.grdv_lotes.Appearance.HideSelectionRow.Options.UseBackColor = true;
@@ -316,6 +325,7 @@
             this.grdv_lotes.OptionsView.ShowFooter = true;
             this.grdv_lotes.OptionsView.ShowGroupPanel = false;
             this.grdv_lotes.RowHeight = 20;
+            this.grdv_lotes.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.grdv_lotes_RowStyle);
             // 
             // colid
             // 
@@ -335,33 +345,37 @@
             this.colNombre.OptionsColumn.AllowEdit = false;
             this.colNombre.Visible = true;
             this.colNombre.VisibleIndex = 0;
+            this.colNombre.Width = 80;
             // 
             // colingreso
             // 
-            this.colingreso.Caption = "Fecha Ingreso";
+            this.colingreso.Caption = "Fecha In.";
             this.colingreso.FieldName = "ingreso";
             this.colingreso.Name = "colingreso";
             this.colingreso.OptionsColumn.AllowEdit = false;
             this.colingreso.Visible = true;
             this.colingreso.VisibleIndex = 1;
+            this.colingreso.Width = 80;
             // 
             // colvence
             // 
-            this.colvence.Caption = "Fecha Vence";
+            this.colvence.Caption = "Fecha Ven.";
             this.colvence.FieldName = "vence";
             this.colvence.Name = "colvence";
             this.colvence.OptionsColumn.AllowEdit = false;
             this.colvence.Visible = true;
             this.colvence.VisibleIndex = 2;
+            this.colvence.Width = 80;
             // 
             // collote_mp
             // 
-            this.collote_mp.Caption = "Lote MP";
+            this.collote_mp.Caption = "Lote PT";
             this.collote_mp.FieldName = "lote_mp";
             this.collote_mp.Name = "collote_mp";
             this.collote_mp.OptionsColumn.AllowEdit = false;
             this.collote_mp.Visible = true;
             this.collote_mp.VisibleIndex = 3;
+            this.collote_mp.Width = 80;
             // 
             // colpresentacion
             // 
@@ -371,6 +385,7 @@
             this.colpresentacion.OptionsColumn.AllowEdit = false;
             this.colpresentacion.Visible = true;
             this.colpresentacion.VisibleIndex = 4;
+            this.colpresentacion.Width = 103;
             // 
             // colcantidad
             // 
@@ -383,7 +398,7 @@
             // 
             // colunidad
             // 
-            this.colunidad.Caption = "Unidad Medida";
+            this.colunidad.Caption = "Ud M.";
             this.colunidad.FieldName = "unidad";
             this.colunidad.Name = "colunidad";
             this.colunidad.OptionsColumn.AllowEdit = false;
@@ -392,7 +407,7 @@
             // 
             // colpeso_total
             // 
-            this.colpeso_total.Caption = "Peso por tarima";
+            this.colpeso_total.Caption = "Peso";
             this.colpeso_total.FieldName = "peso_total";
             this.colpeso_total.Name = "colpeso_total";
             this.colpeso_total.OptionsColumn.AllowEdit = false;
@@ -406,6 +421,7 @@
             this.colseleccionado.Name = "colseleccionado";
             this.colseleccionado.Visible = true;
             this.colseleccionado.VisibleIndex = 8;
+            this.colseleccionado.Width = 86;
             // 
             // colcants
             // 
@@ -414,6 +430,7 @@
             this.colcants.Name = "colcants";
             this.colcants.Visible = true;
             this.colcants.VisibleIndex = 9;
+            this.colcants.Width = 71;
             // 
             // dxErrorProvider1
             // 
@@ -422,11 +439,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // ds_despachos
-            // 
-            this.ds_despachos.DataSetName = "ds_despachos";
-            this.ds_despachos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cmdGuardar
             // 
@@ -443,6 +455,7 @@
             this.cmdGuardar.Size = new System.Drawing.Size(223, 58);
             this.cmdGuardar.TabIndex = 65;
             this.cmdGuardar.Text = "Planificar";
+            this.cmdGuardar.Click += new System.EventHandler(this.cmdGuardar_Click);
             // 
             // frmRequisicion_Seleccion_Lote
             // 
@@ -474,10 +487,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtMP_Name.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigoMP.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_lotes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ds_despachos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_lotes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ds_despachos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
