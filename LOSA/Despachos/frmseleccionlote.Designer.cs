@@ -253,7 +253,7 @@
             // txtitem
             // 
             this.txtitem.Enabled = false;
-            this.txtitem.Location = new System.Drawing.Point(324, 73);
+            this.txtitem.Location = new System.Drawing.Point(285, 73);
             this.txtitem.Name = "txtitem";
             this.txtitem.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtitem.Properties.Appearance.Options.UseFont = true;
@@ -266,7 +266,7 @@
             this.chkTodos.AutoSize = true;
             this.chkTodos.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkTodos.Location = new System.Drawing.Point(616, 152);
+            this.chkTodos.Location = new System.Drawing.Point(618, 157);
             this.chkTodos.Margin = new System.Windows.Forms.Padding(4);
             this.chkTodos.Name = "chkTodos";
             this.chkTodos.Size = new System.Drawing.Size(222, 33);
@@ -277,6 +277,7 @@
             // 
             // btnatras
             // 
+            this.btnatras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnatras.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnatras.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnatras.Appearance.Options.UseBackColor = true;
@@ -284,7 +285,7 @@
             this.btnatras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnatras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnatras.ImageOptions.Image")));
             this.btnatras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnatras.Location = new System.Drawing.Point(13, 11);
+            this.btnatras.Location = new System.Drawing.Point(720, 8);
             this.btnatras.Margin = new System.Windows.Forms.Padding(4);
             this.btnatras.Name = "btnatras";
             this.btnatras.Size = new System.Drawing.Size(118, 54);
@@ -294,7 +295,6 @@
             // 
             // btnguardado
             // 
-            this.btnguardado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnguardado.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnguardado.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnguardado.Appearance.Options.UseBackColor = true;
@@ -302,7 +302,7 @@
             this.btnguardado.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnguardado.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnguardado.ImageOptions.Image")));
             this.btnguardado.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnguardado.Location = new System.Drawing.Point(677, 7);
+            this.btnguardado.Location = new System.Drawing.Point(13, 11);
             this.btnguardado.Margin = new System.Windows.Forms.Padding(4);
             this.btnguardado.Name = "btnguardado";
             this.btnguardado.Size = new System.Drawing.Size(143, 55);
@@ -312,29 +312,31 @@
             // 
             // labelControl6
             // 
+            this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
             this.labelControl6.Appearance.Options.UseTextOptions = true;
             this.labelControl6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl6.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl6.Location = new System.Drawing.Point(521, 114);
+            this.labelControl6.Location = new System.Drawing.Point(598, 119);
             this.labelControl6.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(196, 30);
+            this.labelControl6.Size = new System.Drawing.Size(187, 30);
             this.labelControl6.TabIndex = 53;
             this.labelControl6.Text = "Unidad Medida:";
             // 
             // lblUnidad
             // 
+            this.lblUnidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUnidad.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUnidad.Appearance.Options.UseFont = true;
             this.lblUnidad.Appearance.Options.UseTextOptions = true;
             this.lblUnidad.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.lblUnidad.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblUnidad.Location = new System.Drawing.Point(721, 114);
+            this.lblUnidad.Location = new System.Drawing.Point(794, 119);
             this.lblUnidad.Margin = new System.Windows.Forms.Padding(4);
             this.lblUnidad.Name = "lblUnidad";
-            this.lblUnidad.Size = new System.Drawing.Size(99, 30);
+            this.lblUnidad.Size = new System.Drawing.Size(46, 30);
             this.lblUnidad.TabIndex = 52;
             this.lblUnidad.Text = "Ud.";
             // 
@@ -353,7 +355,7 @@
             // 
             this.txtSolicitada.EditValue = "0.00";
             this.txtSolicitada.Enabled = false;
-            this.txtSolicitada.Location = new System.Drawing.Point(324, 116);
+            this.txtSolicitada.Location = new System.Drawing.Point(285, 116);
             this.txtSolicitada.Margin = new System.Windows.Forms.Padding(4);
             this.txtSolicitada.Name = "txtSolicitada";
             this.txtSolicitada.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -362,6 +364,7 @@
             this.txtSolicitada.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtSolicitada.Size = new System.Drawing.Size(189, 38);
             this.txtSolicitada.TabIndex = 58;
+            this.txtSolicitada.EditValueChanged += new System.EventHandler(this.txtSolicitada_EditValueChanged);
             // 
             // labelControl4
             // 
@@ -378,7 +381,7 @@
             // 
             this.txtAsignada.EditValue = "0.00";
             this.txtAsignada.Enabled = false;
-            this.txtAsignada.Location = new System.Drawing.Point(324, 164);
+            this.txtAsignada.Location = new System.Drawing.Point(285, 165);
             this.txtAsignada.Margin = new System.Windows.Forms.Padding(4);
             this.txtAsignada.Name = "txtAsignada";
             this.txtAsignada.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -403,7 +406,7 @@
             // 
             this.txtCantidadPendiente.EditValue = "0.00";
             this.txtCantidadPendiente.Enabled = false;
-            this.txtCantidadPendiente.Location = new System.Drawing.Point(324, 211);
+            this.txtCantidadPendiente.Location = new System.Drawing.Point(285, 211);
             this.txtCantidadPendiente.Margin = new System.Windows.Forms.Padding(4);
             this.txtCantidadPendiente.Name = "txtCantidadPendiente";
             this.txtCantidadPendiente.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

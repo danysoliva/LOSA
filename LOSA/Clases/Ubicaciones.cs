@@ -63,5 +63,35 @@ namespace LOSA.Clases
             }
             return Recuperado;
         }
+
+        public bool RecuperarRegistro_v2(int pIdUbicacion, string pCodigoBarra)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_ubicaciones_from_id_v2", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idUbicacion", pIdUbicacion);
+                cmd.Parameters.AddWithValue("@codigo_barra", pCodigoBarra);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    Id = dr.GetInt32(0);
+                    Rack = dr.GetString(1);
+                    IdBodega = dr.GetInt32(4);
+                    Recuperado = true;
+                }
+                dr.Close();
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+            return Recuperado;
+        }
     }
 }

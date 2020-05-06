@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUbicacionTarima));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.gcUbicacion = new DevExpress.XtraGrid.GridControl();
-            this.ubicacionesBindingSource = new System.Windows.Forms.BindingSource();
+            this.ubicacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsRecepcionMPx = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.gvUbicacion = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -55,6 +56,7 @@
             // 
             // btnAtras
             // 
+            this.btnAtras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAtras.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnAtras.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAtras.Appearance.Options.UseBackColor = true;
@@ -62,9 +64,10 @@
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(455, 6);
+            this.btnAtras.Location = new System.Drawing.Point(607, 7);
+            this.btnAtras.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(163, 58);
+            this.btnAtras.Size = new System.Drawing.Size(217, 71);
             this.btnAtras.TabIndex = 6;
             this.btnAtras.Text = "Atrás";
             this.btnAtras.Click += new System.EventHandler(this.BtnAtras_Click);
@@ -78,9 +81,10 @@
             this.labelControl3.Appearance.Options.UseTextOptions = true;
             this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl3.Location = new System.Drawing.Point(12, 12);
+            this.labelControl3.Location = new System.Drawing.Point(16, 15);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(407, 21);
+            this.labelControl3.Size = new System.Drawing.Size(543, 26);
             this.labelControl3.TabIndex = 13;
             this.labelControl3.Text = "Ubicación Tarima";
             // 
@@ -90,12 +94,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcUbicacion.DataSource = this.ubicacionesBindingSource;
-            this.gcUbicacion.Location = new System.Drawing.Point(0, 89);
+            this.gcUbicacion.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcUbicacion.Location = new System.Drawing.Point(0, 110);
             this.gcUbicacion.MainView = this.gvUbicacion;
+            this.gcUbicacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gcUbicacion.Name = "gcUbicacion";
             this.gcUbicacion.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnSeleccionar});
-            this.gcUbicacion.Size = new System.Drawing.Size(622, 432);
+            this.gcUbicacion.Size = new System.Drawing.Size(829, 532);
             this.gcUbicacion.TabIndex = 14;
             this.gcUbicacion.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvUbicacion});
@@ -157,8 +163,6 @@
             this.colpasillo.FieldName = "pasillo";
             this.colpasillo.Name = "colpasillo";
             this.colpasillo.OptionsColumn.AllowEdit = false;
-            this.colpasillo.Visible = true;
-            this.colpasillo.VisibleIndex = 1;
             // 
             // colrack
             // 
@@ -167,7 +171,7 @@
             this.colrack.Name = "colrack";
             this.colrack.OptionsColumn.AllowEdit = false;
             this.colrack.Visible = true;
-            this.colrack.VisibleIndex = 2;
+            this.colrack.VisibleIndex = 1;
             // 
             // colaltura
             // 
@@ -194,7 +198,7 @@
             this.colSeleccionar.MaxWidth = 50;
             this.colSeleccionar.Name = "colSeleccionar";
             this.colSeleccionar.Visible = true;
-            this.colSeleccionar.VisibleIndex = 3;
+            this.colSeleccionar.VisibleIndex = 2;
             this.colSeleccionar.Width = 50;
             // 
             // btnSeleccionar
@@ -222,13 +226,14 @@
             // 
             // frmUbicacionTarima
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(622, 521);
+            this.ClientSize = new System.Drawing.Size(829, 641);
             this.Controls.Add(this.gcUbicacion);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.btnAtras);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmUbicacionTarima";
             this.Text = "frmUbicacionTarima";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

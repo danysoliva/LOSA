@@ -216,5 +216,81 @@ namespace LOSA.Despachos
         {
 
         }
+
+        private void chkAutoSelect_CheckedChanged(object sender, EventArgs e)
+        {
+
+            decimal total_solicitado = CantidadPendiente;
+            decimal cantidaPendiente = CantidadPendiente;
+            decimal cantidad_conseguida = 0;
+            if (chkAutoSelect.Checked)
+            {
+                //var gridView = (GridView)grRequisicoinesMP.FocusedView;
+                //var row = (dsTransaccionesMP.detalle_lote_mpRow)gridView.GetFocusedDataRow();
+
+                foreach (ds_despachos.detalle_lote_mpRow row in ds_despachos.detalle_lote_mp.Rows)
+                {
+                    if (row.cantidad == cantidaPendiente)
+                    {
+                        row.seleccionado = true;
+                        cantidaPendiente = 0;
+                        row.cants = row.cantidad;
+                        break;
+                    }
+                    if (row.cantidad > cantidaPendiente && cantidaPendiente > 0)
+                    {
+                        if (row.cantidad > cantidaPendiente)
+                            row.cants = cantidaPendiente;
+                        else
+                            row.cants = total_solicitado - cantidaPendiente;
+
+                        //row.cants = row.peso_total - cantidaPendiente;
+                        cantidaPendiente -= row.cants;
+                        row.seleccionado = true;
+                        break;
+                    }
+                    else
+                    {
+                        //en el row tenemos un valor menor que el solicitado
+                        //Necesitaremos mas de un row para satisfaser la cantidad requerida.
+                        if (row.peso_total < cantidaPendiente && cantidaPendiente > 0)
+                        {
+                            if (row.peso_total > 0)
+                            {
+                                //seleccionamos la cantidad total del row para acumular el valor solictado.
+                                row.cants = row.cantidad;
+
+                                //Restamos la cantidad conseguida o asignada.
+                                cantidaPendiente -= row.cants;
+
+                                //Marcamos el row seleccionado porque se utilizaria dicho lote para la requisicion.
+                                row.seleccionado = true;
+                            }
+                        }
+                    }
+
+                    //Calculo de totales.
+                    if (row.seleccionado)
+                        cantidad_conseguida += row.cants;
+
+                    txtCantidadPendiente.Text = string.Format("{0:###,##0.00}", CantidadPendiente - cantidad_conseguida);
+                    txtAsignada.Text = string.Format("{0:###,##0.00}", cantidad_conseguida);
+                    //end block foreach
+                }
+            }
+            else
+            {
+                foreach (ds_despachos.detalle_lote_mpRow row in ds_despachos.detalle_lote_mp.Rows)
+                {
+                    row.seleccionado = false;
+                    row.cants = 0;
+                    if (row.seleccionado)
+                        cantidad_conseguida += row.cants;
+
+                    txtCantidadPendiente.Text = string.Format("{0:###,##0.00}", CantidadPendiente - cantidad_conseguida);
+                    txtAsignada.Text = string.Format("{0:###,##0.00}", cantidad_conseguida);
+                }
+            }
+        }
     }
 }

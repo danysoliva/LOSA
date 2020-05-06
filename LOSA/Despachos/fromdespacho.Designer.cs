@@ -398,7 +398,7 @@
             this.btnboleta.Location = new System.Drawing.Point(574, 226);
             this.btnboleta.Margin = new System.Windows.Forms.Padding(4);
             this.btnboleta.Name = "btnboleta";
-            this.btnboleta.Size = new System.Drawing.Size(206, 36);
+            this.btnboleta.Size = new System.Drawing.Size(206, 45);
             this.btnboleta.TabIndex = 52;
             this.btnboleta.Text = "Buscar ";
             this.btnboleta.Click += new System.EventHandler(this.btnboleta_Click);
@@ -410,7 +410,7 @@
             this.btnactualizar.Appearance.Options.UseBackColor = true;
             this.btnactualizar.Appearance.Options.UseFont = true;
             this.btnactualizar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnactualizar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnactualizar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnactualizar.ImageOptions.Image")));
             this.btnactualizar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnactualizar.Location = new System.Drawing.Point(574, 179);
             this.btnactualizar.Margin = new System.Windows.Forms.Padding(4);

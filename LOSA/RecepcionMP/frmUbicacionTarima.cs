@@ -31,7 +31,7 @@ namespace LOSA.RecepcionMP
         public frmUbicacionTarima()
         {
             InitializeComponent();
-            cargarDatos();
+            cargarDatos_v2();
         }
 
 
@@ -58,6 +58,29 @@ namespace LOSA.RecepcionMP
                 MessageBox.Show(ec.Message);
             }
         }
+        void cargarDatos_v2()
+        {
+            try
+            {
+
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+
+                string SQL = @"exec obtenerUbicacionTarima_v2 @codigo_barra";
+
+                dsRecepcionMPx.Ubicaciones.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(SQL, cn);
+
+                adat.SelectCommand.Parameters.AddWithValue("@codigo_barra", "");
+
+
+                adat.Fill(dsRecepcionMPx.Ubicaciones);
+
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+        }
 
         private void BtnAtras_Click(object sender, EventArgs e)
         {
@@ -72,10 +95,10 @@ namespace LOSA.RecepcionMP
             var row = (dsRecepcionMPx.UbicacionesRow)gridView.GetFocusedDataRow();
 
             this.idUbicacion = row.id;
-            this.altura = row.altura;
-            this.profundidad = row.profundidad;
+            //this.altura = row.altura;
+            //this.profundidad = row.profundidad;
             this.rack = row.rack;
-            this.pasillo = row.pasillo;
+            //this.pasillo = row.pasillo;
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
@@ -88,10 +111,10 @@ namespace LOSA.RecepcionMP
             var row = (dsRecepcionMPx.UbicacionesRow)gridView.GetFocusedDataRow();
 
             this.idUbicacion = row.id;
-            this.altura = row.altura;
-            this.profundidad = row.profundidad;
+            //this.altura = row.altura;
+            //this.profundidad = row.profundidad;
             this.rack = row.rack;
-            this.pasillo = row.pasillo;
+            //this.pasillo = row.pasillo;
             this.DialogResult = DialogResult.OK;
             this.Close();
 

@@ -129,7 +129,7 @@
             this.colDocNum.OptionsColumn.AllowEdit = false;
             this.colDocNum.Visible = true;
             this.colDocNum.VisibleIndex = 0;
-            this.colDocNum.Width = 66;
+            this.colDocNum.Width = 82;
             // 
             // colid
             // 
@@ -155,13 +155,13 @@
             // 
             // coldate_plafinificada
             // 
-            this.coldate_plafinificada.Caption = "Fecha de planificacion";
+            this.coldate_plafinificada.Caption = "Fecha de plan";
             this.coldate_plafinificada.FieldName = "date_plafinificada";
             this.coldate_plafinificada.Name = "coldate_plafinificada";
             this.coldate_plafinificada.OptionsColumn.AllowEdit = false;
             this.coldate_plafinificada.Visible = true;
             this.coldate_plafinificada.VisibleIndex = 3;
-            this.coldate_plafinificada.Width = 158;
+            this.coldate_plafinificada.Width = 168;
             // 
             // coldscripcion
             // 
@@ -171,7 +171,7 @@
             this.coldscripcion.OptionsColumn.AllowEdit = false;
             this.coldscripcion.Visible = true;
             this.coldscripcion.VisibleIndex = 1;
-            this.coldscripcion.Width = 121;
+            this.coldscripcion.Width = 154;
             // 
             // colver
             // 
@@ -180,7 +180,7 @@
             this.colver.Name = "colver";
             this.colver.Visible = true;
             this.colver.VisibleIndex = 5;
-            this.colver.Width = 148;
+            this.colver.Width = 85;
             // 
             // btnver
             // 
@@ -199,7 +199,7 @@
             this.colejecutar.Name = "colejecutar";
             this.colejecutar.Visible = true;
             this.colejecutar.VisibleIndex = 6;
-            this.colejecutar.Width = 106;
+            this.colejecutar.Width = 89;
             // 
             // btnejecutar
             // 
@@ -224,7 +224,7 @@
             this.colitemcode.OptionsColumn.AllowEdit = false;
             this.colitemcode.Visible = true;
             this.colitemcode.VisibleIndex = 2;
-            this.colitemcode.Width = 87;
+            this.colitemcode.Width = 122;
             // 
             // colprioridad
             // 
@@ -233,7 +233,7 @@
             this.colprioridad.Name = "colprioridad";
             this.colprioridad.Visible = true;
             this.colprioridad.VisibleIndex = 4;
-            this.colprioridad.Width = 127;
+            this.colprioridad.Width = 113;
             // 
             // btnAtras
             // 

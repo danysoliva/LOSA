@@ -53,6 +53,7 @@
             // 
             // btnAtras
             // 
+            this.btnAtras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAtras.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnAtras.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAtras.Appearance.Options.UseBackColor = true;
@@ -60,7 +61,7 @@
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(13, 33);
+            this.btnAtras.Location = new System.Drawing.Point(658, 13);
             this.btnAtras.Margin = new System.Windows.Forms.Padding(4);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(180, 50);
@@ -70,8 +71,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.labelControl1.Appearance.ForeColor = System.Drawing.SystemColors.ControlText;
             this.labelControl1.Appearance.Options.UseFont = true;
@@ -80,7 +80,7 @@
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(256, 39);
+            this.labelControl1.Location = new System.Drawing.Point(201, 39);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(364, 41);
@@ -150,7 +150,7 @@
             this.colDocNum.OptionsColumn.AllowEdit = false;
             this.colDocNum.Visible = true;
             this.colDocNum.VisibleIndex = 0;
-            this.colDocNum.Width = 138;
+            this.colDocNum.Width = 101;
             // 
             // colCardName
             // 
@@ -160,7 +160,7 @@
             this.colCardName.OptionsColumn.AllowEdit = false;
             this.colCardName.Visible = true;
             this.colCardName.VisibleIndex = 1;
-            this.colCardName.Width = 138;
+            this.colCardName.Width = 165;
             // 
             // colCardCode
             // 
@@ -170,7 +170,7 @@
             this.colCardCode.OptionsColumn.AllowEdit = false;
             this.colCardCode.Visible = true;
             this.colCardCode.VisibleIndex = 2;
-            this.colCardCode.Width = 138;
+            this.colCardCode.Width = 121;
             // 
             // coloc_numero
             // 
@@ -187,7 +187,7 @@
             this.colDocDate.OptionsColumn.AllowEdit = false;
             this.colDocDate.Visible = true;
             this.colDocDate.VisibleIndex = 3;
-            this.colDocDate.Width = 138;
+            this.colDocDate.Width = 204;
             // 
             // colComentario
             // 
@@ -197,7 +197,7 @@
             this.colComentario.OptionsColumn.AllowEdit = false;
             this.colComentario.Visible = true;
             this.colComentario.VisibleIndex = 4;
-            this.colComentario.Width = 214;
+            this.colComentario.Width = 170;
             // 
             // Colseleccionar
             // 
@@ -207,7 +207,7 @@
             this.Colseleccionar.Name = "Colseleccionar";
             this.Colseleccionar.Visible = true;
             this.Colseleccionar.VisibleIndex = 5;
-            this.Colseleccionar.Width = 67;
+            this.Colseleccionar.Width = 72;
             // 
             // btn_ver
             // 

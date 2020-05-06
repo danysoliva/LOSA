@@ -44,6 +44,20 @@ namespace LOSA.RecepcionMP
 
             return dt;
         }
+        private DataTable CreateDataUbicacion_v2(string pRack)
+        {
+            DataTable dt = new DataTable();
+
+            dt.Columns.Add("Detalle", typeof(string));
+            dt.Columns.Add("Valor", typeof(string));
+
+            
+            dt.Rows.Add("RACK", pRack);
+            //dt.Rows.Add("ALTURA", pAltura);
+            //dt.Rows.Add("PROFUNDIDAD", pProfundidad);
+
+            return dt;
+        }
 
 
         private DataTable CreateDataTarima(int idTarima, string pCodigoBarra)
@@ -78,12 +92,12 @@ namespace LOSA.RecepcionMP
             dt.Columns.Add("Detalle", typeof(string));
             dt.Columns.Add("Valor", typeof(string));
 
-            if (infoUbicaciones.RecuperarRegistro(pIdUbicacion, pCodigoBarra))
+            if (infoUbicaciones.RecuperarRegistro_v2(pIdUbicacion, pCodigoBarra))
             {
                 //id_um = tam1.IdUnidadMedida.ToString();
                 //cantidadMP = tam1.Cantidad;
                 idUbicacionNueva = infoUbicaciones.Id;
-                dt.Rows.Add("PASILLO", infoUbicaciones.Pasillo);
+                //dt.Rows.Add("PASILLO", infoUbicaciones.Pasillo);
                 dt.Rows.Add("RACK", infoUbicaciones.Rack);
                 //dt.Rows.Add("ALTURA", infoUbicaciones.Altura);
                 //dt.Rows.Add("PROFUNDIDAD", infoUbicaciones.Profundidad);
@@ -218,10 +232,10 @@ namespace LOSA.RecepcionMP
 
                 if (EncontroTarima)//Si encontro tarima, buscar ubicacion
                 {
-                    if (infoUbicacionTarima.RecuperarRegistro(frm.idTarima, beIdTarima.Text))
+                    if (infoUbicacionTarima.RecuperarRegistro_2(frm.idTarima, beIdTarima.Text))
                     {
                         idUbicacionTarimaActual = infoUbicacionTarima.Id;
-                        gcUbicacionActual.DataSource = CreateDataUbicacion(infoUbicacionTarima.Rack, infoUbicacionTarima.Profundidad, infoUbicacionTarima.Altura, infoUbicacionTarima.Pasillo);
+                        gcUbicacionActual.DataSource = CreateDataUbicacion_v2(infoUbicacionTarima.Rack);
                         gvUbicacionActual.InitNewRow += GvUbicacionActual_InitNewRow;
                         gvUbicacionActual.Columns[0].AppearanceCell.Font = new Font("Segoe UI", 11, FontStyle.Bold);
                     }

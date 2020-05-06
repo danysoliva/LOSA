@@ -188,7 +188,7 @@ namespace LOSA.RecepcionMP
                 beUbicacion.Text = frm.idUbicacion.ToString();
                
 
-                gcUbicacion.DataSource = CreateDataUbicacion(frm.rack, frm.profundidad, frm.altura, frm.pasillo);
+                gcUbicacion.DataSource = CreateDataUbicacion_v2(frm.rack);
                 gvUbicacion.InitNewRow += GvUbicacion_InitNewRow;
                 gvUbicacion.Columns[0].AppearanceCell.Font = new Font("Segoe UI", 11, FontStyle.Bold);
             }
@@ -360,6 +360,19 @@ namespace LOSA.RecepcionMP
             dt.Rows.Add("RACK", pRack);
             dt.Rows.Add("ALTURA", pAltura);
             dt.Rows.Add("PROFUNDIDAD", pProfundidad);
+
+            return dt;
+        }
+        private DataTable CreateDataUbicacion_v2(string pRack)
+        {
+            DataTable dt = new DataTable();
+
+            dt.Columns.Add("Detalle", typeof(string));
+            dt.Columns.Add("Valor", typeof(string));
+
+
+            //dt.Rows.Add("PASILLO", pPasillo);
+            //dt.Rows.Add("RACK", pRack);
 
             return dt;
         }

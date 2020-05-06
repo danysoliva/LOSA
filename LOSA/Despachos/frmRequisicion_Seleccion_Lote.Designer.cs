@@ -76,18 +76,17 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseTextOptions = true;
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(141, 13);
+            this.labelControl1.Location = new System.Drawing.Point(222, 16);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(464, 49);
+            this.labelControl1.Size = new System.Drawing.Size(482, 49);
             this.labelControl1.TabIndex = 38;
             this.labelControl1.Text = "Gestión de Lotes";
             // 
@@ -101,7 +100,7 @@
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(597, 13);
+            this.btnAtras.Location = new System.Drawing.Point(615, 13);
             this.btnAtras.Margin = new System.Windows.Forms.Padding(4);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(223, 58);
@@ -117,7 +116,7 @@
             this.labelControl6.Appearance.Options.UseTextOptions = true;
             this.labelControl6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl6.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl6.Location = new System.Drawing.Point(510, 142);
+            this.labelControl6.Location = new System.Drawing.Point(528, 142);
             this.labelControl6.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(210, 30);
@@ -180,13 +179,14 @@
             this.chkAutoSelect.AutoSize = true;
             this.chkAutoSelect.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkAutoSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkAutoSelect.Location = new System.Drawing.Point(640, 195);
+            this.chkAutoSelect.Location = new System.Drawing.Point(658, 195);
             this.chkAutoSelect.Margin = new System.Windows.Forms.Padding(4);
             this.chkAutoSelect.Name = "chkAutoSelect";
             this.chkAutoSelect.Size = new System.Drawing.Size(180, 29);
             this.chkAutoSelect.TabIndex = 58;
             this.chkAutoSelect.Text = "Auto Selección";
             this.chkAutoSelect.UseVisualStyleBackColor = true;
+            this.chkAutoSelect.CheckedChanged += new System.EventHandler(this.chkAutoSelect_CheckedChanged);
             // 
             // lblUnidad
             // 
@@ -196,7 +196,7 @@
             this.lblUnidad.Appearance.Options.UseTextOptions = true;
             this.lblUnidad.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.lblUnidad.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblUnidad.Location = new System.Drawing.Point(747, 142);
+            this.lblUnidad.Location = new System.Drawing.Point(765, 142);
             this.lblUnidad.Margin = new System.Windows.Forms.Padding(4);
             this.lblUnidad.Name = "lblUnidad";
             this.lblUnidad.Size = new System.Drawing.Size(78, 30);
@@ -233,7 +233,7 @@
             this.txtMP_Name.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMP_Name.EditValue = "";
             this.txtMP_Name.Enabled = false;
-            this.txtMP_Name.Location = new System.Drawing.Point(438, 88);
+            this.txtMP_Name.Location = new System.Drawing.Point(456, 88);
             this.txtMP_Name.Margin = new System.Windows.Forms.Padding(4);
             this.txtMP_Name.Name = "txtMP_Name";
             this.txtMP_Name.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -276,7 +276,7 @@
             this.grd_lotes.Location = new System.Drawing.Point(7, 278);
             this.grd_lotes.MainView = this.grdv_lotes;
             this.grd_lotes.Name = "grd_lotes";
-            this.grd_lotes.Size = new System.Drawing.Size(825, 363);
+            this.grd_lotes.Size = new System.Drawing.Size(843, 410);
             this.grd_lotes.TabIndex = 64;
             this.grd_lotes.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_lotes});
@@ -461,7 +461,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(833, 642);
+            this.ClientSize = new System.Drawing.Size(851, 689);
             this.Controls.Add(this.cmdGuardar);
             this.Controls.Add(this.grd_lotes);
             this.Controls.Add(this.labelControl6);
@@ -481,6 +481,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmRequisicion_Seleccion_Lote";
             this.Text = "frmRequisicion_Seleccion_Lote";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.txtSolicitada.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAsignada.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadPendiente.Properties)).EndInit();
