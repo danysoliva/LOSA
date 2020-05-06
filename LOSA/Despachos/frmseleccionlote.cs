@@ -129,6 +129,13 @@ namespace LOSA.Despachos
                 foreach (ds_despachos.detalle_lote_ptRow row in ds_despachos.detalle_lote_pt.Rows)
                 {
                     row.seleccionado = false;
+                    row.cants = 0;
+
+                    if (row.seleccionado)
+                        cantidad_conseguida += row.cants;
+
+                    txtCantidadPendiente.Text = string.Format("{0:###,##0.00}", CantidadPendiente - cantidad_conseguida);
+                    txtAsignada.Text = string.Format("{0:###,##0.00}", cantidad_conseguida);
                 }
             }
         }
@@ -172,6 +179,10 @@ namespace LOSA.Despachos
                 DataOperations dp = new DataOperations();
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
+                SqlCommand cmd1 = new SqlCommand("sp_set_delete_seleccion_lote_pt_plan", con);
+                cmd1.CommandType = CommandType.StoredProcedure;
+                cmd1.Parameters.AddWithValue("@id_detalle_req", Pid_detalle);
+                cmd1.ExecuteNonQuery();
 
                 foreach (ds_despachos.detalle_lote_ptRow row in ds_despachos.detalle_lote_pt.Rows)
                 {
@@ -195,6 +206,11 @@ namespace LOSA.Despachos
             {
                 CajaDialogo.Error(ec.Message);
             }
+
+        }
+
+        private void txtSolicitada_EditValueChanged(object sender, EventArgs e)
+        {
 
         }
     }

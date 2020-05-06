@@ -76,7 +76,7 @@ namespace LOSA.RecepcionMP
             if (IdBodega > 0)
             {
                 this.navigationFrame1.SelectNextPage();
-                LoadPasillos(IdBodega);
+                LoadRacks();
             }
         }
 
@@ -90,7 +90,7 @@ namespace LOSA.RecepcionMP
             if (IdBodega > 0)
             {
                 this.navigationFrame1.SelectNextPage();
-                LoadPasillos(IdBodega);
+                LoadRacks();
             }
         }
 
@@ -120,19 +120,19 @@ namespace LOSA.RecepcionMP
         private void btnSeleccionar2_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             //seleccion de pasillo
-            var gridView = (GridView)gridControl2.FocusedView;
-            var row = (dsRecepcionMPx.pasillosRow)gridView.GetFocusedDataRow();
+            //var gridView = (GridView)gridControl2.FocusedView;
+            //var row = (dsRecepcionMPx.pasillosRow)gridView.GetFocusedDataRow();
 
-            Pasillo_ = row.id;
+            //Pasillo_ = row.id;
 
-            if (!string.IsNullOrEmpty(Pasillo_))
-            {
-                this.navigationFrame1.SelectNextPage();
-                LoadRacks();
-            }
+            //if (!string.IsNullOrEmpty(Pasillo_))
+            //{
+            //    this.navigationFrame1.SelectNextPage();
+            //    LoadRacks();
+            //}
         }
 
-        private void LoadRacks()
+        private void LoadRacks()// MOdificado
         {
             try
             {
@@ -140,9 +140,9 @@ namespace LOSA.RecepcionMP
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_racks_enable_from_pasillo", con);
+                SqlCommand cmd = new SqlCommand("[sp_get_racks_enable_from_pasillo_v2]", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idpasillo", Pasillo_);
+               // cmd.Parameters.AddWithValue("@idpasillo", Pasillo_);
                 cmd.Parameters.AddWithValue("@idbodega", IdBodega);
                 dsRecepcionMPx.racks.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
@@ -167,7 +167,7 @@ namespace LOSA.RecepcionMP
             if (!string.IsNullOrEmpty(Rack_))
             {
                 //this.navigationFrame1.SelectNextPage();
-                idUbicacion = GetUbicacion();
+                idUbicacion = GetUbicacion_v2();
 
                 if (idUbicacion > 0)
                 {
@@ -175,7 +175,6 @@ namespace LOSA.RecepcionMP
                     
                     this.idUbicacion = idUbicacion;
                     this.rack = Rack_;
-                    this.pasillo = Pasillo_;
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
@@ -206,6 +205,29 @@ namespace LOSA.RecepcionMP
             }
             return i;
         }
+        private int GetUbicacion_v2()
+        {
+            int i = 0;
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_ubicacion_id_v2", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idbodega", IdBodega);
+                cmd.Parameters.AddWithValue("@idrack", Rack_);
+                i = Convert.ToInt32(cmd.ExecuteScalar());
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+            return i;
+        }
 
         private void gridView3_DoubleClick(object sender, EventArgs e)
         {
@@ -219,7 +241,7 @@ namespace LOSA.RecepcionMP
             if (!string.IsNullOrEmpty(Rack_))
             {
                 //this.navigationFrame1.SelectNextPage();
-                idUbicacion = GetUbicacion();
+                idUbicacion = GetUbicacion_v2();
 
                 if (idUbicacion > 0)
                 {
@@ -227,7 +249,7 @@ namespace LOSA.RecepcionMP
 
                     this.idUbicacion = idUbicacion;
                     this.rack = Rack_;
-                    this.pasillo = Pasillo_;
+                    //this.pasillo = Pasillo_;
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }

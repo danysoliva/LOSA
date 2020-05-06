@@ -60,6 +60,66 @@ namespace LOSA.Clases
             }
             return Recuperado;
         }
+        public bool RecuperarRegistroFromID_RM_PT_ONLY(int pIdRM)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_clase_pt_from_id_rm", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idrm", pIdRM);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    IdMP_ACS = dr.GetInt32(0);
+                    Codigo = dr.GetString(1);
+                    Name = dr.GetString(2);
+                    CodeMP_SAP = dr.GetString(3);
+                }
+                dr.Close();
+                Recuperado = true;
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                Recuperado = false;
+                CajaDialogo.Error(ec.Message);
+            }
+            return Recuperado;
+        }
+        public bool RecuperarRegistroFromID_RM_Despachos(int pIdRM)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_clase_mp_from_id_rm", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idrm", pIdRM);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    IdMP_ACS = dr.GetInt32(0);
+                    Codigo = dr.GetString(1);
+                    Name = dr.GetString(2);
+                    CodeMP_SAP = dr.GetString(3);
+                }
+                dr.Close();
+                Recuperado = true;
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                Recuperado = false;
+                CajaDialogo.Error(ec.Message);
+            }
+            return Recuperado;
+        }
 
 
         public bool RecuperarRegistroFromCode(string pCodeSAP)

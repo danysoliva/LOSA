@@ -69,10 +69,10 @@
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(13, 13);
+            this.labelControl1.Location = new System.Drawing.Point(13, 22);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(578, 49);
+            this.labelControl1.Size = new System.Drawing.Size(596, 49);
             this.labelControl1.TabIndex = 36;
             this.labelControl1.Text = "Detalle PT Solicitada";
             this.labelControl1.Click += new System.EventHandler(this.labelControl1_Click);
@@ -87,7 +87,7 @@
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(624, 13);
+            this.btnAtras.Location = new System.Drawing.Point(633, 13);
             this.btnAtras.Margin = new System.Windows.Forms.Padding(4);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(205, 58);
@@ -108,7 +108,7 @@
             this.grd_detalle.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnedit,
             this.btndespacho});
-            this.grd_detalle.Size = new System.Drawing.Size(834, 553);
+            this.grd_detalle.Size = new System.Drawing.Size(852, 600);
             this.grd_detalle.TabIndex = 38;
             this.grd_detalle.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_detalle});
@@ -124,14 +124,14 @@
             this.grdv_detalle.Appearance.FocusedCell.Options.UseBackColor = true;
             this.grdv_detalle.Appearance.FocusedRow.BackColor = System.Drawing.Color.LightGreen;
             this.grdv_detalle.Appearance.FocusedRow.BackColor2 = System.Drawing.Color.LightGreen;
-            this.grdv_detalle.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.grdv_detalle.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdv_detalle.Appearance.FocusedRow.Options.UseBackColor = true;
             this.grdv_detalle.Appearance.FocusedRow.Options.UseFont = true;
-            this.grdv_detalle.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.grdv_detalle.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdv_detalle.Appearance.HeaderPanel.Options.UseFont = true;
             this.grdv_detalle.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.LightGreen;
             this.grdv_detalle.Appearance.HideSelectionRow.Options.UseBackColor = true;
-            this.grdv_detalle.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.grdv_detalle.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdv_detalle.Appearance.Row.Options.UseFont = true;
             this.grdv_detalle.Appearance.SelectedRow.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.grdv_detalle.Appearance.SelectedRow.Options.UseFont = true;
@@ -178,16 +178,18 @@
             this.colmp.Name = "colmp";
             this.colmp.OptionsColumn.AllowEdit = false;
             this.colmp.Visible = true;
-            this.colmp.VisibleIndex = 0;
+            this.colmp.VisibleIndex = 1;
+            this.colmp.Width = 90;
             // 
             // colsolicitada
             // 
-            this.colsolicitada.Caption = "Solicitada";
+            this.colsolicitada.Caption = "Ud. Solicitado";
             this.colsolicitada.FieldName = "solicitada";
             this.colsolicitada.Name = "colsolicitada";
             this.colsolicitada.OptionsColumn.AllowEdit = false;
             this.colsolicitada.Visible = true;
-            this.colsolicitada.VisibleIndex = 1;
+            this.colsolicitada.VisibleIndex = 2;
+            this.colsolicitada.Width = 90;
             // 
             // colprogramada
             // 
@@ -196,21 +198,23 @@
             // 
             // colentregada
             // 
-            this.colentregada.Caption = "Entregada";
+            this.colentregada.Caption = "Ud. Entregado";
             this.colentregada.FieldName = "entregada";
             this.colentregada.Name = "colentregada";
             this.colentregada.OptionsColumn.AllowEdit = false;
             this.colentregada.Visible = true;
-            this.colentregada.VisibleIndex = 3;
+            this.colentregada.VisibleIndex = 4;
+            this.colentregada.Width = 103;
             // 
             // colpendiente
             // 
-            this.colpendiente.Caption = "Pendiente";
+            this.colpendiente.Caption = "Ud. Pendiente";
             this.colpendiente.FieldName = "pendiente";
             this.colpendiente.Name = "colpendiente";
             this.colpendiente.OptionsColumn.AllowEdit = false;
             this.colpendiente.Visible = true;
-            this.colpendiente.VisibleIndex = 4;
+            this.colpendiente.VisibleIndex = 5;
+            this.colpendiente.Width = 84;
             // 
             // colenable
             // 
@@ -229,7 +233,8 @@
             this.colunidad.Name = "colunidad";
             this.colunidad.OptionsColumn.AllowEdit = false;
             this.colunidad.Visible = true;
-            this.colunidad.VisibleIndex = 5;
+            this.colunidad.VisibleIndex = 6;
+            this.colunidad.Width = 84;
             // 
             // colcode_sap
             // 
@@ -238,13 +243,17 @@
             this.colcode_sap.Name = "colcode_sap";
             this.colcode_sap.OptionsColumn.AllowEdit = false;
             this.colcode_sap.Visible = true;
-            this.colcode_sap.VisibleIndex = 6;
+            this.colcode_sap.VisibleIndex = 0;
+            this.colcode_sap.Width = 95;
             // 
             // gridColumn1
             // 
             this.gridColumn1.Caption = "Editar";
             this.gridColumn1.ColumnEdit = this.btnedit;
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 7;
+            this.gridColumn1.Width = 80;
             // 
             // btnedit
             // 
@@ -258,11 +267,12 @@
             // 
             // colasignado
             // 
-            this.colasignado.Caption = "Cant. Asignada";
+            this.colasignado.Caption = "Ud. Asignado";
             this.colasignado.FieldName = "asignado";
             this.colasignado.Name = "colasignado";
             this.colasignado.Visible = true;
-            this.colasignado.VisibleIndex = 2;
+            this.colasignado.VisibleIndex = 3;
+            this.colasignado.Width = 99;
             // 
             // colDespacho
             // 
@@ -270,7 +280,8 @@
             this.colDespacho.ColumnEdit = this.btndespacho;
             this.colDespacho.Name = "colDespacho";
             this.colDespacho.Visible = true;
-            this.colDespacho.VisibleIndex = 7;
+            this.colDespacho.VisibleIndex = 8;
+            this.colDespacho.Width = 107;
             // 
             // btndespacho
             // 
@@ -286,13 +297,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(833, 642);
+            this.ClientSize = new System.Drawing.Size(851, 689);
             this.Controls.Add(this.grd_detalle);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.labelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmRequesicionesDetalle_PT";
             this.Text = "frmRequesicionesDetalle_PT";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.grd_detalle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds_despachos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_detalle)).EndInit();

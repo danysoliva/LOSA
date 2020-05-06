@@ -55,15 +55,15 @@ namespace LOSA.Despachos
 
         private void btnedit_Click(object sender, EventArgs e)
         {
-            //Boton editar
-            //var gridView = (GridView)grd_detalle.FocusedView;
-            //var row = (ds_despachos.requisiciones_dRow)gridView.GetFocusedDataRow();
-            //frmSeleccionLote frm = new frmSeleccionLote(UsuarioLogeado, row.id, row.id_materia_prima, row.solicitada, row.id_unidad_medida, row.unidad);
-            //frm.WindowState = FormWindowState.Maximized;
-            //if (frm.ShowDialog() == DialogResult.OK)
-            //{
-            //    LoadDatos();
-            //}
+         //   Boton editar
+            var gridView = (GridView)grd_detalle.FocusedView;
+            var row = (ds_despachos.requisiciones_dRow)gridView.GetFocusedDataRow();
+            frmRequisicion_Seleccion_Lote frm = new frmRequisicion_Seleccion_Lote(UsuarioLogeado, row.id, row.id_materia_prima, row.solicitada, row.id_unidad_medida, row.unidad);
+            frm.WindowState = FormWindowState.Maximized;
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                LoadDatos();
+            }
         }
 
         private void grdv_detalle_RowStyle(object sender, RowStyleEventArgs e)

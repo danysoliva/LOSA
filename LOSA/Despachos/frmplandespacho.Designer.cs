@@ -88,10 +88,10 @@
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseTextOptions = true;
-            this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(253, 11);
+            this.labelControl1.Location = new System.Drawing.Point(214, 11);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(464, 49);
@@ -208,7 +208,7 @@
             this.colItemCode.OptionsColumn.AllowEdit = false;
             this.colItemCode.Visible = true;
             this.colItemCode.VisibleIndex = 0;
-            this.colItemCode.Width = 110;
+            this.colItemCode.Width = 121;
             // 
             // colDsCription
             // 
@@ -218,17 +218,17 @@
             this.colDsCription.OptionsColumn.AllowEdit = false;
             this.colDsCription.Visible = true;
             this.colDsCription.VisibleIndex = 1;
-            this.colDsCription.Width = 223;
+            this.colDsCription.Width = 194;
             // 
             // colcant_selected
             // 
-            this.colcant_selected.Caption = "Unidades Seleccionada";
+            this.colcant_selected.Caption = "Ud. Seleccionadas";
             this.colcant_selected.FieldName = "cant_selected";
             this.colcant_selected.Name = "colcant_selected";
             this.colcant_selected.OptionsColumn.AllowEdit = false;
             this.colcant_selected.Visible = true;
-            this.colcant_selected.VisibleIndex = 2;
-            this.colcant_selected.Width = 141;
+            this.colcant_selected.VisibleIndex = 3;
+            this.colcant_selected.Width = 175;
             // 
             // colQuantityTm
             // 
@@ -260,13 +260,13 @@
             // 
             // colU_Sacos
             // 
-            this.colU_Sacos.Caption = "Unidades";
+            this.colU_Sacos.Caption = "Ud. Solicitadas";
             this.colU_Sacos.FieldName = "U_Sacos";
             this.colU_Sacos.Name = "colU_Sacos";
             this.colU_Sacos.OptionsColumn.AllowEdit = false;
             this.colU_Sacos.Visible = true;
-            this.colU_Sacos.VisibleIndex = 3;
-            this.colU_Sacos.Width = 110;
+            this.colU_Sacos.VisibleIndex = 2;
+            this.colU_Sacos.Width = 149;
             // 
             // colU_Peso
             // 
@@ -276,7 +276,7 @@
             this.colU_Peso.OptionsColumn.AllowEdit = false;
             this.colU_Peso.Visible = true;
             this.colU_Peso.VisibleIndex = 4;
-            this.colU_Peso.Width = 100;
+            this.colU_Peso.Width = 123;
             // 
             // collotes
             // 
@@ -285,7 +285,7 @@
             this.collotes.Name = "collotes";
             this.collotes.Visible = true;
             this.collotes.VisibleIndex = 5;
-            this.collotes.Width = 63;
+            this.collotes.Width = 65;
             // 
             // btnlotess
             // 
@@ -355,7 +355,6 @@
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton1.Appearance.Options.UseBackColor = true;
@@ -363,7 +362,7 @@
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
             this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(703, 9);
+            this.simpleButton1.Location = new System.Drawing.Point(13, 5);
             this.simpleButton1.Margin = new System.Windows.Forms.Padding(4);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(135, 55);
@@ -390,6 +389,7 @@
             // 
             // btnatras
             // 
+            this.btnatras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnatras.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnatras.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnatras.Appearance.Options.UseBackColor = true;
@@ -397,7 +397,7 @@
             this.btnatras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnatras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnatras.ImageOptions.Image")));
             this.btnatras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnatras.Location = new System.Drawing.Point(13, 9);
+            this.btnatras.Location = new System.Drawing.Point(711, 5);
             this.btnatras.Margin = new System.Windows.Forms.Padding(4);
             this.btnatras.Name = "btnatras";
             this.btnatras.Size = new System.Drawing.Size(127, 54);

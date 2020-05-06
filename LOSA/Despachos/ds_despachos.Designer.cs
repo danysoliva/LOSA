@@ -3440,7 +3440,7 @@ namespace LOSA.Despachos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public requisiciones_dRow Addrequisiciones_dRow(int id, int id_materia_prima, string mp, decimal solicitada, decimal programada, decimal entregada, decimal pendiente, bool enable, int id_unidad_medida, string unidad, string code_sap, decimal asignado) {
+            public requisiciones_dRow Addrequisiciones_dRow(int id, int id_materia_prima, string mp, decimal solicitada, decimal programada, decimal entregada, decimal pendiente, bool enable, decimal id_unidad_medida, string unidad, string code_sap, decimal asignado) {
                 requisiciones_dRow rowrequisiciones_dRow = ((requisiciones_dRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -3510,7 +3510,7 @@ namespace LOSA.Despachos {
                 base.Columns.Add(this.columnpendiente);
                 this.columnenable = new global::System.Data.DataColumn("enable", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnenable);
-                this.columnid_unidad_medida = new global::System.Data.DataColumn("id_unidad_medida", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnid_unidad_medida = new global::System.Data.DataColumn("id_unidad_medida", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_unidad_medida);
                 this.columnunidad = new global::System.Data.DataColumn("unidad", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnunidad);
@@ -7184,10 +7184,10 @@ namespace LOSA.Despachos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int id_unidad_medida {
+            public decimal id_unidad_medida {
                 get {
                     try {
-                        return ((int)(this[this.tablerequisiciones_d.id_unidad_medidaColumn]));
+                        return ((decimal)(this[this.tablerequisiciones_d.id_unidad_medidaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'id_unidad_medida\' de la tabla \'requisiciones_d\' es DBNull" +

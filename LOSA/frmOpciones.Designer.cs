@@ -37,6 +37,7 @@
             this.cmdPT = new DevExpress.XtraEditors.SimpleButton();
             this.cmdMP = new DevExpress.XtraEditors.SimpleButton();
             this.TabLogistica = new DevExpress.XtraTab.XtraTabPage();
+            this.btnReq_PT = new DevExpress.XtraEditors.SimpleButton();
             this.btnplanesdespachos = new DevExpress.XtraEditors.SimpleButton();
             this.btndespachos = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
@@ -62,7 +63,6 @@
             this.tabProduccion = new DevExpress.XtraTab.XtraTabPage();
             this.cmdTarimasPT = new DevExpress.XtraEditors.SimpleButton();
             this.btnAlimentacionManual = new DevExpress.XtraEditors.SimpleButton();
-            this.btnReq_PT = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -223,6 +223,20 @@
             this.TabLogistica.PageVisible = false;
             this.TabLogistica.Size = new System.Drawing.Size(840, 527);
             this.TabLogistica.Text = "Logistica";
+            // 
+            // btnReq_PT
+            // 
+            this.btnReq_PT.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReq_PT.Appearance.Options.UseFont = true;
+            this.btnReq_PT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnReq_PT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReq_PT.ImageOptions.Image")));
+            this.btnReq_PT.Location = new System.Drawing.Point(559, 314);
+            this.btnReq_PT.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReq_PT.Name = "btnReq_PT";
+            this.btnReq_PT.Size = new System.Drawing.Size(265, 87);
+            this.btnReq_PT.TabIndex = 23;
+            this.btnReq_PT.Text = "Requisiciones PT";
+            this.btnReq_PT.Click += new System.EventHandler(this.btnReq_PT_Click);
             // 
             // btnplanesdespachos
             // 
@@ -582,20 +596,6 @@
             this.btnAlimentacionManual.TabIndex = 9;
             this.btnAlimentacionManual.Text = "Alimentación Manual";
             this.btnAlimentacionManual.Click += new System.EventHandler(this.btnAlimentacionManual_Click);
-            // 
-            // btnReq_PT
-            // 
-            this.btnReq_PT.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReq_PT.Appearance.Options.UseFont = true;
-            this.btnReq_PT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnReq_PT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.btnReq_PT.Location = new System.Drawing.Point(559, 314);
-            this.btnReq_PT.Margin = new System.Windows.Forms.Padding(4);
-            this.btnReq_PT.Name = "btnReq_PT";
-            this.btnReq_PT.Size = new System.Drawing.Size(265, 87);
-            this.btnReq_PT.TabIndex = 23;
-            this.btnReq_PT.Text = "Requisiciones PT";
-            this.btnReq_PT.Click += new System.EventHandler(this.btnReq_PT_Click);
             // 
             // frmOpciones
             // 
