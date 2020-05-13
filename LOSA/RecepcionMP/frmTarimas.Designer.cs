@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTarimas));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.gcTarima = new DevExpress.XtraGrid.GridControl();
-            this.detalleTarimaBindingSource = new System.Windows.Forms.BindingSource();
+            this.detalleTarimaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsRecepcionMP = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.gvTarimas = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -64,9 +65,10 @@
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(438, 12);
+            this.btnAtras.Location = new System.Drawing.Point(584, 15);
+            this.btnAtras.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(156, 52);
+            this.btnAtras.Size = new System.Drawing.Size(208, 64);
             this.btnAtras.TabIndex = 5;
             this.btnAtras.Text = "Atrás";
             this.btnAtras.Click += new System.EventHandler(this.BtnAtras_Click);
@@ -77,12 +79,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcTarima.DataSource = this.detalleTarimaBindingSource;
-            this.gcTarima.Location = new System.Drawing.Point(0, 70);
+            this.gcTarima.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcTarima.Location = new System.Drawing.Point(0, 86);
             this.gcTarima.MainView = this.gvTarimas;
+            this.gcTarima.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gcTarima.Name = "gcTarima";
             this.gcTarima.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnSeleccionar});
-            this.gcTarima.Size = new System.Drawing.Size(606, 373);
+            this.gcTarima.Size = new System.Drawing.Size(808, 459);
             this.gcTarima.TabIndex = 6;
             this.gcTarima.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTarimas});
@@ -181,7 +185,7 @@
             // 
             // collote_materia_prima
             // 
-            this.collote_materia_prima.Caption = "Lote MP";
+            this.collote_materia_prima.Caption = "Lote";
             this.collote_materia_prima.FieldName = "lote_materia_prima";
             this.collote_materia_prima.Name = "collote_materia_prima";
             this.collote_materia_prima.OptionsColumn.AllowEdit = false;
@@ -250,12 +254,13 @@
             // 
             // frmTarimas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(606, 482);
+            this.ClientSize = new System.Drawing.Size(808, 593);
             this.Controls.Add(this.gcTarima);
             this.Controls.Add(this.btnAtras);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmTarimas";
             this.Text = "frmTarimas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
