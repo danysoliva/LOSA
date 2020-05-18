@@ -34,6 +34,35 @@ namespace LOSA.RecepcionMP
             cargarDatos_v2();
         }
 
+        public frmUbicacionTarima(int tipo_tarima)
+        {
+            InitializeComponent();
+            cargarDatos_PT();
+        }
+        void cargarDatos_PT()
+        {
+            try
+            {
+
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+
+                string SQL = @"exec obtenerUbicacionTarima_v2 @codigo_barra";
+
+                dsRecepcionMPx.Ubicaciones.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(SQL, cn);
+
+                adat.SelectCommand.Parameters.AddWithValue("@codigo_barra", "");
+
+
+                adat.Fill(dsRecepcionMPx.Ubicaciones);
+
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+        }
+
 
         void cargarDatos()
         {

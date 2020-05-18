@@ -57,7 +57,7 @@
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
             this.cmdHome.Location = new System.Drawing.Point(581, 5);
-            this.cmdHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmdHome.Margin = new System.Windows.Forms.Padding(4);
             this.cmdHome.Name = "cmdHome";
             this.cmdHome.Size = new System.Drawing.Size(265, 87);
             this.cmdHome.TabIndex = 7;
@@ -72,7 +72,7 @@
             this.tabOpciones.AppearancePage.Header.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabOpciones.AppearancePage.Header.Options.UseFont = true;
             this.tabOpciones.Location = new System.Drawing.Point(5, 111);
-            this.tabOpciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabOpciones.Margin = new System.Windows.Forms.Padding(4);
             this.tabOpciones.Name = "tabOpciones";
             this.tabOpciones.SelectedTabPage = this.TabMateriaPrima;
             this.tabOpciones.Size = new System.Drawing.Size(847, 577);
@@ -89,7 +89,7 @@
             this.TabMateriaPrima.Controls.Add(this.simpleButton1);
             this.TabMateriaPrima.Controls.Add(this.cmdEntradaMP);
             this.TabMateriaPrima.Image = ((System.Drawing.Image)(resources.GetObject("TabMateriaPrima.Image")));
-            this.TabMateriaPrima.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TabMateriaPrima.Margin = new System.Windows.Forms.Padding(4);
             this.TabMateriaPrima.Name = "TabMateriaPrima";
             this.TabMateriaPrima.PageVisible = false;
             this.TabMateriaPrima.Size = new System.Drawing.Size(840, 527);
@@ -104,7 +104,7 @@
             this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton2.ImageOptions.Image = global::LOSA.Properties.Resources.devoluciones;
             this.simpleButton2.Location = new System.Drawing.Point(9, 358);
-            this.simpleButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.simpleButton2.Margin = new System.Windows.Forms.Padding(4);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(265, 87);
             this.simpleButton2.TabIndex = 10;
@@ -120,7 +120,7 @@
             this.cmdRequisiciones.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdRequisiciones.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdRequisiciones.ImageOptions.Image")));
             this.cmdRequisiciones.Location = new System.Drawing.Point(9, 263);
-            this.cmdRequisiciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmdRequisiciones.Margin = new System.Windows.Forms.Padding(4);
             this.cmdRequisiciones.Name = "cmdRequisiciones";
             this.cmdRequisiciones.Size = new System.Drawing.Size(265, 87);
             this.cmdRequisiciones.TabIndex = 9;
@@ -136,7 +136,7 @@
             this.btnCambiarUbicacion.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnCambiarUbicacion.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCambiarUbicacion.ImageOptions.Image")));
             this.btnCambiarUbicacion.Location = new System.Drawing.Point(9, 156);
-            this.btnCambiarUbicacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCambiarUbicacion.Margin = new System.Windows.Forms.Padding(4);
             this.btnCambiarUbicacion.Name = "btnCambiarUbicacion";
             this.btnCambiarUbicacion.Size = new System.Drawing.Size(265, 87);
             this.btnCambiarUbicacion.TabIndex = 8;
@@ -150,7 +150,7 @@
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton1.ImageOptions.Image = global::LOSA.Properties.Resources.wrench;
             this.simpleButton1.Location = new System.Drawing.Point(563, 425);
-            this.simpleButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.simpleButton1.Margin = new System.Windows.Forms.Padding(4);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(265, 87);
             this.simpleButton1.TabIndex = 4;
@@ -165,7 +165,7 @@
             this.cmdEntradaMP.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdEntradaMP.ImageOptions.Image = global::LOSA.Properties.Resources.check_in;
             this.cmdEntradaMP.Location = new System.Drawing.Point(9, 49);
-            this.cmdEntradaMP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmdEntradaMP.Margin = new System.Windows.Forms.Padding(4);
             this.cmdEntradaMP.Name = "cmdEntradaMP";
             this.cmdEntradaMP.Size = new System.Drawing.Size(265, 87);
             this.cmdEntradaMP.TabIndex = 7;
@@ -178,7 +178,7 @@
             this.TabProductoTerminado.Controls.Add(this.cmdCambiarUbicacionPT);
             this.TabProductoTerminado.Controls.Add(this.cmdIngresoPT);
             this.TabProductoTerminado.Image = global::LOSA.Properties.Resources.Container_icon32px;
-            this.TabProductoTerminado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TabProductoTerminado.Margin = new System.Windows.Forms.Padding(4);
             this.TabProductoTerminado.Name = "TabProductoTerminado";
             this.TabProductoTerminado.PageVisible = false;
             this.TabProductoTerminado.Size = new System.Drawing.Size(840, 527);
@@ -193,7 +193,7 @@
             this.cmdOrdenesCargaPT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdOrdenesCargaPT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdOrdenesCargaPT.ImageOptions.Image")));
             this.cmdOrdenesCargaPT.Location = new System.Drawing.Point(9, 234);
-            this.cmdOrdenesCargaPT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmdOrdenesCargaPT.Margin = new System.Windows.Forms.Padding(4);
             this.cmdOrdenesCargaPT.Name = "cmdOrdenesCargaPT";
             this.cmdOrdenesCargaPT.Size = new System.Drawing.Size(265, 87);
             this.cmdOrdenesCargaPT.TabIndex = 12;
@@ -209,7 +209,7 @@
             this.cmdCambiarUbicacionPT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdCambiarUbicacionPT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdCambiarUbicacionPT.ImageOptions.Image")));
             this.cmdCambiarUbicacionPT.Location = new System.Drawing.Point(9, 127);
-            this.cmdCambiarUbicacionPT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmdCambiarUbicacionPT.Margin = new System.Windows.Forms.Padding(4);
             this.cmdCambiarUbicacionPT.Name = "cmdCambiarUbicacionPT";
             this.cmdCambiarUbicacionPT.Size = new System.Drawing.Size(265, 87);
             this.cmdCambiarUbicacionPT.TabIndex = 11;
@@ -223,7 +223,7 @@
             this.cmdIngresoPT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdIngresoPT.ImageOptions.Image = global::LOSA.Properties.Resources.pallet32px1;
             this.cmdIngresoPT.Location = new System.Drawing.Point(9, 20);
-            this.cmdIngresoPT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmdIngresoPT.Margin = new System.Windows.Forms.Padding(4);
             this.cmdIngresoPT.Name = "cmdIngresoPT";
             this.cmdIngresoPT.Size = new System.Drawing.Size(265, 87);
             this.cmdIngresoPT.TabIndex = 10;
@@ -239,7 +239,7 @@
             this.Controls.Add(this.tabOpciones);
             this.Controls.Add(this.cmdHome);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmOptionMontaCarga";
             this.Text = "frmOptionMontaCarga";
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).EndInit();

@@ -22,7 +22,8 @@ namespace LOSA.RecepcionMP
         public enum VentanaTarima
         {
             asignarUbicacion = 1,
-            cambiarUbicacion = 2
+            cambiarUbicacion = 2,
+            CambiarUbicacionPT = 5
         };
         public frmCambiarUbicacionTarimaPT()
         {
@@ -37,7 +38,7 @@ namespace LOSA.RecepcionMP
             dt.Columns.Add("Valor", typeof(string));
 
 
-            dt.Rows.Add("PASILLO", pPasillo);
+            //dt.Rows.Add("PASILLO", pPasillo);
             dt.Rows.Add("RACK", pRack);
             //dt.Rows.Add("ALTURA", pAltura);
             //dt.Rows.Add("PROFUNDIDAD", pProfundidad);
@@ -89,12 +90,12 @@ namespace LOSA.RecepcionMP
             dt.Columns.Add("Detalle", typeof(string));
             dt.Columns.Add("Valor", typeof(string));
 
-            if (infoUbicaciones.RecuperarRegistro(pIdUbicacion, pCodigoBarra))
+            if (infoUbicaciones.RecuperarRegistro_v2(pIdUbicacion, pCodigoBarra))
             {
                 //id_um = tam1.IdUnidadMedida.ToString();
                 //cantidadMP = tam1.Cantidad;
                 idUbicacionNueva = infoUbicaciones.Id;
-                dt.Rows.Add("PASILLO", infoUbicaciones.Pasillo);
+                //dt.Rows.Add("PASILLO", infoUbicaciones.Pasillo);
                 dt.Rows.Add("RACK", infoUbicaciones.Rack);
                 //dt.Rows.Add("ALTURA", infoUbicaciones.Altura);
                 //dt.Rows.Add("PROFUNDIDAD", infoUbicaciones.Profundidad);
@@ -199,7 +200,7 @@ namespace LOSA.RecepcionMP
 
         private void BtnUbicacion_Click(object sender, EventArgs e)
         {
-            frmUbicacionTarima frm = new frmUbicacionTarima();
+            frmUbicacionTarima frm = new frmUbicacionTarima((int)VentanaTarima.CambiarUbicacionPT);
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 idUbicacionNueva = frm.idUbicacion;
@@ -216,7 +217,7 @@ namespace LOSA.RecepcionMP
 
         private void CmdSelectTarima_Click(object sender, EventArgs e)
         {
-            frmTarimas frm = new frmTarimas( (int)VentanaTarima.cambiarUbicacion);
+            frmTarimas frm = new frmTarimas( (int)VentanaTarima.CambiarUbicacionPT);
             DataOperations dp = new DataOperations();
             Ubicacion_Tarima infoUbicacionTarima = new Ubicacion_Tarima();
             
@@ -229,7 +230,7 @@ namespace LOSA.RecepcionMP
 
                 if (EncontroTarima)//Si encontro tarima, buscar ubicacion
                 {
-                    if (infoUbicacionTarima.RecuperarRegistro(frm.idTarima, beIdTarima.Text))
+                    if (infoUbicacionTarima.RecuperarRegistro_2(frm.idTarima, beIdTarima.Text))
                     {
                         idUbicacionTarimaActual = infoUbicacionTarima.Id;
                         gcUbicacionActual.DataSource = CreateDataUbicacion(infoUbicacionTarima.Rack, infoUbicacionTarima.Profundidad, infoUbicacionTarima.Altura, infoUbicacionTarima.Pasillo);

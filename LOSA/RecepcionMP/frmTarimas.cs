@@ -26,6 +26,7 @@ namespace LOSA.RecepcionMP
 
         public string lote { get; set; }
         public string presentacion { get; set; }
+        public string NombrePro { get; set; }
         public frmTarimas(int pOpcionVentana)
         {
             InitializeComponent();           
@@ -50,8 +51,11 @@ namespace LOSA.RecepcionMP
                      if (OpcionVentana == 3)//Se abre de ventana desde devoluciones
                     SQL = @"exec sp_getTarimas_without_filters @codigo_barra";
                 else
-                    if (OpcionVentana == 4)// Se abre de ventana pero solo pt;
-                    SQL = @"exec sp_obtener_tarimas_sin_ubicacion_pt_only @codigo_barra";
+                    if (OpcionVentana == 4)// Se abre de ventana pero solo pt
+                    SQL = @"exec sp_obtener_tarimas_sin_ubicacion_pt @codigo_barra";
+                else
+                    if (OpcionVentana == 5)//Se abre de venatana desde reubicar tarima
+                    SQL = @"exec sp_obtener_tarimas_con_ubicacion_pt @codigo_barra";
 
                 dsRecepcionMP.DetalleTarima.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(SQL, cn);
@@ -86,6 +90,7 @@ namespace LOSA.RecepcionMP
             this.proveedor = row.nombreProveedor;
             this.presentacion = row.presentacion;
             this.lote = row.lote_materia_prima;
+            this.NombrePro = row.NombreProducto;
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
@@ -103,6 +108,7 @@ namespace LOSA.RecepcionMP
             this.proveedor = row.nombreProveedor;
             this.presentacion = row.presentacion;
             this.lote = row.lote_materia_prima;
+            this.NombrePro = row.NombreProducto;
             //this.NumBoleta = row.NBoleta;
             this.DialogResult = DialogResult.OK;
             this.Close();
