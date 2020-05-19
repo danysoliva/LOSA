@@ -257,6 +257,11 @@ namespace LOSA.RecepcionMP
 
         }
 
+        private void gridControl3_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void BtnAtras_Click(object sender, EventArgs e)
         {
           

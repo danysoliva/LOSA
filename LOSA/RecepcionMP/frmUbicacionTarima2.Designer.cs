@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUbicacionTarima2));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.ubicacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -78,7 +78,7 @@
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnAtras.Location = new System.Drawing.Point(619, 15);
-            this.btnAtras.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAtras.Margin = new System.Windows.Forms.Padding(4);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(209, 70);
             this.btnAtras.TabIndex = 6;
@@ -95,7 +95,7 @@
             this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl3.Location = new System.Drawing.Point(57, 31);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(524, 54);
             this.labelControl3.TabIndex = 13;
@@ -119,23 +119,24 @@
             this.navigationFrame1.Controls.Add(this.navigationPage1);
             this.navigationFrame1.Controls.Add(this.navigationPage3);
             this.navigationFrame1.Location = new System.Drawing.Point(0, 110);
-            this.navigationFrame1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.navigationFrame1.Margin = new System.Windows.Forms.Padding(4);
             this.navigationFrame1.Name = "navigationFrame1";
             this.navigationFrame1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.navigationPage1,
             this.navigationPage3});
             this.navigationFrame1.SelectedPage = this.navigationPage1;
-            this.navigationFrame1.Size = new System.Drawing.Size(832, 533);
+            this.navigationFrame1.Size = new System.Drawing.Size(828, 531);
             this.navigationFrame1.TabIndex = 14;
             this.navigationFrame1.Text = "navigationFrame1";
             // 
             // navigationPage1
             // 
+            this.navigationPage1.Caption = "navigationPage1";
             this.navigationPage1.Controls.Add(this.labelControl4);
             this.navigationPage1.Controls.Add(this.gridControl1);
-            this.navigationPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.navigationPage1.Margin = new System.Windows.Forms.Padding(4);
             this.navigationPage1.Name = "navigationPage1";
-            this.navigationPage1.Size = new System.Drawing.Size(1109, 656);
+            this.navigationPage1.Size = new System.Drawing.Size(828, 531);
             // 
             // labelControl4
             // 
@@ -147,9 +148,9 @@
             this.labelControl4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl4.Location = new System.Drawing.Point(232, 11);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(385, 54);
+            this.labelControl4.Size = new System.Drawing.Size(381, 54);
             this.labelControl4.TabIndex = 15;
             this.labelControl4.Text = "Seleccione la Bodega";
             // 
@@ -160,14 +161,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl1.DataMember = "bodegas";
             this.gridControl1.DataSource = this.dsRecepcionMPx;
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl1.Location = new System.Drawing.Point(4, 73);
             this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnSeleccionar});
-            this.gridControl1.Size = new System.Drawing.Size(824, 457);
+            this.gridControl1.Size = new System.Drawing.Size(820, 455);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -220,9 +221,9 @@
             // btnSeleccionar
             // 
             this.btnSeleccionar.AutoHeight = false;
-            editorButtonImageOptions1.Image = global::LOSA.Properties.Resources.tap;
+            editorButtonImageOptions5.Image = global::LOSA.Properties.Resources.tap;
             this.btnSeleccionar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions5, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnSeleccionar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnSeleccionar_ButtonClick);
@@ -231,9 +232,9 @@
             // 
             this.navigationPage3.Controls.Add(this.labelControl1);
             this.navigationPage3.Controls.Add(this.gridControl3);
-            this.navigationPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.navigationPage3.Margin = new System.Windows.Forms.Padding(4);
             this.navigationPage3.Name = "navigationPage3";
-            this.navigationPage3.Size = new System.Drawing.Size(1109, 656);
+            this.navigationPage3.Size = new System.Drawing.Size(828, 531);
             // 
             // labelControl1
             // 
@@ -245,9 +246,9 @@
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl1.Location = new System.Drawing.Point(267, 4);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(328, 54);
+            this.labelControl1.Size = new System.Drawing.Size(324, 54);
             this.labelControl1.TabIndex = 14;
             this.labelControl1.Text = "Seleccione el Rack";
             // 
@@ -258,17 +259,18 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl3.DataMember = "racks";
             this.gridControl3.DataSource = this.dsRecepcionMPx;
-            this.gridControl3.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridControl3.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl3.Location = new System.Drawing.Point(4, 64);
             this.gridControl3.MainView = this.gridView3;
-            this.gridControl3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridControl3.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl3.Name = "gridControl3";
             this.gridControl3.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnSeleccionar3});
-            this.gridControl3.Size = new System.Drawing.Size(824, 459);
+            this.gridControl3.Size = new System.Drawing.Size(820, 457);
             this.gridControl3.TabIndex = 2;
             this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
+            this.gridControl3.Click += new System.EventHandler(this.gridControl3_Click);
             // 
             // gridView3
             // 
@@ -292,16 +294,14 @@
             this.colid2.Caption = "Código";
             this.colid2.FieldName = "id";
             this.colid2.Name = "colid2";
-            this.colid2.Visible = true;
-            this.colid2.VisibleIndex = 0;
             // 
             // coldescripcion2
             // 
-            this.coldescripcion2.Caption = "Descripción";
+            this.coldescripcion2.Caption = "Rack";
             this.coldescripcion2.FieldName = "descripcion";
             this.coldescripcion2.Name = "coldescripcion2";
             this.coldescripcion2.Visible = true;
-            this.coldescripcion2.VisibleIndex = 1;
+            this.coldescripcion2.VisibleIndex = 0;
             // 
             // colselect2
             // 
@@ -310,14 +310,14 @@
             this.colselect2.FieldName = "select";
             this.colselect2.Name = "colselect2";
             this.colselect2.Visible = true;
-            this.colselect2.VisibleIndex = 2;
+            this.colselect2.VisibleIndex = 1;
             // 
             // btnSeleccionar3
             // 
             this.btnSeleccionar3.AutoHeight = false;
-            editorButtonImageOptions2.Image = global::LOSA.Properties.Resources.tap;
+            editorButtonImageOptions6.Image = global::LOSA.Properties.Resources.tap;
             this.btnSeleccionar3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions6, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.btnSeleccionar3.Name = "btnSeleccionar3";
             this.btnSeleccionar3.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnSeleccionar3.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnSeleccionar3_ButtonClick);
@@ -331,7 +331,7 @@
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.btnAtras);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmUbicacionTarima2";
             this.Text = "frmUbicacionTarima2";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
