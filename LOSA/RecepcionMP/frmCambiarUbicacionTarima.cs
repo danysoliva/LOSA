@@ -44,14 +44,15 @@ namespace LOSA.RecepcionMP
 
             return dt;
         }
-        private DataTable CreateDataUbicacion_v2(string pRack)
+        private DataTable CreateDataUbicacion_v2(string pRack, string pBodega)
         {
             DataTable dt = new DataTable();
 
             dt.Columns.Add("Detalle", typeof(string));
             dt.Columns.Add("Valor", typeof(string));
 
-            
+            dt.Rows.Add("Bodega", pBodega);
+
             dt.Rows.Add("RACK", pRack);
             //dt.Rows.Add("ALTURA", pAltura);
             //dt.Rows.Add("PROFUNDIDAD", pProfundidad);
@@ -119,9 +120,9 @@ namespace LOSA.RecepcionMP
                 gvTarima.Columns[0].AppearanceCell.Font = new Font("Segoe UI", 11, FontStyle.Bold);
 
 
-                if (infoUbicacionTarima.RecuperarRegistro(0, beIdTarima.Text))
+                if (infoUbicacionTarima.RecuperarRegistro_2(0, beIdTarima.Text))
                 {
-                    gcUbicacionActual.DataSource = CreateDataUbicacion(infoUbicacionTarima.Rack, infoUbicacionTarima.Profundidad, infoUbicacionTarima.Altura, infoUbicacionTarima.Pasillo);
+                    gcUbicacionActual.DataSource = CreateDataUbicacion_v2(infoUbicacionTarima.Rack,infoUbicacionTarima.IdBodega.ToString());
                     gvUbicacionActual.InitNewRow += GvUbicacionActual_InitNewRow;
                     gvUbicacionActual.Columns[0].AppearanceCell.Font = new Font("Segoe UI", 11, FontStyle.Bold);
                 }
@@ -202,11 +203,11 @@ namespace LOSA.RecepcionMP
 
         private void BtnUbicacion_Click(object sender, EventArgs e)
         {
-            frmUbicacionTarima frm = new frmUbicacionTarima();
+            frmUbicacionTarima2 frm = new frmUbicacionTarima2();
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 idUbicacionNueva = frm.idUbicacion;
-                gcNuevaUbicación.DataSource = CreateDataNuevaUbicacion(frm.idUbicacion, "");
+                gcNuevaUbicación.DataSource = CreateDataUbicacion_v2(frm.rack, frm.BodegaNombre);
                 gvNuevaUbicacion.InitNewRow += GvNuevaUbicacion_InitNewRow;
                 gvNuevaUbicacion.Columns[0].AppearanceCell.Font = new Font("Segoe UI", 11, FontStyle.Bold);
             }
@@ -235,7 +236,7 @@ namespace LOSA.RecepcionMP
                     if (infoUbicacionTarima.RecuperarRegistro_2(frm.idTarima, beIdTarima.Text))
                     {
                         idUbicacionTarimaActual = infoUbicacionTarima.Id;
-                        gcUbicacionActual.DataSource = CreateDataUbicacion_v2(infoUbicacionTarima.Rack);
+                        gcUbicacionActual.DataSource = CreateDataUbicacion_v2(infoUbicacionTarima.Rack, infoUbicacionTarima.IdBodega.ToString());
                         gvUbicacionActual.InitNewRow += GvUbicacionActual_InitNewRow;
                         gvUbicacionActual.Columns[0].AppearanceCell.Font = new Font("Segoe UI", 11, FontStyle.Bold);
                     }
