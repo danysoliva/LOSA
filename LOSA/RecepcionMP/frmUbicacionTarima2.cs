@@ -145,7 +145,7 @@ namespace LOSA.RecepcionMP
                // cmd.Parameters.AddWithValue("@idpasillo", Pasillo_);
                 cmd.Parameters.AddWithValue("@idbodega", IdBodega);
                 dsRecepcionMPx.racks.Clear();
-                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);//coment
                 adat.Fill(dsRecepcionMPx.racks);
 
                 con.Close();
