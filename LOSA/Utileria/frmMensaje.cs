@@ -33,13 +33,34 @@ namespace LOSA.Utileria
                     msjBoxIcon.Image = pictureBoxInfomation.Image;
                     break;
             }
+        }
 
-
-
-
+        public frmMensaje(TipoMsj ptipo, string msj,int time)
+        {
+            InitializeComponent();
+            labelControl1.Text = msj;
+            TipoMensajeActual = ptipo;
+            switch (ptipo)
+            {
+                case TipoMsj.error:
+                    msjBoxIcon.Image = pictureBoxError.Image;
+                    break;
+                case TipoMsj.info:
+                    msjBoxIcon.Image = pictureBoxInfomation.Image;
+                    break;
+            }
+            timer1.Interval = time;
+            timer1.Enabled = true;
+            timer1.Start();
         }
 
         private void cmdAceptar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();

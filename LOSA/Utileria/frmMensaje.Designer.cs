@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMensaje));
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.pictureBoxInfomation = new System.Windows.Forms.PictureBox();
             this.pictureBoxError = new System.Windows.Forms.PictureBox();
             this.msjBoxIcon = new System.Windows.Forms.PictureBox();
             this.cmdAceptar = new DevExpress.XtraEditors.SimpleButton();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInfomation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxError)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.msjBoxIcon)).BeginInit();
@@ -90,7 +92,7 @@
             this.cmdAceptar.Appearance.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdAceptar.Appearance.Options.UseFont = true;
             this.cmdAceptar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdAceptar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.cmdAceptar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdAceptar.ImageOptions.Image")));
             this.cmdAceptar.Location = new System.Drawing.Point(315, 182);
             this.cmdAceptar.Name = "cmdAceptar";
             this.cmdAceptar.Size = new System.Drawing.Size(221, 81);
@@ -98,9 +100,14 @@
             this.cmdAceptar.Text = "Aceptar";
             this.cmdAceptar.Click += new System.EventHandler(this.cmdAceptar_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 2800;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // frmMensaje
             // 
-            this.Appearance.BackColor = System.Drawing.Color.White;
+            this.Appearance.BackColor = System.Drawing.Color.Gainsboro;
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -127,5 +134,6 @@
         private System.Windows.Forms.PictureBox pictureBoxInfomation;
         private System.Windows.Forms.PictureBox msjBoxIcon;
         private DevExpress.XtraEditors.SimpleButton cmdAceptar;
+        private System.Windows.Forms.Timer timer1;
     }
 }

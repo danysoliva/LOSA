@@ -3,6 +3,7 @@ using Core.Clases.Herramientas;
 using DevExpress.Utils.TouchHelpers;
 using Huellas;
 using LOSA.Clases;
+using LOSA.Utileria;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,13 +37,13 @@ namespace LOSA
         {
             Teclado.cerrarTeclado();
             UserLogin Log1 = new UserLogin();
-            if (Log1.RecuperarRegistro(1035))
+            if (Log1.RecuperarRegistro(1067))
             {
                 Log1.GrupoUsuario.GrupoUsuarioActivo = (GrupoUser.GrupoUsuario)Log1.IdGrupo;
             }
             else
             {
-                Log1.Id = 1035;
+                Log1.Id = 1067;
                 Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Produccion;
             }
             
@@ -63,7 +64,10 @@ namespace LOSA
             }
             else
             {
-                MessageBox.Show("Usuario Vacio.");
+                // MessageBox.Show("Usuario Vacio.");
+                frmMensaje frm = new frmMensaje( frmMensaje.TipoMsj.error, "No puede dejar el usuario vacio!");
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.ShowDialog();
                 return;
             }
             if (txtClave.Text != "")
@@ -72,7 +76,10 @@ namespace LOSA
             }
             else
             {
-                MessageBox.Show("Contraseña Vacia.");
+                //MessageBox.Show("Contraseña Vacia.");
+                frmMensaje frm = new frmMensaje(frmMensaje.TipoMsj.error, "No puede dejar la contraseña vacia!");
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.ShowDialog();
                 return;
             }
 
@@ -114,7 +121,10 @@ namespace LOSA
             }
             else
             {
-                MessageBox.Show("Datos de login incorrectos!");
+                //MessageBox.Show("Datos de login incorrectos!");
+                frmMensaje frm = new frmMensaje(frmMensaje.TipoMsj.error, "Usuario y contraseña son invalidos!");
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.ShowDialog();
             }
             //Select del grupo al que pertenece el usuario
             //Iniciar la variable de sesion con el grupo activo.
@@ -153,6 +163,14 @@ namespace LOSA
         private void FrmMain_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtClave_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                simpleButton2_Click(new object(), new EventArgs());
+            }
         }
     }
 }

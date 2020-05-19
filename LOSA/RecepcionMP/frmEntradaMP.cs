@@ -313,11 +313,15 @@ namespace LOSA.RecepcionMP
 
             if(Guardado)
             {
-                CajaDialogo.Information("DATOS GUARDADOS EXITOSAMENTE");
+                //CajaDialogo.Information("DATOS GUARDADOS EXITOSAMENTE");
+                frmMensaje frm = new frmMensaje(frmMensaje.TipoMsj.error, "No puede dejar la contraseña vacia!",2000);
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.ShowDialog();
 
                 BeTarima_ButtonClick(null, null);
                 BeUbicacion_ButtonClick(null, null);
             }
+            beTarima.Focus();
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
@@ -328,7 +332,7 @@ namespace LOSA.RecepcionMP
                 if (dtFecha.EditValue==null)
                 CajaDialogo.Error("DEBE DE SELECCIONAR UNA FECHA CORRECTA");
             else
-            insertarData();
+                insertarData();
         }
 
         private void BeTarima_Enter(object sender, EventArgs e)
@@ -362,6 +366,11 @@ namespace LOSA.RecepcionMP
         }
 
         private void frmEntradaMP_Activated(object sender, EventArgs e)
+        {
+            beTarima.Focus();
+        }
+
+        private void frmEntradaMP_Click(object sender, EventArgs e)
         {
             beTarima.Focus();
         }

@@ -81,6 +81,7 @@
             this.txtClave.Size = new System.Drawing.Size(222, 30);
             this.txtClave.TabIndex = 1;
             this.txtClave.Enter += new System.EventHandler(this.txtClave_Enter);
+            this.txtClave.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtClave_KeyDown);
             // 
             // txtUsuario
             // 
@@ -130,7 +131,7 @@
             this.cmdButtonSaltarLogin.Name = "cmdButtonSaltarLogin";
             this.cmdButtonSaltarLogin.Size = new System.Drawing.Size(199, 71);
             this.cmdButtonSaltarLogin.TabIndex = 11;
-            this.cmdButtonSaltarLogin.Text = "Next";
+            this.cmdButtonSaltarLogin.Text = "Montacarga";
             this.cmdButtonSaltarLogin.Click += new System.EventHandler(this.cmdButtonSaltarLogin_Click);
             // 
             // labelControl3
