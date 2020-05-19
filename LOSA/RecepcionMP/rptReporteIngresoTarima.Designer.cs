@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             DevExpress.XtraPrinting.BarCode.Code93Generator code93Generator1 = new DevExpress.XtraPrinting.BarCode.Code93Generator();
-            DevExpress.XtraPrinting.BarCode.Code39ExtendedGenerator code39ExtendedGenerator1 = new DevExpress.XtraPrinting.BarCode.Code39ExtendedGenerator();
+            DevExpress.XtraPrinting.BarCode.Code93Generator code93Generator2 = new DevExpress.XtraPrinting.BarCode.Code93Generator();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rptReporteIngresoTarima));
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
@@ -421,8 +421,7 @@
             this.BarCode1.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 10, 0, 0, 100F);
             this.BarCode1.SizeF = new System.Drawing.SizeF(374.4166F, 136.5F);
             this.BarCode1.StylePriority.UseTextAlignment = false;
-            code39ExtendedGenerator1.WideNarrowRatio = 3F;
-            this.BarCode1.Symbology = code39ExtendedGenerator1;
+            this.BarCode1.Symbology = code93Generator2;
             this.BarCode1.Text = "TM0000000009";
             this.BarCode1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 

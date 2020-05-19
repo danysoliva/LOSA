@@ -47,7 +47,7 @@ namespace ACS.Classes
         ////Bascula nueva version (desarrollo)
         public static string Bas_ServerAddress = "AQFSVR003";
         public static string Bas_ServerName = "Servidor Desarrollo";
-        public static string Bas_ActiveDB = "BASCULA_DEV";
+        public static string Bas_ActiveDB = "BASCULA";
         public static string Bas_DB_User = "sa";
         public static string Bas_DB_Pass = "AquaF33dHN2014";
 

@@ -117,7 +117,6 @@ namespace LOSA
                 MessageBox.Show("Datos de login incorrectos!");
             }
             //Select del grupo al que pertenece el usuario
-            
             //Iniciar la variable de sesion con el grupo activo.
         }
 
