@@ -1,6 +1,7 @@
 ﻿using ACS.Classes;
 using Core.Clases.Herramientas;
 using LOSA.Clases;
+using LOSA.Utileria;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -89,7 +90,10 @@ namespace LOSA.RecepcionMP
                     }
                     else
                     {
-                        CajaDialogo.Error("TARIMA NO ENCONTRADA");
+                        //CajaDialogo.Error("TARIMA NO ENCONTRADA");
+                        frmMensaje frmx = new frmMensaje(frmMensaje.TipoMsj.error, "¡La Tarima no está en recepción de Materia Prima!");
+                        frmx.StartPosition = FormStartPosition.CenterScreen;
+                        frmx.ShowDialog();
                         gcTarima.DataSource = null;
                         beTarima.Text = "";
                         //txtTarima.Text = "";
@@ -351,6 +355,17 @@ namespace LOSA.RecepcionMP
 
             return dt;
         }
+
+        private void frmEntradaMP_Load(object sender, EventArgs e)
+        {
+            beTarima.Focus();
+        }
+
+        private void frmEntradaMP_Activated(object sender, EventArgs e)
+        {
+            beTarima.Focus();
+        }
+
         private DataTable CreateDataUbicacion_v2(string pRack, string pBodega)
         {
             DataTable dt = new DataTable();

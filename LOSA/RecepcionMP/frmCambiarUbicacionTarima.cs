@@ -317,5 +317,15 @@ namespace LOSA.RecepcionMP
         {
             Teclado.abrirTeclado();
         }
+
+        private void frmCambiarUbicacionTarima_Activated(object sender, EventArgs e)
+        {
+            beIdTarima.Focus();
+        }
+
+        private void frmCambiarUbicacionTarima_Load(object sender, EventArgs e)
+        {
+            beIdTarima.Focus();
+        }
     }
 }

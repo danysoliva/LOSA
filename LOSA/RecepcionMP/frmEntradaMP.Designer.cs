@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEntradaMP));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -62,7 +62,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(15, 167);
+            this.labelControl1.Location = new System.Drawing.Point(15, 154);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(57, 21);
             this.labelControl1.TabIndex = 4;
@@ -74,7 +74,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(13, 358);
+            this.labelControl2.Location = new System.Drawing.Point(13, 370);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(81, 21);
             this.labelControl2.TabIndex = 5;
@@ -89,9 +89,9 @@
             this.labelControl3.Appearance.Options.UseTextOptions = true;
             this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl3.Location = new System.Drawing.Point(3, 30);
+            this.labelControl3.Location = new System.Drawing.Point(157, 30);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(402, 21);
+            this.labelControl3.Size = new System.Drawing.Size(271, 21);
             this.labelControl3.TabIndex = 12;
             this.labelControl3.Text = "Entrada de Materia Prima";
             // 
@@ -118,9 +118,10 @@
             this.btnUbicacion.Appearance.Options.UseFont = true;
             this.btnUbicacion.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnUbicacion.ImageOptions.Image = global::LOSA.Properties.Resources.tap;
-            this.btnUbicacion.Location = new System.Drawing.Point(413, 350);
+            this.btnUbicacion.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnUbicacion.Location = new System.Drawing.Point(413, 351);
             this.btnUbicacion.Name = "btnUbicacion";
-            this.btnUbicacion.Size = new System.Drawing.Size(42, 40);
+            this.btnUbicacion.Size = new System.Drawing.Size(62, 51);
             this.btnUbicacion.TabIndex = 11;
             this.btnUbicacion.Click += new System.EventHandler(this.BtnUbicacion_Click);
             // 
@@ -131,9 +132,10 @@
             this.cmdSelectTarima.Appearance.Options.UseFont = true;
             this.cmdSelectTarima.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdSelectTarima.ImageOptions.Image = global::LOSA.Properties.Resources.tap;
-            this.cmdSelectTarima.Location = new System.Drawing.Point(411, 160);
+            this.cmdSelectTarima.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.cmdSelectTarima.Location = new System.Drawing.Point(411, 136);
             this.cmdSelectTarima.Name = "cmdSelectTarima";
-            this.cmdSelectTarima.Size = new System.Drawing.Size(42, 40);
+            this.cmdSelectTarima.Size = new System.Drawing.Size(62, 51);
             this.cmdSelectTarima.TabIndex = 10;
             this.cmdSelectTarima.Click += new System.EventHandler(this.CmdSelectTarima_Click);
             // 
@@ -143,16 +145,16 @@
             this.beTarima.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.beTarima.EditValue = "";
-            this.beTarima.Location = new System.Drawing.Point(78, 162);
+            this.beTarima.Location = new System.Drawing.Point(78, 144);
             this.beTarima.Name = "beTarima";
-            this.beTarima.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.beTarima.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.beTarima.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.beTarima.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions3, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.beTarima.Properties.MaxLength = 20;
             this.beTarima.Properties.NullText = "Escanee o selecciona una tarima";
-            this.beTarima.Size = new System.Drawing.Size(327, 28);
+            this.beTarima.Size = new System.Drawing.Size(316, 36);
             this.beTarima.TabIndex = 28;
             this.beTarima.ToolTip = "Hola";
             this.beTarima.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.BeTarima_ButtonClick);
@@ -163,15 +165,15 @@
             // 
             this.beUbicacion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.beUbicacion.Location = new System.Drawing.Point(104, 352);
+            this.beUbicacion.Location = new System.Drawing.Point(104, 360);
             this.beUbicacion.Name = "beUbicacion";
-            this.beUbicacion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.beUbicacion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.beUbicacion.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.beUbicacion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.beUbicacion.Properties.MaxLength = 20;
-            this.beUbicacion.Size = new System.Drawing.Size(303, 28);
+            this.beUbicacion.Size = new System.Drawing.Size(290, 36);
             this.beUbicacion.TabIndex = 29;
             this.beUbicacion.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.BeUbicacion_ButtonClick);
             this.beUbicacion.Click += new System.EventHandler(this.BeUbicacion_Click);
@@ -183,10 +185,10 @@
             this.gcTarima.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gcTarima.EmbeddedNavigator.Appearance.BackColor = System.Drawing.SystemColors.Control;
             this.gcTarima.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
-            this.gcTarima.Location = new System.Drawing.Point(12, 211);
+            this.gcTarima.Location = new System.Drawing.Point(12, 189);
             this.gcTarima.MainView = this.gvTarima;
             this.gcTarima.Name = "gcTarima";
-            this.gcTarima.Size = new System.Drawing.Size(441, 116);
+            this.gcTarima.Size = new System.Drawing.Size(463, 156);
             this.gcTarima.TabIndex = 32;
             this.gcTarima.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTarima});
@@ -312,7 +314,7 @@
             this.gvTarima.Appearance.Preview.Options.UseFont = true;
             this.gvTarima.Appearance.Preview.Options.UseForeColor = true;
             this.gvTarima.Appearance.Row.BackColor = System.Drawing.Color.White;
-            this.gvTarima.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvTarima.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvTarima.Appearance.Row.ForeColor = System.Drawing.Color.Black;
             this.gvTarima.Appearance.Row.Options.UseBackColor = true;
             this.gvTarima.Appearance.Row.Options.UseFont = true;
@@ -351,10 +353,10 @@
             this.gcUbicacion.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gcUbicacion.EmbeddedNavigator.Appearance.BackColor = System.Drawing.SystemColors.Control;
             this.gcUbicacion.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
-            this.gcUbicacion.Location = new System.Drawing.Point(14, 396);
+            this.gcUbicacion.Location = new System.Drawing.Point(14, 403);
             this.gcUbicacion.MainView = this.gvUbicacion;
             this.gcUbicacion.Name = "gcUbicacion";
-            this.gcUbicacion.Size = new System.Drawing.Size(441, 116);
+            this.gcUbicacion.Size = new System.Drawing.Size(461, 116);
             this.gcUbicacion.TabIndex = 33;
             this.gcUbicacion.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvUbicacion});
@@ -480,7 +482,7 @@
             this.gvUbicacion.Appearance.Preview.Options.UseFont = true;
             this.gvUbicacion.Appearance.Preview.Options.UseForeColor = true;
             this.gvUbicacion.Appearance.Row.BackColor = System.Drawing.Color.White;
-            this.gvUbicacion.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvUbicacion.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvUbicacion.Appearance.Row.ForeColor = System.Drawing.Color.Black;
             this.gvUbicacion.Appearance.Row.Options.UseBackColor = true;
             this.gvUbicacion.Appearance.Row.Options.UseFont = true;
@@ -516,15 +518,16 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardar.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnGuardar.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Appearance.Options.UseBackColor = true;
             this.btnGuardar.Appearance.Options.UseFont = true;
             this.btnGuardar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.Image")));
             this.btnGuardar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.btnGuardar.Location = new System.Drawing.Point(479, 97);
+            this.btnGuardar.Location = new System.Drawing.Point(13, 11);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(131, 71);
+            this.btnGuardar.Size = new System.Drawing.Size(138, 60);
             this.btnGuardar.TabIndex = 34;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
@@ -577,6 +580,8 @@
             this.Name = "frmEntradaMP";
             this.Text = "frmEntradaMP";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Activated += new System.EventHandler(this.frmEntradaMP_Activated);
+            this.Load += new System.EventHandler(this.frmEntradaMP_Load);
             ((System.ComponentModel.ISupportInitialize)(this.beTarima.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.beUbicacion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcTarima)).EndInit();

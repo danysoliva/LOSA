@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>42</ApplicationRevision>
+    <ApplicationRevision>43</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -616,6 +616,12 @@
     <Compile Include="TransaccionesMP\frmSeleccionLote.Designer.cs">
       <DependentUpon>frmSeleccionLote.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utileria\frmMensaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utileria\frmMensaje.Designer.cs">
+      <DependentUpon>frmMensaje.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Calidad\frmEstadosTarimaCalidad.resx">
       <DependentUpon>frmEstadosTarimaCalidad.cs</DependentUpon>
     </EmbeddedResource>
@@ -825,6 +831,9 @@
     <EmbeddedResource Include="TransaccionesMP\frmSeleccionLote.resx">
       <DependentUpon>frmSeleccionLote.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Utileria\frmMensaje.resx">
+      <DependentUpon>frmMensaje.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Calidad\dsCalidad.xsc">
       <DependentUpon>dsCalidad.xsd</DependentUpon>
     </None>
@@ -933,6 +942,7 @@
     <None Include="Resources\Containers-icon.png" />
     <None Include="Resources\Checklist-icon.png" />
     <None Include="Resources\devoluciones2.png" />
+    <None Include="Resources\delete-1-icon72px.png" />
     <Content Include="Resources\edit.png" />
     <None Include="Resources\hapag-4-icon.png" />
     <None Include="Resources\Forklift-icon.png" />
@@ -952,6 +962,7 @@
     <Content Include="Resources\raw-material1.png" />
     <Content Include="Resources\settings.png" />
     <Content Include="Resources\shipping.png" />
+    <None Include="Resources\Status-dialog-information-icon72px.png" />
     <Content Include="Resources\tap.png" />
     <None Include="Resources\trazabilidad.png" />
     <Content Include="Resources\user.png" />
@@ -960,7 +971,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 y x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

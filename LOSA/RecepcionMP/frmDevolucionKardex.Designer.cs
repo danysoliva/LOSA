@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDevolucionKardex));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.beTarima = new DevExpress.XtraEditors.ButtonEdit();
             this.cmdSelectTarima = new DevExpress.XtraEditors.SimpleButton();
@@ -51,13 +51,15 @@
             // cmdHome
             // 
             this.cmdHome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdHome.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.cmdHome.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdHome.Appearance.Options.UseBackColor = true;
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdHome.ImageOptions.Image")));
-            this.cmdHome.Location = new System.Drawing.Point(443, 12);
+            this.cmdHome.Location = new System.Drawing.Point(422, 12);
             this.cmdHome.Name = "cmdHome";
-            this.cmdHome.Size = new System.Drawing.Size(151, 71);
+            this.cmdHome.Size = new System.Drawing.Size(172, 71);
             this.cmdHome.TabIndex = 28;
             this.cmdHome.Text = "Home";
             this.cmdHome.Click += new System.EventHandler(this.CmdHome_Click);
@@ -70,14 +72,14 @@
             this.beTarima.EditValue = "";
             this.beTarima.Location = new System.Drawing.Point(83, 118);
             this.beTarima.Name = "beTarima";
-            this.beTarima.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.beTarima.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.beTarima.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.beTarima.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.beTarima.Properties.MaxLength = 20;
             this.beTarima.Properties.NullText = "Escanee o selecciona una tarima";
-            this.beTarima.Size = new System.Drawing.Size(327, 28);
+            this.beTarima.Size = new System.Drawing.Size(327, 32);
             this.beTarima.TabIndex = 31;
             this.beTarima.ToolTip = "Hola";
             this.beTarima.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.BeTarima_ButtonClick);
@@ -90,7 +92,7 @@
             this.cmdSelectTarima.Appearance.Options.UseFont = true;
             this.cmdSelectTarima.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdSelectTarima.ImageOptions.Image = global::LOSA.Properties.Resources.tap;
-            this.cmdSelectTarima.Location = new System.Drawing.Point(416, 116);
+            this.cmdSelectTarima.Location = new System.Drawing.Point(422, 114);
             this.cmdSelectTarima.Name = "cmdSelectTarima";
             this.cmdSelectTarima.Size = new System.Drawing.Size(42, 40);
             this.cmdSelectTarima.TabIndex = 30;
@@ -111,50 +113,50 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(47, 368);
+            this.labelControl2.Location = new System.Drawing.Point(47, 398);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(83, 24);
+            this.labelControl2.Size = new System.Drawing.Size(108, 29);
             this.labelControl2.TabIndex = 80;
             this.labelControl2.Text = "Peso (Kg)";
             // 
             // txtPeso
             // 
             this.txtPeso.EditValue = "0";
-            this.txtPeso.Location = new System.Drawing.Point(218, 365);
+            this.txtPeso.Location = new System.Drawing.Point(218, 395);
             this.txtPeso.Name = "txtPeso";
-            this.txtPeso.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPeso.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPeso.Properties.Appearance.Options.UseFont = true;
             this.txtPeso.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPeso.Properties.ReadOnly = true;
             this.txtPeso.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtPeso.Size = new System.Drawing.Size(142, 32);
+            this.txtPeso.Size = new System.Drawing.Size(142, 38);
             this.txtPeso.TabIndex = 78;
             // 
             // labelControl7
             // 
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(47, 333);
+            this.labelControl7.Location = new System.Drawing.Point(47, 353);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(80, 24);
+            this.labelControl7.Size = new System.Drawing.Size(103, 29);
             this.labelControl7.TabIndex = 79;
             this.labelControl7.Text = "Unidades";
             // 
             // txtCantidadT
             // 
             this.txtCantidadT.EditValue = "0";
-            this.txtCantidadT.Location = new System.Drawing.Point(218, 329);
+            this.txtCantidadT.Location = new System.Drawing.Point(218, 349);
             this.txtCantidadT.Name = "txtCantidadT";
-            this.txtCantidadT.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCantidadT.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCantidadT.Properties.Appearance.Options.UseFont = true;
             this.txtCantidadT.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCantidadT.Properties.Mask.EditMask = "n2";
             this.txtCantidadT.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtCantidadT.Properties.NullText = "0";
             this.txtCantidadT.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtCantidadT.Size = new System.Drawing.Size(142, 32);
+            this.txtCantidadT.Size = new System.Drawing.Size(142, 38);
             this.txtCantidadT.TabIndex = 77;
             this.txtCantidadT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtCantidadT_KeyDown);
             this.txtCantidadT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCantidadT_KeyPress);
@@ -169,7 +171,7 @@
             this.gcTarima.Location = new System.Drawing.Point(20, 162);
             this.gcTarima.MainView = this.gvTarima;
             this.gcTarima.Name = "gcTarima";
-            this.gcTarima.Size = new System.Drawing.Size(558, 116);
+            this.gcTarima.Size = new System.Drawing.Size(558, 173);
             this.gcTarima.TabIndex = 81;
             this.gcTarima.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTarima});
@@ -295,7 +297,7 @@
             this.gvTarima.Appearance.Preview.Options.UseFont = true;
             this.gvTarima.Appearance.Preview.Options.UseForeColor = true;
             this.gvTarima.Appearance.Row.BackColor = System.Drawing.Color.White;
-            this.gvTarima.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvTarima.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvTarima.Appearance.Row.ForeColor = System.Drawing.Color.Black;
             this.gvTarima.Appearance.Row.Options.UseBackColor = true;
             this.gvTarima.Appearance.Row.Options.UseFont = true;
@@ -330,14 +332,16 @@
             // 
             // btnGuardar
             // 
+            this.btnGuardar.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnGuardar.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Appearance.Options.UseBackColor = true;
             this.btnGuardar.Appearance.Options.UseFont = true;
             this.btnGuardar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.Image")));
             this.btnGuardar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
             this.btnGuardar.Location = new System.Drawing.Point(12, 15);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(131, 71);
+            this.btnGuardar.Size = new System.Drawing.Size(160, 71);
             this.btnGuardar.TabIndex = 82;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
@@ -361,6 +365,8 @@
             this.Name = "frmDevolucionKardex";
             this.Text = "frmDevolucionKardex";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Activated += new System.EventHandler(this.frmDevolucionKardex_Activated);
+            this.Load += new System.EventHandler(this.frmDevolucionKardex_Load);
             ((System.ComponentModel.ISupportInitialize)(this.beTarima.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPeso.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadT.Properties)).EndInit();

@@ -183,6 +183,16 @@ namespace LOSA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap delete_1_icon72px {
+            get {
+                object obj = ResourceManager.GetObject("delete-1-icon72px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap devoluciones {
             get {
                 object obj = ResourceManager.GetObject("devoluciones", resourceCulture);
@@ -386,6 +396,16 @@ namespace LOSA.Properties {
         internal static System.Drawing.Bitmap shipping {
             get {
                 object obj = ResourceManager.GetObject("shipping", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Status_dialog_information_icon72px {
+            get {
+                object obj = ResourceManager.GetObject("Status-dialog-information-icon72px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

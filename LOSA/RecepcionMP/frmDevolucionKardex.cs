@@ -195,5 +195,15 @@ namespace LOSA.RecepcionMP
                 datosTarimaPorCodBarra(cn);
             }
         }
+
+        private void frmDevolucionKardex_Activated(object sender, EventArgs e)
+        {
+            beTarima.Focus();
+        }
+
+        private void frmDevolucionKardex_Load(object sender, EventArgs e)
+        {
+            beTarima.Focus();
+        }
     }
 }

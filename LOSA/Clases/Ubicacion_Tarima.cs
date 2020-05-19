@@ -52,12 +52,12 @@ namespace LOSA.Clases
                 if (dr.Read())
                 {
                     IdTarima = dr.GetInt32(0);
-                    Pasillo = dr.GetString(1);
-                    Rack = dr.GetString(2);
-                    Altura = dr.GetString(3);
-                    Profundidad = dr.GetString(4);
-                    Id = dr.GetInt32(5);
-                    IdBodega = dr.GetInt32(6);
+                    //Pasillo = dr.GetString(1);
+                    Rack = dr.GetString(1);
+                    //Altura = dr.GetString(3);
+                    //Profundidad = dr.GetString(4);
+                    Id = dr.GetInt32(2);
+                    IdBodega = dr.GetInt32(3);
 
                     Recuperado = true;
                 }

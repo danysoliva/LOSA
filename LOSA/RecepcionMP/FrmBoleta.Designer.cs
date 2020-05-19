@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.basculaBindingSource1 = new System.Windows.Forms.BindingSource();
+            this.basculaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dsRecepcionMP = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.gvBascula = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colIDSerie = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -45,7 +46,7 @@
             this.colMateriaPrima = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProveedor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfecha = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.basculaBindingSource = new System.Windows.Forms.BindingSource();
+            this.basculaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.basculaBindingSource1)).BeginInit();
@@ -231,11 +232,13 @@
             // simpleButton1
             // 
             this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.Options.UseBackColor = true;
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton1.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.simpleButton1.Location = new System.Drawing.Point(423, 12);
+            this.simpleButton1.Location = new System.Drawing.Point(420, 12);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(199, 56);
             this.simpleButton1.TabIndex = 4;
