@@ -93,9 +93,13 @@ namespace LOSA
 
         private void cmdRegistroLote_Click(object sender, EventArgs e)
         {
-            frmTarima frm = new frmTarima(UsuarioLogeado);
+
+            frm_ingresos frm = new frm_ingresos(UsuarioLogeado);
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
+            //frmTarima frm = new frmTarima(UsuarioLogeado);
+            //frm.WindowState = FormWindowState.Maximized;
+            //frm.Show();
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)
