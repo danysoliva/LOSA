@@ -314,7 +314,7 @@ namespace LOSA.RecepcionMP
             if(Guardado)
             {
                 //CajaDialogo.Information("DATOS GUARDADOS EXITOSAMENTE");
-                frmMensaje frm = new frmMensaje(frmMensaje.TipoMsj.error, "No puede dejar la contraseña vacia!",2000);
+                frmMensaje frm = new frmMensaje(frmMensaje.TipoMsj.info, "DATOS GUARDADOS EXITOSAMENTE!", 2000);
                 frm.StartPosition = FormStartPosition.CenterScreen;
                 frm.ShowDialog();
 

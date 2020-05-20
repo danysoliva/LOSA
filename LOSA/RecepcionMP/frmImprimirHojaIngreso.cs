@@ -181,7 +181,7 @@ namespace LOSA.RecepcionMP
                             cmd.Parameters.AddWithValue("@id_presentacion", tar1.IdPresentacion);
                             cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
                             cmd.Parameters.AddWithValue("@id_boleta", tar1.IdBoleta);
-                            cmd.Parameters.AddWithValue("@codigo_barra", tar1.IdBoleta);
+                            cmd.Parameters.AddWithValue("@codigo_barra", barcode);
                             cmd.Parameters.AddWithValue("@cant", tar1.Cantidad);
                             cmd.Parameters.AddWithValue("@peso", tar1.Peso);
                             int vid_tarima = Convert.ToInt32(cmd.ExecuteScalar());
@@ -204,7 +204,7 @@ namespace LOSA.RecepcionMP
                         {
                             foreach (int i in List1)
                             {
-                                int id_tarimax = Convert.ToInt32(List1[i]);
+                                int id_tarimax =i;
                                 rptReporteIngresoTarima report = new rptReporteIngresoTarima(id_tarimax);
                                 report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
                                 ReportPrintTool printReport = new ReportPrintTool(report);
