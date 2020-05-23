@@ -1,5 +1,6 @@
 ﻿using ACS.Classes;
 using Core.Clases.Herramientas;
+using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraReports.UI;
 using LOSA.Clases;
 using System;
@@ -20,10 +21,31 @@ namespace LOSA.RecepcionMP
     {
 
         UserLogin UsuarioLogeado;
+        DataOperations dp = new DataOperations();
         public frm_ingresos(UserLogin User)
         {
             InitializeComponent();
             UsuarioLogeado = User;
+            Load_Info();
+        }
+        public void Load_Info()
+        {
+            string query = @"EXEC dbo.ps_load_ingresos_from_tarimas";
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            try
+            {
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                dsRecepcionMPx.IngresosMP.Clear();
+                da.Fill(dsRecepcionMPx.IngresosMP);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error("Error al cargar la informacion: " + ex.Message);
+            }
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
@@ -38,6 +60,26 @@ namespace LOSA.RecepcionMP
             frmTarima frm = new frmTarima(UsuarioLogeado);
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
+        }
+
+        private void btnver_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var gridview = (GridView)grd_ingreso.FocusedView;
+                var row = (dsRecepcionMPx.IngresosMPRow)gridview.GetFocusedDataRow();
+
+                frm_ingresos_lotes frmDetalle = new frm_ingresos_lotes(1, row.Ningreso, UsuarioLogeado);
+                if (frmDetalle.ShowDialog() == DialogResult.OK)
+                {
+                    Load_Info();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
     }
 }

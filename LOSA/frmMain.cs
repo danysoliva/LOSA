@@ -11,6 +11,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -162,9 +163,28 @@ namespace LOSA
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-
+            lblVersion.Text = AssemblyVersion;
         }
-
+        public string AssemblyVersion
+        {
+            get
+            {
+                //return ApplicationDeployment.CurrentDeployment.CurrentVersion;
+                //return Application.ProductVersion;
+                //System.Version version2 = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+                //return version2;
+                if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
+                {
+                    Version ver = System.Deployment.Application.ApplicationDeployment.CurrentDeployment.CurrentVersion;
+                    return string.Format("Product Name: {4}, Version: {0}.{1}.{2}.{3}", ver.Major, ver.Minor, ver.Build, ver.Revision, Assembly.GetEntryAssembly().GetName().Name);
+                }
+                else
+                {
+                    var ver = Assembly.GetExecutingAssembly().GetName().Version;
+                    return string.Format("Product Name: {4}, Version: {0}.{1}.{2}.{3}", ver.Major, ver.Minor, ver.Build, ver.Revision, Assembly.GetEntryAssembly().GetName().Name);
+                }
+            }
+        }
         private void txtClave_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Enter)

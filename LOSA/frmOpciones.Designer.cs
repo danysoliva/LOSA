@@ -37,6 +37,7 @@
             this.cmdPT = new DevExpress.XtraEditors.SimpleButton();
             this.cmdMP = new DevExpress.XtraEditors.SimpleButton();
             this.TabLogistica = new DevExpress.XtraTab.XtraTabPage();
+            this.btnreportes = new DevExpress.XtraEditors.SimpleButton();
             this.btnReq_PT = new DevExpress.XtraEditors.SimpleButton();
             this.btnplanesdespachos = new DevExpress.XtraEditors.SimpleButton();
             this.btndespachos = new DevExpress.XtraEditors.SimpleButton();
@@ -63,6 +64,7 @@
             this.tabProduccion = new DevExpress.XtraTab.XtraTabPage();
             this.cmdTarimasPT = new DevExpress.XtraEditors.SimpleButton();
             this.btnAlimentacionManual = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -202,6 +204,7 @@
             // 
             // TabLogistica
             // 
+            this.TabLogistica.Controls.Add(this.btnreportes);
             this.TabLogistica.Controls.Add(this.btnReq_PT);
             this.TabLogistica.Controls.Add(this.btnplanesdespachos);
             this.TabLogistica.Controls.Add(this.btndespachos);
@@ -223,6 +226,22 @@
             this.TabLogistica.PageVisible = false;
             this.TabLogistica.Size = new System.Drawing.Size(840, 527);
             this.TabLogistica.Text = "Logistica";
+            // 
+            // btnreportes
+            // 
+            this.btnreportes.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnreportes.Appearance.Options.UseFont = true;
+            this.btnreportes.Appearance.Options.UseTextOptions = true;
+            this.btnreportes.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnreportes.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnreportes.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnreportes.ImageOptions.Image")));
+            this.btnreportes.Location = new System.Drawing.Point(285, 507);
+            this.btnreportes.Margin = new System.Windows.Forms.Padding(4);
+            this.btnreportes.Name = "btnreportes";
+            this.btnreportes.Size = new System.Drawing.Size(265, 87);
+            this.btnreportes.TabIndex = 24;
+            this.btnreportes.Text = "Reportes";
+            this.btnreportes.Click += new System.EventHandler(this.btnreportes_Click);
             // 
             // btnReq_PT
             // 
@@ -414,7 +433,7 @@
             this.cmdRegistroLote.Name = "cmdRegistroLote";
             this.cmdRegistroLote.Size = new System.Drawing.Size(265, 87);
             this.cmdRegistroLote.TabIndex = 10;
-            this.cmdRegistroLote.Text = "Registro Lote";
+            this.cmdRegistroLote.Text = "Ingresos";
             this.cmdRegistroLote.Click += new System.EventHandler(this.cmdRegistroLote_Click);
             // 
             // simpleButton3
@@ -597,12 +616,29 @@
             this.btnAlimentacionManual.Text = "Alimentación Manual";
             this.btnAlimentacionManual.Click += new System.EventHandler(this.btnAlimentacionManual_Click);
             // 
+            // labelControl3
+            // 
+            this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Appearance.Options.UseTextOptions = true;
+            this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl3.Location = new System.Drawing.Point(39, 31);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(496, 48);
+            this.labelControl3.TabIndex = 31;
+            this.labelControl3.Text = "Menu principal";
+            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(851, 689);
+            this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.tabOpciones);
             this.Controls.Add(this.cmdHome);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -656,5 +692,7 @@
         private DevExpress.XtraEditors.SimpleButton btndespachos;
         private DevExpress.XtraEditors.SimpleButton btnplanesdespachos;
         private DevExpress.XtraEditors.SimpleButton btnReq_PT;
+        private DevExpress.XtraEditors.SimpleButton btnreportes;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
     }
 }

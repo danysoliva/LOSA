@@ -238,5 +238,11 @@ namespace LOSA
             LOSA.Despachos.frm_Reqresumen_pt frm = new Despachos.frm_Reqresumen_pt(UsuarioLogeado);
             frm.Show();
         }
+
+        private void btnreportes_Click(object sender, EventArgs e)
+        {
+            LOSA.Reportes.frmreport frm = new Reportes.frmreport();
+            frm.Show();
+        }
     }
 }

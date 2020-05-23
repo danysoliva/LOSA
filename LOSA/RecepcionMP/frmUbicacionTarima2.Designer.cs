@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUbicacionTarima2));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.ubicacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -131,7 +131,6 @@
             // 
             // navigationPage1
             // 
-            this.navigationPage1.Caption = "navigationPage1";
             this.navigationPage1.Controls.Add(this.labelControl4);
             this.navigationPage1.Controls.Add(this.gridControl1);
             this.navigationPage1.Margin = new System.Windows.Forms.Padding(4);
@@ -221,15 +220,16 @@
             // btnSeleccionar
             // 
             this.btnSeleccionar.AutoHeight = false;
-            editorButtonImageOptions5.Image = global::LOSA.Properties.Resources.tap;
+            editorButtonImageOptions1.Image = global::LOSA.Properties.Resources.tap;
             this.btnSeleccionar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions5, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnSeleccionar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnSeleccionar_ButtonClick);
             // 
             // navigationPage3
             // 
+            this.navigationPage3.Caption = "navigationPage3";
             this.navigationPage3.Controls.Add(this.labelControl1);
             this.navigationPage3.Controls.Add(this.gridControl3);
             this.navigationPage3.Margin = new System.Windows.Forms.Padding(4);
@@ -315,9 +315,9 @@
             // btnSeleccionar3
             // 
             this.btnSeleccionar3.AutoHeight = false;
-            editorButtonImageOptions6.Image = global::LOSA.Properties.Resources.tap;
+            editorButtonImageOptions2.Image = global::LOSA.Properties.Resources.tap;
             this.btnSeleccionar3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions6, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.btnSeleccionar3.Name = "btnSeleccionar3";
             this.btnSeleccionar3.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnSeleccionar3.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnSeleccionar3_ButtonClick);

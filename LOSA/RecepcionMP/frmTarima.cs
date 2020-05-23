@@ -185,6 +185,7 @@ namespace LOSA.RecepcionMP
 
         private void cmdGuardar_Click(object sender, EventArgs e)
         {
+            int idloteInserted;
             if (IdSerie <= 0)
             {
                 CajaDialogo.Error("No se puede registrar una tarima sin la boleta de bascula!");
@@ -237,6 +238,34 @@ namespace LOSA.RecepcionMP
                 return;
             }
 
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand("sp_insert_ingresos", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@itemcode", this.ItemCode);//
+                cmd.Parameters.AddWithValue("@itemname", txtMP_Name.Text);//
+                cmd.Parameters.AddWithValue("@cardcode", txtCodigoProveedor.Text);//
+                cmd.Parameters.AddWithValue("@fecha_ingreso", dtFechaIngreso.EditValue);
+                cmd.Parameters.AddWithValue("@numero_transaccion", txtNumIngreso.Text); //
+                cmd.Parameters.AddWithValue("@lote_materia_prima", txtLote.Text);//
+                cmd.Parameters.AddWithValue("@id_presentacion", gridLookUpEditPresentacion.EditValue);//
+                cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);//
+                cmd.Parameters.AddWithValue("@id_boleta", this.IdSerie);//
+                cmd.Parameters.AddWithValue("@cant", txtUnidades.Text);//
+                cmd.Parameters.AddWithValue("@TotalTarimas", txtCantidadTarimasTotal.Text);//
+                cmd.Parameters.AddWithValue("@peso", Convert.ToDecimal(txtPesoKg.Text));//
+                idloteInserted = Convert.ToInt32(cmd.ExecuteScalar());
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+                return;
+               
+            }
 
             bool Guardo = false;
             int vid_tarima = 0;
@@ -255,7 +284,7 @@ namespace LOSA.RecepcionMP
                     cmm.Parameters.AddWithValue("@id", 1);
                     string barcode = cmm.ExecuteScalar().ToString();
 
-                    SqlCommand cmd = new SqlCommand("sp_insert_new_tarima", con);
+                    SqlCommand cmd = new SqlCommand("sp_insert_ingresos", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@itemcode", this.ItemCode);
                     cmd.Parameters.AddWithValue("@id_proveedor", txtCodigoProveedor.Text);
@@ -270,6 +299,7 @@ namespace LOSA.RecepcionMP
                     cmd.Parameters.AddWithValue("@codigo_barra", barcode);
                     cmd.Parameters.AddWithValue("@cant", txtUnidades.Text);
                     cmd.Parameters.AddWithValue("@peso", Convert.ToDecimal(txtPesoKg.Text));
+                    cmd.Parameters.AddWithValue("@idlotes", idloteInserted);
                     vid_tarima = Convert.ToInt32(cmd.ExecuteScalar());
 
                     SqlCommand cmdx = new SqlCommand("sp_insert_ubicacion_default", con);
