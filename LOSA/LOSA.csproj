@@ -470,6 +470,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsRecepcionMP.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RecepcionMP\frmagregarlote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmagregarlote.Designer.cs">
+      <DependentUpon>frmagregarlote.cs</DependentUpon>
+    </Compile>
     <Compile Include="RecepcionMP\frmAjustesKardex.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -797,6 +803,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RecepcionMP\frmagregarlote.resx">
+      <DependentUpon>frmagregarlote.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmAjustesKardex.resx">
       <DependentUpon>frmAjustesKardex.cs</DependentUpon>
     </EmbeddedResource>
