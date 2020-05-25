@@ -16,7 +16,7 @@
     <Shape ID="DesignTable:bodegas" ZOrder="5" X="330" Y="611" Height="86" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="82" />
     <Shape ID="DesignTable:pasillos" ZOrder="3" X="671" Y="245" Height="86" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="82" />
     <Shape ID="DesignTable:racks" ZOrder="4" X="855" Y="287" Height="86" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="86" />
-    <Shape ID="DesignTable:IngresosMP" ZOrder="1" X="487" Y="59" Height="148" Width="152" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="144" />
+    <Shape ID="DesignTable:IngresosMP" ZOrder="1" X="487" Y="59" Height="171" Width="152" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="144" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

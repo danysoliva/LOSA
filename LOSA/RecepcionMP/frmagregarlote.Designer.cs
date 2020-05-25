@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmagregarlote));
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -41,8 +42,6 @@
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.gridLookUpEditPresentacion = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.txtLote = new DevExpress.XtraEditors.TextEdit();
@@ -62,6 +61,10 @@
             this.txtMP_Name = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txtCodigoMP = new DevExpress.XtraEditors.TextEdit();
+            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dsRecepcionMPx = new LOSA.RecepcionMP.dsRecepcionMPx();
+            this.presentacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.txtIdBoleta.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadTarimasTotal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPesoKg.Properties)).BeginInit();
@@ -80,6 +83,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigoProveedor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMP_Name.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigoMP.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.presentacionesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAtras
@@ -98,6 +103,7 @@
             this.btnAtras.Size = new System.Drawing.Size(223, 58);
             this.btnAtras.TabIndex = 10;
             this.btnAtras.Text = "Atras";
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
             // labelControl1
             // 
@@ -131,6 +137,7 @@
             this.cmdGuardar.Size = new System.Drawing.Size(223, 58);
             this.cmdGuardar.TabIndex = 30;
             this.cmdGuardar.Text = "Guardar";
+            this.cmdGuardar.Click += new System.EventHandler(this.cmdGuardar_Click);
             // 
             // simpleButton1
             // 
@@ -233,11 +240,13 @@
             this.gridLookUpEditPresentacion.Properties.Appearance.Options.UseFont = true;
             this.gridLookUpEditPresentacion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.gridLookUpEditPresentacion.Properties.DataSource = this.presentacionesBindingSource;
             this.gridLookUpEditPresentacion.Properties.DisplayMember = "descripcion";
             this.gridLookUpEditPresentacion.Properties.ValueMember = "id";
             this.gridLookUpEditPresentacion.Properties.View = this.gridLookUpEdit1View;
             this.gridLookUpEditPresentacion.Size = new System.Drawing.Size(227, 36);
             this.gridLookUpEditPresentacion.TabIndex = 57;
+            this.gridLookUpEditPresentacion.EditValueChanged += new System.EventHandler(this.gridLookUpEditPresentacion_EditValueChanged);
             // 
             // gridLookUpEdit1View
             // 
@@ -250,19 +259,6 @@
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
-            // colid
-            // 
-            this.colid.FieldName = "id";
-            this.colid.Name = "colid";
-            // 
-            // coldescripcion
-            // 
-            this.coldescripcion.Caption = "Presentaciones";
-            this.coldescripcion.FieldName = "descripcion";
-            this.coldescripcion.Name = "coldescripcion";
-            this.coldescripcion.Visible = true;
-            this.coldescripcion.VisibleIndex = 0;
             // 
             // labelControl11
             // 
@@ -381,6 +377,9 @@
             this.txtUnidades.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtUnidades.Size = new System.Drawing.Size(189, 38);
             this.txtUnidades.TabIndex = 58;
+            this.txtUnidades.TextChanged += new System.EventHandler(this.txtUnidades_TextChanged);
+            this.txtUnidades.Enter += new System.EventHandler(this.txtUnidades_Enter);
+            this.txtUnidades.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUnidades_KeyPress);
             // 
             // txtNumIngreso
             // 
@@ -510,6 +509,29 @@
             this.txtCodigoMP.Size = new System.Drawing.Size(189, 32);
             this.txtCodigoMP.TabIndex = 63;
             // 
+            // colid
+            // 
+            this.colid.FieldName = "id";
+            this.colid.Name = "colid";
+            // 
+            // coldescripcion
+            // 
+            this.coldescripcion.Caption = "Presentaciones";
+            this.coldescripcion.FieldName = "descripcion";
+            this.coldescripcion.Name = "coldescripcion";
+            this.coldescripcion.Visible = true;
+            this.coldescripcion.VisibleIndex = 0;
+            // 
+            // dsRecepcionMPx
+            // 
+            this.dsRecepcionMPx.DataSetName = "dsRecepcionMPx";
+            this.dsRecepcionMPx.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // presentacionesBindingSource
+            // 
+            this.presentacionesBindingSource.DataMember = "presentaciones";
+            this.presentacionesBindingSource.DataSource = this.dsRecepcionMPx;
+            // 
             // frmagregarlote
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -569,6 +591,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigoProveedor.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMP_Name.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigoMP.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.presentacionesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -609,5 +633,7 @@
         private DevExpress.XtraEditors.TextEdit txtMP_Name;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.TextEdit txtCodigoMP;
+        private System.Windows.Forms.BindingSource presentacionesBindingSource;
+        private dsRecepcionMPx dsRecepcionMPx;
     }
 }

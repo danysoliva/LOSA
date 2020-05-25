@@ -196,5 +196,15 @@ namespace LOSA.RecepcionMP
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            frmagregarlote frm = new frmagregarlote(Id_ingreso,Numero_transaccion, UsuarioLogeado);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+
+                LoadTarimas();
+            }
+        }
     }
 }

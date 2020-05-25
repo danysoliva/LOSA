@@ -59,7 +59,10 @@ namespace LOSA.RecepcionMP
         {
             frmTarima frm = new frmTarima(UsuarioLogeado);
             frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                Load_Info();
+            }
         }
 
         private void btnver_Click(object sender, EventArgs e)
@@ -69,7 +72,7 @@ namespace LOSA.RecepcionMP
                 var gridview = (GridView)grd_ingreso.FocusedView;
                 var row = (dsRecepcionMPx.IngresosMPRow)gridview.GetFocusedDataRow();
 
-                frm_ingresos_lotes frmDetalle = new frm_ingresos_lotes(1, row.Ningreso, UsuarioLogeado);
+                frm_ingresos_lotes frmDetalle = new frm_ingresos_lotes(row.id, row.Ningreso, UsuarioLogeado);
                 if (frmDetalle.ShowDialog() == DialogResult.OK)
                 {
                     Load_Info();

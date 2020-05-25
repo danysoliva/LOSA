@@ -134,6 +134,7 @@ namespace LOSA.RecepcionMP
         {
             if(e.KeyCode == Keys.Enter)
             {
+
                 int id_b = 0;
                 try
                 {
@@ -245,9 +246,10 @@ namespace LOSA.RecepcionMP
                 cn.Open();
                 SqlCommand cmd = new SqlCommand("sp_insert_ingresos", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@itemcode", this.ItemCode);//
+                cmd.Parameters.AddWithValue("@itemcode", txtCodigoMP.Text);//
                 cmd.Parameters.AddWithValue("@itemname", txtMP_Name.Text);//
                 cmd.Parameters.AddWithValue("@cardcode", txtCodigoProveedor.Text);//
+                cmd.Parameters.AddWithValue("@cardname", txtProveedorName.Text);  //
                 cmd.Parameters.AddWithValue("@fecha_ingreso", dtFechaIngreso.EditValue);
                 cmd.Parameters.AddWithValue("@numero_transaccion", txtNumIngreso.Text); //
                 cmd.Parameters.AddWithValue("@lote_materia_prima", txtLote.Text);//
@@ -256,7 +258,7 @@ namespace LOSA.RecepcionMP
                 cmd.Parameters.AddWithValue("@id_boleta", this.IdSerie);//
                 cmd.Parameters.AddWithValue("@cant", txtUnidades.Text);//
                 cmd.Parameters.AddWithValue("@TotalTarimas", txtCantidadTarimasTotal.Text);//
-                cmd.Parameters.AddWithValue("@peso", Convert.ToDecimal(txtPesoKg.Text));//
+                cmd.Parameters.AddWithValue("@pesotaria", Convert.ToDecimal(txtPesoKg.Text));//
                 idloteInserted = Convert.ToInt32(cmd.ExecuteScalar());
                 cn.Close();
             }
@@ -284,9 +286,9 @@ namespace LOSA.RecepcionMP
                     cmm.Parameters.AddWithValue("@id", 1);
                     string barcode = cmm.ExecuteScalar().ToString();
 
-                    SqlCommand cmd = new SqlCommand("sp_insert_ingresos", con);
+                    SqlCommand cmd = new SqlCommand("sp_insert_new_tarima", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@itemcode", this.ItemCode);
+                    cmd.Parameters.AddWithValue("@itemcode", txtCodigoMP.Text);
                     cmd.Parameters.AddWithValue("@id_proveedor", txtCodigoProveedor.Text);
                     cmd.Parameters.AddWithValue("@fecha_ingreso", dtFechaIngreso.EditValue);
                     cmd.Parameters.AddWithValue("@numero_transaccion", txtNumIngreso.Text);
@@ -337,6 +339,8 @@ namespace LOSA.RecepcionMP
                     }
                 }
             }
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
 
         private void txtCantidadT_Enter(object sender, EventArgs e)
