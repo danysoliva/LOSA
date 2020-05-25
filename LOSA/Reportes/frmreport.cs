@@ -8,6 +8,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using LOSA.Logistica;
+using LOSA.Produccion;
 
 namespace LOSA.Reportes
 {
@@ -32,6 +34,36 @@ namespace LOSA.Reportes
         private void cmdRegistroLote_Click(object sender, EventArgs e)
         {
             frmtarimasporbodega frm = new frmtarimasporbodega();
+            frm.Show();
+        }
+
+        private void btnLotesXMP_Click(object sender, EventArgs e)
+        {
+            frmLotesXMP frm = new frmLotesXMP();
+            frm.Show();
+        }
+
+        private void btnCantidadMP_Click(object sender, EventArgs e)
+        {
+            frmCantidadMP frm = new frmCantidadMP();
+            frm.Show();
+        }
+
+        private void btnLotes_Click(object sender, EventArgs e)
+        {
+            frmLotes frm = new frmLotes();
+            frm.Show();
+        }
+
+        private void btnTrazabilidad_Click(object sender, EventArgs e)
+        {
+            frmTrazabilidadLote frm = new frmTrazabilidadLote();
+            frm.Show();
+        }
+
+        private void btnLotesPorProveedor_Click(object sender, EventArgs e)
+        {
+            frmLotesXProveedor frm = new frmLotesXProveedor();
             frm.Show();
         }
     }
