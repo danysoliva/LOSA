@@ -334,15 +334,22 @@ namespace LOSA.RecepcionMP
                         int id_tarimax = Convert.ToInt32(List[i]);
                         rptReporteIngresoTarima report = new rptReporteIngresoTarima(id_tarimax);
                         report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
-                        ReportPrintTool printReport = new ReportPrintTool(report);
-                        printReport.ShowPreview();
+                        report.ShowPrintMarginsWarning = false;
+                        report.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
+                        report.Print();
+
+                        
                     }
                 }
             }
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
-
+        private void PrintingSystem_StartPrint(object sender, DevExpress.XtraPrinting.PrintDocumentEventArgs e)
+        {
+            //Indica el numero de copias de la boleta que seran impresas
+            e.PrintDocument.PrinterSettings.Copies = 1;
+        }
         private void txtCantidadT_Enter(object sender, EventArgs e)
         {
             Teclado.abrirTeclado();
