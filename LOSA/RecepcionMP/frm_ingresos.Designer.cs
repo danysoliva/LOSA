@@ -40,10 +40,10 @@
             this.colCardName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltarimas = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnver = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.btnAgregar = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_ingreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_ingreso)).BeginInit();
@@ -57,12 +57,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_ingreso.DataMember = "IngresosMP";
             this.grd_ingreso.DataSource = this.dsRecepcionMPx;
-            this.grd_ingreso.Location = new System.Drawing.Point(1, 129);
+            this.grd_ingreso.Location = new System.Drawing.Point(1, 86);
             this.grd_ingreso.MainView = this.grdv_ingreso;
             this.grd_ingreso.Name = "grd_ingreso";
             this.grd_ingreso.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnver});
-            this.grd_ingreso.Size = new System.Drawing.Size(828, 513);
+            this.grd_ingreso.Size = new System.Drawing.Size(828, 556);
             this.grd_ingreso.TabIndex = 0;
             this.grd_ingreso.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_ingreso});
@@ -76,7 +76,7 @@
             // 
             this.grdv_ingreso.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.grdv_ingreso.Appearance.FocusedRow.Options.UseFont = true;
-            this.grdv_ingreso.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdv_ingreso.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdv_ingreso.Appearance.HeaderPanel.Options.UseFont = true;
             this.grdv_ingreso.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.grdv_ingreso.Appearance.Row.Options.UseFont = true;
@@ -162,6 +162,11 @@
             this.btnver.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnver.Click += new System.EventHandler(this.btnver_Click);
             // 
+            // colid
+            // 
+            this.colid.FieldName = "id";
+            this.colid.Name = "colid";
+            // 
             // btnAtras
             // 
             this.btnAtras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -212,11 +217,6 @@
             this.labelControl3.Size = new System.Drawing.Size(330, 44);
             this.labelControl3.TabIndex = 30;
             this.labelControl3.Text = "Ingresos de MP";
-            // 
-            // colid
-            // 
-            this.colid.FieldName = "id";
-            this.colid.Name = "colid";
             // 
             // frm_ingresos
             // 
