@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCambiarUbicacionTarima));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.beIdTarima = new DevExpress.XtraEditors.ButtonEdit();
             this.cmdSelectTarima = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -75,16 +75,17 @@
             this.beIdTarima.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.beIdTarima.EditValue = "";
-            this.beIdTarima.Location = new System.Drawing.Point(72, 99);
+            this.beIdTarima.Location = new System.Drawing.Point(96, 122);
+            this.beIdTarima.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.beIdTarima.Name = "beIdTarima";
             this.beIdTarima.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.beIdTarima.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.beIdTarima.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.beIdTarima.Properties.MaxLength = 20;
             this.beIdTarima.Properties.NullText = "Escanee o selecciona una tarima";
-            this.beIdTarima.Size = new System.Drawing.Size(312, 36);
+            this.beIdTarima.Size = new System.Drawing.Size(416, 42);
             this.beIdTarima.TabIndex = 31;
             this.beIdTarima.ToolTip = "Hola";
             this.beIdTarima.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.BeUbicacionActual_ButtonClick);
@@ -98,9 +99,10 @@
             this.cmdSelectTarima.Appearance.Options.UseFont = true;
             this.cmdSelectTarima.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdSelectTarima.ImageOptions.Image = global::LOSA.Properties.Resources.tap;
-            this.cmdSelectTarima.Location = new System.Drawing.Point(396, 96);
+            this.cmdSelectTarima.Location = new System.Drawing.Point(528, 118);
+            this.cmdSelectTarima.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmdSelectTarima.Name = "cmdSelectTarima";
-            this.cmdSelectTarima.Size = new System.Drawing.Size(42, 40);
+            this.cmdSelectTarima.Size = new System.Drawing.Size(56, 49);
             this.cmdSelectTarima.TabIndex = 30;
             this.cmdSelectTarima.Click += new System.EventHandler(this.CmdSelectTarima_Click);
             // 
@@ -110,9 +112,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(12, 106);
+            this.labelControl1.Location = new System.Drawing.Point(16, 130);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(57, 21);
+            this.labelControl1.Size = new System.Drawing.Size(71, 28);
             this.labelControl1.TabIndex = 29;
             this.labelControl1.Text = "Tarima:";
             // 
@@ -125,9 +128,10 @@
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdHome.ImageOptions.Image")));
-            this.cmdHome.Location = new System.Drawing.Point(458, 32);
+            this.cmdHome.Location = new System.Drawing.Point(611, 39);
+            this.cmdHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmdHome.Name = "cmdHome";
-            this.cmdHome.Size = new System.Drawing.Size(161, 59);
+            this.cmdHome.Size = new System.Drawing.Size(215, 73);
             this.cmdHome.TabIndex = 33;
             this.cmdHome.Text = "Home";
             this.cmdHome.Click += new System.EventHandler(this.CmdHome_Click);
@@ -141,9 +145,10 @@
             this.labelControl3.Appearance.Options.UseTextOptions = true;
             this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl3.Location = new System.Drawing.Point(0, 8);
+            this.labelControl3.Location = new System.Drawing.Point(0, 10);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(610, 21);
+            this.labelControl3.Size = new System.Drawing.Size(813, 26);
             this.labelControl3.TabIndex = 32;
             this.labelControl3.Text = "Ubicación de Tarima";
             // 
@@ -152,10 +157,12 @@
             this.gcUbicacionActual.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gcUbicacionActual.EmbeddedNavigator.Appearance.BackColor = System.Drawing.SystemColors.Control;
             this.gcUbicacionActual.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
-            this.gcUbicacionActual.Location = new System.Drawing.Point(2, 22);
+            this.gcUbicacionActual.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcUbicacionActual.Location = new System.Drawing.Point(2, 29);
             this.gcUbicacionActual.MainView = this.gvUbicacionActual;
+            this.gcUbicacionActual.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gcUbicacionActual.Name = "gcUbicacionActual";
-            this.gcUbicacionActual.Size = new System.Drawing.Size(300, 145);
+            this.gcUbicacionActual.Size = new System.Drawing.Size(401, 176);
             this.gcUbicacionActual.TabIndex = 34;
             this.gcUbicacionActual.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvUbicacionActual});
@@ -321,9 +328,10 @@
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
             this.groupControl1.Controls.Add(this.gcUbicacionActual);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(312, 3);
+            this.groupControl1.Location = new System.Drawing.Point(416, 4);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(304, 169);
+            this.groupControl1.Size = new System.Drawing.Size(405, 207);
             this.groupControl1.TabIndex = 35;
             this.groupControl1.Text = "Ubicación Actual";
             // 
@@ -334,9 +342,10 @@
             this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupControl2.AppearanceCaption.Options.UseFont = true;
             this.groupControl2.Controls.Add(this.gcNuevaUbicación);
-            this.groupControl2.Location = new System.Drawing.Point(3, 372);
+            this.groupControl2.Location = new System.Drawing.Point(4, 458);
+            this.groupControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(616, 147);
+            this.groupControl2.Size = new System.Drawing.Size(821, 181);
             this.groupControl2.TabIndex = 36;
             this.groupControl2.Text = "Nueva Ubicación";
             // 
@@ -346,10 +355,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcNuevaUbicación.EmbeddedNavigator.Appearance.BackColor = System.Drawing.SystemColors.Control;
             this.gcNuevaUbicación.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
-            this.gcNuevaUbicación.Location = new System.Drawing.Point(6, 25);
+            this.gcNuevaUbicación.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcNuevaUbicación.Location = new System.Drawing.Point(8, 31);
             this.gcNuevaUbicación.MainView = this.gvNuevaUbicacion;
+            this.gcNuevaUbicación.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gcNuevaUbicación.Name = "gcNuevaUbicación";
-            this.gcNuevaUbicación.Size = new System.Drawing.Size(598, 116);
+            this.gcNuevaUbicación.Size = new System.Drawing.Size(797, 143);
             this.gcNuevaUbicación.TabIndex = 34;
             this.gcNuevaUbicación.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvNuevaUbicacion});
@@ -515,16 +526,17 @@
             this.beNuevaUbicacion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.beNuevaUbicacion.EditValue = "";
-            this.beNuevaUbicacion.Location = new System.Drawing.Point(150, 340);
+            this.beNuevaUbicacion.Location = new System.Drawing.Point(200, 418);
+            this.beNuevaUbicacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.beNuevaUbicacion.Name = "beNuevaUbicacion";
             this.beNuevaUbicacion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.beNuevaUbicacion.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.beNuevaUbicacion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions3, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.beNuevaUbicacion.Properties.MaxLength = 20;
             this.beNuevaUbicacion.Properties.NullText = "Escanee o selecciona una tarima";
-            this.beNuevaUbicacion.Size = new System.Drawing.Size(325, 28);
+            this.beNuevaUbicacion.Size = new System.Drawing.Size(433, 34);
             this.beNuevaUbicacion.TabIndex = 39;
             this.beNuevaUbicacion.ToolTip = "Hola";
             this.beNuevaUbicacion.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.BeNuevaUbicacion_ButtonClick);
@@ -538,9 +550,10 @@
             this.btnUbicacion.Appearance.Options.UseFont = true;
             this.btnUbicacion.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnUbicacion.ImageOptions.Image = global::LOSA.Properties.Resources.tap;
-            this.btnUbicacion.Location = new System.Drawing.Point(481, 328);
+            this.btnUbicacion.Location = new System.Drawing.Point(641, 404);
+            this.btnUbicacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUbicacion.Name = "btnUbicacion";
-            this.btnUbicacion.Size = new System.Drawing.Size(42, 40);
+            this.btnUbicacion.Size = new System.Drawing.Size(56, 49);
             this.btnUbicacion.TabIndex = 38;
             this.btnUbicacion.Click += new System.EventHandler(this.BtnUbicacion_Click);
             // 
@@ -550,9 +563,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(9, 345);
+            this.labelControl2.Location = new System.Drawing.Point(12, 425);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(135, 21);
+            this.labelControl2.Size = new System.Drawing.Size(165, 28);
             this.labelControl2.TabIndex = 37;
             this.labelControl2.Text = "Nueva Ubicación:";
             // 
@@ -561,9 +575,11 @@
             this.separatorControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.separatorControl1.BackColor = System.Drawing.Color.Transparent;
-            this.separatorControl1.Location = new System.Drawing.Point(0, 130);
+            this.separatorControl1.Location = new System.Drawing.Point(0, 160);
+            this.separatorControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.separatorControl1.Name = "separatorControl1";
-            this.separatorControl1.Size = new System.Drawing.Size(619, 23);
+            this.separatorControl1.Padding = new System.Windows.Forms.Padding(12, 11, 12, 11);
+            this.separatorControl1.Size = new System.Drawing.Size(825, 28);
             this.separatorControl1.TabIndex = 40;
             // 
             // btnGuardar
@@ -575,9 +591,10 @@
             this.btnGuardar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.Image")));
             this.btnGuardar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.btnGuardar.Location = new System.Drawing.Point(12, 32);
+            this.btnGuardar.Location = new System.Drawing.Point(16, 39);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(131, 59);
+            this.btnGuardar.Size = new System.Drawing.Size(175, 73);
             this.btnGuardar.TabIndex = 41;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
@@ -590,9 +607,10 @@
             this.groupControl3.AppearanceCaption.Options.UseFont = true;
             this.groupControl3.Controls.Add(this.gcTarima);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl3.Location = new System.Drawing.Point(3, 3);
+            this.groupControl3.Location = new System.Drawing.Point(4, 4);
+            this.groupControl3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(303, 169);
+            this.groupControl3.Size = new System.Drawing.Size(404, 207);
             this.groupControl3.TabIndex = 36;
             this.groupControl3.Text = "Información Tarima";
             // 
@@ -601,10 +619,12 @@
             this.gcTarima.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gcTarima.EmbeddedNavigator.Appearance.BackColor = System.Drawing.SystemColors.Control;
             this.gcTarima.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
-            this.gcTarima.Location = new System.Drawing.Point(2, 22);
+            this.gcTarima.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcTarima.Location = new System.Drawing.Point(2, 29);
             this.gcTarima.MainView = this.gvTarima;
+            this.gcTarima.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gcTarima.Name = "gcTarima";
-            this.gcTarima.Size = new System.Drawing.Size(299, 145);
+            this.gcTarima.Size = new System.Drawing.Size(400, 176);
             this.gcTarima.TabIndex = 34;
             this.gcTarima.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTarima});
@@ -773,18 +793,19 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.groupControl3, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.groupControl1, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 147);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 181);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(619, 175);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(825, 215);
             this.tableLayoutPanel1.TabIndex = 43;
             // 
             // frmCambiarUbicacionTarima
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(622, 521);
+            this.ClientSize = new System.Drawing.Size(829, 641);
             this.Controls.Add(this.cmdSelectTarima);
             this.Controls.Add(this.beIdTarima);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -798,6 +819,7 @@
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmCambiarUbicacionTarima";
             this.Text = "frmCambiarUbicacionTarima";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

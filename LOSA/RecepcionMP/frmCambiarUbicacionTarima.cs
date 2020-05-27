@@ -213,6 +213,7 @@ namespace LOSA.RecepcionMP
             }
         }
 
+
         private void GvNuevaUbicacion_InitNewRow(object sender, DevExpress.XtraGrid.Views.Grid.InitNewRowEventArgs e)
         {
 

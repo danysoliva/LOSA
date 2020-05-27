@@ -21,6 +21,7 @@ namespace LOSA.RecepcionMP
         int IdSerie;
         int NumBoleta;
         int IdMP;
+        int idUbicacionNueva;
         string ItemCode;
         UserLogin UsuarioLogeado;
         decimal factor;
@@ -192,6 +193,11 @@ namespace LOSA.RecepcionMP
                 CajaDialogo.Error("No se puede registrar una tarima sin la boleta de bascula!");
                 return;
             }
+            if (gvNuevaUbicacion.RowCount <= 0)
+            {
+                CajaDialogo.Error("Debe seleccionar una ubicacion predeterminada para todas las tarimas.");
+                return;
+            }
 
             if (Convert.ToDecimal(txtUnidades .Text) <= 0)
             {
@@ -304,11 +310,12 @@ namespace LOSA.RecepcionMP
                     cmd.Parameters.AddWithValue("@idlotes", idloteInserted);
                     vid_tarima = Convert.ToInt32(cmd.ExecuteScalar());
 
-                    SqlCommand cmdx = new SqlCommand("sp_insert_ubicacion_default", con);
+                    SqlCommand cmdx = new SqlCommand("sp_insert_ubicacion_default", con);// ahora recibe el parametro de ubicacion para poder guardarlo automatico en todas las tarimas
                     cmdx.CommandType = CommandType.StoredProcedure;
                     cmdx.Parameters.AddWithValue("@id_tarima", vid_tarima);
                     cmdx.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
                     cmdx.Parameters.AddWithValue("@codigo_barra", barcode);
+                    cmdx.Parameters.AddWithValue("@id_ubicacion", idUbicacionNueva);
                     cmdx.ExecuteNonQuery();
 
                     List.Add(vid_tarima);
@@ -434,6 +441,36 @@ namespace LOSA.RecepcionMP
         }
 
         private void txtUnidades_Leave(object sender, EventArgs e)
+        {
+
+        }
+        private DataTable CreateDataUbicacion_v2(string pRack, string pBodega)
+        {
+            DataTable dt = new DataTable();
+
+            dt.Columns.Add("Detalle", typeof(string));
+            dt.Columns.Add("Valor", typeof(string));
+
+            dt.Rows.Add("Bodega", pBodega);
+
+            dt.Rows.Add("RACK", pRack);
+            //dt.Rows.Add("ALTURA", pAltura);
+            //dt.Rows.Add("PROFUNDIDAD", pProfundidad);
+
+            return dt;
+        }
+        private void btnUbicacion_Click(object sender, EventArgs e)
+        {
+            frmUbicacionTarima2 frm = new frmUbicacionTarima2();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                idUbicacionNueva = frm.idUbicacion;
+                gcNuevaUbicación.DataSource = CreateDataUbicacion_v2(frm.rack, frm.BodegaNombre);
+                gvNuevaUbicacion.InitNewRow += GvNuevaUbicacion_InitNewRow;
+                gvNuevaUbicacion.Columns[0].AppearanceCell.Font = new Font("Segoe UI", 11, FontStyle.Bold);
+            }
+        }
+        private void GvNuevaUbicacion_InitNewRow(object sender, DevExpress.XtraGrid.Views.Grid.InitNewRowEventArgs e)
         {
 
         }

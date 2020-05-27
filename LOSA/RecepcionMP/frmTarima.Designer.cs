@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTarima));
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnAgregar = new DevExpress.XtraEditors.SimpleButton();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
@@ -56,7 +58,7 @@
             this.cmdGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.gridLookUpEditPresentacion = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.bindingSourcePresentaciones = new System.Windows.Forms.BindingSource();
+            this.bindingSourcePresentaciones = new System.Windows.Forms.BindingSource(this.components);
             this.dsRecepcionMPx1 = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -65,6 +67,12 @@
             this.txtPesoKg = new DevExpress.XtraEditors.TextEdit();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.txtCantidadTarimasTotal = new DevExpress.XtraEditors.TextEdit();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.gcNuevaUbicación = new DevExpress.XtraGrid.GridControl();
+            this.gvNuevaUbicacion = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.beNuevaUbicacion = new DevExpress.XtraEditors.ButtonEdit();
+            this.btnUbicacion = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdBoleta.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigoMP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMP_Name.Properties)).BeginInit();
@@ -85,6 +93,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPesoKg.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadTarimasTotal.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcNuevaUbicación)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvNuevaUbicacion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beNuevaUbicacion.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -98,8 +111,9 @@
             this.labelControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl1.Location = new System.Drawing.Point(0, 2);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(638, 40);
+            this.labelControl1.Size = new System.Drawing.Size(851, 49);
             this.labelControl1.TabIndex = 28;
             this.labelControl1.Text = "Registro de Tarima #Lote";
             this.labelControl1.Click += new System.EventHandler(this.btnAtras_Click_1);
@@ -114,9 +128,10 @@
             this.btnAgregar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAgregar.ImageOptions.Image = global::LOSA.Properties.Resources.plus;
             this.btnAgregar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAgregar.Location = new System.Drawing.Point(253, 45);
+            this.btnAgregar.Location = new System.Drawing.Point(337, 55);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(167, 47);
+            this.btnAgregar.Size = new System.Drawing.Size(223, 58);
             this.btnAgregar.TabIndex = 27;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.Visible = false;
@@ -131,9 +146,10 @@
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(459, 45);
+            this.btnAtras.Location = new System.Drawing.Point(612, 55);
+            this.btnAtras.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(167, 47);
+            this.btnAtras.Size = new System.Drawing.Size(223, 58);
             this.btnAtras.TabIndex = 9;
             this.btnAtras.Text = "Atras";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click_1);
@@ -142,21 +158,23 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(16, 123);
+            this.labelControl2.Location = new System.Drawing.Point(21, 140);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(125, 24);
+            this.labelControl2.Size = new System.Drawing.Size(163, 29);
             this.labelControl2.TabIndex = 30;
             this.labelControl2.Text = "# Boleta Ttrace";
             // 
             // txtIdBoleta
             // 
             this.txtIdBoleta.EditValue = "";
-            this.txtIdBoleta.Location = new System.Drawing.Point(187, 119);
+            this.txtIdBoleta.Location = new System.Drawing.Point(249, 135);
+            this.txtIdBoleta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtIdBoleta.Name = "txtIdBoleta";
             this.txtIdBoleta.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdBoleta.Properties.Appearance.Options.UseFont = true;
             this.txtIdBoleta.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtIdBoleta.Size = new System.Drawing.Size(142, 32);
+            this.txtIdBoleta.Size = new System.Drawing.Size(189, 38);
             this.txtIdBoleta.TabIndex = 0;
             this.txtIdBoleta.Enter += new System.EventHandler(this.txtIdBoleta_Enter);
             this.txtIdBoleta.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDescripcionCorta_KeyDown);
@@ -170,9 +188,10 @@
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
             this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(335, 114);
+            this.simpleButton1.Location = new System.Drawing.Point(447, 129);
+            this.simpleButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(48, 41);
+            this.simpleButton1.Size = new System.Drawing.Size(64, 50);
             this.simpleButton1.TabIndex = 1;
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
@@ -180,9 +199,10 @@
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(16, 165);
+            this.labelControl3.Location = new System.Drawing.Point(24, 192);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(92, 18);
+            this.labelControl3.Size = new System.Drawing.Size(114, 24);
             this.labelControl3.TabIndex = 33;
             this.labelControl3.Text = "Materia Prima";
             this.labelControl3.Click += new System.EventHandler(this.txtProveedorName_Click);
@@ -191,12 +211,13 @@
             // 
             this.txtCodigoMP.EditValue = "";
             this.txtCodigoMP.Enabled = false;
-            this.txtCodigoMP.Location = new System.Drawing.Point(187, 161);
+            this.txtCodigoMP.Location = new System.Drawing.Point(249, 184);
+            this.txtCodigoMP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCodigoMP.Name = "txtCodigoMP";
             this.txtCodigoMP.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigoMP.Properties.Appearance.Options.UseFont = true;
             this.txtCodigoMP.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCodigoMP.Size = new System.Drawing.Size(142, 26);
+            this.txtCodigoMP.Size = new System.Drawing.Size(189, 32);
             this.txtCodigoMP.TabIndex = 32;
             this.txtCodigoMP.Click += new System.EventHandler(this.txtProveedorName_Click);
             // 
@@ -204,12 +225,13 @@
             // 
             this.txtMP_Name.EditValue = "";
             this.txtMP_Name.Enabled = false;
-            this.txtMP_Name.Location = new System.Drawing.Point(335, 161);
+            this.txtMP_Name.Location = new System.Drawing.Point(450, 187);
+            this.txtMP_Name.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMP_Name.Name = "txtMP_Name";
             this.txtMP_Name.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMP_Name.Properties.Appearance.Options.UseFont = true;
             this.txtMP_Name.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtMP_Name.Size = new System.Drawing.Size(291, 26);
+            this.txtMP_Name.Size = new System.Drawing.Size(388, 32);
             this.txtMP_Name.TabIndex = 34;
             this.txtMP_Name.EditValueChanged += new System.EventHandler(this.textEdit2_EditValueChanged);
             this.txtMP_Name.Click += new System.EventHandler(this.txtProveedorName_Click);
@@ -218,12 +240,13 @@
             // 
             this.txtProveedorName.EditValue = "";
             this.txtProveedorName.Enabled = false;
-            this.txtProveedorName.Location = new System.Drawing.Point(335, 193);
+            this.txtProveedorName.Location = new System.Drawing.Point(447, 227);
+            this.txtProveedorName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtProveedorName.Name = "txtProveedorName";
             this.txtProveedorName.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProveedorName.Properties.Appearance.Options.UseFont = true;
             this.txtProveedorName.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtProveedorName.Size = new System.Drawing.Size(291, 26);
+            this.txtProveedorName.Size = new System.Drawing.Size(388, 32);
             this.txtProveedorName.TabIndex = 37;
             this.txtProveedorName.Click += new System.EventHandler(this.txtProveedorName_Click);
             // 
@@ -231,9 +254,10 @@
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(16, 197);
+            this.labelControl4.Location = new System.Drawing.Point(21, 231);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(69, 18);
+            this.labelControl4.Size = new System.Drawing.Size(88, 24);
             this.labelControl4.TabIndex = 36;
             this.labelControl4.Text = "Proveedor";
             this.labelControl4.Click += new System.EventHandler(this.txtProveedorName_Click);
@@ -242,12 +266,13 @@
             // 
             this.txtCodigoProveedor.EditValue = "";
             this.txtCodigoProveedor.Enabled = false;
-            this.txtCodigoProveedor.Location = new System.Drawing.Point(187, 193);
+            this.txtCodigoProveedor.Location = new System.Drawing.Point(249, 227);
+            this.txtCodigoProveedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCodigoProveedor.Name = "txtCodigoProveedor";
             this.txtCodigoProveedor.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigoProveedor.Properties.Appearance.Options.UseFont = true;
             this.txtCodigoProveedor.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCodigoProveedor.Size = new System.Drawing.Size(142, 26);
+            this.txtCodigoProveedor.Size = new System.Drawing.Size(189, 32);
             this.txtCodigoProveedor.TabIndex = 35;
             this.txtCodigoProveedor.Click += new System.EventHandler(this.txtProveedorName_Click);
             // 
@@ -255,16 +280,18 @@
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(16, 241);
+            this.labelControl5.Location = new System.Drawing.Point(24, 272);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(122, 24);
+            this.labelControl5.Size = new System.Drawing.Size(154, 29);
             this.labelControl5.TabIndex = 38;
             this.labelControl5.Text = "Fecha Ingreso";
             // 
             // dtFechaIngreso
             // 
             this.dtFechaIngreso.EditValue = null;
-            this.dtFechaIngreso.Location = new System.Drawing.Point(187, 238);
+            this.dtFechaIngreso.Location = new System.Drawing.Point(249, 267);
+            this.dtFechaIngreso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtFechaIngreso.Name = "dtFechaIngreso";
             this.dtFechaIngreso.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFechaIngreso.Properties.Appearance.Options.UseFont = true;
@@ -275,30 +302,32 @@
             this.dtFechaIngreso.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.TouchUI;
             this.dtFechaIngreso.Properties.MinValue = new System.DateTime(2019, 11, 1, 0, 0, 0, 0);
             this.dtFechaIngreso.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.dtFechaIngreso.Size = new System.Drawing.Size(142, 30);
+            this.dtFechaIngreso.Size = new System.Drawing.Size(189, 36);
             this.dtFechaIngreso.TabIndex = 39;
             // 
             // labelControl6
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(345, 294);
+            this.labelControl6.Location = new System.Drawing.Point(460, 321);
+            this.labelControl6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(105, 24);
+            this.labelControl6.Size = new System.Drawing.Size(134, 29);
             this.labelControl6.TabIndex = 40;
             this.labelControl6.Text = "# de Ingreso";
             // 
             // txtNumIngreso
             // 
             this.txtNumIngreso.EditValue = "";
-            this.txtNumIngreso.Location = new System.Drawing.Point(456, 286);
+            this.txtNumIngreso.Location = new System.Drawing.Point(608, 311);
+            this.txtNumIngreso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNumIngreso.Name = "txtNumIngreso";
             this.txtNumIngreso.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumIngreso.Properties.Appearance.Options.UseFont = true;
             this.txtNumIngreso.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNumIngreso.Properties.ReadOnly = true;
             this.txtNumIngreso.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtNumIngreso.Size = new System.Drawing.Size(170, 32);
+            this.txtNumIngreso.Size = new System.Drawing.Size(227, 38);
             this.txtNumIngreso.TabIndex = 41;
             this.txtNumIngreso.Enter += new System.EventHandler(this.txtNumIngreso_Enter);
             // 
@@ -306,22 +335,24 @@
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(16, 293);
+            this.labelControl7.Location = new System.Drawing.Point(21, 321);
+            this.labelControl7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(147, 20);
+            this.labelControl7.Size = new System.Drawing.Size(182, 25);
             this.labelControl7.TabIndex = 43;
             this.labelControl7.Text = "Unidades por Tarima";
             // 
             // txtUnidades
             // 
             this.txtUnidades.EditValue = "0";
-            this.txtUnidades.Location = new System.Drawing.Point(187, 286);
+            this.txtUnidades.Location = new System.Drawing.Point(249, 312);
+            this.txtUnidades.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUnidades.Name = "txtUnidades";
             this.txtUnidades.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUnidades.Properties.Appearance.Options.UseFont = true;
             this.txtUnidades.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtUnidades.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtUnidades.Size = new System.Drawing.Size(142, 32);
+            this.txtUnidades.Size = new System.Drawing.Size(189, 38);
             this.txtUnidades.TabIndex = 3;
             this.txtUnidades.TextChanged += new System.EventHandler(this.txtUnidades_TextChanged);
             this.txtUnidades.Enter += new System.EventHandler(this.txtCantidadT_Enter);
@@ -331,7 +362,8 @@
             // dtFechaProduccion
             // 
             this.dtFechaProduccion.EditValue = null;
-            this.dtFechaProduccion.Location = new System.Drawing.Point(187, 373);
+            this.dtFechaProduccion.Location = new System.Drawing.Point(249, 400);
+            this.dtFechaProduccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtFechaProduccion.Name = "dtFechaProduccion";
             this.dtFechaProduccion.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFechaProduccion.Properties.Appearance.Options.UseFont = true;
@@ -342,23 +374,25 @@
             this.dtFechaProduccion.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.TouchUI;
             this.dtFechaProduccion.Properties.MinValue = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
             this.dtFechaProduccion.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.dtFechaProduccion.Size = new System.Drawing.Size(142, 30);
+            this.dtFechaProduccion.Size = new System.Drawing.Size(189, 36);
             this.dtFechaProduccion.TabIndex = 5;
             // 
             // labelControl8
             // 
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(16, 376);
+            this.labelControl8.Location = new System.Drawing.Point(21, 404);
+            this.labelControl8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(156, 24);
+            this.labelControl8.Size = new System.Drawing.Size(195, 29);
             this.labelControl8.TabIndex = 44;
             this.labelControl8.Text = "Fecha Producción";
             // 
             // dtFechaVencimiento
             // 
             this.dtFechaVencimiento.EditValue = null;
-            this.dtFechaVencimiento.Location = new System.Drawing.Point(187, 412);
+            this.dtFechaVencimiento.Location = new System.Drawing.Point(249, 444);
+            this.dtFechaVencimiento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtFechaVencimiento.Name = "dtFechaVencimiento";
             this.dtFechaVencimiento.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFechaVencimiento.Properties.Appearance.Options.UseFont = true;
@@ -368,7 +402,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtFechaVencimiento.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.TouchUI;
             this.dtFechaVencimiento.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.dtFechaVencimiento.Size = new System.Drawing.Size(142, 30);
+            this.dtFechaVencimiento.Size = new System.Drawing.Size(189, 36);
             this.dtFechaVencimiento.TabIndex = 6;
             // 
             // labelControl9
@@ -377,9 +411,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(16, 415);
+            this.labelControl9.Location = new System.Drawing.Point(21, 448);
+            this.labelControl9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(165, 24);
+            this.labelControl9.Size = new System.Drawing.Size(206, 29);
             this.labelControl9.TabIndex = 46;
             this.labelControl9.Text = "Fecha Vencimiento";
             // 
@@ -387,22 +422,24 @@
             // 
             this.labelControl10.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(394, 333);
+            this.labelControl10.Location = new System.Drawing.Point(525, 363);
+            this.labelControl10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(56, 24);
+            this.labelControl10.Size = new System.Drawing.Size(72, 29);
             this.labelControl10.TabIndex = 49;
             this.labelControl10.Text = "# Lote ";
             // 
             // txtLote
             // 
             this.txtLote.EditValue = "";
-            this.txtLote.Location = new System.Drawing.Point(456, 329);
+            this.txtLote.Location = new System.Drawing.Point(608, 358);
+            this.txtLote.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtLote.Name = "txtLote";
             this.txtLote.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLote.Properties.Appearance.Options.UseFont = true;
             this.txtLote.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtLote.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtLote.Size = new System.Drawing.Size(170, 32);
+            this.txtLote.Size = new System.Drawing.Size(227, 38);
             this.txtLote.TabIndex = 4;
             this.txtLote.Enter += new System.EventHandler(this.txtLote_Enter);
             // 
@@ -415,9 +452,10 @@
             this.cmdGuardar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdGuardar.ImageOptions.Image")));
             this.cmdGuardar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.cmdGuardar.Location = new System.Drawing.Point(16, 45);
+            this.cmdGuardar.Location = new System.Drawing.Point(21, 55);
+            this.cmdGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmdGuardar.Name = "cmdGuardar";
-            this.cmdGuardar.Size = new System.Drawing.Size(167, 47);
+            this.cmdGuardar.Size = new System.Drawing.Size(223, 58);
             this.cmdGuardar.TabIndex = 8;
             this.cmdGuardar.Text = "Guardar";
             this.cmdGuardar.Click += new System.EventHandler(this.cmdGuardar_Click);
@@ -426,16 +464,18 @@
             // 
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl11.Appearance.Options.UseFont = true;
-            this.labelControl11.Location = new System.Drawing.Point(335, 241);
+            this.labelControl11.Location = new System.Drawing.Point(447, 271);
+            this.labelControl11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(115, 24);
+            this.labelControl11.Size = new System.Drawing.Size(147, 29);
             this.labelControl11.TabIndex = 51;
             this.labelControl11.Text = "Presentación:";
             // 
             // gridLookUpEditPresentacion
             // 
             this.gridLookUpEditPresentacion.EditValue = "";
-            this.gridLookUpEditPresentacion.Location = new System.Drawing.Point(456, 238);
+            this.gridLookUpEditPresentacion.Location = new System.Drawing.Point(608, 267);
+            this.gridLookUpEditPresentacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gridLookUpEditPresentacion.Name = "gridLookUpEditPresentacion";
             this.gridLookUpEditPresentacion.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridLookUpEditPresentacion.Properties.Appearance.Options.UseFont = true;
@@ -445,7 +485,7 @@
             this.gridLookUpEditPresentacion.Properties.DisplayMember = "descripcion";
             this.gridLookUpEditPresentacion.Properties.ValueMember = "id";
             this.gridLookUpEditPresentacion.Properties.View = this.gridLookUpEdit1View;
-            this.gridLookUpEditPresentacion.Size = new System.Drawing.Size(170, 30);
+            this.gridLookUpEditPresentacion.Size = new System.Drawing.Size(227, 36);
             this.gridLookUpEditPresentacion.TabIndex = 2;
             this.gridLookUpEditPresentacion.EditValueChanged += new System.EventHandler(this.gridLookUpEditPresentacion_EditValueChanged);
             // 
@@ -488,9 +528,10 @@
             // 
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl12.Appearance.Options.UseFont = true;
-            this.labelControl12.Location = new System.Drawing.Point(16, 337);
+            this.labelControl12.Location = new System.Drawing.Point(21, 364);
+            this.labelControl12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(134, 20);
+            this.labelControl12.Size = new System.Drawing.Size(166, 25);
             this.labelControl12.TabIndex = 53;
             this.labelControl12.Text = "Peso Kg por tarima";
             this.labelControl12.Click += new System.EventHandler(this.labelControl12_Click);
@@ -499,13 +540,14 @@
             // 
             this.txtPesoKg.EditValue = "0";
             this.txtPesoKg.Enabled = false;
-            this.txtPesoKg.Location = new System.Drawing.Point(187, 329);
+            this.txtPesoKg.Location = new System.Drawing.Point(249, 354);
+            this.txtPesoKg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPesoKg.Name = "txtPesoKg";
             this.txtPesoKg.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPesoKg.Properties.Appearance.Options.UseFont = true;
             this.txtPesoKg.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPesoKg.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtPesoKg.Size = new System.Drawing.Size(142, 32);
+            this.txtPesoKg.Size = new System.Drawing.Size(189, 38);
             this.txtPesoKg.TabIndex = 54;
             // 
             // labelControl13
@@ -514,31 +556,268 @@
             this.labelControl13.Appearance.ForeColor = System.Drawing.Color.RoyalBlue;
             this.labelControl13.Appearance.Options.UseFont = true;
             this.labelControl13.Appearance.Options.UseForeColor = true;
-            this.labelControl13.Location = new System.Drawing.Point(345, 415);
+            this.labelControl13.Location = new System.Drawing.Point(460, 426);
+            this.labelControl13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Size = new System.Drawing.Size(173, 24);
+            this.labelControl13.Size = new System.Drawing.Size(224, 29);
             this.labelControl13.TabIndex = 56;
             this.labelControl13.Text = "Cantidad de Tarimas";
             // 
             // txtCantidadTarimasTotal
             // 
             this.txtCantidadTarimasTotal.EditValue = "1";
-            this.txtCantidadTarimasTotal.Location = new System.Drawing.Point(524, 411);
+            this.txtCantidadTarimasTotal.Location = new System.Drawing.Point(699, 421);
+            this.txtCantidadTarimasTotal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCantidadTarimasTotal.Name = "txtCantidadTarimasTotal";
             this.txtCantidadTarimasTotal.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCantidadTarimasTotal.Properties.Appearance.Options.UseFont = true;
             this.txtCantidadTarimasTotal.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCantidadTarimasTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtCantidadTarimasTotal.Size = new System.Drawing.Size(102, 32);
+            this.txtCantidadTarimasTotal.Size = new System.Drawing.Size(136, 38);
             this.txtCantidadTarimasTotal.TabIndex = 7;
             this.txtCantidadTarimasTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textEdit1_KeyPress);
             // 
+            // groupControl2
+            // 
+            this.groupControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupControl2.AppearanceCaption.Options.UseFont = true;
+            this.groupControl2.Controls.Add(this.gcNuevaUbicación);
+            this.groupControl2.Location = new System.Drawing.Point(0, 546);
+            this.groupControl2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(851, 146);
+            this.groupControl2.TabIndex = 57;
+            this.groupControl2.Text = "Nueva Ubicación";
+            // 
+            // gcNuevaUbicación
+            // 
+            this.gcNuevaUbicación.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gcNuevaUbicación.EmbeddedNavigator.Appearance.BackColor = System.Drawing.SystemColors.Control;
+            this.gcNuevaUbicación.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
+            this.gcNuevaUbicación.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
+            this.gcNuevaUbicación.Location = new System.Drawing.Point(8, 31);
+            this.gcNuevaUbicación.MainView = this.gvNuevaUbicacion;
+            this.gcNuevaUbicación.Margin = new System.Windows.Forms.Padding(4);
+            this.gcNuevaUbicación.Name = "gcNuevaUbicación";
+            this.gcNuevaUbicación.Size = new System.Drawing.Size(827, 143);
+            this.gcNuevaUbicación.TabIndex = 34;
+            this.gcNuevaUbicación.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvNuevaUbicacion});
+            // 
+            // gvNuevaUbicacion
+            // 
+            this.gvNuevaUbicacion.Appearance.ColumnFilterButton.BackColor = System.Drawing.Color.Silver;
+            this.gvNuevaUbicacion.Appearance.ColumnFilterButton.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.gvNuevaUbicacion.Appearance.ColumnFilterButton.BorderColor = System.Drawing.Color.Silver;
+            this.gvNuevaUbicacion.Appearance.ColumnFilterButton.ForeColor = System.Drawing.Color.Gray;
+            this.gvNuevaUbicacion.Appearance.ColumnFilterButton.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.ColumnFilterButton.Options.UseBorderColor = true;
+            this.gvNuevaUbicacion.Appearance.ColumnFilterButton.Options.UseForeColor = true;
+            this.gvNuevaUbicacion.Appearance.ColumnFilterButtonActive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.gvNuevaUbicacion.Appearance.ColumnFilterButtonActive.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
+            this.gvNuevaUbicacion.Appearance.ColumnFilterButtonActive.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.gvNuevaUbicacion.Appearance.ColumnFilterButtonActive.ForeColor = System.Drawing.Color.Blue;
+            this.gvNuevaUbicacion.Appearance.ColumnFilterButtonActive.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.ColumnFilterButtonActive.Options.UseBorderColor = true;
+            this.gvNuevaUbicacion.Appearance.ColumnFilterButtonActive.Options.UseForeColor = true;
+            this.gvNuevaUbicacion.Appearance.Empty.BackColor = System.Drawing.SystemColors.Control;
+            this.gvNuevaUbicacion.Appearance.Empty.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.EvenRow.BackColor = System.Drawing.Color.White;
+            this.gvNuevaUbicacion.Appearance.EvenRow.BackColor2 = System.Drawing.Color.White;
+            this.gvNuevaUbicacion.Appearance.EvenRow.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvNuevaUbicacion.Appearance.EvenRow.ForeColor = System.Drawing.Color.Black;
+            this.gvNuevaUbicacion.Appearance.EvenRow.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.gvNuevaUbicacion.Appearance.EvenRow.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.EvenRow.Options.UseFont = true;
+            this.gvNuevaUbicacion.Appearance.EvenRow.Options.UseForeColor = true;
+            this.gvNuevaUbicacion.Appearance.FilterCloseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(208)))), ((int)(((byte)(200)))));
+            this.gvNuevaUbicacion.Appearance.FilterCloseButton.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(170)))), ((int)(((byte)(225)))));
+            this.gvNuevaUbicacion.Appearance.FilterCloseButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(208)))), ((int)(((byte)(200)))));
+            this.gvNuevaUbicacion.Appearance.FilterCloseButton.ForeColor = System.Drawing.Color.Black;
+            this.gvNuevaUbicacion.Appearance.FilterCloseButton.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.gvNuevaUbicacion.Appearance.FilterCloseButton.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.FilterCloseButton.Options.UseBorderColor = true;
+            this.gvNuevaUbicacion.Appearance.FilterCloseButton.Options.UseForeColor = true;
+            this.gvNuevaUbicacion.Appearance.FilterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(80)))), ((int)(((byte)(135)))));
+            this.gvNuevaUbicacion.Appearance.FilterPanel.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(208)))), ((int)(((byte)(200)))));
+            this.gvNuevaUbicacion.Appearance.FilterPanel.ForeColor = System.Drawing.Color.White;
+            this.gvNuevaUbicacion.Appearance.FilterPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.gvNuevaUbicacion.Appearance.FilterPanel.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.FilterPanel.Options.UseForeColor = true;
+            this.gvNuevaUbicacion.Appearance.FixedLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
+            this.gvNuevaUbicacion.Appearance.FixedLine.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.FocusedCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(225)))));
+            this.gvNuevaUbicacion.Appearance.FocusedCell.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvNuevaUbicacion.Appearance.FocusedCell.ForeColor = System.Drawing.Color.Black;
+            this.gvNuevaUbicacion.Appearance.FocusedCell.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.FocusedCell.Options.UseFont = true;
+            this.gvNuevaUbicacion.Appearance.FocusedCell.Options.UseForeColor = true;
+            this.gvNuevaUbicacion.Appearance.FocusedRow.BackColor = System.Drawing.Color.Transparent;
+            this.gvNuevaUbicacion.Appearance.FocusedRow.BackColor2 = System.Drawing.Color.Transparent;
+            this.gvNuevaUbicacion.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvNuevaUbicacion.Appearance.FocusedRow.ForeColor = System.Drawing.Color.Black;
+            this.gvNuevaUbicacion.Appearance.FocusedRow.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.FocusedRow.Options.UseFont = true;
+            this.gvNuevaUbicacion.Appearance.FocusedRow.Options.UseForeColor = true;
+            this.gvNuevaUbicacion.Appearance.FooterPanel.BackColor = System.Drawing.Color.Silver;
+            this.gvNuevaUbicacion.Appearance.FooterPanel.BorderColor = System.Drawing.Color.Silver;
+            this.gvNuevaUbicacion.Appearance.FooterPanel.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gvNuevaUbicacion.Appearance.FooterPanel.ForeColor = System.Drawing.Color.Black;
+            this.gvNuevaUbicacion.Appearance.FooterPanel.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.FooterPanel.Options.UseBorderColor = true;
+            this.gvNuevaUbicacion.Appearance.FooterPanel.Options.UseFont = true;
+            this.gvNuevaUbicacion.Appearance.FooterPanel.Options.UseForeColor = true;
+            this.gvNuevaUbicacion.Appearance.GroupButton.BackColor = System.Drawing.Color.Silver;
+            this.gvNuevaUbicacion.Appearance.GroupButton.BorderColor = System.Drawing.Color.Silver;
+            this.gvNuevaUbicacion.Appearance.GroupButton.ForeColor = System.Drawing.Color.Black;
+            this.gvNuevaUbicacion.Appearance.GroupButton.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.GroupButton.Options.UseBorderColor = true;
+            this.gvNuevaUbicacion.Appearance.GroupButton.Options.UseForeColor = true;
+            this.gvNuevaUbicacion.Appearance.GroupFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.gvNuevaUbicacion.Appearance.GroupFooter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.gvNuevaUbicacion.Appearance.GroupFooter.ForeColor = System.Drawing.Color.Black;
+            this.gvNuevaUbicacion.Appearance.GroupFooter.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.GroupFooter.Options.UseBorderColor = true;
+            this.gvNuevaUbicacion.Appearance.GroupFooter.Options.UseForeColor = true;
+            this.gvNuevaUbicacion.Appearance.GroupPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(110)))), ((int)(((byte)(165)))));
+            this.gvNuevaUbicacion.Appearance.GroupPanel.BackColor2 = System.Drawing.Color.White;
+            this.gvNuevaUbicacion.Appearance.GroupPanel.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gvNuevaUbicacion.Appearance.GroupPanel.ForeColor = System.Drawing.Color.White;
+            this.gvNuevaUbicacion.Appearance.GroupPanel.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.GroupPanel.Options.UseFont = true;
+            this.gvNuevaUbicacion.Appearance.GroupPanel.Options.UseForeColor = true;
+            this.gvNuevaUbicacion.Appearance.GroupRow.BackColor = System.Drawing.Color.Gray;
+            this.gvNuevaUbicacion.Appearance.GroupRow.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gvNuevaUbicacion.Appearance.GroupRow.ForeColor = System.Drawing.Color.Silver;
+            this.gvNuevaUbicacion.Appearance.GroupRow.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.GroupRow.Options.UseFont = true;
+            this.gvNuevaUbicacion.Appearance.GroupRow.Options.UseForeColor = true;
+            this.gvNuevaUbicacion.Appearance.HeaderPanel.BackColor = System.Drawing.Color.Silver;
+            this.gvNuevaUbicacion.Appearance.HeaderPanel.BorderColor = System.Drawing.Color.Silver;
+            this.gvNuevaUbicacion.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gvNuevaUbicacion.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
+            this.gvNuevaUbicacion.Appearance.HeaderPanel.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.HeaderPanel.Options.UseBorderColor = true;
+            this.gvNuevaUbicacion.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gvNuevaUbicacion.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.gvNuevaUbicacion.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.White;
+            this.gvNuevaUbicacion.Appearance.HideSelectionRow.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvNuevaUbicacion.Appearance.HideSelectionRow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(208)))), ((int)(((byte)(200)))));
+            this.gvNuevaUbicacion.Appearance.HideSelectionRow.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.HideSelectionRow.Options.UseFont = true;
+            this.gvNuevaUbicacion.Appearance.HideSelectionRow.Options.UseForeColor = true;
+            this.gvNuevaUbicacion.Appearance.HorzLine.BackColor = System.Drawing.Color.DarkGray;
+            this.gvNuevaUbicacion.Appearance.HorzLine.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvNuevaUbicacion.Appearance.HorzLine.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.HorzLine.Options.UseFont = true;
+            this.gvNuevaUbicacion.Appearance.OddRow.BackColor = System.Drawing.Color.White;
+            this.gvNuevaUbicacion.Appearance.OddRow.BackColor2 = System.Drawing.Color.White;
+            this.gvNuevaUbicacion.Appearance.OddRow.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvNuevaUbicacion.Appearance.OddRow.ForeColor = System.Drawing.Color.Black;
+            this.gvNuevaUbicacion.Appearance.OddRow.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
+            this.gvNuevaUbicacion.Appearance.OddRow.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.OddRow.Options.UseFont = true;
+            this.gvNuevaUbicacion.Appearance.OddRow.Options.UseForeColor = true;
+            this.gvNuevaUbicacion.Appearance.Preview.BackColor = System.Drawing.Color.White;
+            this.gvNuevaUbicacion.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvNuevaUbicacion.Appearance.Preview.ForeColor = System.Drawing.Color.Navy;
+            this.gvNuevaUbicacion.Appearance.Preview.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.Preview.Options.UseFont = true;
+            this.gvNuevaUbicacion.Appearance.Preview.Options.UseForeColor = true;
+            this.gvNuevaUbicacion.Appearance.Row.BackColor = System.Drawing.Color.White;
+            this.gvNuevaUbicacion.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvNuevaUbicacion.Appearance.Row.ForeColor = System.Drawing.Color.Black;
+            this.gvNuevaUbicacion.Appearance.Row.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.Row.Options.UseFont = true;
+            this.gvNuevaUbicacion.Appearance.Row.Options.UseForeColor = true;
+            this.gvNuevaUbicacion.Appearance.RowSeparator.BackColor = System.Drawing.Color.White;
+            this.gvNuevaUbicacion.Appearance.RowSeparator.BackColor2 = System.Drawing.Color.White;
+            this.gvNuevaUbicacion.Appearance.RowSeparator.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvNuevaUbicacion.Appearance.RowSeparator.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.RowSeparator.Options.UseFont = true;
+            this.gvNuevaUbicacion.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(138)))));
+            this.gvNuevaUbicacion.Appearance.SelectedRow.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvNuevaUbicacion.Appearance.SelectedRow.ForeColor = System.Drawing.Color.White;
+            this.gvNuevaUbicacion.Appearance.SelectedRow.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.SelectedRow.Options.UseFont = true;
+            this.gvNuevaUbicacion.Appearance.SelectedRow.Options.UseForeColor = true;
+            this.gvNuevaUbicacion.Appearance.TopNewRow.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gvNuevaUbicacion.Appearance.TopNewRow.Options.UseFont = true;
+            this.gvNuevaUbicacion.Appearance.VertLine.BackColor = System.Drawing.Color.Silver;
+            this.gvNuevaUbicacion.Appearance.VertLine.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvNuevaUbicacion.Appearance.VertLine.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.VertLine.Options.UseFont = true;
+            this.gvNuevaUbicacion.GridControl = this.gcNuevaUbicación;
+            this.gvNuevaUbicacion.Name = "gvNuevaUbicacion";
+            this.gvNuevaUbicacion.OptionsBehavior.AutoSelectAllInEditor = false;
+            this.gvNuevaUbicacion.OptionsBehavior.Editable = false;
+            this.gvNuevaUbicacion.OptionsView.EnableAppearanceEvenRow = true;
+            this.gvNuevaUbicacion.OptionsView.EnableAppearanceOddRow = true;
+            this.gvNuevaUbicacion.OptionsView.ShowColumnHeaders = false;
+            this.gvNuevaUbicacion.OptionsView.ShowGroupPanel = false;
+            this.gvNuevaUbicacion.OptionsView.ShowIndicator = false;
+            this.gvNuevaUbicacion.PaintStyleName = "Flat";
+            // 
+            // beNuevaUbicacion
+            // 
+            this.beNuevaUbicacion.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.True;
+            this.beNuevaUbicacion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.beNuevaUbicacion.EditValue = "";
+            this.beNuevaUbicacion.Location = new System.Drawing.Point(206, 504);
+            this.beNuevaUbicacion.Margin = new System.Windows.Forms.Padding(4);
+            this.beNuevaUbicacion.Name = "beNuevaUbicacion";
+            this.beNuevaUbicacion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.beNuevaUbicacion.Properties.Appearance.Options.UseFont = true;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            this.beNuevaUbicacion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            this.beNuevaUbicacion.Properties.MaxLength = 20;
+            this.beNuevaUbicacion.Properties.NullText = "Escanee o selecciona una tarima";
+            this.beNuevaUbicacion.Size = new System.Drawing.Size(433, 34);
+            this.beNuevaUbicacion.TabIndex = 60;
+            this.beNuevaUbicacion.ToolTip = "Hola";
+            // 
+            // btnUbicacion
+            // 
+            this.btnUbicacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUbicacion.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUbicacion.Appearance.Options.UseFont = true;
+            this.btnUbicacion.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnUbicacion.ImageOptions.Image = global::LOSA.Properties.Resources.tap;
+            this.btnUbicacion.Location = new System.Drawing.Point(647, 490);
+            this.btnUbicacion.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUbicacion.Name = "btnUbicacion";
+            this.btnUbicacion.Size = new System.Drawing.Size(56, 49);
+            this.btnUbicacion.TabIndex = 59;
+            this.btnUbicacion.Click += new System.EventHandler(this.btnUbicacion_Click);
+            // 
+            // labelControl14
+            // 
+            this.labelControl14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl14.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl14.Appearance.Options.UseFont = true;
+            this.labelControl14.Location = new System.Drawing.Point(18, 511);
+            this.labelControl14.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl14.Name = "labelControl14";
+            this.labelControl14.Size = new System.Drawing.Size(98, 28);
+            this.labelControl14.TabIndex = 58;
+            this.labelControl14.Text = "Ubicación:";
+            // 
             // frmTarima
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(638, 560);
+            this.ClientSize = new System.Drawing.Size(851, 689);
+            this.Controls.Add(this.beNuevaUbicacion);
+            this.Controls.Add(this.btnUbicacion);
+            this.Controls.Add(this.labelControl14);
+            this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.labelControl13);
             this.Controls.Add(this.txtCantidadTarimasTotal);
             this.Controls.Add(this.txtPesoKg);
@@ -571,6 +850,7 @@
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnAtras);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmTarima";
             this.Text = "frmTarima";
             this.Activated += new System.EventHandler(this.frmTarima_Activated);
@@ -596,6 +876,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPesoKg.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadTarimasTotal.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gcNuevaUbicación)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvNuevaUbicacion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beNuevaUbicacion.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -639,5 +924,11 @@
         private DevExpress.XtraEditors.TextEdit txtPesoKg;
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private DevExpress.XtraEditors.TextEdit txtCantidadTarimasTotal;
+        private DevExpress.XtraEditors.GroupControl groupControl2;
+        private DevExpress.XtraGrid.GridControl gcNuevaUbicación;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvNuevaUbicacion;
+        private DevExpress.XtraEditors.ButtonEdit beNuevaUbicacion;
+        private DevExpress.XtraEditors.SimpleButton btnUbicacion;
+        private DevExpress.XtraEditors.LabelControl labelControl14;
     }
 }

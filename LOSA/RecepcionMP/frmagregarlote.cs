@@ -23,6 +23,7 @@ namespace LOSA.RecepcionMP
         int IdSerie;
         int NumBoleta;
         int IdMP;
+        int idUbicacionNueva;
         string ItemCode;
         UserLogin UsuarioLogeado;
         int Id_ingreso;
@@ -124,6 +125,11 @@ namespace LOSA.RecepcionMP
         private void cmdGuardar_Click(object sender, EventArgs e)
         {
             int idloteInserted;
+            if (gvNuevaUbicacion.RowCount <= 0)
+            {
+                CajaDialogo.Error("Debe seleccionar una ubicacion predeterminada para todas las tarimas.");
+                return;
+            }
             if (IdSerie <= 0)
             {
                 CajaDialogo.Error("No se puede registrar una tarima sin la boleta de bascula!");
@@ -247,6 +253,7 @@ namespace LOSA.RecepcionMP
                     cmdx.Parameters.AddWithValue("@id_tarima", vid_tarima);
                     cmdx.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
                     cmdx.Parameters.AddWithValue("@codigo_barra", barcode);
+                    cmdx.Parameters.AddWithValue("@id_ubicacion", idUbicacionNueva);
                     cmdx.ExecuteNonQuery();
 
                     List.Add(vid_tarima);
@@ -339,6 +346,36 @@ namespace LOSA.RecepcionMP
                 txtPesoKg.Text = string.Format("{0:###,##0.00}", (factor * Convert.ToDecimal(txtUnidades.Text)));
             }
 
+        }
+        private DataTable CreateDataUbicacion_v2(string pRack, string pBodega)
+        {
+            DataTable dt = new DataTable();
+
+            dt.Columns.Add("Detalle", typeof(string));
+            dt.Columns.Add("Valor", typeof(string));
+
+            dt.Rows.Add("Bodega", pBodega);
+
+            dt.Rows.Add("RACK", pRack);
+            //dt.Rows.Add("ALTURA", pAltura);
+            //dt.Rows.Add("PROFUNDIDAD", pProfundidad);
+
+            return dt;
+        }
+        private void GvNuevaUbicacion_InitNewRow(object sender, DevExpress.XtraGrid.Views.Grid.InitNewRowEventArgs e)
+        {
+
+        }
+        private void btnUbicacion_Click(object sender, EventArgs e)
+        {
+            frmUbicacionTarima2 frm = new frmUbicacionTarima2();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                idUbicacionNueva = frm.idUbicacion;
+                gcNuevaUbicación.DataSource = CreateDataUbicacion_v2(frm.rack, frm.BodegaNombre);
+                gvNuevaUbicacion.InitNewRow += GvNuevaUbicacion_InitNewRow;
+                gvNuevaUbicacion.Columns[0].AppearanceCell.Font = new Font("Segoe UI", 11, FontStyle.Bold);
+            }
         }
     }
 }
