@@ -169,7 +169,7 @@ namespace LOSA.RecepcionMP
                             }
                             
 
-                            SqlCommand cmd = new SqlCommand("sp_insert_new_tarima", con);
+                            SqlCommand cmd = new SqlCommand("sp_insert_new_tarima_lote", con);
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.AddWithValue("@itemcode", vItemCodeMP);
                             cmd.Parameters.AddWithValue("@id_proveedor", tar1.IdProveedor);
@@ -184,6 +184,7 @@ namespace LOSA.RecepcionMP
                             cmd.Parameters.AddWithValue("@codigo_barra", barcode);
                             cmd.Parameters.AddWithValue("@cant", tar1.Cantidad);
                             cmd.Parameters.AddWithValue("@peso", tar1.Peso);
+                            cmd.Parameters.AddWithValue("@idlotes", tar1.Id_ingreso);
                             int vid_tarima = Convert.ToInt32(cmd.ExecuteScalar());
 
                             List1.Add(vid_tarima);

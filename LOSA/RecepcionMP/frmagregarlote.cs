@@ -377,5 +377,22 @@ namespace LOSA.RecepcionMP
                 gvNuevaUbicacion.Columns[0].AppearanceCell.Font = new Font("Segoe UI", 11, FontStyle.Bold);
             }
         }
+
+        private void txtLote_Click(object sender, EventArgs e)
+        {
+            Teclado.abrirTeclado();
+        }
+
+        private void beNuevaUbicacion_Click(object sender, EventArgs e)
+        {
+            frmUbicacionTarima2 frm = new frmUbicacionTarima2();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                idUbicacionNueva = frm.idUbicacion;
+                gcNuevaUbicación.DataSource = CreateDataUbicacion_v2(frm.rack, frm.BodegaNombre);
+                gvNuevaUbicacion.InitNewRow += GvNuevaUbicacion_InitNewRow;
+                gvNuevaUbicacion.Columns[0].AppearanceCell.Font = new Font("Segoe UI", 11, FontStyle.Bold);
+            }
+        }
     }
 }
