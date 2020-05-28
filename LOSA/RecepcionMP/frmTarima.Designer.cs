@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTarima));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnAgregar = new DevExpress.XtraEditors.SimpleButton();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
@@ -73,8 +73,6 @@
             this.beNuevaUbicacion = new DevExpress.XtraEditors.ButtonEdit();
             this.btnUbicacion = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdBoleta.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigoMP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMP_Name.Properties)).BeginInit();
@@ -100,8 +98,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcNuevaUbicación)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvNuevaUbicacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.beNuevaUbicacion.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -150,7 +146,7 @@
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(567, 59);
+            this.btnAtras.Location = new System.Drawing.Point(525, 55);
             this.btnAtras.Margin = new System.Windows.Forms.Padding(4);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(223, 58);
@@ -235,7 +231,7 @@
             this.txtMP_Name.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMP_Name.Properties.Appearance.Options.UseFont = true;
             this.txtMP_Name.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtMP_Name.Size = new System.Drawing.Size(388, 32);
+            this.txtMP_Name.Size = new System.Drawing.Size(366, 32);
             this.txtMP_Name.TabIndex = 34;
             this.txtMP_Name.EditValueChanged += new System.EventHandler(this.textEdit2_EditValueChanged);
             this.txtMP_Name.Click += new System.EventHandler(this.txtProveedorName_Click);
@@ -250,7 +246,7 @@
             this.txtProveedorName.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProveedorName.Properties.Appearance.Options.UseFont = true;
             this.txtProveedorName.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtProveedorName.Size = new System.Drawing.Size(388, 32);
+            this.txtProveedorName.Size = new System.Drawing.Size(366, 32);
             this.txtProveedorName.TabIndex = 37;
             this.txtProveedorName.Click += new System.EventHandler(this.txtProveedorName_Click);
             // 
@@ -323,7 +319,7 @@
             // txtNumIngreso
             // 
             this.txtNumIngreso.EditValue = "";
-            this.txtNumIngreso.Location = new System.Drawing.Point(608, 311);
+            this.txtNumIngreso.Location = new System.Drawing.Point(602, 312);
             this.txtNumIngreso.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumIngreso.Name = "txtNumIngreso";
             this.txtNumIngreso.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -436,7 +432,7 @@
             // txtLote
             // 
             this.txtLote.EditValue = "";
-            this.txtLote.Location = new System.Drawing.Point(608, 358);
+            this.txtLote.Location = new System.Drawing.Point(602, 359);
             this.txtLote.Margin = new System.Windows.Forms.Padding(4);
             this.txtLote.Name = "txtLote";
             this.txtLote.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -478,7 +474,7 @@
             // gridLookUpEditPresentacion
             // 
             this.gridLookUpEditPresentacion.EditValue = "";
-            this.gridLookUpEditPresentacion.Location = new System.Drawing.Point(602, 265);
+            this.gridLookUpEditPresentacion.Location = new System.Drawing.Point(602, 266);
             this.gridLookUpEditPresentacion.Margin = new System.Windows.Forms.Padding(4);
             this.gridLookUpEditPresentacion.Name = "gridLookUpEditPresentacion";
             this.gridLookUpEditPresentacion.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -489,7 +485,7 @@
             this.gridLookUpEditPresentacion.Properties.DisplayMember = "descripcion";
             this.gridLookUpEditPresentacion.Properties.ValueMember = "id";
             this.gridLookUpEditPresentacion.Properties.View = this.gridLookUpEdit1View;
-            this.gridLookUpEditPresentacion.Size = new System.Drawing.Size(214, 36);
+            this.gridLookUpEditPresentacion.Size = new System.Drawing.Size(208, 36);
             this.gridLookUpEditPresentacion.TabIndex = 2;
             this.gridLookUpEditPresentacion.EditValueChanged += new System.EventHandler(this.gridLookUpEditPresentacion_EditValueChanged);
             // 
@@ -774,9 +770,9 @@
             this.beNuevaUbicacion.Name = "beNuevaUbicacion";
             this.beNuevaUbicacion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.beNuevaUbicacion.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.beNuevaUbicacion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.beNuevaUbicacion.Properties.MaxLength = 20;
             this.beNuevaUbicacion.Properties.NullText = "Escanee o selecciona una tarima";
             this.beNuevaUbicacion.Size = new System.Drawing.Size(433, 34);
@@ -785,12 +781,11 @@
             // 
             // btnUbicacion
             // 
-            this.btnUbicacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUbicacion.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUbicacion.Appearance.Options.UseFont = true;
             this.btnUbicacion.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnUbicacion.ImageOptions.Image = global::LOSA.Properties.Resources.tap;
-            this.btnUbicacion.Location = new System.Drawing.Point(678, 489);
+            this.btnUbicacion.Location = new System.Drawing.Point(647, 490);
             this.btnUbicacion.Margin = new System.Windows.Forms.Padding(4);
             this.btnUbicacion.Name = "btnUbicacion";
             this.btnUbicacion.Size = new System.Drawing.Size(56, 49);
@@ -809,35 +804,6 @@
             this.labelControl14.Size = new System.Drawing.Size(98, 28);
             this.labelControl14.TabIndex = 58;
             this.labelControl14.Text = "Ubicación:";
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.EditValue = "";
-            this.textEdit1.Enabled = false;
-            this.textEdit1.Location = new System.Drawing.Point(441, 185);
-            this.textEdit1.Margin = new System.Windows.Forms.Padding(4);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textEdit1.Size = new System.Drawing.Size(375, 32);
-            this.textEdit1.TabIndex = 34;
-            this.textEdit1.EditValueChanged += new System.EventHandler(this.textEdit2_EditValueChanged);
-            this.textEdit1.Click += new System.EventHandler(this.txtProveedorName_Click);
-            // 
-            // textEdit2
-            // 
-            this.textEdit2.EditValue = "";
-            this.textEdit2.Enabled = false;
-            this.textEdit2.Location = new System.Drawing.Point(441, 223);
-            this.textEdit2.Margin = new System.Windows.Forms.Padding(4);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEdit2.Properties.Appearance.Options.UseFont = true;
-            this.textEdit2.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textEdit2.Size = new System.Drawing.Size(375, 32);
-            this.textEdit2.TabIndex = 37;
-            this.textEdit2.Click += new System.EventHandler(this.txtProveedorName_Click);
             // 
             // frmTarima
             // 
@@ -868,10 +834,8 @@
             this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.dtFechaIngreso);
             this.Controls.Add(this.labelControl5);
-            this.Controls.Add(this.textEdit2);
             this.Controls.Add(this.txtProveedorName);
             this.Controls.Add(this.labelControl4);
-            this.Controls.Add(this.textEdit1);
             this.Controls.Add(this.txtCodigoProveedor);
             this.Controls.Add(this.txtMP_Name);
             this.Controls.Add(this.labelControl3);
@@ -914,8 +878,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcNuevaUbicación)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvNuevaUbicacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.beNuevaUbicacion.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -965,7 +927,5 @@
         private DevExpress.XtraEditors.ButtonEdit beNuevaUbicacion;
         private DevExpress.XtraEditors.SimpleButton btnUbicacion;
         private DevExpress.XtraEditors.LabelControl labelControl14;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
     }
 }
