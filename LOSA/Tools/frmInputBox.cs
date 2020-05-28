@@ -59,5 +59,10 @@ namespace LOSA.Tools
         {
             Teclado.abrirTeclado();
         }
+
+        private void frmInputBox_Activated(object sender, EventArgs e)
+        {
+            Teclado.abrirTeclado();
+        }
     }
 }

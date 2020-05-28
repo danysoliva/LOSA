@@ -46,8 +46,8 @@
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(527, 15);
-            this.btnAtras.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAtras.Location = new System.Drawing.Point(444, 13);
+            this.btnAtras.Margin = new System.Windows.Forms.Padding(4);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(223, 58);
             this.btnAtras.TabIndex = 27;
@@ -64,7 +64,7 @@
             this.cmdGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdGuardar.ImageOptions.Image")));
             this.cmdGuardar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.cmdGuardar.Location = new System.Drawing.Point(1, 15);
-            this.cmdGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmdGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.cmdGuardar.Name = "cmdGuardar";
             this.cmdGuardar.Size = new System.Drawing.Size(223, 58);
             this.cmdGuardar.TabIndex = 28;
@@ -79,7 +79,7 @@
             this.lblInstrucciones.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblInstrucciones.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblInstrucciones.Location = new System.Drawing.Point(1, 95);
-            this.lblInstrucciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblInstrucciones.Margin = new System.Windows.Forms.Padding(4);
             this.lblInstrucciones.Name = "lblInstrucciones";
             this.lblInstrucciones.Size = new System.Drawing.Size(748, 28);
             this.lblInstrucciones.TabIndex = 29;
@@ -88,7 +88,7 @@
             // txtValue
             // 
             this.txtValue.Location = new System.Drawing.Point(253, 138);
-            this.txtValue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtValue.Margin = new System.Windows.Forms.Padding(4);
             this.txtValue.Name = "txtValue";
             this.txtValue.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtValue.Properties.Appearance.Options.UseFont = true;
@@ -107,10 +107,11 @@
             this.Controls.Add(this.lblInstrucciones);
             this.Controls.Add(this.cmdGuardar);
             this.Controls.Add(this.btnAtras);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmInputBox";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmInputBox";
+            this.Activated += new System.EventHandler(this.frmInputBox_Activated);
             ((System.ComponentModel.ISupportInitialize)(this.txtValue.Properties)).EndInit();
             this.ResumeLayout(false);
 
