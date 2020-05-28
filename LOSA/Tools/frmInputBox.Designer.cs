@@ -44,7 +44,6 @@
             // 
             // btnAtras
             // 
-            this.btnAtras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAtras.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnAtras.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAtras.Appearance.Options.UseBackColor = true;
@@ -52,10 +51,9 @@
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(416, 15);
-            this.btnAtras.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAtras.Location = new System.Drawing.Point(312, 12);
             this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(223, 58);
+            this.btnAtras.Size = new System.Drawing.Size(167, 47);
             this.btnAtras.TabIndex = 27;
             this.btnAtras.Text = "Atras";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
@@ -69,10 +67,9 @@
             this.cmdGuardar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdGuardar.ImageOptions.Image")));
             this.cmdGuardar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.cmdGuardar.Location = new System.Drawing.Point(1, 15);
-            this.cmdGuardar.Margin = new System.Windows.Forms.Padding(4);
+            this.cmdGuardar.Location = new System.Drawing.Point(1, 12);
             this.cmdGuardar.Name = "cmdGuardar";
-            this.cmdGuardar.Size = new System.Drawing.Size(223, 58);
+            this.cmdGuardar.Size = new System.Drawing.Size(167, 47);
             this.cmdGuardar.TabIndex = 28;
             this.cmdGuardar.Text = "Guardar";
             this.cmdGuardar.Click += new System.EventHandler(this.cmdGuardar_Click);
@@ -84,28 +81,27 @@
             this.lblInstrucciones.Appearance.Options.UseTextOptions = true;
             this.lblInstrucciones.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblInstrucciones.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblInstrucciones.Location = new System.Drawing.Point(1, 100);
-            this.lblInstrucciones.Margin = new System.Windows.Forms.Padding(4);
+            this.lblInstrucciones.Location = new System.Drawing.Point(1, 81);
             this.lblInstrucciones.Name = "lblInstrucciones";
-            this.lblInstrucciones.Size = new System.Drawing.Size(644, 28);
+            this.lblInstrucciones.Size = new System.Drawing.Size(483, 23);
             this.lblInstrucciones.TabIndex = 29;
             this.lblInstrucciones.Text = "Instrucciones";
             // 
             // txtValue
             // 
-            this.txtValue.Location = new System.Drawing.Point(166, 136);
-            this.txtValue.Margin = new System.Windows.Forms.Padding(4);
+            this.txtValue.Location = new System.Drawing.Point(124, 110);
             this.txtValue.Name = "txtValue";
             this.txtValue.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtValue.Properties.Appearance.Options.UseFont = true;
-            this.txtValue.Size = new System.Drawing.Size(243, 38);
+            this.txtValue.Size = new System.Drawing.Size(182, 32);
             this.txtValue.TabIndex = 30;
             this.txtValue.Click += new System.EventHandler(this.txtValue_Click);
             this.txtValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValue_KeyPress);
             // 
             // btnup
             // 
-            this.btnup.Location = new System.Drawing.Point(416, 134);
+            this.btnup.Location = new System.Drawing.Point(312, 109);
+            this.btnup.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnup.Name = "btnup";
             this.btnup.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnup.Properties.Appearance.Options.UseFont = true;
@@ -113,13 +109,14 @@
             this.btnup.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.btnup.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.btnup.Size = new System.Drawing.Size(60, 40);
+            this.btnup.Size = new System.Drawing.Size(45, 38);
             this.btnup.TabIndex = 31;
             this.btnup.Click += new System.EventHandler(this.btnup_Click);
             // 
             // btndown
             // 
-            this.btndown.Location = new System.Drawing.Point(482, 134);
+            this.btndown.Location = new System.Drawing.Point(362, 109);
+            this.btndown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btndown.Name = "btndown";
             this.btndown.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndown.Properties.Appearance.Options.UseFont = true;
@@ -127,15 +124,15 @@
             this.btndown.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.btndown.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.btndown.Size = new System.Drawing.Size(60, 40);
+            this.btndown.Size = new System.Drawing.Size(45, 38);
             this.btndown.TabIndex = 32;
             this.btndown.Click += new System.EventHandler(this.btndown_Click);
             // 
             // frmInputBox
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(658, 204);
+            this.ClientSize = new System.Drawing.Size(494, 166);
             this.ControlBox = false;
             this.Controls.Add(this.btndown);
             this.Controls.Add(this.btnup);
@@ -143,7 +140,6 @@
             this.Controls.Add(this.lblInstrucciones);
             this.Controls.Add(this.cmdGuardar);
             this.Controls.Add(this.btnAtras);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmInputBox";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmInputBox";
