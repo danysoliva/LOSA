@@ -59,5 +59,36 @@ namespace LOSA.Tools
         {
             Teclado.abrirTeclado();
         }
+
+        private void frmInputBox_Activated(object sender, EventArgs e)
+        {
+            Teclado.abrirTeclado();
+            txtValue.Text = "1";
+        }
+
+        private void btnup_Click(object sender, EventArgs e)
+        {
+            //subir
+            int subir;
+           subir = Convert.ToInt32(txtValue.Text);
+            subir = subir + 1;
+            txtValue.Text = subir.ToString();
+        }
+
+        private void btndown_Click(object sender, EventArgs e)
+        {
+            if (txtValue.Text == "1")
+            {
+
+            }
+            else
+            {
+                int bajar;
+                bajar = Convert.ToInt32(txtValue.Text);
+                bajar = bajar - 1;
+                txtValue.Text = bajar.ToString();
+
+            }
+        }
     }
 }

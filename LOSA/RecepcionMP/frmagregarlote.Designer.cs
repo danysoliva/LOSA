@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmagregarlote));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.cmdGuardar = new DevExpress.XtraEditors.SimpleButton();
@@ -160,12 +160,12 @@
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
             this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(458, 131);
+            this.simpleButton1.Location = new System.Drawing.Point(433, 124);
             this.simpleButton1.Margin = new System.Windows.Forms.Padding(4);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(64, 50);
             this.simpleButton1.TabIndex = 32;
-            this.simpleButton1.Visible = false;
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // labelControl2
             // 
@@ -181,7 +181,6 @@
             // txtIdBoleta
             // 
             this.txtIdBoleta.EditValue = "";
-            this.txtIdBoleta.Enabled = false;
             this.txtIdBoleta.Location = new System.Drawing.Point(235, 136);
             this.txtIdBoleta.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdBoleta.Name = "txtIdBoleta";
@@ -190,6 +189,8 @@
             this.txtIdBoleta.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtIdBoleta.Size = new System.Drawing.Size(189, 38);
             this.txtIdBoleta.TabIndex = 31;
+            this.txtIdBoleta.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtIdBoleta_KeyDown);
+            this.txtIdBoleta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdBoleta_KeyPress);
             // 
             // labelControl13
             // 
@@ -556,9 +557,9 @@
             this.beNuevaUbicacion.Name = "beNuevaUbicacion";
             this.beNuevaUbicacion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.beNuevaUbicacion.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.beNuevaUbicacion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.beNuevaUbicacion.Properties.MaxLength = 20;
             this.beNuevaUbicacion.Properties.NullText = "Escanee o selecciona una tarima";
             this.beNuevaUbicacion.Size = new System.Drawing.Size(429, 34);

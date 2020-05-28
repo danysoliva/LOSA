@@ -394,5 +394,46 @@ namespace LOSA.RecepcionMP
                 gvNuevaUbicacion.Columns[0].AppearanceCell.Font = new Font("Segoe UI", 11, FontStyle.Bold);
             }
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            FrmBoleta frm = new FrmBoleta();
+            frm.WindowState = FormWindowState.Maximized;
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                txtIdBoleta.Text = frm.NumBoleta.ToString();
+                this.IdSerie = frm.IdSerie;
+                this.NumBoleta = frm.NumBoleta;
+                this.ItemCode = frm.ItemCode;
+                LoadDatosBoleta(frm.IdSerie);
+            }
+        }
+
+        private void txtIdBoleta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+          
+        }
+
+        private void txtIdBoleta_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                int id_b = 0;
+                try
+                {
+                    id_b = Convert.ToInt32(txtIdBoleta.Text);
+                }
+                catch { }
+
+                this.IdSerie = id_b;
+                Boleta bol1 = new Boleta();
+                if (bol1.RecuperarRegistro(this.IdSerie))
+                {
+                    txtIdBoleta.Text = bol1.NumID.ToString();
+                }
+                LoadDatosBoleta(id_b);
+            }
+        }
     }
 }
