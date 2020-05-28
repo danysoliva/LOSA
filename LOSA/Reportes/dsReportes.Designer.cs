@@ -295,6 +295,10 @@ namespace LOSA.Reportes {
             
             private global::System.Data.DataColumn columncantidad;
             
+            private global::System.Data.DataColumn columnEnumerador;
+            
+            private global::System.Data.DataColumn columnTotalTm;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public TarimasPorBodegaDataTable() {
@@ -394,6 +398,22 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn EnumeradorColumn {
+                get {
+                    return this.columnEnumerador;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn TotalTmColumn {
+                get {
+                    return this.columnTotalTm;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -429,7 +449,7 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public TarimasPorBodegaRow AddTarimasPorBodegaRow(int id, string codigo_barra, string lote_materia_prima, string itemcode, string itemname, string id_proveedor, string proveedor, decimal cantidad) {
+            public TarimasPorBodegaRow AddTarimasPorBodegaRow(int id, string codigo_barra, string lote_materia_prima, string itemcode, string itemname, string id_proveedor, string proveedor, decimal cantidad, int Enumerador, int TotalTm) {
                 TarimasPorBodegaRow rowTarimasPorBodegaRow = ((TarimasPorBodegaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -439,7 +459,9 @@ namespace LOSA.Reportes {
                         itemname,
                         id_proveedor,
                         proveedor,
-                        cantidad};
+                        cantidad,
+                        Enumerador,
+                        TotalTm};
                 rowTarimasPorBodegaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTarimasPorBodegaRow);
                 return rowTarimasPorBodegaRow;
@@ -470,6 +492,8 @@ namespace LOSA.Reportes {
                 this.columnid_proveedor = base.Columns["id_proveedor"];
                 this.columnproveedor = base.Columns["proveedor"];
                 this.columncantidad = base.Columns["cantidad"];
+                this.columnEnumerador = base.Columns["Enumerador"];
+                this.columnTotalTm = base.Columns["TotalTm"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -491,6 +515,10 @@ namespace LOSA.Reportes {
                 base.Columns.Add(this.columnproveedor);
                 this.columncantidad = new global::System.Data.DataColumn("cantidad", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncantidad);
+                this.columnEnumerador = new global::System.Data.DataColumn("Enumerador", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEnumerador);
+                this.columnTotalTm = new global::System.Data.DataColumn("TotalTm", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalTm);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -762,6 +790,38 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int Enumerador {
+                get {
+                    try {
+                        return ((int)(this[this.tableTarimasPorBodega.EnumeradorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Enumerador\' de la tabla \'TarimasPorBodega\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTarimasPorBodega.EnumeradorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int TotalTm {
+                get {
+                    try {
+                        return ((int)(this[this.tableTarimasPorBodega.TotalTmColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TotalTm\' de la tabla \'TarimasPorBodega\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTarimasPorBodega.TotalTmColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableTarimasPorBodega.idColumn);
             }
@@ -854,6 +914,30 @@ namespace LOSA.Reportes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetcantidadNull() {
                 this[this.tableTarimasPorBodega.cantidadColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsEnumeradorNull() {
+                return this.IsNull(this.tableTarimasPorBodega.EnumeradorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetEnumeradorNull() {
+                this[this.tableTarimasPorBodega.EnumeradorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsTotalTmNull() {
+                return this.IsNull(this.tableTarimasPorBodega.TotalTmColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetTotalTmNull() {
+                this[this.tableTarimasPorBodega.TotalTmColumn] = global::System.Convert.DBNull;
             }
         }
         

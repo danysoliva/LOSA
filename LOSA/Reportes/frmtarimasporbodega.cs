@@ -62,6 +62,7 @@ namespace LOSA.Reportes
 
             IdBodega = row.id;
             BodegaNombre = row.descripcion;
+            lblnombrebodega.Text = BodegaNombre;
 
             if (IdBodega > 0)
             {
@@ -89,6 +90,13 @@ namespace LOSA.Reportes
 
                 adat.Fill(dsReportes.TarimasPorBodega);
                 cn.Close();
+                string cantidad = "";
+                foreach (DataRow item in dsReportes.TarimasPorBodega.Rows)
+                {
+                    cantidad = item["TotalTm"].ToString();
+                    break;
+                }
+                lbltotalTM.Text = cantidad;
             }
             catch (Exception ec)
             {
@@ -100,6 +108,8 @@ namespace LOSA.Reportes
         {
             this.navigationFrame1.SelectPrevPage();
             LoadBodegas();
+            lblnombrebodega.Text = "Escoja una bodega..";
+            lbltotalTM.Text = "00";
         }
     }
 }

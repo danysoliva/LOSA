@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmtarimasporbodega));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.navigationFrame1 = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
@@ -55,6 +55,12 @@
             this.colselect = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.lblnombrebodega = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.lbltotalTM = new DevExpress.XtraEditors.LabelControl();
+            this.colEnumerador = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTotalTm = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).BeginInit();
             this.navigationFrame1.SuspendLayout();
             this.navigationPage1.SuspendLayout();
@@ -151,7 +157,9 @@
             this.colitemname,
             this.colid_proveedor,
             this.colproveedor,
-            this.colcantidad});
+            this.colcantidad,
+            this.colEnumerador,
+            this.colTotalTm});
             this.grdv_reporte.GridControl = this.grd_reporte;
             this.grdv_reporte.Name = "grdv_reporte";
             this.grdv_reporte.OptionsView.ShowAutoFilterRow = true;
@@ -170,8 +178,8 @@
             this.colcodigo_barra.Name = "colcodigo_barra";
             this.colcodigo_barra.OptionsColumn.AllowEdit = false;
             this.colcodigo_barra.Visible = true;
-            this.colcodigo_barra.VisibleIndex = 0;
-            this.colcodigo_barra.Width = 94;
+            this.colcodigo_barra.VisibleIndex = 1;
+            this.colcodigo_barra.Width = 81;
             // 
             // collote_materia_prima
             // 
@@ -180,8 +188,8 @@
             this.collote_materia_prima.Name = "collote_materia_prima";
             this.collote_materia_prima.OptionsColumn.AllowEdit = false;
             this.collote_materia_prima.Visible = true;
-            this.collote_materia_prima.VisibleIndex = 1;
-            this.collote_materia_prima.Width = 159;
+            this.collote_materia_prima.VisibleIndex = 2;
+            this.collote_materia_prima.Width = 138;
             // 
             // colitemcode
             // 
@@ -190,8 +198,8 @@
             this.colitemcode.Name = "colitemcode";
             this.colitemcode.OptionsColumn.AllowEdit = false;
             this.colitemcode.Visible = true;
-            this.colitemcode.VisibleIndex = 2;
-            this.colitemcode.Width = 103;
+            this.colitemcode.VisibleIndex = 3;
+            this.colitemcode.Width = 89;
             // 
             // colitemname
             // 
@@ -200,8 +208,8 @@
             this.colitemname.Name = "colitemname";
             this.colitemname.OptionsColumn.AllowEdit = false;
             this.colitemname.Visible = true;
-            this.colitemname.VisibleIndex = 3;
-            this.colitemname.Width = 103;
+            this.colitemname.VisibleIndex = 4;
+            this.colitemname.Width = 89;
             // 
             // colid_proveedor
             // 
@@ -210,8 +218,8 @@
             this.colid_proveedor.Name = "colid_proveedor";
             this.colid_proveedor.OptionsColumn.AllowEdit = false;
             this.colid_proveedor.Visible = true;
-            this.colid_proveedor.VisibleIndex = 4;
-            this.colid_proveedor.Width = 103;
+            this.colid_proveedor.VisibleIndex = 5;
+            this.colid_proveedor.Width = 89;
             // 
             // colproveedor
             // 
@@ -220,8 +228,8 @@
             this.colproveedor.Name = "colproveedor";
             this.colproveedor.OptionsColumn.AllowEdit = false;
             this.colproveedor.Visible = true;
-            this.colproveedor.VisibleIndex = 5;
-            this.colproveedor.Width = 103;
+            this.colproveedor.VisibleIndex = 6;
+            this.colproveedor.Width = 89;
             // 
             // colcantidad
             // 
@@ -230,8 +238,8 @@
             this.colcantidad.Name = "colcantidad";
             this.colcantidad.OptionsColumn.AllowEdit = false;
             this.colcantidad.Visible = true;
-            this.colcantidad.VisibleIndex = 6;
-            this.colcantidad.Width = 122;
+            this.colcantidad.VisibleIndex = 7;
+            this.colcantidad.Width = 105;
             // 
             // simpleButton1
             // 
@@ -344,9 +352,9 @@
             // btnSeleccionar
             // 
             this.btnSeleccionar.AutoHeight = false;
-            editorButtonImageOptions1.Image = global::LOSA.Properties.Resources.tap;
+            editorButtonImageOptions2.Image = global::LOSA.Properties.Resources.tap;
             this.btnSeleccionar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
@@ -367,11 +375,87 @@
             this.labelControl4.TabIndex = 16;
             this.labelControl4.Text = "Seleccione la Bodega";
             // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Appearance.Options.UseTextOptions = true;
+            this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl2.Location = new System.Drawing.Point(13, 13);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(150, 54);
+            this.labelControl2.TabIndex = 17;
+            this.labelControl2.Text = "Bodega:";
+            // 
+            // lblnombrebodega
+            // 
+            this.lblnombrebodega.Appearance.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblnombrebodega.Appearance.Options.UseFont = true;
+            this.lblnombrebodega.Appearance.Options.UseTextOptions = true;
+            this.lblnombrebodega.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.lblnombrebodega.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblnombrebodega.Location = new System.Drawing.Point(171, 13);
+            this.lblnombrebodega.Margin = new System.Windows.Forms.Padding(4);
+            this.lblnombrebodega.Name = "lblnombrebodega";
+            this.lblnombrebodega.Size = new System.Drawing.Size(358, 54);
+            this.lblnombrebodega.TabIndex = 18;
+            this.lblnombrebodega.Text = "Escoja una bodega..";
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Appearance.Options.UseTextOptions = true;
+            this.labelControl5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.labelControl5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl5.Location = new System.Drawing.Point(10, 59);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(243, 54);
+            this.labelControl5.TabIndex = 19;
+            this.labelControl5.Text = "Total Tarimas:";
+            // 
+            // lbltotalTM
+            // 
+            this.lbltotalTM.Appearance.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltotalTM.Appearance.Options.UseFont = true;
+            this.lbltotalTM.Appearance.Options.UseTextOptions = true;
+            this.lbltotalTM.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.lbltotalTM.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lbltotalTM.Location = new System.Drawing.Point(251, 59);
+            this.lbltotalTM.Margin = new System.Windows.Forms.Padding(4);
+            this.lbltotalTM.Name = "lbltotalTM";
+            this.lbltotalTM.Size = new System.Drawing.Size(175, 54);
+            this.lbltotalTM.TabIndex = 20;
+            this.lbltotalTM.Text = "00";
+            // 
+            // colEnumerador
+            // 
+            this.colEnumerador.Caption = "N";
+            this.colEnumerador.FieldName = "Enumerador";
+            this.colEnumerador.Name = "colEnumerador";
+            this.colEnumerador.OptionsColumn.AllowEdit = false;
+            this.colEnumerador.Visible = true;
+            this.colEnumerador.VisibleIndex = 0;
+            this.colEnumerador.Width = 34;
+            // 
+            // colTotalTm
+            // 
+            this.colTotalTm.FieldName = "TotalTm";
+            this.colTotalTm.Name = "colTotalTm";
+            this.colTotalTm.Width = 73;
+            // 
             // frmtarimasporbodega
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(815, 595);
+            this.Controls.Add(this.lbltotalTM);
+            this.Controls.Add(this.labelControl5);
+            this.Controls.Add(this.lblnombrebodega);
+            this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.navigationFrame1);
             this.Controls.Add(this.cmdHome);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -420,5 +504,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn colid_proveedor;
         private DevExpress.XtraGrid.Columns.GridColumn colproveedor;
         private DevExpress.XtraGrid.Columns.GridColumn colcantidad;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl lblnombrebodega;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.LabelControl lbltotalTM;
+        private DevExpress.XtraGrid.Columns.GridColumn colEnumerador;
+        private DevExpress.XtraGrid.Columns.GridColumn colTotalTm;
     }
 }
