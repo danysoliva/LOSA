@@ -39,6 +39,7 @@ namespace LOSA.Clases
         string _MateriaPrima;
         decimal _factor;
         int id_estadoCalidad;
+        int _id_ingreso;
 
         public Tarima()
         {
@@ -73,6 +74,7 @@ namespace LOSA.Clases
         public int IdProductoterminado { get => _idProductoterminado; set => _idProductoterminado = value; }
         public int LotePT { get => _LotePT; set => _LotePT = value; }
         public int Id_estadoCalidad { get => id_estadoCalidad; set => id_estadoCalidad = value; }
+        public int Id_ingreso { get => _id_ingreso; set => _id_ingreso = value; }
 
         public bool RecuperarRegistro(int pIdTarima, string pCodigoBarra)
         {
@@ -212,7 +214,7 @@ namespace LOSA.Clases
                     IdUnidadMedida = dr.GetInt32(18);
                     _peso = dr.GetDecimal(19);
                     id_estadoCalidad = dr.GetInt32(20);
-
+                    Id_ingreso = dr.GetInt32(21);
                     Recuperado = true;
                 }
                 dr.Close();

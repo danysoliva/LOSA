@@ -54,5 +54,10 @@ namespace LOSA.Tools
                 }
             }
         }
+
+        private void txtValue_Click(object sender, EventArgs e)
+        {
+            Teclado.abrirTeclado();
+        }
     }
 }

@@ -73,6 +73,8 @@
             this.beNuevaUbicacion = new DevExpress.XtraEditors.ButtonEdit();
             this.btnUbicacion = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdBoleta.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigoMP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMP_Name.Properties)).BeginInit();
@@ -98,6 +100,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcNuevaUbicación)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvNuevaUbicacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.beNuevaUbicacion.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -111,9 +115,9 @@
             this.labelControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl1.Location = new System.Drawing.Point(0, 2);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(851, 49);
+            this.labelControl1.Size = new System.Drawing.Size(829, 49);
             this.labelControl1.TabIndex = 28;
             this.labelControl1.Text = "Registro de Tarima #Lote";
             this.labelControl1.Click += new System.EventHandler(this.btnAtras_Click_1);
@@ -128,8 +132,8 @@
             this.btnAgregar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAgregar.ImageOptions.Image = global::LOSA.Properties.Resources.plus;
             this.btnAgregar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAgregar.Location = new System.Drawing.Point(337, 55);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgregar.Location = new System.Drawing.Point(315, 55);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(223, 58);
             this.btnAgregar.TabIndex = 27;
@@ -146,8 +150,8 @@
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(612, 55);
-            this.btnAtras.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAtras.Location = new System.Drawing.Point(567, 59);
+            this.btnAtras.Margin = new System.Windows.Forms.Padding(4);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(223, 58);
             this.btnAtras.TabIndex = 9;
@@ -159,7 +163,7 @@
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Location = new System.Drawing.Point(21, 140);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(163, 29);
             this.labelControl2.TabIndex = 30;
@@ -168,8 +172,8 @@
             // txtIdBoleta
             // 
             this.txtIdBoleta.EditValue = "";
-            this.txtIdBoleta.Location = new System.Drawing.Point(249, 135);
-            this.txtIdBoleta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIdBoleta.Location = new System.Drawing.Point(242, 135);
+            this.txtIdBoleta.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdBoleta.Name = "txtIdBoleta";
             this.txtIdBoleta.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdBoleta.Properties.Appearance.Options.UseFont = true;
@@ -189,7 +193,7 @@
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
             this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
             this.simpleButton1.Location = new System.Drawing.Point(447, 129);
-            this.simpleButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.simpleButton1.Margin = new System.Windows.Forms.Padding(4);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(64, 50);
             this.simpleButton1.TabIndex = 1;
@@ -200,7 +204,7 @@
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
             this.labelControl3.Location = new System.Drawing.Point(24, 192);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(114, 24);
             this.labelControl3.TabIndex = 33;
@@ -211,8 +215,8 @@
             // 
             this.txtCodigoMP.EditValue = "";
             this.txtCodigoMP.Enabled = false;
-            this.txtCodigoMP.Location = new System.Drawing.Point(249, 184);
-            this.txtCodigoMP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCodigoMP.Location = new System.Drawing.Point(242, 184);
+            this.txtCodigoMP.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodigoMP.Name = "txtCodigoMP";
             this.txtCodigoMP.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigoMP.Properties.Appearance.Options.UseFont = true;
@@ -225,8 +229,8 @@
             // 
             this.txtMP_Name.EditValue = "";
             this.txtMP_Name.Enabled = false;
-            this.txtMP_Name.Location = new System.Drawing.Point(450, 187);
-            this.txtMP_Name.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMP_Name.Location = new System.Drawing.Point(447, 189);
+            this.txtMP_Name.Margin = new System.Windows.Forms.Padding(4);
             this.txtMP_Name.Name = "txtMP_Name";
             this.txtMP_Name.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMP_Name.Properties.Appearance.Options.UseFont = true;
@@ -241,7 +245,7 @@
             this.txtProveedorName.EditValue = "";
             this.txtProveedorName.Enabled = false;
             this.txtProveedorName.Location = new System.Drawing.Point(447, 227);
-            this.txtProveedorName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtProveedorName.Margin = new System.Windows.Forms.Padding(4);
             this.txtProveedorName.Name = "txtProveedorName";
             this.txtProveedorName.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProveedorName.Properties.Appearance.Options.UseFont = true;
@@ -255,7 +259,7 @@
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
             this.labelControl4.Location = new System.Drawing.Point(21, 231);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(88, 24);
             this.labelControl4.TabIndex = 36;
@@ -266,8 +270,8 @@
             // 
             this.txtCodigoProveedor.EditValue = "";
             this.txtCodigoProveedor.Enabled = false;
-            this.txtCodigoProveedor.Location = new System.Drawing.Point(249, 227);
-            this.txtCodigoProveedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCodigoProveedor.Location = new System.Drawing.Point(242, 227);
+            this.txtCodigoProveedor.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodigoProveedor.Name = "txtCodigoProveedor";
             this.txtCodigoProveedor.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigoProveedor.Properties.Appearance.Options.UseFont = true;
@@ -281,7 +285,7 @@
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
             this.labelControl5.Location = new System.Drawing.Point(24, 272);
-            this.labelControl5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(154, 29);
             this.labelControl5.TabIndex = 38;
@@ -290,8 +294,8 @@
             // dtFechaIngreso
             // 
             this.dtFechaIngreso.EditValue = null;
-            this.dtFechaIngreso.Location = new System.Drawing.Point(249, 267);
-            this.dtFechaIngreso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtFechaIngreso.Location = new System.Drawing.Point(242, 267);
+            this.dtFechaIngreso.Margin = new System.Windows.Forms.Padding(4);
             this.dtFechaIngreso.Name = "dtFechaIngreso";
             this.dtFechaIngreso.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFechaIngreso.Properties.Appearance.Options.UseFont = true;
@@ -310,7 +314,7 @@
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
             this.labelControl6.Location = new System.Drawing.Point(460, 321);
-            this.labelControl6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl6.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(134, 29);
             this.labelControl6.TabIndex = 40;
@@ -320,14 +324,14 @@
             // 
             this.txtNumIngreso.EditValue = "";
             this.txtNumIngreso.Location = new System.Drawing.Point(608, 311);
-            this.txtNumIngreso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNumIngreso.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumIngreso.Name = "txtNumIngreso";
             this.txtNumIngreso.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumIngreso.Properties.Appearance.Options.UseFont = true;
             this.txtNumIngreso.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNumIngreso.Properties.ReadOnly = true;
             this.txtNumIngreso.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtNumIngreso.Size = new System.Drawing.Size(227, 38);
+            this.txtNumIngreso.Size = new System.Drawing.Size(208, 38);
             this.txtNumIngreso.TabIndex = 41;
             this.txtNumIngreso.Enter += new System.EventHandler(this.txtNumIngreso_Enter);
             // 
@@ -336,7 +340,7 @@
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
             this.labelControl7.Location = new System.Drawing.Point(21, 321);
-            this.labelControl7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl7.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(182, 25);
             this.labelControl7.TabIndex = 43;
@@ -345,8 +349,8 @@
             // txtUnidades
             // 
             this.txtUnidades.EditValue = "0";
-            this.txtUnidades.Location = new System.Drawing.Point(249, 312);
-            this.txtUnidades.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUnidades.Location = new System.Drawing.Point(242, 312);
+            this.txtUnidades.Margin = new System.Windows.Forms.Padding(4);
             this.txtUnidades.Name = "txtUnidades";
             this.txtUnidades.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUnidades.Properties.Appearance.Options.UseFont = true;
@@ -362,8 +366,8 @@
             // dtFechaProduccion
             // 
             this.dtFechaProduccion.EditValue = null;
-            this.dtFechaProduccion.Location = new System.Drawing.Point(249, 400);
-            this.dtFechaProduccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtFechaProduccion.Location = new System.Drawing.Point(242, 400);
+            this.dtFechaProduccion.Margin = new System.Windows.Forms.Padding(4);
             this.dtFechaProduccion.Name = "dtFechaProduccion";
             this.dtFechaProduccion.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFechaProduccion.Properties.Appearance.Options.UseFont = true;
@@ -382,7 +386,7 @@
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.Appearance.Options.UseFont = true;
             this.labelControl8.Location = new System.Drawing.Point(21, 404);
-            this.labelControl8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl8.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(195, 29);
             this.labelControl8.TabIndex = 44;
@@ -391,8 +395,8 @@
             // dtFechaVencimiento
             // 
             this.dtFechaVencimiento.EditValue = null;
-            this.dtFechaVencimiento.Location = new System.Drawing.Point(249, 444);
-            this.dtFechaVencimiento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtFechaVencimiento.Location = new System.Drawing.Point(242, 444);
+            this.dtFechaVencimiento.Margin = new System.Windows.Forms.Padding(4);
             this.dtFechaVencimiento.Name = "dtFechaVencimiento";
             this.dtFechaVencimiento.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFechaVencimiento.Properties.Appearance.Options.UseFont = true;
@@ -412,7 +416,7 @@
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl9.Appearance.Options.UseFont = true;
             this.labelControl9.Location = new System.Drawing.Point(21, 448);
-            this.labelControl9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl9.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(206, 29);
             this.labelControl9.TabIndex = 46;
@@ -423,7 +427,7 @@
             this.labelControl10.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl10.Appearance.Options.UseFont = true;
             this.labelControl10.Location = new System.Drawing.Point(525, 363);
-            this.labelControl10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl10.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(72, 29);
             this.labelControl10.TabIndex = 49;
@@ -433,13 +437,13 @@
             // 
             this.txtLote.EditValue = "";
             this.txtLote.Location = new System.Drawing.Point(608, 358);
-            this.txtLote.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLote.Margin = new System.Windows.Forms.Padding(4);
             this.txtLote.Name = "txtLote";
             this.txtLote.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLote.Properties.Appearance.Options.UseFont = true;
             this.txtLote.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtLote.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtLote.Size = new System.Drawing.Size(227, 38);
+            this.txtLote.Size = new System.Drawing.Size(208, 38);
             this.txtLote.TabIndex = 4;
             this.txtLote.Enter += new System.EventHandler(this.txtLote_Enter);
             // 
@@ -453,7 +457,7 @@
             this.cmdGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdGuardar.ImageOptions.Image")));
             this.cmdGuardar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.cmdGuardar.Location = new System.Drawing.Point(21, 55);
-            this.cmdGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmdGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.cmdGuardar.Name = "cmdGuardar";
             this.cmdGuardar.Size = new System.Drawing.Size(223, 58);
             this.cmdGuardar.TabIndex = 8;
@@ -465,7 +469,7 @@
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl11.Appearance.Options.UseFont = true;
             this.labelControl11.Location = new System.Drawing.Point(447, 271);
-            this.labelControl11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl11.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(147, 29);
             this.labelControl11.TabIndex = 51;
@@ -474,8 +478,8 @@
             // gridLookUpEditPresentacion
             // 
             this.gridLookUpEditPresentacion.EditValue = "";
-            this.gridLookUpEditPresentacion.Location = new System.Drawing.Point(608, 267);
-            this.gridLookUpEditPresentacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridLookUpEditPresentacion.Location = new System.Drawing.Point(602, 265);
+            this.gridLookUpEditPresentacion.Margin = new System.Windows.Forms.Padding(4);
             this.gridLookUpEditPresentacion.Name = "gridLookUpEditPresentacion";
             this.gridLookUpEditPresentacion.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridLookUpEditPresentacion.Properties.Appearance.Options.UseFont = true;
@@ -485,7 +489,7 @@
             this.gridLookUpEditPresentacion.Properties.DisplayMember = "descripcion";
             this.gridLookUpEditPresentacion.Properties.ValueMember = "id";
             this.gridLookUpEditPresentacion.Properties.View = this.gridLookUpEdit1View;
-            this.gridLookUpEditPresentacion.Size = new System.Drawing.Size(227, 36);
+            this.gridLookUpEditPresentacion.Size = new System.Drawing.Size(214, 36);
             this.gridLookUpEditPresentacion.TabIndex = 2;
             this.gridLookUpEditPresentacion.EditValueChanged += new System.EventHandler(this.gridLookUpEditPresentacion_EditValueChanged);
             // 
@@ -529,7 +533,7 @@
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl12.Appearance.Options.UseFont = true;
             this.labelControl12.Location = new System.Drawing.Point(21, 364);
-            this.labelControl12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl12.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(166, 25);
             this.labelControl12.TabIndex = 53;
@@ -540,8 +544,8 @@
             // 
             this.txtPesoKg.EditValue = "0";
             this.txtPesoKg.Enabled = false;
-            this.txtPesoKg.Location = new System.Drawing.Point(249, 354);
-            this.txtPesoKg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPesoKg.Location = new System.Drawing.Point(242, 354);
+            this.txtPesoKg.Margin = new System.Windows.Forms.Padding(4);
             this.txtPesoKg.Name = "txtPesoKg";
             this.txtPesoKg.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPesoKg.Properties.Appearance.Options.UseFont = true;
@@ -557,7 +561,7 @@
             this.labelControl13.Appearance.Options.UseFont = true;
             this.labelControl13.Appearance.Options.UseForeColor = true;
             this.labelControl13.Location = new System.Drawing.Point(460, 426);
-            this.labelControl13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl13.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(224, 29);
             this.labelControl13.TabIndex = 56;
@@ -567,13 +571,13 @@
             // 
             this.txtCantidadTarimasTotal.EditValue = "1";
             this.txtCantidadTarimasTotal.Location = new System.Drawing.Point(699, 421);
-            this.txtCantidadTarimasTotal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCantidadTarimasTotal.Margin = new System.Windows.Forms.Padding(4);
             this.txtCantidadTarimasTotal.Name = "txtCantidadTarimasTotal";
             this.txtCantidadTarimasTotal.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCantidadTarimasTotal.Properties.Appearance.Options.UseFont = true;
             this.txtCantidadTarimasTotal.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCantidadTarimasTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtCantidadTarimasTotal.Size = new System.Drawing.Size(136, 38);
+            this.txtCantidadTarimasTotal.Size = new System.Drawing.Size(117, 38);
             this.txtCantidadTarimasTotal.TabIndex = 7;
             this.txtCantidadTarimasTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textEdit1_KeyPress);
             // 
@@ -587,7 +591,7 @@
             this.groupControl2.Location = new System.Drawing.Point(0, 546);
             this.groupControl2.Margin = new System.Windows.Forms.Padding(4);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(851, 146);
+            this.groupControl2.Size = new System.Drawing.Size(829, 95);
             this.groupControl2.TabIndex = 57;
             this.groupControl2.Text = "Nueva Ubicación";
             // 
@@ -602,7 +606,7 @@
             this.gcNuevaUbicación.MainView = this.gvNuevaUbicacion;
             this.gcNuevaUbicación.Margin = new System.Windows.Forms.Padding(4);
             this.gcNuevaUbicación.Name = "gcNuevaUbicación";
-            this.gcNuevaUbicación.Size = new System.Drawing.Size(827, 143);
+            this.gcNuevaUbicación.Size = new System.Drawing.Size(805, 58);
             this.gcNuevaUbicación.TabIndex = 34;
             this.gcNuevaUbicación.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvNuevaUbicacion});
@@ -764,8 +768,6 @@
             // beNuevaUbicacion
             // 
             this.beNuevaUbicacion.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.True;
-            this.beNuevaUbicacion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.beNuevaUbicacion.EditValue = "";
             this.beNuevaUbicacion.Location = new System.Drawing.Point(206, 504);
             this.beNuevaUbicacion.Margin = new System.Windows.Forms.Padding(4);
@@ -788,7 +790,7 @@
             this.btnUbicacion.Appearance.Options.UseFont = true;
             this.btnUbicacion.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnUbicacion.ImageOptions.Image = global::LOSA.Properties.Resources.tap;
-            this.btnUbicacion.Location = new System.Drawing.Point(647, 490);
+            this.btnUbicacion.Location = new System.Drawing.Point(678, 489);
             this.btnUbicacion.Margin = new System.Windows.Forms.Padding(4);
             this.btnUbicacion.Name = "btnUbicacion";
             this.btnUbicacion.Size = new System.Drawing.Size(56, 49);
@@ -808,12 +810,41 @@
             this.labelControl14.TabIndex = 58;
             this.labelControl14.Text = "Ubicación:";
             // 
+            // textEdit1
+            // 
+            this.textEdit1.EditValue = "";
+            this.textEdit1.Enabled = false;
+            this.textEdit1.Location = new System.Drawing.Point(441, 185);
+            this.textEdit1.Margin = new System.Windows.Forms.Padding(4);
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textEdit1.Properties.Appearance.Options.UseFont = true;
+            this.textEdit1.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textEdit1.Size = new System.Drawing.Size(375, 32);
+            this.textEdit1.TabIndex = 34;
+            this.textEdit1.EditValueChanged += new System.EventHandler(this.textEdit2_EditValueChanged);
+            this.textEdit1.Click += new System.EventHandler(this.txtProveedorName_Click);
+            // 
+            // textEdit2
+            // 
+            this.textEdit2.EditValue = "";
+            this.textEdit2.Enabled = false;
+            this.textEdit2.Location = new System.Drawing.Point(441, 223);
+            this.textEdit2.Margin = new System.Windows.Forms.Padding(4);
+            this.textEdit2.Name = "textEdit2";
+            this.textEdit2.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textEdit2.Properties.Appearance.Options.UseFont = true;
+            this.textEdit2.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textEdit2.Size = new System.Drawing.Size(375, 32);
+            this.textEdit2.TabIndex = 37;
+            this.textEdit2.Click += new System.EventHandler(this.txtProveedorName_Click);
+            // 
             // frmTarima
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(851, 689);
+            this.ClientSize = new System.Drawing.Size(829, 641);
             this.Controls.Add(this.beNuevaUbicacion);
             this.Controls.Add(this.btnUbicacion);
             this.Controls.Add(this.labelControl14);
@@ -837,8 +868,10 @@
             this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.dtFechaIngreso);
             this.Controls.Add(this.labelControl5);
+            this.Controls.Add(this.textEdit2);
             this.Controls.Add(this.txtProveedorName);
             this.Controls.Add(this.labelControl4);
+            this.Controls.Add(this.textEdit1);
             this.Controls.Add(this.txtCodigoProveedor);
             this.Controls.Add(this.txtMP_Name);
             this.Controls.Add(this.labelControl3);
@@ -850,7 +883,7 @@
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnAtras);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmTarima";
             this.Text = "frmTarima";
             this.Activated += new System.EventHandler(this.frmTarima_Activated);
@@ -881,6 +914,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcNuevaUbicación)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvNuevaUbicacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.beNuevaUbicacion.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -930,5 +965,7 @@
         private DevExpress.XtraEditors.ButtonEdit beNuevaUbicacion;
         private DevExpress.XtraEditors.SimpleButton btnUbicacion;
         private DevExpress.XtraEditors.LabelControl labelControl14;
+        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit textEdit2;
     }
 }
