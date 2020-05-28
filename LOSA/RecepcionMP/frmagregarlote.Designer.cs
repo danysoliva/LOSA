@@ -165,6 +165,7 @@
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(64, 50);
             this.simpleButton1.TabIndex = 32;
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // labelControl2
             // 
@@ -180,7 +181,6 @@
             // txtIdBoleta
             // 
             this.txtIdBoleta.EditValue = "";
-            this.txtIdBoleta.Enabled = false;
             this.txtIdBoleta.Location = new System.Drawing.Point(235, 136);
             this.txtIdBoleta.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdBoleta.Name = "txtIdBoleta";
@@ -189,6 +189,8 @@
             this.txtIdBoleta.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtIdBoleta.Size = new System.Drawing.Size(189, 38);
             this.txtIdBoleta.TabIndex = 31;
+            this.txtIdBoleta.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtIdBoleta_KeyDown);
+            this.txtIdBoleta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdBoleta_KeyPress);
             // 
             // labelControl13
             // 
