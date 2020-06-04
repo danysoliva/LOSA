@@ -60,6 +60,7 @@
             this.cmdTarimasPT = new DevExpress.XtraEditors.SimpleButton();
             this.btnAlimentacionManual = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.btnconfiguracionCal = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -357,6 +358,7 @@
             // 
             // TabCalidad
             // 
+            this.TabCalidad.Controls.Add(this.btnconfiguracionCal);
             this.TabCalidad.Controls.Add(this.cmdLotesCalidad);
             this.TabCalidad.Image = global::LOSA.Properties.Resources.medal;
             this.TabCalidad.Name = "TabCalidad";
@@ -511,6 +513,19 @@
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
             // 
+            // btnconfiguracionCal
+            // 
+            this.btnconfiguracionCal.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnconfiguracionCal.Appearance.Options.UseFont = true;
+            this.btnconfiguracionCal.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnconfiguracionCal.ImageOptions.Image = global::LOSA.Properties.Resources.edit_table_1_;
+            this.btnconfiguracionCal.Location = new System.Drawing.Point(9, 100);
+            this.btnconfiguracionCal.Name = "btnconfiguracionCal";
+            this.btnconfiguracionCal.Size = new System.Drawing.Size(199, 71);
+            this.btnconfiguracionCal.TabIndex = 12;
+            this.btnconfiguracionCal.Text = "Configuracion";
+            this.btnconfiguracionCal.Click += new System.EventHandler(this.btnconfiguracionCal_Click);
+            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -567,5 +582,6 @@
         private DevExpress.XtraEditors.SimpleButton btnReq_PT;
         private DevExpress.XtraEditors.SimpleButton btnreportes;
         private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.SimpleButton btnconfiguracionCal;
     }
 }

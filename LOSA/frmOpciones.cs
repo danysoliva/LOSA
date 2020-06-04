@@ -244,5 +244,11 @@ namespace LOSA
             LOSA.Reportes.frmreport frm = new Reportes.frmreport();
             frm.Show();
         }
+
+        private void btnconfiguracionCal_Click(object sender, EventArgs e)
+        {
+            frmcalidadcausas frm = new frmcalidadcausas();
+            frm.Show();
+        }
     }
 }

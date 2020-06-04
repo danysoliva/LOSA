@@ -163,6 +163,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsCalidad.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\frmaddcausa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmaddcausa.Designer.cs">
+      <DependentUpon>frmaddcausa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\frmcalidadcausas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmcalidadcausas.Designer.cs">
+      <DependentUpon>frmcalidadcausas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\frmEstadosTarimaCalidad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -675,6 +687,12 @@
     <Compile Include="Utileria\frmMensaje.Designer.cs">
       <DependentUpon>frmMensaje.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Calidad\frmaddcausa.resx">
+      <DependentUpon>frmaddcausa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmcalidadcausas.resx">
+      <DependentUpon>frmcalidadcausas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmEstadosTarimaCalidad.resx">
       <DependentUpon>frmEstadosTarimaCalidad.cs</DependentUpon>
     </EmbeddedResource>
