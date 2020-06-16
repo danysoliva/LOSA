@@ -31,8 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLotesStatus));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.TabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
@@ -75,6 +78,8 @@
             this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colver = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnview = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.label1 = new System.Windows.Forms.Label();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
@@ -85,6 +90,10 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.Detalle = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btndetalle = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colDetalle3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btndetalle3 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.TabControl1)).BeginInit();
             this.TabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
@@ -100,8 +109,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridRetenidos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btndetalle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btndetalle3)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -113,9 +125,10 @@
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdHome.ImageOptions.Image")));
-            this.cmdHome.Location = new System.Drawing.Point(477, 12);
+            this.cmdHome.Location = new System.Drawing.Point(636, 15);
+            this.cmdHome.Margin = new System.Windows.Forms.Padding(4);
             this.cmdHome.Name = "cmdHome";
-            this.cmdHome.Size = new System.Drawing.Size(156, 52);
+            this.cmdHome.Size = new System.Drawing.Size(208, 64);
             this.cmdHome.TabIndex = 29;
             this.cmdHome.Text = "Home";
             this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
@@ -125,10 +138,11 @@
             this.TabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TabControl1.Location = new System.Drawing.Point(1, 83);
+            this.TabControl1.Location = new System.Drawing.Point(1, 102);
+            this.TabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.TabControl1.Name = "TabControl1";
             this.TabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.TabControl1.Size = new System.Drawing.Size(638, 475);
+            this.TabControl1.Size = new System.Drawing.Size(851, 585);
             this.TabControl1.TabIndex = 30;
             this.TabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -140,8 +154,9 @@
             this.xtraTabPage1.Appearance.Header.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xtraTabPage1.Appearance.Header.Options.UseFont = true;
             this.xtraTabPage1.Controls.Add(this.grDisponibles);
+            this.xtraTabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(632, 444);
+            this.xtraTabPage1.Size = new System.Drawing.Size(844, 548);
             this.xtraTabPage1.Text = "Disponibles";
             // 
             // grDisponibles
@@ -151,12 +166,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grDisponibles.DataMember = "tarimas_disponibles";
             this.grDisponibles.DataSource = this.dsCalidad1;
-            this.grDisponibles.Location = new System.Drawing.Point(2, 3);
+            this.grDisponibles.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
+            this.grDisponibles.Location = new System.Drawing.Point(3, 4);
             this.grDisponibles.MainView = this.gvMateriaPrima;
+            this.grDisponibles.Margin = new System.Windows.Forms.Padding(4);
             this.grDisponibles.Name = "grDisponibles";
             this.grDisponibles.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.btnEditar});
-            this.grDisponibles.Size = new System.Drawing.Size(629, 441);
+            this.btnEditar,
+            this.btndetalle});
+            this.grDisponibles.Size = new System.Drawing.Size(839, 543);
             this.grDisponibles.TabIndex = 1;
             this.grDisponibles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvMateriaPrima});
@@ -194,7 +212,8 @@
             this.colunidades,
             this.colpeso,
             this.colestado,
-            this.grEdit});
+            this.grEdit,
+            this.Detalle});
             this.gvMateriaPrima.GridControl = this.grDisponibles;
             this.gvMateriaPrima.Name = "gvMateriaPrima";
             this.gvMateriaPrima.OptionsView.ShowAutoFilterRow = true;
@@ -288,8 +307,9 @@
             this.xtraTabPage2.Appearance.Header.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xtraTabPage2.Appearance.Header.Options.UseFont = true;
             this.xtraTabPage2.Controls.Add(this.gridObservacion);
+            this.xtraTabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(632, 444);
+            this.xtraTabPage2.Size = new System.Drawing.Size(844, 548);
             this.xtraTabPage2.Text = "En Observación";
             // 
             // gridObservacion
@@ -299,12 +319,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridObservacion.DataMember = "tarimas_obs";
             this.gridObservacion.DataSource = this.dsCalidad1;
-            this.gridObservacion.Location = new System.Drawing.Point(2, 2);
+            this.gridObservacion.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
+            this.gridObservacion.Location = new System.Drawing.Point(3, 2);
             this.gridObservacion.MainView = this.gridView1;
+            this.gridObservacion.Margin = new System.Windows.Forms.Padding(4);
             this.gridObservacion.Name = "gridObservacion";
             this.gridObservacion.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemButtonEdit1});
-            this.gridObservacion.Size = new System.Drawing.Size(629, 441);
+            this.repositoryItemButtonEdit1,
+            this.btndetalle3});
+            this.gridObservacion.Size = new System.Drawing.Size(839, 543);
             this.gridObservacion.TabIndex = 2;
             this.gridObservacion.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -337,7 +360,8 @@
             this.gridColumn6,
             this.gridColumn7,
             this.gridColumn8,
-            this.gridColumn9});
+            this.gridColumn9,
+            this.colDetalle3});
             this.gridView1.GridControl = this.gridObservacion;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
@@ -419,17 +443,18 @@
             // repositoryItemButtonEdit1
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions3, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
             // xtraTabPage3
             // 
             this.xtraTabPage3.Controls.Add(this.gridRetenidos);
+            this.xtraTabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(632, 444);
+            this.xtraTabPage3.Size = new System.Drawing.Size(844, 548);
             this.xtraTabPage3.Text = "Retenido";
             // 
             // gridRetenidos
@@ -439,12 +464,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridRetenidos.DataMember = "tarimas_ret";
             this.gridRetenidos.DataSource = this.dsCalidad1;
-            this.gridRetenidos.Location = new System.Drawing.Point(2, 2);
+            this.gridRetenidos.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
+            this.gridRetenidos.Location = new System.Drawing.Point(3, 2);
             this.gridRetenidos.MainView = this.gridView2;
+            this.gridRetenidos.Margin = new System.Windows.Forms.Padding(4);
             this.gridRetenidos.Name = "gridRetenidos";
             this.gridRetenidos.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemButtonEdit2});
-            this.gridRetenidos.Size = new System.Drawing.Size(629, 441);
+            this.repositoryItemButtonEdit2,
+            this.btnview});
+            this.gridRetenidos.Size = new System.Drawing.Size(839, 543);
             this.gridRetenidos.TabIndex = 3;
             this.gridRetenidos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -477,7 +505,8 @@
             this.gridColumn15,
             this.gridColumn16,
             this.gridColumn17,
-            this.gridColumn18});
+            this.gridColumn18,
+            this.colver});
             this.gridView2.GridControl = this.gridRetenidos;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsView.ShowAutoFilterRow = true;
@@ -559,19 +588,38 @@
             // repositoryItemButtonEdit2
             // 
             this.repositoryItemButtonEdit2.AutoHeight = false;
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
             this.repositoryItemButtonEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions3, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions5, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.repositoryItemButtonEdit2.Name = "repositoryItemButtonEdit2";
             this.repositoryItemButtonEdit2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            // 
+            // colver
+            // 
+            this.colver.Caption = "Detalle";
+            this.colver.ColumnEdit = this.btnview;
+            this.colver.Name = "colver";
+            this.colver.Visible = true;
+            this.colver.VisibleIndex = 6;
+            // 
+            // btnview
+            // 
+            this.btnview.AutoHeight = false;
+            editorButtonImageOptions6.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions6.Image")));
+            this.btnview.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions6, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            this.btnview.Name = "btnview";
+            this.btnview.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnview.Click += new System.EventHandler(this.btnview_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(218, 39);
+            this.label1.Location = new System.Drawing.Point(291, 48);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(175, 25);
+            this.label1.Size = new System.Drawing.Size(219, 31);
             this.label1.TabIndex = 31;
             this.label1.Text = "Gestión de Lotes";
             // 
@@ -633,15 +681,17 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(638, 0);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4);
+            this.barDockControlTop.Size = new System.Drawing.Size(851, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 560);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 689);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(638, 0);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4);
+            this.barDockControlBottom.Size = new System.Drawing.Size(851, 0);
             // 
             // barDockControlLeft
             // 
@@ -649,22 +699,60 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 560);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 689);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(638, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(851, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 560);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 689);
+            // 
+            // Detalle
+            // 
+            this.Detalle.Caption = "Detalle";
+            this.Detalle.ColumnEdit = this.btndetalle;
+            this.Detalle.Name = "Detalle";
+            this.Detalle.Visible = true;
+            this.Detalle.VisibleIndex = 6;
+            // 
+            // btndetalle
+            // 
+            this.btndetalle.AutoHeight = false;
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            this.btndetalle.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            this.btndetalle.Name = "btndetalle";
+            this.btndetalle.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btndetalle.Click += new System.EventHandler(this.btndetalle_Click);
+            // 
+            // colDetalle3
+            // 
+            this.colDetalle3.Caption = "Detalle";
+            this.colDetalle3.ColumnEdit = this.btndetalle3;
+            this.colDetalle3.Name = "colDetalle3";
+            this.colDetalle3.Visible = true;
+            this.colDetalle3.VisibleIndex = 6;
+            // 
+            // btndetalle3
+            // 
+            this.btndetalle3.AutoHeight = false;
+            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
+            this.btndetalle3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions4, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            this.btndetalle3.Name = "btndetalle3";
+            this.btndetalle3.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btndetalle3.Click += new System.EventHandler(this.btndetalle3_Click);
             // 
             // frmLotesStatus
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(638, 560);
+            this.ClientSize = new System.Drawing.Size(851, 689);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TabControl1);
             this.Controls.Add(this.cmdHome);
@@ -673,6 +761,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmLotesStatus";
             this.Text = "Gestion de Lotes";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -691,8 +780,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridRetenidos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnview)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btndetalle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btndetalle3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -752,5 +844,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit2;
+        private DevExpress.XtraGrid.Columns.GridColumn colver;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnview;
+        private DevExpress.XtraGrid.Columns.GridColumn Detalle;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btndetalle;
+        private DevExpress.XtraGrid.Columns.GridColumn colDetalle3;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btndetalle3;
     }
 }
