@@ -217,7 +217,7 @@ namespace LOSA
 
         private void cmdLotesCalidad_Click(object sender, EventArgs e)
         {
-            frmLotesStatus frm = new frmLotesStatus();
+            frmLotesStatus frm = new frmLotesStatus(UsuarioLogeado);
             frm.Show();
         }
 

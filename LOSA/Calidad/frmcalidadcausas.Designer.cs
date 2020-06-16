@@ -192,6 +192,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.btnedit.Name = "btnedit";
             this.btnedit.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnedit.Click += new System.EventHandler(this.btnedit_Click);
             // 
             // frmcalidadcausas
             // 

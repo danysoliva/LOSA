@@ -10,18 +10,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using LOSA.Clases;
 namespace LOSA.Calidad
 {
     public partial class frmLotesStatus : Form
     {
         int gridActual = 1;
-        public frmLotesStatus()
+        UserLogin UsuarioLogeado;
+        public frmLotesStatus(UserLogin Puser)
         {
             InitializeComponent();
+            UsuarioLogeado = Puser;
             LoadTarimasAvailables();
             LoadTarimasObs();
             LoadTarimasRet();
+           
         }
 
         private void LoadTarimasAvailables()
@@ -113,7 +116,18 @@ namespace LOSA.Calidad
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //Retenido
-            UpdateEstado(3);
+            //UpdateEstado(3);
+            var gridView = (GridView)grDisponibles.FocusedView;
+            var row = (dsCalidad.tarimas_disponiblesRow)gridView.GetFocusedDataRow();
+             int  id = row.id;
+            frm_asiganacion_causas frm = new frm_asiganacion_causas(UsuarioLogeado, id );
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+
+                LoadTarimasAvailables();
+                LoadTarimasObs();
+                LoadTarimasRet();
+            }
         }
 
         void UpdateEstado(int pIdEstadoNew)
@@ -132,6 +146,7 @@ namespace LOSA.Calidad
                         var gridView = (GridView)grDisponibles.FocusedView;
                         var row = (dsCalidad.tarimas_disponiblesRow)gridView.GetFocusedDataRow();
                         id = row.id;
+                       
                         break;
                     case 2:
                         var gridView1 = (GridView)gridObservacion.FocusedView;
@@ -147,6 +162,14 @@ namespace LOSA.Calidad
                         break;
                 }
 
+                if (pIdEstadoNew == 1)
+                {
+                    SqlCommand command = new SqlCommand("sp_update_calidad_tarimas", con);
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@id_tarima", id);
+                    command.Parameters.AddWithValue("@user", UsuarioLogeado.Id);
+                    command.ExecuteNonQuery();
+                }
 
                 SqlCommand cmd = new SqlCommand("sp_set_update_tarima_estado_calidad", con);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -207,6 +230,70 @@ namespace LOSA.Calidad
         {
             popupMenu1.ShowPopup(Cursor.Position);
             gridActual = 3;
+        }
+
+        private void btnview_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var gridView2 = (GridView)gridRetenidos.FocusedView;
+                var row2 = (dsCalidad.tarimas_retRow)gridView2.GetFocusedDataRow();
+                frmview frm = new frmview(row2.id, row2.mp, UsuarioLogeado);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    LoadTarimasAvailables();
+                    LoadTarimasObs();
+                    LoadTarimasRet();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                
+            }
+
+        }
+
+        private void btndetalle_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var gridView2 = (GridView)grDisponibles.FocusedView;
+                var row2 = (dsCalidad.tarimas_disponiblesRow)gridView2.GetFocusedDataRow();
+                frmview frm = new frmview(row2.id, row2.mp, UsuarioLogeado);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    LoadTarimasAvailables();
+                    LoadTarimasObs();
+                    LoadTarimasRet();
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void btndetalle3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var gridView2 = (GridView)gridObservacion.FocusedView;
+                var row2 = (dsCalidad.tarimas_obsRow)gridView2.GetFocusedDataRow();
+                frmview frm = new frmview(row2.id, row2.mp, UsuarioLogeado);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    LoadTarimasAvailables();
+                    LoadTarimasObs();
+                    LoadTarimasRet();
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
     }
 }

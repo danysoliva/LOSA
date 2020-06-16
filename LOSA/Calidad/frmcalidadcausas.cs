@@ -16,6 +16,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using ACS.Classes;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace LOSA.Calidad
 {
@@ -60,6 +61,25 @@ namespace LOSA.Calidad
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 load_data();
+            }
+        }
+
+        private void btnedit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var gridview = (GridView)grd_data.FocusedView;
+                var row = (dsCalidad.causasRow)gridview.GetFocusedDataRow();
+                frmaddcausa frm = new frmaddcausa(row.id);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    load_data();
+                }
+            }
+            catch (Exception)
+            {
+
+               
             }
         }
     }

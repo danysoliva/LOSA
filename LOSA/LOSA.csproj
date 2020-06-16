@@ -184,6 +184,24 @@
     <Compile Include="Calidad\frmLotesStatus.Designer.cs">
       <DependentUpon>frmLotesStatus.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\frmretencionadd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmretencionadd.Designer.cs">
+      <DependentUpon>frmretencionadd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\frmview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmview.Designer.cs">
+      <DependentUpon>frmview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\frm_asiganacion_causas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frm_asiganacion_causas.Designer.cs">
+      <DependentUpon>frm_asiganacion_causas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clases\BagsPT.cs" />
     <Compile Include="Clases\Boleta.cs" />
     <Compile Include="Clases\CajaDialogo.cs" />
@@ -695,6 +713,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmLotesStatus.resx">
       <DependentUpon>frmLotesStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmretencionadd.resx">
+      <DependentUpon>frmretencionadd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmview.resx">
+      <DependentUpon>frmview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frm_asiganacion_causas.resx">
+      <DependentUpon>frm_asiganacion_causas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frmdespachos.resx">
       <DependentUpon>frmdespachos.cs</DependentUpon>
