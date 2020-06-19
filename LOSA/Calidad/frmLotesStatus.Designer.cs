@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLotesStatus));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions13 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions14 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions15 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions16 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions17 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions18 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.TabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
@@ -52,6 +52,8 @@
             this.colestado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grEdit = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnEditar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.Detalle = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btndetalle = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.gridObservacion = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -65,6 +67,8 @@
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colDetalle3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btndetalle3 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
             this.gridRetenidos = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -90,10 +94,9 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.Detalle = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btndetalle = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.colDetalle3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btndetalle3 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.btnhabilitarL = new DevExpress.XtraBars.BarButtonItem();
+            this.btnObservarL = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRetenerL = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.TabControl1)).BeginInit();
             this.TabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
@@ -101,10 +104,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dsCalidad1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMateriaPrima)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btndetalle)).BeginInit();
             this.xtraTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridObservacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btndetalle3)).BeginInit();
             this.xtraTabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridRetenidos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
@@ -112,8 +117,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btndetalle)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btndetalle3)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -295,12 +298,30 @@
             // btnEditar
             // 
             this.btnEditar.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions13.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions13.Image")));
             this.btnEditar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions13, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnEditar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnEditar_ButtonClick);
+            // 
+            // Detalle
+            // 
+            this.Detalle.Caption = "Detalle";
+            this.Detalle.ColumnEdit = this.btndetalle;
+            this.Detalle.Name = "Detalle";
+            this.Detalle.Visible = true;
+            this.Detalle.VisibleIndex = 6;
+            // 
+            // btndetalle
+            // 
+            this.btndetalle.AutoHeight = false;
+            editorButtonImageOptions14.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions14.Image")));
+            this.btndetalle.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions14, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            this.btndetalle.Name = "btndetalle";
+            this.btndetalle.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btndetalle.Click += new System.EventHandler(this.btndetalle_Click);
             // 
             // xtraTabPage2
             // 
@@ -443,11 +464,29 @@
             // repositoryItemButtonEdit1
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            editorButtonImageOptions15.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions15.Image")));
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions3, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions15, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            // 
+            // colDetalle3
+            // 
+            this.colDetalle3.Caption = "Detalle";
+            this.colDetalle3.ColumnEdit = this.btndetalle3;
+            this.colDetalle3.Name = "colDetalle3";
+            this.colDetalle3.Visible = true;
+            this.colDetalle3.VisibleIndex = 6;
+            // 
+            // btndetalle3
+            // 
+            this.btndetalle3.AutoHeight = false;
+            editorButtonImageOptions16.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions16.Image")));
+            this.btndetalle3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions16, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            this.btndetalle3.Name = "btndetalle3";
+            this.btndetalle3.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btndetalle3.Click += new System.EventHandler(this.btndetalle3_Click);
             // 
             // xtraTabPage3
             // 
@@ -588,9 +627,9 @@
             // repositoryItemButtonEdit2
             // 
             this.repositoryItemButtonEdit2.AutoHeight = false;
-            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
+            editorButtonImageOptions17.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions17.Image")));
             this.repositoryItemButtonEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions5, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions17, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.repositoryItemButtonEdit2.Name = "repositoryItemButtonEdit2";
             this.repositoryItemButtonEdit2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -605,9 +644,9 @@
             // btnview
             // 
             this.btnview.AutoHeight = false;
-            editorButtonImageOptions6.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions6.Image")));
+            editorButtonImageOptions18.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions18.Image")));
             this.btnview.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions6, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions18, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.btnview.Name = "btnview";
             this.btnview.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnview.Click += new System.EventHandler(this.btnview_Click);
@@ -628,7 +667,10 @@
             this.popupMenu1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnhabilitarL),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnObservarL),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnRetenerL)});
             this.popupMenu1.Manager = this.barManager1;
             this.popupMenu1.Name = "popupMenu1";
             // 
@@ -672,8 +714,11 @@
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.barButtonItem1,
             this.barButtonItem2,
-            this.barButtonItem3});
-            this.barManager1.MaxItemId = 3;
+            this.barButtonItem3,
+            this.btnhabilitarL,
+            this.btnObservarL,
+            this.btnRetenerL});
+            this.barManager1.MaxItemId = 6;
             // 
             // barDockControlTop
             // 
@@ -711,41 +756,29 @@
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 689);
             // 
-            // Detalle
+            // btnhabilitarL
             // 
-            this.Detalle.Caption = "Detalle";
-            this.Detalle.ColumnEdit = this.btndetalle;
-            this.Detalle.Name = "Detalle";
-            this.Detalle.Visible = true;
-            this.Detalle.VisibleIndex = 6;
+            this.btnhabilitarL.Caption = "Habilitar lote";
+            this.btnhabilitarL.Id = 3;
+            this.btnhabilitarL.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnhabilitarL.ImageOptions.Image")));
+            this.btnhabilitarL.Name = "btnhabilitarL";
+            this.btnhabilitarL.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnhabilitarL_ItemClick);
             // 
-            // btndetalle
+            // btnObservarL
             // 
-            this.btndetalle.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
-            this.btndetalle.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
-            this.btndetalle.Name = "btndetalle";
-            this.btndetalle.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.btndetalle.Click += new System.EventHandler(this.btndetalle_Click);
+            this.btnObservarL.Caption = "En Observacion lote";
+            this.btnObservarL.Id = 4;
+            this.btnObservarL.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnObservarL.ImageOptions.Image")));
+            this.btnObservarL.Name = "btnObservarL";
+            this.btnObservarL.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnObservarL_ItemClick);
             // 
-            // colDetalle3
+            // btnRetenerL
             // 
-            this.colDetalle3.Caption = "Detalle";
-            this.colDetalle3.ColumnEdit = this.btndetalle3;
-            this.colDetalle3.Name = "colDetalle3";
-            this.colDetalle3.Visible = true;
-            this.colDetalle3.VisibleIndex = 6;
-            // 
-            // btndetalle3
-            // 
-            this.btndetalle3.AutoHeight = false;
-            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
-            this.btndetalle3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions4, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
-            this.btndetalle3.Name = "btndetalle3";
-            this.btndetalle3.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.btndetalle3.Click += new System.EventHandler(this.btndetalle3_Click);
+            this.btnRetenerL.Caption = "Retener lote";
+            this.btnRetenerL.Id = 5;
+            this.btnRetenerL.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRetenerL.ImageOptions.Image")));
+            this.btnRetenerL.Name = "btnRetenerL";
+            this.btnRetenerL.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRetenerL_ItemClick);
             // 
             // frmLotesStatus
             // 
@@ -772,10 +805,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dsCalidad1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMateriaPrima)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btndetalle)).EndInit();
             this.xtraTabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridObservacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btndetalle3)).EndInit();
             this.xtraTabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridRetenidos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
@@ -783,8 +818,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnview)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btndetalle)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btndetalle3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -850,5 +883,8 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btndetalle;
         private DevExpress.XtraGrid.Columns.GridColumn colDetalle3;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btndetalle3;
+        private DevExpress.XtraBars.BarButtonItem btnhabilitarL;
+        private DevExpress.XtraBars.BarButtonItem btnObservarL;
+        private DevExpress.XtraBars.BarButtonItem btnRetenerL;
     }
 }

@@ -70,7 +70,7 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>ADE22CE12B91512A858BF5F0042F54BE08649625</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>37B94109BA4BB089FDBCE443D0673359AB534B15</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>LOSA_TemporaryKey.pfx</ManifestKeyFile>
@@ -435,6 +435,24 @@
     <Compile Include="Mantenimientos\Modelos\EstadoRequisicion.cs" />
     <Compile Include="Mantenimientos\Modelos\KardexTipoTransaccion.cs" />
     <Compile Include="Mantenimientos\Modelos\TipoPresentacion.cs" />
+    <Compile Include="PlanMPreque\frmLote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlanMPreque\frmLote.Designer.cs">
+      <DependentUpon>frmLote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlanMPreque\frmnewplan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlanMPreque\frmnewplan.Designer.cs">
+      <DependentUpon>frmnewplan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlanMPreque\frmverdetalleplan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlanMPreque\frmverdetalleplan.Designer.cs">
+      <DependentUpon>frmverdetalleplan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Produccion\dsProduccion1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -628,6 +646,14 @@
     <Compile Include="Tools\frmInputBox.Designer.cs">
       <DependentUpon>frmInputBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\dsTarima.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsTarima.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesMP\dsTransaccionesMP.cs">
+      <DependentUpon>dsTransaccionesMP.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesMP\dsTransaccionesMP.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -698,6 +724,12 @@
     </Compile>
     <Compile Include="TransaccionesMP\frmSeleccionLote.Designer.cs">
       <DependentUpon>frmSeleccionLote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmTarimaManual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmTarimaManual.Designer.cs">
+      <DependentUpon>frmTarimaManual.cs</DependentUpon>
     </Compile>
     <Compile Include="Utileria\frmMensaje.cs">
       <SubType>Form</SubType>
@@ -815,6 +847,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\frmTipoPresentacionCRUD.resx">
       <DependentUpon>frmTipoPresentacionCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanMPreque\frmLote.resx">
+      <DependentUpon>frmLote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanMPreque\frmnewplan.resx">
+      <DependentUpon>frmnewplan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanMPreque\frmverdetalleplan.resx">
+      <DependentUpon>frmverdetalleplan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\ctl_keypadNumber.resx">
       <DependentUpon>ctl_keypadNumber.cs</DependentUpon>
@@ -944,6 +985,9 @@
     <EmbeddedResource Include="TransaccionesMP\frmSeleccionLote.resx">
       <DependentUpon>frmSeleccionLote.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmTarimaManual.resx">
+      <DependentUpon>frmTarimaManual.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Utileria\frmMensaje.resx">
       <DependentUpon>frmMensaje.cs</DependentUpon>
     </EmbeddedResource>
@@ -1034,6 +1078,17 @@
     <None Include="Reportes\dsReportes.xss">
       <DependentUpon>dsReportes.xsd</DependentUpon>
     </None>
+    <None Include="TransaccionesMP\dsTarima.xsc">
+      <DependentUpon>dsTarima.xsd</DependentUpon>
+    </None>
+    <None Include="TransaccionesMP\dsTarima.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsTarima.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TransaccionesMP\dsTarima.xss">
+      <DependentUpon>dsTarima.xsd</DependentUpon>
+    </None>
     <None Include="TransaccionesMP\dsTransaccionesMP.xsc">
       <DependentUpon>dsTransaccionesMP.xsd</DependentUpon>
     </None>
@@ -1106,7 +1161,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 y x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
@@ -1116,6 +1171,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Requisiciones\" />
     <Folder Include="TransaccionesPT\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

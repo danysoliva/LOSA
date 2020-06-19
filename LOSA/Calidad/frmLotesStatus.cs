@@ -295,5 +295,60 @@ namespace LOSA.Calidad
 
             }
         }
+
+        private void btnhabilitarL_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btnObservarL_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btnRetenerL_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+        public void UpdateStatusLote( int Estado)
+        {
+
+            try
+            {
+
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                string lote = "";
+                switch (gridActual)
+                {
+                    case 1:
+                        var gridView = (GridView)grDisponibles.FocusedView;
+                        var row = (dsCalidad.tarimas_disponiblesRow)gridView.GetFocusedDataRow();
+                        lote = row.lote;
+
+                        break;
+                    case 2:
+                        var gridView1 = (GridView)gridObservacion.FocusedView;
+                        var row1 = (dsCalidad.tarimas_obsRow)gridView1.GetFocusedDataRow();
+                        lote = row1.lote;
+                        break;
+                    case 3:
+                        var gridView2 = (GridView)gridRetenidos.FocusedView;
+                        var row2 = (dsCalidad.tarimas_retRow)gridView2.GetFocusedDataRow();
+                        lote = row2.lote;
+                        break;
+                    default:
+                        break;
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
     }
 }

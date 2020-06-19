@@ -14,6 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LOSA.PlanMPreque;
 
 namespace LOSA
 {
@@ -249,6 +250,19 @@ namespace LOSA
         {
             frmcalidadcausas frm = new frmcalidadcausas();
             frm.Show();
+        }
+
+        private void simpleButton2_Click_1(object sender, EventArgs e)
+        {
+            frmTarimaManual FRM = new frmTarimaManual(UsuarioLogeado);
+            FRM.Show();
+        }
+
+        private void btnplanrequisas_Click(object sender, EventArgs e)
+        {
+            frmnewplan frm = new frmnewplan(UsuarioLogeado);
+            frm.Show();
+
         }
     }
 }
