@@ -58,7 +58,7 @@ namespace LOSA.TransaccionesMP
         private void cmdGuardar_Click(object sender, EventArgs e)
         {
            
-            DialogResult r = CajaDialogo.Pregunta("Confirme para generar la requisición?");
+            DialogResult r = CajaDialogo.Pregunta("Confirme para generar un plan?");
             if (r != DialogResult.Yes)
                 return;
 
@@ -83,7 +83,7 @@ namespace LOSA.TransaccionesMP
             {
                 //Insert encabezado
                 command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "sp_insert_requisicion_h_mp";
+                command.CommandText = "sp_insert_requisicion_plan_h_mp";
                 command.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
                 command.Parameters.AddWithValue("@DocEntry", DocEntry);
                 command.Parameters.AddWithValue("@comentario", comentario);
@@ -97,7 +97,7 @@ namespace LOSA.TransaccionesMP
                     {
                         command.Parameters.Clear();
                         command.CommandType = CommandType.StoredProcedure;
-                        command.CommandText = "sp_insert_requiscion_detalle";
+                        command.CommandText = "sp_insert_requiscion_plan_detalle";
                         command.Parameters.AddWithValue("@id_requisicion", IdEncabezado);
                         command.Parameters.AddWithValue("@idmp", mp.IdMP_ACS);
                         command.Parameters.AddWithValue("@code", row.Codigo);
