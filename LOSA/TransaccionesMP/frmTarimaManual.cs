@@ -277,5 +277,10 @@ namespace LOSA.TransaccionesMP
             }
 
         }
+
+        private void txtCantidadTarimasTotal_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

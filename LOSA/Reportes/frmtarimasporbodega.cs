@@ -22,6 +22,7 @@ namespace LOSA.Reportes
         public frmtarimasporbodega()
         {
             InitializeComponent();
+            navigationFrame1.SelectedPage = navigationPage2;
             LoadBodegas();
         }
 
@@ -55,21 +56,8 @@ namespace LOSA.Reportes
             }
         }
 
-        private void btnSeleccionar_Click(object sender, EventArgs e)
-        {
-            var gridView = (GridView)grd_bodegas.FocusedView;
-            var row = (dsRecepcionMPx.bodegasRow)gridView.GetFocusedDataRow();
+        private void btnSeleccionar_Click(object sender, EventArgs e){}
 
-            IdBodega = row.id;
-            BodegaNombre = row.descripcion;
-            lblnombrebodega.Text = BodegaNombre;
-
-            if (IdBodega > 0)
-            {
-                this.navigationFrame1.SelectNextPage();
-            }
-            Load_Report();
-        }
         public void Load_Report()
         {
             try
@@ -104,9 +92,38 @@ namespace LOSA.Reportes
             }
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
+        private void simpleButton1_Click(object sender, EventArgs e){}
+
+        private void btnSeleccionar_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            this.navigationFrame1.SelectPrevPage();
+            //
+            SeleccionoUnaBodega();
+        }
+
+        public void SeleccionoUnaBodega()
+        {
+            var gridView = (GridView)grd_bodegas.FocusedView;
+            var row = (dsRecepcionMPx.bodegasRow)gridView.GetFocusedDataRow();
+
+            IdBodega = row.id;
+            BodegaNombre = row.descripcion;
+            lblnombrebodega.Text = BodegaNombre;
+
+            if (IdBodega > 0)
+            {
+                this.navigationFrame1.SelectNextPage();
+            }
+            Load_Report();
+        }
+
+        private void grdv_bodegas_DoubleClick(object sender, EventArgs e)
+        {
+            SeleccionoUnaBodega();
+        }
+
+        private void simpleButton1_Click_1(object sender, EventArgs e)
+        {
+            this.navigationFrame1.SelectNextPage();
             LoadBodegas();
             lblnombrebodega.Text = "Escoja una bodega..";
             lbltotalTM.Text = "00";
