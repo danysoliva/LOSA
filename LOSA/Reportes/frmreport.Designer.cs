@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmreport));
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.cmdRegistroLote = new DevExpress.XtraEditors.SimpleButton();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.btnTrazabilidad = new DevExpress.XtraEditors.SimpleButton();
             this.btnCantidadMP = new DevExpress.XtraEditors.SimpleButton();
             this.btnLotes = new DevExpress.XtraEditors.SimpleButton();
             this.btnLotesXMP = new DevExpress.XtraEditors.SimpleButton();
             this.btnLotesPorProveedor = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdRegistroLote = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -54,19 +54,6 @@
             this.labelControl1.Size = new System.Drawing.Size(680, 50);
             this.labelControl1.TabIndex = 8;
             this.labelControl1.Text = "Reportes";
-            // 
-            // cmdRegistroLote
-            // 
-            this.cmdRegistroLote.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdRegistroLote.Appearance.Options.UseFont = true;
-            this.cmdRegistroLote.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdRegistroLote.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdRegistroLote.ImageOptions.Image")));
-            this.cmdRegistroLote.Location = new System.Drawing.Point(12, 120);
-            this.cmdRegistroLote.Name = "cmdRegistroLote";
-            this.cmdRegistroLote.Size = new System.Drawing.Size(200, 71);
-            this.cmdRegistroLote.TabIndex = 11;
-            this.cmdRegistroLote.Text = "Tarimas por\r\nbodega";
-            this.cmdRegistroLote.Click += new System.EventHandler(this.cmdRegistroLote_Click);
             // 
             // cmdHome
             // 
@@ -160,8 +147,23 @@
             this.btnLotesPorProveedor.Text = "Ver Lotes Por Proveedor";
             this.btnLotesPorProveedor.Click += new System.EventHandler(this.btnLotesPorProveedor_Click);
             // 
+            // cmdRegistroLote
+            // 
+            this.cmdRegistroLote.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdRegistroLote.Appearance.Options.UseFont = true;
+            this.cmdRegistroLote.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdRegistroLote.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdRegistroLote.ImageOptions.Image")));
+            this.cmdRegistroLote.Location = new System.Drawing.Point(12, 120);
+            this.cmdRegistroLote.Name = "cmdRegistroLote";
+            this.cmdRegistroLote.Size = new System.Drawing.Size(200, 71);
+            this.cmdRegistroLote.TabIndex = 11;
+            this.cmdRegistroLote.Text = "Tarimas por\r\nbodega";
+            this.cmdRegistroLote.Click += new System.EventHandler(this.cmdRegistroLote_Click);
+            // 
             // frmreport
             // 
+            this.Appearance.BackColor = System.Drawing.Color.White;
+            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(714, 522);
