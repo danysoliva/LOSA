@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmImprimirHojaIngreso));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
-            this.bindingSourcePresentaciones = new System.Windows.Forms.BindingSource();
+            this.bindingSourcePresentaciones = new System.Windows.Forms.BindingSource(this.components);
             this.dsRecepcionMPx1 = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -53,12 +54,12 @@
             this.cmdDuplicar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.Editar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnEditar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colnum = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.dtFechaHasta = new DevExpress.XtraEditors.DateEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.dtFechaDesde = new DevExpress.XtraEditors.DateEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.colnum = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePresentaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -197,6 +198,8 @@
             // colfecha_ingreso
             // 
             this.colfecha_ingreso.Caption = "Fecha Ingreso";
+            this.colfecha_ingreso.DisplayFormat.FormatString = "g";
+            this.colfecha_ingreso.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colfecha_ingreso.FieldName = "fecha_ingreso";
             this.colfecha_ingreso.Name = "colfecha_ingreso";
             this.colfecha_ingreso.OptionsColumn.AllowEdit = false;
@@ -291,6 +294,15 @@
             this.btnEditar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnEditar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnEditar_ButtonClick);
             // 
+            // colnum
+            // 
+            this.colnum.Caption = "#";
+            this.colnum.FieldName = "num";
+            this.colnum.Name = "colnum";
+            this.colnum.Visible = true;
+            this.colnum.VisibleIndex = 0;
+            this.colnum.Width = 45;
+            // 
             // cmdGuardar
             // 
             this.cmdGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -363,15 +375,6 @@
             this.labelControl8.Size = new System.Drawing.Size(100, 20);
             this.labelControl8.TabIndex = 54;
             this.labelControl8.Text = "Fecha Desde:";
-            // 
-            // colnum
-            // 
-            this.colnum.Caption = "#";
-            this.colnum.FieldName = "num";
-            this.colnum.Name = "colnum";
-            this.colnum.Visible = true;
-            this.colnum.VisibleIndex = 0;
-            this.colnum.Width = 45;
             // 
             // frmImprimirHojaIngreso
             // 

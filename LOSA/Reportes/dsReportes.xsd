@@ -12,7 +12,7 @@
   <xs:element name="dsReportes" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsReportes" msprop:Generator_UserDSName="dsReportes">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="TarimasPorBodega" msprop:Generator_TableClassName="TarimasPorBodegaDataTable" msprop:Generator_TableVarName="tableTarimasPorBodega" msprop:Generator_RowChangedName="TarimasPorBodegaRowChanged" msprop:Generator_TablePropName="TarimasPorBodega" msprop:Generator_RowDeletingName="TarimasPorBodegaRowDeleting" msprop:Generator_RowChangingName="TarimasPorBodegaRowChanging" msprop:Generator_RowEvHandlerName="TarimasPorBodegaRowChangeEventHandler" msprop:Generator_RowDeletedName="TarimasPorBodegaRowDeleted" msprop:Generator_RowClassName="TarimasPorBodegaRow" msprop:Generator_UserTableName="TarimasPorBodega" msprop:Generator_RowEvArgName="TarimasPorBodegaRowChangeEvent">
+        <xs:element name="TarimasPorBodega" msprop:Generator_TableClassName="TarimasPorBodegaDataTable" msprop:Generator_TableVarName="tableTarimasPorBodega" msprop:Generator_TablePropName="TarimasPorBodega" msprop:Generator_RowDeletingName="TarimasPorBodegaRowDeleting" msprop:Generator_RowChangingName="TarimasPorBodegaRowChanging" msprop:Generator_RowEvHandlerName="TarimasPorBodegaRowChangeEventHandler" msprop:Generator_RowDeletedName="TarimasPorBodegaRowDeleted" msprop:Generator_UserTableName="TarimasPorBodega" msprop:Generator_RowChangedName="TarimasPorBodegaRowChanged" msprop:Generator_RowEvArgName="TarimasPorBodegaRowChangeEvent" msprop:Generator_RowClassName="TarimasPorBodegaRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
@@ -25,6 +25,7 @@
               <xs:element name="cantidad" msprop:Generator_ColumnVarNameInTable="columncantidad" msprop:Generator_ColumnPropNameInRow="cantidad" msprop:Generator_ColumnPropNameInTable="cantidadColumn" msprop:Generator_UserColumnName="cantidad" type="xs:decimal" minOccurs="0" />
               <xs:element name="Enumerador" msprop:Generator_ColumnVarNameInTable="columnEnumerador" msprop:Generator_ColumnPropNameInRow="Enumerador" msprop:Generator_ColumnPropNameInTable="EnumeradorColumn" msprop:Generator_UserColumnName="Enumerador" type="xs:int" minOccurs="0" />
               <xs:element name="TotalTm" msprop:Generator_ColumnVarNameInTable="columnTotalTm" msprop:Generator_ColumnPropNameInRow="TotalTm" msprop:Generator_ColumnPropNameInTable="TotalTmColumn" msprop:Generator_UserColumnName="TotalTm" type="xs:int" minOccurs="0" />
+              <xs:element name="FechaIngreso" msprop:Generator_ColumnVarNameInTable="columnFechaIngreso" msprop:Generator_ColumnPropNameInRow="FechaIngreso" msprop:Generator_ColumnPropNameInTable="FechaIngresoColumn" msprop:Generator_UserColumnName="FechaIngreso" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

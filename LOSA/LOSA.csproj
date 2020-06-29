@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>56</ApplicationRevision>
+    <ApplicationRevision>58</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -70,7 +70,7 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>37B94109BA4BB089FDBCE443D0673359AB534B15</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>ADE22CE12B91512A858BF5F0042F54BE08649625</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>LOSA_TemporaryKey.pfx</ManifestKeyFile>
@@ -101,12 +101,15 @@
     <Reference Include="DevExpress.Data.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="DevExpress.Office.v17.1.Core, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v17.1.Core, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.PivotGrid.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="DevExpress.RichEdit.v17.1.Core, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Sparkline.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
@@ -128,6 +131,7 @@
     <Reference Include="DevExpress.XtraEditors.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="DevExpress.XtraGauges.v17.1.Core, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
@@ -409,11 +413,17 @@
     <Compile Include="Mantenimientos\frmKardexTipoTransaccionCRUD.Designer.cs">
       <DependentUpon>frmKardexTipoTransaccionCRUD.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mantenimientos\frmMantenimiento.cs">
+    <Compile Include="Mantenimientos\frmMantoOpciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mantenimientos\frmMantenimiento.Designer.cs">
-      <DependentUpon>frmMantenimiento.cs</DependentUpon>
+    <Compile Include="Mantenimientos\frmMantoOpciones.Designer.cs">
+      <DependentUpon>frmMantoOpciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\frmUbicaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\frmUbicaciones.Designer.cs">
+      <DependentUpon>frmUbicaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Mantenimientos\frmTipoPresentacion.cs">
       <SubType>Form</SubType>
@@ -427,11 +437,11 @@
     <Compile Include="Mantenimientos\frmTipoPresentacionCRUD.Designer.cs">
       <DependentUpon>frmTipoPresentacionCRUD.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mantenimientos\frmtipo_tarima.cs">
+    <Compile Include="Mantenimientos\frmUbicacionesCRUD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mantenimientos\frmtipo_tarima.Designer.cs">
-      <DependentUpon>frmtipo_tarima.cs</DependentUpon>
+    <Compile Include="Mantenimientos\frmUbicacionesCRUD.Designer.cs">
+      <DependentUpon>frmUbicacionesCRUD.cs</DependentUpon>
     </Compile>
     <Compile Include="Mantenimientos\Modelos\Bodega.cs" />
     <Compile Include="Mantenimientos\Modelos\EstadoProgramacionRequisicion.cs" />
@@ -636,6 +646,12 @@
     </Compile>
     <Compile Include="Reportes\frmtarimasporbodega.Designer.cs">
       <DependentUpon>frmtarimasporbodega.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rptUbicacionRotulo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptUbicacionRotulo.Designer.cs">
+      <DependentUpon>rptUbicacionRotulo.cs</DependentUpon>
     </Compile>
     <Compile Include="SplashForm.cs">
       <SubType>Form</SubType>
@@ -842,14 +858,20 @@
     <EmbeddedResource Include="Mantenimientos\frmKardexTipoTransaccionCRUD.resx">
       <DependentUpon>frmKardexTipoTransaccionCRUD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mantenimientos\frmMantenimiento.resx">
-      <DependentUpon>frmMantenimiento.cs</DependentUpon>
+    <EmbeddedResource Include="Mantenimientos\frmMantoOpciones.resx">
+      <DependentUpon>frmMantoOpciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\frmUbicaciones.resx">
+      <DependentUpon>frmUbicaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\frmTipoPresentacion.resx">
       <DependentUpon>frmTipoPresentacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\frmTipoPresentacionCRUD.resx">
       <DependentUpon>frmTipoPresentacionCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\frmUbicacionesCRUD.resx">
+      <DependentUpon>frmUbicacionesCRUD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PlanMPreque\frmLote.resx">
       <DependentUpon>frmLote.cs</DependentUpon>
@@ -948,6 +970,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmtarimasporbodega.resx">
       <DependentUpon>frmtarimasporbodega.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptUbicacionRotulo.resx">
+      <DependentUpon>rptUbicacionRotulo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SplashForm.resx">
       <DependentUpon>SplashForm.cs</DependentUpon>
@@ -1164,7 +1189,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 y x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

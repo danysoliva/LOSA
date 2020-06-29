@@ -51,8 +51,8 @@ namespace LOSA.TransaccionesMP
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            frmMantenimiento frm = new frmMantenimiento();
-            frm.Show();
+            //frmMantenimiento frm = new frmMantenimiento();
+            //frm.Show();
         }
 
         private void cmdHome_Click(object sender, EventArgs e)

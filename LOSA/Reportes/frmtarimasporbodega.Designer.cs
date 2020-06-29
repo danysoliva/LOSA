@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmtarimasporbodega));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.navigationFrame1 = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
@@ -44,6 +44,9 @@
             this.colid_proveedor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colproveedor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcantidad = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colEnumerador = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTotalTm = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFechaIngreso = new DevExpress.XtraGrid.Columns.GridColumn();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
@@ -59,8 +62,6 @@
             this.lblnombrebodega = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.lbltotalTM = new DevExpress.XtraEditors.LabelControl();
-            this.colEnumerador = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTotalTm = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).BeginInit();
             this.navigationFrame1.SuspendLayout();
             this.navigationPage1.SuspendLayout();
@@ -83,10 +84,9 @@
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.cmdHome.Location = new System.Drawing.Point(537, 13);
-            this.cmdHome.Margin = new System.Windows.Forms.Padding(4);
+            this.cmdHome.Location = new System.Drawing.Point(460, 11);
             this.cmdHome.Name = "cmdHome";
-            this.cmdHome.Size = new System.Drawing.Size(265, 87);
+            this.cmdHome.Size = new System.Drawing.Size(227, 71);
             this.cmdHome.TabIndex = 8;
             this.cmdHome.Text = "Atras";
             this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
@@ -98,13 +98,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.navigationFrame1.Controls.Add(this.navigationPage1);
             this.navigationFrame1.Controls.Add(this.navigationPage2);
-            this.navigationFrame1.Location = new System.Drawing.Point(2, 120);
+            this.navigationFrame1.Location = new System.Drawing.Point(2, 98);
+            this.navigationFrame1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.navigationFrame1.Name = "navigationFrame1";
             this.navigationFrame1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.navigationPage1,
             this.navigationPage2});
-            this.navigationFrame1.SelectedPage = this.navigationPage2;
-            this.navigationFrame1.Size = new System.Drawing.Size(813, 475);
+            this.navigationFrame1.SelectedPage = this.navigationPage1;
+            this.navigationFrame1.Size = new System.Drawing.Size(697, 386);
             this.navigationFrame1.TabIndex = 9;
             this.navigationFrame1.Text = "navigationFrame1";
             // 
@@ -115,7 +116,7 @@
             this.navigationPage1.Controls.Add(this.simpleButton1);
             this.navigationPage1.Controls.Add(this.labelControl1);
             this.navigationPage1.Name = "navigationPage1";
-            this.navigationPage1.Size = new System.Drawing.Size(813, 475);
+            this.navigationPage1.Size = new System.Drawing.Size(697, 386);
             // 
             // grd_reporte
             // 
@@ -124,11 +125,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_reporte.DataMember = "TarimasPorBodega";
             this.grd_reporte.DataSource = this.dsReportes;
-            this.grd_reporte.Location = new System.Drawing.Point(3, 65);
+            this.grd_reporte.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grd_reporte.Location = new System.Drawing.Point(2, 53);
             this.grd_reporte.MainView = this.grdv_reporte;
+            this.grd_reporte.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grd_reporte.Name = "grd_reporte";
-            this.grd_reporte.Size = new System.Drawing.Size(807, 407);
-            this.grd_reporte.TabIndex = 17;
+            this.grd_reporte.Size = new System.Drawing.Size(692, 331);
+            this.grd_reporte.TabIndex = 20;
             this.grd_reporte.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_reporte});
             // 
@@ -159,7 +162,8 @@
             this.colproveedor,
             this.colcantidad,
             this.colEnumerador,
-            this.colTotalTm});
+            this.colTotalTm,
+            this.colFechaIngreso});
             this.grdv_reporte.GridControl = this.grd_reporte;
             this.grdv_reporte.Name = "grdv_reporte";
             this.grdv_reporte.OptionsView.ShowAutoFilterRow = true;
@@ -241,6 +245,32 @@
             this.colcantidad.VisibleIndex = 7;
             this.colcantidad.Width = 105;
             // 
+            // colEnumerador
+            // 
+            this.colEnumerador.Caption = "N";
+            this.colEnumerador.FieldName = "Enumerador";
+            this.colEnumerador.Name = "colEnumerador";
+            this.colEnumerador.OptionsColumn.AllowEdit = false;
+            this.colEnumerador.Visible = true;
+            this.colEnumerador.VisibleIndex = 0;
+            this.colEnumerador.Width = 34;
+            // 
+            // colTotalTm
+            // 
+            this.colTotalTm.FieldName = "TotalTm";
+            this.colTotalTm.Name = "colTotalTm";
+            this.colTotalTm.Width = 73;
+            // 
+            // colFechaIngreso
+            // 
+            this.colFechaIngreso.Caption = "Fecha Ingreso";
+            this.colFechaIngreso.DisplayFormat.FormatString = "d";
+            this.colFechaIngreso.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.colFechaIngreso.FieldName = "FechaIngreso";
+            this.colFechaIngreso.Name = "colFechaIngreso";
+            this.colFechaIngreso.Visible = true;
+            this.colFechaIngreso.VisibleIndex = 8;
+            // 
             // simpleButton1
             // 
             this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -250,13 +280,12 @@
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(522, 12);
-            this.simpleButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.simpleButton1.Location = new System.Drawing.Point(458, 11);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(265, 43);
-            this.simpleButton1.TabIndex = 16;
+            this.simpleButton1.Size = new System.Drawing.Size(227, 35);
+            this.simpleButton1.TabIndex = 19;
             this.simpleButton1.Text = "Elegir otra bodega";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_1);
             // 
             // labelControl1
             // 
@@ -267,19 +296,19 @@
             this.labelControl1.Appearance.Options.UseTextOptions = true;
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(110, 4);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl1.Location = new System.Drawing.Point(93, 3);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(324, 54);
-            this.labelControl1.TabIndex = 15;
+            this.labelControl1.Size = new System.Drawing.Size(278, 44);
+            this.labelControl1.TabIndex = 18;
             this.labelControl1.Text = "Tarimas";
             // 
             // navigationPage2
             // 
+            this.navigationPage2.Caption = "navigationPage2";
             this.navigationPage2.Controls.Add(this.grd_bodegas);
             this.navigationPage2.Controls.Add(this.labelControl4);
             this.navigationPage2.Name = "navigationPage2";
-            this.navigationPage2.Size = new System.Drawing.Size(813, 475);
+            this.navigationPage2.Size = new System.Drawing.Size(697, 386);
             // 
             // grd_bodegas
             // 
@@ -288,15 +317,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_bodegas.DataMember = "bodegas";
             this.grd_bodegas.DataSource = this.dsRecepcionMPx;
-            this.grd_bodegas.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
-            this.grd_bodegas.Location = new System.Drawing.Point(-4, 77);
+            this.grd_bodegas.Location = new System.Drawing.Point(3, 58);
             this.grd_bodegas.MainView = this.grdv_bodegas;
-            this.grd_bodegas.Margin = new System.Windows.Forms.Padding(4);
             this.grd_bodegas.Name = "grd_bodegas";
             this.grd_bodegas.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnSeleccionar});
-            this.grd_bodegas.Size = new System.Drawing.Size(820, 388);
-            this.grd_bodegas.TabIndex = 17;
+            this.grd_bodegas.Size = new System.Drawing.Size(691, 315);
+            this.grd_bodegas.TabIndex = 19;
             this.grd_bodegas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_bodegas});
             // 
@@ -320,12 +347,14 @@
             this.grdv_bodegas.GridControl = this.grd_bodegas;
             this.grdv_bodegas.Name = "grdv_bodegas";
             this.grdv_bodegas.OptionsView.ShowGroupPanel = false;
+            this.grdv_bodegas.DoubleClick += new System.EventHandler(this.grdv_bodegas_DoubleClick);
             // 
             // colid
             // 
             this.colid.Caption = "Codigo";
             this.colid.FieldName = "id";
             this.colid.Name = "colid";
+            this.colid.OptionsColumn.AllowEdit = false;
             this.colid.Visible = true;
             this.colid.VisibleIndex = 0;
             this.colid.Width = 119;
@@ -335,6 +364,7 @@
             this.coldescripcion.Caption = "Bodega";
             this.coldescripcion.FieldName = "descripcion";
             this.coldescripcion.Name = "coldescripcion";
+            this.coldescripcion.OptionsColumn.AllowEdit = false;
             this.coldescripcion.Visible = true;
             this.coldescripcion.VisibleIndex = 1;
             this.coldescripcion.Width = 371;
@@ -352,12 +382,12 @@
             // btnSeleccionar
             // 
             this.btnSeleccionar.AutoHeight = false;
-            editorButtonImageOptions2.Image = global::LOSA.Properties.Resources.tap;
+            editorButtonImageOptions1.Image = global::LOSA.Properties.Resources.tap;
             this.btnSeleccionar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
+            this.btnSeleccionar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnSeleccionar_ButtonClick);
             // 
             // labelControl4
             // 
@@ -368,11 +398,10 @@
             this.labelControl4.Appearance.Options.UseTextOptions = true;
             this.labelControl4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl4.Location = new System.Drawing.Point(236, 15);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl4.Location = new System.Drawing.Point(192, 11);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(381, 54);
-            this.labelControl4.TabIndex = 16;
+            this.labelControl4.Size = new System.Drawing.Size(327, 44);
+            this.labelControl4.TabIndex = 18;
             this.labelControl4.Text = "Seleccione la Bodega";
             // 
             // labelControl2
@@ -382,10 +411,9 @@
             this.labelControl2.Appearance.Options.UseTextOptions = true;
             this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl2.Location = new System.Drawing.Point(13, 13);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl2.Location = new System.Drawing.Point(11, 11);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(150, 54);
+            this.labelControl2.Size = new System.Drawing.Size(129, 44);
             this.labelControl2.TabIndex = 17;
             this.labelControl2.Text = "Bodega:";
             // 
@@ -396,10 +424,9 @@
             this.lblnombrebodega.Appearance.Options.UseTextOptions = true;
             this.lblnombrebodega.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.lblnombrebodega.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblnombrebodega.Location = new System.Drawing.Point(171, 13);
-            this.lblnombrebodega.Margin = new System.Windows.Forms.Padding(4);
+            this.lblnombrebodega.Location = new System.Drawing.Point(147, 11);
             this.lblnombrebodega.Name = "lblnombrebodega";
-            this.lblnombrebodega.Size = new System.Drawing.Size(358, 54);
+            this.lblnombrebodega.Size = new System.Drawing.Size(307, 44);
             this.lblnombrebodega.TabIndex = 18;
             this.lblnombrebodega.Text = "Escoja una bodega..";
             // 
@@ -410,10 +437,9 @@
             this.labelControl5.Appearance.Options.UseTextOptions = true;
             this.labelControl5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl5.Location = new System.Drawing.Point(10, 59);
-            this.labelControl5.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl5.Location = new System.Drawing.Point(9, 48);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(243, 54);
+            this.labelControl5.Size = new System.Drawing.Size(208, 44);
             this.labelControl5.TabIndex = 19;
             this.labelControl5.Text = "Total Tarimas:";
             // 
@@ -424,34 +450,17 @@
             this.lbltotalTM.Appearance.Options.UseTextOptions = true;
             this.lbltotalTM.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.lbltotalTM.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lbltotalTM.Location = new System.Drawing.Point(251, 59);
-            this.lbltotalTM.Margin = new System.Windows.Forms.Padding(4);
+            this.lbltotalTM.Location = new System.Drawing.Point(215, 48);
             this.lbltotalTM.Name = "lbltotalTM";
-            this.lbltotalTM.Size = new System.Drawing.Size(175, 54);
+            this.lbltotalTM.Size = new System.Drawing.Size(150, 44);
             this.lbltotalTM.TabIndex = 20;
             this.lbltotalTM.Text = "00";
             // 
-            // colEnumerador
-            // 
-            this.colEnumerador.Caption = "N";
-            this.colEnumerador.FieldName = "Enumerador";
-            this.colEnumerador.Name = "colEnumerador";
-            this.colEnumerador.OptionsColumn.AllowEdit = false;
-            this.colEnumerador.Visible = true;
-            this.colEnumerador.VisibleIndex = 0;
-            this.colEnumerador.Width = 34;
-            // 
-            // colTotalTm
-            // 
-            this.colTotalTm.FieldName = "TotalTm";
-            this.colTotalTm.Name = "colTotalTm";
-            this.colTotalTm.Width = 73;
-            // 
             // frmtarimasporbodega
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(815, 595);
+            this.ClientSize = new System.Drawing.Size(699, 483);
             this.Controls.Add(this.lbltotalTM);
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.lblnombrebodega);
@@ -459,6 +468,7 @@
             this.Controls.Add(this.navigationFrame1);
             this.Controls.Add(this.cmdHome);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmtarimasporbodega";
             this.Text = "frmtarimasporbodega";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -481,21 +491,23 @@
 
         private DevExpress.XtraEditors.SimpleButton cmdHome;
         private DevExpress.XtraBars.Navigation.NavigationFrame navigationFrame1;
+        private RecepcionMP.dsRecepcionMPx dsRecepcionMPx;
+        private dsReportes dsReportes;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl lblnombrebodega;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.LabelControl lbltotalTM;
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage1;
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage2;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraGrid.GridControl grd_bodegas;
         private DevExpress.XtraGrid.Views.Grid.GridView grdv_bodegas;
         private DevExpress.XtraGrid.Columns.GridColumn colid;
         private DevExpress.XtraGrid.Columns.GridColumn coldescripcion;
         private DevExpress.XtraGrid.Columns.GridColumn colselect;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnSeleccionar;
-        private RecepcionMP.dsRecepcionMPx dsRecepcionMPx;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraGrid.GridControl grd_reporte;
         private DevExpress.XtraGrid.Views.Grid.GridView grdv_reporte;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private dsReportes dsReportes;
         private DevExpress.XtraGrid.Columns.GridColumn colid1;
         private DevExpress.XtraGrid.Columns.GridColumn colcodigo_barra;
         private DevExpress.XtraGrid.Columns.GridColumn collote_materia_prima;
@@ -504,11 +516,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn colid_proveedor;
         private DevExpress.XtraGrid.Columns.GridColumn colproveedor;
         private DevExpress.XtraGrid.Columns.GridColumn colcantidad;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.LabelControl lblnombrebodega;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.LabelControl lbltotalTM;
         private DevExpress.XtraGrid.Columns.GridColumn colEnumerador;
         private DevExpress.XtraGrid.Columns.GridColumn colTotalTm;
+        private DevExpress.XtraGrid.Columns.GridColumn colFechaIngreso;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }

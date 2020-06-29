@@ -89,7 +89,9 @@ namespace LOSA
         private void simpleButton3_Click(object sender, EventArgs e)
         {
             //Mantenimientos
-
+            frmMantoOpciones frm = new frmMantoOpciones();
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
         }
 
         private void cmdRegistroLote_Click(object sender, EventArgs e)
