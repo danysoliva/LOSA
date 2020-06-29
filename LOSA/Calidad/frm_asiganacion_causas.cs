@@ -12,14 +12,19 @@ using ACS.Classes;
 using System.Data.SqlClient;
 using LOSA.Clases;
 using DevExpress.XtraGrid.Views.Grid;
+using Huellas;
+using System.Threading;
 
 namespace LOSA.Calidad
 {
     public partial class frm_asiganacion_causas : DevExpress.XtraEditors.XtraForm
     {
         DataOperations dp = new DataOperations();
+        dsCalidad DsCalidadX = new dsCalidad();
         int Id_tarima;
-        int tipo_tarima;
+        string Lote = "";
+        int NumeroTrans = 0;
+        int tipo_tarima = 0;
         UserLogin UsuarioLogeado;//Formulario que unicamente bloquea
         public frm_asiganacion_causas(UserLogin ParUser, int id_tarima)
         {
@@ -27,6 +32,17 @@ namespace LOSA.Calidad
             UsuarioLogeado = ParUser;
             Id_tarima = id_tarima;
             load_data();
+        }
+        public frm_asiganacion_causas(UserLogin ParUser, string Plote, int id_tarima)
+        {
+            InitializeComponent();
+            UsuarioLogeado = ParUser;
+            Lote = Plote;
+            txtcantidad.Text = Lote;
+            labelControl3.Text = "Lote: ";
+            Id_tarima = id_tarima;
+
+            load_dataLOTE();
         }
         public void load_data()
         {
@@ -46,6 +62,35 @@ namespace LOSA.Calidad
                     txtitemcode.Text = dr[2].ToString();
                     txttarima.Text = dr[3].ToString();
                     tipo_tarima = dr.GetInt32(6);
+
+                }
+                dr.Close();
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+        public void load_dataLOTE()
+        {
+            string Query = @"exec [dbo].[ps_obtener_data_tarima_lote]
+                                @lote = @parid";
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            try
+            {
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(Query, cn);
+                cmd.Parameters.Add("@parid", SqlDbType.VarChar).Value = Lote;
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                   // txtcantidad.Text = dr[5].ToString();
+                    txtnombre.Text = dr[4].ToString();
+                    txtitemcode.Text = dr[2].ToString();
+                    txttarima.Text = dr[3].ToString();
+                    tipo_tarima = dr.GetInt32(6);
+                   NumeroTrans = dr.GetInt32(7);
                 }
                 dr.Close();
                 cn.Close();
@@ -63,27 +108,85 @@ namespace LOSA.Calidad
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             // Operacion de Retener
-            DataOperations dp = new DataOperations();
-            SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-            con.Open();
-
-            SqlCommand cmd = new SqlCommand("sp_set_update_tarima_estado_calidad", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@id_estado", 3);
-            cmd.Parameters.AddWithValue("@id", Id_tarima);
-            cmd.ExecuteNonQuery();
-            foreach (DataRow row in dsCalidad.causaadd.Rows)
+            if (Lote == "")
             {
-                cmd = new SqlCommand("sp_insert_into_calidad_tarimas",con);
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_set_update_tarima_estado_calidad", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idtarima",Id_tarima);
-                cmd.Parameters.AddWithValue("@id_causa", row["id"].ToString());
-                cmd.Parameters.AddWithValue("@usuario", UsuarioLogeado.Id);
-                cmd.Parameters.AddWithValue("@comentario", row["comentario"].ToString());
+                cmd.Parameters.AddWithValue("@id_estado", 3);
+                cmd.Parameters.AddWithValue("@id", Id_tarima);
                 cmd.ExecuteNonQuery();
+                foreach (DataRow row in dsCalidad.causaadd.Rows)
+                {
+                    cmd = new SqlCommand("sp_insert_into_calidad_tarimas", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@idtarima", Id_tarima);
+                    cmd.Parameters.AddWithValue("@id_causa", row["id"].ToString());
+                    cmd.Parameters.AddWithValue("@usuario", UsuarioLogeado.Id);
+                    cmd.Parameters.AddWithValue("@comentario", row["comentario"].ToString());
+                    cmd.ExecuteNonQuery();
+                }
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            else
+            {
+
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                int TiempoP = 1500;
+                //administracion.Huellas.frmProcesando frmProceso = new administracion.Huellas.frmProcesando();
+                SplashForm frmProceso = new SplashForm();
+                try
+                {
+                    con.Open();
+
+                    SqlCommand cmd = new SqlCommand("sp_get_tarimas_de_lote", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@lote", Lote);
+                    cmd.Parameters.AddWithValue("@numero_trans", NumeroTrans);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DsCalidadX.Tarimas.Clear();
+                    da.Fill(DsCalidadX.Tarimas);
+
+                    cmd = new SqlCommand("sp_update_tarimas_por_lote_calidad", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@lote", Lote);
+                    cmd.Parameters.AddWithValue("@numero_trans", NumeroTrans);
+                    cmd.Parameters.AddWithValue("@estado", 3);
+                    cmd.ExecuteNonQuery();
+                    foreach (DataRow Tarimas in DsCalidadX.Tarimas.Rows)
+                    {
+
+                        foreach (DataRow row in dsCalidad.causaadd.Rows)
+                        {
+                            cmd = new SqlCommand("sp_insert_into_calidad_tarimas", con);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@idtarima", Tarimas["tarima"].ToString());
+                            cmd.Parameters.AddWithValue("@id_causa", row["id"].ToString());
+                            cmd.Parameters.AddWithValue("@usuario", UsuarioLogeado.Id);
+                            cmd.Parameters.AddWithValue("@comentario", row["comentario"].ToString());
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+
+
+                }
+                catch (Exception ec)
+                {
+                    MessageBox.Show(ec.Message);
+                }
+
+                frmProceso.ShowDialog();
+                Thread.Sleep(TiempoP);
+                frmProceso.Close();
+
+            }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
