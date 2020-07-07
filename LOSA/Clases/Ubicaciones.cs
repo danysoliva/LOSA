@@ -18,6 +18,7 @@ namespace LOSA.Clases
         string _profundidad;
         bool _Recuperado;
         int _IdBodega;
+        string _bodegaDescripcion;
         public Ubicaciones()
         {
 
@@ -30,6 +31,7 @@ namespace LOSA.Clases
         public bool Recuperado { get => _Recuperado; set => _Recuperado = value; }
         public string Rack { get => _rack; set => _rack = value; }
         public int IdBodega { get => _IdBodega; set => _IdBodega = value; }
+        public string BodegaDescripcion { get => _bodegaDescripcion; set => _bodegaDescripcion = value; }
 
         public bool RecuperarRegistro(int pIdUbicacion, string pCodigoBarra)
         {
@@ -72,7 +74,7 @@ namespace LOSA.Clases
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_ubicaciones_from_id_v2", con);
+                SqlCommand cmd = new SqlCommand("[sp_get_ubicaciones_from_id_v3]", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@idUbicacion", pIdUbicacion);
                 cmd.Parameters.AddWithValue("@codigo_barra", pCodigoBarra);
@@ -82,6 +84,7 @@ namespace LOSA.Clases
                     Id = dr.GetInt32(0);
                     Rack = dr.GetString(1);
                     IdBodega = dr.GetInt32(4);
+                    BodegaDescripcion = dr.GetString(5);
                     Recuperado = true;
                 }
                 dr.Close();

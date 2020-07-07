@@ -37,7 +37,7 @@ namespace LOSA.TransaccionesMP
 
         private void cmdEntradaMP_Click(object sender, EventArgs e)
         {
-            frmEntradaMP frm = new frmEntradaMP(UsuarioLogeado);
+            frmEntradaMP_new frm = new frmEntradaMP_new(UsuarioLogeado);
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }

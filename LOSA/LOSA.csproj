@@ -567,6 +567,12 @@
     <Compile Include="RecepcionMP\frmEditTarima.Designer.cs">
       <DependentUpon>frmEditTarima.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecepcionMP\frmEntradaMP_new.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmEntradaMP_new.Designer.cs">
+      <DependentUpon>frmEntradaMP_new.cs</DependentUpon>
+    </Compile>
     <Compile Include="RecepcionMP\frmEntradaMP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -932,6 +938,9 @@
     <EmbeddedResource Include="RecepcionMP\frmEditTarima.resx">
       <DependentUpon>frmEditTarima.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frmEntradaMP_new.resx">
+      <DependentUpon>frmEntradaMP_new.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmEntradaMP.resx">
       <DependentUpon>frmEntradaMP.cs</DependentUpon>
     </EmbeddedResource>
@@ -1146,6 +1155,7 @@
   <ItemGroup>
     <Content Include="logo1.ico" />
     <None Include="Resources\2264828.png" />
+    <None Include="Resources\Accept-icon128px.png" />
     <Content Include="Resources\admin.png" />
     <None Include="Resources\backspace.png" />
     <Content Include="Resources\box.png" />
@@ -1158,6 +1168,7 @@
     <None Include="Resources\Checklist-icon.png" />
     <None Include="Resources\devoluciones2.png" />
     <None Include="Resources\delete-1-icon72px.png" />
+    <None Include="Resources\delete-1-icon128px.png" />
     <Content Include="Resources\edit.png" />
     <None Include="Resources\hapag-4-icon.png" />
     <None Include="Resources\Forklift-icon.png" />
