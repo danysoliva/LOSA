@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>59</ApplicationRevision>
+    <ApplicationRevision>61</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -445,6 +445,12 @@
     <Compile Include="Mantenimientos\Modelos\EstadoRequisicion.cs" />
     <Compile Include="Mantenimientos\Modelos\KardexTipoTransaccion.cs" />
     <Compile Include="Mantenimientos\Modelos\TipoPresentacion.cs" />
+    <Compile Include="MDIParentFormLOSA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIParentFormLOSA.Designer.cs">
+      <DependentUpon>MDIParentFormLOSA.cs</DependentUpon>
+    </Compile>
     <Compile Include="PlanMPreque\frmLote.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -578,6 +584,12 @@
     </Compile>
     <Compile Include="RecepcionMP\frmEntradaMP.Designer.cs">
       <DependentUpon>frmEntradaMP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecepcionMP\frmGestionIngresos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmGestionIngresos.Designer.cs">
+      <DependentUpon>frmGestionIngresos.cs</DependentUpon>
     </Compile>
     <Compile Include="RecepcionMP\frmMP.cs">
       <SubType>Form</SubType>
@@ -876,6 +888,9 @@
     <EmbeddedResource Include="Mantenimientos\frmUbicacionesCRUD.resx">
       <DependentUpon>frmUbicacionesCRUD.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MDIParentFormLOSA.resx">
+      <DependentUpon>MDIParentFormLOSA.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PlanMPreque\frmLote.resx">
       <DependentUpon>frmLote.cs</DependentUpon>
     </EmbeddedResource>
@@ -943,6 +958,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmEntradaMP.resx">
       <DependentUpon>frmEntradaMP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frmGestionIngresos.resx">
+      <DependentUpon>frmGestionIngresos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmMP.resx">
       <DependentUpon>frmMP.cs</DependentUpon>

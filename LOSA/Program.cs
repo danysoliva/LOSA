@@ -17,8 +17,10 @@ namespace LOSA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+
             Application.Run(new frmMain());
-            //Application.Run(new frmAlimentacionManual());
+            //Application.Run(new MDIParentFormLOSA());
         }
     }
 }

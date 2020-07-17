@@ -266,5 +266,16 @@ namespace LOSA
             frm.Show();
 
         }
+
+        private void cmdGestionIngresos_Click(object sender, EventArgs e)
+        {
+            //abrir la ventana de gestion de ingresos.
+            frmGestionIngresos frm = new frmGestionIngresos(this.UsuarioLogeado);
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
     }
 }

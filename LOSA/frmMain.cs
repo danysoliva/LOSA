@@ -192,5 +192,23 @@ namespace LOSA
                 simpleButton2_Click(new object(), new EventArgs());
             }
         }
+
+        private void simpleButton1_Click_1(object sender, EventArgs e)
+        {
+            Teclado.cerrarTeclado();
+            UserLogin Log1 = new UserLogin();
+            if (Log1.RecuperarRegistro(1069))
+            {
+                Log1.GrupoUsuario.GrupoUsuarioActivo = (GrupoUser.GrupoUsuario)Log1.IdGrupo;
+            }
+            else
+            {
+                Log1.Id = 1069;
+                Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Produccion;
+            }
+
+            frmOpciones frm = new frmOpciones(Log1);
+            frm.Show();
+        }
     }
 }
