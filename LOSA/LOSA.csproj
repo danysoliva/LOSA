@@ -591,6 +591,12 @@
     <Compile Include="RecepcionMP\frmGestionIngresos.Designer.cs">
       <DependentUpon>frmGestionIngresos.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecepcionMP\frmGestionIngresosTarimas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmGestionIngresosTarimas.Designer.cs">
+      <DependentUpon>frmGestionIngresosTarimas.cs</DependentUpon>
+    </Compile>
     <Compile Include="RecepcionMP\frmMP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -961,6 +967,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmGestionIngresos.resx">
       <DependentUpon>frmGestionIngresos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frmGestionIngresosTarimas.resx">
+      <DependentUpon>frmGestionIngresosTarimas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmMP.resx">
       <DependentUpon>frmMP.cs</DependentUpon>

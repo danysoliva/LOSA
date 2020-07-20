@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using System.Data.SqlClient;
 using ACS.Classes;
 using LOSA.Clases;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace LOSA.RecepcionMP
 {
@@ -49,6 +50,17 @@ namespace LOSA.RecepcionMP
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void btnver_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            //ver detalle de tarimas
+            var gridView = (GridView)grd_ingreso.FocusedView;
+            var row = (dsRecepcionMPx.IngresosMPRow)gridView.GetFocusedDataRow();
+
+            frmGestionIngresosTarimas frm = new frmGestionIngresosTarimas(row.Ningreso);
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
         }
     }
 }
