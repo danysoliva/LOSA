@@ -113,7 +113,7 @@ namespace LOSA.RecepcionMP
             }
 
             //Si pasa esa validacion podemos continuar con la anulacion de las tarimas y el ingreso.
-            DialogResult r = CajaDialogo.Pregunta("Realmente desea Anular este ingreso y todas sus Tarimas?");
+            DialogResult r = CajaDialogo.Pregunta("Realmente desea Anular el ingreso#: "+ txtNumeroIngreso.Text +" y todas sus Tarimas?");
             if(r!= DialogResult.Yes)
             {
                 return;

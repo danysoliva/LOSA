@@ -115,6 +115,9 @@ namespace LOSA
                 {
                     Log1.GrupoUsuario.GrupoUsuarioActivo = (GrupoUser.GrupoUsuario)Log1.IdGrupo;
                     frmOpciones frm = new frmOpciones(Log1);
+                    if (this.MdiParent != null)
+                        frm.MdiParent = this.MdiParent;
+
                     frm.Show();
 
                     this.DialogResult = System.Windows.Forms.DialogResult.OK;

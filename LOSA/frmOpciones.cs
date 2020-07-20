@@ -47,6 +47,9 @@ namespace LOSA
         {
             //
             frmImprimirHojaIngreso frm = new frmImprimirHojaIngreso(UsuarioLogeado);
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
@@ -90,6 +93,9 @@ namespace LOSA
         {
             //Mantenimientos
             frmMantoOpciones frm = new frmMantoOpciones();
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
@@ -98,6 +104,10 @@ namespace LOSA
         {
 
             frm_ingresos frm = new frm_ingresos(UsuarioLogeado);
+
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
             //frmTarima frm = new frmTarima(UsuarioLogeado);
@@ -121,6 +131,9 @@ namespace LOSA
         private void cmdProgramaRequisiciones_Click(object sender, EventArgs e)
         {
             frmOrdenesFabricacion frm = new frmOrdenesFabricacion(this.UsuarioLogeado);
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
@@ -145,6 +158,9 @@ namespace LOSA
         private void cmdRequisiciones__Click(object sender, EventArgs e)
         {
             frmRequisiciones frm = new frmRequisiciones(UsuarioLogeado);
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
@@ -245,6 +261,9 @@ namespace LOSA
         private void btnreportes_Click(object sender, EventArgs e)
         {
             LOSA.Reportes.frmreport frm = new Reportes.frmreport();
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+
             frm.Show();
         }
 
@@ -263,6 +282,9 @@ namespace LOSA
         private void btnplanrequisas_Click(object sender, EventArgs e)
         {
             frmnewplan frm = new frmnewplan(UsuarioLogeado);
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+
             frm.Show();
 
         }
