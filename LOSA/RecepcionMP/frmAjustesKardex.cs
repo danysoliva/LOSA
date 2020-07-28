@@ -4,6 +4,7 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using LOSA.Clases;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -148,46 +149,70 @@ namespace LOSA.RecepcionMP
                 CajaDialogo.Error("Es obligatorio llenar la fecha de vencimiento de la materia prima!");
                 return;
             }
-            bool Guardo = false;
-            int vid_tarima = 0;
+
+
+            int cantTarimas = 0;
             try
             {
-                DataOperations dp = new DataOperations();
-                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                con.Open();
-
-                SqlCommand cmm = new SqlCommand("sp_generar_codigo_from_tables_id", con);
-                cmm.CommandType = CommandType.StoredProcedure;
-                cmm.Parameters.AddWithValue("@id", 1);
-                string barcode = cmm.ExecuteScalar().ToString();
-
-                SqlCommand cmd = new SqlCommand("sp_insert_new_tarima_sin_boleta", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@itemcode", this.ItemCode);
-                cmd.Parameters.AddWithValue("@id_proveedor", txtCodigoProveedor.Text);
-                cmd.Parameters.AddWithValue("@fecha_ingreso", dtFechaIngreso.EditValue);
-                cmd.Parameters.AddWithValue("@numero_transaccion", txtNumIngreso.Text);
-                cmd.Parameters.AddWithValue("@fecha_vencimiento", dtFechaVencimiento.EditValue);
-                cmd.Parameters.AddWithValue("@fecha_produccion_materia_prima", dtFechaProduccion.EditValue);
-                cmd.Parameters.AddWithValue("@lote_materia_prima", txtLote.Text);
-                cmd.Parameters.AddWithValue("@id_presentacion", gridLookUpEditPresentacion.EditValue);
-                cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogueado.Id);
-                cmd.Parameters.AddWithValue("@id_tipo_transaccion_kardex", glTipoTransaccion.EditValue);
-                cmd.Parameters.AddWithValue("@codigo_barra", barcode);
-                cmd.Parameters.AddWithValue("@cant", txtCantidadT.Text);
-                cmd.Parameters.AddWithValue("@peso", txtPeso.Text);
-                vid_tarima = Convert.ToInt32(cmd.ExecuteScalar());
-                Guardo = true;
-                con.Close();
-                //CajaDialogo.InformationAuto();
-
+                cantTarimas = Convert.ToInt32(txtCantidadTarimasTotal.Text);
             }
-            catch (Exception ec)
+            catch
             {
-                CajaDialogo.Error(ec.Message);
             }
 
-            if (Guardo)
+            if (cantTarimas <= 0)
+            {
+                CajaDialogo.Error("La cantidad minima de tarimas debe ser uno(1)!");
+                return;
+            }
+
+            int CantGuardo = 0;
+            //ArrayList Lista = new ArrayList();
+            for (int i = 1; i <= cantTarimas; i++)
+            {
+                try
+                {
+                    DataOperations dp = new DataOperations();
+                    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                    con.Open();
+
+                    SqlCommand cmm = new SqlCommand("sp_generar_codigo_from_tables_id", con);
+                    cmm.CommandType = CommandType.StoredProcedure;
+                    cmm.Parameters.AddWithValue("@id", 1);
+                    string barcode = cmm.ExecuteScalar().ToString();
+
+                    SqlCommand cmd = new SqlCommand("sp_insert_new_tarima_sin_boleta", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@itemcode", this.ItemCode);
+                    cmd.Parameters.AddWithValue("@id_proveedor", txtCodigoProveedor.Text);
+                    cmd.Parameters.AddWithValue("@fecha_ingreso", dtFechaIngreso.EditValue);
+                    cmd.Parameters.AddWithValue("@numero_transaccion", txtNumIngreso.Text);
+                    cmd.Parameters.AddWithValue("@fecha_vencimiento", dtFechaVencimiento.EditValue);
+                    cmd.Parameters.AddWithValue("@fecha_produccion_materia_prima", dtFechaProduccion.EditValue);
+                    cmd.Parameters.AddWithValue("@lote_materia_prima", txtLote.Text);
+                    cmd.Parameters.AddWithValue("@id_presentacion", gridLookUpEditPresentacion.EditValue);
+                    cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogueado.Id);
+                    cmd.Parameters.AddWithValue("@id_tipo_transaccion_kardex", glTipoTransaccion.EditValue);
+                    cmd.Parameters.AddWithValue("@codigo_barra", barcode);
+                    cmd.Parameters.AddWithValue("@cant", txtCantidadT.Text);
+                    cmd.Parameters.AddWithValue("@peso", txtPeso.Text);
+                    //Lista.Add(Convert.ToInt32(cmd.ExecuteScalar()));
+                    cmd.ExecuteScalar();
+                    CantGuardo++;
+                    con.Close();
+                    //CajaDialogo.InformationAuto();
+
+                }
+                catch (Exception ec)
+                {
+                    CajaDialogo.Error(ec.Message);
+                }
+            }
+
+            
+            
+
+            if (CantGuardo>0)
             {
                 CajaDialogo.Information("Datos guardados exitosamente!");
                 this.Close();
@@ -235,6 +260,26 @@ namespace LOSA.RecepcionMP
         private void txtLote_Enter(object sender, EventArgs e)
         {
             Teclado.abrirTeclado();
+        }
+
+        private void txtCantidadTarimasTotal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }
