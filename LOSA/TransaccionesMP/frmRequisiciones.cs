@@ -1,5 +1,6 @@
 ﻿using ACS.Classes;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraReports.UI;
 using LOSA.Clases;
 using System;
 using System.Collections.Generic;
@@ -64,6 +65,22 @@ namespace LOSA.TransaccionesMP
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void btnimprimir_Click(object sender, EventArgs e)
+        {
+            var gridView = (GridView)grRequisicoinesMP.FocusedView;
+            var row = (dsTransaccionesMP.requisiciones_hRow)gridView.GetFocusedDataRow();
+            Requisiciones.Reportes.rpt_requisa report = new Requisiciones.Reportes.rpt_requisa(row.id);
+            report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+            report.ShowPrintMarginsWarning = false;
+            report.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
+            report.Print();
+        }
+        private void PrintingSystem_StartPrint(object sender, DevExpress.XtraPrinting.PrintDocumentEventArgs e)
+        {
+            //Indica el numero de copias de la boleta que seran impresas
+            e.PrintDocument.PrinterSettings.Copies = 1;
         }
     }
 }

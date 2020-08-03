@@ -444,7 +444,7 @@ namespace LOSA.RecepcionMP
         {
 
         }
-        private DataTable CreateDataUbicacion_v2(string pRack, string pBodega)
+        private DataTable CreateDataUbicacion_v2(int pUbicacion, string pBodega, string pRack)
         {
             DataTable dt = new DataTable();
 
@@ -453,6 +453,7 @@ namespace LOSA.RecepcionMP
 
             dt.Rows.Add("Bodega", pBodega);
 
+            dt.Rows.Add("UbicacionID", pUbicacion);
             dt.Rows.Add("RACK", pRack);
             //dt.Rows.Add("ALTURA", pAltura);
             //dt.Rows.Add("PROFUNDIDAD", pProfundidad);
@@ -465,7 +466,7 @@ namespace LOSA.RecepcionMP
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 idUbicacionNueva = frm.idUbicacion;
-                gcNuevaUbicación.DataSource = CreateDataUbicacion_v2(frm.rack, frm.BodegaNombre);
+                gcNuevaUbicación.DataSource = CreateDataUbicacion_v2(frm.idUbicacion, frm.BodegaNombre, frm.rack);
                 gvNuevaUbicacion.InitNewRow += GvNuevaUbicacion_InitNewRow;
                 gvNuevaUbicacion.Columns[0].AppearanceCell.Font = new Font("Segoe UI", 11, FontStyle.Bold);
             }

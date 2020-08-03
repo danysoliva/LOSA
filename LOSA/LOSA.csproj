@@ -70,10 +70,10 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>ADE22CE12B91512A858BF5F0042F54BE08649625</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>39F34F7DDE38FC470382C925731F2F6F185F9D97</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>LOSA_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>LOSA_2_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -162,6 +162,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calidad\dsCalidad.cs">
+      <DependentUpon>dsCalidad.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\dsCalidad.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -681,6 +684,17 @@
     <Compile Include="Reportes\rptUbicacionRotulo.Designer.cs">
       <DependentUpon>rptUbicacionRotulo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Requisiciones\dSReportes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dSReportes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Requisiciones\Reportes\rpt_requisa.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Requisiciones\Reportes\rpt_requisa.Designer.cs">
+      <DependentUpon>rpt_requisa.cs</DependentUpon>
+    </Compile>
     <Compile Include="SplashForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1017,6 +1031,9 @@
     <EmbeddedResource Include="Reportes\rptUbicacionRotulo.resx">
       <DependentUpon>rptUbicacionRotulo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Requisiciones\Reportes\rpt_requisa.resx">
+      <DependentUpon>rpt_requisa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SplashForm.resx">
       <DependentUpon>SplashForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1095,7 +1112,7 @@
     <None Include="Logistica\dsLogistica.xss">
       <DependentUpon>dsLogistica.xsd</DependentUpon>
     </None>
-    <None Include="LOSA_TemporaryKey.pfx" />
+    <None Include="LOSA_2_TemporaryKey.pfx" />
     <None Include="Mantenimientos\dsMantenimiento.xsc">
       <DependentUpon>dsMantenimiento.xsd</DependentUpon>
     </None>
@@ -1148,6 +1165,17 @@
     </None>
     <None Include="Reportes\dsReportes.xss">
       <DependentUpon>dsReportes.xsd</DependentUpon>
+    </None>
+    <None Include="Requisiciones\dSReportes.xsc">
+      <DependentUpon>dSReportes.xsd</DependentUpon>
+    </None>
+    <None Include="Requisiciones\dSReportes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dSReportes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Requisiciones\dSReportes.xss">
+      <DependentUpon>dSReportes.xsd</DependentUpon>
     </None>
     <None Include="TransaccionesMP\dsTarima.xsc">
       <DependentUpon>dsTarima.xsd</DependentUpon>
@@ -1244,7 +1272,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Requisiciones\" />
     <Folder Include="TransaccionesPT\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -298,17 +298,17 @@ namespace LOSA.Calidad
 
         private void btnhabilitarL_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            UpdateStatusLote(1);
         }
 
         private void btnObservarL_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            UpdateStatusLote(2);
         }
 
         private void btnRetenerL_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            UpdateStatusLote(3);
         }
         public void UpdateStatusLote( int Estado)
         {
@@ -342,7 +342,32 @@ namespace LOSA.Calidad
                     default:
                         break;
                 }
+                switch (Estado)
+                {
+                    case 1: // Habilitado
+                        var gridView = (GridView)grDisponibles.FocusedView;
+                        var row = (dsCalidad.tarimas_disponiblesRow)gridView.GetFocusedDataRow();
+                        lote = row.lote;
 
+                        break;
+                    case 2: //Observacion
+                        var gridView1 = (GridView)gridObservacion.FocusedView;
+                        var row1 = (dsCalidad.tarimas_obsRow)gridView1.GetFocusedDataRow();
+                        lote = row1.lote;
+                        break;
+                    case 3: // Retenido
+                        //frm_asiganacion_causas frm = new frm_asiganacion_causas(UsuarioLogeado, lote);
+                        //if (frm.ShowDialog() == DialogResult.OK)
+                        //{
+
+                        //    LoadTarimasAvailables();
+                        //    LoadTarimasObs();
+                        //    LoadTarimasRet();
+                        //}
+                        break;
+                    default:
+                        break;
+                }
 
             }
             catch (Exception ex)
