@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLotesXMP));
             this.gcLotes = new DevExpress.XtraGrid.GridControl();
-            this.lotesXProveedorBindingSource = new System.Windows.Forms.BindingSource();
+            this.lotesXProveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsLogistica = new LOSA.Logistica.dsLogistica2();
             this.gvLotes = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -42,10 +43,10 @@
             this.colidMateriaPrima = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.cbMateriaPrima = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.materiaprimaBindingSource = new System.Windows.Forms.BindingSource();
+            this.materiaprimaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gvMateriaPrima = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colitemcode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colitemdescrip = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dsRecepcionMPx = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gcLotes)).BeginInit();
@@ -225,7 +226,7 @@
             // 
             // materiaprimaBindingSource
             // 
-            this.materiaprimaBindingSource.DataMember = "Materia_prima";
+            this.materiaprimaBindingSource.DataMember = "Materia_prima_v2";
             this.materiaprimaBindingSource.DataSource = this.dsLogistica;
             // 
             // gvMateriaPrima
@@ -244,10 +245,9 @@
             this.gvMateriaPrima.Appearance.Row.Options.UseFont = true;
             this.gvMateriaPrima.Appearance.SelectedRow.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvMateriaPrima.Appearance.SelectedRow.Options.UseFont = true;
-            this.gvMateriaPrima.AutoFillColumn = this.gridColumn1;
             this.gvMateriaPrima.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn3,
-            this.gridColumn1});
+            this.colitemcode,
+            this.colitemdescrip});
             this.gvMateriaPrima.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gvMateriaPrima.Name = "gvMateriaPrima";
             this.gvMateriaPrima.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -255,20 +255,19 @@
             this.gvMateriaPrima.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
             this.gvMateriaPrima.OptionsView.ShowGroupPanel = false;
             // 
-            // gridColumn1
+            // colitemcode
             // 
-            this.gridColumn1.Caption = "Materia Prima";
-            this.gridColumn1.FieldName = "itemdescrip";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 100;
+            this.colitemcode.Caption = "Item Code";
+            this.colitemcode.FieldName = "itemcode";
+            this.colitemcode.Name = "colitemcode";
             // 
-            // gridColumn3
+            // colitemdescrip
             // 
-            this.gridColumn3.Caption = "gridColumn1";
-            this.gridColumn3.FieldName = "itemcode";
-            this.gridColumn3.Name = "gridColumn3";
+            this.colitemdescrip.Caption = "Materia Prima";
+            this.colitemdescrip.FieldName = "itemdescrip";
+            this.colitemdescrip.Name = "colitemdescrip";
+            this.colitemdescrip.Visible = true;
+            this.colitemdescrip.VisibleIndex = 0;
             // 
             // dsRecepcionMPx
             // 
@@ -331,13 +330,13 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.GridLookUpEdit cbMateriaPrima;
         private DevExpress.XtraGrid.Views.Grid.GridView gvMateriaPrima;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraEditors.SimpleButton cmdHome;
         private RecepcionMP.dsRecepcionMPx dsRecepcionMPx;
         private dsLogistica2 dsLogistica;
         private System.Windows.Forms.BindingSource lotesXProveedorBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn colidMateriaPrima;
         private System.Windows.Forms.BindingSource materiaprimaBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colitemcode;
+        private DevExpress.XtraGrid.Columns.GridColumn colitemdescrip;
     }
 }

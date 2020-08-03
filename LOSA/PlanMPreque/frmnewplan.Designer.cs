@@ -61,12 +61,11 @@
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(40, 10);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl1.Location = new System.Drawing.Point(34, 8);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(580, 49);
+            this.labelControl1.Size = new System.Drawing.Size(497, 40);
             this.labelControl1.TabIndex = 33;
-            this.labelControl1.Text = "O. de Fabricacion planificadas";
+            this.labelControl1.Text = "Ordenes de Fabricacion planificadas";
             // 
             // grOrdenFabricacion
             // 
@@ -75,14 +74,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grOrdenFabricacion.DataMember = "Plan_requiciones";
             this.grOrdenFabricacion.DataSource = this.dsTransaccionesMP1;
-            this.grOrdenFabricacion.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
-            this.grOrdenFabricacion.Location = new System.Drawing.Point(-2, 123);
+            this.grOrdenFabricacion.Location = new System.Drawing.Point(-2, 100);
             this.grOrdenFabricacion.MainView = this.gvTarimas;
-            this.grOrdenFabricacion.Margin = new System.Windows.Forms.Padding(4);
             this.grOrdenFabricacion.Name = "grOrdenFabricacion";
             this.grOrdenFabricacion.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnVer});
-            this.grOrdenFabricacion.Size = new System.Drawing.Size(853, 569);
+            this.grOrdenFabricacion.Size = new System.Drawing.Size(731, 462);
             this.grOrdenFabricacion.TabIndex = 34;
             this.grOrdenFabricacion.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTarimas});
@@ -218,10 +215,9 @@
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(615, 10);
-            this.btnAtras.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAtras.Location = new System.Drawing.Point(527, 8);
             this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(223, 58);
+            this.btnAtras.Size = new System.Drawing.Size(191, 47);
             this.btnAtras.TabIndex = 35;
             this.btnAtras.Text = "Atras";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
@@ -230,13 +226,14 @@
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
             this.Appearance.Options.UseBackColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(851, 689);
+            this.ClientSize = new System.Drawing.Size(729, 560);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.grOrdenFabricacion);
             this.Controls.Add(this.labelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmnewplan";
             this.Text = "frmnewplan";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

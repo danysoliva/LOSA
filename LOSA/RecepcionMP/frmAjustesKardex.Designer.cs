@@ -55,7 +55,6 @@
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.dtFechaIngreso = new DevExpress.XtraEditors.DateEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.txtProveedorName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.txtCodigoProveedor = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -72,6 +71,12 @@
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.txtCantidadTarimasTotal = new DevExpress.XtraEditors.TextEdit();
+            this.glueProveedor = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gvProveedores = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIdProveedor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dsLogistica21 = new LOSA.Logistica.dsLogistica2();
+            this.bindingSourceProveedores = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditPresentacion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.presentacionesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).BeginInit();
@@ -85,7 +90,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNumIngreso.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaIngreso.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaIngreso.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtProveedorName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigoProveedor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMP_Name.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPeso.Properties)).BeginInit();
@@ -93,12 +97,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.tipotransaccioneskardexBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadTarimasTotal.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.glueProveedor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvProveedores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsLogistica21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceProveedores)).BeginInit();
             this.SuspendLayout();
             // 
             // gridLookUpEditPresentacion
             // 
             this.gridLookUpEditPresentacion.EditValue = "";
-            this.gridLookUpEditPresentacion.Location = new System.Drawing.Point(446, 184);
+            this.gridLookUpEditPresentacion.Location = new System.Drawing.Point(457, 184);
             this.gridLookUpEditPresentacion.Name = "gridLookUpEditPresentacion";
             this.gridLookUpEditPresentacion.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridLookUpEditPresentacion.Properties.Appearance.Options.UseFont = true;
@@ -108,7 +116,7 @@
             this.gridLookUpEditPresentacion.Properties.DisplayMember = "descripcion";
             this.gridLookUpEditPresentacion.Properties.ValueMember = "id";
             this.gridLookUpEditPresentacion.Properties.View = this.gvLookUpEditPresentacion;
-            this.gridLookUpEditPresentacion.Size = new System.Drawing.Size(170, 30);
+            this.gridLookUpEditPresentacion.Size = new System.Drawing.Size(159, 30);
             this.gridLookUpEditPresentacion.TabIndex = 4;
             this.gridLookUpEditPresentacion.EditValueChanged += new System.EventHandler(this.GridLookUpEditPresentacion_EditValueChanged);
             // 
@@ -158,7 +166,7 @@
             // 
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl11.Appearance.Options.UseFont = true;
-            this.labelControl11.Location = new System.Drawing.Point(325, 187);
+            this.labelControl11.Location = new System.Drawing.Point(335, 187);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(115, 24);
             this.labelControl11.TabIndex = 71;
@@ -168,7 +176,7 @@
             // 
             this.labelControl10.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(384, 282);
+            this.labelControl10.Location = new System.Drawing.Point(395, 283);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(56, 24);
             this.labelControl10.TabIndex = 70;
@@ -177,13 +185,13 @@
             // txtLote
             // 
             this.txtLote.EditValue = "";
-            this.txtLote.Location = new System.Drawing.Point(446, 278);
+            this.txtLote.Location = new System.Drawing.Point(457, 278);
             this.txtLote.Name = "txtLote";
             this.txtLote.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLote.Properties.Appearance.Options.UseFont = true;
             this.txtLote.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtLote.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtLote.Size = new System.Drawing.Size(170, 32);
+            this.txtLote.Size = new System.Drawing.Size(159, 32);
             this.txtLote.TabIndex = 8;
             this.txtLote.Enter += new System.EventHandler(this.txtLote_Enter);
             // 
@@ -271,20 +279,20 @@
             // txtNumIngreso
             // 
             this.txtNumIngreso.EditValue = "";
-            this.txtNumIngreso.Location = new System.Drawing.Point(446, 232);
+            this.txtNumIngreso.Location = new System.Drawing.Point(457, 232);
             this.txtNumIngreso.Name = "txtNumIngreso";
             this.txtNumIngreso.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumIngreso.Properties.Appearance.Options.UseFont = true;
             this.txtNumIngreso.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNumIngreso.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtNumIngreso.Size = new System.Drawing.Size(170, 32);
+            this.txtNumIngreso.Size = new System.Drawing.Size(159, 32);
             this.txtNumIngreso.TabIndex = 6;
             // 
             // labelControl6
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(335, 240);
+            this.labelControl6.Location = new System.Drawing.Point(345, 240);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(105, 24);
             this.labelControl6.TabIndex = 61;
@@ -317,18 +325,6 @@
             this.labelControl5.TabIndex = 59;
             this.labelControl5.Text = "Fecha Ingreso";
             // 
-            // txtProveedorName
-            // 
-            this.txtProveedorName.EditValue = "";
-            this.txtProveedorName.Enabled = false;
-            this.txtProveedorName.Location = new System.Drawing.Point(325, 139);
-            this.txtProveedorName.Name = "txtProveedorName";
-            this.txtProveedorName.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProveedorName.Properties.Appearance.Options.UseFont = true;
-            this.txtProveedorName.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtProveedorName.Size = new System.Drawing.Size(291, 26);
-            this.txtProveedorName.TabIndex = 2;
-            // 
             // labelControl4
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -343,12 +339,12 @@
             // 
             this.txtCodigoProveedor.EditValue = "";
             this.txtCodigoProveedor.Enabled = false;
-            this.txtCodigoProveedor.Location = new System.Drawing.Point(177, 139);
+            this.txtCodigoProveedor.Location = new System.Drawing.Point(177, 142);
             this.txtCodigoProveedor.Name = "txtCodigoProveedor";
-            this.txtCodigoProveedor.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigoProveedor.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigoProveedor.Properties.Appearance.Options.UseFont = true;
             this.txtCodigoProveedor.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCodigoProveedor.Size = new System.Drawing.Size(142, 26);
+            this.txtCodigoProveedor.Size = new System.Drawing.Size(142, 28);
             this.txtCodigoProveedor.TabIndex = 1;
             // 
             // labelControl3
@@ -521,11 +517,84 @@
             this.txtCantidadTarimasTotal.TabIndex = 82;
             this.txtCantidadTarimasTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidadTarimasTotal_KeyPress);
             // 
+            // glueProveedor
+            // 
+            this.glueProveedor.Location = new System.Drawing.Point(325, 142);
+            this.glueProveedor.Name = "glueProveedor";
+            this.glueProveedor.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.glueProveedor.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.glueProveedor.Properties.Appearance.Options.UseFont = true;
+            this.glueProveedor.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.glueProveedor.Properties.DataSource = this.bindingSourceProveedores;
+            this.glueProveedor.Properties.DisplayMember = "cardname";
+            this.glueProveedor.Properties.NullText = "";
+            this.glueProveedor.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
+            this.glueProveedor.Properties.PopupFormSize = new System.Drawing.Size(400, 0);
+            this.glueProveedor.Properties.ValueMember = "carcode";
+            this.glueProveedor.Properties.View = this.gvProveedores;
+            this.glueProveedor.Size = new System.Drawing.Size(291, 28);
+            this.glueProveedor.TabIndex = 87;
+            this.glueProveedor.EditValueChanged += new System.EventHandler(this.glueProveedor_EditValueChanged);
+            // 
+            // gvProveedores
+            // 
+            this.gvProveedores.Appearance.FocusedCell.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvProveedores.Appearance.FocusedCell.Options.UseFont = true;
+            this.gvProveedores.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvProveedores.Appearance.FocusedRow.Options.UseFont = true;
+            this.gvProveedores.Appearance.GroupRow.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvProveedores.Appearance.GroupRow.Options.UseFont = true;
+            this.gvProveedores.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvProveedores.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gvProveedores.Appearance.HideSelectionRow.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvProveedores.Appearance.HideSelectionRow.Options.UseFont = true;
+            this.gvProveedores.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvProveedores.Appearance.Row.Options.UseFont = true;
+            this.gvProveedores.Appearance.SelectedRow.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvProveedores.Appearance.SelectedRow.Options.UseFont = true;
+            this.gvProveedores.AutoFillColumn = this.gridColumn3;
+            this.gvProveedores.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colIdProveedor,
+            this.gridColumn3});
+            this.gvProveedores.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gvProveedores.Name = "gvProveedores";
+            this.gvProveedores.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gvProveedores.OptionsView.ShowAutoFilterRow = true;
+            this.gvProveedores.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Proveedor";
+            this.gridColumn3.FieldName = "cardname";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 0;
+            this.gridColumn3.Width = 100;
+            // 
+            // colIdProveedor
+            // 
+            this.colIdProveedor.Caption = "Cod. SAP Prov.";
+            this.colIdProveedor.FieldName = "carcode";
+            this.colIdProveedor.Name = "colIdProveedor";
+            // 
+            // dsLogistica21
+            // 
+            this.dsLogistica21.DataSetName = "dsLogistica2";
+            this.dsLogistica21.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bindingSourceProveedores
+            // 
+            this.bindingSourceProveedores.DataMember = "Proveedores";
+            this.bindingSourceProveedores.DataSource = this.dsLogistica21;
+            // 
             // frmAjustesKardex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(622, 521);
+            this.Controls.Add(this.glueProveedor);
             this.Controls.Add(this.labelControl13);
             this.Controls.Add(this.txtCantidadTarimasTotal);
             this.Controls.Add(this.cmdGuardar);
@@ -549,7 +618,6 @@
             this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.dtFechaIngreso);
             this.Controls.Add(this.labelControl5);
-            this.Controls.Add(this.txtProveedorName);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.txtCodigoProveedor);
             this.Controls.Add(this.labelControl3);
@@ -571,7 +639,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNumIngreso.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaIngreso.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaIngreso.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtProveedorName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigoProveedor.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMP_Name.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPeso.Properties)).EndInit();
@@ -579,6 +646,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.tipotransaccioneskardexBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadTarimasTotal.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.glueProveedor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvProveedores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsLogistica21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceProveedores)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -603,7 +674,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.DateEdit dtFechaIngreso;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.TextEdit txtProveedorName;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.TextEdit txtCodigoProveedor;
         private DevExpress.XtraEditors.LabelControl labelControl3;
@@ -623,5 +693,11 @@
         private System.Windows.Forms.BindingSource presentacionesBindingSource;
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private DevExpress.XtraEditors.TextEdit txtCantidadTarimasTotal;
+        private DevExpress.XtraEditors.GridLookUpEdit glueProveedor;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvProveedores;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn colIdProveedor;
+        private System.Windows.Forms.BindingSource bindingSourceProveedores;
+        private Logistica.dsLogistica2 dsLogistica21;
     }
 }

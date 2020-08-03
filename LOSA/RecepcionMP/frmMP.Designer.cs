@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMP));
             this.gcMP = new DevExpress.XtraGrid.GridControl();
-            this.materiaPrimaBindingSource = new System.Windows.Forms.BindingSource();
+            this.materiaPrimaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsRecepcionMPx = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.gvMP = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colcardcode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcardname = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colitemdescrip = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSeleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.colItemCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colitemcode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colitemdescrip = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gcMP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.materiaPrimaBindingSource)).BeginInit();
@@ -96,21 +97,23 @@
             this.gvMP.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colcardcode,
             this.colcardname,
-            this.colitemdescrip,
             this.colSeleccionar,
-            this.colItemCode});
+            this.colitemcode,
+            this.colitemdescrip});
             this.gvMP.GridControl = this.gcMP;
             this.gvMP.Name = "gvMP";
             this.gvMP.OptionsCustomization.AllowFilter = false;
             this.gvMP.OptionsFilter.AllowFilterEditor = false;
+            this.gvMP.OptionsView.ShowAutoFilterRow = true;
             this.gvMP.OptionsView.ShowGroupPanel = false;
             this.gvMP.DoubleClick += new System.EventHandler(this.GvMP_DoubleClick);
             // 
             // colcardcode
             // 
+            this.colcardcode.Caption = "Codigo SAP";
             this.colcardcode.FieldName = "carcode";
             this.colcardcode.Name = "colcardcode";
-            this.colcardcode.Width = 151;
+            this.colcardcode.Width = 68;
             // 
             // colcardname
             // 
@@ -118,19 +121,7 @@
             this.colcardname.FieldName = "cardname";
             this.colcardname.Name = "colcardname";
             this.colcardname.OptionsColumn.AllowEdit = false;
-            this.colcardname.Visible = true;
-            this.colcardname.VisibleIndex = 0;
-            this.colcardname.Width = 151;
-            // 
-            // colitemdescrip
-            // 
-            this.colitemdescrip.Caption = "MateriaPrima";
-            this.colitemdescrip.FieldName = "itemdescrip";
-            this.colitemdescrip.Name = "colitemdescrip";
-            this.colitemdescrip.OptionsColumn.AllowEdit = false;
-            this.colitemdescrip.Visible = true;
-            this.colitemdescrip.VisibleIndex = 1;
-            this.colitemdescrip.Width = 226;
+            this.colcardname.Width = 207;
             // 
             // colSeleccionar
             // 
@@ -152,11 +143,25 @@
             this.btnSeleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnSeleccionar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnSeleccionar_ButtonClick);
             // 
-            // colItemCode
+            // colitemcode
             // 
-            this.colItemCode.Caption = "gridColumn1";
-            this.colItemCode.FieldName = "itemcode";
-            this.colItemCode.Name = "colItemCode";
+            this.colitemcode.Caption = "Cod. MP";
+            this.colitemcode.FieldName = "itemcode";
+            this.colitemcode.Name = "colitemcode";
+            this.colitemcode.OptionsColumn.AllowEdit = false;
+            this.colitemcode.Visible = true;
+            this.colitemcode.VisibleIndex = 0;
+            this.colitemcode.Width = 89;
+            // 
+            // colitemdescrip
+            // 
+            this.colitemdescrip.Caption = "Materia Prima";
+            this.colitemdescrip.FieldName = "itemdescrip";
+            this.colitemdescrip.Name = "colitemdescrip";
+            this.colitemdescrip.OptionsColumn.AllowEdit = false;
+            this.colitemdescrip.Visible = true;
+            this.colitemdescrip.VisibleIndex = 1;
+            this.colitemdescrip.Width = 180;
             // 
             // btnAtras
             // 
@@ -204,9 +209,9 @@
         private dsRecepcionMPx dsRecepcionMPx;
         private DevExpress.XtraGrid.Columns.GridColumn colcardcode;
         private DevExpress.XtraGrid.Columns.GridColumn colcardname;
-        private DevExpress.XtraGrid.Columns.GridColumn colitemdescrip;
         private DevExpress.XtraGrid.Columns.GridColumn colSeleccionar;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnSeleccionar;
-        private DevExpress.XtraGrid.Columns.GridColumn colItemCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colitemcode;
+        private DevExpress.XtraGrid.Columns.GridColumn colitemdescrip;
     }
 }

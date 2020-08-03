@@ -28,17 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLotesXProveedor));
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.glueProveedor = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.proveedoresBindingSource = new System.Windows.Forms.BindingSource();
+            this.proveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsLogistica = new LOSA.Logistica.dsLogistica2();
             this.gvProveedores = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIdProveedor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcLotes = new DevExpress.XtraGrid.GridControl();
-            this.lotesXProveedorBindingSource = new System.Windows.Forms.BindingSource();
+            this.lotesXProveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gvLotes = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collote_materia_prima = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -49,7 +50,7 @@
             this.colCodItem = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dsRecepcionMPx = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.cbMateriaPrima = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.materiaprimaBindingSource = new System.Windows.Forms.BindingSource();
+            this.materiaprimaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gvMateriaPrima = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -148,6 +149,7 @@
             this.gvProveedores.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gvProveedores.Name = "gvProveedores";
             this.gvProveedores.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gvProveedores.OptionsView.ShowAutoFilterRow = true;
             this.gvProveedores.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn2
@@ -347,6 +349,7 @@
             this.gvMateriaPrima.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gvMateriaPrima.Name = "gvMateriaPrima";
             this.gvMateriaPrima.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gvMateriaPrima.OptionsView.ShowAutoFilterRow = true;
             this.gvMateriaPrima.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn1

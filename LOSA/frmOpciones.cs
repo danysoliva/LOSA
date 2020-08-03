@@ -141,12 +141,22 @@ namespace LOSA
         private void BtnDevolciones_Click(object sender, EventArgs e)
         {
             frmDevolucionKardex frm = new frmDevolucionKardex(UsuarioLogeado);
+            if (this.MdiParent != null)
+            {
+                frm.MdiParent = this.MdiParent;
+                frm.FormBorderStyle = FormBorderStyle.Sizable;
+            }
             frm.Show();
         }
 
         private void BtnAjustesKardex_Click(object sender, EventArgs e)
         {
             frmAjustesKardex frm = new frmAjustesKardex(UsuarioLogeado);
+            if (this.MdiParent != null)
+            {
+                frm.MdiParent = this.MdiParent;
+                frm.FormBorderStyle = FormBorderStyle.Sizable;
+            }
             frm.Show();
         }
 

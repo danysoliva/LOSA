@@ -38,9 +38,9 @@ namespace LOSA.Logistica
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_lotes_by_MP", con);
+                SqlCommand cmd = new SqlCommand("sp_get_lotes_by_MP_v2", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id_mp", cbMateriaPrima.EditValue.ToString());
+                cmd.Parameters.AddWithValue("@id_mp", cbMateriaPrima.EditValue);
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 dsLogistica.LotesXProveedor.Clear();
                 adat.Fill(dsLogistica.LotesXProveedor);
@@ -61,11 +61,11 @@ namespace LOSA.Logistica
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 string SQL = @"exec sp_get_list_MP_by_tarima";
 
-                dsLogistica.Materia_prima.Clear();
+                dsLogistica.Materia_prima_v2.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(SQL, cn);
 
-                adat.Fill(dsLogistica.Materia_prima);
-
+                adat.Fill(dsLogistica.Materia_prima_v2);
+                cn.Close();
             }
             catch (Exception ec)
             {

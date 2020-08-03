@@ -20,6 +20,7 @@ namespace LOSA.TransaccionesMP
         private decimal factorPresentacion;
         UserLogin usuarioLogueado = new UserLogin();
         Tarima tarimaEncontrada;
+        Requisicion RequisicionActual = new Requisicion();
         public frmEntregaTarimaReq(UserLogin pUsuarioLogueado)
         {
             InitializeComponent();
@@ -30,7 +31,7 @@ namespace LOSA.TransaccionesMP
         {
             InitializeComponent();
             usuarioLogueado = pUsuarioLogueado;
-            beTarima.Text = pCode;
+            txtTarima.Text = pCode;
             EntregarTarima();
         }
 
@@ -47,7 +48,7 @@ namespace LOSA.TransaccionesMP
                     cmd.Connection = connection;
                     cmd.CommandText = SQL;
 
-                    cmd.Parameters.AddWithValue("@codigo_barra", beTarima.Text);
+                    cmd.Parameters.AddWithValue("@codigo_barra", txtTarima.Text);
 
                     connection.Open();
 
@@ -76,7 +77,7 @@ namespace LOSA.TransaccionesMP
                         CajaDialogo.Error("TARIMA NO ENCONTRADA");
                         tarimaEncontrada = null;
                         gcTarima.DataSource = null;
-                        beTarima.Text = "";
+                        txtTarima.Text = "";
                     }
 
                     cn.Close();
@@ -127,8 +128,22 @@ namespace LOSA.TransaccionesMP
             bool error = false;
             bool disponible = false;
             string mensaje = "";
+
+
+           
+
             if (tarimaEncontrada != null)
             {
+                if (!RequisicionActual.Recuperado)
+                {
+                    error = true;
+                    lblMensaje.Text = "Debe indicar la requisicion que esta entregando!";
+                    panelNotificacion.BackColor = Color.Red;
+                    timerLimpiarMensaje.Enabled = true;
+                    timerLimpiarMensaje.Start();
+                    return;
+                }
+
                 if (tarimaEncontrada.Recuperado)
                 {
                     if (!tarimaEncontrada.Enable)
@@ -212,10 +227,12 @@ namespace LOSA.TransaccionesMP
                     SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                     con.Open();
 
-                    SqlCommand cmd = new SqlCommand("sp_set_insert_salida_tarima_bodega_mp", con);
+                    //SqlCommand cmd = new SqlCommand("sp_set_insert_salida_tarima_bodega_mp", con);
+                    SqlCommand cmd = new SqlCommand("sp_set_insert_salida_tarima_bodega_mp_v2", con);  
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@idtarima", tarimaEncontrada.Id);
                     cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
+                    cmd.Parameters.AddWithValue("@id_req", RequisicionActual.IdRequisicion);
                     Guardo = Convert.ToBoolean(cmd.ExecuteScalar());
                     con.Close();
                 }
@@ -262,16 +279,86 @@ namespace LOSA.TransaccionesMP
             timerLimpiarMensaje.Enabled = false;
             panelNotificacion.BackColor = Color.White;
             txtCantidadT.Text = txtPeso.Text = "0";
-            beTarima.Text = "";
+            txtTarima.Text = "";
             gcTarima.DataSource = null;
             lblMensaje.Text = "";
-            beTarima.Focus();
+            txtTarima.Focus();
         }
 
         private void cmdHome_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void frmEntregaTarimaReq_Click(object sender, EventArgs e)
+        {
+            Focus_();
+        }
+
+        private void Focus_()
+        {
+            if (RequisicionActual.IdRequisicion == 0)
+                txtRequisicion.Focus();
+            else
+                txtTarima.Focus();
+            
+        }
+
+        private void lblRequisicionEncontrada_Click(object sender, EventArgs e)
+        {
+            Focus_();
+        }
+
+        private void gcTarima_Click(object sender, EventArgs e)
+        {
+            Focus_();
+        }
+
+        private void pictureBoxIndicadorOk_Click(object sender, EventArgs e)
+        {
+            Focus_();
+        }
+
+        private void cmdSelectTarima_Click(object sender, EventArgs e)
+        {
+            Focus_();
+        }
+
+        private void labelControl3_Click(object sender, EventArgs e)
+        {
+            Focus_();
+        }
+
+        private void labelControl1_Click(object sender, EventArgs e)
+        {
+            Focus_();
+        }
+
+        private void txtRequisicion_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!string.IsNullOrEmpty(txtRequisicion.Text))
+                {
+                    if (RequisicionActual.RecuperarRegistroFromBarcode(txtRequisicion.Text.Trim()))
+                    {
+                        pictureBoxIndicadorOk.Visible = true;
+                        lblRequisicionEncontrada.Text = RequisicionActual.IdRequisicion.ToString();
+                        txtTarima.Focus();
+                    }
+                    else
+                    {
+                        pictureBoxIndicadorOk.Visible = false;
+                        txtRequisicion.Focus();
+                    }
+                }
+                else
+                {
+                    pictureBoxIndicadorOk.Visible = false;
+                    txtRequisicion.Focus();
+                }
+            }
         }
     }
 }

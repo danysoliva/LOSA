@@ -30,8 +30,8 @@ namespace LOSA.RecepcionMP
             var gridView = (GridView)gcMP.FocusedView;
             var row = (dsRecepcionMPx.Materia_PrimaRow)gridView.GetFocusedDataRow();
 
-            this.idProveedor = row.carcode;
-            this.NombreProveedor = row.cardname;
+            //this.idProveedor = row.carcode;
+            //this.NombreProveedor = row.cardname;
             this.MateriaPrima = row.itemdescrip;
             this.ItemCode = row.itemcode;
             //this.lote = row.lote_materia_prima;
@@ -71,8 +71,8 @@ namespace LOSA.RecepcionMP
             var gridView = (GridView)gcMP.FocusedView;
             var row = (dsRecepcionMPx.Materia_PrimaRow)gridView.GetFocusedDataRow();
 
-            this.idProveedor = row.carcode;
-            this.NombreProveedor = row.cardname;
+            //this.idProveedor = row.carcode;
+            //this.NombreProveedor = row.cardname;
             this.MateriaPrima = row.itemdescrip;
             this.ItemCode = row.itemcode;
             //this.lote = row.lote_materia_prima;

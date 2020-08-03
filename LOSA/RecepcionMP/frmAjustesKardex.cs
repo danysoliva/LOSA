@@ -28,18 +28,45 @@ namespace LOSA.RecepcionMP
             LoadPresentaciones();
             LoadTipoTransaccion();
             LoadNumeroTransaccion();
+            cargarDatosProveedor();
+            UsuarioLogueado = pUserLogueado;
         }
 
         private void TxtMP_Name_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             frmMP frm = new frmMP();
-
+            if (this.MdiParent != null)
+            {
+                //frm.MdiParent = this.MdiParent;
+                frm.FormBorderStyle = FormBorderStyle.Sizable;
+            }
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 txtMP_Name.Text = frm.MateriaPrima;
-                txtCodigoProveedor.Text = frm.idProveedor;
-                txtProveedorName.Text = frm.NombreProveedor;
+                //txtCodigoProveedor.Text = frm.idProveedor;
+                //txtProveedorName.Text = frm.NombreProveedor;
                 this.ItemCode = frm.ItemCode;
+            }
+        }
+
+        void cargarDatosProveedor()
+        {
+            try
+            {
+
+                DataOperations dp = new DataOperations();
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                string SQL = @"exec sp_get_providersv2";
+
+
+                dsLogistica21.Proveedores.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(SQL, cn);
+                adat.Fill(dsLogistica21.Proveedores);
+
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
             }
         }
 
@@ -280,6 +307,11 @@ namespace LOSA.RecepcionMP
             {
                 e.Handled = true;
             }
+        }
+
+        private void glueProveedor_EditValueChanged(object sender, EventArgs e)
+        {
+            txtCodigoProveedor.Text = glueProveedor.EditValue.ToString();
         }
     }
 }
