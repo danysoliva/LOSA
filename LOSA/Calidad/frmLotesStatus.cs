@@ -356,14 +356,14 @@ namespace LOSA.Calidad
                         lote = row1.lote;
                         break;
                     case 3: // Retenido
-                        frm_asiganacion_causas frm = new frm_asiganacion_causas(UsuarioLogeado, lote);
-                        if (frm.ShowDialog() == DialogResult.OK)
-                        {
+                        //frm_asiganacion_causas frm = new frm_asiganacion_causas(UsuarioLogeado, lote);
+                        //if (frm.ShowDialog() == DialogResult.OK)
+                        //{
 
-                            LoadTarimasAvailables();
-                            LoadTarimasObs();
-                            LoadTarimasRet();
-                        }
+                        //    LoadTarimasAvailables();
+                        //    LoadTarimasObs();
+                        //    LoadTarimasRet();
+                        //}
                         break;
                     default:
                         break;
