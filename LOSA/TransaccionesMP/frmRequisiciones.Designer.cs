@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRequisiciones));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.grRequisicoinesMP = new DevExpress.XtraGrid.GridControl();
@@ -47,10 +48,13 @@
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnVerD = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colcomentario = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnimprimir = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colimprimir = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grRequisicoinesMP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTarimas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnVerD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnimprimir)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAtras
@@ -63,9 +67,10 @@
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(489, 3);
+            this.btnAtras.Location = new System.Drawing.Point(652, 4);
+            this.btnAtras.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(148, 47);
+            this.btnAtras.Size = new System.Drawing.Size(197, 58);
             this.btnAtras.TabIndex = 33;
             this.btnAtras.Text = "Atras";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
@@ -80,9 +85,10 @@
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(135, 12);
+            this.labelControl1.Location = new System.Drawing.Point(180, 15);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(348, 40);
+            this.labelControl1.Size = new System.Drawing.Size(464, 49);
             this.labelControl1.TabIndex = 35;
             this.labelControl1.Text = "Requisiciones MP";
             // 
@@ -93,12 +99,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grRequisicoinesMP.DataMember = "requisiciones_h";
             this.grRequisicoinesMP.DataSource = this.dsTransaccionesMP1;
-            this.grRequisicoinesMP.Location = new System.Drawing.Point(2, 56);
+            this.grRequisicoinesMP.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grRequisicoinesMP.Location = new System.Drawing.Point(3, 69);
             this.grRequisicoinesMP.MainView = this.gvTarimas;
+            this.grRequisicoinesMP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grRequisicoinesMP.Name = "grRequisicoinesMP";
             this.grRequisicoinesMP.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.btnVerD});
-            this.grRequisicoinesMP.Size = new System.Drawing.Size(635, 502);
+            this.btnVerD,
+            this.btnimprimir});
+            this.grRequisicoinesMP.Size = new System.Drawing.Size(847, 618);
             this.grRequisicoinesMP.TabIndex = 34;
             this.grRequisicoinesMP.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTarimas});
@@ -138,7 +147,8 @@
             this.colestado,
             this.colDocEntry,
             this.gridColumn1,
-            this.colcomentario});
+            this.colcomentario,
+            this.colimprimir});
             this.gvTarimas.GridControl = this.grRequisicoinesMP;
             this.gvTarimas.Name = "gvTarimas";
             this.gvTarimas.OptionsCustomization.AllowFilter = false;
@@ -250,23 +260,43 @@
             this.colcomentario.VisibleIndex = 6;
             this.colcomentario.Width = 79;
             // 
+            // btnimprimir
+            // 
+            this.btnimprimir.AutoHeight = false;
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            this.btnimprimir.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            this.btnimprimir.Name = "btnimprimir";
+            this.btnimprimir.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnimprimir.Click += new System.EventHandler(this.btnimprimir_Click);
+            // 
+            // colimprimir
+            // 
+            this.colimprimir.Caption = "Imprimir";
+            this.colimprimir.ColumnEdit = this.btnimprimir;
+            this.colimprimir.Name = "colimprimir";
+            this.colimprimir.Visible = true;
+            this.colimprimir.VisibleIndex = 8;
+            // 
             // frmRequisiciones
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(638, 560);
+            this.ClientSize = new System.Drawing.Size(851, 689);
             this.ControlBox = false;
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.grRequisicoinesMP);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmRequisiciones";
             this.Text = "frmRequisiciones";
             ((System.ComponentModel.ISupportInitialize)(this.grRequisicoinesMP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTarimas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnVerD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnimprimir)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -290,5 +320,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnVerD;
         private DevExpress.XtraGrid.Columns.GridColumn colcomentario;
+        private DevExpress.XtraGrid.Columns.GridColumn colimprimir;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnimprimir;
     }
 }

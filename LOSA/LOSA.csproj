@@ -683,6 +683,17 @@
     <Compile Include="Reportes\rptUbicacionRotulo.Designer.cs">
       <DependentUpon>rptUbicacionRotulo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Requisiciones\dSReportes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dSReportes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Requisiciones\Reportes\rpt_requisa.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Requisiciones\Reportes\rpt_requisa.Designer.cs">
+      <DependentUpon>rpt_requisa.cs</DependentUpon>
+    </Compile>
     <Compile Include="SplashForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1019,6 +1030,9 @@
     <EmbeddedResource Include="Reportes\rptUbicacionRotulo.resx">
       <DependentUpon>rptUbicacionRotulo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Requisiciones\Reportes\rpt_requisa.resx">
+      <DependentUpon>rpt_requisa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SplashForm.resx">
       <DependentUpon>SplashForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1151,6 +1165,17 @@
     <None Include="Reportes\dsReportes.xss">
       <DependentUpon>dsReportes.xsd</DependentUpon>
     </None>
+    <None Include="Requisiciones\dSReportes.xsc">
+      <DependentUpon>dSReportes.xsd</DependentUpon>
+    </None>
+    <None Include="Requisiciones\dSReportes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dSReportes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Requisiciones\dSReportes.xss">
+      <DependentUpon>dSReportes.xsd</DependentUpon>
+    </None>
     <None Include="TransaccionesMP\dsTarima.xsc">
       <DependentUpon>dsTarima.xsd</DependentUpon>
     </None>
@@ -1246,7 +1271,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Requisiciones\" />
     <Folder Include="TransaccionesPT\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
