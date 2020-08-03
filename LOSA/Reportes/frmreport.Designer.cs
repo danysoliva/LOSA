@@ -37,6 +37,7 @@
             this.btnLotesXMP = new DevExpress.XtraEditors.SimpleButton();
             this.btnLotesPorProveedor = new DevExpress.XtraEditors.SimpleButton();
             this.cmdRegistroLote = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdSalidasMP = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -160,6 +161,19 @@
             this.cmdRegistroLote.Text = "Tarimas por\r\nbodega";
             this.cmdRegistroLote.Click += new System.EventHandler(this.cmdRegistroLote_Click);
             // 
+            // cmdSalidasMP
+            // 
+            this.cmdSalidasMP.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdSalidasMP.Appearance.Options.UseFont = true;
+            this.cmdSalidasMP.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdSalidasMP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.cmdSalidasMP.Location = new System.Drawing.Point(12, 200);
+            this.cmdSalidasMP.Name = "cmdSalidasMP";
+            this.cmdSalidasMP.Size = new System.Drawing.Size(200, 71);
+            this.cmdSalidasMP.TabIndex = 25;
+            this.cmdSalidasMP.Text = "Salidas de MP";
+            this.cmdSalidasMP.Click += new System.EventHandler(this.cmdSalidasMP_Click);
+            // 
             // frmreport
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -167,6 +181,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(714, 522);
+            this.Controls.Add(this.cmdSalidasMP);
             this.Controls.Add(this.cmdHome);
             this.Controls.Add(this.btnTrazabilidad);
             this.Controls.Add(this.btnCantidadMP);
@@ -194,5 +209,6 @@
         private DevExpress.XtraEditors.SimpleButton btnLotes;
         private DevExpress.XtraEditors.SimpleButton btnLotesXMP;
         private DevExpress.XtraEditors.SimpleButton btnLotesPorProveedor;
+        private DevExpress.XtraEditors.SimpleButton cmdSalidasMP;
     }
 }

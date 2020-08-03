@@ -66,5 +66,15 @@ namespace LOSA.Reportes
             frmLotesXProveedor frm = new frmLotesXProveedor();
             frm.Show();
         }
+
+        private void cmdSalidasMP_Click(object sender, EventArgs e)
+        {
+            frm_SalidasMP frm = new frm_SalidasMP();
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
     }
 }

@@ -73,6 +73,16 @@ namespace LOSA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Accept_icon128px {
+            get {
+                object obj = ResourceManager.GetObject("Accept-icon128px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap admin {
             get {
                 object obj = ResourceManager.GetObject("admin", resourceCulture);
@@ -176,6 +186,16 @@ namespace LOSA.Properties {
         internal static System.Drawing.Bitmap Containers_icon {
             get {
                 object obj = ResourceManager.GetObject("Containers-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap delete_1_icon128px {
+            get {
+                object obj = ResourceManager.GetObject("delete-1-icon128px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

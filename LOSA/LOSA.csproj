@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>58</ApplicationRevision>
+    <ApplicationRevision>64</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -448,6 +448,12 @@
     <Compile Include="Mantenimientos\Modelos\EstadoRequisicion.cs" />
     <Compile Include="Mantenimientos\Modelos\KardexTipoTransaccion.cs" />
     <Compile Include="Mantenimientos\Modelos\TipoPresentacion.cs" />
+    <Compile Include="MDIParentFormLOSA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIParentFormLOSA.Designer.cs">
+      <DependentUpon>MDIParentFormLOSA.cs</DependentUpon>
+    </Compile>
     <Compile Include="PlanMPreque\frmLote.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -570,11 +576,29 @@
     <Compile Include="RecepcionMP\frmEditTarima.Designer.cs">
       <DependentUpon>frmEditTarima.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecepcionMP\frmEntradaMP_new.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmEntradaMP_new.Designer.cs">
+      <DependentUpon>frmEntradaMP_new.cs</DependentUpon>
+    </Compile>
     <Compile Include="RecepcionMP\frmEntradaMP.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RecepcionMP\frmEntradaMP.Designer.cs">
       <DependentUpon>frmEntradaMP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecepcionMP\frmGestionIngresos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmGestionIngresos.Designer.cs">
+      <DependentUpon>frmGestionIngresos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecepcionMP\frmGestionIngresosTarimas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmGestionIngresosTarimas.Designer.cs">
+      <DependentUpon>frmGestionIngresosTarimas.cs</DependentUpon>
     </Compile>
     <Compile Include="RecepcionMP\frmMP.cs">
       <SubType>Form</SubType>
@@ -646,6 +670,12 @@
     </Compile>
     <Compile Include="Reportes\frmtarimasporbodega.Designer.cs">
       <DependentUpon>frmtarimasporbodega.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frm_SalidasMP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frm_SalidasMP.Designer.cs">
+      <DependentUpon>frm_SalidasMP.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\rptUbicacionRotulo.cs">
       <SubType>Component</SubType>
@@ -873,6 +903,9 @@
     <EmbeddedResource Include="Mantenimientos\frmUbicacionesCRUD.resx">
       <DependentUpon>frmUbicacionesCRUD.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MDIParentFormLOSA.resx">
+      <DependentUpon>MDIParentFormLOSA.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PlanMPreque\frmLote.resx">
       <DependentUpon>frmLote.cs</DependentUpon>
     </EmbeddedResource>
@@ -935,8 +968,17 @@
     <EmbeddedResource Include="RecepcionMP\frmEditTarima.resx">
       <DependentUpon>frmEditTarima.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frmEntradaMP_new.resx">
+      <DependentUpon>frmEntradaMP_new.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmEntradaMP.resx">
       <DependentUpon>frmEntradaMP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frmGestionIngresos.resx">
+      <DependentUpon>frmGestionIngresos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frmGestionIngresosTarimas.resx">
+      <DependentUpon>frmGestionIngresosTarimas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmMP.resx">
       <DependentUpon>frmMP.cs</DependentUpon>
@@ -970,6 +1012,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmtarimasporbodega.resx">
       <DependentUpon>frmtarimasporbodega.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frm_SalidasMP.resx">
+      <DependentUpon>frm_SalidasMP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rptUbicacionRotulo.resx">
       <DependentUpon>rptUbicacionRotulo.cs</DependentUpon>
@@ -1149,6 +1194,7 @@
   <ItemGroup>
     <Content Include="logo1.ico" />
     <None Include="Resources\2264828.png" />
+    <None Include="Resources\Accept-icon128px.png" />
     <Content Include="Resources\admin.png" />
     <None Include="Resources\backspace.png" />
     <Content Include="Resources\box.png" />
@@ -1161,6 +1207,7 @@
     <None Include="Resources\Checklist-icon.png" />
     <None Include="Resources\devoluciones2.png" />
     <None Include="Resources\delete-1-icon72px.png" />
+    <None Include="Resources\delete-1-icon128px.png" />
     <Content Include="Resources\edit.png" />
     <None Include="Resources\hapag-4-icon.png" />
     <None Include="Resources\Forklift-icon.png" />
