@@ -122,6 +122,7 @@ namespace LOSA.RecepcionMP
 
                 if (infoUbicacionTarima.RecuperarRegistro_2(0, beIdTarima.Text))
                 {
+                    idUbicacionTarimaActual = infoUbicacionTarima.Id;
                     gcUbicacionActual.DataSource = CreateDataUbicacion_v2(infoUbicacionTarima.Rack,infoUbicacionTarima.IdBodega.ToString());
                     gvUbicacionActual.InitNewRow += GvUbicacionActual_InitNewRow;
                     gvUbicacionActual.Columns[0].AppearanceCell.Font = new Font("Segoe UI", 11, FontStyle.Bold);

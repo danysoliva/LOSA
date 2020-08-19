@@ -9,11 +9,11 @@ using ACS.Classes;
 
 namespace LOSA.Requisiciones.Reportes
 {
-    public partial class rpt_requisa : DevExpress.XtraReports.UI.XtraReport
+    public partial class lblNumeroReq : DevExpress.XtraReports.UI.XtraReport
     {
         DataOperations dp = new DataOperations();
         int ID; 
-        public rpt_requisa(int Pid)
+        public lblNumeroReq(int Pid)
         {
             InitializeComponent();
             ID = Pid;
@@ -33,8 +33,9 @@ namespace LOSA.Requisiciones.Reportes
                 if (dr.Read())
                 {
                     lbldate.Text = dr.GetDateTime(2).ToString("dd/MM/yyyy"); 
-                    lblnumero.Text = dr.GetInt32(0).ToString();
+                    lblnumeroSAP.Text = lblnumeroSAP.Text + dr.GetInt32(8).ToString();
                     lblNombreProducto.Text = "(" + dr.GetString(6) + ") - " + dr.GetString(7);
+                    lblNumero.Text = lblNumero.Text + dr.GetInt32(0).ToString();
                     BarCode1.Text = dr.GetString(5);
 
                     
