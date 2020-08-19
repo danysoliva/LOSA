@@ -25,6 +25,7 @@ namespace LOSA.TransaccionesMP
         {
             InitializeComponent();
             usuarioLogueado = pUsuarioLogueado;
+            Focus_();
         }
 
         public frmEntregaTarimaReq(UserLogin pUsuarioLogueado, string pCode)
@@ -33,6 +34,7 @@ namespace LOSA.TransaccionesMP
             usuarioLogueado = pUsuarioLogueado;
             txtTarima.Text = pCode;
             EntregarTarima();
+            Focus_();
         }
 
         void datosTarimaPorCodBarra(SqlConnection connection)
@@ -359,6 +361,16 @@ namespace LOSA.TransaccionesMP
                     txtRequisicion.Focus();
                 }
             }
+        }
+
+        private void frmEntregaTarimaReq_Activated(object sender, EventArgs e)
+        {
+            Focus_();
+        }
+
+        private void frmEntregaTarimaReq_Load(object sender, EventArgs e)
+        {
+            Focus_();
         }
     }
 }

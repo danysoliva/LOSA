@@ -72,11 +72,11 @@
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.txtCantidadTarimasTotal = new DevExpress.XtraEditors.TextEdit();
             this.glueProveedor = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.bindingSourceProveedores = new System.Windows.Forms.BindingSource(this.components);
+            this.dsLogistica21 = new LOSA.Logistica.dsLogistica2();
             this.gvProveedores = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIdProveedor = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.dsLogistica21 = new LOSA.Logistica.dsLogistica2();
-            this.bindingSourceProveedores = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditPresentacion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.presentacionesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).BeginInit();
@@ -98,9 +98,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadTarimasTotal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glueProveedor.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvProveedores)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsLogistica21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceProveedores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsLogistica21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvProveedores)).BeginInit();
             this.SuspendLayout();
             // 
             // gridLookUpEditPresentacion
@@ -190,7 +190,6 @@
             this.txtLote.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLote.Properties.Appearance.Options.UseFont = true;
             this.txtLote.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtLote.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtLote.Size = new System.Drawing.Size(159, 32);
             this.txtLote.TabIndex = 8;
             this.txtLote.Enter += new System.EventHandler(this.txtLote_Enter);
@@ -537,6 +536,16 @@
             this.glueProveedor.TabIndex = 87;
             this.glueProveedor.EditValueChanged += new System.EventHandler(this.glueProveedor_EditValueChanged);
             // 
+            // bindingSourceProveedores
+            // 
+            this.bindingSourceProveedores.DataMember = "Proveedores";
+            this.bindingSourceProveedores.DataSource = this.dsLogistica21;
+            // 
+            // dsLogistica21
+            // 
+            this.dsLogistica21.DataSetName = "dsLogistica2";
+            this.dsLogistica21.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // gvProveedores
             // 
             this.gvProveedores.Appearance.FocusedCell.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -577,16 +586,6 @@
             this.colIdProveedor.Caption = "Cod. SAP Prov.";
             this.colIdProveedor.FieldName = "carcode";
             this.colIdProveedor.Name = "colIdProveedor";
-            // 
-            // dsLogistica21
-            // 
-            this.dsLogistica21.DataSetName = "dsLogistica2";
-            this.dsLogistica21.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bindingSourceProveedores
-            // 
-            this.bindingSourceProveedores.DataMember = "Proveedores";
-            this.bindingSourceProveedores.DataSource = this.dsLogistica21;
             // 
             // frmAjustesKardex
             // 
@@ -647,9 +646,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadTarimasTotal.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glueProveedor.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvProveedores)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsLogistica21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceProveedores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsLogistica21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvProveedores)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

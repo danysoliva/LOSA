@@ -259,8 +259,16 @@ namespace LOSA.RecepcionMP
             else
                 this.factorValue = Convert.ToDecimal(gvLookUpEditPresentacion.GetFocusedRowCellValue(gvLookUpEditPresentacion.Columns[2]).ToString());
 
-            //if (Convert.ToDecimal(txtCantidadT.Text) > 0)
-            txtPeso.Text = (factorValue * Convert.ToDecimal(txtCantidadT.Text)).ToString();
+
+            decimal cantidad_ = 0;
+            try
+            {
+                cantidad_ = Convert.ToDecimal(txtCantidadT.Text);
+            }
+            catch {}
+
+
+            txtPeso.Text = (factorValue * cantidad_).ToString();
             //else
             //{
             //    CajaDialogo.Error("Debe ingresar unidades mayores que cero (0)");
