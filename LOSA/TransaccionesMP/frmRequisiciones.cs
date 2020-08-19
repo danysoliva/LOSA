@@ -71,7 +71,7 @@ namespace LOSA.TransaccionesMP
         {
             var gridView = (GridView)grRequisicoinesMP.FocusedView;
             var row = (dsTransaccionesMP.requisiciones_hRow)gridView.GetFocusedDataRow();
-            Requisiciones.Reportes.rpt_requisa report = new Requisiciones.Reportes.rpt_requisa(row.id);
+            Requisiciones.Reportes.lblNumeroReq report = new Requisiciones.Reportes.lblNumeroReq(row.id);
             report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
             report.ShowPrintMarginsWarning = false;
             report.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
