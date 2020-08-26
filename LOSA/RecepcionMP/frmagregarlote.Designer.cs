@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmagregarlote));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.cmdGuardar = new DevExpress.XtraEditors.SimpleButton();
@@ -72,6 +72,7 @@
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.gcNuevaUbicación = new DevExpress.XtraGrid.GridControl();
             this.gvNuevaUbicacion = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.btnMP = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdBoleta.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadTarimasTotal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPesoKg.Properties)).BeginInit();
@@ -519,7 +520,7 @@
             this.txtMP_Name.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMP_Name.Properties.Appearance.Options.UseFont = true;
             this.txtMP_Name.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtMP_Name.Size = new System.Drawing.Size(388, 32);
+            this.txtMP_Name.Size = new System.Drawing.Size(290, 32);
             this.txtMP_Name.TabIndex = 65;
             // 
             // labelControl3
@@ -557,9 +558,9 @@
             this.beNuevaUbicacion.Name = "beNuevaUbicacion";
             this.beNuevaUbicacion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.beNuevaUbicacion.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.beNuevaUbicacion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.beNuevaUbicacion.Properties.MaxLength = 20;
             this.beNuevaUbicacion.Properties.NullText = "Escanee o selecciona una tarima";
             this.beNuevaUbicacion.Size = new System.Drawing.Size(429, 34);
@@ -778,6 +779,22 @@
             this.gvNuevaUbicacion.OptionsView.ShowIndicator = false;
             this.gvNuevaUbicacion.PaintStyleName = "Flat";
             // 
+            // btnMP
+            // 
+            this.btnMP.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnMP.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMP.Appearance.Options.UseBackColor = true;
+            this.btnMP.Appearance.Options.UseFont = true;
+            this.btnMP.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnMP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMP.ImageOptions.Image")));
+            this.btnMP.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
+            this.btnMP.Location = new System.Drawing.Point(742, 161);
+            this.btnMP.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMP.Name = "btnMP";
+            this.btnMP.Size = new System.Drawing.Size(64, 50);
+            this.btnMP.TabIndex = 85;
+            this.btnMP.Click += new System.EventHandler(this.btnMP_Click);
+            // 
             // frmagregarlote
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -785,6 +802,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(829, 641);
+            this.Controls.Add(this.btnMP);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.beNuevaUbicacion);
             this.Controls.Add(this.btnUbicacion);
@@ -896,5 +914,6 @@
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraGrid.GridControl gcNuevaUbicación;
         private DevExpress.XtraGrid.Views.Grid.GridView gvNuevaUbicacion;
+        private DevExpress.XtraEditors.SimpleButton btnMP;
     }
 }

@@ -92,5 +92,11 @@ namespace LOSA.TransaccionesMP
             LOSA.Despachos.frmentregadeproductoT frm = new Despachos.frmentregadeproductoT(UsuarioLogeado);
             frm.Show();
         }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            LOSA.Reportes.frmreporteUbicacion frm = new Reportes.frmreporteUbicacion();
+            frm.Show();
+        }
     }
 }

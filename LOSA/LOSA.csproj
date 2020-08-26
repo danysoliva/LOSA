@@ -613,6 +613,12 @@
     <Compile Include="RecepcionMP\frmImprimirHojaIngreso.Designer.cs">
       <DependentUpon>frmImprimirHojaIngreso.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecepcionMP\frmSelectMP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmSelectMP.Designer.cs">
+      <DependentUpon>frmSelectMP.cs</DependentUpon>
+    </Compile>
     <Compile Include="RecepcionMP\frmTarima.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -665,6 +671,12 @@
     </Compile>
     <Compile Include="Reportes\frmreport.Designer.cs">
       <DependentUpon>frmreport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmreporteUbicacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmreporteUbicacion.Designer.cs">
+      <DependentUpon>frmreporteUbicacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\frmtarimasporbodega.cs">
       <SubType>Form</SubType>
@@ -998,6 +1010,9 @@
     <EmbeddedResource Include="RecepcionMP\frmImprimirHojaIngreso.resx">
       <DependentUpon>frmImprimirHojaIngreso.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frmSelectMP.resx">
+      <DependentUpon>frmSelectMP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmTarima.resx">
       <DependentUpon>frmTarima.cs</DependentUpon>
     </EmbeddedResource>
@@ -1021,6 +1036,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmreport.resx">
       <DependentUpon>frmreport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmreporteUbicacion.resx">
+      <DependentUpon>frmreporteUbicacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmtarimasporbodega.resx">
       <DependentUpon>frmtarimasporbodega.cs</DependentUpon>
