@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>67</ApplicationRevision>
+    <ApplicationRevision>68</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -751,6 +751,12 @@
     <Compile Include="TransaccionesMP\frmEntregaTarimaReq.Designer.cs">
       <DependentUpon>frmEntregaTarimaReq.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\frmGestionUbicaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmGestionUbicaciones.Designer.cs">
+      <DependentUpon>frmGestionUbicaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesMP\frmOptionMontaCarga.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1055,6 +1061,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmEntregaTarimaReq.resx">
       <DependentUpon>frmEntregaTarimaReq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmGestionUbicaciones.resx">
+      <DependentUpon>frmGestionUbicaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmOptionMontaCarga.resx">
       <DependentUpon>frmOptionMontaCarga.cs</DependentUpon>

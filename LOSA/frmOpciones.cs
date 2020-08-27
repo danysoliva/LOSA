@@ -309,5 +309,22 @@ namespace LOSA
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
+
+        private void cmdUbicaciones_Click(object sender, EventArgs e)
+        {
+            frmGestionUbicaciones frm = new frmGestionUbicaciones(this.UsuarioLogeado);
+            if (this.MdiParent != null)
+            {
+                frm.MdiParent = this.MdiParent;
+                frm.FormBorderStyle = FormBorderStyle.Sizable;
+            }
+            else
+            {
+                frm.FormBorderStyle = FormBorderStyle.None;
+            }
+
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
     }
 }
