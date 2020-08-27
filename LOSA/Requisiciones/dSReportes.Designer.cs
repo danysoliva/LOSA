@@ -287,6 +287,10 @@ namespace LOSA.Requisiciones {
             
             private global::System.Data.DataColumn columncode_sap;
             
+            private global::System.Data.DataColumn columnunidades;
+            
+            private global::System.Data.DataColumn columnunidad_medida;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public requisicion_dDataTable() {
@@ -354,6 +358,22 @@ namespace LOSA.Requisiciones {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn unidadesColumn {
+                get {
+                    return this.columnunidades;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn unidad_medidaColumn {
+                get {
+                    return this.columnunidad_medida;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -389,13 +409,15 @@ namespace LOSA.Requisiciones {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public requisicion_dRow Addrequisicion_dRow(string material, decimal cantidad_solicitada, string nombre_unidad, string code_sap) {
+            public requisicion_dRow Addrequisicion_dRow(string material, decimal cantidad_solicitada, string nombre_unidad, string code_sap, decimal unidades, string unidad_medida) {
                 requisicion_dRow rowrequisicion_dRow = ((requisicion_dRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         material,
                         cantidad_solicitada,
                         nombre_unidad,
-                        code_sap};
+                        code_sap,
+                        unidades,
+                        unidad_medida};
                 rowrequisicion_dRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowrequisicion_dRow);
                 return rowrequisicion_dRow;
@@ -422,6 +444,8 @@ namespace LOSA.Requisiciones {
                 this.columncantidad_solicitada = base.Columns["cantidad_solicitada"];
                 this.columnnombre_unidad = base.Columns["nombre_unidad"];
                 this.columncode_sap = base.Columns["code_sap"];
+                this.columnunidades = base.Columns["unidades"];
+                this.columnunidad_medida = base.Columns["unidad_medida"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -435,6 +459,10 @@ namespace LOSA.Requisiciones {
                 base.Columns.Add(this.columnnombre_unidad);
                 this.columncode_sap = new global::System.Data.DataColumn("code_sap", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncode_sap);
+                this.columnunidades = new global::System.Data.DataColumn("unidades", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnunidades);
+                this.columnunidad_medida = new global::System.Data.DataColumn("unidad_medida", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnunidad_medida);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -642,6 +670,38 @@ namespace LOSA.Requisiciones {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal unidades {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablerequisicion_d.unidadesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'unidades\' de la tabla \'requisicion_d\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablerequisicion_d.unidadesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string unidad_medida {
+                get {
+                    try {
+                        return ((string)(this[this.tablerequisicion_d.unidad_medidaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'unidad_medida\' de la tabla \'requisicion_d\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablerequisicion_d.unidad_medidaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsmaterialNull() {
                 return this.IsNull(this.tablerequisicion_d.materialColumn);
             }
@@ -686,6 +746,30 @@ namespace LOSA.Requisiciones {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void Setcode_sapNull() {
                 this[this.tablerequisicion_d.code_sapColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsunidadesNull() {
+                return this.IsNull(this.tablerequisicion_d.unidadesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetunidadesNull() {
+                this[this.tablerequisicion_d.unidadesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isunidad_medidaNull() {
+                return this.IsNull(this.tablerequisicion_d.unidad_medidaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setunidad_medidaNull() {
+                this[this.tablerequisicion_d.unidad_medidaColumn] = global::System.Convert.DBNull;
             }
         }
         

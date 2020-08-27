@@ -118,6 +118,28 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="simpleButton3.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAO1SURBVFhHtZfdSxRRGMb9A7oIjbrpKvFiKwJ1dbddDdNKct0sI2k3bc0+LCyozKw0+zAMKgvT
+        zAoidU2wugiSsg+CNIOKwK7KvyFMuvJCeHufMzM6O/s6O9vHCz/YPec9z/OemTlnzqQ4jXufI6lMhOll
+        JphphnTwG23oQ06qPuzvg8VWMf3MDGMYJgK5GLNKl0k+ePAippOZZSQTJ2AsNBbpss6CB7iYb4wk+idA
+        y6XL2wcnepgpfeC/BJoe3UYOTsDM/4e5AbTlK8EduOeOLnv7ixAdux6kvaeLFfiNNilXAB7xzwQ34mGR
+        BsxxfSRE22sKKDs7WwR9yJHGWujUbbXgBiw126f90tAO8uXnKiNPbhYdrHTRlcYVCvxGG/rW5uXQuWi5
+        qGECXvNLlP9ETZ1x3HgVJt86zXx/2EXfni2h6fHFMaANfcjx+t10fnAb3f20W9TT6TfMscPZbjIVtYVK
+        +MAuF/0YjTU2gz7kIDcQ8lPr4610+0OVqMnAMxUFYOuUEhQdb8LkdmuXfXI4fuZWJofTtNvBY070bKaW
+        h0HqfBcWtZkICsD+LXUqTnaXqRnV8swkQwk8ExhT01REzf2livaXFdIt6UUBeIlYO+Y41FqixFqPpYtm
+        EpeOp6sxoSMFcwWAtqfldOdjTBETKMD8Voujri2gxJrqMkQziebDGWpM+GhsAeDCUBl1j1ca+tMoIMbQ
+        SkvfdiUWLF5DP9/LhmaQg1yMqW3dGFcAODsQpI632n6RsAA8xVjbEHxyc7loagY5yM31uun0/YBYgMHV
+        5ztUAba3AEQaNinRfF8mjUWXicYAffn+TJVbFskTTS38SvgQAmyvOR63NjNeYm316fTl8VKaGluswG+0
+        oQ85WIJHO4olQytfUYDtMjSoOaVdBTM57iyFtX1LlaPZgz4UYLsRGdwaraR1GzxxZlY8Pjc18AYkmElU
+        o4CEW7FBS1+5aGqm+lShZCQxw6QZ7wMcIEVTK/uaikVjENzll4wWYkCZI1g44evYADuZdCYoDHgTLjsT
+        s83R0tW6vRYsnvBAYtDDe0P5nvkiikq91HivRDJaiC7ddj5Y2PGRDNzlK3HkSoCq6tfTmQeOZw6+M/Ix
+        nYWTPpTeeL2T+HJKRhJTzErdTg4WTfpY3jUapnODQcnQDMztj+VGsGjSHyZ4Z1x8tFUyBrjs9jO3Bosm
+        /WmG5+Iyv/NNxrNMF9+i5D7NzMHCSX2c4tRzbaRi5my0NBq31P4mWNzR5zkXEOEDh8PP85SU3154TJjV
+        bPlDAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="cmdRequisiciones.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m

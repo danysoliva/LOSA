@@ -19,6 +19,8 @@
               <xs:element name="cantidad_solicitada" msprop:Generator_ColumnVarNameInTable="columncantidad_solicitada" msprop:Generator_ColumnPropNameInRow="cantidad_solicitada" msprop:Generator_ColumnPropNameInTable="cantidad_solicitadaColumn" msprop:Generator_UserColumnName="cantidad_solicitada" type="xs:decimal" minOccurs="0" />
               <xs:element name="nombre_unidad" msprop:Generator_ColumnVarNameInTable="columnnombre_unidad" msprop:Generator_ColumnPropNameInRow="nombre_unidad" msprop:Generator_ColumnPropNameInTable="nombre_unidadColumn" msprop:Generator_UserColumnName="nombre_unidad" type="xs:string" minOccurs="0" />
               <xs:element name="code_sap" msprop:Generator_ColumnVarNameInTable="columncode_sap" msprop:Generator_ColumnPropNameInRow="code_sap" msprop:Generator_ColumnPropNameInTable="code_sapColumn" msprop:Generator_UserColumnName="code_sap" type="xs:string" minOccurs="0" />
+              <xs:element name="unidades" msprop:Generator_ColumnVarNameInTable="columnunidades" msprop:Generator_ColumnPropNameInRow="unidades" msprop:Generator_ColumnPropNameInTable="unidadesColumn" msprop:Generator_UserColumnName="unidades" type="xs:decimal" minOccurs="0" />
+              <xs:element name="unidad_medida" msprop:Generator_ColumnVarNameInTable="columnunidad_medida" msprop:Generator_ColumnPropNameInRow="unidad_medida" msprop:Generator_ColumnPropNameInTable="unidad_medidaColumn" msprop:Generator_UserColumnName="unidad_medida" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

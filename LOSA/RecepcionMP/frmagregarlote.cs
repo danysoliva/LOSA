@@ -435,5 +435,16 @@ namespace LOSA.RecepcionMP
                 LoadDatosBoleta(id_b);
             }
         }
+
+        private void btnMP_Click(object sender, EventArgs e)
+        {
+            frmSelectMP frm = new frmSelectMP();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                txtCodigoMP.Text = frm.ItemCode;
+                txtMP_Name.Text = frm.ItemName;
+            }
+        
+        }
     }
 }
