@@ -76,5 +76,12 @@ namespace LOSA.Reportes
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
+
+        private void btnImprimirTm_Click(object sender, EventArgs e)
+        {
+            frmprint__tarimas frm = new frmprint__tarimas();
+            frm.Show();
+
+        }
     }
 }
