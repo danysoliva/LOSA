@@ -34,6 +34,11 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.grd_tarimas = new DevExpress.XtraGrid.GridControl();
             this.dsReportes = new LOSA.Reportes.dsReportes();
             this.grdv_tarimas = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -49,10 +54,13 @@
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnTodas = new DevExpress.XtraEditors.SimpleButton();
+            this.btnPrintIngreso = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.conImprimirIngreso = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_tarimas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsReportes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_tarimas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnprint_only1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPrintIngreso)).BeginInit();
             this.SuspendLayout();
             // 
             // grd_tarimas
@@ -66,7 +74,8 @@
             this.grd_tarimas.MainView = this.grdv_tarimas;
             this.grd_tarimas.Name = "grd_tarimas";
             this.grd_tarimas.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.btnprint_only1});
+            this.btnprint_only1,
+            this.btnPrintIngreso});
             this.grd_tarimas.Size = new System.Drawing.Size(834, 507);
             this.grd_tarimas.TabIndex = 0;
             this.grd_tarimas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -97,7 +106,8 @@
             this.colcodigo_barra,
             this.colcantidad,
             this.colpresentacion,
-            this.colprint});
+            this.colprint,
+            this.conImprimirIngreso});
             this.grdv_tarimas.GridControl = this.grd_tarimas;
             this.grdv_tarimas.Name = "grdv_tarimas";
             this.grdv_tarimas.OptionsView.ShowAutoFilterRow = true;
@@ -242,8 +252,28 @@
             this.btnTodas.Name = "btnTodas";
             this.btnTodas.Size = new System.Drawing.Size(233, 87);
             this.btnTodas.TabIndex = 12;
-            this.btnTodas.Text = "Tarimas por\r\nbodega";
+            this.btnTodas.Text = "Imprimir todas\r\n   las tarimas";
             this.btnTodas.Click += new System.EventHandler(this.btnTodas_Click);
+            // 
+            // btnPrintIngreso
+            // 
+            this.btnPrintIngreso.AutoHeight = false;
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            this.btnPrintIngreso.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnPrintIngreso.Name = "btnPrintIngreso";
+            this.btnPrintIngreso.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnPrintIngreso.Click += new System.EventHandler(this.btnPrintIngreso_Click);
+            // 
+            // conImprimirIngreso
+            // 
+            this.conImprimirIngreso.Caption = "Imprimir Ingreso";
+            this.conImprimirIngreso.ColumnEdit = this.btnPrintIngreso;
+            this.conImprimirIngreso.MinWidth = 25;
+            this.conImprimirIngreso.Name = "conImprimirIngreso";
+            this.conImprimirIngreso.Visible = true;
+            this.conImprimirIngreso.VisibleIndex = 7;
+            this.conImprimirIngreso.Width = 94;
             // 
             // frmprint__tarimas
             // 
@@ -262,6 +292,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dsReportes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_tarimas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnprint_only1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPrintIngreso)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -283,5 +314,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colpresentacion;
         private DevExpress.XtraGrid.Columns.GridColumn colprint;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnprint_only1;
+        private DevExpress.XtraGrid.Columns.GridColumn conImprimirIngreso;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnPrintIngreso;
     }
 }

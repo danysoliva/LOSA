@@ -80,5 +80,31 @@ namespace LOSA.Reportes
             //Indica el numero de copias de la boleta que seran impresas
             e.PrintDocument.PrinterSettings.Copies = 1;
         }
+
+        private void btnPrintIngreso_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int ingreso = 0;
+                var gridview = (GridView)grd_tarimas.FocusedView;
+                var row = (dsReportes.tmprintRow)gridview.GetFocusedDataRow();
+                ingreso = row.numero_transaccion;
+                foreach (DataRow item in dsReportes.tmprint.Rows)
+                {
+                    if (ingreso.ToString() == item["numero_transaccion"].ToString())
+                    {
+                        rptReporteIngresoTarima boleta = new rptReporteIngresoTarima(Convert.ToInt32(row["id"].ToString()));
+                        boleta.ShowPrintMarginsWarning = false;
+                        boleta.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
+                        boleta.Print();
+                    }
+                }
+             
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
     }
 }
