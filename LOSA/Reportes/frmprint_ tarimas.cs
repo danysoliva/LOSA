@@ -93,7 +93,7 @@ namespace LOSA.Reportes
                 {
                     if (ingreso.ToString() == item["numero_transaccion"].ToString())
                     {
-                        rptReporteIngresoTarima boleta = new rptReporteIngresoTarima(Convert.ToInt32(row["id"].ToString()));
+                        rptReporteIngresoTarima boleta = new rptReporteIngresoTarima(Convert.ToInt32(item["id"].ToString()));
                         boleta.ShowPrintMarginsWarning = false;
                         boleta.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
                         boleta.Print();
