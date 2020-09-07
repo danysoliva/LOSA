@@ -57,6 +57,7 @@
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnTodas = new DevExpress.XtraEditors.SimpleButton();
+            this.colfecha_ingreso = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_tarimas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsReportes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_tarimas)).BeginInit();
@@ -102,6 +103,7 @@
             this.grdv_tarimas.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colid,
             this.colmaterial,
+            this.colfecha_ingreso,
             this.colnumero_transaccion,
             this.collote,
             this.colfecha_vencimiento,
@@ -132,7 +134,7 @@
             this.colmaterial.OptionsColumn.AllowEdit = false;
             this.colmaterial.Visible = true;
             this.colmaterial.VisibleIndex = 1;
-            this.colmaterial.Width = 94;
+            this.colmaterial.Width = 81;
             // 
             // colnumero_transaccion
             // 
@@ -142,8 +144,8 @@
             this.colnumero_transaccion.Name = "colnumero_transaccion";
             this.colnumero_transaccion.OptionsColumn.AllowEdit = false;
             this.colnumero_transaccion.Visible = true;
-            this.colnumero_transaccion.VisibleIndex = 2;
-            this.colnumero_transaccion.Width = 94;
+            this.colnumero_transaccion.VisibleIndex = 3;
+            this.colnumero_transaccion.Width = 110;
             // 
             // collote
             // 
@@ -152,8 +154,8 @@
             this.collote.MinWidth = 25;
             this.collote.Name = "collote";
             this.collote.Visible = true;
-            this.collote.VisibleIndex = 3;
-            this.collote.Width = 94;
+            this.collote.VisibleIndex = 4;
+            this.collote.Width = 79;
             // 
             // colfecha_vencimiento
             // 
@@ -163,8 +165,8 @@
             this.colfecha_vencimiento.Name = "colfecha_vencimiento";
             this.colfecha_vencimiento.OptionsColumn.AllowEdit = false;
             this.colfecha_vencimiento.Visible = true;
-            this.colfecha_vencimiento.VisibleIndex = 4;
-            this.colfecha_vencimiento.Width = 94;
+            this.colfecha_vencimiento.VisibleIndex = 5;
+            this.colfecha_vencimiento.Width = 92;
             // 
             // colcodigo_barra
             // 
@@ -175,7 +177,7 @@
             this.colcodigo_barra.OptionsColumn.AllowEdit = false;
             this.colcodigo_barra.Visible = true;
             this.colcodigo_barra.VisibleIndex = 0;
-            this.colcodigo_barra.Width = 94;
+            this.colcodigo_barra.Width = 81;
             // 
             // colcantidad
             // 
@@ -185,8 +187,8 @@
             this.colcantidad.Name = "colcantidad";
             this.colcantidad.OptionsColumn.AllowEdit = false;
             this.colcantidad.Visible = true;
-            this.colcantidad.VisibleIndex = 5;
-            this.colcantidad.Width = 94;
+            this.colcantidad.VisibleIndex = 6;
+            this.colcantidad.Width = 54;
             // 
             // colpresentacion
             // 
@@ -196,8 +198,8 @@
             this.colpresentacion.Name = "colpresentacion";
             this.colpresentacion.OptionsColumn.AllowEdit = false;
             this.colpresentacion.Visible = true;
-            this.colpresentacion.VisibleIndex = 6;
-            this.colpresentacion.Width = 94;
+            this.colpresentacion.VisibleIndex = 7;
+            this.colpresentacion.Width = 54;
             // 
             // colprint
             // 
@@ -206,8 +208,8 @@
             this.colprint.MinWidth = 25;
             this.colprint.Name = "colprint";
             this.colprint.Visible = true;
-            this.colprint.VisibleIndex = 7;
-            this.colprint.Width = 94;
+            this.colprint.VisibleIndex = 8;
+            this.colprint.Width = 54;
             // 
             // btnprint_only1
             // 
@@ -226,8 +228,8 @@
             this.conImprimirIngreso.MinWidth = 25;
             this.conImprimirIngreso.Name = "conImprimirIngreso";
             this.conImprimirIngreso.Visible = true;
-            this.conImprimirIngreso.VisibleIndex = 8;
-            this.conImprimirIngreso.Width = 94;
+            this.conImprimirIngreso.VisibleIndex = 9;
+            this.conImprimirIngreso.Width = 65;
             // 
             // btnPrintIngreso
             // 
@@ -288,6 +290,17 @@
             this.btnTodas.Text = "Imprimir todas\r\n   las tarimas";
             this.btnTodas.Click += new System.EventHandler(this.btnTodas_Click);
             // 
+            // colfecha_ingreso
+            // 
+            this.colfecha_ingreso.Caption = "Fecha de Ingreso";
+            this.colfecha_ingreso.FieldName = "fecha_ingreso";
+            this.colfecha_ingreso.MinWidth = 25;
+            this.colfecha_ingreso.Name = "colfecha_ingreso";
+            this.colfecha_ingreso.OptionsColumn.AllowEdit = false;
+            this.colfecha_ingreso.Visible = true;
+            this.colfecha_ingreso.VisibleIndex = 2;
+            this.colfecha_ingreso.Width = 144;
+            // 
             // frmprint__tarimas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -330,5 +343,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn conImprimirIngreso;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnPrintIngreso;
         private DevExpress.XtraGrid.Columns.GridColumn collote;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecha_ingreso;
     }
 }
