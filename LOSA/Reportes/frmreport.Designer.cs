@@ -39,6 +39,7 @@
             this.cmdRegistroLote = new DevExpress.XtraEditors.SimpleButton();
             this.cmdSalidasMP = new DevExpress.XtraEditors.SimpleButton();
             this.btnImprimirTm = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_rptubicaciones = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -188,7 +189,7 @@
             this.btnImprimirTm.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimirTm.Appearance.Options.UseFont = true;
             this.btnImprimirTm.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnImprimirTm.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnImprimirTm.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimirTm.ImageOptions.Image")));
             this.btnImprimirTm.Location = new System.Drawing.Point(14, 345);
             this.btnImprimirTm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnImprimirTm.Name = "btnImprimirTm";
@@ -197,6 +198,20 @@
             this.btnImprimirTm.Text = "Impresion \r\nde Tarimas";
             this.btnImprimirTm.Click += new System.EventHandler(this.btnImprimirTm_Click);
             // 
+            // btn_rptubicaciones
+            // 
+            this.btn_rptubicaciones.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_rptubicaciones.Appearance.Options.UseFont = true;
+            this.btn_rptubicaciones.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btn_rptubicaciones.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btn_rptubicaciones.Location = new System.Drawing.Point(14, 443);
+            this.btn_rptubicaciones.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_rptubicaciones.Name = "btn_rptubicaciones";
+            this.btn_rptubicaciones.Size = new System.Drawing.Size(233, 87);
+            this.btn_rptubicaciones.TabIndex = 27;
+            this.btn_rptubicaciones.Text = "Reporte \r\nde Ubicaciones";
+            this.btn_rptubicaciones.Click += new System.EventHandler(this.btn_rptubicaciones_Click);
+            // 
             // frmreport
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -204,6 +219,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(833, 642);
+            this.Controls.Add(this.btn_rptubicaciones);
             this.Controls.Add(this.btnImprimirTm);
             this.Controls.Add(this.cmdSalidasMP);
             this.Controls.Add(this.cmdHome);
@@ -235,5 +251,6 @@
         private DevExpress.XtraEditors.SimpleButton btnLotesPorProveedor;
         private DevExpress.XtraEditors.SimpleButton cmdSalidasMP;
         private DevExpress.XtraEditors.SimpleButton btnImprimirTm;
+        private DevExpress.XtraEditors.SimpleButton btn_rptubicaciones;
     }
 }

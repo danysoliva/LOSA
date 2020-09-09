@@ -83,5 +83,11 @@ namespace LOSA.Reportes
             frm.Show();
 
         }
+
+        private void btn_rptubicaciones_Click(object sender, EventArgs e)
+        {
+            rptUbicaciones frm = new rptUbicaciones();
+            frm.Show();
+        }
     }
 }

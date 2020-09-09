@@ -74,7 +74,7 @@ namespace LOSA.PlanMPreque
                    
                     int id = IDplan;
                     int valor = 0;
-
+                    string Msj = "";
                     DataOperations dp = new DataOperations();
                     SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                     con.Open();
@@ -86,12 +86,17 @@ namespace LOSA.PlanMPreque
                     if (dr.Read())
                     {
                         valor = dr.GetInt32(0);
+                        Msj = dr.GetString(1);
                     }
                     dr.Close();
                     con.Close();
                     if (valor == 1)
                     {
                         CajaDialogo.Information("Creacion de requisicion exitoso");
+                    }
+                    else
+                    {
+                        CajaDialogo.Information(Msj);
                     }
 
                 }
