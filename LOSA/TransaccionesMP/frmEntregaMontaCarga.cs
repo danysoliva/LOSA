@@ -42,7 +42,8 @@ namespace LOSA.TransaccionesMP
         private void cmdEntrega_Click(object sender, EventArgs e)
         {
             //entregar tarima directamente
-            frmGestionUbicaciones frm = new frmGestionUbicaciones(UsuarioLogeado);
+            //frmGestionUbicaciones frm = new frmGestionUbicaciones(UsuarioLogeado);
+            frmEntregaTarimaReq frm = new frmEntregaTarimaReq(UsuarioLogeado);
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
