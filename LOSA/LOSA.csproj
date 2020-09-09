@@ -139,6 +139,8 @@
     <Reference Include="DevExpress.XtraGrid.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="DevExpress.XtraLayout.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPivotGrid.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
@@ -697,11 +699,23 @@
     <Compile Include="Reportes\frmtarimasporbodega.Designer.cs">
       <DependentUpon>frmtarimasporbodega.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\frm_Reporte_Ubicaciones_Logistica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frm_Reporte_Ubicaciones_Logistica.Designer.cs">
+      <DependentUpon>frm_Reporte_Ubicaciones_Logistica.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\frm_SalidasMP.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\frm_SalidasMP.Designer.cs">
       <DependentUpon>frm_SalidasMP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rptUbicaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptUbicaciones.Designer.cs">
+      <DependentUpon>rptUbicaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\rptUbicacionRotulo.cs">
       <SubType>Component</SubType>
@@ -1065,8 +1079,14 @@
     <EmbeddedResource Include="Reportes\frmtarimasporbodega.resx">
       <DependentUpon>frmtarimasporbodega.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frm_Reporte_Ubicaciones_Logistica.resx">
+      <DependentUpon>frm_Reporte_Ubicaciones_Logistica.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frm_SalidasMP.resx">
       <DependentUpon>frm_SalidasMP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptUbicaciones.resx">
+      <DependentUpon>rptUbicaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rptUbicacionRotulo.resx">
       <DependentUpon>rptUbicacionRotulo.cs</DependentUpon>
