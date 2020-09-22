@@ -62,7 +62,8 @@ namespace LOSA.TransaccionesMP
 
                 con.Close();
 
-                CalculoTotales();
+                //CalculoTotales();
+                Inizialitar_data();
                 seterror();
             }
             catch (Exception ec)
@@ -71,6 +72,22 @@ namespace LOSA.TransaccionesMP
             }
         }
 
+        private void Inizialitar_data()
+        {
+            decimal total_solicitado = CantidadPendiente;
+            decimal cantidaPendiente = CantidadPendiente;
+            decimal cantidad_conseguida = 0;
+            foreach (dsTransaccionesMP.detalle_lote_mpRow row in dsTransaccionesMP1.detalle_lote_mp.Rows)
+            {
+                if (row.seleccionado)
+                {
+                    cantidad_conseguida = cantidad_conseguida + row.cants;
+
+                }
+            }
+            txtCantidadPendiente.Text = string.Format("{0:###,##0.00}", CantidadPendiente - cantidad_conseguida);
+            txtAsignada.Text = string.Format("{0:###,##0.00}", cantidad_conseguida);
+        }
         private void CalculoTotales()
         {
             decimal total_solicitado = CantidadPendiente;
@@ -78,23 +95,23 @@ namespace LOSA.TransaccionesMP
             decimal cantidad_conseguida = 0;
             foreach (dsTransaccionesMP.detalle_lote_mpRow row in dsTransaccionesMP1.detalle_lote_mp.Rows)
             {
-                //if (row.peso_total == cantidaPendiente)
-                //{
-                //    row.seleccionado = true;
-                //    cantidaPendiente = 0;
-                //    row.cants = row.peso_total;
-                //    break;
-                //}
+                if (row.peso_total == cantidaPendiente)
+                {
+                    row.seleccionado = true;
+                    cantidaPendiente = 0;
+                    row.cants = row.peso_total;
+                    break;
+                }
                 if (row.peso_total > cantidaPendiente && cantidaPendiente > 0)
                 {
-                    //if (row.peso_total > cantidaPendiente)
-                    //    row.cants = cantidaPendiente;
-                    //else
-                    //    row.cants = total_solicitado - cantidaPendiente;
+                    if (row.peso_total > cantidaPendiente)
+                        row.cants = cantidaPendiente;
+                    else
+                        row.cants = total_solicitado - cantidaPendiente;
 
-                    //row.cants = row.peso_total - cantidaPendiente;
+                    row.cants = row.peso_total - cantidaPendiente;
                     cantidaPendiente -= row.cants;
-                    //row.seleccionado = true;
+                    row.seleccionado = true;
                     break;
                 }
                 else
@@ -104,13 +121,13 @@ namespace LOSA.TransaccionesMP
                     if (row.peso_total < cantidaPendiente && cantidaPendiente > 0)
                     {
                         //seleccionamos la cantidad total del row para acumular el valor solictado.
-                        //row.cants = row.peso_total;
+                        row.cants = row.peso_total;
 
                         //Restamos la cantidad conseguida o asignada.
                         cantidaPendiente -= row.cants;
 
                         //Marcamos el row seleccionado porque se utilizaria dicho lote para la requisicion.
-                        //row.seleccionado = true;
+                        row.seleccionado = true;
                     }
                 }
 
@@ -147,7 +164,6 @@ namespace LOSA.TransaccionesMP
                         row.seleccionado = true;
                         cantidaPendiente = 0;
                         row.cants = row.peso_total;
-                        break;
                     }
                     if(row.peso_total > cantidaPendiente && cantidaPendiente > 0)
                     {
@@ -157,9 +173,10 @@ namespace LOSA.TransaccionesMP
                             row.cants = total_solicitado - cantidaPendiente;
 
                         //row.cants = row.peso_total - cantidaPendiente;
+
                         cantidaPendiente -= row.cants;
+                        //cantidad_conseguida = cantidad_conseguida + row.cants;
                         row.seleccionado = true;
-                        break;
                     }
                     else
                     {
@@ -197,6 +214,8 @@ namespace LOSA.TransaccionesMP
                     row.seleccionado = false;
                     row.cants = 0;
                 }
+                txtCantidadPendiente.Text = string.Format("{0:###,##0.00}", CantidadPendiente - cantidad_conseguida);
+                txtAsignada.Text = string.Format("{0:###,##0.00}", cantidad_conseguida);
             }
         }
 
@@ -250,6 +269,8 @@ namespace LOSA.TransaccionesMP
                         cmd.Parameters.AddWithValue("@cantidad", row.cants);
                         cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
                         cmd.Parameters.AddWithValue("@id_tarima", row.id);
+                        cmd.Parameters.AddWithValue("@idmp", MP.IdMP_ACS);
+                        cmd.Parameters.AddWithValue("@n_ingreso", row.numero_transaccion);
                         cmd.ExecuteNonQuery();
                     }
                 }
@@ -283,6 +304,24 @@ namespace LOSA.TransaccionesMP
                     else
                     {
                         row.seleccionado = true;
+                        decimal cantidad_conseguida = 0;
+                        decimal cantidad_solicitada = CantidadPendiente;
+                        decimal cantidad_pendiente = Convert.ToDecimal(txtCantidadPendiente.Text);
+                        decimal trans = 0;
+                        if (row.cants >= cantidad_pendiente)
+                        {
+                            row.cants = cantidad_pendiente;
+                        }
+                        foreach (dsTransaccionesMP.detalle_lote_mpRow row2 in dsTransaccionesMP1.detalle_lote_mp.Rows)
+                        {
+                            if (row2.seleccionado)
+                            {
+                                cantidad_conseguida = cantidad_conseguida + row2.cants;
+                            }
+                        }
+
+                        txtAsignada.Text = string.Format("{0:###,##0.00}", cantidad_conseguida);
+                        txtCantidadPendiente.Text = string.Format("{0:###,##0.00}", CantidadPendiente - cantidad_conseguida);
                     }
 
                     if (row.cants == 0)

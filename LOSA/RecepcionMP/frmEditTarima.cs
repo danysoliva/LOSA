@@ -21,6 +21,7 @@ namespace LOSA.RecepcionMP
         int IdTarima;
         UserLogin UsuarioLogeado;
         decimal factor;
+        public string ItemCode;
         public frmEditTarima(int pIdTarima, UserLogin pUser)
         {
             InitializeComponent();
@@ -28,6 +29,7 @@ namespace LOSA.RecepcionMP
             LoadPresentaciones();
             IdTarima = pIdTarima;
             LoadDataTarima(pIdTarima);
+            cargarDatosProveedor();
         }
 
 
@@ -70,14 +72,14 @@ namespace LOSA.RecepcionMP
                 MateriaPrima mp = new MateriaPrima();
                 if (mp.RecuperarRegistroFromID_RM(tam.Id_materiaprima))
                 {
-                    txtCodigoMP.Text = mp.Codigo;
+                    ItemCode = mp.Codigo;
                     txtMP_Name.Text = mp.Name;
                 }
                 Proveedor pv = new Proveedor();
                 if (pv.RecuperarRegistro(tam.IdProveedor))
                 {
                     txtCodigoProveedor.Text = tam.IdProveedor;
-                    txtProveedorName.Text = pv.Nombre;
+                    glueProveedor.EditValue = tam.IdProveedor;
                 }
             }
         }
@@ -205,6 +207,8 @@ namespace LOSA.RecepcionMP
                 cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
                 cmd.Parameters.AddWithValue("@cantidad", txtUnidades.Text);
                 cmd.Parameters.AddWithValue("@peso", Convert.ToDecimal(txtPesoKg.Text));
+                cmd.Parameters.AddWithValue("@id_proveedor", glueProveedor.EditValue.ToString());
+                cmd.Parameters.AddWithValue("@itemcode", this.ItemCode);
                 cmd.Parameters.AddWithValue("@id", this.IdTarima);
                 cmd.ExecuteScalar();
                 con.Close();
@@ -243,6 +247,49 @@ namespace LOSA.RecepcionMP
                 factor = pre1.Factor;
                 txtPesoKg.Text = string.Format("{0:###,##0.00}", (factor * Convert.ToDecimal(txtUnidades.Text)));
             }
+        }
+
+        void cargarDatosProveedor()
+        {
+            try
+            {
+
+                DataOperations dp = new DataOperations();
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                string SQL = @"exec sp_get_providersv2";
+
+
+                dsLogistica21.Proveedores.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(SQL, cn);
+                adat.Fill(dsLogistica21.Proveedores);
+
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+        }
+
+        private void txtMP_Name_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            frmMP frm = new frmMP();
+            if (this.MdiParent != null)
+            {
+                //frm.MdiParent = this.MdiParent;
+                frm.FormBorderStyle = FormBorderStyle.Sizable;
+            }
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                txtMP_Name.Text = frm.MateriaPrima;
+                //txtCodigoProveedor.Text = frm.idProveedor;
+                //txtProveedorName.Text = frm.NombreProveedor;
+                this.ItemCode = frm.ItemCode;
+            }
+        }
+
+        private void glueProveedor_EditValueChanged(object sender, EventArgs e)
+        {
+            txtCodigoProveedor.Text = glueProveedor.EditValue.ToString();
         }
     }//end public partial class frmEditTarima
 }//end namespace LOSA.RecepcionMP

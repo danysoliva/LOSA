@@ -61,14 +61,32 @@ namespace LOSA.PlanMPreque
                 adat.Fill(dsTransaccionesMP1.detalle_lote_mp);
 
                 con.Close();
-
-                CalculoTotales();
+                InicializarData();
+                //CalculoTotales();
                 seterror();
             }
             catch (Exception ec)
             {
                 CajaDialogo.Error(ec.Message);
             }
+        }
+
+        private void InicializarData()
+        {
+            decimal total_solicitado = CantidadPendiente;
+            decimal cantidaPendiente = CantidadPendiente;
+            decimal cantidad_conseguida = 0;
+            foreach (dsTransaccionesMP.detalle_lote_mpRow row in dsTransaccionesMP1.detalle_lote_mp.Rows)
+            {
+                if (row.seleccionado)
+                {
+                    cantidad_conseguida = cantidad_conseguida + row.cants;
+                }
+                txtCantidadPendiente.Text = string.Format("{0:###,##0.00}", CantidadPendiente - cantidad_conseguida);
+                txtAsignada.Text = string.Format("{0:###,##0.00}", cantidad_conseguida);
+            }
+            
+
         }
         private void seterror()
         {
@@ -99,23 +117,31 @@ namespace LOSA.PlanMPreque
             decimal cantidad_conseguida = 0;
             foreach (dsTransaccionesMP.detalle_lote_mpRow row in dsTransaccionesMP1.detalle_lote_mp.Rows)
             {
-                //if (row.peso_total == cantidaPendiente)
-                //{
-                //    row.seleccionado = true;
-                //    cantidaPendiente = 0;
-                //    row.cants = row.peso_total;
-                //    break;
-                //}
+                if (row.peso_total == cantidaPendiente)
+                {
+                    row.seleccionado = true;
+                    cantidaPendiente = 0;
+                    row.cants = row.peso_total;
+                    break;
+                }
                 if (row.peso_total > cantidaPendiente && cantidaPendiente > 0)
                 {
-                    //if (row.peso_total > cantidaPendiente)
-                    //    row.cants = cantidaPendiente;
-                    //else
-                    //    row.cants = total_solicitado - cantidaPendiente;
+                    if (row.peso_total > cantidaPendiente)
+                        row.cants = cantidaPendiente;
+                    else
+                        row.cants = total_solicitado - cantidaPendiente;
 
-                    //row.cants = row.peso_total - cantidaPendiente;
+                    row.cants = row.peso_total - cantidaPendiente;
                     cantidaPendiente -= row.cants;
-                    //row.seleccionado = true;
+                    //Calculo de totales.
+                    if (row.seleccionado)
+                    {
+                        cantidad_conseguida += row.cants;
+
+                        txtCantidadPendiente.Text = string.Format("{0:###,##0.00}", CantidadPendiente - cantidad_conseguida);
+                        txtAsignada.Text = string.Format("{0:###,##0.00}", cantidad_conseguida);
+                    }
+                    row.seleccionado = true;
                     break;
                 }
                 else
@@ -125,16 +151,15 @@ namespace LOSA.PlanMPreque
                     if (row.peso_total < cantidaPendiente && cantidaPendiente > 0)
                     {
                         //seleccionamos la cantidad total del row para acumular el valor solictado.
-                        //row.cants = row.peso_total;
+                        row.cants = row.peso_total;
 
                         //Restamos la cantidad conseguida o asignada.
                         cantidaPendiente -= row.cants;
 
                         //Marcamos el row seleccionado porque se utilizaria dicho lote para la requisicion.
-                        //row.seleccionado = true;
+                        row.seleccionado = true;
                     }
                 }
-
                 //Calculo de totales.
                 if (row.seleccionado)
                     cantidad_conseguida += row.cants;
@@ -143,6 +168,7 @@ namespace LOSA.PlanMPreque
                 txtAsignada.Text = string.Format("{0:###,##0.00}", cantidad_conseguida);
                 //end block foreach
             }
+        
         }
 
         private void cmdGuardar_Click(object sender, EventArgs e)
@@ -159,8 +185,10 @@ namespace LOSA.PlanMPreque
 
             if (Seleccionados <= 0)
             {
-                CajaDialogo.Error("Debe seleccionar al menos un lote");
-                return;
+                DialogResult r = CajaDialogo.Pregunta("No ha seleccionado ningun lote, si guarda la informacion se eliminara la configuracion! \nDesea continuar con el guardado??");
+                
+                if (r != DialogResult.Yes)
+                    return;
             }
 
             decimal pendiente = 0;
@@ -169,6 +197,15 @@ namespace LOSA.PlanMPreque
                 DialogResult r = CajaDialogo.Pregunta("Las cantidades seleccionadas no abastecen el total requerido!!\nDesea Guardar el avance seleccionado?");
                 if (r != DialogResult.Yes)
                     return;
+            }
+            else
+            {
+                if (Convert.ToDecimal(txtCantidadPendiente.Text)<0)
+                {
+                    DialogResult r = CajaDialogo.Pregunta("Las cantidades seleccionadas sobre pasa el total requerido!!\nDesea Guardar el avance seleccionado?");
+                    if (r != DialogResult.Yes)
+                        return;
+                }
             }
 
 
@@ -195,6 +232,8 @@ namespace LOSA.PlanMPreque
                         cmd.Parameters.AddWithValue("@cantidad", row.cants);
                         cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
                         cmd.Parameters.AddWithValue("@id_tarima", row.id);
+                        cmd.Parameters.AddWithValue("@idmp", MP.IdMP_ACS);
+                        cmd.Parameters.AddWithValue("@n_ingreso", row.numero_transaccion);
                         cmd.ExecuteNonQuery();
                     }
                 }
@@ -237,7 +276,8 @@ namespace LOSA.PlanMPreque
                         //row.cants = row.peso_total - cantidaPendiente;
                         cantidaPendiente -= row.cants;
                         row.seleccionado = true;
-                        break;
+                     
+                        
                     }
                     else
                     {
@@ -274,7 +314,10 @@ namespace LOSA.PlanMPreque
                 {
                     row.seleccionado = false;
                     row.cants = 0;
+                   
                 }
+                txtCantidadPendiente.Text = string.Format("{0:###,##0.00}", CantidadPendiente);
+                txtAsignada.Text = string.Format("{0:###,##0.00}", 0);
             }
         }
 
@@ -295,6 +338,24 @@ namespace LOSA.PlanMPreque
                     else
                     {
                         row.seleccionado = true;
+                        decimal cantidad_conseguida = 0;
+                        decimal cantidad_solicitada = CantidadPendiente;
+                        decimal cantidad_pendiente = Convert.ToDecimal(txtCantidadPendiente.Text);
+                        decimal trans = 0;
+                        if (row.cants >= cantidad_pendiente)
+                        {
+                            row.cants = cantidad_pendiente;
+                        }
+                        foreach (dsTransaccionesMP.detalle_lote_mpRow row2 in dsTransaccionesMP1.detalle_lote_mp.Rows)
+                        {
+                            if (row2.seleccionado)
+                            {
+                                cantidad_conseguida = cantidad_conseguida + row2.cants;
+                            }
+                        }
+
+                        txtAsignada.Text = string.Format("{0:###,##0.00}", cantidad_conseguida);
+                        txtCantidadPendiente.Text = string.Format("{0:###,##0.00}", CantidadPendiente - cantidad_conseguida);
                     }
 
                     if (row.cants == 0)
@@ -307,6 +368,7 @@ namespace LOSA.PlanMPreque
                     break;
             }
             seterror();
+
 
         }
 
