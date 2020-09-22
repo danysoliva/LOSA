@@ -148,11 +148,11 @@ namespace LOSA.TransaccionesMP
 
                 if (tarimaEncontrada.Recuperado)
                 {
-                    if (!tarimaEncontrada.Enable)
-                    {
-                        error = true;
-                        mensaje = "La tarima no esta activa!";
-                    }
+                    //if (!tarimaEncontrada.Enable)
+                    //{
+                    //    error = true;
+                    //    mensaje = "La tarima no esta activa!";
+                    //}
 
                     if (tarimaEncontrada.Id_estadoCalidad > 1)
                     {

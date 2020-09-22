@@ -29,9 +29,21 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmImprimirHojaIngreso));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.dsRecepcionMPx1 = new LOSA.RecepcionMP.dsRecepcionMPx();
@@ -53,12 +65,12 @@
             this.Editar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnEditar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colnum = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colUbicacion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.dtFechaHasta = new DevExpress.XtraEditors.DateEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.dtFechaDesde = new DevExpress.XtraEditors.DateEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.colUbicacion = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -82,9 +94,8 @@
             this.labelControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl1.Location = new System.Drawing.Point(0, 2);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(851, 49);
+            this.labelControl1.Size = new System.Drawing.Size(638, 40);
             this.labelControl1.TabIndex = 28;
             this.labelControl1.Text = "Ingresos de Materia Prima";
             this.labelControl1.Click += new System.EventHandler(this.btnAtras_Click_1);
@@ -99,10 +110,9 @@
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(612, 54);
-            this.btnAtras.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAtras.Location = new System.Drawing.Point(459, 44);
             this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(223, 58);
+            this.btnAtras.Size = new System.Drawing.Size(167, 47);
             this.btnAtras.TabIndex = 26;
             this.btnAtras.Text = "Atras";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click_1);
@@ -119,16 +129,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl1.DataMember = "lista_tarimas";
             this.gridControl1.DataSource = this.dsRecepcionMPx1;
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gridControl1.Location = new System.Drawing.Point(0, 121);
+            this.gridControl1.Location = new System.Drawing.Point(0, 98);
             this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnPrint,
             this.cmdDuplicar,
             this.btnEditar});
-            this.gridControl1.Size = new System.Drawing.Size(851, 570);
+            this.gridControl1.Size = new System.Drawing.Size(638, 463);
             this.gridControl1.TabIndex = 51;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -154,6 +162,7 @@
             this.Editar,
             this.colnum,
             this.colUbicacion});
+            this.gridView1.DetailHeight = 284;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -161,36 +170,45 @@
             // colid
             // 
             this.colid.FieldName = "id";
+            this.colid.MinWidth = 15;
             this.colid.Name = "colid";
+            this.colid.Width = 56;
             // 
             // colid_materia_prima
             // 
             this.colid_materia_prima.FieldName = "id_materia_prima";
+            this.colid_materia_prima.MinWidth = 15;
             this.colid_materia_prima.Name = "colid_materia_prima";
+            this.colid_materia_prima.Width = 56;
             // 
             // colmateriaprima
             // 
             this.colmateriaprima.Caption = "Materia Prima";
             this.colmateriaprima.FieldName = "materiaprima";
+            this.colmateriaprima.MinWidth = 15;
             this.colmateriaprima.Name = "colmateriaprima";
             this.colmateriaprima.OptionsColumn.AllowEdit = false;
             this.colmateriaprima.Visible = true;
             this.colmateriaprima.VisibleIndex = 1;
+            this.colmateriaprima.Width = 56;
             // 
             // colid_proveedor
             // 
             this.colid_proveedor.FieldName = "id_proveedor";
+            this.colid_proveedor.MinWidth = 15;
             this.colid_proveedor.Name = "colid_proveedor";
+            this.colid_proveedor.Width = 56;
             // 
             // colproveedor
             // 
             this.colproveedor.Caption = "Proveedor";
             this.colproveedor.FieldName = "proveedor";
+            this.colproveedor.MinWidth = 15;
             this.colproveedor.Name = "colproveedor";
             this.colproveedor.OptionsColumn.AllowEdit = false;
             this.colproveedor.Visible = true;
             this.colproveedor.VisibleIndex = 2;
-            this.colproveedor.Width = 72;
+            this.colproveedor.Width = 54;
             // 
             // colfecha_ingreso
             // 
@@ -198,57 +216,62 @@
             this.colfecha_ingreso.DisplayFormat.FormatString = "g";
             this.colfecha_ingreso.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colfecha_ingreso.FieldName = "fecha_ingreso";
+            this.colfecha_ingreso.MinWidth = 15;
             this.colfecha_ingreso.Name = "colfecha_ingreso";
             this.colfecha_ingreso.OptionsColumn.AllowEdit = false;
             this.colfecha_ingreso.Visible = true;
             this.colfecha_ingreso.VisibleIndex = 4;
-            this.colfecha_ingreso.Width = 72;
+            this.colfecha_ingreso.Width = 54;
             // 
             // colnumero_transaccion
             // 
             this.colnumero_transaccion.Caption = "# Ingreso";
             this.colnumero_transaccion.FieldName = "numero_transaccion";
+            this.colnumero_transaccion.MinWidth = 15;
             this.colnumero_transaccion.Name = "colnumero_transaccion";
             this.colnumero_transaccion.OptionsColumn.AllowEdit = false;
             this.colnumero_transaccion.Visible = true;
             this.colnumero_transaccion.VisibleIndex = 5;
-            this.colnumero_transaccion.Width = 72;
+            this.colnumero_transaccion.Width = 54;
             // 
             // collote_materia_prima
             // 
             this.collote_materia_prima.Caption = "Lote";
             this.collote_materia_prima.FieldName = "lote_materia_prima";
+            this.collote_materia_prima.MinWidth = 15;
             this.collote_materia_prima.Name = "collote_materia_prima";
             this.collote_materia_prima.OptionsColumn.AllowEdit = false;
             this.collote_materia_prima.Visible = true;
             this.collote_materia_prima.VisibleIndex = 6;
-            this.collote_materia_prima.Width = 72;
+            this.collote_materia_prima.Width = 54;
             // 
             // colid_boleta
             // 
             this.colid_boleta.Caption = "# Boleta";
             this.colid_boleta.FieldName = "id_boleta";
+            this.colid_boleta.MinWidth = 15;
             this.colid_boleta.Name = "colid_boleta";
             this.colid_boleta.OptionsColumn.AllowEdit = false;
             this.colid_boleta.Visible = true;
             this.colid_boleta.VisibleIndex = 7;
-            this.colid_boleta.Width = 72;
+            this.colid_boleta.Width = 54;
             // 
             // colPrint
             // 
             this.colPrint.Caption = "Imprimir";
             this.colPrint.ColumnEdit = this.btnPrint;
+            this.colPrint.MinWidth = 15;
             this.colPrint.Name = "colPrint";
             this.colPrint.Visible = true;
             this.colPrint.VisibleIndex = 8;
-            this.colPrint.Width = 72;
+            this.colPrint.Width = 54;
             // 
             // btnPrint
             // 
             this.btnPrint.AutoHeight = false;
-            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.btnPrint.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions4, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnPrint.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnPrint_ButtonClick);
@@ -257,17 +280,18 @@
             // 
             this.colDuplicar.Caption = "Duplicar";
             this.colDuplicar.ColumnEdit = this.cmdDuplicar;
+            this.colDuplicar.MinWidth = 15;
             this.colDuplicar.Name = "colDuplicar";
             this.colDuplicar.Visible = true;
             this.colDuplicar.VisibleIndex = 9;
-            this.colDuplicar.Width = 72;
+            this.colDuplicar.Width = 54;
             // 
             // cmdDuplicar
             // 
             this.cmdDuplicar.AutoHeight = false;
-            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.cmdDuplicar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions5, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdDuplicar.Name = "cmdDuplicar";
             this.cmdDuplicar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdDuplicar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdDuplicar_ButtonClick);
@@ -276,17 +300,18 @@
             // 
             this.Editar.Caption = "Editar";
             this.Editar.ColumnEdit = this.btnEditar;
+            this.Editar.MinWidth = 15;
             this.Editar.Name = "Editar";
             this.Editar.Visible = true;
             this.Editar.VisibleIndex = 10;
-            this.Editar.Width = 89;
+            this.Editar.Width = 67;
             // 
             // btnEditar
             // 
             this.btnEditar.AutoHeight = false;
-            editorButtonImageOptions6.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions6.Image")));
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
             this.btnEditar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions6, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnEditar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnEditar_ButtonClick);
@@ -295,10 +320,22 @@
             // 
             this.colnum.Caption = "#";
             this.colnum.FieldName = "num";
+            this.colnum.MinWidth = 15;
             this.colnum.Name = "colnum";
             this.colnum.Visible = true;
             this.colnum.VisibleIndex = 0;
-            this.colnum.Width = 53;
+            this.colnum.Width = 40;
+            // 
+            // colUbicacion
+            // 
+            this.colUbicacion.Caption = "Ubicacion";
+            this.colUbicacion.FieldName = "ubicacion";
+            this.colUbicacion.MinWidth = 15;
+            this.colUbicacion.Name = "colUbicacion";
+            this.colUbicacion.OptionsColumn.AllowEdit = false;
+            this.colUbicacion.Visible = true;
+            this.colUbicacion.VisibleIndex = 3;
+            this.colUbicacion.Width = 82;
             // 
             // cmdGuardar
             // 
@@ -310,10 +347,9 @@
             this.cmdGuardar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdGuardar.ImageOptions.Image")));
             this.cmdGuardar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.cmdGuardar.Location = new System.Drawing.Point(628, 2);
-            this.cmdGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmdGuardar.Location = new System.Drawing.Point(471, 2);
             this.cmdGuardar.Name = "cmdGuardar";
-            this.cmdGuardar.Size = new System.Drawing.Size(223, 49);
+            this.cmdGuardar.Size = new System.Drawing.Size(167, 40);
             this.cmdGuardar.TabIndex = 50;
             this.cmdGuardar.Text = "Guardar";
             this.cmdGuardar.Visible = false;
@@ -322,8 +358,7 @@
             // dtFechaHasta
             // 
             this.dtFechaHasta.EditValue = null;
-            this.dtFechaHasta.Location = new System.Drawing.Point(147, 85);
-            this.dtFechaHasta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtFechaHasta.Location = new System.Drawing.Point(110, 69);
             this.dtFechaHasta.Name = "dtFechaHasta";
             this.dtFechaHasta.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFechaHasta.Properties.Appearance.Options.UseFont = true;
@@ -333,7 +368,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtFechaHasta.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.TouchUI;
             this.dtFechaHasta.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.dtFechaHasta.Size = new System.Drawing.Size(189, 32);
+            this.dtFechaHasta.Size = new System.Drawing.Size(142, 26);
             this.dtFechaHasta.TabIndex = 53;
             this.dtFechaHasta.EditValueChanged += new System.EventHandler(this.dtFechaHasta_EditValueChanged);
             // 
@@ -341,18 +376,16 @@
             // 
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(5, 89);
-            this.labelControl9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl9.Location = new System.Drawing.Point(4, 72);
             this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(117, 25);
+            this.labelControl9.Size = new System.Drawing.Size(96, 20);
             this.labelControl9.TabIndex = 55;
             this.labelControl9.Text = "Fecha Hasta:";
             // 
             // dtFechaDesde
             // 
             this.dtFechaDesde.EditValue = null;
-            this.dtFechaDesde.Location = new System.Drawing.Point(147, 50);
-            this.dtFechaDesde.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtFechaDesde.Location = new System.Drawing.Point(110, 41);
             this.dtFechaDesde.Name = "dtFechaDesde";
             this.dtFechaDesde.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFechaDesde.Properties.Appearance.Options.UseFont = true;
@@ -363,7 +396,7 @@
             this.dtFechaDesde.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.TouchUI;
             this.dtFechaDesde.Properties.MinValue = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
             this.dtFechaDesde.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.dtFechaDesde.Size = new System.Drawing.Size(189, 32);
+            this.dtFechaDesde.Size = new System.Drawing.Size(142, 26);
             this.dtFechaDesde.TabIndex = 52;
             this.dtFechaDesde.EditValueChanged += new System.EventHandler(this.dtFechaDesde_EditValueChanged);
             // 
@@ -371,29 +404,18 @@
             // 
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(5, 54);
-            this.labelControl8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl8.Location = new System.Drawing.Point(4, 44);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(123, 25);
+            this.labelControl8.Size = new System.Drawing.Size(100, 20);
             this.labelControl8.TabIndex = 54;
             this.labelControl8.Text = "Fecha Desde:";
             // 
-            // colUbicacion
-            // 
-            this.colUbicacion.Caption = "Ubicacion";
-            this.colUbicacion.FieldName = "ubicacion";
-            this.colUbicacion.Name = "colUbicacion";
-            this.colUbicacion.OptionsColumn.AllowEdit = false;
-            this.colUbicacion.Visible = true;
-            this.colUbicacion.VisibleIndex = 3;
-            this.colUbicacion.Width = 110;
-            // 
             // frmImprimirHojaIngreso
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(851, 689);
+            this.ClientSize = new System.Drawing.Size(638, 560);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.dtFechaHasta);
             this.Controls.Add(this.labelControl9);
@@ -403,7 +425,6 @@
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.cmdGuardar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmImprimirHojaIngreso";
             this.Text = "frmImprimirHojaIngreso";
             this.Activated += new System.EventHandler(this.frmImprimirHojaIngreso_Activated);
