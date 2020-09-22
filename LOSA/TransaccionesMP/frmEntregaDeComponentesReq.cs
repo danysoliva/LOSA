@@ -35,7 +35,7 @@ namespace LOSA.TransaccionesMP
                 cmd.CommandType = CommandType.StoredProcedure;
                 dsTransaccionesMP1.entregacomp.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                adat.Fill(dsTransaccionesMP1.entregacomp);
+                adat.Fill(dsTransaccionesMP1.EntregaLotes);
 
                 con.Close();
             }

@@ -75,6 +75,8 @@ namespace LOSA.Clases
                         cmd.Parameters.AddWithValue("@cantidad", row.cants);
                         cmd.Parameters.AddWithValue("@id_usuario", idUsuario);
                         cmd.Parameters.AddWithValue("@id_tarima", row.id);
+                        cmd.Parameters.AddWithValue("@idmp", IdMP_ACS);
+                        cmd.Parameters.AddWithValue("@n_ingreso", row.numero_transaccion);
                         cmd.ExecuteNonQuery();
                     }
                 }
