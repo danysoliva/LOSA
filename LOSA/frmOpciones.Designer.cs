@@ -39,7 +39,7 @@
             this.TabLogistica = new DevExpress.XtraTab.XtraTabPage();
             this.cmdUbicaciones = new DevExpress.XtraEditors.SimpleButton();
             this.cmdGestionIngresos = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdMP_Granel = new DevExpress.XtraEditors.SimpleButton();
             this.btnplanrequisas = new DevExpress.XtraEditors.SimpleButton();
             this.btnreportes = new DevExpress.XtraEditors.SimpleButton();
             this.btnReq_PT = new DevExpress.XtraEditors.SimpleButton();
@@ -115,7 +115,7 @@
             this.TabMontacarga.Controls.Add(this.labelControl1);
             this.TabMontacarga.Controls.Add(this.cmdPT);
             this.TabMontacarga.Controls.Add(this.cmdMP);
-            this.TabMontacarga.Image = ((System.Drawing.Image)(resources.GetObject("TabMontacarga.Image")));
+            this.TabMontacarga.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabMontacarga.ImageOptions.Image")));
             this.TabMontacarga.Name = "TabMontacarga";
             this.TabMontacarga.PageVisible = false;
             this.TabMontacarga.Size = new System.Drawing.Size(629, 422);
@@ -199,7 +199,7 @@
             // 
             this.TabLogistica.Controls.Add(this.cmdUbicaciones);
             this.TabLogistica.Controls.Add(this.cmdGestionIngresos);
-            this.TabLogistica.Controls.Add(this.simpleButton2);
+            this.TabLogistica.Controls.Add(this.cmdMP_Granel);
             this.TabLogistica.Controls.Add(this.btnplanrequisas);
             this.TabLogistica.Controls.Add(this.btnreportes);
             this.TabLogistica.Controls.Add(this.btnReq_PT);
@@ -212,7 +212,7 @@
             this.TabLogistica.Controls.Add(this.cmdRegistroLote);
             this.TabLogistica.Controls.Add(this.simpleButton3);
             this.TabLogistica.Controls.Add(this.cmdRecepcionMPLogistica);
-            this.TabLogistica.Image = global::LOSA.Properties.Resources.box;
+            this.TabLogistica.ImageOptions.Image = global::LOSA.Properties.Resources.box;
             this.TabLogistica.Name = "TabLogistica";
             this.TabLogistica.PageVisible = false;
             this.TabLogistica.Size = new System.Drawing.Size(629, 422);
@@ -244,19 +244,18 @@
             this.cmdGestionIngresos.Text = "Gestión Ingresos";
             this.cmdGestionIngresos.Click += new System.EventHandler(this.cmdGestionIngresos_Click);
             // 
-            // simpleButton2
+            // cmdMP_Granel
             // 
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(213, 254);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(199, 71);
-            this.simpleButton2.TabIndex = 26;
-            this.simpleButton2.Text = "Tarimas \r\nManuales";
-            this.simpleButton2.Visible = false;
-            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click_1);
+            this.cmdMP_Granel.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdMP_Granel.Appearance.Options.UseFont = true;
+            this.cmdMP_Granel.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdMP_Granel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.cmdMP_Granel.Location = new System.Drawing.Point(213, 254);
+            this.cmdMP_Granel.Name = "cmdMP_Granel";
+            this.cmdMP_Granel.Size = new System.Drawing.Size(199, 71);
+            this.cmdMP_Granel.TabIndex = 26;
+            this.cmdMP_Granel.Text = "MP Granel";
+            this.cmdMP_Granel.Click += new System.EventHandler(this.simpleButton2_Click_1);
             // 
             // btnplanrequisas
             // 
@@ -423,7 +422,7 @@
             // 
             this.TabCalidad.Controls.Add(this.btnconfiguracionCal);
             this.TabCalidad.Controls.Add(this.cmdLotesCalidad);
-            this.TabCalidad.Image = global::LOSA.Properties.Resources.medal;
+            this.TabCalidad.ImageOptions.Image = global::LOSA.Properties.Resources.medal;
             this.TabCalidad.Name = "TabCalidad";
             this.TabCalidad.PageVisible = false;
             this.TabCalidad.Size = new System.Drawing.Size(629, 422);
@@ -462,7 +461,7 @@
             this.TabAdmin.Controls.Add(this.btnEstadosProgramacionesRequisiciones);
             this.TabAdmin.Controls.Add(this.btnTiposPresentaciones);
             this.TabAdmin.Controls.Add(this.btnBodegas);
-            this.TabAdmin.Image = global::LOSA.Properties.Resources.admin;
+            this.TabAdmin.ImageOptions.Image = global::LOSA.Properties.Resources.admin;
             this.TabAdmin.Name = "TabAdmin";
             this.TabAdmin.PageVisible = false;
             this.TabAdmin.Size = new System.Drawing.Size(629, 422);
@@ -538,7 +537,7 @@
             // 
             this.tabProduccion.Controls.Add(this.cmdTarimasPT);
             this.tabProduccion.Controls.Add(this.btnAlimentacionManual);
-            this.tabProduccion.Image = global::LOSA.Properties.Resources.produccion;
+            this.tabProduccion.ImageOptions.Image = global::LOSA.Properties.Resources.produccion;
             this.tabProduccion.Name = "tabProduccion";
             this.tabProduccion.PageVisible = false;
             this.tabProduccion.Size = new System.Drawing.Size(629, 422);
@@ -647,7 +646,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.SimpleButton btnconfiguracionCal;
         private DevExpress.XtraEditors.SimpleButton btnplanrequisas;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton cmdMP_Granel;
         private DevExpress.XtraEditors.SimpleButton cmdGestionIngresos;
         private DevExpress.XtraEditors.SimpleButton cmdUbicaciones;
     }

@@ -24,7 +24,7 @@ namespace ACS.Classes
                                                    user Id=" + Globals.CTS_DB_User + @";
                                                    Password=" + Globals.CTS_DB_Pass + ";";
 
-      internal string ConnectionStringBas = @"Server=" + Globals.Bas_ServerAddress + @";
+      internal string ConnectionStringBascula = @"Server=" + Globals.Bas_ServerAddress + @";
                                                    Database=" + Globals.Bas_ActiveDB + @";
                                                    user Id=" + Globals.Bas_DB_User + @";
                                                    Password=" + Globals.Bas_DB_Pass + ";";
@@ -375,7 +375,7 @@ namespace ACS.Classes
                               where enable = 1 and id = " + idarribodetalle;
             try
             {
-                SqlConnection cn = new SqlConnection(ConnectionStringBas);
+                SqlConnection cn = new SqlConnection(ConnectionStringBascula);
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query, cn);
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -413,7 +413,7 @@ namespace ACS.Classes
         {
             try
             {
-                SqlConnection conn = new SqlConnection(ConnectionStringBas);
+                SqlConnection conn = new SqlConnection(ConnectionStringBascula);
                 conn.Open();
 
                 SqlCommand cmd = new SqlCommand(Command, conn);
@@ -510,7 +510,7 @@ namespace ACS.Classes
         public int basculaDB_Return_int(String quere)
         {
             int result = 0;
-            SqlConnection cn = new SqlConnection(ConnectionStringBas);
+            SqlConnection cn = new SqlConnection(ConnectionStringBascula);
             try
             {
                 cn.Open();
@@ -529,7 +529,7 @@ namespace ACS.Classes
         public string basculaDB_Return_string(String quere)
         {
             string result = "";
-            SqlConnection cn = new SqlConnection(ConnectionStringBas);
+            SqlConnection cn = new SqlConnection(ConnectionStringBascula);
             try
             {
                 cn.Open();
@@ -556,7 +556,7 @@ namespace ACS.Classes
                               ,[siguiente]
                           FROM [dbo].[conf_tables_id]
                           where id = " + id_secuencia;
-                SqlConnection cn = new SqlConnection(ConnectionStringBas);
+                SqlConnection cn = new SqlConnection(ConnectionStringBascula);
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query, cn);
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -590,7 +590,7 @@ namespace ACS.Classes
                                SET
                                   [siguiente] = siguiente + 1
                              WHERE id = " + id_secuencia;
-                SqlConnection cn = new SqlConnection(ConnectionStringBas);
+                SqlConnection cn = new SqlConnection(ConnectionStringBascula);
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(Query, cn);
                 cmd.ExecuteNonQuery();

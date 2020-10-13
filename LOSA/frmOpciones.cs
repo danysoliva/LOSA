@@ -48,7 +48,10 @@ namespace LOSA
             //
             frmImprimirHojaIngreso frm = new frmImprimirHojaIngreso(UsuarioLogeado);
             if (this.MdiParent != null)
+            {
                 frm.MdiParent = this.MdiParent;
+                frm.FormBorderStyle = FormBorderStyle.Sizable;
+            }
 
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
@@ -132,7 +135,10 @@ namespace LOSA
         {
             frmOrdenesFabricacion frm = new frmOrdenesFabricacion(this.UsuarioLogeado);
             if (this.MdiParent != null)
+            {
                 frm.MdiParent = this.MdiParent;
+                frm.FormBorderStyle = FormBorderStyle.Sizable;
+            }
 
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
@@ -169,7 +175,10 @@ namespace LOSA
         {
             frmRequisiciones frm = new frmRequisiciones(UsuarioLogeado);
             if (this.MdiParent != null)
+            {
                 frm.MdiParent = this.MdiParent;
+                frm.FormBorderStyle = FormBorderStyle.Sizable;
+            }
 
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
@@ -272,7 +281,10 @@ namespace LOSA
         {
             LOSA.Reportes.frmreport frm = new Reportes.frmreport();
             if (this.MdiParent != null)
+            {
                 frm.MdiParent = this.MdiParent;
+                frm.FormBorderStyle = FormBorderStyle.Sizable;
+            }
 
             frm.Show();
         }
@@ -285,15 +297,27 @@ namespace LOSA
 
         private void simpleButton2_Click_1(object sender, EventArgs e)
         {
-            frmTarimaManual FRM = new frmTarimaManual(UsuarioLogeado);
-            FRM.Show();
+            //frmTarimaManual FRM = new frmTarimaManual(UsuarioLogeado);
+            //FRM.Show();
+            frmMP_Granel frm = new frmMP_Granel(UsuarioLogeado);
+
+            if (this.MdiParent != null)
+            {
+                frm.MdiParent = this.MdiParent;
+                frm.FormBorderStyle = FormBorderStyle.Sizable;
+            }
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
         }
 
         private void btnplanrequisas_Click(object sender, EventArgs e)
         {
             frmnewplan frm = new frmnewplan(UsuarioLogeado);
             if (this.MdiParent != null)
+            {
                 frm.MdiParent = this.MdiParent;
+                frm.FormBorderStyle = FormBorderStyle.Sizable;
+            }
 
             frm.Show();
 
@@ -304,7 +328,10 @@ namespace LOSA
             //abrir la ventana de gestion de ingresos.
             frmGestionIngresos frm = new frmGestionIngresos(this.UsuarioLogeado);
             if (this.MdiParent != null)
+            {
                 frm.MdiParent = this.MdiParent;
+                frm.FormBorderStyle = FormBorderStyle.Sizable;
+            }
 
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
