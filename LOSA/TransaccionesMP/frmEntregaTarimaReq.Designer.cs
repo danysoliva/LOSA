@@ -29,9 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEntregaTarimaReq));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEntregaTarimaReq));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gcTarima = new DevExpress.XtraGrid.GridControl();
             this.gvTarima = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -65,10 +68,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcTarima.EmbeddedNavigator.Appearance.BackColor = System.Drawing.SystemColors.Control;
             this.gcTarima.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
-            this.gcTarima.Location = new System.Drawing.Point(45, 258);
+            this.gcTarima.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
+            this.gcTarima.Location = new System.Drawing.Point(60, 318);
             this.gcTarima.MainView = this.gvTarima;
+            this.gcTarima.Margin = new System.Windows.Forms.Padding(4);
             this.gcTarima.Name = "gcTarima";
-            this.gcTarima.Size = new System.Drawing.Size(558, 193);
+            this.gcTarima.Size = new System.Drawing.Size(744, 238);
             this.gcTarima.TabIndex = 2;
             this.gcTarima.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTarima});
@@ -217,6 +222,7 @@
             this.gvTarima.Appearance.VertLine.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvTarima.Appearance.VertLine.Options.UseBackColor = true;
             this.gvTarima.Appearance.VertLine.Options.UseFont = true;
+            this.gvTarima.DetailHeight = 431;
             this.gvTarima.GridControl = this.gcTarima;
             this.gvTarima.Name = "gvTarima";
             this.gvTarima.OptionsBehavior.AutoSelectAllInEditor = false;
@@ -232,39 +238,44 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(389, 460);
+            this.labelControl2.Location = new System.Drawing.Point(519, 566);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(83, 24);
+            this.labelControl2.Size = new System.Drawing.Size(108, 29);
             this.labelControl2.TabIndex = 88;
             this.labelControl2.Text = "Peso (Kg)";
             // 
             // txtPeso
             // 
             this.txtPeso.EditValue = "0";
-            this.txtPeso.Location = new System.Drawing.Point(478, 456);
+            this.txtPeso.Location = new System.Drawing.Point(637, 561);
+            this.txtPeso.Margin = new System.Windows.Forms.Padding(4);
             this.txtPeso.Name = "txtPeso";
             this.txtPeso.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPeso.Properties.Appearance.Options.UseFont = true;
             this.txtPeso.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPeso.Properties.ReadOnly = true;
             this.txtPeso.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtPeso.Size = new System.Drawing.Size(142, 32);
+            this.txtPeso.Size = new System.Drawing.Size(189, 38);
             this.txtPeso.TabIndex = 4;
             // 
             // labelControl7
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(39, 460);
+            this.labelControl7.Location = new System.Drawing.Point(52, 566);
+            this.labelControl7.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(80, 24);
+            this.labelControl7.Size = new System.Drawing.Size(103, 29);
             this.labelControl7.TabIndex = 87;
             this.labelControl7.Text = "Unidades";
             // 
             // txtCantidadT
             // 
             this.txtCantidadT.EditValue = "0";
-            this.txtCantidadT.Location = new System.Drawing.Point(125, 456);
+            this.txtCantidadT.Enabled = false;
+            this.txtCantidadT.Location = new System.Drawing.Point(167, 561);
+            this.txtCantidadT.Margin = new System.Windows.Forms.Padding(4);
             this.txtCantidadT.Name = "txtCantidadT";
             this.txtCantidadT.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCantidadT.Properties.Appearance.Options.UseFont = true;
@@ -273,7 +284,7 @@
             this.txtCantidadT.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtCantidadT.Properties.NullText = "0";
             this.txtCantidadT.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtCantidadT.Size = new System.Drawing.Size(142, 32);
+            this.txtCantidadT.Size = new System.Drawing.Size(189, 38);
             this.txtCantidadT.TabIndex = 3;
             // 
             // txtTarima
@@ -282,16 +293,16 @@
             this.txtTarima.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTarima.EditValue = "";
-            this.txtTarima.Location = new System.Drawing.Point(228, 211);
+            this.txtTarima.Location = new System.Drawing.Point(304, 260);
+            this.txtTarima.Margin = new System.Windows.Forms.Padding(4);
             this.txtTarima.Name = "txtTarima";
             this.txtTarima.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTarima.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
             this.txtTarima.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions3, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph)});
             this.txtTarima.Properties.MaxLength = 20;
             this.txtTarima.Properties.NullText = "Escanee o selecciona una tarima";
-            this.txtTarima.Size = new System.Drawing.Size(257, 44);
+            this.txtTarima.Size = new System.Drawing.Size(343, 52);
             this.txtTarima.TabIndex = 0;
             this.txtTarima.ToolTip = "Hola";
             this.txtTarima.KeyDown += new System.Windows.Forms.KeyEventHandler(this.beIdTarima_KeyDown);
@@ -304,9 +315,10 @@
             this.cmdSelectTarima.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdSelectTarima.ImageOptions.Image = global::LOSA.Properties.Resources.tap;
             this.cmdSelectTarima.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.cmdSelectTarima.Location = new System.Drawing.Point(491, 211);
+            this.cmdSelectTarima.Location = new System.Drawing.Point(655, 260);
+            this.cmdSelectTarima.Margin = new System.Windows.Forms.Padding(4);
             this.cmdSelectTarima.Name = "cmdSelectTarima";
-            this.cmdSelectTarima.Size = new System.Drawing.Size(62, 44);
+            this.cmdSelectTarima.Size = new System.Drawing.Size(83, 54);
             this.cmdSelectTarima.TabIndex = 1;
             this.cmdSelectTarima.Visible = false;
             this.cmdSelectTarima.Click += new System.EventHandler(this.cmdSelectTarima_Click);
@@ -317,9 +329,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(112, 216);
+            this.labelControl1.Location = new System.Drawing.Point(149, 266);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(110, 37);
+            this.labelControl1.Size = new System.Drawing.Size(134, 46);
             this.labelControl1.TabIndex = 91;
             this.labelControl1.Text = "Tarima:";
             this.labelControl1.Click += new System.EventHandler(this.labelControl1_Click);
@@ -333,9 +346,10 @@
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.cmdHome.Location = new System.Drawing.Point(455, 7);
+            this.cmdHome.Location = new System.Drawing.Point(607, 9);
+            this.cmdHome.Margin = new System.Windows.Forms.Padding(4);
             this.cmdHome.Name = "cmdHome";
-            this.cmdHome.Size = new System.Drawing.Size(175, 48);
+            this.cmdHome.Size = new System.Drawing.Size(233, 59);
             this.cmdHome.TabIndex = 5;
             this.cmdHome.Text = "Cerrar";
             this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
@@ -346,9 +360,10 @@
             this.panelNotificacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelNotificacion.Controls.Add(this.lblMensaje);
             this.panelNotificacion.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelNotificacion.Location = new System.Drawing.Point(0, 489);
+            this.panelNotificacion.Location = new System.Drawing.Point(0, 602);
+            this.panelNotificacion.Margin = new System.Windows.Forms.Padding(4);
             this.panelNotificacion.Name = "panelNotificacion";
-            this.panelNotificacion.Size = new System.Drawing.Size(638, 71);
+            this.panelNotificacion.Size = new System.Drawing.Size(851, 87);
             this.panelNotificacion.TabIndex = 94;
             // 
             // lblMensaje
@@ -357,9 +372,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensaje.Location = new System.Drawing.Point(3, 5);
+            this.lblMensaje.Location = new System.Drawing.Point(4, 6);
+            this.lblMensaje.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(630, 59);
+            this.lblMensaje.Size = new System.Drawing.Size(841, 73);
             this.lblMensaje.TabIndex = 0;
             // 
             // timerLimpiarMensaje
@@ -373,16 +389,17 @@
             this.txtRequisicion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRequisicion.EditValue = "";
-            this.txtRequisicion.Location = new System.Drawing.Point(228, 71);
+            this.txtRequisicion.Location = new System.Drawing.Point(304, 87);
+            this.txtRequisicion.Margin = new System.Windows.Forms.Padding(4);
             this.txtRequisicion.Name = "txtRequisicion";
             this.txtRequisicion.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRequisicion.Properties.Appearance.Options.UseFont = true;
             editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.txtRequisicion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.txtRequisicion.Properties.MaxLength = 20;
             this.txtRequisicion.Properties.NullText = "Escanee o selecciona una tarima";
-            this.txtRequisicion.Size = new System.Drawing.Size(257, 44);
+            this.txtRequisicion.Size = new System.Drawing.Size(343, 52);
             this.txtRequisicion.TabIndex = 95;
             this.txtRequisicion.ToolTip = "Hola";
             this.txtRequisicion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRequisicion_KeyDown);
@@ -393,9 +410,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(49, 78);
+            this.labelControl3.Location = new System.Drawing.Point(65, 96);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(173, 37);
+            this.labelControl3.Size = new System.Drawing.Size(219, 46);
             this.labelControl3.TabIndex = 96;
             this.labelControl3.Text = "Requisición:";
             this.labelControl3.Click += new System.EventHandler(this.labelControl3_Click);
@@ -407,9 +425,10 @@
             this.lblRequisicionEncontrada.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRequisicionEncontrada.Appearance.Options.UseFont = true;
             this.lblRequisicionEncontrada.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblRequisicionEncontrada.Location = new System.Drawing.Point(228, 130);
+            this.lblRequisicionEncontrada.Location = new System.Drawing.Point(304, 160);
+            this.lblRequisicionEncontrada.Margin = new System.Windows.Forms.Padding(4);
             this.lblRequisicionEncontrada.Name = "lblRequisicionEncontrada";
-            this.lblRequisicionEncontrada.Size = new System.Drawing.Size(258, 37);
+            this.lblRequisicionEncontrada.Size = new System.Drawing.Size(344, 46);
             this.lblRequisicionEncontrada.TabIndex = 97;
             this.lblRequisicionEncontrada.Text = "Requisición #";
             this.lblRequisicionEncontrada.Click += new System.EventHandler(this.lblRequisicionEncontrada_Click);
@@ -418,9 +437,10 @@
             // 
             this.pictureBoxIndicadorOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxIndicadorOk.Image = global::LOSA.Properties.Resources.Accept_icon128px;
-            this.pictureBoxIndicadorOk.Location = new System.Drawing.Point(492, 58);
+            this.pictureBoxIndicadorOk.Location = new System.Drawing.Point(656, 71);
+            this.pictureBoxIndicadorOk.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxIndicadorOk.Name = "pictureBoxIndicadorOk";
-            this.pictureBoxIndicadorOk.Size = new System.Drawing.Size(138, 133);
+            this.pictureBoxIndicadorOk.Size = new System.Drawing.Size(184, 164);
             this.pictureBoxIndicadorOk.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBoxIndicadorOk.TabIndex = 98;
             this.pictureBoxIndicadorOk.TabStop = false;
@@ -429,10 +449,10 @@
             // 
             // frmEntregaTarimaReq
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(638, 560);
+            this.ClientSize = new System.Drawing.Size(851, 689);
             this.Controls.Add(this.pictureBoxIndicadorOk);
             this.Controls.Add(this.lblRequisicionEncontrada);
             this.Controls.Add(this.txtRequisicion);
@@ -448,6 +468,7 @@
             this.Controls.Add(this.labelControl7);
             this.Controls.Add(this.txtCantidadT);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmEntregaTarimaReq";
             this.Text = "frmEntregaTarimaReq";
             this.Activated += new System.EventHandler(this.frmEntregaTarimaReq_Activated);

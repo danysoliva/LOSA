@@ -834,6 +834,12 @@
     <Compile Include="TransaccionesMP\frmTarimaManual.Designer.cs">
       <DependentUpon>frmTarimaManual.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\frmUbicacionLotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmUbicacionLotes.Designer.cs">
+      <DependentUpon>frmUbicacionLotes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utileria\frmMensaje.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1150,6 +1156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmTarimaManual.resx">
       <DependentUpon>frmTarimaManual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmUbicacionLotes.resx">
+      <DependentUpon>frmUbicacionLotes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Utileria\frmMensaje.resx">
       <DependentUpon>frmMensaje.cs</DependentUpon>

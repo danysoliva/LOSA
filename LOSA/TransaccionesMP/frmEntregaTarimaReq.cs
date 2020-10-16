@@ -162,6 +162,7 @@ namespace LOSA.TransaccionesMP
 
                     if (!error)
                     {
+                        
                         txtCantidadT.Text = string.Format("{0:###,##0.00}", tarimaEncontrada.Cantidad);
                         txtPeso.Text = string.Format("{0:###,##0.00}", tarimaEncontrada.Peso);
 
@@ -194,11 +195,11 @@ namespace LOSA.TransaccionesMP
                             Ubicacion_Tarima ub1 = new Ubicacion_Tarima();
                             if (ub1.RecuperarRegistro(tarimaEncontrada.Id, ""))
                             {
-                                if (ub1.IdBodega > 1)
-                                {
-                                    error = true;
-                                    mensaje = "La tarima no esta en la bodega de MP, no se puede entregar!";
-                                }
+                                //if (ub1.IdBodega > 1)
+                                //{
+                                //    error = true;
+                                //    mensaje = "La tarima no esta en la bodega de MP, no se puede entregar!";
+                                //}
                             }
                             else
                             {
@@ -285,6 +286,8 @@ namespace LOSA.TransaccionesMP
             gcTarima.DataSource = null;
             lblMensaje.Text = "";
             txtTarima.Focus();
+            pictureBoxIndicadorOk.Visible = false;
+
         }
 
         private void cmdHome_Click(object sender, EventArgs e)
@@ -345,7 +348,7 @@ namespace LOSA.TransaccionesMP
                 {
                     if (RequisicionActual.RecuperarRegistroFromBarcode(txtRequisicion.Text.Trim()))
                     {
-                        pictureBoxIndicadorOk.Visible = true;
+                        //pictureBoxIndicadorOk.Visible = true;
                         lblRequisicionEncontrada.Text = RequisicionActual.IdRequisicion.ToString();
                         txtTarima.Focus();
                     }

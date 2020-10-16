@@ -63,12 +63,12 @@
             this.colcantidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colunidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colpeso_total = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnumero_transaccion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colseleccionado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcants = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnVerD = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.dxErrorProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.colnumero_transaccion = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtSolicitada.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAsignada.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadPendiente.Properties)).BeginInit();
@@ -429,12 +429,19 @@
             // 
             // colpeso_total
             // 
-            this.colpeso_total.Caption = "Peso por tarima";
+            this.colpeso_total.Caption = "Peso Lote";
             this.colpeso_total.FieldName = "peso_total";
             this.colpeso_total.Name = "colpeso_total";
             this.colpeso_total.OptionsColumn.AllowEdit = false;
             this.colpeso_total.Visible = true;
             this.colpeso_total.VisibleIndex = 7;
+            // 
+            // colnumero_transaccion
+            // 
+            this.colnumero_transaccion.FieldName = "numero_transaccion";
+            this.colnumero_transaccion.MinWidth = 25;
+            this.colnumero_transaccion.Name = "colnumero_transaccion";
+            this.colnumero_transaccion.Width = 94;
             // 
             // colseleccionado
             // 
@@ -468,13 +475,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // colnumero_transaccion
-            // 
-            this.colnumero_transaccion.FieldName = "numero_transaccion";
-            this.colnumero_transaccion.MinWidth = 25;
-            this.colnumero_transaccion.Name = "colnumero_transaccion";
-            this.colnumero_transaccion.Width = 94;
             // 
             // frmLote
             // 
