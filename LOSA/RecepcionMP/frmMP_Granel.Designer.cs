@@ -1,4 +1,7 @@
-﻿namespace LOSA.RecepcionMP
+﻿using DevExpress.XtraEditors.Repository;
+using DevExpress.XtraGrid.Columns;
+
+namespace LOSA.RecepcionMP
 {
     partial class frmMP_Granel
     {
@@ -29,11 +32,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMP_Granel));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.gcMP = new DevExpress.XtraGrid.GridControl();
             this.dsRecepcionMPx1 = new LOSA.RecepcionMP.dsRecepcionMPx();
@@ -63,12 +66,17 @@
             this.colProducto = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_Registrar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdPasarAlosy = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colseleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.checkSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.label1 = new System.Windows.Forms.Label();
             this.cmdLoteActivo = new DevExpress.XtraEditors.SimpleButton();
+            this.checkBoxSeleccionarTodas = new System.Windows.Forms.CheckBox();
+            this.cmdGenerarIngreso = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gcMP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdPasarAlosy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkSeleccionar)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAtras
@@ -81,7 +89,7 @@
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(873, 7);
+            this.btnAtras.Location = new System.Drawing.Point(874, 7);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(166, 56);
             this.btnAtras.TabIndex = 8;
@@ -95,12 +103,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcMP.DataMember = "granel";
             this.gcMP.DataSource = this.dsRecepcionMPx1;
-            this.gcMP.Location = new System.Drawing.Point(0, 85);
+            this.gcMP.Location = new System.Drawing.Point(0, 111);
             this.gcMP.MainView = this.gvMP;
             this.gcMP.Name = "gcMP";
             this.gcMP.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.cmdPasarAlosy});
-            this.gcMP.Size = new System.Drawing.Size(1045, 567);
+            this.cmdPasarAlosy,
+            this.checkSeleccionar});
+            this.gcMP.Size = new System.Drawing.Size(1045, 541);
             this.gcMP.TabIndex = 7;
             this.gcMP.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvMP});
@@ -153,13 +162,13 @@
             this.colid_tipo_boleta,
             this.colSNegocio,
             this.colProducto,
-            this.col_Registrar});
+            this.col_Registrar,
+            this.colseleccionar});
             this.gvMP.GridControl = this.gcMP;
             this.gvMP.Name = "gvMP";
             this.gvMP.OptionsCustomization.AllowFilter = false;
             this.gvMP.OptionsFilter.AllowFilterEditor = false;
             this.gvMP.OptionsView.ShowAutoFilterRow = true;
-            this.gvMP.OptionsView.ShowGroupPanel = false;
             // 
             // colid
             // 
@@ -323,25 +332,36 @@
             this.col_Registrar.Caption = "Registrar Lote";
             this.col_Registrar.ColumnEdit = this.cmdPasarAlosy;
             this.col_Registrar.Name = "col_Registrar";
-            this.col_Registrar.Visible = true;
-            this.col_Registrar.VisibleIndex = 8;
             // 
             // cmdPasarAlosy
             // 
             this.cmdPasarAlosy.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.cmdPasarAlosy.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdPasarAlosy.Name = "cmdPasarAlosy";
             this.cmdPasarAlosy.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdPasarAlosy.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdPasarAlosy_ButtonClick);
+            // 
+            // colseleccionar
+            // 
+            this.colseleccionar.Caption = "Seleccionar";
+            this.colseleccionar.FieldName = "seleccionar";
+            this.colseleccionar.Name = "colseleccionar";
+            this.colseleccionar.Visible = true;
+            this.colseleccionar.VisibleIndex = 8;
+            // 
+            // checkSeleccionar
+            // 
+            this.checkSeleccionar.AutoHeight = false;
+            this.checkSeleccionar.Name = "checkSeleccionar";
             // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(258, 24);
+            this.label1.Location = new System.Drawing.Point(219, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(461, 29);
             this.label1.TabIndex = 9;
@@ -350,19 +370,50 @@
             // 
             // cmdLoteActivo
             // 
-            this.cmdLoteActivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdLoteActivo.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.cmdLoteActivo.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdLoteActivo.Appearance.Options.UseBackColor = true;
             this.cmdLoteActivo.Appearance.Options.UseFont = true;
             this.cmdLoteActivo.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdLoteActivo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.cmdLoteActivo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdLoteActivo.ImageOptions.Image")));
             this.cmdLoteActivo.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.cmdLoteActivo.Location = new System.Drawing.Point(12, 7);
             this.cmdLoteActivo.Name = "cmdLoteActivo";
             this.cmdLoteActivo.Size = new System.Drawing.Size(166, 56);
             this.cmdLoteActivo.TabIndex = 10;
             this.cmdLoteActivo.Text = "Conf. Lote Activo";
+            this.cmdLoteActivo.Click += new System.EventHandler(this.cmdLoteActivo_Click);
+            // 
+            // checkBoxSeleccionarTodas
+            // 
+            this.checkBoxSeleccionarTodas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBoxSeleccionarTodas.AutoSize = true;
+            this.checkBoxSeleccionarTodas.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBoxSeleccionarTodas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxSeleccionarTodas.Location = new System.Drawing.Point(841, 81);
+            this.checkBoxSeleccionarTodas.Name = "checkBoxSeleccionarTodas";
+            this.checkBoxSeleccionarTodas.Size = new System.Drawing.Size(159, 24);
+            this.checkBoxSeleccionarTodas.TabIndex = 11;
+            this.checkBoxSeleccionarTodas.Text = "Seleccionar Todas";
+            this.checkBoxSeleccionarTodas.UseVisualStyleBackColor = true;
+            this.checkBoxSeleccionarTodas.CheckedChanged += new System.EventHandler(this.checkBoxSeleccionarTodas_CheckedChanged);
+            // 
+            // cmdGenerarIngreso
+            // 
+            this.cmdGenerarIngreso.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdGenerarIngreso.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.cmdGenerarIngreso.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdGenerarIngreso.Appearance.Options.UseBackColor = true;
+            this.cmdGenerarIngreso.Appearance.Options.UseFont = true;
+            this.cmdGenerarIngreso.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdGenerarIngreso.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.cmdGenerarIngreso.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.cmdGenerarIngreso.Location = new System.Drawing.Point(702, 7);
+            this.cmdGenerarIngreso.Name = "cmdGenerarIngreso";
+            this.cmdGenerarIngreso.Size = new System.Drawing.Size(166, 56);
+            this.cmdGenerarIngreso.TabIndex = 12;
+            this.cmdGenerarIngreso.Text = "Generar Ingreso";
+            this.cmdGenerarIngreso.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // frmMP_Granel
             // 
@@ -370,6 +421,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1045, 657);
+            this.Controls.Add(this.cmdGenerarIngreso);
+            this.Controls.Add(this.checkBoxSeleccionarTodas);
             this.Controls.Add(this.cmdLoteActivo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAtras);
@@ -381,7 +434,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdPasarAlosy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkSeleccionar)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -418,5 +473,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn colitemcode;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.SimpleButton cmdLoteActivo;
+        private System.Windows.Forms.CheckBox checkBoxSeleccionarTodas;
+        private RepositoryItemCheckEdit checkSeleccionar;
+        private GridColumn colseleccionar;
+        private DevExpress.XtraEditors.SimpleButton cmdGenerarIngreso;
     }
 }

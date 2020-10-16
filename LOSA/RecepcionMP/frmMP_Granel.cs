@@ -57,5 +57,30 @@ namespace LOSA.RecepcionMP
             //Registrar en ALOSY
 
         }
+
+        private void cmdLoteActivo_Click(object sender, EventArgs e)
+        {
+            frmLoteActvoGranel frm = new frmLoteActvoGranel(UsuarioLogeado);
+            frm.Show();
+        }
+
+        private void checkBoxSeleccionarTodas_CheckedChanged(object sender, EventArgs e)
+        {
+            
+                foreach (dsRecepcionMPx.granelRow row in dsRecepcionMPx1.granel.Rows)
+                {
+                    row.seleccionar = checkBoxSeleccionarTodas.Checked;
+                }
+
+           
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            //Generar ingreso de granel
+
+            frmIngresoGranelAlosy frm = new frmIngresoGranelAlosy(this.UsuarioLogeado);
+            frm.Show();
+        }
     }
 }
