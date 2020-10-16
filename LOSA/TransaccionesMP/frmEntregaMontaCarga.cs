@@ -19,7 +19,7 @@ namespace LOSA.TransaccionesMP
             InitializeComponent();
             UsuarioLogeado = pUser;
         }
-
+        
         private void cmdDetalleMP_Click(object sender, EventArgs e)
         {
             //entregar viendo el detalle de mp

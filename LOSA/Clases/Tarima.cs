@@ -28,6 +28,7 @@ namespace LOSA.Clases
         string _Descripcionpresentacion;
         int _idUsuario;
         int _tipotarimaid;
+        int id_estado_tarima;
         string _tipoTarimaDescripcion;
         int _idProductoterminado;
         DateTime _fechaProductoTerminadoProduccion;
@@ -75,6 +76,7 @@ namespace LOSA.Clases
         public int LotePT { get => _LotePT; set => _LotePT = value; }
         public int Id_estadoCalidad { get => id_estadoCalidad; set => id_estadoCalidad = value; }
         public int Id_ingreso { get => _id_ingreso; set => _id_ingreso = value; }
+        public int Id_estado_tarima { get => id_estado_tarima; set => id_estado_tarima = value; }
 
         public bool RecuperarRegistro(int pIdTarima, string pCodigoBarra)
         {
@@ -115,6 +117,7 @@ namespace LOSA.Clases
                     IdProductoterminado = dr.GetInt32(19);
                     LotePT = dr.GetInt32(20);
                     id_estadoCalidad = dr.GetInt32(21);
+                    Id_estado_tarima = dr.GetInt32(22);
 
                     Recuperado = true;
                 }

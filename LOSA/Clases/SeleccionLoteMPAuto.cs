@@ -20,7 +20,7 @@ namespace LOSA.Clases
             CantidadPendiente = pCantidadRequerida;
             idUsuario = pIdusuario;
             LoadDetalleLotes();
-            AutoSelect();
+            //AutoSelect();
         }
 
         #region Miembros
@@ -111,10 +111,11 @@ namespace LOSA.Clases
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_detalle_lotes_mp_req", con);
+                SqlCommand cmd = new SqlCommand("sp_get_detalle_lotes_mp_req_v2", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@idmp", IdMP_ACS);
                 cmd.Parameters.AddWithValue("@id_detalle_req", IdMP_ACS);
+                cmd.Parameters.AddWithValue("@cant_req", CantidadPendiente);
 
                 dsTransaccionesMP2.detalle_lote_mp.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);

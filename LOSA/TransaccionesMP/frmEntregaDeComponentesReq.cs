@@ -1,4 +1,5 @@
 ﻿using ACS.Classes;
+using DevExpress.XtraGrid.Views.Grid;
 using LOSA.Clases;
 using System;
 using System.Collections.Generic;
@@ -67,6 +68,14 @@ namespace LOSA.TransaccionesMP
         private void beIdTarima_Properties_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             beIdTarima.Text = "";
+        }
+
+        private void btnUbicar_Click(object sender, EventArgs e)
+        {
+            var gridview = (GridView)grDetalleLote.FocusedView;
+            var row = (dsTransaccionesMP.EntregaLotesRow)gridview.GetFocusedDataRow();
+            frmUbicacionLotes frm = new frmUbicacionLotes(UsuarioLogeado, row.lote_mp, row.numero_transaccion);
+            frm.Show();
         }
     }
 }

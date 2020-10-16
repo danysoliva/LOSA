@@ -51,11 +51,14 @@ namespace LOSA.TransaccionesMP
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_detalle_lotes_mp_req", con);
+                SqlCommand cmd = new SqlCommand("[dbo].[sp_get_detalle_lotes_mp_req_v2]", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@idmp", MP.IdMP_ACS);
                 cmd.Parameters.AddWithValue("@id_detalle_req", IdRequisicionDetalle);
-                
+                cmd.Parameters.AddWithValue("@cant_req", CantidadPendiente);
+
+
+
                 dsTransaccionesMP1.detalle_lote_mp.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 adat.Fill(dsTransaccionesMP1.detalle_lote_mp);

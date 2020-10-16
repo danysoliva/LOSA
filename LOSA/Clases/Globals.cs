@@ -58,6 +58,13 @@ namespace ACS.Classes
         public static string LOSA_DB_User = "sa";
         public static string LOSA_DB_Pass = "AquaF33dHN2014";
 
+        //LOSA Desarrollo
+
+        //public static string LOSA_ServerName = @"GBLDSQ2\GBLDSQ2";
+        //public static string LOSA_ActiveDB = "LOSA";
+        //public static string LOSA_DB_User = "sa";
+        //public static string LOSA_DB_Pass = "Marathon00";
+
         //LOSA local Roger Euceda
         //public static string LOSA_ServerAddress = @"ADRE5079CP\SQLEXPRESS2014";
         //public static string LOSA_ServerName = @"ADRE5079CP\SQLEXPRESS2014";

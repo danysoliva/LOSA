@@ -53,11 +53,25 @@ namespace LOSA.TransaccionesMP
             //Boton editar
             var gridView = (GridView)grDetalleLote.FocusedView;
             var row = (dsTransaccionesMP.requisiciones_dRow)gridView.GetFocusedDataRow();
-            frmSeleccionLote frm = new frmSeleccionLote(UsuarioLogeado, row.id, row.id_materia_prima, row.solicitada, row.id_unidad_medida, row.unidad);
-            frm.WindowState = FormWindowState.Maximized;
-            if(frm.ShowDialog()== DialogResult.OK)
+            if (row.pendiente == row.asignado)
             {
-                LoadDatos();
+                frmSeleccionLote frm = new frmSeleccionLote(UsuarioLogeado,
+                                                            row.id,
+                                                            row.id_materia_prima,
+                                                            row.solicitada,
+                                                            row.id_unidad_medida,
+                                                            row.unidad);
+                frm.WindowState = FormWindowState.Maximized;
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    LoadDatos();
+                }
+
+            }
+            else
+            {
+                CajaDialogo.Error("Ya se empezo a entregar tarimas de esta requisicion ya no se puede Modificar.");
+                return;
             }
         }
 
@@ -103,7 +117,10 @@ namespace LOSA.TransaccionesMP
                 //SeleccionLoteMPAuto
                 foreach(dsTransaccionesMP.requisiciones_dRow row in dsTransaccionesMP1.requisiciones_d.Rows)
                 {
-                    SeleccionLoteMPAuto sele = new SeleccionLoteMPAuto(row.id_materia_prima, row.id, row.solicitada, this.UsuarioLogeado.Id);
+                    SeleccionLoteMPAuto sele = new SeleccionLoteMPAuto(row.id_materia_prima,
+                                                                        row.id,
+                                                                        row.solicitada,
+                                                                        this.UsuarioLogeado.Id);
                     if(sele.Guardar_SeleccionLoteAuto())
                     {
                         //LoadDatos();

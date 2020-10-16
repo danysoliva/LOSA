@@ -29,7 +29,7 @@ namespace ACS.Classes
                                                    user Id=" + Globals.Bas_DB_User + @";
                                                    Password=" + Globals.Bas_DB_Pass + ";";
 
-      internal string ConnectionStringLOSA = @"Server=" + Globals.LOSA_ServerAddress + @";
+      internal string ConnectionStringLOSA = @"Server=" + Globals.LOSA_ServerName + @";
                                                    Database=" + Globals.LOSA_ActiveDB + @";
                                                    user Id=" + Globals.LOSA_DB_User + @";
                                                    Password=" + Globals.LOSA_DB_Pass + ";";

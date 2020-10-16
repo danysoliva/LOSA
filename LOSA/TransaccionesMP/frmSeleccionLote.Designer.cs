@@ -47,6 +47,7 @@
             this.gvTarimas = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_proveedor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnumero_transaccion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNombre = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colingreso = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colvence = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -68,7 +69,6 @@
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.dxErrorProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.colnumero_transaccion = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtMP_Name.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigoMP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadPendiente.Properties)).BeginInit();
@@ -260,6 +260,13 @@
             this.colid_proveedor.Name = "colid_proveedor";
             this.colid_proveedor.Width = 100;
             // 
+            // colnumero_transaccion
+            // 
+            this.colnumero_transaccion.FieldName = "numero_transaccion";
+            this.colnumero_transaccion.MinWidth = 25;
+            this.colnumero_transaccion.Name = "colnumero_transaccion";
+            this.colnumero_transaccion.Width = 94;
+            // 
             // colNombre
             // 
             this.colNombre.Caption = "Proveedor";
@@ -339,7 +346,7 @@
             // 
             // colpeso_total
             // 
-            this.colpeso_total.Caption = "Peso por tarima";
+            this.colpeso_total.Caption = "Peso Disponible";
             this.colpeso_total.FieldName = "peso_total";
             this.colpeso_total.MinWidth = 27;
             this.colpeso_total.Name = "colpeso_total";
@@ -494,13 +501,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // colnumero_transaccion
-            // 
-            this.colnumero_transaccion.FieldName = "numero_transaccion";
-            this.colnumero_transaccion.MinWidth = 25;
-            this.colnumero_transaccion.Name = "colnumero_transaccion";
-            this.colnumero_transaccion.Width = 94;
             // 
             // frmSeleccionLote
             // 
