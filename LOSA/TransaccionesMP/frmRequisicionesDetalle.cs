@@ -18,11 +18,14 @@ namespace LOSA.TransaccionesMP
     {
         UserLogin UsuarioLogeado;
         int IdRequisicionHeader;
+        DataOperations dp;
         public frmRequisicionesDetalle(UserLogin pUsuarioLogeado, int pIdReqH)
         {
             InitializeComponent();
             UsuarioLogeado = pUsuarioLogeado;
             IdRequisicionHeader = pIdReqH;
+
+             dp = new DataOperations();
             LoadDatos();
         }
 
@@ -30,7 +33,7 @@ namespace LOSA.TransaccionesMP
         {
             try
             {
-                DataOperations dp = new DataOperations();
+              
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
@@ -53,25 +56,43 @@ namespace LOSA.TransaccionesMP
             //Boton editar
             var gridView = (GridView)grDetalleLote.FocusedView;
             var row = (dsTransaccionesMP.requisiciones_dRow)gridView.GetFocusedDataRow();
-            if (row.pendiente == row.asignado)
+            if (row.asignado == 0)
             {
                 frmSeleccionLote frm = new frmSeleccionLote(UsuarioLogeado,
-                                                            row.id,
-                                                            row.id_materia_prima,
-                                                            row.solicitada,
-                                                            row.id_unidad_medida,
-                                                            row.unidad);
+                                                           row.id,
+                                                           row.id_materia_prima,
+                                                           row.solicitada,
+                                                           row.id_unidad_medida,
+                                                           row.unidad);
                 frm.WindowState = FormWindowState.Maximized;
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
                     LoadDatos();
                 }
-
             }
             else
             {
-                CajaDialogo.Error("Ya se empezo a entregar tarimas de esta requisicion ya no se puede Modificar.");
-                return;
+
+                if (row.pendiente == row.asignado)
+                {
+                    frmSeleccionLote frm = new frmSeleccionLote(UsuarioLogeado,
+                                                                row.id,
+                                                                row.id_materia_prima,
+                                                                row.solicitada,
+                                                                row.id_unidad_medida,
+                                                                row.unidad);
+                    frm.WindowState = FormWindowState.Maximized;
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        LoadDatos();
+                    }
+
+                }
+                else
+                {
+                    CajaDialogo.Error("Ya se empezo a entregar tarimas de esta requisicion ya no se puede Modificar.");
+                    return;
+                }
             }
         }
 
@@ -133,6 +154,47 @@ namespace LOSA.TransaccionesMP
             else
             {
 
+            }
+        }
+
+        private void btnconsumir_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                var gridView = (GridView)grDetalleLote.FocusedView;
+                var row = (dsTransaccionesMP.requisiciones_dRow)gridView.GetFocusedDataRow();
+                if (row.asignado != 0)
+                {
+                    if (row.asignado != row.entregada)
+                    {
+                        SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                        cn.Open();
+                        string query = @"sp_entregar_in_bodega";
+                        SqlCommand cmd = new SqlCommand(query,cn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@id_detalle_req", row.id);
+                        cmd.Parameters.AddWithValue("@cantidaP", row.pendiente);
+                        cmd.ExecuteNonQuery();
+                        CajaDialogo.Information("Lotes en produccion consumidos.");
+                        LoadDatos();
+                    }
+                    else
+                    {
+                        CajaDialogo.Error("Ya se ha entregado toda la materia prima para esta Materia prima.");
+                        return;
+                    }
+                }
+                else
+                {
+                    CajaDialogo.Error("Debe de asignar lotes para verificar si se puede consumir de la bodega de produccion.");
+                    return;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
             }
         }
     }
