@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>75</ApplicationRevision>
+    <ApplicationRevision>76</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -610,6 +610,12 @@
     <Compile Include="RecepcionMP\frmImprimirHojaIngreso.Designer.cs">
       <DependentUpon>frmImprimirHojaIngreso.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecepcionMP\frmMP_ActivasGranel_Ingreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmMP_ActivasGranel_Ingreso.Designer.cs">
+      <DependentUpon>frmMP_ActivasGranel_Ingreso.cs</DependentUpon>
+    </Compile>
     <Compile Include="RecepcionMP\frmMP_Granel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1057,6 +1063,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmImprimirHojaIngreso.resx">
       <DependentUpon>frmImprimirHojaIngreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frmMP_ActivasGranel_Ingreso.resx">
+      <DependentUpon>frmMP_ActivasGranel_Ingreso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmMP_Granel.resx">
       <DependentUpon>frmMP_Granel.cs</DependentUpon>

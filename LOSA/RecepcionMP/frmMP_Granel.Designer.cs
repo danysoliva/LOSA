@@ -406,7 +406,7 @@ namespace LOSA.RecepcionMP
             this.cmdGenerarIngreso.Appearance.Options.UseBackColor = true;
             this.cmdGenerarIngreso.Appearance.Options.UseFont = true;
             this.cmdGenerarIngreso.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdGenerarIngreso.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.cmdGenerarIngreso.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdGenerarIngreso.ImageOptions.Image")));
             this.cmdGenerarIngreso.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.cmdGenerarIngreso.Location = new System.Drawing.Point(702, 7);
             this.cmdGenerarIngreso.Name = "cmdGenerarIngreso";
