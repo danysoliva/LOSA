@@ -393,6 +393,12 @@
     <Compile Include="Mantenimientos\frmMantoOpciones.Designer.cs">
       <DependentUpon>frmMantoOpciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimientos\frmRecuento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\frmRecuento.Designer.cs">
+      <DependentUpon>frmRecuento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimientos\frmUbicaciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -762,6 +768,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsTransaccionesMP.xsd</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\frmAjusteLotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmAjusteLotes.Designer.cs">
+      <DependentUpon>frmAjusteLotes.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesMP\frmCambiarUbicacionTarimaPT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -957,6 +969,9 @@
     <EmbeddedResource Include="Mantenimientos\frmMantoOpciones.resx">
       <DependentUpon>frmMantoOpciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\frmRecuento.resx">
+      <DependentUpon>frmRecuento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\frmUbicaciones.resx">
       <DependentUpon>frmUbicaciones.cs</DependentUpon>
     </EmbeddedResource>
@@ -1126,6 +1141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\frmInputBox.resx">
       <DependentUpon>frmInputBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmAjusteLotes.resx">
+      <DependentUpon>frmAjusteLotes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmCambiarUbicacionTarimaPT.resx">
       <DependentUpon>frmCambiarUbicacionTarimaPT.cs</DependentUpon>

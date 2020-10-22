@@ -18,6 +18,7 @@ namespace LOSA.TransaccionesMP
         DataOperations dp = new DataOperations();
         private int idTarima;
         private decimal factorPresentacion;
+        private int IsMicro = 0;
         UserLogin usuarioLogueado = new UserLogin();
         Tarima tarimaEncontrada;
         Requisicion RequisicionActual = new Requisicion();
@@ -44,7 +45,7 @@ namespace LOSA.TransaccionesMP
             {
                 using (connection)
                 {
-                    string SQL = "exec sp_getTarimas_without_filters @codigo_barra";
+                    string SQL = "exec sp_getTarimas_without_filters_v2 @codigo_barra";
                     SqlCommand cmd = new SqlCommand();
                     SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                     cmd.Connection = connection;
@@ -67,8 +68,9 @@ namespace LOSA.TransaccionesMP
                             {
                                 factorPresentacion = InfoTarima.Factor;
                                 tarimaEncontrada = InfoTarima;
+                                
                             }
-
+                            IsMicro = dr.GetInt32(8);
                             gcTarima.DataSource = CreateDataTarima(dr.GetInt32(0), dr.GetString(2), dr.GetString(1), dr.GetString(5), dr.GetString(6));
                             //gvTarima.InitNewRow += GridView1_InitNewRow;
                             gvTarima.Columns[0].AppearanceCell.Font = new Font("Segoe UI", 11, FontStyle.Bold);
@@ -132,138 +134,136 @@ namespace LOSA.TransaccionesMP
             string mensaje = "";
 
 
-           
 
-            if (tarimaEncontrada != null)
-            {
-                if (!RequisicionActual.Recuperado)
+            
+                if (tarimaEncontrada != null)
                 {
-                    error = true;
-                    lblMensaje.Text = "Debe indicar la requisicion que esta entregando!";
-                    panelNotificacion.BackColor = Color.Red;
-                    timerLimpiarMensaje.Enabled = true;
-                    timerLimpiarMensaje.Start();
-                    return;
-                }
-
-                if (tarimaEncontrada.Recuperado)
-                {
-                    //if (!tarimaEncontrada.Enable)
-                    //{
-                    //    error = true;
-                    //    mensaje = "La tarima no esta activa!";
-                    //}
-
-                    if (tarimaEncontrada.Id_estadoCalidad > 1)
+                    if (!RequisicionActual.Recuperado)
                     {
                         error = true;
-                        mensaje = "La tarima no esta Disponible por parte de Calidad!";
+                        lblMensaje.Text = "Debe indicar la requisicion que esta entregando!";
+                        panelNotificacion.BackColor = Color.Red;
+                        timerLimpiarMensaje.Enabled = true;
+                        timerLimpiarMensaje.Start();
+                        return;
                     }
 
-                    if (!error)
+                    if (tarimaEncontrada.Recuperado)
                     {
-                        
-                        txtCantidadT.Text = string.Format("{0:###,##0.00}", tarimaEncontrada.Cantidad);
-                        txtPeso.Text = string.Format("{0:###,##0.00}", tarimaEncontrada.Peso);
+                        //if (!tarimaEncontrada.Enable)
+                        //{
+                        //    error = true;
+                        //    mensaje = "La tarima no esta activa!";
+                        //}
 
-                        try
-                        {
-                            DataOperations dp = new DataOperations();
-                            SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                            con.Open();
-
-                            SqlCommand cmd = new SqlCommand("sp_verifica_diponibilidad_tarima_entrega", con);
-                            cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("@id", tarimaEncontrada.Id);
-                            disponible = Convert.ToBoolean(cmd.ExecuteScalar());
-                            con.Close();
-                        }
-                        catch (Exception ec)
-                        {
-                            CajaDialogo.Error(ec.Message);
-                        }
-
-
-                        if (!disponible)
+                        if (tarimaEncontrada.Id_estadoCalidad > 1)
                         {
                             error = true;
-                            mensaje = "La tarima no esta disponible para entrega!";
+                            mensaje = "La tarima no esta Disponible por parte de Calidad!";
                         }
 
-                        if (!error)//Si error sigue en false evaluaremos la ubicacion.
+                        if (!error)
                         {
-                            Ubicacion_Tarima ub1 = new Ubicacion_Tarima();
-                            if (ub1.RecuperarRegistro(tarimaEncontrada.Id, ""))
+
+                            txtCantidadT.Text = string.Format("{0:###,##0.00}", tarimaEncontrada.Cantidad);
+                            txtPeso.Text = string.Format("{0:###,##0.00}", tarimaEncontrada.Peso);
+
+                            try
                             {
-                                //if (ub1.IdBodega > 1)
-                                //{
-                                //    error = true;
-                                //    mensaje = "La tarima no esta en la bodega de MP, no se puede entregar!";
-                                //}
+                                DataOperations dp = new DataOperations();
+                                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                                con.Open();
+
+                                SqlCommand cmd = new SqlCommand("sp_verifica_diponibilidad_tarima_entrega_v2", con);
+                                cmd.CommandType = CommandType.StoredProcedure;
+                                cmd.Parameters.AddWithValue("@id", tarimaEncontrada.Id);
+                                disponible = Convert.ToBoolean(cmd.ExecuteScalar());
+                                con.Close();
                             }
-                            else
+                            catch (Exception ec)
+                            {
+                                CajaDialogo.Error(ec.Message);
+                            }
+
+
+                            if (!disponible)
                             {
                                 error = true;
-                                mensaje = "La tarima no tiene una ubicacion valida, aun esta en proceso de recepción!";
+                                mensaje = "La tarima no esta disponible para entrega!";
+                            }
+
+                            if (!error)//Si error sigue en false evaluaremos la ubicacion.
+                            {
+                                Ubicacion_Tarima ub1 = new Ubicacion_Tarima();
+                                if (ub1.RecuperarRegistro(tarimaEncontrada.Id, ""))
+                                {
+                                   
+                                }
+                                else
+                                {
+                                    error = true;
+                                    mensaje = "La tarima no tiene una ubicacion valida, aun esta en proceso de recepción!";
+                                }
                             }
                         }
+                    }
+                    else
+                    {
+                        error = true;
+                        mensaje = "El codigo de barra leido no es correcto!";
+                    }
+
+                    if (error)
+                    {
+                        lblMensaje.Text = mensaje;
+                        panelNotificacion.BackColor = Color.Red;
+                        timerLimpiarMensaje.Enabled = true;
+                        timerLimpiarMensaje.Start();
+                        return;
+                    }
+
+                    try
+                    {
+                        DataOperations dp = new DataOperations();
+                        SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                        con.Open();
+
+                        //SqlCommand cmd = new SqlCommand("sp_set_insert_salida_tarima_bodega_mp", con);
+                        SqlCommand cmd = new SqlCommand("[sp_set_insert_salida_tarima_bodega_mp_v3]", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@idtarima", tarimaEncontrada.Id);
+                        cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
+                        cmd.Parameters.AddWithValue("@id_req", RequisicionActual.IdRequisicion);
+                        Guardo = Convert.ToBoolean(cmd.ExecuteScalar());
+                        con.Close();
+                    }
+                    catch (Exception ec)
+                    {
+                        //CajaDialogo.Error(ec.Message);
+                        lblMensaje.Text = ec.Message;
+                        panelNotificacion.BackColor = Color.Red;
+                        timerLimpiarMensaje.Enabled = true;
+                        timerLimpiarMensaje.Start();
+                    }
+
+                    if (Guardo)
+                    {
+                        //Mensaje de transaccion exitosa
+                        lblMensaje.Text = "Transacción Exitosa!";
+                        panelNotificacion.BackColor = Color.MediumSeaGreen;
+                        timerLimpiarMensaje.Enabled = true;
+                        timerLimpiarMensaje.Start();
                     }
                 }
                 else
                 {
-                    error = true;
-                    mensaje = "El codigo de barra leido no es correcto!";
-                }
-
-                if (error)
-                {
-                    lblMensaje.Text = mensaje;
-                    panelNotificacion.BackColor = Color.Red;
-                    timerLimpiarMensaje.Enabled = true;
-                    timerLimpiarMensaje.Start();
-                    return;
-                }
-
-                try
-                {
-                    DataOperations dp = new DataOperations();
-                    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                    con.Open();
-
-                    //SqlCommand cmd = new SqlCommand("sp_set_insert_salida_tarima_bodega_mp", con);
-                    SqlCommand cmd = new SqlCommand("sp_set_insert_salida_tarima_bodega_mp_v2", con);  
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@idtarima", tarimaEncontrada.Id);
-                    cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
-                    cmd.Parameters.AddWithValue("@id_req", RequisicionActual.IdRequisicion);
-                    Guardo = Convert.ToBoolean(cmd.ExecuteScalar());
-                    con.Close();
-                }
-                catch (Exception ec)
-                {
-                    //CajaDialogo.Error(ec.Message);
-                    lblMensaje.Text = ec.Message;
+                    lblMensaje.Text = "No se encontro el registro de la tarima!";
                     panelNotificacion.BackColor = Color.Red;
                     timerLimpiarMensaje.Enabled = true;
                     timerLimpiarMensaje.Start();
                 }
-
-                if (Guardo)
-                {
-                    //Mensaje de transaccion exitosa
-                    lblMensaje.Text = "Transacción Exitosa!";
-                    panelNotificacion.BackColor = Color.MediumSeaGreen;
-                    timerLimpiarMensaje.Enabled = true;
-                    timerLimpiarMensaje.Start();
-                }
-            }
-            else
-            {
-                lblMensaje.Text = "No se encontro el registro de la tarima!";
-                panelNotificacion.BackColor = Color.Red;
-                timerLimpiarMensaje.Enabled = true;
-                timerLimpiarMensaje.Start();
-            }
+           
+            
 
         }
 

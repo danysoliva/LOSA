@@ -7,14 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ACS.Classes;
+using LOSA.Clases;
 
 namespace LOSA.Mantenimientos
 {
     public partial class frmMantoOpciones : Form
     {
-        public frmMantoOpciones()
+        DataOperations dp = new DataOperations();
+        UserLogin UsuarioLogeado = new UserLogin();
+        
+        public frmMantoOpciones(UserLogin User)
         {
             InitializeComponent();
+            UsuarioLogeado = User;
         }
 
         private void cmdRegistroLote_Click(object sender, EventArgs e)
@@ -40,6 +46,17 @@ namespace LOSA.Mantenimientos
         {
             frmUbicaciones frm = new frmUbicaciones();
             frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            frmRecuento frm = new frmRecuento(UsuarioLogeado);
             frm.Show();
         }
     }

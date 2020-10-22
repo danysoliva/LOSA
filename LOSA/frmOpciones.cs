@@ -95,7 +95,7 @@ namespace LOSA
         private void simpleButton3_Click(object sender, EventArgs e)
         {
             //Mantenimientos
-            frmMantoOpciones frm = new frmMantoOpciones();
+            frmMantoOpciones frm = new frmMantoOpciones(UsuarioLogeado);
             if (this.MdiParent != null)
                 frm.MdiParent = this.MdiParent;
 
@@ -352,6 +352,11 @@ namespace LOSA
 
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
+        }
+
+        private void btnRecuento_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
