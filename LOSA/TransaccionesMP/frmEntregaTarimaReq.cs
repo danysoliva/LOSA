@@ -375,5 +375,11 @@ namespace LOSA.TransaccionesMP
         {
             Focus_();
         }
+
+        private void txtRequisicion_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            txtRequisicion.Text = "";
+            txtRequisicion.Focus();
+        }
     }
 }

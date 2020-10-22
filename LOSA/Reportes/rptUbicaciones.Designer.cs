@@ -59,6 +59,8 @@
             this.btnrpt1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colver2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnrpt2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colnombre1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnombre2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grd_bodegas.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bodegasBindingSource)).BeginInit();
@@ -75,7 +77,8 @@
             this.grd_bodegas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_bodegas.EditValue = "Se";
-            this.grd_bodegas.Location = new System.Drawing.Point(167, 78);
+            this.grd_bodegas.Location = new System.Drawing.Point(143, 63);
+            this.grd_bodegas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grd_bodegas.Name = "grd_bodegas";
             this.grd_bodegas.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grd_bodegas.Properties.Appearance.Options.UseFont = true;
@@ -85,7 +88,7 @@
             this.grd_bodegas.Properties.DisplayMember = "descripcion";
             this.grd_bodegas.Properties.PopupView = this.gridLookUpEdit1View;
             this.grd_bodegas.Properties.ValueMember = "id";
-            this.grd_bodegas.Size = new System.Drawing.Size(442, 40);
+            this.grd_bodegas.Size = new System.Drawing.Size(379, 34);
             this.grd_bodegas.TabIndex = 0;
             this.grd_bodegas.EditValueChanged += new System.EventHandler(this.grd_bodegas_EditValueChanged);
             // 
@@ -135,10 +138,10 @@
             this.labelControl1.Appearance.Options.UseTextOptions = true;
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(12, 11);
+            this.labelControl1.Location = new System.Drawing.Point(10, 9);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(793, 62);
+            this.labelControl1.Size = new System.Drawing.Size(680, 50);
             this.labelControl1.TabIndex = 9;
             this.labelControl1.Text = "Reporte de Ubicaciones";
             // 
@@ -146,9 +149,10 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(12, 85);
+            this.labelControl2.Location = new System.Drawing.Point(10, 69);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(99, 33);
+            this.labelControl2.Size = new System.Drawing.Size(81, 27);
             this.labelControl2.TabIndex = 10;
             this.labelControl2.Text = "Bodega:";
             // 
@@ -159,13 +163,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_ubicaciones.DataMember = "Ubicaciones";
             this.grd_ubicaciones.DataSource = this.dsReportes;
-            this.grd_ubicaciones.Location = new System.Drawing.Point(0, 143);
+            this.grd_ubicaciones.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grd_ubicaciones.Location = new System.Drawing.Point(0, 116);
             this.grd_ubicaciones.MainView = this.grdv_ubicaciones;
+            this.grd_ubicaciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grd_ubicaciones.Name = "grd_ubicaciones";
             this.grd_ubicaciones.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnrpt1,
             this.btnrpt2});
-            this.grd_ubicaciones.Size = new System.Drawing.Size(814, 452);
+            this.grd_ubicaciones.Size = new System.Drawing.Size(698, 367);
             this.grd_ubicaciones.TabIndex = 11;
             this.grd_ubicaciones.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_ubicaciones});
@@ -183,7 +189,10 @@
             this.colDescripcion2,
             this.colDivision,
             this.colver1,
-            this.colver2});
+            this.colver2,
+            this.colnombre1,
+            this.colnombre2});
+            this.grdv_ubicaciones.DetailHeight = 284;
             this.grdv_ubicaciones.GridControl = this.grd_ubicaciones;
             this.grdv_ubicaciones.Name = "grdv_ubicaciones";
             this.grdv_ubicaciones.OptionsView.ShowAutoFilterRow = true;
@@ -192,38 +201,38 @@
             // colidUb1
             // 
             this.colidUb1.FieldName = "idUb1";
-            this.colidUb1.MinWidth = 25;
+            this.colidUb1.MinWidth = 21;
             this.colidUb1.Name = "colidUb1";
-            this.colidUb1.Width = 94;
+            this.colidUb1.Width = 81;
             // 
             // colDescripcion1
             // 
-            this.colDescripcion1.Caption = "Ubicacion";
+            this.colDescripcion1.Caption = "Código Barra";
             this.colDescripcion1.FieldName = "Descripcion1";
-            this.colDescripcion1.MinWidth = 25;
+            this.colDescripcion1.MinWidth = 21;
             this.colDescripcion1.Name = "colDescripcion1";
             this.colDescripcion1.OptionsColumn.AllowEdit = false;
             this.colDescripcion1.Visible = true;
             this.colDescripcion1.VisibleIndex = 1;
-            this.colDescripcion1.Width = 223;
+            this.colDescripcion1.Width = 70;
             // 
             // colidUb2
             // 
             this.colidUb2.FieldName = "idUb2";
-            this.colidUb2.MinWidth = 25;
+            this.colidUb2.MinWidth = 21;
             this.colidUb2.Name = "colidUb2";
-            this.colidUb2.Width = 94;
+            this.colidUb2.Width = 81;
             // 
             // colDescripcion2
             // 
-            this.colDescripcion2.Caption = "Ubicacion";
+            this.colDescripcion2.Caption = "Código Barra";
             this.colDescripcion2.FieldName = "Descripcion2";
-            this.colDescripcion2.MinWidth = 25;
+            this.colDescripcion2.MinWidth = 21;
             this.colDescripcion2.Name = "colDescripcion2";
             this.colDescripcion2.OptionsColumn.AllowEdit = false;
             this.colDescripcion2.Visible = true;
-            this.colDescripcion2.VisibleIndex = 3;
-            this.colDescripcion2.Width = 257;
+            this.colDescripcion2.VisibleIndex = 4;
+            this.colDescripcion2.Width = 88;
             // 
             // colDivision
             // 
@@ -233,22 +242,22 @@
             this.colDivision.Caption = " ";
             this.colDivision.FieldName = "Division";
             this.colDivision.ImageOptions.Alignment = System.Drawing.StringAlignment.Center;
-            this.colDivision.MinWidth = 25;
+            this.colDivision.MinWidth = 21;
             this.colDivision.Name = "colDivision";
             this.colDivision.OptionsColumn.AllowEdit = false;
             this.colDivision.Visible = true;
-            this.colDivision.VisibleIndex = 2;
-            this.colDivision.Width = 58;
+            this.colDivision.VisibleIndex = 3;
+            this.colDivision.Width = 72;
             // 
             // colver1
             // 
             this.colver1.Caption = "Detalle";
             this.colver1.ColumnEdit = this.btnrpt1;
-            this.colver1.MinWidth = 25;
+            this.colver1.MinWidth = 21;
             this.colver1.Name = "colver1";
             this.colver1.Visible = true;
             this.colver1.VisibleIndex = 0;
-            this.colver1.Width = 125;
+            this.colver1.Width = 90;
             // 
             // btnrpt1
             // 
@@ -264,11 +273,11 @@
             // 
             this.colver2.Caption = "Detalle";
             this.colver2.ColumnEdit = this.btnrpt2;
-            this.colver2.MinWidth = 25;
+            this.colver2.MinWidth = 21;
             this.colver2.Name = "colver2";
             this.colver2.Visible = true;
-            this.colver2.VisibleIndex = 4;
-            this.colver2.Width = 131;
+            this.colver2.VisibleIndex = 6;
+            this.colver2.Width = 90;
             // 
             // btnrpt2
             // 
@@ -280,6 +289,24 @@
             this.btnrpt2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnrpt2.Click += new System.EventHandler(this.btnrpt2_Click);
             // 
+            // colnombre1
+            // 
+            this.colnombre1.Caption = "UB-Rack Nombre";
+            this.colnombre1.FieldName = "nombre1";
+            this.colnombre1.Name = "colnombre1";
+            this.colnombre1.Visible = true;
+            this.colnombre1.VisibleIndex = 2;
+            this.colnombre1.Width = 133;
+            // 
+            // colnombre2
+            // 
+            this.colnombre2.Caption = "UB-Rack Nombre";
+            this.colnombre2.FieldName = "nombre2";
+            this.colnombre2.Name = "colnombre2";
+            this.colnombre2.Visible = true;
+            this.colnombre2.VisibleIndex = 5;
+            this.colnombre2.Width = 137;
+            // 
             // cmdHome
             // 
             this.cmdHome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -289,25 +316,25 @@
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.cmdHome.Location = new System.Drawing.Point(644, 3);
-            this.cmdHome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmdHome.Location = new System.Drawing.Point(552, 2);
             this.cmdHome.Name = "cmdHome";
-            this.cmdHome.Size = new System.Drawing.Size(170, 133);
+            this.cmdHome.Size = new System.Drawing.Size(146, 108);
             this.cmdHome.TabIndex = 12;
             this.cmdHome.Text = "Atras";
             this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
             // 
             // rptUbicaciones
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(815, 594);
+            this.ClientSize = new System.Drawing.Size(699, 483);
             this.Controls.Add(this.cmdHome);
             this.Controls.Add(this.grd_ubicaciones);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.grd_bodegas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "rptUbicaciones";
             this.Text = "rptUbicaciones";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -346,5 +373,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnrpt1;
         private DevExpress.XtraGrid.Columns.GridColumn colver2;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnrpt2;
+        private DevExpress.XtraGrid.Columns.GridColumn colnombre1;
+        private DevExpress.XtraGrid.Columns.GridColumn colnombre2;
     }
 }
