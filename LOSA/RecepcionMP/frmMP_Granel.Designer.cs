@@ -427,9 +427,8 @@ namespace LOSA.RecepcionMP
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.gcMP);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMP_Granel";
-            this.Text = "frmMP_Granel";
+            this.Text = "Recepción MP Granel";
             ((System.ComponentModel.ISupportInitialize)(this.gcMP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMP)).EndInit();

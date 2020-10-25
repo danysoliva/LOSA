@@ -17,13 +17,39 @@ namespace LOSA.RecepcionMP
     {
         UserLogin UsuarioLogeado;
         int idLote;
-        public frmEditLoteActivo(UserLogin pUsuarioLogeado, string PLote, int pId, DateTime pFecha)
+
+        public frmEditLoteActivo(UserLogin pUsuarioLogeado, string PLote, int pId, DateTime pFecha, string pItemCode)
         {
             InitializeComponent();
             txtLote.Text = PLote; 
             UsuarioLogeado = pUsuarioLogeado;
             dtFecha.Value = pFecha;
             idLote = pId;
+            LoadMP();
+            gridLookUpEdit1.EditValue = pItemCode;
+        }
+
+        public void LoadMP()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringCostos);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_load_mp_bascula", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@lote", txtLote.Text);
+                //cmd.Parameters.AddWithValue("@id_user_create", UsuarioLogeado.Id);
+                dsRecepcionMPx1.mp.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsRecepcionMPx1.mp);
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -31,6 +57,11 @@ namespace LOSA.RecepcionMP
             if (string.IsNullOrEmpty(txtLote.Text))
             {
                 CajaDialogo.Error("No se puede grabar un lote en blanco!");
+                return;
+            }
+            if (gridLookUpEdit1.EditValue == null)
+            {
+                CajaDialogo.Error("Debe indicar la Materia Prima a la que pertenece el Lote!");
                 return;
             }
 
@@ -45,6 +76,7 @@ namespace LOSA.RecepcionMP
                 cmd.Parameters.AddWithValue("@lote", txtLote.Text);
                 cmd.Parameters.AddWithValue("@id", idLote);
                 cmd.Parameters.AddWithValue("@fecha", dtFecha.Value);
+                cmd.Parameters.AddWithValue("@itemcode", gridLookUpEdit1.EditValue);
                 cmd.ExecuteNonQuery();
 
                 con.Close();

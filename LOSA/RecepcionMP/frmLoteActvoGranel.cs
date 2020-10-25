@@ -87,7 +87,7 @@ namespace LOSA.RecepcionMP
             var gridView = (GridView)gridControl1.FocusedView;
             var row = (dsRecepcionMPx.lote_activo_granelRow)gridView.GetFocusedDataRow();
 
-            frmEditLoteActivo frm = new frmEditLoteActivo(UsuarioLogeado, row.lote, row.id, row.fecha);
+            frmEditLoteActivo frm = new frmEditLoteActivo(UsuarioLogeado, row.lote, row.id, row.fecha, row.item_code);
             if(frm.ShowDialog() == DialogResult.OK)
             {
                 LoadDataActivos();

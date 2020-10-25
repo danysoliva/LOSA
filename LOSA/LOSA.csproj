@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>77</ApplicationRevision>
+    <ApplicationRevision>78</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -190,6 +190,7 @@
     <Compile Include="Clases\CajaDialogo.cs" />
     <Compile Include="Clases\DataOperations.cs" />
     <Compile Include="Clases\Globals.cs" />
+    <Compile Include="Clases\ItemMP_Lote.cs" />
     <Compile Include="Clases\MateriaPrima.cs" />
     <Compile Include="Clases\opcionAbrirVentanaTarima.cs" />
     <Compile Include="Clases\PresentacionX.cs" />
@@ -627,6 +628,12 @@
     </Compile>
     <Compile Include="RecepcionMP\frmMP_Granel.Designer.cs">
       <DependentUpon>frmMP_Granel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecepcionMP\frmMP_Granel_Selec_Lote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmMP_Granel_Selec_Lote.Designer.cs">
+      <DependentUpon>frmMP_Granel_Selec_Lote.cs</DependentUpon>
     </Compile>
     <Compile Include="RecepcionMP\frmSelectMP.cs">
       <SubType>Form</SubType>
@@ -1085,6 +1092,9 @@
     <EmbeddedResource Include="RecepcionMP\frmMP_Granel.resx">
       <DependentUpon>frmMP_Granel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frmMP_Granel_Selec_Lote.resx">
+      <DependentUpon>frmMP_Granel_Selec_Lote.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmSelectMP.resx">
       <DependentUpon>frmSelectMP.cs</DependentUpon>
     </EmbeddedResource>
@@ -1366,6 +1376,7 @@
     <None Include="Resources\Status-dialog-information-icon72px.png" />
     <Content Include="Resources\tap.png" />
     <None Include="Resources\trazabilidad.png" />
+    <None Include="Resources\trucksss.png" />
     <Content Include="Resources\user.png" />
     <Content Include="Resources\wrench.png" />
   </ItemGroup>

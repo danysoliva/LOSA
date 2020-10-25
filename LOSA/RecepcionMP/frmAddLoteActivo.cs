@@ -20,6 +20,7 @@ namespace LOSA.RecepcionMP
         {
             InitializeComponent();
             UsuarioLogeado = pUsuarioLogeado;
+            LoadMP();
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -27,6 +28,12 @@ namespace LOSA.RecepcionMP
             if (string.IsNullOrEmpty(txtLote.Text))
             {
                 CajaDialogo.Error("No se puede grabar un lote en blanco!");
+                return;
+            }
+
+            if(gridLookUpEdit1.EditValue == null)
+            {
+                CajaDialogo.Error("Debe Elejir la Materia Prima a la que pertenece el Lote!");
                 return;
             }
 
@@ -40,11 +47,35 @@ namespace LOSA.RecepcionMP
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@lote", txtLote.Text);
                 cmd.Parameters.AddWithValue("@id_user_create", UsuarioLogeado.Id);
+                cmd.Parameters.AddWithValue("@itemcode", gridLookUpEdit1.EditValue);
                 cmd.ExecuteNonQuery();
 
                 con.Close();
                 this.DialogResult = DialogResult.OK;
                 this.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
+
+        public void LoadMP()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringCostos);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_load_mp_bascula", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@lote", txtLote.Text);
+                //cmd.Parameters.AddWithValue("@id_user_create", UsuarioLogeado.Id);
+                dsRecepcionMPx1.mp.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsRecepcionMPx1.mp);
+                con.Close();
             }
             catch (Exception ec)
             {
