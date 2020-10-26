@@ -653,6 +653,12 @@
     <Compile Include="RecepcionMP\frmTarimas.Designer.cs">
       <DependentUpon>frmTarimas.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecepcionMP\frmUbicaciones_granel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmUbicaciones_granel.Designer.cs">
+      <DependentUpon>frmUbicaciones_granel.cs</DependentUpon>
+    </Compile>
     <Compile Include="RecepcionMP\frmUbicacionTarima2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1103,6 +1109,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmTarimas.resx">
       <DependentUpon>frmTarimas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frmUbicaciones_granel.resx">
+      <DependentUpon>frmUbicaciones_granel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmUbicacionTarima2.resx">
       <DependentUpon>frmUbicacionTarima2.cs</DependentUpon>

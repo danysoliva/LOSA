@@ -31,11 +31,31 @@ namespace LOSA.RecepcionMP
                 return;
             }
 
-            if(gridLookUpEdit1.EditValue == null)
+            if (gridLookUpEdit1.EditValue == null)
             {
                 CajaDialogo.Error("Debe Elejir la Materia Prima a la que pertenece el Lote!");
                 return;
             }
+
+            if (dtFechaProd.Value == null)
+            {
+                CajaDialogo.Error("Debe ingresar la fecha de Producción!");
+                return;
+            }
+
+            if (dtFechaVence.Value == null)
+            {
+                CajaDialogo.Error("Debe ingresar la fecha de Vencimiento!");
+                return;
+            }
+
+            if (dtFechaProd.Value >= dtFechaVence.Value)
+            {
+                CajaDialogo.Error("La fecha de vencimiento no puede ser menor o igual a la fecha de Producción!");
+                return;
+            }
+
+           
 
             try
             {
@@ -48,6 +68,9 @@ namespace LOSA.RecepcionMP
                 cmd.Parameters.AddWithValue("@lote", txtLote.Text);
                 cmd.Parameters.AddWithValue("@id_user_create", UsuarioLogeado.Id);
                 cmd.Parameters.AddWithValue("@itemcode", gridLookUpEdit1.EditValue);
+                cmd.Parameters.AddWithValue("@fechap", dtFechaProd.Value);
+                cmd.Parameters.AddWithValue("@fechav", dtFechaVence.Value);
+                
                 cmd.ExecuteNonQuery();
 
                 con.Close();

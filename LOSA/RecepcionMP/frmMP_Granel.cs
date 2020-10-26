@@ -123,7 +123,7 @@ namespace LOSA.RecepcionMP
                     frmIngresoGranelAlosy frm1 = new frmIngresoGranelAlosy(this.UsuarioLogeado, ListaBoletas, Item);
                     if(frm1.ShowDialog() == DialogResult.OK)
                     {
-
+                        LoadData();
                     }
                 }
             }

@@ -18,12 +18,13 @@ namespace LOSA.RecepcionMP
         UserLogin UsuarioLogeado;
         int idLote;
 
-        public frmEditLoteActivo(UserLogin pUsuarioLogeado, string PLote, int pId, DateTime pFecha, string pItemCode)
+        public frmEditLoteActivo(UserLogin pUsuarioLogeado, string PLote, int pId, DateTime pFechaProd, DateTime pFechaVence, string pItemCode)
         {
             InitializeComponent();
             txtLote.Text = PLote; 
             UsuarioLogeado = pUsuarioLogeado;
-            dtFecha.Value = pFecha;
+            dtFechaProd.Value = pFechaProd;
+            dtFechaVence.Value = pFechaVence;
             idLote = pId;
             LoadMP();
             gridLookUpEdit1.EditValue = pItemCode;
@@ -65,6 +66,24 @@ namespace LOSA.RecepcionMP
                 return;
             }
 
+            if (dtFechaProd.Value == null)
+            {
+                CajaDialogo.Error("Debe ingresar la fecha de Producción!");
+                return;
+            }
+
+            if (dtFechaVence.Value == null)
+            {
+                CajaDialogo.Error("Debe ingresar la fecha de Vencimiento!");
+                return;
+            }
+
+            if (dtFechaProd.Value >= dtFechaVence.Value)
+            {
+                CajaDialogo.Error("La fecha de vencimiento no puede ser menor o igual a la fecha de Producción!");
+                return;
+            }
+
             try
             {
                 DataOperations dp = new DataOperations();
@@ -75,7 +94,8 @@ namespace LOSA.RecepcionMP
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@lote", txtLote.Text);
                 cmd.Parameters.AddWithValue("@id", idLote);
-                cmd.Parameters.AddWithValue("@fecha", dtFecha.Value);
+                cmd.Parameters.AddWithValue("@fechap", dtFechaProd.Value);
+                cmd.Parameters.AddWithValue("@fechav", dtFechaVence.Value);
                 cmd.Parameters.AddWithValue("@itemcode", gridLookUpEdit1.EditValue);
                 cmd.ExecuteNonQuery();
 

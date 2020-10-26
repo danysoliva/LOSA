@@ -87,7 +87,7 @@ namespace LOSA.RecepcionMP
             var gridView = (GridView)gridControl1.FocusedView;
             var row = (dsRecepcionMPx.lote_activo_granelRow)gridView.GetFocusedDataRow();
 
-            frmEditLoteActivo frm = new frmEditLoteActivo(UsuarioLogeado, row.lote, row.id, row.fecha, row.item_code);
+            frmEditLoteActivo frm = new frmEditLoteActivo(UsuarioLogeado, row.lote, row.id, row.fecha_prod, row.fecha_vence, row.item_code);
             if(frm.ShowDialog() == DialogResult.OK)
             {
                 LoadDataActivos();
@@ -142,6 +142,38 @@ namespace LOSA.RecepcionMP
                 LoadDataActivos();
                 LoadDataDesactivados();
                 con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
+
+        private void cmdCompletar_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            //click en completar
+            DialogResult r = CajaDialogo.Pregunta("¿Esta seguro de completar este lote?");
+            if (r != DialogResult.Yes)
+                return;
+
+            //
+            try
+            {
+                var gridView = (GridView)gridControl1.FocusedView;
+                var row = (dsRecepcionMPx.lote_activo_granelRow)gridView.GetFocusedDataRow();
+
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringBascula);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_set_update_lote_complete", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@complete", 1);
+                cmd.Parameters.AddWithValue("@id", row.id);
+                cmd.ExecuteNonQuery();
+                
+                con.Close();
+                LoadDataActivos();
             }
             catch (Exception ec)
             {

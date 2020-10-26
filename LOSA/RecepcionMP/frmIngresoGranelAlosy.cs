@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,11 @@ namespace LOSA.RecepcionMP
         UserLogin UsuarioLogeado;
         ArrayList pLista;
         DataOperations dp = new DataOperations();
+        int idUbicacionSelected;
+        string Rack;
+        string Codigo_Barra_ubicacion;
+        int IdLoteSelected;
+
         public frmIngresoGranelAlosy(UserLogin pUsuarioLogeado, ArrayList pArray, ItemMP_Lote pItem)
         {
             InitializeComponent();
@@ -27,8 +33,15 @@ namespace LOSA.RecepcionMP
             txtCodigoMP.Text = pItem.ItemCode;
             txtMP_Name.Text = pItem.Card_Name;
             txtLote.Text = pItem.Lote;
+            IdLoteSelected = pItem.IdLote;
 
-            foreach(dsRecepcionMPx.granelRow rowg in pArray)
+            if (pItem.RecuperarRegistro(pItem.IdLote))
+            {
+                dtFechaProduccion.EditValue = pItem.FechaProd;
+                dtFechaVencimiento.EditValue = pItem.FechaVence;
+            }
+
+            foreach (dsRecepcionMPx.granelRow rowg in pArray)
             {
                 dsRecepcionMPx.granelRow row1 = dsRecepcionMPx1.granel.NewgranelRow();
                 //row1 = rowg;
@@ -74,6 +87,97 @@ namespace LOSA.RecepcionMP
                 dsRecepcionMPx1.granel.AddgranelRow(row1);
                 dsRecepcionMPx1.AcceptChanges();
             }
+
+        }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+
+        private void btnUbicacion_Click(object sender, EventArgs e)
+        {
+            //Seleccionar Ubicacion
+            frmUbicaciones_granel frm = new frmUbicaciones_granel();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                int idUbicacionNueva = frm.IdUbicacionSelected;
+                beNuevaUbicacion.Text = frm.UbicacionCodigo + " - "+ frm.UbicacionNombre;
+                idUbicacionSelected = idUbicacionNueva;
+                Rack = frm.UbicacionNombre;
+                Codigo_Barra_ubicacion = frm.UbicacionCodigo;
+            }
+        }
+
+        private void cmdGenerarIngreso_Click(object sender, EventArgs e)
+        {
+            //Guardar Ingresos
+            if (idUbicacionSelected == 0)
+            {
+                CajaDialogo.Error("Es necesario seleccionar una Ubicación Valida!");
+                return;
+            }
+
+            if(dtFechaVencimiento.EditValue == null)
+            {
+                CajaDialogo.Error("Es necesario seleccionar una fecha de Vencimiento!");
+                return;
+            }
+
+            if (dtFechaProduccion.EditValue == null)
+            {
+                CajaDialogo.Error("Es necesario seleccionar una fecha de Producción!");
+                return;
+            }
+
+            //if (txtNumIngreso.Value == 0)
+            //{
+            //    CajaDialogo.Error("Es necesario un Número de Ingreso Valido!");
+            //    return;
+            //}
+
+            //Validar ingreso si es necesario
+            bool Guardo = false;
+            DialogResult r = CajaDialogo.Pregunta("Esta seguro de generar estos ingresos de Materia Prima Granel?");
+            if (r != DialogResult.Yes)
+                return;
+            foreach(dsRecepcionMPx.granelRow row in dsRecepcionMPx1.granel.Rows)
+            {
+                //
+                try
+                {
+                    DataOperations dp = new DataOperations();
+                    SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                    cn.Open();
+
+                    string SQL = @"sp_set_insert_tarimas_graneles";
+                    SqlCommand cmd = new SqlCommand(SQL, cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id_boleta", row.NBoleta);
+                    cmd.Parameters.AddWithValue("@entrada", row.PesoProd);
+                    cmd.Parameters.AddWithValue("@item_code", txtCodigoMP.Text);
+                    cmd.Parameters.AddWithValue("@lote", txtLote.Text);
+                    cmd.Parameters.AddWithValue("@id_lote", IdLoteSelected);
+                    cmd.Parameters.AddWithValue("@id", row.id);
+                    
+                    cmd.ExecuteNonQuery();
+                    Guardo = true;
+                    cn.Close();
+                }
+                catch (Exception ec)
+                {
+                    MessageBox.Show(ec.Message);
+                }
+            }
+
+            if (Guardo)
+            {
+                CajaDialogo.InformationAuto();
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+
 
         }
     }
