@@ -70,7 +70,6 @@ namespace LOSA.TransaccionesMP
                                 tarimaEncontrada = InfoTarima;
                                 
                             }
-                            IsMicro = dr.GetInt32(8);
                             gcTarima.DataSource = CreateDataTarima(dr.GetInt32(0), dr.GetString(2), dr.GetString(1), dr.GetString(5), dr.GetString(6));
                             //gvTarima.InitNewRow += GridView1_InitNewRow;
                             gvTarima.Columns[0].AppearanceCell.Font = new Font("Segoe UI", 11, FontStyle.Bold);
@@ -177,6 +176,7 @@ namespace LOSA.TransaccionesMP
                                 SqlCommand cmd = new SqlCommand("sp_verifica_diponibilidad_tarima_entrega_v2", con);
                                 cmd.CommandType = CommandType.StoredProcedure;
                                 cmd.Parameters.AddWithValue("@id", tarimaEncontrada.Id);
+                                cmd.Parameters.AddWithValue("@id_req",RequisicionActual.IdRequisicion);
                                 disponible = Convert.ToBoolean(cmd.ExecuteScalar());
                                 con.Close();
                             }
@@ -229,7 +229,7 @@ namespace LOSA.TransaccionesMP
                         con.Open();
 
                         //SqlCommand cmd = new SqlCommand("sp_set_insert_salida_tarima_bodega_mp", con);
-                        SqlCommand cmd = new SqlCommand("[sp_set_insert_salida_tarima_bodega_mp_v3]", con);
+                        SqlCommand cmd = new SqlCommand("[dbo].[sp_insert_tarima_requisa_entrega]", con);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@idtarima", tarimaEncontrada.Id);
                         cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
@@ -272,6 +272,7 @@ namespace LOSA.TransaccionesMP
         {
             if (e.KeyCode == Keys.Enter)
             {
+
                 EntregarTarima();
             }
         }

@@ -92,10 +92,9 @@
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(237, 16);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl1.Location = new System.Drawing.Point(178, 13);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(464, 49);
+            this.labelControl1.Size = new System.Drawing.Size(348, 40);
             this.labelControl1.TabIndex = 37;
             this.labelControl1.Text = "Gestión de Lotes";
             // 
@@ -109,10 +108,9 @@
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(625, 7);
-            this.btnAtras.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAtras.Location = new System.Drawing.Point(469, 6);
             this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(223, 58);
+            this.btnAtras.Size = new System.Drawing.Size(167, 47);
             this.btnAtras.TabIndex = 36;
             this.btnAtras.Text = "Atras";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
@@ -121,23 +119,21 @@
             // 
             this.txtMP_Name.EditValue = "";
             this.txtMP_Name.Enabled = false;
-            this.txtMP_Name.Location = new System.Drawing.Point(447, 101);
-            this.txtMP_Name.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMP_Name.Location = new System.Drawing.Point(335, 82);
             this.txtMP_Name.Name = "txtMP_Name";
             this.txtMP_Name.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMP_Name.Properties.Appearance.Options.UseFont = true;
             this.txtMP_Name.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtMP_Name.Size = new System.Drawing.Size(388, 34);
+            this.txtMP_Name.Size = new System.Drawing.Size(291, 28);
             this.txtMP_Name.TabIndex = 40;
             // 
             // labelControl3
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(16, 101);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl3.Location = new System.Drawing.Point(12, 82);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(162, 29);
+            this.labelControl3.Size = new System.Drawing.Size(127, 24);
             this.labelControl3.TabIndex = 39;
             this.labelControl3.Text = "Materia Prima";
             // 
@@ -145,23 +141,21 @@
             // 
             this.txtCodigoMP.EditValue = "";
             this.txtCodigoMP.Enabled = false;
-            this.txtCodigoMP.Location = new System.Drawing.Point(249, 101);
-            this.txtCodigoMP.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCodigoMP.Location = new System.Drawing.Point(187, 82);
             this.txtCodigoMP.Name = "txtCodigoMP";
             this.txtCodigoMP.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigoMP.Properties.Appearance.Options.UseFont = true;
             this.txtCodigoMP.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCodigoMP.Size = new System.Drawing.Size(189, 34);
+            this.txtCodigoMP.Size = new System.Drawing.Size(142, 28);
             this.txtCodigoMP.TabIndex = 38;
             // 
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(16, 251);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl2.Location = new System.Drawing.Point(12, 204);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(186, 29);
+            this.labelControl2.Size = new System.Drawing.Size(149, 24);
             this.labelControl2.TabIndex = 42;
             this.labelControl2.Text = "Cant. Pendiente";
             // 
@@ -169,14 +163,13 @@
             // 
             this.txtCantidadPendiente.EditValue = "0.00";
             this.txtCantidadPendiente.Enabled = false;
-            this.txtCantidadPendiente.Location = new System.Drawing.Point(249, 246);
-            this.txtCantidadPendiente.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCantidadPendiente.Location = new System.Drawing.Point(187, 200);
             this.txtCantidadPendiente.Name = "txtCantidadPendiente";
             this.txtCantidadPendiente.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCantidadPendiente.Properties.Appearance.Options.UseFont = true;
             this.txtCantidadPendiente.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCantidadPendiente.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtCantidadPendiente.Size = new System.Drawing.Size(189, 38);
+            this.txtCantidadPendiente.Size = new System.Drawing.Size(142, 32);
             this.txtCantidadPendiente.TabIndex = 41;
             // 
             // grRequisicoinesMP
@@ -186,14 +179,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grRequisicoinesMP.DataMember = "detalle_lote_mp";
             this.grRequisicoinesMP.DataSource = this.dsTransaccionesMP1;
-            this.grRequisicoinesMP.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
-            this.grRequisicoinesMP.Location = new System.Drawing.Point(1, 293);
+            this.grRequisicoinesMP.Location = new System.Drawing.Point(1, 238);
             this.grRequisicoinesMP.MainView = this.gvTarimas;
-            this.grRequisicoinesMP.Margin = new System.Windows.Forms.Padding(4);
             this.grRequisicoinesMP.Name = "grRequisicoinesMP";
             this.grRequisicoinesMP.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnVerD});
-            this.grRequisicoinesMP.Size = new System.Drawing.Size(847, 394);
+            this.grRequisicoinesMP.Size = new System.Drawing.Size(635, 320);
             this.grRequisicoinesMP.TabIndex = 43;
             this.grRequisicoinesMP.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTarimas});
@@ -236,145 +227,120 @@
             this.colpeso_total,
             this.colseleccionado,
             this.colcants});
-            this.gvTarimas.DetailHeight = 431;
             this.gvTarimas.GridControl = this.grRequisicoinesMP;
             this.gvTarimas.Name = "gvTarimas";
             this.gvTarimas.OptionsCustomization.AllowFilter = false;
             this.gvTarimas.OptionsView.ShowAutoFilterRow = true;
             this.gvTarimas.OptionsView.ShowFooter = true;
             this.gvTarimas.OptionsView.ShowGroupPanel = false;
-            this.gvTarimas.RowHeight = 25;
+            this.gvTarimas.RowHeight = 20;
             this.gvTarimas.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gvTarimas_CellValueChanged);
             // 
             // colid
             // 
             this.colid.FieldName = "id";
-            this.colid.MinWidth = 27;
             this.colid.Name = "colid";
-            this.colid.Width = 100;
             // 
             // colid_proveedor
             // 
             this.colid_proveedor.FieldName = "id_proveedor";
-            this.colid_proveedor.MinWidth = 27;
             this.colid_proveedor.Name = "colid_proveedor";
-            this.colid_proveedor.Width = 100;
             // 
             // colnumero_transaccion
             // 
             this.colnumero_transaccion.FieldName = "numero_transaccion";
-            this.colnumero_transaccion.MinWidth = 25;
+            this.colnumero_transaccion.MinWidth = 19;
             this.colnumero_transaccion.Name = "colnumero_transaccion";
-            this.colnumero_transaccion.Width = 94;
+            this.colnumero_transaccion.Width = 70;
             // 
             // colNombre
             // 
             this.colNombre.Caption = "Proveedor";
             this.colNombre.FieldName = "Nombre";
-            this.colNombre.MinWidth = 27;
             this.colNombre.Name = "colNombre";
             this.colNombre.OptionsColumn.AllowEdit = false;
             this.colNombre.Visible = true;
             this.colNombre.VisibleIndex = 0;
-            this.colNombre.Width = 100;
             // 
             // colingreso
             // 
             this.colingreso.Caption = "Fecha Ingreso";
             this.colingreso.FieldName = "ingreso";
-            this.colingreso.MinWidth = 27;
             this.colingreso.Name = "colingreso";
             this.colingreso.OptionsColumn.AllowEdit = false;
             this.colingreso.Visible = true;
             this.colingreso.VisibleIndex = 1;
-            this.colingreso.Width = 100;
             // 
             // colvence
             // 
             this.colvence.Caption = "Fecha Vence";
             this.colvence.FieldName = "vence";
-            this.colvence.MinWidth = 27;
             this.colvence.Name = "colvence";
             this.colvence.OptionsColumn.AllowEdit = false;
             this.colvence.Visible = true;
             this.colvence.VisibleIndex = 2;
-            this.colvence.Width = 100;
             // 
             // collote_mp
             // 
             this.collote_mp.Caption = "Lote MP";
             this.collote_mp.FieldName = "lote_mp";
-            this.collote_mp.MinWidth = 27;
             this.collote_mp.Name = "collote_mp";
             this.collote_mp.OptionsColumn.AllowEdit = false;
             this.collote_mp.Visible = true;
             this.collote_mp.VisibleIndex = 3;
-            this.collote_mp.Width = 100;
             // 
             // colpresentacion
             // 
             this.colpresentacion.Caption = "Presentación";
             this.colpresentacion.FieldName = "presentacion";
-            this.colpresentacion.MinWidth = 27;
             this.colpresentacion.Name = "colpresentacion";
             this.colpresentacion.OptionsColumn.AllowEdit = false;
             this.colpresentacion.Visible = true;
             this.colpresentacion.VisibleIndex = 4;
-            this.colpresentacion.Width = 100;
             // 
             // colcantidad
             // 
             this.colcantidad.Caption = "Unidades";
             this.colcantidad.FieldName = "cantidad";
-            this.colcantidad.MinWidth = 27;
             this.colcantidad.Name = "colcantidad";
             this.colcantidad.OptionsColumn.AllowEdit = false;
             this.colcantidad.Visible = true;
             this.colcantidad.VisibleIndex = 5;
-            this.colcantidad.Width = 100;
             // 
             // colunidad
             // 
             this.colunidad.Caption = "Unidad Medida";
             this.colunidad.FieldName = "unidad";
-            this.colunidad.MinWidth = 27;
             this.colunidad.Name = "colunidad";
             this.colunidad.OptionsColumn.AllowEdit = false;
             this.colunidad.Visible = true;
             this.colunidad.VisibleIndex = 6;
-            this.colunidad.Width = 100;
             // 
             // colpeso_total
             // 
             this.colpeso_total.Caption = "Peso Disponible";
             this.colpeso_total.FieldName = "peso_total";
-            this.colpeso_total.MinWidth = 27;
             this.colpeso_total.Name = "colpeso_total";
             this.colpeso_total.OptionsColumn.AllowEdit = false;
             this.colpeso_total.Visible = true;
             this.colpeso_total.VisibleIndex = 7;
-            this.colpeso_total.Width = 100;
             // 
             // colseleccionado
             // 
             this.colseleccionado.Caption = "Seleccionar";
             this.colseleccionado.FieldName = "seleccionado";
-            this.colseleccionado.MinWidth = 27;
             this.colseleccionado.Name = "colseleccionado";
             this.colseleccionado.Visible = true;
             this.colseleccionado.VisibleIndex = 8;
-            this.colseleccionado.Width = 100;
             // 
             // colcants
             // 
             this.colcants.Caption = "Cantidad a Enviar";
             this.colcants.FieldName = "cants";
-            this.colcants.MinWidth = 27;
             this.colcants.Name = "colcants";
             this.colcants.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.colcants.Visible = true;
             this.colcants.VisibleIndex = 9;
-            this.colcants.Width = 100;
             // 
             // btnVerD
             // 
@@ -392,10 +358,9 @@
             this.lblUnidad.Appearance.Options.UseTextOptions = true;
             this.lblUnidad.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.lblUnidad.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblUnidad.Location = new System.Drawing.Point(653, 156);
-            this.lblUnidad.Margin = new System.Windows.Forms.Padding(4);
+            this.lblUnidad.Location = new System.Drawing.Point(490, 127);
             this.lblUnidad.Name = "lblUnidad";
-            this.lblUnidad.Size = new System.Drawing.Size(188, 30);
+            this.lblUnidad.Size = new System.Drawing.Size(141, 24);
             this.lblUnidad.TabIndex = 44;
             this.lblUnidad.Text = "Kg";
             // 
@@ -404,10 +369,9 @@
             this.chkAutoSelect.AutoSize = true;
             this.chkAutoSelect.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkAutoSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkAutoSelect.Location = new System.Drawing.Point(475, 209);
-            this.chkAutoSelect.Margin = new System.Windows.Forms.Padding(4);
+            this.chkAutoSelect.Location = new System.Drawing.Point(356, 170);
             this.chkAutoSelect.Name = "chkAutoSelect";
-            this.chkAutoSelect.Size = new System.Drawing.Size(180, 29);
+            this.chkAutoSelect.Size = new System.Drawing.Size(149, 24);
             this.chkAutoSelect.TabIndex = 45;
             this.chkAutoSelect.Text = "Auto Selección";
             this.chkAutoSelect.UseVisualStyleBackColor = true;
@@ -422,10 +386,9 @@
             this.cmdGuardar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdGuardar.ImageOptions.Image")));
             this.cmdGuardar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.cmdGuardar.Location = new System.Drawing.Point(7, 7);
-            this.cmdGuardar.Margin = new System.Windows.Forms.Padding(4);
+            this.cmdGuardar.Location = new System.Drawing.Point(5, 6);
             this.cmdGuardar.Name = "cmdGuardar";
-            this.cmdGuardar.Size = new System.Drawing.Size(223, 58);
+            this.cmdGuardar.Size = new System.Drawing.Size(167, 47);
             this.cmdGuardar.TabIndex = 46;
             this.cmdGuardar.Text = "Planificar";
             this.cmdGuardar.Click += new System.EventHandler(this.cmdGuardar_Click);
@@ -434,10 +397,9 @@
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(16, 204);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl4.Location = new System.Drawing.Point(12, 166);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(175, 29);
+            this.labelControl4.Size = new System.Drawing.Size(141, 24);
             this.labelControl4.TabIndex = 48;
             this.labelControl4.Text = "Cant. Asignada";
             // 
@@ -445,24 +407,22 @@
             // 
             this.txtAsignada.EditValue = "0.00";
             this.txtAsignada.Enabled = false;
-            this.txtAsignada.Location = new System.Drawing.Point(249, 199);
-            this.txtAsignada.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAsignada.Location = new System.Drawing.Point(187, 162);
             this.txtAsignada.Name = "txtAsignada";
             this.txtAsignada.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAsignada.Properties.Appearance.Options.UseFont = true;
             this.txtAsignada.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtAsignada.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtAsignada.Size = new System.Drawing.Size(189, 38);
+            this.txtAsignada.Size = new System.Drawing.Size(142, 32);
             this.txtAsignada.TabIndex = 47;
             // 
             // labelControl5
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(16, 156);
-            this.labelControl5.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl5.Location = new System.Drawing.Point(12, 127);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(183, 29);
+            this.labelControl5.Size = new System.Drawing.Size(144, 24);
             this.labelControl5.TabIndex = 50;
             this.labelControl5.Text = "Cant. Solicitada";
             // 
@@ -470,14 +430,13 @@
             // 
             this.txtSolicitada.EditValue = "0.00";
             this.txtSolicitada.Enabled = false;
-            this.txtSolicitada.Location = new System.Drawing.Point(249, 151);
-            this.txtSolicitada.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSolicitada.Location = new System.Drawing.Point(187, 123);
             this.txtSolicitada.Name = "txtSolicitada";
             this.txtSolicitada.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSolicitada.Properties.Appearance.Options.UseFont = true;
             this.txtSolicitada.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtSolicitada.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtSolicitada.Size = new System.Drawing.Size(189, 38);
+            this.txtSolicitada.Size = new System.Drawing.Size(142, 32);
             this.txtSolicitada.TabIndex = 49;
             // 
             // labelControl6
@@ -487,10 +446,9 @@
             this.labelControl6.Appearance.Options.UseTextOptions = true;
             this.labelControl6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl6.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl6.Location = new System.Drawing.Point(453, 156);
-            this.labelControl6.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl6.Location = new System.Drawing.Point(340, 127);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(196, 30);
+            this.labelControl6.Size = new System.Drawing.Size(147, 24);
             this.labelControl6.TabIndex = 51;
             this.labelControl6.Text = "Unidad Medida:";
             // 
@@ -504,10 +462,10 @@
             // 
             // frmSeleccionLote
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(851, 689);
+            this.ClientSize = new System.Drawing.Size(638, 560);
             this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.txtSolicitada);
@@ -525,7 +483,6 @@
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.labelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmSeleccionLote";
             this.Text = "frmSeleccionLote";
             ((System.ComponentModel.ISupportInitialize)(this.txtMP_Name.Properties)).EndInit();
