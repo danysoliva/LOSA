@@ -865,6 +865,44 @@
     <Compile Include="TransaccionesMP\frmUbicacionLotes.Designer.cs">
       <DependentUpon>frmUbicacionLotes.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesPT\dsPT.cs">
+      <DependentUpon>dsPT.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesPT\dsPT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPT.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesPT\frmactivacionPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesPT\frmactivacionPT.Designer.cs">
+      <DependentUpon>frmactivacionPT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesPT\frmGestiondePlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesPT\frmGestiondePlan.Designer.cs">
+      <DependentUpon>frmGestiondePlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesPT\frmPlanPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesPT\frmPlanPT.Designer.cs">
+      <DependentUpon>frmPlanPT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesPT\frm_planes_recibo_pt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesPT\frm_planes_recibo_pt.Designer.cs">
+      <DependentUpon>frm_planes_recibo_pt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesPT\frm_vertarimas_pt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesPT\frm_vertarimas_pt.Designer.cs">
+      <DependentUpon>frm_vertarimas_pt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utileria\frmMensaje.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1197,6 +1235,21 @@
     <EmbeddedResource Include="TransaccionesMP\frmUbicacionLotes.resx">
       <DependentUpon>frmUbicacionLotes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesPT\frmactivacionPT.resx">
+      <DependentUpon>frmactivacionPT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesPT\frmGestiondePlan.resx">
+      <DependentUpon>frmGestiondePlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesPT\frmPlanPT.resx">
+      <DependentUpon>frmPlanPT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesPT\frm_planes_recibo_pt.resx">
+      <DependentUpon>frm_planes_recibo_pt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesPT\frm_vertarimas_pt.resx">
+      <DependentUpon>frm_vertarimas_pt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Utileria\frmMensaje.resx">
       <DependentUpon>frmMensaje.cs</DependentUpon>
     </EmbeddedResource>
@@ -1319,6 +1372,17 @@
     <None Include="TransaccionesMP\dsTransaccionesMP.xss">
       <DependentUpon>dsTransaccionesMP.xsd</DependentUpon>
     </None>
+    <None Include="TransaccionesPT\dsPT.xsc">
+      <DependentUpon>dsPT.xsd</DependentUpon>
+    </None>
+    <None Include="TransaccionesPT\dsPT.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPT.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TransaccionesPT\dsPT.xss">
+      <DependentUpon>dsPT.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -1392,8 +1456,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="TransaccionesPT\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
