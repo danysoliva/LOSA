@@ -31,7 +31,13 @@ namespace LOSA.RecepcionMP
         public frmUbicacionTarima()
         {
             InitializeComponent();
-            cargarDatos_v2();
+            cargarDatosGranel();
+        }
+
+        public frmUbicacionTarima(bool pGranelesUse)
+        {
+            InitializeComponent();
+            cargarDatosGranel();
         }
 
         public frmUbicacionTarima(int tipo_tarima)
@@ -87,22 +93,20 @@ namespace LOSA.RecepcionMP
                 MessageBox.Show(ec.Message);
             }
         }
-        void cargarDatos_v2()
+        void cargarDatosGranel()
         {
             try
             {
 
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
 
-                string SQL = @"exec obtenerUbicacionTarima_v2 @codigo_barra";
-
-                dsRecepcionMPx.Ubicaciones.Clear();
-                SqlDataAdapter adat = new SqlDataAdapter(SQL, cn);
-
-                adat.SelectCommand.Parameters.AddWithValue("@codigo_barra", "");
-
-
-                adat.Fill(dsRecepcionMPx.Ubicaciones);
+                string SQL = @"sp_get_lista_ubicaciones_granel";
+                SqlCommand cmd = new SqlCommand(SQL, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@codigo_barra", "");
+                dsRecepcionMPx.ubicaciones_granel.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsRecepcionMPx.ubicaciones_granel);
 
             }
             catch (Exception ec)

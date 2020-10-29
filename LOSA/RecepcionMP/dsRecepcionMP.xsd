@@ -201,6 +201,9 @@
               <xs:element name="id_user_create" msprop:Generator_ColumnVarNameInTable="columnid_user_create" msprop:Generator_ColumnPropNameInRow="id_user_create" msprop:Generator_ColumnPropNameInTable="id_user_createColumn" msprop:Generator_UserColumnName="id_user_create" type="xs:int" minOccurs="0" />
               <xs:element name="item_code" msprop:Generator_ColumnVarNameInTable="columnitem_code" msprop:Generator_ColumnPropNameInRow="item_code" msprop:Generator_ColumnPropNameInTable="item_codeColumn" msprop:Generator_UserColumnName="item_code" type="xs:string" minOccurs="0" />
               <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" minOccurs="0" />
+              <xs:element name="completar" msprop:Generator_ColumnVarNameInTable="columncompletar" msprop:Generator_ColumnPropNameInRow="completar" msprop:Generator_ColumnPropNameInTable="completarColumn" msprop:Generator_UserColumnName="completar" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha_prod" msprop:Generator_ColumnVarNameInTable="columnfecha_prod" msprop:Generator_ColumnPropNameInRow="fecha_prod" msprop:Generator_ColumnPropNameInTable="fecha_prodColumn" msprop:Generator_UserColumnName="fecha_prod" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="fecha_vence" msprop:Generator_ColumnVarNameInTable="columnfecha_vence" msprop:Generator_ColumnPropNameInRow="fecha_vence" msprop:Generator_ColumnPropNameInTable="fecha_venceColumn" msprop:Generator_UserColumnName="fecha_vence" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -223,6 +226,15 @@
               <xs:element name="item_code" msprop:Generator_ColumnVarNameInTable="columnitem_code" msprop:Generator_ColumnPropNameInRow="item_code" msprop:Generator_ColumnPropNameInTable="item_codeColumn" msprop:Generator_UserColumnName="item_code" type="xs:string" minOccurs="0" />
               <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" minOccurs="0" />
               <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ubicaciones_granel" msprop:Generator_TableClassName="ubicaciones_granelDataTable" msprop:Generator_TableVarName="tableubicaciones_granel" msprop:Generator_RowChangedName="ubicaciones_granelRowChanged" msprop:Generator_TablePropName="ubicaciones_granel" msprop:Generator_RowDeletingName="ubicaciones_granelRowDeleting" msprop:Generator_RowChangingName="ubicaciones_granelRowChanging" msprop:Generator_RowEvHandlerName="ubicaciones_granelRowChangeEventHandler" msprop:Generator_RowDeletedName="ubicaciones_granelRowDeleted" msprop:Generator_RowClassName="ubicaciones_granelRow" msprop:Generator_UserTableName="ubicaciones_granel" msprop:Generator_RowEvArgName="ubicaciones_granelRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="rack" msprop:Generator_ColumnVarNameInTable="columnrack" msprop:Generator_ColumnPropNameInRow="rack" msprop:Generator_ColumnPropNameInTable="rackColumn" msprop:Generator_UserColumnName="rack" type="xs:string" minOccurs="0" />
+              <xs:element name="codigo_barra" msprop:Generator_ColumnVarNameInTable="columncodigo_barra" msprop:Generator_ColumnPropNameInRow="codigo_barra" msprop:Generator_ColumnPropNameInTable="codigo_barraColumn" msprop:Generator_UserColumnName="codigo_barra" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
