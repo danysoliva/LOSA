@@ -213,5 +213,13 @@ namespace LOSA
             frmOpciones frm = new frmOpciones(Log1);
             frm.Show();
         }
+
+        private void txtUsuario_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                txtClave.Focus();
+            }
+        }
     }
 }
