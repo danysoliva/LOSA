@@ -34,6 +34,8 @@ namespace LOSA.RecepcionMP
             txtMP_Name.Text = pItem.Card_Name;
             txtLote.Text = pItem.Lote;
             IdLoteSelected = pItem.IdLote;
+            LoadBarcos();
+            LoadUbicaciones();
 
             if (pItem.RecuperarRegistro(pItem.IdLote))
             {
@@ -83,11 +85,62 @@ namespace LOSA.RecepcionMP
                 row1.Producto = rowg.Producto;
                 row1.itemcode = rowg.itemcode;
                 row1.seleccionar = rowg.seleccionar;
+                try
+                {
+                    row1.id_ubicacion = rowg.id_ubicacion;
+                }
+                catch {  }
+               
 
                 dsRecepcionMPx1.granel.AddgranelRow(row1);
                 dsRecepcionMPx1.AcceptChanges();
             }
 
+        }
+
+        private void LoadUbicaciones()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+
+                string SQL = @"sp_get_lista_ubicaciones_granel";
+                SqlCommand cmd = new SqlCommand(SQL, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@codigo_barra", "");
+                dsRecepcionMPx1.ubicaciones_granel.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsRecepcionMPx1.ubicaciones_granel);
+
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+        }
+        private void LoadBarcos()
+        {
+            //
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringBascula);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_ships_active_for_losa", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@idbodega", idBodega);
+                dsRecepcionMPx1.barcos.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsRecepcionMPx1.barcos);
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
@@ -113,11 +166,11 @@ namespace LOSA.RecepcionMP
         private void cmdGenerarIngreso_Click(object sender, EventArgs e)
         {
             //Guardar Ingresos
-            if (idUbicacionSelected == 0)
-            {
-                CajaDialogo.Error("Es necesario seleccionar una Ubicación Valida!");
-                return;
-            }
+            //if (idUbicacionSelected == 0)
+            //{
+            //    CajaDialogo.Error("Es necesario seleccionar una Ubicación Valida!");
+            //    return;
+            //}
 
             if(dtFechaVencimiento.EditValue == null)
             {
@@ -136,6 +189,53 @@ namespace LOSA.RecepcionMP
             //    CajaDialogo.Error("Es necesario un Número de Ingreso Valido!");
             //    return;
             //}
+            bool PuedeContinuar = false;
+            foreach (dsRecepcionMPx.granelRow row in dsRecepcionMPx1.granel.Rows)
+            {
+                
+                try
+                {
+                    int a = row.id_ubicacion;
+                    if (a > 0)
+                        PuedeContinuar = true;
+                    
+                }
+                catch 
+                {
+                    PuedeContinuar = false;
+                    break;
+                } 
+            }
+
+            if (!PuedeContinuar)
+            {
+                CajaDialogo.Error("Debe seleccionar una ubicacion valida!");
+                return;
+            }
+
+            PuedeContinuar = false;
+            foreach (dsRecepcionMPx.granelRow row in dsRecepcionMPx1.granel.Rows)
+            {
+
+                try
+                {
+                    int a = row.shipid;
+                    if (a > 0)
+                        PuedeContinuar = true;
+
+                }
+                catch
+                {
+                    PuedeContinuar = false;
+                    break;
+                }
+            }
+
+            if (!PuedeContinuar)
+            {
+                CajaDialogo.Error("Debe seleccionar una barco valido!");
+                return;
+            }
 
             //Validar ingreso si es necesario
             bool Guardo = false;
@@ -160,7 +260,8 @@ namespace LOSA.RecepcionMP
                     cmd.Parameters.AddWithValue("@lote", txtLote.Text);
                     cmd.Parameters.AddWithValue("@id_lote", IdLoteSelected);
                     cmd.Parameters.AddWithValue("@id", row.id);
-                    
+                    cmd.Parameters.AddWithValue("@id_ubicacion", row.id_ubicacion);
+
                     cmd.ExecuteNonQuery();
                     Guardo = true;
                     cn.Close();

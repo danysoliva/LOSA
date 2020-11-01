@@ -23,6 +23,54 @@ namespace LOSA.RecepcionMP
             InitializeComponent();
             UsuarioLogeado = pUsuarioLogeado;
             LoadData();
+            LoadBarcos();
+            LoadUbicaciones();
+        }
+
+        private void LoadUbicaciones()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+
+                string SQL = @"sp_get_lista_ubicaciones_granel";
+                SqlCommand cmd = new SqlCommand(SQL, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@codigo_barra", "");
+                dsRecepcionMPx1.ubicaciones_granel.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsRecepcionMPx1.ubicaciones_granel);
+
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+        }
+
+        private void LoadBarcos()
+        {
+            //
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringBascula);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_ships_active_for_losa", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@idbodega", idBodega);
+                dsRecepcionMPx1.barcos.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsRecepcionMPx1.barcos);
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
         }
 
         private void LoadData()

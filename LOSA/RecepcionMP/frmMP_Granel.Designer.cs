@@ -31,6 +31,7 @@ namespace LOSA.RecepcionMP
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMP_Granel));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -47,6 +48,11 @@ namespace LOSA.RecepcionMP
             this.colfechaEntra = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFechaFin = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colshipid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridLookUpEditBarco = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.bindingSourceBarcos = new System.Windows.Forms.BindingSource(this.components);
+            this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colbarco = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNBoleta = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnumero_factura = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -72,11 +78,24 @@ namespace LOSA.RecepcionMP
             this.cmdLoteActivo = new DevExpress.XtraEditors.SimpleButton();
             this.checkBoxSeleccionarTodas = new System.Windows.Forms.CheckBox();
             this.cmdGenerarIngreso = new DevExpress.XtraEditors.SimpleButton();
+            this.colid_ubicacion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.bindingSourceUbicaciones = new System.Windows.Forms.BindingSource(this.components);
+            this.GridLookUpEditUbicaciones = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colrack = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcodigo_barra = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gcMP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditBarco)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceBarcos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdPasarAlosy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkSeleccionar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceUbicaciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridLookUpEditUbicaciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAtras
@@ -89,7 +108,7 @@ namespace LOSA.RecepcionMP
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(874, 7);
+            this.btnAtras.Location = new System.Drawing.Point(996, 7);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(166, 56);
             this.btnAtras.TabIndex = 8;
@@ -108,8 +127,10 @@ namespace LOSA.RecepcionMP
             this.gcMP.Name = "gcMP";
             this.gcMP.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cmdPasarAlosy,
-            this.checkSeleccionar});
-            this.gcMP.Size = new System.Drawing.Size(1045, 541);
+            this.checkSeleccionar,
+            this.gridLookUpEditBarco,
+            this.GridLookUpEditUbicaciones});
+            this.gcMP.Size = new System.Drawing.Size(1167, 541);
             this.gcMP.TabIndex = 7;
             this.gcMP.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvMP});
@@ -149,6 +170,7 @@ namespace LOSA.RecepcionMP
             this.colNBoleta,
             this.colnumero_factura,
             this.colOperador,
+            this.colid_ubicacion,
             this.colPesoBruto,
             this.colPesonetoIn,
             this.colitemcode,
@@ -183,7 +205,7 @@ namespace LOSA.RecepcionMP
             this.colcomentarios.Name = "colcomentarios";
             this.colcomentarios.OptionsColumn.AllowEdit = false;
             this.colcomentarios.Visible = true;
-            this.colcomentarios.VisibleIndex = 7;
+            this.colcomentarios.VisibleIndex = 6;
             // 
             // colEmpresaTrans
             // 
@@ -208,9 +230,51 @@ namespace LOSA.RecepcionMP
             // 
             // colshipid
             // 
+            this.colshipid.Caption = "Barco";
+            this.colshipid.ColumnEdit = this.gridLookUpEditBarco;
             this.colshipid.FieldName = "shipid";
             this.colshipid.Name = "colshipid";
-            this.colshipid.OptionsColumn.AllowEdit = false;
+            this.colshipid.Visible = true;
+            this.colshipid.VisibleIndex = 7;
+            // 
+            // gridLookUpEditBarco
+            // 
+            this.gridLookUpEditBarco.AutoHeight = false;
+            this.gridLookUpEditBarco.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.gridLookUpEditBarco.DataSource = this.bindingSourceBarcos;
+            this.gridLookUpEditBarco.DisplayMember = "descripcion";
+            this.gridLookUpEditBarco.Name = "gridLookUpEditBarco";
+            this.gridLookUpEditBarco.PopupView = this.repositoryItemGridLookUpEdit1View;
+            this.gridLookUpEditBarco.ValueMember = "id";
+            // 
+            // bindingSourceBarcos
+            // 
+            this.bindingSourceBarcos.DataMember = "barcos";
+            this.bindingSourceBarcos.DataSource = this.dsRecepcionMPx1;
+            // 
+            // repositoryItemGridLookUpEdit1View
+            // 
+            this.repositoryItemGridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid1,
+            this.coldescripcion});
+            this.repositoryItemGridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.repositoryItemGridLookUpEdit1View.Name = "repositoryItemGridLookUpEdit1View";
+            this.repositoryItemGridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.repositoryItemGridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // colid1
+            // 
+            this.colid1.FieldName = "id";
+            this.colid1.Name = "colid1";
+            // 
+            // coldescripcion
+            // 
+            this.coldescripcion.Caption = "Seleccione el Barco";
+            this.coldescripcion.FieldName = "descripcion";
+            this.coldescripcion.Name = "coldescripcion";
+            this.coldescripcion.Visible = true;
+            this.coldescripcion.VisibleIndex = 0;
             // 
             // colbarco
             // 
@@ -218,8 +282,6 @@ namespace LOSA.RecepcionMP
             this.colbarco.FieldName = "barco";
             this.colbarco.Name = "colbarco";
             this.colbarco.OptionsColumn.AllowEdit = false;
-            this.colbarco.Visible = true;
-            this.colbarco.VisibleIndex = 1;
             // 
             // colNBoleta
             // 
@@ -227,7 +289,7 @@ namespace LOSA.RecepcionMP
             this.colNBoleta.Name = "colNBoleta";
             this.colNBoleta.OptionsColumn.AllowEdit = false;
             this.colNBoleta.Visible = true;
-            this.colNBoleta.VisibleIndex = 2;
+            this.colNBoleta.VisibleIndex = 1;
             // 
             // colnumero_factura
             // 
@@ -265,7 +327,7 @@ namespace LOSA.RecepcionMP
             this.colPesoProd.Name = "colPesoProd";
             this.colPesoProd.OptionsColumn.AllowEdit = false;
             this.colPesoProd.Visible = true;
-            this.colPesoProd.VisibleIndex = 3;
+            this.colPesoProd.VisibleIndex = 2;
             // 
             // colpesoSalida
             // 
@@ -303,7 +365,7 @@ namespace LOSA.RecepcionMP
             this.colTipoBoleta.Name = "colTipoBoleta";
             this.colTipoBoleta.OptionsColumn.AllowEdit = false;
             this.colTipoBoleta.Visible = true;
-            this.colTipoBoleta.VisibleIndex = 4;
+            this.colTipoBoleta.VisibleIndex = 3;
             // 
             // colid_tipo_boleta
             // 
@@ -317,7 +379,7 @@ namespace LOSA.RecepcionMP
             this.colSNegocio.Name = "colSNegocio";
             this.colSNegocio.OptionsColumn.AllowEdit = false;
             this.colSNegocio.Visible = true;
-            this.colSNegocio.VisibleIndex = 5;
+            this.colSNegocio.VisibleIndex = 4;
             // 
             // colProducto
             // 
@@ -325,7 +387,7 @@ namespace LOSA.RecepcionMP
             this.colProducto.Name = "colProducto";
             this.colProducto.OptionsColumn.AllowEdit = false;
             this.colProducto.Visible = true;
-            this.colProducto.VisibleIndex = 6;
+            this.colProducto.VisibleIndex = 5;
             // 
             // col_Registrar
             // 
@@ -349,7 +411,7 @@ namespace LOSA.RecepcionMP
             this.colseleccionar.FieldName = "seleccionar";
             this.colseleccionar.Name = "colseleccionar";
             this.colseleccionar.Visible = true;
-            this.colseleccionar.VisibleIndex = 8;
+            this.colseleccionar.VisibleIndex = 9;
             // 
             // checkSeleccionar
             // 
@@ -361,9 +423,9 @@ namespace LOSA.RecepcionMP
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(219, 21);
+            this.label1.Location = new System.Drawing.Point(350, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(461, 29);
+            this.label1.Size = new System.Drawing.Size(422, 29);
             this.label1.TabIndex = 9;
             this.label1.Text = "Recepción de Materia Prima Granel";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -390,7 +452,7 @@ namespace LOSA.RecepcionMP
             this.checkBoxSeleccionarTodas.AutoSize = true;
             this.checkBoxSeleccionarTodas.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.checkBoxSeleccionarTodas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxSeleccionarTodas.Location = new System.Drawing.Point(841, 81);
+            this.checkBoxSeleccionarTodas.Location = new System.Drawing.Point(963, 81);
             this.checkBoxSeleccionarTodas.Name = "checkBoxSeleccionarTodas";
             this.checkBoxSeleccionarTodas.Size = new System.Drawing.Size(159, 24);
             this.checkBoxSeleccionarTodas.TabIndex = 11;
@@ -408,19 +470,73 @@ namespace LOSA.RecepcionMP
             this.cmdGenerarIngreso.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdGenerarIngreso.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdGenerarIngreso.ImageOptions.Image")));
             this.cmdGenerarIngreso.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.cmdGenerarIngreso.Location = new System.Drawing.Point(702, 7);
+            this.cmdGenerarIngreso.Location = new System.Drawing.Point(824, 7);
             this.cmdGenerarIngreso.Name = "cmdGenerarIngreso";
             this.cmdGenerarIngreso.Size = new System.Drawing.Size(166, 56);
             this.cmdGenerarIngreso.TabIndex = 12;
             this.cmdGenerarIngreso.Text = "Generar Ingreso";
             this.cmdGenerarIngreso.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
+            // colid_ubicacion
+            // 
+            this.colid_ubicacion.Caption = "Ubicación Almacén";
+            this.colid_ubicacion.ColumnEdit = this.GridLookUpEditUbicaciones;
+            this.colid_ubicacion.FieldName = "id_ubicacion";
+            this.colid_ubicacion.Name = "colid_ubicacion";
+            this.colid_ubicacion.Visible = true;
+            this.colid_ubicacion.VisibleIndex = 8;
+            // 
+            // bindingSourceUbicaciones
+            // 
+            this.bindingSourceUbicaciones.DataMember = "ubicaciones_granel";
+            this.bindingSourceUbicaciones.DataSource = this.dsRecepcionMPx1;
+            // 
+            // GridLookUpEditUbicaciones
+            // 
+            this.GridLookUpEditUbicaciones.AutoHeight = false;
+            this.GridLookUpEditUbicaciones.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.GridLookUpEditUbicaciones.DataSource = this.bindingSourceUbicaciones;
+            this.GridLookUpEditUbicaciones.DisplayMember = "rack";
+            this.GridLookUpEditUbicaciones.Name = "GridLookUpEditUbicaciones";
+            this.GridLookUpEditUbicaciones.PopupView = this.gridView1;
+            this.GridLookUpEditUbicaciones.ValueMember = "id";
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid2,
+            this.colrack,
+            this.colcodigo_barra});
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // colid2
+            // 
+            this.colid2.FieldName = "id";
+            this.colid2.Name = "colid2";
+            // 
+            // colrack
+            // 
+            this.colrack.Caption = "Seleccione la Ubicación";
+            this.colrack.FieldName = "rack";
+            this.colrack.Name = "colrack";
+            this.colrack.Visible = true;
+            this.colrack.VisibleIndex = 0;
+            // 
+            // colcodigo_barra
+            // 
+            this.colcodigo_barra.FieldName = "codigo_barra";
+            this.colcodigo_barra.Name = "colcodigo_barra";
+            // 
             // frmMP_Granel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1045, 657);
+            this.ClientSize = new System.Drawing.Size(1167, 657);
             this.Controls.Add(this.cmdGenerarIngreso);
             this.Controls.Add(this.checkBoxSeleccionarTodas);
             this.Controls.Add(this.cmdLoteActivo);
@@ -432,8 +548,14 @@ namespace LOSA.RecepcionMP
             ((System.ComponentModel.ISupportInitialize)(this.gcMP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditBarco)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceBarcos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdPasarAlosy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkSeleccionar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceUbicaciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridLookUpEditUbicaciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -476,5 +598,17 @@ namespace LOSA.RecepcionMP
         private RepositoryItemCheckEdit checkSeleccionar;
         private GridColumn colseleccionar;
         private DevExpress.XtraEditors.SimpleButton cmdGenerarIngreso;
+        private RepositoryItemGridLookUpEdit gridLookUpEditBarco;
+        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit1View;
+        private System.Windows.Forms.BindingSource bindingSourceBarcos;
+        private GridColumn colid1;
+        private GridColumn coldescripcion;
+        private GridColumn colid_ubicacion;
+        private System.Windows.Forms.BindingSource bindingSourceUbicaciones;
+        private RepositoryItemGridLookUpEdit GridLookUpEditUbicaciones;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private GridColumn colid2;
+        private GridColumn colrack;
+        private GridColumn colcodigo_barra;
     }
 }
