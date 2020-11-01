@@ -113,7 +113,7 @@
             this.colevento.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.colevento.OptionsFilter.AllowFilter = false;
             this.colevento.Visible = true;
-            this.colevento.VisibleIndex = 1;
+            this.colevento.VisibleIndex = 0;
             // 
             // colfecha
             // 
@@ -127,7 +127,7 @@
             this.colfecha.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.colfecha.OptionsFilter.AllowFilter = false;
             this.colfecha.Visible = true;
-            this.colfecha.VisibleIndex = 2;
+            this.colfecha.VisibleIndex = 1;
             // 
             // collote_materia_prima
             // 
@@ -139,7 +139,7 @@
             this.collote_materia_prima.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.collote_materia_prima.OptionsFilter.AllowFilter = false;
             this.collote_materia_prima.Visible = true;
-            this.collote_materia_prima.VisibleIndex = 3;
+            this.collote_materia_prima.VisibleIndex = 2;
             // 
             // colusuario
             // 
@@ -152,7 +152,7 @@
             this.colusuario.OptionsFilter.AllowAutoFilter = false;
             this.colusuario.OptionsFilter.AllowFilter = false;
             this.colusuario.Visible = true;
-            this.colusuario.VisibleIndex = 4;
+            this.colusuario.VisibleIndex = 3;
             // 
             // colcantidad
             // 
@@ -165,15 +165,13 @@
             this.colcantidad.OptionsFilter.AllowAutoFilter = false;
             this.colcantidad.OptionsFilter.AllowFilter = false;
             this.colcantidad.Visible = true;
-            this.colcantidad.VisibleIndex = 5;
+            this.colcantidad.VisibleIndex = 4;
             // 
             // colnum
             // 
             this.colnum.Caption = "# Tarima";
             this.colnum.FieldName = "num";
             this.colnum.Name = "colnum";
-            this.colnum.Visible = true;
-            this.colnum.VisibleIndex = 0;
             // 
             // btnAtras
             // 
