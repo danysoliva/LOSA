@@ -15,6 +15,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LOSA.PlanMPreque;
+using LOSA.TransaccionesPT;
 
 namespace LOSA
 {
@@ -242,8 +243,11 @@ namespace LOSA
 
         private void cmdTarimasPT_Click(object sender, EventArgs e)
         {
-            frmHomeEnsacado frm = new frmHomeEnsacado(UsuarioLogeado);
-            frm.WindowState = FormWindowState.Maximized;
+            //frmHomeEnsacado frm = new frmHomeEnsacado(UsuarioLogeado);
+            //frm.WindowState = FormWindowState.Maximized;
+            //frm.Show();
+
+            frmactivacionPT frm = new frmactivacionPT(UsuarioLogeado);
             frm.Show();
         }
 
@@ -357,6 +361,18 @@ namespace LOSA
         private void btnRecuento_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnAlimentacion_Click(object sender, EventArgs e)
+        {
+            frmPlanPT frm = new frmPlanPT(UsuarioLogeado);
+            frm.Show();
+        }
+
+        private void btnPlantarimas_Click(object sender, EventArgs e)
+        {
+            frm_planes_recibo_pt frm = new frm_planes_recibo_pt(UsuarioLogeado);
+            frm.Show();
         }
     }
 }
