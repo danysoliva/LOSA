@@ -155,6 +155,12 @@
     <Compile Include="Calidad\frmcalidadcausas.Designer.cs">
       <DependentUpon>frmcalidadcausas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\frmcausasRetencion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmcausasRetencion.Designer.cs">
+      <DependentUpon>frmcausasRetencion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\frmEstadosTarimaCalidad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -475,6 +481,12 @@
     </Compile>
     <Compile Include="Logistica\frmCantidadMP.Designer.cs">
       <DependentUpon>frmCantidadMP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\frmAlimentacionPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\frmAlimentacionPanel.Designer.cs">
+      <DependentUpon>frmAlimentacionPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Produccion\frmHomeEnsacado.cs">
       <SubType>Form</SubType>
@@ -891,6 +903,12 @@
     <Compile Include="TransaccionesPT\frmGestiondePlan.Designer.cs">
       <DependentUpon>frmGestiondePlan.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesPT\frmLotePT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesPT\frmLotePT.Designer.cs">
+      <DependentUpon>frmLotePT.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesPT\frmPlanPT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -920,6 +938,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmcalidadcausas.resx">
       <DependentUpon>frmcalidadcausas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmcausasRetencion.resx">
+      <DependentUpon>frmcausasRetencion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmEstadosTarimaCalidad.resx">
       <DependentUpon>frmEstadosTarimaCalidad.cs</DependentUpon>
@@ -1058,6 +1079,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Logistica\frmCantidadMP.resx">
       <DependentUpon>frmCantidadMP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\frmAlimentacionPanel.resx">
+      <DependentUpon>frmAlimentacionPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\frmHomeEnsacado.resx">
       <DependentUpon>frmHomeEnsacado.cs</DependentUpon>
@@ -1249,6 +1273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesPT\frmGestiondePlan.resx">
       <DependentUpon>frmGestiondePlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesPT\frmLotePT.resx">
+      <DependentUpon>frmLotePT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesPT\frmPlanPT.resx">
       <DependentUpon>frmPlanPT.cs</DependentUpon>

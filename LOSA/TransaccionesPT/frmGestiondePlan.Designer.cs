@@ -39,19 +39,15 @@
             this.txtSacos = new DevExpress.XtraEditors.TextEdit();
             this.txttarimas = new DevExpress.XtraEditors.TextEdit();
             this.grdproducto = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsPT = new LOSA.TransaccionesPT.dsPT();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colitemcode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colitemname = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grdpresentacion = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.presentacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfactor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grdcliente = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colCardCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCardName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -59,28 +55,35 @@
             this.dtfechaprod = new DevExpress.XtraEditors.DateEdit();
             this.devencimiento = new DevExpress.XtraEditors.DateEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.BtnSalir = new DevExpress.XtraEditors.SimpleButton();
-            this.btnCrear = new DevExpress.XtraEditors.SimpleButton();
             this.txtpesoxtarima = new DevExpress.XtraEditors.TextEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.txtlot_number = new DevExpress.XtraEditors.TextEdit();
+            this.txtLote = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCrear = new DevExpress.XtraEditors.SimpleButton();
+            this.BtnSalir = new DevExpress.XtraEditors.SimpleButton();
+            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsPT = new LOSA.TransaccionesPT.dsPT();
+            this.presentacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.txtSacos.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txttarimas.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdproducto.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsPT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdpresentacion.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.presentacionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdcliente.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtfechaprod.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtfechaprod.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.devencimiento.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.devencimiento.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtpesoxtarima.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtlot_number.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsPT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.presentacionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -189,16 +192,6 @@
             this.grdproducto.Size = new System.Drawing.Size(421, 28);
             this.grdproducto.TabIndex = 8;
             // 
-            // productosBindingSource
-            // 
-            this.productosBindingSource.DataMember = "productos";
-            this.productosBindingSource.DataSource = this.dsPT;
-            // 
-            // dsPT
-            // 
-            this.dsPT.DataSetName = "dsPT";
-            this.dsPT.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // gridLookUpEdit1View
             // 
             this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -240,11 +233,6 @@
             this.grdpresentacion.Size = new System.Drawing.Size(421, 28);
             this.grdpresentacion.TabIndex = 9;
             this.grdpresentacion.EditValueChanged += new System.EventHandler(this.grdpresentacion_EditValueChanged);
-            // 
-            // presentacionBindingSource
-            // 
-            this.presentacionBindingSource.DataMember = "presentacion";
-            this.presentacionBindingSource.DataSource = this.dsPT;
             // 
             // gridView1
             // 
@@ -291,11 +279,6 @@
             this.grdcliente.Properties.ValueMember = "CardCode";
             this.grdcliente.Size = new System.Drawing.Size(421, 28);
             this.grdcliente.TabIndex = 10;
-            // 
-            // clienteBindingSource
-            // 
-            this.clienteBindingSource.DataMember = "cliente";
-            this.clienteBindingSource.DataSource = this.dsPT;
             // 
             // gridView2
             // 
@@ -369,35 +352,6 @@
             this.labelControl9.TabIndex = 15;
             this.labelControl9.Text = "Fecha de Vencimiento:";
             // 
-            // BtnSalir
-            // 
-            this.BtnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnSalir.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.BtnSalir.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.BtnSalir.Appearance.Options.UseBackColor = true;
-            this.BtnSalir.Appearance.Options.UseFont = true;
-            this.BtnSalir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnSalir.ImageOptions.Image")));
-            this.BtnSalir.Location = new System.Drawing.Point(492, 6);
-            this.BtnSalir.Name = "BtnSalir";
-            this.BtnSalir.Size = new System.Drawing.Size(139, 53);
-            this.BtnSalir.TabIndex = 17;
-            this.BtnSalir.Text = "Regresar";
-            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
-            // 
-            // btnCrear
-            // 
-            this.btnCrear.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnCrear.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.btnCrear.Appearance.Options.UseBackColor = true;
-            this.btnCrear.Appearance.Options.UseFont = true;
-            this.btnCrear.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCrear.ImageOptions.Image")));
-            this.btnCrear.Location = new System.Drawing.Point(6, 5);
-            this.btnCrear.Name = "btnCrear";
-            this.btnCrear.Size = new System.Drawing.Size(139, 54);
-            this.btnCrear.TabIndex = 18;
-            this.btnCrear.Text = "Guardar";
-            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
-            // 
             // txtpesoxtarima
             // 
             this.txtpesoxtarima.EditValue = "1";
@@ -427,9 +381,82 @@
             this.labelControl7.Appearance.Options.UseFont = true;
             this.labelControl7.Location = new System.Drawing.Point(39, 244);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(92, 21);
+            this.labelControl7.Size = new System.Drawing.Size(100, 21);
             this.labelControl7.TabIndex = 21;
-            this.labelControl7.Text = "Presentacion:";
+            this.labelControl7.Text = "Lote Producto:";
+            // 
+            // txtlot_number
+            // 
+            this.txtlot_number.EditValue = "";
+            this.txtlot_number.Enabled = false;
+            this.txtlot_number.Location = new System.Drawing.Point(152, 237);
+            this.txtlot_number.Name = "txtlot_number";
+            this.txtlot_number.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtlot_number.Properties.Appearance.Options.UseFont = true;
+            this.txtlot_number.Properties.Mask.EditMask = "n";
+            this.txtlot_number.Size = new System.Drawing.Size(333, 28);
+            this.txtlot_number.TabIndex = 22;
+            // 
+            // txtLote
+            // 
+            this.txtLote.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLote.Appearance.Options.UseFont = true;
+            this.txtLote.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.txtLote.ImageOptions.Image = global::LOSA.Properties.Resources.tap;
+            this.txtLote.Location = new System.Drawing.Point(492, 233);
+            this.txtLote.Name = "txtLote";
+            this.txtLote.Size = new System.Drawing.Size(42, 40);
+            this.txtLote.TabIndex = 60;
+            this.txtLote.Click += new System.EventHandler(this.txtLote_Click);
+            // 
+            // btnCrear
+            // 
+            this.btnCrear.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnCrear.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.btnCrear.Appearance.Options.UseBackColor = true;
+            this.btnCrear.Appearance.Options.UseFont = true;
+            this.btnCrear.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCrear.ImageOptions.Image")));
+            this.btnCrear.Location = new System.Drawing.Point(6, 5);
+            this.btnCrear.Name = "btnCrear";
+            this.btnCrear.Size = new System.Drawing.Size(139, 54);
+            this.btnCrear.TabIndex = 18;
+            this.btnCrear.Text = "Guardar";
+            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
+            // 
+            // BtnSalir
+            // 
+            this.BtnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnSalir.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.BtnSalir.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.BtnSalir.Appearance.Options.UseBackColor = true;
+            this.BtnSalir.Appearance.Options.UseFont = true;
+            this.BtnSalir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnSalir.ImageOptions.Image")));
+            this.BtnSalir.Location = new System.Drawing.Point(492, 6);
+            this.BtnSalir.Name = "BtnSalir";
+            this.BtnSalir.Size = new System.Drawing.Size(139, 53);
+            this.BtnSalir.TabIndex = 17;
+            this.BtnSalir.Text = "Regresar";
+            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
+            // 
+            // clienteBindingSource
+            // 
+            this.clienteBindingSource.DataMember = "cliente";
+            this.clienteBindingSource.DataSource = this.dsPT;
+            // 
+            // dsPT
+            // 
+            this.dsPT.DataSetName = "dsPT";
+            this.dsPT.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // presentacionBindingSource
+            // 
+            this.presentacionBindingSource.DataMember = "presentacion";
+            this.presentacionBindingSource.DataSource = this.dsPT;
+            // 
+            // productosBindingSource
+            // 
+            this.productosBindingSource.DataMember = "productos";
+            this.productosBindingSource.DataSource = this.dsPT;
             // 
             // frmGestiondePlan
             // 
@@ -438,6 +465,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(638, 560);
+            this.Controls.Add(this.txtLote);
+            this.Controls.Add(this.txtlot_number);
             this.Controls.Add(this.labelControl7);
             this.Controls.Add(this.txtpesoxtarima);
             this.Controls.Add(this.labelControl10);
@@ -465,20 +494,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSacos.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txttarimas.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdproducto.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsPT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdpresentacion.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.presentacionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdcliente.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtfechaprod.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtfechaprod.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.devencimiento.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.devencimiento.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtpesoxtarima.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtlot_number.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsPT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.presentacionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -520,5 +550,7 @@
         private DevExpress.XtraEditors.TextEdit txtpesoxtarima;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.TextEdit txtlot_number;
+        private DevExpress.XtraEditors.SimpleButton txtLote;
     }
 }

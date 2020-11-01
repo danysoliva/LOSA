@@ -125,7 +125,8 @@ namespace LOSA.TransaccionesPT
                                 cmd.Parameters.AddWithValue("@codigo_barra", barcode);
                                 cmd.Parameters.AddWithValue("@cantidad", tar1.Cantidad);
                                 cmd.Parameters.AddWithValue("@peso", tar1.Peso);
-                                cmd.Parameters.AddWithValue("@Id_Alimentacion", tar1.Id_alimentacion); 
+                                cmd.Parameters.AddWithValue("@Id_Alimentacion", tar1.Id_alimentacion);  
+                                cmd.Parameters.AddWithValue("@lote_pt", tar1.LotePT);
                                 int vid_tarima = Convert.ToInt32(cmd.ExecuteScalar());
 
                                 List1.Add(vid_tarima);
