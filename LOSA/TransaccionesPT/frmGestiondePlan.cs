@@ -190,6 +190,11 @@ namespace LOSA.TransaccionesPT
                 CajaDialogo.Error("Debe seleccionar un articulo.");
                 return;
             }
+            if (txtlot_number.Text == "")
+            {
+                CajaDialogo.Error("Debe seleccionar un lote para planificar las tarimas.");
+                return;
+            }
             if (grdpresentacion.EditValue == null)
             {
                 CajaDialogo.Error("Debe seleccionar una presentacion.");
@@ -250,6 +255,7 @@ namespace LOSA.TransaccionesPT
                     cmd.Parameters.AddWithValue("@cantidad", txtSacos.Text);
                     cmd.Parameters.AddWithValue("@peso", txtpesoxtarima.Text);
                     cmd.Parameters.AddWithValue("@Id_Alimentacion", id_Inserted);
+                    cmd.Parameters.AddWithValue("@lote_pt", txtlot_number.Text);
                     cmd.ExecuteNonQuery();
                 }
                 exitoso = true;
@@ -270,6 +276,15 @@ namespace LOSA.TransaccionesPT
             {
                 CajaDialogo.Information("Informacion Planificada.");
                 this.Close();
+            }
+        }
+
+        private void txtLote_Click(object sender, EventArgs e)
+        {
+            frmLotePT frm = new frmLotePT();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                txtlot_number.Text = frm.Lote.ToString();
             }
         }
     }

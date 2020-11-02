@@ -197,11 +197,15 @@ namespace LOSA
             frmOptionMontaCarga frm = new frmOptionMontaCarga(UsuarioLogeado, 1);//MP
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
+
+
         }
 
         private void btnAlimentacionManual_Click(object sender, EventArgs e)
         {
-            frmAlimentacionManual frm = new frmAlimentacionManual(UsuarioLogeado);
+            //frmAlimentacionManual frm = new frmAlimentacionManual(UsuarioLogeado);
+            //frm.Show();
+            frmAlimentacionPanel frm = new frmAlimentacionPanel();
             frm.Show();
         }
 

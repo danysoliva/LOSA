@@ -39,19 +39,15 @@
             this.txtSacos = new DevExpress.XtraEditors.TextEdit();
             this.txttarimas = new DevExpress.XtraEditors.TextEdit();
             this.grdproducto = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsPT = new LOSA.TransaccionesPT.dsPT();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colitemcode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colitemname = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grdpresentacion = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.presentacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfactor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grdcliente = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colCardCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCardName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -59,27 +55,35 @@
             this.dtfechaprod = new DevExpress.XtraEditors.DateEdit();
             this.devencimiento = new DevExpress.XtraEditors.DateEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.BtnSalir = new DevExpress.XtraEditors.SimpleButton();
-            this.btnCrear = new DevExpress.XtraEditors.SimpleButton();
             this.txtpesoxtarima = new DevExpress.XtraEditors.TextEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.txtlot_number = new DevExpress.XtraEditors.TextEdit();
+            this.txtLote = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCrear = new DevExpress.XtraEditors.SimpleButton();
+            this.BtnSalir = new DevExpress.XtraEditors.SimpleButton();
+            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsPT = new LOSA.TransaccionesPT.dsPT();
+            this.presentacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.txtSacos.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txttarimas.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdproducto.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsPT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdpresentacion.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.presentacionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdcliente.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtfechaprod.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtfechaprod.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.devencimiento.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.devencimiento.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtpesoxtarima.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtlot_number.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsPT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.presentacionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -129,7 +133,7 @@
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(57, 250);
+            this.labelControl5.Location = new System.Drawing.Point(46, 287);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(123, 21);
             this.labelControl5.TabIndex = 4;
@@ -141,7 +145,7 @@
             this.labelControl6.Appearance.ForeColor = System.Drawing.Color.Blue;
             this.labelControl6.Appearance.Options.UseFont = true;
             this.labelControl6.Appearance.Options.UseForeColor = true;
-            this.labelControl6.Location = new System.Drawing.Point(341, 250);
+            this.labelControl6.Location = new System.Drawing.Point(330, 287);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(97, 21);
             this.labelControl6.TabIndex = 5;
@@ -150,7 +154,7 @@
             // txtSacos
             // 
             this.txtSacos.EditValue = "1";
-            this.txtSacos.Location = new System.Drawing.Point(186, 245);
+            this.txtSacos.Location = new System.Drawing.Point(175, 282);
             this.txtSacos.Name = "txtSacos";
             this.txtSacos.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSacos.Properties.Appearance.Options.UseFont = true;
@@ -163,7 +167,7 @@
             // txttarimas
             // 
             this.txttarimas.EditValue = "1";
-            this.txttarimas.Location = new System.Drawing.Point(444, 245);
+            this.txttarimas.Location = new System.Drawing.Point(433, 282);
             this.txttarimas.Name = "txttarimas";
             this.txttarimas.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txttarimas.Properties.Appearance.Options.UseFont = true;
@@ -187,16 +191,6 @@
             this.grdproducto.Properties.ValueMember = "itemcode";
             this.grdproducto.Size = new System.Drawing.Size(421, 28);
             this.grdproducto.TabIndex = 8;
-            // 
-            // productosBindingSource
-            // 
-            this.productosBindingSource.DataMember = "productos";
-            this.productosBindingSource.DataSource = this.dsPT;
-            // 
-            // dsPT
-            // 
-            this.dsPT.DataSetName = "dsPT";
-            this.dsPT.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridLookUpEdit1View
             // 
@@ -239,11 +233,6 @@
             this.grdpresentacion.Size = new System.Drawing.Size(421, 28);
             this.grdpresentacion.TabIndex = 9;
             this.grdpresentacion.EditValueChanged += new System.EventHandler(this.grdpresentacion_EditValueChanged);
-            // 
-            // presentacionBindingSource
-            // 
-            this.presentacionBindingSource.DataMember = "presentacion";
-            this.presentacionBindingSource.DataSource = this.dsPT;
             // 
             // gridView1
             // 
@@ -291,11 +280,6 @@
             this.grdcliente.Size = new System.Drawing.Size(421, 28);
             this.grdcliente.TabIndex = 10;
             // 
-            // clienteBindingSource
-            // 
-            this.clienteBindingSource.DataMember = "cliente";
-            this.clienteBindingSource.DataSource = this.dsPT;
-            // 
             // gridView2
             // 
             this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -324,7 +308,7 @@
             // 
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(45, 341);
+            this.labelControl8.Location = new System.Drawing.Point(34, 378);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(146, 21);
             this.labelControl8.TabIndex = 13;
@@ -333,7 +317,7 @@
             // dtfechaprod
             // 
             this.dtfechaprod.EditValue = null;
-            this.dtfechaprod.Location = new System.Drawing.Point(208, 334);
+            this.dtfechaprod.Location = new System.Drawing.Point(197, 371);
             this.dtfechaprod.Name = "dtfechaprod";
             this.dtfechaprod.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtfechaprod.Properties.Appearance.Options.UseFont = true;
@@ -347,7 +331,7 @@
             // devencimiento
             // 
             this.devencimiento.EditValue = null;
-            this.devencimiento.Location = new System.Drawing.Point(208, 384);
+            this.devencimiento.Location = new System.Drawing.Point(197, 421);
             this.devencimiento.Name = "devencimiento";
             this.devencimiento.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.devencimiento.Properties.Appearance.Options.UseFont = true;
@@ -362,11 +346,82 @@
             // 
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(45, 387);
+            this.labelControl9.Location = new System.Drawing.Point(34, 424);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(155, 21);
             this.labelControl9.TabIndex = 15;
             this.labelControl9.Text = "Fecha de Vencimiento:";
+            // 
+            // txtpesoxtarima
+            // 
+            this.txtpesoxtarima.EditValue = "1";
+            this.txtpesoxtarima.Enabled = false;
+            this.txtpesoxtarima.Location = new System.Drawing.Point(175, 326);
+            this.txtpesoxtarima.Name = "txtpesoxtarima";
+            this.txtpesoxtarima.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpesoxtarima.Properties.Appearance.Options.UseFont = true;
+            this.txtpesoxtarima.Properties.Mask.EditMask = "n";
+            this.txtpesoxtarima.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtpesoxtarima.Size = new System.Drawing.Size(129, 28);
+            this.txtpesoxtarima.TabIndex = 20;
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl10.Appearance.Options.UseFont = true;
+            this.labelControl10.Location = new System.Drawing.Point(56, 329);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(113, 21);
+            this.labelControl10.TabIndex = 19;
+            this.labelControl10.Text = "Peso por tarima:";
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl7.Appearance.Options.UseFont = true;
+            this.labelControl7.Location = new System.Drawing.Point(39, 244);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(100, 21);
+            this.labelControl7.TabIndex = 21;
+            this.labelControl7.Text = "Lote Producto:";
+            // 
+            // txtlot_number
+            // 
+            this.txtlot_number.EditValue = "";
+            this.txtlot_number.Enabled = false;
+            this.txtlot_number.Location = new System.Drawing.Point(152, 237);
+            this.txtlot_number.Name = "txtlot_number";
+            this.txtlot_number.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtlot_number.Properties.Appearance.Options.UseFont = true;
+            this.txtlot_number.Properties.Mask.EditMask = "n";
+            this.txtlot_number.Size = new System.Drawing.Size(333, 28);
+            this.txtlot_number.TabIndex = 22;
+            // 
+            // txtLote
+            // 
+            this.txtLote.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLote.Appearance.Options.UseFont = true;
+            this.txtLote.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.txtLote.ImageOptions.Image = global::LOSA.Properties.Resources.tap;
+            this.txtLote.Location = new System.Drawing.Point(492, 233);
+            this.txtLote.Name = "txtLote";
+            this.txtLote.Size = new System.Drawing.Size(42, 40);
+            this.txtLote.TabIndex = 60;
+            this.txtLote.Click += new System.EventHandler(this.txtLote_Click);
+            // 
+            // btnCrear
+            // 
+            this.btnCrear.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnCrear.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.btnCrear.Appearance.Options.UseBackColor = true;
+            this.btnCrear.Appearance.Options.UseFont = true;
+            this.btnCrear.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCrear.ImageOptions.Image")));
+            this.btnCrear.Location = new System.Drawing.Point(6, 5);
+            this.btnCrear.Name = "btnCrear";
+            this.btnCrear.Size = new System.Drawing.Size(139, 54);
+            this.btnCrear.TabIndex = 18;
+            this.btnCrear.Text = "Guardar";
+            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 
             // BtnSalir
             // 
@@ -383,42 +438,25 @@
             this.BtnSalir.Text = "Regresar";
             this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
-            // btnCrear
+            // clienteBindingSource
             // 
-            this.btnCrear.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnCrear.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.btnCrear.Appearance.Options.UseBackColor = true;
-            this.btnCrear.Appearance.Options.UseFont = true;
-            this.btnCrear.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCrear.ImageOptions.Image")));
-            this.btnCrear.Location = new System.Drawing.Point(6, 5);
-            this.btnCrear.Name = "btnCrear";
-            this.btnCrear.Size = new System.Drawing.Size(139, 54);
-            this.btnCrear.TabIndex = 18;
-            this.btnCrear.Text = "Guardar";
-            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
+            this.clienteBindingSource.DataMember = "cliente";
+            this.clienteBindingSource.DataSource = this.dsPT;
             // 
-            // txtpesoxtarima
+            // dsPT
             // 
-            this.txtpesoxtarima.EditValue = "1";
-            this.txtpesoxtarima.Enabled = false;
-            this.txtpesoxtarima.Location = new System.Drawing.Point(186, 289);
-            this.txtpesoxtarima.Name = "txtpesoxtarima";
-            this.txtpesoxtarima.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpesoxtarima.Properties.Appearance.Options.UseFont = true;
-            this.txtpesoxtarima.Properties.Mask.EditMask = "n";
-            this.txtpesoxtarima.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtpesoxtarima.Size = new System.Drawing.Size(129, 28);
-            this.txtpesoxtarima.TabIndex = 20;
+            this.dsPT.DataSetName = "dsPT";
+            this.dsPT.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // labelControl10
+            // presentacionBindingSource
             // 
-            this.labelControl10.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(67, 292);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(113, 21);
-            this.labelControl10.TabIndex = 19;
-            this.labelControl10.Text = "Peso por tarima:";
+            this.presentacionBindingSource.DataMember = "presentacion";
+            this.presentacionBindingSource.DataSource = this.dsPT;
+            // 
+            // productosBindingSource
+            // 
+            this.productosBindingSource.DataMember = "productos";
+            this.productosBindingSource.DataSource = this.dsPT;
             // 
             // frmGestiondePlan
             // 
@@ -427,6 +465,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(638, 560);
+            this.Controls.Add(this.txtLote);
+            this.Controls.Add(this.txtlot_number);
+            this.Controls.Add(this.labelControl7);
             this.Controls.Add(this.txtpesoxtarima);
             this.Controls.Add(this.labelControl10);
             this.Controls.Add(this.btnCrear);
@@ -453,20 +494,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSacos.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txttarimas.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdproducto.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsPT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdpresentacion.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.presentacionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdcliente.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtfechaprod.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtfechaprod.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.devencimiento.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.devencimiento.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtpesoxtarima.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtlot_number.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsPT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.presentacionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -507,5 +549,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colCardName;
         private DevExpress.XtraEditors.TextEdit txtpesoxtarima;
         private DevExpress.XtraEditors.LabelControl labelControl10;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.TextEdit txtlot_number;
+        private DevExpress.XtraEditors.SimpleButton txtLote;
     }
 }
