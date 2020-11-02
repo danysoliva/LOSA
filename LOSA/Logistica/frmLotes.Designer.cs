@@ -135,8 +135,6 @@
             this.colid.OptionsColumn.AllowEdit = false;
             this.colid.OptionsColumn.AllowMove = false;
             this.colid.OptionsFilter.AllowAutoFilter = false;
-            this.colid.Visible = true;
-            this.colid.VisibleIndex = 0;
             // 
             // collote_materia_prima
             // 
@@ -147,7 +145,7 @@
             this.collote_materia_prima.OptionsColumn.AllowMove = false;
             this.collote_materia_prima.OptionsFilter.AllowFilter = false;
             this.collote_materia_prima.Visible = true;
-            this.collote_materia_prima.VisibleIndex = 1;
+            this.collote_materia_prima.VisibleIndex = 0;
             // 
             // colfecha_ingreso
             // 
@@ -158,7 +156,7 @@
             this.colfecha_ingreso.OptionsColumn.AllowMove = false;
             this.colfecha_ingreso.OptionsFilter.AllowFilter = false;
             this.colfecha_ingreso.Visible = true;
-            this.colfecha_ingreso.VisibleIndex = 2;
+            this.colfecha_ingreso.VisibleIndex = 1;
             // 
             // colcantidad
             // 
@@ -171,7 +169,7 @@
             this.colcantidad.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cantidad", "Total={0:#.##}")});
             this.colcantidad.Visible = true;
-            this.colcantidad.VisibleIndex = 3;
+            this.colcantidad.VisibleIndex = 2;
             // 
             // colfecha_vencimiento
             // 
@@ -182,7 +180,7 @@
             this.colfecha_vencimiento.OptionsColumn.AllowMove = false;
             this.colfecha_vencimiento.OptionsFilter.AllowFilter = false;
             this.colfecha_vencimiento.Visible = true;
-            this.colfecha_vencimiento.VisibleIndex = 4;
+            this.colfecha_vencimiento.VisibleIndex = 3;
             // 
             // colMateriaPrima
             // 

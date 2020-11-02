@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLotesXMP));
             this.gcLotes = new DevExpress.XtraGrid.GridControl();
-            this.lotesXProveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lotesXProveedorBindingSource = new System.Windows.Forms.BindingSource();
             this.dsLogistica = new LOSA.Logistica.dsLogistica2();
             this.gvLotes = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -43,7 +42,7 @@
             this.colidMateriaPrima = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.cbMateriaPrima = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.materiaprimaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.materiaprimaBindingSource = new System.Windows.Forms.BindingSource();
             this.gvMateriaPrima = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colitemcode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colitemdescrip = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -131,8 +130,6 @@
             this.colid.OptionsColumn.AllowEdit = false;
             this.colid.OptionsColumn.AllowMove = false;
             this.colid.OptionsFilter.AllowAutoFilter = false;
-            this.colid.Visible = true;
-            this.colid.VisibleIndex = 0;
             // 
             // collote_materia_prima
             // 
@@ -143,7 +140,7 @@
             this.collote_materia_prima.OptionsColumn.AllowMove = false;
             this.collote_materia_prima.OptionsFilter.AllowFilter = false;
             this.collote_materia_prima.Visible = true;
-            this.collote_materia_prima.VisibleIndex = 1;
+            this.collote_materia_prima.VisibleIndex = 0;
             // 
             // colfecha_ingreso
             // 
@@ -154,7 +151,7 @@
             this.colfecha_ingreso.OptionsColumn.AllowMove = false;
             this.colfecha_ingreso.OptionsFilter.AllowFilter = false;
             this.colfecha_ingreso.Visible = true;
-            this.colfecha_ingreso.VisibleIndex = 2;
+            this.colfecha_ingreso.VisibleIndex = 1;
             // 
             // colcantidad
             // 
@@ -167,7 +164,7 @@
             this.colcantidad.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cantidad", "Total={0:#.##}")});
             this.colcantidad.Visible = true;
-            this.colcantidad.VisibleIndex = 3;
+            this.colcantidad.VisibleIndex = 2;
             // 
             // colfecha_vencimiento
             // 
@@ -178,7 +175,7 @@
             this.colfecha_vencimiento.OptionsColumn.AllowMove = false;
             this.colfecha_vencimiento.OptionsFilter.AllowFilter = false;
             this.colfecha_vencimiento.Visible = true;
-            this.colfecha_vencimiento.VisibleIndex = 4;
+            this.colfecha_vencimiento.VisibleIndex = 3;
             // 
             // colMateriaPrima
             // 
@@ -218,8 +215,8 @@
             this.cbMateriaPrima.Properties.NullText = "";
             this.cbMateriaPrima.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
             this.cbMateriaPrima.Properties.PopupFormSize = new System.Drawing.Size(400, 0);
+            this.cbMateriaPrima.Properties.PopupView = this.gvMateriaPrima;
             this.cbMateriaPrima.Properties.ValueMember = "itemcode";
-            this.cbMateriaPrima.Properties.View = this.gvMateriaPrima;
             this.cbMateriaPrima.Size = new System.Drawing.Size(314, 32);
             this.cbMateriaPrima.TabIndex = 93;
             this.cbMateriaPrima.EditValueChanged += new System.EventHandler(this.cbMateriaPrima_EditValueChanged);
