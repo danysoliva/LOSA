@@ -89,5 +89,17 @@ namespace LOSA.Reportes
             rptUbicaciones frm = new rptUbicaciones();
             frm.Show();
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            frmexistenciaPT frm = new frmexistenciaPT();
+            frm.Show();
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            frmreporteLotePT frm = new frmreporteLotePT();
+            frm.Show();
+        }
     }
 }

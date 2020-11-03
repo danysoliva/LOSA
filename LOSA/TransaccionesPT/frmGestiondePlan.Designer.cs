@@ -62,10 +62,16 @@
             this.txtLote = new DevExpress.XtraEditors.SimpleButton();
             this.btnCrear = new DevExpress.XtraEditors.SimpleButton();
             this.BtnSalir = new DevExpress.XtraEditors.SimpleButton();
-            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.grd_turno = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.turnoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsPT = new LOSA.TransaccionesPT.dsPT();
+            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.presentacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colturno = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtSacos.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txttarimas.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdproducto.Properties)).BeginInit();
@@ -80,8 +86,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.devencimiento.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtpesoxtarima.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtlot_number.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_turno.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.turnoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.presentacionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -308,7 +317,7 @@
             // 
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(34, 378);
+            this.labelControl8.Location = new System.Drawing.Point(26, 413);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(146, 21);
             this.labelControl8.TabIndex = 13;
@@ -317,7 +326,7 @@
             // dtfechaprod
             // 
             this.dtfechaprod.EditValue = null;
-            this.dtfechaprod.Location = new System.Drawing.Point(197, 371);
+            this.dtfechaprod.Location = new System.Drawing.Point(189, 406);
             this.dtfechaprod.Name = "dtfechaprod";
             this.dtfechaprod.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtfechaprod.Properties.Appearance.Options.UseFont = true;
@@ -331,7 +340,7 @@
             // devencimiento
             // 
             this.devencimiento.EditValue = null;
-            this.devencimiento.Location = new System.Drawing.Point(197, 421);
+            this.devencimiento.Location = new System.Drawing.Point(189, 456);
             this.devencimiento.Name = "devencimiento";
             this.devencimiento.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.devencimiento.Properties.Appearance.Options.UseFont = true;
@@ -346,7 +355,7 @@
             // 
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(34, 424);
+            this.labelControl9.Location = new System.Drawing.Point(26, 459);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(155, 21);
             this.labelControl9.TabIndex = 15;
@@ -379,7 +388,7 @@
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(39, 244);
+            this.labelControl7.Location = new System.Drawing.Point(31, 244);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(100, 21);
             this.labelControl7.TabIndex = 21;
@@ -438,15 +447,57 @@
             this.BtnSalir.Text = "Regresar";
             this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
-            // clienteBindingSource
+            // grd_turno
             // 
-            this.clienteBindingSource.DataMember = "cliente";
-            this.clienteBindingSource.DataSource = this.dsPT;
+            this.grd_turno.EditValue = "";
+            this.grd_turno.Location = new System.Drawing.Point(152, 364);
+            this.grd_turno.Name = "grd_turno";
+            this.grd_turno.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grd_turno.Properties.Appearance.Options.UseFont = true;
+            this.grd_turno.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.grd_turno.Properties.DataSource = this.turnoBindingSource;
+            this.grd_turno.Properties.DisplayMember = "turno";
+            this.grd_turno.Properties.PopupView = this.gridView3;
+            this.grd_turno.Properties.ValueMember = "id";
+            this.grd_turno.Size = new System.Drawing.Size(421, 28);
+            this.grd_turno.TabIndex = 62;
+            // 
+            // gridView3
+            // 
+            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid1,
+            this.colturno});
+            this.gridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView3.OptionsView.ShowAutoFilterRow = true;
+            this.gridView3.OptionsView.ShowGroupPanel = false;
+            // 
+            // labelControl11
+            // 
+            this.labelControl11.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl11.Appearance.Options.UseFont = true;
+            this.labelControl11.Location = new System.Drawing.Point(87, 367);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(44, 21);
+            this.labelControl11.TabIndex = 61;
+            this.labelControl11.Text = "Turno:";
+            // 
+            // turnoBindingSource
+            // 
+            this.turnoBindingSource.DataMember = "turno";
+            this.turnoBindingSource.DataSource = this.dsPT;
             // 
             // dsPT
             // 
             this.dsPT.DataSetName = "dsPT";
             this.dsPT.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // clienteBindingSource
+            // 
+            this.clienteBindingSource.DataMember = "cliente";
+            this.clienteBindingSource.DataSource = this.dsPT;
             // 
             // presentacionBindingSource
             // 
@@ -458,6 +509,19 @@
             this.productosBindingSource.DataMember = "productos";
             this.productosBindingSource.DataSource = this.dsPT;
             // 
+            // colid1
+            // 
+            this.colid1.FieldName = "id";
+            this.colid1.Name = "colid1";
+            // 
+            // colturno
+            // 
+            this.colturno.Caption = "Turno";
+            this.colturno.FieldName = "turno";
+            this.colturno.Name = "colturno";
+            this.colturno.Visible = true;
+            this.colturno.VisibleIndex = 0;
+            // 
             // frmGestiondePlan
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -465,6 +529,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(638, 560);
+            this.Controls.Add(this.grd_turno);
+            this.Controls.Add(this.labelControl11);
             this.Controls.Add(this.txtLote);
             this.Controls.Add(this.txtlot_number);
             this.Controls.Add(this.labelControl7);
@@ -491,6 +557,7 @@
             this.Name = "frmGestiondePlan";
             this.Text = "frmGestiondePlan";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmGestiondePlan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtSacos.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txttarimas.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdproducto.Properties)).EndInit();
@@ -505,8 +572,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.devencimiento.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtpesoxtarima.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtlot_number.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_turno.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.turnoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.presentacionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -552,5 +622,11 @@
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.TextEdit txtlot_number;
         private DevExpress.XtraEditors.SimpleButton txtLote;
+        private DevExpress.XtraEditors.GridLookUpEdit grd_turno;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private DevExpress.XtraEditors.LabelControl labelControl11;
+        private System.Windows.Forms.BindingSource turnoBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colid1;
+        private DevExpress.XtraGrid.Columns.GridColumn colturno;
     }
 }

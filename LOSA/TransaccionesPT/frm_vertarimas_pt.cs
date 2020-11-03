@@ -148,7 +148,7 @@ namespace LOSA.TransaccionesPT
                                 foreach (int i in List1)
                                 {
                                     int id_tarimax = i;
-                                    rptReporteIngresoTarima report = new rptReporteIngresoTarima(id_tarimax);
+                                    rptReporteTarimaPT report = new rptReporteTarimaPT(id_tarimax);
                                     report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
                                     ReportPrintTool printReport = new ReportPrintTool(report);
                                     printReport.ShowPreview();
@@ -172,7 +172,7 @@ namespace LOSA.TransaccionesPT
             {
                 var gridView = (GridView)grd_data.FocusedView;
                 var row = (dsPT.tarimasRow)gridView.GetFocusedDataRow();
-                rptReporteIngresoTarima report = new rptReporteIngresoTarima(row.id);
+                rptReporteTarimaPT report = new rptReporteTarimaPT(row.id);
                 report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
                 ReportPrintTool printReport = new ReportPrintTool(report);
                 printReport.ShowPreview();

@@ -112,24 +112,28 @@ namespace LOSA.TransaccionesPT
         {
             try
             {
-                var gridView = (GridView)grd_data.FocusedView;
-                var row = (dsPT.loadplanesRow)gridView.GetFocusedDataRow();
-                string Query = @"sp_returns_id_tarimas_to_print";
-                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-                cn.Open();
-                SqlCommand cmd = new SqlCommand(Query, cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id_alimentacion", row.id);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                dsPT.PrintTm.Clear();
-                da.Fill(dsPT.PrintTm);
-                cn.Close();
-                foreach (dsPT.PrintTmRow row2 in dsPT.PrintTm.Rows)
+                if (CajaDialogo.Pregunta("Desea imprimir todas las tarimas de este plan?") == DialogResult.Yes)
                 {
-                    rptReporteIngresoTarima boleta = new rptReporteIngresoTarima(row2.id);
-                    boleta.ShowPrintMarginsWarning = false;
-                    boleta.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
-                    boleta.Print();
+
+                    var gridView = (GridView)grd_data.FocusedView;
+                    var row = (dsPT.loadplanesRow)gridView.GetFocusedDataRow();
+                    string Query = @"sp_returns_id_tarimas_to_print";
+                    SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                    cn.Open();
+                    SqlCommand cmd = new SqlCommand(Query, cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id_alimentacion", row.id);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    dsPT.PrintTm.Clear();
+                    da.Fill(dsPT.PrintTm);
+                    cn.Close();
+                    foreach (dsPT.PrintTmRow row2 in dsPT.PrintTm.Rows)
+                    {
+                        rptReporteTarimaPT boleta = new rptReporteTarimaPT(row2.id);
+                        boleta.ShowPrintMarginsWarning = false;
+                        boleta.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
+                        boleta.Print();
+                    }
                 }
 
             }

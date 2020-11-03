@@ -19,6 +19,7 @@ namespace LOSA.Clases
         public string material, nombre_comercial, customer_visibility, oldCode, mixType, CodigoMP;
         public int tipo, tipof, grouping_id, tipor;
         public Boolean aplic_costos, apli_incl, nc_use, nmly_manual;
+        public string Codigo;
 
 
 
@@ -50,6 +51,7 @@ namespace LOSA.Clases
                                       ,coalesce ([id_origen] , 0) as [id_origen]
                                       ,coalesce ([Registro], ' ') as [Registro]
                                       ,coalesce ([diametro], ' ') as [diametro]
+                                      ,Codigo
                                   FROM [ACS].[dbo].[PT_Productos]
                                   where (Codigo) = '" + Pcodigo + "'";
                 //,coalesce([HorasTon], '00:00:00 a.m.') as HorasP
@@ -78,6 +80,7 @@ namespace LOSA.Clases
                     idOr = dl.GetInt32(15);
                     registro = dl.GetString(16);
                     diametro = dl.GetString(17);
+                    Codigo = dl.GetString(18);
                     // horasP = dl.GetTimeSpan(18);
                     recuperado = true;
                 }
@@ -113,6 +116,7 @@ namespace LOSA.Clases
                                       ,coalesce ([id_origen] , 0) as [id_origen]
                                       ,coalesce ([Registro], ' ') as [Registro]
                                       ,coalesce ([diametro], ' ') as [diametro]
+                                      ,Codigo
                                   FROM [ACS].[dbo].[PT_Productos]
                                   where id = '" + IdProd + "'";
                 //,coalesce([HorasTon], '00:00:00 a.m.') as HorasP
@@ -140,7 +144,8 @@ namespace LOSA.Clases
                     tamaño = dl.GetString(14);
                     idOr = dl.GetInt32(15);
                     registro = dl.GetString(16);
-                    diametro = dl.GetString(17);
+                    diametro = dl.GetString(17);    
+                    Codigo = dl.GetString(18);
                     // horasP = dl.GetTimeSpan(18);
                     recuperado = true;
                 }
