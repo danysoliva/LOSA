@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using System.Data.SqlClient;
 using ACS.Classes;
 using LOSA.Clases;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace LOSA.Produccion
 {
@@ -21,10 +22,12 @@ namespace LOSA.Produccion
         public frmAlimentacionPanel()
         {
             InitializeComponent();
+            timertick.Enabled = true;
             Load_data();
         }
          public void Load_data()
         {
+
             string Query = @"sp_obtener_tarimas_alimentacion";
             try
             {
@@ -46,6 +49,63 @@ namespace LOSA.Produccion
         private void cmdHome_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnConsumir_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Desea marcar como consumida la tarima?", "Pregunta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                try
+                {
+                    var gridView = (GridView)grd_data.FocusedView;
+                    var row = (dsProduccion.panelalimentacionRow)gridView.GetFocusedDataRow();
+
+                    string query = @"sp_update_tarimas_alimentacion";
+                    SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                    cn.Open();
+                    SqlCommand cmd = new SqlCommand(query, cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id_tarima", row.id);
+                    cmd.ExecuteNonQuery();
+                    Load_data();
+
+                }
+                catch (Exception ex)
+                {
+                    CajaDialogo.Error(ex.Message);
+                }
+            }
+        }
+
+        private void timertick_Tick(object sender, EventArgs e)
+        {
+            int Nuevo = 0;
+            if (timertick.Enabled)
+            {
+                string Query = @"sp_count_alimentacion_tarima";
+                try
+                {
+                    SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                    cn.Open();
+                    SqlCommand cmd = new SqlCommand(Query, cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    Nuevo = Convert.ToInt32(cmd.ExecuteScalar());
+                    if (Nuevo > 0)
+                    {
+                        Load_data();
+                    }
+                    cn.Close();
+                }
+                catch (Exception ex)
+                {
+                    CajaDialogo.Error(ex.Message);
+                }
+            }
+        }
+
+        private void cmdGuardar_Click(object sender, EventArgs e)
+        {
+            Load_data();
         }
     }
 }

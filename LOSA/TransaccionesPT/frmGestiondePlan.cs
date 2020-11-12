@@ -133,6 +133,15 @@ namespace LOSA.TransaccionesPT
                 da.Fill(dsPT.presentacion);
                 cn.Close();
 
+                cn.Open();
+                Query = @"sp_load_turnos";
+                cmd = new SqlCommand(Query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                dsPT.turno.Clear();
+                da = new SqlDataAdapter(cmd);
+                da.Fill(dsPT.turno);
+                cn.Close();
+
             }
             catch (Exception ex)
             {
@@ -188,6 +197,11 @@ namespace LOSA.TransaccionesPT
             if (grdproducto.EditValue == null)
             {
                 CajaDialogo.Error("Debe seleccionar un articulo.");
+                return;
+            }
+            if (grd_turno.EditValue == null)
+            {
+                CajaDialogo.Error("Debe seleccionar un turno.");
                 return;
             }
             if (txtlot_number.Text == "")
@@ -255,7 +269,8 @@ namespace LOSA.TransaccionesPT
                     cmd.Parameters.AddWithValue("@cantidad", txtSacos.Text);
                     cmd.Parameters.AddWithValue("@peso", txtpesoxtarima.Text);
                     cmd.Parameters.AddWithValue("@Id_Alimentacion", id_Inserted);
-                    cmd.Parameters.AddWithValue("@lote_pt", txtlot_number.Text);
+                    cmd.Parameters.AddWithValue("@lote_pt", txtlot_number.Text);   
+                    cmd.Parameters.AddWithValue("@id_turno", grd_turno.EditValue);
                     cmd.ExecuteNonQuery();
                 }
                 exitoso = true;
@@ -286,6 +301,11 @@ namespace LOSA.TransaccionesPT
             {
                 txtlot_number.Text = frm.Lote.ToString();
             }
+        }
+
+        private void frmGestiondePlan_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

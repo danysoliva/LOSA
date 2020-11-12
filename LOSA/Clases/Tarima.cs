@@ -42,6 +42,7 @@ namespace LOSA.Clases
         int id_estadoCalidad;
         int _id_ingreso;
         int id_alimentacion;
+        private int id_turno;
         DateTime fecha_produccion_pt;
         public Tarima()
         {
@@ -80,6 +81,7 @@ namespace LOSA.Clases
         public int Id_estado_tarima { get => id_estado_tarima; set => id_estado_tarima = value; }
         public int Id_alimentacion { get => id_alimentacion; set => id_alimentacion = value; }
         public DateTime Fecha_produccion_pt { get => fecha_produccion_pt; set => fecha_produccion_pt = value; }
+        public int Id_turno { get => id_turno; set => id_turno = value; }
 
         public bool RecuperarRegistro(int pIdTarima, string pCodigoBarra)
         {
@@ -123,6 +125,7 @@ namespace LOSA.Clases
                     Id_estado_tarima = dr.GetInt32(22);
                     Id_alimentacion = dr.GetInt32(23);
                     Fecha_produccion_pt = dr.GetDateTime(24);
+                    Id_turno = dr.GetInt32(25);
                     Recuperado = true;
                 }
                 dr.Close();
@@ -174,6 +177,7 @@ namespace LOSA.Clases
 
                     Id_alimentacion = dr.GetInt32(23);
                     Fecha_produccion_pt = dr.GetDateTime(24);
+                    Id_turno = dr.GetInt32(25);
                     Recuperado = true;
                 }
                 dr.Close();
@@ -226,6 +230,7 @@ namespace LOSA.Clases
                     Id_ingreso = dr.GetInt32(21);
                     Id_alimentacion = dr.GetInt32(22);   
                     Fecha_produccion_pt = dr.GetDateTime(23);
+                    Id_turno = dr.GetInt32(24);
                     Recuperado = true;
                 }
                 dr.Close();
