@@ -67,6 +67,7 @@
             this.cmdTarimasPT = new DevExpress.XtraEditors.SimpleButton();
             this.btnAlimentacionManual = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.btnajuste = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -199,6 +200,7 @@
             // 
             // TabLogistica
             // 
+            this.TabLogistica.Controls.Add(this.btnajuste);
             this.TabLogistica.Controls.Add(this.btnPlantarimas);
             this.TabLogistica.Controls.Add(this.btnAlimentacion);
             this.TabLogistica.Controls.Add(this.cmdUbicaciones);
@@ -618,6 +620,19 @@
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
             // 
+            // btnajuste
+            // 
+            this.btnajuste.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnajuste.Appearance.Options.UseFont = true;
+            this.btnajuste.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnajuste.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.btnajuste.Location = new System.Drawing.Point(8, 328);
+            this.btnajuste.Name = "btnajuste";
+            this.btnajuste.Size = new System.Drawing.Size(199, 57);
+            this.btnajuste.TabIndex = 31;
+            this.btnajuste.Text = "Ajuste de Inventario";
+            this.btnajuste.Click += new System.EventHandler(this.btnajuste_Click);
+            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -681,5 +696,6 @@
         private DevExpress.XtraEditors.SimpleButton cmdUbicaciones;
         private DevExpress.XtraEditors.SimpleButton btnAlimentacion;
         private DevExpress.XtraEditors.SimpleButton btnPlantarimas;
+        private DevExpress.XtraEditors.SimpleButton btnajuste;
     }
 }
