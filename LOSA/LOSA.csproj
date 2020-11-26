@@ -707,6 +707,20 @@
     <Compile Include="RecepcionMP\rptReporteIngresoTarima.Designer.cs">
       <DependentUpon>rptReporteIngresoTarima.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecuentoInventario\dsRecuento.cs">
+      <DependentUpon>dsRecuento.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RecuentoInventario\dsRecuento.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRecuento.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RecuentoInventario\frmRecuentoInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecuentoInventario\frmRecuentoInventario.Designer.cs">
+      <DependentUpon>frmRecuentoInventario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\dsReportes.cs">
       <DependentUpon>dsReportes.xsd</DependentUpon>
     </Compile>
@@ -1208,6 +1222,9 @@
     <EmbeddedResource Include="RecepcionMP\rptReporteIngresoTarima.resx">
       <DependentUpon>rptReporteIngresoTarima.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RecuentoInventario\frmRecuentoInventario.resx">
+      <DependentUpon>frmRecuentoInventario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmexistenciaPT.resx">
       <DependentUpon>frmexistenciaPT.cs</DependentUpon>
     </EmbeddedResource>
@@ -1387,6 +1404,17 @@
     </None>
     <None Include="RecepcionMP\dsingresos.xss">
       <DependentUpon>dsingresos.xsd</DependentUpon>
+    </None>
+    <None Include="RecuentoInventario\dsRecuento.xsc">
+      <DependentUpon>dsRecuento.xsd</DependentUpon>
+    </None>
+    <None Include="RecuentoInventario\dsRecuento.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRecuento.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="RecuentoInventario\dsRecuento.xss">
+      <DependentUpon>dsRecuento.xsd</DependentUpon>
     </None>
     <None Include="Reportes\dsReportes.xsc">
       <DependentUpon>dsReportes.xsd</DependentUpon>

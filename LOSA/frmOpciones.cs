@@ -378,5 +378,11 @@ namespace LOSA
             frm_planes_recibo_pt frm = new frm_planes_recibo_pt(UsuarioLogeado);
             frm.Show();
         }
+
+        private void btnajuste_Click(object sender, EventArgs e)
+        {
+            RecuentoInventario.frmRecuentoInventario frm = new RecuentoInventario.frmRecuentoInventario();
+            frm.Show();
+        }
     }
 }
