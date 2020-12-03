@@ -80,11 +80,7 @@ namespace ACS.Classes
         public static string SAP_DB_Pass = "Aqua2018";
 
 
-        // APMS(Aquafeed Pocess Management System) Para prueba #1
-        public static string APMS_Server = @"AQFSVR005\AQFPRD";
-        public static string APMS_DB_User = "sa";
-        public static string APMS_DB_Pass = "AquaF33dHN2017";
-        public static string APMS_ActiveDB = "APMS";
+
 
         //public static string APMS_Server = @"6XJ7QD2-PC";
         //public static string APMS_DB_User = "sa";

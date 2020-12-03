@@ -33,12 +33,12 @@ namespace LOSA.RecepcionMP
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmIngresoGranelAlosy));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.beNuevaUbicacion = new DevExpress.XtraEditors.ButtonEdit();
             this.txtLote = new DevExpress.XtraEditors.TextEdit();
             this.dtFechaVencimiento = new DevExpress.XtraEditors.DateEdit();
@@ -93,6 +93,19 @@ namespace LOSA.RecepcionMP
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.cmdGenerarIngreso = new DevExpress.XtraEditors.SimpleButton();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
+            this.grdbarco = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.barcosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.grdUbicaciones = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.ubicacionesgranelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.colid2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldescripcion1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colrack = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcodigo_barra = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.beNuevaUbicacion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLote.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaVencimiento.Properties.CalendarTimeProperties)).BeginInit();
@@ -112,6 +125,12 @@ namespace LOSA.RecepcionMP
             ((System.ComponentModel.ISupportInitialize)(this.GridLookUpEditUbicaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceUbicaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdbarco.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barcosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdUbicaciones.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ubicacionesgranelBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // beNuevaUbicacion
@@ -123,9 +142,9 @@ namespace LOSA.RecepcionMP
             this.beNuevaUbicacion.Name = "beNuevaUbicacion";
             this.beNuevaUbicacion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.beNuevaUbicacion.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.beNuevaUbicacion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.beNuevaUbicacion.Properties.MaxLength = 20;
             this.beNuevaUbicacion.Properties.NullText = "Escanee o selecciona una tarima";
             this.beNuevaUbicacion.Size = new System.Drawing.Size(102, 32);
@@ -313,13 +332,13 @@ namespace LOSA.RecepcionMP
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl1.DataMember = "granel";
             this.gridControl1.DataSource = this.dsRecepcionMPx1;
-            this.gridControl1.Location = new System.Drawing.Point(3, 252);
+            this.gridControl1.Location = new System.Drawing.Point(3, 295);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.LookUpEditBarco,
             this.GridLookUpEditUbicaciones});
-            this.gridControl1.Size = new System.Drawing.Size(989, 367);
+            this.gridControl1.Size = new System.Drawing.Size(989, 324);
             this.gridControl1.TabIndex = 93;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -673,11 +692,124 @@ namespace LOSA.RecepcionMP
             this.btnAtras.Text = "Atrás";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
+            // grdbarco
+            // 
+            this.grdbarco.Location = new System.Drawing.Point(210, 269);
+            this.grdbarco.Name = "grdbarco";
+            this.grdbarco.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.grdbarco.Properties.DataSource = this.barcosBindingSource;
+            this.grdbarco.Properties.DisplayMember = "descripcion";
+            this.grdbarco.Properties.PopupView = this.gridLookUpEdit1View;
+            this.grdbarco.Properties.ValueMember = "id";
+            this.grdbarco.Size = new System.Drawing.Size(130, 20);
+            this.grdbarco.TabIndex = 97;
+            this.grdbarco.EditValueChanged += new System.EventHandler(this.grdbarco_EditValueChanged);
+            // 
+            // barcosBindingSource
+            // 
+            this.barcosBindingSource.DataMember = "barcos";
+            this.barcosBindingSource.DataSource = this.dsRecepcionMPx1;
+            // 
+            // gridLookUpEdit1View
+            // 
+            this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid2,
+            this.coldescripcion1});
+            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
+            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Location = new System.Drawing.Point(214, 238);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(51, 25);
+            this.labelControl4.TabIndex = 98;
+            this.labelControl4.Text = "Barco";
+            // 
+            // grdUbicaciones
+            // 
+            this.grdUbicaciones.Location = new System.Drawing.Point(571, 269);
+            this.grdUbicaciones.Name = "grdUbicaciones";
+            this.grdUbicaciones.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.grdUbicaciones.Properties.DataSource = this.ubicacionesgranelBindingSource;
+            this.grdUbicaciones.Properties.DisplayMember = "rack";
+            this.grdUbicaciones.Properties.PopupView = this.gridView3;
+            this.grdUbicaciones.Properties.ValueMember = "id";
+            this.grdUbicaciones.Size = new System.Drawing.Size(130, 20);
+            this.grdUbicaciones.TabIndex = 99;
+            this.grdUbicaciones.EditValueChanged += new System.EventHandler(this.grdUbicaciones_EditValueChanged);
+            // 
+            // ubicacionesgranelBindingSource
+            // 
+            this.ubicacionesgranelBindingSource.DataMember = "ubicaciones_granel";
+            this.ubicacionesgranelBindingSource.DataSource = this.dsRecepcionMPx1;
+            // 
+            // gridView3
+            // 
+            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid3,
+            this.colrack,
+            this.colcodigo_barra});
+            this.gridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView3.OptionsView.ShowGroupPanel = false;
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl7.Appearance.Options.UseFont = true;
+            this.labelControl7.Location = new System.Drawing.Point(571, 238);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(88, 25);
+            this.labelControl7.TabIndex = 100;
+            this.labelControl7.Text = "Ubicacion";
+            // 
+            // colid2
+            // 
+            this.colid2.FieldName = "id";
+            this.colid2.Name = "colid2";
+            // 
+            // coldescripcion1
+            // 
+            this.coldescripcion1.FieldName = "descripcion";
+            this.coldescripcion1.Name = "coldescripcion1";
+            this.coldescripcion1.Visible = true;
+            this.coldescripcion1.VisibleIndex = 0;
+            // 
+            // colid3
+            // 
+            this.colid3.FieldName = "id";
+            this.colid3.Name = "colid3";
+            // 
+            // colrack
+            // 
+            this.colrack.FieldName = "rack";
+            this.colrack.Name = "colrack";
+            this.colrack.Visible = true;
+            this.colrack.VisibleIndex = 0;
+            // 
+            // colcodigo_barra
+            // 
+            this.colcodigo_barra.FieldName = "codigo_barra";
+            this.colcodigo_barra.Name = "colcodigo_barra";
+            // 
             // frmIngresoGranelAlosy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(997, 621);
+            this.Controls.Add(this.labelControl7);
+            this.Controls.Add(this.grdUbicaciones);
+            this.Controls.Add(this.labelControl4);
+            this.Controls.Add(this.grdbarco);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.cmdGenerarIngreso);
             this.Controls.Add(this.txtCodigoMP);
@@ -717,6 +849,12 @@ namespace LOSA.RecepcionMP
             ((System.ComponentModel.ISupportInitialize)(this.GridLookUpEditUbicaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceUbicaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdbarco.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barcosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdUbicaciones.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ubicacionesgranelBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -778,5 +916,18 @@ namespace LOSA.RecepcionMP
         private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit GridLookUpEditUbicaciones;
         private GridView gridView2;
         private System.Windows.Forms.BindingSource bindingSourceUbicaciones;
+        private GridLookUpEdit grdbarco;
+        private GridView gridLookUpEdit1View;
+        private LabelControl labelControl4;
+        private GridLookUpEdit grdUbicaciones;
+        private GridView gridView3;
+        private LabelControl labelControl7;
+        private System.Windows.Forms.BindingSource ubicacionesgranelBindingSource;
+        private System.Windows.Forms.BindingSource barcosBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colid2;
+        private DevExpress.XtraGrid.Columns.GridColumn coldescripcion1;
+        private DevExpress.XtraGrid.Columns.GridColumn colid3;
+        private DevExpress.XtraGrid.Columns.GridColumn colrack;
+        private DevExpress.XtraGrid.Columns.GridColumn colcodigo_barra;
     }
 }
