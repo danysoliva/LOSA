@@ -281,5 +281,25 @@ namespace LOSA.RecepcionMP
 
 
         }
+
+        private void grdbarco_EditValueChanged(object sender, EventArgs e)
+        {
+            int idbarco = Convert.ToInt32(grdbarco.EditValue);
+            foreach (dsRecepcionMPx.granelRow row in dsRecepcionMPx1.granel.Rows)
+            {
+                row.shipid = idbarco;
+            }
+            dsRecepcionMPx1.granel.AcceptChanges();
+        }
+
+        private void grdUbicaciones_EditValueChanged(object sender, EventArgs e)
+        {
+            int idUbicaciones = Convert.ToInt32(grdUbicaciones.EditValue);
+            foreach (dsRecepcionMPx.granelRow row in dsRecepcionMPx1.granel.Rows)
+            {
+                row.id_ubicacion = idUbicaciones;
+            }
+            dsRecepcionMPx1.granel.AcceptChanges();
+        }
     }
 }

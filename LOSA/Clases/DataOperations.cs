@@ -88,10 +88,7 @@ namespace ACS.Classes
         //                                                   User Id=" + Globals.prinin_DB_User + @";
         //                                                   Password=" + Globals.prinin_DB_Pass + ";";
 
-        internal string ConnectionStringAPMS = @"Server=" + Globals.APMS_Server + @";
-                                                       Database=" + Globals.APMS_ActiveDB + @";
-                                                       User Id=" + Globals.APMS_DB_User + @";
-                                                       Password=" + Globals.APMS_DB_Pass + ";";
+    
 
         /// <summary>
         /// Objeto de conexion para SAP
@@ -446,67 +443,11 @@ namespace ACS.Classes
 
         #region APMS Related Methods
 
-        public DataSet APMS_GetSelectData(string FixedQuery)
-        {
-            DataSet data = new DataSet();
+       
 
-            SqlConnection Conn = new SqlConnection(ConnectionStringAPMS);
-            Conn.Open();
+    
 
-            SqlDataAdapter adapter = new SqlDataAdapter(FixedQuery, Conn);
-            adapter.Fill(data);
-
-            Conn.Close();
-
-            return data;
-        }
-
-        public int APMS_Exec_SP_GetID(string Procedure_Name, SqlCommand command, SqlParameter returnParameter)
-        {
-            Int32 ID;
-
-            SqlConnection conn = new SqlConnection(ConnectionStringAPMS);
-
-            if (command.CommandType == CommandType.StoredProcedure)
-            {
-                command.Connection = conn;
-                command.CommandText = Procedure_Name;
-                conn.Open();
-                command.ExecuteNonQuery();
-
-                ID = Convert.ToInt32(returnParameter.Value);
-
-                conn.Close();
-            }
-            else
-            {
-                ID = -1;
-            }
-
-            return ID;
-        }
-
-        public void APMS_Exec_SP(string Procedure_Name, SqlCommand command)
-        {
-            try
-            {
-                SqlConnection conn = new SqlConnection(ConnectionStringAPMS);
-
-                if (command.CommandType == CommandType.StoredProcedure)
-                {
-                    command.Connection = conn;
-                    command.CommandText = Procedure_Name;
-                    conn.Open();
-                    command.ExecuteNonQuery();
-
-                    conn.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                CajaDialogo.Error(ex.Message);
-            }
-        }
+       
         public int basculaDB_Return_int(String quere)
         {
             int result = 0;
@@ -602,51 +543,11 @@ namespace ACS.Classes
                 
             }
         }
-        public DataTable APMS_Exec_SP_Get_Data(string Procedure_Name, SqlCommand command)
-        {
-            DataTable data = new DataTable();
+   
 
-            SqlConnection conn = new SqlConnection(ConnectionStringAPMS);
+      
 
-            command.CommandText = Procedure_Name;
-            command.Connection = conn;
-            command.CommandType = CommandType.StoredProcedure;
-
-            conn.Open();
-
-            data.Load(command.ExecuteReader());
-
-            conn.Close();
-
-            return data;
-        }
-
-        public int APMS_InsertAndReturnID(string Command)
-        {
-            Int32 InsertedID;
-            SqlConnection conn = new SqlConnection(ConnectionStringAPMS);
-            conn.Open();
-
-            SqlCommand cmd = new SqlCommand(Command, conn);
-
-            InsertedID = Convert.ToInt32(cmd.ExecuteScalar());
-
-            conn.Close();
-
-            return InsertedID;
-        }
-
-        public void APMS_DoSmallDBOperation(string Command)
-        {
-            SqlConnection conn = new SqlConnection(ConnectionStringAPMS);
-            conn.Open();
-
-            SqlCommand cmd = new SqlCommand(Command, conn);
-            cmd.ExecuteNonQuery();
-
-            conn.Close();
-        }
-
+       
         #endregion
 
         #region ODOO Related Methods
