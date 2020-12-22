@@ -17,7 +17,7 @@ namespace LOSA.TransaccionesMP
 {
     public partial class frmRequisiciones : Form
     {
-        UserLogin UsuarioLogeado;
+        UserLogin UsuarioLogeado; DataOperations dp = new DataOperations();
         public frmRequisiciones(UserLogin pUsuarioLogeado)
         {
             InitializeComponent();
@@ -29,7 +29,7 @@ namespace LOSA.TransaccionesMP
         {
             try
             {
-                DataOperations dp = new DataOperations();
+                
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
@@ -81,6 +81,36 @@ namespace LOSA.TransaccionesMP
         {
             //Indica el numero de copias de la boleta que seran impresas
             e.PrintDocument.PrinterSettings.Copies = 1;
+        }
+
+        private void btnend_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Desea finalizar la requisa? No podra seguir enviando materia prima despues de esta accion", "Pregunta", MessageBoxButtons.OKCancel,MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    var gridView = (GridView)grRequisicoinesMP.FocusedView;
+                    var row = (dsTransaccionesMP.requisiciones_hRow)gridView.GetFocusedDataRow();
+                    string query = "sp_finalizar_requisa";
+                    SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                    cn.Open();
+                    SqlCommand cmd = new SqlCommand(query, cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@req", row.id);
+                    cmd.ExecuteNonQuery();
+                    cn.Close();
+
+
+                    LoadDatos();
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+
         }
     }
 }

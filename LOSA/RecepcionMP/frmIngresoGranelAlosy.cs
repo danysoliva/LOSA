@@ -237,6 +237,16 @@ namespace LOSA.RecepcionMP
                 return;
             }
 
+           
+                string quer = @"sp_obtener_numero_ingreso";
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(quer, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                int ingreso = Convert.ToInt32(cmd.ExecuteScalar());
+                cn.Close();
+
+           
             //Validar ingreso si es necesario
             bool Guardo = false;
             DialogResult r = CajaDialogo.Pregunta("Esta seguro de generar estos ingresos de Materia Prima Granel?");
@@ -248,11 +258,11 @@ namespace LOSA.RecepcionMP
                 try
                 {
                     DataOperations dp = new DataOperations();
-                    SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                     cn = new SqlConnection(dp.ConnectionStringLOSA);
                     cn.Open();
 
-                    string SQL = @"sp_set_insert_tarimas_graneles";
-                    SqlCommand cmd = new SqlCommand(SQL, cn);
+                    string SQL = @"[sp_set_insert_tarimas_graneles_v2]";
+                     cmd = new SqlCommand(SQL, cn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id_boleta", row.NBoleta);
                     cmd.Parameters.AddWithValue("@entrada", row.PesoProd);
@@ -261,6 +271,7 @@ namespace LOSA.RecepcionMP
                     cmd.Parameters.AddWithValue("@id_lote", IdLoteSelected);
                     cmd.Parameters.AddWithValue("@id", row.id);
                     cmd.Parameters.AddWithValue("@id_ubicacion", row.id_ubicacion);
+                    cmd.Parameters.AddWithValue("@id_ingreso", ingreso);
 
                     cmd.ExecuteNonQuery();
                     Guardo = true;

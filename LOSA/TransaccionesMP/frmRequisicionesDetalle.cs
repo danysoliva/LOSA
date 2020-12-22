@@ -63,7 +63,8 @@ namespace LOSA.TransaccionesMP
                                                            row.id_materia_prima,
                                                            row.solicitada,
                                                            row.id_unidad_medida,
-                                                           row.unidad);
+                                                           row.unidad
+                                                           , row.pendiente);
                 frm.WindowState = FormWindowState.Maximized;
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
@@ -73,26 +74,21 @@ namespace LOSA.TransaccionesMP
             else
             {
 
-                if (row.pendiente == row.asignado)
-                {
+               
                     frmSeleccionLote frm = new frmSeleccionLote(UsuarioLogeado,
                                                                 row.id,
                                                                 row.id_materia_prima,
                                                                 row.solicitada,
                                                                 row.id_unidad_medida,
-                                                                row.unidad);
+                                                                row.unidad
+                                                                ,row.pendiente);
                     frm.WindowState = FormWindowState.Maximized;
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
                         LoadDatos();
                     }
 
-                }
-                else
-                {
-                    CajaDialogo.Error("Ya se empezo a entregar tarimas de esta requisicion ya no se puede Modificar.");
-                    return;
-                }
+               
             }
         }
 

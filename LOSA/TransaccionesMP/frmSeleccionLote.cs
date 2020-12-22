@@ -22,14 +22,14 @@ namespace LOSA.TransaccionesMP
         decimal CantidadPendiente;
         int id_unidad;
 
-        public frmSeleccionLote(UserLogin pUsuarioLogeado, int pIdRequisicionDetalle, int IdRM, decimal pCantidad, int pIdUnidad, string pUnidadName)
+        public frmSeleccionLote(UserLogin pUsuarioLogeado, int pIdRequisicionDetalle, int IdRM, decimal pCantidad, int pIdUnidad, string pUnidadName, decimal PcantPendiente)
         {
             InitializeComponent();
             MP = new MateriaPrima();
             UsuarioLogeado = pUsuarioLogeado;
             IdRequisicionDetalle = pIdRequisicionDetalle;
             CantidadPendiente = pCantidad;
-            txtCantidadPendiente.Text = string.Format("{0:###,##0.00}", CantidadPendiente);
+            txtCantidadPendiente.Text = string.Format("{0:###,##0.00}", PcantPendiente);
             txtSolicitada.Text = string.Format("{0:###,##0.00}", CantidadPendiente);
             id_unidad = pIdUnidad;
             lblUnidad.Text = pUnidadName;
@@ -51,7 +51,7 @@ namespace LOSA.TransaccionesMP
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("[dbo].[sp_get_detalle_lotes_mp_req_v2]", con);
+                SqlCommand cmd = new SqlCommand("[dbo].[sp_get_detalle_lotes_mp_req_v3]", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@idmp", MP.IdMP_ACS);
                 cmd.Parameters.AddWithValue("@id_detalle_req", IdRequisicionDetalle);
@@ -66,7 +66,7 @@ namespace LOSA.TransaccionesMP
                 con.Close();
 
                 //CalculoTotales();
-                Inizialitar_data();
+                //Inizialitar_data();
                 seterror();
             }
             catch (Exception ec)

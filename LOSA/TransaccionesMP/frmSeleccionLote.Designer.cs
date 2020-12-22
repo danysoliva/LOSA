@@ -313,25 +313,21 @@
             this.colunidad.FieldName = "unidad";
             this.colunidad.Name = "colunidad";
             this.colunidad.OptionsColumn.AllowEdit = false;
-            this.colunidad.Visible = true;
-            this.colunidad.VisibleIndex = 6;
             // 
             // colpeso_total
             // 
-            this.colpeso_total.Caption = "Peso Disponible";
+            this.colpeso_total.Caption = "Peso Entregado";
             this.colpeso_total.FieldName = "peso_total";
             this.colpeso_total.Name = "colpeso_total";
             this.colpeso_total.OptionsColumn.AllowEdit = false;
             this.colpeso_total.Visible = true;
-            this.colpeso_total.VisibleIndex = 7;
+            this.colpeso_total.VisibleIndex = 6;
             // 
             // colseleccionado
             // 
             this.colseleccionado.Caption = "Seleccionar";
             this.colseleccionado.FieldName = "seleccionado";
             this.colseleccionado.Name = "colseleccionado";
-            this.colseleccionado.Visible = true;
-            this.colseleccionado.VisibleIndex = 8;
             // 
             // colcants
             // 
@@ -339,8 +335,6 @@
             this.colcants.FieldName = "cants";
             this.colcants.Name = "colcants";
             this.colcants.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            this.colcants.Visible = true;
-            this.colcants.VisibleIndex = 9;
             // 
             // btnVerD
             // 
@@ -369,12 +363,13 @@
             this.chkAutoSelect.AutoSize = true;
             this.chkAutoSelect.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkAutoSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkAutoSelect.Location = new System.Drawing.Point(356, 170);
+            this.chkAutoSelect.Location = new System.Drawing.Point(361, 170);
             this.chkAutoSelect.Name = "chkAutoSelect";
             this.chkAutoSelect.Size = new System.Drawing.Size(149, 24);
             this.chkAutoSelect.TabIndex = 45;
             this.chkAutoSelect.Text = "Auto Selección";
             this.chkAutoSelect.UseVisualStyleBackColor = true;
+            this.chkAutoSelect.Visible = false;
             this.chkAutoSelect.CheckedChanged += new System.EventHandler(this.chkAutoSelect_CheckedChanged);
             // 
             // cmdGuardar
@@ -391,6 +386,7 @@
             this.cmdGuardar.Size = new System.Drawing.Size(167, 47);
             this.cmdGuardar.TabIndex = 46;
             this.cmdGuardar.Text = "Planificar";
+            this.cmdGuardar.Visible = false;
             this.cmdGuardar.Click += new System.EventHandler(this.cmdGuardar_Click);
             // 
             // labelControl4
@@ -402,6 +398,7 @@
             this.labelControl4.Size = new System.Drawing.Size(141, 24);
             this.labelControl4.TabIndex = 48;
             this.labelControl4.Text = "Cant. Asignada";
+            this.labelControl4.Visible = false;
             // 
             // txtAsignada
             // 
@@ -415,6 +412,7 @@
             this.txtAsignada.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtAsignada.Size = new System.Drawing.Size(142, 32);
             this.txtAsignada.TabIndex = 47;
+            this.txtAsignada.Visible = false;
             // 
             // labelControl5
             // 
