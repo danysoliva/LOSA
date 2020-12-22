@@ -173,7 +173,7 @@ namespace LOSA.TransaccionesMP
                                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                                 con.Open();
 
-                                SqlCommand cmd = new SqlCommand("sp_verifica_diponibilidad_tarima_entrega_v2", con);
+                                SqlCommand cmd = new SqlCommand("sp_verifica_diponibilidad_tarima_entrega_v3", con);
                                 cmd.CommandType = CommandType.StoredProcedure;
                                 cmd.Parameters.AddWithValue("@id", tarimaEncontrada.Id);
                                 cmd.Parameters.AddWithValue("@id_req",RequisicionActual.IdRequisicion);
@@ -229,7 +229,7 @@ namespace LOSA.TransaccionesMP
                         con.Open();
 
                         //SqlCommand cmd = new SqlCommand("sp_set_insert_salida_tarima_bodega_mp", con);
-                        SqlCommand cmd = new SqlCommand("[dbo].[sp_insert_tarima_requisa_entrega]", con);
+                        SqlCommand cmd = new SqlCommand("[dbo].[sp_insert_tarima_requisa_entrega_v2]", con);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@idtarima", tarimaEncontrada.Id);
                         cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);

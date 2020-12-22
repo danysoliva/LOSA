@@ -261,7 +261,7 @@ namespace LOSA.RecepcionMP
                      cn = new SqlConnection(dp.ConnectionStringLOSA);
                     cn.Open();
 
-                    string SQL = @"sp_set_insert_tarimas_graneles";
+                    string SQL = @"[sp_set_insert_tarimas_graneles_v2]";
                      cmd = new SqlCommand(SQL, cn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id_boleta", row.NBoleta);
