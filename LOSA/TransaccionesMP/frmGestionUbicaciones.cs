@@ -13,6 +13,7 @@ using System.Data.SqlClient;
 using LOSA.Clases;
 using LOSA.RecepcionMP;
 using LOSA.Mantenimientos.Modelos;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace LOSA.TransaccionesMP
 {
@@ -138,19 +139,22 @@ namespace LOSA.TransaccionesMP
             {
                 foreach (dsTransaccionesMP.detalle_tarimas_ingresoRow row in dsTransaccionesMP1.detalle_tarimas_ingreso.Rows)
                 {
-                    DataOperations dp = new DataOperations();
-                    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                    con.Open();
+                    if (row.seleccionar)
+                    {
+                        DataOperations dp = new DataOperations();
+                        SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                        con.Open();
 
-                    SqlCommand cmd = new SqlCommand("sp_set_cambio_ubicacion_mp_from_ingreso", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
-                    cmd.Parameters.AddWithValue("@id_ubactual", row.id_ubicacion);
-                    cmd.Parameters.AddWithValue("@id_ubnew", idUbicacionNueva);
-                    cmd.Parameters.AddWithValue("@id_tarima", row.id);
-                    cmd.ExecuteScalar();
-                    guardo = true;
-                    con.Close();
+                        SqlCommand cmd = new SqlCommand("sp_set_cambio_ubicacion_mp_from_ingreso", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
+                        cmd.Parameters.AddWithValue("@id_ubactual", row.id_ubicacion);
+                        cmd.Parameters.AddWithValue("@id_ubnew", idUbicacionNueva);
+                        cmd.Parameters.AddWithValue("@id_tarima", row.id);
+                        cmd.ExecuteScalar();
+                        guardo = true;
+                        con.Close();
+                    }
                 }
             }
             catch (Exception ec)
@@ -165,5 +169,39 @@ namespace LOSA.TransaccionesMP
                 this.Close();
             }
         }
+
+        private void gridView1_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            if (e.Column.Name == "colseleccionar")
+            {
+                try
+                {
+                    var gridView = (GridView)grDetalle.FocusedView;
+                    var row = (dsTransaccionesMP.detalle_tarimas_ingresoRow)gridView.GetFocusedDataRow();
+                    row.seleccionar = Convert.ToBoolean(e.Value);
+                }
+                catch (Exception ex)
+                {
+                          
+                }
+            }
+            if (e.Column.Name == "collote_seleccionar")
+            {
+                var gridView = (GridView)grDetalle.FocusedView;
+                var row = (dsTransaccionesMP.detalle_tarimas_ingresoRow)gridView.GetFocusedDataRow();
+                foreach (dsTransaccionesMP.detalle_tarimas_ingresoRow row2 in dsTransaccionesMP1.detalle_tarimas_ingreso.Rows)
+                {
+                  
+                    if (row.lote == row2.lote)
+                    {
+                          row2.seleccionar = Convert.ToBoolean(e.Value);
+                        row2.lote_seleccionar = Convert.ToBoolean(e.Value);
+                    }
+                    
+                }
+            }
+            
+
+            }
+        }
     }
-}

@@ -76,6 +76,7 @@ namespace LOSA.TransaccionesMP
             report.ShowPrintMarginsWarning = false;
             report.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
             report.Print();
+
         }
         private void PrintingSystem_StartPrint(object sender, DevExpress.XtraPrinting.PrintDocumentEventArgs e)
         {

@@ -30,6 +30,10 @@
         {
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGestionUbicaciones));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.txtNumIngreso = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -44,6 +48,9 @@
             this.collote = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colproveedor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_ubicacion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colseleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collote_seleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colingreso_seleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.beNuevaUbicacion = new DevExpress.XtraEditors.ButtonEdit();
             this.btnUbicacion = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -127,10 +134,14 @@
             this.colubicacion,
             this.collote,
             this.colproveedor,
-            this.colid_ubicacion});
+            this.colid_ubicacion,
+            this.colseleccionar,
+            this.collote_seleccionar,
+            this.colingreso_seleccionar});
             this.gridView1.GridControl = this.grDetalle;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanging);
             // 
             // colid
             // 
@@ -207,6 +218,28 @@
             this.colid_ubicacion.FieldName = "id_ubicacion";
             this.colid_ubicacion.Name = "colid_ubicacion";
             // 
+            // colseleccionar
+            // 
+            this.colseleccionar.Caption = "Seleccionar";
+            this.colseleccionar.FieldName = "seleccionar";
+            this.colseleccionar.Name = "colseleccionar";
+            this.colseleccionar.Visible = true;
+            this.colseleccionar.VisibleIndex = 8;
+            // 
+            // collote_seleccionar
+            // 
+            this.collote_seleccionar.Caption = "Por Lote";
+            this.collote_seleccionar.FieldName = "lote_seleccionar";
+            this.collote_seleccionar.Name = "collote_seleccionar";
+            this.collote_seleccionar.Visible = true;
+            this.collote_seleccionar.VisibleIndex = 7;
+            // 
+            // colingreso_seleccionar
+            // 
+            this.colingreso_seleccionar.Caption = "Por Ingreso";
+            this.colingreso_seleccionar.FieldName = "ingreso_seleccionar";
+            this.colingreso_seleccionar.Name = "colingreso_seleccionar";
+            // 
             // beNuevaUbicacion
             // 
             this.beNuevaUbicacion.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.True;
@@ -218,7 +251,7 @@
             this.beNuevaUbicacion.Properties.Appearance.Options.UseFont = true;
             editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.beNuevaUbicacion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.beNuevaUbicacion.Properties.MaxLength = 20;
             this.beNuevaUbicacion.Properties.NullText = "Escanee o selecciona una tarima";
             this.beNuevaUbicacion.Size = new System.Drawing.Size(325, 28);
@@ -515,5 +548,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn collote;
         private DevExpress.XtraGrid.Columns.GridColumn colproveedor;
         private DevExpress.XtraGrid.Columns.GridColumn colid_ubicacion;
+        private DevExpress.XtraGrid.Columns.GridColumn colseleccionar;
+        private DevExpress.XtraGrid.Columns.GridColumn collote_seleccionar;
+        private DevExpress.XtraGrid.Columns.GridColumn colingreso_seleccionar;
     }
 }

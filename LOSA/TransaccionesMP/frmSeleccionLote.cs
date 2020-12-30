@@ -67,7 +67,7 @@ namespace LOSA.TransaccionesMP
 
                 //CalculoTotales();
                 //Inizialitar_data();
-                seterror();
+                //seterror();
             }
             catch (Exception ec)
             {

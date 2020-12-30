@@ -3221,6 +3221,12 @@ namespace LOSA.TransaccionesMP {
             
             private global::System.Data.DataColumn columnid_ubicacion;
             
+            private global::System.Data.DataColumn columnseleccionar;
+            
+            private global::System.Data.DataColumn columnlote_seleccionar;
+            
+            private global::System.Data.DataColumn columningreso_seleccionar;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public detalle_tarimas_ingresoDataTable() {
@@ -3320,6 +3326,30 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn seleccionarColumn {
+                get {
+                    return this.columnseleccionar;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn lote_seleccionarColumn {
+                get {
+                    return this.columnlote_seleccionar;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ingreso_seleccionarColumn {
+                get {
+                    return this.columningreso_seleccionar;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3355,7 +3385,7 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public detalle_tarimas_ingresoRow Adddetalle_tarimas_ingresoRow(int id, string materiaprima, decimal sacos_tarima, string presentacion, string ubicacion, string lote, string proveedor, int id_ubicacion) {
+            public detalle_tarimas_ingresoRow Adddetalle_tarimas_ingresoRow(int id, string materiaprima, decimal sacos_tarima, string presentacion, string ubicacion, string lote, string proveedor, int id_ubicacion, bool seleccionar, bool lote_seleccionar, bool ingreso_seleccionar) {
                 detalle_tarimas_ingresoRow rowdetalle_tarimas_ingresoRow = ((detalle_tarimas_ingresoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -3365,7 +3395,10 @@ namespace LOSA.TransaccionesMP {
                         ubicacion,
                         lote,
                         proveedor,
-                        id_ubicacion};
+                        id_ubicacion,
+                        seleccionar,
+                        lote_seleccionar,
+                        ingreso_seleccionar};
                 rowdetalle_tarimas_ingresoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdetalle_tarimas_ingresoRow);
                 return rowdetalle_tarimas_ingresoRow;
@@ -3396,6 +3429,9 @@ namespace LOSA.TransaccionesMP {
                 this.columnlote = base.Columns["lote"];
                 this.columnproveedor = base.Columns["proveedor"];
                 this.columnid_ubicacion = base.Columns["id_ubicacion"];
+                this.columnseleccionar = base.Columns["seleccionar"];
+                this.columnlote_seleccionar = base.Columns["lote_seleccionar"];
+                this.columningreso_seleccionar = base.Columns["ingreso_seleccionar"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3417,6 +3453,12 @@ namespace LOSA.TransaccionesMP {
                 base.Columns.Add(this.columnproveedor);
                 this.columnid_ubicacion = new global::System.Data.DataColumn("id_ubicacion", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_ubicacion);
+                this.columnseleccionar = new global::System.Data.DataColumn("seleccionar", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnseleccionar);
+                this.columnlote_seleccionar = new global::System.Data.DataColumn("lote_seleccionar", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlote_seleccionar);
+                this.columningreso_seleccionar = new global::System.Data.DataColumn("ingreso_seleccionar", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columningreso_seleccionar);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6460,6 +6502,56 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool seleccionar {
+                get {
+                    try {
+                        return ((bool)(this[this.tabledetalle_tarimas_ingreso.seleccionarColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'seleccionar\' in table \'detalle_tarimas_ingreso\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_tarimas_ingreso.seleccionarColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool lote_seleccionar {
+                get {
+                    try {
+                        return ((bool)(this[this.tabledetalle_tarimas_ingreso.lote_seleccionarColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'lote_seleccionar\' in table \'detalle_tarimas_ingreso\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_tarimas_ingreso.lote_seleccionarColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool ingreso_seleccionar {
+                get {
+                    try {
+                        return ((bool)(this[this.tabledetalle_tarimas_ingreso.ingreso_seleccionarColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ingreso_seleccionar\' in table \'detalle_tarimas_ingreso\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_tarimas_ingreso.ingreso_seleccionarColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tabledetalle_tarimas_ingreso.idColumn);
             }
@@ -6552,6 +6644,42 @@ namespace LOSA.TransaccionesMP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void Setid_ubicacionNull() {
                 this[this.tabledetalle_tarimas_ingreso.id_ubicacionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsseleccionarNull() {
+                return this.IsNull(this.tabledetalle_tarimas_ingreso.seleccionarColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetseleccionarNull() {
+                this[this.tabledetalle_tarimas_ingreso.seleccionarColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Islote_seleccionarNull() {
+                return this.IsNull(this.tabledetalle_tarimas_ingreso.lote_seleccionarColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setlote_seleccionarNull() {
+                this[this.tabledetalle_tarimas_ingreso.lote_seleccionarColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isingreso_seleccionarNull() {
+                return this.IsNull(this.tabledetalle_tarimas_ingreso.ingreso_seleccionarColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setingreso_seleccionarNull() {
+                this[this.tabledetalle_tarimas_ingreso.ingreso_seleccionarColumn] = global::System.Convert.DBNull;
             }
         }
         
