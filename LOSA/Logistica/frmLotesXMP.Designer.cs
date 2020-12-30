@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLotesXMP));
             this.gcLotes = new DevExpress.XtraGrid.GridControl();
-            this.lotesXProveedorBindingSource = new System.Windows.Forms.BindingSource();
+            this.lotesXProveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsLogistica = new LOSA.Logistica.dsLogistica2();
             this.gvLotes = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -42,7 +43,7 @@
             this.colidMateriaPrima = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.cbMateriaPrima = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.materiaprimaBindingSource = new System.Windows.Forms.BindingSource();
+            this.materiaprimaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gvMateriaPrima = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colitemcode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colitemdescrip = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -298,7 +299,7 @@
             this.Controls.Add(this.gcLotes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLotesXMP";
-            this.Text = "frmLotesXMP";
+            this.Text = "+";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmLotesXMP_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gcLotes)).EndInit();

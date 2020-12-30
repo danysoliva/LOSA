@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTrazabilidadLote));
             this.gcEventos = new DevExpress.XtraGrid.GridControl();
-            this.eventosLoteBindingSource = new System.Windows.Forms.BindingSource();
+            this.eventosLoteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsLogistica2 = new LOSA.Logistica.dsLogistica2();
             this.gvEventos = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colevento = new DevExpress.XtraGrid.Columns.GridColumn();
