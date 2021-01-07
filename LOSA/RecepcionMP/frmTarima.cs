@@ -2,6 +2,7 @@
 using Core.Clases.Herramientas;
 using DevExpress.XtraReports.UI;
 using LOSA.Clases;
+using LOSA.Reportes;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -348,6 +349,10 @@ namespace LOSA.RecepcionMP
                         
                     }
                 }
+                rptLoteRotulo boleta = new rptLoteRotulo(idloteInserted);
+                boleta.ShowPrintMarginsWarning = false;
+                boleta.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
+                boleta.Print();
             }
             this.DialogResult = DialogResult.OK;
             this.Close();
@@ -472,6 +477,11 @@ namespace LOSA.RecepcionMP
             }
         }
         private void GvNuevaUbicacion_InitNewRow(object sender, DevExpress.XtraGrid.Views.Grid.InitNewRowEventArgs e)
+        {
+
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
 
         }

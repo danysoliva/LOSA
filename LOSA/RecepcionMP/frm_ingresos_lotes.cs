@@ -207,5 +207,11 @@ namespace LOSA.RecepcionMP
                 LoadTarimas();
             }
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            frmverlotes frm = new frmverlotes(id_ingreso);
+            frm.Show();
+        }
     }
 }

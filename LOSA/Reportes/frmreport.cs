@@ -101,5 +101,11 @@ namespace LOSA.Reportes
             frmreporteLotePT frm = new frmreporteLotePT();
             frm.Show();
         }
+
+        private void btnreportIngreso_Click(object sender, EventArgs e)
+        {
+            frnReporteingreso frm = new frnReporteingreso();
+            frm.Show();
+        }
     }
 }

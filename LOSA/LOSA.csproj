@@ -689,6 +689,12 @@
     <Compile Include="RecepcionMP\frmUbicacionTarima.Designer.cs">
       <DependentUpon>frmUbicacionTarima.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecepcionMP\frmverlotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmverlotes.Designer.cs">
+      <DependentUpon>frmverlotes.cs</DependentUpon>
+    </Compile>
     <Compile Include="RecepcionMP\frm_ingresos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -776,6 +782,24 @@
     </Compile>
     <Compile Include="Reportes\frm_SalidasMP.Designer.cs">
       <DependentUpon>frm_SalidasMP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frnReporteingreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frnReporteingreso.Designer.cs">
+      <DependentUpon>frnReporteingreso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rptIngresoHoja.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptIngresoHoja.Designer.cs">
+      <DependentUpon>rptIngresoHoja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rptLoteRotulo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptLoteRotulo.Designer.cs">
+      <DependentUpon>rptLoteRotulo.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\rptUbicaciones.cs">
       <SubType>Form</SubType>
@@ -1213,6 +1237,9 @@
     <EmbeddedResource Include="RecepcionMP\frmUbicacionTarima.resx">
       <DependentUpon>frmUbicacionTarima.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frmverlotes.resx">
+      <DependentUpon>frmverlotes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frm_ingresos.resx">
       <DependentUpon>frm_ingresos.cs</DependentUpon>
     </EmbeddedResource>
@@ -1248,6 +1275,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frm_SalidasMP.resx">
       <DependentUpon>frm_SalidasMP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frnReporteingreso.resx">
+      <DependentUpon>frnReporteingreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptIngresoHoja.resx">
+      <DependentUpon>rptIngresoHoja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptLoteRotulo.resx">
+      <DependentUpon>rptLoteRotulo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rptUbicaciones.resx">
       <DependentUpon>rptUbicaciones.cs</DependentUpon>

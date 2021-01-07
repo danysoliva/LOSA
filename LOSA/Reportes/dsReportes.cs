@@ -4,6 +4,10 @@
 
     partial class dsReportes
     {
+        partial class IngresoDetalleDataTable
+        {
+        }
+
         partial class TarimaResultDataTable
         {
         }
