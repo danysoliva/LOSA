@@ -84,5 +84,20 @@ namespace LOSA.RecepcionMP
                 CajaDialogo.Error(ex.Message);
             }
         }
+
+        private void btnprint_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var gridview = (GridView)grd_ingreso.FocusedView;
+                var row = (dsRecepcionMPx.IngresosMPRow)gridview.GetFocusedDataRow();
+
+            }
+            catch (Exception ex)
+            {
+
+               
+            }
+        }
     }
 }

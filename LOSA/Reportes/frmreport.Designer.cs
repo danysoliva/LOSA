@@ -42,6 +42,7 @@
             this.btnLotesPorProveedor = new DevExpress.XtraEditors.SimpleButton();
             this.cmdRegistroLote = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnreportIngreso = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -234,6 +235,19 @@
             this.simpleButton2.Text = "Producto Terminado\r\n por lote";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
+            // btnreportIngreso
+            // 
+            this.btnreportIngreso.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnreportIngreso.Appearance.Options.UseFont = true;
+            this.btnreportIngreso.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnreportIngreso.ImageOptions.Image = global::LOSA.Properties.Resources.edit_table_1_;
+            this.btnreportIngreso.Location = new System.Drawing.Point(503, 276);
+            this.btnreportIngreso.Name = "btnreportIngreso";
+            this.btnreportIngreso.Size = new System.Drawing.Size(199, 71);
+            this.btnreportIngreso.TabIndex = 40;
+            this.btnreportIngreso.Text = "ingreso por para LM \r\ny fecha de vencimiento";
+            this.btnreportIngreso.Click += new System.EventHandler(this.btnreportIngreso_Click);
+            // 
             // frmreport
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -241,6 +255,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(714, 522);
+            this.Controls.Add(this.btnreportIngreso);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.btn_rptubicaciones);
@@ -278,5 +293,6 @@
         private DevExpress.XtraEditors.SimpleButton btn_rptubicaciones;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton btnreportIngreso;
     }
 }

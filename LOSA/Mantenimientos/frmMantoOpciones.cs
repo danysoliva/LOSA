@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ACS.Classes;
 using LOSA.Clases;
+using LOSA.Reportes;
 
 namespace LOSA.Mantenimientos
 {
@@ -59,5 +60,7 @@ namespace LOSA.Mantenimientos
             frmRecuento frm = new frmRecuento(UsuarioLogeado);
             frm.Show();
         }
+
+      
     }
 }
