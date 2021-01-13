@@ -92,12 +92,25 @@ namespace LOSA.RecepcionMP
                 var gridview = (GridView)grd_ingreso.FocusedView;
                 var row = (dsRecepcionMPx.IngresosMPRow)gridview.GetFocusedDataRow();
 
+                Reportes.rptIngresoHoja report = new Reportes.rptIngresoHoja(row.id);
+                report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                ReportPrintTool printReport = new ReportPrintTool(report);
+                printReport.ShowPreview();
+
             }
             catch (Exception ex)
             {
 
                
             }
+        }
+
+        private void frm_ingresos_Load(object sender, EventArgs e)
+        {
+
+
+
+           
         }
     }
 }

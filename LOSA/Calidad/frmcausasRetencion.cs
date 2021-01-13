@@ -57,7 +57,7 @@ namespace LOSA.Calidad
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            frmretencionadd frm = new frmretencionadd(2);
+            frmretencionadd frm = new frmretencionadd(1);
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 int id = frm.id;

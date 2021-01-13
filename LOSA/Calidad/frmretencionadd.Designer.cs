@@ -59,10 +59,9 @@
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(499, 15);
-            this.btnAtras.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAtras.Location = new System.Drawing.Point(428, 12);
             this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(195, 58);
+            this.btnAtras.Size = new System.Drawing.Size(167, 47);
             this.btnAtras.TabIndex = 37;
             this.btnAtras.Text = "Atras";
             this.btnAtras.ClientSizeChanged += new System.EventHandler(this.btnAtras_ClientSizeChanged);
@@ -77,10 +76,9 @@
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton1.ImageOptions.Image = global::LOSA.Properties.Resources.plus;
             this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(14, 18);
-            this.simpleButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.simpleButton1.Location = new System.Drawing.Point(12, 15);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(183, 54);
+            this.simpleButton1.Size = new System.Drawing.Size(157, 44);
             this.simpleButton1.TabIndex = 48;
             this.simpleButton1.Text = "Agregar";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -90,16 +88,17 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(223, 33);
+            this.label1.Location = new System.Drawing.Point(191, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(274, 31);
+            this.label1.Size = new System.Drawing.Size(218, 25);
             this.label1.TabIndex = 49;
             this.label1.Text = "Causas de Retencion";
             // 
             // grd_causas
             // 
-            this.grd_causas.Location = new System.Drawing.Point(114, 143);
-            this.grd_causas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.grd_causas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grd_causas.Location = new System.Drawing.Point(98, 116);
             this.grd_causas.Name = "grd_causas";
             this.grd_causas.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grd_causas.Properties.Appearance.Options.UseFont = true;
@@ -107,9 +106,9 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.grd_causas.Properties.DataSource = this.causasBindingSource;
             this.grd_causas.Properties.DisplayMember = "descripcion";
+            this.grd_causas.Properties.PopupView = this.gridLookUpEdit1View;
             this.grd_causas.Properties.ValueMember = "id";
-            this.grd_causas.Properties.View = this.gridLookUpEdit1View;
-            this.grd_causas.Size = new System.Drawing.Size(534, 36);
+            this.grd_causas.Size = new System.Drawing.Size(458, 30);
             this.grd_causas.TabIndex = 50;
             // 
             // causasBindingSource
@@ -161,10 +160,9 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(40, 156);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl1.Location = new System.Drawing.Point(34, 127);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(54, 24);
+            this.labelControl1.Size = new System.Drawing.Size(42, 19);
             this.labelControl1.TabIndex = 51;
             this.labelControl1.Text = "Causa";
             // 
@@ -172,29 +170,30 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(28, 260);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl2.Location = new System.Drawing.Point(24, 211);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(103, 24);
+            this.labelControl2.Size = new System.Drawing.Size(82, 19);
             this.labelControl2.TabIndex = 52;
             this.labelControl2.Text = "Comentario";
             // 
             // txtcomentario
             // 
+            this.txtcomentario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtcomentario.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcomentario.Location = new System.Drawing.Point(61, 321);
-            this.txtcomentario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtcomentario.Location = new System.Drawing.Point(52, 261);
             this.txtcomentario.MaxLength = 400;
             this.txtcomentario.Multiline = true;
             this.txtcomentario.Name = "txtcomentario";
-            this.txtcomentario.Size = new System.Drawing.Size(572, 201);
+            this.txtcomentario.Size = new System.Drawing.Size(491, 164);
             this.txtcomentario.TabIndex = 53;
             // 
             // frmretencionadd
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(708, 593);
+            this.ClientSize = new System.Drawing.Size(607, 482);
             this.Controls.Add(this.txtcomentario);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
@@ -203,7 +202,6 @@
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.btnAtras);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmretencionadd";
             this.Text = "frmretencionadd";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

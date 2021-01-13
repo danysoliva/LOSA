@@ -37,6 +37,7 @@
             this.cmdPT = new DevExpress.XtraEditors.SimpleButton();
             this.cmdMP = new DevExpress.XtraEditors.SimpleButton();
             this.TabLogistica = new DevExpress.XtraTab.XtraTabPage();
+            this.btnajuste = new DevExpress.XtraEditors.SimpleButton();
             this.btnPlantarimas = new DevExpress.XtraEditors.SimpleButton();
             this.btnAlimentacion = new DevExpress.XtraEditors.SimpleButton();
             this.cmdUbicaciones = new DevExpress.XtraEditors.SimpleButton();
@@ -67,7 +68,7 @@
             this.cmdTarimasPT = new DevExpress.XtraEditors.SimpleButton();
             this.btnAlimentacionManual = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.btnajuste = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -223,6 +224,19 @@
             this.TabLogistica.PageVisible = false;
             this.TabLogistica.Size = new System.Drawing.Size(629, 422);
             this.TabLogistica.Text = "Logistica";
+            // 
+            // btnajuste
+            // 
+            this.btnajuste.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnajuste.Appearance.Options.UseFont = true;
+            this.btnajuste.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnajuste.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnajuste.ImageOptions.Image")));
+            this.btnajuste.Location = new System.Drawing.Point(8, 328);
+            this.btnajuste.Name = "btnajuste";
+            this.btnajuste.Size = new System.Drawing.Size(199, 57);
+            this.btnajuste.TabIndex = 31;
+            this.btnajuste.Text = "Ajuste de Inventario";
+            this.btnajuste.Click += new System.EventHandler(this.btnajuste_Click);
             // 
             // btnPlantarimas
             // 
@@ -452,6 +466,7 @@
             // 
             // TabCalidad
             // 
+            this.TabCalidad.Controls.Add(this.simpleButton4);
             this.TabCalidad.Controls.Add(this.btnconfiguracionCal);
             this.TabCalidad.Controls.Add(this.cmdLotesCalidad);
             this.TabCalidad.ImageOptions.Image = global::LOSA.Properties.Resources.medal;
@@ -620,18 +635,17 @@
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
             // 
-            // btnajuste
+            // simpleButton4
             // 
-            this.btnajuste.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnajuste.Appearance.Options.UseFont = true;
-            this.btnajuste.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnajuste.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
-            this.btnajuste.Location = new System.Drawing.Point(8, 328);
-            this.btnajuste.Name = "btnajuste";
-            this.btnajuste.Size = new System.Drawing.Size(199, 57);
-            this.btnajuste.TabIndex = 31;
-            this.btnajuste.Text = "Ajuste de Inventario";
-            this.btnajuste.Click += new System.EventHandler(this.btnajuste_Click);
+            this.simpleButton4.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton4.Appearance.Options.UseFont = true;
+            this.simpleButton4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton4.ImageOptions.Image = global::LOSA.Properties.Resources.edit_table_1_;
+            this.simpleButton4.Location = new System.Drawing.Point(9, 177);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton4.TabIndex = 13;
+            this.simpleButton4.Text = "Informacion \r\nde Ingreso";
             // 
             // frmOpciones
             // 
@@ -697,5 +711,6 @@
         private DevExpress.XtraEditors.SimpleButton btnAlimentacion;
         private DevExpress.XtraEditors.SimpleButton btnPlantarimas;
         private DevExpress.XtraEditors.SimpleButton btnajuste;
+        private DevExpress.XtraEditors.SimpleButton simpleButton4;
     }
 }
