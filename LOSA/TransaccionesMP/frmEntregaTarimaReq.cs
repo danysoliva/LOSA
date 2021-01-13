@@ -92,7 +92,11 @@ namespace LOSA.TransaccionesMP
                 CajaDialogo.Error(error.Message);
             }
         }
-        private DataTable CreateDataTarima(int idTarima, string pProveedor, string pNombreTarima, string pLote, string pPpresentacion)
+        private DataTable CreateDataTarima(int idTarima
+                                            , string pProveedor
+                                            , string pNombreTarima
+                                            , string pLote
+                                            , string pPpresentacion)
         {
             DataTable dt = new DataTable();
 

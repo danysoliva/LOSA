@@ -137,6 +137,61 @@ namespace LOSA.Clases
             }
             return Recuperado;
         }
+
+        public bool RecuperarRegistro_v2(int pIdTarima, string pCodigoBarra)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_tarima_from_id_v2", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", pIdTarima);
+                cmd.Parameters.AddWithValue("@codigo_barra", pCodigoBarra);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    Id = dr.GetInt32(0);
+                    IdUnidadMedida = dr.GetInt32(1);
+                    //Cantidad = 1;
+                    _nombreTarima = dr.GetString(2);
+                    TipoTarimaDescripcion = dr.GetString(3);
+                    //IdProveedor = dr.GetString(4);
+                    Proveedor = dr.GetString(4);
+
+                    LoteMP = dr.GetString(5);
+                    Cantidad = dr.GetDecimal(7);
+                    Id_materiaprima = dr.GetInt32(8);
+                    MateriaPrima = dr.GetString(9);
+                    FechaIngreso = dr.GetDateTime(10);
+                    NumeroTransaccion = dr.GetInt32(11);
+                    FechaProduccion = dr.GetDateTime(12);
+                    FechaVencimiento = dr.GetDateTime(13);
+                    IdBoleta = dr.GetInt32(14);
+                    CodigoBarra = dr.GetString(15);
+                    Factor = dr.GetDecimal(16);
+                    Enable = dr.GetBoolean(17);
+                    Peso = dr.GetDecimal(18);
+                    IdProductoterminado = dr.GetInt32(19);
+                    LotePT = dr.GetInt32(20);
+                    id_estadoCalidad = dr.GetInt32(21);
+                    Id_estado_tarima = dr.GetInt32(22);
+                    Id_alimentacion = dr.GetInt32(23);
+                    Fecha_produccion_pt = dr.GetDateTime(24);
+                    Id_turno = dr.GetInt32(25);
+                    Recuperado = true;
+                }
+                dr.Close();
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+            return Recuperado;
+        }
         public bool RecuperarRegistropt(int pIdTarima, string pCodigoBarra)
         {
             try

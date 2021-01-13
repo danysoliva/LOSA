@@ -185,6 +185,17 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="Lote" msprop:Generator_TableClassName="LoteDataTable" msprop:Generator_TableVarName="tableLote" msprop:Generator_TablePropName="Lote" msprop:Generator_RowDeletingName="LoteRowDeleting" msprop:Generator_RowChangingName="LoteRowChanging" msprop:Generator_RowEvHandlerName="LoteRowChangeEventHandler" msprop:Generator_RowDeletedName="LoteRowDeleted" msprop:Generator_UserTableName="Lote" msprop:Generator_RowChangedName="LoteRowChanged" msprop:Generator_RowEvArgName="LoteRowChangeEvent" msprop:Generator_RowClassName="LoteRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="lote" msprop:Generator_ColumnVarNameInTable="columnlote" msprop:Generator_ColumnPropNameInRow="lote" msprop:Generator_ColumnPropNameInTable="loteColumn" msprop:Generator_UserColumnName="lote" type="xs:string" minOccurs="0" />
+              <xs:element name="fproduccion" msprop:Generator_ColumnVarNameInTable="columnfproduccion" msprop:Generator_ColumnPropNameInRow="fproduccion" msprop:Generator_ColumnPropNameInTable="fproduccionColumn" msprop:Generator_UserColumnName="fproduccion" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="fvencimiento" msprop:Generator_ColumnVarNameInTable="columnfvencimiento" msprop:Generator_ColumnPropNameInRow="fvencimiento" msprop:Generator_ColumnPropNameInTable="fvencimientoColumn" msprop:Generator_UserColumnName="fvencimiento" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="cantlote" msprop:Generator_ColumnVarNameInTable="columncantlote" msprop:Generator_ColumnPropNameInRow="cantlote" msprop:Generator_ColumnPropNameInTable="cantloteColumn" msprop:Generator_UserColumnName="cantlote" type="xs:decimal" minOccurs="0" />
+              <xs:element name="muestras" msprop:Generator_ColumnVarNameInTable="columnmuestras" msprop:Generator_ColumnPropNameInRow="muestras" msprop:Generator_ColumnPropNameInTable="muestrasColumn" msprop:Generator_UserColumnName="muestras" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

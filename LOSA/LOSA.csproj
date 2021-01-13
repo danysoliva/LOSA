@@ -155,6 +155,12 @@
     <Compile Include="Calidad\frmaddcausa.Designer.cs">
       <DependentUpon>frmaddcausa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\frmcalidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmcalidad.Designer.cs">
+      <DependentUpon>frmcalidad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\frmcalidadcausas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -885,6 +891,12 @@
     <Compile Include="TransaccionesMP\frmEntregaTarimaReq.Designer.cs">
       <DependentUpon>frmEntregaTarimaReq.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\frmEntregaTarimaReq_v2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmEntregaTarimaReq_v2.Designer.cs">
+      <DependentUpon>frmEntregaTarimaReq_v2.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesMP\frmGestionUbicaciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -991,6 +1003,9 @@
     </Compile>
     <EmbeddedResource Include="Calidad\frmaddcausa.resx">
       <DependentUpon>frmaddcausa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmcalidad.resx">
+      <DependentUpon>frmcalidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmcalidadcausas.resx">
       <DependentUpon>frmcalidadcausas.cs</DependentUpon>
@@ -1317,6 +1332,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmEntregaTarimaReq.resx">
       <DependentUpon>frmEntregaTarimaReq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmEntregaTarimaReq_v2.resx">
+      <DependentUpon>frmEntregaTarimaReq_v2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmGestionUbicaciones.resx">
       <DependentUpon>frmGestionUbicaciones.cs</DependentUpon>
