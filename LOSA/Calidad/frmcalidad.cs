@@ -3,6 +3,7 @@ using Core.Clases.Herramientas;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraReports.UI;
 using LOSA.Clases;
+using LOSA.RecepcionMP;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -20,11 +21,15 @@ namespace LOSA.Calidad
     public partial class frmcalidad : DevExpress.XtraEditors.XtraForm
     {
         DataOperations dp = new DataOperations();
-        public frmcalidad()
+        UserLogin UsuarioLogeado;
+        
+        public frmcalidad(UserLogin Puser)
         {
             InitializeComponent();
-            Load_Info();
+            UsuarioLogeado = Puser;
+            Load_Info();   
         }
+      
         public void Load_Info()
         {
             string query = @"EXEC dbo.ps_load_ingresos_from_tarimas";
@@ -47,6 +52,22 @@ namespace LOSA.Calidad
         private void cmdHome_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnver_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var gridview = (GridView)grd_ingreso.FocusedView;
+                var row = (dsRecepcionMPx.IngresosMPRow)gridview.GetFocusedDataRow();
+                frmInfoAdicional frm = new frmInfoAdicional(UsuarioLogeado, row.id);
+                frm.Show();
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
         }
     }
 }

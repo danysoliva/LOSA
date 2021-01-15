@@ -384,5 +384,11 @@ namespace LOSA
             RecuentoInventario.frmRecuentoInventario frm = new RecuentoInventario.frmRecuentoInventario();
             frm.Show();
         }
+
+        private void simpleButton4_Click_1(object sender, EventArgs e)
+        {
+            frmcalidad frm = new frmcalidad(UsuarioLogeado);
+            frm.Show();
+        }
     }
 }

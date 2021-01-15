@@ -179,6 +179,12 @@
     <Compile Include="Calidad\frmEstadosTarimaCalidad.Designer.cs">
       <DependentUpon>frmEstadosTarimaCalidad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\frmInfoAdicional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmInfoAdicional.Designer.cs">
+      <DependentUpon>frmInfoAdicional.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\frmLotesStatus.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -771,6 +777,12 @@
     <Compile Include="Reportes\frmreporteUbicacion.Designer.cs">
       <DependentUpon>frmreporteUbicacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\frmrpt_lote_mp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmrpt_lote_mp.Designer.cs">
+      <DependentUpon>frmrpt_lote_mp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\frmtarimasporbodega.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1001,6 +1013,12 @@
     <Compile Include="Utileria\frmMensaje.Designer.cs">
       <DependentUpon>frmMensaje.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utileria\frmMensajeCalidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utileria\frmMensajeCalidad.Designer.cs">
+      <DependentUpon>frmMensajeCalidad.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Calidad\frmaddcausa.resx">
       <DependentUpon>frmaddcausa.cs</DependentUpon>
     </EmbeddedResource>
@@ -1015,6 +1033,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmEstadosTarimaCalidad.resx">
       <DependentUpon>frmEstadosTarimaCalidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmInfoAdicional.resx">
+      <DependentUpon>frmInfoAdicional.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmLotesStatus.resx">
       <DependentUpon>frmLotesStatus.cs</DependentUpon>
@@ -1282,6 +1303,9 @@
     <EmbeddedResource Include="Reportes\frmreporteUbicacion.resx">
       <DependentUpon>frmreporteUbicacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmrpt_lote_mp.resx">
+      <DependentUpon>frmrpt_lote_mp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmtarimasporbodega.resx">
       <DependentUpon>frmtarimasporbodega.cs</DependentUpon>
     </EmbeddedResource>
@@ -1383,6 +1407,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Utileria\frmMensaje.resx">
       <DependentUpon>frmMensaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utileria\frmMensajeCalidad.resx">
+      <DependentUpon>frmMensajeCalidad.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Calidad\dsCalidad.xsc">
       <DependentUpon>dsCalidad.xsd</DependentUpon>

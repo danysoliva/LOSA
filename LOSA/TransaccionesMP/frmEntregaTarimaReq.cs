@@ -163,6 +163,11 @@ namespace LOSA.TransaccionesMP
                         {
                             error = true;
                             mensaje = "La tarima no esta Disponible por parte de Calidad!";
+                            Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
+                            if (frm.ShowDialog() == DialogResult.Cancel)
+                            {
+
+                            }
                         }
 
                         if (!error)

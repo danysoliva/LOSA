@@ -43,6 +43,7 @@
             this.cmdRegistroLote = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.btnreportIngreso = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -245,8 +246,21 @@
             this.btnreportIngreso.Name = "btnreportIngreso";
             this.btnreportIngreso.Size = new System.Drawing.Size(199, 71);
             this.btnreportIngreso.TabIndex = 40;
-            this.btnreportIngreso.Text = "ingreso por para LM \r\ny fecha de vencimiento";
+            this.btnreportIngreso.Text = "Ingreso en el año";
             this.btnreportIngreso.Click += new System.EventHandler(this.btnreportIngreso_Click);
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton3.Appearance.Options.UseFont = true;
+            this.simpleButton3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.simpleButton3.Location = new System.Drawing.Point(33, 434);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(200, 71);
+            this.simpleButton3.TabIndex = 41;
+            this.simpleButton3.Text = "Existencia materia\r\nprima por lote";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // frmreport
             // 
@@ -255,6 +269,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(714, 522);
+            this.Controls.Add(this.simpleButton3);
             this.Controls.Add(this.btnreportIngreso);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.simpleButton1);
@@ -294,5 +309,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton btnreportIngreso;
+        private DevExpress.XtraEditors.SimpleButton simpleButton3;
     }
 }

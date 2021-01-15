@@ -562,6 +562,7 @@
             this.groupControl2.Size = new System.Drawing.Size(622, 77);
             this.groupControl2.TabIndex = 57;
             this.groupControl2.Text = "Nueva Ubicación";
+            this.groupControl2.Visible = false;
             // 
             // gcNuevaUbicación
             // 
@@ -747,6 +748,7 @@
             this.beNuevaUbicacion.Size = new System.Drawing.Size(325, 28);
             this.beNuevaUbicacion.TabIndex = 60;
             this.beNuevaUbicacion.ToolTip = "Hola";
+            this.beNuevaUbicacion.Visible = false;
             // 
             // btnUbicacion
             // 
@@ -758,6 +760,7 @@
             this.btnUbicacion.Name = "btnUbicacion";
             this.btnUbicacion.Size = new System.Drawing.Size(42, 40);
             this.btnUbicacion.TabIndex = 59;
+            this.btnUbicacion.Visible = false;
             this.btnUbicacion.Click += new System.EventHandler(this.btnUbicacion_Click);
             // 
             // labelControl14
