@@ -194,11 +194,11 @@ namespace LOSA.RecepcionMP
                 CajaDialogo.Error("No se puede registrar una tarima sin la boleta de bascula!");
                 return;
             }
-            if (gvNuevaUbicacion.RowCount <= 0)
-            {
-                CajaDialogo.Error("Debe seleccionar una ubicacion predeterminada para todas las tarimas.");
-                return;
-            }
+            //if (gvNuevaUbicacion.RowCount <= 0)
+            //{
+            //    CajaDialogo.Error("Debe seleccionar una ubicacion predeterminada para todas las tarimas.");
+            //    return;
+            //}
 
             if (Convert.ToDecimal(txtUnidades .Text) <= 0)
             {
@@ -316,7 +316,7 @@ namespace LOSA.RecepcionMP
                     cmdx.Parameters.AddWithValue("@id_tarima", vid_tarima);
                     cmdx.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
                     cmdx.Parameters.AddWithValue("@codigo_barra", barcode);
-                    cmdx.Parameters.AddWithValue("@id_ubicacion", idUbicacionNueva);
+                    cmdx.Parameters.AddWithValue("@id_ubicacion", 131); //bodega c500 predeterminada
                     cmdx.ExecuteNonQuery();
 
                     List.Add(vid_tarima);

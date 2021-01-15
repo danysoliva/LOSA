@@ -56,6 +56,7 @@
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdRecepcionMPLogistica = new DevExpress.XtraEditors.SimpleButton();
             this.TabCalidad = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.btnconfiguracionCal = new DevExpress.XtraEditors.SimpleButton();
             this.cmdLotesCalidad = new DevExpress.XtraEditors.SimpleButton();
             this.TabAdmin = new DevExpress.XtraTab.XtraTabPage();
@@ -68,7 +69,6 @@
             this.cmdTarimasPT = new DevExpress.XtraEditors.SimpleButton();
             this.btnAlimentacionManual = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -475,6 +475,19 @@
             this.TabCalidad.Size = new System.Drawing.Size(629, 422);
             this.TabCalidad.Text = "Calidad";
             // 
+            // simpleButton4
+            // 
+            this.simpleButton4.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton4.Appearance.Options.UseFont = true;
+            this.simpleButton4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton4.ImageOptions.Image = global::LOSA.Properties.Resources.edit_table_1_;
+            this.simpleButton4.Location = new System.Drawing.Point(9, 177);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton4.TabIndex = 13;
+            this.simpleButton4.Text = "Informacion \r\nde Ingreso";
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click_1);
+            // 
             // btnconfiguracionCal
             // 
             this.btnconfiguracionCal.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -634,18 +647,6 @@
             this.labelControl3.Size = new System.Drawing.Size(372, 39);
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
-            // 
-            // simpleButton4
-            // 
-            this.simpleButton4.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton4.Appearance.Options.UseFont = true;
-            this.simpleButton4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton4.ImageOptions.Image = global::LOSA.Properties.Resources.edit_table_1_;
-            this.simpleButton4.Location = new System.Drawing.Point(9, 177);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(199, 71);
-            this.simpleButton4.TabIndex = 13;
-            this.simpleButton4.Text = "Informacion \r\nde Ingreso";
             // 
             // frmOpciones
             // 

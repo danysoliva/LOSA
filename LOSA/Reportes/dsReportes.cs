@@ -4,6 +4,10 @@
 
     partial class dsReportes
     {
+        partial class lote_existencia_mpDataTable
+        {
+        }
+
         partial class IngresoDetalleDataTable
         {
         }
@@ -19,5 +23,5 @@
         partial class tmprintDataTable
         {
         }
-    }
+    }                                                                                                               
 }
