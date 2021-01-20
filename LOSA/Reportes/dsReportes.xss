@@ -11,7 +11,7 @@
     <Shape ID="DesignTable:Tarimas" ZOrder="12" X="267" Y="43" Height="333" Width="153" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="329" />
     <Shape ID="DesignTable:tmprint" ZOrder="11" X="358" Y="402" Height="240" Width="183" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="236" />
     <Shape ID="DesignTable:bodegas" ZOrder="10" X="459" Y="54" Height="79" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="75" />
-    <Shape ID="DesignTable:Ubicaciones" ZOrder="9" X="718" Y="173" Height="162" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="158" />
+    <Shape ID="DesignTable:Ubicaciones" ZOrder="9" X="718" Y="173" Height="200" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="196" />
     <Shape ID="DesignTable:TarimaResult" ZOrder="8" X="878" Y="397" Height="263" Width="174" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="259" />
     <Shape ID="DesignTable:ProductoPT" ZOrder="7" X="1020" Y="186" Height="143" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="139" />
     <Shape ID="DesignTable:lotespt" ZOrder="6" X="160" Y="397" Height="219" Width="162" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="215" />

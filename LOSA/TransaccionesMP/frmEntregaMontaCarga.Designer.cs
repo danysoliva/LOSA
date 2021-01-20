@@ -39,11 +39,11 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(372, 438);
+            this.labelControl2.Location = new System.Drawing.Point(337, 438);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(167, 29);
+            this.labelControl2.Size = new System.Drawing.Size(241, 29);
             this.labelControl2.TabIndex = 17;
-            this.labelControl2.Text = "Lista detalle MP";
+            this.labelControl2.Text = "Monitoreo de Entregas";
             // 
             // labelControl1
             // 

@@ -172,6 +172,12 @@ namespace LOSA.TransaccionesMP
                 {
                     error = true;
                     lblMensaje.Text = "Debe indicar la requisicion que esta entregando!";
+
+                    Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
+                    if (frm.ShowDialog() == DialogResult.Cancel)
+                    {
+
+                    }
                     panelNotificacion.BackColor = Color.Red;
                     timerLimpiarMensaje.Enabled = true;
                     timerLimpiarMensaje.Start();
@@ -183,6 +189,15 @@ namespace LOSA.TransaccionesMP
                     {
                         error = true;
                         mensaje = "Calidad tiene retenido esta tarima.!";
+                        Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
+                        if (frm.ShowDialog() == DialogResult.Cancel)
+                        {
+
+                        }
+                        panelNotificacion.BackColor = Color.Red;
+                        timerLimpiarMensaje.Enabled = true;
+                        timerLimpiarMensaje.Start();
+                        return;
                     }
 
 
@@ -197,7 +212,7 @@ namespace LOSA.TransaccionesMP
                             SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                             con.Open();
 
-                            SqlCommand cmd = new SqlCommand("[dbo].[sp_verifica_diponibilidad_tarima_entrega_v3]", con);
+                            SqlCommand cmd = new SqlCommand("[dbo].[sp_verifica_diponibilidad_tarima_entrega_v4]", con);
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.AddWithValue("@id", tarimaEncontrada.Id);
                             cmd.Parameters.AddWithValue("@id_req", RequisicionActual.IdRequisicion);
@@ -208,8 +223,15 @@ namespace LOSA.TransaccionesMP
                                 if (!disponible)
                                 {
                                     error = true;
-                                    mensaje = dr.GetString(1); 
+                                    mensaje = dr.GetString(1);
+                                    Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
+                                    if (frm.ShowDialog() == DialogResult.Cancel)
+                                    {
+
+                                    }
+                                   
                                     lblMensaje.Text = mensaje;
+
                                     panelNotificacion.BackColor = Color.Red;
                                     timerLimpiarMensaje.Enabled = true;
                                     timerLimpiarMensaje.Start();
@@ -232,7 +254,7 @@ namespace LOSA.TransaccionesMP
                             con.Open();
 
                             //SqlCommand cmd = new SqlCommand("sp_set_insert_salida_tarima_bodega_mp", con);
-                            SqlCommand cmd = new SqlCommand("[dbo].[sp_insert_tarima_requisa_entrega_v2]", con);
+                            SqlCommand cmd = new SqlCommand("[dbo].[sp_insert_tarima_requisa_entrega_v3]", con);
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.AddWithValue("@idtarima", tarimaEncontrada.Id);
                             cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
@@ -259,12 +281,35 @@ namespace LOSA.TransaccionesMP
                         }
 
                     }
+                    else
+                    {
+                        Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
+                        if (frm.ShowDialog() == DialogResult.Cancel)
+                        {
+
+                        }
+                        panelNotificacion.BackColor = Color.Red;
+                        timerLimpiarMensaje.Enabled = true;
+                        timerLimpiarMensaje.Start();
+                        return;
+                    }
                 }
                 else
                 {
                     error = true;
                     mensaje = "El codigo de barra leido no es correcto!";
+                    Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
+                    if (frm.ShowDialog() == DialogResult.Cancel)
+                    {
+
+                    }   
+                    panelNotificacion.BackColor = Color.Red;
+                    timerLimpiarMensaje.Enabled = true;
+                    timerLimpiarMensaje.Start();
+                    return;
                 }
+
+
             }
         }
 
