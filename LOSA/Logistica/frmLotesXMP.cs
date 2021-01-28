@@ -26,14 +26,7 @@ namespace LOSA.Logistica
         {
             try
             {
-
-                //SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-                //string SQL = @"exec sp_get_lotes_by_MP";
-
-                //dsLogistica.LotesXProveedor.Clear();
-                //SqlDataAdapter adat = new SqlDataAdapter(SQL, cn);
-
-                //adat.Fill(dsLogistica.LotesXProveedor);
+                    
                 DataOperations dp = new DataOperations();
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();

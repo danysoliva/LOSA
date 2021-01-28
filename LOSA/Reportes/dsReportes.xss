@@ -19,7 +19,7 @@
     <Shape ID="DesignTable:ingreso_lm" ZOrder="4" X="615" Y="460" Height="390" Width="204" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="386" />
     <Shape ID="DesignTable:IngresoDetalle" ZOrder="3" X="1291" Y="37" Height="162" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="158" />
     <Shape ID="DesignTable:Lote" ZOrder="2" X="1293" Y="217" Height="124" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="120" />
-    <Shape ID="DesignTable:lote_existencia_mp" ZOrder="1" X="1211" Y="535" Height="124" Width="175" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="120" />
+    <Shape ID="DesignTable:lote_existencia_mp" ZOrder="1" X="1211" Y="535" Height="143" Width="175" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="139" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

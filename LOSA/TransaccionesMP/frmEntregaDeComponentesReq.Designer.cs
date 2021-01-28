@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEntregaDeComponentesReq));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.beIdTarima = new DevExpress.XtraEditors.ButtonEdit();
             this.cmdSelectTarima = new DevExpress.XtraEditors.SimpleButton();
@@ -81,9 +81,9 @@
             this.beIdTarima.Name = "beIdTarima";
             this.beIdTarima.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.beIdTarima.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.beIdTarima.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.beIdTarima.Properties.MaxLength = 20;
             this.beIdTarima.Properties.NullText = "Escanee o selecciona una tarima";
             this.beIdTarima.Properties.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.beIdTarima_Properties_ButtonClick);
@@ -184,24 +184,36 @@
             this.colcantidad.Caption = "Ud";
             this.colcantidad.FieldName = "cantidad";
             this.colcantidad.Name = "colcantidad";
+            this.colcantidad.OptionsColumn.AllowEdit = false;
+            this.colcantidad.Visible = true;
+            this.colcantidad.VisibleIndex = 2;
             // 
             // colpeso
             // 
             this.colpeso.Caption = "Peso Kg.";
             this.colpeso.FieldName = "peso";
             this.colpeso.Name = "colpeso";
+            this.colpeso.OptionsColumn.AllowEdit = false;
+            this.colpeso.Visible = true;
+            this.colpeso.VisibleIndex = 3;
             // 
             // colmp
             // 
             this.colmp.Caption = "Material";
             this.colmp.FieldName = "mp";
             this.colmp.Name = "colmp";
+            this.colmp.OptionsColumn.AllowEdit = false;
+            this.colmp.Visible = true;
+            this.colmp.VisibleIndex = 0;
             // 
             // collote
             // 
             this.collote.Caption = "Lote";
             this.collote.FieldName = "lote";
             this.collote.Name = "collote";
+            this.collote.OptionsColumn.AllowEdit = false;
+            this.collote.Visible = true;
+            this.collote.VisibleIndex = 1;
             // 
             // timertick
             // 

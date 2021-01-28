@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>86</ApplicationRevision>
+    <ApplicationRevision>93</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -70,11 +70,10 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>029C0AD9E9D4A664250A497C4DAB6F1B5D0BC443</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>FF837E7A522E1F67A0BA5FA4A976AA3173F054D1</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>
-    </ManifestKeyFile>
+    <ManifestKeyFile>LOSA_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -91,6 +90,9 @@
   <PropertyGroup />
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>LOSA_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -963,6 +965,18 @@
     <Compile Include="TransaccionesMP\frmUbicacionLotes.Designer.cs">
       <DependentUpon>frmUbicacionLotes.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\frmviewrequisadetallecs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmviewrequisadetallecs.Designer.cs">
+      <DependentUpon>frmviewrequisadetallecs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmviewrequisas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmviewrequisas.Designer.cs">
+      <DependentUpon>frmviewrequisas.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesPT\dsPT.cs">
       <DependentUpon>dsPT.xsd</DependentUpon>
     </Compile>
@@ -1387,6 +1401,12 @@
     <EmbeddedResource Include="TransaccionesMP\frmUbicacionLotes.resx">
       <DependentUpon>frmUbicacionLotes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmviewrequisadetallecs.resx">
+      <DependentUpon>frmviewrequisadetallecs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmviewrequisas.resx">
+      <DependentUpon>frmviewrequisas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesPT\frmactivacionPT.resx">
       <DependentUpon>frmactivacionPT.cs</DependentUpon>
     </EmbeddedResource>
@@ -1444,6 +1464,7 @@
     <None Include="Logistica\dsLogistica.xss">
       <DependentUpon>dsLogistica.xsd</DependentUpon>
     </None>
+    <None Include="LOSA_TemporaryKey.pfx" />
     <None Include="Mantenimientos\dsMantenimiento.xsc">
       <DependentUpon>dsMantenimiento.xsd</DependentUpon>
     </None>

@@ -47,5 +47,11 @@ namespace LOSA.TransaccionesMP
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            frmviewrequisas frm = new frmviewrequisas();
+            frm.Show();
+        }
     }
 }

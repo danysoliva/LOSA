@@ -5304,6 +5304,8 @@ namespace LOSA.Reportes {
             
             private global::System.Data.DataColumn columnid_materia_prima;
             
+            private global::System.Data.DataColumn columnnumero_transaccion;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public lote_existencia_mpDataTable() {
@@ -5379,6 +5381,14 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn numero_transaccionColumn {
+                get {
+                    return this.columnnumero_transaccion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5414,14 +5424,15 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public lote_existencia_mpRow Addlote_existencia_mpRow(decimal peso, decimal unidades, string mp, string lote_materia_prima, int id_materia_prima) {
+            public lote_existencia_mpRow Addlote_existencia_mpRow(decimal peso, decimal unidades, string mp, string lote_materia_prima, int id_materia_prima, int numero_transaccion) {
                 lote_existencia_mpRow rowlote_existencia_mpRow = ((lote_existencia_mpRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         peso,
                         unidades,
                         mp,
                         lote_materia_prima,
-                        id_materia_prima};
+                        id_materia_prima,
+                        numero_transaccion};
                 rowlote_existencia_mpRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowlote_existencia_mpRow);
                 return rowlote_existencia_mpRow;
@@ -5449,6 +5460,7 @@ namespace LOSA.Reportes {
                 this.columnmp = base.Columns["mp"];
                 this.columnlote_materia_prima = base.Columns["lote_materia_prima"];
                 this.columnid_materia_prima = base.Columns["id_materia_prima"];
+                this.columnnumero_transaccion = base.Columns["numero_transaccion"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5464,6 +5476,8 @@ namespace LOSA.Reportes {
                 base.Columns.Add(this.columnlote_materia_prima);
                 this.columnid_materia_prima = new global::System.Data.DataColumn("id_materia_prima", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_materia_prima);
+                this.columnnumero_transaccion = new global::System.Data.DataColumn("numero_transaccion", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnumero_transaccion);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8907,6 +8921,23 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int numero_transaccion {
+                get {
+                    try {
+                        return ((int)(this[this.tablelote_existencia_mp.numero_transaccionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'numero_transaccion\' in table \'lote_existencia_mp\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tablelote_existencia_mp.numero_transaccionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IspesoNull() {
                 return this.IsNull(this.tablelote_existencia_mp.pesoColumn);
             }
@@ -8963,6 +8994,18 @@ namespace LOSA.Reportes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void Setid_materia_primaNull() {
                 this[this.tablelote_existencia_mp.id_materia_primaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isnumero_transaccionNull() {
+                return this.IsNull(this.tablelote_existencia_mp.numero_transaccionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setnumero_transaccionNull() {
+                this[this.tablelote_existencia_mp.numero_transaccionColumn] = global::System.Convert.DBNull;
             }
         }
         
