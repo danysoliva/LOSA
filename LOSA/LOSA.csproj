@@ -833,6 +833,12 @@
     <Compile Include="Reportes\rptUbicacionRotulo.Designer.cs">
       <DependentUpon>rptUbicacionRotulo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\rpt_cartilla.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rpt_cartilla.Designer.cs">
+      <DependentUpon>rpt_cartilla.cs</DependentUpon>
+    </Compile>
     <Compile Include="Requisiciones\dSReportes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1343,6 +1349,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rptUbicacionRotulo.resx">
       <DependentUpon>rptUbicacionRotulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpt_cartilla.resx">
+      <DependentUpon>rpt_cartilla.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Requisiciones\Reportes\rpt_requisa.resx">
       <DependentUpon>rpt_requisa.cs</DependentUpon>

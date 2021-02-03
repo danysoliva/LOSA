@@ -315,6 +315,7 @@
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnEditar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnEditar_ButtonClick);
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // colnum
             // 

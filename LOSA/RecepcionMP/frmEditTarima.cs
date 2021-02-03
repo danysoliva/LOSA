@@ -72,7 +72,7 @@ namespace LOSA.RecepcionMP
                 MateriaPrima mp = new MateriaPrima();
                 if (mp.RecuperarRegistroFromID_RM(tam.Id_materiaprima))
                 {
-                    ItemCode = mp.Codigo;
+                    ItemCode = mp.CodeMP_SAP;
                     txtMP_Name.Text = mp.Name;
                 }
                 Proveedor pv = new Proveedor();
@@ -196,7 +196,7 @@ namespace LOSA.RecepcionMP
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_update_tarima", con);
+                SqlCommand cmd = new SqlCommand("sp_update_tarima_v2", con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@fecha_ingreso",  Convert.ToDateTime(dtFechaIngreso.EditValue));
@@ -281,6 +281,7 @@ namespace LOSA.RecepcionMP
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 txtMP_Name.Text = frm.MateriaPrima;
+                
                 //txtCodigoProveedor.Text = frm.idProveedor;
                 //txtProveedorName.Text = frm.NombreProveedor;
                 this.ItemCode = frm.ItemCode;

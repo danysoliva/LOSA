@@ -228,5 +228,10 @@ namespace LOSA.RecepcionMP
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
