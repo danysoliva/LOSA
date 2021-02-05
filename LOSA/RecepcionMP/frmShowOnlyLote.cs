@@ -1,61 +1,47 @@
-﻿using ACS.Classes;
-using Core.Clases.Herramientas;
-using DevExpress.XtraGrid.Views.Grid;
-using DevExpress.XtraReports.UI;
-using LOSA.Clases;
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
 using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using LOSA.Tools;
-
+using DevExpress.XtraEditors;
+using LOSA.Clases;
+using System.Data.SqlClient;
+using ACS.Classes;
+using Core.Clases.Herramientas;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraReports.UI;
+using System.Collections;
+using LOSA.Tools;  
 
 namespace LOSA.RecepcionMP
 {
-    public partial class frm_ingresos_lotes : DevExpress.XtraEditors.XtraForm
+    public partial class frmShowOnlyLote : DevExpress.XtraEditors.XtraForm
     {
-        int id_ingreso;
-        int numero_transaccion;
         DataOperations dp = new DataOperations();
+        public int id_lote;
         UserLogin UsuarioLogeado;
-        public int Id_ingreso { get => id_ingreso; set => id_ingreso = value; }
-        public int Numero_transaccion { get => numero_transaccion; set => numero_transaccion = value; }
-
-        public frm_ingresos_lotes(int Pid_ingreso, int Pnumero_transaccion, UserLogin Puser)
+        public frmShowOnlyLote(int Pid_lote, UserLogin Puser)
         {
             InitializeComponent();
-            Numero_transaccion = Pnumero_transaccion;
-            Id_ingreso = Pid_ingreso;
+            id_lote = Pid_lote;
             UsuarioLogeado = Puser;
             LoadTarimas();
         }
 
-        private void btnAtras_Click(object sender, EventArgs e)
-        {
-            Teclado.cerrarTeclado();
-            this.DialogResult = DialogResult.Cancel;
-            this.Close();
-        }
-        
-
         public void LoadTarimas()
         {
-            string SqlCommandSp = @"ps_obtener_tarimas_de_ingreso";
+            string SqlCommandSp = @"ps_obtener_tarimas_de_ingreso_lote";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             try
             {
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(SqlCommandSp, cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@numero_referencia", Numero_transaccion);
-                cmd.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
+                cmd.CommandType = CommandType.StoredProcedure;                  
+                cmd.Parameters.AddWithValue("@id_lote", id_lote);
                 dsRecepcionMPx.lista_tarimas.Clear();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dsRecepcionMPx.lista_tarimas);
@@ -68,14 +54,15 @@ namespace LOSA.RecepcionMP
             }
         }
 
-        private void gridControl1_Click(object sender, EventArgs e)
+        private void btnAtras_Click(object sender, EventArgs e)
         {
-
+            Teclado.cerrarTeclado();
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            //imprimir
             var gridView = (GridView)gridControl1.FocusedView;
             var row = (dsRecepcionMPx.lista_tarimasRow)gridView.GetFocusedDataRow();
             rptReporteIngresoTarima report = new rptReporteIngresoTarima(row.id);
@@ -185,7 +172,7 @@ namespace LOSA.RecepcionMP
                     }
                     List1.Clear();
                 }//end if recuperar registro
-            }//end dialog 
+            }//end d
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -195,22 +182,6 @@ namespace LOSA.RecepcionMP
 
             frmEditTarima frm = new frmEditTarima(row.id, this.UsuarioLogeado);
             frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
-        }
-
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            frmagregarlote frm = new frmagregarlote(Id_ingreso,Numero_transaccion, UsuarioLogeado);
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-
-                LoadTarimas();
-            }
-        }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            frmverlotes frm = new frmverlotes(id_ingreso , UsuarioLogeado);
             frm.Show();
         }
     }
