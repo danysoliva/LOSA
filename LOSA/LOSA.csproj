@@ -70,10 +70,11 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>FF837E7A522E1F67A0BA5FA4A976AA3173F054D1</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>029C0AD9E9D4A664250A497C4DAB6F1B5D0BC443</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>LOSA_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
