@@ -28,8 +28,75 @@ namespace LOSA
             UsuarioLogeado = pUser;
             int i = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
             //int i = Convert.ToInt32(4);
-            tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
-            tabOpciones.TabPages[i].PageVisible = true;
+            switch (pUser.GrupoUsuario.GrupoUsuarioActivo)
+            {
+                case GrupoUser.GrupoUsuario.Montacarga:
+                    tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
+                    tabOpciones.TabPages[i].PageVisible = true;
+                    break;
+                case GrupoUser.GrupoUsuario.Logistica:
+                    tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
+                    tabOpciones.TabPages[i].PageVisible = true;
+                    break;
+                case GrupoUser.GrupoUsuario.Calidad:
+                    int idNivel = pUser.idNivelAcceso(pUser.Id, 7);//7 = ALOSY
+                    switch (idNivel)
+                    {
+                        case 1://Basic View
+                            BasicView();
+                            break;
+                        case 2://Basic No Autorization
+
+                            break;
+                        case 3://Medium Autorization
+
+                            break;
+                        case 4://Depth With Delta
+
+                            break;
+                        case 5://Depth Without Delta
+
+                            break;
+                        default:
+                            tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
+                            tabOpciones.TabPages[i].PageVisible = true;
+                            break;
+                    }
+                    break;
+                case GrupoUser.GrupoUsuario.Administradores:
+                    tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
+                    tabOpciones.TabPages[i].PageVisible = true;
+                    break;
+                case GrupoUser.GrupoUsuario.Produccion:
+                    tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
+                    tabOpciones.TabPages[i].PageVisible = true;
+                    break;
+                default:
+                    tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
+                    tabOpciones.TabPages[i].PageVisible = true;
+                    break;
+            }
+        }
+
+        public void BasicView()
+        {
+            TabCalidad.PageVisible = TabLogistica.PageVisible = true;
+            cmdRegistroLote.Enabled =
+            cmdGestionIngresos.Enabled =
+            btnAjustesKardex.Enabled =
+            cmdOrdenesFabricacion.Enabled =
+            btnplanrequisas.Enabled =
+            cmdRequisiciones_.Enabled =
+            btnajuste.Enabled =
+            cmdUbicaciones.Enabled =
+            simpleButton3.Enabled =
+            btndespachos.Enabled =
+            btnplanesdespachos.Enabled =
+            btnReq_PT.Enabled =
+            btnAlimentacion.Enabled =
+            simpleButton2.Enabled =
+            simpleButton1.Enabled =
+            btnPlantarimas.Enabled = false;
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
