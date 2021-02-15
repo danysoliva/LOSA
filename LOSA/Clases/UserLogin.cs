@@ -93,5 +93,34 @@ namespace LOSA.Clases
             }
             return Recuperado;
         }
+
+        public int idNivelAcceso(int Iduser, int idSistema)
+        {
+            int id = 0;
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringCostos);
+                con.Open();
+                string sql = "sp_get_nivel_acceso_for_user";
+                SqlCommand cmd = new SqlCommand(sql, con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_sistema", idSistema);
+                cmd.Parameters.AddWithValue("@id_user", Iduser);
+                id = Convert.ToInt32(cmd.ExecuteScalar());
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                //recuperado = false;
+                CajaDialogo.Error(ec.Message);
+            }
+            return id;
+        }
+
+
+
+
+
     }
 }
