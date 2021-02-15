@@ -213,5 +213,33 @@ namespace LOSA.RecepcionMP
             frmverlotes frm = new frmverlotes(id_ingreso , UsuarioLogeado);
             frm.Show();
         }
+
+        private void btneliminarTm_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Desea eliminar la tarima?", "Desea eliminar la tarima?",MessageBoxButtons.OKCancel,MessageBoxIcon.Information) == DialogResult.Cancel)
+                {
+                    return;
+                }
+                var gridView = (GridView)gridControl1.FocusedView;
+                var row = (dsRecepcionMPx.lista_tarimasRow)gridView.GetFocusedDataRow();
+                string query = @"sp_deshabilitar_tm_por_id";
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query,cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idtm", row.id);
+                cmd.ExecuteNonQuery();
+                CajaDialogo.Information("Se he eliminado correctamente la tarima.");  
+                LoadTarimas();
+
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            } 
+        }
     }
 }

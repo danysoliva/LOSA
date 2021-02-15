@@ -91,11 +91,33 @@ namespace LOSA.RecepcionMP
             {
                 var gridview = (GridView)grd_ingreso.FocusedView;
                 var row = (dsRecepcionMPx.IngresosMPRow)gridview.GetFocusedDataRow();
+                string query = @"sp_obtener_id_mps_from_ingreso";
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                try
+                {
+                    cn.Open();
+                    SqlCommand cmd = new SqlCommand(query,cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id_ingreso", row.id);
 
-                Reportes.rptIngresoHoja report = new Reportes.rptIngresoHoja(row.id);
-                report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
-                ReportPrintTool printReport = new ReportPrintTool(report);
-                printReport.ShowPreview();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    dsRecepcionMPx.mp_lote.Clear();
+                    da.Fill(dsRecepcionMPx.mp_lote);
+                    cn.Close();
+                    foreach (dsRecepcionMPx.mp_loteRow registro in dsRecepcionMPx.mp_lote.Rows)
+                    {
+                        Reportes.rptIngresoHoja report = new Reportes.rptIngresoHoja(row.id, registro.mp);
+                        report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                        ReportPrintTool printReport = new ReportPrintTool(report);
+                        printReport.ShowPreview();
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    
+                }
+                
 
             }
             catch (Exception ex)
