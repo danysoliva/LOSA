@@ -208,7 +208,7 @@ namespace LOSA.RecepcionMP
                     cmm.Parameters.AddWithValue("@id", 1);
                     string barcode = cmm.ExecuteScalar().ToString();
 
-                    SqlCommand cmd = new SqlCommand("sp_insert_new_tarima_sin_boleta", con);
+                    SqlCommand cmd = new SqlCommand("sp_insert_new_tarima_sin_boleta_mp", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@itemcode", this.ItemCode);
                     cmd.Parameters.AddWithValue("@id_proveedor", txtCodigoProveedor.Text);

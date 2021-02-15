@@ -13,6 +13,7 @@ using System.Data.SqlClient;
 using DevExpress.XtraGrid.Views.Grid;
 using LOSA.Reportes;
 using DevExpress.XtraReports.UI;
+using LOSA.Clases;
 
 namespace LOSA.RecepcionMP
 {
@@ -20,9 +21,11 @@ namespace LOSA.RecepcionMP
     {
         private int id_ingreso;
         DataOperations dp = new DataOperations();
-        public frmverlotes(int Pingreso)
+        UserLogin UsuarioLogeado;
+        public frmverlotes(int Pingreso, UserLogin Puser)
         {                   
             InitializeComponent();
+            UsuarioLogeado = Puser;
             Id_ingreso = Pingreso;
             load_data();
         }
@@ -60,7 +63,7 @@ namespace LOSA.RecepcionMP
             {
                 var gridview = (GridView)grd_data.FocusedView;
                 var row = (dsingresos.loteRow)gridview.GetFocusedDataRow();
-                rptLoteRotulo report = new rptLoteRotulo(row.id);               
+                rpt_cartilla report = new rpt_cartilla(row.id);               
                 report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
                 ReportPrintTool printReport = new ReportPrintTool(report);
                 printReport.ShowPreview();
@@ -89,6 +92,50 @@ namespace LOSA.RecepcionMP
         {
             //Indica el numero de copias de la boleta que seran impresas
             e.PrintDocument.PrinterSettings.Copies = 1;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Debesea eliminar este lote?" , "Debesea eliminar este lote" , MessageBoxButtons.OKCancel,MessageBoxIcon.Information)  == DialogResult.Cancel)
+                {
+                    return;
+                }
+                var gridview = (GridView)grd_data.FocusedView;
+                var row = (dsingresos.loteRow)gridview.GetFocusedDataRow();
+                string query = @"sp_eliminar_lote_of_ingreso";
+                SqlConnection CN = new SqlConnection(dp.ConnectionStringLOSA);
+                CN.Open();
+                SqlCommand cmd = new SqlCommand(query,CN);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_lote", row.id);
+
+                cmd.ExecuteNonQuery();
+                CajaDialogo.Information("Ajuste Realizado");
+                CN.Close();
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+
+        private void btnver_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var gridview = (GridView)grd_data.FocusedView;
+                var row = (dsingresos.loteRow)gridview.GetFocusedDataRow();
+                frmShowOnlyLote frm = new frmShowOnlyLote(row.id,UsuarioLogeado);
+                frm.Show();
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
         }
     }
 }

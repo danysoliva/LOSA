@@ -375,6 +375,7 @@ namespace LOSA
             //frmTarimaManual FRM = new frmTarimaManual(UsuarioLogeado);
             //FRM.Show();
             frmMP_Granel frm = new frmMP_Granel(UsuarioLogeado);
+            
 
             if (this.MdiParent != null)
             {

@@ -13,23 +13,28 @@ namespace LOSA.Reportes
     {
         DataOperations dp = new DataOperations();
         int Id;
+        int Id_mp;
+        int id_lote;
             
-        public rptIngresoHoja(int Pid)
+        public rptIngresoHoja(int Pid, int Pid_mp)
         {
             InitializeComponent();
             Id = Pid;
+            Id_mp = Pid_mp;
+            
             load_data();
             load_detalle();
             load_lote();
         }
         public void load_data()
         {
-            string query = @"sp_load_informacion_ingreso";
+            string query = @"sp_load_informacion_ingreso_v2";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             cn.Open();
             SqlCommand cmd = new SqlCommand(query,cn);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@id_ingreso", Id );
+            cmd.Parameters.AddWithValue("@Id_mp", Id_mp);
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())
             {
@@ -53,12 +58,13 @@ namespace LOSA.Reportes
         {
             try
             {
-                string query = @"sp_load_main_data_rpt_ingreso";
+                string query = @"sp_load_main_data_rpt_ingreso_v2";
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_ingreso", Id);
+                cmd.Parameters.AddWithValue("@Id_mp", Id_mp);
                 dsReportes1.IngresoDetalle.Clear();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dsReportes1.IngresoDetalle);
@@ -75,12 +81,13 @@ namespace LOSA.Reportes
         {
             try
             {
-                string query = @"sp_rpt_print_detalle_lote";
+                string query = @"sp_rpt_print_detalle_lote_v2";
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_ingreso", Id);
+                cmd.Parameters.AddWithValue("@Id_mp", Id_mp);
                 dsReportes1.Lote.Clear();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dsReportes1.Lote);

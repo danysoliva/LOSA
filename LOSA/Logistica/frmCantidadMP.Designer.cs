@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCantidadMP));
             this.gcMateriaPrima = new DevExpress.XtraGrid.GridControl();
-            this.cantidadmateriaprimaBindingSource = new System.Windows.Forms.BindingSource();
+            this.cantidadmateriaprimaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsLogistica = new LOSA.Logistica.dsLogistica2();
             this.gvMateriaPrima = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colitemcode = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -40,6 +41,7 @@
             this.coltipo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colpeso = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
+            this.btnExcel = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gcMateriaPrima)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cantidadmateriaprimaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsLogistica)).BeginInit();
@@ -175,11 +177,25 @@
             this.cmdHome.Text = "Home";
             this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
             // 
+            // btnExcel
+            // 
+            this.btnExcel.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcel.Appearance.Options.UseFont = true;
+            this.btnExcel.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.ImageOptions.Image")));
+            this.btnExcel.Location = new System.Drawing.Point(10, 3);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(199, 71);
+            this.btnExcel.TabIndex = 41;
+            this.btnExcel.Text = "Excel";
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
+            // 
             // frmCantidadMP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(638, 560);
+            this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.cmdHome);
             this.Controls.Add(this.gcMateriaPrima);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -207,5 +223,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn coltipo;
         private DevExpress.XtraGrid.Columns.GridColumn colfila;
         private DevExpress.XtraGrid.Columns.GridColumn colpeso;
+        private DevExpress.XtraEditors.SimpleButton btnExcel;
     }
 }

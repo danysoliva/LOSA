@@ -40,6 +40,7 @@
             this.collote_materia_prima = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_materia_prima = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnExcel = new DevExpress.XtraEditors.SimpleButton();
+            this.colnumero_transaccion = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsReportes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
@@ -124,7 +125,8 @@
             this.colunidades,
             this.colmp,
             this.collote_materia_prima,
-            this.colid_materia_prima});
+            this.colid_materia_prima,
+            this.colnumero_transaccion});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsBehavior.Editable = false;
@@ -139,7 +141,7 @@
             this.colpeso.FieldName = "peso";
             this.colpeso.Name = "colpeso";
             this.colpeso.Visible = true;
-            this.colpeso.VisibleIndex = 2;
+            this.colpeso.VisibleIndex = 3;
             // 
             // colunidades
             // 
@@ -149,7 +151,7 @@
             this.colunidades.FieldName = "unidades";
             this.colunidades.Name = "colunidades";
             this.colunidades.Visible = true;
-            this.colunidades.VisibleIndex = 3;
+            this.colunidades.VisibleIndex = 4;
             // 
             // colmp
             // 
@@ -165,7 +167,7 @@
             this.collote_materia_prima.FieldName = "lote_materia_prima";
             this.collote_materia_prima.Name = "collote_materia_prima";
             this.collote_materia_prima.Visible = true;
-            this.collote_materia_prima.VisibleIndex = 1;
+            this.collote_materia_prima.VisibleIndex = 2;
             // 
             // colid_materia_prima
             // 
@@ -184,6 +186,15 @@
             this.btnExcel.TabIndex = 40;
             this.btnExcel.Text = "Excel";
             this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
+            // 
+            // colnumero_transaccion
+            // 
+            this.colnumero_transaccion.Caption = "Ingreso";
+            this.colnumero_transaccion.FieldName = "numero_transaccion";
+            this.colnumero_transaccion.Name = "colnumero_transaccion";
+            this.colnumero_transaccion.OptionsColumn.AllowEdit = false;
+            this.colnumero_transaccion.Visible = true;
+            this.colnumero_transaccion.VisibleIndex = 1;
             // 
             // frmrpt_lote_mp
             // 
@@ -218,5 +229,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn collote_materia_prima;
         private DevExpress.XtraGrid.Columns.GridColumn colid_materia_prima;
         private DevExpress.XtraEditors.SimpleButton btnExcel;
+        private DevExpress.XtraGrid.Columns.GridColumn colnumero_transaccion;
     }
 }

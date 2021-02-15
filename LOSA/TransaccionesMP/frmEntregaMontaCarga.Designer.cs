@@ -28,22 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEntregaMontaCarga));
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.cmdDetalleMP = new DevExpress.XtraEditors.SimpleButton();
             this.cmdEntrega = new DevExpress.XtraEditors.SimpleButton();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(372, 438);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(167, 29);
-            this.labelControl2.TabIndex = 17;
-            this.labelControl2.Text = "Lista detalle MP";
             // 
             // labelControl1
             // 
@@ -60,15 +51,14 @@
             this.cmdDetalleMP.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdDetalleMP.Appearance.Options.UseFont = true;
             this.cmdDetalleMP.Appearance.Options.UseTextOptions = true;
-            this.cmdDetalleMP.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.cmdDetalleMP.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
             this.cmdDetalleMP.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.cmdDetalleMP.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdDetalleMP.ImageOptions.Image = global::LOSA.Properties.Resources.Checklist_icon;
+            this.cmdDetalleMP.ImageOptions.Image = global::LOSA.Properties.Resources.trucksss;
             this.cmdDetalleMP.Location = new System.Drawing.Point(323, 101);
             this.cmdDetalleMP.Name = "cmdDetalleMP";
-            this.cmdDetalleMP.Size = new System.Drawing.Size(274, 331);
+            this.cmdDetalleMP.Size = new System.Drawing.Size(274, 168);
             this.cmdDetalleMP.TabIndex = 15;
+            this.cmdDetalleMP.Text = "Materia Prima entregada";
             this.cmdDetalleMP.Click += new System.EventHandler(this.cmdDetalleMP_Click);
             // 
             // cmdEntrega
@@ -103,14 +93,26 @@
             this.cmdHome.Text = "Cerrar";
             this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(323, 275);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(274, 157);
+            this.simpleButton1.TabIndex = 19;
+            this.simpleButton1.Text = "Requisas";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // frmEntregaMontaCarga
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(622, 521);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.cmdHome);
-            this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.cmdDetalleMP);
             this.Controls.Add(this.cmdEntrega);
@@ -124,11 +126,10 @@
         }
 
         #endregion
-
-        private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.SimpleButton cmdDetalleMP;
         private DevExpress.XtraEditors.SimpleButton cmdEntrega;
         private DevExpress.XtraEditors.SimpleButton cmdHome;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

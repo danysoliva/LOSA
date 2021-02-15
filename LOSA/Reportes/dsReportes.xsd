@@ -92,6 +92,8 @@
               <xs:element name="Division" msprop:Generator_ColumnVarNameInTable="columnDivision" msprop:Generator_ColumnPropNameInRow="Division" msprop:Generator_ColumnPropNameInTable="DivisionColumn" msprop:Generator_UserColumnName="Division" type="xs:string" minOccurs="0" />
               <xs:element name="nombre1" msprop:Generator_ColumnVarNameInTable="columnnombre1" msprop:Generator_ColumnPropNameInRow="nombre1" msprop:Generator_ColumnPropNameInTable="nombre1Column" msprop:Generator_UserColumnName="nombre1" type="xs:string" minOccurs="0" />
               <xs:element name="nombre2" msprop:Generator_ColumnVarNameInTable="columnnombre2" msprop:Generator_ColumnPropNameInRow="nombre2" msprop:Generator_ColumnPropNameInTable="nombre2Column" msprop:Generator_UserColumnName="nombre2" type="xs:string" minOccurs="0" />
+              <xs:element name="CantTM1" msprop:Generator_ColumnVarNameInTable="columnCantTM1" msprop:Generator_ColumnPropNameInRow="CantTM1" msprop:Generator_ColumnPropNameInTable="CantTM1Column" msprop:Generator_UserColumnName="CantTM1" type="xs:int" minOccurs="0" />
+              <xs:element name="CantTM2" msprop:Generator_ColumnVarNameInTable="columnCantTM2" msprop:Generator_ColumnPropNameInRow="CantTM2" msprop:Generator_ColumnPropNameInTable="CantTM2Column" msprop:Generator_UserColumnName="CantTM2" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -204,6 +206,7 @@
               <xs:element name="mp" msprop:Generator_ColumnVarNameInTable="columnmp" msprop:Generator_ColumnPropNameInRow="mp" msprop:Generator_ColumnPropNameInTable="mpColumn" msprop:Generator_UserColumnName="mp" type="xs:string" minOccurs="0" />
               <xs:element name="lote_materia_prima" msprop:Generator_ColumnVarNameInTable="columnlote_materia_prima" msprop:Generator_ColumnPropNameInRow="lote_materia_prima" msprop:Generator_ColumnPropNameInTable="lote_materia_primaColumn" msprop:Generator_UserColumnName="lote_materia_prima" type="xs:string" minOccurs="0" />
               <xs:element name="id_materia_prima" msprop:Generator_ColumnVarNameInTable="columnid_materia_prima" msprop:Generator_ColumnPropNameInRow="id_materia_prima" msprop:Generator_ColumnPropNameInTable="id_materia_primaColumn" msprop:Generator_UserColumnName="id_materia_prima" type="xs:int" minOccurs="0" />
+              <xs:element name="numero_transaccion" msprop:Generator_ColumnVarNameInTable="columnnumero_transaccion" msprop:Generator_ColumnPropNameInRow="numero_transaccion" msprop:Generator_ColumnPropNameInTable="numero_transaccionColumn" msprop:Generator_UserColumnName="numero_transaccion" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

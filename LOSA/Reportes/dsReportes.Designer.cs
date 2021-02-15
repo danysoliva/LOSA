@@ -2473,6 +2473,10 @@ namespace LOSA.Reportes {
             
             private global::System.Data.DataColumn columnnombre2;
             
+            private global::System.Data.DataColumn columnCantTM1;
+            
+            private global::System.Data.DataColumn columnCantTM2;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public UbicacionesDataTable() {
@@ -2564,6 +2568,22 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn CantTM1Column {
+                get {
+                    return this.columnCantTM1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn CantTM2Column {
+                get {
+                    return this.columnCantTM2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2599,7 +2619,7 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public UbicacionesRow AddUbicacionesRow(int idUb1, string Descripcion1, int idUb2, string Descripcion2, string Division, string nombre1, string nombre2) {
+            public UbicacionesRow AddUbicacionesRow(int idUb1, string Descripcion1, int idUb2, string Descripcion2, string Division, string nombre1, string nombre2, int CantTM1, int CantTM2) {
                 UbicacionesRow rowUbicacionesRow = ((UbicacionesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         idUb1,
@@ -2608,7 +2628,9 @@ namespace LOSA.Reportes {
                         Descripcion2,
                         Division,
                         nombre1,
-                        nombre2};
+                        nombre2,
+                        CantTM1,
+                        CantTM2};
                 rowUbicacionesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowUbicacionesRow);
                 return rowUbicacionesRow;
@@ -2638,6 +2660,8 @@ namespace LOSA.Reportes {
                 this.columnDivision = base.Columns["Division"];
                 this.columnnombre1 = base.Columns["nombre1"];
                 this.columnnombre2 = base.Columns["nombre2"];
+                this.columnCantTM1 = base.Columns["CantTM1"];
+                this.columnCantTM2 = base.Columns["CantTM2"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2657,6 +2681,10 @@ namespace LOSA.Reportes {
                 base.Columns.Add(this.columnnombre1);
                 this.columnnombre2 = new global::System.Data.DataColumn("nombre2", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnombre2);
+                this.columnCantTM1 = new global::System.Data.DataColumn("CantTM1", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCantTM1);
+                this.columnCantTM2 = new global::System.Data.DataColumn("CantTM2", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCantTM2);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5276,6 +5304,8 @@ namespace LOSA.Reportes {
             
             private global::System.Data.DataColumn columnid_materia_prima;
             
+            private global::System.Data.DataColumn columnnumero_transaccion;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public lote_existencia_mpDataTable() {
@@ -5351,6 +5381,14 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn numero_transaccionColumn {
+                get {
+                    return this.columnnumero_transaccion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5386,14 +5424,15 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public lote_existencia_mpRow Addlote_existencia_mpRow(decimal peso, decimal unidades, string mp, string lote_materia_prima, int id_materia_prima) {
+            public lote_existencia_mpRow Addlote_existencia_mpRow(decimal peso, decimal unidades, string mp, string lote_materia_prima, int id_materia_prima, int numero_transaccion) {
                 lote_existencia_mpRow rowlote_existencia_mpRow = ((lote_existencia_mpRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         peso,
                         unidades,
                         mp,
                         lote_materia_prima,
-                        id_materia_prima};
+                        id_materia_prima,
+                        numero_transaccion};
                 rowlote_existencia_mpRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowlote_existencia_mpRow);
                 return rowlote_existencia_mpRow;
@@ -5421,6 +5460,7 @@ namespace LOSA.Reportes {
                 this.columnmp = base.Columns["mp"];
                 this.columnlote_materia_prima = base.Columns["lote_materia_prima"];
                 this.columnid_materia_prima = base.Columns["id_materia_prima"];
+                this.columnnumero_transaccion = base.Columns["numero_transaccion"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5436,6 +5476,8 @@ namespace LOSA.Reportes {
                 base.Columns.Add(this.columnlote_materia_prima);
                 this.columnid_materia_prima = new global::System.Data.DataColumn("id_materia_prima", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_materia_prima);
+                this.columnnumero_transaccion = new global::System.Data.DataColumn("numero_transaccion", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnumero_transaccion);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6885,6 +6927,38 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int CantTM1 {
+                get {
+                    try {
+                        return ((int)(this[this.tableUbicaciones.CantTM1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CantTM1\' in table \'Ubicaciones\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUbicaciones.CantTM1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int CantTM2 {
+                get {
+                    try {
+                        return ((int)(this[this.tableUbicaciones.CantTM2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CantTM2\' in table \'Ubicaciones\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUbicaciones.CantTM2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsidUb1Null() {
                 return this.IsNull(this.tableUbicaciones.idUb1Column);
             }
@@ -6965,6 +7039,30 @@ namespace LOSA.Reportes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void Setnombre2Null() {
                 this[this.tableUbicaciones.nombre2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsCantTM1Null() {
+                return this.IsNull(this.tableUbicaciones.CantTM1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetCantTM1Null() {
+                this[this.tableUbicaciones.CantTM1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsCantTM2Null() {
+                return this.IsNull(this.tableUbicaciones.CantTM2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetCantTM2Null() {
+                this[this.tableUbicaciones.CantTM2Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -8823,6 +8921,23 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int numero_transaccion {
+                get {
+                    try {
+                        return ((int)(this[this.tablelote_existencia_mp.numero_transaccionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'numero_transaccion\' in table \'lote_existencia_mp\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tablelote_existencia_mp.numero_transaccionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IspesoNull() {
                 return this.IsNull(this.tablelote_existencia_mp.pesoColumn);
             }
@@ -8879,6 +8994,18 @@ namespace LOSA.Reportes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void Setid_materia_primaNull() {
                 this[this.tablelote_existencia_mp.id_materia_primaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isnumero_transaccionNull() {
+                return this.IsNull(this.tablelote_existencia_mp.numero_transaccionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setnumero_transaccionNull() {
+                this[this.tablelote_existencia_mp.numero_transaccionColumn] = global::System.Convert.DBNull;
             }
         }
         

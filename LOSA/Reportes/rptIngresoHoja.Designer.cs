@@ -2357,13 +2357,13 @@
             this.VerticalDetail.HeightF = 78.30025F;
             this.VerticalDetail.Name = "VerticalDetail";
             this.VerticalDetail.StylePriority.UseBorders = false;
-            this.VerticalDetail.WidthF = 885.3746F;
+            this.VerticalDetail.WidthF = 113.6717F;
             // 
             // xrTable3
             // 
             this.xrTable3.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrTable3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrTable3.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.xrTable3.LocationFloat = new DevExpress.Utils.PointFloat(1.025299F, 0F);
             this.xrTable3.Name = "xrTable3";
             this.xrTable3.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow3,
@@ -2371,7 +2371,7 @@
             this.xrTableRow5,
             this.xrTableRow6,
             this.xrTableRow7});
-            this.xrTable3.SizeF = new System.Drawing.SizeF(885.3746F, 78.30025F);
+            this.xrTable3.SizeF = new System.Drawing.SizeF(111.8747F, 78.30025F);
             this.xrTable3.StylePriority.UseBorders = false;
             this.xrTable3.StylePriority.UseFont = false;
             // 

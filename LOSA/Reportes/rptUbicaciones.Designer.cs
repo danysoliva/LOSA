@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rptUbicaciones));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -40,7 +41,7 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.grd_bodegas = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.bodegasBindingSource = new System.Windows.Forms.BindingSource();
+            this.bodegasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsReportes = new LOSA.Reportes.dsReportes();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -60,6 +61,8 @@
             this.btnrpt2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colnombre1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnombre2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCantTM2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCantTM1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grd_bodegas.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bodegasBindingSource)).BeginInit();
@@ -190,7 +193,9 @@
             this.colver1,
             this.colver2,
             this.colnombre1,
-            this.colnombre2});
+            this.colnombre2,
+            this.colCantTM2,
+            this.colCantTM1});
             this.grdv_ubicaciones.DetailHeight = 284;
             this.grdv_ubicaciones.GridControl = this.grd_ubicaciones;
             this.grdv_ubicaciones.Name = "grdv_ubicaciones";
@@ -212,8 +217,8 @@
             this.colDescripcion1.Name = "colDescripcion1";
             this.colDescripcion1.OptionsColumn.AllowEdit = false;
             this.colDescripcion1.Visible = true;
-            this.colDescripcion1.VisibleIndex = 1;
-            this.colDescripcion1.Width = 70;
+            this.colDescripcion1.VisibleIndex = 2;
+            this.colDescripcion1.Width = 57;
             // 
             // colidUb2
             // 
@@ -230,8 +235,8 @@
             this.colDescripcion2.Name = "colDescripcion2";
             this.colDescripcion2.OptionsColumn.AllowEdit = false;
             this.colDescripcion2.Visible = true;
-            this.colDescripcion2.VisibleIndex = 4;
-            this.colDescripcion2.Width = 88;
+            this.colDescripcion2.VisibleIndex = 5;
+            this.colDescripcion2.Width = 73;
             // 
             // colDivision
             // 
@@ -245,8 +250,8 @@
             this.colDivision.Name = "colDivision";
             this.colDivision.OptionsColumn.AllowEdit = false;
             this.colDivision.Visible = true;
-            this.colDivision.VisibleIndex = 3;
-            this.colDivision.Width = 72;
+            this.colDivision.VisibleIndex = 4;
+            this.colDivision.Width = 52;
             // 
             // colver1
             // 
@@ -256,7 +261,7 @@
             this.colver1.Name = "colver1";
             this.colver1.Visible = true;
             this.colver1.VisibleIndex = 0;
-            this.colver1.Width = 90;
+            this.colver1.Width = 73;
             // 
             // btnrpt1
             // 
@@ -275,8 +280,8 @@
             this.colver2.MinWidth = 21;
             this.colver2.Name = "colver2";
             this.colver2.Visible = true;
-            this.colver2.VisibleIndex = 6;
-            this.colver2.Width = 90;
+            this.colver2.VisibleIndex = 8;
+            this.colver2.Width = 80;
             // 
             // btnrpt2
             // 
@@ -294,8 +299,8 @@
             this.colnombre1.FieldName = "nombre1";
             this.colnombre1.Name = "colnombre1";
             this.colnombre1.Visible = true;
-            this.colnombre1.VisibleIndex = 2;
-            this.colnombre1.Width = 133;
+            this.colnombre1.VisibleIndex = 3;
+            this.colnombre1.Width = 108;
             // 
             // colnombre2
             // 
@@ -303,8 +308,28 @@
             this.colnombre2.FieldName = "nombre2";
             this.colnombre2.Name = "colnombre2";
             this.colnombre2.Visible = true;
-            this.colnombre2.VisibleIndex = 5;
-            this.colnombre2.Width = 137;
+            this.colnombre2.VisibleIndex = 6;
+            this.colnombre2.Width = 114;
+            // 
+            // colCantTM2
+            // 
+            this.colCantTM2.Caption = "Cantidad TM";
+            this.colCantTM2.FieldName = "CantTM2";
+            this.colCantTM2.Name = "colCantTM2";
+            this.colCantTM2.OptionsColumn.AllowEdit = false;
+            this.colCantTM2.Visible = true;
+            this.colCantTM2.VisibleIndex = 7;
+            this.colCantTM2.Width = 62;
+            // 
+            // colCantTM1
+            // 
+            this.colCantTM1.Caption = "Cantidad TM";
+            this.colCantTM1.FieldName = "CantTM1";
+            this.colCantTM1.Name = "colCantTM1";
+            this.colCantTM1.OptionsColumn.AllowEdit = false;
+            this.colCantTM1.Visible = true;
+            this.colCantTM1.VisibleIndex = 1;
+            this.colCantTM1.Width = 61;
             // 
             // cmdHome
             // 
@@ -374,5 +399,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnrpt2;
         private DevExpress.XtraGrid.Columns.GridColumn colnombre1;
         private DevExpress.XtraGrid.Columns.GridColumn colnombre2;
+        private DevExpress.XtraGrid.Columns.GridColumn colCantTM2;
+        private DevExpress.XtraGrid.Columns.GridColumn colCantTM1;
     }
 }

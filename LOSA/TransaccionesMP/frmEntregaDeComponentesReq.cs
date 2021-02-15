@@ -32,11 +32,11 @@ namespace LOSA.TransaccionesMP
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_verifica_diponibilidad_tarima_entrega_listado", con);
+                SqlCommand cmd = new SqlCommand("sp_load_tarimas_entregadas", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                dsTransaccionesMP1.entregacomp.Clear();
+                dsTransaccionesMP.entregado.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                adat.Fill(dsTransaccionesMP1.EntregaLotes);
+                adat.Fill(dsTransaccionesMP.entregado);
 
                 con.Close();
             }
@@ -54,8 +54,7 @@ namespace LOSA.TransaccionesMP
         private void beIdTarima_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Enter)
-            {
-                
+            {        
                 frmEntregaTarimaReq frm = new frmEntregaTarimaReq(UsuarioLogeado, beIdTarima.Text);
                 beIdTarima.Text = "";
                 beIdTarima.Focus();
@@ -70,12 +69,31 @@ namespace LOSA.TransaccionesMP
             beIdTarima.Text = "";
         }
 
-        private void btnUbicar_Click(object sender, EventArgs e)
+        private void timertick_Tick(object sender, EventArgs e)
         {
-            var gridview = (GridView)grDetalleLote.FocusedView;
-            var row = (dsTransaccionesMP.EntregaLotesRow)gridview.GetFocusedDataRow();
-            frmUbicacionLotes frm = new frmUbicacionLotes(UsuarioLogeado, row.lote_mp, row.numero_transaccion);
-            frm.Show();
+            int Nuevo = 0;
+            if (timertick.Enabled)
+            {
+                string Query = @"sp_count_alimentacion_tarima";
+                try
+                {
+                    DataOperations dp = new DataOperations();
+                    SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                    cn.Open();
+                    SqlCommand cmd = new SqlCommand(Query, cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    Nuevo = Convert.ToInt32(cmd.ExecuteScalar());
+                    if (Nuevo > 0)
+                    {
+                        LoadData();
+                    }
+                    cn.Close();
+                }
+                catch (Exception ex)
+                {
+                    CajaDialogo.Error(ex.Message);
+                }
+            }
         }
     }
 }

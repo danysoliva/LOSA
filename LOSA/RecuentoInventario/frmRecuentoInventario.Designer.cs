@@ -50,6 +50,8 @@
             this.colpesoTM2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colloteagrupador = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colingresoagrupador = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCantidadSave = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.cbMateriaPrima = new DevExpress.XtraEditors.GridLookUpEdit();
             this.materiaprimaBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -57,13 +59,15 @@
             this.colitemcode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colitemdescrip = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnguardar = new DevExpress.XtraEditors.SimpleButton();
-            this.colCantidadSave = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tggOperacion = new DevExpress.XtraEditors.ToggleSwitch();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecuento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbMateriaPrima.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.materiaprimaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMateriaPrima)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tggOperacion.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -151,7 +155,8 @@
             this.colpesoTM2,
             this.colloteagrupador,
             this.colingresoagrupador,
-            this.colCantidadSave});
+            this.colCantidadSave,
+            this.colcodigo});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.GroupCount = 2;
             this.grdv_data.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
@@ -181,7 +186,7 @@
             this.colingreso.FieldName = "ingreso";
             this.colingreso.Name = "colingreso";
             this.colingreso.Visible = true;
-            this.colingreso.VisibleIndex = 0;
+            this.colingreso.VisibleIndex = 1;
             this.colingreso.Width = 68;
             // 
             // collote_materia_prima
@@ -190,7 +195,7 @@
             this.collote_materia_prima.FieldName = "lote_materia_prima";
             this.collote_materia_prima.Name = "collote_materia_prima";
             this.collote_materia_prima.Visible = true;
-            this.collote_materia_prima.VisibleIndex = 1;
+            this.collote_materia_prima.VisibleIndex = 2;
             this.collote_materia_prima.Width = 68;
             // 
             // colitemcode1
@@ -206,7 +211,7 @@
             this.colmaterial.Name = "colmaterial";
             this.colmaterial.OptionsColumn.AllowEdit = false;
             this.colmaterial.Visible = true;
-            this.colmaterial.VisibleIndex = 2;
+            this.colmaterial.VisibleIndex = 3;
             this.colmaterial.Width = 68;
             // 
             // colcantidad
@@ -217,7 +222,7 @@
             this.colcantidad.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cantidad", "SUM={0:0.##}")});
             this.colcantidad.Visible = true;
-            this.colcantidad.VisibleIndex = 4;
+            this.colcantidad.VisibleIndex = 5;
             this.colcantidad.Width = 68;
             // 
             // coldescripcion
@@ -227,7 +232,7 @@
             this.coldescripcion.Name = "coldescripcion";
             this.coldescripcion.OptionsColumn.AllowEdit = false;
             this.coldescripcion.Visible = true;
-            this.coldescripcion.VisibleIndex = 3;
+            this.coldescripcion.VisibleIndex = 4;
             this.coldescripcion.Width = 68;
             // 
             // colfactor
@@ -244,29 +249,29 @@
             // 
             // colEIngreso
             // 
-            this.colEIngreso.Caption = "Consumir Ingreso";
+            this.colEIngreso.Caption = "Ingreso";
             this.colEIngreso.FieldName = "EIngreso";
             this.colEIngreso.Name = "colEIngreso";
             this.colEIngreso.Visible = true;
-            this.colEIngreso.VisibleIndex = 6;
+            this.colEIngreso.VisibleIndex = 7;
             this.colEIngreso.Width = 60;
             // 
             // colELote
             // 
-            this.colELote.Caption = "Consumir Lote";
+            this.colELote.Caption = "Lote";
             this.colELote.FieldName = "ELote";
             this.colELote.Name = "colELote";
             this.colELote.Visible = true;
-            this.colELote.VisibleIndex = 7;
+            this.colELote.VisibleIndex = 8;
             this.colELote.Width = 60;
             // 
             // coleliminar
             // 
-            this.coleliminar.Caption = "Consumir";
+            this.coleliminar.Caption = "Operar";
             this.coleliminar.FieldName = "eliminar";
             this.coleliminar.Name = "coleliminar";
             this.coleliminar.Visible = true;
-            this.coleliminar.VisibleIndex = 8;
+            this.coleliminar.VisibleIndex = 9;
             this.coleliminar.Width = 68;
             // 
             // colpesoTM2
@@ -282,7 +287,7 @@
             this.colpesoTM2.UnboundExpression = "[cantidad] * [factor]";
             this.colpesoTM2.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.colpesoTM2.Visible = true;
-            this.colpesoTM2.VisibleIndex = 5;
+            this.colpesoTM2.VisibleIndex = 6;
             this.colpesoTM2.Width = 92;
             // 
             // colloteagrupador
@@ -307,13 +312,28 @@
             this.colingresoagrupador.Visible = true;
             this.colingresoagrupador.VisibleIndex = 9;
             // 
+            // colCantidadSave
+            // 
+            this.colCantidadSave.Caption = "gridColumn1";
+            this.colCantidadSave.FieldName = "CantidadSave";
+            this.colCantidadSave.Name = "colCantidadSave";
+            // 
+            // colcodigo
+            // 
+            this.colcodigo.Caption = "Codigo";
+            this.colcodigo.FieldName = "codigo";
+            this.colcodigo.Name = "colcodigo";
+            this.colcodigo.OptionsColumn.AllowEdit = false;
+            this.colcodigo.Visible = true;
+            this.colcodigo.VisibleIndex = 0;
+            // 
             // labelControl2
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(85, 112);
+            this.labelControl2.Location = new System.Drawing.Point(6, 137);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(130, 25);
             this.labelControl2.TabIndex = 96;
@@ -321,7 +341,7 @@
             // 
             // cbMateriaPrima
             // 
-            this.cbMateriaPrima.Location = new System.Drawing.Point(220, 111);
+            this.cbMateriaPrima.Location = new System.Drawing.Point(141, 136);
             this.cbMateriaPrima.Name = "cbMateriaPrima";
             this.cbMateriaPrima.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.cbMateriaPrima.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -400,17 +420,37 @@
             this.btnguardar.Text = "Guardar";
             this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
-            // colCantidadSave
+            // tggOperacion
             // 
-            this.colCantidadSave.Caption = "gridColumn1";
-            this.colCantidadSave.FieldName = "CantidadSave";
-            this.colCantidadSave.Name = "colCantidadSave";
+            this.tggOperacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tggOperacion.Location = new System.Drawing.Point(313, 82);
+            this.tggOperacion.Name = "tggOperacion";
+            this.tggOperacion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.tggOperacion.Properties.Appearance.Options.UseFont = true;
+            this.tggOperacion.Properties.OffText = "Salida de inventario";
+            this.tggOperacion.Properties.OnText = "Reingreso de Inventario";
+            this.tggOperacion.Size = new System.Drawing.Size(302, 36);
+            this.tggOperacion.TabIndex = 98;
+            this.tggOperacion.Toggled += new System.EventHandler(this.tggOperacion_Toggled);
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(210, 93);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(97, 25);
+            this.labelControl1.TabIndex = 99;
+            this.labelControl1.Text = "Operacion:";
             // 
             // frmRecuentoInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(638, 560);
+            this.Controls.Add(this.labelControl1);
+            this.Controls.Add(this.tggOperacion);
             this.Controls.Add(this.btnguardar);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.cbMateriaPrima);
@@ -427,6 +467,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbMateriaPrima.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.materiaprimaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMateriaPrima)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tggOperacion.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -462,5 +503,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colloteagrupador;
         private DevExpress.XtraGrid.Columns.GridColumn colingresoagrupador;
         private DevExpress.XtraGrid.Columns.GridColumn colCantidadSave;
+        private DevExpress.XtraGrid.Columns.GridColumn colcodigo;
+        private DevExpress.XtraEditors.ToggleSwitch tggOperacion;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }
