@@ -44,6 +44,11 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
             this.dsingresos = new LOSA.RecepcionMP.dsingresos();
@@ -61,12 +66,15 @@
             this.colCantidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.btnImprimirTodas = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_imprimir = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colImprimirLote = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsingresos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnnuevo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnver)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_imprimir)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAtras
@@ -99,7 +107,8 @@
             this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnnuevo,
             this.btnEliminar,
-            this.btnver});
+            this.btnver,
+            this.btn_imprimir});
             this.grd_data.Size = new System.Drawing.Size(689, 397);
             this.grd_data.TabIndex = 13;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -142,7 +151,8 @@
             this.colprint,
             this.colEliminarLote,
             this.colVer,
-            this.colCantidad});
+            this.colCantidad,
+            this.colImprimirLote});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
@@ -210,7 +220,7 @@
             this.colEliminarLote.ColumnEdit = this.btnEliminar;
             this.colEliminarLote.Name = "colEliminarLote";
             this.colEliminarLote.Visible = true;
-            this.colEliminarLote.VisibleIndex = 6;
+            this.colEliminarLote.VisibleIndex = 7;
             this.colEliminarLote.Width = 47;
             // 
             // btnEliminar
@@ -283,6 +293,24 @@
             this.btnImprimirTodas.Text = "Imprimir todas";
             this.btnImprimirTodas.Click += new System.EventHandler(this.btnImprimirTodas_Click);
             // 
+            // btn_imprimir
+            // 
+            this.btn_imprimir.AutoHeight = false;
+            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
+            this.btn_imprimir.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btn_imprimir.Name = "btn_imprimir";
+            this.btn_imprimir.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btn_imprimir.Click += new System.EventHandler(this.btn_imprimir_Click);
+            // 
+            // colImprimirLote
+            // 
+            this.colImprimirLote.Caption = "Imprimir Hoja de lote";
+            this.colImprimirLote.ColumnEdit = this.btn_imprimir;
+            this.colImprimirLote.Name = "colImprimirLote";
+            this.colImprimirLote.Visible = true;
+            this.colImprimirLote.VisibleIndex = 6;
+            // 
             // frmverlotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -302,6 +330,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnnuevo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnver)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_imprimir)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -325,5 +354,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnver;
         private DevExpress.XtraGrid.Columns.GridColumn colCantidad;
         private dsingresos dsingresos;
+        private DevExpress.XtraGrid.Columns.GridColumn colImprimirLote;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btn_imprimir;
     }
 }
