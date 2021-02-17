@@ -616,6 +616,7 @@
             this.cmdTarimasPT.Size = new System.Drawing.Size(199, 71);
             this.cmdTarimasPT.TabIndex = 10;
             this.cmdTarimasPT.Text = "Tarimas PT";
+            this.cmdTarimasPT.Visible = false;
             this.cmdTarimasPT.Click += new System.EventHandler(this.cmdTarimasPT_Click);
             // 
             // btnAlimentacionManual

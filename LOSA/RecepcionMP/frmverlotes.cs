@@ -144,10 +144,10 @@ namespace LOSA.RecepcionMP
             {
                 var gridview = (GridView)grd_data.FocusedView;
                 var row = (dsingresos.loteRow)gridview.GetFocusedDataRow();
-                rptLoteRotulo boleta = new rptLoteRotulo(row.id);
-                boleta.ShowPrintMarginsWarning = false;
-                boleta.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
-                boleta.Print();
+                rptLoteRotulo report = new rptLoteRotulo(row.id);
+                report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                ReportPrintTool printReport = new ReportPrintTool(report);
+                printReport.ShowPreview();   
             }
             catch (Exception ex)
             {

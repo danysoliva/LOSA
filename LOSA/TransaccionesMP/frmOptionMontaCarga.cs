@@ -1,5 +1,6 @@
 ﻿using LOSA.Clases;
 using LOSA.RecepcionMP;
+using LOSA.TransaccionesPT;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -96,6 +97,12 @@ namespace LOSA.TransaccionesMP
         private void simpleButton3_Click(object sender, EventArgs e)
         {
             LOSA.Reportes.frmreporteUbicacion frm = new Reportes.frmreporteUbicacion();
+            frm.Show();
+        }
+
+        private void cmdTarimasPT_Click(object sender, EventArgs e)
+        {
+            frmactivacionPT frm = new frmactivacionPT(UsuarioLogeado);
             frm.Show();
         }
     }

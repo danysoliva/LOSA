@@ -55,7 +55,7 @@ namespace LOSA.RecepcionMP
             dt.Columns.Add("Detalle", typeof(string));
             dt.Columns.Add("Valor", typeof(string));
 
-            if (infoTarima.RecuperarRegistro(idTarima, pCodigoBarra))
+            if (infoTarima.RecuperarRegistropt(idTarima, pCodigoBarra))
             {
                 DataOperations dp = new DataOperations();
                 ProductoTerminado pt = new ProductoTerminado(dp.ConnectionStringCostos);

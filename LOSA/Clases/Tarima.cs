@@ -200,7 +200,7 @@ namespace LOSA.Clases
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_tarima_from_id", con);
+                SqlCommand cmd = new SqlCommand("sp_get_tarima_from_id_V2", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id", pIdTarima);
                 cmd.Parameters.AddWithValue("@codigo_barra", pCodigoBarra);
