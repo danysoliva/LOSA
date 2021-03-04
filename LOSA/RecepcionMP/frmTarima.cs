@@ -148,7 +148,7 @@ namespace LOSA.RecepcionMP
                 Boleta bol1 = new Boleta();
                 if (bol1.RecuperarRegistro(this.IdSerie))
                 {
-                    txtIdBoleta.Text = bol1.NumID.ToString();
+                   // txtIdBoleta.Text = bol1.NumID.ToString();
                 }
                 LoadDatosBoleta();
             }
@@ -484,6 +484,17 @@ namespace LOSA.RecepcionMP
         private void btnAgregar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            frmMP frm = new frmMP();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                txtCodigoMP.Text = frm.ItemCode;
+                txtMP_Name.Text = frm.MateriaPrima;
+            }     
+            
         }
     }
 }

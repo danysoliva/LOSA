@@ -458,5 +458,11 @@ namespace LOSA
             frmcalidad frm = new frmcalidad(UsuarioLogeado);
             frm.Show();
         }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            frmPrintTM frm = new frmPrintTM(UsuarioLogeado);
+            frm.Show();
+        }
     }
 }

@@ -222,7 +222,7 @@
             // 
             this.txtlote.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtlote.ForeColor = System.Drawing.Color.Black;
-            this.txtlote.LocationFloat = new DevExpress.Utils.PointFloat(9.998884F, 666.2953F);
+            this.txtlote.LocationFloat = new DevExpress.Utils.PointFloat(9.998886F, 673.1702F);
             this.txtlote.Multiline = true;
             this.txtlote.Name = "txtlote";
             this.txtlote.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -349,7 +349,7 @@
             // 
             // txtingreso
             // 
-            this.txtingreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold);
+            this.txtingreso.Font = new System.Drawing.Font("Arial Black", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtingreso.LocationFloat = new DevExpress.Utils.PointFloat(158.6868F, 418.8693F);
             this.txtingreso.Multiline = true;
             this.txtingreso.Name = "txtingreso";

@@ -155,5 +155,24 @@ namespace LOSA.RecepcionMP
                 CajaDialogo.Error(ex.Message);
             }
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var gridview = (GridView)grd_data.FocusedView;
+                var row = (dsingresos.loteRow)gridview.GetFocusedDataRow();
+                frmeditarLote frm = new frmeditarLote(row.id);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    load_data();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
     }
 }

@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAlimentacionPanel));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.label1 = new System.Windows.Forms.Label();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
             this.panelalimentacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -48,6 +48,10 @@
             this.colconsumido = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSeleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnConsumir = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colfecha = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collote = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colingreso = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colvencimiento = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.timertick = new System.Windows.Forms.Timer(this.components);
             this.cmdGuardar = new DevExpress.XtraEditors.SimpleButton();
@@ -97,17 +101,17 @@
             // 
             // grdv_data
             // 
-            this.grdv_data.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdv_data.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdv_data.Appearance.FocusedRow.Options.UseFont = true;
             this.grdv_data.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.grdv_data.Appearance.FooterPanel.Options.UseFont = true;
             this.grdv_data.Appearance.GroupRow.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.grdv_data.Appearance.GroupRow.Options.UseFont = true;
-            this.grdv_data.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdv_data.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdv_data.Appearance.HeaderPanel.Options.UseFont = true;
             this.grdv_data.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.grdv_data.Appearance.Preview.Options.UseFont = true;
-            this.grdv_data.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdv_data.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.grdv_data.Appearance.Row.Options.UseFont = true;
             this.grdv_data.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.grdv_data.Appearance.TopNewRow.Options.UseFont = true;
@@ -118,7 +122,11 @@
             this.colpeso,
             this.coltolva,
             this.colconsumido,
-            this.colSeleccionar});
+            this.colSeleccionar,
+            this.colfecha,
+            this.collote,
+            this.colingreso,
+            this.colvencimiento});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowGroupPanel = false;
@@ -136,7 +144,7 @@
             this.colmp.Name = "colmp";
             this.colmp.OptionsColumn.AllowEdit = false;
             this.colmp.Visible = true;
-            this.colmp.VisibleIndex = 0;
+            this.colmp.VisibleIndex = 2;
             // 
             // colcantidad
             // 
@@ -145,7 +153,7 @@
             this.colcantidad.Name = "colcantidad";
             this.colcantidad.OptionsColumn.AllowEdit = false;
             this.colcantidad.Visible = true;
-            this.colcantidad.VisibleIndex = 1;
+            this.colcantidad.VisibleIndex = 5;
             // 
             // colpeso
             // 
@@ -154,7 +162,7 @@
             this.colpeso.Name = "colpeso";
             this.colpeso.OptionsColumn.AllowEdit = false;
             this.colpeso.Visible = true;
-            this.colpeso.VisibleIndex = 2;
+            this.colpeso.VisibleIndex = 6;
             // 
             // coltolva
             // 
@@ -163,7 +171,7 @@
             this.coltolva.Name = "coltolva";
             this.coltolva.OptionsColumn.AllowEdit = false;
             this.coltolva.Visible = true;
-            this.coltolva.VisibleIndex = 3;
+            this.coltolva.VisibleIndex = 7;
             // 
             // colconsumido
             // 
@@ -177,17 +185,50 @@
             this.colSeleccionar.ColumnEdit = this.btnConsumir;
             this.colSeleccionar.Name = "colSeleccionar";
             this.colSeleccionar.Visible = true;
-            this.colSeleccionar.VisibleIndex = 4;
+            this.colSeleccionar.VisibleIndex = 8;
             // 
             // btnConsumir
             // 
             this.btnConsumir.AutoHeight = false;
-            editorButtonImageOptions3.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions3.SvgImage")));
+            editorButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions1.SvgImage")));
             this.btnConsumir.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnConsumir.Name = "btnConsumir";
             this.btnConsumir.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnConsumir.Click += new System.EventHandler(this.btnConsumir_Click);
+            // 
+            // colfecha
+            // 
+            this.colfecha.Caption = "Fecha";
+            this.colfecha.FieldName = "fecha";
+            this.colfecha.Name = "colfecha";
+            this.colfecha.OptionsColumn.AllowEdit = false;
+            this.colfecha.Visible = true;
+            this.colfecha.VisibleIndex = 4;
+            // 
+            // collote
+            // 
+            this.collote.Caption = "Lote";
+            this.collote.FieldName = "lote";
+            this.collote.Name = "collote";
+            this.collote.Visible = true;
+            this.collote.VisibleIndex = 1;
+            // 
+            // colingreso
+            // 
+            this.colingreso.Caption = "Ingreso";
+            this.colingreso.FieldName = "ingreso";
+            this.colingreso.Name = "colingreso";
+            this.colingreso.Visible = true;
+            this.colingreso.VisibleIndex = 0;
+            // 
+            // colvencimiento
+            // 
+            this.colvencimiento.Caption = "F. Vencimiento";
+            this.colvencimiento.FieldName = "vencimiento";
+            this.colvencimiento.Name = "colvencimiento";
+            this.colvencimiento.Visible = true;
+            this.colvencimiento.VisibleIndex = 3;
             // 
             // cmdHome
             // 
@@ -267,5 +308,9 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnConsumir;
         private System.Windows.Forms.Timer timertick;
         private DevExpress.XtraEditors.SimpleButton cmdGuardar;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecha;
+        private DevExpress.XtraGrid.Columns.GridColumn collote;
+        private DevExpress.XtraGrid.Columns.GridColumn colingreso;
+        private DevExpress.XtraGrid.Columns.GridColumn colvencimiento;
     }
 }

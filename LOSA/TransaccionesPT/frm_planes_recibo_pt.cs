@@ -133,9 +133,33 @@ namespace LOSA.TransaccionesPT
                         boleta.ShowPrintMarginsWarning = false;
                         boleta.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
                         boleta.Print();
+
+                        updatePrinted(row2.id);
+
+
                     }
                 }
 
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        public void updatePrinted(int id_tm)
+        {
+            string query = @"sp_set_printed_tm_pt";
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            try
+            {
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query,cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_tm", id_tm);
+                cmd.ExecuteNonQuery();
+                cn.Close();
             }
             catch (Exception ex)
             {

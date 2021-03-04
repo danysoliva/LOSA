@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>105</ApplicationRevision>
+    <ApplicationRevision>112</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -553,6 +553,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsRecepcionMP.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RecepcionMP\frmeditarLote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmeditarLote.Designer.cs">
+      <DependentUpon>frmeditarLote.cs</DependentUpon>
+    </Compile>
     <Compile Include="RecepcionMP\frmEditLoteActivo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1021,6 +1027,12 @@
     <Compile Include="TransaccionesPT\frmPlanPT.Designer.cs">
       <DependentUpon>frmPlanPT.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesPT\frmPrintTM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesPT\frmPrintTM.Designer.cs">
+      <DependentUpon>frmPrintTM.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesPT\frm_planes_recibo_pt.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1224,6 +1236,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RecepcionMP\frmeditarLote.resx">
+      <DependentUpon>frmeditarLote.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmEditLoteActivo.resx">
       <DependentUpon>frmEditLoteActivo.cs</DependentUpon>
     </EmbeddedResource>
@@ -1436,6 +1451,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesPT\frmPlanPT.resx">
       <DependentUpon>frmPlanPT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesPT\frmPrintTM.resx">
+      <DependentUpon>frmPrintTM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesPT\frm_planes_recibo_pt.resx">
       <DependentUpon>frm_planes_recibo_pt.cs</DependentUpon>

@@ -71,6 +71,10 @@
               <xs:element name="peso" msprop:Generator_ColumnVarNameInTable="columnpeso" msprop:Generator_ColumnPropNameInRow="peso" msprop:Generator_ColumnPropNameInTable="pesoColumn" msprop:Generator_UserColumnName="peso" type="xs:decimal" minOccurs="0" />
               <xs:element name="tolva" msprop:Generator_ColumnVarNameInTable="columntolva" msprop:Generator_ColumnPropNameInRow="tolva" msprop:Generator_ColumnPropNameInTable="tolvaColumn" msprop:Generator_UserColumnName="tolva" type="xs:string" minOccurs="0" />
               <xs:element name="consumido" msprop:Generator_ColumnVarNameInTable="columnconsumido" msprop:Generator_ColumnPropNameInRow="consumido" msprop:Generator_ColumnPropNameInTable="consumidoColumn" msprop:Generator_UserColumnName="consumido" type="xs:decimal" minOccurs="0" />
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="lote" msprop:Generator_ColumnVarNameInTable="columnlote" msprop:Generator_ColumnPropNameInRow="lote" msprop:Generator_ColumnPropNameInTable="loteColumn" msprop:Generator_UserColumnName="lote" type="xs:string" minOccurs="0" />
+              <xs:element name="ingreso" msprop:Generator_ColumnVarNameInTable="columningreso" msprop:Generator_ColumnPropNameInRow="ingreso" msprop:Generator_ColumnPropNameInTable="ingresoColumn" msprop:Generator_UserColumnName="ingreso" type="xs:int" minOccurs="0" />
+              <xs:element name="vencimiento" msprop:Generator_ColumnVarNameInTable="columnvencimiento" msprop:Generator_ColumnPropNameInRow="vencimiento" msprop:Generator_ColumnPropNameInTable="vencimientoColumn" msprop:Generator_UserColumnName="vencimiento" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

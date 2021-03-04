@@ -45,7 +45,8 @@ namespace LOSA.Reportes
         }
         public void load_report()
         {
-            string Query = @"sp_load_reporte_de_ingreso_por_lm";
+            string Query = @"sp_load_reporte_de_ingreso_por_lm
+";
             try
             {
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);

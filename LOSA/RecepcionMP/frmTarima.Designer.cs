@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTarima));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnAgregar = new DevExpress.XtraEditors.SimpleButton();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
@@ -77,6 +77,7 @@
             this.beNuevaUbicacion = new DevExpress.XtraEditors.ButtonEdit();
             this.btnUbicacion = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdBoleta.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigoMP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMP_Name.Properties)).BeginInit();
@@ -116,7 +117,7 @@
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl1.Location = new System.Drawing.Point(0, 2);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(622, 40);
+            this.labelControl1.Size = new System.Drawing.Size(680, 40);
             this.labelControl1.TabIndex = 28;
             this.labelControl1.Text = "Registro de Tarima #Lote";
             this.labelControl1.Click += new System.EventHandler(this.btnAtras_Click_1);
@@ -131,7 +132,7 @@
             this.btnAgregar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAgregar.ImageOptions.Image = global::LOSA.Properties.Resources.plus;
             this.btnAgregar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAgregar.Location = new System.Drawing.Point(236, 45);
+            this.btnAgregar.Location = new System.Drawing.Point(294, 45);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(167, 47);
             this.btnAgregar.TabIndex = 27;
@@ -562,7 +563,7 @@
             this.groupControl2.Controls.Add(this.gcNuevaUbicación);
             this.groupControl2.Location = new System.Drawing.Point(0, 444);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(622, 77);
+            this.groupControl2.Size = new System.Drawing.Size(680, 77);
             this.groupControl2.TabIndex = 57;
             this.groupControl2.Text = "Nueva Ubicación";
             this.groupControl2.Visible = false;
@@ -576,7 +577,7 @@
             this.gcNuevaUbicación.Location = new System.Drawing.Point(6, 25);
             this.gcNuevaUbicación.MainView = this.gvNuevaUbicacion;
             this.gcNuevaUbicación.Name = "gcNuevaUbicación";
-            this.gcNuevaUbicación.Size = new System.Drawing.Size(604, 47);
+            this.gcNuevaUbicación.Size = new System.Drawing.Size(662, 47);
             this.gcNuevaUbicación.TabIndex = 34;
             this.gcNuevaUbicación.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvNuevaUbicacion});
@@ -743,9 +744,9 @@
             this.beNuevaUbicacion.Name = "beNuevaUbicacion";
             this.beNuevaUbicacion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.beNuevaUbicacion.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.beNuevaUbicacion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.beNuevaUbicacion.Properties.MaxLength = 20;
             this.beNuevaUbicacion.Properties.NullText = "Escanee o selecciona una tarima";
             this.beNuevaUbicacion.Size = new System.Drawing.Size(325, 28);
@@ -778,12 +779,25 @@
             this.labelControl14.TabIndex = 58;
             this.labelControl14.Text = "Ubicación:";
             // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton2.Appearance.Options.UseFont = true;
+            this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton2.ImageOptions.Image = global::LOSA.Properties.Resources.tap;
+            this.simpleButton2.Location = new System.Drawing.Point(626, 153);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(42, 40);
+            this.simpleButton2.TabIndex = 61;
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
             // frmTarima
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(622, 521);
+            this.ClientSize = new System.Drawing.Size(680, 521);
+            this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.beNuevaUbicacion);
             this.Controls.Add(this.btnUbicacion);
             this.Controls.Add(this.labelControl14);
@@ -899,5 +913,6 @@
         private DevExpress.XtraEditors.ButtonEdit beNuevaUbicacion;
         private DevExpress.XtraEditors.SimpleButton btnUbicacion;
         private DevExpress.XtraEditors.LabelControl labelControl14;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
     }
 }
