@@ -238,6 +238,7 @@ namespace LOSA.TransaccionesPT
                 cmd.Parameters.AddWithValue("@usuario", UsuarioLogeado.Id);
                 cmd.Parameters.AddWithValue("@abierto", 1);
                 cmd.Parameters.AddWithValue("@DocEntry", DocEntry);
+                cmd.Parameters.AddWithValue("@lote_pt", txtlot_number.Text);
                 SqlDataReader dr = cmd.ExecuteReader(); 
                 if (dr.Read())
                 {

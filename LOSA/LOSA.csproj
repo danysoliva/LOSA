@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>101</ApplicationRevision>
+    <ApplicationRevision>115</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -192,6 +192,12 @@
     </Compile>
     <Compile Include="Calidad\frmLotesStatus.Designer.cs">
       <DependentUpon>frmLotesStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\frmreporte_trazabilidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmreporte_trazabilidad.Designer.cs">
+      <DependentUpon>frmreporte_trazabilidad.cs</DependentUpon>
     </Compile>
     <Compile Include="Calidad\frmretencionadd.cs">
       <SubType>Form</SubType>
@@ -552,6 +558,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsRecepcionMP.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RecepcionMP\frmeditarLote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmeditarLote.Designer.cs">
+      <DependentUpon>frmeditarLote.cs</DependentUpon>
     </Compile>
     <Compile Include="RecepcionMP\frmEditLoteActivo.cs">
       <SubType>Form</SubType>
@@ -989,6 +1001,12 @@
     <Compile Include="TransaccionesMP\frmviewrequisas.Designer.cs">
       <DependentUpon>frmviewrequisas.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\frm_reporte_alimentacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frm_reporte_alimentacion.Designer.cs">
+      <DependentUpon>frm_reporte_alimentacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesPT\dsPT.cs">
       <DependentUpon>dsPT.xsd</DependentUpon>
     </Compile>
@@ -1002,6 +1020,12 @@
     </Compile>
     <Compile Include="TransaccionesPT\frmactivacionPT.Designer.cs">
       <DependentUpon>frmactivacionPT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesPT\frmdespacho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesPT\frmdespacho.Designer.cs">
+      <DependentUpon>frmdespacho.cs</DependentUpon>
     </Compile>
     <Compile Include="TransaccionesPT\frmGestiondePlan.cs">
       <SubType>Form</SubType>
@@ -1021,11 +1045,29 @@
     <Compile Include="TransaccionesPT\frmPlanPT.Designer.cs">
       <DependentUpon>frmPlanPT.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesPT\frmPrintTM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesPT\frmPrintTM.Designer.cs">
+      <DependentUpon>frmPrintTM.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesPT\frm_planes_recibo_pt.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TransaccionesPT\frm_planes_recibo_pt.Designer.cs">
       <DependentUpon>frm_planes_recibo_pt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesPT\frm_planificacion_despachos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesPT\frm_planificacion_despachos.Designer.cs">
+      <DependentUpon>frm_planificacion_despachos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesPT\frm_verdetalleTM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesPT\frm_verdetalleTM.Designer.cs">
+      <DependentUpon>frm_verdetalleTM.cs</DependentUpon>
     </Compile>
     <Compile Include="TransaccionesPT\frm_vertarimas_pt.cs">
       <SubType>Form</SubType>
@@ -1065,6 +1107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmLotesStatus.resx">
       <DependentUpon>frmLotesStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmreporte_trazabilidad.resx">
+      <DependentUpon>frmreporte_trazabilidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmretencionadd.resx">
       <DependentUpon>frmretencionadd.cs</DependentUpon>
@@ -1224,6 +1269,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RecepcionMP\frmeditarLote.resx">
+      <DependentUpon>frmeditarLote.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmEditLoteActivo.resx">
       <DependentUpon>frmEditLoteActivo.cs</DependentUpon>
     </EmbeddedResource>
@@ -1425,8 +1473,14 @@
     <EmbeddedResource Include="TransaccionesMP\frmviewrequisas.resx">
       <DependentUpon>frmviewrequisas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frm_reporte_alimentacion.resx">
+      <DependentUpon>frm_reporte_alimentacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesPT\frmactivacionPT.resx">
       <DependentUpon>frmactivacionPT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesPT\frmdespacho.resx">
+      <DependentUpon>frmdespacho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesPT\frmGestiondePlan.resx">
       <DependentUpon>frmGestiondePlan.cs</DependentUpon>
@@ -1437,8 +1491,17 @@
     <EmbeddedResource Include="TransaccionesPT\frmPlanPT.resx">
       <DependentUpon>frmPlanPT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesPT\frmPrintTM.resx">
+      <DependentUpon>frmPrintTM.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesPT\frm_planes_recibo_pt.resx">
       <DependentUpon>frm_planes_recibo_pt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesPT\frm_planificacion_despachos.resx">
+      <DependentUpon>frm_planificacion_despachos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesPT\frm_verdetalleTM.resx">
+      <DependentUpon>frm_verdetalleTM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesPT\frm_vertarimas_pt.resx">
       <DependentUpon>frm_vertarimas_pt.cs</DependentUpon>
