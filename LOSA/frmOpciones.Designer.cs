@@ -57,6 +57,8 @@
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdRecepcionMPLogistica = new DevExpress.XtraEditors.SimpleButton();
             this.TabCalidad = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.btnconfiguracionCal = new DevExpress.XtraEditors.SimpleButton();
             this.cmdLotesCalidad = new DevExpress.XtraEditors.SimpleButton();
@@ -67,6 +69,7 @@
             this.btnTiposPresentaciones = new DevExpress.XtraEditors.SimpleButton();
             this.btnBodegas = new DevExpress.XtraEditors.SimpleButton();
             this.tabProduccion = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.cmdTarimasPT = new DevExpress.XtraEditors.SimpleButton();
             this.btnAlimentacionManual = new DevExpress.XtraEditors.SimpleButton();
@@ -239,6 +242,7 @@
             this.btn_salidapt.Size = new System.Drawing.Size(199, 40);
             this.btn_salidapt.TabIndex = 32;
             this.btn_salidapt.Text = "Despachos";
+            this.btn_salidapt.Click += new System.EventHandler(this.btn_salidapt_Click);
             // 
             // btnajuste
             // 
@@ -481,6 +485,8 @@
             // 
             // TabCalidad
             // 
+            this.TabCalidad.Controls.Add(this.simpleButton6);
+            this.TabCalidad.Controls.Add(this.simpleButton5);
             this.TabCalidad.Controls.Add(this.simpleButton4);
             this.TabCalidad.Controls.Add(this.btnconfiguracionCal);
             this.TabCalidad.Controls.Add(this.cmdLotesCalidad);
@@ -489,6 +495,32 @@
             this.TabCalidad.PageVisible = false;
             this.TabCalidad.Size = new System.Drawing.Size(629, 422);
             this.TabCalidad.Text = "Calidad";
+            // 
+            // simpleButton6
+            // 
+            this.simpleButton6.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton6.Appearance.Options.UseFont = true;
+            this.simpleButton6.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton6.ImageOptions.Image = global::LOSA.Properties.Resources.edit_table_1_;
+            this.simpleButton6.Location = new System.Drawing.Point(224, 23);
+            this.simpleButton6.Name = "simpleButton6";
+            this.simpleButton6.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton6.TabIndex = 15;
+            this.simpleButton6.Text = "Reporte \r\nde Alimentacion";
+            this.simpleButton6.Click += new System.EventHandler(this.simpleButton6_Click);
+            // 
+            // simpleButton5
+            // 
+            this.simpleButton5.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton5.Appearance.Options.UseFont = true;
+            this.simpleButton5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton5.ImageOptions.Image = global::LOSA.Properties.Resources.edit_table_1_;
+            this.simpleButton5.Location = new System.Drawing.Point(9, 254);
+            this.simpleButton5.Name = "simpleButton5";
+            this.simpleButton5.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton5.TabIndex = 14;
+            this.simpleButton5.Text = "Trazabilidad \r\nde lote";
+            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
             // 
             // simpleButton4
             // 
@@ -610,6 +642,7 @@
             // 
             // tabProduccion
             // 
+            this.tabProduccion.Controls.Add(this.simpleButton7);
             this.tabProduccion.Controls.Add(this.btnPrint);
             this.tabProduccion.Controls.Add(this.cmdTarimasPT);
             this.tabProduccion.Controls.Add(this.btnAlimentacionManual);
@@ -618,6 +651,19 @@
             this.tabProduccion.PageVisible = false;
             this.tabProduccion.Size = new System.Drawing.Size(629, 422);
             this.tabProduccion.Text = "Producción";
+            // 
+            // simpleButton7
+            // 
+            this.simpleButton7.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton7.Appearance.Options.UseFont = true;
+            this.simpleButton7.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton7.ImageOptions.Image = global::LOSA.Properties.Resources.edit_table_1_;
+            this.simpleButton7.Location = new System.Drawing.Point(237, 114);
+            this.simpleButton7.Name = "simpleButton7";
+            this.simpleButton7.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton7.TabIndex = 16;
+            this.simpleButton7.Text = "Reporte \r\nde Alimentacion";
+            this.simpleButton7.Click += new System.EventHandler(this.simpleButton7_Click);
             // 
             // btnPrint
             // 
@@ -747,5 +793,8 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
         private DevExpress.XtraEditors.SimpleButton btnPrint;
         private DevExpress.XtraEditors.SimpleButton btn_salidapt;
+        private DevExpress.XtraEditors.SimpleButton simpleButton5;
+        private DevExpress.XtraEditors.SimpleButton simpleButton6;
+        private DevExpress.XtraEditors.SimpleButton simpleButton7;
     }
 }

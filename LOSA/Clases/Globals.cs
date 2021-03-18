@@ -80,7 +80,11 @@ namespace ACS.Classes
         public static string SAP_DB_Pass = "Aqua2018";
 
 
-
+        // APMS(Aquafeed Pocess Management System)
+        public static string APMS_Server = @"AQFSVR008\WINCC";
+        public static string APMS_DB_User = "sa";
+        public static string APMS_DB_Pass = "AquaF33dHN2017";
+        public static string APMS_ActiveDB = "APMS";
 
         //public static string APMS_Server = @"6XJ7QD2-PC";
         //public static string APMS_DB_User = "sa";
@@ -123,6 +127,10 @@ namespace ACS.Classes
         public static string ServerlicenseSDK = "10.50.11.31";
         #endregion
 
+        internal string ConnectionStringAPMS = @"Server=" + Globals.APMS_Server + @";
+                                                       Database=" + Globals.APMS_ActiveDB + @";
+                                                       User Id=" + Globals.APMS_DB_User + @";
+                                                       Password=" + Globals.APMS_DB_Pass + ";";
         #region Credenciales Desarrollo
         ////WINCC
         //public static string CMS_ServerPellet = @"JFTDF12\SQLEXPRESS";

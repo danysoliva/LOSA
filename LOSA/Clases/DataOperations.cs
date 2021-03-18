@@ -34,6 +34,11 @@ namespace ACS.Classes
                                                    user Id=" + Globals.LOSA_DB_User + @";
                                                    Password=" + Globals.LOSA_DB_Pass + ";";
 
+        internal string ConnectionStringAPMS = @"Server=" + Globals.APMS_Server + @";
+                                                       Database=" + Globals.APMS_ActiveDB + @";
+                                                       User Id=" + Globals.APMS_DB_User + @";
+                                                       Password=" + Globals.APMS_DB_Pass + ";";
+
         //internal string ConnectionStringLOSA = 
         //        internal string ConnectionStringCostos_History = @"Server=" + Globals.CTSH_ServerAddress + @";
         //                                                           Database=" + Globals.CTSH_ActiveDB + @";

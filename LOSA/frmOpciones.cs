@@ -443,7 +443,7 @@ namespace LOSA
 
         private void btnPlantarimas_Click(object sender, EventArgs e)
         {
-            frm_planes_recibo_pt frm = new frm_planes_recibo_pt(UsuarioLogeado);
+            frm_planificacion_despachos frm = new frm_planificacion_despachos();
             frm.Show();
         }
 
@@ -462,6 +462,29 @@ namespace LOSA
         private void btnPrint_Click(object sender, EventArgs e)
         {
             frmPrintTM frm = new frmPrintTM(UsuarioLogeado);
+            frm.Show();
+        }
+
+        private void simpleButton5_Click(object sender, EventArgs e)
+        {
+            frmreporte_trazabilidad frm = new frmreporte_trazabilidad(UsuarioLogeado);
+            frm.Show();
+        }
+
+        private void btn_salidapt_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton6_Click(object sender, EventArgs e)
+        {
+            frm_reporte_alimentacion frm = new frm_reporte_alimentacion();
+            frm.Show();
+        }
+
+        private void simpleButton7_Click(object sender, EventArgs e)
+        {
+            frm_reporte_alimentacion frm = new frm_reporte_alimentacion();
             frm.Show();
         }
     }

@@ -35,22 +35,23 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
-            this.dsPT = new LOSA.TransaccionesPT.dsPT();
             this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colDocEntry = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colItemCode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colItemName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colFechaP = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCantidad = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPresentacion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnPlanificar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.BtnSalir = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.colPlan = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnPlanificar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.dsPT = new LOSA.TransaccionesPT.dsPT();
+            this.collote = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcant_tm = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colunidades = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colud_tarima = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colkg_production = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProducto = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldate_prouction = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsPT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPlanificar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsPT)).BeginInit();
             this.SuspendLayout();
             // 
             // grd_data
@@ -58,7 +59,7 @@
             this.grd_data.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grd_data.DataMember = "OFabricacion";
+            this.grd_data.DataMember = "pp_planificacion";
             this.grd_data.DataSource = this.dsPT;
             this.grd_data.Location = new System.Drawing.Point(0, 86);
             this.grd_data.MainView = this.grdv_data;
@@ -69,11 +70,6 @@
             this.grd_data.TabIndex = 0;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
-            // 
-            // dsPT
-            // 
-            this.dsPT.DataSetName = "dsPT";
-            this.dsPT.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // grdv_data
             // 
@@ -94,72 +90,29 @@
             this.grdv_data.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.grdv_data.Appearance.TopNewRow.Options.UseFont = true;
             this.grdv_data.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colDocEntry,
-            this.colItemCode,
-            this.colItemName,
-            this.colFechaP,
-            this.colCantidad,
-            this.colPresentacion,
-            this.colPlan});
+            this.collote,
+            this.colcant_tm,
+            this.colunidades,
+            this.colud_tarima,
+            this.colkg_production,
+            this.colProducto,
+            this.colcodigo,
+            this.coldate_prouction});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
             this.grdv_data.OptionsView.ShowGroupPanel = false;
             this.grdv_data.Click += new System.EventHandler(this.grdv_data_Click);
             // 
-            // colDocEntry
+            // btnPlanificar
             // 
-            this.colDocEntry.Caption = "Numero";
-            this.colDocEntry.FieldName = "DocEntry";
-            this.colDocEntry.Name = "colDocEntry";
-            this.colDocEntry.OptionsColumn.AllowEdit = false;
-            this.colDocEntry.Visible = true;
-            this.colDocEntry.VisibleIndex = 0;
-            // 
-            // colItemCode
-            // 
-            this.colItemCode.Caption = "Codigo";
-            this.colItemCode.FieldName = "ItemCode";
-            this.colItemCode.Name = "colItemCode";
-            this.colItemCode.OptionsColumn.AllowEdit = false;
-            this.colItemCode.Visible = true;
-            this.colItemCode.VisibleIndex = 1;
-            // 
-            // colItemName
-            // 
-            this.colItemName.Caption = "Producto";
-            this.colItemName.FieldName = "ItemName";
-            this.colItemName.Name = "colItemName";
-            this.colItemName.OptionsColumn.AllowEdit = false;
-            this.colItemName.Visible = true;
-            this.colItemName.VisibleIndex = 2;
-            // 
-            // colFechaP
-            // 
-            this.colFechaP.Caption = "Fecha de Produccion";
-            this.colFechaP.FieldName = "FechaP";
-            this.colFechaP.Name = "colFechaP";
-            this.colFechaP.OptionsColumn.AllowEdit = false;
-            this.colFechaP.Visible = true;
-            this.colFechaP.VisibleIndex = 3;
-            // 
-            // colCantidad
-            // 
-            this.colCantidad.Caption = "Cantidad";
-            this.colCantidad.FieldName = "Cantidad";
-            this.colCantidad.Name = "colCantidad";
-            this.colCantidad.OptionsColumn.AllowEdit = false;
-            this.colCantidad.Visible = true;
-            this.colCantidad.VisibleIndex = 4;
-            // 
-            // colPresentacion
-            // 
-            this.colPresentacion.Caption = "Presentacion";
-            this.colPresentacion.FieldName = "Presentacion";
-            this.colPresentacion.Name = "colPresentacion";
-            this.colPresentacion.OptionsColumn.AllowEdit = false;
-            this.colPresentacion.Visible = true;
-            this.colPresentacion.VisibleIndex = 5;
+            this.btnPlanificar.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            this.btnPlanificar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnPlanificar.Name = "btnPlanificar";
+            this.btnPlanificar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnPlanificar.Click += new System.EventHandler(this.btnPlanificar_Click);
             // 
             // BtnSalir
             // 
@@ -190,23 +143,72 @@
             this.labelControl1.TabIndex = 3;
             this.labelControl1.Text = "Generar plan de producto terminado";
             // 
-            // colPlan
+            // dsPT
             // 
-            this.colPlan.Caption = "Planificar";
-            this.colPlan.ColumnEdit = this.btnPlanificar;
-            this.colPlan.Name = "colPlan";
-            this.colPlan.Visible = true;
-            this.colPlan.VisibleIndex = 6;
+            this.dsPT.DataSetName = "dsPT";
+            this.dsPT.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // btnPlanificar
+            // collote
             // 
-            this.btnPlanificar.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
-            this.btnPlanificar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.btnPlanificar.Name = "btnPlanificar";
-            this.btnPlanificar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.btnPlanificar.Click += new System.EventHandler(this.btnPlanificar_Click);
+            this.collote.Caption = "Lote";
+            this.collote.FieldName = "lote";
+            this.collote.Name = "collote";
+            this.collote.Visible = true;
+            this.collote.VisibleIndex = 2;
+            // 
+            // colcant_tm
+            // 
+            this.colcant_tm.Caption = "Tarimas";
+            this.colcant_tm.FieldName = "cant_tm";
+            this.colcant_tm.Name = "colcant_tm";
+            this.colcant_tm.Visible = true;
+            this.colcant_tm.VisibleIndex = 3;
+            // 
+            // colunidades
+            // 
+            this.colunidades.Caption = "Ud_Totales";
+            this.colunidades.FieldName = "unidades";
+            this.colunidades.Name = "colunidades";
+            this.colunidades.Visible = true;
+            this.colunidades.VisibleIndex = 4;
+            // 
+            // colud_tarima
+            // 
+            this.colud_tarima.Caption = "Ud Tarimas";
+            this.colud_tarima.FieldName = "ud_tarima";
+            this.colud_tarima.Name = "colud_tarima";
+            this.colud_tarima.Visible = true;
+            this.colud_tarima.VisibleIndex = 5;
+            // 
+            // colkg_production
+            // 
+            this.colkg_production.Caption = "Kg Programados";
+            this.colkg_production.FieldName = "kg_production";
+            this.colkg_production.Name = "colkg_production";
+            this.colkg_production.Visible = true;
+            this.colkg_production.VisibleIndex = 6;
+            // 
+            // colProducto
+            // 
+            this.colProducto.FieldName = "Producto";
+            this.colProducto.Name = "colProducto";
+            this.colProducto.Visible = true;
+            this.colProducto.VisibleIndex = 1;
+            // 
+            // colcodigo
+            // 
+            this.colcodigo.Caption = "Codigo";
+            this.colcodigo.FieldName = "codigo";
+            this.colcodigo.Name = "colcodigo";
+            this.colcodigo.Visible = true;
+            this.colcodigo.VisibleIndex = 0;
+            // 
+            // coldate_prouction
+            // 
+            this.coldate_prouction.FieldName = "date_prouction";
+            this.coldate_prouction.Name = "coldate_prouction";
+            this.coldate_prouction.Visible = true;
+            this.coldate_prouction.VisibleIndex = 7;
             // 
             // frmPlanPT
             // 
@@ -221,9 +223,9 @@
             this.Text = "frmPlanPT";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsPT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPlanificar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsPT)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,14 +237,15 @@
         private DevExpress.XtraGrid.Views.Grid.GridView grdv_data;
         private DevExpress.XtraEditors.SimpleButton BtnSalir;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private dsPT dsPT;
-        private DevExpress.XtraGrid.Columns.GridColumn colDocEntry;
-        private DevExpress.XtraGrid.Columns.GridColumn colItemCode;
-        private DevExpress.XtraGrid.Columns.GridColumn colItemName;
-        private DevExpress.XtraGrid.Columns.GridColumn colFechaP;
-        private DevExpress.XtraGrid.Columns.GridColumn colCantidad;
-        private DevExpress.XtraGrid.Columns.GridColumn colPresentacion;
-        private DevExpress.XtraGrid.Columns.GridColumn colPlan;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnPlanificar;
+        private dsPT dsPT;
+        private DevExpress.XtraGrid.Columns.GridColumn collote;
+        private DevExpress.XtraGrid.Columns.GridColumn colcant_tm;
+        private DevExpress.XtraGrid.Columns.GridColumn colunidades;
+        private DevExpress.XtraGrid.Columns.GridColumn colud_tarima;
+        private DevExpress.XtraGrid.Columns.GridColumn colkg_production;
+        private DevExpress.XtraGrid.Columns.GridColumn colProducto;
+        private DevExpress.XtraGrid.Columns.GridColumn colcodigo;
+        private DevExpress.XtraGrid.Columns.GridColumn coldate_prouction;
     }
 }

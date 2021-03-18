@@ -72,12 +72,13 @@ namespace LOSA.RecepcionMP
                 return;
             }
             string query = @"sp_update_losa_ingreso_lotes";
-            SqlConnection cn = new SqlConnection(dp.ConnectionStringCostos);
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             try
             {
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query,cn);
                 cmd.CommandType = CommandType.StoredProcedure;
+                
                 cmd.Parameters.AddWithValue("@lote", txtlote.Text);
                 cmd.Parameters.AddWithValue("@id", id_L);
                 cmd.Parameters.AddWithValue("@sapcode", sapcode);
