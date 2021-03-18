@@ -53,8 +53,8 @@ namespace LOSA.Reportes
                     fechavenciminetocopia.Text = dr.IsDBNull(10) ? "" : dr.GetDateTime(10).ToString("dd/MM/yyyy");
                     fechafinalconsumocopia.Text = dr.IsDBNull(9) ? "" : dr.GetDateTime(9).ToString("dd/MM/yyyy");
                     txtfinconsumo.Text = dr.IsDBNull(9) ? "" : dr.GetDateTime(9).ToString("dd/MM/yyyy");
-                    txtsacos.Text = dr.IsDBNull(3) ? "" : dr.GetInt32(3).ToString();
-                    cantidadcopia.Text = dr.IsDBNull(3) ? "" : dr.GetInt32(3).ToString();
+                    txtsacos.Text = dr.IsDBNull(3) ? "" : dr.GetDecimal(3).ToString();
+                    cantidadcopia.Text = dr.IsDBNull(3) ? "" : dr.GetDecimal(3).ToString();
                     txtproveedor.Text = dr.IsDBNull(2) ? "" : dr.GetString(2);
                     codigoCopia.Text = dr.IsDBNull(2) ? "" : dr.GetString(2);
 

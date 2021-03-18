@@ -137,5 +137,23 @@ namespace LOSA.RecepcionMP
                 CajaDialogo.Error(ex.Message);
             }
         }
+
+        private void btn_imprimir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var gridview = (GridView)grd_data.FocusedView;
+                var row = (dsingresos.loteRow)gridview.GetFocusedDataRow();
+                rptLoteRotulo boleta = new rptLoteRotulo(row.id);
+                boleta.ShowPrintMarginsWarning = false;
+                boleta.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
+                boleta.Print();
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
     }
 }
