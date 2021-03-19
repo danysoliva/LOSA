@@ -5,15 +5,20 @@ using System.ComponentModel;
 using DevExpress.XtraReports.UI;
 using LOSA.Clases;
 using ACS.Classes;
+using System.Data.SqlClient;
 
 namespace LOSA.RecepcionMP
 {
     public partial class rptReporteTarimaPT : DevExpress.XtraReports.UI.XtraReport
     {
+        DataOperations dp = new DataOperations();
+        int id_tm;
         public rptReporteTarimaPT(int idTarima)
         {
             InitializeComponent();
-            Tarima tar1 = new Tarima();
+            Tarima tar1 = new Tarima();              
+            id_tm = idTarima;
+            load_printed_tm(); 
             if (tar1.RecuperarRegistro(idTarima, ""))
             {
                 DataOperations dp = new DataOperations();
@@ -42,6 +47,26 @@ namespace LOSA.RecepcionMP
                 BarCode1.Text = BarCode2.Text = tar1.CodigoBarra;
             }
 
+        }
+        public void load_printed_tm()
+        {
+            string query = @"sp_op_tarimas_inizialiar";
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            try
+            {
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query,cn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_tm", id_tm);
+                cmd.ExecuteNonQuery();
+                cn.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
         }
 
     }

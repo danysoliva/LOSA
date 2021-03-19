@@ -443,7 +443,7 @@ namespace LOSA
 
         private void btnPlantarimas_Click(object sender, EventArgs e)
         {
-            frm_planificacion_despachos frm = new frm_planificacion_despachos();
+            frm_planificacion_despachos frm = new frm_planificacion_despachos(UsuarioLogeado);
             frm.Show();
         }
 

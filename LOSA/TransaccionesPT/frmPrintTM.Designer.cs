@@ -172,7 +172,7 @@
             this.colpeso.Name = "colpeso";
             this.colpeso.OptionsColumn.AllowEdit = false;
             this.colpeso.Visible = true;
-            this.colpeso.VisibleIndex = 3;
+            this.colpeso.VisibleIndex = 2;
             this.colpeso.Width = 90;
             // 
             // colfechacreacion
@@ -182,7 +182,7 @@
             this.colfechacreacion.Name = "colfechacreacion";
             this.colfechacreacion.OptionsColumn.AllowEdit = false;
             this.colfechacreacion.Visible = true;
-            this.colfechacreacion.VisibleIndex = 4;
+            this.colfechacreacion.VisibleIndex = 3;
             this.colfechacreacion.Width = 90;
             // 
             // colabierto
@@ -197,8 +197,6 @@
             this.colDocEntry.FieldName = "DocEntry";
             this.colDocEntry.Name = "colDocEntry";
             this.colDocEntry.OptionsColumn.AllowEdit = false;
-            this.colDocEntry.Visible = true;
-            this.colDocEntry.VisibleIndex = 2;
             this.colDocEntry.Width = 112;
             // 
             // colver
@@ -207,7 +205,7 @@
             this.colver.ColumnEdit = this.btnver;
             this.colver.Name = "colver";
             this.colver.Visible = true;
-            this.colver.VisibleIndex = 5;
+            this.colver.VisibleIndex = 4;
             this.colver.Width = 76;
             // 
             // btnver
@@ -226,7 +224,7 @@
             this.colImprimirTm.ColumnEdit = this.btnImprimir;
             this.colImprimirTm.Name = "colImprimirTm";
             this.colImprimirTm.Visible = true;
-            this.colImprimirTm.VisibleIndex = 6;
+            this.colImprimirTm.VisibleIndex = 5;
             this.colImprimirTm.Width = 81;
             // 
             // btnImprimir

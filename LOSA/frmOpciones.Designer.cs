@@ -237,7 +237,7 @@
             this.btn_salidapt.Appearance.Options.UseFont = true;
             this.btn_salidapt.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btn_salidapt.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_salidapt.ImageOptions.SvgImage")));
-            this.btn_salidapt.Location = new System.Drawing.Point(419, 296);
+            this.btn_salidapt.Location = new System.Drawing.Point(419, 203);
             this.btn_salidapt.Name = "btn_salidapt";
             this.btn_salidapt.Size = new System.Drawing.Size(199, 40);
             this.btn_salidapt.TabIndex = 32;
@@ -281,6 +281,7 @@
             this.btnAlimentacion.Size = new System.Drawing.Size(199, 40);
             this.btnAlimentacion.TabIndex = 29;
             this.btnAlimentacion.Text = "Planificar recibo \r\nde produccion";
+            this.btnAlimentacion.Visible = false;
             this.btnAlimentacion.Click += new System.EventHandler(this.btnAlimentacion_Click);
             // 
             // cmdUbicaciones

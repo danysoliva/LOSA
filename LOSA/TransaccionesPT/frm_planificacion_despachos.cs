@@ -18,9 +18,11 @@ namespace LOSA.TransaccionesPT
     public partial class frm_planificacion_despachos : DevExpress.XtraEditors.XtraForm
     {
         DataOperations dp = new DataOperations();
-        public frm_planificacion_despachos()
+        UserLogin UsuarioLogeado;
+        public frm_planificacion_despachos(UserLogin Puser)
         {
             InitializeComponent();
+            UsuarioLogeado = Puser;
             load_data();
         }
         
@@ -57,7 +59,7 @@ namespace LOSA.TransaccionesPT
             {
                 var gridView = (GridView)grd_data.FocusedView;
                 var row = (dsPT.pt_ordenesRow)gridView.GetFocusedDataRow();
-                frm_verdetalleTM frm = new frm_verdetalleTM(row.id);
+                frm_verdetalleTM frm = new frm_verdetalleTM(row.id, UsuarioLogeado);
                 frm.Show();
             }
             catch (Exception ex)
