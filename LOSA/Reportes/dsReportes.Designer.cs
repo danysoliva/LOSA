@@ -2988,7 +2988,7 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public TarimaResultRow AddTarimaResultRow(int id, string codigo_barra, string material, System.DateTime fecha_ingreso, System.DateTime fecha_vencimiento, decimal cantidad, decimal peso, int ingreso, string lote, string Medida) {
+            public TarimaResultRow AddTarimaResultRow(int id, string codigo_barra, string material, System.DateTime fecha_ingreso, System.DateTime fecha_vencimiento, decimal cantidad, decimal peso, string ingreso, string lote, string Medida) {
                 TarimaResultRow rowTarimaResultRow = ((TarimaResultRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -3052,7 +3052,7 @@ namespace LOSA.Reportes {
                 base.Columns.Add(this.columncantidad);
                 this.columnpeso = new global::System.Data.DataColumn("peso", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpeso);
-                this.columningreso = new global::System.Data.DataColumn("ingreso", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columningreso = new global::System.Data.DataColumn("ingreso", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columningreso);
                 this.columnlote = new global::System.Data.DataColumn("lote", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnlote);
@@ -7194,10 +7194,10 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int ingreso {
+            public string ingreso {
                 get {
                     try {
-                        return ((int)(this[this.tableTarimaResult.ingresoColumn]));
+                        return ((string)(this[this.tableTarimaResult.ingresoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'ingreso\' in table \'TarimaResult\' is DBNull.", e);
