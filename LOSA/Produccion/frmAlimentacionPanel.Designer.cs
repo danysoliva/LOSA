@@ -200,6 +200,8 @@
             // colfecha
             // 
             this.colfecha.Caption = "Fecha";
+            this.colfecha.DisplayFormat.FormatString = "g";
+            this.colfecha.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colfecha.FieldName = "fecha";
             this.colfecha.Name = "colfecha";
             this.colfecha.OptionsColumn.AllowEdit = false;
