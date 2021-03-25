@@ -304,17 +304,41 @@
     <Compile Include="Despachos\frmseleccionlote.Designer.cs">
       <DependentUpon>frmseleccionlote.cs</DependentUpon>
     </Compile>
+    <Compile Include="Despachos\frm_generar_despacho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Despachos\frm_generar_despacho.Designer.cs">
+      <DependentUpon>frm_generar_despacho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Despachos\frm_mostar_otros_detalles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Despachos\frm_mostar_otros_detalles.Designer.cs">
+      <DependentUpon>frm_mostar_otros_detalles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Despachos\frm_Reqresumen_pt.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Despachos\frm_Reqresumen_pt.Designer.cs">
       <DependentUpon>frm_Reqresumen_pt.cs</DependentUpon>
     </Compile>
+    <Compile Include="Despachos\frm_view_entrega_despacho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Despachos\frm_view_entrega_despacho.Designer.cs">
+      <DependentUpon>frm_view_entrega_despacho.cs</DependentUpon>
+    </Compile>
     <Compile Include="Despachos\fromdespacho.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Despachos\fromdespacho.Designer.cs">
       <DependentUpon>fromdespacho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Despachos\Reportes\frm_pickboleta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Despachos\Reportes\frm_pickboleta.Designer.cs">
+      <DependentUpon>frm_pickboleta.cs</DependentUpon>
     </Compile>
     <Compile Include="Despachos\Reportes\rpt_despacho.cs">
       <SubType>Component</SubType>
@@ -1051,6 +1075,12 @@
     <Compile Include="TransaccionesPT\frmPrintTM.Designer.cs">
       <DependentUpon>frmPrintTM.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesPT\frm_editar_tm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesPT\frm_editar_tm.Designer.cs">
+      <DependentUpon>frm_editar_tm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesPT\frm_planes_recibo_pt.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1150,11 +1180,23 @@
     <EmbeddedResource Include="Despachos\frmseleccionlote.resx">
       <DependentUpon>frmseleccionlote.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Despachos\frm_generar_despacho.resx">
+      <DependentUpon>frm_generar_despacho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Despachos\frm_mostar_otros_detalles.resx">
+      <DependentUpon>frm_mostar_otros_detalles.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frm_Reqresumen_pt.resx">
       <DependentUpon>frm_Reqresumen_pt.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Despachos\frm_view_entrega_despacho.resx">
+      <DependentUpon>frm_view_entrega_despacho.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Despachos\fromdespacho.resx">
       <DependentUpon>fromdespacho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Despachos\Reportes\frm_pickboleta.resx">
+      <DependentUpon>frm_pickboleta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Despachos\Reportes\rpt_despacho.resx">
       <DependentUpon>rpt_despacho.cs</DependentUpon>
@@ -1493,6 +1535,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesPT\frmPrintTM.resx">
       <DependentUpon>frmPrintTM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesPT\frm_editar_tm.resx">
+      <DependentUpon>frm_editar_tm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesPT\frm_planes_recibo_pt.resx">
       <DependentUpon>frm_planes_recibo_pt.cs</DependentUpon>

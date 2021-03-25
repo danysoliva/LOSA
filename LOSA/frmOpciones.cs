@@ -90,10 +90,8 @@ namespace LOSA
             btnajuste.Enabled =
             cmdUbicaciones.Enabled =
             simpleButton3.Enabled =
-            btndespachos.Enabled =
-            btnplanesdespachos.Enabled =
-            btnReq_PT.Enabled =
-            btnAlimentacion.Enabled =
+            btndespachos.Enabled =         
+            btnReq_PT.Enabled =           
             simpleButton2.Enabled =
             simpleButton1.Enabled =
             btnPlantarimas.Enabled = false;
@@ -342,8 +340,8 @@ namespace LOSA
 
         private void btnplanesdespachos_Click(object sender, EventArgs e)
         {
-            LOSA.Despachos.frmplanes FRM = new Despachos.frmplanes(UsuarioLogeado);
-            FRM.Show();
+            //LOSA.Despachos.frmplanes FRM = new Despachos.frmplanes(UsuarioLogeado);
+            //FRM.Show();
         }
 
         private void btnReq_PT_Click(object sender, EventArgs e)
@@ -473,7 +471,8 @@ namespace LOSA
 
         private void btn_salidapt_Click(object sender, EventArgs e)
         {
-
+            frmdespacho frm = new frmdespacho(UsuarioLogeado);
+            frm.Show();
         }
 
         private void simpleButton6_Click(object sender, EventArgs e)

@@ -72,10 +72,10 @@
             this.btnEditar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colnum = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcodigo_barra = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.colcantidad = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btneliminarTm = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colEliminar = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btneliminarTm = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -185,6 +185,7 @@
             this.gridView1.DetailHeight = 284;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // colid
@@ -353,6 +354,32 @@
             this.colcodigo_barra.Visible = true;
             this.colcodigo_barra.VisibleIndex = 1;
             // 
+            // colcantidad
+            // 
+            this.colcantidad.Caption = "Cantidad";
+            this.colcantidad.FieldName = "cantidad";
+            this.colcantidad.Name = "colcantidad";
+            this.colcantidad.Visible = true;
+            this.colcantidad.VisibleIndex = 8;
+            // 
+            // colEliminar
+            // 
+            this.colEliminar.Caption = "Eliminar TM";
+            this.colEliminar.ColumnEdit = this.btneliminarTm;
+            this.colEliminar.Name = "colEliminar";
+            this.colEliminar.Visible = true;
+            this.colEliminar.VisibleIndex = 12;
+            // 
+            // btneliminarTm
+            // 
+            this.btneliminarTm.AutoHeight = false;
+            editorButtonImageOptions4.Image = global::LOSA.Properties.Resources.cancel;
+            this.btneliminarTm.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btneliminarTm.Name = "btneliminarTm";
+            this.btneliminarTm.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btneliminarTm.Click += new System.EventHandler(this.btneliminarTm_Click);
+            // 
             // simpleButton1
             // 
             this.simpleButton1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -368,32 +395,6 @@
             this.simpleButton1.TabIndex = 53;
             this.simpleButton1.Text = "Lotes";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
-            // colcantidad
-            // 
-            this.colcantidad.Caption = "Cantidad";
-            this.colcantidad.FieldName = "cantidad";
-            this.colcantidad.Name = "colcantidad";
-            this.colcantidad.Visible = true;
-            this.colcantidad.VisibleIndex = 8;
-            // 
-            // btneliminarTm
-            // 
-            this.btneliminarTm.AutoHeight = false;
-            editorButtonImageOptions4.Image = global::LOSA.Properties.Resources.cancel;
-            this.btneliminarTm.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.btneliminarTm.Name = "btneliminarTm";
-            this.btneliminarTm.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.btneliminarTm.Click += new System.EventHandler(this.btneliminarTm_Click);
-            // 
-            // colEliminar
-            // 
-            this.colEliminar.Caption = "Eliminar TM";
-            this.colEliminar.ColumnEdit = this.btneliminarTm;
-            this.colEliminar.Name = "colEliminar";
-            this.colEliminar.Visible = true;
-            this.colEliminar.VisibleIndex = 12;
             // 
             // frm_ingresos_lotes
             // 

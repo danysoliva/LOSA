@@ -33,16 +33,14 @@ namespace LOSA.Despachos
         }
         public void exe_sp_get_plan()// Crea el plan, o si ya esta creado para esta orden de venta lo trae de vuelta.
         {
-            string query = @"EXECUTE [dbo].[orden_venta_sp_operation] 
-                               @idOrdendeventa = @idselecte
-                              ,@idusuario = @iduser";
+            string query = @"EXECUTE [dbo].[sp_cargar_detalle_orden_de_venta] 
+                               @DocEntry = @DocEntryy";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             try
             {
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query, cn);
-                cmd.Parameters.Add("@idselecte", SqlDbType.Int).Value = ParId;
-                cmd.Parameters.Add("@iduser", SqlDbType.Int).Value = ParUser.Id;
+                cmd.Parameters.Add("@DocEntryy", SqlDbType.Int).Value = ParId;   
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 ds_despachos.plan_despacho.Clear();
                 da.Fill(ds_despachos.plan_despacho);
@@ -135,16 +133,35 @@ namespace LOSA.Despachos
             {
                 var gridview = (GridView)grd_detalle.FocusedView;
                 var row = (ds_despachos.plan_despachoRow)gridview.GetFocusedDataRow();
-                LOSA.Despachos.frmseleccionlote frm = new frmseleccionlote(row.U_Sacos, row.ItemCode, row.Dscription, row.iddetalle, ParUser);
+                LOSA.Despachos.frm_generar_despacho frm = new frm_generar_despacho(row.DocNum, row.iddetalle, ParUser);
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
 
-                    exe_sp_get_plan();
+                   // exe_sp_get_plan();
                 }
             }
             catch (Exception ex)
             {
                 CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void btnver_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var gridview = (GridView)grd_detalle.FocusedView;
+                var row = (ds_despachos.plan_despachoRow)gridview.GetFocusedDataRow();
+                if (row.Enviado == 0)
+                {
+                    CajaDialogo.Error("No se ha creado ningun despacho relacionado a esa solicitud de venta.");
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                
             }
         }
     }

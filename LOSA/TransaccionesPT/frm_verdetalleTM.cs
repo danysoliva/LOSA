@@ -166,5 +166,28 @@ namespace LOSA.TransaccionesPT
            
             }
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "Excel File (.xlsx)|*.xlsx";
+            dialog.FilterIndex = 0;
+
+            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                grd_data.ExportToXlsx(dialog.FileName);
+            }
+        }
+
+        private void btn_editar_Click(object sender, EventArgs e)
+        {
+            var gridView = (GridView)grd_data.FocusedView;
+            var row = (dsPT.tm_ptRow)gridView.GetFocusedDataRow();
+            frm_editar_tm frm = new frm_editar_tm(row.id);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                load_data();
+            }
+        }
     }
 }

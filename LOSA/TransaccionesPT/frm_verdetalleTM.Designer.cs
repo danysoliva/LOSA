@@ -40,6 +40,11 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
@@ -61,12 +66,16 @@
             this.btnduplicar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colimprimir = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnimprimir = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.btn_excel = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_editar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colEditar = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tmptBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnduplicar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnimprimir)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_editar)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl3
@@ -111,7 +120,8 @@
             this.grd_data.Name = "grd_data";
             this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnduplicar,
-            this.btnimprimir});
+            this.btnimprimir,
+            this.btn_editar});
             this.grd_data.Size = new System.Drawing.Size(636, 452);
             this.grd_data.TabIndex = 42;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -160,7 +170,8 @@
             this.colpeso,
             this.colitemcode,
             this.colduplicar,
-            this.colimprimir});
+            this.colimprimir,
+            this.colEditar});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
@@ -289,11 +300,42 @@
             this.btnimprimir.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnimprimir.Click += new System.EventHandler(this.btnimprimir_Click);
             // 
+            // btn_excel
+            // 
+            this.btn_excel.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_excel.Appearance.Options.UseFont = true;
+            this.btn_excel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_excel.ImageOptions.Image")));
+            this.btn_excel.Location = new System.Drawing.Point(7, 6);
+            this.btn_excel.Name = "btn_excel";
+            this.btn_excel.Size = new System.Drawing.Size(113, 54);
+            this.btn_excel.TabIndex = 43;
+            this.btn_excel.Text = "Excel";
+            this.btn_excel.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // btn_editar
+            // 
+            this.btn_editar.AutoHeight = false;
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            this.btn_editar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btn_editar.Name = "btn_editar";
+            this.btn_editar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
+            // 
+            // colEditar
+            // 
+            this.colEditar.Caption = "Editar TM";
+            this.colEditar.ColumnEdit = this.btn_editar;
+            this.colEditar.Name = "colEditar";
+            this.colEditar.Visible = true;
+            this.colEditar.VisibleIndex = 9;
+            // 
             // frm_verdetalleTM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(638, 560);
+            this.Controls.Add(this.btn_excel);
             this.Controls.Add(this.grd_data);
             this.Controls.Add(this.cmdHome);
             this.Controls.Add(this.labelControl3);
@@ -307,6 +349,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnduplicar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnimprimir)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_editar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -334,5 +377,8 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnduplicar;
         private DevExpress.XtraGrid.Columns.GridColumn colimprimir;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnimprimir;
+        private DevExpress.XtraEditors.SimpleButton btn_excel;
+        private DevExpress.XtraGrid.Columns.GridColumn colEditar;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btn_editar;
     }
 }
