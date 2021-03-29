@@ -486,5 +486,11 @@ namespace LOSA
             frm_reporte_alimentacion frm = new frm_reporte_alimentacion();
             frm.Show();
         }
+
+        private void simpleButton8_Click(object sender, EventArgs e)
+        {
+            frmreporte_trazabilidad frm = new frmreporte_trazabilidad(UsuarioLogeado);
+            frm.Show();
+        }
     }
 }

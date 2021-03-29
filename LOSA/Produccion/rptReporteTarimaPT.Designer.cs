@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraPrinting.BarCode.Code39ExtendedGenerator code39ExtendedGenerator1 = new DevExpress.XtraPrinting.BarCode.Code39ExtendedGenerator();
-            DevExpress.XtraPrinting.BarCode.Code39ExtendedGenerator code39ExtendedGenerator2 = new DevExpress.XtraPrinting.BarCode.Code39ExtendedGenerator();
+            DevExpress.XtraPrinting.BarCode.Code93Generator code93Generator1 = new DevExpress.XtraPrinting.BarCode.Code93Generator();
+            DevExpress.XtraPrinting.BarCode.Code93Generator code93Generator2 = new DevExpress.XtraPrinting.BarCode.Code93Generator();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rptReporteTarimaPT));
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.PageHeader = new DevExpress.XtraReports.UI.PageHeaderBand();
+            this.BarCode2 = new DevExpress.XtraReports.UI.XRBarCode();
+            this.BarCode1 = new DevExpress.XtraReports.UI.XRBarCode();
             this.xrLabel27 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel26 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel7 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel25 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
             this.lblTurno = new DevExpress.XtraReports.UI.XRLabel();
-            this.BarCode2 = new DevExpress.XtraReports.UI.XRBarCode();
             this.lblLote = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel9 = new DevExpress.XtraReports.UI.XRLabel();
             this.lblFechadeVencimiento = new DevExpress.XtraReports.UI.XRLabel();
@@ -58,7 +59,6 @@
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.lblNombreProducto = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
-            this.BarCode1 = new DevExpress.XtraReports.UI.XRBarCode();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
             this.xrPanel2 = new DevExpress.XtraReports.UI.XRPanel();
             this.xrLabel24 = new DevExpress.XtraReports.UI.XRLabel();
@@ -106,13 +106,14 @@
             // PageHeader
             // 
             this.PageHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.BarCode2,
+            this.BarCode1,
             this.xrLabel27,
             this.xrLabel26,
             this.xrLabel7,
             this.xrLabel25,
             this.xrLabel4,
             this.lblTurno,
-            this.BarCode2,
             this.lblLote,
             this.xrLabel9,
             this.lblFechadeVencimiento,
@@ -128,10 +129,33 @@
             this.lblPresentacion,
             this.xrLabel2,
             this.lblNombreProducto,
-            this.xrLabel1,
-            this.BarCode1});
+            this.xrLabel1});
             this.PageHeader.HeightF = 814.5833F;
             this.PageHeader.Name = "PageHeader";
+            // 
+            // BarCode2
+            // 
+            this.BarCode2.AutoModule = true;
+            this.BarCode2.LocationFloat = new DevExpress.Utils.PointFloat(207.3127F, 699.4167F);
+            this.BarCode2.Name = "BarCode2";
+            this.BarCode2.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 10, 0, 0, 100F);
+            this.BarCode2.SizeF = new System.Drawing.SizeF(374.4166F, 114F);
+            this.BarCode2.StylePriority.UseTextAlignment = false;
+            this.BarCode2.Symbology = code93Generator1;
+            this.BarCode2.Text = "TM0000000009";
+            this.BarCode2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // BarCode1
+            // 
+            this.BarCode1.AutoModule = true;
+            this.BarCode1.LocationFloat = new DevExpress.Utils.PointFloat(207.3127F, 0F);
+            this.BarCode1.Name = "BarCode1";
+            this.BarCode1.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 10, 0, 0, 100F);
+            this.BarCode1.SizeF = new System.Drawing.SizeF(374.4166F, 136.5F);
+            this.BarCode1.StylePriority.UseTextAlignment = false;
+            this.BarCode1.Symbology = code93Generator2;
+            this.BarCode1.Text = "TM0000000009";
+            this.BarCode1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel27
             // 
@@ -140,10 +164,10 @@
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel27.BorderWidth = 2F;
             this.xrLabel27.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel27.LocationFloat = new DevExpress.Utils.PointFloat(520.3499F, 588.14F);
+            this.xrLabel27.LocationFloat = new DevExpress.Utils.PointFloat(169.7535F, 588.14F);
             this.xrLabel27.Name = "xrLabel27";
             this.xrLabel27.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel27.SizeF = new System.Drawing.SizeF(255.6449F, 71.27734F);
+            this.xrLabel27.SizeF = new System.Drawing.SizeF(606.2413F, 71.27734F);
             this.xrLabel27.StylePriority.UseBorders = false;
             this.xrLabel27.StylePriority.UseBorderWidth = false;
             this.xrLabel27.StylePriority.UseFont = false;
@@ -157,7 +181,7 @@
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel26.BorderWidth = 2F;
             this.xrLabel26.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel26.LocationFloat = new DevExpress.Utils.PointFloat(439.57F, 588.14F);
+            this.xrLabel26.LocationFloat = new DevExpress.Utils.PointFloat(0F, 588.14F);
             this.xrLabel26.Name = "xrLabel26";
             this.xrLabel26.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel26.SizeF = new System.Drawing.SizeF(72.71481F, 71.27734F);
@@ -175,7 +199,7 @@
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel7.BorderWidth = 2F;
             this.xrLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(161.8801F, 588.14F);
+            this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(169.7535F, 588.14F);
             this.xrLabel7.Name = "xrLabel7";
             this.xrLabel7.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel7.SizeF = new System.Drawing.SizeF(269.8165F, 71.27734F);
@@ -184,6 +208,7 @@
             this.xrLabel7.StylePriority.UseFont = false;
             this.xrLabel7.StylePriority.UseTextAlignment = false;
             this.xrLabel7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrLabel7.Visible = false;
             // 
             // xrLabel25
             // 
@@ -202,6 +227,7 @@
             this.xrLabel25.StylePriority.UseTextAlignment = false;
             this.xrLabel25.Text = "Sub. - Cald.";
             this.xrLabel25.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrLabel25.Visible = false;
             // 
             // xrLabel4
             // 
@@ -239,19 +265,6 @@
             this.lblTurno.StylePriority.UseTextAlignment = false;
             this.lblTurno.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.lblTurno.Visible = false;
-            // 
-            // BarCode2
-            // 
-            this.BarCode2.AutoModule = true;
-            this.BarCode2.LocationFloat = new DevExpress.Utils.PointFloat(207.3127F, 699.4167F);
-            this.BarCode2.Name = "BarCode2";
-            this.BarCode2.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 10, 0, 0, 100F);
-            this.BarCode2.SizeF = new System.Drawing.SizeF(374.4166F, 114F);
-            this.BarCode2.StylePriority.UseTextAlignment = false;
-            code39ExtendedGenerator1.WideNarrowRatio = 3F;
-            this.BarCode2.Symbology = code39ExtendedGenerator1;
-            this.BarCode2.Text = "TM0000000009";
-            this.BarCode2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // lblLote
             // 
@@ -532,19 +545,6 @@
             this.xrLabel1.StylePriority.UseTextAlignment = false;
             this.xrLabel1.Text = "Nombre del Producto";
             this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // BarCode1
-            // 
-            this.BarCode1.AutoModule = true;
-            this.BarCode1.LocationFloat = new DevExpress.Utils.PointFloat(207.3127F, 0F);
-            this.BarCode1.Name = "BarCode1";
-            this.BarCode1.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 10, 0, 0, 100F);
-            this.BarCode1.SizeF = new System.Drawing.SizeF(374.4166F, 136.5F);
-            this.BarCode1.StylePriority.UseTextAlignment = false;
-            code39ExtendedGenerator2.WideNarrowRatio = 3F;
-            this.BarCode1.Symbology = code39ExtendedGenerator2;
-            this.BarCode1.Text = "TM0000000009";
-            this.BarCode1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // ReportHeader
             // 
@@ -891,7 +891,6 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel2;
         private DevExpress.XtraReports.UI.XRLabel xrLabel1;
         private DevExpress.XtraReports.UI.ReportHeaderBand ReportHeader;
-        private DevExpress.XtraReports.UI.XRBarCode BarCode1;
         private DevExpress.XtraReports.UI.XRLabel lblNumeroIngreso;
         private DevExpress.XtraReports.UI.XRLabel xrLabel5;
         private DevExpress.XtraReports.UI.XRLabel lblFechadeVencimiento;
@@ -902,7 +901,6 @@
         private DevExpress.XtraReports.UI.XRLabel lblCantidad;
         private DevExpress.XtraReports.UI.XRLabel lblLote;
         private DevExpress.XtraReports.UI.XRLabel xrLabel9;
-        private DevExpress.XtraReports.UI.XRBarCode BarCode2;
         private DevExpress.XtraReports.UI.XRLabel lblNombreProducto;
         private DevExpress.XtraReports.UI.XRPanel xrPanel2;
         private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox1;
@@ -930,5 +928,7 @@
         private DevExpress.XtraReports.UI.XRLabel lblTurno;
         private DevExpress.XtraReports.UI.XRLabel xrLabel27;
         private DevExpress.XtraReports.UI.XRLabel xrLabel26;
+        private DevExpress.XtraReports.UI.XRBarCode BarCode1;
+        private DevExpress.XtraReports.UI.XRBarCode BarCode2;
     }
 }

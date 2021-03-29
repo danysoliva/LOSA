@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>118</ApplicationRevision>
+    <ApplicationRevision>121</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -304,6 +304,18 @@
     <Compile Include="Despachos\frmseleccionlote.Designer.cs">
       <DependentUpon>frmseleccionlote.cs</DependentUpon>
     </Compile>
+    <Compile Include="Despachos\frm_despachos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Despachos\frm_despachos.Designer.cs">
+      <DependentUpon>frm_despachos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Despachos\frm_entregarTarimaPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Despachos\frm_entregarTarimaPT.Designer.cs">
+      <DependentUpon>frm_entregarTarimaPT.cs</DependentUpon>
+    </Compile>
     <Compile Include="Despachos\frm_generar_despacho.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -321,6 +333,12 @@
     </Compile>
     <Compile Include="Despachos\frm_Reqresumen_pt.Designer.cs">
       <DependentUpon>frm_Reqresumen_pt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Despachos\frm_seleccionUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Despachos\frm_seleccionUD.Designer.cs">
+      <DependentUpon>frm_seleccionUD.cs</DependentUpon>
     </Compile>
     <Compile Include="Despachos\frm_view_entrega_despacho.cs">
       <SubType>Form</SubType>
@@ -833,6 +851,12 @@
     <Compile Include="Reportes\frmtarimasporbodega.Designer.cs">
       <DependentUpon>frmtarimasporbodega.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\frm_print_TM_PT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frm_print_TM_PT.Designer.cs">
+      <DependentUpon>frm_print_TM_PT.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\frm_Reporte_Ubicaciones_Logistica.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1180,6 +1204,12 @@
     <EmbeddedResource Include="Despachos\frmseleccionlote.resx">
       <DependentUpon>frmseleccionlote.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Despachos\frm_despachos.resx">
+      <DependentUpon>frm_despachos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Despachos\frm_entregarTarimaPT.resx">
+      <DependentUpon>frm_entregarTarimaPT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frm_generar_despacho.resx">
       <DependentUpon>frm_generar_despacho.cs</DependentUpon>
     </EmbeddedResource>
@@ -1188,6 +1218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frm_Reqresumen_pt.resx">
       <DependentUpon>frm_Reqresumen_pt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Despachos\frm_seleccionUD.resx">
+      <DependentUpon>frm_seleccionUD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frm_view_entrega_despacho.resx">
       <DependentUpon>frm_view_entrega_despacho.cs</DependentUpon>
@@ -1427,6 +1460,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmtarimasporbodega.resx">
       <DependentUpon>frmtarimasporbodega.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frm_print_TM_PT.resx">
+      <DependentUpon>frm_print_TM_PT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frm_Reporte_Ubicaciones_Logistica.resx">
       <DependentUpon>frm_Reporte_Ubicaciones_Logistica.cs</DependentUpon>

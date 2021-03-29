@@ -40,9 +40,9 @@ namespace LOSA.RecepcionMP
                 lblLote.Text = tar1.LotePT.ToString();
                 lblCantidad.Text = tar1.Cantidad.ToString();
                 //lblNombreProducto.Text = tar1.MateriaPrima;
-                lblFechaIngreso.Text = string.Format("{0:MM/dd/yyyy}", tar1.FechaIngreso);   
-                lblFechaProduccion.Text = string.Format("{0:MM/dd/yyyy}", tar1.FechaProduccion);
-                lblFechadeVencimiento.Text = string.Format("{0:MM/dd/yyyy}", tar1.FechaVencimiento);
+                lblFechaIngreso.Text = string.Format("{0:dd/MM/yyyy}", tar1.FechaIngreso);   
+                lblFechaProduccion.Text = string.Format("{0:dd/MM/yyyy}", tar1.FechaProduccion);
+                lblFechadeVencimiento.Text = string.Format("{0:dd/MM/yyyy}", tar1.FechaVencimiento);
                 lblTurno.Text = tar1.Id_turno.ToString();
                 BarCode1.Text = BarCode2.Text = tar1.CodigoBarra;
             }
