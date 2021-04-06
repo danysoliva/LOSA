@@ -78,6 +78,25 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="unidades_tarima" msprop:Generator_TableClassName="unidades_tarimaDataTable" msprop:Generator_TableVarName="tableunidades_tarima" msprop:Generator_RowChangedName="unidades_tarimaRowChanged" msprop:Generator_TablePropName="unidades_tarima" msprop:Generator_RowDeletingName="unidades_tarimaRowDeleting" msprop:Generator_RowChangingName="unidades_tarimaRowChanging" msprop:Generator_RowEvHandlerName="unidades_tarimaRowChangeEventHandler" msprop:Generator_RowDeletedName="unidades_tarimaRowDeleted" msprop:Generator_RowClassName="unidades_tarimaRow" msprop:Generator_UserTableName="unidades_tarima" msprop:Generator_RowEvArgName="unidades_tarimaRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="unidades" msprop:Generator_ColumnVarNameInTable="columnunidades" msprop:Generator_ColumnPropNameInRow="unidades" msprop:Generator_ColumnPropNameInTable="unidadesColumn" msprop:Generator_UserColumnName="unidades" type="xs:int" minOccurs="0" />
+              <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="bags" msprop:Generator_TableClassName="bagsDataTable" msprop:Generator_TableVarName="tablebags" msprop:Generator_TablePropName="bags" msprop:Generator_RowDeletingName="bagsRowDeleting" msprop:Generator_RowChangingName="bagsRowChanging" msprop:Generator_RowEvHandlerName="bagsRowChangeEventHandler" msprop:Generator_RowDeletedName="bagsRowDeleted" msprop:Generator_UserTableName="bags" msprop:Generator_RowChangedName="bagsRowChanged" msprop:Generator_RowEvArgName="bagsRowChangeEvent" msprop:Generator_RowClassName="bagsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="description" msprop:Generator_ColumnVarNameInTable="columndescription" msprop:Generator_ColumnPropNameInRow="description" msprop:Generator_ColumnPropNameInTable="descriptionColumn" msprop:Generator_UserColumnName="description" type="xs:string" minOccurs="0" />
+              <xs:element name="net" msprop:Generator_ColumnVarNameInTable="columnnet" msprop:Generator_ColumnPropNameInRow="net" msprop:Generator_ColumnPropNameInTable="netColumn" msprop:Generator_UserColumnName="net" type="xs:double" minOccurs="0" />
+              <xs:element name="equi" msprop:Generator_ColumnVarNameInTable="columnequi" msprop:Generator_ColumnPropNameInRow="equi" msprop:Generator_ColumnPropNameInTable="equiColumn" msprop:Generator_UserColumnName="equi" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

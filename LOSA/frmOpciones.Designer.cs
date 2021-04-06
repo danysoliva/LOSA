@@ -37,6 +37,7 @@
             this.cmdPT = new DevExpress.XtraEditors.SimpleButton();
             this.cmdMP = new DevExpress.XtraEditors.SimpleButton();
             this.TabLogistica = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
             this.btn_salidapt = new DevExpress.XtraEditors.SimpleButton();
             this.btnajuste = new DevExpress.XtraEditors.SimpleButton();
             this.btnPlantarimas = new DevExpress.XtraEditors.SimpleButton();
@@ -72,7 +73,6 @@
             this.cmdTarimasPT = new DevExpress.XtraEditors.SimpleButton();
             this.btnAlimentacionManual = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -229,6 +229,21 @@
             this.TabLogistica.Size = new System.Drawing.Size(629, 422);
             this.TabLogistica.Text = "Logistica";
             // 
+            // simpleButton8
+            // 
+            this.simpleButton8.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.simpleButton8.Appearance.Options.UseFont = true;
+            this.simpleButton8.Appearance.Options.UseTextOptions = true;
+            this.simpleButton8.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton8.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton8.ImageOptions.Image")));
+            this.simpleButton8.Location = new System.Drawing.Point(419, 204);
+            this.simpleButton8.Name = "simpleButton8";
+            this.simpleButton8.Size = new System.Drawing.Size(199, 40);
+            this.simpleButton8.TabIndex = 33;
+            this.simpleButton8.Text = "Trazabilidad de lote";
+            this.simpleButton8.Click += new System.EventHandler(this.simpleButton8_Click);
+            // 
             // btn_salidapt
             // 
             this.btn_salidapt.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -261,9 +276,9 @@
             this.btnPlantarimas.Appearance.Options.UseFont = true;
             this.btnPlantarimas.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnPlantarimas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPlantarimas.ImageOptions.Image")));
-            this.btnPlantarimas.Location = new System.Drawing.Point(419, 250);
+            this.btnPlantarimas.Location = new System.Drawing.Point(420, 250);
             this.btnPlantarimas.Name = "btnPlantarimas";
-            this.btnPlantarimas.Size = new System.Drawing.Size(199, 40);
+            this.btnPlantarimas.Size = new System.Drawing.Size(198, 40);
             this.btnPlantarimas.TabIndex = 30;
             this.btnPlantarimas.Text = "Planes de recibo \r\nde produccion";
             this.btnPlantarimas.Click += new System.EventHandler(this.btnPlantarimas_Click);
@@ -698,21 +713,6 @@
             this.labelControl3.Size = new System.Drawing.Size(372, 39);
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
-            // 
-            // simpleButton8
-            // 
-            this.simpleButton8.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.simpleButton8.Appearance.Options.UseFont = true;
-            this.simpleButton8.Appearance.Options.UseTextOptions = true;
-            this.simpleButton8.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.simpleButton8.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton8.ImageOptions.Image")));
-            this.simpleButton8.Location = new System.Drawing.Point(421, 204);
-            this.simpleButton8.Name = "simpleButton8";
-            this.simpleButton8.Size = new System.Drawing.Size(201, 40);
-            this.simpleButton8.TabIndex = 33;
-            this.simpleButton8.Text = "Trazabilidad de lote";
-            this.simpleButton8.Click += new System.EventHandler(this.simpleButton8_Click);
             // 
             // frmOpciones
             // 

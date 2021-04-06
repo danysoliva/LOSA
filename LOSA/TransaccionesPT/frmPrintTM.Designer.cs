@@ -44,6 +44,11 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
             this.dsPT = new LOSA.TransaccionesPT.dsPT();
@@ -62,6 +67,8 @@
             this.colFinalizar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnFinalizar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.collote_fp = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colimprimir = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnGenerar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPT)).BeginInit();
@@ -69,6 +76,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnImprimir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnFinalizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnGenerar)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl3
@@ -99,7 +107,8 @@
             this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnver,
             this.btnImprimir,
-            this.btnFinalizar});
+            this.btnFinalizar,
+            this.btnGenerar});
             this.grd_data.Size = new System.Drawing.Size(635, 449);
             this.grd_data.TabIndex = 35;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -137,7 +146,8 @@
             this.colver,
             this.colImprimirTm,
             this.colFinalizar,
-            this.collote_fp});
+            this.collote_fp,
+            this.colimprimir});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
@@ -204,8 +214,6 @@
             this.colver.Caption = "Ver Tarimas";
             this.colver.ColumnEdit = this.btnver;
             this.colver.Name = "colver";
-            this.colver.Visible = true;
-            this.colver.VisibleIndex = 4;
             this.colver.Width = 76;
             // 
             // btnver
@@ -223,8 +231,6 @@
             this.colImprimirTm.Caption = "Imprimir 20 Hojas";
             this.colImprimirTm.ColumnEdit = this.btnImprimir;
             this.colImprimirTm.Name = "colImprimirTm";
-            this.colImprimirTm.Visible = true;
-            this.colImprimirTm.VisibleIndex = 5;
             this.colImprimirTm.Width = 81;
             // 
             // btnImprimir
@@ -258,8 +264,27 @@
             this.collote_fp.Caption = "Lote";
             this.collote_fp.FieldName = "lote_fp";
             this.collote_fp.Name = "collote_fp";
+            this.collote_fp.OptionsColumn.AllowEdit = false;
             this.collote_fp.Visible = true;
             this.collote_fp.VisibleIndex = 1;
+            // 
+            // colimprimir
+            // 
+            this.colimprimir.Caption = "Generar Tarimas";
+            this.colimprimir.ColumnEdit = this.btnGenerar;
+            this.colimprimir.Name = "colimprimir";
+            this.colimprimir.Visible = true;
+            this.colimprimir.VisibleIndex = 4;
+            // 
+            // btnGenerar
+            // 
+            this.btnGenerar.AutoHeight = false;
+            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
+            this.btnGenerar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnGenerar.Name = "btnGenerar";
+            this.btnGenerar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
             // 
             // cmdHome
             // 
@@ -296,6 +321,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnver)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnImprimir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnFinalizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnGenerar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -321,5 +347,7 @@
         private DevExpress.XtraEditors.SimpleButton cmdHome;
         private dsPT dsPT;
         private DevExpress.XtraGrid.Columns.GridColumn collote_fp;
+        private DevExpress.XtraGrid.Columns.GridColumn colimprimir;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnGenerar;
     }
 }

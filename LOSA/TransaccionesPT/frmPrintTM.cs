@@ -14,6 +14,7 @@ using System.Data.SqlClient;
 using DevExpress.XtraGrid.Views.Grid;
 using LOSA.RecepcionMP;
 using DevExpress.XtraReports.UI;
+using LOSA.Produccion;
 
 namespace LOSA.TransaccionesPT
 {
@@ -115,6 +116,22 @@ namespace LOSA.TransaccionesPT
             frm_vertarimas_pt frm = new frm_vertarimas_pt(UsuarioLogeado, row.id);
             frm.ShowDialog();
 
+        }
+
+        private void btnGenerar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var gridView = (GridView)grd_data.FocusedView;
+                var row = (dsPT.loadplanesRow)gridView.GetFocusedDataRow();
+                frmGenerarTarimas frm = new frmGenerarTarimas(row.id);
+                frm.Show();
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
         }
     }
 }

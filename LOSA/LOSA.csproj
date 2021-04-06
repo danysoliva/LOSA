@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>121</ApplicationRevision>
+    <ApplicationRevision>125</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -555,6 +555,12 @@
     </Compile>
     <Compile Include="Produccion\frmAlimentacionPanel.Designer.cs">
       <DependentUpon>frmAlimentacionPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\frmGenerarTarimas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\frmGenerarTarimas.Designer.cs">
+      <DependentUpon>frmGenerarTarimas.cs</DependentUpon>
     </Compile>
     <Compile Include="Produccion\frmHomeEnsacado.cs">
       <SubType>Form</SubType>
@@ -1320,6 +1326,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\frmAlimentacionPanel.resx">
       <DependentUpon>frmAlimentacionPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\frmGenerarTarimas.resx">
+      <DependentUpon>frmGenerarTarimas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\frmHomeEnsacado.resx">
       <DependentUpon>frmHomeEnsacado.cs</DependentUpon>
