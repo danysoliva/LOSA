@@ -15,12 +15,12 @@ namespace LOSA.Despachos
     {
       public int Ud;
         int Max;
-        public frm_seleccionUD(int Pud)
+        public frm_seleccionUD(decimal Pud)
         {
             InitializeComponent();
-            Ud = Pud;
-            Ud = Pud;
-            Max = Pud;
+            Ud =Convert.ToInt32(Pud);
+            Ud = Convert.ToInt32(Pud);
+            Max = Convert.ToInt32(Pud);
             txtUnidades.Text = Ud.ToString();
         }
 

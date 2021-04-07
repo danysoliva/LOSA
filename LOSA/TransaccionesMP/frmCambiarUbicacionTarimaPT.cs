@@ -109,6 +109,7 @@ namespace LOSA.RecepcionMP
             DataOperations dp = new DataOperations();
 
             Ubicacion_Tarima infoUbicacionTarima = new Ubicacion_Tarima();
+           
             if (e.KeyCode == Keys.Enter)
             {
 
@@ -119,6 +120,7 @@ namespace LOSA.RecepcionMP
 
                 if (infoUbicacionTarima.RecuperarRegistro(0, beIdTarima.Text))
                 {
+                    idUbicacionTarimaActual = infoUbicacionTarima.Id;
                     gcUbicacionActual.DataSource = CreateDataUbicacion(infoUbicacionTarima.Rack, infoUbicacionTarima.Profundidad, infoUbicacionTarima.Altura, infoUbicacionTarima.Pasillo);
                     gvUbicacionActual.InitNewRow += GvUbicacionActual_InitNewRow;
                     gvUbicacionActual.Columns[0].AppearanceCell.Font = new Font("Segoe UI", 11, FontStyle.Bold);

@@ -18,7 +18,8 @@ namespace LOSA.Despachos
     {
 
         public int id_despacho;
-        public int N_Documento;                   
+        public int N_Documento;
+        string Error = ""; 
         DataOperations dp = new DataOperations();
         private int idTarima;
         private decimal factorPresentacion;
@@ -188,11 +189,27 @@ namespace LOSA.Despachos
                             DataOperations dp = new DataOperations();
                             SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                             con.Open();
-
+                            int result = 0;
                             SqlCommand cmd = new SqlCommand("sp_verifica_diponibilidad_tarima_entrega_pt", con);
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.AddWithValue("@id", tarimaEncontrada.Id);
-                            disponible = Convert.ToBoolean(cmd.ExecuteScalar());
+                            cmd.Parameters.AddWithValue("@id_despacho", id_despacho);
+                            SqlDataReader dr = cmd.ExecuteReader();
+                            if (dr.Read())
+                            {
+                                result = Convert.ToInt32(dr.GetValue(0));
+                                Error = dr.GetString(1);
+                            }
+                            //disponible = Convert.ToBoolean(cmd.ExecuteScalar());
+                            if (result == 1)
+                            {
+                                disponible = true;
+                            }
+                            else
+                            {
+                                disponible = false;
+                            }
+                            dr.Close();
                             con.Close();
                         }
                         catch (Exception ec)
@@ -204,7 +221,7 @@ namespace LOSA.Despachos
                         if (!disponible)
                         {
                             error = true;
-                            mensaje = "La tarima no esta disponible para entrega!";
+                            mensaje = Error;
                         }
 
                         if (!error)//Si error sigue en false evaluaremos la ubicacion.
@@ -240,7 +257,7 @@ namespace LOSA.Despachos
                     timerLimpiarMensaje.Start();
                     return;
                 }
-                frm_seleccionUD frm =new frm_seleccionUD(Convert.ToInt32(txtCantidadT.Text));
+                frm_seleccionUD frm =new frm_seleccionUD(Convert.ToDecimal(txtCantidadT.Text));
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
                     try
@@ -253,6 +270,8 @@ namespace LOSA.Despachos
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@idtarima", tarimaEncontrada.Id);
                         cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
+                        cmd.Parameters.AddWithValue("@unidades", frm.Ud);   
+                        cmd.Parameters.AddWithValue("@id_despacho_h", id_despacho);
                         Guardo = Convert.ToBoolean(cmd.ExecuteScalar());
                         con.Close();
                     }
@@ -295,6 +314,12 @@ namespace LOSA.Despachos
             beTarima.Text = "";
             gcTarima.DataSource = null;
             lblMensaje.Text = "";
+            beTarima.Focus();
+        }
+
+        private void frm_entregarTarimaPT_Load(object sender, EventArgs e)
+        {
+
             beTarima.Focus();
         }
     }

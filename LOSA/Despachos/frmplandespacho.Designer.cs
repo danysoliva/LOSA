@@ -345,6 +345,7 @@
             this.colrestante.Caption = "Restantes";
             this.colrestante.FieldName = "restante";
             this.colrestante.Name = "colrestante";
+            this.colrestante.OptionsColumn.AllowEdit = false;
             this.colrestante.Visible = true;
             this.colrestante.VisibleIndex = 4;
             this.colrestante.Width = 64;
@@ -354,6 +355,7 @@
             this.colEnviado.Caption = "Enviadas";
             this.colEnviado.FieldName = "Enviado";
             this.colEnviado.Name = "colEnviado";
+            this.colEnviado.OptionsColumn.AllowEdit = false;
             this.colEnviado.Visible = true;
             this.colEnviado.VisibleIndex = 3;
             this.colEnviado.Width = 64;

@@ -370,7 +370,7 @@
             this.btndespachos.Appearance.Options.UseFont = true;
             this.btndespachos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btndespachos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btndespachos.ImageOptions.Image")));
-            this.btndespachos.Location = new System.Drawing.Point(419, 65);
+            this.btndespachos.Location = new System.Drawing.Point(419, 63);
             this.btndespachos.Name = "btndespachos";
             this.btndespachos.Size = new System.Drawing.Size(200, 42);
             this.btndespachos.TabIndex = 21;

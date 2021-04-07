@@ -55,7 +55,9 @@
             this.txtUnidades.Location = new System.Drawing.Point(184, 125);
             this.txtUnidades.Name = "txtUnidades";
             this.txtUnidades.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUnidades.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.txtUnidades.Properties.Appearance.Options.UseFont = true;
+            this.txtUnidades.Properties.Appearance.Options.UseForeColor = true;
             this.txtUnidades.Size = new System.Drawing.Size(167, 56);
             this.txtUnidades.TabIndex = 2;
             // 
@@ -119,6 +121,7 @@
             this.Controls.Add(this.txtUnidades);
             this.Controls.Add(this.labelControl1);
             this.Name = "frm_seleccionUD";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_seleccionUD";
             ((System.ComponentModel.ISupportInitialize)(this.txtUnidades.Properties)).EndInit();
             this.ResumeLayout(false);

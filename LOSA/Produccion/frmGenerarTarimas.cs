@@ -239,7 +239,7 @@ namespace LOSA.Produccion
                         cmd.Parameters.AddWithValue("@itemcode", Itemcode.Trim());
                         cmd.Parameters.AddWithValue("@id_alimentacion", id_alimentacion);
                         cmd.Parameters.AddWithValue("@Pcodigo_barra", barcode);
-
+                                                        
                         int Id_tm = Convert.ToInt32(cmd.ExecuteScalar());
                         cn.Close();
 
@@ -248,7 +248,7 @@ namespace LOSA.Produccion
                         ReportPrintTool printtool = new ReportPrintTool(boleta);
                         printtool.Print();
 
-                        Thread.Sleep(300);
+                        Thread.Sleep(400);
                     }
                     catch (Exception ex)
                     {

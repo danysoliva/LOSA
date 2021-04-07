@@ -23,6 +23,28 @@ namespace LOSA.Despachos
             InitializeComponent();
             Pid = id_despacho;
             load_informacion();
+            load_filas();
+        }
+        public void load_filas()
+        {
+            string query = @"sp_load_tarimas_to_orden_despacho";
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            try
+            {
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query,cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_h", Pid);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                ds_despachos.producto_carga.Clear();
+                da.Fill(ds_despachos.producto_carga);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
         }
        
         public void load_informacion()
