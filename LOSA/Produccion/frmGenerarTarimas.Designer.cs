@@ -56,6 +56,7 @@
             this.dt_fechaVencimiento = new DevExpress.XtraEditors.DateEdit();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btn_print25 = new DevExpress.XtraEditors.SimpleButton();
+            this.timerPrintMulti = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.txt_producto.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bagsBindingSource)).BeginInit();
@@ -375,6 +376,11 @@
             this.btn_print25.Text = "Imprimir 25";
             this.btn_print25.Click += new System.EventHandler(this.btn_print25_Click);
             // 
+            // timerPrintMulti
+            // 
+            this.timerPrintMulti.Interval = 3000;
+            this.timerPrintMulti.Tick += new System.EventHandler(this.timerPrintMulti_Tick);
+            // 
             // frmGenerarTarimas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -449,5 +455,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colid;
         private DevExpress.XtraGrid.Columns.GridColumn coldescription;
         private DevExpress.XtraGrid.Columns.GridColumn colnet;
+        private System.Windows.Forms.Timer timerPrintMulti;
     }
 }

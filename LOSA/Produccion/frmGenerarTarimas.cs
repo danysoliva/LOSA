@@ -33,6 +33,8 @@ namespace LOSA.Produccion
         int id_usuario;
         int id_turno;
         int ud_tarimas;
+
+        int centinela_print_multi;
         
         
 
@@ -212,50 +214,109 @@ namespace LOSA.Produccion
         {
             if (MessageBox.Show("Desea imprimir 25 tarimas de este producto?", "Pregunta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-                int contador = 25;
-                for (int i = 0; i < contador; i++)
+                //int contador = 25;
+                //for (int i = 0; i < contador; i++)
+                //{
+                //    string query = @"sp_insert_tarima_pt_nuevo";
+                //    try
+                //    {
+                //        SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                //        cn.Open();
+
+
+                //        SqlCommand cmm = new SqlCommand("sp_generar_codigo_from_tables_id", cn);
+                //        cmm.CommandType = CommandType.StoredProcedure;
+                //        cmm.Parameters.AddWithValue("@id", 1);
+                //        string barcode = cmm.ExecuteScalar().ToString();
+
+                //        SqlCommand cmd = new SqlCommand(query, cn);
+                //        cmd.CommandType = CommandType.StoredProcedure;
+                //        cmd.Parameters.AddWithValue("@date_vencimiento", string.Format("{0:yyyy-MM-dd}", dt_fechaVencimiento.EditValue));
+                //        cmd.Parameters.AddWithValue("@lote", lote);
+                //        cmd.Parameters.AddWithValue("@id_presentacion", presentacion);
+                //        cmd.Parameters.AddWithValue("@id_pt", id_pt);
+                //        cmd.Parameters.AddWithValue("@date_produccion", string.Format("{0:yyyy-MM-dd}", dt_fechaFabricaion.EditValue));
+                //        cmd.Parameters.AddWithValue("@cantidad", unidades);
+                //        cmd.Parameters.AddWithValue("@peso", txtkg.Text.Trim());
+                //        cmd.Parameters.AddWithValue("@itemcode", Itemcode.Trim());
+                //        cmd.Parameters.AddWithValue("@id_alimentacion", id_alimentacion);
+                //        cmd.Parameters.AddWithValue("@Pcodigo_barra", barcode);
+
+                //        int Id_tm = Convert.ToInt32(cmd.ExecuteScalar());
+                //        cn.Close();
+
+                //        rptReporteTarimaPT boleta = new rptReporteTarimaPT(Id_tm);
+                //        boleta.ShowPrintMarginsWarning = false;
+                //        ReportPrintTool printtool = new ReportPrintTool(boleta);
+                //        printtool.Print();
+
+                //        Thread.Sleep(400);
+                //    }
+                //    catch (Exception ex)
+                //    {
+
+                //        CajaDialogo.Error(ex.Message);
+                //    }
+                //}
+                //CajaDialogo.Information("Impresion completa.");
+                //this.Close();
+                timerPrintMulti.Enabled = true;
+                centinela_print_multi = 25;
+                timerPrintMulti.Start();
+            }
+        }
+
+        private void timerPrintMulti_Tick(object sender, EventArgs e)
+        {
+            if (centinela_print_multi > 0)
+            {
+                string query = @"sp_insert_tarima_pt_nuevo";
+                try
                 {
-                    string query = @"sp_insert_tarima_pt_nuevo";
-                    try
-                    {
-                        SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-                        cn.Open();
+                    SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                    cn.Open();
 
 
-                        SqlCommand cmm = new SqlCommand("sp_generar_codigo_from_tables_id", cn);
-                        cmm.CommandType = CommandType.StoredProcedure;
-                        cmm.Parameters.AddWithValue("@id", 1);
-                        string barcode = cmm.ExecuteScalar().ToString();
+                    SqlCommand cmm = new SqlCommand("sp_generar_codigo_from_tables_id", cn);
+                    cmm.CommandType = CommandType.StoredProcedure;
+                    cmm.Parameters.AddWithValue("@id", 1);
+                    string barcode = cmm.ExecuteScalar().ToString();
 
-                        SqlCommand cmd = new SqlCommand(query, cn);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@date_vencimiento", string.Format("{0:yyyy-MM-dd}", dt_fechaVencimiento.EditValue));
-                        cmd.Parameters.AddWithValue("@lote", lote);
-                        cmd.Parameters.AddWithValue("@id_presentacion", presentacion);
-                        cmd.Parameters.AddWithValue("@id_pt", id_pt);
-                        cmd.Parameters.AddWithValue("@date_produccion", string.Format("{0:yyyy-MM-dd}", dt_fechaFabricaion.EditValue));
-                        cmd.Parameters.AddWithValue("@cantidad", unidades);
-                        cmd.Parameters.AddWithValue("@peso", txtkg.Text.Trim());
-                        cmd.Parameters.AddWithValue("@itemcode", Itemcode.Trim());
-                        cmd.Parameters.AddWithValue("@id_alimentacion", id_alimentacion);
-                        cmd.Parameters.AddWithValue("@Pcodigo_barra", barcode);
-                                                        
-                        int Id_tm = Convert.ToInt32(cmd.ExecuteScalar());
-                        cn.Close();
+                    SqlCommand cmd = new SqlCommand(query, cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@date_vencimiento", string.Format("{0:yyyy-MM-dd}", dt_fechaVencimiento.EditValue));
+                    cmd.Parameters.AddWithValue("@lote", lote);
+                    cmd.Parameters.AddWithValue("@id_presentacion", presentacion);
+                    cmd.Parameters.AddWithValue("@id_pt", id_pt);
+                    cmd.Parameters.AddWithValue("@date_produccion", string.Format("{0:yyyy-MM-dd}", dt_fechaFabricaion.EditValue));
+                    cmd.Parameters.AddWithValue("@cantidad", unidades);
+                    cmd.Parameters.AddWithValue("@peso", txtkg.Text.Trim());
+                    cmd.Parameters.AddWithValue("@itemcode", Itemcode.Trim());
+                    cmd.Parameters.AddWithValue("@id_alimentacion", id_alimentacion);
+                    cmd.Parameters.AddWithValue("@Pcodigo_barra", barcode);
 
-                        rptReporteTarimaPT boleta = new rptReporteTarimaPT(Id_tm);
-                        boleta.ShowPrintMarginsWarning = false;
-                        ReportPrintTool printtool = new ReportPrintTool(boleta);
-                        printtool.Print();
+                    int Id_tm = Convert.ToInt32(cmd.ExecuteScalar());
+                    cn.Close();
+                    centinela_print_multi--;
 
-                        Thread.Sleep(400);
-                    }
-                    catch (Exception ex)
-                    {
+                    rptReporteTarimaPT boleta = new rptReporteTarimaPT(Id_tm);
+                    boleta.ShowPrintMarginsWarning = false;
+                    ReportPrintTool printtool = new ReportPrintTool(boleta);
+                    printtool.Print();
 
-                        CajaDialogo.Error(ex.Message);
-                    }
+                    
+                    //Thread.Sleep(400);
                 }
+                catch (Exception ex)
+                {
+
+                    CajaDialogo.Error(ex.Message);
+                }
+            }
+            else
+            {
+                timerPrintMulti.Stop();
+                timerPrintMulti.Enabled = false;
                 CajaDialogo.Information("Impresion completa.");
                 this.Close();
             }
