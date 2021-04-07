@@ -14,6 +14,7 @@ using System.Data.SqlClient;
 using DevExpress.XtraGrid.Views.Grid;
 using LOSA.RecepcionMP;
 using DevExpress.XtraReports.UI;
+using LOSA.Produccion;
 
 namespace LOSA.TransaccionesPT
 {
@@ -56,6 +57,7 @@ namespace LOSA.TransaccionesPT
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
+            string error ="";
             try
             {
                 if (MessageBox.Show("Desea imprimir las hojas de esta orden de entrega", "Desea imprimir las hojas de esta orden de entrega?", MessageBoxButtons.OKCancel,MessageBoxIcon.Question) != DialogResult.OK)
@@ -65,6 +67,7 @@ namespace LOSA.TransaccionesPT
                 var gridView = (GridView)grd_data.FocusedView;
                 var row = (dsPT.loadplanesRow)gridView.GetFocusedDataRow();
 
+                error = "Get data row from view grid control";
                 string query = @"sp_first_20_to_print";
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 cn.Open();
@@ -76,23 +79,26 @@ namespace LOSA.TransaccionesPT
                 da.Fill(dsPT.load_tarimas);
                 cn.Close();
 
+
                 if (dsPT.load_tarimas.Rows.Count < 0)
                 {
                     CajaDialogo.Error("Ya se han impreso todas las teorias.");
                     return;
                 }
+                error = "Before foreach";
                 foreach (dsPT.load_tarimasRow row2 in dsPT.load_tarimas.Rows)
                 {
+                    error = "In Foreach";
                     rptReporteTarimaPT boleta = new rptReporteTarimaPT(row2.id);
                     boleta.ShowPrintMarginsWarning = false;
-                    boleta.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
-                    boleta.Print();
+                    ReportPrintTool printtool = new ReportPrintTool(boleta);
+                    printtool.Print();
                 }
             }
             catch (Exception ex)
             {
 
-                CajaDialogo.Error(ex.Message);
+                CajaDialogo.Error(ex.Message + " Ademas considera el error en: " + error);
             }
         }
 
@@ -110,6 +116,22 @@ namespace LOSA.TransaccionesPT
             frm_vertarimas_pt frm = new frm_vertarimas_pt(UsuarioLogeado, row.id);
             frm.ShowDialog();
 
+        }
+
+        private void btnGenerar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var gridView = (GridView)grd_data.FocusedView;
+                var row = (dsPT.loadplanesRow)gridView.GetFocusedDataRow();
+                frmGenerarTarimas frm = new frmGenerarTarimas(row.id);
+                frm.Show();
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
         }
     }
 }

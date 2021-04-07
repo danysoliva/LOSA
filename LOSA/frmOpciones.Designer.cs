@@ -37,6 +37,7 @@
             this.cmdPT = new DevExpress.XtraEditors.SimpleButton();
             this.cmdMP = new DevExpress.XtraEditors.SimpleButton();
             this.TabLogistica = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
             this.btn_salidapt = new DevExpress.XtraEditors.SimpleButton();
             this.btnajuste = new DevExpress.XtraEditors.SimpleButton();
             this.btnPlantarimas = new DevExpress.XtraEditors.SimpleButton();
@@ -204,6 +205,7 @@
             // 
             // TabLogistica
             // 
+            this.TabLogistica.Controls.Add(this.simpleButton8);
             this.TabLogistica.Controls.Add(this.btn_salidapt);
             this.TabLogistica.Controls.Add(this.btnajuste);
             this.TabLogistica.Controls.Add(this.btnPlantarimas);
@@ -226,6 +228,21 @@
             this.TabLogistica.PageVisible = false;
             this.TabLogistica.Size = new System.Drawing.Size(629, 422);
             this.TabLogistica.Text = "Logistica";
+            // 
+            // simpleButton8
+            // 
+            this.simpleButton8.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.simpleButton8.Appearance.Options.UseFont = true;
+            this.simpleButton8.Appearance.Options.UseTextOptions = true;
+            this.simpleButton8.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton8.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton8.ImageOptions.Image")));
+            this.simpleButton8.Location = new System.Drawing.Point(419, 204);
+            this.simpleButton8.Name = "simpleButton8";
+            this.simpleButton8.Size = new System.Drawing.Size(199, 40);
+            this.simpleButton8.TabIndex = 33;
+            this.simpleButton8.Text = "Trazabilidad de lote";
+            this.simpleButton8.Click += new System.EventHandler(this.simpleButton8_Click);
             // 
             // btn_salidapt
             // 
@@ -259,9 +276,9 @@
             this.btnPlantarimas.Appearance.Options.UseFont = true;
             this.btnPlantarimas.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnPlantarimas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPlantarimas.ImageOptions.Image")));
-            this.btnPlantarimas.Location = new System.Drawing.Point(419, 250);
+            this.btnPlantarimas.Location = new System.Drawing.Point(420, 250);
             this.btnPlantarimas.Name = "btnPlantarimas";
-            this.btnPlantarimas.Size = new System.Drawing.Size(199, 40);
+            this.btnPlantarimas.Size = new System.Drawing.Size(198, 40);
             this.btnPlantarimas.TabIndex = 30;
             this.btnPlantarimas.Text = "Planes de recibo \r\nde produccion";
             this.btnPlantarimas.Click += new System.EventHandler(this.btnPlantarimas_Click);
@@ -344,6 +361,7 @@
             this.btnReq_PT.Size = new System.Drawing.Size(199, 40);
             this.btnReq_PT.TabIndex = 23;
             this.btnReq_PT.Text = "Requisiciones PT";
+            this.btnReq_PT.Visible = false;
             this.btnReq_PT.Click += new System.EventHandler(this.btnReq_PT_Click);
             // 
             // btndespachos
@@ -352,7 +370,7 @@
             this.btndespachos.Appearance.Options.UseFont = true;
             this.btndespachos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btndespachos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btndespachos.ImageOptions.Image")));
-            this.btndespachos.Location = new System.Drawing.Point(419, 65);
+            this.btndespachos.Location = new System.Drawing.Point(419, 63);
             this.btndespachos.Name = "btndespachos";
             this.btndespachos.Size = new System.Drawing.Size(200, 42);
             this.btndespachos.TabIndex = 21;
@@ -764,5 +782,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton5;
         private DevExpress.XtraEditors.SimpleButton simpleButton6;
         private DevExpress.XtraEditors.SimpleButton simpleButton7;
+        private DevExpress.XtraEditors.SimpleButton simpleButton8;
     }
 }

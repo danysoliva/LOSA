@@ -225,6 +225,7 @@
             this.colidUb2.FieldName = "idUb2";
             this.colidUb2.MinWidth = 21;
             this.colidUb2.Name = "colidUb2";
+            this.colidUb2.OptionsColumn.AllowEdit = false;
             this.colidUb2.Width = 81;
             // 
             // colDescripcion2
@@ -298,6 +299,7 @@
             this.colnombre1.Caption = "UB-Rack Nombre";
             this.colnombre1.FieldName = "nombre1";
             this.colnombre1.Name = "colnombre1";
+            this.colnombre1.OptionsColumn.AllowEdit = false;
             this.colnombre1.Visible = true;
             this.colnombre1.VisibleIndex = 3;
             this.colnombre1.Width = 108;
@@ -307,6 +309,7 @@
             this.colnombre2.Caption = "UB-Rack Nombre";
             this.colnombre2.FieldName = "nombre2";
             this.colnombre2.Name = "colnombre2";
+            this.colnombre2.OptionsColumn.AllowEdit = false;
             this.colnombre2.Visible = true;
             this.colnombre2.VisibleIndex = 6;
             this.colnombre2.Width = 114;

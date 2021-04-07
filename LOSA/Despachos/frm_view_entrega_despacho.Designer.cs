@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -42,6 +43,14 @@
             this.dtFecha = new DevExpress.XtraEditors.DateEdit();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
             this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ds_despachos = new LOSA.Despachos.ds_despachos();
+            this.productocargaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcantidad = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpresentacion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfila = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collote = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colproducto = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtconductor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtplaca.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtfurgon.Properties)).BeginInit();
@@ -50,6 +59,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtFecha.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ds_despachos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productocargaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -193,6 +204,7 @@
             this.grd_data.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.grd_data.DataSource = this.productocargaBindingSource;
             this.grd_data.Location = new System.Drawing.Point(-1, 250);
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
@@ -203,8 +215,98 @@
             // 
             // grdv_data
             // 
+            this.grdv_data.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.grdv_data.Appearance.ColumnFilterButton.Options.UseFont = true;
+            this.grdv_data.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.grdv_data.Appearance.FocusedRow.Options.UseFont = true;
+            this.grdv_data.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.grdv_data.Appearance.FooterPanel.Options.UseFont = true;
+            this.grdv_data.Appearance.GroupFooter.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.grdv_data.Appearance.GroupFooter.Options.UseFont = true;
+            this.grdv_data.Appearance.GroupRow.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.grdv_data.Appearance.GroupRow.Options.UseFont = true;
+            this.grdv_data.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdv_data.Appearance.HeaderPanel.Options.UseFont = true;
+            this.grdv_data.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.grdv_data.Appearance.Preview.Options.UseFont = true;
+            this.grdv_data.Appearance.Row.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.grdv_data.Appearance.Row.Options.UseFont = true;
+            this.grdv_data.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdv_data.Appearance.TopNewRow.Options.UseFont = true;
+            this.grdv_data.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid,
+            this.colcantidad,
+            this.colpresentacion,
+            this.colfila,
+            this.collote,
+            this.colproducto});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
+            this.grdv_data.OptionsView.ShowAutoFilterRow = true;
+            this.grdv_data.OptionsView.ShowFooter = true;
+            this.grdv_data.OptionsView.ShowGroupPanel = false;
+            // 
+            // ds_despachos
+            // 
+            this.ds_despachos.DataSetName = "ds_despachos";
+            this.ds_despachos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productocargaBindingSource
+            // 
+            this.productocargaBindingSource.DataMember = "producto_carga";
+            this.productocargaBindingSource.DataSource = this.ds_despachos;
+            // 
+            // colid
+            // 
+            this.colid.FieldName = "id";
+            this.colid.Name = "colid";
+            // 
+            // colcantidad
+            // 
+            this.colcantidad.Caption = "CANTIDAD";
+            this.colcantidad.FieldName = "cantidad";
+            this.colcantidad.Name = "colcantidad";
+            this.colcantidad.OptionsColumn.AllowEdit = false;
+            this.colcantidad.Visible = true;
+            this.colcantidad.VisibleIndex = 0;
+            // 
+            // colpresentacion
+            // 
+            this.colpresentacion.Caption = "PRESENTACION";
+            this.colpresentacion.FieldName = "presentacion";
+            this.colpresentacion.Name = "colpresentacion";
+            this.colpresentacion.OptionsColumn.AllowEdit = false;
+            this.colpresentacion.Visible = true;
+            this.colpresentacion.VisibleIndex = 1;
+            // 
+            // colfila
+            // 
+            this.colfila.Caption = "CANTIDAD DE FILA";
+            this.colfila.FieldName = "fila";
+            this.colfila.Name = "colfila";
+            this.colfila.OptionsColumn.AllowEdit = false;
+            this.colfila.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "fila", "SUM={0:0.##}")});
+            this.colfila.Visible = true;
+            this.colfila.VisibleIndex = 2;
+            // 
+            // collote
+            // 
+            this.collote.Caption = "LOTE";
+            this.collote.FieldName = "lote";
+            this.collote.Name = "collote";
+            this.collote.OptionsColumn.AllowEdit = false;
+            this.collote.Visible = true;
+            this.collote.VisibleIndex = 3;
+            // 
+            // colproducto
+            // 
+            this.colproducto.Caption = "COD. FACT.";
+            this.colproducto.FieldName = "producto";
+            this.colproducto.Name = "colproducto";
+            this.colproducto.OptionsColumn.AllowEdit = false;
+            this.colproducto.Visible = true;
+            this.colproducto.VisibleIndex = 4;
             // 
             // frm_view_entrega_despacho
             // 
@@ -236,6 +338,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtFecha.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ds_despachos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productocargaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -257,5 +361,13 @@
         private DevExpress.XtraEditors.DateEdit dtFecha;
         private DevExpress.XtraGrid.GridControl grd_data;
         private DevExpress.XtraGrid.Views.Grid.GridView grdv_data;
+        private System.Windows.Forms.BindingSource productocargaBindingSource;
+        private ds_despachos ds_despachos;
+        private DevExpress.XtraGrid.Columns.GridColumn colid;
+        private DevExpress.XtraGrid.Columns.GridColumn colcantidad;
+        private DevExpress.XtraGrid.Columns.GridColumn colpresentacion;
+        private DevExpress.XtraGrid.Columns.GridColumn colfila;
+        private DevExpress.XtraGrid.Columns.GridColumn collote;
+        private DevExpress.XtraGrid.Columns.GridColumn colproducto;
     }
 }

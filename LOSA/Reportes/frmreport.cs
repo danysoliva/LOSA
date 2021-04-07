@@ -113,5 +113,11 @@ namespace LOSA.Reportes
             frmrpt_lote_mp frm = new frmrpt_lote_mp();
             frm.Show();
         }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+            frm_print_TM_PT frm = new frm_print_TM_PT();
+            frm.Show();
+        }
     }
 }

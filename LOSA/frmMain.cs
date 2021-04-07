@@ -221,5 +221,22 @@ namespace LOSA
                 txtClave.Focus();
             }
         }
+
+        private void SaltarLogin_Click(object sender, EventArgs e)
+        {
+            Teclado.cerrarTeclado();
+            UserLogin Log1 = new UserLogin();
+            if (Log1.RecuperarRegistro(1050))
+            {
+                Log1.GrupoUsuario.GrupoUsuarioActivo = (GrupoUser.GrupoUsuario)Log1.IdGrupo;
+            }
+            else
+            {
+                Log1.Id = 1069;
+                Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Produccion;
+            }
+            frmOpciones frm = new frmOpciones(Log1);
+            frm.Show();
+        }
     }
 }

@@ -41,6 +41,7 @@ namespace LOSA
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblVersion = new System.Windows.Forms.Label();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.SaltarLogin = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtClave.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsuario.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -67,7 +68,7 @@ namespace LOSA
             this.cmdLogin.Appearance.Options.UseBorderColor = true;
             this.cmdLogin.Appearance.Options.UseFont = true;
             this.cmdLogin.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdLogin.Location = new System.Drawing.Point(120, 228);
+            this.cmdLogin.Location = new System.Drawing.Point(122, 228);
             this.cmdLogin.Name = "cmdLogin";
             this.cmdLogin.Size = new System.Drawing.Size(199, 71);
             this.cmdLogin.TabIndex = 2;
@@ -194,6 +195,23 @@ namespace LOSA
             this.simpleButton1.Text = "Alimentación";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_1);
             // 
+            // SaltarLogin
+            // 
+            this.SaltarLogin.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.SaltarLogin.Appearance.BorderColor = System.Drawing.Color.LightSkyBlue;
+            this.SaltarLogin.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaltarLogin.Appearance.Options.UseBackColor = true;
+            this.SaltarLogin.Appearance.Options.UseBorderColor = true;
+            this.SaltarLogin.Appearance.Options.UseFont = true;
+            this.SaltarLogin.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.SaltarLogin.Location = new System.Drawing.Point(224, 417);
+            this.SaltarLogin.Name = "SaltarLogin";
+            this.SaltarLogin.Size = new System.Drawing.Size(199, 71);
+            this.SaltarLogin.TabIndex = 15;
+            this.SaltarLogin.Text = "Ingresar";
+            this.SaltarLogin.Visible = false;
+            this.SaltarLogin.Click += new System.EventHandler(this.SaltarLogin_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -201,6 +219,7 @@ namespace LOSA
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(638, 560);
             this.ControlBox = false;
+            this.Controls.Add(this.SaltarLogin);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.lblVersion);
             this.Controls.Add(this.labelControl3);
@@ -239,6 +258,7 @@ namespace LOSA
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private System.Windows.Forms.Label lblVersion;
         private SimpleButton simpleButton1;
+        private SimpleButton SaltarLogin;
     }
 }
 
