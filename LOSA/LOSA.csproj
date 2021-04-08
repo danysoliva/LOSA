@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>126</ApplicationRevision>
+    <ApplicationRevision>127</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -70,11 +70,10 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>5A56FE5B36BF1139C0C28330C52B1468E1F78C88</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>3324877BFDA16F739D8F9512A7A98A42A5AAA10B</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>
-    </ManifestKeyFile>
+    <ManifestKeyFile>LOSA_2_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -93,7 +92,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>key_Server2020.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>LOSA_2_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -363,6 +362,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Despachos\Reportes\rpt_despacho.Designer.cs">
+      <DependentUpon>rpt_despacho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Despachos\rpt_despacho.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Despachos\rpt_despacho.Designer.cs">
       <DependentUpon>rpt_despacho.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
@@ -1241,6 +1246,9 @@
     <EmbeddedResource Include="Despachos\Reportes\rpt_despacho.resx">
       <DependentUpon>rpt_despacho.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Despachos\rpt_despacho.resx">
+      <DependentUpon>rpt_despacho.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -1625,7 +1633,6 @@
     <None Include="Despachos\ds_despachos.xss">
       <DependentUpon>ds_despachos.xsd</DependentUpon>
     </None>
-    <None Include="key_Server2020.pfx" />
     <None Include="Logistica\dsLogistica.xsc">
       <DependentUpon>dsLogistica.xsd</DependentUpon>
     </None>
@@ -1638,6 +1645,7 @@
       <DependentUpon>dsLogistica.xsd</DependentUpon>
     </None>
     <None Include="LOSA_1_TemporaryKey.pfx" />
+    <None Include="LOSA_2_TemporaryKey.pfx" />
     <None Include="LOSA_TemporaryKey.pfx" />
     <None Include="Mantenimientos\dsMantenimiento.xsc">
       <DependentUpon>dsMantenimiento.xsd</DependentUpon>

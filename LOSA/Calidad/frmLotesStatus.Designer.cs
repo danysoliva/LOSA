@@ -132,6 +132,9 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_tipotm = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_tipotm1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_tipotm2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.TabControl1)).BeginInit();
             this.TabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
@@ -249,7 +252,8 @@
             this.colestadoid,
             this.colingreso,
             this.colid_mp,
-            this.coldetalle});
+            this.coldetalle,
+            this.colid_tipotm});
             this.gvMateriaPrima.DetailHeight = 284;
             this.gvMateriaPrima.GridControl = this.grDisponibles;
             this.gvMateriaPrima.Name = "gvMateriaPrima";
@@ -437,7 +441,8 @@
             this.gridColumn9,
             this.colDetalle3,
             this.colingreso2,
-            this.colIdmp});
+            this.colIdmp,
+            this.colid_tipotm1});
             this.gridView1.DetailHeight = 284;
             this.gridView1.GridControl = this.gridObservacion;
             this.gridView1.Name = "gridView1";
@@ -635,7 +640,8 @@
             this.gridColumn18,
             this.colver,
             this.colingreso3,
-            this.colidmp3});
+            this.colidmp3,
+            this.colid_tipotm2});
             this.gridView2.DetailHeight = 284;
             this.gridView2.GridControl = this.gridRetenidos;
             this.gridView2.Name = "gridView2";
@@ -938,6 +944,21 @@
             this.colid.Name = "colid";
             this.colid.Width = 56;
             // 
+            // colid_tipotm
+            // 
+            this.colid_tipotm.FieldName = "id_tipotm";
+            this.colid_tipotm.Name = "colid_tipotm";
+            // 
+            // colid_tipotm1
+            // 
+            this.colid_tipotm1.FieldName = "id_tipotm";
+            this.colid_tipotm1.Name = "colid_tipotm1";
+            // 
+            // colid_tipotm2
+            // 
+            this.colid_tipotm2.FieldName = "id_tipotm";
+            this.colid_tipotm2.Name = "colid_tipotm2";
+            // 
             // frmLotesStatus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1054,5 +1075,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colingreso3;
         private DevExpress.XtraGrid.Columns.GridColumn colidmp3;
         private DevExpress.XtraGrid.Columns.GridColumn colid;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_tipotm;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_tipotm1;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_tipotm2;
     }
 }

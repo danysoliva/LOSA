@@ -20,7 +20,8 @@ namespace LOSA.Calidad
         UserLogin UsuarioLogeado;
         string Lote;
         int id_mp;
-        int ingreso;
+        string ingreso;
+        int Tipo_tarima;
         public enum Tipo_Reten
         {
                  Lote = 1,
@@ -31,10 +32,11 @@ namespace LOSA.Calidad
         public frmcausasRetencion(UserLogin Puser
                                   ,string codigoP
                                   , int Id_mp
-                                  , int Ingreso
+                                  , string Ingreso
                                   , string lote
                                   , string producto
-                                  , Tipo_Reten POp)
+                                  , Tipo_Reten POp
+                                 , int tipos_tm)
         {
             InitializeComponent();
             UsuarioLogeado = Puser;
@@ -46,6 +48,7 @@ namespace LOSA.Calidad
             Lote = lote;
             id_mp = Id_mp;
             ingreso = Ingreso;
+            Tipo_tarima = tipos_tm;
         }
 
 
@@ -99,6 +102,7 @@ namespace LOSA.Calidad
                 cmd.Parameters.AddWithValue("@bitloi", bit);
                 cmd.Parameters.AddWithValue("@id_mp", id_mp);
                 cmd.Parameters.AddWithValue("@ingreso" , ingreso);
+                cmd.Parameters.AddWithValue("@tipo_tm", Tipo_tarima);
                 dsCalidad.Tarimas.Clear();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dsCalidad.Tarimas);     

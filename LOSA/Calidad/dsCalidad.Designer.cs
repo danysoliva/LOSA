@@ -758,6 +758,8 @@ namespace LOSA.Calidad {
             
             private global::System.Data.DataColumn columnid_mp;
             
+            private global::System.Data.DataColumn columnid_tipotm;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public tarimas_disponiblesDataTable() {
@@ -889,6 +891,14 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn id_tipotmColumn {
+                get {
+                    return this.columnid_tipotm;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -924,7 +934,7 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public tarimas_disponiblesRow Addtarimas_disponiblesRow(int id, string lote, string mp, string proveedor, System.DateTime fecha_vence, decimal unidades, decimal peso, string codigomp, string estado, string estadoid, int ingreso, int id_mp) {
+            public tarimas_disponiblesRow Addtarimas_disponiblesRow(int id, string lote, string mp, string proveedor, System.DateTime fecha_vence, decimal unidades, decimal peso, string codigomp, string estado, string estadoid, string ingreso, int id_mp, int id_tipotm) {
                 tarimas_disponiblesRow rowtarimas_disponiblesRow = ((tarimas_disponiblesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -938,7 +948,8 @@ namespace LOSA.Calidad {
                         estado,
                         estadoid,
                         ingreso,
-                        id_mp};
+                        id_mp,
+                        id_tipotm};
                 rowtarimas_disponiblesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtarimas_disponiblesRow);
                 return rowtarimas_disponiblesRow;
@@ -973,6 +984,7 @@ namespace LOSA.Calidad {
                 this.columnestadoid = base.Columns["estadoid"];
                 this.columningreso = base.Columns["ingreso"];
                 this.columnid_mp = base.Columns["id_mp"];
+                this.columnid_tipotm = base.Columns["id_tipotm"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -998,10 +1010,12 @@ namespace LOSA.Calidad {
                 base.Columns.Add(this.columnestado);
                 this.columnestadoid = new global::System.Data.DataColumn("estadoid", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnestadoid);
-                this.columningreso = new global::System.Data.DataColumn("ingreso", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columningreso = new global::System.Data.DataColumn("ingreso", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columningreso);
                 this.columnid_mp = new global::System.Data.DataColumn("id_mp", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_mp);
+                this.columnid_tipotm = new global::System.Data.DataColumn("id_tipotm", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_tipotm);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1159,6 +1173,8 @@ namespace LOSA.Calidad {
             
             private global::System.Data.DataColumn columnid_mp;
             
+            private global::System.Data.DataColumn columnid_tipotm;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public tarimas_obsDataTable() {
@@ -1290,6 +1306,14 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn id_tipotmColumn {
+                get {
+                    return this.columnid_tipotm;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1325,7 +1349,7 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public tarimas_obsRow Addtarimas_obsRow(int id, string lote, string mp, string proveedor, System.DateTime fecha_vence, decimal unidades, decimal peso, string codigomp, string estado, string estadoid, int ingreso, int id_mp) {
+            public tarimas_obsRow Addtarimas_obsRow(int id, string lote, string mp, string proveedor, System.DateTime fecha_vence, decimal unidades, decimal peso, string codigomp, string estado, string estadoid, string ingreso, int id_mp, int id_tipotm) {
                 tarimas_obsRow rowtarimas_obsRow = ((tarimas_obsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -1339,7 +1363,8 @@ namespace LOSA.Calidad {
                         estado,
                         estadoid,
                         ingreso,
-                        id_mp};
+                        id_mp,
+                        id_tipotm};
                 rowtarimas_obsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtarimas_obsRow);
                 return rowtarimas_obsRow;
@@ -1374,6 +1399,7 @@ namespace LOSA.Calidad {
                 this.columnestadoid = base.Columns["estadoid"];
                 this.columningreso = base.Columns["ingreso"];
                 this.columnid_mp = base.Columns["id_mp"];
+                this.columnid_tipotm = base.Columns["id_tipotm"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1399,10 +1425,12 @@ namespace LOSA.Calidad {
                 base.Columns.Add(this.columnestado);
                 this.columnestadoid = new global::System.Data.DataColumn("estadoid", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnestadoid);
-                this.columningreso = new global::System.Data.DataColumn("ingreso", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columningreso = new global::System.Data.DataColumn("ingreso", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columningreso);
                 this.columnid_mp = new global::System.Data.DataColumn("id_mp", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_mp);
+                this.columnid_tipotm = new global::System.Data.DataColumn("id_tipotm", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_tipotm);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1560,6 +1588,8 @@ namespace LOSA.Calidad {
             
             private global::System.Data.DataColumn columnid_mp;
             
+            private global::System.Data.DataColumn columnid_tipotm;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public tarimas_retDataTable() {
@@ -1691,6 +1721,14 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn id_tipotmColumn {
+                get {
+                    return this.columnid_tipotm;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1726,7 +1764,7 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public tarimas_retRow Addtarimas_retRow(int id, string lote, string mp, string proveedor, System.DateTime fecha_vence, decimal unidades, decimal peso, string codigomp, string estado, string estadoid, int ingreso, int id_mp) {
+            public tarimas_retRow Addtarimas_retRow(int id, string lote, string mp, string proveedor, System.DateTime fecha_vence, decimal unidades, decimal peso, string codigomp, string estado, string estadoid, string ingreso, int id_mp, int id_tipotm) {
                 tarimas_retRow rowtarimas_retRow = ((tarimas_retRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -1740,7 +1778,8 @@ namespace LOSA.Calidad {
                         estado,
                         estadoid,
                         ingreso,
-                        id_mp};
+                        id_mp,
+                        id_tipotm};
                 rowtarimas_retRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtarimas_retRow);
                 return rowtarimas_retRow;
@@ -1775,6 +1814,7 @@ namespace LOSA.Calidad {
                 this.columnestadoid = base.Columns["estadoid"];
                 this.columningreso = base.Columns["ingreso"];
                 this.columnid_mp = base.Columns["id_mp"];
+                this.columnid_tipotm = base.Columns["id_tipotm"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1800,10 +1840,12 @@ namespace LOSA.Calidad {
                 base.Columns.Add(this.columnestado);
                 this.columnestadoid = new global::System.Data.DataColumn("estadoid", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnestadoid);
-                this.columningreso = new global::System.Data.DataColumn("ingreso", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columningreso = new global::System.Data.DataColumn("ingreso", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columningreso);
                 this.columnid_mp = new global::System.Data.DataColumn("id_mp", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_mp);
+                this.columnid_tipotm = new global::System.Data.DataColumn("id_tipotm", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_tipotm);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5117,10 +5159,10 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int ingreso {
+            public string ingreso {
                 get {
                     try {
-                        return ((int)(this[this.tabletarimas_disponibles.ingresoColumn]));
+                        return ((string)(this[this.tabletarimas_disponibles.ingresoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'ingreso\' in table \'tarimas_disponibles\' is DBNull.", e);
@@ -5144,6 +5186,22 @@ namespace LOSA.Calidad {
                 }
                 set {
                     this[this.tabletarimas_disponibles.id_mpColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int id_tipotm {
+                get {
+                    try {
+                        return ((int)(this[this.tabletarimas_disponibles.id_tipotmColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'id_tipotm\' in table \'tarimas_disponibles\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletarimas_disponibles.id_tipotmColumn] = value;
                 }
             }
             
@@ -5289,6 +5347,18 @@ namespace LOSA.Calidad {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void Setid_mpNull() {
                 this[this.tabletarimas_disponibles.id_mpColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isid_tipotmNull() {
+                return this.IsNull(this.tabletarimas_disponibles.id_tipotmColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setid_tipotmNull() {
+                this[this.tabletarimas_disponibles.id_tipotmColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -5468,10 +5538,10 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int ingreso {
+            public string ingreso {
                 get {
                     try {
-                        return ((int)(this[this.tabletarimas_obs.ingresoColumn]));
+                        return ((string)(this[this.tabletarimas_obs.ingresoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'ingreso\' in table \'tarimas_obs\' is DBNull.", e);
@@ -5495,6 +5565,22 @@ namespace LOSA.Calidad {
                 }
                 set {
                     this[this.tabletarimas_obs.id_mpColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int id_tipotm {
+                get {
+                    try {
+                        return ((int)(this[this.tabletarimas_obs.id_tipotmColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'id_tipotm\' in table \'tarimas_obs\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletarimas_obs.id_tipotmColumn] = value;
                 }
             }
             
@@ -5640,6 +5726,18 @@ namespace LOSA.Calidad {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void Setid_mpNull() {
                 this[this.tabletarimas_obs.id_mpColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isid_tipotmNull() {
+                return this.IsNull(this.tabletarimas_obs.id_tipotmColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setid_tipotmNull() {
+                this[this.tabletarimas_obs.id_tipotmColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -5819,10 +5917,10 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int ingreso {
+            public string ingreso {
                 get {
                     try {
-                        return ((int)(this[this.tabletarimas_ret.ingresoColumn]));
+                        return ((string)(this[this.tabletarimas_ret.ingresoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'ingreso\' in table \'tarimas_ret\' is DBNull.", e);
@@ -5846,6 +5944,22 @@ namespace LOSA.Calidad {
                 }
                 set {
                     this[this.tabletarimas_ret.id_mpColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int id_tipotm {
+                get {
+                    try {
+                        return ((int)(this[this.tabletarimas_ret.id_tipotmColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'id_tipotm\' in table \'tarimas_ret\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletarimas_ret.id_tipotmColumn] = value;
                 }
             }
             
@@ -5991,6 +6105,18 @@ namespace LOSA.Calidad {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void Setid_mpNull() {
                 this[this.tabletarimas_ret.id_mpColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isid_tipotmNull() {
+                return this.IsNull(this.tabletarimas_ret.id_tipotmColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setid_tipotmNull() {
+                this[this.tabletarimas_ret.id_tipotmColumn] = global::System.Convert.DBNull;
             }
         }
         

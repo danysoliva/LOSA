@@ -13,6 +13,7 @@ using LOSA.Clases;
 using ACS.Classes;
 using DevExpress.XtraGrid.Views.Grid;
 using LOSA.Despachos;
+using DevExpress.XtraReports.UI;
 
 namespace LOSA.TransaccionesPT
 {
@@ -127,6 +128,27 @@ namespace LOSA.TransaccionesPT
             var row = (dsPT.Load_despachosRow)gridView.GetFocusedDataRow();
             frm_view_entrega_despacho frm = new frm_view_entrega_despacho(row.id);
             frm.Show();
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Desea imprimir el reporte de detalle de carga?", "Pregunta" , MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+            {
+                try
+                {
+                    var gridView = (GridView)grd_data.FocusedView;
+                    var row = (dsPT.Load_despachosRow)gridView.GetFocusedDataRow();
+                    rpt_despacho frm = new rpt_despacho(row.id);
+                    frm.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                    ReportPrintTool printReport = new ReportPrintTool(frm);
+                    printReport.ShowPreview();
+                }
+                catch (Exception ex)
+                {
+
+                    CajaDialogo.Error(ex.Message);
+                }
+            }
         }
     }
 }

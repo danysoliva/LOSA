@@ -18,10 +18,11 @@ namespace LOSA.Calidad
         int gridActual = 1;
         UserLogin UsuarioLogeado;
         public string lote;
-        public int ingreso;
+        public string ingreso;
         public int id_mp;
         public string CodigoP;
         public string Articulo;
+        public int tipo_tm;
         public frmLotesStatus(UserLogin Puser)
         {
             InitializeComponent();
@@ -121,10 +122,28 @@ namespace LOSA.Calidad
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //Retenido
-            //UpdateEstado(3);
-            var gridView = (GridView)grDisponibles.FocusedView;
-            var row = (dsCalidad.tarimas_disponiblesRow)gridView.GetFocusedDataRow();
-             int  id = row.id;
+            //UpdateEstado(3);      
+             int  id = 0;
+
+            switch (gridActual)
+            {
+                case 1:
+                    var gridView = (GridView)grDisponibles.FocusedView;
+                    var row = (dsCalidad.tarimas_disponiblesRow)gridView.GetFocusedDataRow();
+                    id = row.id;
+
+                    break;
+                case 2:
+                    var gridView1 = (GridView)gridObservacion.FocusedView;
+                    var row1 = (dsCalidad.tarimas_obsRow)gridView1.GetFocusedDataRow();
+                    id = row1.id;
+                    break;
+                case 3:
+                    return;   
+                default:
+                    break;
+            }
+
             frm_asiganacion_causas frm = new frm_asiganacion_causas(UsuarioLogeado, id );
             if (frm.ShowDialog() == DialogResult.OK)
             {
@@ -327,29 +346,69 @@ namespace LOSA.Calidad
                     case 1:
                             var gridView = (GridView)grDisponibles.FocusedView;
                             var row = (dsCalidad.tarimas_disponiblesRow)gridView.GetFocusedDataRow();
+                        if (row.id_tipotm == 1)
+                        {
                             lote = row.lote;
                             ingreso = row.ingreso;
                             id_mp = row.id_mp;
                             CodigoP = row.codigomp;
-                            Articulo = row.mp;    
+                            Articulo = row.mp;
+                            tipo_tm = row.id_tipotm;
+                        }
+                        else
+                        {
+                            lote = row.lote;
+                            ingreso = " ";
+                            id_mp = row.id_mp;
+                            CodigoP = row.codigomp;
+                            Articulo = row.mp;
+                            tipo_tm = row.id_tipotm;
+                        }
+                             
                         break;
                     case 2:
                             var gridView1 = (GridView)gridObservacion.FocusedView;
                             var row1 = (dsCalidad.tarimas_obsRow)gridView1.GetFocusedDataRow();
+                        if (row1.id_tipotm == 1)
+                        {
                             lote = row1.lote;
                             ingreso = row1.ingreso;
                             id_mp = row1.id_mp;
                             CodigoP = row1.codigomp;
+                            Articulo = row1.mp;   
+                            tipo_tm = row1.id_tipotm;
+                        }
+                        else
+                        {
+                            lote = row1.lote;
+                            ingreso = " ";
+                            id_mp = row1.id_mp;
+                            CodigoP = row1.codigomp;
                             Articulo = row1.mp;
+                            tipo_tm = row1.id_tipotm;
+                        }
                         break;
                     case 3:
                             var gridView2 = (GridView)gridRetenidos.FocusedView;
                             var row2 = (dsCalidad.tarimas_retRow)gridView2.GetFocusedDataRow();
+                        if (row2.id_tipotm == 1)
+                        {
                             lote = row2.lote;
                             ingreso = row2.ingreso;
                             id_mp = row2.id_mp;
                             CodigoP = row2.codigomp;
                             Articulo = row2.mp;
+                            tipo_tm = row2.id_tipotm;
+                        }
+                        else
+                        {
+                            lote = row2.lote;
+                            ingreso = " ";
+                            id_mp = row2.id_mp;
+                            CodigoP = row2.codigomp;
+                            Articulo = row2.mp;
+                            tipo_tm = row2.id_tipotm;
+                        }
                         break;
                     default:
                         break;
@@ -369,6 +428,7 @@ namespace LOSA.Calidad
                             cmd.Parameters.AddWithValue("@bitloi", 1);
                             cmd.Parameters.AddWithValue("@id_mp", id_mp);
                             cmd.Parameters.AddWithValue("@ingreso", ingreso);
+                            cmd.Parameters.AddWithValue("@tipo_tm", tipo_tm);
                             dsCalidad1.Tarimas.Clear();
                             SqlDataAdapter da = new SqlDataAdapter(cmd);
                             da.Fill(dsCalidad1.Tarimas);
@@ -407,6 +467,7 @@ namespace LOSA.Calidad
                             cmd.Parameters.AddWithValue("@bitloi", 1);
                             cmd.Parameters.AddWithValue("@id_mp", id_mp);
                             cmd.Parameters.AddWithValue("@ingreso", ingreso);
+                            cmd.Parameters.AddWithValue("@tipo_tm", tipo_tm);
                             dsCalidad1.Tarimas.Clear();
                             SqlDataAdapter da = new SqlDataAdapter(cmd);
                             da.Fill(dsCalidad1.Tarimas);
@@ -437,7 +498,8 @@ namespace LOSA.Calidad
                                                                     , ingreso
                                                                     , lote
                                                                     , Articulo
-                                                                    , frmcausasRetencion.Tipo_Reten.Lote);
+                                                                    , frmcausasRetencion.Tipo_Reten.Lote
+                                                                    , tipo_tm);
                             if (frm.ShowDialog() == DialogResult.OK)
                             {
                                 LoadTarimasAvailables();
@@ -473,29 +535,53 @@ namespace LOSA.Calidad
                     case 1:
                         var gridView = (GridView)grDisponibles.FocusedView;
                         var row = (dsCalidad.tarimas_disponiblesRow)gridView.GetFocusedDataRow();
+                        if (row.id_tipotm == 2)
+                        {
+                            CajaDialogo.Information("Los movimientos por ingreso en producto terminado no estan habilitados.");
+                            return;
+                        }
                         lote = row.lote;
                         ingreso = row.ingreso;
                         id_mp = row.id_mp;
                         CodigoP = row.codigomp;
                         Articulo = row.mp;
+                        tipo_tm = row.id_tipotm;
+                        
                         break;
                     case 2:
                         var gridView1 = (GridView)gridObservacion.FocusedView;
                         var row1 = (dsCalidad.tarimas_obsRow)gridView1.GetFocusedDataRow();
+                        if (row1.id_tipotm == 2)
+                        {
+                            CajaDialogo.Information("Los movimientos por ingreso en producto terminado no estan habilitados.");
+                            return;
+                        }
                         lote = row1.lote;
                         ingreso = row1.ingreso;
                         id_mp = row1.id_mp;
                         CodigoP = row1.codigomp;
                         Articulo = row1.mp;
+
+                        tipo_tm = row1.id_tipotm;
+
                         break;
                     case 3:
                         var gridView2 = (GridView)gridRetenidos.FocusedView;
                         var row2 = (dsCalidad.tarimas_retRow)gridView2.GetFocusedDataRow();
+                        if (row2.id_tipotm == 2)
+                        {
+                            CajaDialogo.Information("Los movimientos por ingreso en producto terminado no estan habilitados.");
+                            return;
+                        }
                         lote = row2.lote;
                         ingreso = row2.ingreso;
                         id_mp = row2.id_mp;
                         CodigoP = row2.codigomp;
                         Articulo = row2.mp;
+
+                        tipo_tm = row2.id_tipotm;
+
+
                         break;
                     default:
                         break;
@@ -514,7 +600,8 @@ namespace LOSA.Calidad
                             cmd.Parameters.AddWithValue("@lote", lote);
                             cmd.Parameters.AddWithValue("@bitloi", 0);
                             cmd.Parameters.AddWithValue("@id_mp", id_mp);
-                            cmd.Parameters.AddWithValue("@ingreso", ingreso);
+                            cmd.Parameters.AddWithValue("@ingreso", ingreso); 
+                            cmd.Parameters.AddWithValue("@tipo_tm", tipo_tm);
                             dsCalidad1.Tarimas.Clear();
                             SqlDataAdapter da = new SqlDataAdapter(cmd);
                             da.Fill(dsCalidad1.Tarimas);
@@ -553,13 +640,13 @@ namespace LOSA.Calidad
                             cmd.Parameters.AddWithValue("@bitloi", 0);
                             cmd.Parameters.AddWithValue("@id_mp", id_mp);
                             cmd.Parameters.AddWithValue("@ingreso", ingreso);
+                            cmd.Parameters.AddWithValue("@tipo_tm", tipo_tm);
                             dsCalidad1.Tarimas.Clear();
                             SqlDataAdapter da = new SqlDataAdapter(cmd);
                             da.Fill(dsCalidad1.Tarimas);
                             foreach (dsCalidad.TarimasRow row in dsCalidad1.Tarimas.Rows)
                             {
-
-
+                                  
                                 cmd = new SqlCommand("sp_set_update_tarima_estado_calidad", cn);
                                 cmd.CommandType = CommandType.StoredProcedure;
                                 cmd.Parameters.AddWithValue("@id_estado", Estado);
@@ -583,7 +670,8 @@ namespace LOSA.Calidad
                                                                     , ingreso
                                                                     , lote
                                                                     , Articulo
-                                                                    , frmcausasRetencion.Tipo_Reten.Ingreso);
+                                                                    , frmcausasRetencion.Tipo_Reten.Ingreso
+                                                                    , 1);
                             if (frm.ShowDialog() == DialogResult.OK)
                             {
                                 LoadTarimasAvailables();
