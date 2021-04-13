@@ -53,5 +53,11 @@ namespace LOSA.TransaccionesMP
             frmviewrequisas frm = new frmviewrequisas();
             frm.Show();
         }
+
+        private void btnDevoluciones_Click(object sender, EventArgs e)
+        {
+            frmDevoluciones frm = new frmDevoluciones();
+            frm.Show();
+        }
     }
 }

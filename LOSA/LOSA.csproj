@@ -70,10 +70,10 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>3324877BFDA16F739D8F9512A7A98A42A5AAA10B</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>B8B1E1C226D4161B735B5D87883A090CA12C1142</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>LOSA_2_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>LOSA_3_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -92,7 +92,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>LOSA_2_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>LOSA_3_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -965,6 +965,12 @@
     <Compile Include="TransaccionesMP\frmCambiarUbicacionTarimaPT.Designer.cs">
       <DependentUpon>frmCambiarUbicacionTarimaPT.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\frmDevoluciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmDevoluciones.Designer.cs">
+      <DependentUpon>frmDevoluciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesMP\frmEntradaPT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1521,6 +1527,9 @@
     <EmbeddedResource Include="TransaccionesMP\frmCambiarUbicacionTarimaPT.resx">
       <DependentUpon>frmCambiarUbicacionTarimaPT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmDevoluciones.resx">
+      <DependentUpon>frmDevoluciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmEntradaPT.resx">
       <DependentUpon>frmEntradaPT.cs</DependentUpon>
     </EmbeddedResource>
@@ -1646,6 +1655,7 @@
     </None>
     <None Include="LOSA_1_TemporaryKey.pfx" />
     <None Include="LOSA_2_TemporaryKey.pfx" />
+    <None Include="LOSA_3_TemporaryKey.pfx" />
     <None Include="LOSA_TemporaryKey.pfx" />
     <None Include="Mantenimientos\dsMantenimiento.xsc">
       <DependentUpon>dsMantenimiento.xsd</DependentUpon>
