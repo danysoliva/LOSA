@@ -52,6 +52,11 @@ namespace LOSA.TransaccionesMP
             lblMensaje.Text = "";
             txtTarima.Focus();
             pictureBoxIndicadorOk.Visible = false;
+            txtentrega.Text = string.Format("{0:###,##0.00}", 0);
+            txtpesoendregadas.Text = string.Format("{0:###,##0.00}", 0);
+            txtsolicitada.Text = string.Format("{0:###,##0.00}", 0);
+            txtdevueltas.Text = string.Format("{0:###,##0.00}", 0);
+            txtrequeridas.Text = string.Format("{0:###,##0.00}", 0);
         }
 
         private void txtRequisicion_KeyDown(object sender, KeyEventArgs e)
@@ -109,7 +114,7 @@ namespace LOSA.TransaccionesMP
             {
                 using (connection)
                 {
-                    string SQL = "exec sp_getTarimas_without_filters_v2 @codigo_barra";
+                    string SQL = "exec sp_getTarimas_without_filters_v3 @codigo_barra";
                     SqlCommand cmd = new SqlCommand();
                     SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                     cmd.Connection = connection;
@@ -128,7 +133,7 @@ namespace LOSA.TransaccionesMP
                         {
                             idTarima = dr.GetInt32(0);
 
-                            if (InfoTarima.RecuperarRegistro_v2(idTarima, ""))
+                            if (InfoTarima.RecuperarRegistro_v3(idTarima, ""))
                             {
                                 factorPresentacion = InfoTarima.Factor;
                                 tarimaEncontrada = InfoTarima;
@@ -155,6 +160,170 @@ namespace LOSA.TransaccionesMP
             {
                 CajaDialogo.Error(error.Message);
             }
+        }
+
+        public void EntregarTarima_v() 
+        {
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            try
+            {
+                bool Guardo = false;
+                bool error = false;
+                bool disponible = false;
+                string mensaje = "";
+
+                datosTarimaPorCodBarra(cn);
+                if (tarimaEncontrada != null)
+                {
+                    if (!RequisicionActual.Recuperado)
+                    {
+                        error = true;
+                        lblMensaje.Text = "Debe indicar la requisicion que esta entregando!";
+
+                        Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
+                        if (frm.ShowDialog() == DialogResult.Cancel)
+                        {
+
+                        }
+                        panelNotificacion.BackColor = Color.Red;
+                        timerLimpiarMensaje.Enabled = true;
+                        timerLimpiarMensaje.Start();
+                        return;
+                    }
+                    if (tarimaEncontrada.Recuperado)
+                    {
+                        if (tarimaEncontrada.Id_estadoCalidad > 1)
+                        {
+                            error = true;
+                            mensaje = "Calidad tiene retenido esta tarima.!";
+                            Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
+                            if (frm.ShowDialog() == DialogResult.Cancel)
+                            {
+
+                            }
+                            panelNotificacion.BackColor = Color.Red;
+                            timerLimpiarMensaje.Enabled = true;
+                            timerLimpiarMensaje.Start();
+                            return;
+                        }
+
+
+                        if (!error)
+                        {
+                            txtCantidadT.Text = string.Format("{0:###,##0.00}", tarimaEncontrada.Cantidad);
+                            txtPeso.Text = string.Format("{0:###,##0.00}", tarimaEncontrada.Peso);
+
+                            try
+                            {
+                                DataOperations dp = new DataOperations();
+                                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                                con.Open();
+
+                                SqlCommand cmd = new SqlCommand("[dbo].[sp_verifica_diponibilidad_tarima_entrega_v4]", con);
+                                cmd.CommandType = CommandType.StoredProcedure;
+                                cmd.Parameters.AddWithValue("@id", tarimaEncontrada.Id);
+                                cmd.Parameters.AddWithValue("@id_req", RequisicionActual.IdRequisicion);
+                                SqlDataReader dr = cmd.ExecuteReader();
+                                if (dr.Read())
+                                {
+                                    disponible = dr.GetBoolean(0);
+                                    if (!disponible)
+                                    {
+                                        error = true;
+                                        mensaje = dr.GetString(1);
+                                        Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
+                                        if (frm.ShowDialog() == DialogResult.Cancel)
+                                        {
+
+                                        }
+
+                                        lblMensaje.Text = mensaje;
+
+                                        panelNotificacion.BackColor = Color.Red;
+                                        timerLimpiarMensaje.Enabled = true;
+                                        timerLimpiarMensaje.Start();
+                                        return;
+                                    }
+                                }
+                                dr.Close();
+                                con.Close();
+
+                            }
+                            catch (Exception ec)
+                            {
+                                CajaDialogo.Error(ec.Message);
+                            }
+
+                            try
+                            {
+                                DataOperations dp = new DataOperations();
+                                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                                con.Open();
+
+                                //SqlCommand cmd = new SqlCommand("sp_set_insert_salida_tarima_bodega_mp", con);
+                                SqlCommand cmd = new SqlCommand("[dbo].[sp_insert_tarima_requisa_entrega_v3]", con);
+                                cmd.CommandType = CommandType.StoredProcedure;
+                                cmd.Parameters.AddWithValue("@idtarima", tarimaEncontrada.Id);
+                                cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
+                                cmd.Parameters.AddWithValue("@id_req", RequisicionActual.IdRequisicion);
+                                Guardo = Convert.ToBoolean(cmd.ExecuteScalar());
+                                con.Close();
+                            }
+                            catch (Exception ec)
+                            {
+                                //CajaDialogo.Error(ec.Message);
+                                lblMensaje.Text = ec.Message;
+                                panelNotificacion.BackColor = Color.Red;
+                                timerLimpiarMensaje.Enabled = true;
+                                timerLimpiarMensaje.Start();
+                            }
+
+                            if (Guardo)
+                            {
+                                //Mensaje de transaccion exitosa
+                                lblMensaje.Text = "Transacción Exitosa!";
+                                panelNotificacion.BackColor = Color.MediumSeaGreen;
+                                timerLimpiarMensaje.Enabled = true;
+                                timerLimpiarMensaje.Start();
+                            }
+
+                        }
+                        else
+                        {
+                            Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
+                            if (frm.ShowDialog() == DialogResult.Cancel)
+                            {
+
+                            }
+                            panelNotificacion.BackColor = Color.Red;
+                            timerLimpiarMensaje.Enabled = true;
+                            timerLimpiarMensaje.Start();
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        error = true;
+                        mensaje = "El codigo de barra leido no es correcto!";
+                        Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
+                        if (frm.ShowDialog() == DialogResult.Cancel)
+                        {
+
+                        }
+                        panelNotificacion.BackColor = Color.Red;
+                        timerLimpiarMensaje.Enabled = true;
+                        timerLimpiarMensaje.Start();
+                        return;
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+            
         }
         public void EntregarTarima()
         {
@@ -212,7 +381,7 @@ namespace LOSA.TransaccionesMP
                             SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                             con.Open();
 
-                            SqlCommand cmd = new SqlCommand("[dbo].[sp_verifica_diponibilidad_tarima_entrega_v4]", con);
+                            SqlCommand cmd = new SqlCommand("[dbo].[sp_verifica_diponibilidad_tarima_entrega_v5]", con);
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.AddWithValue("@id", tarimaEncontrada.Id);
                             cmd.Parameters.AddWithValue("@id_req", RequisicionActual.IdRequisicion);
@@ -254,13 +423,24 @@ namespace LOSA.TransaccionesMP
                             con.Open();
 
                             //SqlCommand cmd = new SqlCommand("sp_set_insert_salida_tarima_bodega_mp", con);
-                            SqlCommand cmd = new SqlCommand("[dbo].[sp_insert_tarima_requisa_entrega_v3]", con);
+                            SqlCommand cmd = new SqlCommand("[dbo].[sp_insert_tarima_requisa_entrega_v4]", con);
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.AddWithValue("@idtarima", tarimaEncontrada.Id);
                             cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
                             cmd.Parameters.AddWithValue("@id_req", RequisicionActual.IdRequisicion);
-                            Guardo = Convert.ToBoolean(cmd.ExecuteScalar());
+                            SqlDataReader dr = cmd.ExecuteReader();
+                            if (dr.Read())
+                            {
+                                   txtentrega.Text = string.Format("{0:###,##0.00}", dr.GetInt32(0));
+                                txtrequeridas.Text = string.Format("{0:###,##0.00}", dr.GetInt32(1));
+                                txtdevueltas.Text = string.Format("{0:###,##0.00}", dr.GetInt32(2) >= 0 ? dr.GetInt32(2) : dr.GetInt32(2) * -1);
+                                txtsolicitada.Text = string.Format("{0:###,##0.00}", dr.GetInt32(3));
+                                Guardo = dr.GetInt32(4) == 1 ? true : false;
+                                txtpesoendregadas.Text = string.Format("{0:###,##0.00}", dr.GetDecimal(5));
+                            }
+                            dr.Close();
                             con.Close();
+
                         }
                         catch (Exception ec)
                         {
