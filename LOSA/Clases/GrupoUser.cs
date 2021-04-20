@@ -17,7 +17,8 @@ namespace LOSA
             Logistica = 1,
             Calidad = 2,
             Administradores = 3,
-            Produccion=4
+            Produccion=4,
+            ProduccionV2 = 5
 
         }
 

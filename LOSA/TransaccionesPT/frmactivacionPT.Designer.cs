@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmactivacionPT));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -43,6 +49,12 @@
             this.pictureBoxIndicadorOk = new System.Windows.Forms.PictureBox();
             this.txtTarima = new DevExpress.XtraEditors.ButtonEdit();
             this.timerLimpiarMensaje = new System.Windows.Forms.Timer(this.components);
+            this.beNuevaUbicacion = new DevExpress.XtraEditors.ButtonEdit();
+            this.btnUbicacion = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.gcNuevaUbicación = new DevExpress.XtraGrid.GridControl();
+            this.gvNuevaUbicacion = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panelNotificacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcTarima)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTarima)).BeginInit();
@@ -50,6 +62,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIndicadorOk)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTarima.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beNuevaUbicacion.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcNuevaUbicación)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvNuevaUbicacion)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl3
@@ -123,10 +140,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcTarima.EmbeddedNavigator.Appearance.BackColor = System.Drawing.SystemColors.Control;
             this.gcTarima.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
-            this.gcTarima.Location = new System.Drawing.Point(12, 234);
+            this.gcTarima.Location = new System.Drawing.Point(12, 164);
             this.gcTarima.MainView = this.gvTarima;
             this.gcTarima.Name = "gcTarima";
-            this.gcTarima.Size = new System.Drawing.Size(558, 193);
+            this.gcTarima.Size = new System.Drawing.Size(558, 100);
             this.gcTarima.TabIndex = 98;
             this.gcTarima.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTarima});
@@ -289,7 +306,7 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(372, 455);
+            this.labelControl2.Location = new System.Drawing.Point(339, 274);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(83, 24);
             this.labelControl2.TabIndex = 102;
@@ -298,7 +315,7 @@
             // txtPeso
             // 
             this.txtPeso.EditValue = "0";
-            this.txtPeso.Location = new System.Drawing.Point(461, 451);
+            this.txtPeso.Location = new System.Drawing.Point(428, 270);
             this.txtPeso.Name = "txtPeso";
             this.txtPeso.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPeso.Properties.Appearance.Options.UseFont = true;
@@ -312,7 +329,7 @@
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(37, 451);
+            this.labelControl7.Location = new System.Drawing.Point(0, 274);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(80, 24);
             this.labelControl7.TabIndex = 101;
@@ -322,7 +339,7 @@
             // 
             this.txtCantidadT.EditValue = "0";
             this.txtCantidadT.Enabled = false;
-            this.txtCantidadT.Location = new System.Drawing.Point(123, 447);
+            this.txtCantidadT.Location = new System.Drawing.Point(90, 266);
             this.txtCantidadT.Name = "txtCantidadT";
             this.txtCantidadT.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCantidadT.Properties.Appearance.Options.UseFont = true;
@@ -370,11 +387,240 @@
             this.timerLimpiarMensaje.Interval = 4000;
             this.timerLimpiarMensaje.Tick += new System.EventHandler(this.timerLimpiarMensaje_Tick);
             // 
+            // beNuevaUbicacion
+            // 
+            this.beNuevaUbicacion.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.True;
+            this.beNuevaUbicacion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.beNuevaUbicacion.EditValue = "";
+            this.beNuevaUbicacion.Location = new System.Drawing.Point(151, 308);
+            this.beNuevaUbicacion.Name = "beNuevaUbicacion";
+            this.beNuevaUbicacion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.beNuevaUbicacion.Properties.Appearance.Options.UseFont = true;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            this.beNuevaUbicacion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.beNuevaUbicacion.Properties.MaxLength = 20;
+            this.beNuevaUbicacion.Properties.NullText = "Escanee o selecciona una tarima";
+            this.beNuevaUbicacion.Size = new System.Drawing.Size(325, 28);
+            this.beNuevaUbicacion.TabIndex = 109;
+            this.beNuevaUbicacion.ToolTip = "Hola";
+            this.beNuevaUbicacion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.beNuevaUbicacion_KeyDown);
+            // 
+            // btnUbicacion
+            // 
+            this.btnUbicacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUbicacion.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUbicacion.Appearance.Options.UseFont = true;
+            this.btnUbicacion.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnUbicacion.ImageOptions.Image = global::LOSA.Properties.Resources.tap;
+            this.btnUbicacion.Location = new System.Drawing.Point(482, 306);
+            this.btnUbicacion.Name = "btnUbicacion";
+            this.btnUbicacion.Size = new System.Drawing.Size(42, 40);
+            this.btnUbicacion.TabIndex = 108;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Location = new System.Drawing.Point(10, 313);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(135, 21);
+            this.labelControl4.TabIndex = 107;
+            this.labelControl4.Text = "Nueva Ubicación:";
+            // 
+            // groupControl2
+            // 
+            this.groupControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupControl2.AppearanceCaption.Options.UseFont = true;
+            this.groupControl2.Controls.Add(this.gcNuevaUbicación);
+            this.groupControl2.Location = new System.Drawing.Point(13, 340);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(308, 147);
+            this.groupControl2.TabIndex = 106;
+            this.groupControl2.Text = "Nueva Ubicación";
+            // 
+            // gcNuevaUbicación
+            // 
+            this.gcNuevaUbicación.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gcNuevaUbicación.EmbeddedNavigator.Appearance.BackColor = System.Drawing.SystemColors.Control;
+            this.gcNuevaUbicación.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
+            this.gcNuevaUbicación.Location = new System.Drawing.Point(6, 25);
+            this.gcNuevaUbicación.MainView = this.gvNuevaUbicacion;
+            this.gcNuevaUbicación.Name = "gcNuevaUbicación";
+            this.gcNuevaUbicación.Size = new System.Drawing.Size(290, 116);
+            this.gcNuevaUbicación.TabIndex = 34;
+            this.gcNuevaUbicación.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvNuevaUbicacion});
+            // 
+            // gvNuevaUbicacion
+            // 
+            this.gvNuevaUbicacion.Appearance.ColumnFilterButton.BackColor = System.Drawing.Color.Silver;
+            this.gvNuevaUbicacion.Appearance.ColumnFilterButton.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.gvNuevaUbicacion.Appearance.ColumnFilterButton.BorderColor = System.Drawing.Color.Silver;
+            this.gvNuevaUbicacion.Appearance.ColumnFilterButton.ForeColor = System.Drawing.Color.Gray;
+            this.gvNuevaUbicacion.Appearance.ColumnFilterButton.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.ColumnFilterButton.Options.UseBorderColor = true;
+            this.gvNuevaUbicacion.Appearance.ColumnFilterButton.Options.UseForeColor = true;
+            this.gvNuevaUbicacion.Appearance.ColumnFilterButtonActive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.gvNuevaUbicacion.Appearance.ColumnFilterButtonActive.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
+            this.gvNuevaUbicacion.Appearance.ColumnFilterButtonActive.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.gvNuevaUbicacion.Appearance.ColumnFilterButtonActive.ForeColor = System.Drawing.Color.Blue;
+            this.gvNuevaUbicacion.Appearance.ColumnFilterButtonActive.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.ColumnFilterButtonActive.Options.UseBorderColor = true;
+            this.gvNuevaUbicacion.Appearance.ColumnFilterButtonActive.Options.UseForeColor = true;
+            this.gvNuevaUbicacion.Appearance.Empty.BackColor = System.Drawing.SystemColors.Control;
+            this.gvNuevaUbicacion.Appearance.Empty.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.EvenRow.BackColor = System.Drawing.Color.White;
+            this.gvNuevaUbicacion.Appearance.EvenRow.BackColor2 = System.Drawing.Color.White;
+            this.gvNuevaUbicacion.Appearance.EvenRow.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvNuevaUbicacion.Appearance.EvenRow.ForeColor = System.Drawing.Color.Black;
+            this.gvNuevaUbicacion.Appearance.EvenRow.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.gvNuevaUbicacion.Appearance.EvenRow.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.EvenRow.Options.UseFont = true;
+            this.gvNuevaUbicacion.Appearance.EvenRow.Options.UseForeColor = true;
+            this.gvNuevaUbicacion.Appearance.FilterCloseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(208)))), ((int)(((byte)(200)))));
+            this.gvNuevaUbicacion.Appearance.FilterCloseButton.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(170)))), ((int)(((byte)(225)))));
+            this.gvNuevaUbicacion.Appearance.FilterCloseButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(208)))), ((int)(((byte)(200)))));
+            this.gvNuevaUbicacion.Appearance.FilterCloseButton.ForeColor = System.Drawing.Color.Black;
+            this.gvNuevaUbicacion.Appearance.FilterCloseButton.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.gvNuevaUbicacion.Appearance.FilterCloseButton.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.FilterCloseButton.Options.UseBorderColor = true;
+            this.gvNuevaUbicacion.Appearance.FilterCloseButton.Options.UseForeColor = true;
+            this.gvNuevaUbicacion.Appearance.FilterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(80)))), ((int)(((byte)(135)))));
+            this.gvNuevaUbicacion.Appearance.FilterPanel.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(208)))), ((int)(((byte)(200)))));
+            this.gvNuevaUbicacion.Appearance.FilterPanel.ForeColor = System.Drawing.Color.White;
+            this.gvNuevaUbicacion.Appearance.FilterPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.gvNuevaUbicacion.Appearance.FilterPanel.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.FilterPanel.Options.UseForeColor = true;
+            this.gvNuevaUbicacion.Appearance.FixedLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
+            this.gvNuevaUbicacion.Appearance.FixedLine.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.FocusedCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(225)))));
+            this.gvNuevaUbicacion.Appearance.FocusedCell.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvNuevaUbicacion.Appearance.FocusedCell.ForeColor = System.Drawing.Color.Black;
+            this.gvNuevaUbicacion.Appearance.FocusedCell.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.FocusedCell.Options.UseFont = true;
+            this.gvNuevaUbicacion.Appearance.FocusedCell.Options.UseForeColor = true;
+            this.gvNuevaUbicacion.Appearance.FocusedRow.BackColor = System.Drawing.Color.Transparent;
+            this.gvNuevaUbicacion.Appearance.FocusedRow.BackColor2 = System.Drawing.Color.Transparent;
+            this.gvNuevaUbicacion.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvNuevaUbicacion.Appearance.FocusedRow.ForeColor = System.Drawing.Color.Black;
+            this.gvNuevaUbicacion.Appearance.FocusedRow.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.FocusedRow.Options.UseFont = true;
+            this.gvNuevaUbicacion.Appearance.FocusedRow.Options.UseForeColor = true;
+            this.gvNuevaUbicacion.Appearance.FooterPanel.BackColor = System.Drawing.Color.Silver;
+            this.gvNuevaUbicacion.Appearance.FooterPanel.BorderColor = System.Drawing.Color.Silver;
+            this.gvNuevaUbicacion.Appearance.FooterPanel.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gvNuevaUbicacion.Appearance.FooterPanel.ForeColor = System.Drawing.Color.Black;
+            this.gvNuevaUbicacion.Appearance.FooterPanel.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.FooterPanel.Options.UseBorderColor = true;
+            this.gvNuevaUbicacion.Appearance.FooterPanel.Options.UseFont = true;
+            this.gvNuevaUbicacion.Appearance.FooterPanel.Options.UseForeColor = true;
+            this.gvNuevaUbicacion.Appearance.GroupButton.BackColor = System.Drawing.Color.Silver;
+            this.gvNuevaUbicacion.Appearance.GroupButton.BorderColor = System.Drawing.Color.Silver;
+            this.gvNuevaUbicacion.Appearance.GroupButton.ForeColor = System.Drawing.Color.Black;
+            this.gvNuevaUbicacion.Appearance.GroupButton.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.GroupButton.Options.UseBorderColor = true;
+            this.gvNuevaUbicacion.Appearance.GroupButton.Options.UseForeColor = true;
+            this.gvNuevaUbicacion.Appearance.GroupFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.gvNuevaUbicacion.Appearance.GroupFooter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.gvNuevaUbicacion.Appearance.GroupFooter.ForeColor = System.Drawing.Color.Black;
+            this.gvNuevaUbicacion.Appearance.GroupFooter.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.GroupFooter.Options.UseBorderColor = true;
+            this.gvNuevaUbicacion.Appearance.GroupFooter.Options.UseForeColor = true;
+            this.gvNuevaUbicacion.Appearance.GroupPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(110)))), ((int)(((byte)(165)))));
+            this.gvNuevaUbicacion.Appearance.GroupPanel.BackColor2 = System.Drawing.Color.White;
+            this.gvNuevaUbicacion.Appearance.GroupPanel.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gvNuevaUbicacion.Appearance.GroupPanel.ForeColor = System.Drawing.Color.White;
+            this.gvNuevaUbicacion.Appearance.GroupPanel.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.GroupPanel.Options.UseFont = true;
+            this.gvNuevaUbicacion.Appearance.GroupPanel.Options.UseForeColor = true;
+            this.gvNuevaUbicacion.Appearance.GroupRow.BackColor = System.Drawing.Color.Gray;
+            this.gvNuevaUbicacion.Appearance.GroupRow.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gvNuevaUbicacion.Appearance.GroupRow.ForeColor = System.Drawing.Color.Silver;
+            this.gvNuevaUbicacion.Appearance.GroupRow.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.GroupRow.Options.UseFont = true;
+            this.gvNuevaUbicacion.Appearance.GroupRow.Options.UseForeColor = true;
+            this.gvNuevaUbicacion.Appearance.HeaderPanel.BackColor = System.Drawing.Color.Silver;
+            this.gvNuevaUbicacion.Appearance.HeaderPanel.BorderColor = System.Drawing.Color.Silver;
+            this.gvNuevaUbicacion.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gvNuevaUbicacion.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
+            this.gvNuevaUbicacion.Appearance.HeaderPanel.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.HeaderPanel.Options.UseBorderColor = true;
+            this.gvNuevaUbicacion.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gvNuevaUbicacion.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.gvNuevaUbicacion.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.White;
+            this.gvNuevaUbicacion.Appearance.HideSelectionRow.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvNuevaUbicacion.Appearance.HideSelectionRow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(208)))), ((int)(((byte)(200)))));
+            this.gvNuevaUbicacion.Appearance.HideSelectionRow.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.HideSelectionRow.Options.UseFont = true;
+            this.gvNuevaUbicacion.Appearance.HideSelectionRow.Options.UseForeColor = true;
+            this.gvNuevaUbicacion.Appearance.HorzLine.BackColor = System.Drawing.Color.DarkGray;
+            this.gvNuevaUbicacion.Appearance.HorzLine.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvNuevaUbicacion.Appearance.HorzLine.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.HorzLine.Options.UseFont = true;
+            this.gvNuevaUbicacion.Appearance.OddRow.BackColor = System.Drawing.Color.White;
+            this.gvNuevaUbicacion.Appearance.OddRow.BackColor2 = System.Drawing.Color.White;
+            this.gvNuevaUbicacion.Appearance.OddRow.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvNuevaUbicacion.Appearance.OddRow.ForeColor = System.Drawing.Color.Black;
+            this.gvNuevaUbicacion.Appearance.OddRow.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
+            this.gvNuevaUbicacion.Appearance.OddRow.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.OddRow.Options.UseFont = true;
+            this.gvNuevaUbicacion.Appearance.OddRow.Options.UseForeColor = true;
+            this.gvNuevaUbicacion.Appearance.Preview.BackColor = System.Drawing.Color.White;
+            this.gvNuevaUbicacion.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvNuevaUbicacion.Appearance.Preview.ForeColor = System.Drawing.Color.Navy;
+            this.gvNuevaUbicacion.Appearance.Preview.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.Preview.Options.UseFont = true;
+            this.gvNuevaUbicacion.Appearance.Preview.Options.UseForeColor = true;
+            this.gvNuevaUbicacion.Appearance.Row.BackColor = System.Drawing.Color.White;
+            this.gvNuevaUbicacion.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvNuevaUbicacion.Appearance.Row.ForeColor = System.Drawing.Color.Black;
+            this.gvNuevaUbicacion.Appearance.Row.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.Row.Options.UseFont = true;
+            this.gvNuevaUbicacion.Appearance.Row.Options.UseForeColor = true;
+            this.gvNuevaUbicacion.Appearance.RowSeparator.BackColor = System.Drawing.Color.White;
+            this.gvNuevaUbicacion.Appearance.RowSeparator.BackColor2 = System.Drawing.Color.White;
+            this.gvNuevaUbicacion.Appearance.RowSeparator.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvNuevaUbicacion.Appearance.RowSeparator.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.RowSeparator.Options.UseFont = true;
+            this.gvNuevaUbicacion.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(138)))));
+            this.gvNuevaUbicacion.Appearance.SelectedRow.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvNuevaUbicacion.Appearance.SelectedRow.ForeColor = System.Drawing.Color.White;
+            this.gvNuevaUbicacion.Appearance.SelectedRow.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.SelectedRow.Options.UseFont = true;
+            this.gvNuevaUbicacion.Appearance.SelectedRow.Options.UseForeColor = true;
+            this.gvNuevaUbicacion.Appearance.TopNewRow.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gvNuevaUbicacion.Appearance.TopNewRow.Options.UseFont = true;
+            this.gvNuevaUbicacion.Appearance.VertLine.BackColor = System.Drawing.Color.Silver;
+            this.gvNuevaUbicacion.Appearance.VertLine.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvNuevaUbicacion.Appearance.VertLine.Options.UseBackColor = true;
+            this.gvNuevaUbicacion.Appearance.VertLine.Options.UseFont = true;
+            this.gvNuevaUbicacion.GridControl = this.gcNuevaUbicación;
+            this.gvNuevaUbicacion.Name = "gvNuevaUbicacion";
+            this.gvNuevaUbicacion.OptionsBehavior.AutoSelectAllInEditor = false;
+            this.gvNuevaUbicacion.OptionsBehavior.Editable = false;
+            this.gvNuevaUbicacion.OptionsView.EnableAppearanceEvenRow = true;
+            this.gvNuevaUbicacion.OptionsView.EnableAppearanceOddRow = true;
+            this.gvNuevaUbicacion.OptionsView.ShowColumnHeaders = false;
+            this.gvNuevaUbicacion.OptionsView.ShowGroupPanel = false;
+            this.gvNuevaUbicacion.OptionsView.ShowIndicator = false;
+            this.gvNuevaUbicacion.PaintStyleName = "Flat";
+            // 
             // frmactivacionPT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(638, 560);
+            this.Controls.Add(this.beNuevaUbicacion);
+            this.Controls.Add(this.btnUbicacion);
+            this.Controls.Add(this.labelControl4);
+            this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.txtTarima);
             this.Controls.Add(this.pictureBoxIndicadorOk);
             this.Controls.Add(this.panelNotificacion);
@@ -398,6 +644,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIndicadorOk)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTarima.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beNuevaUbicacion.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gcNuevaUbicación)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvNuevaUbicacion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -419,5 +670,11 @@
         private System.Windows.Forms.PictureBox pictureBoxIndicadorOk;
         private DevExpress.XtraEditors.ButtonEdit txtTarima;
         private System.Windows.Forms.Timer timerLimpiarMensaje;
+        private DevExpress.XtraEditors.ButtonEdit beNuevaUbicacion;
+        private DevExpress.XtraEditors.SimpleButton btnUbicacion;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.GroupControl groupControl2;
+        private DevExpress.XtraGrid.GridControl gcNuevaUbicación;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvNuevaUbicacion;
     }
 }

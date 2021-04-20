@@ -71,6 +71,10 @@ namespace LOSA
                     tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
                     tabOpciones.TabPages[i].PageVisible = true;
                     break;
+                case GrupoUser.GrupoUsuario.ProduccionV2:
+                    tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
+                    tabOpciones.TabPages[i].PageVisible = true;
+                    break;
                 default:
                     tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
                     tabOpciones.TabPages[i].PageVisible = true;
@@ -490,6 +494,12 @@ namespace LOSA
         private void simpleButton8_Click(object sender, EventArgs e)
         {
             frmreporte_trazabilidad frm = new frmreporte_trazabilidad(UsuarioLogeado);
+            frm.Show();
+        }
+
+        private void btnRequisasManuales_Click(object sender, EventArgs e)
+        {
+            frmRequisasManuales frm = new frmRequisasManuales(UsuarioLogeado);
             frm.Show();
         }
     }

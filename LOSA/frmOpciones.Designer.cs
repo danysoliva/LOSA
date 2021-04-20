@@ -72,6 +72,8 @@
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.cmdTarimasPT = new DevExpress.XtraEditors.SimpleButton();
             this.btnAlimentacionManual = new DevExpress.XtraEditors.SimpleButton();
+            this.txtProduccion = new DevExpress.XtraTab.XtraTabPage();
+            this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
@@ -80,6 +82,7 @@
             this.TabCalidad.SuspendLayout();
             this.TabAdmin.SuspendLayout();
             this.tabProduccion.SuspendLayout();
+            this.txtProduccion.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -115,7 +118,8 @@
             this.TabLogistica,
             this.TabCalidad,
             this.TabAdmin,
-            this.tabProduccion});
+            this.tabProduccion,
+            this.txtProduccion});
             // 
             // TabMontacarga
             // 
@@ -699,6 +703,29 @@
             this.btnAlimentacionManual.Text = "Alimentación Manual";
             this.btnAlimentacionManual.Click += new System.EventHandler(this.btnAlimentacionManual_Click);
             // 
+            // txtProduccion
+            // 
+            this.txtProduccion.Controls.Add(this.btnRequisasManuales);
+            this.txtProduccion.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("txtProduccion.ImageOptions.Image")));
+            this.txtProduccion.Name = "txtProduccion";
+            this.txtProduccion.Size = new System.Drawing.Size(629, 422);
+            this.txtProduccion.Text = "Produccion";
+            // 
+            // btnRequisasManuales
+            // 
+            this.btnRequisasManuales.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRequisasManuales.Appearance.Options.UseFont = true;
+            this.btnRequisasManuales.Appearance.Options.UseTextOptions = true;
+            this.btnRequisasManuales.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnRequisasManuales.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnRequisasManuales.ImageOptions.Image = global::LOSA.Properties.Resources.alimentacion_manual;
+            this.btnRequisasManuales.Location = new System.Drawing.Point(26, 20);
+            this.btnRequisasManuales.Name = "btnRequisasManuales";
+            this.btnRequisasManuales.Size = new System.Drawing.Size(199, 71);
+            this.btnRequisasManuales.TabIndex = 10;
+            this.btnRequisasManuales.Text = "Requisas Manuales";
+            this.btnRequisasManuales.Click += new System.EventHandler(this.btnRequisasManuales_Click);
+            // 
             // labelControl3
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -734,6 +761,7 @@
             this.TabCalidad.ResumeLayout(false);
             this.TabAdmin.ResumeLayout(false);
             this.tabProduccion.ResumeLayout(false);
+            this.txtProduccion.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -783,5 +811,7 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton6;
         private DevExpress.XtraEditors.SimpleButton simpleButton7;
         private DevExpress.XtraEditors.SimpleButton simpleButton8;
+        private DevExpress.XtraTab.XtraTabPage txtProduccion;
+        private DevExpress.XtraEditors.SimpleButton btnRequisasManuales;
     }
 }

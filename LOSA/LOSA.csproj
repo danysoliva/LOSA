@@ -574,6 +574,18 @@
     <Compile Include="Produccion\frmHomeEnsacado.Designer.cs">
       <DependentUpon>frmHomeEnsacado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Produccion\frmRequisasManuales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\frmRequisasManuales.Designer.cs">
+      <DependentUpon>frmRequisasManuales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\frmSolicitarMP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\frmSolicitarMP.Designer.cs">
+      <DependentUpon>frmSolicitarMP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Produccion\frmTarimasHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -591,6 +603,18 @@
     </Compile>
     <Compile Include="Produccion\ctl_keypadNumber.Designer.cs">
       <DependentUpon>ctl_keypadNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\frm_requisaManual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\frm_requisaManual.Designer.cs">
+      <DependentUpon>frm_requisaManual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\frm_seleccionarMPInorder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\frm_seleccionarMPInorder.Designer.cs">
+      <DependentUpon>frm_seleccionarMPInorder.cs</DependentUpon>
     </Compile>
     <Compile Include="Produccion\rptReporteTarimaPT.cs">
       <SubType>Component</SubType>
@@ -1348,11 +1372,23 @@
     <EmbeddedResource Include="Produccion\frmHomeEnsacado.resx">
       <DependentUpon>frmHomeEnsacado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\frmRequisasManuales.resx">
+      <DependentUpon>frmRequisasManuales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\frmSolicitarMP.resx">
+      <DependentUpon>frmSolicitarMP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Produccion\frmTarimasHome.resx">
       <DependentUpon>frmTarimasHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\frmTolva.resx">
       <DependentUpon>frmTolva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\frm_requisaManual.resx">
+      <DependentUpon>frm_requisaManual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\frm_seleccionarMPInorder.resx">
+      <DependentUpon>frm_seleccionarMPInorder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\rptReporteTarimaPT.resx">
       <DependentUpon>rptReporteTarimaPT.cs</DependentUpon>
