@@ -29,7 +29,7 @@ namespace LOSA.RecepcionMP
 
                     lblNumeroIngreso.Text = pt.Codigo;
                     BagsPT bag = new BagsPT();
-                    if (bag.RecuperarRegistro(pt.id_bag))
+                    if (bag.RecuperarRegistro_v2(tar1.IdPresentacion))
                     {
                         lblPresentacion.Text = bag.Descripcion;
                     }

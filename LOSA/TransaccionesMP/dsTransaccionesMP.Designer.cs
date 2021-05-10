@@ -1374,6 +1374,8 @@ namespace LOSA.TransaccionesMP {
             
             private global::System.Data.DataColumn columncomentario;
             
+            private global::System.Data.DataColumn columnfinalizado;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public requisiciones_hDataTable() {
@@ -1489,6 +1491,14 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn finalizadoColumn {
+                get {
+                    return this.columnfinalizado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1524,7 +1534,7 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public requisiciones_hRow Addrequisiciones_hRow(int id, int id_usuario, string user_, int id_orden, System.DateTime fecha_solicitada, System.DateTime fecha_a_producir, int id_estado, string estado, int DocEntry, string comentario) {
+            public requisiciones_hRow Addrequisiciones_hRow(int id, int id_usuario, string user_, int id_orden, System.DateTime fecha_solicitada, System.DateTime fecha_a_producir, int id_estado, string estado, int DocEntry, string comentario, bool finalizado) {
                 requisiciones_hRow rowrequisiciones_hRow = ((requisiciones_hRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -1536,7 +1546,8 @@ namespace LOSA.TransaccionesMP {
                         id_estado,
                         estado,
                         DocEntry,
-                        comentario};
+                        comentario,
+                        finalizado};
                 rowrequisiciones_hRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowrequisiciones_hRow);
                 return rowrequisiciones_hRow;
@@ -1569,6 +1580,7 @@ namespace LOSA.TransaccionesMP {
                 this.columnestado = base.Columns["estado"];
                 this.columnDocEntry = base.Columns["DocEntry"];
                 this.columncomentario = base.Columns["comentario"];
+                this.columnfinalizado = base.Columns["finalizado"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1594,6 +1606,8 @@ namespace LOSA.TransaccionesMP {
                 base.Columns.Add(this.columnDocEntry);
                 this.columncomentario = new global::System.Data.DataColumn("comentario", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncomentario);
+                this.columnfinalizado = new global::System.Data.DataColumn("finalizado", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfinalizado);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2182,6 +2196,8 @@ namespace LOSA.TransaccionesMP {
             
             private global::System.Data.DataColumn columnnumero_transaccion;
             
+            private global::System.Data.DataColumn columncodigo;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public detalle_lote_mpDataTable() {
@@ -2321,6 +2337,14 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn codigoColumn {
+                get {
+                    return this.columncodigo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2356,7 +2380,7 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public detalle_lote_mpRow Adddetalle_lote_mpRow(int id, string id_proveedor, string Nombre, System.DateTime ingreso, System.DateTime vence, string lote_mp, string presentacion, decimal cantidad, string unidad, decimal peso_total, bool seleccionado, decimal cants, int numero_transaccion) {
+            public detalle_lote_mpRow Adddetalle_lote_mpRow(int id, string id_proveedor, string Nombre, System.DateTime ingreso, System.DateTime vence, string lote_mp, string presentacion, decimal cantidad, string unidad, decimal peso_total, bool seleccionado, decimal cants, int numero_transaccion, string codigo) {
                 detalle_lote_mpRow rowdetalle_lote_mpRow = ((detalle_lote_mpRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -2371,7 +2395,8 @@ namespace LOSA.TransaccionesMP {
                         peso_total,
                         seleccionado,
                         cants,
-                        numero_transaccion};
+                        numero_transaccion,
+                        codigo};
                 rowdetalle_lote_mpRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdetalle_lote_mpRow);
                 return rowdetalle_lote_mpRow;
@@ -2407,6 +2432,7 @@ namespace LOSA.TransaccionesMP {
                 this.columnseleccionado = base.Columns["seleccionado"];
                 this.columncants = base.Columns["cants"];
                 this.columnnumero_transaccion = base.Columns["numero_transaccion"];
+                this.columncodigo = base.Columns["codigo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2438,6 +2464,8 @@ namespace LOSA.TransaccionesMP {
                 base.Columns.Add(this.columncants);
                 this.columnnumero_transaccion = new global::System.Data.DataColumn("numero_transaccion", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnumero_transaccion);
+                this.columncodigo = new global::System.Data.DataColumn("codigo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncodigo);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5689,6 +5717,22 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool finalizado {
+                get {
+                    try {
+                        return ((bool)(this[this.tablerequisiciones_h.finalizadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'finalizado\' in table \'requisiciones_h\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablerequisiciones_h.finalizadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tablerequisiciones_h.idColumn);
             }
@@ -5805,6 +5849,18 @@ namespace LOSA.TransaccionesMP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetcomentarioNull() {
                 this[this.tablerequisiciones_h.comentarioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsfinalizadoNull() {
+                return this.IsNull(this.tablerequisiciones_h.finalizadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetfinalizadoNull() {
+                this[this.tablerequisiciones_h.finalizadoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -6439,6 +6495,22 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string codigo {
+                get {
+                    try {
+                        return ((string)(this[this.tabledetalle_lote_mp.codigoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'codigo\' in table \'detalle_lote_mp\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_lote_mp.codigoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tabledetalle_lote_mp.idColumn);
             }
@@ -6591,6 +6663,18 @@ namespace LOSA.TransaccionesMP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setnumero_transaccionNull() {
                 this[this.tabledetalle_lote_mp.numero_transaccionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IscodigoNull() {
+                return this.IsNull(this.tabledetalle_lote_mp.codigoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetcodigoNull() {
+                this[this.tabledetalle_lote_mp.codigoColumn] = global::System.Convert.DBNull;
             }
         }
         

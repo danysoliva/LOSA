@@ -288,8 +288,6 @@
             this.colConsumir.ColumnEdit = this.btnconsumir;
             this.colConsumir.MinWidth = 19;
             this.colConsumir.Name = "colConsumir";
-            this.colConsumir.Visible = true;
-            this.colConsumir.VisibleIndex = 9;
             // 
             // btnconsumir
             // 
@@ -333,6 +331,7 @@
             this.chkAutoSelect.TabIndex = 46;
             this.chkAutoSelect.Text = "Auto Selección";
             this.chkAutoSelect.UseVisualStyleBackColor = false;
+            this.chkAutoSelect.Visible = false;
             this.chkAutoSelect.CheckedChanged += new System.EventHandler(this.chkAutoSelect_CheckedChanged);
             // 
             // frmRequisicionesDetalle

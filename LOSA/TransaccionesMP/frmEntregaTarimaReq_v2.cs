@@ -84,7 +84,7 @@ namespace LOSA.TransaccionesMP
                 }
             }
         }
-        private DataTable CreateDataTarima(int idTarima, string pProveedor, string pNombreTarima, string pLote, string pPpresentacion)
+        private DataTable CreateDataTarima(int idTarima, string pProveedor, string pNombreTarima, string pLote, string pPpresentacion, string codigoSAP, string MP)
         {
             DataTable dt = new DataTable();
 
@@ -98,6 +98,9 @@ namespace LOSA.TransaccionesMP
                 dt.Rows.Add("PROVEEDOR", pProveedor);
                 dt.Rows.Add("LOTE", pLote);
                 dt.Rows.Add("PRESENTACION", pPpresentacion);
+
+                dt.Rows.Add("Codigo", codigoSAP);
+                dt.Rows.Add("Materia Prima", MP);
 
                 return dt;
             }
@@ -139,7 +142,7 @@ namespace LOSA.TransaccionesMP
                                 tarimaEncontrada = InfoTarima;
 
                             }
-                            gcTarima.DataSource = CreateDataTarima(dr.GetInt32(0), dr.GetString(2), dr.GetString(1), dr.GetString(5), dr.GetString(6));
+                            gcTarima.DataSource = CreateDataTarima(dr.GetInt32(0), dr.GetString(2), dr.GetString(1), dr.GetString(5), dr.GetString(6),dr.GetString(11),dr.GetString(12));
                             //gvTarima.InitNewRow += GridView1_InitNewRow;
                             gvTarima.Columns[0].AppearanceCell.Font = new Font("Segoe UI", 11, FontStyle.Bold);
                         }
@@ -219,7 +222,7 @@ namespace LOSA.TransaccionesMP
                                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                                 con.Open();
 
-                                SqlCommand cmd = new SqlCommand("[dbo].[sp_verifica_diponibilidad_tarima_entrega_v4]", con);
+                                SqlCommand cmd = new SqlCommand("[dbo].[sp_verifica_diponibilidad_tarima_entrega_v5]", con);
                                 cmd.CommandType = CommandType.StoredProcedure;
                                 cmd.Parameters.AddWithValue("@id", tarimaEncontrada.Id);
                                 cmd.Parameters.AddWithValue("@id_req", RequisicionActual.IdRequisicion);
@@ -261,7 +264,7 @@ namespace LOSA.TransaccionesMP
                                 con.Open();
 
                                 //SqlCommand cmd = new SqlCommand("sp_set_insert_salida_tarima_bodega_mp", con);
-                                SqlCommand cmd = new SqlCommand("[dbo].[sp_insert_tarima_requisa_entrega_v3]", con);
+                                SqlCommand cmd = new SqlCommand("[dbo].[sp_insert_tarima_requisa_entrega_v4]", con);
                                 cmd.CommandType = CommandType.StoredProcedure;
                                 cmd.Parameters.AddWithValue("@idtarima", tarimaEncontrada.Id);
                                 cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);

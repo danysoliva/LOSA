@@ -14,6 +14,7 @@ using LOSA.Clases;
 using LOSA.RecepcionMP;
 using DevExpress.XtraReports.UI;
 using System.Threading;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace LOSA.Produccion
 {
@@ -33,19 +34,92 @@ namespace LOSA.Produccion
         int id_usuario;
         int id_turno;
         int ud_tarimas;
-
+        int ControlSelected;
         int centinela_print_multi;
-        
-        
+        int PsiguienteSa = 0;
 
-        DataOperations dp = new DataOperations();
-        public frmGenerarTarimas(int Pid_ali)
+
+DataOperations dp = new DataOperations();
+        public frmGenerarTarimas(int Pid_ali, int NextPrint)
         {
             InitializeComponent();
-            id_alimentacion = Pid_ali;  
+            id_alimentacion = Pid_ali;
+            PsiguienteSa = NextPrint;
+            txtdesde.Text = PsiguienteSa.ToString();
             load_presentacion();
-            load_data();           
+            load_data();
+            load_turno();
+            txthasta.Text = ((PsiguienteSa - 1) + Convert.ToInt32(txt_unidades.Text)).ToString();
+            load_tarimas();
 
+        }
+
+        public void load_tarimas() 
+        {
+            string Query = @"sp_load_tarimas_ingreso_pt";
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            try
+            {
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(Query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_pt", id_alimentacion);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                dsProduccion.listaTmPrinted.Clear();
+                da.Fill(dsProduccion.listaTmPrinted);
+                cn.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        public void load_tarimas_todas()
+        {
+            string Query = @"sp_load_tarimas_ingreso_pt_todas";
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            try
+            {
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(Query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_pt", id_alimentacion);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                dsProduccion.listaTmPrinted.Clear();
+                da.Fill(dsProduccion.listaTmPrinted);
+                cn.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+
+        public void load_turno()
+        {
+            string query = @"sp_losa_load_turno";
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            try
+            {
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                dsProduccion.turno.Clear();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dsProduccion.turno);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
         }
 
         public void load_presentacion()
@@ -128,23 +202,35 @@ namespace LOSA.Produccion
             {
                 unidades++;
             }
+
             txt_unidades.Text = unidades.ToString(); 
             Calcular_peso();
         }
          public void Calcular_peso()
         {
-            double factor = 0;
-            foreach (dsProduccion.bagsRow row in dsProduccion.bags.Rows)
+            try
             {
                
-                if (row.equi == Convert.ToInt32(grdv_data.EditValue))
+                double factor = 0;
+                foreach (dsProduccion.bagsRow row in dsProduccion.bags.Rows)
                 {
-                    factor = row.net;
-                }             
-            }
 
-            peso = Convert.ToDecimal(factor * unidades);
-            txtkg.Text = peso.ToString();
+                    if (row.equi == Convert.ToInt32(grdv_data.EditValue))
+                    {
+                        factor = row.net;
+                        presentacion = row.equi;
+
+                    }
+                }
+
+                peso = Convert.ToDecimal(factor * unidades);
+                txtkg.Text = peso.ToString();
+            }
+            catch (Exception e)
+            {
+
+                
+            }
 
         }
         private void btn_uddown_Click(object sender, EventArgs e)
@@ -166,14 +252,36 @@ namespace LOSA.Produccion
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+            if (grdturno.EditValue == null)
+            {
+                CajaDialogo.Error("Debe de seleccionar el turno");
+                return;
+            }
+            if (txtdesde.Text == "")
+            {
+                CajaDialogo.Error("Debe especificar el saco inicial de la tarima.");
+                return;
+            }
+
+            if (grdv_data.EditValue == null)
+            {
+                CajaDialogo.Error("Debe de seleccionar la presentacion");
+                return;
+            }
+            if (txthasta.Text == "")
+            {
+                CajaDialogo.Error("Debe especificar el saco final de la tarima.");
+                return;
+            }
             if (MessageBox.Show("Desea imprimir solo una hoja de este producto?","Pregunta", MessageBoxButtons.OKCancel,MessageBoxIcon.Question) == DialogResult.OK)
             {
-                string query = @"sp_insert_tarima_pt_nuevo";
+                string query = @"sp_insert_tarima_pt_nuevo_v3";
                 try
                 {
                     SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                     cn.Open();
-
+                    int desde = Convert.ToInt32(txtdesde.Text);
+                    int hasta = Convert.ToInt32(txthasta.Text); 
 
                     SqlCommand cmm = new SqlCommand("sp_generar_codigo_from_tables_id", cn);
                     cmm.CommandType = CommandType.StoredProcedure;
@@ -184,7 +292,7 @@ namespace LOSA.Produccion
                     cmd.CommandType = CommandType.StoredProcedure;                               
                     cmd.Parameters.AddWithValue("@date_vencimiento", string.Format("{0:yyyy-MM-dd}", dt_fechaVencimiento.EditValue));
                     cmd.Parameters.AddWithValue("@lote", lote);
-                    cmd.Parameters.AddWithValue("@id_presentacion", presentacion);
+                    cmd.Parameters.AddWithValue("@id_presentacion", grdv_data.EditValue);
                     cmd.Parameters.AddWithValue("@id_pt", id_pt);
                     cmd.Parameters.AddWithValue("@date_produccion", string.Format("{0:yyyy-MM-dd}", dt_fechaFabricaion.EditValue));
                     cmd.Parameters.AddWithValue("@cantidad", unidades);
@@ -192,6 +300,9 @@ namespace LOSA.Produccion
                     cmd.Parameters.AddWithValue("@itemcode", Itemcode.Trim());
                     cmd.Parameters.AddWithValue("@id_alimentacion", id_alimentacion);   
                     cmd.Parameters.AddWithValue("@Pcodigo_barra", barcode);
+                    cmd.Parameters.AddWithValue("@id_turno", grdturno.EditValue);
+                    cmd.Parameters.AddWithValue("@desde", desde);
+                    cmd.Parameters.AddWithValue("@hasta", hasta);
 
                     int Id_tm = Convert.ToInt32(cmd.ExecuteScalar());
                     cn.Close();
@@ -200,6 +311,7 @@ namespace LOSA.Produccion
                     boleta.ShowPrintMarginsWarning = false;
                     ReportPrintTool printtool = new ReportPrintTool(boleta);
                     printtool.Print();
+                    this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
                 catch (Exception ex)
@@ -214,6 +326,26 @@ namespace LOSA.Produccion
         {
             if (MessageBox.Show("Desea imprimir 25 tarimas de este producto?", "Pregunta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
+                if (grdturno.EditValue == null)
+                {
+                    CajaDialogo.Error("Debe de seleccionar el turno");
+                    return;
+                }
+                if (grdv_data.EditValue == null)
+                {
+                    CajaDialogo.Error("Debe de seleccionar la presentacion");
+                    return;
+                }
+                if (txtdesde.Text == "")
+                {
+                    CajaDialogo.Error("Debe especificar el saco inicial de la tarima.");
+                    return;
+                }
+                if (txthasta.Text == "")
+                {
+                    CajaDialogo.Error("Debe especificar el saco final de la tarima.");
+                    return;
+                }
                 //int contador = 25;
                 //for (int i = 0; i < contador; i++)
                 //{
@@ -268,15 +400,19 @@ namespace LOSA.Produccion
 
         private void timerPrintMulti_Tick(object sender, EventArgs e)
         {
+
+         
             if (centinela_print_multi > 0)
             {
-                string query = @"sp_insert_tarima_pt_nuevo";
+                string query = @"sp_insert_tarima_pt_nuevo_v3";
                 try
                 {
                     SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                     cn.Open();
 
-
+                    int desde = Convert.ToInt32(txtdesde.Text);
+                    int hasta = Convert.ToInt32(txthasta.Text);
+                    int aux = 0;
                     SqlCommand cmm = new SqlCommand("sp_generar_codigo_from_tables_id", cn);
                     cmm.CommandType = CommandType.StoredProcedure;
                     cmm.Parameters.AddWithValue("@id", 1);
@@ -286,7 +422,7 @@ namespace LOSA.Produccion
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@date_vencimiento", string.Format("{0:yyyy-MM-dd}", dt_fechaVencimiento.EditValue));
                     cmd.Parameters.AddWithValue("@lote", lote);
-                    cmd.Parameters.AddWithValue("@id_presentacion", presentacion);
+                    cmd.Parameters.AddWithValue("@id_presentacion", grdv_data.EditValue);
                     cmd.Parameters.AddWithValue("@id_pt", id_pt);
                     cmd.Parameters.AddWithValue("@date_produccion", string.Format("{0:yyyy-MM-dd}", dt_fechaFabricaion.EditValue));
                     cmd.Parameters.AddWithValue("@cantidad", unidades);
@@ -294,8 +430,15 @@ namespace LOSA.Produccion
                     cmd.Parameters.AddWithValue("@itemcode", Itemcode.Trim());
                     cmd.Parameters.AddWithValue("@id_alimentacion", id_alimentacion);
                     cmd.Parameters.AddWithValue("@Pcodigo_barra", barcode);
+                    cmd.Parameters.AddWithValue("@id_turno", grdturno.EditValue);
+                    cmd.Parameters.AddWithValue("@desde", desde);
+                    cmd.Parameters.AddWithValue("@hasta", hasta);
 
                     int Id_tm = Convert.ToInt32(cmd.ExecuteScalar());
+                    aux = hasta;
+                    desde = hasta+1;
+                    hasta = aux + unidades;
+
                     cn.Close();
                     centinela_print_multi--;
 
@@ -318,8 +461,256 @@ namespace LOSA.Produccion
                 timerPrintMulti.Stop();
                 timerPrintMulti.Enabled = false;
                 CajaDialogo.Information("Impresion completa.");
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
+        }
+
+        private void textEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Desea imprimir 3 tarimas de este producto?", "Pregunta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                if (grdturno.EditValue == null)
+                {
+                    CajaDialogo.Error("Debe de seleccionar el turno");
+                    return;
+                }
+
+
+                if (grdv_data.EditValue == null)
+                {
+                    CajaDialogo.Error("Debe de seleccionar la presentacion");
+                    return;
+                }
+                if (txtdesde.Text == "")
+                {
+                    CajaDialogo.Error("Debe especificar el saco inicial de la tarima.");
+                    return;
+                }
+                if (txthasta.Text == "")
+                {
+                    CajaDialogo.Error("Debe especificar el saco final de la tarima.");
+                    return;
+                }
+
+                timerPrintMulti.Enabled = true;
+                centinela_print_multi = 3;
+                timerPrintMulti.Start();
+            }
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Desea imprimir 5 tarimas de este producto?", "Pregunta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                if (grdturno.EditValue == null)
+                {
+                    CajaDialogo.Error("Debe de seleccionar el turno");
+                    return;
+                }
+
+                if (grdv_data.EditValue == null)
+                {
+                    CajaDialogo.Error("Debe de seleccionar la presentacion");
+                    return;
+                }
+
+                if (txtdesde.Text == "")
+                {
+                    CajaDialogo.Error("Debe especificar el saco inicial de la tarima.");
+                    return;
+                }
+                if (txthasta.Text == "")
+                {
+                    CajaDialogo.Error("Debe especificar el saco final de la tarima.");
+                    return;
+                }
+
+                timerPrintMulti.Enabled = true;
+                centinela_print_multi = 5;
+                timerPrintMulti.Start();
+            }
+        }
+
+        private void btn1_Click(object sender, EventArgs e)
+        {
+            MoverNumero(ControlSelected, "1");
+
+        }
+
+        private void btn2_Click(object sender, EventArgs e)
+        {
+            MoverNumero(ControlSelected, "2");
+        }
+
+        private void btn3_Click(object sender, EventArgs e)
+        {
+            MoverNumero(ControlSelected, "3");
+        }
+
+        private void btn4_Click(object sender, EventArgs e)
+        {
+            MoverNumero(ControlSelected, "4");
+        }
+
+        private void simpleButton5_Click(object sender, EventArgs e)
+        {
+            MoverNumero(ControlSelected, "5");
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+            MoverNumero(ControlSelected, "6");
+        }
+
+        private void simpleButton9_Click(object sender, EventArgs e)
+        {
+            MoverNumero(ControlSelected, "7");
+        }
+
+        private void simpleButton8_Click(object sender, EventArgs e)
+        {
+            MoverNumero(ControlSelected, "8");
+        }
+
+        private void simpleButton7_Click(object sender, EventArgs e)
+        {
+            MoverNumero(ControlSelected, "9");
+        }
+
+        private void simpleButton12_Click(object sender, EventArgs e)
+        {
+            MoverNumero(ControlSelected, "--");
+        }
+
+       
+        private void simpleButton10_Click(object sender, EventArgs e)
+        {
+            MoverNumero(ControlSelected, "0");
+        }
+
+        public void MoverNumero(int Id_Control, string Numero)
+        {
+            try
+            {
+                switch (Id_Control)
+                {
+                    case 1:
+                        if (Numero == "--")
+                        {
+                            txtdesde.Text = txtdesde.Text.Remove(txtdesde.Text.Length - 1);
+
+                            txtdesde.Select(txtdesde.Text.Length, 0);
+                            break;
+                        }
+                        txtdesde.Text = txtdesde.Text + Numero;
+                        txtdesde.Focus();
+                        //txtdesde.Select(txtdesde.Text.Length - 1, txtdesde.Text.Length - 1);
+                        txtdesde.Select(txtdesde.Text.Length, 0);
+                        break;
+                    case 2:
+                        if (Numero == "--")
+                        {
+                            txthasta.Text = txthasta.Text.Remove(txthasta.Text.Length - 1);
+
+                            txthasta.Select(txthasta.Text.Length, 0);
+
+                            break;
+                        }
+                        txthasta.Text = txthasta.Text + Numero;
+                        txthasta.Focus();
+                        //txtdesde.Select(txtdesde.Text.Length - 1, txtdesde.Text.Length - 1);
+                        txthasta.Select(txthasta.Text.Length, 0);
+                        break;
+                    case 3:
+                        if (Numero == "--")
+                        {
+                            txt_unidades.Text = txt_unidades.Text.Remove(txt_unidades.Text.Length - 1);
+
+                            txt_unidades.Select(txt_unidades.Text.Length, 0);
+                            break;
+                        }
+
+                        txt_unidades.Text = txt_unidades.Text + Numero;
+                        txt_unidades.Focus();
+                        //txtdesde.Select(txtdesde.Text.Length - 1, txtdesde.Text.Length - 1);
+                        txt_unidades.Select(txt_unidades.Text.Length, 0);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void txt_unidades_Click(object sender, EventArgs e)
+        {
+            ControlSelected = 3;
+        }
+
+        private void txtdesde_Click(object sender, EventArgs e)
+        {
+            ControlSelected = 1;
+        }
+
+        private void txthasta_Click(object sender, EventArgs e)
+        {
+            ControlSelected = 2;
+        }
+
+        private void toggleSwitch1_Toggled(object sender, EventArgs e)
+        {
+            if (toggleSwitch1.IsOn)
+            {     // tarimas ya activadas
+
+                load_tarimas();
+            }
+            else
+            {
+                load_tarimas_todas();
+            }
+        }
+
+        private void txt_unidades_EditValueChanged(object sender, EventArgs e)
+        {
+            if (txt_unidades.Text != "" )
+            {
+                txthasta.Text = ( Convert.ToInt32(txtdesde.Text) + Convert.ToInt32(txt_unidades.Text)).ToString();
+                unidades = Convert.ToInt32(txt_unidades.Text);
+                Calcular_peso();
+            }
+        }
+
+        private void bbtnreprint_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var gridView = (GridView)grd_data.FocusedView;
+                var row = (dsProduccion.listaTmPrintedRow)gridView.GetFocusedDataRow();
+                rptReporteTarimaPT boleta = new rptReporteTarimaPT(row.id);
+                boleta.ShowPrintMarginsWarning = false;
+                ReportPrintTool printtool = new ReportPrintTool(boleta);
+                printtool.Print();
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void txtdesde_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

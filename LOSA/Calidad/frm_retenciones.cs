@@ -15,7 +15,7 @@ using DevExpress.XtraGrid.Views.Grid;
 
 namespace LOSA.Calidad
 {
-    public partial class frmcausasRetencion : DevExpress.XtraEditors.XtraForm
+    public partial class frm_retenciones : DevExpress.XtraEditors.XtraForm
     {
         DataOperations dp = new DataOperations();
         UserLogin UsuarioLogeado;
@@ -23,35 +23,28 @@ namespace LOSA.Calidad
         int id_mp;
         string ingreso;
         int Tipo_tarima;
-        public enum Tipo_Reten
-        {
-                 Lote = 1,
-                 Ingreso = 2
-        }
-        Tipo_Reten TipoOp;
-
-        public frmcausasRetencion(UserLogin Puser
-                                  ,string codigoP
-                                  , int Id_mp
+        int id_turno;
+        public frm_retenciones(UserLogin Puser
+                                  , string codigoP
+                                  , int Pid_pt
                                   , string Ingreso
-                                  , string lote
+                                  , string Plote
                                   , string producto
-                                  , Tipo_Reten POp
-                                 , int tipos_tm)
+                                 , int tipos_tm
+                                ,int Pid_turno )
         {
             InitializeComponent();
+            id_mp = Pid_pt;
+            id_turno = Pid_turno;
+            Lote = Plote;
+
             UsuarioLogeado = Puser;
             txtitemcode.Text = codigoP;
             txtnombre.Text = producto;
-            txtlote.Text = lote;
-            txtingreso.Text = Ingreso.ToString();
-            TipoOp = POp;
-            Lote = lote;
-            id_mp = Id_mp;
-            ingreso = Ingreso;
-            Tipo_tarima = tipos_tm;
-        }
+            txtlote.Text = Lote;
+            txtingreso.Text = "";
 
+        }
 
         private void btnAtras_Click(object sender, EventArgs e)
         {
@@ -61,7 +54,7 @@ namespace LOSA.Calidad
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            frmretencionadd frm = new frmretencionadd(Tipo_tarima);
+            frmretencionadd frm = new frmretencionadd(2);
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 int id = frm.id;
@@ -83,30 +76,21 @@ namespace LOSA.Calidad
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            string Query = @"sp_load_idtm_from_lote";
+            string Query = @"sp_load_idtm_from_lote_v2";
             try
             {
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 cn.Open();
                 int bit = 0;
-                if (TipoOp == Tipo_Reten.Lote)
-                {
-                    bit = 1;
-                }
-                else
-                {
-                    bit = 0;
-                }
+               
                 SqlCommand cmd = new SqlCommand(Query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@lote", Lote);
-                cmd.Parameters.AddWithValue("@bitloi", bit);
                 cmd.Parameters.AddWithValue("@id_mp", id_mp);
-                cmd.Parameters.AddWithValue("@ingreso" , ingreso);
-                cmd.Parameters.AddWithValue("@tipo_tm", Tipo_tarima);
+                cmd.Parameters.AddWithValue("@id_turno", id_turno);
                 dsCalidad.Tarimas.Clear();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dsCalidad.Tarimas);     
+                da.Fill(dsCalidad.Tarimas);
                 foreach (dsCalidad.TarimasRow row in dsCalidad.Tarimas.Rows)
                 {
                     cmd = new SqlCommand("sp_set_update_tarima_estado_calidad", cn);

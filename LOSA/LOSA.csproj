@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>132</ApplicationRevision>
+    <ApplicationRevision>144</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -181,6 +181,12 @@
     <Compile Include="Calidad\frmEstadosTarimaCalidad.Designer.cs">
       <DependentUpon>frmEstadosTarimaCalidad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\frmGestionLotesPT_Calidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmGestionLotesPT_Calidad.Designer.cs">
+      <DependentUpon>frmGestionLotesPT_Calidad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\frmInfoAdicional.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +222,12 @@
     </Compile>
     <Compile Include="Calidad\frm_asiganacion_causas.Designer.cs">
       <DependentUpon>frm_asiganacion_causas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\frm_retenciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frm_retenciones.Designer.cs">
+      <DependentUpon>frm_retenciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\BagsPT.cs" />
     <Compile Include="Clases\Boleta.cs" />
@@ -1141,6 +1153,18 @@
     <Compile Include="TransaccionesPT\frmPrintTM.Designer.cs">
       <DependentUpon>frmPrintTM.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesPT\frm_ajustes_inventario_PT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesPT\frm_ajustes_inventario_PT.Designer.cs">
+      <DependentUpon>frm_ajustes_inventario_PT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesPT\frm_ajustes_inventario_PT_def.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesPT\frm_ajustes_inventario_PT_def.Designer.cs">
+      <DependentUpon>frm_ajustes_inventario_PT_def.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesPT\frm_editar_tm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1158,6 +1182,12 @@
     </Compile>
     <Compile Include="TransaccionesPT\frm_planificacion_despachos.Designer.cs">
       <DependentUpon>frm_planificacion_despachos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesPT\frm_tarimas_to_ajustar_PT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesPT\frm_tarimas_to_ajustar_PT.Designer.cs">
+      <DependentUpon>frm_tarimas_to_ajustar_PT.cs</DependentUpon>
     </Compile>
     <Compile Include="TransaccionesPT\frm_verdetalleTM.cs">
       <SubType>Form</SubType>
@@ -1198,6 +1228,9 @@
     <EmbeddedResource Include="Calidad\frmEstadosTarimaCalidad.resx">
       <DependentUpon>frmEstadosTarimaCalidad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmGestionLotesPT_Calidad.resx">
+      <DependentUpon>frmGestionLotesPT_Calidad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmInfoAdicional.resx">
       <DependentUpon>frmInfoAdicional.cs</DependentUpon>
     </EmbeddedResource>
@@ -1215,6 +1248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frm_asiganacion_causas.resx">
       <DependentUpon>frm_asiganacion_causas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frm_retenciones.resx">
+      <DependentUpon>frm_retenciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frmdespachos.resx">
       <DependentUpon>frmdespachos.cs</DependentUpon>
@@ -1635,6 +1671,12 @@
     <EmbeddedResource Include="TransaccionesPT\frmPrintTM.resx">
       <DependentUpon>frmPrintTM.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesPT\frm_ajustes_inventario_PT.resx">
+      <DependentUpon>frm_ajustes_inventario_PT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesPT\frm_ajustes_inventario_PT_def.resx">
+      <DependentUpon>frm_ajustes_inventario_PT_def.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesPT\frm_editar_tm.resx">
       <DependentUpon>frm_editar_tm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1643,6 +1685,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesPT\frm_planificacion_despachos.resx">
       <DependentUpon>frm_planificacion_despachos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesPT\frm_tarimas_to_ajustar_PT.resx">
+      <DependentUpon>frm_tarimas_to_ajustar_PT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesPT\frm_verdetalleTM.resx">
       <DependentUpon>frm_verdetalleTM.cs</DependentUpon>
@@ -1836,6 +1881,7 @@
     <None Include="Resources\devoluciones2.png" />
     <None Include="Resources\delete-1-icon72px.png" />
     <None Include="Resources\delete-1-icon128px.png" />
+    <None Include="Resources\Done-icon.png" />
     <Content Include="Resources\edit.png" />
     <None Include="Resources\hapag-4-icon.png" />
     <None Include="Resources\Forklift-icon.png" />

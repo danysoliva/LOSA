@@ -74,6 +74,8 @@ namespace LOSA
                 case GrupoUser.GrupoUsuario.ProduccionV2:
                     tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
                     tabOpciones.TabPages[i].PageVisible = true;
+                    tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
+                    tabOpciones.TabPages[i-1].PageVisible = true;
                     break;
                 default:
                     tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
@@ -500,6 +502,12 @@ namespace LOSA
         private void btnRequisasManuales_Click(object sender, EventArgs e)
         {
             frmRequisasManuales frm = new frmRequisasManuales(UsuarioLogeado);
+            frm.Show();
+        }
+
+        private void simpleButton10_Click(object sender, EventArgs e)
+        {
+            frm_ajustes_inventario_PT frm = new frm_ajustes_inventario_PT(UsuarioLogeado);
             frm.Show();
         }
     }

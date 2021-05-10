@@ -69,6 +69,7 @@
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.dxErrorProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtMP_Name.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigoMP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadPendiente.Properties)).BeginInit();
@@ -226,7 +227,8 @@
             this.colunidad,
             this.colpeso_total,
             this.colseleccionado,
-            this.colcants});
+            this.colcants,
+            this.colcodigo});
             this.gvTarimas.GridControl = this.grRequisicoinesMP;
             this.gvTarimas.Name = "gvTarimas";
             this.gvTarimas.OptionsCustomization.AllowFilter = false;
@@ -260,7 +262,7 @@
             this.colNombre.Name = "colNombre";
             this.colNombre.OptionsColumn.AllowEdit = false;
             this.colNombre.Visible = true;
-            this.colNombre.VisibleIndex = 0;
+            this.colNombre.VisibleIndex = 1;
             // 
             // colingreso
             // 
@@ -269,7 +271,7 @@
             this.colingreso.Name = "colingreso";
             this.colingreso.OptionsColumn.AllowEdit = false;
             this.colingreso.Visible = true;
-            this.colingreso.VisibleIndex = 1;
+            this.colingreso.VisibleIndex = 2;
             // 
             // colvence
             // 
@@ -278,7 +280,7 @@
             this.colvence.Name = "colvence";
             this.colvence.OptionsColumn.AllowEdit = false;
             this.colvence.Visible = true;
-            this.colvence.VisibleIndex = 2;
+            this.colvence.VisibleIndex = 3;
             // 
             // collote_mp
             // 
@@ -287,7 +289,7 @@
             this.collote_mp.Name = "collote_mp";
             this.collote_mp.OptionsColumn.AllowEdit = false;
             this.collote_mp.Visible = true;
-            this.collote_mp.VisibleIndex = 3;
+            this.collote_mp.VisibleIndex = 4;
             // 
             // colpresentacion
             // 
@@ -296,7 +298,7 @@
             this.colpresentacion.Name = "colpresentacion";
             this.colpresentacion.OptionsColumn.AllowEdit = false;
             this.colpresentacion.Visible = true;
-            this.colpresentacion.VisibleIndex = 4;
+            this.colpresentacion.VisibleIndex = 5;
             // 
             // colcantidad
             // 
@@ -305,7 +307,7 @@
             this.colcantidad.Name = "colcantidad";
             this.colcantidad.OptionsColumn.AllowEdit = false;
             this.colcantidad.Visible = true;
-            this.colcantidad.VisibleIndex = 5;
+            this.colcantidad.VisibleIndex = 6;
             // 
             // colunidad
             // 
@@ -321,7 +323,7 @@
             this.colpeso_total.Name = "colpeso_total";
             this.colpeso_total.OptionsColumn.AllowEdit = false;
             this.colpeso_total.Visible = true;
-            this.colpeso_total.VisibleIndex = 6;
+            this.colpeso_total.VisibleIndex = 7;
             // 
             // colseleccionado
             // 
@@ -458,6 +460,15 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // colcodigo
+            // 
+            this.colcodigo.Caption = "Codigo";
+            this.colcodigo.FieldName = "codigo";
+            this.colcodigo.Name = "colcodigo";
+            this.colcodigo.OptionsColumn.AllowEdit = false;
+            this.colcodigo.Visible = true;
+            this.colcodigo.VisibleIndex = 0;
+            // 
             // frmSeleccionLote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -535,5 +546,6 @@
         public System.Windows.Forms.CheckBox chkAutoSelect;
         public DevExpress.XtraEditors.SimpleButton cmdGuardar;
         private DevExpress.XtraGrid.Columns.GridColumn colnumero_transaccion;
+        private DevExpress.XtraGrid.Columns.GridColumn colcodigo;
     }
 }

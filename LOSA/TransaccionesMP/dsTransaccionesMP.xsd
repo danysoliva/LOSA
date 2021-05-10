@@ -53,6 +53,7 @@
               <xs:element name="estado" msprop:Generator_ColumnVarNameInTable="columnestado" msprop:Generator_ColumnPropNameInRow="estado" msprop:Generator_ColumnPropNameInTable="estadoColumn" msprop:Generator_UserColumnName="estado" type="xs:string" minOccurs="0" />
               <xs:element name="DocEntry" msprop:Generator_ColumnVarNameInTable="columnDocEntry" msprop:Generator_ColumnPropNameInRow="DocEntry" msprop:Generator_ColumnPropNameInTable="DocEntryColumn" msprop:Generator_UserColumnName="DocEntry" type="xs:int" minOccurs="0" />
               <xs:element name="comentario" msprop:Generator_ColumnVarNameInTable="columncomentario" msprop:Generator_ColumnPropNameInRow="comentario" msprop:Generator_ColumnPropNameInTable="comentarioColumn" msprop:Generator_UserColumnName="comentario" type="xs:string" minOccurs="0" />
+              <xs:element name="finalizado" msprop:Generator_ColumnVarNameInTable="columnfinalizado" msprop:Generator_ColumnPropNameInRow="finalizado" msprop:Generator_ColumnPropNameInTable="finalizadoColumn" msprop:Generator_UserColumnName="finalizado" type="xs:boolean" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -92,6 +93,7 @@
               <xs:element name="seleccionado" msprop:Generator_ColumnVarNameInTable="columnseleccionado" msprop:Generator_ColumnPropNameInRow="seleccionado" msprop:Generator_ColumnPropNameInTable="seleccionadoColumn" msprop:Generator_UserColumnName="seleccionado" type="xs:boolean" minOccurs="0" />
               <xs:element name="cants" msprop:Generator_ColumnVarNameInTable="columncants" msprop:Generator_ColumnPropNameInRow="cants" msprop:Generator_ColumnPropNameInTable="cantsColumn" msprop:Generator_UserColumnName="cants" type="xs:decimal" minOccurs="0" />
               <xs:element name="numero_transaccion" msprop:Generator_ColumnVarNameInTable="columnnumero_transaccion" msprop:Generator_ColumnPropNameInRow="numero_transaccion" msprop:Generator_ColumnPropNameInTable="numero_transaccionColumn" msprop:Generator_UserColumnName="numero_transaccion" type="xs:int" minOccurs="0" />
+              <xs:element name="codigo" msprop:Generator_ColumnVarNameInTable="columncodigo" msprop:Generator_ColumnPropNameInRow="codigo" msprop:Generator_ColumnPropNameInTable="codigoColumn" msprop:Generator_UserColumnName="codigo" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

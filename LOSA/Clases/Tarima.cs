@@ -44,6 +44,7 @@ namespace LOSA.Clases
         int id_alimentacion;
         private int id_turno;
         DateTime fecha_produccion_pt;
+        string Itemcode; 
         public Tarima()
         {
 
@@ -82,6 +83,7 @@ namespace LOSA.Clases
         public int Id_alimentacion { get => id_alimentacion; set => id_alimentacion = value; }
         public DateTime Fecha_produccion_pt { get => fecha_produccion_pt; set => fecha_produccion_pt = value; }
         public int Id_turno { get => id_turno; set => id_turno = value; }
+        public string Itemcode1 { get => Itemcode; set => Itemcode = value; }
 
         public bool RecuperarRegistro(int pIdTarima, string pCodigoBarra)
         {
@@ -126,7 +128,10 @@ namespace LOSA.Clases
                     Id_alimentacion = dr.GetInt32(23);
                     Fecha_produccion_pt = dr.GetDateTime(24);
                     Id_turno = dr.GetInt32(25);
+                    IdPresentacion = dr.GetInt32(26);
+                    Itemcode1 = dr.GetString(27);
                     Recuperado = true;
+
                 }
                 dr.Close();
                 con.Close();

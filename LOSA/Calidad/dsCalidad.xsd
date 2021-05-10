@@ -28,6 +28,9 @@
               <xs:element name="ingreso" msprop:Generator_ColumnVarNameInTable="columningreso" msprop:Generator_ColumnPropNameInRow="ingreso" msprop:Generator_ColumnPropNameInTable="ingresoColumn" msprop:Generator_UserColumnName="ingreso" type="xs:string" minOccurs="0" />
               <xs:element name="id_mp" msprop:Generator_ColumnVarNameInTable="columnid_mp" msprop:Generator_ColumnPropNameInRow="id_mp" msprop:Generator_ColumnPropNameInTable="id_mpColumn" msprop:Generator_UserColumnName="id_mp" type="xs:int" minOccurs="0" />
               <xs:element name="id_tipotm" msprop:Generator_ColumnVarNameInTable="columnid_tipotm" msprop:Generator_ColumnPropNameInRow="id_tipotm" msprop:Generator_ColumnPropNameInTable="id_tipotmColumn" msprop:Generator_UserColumnName="id_tipotm" type="xs:int" minOccurs="0" />
+              <xs:element name="id_turno" msprop:Generator_ColumnVarNameInTable="columnid_turno" msprop:Generator_ColumnPropNameInRow="id_turno" msprop:Generator_ColumnPropNameInTable="id_turnoColumn" msprop:Generator_UserColumnName="id_turno" type="xs:int" minOccurs="0" />
+              <xs:element name="Turno" msprop:Generator_ColumnVarNameInTable="columnTurno" msprop:Generator_ColumnPropNameInRow="Turno" msprop:Generator_ColumnPropNameInTable="TurnoColumn" msprop:Generator_UserColumnName="Turno" type="xs:string" minOccurs="0" />
+              <xs:element name="codigo_barra" msprop:Generator_ColumnVarNameInTable="columncodigo_barra" msprop:Generator_ColumnPropNameInRow="codigo_barra" msprop:Generator_ColumnPropNameInTable="codigo_barraColumn" msprop:Generator_UserColumnName="codigo_barra" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -47,6 +50,9 @@
               <xs:element name="ingreso" msprop:Generator_ColumnVarNameInTable="columningreso" msprop:Generator_ColumnPropNameInRow="ingreso" msprop:Generator_ColumnPropNameInTable="ingresoColumn" msprop:Generator_UserColumnName="ingreso" type="xs:string" minOccurs="0" />
               <xs:element name="id_mp" msprop:Generator_ColumnVarNameInTable="columnid_mp" msprop:Generator_ColumnPropNameInRow="id_mp" msprop:Generator_ColumnPropNameInTable="id_mpColumn" msprop:Generator_UserColumnName="id_mp" type="xs:int" minOccurs="0" />
               <xs:element name="id_tipotm" msprop:Generator_ColumnVarNameInTable="columnid_tipotm" msprop:Generator_ColumnPropNameInRow="id_tipotm" msprop:Generator_ColumnPropNameInTable="id_tipotmColumn" msprop:Generator_UserColumnName="id_tipotm" type="xs:int" minOccurs="0" />
+              <xs:element name="id_turno" msprop:Generator_ColumnVarNameInTable="columnid_turno" msprop:Generator_ColumnPropNameInRow="id_turno" msprop:Generator_ColumnPropNameInTable="id_turnoColumn" msprop:Generator_UserColumnName="id_turno" type="xs:int" minOccurs="0" />
+              <xs:element name="Turno" msprop:Generator_ColumnVarNameInTable="columnTurno" msprop:Generator_ColumnPropNameInRow="Turno" msprop:Generator_ColumnPropNameInTable="TurnoColumn" msprop:Generator_UserColumnName="Turno" type="xs:string" minOccurs="0" />
+              <xs:element name="codigo_barra" msprop:Generator_ColumnVarNameInTable="columncodigo_barra" msprop:Generator_ColumnPropNameInRow="codigo_barra" msprop:Generator_ColumnPropNameInTable="codigo_barraColumn" msprop:Generator_UserColumnName="codigo_barra" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -66,6 +72,9 @@
               <xs:element name="ingreso" msprop:Generator_ColumnVarNameInTable="columningreso" msprop:Generator_ColumnPropNameInRow="ingreso" msprop:Generator_ColumnPropNameInTable="ingresoColumn" msprop:Generator_UserColumnName="ingreso" type="xs:string" minOccurs="0" />
               <xs:element name="id_mp" msprop:Generator_ColumnVarNameInTable="columnid_mp" msprop:Generator_ColumnPropNameInRow="id_mp" msprop:Generator_ColumnPropNameInTable="id_mpColumn" msprop:Generator_UserColumnName="id_mp" type="xs:int" minOccurs="0" />
               <xs:element name="id_tipotm" msprop:Generator_ColumnVarNameInTable="columnid_tipotm" msprop:Generator_ColumnPropNameInRow="id_tipotm" msprop:Generator_ColumnPropNameInTable="id_tipotmColumn" msprop:Generator_UserColumnName="id_tipotm" type="xs:int" minOccurs="0" />
+              <xs:element name="id_turno" msprop:Generator_ColumnVarNameInTable="columnid_turno" msprop:Generator_ColumnPropNameInRow="id_turno" msprop:Generator_ColumnPropNameInTable="id_turnoColumn" msprop:Generator_UserColumnName="id_turno" type="xs:int" minOccurs="0" />
+              <xs:element name="Turno" msprop:Generator_ColumnVarNameInTable="columnTurno" msprop:Generator_ColumnPropNameInRow="Turno" msprop:Generator_ColumnPropNameInTable="TurnoColumn" msprop:Generator_UserColumnName="Turno" type="xs:string" minOccurs="0" />
+              <xs:element name="codigo_barra" msprop:Generator_ColumnVarNameInTable="columncodigo_barra" msprop:Generator_ColumnPropNameInRow="codigo_barra" msprop:Generator_ColumnPropNameInTable="codigo_barraColumn" msprop:Generator_UserColumnName="codigo_barra" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

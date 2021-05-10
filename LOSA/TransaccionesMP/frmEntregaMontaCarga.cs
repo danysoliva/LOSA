@@ -50,7 +50,7 @@ namespace LOSA.TransaccionesMP
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            frmviewrequisas frm = new frmviewrequisas();
+            frmviewrequisas frm = new frmviewrequisas(UsuarioLogeado);
             frm.Show();
         }
 

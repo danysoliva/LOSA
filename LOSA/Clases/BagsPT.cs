@@ -49,6 +49,34 @@ namespace LOSA.Clases
             }
             return recuperado;
         }
+        public bool RecuperarRegistro_v2(int pid)
+        {
+            recuperado = false;
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_load_pt_bags_v3", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", pid);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    Descripcion = dr.GetString(0);
+                    net = dr.GetDecimal(1);
+                    recuperado = true;
+                }
+                dr.Close();
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+            return recuperado;
+        }
 
 
 

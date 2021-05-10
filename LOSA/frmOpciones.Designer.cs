@@ -37,6 +37,7 @@
             this.cmdPT = new DevExpress.XtraEditors.SimpleButton();
             this.cmdMP = new DevExpress.XtraEditors.SimpleButton();
             this.TabLogistica = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton10 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
             this.btn_salidapt = new DevExpress.XtraEditors.SimpleButton();
             this.btnajuste = new DevExpress.XtraEditors.SimpleButton();
@@ -56,6 +57,7 @@
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdRecepcionMPLogistica = new DevExpress.XtraEditors.SimpleButton();
             this.TabCalidad = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
@@ -209,6 +211,7 @@
             // 
             // TabLogistica
             // 
+            this.TabLogistica.Controls.Add(this.simpleButton10);
             this.TabLogistica.Controls.Add(this.simpleButton8);
             this.TabLogistica.Controls.Add(this.btn_salidapt);
             this.TabLogistica.Controls.Add(this.btnajuste);
@@ -232,6 +235,19 @@
             this.TabLogistica.PageVisible = false;
             this.TabLogistica.Size = new System.Drawing.Size(629, 422);
             this.TabLogistica.Text = "Logistica";
+            // 
+            // simpleButton10
+            // 
+            this.simpleButton10.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton10.Appearance.Options.UseFont = true;
+            this.simpleButton10.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton10.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton10.ImageOptions.Image")));
+            this.simpleButton10.Location = new System.Drawing.Point(420, 159);
+            this.simpleButton10.Name = "simpleButton10";
+            this.simpleButton10.Size = new System.Drawing.Size(199, 40);
+            this.simpleButton10.TabIndex = 34;
+            this.simpleButton10.Text = "Ajuste de Inventario PT";
+            this.simpleButton10.Click += new System.EventHandler(this.simpleButton10_Click);
             // 
             // simpleButton8
             // 
@@ -477,6 +493,7 @@
             // 
             // TabCalidad
             // 
+            this.TabCalidad.Controls.Add(this.simpleButton9);
             this.TabCalidad.Controls.Add(this.simpleButton6);
             this.TabCalidad.Controls.Add(this.simpleButton5);
             this.TabCalidad.Controls.Add(this.simpleButton4);
@@ -487,6 +504,19 @@
             this.TabCalidad.PageVisible = false;
             this.TabCalidad.Size = new System.Drawing.Size(629, 422);
             this.TabCalidad.Text = "Calidad";
+            // 
+            // simpleButton9
+            // 
+            this.simpleButton9.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton9.Appearance.Options.UseFont = true;
+            this.simpleButton9.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton9.ImageOptions.Image = global::LOSA.Properties.Resources.edit_table_1_;
+            this.simpleButton9.Location = new System.Drawing.Point(224, 100);
+            this.simpleButton9.Name = "simpleButton9";
+            this.simpleButton9.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton9.TabIndex = 16;
+            this.simpleButton9.Text = "Lotes de PT";
+            this.simpleButton9.Visible = false;
             // 
             // simpleButton6
             // 
@@ -708,6 +738,7 @@
             this.txtProduccion.Controls.Add(this.btnRequisasManuales);
             this.txtProduccion.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("txtProduccion.ImageOptions.Image")));
             this.txtProduccion.Name = "txtProduccion";
+            this.txtProduccion.PageVisible = false;
             this.txtProduccion.Size = new System.Drawing.Size(629, 422);
             this.txtProduccion.Text = "Produccion";
             // 
@@ -813,5 +844,7 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton8;
         private DevExpress.XtraTab.XtraTabPage txtProduccion;
         private DevExpress.XtraEditors.SimpleButton btnRequisasManuales;
+        private DevExpress.XtraEditors.SimpleButton simpleButton9;
+        private DevExpress.XtraEditors.SimpleButton simpleButton10;
     }
 }
