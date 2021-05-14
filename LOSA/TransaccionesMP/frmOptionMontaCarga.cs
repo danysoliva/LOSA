@@ -1,4 +1,5 @@
-﻿using LOSA.Clases;
+﻿using LOSA.Calidad;
+using LOSA.Clases;
 using LOSA.RecepcionMP;
 using LOSA.TransaccionesPT;
 using System;
@@ -105,6 +106,18 @@ namespace LOSA.TransaccionesMP
         private void cmdTarimasPT_Click(object sender, EventArgs e)
         {
             frmactivacionPT frm = new frmactivacionPT(UsuarioLogeado);
+            frm.Show();
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+            frm_saco_dañado frm = new frm_saco_dañado();
+            frm.Show();
+        }
+
+        private void simpleButton5_Click(object sender, EventArgs e)
+        {
+            frm_reporte_produccion frm = new frm_reporte_produccion();
             frm.Show();
         }
     }

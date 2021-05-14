@@ -86,5 +86,26 @@ namespace LOSA.TransaccionesPT
                 load_data();
             }
         }
+
+        private void btnEjecutar_Click(object sender, EventArgs e)
+        {
+            var gridView = (GridView)grd_data.FocusedView;
+            var row = (dsPT.AjustesInventarioRow)gridView.GetFocusedDataRow();
+            if (row.realizado)
+            {
+                CajaDialogo.Error("Ya se realizo este ajuste de inventario. No se puede volver a correr.");
+                return;
+            }
+            frmdetalle_de_salida frm = new frmdetalle_de_salida(row.id, UsuarioLogeado);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                load_data();
+            }
+
+
+
+
+
+        }
     }
 }

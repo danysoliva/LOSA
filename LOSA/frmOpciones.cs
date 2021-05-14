@@ -510,5 +510,17 @@ namespace LOSA
             frm_ajustes_inventario_PT frm = new frm_ajustes_inventario_PT(UsuarioLogeado);
             frm.Show();
         }
+
+        private void simpleButton11_Click(object sender, EventArgs e)
+        {
+            frm_reporte_produccion frm = new frm_reporte_produccion();
+            frm.Show();
+        }
+
+        private void simpleButton12_Click(object sender, EventArgs e)
+        {
+            frm_reporte_produccion frm = new frm_reporte_produccion();
+            frm.Show();
+        }
     }
 }

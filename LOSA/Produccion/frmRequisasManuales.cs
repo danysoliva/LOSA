@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using ACS.Classes;
 using LOSA.Clases;
+using DevExpress.XtraReports.UI;
 
 namespace LOSA.Produccion
 {
@@ -67,6 +68,39 @@ namespace LOSA.Produccion
             {
 
                 CajaDialogo.Error(ex.Message);
+            }
+        }
+        private void PrintingSystem_StartPrint(object sender, DevExpress.XtraPrinting.PrintDocumentEventArgs e)
+        {
+            //Indica el numero de copias de la boleta que seran impresas
+            e.PrintDocument.PrinterSettings.Copies = 1;
+        }
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var gridView = (DevExpress.XtraGrid.Views.Grid.GridView)grd_data.FocusedView;
+                var row = (dsProduccion.requisas_toaddRow)gridView.GetFocusedDataRow();
+
+                string query = @"sp_load_requisa_manual";
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query,cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_req", row.id);
+                int Id_RequsaManual = Convert.ToInt32(cmd.ExecuteScalar());
+
+                Requisiciones.Reportes.lblNumeroReq report = new Requisiciones.Reportes.lblNumeroReq(Id_RequsaManual);
+                report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                report.ShowPrintMarginsWarning = false;
+                report.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
+                report.Print();
+
+            }
+            catch (Exception ex)
+            {
+
+                
             }
         }
     }
