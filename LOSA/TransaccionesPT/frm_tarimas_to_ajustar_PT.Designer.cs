@@ -34,7 +34,6 @@ namespace LOSA.TransaccionesPT
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
-            this.ajusteInvDetalleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsPT = new LOSA.TransaccionesPT.dsPT();
             this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -59,6 +58,7 @@ namespace LOSA.TransaccionesPT
             this.colcantidad_rep = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colpeso_rep = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coleditado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ajusteInvDetalleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btn_new = new DevExpress.XtraEditors.SimpleButton();
             this.txtubicacion = new DevExpress.XtraEditors.TextEdit();
             this.lbltitel = new DevExpress.XtraEditors.LabelControl();
@@ -71,12 +71,12 @@ namespace LOSA.TransaccionesPT
             this.colenable = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnbuscar = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ajusteInvDetalleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_date)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.presentacionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ajusteInvDetalleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtubicacion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_producto.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoPTBindingSource)).BeginInit();
@@ -119,7 +119,8 @@ namespace LOSA.TransaccionesPT
             this.grd_data.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grd_data.DataSource = this.ajusteInvDetalleBindingSource;
+            this.grd_data.DataMember = "AjusteInv_Detalle";
+            this.grd_data.DataSource = this.dsPT;
             this.grd_data.Location = new System.Drawing.Point(3, 165);
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
@@ -129,11 +130,6 @@ namespace LOSA.TransaccionesPT
             this.grd_data.TabIndex = 34;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
-            // 
-            // ajusteInvDetalleBindingSource
-            // 
-            this.ajusteInvDetalleBindingSource.DataMember = "AjusteInv_Detalle";
-            this.ajusteInvDetalleBindingSource.DataSource = this.dsPT;
             // 
             // dsPT
             // 
@@ -219,6 +215,7 @@ namespace LOSA.TransaccionesPT
             this.colpeso.Caption = "Peso KG";
             this.colpeso.FieldName = "peso";
             this.colpeso.Name = "colpeso";
+            this.colpeso.OptionsColumn.AllowEdit = false;
             this.colpeso.Visible = true;
             this.colpeso.VisibleIndex = 9;
             // 
@@ -353,6 +350,11 @@ namespace LOSA.TransaccionesPT
             this.coleditado.FieldName = "editado";
             this.coleditado.Name = "coleditado";
             // 
+            // ajusteInvDetalleBindingSource
+            // 
+            this.ajusteInvDetalleBindingSource.DataMember = "AjusteInv_Detalle";
+            this.ajusteInvDetalleBindingSource.DataSource = this.dsPT;
+            // 
             // btn_new
             // 
             this.btn_new.Appearance.BackColor = System.Drawing.Color.White;
@@ -478,12 +480,12 @@ namespace LOSA.TransaccionesPT
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frm_tarimas_to_ajustar_PT_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ajusteInvDetalleBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_date)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.presentacionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ajusteInvDetalleBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtubicacion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_producto.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoPTBindingSource)).EndInit();

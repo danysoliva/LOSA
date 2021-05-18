@@ -39,10 +39,12 @@
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdEntradaMP = new DevExpress.XtraEditors.SimpleButton();
             this.TabProductoTerminado = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdTarimasPT = new DevExpress.XtraEditors.SimpleButton();
             this.cmdOrdenesCargaPT = new DevExpress.XtraEditors.SimpleButton();
             this.cmdCambiarUbicacionPT = new DevExpress.XtraEditors.SimpleButton();
             this.cmdIngresoPT = new DevExpress.XtraEditors.SimpleButton();
-            this.cmdTarimasPT = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMateriaPrima.SuspendLayout();
@@ -182,6 +184,8 @@
             // 
             // TabProductoTerminado
             // 
+            this.TabProductoTerminado.Controls.Add(this.simpleButton5);
+            this.TabProductoTerminado.Controls.Add(this.simpleButton4);
             this.TabProductoTerminado.Controls.Add(this.cmdTarimasPT);
             this.TabProductoTerminado.Controls.Add(this.cmdOrdenesCargaPT);
             this.TabProductoTerminado.Controls.Add(this.cmdCambiarUbicacionPT);
@@ -191,6 +195,36 @@
             this.TabProductoTerminado.PageVisible = false;
             this.TabProductoTerminado.Size = new System.Drawing.Size(629, 422);
             this.TabProductoTerminado.Text = "Producto Terminado";
+            // 
+            // simpleButton4
+            // 
+            this.simpleButton4.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton4.Appearance.Options.UseFont = true;
+            this.simpleButton4.Appearance.Options.UseTextOptions = true;
+            this.simpleButton4.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.simpleButton4.Location = new System.Drawing.Point(227, 16);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton4.TabIndex = 14;
+            this.simpleButton4.Text = "Saco dañado";
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
+            // 
+            // cmdTarimasPT
+            // 
+            this.cmdTarimasPT.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdTarimasPT.Appearance.Options.UseFont = true;
+            this.cmdTarimasPT.Appearance.Options.UseTextOptions = true;
+            this.cmdTarimasPT.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.cmdTarimasPT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdTarimasPT.ImageOptions.Image = global::LOSA.Properties.Resources.pallet32px;
+            this.cmdTarimasPT.Location = new System.Drawing.Point(7, 270);
+            this.cmdTarimasPT.Name = "cmdTarimasPT";
+            this.cmdTarimasPT.Size = new System.Drawing.Size(199, 71);
+            this.cmdTarimasPT.TabIndex = 13;
+            this.cmdTarimasPT.Text = "Tarimas PT";
+            this.cmdTarimasPT.Click += new System.EventHandler(this.cmdTarimasPT_Click);
             // 
             // cmdOrdenesCargaPT
             // 
@@ -236,20 +270,20 @@
             this.cmdIngresoPT.Visible = false;
             this.cmdIngresoPT.Click += new System.EventHandler(this.cmdIngresoPT_Click);
             // 
-            // cmdTarimasPT
+            // simpleButton5
             // 
-            this.cmdTarimasPT.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdTarimasPT.Appearance.Options.UseFont = true;
-            this.cmdTarimasPT.Appearance.Options.UseTextOptions = true;
-            this.cmdTarimasPT.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.cmdTarimasPT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdTarimasPT.ImageOptions.Image = global::LOSA.Properties.Resources.pallet32px;
-            this.cmdTarimasPT.Location = new System.Drawing.Point(7, 270);
-            this.cmdTarimasPT.Name = "cmdTarimasPT";
-            this.cmdTarimasPT.Size = new System.Drawing.Size(199, 71);
-            this.cmdTarimasPT.TabIndex = 13;
-            this.cmdTarimasPT.Text = "Tarimas PT";
-            this.cmdTarimasPT.Click += new System.EventHandler(this.cmdTarimasPT_Click);
+            this.simpleButton5.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton5.Appearance.Options.UseFont = true;
+            this.simpleButton5.Appearance.Options.UseTextOptions = true;
+            this.simpleButton5.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
+            this.simpleButton5.Location = new System.Drawing.Point(227, 103);
+            this.simpleButton5.Name = "simpleButton5";
+            this.simpleButton5.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton5.TabIndex = 15;
+            this.simpleButton5.Text = "Avance de PT";
+            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
             // 
             // frmOptionMontaCarga
             // 
@@ -286,5 +320,7 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SimpleButton cmdTarimasPT;
+        private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.SimpleButton simpleButton5;
     }
 }

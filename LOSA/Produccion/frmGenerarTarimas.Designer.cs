@@ -921,7 +921,6 @@
             this.Controls.Add(this.dt_fechaFabricaion);
             this.Controls.Add(this.labelControl8);
             this.Controls.Add(this.btn_udup);
-            this.Controls.Add(this.btn_uddown);
             this.Controls.Add(this.txtlote);
             this.Controls.Add(this.txtkg);
             this.Controls.Add(this.txt_unidades);
@@ -935,6 +934,7 @@
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.cmdHome);
             this.Controls.Add(this.labelControl3);
+            this.Controls.Add(this.btn_uddown);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmGenerarTarimas";
             this.Text = "frmGenerarTarimas";

@@ -121,7 +121,7 @@ namespace LOSA.TransaccionesPT
                         cmd.Parameters.AddWithValue("@datetime",  dt_fecha.EditValue);
                         cmd.Parameters.AddWithValue("@comentario", txtcomentario.Text);
                         cmd.Parameters.AddWithValue("@id_inserted", id_insered);
-                        id_insered = Convert.ToInt32(cmd.ExecuteScalar());
+                        cmd.ExecuteScalar();
                         frm_tarimas_to_ajustar_PT frm = new frm_tarimas_to_ajustar_PT(UsuarioLogeado, id_insered, frm_tarimas_to_ajustar_PT.TipoOp.Editar );
                         if ((frm.ShowDialog() == DialogResult.OK))
                         {

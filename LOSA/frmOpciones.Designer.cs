@@ -57,6 +57,7 @@
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdRecepcionMPLogistica = new DevExpress.XtraEditors.SimpleButton();
             this.TabCalidad = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton11 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
@@ -75,6 +76,7 @@
             this.cmdTarimasPT = new DevExpress.XtraEditors.SimpleButton();
             this.btnAlimentacionManual = new DevExpress.XtraEditors.SimpleButton();
             this.txtProduccion = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
@@ -493,6 +495,7 @@
             // 
             // TabCalidad
             // 
+            this.TabCalidad.Controls.Add(this.simpleButton11);
             this.TabCalidad.Controls.Add(this.simpleButton9);
             this.TabCalidad.Controls.Add(this.simpleButton6);
             this.TabCalidad.Controls.Add(this.simpleButton5);
@@ -504,6 +507,20 @@
             this.TabCalidad.PageVisible = false;
             this.TabCalidad.Size = new System.Drawing.Size(629, 422);
             this.TabCalidad.Text = "Calidad";
+            // 
+            // simpleButton11
+            // 
+            this.simpleButton11.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton11.Appearance.Options.UseFont = true;
+            this.simpleButton11.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton11.ImageOptions.Image = global::LOSA.Properties.Resources.edit_table_1_;
+            this.simpleButton11.Location = new System.Drawing.Point(224, 177);
+            this.simpleButton11.Name = "simpleButton11";
+            this.simpleButton11.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton11.TabIndex = 17;
+            this.simpleButton11.Text = "Reporte de \r\nSacos Activados";
+            this.simpleButton11.Visible = false;
+            this.simpleButton11.Click += new System.EventHandler(this.simpleButton11_Click);
             // 
             // simpleButton9
             // 
@@ -735,12 +752,27 @@
             // 
             // txtProduccion
             // 
+            this.txtProduccion.Controls.Add(this.simpleButton12);
             this.txtProduccion.Controls.Add(this.btnRequisasManuales);
             this.txtProduccion.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("txtProduccion.ImageOptions.Image")));
             this.txtProduccion.Name = "txtProduccion";
             this.txtProduccion.PageVisible = false;
             this.txtProduccion.Size = new System.Drawing.Size(629, 422);
             this.txtProduccion.Text = "Produccion";
+            // 
+            // simpleButton12
+            // 
+            this.simpleButton12.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton12.Appearance.Options.UseFont = true;
+            this.simpleButton12.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton12.ImageOptions.Image = global::LOSA.Properties.Resources.edit_table_1_;
+            this.simpleButton12.Location = new System.Drawing.Point(26, 97);
+            this.simpleButton12.Name = "simpleButton12";
+            this.simpleButton12.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton12.TabIndex = 18;
+            this.simpleButton12.Text = "Reporte de \r\nSacos Activados";
+            this.simpleButton12.Visible = false;
+            this.simpleButton12.Click += new System.EventHandler(this.simpleButton12_Click);
             // 
             // btnRequisasManuales
             // 
@@ -846,5 +878,7 @@
         private DevExpress.XtraEditors.SimpleButton btnRequisasManuales;
         private DevExpress.XtraEditors.SimpleButton simpleButton9;
         private DevExpress.XtraEditors.SimpleButton simpleButton10;
+        private DevExpress.XtraEditors.SimpleButton simpleButton11;
+        private DevExpress.XtraEditors.SimpleButton simpleButton12;
     }
 }

@@ -30,8 +30,13 @@ namespace LOSA.TransaccionesPT
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_ajustes_inventario_PT));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -51,12 +56,15 @@ namespace LOSA.TransaccionesPT
             this.coluser_creador = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_editar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btn_edit = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colEjecutar = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnEjecutar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btn_new = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ajustesInventarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_edit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEjecutar)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl3
@@ -100,7 +108,8 @@ namespace LOSA.TransaccionesPT
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
             this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.btn_edit});
+            this.btn_edit,
+            this.btnEjecutar});
             this.grd_data.Size = new System.Drawing.Size(627, 416);
             this.grd_data.TabIndex = 34;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -142,7 +151,8 @@ namespace LOSA.TransaccionesPT
             this.colbit_aprovado,
             this.coldate_create,
             this.coluser_creador,
-            this.col_editar});
+            this.col_editar,
+            this.colEjecutar});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
@@ -162,7 +172,7 @@ namespace LOSA.TransaccionesPT
             this.colnombre.OptionsColumn.AllowEdit = false;
             this.colnombre.Visible = true;
             this.colnombre.VisibleIndex = 2;
-            this.colnombre.Width = 159;
+            this.colnombre.Width = 141;
             // 
             // colrealizado
             // 
@@ -178,7 +188,7 @@ namespace LOSA.TransaccionesPT
             this.colcomentario.OptionsColumn.AllowEdit = false;
             this.colcomentario.Visible = true;
             this.colcomentario.VisibleIndex = 0;
-            this.colcomentario.Width = 152;
+            this.colcomentario.Width = 135;
             // 
             // colbit_aprovado
             // 
@@ -194,7 +204,7 @@ namespace LOSA.TransaccionesPT
             this.coldate_create.OptionsColumn.AllowEdit = false;
             this.coldate_create.Visible = true;
             this.coldate_create.VisibleIndex = 1;
-            this.coldate_create.Width = 152;
+            this.coldate_create.Width = 135;
             // 
             // coluser_creador
             // 
@@ -209,17 +219,36 @@ namespace LOSA.TransaccionesPT
             this.col_editar.Name = "col_editar";
             this.col_editar.Visible = true;
             this.col_editar.VisibleIndex = 3;
-            this.col_editar.Width = 146;
+            this.col_editar.Width = 113;
             // 
             // btn_edit
             // 
             this.btn_edit.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.btn_edit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btn_edit.Name = "btn_edit";
             this.btn_edit.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
+            // 
+            // colEjecutar
+            // 
+            this.colEjecutar.Caption = "Ejecutar";
+            this.colEjecutar.ColumnEdit = this.btnEjecutar;
+            this.colEjecutar.Name = "colEjecutar";
+            this.colEjecutar.Visible = true;
+            this.colEjecutar.VisibleIndex = 4;
+            this.colEjecutar.Width = 85;
+            // 
+            // btnEjecutar
+            // 
+            this.btnEjecutar.AutoHeight = false;
+            editorButtonImageOptions2.Image = global::LOSA.Properties.Resources.production;
+            this.btnEjecutar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnEjecutar.Name = "btnEjecutar";
+            this.btnEjecutar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnEjecutar.Click += new System.EventHandler(this.btnEjecutar_Click);
             // 
             // btn_new
             // 
@@ -254,6 +283,7 @@ namespace LOSA.TransaccionesPT
             ((System.ComponentModel.ISupportInitialize)(this.dsPT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_edit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEjecutar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -276,5 +306,7 @@ namespace LOSA.TransaccionesPT
         private DevExpress.XtraGrid.Columns.GridColumn col_editar;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btn_edit;
         private DevExpress.XtraEditors.SimpleButton btn_new;
+        private DevExpress.XtraGrid.Columns.GridColumn colEjecutar;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnEjecutar;
     }
 }

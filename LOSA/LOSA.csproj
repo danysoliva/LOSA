@@ -224,6 +224,12 @@
     <Compile Include="Calidad\frm_asiganacion_causas.Designer.cs">
       <DependentUpon>frm_asiganacion_causas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\frm_reporte_produccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frm_reporte_produccion.Designer.cs">
+      <DependentUpon>frm_reporte_produccion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\frm_retenciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1136,6 +1142,12 @@
     <Compile Include="TransaccionesPT\frmdespacho.Designer.cs">
       <DependentUpon>frmdespacho.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesPT\frmdetalle_de_salida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesPT\frmdetalle_de_salida.Designer.cs">
+      <DependentUpon>frmdetalle_de_salida.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesPT\frmGestiondePlan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1189,6 +1201,18 @@
     </Compile>
     <Compile Include="TransaccionesPT\frm_planificacion_despachos.Designer.cs">
       <DependentUpon>frm_planificacion_despachos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesPT\frm_saco_dañado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesPT\frm_saco_dañado.Designer.cs">
+      <DependentUpon>frm_saco_dañado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesPT\frm_select_motivo_to_drop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesPT\frm_select_motivo_to_drop.Designer.cs">
+      <DependentUpon>frm_select_motivo_to_drop.cs</DependentUpon>
     </Compile>
     <Compile Include="TransaccionesPT\frm_tarimas_to_ajustar_PT.cs">
       <SubType>Form</SubType>
@@ -1255,6 +1279,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frm_asiganacion_causas.resx">
       <DependentUpon>frm_asiganacion_causas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frm_reporte_produccion.resx">
+      <DependentUpon>frm_reporte_produccion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frm_retenciones.resx">
       <DependentUpon>frm_retenciones.cs</DependentUpon>
@@ -1669,6 +1696,9 @@
     <EmbeddedResource Include="TransaccionesPT\frmdespacho.resx">
       <DependentUpon>frmdespacho.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesPT\frmdetalle_de_salida.resx">
+      <DependentUpon>frmdetalle_de_salida.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesPT\frmGestiondePlan.resx">
       <DependentUpon>frmGestiondePlan.cs</DependentUpon>
     </EmbeddedResource>
@@ -1695,6 +1725,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesPT\frm_planificacion_despachos.resx">
       <DependentUpon>frm_planificacion_despachos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesPT\frm_saco_dañado.resx">
+      <DependentUpon>frm_saco_dañado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesPT\frm_select_motivo_to_drop.resx">
+      <DependentUpon>frm_select_motivo_to_drop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesPT\frm_tarimas_to_ajustar_PT.resx">
       <DependentUpon>frm_tarimas_to_ajustar_PT.cs</DependentUpon>
