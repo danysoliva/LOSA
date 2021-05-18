@@ -534,6 +534,11 @@
     <Compile Include="MDIParentFormLOSA.Designer.cs">
       <DependentUpon>MDIParentFormLOSA.cs</DependentUpon>
     </Compile>
+    <Compile Include="Micro\dsMicro.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsMicro.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Micro\frmOpcionesMicro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -959,6 +964,12 @@
     </Compile>
     <Compile Include="Reportes\rptUbicacionRotulo.Designer.cs">
       <DependentUpon>rptUbicacionRotulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rpt_cartillaMicro.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rpt_cartillaMicro.Designer.cs">
+      <DependentUpon>rpt_cartillaMicro.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\rpt_cartilla.cs">
       <SubType>Component</SubType>
@@ -1618,6 +1629,9 @@
     <EmbeddedResource Include="Reportes\rptUbicacionRotulo.resx">
       <DependentUpon>rptUbicacionRotulo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpt_cartillaMicro.resx">
+      <DependentUpon>rpt_cartillaMicro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rpt_cartilla.resx">
       <DependentUpon>rpt_cartilla.cs</DependentUpon>
     </EmbeddedResource>
@@ -1795,6 +1809,17 @@
     </None>
     <None Include="Mantenimientos\dsMantenimiento.xss">
       <DependentUpon>dsMantenimiento.xsd</DependentUpon>
+    </None>
+    <None Include="Micro\dsMicro.xsc">
+      <DependentUpon>dsMicro.xsd</DependentUpon>
+    </None>
+    <None Include="Micro\dsMicro.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsMicro.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Micro\dsMicro.xss">
+      <DependentUpon>dsMicro.xsd</DependentUpon>
     </None>
     <None Include="Produccion\dsProduccion.xsc">
       <DependentUpon>dsProduccion.xsd</DependentUpon>

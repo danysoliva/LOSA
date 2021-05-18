@@ -66,12 +66,12 @@
             this.btnEditar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colnum = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colUbicacion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcodigo_barra = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.dtFechaHasta = new DevExpress.XtraEditors.DateEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.dtFechaDesde = new DevExpress.XtraEditors.DateEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.colcodigo_barra = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -340,6 +340,15 @@
             this.colUbicacion.VisibleIndex = 4;
             this.colUbicacion.Width = 82;
             // 
+            // colcodigo_barra
+            // 
+            this.colcodigo_barra.Caption = "TM";
+            this.colcodigo_barra.FieldName = "codigo_barra";
+            this.colcodigo_barra.Name = "colcodigo_barra";
+            this.colcodigo_barra.OptionsColumn.AllowEdit = false;
+            this.colcodigo_barra.Visible = true;
+            this.colcodigo_barra.VisibleIndex = 1;
+            // 
             // cmdGuardar
             // 
             this.cmdGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -412,15 +421,6 @@
             this.labelControl8.Size = new System.Drawing.Size(100, 20);
             this.labelControl8.TabIndex = 54;
             this.labelControl8.Text = "Fecha Desde:";
-            // 
-            // colcodigo_barra
-            // 
-            this.colcodigo_barra.Caption = "TM";
-            this.colcodigo_barra.FieldName = "codigo_barra";
-            this.colcodigo_barra.Name = "colcodigo_barra";
-            this.colcodigo_barra.OptionsColumn.AllowEdit = false;
-            this.colcodigo_barra.Visible = true;
-            this.colcodigo_barra.VisibleIndex = 1;
             // 
             // frmImprimirHojaIngreso
             // 

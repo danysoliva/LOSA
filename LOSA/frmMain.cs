@@ -246,8 +246,8 @@ namespace LOSA
             frm.MdiParent = this.MdiParent;
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
-            this.DialogResult = DialogResult.Cancel; 
-            this.Close();
+            //this.DialogResult = DialogResult.Cancel; 
+            //this.Close();
         }
     }
 }
