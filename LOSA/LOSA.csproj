@@ -70,10 +70,11 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>B8B1E1C226D4161B735B5D87883A090CA12C1142</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>5A56FE5B36BF1139C0C28330C52B1468E1F78C88</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>LOSA_3_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -92,7 +93,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>LOSA_3_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>key_tmp_2021_Master2021.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -526,6 +527,12 @@
     </Compile>
     <Compile Include="MDIParentFormLOSA.Designer.cs">
       <DependentUpon>MDIParentFormLOSA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Micro\frmOpcionesMicro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Micro\frmOpcionesMicro.Designer.cs">
+      <DependentUpon>frmOpcionesMicro.cs</DependentUpon>
     </Compile>
     <Compile Include="PlanMPreque\frmLote.cs">
       <SubType>Form</SubType>
@@ -1378,6 +1385,9 @@
     <EmbeddedResource Include="MDIParentFormLOSA.resx">
       <DependentUpon>MDIParentFormLOSA.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Micro\frmOpcionesMicro.resx">
+      <DependentUpon>frmOpcionesMicro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PlanMPreque\frmLote.resx">
       <DependentUpon>frmLote.cs</DependentUpon>
     </EmbeddedResource>
@@ -1723,6 +1733,7 @@
     <None Include="Despachos\ds_despachos.xss">
       <DependentUpon>ds_despachos.xsd</DependentUpon>
     </None>
+    <None Include="key_tmp_2021_Master2021.pfx" />
     <None Include="Logistica\dsLogistica.xsc">
       <DependentUpon>dsLogistica.xsd</DependentUpon>
     </None>
