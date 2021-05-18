@@ -127,5 +127,43 @@ namespace LOSA.Micro
                 CajaDialogo.Error(ec.Message);
             }
         }
+
+        private void LoadDetalleSearch(int pCode)
+        {
+            //
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringAPMS);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_detalle_sacos_micros_rm_search", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@idh", pIdh);
+                cmd.Parameters.AddWithValue("@idcode", pCode);
+                dsMicro1.sacosd1.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsMicro1.sacosd1);
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
+
+        private void spinCodigo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                LoadDetalleSearch(Convert.ToInt32(spinCodigo.EditValue));
+            }
+        }
+
+        private void cmdBuscar_Click(object sender, EventArgs e)
+        {
+            LoadDetalleSearch(Convert.ToInt32(spinCodigo.EditValue));
+        }
     }
 }

@@ -59,6 +59,22 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="sacosd1" msprop:Generator_TableClassName="sacosd1DataTable" msprop:Generator_TableVarName="tablesacosd1" msprop:Generator_TablePropName="sacosd1" msprop:Generator_RowDeletingName="sacosd1RowDeleting" msprop:Generator_RowChangingName="sacosd1RowChanging" msprop:Generator_RowEvHandlerName="sacosd1RowChangeEventHandler" msprop:Generator_RowDeletedName="sacosd1RowDeleted" msprop:Generator_UserTableName="sacosd1" msprop:Generator_RowChangedName="sacosd1RowChanged" msprop:Generator_RowEvArgName="sacosd1RowChangeEvent" msprop:Generator_RowClassName="sacosd1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="id_orden_encabezado" msprop:Generator_ColumnVarNameInTable="columnid_orden_encabezado" msprop:Generator_ColumnPropNameInRow="id_orden_encabezado" msprop:Generator_ColumnPropNameInTable="id_orden_encabezadoColumn" msprop:Generator_UserColumnName="id_orden_encabezado" type="xs:int" minOccurs="0" />
+              <xs:element name="batch_plan" msprop:Generator_ColumnVarNameInTable="columnbatch_plan" msprop:Generator_ColumnPropNameInRow="batch_plan" msprop:Generator_ColumnPropNameInTable="batch_planColumn" msprop:Generator_UserColumnName="batch_plan" type="xs:decimal" minOccurs="0" />
+              <xs:element name="date" msprop:Generator_ColumnVarNameInTable="columndate" msprop:Generator_ColumnPropNameInRow="date" msprop:Generator_ColumnPropNameInTable="dateColumn" msprop:Generator_UserColumnName="date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="id_code" msprop:Generator_ColumnVarNameInTable="columnid_code" msprop:Generator_ColumnPropNameInRow="id_code" msprop:Generator_ColumnPropNameInTable="id_codeColumn" msprop:Generator_UserColumnName="id_code" type="xs:int" minOccurs="0" />
+              <xs:element name="estado" msprop:Generator_ColumnVarNameInTable="columnestado" msprop:Generator_ColumnPropNameInRow="estado" msprop:Generator_ColumnPropNameInTable="estadoColumn" msprop:Generator_UserColumnName="estado" type="xs:string" minOccurs="0" />
+              <xs:element name="batch_real" msprop:Generator_ColumnVarNameInTable="columnbatch_real" msprop:Generator_ColumnPropNameInRow="batch_real" msprop:Generator_ColumnPropNameInTable="batch_realColumn" msprop:Generator_UserColumnName="batch_real" type="xs:decimal" minOccurs="0" />
+              <xs:element name="id_rm" msprop:Generator_ColumnVarNameInTable="columnid_rm" msprop:Generator_ColumnPropNameInRow="id_rm" msprop:Generator_ColumnPropNameInTable="id_rmColumn" msprop:Generator_UserColumnName="id_rm" type="xs:int" minOccurs="0" />
+              <xs:element name="bascula" msprop:Generator_ColumnVarNameInTable="columnbascula" msprop:Generator_ColumnPropNameInRow="bascula" msprop:Generator_ColumnPropNameInTable="basculaColumn" msprop:Generator_UserColumnName="bascula" type="xs:string" minOccurs="0" />
+              <xs:element name="rm" msprop:Generator_ColumnVarNameInTable="columnrm" msprop:Generator_ColumnPropNameInRow="rm" msprop:Generator_ColumnPropNameInTable="rmColumn" msprop:Generator_UserColumnName="rm" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>
