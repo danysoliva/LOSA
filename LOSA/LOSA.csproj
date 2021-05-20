@@ -823,6 +823,12 @@
     <Compile Include="RecepcionMP\frmverlotes.Designer.cs">
       <DependentUpon>frmverlotes.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecepcionMP\frm_edit_data.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frm_edit_data.Designer.cs">
+      <DependentUpon>frm_edit_data.cs</DependentUpon>
+    </Compile>
     <Compile Include="RecepcionMP\frm_ingresos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -834,6 +840,12 @@
     </Compile>
     <Compile Include="RecepcionMP\frm_ingresos_lotes.Designer.cs">
       <DependentUpon>frm_ingresos_lotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecepcionMP\frm_select_pv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frm_select_pv.Designer.cs">
+      <DependentUpon>frm_select_pv.cs</DependentUpon>
     </Compile>
     <Compile Include="RecepcionMP\rptReporteIngresoTarima.cs">
       <SubType>Component</SubType>
@@ -1551,11 +1563,17 @@
     <EmbeddedResource Include="RecepcionMP\frmverlotes.resx">
       <DependentUpon>frmverlotes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frm_edit_data.resx">
+      <DependentUpon>frm_edit_data.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frm_ingresos.resx">
       <DependentUpon>frm_ingresos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frm_ingresos_lotes.resx">
       <DependentUpon>frm_ingresos_lotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frm_select_pv.resx">
+      <DependentUpon>frm_select_pv.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\rptReporteIngresoTarima.resx">
       <DependentUpon>rptReporteIngresoTarima.cs</DependentUpon>

@@ -134,5 +134,26 @@ namespace LOSA.RecepcionMP
 
            
         }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var gridview = (GridView)grd_ingreso.FocusedView;
+                var row = (dsRecepcionMPx.IngresosMPRow)gridview.GetFocusedDataRow();
+                frm_edit_data frm = new frm_edit_data(row.id);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    Load_Info();
+                }
+
+                
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
     }
 }
