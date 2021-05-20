@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsMicros" targetNamespace="http://tempuri.org/dsMicros.xsd" xmlns:mstns="http://tempuri.org/dsMicros.xsd" xmlns="http://tempuri.org/dsMicros.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsMicros" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsMicros" msprop:Generator_UserDSName="dsMicros">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Micros" msprop:Generator_TableClassName="MicrosDataTable" msprop:Generator_TableVarName="tableMicros" msprop:Generator_RowChangedName="MicrosRowChanged" msprop:Generator_TablePropName="Micros" msprop:Generator_RowDeletingName="MicrosRowDeleting" msprop:Generator_RowChangingName="MicrosRowChanging" msprop:Generator_RowEvHandlerName="MicrosRowChangeEventHandler" msprop:Generator_RowDeletedName="MicrosRowDeleted" msprop:Generator_RowClassName="MicrosRow" msprop:Generator_UserTableName="Micros" msprop:Generator_RowEvArgName="MicrosRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="_x0023__x0020_Orden" msprop:Generator_ColumnVarNameInTable="_column__Orden" msprop:Generator_ColumnPropNameInRow="___Orden" msprop:Generator_ColumnPropNameInTable="___OrdenColumn" msprop:Generator_UserColumnName="# Orden" type="xs:string" minOccurs="0" />
+              <xs:element name="Codigo_x0020_Orden" msprop:Generator_ColumnVarNameInTable="columnCodigo_Orden" msprop:Generator_ColumnPropNameInRow="Codigo_Orden" msprop:Generator_ColumnPropNameInTable="Codigo_OrdenColumn" msprop:Generator_UserColumnName="Codigo Orden" type="xs:string" minOccurs="0" />
+              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Lote_x0020_PT" msprop:Generator_ColumnVarNameInTable="columnLote_PT" msprop:Generator_ColumnPropNameInRow="Lote_PT" msprop:Generator_ColumnPropNameInTable="Lote_PTColumn" msprop:Generator_UserColumnName="Lote PT" type="xs:string" minOccurs="0" />
+              <xs:element name="Cant._x0020_Batch" msprop:Generator_ColumnVarNameInTable="_columnCant__Batch" msprop:Generator_ColumnPropNameInRow="_Cant__Batch" msprop:Generator_ColumnPropNameInTable="_Cant__BatchColumn" msprop:Generator_UserColumnName="Cant. Batch" type="xs:int" minOccurs="0" />
+              <xs:element name="Cod._x0020_Estado" msprop:Generator_ColumnVarNameInTable="_columnCod__Estado" msprop:Generator_ColumnPropNameInRow="_Cod__Estado" msprop:Generator_ColumnPropNameInTable="_Cod__EstadoColumn" msprop:Generator_UserColumnName="Cod. Estado" type="xs:int" minOccurs="0" />
+              <xs:element name="estado" msprop:Generator_ColumnVarNameInTable="columnestado" msprop:Generator_ColumnPropNameInRow="estado" msprop:Generator_ColumnPropNameInTable="estadoColumn" msprop:Generator_UserColumnName="estado" type="xs:string" minOccurs="0" />
+              <xs:element name="batch_real" msprop:Generator_ColumnVarNameInTable="columnbatch_real" msprop:Generator_ColumnPropNameInRow="batch_real" msprop:Generator_ColumnPropNameInTable="batch_realColumn" msprop:Generator_UserColumnName="batch_real" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DetalleOrdenesMicro" msprop:Generator_TableClassName="DetalleOrdenesMicroDataTable" msprop:Generator_TableVarName="tableDetalleOrdenesMicro" msprop:Generator_RowChangedName="DetalleOrdenesMicroRowChanged" msprop:Generator_TablePropName="DetalleOrdenesMicro" msprop:Generator_RowDeletingName="DetalleOrdenesMicroRowDeleting" msprop:Generator_RowChangingName="DetalleOrdenesMicroRowChanging" msprop:Generator_RowEvHandlerName="DetalleOrdenesMicroRowChangeEventHandler" msprop:Generator_RowDeletedName="DetalleOrdenesMicroRowDeleted" msprop:Generator_RowClassName="DetalleOrdenesMicroRow" msprop:Generator_UserTableName="DetalleOrdenesMicro" msprop:Generator_RowEvArgName="DetalleOrdenesMicroRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Material" msprop:Generator_ColumnVarNameInTable="columnMaterial" msprop:Generator_ColumnPropNameInRow="Material" msprop:Generator_ColumnPropNameInTable="MaterialColumn" msprop:Generator_UserColumnName="Material" type="xs:string" minOccurs="0" />
+              <xs:element name="Peso_x0020_por_x0020_Batch" msprop:Generator_ColumnVarNameInTable="columnPeso_por_Batch" msprop:Generator_ColumnPropNameInRow="Peso_por_Batch" msprop:Generator_ColumnPropNameInTable="Peso_por_BatchColumn" msprop:Generator_UserColumnName="Peso por Batch" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Batch_x0020_Plan" msprop:Generator_ColumnVarNameInTable="columnBatch_Plan" msprop:Generator_ColumnPropNameInRow="Batch_Plan" msprop:Generator_ColumnPropNameInTable="Batch_PlanColumn" msprop:Generator_UserColumnName="Batch Plan" type="xs:int" minOccurs="0" />
+              <xs:element name="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_UserColumnName="Total" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Batch_x0020_Completados" msprop:Generator_ColumnVarNameInTable="columnBatch_Completados" msprop:Generator_ColumnPropNameInRow="Batch_Completados" msprop:Generator_ColumnPropNameInTable="Batch_CompletadosColumn" msprop:Generator_UserColumnName="Batch Completados" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

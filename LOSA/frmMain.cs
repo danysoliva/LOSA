@@ -3,6 +3,8 @@ using Core.Clases.Herramientas;
 using DevExpress.Utils.TouchHelpers;
 using Huellas;
 using LOSA.Clases;
+using LOSA.Micro;
+using LOSA.MicroIngredientes;
 using LOSA.Utileria;
 using System;
 using System.Collections.Generic;
@@ -237,6 +239,21 @@ namespace LOSA
             }
             frmOpciones frm = new frmOpciones(Log1);
             frm.Show();
+        }
+
+        private void cmdMicros_Click(object sender, EventArgs e)
+        {
+            //frmOpcionesMicro frm = new frmOpcionesMicro();
+            //frm.MdiParent = this.MdiParent;
+            //frm.WindowState = FormWindowState.Maximized;
+            //frm.Show();
+
+            xfrmMenuMicros menu = new xfrmMenuMicros();
+            menu.MdiParent = this.MdiParent;
+            menu.Show();
+
+            //this.DialogResult = DialogResult.Cancel; 
+            //this.Close();
         }
     }
 }

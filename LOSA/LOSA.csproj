@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>144</ApplicationRevision>
+    <ApplicationRevision>145</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -70,10 +70,10 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>B8B1E1C226D4161B735B5D87883A090CA12C1142</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>169CB7D98A28CFF1F833CA2BEC32C08065C072D2</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>LOSA_3_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>LOSA_4_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -92,7 +92,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>LOSA_3_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>LOSA_4_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -533,6 +533,46 @@
     <Compile Include="MDIParentFormLOSA.Designer.cs">
       <DependentUpon>MDIParentFormLOSA.cs</DependentUpon>
     </Compile>
+    <Compile Include="MicroIngredientes\dsMicros.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsMicros.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MicroIngredientes\xfrmDetalleOrdenesMicros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MicroIngredientes\xfrmDetalleOrdenesMicros.Designer.cs">
+      <DependentUpon>xfrmDetalleOrdenesMicros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MicroIngredientes\xfrmMenuMicros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MicroIngredientes\xfrmMenuMicros.Designer.cs">
+      <DependentUpon>xfrmMenuMicros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MicroIngredientes\xfrmMicroIngredientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MicroIngredientes\xfrmMicroIngredientes.Designer.cs">
+      <DependentUpon>xfrmMicroIngredientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MicroIngredientes\xfrmSpinBatchPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MicroIngredientes\xfrmSpinBatchPlan.Designer.cs">
+      <DependentUpon>xfrmSpinBatchPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Micro\dsMicro.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsMicro.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Micro\frmOpcionesMicro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Micro\frmOpcionesMicro.Designer.cs">
+      <DependentUpon>frmOpcionesMicro.cs</DependentUpon>
+    </Compile>
     <Compile Include="PlanMPreque\frmLote.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -964,6 +1004,12 @@
     </Compile>
     <Compile Include="Reportes\rptUbicacionRotulo.Designer.cs">
       <DependentUpon>rptUbicacionRotulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rpt_cartillaMicro.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rpt_cartillaMicro.Designer.cs">
+      <DependentUpon>rpt_cartillaMicro.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\rpt_cartilla.cs">
       <SubType>Component</SubType>
@@ -1417,6 +1463,21 @@
     <EmbeddedResource Include="MDIParentFormLOSA.resx">
       <DependentUpon>MDIParentFormLOSA.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MicroIngredientes\xfrmDetalleOrdenesMicros.resx">
+      <DependentUpon>xfrmDetalleOrdenesMicros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MicroIngredientes\xfrmMenuMicros.resx">
+      <DependentUpon>xfrmMenuMicros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MicroIngredientes\xfrmMicroIngredientes.resx">
+      <DependentUpon>xfrmMicroIngredientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MicroIngredientes\xfrmSpinBatchPlan.resx">
+      <DependentUpon>xfrmSpinBatchPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Micro\frmOpcionesMicro.resx">
+      <DependentUpon>frmOpcionesMicro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PlanMPreque\frmLote.resx">
       <DependentUpon>frmLote.cs</DependentUpon>
     </EmbeddedResource>
@@ -1626,6 +1687,9 @@
     <EmbeddedResource Include="Reportes\rptUbicacionRotulo.resx">
       <DependentUpon>rptUbicacionRotulo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpt_cartillaMicro.resx">
+      <DependentUpon>rpt_cartillaMicro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rpt_cartilla.resx">
       <DependentUpon>rpt_cartilla.cs</DependentUpon>
     </EmbeddedResource>
@@ -1777,6 +1841,7 @@
     <None Include="Despachos\ds_despachos.xss">
       <DependentUpon>ds_despachos.xsd</DependentUpon>
     </None>
+    <None Include="key_tmp_2021_Master2021.pfx" />
     <None Include="Logistica\dsLogistica.xsc">
       <DependentUpon>dsLogistica.xsd</DependentUpon>
     </None>
@@ -1791,6 +1856,7 @@
     <None Include="LOSA_1_TemporaryKey.pfx" />
     <None Include="LOSA_2_TemporaryKey.pfx" />
     <None Include="LOSA_3_TemporaryKey.pfx" />
+    <None Include="LOSA_4_TemporaryKey.pfx" />
     <None Include="LOSA_TemporaryKey.pfx" />
     <None Include="Mantenimientos\dsMantenimiento.xsc">
       <DependentUpon>dsMantenimiento.xsd</DependentUpon>
@@ -1802,6 +1868,28 @@
     </None>
     <None Include="Mantenimientos\dsMantenimiento.xss">
       <DependentUpon>dsMantenimiento.xsd</DependentUpon>
+    </None>
+    <None Include="MicroIngredientes\dsMicros.xsc">
+      <DependentUpon>dsMicros.xsd</DependentUpon>
+    </None>
+    <None Include="MicroIngredientes\dsMicros.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsMicros.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="MicroIngredientes\dsMicros.xss">
+      <DependentUpon>dsMicros.xsd</DependentUpon>
+    </None>
+    <None Include="Micro\dsMicro.xsc">
+      <DependentUpon>dsMicro.xsd</DependentUpon>
+    </None>
+    <None Include="Micro\dsMicro.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsMicro.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Micro\dsMicro.xss">
+      <DependentUpon>dsMicro.xsd</DependentUpon>
     </None>
     <None Include="Produccion\dsProduccion.xsc">
       <DependentUpon>dsProduccion.xsd</DependentUpon>
@@ -1941,6 +2029,8 @@
     <None Include="Resources\Forklift-icon.png" />
     <None Include="Resources\eventos.png" />
     <None Include="Resources\enter.png" />
+    <None Include="Resources\information.png" />
+    <None Include="Resources\exchange.png" />
     <Content Include="Resources\key.png" />
     <None Include="Resources\Materia_Prima.png" />
     <Content Include="Resources\medal.png" />
