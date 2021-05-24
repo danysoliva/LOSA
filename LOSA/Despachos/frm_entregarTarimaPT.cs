@@ -105,7 +105,7 @@ namespace LOSA.Despachos
                                 tarimaEncontrada = InfoTarima;
                             }
 
-                            gcTarima.DataSource = CreateDataTarima(dr.GetInt32(0), dr.GetString(2), dr.GetString(1), dr.GetInt32(5).ToString(), dr.GetDecimal(6).ToString());
+                            gcTarima.DataSource = CreateDataTarima(dr.GetInt32(0), dr.GetString(1), dr.GetString(2), dr.GetString(3).ToString(), dr.GetString(4).ToString());
                             //gvTarima.InitNewRow += GridView1_InitNewRow;
                             gvTarima.Columns[0].AppearanceCell.Font = new Font("Segoe UI", 11, FontStyle.Bold);
                         }
