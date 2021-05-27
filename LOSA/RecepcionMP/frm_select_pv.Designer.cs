@@ -30,26 +30,26 @@ namespace LOSA.RecepcionMP
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_select_pv));
             this.grd_data = new DevExpress.XtraGrid.GridControl();
-            this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.btnSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
-            this.dsRecepcionMPx = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.proveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsRecepcionMPx = new LOSA.RecepcionMP.dsRecepcionMPx();
+            this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colcarcode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcardname = new DevExpress.XtraGrid.Columns.GridColumn();
             this.seleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSeleccionar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // grd_data
@@ -67,6 +67,16 @@ namespace LOSA.RecepcionMP
             this.grd_data.TabIndex = 1;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
+            // 
+            // proveedoresBindingSource
+            // 
+            this.proveedoresBindingSource.DataMember = "proveedores";
+            this.proveedoresBindingSource.DataSource = this.dsRecepcionMPx;
+            // 
+            // dsRecepcionMPx
+            // 
+            this.dsRecepcionMPx.DataSetName = "dsRecepcionMPx";
+            this.dsRecepcionMPx.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // grdv_data
             // 
@@ -99,43 +109,6 @@ namespace LOSA.RecepcionMP
             this.grdv_data.OptionsView.ShowGroupPanel = false;
             this.grdv_data.DoubleClick += new System.EventHandler(this.grdv_data_DoubleClick);
             // 
-            // btnSeleccionar
-            // 
-            this.btnSeleccionar.AutoHeight = false;
-            editorButtonImageOptions3.Image = global::LOSA.Properties.Resources.tap;
-            this.btnSeleccionar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
-            // 
-            // btnAtras
-            // 
-            this.btnAtras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAtras.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnAtras.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtras.Appearance.Options.UseBackColor = true;
-            this.btnAtras.Appearance.Options.UseFont = true;
-            this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
-            this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(444, 12);
-            this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(166, 56);
-            this.btnAtras.TabIndex = 7;
-            this.btnAtras.Text = "Atrás";
-            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
-            // 
-            // dsRecepcionMPx
-            // 
-            this.dsRecepcionMPx.DataSetName = "dsRecepcionMPx";
-            this.dsRecepcionMPx.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // proveedoresBindingSource
-            // 
-            this.proveedoresBindingSource.DataMember = "proveedores";
-            this.proveedoresBindingSource.DataSource = this.dsRecepcionMPx;
-            // 
             // colcarcode
             // 
             this.colcarcode.Caption = "Codigo";
@@ -162,6 +135,33 @@ namespace LOSA.RecepcionMP
             this.seleccionar.VisibleIndex = 1;
             this.seleccionar.Width = 140;
             // 
+            // btnSeleccionar
+            // 
+            this.btnSeleccionar.AutoHeight = false;
+            editorButtonImageOptions1.Image = global::LOSA.Properties.Resources.tap;
+            this.btnSeleccionar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
+            // 
+            // btnAtras
+            // 
+            this.btnAtras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAtras.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnAtras.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtras.Appearance.Options.UseBackColor = true;
+            this.btnAtras.Appearance.Options.UseFont = true;
+            this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
+            this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnAtras.Location = new System.Drawing.Point(444, 12);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(166, 56);
+            this.btnAtras.TabIndex = 7;
+            this.btnAtras.Text = "Atrás";
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
+            // 
             // frm_select_pv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -172,11 +172,12 @@ namespace LOSA.RecepcionMP
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_select_pv";
             this.Text = "frm_select_pv";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSeleccionar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
