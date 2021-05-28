@@ -1,10 +1,12 @@
 ﻿using ACS.Classes;
 using Core.Clases.Herramientas;
 using DevExpress.Utils.TouchHelpers;
+using DevExpress.XtraReports.UI;
 using Huellas;
 using LOSA.Clases;
 using LOSA.Micro;
 using LOSA.MicroIngredientes;
+using LOSA.Reportes;
 using LOSA.Utileria;
 using System;
 using System.Collections.Generic;
@@ -255,5 +257,7 @@ namespace LOSA
             //this.DialogResult = DialogResult.Cancel; 
             //this.Close();
         }
+
+
     }
 }
