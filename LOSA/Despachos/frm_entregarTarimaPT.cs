@@ -224,23 +224,23 @@ namespace LOSA.Despachos
                             mensaje = Error;
                         }
 
-                        if (!error)//Si error sigue en false evaluaremos la ubicacion.
-                        {
-                            Ubicacion_Tarima ub1 = new Ubicacion_Tarima();
-                            if (ub1.RecuperarRegistro(tarimaEncontrada.Id, ""))
-                            {
-                                if (ub1.IdBodega != 10)
-                                {
-                                    error = true;
-                                    mensaje = "La tarima no esta en la bodega de Producto Terminado, no se puede entregar!";
-                                }
-                            }
-                            else
-                            {
-                                error = true;
-                                mensaje = "La tarima no tiene una ubicacion valida, aun esta en proceso de colocacion!";
-                            }
-                        }
+                        //if (!error)//Si error sigue en false evaluaremos la ubicacion.
+                        //{
+                        //    Ubicacion_Tarima ub1 = new Ubicacion_Tarima();
+                        //    if (ub1.RecuperarRegistro(tarimaEncontrada.Id, ""))
+                        //    {
+                        //        if (ub1.IdBodega != 10)
+                        //        {
+                        //            error = true;
+                        //            mensaje = "La tarima no esta en la bodega de Producto Terminado, no se puede entregar!";
+                        //        }
+                        //    }
+                        //    else
+                        //    {
+                        //        error = true;
+                        //        mensaje = "La tarima no tiene una ubicacion valida, aun esta en proceso de colocacion!";
+                        //    }
+                        //}
                     }
                 }
                 else

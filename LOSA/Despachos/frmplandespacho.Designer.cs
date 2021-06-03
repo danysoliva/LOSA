@@ -365,8 +365,6 @@
             this.colver.Caption = "Despachos Relacionados";
             this.colver.ColumnEdit = this.btnver;
             this.colver.Name = "colver";
-            this.colver.Visible = true;
-            this.colver.VisibleIndex = 7;
             // 
             // btnver
             // 
