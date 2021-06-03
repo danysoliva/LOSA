@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>147</ApplicationRevision>
+    <ApplicationRevision>148</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -70,10 +70,10 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>0933A2F0C51945D28A55854208324B4180FF8554</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>D31B2F5BEB8B2E829EBB6E6BD3CC4458FCA0D05F</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>LOSA_5_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>LOSA_4_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -92,7 +92,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>LOSA_5_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>LOSA_4_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -953,6 +953,12 @@
     <Compile Include="Reportes\frmrpt_lote_mp.Designer.cs">
       <DependentUpon>frmrpt_lote_mp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\frmrpt_productoterminado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmrpt_productoterminado.Designer.cs">
+      <DependentUpon>frmrpt_productoterminado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\frmtarimasporbodega.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -964,6 +970,12 @@
     </Compile>
     <Compile Include="Reportes\frm_print_TM_PT.Designer.cs">
       <DependentUpon>frm_print_TM_PT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frm_reportesMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frm_reportesMaster.Designer.cs">
+      <DependentUpon>frm_reportesMaster.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\frm_Reporte_Ubicaciones_Logistica.cs">
       <SubType>Form</SubType>
@@ -1680,11 +1692,17 @@
     <EmbeddedResource Include="Reportes\frmrpt_lote_mp.resx">
       <DependentUpon>frmrpt_lote_mp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmrpt_productoterminado.resx">
+      <DependentUpon>frmrpt_productoterminado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmtarimasporbodega.resx">
       <DependentUpon>frmtarimasporbodega.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frm_print_TM_PT.resx">
       <DependentUpon>frm_print_TM_PT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frm_reportesMaster.resx">
+      <DependentUpon>frm_reportesMaster.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frm_Reporte_Ubicaciones_Logistica.resx">
       <DependentUpon>frm_Reporte_Ubicaciones_Logistica.cs</DependentUpon>
@@ -1870,7 +1888,6 @@
     <None Include="Despachos\ds_despachos.xss">
       <DependentUpon>ds_despachos.xsd</DependentUpon>
     </None>
-    <None Include="key_tmp_2021_Master2021.pfx" />
     <None Include="Logistica\dsLogistica.xsc">
       <DependentUpon>dsLogistica.xsd</DependentUpon>
     </None>
@@ -1882,11 +1899,8 @@
     <None Include="Logistica\dsLogistica.xss">
       <DependentUpon>dsLogistica.xsd</DependentUpon>
     </None>
-    <None Include="LOSA_1_TemporaryKey.pfx" />
-    <None Include="LOSA_2_TemporaryKey.pfx" />
     <None Include="LOSA_3_TemporaryKey.pfx" />
-    <None Include="LOSA_5_TemporaryKey.pfx" />
-    <None Include="LOSA_TemporaryKey.pfx" />
+    <None Include="LOSA_4_TemporaryKey.pfx" />
     <None Include="Mantenimientos\dsMantenimiento.xsc">
       <DependentUpon>dsMantenimiento.xsd</DependentUpon>
     </None>
