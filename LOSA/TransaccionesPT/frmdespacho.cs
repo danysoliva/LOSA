@@ -14,6 +14,7 @@ using ACS.Classes;
 using DevExpress.XtraGrid.Views.Grid;
 using LOSA.Despachos;
 using DevExpress.XtraReports.UI;
+using LOSA.Reportes;
 
 namespace LOSA.TransaccionesPT
 {
@@ -148,6 +149,30 @@ namespace LOSA.TransaccionesPT
 
                     CajaDialogo.Error(ex.Message);
                 }
+            }
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            frm_nueva_orden frm = new frm_nueva_orden(UsuarioLogeado);
+            frm.Show();
+        }
+
+        private void btn_ligar_oc_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var gridView = (GridView)grd_data.FocusedView;
+                var row = (dsPT.Load_despachosRow)gridView.GetFocusedDataRow();
+
+                frm_Unir frm = new frm_Unir(row.id);
+                frm.Show();
+
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
             }
         }
     }

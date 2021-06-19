@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>151</ApplicationRevision>
+    <ApplicationRevision>152</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -348,11 +348,29 @@
     <Compile Include="Despachos\frm_mostar_otros_detalles.Designer.cs">
       <DependentUpon>frm_mostar_otros_detalles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Despachos\frm_nueva_orden.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Despachos\frm_nueva_orden.Designer.cs">
+      <DependentUpon>frm_nueva_orden.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Despachos\frm_pt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Despachos\frm_pt.Designer.cs">
+      <DependentUpon>frm_pt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Despachos\frm_Reqresumen_pt.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Despachos\frm_Reqresumen_pt.Designer.cs">
       <DependentUpon>frm_Reqresumen_pt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Despachos\frm_seleccionar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Despachos\frm_seleccionar.Designer.cs">
+      <DependentUpon>frm_seleccionar.cs</DependentUpon>
     </Compile>
     <Compile Include="Despachos\frm_seleccionUD.cs">
       <SubType>Form</SubType>
@@ -989,6 +1007,12 @@
     <Compile Include="Reportes\frm_SalidasMP.Designer.cs">
       <DependentUpon>frm_SalidasMP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\frm_Unir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frm_Unir.Designer.cs">
+      <DependentUpon>frm_Unir.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\frnReporteingreso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1411,8 +1435,17 @@
     <EmbeddedResource Include="Despachos\frm_mostar_otros_detalles.resx">
       <DependentUpon>frm_mostar_otros_detalles.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Despachos\frm_nueva_orden.resx">
+      <DependentUpon>frm_nueva_orden.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Despachos\frm_pt.resx">
+      <DependentUpon>frm_pt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frm_Reqresumen_pt.resx">
       <DependentUpon>frm_Reqresumen_pt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Despachos\frm_seleccionar.resx">
+      <DependentUpon>frm_seleccionar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frm_seleccionUD.resx">
       <DependentUpon>frm_seleccionUD.cs</DependentUpon>
@@ -1709,6 +1742,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frm_SalidasMP.resx">
       <DependentUpon>frm_SalidasMP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frm_Unir.resx">
+      <DependentUpon>frm_Unir.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frnReporteingreso.resx">
       <DependentUpon>frnReporteingreso.cs</DependentUpon>

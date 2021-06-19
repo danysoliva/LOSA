@@ -54,6 +54,11 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject21 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
@@ -84,6 +89,8 @@
             this.btndelete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colver = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnver = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.grd_LigarOC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btn_ligar_oc = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btnExcel = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPT)).BeginInit();
@@ -93,6 +100,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnfinalizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btndelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnver)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_ligar_oc)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -141,7 +149,8 @@
             this.btnfinalizar,
             this.btndelete,
             this.btnImprimir,
-            this.btnver});
+            this.btnver,
+            this.btn_ligar_oc});
             this.grd_data.Size = new System.Drawing.Size(634, 429);
             this.grd_data.TabIndex = 39;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -196,7 +205,8 @@
             this.colImprimir,
             this.colCerrar,
             this.colEliminar,
-            this.colver});
+            this.colver,
+            this.grd_LigarOC});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
@@ -414,6 +424,22 @@
             this.btnver.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnver.Click += new System.EventHandler(this.btnver_Click);
             // 
+            // grd_LigarOC
+            // 
+            this.grd_LigarOC.Caption = "Ligar a una Venta";
+            this.grd_LigarOC.ColumnEdit = this.btn_ligar_oc;
+            this.grd_LigarOC.Name = "grd_LigarOC";
+            // 
+            // btn_ligar_oc
+            // 
+            this.btn_ligar_oc.AutoHeight = false;
+            editorButtonImageOptions6.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions6.Image")));
+            this.btn_ligar_oc.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btn_ligar_oc.Name = "btn_ligar_oc";
+            this.btn_ligar_oc.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btn_ligar_oc.Click += new System.EventHandler(this.btn_ligar_oc_Click);
+            // 
             // btnExcel
             // 
             this.btnExcel.Appearance.BackColor = System.Drawing.Color.White;
@@ -426,8 +452,8 @@
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(199, 71);
             this.btnExcel.TabIndex = 40;
-            this.btnExcel.Text = "Nuevo";
-            this.btnExcel.Visible = false;
+            this.btnExcel.Text = "Orden de \r\nCarga Manual";
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // frmdespacho
             // 
@@ -451,6 +477,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnfinalizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btndelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnver)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_ligar_oc)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -488,5 +515,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btndelete;
         private DevExpress.XtraGrid.Columns.GridColumn colver;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnver;
+        private DevExpress.XtraGrid.Columns.GridColumn grd_LigarOC;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btn_ligar_oc;
     }
 }
