@@ -37,12 +37,12 @@ namespace LOSA
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblVersion = new System.Windows.Forms.Label();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.SaltarLogin = new DevExpress.XtraEditors.SimpleButton();
             this.cmdButtonSaltarLogin = new DevExpress.XtraEditors.SimpleButton();
             this.cmdMicros = new DevExpress.XtraEditors.SimpleButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.txtClave.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsuario.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -150,18 +150,6 @@ namespace LOSA
             this.labelControl3.Text = "Bienvenido";
             this.labelControl3.Click += new System.EventHandler(this.labelControl1_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::LOSA.Properties.Resources.Users_Group_icon64px;
-            this.pictureBox1.Location = new System.Drawing.Point(567, 124);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(132, 116);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // lblVersion
             // 
             this.lblVersion.AutoSize = true;
@@ -203,7 +191,6 @@ namespace LOSA
             this.SaltarLogin.Size = new System.Drawing.Size(265, 87);
             this.SaltarLogin.TabIndex = 15;
             this.SaltarLogin.Text = "Ingresar";
-            this.SaltarLogin.Visible = false;
             this.SaltarLogin.Click += new System.EventHandler(this.SaltarLogin_Click);
             // 
             // cmdButtonSaltarLogin
@@ -239,6 +226,18 @@ namespace LOSA
             this.cmdMicros.TabIndex = 16;
             this.cmdMicros.Text = "Micro Ingredientes";
             this.cmdMicros.Click += new System.EventHandler(this.cmdMicros_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::LOSA.Properties.Resources.Users_Group_icon64px;
+            this.pictureBox1.Location = new System.Drawing.Point(567, 124);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(132, 116);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // frmMain
             // 
