@@ -231,8 +231,6 @@
             this.colprint.Caption = "Imprimir";
             this.colprint.ColumnEdit = this.btnprint;
             this.colprint.Name = "colprint";
-            this.colprint.Visible = true;
-            this.colprint.VisibleIndex = 10;
             this.colprint.Width = 97;
             // 
             // btnprint
@@ -265,8 +263,6 @@
             this.colEditar.Caption = "Editar";
             this.colEditar.ColumnEdit = this.btnEdit;
             this.colEditar.Name = "colEditar";
-            this.colEditar.Visible = true;
-            this.colEditar.VisibleIndex = 11;
             this.colEditar.Width = 83;
             // 
             // btnEdit
