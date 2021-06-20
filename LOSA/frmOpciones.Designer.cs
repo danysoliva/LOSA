@@ -821,7 +821,6 @@
             this.simpleButton12.Size = new System.Drawing.Size(265, 87);
             this.simpleButton12.TabIndex = 18;
             this.simpleButton12.Text = "Reporte de \r\nSacos Activados";
-            this.simpleButton12.Visible = false;
             this.simpleButton12.Click += new System.EventHandler(this.simpleButton12_Click);
             // 
             // btnRequisasManuales
