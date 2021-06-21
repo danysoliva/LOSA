@@ -70,10 +70,10 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>D31B2F5BEB8B2E829EBB6E6BD3CC4458FCA0D05F</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>2D79FAC06D2A29E9BA6980828EAFEFEAC7870562</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>LOSA_4_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>LOSA_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -92,7 +92,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>LOSA_4_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>LOSA_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -145,6 +145,60 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlmacenesExterno\dsAlmacenesExternos.cs">
+      <DependentUpon>dsAlmacenesExternos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AlmacenesExterno\dsAlmacenesExternos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAlmacenesExternos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AlmacenesExterno\Models\Conf_MP_Ingresada.cs" />
+    <Compile Include="AlmacenesExterno\Models\Ingreso_Externo_Lote.cs" />
+    <Compile Include="AlmacenesExterno\Models\Ingreso_Externo_Lote_Seleccionado.cs" />
+    <Compile Include="AlmacenesExterno\Models\OrdenCompra_H.cs" />
+    <Compile Include="AlmacenesExterno\xfrmAlmacenesExternosDefinirLotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlmacenesExterno\xfrmAlmacenesExternosDefinirLotes.Designer.cs">
+      <DependentUpon>xfrmAlmacenesExternosDefinirLotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AlmacenesExterno\xfrmAlmacenesExternos_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlmacenesExterno\xfrmAlmacenesExternos_Main.Designer.cs">
+      <DependentUpon>xfrmAlmacenesExternos_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AlmacenesExterno\xfrmDetalleIngresoAlmacenExterno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlmacenesExterno\xfrmDetalleIngresoAlmacenExterno.Designer.cs">
+      <DependentUpon>xfrmDetalleIngresoAlmacenExterno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AlmacenesExterno\xfrmLoteCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlmacenesExterno\xfrmLoteCRUD.Designer.cs">
+      <DependentUpon>xfrmLoteCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AlmacenesExterno\xfrmRevisarOC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlmacenesExterno\xfrmRevisarOC.Designer.cs">
+      <DependentUpon>xfrmRevisarOC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AlmacenesExterno\xfrmSeleccionarOC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlmacenesExterno\xfrmSeleccionarOC.Designer.cs">
+      <DependentUpon>xfrmSeleccionarOC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AlmacenesExterno\xfrmViewLotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlmacenesExterno\xfrmViewLotes.Designer.cs">
+      <DependentUpon>xfrmViewLotes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\dsCalidad.cs">
       <DependentUpon>dsCalidad.xsd</DependentUpon>
     </Compile>
@@ -1357,6 +1411,27 @@
     <Compile Include="Utileria\frmMensajeCalidad.Designer.cs">
       <DependentUpon>frmMensajeCalidad.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AlmacenesExterno\xfrmAlmacenesExternosDefinirLotes.resx">
+      <DependentUpon>xfrmAlmacenesExternosDefinirLotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlmacenesExterno\xfrmAlmacenesExternos_Main.resx">
+      <DependentUpon>xfrmAlmacenesExternos_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlmacenesExterno\xfrmDetalleIngresoAlmacenExterno.resx">
+      <DependentUpon>xfrmDetalleIngresoAlmacenExterno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlmacenesExterno\xfrmLoteCRUD.resx">
+      <DependentUpon>xfrmLoteCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlmacenesExterno\xfrmRevisarOC.resx">
+      <DependentUpon>xfrmRevisarOC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlmacenesExterno\xfrmSeleccionarOC.resx">
+      <DependentUpon>xfrmSeleccionarOC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlmacenesExterno\xfrmViewLotes.resx">
+      <DependentUpon>xfrmViewLotes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmaddcausa.resx">
       <DependentUpon>frmaddcausa.cs</DependentUpon>
     </EmbeddedResource>
@@ -1911,6 +1986,17 @@
     <EmbeddedResource Include="Utileria\frmMensajeCalidad.resx">
       <DependentUpon>frmMensajeCalidad.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="AlmacenesExterno\dsAlmacenesExternos.xsc">
+      <DependentUpon>dsAlmacenesExternos.xsd</DependentUpon>
+    </None>
+    <None Include="AlmacenesExterno\dsAlmacenesExternos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAlmacenesExternos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="AlmacenesExterno\dsAlmacenesExternos.xss">
+      <DependentUpon>dsAlmacenesExternos.xsd</DependentUpon>
+    </None>
     <None Include="Calidad\dsCalidad.xsc">
       <DependentUpon>dsCalidad.xsd</DependentUpon>
     </None>
@@ -1946,6 +2032,7 @@
     </None>
     <None Include="LOSA_3_TemporaryKey.pfx" />
     <None Include="LOSA_4_TemporaryKey.pfx" />
+    <None Include="LOSA_TemporaryKey.pfx" />
     <None Include="Mantenimientos\dsMantenimiento.xsc">
       <DependentUpon>dsMantenimiento.xsd</DependentUpon>
     </None>

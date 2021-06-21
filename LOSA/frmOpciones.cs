@@ -16,6 +16,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LOSA.PlanMPreque;
 using LOSA.TransaccionesPT;
+using LOSA.AlmacenesExterno;
 
 namespace LOSA
 {
@@ -520,6 +521,12 @@ namespace LOSA
         private void simpleButton12_Click(object sender, EventArgs e)
         {
             frm_reporte_produccion frm = new frm_reporte_produccion();
+            frm.Show();
+        }
+
+        private void btnAlmacenesExternos_Click(object sender, EventArgs e)
+        {
+            xfrmAlmacenesExternos_Main frm = new xfrmAlmacenesExternos_Main();
             frm.Show();
         }
     }
