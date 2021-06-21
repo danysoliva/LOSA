@@ -85,38 +85,42 @@ namespace LOSA.AlmacenesExterno
                        
             foreach (var element in dsAlmacenesExternos.RevisionOC)
             {
-                if (element.CantidadIngresar==0)
+                if (element.seleccionar == true)
                 {
-                    CajaDialogo.Error("DEBE DE INGRESAR UNA CANTIDAD");
-                    return;
-                }
+                    if (element.CantidadIngresar == 0)
+                    {
+                        CajaDialogo.Error("DEBE DE INGRESAR UNA CANTIDAD");
+                        return;
+                    }
 
-                if (element.UnidadesIngresar == 0)
-                {
-                    CajaDialogo.Error("DEBE DE INGRESAR LAS UNIDADES");
-                    return;
-                }
+                    if (element.UnidadesIngresar == 0)
+                    {
+                        CajaDialogo.Error("DEBE DE INGRESAR LAS UNIDADES");
+                        return;
+                    }
 
-                if (element.diferencia==0)
-                {
-                    CajaDialogo.Error("YA SE INGRESO LA MISMA CANTIDAD DE LA ORDEN DE COMPRA");
-                    return;
-                }
+                    if (element.diferencia == 0)
+                    {
+                        CajaDialogo.Error("YA SE INGRESO LA MISMA CANTIDAD DE LA ORDEN DE COMPRA");
+                        return;
+                    }
 
 
-                if (element.diferencia>0)
-                {
+                    if (element.diferencia > 0)
+                    {
 
-                lista.Add(new Conf_MP_Ingresada
-                {
-                    ItemCode = element.ItemCode,
-                    CantIngresada = element.CantidadIngresar
-                    ,
-                    Descripcion = element.Dscription,
-                    UnidadesIngresadas= element.UnidadesIngresar,
-                    LineNum=element.LineNum,
-                    MPID=element.id_mp
-                });
+                        lista.Add(new Conf_MP_Ingresada
+                        {
+                            ItemCode = element.ItemCode,
+                            CantIngresada = element.CantidadIngresar
+                            ,
+                            Descripcion = element.Dscription,
+                            UnidadesIngresadas = element.UnidadesIngresar,
+                            LineNum = element.LineNum,
+                            MPID = element.id_mp
+                        });
+
+                    }
                 }
             }
 

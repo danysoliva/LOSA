@@ -45,6 +45,7 @@
             this.colunidades = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnVerLote = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.gcIngreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lotesviewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsAlmacenesExternos)).BeginInit();
@@ -163,15 +164,30 @@
             this.btnAtras.Appearance.Options.UseBackColor = true;
             this.btnAtras.Appearance.Options.UseFont = true;
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
+            this.btnAtras.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnAtras.Location = new System.Drawing.Point(772, 29);
             this.btnAtras.Margin = new System.Windows.Forms.Padding(4);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(178, 58);
             this.btnAtras.TabIndex = 38;
-            this.btnAtras.Text = "Atras";
+            this.btnAtras.Text = "Cerrar";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Appearance.Options.UseTextOptions = true;
+            this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl1.Location = new System.Drawing.Point(-3, 29);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(971, 24);
+            this.labelControl1.TabIndex = 39;
+            this.labelControl1.Text = "Lotes";
             // 
             // xfrmViewLotes
             // 
@@ -180,6 +196,7 @@
             this.ClientSize = new System.Drawing.Size(963, 733);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.gcIngreso);
+            this.Controls.Add(this.labelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "xfrmViewLotes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -205,5 +222,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colcantidad;
         private DevExpress.XtraGrid.Columns.GridColumn colunidades;
         private DevExpress.XtraEditors.SimpleButton btnAtras;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }
