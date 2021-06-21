@@ -119,5 +119,11 @@ namespace LOSA.TransaccionesMP
             frm_reporte_produccion frm = new frm_reporte_produccion();
             frm.Show();
         }
+
+        private void simpleButton6_Click(object sender, EventArgs e)
+        {
+            frmRevisionDeActivaciondeTm frm = new frmRevisionDeActivaciondeTm();
+            frm.Show();
+        }
     }
 }

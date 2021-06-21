@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>152</ApplicationRevision>
+    <ApplicationRevision>155</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -1279,6 +1279,12 @@
     <Compile Include="TransaccionesPT\frmPrintTM.Designer.cs">
       <DependentUpon>frmPrintTM.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesPT\frmRevisionDeActivaciondeTm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesPT\frmRevisionDeActivaciondeTm.Designer.cs">
+      <DependentUpon>frmRevisionDeActivaciondeTm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesPT\frm_ajustes_inventario_PT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1865,6 +1871,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesPT\frmPrintTM.resx">
       <DependentUpon>frmPrintTM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesPT\frmRevisionDeActivaciondeTm.resx">
+      <DependentUpon>frmRevisionDeActivaciondeTm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesPT\frm_ajustes_inventario_PT.resx">
       <DependentUpon>frm_ajustes_inventario_PT.cs</DependentUpon>

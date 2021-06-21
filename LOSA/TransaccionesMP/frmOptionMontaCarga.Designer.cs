@@ -39,12 +39,13 @@
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdEntradaMP = new DevExpress.XtraEditors.SimpleButton();
             this.TabProductoTerminado = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdTarimasPT = new DevExpress.XtraEditors.SimpleButton();
             this.cmdOrdenesCargaPT = new DevExpress.XtraEditors.SimpleButton();
             this.cmdCambiarUbicacionPT = new DevExpress.XtraEditors.SimpleButton();
             this.cmdIngresoPT = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMateriaPrima.SuspendLayout();
@@ -184,6 +185,7 @@
             // 
             // TabProductoTerminado
             // 
+            this.TabProductoTerminado.Controls.Add(this.simpleButton6);
             this.TabProductoTerminado.Controls.Add(this.simpleButton5);
             this.TabProductoTerminado.Controls.Add(this.simpleButton4);
             this.TabProductoTerminado.Controls.Add(this.cmdTarimasPT);
@@ -195,6 +197,36 @@
             this.TabProductoTerminado.PageVisible = false;
             this.TabProductoTerminado.Size = new System.Drawing.Size(629, 422);
             this.TabProductoTerminado.Text = "Producto Terminado";
+            // 
+            // simpleButton6
+            // 
+            this.simpleButton6.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton6.Appearance.Options.UseFont = true;
+            this.simpleButton6.Appearance.Options.UseTextOptions = true;
+            this.simpleButton6.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton6.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton6.ImageOptions.Image")));
+            this.simpleButton6.Location = new System.Drawing.Point(227, 190);
+            this.simpleButton6.Name = "simpleButton6";
+            this.simpleButton6.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton6.TabIndex = 16;
+            this.simpleButton6.Text = "Tarimas Activadas";
+            this.simpleButton6.Click += new System.EventHandler(this.simpleButton6_Click);
+            // 
+            // simpleButton5
+            // 
+            this.simpleButton5.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton5.Appearance.Options.UseFont = true;
+            this.simpleButton5.Appearance.Options.UseTextOptions = true;
+            this.simpleButton5.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
+            this.simpleButton5.Location = new System.Drawing.Point(227, 103);
+            this.simpleButton5.Name = "simpleButton5";
+            this.simpleButton5.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton5.TabIndex = 15;
+            this.simpleButton5.Text = "Avance de PT";
+            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
             // 
             // simpleButton4
             // 
@@ -270,21 +302,6 @@
             this.cmdIngresoPT.Visible = false;
             this.cmdIngresoPT.Click += new System.EventHandler(this.cmdIngresoPT_Click);
             // 
-            // simpleButton5
-            // 
-            this.simpleButton5.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton5.Appearance.Options.UseFont = true;
-            this.simpleButton5.Appearance.Options.UseTextOptions = true;
-            this.simpleButton5.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.simpleButton5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
-            this.simpleButton5.Location = new System.Drawing.Point(227, 103);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(199, 71);
-            this.simpleButton5.TabIndex = 15;
-            this.simpleButton5.Text = "Avance de PT";
-            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
-            // 
             // frmOptionMontaCarga
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -322,5 +339,6 @@
         private DevExpress.XtraEditors.SimpleButton cmdTarimasPT;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
         private DevExpress.XtraEditors.SimpleButton simpleButton5;
+        private DevExpress.XtraEditors.SimpleButton simpleButton6;
     }
 }
