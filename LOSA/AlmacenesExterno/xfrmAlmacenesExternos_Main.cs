@@ -28,7 +28,7 @@ namespace LOSA.AlmacenesExterno
 
             if (frm.ShowDialog()== DialogResult.OK)
             {
-
+                LoadIngresosExternos();
             }
         }
 

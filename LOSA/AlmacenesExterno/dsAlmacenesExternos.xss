@@ -8,12 +8,12 @@
   <Shapes>
     <Shape ID="DesignTable:ingreso_externo_h" ZOrder="8" X="960" Y="93" Height="309" Width="199" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="305" />
     <Shape ID="DesignTable:OC" ZOrder="7" X="1222" Y="294" Height="149" Width="152" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="167" />
-    <Shape ID="DesignTable:RevisionOC" ZOrder="6" X="1538" Y="126" Height="195" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="191" />
-    <Shape ID="DesignTable:Conf_MP_Ingresadas" ZOrder="5" X="1742" Y="94" Height="218" Width="216" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="214" />
-    <Shape ID="DesignTable:Lote" ZOrder="4" X="698" Y="55" Height="240" Width="169" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="236" />
-    <Shape ID="DesignTable:Lote_Seleccionados" ZOrder="3" X="786" Y="553" Height="240" Width="207" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="236" />
-    <Shape ID="DesignTable:ingresos_externos_d" ZOrder="2" X="1635" Y="380" Height="217" Width="213" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="213" />
-    <Shape ID="DesignTable:Lotes_view" ZOrder="1" X="1284" Y="502" Height="125" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
+    <Shape ID="DesignTable:RevisionOC" ZOrder="1" X="1457" Y="78" Height="309" Width="203" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="305" />
+    <Shape ID="DesignTable:Conf_MP_Ingresadas" ZOrder="6" X="1742" Y="94" Height="218" Width="216" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="214" />
+    <Shape ID="DesignTable:Lote" ZOrder="5" X="698" Y="55" Height="240" Width="169" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="236" />
+    <Shape ID="DesignTable:Lote_Seleccionados" ZOrder="4" X="786" Y="553" Height="240" Width="207" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="236" />
+    <Shape ID="DesignTable:ingresos_externos_d" ZOrder="3" X="1635" Y="380" Height="217" Width="213" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="213" />
+    <Shape ID="DesignTable:Lotes_view" ZOrder="2" X="1284" Y="502" Height="125" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

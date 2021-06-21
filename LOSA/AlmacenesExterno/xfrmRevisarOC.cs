@@ -96,6 +96,17 @@ namespace LOSA.AlmacenesExterno
                     CajaDialogo.Error("DEBE DE INGRESAR LAS UNIDADES");
                     return;
                 }
+
+                if (element.diferencia==0)
+                {
+                    CajaDialogo.Error("YA SE INGRESO LA MISMA CANTIDAD DE LA ORDEN DE COMPRA");
+                    return;
+                }
+
+
+                if (element.diferencia>0)
+                {
+
                 lista.Add(new Conf_MP_Ingresada
                 {
                     ItemCode = element.ItemCode,
@@ -106,6 +117,7 @@ namespace LOSA.AlmacenesExterno
                     LineNum=element.LineNum,
                     MPID=element.id_mp
                 });
+                }
             }
 
 
@@ -132,7 +144,49 @@ namespace LOSA.AlmacenesExterno
                     row.CantidadIngresar = 0;
                     return;
                 }
+
+                if (row.diferencia <= 0 )
+                {
+                    CajaDialogo.Error("YA SE INGRESO LA MISMA CANTIDAD DE LA ORDEN DE COMPRA");
+                    row.CantidadIngresar = 0;
+                    return;
+                }
+
+                if ( row.CantidadIngresar > row.diferencia && row.diferencia > 0)
+                {
+                    CajaDialogo.Error("DEBE DE INGRESAR UNA CANTIDAD MENOR O IGUAL A " + row.diferencia+ " Para esta MP");
+                    row.CantidadIngresar = 0;
+                    return;
+                }
+
+                if (row.seleccionar == true)
+                {
+                    if (row.diferencia <= 0)
+                    {
+                        CajaDialogo.Error("NO PUEDE SELECCIONAR ESTE ITEM PORQUE YA HA SIDO INGRESADO TOTALMENTE");
+                        row.seleccionar = false;
+                        return;
+                    }
+
+                }
             }
+        }
+
+        private void ceSeleccionar_CheckedChanged(object sender, EventArgs e)
+        {
+            var gv = (GridView)gcIngreso.FocusedView;
+            var row = (dsAlmacenesExternos.RevisionOCRow)gv.GetDataRow(gv.FocusedRowHandle);
+
+            //if (row.seleccionar==true)
+            //{
+            //    if (row.diferencia<=0)
+            //    {
+            //        CajaDialogo.Error("NO PUEDE SELECCIONAR ESTE ITEM PORQUE YA HA SIDO INGRESADO TOTALMENTE");
+            //        row.seleccionar = false;
+            //        return;
+            //    }
+
+            //}
         }
     }
 }

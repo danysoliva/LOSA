@@ -1286,6 +1286,14 @@ namespace LOSA.AlmacenesExterno {
             
             private global::System.Data.DataColumn columnid_mp;
             
+            private global::System.Data.DataColumn columnpeso_acumulativo;
+            
+            private global::System.Data.DataColumn columnunidades_acumulativas;
+            
+            private global::System.Data.DataColumn columndiferencia;
+            
+            private global::System.Data.DataColumn columnseleccionar;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public RevisionOCDataTable() {
@@ -1385,6 +1393,38 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn peso_acumulativoColumn {
+                get {
+                    return this.columnpeso_acumulativo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn unidades_acumulativasColumn {
+                get {
+                    return this.columnunidades_acumulativas;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn diferenciaColumn {
+                get {
+                    return this.columndiferencia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn seleccionarColumn {
+                get {
+                    return this.columnseleccionar;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1420,7 +1460,7 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RevisionOCRow AddRevisionOCRow(string ItemCode, string Dscription, decimal kg, string U_sacos, decimal CantidadIngresar, decimal UnidadesIngresar, int LineNum, int id_mp) {
+            public RevisionOCRow AddRevisionOCRow(string ItemCode, string Dscription, decimal kg, string U_sacos, decimal CantidadIngresar, decimal UnidadesIngresar, int LineNum, int id_mp, decimal peso_acumulativo, decimal unidades_acumulativas, decimal diferencia, bool seleccionar) {
                 RevisionOCRow rowRevisionOCRow = ((RevisionOCRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ItemCode,
@@ -1430,7 +1470,11 @@ namespace LOSA.AlmacenesExterno {
                         CantidadIngresar,
                         UnidadesIngresar,
                         LineNum,
-                        id_mp};
+                        id_mp,
+                        peso_acumulativo,
+                        unidades_acumulativas,
+                        diferencia,
+                        seleccionar};
                 rowRevisionOCRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRevisionOCRow);
                 return rowRevisionOCRow;
@@ -1461,6 +1505,10 @@ namespace LOSA.AlmacenesExterno {
                 this.columnUnidadesIngresar = base.Columns["UnidadesIngresar"];
                 this.columnLineNum = base.Columns["LineNum"];
                 this.columnid_mp = base.Columns["id_mp"];
+                this.columnpeso_acumulativo = base.Columns["peso_acumulativo"];
+                this.columnunidades_acumulativas = base.Columns["unidades_acumulativas"];
+                this.columndiferencia = base.Columns["diferencia"];
+                this.columnseleccionar = base.Columns["seleccionar"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1482,6 +1530,14 @@ namespace LOSA.AlmacenesExterno {
                 base.Columns.Add(this.columnLineNum);
                 this.columnid_mp = new global::System.Data.DataColumn("id_mp", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_mp);
+                this.columnpeso_acumulativo = new global::System.Data.DataColumn("peso_acumulativo", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpeso_acumulativo);
+                this.columnunidades_acumulativas = new global::System.Data.DataColumn("unidades_acumulativas", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnunidades_acumulativas);
+                this.columndiferencia = new global::System.Data.DataColumn("diferencia", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndiferencia);
+                this.columnseleccionar = new global::System.Data.DataColumn("seleccionar", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnseleccionar);
                 this.columnid_mp.DefaultValue = ((int)(0));
             }
             
@@ -4049,6 +4105,70 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal peso_acumulativo {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableRevisionOC.peso_acumulativoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'peso_acumulativo\' in table \'RevisionOC\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRevisionOC.peso_acumulativoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal unidades_acumulativas {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableRevisionOC.unidades_acumulativasColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'unidades_acumulativas\' in table \'RevisionOC\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRevisionOC.unidades_acumulativasColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal diferencia {
+                get {
+                    if (this.IsdiferenciaNull()) {
+                        return 0m;
+                    }
+                    else {
+                        return ((decimal)(this[this.tableRevisionOC.diferenciaColumn]));
+                    }
+                }
+                set {
+                    this[this.tableRevisionOC.diferenciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool seleccionar {
+                get {
+                    if (this.IsseleccionarNull()) {
+                        return false;
+                    }
+                    else {
+                        return ((bool)(this[this.tableRevisionOC.seleccionarColumn]));
+                    }
+                }
+                set {
+                    this[this.tableRevisionOC.seleccionarColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsItemCodeNull() {
                 return this.IsNull(this.tableRevisionOC.ItemCodeColumn);
             }
@@ -4141,6 +4261,54 @@ namespace LOSA.AlmacenesExterno {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setid_mpNull() {
                 this[this.tableRevisionOC.id_mpColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Ispeso_acumulativoNull() {
+                return this.IsNull(this.tableRevisionOC.peso_acumulativoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setpeso_acumulativoNull() {
+                this[this.tableRevisionOC.peso_acumulativoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isunidades_acumulativasNull() {
+                return this.IsNull(this.tableRevisionOC.unidades_acumulativasColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setunidades_acumulativasNull() {
+                this[this.tableRevisionOC.unidades_acumulativasColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsdiferenciaNull() {
+                return this.IsNull(this.tableRevisionOC.diferenciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetdiferenciaNull() {
+                this[this.tableRevisionOC.diferenciaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsseleccionarNull() {
+                return this.IsNull(this.tableRevisionOC.seleccionarColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetseleccionarNull() {
+                this[this.tableRevisionOC.seleccionarColumn] = global::System.Convert.DBNull;
             }
         }
         

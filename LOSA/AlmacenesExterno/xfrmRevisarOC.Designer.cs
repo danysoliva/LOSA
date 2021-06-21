@@ -50,6 +50,11 @@
             this.colUnidades = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNumLine = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIDMP = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ceSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.txtCantIngresar = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.label2 = new System.Windows.Forms.Label();
             this.txtProveedor = new DevExpress.XtraEditors.TextEdit();
@@ -64,6 +69,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.revisionOCBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsAlmacenesExternos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvIngreso)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ceSeleccionar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantIngresar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProveedor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDate.Properties)).BeginInit();
@@ -122,7 +128,8 @@
             this.gcIngreso.MainView = this.gvIngreso;
             this.gcIngreso.Name = "gcIngreso";
             this.gcIngreso.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.txtCantIngresar});
+            this.txtCantIngresar,
+            this.ceSeleccionar});
             this.gcIngreso.Size = new System.Drawing.Size(1302, 414);
             this.gcIngreso.TabIndex = 34;
             this.gcIngreso.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -156,7 +163,11 @@
             this.colCantIngresar,
             this.colUnidades,
             this.colNumLine,
-            this.colIDMP});
+            this.colIDMP,
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4});
             this.gvIngreso.GridControl = this.gcIngreso;
             this.gvIngreso.Name = "gvIngreso";
             this.gvIngreso.OptionsView.ShowAutoFilterRow = true;
@@ -174,7 +185,7 @@
             this.colItemCode.OptionsFilter.AllowFilter = false;
             this.colItemCode.Visible = true;
             this.colItemCode.VisibleIndex = 0;
-            this.colItemCode.Width = 132;
+            this.colItemCode.Width = 120;
             // 
             // colDescription
             // 
@@ -187,11 +198,11 @@
             this.colDescription.OptionsFilter.AllowFilter = false;
             this.colDescription.Visible = true;
             this.colDescription.VisibleIndex = 1;
-            this.colDescription.Width = 400;
+            this.colDescription.Width = 364;
             // 
             // colkg
             // 
-            this.colkg.Caption = "KG";
+            this.colkg.Caption = "KG (OC)";
             this.colkg.DisplayFormat.FormatString = "{0:N2}";
             this.colkg.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colkg.FieldName = "kg";
@@ -203,7 +214,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "kg", "Total ={0:0.##}")});
             this.colkg.Visible = true;
             this.colkg.VisibleIndex = 2;
-            this.colkg.Width = 254;
+            this.colkg.Width = 127;
             // 
             // colU_sacos
             // 
@@ -214,7 +225,7 @@
             this.colU_sacos.OptionsFilter.AllowFilter = false;
             this.colU_sacos.Visible = true;
             this.colU_sacos.VisibleIndex = 3;
-            this.colU_sacos.Width = 145;
+            this.colU_sacos.Width = 93;
             // 
             // colCantIngresar
             // 
@@ -231,8 +242,8 @@
             this.colCantIngresar.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "CantidadIngresar", "Total ={0:0.##}")});
             this.colCantIngresar.Visible = true;
-            this.colCantIngresar.VisibleIndex = 4;
-            this.colCantIngresar.Width = 148;
+            this.colCantIngresar.VisibleIndex = 5;
+            this.colCantIngresar.Width = 121;
             // 
             // colUnidades
             // 
@@ -248,8 +259,8 @@
             this.colUnidades.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "UnidadesIngresar", "Total ={0:0.##}")});
             this.colUnidades.Visible = true;
-            this.colUnidades.VisibleIndex = 5;
-            this.colUnidades.Width = 94;
+            this.colUnidades.VisibleIndex = 6;
+            this.colUnidades.Width = 81;
             // 
             // colNumLine
             // 
@@ -268,6 +279,48 @@
             this.colIDMP.Name = "colIDMP";
             this.colIDMP.OptionsFilter.AllowFilter = false;
             this.colIDMP.Width = 94;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Peso (Acumulado de Ingresos)";
+            this.gridColumn1.DisplayFormat.FormatString = "{0:N2}";
+            this.gridColumn1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn1.FieldName = "peso_acumulativo";
+            this.gridColumn1.MinWidth = 25;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.OptionsFilter.AllowFilter = false;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 4;
+            this.gridColumn1.Width = 250;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.FieldName = "unidades_acumulativas";
+            this.gridColumn2.MinWidth = 25;
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Width = 69;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.FieldName = "diferencia";
+            this.gridColumn3.MinWidth = 25;
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Width = 69;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Seleccionar";
+            this.gridColumn4.ColumnEdit = this.ceSeleccionar;
+            this.gridColumn4.MinWidth = 25;
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Width = 126;
+            // 
+            // ceSeleccionar
+            // 
+            this.ceSeleccionar.AutoHeight = false;
+            this.ceSeleccionar.Name = "ceSeleccionar";
+            this.ceSeleccionar.CheckedChanged += new System.EventHandler(this.ceSeleccionar_CheckedChanged);
             // 
             // txtCantIngresar
             // 
@@ -397,6 +450,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.revisionOCBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsAlmacenesExternos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvIngreso)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ceSeleccionar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantIngresar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProveedor.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDate.Properties)).EndInit();
@@ -432,5 +486,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn colUnidades;
         private DevExpress.XtraGrid.Columns.GridColumn colNumLine;
         private DevExpress.XtraGrid.Columns.GridColumn colIDMP;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit ceSeleccionar;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
     }
 }
