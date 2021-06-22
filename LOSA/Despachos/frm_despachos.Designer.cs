@@ -28,12 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_despachos));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
@@ -51,10 +56,16 @@
             this.colenviado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colprogamado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPendiente = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnSeguimiento = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.tgg_ver = new DevExpress.XtraEditors.ToggleSwitch();
+            this.colactivo = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds_despachos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEnviar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSeguimiento)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tgg_ver.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -95,12 +106,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_data.DataMember = "op_despachos";
             this.grd_data.DataSource = this.ds_despachos;
-            this.grd_data.Location = new System.Drawing.Point(-1, 118);
+            this.grd_data.Location = new System.Drawing.Point(-1, 131);
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
             this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.btnEnviar});
-            this.grd_data.Size = new System.Drawing.Size(639, 442);
+            this.btnEnviar,
+            this.btnSeguimiento});
+            this.grd_data.Size = new System.Drawing.Size(639, 429);
             this.grd_data.TabIndex = 40;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
@@ -139,11 +151,14 @@
             this.colEnviar,
             this.colenviado,
             this.colprogamado,
-            this.colPendiente});
+            this.colPendiente,
+            this.gridColumn1,
+            this.colactivo});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
             this.grdv_data.OptionsView.ShowGroupPanel = false;
+            this.grdv_data.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.grdv_data_RowStyle);
             // 
             // colDespachoN
             // 
@@ -218,9 +233,9 @@
             // btnEnviar
             // 
             this.btnEnviar.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
             this.btnEnviar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
@@ -252,11 +267,47 @@
             this.colPendiente.Visible = true;
             this.colPendiente.VisibleIndex = 7;
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Seguimiento";
+            this.gridColumn1.ColumnEdit = this.btnSeguimiento;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 9;
+            // 
+            // btnSeguimiento
+            // 
+            this.btnSeguimiento.AutoHeight = false;
+            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
+            this.btnSeguimiento.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnSeguimiento.Name = "btnSeguimiento";
+            this.btnSeguimiento.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnSeguimiento.Click += new System.EventHandler(this.btnSeguimiento_Click);
+            // 
+            // tgg_ver
+            // 
+            this.tgg_ver.Location = new System.Drawing.Point(12, 93);
+            this.tgg_ver.Name = "tgg_ver";
+            this.tgg_ver.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tgg_ver.Properties.Appearance.Options.UseFont = true;
+            this.tgg_ver.Properties.OffText = "Solo activas";
+            this.tgg_ver.Properties.OnText = "Completadas";
+            this.tgg_ver.Size = new System.Drawing.Size(304, 32);
+            this.tgg_ver.TabIndex = 41;
+            this.tgg_ver.Toggled += new System.EventHandler(this.tgg_ver_Toggled);
+            // 
+            // colactivo
+            // 
+            this.colactivo.FieldName = "activo";
+            this.colactivo.Name = "colactivo";
+            // 
             // frm_despachos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(638, 560);
+            this.Controls.Add(this.tgg_ver);
             this.Controls.Add(this.grd_data);
             this.Controls.Add(this.cmdHome);
             this.Controls.Add(this.labelControl3);
@@ -268,6 +319,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ds_despachos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEnviar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSeguimiento)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tgg_ver.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -291,5 +344,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn colprogamado;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnEnviar;
         private DevExpress.XtraGrid.Columns.GridColumn colPendiente;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnSeguimiento;
+        private DevExpress.XtraEditors.ToggleSwitch tgg_ver;
+        private DevExpress.XtraGrid.Columns.GridColumn colactivo;
     }
 }

@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using ACS.Classes;
 using LOSA.Clases;
 using System.Data.SqlClient;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace LOSA.RecepcionMP
 {
@@ -27,8 +28,30 @@ namespace LOSA.RecepcionMP
             InitializeComponent();
             Id_ingreso = Pingreso;
             load_data();
+            load_detalle_lote();
         }
 
+        public void load_detalle_lote()
+        {
+            string query = @"sp_load_lotes_ingresos";
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            try
+            {
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query,cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                dsingresos.detalle_lote.Clear();
+                da.Fill(dsingresos.detalle_lote);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
         public void load_data()
         {
             string query = @"sp_load_info_ingreso_to_edit";
@@ -118,6 +141,25 @@ namespace LOSA.RecepcionMP
                 cmd.Parameters.AddWithValue("@cardcode", cardcode);
                 cmd.Parameters.AddWithValue("@boleta", txtBoleta.Text);
                 cmd.ExecuteNonQuery();
+
+                foreach (dsingresos.detalle_loteRow row in dsingresos.detalle_lote.Rows)
+                {
+                    if (row.seleccionado)
+                    {
+                        query = @"sp_update_todas_las_tarimas";
+                        cmd = new SqlCommand(query, cn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@id_ingreso_d", row.id);
+                        cmd.Parameters.AddWithValue("@itemcode", Itemcode);
+                        cmd.Parameters.AddWithValue("@dscripcion", Dscripcion);
+                        cmd.Parameters.AddWithValue("@cardcode", cardcode);
+                        cmd.Parameters.AddWithValue("@boleta", txtBoleta.Text);
+                        cmd.ExecuteNonQuery();
+                    }
+
+                }
+                //
+
                 CajaDialogo.Information("Cambio realizado.!");
                 this.DialogResult = DialogResult.OK;
             }
@@ -147,6 +189,45 @@ namespace LOSA.RecepcionMP
             {
                 pv = frm.pv;
                 cardcode = frm.Cardcode;
+            }
+        }
+
+        private void tgTodos_Toggled(object sender, EventArgs e)
+        {
+            if (tgTodos.IsOn)
+            {
+                foreach (dsingresos.detalle_loteRow row in dsingresos.detalle_lote.Rows)
+                {
+                    row.seleccionado = false;
+                }
+                dsingresos.detalle_lote.AcceptChanges();
+            }
+            else
+            {
+                foreach (dsingresos.detalle_loteRow row in dsingresos.detalle_lote.Rows)
+                {
+                    row.seleccionado = true;
+                }
+                dsingresos.detalle_lote.AcceptChanges();
+            }
+        }
+
+        private void grdv_data_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            try
+            {
+                var gridView = (GridView)grd_data.FocusedView;
+                var row = (dsingresos.detalle_loteRow)gridView.GetFocusedDataRow();
+                if (e.Column.Name == "colseleccionado")
+                {
+                    row.seleccionado = Convert.ToBoolean(e.Value);
+                }
+                row.AcceptChanges();
+            }
+            catch (Exception ex)
+            {
+
+                
             }
         }
     }

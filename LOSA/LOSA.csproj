@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>155</ApplicationRevision>
+    <ApplicationRevision>158</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -70,10 +70,10 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>2D79FAC06D2A29E9BA6980828EAFEFEAC7870562</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>D31B2F5BEB8B2E829EBB6E6BD3CC4458FCA0D05F</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>LOSA_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>LOSA_4_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -92,7 +92,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>LOSA_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>LOSA_3_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -431,6 +431,12 @@
     </Compile>
     <Compile Include="Despachos\frm_seleccionUD.Designer.cs">
       <DependentUpon>frm_seleccionUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Despachos\frm_viewEntrega.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Despachos\frm_viewEntrega.Designer.cs">
+      <DependentUpon>frm_viewEntrega.cs</DependentUpon>
     </Compile>
     <Compile Include="Despachos\frm_view_entrega_despacho.cs">
       <SubType>Form</SubType>
@@ -1531,6 +1537,9 @@
     <EmbeddedResource Include="Despachos\frm_seleccionUD.resx">
       <DependentUpon>frm_seleccionUD.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Despachos\frm_viewEntrega.resx">
+      <DependentUpon>frm_viewEntrega.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frm_view_entrega_despacho.resx">
       <DependentUpon>frm_view_entrega_despacho.cs</DependentUpon>
     </EmbeddedResource>
@@ -2032,7 +2041,6 @@
     </None>
     <None Include="LOSA_3_TemporaryKey.pfx" />
     <None Include="LOSA_4_TemporaryKey.pfx" />
-    <None Include="LOSA_TemporaryKey.pfx" />
     <None Include="Mantenimientos\dsMantenimiento.xsc">
       <DependentUpon>dsMantenimiento.xsd</DependentUpon>
     </None>
