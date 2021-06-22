@@ -12,15 +12,20 @@ using ACS.Classes;
 using System.Data.SqlClient;
 using DevExpress.XtraGrid.Views.Grid;
 using LOSA.AlmacenesExterno.Models;
+using LOSA.Clases;
 
 namespace LOSA.AlmacenesExterno
 {
     public partial class xfrmRevisarOC : DevExpress.XtraEditors.XtraForm
     {
         OrdenCompra_H oc_h = new OrdenCompra_H();
-        public xfrmRevisarOC()
+
+        UserLogin UsuarioLogueado;
+
+        public xfrmRevisarOC(UserLogin pUser)
         {
             InitializeComponent();
+            UsuarioLogueado = pUser;
         }
 
         private void btnOC_EditValueChanged(object sender, EventArgs e)
@@ -126,7 +131,7 @@ namespace LOSA.AlmacenesExterno
 
 
             //}
-            xfrmAlmacenesExternosDefinirLotes frm = new xfrmAlmacenesExternosDefinirLotes(lista,oc_h );
+            xfrmAlmacenesExternosDefinirLotes frm = new xfrmAlmacenesExternosDefinirLotes(lista,oc_h,UsuarioLogueado );
 
             if (frm.ShowDialog()== DialogResult.OK)
             {

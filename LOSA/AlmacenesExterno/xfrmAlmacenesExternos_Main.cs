@@ -11,20 +11,24 @@ using DevExpress.XtraEditors;
 using ACS.Classes;
 using System.Data.SqlClient;
 using DevExpress.XtraGrid.Views.Grid;
+using LOSA.Clases;
 
 namespace LOSA.AlmacenesExterno
 {
     public partial class xfrmAlmacenesExternos_Main : DevExpress.XtraEditors.XtraForm
     {
-        public xfrmAlmacenesExternos_Main()
+        UserLogin UsuarioLogueado;
+
+        public xfrmAlmacenesExternos_Main(UserLogin pUser)
         {
             InitializeComponent();
             LoadIngresosExternos();
+            UsuarioLogueado = pUser;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            xfrmRevisarOC frm = new xfrmRevisarOC();
+            xfrmRevisarOC frm = new xfrmRevisarOC(UsuarioLogueado);
 
             if (frm.ShowDialog()== DialogResult.OK)
             {

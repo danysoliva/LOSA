@@ -43,6 +43,8 @@
             this.collote = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcantidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colunidades = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnVerLote = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -64,7 +66,7 @@
             this.gcIngreso.Name = "gcIngreso";
             this.gcIngreso.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnVerLote});
-            this.gcIngreso.Size = new System.Drawing.Size(966, 623);
+            this.gcIngreso.Size = new System.Drawing.Size(1034, 623);
             this.gcIngreso.TabIndex = 37;
             this.gcIngreso.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvIngreso});
@@ -93,7 +95,9 @@
             this.colid,
             this.collote,
             this.colcantidad,
-            this.colunidades});
+            this.colunidades,
+            this.gridColumn1,
+            this.gridColumn2});
             this.gvIngreso.GridControl = this.gcIngreso;
             this.gvIngreso.Name = "gvIngreso";
             this.gvIngreso.OptionsBehavior.AutoSelectAllInEditor = false;
@@ -147,6 +151,30 @@
             this.colunidades.VisibleIndex = 2;
             this.colunidades.Width = 94;
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Fecha Vencimiento";
+            this.gridColumn1.FieldName = "fecha_vencimiento";
+            this.gridColumn1.MinWidth = 25;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.OptionsFilter.AllowFilter = false;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 3;
+            this.gridColumn1.Width = 94;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Fecha Producción";
+            this.gridColumn2.FieldName = "fecha_produccion";
+            this.gridColumn2.MinWidth = 25;
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
+            this.gridColumn2.OptionsFilter.AllowFilter = false;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 4;
+            this.gridColumn2.Width = 94;
+            // 
             // btnVerLote
             // 
             this.btnVerLote.AutoHeight = false;
@@ -166,7 +194,7 @@
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(772, 29);
+            this.btnAtras.Location = new System.Drawing.Point(835, 29);
             this.btnAtras.Margin = new System.Windows.Forms.Padding(4);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(178, 58);
@@ -185,7 +213,7 @@
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl1.Location = new System.Drawing.Point(-3, 29);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(971, 24);
+            this.labelControl1.Size = new System.Drawing.Size(1034, 24);
             this.labelControl1.TabIndex = 39;
             this.labelControl1.Text = "Lotes";
             // 
@@ -193,7 +221,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(963, 733);
+            this.ClientSize = new System.Drawing.Size(1026, 733);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.gcIngreso);
             this.Controls.Add(this.labelControl1);
@@ -223,5 +251,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colunidades;
         private DevExpress.XtraEditors.SimpleButton btnAtras;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
     }
 }
