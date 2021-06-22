@@ -541,7 +541,7 @@
             this.colcantidad.OptionsFilter.AllowFilter = false;
             this.colcantidad.Visible = true;
             this.colcantidad.VisibleIndex = 1;
-            this.colcantidad.Width = 223;
+            this.colcantidad.Width = 137;
             // 
             // colunidades
             // 
@@ -554,7 +554,7 @@
             this.colunidades.OptionsFilter.AllowFilter = false;
             this.colunidades.Visible = true;
             this.colunidades.VisibleIndex = 3;
-            this.colunidades.Width = 125;
+            this.colunidades.Width = 79;
             // 
             // colid_detalle
             // 
@@ -573,7 +573,7 @@
             this.gridColumn1.OptionsFilter.AllowFilter = false;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 106;
+            this.gridColumn1.Width = 77;
             // 
             // gridColumn2
             // 
@@ -587,7 +587,7 @@
             this.gridColumn2.OptionsFilter.AllowFilter = false;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 2;
-            this.gridColumn2.Width = 104;
+            this.gridColumn2.Width = 87;
             // 
             // txtCantSeleccionada
             // 
@@ -596,12 +596,14 @@
             // 
             // gridColumn3
             // 
+            this.gridColumn3.Caption = "Selecc.";
             this.gridColumn3.FieldName = "Seleccionar";
             this.gridColumn3.MinWidth = 25;
             this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsFilter.AllowFilter = false;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 6;
-            this.gridColumn3.Width = 94;
+            this.gridColumn3.Width = 63;
             // 
             // gridColumn7
             // 
@@ -627,7 +629,7 @@
             this.gridColumn11.OptionsFilter.AllowFilter = false;
             this.gridColumn11.Visible = true;
             this.gridColumn11.VisibleIndex = 4;
-            this.gridColumn11.Width = 94;
+            this.gridColumn11.Width = 80;
             // 
             // gridColumn12
             // 
@@ -638,7 +640,7 @@
             this.gridColumn12.OptionsFilter.AllowFilter = false;
             this.gridColumn12.Visible = true;
             this.gridColumn12.VisibleIndex = 5;
-            this.gridColumn12.Width = 94;
+            this.gridColumn12.Width = 91;
             // 
             // gcLote
             // 
