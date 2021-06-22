@@ -134,6 +134,7 @@
             this.colitemName.MinWidth = 25;
             this.colitemName.Name = "colitemName";
             this.colitemName.OptionsColumn.AllowEdit = false;
+            this.colitemName.OptionsFilter.AllowFilter = false;
             this.colitemName.Visible = true;
             this.colitemName.VisibleIndex = 0;
             this.colitemName.Width = 490;
@@ -159,8 +160,6 @@
             this.colfecha_vencimiento.MinWidth = 25;
             this.colfecha_vencimiento.Name = "colfecha_vencimiento";
             this.colfecha_vencimiento.OptionsColumn.AllowEdit = false;
-            this.colfecha_vencimiento.Visible = true;
-            this.colfecha_vencimiento.VisibleIndex = 1;
             this.colfecha_vencimiento.Width = 185;
             // 
             // gridColumn1
@@ -172,10 +171,11 @@
             this.gridColumn1.MinWidth = 25;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.OptionsFilter.AllowFilter = false;
             this.gridColumn1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "peso", "Total ={0:N2}")});
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 2;
+            this.gridColumn1.VisibleIndex = 1;
             this.gridColumn1.Width = 142;
             // 
             // gridColumn2
@@ -187,10 +187,11 @@
             this.gridColumn2.MinWidth = 25;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
+            this.gridColumn2.OptionsFilter.AllowFilter = false;
             this.gridColumn2.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "unidades", "Total ={0:N2}")});
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 3;
+            this.gridColumn2.VisibleIndex = 2;
             this.gridColumn2.Width = 125;
             // 
             // gridColumn3
@@ -199,8 +200,9 @@
             this.gridColumn3.ColumnEdit = this.btnVerLote;
             this.gridColumn3.MinWidth = 25;
             this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsFilter.AllowFilter = false;
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 4;
+            this.gridColumn3.VisibleIndex = 3;
             this.gridColumn3.Width = 148;
             // 
             // btnVerLote

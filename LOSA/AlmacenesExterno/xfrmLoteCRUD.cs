@@ -39,6 +39,8 @@ namespace LOSA.AlmacenesExterno
                 lote.Lote = txtLote.Text;
                 lote.Cantidad = Convert.ToDecimal(txtCantidad.Text);
                 lote.NumLine = -1;
+                lote.FechaProduccion = deFechaProduccion.DateTime;
+                lote.FechaVencimiento = deFechaProduccion.DateTime;
 
                 using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringLOSA))
                 {
@@ -49,6 +51,8 @@ namespace LOSA.AlmacenesExterno
                     cmd.Parameters.Add("@unidades", SqlDbType.Decimal).Value = lote.Unidades;
                     cmd.Parameters.Add("@id_detalle", SqlDbType.Decimal).Value = 0;
                     cmd.Parameters.Add("@lote", SqlDbType.VarChar).Value = lote.Lote;
+                    cmd.Parameters.Add("@fecha_vencimiento", SqlDbType.DateTime).Value = lote.FechaVencimiento;
+                    cmd.Parameters.Add("@fecha_produccion", SqlDbType.DateTime).Value = lote.FechaProduccion;
 
                     lote.ID = Convert.ToInt32(cmd.ExecuteScalar());
                     cnx.Close();

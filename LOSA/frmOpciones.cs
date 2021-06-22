@@ -526,7 +526,7 @@ namespace LOSA
 
         private void btnAlmacenesExternos_Click(object sender, EventArgs e)
         {
-            xfrmAlmacenesExternos_Main frm = new xfrmAlmacenesExternos_Main();
+            xfrmAlmacenesExternos_Main frm = new xfrmAlmacenesExternos_Main(UsuarioLogeado);
             frm.Show();
         }
     }

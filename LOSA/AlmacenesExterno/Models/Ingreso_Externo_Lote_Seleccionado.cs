@@ -14,5 +14,7 @@ namespace LOSA.AlmacenesExterno.Models
         public decimal Unidades { get; set; }
         public int NumLine { get; set; }
         public int Row_ { get; set; }
+        public DateTime FechaVencimiento { get; set; }
+        public DateTime FechaProduccion { get; set; }
     }
 }

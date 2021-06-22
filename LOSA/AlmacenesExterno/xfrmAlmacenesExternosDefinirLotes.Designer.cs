@@ -63,6 +63,8 @@
             this.btnDel = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colNumLine = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcLoteSelecionados = new DevExpress.XtraGrid.GridControl();
             this.loteSeleccionadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gvLote = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -76,6 +78,8 @@
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcLote = new DevExpress.XtraGrid.GridControl();
             this.loteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
@@ -244,8 +248,6 @@
             this.gridColumn6.MinWidth = 25;
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.OptionsFilter.AllowFilter = false;
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 5;
             this.gridColumn6.Width = 149;
             // 
             // colLineNum
@@ -335,7 +337,9 @@
             this.colCantSeleccionada,
             this.gridColumn4,
             this.colNumLine,
-            this.gridColumn10});
+            this.gridColumn10,
+            this.gridColumn13,
+            this.gridColumn14});
             this.gvLotesSeleccionados.GridControl = this.gcLoteSelecionados;
             this.gvLotesSeleccionados.Name = "gvLotesSeleccionados";
             this.gvLotesSeleccionados.OptionsView.ShowAutoFilterRow = true;
@@ -365,6 +369,7 @@
             this.colunidades1.FieldName = "unidades";
             this.colunidades1.MinWidth = 25;
             this.colunidades1.Name = "colunidades1";
+            this.colunidades1.OptionsColumn.AllowEdit = false;
             this.colunidades1.OptionsFilter.AllowFilter = false;
             this.colunidades1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "unidades", "Total ={0:N2}")});
@@ -386,6 +391,7 @@
             this.collote.FieldName = "lote";
             this.collote.MinWidth = 25;
             this.collote.Name = "collote";
+            this.collote.OptionsColumn.AllowEdit = false;
             this.collote.OptionsFilter.AllowFilter = false;
             this.collote.Visible = true;
             this.collote.VisibleIndex = 0;
@@ -399,6 +405,7 @@
             this.colCantSeleccionada.FieldName = "CantSeleccionada";
             this.colCantSeleccionada.MinWidth = 25;
             this.colCantSeleccionada.Name = "colCantSeleccionada";
+            this.colCantSeleccionada.OptionsColumn.AllowEdit = false;
             this.colCantSeleccionada.OptionsFilter.AllowFilter = false;
             this.colCantSeleccionada.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "CantSeleccionada", "Total ={0:N2}")});
@@ -414,7 +421,7 @@
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsFilter.AllowFilter = false;
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.VisibleIndex = 5;
             this.gridColumn4.Width = 94;
             // 
             // btnDel
@@ -440,6 +447,30 @@
             this.gridColumn10.MinWidth = 25;
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.Width = 94;
+            // 
+            // gridColumn13
+            // 
+            this.gridColumn13.Caption = "Fecha Venc.";
+            this.gridColumn13.FieldName = "fecha_vencimiento";
+            this.gridColumn13.MinWidth = 25;
+            this.gridColumn13.Name = "gridColumn13";
+            this.gridColumn13.OptionsColumn.AllowEdit = false;
+            this.gridColumn13.OptionsFilter.AllowFilter = false;
+            this.gridColumn13.Visible = true;
+            this.gridColumn13.VisibleIndex = 3;
+            this.gridColumn13.Width = 94;
+            // 
+            // gridColumn14
+            // 
+            this.gridColumn14.Caption = "Fecha Prod.";
+            this.gridColumn14.FieldName = "fecha_produccion";
+            this.gridColumn14.MinWidth = 25;
+            this.gridColumn14.Name = "gridColumn14";
+            this.gridColumn14.OptionsColumn.AllowEdit = false;
+            this.gridColumn14.OptionsFilter.AllowFilter = false;
+            this.gridColumn14.Visible = true;
+            this.gridColumn14.VisibleIndex = 4;
+            this.gridColumn14.Width = 94;
             // 
             // gcLoteSelecionados
             // 
@@ -480,7 +511,9 @@
             this.gridColumn2,
             this.gridColumn3,
             this.gridColumn7,
-            this.gridColumn9});
+            this.gridColumn9,
+            this.gridColumn11,
+            this.gridColumn12});
             this.gvLote.GridControl = this.gcLote;
             this.gvLote.Name = "gvLote";
             this.gvLote.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
@@ -554,7 +587,7 @@
             this.gridColumn2.OptionsFilter.AllowFilter = false;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 2;
-            this.gridColumn2.Width = 160;
+            this.gridColumn2.Width = 104;
             // 
             // txtCantSeleccionada
             // 
@@ -567,7 +600,7 @@
             this.gridColumn3.MinWidth = 25;
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 4;
+            this.gridColumn3.VisibleIndex = 6;
             this.gridColumn3.Width = 94;
             // 
             // gridColumn7
@@ -584,6 +617,28 @@
             this.gridColumn9.MinWidth = 25;
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Width = 94;
+            // 
+            // gridColumn11
+            // 
+            this.gridColumn11.Caption = "Fecha Venc.";
+            this.gridColumn11.FieldName = "fecha_vencimiento";
+            this.gridColumn11.MinWidth = 25;
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.OptionsFilter.AllowFilter = false;
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 4;
+            this.gridColumn11.Width = 94;
+            // 
+            // gridColumn12
+            // 
+            this.gridColumn12.Caption = "Fecha Prod.";
+            this.gridColumn12.FieldName = "fecha_produccion";
+            this.gridColumn12.MinWidth = 25;
+            this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.OptionsFilter.AllowFilter = false;
+            this.gridColumn12.Visible = true;
+            this.gridColumn12.VisibleIndex = 5;
+            this.gridColumn12.Width = 94;
             // 
             // gcLote
             // 
@@ -947,5 +1002,9 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemRadioGroup rgSeleccionar;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
     }
 }

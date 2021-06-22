@@ -12,6 +12,7 @@ using LOSA.AlmacenesExterno.Models;
 using DevExpress.XtraGrid.Views.Grid;
 using ACS.Classes;
 using System.Data.SqlClient;
+using LOSA.Clases;
 
 namespace LOSA.AlmacenesExterno
 {
@@ -20,13 +21,15 @@ namespace LOSA.AlmacenesExterno
         List<Conf_MP_Ingresada> lista = new List<Conf_MP_Ingresada>();
         OrdenCompra_H oc_h = new OrdenCompra_H();
         decimal totalPeso, totalUnidades;
+        UserLogin UsuarioLogueado;
 
-        public xfrmAlmacenesExternosDefinirLotes(List<Conf_MP_Ingresada> pLista, OrdenCompra_H pOC_h)
+        public xfrmAlmacenesExternosDefinirLotes(List<Conf_MP_Ingresada> pLista, OrdenCompra_H pOC_h,UserLogin pUser)
         {
             InitializeComponent();
             lista = pLista;
             LoadLotes();
             oc_h = pOC_h;
+            UsuarioLogueado = pUser;
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
@@ -84,6 +87,8 @@ namespace LOSA.AlmacenesExterno
                     workRow[4] = item.Lote;
                     workRow[7] = item.NumLine;
                     workRow[8] = item.Row_ ;
+                    workRow["fecha_vencimiento"] = item.FechaVencimiento;
+                    workRow["fecha_produccion"] = item.FechaProduccion;
                     counterRows++;
 
                     dsAlmacenesExternos.Lote.Rows.Add(workRow);
@@ -180,6 +185,8 @@ namespace LOSA.AlmacenesExterno
                             workRow[5] = item.CantSeleccionada;
                             workRow[7] = item.num_line;
                             workRow[8] = item.row_;
+                            workRow[9] = item.fecha_vencimiento;
+                            workRow["fecha_produccion"] = item.fecha_produccion;
 
                             dsAlmacenesExternos.Lote_Seleccionados.Rows.Add(workRow);
 
@@ -193,6 +200,8 @@ namespace LOSA.AlmacenesExterno
                             lote.Cantidad = item.CantSeleccionada;
                             lote.NumLine = item.num_line;
                             lote.Row_ = item.row_;
+                            lote.FechaVencimiento = item.fecha_vencimiento;
+                            lote.FechaProduccion = item.fecha_produccion;
 
                             list_lotes_seleccionados.Add(lote);
 
@@ -308,14 +317,14 @@ namespace LOSA.AlmacenesExterno
                     return;
                 }
 
-                foreach (var item in dsAlmacenesExternos.Conf_MP_Ingresadas)
-                {
-                    if (item.fecha_vencimiento.Year == 1900 && item.fecha_vencimiento.Month==1 && item.fecha_vencimiento.Day==1)
-                    {
-                        CajaDialogo.Error("DEBE DE INGRESAR LA FECHA DE VENCIMIENTO");
-                        return;
-                    }
-                }
+                //foreach (var item in dsAlmacenesExternos.Conf_MP_Ingresadas)
+                //{
+                //    if (item.fecha_vencimiento.Year == 1900 && item.fecha_vencimiento.Month==1 && item.fecha_vencimiento.Day==1)
+                //    {
+                //        CajaDialogo.Error("DEBE DE INGRESAR LA FECHA DE VENCIMIENTO");
+                //        return;
+                //    }
+                //}
                 DataOperations dp = new DataOperations();
 
                 SqlConnection cnx = new SqlConnection(dp.ConnectionStringLOSA);
@@ -333,7 +342,8 @@ namespace LOSA.AlmacenesExterno
                 cmd.Parameters.Add("@peso", SqlDbType.Decimal).Value = totalPeso;
                 cmd.Parameters.Add("@cardcode", SqlDbType.VarChar).Value = oc_h.CodProv;
                 cmd.Parameters.Add("@fecha_ingreso", SqlDbType.DateTime).Value = DateTime.Now;
-                cmd.Parameters.Add("@id_user_creador", SqlDbType.Int).Value = 1035;
+                cmd.Parameters.Add("@id_user_creador", SqlDbType.Int).Value = UsuarioLogueado.Id;
+                //cmd.Parameters.Add("@id_user_creador", SqlDbType.Int).Value = 1104;
                 cmd.Parameters.Add("@enable", SqlDbType.Bit).Value = 1;
                 cmd.Parameters.Add("@id_estado", SqlDbType.Int).Value = 0;
                 cmd.Parameters.Add("@fecha_documento", SqlDbType.Date).Value = oc_h.FechaDocumento;
@@ -373,6 +383,8 @@ namespace LOSA.AlmacenesExterno
                         cmd3.Parameters.Add("@unidades", SqlDbType.Decimal).Value = item2.Unidades;
                         cmd3.Parameters.Add("@id_detalle", SqlDbType.Int).Value = id_d;
                         cmd3.Parameters.Add("@id", SqlDbType.Int).Value = item2.ID;
+                        cmd3.Parameters.Add("@fecha_vencimiento", SqlDbType.DateTime).Value = item2.FechaVencimiento;
+                        cmd3.Parameters.Add("@fecha_produccion", SqlDbType.DateTime).Value = item2.FechaProduccion;
 
                         cmd3.ExecuteNonQuery();
 
@@ -445,6 +457,8 @@ namespace LOSA.AlmacenesExterno
                     workRow[5] = item.Cantidad;
                     workRow[7] = item.NumLine;
                     workRow[8] = item.Row_;
+                    workRow["fecha_vencimiento"] = item.FechaVencimiento;
+                    workRow["fecha_produccion"] = item.FechaProduccion;
 
                     dsAlmacenesExternos.Lote_Seleccionados.Rows.Add(workRow);
                 }
