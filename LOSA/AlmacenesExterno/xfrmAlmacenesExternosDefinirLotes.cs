@@ -13,6 +13,8 @@ using DevExpress.XtraGrid.Views.Grid;
 using ACS.Classes;
 using System.Data.SqlClient;
 using LOSA.Clases;
+using LOSA.AlmacenesExterno.Reporteria;
+using DevExpress.XtraReports.UI;
 
 namespace LOSA.AlmacenesExterno
 {
@@ -397,6 +399,15 @@ namespace LOSA.AlmacenesExterno
                 cnx.Close();
 
                 CajaDialogo.Information("SE HA GUARDADO EL REGISTRO EXITOSAMENTE");
+
+                xrptAlmacenesExternos report = new xrptAlmacenesExternos(id_h);
+
+                using (ReportPrintTool printTool = new ReportPrintTool(report))
+                {
+                    // Send the report to the default printer.
+                    printTool.ShowPreviewDialog();
+                }
+
                 this.DialogResult = DialogResult.OK;
 
             }

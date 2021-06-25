@@ -12,6 +12,8 @@ using ACS.Classes;
 using System.Data.SqlClient;
 using DevExpress.XtraGrid.Views.Grid;
 using LOSA.Clases;
+using LOSA.AlmacenesExterno.Reporteria;
+using DevExpress.XtraReports.UI;
 
 namespace LOSA.AlmacenesExterno
 {
@@ -67,6 +69,20 @@ namespace LOSA.AlmacenesExterno
             xfrmDetalleIngresoAlmacenExterno frm = new xfrmDetalleIngresoAlmacenExterno(row.id);
 
             frm.Show();
+        }
+
+        private void btnprint_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gv = (GridView)grd_ingreso.FocusedView;
+            var row = (dsAlmacenesExternos.ingreso_externo_hRow)gv.GetDataRow(gv.FocusedRowHandle);
+
+             xrptAlmacenesExternos report = new xrptAlmacenesExternos(row.id);
+
+            using (ReportPrintTool printTool = new ReportPrintTool(report))
+            {
+                // Send the report to the default printer.
+                printTool.ShowPreviewDialog();
+            }
         }
     }
 }
