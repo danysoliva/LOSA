@@ -28,12 +28,16 @@ namespace LOSA.MicroIngredientes
 
             try
             {
-            DataOperations dp = new DataOperations();
+                DataOperations dp = new DataOperations();
                 using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
                 {
                     cnx.Open();
                     dsMicros.Micros.Clear();
-                    SqlDataAdapter da = new SqlDataAdapter("dbo.sp_get_ordenes_pesaje_manual_interface_V2", cnx);
+                    SqlCommand cmd = new SqlCommand("sp_get_ordenes_pesaje_manual_interface_V3", cnx);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@vertodas", toggleSwitch1.IsOn);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+
                     da.Fill(dsMicros.Micros);
                     cnx.Close();
 
@@ -187,45 +191,52 @@ namespace LOSA.MicroIngredientes
             try
             {
 
-            var gv = (GridView)gcMicros.FocusedView;
+                var gv = (GridView)gcMicros.FocusedView;
+                var row = (dsMicros.MicrosRow)gv.GetDataRow(gv.FocusedRowHandle);
 
-            var row = (dsMicros.MicrosRow)gv.GetDataRow(gv.FocusedRowHandle);
-
-            xfrmSpinBatchPlan frm = new xfrmSpinBatchPlan();
-
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                int batchDisponibles = 0;
-
-                batchDisponibles = row._Cant__Batch - row.batch_real;
-
-
-                if (frm.cantBatch<=batchDisponibles)
+                if (row._Cod__Estado != 70)
                 {
-                    DataOperations dp = new DataOperations();
+                    CajaDialogo.Error("Debe Activar la orden para planificar Batch(es)!");
+                    return;
+                }
 
-                    using (SqlConnection cnx= new SqlConnection(dp.ConnectionStringAPMS))
+
+
+                xfrmSpinBatchPlan frm = new xfrmSpinBatchPlan(row.id, row.Codigo_Orden);
+
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    int batchDisponibles = 0;
+
+                    batchDisponibles = row._Cant__Batch - row.batch_real;
+
+
+                    if (frm.cantBatch <= batchDisponibles)
                     {
-                        cnx.Open();
+                        DataOperations dp = new DataOperations();
+
+                        using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
+                        {
+                            cnx.Open();
                             SqlCommand cmd = new SqlCommand("sp_acumulador_batch_real", cnx);
                             cmd.CommandType = CommandType.StoredProcedure;
 
-                            cmd.Parameters.AddWithValue("@id",SqlDbType.Int).Value=row.id;
-                            cmd.Parameters.AddWithValue("@batch_acumulado",SqlDbType.Int).Value=frm.cantBatch;
+                            cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = row.id;
+                            cmd.Parameters.AddWithValue("@batch_acumulado", SqlDbType.Int).Value = frm.cantBatch;
 
                             cmd.ExecuteNonQuery();
-                        cnx.Close();
+                            cnx.Close();
 
-                LoadData();
+                            LoadData();
+                        }
                     }
-                }
                     else
                     {
                         CajaDialogo.Error("DEDE DE PESAR UNA CANTIDAD MENOR O IGUAL A LA CANTIDAD DE BATCH DISPONIBLE");
                     }
 
 
-            }
+                }
             }
             catch (Exception ex)
             {
@@ -241,6 +252,29 @@ namespace LOSA.MicroIngredientes
         private void cmdUpdate_Click(object sender, EventArgs e)
         {
             LoadData();
+        }
+
+        private void toggleSwitch1_Toggled(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        private void gvMicros_RowStyle(object sender, RowStyleEventArgs e)
+        {
+            if (e.RowHandle >= 0)
+            {
+                var gridView = (GridView)gcMicros.FocusedView;
+                var row = (dsMicros.MicrosRow)gridView.GetDataRow(e.RowHandle);
+
+                if (row._Cod__Estado == 70)
+                {
+                    e.Appearance.BackColor = Color.FromArgb(200, 102, 255, 102);
+                }
+                else
+                {
+                    e.Appearance.BackColor = Color.FromArgb(200, 255, 255, 255);
+                }
+            }
         }
     }
 }

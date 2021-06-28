@@ -182,8 +182,8 @@ namespace LOSA
             // 
             // SaltarLogin
             // 
-            this.SaltarLogin.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.SaltarLogin.Appearance.BorderColor = System.Drawing.Color.LightSkyBlue;
+            this.SaltarLogin.Appearance.BackColor = System.Drawing.Color.Thistle;
+            this.SaltarLogin.Appearance.BorderColor = System.Drawing.Color.Thistle;
             this.SaltarLogin.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaltarLogin.Appearance.Options.UseBackColor = true;
             this.SaltarLogin.Appearance.Options.UseBorderColor = true;
@@ -191,9 +191,9 @@ namespace LOSA
             this.SaltarLogin.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.SaltarLogin.Location = new System.Drawing.Point(228, 423);
             this.SaltarLogin.Name = "SaltarLogin";
-            this.SaltarLogin.Size = new System.Drawing.Size(199, 71);
+            this.SaltarLogin.Size = new System.Drawing.Size(199, 59);
             this.SaltarLogin.TabIndex = 15;
-            this.SaltarLogin.Text = "Ingresar";
+            this.SaltarLogin.Text = "Break Login";
             this.SaltarLogin.Visible = false;
             this.SaltarLogin.Click += new System.EventHandler(this.SaltarLogin_Click);
             // 
@@ -251,7 +251,7 @@ namespace LOSA
             this.Controls.Add(this.cmdCerrar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMain";
-            this.Text = "Form1";
+            this.Text = "Main ALOSY";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.Click += new System.EventHandler(this.frmMain_Click);

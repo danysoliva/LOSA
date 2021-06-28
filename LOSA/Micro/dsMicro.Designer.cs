@@ -1136,6 +1136,8 @@ namespace LOSA.Micro {
             
             private global::System.Data.DataColumn columnrm;
             
+            private global::System.Data.DataColumn columntotal;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public sacosdDataTable() {
@@ -1251,6 +1253,14 @@ namespace LOSA.Micro {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn totalColumn {
+                get {
+                    return this.columntotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1286,7 +1296,7 @@ namespace LOSA.Micro {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public sacosdRow AddsacosdRow(int id, int id_orden_encabezado, decimal batch_plan, System.DateTime date, int id_code, string estado, decimal batch_real, int id_rm, string bascula, string rm) {
+            public sacosdRow AddsacosdRow(int id, int id_orden_encabezado, decimal batch_plan, System.DateTime date, int id_code, string estado, decimal batch_real, int id_rm, string bascula, string rm, decimal total) {
                 sacosdRow rowsacosdRow = ((sacosdRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -1298,7 +1308,8 @@ namespace LOSA.Micro {
                         batch_real,
                         id_rm,
                         bascula,
-                        rm};
+                        rm,
+                        total};
                 rowsacosdRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowsacosdRow);
                 return rowsacosdRow;
@@ -1331,6 +1342,7 @@ namespace LOSA.Micro {
                 this.columnid_rm = base.Columns["id_rm"];
                 this.columnbascula = base.Columns["bascula"];
                 this.columnrm = base.Columns["rm"];
+                this.columntotal = base.Columns["total"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1356,6 +1368,8 @@ namespace LOSA.Micro {
                 base.Columns.Add(this.columnbascula);
                 this.columnrm = new global::System.Data.DataColumn("rm", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnrm);
+                this.columntotal = new global::System.Data.DataColumn("total", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntotal);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2593,6 +2607,22 @@ namespace LOSA.Micro {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal total {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablesacosd.totalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'total\' in table \'sacosd\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesacosd.totalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tablesacosd.idColumn);
             }
@@ -2709,6 +2739,18 @@ namespace LOSA.Micro {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetrmNull() {
                 this[this.tablesacosd.rmColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IstotalNull() {
+                return this.IsNull(this.tablesacosd.totalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SettotalNull() {
+                this[this.tablesacosd.totalColumn] = global::System.Convert.DBNull;
             }
         }
         

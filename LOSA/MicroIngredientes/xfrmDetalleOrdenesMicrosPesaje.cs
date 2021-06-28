@@ -10,19 +10,29 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using ACS.Classes;
 using System.Data.SqlClient;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace LOSA.MicroIngredientes
 {
-    public partial class xfrmDetalleOrdenesMicros : DevExpress.XtraEditors.XtraForm
+    public partial class xfrmDetalleOrdenesMicrosPesaje : DevExpress.XtraEditors.XtraForm
     {
         int id = 0;
         string codigoOrden;
 
-        public xfrmDetalleOrdenesMicros(int _ID, string _CodigoOrden)
+        public xfrmDetalleOrdenesMicrosPesaje(int _ID, string _CodigoOrden)
         {
             InitializeComponent();
             id = _ID;
             codigoOrden = _CodigoOrden;
+            LoadData();
+            LoadDataIndividual();
+        }
+
+        public xfrmDetalleOrdenesMicrosPesaje()
+        {
+            InitializeComponent();
+            //id = _ID;
+            //codigoOrden = _CodigoOrden;
             LoadData();
             LoadDataIndividual();
         }
@@ -36,11 +46,11 @@ namespace LOSA.MicroIngredientes
                 using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
                 {
                     cnx.Open();
-                    dsMicros.DetalleOrdenesMicro.Clear();
-                    SqlDataAdapter da = new SqlDataAdapter("[sp_get_detalle_orden_pesaje_micros_interfacev3]", cnx);
+                    dsMicros.plan_microsh.Clear();
+                    SqlDataAdapter da = new SqlDataAdapter("[sp_get_detalle_orden_pesaje_micros_interfacev2]", cnx);
                     da.SelectCommand.CommandType = CommandType.StoredProcedure;
                     da.SelectCommand.Parameters.AddWithValue("@orden_id", SqlDbType.Int).Value = id;
-                    da.Fill(dsMicros.DetalleOrdenesMicro);
+                    da.Fill(dsMicros.plan_microsh);
                     cnx.Close();
 
                 }
@@ -60,9 +70,9 @@ namespace LOSA.MicroIngredientes
                 {
                     cnx.Open();
                     dsMicros.DetalleOrdenesPesajeIndividual.Clear();
-                    SqlDataAdapter da = new SqlDataAdapter("[sp_get_detalle_orden_pesaje_micros_interface_indiv]", cnx);
+                    SqlDataAdapter da = new SqlDataAdapter("[sp_get_detalle_orden_pesaje_micros_interface_indiv_activa]", cnx);
                     da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                    da.SelectCommand.Parameters.AddWithValue("@orden_id", SqlDbType.Int).Value = id;
+                    //da.SelectCommand.Parameters.AddWithValue("@orden_id", SqlDbType.Int).Value = id;
                     da.Fill(dsMicros.DetalleOrdenesPesajeIndividual);
                     cnx.Close();
 
@@ -103,6 +113,50 @@ namespace LOSA.MicroIngredientes
         private void cmdClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void gvDetalle_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
+        {
+            
+        }
+
+        private void gvDetalle_RowClick(object sender, RowClickEventArgs e)
+        {
+            //Cargar el detalle
+            var gridView = (GridView)gcDetalle.FocusedView;
+            var row = (dsMicros.plan_microshRow)gridView.GetFocusedDataRow();
+
+            try
+            {
+                DataOperations dp = new DataOperations();
+                using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
+                {
+                    cnx.Open();
+                    dsMicros.plan_microsd.Clear();
+                    SqlDataAdapter da = new SqlDataAdapter("sp_get_detalle_ami_id", cnx);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@ami_id", SqlDbType.Int).Value = row.AMI_ID;
+                    da.Fill(dsMicros.plan_microsd);
+                    cnx.Close();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void cmdPesar_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            //Pesaje de Micros
+
+        }
+
+        private void cmdPesar1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            //Pesar
+
         }
     }
 }

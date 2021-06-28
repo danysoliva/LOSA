@@ -70,10 +70,11 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>169CB7D98A28CFF1F833CA2BEC32C08065C072D2</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>5A56FE5B36BF1139C0C28330C52B1468E1F78C88</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>LOSA_4_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -92,7 +93,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>LOSA_4_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>key_tmp_2021_Master2021.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -240,6 +241,7 @@
     <Compile Include="Clases\Globals.cs" />
     <Compile Include="Clases\ItemMP_Lote.cs" />
     <Compile Include="Clases\MateriaPrima.cs" />
+    <Compile Include="Clases\MicroIngrediente.cs" />
     <Compile Include="Clases\opcionAbrirVentanaTarima.cs" />
     <Compile Include="Clases\PresentacionX.cs" />
     <Compile Include="Clases\ProductoTerminado.cs" />
@@ -535,6 +537,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsMicros.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MicroIngredientes\xfrmDetalleOrdenesMicrosPesaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MicroIngredientes\xfrmDetalleOrdenesMicrosPesaje.Designer.cs">
+      <DependentUpon>xfrmDetalleOrdenesMicrosPesaje.cs</DependentUpon>
     </Compile>
     <Compile Include="MicroIngredientes\xfrmDetalleOrdenesMicros.cs">
       <SubType>Form</SubType>
@@ -1449,6 +1457,9 @@
     <EmbeddedResource Include="MDIParentFormLOSA.resx">
       <DependentUpon>MDIParentFormLOSA.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MicroIngredientes\xfrmDetalleOrdenesMicrosPesaje.resx">
+      <DependentUpon>xfrmDetalleOrdenesMicrosPesaje.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MicroIngredientes\xfrmDetalleOrdenesMicros.resx">
       <DependentUpon>xfrmDetalleOrdenesMicros.cs</DependentUpon>
     </EmbeddedResource>
@@ -2030,6 +2041,7 @@
     <None Include="Resources\trazabilidad.png" />
     <None Include="Resources\trucksss.png" />
     <Content Include="Resources\user.png" />
+    <None Include="Resources\weighing-machine24px.png" />
     <Content Include="Resources\wrench.png" />
   </ItemGroup>
   <ItemGroup>
