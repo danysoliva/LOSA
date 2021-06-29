@@ -231,6 +231,8 @@
             this.colprint.Caption = "Imprimir";
             this.colprint.ColumnEdit = this.btnprint;
             this.colprint.Name = "colprint";
+            this.colprint.Visible = true;
+            this.colprint.VisibleIndex = 10;
             this.colprint.Width = 97;
             // 
             // btnprint
@@ -241,6 +243,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnprint.Name = "btnprint";
             this.btnprint.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnprint.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnprint_ButtonClick);
             // 
             // colcartilla
             // 

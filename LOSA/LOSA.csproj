@@ -70,10 +70,10 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>D31B2F5BEB8B2E829EBB6E6BD3CC4458FCA0D05F</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>2B04904849D2E99D9DED98BF1BEDD05045FAAB77</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>LOSA_4_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>LOSA_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -92,7 +92,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>LOSA_3_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>LOSA_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -154,9 +154,16 @@
       <DependentUpon>dsAlmacenesExternos.xsd</DependentUpon>
     </Compile>
     <Compile Include="AlmacenesExterno\Models\Conf_MP_Ingresada.cs" />
+    <Compile Include="AlmacenesExterno\Models\InfoHeaderRptIngreso.cs" />
     <Compile Include="AlmacenesExterno\Models\Ingreso_Externo_Lote.cs" />
     <Compile Include="AlmacenesExterno\Models\Ingreso_Externo_Lote_Seleccionado.cs" />
     <Compile Include="AlmacenesExterno\Models\OrdenCompra_H.cs" />
+    <Compile Include="AlmacenesExterno\Reporteria\xrptAlmacenesExternos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AlmacenesExterno\Reporteria\xrptAlmacenesExternos.Designer.cs">
+      <DependentUpon>xrptAlmacenesExternos.cs</DependentUpon>
+    </Compile>
     <Compile Include="AlmacenesExterno\xfrmAlmacenesExternosDefinirLotes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1423,6 +1430,9 @@
     <Compile Include="Utileria\frmMensajeCalidad.Designer.cs">
       <DependentUpon>frmMensajeCalidad.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AlmacenesExterno\Reporteria\xrptAlmacenesExternos.resx">
+      <DependentUpon>xrptAlmacenesExternos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AlmacenesExterno\xfrmAlmacenesExternosDefinirLotes.resx">
       <DependentUpon>xfrmAlmacenesExternosDefinirLotes.cs</DependentUpon>
     </EmbeddedResource>
@@ -2050,6 +2060,7 @@
     </None>
     <None Include="LOSA_3_TemporaryKey.pfx" />
     <None Include="LOSA_4_TemporaryKey.pfx" />
+    <None Include="LOSA_TemporaryKey.pfx" />
     <None Include="Mantenimientos\dsMantenimiento.xsc">
       <DependentUpon>dsMantenimiento.xsd</DependentUpon>
     </None>
