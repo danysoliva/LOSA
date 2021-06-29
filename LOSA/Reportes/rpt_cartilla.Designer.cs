@@ -34,6 +34,8 @@
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.PageHeader = new DevExpress.XtraReports.UI.PageHeaderBand();
+            this.xrLabel45 = new DevExpress.XtraReports.UI.XRLabel();
+            this.txtcodigo = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLine3 = new DevExpress.XtraReports.UI.XRLine();
             this.xrLabel42 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel41 = new DevExpress.XtraReports.UI.XRLabel();
@@ -157,8 +159,8 @@
             this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
-            this.txtcodigo = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel45 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel43 = new DevExpress.XtraReports.UI.XRLabel();
+            this.txtcodigocopia = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -192,6 +194,8 @@
             // PageHeader
             // 
             this.PageHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.txtcodigocopia,
+            this.xrLabel43,
             this.xrLabel45,
             this.txtcodigo,
             this.xrLine3,
@@ -273,6 +277,29 @@
             this.PageHeader.HeightF = 1690.824F;
             this.PageHeader.Name = "PageHeader";
             // 
+            // xrLabel45
+            // 
+            this.xrLabel45.LocationFloat = new DevExpress.Utils.PointFloat(81.23059F, 231.5643F);
+            this.xrLabel45.Multiline = true;
+            this.xrLabel45.Name = "xrLabel45";
+            this.xrLabel45.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel45.SizeF = new System.Drawing.SizeF(216.0085F, 22.99998F);
+            this.xrLabel45.StylePriority.UseTextAlignment = false;
+            this.xrLabel45.Text = "Codigo";
+            this.xrLabel45.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
+            // 
+            // txtcodigo
+            // 
+            this.txtcodigo.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right)));
+            this.txtcodigo.LocationFloat = new DevExpress.Utils.PointFloat(297.2391F, 232.0834F);
+            this.txtcodigo.Multiline = true;
+            this.txtcodigo.Name = "txtcodigo";
+            this.txtcodigo.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.txtcodigo.SizeF = new System.Drawing.SizeF(229.8246F, 22.48091F);
+            this.txtcodigo.StylePriority.UseBorders = false;
+            this.txtcodigo.StylePriority.UseTextAlignment = false;
+            this.txtcodigo.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
+            // 
             // xrLine3
             // 
             this.xrLine3.LocationFloat = new DevExpress.Utils.PointFloat(546.6344F, 876.8755F);
@@ -338,11 +365,13 @@
             // 
             // xrLabel35
             // 
-            this.xrLabel35.LocationFloat = new DevExpress.Utils.PointFloat(81.23029F, 702.1778F);
+            this.xrLabel35.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel35.LocationFloat = new DevExpress.Utils.PointFloat(77.70811F, 694.1778F);
             this.xrLabel35.Multiline = true;
             this.xrLabel35.Name = "xrLabel35";
             this.xrLabel35.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel35.SizeF = new System.Drawing.SizeF(213.1445F, 23F);
+            this.xrLabel35.SizeF = new System.Drawing.SizeF(219.5307F, 15F);
+            this.xrLabel35.StylePriority.UseFont = false;
             this.xrLabel35.StylePriority.UseTextAlignment = false;
             this.xrLabel35.Text = "UD.";
             this.xrLabel35.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
@@ -560,22 +589,26 @@
             // 
             // xrLabel39
             // 
+            this.xrLabel39.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrLabel39.LocationFloat = new DevExpress.Utils.PointFloat(77.70821F, 633.1777F);
             this.xrLabel39.Multiline = true;
             this.xrLabel39.Name = "xrLabel39";
             this.xrLabel39.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel39.SizeF = new System.Drawing.SizeF(445.8333F, 23F);
+            this.xrLabel39.StylePriority.UseFont = false;
             this.xrLabel39.StylePriority.UseTextAlignment = false;
             this.xrLabel39.Text = "PROVEEDOR";
             this.xrLabel39.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
             // xrLabel40
             // 
+            this.xrLabel40.Font = new System.Drawing.Font("Arial", 8.25F);
             this.xrLabel40.LocationFloat = new DevExpress.Utils.PointFloat(77.70811F, 679.1778F);
             this.xrLabel40.Multiline = true;
             this.xrLabel40.Name = "xrLabel40";
             this.xrLabel40.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel40.SizeF = new System.Drawing.SizeF(216.6667F, 22.99998F);
+            this.xrLabel40.SizeF = new System.Drawing.SizeF(220.1892F, 15F);
+            this.xrLabel40.StylePriority.UseFont = false;
             this.xrLabel40.StylePriority.UseTextAlignment = false;
             this.xrLabel40.Text = "# DE LOTE";
             this.xrLabel40.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
@@ -584,12 +617,12 @@
             // 
             this.lotecopia.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.lotecopia.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lotecopia.LocationFloat = new DevExpress.Utils.PointFloat(294.3748F, 679.1778F);
+            this.lotecopia.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.lotecopia.LocationFloat = new DevExpress.Utils.PointFloat(297.897F, 679.1778F);
             this.lotecopia.Multiline = true;
             this.lotecopia.Name = "lotecopia";
             this.lotecopia.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lotecopia.SizeF = new System.Drawing.SizeF(229.1667F, 22.99998F);
+            this.lotecopia.SizeF = new System.Drawing.SizeF(225.6445F, 15F);
             this.lotecopia.StylePriority.UseBorders = false;
             this.lotecopia.StylePriority.UseFont = false;
             this.lotecopia.StylePriority.UseTextAlignment = false;
@@ -599,12 +632,12 @@
             // 
             this.cantidadcopia.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.cantidadcopia.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cantidadcopia.LocationFloat = new DevExpress.Utils.PointFloat(294.3748F, 702.1778F);
+            this.cantidadcopia.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.cantidadcopia.LocationFloat = new DevExpress.Utils.PointFloat(297.8965F, 694.1778F);
             this.cantidadcopia.Multiline = true;
             this.cantidadcopia.Name = "cantidadcopia";
             this.cantidadcopia.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.cantidadcopia.SizeF = new System.Drawing.SizeF(229.1665F, 23F);
+            this.cantidadcopia.SizeF = new System.Drawing.SizeF(225.6448F, 15.00006F);
             this.cantidadcopia.StylePriority.UseBorders = false;
             this.cantidadcopia.StylePriority.UseFont = false;
             this.cantidadcopia.StylePriority.UseTextAlignment = false;
@@ -626,7 +659,7 @@
             // 
             // xrLabel44
             // 
-            this.xrLabel44.LocationFloat = new DevExpress.Utils.PointFloat(81.23007F, 731.8741F);
+            this.xrLabel44.LocationFloat = new DevExpress.Utils.PointFloat(81.23059F, 731.8741F);
             this.xrLabel44.Multiline = true;
             this.xrLabel44.Name = "xrLabel44";
             this.xrLabel44.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -1520,28 +1553,31 @@
             this.xrLabel2.StylePriority.UseBorders = false;
             this.xrLabel2.Text = "CARTILLAS DE PROGRAMACION";
             // 
-            // txtcodigo
+            // xrLabel43
             // 
-            this.txtcodigo.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right)));
-            this.txtcodigo.LocationFloat = new DevExpress.Utils.PointFloat(297.2391F, 232.0834F);
-            this.txtcodigo.Multiline = true;
-            this.txtcodigo.Name = "txtcodigo";
-            this.txtcodigo.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.txtcodigo.SizeF = new System.Drawing.SizeF(229.8246F, 22.48091F);
-            this.txtcodigo.StylePriority.UseBorders = false;
-            this.txtcodigo.StylePriority.UseTextAlignment = false;
-            this.txtcodigo.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
+            this.xrLabel43.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel43.LocationFloat = new DevExpress.Utils.PointFloat(77.70811F, 709.1779F);
+            this.xrLabel43.Multiline = true;
+            this.xrLabel43.Name = "xrLabel43";
+            this.xrLabel43.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel43.SizeF = new System.Drawing.SizeF(220.1892F, 15F);
+            this.xrLabel43.StylePriority.UseFont = false;
+            this.xrLabel43.StylePriority.UseTextAlignment = false;
+            this.xrLabel43.Text = "Codigo";
+            this.xrLabel43.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
-            // xrLabel45
+            // txtcodigocopia
             // 
-            this.xrLabel45.LocationFloat = new DevExpress.Utils.PointFloat(81.23059F, 231.5643F);
-            this.xrLabel45.Multiline = true;
-            this.xrLabel45.Name = "xrLabel45";
-            this.xrLabel45.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel45.SizeF = new System.Drawing.SizeF(216.0085F, 22.99998F);
-            this.xrLabel45.StylePriority.UseTextAlignment = false;
-            this.xrLabel45.Text = "Codigo";
-            this.xrLabel45.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
+            this.txtcodigocopia.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcodigocopia.LocationFloat = new DevExpress.Utils.PointFloat(297.8973F, 709.1779F);
+            this.txtcodigocopia.Multiline = true;
+            this.txtcodigocopia.Name = "txtcodigocopia";
+            this.txtcodigocopia.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.txtcodigocopia.SizeF = new System.Drawing.SizeF(220.1892F, 15F);
+            this.txtcodigocopia.StylePriority.UseFont = false;
+            this.txtcodigocopia.StylePriority.UseTextAlignment = false;
+            this.txtcodigocopia.Text = "Codigo";
+            this.txtcodigocopia.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
             // rpt_cartilla
             // 
@@ -1691,5 +1727,7 @@
         private DevExpress.XtraReports.UI.XRLine xrLine2;
         private DevExpress.XtraReports.UI.XRLabel xrLabel45;
         private DevExpress.XtraReports.UI.XRLabel txtcodigo;
+        private DevExpress.XtraReports.UI.XRLabel txtcodigocopia;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel43;
     }
 }

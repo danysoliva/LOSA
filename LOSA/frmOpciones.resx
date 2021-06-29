@@ -135,6 +135,18 @@
         TfsDikmXBtCDpu0AAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="simpleButton13.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAF6SURBVFhH7ZW9SgNBFIUXQdBCC/ExrCx8AQUbfwobsbGytfUNfIOkFAR7UbARrGx8BX0ELbRR
+        EIR4vpm9YZhkzWbWzDZ74At3d+eec9gQUjRUT/T92I6uS1pTV6ArkL3Appjzo1NcgGdbfvx/rYhvcSWs
+        RFiAezzjDGdnol0RlrACYThnZqqwxG1JtnCTlfgpyRpushKthJsIbhz+It4j3sSD4GfXVHjghWec8yyK
+        HXEccSruBd/vtkgVu3jghWecM/Ht3YlHPyaJXTySdSK+/JgkdvFIFq9p4McksYtHsrIXWBRnYtldjRZY
+        F0d+HKtDwRlTWABPvBfcVYVWxat4EiyEBTbEh7h0V+PFM85wFlkBvPDEm4w/tSasBD8dTCz8RsyLKvGM
+        M1aCXTwsHO9ashKfApM64aawBLt4TBVushKY1A03WQl2J4YfiCU/jojFCzFNuIkddqvCySTbtWzj32xP
+        kO0+9hkyi8yuwLDAeXkjJ2QOC7REMfgF0PKjI2TlZq0AAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="btnAlmacenesExternos.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAB/NJREFUaEPt

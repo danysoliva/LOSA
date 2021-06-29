@@ -26,12 +26,24 @@ namespace LOSA.TransaccionesPT
         {
             InitializeComponent();
             UsuarioLogeado = Puser;
-            load_despachos();
+            load_desicion();
         }
 
+        public void load_despachos_terminados() 
+        {
+            string Query = @"sp_load_informacion_despachos_only_open";
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            cn.Open();
+            SqlCommand cmd = new SqlCommand(Query, cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            dsPT.Load_despachos.Clear();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dsPT.Load_despachos);
+            cn.Close();
+        }
         public void load_despachos()
         {
-            string Query = @"sp_load_informacion_despachos";
+            string Query = @"sp_load_informacion_despachos_v2";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             cn.Open();
             SqlCommand cmd = new SqlCommand(Query,cn);
@@ -63,7 +75,7 @@ namespace LOSA.TransaccionesPT
                     cmd.ExecuteNonQuery();
                     CajaDialogo.Error("Se finalizo correctamente este despacho.");
                     cn.Close();
-                    load_despachos();
+                    load_desicion();
 
                 }
                 catch (Exception ex)
@@ -92,7 +104,7 @@ namespace LOSA.TransaccionesPT
                     cmd.ExecuteNonQuery();
                     CajaDialogo.Error("Se elimino correctamente este despacho.");
                     cn.Close();
-                    load_despachos();
+                    load_desicion();
 
                 }
                 catch (Exception ex)
@@ -113,7 +125,7 @@ namespace LOSA.TransaccionesPT
                 frm_generar_despacho frm = new frm_generar_despacho(row.id);
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
-                    load_despachos();
+                    load_desicion();
                 }
             }
             catch (Exception ex)
@@ -173,6 +185,42 @@ namespace LOSA.TransaccionesPT
             {
 
                 CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        public void load_desicion()
+        {
+            if (tggOpen.IsOn)
+            {
+                load_despachos();
+            }
+            else
+            {
+                load_despachos_terminados();
+            }
+
+        }
+        private void tggOpen_Toggled(object sender, EventArgs e)
+        {
+            load_desicion();
+        }
+
+        private void grdv_data_RowStyle(object sender, RowStyleEventArgs e)
+        {
+            var gridView = (GridView)grd_data.FocusedView;
+            var row = (dsPT.Load_despachosRow)gridView.GetDataRow(e.RowHandle);
+            if (e.RowHandle >= 0)
+            {
+
+                if (row.bit_abierto)
+                {
+                    e.Appearance.BackColor = Color.FromArgb(172, 172, 172);
+
+                }
+                else
+                {
+                    e.Appearance.BackColor = Color.FromArgb(77, 201, 176);
+                }
             }
         }
     }

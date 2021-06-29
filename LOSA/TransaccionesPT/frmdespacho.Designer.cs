@@ -92,6 +92,7 @@
             this.grd_LigarOC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btn_ligar_oc = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btnExcel = new DevExpress.XtraEditors.SimpleButton();
+            this.tggOpen = new DevExpress.XtraEditors.ToggleSwitch();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
@@ -101,6 +102,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btndelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_ligar_oc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tggOpen.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -177,13 +179,13 @@
             this.grdv_data.Appearance.GroupPanel.Options.UseFont = true;
             this.grdv_data.Appearance.GroupRow.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.grdv_data.Appearance.GroupRow.Options.UseFont = true;
-            this.grdv_data.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdv_data.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
             this.grdv_data.Appearance.HeaderPanel.Options.UseFont = true;
             this.grdv_data.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.grdv_data.Appearance.Preview.Options.UseFont = true;
             this.grdv_data.Appearance.Row.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.grdv_data.Appearance.Row.Options.UseFont = true;
-            this.grdv_data.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdv_data.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.grdv_data.Appearance.TopNewRow.Options.UseFont = true;
             this.grdv_data.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colid,
@@ -208,9 +210,15 @@
             this.colver,
             this.grd_LigarOC});
             this.grdv_data.GridControl = this.grd_data;
+            this.grdv_data.GroupCount = 1;
             this.grdv_data.Name = "grdv_data";
+            this.grdv_data.OptionsBehavior.AutoExpandAllGroups = true;
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
             this.grdv_data.OptionsView.ShowGroupPanel = false;
+            this.grdv_data.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colAbierto, DevExpress.Data.ColumnSortOrder.Ascending),
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colBoleta, DevExpress.Data.ColumnSortOrder.Ascending)});
+            this.grdv_data.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.grdv_data_RowStyle);
             // 
             // colid
             // 
@@ -225,7 +233,8 @@
             this.colNumID.Name = "colNumID";
             this.colNumID.OptionsColumn.AllowEdit = false;
             this.colNumID.Visible = true;
-            this.colNumID.VisibleIndex = 1;
+            this.colNumID.VisibleIndex = 0;
+            this.colNumID.Width = 41;
             // 
             // colCardName
             // 
@@ -234,7 +243,8 @@
             this.colCardName.Name = "colCardName";
             this.colCardName.OptionsColumn.AllowEdit = false;
             this.colCardName.Visible = true;
-            this.colCardName.VisibleIndex = 2;
+            this.colCardName.VisibleIndex = 1;
+            this.colCardName.Width = 93;
             // 
             // colfecha_creacion
             // 
@@ -243,7 +253,8 @@
             this.colfecha_creacion.Name = "colfecha_creacion";
             this.colfecha_creacion.OptionsColumn.AllowEdit = false;
             this.colfecha_creacion.Visible = true;
-            this.colfecha_creacion.VisibleIndex = 3;
+            this.colfecha_creacion.VisibleIndex = 2;
+            this.colfecha_creacion.Width = 50;
             // 
             // colnombre
             // 
@@ -251,8 +262,6 @@
             this.colnombre.FieldName = "nombre";
             this.colnombre.Name = "colnombre";
             this.colnombre.OptionsColumn.AllowEdit = false;
-            this.colnombre.Visible = true;
-            this.colnombre.VisibleIndex = 4;
             // 
             // colcardcode
             // 
@@ -273,7 +282,8 @@
             this.colU_plan.Name = "colU_plan";
             this.colU_plan.OptionsColumn.AllowEdit = false;
             this.colU_plan.Visible = true;
-            this.colU_plan.VisibleIndex = 5;
+            this.colU_plan.VisibleIndex = 3;
+            this.colU_plan.Width = 56;
             // 
             // colkg_plan
             // 
@@ -282,7 +292,8 @@
             this.colkg_plan.Name = "colkg_plan";
             this.colkg_plan.OptionsColumn.AllowEdit = false;
             this.colkg_plan.Visible = true;
-            this.colkg_plan.VisibleIndex = 6;
+            this.colkg_plan.VisibleIndex = 4;
+            this.colkg_plan.Width = 44;
             // 
             // colconductorin
             // 
@@ -291,7 +302,8 @@
             this.colconductorin.Name = "colconductorin";
             this.colconductorin.OptionsColumn.AllowEdit = false;
             this.colconductorin.Visible = true;
-            this.colconductorin.VisibleIndex = 7;
+            this.colconductorin.VisibleIndex = 5;
+            this.colconductorin.Width = 68;
             // 
             // colvehiculo
             // 
@@ -300,7 +312,8 @@
             this.colvehiculo.Name = "colvehiculo";
             this.colvehiculo.OptionsColumn.AllowEdit = false;
             this.colvehiculo.Visible = true;
-            this.colvehiculo.VisibleIndex = 8;
+            this.colvehiculo.VisibleIndex = 6;
+            this.colvehiculo.Width = 68;
             // 
             // colfurgon
             // 
@@ -309,7 +322,8 @@
             this.colfurgon.Name = "colfurgon";
             this.colfurgon.OptionsColumn.AllowEdit = false;
             this.colfurgon.Visible = true;
-            this.colfurgon.VisibleIndex = 9;
+            this.colfurgon.VisibleIndex = 7;
+            this.colfurgon.Width = 68;
             // 
             // colAbierto
             // 
@@ -327,7 +341,8 @@
             this.colBoleta.Name = "colBoleta";
             this.colBoleta.OptionsColumn.AllowEdit = false;
             this.colBoleta.Visible = true;
-            this.colBoleta.VisibleIndex = 10;
+            this.colBoleta.VisibleIndex = 8;
+            this.colBoleta.Width = 98;
             // 
             // colbit_abierto
             // 
@@ -340,7 +355,8 @@
             this.colEditar.ColumnEdit = this.btnEditar;
             this.colEditar.Name = "colEditar";
             this.colEditar.Visible = true;
-            this.colEditar.VisibleIndex = 11;
+            this.colEditar.VisibleIndex = 9;
+            this.colEditar.Width = 96;
             // 
             // btnEditar
             // 
@@ -358,7 +374,8 @@
             this.colImprimir.ColumnEdit = this.btnImprimir;
             this.colImprimir.Name = "colImprimir";
             this.colImprimir.Visible = true;
-            this.colImprimir.VisibleIndex = 12;
+            this.colImprimir.VisibleIndex = 10;
+            this.colImprimir.Width = 84;
             // 
             // btnImprimir
             // 
@@ -376,7 +393,8 @@
             this.colCerrar.ColumnEdit = this.btnfinalizar;
             this.colCerrar.Name = "colCerrar";
             this.colCerrar.Visible = true;
-            this.colCerrar.VisibleIndex = 13;
+            this.colCerrar.VisibleIndex = 11;
+            this.colCerrar.Width = 72;
             // 
             // btnfinalizar
             // 
@@ -394,7 +412,8 @@
             this.colEliminar.ColumnEdit = this.btndelete;
             this.colEliminar.Name = "colEliminar";
             this.colEliminar.Visible = true;
-            this.colEliminar.VisibleIndex = 14;
+            this.colEliminar.VisibleIndex = 12;
+            this.colEliminar.Width = 44;
             // 
             // btndelete
             // 
@@ -412,7 +431,8 @@
             this.colver.ColumnEdit = this.btnver;
             this.colver.Name = "colver";
             this.colver.Visible = true;
-            this.colver.VisibleIndex = 15;
+            this.colver.VisibleIndex = 13;
+            this.colver.Width = 64;
             // 
             // btnver
             // 
@@ -455,11 +475,25 @@
             this.btnExcel.Text = "Orden de \r\nCarga Manual";
             this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
+            // tggOpen
+            // 
+            this.tggOpen.EditValue = true;
+            this.tggOpen.Location = new System.Drawing.Point(12, 94);
+            this.tggOpen.Name = "tggOpen";
+            this.tggOpen.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tggOpen.Properties.Appearance.Options.UseFont = true;
+            this.tggOpen.Properties.OffText = "Cerradas Ocultas";
+            this.tggOpen.Properties.OnText = "Mostrando Todas";
+            this.tggOpen.Size = new System.Drawing.Size(382, 30);
+            this.tggOpen.TabIndex = 41;
+            this.tggOpen.Toggled += new System.EventHandler(this.tggOpen_Toggled);
+            // 
             // frmdespacho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(638, 560);
+            this.Controls.Add(this.tggOpen);
             this.Controls.Add(this.cmdHome);
             this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.grd_data);
@@ -478,6 +512,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btndelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnver)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_ligar_oc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tggOpen.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -517,5 +552,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnver;
         private DevExpress.XtraGrid.Columns.GridColumn grd_LigarOC;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btn_ligar_oc;
+        private DevExpress.XtraEditors.ToggleSwitch tggOpen;
     }
 }

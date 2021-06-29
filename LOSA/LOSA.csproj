@@ -967,6 +967,12 @@
     <Compile Include="RecepcionMP\frm_select_pv.Designer.cs">
       <DependentUpon>frm_select_pv.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecepcionMP\frm_view_ingresos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frm_view_ingresos.Designer.cs">
+      <DependentUpon>frm_view_ingresos.cs</DependentUpon>
+    </Compile>
     <Compile Include="RecepcionMP\rptReporteIngresoTarima.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1790,6 +1796,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frm_select_pv.resx">
       <DependentUpon>frm_select_pv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frm_view_ingresos.resx">
+      <DependentUpon>frm_view_ingresos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\rptReporteIngresoTarima.resx">
       <DependentUpon>rptReporteIngresoTarima.cs</DependentUpon>

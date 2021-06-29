@@ -266,7 +266,7 @@ namespace LOSA.Despachos
                         SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                         con.Open();
 
-                        SqlCommand cmd = new SqlCommand("sp_set_insert_salida_tarima_pt_v2", con);
+                        SqlCommand cmd = new SqlCommand("sp_set_insert_salida_tarima_pt_v3", con);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@idtarima", tarimaEncontrada.Id);
                         cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
