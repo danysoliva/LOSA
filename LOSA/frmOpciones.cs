@@ -530,7 +530,7 @@ namespace LOSA
             frm.Show();
         }
 
-        private void simpleButton13_Click(object sender, EventArgs e)
+        private void simpleButton14_Click(object sender, EventArgs e)
         {
             frm_view_ingresos frm = new frm_view_ingresos(UsuarioLogeado);
             frm.Show();

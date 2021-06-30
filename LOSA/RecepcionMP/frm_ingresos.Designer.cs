@@ -66,6 +66,8 @@
             this.btnccartilla = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colEditar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnEdit = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.coltipo_ingreso = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.btnAgregar = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -121,7 +123,9 @@
             this.colid,
             this.colprint,
             this.colcartilla,
-            this.colEditar});
+            this.colEditar,
+            this.coltipo_ingreso,
+            this.coldescripcion});
             this.grdv_ingreso.GridControl = this.grd_ingreso;
             this.grdv_ingreso.Name = "grdv_ingreso";
             this.grdv_ingreso.OptionsView.ShowAutoFilterRow = true;
@@ -183,7 +187,7 @@
             this.coltarimas.ColumnEdit = this.btnver;
             this.coltarimas.Name = "coltarimas";
             this.coltarimas.Visible = true;
-            this.coltarimas.VisibleIndex = 5;
+            this.coltarimas.VisibleIndex = 6;
             this.coltarimas.Width = 99;
             // 
             // btnver
@@ -207,7 +211,7 @@
             this.colprint.ColumnEdit = this.btnprint;
             this.colprint.Name = "colprint";
             this.colprint.Visible = true;
-            this.colprint.VisibleIndex = 6;
+            this.colprint.VisibleIndex = 7;
             this.colprint.Width = 99;
             // 
             // btnprint
@@ -235,6 +239,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnccartilla.Name = "btnccartilla";
             this.btnccartilla.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnccartilla.Click += new System.EventHandler(this.btnccartilla_Click);
             // 
             // colEditar
             // 
@@ -242,7 +247,7 @@
             this.colEditar.ColumnEdit = this.btnEdit;
             this.colEditar.Name = "colEditar";
             this.colEditar.Visible = true;
-            this.colEditar.VisibleIndex = 7;
+            this.colEditar.VisibleIndex = 8;
             // 
             // btnEdit
             // 
@@ -253,6 +258,20 @@
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // coltipo_ingreso
+            // 
+            this.coltipo_ingreso.FieldName = "tipo_ingreso";
+            this.coltipo_ingreso.Name = "coltipo_ingreso";
+            // 
+            // coldescripcion
+            // 
+            this.coldescripcion.Caption = "T. Ingreso";
+            this.coldescripcion.FieldName = "descripcion";
+            this.coldescripcion.Name = "coldescripcion";
+            this.coldescripcion.OptionsColumn.AllowEdit = false;
+            this.coldescripcion.Visible = true;
+            this.coldescripcion.VisibleIndex = 5;
             // 
             // btnAtras
             // 
@@ -351,5 +370,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnccartilla;
         private DevExpress.XtraGrid.Columns.GridColumn colEditar;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnEdit;
+        private DevExpress.XtraGrid.Columns.GridColumn coltipo_ingreso;
+        private DevExpress.XtraGrid.Columns.GridColumn coldescripcion;
     }
 }
