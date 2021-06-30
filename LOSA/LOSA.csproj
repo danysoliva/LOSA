@@ -188,6 +188,12 @@
     <Compile Include="AlmacenesExterno\xfrmLoteCRUD.Designer.cs">
       <DependentUpon>xfrmLoteCRUD.cs</DependentUpon>
     </Compile>
+    <Compile Include="AlmacenesExterno\xfrmMovimientoStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlmacenesExterno\xfrmMovimientoStock.Designer.cs">
+      <DependentUpon>xfrmMovimientoStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="AlmacenesExterno\xfrmRevisarOC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1439,6 +1445,9 @@
     <EmbeddedResource Include="AlmacenesExterno\xfrmLoteCRUD.resx">
       <DependentUpon>xfrmLoteCRUD.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AlmacenesExterno\xfrmMovimientoStock.resx">
+      <DependentUpon>xfrmMovimientoStock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AlmacenesExterno\xfrmRevisarOC.resx">
       <DependentUpon>xfrmRevisarOC.cs</DependentUpon>
     </EmbeddedResource>
@@ -2227,6 +2236,7 @@
     <None Include="Resources\exchange.png" />
     <Content Include="Resources\key.png" />
     <None Include="Resources\Materia_Prima.png" />
+    <None Include="Resources\logout.png" />
     <Content Include="Resources\medal.png" />
     <None Include="Resources\pallet pallet solo.png" />
     <None Include="Resources\pallet32px.png" />
