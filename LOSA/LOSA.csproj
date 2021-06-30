@@ -70,10 +70,10 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>2B04904849D2E99D9DED98BF1BEDD05045FAAB77</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>B8B1E1C226D4161B735B5D87883A090CA12C1142</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>LOSA_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>LOSA_3_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -92,7 +92,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>LOSA_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>LOSA_3_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -968,6 +968,12 @@
     <Compile Include="RecepcionMP\frm_ingresos_lotes.Designer.cs">
       <DependentUpon>frm_ingresos_lotes.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecepcionMP\frm_select_numero_granel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frm_select_numero_granel.Designer.cs">
+      <DependentUpon>frm_select_numero_granel.cs</DependentUpon>
+    </Compile>
     <Compile Include="RecepcionMP\frm_select_pv.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1804,6 +1810,9 @@
     <EmbeddedResource Include="RecepcionMP\frm_ingresos_lotes.resx">
       <DependentUpon>frm_ingresos_lotes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frm_select_numero_granel.resx">
+      <DependentUpon>frm_select_numero_granel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frm_select_pv.resx">
       <DependentUpon>frm_select_pv.cs</DependentUpon>
     </EmbeddedResource>
@@ -2060,7 +2069,6 @@
     </None>
     <None Include="LOSA_3_TemporaryKey.pfx" />
     <None Include="LOSA_4_TemporaryKey.pfx" />
-    <None Include="LOSA_TemporaryKey.pfx" />
     <None Include="Mantenimientos\dsMantenimiento.xsc">
       <DependentUpon>dsMantenimiento.xsd</DependentUpon>
     </None>
