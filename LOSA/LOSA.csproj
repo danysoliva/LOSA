@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>159</ApplicationRevision>
+    <ApplicationRevision>160</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -787,6 +787,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsRecepcionMP.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RecepcionMP\frmCambioIngreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmCambioIngreso.Designer.cs">
+      <DependentUpon>frmCambioIngreso.cs</DependentUpon>
     </Compile>
     <Compile Include="RecepcionMP\frmeditarLote.cs">
       <SubType>Form</SubType>
@@ -1738,6 +1744,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RecepcionMP\frmCambioIngreso.resx">
+      <DependentUpon>frmCambioIngreso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmeditarLote.resx">
       <DependentUpon>frmeditarLote.cs</DependentUpon>
     </EmbeddedResource>

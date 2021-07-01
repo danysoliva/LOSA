@@ -79,6 +79,7 @@
             this.cmdTarimasPT = new DevExpress.XtraEditors.SimpleButton();
             this.btnAlimentacionManual = new DevExpress.XtraEditors.SimpleButton();
             this.txtProduccion = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton15 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -251,7 +252,7 @@
             this.simpleButton14.Appearance.Options.UseTextOptions = true;
             this.simpleButton14.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton14.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton14.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton13.ImageOptions.Image")));
+            this.simpleButton14.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton14.ImageOptions.Image")));
             this.simpleButton14.Location = new System.Drawing.Point(419, 296);
             this.simpleButton14.Name = "simpleButton14";
             this.simpleButton14.Size = new System.Drawing.Size(201, 40);
@@ -273,6 +274,7 @@
             this.simpleButton13.Size = new System.Drawing.Size(268, 49);
             this.simpleButton13.TabIndex = 36;
             this.simpleButton13.Text = "Transferencia de Almacénes";
+            this.simpleButton13.Visible = false;
             // 
             // btnAlmacenesExternos
             // 
@@ -801,6 +803,7 @@
             // 
             // txtProduccion
             // 
+            this.txtProduccion.Controls.Add(this.simpleButton15);
             this.txtProduccion.Controls.Add(this.simpleButton12);
             this.txtProduccion.Controls.Add(this.btnRequisasManuales);
             this.txtProduccion.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("txtProduccion.ImageOptions.Image")));
@@ -808,6 +811,19 @@
             this.txtProduccion.PageVisible = false;
             this.txtProduccion.Size = new System.Drawing.Size(629, 422);
             this.txtProduccion.Text = "Produccion";
+            // 
+            // simpleButton15
+            // 
+            this.simpleButton15.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton15.Appearance.Options.UseFont = true;
+            this.simpleButton15.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton15.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton15.ImageOptions.Image")));
+            this.simpleButton15.Location = new System.Drawing.Point(26, 174);
+            this.simpleButton15.Name = "simpleButton15";
+            this.simpleButton15.Size = new System.Drawing.Size(199, 69);
+            this.simpleButton15.TabIndex = 19;
+            this.simpleButton15.Text = "Requisiciones";
+            this.simpleButton15.Click += new System.EventHandler(this.simpleButton15_Click);
             // 
             // simpleButton12
             // 
@@ -931,5 +947,6 @@
         private DevExpress.XtraEditors.SimpleButton btnAlmacenesExternos;
         private DevExpress.XtraEditors.SimpleButton simpleButton14;
         private DevExpress.XtraEditors.SimpleButton simpleButton13;
+        private DevExpress.XtraEditors.SimpleButton simpleButton15;
     }
 }

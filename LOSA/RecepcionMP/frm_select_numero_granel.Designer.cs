@@ -37,17 +37,17 @@ namespace LOSA.RecepcionMP
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_select_numero_granel));
             this.grd_data = new DevExpress.XtraGrid.GridControl();
-            this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.dsingresos = new LOSA.RecepcionMP.dsingresos();
             this.ingresoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsingresos = new LOSA.RecepcionMP.dsingresos();
+            this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colingreso = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSeleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btnclose = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsingresos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ingresoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsingresos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSeleccionar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,10 +62,20 @@ namespace LOSA.RecepcionMP
             this.grd_data.Name = "grd_data";
             this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnSeleccionar});
-            this.grd_data.Size = new System.Drawing.Size(406, 568);
+            this.grd_data.Size = new System.Drawing.Size(418, 568);
             this.grd_data.TabIndex = 0;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
+            // 
+            // ingresoBindingSource
+            // 
+            this.ingresoBindingSource.DataMember = "ingreso";
+            this.ingresoBindingSource.DataSource = this.dsingresos;
+            // 
+            // dsingresos
+            // 
+            this.dsingresos.DataSetName = "dsingresos";
+            this.dsingresos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // grdv_data
             // 
@@ -99,16 +109,6 @@ namespace LOSA.RecepcionMP
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
             this.grdv_data.OptionsView.ShowGroupPanel = false;
             this.grdv_data.DoubleClick += new System.EventHandler(this.grdv_data_DoubleClick);
-            // 
-            // dsingresos
-            // 
-            this.dsingresos.DataSetName = "dsingresos";
-            this.dsingresos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ingresoBindingSource
-            // 
-            this.ingresoBindingSource.DataMember = "ingreso";
-            this.ingresoBindingSource.DataSource = this.dsingresos;
             // 
             // colingreso
             // 
@@ -156,7 +156,7 @@ namespace LOSA.RecepcionMP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(406, 631);
+            this.ClientSize = new System.Drawing.Size(418, 643);
             this.ControlBox = false;
             this.Controls.Add(this.btnclose);
             this.Controls.Add(this.grd_data);
@@ -165,9 +165,9 @@ namespace LOSA.RecepcionMP
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seleccion de numero de ingreso";
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsingresos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ingresoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsingresos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSeleccionar)).EndInit();
             this.ResumeLayout(false);
 

@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using LOSA.Clases;
 using ACS.Classes;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace LOSA.RecepcionMP
 {
@@ -77,6 +78,26 @@ namespace LOSA.RecepcionMP
             if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 grd_data.ExportToXlsx(dialog.FileName);
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var gridView = (GridView)grd_data.FocusedView;
+                var row = (dsingresos.granelRow)gridView.GetFocusedDataRow();
+
+                frmCambioIngreso frm = new frmCambioIngreso(row.ingreso ,row.id);
+                   if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        load_data();
+                    }
+            }
+            catch (Exception ex)
+            {
+
+                
             }
         }
     }

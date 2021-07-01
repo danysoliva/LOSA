@@ -29,7 +29,12 @@ namespace LOSA.RecepcionMP
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_view_ingresos));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
@@ -55,6 +60,8 @@ namespace LOSA.RecepcionMP
             this.dtFechaDesde = new DevExpress.XtraEditors.DateEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.btn_excel = new DevExpress.XtraEditors.SimpleButton();
+            this.colCambiarIngreso = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnEditar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsingresos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
@@ -62,6 +69,7 @@ namespace LOSA.RecepcionMP
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaHasta.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesde.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesde.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -106,6 +114,8 @@ namespace LOSA.RecepcionMP
             this.grd_data.Location = new System.Drawing.Point(0, 153);
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
+            this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.btnEditar});
             this.grd_data.Size = new System.Drawing.Size(637, 405);
             this.grd_data.TabIndex = 33;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -154,7 +164,8 @@ namespace LOSA.RecepcionMP
             this.colubicacion,
             this.colingreso,
             this.collote2,
-            this.colingreso2});
+            this.colingreso2,
+            this.colCambiarIngreso});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.GroupCount = 1;
             this.grdv_data.Name = "grdv_data";
@@ -364,6 +375,24 @@ namespace LOSA.RecepcionMP
             this.btn_excel.Text = "Exportar";
             this.btn_excel.Click += new System.EventHandler(this.btn_excel_Click);
             // 
+            // colCambiarIngreso
+            // 
+            this.colCambiarIngreso.Caption = "Cambio de Ingreso";
+            this.colCambiarIngreso.ColumnEdit = this.btnEditar;
+            this.colCambiarIngreso.Name = "colCambiarIngreso";
+            this.colCambiarIngreso.Visible = true;
+            this.colCambiarIngreso.VisibleIndex = 8;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            this.btnEditar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
             // frm_view_ingresos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -389,6 +418,7 @@ namespace LOSA.RecepcionMP
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaHasta.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesde.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesde.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -421,5 +451,7 @@ namespace LOSA.RecepcionMP
         private DevExpress.XtraEditors.SimpleButton btn_excel;
         private DevExpress.XtraGrid.Columns.GridColumn collote2;
         private DevExpress.XtraGrid.Columns.GridColumn colingreso2;
+        private DevExpress.XtraGrid.Columns.GridColumn colCambiarIngreso;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnEditar;
     }
 }

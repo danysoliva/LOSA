@@ -34,7 +34,7 @@ namespace LOSA.RecepcionMP {
         
         private ingresoDataTable tableingreso;
         
-        private registro_granelDataTable tableregistro_granel;
+        private granel_ingresoDataTable tablegranel_ingreso;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -79,8 +79,8 @@ namespace LOSA.RecepcionMP {
                 if ((ds.Tables["ingreso"] != null)) {
                     base.Tables.Add(new ingresoDataTable(ds.Tables["ingreso"]));
                 }
-                if ((ds.Tables["registro_granel"] != null)) {
-                    base.Tables.Add(new registro_granelDataTable(ds.Tables["registro_granel"]));
+                if ((ds.Tables["granel_ingreso"] != null)) {
+                    base.Tables.Add(new granel_ingresoDataTable(ds.Tables["granel_ingreso"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -154,9 +154,9 @@ namespace LOSA.RecepcionMP {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public registro_granelDataTable registro_granel {
+        public granel_ingresoDataTable granel_ingreso {
             get {
-                return this.tableregistro_granel;
+                return this.tablegranel_ingreso;
             }
         }
         
@@ -242,8 +242,8 @@ namespace LOSA.RecepcionMP {
                 if ((ds.Tables["ingreso"] != null)) {
                     base.Tables.Add(new ingresoDataTable(ds.Tables["ingreso"]));
                 }
-                if ((ds.Tables["registro_granel"] != null)) {
-                    base.Tables.Add(new registro_granelDataTable(ds.Tables["registro_granel"]));
+                if ((ds.Tables["granel_ingreso"] != null)) {
+                    base.Tables.Add(new granel_ingresoDataTable(ds.Tables["granel_ingreso"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -308,10 +308,10 @@ namespace LOSA.RecepcionMP {
                     this.tableingreso.InitVars();
                 }
             }
-            this.tableregistro_granel = ((registro_granelDataTable)(base.Tables["registro_granel"]));
+            this.tablegranel_ingreso = ((granel_ingresoDataTable)(base.Tables["granel_ingreso"]));
             if ((initTable == true)) {
-                if ((this.tableregistro_granel != null)) {
-                    this.tableregistro_granel.InitVars();
+                if ((this.tablegranel_ingreso != null)) {
+                    this.tablegranel_ingreso.InitVars();
                 }
             }
         }
@@ -334,8 +334,8 @@ namespace LOSA.RecepcionMP {
             base.Tables.Add(this.tablegranel);
             this.tableingreso = new ingresoDataTable();
             base.Tables.Add(this.tableingreso);
-            this.tableregistro_granel = new registro_granelDataTable();
-            base.Tables.Add(this.tableregistro_granel);
+            this.tablegranel_ingreso = new granel_ingresoDataTable();
+            base.Tables.Add(this.tablegranel_ingreso);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -370,7 +370,7 @@ namespace LOSA.RecepcionMP {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeregistro_granel() {
+        private bool ShouldSerializegranel_ingreso() {
             return false;
         }
         
@@ -445,7 +445,7 @@ namespace LOSA.RecepcionMP {
         public delegate void ingresoRowChangeEventHandler(object sender, ingresoRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void registro_granelRowChangeEventHandler(object sender, registro_granelRowChangeEvent e);
+        public delegate void granel_ingresoRowChangeEventHandler(object sender, granel_ingresoRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -2107,14 +2107,14 @@ namespace LOSA.RecepcionMP {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class registro_granelDataTable : global::System.Data.TypedTableBase<registro_granelRow> {
+        public partial class granel_ingresoDataTable : global::System.Data.TypedTableBase<granel_ingresoRow> {
             
-            private global::System.Data.DataColumn columnDataColumn1;
+            private global::System.Data.DataColumn columningreso;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public registro_granelDataTable() {
-                this.TableName = "registro_granel";
+            public granel_ingresoDataTable() {
+                this.TableName = "granel_ingreso";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -2122,7 +2122,7 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal registro_granelDataTable(global::System.Data.DataTable table) {
+            internal granel_ingresoDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -2139,16 +2139,16 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected registro_granelDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected granel_ingresoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DataColumn1Column {
+            public global::System.Data.DataColumn ingresoColumn {
                 get {
-                    return this.columnDataColumn1;
+                    return this.columningreso;
                 }
             }
             
@@ -2163,45 +2163,45 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public registro_granelRow this[int index] {
+            public granel_ingresoRow this[int index] {
                 get {
-                    return ((registro_granelRow)(this.Rows[index]));
+                    return ((granel_ingresoRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event registro_granelRowChangeEventHandler registro_granelRowChanging;
+            public event granel_ingresoRowChangeEventHandler granel_ingresoRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event registro_granelRowChangeEventHandler registro_granelRowChanged;
+            public event granel_ingresoRowChangeEventHandler granel_ingresoRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event registro_granelRowChangeEventHandler registro_granelRowDeleting;
+            public event granel_ingresoRowChangeEventHandler granel_ingresoRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event registro_granelRowChangeEventHandler registro_granelRowDeleted;
+            public event granel_ingresoRowChangeEventHandler granel_ingresoRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Addregistro_granelRow(registro_granelRow row) {
+            public void Addgranel_ingresoRow(granel_ingresoRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public registro_granelRow Addregistro_granelRow(string DataColumn1) {
-                registro_granelRow rowregistro_granelRow = ((registro_granelRow)(this.NewRow()));
+            public granel_ingresoRow Addgranel_ingresoRow(int ingreso) {
+                granel_ingresoRow rowgranel_ingresoRow = ((granel_ingresoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        DataColumn1};
-                rowregistro_granelRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowregistro_granelRow);
-                return rowregistro_granelRow;
+                        ingreso};
+                rowgranel_ingresoRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowgranel_ingresoRow);
+                return rowgranel_ingresoRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                registro_granelDataTable cln = ((registro_granelDataTable)(base.Clone()));
+                granel_ingresoDataTable cln = ((granel_ingresoDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -2209,46 +2209,46 @@ namespace LOSA.RecepcionMP {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new registro_granelDataTable();
+                return new granel_ingresoDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnDataColumn1 = base.Columns["DataColumn1"];
+                this.columningreso = base.Columns["ingreso"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnDataColumn1 = new global::System.Data.DataColumn("DataColumn1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDataColumn1);
+                this.columningreso = new global::System.Data.DataColumn("ingreso", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columningreso);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public registro_granelRow Newregistro_granelRow() {
-                return ((registro_granelRow)(this.NewRow()));
+            public granel_ingresoRow Newgranel_ingresoRow() {
+                return ((granel_ingresoRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new registro_granelRow(builder);
+                return new granel_ingresoRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(registro_granelRow);
+                return typeof(granel_ingresoRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.registro_granelRowChanged != null)) {
-                    this.registro_granelRowChanged(this, new registro_granelRowChangeEvent(((registro_granelRow)(e.Row)), e.Action));
+                if ((this.granel_ingresoRowChanged != null)) {
+                    this.granel_ingresoRowChanged(this, new granel_ingresoRowChangeEvent(((granel_ingresoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -2256,8 +2256,8 @@ namespace LOSA.RecepcionMP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.registro_granelRowChanging != null)) {
-                    this.registro_granelRowChanging(this, new registro_granelRowChangeEvent(((registro_granelRow)(e.Row)), e.Action));
+                if ((this.granel_ingresoRowChanging != null)) {
+                    this.granel_ingresoRowChanging(this, new granel_ingresoRowChangeEvent(((granel_ingresoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -2265,8 +2265,8 @@ namespace LOSA.RecepcionMP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.registro_granelRowDeleted != null)) {
-                    this.registro_granelRowDeleted(this, new registro_granelRowChangeEvent(((registro_granelRow)(e.Row)), e.Action));
+                if ((this.granel_ingresoRowDeleted != null)) {
+                    this.granel_ingresoRowDeleted(this, new granel_ingresoRowChangeEvent(((granel_ingresoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -2274,14 +2274,14 @@ namespace LOSA.RecepcionMP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.registro_granelRowDeleting != null)) {
-                    this.registro_granelRowDeleting(this, new registro_granelRowChangeEvent(((registro_granelRow)(e.Row)), e.Action));
+                if ((this.granel_ingresoRowDeleting != null)) {
+                    this.granel_ingresoRowDeleting(this, new granel_ingresoRowChangeEvent(((granel_ingresoRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Removeregistro_granelRow(registro_granelRow row) {
+            public void Removegranel_ingresoRow(granel_ingresoRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -2308,7 +2308,7 @@ namespace LOSA.RecepcionMP {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "registro_granelDataTable";
+                attribute2.FixedValue = "granel_ingresoDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -3407,43 +3407,43 @@ namespace LOSA.RecepcionMP {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class registro_granelRow : global::System.Data.DataRow {
+        public partial class granel_ingresoRow : global::System.Data.DataRow {
             
-            private registro_granelDataTable tableregistro_granel;
+            private granel_ingresoDataTable tablegranel_ingreso;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal registro_granelRow(global::System.Data.DataRowBuilder rb) : 
+            internal granel_ingresoRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableregistro_granel = ((registro_granelDataTable)(this.Table));
+                this.tablegranel_ingreso = ((granel_ingresoDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string DataColumn1 {
+            public int ingreso {
                 get {
                     try {
-                        return ((string)(this[this.tableregistro_granel.DataColumn1Column]));
+                        return ((int)(this[this.tablegranel_ingreso.ingresoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DataColumn1\' in table \'registro_granel\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ingreso\' in table \'granel_ingreso\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableregistro_granel.DataColumn1Column] = value;
+                    this[this.tablegranel_ingreso.ingresoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsDataColumn1Null() {
-                return this.IsNull(this.tableregistro_granel.DataColumn1Column);
+            public bool IsingresoNull() {
+                return this.IsNull(this.tablegranel_ingreso.ingresoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetDataColumn1Null() {
-                this[this.tableregistro_granel.DataColumn1Column] = global::System.Convert.DBNull;
+            public void SetingresoNull() {
+                this[this.tablegranel_ingreso.ingresoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3621,22 +3621,22 @@ namespace LOSA.RecepcionMP {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class registro_granelRowChangeEvent : global::System.EventArgs {
+        public class granel_ingresoRowChangeEvent : global::System.EventArgs {
             
-            private registro_granelRow eventRow;
+            private granel_ingresoRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public registro_granelRowChangeEvent(registro_granelRow row, global::System.Data.DataRowAction action) {
+            public granel_ingresoRowChangeEvent(granel_ingresoRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public registro_granelRow Row {
+            public granel_ingresoRow Row {
                 get {
                     return this.eventRow;
                 }
