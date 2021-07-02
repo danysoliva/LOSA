@@ -37,7 +37,7 @@
             this.cmdPT = new DevExpress.XtraEditors.SimpleButton();
             this.cmdMP = new DevExpress.XtraEditors.SimpleButton();
             this.TabLogistica = new DevExpress.XtraTab.XtraTabPage();
-            this.simpleButton13 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnTransfAlmacen = new DevExpress.XtraEditors.SimpleButton();
             this.btnAlmacenesExternos = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton10 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
@@ -222,7 +222,7 @@
             // 
             // TabLogistica
             // 
-            this.TabLogistica.Controls.Add(this.simpleButton13);
+            this.TabLogistica.Controls.Add(this.btnTransfAlmacen);
             this.TabLogistica.Controls.Add(this.btnAlmacenesExternos);
             this.TabLogistica.Controls.Add(this.simpleButton10);
             this.TabLogistica.Controls.Add(this.simpleButton8);
@@ -250,20 +250,21 @@
             this.TabLogistica.Size = new System.Drawing.Size(840, 527);
             this.TabLogistica.Text = "Logistica";
             // 
-            // simpleButton13
+            // btnTransfAlmacen
             // 
-            this.simpleButton13.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.simpleButton13.Appearance.Options.UseFont = true;
-            this.simpleButton13.Appearance.Options.UseTextOptions = true;
-            this.simpleButton13.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.simpleButton13.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton13.ImageOptions.Image = global::LOSA.Properties.Resources.logout;
-            this.simpleButton13.Location = new System.Drawing.Point(284, 365);
-            this.simpleButton13.Margin = new System.Windows.Forms.Padding(4);
-            this.simpleButton13.Name = "simpleButton13";
-            this.simpleButton13.Size = new System.Drawing.Size(268, 49);
-            this.simpleButton13.TabIndex = 36;
-            this.simpleButton13.Text = "Transferencia de Almacénes";
+            this.btnTransfAlmacen.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.btnTransfAlmacen.Appearance.Options.UseFont = true;
+            this.btnTransfAlmacen.Appearance.Options.UseTextOptions = true;
+            this.btnTransfAlmacen.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btnTransfAlmacen.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnTransfAlmacen.ImageOptions.Image = global::LOSA.Properties.Resources.logout;
+            this.btnTransfAlmacen.Location = new System.Drawing.Point(284, 365);
+            this.btnTransfAlmacen.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTransfAlmacen.Name = "btnTransfAlmacen";
+            this.btnTransfAlmacen.Size = new System.Drawing.Size(268, 49);
+            this.btnTransfAlmacen.TabIndex = 36;
+            this.btnTransfAlmacen.Text = "Transferencia de Almacénes";
+            this.btnTransfAlmacen.Click += new System.EventHandler(this.btnTransfAlmacen_Click);
             // 
             // btnAlmacenesExternos
             // 
@@ -964,6 +965,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton11;
         private DevExpress.XtraEditors.SimpleButton simpleButton12;
         private DevExpress.XtraEditors.SimpleButton btnAlmacenesExternos;
-        private DevExpress.XtraEditors.SimpleButton simpleButton13;
+        private DevExpress.XtraEditors.SimpleButton btnTransfAlmacen;
     }
 }

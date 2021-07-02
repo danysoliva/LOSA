@@ -529,5 +529,11 @@ namespace LOSA
             xfrmAlmacenesExternos_Main frm = new xfrmAlmacenesExternos_Main(UsuarioLogeado);
             frm.Show();
         }
+
+        private void btnTransfAlmacen_Click(object sender, EventArgs e)
+        {
+            xfrmMovimientoStock frm = new xfrmMovimientoStock();
+            frm.Show();
+        }
     }
 }

@@ -157,6 +157,7 @@
     <Compile Include="AlmacenesExterno\Models\InfoHeaderRptIngreso.cs" />
     <Compile Include="AlmacenesExterno\Models\Ingreso_Externo_Lote.cs" />
     <Compile Include="AlmacenesExterno\Models\Ingreso_Externo_Lote_Seleccionado.cs" />
+    <Compile Include="AlmacenesExterno\Models\Materia_Prima_Transferencia.cs" />
     <Compile Include="AlmacenesExterno\Models\OrdenCompra_H.cs" />
     <Compile Include="AlmacenesExterno\Reporteria\xrptAlmacenesExternos.cs">
       <SubType>Component</SubType>
@@ -175,6 +176,12 @@
     </Compile>
     <Compile Include="AlmacenesExterno\xfrmAlmacenesExternos_Main.Designer.cs">
       <DependentUpon>xfrmAlmacenesExternos_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AlmacenesExterno\xfrmBuscarMP_Ingresos_Externos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlmacenesExterno\xfrmBuscarMP_Ingresos_Externos.Designer.cs">
+      <DependentUpon>xfrmBuscarMP_Ingresos_Externos.cs</DependentUpon>
     </Compile>
     <Compile Include="AlmacenesExterno\xfrmDetalleIngresoAlmacenExterno.cs">
       <SubType>Form</SubType>
@@ -1438,6 +1445,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AlmacenesExterno\xfrmAlmacenesExternos_Main.resx">
       <DependentUpon>xfrmAlmacenesExternos_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlmacenesExterno\xfrmBuscarMP_Ingresos_Externos.resx">
+      <DependentUpon>xfrmBuscarMP_Ingresos_Externos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AlmacenesExterno\xfrmDetalleIngresoAlmacenExterno.resx">
       <DependentUpon>xfrmDetalleIngresoAlmacenExterno.cs</DependentUpon>
