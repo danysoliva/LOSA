@@ -530,9 +530,22 @@ namespace LOSA
             frm.Show();
         }
 
-        private void btnTransfAlmacen_Click(object sender, EventArgs e)
+        private void simpleButton14_Click(object sender, EventArgs e)
         {
-            xfrmMovimientoStock frm = new xfrmMovimientoStock();
+            frm_view_ingresos frm = new frm_view_ingresos(UsuarioLogeado);
+            frm.Show();
+        }
+
+        private void simpleButton15_Click(object sender, EventArgs e)
+        {
+            frmRequisiciones frm = new frmRequisiciones(UsuarioLogeado);
+            if (this.MdiParent != null)
+            {
+                frm.MdiParent = this.MdiParent;
+                frm.FormBorderStyle = FormBorderStyle.Sizable;
+            }
+
+            frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
     }

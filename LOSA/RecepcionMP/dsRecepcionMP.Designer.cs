@@ -4182,6 +4182,10 @@ namespace LOSA.RecepcionMP {
             
             private global::System.Data.DataColumn columnid;
             
+            private global::System.Data.DataColumn columntipo_ingreso;
+            
+            private global::System.Data.DataColumn columndescripcion;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public IngresosMPDataTable() {
@@ -4265,6 +4269,22 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn tipo_ingresoColumn {
+                get {
+                    return this.columntipo_ingreso;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn descripcionColumn {
+                get {
+                    return this.columndescripcion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4300,7 +4320,7 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public IngresosMPRow AddIngresosMPRow(int Ningreso, string itemcode, string ItemName, string id_proveedor, string CardName, int id) {
+            public IngresosMPRow AddIngresosMPRow(int Ningreso, string itemcode, string ItemName, string id_proveedor, string CardName, int id, int tipo_ingreso, string descripcion) {
                 IngresosMPRow rowIngresosMPRow = ((IngresosMPRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Ningreso,
@@ -4308,7 +4328,9 @@ namespace LOSA.RecepcionMP {
                         ItemName,
                         id_proveedor,
                         CardName,
-                        id};
+                        id,
+                        tipo_ingreso,
+                        descripcion};
                 rowIngresosMPRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowIngresosMPRow);
                 return rowIngresosMPRow;
@@ -4337,6 +4359,8 @@ namespace LOSA.RecepcionMP {
                 this.columnid_proveedor = base.Columns["id_proveedor"];
                 this.columnCardName = base.Columns["CardName"];
                 this.columnid = base.Columns["id"];
+                this.columntipo_ingreso = base.Columns["tipo_ingreso"];
+                this.columndescripcion = base.Columns["descripcion"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4354,6 +4378,10 @@ namespace LOSA.RecepcionMP {
                 base.Columns.Add(this.columnCardName);
                 this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid);
+                this.columntipo_ingreso = new global::System.Data.DataColumn("tipo_ingreso", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntipo_ingreso);
+                this.columndescripcion = new global::System.Data.DataColumn("descripcion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndescripcion);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9430,6 +9458,38 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int tipo_ingreso {
+                get {
+                    try {
+                        return ((int)(this[this.tableIngresosMP.tipo_ingresoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'tipo_ingreso\' in table \'IngresosMP\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIngresosMP.tipo_ingresoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string descripcion {
+                get {
+                    try {
+                        return ((string)(this[this.tableIngresosMP.descripcionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'descripcion\' in table \'IngresosMP\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIngresosMP.descripcionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsNingresoNull() {
                 return this.IsNull(this.tableIngresosMP.NingresoColumn);
             }
@@ -9498,6 +9558,30 @@ namespace LOSA.RecepcionMP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetidNull() {
                 this[this.tableIngresosMP.idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Istipo_ingresoNull() {
+                return this.IsNull(this.tableIngresosMP.tipo_ingresoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Settipo_ingresoNull() {
+                this[this.tableIngresosMP.tipo_ingresoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsdescripcionNull() {
+                return this.IsNull(this.tableIngresosMP.descripcionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetdescripcionNull() {
+                this[this.tableIngresosMP.descripcionColumn] = global::System.Convert.DBNull;
             }
         }
         

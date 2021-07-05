@@ -23,6 +23,7 @@ namespace LOSA.RecepcionMP
         string Rack;
         string Codigo_Barra_ubicacion;
         int IdLoteSelected;
+        int ingreso;
 
         public frmIngresoGranelAlosy(UserLogin pUsuarioLogeado, ArrayList pArray, ItemMP_Lote pItem)
         {
@@ -237,14 +238,28 @@ namespace LOSA.RecepcionMP
                 return;
             }
 
-           
+            SqlConnection cn;
+            SqlCommand cmd;
+            if (chnuevoIngreso.Checked)
+            {
                 string quer = @"sp_obtener_numero_ingreso";
-                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                 cn = new SqlConnection(dp.ConnectionStringLOSA);
                 cn.Open();
-                SqlCommand cmd = new SqlCommand(quer, cn);
+                 cmd = new SqlCommand(quer, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                int ingreso = Convert.ToInt32(cmd.ExecuteScalar());
+                ingreso = Convert.ToInt32(cmd.ExecuteScalar());
                 cn.Close();
+            }
+            else
+            {
+
+                if (txtingreso.Text == "")
+                {
+                    CajaDialogo.Error("No tiene un ingreso seleccionado para poder ligar. Debe seleccionar uno antes de crear los documentos.");
+                    return;
+                }
+                ingreso = Convert.ToInt32(txtingreso.Text);
+            }
 
            
             //Validar ingreso si es necesario
@@ -311,6 +326,31 @@ namespace LOSA.RecepcionMP
                 row.id_ubicacion = idUbicaciones;
             }
             dsRecepcionMPx1.granel.AcceptChanges();
+        }
+
+        private void chnuevoIngreso_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chnuevoIngreso.Checked)
+            {
+                lblingreso.Visible = false;
+                txtingreso.Visible = false;
+                btningreso.Visible = false;
+            }
+            else
+            {
+                lblingreso.Visible = true;
+                txtingreso.Visible = true;
+                btningreso.Visible = true;
+            }
+        }
+
+        private void btningreso_Click(object sender, EventArgs e)
+        {
+            frm_select_numero_granel frm = new frm_select_numero_granel();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                txtingreso.Text = frm.Ingreso.ToString();
+            }
         }
     }
 }

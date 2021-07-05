@@ -96,16 +96,20 @@ namespace LOSA.RecepcionMP
             this.grdbarco = new DevExpress.XtraEditors.GridLookUpEdit();
             this.barcosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldescripcion1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.grdUbicaciones = new DevExpress.XtraEditors.GridLookUpEdit();
             this.ubicacionesgranelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.colid2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coldescripcion1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colrack = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcodigo_barra = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.chnuevoIngreso = new DevExpress.XtraEditors.CheckEdit();
+            this.txtingreso = new DevExpress.XtraEditors.TextEdit();
+            this.lblingreso = new DevExpress.XtraEditors.LabelControl();
+            this.btningreso = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.beNuevaUbicacion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLote.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaVencimiento.Properties.CalendarTimeProperties)).BeginInit();
@@ -131,6 +135,8 @@ namespace LOSA.RecepcionMP
             ((System.ComponentModel.ISupportInitialize)(this.grdUbicaciones.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ubicacionesgranelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chnuevoIngreso.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtingreso.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // beNuevaUbicacion
@@ -138,7 +144,7 @@ namespace LOSA.RecepcionMP
             this.beNuevaUbicacion.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.True;
             this.beNuevaUbicacion.EditValue = "";
             this.beNuevaUbicacion.Enabled = false;
-            this.beNuevaUbicacion.Location = new System.Drawing.Point(729, 181);
+            this.beNuevaUbicacion.Location = new System.Drawing.Point(835, 257);
             this.beNuevaUbicacion.Name = "beNuevaUbicacion";
             this.beNuevaUbicacion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.beNuevaUbicacion.Properties.Appearance.Options.UseFont = true;
@@ -302,7 +308,7 @@ namespace LOSA.RecepcionMP
             this.btnUbicacion.Appearance.Options.UseFont = true;
             this.btnUbicacion.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnUbicacion.ImageOptions.Image = global::LOSA.Properties.Resources.tap;
-            this.btnUbicacion.Location = new System.Drawing.Point(837, 173);
+            this.btnUbicacion.Location = new System.Drawing.Point(943, 249);
             this.btnUbicacion.Name = "btnUbicacion";
             this.btnUbicacion.Size = new System.Drawing.Size(42, 40);
             this.btnUbicacion.TabIndex = 89;
@@ -668,11 +674,11 @@ namespace LOSA.RecepcionMP
             this.cmdGenerarIngreso.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdGenerarIngreso.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdGenerarIngreso.ImageOptions.Image")));
             this.cmdGenerarIngreso.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.cmdGenerarIngreso.Location = new System.Drawing.Point(654, 3);
+            this.cmdGenerarIngreso.Location = new System.Drawing.Point(626, 3);
             this.cmdGenerarIngreso.Name = "cmdGenerarIngreso";
-            this.cmdGenerarIngreso.Size = new System.Drawing.Size(166, 56);
+            this.cmdGenerarIngreso.Size = new System.Drawing.Size(194, 56);
             this.cmdGenerarIngreso.TabIndex = 96;
-            this.cmdGenerarIngreso.Text = "Generar Ingreso";
+            this.cmdGenerarIngreso.Text = "Guardar Informacion";
             this.cmdGenerarIngreso.Click += new System.EventHandler(this.cmdGenerarIngreso_Click);
             // 
             // btnAtras
@@ -721,6 +727,18 @@ namespace LOSA.RecepcionMP
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
+            // colid2
+            // 
+            this.colid2.FieldName = "id";
+            this.colid2.Name = "colid2";
+            // 
+            // coldescripcion1
+            // 
+            this.coldescripcion1.FieldName = "descripcion";
+            this.coldescripcion1.Name = "coldescripcion1";
+            this.coldescripcion1.Visible = true;
+            this.coldescripcion1.VisibleIndex = 0;
+            // 
             // labelControl4
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -761,29 +779,6 @@ namespace LOSA.RecepcionMP
             this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView3.OptionsView.ShowGroupPanel = false;
             // 
-            // labelControl7
-            // 
-            this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(571, 238);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(88, 25);
-            this.labelControl7.TabIndex = 100;
-            this.labelControl7.Text = "Ubicacion";
-            // 
-            // colid2
-            // 
-            this.colid2.FieldName = "id";
-            this.colid2.Name = "colid2";
-            // 
-            // coldescripcion1
-            // 
-            this.coldescripcion1.FieldName = "descripcion";
-            this.coldescripcion1.Name = "coldescripcion1";
-            this.coldescripcion1.Visible = true;
-            this.coldescripcion1.VisibleIndex = 0;
-            // 
             // colid3
             // 
             this.colid3.FieldName = "id";
@@ -801,11 +796,75 @@ namespace LOSA.RecepcionMP
             this.colcodigo_barra.FieldName = "codigo_barra";
             this.colcodigo_barra.Name = "colcodigo_barra";
             // 
+            // labelControl7
+            // 
+            this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl7.Appearance.Options.UseFont = true;
+            this.labelControl7.Location = new System.Drawing.Point(571, 238);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(88, 25);
+            this.labelControl7.TabIndex = 100;
+            this.labelControl7.Text = "Ubicacion";
+            // 
+            // chnuevoIngreso
+            // 
+            this.chnuevoIngreso.EditValue = true;
+            this.chnuevoIngreso.Location = new System.Drawing.Point(626, 65);
+            this.chnuevoIngreso.Name = "chnuevoIngreso";
+            this.chnuevoIngreso.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chnuevoIngreso.Properties.Appearance.Options.UseFont = true;
+            this.chnuevoIngreso.Properties.Caption = "Nuevo Ingreso";
+            this.chnuevoIngreso.Size = new System.Drawing.Size(253, 24);
+            this.chnuevoIngreso.TabIndex = 101;
+            this.chnuevoIngreso.CheckedChanged += new System.EventHandler(this.chnuevoIngreso_CheckedChanged);
+            // 
+            // txtingreso
+            // 
+            this.txtingreso.EditValue = "";
+            this.txtingreso.Enabled = false;
+            this.txtingreso.Location = new System.Drawing.Point(729, 95);
+            this.txtingreso.Name = "txtingreso";
+            this.txtingreso.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.txtingreso.Properties.Appearance.Options.UseFont = true;
+            this.txtingreso.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtingreso.Size = new System.Drawing.Size(130, 32);
+            this.txtingreso.TabIndex = 102;
+            this.txtingreso.Visible = false;
+            // 
+            // lblingreso
+            // 
+            this.lblingreso.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.lblingreso.Appearance.Options.UseFont = true;
+            this.lblingreso.Location = new System.Drawing.Point(636, 102);
+            this.lblingreso.Name = "lblingreso";
+            this.lblingreso.Size = new System.Drawing.Size(87, 25);
+            this.lblingreso.TabIndex = 103;
+            this.lblingreso.Text = "Ingreso___";
+            this.lblingreso.Visible = false;
+            // 
+            // btningreso
+            // 
+            this.btningreso.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btningreso.Appearance.Options.UseFont = true;
+            this.btningreso.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btningreso.ImageOptions.Image = global::LOSA.Properties.Resources.tap;
+            this.btningreso.Location = new System.Drawing.Point(865, 91);
+            this.btningreso.Name = "btningreso";
+            this.btningreso.Size = new System.Drawing.Size(42, 40);
+            this.btningreso.TabIndex = 104;
+            this.btningreso.Visible = false;
+            this.btningreso.Click += new System.EventHandler(this.btningreso_Click);
+            // 
             // frmIngresoGranelAlosy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(997, 621);
+            this.Controls.Add(this.btningreso);
+            this.Controls.Add(this.lblingreso);
+            this.Controls.Add(this.txtingreso);
+            this.Controls.Add(this.chnuevoIngreso);
             this.Controls.Add(this.labelControl7);
             this.Controls.Add(this.grdUbicaciones);
             this.Controls.Add(this.labelControl4);
@@ -855,6 +914,8 @@ namespace LOSA.RecepcionMP
             ((System.ComponentModel.ISupportInitialize)(this.grdUbicaciones.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ubicacionesgranelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chnuevoIngreso.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtingreso.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -929,5 +990,9 @@ namespace LOSA.RecepcionMP
         private DevExpress.XtraGrid.Columns.GridColumn colid3;
         private DevExpress.XtraGrid.Columns.GridColumn colrack;
         private DevExpress.XtraGrid.Columns.GridColumn colcodigo_barra;
+        private CheckEdit chnuevoIngreso;
+        private TextEdit txtingreso;
+        private LabelControl lblingreso;
+        private SimpleButton btningreso;
     }
 }
