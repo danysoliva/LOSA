@@ -70,10 +70,10 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>B8B1E1C226D4161B735B5D87883A090CA12C1142</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>10604AB2681733C8198A94075DA5D486870AA458</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>LOSA_3_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>LOSA_2_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -92,7 +92,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>LOSA_3_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>LOSA_2_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -153,8 +153,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsAlmacenesExternos.xsd</DependentUpon>
     </Compile>
+    <Compile Include="AlmacenesExterno\dsSalidasAlmacenesExternos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsSalidasAlmacenesExternos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="AlmacenesExterno\Models\Conf_MP_Ingresada.cs" />
     <Compile Include="AlmacenesExterno\Models\InfoHeaderRptIngreso.cs" />
+    <Compile Include="AlmacenesExterno\Models\Ingreso_Almacenes_Externos_H.cs" />
     <Compile Include="AlmacenesExterno\Models\Ingreso_Externo_Lote.cs" />
     <Compile Include="AlmacenesExterno\Models\Ingreso_Externo_Lote_Seleccionado.cs" />
     <Compile Include="AlmacenesExterno\Models\Materia_Prima_Transferencia.cs" />
@@ -164,6 +170,13 @@
     </Compile>
     <Compile Include="AlmacenesExterno\Reporteria\xrptAlmacenesExternos.Designer.cs">
       <DependentUpon>xrptAlmacenesExternos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AlmacenesExterno\Salida Almacen\Models\Ingresos_Externos_D.cs" />
+    <Compile Include="AlmacenesExterno\Salida Almacen\xfrmConfLotesSalidaAlmacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlmacenesExterno\Salida Almacen\xfrmConfLotesSalidaAlmacen.Designer.cs">
+      <DependentUpon>xfrmConfLotesSalidaAlmacen.cs</DependentUpon>
     </Compile>
     <Compile Include="AlmacenesExterno\xfrmAlmacenesExternosDefinirLotes.cs">
       <SubType>Form</SubType>
@@ -176,6 +189,12 @@
     </Compile>
     <Compile Include="AlmacenesExterno\xfrmAlmacenesExternos_Main.Designer.cs">
       <DependentUpon>xfrmAlmacenesExternos_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AlmacenesExterno\xfrmBuscarIngresosAlmacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlmacenesExterno\xfrmBuscarIngresosAlmacen.Designer.cs">
+      <DependentUpon>xfrmBuscarIngresosAlmacen.cs</DependentUpon>
     </Compile>
     <Compile Include="AlmacenesExterno\xfrmBuscarMP_Ingresos_Externos.cs">
       <SubType>Form</SubType>
@@ -1470,11 +1489,17 @@
     <EmbeddedResource Include="AlmacenesExterno\Reporteria\xrptAlmacenesExternos.resx">
       <DependentUpon>xrptAlmacenesExternos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AlmacenesExterno\Salida Almacen\xfrmConfLotesSalidaAlmacen.resx">
+      <DependentUpon>xfrmConfLotesSalidaAlmacen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AlmacenesExterno\xfrmAlmacenesExternosDefinirLotes.resx">
       <DependentUpon>xfrmAlmacenesExternosDefinirLotes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AlmacenesExterno\xfrmAlmacenesExternos_Main.resx">
       <DependentUpon>xfrmAlmacenesExternos_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlmacenesExterno\xfrmBuscarIngresosAlmacen.resx">
+      <DependentUpon>xfrmBuscarIngresosAlmacen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AlmacenesExterno\xfrmBuscarMP_Ingresos_Externos.resx">
       <DependentUpon>xfrmBuscarMP_Ingresos_Externos.cs</DependentUpon>
@@ -2080,6 +2105,17 @@
     <None Include="AlmacenesExterno\dsAlmacenesExternos.xss">
       <DependentUpon>dsAlmacenesExternos.xsd</DependentUpon>
     </None>
+    <None Include="AlmacenesExterno\dsSalidasAlmacenesExternos.xsc">
+      <DependentUpon>dsSalidasAlmacenesExternos.xsd</DependentUpon>
+    </None>
+    <None Include="AlmacenesExterno\dsSalidasAlmacenesExternos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsSalidasAlmacenesExternos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="AlmacenesExterno\dsSalidasAlmacenesExternos.xss">
+      <DependentUpon>dsSalidasAlmacenesExternos.xsd</DependentUpon>
+    </None>
     <None Include="Calidad\dsCalidad.xsc">
       <DependentUpon>dsCalidad.xsd</DependentUpon>
     </None>
@@ -2113,6 +2149,7 @@
     <None Include="Logistica\dsLogistica.xss">
       <DependentUpon>dsLogistica.xsd</DependentUpon>
     </None>
+    <None Include="LOSA_2_TemporaryKey.pfx" />
     <None Include="LOSA_3_TemporaryKey.pfx" />
     <None Include="LOSA_4_TemporaryKey.pfx" />
     <None Include="Mantenimientos\dsMantenimiento.xsc">

@@ -548,5 +548,11 @@ namespace LOSA
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
+
+        private void btnTransferencia_Click(object sender, EventArgs e)
+        {
+            xfrmMovimientoStock frm = new xfrmMovimientoStock();
+            frm.Show();
+        }
     }
 }

@@ -12,12 +12,17 @@ using DevExpress.XtraGrid.Views.Grid;
 using LOSA.AlmacenesExterno.Models;
 using ACS.Classes;
 using System.Data.SqlClient;
+using LOSA.AlmacenesExterno.Salida_Almacen.Models;
+using LOSA.AlmacenesExterno.Salida_Almacen;
 
 namespace LOSA.AlmacenesExterno
 {
     public partial class xfrmMovimientoStock : DevExpress.XtraEditors.XtraForm
     {
         Materia_Prima_Transferencia materia_Prima_Transferencia = new Materia_Prima_Transferencia();
+        int id_h;
+        string id_proveedor;
+        int docEntry;
 
         public xfrmMovimientoStock()
         {
@@ -82,14 +87,7 @@ namespace LOSA.AlmacenesExterno
             }
         }
 
-        private void gvTransferencia_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
-        {
-            var gv = (GridView)gcTransferencia.FocusedView;
-            var row = (dsAlmacenesExternos.Transferencia_StockRow)gv.GetDataRow(gv.FocusedRowHandle);
 
-
-
-        }
 
         private void ObtenerBodegas()
         {
@@ -114,6 +112,184 @@ namespace LOSA.AlmacenesExterno
                 CajaDialogo.Error(ex.Message);
             }
             
+        }
+
+
+        Ingreso_Almacenes_Externos_H ingreso_Almacenes_Externos_H = new Ingreso_Almacenes_Externos_H();
+        private void btnBuscarIngreso_Click(object sender, EventArgs e)
+        {
+            xfrmBuscarIngresosAlmacen frm = new xfrmBuscarIngresosAlmacen();
+
+            if (frm.ShowDialog()== DialogResult.OK)
+            {
+                txtProveedor.Text = frm.ingreso_h.CardName;
+                id_h = frm.ingreso_h.ID;
+                id_proveedor = frm.ingreso_h.CardCode;
+                docEntry = frm.ingreso_h.DocEntry;
+
+                LoadDetailIngresosExternos();
+
+                ingreso_Almacenes_Externos_H = frm.ingreso_h;
+            }
+        }
+
+
+        private void LoadDetailIngresosExternos()
+        {
+            DataOperations dp = new DataOperations();
+
+            using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringLOSA))
+            {
+                dsSalidasAlmacenesExternos.Transferencia_Stock.Clear();
+                cnx.Open();
+                SqlDataAdapter da = new SqlDataAdapter("sp_get_ingresos_externos_d", cnx);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.Add("@id", SqlDbType.Int).Value = id_h;
+
+                da.Fill(dsSalidasAlmacenesExternos.Transferencia_Stock);
+
+                cnx.Close();
+            }
+
+
+            foreach (var item in dsSalidasAlmacenesExternos.Transferencia_Stock)
+            {
+                item.from_almacen = lueAlmacenFROM.Text;
+                item.to_almacen = lueAlmacenDestino.Text;
+            }
+
+        }
+
+        private void lueAlmacenFROM_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty( txtProveedor.Text))
+                {
+                    txtProveedor.Text="";
+                    CajaDialogo.Error("DEBE DE SELCCIONAR LA MATERIA PRIMA");
+
+                    return;
+                }
+
+                if (lueAlmacenFROM.EditValue != lueAlmacenDestino.EditValue)
+                {
+
+                    foreach (var item in dsSalidasAlmacenesExternos.Transferencia_Stock)
+                    {
+                        if (item.seleccionar == true)
+                        {
+
+                            item.from_almacen = lueAlmacenFROM.Text;
+                            item.to_almacen = lueAlmacenDestino.Text;
+                        }
+                    }
+                }
+                else
+                {
+                    CajaDialogo.Error("EL ALMACEN DE ORIGEN DEBE SER DIFERENTE AL ALMACEN DESTINO");
+                    lueAlmacenFROM.Text = "";
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void lueAlmacenDestino_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(txtProveedor.Text))
+                {
+                    txtProveedor.EditValue = null;
+                    CajaDialogo.Error("DEBE DE SELCCIONAR LA MATERIA PRIMA");
+                    return;
+                }
+
+                if (lueAlmacenFROM.EditValue != lueAlmacenDestino.EditValue)
+                {
+
+                    foreach (var item in dsSalidasAlmacenesExternos.Transferencia_Stock)
+                    {
+                        if (item.seleccionar == true)
+                        {
+
+                            item.from_almacen = lueAlmacenFROM.Text;
+                            item.to_almacen = lueAlmacenDestino.Text;
+                        }
+                    }
+                }
+                else
+                {
+                    CajaDialogo.Error("EL ALMACEN DE DESTINO DEBE SER DIFERENTE AL ALMACEN ORIGEN");
+                    lueAlmacenFROM.Text = "";
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void btnConfLotes_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dsSalidasAlmacenesExternos.Transferencia_Stock.ToList().Where(x=> x.seleccionar==true).ToList().Count==0)
+                {
+                    CajaDialogo.Error("DEBE SELECCIONAR AL MENOS UN ITEM");
+                    return;
+                }
+
+
+                if (string.IsNullOrEmpty( lueAlmacenFROM.Text))
+                {
+                    CajaDialogo.Error("DEBE SELECCIONAR UNA BODEGA ORIGEN Y DESTINO");
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(lueAlmacenDestino.Text))
+                {
+                    CajaDialogo.Error("DEBE SELECCIONAR UNA BODEGA ORIGEN Y DESTINO");
+                    return;
+                }
+
+
+                List<Ingresos_Externos_D> lista = new List<Ingresos_Externos_D>();
+
+                foreach (var item in dsSalidasAlmacenesExternos.Transferencia_Stock.ToList().Where(x=> x.seleccionar==true).ToList())
+                {
+                    Ingresos_Externos_D ingresos_Externos_D = new Ingresos_Externos_D();
+
+                    ingresos_Externos_D.DocEntry = item.DocEntrySAP;
+                    ingresos_Externos_D.NumLine = item.NumLine;
+                    ingresos_Externos_D.ID = item.id;
+                    ingresos_Externos_D.ItemCode = item.itemcode;
+                    ingresos_Externos_D.ItemName = item.itemName;
+                    ingresos_Externos_D.Peso = item.peso;
+                    ingresos_Externos_D.Unidades = item.unidades;
+                    ingresos_Externos_D.IDMP = item.id_mp;
+
+                    lista.Add(ingresos_Externos_D);
+
+                }
+
+                ingreso_Almacenes_Externos_H.BodegaIN = lueAlmacenFROM.Text;
+                ingreso_Almacenes_Externos_H.BodegaOUT = lueAlmacenDestino.Text;
+
+                xfrmConfLotesSalidaAlmacen frm = new xfrmConfLotesSalidaAlmacen(lista, ingreso_Almacenes_Externos_H);
+
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
     }
 }

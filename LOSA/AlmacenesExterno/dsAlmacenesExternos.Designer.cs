@@ -3581,6 +3581,10 @@ namespace LOSA.AlmacenesExterno {
             
             private global::System.Data.DataColumn columncantidad_a_transferir;
             
+            private global::System.Data.DataColumn columnLineNum;
+            
+            private global::System.Data.DataColumn columnDocEntry;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Transferencia_StockDataTable() {
@@ -3672,6 +3676,22 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn LineNumColumn {
+                get {
+                    return this.columnLineNum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DocEntryColumn {
+                get {
+                    return this.columnDocEntry;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3707,7 +3727,7 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Transferencia_StockRow AddTransferencia_StockRow(string codeItem, string mp, string from_almacen, string to_almacen, decimal cantidad_kilos, decimal unidades, decimal cantidad_a_transferir) {
+            public Transferencia_StockRow AddTransferencia_StockRow(string codeItem, string mp, string from_almacen, string to_almacen, decimal cantidad_kilos, decimal unidades, decimal cantidad_a_transferir, int LineNum, int DocEntry) {
                 Transferencia_StockRow rowTransferencia_StockRow = ((Transferencia_StockRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         codeItem,
@@ -3716,7 +3736,9 @@ namespace LOSA.AlmacenesExterno {
                         to_almacen,
                         cantidad_kilos,
                         unidades,
-                        cantidad_a_transferir};
+                        cantidad_a_transferir,
+                        LineNum,
+                        DocEntry};
                 rowTransferencia_StockRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTransferencia_StockRow);
                 return rowTransferencia_StockRow;
@@ -3746,6 +3768,8 @@ namespace LOSA.AlmacenesExterno {
                 this.columncantidad_kilos = base.Columns["cantidad_kilos"];
                 this.columnunidades = base.Columns["unidades"];
                 this.columncantidad_a_transferir = base.Columns["cantidad_a_transferir"];
+                this.columnLineNum = base.Columns["LineNum"];
+                this.columnDocEntry = base.Columns["DocEntry"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3765,6 +3789,10 @@ namespace LOSA.AlmacenesExterno {
                 base.Columns.Add(this.columnunidades);
                 this.columncantidad_a_transferir = new global::System.Data.DataColumn("cantidad_a_transferir", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncantidad_a_transferir);
+                this.columnLineNum = new global::System.Data.DataColumn("LineNum", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLineNum);
+                this.columnDocEntry = new global::System.Data.DataColumn("DocEntry", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDocEntry);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6878,6 +6906,38 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int LineNum {
+                get {
+                    try {
+                        return ((int)(this[this.tableTransferencia_Stock.LineNumColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LineNum\' in table \'Transferencia_Stock\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTransferencia_Stock.LineNumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int DocEntry {
+                get {
+                    try {
+                        return ((int)(this[this.tableTransferencia_Stock.DocEntryColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DocEntry\' in table \'Transferencia_Stock\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTransferencia_Stock.DocEntryColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IscodeItemNull() {
                 return this.IsNull(this.tableTransferencia_Stock.codeItemColumn);
             }
@@ -6958,6 +7018,30 @@ namespace LOSA.AlmacenesExterno {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setcantidad_a_transferirNull() {
                 this[this.tableTransferencia_Stock.cantidad_a_transferirColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsLineNumNull() {
+                return this.IsNull(this.tableTransferencia_Stock.LineNumColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetLineNumNull() {
+                this[this.tableTransferencia_Stock.LineNumColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDocEntryNull() {
+                return this.IsNull(this.tableTransferencia_Stock.DocEntryColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDocEntryNull() {
+                this[this.tableTransferencia_Stock.DocEntryColumn] = global::System.Convert.DBNull;
             }
         }
         
