@@ -82,6 +82,7 @@
             this.btndetalle = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colid_tipotm = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTurno = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcodigo_barra = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnEditar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.gridObservacion = new DevExpress.XtraGrid.GridControl();
@@ -102,6 +103,7 @@
             this.colIdmp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_tipotm1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTurno1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcodigo_barra1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
             this.gridRetenidos = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -121,6 +123,7 @@
             this.colidmp3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_tipotm2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTurno2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcodigo_barra2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
@@ -141,9 +144,9 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcodigo_barra = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcodigo_barra1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcodigo_barra2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collote1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collote11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collote12 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.TabControl1)).BeginInit();
             this.TabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
@@ -264,15 +267,25 @@
             this.coldetalle,
             this.colid_tipotm,
             this.colTurno,
-            this.colcodigo_barra});
+            this.colcodigo_barra,
+            this.collote1});
             this.gvMateriaPrima.DetailHeight = 284;
             this.gvMateriaPrima.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.gvMateriaPrima.GridControl = this.grDisponibles;
+            this.gvMateriaPrima.GroupCount = 1;
+            this.gvMateriaPrima.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "unidades", this.colunidades, "(Cantidad Total ={0:0.##})"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "peso", this.colpeso, "(Peso ={0:0.##.##} Kg.)")});
             this.gvMateriaPrima.Name = "gvMateriaPrima";
+            this.gvMateriaPrima.OptionsBehavior.AutoExpandAllGroups = true;
             this.gvMateriaPrima.OptionsSelection.MultiSelect = true;
+            this.gvMateriaPrima.OptionsView.GroupDrawMode = DevExpress.XtraGrid.Views.Grid.GroupDrawMode.Office;
             this.gvMateriaPrima.OptionsView.ShowAutoFilterRow = true;
             this.gvMateriaPrima.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
+            this.gvMateriaPrima.OptionsView.ShowFooter = true;
             this.gvMateriaPrima.OptionsView.ShowGroupPanel = false;
+            this.gvMateriaPrima.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.collote1, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gvMateriaPrima.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvMateriaPrima_RowClick);
             this.gvMateriaPrima.DoubleClick += new System.EventHandler(this.gvMateriaPrima_DoubleClick);
             // 
@@ -399,6 +412,12 @@
             this.colTurno.Visible = true;
             this.colTurno.VisibleIndex = 7;
             // 
+            // colcodigo_barra
+            // 
+            this.colcodigo_barra.FieldName = "codigo_barra";
+            this.colcodigo_barra.Name = "colcodigo_barra";
+            this.colcodigo_barra.OptionsColumn.AllowEdit = false;
+            // 
             // btnEditar
             // 
             this.btnEditar.AutoHeight = false;
@@ -470,15 +489,25 @@
             this.colIdmp,
             this.colid_tipotm1,
             this.colTurno1,
-            this.colcodigo_barra1});
+            this.colcodigo_barra1,
+            this.collote11});
             this.gridView1.DetailHeight = 284;
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.gridView1.GridControl = this.gridObservacion;
+            this.gridView1.GroupCount = 1;
+            this.gridView1.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "unidades", this.gridColumn6, "(Cantidad Total ={0:0.##})"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "peso", this.gridColumn7, "(Peso ={0:0.##.##} Kg.)")});
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.AutoExpandAllGroups = true;
             this.gridView1.OptionsSelection.MultiSelect = true;
+            this.gridView1.OptionsView.GroupDrawMode = DevExpress.XtraGrid.Views.Grid.GroupDrawMode.Office;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
+            this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.collote11, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
             this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
@@ -627,6 +656,12 @@
             this.colTurno1.Visible = true;
             this.colTurno1.VisibleIndex = 7;
             // 
+            // colcodigo_barra1
+            // 
+            this.colcodigo_barra1.FieldName = "codigo_barra";
+            this.colcodigo_barra1.Name = "colcodigo_barra1";
+            this.colcodigo_barra1.OptionsColumn.AllowEdit = false;
+            // 
             // xtraTabPage3
             // 
             this.xtraTabPage3.Controls.Add(this.gridRetenidos);
@@ -686,15 +721,24 @@
             this.colidmp3,
             this.colid_tipotm2,
             this.colTurno2,
-            this.colcodigo_barra2});
+            this.colcodigo_barra2,
+            this.collote12});
             this.gridView2.DetailHeight = 284;
             this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.gridView2.GridControl = this.gridRetenidos;
+            this.gridView2.GroupCount = 1;
+            this.gridView2.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "unidades", this.gridColumn15, "(Cantidad Total ={0:0.##})"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "peso", this.gridColumn16, "(Peso ={0:0.##.##} Kg.)")});
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsBehavior.AutoExpandAllGroups = true;
             this.gridView2.OptionsSelection.MultiSelect = true;
+            this.gridView2.OptionsView.GroupDrawMode = DevExpress.XtraGrid.Views.Grid.GroupDrawMode.Office;
             this.gridView2.OptionsView.ShowAutoFilterRow = true;
             this.gridView2.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
             this.gridView2.OptionsView.ShowGroupPanel = false;
+            this.gridView2.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.collote12, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridView2.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView2_RowClick);
             this.gridView2.DoubleClick += new System.EventHandler(this.gridView2_DoubleClick);
             // 
@@ -842,6 +886,12 @@
             this.colTurno2.OptionsColumn.AllowEdit = false;
             this.colTurno2.Visible = true;
             this.colTurno2.VisibleIndex = 7;
+            // 
+            // colcodigo_barra2
+            // 
+            this.colcodigo_barra2.FieldName = "codigo_barra";
+            this.colcodigo_barra2.Name = "colcodigo_barra2";
+            this.colcodigo_barra2.OptionsColumn.AllowEdit = false;
             // 
             // label1
             // 
@@ -1036,23 +1086,32 @@
             this.colid.Name = "colid";
             this.colid.Width = 56;
             // 
-            // colcodigo_barra
+            // collote1
             // 
-            this.colcodigo_barra.FieldName = "codigo_barra";
-            this.colcodigo_barra.Name = "colcodigo_barra";
-            this.colcodigo_barra.OptionsColumn.AllowEdit = false;
+            this.collote1.Caption = "Lote";
+            this.collote1.FieldName = "lote1";
+            this.collote1.Name = "collote1";
+            this.collote1.OptionsColumn.AllowEdit = false;
+            this.collote1.Visible = true;
+            this.collote1.VisibleIndex = 4;
             // 
-            // colcodigo_barra1
+            // collote11
             // 
-            this.colcodigo_barra1.FieldName = "codigo_barra";
-            this.colcodigo_barra1.Name = "colcodigo_barra1";
-            this.colcodigo_barra1.OptionsColumn.AllowEdit = false;
+            this.collote11.Caption = "Lote";
+            this.collote11.FieldName = "lote1";
+            this.collote11.Name = "collote11";
+            this.collote11.OptionsColumn.AllowEdit = false;
+            this.collote11.Visible = true;
+            this.collote11.VisibleIndex = 9;
             // 
-            // colcodigo_barra2
+            // collote12
             // 
-            this.colcodigo_barra2.FieldName = "codigo_barra";
-            this.colcodigo_barra2.Name = "colcodigo_barra2";
-            this.colcodigo_barra2.OptionsColumn.AllowEdit = false;
+            this.collote12.Caption = "Lote";
+            this.collote12.FieldName = "lote1";
+            this.collote12.Name = "collote12";
+            this.collote12.OptionsColumn.AllowEdit = false;
+            this.collote12.Visible = true;
+            this.collote12.VisibleIndex = 9;
             // 
             // frmLotesStatus
             // 
@@ -1182,5 +1241,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colcodigo_barra;
         private DevExpress.XtraGrid.Columns.GridColumn colcodigo_barra1;
         private DevExpress.XtraGrid.Columns.GridColumn colcodigo_barra2;
+        private DevExpress.XtraGrid.Columns.GridColumn collote1;
+        private DevExpress.XtraGrid.Columns.GridColumn collote11;
+        private DevExpress.XtraGrid.Columns.GridColumn collote12;
     }
 }
