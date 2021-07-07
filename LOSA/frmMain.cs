@@ -1,10 +1,13 @@
 ﻿using ACS.Classes;
 using Core.Clases.Herramientas;
 using DevExpress.Utils.TouchHelpers;
+using DevExpress.XtraReports.UI;
 using Huellas;
+using LOSA.AlmacenesExterno;
 using LOSA.Clases;
 using LOSA.Micro;
 using LOSA.MicroIngredientes;
+using LOSA.Reportes;
 using LOSA.Utileria;
 using System;
 using System.Collections.Generic;
@@ -231,6 +234,7 @@ namespace LOSA
             if (Log1.RecuperarRegistro(1050))
             {
                 Log1.GrupoUsuario.GrupoUsuarioActivo = (GrupoUser.GrupoUsuario)Log1.IdGrupo;
+                //Log1.GrupoUsuario.GrupoUsuarioActivo = (GrupoUser.GrupoUsuario)1;
             }
             else
             {
@@ -255,5 +259,7 @@ namespace LOSA
             //this.DialogResult = DialogResult.Cancel; 
             //this.Close();
         }
+
+      
     }
 }

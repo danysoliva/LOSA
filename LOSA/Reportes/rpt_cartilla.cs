@@ -57,7 +57,8 @@ namespace LOSA.Reportes
                     cantidadcopia.Text = dr.IsDBNull(3) ? "" : dr.GetDecimal(3).ToString();
                     txtproveedor.Text = dr.IsDBNull(2) ? "" : dr.GetString(2);
                     codigoCopia.Text = dr.IsDBNull(2) ? "" : dr.GetString(2);
-
+                    txtcodigo.Text = dr.IsDBNull(11) ? "" : dr.GetString(11);
+                     txtcodigocopia.Text = dr.IsDBNull(11) ? "" : dr.GetString(11);
                 }
             }
             catch (Exception ex)

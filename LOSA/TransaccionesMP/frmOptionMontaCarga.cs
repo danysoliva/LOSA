@@ -93,8 +93,7 @@ namespace LOSA.TransaccionesMP
         {
             LOSA.Despachos.frm_despachos frm = new Despachos.frm_despachos();
             frm.Show();
-            //LOSA.Despachos.frmentregadeproductoT frm = new Despachos.frmentregadeproductoT(UsuarioLogeado);
-            //frm.Show();
+            
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)
@@ -118,6 +117,12 @@ namespace LOSA.TransaccionesMP
         private void simpleButton5_Click(object sender, EventArgs e)
         {
             frm_reporte_produccion frm = new frm_reporte_produccion();
+            frm.Show();
+        }
+
+        private void simpleButton6_Click(object sender, EventArgs e)
+        {
+            frmRevisionDeActivaciondeTm frm = new frmRevisionDeActivaciondeTm();
             frm.Show();
         }
     }

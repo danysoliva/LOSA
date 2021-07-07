@@ -105,7 +105,7 @@ namespace LOSA.Despachos
                                 tarimaEncontrada = InfoTarima;
                             }
 
-                            gcTarima.DataSource = CreateDataTarima(dr.GetInt32(0), dr.GetString(2), dr.GetString(1), dr.GetInt32(5).ToString(), dr.GetDecimal(6).ToString());
+                            gcTarima.DataSource = CreateDataTarima(dr.GetInt32(0), dr.GetString(1), dr.GetString(2), dr.GetString(3).ToString(), dr.GetString(4).ToString());
                             //gvTarima.InitNewRow += GridView1_InitNewRow;
                             gvTarima.Columns[0].AppearanceCell.Font = new Font("Segoe UI", 11, FontStyle.Bold);
                         }
@@ -224,23 +224,23 @@ namespace LOSA.Despachos
                             mensaje = Error;
                         }
 
-                        if (!error)//Si error sigue en false evaluaremos la ubicacion.
-                        {
-                            Ubicacion_Tarima ub1 = new Ubicacion_Tarima();
-                            if (ub1.RecuperarRegistro(tarimaEncontrada.Id, ""))
-                            {
-                                if (ub1.IdBodega != 10)
-                                {
-                                    error = true;
-                                    mensaje = "La tarima no esta en la bodega de Producto Terminado, no se puede entregar!";
-                                }
-                            }
-                            else
-                            {
-                                error = true;
-                                mensaje = "La tarima no tiene una ubicacion valida, aun esta en proceso de colocacion!";
-                            }
-                        }
+                        //if (!error)//Si error sigue en false evaluaremos la ubicacion.
+                        //{
+                        //    Ubicacion_Tarima ub1 = new Ubicacion_Tarima();
+                        //    if (ub1.RecuperarRegistro(tarimaEncontrada.Id, ""))
+                        //    {
+                        //        if (ub1.IdBodega != 10)
+                        //        {
+                        //            error = true;
+                        //            mensaje = "La tarima no esta en la bodega de Producto Terminado, no se puede entregar!";
+                        //        }
+                        //    }
+                        //    else
+                        //    {
+                        //        error = true;
+                        //        mensaje = "La tarima no tiene una ubicacion valida, aun esta en proceso de colocacion!";
+                        //    }
+                        //}
                     }
                 }
                 else
@@ -266,7 +266,7 @@ namespace LOSA.Despachos
                         SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                         con.Open();
 
-                        SqlCommand cmd = new SqlCommand("sp_set_insert_salida_tarima_pt_v2", con);
+                        SqlCommand cmd = new SqlCommand("sp_set_insert_salida_tarima_pt_v3", con);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@idtarima", tarimaEncontrada.Id);
                         cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);

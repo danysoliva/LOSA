@@ -44,6 +44,11 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             this.grd_ingreso = new DevExpress.XtraGrid.GridControl();
             this.dsRecepcionMPx = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.grdv_ingreso = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -57,17 +62,22 @@
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colprint = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnprint = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colcartilla = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnccartilla = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colEditar = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnEdit = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.coltipo_ingreso = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.btnAgregar = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.colcartilla = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnccartilla = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_ingreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_ingreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnprint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnccartilla)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
             this.SuspendLayout();
             // 
             // grd_ingreso
@@ -83,7 +93,8 @@
             this.grd_ingreso.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnver,
             this.btnprint,
-            this.btnccartilla});
+            this.btnccartilla,
+            this.btnEdit});
             this.grd_ingreso.Size = new System.Drawing.Size(828, 556);
             this.grd_ingreso.TabIndex = 0;
             this.grd_ingreso.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -111,7 +122,10 @@
             this.coltarimas,
             this.colid,
             this.colprint,
-            this.colcartilla});
+            this.colcartilla,
+            this.colEditar,
+            this.coltipo_ingreso,
+            this.coldescripcion});
             this.grdv_ingreso.GridControl = this.grd_ingreso;
             this.grdv_ingreso.Name = "grdv_ingreso";
             this.grdv_ingreso.OptionsView.ShowAutoFilterRow = true;
@@ -173,7 +187,7 @@
             this.coltarimas.ColumnEdit = this.btnver;
             this.coltarimas.Name = "coltarimas";
             this.coltarimas.Visible = true;
-            this.coltarimas.VisibleIndex = 5;
+            this.coltarimas.VisibleIndex = 6;
             this.coltarimas.Width = 99;
             // 
             // btnver
@@ -197,7 +211,7 @@
             this.colprint.ColumnEdit = this.btnprint;
             this.colprint.Name = "colprint";
             this.colprint.Visible = true;
-            this.colprint.VisibleIndex = 6;
+            this.colprint.VisibleIndex = 7;
             this.colprint.Width = 99;
             // 
             // btnprint
@@ -209,6 +223,55 @@
             this.btnprint.Name = "btnprint";
             this.btnprint.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnprint.Click += new System.EventHandler(this.btnprint_Click);
+            // 
+            // colcartilla
+            // 
+            this.colcartilla.Caption = "Cartilla";
+            this.colcartilla.ColumnEdit = this.btnccartilla;
+            this.colcartilla.Name = "colcartilla";
+            this.colcartilla.Width = 80;
+            // 
+            // btnccartilla
+            // 
+            this.btnccartilla.AutoHeight = false;
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            this.btnccartilla.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnccartilla.Name = "btnccartilla";
+            this.btnccartilla.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnccartilla.Click += new System.EventHandler(this.btnccartilla_Click);
+            // 
+            // colEditar
+            // 
+            this.colEditar.Caption = "Editar Ingreso";
+            this.colEditar.ColumnEdit = this.btnEdit;
+            this.colEditar.Name = "colEditar";
+            this.colEditar.Visible = true;
+            this.colEditar.VisibleIndex = 8;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.AutoHeight = false;
+            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
+            this.btnEdit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // coltipo_ingreso
+            // 
+            this.coltipo_ingreso.FieldName = "tipo_ingreso";
+            this.coltipo_ingreso.Name = "coltipo_ingreso";
+            // 
+            // coldescripcion
+            // 
+            this.coldescripcion.Caption = "T. Ingreso";
+            this.coldescripcion.FieldName = "descripcion";
+            this.coldescripcion.Name = "coldescripcion";
+            this.coldescripcion.OptionsColumn.AllowEdit = false;
+            this.coldescripcion.Visible = true;
+            this.coldescripcion.VisibleIndex = 5;
             // 
             // btnAtras
             // 
@@ -261,22 +324,6 @@
             this.labelControl3.TabIndex = 30;
             this.labelControl3.Text = "Ingresos de MP";
             // 
-            // colcartilla
-            // 
-            this.colcartilla.Caption = "Cartilla";
-            this.colcartilla.ColumnEdit = this.btnccartilla;
-            this.colcartilla.Name = "colcartilla";
-            this.colcartilla.Width = 80;
-            // 
-            // btnccartilla
-            // 
-            this.btnccartilla.AutoHeight = false;
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
-            this.btnccartilla.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.btnccartilla.Name = "btnccartilla";
-            this.btnccartilla.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            // 
             // frm_ingresos
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -296,6 +343,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnver)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnprint)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnccartilla)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -320,5 +368,9 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnprint;
         private DevExpress.XtraGrid.Columns.GridColumn colcartilla;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnccartilla;
+        private DevExpress.XtraGrid.Columns.GridColumn colEditar;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnEdit;
+        private DevExpress.XtraGrid.Columns.GridColumn coltipo_ingreso;
+        private DevExpress.XtraGrid.Columns.GridColumn coldescripcion;
     }
 }

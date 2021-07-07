@@ -62,7 +62,7 @@ namespace LOSA.TransaccionesPT
                         {
                             idTarima = dr.GetInt32(0);
 
-                            if (InfoTarima.RecuperarRegistro(idTarima, ""))
+                            if (InfoTarima.RecuperarRegistro_activacion(idTarima, ""))
                             {
                                 factorPresentacion = InfoTarima.Factor;
                                 tarimaEncontrada = InfoTarima;
@@ -90,6 +90,7 @@ namespace LOSA.TransaccionesPT
                 CajaDialogo.Error(error.Message);
             }
         }
+     
 
         private DataTable CreateDataTarima(int idTarima, string pProveedor, string pNombreTarima, string pLote, string pPpresentacion)
         {
@@ -144,7 +145,7 @@ namespace LOSA.TransaccionesPT
                 else
                 {
                     error = true;
-                    mensaje = "El codigo de barra leido no es correcto!";
+                    mensaje = "La Tarima ya esta activa o no se ha podido encontrar!";
                 }
 
                 if (error)

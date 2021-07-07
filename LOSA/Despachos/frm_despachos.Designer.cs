@@ -34,6 +34,11 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
@@ -51,10 +56,16 @@
             this.colenviado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colprogamado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPendiente = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnSeguimiento = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colactivo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tgg_ver = new DevExpress.XtraEditors.ToggleSwitch();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds_despachos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEnviar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSeguimiento)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tgg_ver.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -95,12 +106,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_data.DataMember = "op_despachos";
             this.grd_data.DataSource = this.ds_despachos;
-            this.grd_data.Location = new System.Drawing.Point(-1, 118);
+            this.grd_data.Location = new System.Drawing.Point(-1, 131);
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
             this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.btnEnviar});
-            this.grd_data.Size = new System.Drawing.Size(639, 442);
+            this.btnEnviar,
+            this.btnSeguimiento});
+            this.grd_data.Size = new System.Drawing.Size(639, 429);
             this.grd_data.TabIndex = 40;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
@@ -139,11 +151,14 @@
             this.colEnviar,
             this.colenviado,
             this.colprogamado,
-            this.colPendiente});
+            this.colPendiente,
+            this.gridColumn1,
+            this.colactivo});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
             this.grdv_data.OptionsView.ShowGroupPanel = false;
+            this.grdv_data.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.grdv_data_RowStyle);
             // 
             // colDespachoN
             // 
@@ -151,8 +166,6 @@
             this.colDespachoN.FieldName = "DespachoN";
             this.colDespachoN.Name = "colDespachoN";
             this.colDespachoN.OptionsColumn.AllowEdit = false;
-            this.colDespachoN.Visible = true;
-            this.colDespachoN.VisibleIndex = 0;
             this.colDespachoN.Width = 106;
             // 
             // colid
@@ -168,7 +181,7 @@
             this.coldate.Name = "coldate";
             this.coldate.OptionsColumn.AllowEdit = false;
             this.coldate.Visible = true;
-            this.coldate.VisibleIndex = 4;
+            this.coldate.VisibleIndex = 2;
             this.coldate.Width = 128;
             // 
             // colcliente
@@ -183,8 +196,6 @@
             this.colDescrip.FieldName = "Descrip";
             this.colDescrip.Name = "colDescrip";
             this.colDescrip.OptionsColumn.AllowEdit = false;
-            this.colDescrip.Visible = true;
-            this.colDescrip.VisibleIndex = 1;
             this.colDescrip.Width = 128;
             // 
             // colvehiculo
@@ -194,7 +205,7 @@
             this.colvehiculo.Name = "colvehiculo";
             this.colvehiculo.OptionsColumn.AllowEdit = false;
             this.colvehiculo.Visible = true;
-            this.colvehiculo.VisibleIndex = 2;
+            this.colvehiculo.VisibleIndex = 0;
             this.colvehiculo.Width = 128;
             // 
             // colfurgon
@@ -204,7 +215,7 @@
             this.colfurgon.Name = "colfurgon";
             this.colfurgon.OptionsColumn.AllowEdit = false;
             this.colfurgon.Visible = true;
-            this.colfurgon.VisibleIndex = 3;
+            this.colfurgon.VisibleIndex = 1;
             this.colfurgon.Width = 131;
             // 
             // colEnviar
@@ -213,7 +224,7 @@
             this.colEnviar.ColumnEdit = this.btnEnviar;
             this.colEnviar.Name = "colEnviar";
             this.colEnviar.Visible = true;
-            this.colEnviar.VisibleIndex = 8;
+            this.colEnviar.VisibleIndex = 6;
             // 
             // btnEnviar
             // 
@@ -232,7 +243,7 @@
             this.colenviado.Name = "colenviado";
             this.colenviado.OptionsColumn.AllowEdit = false;
             this.colenviado.Visible = true;
-            this.colenviado.VisibleIndex = 6;
+            this.colenviado.VisibleIndex = 4;
             // 
             // colprogamado
             // 
@@ -241,7 +252,7 @@
             this.colprogamado.Name = "colprogamado";
             this.colprogamado.OptionsColumn.AllowEdit = false;
             this.colprogamado.Visible = true;
-            this.colprogamado.VisibleIndex = 5;
+            this.colprogamado.VisibleIndex = 3;
             // 
             // colPendiente
             // 
@@ -250,13 +261,49 @@
             this.colPendiente.Name = "colPendiente";
             this.colPendiente.OptionsColumn.AllowEdit = false;
             this.colPendiente.Visible = true;
-            this.colPendiente.VisibleIndex = 7;
+            this.colPendiente.VisibleIndex = 5;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Seguimiento";
+            this.gridColumn1.ColumnEdit = this.btnSeguimiento;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 7;
+            // 
+            // btnSeguimiento
+            // 
+            this.btnSeguimiento.AutoHeight = false;
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            this.btnSeguimiento.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnSeguimiento.Name = "btnSeguimiento";
+            this.btnSeguimiento.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnSeguimiento.Click += new System.EventHandler(this.btnSeguimiento_Click);
+            // 
+            // colactivo
+            // 
+            this.colactivo.FieldName = "activo";
+            this.colactivo.Name = "colactivo";
+            // 
+            // tgg_ver
+            // 
+            this.tgg_ver.Location = new System.Drawing.Point(12, 93);
+            this.tgg_ver.Name = "tgg_ver";
+            this.tgg_ver.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tgg_ver.Properties.Appearance.Options.UseFont = true;
+            this.tgg_ver.Properties.OffText = "Solo activas";
+            this.tgg_ver.Properties.OnText = "Completadas";
+            this.tgg_ver.Size = new System.Drawing.Size(304, 32);
+            this.tgg_ver.TabIndex = 41;
+            this.tgg_ver.Toggled += new System.EventHandler(this.tgg_ver_Toggled);
             // 
             // frm_despachos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(638, 560);
+            this.Controls.Add(this.tgg_ver);
             this.Controls.Add(this.grd_data);
             this.Controls.Add(this.cmdHome);
             this.Controls.Add(this.labelControl3);
@@ -268,6 +315,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ds_despachos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEnviar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSeguimiento)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tgg_ver.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -291,5 +340,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn colprogamado;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnEnviar;
         private DevExpress.XtraGrid.Columns.GridColumn colPendiente;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnSeguimiento;
+        private DevExpress.XtraEditors.ToggleSwitch tgg_ver;
+        private DevExpress.XtraGrid.Columns.GridColumn colactivo;
     }
 }

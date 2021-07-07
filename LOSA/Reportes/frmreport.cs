@@ -119,5 +119,11 @@ namespace LOSA.Reportes
             frm_print_TM_PT frm = new frm_print_TM_PT();
             frm.Show();
         }
+
+        private void simpleButton5_Click(object sender, EventArgs e)
+        {
+            frmrpt_productoterminado frm = new frmrpt_productoterminado();
+            frm.Show();
+        }
     }
 }

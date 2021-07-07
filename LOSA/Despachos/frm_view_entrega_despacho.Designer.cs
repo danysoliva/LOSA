@@ -407,6 +407,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(638, 560);
+            this.Controls.Add(this.cmdHome);
             this.Controls.Add(this.grd_data);
             this.Controls.Add(this.dtFecha);
             this.Controls.Add(this.txtoc);
@@ -419,7 +420,6 @@
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.labelControl3);
-            this.Controls.Add(this.cmdHome);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_view_entrega_despacho";
             this.Text = "frm_view_entrega_despacho";

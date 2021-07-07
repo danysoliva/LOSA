@@ -16,6 +16,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LOSA.PlanMPreque;
 using LOSA.TransaccionesPT;
+using LOSA.AlmacenesExterno;
 
 namespace LOSA
 {
@@ -520,6 +521,37 @@ namespace LOSA
         private void simpleButton12_Click(object sender, EventArgs e)
         {
             frm_reporte_produccion frm = new frm_reporte_produccion();
+            frm.Show();
+        }
+
+        private void btnAlmacenesExternos_Click(object sender, EventArgs e)
+        {
+            xfrmAlmacenesExternos_Main frm = new xfrmAlmacenesExternos_Main(UsuarioLogeado);
+            frm.Show();
+        }
+
+        private void simpleButton14_Click(object sender, EventArgs e)
+        {
+            frm_view_ingresos frm = new frm_view_ingresos(UsuarioLogeado);
+            frm.Show();
+        }
+
+        private void simpleButton15_Click(object sender, EventArgs e)
+        {
+            frmRequisiciones frm = new frmRequisiciones(UsuarioLogeado);
+            if (this.MdiParent != null)
+            {
+                frm.MdiParent = this.MdiParent;
+                frm.FormBorderStyle = FormBorderStyle.Sizable;
+            }
+
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+        private void btnTransferencia_Click(object sender, EventArgs e)
+        {
+            xfrmMovimientoStock frm = new xfrmMovimientoStock();
             frm.Show();
         }
     }

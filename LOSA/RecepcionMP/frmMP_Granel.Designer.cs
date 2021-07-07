@@ -191,6 +191,7 @@ namespace LOSA.RecepcionMP
             this.gvMP.OptionsCustomization.AllowFilter = false;
             this.gvMP.OptionsFilter.AllowFilterEditor = false;
             this.gvMP.OptionsView.ShowAutoFilterRow = true;
+            this.gvMP.OptionsView.ShowGroupPanel = false;
             // 
             // colid
             // 
