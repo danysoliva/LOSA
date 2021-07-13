@@ -310,5 +310,7 @@ namespace LOSA.AlmacenesExterno
         {
             deFecha.EditValue = DateTime.Now;
         }
+
+              
     }
 }
