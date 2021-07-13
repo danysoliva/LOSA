@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>160</ApplicationRevision>
+    <ApplicationRevision>165</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -947,6 +947,12 @@
     <Compile Include="RecepcionMP\frmRecepcionMP.Designer.cs">
       <DependentUpon>frmRecepcionMP.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecepcionMP\frmSeguimientoRequisas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmSeguimientoRequisas.Designer.cs">
+      <DependentUpon>frmSeguimientoRequisas.cs</DependentUpon>
+    </Compile>
     <Compile Include="RecepcionMP\frmSelectMP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1445,6 +1451,12 @@
     <Compile Include="TransaccionesPT\frm_planificacion_despachos.Designer.cs">
       <DependentUpon>frm_planificacion_despachos.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesPT\frm_rpt_productoT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesPT\frm_rpt_productoT.Designer.cs">
+      <DependentUpon>frm_rpt_productoT.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesPT\frm_saco_dañado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1846,6 +1858,9 @@
     <EmbeddedResource Include="RecepcionMP\frmRecepcionMP.resx">
       <DependentUpon>frmRecepcionMP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frmSeguimientoRequisas.resx">
+      <DependentUpon>frmSeguimientoRequisas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmSelectMP.resx">
       <DependentUpon>frmSelectMP.cs</DependentUpon>
     </EmbeddedResource>
@@ -2073,6 +2088,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesPT\frm_planificacion_despachos.resx">
       <DependentUpon>frm_planificacion_despachos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesPT\frm_rpt_productoT.resx">
+      <DependentUpon>frm_rpt_productoT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesPT\frm_saco_dañado.resx">
       <DependentUpon>frm_saco_dañado.cs</DependentUpon>

@@ -46,6 +46,7 @@
             this.cmdOrdenesCargaPT = new DevExpress.XtraEditors.SimpleButton();
             this.cmdCambiarUbicacionPT = new DevExpress.XtraEditors.SimpleButton();
             this.cmdIngresoPT = new DevExpress.XtraEditors.SimpleButton();
+            this.btntarimasactivadasPT = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMateriaPrima.SuspendLayout();
@@ -185,6 +186,7 @@
             // 
             // TabProductoTerminado
             // 
+            this.TabProductoTerminado.Controls.Add(this.btntarimasactivadasPT);
             this.TabProductoTerminado.Controls.Add(this.simpleButton6);
             this.TabProductoTerminado.Controls.Add(this.simpleButton5);
             this.TabProductoTerminado.Controls.Add(this.simpleButton4);
@@ -302,6 +304,21 @@
             this.cmdIngresoPT.Visible = false;
             this.cmdIngresoPT.Click += new System.EventHandler(this.cmdIngresoPT_Click);
             // 
+            // btntarimasactivadasPT
+            // 
+            this.btntarimasactivadasPT.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btntarimasactivadasPT.Appearance.Options.UseFont = true;
+            this.btntarimasactivadasPT.Appearance.Options.UseTextOptions = true;
+            this.btntarimasactivadasPT.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btntarimasactivadasPT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btntarimasactivadasPT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btntarimasactivadasPT.ImageOptions.Image")));
+            this.btntarimasactivadasPT.Location = new System.Drawing.Point(227, 270);
+            this.btntarimasactivadasPT.Name = "btntarimasactivadasPT";
+            this.btntarimasactivadasPT.Size = new System.Drawing.Size(199, 71);
+            this.btntarimasactivadasPT.TabIndex = 38;
+            this.btntarimasactivadasPT.Text = "Tarimas Calidad";
+            this.btntarimasactivadasPT.Click += new System.EventHandler(this.btntarimasactivadasPT_Click);
+            // 
             // frmOptionMontaCarga
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -340,5 +357,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
         private DevExpress.XtraEditors.SimpleButton simpleButton5;
         private DevExpress.XtraEditors.SimpleButton simpleButton6;
+        private DevExpress.XtraEditors.SimpleButton btntarimasactivadasPT;
     }
 }
