@@ -39,7 +39,7 @@ namespace LOSA.AlmacenesExterno
 
                 dsSalidasAlmacenesExternos.Ingresos_almacenes_externos_existentes.Clear();
 
-                SqlDataAdapter da = new SqlDataAdapter("sp_get_ingresos_almacenes_externos", cnx);
+                SqlDataAdapter da = new SqlDataAdapter("[dbo].[sp_get_ingresos_almacenes_externos_disponibles]", cnx);
                 da.Fill(dsSalidasAlmacenesExternos.Ingresos_almacenes_externos_existentes);
                 cnx.Close();
 

@@ -172,6 +172,7 @@
       <DependentUpon>xrptAlmacenesExternos.cs</DependentUpon>
     </Compile>
     <Compile Include="AlmacenesExterno\Salida Almacen\Models\Ingresos_Externos_D.cs" />
+    <Compile Include="AlmacenesExterno\Salida Almacen\Models\Salida_Externa_Lote.cs" />
     <Compile Include="AlmacenesExterno\Salida Almacen\xfrmConfLotesSalidaAlmacen.cs">
       <SubType>Form</SubType>
     </Compile>

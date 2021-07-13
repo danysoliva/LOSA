@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmConfLotesSalidaAlmacen));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -38,7 +39,7 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gcLotesSeleccionados = new DevExpress.XtraGrid.GridControl();
-            this.loteSeleccionadosBindingSource = new System.Windows.Forms.BindingSource();
+            this.loteSeleccionadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsSalidasAlmacenesExternos = new LOSA.AlmacenesExterno.dsSalidasAlmacenesExternos();
             this.gvLotesSeleccionados = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -55,10 +56,11 @@
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnDelete2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.gcLote = new DevExpress.XtraGrid.GridControl();
-            this.loteBindingSource = new System.Windows.Forms.BindingSource();
+            this.loteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gvLote = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcantidad = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -72,6 +74,7 @@
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -83,7 +86,7 @@
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.gcIngreso = new DevExpress.XtraGrid.GridControl();
-            this.transferenciaStockBindingSource = new System.Windows.Forms.BindingSource();
+            this.transferenciaStockBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gvIngreso = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colItemCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCantidadIngresada = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -224,11 +227,13 @@
             this.gridColumn16,
             this.gridColumn17,
             this.gridColumn18,
-            this.gridColumn22});
+            this.gridColumn22,
+            this.gridColumn24});
             this.gvLotesSeleccionados.GridControl = this.gcLotesSeleccionados;
             this.gvLotesSeleccionados.Name = "gvLotesSeleccionados";
             this.gvLotesSeleccionados.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
             this.gvLotesSeleccionados.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
+            this.gvLotesSeleccionados.OptionsView.ShowFooter = true;
             this.gvLotesSeleccionados.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn4
@@ -236,10 +241,14 @@
             this.gridColumn4.FieldName = "id";
             this.gridColumn4.MinWidth = 25;
             this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 0;
             this.gridColumn4.Width = 94;
             // 
             // gridColumn5
             // 
+            this.gridColumn5.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.gridColumn5.AppearanceCell.Options.UseBackColor = true;
             this.gridColumn5.Caption = "Cantidad ";
             this.gridColumn5.DisplayFormat.FormatString = "{0:N2}";
             this.gridColumn5.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -248,12 +257,16 @@
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.OptionsFilter.AllowFilter = false;
+            this.gridColumn5.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cantidad", "Total={0:N2}")});
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 1;
+            this.gridColumn5.VisibleIndex = 4;
             this.gridColumn5.Width = 137;
             // 
             // gridColumn6
             // 
+            this.gridColumn6.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.gridColumn6.AppearanceCell.Options.UseBackColor = true;
             this.gridColumn6.Caption = "Unidades";
             this.gridColumn6.DisplayFormat.FormatString = "{0:N2}";
             this.gridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -261,8 +274,10 @@
             this.gridColumn6.MinWidth = 25;
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.OptionsFilter.AllowFilter = false;
+            this.gridColumn6.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "unidades", "Total={0:N2}")});
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 2;
+            this.gridColumn6.VisibleIndex = 5;
             this.gridColumn6.Width = 79;
             // 
             // gridColumn8
@@ -281,7 +296,7 @@
             this.gridColumn10.OptionsColumn.AllowEdit = false;
             this.gridColumn10.OptionsFilter.AllowFilter = false;
             this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 0;
+            this.gridColumn10.VisibleIndex = 1;
             this.gridColumn10.Width = 77;
             // 
             // gridColumn13
@@ -293,7 +308,10 @@
             this.gridColumn13.FieldName = "CantSeleccionada";
             this.gridColumn13.MinWidth = 25;
             this.gridColumn13.Name = "gridColumn13";
+            this.gridColumn13.OptionsColumn.AllowEdit = false;
             this.gridColumn13.OptionsFilter.AllowFilter = false;
+            this.gridColumn13.Visible = true;
+            this.gridColumn13.VisibleIndex = 2;
             this.gridColumn13.Width = 87;
             // 
             // repositoryItemTextEdit1
@@ -309,7 +327,7 @@
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.OptionsFilter.AllowFilter = false;
             this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 3;
+            this.gridColumn14.VisibleIndex = 6;
             this.gridColumn14.Width = 63;
             // 
             // gridColumn15
@@ -352,7 +370,7 @@
             this.gridColumn22.MinWidth = 25;
             this.gridColumn22.Name = "gridColumn22";
             this.gridColumn22.Visible = true;
-            this.gridColumn22.VisibleIndex = 4;
+            this.gridColumn22.VisibleIndex = 7;
             this.gridColumn22.Width = 94;
             // 
             // btnDelete2
@@ -364,6 +382,17 @@
             this.btnDelete2.Name = "btnDelete2";
             this.btnDelete2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnDelete2.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnDelete2_ButtonClick);
+            // 
+            // gridColumn24
+            // 
+            this.gridColumn24.Caption = "Unidades Seleccionadas";
+            this.gridColumn24.FieldName = "unidades_seleccionadas";
+            this.gridColumn24.MinWidth = 25;
+            this.gridColumn24.Name = "gridColumn24";
+            this.gridColumn24.OptionsColumn.AllowEdit = false;
+            this.gridColumn24.Visible = true;
+            this.gridColumn24.VisibleIndex = 3;
+            this.gridColumn24.Width = 94;
             // 
             // btnDelete
             // 
@@ -441,11 +470,13 @@
             this.gridColumn7,
             this.gridColumn9,
             this.gridColumn11,
-            this.gridColumn12});
+            this.gridColumn12,
+            this.gridColumn23});
             this.gvLote.GridControl = this.gcLote;
             this.gvLote.Name = "gvLote";
             this.gvLote.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
             this.gvLote.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
+            this.gvLote.OptionsView.ShowFooter = true;
             this.gvLote.OptionsView.ShowGroupPanel = false;
             // 
             // colid
@@ -457,27 +488,35 @@
             // 
             // colcantidad
             // 
+            this.colcantidad.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.colcantidad.AppearanceCell.Options.UseBackColor = true;
             this.colcantidad.Caption = "Cantidad Disponible";
             this.colcantidad.DisplayFormat.FormatString = "{0:N2}";
             this.colcantidad.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colcantidad.FieldName = "cantidad";
+            this.colcantidad.FieldName = "cantidad_disponible";
             this.colcantidad.MinWidth = 25;
             this.colcantidad.Name = "colcantidad";
             this.colcantidad.OptionsColumn.AllowEdit = false;
             this.colcantidad.OptionsFilter.AllowFilter = false;
+            this.colcantidad.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cantidad", "Total={0:N2}")});
             this.colcantidad.Visible = true;
             this.colcantidad.VisibleIndex = 1;
             this.colcantidad.Width = 137;
             // 
             // colunidades
             // 
+            this.colunidades.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.colunidades.AppearanceCell.Options.UseBackColor = true;
             this.colunidades.Caption = "Unidades";
             this.colunidades.DisplayFormat.FormatString = "{0:N2}";
             this.colunidades.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colunidades.FieldName = "unidades";
+            this.colunidades.FieldName = "unidades_disponibles";
             this.colunidades.MinWidth = 25;
             this.colunidades.Name = "colunidades";
             this.colunidades.OptionsFilter.AllowFilter = false;
+            this.colunidades.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "unidades", "Total={0:N2}")});
             this.colunidades.Visible = true;
             this.colunidades.VisibleIndex = 2;
             this.colunidades.Width = 79;
@@ -511,6 +550,8 @@
             this.gridColumn2.MinWidth = 25;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsFilter.AllowFilter = false;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 3;
             this.gridColumn2.Width = 87;
             // 
             // txtCantSeleccionada
@@ -526,7 +567,7 @@
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsFilter.AllowFilter = false;
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 3;
+            this.gridColumn3.VisibleIndex = 5;
             this.gridColumn3.Width = 63;
             // 
             // gridColumn7
@@ -561,6 +602,18 @@
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.OptionsFilter.AllowFilter = false;
             this.gridColumn12.Width = 91;
+            // 
+            // gridColumn23
+            // 
+            this.gridColumn23.Caption = "Unidades Seleccionadas";
+            this.gridColumn23.DisplayFormat.FormatString = "{0:N2}";
+            this.gridColumn23.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn23.FieldName = "unidade_seleccionadas";
+            this.gridColumn23.MinWidth = 25;
+            this.gridColumn23.Name = "gridColumn23";
+            this.gridColumn23.Visible = true;
+            this.gridColumn23.VisibleIndex = 4;
+            this.gridColumn23.Width = 94;
             // 
             // Root
             // 
@@ -985,5 +1038,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn23;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn24;
     }
 }

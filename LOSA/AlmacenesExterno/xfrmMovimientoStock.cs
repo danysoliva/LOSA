@@ -40,28 +40,28 @@ namespace LOSA.AlmacenesExterno
             try
             {
 
-            materia_Prima_Transferencia = new Materia_Prima_Transferencia();
-            xfrmBuscarMP_Ingresos_Externos frm = new xfrmBuscarMP_Ingresos_Externos();
+                materia_Prima_Transferencia = new Materia_Prima_Transferencia();
+                xfrmBuscarMP_Ingresos_Externos frm = new xfrmBuscarMP_Ingresos_Externos();
 
                 var gv = (GridView)gcTransferencia.FocusedView;
                 var row = (dsAlmacenesExternos.Transferencia_StockRow)gv.GetDataRow(gv.FocusedRowHandle);
 
-            if (frm.ShowDialog()== DialogResult.OK)
-            {
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
 
                     if (row == null)
                     {
 
 
-                DataRow workRow = dsAlmacenesExternos.Transferencia_Stock.NewRow();
+                        DataRow workRow = dsAlmacenesExternos.Transferencia_Stock.NewRow();
 
-                workRow[0]= frm.materia_Prima_Transferencia.CodeItem;
-                workRow[1]= frm.materia_Prima_Transferencia.CodeName;
-                workRow["cantidad_kilos"]= frm.materia_Prima_Transferencia.Peso;
-                workRow["unidades"]= frm.materia_Prima_Transferencia.Unidades;
+                        workRow[0] = frm.materia_Prima_Transferencia.CodeItem;
+                        workRow[1] = frm.materia_Prima_Transferencia.CodeName;
+                        workRow["cantidad_kilos"] = frm.materia_Prima_Transferencia.Peso;
+                        workRow["unidades"] = frm.materia_Prima_Transferencia.Unidades;
 
-                dsAlmacenesExternos.Transferencia_Stock.Rows.Add(workRow);
-            
+                        dsAlmacenesExternos.Transferencia_Stock.Rows.Add(workRow);
+
                         gvTransferencia.PostEditor();
                     }
                     else
@@ -77,8 +77,8 @@ namespace LOSA.AlmacenesExterno
                         //gvTransferencia.PostEditor();
                     }
 
-            }
-           
+                }
+
 
             }
             catch (Exception ex)
@@ -100,7 +100,7 @@ namespace LOSA.AlmacenesExterno
                     cnx.Open();
 
                     dsAlmacenesExternos.Warehouse.Clear();
-                    SqlDataAdapter da = new SqlDataAdapter("sp_get_almacenes_externos_bodegas",cnx);
+                    SqlDataAdapter da = new SqlDataAdapter("sp_get_almacenes_externos_bodegas", cnx);
                     da.Fill(dsAlmacenesExternos.Warehouse);
 
 
@@ -111,7 +111,7 @@ namespace LOSA.AlmacenesExterno
             {
                 CajaDialogo.Error(ex.Message);
             }
-            
+
         }
 
 
@@ -120,7 +120,7 @@ namespace LOSA.AlmacenesExterno
         {
             xfrmBuscarIngresosAlmacen frm = new xfrmBuscarIngresosAlmacen();
 
-            if (frm.ShowDialog()== DialogResult.OK)
+            if (frm.ShowDialog() == DialogResult.OK)
             {
                 txtProveedor.Text = frm.ingreso_h.CardName;
                 id_h = frm.ingreso_h.ID;
@@ -142,7 +142,7 @@ namespace LOSA.AlmacenesExterno
             {
                 dsSalidasAlmacenesExternos.Transferencia_Stock.Clear();
                 cnx.Open();
-                SqlDataAdapter da = new SqlDataAdapter("sp_get_ingresos_externos_d", cnx);
+                SqlDataAdapter da = new SqlDataAdapter("[dbo].[sp_get_ingresos_externos_disponibles_salida_externa]", cnx);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.Add("@id", SqlDbType.Int).Value = id_h;
 
@@ -164,9 +164,9 @@ namespace LOSA.AlmacenesExterno
         {
             try
             {
-                if (string.IsNullOrEmpty( txtProveedor.Text))
+                if (string.IsNullOrEmpty(txtProveedor.Text))
                 {
-                    txtProveedor.Text="";
+                    txtProveedor.Text = "";
                     CajaDialogo.Error("DEBE DE SELCCIONAR LA MATERIA PRIMA");
 
                     return;
@@ -237,14 +237,14 @@ namespace LOSA.AlmacenesExterno
         {
             try
             {
-                if (dsSalidasAlmacenesExternos.Transferencia_Stock.ToList().Where(x=> x.seleccionar==true).ToList().Count==0)
+                if (dsSalidasAlmacenesExternos.Transferencia_Stock.ToList().Where(x => x.seleccionar == true).ToList().Count == 0)
                 {
                     CajaDialogo.Error("DEBE SELECCIONAR AL MENOS UN ITEM");
                     return;
                 }
 
 
-                if (string.IsNullOrEmpty( lueAlmacenFROM.Text))
+                if (string.IsNullOrEmpty(lueAlmacenFROM.Text))
                 {
                     CajaDialogo.Error("DEBE SELECCIONAR UNA BODEGA ORIGEN Y DESTINO");
                     return;
@@ -259,7 +259,7 @@ namespace LOSA.AlmacenesExterno
 
                 List<Ingresos_Externos_D> lista = new List<Ingresos_Externos_D>();
 
-                foreach (var item in dsSalidasAlmacenesExternos.Transferencia_Stock.ToList().Where(x=> x.seleccionar==true).ToList())
+                foreach (var item in dsSalidasAlmacenesExternos.Transferencia_Stock.ToList().Where(x => x.seleccionar == true).ToList())
                 {
                     Ingresos_Externos_D ingresos_Externos_D = new Ingresos_Externos_D();
 
@@ -290,6 +290,25 @@ namespace LOSA.AlmacenesExterno
             {
                 CajaDialogo.Error(ex.Message);
             }
+        }
+
+        private void ceSeleccionar_CheckStateChanged(object sender, EventArgs e)
+        {
+            var gv = (GridView)gcTransferencia.FocusedView;
+            var row = (dsSalidasAlmacenesExternos.Transferencia_StockRow)gv.GetDataRow(gv.FocusedRowHandle);
+
+
+            if (string.IsNullOrEmpty(row.to_almacen) || string.IsNullOrEmpty(row.from_almacen))
+            {
+                row.to_almacen = lueAlmacenDestino.Text;
+                row.from_almacen = lueAlmacenFROM.Text;
+
+            }
+        }
+
+        private void xfrmMovimientoStock_Load(object sender, EventArgs e)
+        {
+            deFecha.EditValue = DateTime.Now;
         }
     }
 }

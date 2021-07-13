@@ -191,7 +191,6 @@ namespace LOSA
             this.SaltarLogin.Size = new System.Drawing.Size(265, 87);
             this.SaltarLogin.TabIndex = 15;
             this.SaltarLogin.Text = "Ingresar";
-            this.SaltarLogin.Visible = false;
             this.SaltarLogin.Click += new System.EventHandler(this.SaltarLogin_Click);
             // 
             // cmdButtonSaltarLogin

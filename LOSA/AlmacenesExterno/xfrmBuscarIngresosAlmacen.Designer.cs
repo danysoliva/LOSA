@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gcIngreso = new DevExpress.XtraGrid.GridControl();
-            this.ingresosalmacenesexternosexistentesBindingSource = new System.Windows.Forms.BindingSource();
+            this.ingresosalmacenesexternosexistentesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsSalidasAlmacenesExternos = new LOSA.AlmacenesExterno.dsSalidasAlmacenesExternos();
             this.gvIngreso = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -46,6 +47,8 @@
             this.colunidades = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSeleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtCantIngresar = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gcIngreso)).BeginInit();
@@ -101,7 +104,9 @@
             this.colDocEntrySAP,
             this.colpeso,
             this.colunidades,
-            this.colSeleccionar});
+            this.colSeleccionar,
+            this.gridColumn1,
+            this.gridColumn2});
             this.gvIngreso.GridControl = this.gcIngreso;
             this.gvIngreso.Name = "gvIngreso";
             this.gvIngreso.OptionsView.ShowAutoFilterRow = true;
@@ -110,38 +115,50 @@
             // 
             // colid
             // 
+            this.colid.Caption = "#Ingeso";
             this.colid.FieldName = "id";
             this.colid.MinWidth = 25;
             this.colid.Name = "colid";
+            this.colid.OptionsColumn.AllowEdit = false;
+            this.colid.OptionsFilter.AllowFilter = false;
             this.colid.Visible = true;
             this.colid.VisibleIndex = 0;
             this.colid.Width = 94;
             // 
             // colcardcode
             // 
+            this.colcardcode.Caption = "Proveedor";
             this.colcardcode.FieldName = "cardcode";
             this.colcardcode.MinWidth = 25;
             this.colcardcode.Name = "colcardcode";
+            this.colcardcode.OptionsColumn.AllowEdit = false;
+            this.colcardcode.OptionsFilter.AllowFilter = false;
             this.colcardcode.Visible = true;
-            this.colcardcode.VisibleIndex = 1;
+            this.colcardcode.VisibleIndex = 3;
             this.colcardcode.Width = 94;
             // 
             // colCardName
             // 
+            this.colCardName.Caption = "Proveedor";
             this.colCardName.FieldName = "CardName";
             this.colCardName.MinWidth = 25;
             this.colCardName.Name = "colCardName";
+            this.colCardName.OptionsColumn.AllowEdit = false;
+            this.colCardName.OptionsFilter.AllowFilter = false;
             this.colCardName.Visible = true;
-            this.colCardName.VisibleIndex = 2;
+            this.colCardName.VisibleIndex = 4;
             this.colCardName.Width = 94;
             // 
             // colfecha_ingreso
             // 
+            this.colfecha_ingreso.Caption = "Fecha Ingreso";
             this.colfecha_ingreso.FieldName = "fecha_ingreso";
             this.colfecha_ingreso.MinWidth = 25;
             this.colfecha_ingreso.Name = "colfecha_ingreso";
+            this.colfecha_ingreso.OptionsColumn.AllowEdit = false;
+            this.colfecha_ingreso.OptionsFilter.AllowFilter = false;
             this.colfecha_ingreso.Visible = true;
-            this.colfecha_ingreso.VisibleIndex = 3;
+            this.colfecha_ingreso.VisibleIndex = 5;
             this.colfecha_ingreso.Width = 94;
             // 
             // colDocEntrySAP
@@ -149,26 +166,34 @@
             this.colDocEntrySAP.FieldName = "DocEntrySAP";
             this.colDocEntrySAP.MinWidth = 25;
             this.colDocEntrySAP.Name = "colDocEntrySAP";
+            this.colDocEntrySAP.OptionsColumn.AllowEdit = false;
+            this.colDocEntrySAP.OptionsFilter.AllowFilter = false;
             this.colDocEntrySAP.Visible = true;
-            this.colDocEntrySAP.VisibleIndex = 4;
+            this.colDocEntrySAP.VisibleIndex = 6;
             this.colDocEntrySAP.Width = 94;
             // 
             // colpeso
             // 
+            this.colpeso.Caption = "Peso";
             this.colpeso.FieldName = "peso";
             this.colpeso.MinWidth = 25;
             this.colpeso.Name = "colpeso";
+            this.colpeso.OptionsColumn.AllowEdit = false;
+            this.colpeso.OptionsFilter.AllowFilter = false;
             this.colpeso.Visible = true;
-            this.colpeso.VisibleIndex = 5;
+            this.colpeso.VisibleIndex = 7;
             this.colpeso.Width = 94;
             // 
             // colunidades
             // 
+            this.colunidades.Caption = "Unidades";
             this.colunidades.FieldName = "unidades";
             this.colunidades.MinWidth = 25;
             this.colunidades.Name = "colunidades";
+            this.colunidades.OptionsColumn.AllowEdit = false;
+            this.colunidades.OptionsFilter.AllowFilter = false;
             this.colunidades.Visible = true;
-            this.colunidades.VisibleIndex = 6;
+            this.colunidades.VisibleIndex = 8;
             this.colunidades.Width = 94;
             // 
             // colSeleccionar
@@ -177,19 +202,44 @@
             this.colSeleccionar.ColumnEdit = this.btnSeleccionar;
             this.colSeleccionar.MinWidth = 25;
             this.colSeleccionar.Name = "colSeleccionar";
+            this.colSeleccionar.OptionsFilter.AllowFilter = false;
             this.colSeleccionar.Visible = true;
-            this.colSeleccionar.VisibleIndex = 7;
+            this.colSeleccionar.VisibleIndex = 9;
             this.colSeleccionar.Width = 94;
             // 
             // btnSeleccionar
             // 
             this.btnSeleccionar.AutoHeight = false;
-            editorButtonImageOptions1.Image = global::LOSA.Properties.Resources.tap;
+            editorButtonImageOptions2.Image = global::LOSA.Properties.Resources.tap;
             this.btnSeleccionar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnSeleccionar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnSeleccionar_ButtonClick);
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Item Code";
+            this.gridColumn1.FieldName = "itemcode";
+            this.gridColumn1.MinWidth = 25;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.OptionsFilter.AllowFilter = false;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 1;
+            this.gridColumn1.Width = 94;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "MP";
+            this.gridColumn2.FieldName = "itemName";
+            this.gridColumn2.MinWidth = 25;
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
+            this.gridColumn2.OptionsFilter.AllowFilter = false;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 2;
+            this.gridColumn2.Width = 94;
             // 
             // txtCantIngresar
             // 
@@ -252,5 +302,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colunidades;
         private DevExpress.XtraEditors.SimpleButton btnAtras;
         private DevExpress.XtraGrid.Columns.GridColumn colSeleccionar;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
     }
 }
