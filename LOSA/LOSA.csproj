@@ -70,10 +70,10 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>B8B1E1C226D4161B735B5D87883A090CA12C1142</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>96D51552C0D885F6DA277C095792CEB6CB78CF0D</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>LOSA_3_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>LOSA_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -92,7 +92,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>LOSA_3_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>LOSA_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -172,6 +172,7 @@
       <DependentUpon>xrptAlmacenesExternos.cs</DependentUpon>
     </Compile>
     <Compile Include="AlmacenesExterno\Salida Almacen\Models\Ingresos_Externos_D.cs" />
+    <Compile Include="AlmacenesExterno\Salida Almacen\Models\Salida_Externa_Lote.cs" />
     <Compile Include="AlmacenesExterno\Salida Almacen\xfrmConfLotesSalidaAlmacen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2167,8 +2168,10 @@
     <None Include="Logistica\dsLogistica.xss">
       <DependentUpon>dsLogistica.xsd</DependentUpon>
     </None>
+    <None Include="LOSA_2_TemporaryKey.pfx" />
     <None Include="LOSA_3_TemporaryKey.pfx" />
     <None Include="LOSA_4_TemporaryKey.pfx" />
+    <None Include="LOSA_TemporaryKey.pfx" />
     <None Include="Mantenimientos\dsMantenimiento.xsc">
       <DependentUpon>dsMantenimiento.xsd</DependentUpon>
     </None>

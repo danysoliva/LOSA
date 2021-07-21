@@ -255,10 +255,10 @@
             this.btntarimasactivadasPT.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btntarimasactivadasPT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btntarimasactivadasPT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btntarimasactivadasPT.ImageOptions.Image")));
-            this.btntarimasactivadasPT.Location = new System.Drawing.Point(419, 341);
+            this.btntarimasactivadasPT.Location = new System.Drawing.Point(426, 341);
             this.btntarimasactivadasPT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btntarimasactivadasPT.Name = "btntarimasactivadasPT";
-            this.btntarimasactivadasPT.Size = new System.Drawing.Size(197, 44);
+            this.btntarimasactivadasPT.Size = new System.Drawing.Size(151, 32);
             this.btntarimasactivadasPT.TabIndex = 37;
             this.btntarimasactivadasPT.Text = " Ingreso PT";
             this.btntarimasactivadasPT.Click += new System.EventHandler(this.btntarimasactivadasPT_Click);

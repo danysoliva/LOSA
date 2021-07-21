@@ -398,6 +398,10 @@ namespace LOSA.AlmacenesExterno {
             
             private global::System.Data.DataColumn columnunidades;
             
+            private global::System.Data.DataColumn columnitemcode;
+            
+            private global::System.Data.DataColumn columnitemName;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Ingresos_almacenes_externos_existentesDataTable() {
@@ -489,6 +493,22 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn itemcodeColumn {
+                get {
+                    return this.columnitemcode;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn itemNameColumn {
+                get {
+                    return this.columnitemName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -524,7 +544,7 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Ingresos_almacenes_externos_existentesRow AddIngresos_almacenes_externos_existentesRow(int id, string cardcode, string CardName, string fecha_ingreso, int DocEntrySAP, decimal peso, decimal unidades) {
+            public Ingresos_almacenes_externos_existentesRow AddIngresos_almacenes_externos_existentesRow(int id, string cardcode, string CardName, string fecha_ingreso, int DocEntrySAP, decimal peso, decimal unidades, string itemcode, string itemName) {
                 Ingresos_almacenes_externos_existentesRow rowIngresos_almacenes_externos_existentesRow = ((Ingresos_almacenes_externos_existentesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -533,7 +553,9 @@ namespace LOSA.AlmacenesExterno {
                         fecha_ingreso,
                         DocEntrySAP,
                         peso,
-                        unidades};
+                        unidades,
+                        itemcode,
+                        itemName};
                 rowIngresos_almacenes_externos_existentesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowIngresos_almacenes_externos_existentesRow);
                 return rowIngresos_almacenes_externos_existentesRow;
@@ -563,6 +585,8 @@ namespace LOSA.AlmacenesExterno {
                 this.columnDocEntrySAP = base.Columns["DocEntrySAP"];
                 this.columnpeso = base.Columns["peso"];
                 this.columnunidades = base.Columns["unidades"];
+                this.columnitemcode = base.Columns["itemcode"];
+                this.columnitemName = base.Columns["itemName"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -582,6 +606,10 @@ namespace LOSA.AlmacenesExterno {
                 base.Columns.Add(this.columnpeso);
                 this.columnunidades = new global::System.Data.DataColumn("unidades", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnunidades);
+                this.columnitemcode = new global::System.Data.DataColumn("itemcode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnitemcode);
+                this.columnitemName = new global::System.Data.DataColumn("itemName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnitemName);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1138,6 +1166,8 @@ namespace LOSA.AlmacenesExterno {
             
             private global::System.Data.DataColumn columnfecha_produccion;
             
+            private global::System.Data.DataColumn columnunidades_seleccionadas;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Lote_SeleccionadosDataTable() {
@@ -1261,6 +1291,14 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn unidades_seleccionadasColumn {
+                get {
+                    return this.columnunidades_seleccionadas;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1296,7 +1334,7 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Lote_SeleccionadosRow AddLote_SeleccionadosRow(int id, decimal cantidad, decimal unidades, int id_detalle, string lote, decimal CantSeleccionada, bool Seleccionar, string num_line, int row_, System.DateTime fecha_vencimiento, System.DateTime fecha_produccion) {
+            public Lote_SeleccionadosRow AddLote_SeleccionadosRow(int id, decimal cantidad, decimal unidades, int id_detalle, string lote, decimal CantSeleccionada, bool Seleccionar, string num_line, int row_, System.DateTime fecha_vencimiento, System.DateTime fecha_produccion, decimal unidades_seleccionadas) {
                 Lote_SeleccionadosRow rowLote_SeleccionadosRow = ((Lote_SeleccionadosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -1309,7 +1347,8 @@ namespace LOSA.AlmacenesExterno {
                         num_line,
                         row_,
                         fecha_vencimiento,
-                        fecha_produccion};
+                        fecha_produccion,
+                        unidades_seleccionadas};
                 rowLote_SeleccionadosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowLote_SeleccionadosRow);
                 return rowLote_SeleccionadosRow;
@@ -1343,6 +1382,7 @@ namespace LOSA.AlmacenesExterno {
                 this.columnrow_ = base.Columns["row_"];
                 this.columnfecha_vencimiento = base.Columns["fecha_vencimiento"];
                 this.columnfecha_produccion = base.Columns["fecha_produccion"];
+                this.columnunidades_seleccionadas = base.Columns["unidades_seleccionadas"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1370,6 +1410,8 @@ namespace LOSA.AlmacenesExterno {
                 base.Columns.Add(this.columnfecha_vencimiento);
                 this.columnfecha_produccion = new global::System.Data.DataColumn("fecha_produccion", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfecha_produccion);
+                this.columnunidades_seleccionadas = new global::System.Data.DataColumn("unidades_seleccionadas", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnunidades_seleccionadas);
                 this.columnCantSeleccionada.DefaultValue = ((decimal)(0m));
                 this.columnnum_line.DefaultValue = ((string)("-1"));
                 this.columnrow_.DefaultValue = ((int)(-1));
@@ -1508,9 +1550,9 @@ namespace LOSA.AlmacenesExterno {
             
             private global::System.Data.DataColumn columnid;
             
-            private global::System.Data.DataColumn columncantidad;
+            private global::System.Data.DataColumn columncantidad_disponible;
             
-            private global::System.Data.DataColumn columnunidades;
+            private global::System.Data.DataColumn columnunidades_disponibles;
             
             private global::System.Data.DataColumn columnid_detalle;
             
@@ -1527,6 +1569,8 @@ namespace LOSA.AlmacenesExterno {
             private global::System.Data.DataColumn columnfecha_vencimiento;
             
             private global::System.Data.DataColumn columnfecha_produccion;
+            
+            private global::System.Data.DataColumn columnunidade_seleccionadas;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -1571,17 +1615,17 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn cantidadColumn {
+            public global::System.Data.DataColumn cantidad_disponibleColumn {
                 get {
-                    return this.columncantidad;
+                    return this.columncantidad_disponible;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn unidadesColumn {
+            public global::System.Data.DataColumn unidades_disponiblesColumn {
                 get {
-                    return this.columnunidades;
+                    return this.columnunidades_disponibles;
                 }
             }
             
@@ -1651,6 +1695,14 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn unidade_seleccionadasColumn {
+                get {
+                    return this.columnunidade_seleccionadas;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1686,12 +1738,12 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public LoteRow AddLoteRow(int id, decimal cantidad, decimal unidades, int id_detalle, string lote, decimal CantSeleccionada, bool Seleccionar, int num_line, int row_, System.DateTime fecha_vencimiento, System.DateTime fecha_produccion) {
+            public LoteRow AddLoteRow(int id, decimal cantidad_disponible, decimal unidades_disponibles, int id_detalle, string lote, decimal CantSeleccionada, bool Seleccionar, int num_line, int row_, System.DateTime fecha_vencimiento, System.DateTime fecha_produccion, decimal unidade_seleccionadas) {
                 LoteRow rowLoteRow = ((LoteRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
-                        cantidad,
-                        unidades,
+                        cantidad_disponible,
+                        unidades_disponibles,
                         id_detalle,
                         lote,
                         CantSeleccionada,
@@ -1699,7 +1751,8 @@ namespace LOSA.AlmacenesExterno {
                         num_line,
                         row_,
                         fecha_vencimiento,
-                        fecha_produccion};
+                        fecha_produccion,
+                        unidade_seleccionadas};
                 rowLoteRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowLoteRow);
                 return rowLoteRow;
@@ -1723,8 +1776,8 @@ namespace LOSA.AlmacenesExterno {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnid = base.Columns["id"];
-                this.columncantidad = base.Columns["cantidad"];
-                this.columnunidades = base.Columns["unidades"];
+                this.columncantidad_disponible = base.Columns["cantidad_disponible"];
+                this.columnunidades_disponibles = base.Columns["unidades_disponibles"];
                 this.columnid_detalle = base.Columns["id_detalle"];
                 this.columnlote = base.Columns["lote"];
                 this.columnCantSeleccionada = base.Columns["CantSeleccionada"];
@@ -1733,6 +1786,7 @@ namespace LOSA.AlmacenesExterno {
                 this.columnrow_ = base.Columns["row_"];
                 this.columnfecha_vencimiento = base.Columns["fecha_vencimiento"];
                 this.columnfecha_produccion = base.Columns["fecha_produccion"];
+                this.columnunidade_seleccionadas = base.Columns["unidade_seleccionadas"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1740,10 +1794,10 @@ namespace LOSA.AlmacenesExterno {
             private void InitClass() {
                 this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid);
-                this.columncantidad = new global::System.Data.DataColumn("cantidad", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncantidad);
-                this.columnunidades = new global::System.Data.DataColumn("unidades", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnunidades);
+                this.columncantidad_disponible = new global::System.Data.DataColumn("cantidad_disponible", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncantidad_disponible);
+                this.columnunidades_disponibles = new global::System.Data.DataColumn("unidades_disponibles", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnunidades_disponibles);
                 this.columnid_detalle = new global::System.Data.DataColumn("id_detalle", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_detalle);
                 this.columnlote = new global::System.Data.DataColumn("lote", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1760,6 +1814,8 @@ namespace LOSA.AlmacenesExterno {
                 base.Columns.Add(this.columnfecha_vencimiento);
                 this.columnfecha_produccion = new global::System.Data.DataColumn("fecha_produccion", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfecha_produccion);
+                this.columnunidade_seleccionadas = new global::System.Data.DataColumn("unidade_seleccionadas", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnunidade_seleccionadas);
                 this.columnCantSeleccionada.DefaultValue = ((decimal)(0m));
                 this.columnnum_line.DefaultValue = ((int)(-1));
                 this.columnrow_.DefaultValue = ((int)(0));
@@ -2024,6 +2080,40 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string itemcode {
+                get {
+                    try {
+                        return ((string)(this[this.tableIngresos_almacenes_externos_existentes.itemcodeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'itemcode\' in table \'Ingresos_almacenes_externos_existentes\'" +
+                                " is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIngresos_almacenes_externos_existentes.itemcodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string itemName {
+                get {
+                    try {
+                        return ((string)(this[this.tableIngresos_almacenes_externos_existentes.itemNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'itemName\' in table \'Ingresos_almacenes_externos_existentes\'" +
+                                " is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIngresos_almacenes_externos_existentes.itemNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableIngresos_almacenes_externos_existentes.idColumn);
             }
@@ -2104,6 +2194,30 @@ namespace LOSA.AlmacenesExterno {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetunidadesNull() {
                 this[this.tableIngresos_almacenes_externos_existentes.unidadesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsitemcodeNull() {
+                return this.IsNull(this.tableIngresos_almacenes_externos_existentes.itemcodeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetitemcodeNull() {
+                this[this.tableIngresos_almacenes_externos_existentes.itemcodeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsitemNameNull() {
+                return this.IsNull(this.tableIngresos_almacenes_externos_existentes.itemNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetitemNameNull() {
+                this[this.tableIngresos_almacenes_externos_existentes.itemNameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2652,6 +2766,22 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal unidades_seleccionadas {
+                get {
+                    if (this.Isunidades_seleccionadasNull()) {
+                        return 0m;
+                    }
+                    else {
+                        return ((decimal)(this[this.tableLote_Seleccionados.unidades_seleccionadasColumn]));
+                    }
+                }
+                set {
+                    this[this.tableLote_Seleccionados.unidades_seleccionadasColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableLote_Seleccionados.idColumn);
             }
@@ -2781,6 +2911,18 @@ namespace LOSA.AlmacenesExterno {
             public void Setfecha_produccionNull() {
                 this[this.tableLote_Seleccionados.fecha_produccionColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isunidades_seleccionadasNull() {
+                return this.IsNull(this.tableLote_Seleccionados.unidades_seleccionadasColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setunidades_seleccionadasNull() {
+                this[this.tableLote_Seleccionados.unidades_seleccionadasColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -2815,33 +2957,33 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public decimal cantidad {
+            public decimal cantidad_disponible {
                 get {
                     try {
-                        return ((decimal)(this[this.tableLote.cantidadColumn]));
+                        return ((decimal)(this[this.tableLote.cantidad_disponibleColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'cantidad\' in table \'Lote\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'cantidad_disponible\' in table \'Lote\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableLote.cantidadColumn] = value;
+                    this[this.tableLote.cantidad_disponibleColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public decimal unidades {
+            public decimal unidades_disponibles {
                 get {
                     try {
-                        return ((decimal)(this[this.tableLote.unidadesColumn]));
+                        return ((decimal)(this[this.tableLote.unidades_disponiblesColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'unidades\' in table \'Lote\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'unidades_disponibles\' in table \'Lote\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableLote.unidadesColumn] = value;
+                    this[this.tableLote.unidades_disponiblesColumn] = value;
                 }
             }
             
@@ -2975,6 +3117,22 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal unidade_seleccionadas {
+                get {
+                    if (this.Isunidade_seleccionadasNull()) {
+                        return 0m;
+                    }
+                    else {
+                        return ((decimal)(this[this.tableLote.unidade_seleccionadasColumn]));
+                    }
+                }
+                set {
+                    this[this.tableLote.unidade_seleccionadasColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableLote.idColumn);
             }
@@ -2987,26 +3145,26 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IscantidadNull() {
-                return this.IsNull(this.tableLote.cantidadColumn);
+            public bool Iscantidad_disponibleNull() {
+                return this.IsNull(this.tableLote.cantidad_disponibleColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetcantidadNull() {
-                this[this.tableLote.cantidadColumn] = global::System.Convert.DBNull;
+            public void Setcantidad_disponibleNull() {
+                this[this.tableLote.cantidad_disponibleColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsunidadesNull() {
-                return this.IsNull(this.tableLote.unidadesColumn);
+            public bool Isunidades_disponiblesNull() {
+                return this.IsNull(this.tableLote.unidades_disponiblesColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetunidadesNull() {
-                this[this.tableLote.unidadesColumn] = global::System.Convert.DBNull;
+            public void Setunidades_disponiblesNull() {
+                this[this.tableLote.unidades_disponiblesColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3103,6 +3261,18 @@ namespace LOSA.AlmacenesExterno {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setfecha_produccionNull() {
                 this[this.tableLote.fecha_produccionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isunidade_seleccionadasNull() {
+                return this.IsNull(this.tableLote.unidade_seleccionadasColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setunidade_seleccionadasNull() {
+                this[this.tableLote.unidade_seleccionadasColumn] = global::System.Convert.DBNull;
             }
         }
         
