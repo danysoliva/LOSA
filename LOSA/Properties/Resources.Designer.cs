@@ -525,7 +525,7 @@ namespace LOSA.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap weighing_machine24px {
             get {
-                object obj = ResourceManager.GetObject("weighing-machine24px", resourceCulture);
+                object obj = ResourceManager.GetObject("weighing_machine24px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

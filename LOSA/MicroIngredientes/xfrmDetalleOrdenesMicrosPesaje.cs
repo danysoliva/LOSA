@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using ACS.Classes;
 using System.Data.SqlClient;
 using DevExpress.XtraGrid.Views.Grid;
+using LOSA.Micro;
 
 namespace LOSA.MicroIngredientes
 {
@@ -156,7 +157,12 @@ namespace LOSA.MicroIngredientes
         private void cmdPesar1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             //Pesar
+            var gridView = (GridView)gridControl2.FocusedView;
+            var row = (dsMicros.plan_microsdRow)gridView.GetFocusedDataRow();
 
+            frmSelectLotePesaje frm = new frmSelectLotePesaje(row.id_rm);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
         }
     }
 }
