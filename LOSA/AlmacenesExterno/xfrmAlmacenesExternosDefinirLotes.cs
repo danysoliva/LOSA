@@ -334,6 +334,8 @@ namespace LOSA.AlmacenesExterno
                 int id_d = 0;
 
 
+
+
                 cnx.Open();
                 transaction = cnx.BeginTransaction("SampleTransaction");
 

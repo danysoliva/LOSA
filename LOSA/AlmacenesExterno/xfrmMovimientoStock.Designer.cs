@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gcTransferencia = new DevExpress.XtraGrid.GridControl();
-            this.transferenciaStockBindingSource = new System.Windows.Forms.BindingSource();
+            this.transferenciaStockBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsSalidasAlmacenesExternos = new LOSA.AlmacenesExterno.dsSalidasAlmacenesExternos();
             this.gvTransferencia = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colcodeItem = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -52,12 +53,12 @@
             this.ceSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.btnBuscarProd = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.luBodegaFrom = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.warehouseBindingSource = new System.Windows.Forms.BindingSource();
+            this.warehouseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsAlmacenesExternos = new LOSA.AlmacenesExterno.dsAlmacenesExternos();
             this.luBodegaTO = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
+            this.deFecha = new DevExpress.XtraEditors.DateEdit();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.btnBuscarIngreso = new DevExpress.XtraEditors.SimpleButton();
             this.lueAlmacenFROM = new DevExpress.XtraEditors.LookUpEdit();
@@ -77,8 +78,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.warehouseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsAlmacenesExternos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.luBodegaTO)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deFecha.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deFecha.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueAlmacenFROM.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueAlmacenDestino.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProveedor.Properties)).BeginInit();
@@ -90,8 +91,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcTransferencia.DataSource = this.transferenciaStockBindingSource;
-            this.gcTransferencia.Location = new System.Drawing.Point(-1, 231);
+            this.gcTransferencia.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gcTransferencia.Location = new System.Drawing.Point(-1, 188);
             this.gcTransferencia.MainView = this.gvTransferencia;
+            this.gcTransferencia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gcTransferencia.Name = "gcTransferencia";
             this.gcTransferencia.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.txtCantIngresar,
@@ -99,7 +102,7 @@
             this.btnBuscarProd,
             this.luBodegaFrom,
             this.luBodegaTO});
-            this.gcTransferencia.Size = new System.Drawing.Size(1363, 453);
+            this.gcTransferencia.Size = new System.Drawing.Size(1168, 368);
             this.gcTransferencia.TabIndex = 35;
             this.gcTransferencia.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTransferencia});
@@ -136,6 +139,7 @@
             this.gridColumn3,
             this.gridColumn4,
             this.gridColumn5});
+            this.gvTransferencia.DetailHeight = 284;
             this.gvTransferencia.GridControl = this.gcTransferencia;
             this.gvTransferencia.Name = "gvTransferencia";
             this.gvTransferencia.OptionsView.ShowAutoFilterRow = true;
@@ -147,48 +151,48 @@
             // colcodeItem
             // 
             this.colcodeItem.FieldName = "itemcode";
-            this.colcodeItem.MinWidth = 25;
+            this.colcodeItem.MinWidth = 21;
             this.colcodeItem.Name = "colcodeItem";
             this.colcodeItem.OptionsColumn.AllowEdit = false;
             this.colcodeItem.OptionsFilter.AllowFilter = false;
             this.colcodeItem.Visible = true;
             this.colcodeItem.VisibleIndex = 0;
-            this.colcodeItem.Width = 191;
+            this.colcodeItem.Width = 164;
             // 
             // colmp
             // 
             this.colmp.FieldName = "itemName";
-            this.colmp.MinWidth = 25;
+            this.colmp.MinWidth = 21;
             this.colmp.Name = "colmp";
             this.colmp.OptionsColumn.AllowEdit = false;
             this.colmp.OptionsFilter.AllowFilter = false;
             this.colmp.Visible = true;
             this.colmp.VisibleIndex = 1;
-            this.colmp.Width = 191;
+            this.colmp.Width = 164;
             // 
             // colfrom_almacen
             // 
             this.colfrom_almacen.Caption = "De Almacén";
             this.colfrom_almacen.FieldName = "from_almacen";
-            this.colfrom_almacen.MinWidth = 25;
+            this.colfrom_almacen.MinWidth = 21;
             this.colfrom_almacen.Name = "colfrom_almacen";
             this.colfrom_almacen.OptionsColumn.AllowEdit = false;
             this.colfrom_almacen.OptionsFilter.AllowFilter = false;
             this.colfrom_almacen.Visible = true;
             this.colfrom_almacen.VisibleIndex = 2;
-            this.colfrom_almacen.Width = 191;
+            this.colfrom_almacen.Width = 164;
             // 
             // colto_almacen
             // 
             this.colto_almacen.Caption = "Almacén Destino";
             this.colto_almacen.FieldName = "to_almacen";
-            this.colto_almacen.MinWidth = 25;
+            this.colto_almacen.MinWidth = 21;
             this.colto_almacen.Name = "colto_almacen";
             this.colto_almacen.OptionsColumn.AllowEdit = false;
             this.colto_almacen.OptionsFilter.AllowFilter = false;
             this.colto_almacen.Visible = true;
             this.colto_almacen.VisibleIndex = 3;
-            this.colto_almacen.Width = 191;
+            this.colto_almacen.Width = 164;
             // 
             // colcantidad_kilos
             // 
@@ -196,13 +200,13 @@
             this.colcantidad_kilos.AppearanceCell.Options.UseBackColor = true;
             this.colcantidad_kilos.Caption = "Cantidad en Almacen";
             this.colcantidad_kilos.FieldName = "peso";
-            this.colcantidad_kilos.MinWidth = 25;
+            this.colcantidad_kilos.MinWidth = 21;
             this.colcantidad_kilos.Name = "colcantidad_kilos";
             this.colcantidad_kilos.OptionsColumn.AllowEdit = false;
             this.colcantidad_kilos.OptionsFilter.AllowFilter = false;
             this.colcantidad_kilos.Visible = true;
             this.colcantidad_kilos.VisibleIndex = 4;
-            this.colcantidad_kilos.Width = 191;
+            this.colcantidad_kilos.Width = 164;
             // 
             // colunidades
             // 
@@ -210,52 +214,52 @@
             this.colunidades.AppearanceCell.Options.UseBackColor = true;
             this.colunidades.Caption = "Unidades en Almacén";
             this.colunidades.FieldName = "unidades";
-            this.colunidades.MinWidth = 25;
+            this.colunidades.MinWidth = 21;
             this.colunidades.Name = "colunidades";
             this.colunidades.OptionsColumn.AllowEdit = false;
             this.colunidades.OptionsFilter.AllowFilter = false;
             this.colunidades.Visible = true;
             this.colunidades.VisibleIndex = 5;
-            this.colunidades.Width = 277;
+            this.colunidades.Width = 237;
             // 
             // gridColumn1
             // 
             this.gridColumn1.Caption = "Cantidad a Transferir";
             this.gridColumn1.FieldName = "cantidad_a_transferir";
-            this.gridColumn1.MinWidth = 25;
+            this.gridColumn1.MinWidth = 21;
             this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Width = 94;
+            this.gridColumn1.Width = 81;
             // 
             // gridColumn2
             // 
             this.gridColumn2.FieldName = "NumLine";
-            this.gridColumn2.MinWidth = 25;
+            this.gridColumn2.MinWidth = 21;
             this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Width = 94;
+            this.gridColumn2.Width = 81;
             // 
             // gridColumn3
             // 
             this.gridColumn3.FieldName = "DocEntrySAP";
-            this.gridColumn3.MinWidth = 25;
+            this.gridColumn3.MinWidth = 21;
             this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Width = 94;
+            this.gridColumn3.Width = 81;
             // 
             // gridColumn4
             // 
             this.gridColumn4.FieldName = "id";
-            this.gridColumn4.MinWidth = 25;
+            this.gridColumn4.MinWidth = 21;
             this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Width = 94;
+            this.gridColumn4.Width = 81;
             // 
             // gridColumn5
             // 
             this.gridColumn5.Caption = "Seleccionar";
             this.gridColumn5.FieldName = "seleccionar";
-            this.gridColumn5.MinWidth = 25;
+            this.gridColumn5.MinWidth = 21;
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 6;
-            this.gridColumn5.Width = 111;
+            this.gridColumn5.Width = 95;
             // 
             // txtCantIngresar
             // 
@@ -266,6 +270,9 @@
             // 
             this.ceSeleccionar.AutoHeight = false;
             this.ceSeleccionar.Name = "ceSeleccionar";
+            //this.ceSeleccionar.CheckedChanged += new System.EventHandler(this.ceSeleccionar_CheckedChanged);
+            this.ceSeleccionar.CheckStateChanged += new System.EventHandler(this.ceSeleccionar_CheckStateChanged);
+            //this.ceSeleccionar.EditValueChanged += new System.EventHandler(this.ceSeleccionar_EditValueChanged);
             // 
             // btnBuscarProd
             // 
@@ -310,9 +317,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(21, 109);
+            this.label3.Location = new System.Drawing.Point(18, 89);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(181, 21);
+            this.label3.Size = new System.Drawing.Size(148, 17);
             this.label3.TabIndex = 39;
             this.label3.Text = "Proveedor:_______";
             // 
@@ -321,26 +328,27 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(856, 114);
+            this.label1.Location = new System.Drawing.Point(734, 93);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(194, 21);
+            this.label1.Size = new System.Drawing.Size(157, 17);
             this.label1.TabIndex = 40;
             this.label1.Text = "Fecha de documento:";
             // 
-            // dateEdit1
+            // deFecha
             // 
-            this.dateEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(1056, 109);
-            this.dateEdit1.Name = "dateEdit1";
-            this.dateEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateEdit1.Properties.Appearance.Options.UseFont = true;
-            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.deFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.deFecha.EditValue = null;
+            this.deFecha.Location = new System.Drawing.Point(905, 89);
+            this.deFecha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.deFecha.Name = "deFecha";
+            this.deFecha.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deFecha.Properties.Appearance.Options.UseFont = true;
+            this.deFecha.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.deFecha.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Size = new System.Drawing.Size(235, 28);
-            this.dateEdit1.TabIndex = 41;
+            this.deFecha.Size = new System.Drawing.Size(201, 24);
+            this.deFecha.TabIndex = 41;
             // 
             // btnAtras
             // 
@@ -352,10 +360,9 @@
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(1113, 15);
-            this.btnAtras.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAtras.Location = new System.Drawing.Point(954, 12);
             this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(178, 58);
+            this.btnAtras.Size = new System.Drawing.Size(153, 47);
             this.btnAtras.TabIndex = 43;
             this.btnAtras.Text = "Cancelar";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
@@ -369,9 +376,10 @@
             this.btnBuscarIngreso.Appearance.Options.UseFont = true;
             this.btnBuscarIngreso.Appearance.Options.UseForeColor = true;
             this.btnBuscarIngreso.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnBuscarIngreso.Location = new System.Drawing.Point(25, 20);
+            this.btnBuscarIngreso.Location = new System.Drawing.Point(21, 16);
+            this.btnBuscarIngreso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBuscarIngreso.Name = "btnBuscarIngreso";
-            this.btnBuscarIngreso.Size = new System.Drawing.Size(180, 58);
+            this.btnBuscarIngreso.Size = new System.Drawing.Size(154, 47);
             this.btnBuscarIngreso.TabIndex = 44;
             this.btnBuscarIngreso.Text = "Buscar MP";
             this.btnBuscarIngreso.Click += new System.EventHandler(this.btnBuscarIngreso_Click);
@@ -379,7 +387,8 @@
             // lueAlmacenFROM
             // 
             this.lueAlmacenFROM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lueAlmacenFROM.Location = new System.Drawing.Point(1056, 145);
+            this.lueAlmacenFROM.Location = new System.Drawing.Point(905, 118);
+            this.lueAlmacenFROM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lueAlmacenFROM.Name = "lueAlmacenFROM";
             this.lueAlmacenFROM.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lueAlmacenFROM.Properties.Appearance.Options.UseFont = true;
@@ -394,7 +403,7 @@
             this.lueAlmacenFROM.Properties.DisplayMember = "WhsCode";
             this.lueAlmacenFROM.Properties.NullText = "";
             this.lueAlmacenFROM.Properties.ValueMember = "WhsCode";
-            this.lueAlmacenFROM.Size = new System.Drawing.Size(235, 28);
+            this.lueAlmacenFROM.Size = new System.Drawing.Size(201, 24);
             this.lueAlmacenFROM.TabIndex = 45;
             this.lueAlmacenFROM.EditValueChanged += new System.EventHandler(this.lueAlmacenFROM_EditValueChanged);
             // 
@@ -403,9 +412,9 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(935, 149);
+            this.label2.Location = new System.Drawing.Point(801, 121);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 21);
+            this.label2.Size = new System.Drawing.Size(91, 17);
             this.label2.TabIndex = 46;
             this.label2.Text = "De almacén:";
             // 
@@ -414,16 +423,17 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(892, 185);
+            this.label4.Location = new System.Drawing.Point(765, 150);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(158, 21);
+            this.label4.Size = new System.Drawing.Size(126, 17);
             this.label4.TabIndex = 48;
             this.label4.Text = "Almacén destino:";
             // 
             // lueAlmacenDestino
             // 
             this.lueAlmacenDestino.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lueAlmacenDestino.Location = new System.Drawing.Point(1056, 181);
+            this.lueAlmacenDestino.Location = new System.Drawing.Point(905, 147);
+            this.lueAlmacenDestino.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lueAlmacenDestino.Name = "lueAlmacenDestino";
             this.lueAlmacenDestino.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F);
             this.lueAlmacenDestino.Properties.Appearance.Options.UseFont = true;
@@ -435,7 +445,7 @@
             this.lueAlmacenDestino.Properties.DisplayMember = "WhsCode";
             this.lueAlmacenDestino.Properties.NullText = "";
             this.lueAlmacenDestino.Properties.ValueMember = "WhsCode";
-            this.lueAlmacenDestino.Size = new System.Drawing.Size(235, 28);
+            this.lueAlmacenDestino.Size = new System.Drawing.Size(201, 24);
             this.lueAlmacenDestino.TabIndex = 47;
             this.lueAlmacenDestino.EditValueChanged += new System.EventHandler(this.lueAlmacenDestino_EditValueChanged);
             // 
@@ -448,10 +458,9 @@
             this.btnConfLotes.Appearance.Options.UseFont = true;
             this.btnConfLotes.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnConfLotes.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnConfLotes.Location = new System.Drawing.Point(900, 15);
-            this.btnConfLotes.Margin = new System.Windows.Forms.Padding(4);
+            this.btnConfLotes.Location = new System.Drawing.Point(771, 12);
             this.btnConfLotes.Name = "btnConfLotes";
-            this.btnConfLotes.Size = new System.Drawing.Size(180, 58);
+            this.btnConfLotes.Size = new System.Drawing.Size(154, 47);
             this.btnConfLotes.TabIndex = 49;
             this.btnConfLotes.Text = "Conf. Lotes";
             this.btnConfLotes.Click += new System.EventHandler(this.btnConfLotes_Click);
@@ -459,18 +468,19 @@
             // txtProveedor
             // 
             this.txtProveedor.Enabled = false;
-            this.txtProveedor.Location = new System.Drawing.Point(198, 110);
+            this.txtProveedor.Location = new System.Drawing.Point(170, 89);
+            this.txtProveedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtProveedor.Name = "txtProveedor";
             this.txtProveedor.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold);
             this.txtProveedor.Properties.Appearance.Options.UseFont = true;
-            this.txtProveedor.Size = new System.Drawing.Size(285, 96);
+            this.txtProveedor.Size = new System.Drawing.Size(244, 78);
             this.txtProveedor.TabIndex = 50;
             // 
             // xfrmMovimientoStock
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1361, 683);
+            this.ClientSize = new System.Drawing.Size(1167, 555);
             this.Controls.Add(this.txtProveedor);
             this.Controls.Add(this.btnConfLotes);
             this.Controls.Add(this.label4);
@@ -479,15 +489,17 @@
             this.Controls.Add(this.lueAlmacenFROM);
             this.Controls.Add(this.btnBuscarIngreso);
             this.Controls.Add(this.btnAtras);
-            this.Controls.Add(this.dateEdit1);
+            this.Controls.Add(this.deFecha);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.gcTransferencia);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "xfrmMovimientoStock";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "xfrmMovimientoStock";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.xfrmMovimientoStock_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gcTransferencia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.transferenciaStockBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSalidasAlmacenesExternos)).EndInit();
@@ -499,8 +511,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.warehouseBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsAlmacenesExternos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.luBodegaTO)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deFecha.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deFecha.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueAlmacenFROM.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueAlmacenDestino.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProveedor.Properties)).EndInit();
@@ -517,7 +529,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit ceSeleccionar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private DevExpress.XtraEditors.DateEdit dateEdit1;
+        private DevExpress.XtraEditors.DateEdit deFecha;
         private dsAlmacenesExternos dsAlmacenesExternos;
         private DevExpress.XtraGrid.Columns.GridColumn colcodeItem;
         private DevExpress.XtraGrid.Columns.GridColumn colmp;

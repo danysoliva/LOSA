@@ -549,6 +549,12 @@ namespace LOSA
             frm.Show();
         }
 
+        private void btntarimasactivadasPT_Click(object sender, EventArgs e)
+        {
+            frm_rpt_productoT frm = new frm_rpt_productoT();
+            frm.Show();
+        }
+
         private void btnTransferencia_Click(object sender, EventArgs e)
         {
             xfrmMovimientoStock frm = new xfrmMovimientoStock();

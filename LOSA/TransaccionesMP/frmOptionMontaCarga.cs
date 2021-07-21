@@ -125,5 +125,11 @@ namespace LOSA.TransaccionesMP
             frmRevisionDeActivaciondeTm frm = new frmRevisionDeActivaciondeTm();
             frm.Show();
         }
+
+        private void btntarimasactivadasPT_Click(object sender, EventArgs e)
+        {
+            frm_rpt_productoT frm = new frm_rpt_productoT();
+            frm.Show();
+        }
     }
 }

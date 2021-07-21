@@ -801,6 +801,8 @@ namespace LOSA.Calidad {
             
             private global::System.Data.DataColumn columncodigo_barra;
             
+            private global::System.Data.DataColumn columnlote1;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public tarimas_disponiblesDataTable() {
@@ -964,6 +966,14 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn lote1Column {
+                get {
+                    return this.columnlote1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1015,7 +1025,8 @@ namespace LOSA.Calidad {
                         int id_tipotm, 
                         int id_turno, 
                         string Turno, 
-                        string codigo_barra) {
+                        string codigo_barra, 
+                        string lote1) {
                 tarimas_disponiblesRow rowtarimas_disponiblesRow = ((tarimas_disponiblesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -1033,7 +1044,8 @@ namespace LOSA.Calidad {
                         id_tipotm,
                         id_turno,
                         Turno,
-                        codigo_barra};
+                        codigo_barra,
+                        lote1};
                 rowtarimas_disponiblesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtarimas_disponiblesRow);
                 return rowtarimas_disponiblesRow;
@@ -1072,6 +1084,7 @@ namespace LOSA.Calidad {
                 this.columnid_turno = base.Columns["id_turno"];
                 this.columnTurno = base.Columns["Turno"];
                 this.columncodigo_barra = base.Columns["codigo_barra"];
+                this.columnlote1 = base.Columns["lote1"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1109,6 +1122,8 @@ namespace LOSA.Calidad {
                 base.Columns.Add(this.columnTurno);
                 this.columncodigo_barra = new global::System.Data.DataColumn("codigo_barra", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncodigo_barra);
+                this.columnlote1 = new global::System.Data.DataColumn("lote1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlote1);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1274,6 +1289,8 @@ namespace LOSA.Calidad {
             
             private global::System.Data.DataColumn columncodigo_barra;
             
+            private global::System.Data.DataColumn columnlote1;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public tarimas_obsDataTable() {
@@ -1437,6 +1454,14 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn lote1Column {
+                get {
+                    return this.columnlote1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1488,7 +1513,8 @@ namespace LOSA.Calidad {
                         int id_tipotm, 
                         int id_turno, 
                         string Turno, 
-                        string codigo_barra) {
+                        string codigo_barra, 
+                        string lote1) {
                 tarimas_obsRow rowtarimas_obsRow = ((tarimas_obsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -1506,7 +1532,8 @@ namespace LOSA.Calidad {
                         id_tipotm,
                         id_turno,
                         Turno,
-                        codigo_barra};
+                        codigo_barra,
+                        lote1};
                 rowtarimas_obsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtarimas_obsRow);
                 return rowtarimas_obsRow;
@@ -1545,6 +1572,7 @@ namespace LOSA.Calidad {
                 this.columnid_turno = base.Columns["id_turno"];
                 this.columnTurno = base.Columns["Turno"];
                 this.columncodigo_barra = base.Columns["codigo_barra"];
+                this.columnlote1 = base.Columns["lote1"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1582,6 +1610,8 @@ namespace LOSA.Calidad {
                 base.Columns.Add(this.columnTurno);
                 this.columncodigo_barra = new global::System.Data.DataColumn("codigo_barra", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncodigo_barra);
+                this.columnlote1 = new global::System.Data.DataColumn("lote1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlote1);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1747,6 +1777,8 @@ namespace LOSA.Calidad {
             
             private global::System.Data.DataColumn columncodigo_barra;
             
+            private global::System.Data.DataColumn columnlote1;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public tarimas_retDataTable() {
@@ -1910,6 +1942,14 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn lote1Column {
+                get {
+                    return this.columnlote1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1961,7 +2001,8 @@ namespace LOSA.Calidad {
                         int id_tipotm, 
                         int id_turno, 
                         string Turno, 
-                        string codigo_barra) {
+                        string codigo_barra, 
+                        string lote1) {
                 tarimas_retRow rowtarimas_retRow = ((tarimas_retRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -1979,7 +2020,8 @@ namespace LOSA.Calidad {
                         id_tipotm,
                         id_turno,
                         Turno,
-                        codigo_barra};
+                        codigo_barra,
+                        lote1};
                 rowtarimas_retRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtarimas_retRow);
                 return rowtarimas_retRow;
@@ -2018,6 +2060,7 @@ namespace LOSA.Calidad {
                 this.columnid_turno = base.Columns["id_turno"];
                 this.columnTurno = base.Columns["Turno"];
                 this.columncodigo_barra = base.Columns["codigo_barra"];
+                this.columnlote1 = base.Columns["lote1"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2055,6 +2098,8 @@ namespace LOSA.Calidad {
                 base.Columns.Add(this.columnTurno);
                 this.columncodigo_barra = new global::System.Data.DataColumn("codigo_barra", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncodigo_barra);
+                this.columnlote1 = new global::System.Data.DataColumn("lote1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlote1);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5851,6 +5896,22 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string lote1 {
+                get {
+                    try {
+                        return ((string)(this[this.tabletarimas_disponibles.lote1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'lote1\' in table \'tarimas_disponibles\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletarimas_disponibles.lote1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tabletarimas_disponibles.idColumn);
             }
@@ -6039,6 +6100,18 @@ namespace LOSA.Calidad {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setcodigo_barraNull() {
                 this[this.tabletarimas_disponibles.codigo_barraColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Islote1Null() {
+                return this.IsNull(this.tabletarimas_disponibles.lote1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setlote1Null() {
+                this[this.tabletarimas_disponibles.lote1Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -6314,6 +6387,22 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string lote1 {
+                get {
+                    try {
+                        return ((string)(this[this.tabletarimas_obs.lote1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'lote1\' in table \'tarimas_obs\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletarimas_obs.lote1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tabletarimas_obs.idColumn);
             }
@@ -6502,6 +6591,18 @@ namespace LOSA.Calidad {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setcodigo_barraNull() {
                 this[this.tabletarimas_obs.codigo_barraColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Islote1Null() {
+                return this.IsNull(this.tabletarimas_obs.lote1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setlote1Null() {
+                this[this.tabletarimas_obs.lote1Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -6777,6 +6878,22 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string lote1 {
+                get {
+                    try {
+                        return ((string)(this[this.tabletarimas_ret.lote1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'lote1\' in table \'tarimas_ret\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletarimas_ret.lote1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tabletarimas_ret.idColumn);
             }
@@ -6965,6 +7082,18 @@ namespace LOSA.Calidad {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setcodigo_barraNull() {
                 this[this.tabletarimas_ret.codigo_barraColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Islote1Null() {
+                return this.IsNull(this.tabletarimas_ret.lote1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setlote1Null() {
+                this[this.tabletarimas_ret.lote1Column] = global::System.Convert.DBNull;
             }
         }
         
