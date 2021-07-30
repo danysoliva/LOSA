@@ -255,10 +255,10 @@
             this.btntarimasactivadasPT.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btntarimasactivadasPT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btntarimasactivadasPT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btntarimasactivadasPT.ImageOptions.Image")));
-            this.btntarimasactivadasPT.Location = new System.Drawing.Point(426, 341);
-            this.btntarimasactivadasPT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btntarimasactivadasPT.Location = new System.Drawing.Point(420, 341);
+            this.btntarimasactivadasPT.Margin = new System.Windows.Forms.Padding(2);
             this.btntarimasactivadasPT.Name = "btntarimasactivadasPT";
-            this.btntarimasactivadasPT.Size = new System.Drawing.Size(151, 32);
+            this.btntarimasactivadasPT.Size = new System.Drawing.Size(200, 42);
             this.btntarimasactivadasPT.TabIndex = 37;
             this.btntarimasactivadasPT.Text = " Ingreso PT";
             this.btntarimasactivadasPT.Click += new System.EventHandler(this.btntarimasactivadasPT_Click);
@@ -287,7 +287,7 @@
             this.btnTransferencia.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnTransferencia.ImageOptions.Image = global::LOSA.Properties.Resources.logout;
             this.btnTransferencia.Location = new System.Drawing.Point(213, 297);
-            this.btnTransferencia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTransferencia.Margin = new System.Windows.Forms.Padding(4);
             this.btnTransferencia.Name = "btnTransferencia";
             this.btnTransferencia.Size = new System.Drawing.Size(202, 40);
             this.btnTransferencia.TabIndex = 36;

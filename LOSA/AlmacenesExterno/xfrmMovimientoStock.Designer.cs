@@ -270,9 +270,7 @@
             // 
             this.ceSeleccionar.AutoHeight = false;
             this.ceSeleccionar.Name = "ceSeleccionar";
-            //this.ceSeleccionar.CheckedChanged += new System.EventHandler(this.ceSeleccionar_CheckedChanged);
             this.ceSeleccionar.CheckStateChanged += new System.EventHandler(this.ceSeleccionar_CheckStateChanged);
-            //this.ceSeleccionar.EditValueChanged += new System.EventHandler(this.ceSeleccionar_EditValueChanged);
             // 
             // btnBuscarProd
             // 

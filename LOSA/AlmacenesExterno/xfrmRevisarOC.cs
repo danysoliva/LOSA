@@ -26,6 +26,53 @@ namespace LOSA.AlmacenesExterno
         {
             InitializeComponent();
             UsuarioLogueado = pUser;
+            ObtenerBodegas();
+            LoadPresentaciones();
+        }
+
+        private void LoadPresentaciones()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_presentaciones_activas_v2", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                dsAlmacenesExternos.presentacion.Clear();
+                adat.Fill(dsAlmacenesExternos.presentacion);
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
+        private void ObtenerBodegas()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+
+                using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringLOSA))
+                {
+                    cnx.Open();
+
+                    dsAlmacenesExternos.Warehouse.Clear();
+                    SqlDataAdapter da = new SqlDataAdapter("sp_get_almacenes_externos_bodegas", cnx);
+                    da.Fill(dsAlmacenesExternos.Warehouse);
+
+
+                    cnx.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+
         }
 
         private void btnOC_EditValueChanged(object sender, EventArgs e)
@@ -117,13 +164,14 @@ namespace LOSA.AlmacenesExterno
                         lista.Add(new Conf_MP_Ingresada
                         {
                             ItemCode = element.ItemCode,
-                            CantIngresada = element.CantidadIngresar
-                            ,
+                            CantIngresada = element.CantidadIngresar,
                             Descripcion = element.Dscription,
                             UnidadesIngresadas = element.UnidadesIngresar,
                             LineNum = element.LineNum,
-                            MPID = element.id_mp
-                        });
+                            MPID = element.id_mp,
+                            bodega = element.bodega,
+                            id_presentacion = element.id_presentacion
+                        }) ;
 
                     }
                 }

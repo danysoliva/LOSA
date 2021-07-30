@@ -83,6 +83,7 @@
             this.colid_tipotm = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTurno = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcodigo_barra = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collote1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnEditar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.gridObservacion = new DevExpress.XtraGrid.GridControl();
@@ -104,6 +105,7 @@
             this.colid_tipotm1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTurno1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcodigo_barra1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collote11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
             this.gridRetenidos = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -124,6 +126,7 @@
             this.colid_tipotm2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTurno2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcodigo_barra2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collote12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
@@ -144,9 +147,6 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.collote1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.collote11 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.collote12 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.TabControl1)).BeginInit();
             this.TabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
@@ -418,6 +418,15 @@
             this.colcodigo_barra.Name = "colcodigo_barra";
             this.colcodigo_barra.OptionsColumn.AllowEdit = false;
             // 
+            // collote1
+            // 
+            this.collote1.Caption = "Lote";
+            this.collote1.FieldName = "lote1";
+            this.collote1.Name = "collote1";
+            this.collote1.OptionsColumn.AllowEdit = false;
+            this.collote1.Visible = true;
+            this.collote1.VisibleIndex = 4;
+            // 
             // btnEditar
             // 
             this.btnEditar.AutoHeight = false;
@@ -662,6 +671,15 @@
             this.colcodigo_barra1.Name = "colcodigo_barra1";
             this.colcodigo_barra1.OptionsColumn.AllowEdit = false;
             // 
+            // collote11
+            // 
+            this.collote11.Caption = "Lote";
+            this.collote11.FieldName = "lote1";
+            this.collote11.Name = "collote11";
+            this.collote11.OptionsColumn.AllowEdit = false;
+            this.collote11.Visible = true;
+            this.collote11.VisibleIndex = 9;
+            // 
             // xtraTabPage3
             // 
             this.xtraTabPage3.Controls.Add(this.gridRetenidos);
@@ -893,6 +911,15 @@
             this.colcodigo_barra2.Name = "colcodigo_barra2";
             this.colcodigo_barra2.OptionsColumn.AllowEdit = false;
             // 
+            // collote12
+            // 
+            this.collote12.Caption = "Lote";
+            this.collote12.FieldName = "lote1";
+            this.collote12.Name = "collote12";
+            this.collote12.OptionsColumn.AllowEdit = false;
+            this.collote12.Visible = true;
+            this.collote12.VisibleIndex = 9;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -1085,33 +1112,6 @@
             this.colid.MinWidth = 15;
             this.colid.Name = "colid";
             this.colid.Width = 56;
-            // 
-            // collote1
-            // 
-            this.collote1.Caption = "Lote";
-            this.collote1.FieldName = "lote1";
-            this.collote1.Name = "collote1";
-            this.collote1.OptionsColumn.AllowEdit = false;
-            this.collote1.Visible = true;
-            this.collote1.VisibleIndex = 4;
-            // 
-            // collote11
-            // 
-            this.collote11.Caption = "Lote";
-            this.collote11.FieldName = "lote1";
-            this.collote11.Name = "collote11";
-            this.collote11.OptionsColumn.AllowEdit = false;
-            this.collote11.Visible = true;
-            this.collote11.VisibleIndex = 9;
-            // 
-            // collote12
-            // 
-            this.collote12.Caption = "Lote";
-            this.collote12.FieldName = "lote1";
-            this.collote12.Name = "collote12";
-            this.collote12.OptionsColumn.AllowEdit = false;
-            this.collote12.Visible = true;
-            this.collote12.VisibleIndex = 9;
             // 
             // frmLotesStatus
             // 
