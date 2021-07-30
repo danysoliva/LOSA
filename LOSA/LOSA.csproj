@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>168</ApplicationRevision>
+    <ApplicationRevision>170</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -1123,6 +1123,12 @@
     <Compile Include="Reportes\frmreporteUbicacion.Designer.cs">
       <DependentUpon>frmreporteUbicacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\frmRequisicionesManualesReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmRequisicionesManualesReporte.Designer.cs">
+      <DependentUpon>frmRequisicionesManualesReporte.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\frmrpt_lote_mp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1957,6 +1963,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmreporteUbicacion.resx">
       <DependentUpon>frmreporteUbicacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmRequisicionesManualesReporte.resx">
+      <DependentUpon>frmRequisicionesManualesReporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmrpt_lote_mp.resx">
       <DependentUpon>frmrpt_lote_mp.cs</DependentUpon>
