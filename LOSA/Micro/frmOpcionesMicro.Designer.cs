@@ -167,9 +167,11 @@ namespace LOSA.Micro
             // 
             // gridView1
             // 
-            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.FocusedRow.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.gridView1.Appearance.FocusedRow.Options.UseFont = true;
+            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridView1.Appearance.Row.Options.UseFont = true;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colunidades,
@@ -184,6 +186,7 @@ namespace LOSA.Micro
             this.colpv});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowAutoFilterRow = true;
             // 
             // colunidades
             // 
@@ -195,7 +198,7 @@ namespace LOSA.Micro
             this.colunidades.OptionsColumn.AllowEdit = false;
             this.colunidades.Visible = true;
             this.colunidades.VisibleIndex = 0;
-            this.colunidades.Width = 66;
+            this.colunidades.Width = 92;
             // 
             // colpeso_kg
             // 
@@ -205,7 +208,7 @@ namespace LOSA.Micro
             this.colpeso_kg.OptionsColumn.AllowEdit = false;
             this.colpeso_kg.Visible = true;
             this.colpeso_kg.VisibleIndex = 1;
-            this.colpeso_kg.Width = 70;
+            this.colpeso_kg.Width = 84;
             // 
             // colid_materia_prima
             // 
@@ -221,7 +224,7 @@ namespace LOSA.Micro
             this.colnombre_comercial.OptionsColumn.AllowEdit = false;
             this.colnombre_comercial.Visible = true;
             this.colnombre_comercial.VisibleIndex = 3;
-            this.colnombre_comercial.Width = 232;
+            this.colnombre_comercial.Width = 282;
             // 
             // collote_materia_prima
             // 
@@ -231,7 +234,7 @@ namespace LOSA.Micro
             this.collote_materia_prima.Name = "collote_materia_prima";
             this.collote_materia_prima.Visible = true;
             this.collote_materia_prima.VisibleIndex = 4;
-            this.collote_materia_prima.Width = 119;
+            this.collote_materia_prima.Width = 145;
             // 
             // btnNavegacionLote
             // 
@@ -252,7 +255,7 @@ namespace LOSA.Micro
             this.colnumero_ingreso.OptionsColumn.AllowEdit = false;
             this.colnumero_ingreso.Visible = true;
             this.colnumero_ingreso.VisibleIndex = 5;
-            this.colnumero_ingreso.Width = 88;
+            this.colnumero_ingreso.Width = 106;
             // 
             // colfecha_entrega
             // 
@@ -262,8 +265,6 @@ namespace LOSA.Micro
             this.colfecha_entrega.FieldName = "fecha_entrega";
             this.colfecha_entrega.Name = "colfecha_entrega";
             this.colfecha_entrega.OptionsColumn.AllowEdit = false;
-            this.colfecha_entrega.Visible = true;
-            this.colfecha_entrega.VisibleIndex = 6;
             this.colfecha_entrega.Width = 109;
             // 
             // colcode_sap
@@ -274,7 +275,7 @@ namespace LOSA.Micro
             this.colcode_sap.OptionsColumn.AllowEdit = false;
             this.colcode_sap.Visible = true;
             this.colcode_sap.VisibleIndex = 2;
-            this.colcode_sap.Width = 86;
+            this.colcode_sap.Width = 104;
             // 
             // colfechav
             // 
@@ -283,8 +284,6 @@ namespace LOSA.Micro
             this.colfechav.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colfechav.FieldName = "fechav";
             this.colfechav.Name = "colfechav";
-            this.colfechav.Visible = true;
-            this.colfechav.VisibleIndex = 7;
             this.colfechav.Width = 79;
             // 
             // colpv
@@ -293,8 +292,8 @@ namespace LOSA.Micro
             this.colpv.FieldName = "pv";
             this.colpv.Name = "colpv";
             this.colpv.Visible = true;
-            this.colpv.VisibleIndex = 8;
-            this.colpv.Width = 134;
+            this.colpv.VisibleIndex = 6;
+            this.colpv.Width = 170;
             // 
             // TabReporte
             // 
@@ -615,6 +614,7 @@ namespace LOSA.Micro
             this.TabSearchCodigo.Controls.Add(this.gridControl4);
             this.TabSearchCodigo.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("TabSearchCodigo.ImageOptions.SvgImage")));
             this.TabSearchCodigo.Name = "TabSearchCodigo";
+            this.TabSearchCodigo.PageVisible = false;
             this.TabSearchCodigo.Size = new System.Drawing.Size(1001, 542);
             this.TabSearchCodigo.Text = "Consultar Código";
             // 
@@ -793,7 +793,9 @@ namespace LOSA.Micro
             this.ClientSize = new System.Drawing.Size(1005, 599);
             this.Controls.Add(this.tabOpciones);
             this.Name = "frmOpcionesMicro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Micro Ingredientes";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).EndInit();
             this.tabOpciones.ResumeLayout(false);
             this.TabLotes.ResumeLayout(false);

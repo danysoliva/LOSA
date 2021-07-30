@@ -39,7 +39,7 @@ namespace LOSA.Micro
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_lotes_micro_ingredientes", con);
+                SqlCommand cmd = new SqlCommand("sp_get_lotes_micro_ingredientes_V2", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 //cmd.Parameters.AddWithValue("@idbodega", idBodega);
                 dsMicro1.lotes.Clear();

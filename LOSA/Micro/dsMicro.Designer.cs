@@ -1933,6 +1933,18 @@ namespace LOSA.Micro {
             
             private global::System.Data.DataColumn columnseleccion;
             
+            private global::System.Data.DataColumn columncant_restante;
+            
+            private global::System.Data.DataColumn columncant_seleccionada;
+            
+            private global::System.Data.DataColumn columnunidades_seleccionadas;
+            
+            private global::System.Data.DataColumn columnunidades_restantes;
+            
+            private global::System.Data.DataColumn columnpresentacion_factor;
+            
+            private global::System.Data.DataColumn columnid_tarima;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public lotes_seleccionDataTable() {
@@ -2056,6 +2068,54 @@ namespace LOSA.Micro {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cant_restanteColumn {
+                get {
+                    return this.columncant_restante;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cant_seleccionadaColumn {
+                get {
+                    return this.columncant_seleccionada;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn unidades_seleccionadasColumn {
+                get {
+                    return this.columnunidades_seleccionadas;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn unidades_restantesColumn {
+                get {
+                    return this.columnunidades_restantes;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn presentacion_factorColumn {
+                get {
+                    return this.columnpresentacion_factor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_tarimaColumn {
+                get {
+                    return this.columnid_tarima;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2091,7 +2151,24 @@ namespace LOSA.Micro {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public lotes_seleccionRow Addlotes_seleccionRow(decimal unidades, decimal peso_kg, int id_materia_prima, string nombre_comercial, string lote_materia_prima, int numero_ingreso, System.DateTime fecha_entrega, string code_sap, System.DateTime fechav, string pv, bool seleccion) {
+            public lotes_seleccionRow Addlotes_seleccionRow(
+                        decimal unidades, 
+                        decimal peso_kg, 
+                        int id_materia_prima, 
+                        string nombre_comercial, 
+                        string lote_materia_prima, 
+                        int numero_ingreso, 
+                        System.DateTime fecha_entrega, 
+                        string code_sap, 
+                        System.DateTime fechav, 
+                        string pv, 
+                        bool seleccion, 
+                        decimal cant_restante, 
+                        decimal cant_seleccionada, 
+                        decimal unidades_seleccionadas, 
+                        decimal unidades_restantes, 
+                        decimal presentacion_factor, 
+                        int id_tarima) {
                 lotes_seleccionRow rowlotes_seleccionRow = ((lotes_seleccionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         unidades,
@@ -2104,7 +2181,13 @@ namespace LOSA.Micro {
                         code_sap,
                         fechav,
                         pv,
-                        seleccion};
+                        seleccion,
+                        cant_restante,
+                        cant_seleccionada,
+                        unidades_seleccionadas,
+                        unidades_restantes,
+                        presentacion_factor,
+                        id_tarima};
                 rowlotes_seleccionRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowlotes_seleccionRow);
                 return rowlotes_seleccionRow;
@@ -2138,6 +2221,12 @@ namespace LOSA.Micro {
                 this.columnfechav = base.Columns["fechav"];
                 this.columnpv = base.Columns["pv"];
                 this.columnseleccion = base.Columns["seleccion"];
+                this.columncant_restante = base.Columns["cant_restante"];
+                this.columncant_seleccionada = base.Columns["cant_seleccionada"];
+                this.columnunidades_seleccionadas = base.Columns["unidades_seleccionadas"];
+                this.columnunidades_restantes = base.Columns["unidades_restantes"];
+                this.columnpresentacion_factor = base.Columns["presentacion_factor"];
+                this.columnid_tarima = base.Columns["id_tarima"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2165,6 +2254,21 @@ namespace LOSA.Micro {
                 base.Columns.Add(this.columnpv);
                 this.columnseleccion = new global::System.Data.DataColumn("seleccion", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnseleccion);
+                this.columncant_restante = new global::System.Data.DataColumn("cant_restante", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncant_restante);
+                this.columncant_seleccionada = new global::System.Data.DataColumn("cant_seleccionada", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncant_seleccionada);
+                this.columnunidades_seleccionadas = new global::System.Data.DataColumn("unidades_seleccionadas", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnunidades_seleccionadas);
+                this.columnunidades_restantes = new global::System.Data.DataColumn("unidades_restantes", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnunidades_restantes);
+                this.columnpresentacion_factor = new global::System.Data.DataColumn("presentacion_factor", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpresentacion_factor);
+                this.columnid_tarima = new global::System.Data.DataColumn("id_tarima", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_tarima);
+                this.columnseleccion.DefaultValue = ((bool)(false));
+                this.columncant_seleccionada.DefaultValue = ((decimal)(0m));
+                this.columnunidades_seleccionadas.DefaultValue = ((decimal)(0m));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3649,15 +3753,111 @@ namespace LOSA.Micro {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool seleccion {
                 get {
-                    try {
-                        return ((bool)(this[this.tablelotes_seleccion.seleccionColumn]));
+                    if (this.IsseleccionNull()) {
+                        return false;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'seleccion\' in table \'lotes_seleccion\' is DBNull.", e);
+                    else {
+                        return ((bool)(this[this.tablelotes_seleccion.seleccionColumn]));
                     }
                 }
                 set {
                     this[this.tablelotes_seleccion.seleccionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal cant_restante {
+                get {
+                    if (this.Iscant_restanteNull()) {
+                        return 0m;
+                    }
+                    else {
+                        return ((decimal)(this[this.tablelotes_seleccion.cant_restanteColumn]));
+                    }
+                }
+                set {
+                    this[this.tablelotes_seleccion.cant_restanteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal cant_seleccionada {
+                get {
+                    if (this.Iscant_seleccionadaNull()) {
+                        return 0m;
+                    }
+                    else {
+                        return ((decimal)(this[this.tablelotes_seleccion.cant_seleccionadaColumn]));
+                    }
+                }
+                set {
+                    this[this.tablelotes_seleccion.cant_seleccionadaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal unidades_seleccionadas {
+                get {
+                    if (this.Isunidades_seleccionadasNull()) {
+                        return 0m;
+                    }
+                    else {
+                        return ((decimal)(this[this.tablelotes_seleccion.unidades_seleccionadasColumn]));
+                    }
+                }
+                set {
+                    this[this.tablelotes_seleccion.unidades_seleccionadasColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal unidades_restantes {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablelotes_seleccion.unidades_restantesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'unidades_restantes\' in table \'lotes_seleccion\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablelotes_seleccion.unidades_restantesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal presentacion_factor {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablelotes_seleccion.presentacion_factorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'presentacion_factor\' in table \'lotes_seleccion\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablelotes_seleccion.presentacion_factorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_tarima {
+                get {
+                    if (this.Isid_tarimaNull()) {
+                        return 0;
+                    }
+                    else {
+                        return ((int)(this[this.tablelotes_seleccion.id_tarimaColumn]));
+                    }
+                }
+                set {
+                    this[this.tablelotes_seleccion.id_tarimaColumn] = value;
                 }
             }
             
@@ -3791,6 +3991,78 @@ namespace LOSA.Micro {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetseleccionNull() {
                 this[this.tablelotes_seleccion.seleccionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscant_restanteNull() {
+                return this.IsNull(this.tablelotes_seleccion.cant_restanteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcant_restanteNull() {
+                this[this.tablelotes_seleccion.cant_restanteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscant_seleccionadaNull() {
+                return this.IsNull(this.tablelotes_seleccion.cant_seleccionadaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcant_seleccionadaNull() {
+                this[this.tablelotes_seleccion.cant_seleccionadaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isunidades_seleccionadasNull() {
+                return this.IsNull(this.tablelotes_seleccion.unidades_seleccionadasColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setunidades_seleccionadasNull() {
+                this[this.tablelotes_seleccion.unidades_seleccionadasColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isunidades_restantesNull() {
+                return this.IsNull(this.tablelotes_seleccion.unidades_restantesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setunidades_restantesNull() {
+                this[this.tablelotes_seleccion.unidades_restantesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Ispresentacion_factorNull() {
+                return this.IsNull(this.tablelotes_seleccion.presentacion_factorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setpresentacion_factorNull() {
+                this[this.tablelotes_seleccion.presentacion_factorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_tarimaNull() {
+                return this.IsNull(this.tablelotes_seleccion.id_tarimaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_tarimaNull() {
+                this[this.tablelotes_seleccion.id_tarimaColumn] = global::System.Convert.DBNull;
             }
         }
         
