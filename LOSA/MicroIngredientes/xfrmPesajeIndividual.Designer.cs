@@ -29,10 +29,11 @@ namespace LOSA.MicroIngredientes
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmPesajeIndividual));
             this.cmdClose = new DevExpress.XtraEditors.SimpleButton();
             this.lueBascula = new DevExpress.XtraEditors.LookUpEdit();
+            this.pesajeBasculaBindingSource = new System.Windows.Forms.BindingSource();
+            this.dsMicros = new LOSA.MicroIngredientes.dsMicros();
             this.label1 = new System.Windows.Forms.Label();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdSum10 = new DevExpress.XtraEditors.SimpleButton();
@@ -42,16 +43,14 @@ namespace LOSA.MicroIngredientes
             this.seBatch = new DevExpress.XtraEditors.SpinEdit();
             this.lblMensaje = new DevExpress.XtraEditors.LabelControl();
             this.btnGenerar = new DevExpress.XtraEditors.SimpleButton();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new System.Windows.Forms.Timer();
             this.progressBarControl1 = new DevExpress.XtraEditors.ProgressBarControl();
-            this.pesajeBasculaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsMicros = new LOSA.MicroIngredientes.dsMicros();
             this.lblValorbascula = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.lueBascula.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.seBatch.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pesajeBasculaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMicros)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.seBatch.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdClose
@@ -89,6 +88,16 @@ namespace LOSA.MicroIngredientes
             this.lueBascula.Properties.ValueMember = "id_bascula";
             this.lueBascula.Size = new System.Drawing.Size(173, 30);
             this.lueBascula.TabIndex = 8;
+            // 
+            // pesajeBasculaBindingSource
+            // 
+            this.pesajeBasculaBindingSource.DataMember = "Pesaje_Bascula";
+            this.pesajeBasculaBindingSource.DataSource = this.dsMicros;
+            // 
+            // dsMicros
+            // 
+            this.dsMicros.DataSetName = "dsMicros";
+            this.dsMicros.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -229,16 +238,6 @@ namespace LOSA.MicroIngredientes
             this.progressBarControl1.Size = new System.Drawing.Size(631, 18);
             this.progressBarControl1.TabIndex = 18;
             // 
-            // pesajeBasculaBindingSource
-            // 
-            this.pesajeBasculaBindingSource.DataMember = "Pesaje_Bascula";
-            this.pesajeBasculaBindingSource.DataSource = this.dsMicros;
-            // 
-            // dsMicros
-            // 
-            this.dsMicros.DataSetName = "dsMicros";
-            this.dsMicros.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // lblValorbascula
             // 
             this.lblValorbascula.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -250,7 +249,7 @@ namespace LOSA.MicroIngredientes
             this.lblValorbascula.Name = "lblValorbascula";
             this.lblValorbascula.Size = new System.Drawing.Size(631, 19);
             this.lblValorbascula.TabIndex = 19;
-            this.lblValorbascula.Text = "Valor Bascula";
+            this.lblValorbascula.Text = "Valor en Báscula: 0.00 Kg";
             // 
             // xfrmPesajeIndividual
             // 
@@ -276,10 +275,10 @@ namespace LOSA.MicroIngredientes
             this.Text = "xfrmSelectBascula";
             this.Load += new System.EventHandler(this.xfrmPesajeIndividual_Load);
             ((System.ComponentModel.ISupportInitialize)(this.lueBascula.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.seBatch.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pesajeBasculaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMicros)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.seBatch.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

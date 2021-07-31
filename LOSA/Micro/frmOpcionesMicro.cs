@@ -100,10 +100,10 @@ namespace LOSA.Micro
             var gridView = (GridView)gridControl2.FocusedView;
             var row = (dsMicro.sacoshRow)gridView.GetFocusedDataRow();
 
-            LoadDetalle(row.id, row.id_code);
+            LoadDetalle(row.id);
         }
 
-        private void LoadDetalle(int pIdh, int pCode)
+        private void LoadDetalle(int pIdh)
         {
             //
             try
@@ -112,13 +112,12 @@ namespace LOSA.Micro
                 SqlConnection con = new SqlConnection(dp.ConnectionStringAPMS);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_detalle_sacos_micros_rm", con);
+                SqlCommand cmd = new SqlCommand("sp_get_detalle_sacos_micros_rm_V2", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@idh", pIdh);
-                cmd.Parameters.AddWithValue("@idcode", pCode);
-                dsMicro1.sacosd.Clear();
+                dsMicro1.sacos_detail.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                adat.Fill(dsMicro1.sacosd);
+                adat.Fill(dsMicro1.sacos_detail);
 
                 con.Close();
             }
@@ -164,6 +163,11 @@ namespace LOSA.Micro
         private void cmdBuscar_Click(object sender, EventArgs e)
         {
             LoadDetalleSearch(Convert.ToInt32(spinCodigo.EditValue));
+        }
+
+        private void cmdClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

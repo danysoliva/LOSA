@@ -124,11 +124,14 @@ namespace LOSA.MicroIngredientes
             
         }
 
+        int ami_id=0;
         private void gvDetalle_RowClick(object sender, RowClickEventArgs e)
         {
             //Cargar el detalle
             var gridView = (GridView)gcDetalle.FocusedView;
             var row = (dsMicros.plan_microshRow)gridView.GetFocusedDataRow();
+
+            ami_id = row.AMI_ID;
 
             if (row!=null)
             {
@@ -139,6 +142,8 @@ namespace LOSA.MicroIngredientes
             {
                 DataOperations dp = new DataOperations();
                 using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
+
+
                 {
                     cnx.Open();
                     dsMicros.plan_microsd.Clear();
@@ -175,7 +180,17 @@ namespace LOSA.MicroIngredientes
             }
             //Pesar
 
-            frmSelectLotePesaje frm = new frmSelectLotePesaje(row.id_rm, row.total,id_orden,row.cant_batch, row.set_point,row.id_orden_pesaje_manual_plan);
+            PesajeManualInfo pesajeManualInfo = new PesajeManualInfo();
+
+            pesajeManualInfo.MateriaPrimaID = row.id_rm;
+            pesajeManualInfo.Total = row.total;
+            pesajeManualInfo.OrdenID = id_orden;
+            pesajeManualInfo.CantBatch = row.cant_batch;
+            pesajeManualInfo.DetallePesajeManualPlanID=row.id_orden_pesaje_manual_plan;
+            pesajeManualInfo.BatchPlan = row.cant_batch;
+            pesajeManualInfo.AMI_ID = ami_id;
+
+        frmSelectLotePesaje frm = new frmSelectLotePesaje(pesajeManualInfo);
             //frm.MdiParent = this.MdiParent;
 
             if (frm.ShowDialog()== DialogResult.OK)
@@ -221,6 +236,7 @@ namespace LOSA.MicroIngredientes
                     pesajeIndividual.MateriaPrimaID = row.id_rm;
                     pesajeIndividual.Total = row.Total;
                     pesajeIndividual.PesoPorBatch = row.Peso_por_Batch;
+                    //pesajeIndividual.AMI_ID = ami_id;
 
 
                     xfrmPesajeIndividual frm = new xfrmPesajeIndividual(pesajeIndividual);

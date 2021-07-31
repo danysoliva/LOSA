@@ -192,11 +192,13 @@ namespace LOSA.MicroIngredientes
                         cmd3.Parameters.Add("@date", SqlDbType.DateTime).Value = DateTime.Now;
                         cmd3.Parameters.Add("@batch_real", SqlDbType.Decimal).Value = peso_bascula*Convert.ToDecimal( seBatch.EditValue);
                         cmd3.Parameters.Add("@id_rm", SqlDbType.Int).Value = pesajeIndividual.MateriaPrimaID;// IdMP;
-                        cmd3.Parameters.Add("@bascula", SqlDbType.VarChar).Value = "";
+                        cmd3.Parameters.Add("@bascula", SqlDbType.VarChar).Value = lueBascula.Text;
                         cmd3.Parameters.Add("@id_tipo_pesaje", SqlDbType.Int).Value = 2;
-                        cmd3.Parameters.Add("@lote", SqlDbType.VarChar).Value = DBNull.Value;
+                        cmd3.Parameters.Add("@lote", SqlDbType.VarChar).Value = "";
                         cmd3.Parameters.Add("@id_tarima", SqlDbType.VarChar).Value = DBNull.Value;
-                        cmd3.Parameters.Add("@cant_batch", SqlDbType.VarChar).Value = seBatch.EditValue;
+                        cmd3.Parameters.Add("@cant_batch", SqlDbType.Int).Value = seBatch.EditValue;
+                        cmd3.Parameters.Add("@cant_sacos", SqlDbType.Int).Value = DBNull.Value;
+                        cmd3.Parameters.Add("@ami_id", SqlDbType.Int).Value = DBNull.Value;
                         cmd3.Parameters.Add("@id_pesaje_manual_plan", SqlDbType.Int).Value = DBNull.Value;
                            
                         cmd3.ExecuteNonQuery();

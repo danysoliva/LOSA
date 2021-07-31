@@ -2,6 +2,7 @@
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using LOSA.Micro;
+using LOSA.MicroIngredientes.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +21,7 @@ namespace LOSA.MicroIngredientes
         int IdMP = 0;
         decimal total = 0;
         int id_orden;
-        decimal cant_batch=0;
+        int cant_batch=0;
         decimal cantidadDisponible = 0;
         decimal unidadesDisponibles=0;
         decimal totalUnidades = 0;
@@ -28,25 +29,29 @@ namespace LOSA.MicroIngredientes
         string lote;
         int id_d;
 
-        public frmSelectLotePesaje(int pIdmp, decimal pTotal, int pId_orden,decimal pCant_batch,decimal pKgxBatch, int pId_detalle_pesaje_manual_plan)
+        PesajeManualInfo pesajeInfo = new PesajeManualInfo();
+
+        //public frmSelectLotePesaje(int pIdmp, decimal pTotal, int pId_orden,decimal pCant_batch,decimal pKgxBatch, int pId_detalle_pesaje_manual_plan)
+        public frmSelectLotePesaje(PesajeManualInfo pesajeManualInfo)
         {
             InitializeComponent();
-            IdMP = pIdmp;
-            total = pTotal;
-            id_orden = pId_orden;
-            cant_batch = pCant_batch;
+            pesajeInfo = pesajeManualInfo;
+            IdMP = pesajeManualInfo.MateriaPrimaID;
+            total = pesajeManualInfo.Total;
+            id_orden = pesajeManualInfo.OrdenID;
+            cant_batch = pesajeManualInfo.CantBatch;
 
             LoadLotes();
 
             lblPesoDisponible.Text = "Peso sin asignar: " + total.ToString("N2") + " Kg";
             //lblUnidades.Text = "Unidades sin asignar: " + pCant_batch.ToString("N2");
            
-            cantidadDisponible = pTotal;
+            cantidadDisponible = pesajeManualInfo.Total;
 
-            unidadesDisponibles = pCant_batch;
-            totalUnidades = pCant_batch;
-            kgxBatch = pKgxBatch;
-            id_d = pId_detalle_pesaje_manual_plan;
+            unidadesDisponibles = pesajeManualInfo.CantBatch;
+            totalUnidades = pesajeManualInfo.CantBatch;
+            //kgxBatch = pKgxBatch;
+            id_d = pesajeManualInfo.DetallePesajeManualPlanID;
         }
 
 
@@ -120,6 +125,7 @@ namespace LOSA.MicroIngredientes
 
                     lblPesoDisponible.Text = "Peso sin asignar: " + cantidadDisponible.ToString("N2") + " Kg";
                     lote = item.lote_materia_prima;
+                    colseleccion.OptionsColumn.AllowEdit = false;
                     //lblUnidades.Text = "Unidades sin asignar: " + unidadesDisponibles.ToString("N2");
                 }
                 else
@@ -138,7 +144,8 @@ namespace LOSA.MicroIngredientes
 
                     gvLotesSeleccionados.UpdateCurrentRow();
                     lblPesoDisponible.Text = "Peso sin asignar: " + cantidadDisponible.ToString("N2") + " Kg";
-                    //lblUnidades.Text = "Unidades sin asignar: " + unidadesDisponibles.ToString("N2");
+                    colseleccion.OptionsColumn.AllowEdit = true;
+
                 }
             }
         }
@@ -164,6 +171,12 @@ namespace LOSA.MicroIngredientes
                     return;
                 }
 
+                if (cantidadDisponible!=0)
+                {
+                    CajaDialogo.Error("HAY TODAVIA PESO POR ASIGNAR");
+                    return;
+                }
+
 
                 DataOperations dp = new DataOperations();
                 foreach (var item in dsMicro.lotes_seleccion)
@@ -182,13 +195,15 @@ namespace LOSA.MicroIngredientes
                             cmd.Parameters.Add("@batch_plan", SqlDbType.Int).Value = total;
                             cmd.Parameters.Add("@date", SqlDbType.DateTime).Value = DateTime.Now;
                             cmd.Parameters.Add("@batch_real", SqlDbType.Decimal).Value = item.cant_seleccionada;
-                            cmd.Parameters.Add("@id_rm", SqlDbType.Int).Value = item.id_materia_prima;// IdMP;
+                            cmd.Parameters.Add("@id_rm", SqlDbType.Int).Value = pesajeInfo.MateriaPrimaID;// IdMP;
                             cmd.Parameters.Add("@bascula", SqlDbType.VarChar).Value = "B1";
                             cmd.Parameters.Add("@id_tipo_pesaje", SqlDbType.Int).Value = 1;
                             cmd.Parameters.Add("@lote", SqlDbType.VarChar).Value = item.lote_materia_prima;
                             cmd.Parameters.Add("@id_tarima", SqlDbType.VarChar).Value = item.id_tarima;
-                            cmd.Parameters.Add("@cant_batch", SqlDbType.VarChar).Value = item.unidades_seleccionadas;
+                            cmd.Parameters.Add("@cant_batch", SqlDbType.Int).Value = cant_batch;
                             cmd.Parameters.Add("@id_pesaje_manual_plan", SqlDbType.Int).Value = id_d;
+                            cmd.Parameters.Add("@cant_sacos", SqlDbType.Decimal).Value = item.unidades_seleccionadas;
+                            cmd.Parameters.Add("@ami_id", SqlDbType.Int).Value = pesajeInfo.AMI_ID ;
 
                             cmd.ExecuteNonQuery();
 
