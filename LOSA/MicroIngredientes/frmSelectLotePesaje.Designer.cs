@@ -126,6 +126,7 @@ namespace LOSA.MicroIngredientes
             this.gridColumn6});
             this.gvLotesSeleccionados.GridControl = this.gcLotesSeleccionados;
             this.gvLotesSeleccionados.Name = "gvLotesSeleccionados";
+            this.gvLotesSeleccionados.OptionsView.ShowAutoFilterRow = true;
             this.gvLotesSeleccionados.OptionsView.ShowGroupPanel = false;
             // 
             // colunidades
