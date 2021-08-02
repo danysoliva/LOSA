@@ -37,6 +37,7 @@
             this.cmdPT = new DevExpress.XtraEditors.SimpleButton();
             this.cmdMP = new DevExpress.XtraEditors.SimpleButton();
             this.TabLogistica = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton13 = new DevExpress.XtraEditors.SimpleButton();
             this.btntarimasactivadasPT = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton14 = new DevExpress.XtraEditors.SimpleButton();
             this.btnTransferencia = new DevExpress.XtraEditors.SimpleButton();
@@ -80,12 +81,12 @@
             this.cmdTarimasPT = new DevExpress.XtraEditors.SimpleButton();
             this.btnAlimentacionManual = new DevExpress.XtraEditors.SimpleButton();
             this.txtProduccion = new DevExpress.XtraTab.XtraTabPage();
+            this.cmdReporteReqManuales = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton15 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.cmdReporteReqManuales = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton13 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton16 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -105,9 +106,9 @@
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.cmdHome.Location = new System.Drawing.Point(429, 8);
+            this.cmdHome.Location = new System.Drawing.Point(429, 32);
             this.cmdHome.Name = "cmdHome";
-            this.cmdHome.Size = new System.Drawing.Size(199, 71);
+            this.cmdHome.Size = new System.Drawing.Size(199, 54);
             this.cmdHome.TabIndex = 6;
             this.cmdHome.Text = "Cerrar";
             this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
@@ -249,6 +250,19 @@
             this.TabLogistica.PageVisible = false;
             this.TabLogistica.Size = new System.Drawing.Size(629, 422);
             this.TabLogistica.Text = "Logistica";
+            // 
+            // simpleButton13
+            // 
+            this.simpleButton13.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.simpleButton13.Appearance.Options.UseFont = true;
+            this.simpleButton13.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton13.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton13.ImageOptions.Image")));
+            this.simpleButton13.Location = new System.Drawing.Point(213, 341);
+            this.simpleButton13.Name = "simpleButton13";
+            this.simpleButton13.Size = new System.Drawing.Size(199, 43);
+            this.simpleButton13.TabIndex = 38;
+            this.simpleButton13.Text = "Reporte Requisiciones \r\nManuales";
+            this.simpleButton13.Click += new System.EventHandler(this.simpleButton13_Click);
             // 
             // btntarimasactivadasPT
             // 
@@ -567,6 +581,7 @@
             // 
             // TabCalidad
             // 
+            this.TabCalidad.Controls.Add(this.simpleButton16);
             this.TabCalidad.Controls.Add(this.simpleButton11);
             this.TabCalidad.Controls.Add(this.simpleButton9);
             this.TabCalidad.Controls.Add(this.simpleButton6);
@@ -834,6 +849,19 @@
             this.txtProduccion.Size = new System.Drawing.Size(629, 422);
             this.txtProduccion.Text = "Produccion";
             // 
+            // cmdReporteReqManuales
+            // 
+            this.cmdReporteReqManuales.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.cmdReporteReqManuales.Appearance.Options.UseFont = true;
+            this.cmdReporteReqManuales.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdReporteReqManuales.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdReporteReqManuales.ImageOptions.Image")));
+            this.cmdReporteReqManuales.Location = new System.Drawing.Point(26, 249);
+            this.cmdReporteReqManuales.Name = "cmdReporteReqManuales";
+            this.cmdReporteReqManuales.Size = new System.Drawing.Size(199, 69);
+            this.cmdReporteReqManuales.TabIndex = 20;
+            this.cmdReporteReqManuales.Text = "Reporte Requisiciones \r\nManuales";
+            this.cmdReporteReqManuales.Click += new System.EventHandler(this.cmdReporteReqManuales_Click);
+            // 
             // simpleButton15
             // 
             this.simpleButton15.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -890,31 +918,17 @@
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
             // 
-            // cmdReporteReqManuales
+            // simpleButton16
             // 
-            this.cmdReporteReqManuales.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-            this.cmdReporteReqManuales.Appearance.Options.UseFont = true;
-            this.cmdReporteReqManuales.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdReporteReqManuales.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton13.ImageOptions.Image1")));
-            this.cmdReporteReqManuales.Location = new System.Drawing.Point(26, 249);
-            this.cmdReporteReqManuales.Name = "cmdReporteReqManuales";
-            this.cmdReporteReqManuales.Size = new System.Drawing.Size(199, 69);
-            this.cmdReporteReqManuales.TabIndex = 20;
-            this.cmdReporteReqManuales.Text = "Reporte Requisiciones \r\nManuales";
-            this.cmdReporteReqManuales.Click += new System.EventHandler(this.cmdReporteReqManuales_Click);
-            // 
-            // simpleButton13
-            // 
-            this.simpleButton13.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-            this.simpleButton13.Appearance.Options.UseFont = true;
-            this.simpleButton13.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton13.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton13.ImageOptions.Image")));
-            this.simpleButton13.Location = new System.Drawing.Point(213, 341);
-            this.simpleButton13.Name = "simpleButton13";
-            this.simpleButton13.Size = new System.Drawing.Size(199, 43);
-            this.simpleButton13.TabIndex = 38;
-            this.simpleButton13.Text = "Reporte Requisiciones \r\nManuales";
-            this.simpleButton13.Click += new System.EventHandler(this.simpleButton13_Click);
+            this.simpleButton16.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton16.Appearance.Options.UseFont = true;
+            this.simpleButton16.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton16.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton16.ImageOptions.SvgImage")));
+            this.simpleButton16.Location = new System.Drawing.Point(224, 254);
+            this.simpleButton16.Name = "simpleButton16";
+            this.simpleButton16.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton16.TabIndex = 18;
+            this.simpleButton16.Text = "Reportes de \r\nTrazabilidad";
             // 
             // frmOpciones
             // 
@@ -922,9 +936,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(638, 560);
+            this.Controls.Add(this.cmdHome);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.tabOpciones);
-            this.Controls.Add(this.cmdHome);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmOpciones";
             this.Text = "frmOpciones";
@@ -999,5 +1013,6 @@
         private DevExpress.XtraEditors.SimpleButton btntarimasactivadasPT;
         private DevExpress.XtraEditors.SimpleButton cmdReporteReqManuales;
         private DevExpress.XtraEditors.SimpleButton simpleButton13;
+        private DevExpress.XtraEditors.SimpleButton simpleButton16;
     }
 }
