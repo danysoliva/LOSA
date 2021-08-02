@@ -1111,6 +1111,12 @@
     <Compile Include="Reportes\frmreport.Designer.cs">
       <DependentUpon>frmreport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\frmReporteIngreso_v2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmReporteIngreso_v2.Designer.cs">
+      <DependentUpon>frmReporteIngreso_v2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\frmreporteLotePT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1957,6 +1963,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmreport.resx">
       <DependentUpon>frmreport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmReporteIngreso_v2.resx">
+      <DependentUpon>frmReporteIngreso_v2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmreporteLotePT.resx">
       <DependentUpon>frmreporteLotePT.cs</DependentUpon>
