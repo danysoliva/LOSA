@@ -50,11 +50,11 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmMicroIngredientes));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmMicroIngredientes));
             this.gcMicros = new DevExpress.XtraGrid.GridControl();
             this.microsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsMicros = new LOSA.MicroIngredientes.dsMicros();
@@ -80,6 +80,8 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.cmdClose = new DevExpress.XtraEditors.SimpleButton();
             this.cmdUpdate = new DevExpress.XtraEditors.SimpleButton();
+            this.toggleSwitch1 = new DevExpress.XtraEditors.ToggleSwitch();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.gcMicros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.microsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMicros)).BeginInit();
@@ -89,6 +91,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnSuspender)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnFinalizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSpin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gcMicros
@@ -97,7 +100,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcMicros.DataSource = this.microsBindingSource;
-            this.gcMicros.Location = new System.Drawing.Point(1, 93);
+            this.gcMicros.Location = new System.Drawing.Point(8, 93);
             this.gcMicros.MainView = this.gvMicros;
             this.gcMicros.Name = "gcMicros";
             this.gcMicros.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -106,7 +109,7 @@
             this.btnSuspender,
             this.btnFinalizar,
             this.btnSpin});
-            this.gcMicros.Size = new System.Drawing.Size(1122, 401);
+            this.gcMicros.Size = new System.Drawing.Size(1102, 388);
             this.gcMicros.TabIndex = 0;
             this.gcMicros.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvMicros});
@@ -144,6 +147,7 @@
             this.gvMicros.GridControl = this.gcMicros;
             this.gvMicros.Name = "gvMicros";
             this.gvMicros.OptionsView.ShowGroupPanel = false;
+            this.gvMicros.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.gvMicros_RowStyle);
             // 
             // colid
             // 
@@ -200,6 +204,7 @@
             // 
             // colestado
             // 
+            this.colestado.Caption = "Estado";
             this.colestado.FieldName = "estado";
             this.colestado.Name = "colestado";
             this.colestado.OptionsColumn.AllowEdit = false;
@@ -208,6 +213,7 @@
             // 
             // gridColumn4
             // 
+            this.gridColumn4.Caption = "Ver Detalle";
             this.gridColumn4.ColumnEdit = this.btnDetalle;
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
@@ -295,7 +301,7 @@
             // btnSpin
             // 
             this.btnSpin.AutoHeight = false;
-            editorButtonImageOptions5.Image = global::LOSA.Properties.Resources.exchange;
+            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
             this.btnSpin.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnSpin.Name = "btnSpin";
@@ -305,14 +311,14 @@
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseTextOptions = true;
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(0, 56);
+            this.labelControl1.Location = new System.Drawing.Point(1, 48);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(1122, 21);
+            this.labelControl1.Size = new System.Drawing.Size(1122, 37);
             this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "Micro Ingredientes";
             // 
@@ -321,7 +327,7 @@
             this.cmdClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdClose.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
             this.cmdClose.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.cmdClose.Location = new System.Drawing.Point(1035, 48);
+            this.cmdClose.Location = new System.Drawing.Point(1035, 52);
             this.cmdClose.Name = "cmdClose";
             this.cmdClose.Size = new System.Drawing.Size(75, 39);
             this.cmdClose.TabIndex = 2;
@@ -332,17 +338,41 @@
             this.cmdUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdUpdate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdUpdate.ImageOptions.Image")));
             this.cmdUpdate.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.cmdUpdate.Location = new System.Drawing.Point(964, 48);
+            this.cmdUpdate.Location = new System.Drawing.Point(964, 52);
             this.cmdUpdate.Name = "cmdUpdate";
             this.cmdUpdate.Size = new System.Drawing.Size(65, 39);
             this.cmdUpdate.TabIndex = 4;
             this.cmdUpdate.Click += new System.EventHandler(this.cmdUpdate_Click);
+            // 
+            // toggleSwitch1
+            // 
+            this.toggleSwitch1.Location = new System.Drawing.Point(119, 64);
+            this.toggleSwitch1.Name = "toggleSwitch1";
+            this.toggleSwitch1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toggleSwitch1.Properties.Appearance.Options.UseFont = true;
+            this.toggleSwitch1.Properties.OffText = "No";
+            this.toggleSwitch1.Properties.OnText = "Si";
+            this.toggleSwitch1.Size = new System.Drawing.Size(106, 26);
+            this.toggleSwitch1.TabIndex = 5;
+            this.toggleSwitch1.Toggled += new System.EventHandler(this.toggleSwitch1_Toggled);
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(10, 69);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(103, 16);
+            this.labelControl2.TabIndex = 6;
+            this.labelControl2.Text = "Ver Desactivadas:";
             // 
             // xfrmMicroIngredientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1122, 493);
+            this.Controls.Add(this.labelControl2);
+            this.Controls.Add(this.toggleSwitch1);
             this.Controls.Add(this.cmdUpdate);
             this.Controls.Add(this.cmdClose);
             this.Controls.Add(this.labelControl1);
@@ -363,7 +393,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnSuspender)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnFinalizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSpin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -394,5 +426,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraEditors.SimpleButton cmdClose;
         private DevExpress.XtraEditors.SimpleButton cmdUpdate;
+        private DevExpress.XtraEditors.ToggleSwitch toggleSwitch1;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
     }
 }

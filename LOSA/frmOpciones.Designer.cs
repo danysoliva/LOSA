@@ -84,6 +84,8 @@
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.cmdReporteReqManuales = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton13 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -218,6 +220,7 @@
             // 
             // TabLogistica
             // 
+            this.TabLogistica.Controls.Add(this.simpleButton13);
             this.TabLogistica.Controls.Add(this.btntarimasactivadasPT);
             this.TabLogistica.Controls.Add(this.simpleButton14);
             this.TabLogistica.Controls.Add(this.btnTransferencia);
@@ -255,10 +258,10 @@
             this.btntarimasactivadasPT.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btntarimasactivadasPT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btntarimasactivadasPT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btntarimasactivadasPT.ImageOptions.Image")));
-            this.btntarimasactivadasPT.Location = new System.Drawing.Point(420, 341);
+            this.btntarimasactivadasPT.Location = new System.Drawing.Point(419, 341);
             this.btntarimasactivadasPT.Margin = new System.Windows.Forms.Padding(2);
             this.btntarimasactivadasPT.Name = "btntarimasactivadasPT";
-            this.btntarimasactivadasPT.Size = new System.Drawing.Size(200, 42);
+            this.btntarimasactivadasPT.Size = new System.Drawing.Size(201, 43);
             this.btntarimasactivadasPT.TabIndex = 37;
             this.btntarimasactivadasPT.Text = " Ingreso PT";
             this.btntarimasactivadasPT.Click += new System.EventHandler(this.btntarimasactivadasPT_Click);
@@ -821,6 +824,7 @@
             // 
             // txtProduccion
             // 
+            this.txtProduccion.Controls.Add(this.cmdReporteReqManuales);
             this.txtProduccion.Controls.Add(this.simpleButton15);
             this.txtProduccion.Controls.Add(this.simpleButton12);
             this.txtProduccion.Controls.Add(this.btnRequisasManuales);
@@ -885,6 +889,32 @@
             this.labelControl3.Size = new System.Drawing.Size(372, 39);
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
+            // 
+            // cmdReporteReqManuales
+            // 
+            this.cmdReporteReqManuales.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.cmdReporteReqManuales.Appearance.Options.UseFont = true;
+            this.cmdReporteReqManuales.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdReporteReqManuales.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton13.ImageOptions.Image1")));
+            this.cmdReporteReqManuales.Location = new System.Drawing.Point(26, 249);
+            this.cmdReporteReqManuales.Name = "cmdReporteReqManuales";
+            this.cmdReporteReqManuales.Size = new System.Drawing.Size(199, 69);
+            this.cmdReporteReqManuales.TabIndex = 20;
+            this.cmdReporteReqManuales.Text = "Reporte Requisiciones \r\nManuales";
+            this.cmdReporteReqManuales.Click += new System.EventHandler(this.cmdReporteReqManuales_Click);
+            // 
+            // simpleButton13
+            // 
+            this.simpleButton13.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.simpleButton13.Appearance.Options.UseFont = true;
+            this.simpleButton13.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton13.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton13.ImageOptions.Image")));
+            this.simpleButton13.Location = new System.Drawing.Point(213, 341);
+            this.simpleButton13.Name = "simpleButton13";
+            this.simpleButton13.Size = new System.Drawing.Size(199, 43);
+            this.simpleButton13.TabIndex = 38;
+            this.simpleButton13.Text = "Reporte Requisiciones \r\nManuales";
+            this.simpleButton13.Click += new System.EventHandler(this.simpleButton13_Click);
             // 
             // frmOpciones
             // 
@@ -967,5 +997,7 @@
         private DevExpress.XtraEditors.SimpleButton btnTransferencia;
         private DevExpress.XtraEditors.SimpleButton simpleButton15;
         private DevExpress.XtraEditors.SimpleButton btntarimasactivadasPT;
+        private DevExpress.XtraEditors.SimpleButton cmdReporteReqManuales;
+        private DevExpress.XtraEditors.SimpleButton simpleButton13;
     }
 }

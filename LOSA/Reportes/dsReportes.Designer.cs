@@ -58,7 +58,7 @@ namespace LOSA.Reportes {
         
         private PruebaDetalle2DataTable tablePruebaDetalle2;
         
-        private rpt_ingresoDataTable tablerpt_ingreso;
+        private rpt_requisiciones_manualesDataTable tablerpt_requisiciones_manuales;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -139,8 +139,8 @@ namespace LOSA.Reportes {
                 if ((ds.Tables["PruebaDetalle2"] != null)) {
                     base.Tables.Add(new PruebaDetalle2DataTable(ds.Tables["PruebaDetalle2"]));
                 }
-                if ((ds.Tables["rpt_ingreso"] != null)) {
-                    base.Tables.Add(new rpt_ingresoDataTable(ds.Tables["rpt_ingreso"]));
+                if ((ds.Tables["rpt_requisiciones_manuales"] != null)) {
+                    base.Tables.Add(new rpt_requisiciones_manualesDataTable(ds.Tables["rpt_requisiciones_manuales"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -334,9 +334,9 @@ namespace LOSA.Reportes {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public rpt_ingresoDataTable rpt_ingreso {
+        public rpt_requisiciones_manualesDataTable rpt_requisiciones_manuales {
             get {
-                return this.tablerpt_ingreso;
+                return this.tablerpt_requisiciones_manuales;
             }
         }
         
@@ -458,8 +458,8 @@ namespace LOSA.Reportes {
                 if ((ds.Tables["PruebaDetalle2"] != null)) {
                     base.Tables.Add(new PruebaDetalle2DataTable(ds.Tables["PruebaDetalle2"]));
                 }
-                if ((ds.Tables["rpt_ingreso"] != null)) {
-                    base.Tables.Add(new rpt_ingresoDataTable(ds.Tables["rpt_ingreso"]));
+                if ((ds.Tables["rpt_requisiciones_manuales"] != null)) {
+                    base.Tables.Add(new rpt_requisiciones_manualesDataTable(ds.Tables["rpt_requisiciones_manuales"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -596,10 +596,10 @@ namespace LOSA.Reportes {
                     this.tablePruebaDetalle2.InitVars();
                 }
             }
-            this.tablerpt_ingreso = ((rpt_ingresoDataTable)(base.Tables["rpt_ingreso"]));
+            this.tablerpt_requisiciones_manuales = ((rpt_requisiciones_manualesDataTable)(base.Tables["rpt_requisiciones_manuales"]));
             if ((initTable == true)) {
-                if ((this.tablerpt_ingreso != null)) {
-                    this.tablerpt_ingreso.InitVars();
+                if ((this.tablerpt_requisiciones_manuales != null)) {
+                    this.tablerpt_requisiciones_manuales.InitVars();
                 }
             }
         }
@@ -646,8 +646,8 @@ namespace LOSA.Reportes {
             base.Tables.Add(this.tablePruebaDetalle1);
             this.tablePruebaDetalle2 = new PruebaDetalle2DataTable();
             base.Tables.Add(this.tablePruebaDetalle2);
-            this.tablerpt_ingreso = new rpt_ingresoDataTable();
-            base.Tables.Add(this.tablerpt_ingreso);
+            this.tablerpt_requisiciones_manuales = new rpt_requisiciones_manualesDataTable();
+            base.Tables.Add(this.tablerpt_requisiciones_manuales);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -754,7 +754,7 @@ namespace LOSA.Reportes {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializerpt_ingreso() {
+        private bool ShouldSerializerpt_requisiciones_manuales() {
             return false;
         }
         
@@ -865,7 +865,7 @@ namespace LOSA.Reportes {
         public delegate void PruebaDetalle2RowChangeEventHandler(object sender, PruebaDetalle2RowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void rpt_ingresoRowChangeEventHandler(object sender, rpt_ingresoRowChangeEvent e);
+        public delegate void rpt_requisiciones_manualesRowChangeEventHandler(object sender, rpt_requisiciones_manualesRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -6686,46 +6686,42 @@ namespace LOSA.Reportes {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class rpt_ingresoDataTable : global::System.Data.TypedTableBase<rpt_ingresoRow> {
+        public partial class rpt_requisiciones_manualesDataTable : global::System.Data.TypedTableBase<rpt_requisiciones_manualesRow> {
             
-            private global::System.Data.DataColumn columnN_Ingreso;
+            private global::System.Data.DataColumn columnid;
             
-            private global::System.Data.DataColumn columnCodigoP;
+            private global::System.Data.DataColumn columnid_usuario;
             
-            private global::System.Data.DataColumn columnProveedor;
+            private global::System.Data.DataColumn columnusuario_s;
             
-            private global::System.Data.DataColumn columnF_registro;
+            private global::System.Data.DataColumn columncantidad_solicitada;
             
-            private global::System.Data.DataColumn columnBoleta;
+            private global::System.Data.DataColumn columnid_materia_prima;
             
-            private global::System.Data.DataColumn columnplaca;
+            private global::System.Data.DataColumn columnmp;
             
-            private global::System.Data.DataColumn columnfurgon;
+            private global::System.Data.DataColumn columnid_orden;
             
-            private global::System.Data.DataColumn columnFactura;
+            private global::System.Data.DataColumn columnfecha_solicitada;
             
-            private global::System.Data.DataColumn columnPeso;
+            private global::System.Data.DataColumn columnfecha_a_producir;
             
-            private global::System.Data.DataColumn columnUnidades;
+            private global::System.Data.DataColumn columnid_estado;
             
-            private global::System.Data.DataColumn columnExistencia;
+            private global::System.Data.DataColumn columnestado_descripcion;
             
-            private global::System.Data.DataColumn columnlote;
+            private global::System.Data.DataColumn columnDocEntry;
             
-            private global::System.Data.DataColumn columnid_mp;
+            private global::System.Data.DataColumn columncomentario;
             
-            private global::System.Data.DataColumn columnMP;
+            private global::System.Data.DataColumn columnbarcode;
             
-            private global::System.Data.DataColumn columnCodigo;
-            
-            private global::System.Data.DataColumn columnF_Vencimiento;
-            
-            private global::System.Data.DataColumn columnantiguedad;
+            private global::System.Data.DataColumn columnid_requisa;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public rpt_ingresoDataTable() {
-                this.TableName = "rpt_ingreso";
+            public rpt_requisiciones_manualesDataTable() {
+                this.TableName = "rpt_requisiciones_manuales";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -6733,7 +6729,7 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal rpt_ingresoDataTable(global::System.Data.DataTable table) {
+            internal rpt_requisiciones_manualesDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -6750,144 +6746,128 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected rpt_ingresoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected rpt_requisiciones_manualesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn N_IngresoColumn {
+            public global::System.Data.DataColumn idColumn {
                 get {
-                    return this.columnN_Ingreso;
+                    return this.columnid;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CodigoPColumn {
+            public global::System.Data.DataColumn id_usuarioColumn {
                 get {
-                    return this.columnCodigoP;
+                    return this.columnid_usuario;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ProveedorColumn {
+            public global::System.Data.DataColumn usuario_sColumn {
                 get {
-                    return this.columnProveedor;
+                    return this.columnusuario_s;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn F_registroColumn {
+            public global::System.Data.DataColumn cantidad_solicitadaColumn {
                 get {
-                    return this.columnF_registro;
+                    return this.columncantidad_solicitada;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn BoletaColumn {
+            public global::System.Data.DataColumn id_materia_primaColumn {
                 get {
-                    return this.columnBoleta;
+                    return this.columnid_materia_prima;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn placaColumn {
+            public global::System.Data.DataColumn mpColumn {
                 get {
-                    return this.columnplaca;
+                    return this.columnmp;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn furgonColumn {
+            public global::System.Data.DataColumn id_ordenColumn {
                 get {
-                    return this.columnfurgon;
+                    return this.columnid_orden;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn FacturaColumn {
+            public global::System.Data.DataColumn fecha_solicitadaColumn {
                 get {
-                    return this.columnFactura;
+                    return this.columnfecha_solicitada;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn PesoColumn {
+            public global::System.Data.DataColumn fecha_a_producirColumn {
                 get {
-                    return this.columnPeso;
+                    return this.columnfecha_a_producir;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn UnidadesColumn {
+            public global::System.Data.DataColumn id_estadoColumn {
                 get {
-                    return this.columnUnidades;
+                    return this.columnid_estado;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ExistenciaColumn {
+            public global::System.Data.DataColumn estado_descripcionColumn {
                 get {
-                    return this.columnExistencia;
+                    return this.columnestado_descripcion;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn loteColumn {
+            public global::System.Data.DataColumn DocEntryColumn {
                 get {
-                    return this.columnlote;
+                    return this.columnDocEntry;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn id_mpColumn {
+            public global::System.Data.DataColumn comentarioColumn {
                 get {
-                    return this.columnid_mp;
+                    return this.columncomentario;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn MPColumn {
+            public global::System.Data.DataColumn barcodeColumn {
                 get {
-                    return this.columnMP;
+                    return this.columnbarcode;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CodigoColumn {
+            public global::System.Data.DataColumn id_requisaColumn {
                 get {
-                    return this.columnCodigo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn F_VencimientoColumn {
-                get {
-                    return this.columnF_Vencimiento;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn antiguedadColumn {
-                get {
-                    return this.columnantiguedad;
+                    return this.columnid_requisa;
                 }
             }
             
@@ -6902,78 +6882,59 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public rpt_ingresoRow this[int index] {
+            public rpt_requisiciones_manualesRow this[int index] {
                 get {
-                    return ((rpt_ingresoRow)(this.Rows[index]));
+                    return ((rpt_requisiciones_manualesRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event rpt_ingresoRowChangeEventHandler rpt_ingresoRowChanging;
+            public event rpt_requisiciones_manualesRowChangeEventHandler rpt_requisiciones_manualesRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event rpt_ingresoRowChangeEventHandler rpt_ingresoRowChanged;
+            public event rpt_requisiciones_manualesRowChangeEventHandler rpt_requisiciones_manualesRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event rpt_ingresoRowChangeEventHandler rpt_ingresoRowDeleting;
+            public event rpt_requisiciones_manualesRowChangeEventHandler rpt_requisiciones_manualesRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event rpt_ingresoRowChangeEventHandler rpt_ingresoRowDeleted;
+            public event rpt_requisiciones_manualesRowChangeEventHandler rpt_requisiciones_manualesRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Addrpt_ingresoRow(rpt_ingresoRow row) {
+            public void Addrpt_requisiciones_manualesRow(rpt_requisiciones_manualesRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public rpt_ingresoRow Addrpt_ingresoRow(
-                        int N_Ingreso, 
-                        string CodigoP, 
-                        string Proveedor, 
-                        System.DateTime F_registro, 
-                        string Boleta, 
-                        string placa, 
-                        string furgon, 
-                        string Factura, 
-                        decimal Peso, 
-                        int Unidades, 
-                        decimal Existencia, 
-                        string lote, 
-                        int id_mp, 
-                        string MP, 
-                        string Codigo, 
-                        System.DateTime F_Vencimiento, 
-                        string antiguedad) {
-                rpt_ingresoRow rowrpt_ingresoRow = ((rpt_ingresoRow)(this.NewRow()));
+            public rpt_requisiciones_manualesRow Addrpt_requisiciones_manualesRow(int id, int id_usuario, string usuario_s, decimal cantidad_solicitada, int id_materia_prima, string mp, int id_orden, System.DateTime fecha_solicitada, System.DateTime fecha_a_producir, int id_estado, string estado_descripcion, string DocEntry, string comentario, string barcode, int id_requisa) {
+                rpt_requisiciones_manualesRow rowrpt_requisiciones_manualesRow = ((rpt_requisiciones_manualesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        N_Ingreso,
-                        CodigoP,
-                        Proveedor,
-                        F_registro,
-                        Boleta,
-                        placa,
-                        furgon,
-                        Factura,
-                        Peso,
-                        Unidades,
-                        Existencia,
-                        lote,
-                        id_mp,
-                        MP,
-                        Codigo,
-                        F_Vencimiento,
-                        antiguedad};
-                rowrpt_ingresoRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowrpt_ingresoRow);
-                return rowrpt_ingresoRow;
+                        id,
+                        id_usuario,
+                        usuario_s,
+                        cantidad_solicitada,
+                        id_materia_prima,
+                        mp,
+                        id_orden,
+                        fecha_solicitada,
+                        fecha_a_producir,
+                        id_estado,
+                        estado_descripcion,
+                        DocEntry,
+                        comentario,
+                        barcode,
+                        id_requisa};
+                rowrpt_requisiciones_manualesRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowrpt_requisiciones_manualesRow);
+                return rowrpt_requisiciones_manualesRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                rpt_ingresoDataTable cln = ((rpt_ingresoDataTable)(base.Clone()));
+                rpt_requisiciones_manualesDataTable cln = ((rpt_requisiciones_manualesDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -6981,94 +6942,98 @@ namespace LOSA.Reportes {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new rpt_ingresoDataTable();
+                return new rpt_requisiciones_manualesDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnN_Ingreso = base.Columns["N_Ingreso"];
-                this.columnCodigoP = base.Columns["CodigoP"];
-                this.columnProveedor = base.Columns["Proveedor"];
-                this.columnF_registro = base.Columns["F_registro"];
-                this.columnBoleta = base.Columns["Boleta"];
-                this.columnplaca = base.Columns["placa"];
-                this.columnfurgon = base.Columns["furgon"];
-                this.columnFactura = base.Columns["Factura"];
-                this.columnPeso = base.Columns["Peso"];
-                this.columnUnidades = base.Columns["Unidades"];
-                this.columnExistencia = base.Columns["Existencia"];
-                this.columnlote = base.Columns["lote"];
-                this.columnid_mp = base.Columns["id_mp"];
-                this.columnMP = base.Columns["MP"];
-                this.columnCodigo = base.Columns["Codigo"];
-                this.columnF_Vencimiento = base.Columns["F_Vencimiento"];
-                this.columnantiguedad = base.Columns["antiguedad"];
+                this.columnid = base.Columns["id"];
+                this.columnid_usuario = base.Columns["id_usuario"];
+                this.columnusuario_s = base.Columns["usuario_s"];
+                this.columncantidad_solicitada = base.Columns["cantidad_solicitada"];
+                this.columnid_materia_prima = base.Columns["id_materia_prima"];
+                this.columnmp = base.Columns["mp"];
+                this.columnid_orden = base.Columns["id_orden"];
+                this.columnfecha_solicitada = base.Columns["fecha_solicitada"];
+                this.columnfecha_a_producir = base.Columns["fecha_a_producir"];
+                this.columnid_estado = base.Columns["id_estado"];
+                this.columnestado_descripcion = base.Columns["estado_descripcion"];
+                this.columnDocEntry = base.Columns["DocEntry"];
+                this.columncomentario = base.Columns["comentario"];
+                this.columnbarcode = base.Columns["barcode"];
+                this.columnid_requisa = base.Columns["id_requisa"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnN_Ingreso = new global::System.Data.DataColumn("N_Ingreso", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnN_Ingreso);
-                this.columnCodigoP = new global::System.Data.DataColumn("CodigoP", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCodigoP);
-                this.columnProveedor = new global::System.Data.DataColumn("Proveedor", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProveedor);
-                this.columnF_registro = new global::System.Data.DataColumn("F_registro", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnF_registro);
-                this.columnBoleta = new global::System.Data.DataColumn("Boleta", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBoleta);
-                this.columnplaca = new global::System.Data.DataColumn("placa", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnplaca);
-                this.columnfurgon = new global::System.Data.DataColumn("furgon", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfurgon);
-                this.columnFactura = new global::System.Data.DataColumn("Factura", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFactura);
-                this.columnPeso = new global::System.Data.DataColumn("Peso", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPeso);
-                this.columnUnidades = new global::System.Data.DataColumn("Unidades", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnUnidades);
-                this.columnExistencia = new global::System.Data.DataColumn("Existencia", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExistencia);
-                this.columnlote = new global::System.Data.DataColumn("lote", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnlote);
-                this.columnid_mp = new global::System.Data.DataColumn("id_mp", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid_mp);
-                this.columnMP = new global::System.Data.DataColumn("MP", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMP);
-                this.columnCodigo = new global::System.Data.DataColumn("Codigo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCodigo);
-                this.columnF_Vencimiento = new global::System.Data.DataColumn("F_Vencimiento", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnF_Vencimiento);
-                this.columnantiguedad = new global::System.Data.DataColumn("antiguedad", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnantiguedad);
+                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid);
+                this.columnid_usuario = new global::System.Data.DataColumn("id_usuario", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_usuario);
+                this.columnusuario_s = new global::System.Data.DataColumn("usuario_s", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnusuario_s);
+                this.columncantidad_solicitada = new global::System.Data.DataColumn("cantidad_solicitada", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncantidad_solicitada);
+                this.columnid_materia_prima = new global::System.Data.DataColumn("id_materia_prima", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_materia_prima);
+                this.columnmp = new global::System.Data.DataColumn("mp", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmp);
+                this.columnid_orden = new global::System.Data.DataColumn("id_orden", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_orden);
+                this.columnfecha_solicitada = new global::System.Data.DataColumn("fecha_solicitada", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_solicitada);
+                this.columnfecha_a_producir = new global::System.Data.DataColumn("fecha_a_producir", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_a_producir);
+                this.columnid_estado = new global::System.Data.DataColumn("id_estado", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_estado);
+                this.columnestado_descripcion = new global::System.Data.DataColumn("estado_descripcion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnestado_descripcion);
+                this.columnDocEntry = new global::System.Data.DataColumn("DocEntry", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDocEntry);
+                this.columncomentario = new global::System.Data.DataColumn("comentario", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncomentario);
+                this.columnbarcode = new global::System.Data.DataColumn("barcode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbarcode);
+                this.columnid_requisa = new global::System.Data.DataColumn("id_requisa", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_requisa);
+                this.columnid.Caption = "# Requisa Manual";
+                this.columnusuario_s.Caption = "Usuario Solicita";
+                this.columncantidad_solicitada.Caption = "Cantidad Solicitada";
+                this.columnmp.Caption = "Materia Prima";
+                this.columnfecha_solicitada.Caption = "Fecha Solicitada";
+                this.columnfecha_a_producir.Caption = "Fecha a Producir";
+                this.columnestado_descripcion.Caption = "Estado";
+                this.columncomentario.Caption = "Comentario";
+                this.columnbarcode.Caption = "Codigo Barra";
+                this.columnid_requisa.Caption = "Id Requisa Original";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public rpt_ingresoRow Newrpt_ingresoRow() {
-                return ((rpt_ingresoRow)(this.NewRow()));
+            public rpt_requisiciones_manualesRow Newrpt_requisiciones_manualesRow() {
+                return ((rpt_requisiciones_manualesRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new rpt_ingresoRow(builder);
+                return new rpt_requisiciones_manualesRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(rpt_ingresoRow);
+                return typeof(rpt_requisiciones_manualesRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.rpt_ingresoRowChanged != null)) {
-                    this.rpt_ingresoRowChanged(this, new rpt_ingresoRowChangeEvent(((rpt_ingresoRow)(e.Row)), e.Action));
+                if ((this.rpt_requisiciones_manualesRowChanged != null)) {
+                    this.rpt_requisiciones_manualesRowChanged(this, new rpt_requisiciones_manualesRowChangeEvent(((rpt_requisiciones_manualesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -7076,8 +7041,8 @@ namespace LOSA.Reportes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.rpt_ingresoRowChanging != null)) {
-                    this.rpt_ingresoRowChanging(this, new rpt_ingresoRowChangeEvent(((rpt_ingresoRow)(e.Row)), e.Action));
+                if ((this.rpt_requisiciones_manualesRowChanging != null)) {
+                    this.rpt_requisiciones_manualesRowChanging(this, new rpt_requisiciones_manualesRowChangeEvent(((rpt_requisiciones_manualesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -7085,8 +7050,8 @@ namespace LOSA.Reportes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.rpt_ingresoRowDeleted != null)) {
-                    this.rpt_ingresoRowDeleted(this, new rpt_ingresoRowChangeEvent(((rpt_ingresoRow)(e.Row)), e.Action));
+                if ((this.rpt_requisiciones_manualesRowDeleted != null)) {
+                    this.rpt_requisiciones_manualesRowDeleted(this, new rpt_requisiciones_manualesRowChangeEvent(((rpt_requisiciones_manualesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -7094,14 +7059,14 @@ namespace LOSA.Reportes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.rpt_ingresoRowDeleting != null)) {
-                    this.rpt_ingresoRowDeleting(this, new rpt_ingresoRowChangeEvent(((rpt_ingresoRow)(e.Row)), e.Action));
+                if ((this.rpt_requisiciones_manualesRowDeleting != null)) {
+                    this.rpt_requisiciones_manualesRowDeleting(this, new rpt_requisiciones_manualesRowChangeEvent(((rpt_requisiciones_manualesRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Removerpt_ingresoRow(rpt_ingresoRow row) {
+            public void Removerpt_requisiciones_manualesRow(rpt_requisiciones_manualesRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -7128,7 +7093,7 @@ namespace LOSA.Reportes {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "rpt_ingresoDataTable";
+                attribute2.FixedValue = "rpt_requisiciones_manualesDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -11098,491 +11063,445 @@ namespace LOSA.Reportes {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class rpt_ingresoRow : global::System.Data.DataRow {
+        public partial class rpt_requisiciones_manualesRow : global::System.Data.DataRow {
             
-            private rpt_ingresoDataTable tablerpt_ingreso;
+            private rpt_requisiciones_manualesDataTable tablerpt_requisiciones_manuales;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal rpt_ingresoRow(global::System.Data.DataRowBuilder rb) : 
+            internal rpt_requisiciones_manualesRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablerpt_ingreso = ((rpt_ingresoDataTable)(this.Table));
+                this.tablerpt_requisiciones_manuales = ((rpt_requisiciones_manualesDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int N_Ingreso {
+            public int id {
                 get {
                     try {
-                        return ((int)(this[this.tablerpt_ingreso.N_IngresoColumn]));
+                        return ((int)(this[this.tablerpt_requisiciones_manuales.idColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'N_Ingreso\' in table \'rpt_ingreso\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'id\' in table \'rpt_requisiciones_manuales\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablerpt_ingreso.N_IngresoColumn] = value;
+                    this[this.tablerpt_requisiciones_manuales.idColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string CodigoP {
+            public int id_usuario {
                 get {
                     try {
-                        return ((string)(this[this.tablerpt_ingreso.CodigoPColumn]));
+                        return ((int)(this[this.tablerpt_requisiciones_manuales.id_usuarioColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CodigoP\' in table \'rpt_ingreso\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'id_usuario\' in table \'rpt_requisiciones_manuales\' is DBNull" +
+                                ".", e);
                     }
                 }
                 set {
-                    this[this.tablerpt_ingreso.CodigoPColumn] = value;
+                    this[this.tablerpt_requisiciones_manuales.id_usuarioColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Proveedor {
+            public string usuario_s {
                 get {
                     try {
-                        return ((string)(this[this.tablerpt_ingreso.ProveedorColumn]));
+                        return ((string)(this[this.tablerpt_requisiciones_manuales.usuario_sColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Proveedor\' in table \'rpt_ingreso\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'usuario_s\' in table \'rpt_requisiciones_manuales\' is DBNull." +
+                                "", e);
                     }
                 }
                 set {
-                    this[this.tablerpt_ingreso.ProveedorColumn] = value;
+                    this[this.tablerpt_requisiciones_manuales.usuario_sColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime F_registro {
+            public decimal cantidad_solicitada {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tablerpt_ingreso.F_registroColumn]));
+                        return ((decimal)(this[this.tablerpt_requisiciones_manuales.cantidad_solicitadaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'F_registro\' in table \'rpt_ingreso\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'cantidad_solicitada\' in table \'rpt_requisiciones_manuales\' " +
+                                "is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablerpt_ingreso.F_registroColumn] = value;
+                    this[this.tablerpt_requisiciones_manuales.cantidad_solicitadaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Boleta {
+            public int id_materia_prima {
                 get {
                     try {
-                        return ((string)(this[this.tablerpt_ingreso.BoletaColumn]));
+                        return ((int)(this[this.tablerpt_requisiciones_manuales.id_materia_primaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Boleta\' in table \'rpt_ingreso\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'id_materia_prima\' in table \'rpt_requisiciones_manuales\' is " +
+                                "DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablerpt_ingreso.BoletaColumn] = value;
+                    this[this.tablerpt_requisiciones_manuales.id_materia_primaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string placa {
+            public string mp {
                 get {
                     try {
-                        return ((string)(this[this.tablerpt_ingreso.placaColumn]));
+                        return ((string)(this[this.tablerpt_requisiciones_manuales.mpColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'placa\' in table \'rpt_ingreso\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'mp\' in table \'rpt_requisiciones_manuales\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablerpt_ingreso.placaColumn] = value;
+                    this[this.tablerpt_requisiciones_manuales.mpColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string furgon {
+            public int id_orden {
                 get {
                     try {
-                        return ((string)(this[this.tablerpt_ingreso.furgonColumn]));
+                        return ((int)(this[this.tablerpt_requisiciones_manuales.id_ordenColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'furgon\' in table \'rpt_ingreso\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'id_orden\' in table \'rpt_requisiciones_manuales\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablerpt_ingreso.furgonColumn] = value;
+                    this[this.tablerpt_requisiciones_manuales.id_ordenColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Factura {
+            public System.DateTime fecha_solicitada {
                 get {
                     try {
-                        return ((string)(this[this.tablerpt_ingreso.FacturaColumn]));
+                        return ((global::System.DateTime)(this[this.tablerpt_requisiciones_manuales.fecha_solicitadaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Factura\' in table \'rpt_ingreso\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'fecha_solicitada\' in table \'rpt_requisiciones_manuales\' is " +
+                                "DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablerpt_ingreso.FacturaColumn] = value;
+                    this[this.tablerpt_requisiciones_manuales.fecha_solicitadaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public decimal Peso {
+            public System.DateTime fecha_a_producir {
                 get {
                     try {
-                        return ((decimal)(this[this.tablerpt_ingreso.PesoColumn]));
+                        return ((global::System.DateTime)(this[this.tablerpt_requisiciones_manuales.fecha_a_producirColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Peso\' in table \'rpt_ingreso\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'fecha_a_producir\' in table \'rpt_requisiciones_manuales\' is " +
+                                "DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablerpt_ingreso.PesoColumn] = value;
+                    this[this.tablerpt_requisiciones_manuales.fecha_a_producirColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Unidades {
+            public int id_estado {
                 get {
                     try {
-                        return ((int)(this[this.tablerpt_ingreso.UnidadesColumn]));
+                        return ((int)(this[this.tablerpt_requisiciones_manuales.id_estadoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Unidades\' in table \'rpt_ingreso\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'id_estado\' in table \'rpt_requisiciones_manuales\' is DBNull." +
+                                "", e);
                     }
                 }
                 set {
-                    this[this.tablerpt_ingreso.UnidadesColumn] = value;
+                    this[this.tablerpt_requisiciones_manuales.id_estadoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public decimal Existencia {
+            public string estado_descripcion {
                 get {
                     try {
-                        return ((decimal)(this[this.tablerpt_ingreso.ExistenciaColumn]));
+                        return ((string)(this[this.tablerpt_requisiciones_manuales.estado_descripcionColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Existencia\' in table \'rpt_ingreso\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'estado_descripcion\' in table \'rpt_requisiciones_manuales\' i" +
+                                "s DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablerpt_ingreso.ExistenciaColumn] = value;
+                    this[this.tablerpt_requisiciones_manuales.estado_descripcionColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string lote {
+            public string DocEntry {
                 get {
                     try {
-                        return ((string)(this[this.tablerpt_ingreso.loteColumn]));
+                        return ((string)(this[this.tablerpt_requisiciones_manuales.DocEntryColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'lote\' in table \'rpt_ingreso\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'DocEntry\' in table \'rpt_requisiciones_manuales\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablerpt_ingreso.loteColumn] = value;
+                    this[this.tablerpt_requisiciones_manuales.DocEntryColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int id_mp {
+            public string comentario {
                 get {
                     try {
-                        return ((int)(this[this.tablerpt_ingreso.id_mpColumn]));
+                        return ((string)(this[this.tablerpt_requisiciones_manuales.comentarioColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'id_mp\' in table \'rpt_ingreso\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'comentario\' in table \'rpt_requisiciones_manuales\' is DBNull" +
+                                ".", e);
                     }
                 }
                 set {
-                    this[this.tablerpt_ingreso.id_mpColumn] = value;
+                    this[this.tablerpt_requisiciones_manuales.comentarioColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string MP {
+            public string barcode {
                 get {
                     try {
-                        return ((string)(this[this.tablerpt_ingreso.MPColumn]));
+                        return ((string)(this[this.tablerpt_requisiciones_manuales.barcodeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'MP\' in table \'rpt_ingreso\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'barcode\' in table \'rpt_requisiciones_manuales\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablerpt_ingreso.MPColumn] = value;
+                    this[this.tablerpt_requisiciones_manuales.barcodeColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Codigo {
+            public int id_requisa {
                 get {
                     try {
-                        return ((string)(this[this.tablerpt_ingreso.CodigoColumn]));
+                        return ((int)(this[this.tablerpt_requisiciones_manuales.id_requisaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Codigo\' in table \'rpt_ingreso\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'id_requisa\' in table \'rpt_requisiciones_manuales\' is DBNull" +
+                                ".", e);
                     }
                 }
                 set {
-                    this[this.tablerpt_ingreso.CodigoColumn] = value;
+                    this[this.tablerpt_requisiciones_manuales.id_requisaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime F_Vencimiento {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tablerpt_ingreso.F_VencimientoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'F_Vencimiento\' in table \'rpt_ingreso\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablerpt_ingreso.F_VencimientoColumn] = value;
-                }
+            public bool IsidNull() {
+                return this.IsNull(this.tablerpt_requisiciones_manuales.idColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string antiguedad {
-                get {
-                    try {
-                        return ((string)(this[this.tablerpt_ingreso.antiguedadColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'antiguedad\' in table \'rpt_ingreso\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablerpt_ingreso.antiguedadColumn] = value;
-                }
+            public void SetidNull() {
+                this[this.tablerpt_requisiciones_manuales.idColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsN_IngresoNull() {
-                return this.IsNull(this.tablerpt_ingreso.N_IngresoColumn);
+            public bool Isid_usuarioNull() {
+                return this.IsNull(this.tablerpt_requisiciones_manuales.id_usuarioColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetN_IngresoNull() {
-                this[this.tablerpt_ingreso.N_IngresoColumn] = global::System.Convert.DBNull;
+            public void Setid_usuarioNull() {
+                this[this.tablerpt_requisiciones_manuales.id_usuarioColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCodigoPNull() {
-                return this.IsNull(this.tablerpt_ingreso.CodigoPColumn);
+            public bool Isusuario_sNull() {
+                return this.IsNull(this.tablerpt_requisiciones_manuales.usuario_sColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCodigoPNull() {
-                this[this.tablerpt_ingreso.CodigoPColumn] = global::System.Convert.DBNull;
+            public void Setusuario_sNull() {
+                this[this.tablerpt_requisiciones_manuales.usuario_sColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsProveedorNull() {
-                return this.IsNull(this.tablerpt_ingreso.ProveedorColumn);
+            public bool Iscantidad_solicitadaNull() {
+                return this.IsNull(this.tablerpt_requisiciones_manuales.cantidad_solicitadaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetProveedorNull() {
-                this[this.tablerpt_ingreso.ProveedorColumn] = global::System.Convert.DBNull;
+            public void Setcantidad_solicitadaNull() {
+                this[this.tablerpt_requisiciones_manuales.cantidad_solicitadaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsF_registroNull() {
-                return this.IsNull(this.tablerpt_ingreso.F_registroColumn);
+            public bool Isid_materia_primaNull() {
+                return this.IsNull(this.tablerpt_requisiciones_manuales.id_materia_primaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetF_registroNull() {
-                this[this.tablerpt_ingreso.F_registroColumn] = global::System.Convert.DBNull;
+            public void Setid_materia_primaNull() {
+                this[this.tablerpt_requisiciones_manuales.id_materia_primaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsBoletaNull() {
-                return this.IsNull(this.tablerpt_ingreso.BoletaColumn);
+            public bool IsmpNull() {
+                return this.IsNull(this.tablerpt_requisiciones_manuales.mpColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetBoletaNull() {
-                this[this.tablerpt_ingreso.BoletaColumn] = global::System.Convert.DBNull;
+            public void SetmpNull() {
+                this[this.tablerpt_requisiciones_manuales.mpColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsplacaNull() {
-                return this.IsNull(this.tablerpt_ingreso.placaColumn);
+            public bool Isid_ordenNull() {
+                return this.IsNull(this.tablerpt_requisiciones_manuales.id_ordenColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetplacaNull() {
-                this[this.tablerpt_ingreso.placaColumn] = global::System.Convert.DBNull;
+            public void Setid_ordenNull() {
+                this[this.tablerpt_requisiciones_manuales.id_ordenColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsfurgonNull() {
-                return this.IsNull(this.tablerpt_ingreso.furgonColumn);
+            public bool Isfecha_solicitadaNull() {
+                return this.IsNull(this.tablerpt_requisiciones_manuales.fecha_solicitadaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetfurgonNull() {
-                this[this.tablerpt_ingreso.furgonColumn] = global::System.Convert.DBNull;
+            public void Setfecha_solicitadaNull() {
+                this[this.tablerpt_requisiciones_manuales.fecha_solicitadaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsFacturaNull() {
-                return this.IsNull(this.tablerpt_ingreso.FacturaColumn);
+            public bool Isfecha_a_producirNull() {
+                return this.IsNull(this.tablerpt_requisiciones_manuales.fecha_a_producirColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetFacturaNull() {
-                this[this.tablerpt_ingreso.FacturaColumn] = global::System.Convert.DBNull;
+            public void Setfecha_a_producirNull() {
+                this[this.tablerpt_requisiciones_manuales.fecha_a_producirColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsPesoNull() {
-                return this.IsNull(this.tablerpt_ingreso.PesoColumn);
+            public bool Isid_estadoNull() {
+                return this.IsNull(this.tablerpt_requisiciones_manuales.id_estadoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetPesoNull() {
-                this[this.tablerpt_ingreso.PesoColumn] = global::System.Convert.DBNull;
+            public void Setid_estadoNull() {
+                this[this.tablerpt_requisiciones_manuales.id_estadoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsUnidadesNull() {
-                return this.IsNull(this.tablerpt_ingreso.UnidadesColumn);
+            public bool Isestado_descripcionNull() {
+                return this.IsNull(this.tablerpt_requisiciones_manuales.estado_descripcionColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetUnidadesNull() {
-                this[this.tablerpt_ingreso.UnidadesColumn] = global::System.Convert.DBNull;
+            public void Setestado_descripcionNull() {
+                this[this.tablerpt_requisiciones_manuales.estado_descripcionColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsExistenciaNull() {
-                return this.IsNull(this.tablerpt_ingreso.ExistenciaColumn);
+            public bool IsDocEntryNull() {
+                return this.IsNull(this.tablerpt_requisiciones_manuales.DocEntryColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetExistenciaNull() {
-                this[this.tablerpt_ingreso.ExistenciaColumn] = global::System.Convert.DBNull;
+            public void SetDocEntryNull() {
+                this[this.tablerpt_requisiciones_manuales.DocEntryColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsloteNull() {
-                return this.IsNull(this.tablerpt_ingreso.loteColumn);
+            public bool IscomentarioNull() {
+                return this.IsNull(this.tablerpt_requisiciones_manuales.comentarioColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetloteNull() {
-                this[this.tablerpt_ingreso.loteColumn] = global::System.Convert.DBNull;
+            public void SetcomentarioNull() {
+                this[this.tablerpt_requisiciones_manuales.comentarioColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isid_mpNull() {
-                return this.IsNull(this.tablerpt_ingreso.id_mpColumn);
+            public bool IsbarcodeNull() {
+                return this.IsNull(this.tablerpt_requisiciones_manuales.barcodeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setid_mpNull() {
-                this[this.tablerpt_ingreso.id_mpColumn] = global::System.Convert.DBNull;
+            public void SetbarcodeNull() {
+                this[this.tablerpt_requisiciones_manuales.barcodeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsMPNull() {
-                return this.IsNull(this.tablerpt_ingreso.MPColumn);
+            public bool Isid_requisaNull() {
+                return this.IsNull(this.tablerpt_requisiciones_manuales.id_requisaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetMPNull() {
-                this[this.tablerpt_ingreso.MPColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCodigoNull() {
-                return this.IsNull(this.tablerpt_ingreso.CodigoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCodigoNull() {
-                this[this.tablerpt_ingreso.CodigoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsF_VencimientoNull() {
-                return this.IsNull(this.tablerpt_ingreso.F_VencimientoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetF_VencimientoNull() {
-                this[this.tablerpt_ingreso.F_VencimientoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsantiguedadNull() {
-                return this.IsNull(this.tablerpt_ingreso.antiguedadColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetantiguedadNull() {
-                this[this.tablerpt_ingreso.antiguedadColumn] = global::System.Convert.DBNull;
+            public void Setid_requisaNull() {
+                this[this.tablerpt_requisiciones_manuales.id_requisaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -12168,22 +12087,22 @@ namespace LOSA.Reportes {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class rpt_ingresoRowChangeEvent : global::System.EventArgs {
+        public class rpt_requisiciones_manualesRowChangeEvent : global::System.EventArgs {
             
-            private rpt_ingresoRow eventRow;
+            private rpt_requisiciones_manualesRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public rpt_ingresoRowChangeEvent(rpt_ingresoRow row, global::System.Data.DataRowAction action) {
+            public rpt_requisiciones_manualesRowChangeEvent(rpt_requisiciones_manualesRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public rpt_ingresoRow Row {
+            public rpt_requisiciones_manualesRow Row {
                 get {
                     return this.eventRow;
                 }

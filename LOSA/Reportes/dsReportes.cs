@@ -4,6 +4,10 @@
 
     partial class dsReportes
     {
+        partial class rpt_requisiciones_manualesDataTable
+        {
+        }
+
         partial class lote_existencia_mpDataTable
         {
         }

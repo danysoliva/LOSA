@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>165</ApplicationRevision>
+    <ApplicationRevision>170</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -70,10 +70,11 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>CCD93E30A21469B96BD478A793EB0A31A1276CD6</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>5A56FE5B36BF1139C0C28330C52B1468E1F78C88</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>LOSA_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -92,7 +93,8 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>LOSA_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -338,6 +340,7 @@
     <Compile Include="Clases\Globals.cs" />
     <Compile Include="Clases\ItemMP_Lote.cs" />
     <Compile Include="Clases\MateriaPrima.cs" />
+    <Compile Include="Clases\MicroIngrediente.cs" />
     <Compile Include="Clases\opcionAbrirVentanaTarima.cs" />
     <Compile Include="Clases\PresentacionX.cs" />
     <Compile Include="Clases\ProductoTerminado.cs" />
@@ -658,11 +661,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsMicros.xsd</DependentUpon>
     </Compile>
+    <Compile Include="MicroIngredientes\frmSelectLotePesaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MicroIngredientes\frmSelectLotePesaje.Designer.cs">
+      <DependentUpon>frmSelectLotePesaje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MicroIngredientes\Models\PesajeIndividualInfo.cs" />
     <Compile Include="MicroIngredientes\xfrmDetalleOrdenesMicros.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MicroIngredientes\xfrmDetalleOrdenesMicros.Designer.cs">
       <DependentUpon>xfrmDetalleOrdenesMicros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MicroIngredientes\xfrmDetalleOrdenesMicrosPesaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MicroIngredientes\xfrmDetalleOrdenesMicrosPesaje.Designer.cs">
+      <DependentUpon>xfrmDetalleOrdenesMicrosPesaje.cs</DependentUpon>
     </Compile>
     <Compile Include="MicroIngredientes\xfrmMenuMicros.cs">
       <SubType>Form</SubType>
@@ -675,6 +691,12 @@
     </Compile>
     <Compile Include="MicroIngredientes\xfrmMicroIngredientes.Designer.cs">
       <DependentUpon>xfrmMicroIngredientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MicroIngredientes\xfrmPesajeIndividual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MicroIngredientes\xfrmPesajeIndividual.Designer.cs">
+      <DependentUpon>xfrmPesajeIndividual.cs</DependentUpon>
     </Compile>
     <Compile Include="MicroIngredientes\xfrmSpinBatchPlan.cs">
       <SubType>Form</SubType>
@@ -801,7 +823,7 @@
       <DependentUpon>rptReporteTarimaPT.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecepcionMP\dsingresos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1089,12 +1111,6 @@
     <Compile Include="Reportes\frmreport.Designer.cs">
       <DependentUpon>frmreport.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\frmReporteIngreso_v2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reportes\frmReporteIngreso_v2.Designer.cs">
-      <DependentUpon>frmReporteIngreso_v2.cs</DependentUpon>
-    </Compile>
     <Compile Include="Reportes\frmreporteLotePT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1106,6 +1122,12 @@
     </Compile>
     <Compile Include="Reportes\frmreporteUbicacion.Designer.cs">
       <DependentUpon>frmreporteUbicacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmRequisicionesManualesReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmRequisicionesManualesReporte.Designer.cs">
+      <DependentUpon>frmRequisicionesManualesReporte.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\frmrpt_lote_mp.cs">
       <SubType>Form</SubType>
@@ -1721,14 +1743,23 @@
     <EmbeddedResource Include="MDIParentFormLOSA.resx">
       <DependentUpon>MDIParentFormLOSA.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MicroIngredientes\frmSelectLotePesaje.resx">
+      <DependentUpon>frmSelectLotePesaje.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MicroIngredientes\xfrmDetalleOrdenesMicros.resx">
       <DependentUpon>xfrmDetalleOrdenesMicros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MicroIngredientes\xfrmDetalleOrdenesMicrosPesaje.resx">
+      <DependentUpon>xfrmDetalleOrdenesMicrosPesaje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MicroIngredientes\xfrmMenuMicros.resx">
       <DependentUpon>xfrmMenuMicros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MicroIngredientes\xfrmMicroIngredientes.resx">
       <DependentUpon>xfrmMicroIngredientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MicroIngredientes\xfrmPesajeIndividual.resx">
+      <DependentUpon>xfrmPesajeIndividual.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MicroIngredientes\xfrmSpinBatchPlan.resx">
       <DependentUpon>xfrmSpinBatchPlan.cs</DependentUpon>
@@ -1927,14 +1958,14 @@
     <EmbeddedResource Include="Reportes\frmreport.resx">
       <DependentUpon>frmreport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\frmReporteIngreso_v2.resx">
-      <DependentUpon>frmReporteIngreso_v2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmreporteLotePT.resx">
       <DependentUpon>frmreporteLotePT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmreporteUbicacion.resx">
       <DependentUpon>frmreporteUbicacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmRequisicionesManualesReporte.resx">
+      <DependentUpon>frmRequisicionesManualesReporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmrpt_lote_mp.resx">
       <DependentUpon>frmrpt_lote_mp.cs</DependentUpon>
@@ -2177,10 +2208,6 @@
     <None Include="Logistica\dsLogistica.xss">
       <DependentUpon>dsLogistica.xsd</DependentUpon>
     </None>
-    <None Include="LOSA_2_TemporaryKey.pfx" />
-    <None Include="LOSA_3_TemporaryKey.pfx" />
-    <None Include="LOSA_4_TemporaryKey.pfx" />
-    <None Include="LOSA_TemporaryKey.pfx" />
     <None Include="Mantenimientos\dsMantenimiento.xsc">
       <DependentUpon>dsMantenimiento.xsd</DependentUpon>
     </None>
