@@ -7210,6 +7210,10 @@ namespace LOSA.Reportes {
             
             private global::System.Data.DataColumn columnantiguedad;
             
+            private global::System.Data.DataColumn columnf_consumo;
+            
+            private global::System.Data.DataColumn columnf_final_consumo;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public rpt_ingresoDataTable() {
@@ -7381,6 +7385,22 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn f_consumoColumn {
+                get {
+                    return this.columnf_consumo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn f_final_consumoColumn {
+                get {
+                    return this.columnf_final_consumo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -7433,7 +7453,9 @@ namespace LOSA.Reportes {
                         string MP, 
                         string Codigo, 
                         System.DateTime F_Vencimiento, 
-                        string antiguedad) {
+                        string antiguedad, 
+                        System.DateTime f_consumo, 
+                        System.DateTime f_final_consumo) {
                 rpt_ingresoRow rowrpt_ingresoRow = ((rpt_ingresoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         N_Ingreso,
@@ -7452,7 +7474,9 @@ namespace LOSA.Reportes {
                         MP,
                         Codigo,
                         F_Vencimiento,
-                        antiguedad};
+                        antiguedad,
+                        f_consumo,
+                        f_final_consumo};
                 rowrpt_ingresoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowrpt_ingresoRow);
                 return rowrpt_ingresoRow;
@@ -7492,6 +7516,8 @@ namespace LOSA.Reportes {
                 this.columnCodigo = base.Columns["Codigo"];
                 this.columnF_Vencimiento = base.Columns["F_Vencimiento"];
                 this.columnantiguedad = base.Columns["antiguedad"];
+                this.columnf_consumo = base.Columns["f_consumo"];
+                this.columnf_final_consumo = base.Columns["f_final_consumo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7531,6 +7557,10 @@ namespace LOSA.Reportes {
                 base.Columns.Add(this.columnF_Vencimiento);
                 this.columnantiguedad = new global::System.Data.DataColumn("antiguedad", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnantiguedad);
+                this.columnf_consumo = new global::System.Data.DataColumn("f_consumo", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnf_consumo);
+                this.columnf_final_consumo = new global::System.Data.DataColumn("f_final_consumo", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnf_final_consumo);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12316,6 +12346,38 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime f_consumo {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablerpt_ingreso.f_consumoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'f_consumo\' in table \'rpt_ingreso\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablerpt_ingreso.f_consumoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime f_final_consumo {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablerpt_ingreso.f_final_consumoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'f_final_consumo\' in table \'rpt_ingreso\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablerpt_ingreso.f_final_consumoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsN_IngresoNull() {
                 return this.IsNull(this.tablerpt_ingreso.N_IngresoColumn);
             }
@@ -12516,6 +12578,30 @@ namespace LOSA.Reportes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetantiguedadNull() {
                 this[this.tablerpt_ingreso.antiguedadColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isf_consumoNull() {
+                return this.IsNull(this.tablerpt_ingreso.f_consumoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setf_consumoNull() {
+                this[this.tablerpt_ingreso.f_consumoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isf_final_consumoNull() {
+                return this.IsNull(this.tablerpt_ingreso.f_final_consumoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setf_final_consumoNull() {
+                this[this.tablerpt_ingreso.f_final_consumoColumn] = global::System.Convert.DBNull;
             }
         }
         

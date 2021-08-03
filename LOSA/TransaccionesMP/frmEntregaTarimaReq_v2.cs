@@ -57,6 +57,8 @@ namespace LOSA.TransaccionesMP
             txtsolicitada.Text = string.Format("{0:###,##0.00}", 0);
             txtdevueltas.Text = string.Format("{0:###,##0.00}", 0);
             txtrequeridas.Text = string.Format("{0:###,##0.00}", 0);
+
+            txtacumualdo.Text = string.Format("{0:###,##0.00}", 0);
         }
 
         private void txtRequisicion_KeyDown(object sender, KeyEventArgs e)
@@ -426,7 +428,7 @@ namespace LOSA.TransaccionesMP
                             con.Open();
 
                             //SqlCommand cmd = new SqlCommand("sp_set_insert_salida_tarima_bodega_mp", con);
-                            SqlCommand cmd = new SqlCommand("[dbo].[sp_insert_tarima_requisa_entrega_v4]", con);
+                            SqlCommand cmd = new SqlCommand("[dbo].[sp_insert_tarima_requisa_entrega_v5]", con);
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.AddWithValue("@idtarima", tarimaEncontrada.Id);
                             cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
@@ -434,12 +436,13 @@ namespace LOSA.TransaccionesMP
                             SqlDataReader dr = cmd.ExecuteReader();
                             if (dr.Read())
                             {
-                                   txtentrega.Text = string.Format("{0:###,##0.00}", dr.GetInt32(0));
+                                txtentrega.Text = string.Format("{0:###,##0.00}", dr.GetInt32(0));
                                 txtrequeridas.Text = string.Format("{0:###,##0.00}", dr.GetInt32(1));
                                 txtdevueltas.Text = string.Format("{0:###,##0.00}", dr.GetInt32(2) >= 0 ? dr.GetInt32(2) : dr.GetInt32(2) * -1);
                                 txtsolicitada.Text = string.Format("{0:###,##0.00}", dr.GetInt32(3));
                                 Guardo = dr.GetInt32(4) == 1 ? true : false;
                                 txtpesoendregadas.Text = string.Format("{0:###,##0.00}", dr.GetDecimal(5));
+                                txtacumualdo.Text = string.Format("{0:###,##0.00}", dr.GetDecimal(6));
                             }
                             dr.Close();
                             con.Close();

@@ -60,6 +60,8 @@ namespace LOSA.Reportes
             this.colCodigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colF_Vencimiento = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colantiguedad = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colf_consumo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colf_final_consumo = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdYEAR.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yearBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsReportes)).BeginInit();
@@ -231,6 +233,8 @@ namespace LOSA.Reportes
             this.colMP,
             this.colCodigo,
             this.colF_Vencimiento,
+            this.colf_consumo,
+            this.colf_final_consumo,
             this.colantiguedad});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
@@ -387,6 +391,24 @@ namespace LOSA.Reportes
             this.colantiguedad.Visible = true;
             this.colantiguedad.VisibleIndex = 15;
             // 
+            // colf_consumo
+            // 
+            this.colf_consumo.Caption = "Inicio Consumo";
+            this.colf_consumo.FieldName = "f_consumo";
+            this.colf_consumo.Name = "colf_consumo";
+            this.colf_consumo.OptionsColumn.AllowEdit = false;
+            this.colf_consumo.Visible = true;
+            this.colf_consumo.VisibleIndex = 16;
+            // 
+            // colf_final_consumo
+            // 
+            this.colf_final_consumo.Caption = "Final Consumo";
+            this.colf_final_consumo.FieldName = "f_final_consumo";
+            this.colf_final_consumo.Name = "colf_final_consumo";
+            this.colf_final_consumo.OptionsColumn.AllowEdit = false;
+            this.colf_final_consumo.Visible = true;
+            this.colf_final_consumo.VisibleIndex = 17;
+            // 
             // frmReporteIngreso_v2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -444,5 +466,7 @@ namespace LOSA.Reportes
         private DevExpress.XtraGrid.Columns.GridColumn colCodigo;
         private DevExpress.XtraGrid.Columns.GridColumn colF_Vencimiento;
         private DevExpress.XtraGrid.Columns.GridColumn colantiguedad;
+        private DevExpress.XtraGrid.Columns.GridColumn colf_consumo;
+        private DevExpress.XtraGrid.Columns.GridColumn colf_final_consumo;
     }
 }
