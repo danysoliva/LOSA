@@ -668,6 +668,7 @@
       <DependentUpon>frmSelectLotePesaje.cs</DependentUpon>
     </Compile>
     <Compile Include="MicroIngredientes\Models\PesajeIndividualInfo.cs" />
+    <Compile Include="MicroIngredientes\Models\PesajeManualInfo.cs" />
     <Compile Include="MicroIngredientes\xfrmDetalleOrdenesMicros.cs">
       <SubType>Form</SubType>
     </Compile>
