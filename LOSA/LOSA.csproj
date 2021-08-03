@@ -1522,6 +1522,12 @@
     <Compile Include="TransaccionesPT\frm_vertarimas_pt.Designer.cs">
       <DependentUpon>frm_vertarimas_pt.cs</DependentUpon>
     </Compile>
+    <Compile Include="Trazabilidad\frmTrazabilidadOpciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trazabilidad\frmTrazabilidadOpciones.Designer.cs">
+      <DependentUpon>frmTrazabilidadOpciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utileria\frmMensaje.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2156,6 +2162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesPT\frm_vertarimas_pt.resx">
       <DependentUpon>frm_vertarimas_pt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trazabilidad\frmTrazabilidadOpciones.resx">
+      <DependentUpon>frmTrazabilidadOpciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Utileria\frmMensaje.resx">
       <DependentUpon>frmMensaje.cs</DependentUpon>
