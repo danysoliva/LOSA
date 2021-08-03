@@ -162,6 +162,8 @@ namespace LOSA.Reportes
             // 
             // colfecha_solicitada
             // 
+            this.colfecha_solicitada.DisplayFormat.FormatString = "g";
+            this.colfecha_solicitada.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colfecha_solicitada.FieldName = "fecha_solicitada";
             this.colfecha_solicitada.Name = "colfecha_solicitada";
             this.colfecha_solicitada.OptionsColumn.AllowEdit = false;
