@@ -71,7 +71,7 @@ namespace ACS.Classes
         //public static string LOSA_DB_User = "sa";
         //public static string LOSA_DB_Pass = "ABC123xyz";
 
-
+        //SAP
         public static string SAP_ServerAddress = @"AQFSVR006\AQFSVR006";
         public static string SAP_ServerName = "Servidor de Desarrollo";
         public static string SAP_ActiveDB = "AQUA";

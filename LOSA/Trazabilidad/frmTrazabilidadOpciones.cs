@@ -17,5 +17,18 @@ namespace LOSA.Trazabilidad
         {
             InitializeComponent();
         }
+
+        private void cmdProveedores_Click(object sender, EventArgs e)
+        {
+            frmMantoProveedoresMP frm = new frmMantoProveedoresMP();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void cmdHome_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
     }
 }
