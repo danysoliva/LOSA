@@ -18,6 +18,8 @@ namespace LOSA.MicroIngredientes.Models
         public decimal Total { get; set; }
         public decimal PesoPorBatch { get; set; }
         public int AMI_ID { get; set; }
+        public int BasculaID { get; set; }
+        public decimal PesoXBatch { get; set; }
 
     }
 }
