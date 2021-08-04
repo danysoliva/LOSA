@@ -54,24 +54,27 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(104, 137);
+            this.labelControl1.Location = new System.Drawing.Point(89, 111);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(217, 25);
+            this.labelControl1.Size = new System.Drawing.Size(181, 20);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Lote______________:";
             // 
             // txtLote
             // 
-            this.txtLote.Location = new System.Drawing.Point(302, 134);
+            this.txtLote.Location = new System.Drawing.Point(259, 109);
+            this.txtLote.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtLote.Name = "txtLote";
             this.txtLote.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLote.Properties.Appearance.Options.UseFont = true;
-            this.txtLote.Size = new System.Drawing.Size(200, 32);
+            this.txtLote.Size = new System.Drawing.Size(171, 26);
             this.txtLote.TabIndex = 0;
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(302, 178);
+            this.txtCantidad.Location = new System.Drawing.Point(259, 145);
+            this.txtCantidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCantidad.Properties.Appearance.Options.UseFont = true;
@@ -79,18 +82,19 @@
             this.txtCantidad.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtCantidad.Properties.Mask.EditMask = "f";
             this.txtCantidad.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtCantidad.Size = new System.Drawing.Size(200, 32);
+            this.txtCantidad.Size = new System.Drawing.Size(171, 26);
             this.txtCantidad.TabIndex = 1;
             // 
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(104, 178);
+            this.labelControl2.Location = new System.Drawing.Point(89, 145);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(214, 25);
+            this.labelControl2.Size = new System.Drawing.Size(167, 20);
             this.labelControl2.TabIndex = 2;
-            this.labelControl2.Text = "Cantidad__________:";
+            this.labelControl2.Text = "Cantidad KG______:";
             // 
             // btnGuardar
             // 
@@ -100,10 +104,9 @@
             this.btnGuardar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.Image")));
             this.btnGuardar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.btnGuardar.Location = new System.Drawing.Point(403, 3);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGuardar.Location = new System.Drawing.Point(345, 2);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(213, 87);
+            this.btnGuardar.Size = new System.Drawing.Size(183, 71);
             this.btnGuardar.TabIndex = 4;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -115,17 +118,17 @@
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(3, 3);
-            this.btnAtras.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAtras.Location = new System.Drawing.Point(3, 2);
             this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(217, 87);
+            this.btnAtras.Size = new System.Drawing.Size(186, 71);
             this.btnAtras.TabIndex = 3;
             this.btnAtras.Text = "Cerrar";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
             // txtUnidad
             // 
-            this.txtUnidad.Location = new System.Drawing.Point(302, 216);
+            this.txtUnidad.Location = new System.Drawing.Point(259, 176);
+            this.txtUnidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUnidad.Name = "txtUnidad";
             this.txtUnidad.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUnidad.Properties.Appearance.Options.UseFont = true;
@@ -133,16 +136,17 @@
             this.txtUnidad.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtUnidad.Properties.Mask.EditMask = "f";
             this.txtUnidad.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtUnidad.Size = new System.Drawing.Size(200, 32);
+            this.txtUnidad.Size = new System.Drawing.Size(171, 26);
             this.txtUnidad.TabIndex = 2;
             // 
             // labelControl3
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(104, 219);
+            this.labelControl3.Location = new System.Drawing.Point(89, 178);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(207, 25);
+            this.labelControl3.Size = new System.Drawing.Size(172, 20);
             this.labelControl3.TabIndex = 6;
             this.labelControl3.Text = "Unidad___________:";
             // 
@@ -150,9 +154,10 @@
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(104, 301);
+            this.labelControl4.Location = new System.Drawing.Point(89, 245);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(193, 25);
+            this.labelControl4.Size = new System.Drawing.Size(159, 20);
             this.labelControl4.TabIndex = 7;
             this.labelControl4.Text = "Fecha Producción_:";
             // 
@@ -160,16 +165,18 @@
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(104, 260);
+            this.labelControl5.Location = new System.Drawing.Point(89, 211);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(192, 25);
+            this.labelControl5.Size = new System.Drawing.Size(159, 20);
             this.labelControl5.TabIndex = 8;
             this.labelControl5.Text = "Fecha Vencimiento:";
             // 
             // deFechaVencimiento
             // 
             this.deFechaVencimiento.EditValue = null;
-            this.deFechaVencimiento.Location = new System.Drawing.Point(302, 260);
+            this.deFechaVencimiento.Location = new System.Drawing.Point(259, 211);
+            this.deFechaVencimiento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.deFechaVencimiento.Name = "deFechaVencimiento";
             this.deFechaVencimiento.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deFechaVencimiento.Properties.Appearance.Options.UseFont = true;
@@ -179,13 +186,14 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.deFechaVencimiento.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.deFechaVencimiento.Size = new System.Drawing.Size(200, 28);
+            this.deFechaVencimiento.Size = new System.Drawing.Size(171, 24);
             this.deFechaVencimiento.TabIndex = 3;
             // 
             // deFechaProduccion
             // 
             this.deFechaProduccion.EditValue = null;
-            this.deFechaProduccion.Location = new System.Drawing.Point(302, 298);
+            this.deFechaProduccion.Location = new System.Drawing.Point(259, 242);
+            this.deFechaProduccion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.deFechaProduccion.Name = "deFechaProduccion";
             this.deFechaProduccion.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deFechaProduccion.Properties.Appearance.Options.UseFont = true;
@@ -195,14 +203,14 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.deFechaProduccion.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.deFechaProduccion.Size = new System.Drawing.Size(200, 28);
+            this.deFechaProduccion.Size = new System.Drawing.Size(171, 24);
             this.deFechaProduccion.TabIndex = 4;
             // 
             // xfrmLoteCRUD
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 355);
+            this.ClientSize = new System.Drawing.Size(529, 288);
             this.Controls.Add(this.deFechaProduccion);
             this.Controls.Add(this.deFechaVencimiento);
             this.Controls.Add(this.labelControl5);
@@ -217,6 +225,7 @@
             this.Controls.Add(this.labelControl1);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "xfrmLoteCRUD";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "xfrmLoteCRUD";

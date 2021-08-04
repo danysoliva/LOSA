@@ -62,12 +62,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcOC.DataSource = this.oCBindingSource;
-            this.gcOC.Location = new System.Drawing.Point(-1, 103);
+            this.gcOC.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gcOC.Location = new System.Drawing.Point(-1, 84);
             this.gcOC.MainView = this.gvOC;
+            this.gcOC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gcOC.Name = "gcOC";
             this.gcOC.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnSeleccionar});
-            this.gcOC.Size = new System.Drawing.Size(1122, 527);
+            this.gcOC.Size = new System.Drawing.Size(962, 428);
             this.gcOC.TabIndex = 35;
             this.gcOC.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvOC});
@@ -98,6 +100,7 @@
             this.gridColumn1,
             this.colComentario,
             this.gridColumn2});
+            this.gvOC.DetailHeight = 284;
             this.gvOC.GridControl = this.gcOC;
             this.gvOC.Name = "gvOC";
             this.gvOC.OptionsView.ShowAutoFilterRow = true;
@@ -106,65 +109,70 @@
             // colid
             // 
             this.colid.FieldName = "id";
-            this.colid.MinWidth = 25;
+            this.colid.MinWidth = 21;
             this.colid.Name = "colid";
-            this.colid.Visible = true;
-            this.colid.VisibleIndex = 0;
-            this.colid.Width = 166;
+            this.colid.OptionsColumn.AllowEdit = false;
+            this.colid.Width = 142;
             // 
             // colDocNum
             // 
+            this.colDocNum.Caption = "N. Documento";
             this.colDocNum.FieldName = "DocNum";
-            this.colDocNum.MinWidth = 25;
+            this.colDocNum.MinWidth = 21;
             this.colDocNum.Name = "colDocNum";
+            this.colDocNum.OptionsColumn.AllowEdit = false;
             this.colDocNum.Visible = true;
-            this.colDocNum.VisibleIndex = 1;
-            this.colDocNum.Width = 164;
+            this.colDocNum.VisibleIndex = 0;
+            this.colDocNum.Width = 141;
             // 
             // colCodProv
             // 
             this.colCodProv.FieldName = "CodProv";
-            this.colCodProv.MinWidth = 25;
+            this.colCodProv.MinWidth = 21;
             this.colCodProv.Name = "colCodProv";
+            this.colCodProv.OptionsColumn.AllowEdit = false;
             this.colCodProv.Visible = true;
-            this.colCodProv.VisibleIndex = 2;
-            this.colCodProv.Width = 164;
+            this.colCodProv.VisibleIndex = 1;
+            this.colCodProv.Width = 141;
             // 
             // colProveedor
             // 
             this.colProveedor.FieldName = "Proveedor";
-            this.colProveedor.MinWidth = 25;
+            this.colProveedor.MinWidth = 21;
             this.colProveedor.Name = "colProveedor";
+            this.colProveedor.OptionsColumn.AllowEdit = false;
             this.colProveedor.Visible = true;
-            this.colProveedor.VisibleIndex = 3;
-            this.colProveedor.Width = 164;
+            this.colProveedor.VisibleIndex = 2;
+            this.colProveedor.Width = 141;
             // 
             // gridColumn1
             // 
             this.gridColumn1.FieldName = "Fecha_Documento";
-            this.gridColumn1.MinWidth = 25;
+            this.gridColumn1.MinWidth = 21;
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 4;
-            this.gridColumn1.Width = 164;
+            this.gridColumn1.VisibleIndex = 3;
+            this.gridColumn1.Width = 141;
             // 
             // colComentario
             // 
             this.colComentario.FieldName = "Comentario";
-            this.colComentario.MinWidth = 25;
+            this.colComentario.MinWidth = 21;
             this.colComentario.Name = "colComentario";
+            this.colComentario.OptionsColumn.AllowEdit = false;
             this.colComentario.Visible = true;
-            this.colComentario.VisibleIndex = 5;
-            this.colComentario.Width = 172;
+            this.colComentario.VisibleIndex = 4;
+            this.colComentario.Width = 147;
             // 
             // gridColumn2
             // 
             this.gridColumn2.ColumnEdit = this.btnSeleccionar;
-            this.gridColumn2.MinWidth = 25;
+            this.gridColumn2.MinWidth = 21;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 6;
-            this.gridColumn2.Width = 94;
+            this.gridColumn2.VisibleIndex = 5;
+            this.gridColumn2.Width = 81;
             // 
             // btnSeleccionar
             // 
@@ -185,9 +193,10 @@
             this.labelControl1.Appearance.Options.UseTextOptions = true;
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(-2, 42);
+            this.labelControl1.Location = new System.Drawing.Point(-2, 34);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(1122, 24);
+            this.labelControl1.Size = new System.Drawing.Size(962, 20);
             this.labelControl1.TabIndex = 36;
             this.labelControl1.Text = "Seleccionar Orden de Compra";
             // 
@@ -201,23 +210,23 @@
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(927, 23);
-            this.btnAtras.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAtras.Location = new System.Drawing.Point(795, 19);
             this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(178, 58);
+            this.btnAtras.Size = new System.Drawing.Size(153, 47);
             this.btnAtras.TabIndex = 37;
             this.btnAtras.Text = "Atras";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
             // xfrmSeleccionarOC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1118, 631);
+            this.ClientSize = new System.Drawing.Size(958, 513);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.gcOC);
             this.Controls.Add(this.labelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "xfrmSeleccionarOC";
             this.Text = "xfrmSeleccionarOC";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

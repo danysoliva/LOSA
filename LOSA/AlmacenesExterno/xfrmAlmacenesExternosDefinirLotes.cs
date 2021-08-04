@@ -32,8 +32,33 @@ namespace LOSA.AlmacenesExterno
             LoadLotes();
             oc_h = pOC_h;
             UsuarioLogueado = pUser;
+            ObtenerBodegas();
         }
 
+        private void ObtenerBodegas()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+
+                using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringLOSA))
+                {
+                    cnx.Open();
+
+                    dsAlmacenesExternos.Warehouse.Clear();
+                    SqlDataAdapter da = new SqlDataAdapter("sp_get_almacenes_externos_bodegas", cnx);
+                    da.Fill(dsAlmacenesExternos.Warehouse);
+
+
+                    cnx.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+
+        }
         private void btnAtras_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
@@ -51,6 +76,8 @@ namespace LOSA.AlmacenesExterno
                 //workRow[4] = ;
                 workRow[5] = item.LineNum;
                 workRow[6] = item.MPID;
+                workRow[8] = item.bodega;
+                workRow[9] = item.id_presentacion;
                 dsAlmacenesExternos.Conf_MP_Ingresadas.Rows.Add(workRow);
 
                 totalPeso = totalPeso + item.CantIngresada;
@@ -373,6 +400,8 @@ namespace LOSA.AlmacenesExterno
                     cmd2.Parameters.Add("@NumLine", SqlDbType.Int).Value = item.LineNum;
                     cmd2.Parameters.Add("@id_ingreso_h", SqlDbType.Int).Value = id_h;
                     cmd2.Parameters.Add("@fecha_vencimiento", SqlDbType.DateTime).Value = item.fecha_vencimiento;
+                    cmd2.Parameters.Add("@bodega", SqlDbType.VarChar).Value = item.bodega;
+                    cmd2.Parameters.Add("@presentacion", SqlDbType.Int).Value = item.id_presentacion;
 
                     id_d = Convert.ToInt32(cmd2.ExecuteScalar());
 

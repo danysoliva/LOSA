@@ -266,6 +266,31 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="rpt_ingreso" msprop:Generator_TableClassName="rpt_ingresoDataTable" msprop:Generator_TableVarName="tablerpt_ingreso" msprop:Generator_RowChangedName="rpt_ingresoRowChanged" msprop:Generator_TablePropName="rpt_ingreso" msprop:Generator_RowDeletingName="rpt_ingresoRowDeleting" msprop:Generator_RowChangingName="rpt_ingresoRowChanging" msprop:Generator_RowEvHandlerName="rpt_ingresoRowChangeEventHandler" msprop:Generator_RowDeletedName="rpt_ingresoRowDeleted" msprop:Generator_RowClassName="rpt_ingresoRow" msprop:Generator_UserTableName="rpt_ingreso" msprop:Generator_RowEvArgName="rpt_ingresoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="N_Ingreso" msprop:Generator_ColumnVarNameInTable="columnN_Ingreso" msprop:Generator_ColumnPropNameInRow="N_Ingreso" msprop:Generator_ColumnPropNameInTable="N_IngresoColumn" msprop:Generator_UserColumnName="N_Ingreso" type="xs:int" minOccurs="0" />
+              <xs:element name="CodigoP" msprop:Generator_ColumnVarNameInTable="columnCodigoP" msprop:Generator_ColumnPropNameInRow="CodigoP" msprop:Generator_ColumnPropNameInTable="CodigoPColumn" msprop:Generator_UserColumnName="CodigoP" type="xs:string" minOccurs="0" />
+              <xs:element name="Proveedor" msprop:Generator_ColumnVarNameInTable="columnProveedor" msprop:Generator_ColumnPropNameInRow="Proveedor" msprop:Generator_ColumnPropNameInTable="ProveedorColumn" msprop:Generator_UserColumnName="Proveedor" type="xs:string" minOccurs="0" />
+              <xs:element name="F_registro" msprop:Generator_ColumnVarNameInTable="columnF_registro" msprop:Generator_ColumnPropNameInRow="F_registro" msprop:Generator_ColumnPropNameInTable="F_registroColumn" msprop:Generator_UserColumnName="F_registro" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Boleta" msprop:Generator_ColumnVarNameInTable="columnBoleta" msprop:Generator_ColumnPropNameInRow="Boleta" msprop:Generator_ColumnPropNameInTable="BoletaColumn" msprop:Generator_UserColumnName="Boleta" type="xs:string" minOccurs="0" />
+              <xs:element name="placa" msprop:Generator_ColumnVarNameInTable="columnplaca" msprop:Generator_ColumnPropNameInRow="placa" msprop:Generator_ColumnPropNameInTable="placaColumn" msprop:Generator_UserColumnName="placa" type="xs:string" minOccurs="0" />
+              <xs:element name="furgon" msprop:Generator_ColumnVarNameInTable="columnfurgon" msprop:Generator_ColumnPropNameInRow="furgon" msprop:Generator_ColumnPropNameInTable="furgonColumn" msprop:Generator_UserColumnName="furgon" type="xs:string" minOccurs="0" />
+              <xs:element name="Factura" msprop:Generator_ColumnVarNameInTable="columnFactura" msprop:Generator_ColumnPropNameInRow="Factura" msprop:Generator_ColumnPropNameInTable="FacturaColumn" msprop:Generator_UserColumnName="Factura" type="xs:string" minOccurs="0" />
+              <xs:element name="Peso" msprop:Generator_ColumnVarNameInTable="columnPeso" msprop:Generator_ColumnPropNameInRow="Peso" msprop:Generator_ColumnPropNameInTable="PesoColumn" msprop:Generator_UserColumnName="Peso" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Unidades" msprop:Generator_ColumnVarNameInTable="columnUnidades" msprop:Generator_ColumnPropNameInRow="Unidades" msprop:Generator_ColumnPropNameInTable="UnidadesColumn" msprop:Generator_UserColumnName="Unidades" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Existencia" msprop:Generator_ColumnVarNameInTable="columnExistencia" msprop:Generator_ColumnPropNameInRow="Existencia" msprop:Generator_ColumnPropNameInTable="ExistenciaColumn" msprop:Generator_UserColumnName="Existencia" type="xs:decimal" minOccurs="0" />
+              <xs:element name="lote" msprop:Generator_ColumnVarNameInTable="columnlote" msprop:Generator_ColumnPropNameInRow="lote" msprop:Generator_ColumnPropNameInTable="loteColumn" msprop:Generator_UserColumnName="lote" type="xs:string" minOccurs="0" />
+              <xs:element name="id_mp" msprop:Generator_ColumnVarNameInTable="columnid_mp" msprop:Generator_ColumnPropNameInRow="id_mp" msprop:Generator_ColumnPropNameInTable="id_mpColumn" msprop:Generator_UserColumnName="id_mp" type="xs:int" minOccurs="0" />
+              <xs:element name="MP" msprop:Generator_ColumnVarNameInTable="columnMP" msprop:Generator_ColumnPropNameInRow="MP" msprop:Generator_ColumnPropNameInTable="MPColumn" msprop:Generator_UserColumnName="MP" type="xs:string" minOccurs="0" />
+              <xs:element name="Codigo" msprop:Generator_ColumnVarNameInTable="columnCodigo" msprop:Generator_ColumnPropNameInRow="Codigo" msprop:Generator_ColumnPropNameInTable="CodigoColumn" msprop:Generator_UserColumnName="Codigo" type="xs:string" minOccurs="0" />
+              <xs:element name="F_Vencimiento" msprop:Generator_ColumnVarNameInTable="columnF_Vencimiento" msprop:Generator_ColumnPropNameInRow="F_Vencimiento" msprop:Generator_ColumnPropNameInTable="F_VencimientoColumn" msprop:Generator_UserColumnName="F_Vencimiento" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="antiguedad" msprop:Generator_ColumnVarNameInTable="columnantiguedad" msprop:Generator_ColumnPropNameInRow="antiguedad" msprop:Generator_ColumnPropNameInTable="antiguedadColumn" msprop:Generator_UserColumnName="antiguedad" type="xs:string" minOccurs="0" />
+              <xs:element name="f_consumo" msprop:Generator_ColumnVarNameInTable="columnf_consumo" msprop:Generator_ColumnPropNameInRow="f_consumo" msprop:Generator_ColumnPropNameInTable="f_consumoColumn" msprop:Generator_UserColumnName="f_consumo" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="f_final_consumo" msprop:Generator_ColumnVarNameInTable="columnf_final_consumo" msprop:Generator_ColumnPropNameInRow="f_final_consumo" msprop:Generator_ColumnPropNameInTable="f_final_consumoColumn" msprop:Generator_UserColumnName="f_final_consumo" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

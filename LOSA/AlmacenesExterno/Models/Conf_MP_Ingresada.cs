@@ -14,5 +14,7 @@ namespace LOSA.AlmacenesExterno.Models
         public decimal UnidadesIngresadas { get; set; }
         public int LineNum { get; set; }
         public int MPID { get; set; }
+        public string bodega { get; set; }
+        public int id_presentacion { get; set; }
     }
 }

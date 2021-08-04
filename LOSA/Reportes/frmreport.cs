@@ -104,7 +104,10 @@ namespace LOSA.Reportes
 
         private void btnreportIngreso_Click(object sender, EventArgs e)
         {
-            frnReporteingreso frm = new frnReporteingreso();
+            //frnReporteingreso frm = new frnReporteingreso();
+            //frm.Show();
+
+            frmReporteIngreso_v2 frm = new frmReporteIngreso_v2();
             frm.Show();
         }
 

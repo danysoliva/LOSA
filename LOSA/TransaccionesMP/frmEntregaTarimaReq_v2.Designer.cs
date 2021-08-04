@@ -53,6 +53,8 @@
             this.txtCantidadT = new DevExpress.XtraEditors.TextEdit();
             this.timerLimpiarMensaje = new System.Windows.Forms.Timer(this.components);
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.txtacumualdo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.txtpesoendregadas = new DevExpress.XtraEditors.TextEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
@@ -74,6 +76,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtacumualdo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtpesoendregadas.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtdevueltas.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtrequeridas.Properties)).BeginInit();
@@ -455,6 +458,8 @@
             this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl1.Controls.Add(this.labelControl11);
+            this.panelControl1.Controls.Add(this.txtacumualdo);
             this.panelControl1.Controls.Add(this.labelControl10);
             this.panelControl1.Controls.Add(this.txtpesoendregadas);
             this.panelControl1.Controls.Add(this.labelControl9);
@@ -470,6 +475,32 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(635, 196);
             this.panelControl1.TabIndex = 111;
+            // 
+            // labelControl11
+            // 
+            this.labelControl11.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl11.Appearance.Options.UseFont = true;
+            this.labelControl11.Location = new System.Drawing.Point(8, 129);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(144, 24);
+            this.labelControl11.TabIndex = 122;
+            this.labelControl11.Text = "Ud. Acumuladas:";
+            // 
+            // txtacumualdo
+            // 
+            this.txtacumualdo.EditValue = "0";
+            this.txtacumualdo.Enabled = false;
+            this.txtacumualdo.Location = new System.Drawing.Point(166, 125);
+            this.txtacumualdo.Name = "txtacumualdo";
+            this.txtacumualdo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtacumualdo.Properties.Appearance.Options.UseFont = true;
+            this.txtacumualdo.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtacumualdo.Properties.Mask.EditMask = "n2";
+            this.txtacumualdo.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtacumualdo.Properties.NullText = "0";
+            this.txtacumualdo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtacumualdo.Size = new System.Drawing.Size(142, 32);
+            this.txtacumualdo.TabIndex = 121;
             // 
             // labelControl10
             // 
@@ -570,7 +601,7 @@
             // 
             this.txtsolicitada.EditValue = "0";
             this.txtsolicitada.Enabled = false;
-            this.txtsolicitada.Location = new System.Drawing.Point(149, 88);
+            this.txtsolicitada.Location = new System.Drawing.Point(166, 88);
             this.txtsolicitada.Name = "txtsolicitada";
             this.txtsolicitada.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsolicitada.Properties.Appearance.Options.UseFont = true;
@@ -596,7 +627,7 @@
             // 
             this.txtentrega.EditValue = "0";
             this.txtentrega.Enabled = false;
-            this.txtentrega.Location = new System.Drawing.Point(149, 50);
+            this.txtentrega.Location = new System.Drawing.Point(166, 50);
             this.txtentrega.Name = "txtentrega";
             this.txtentrega.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtentrega.Properties.Appearance.Options.UseFont = true;
@@ -644,6 +675,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtacumualdo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtpesoendregadas.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtdevueltas.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtrequeridas.Properties)).EndInit();
@@ -685,5 +717,7 @@
         private DevExpress.XtraEditors.TextEdit txtsolicitada;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.TextEdit txtentrega;
+        private DevExpress.XtraEditors.LabelControl labelControl11;
+        private DevExpress.XtraEditors.TextEdit txtacumualdo;
     }
 }

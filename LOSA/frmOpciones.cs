@@ -18,6 +18,7 @@ using LOSA.PlanMPreque;
 using LOSA.TransaccionesPT;
 using LOSA.AlmacenesExterno;
 using LOSA.Reportes;
+using LOSA.Trazabilidad;
 
 namespace LOSA
 {
@@ -572,6 +573,13 @@ namespace LOSA
         private void simpleButton13_Click(object sender, EventArgs e)
         {
             frmRequisicionesManualesReporte frm = new frmRequisicionesManualesReporte();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void simpleButton16_Click(object sender, EventArgs e)
+        {
+            frmTrazabilidadOpciones frm = new frmTrazabilidadOpciones();
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
