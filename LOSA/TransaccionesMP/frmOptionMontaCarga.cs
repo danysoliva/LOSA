@@ -91,8 +91,19 @@ namespace LOSA.TransaccionesMP
 
         private void cmdOrdenesCargaPT_Click(object sender, EventArgs e)
         {
-            LOSA.Despachos.frm_despachos frm = new Despachos.frm_despachos();
-            frm.Show();
+            SelectorFor path = new SelectorFor(1);
+            if (path.Camino == 1)
+            {
+                LOSA.Despachos.frm_despachos frm = new Despachos.frm_despachos();
+                frm.Show();
+            }
+            else
+            {
+                LOSA.Despachos.frm_despacho_v2 FRM = new Despachos.frm_despacho_v2();
+                FRM.Show();
+            }
+
+          
             
         }
 
