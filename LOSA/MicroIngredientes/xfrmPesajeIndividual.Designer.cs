@@ -29,43 +29,28 @@ namespace LOSA.MicroIngredientes
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmPesajeIndividual));
-            this.cmdClose = new DevExpress.XtraEditors.SimpleButton();
             this.lueBascula = new DevExpress.XtraEditors.LookUpEdit();
-            this.pesajeBasculaBindingSource = new System.Windows.Forms.BindingSource();
+            this.pesajeBasculaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsMicros = new LOSA.MicroIngredientes.dsMicros();
             this.label1 = new System.Windows.Forms.Label();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdSum10 = new DevExpress.XtraEditors.SimpleButton();
-            this.cmdDown = new DevExpress.XtraEditors.SimpleButton();
-            this.cmdUp = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.seBatch = new DevExpress.XtraEditors.SpinEdit();
             this.lblMensaje = new DevExpress.XtraEditors.LabelControl();
-            this.btnGenerar = new DevExpress.XtraEditors.SimpleButton();
-            this.timer1 = new System.Windows.Forms.Timer();
             this.progressBarControl1 = new DevExpress.XtraEditors.ProgressBarControl();
-            this.lblValorbascula = new DevExpress.XtraEditors.LabelControl();
+            this.btnGenerar = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdDown = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdUp = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdClose = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.lueBascula.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pesajeBasculaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMicros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.seBatch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).BeginInit();
             this.SuspendLayout();
-            // 
-            // cmdClose
-            // 
-            this.cmdClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmdClose.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdClose.Appearance.Options.UseFont = true;
-            this.cmdClose.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.cmdClose.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.cmdClose.Location = new System.Drawing.Point(350, 292);
-            this.cmdClose.Name = "cmdClose";
-            this.cmdClose.Size = new System.Drawing.Size(75, 63);
-            this.cmdClose.TabIndex = 7;
-            this.cmdClose.Text = "Cerrar";
-            this.cmdClose.Click += new System.EventHandler(this.cmdClose_Click);
             // 
             // lueBascula
             // 
@@ -135,30 +120,6 @@ namespace LOSA.MicroIngredientes
             this.cmdSum10.Text = "+10";
             this.cmdSum10.Click += new System.EventHandler(this.cmdSum10_Click);
             // 
-            // cmdDown
-            // 
-            this.cmdDown.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdDown.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdDown.ImageOptions.Image")));
-            this.cmdDown.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.cmdDown.Location = new System.Drawing.Point(254, 212);
-            this.cmdDown.Name = "cmdDown";
-            this.cmdDown.Size = new System.Drawing.Size(75, 44);
-            this.cmdDown.TabIndex = 13;
-            this.cmdDown.Text = "simpleButton2";
-            this.cmdDown.Click += new System.EventHandler(this.cmdDown_Click);
-            // 
-            // cmdUp
-            // 
-            this.cmdUp.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdUp.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdUp.ImageOptions.Image")));
-            this.cmdUp.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.cmdUp.Location = new System.Drawing.Point(254, 126);
-            this.cmdUp.Name = "cmdUp";
-            this.cmdUp.Size = new System.Drawing.Size(75, 44);
-            this.cmdUp.TabIndex = 12;
-            this.cmdUp.Text = "simpleButton1";
-            this.cmdUp.Click += new System.EventHandler(this.cmdUp_Click);
-            // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -211,25 +172,6 @@ namespace LOSA.MicroIngredientes
             this.lblMensaje.Text = "Excede la cantidad de batch planificado";
             this.lblMensaje.Visible = false;
             // 
-            // btnGenerar
-            // 
-            this.btnGenerar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGenerar.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerar.Appearance.Options.UseFont = true;
-            this.btnGenerar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGenerar.ImageOptions.Image")));
-            this.btnGenerar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btnGenerar.Location = new System.Drawing.Point(239, 292);
-            this.btnGenerar.Name = "btnGenerar";
-            this.btnGenerar.Size = new System.Drawing.Size(75, 63);
-            this.btnGenerar.TabIndex = 17;
-            this.btnGenerar.Text = "Aplicar";
-            this.btnGenerar.Click += new System.EventHandler(this.simpleButton2_Click);
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 9000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // progressBarControl1
             // 
             this.progressBarControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -238,25 +180,63 @@ namespace LOSA.MicroIngredientes
             this.progressBarControl1.Size = new System.Drawing.Size(631, 18);
             this.progressBarControl1.TabIndex = 18;
             // 
-            // lblValorbascula
+            // btnGenerar
             // 
-            this.lblValorbascula.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValorbascula.Appearance.Options.UseFont = true;
-            this.lblValorbascula.Appearance.Options.UseTextOptions = true;
-            this.lblValorbascula.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.lblValorbascula.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblValorbascula.Location = new System.Drawing.Point(0, 78);
-            this.lblValorbascula.Name = "lblValorbascula";
-            this.lblValorbascula.Size = new System.Drawing.Size(631, 19);
-            this.lblValorbascula.TabIndex = 19;
-            this.lblValorbascula.Text = "Valor en Báscula: 0.00 Kg";
+            this.btnGenerar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGenerar.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerar.Appearance.Options.UseFont = true;
+            this.btnGenerar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.btnGenerar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnGenerar.ImageOptions.SvgImage")));
+            this.btnGenerar.Location = new System.Drawing.Point(239, 292);
+            this.btnGenerar.Name = "btnGenerar";
+            this.btnGenerar.Size = new System.Drawing.Size(75, 63);
+            this.btnGenerar.TabIndex = 17;
+            this.btnGenerar.Text = "Iniciar";
+            this.btnGenerar.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
+            // cmdDown
+            // 
+            this.cmdDown.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdDown.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdDown.ImageOptions.Image")));
+            this.cmdDown.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.cmdDown.Location = new System.Drawing.Point(254, 212);
+            this.cmdDown.Name = "cmdDown";
+            this.cmdDown.Size = new System.Drawing.Size(75, 44);
+            this.cmdDown.TabIndex = 13;
+            this.cmdDown.Text = "simpleButton2";
+            this.cmdDown.Click += new System.EventHandler(this.cmdDown_Click);
+            // 
+            // cmdUp
+            // 
+            this.cmdUp.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdUp.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdUp.ImageOptions.Image")));
+            this.cmdUp.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.cmdUp.Location = new System.Drawing.Point(254, 126);
+            this.cmdUp.Name = "cmdUp";
+            this.cmdUp.Size = new System.Drawing.Size(75, 44);
+            this.cmdUp.TabIndex = 12;
+            this.cmdUp.Text = "simpleButton1";
+            this.cmdUp.Click += new System.EventHandler(this.cmdUp_Click);
+            // 
+            // cmdClose
+            // 
+            this.cmdClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdClose.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdClose.Appearance.Options.UseFont = true;
+            this.cmdClose.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
+            this.cmdClose.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.cmdClose.Location = new System.Drawing.Point(350, 292);
+            this.cmdClose.Name = "cmdClose";
+            this.cmdClose.Size = new System.Drawing.Size(75, 63);
+            this.cmdClose.TabIndex = 7;
+            this.cmdClose.Text = "Cerrar";
+            this.cmdClose.Click += new System.EventHandler(this.cmdClose_Click);
             // 
             // xfrmPesajeIndividual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(631, 385);
-            this.Controls.Add(this.lblValorbascula);
             this.Controls.Add(this.progressBarControl1);
             this.Controls.Add(this.btnGenerar);
             this.Controls.Add(this.lblMensaje);
@@ -299,8 +279,6 @@ namespace LOSA.MicroIngredientes
         private DevExpress.XtraEditors.SpinEdit seBatch;
         private DevExpress.XtraEditors.LabelControl lblMensaje;
         private DevExpress.XtraEditors.SimpleButton btnGenerar;
-        private System.Windows.Forms.Timer timer1;
         private DevExpress.XtraEditors.ProgressBarControl progressBarControl1;
-        private DevExpress.XtraEditors.LabelControl lblValorbascula;
     }
 }

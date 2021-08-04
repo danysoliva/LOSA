@@ -97,7 +97,7 @@ namespace LOSA.AlmacenesExterno
                 txtComment.Text = frm.oc.Comentario;
                 btnOC.Text = frm.oc.DocNum.ToString();
 
-                LoadOCDetail(frm.oc.DocNum);
+                LoadOCDetail(frm.oc.ID);
             }
         }
 
