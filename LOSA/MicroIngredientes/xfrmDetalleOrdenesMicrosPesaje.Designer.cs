@@ -109,9 +109,9 @@
             this.cmdPesarInd = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemSpinEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.repositoryItemButtonEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gcDetalle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMicros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDetalle)).BeginInit();
@@ -597,6 +597,8 @@
             // 
             // gvPesajeIndividual
             // 
+            this.gvPesajeIndividual.Appearance.FocusedRow.BackColor = System.Drawing.Color.Transparent;
+            this.gvPesajeIndividual.Appearance.FocusedRow.Options.UseBackColor = true;
             this.gvPesajeIndividual.Appearance.FooterPanel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvPesajeIndividual.Appearance.FooterPanel.Options.UseFont = true;
             this.gvPesajeIndividual.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -619,6 +621,7 @@
             this.gvPesajeIndividual.Name = "gvPesajeIndividual";
             this.gvPesajeIndividual.OptionsView.ShowFooter = true;
             this.gvPesajeIndividual.OptionsView.ShowGroupPanel = false;
+            this.gvPesajeIndividual.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.gvPesajeIndividual_RowStyle);
             // 
             // gridColumn1
             // 
@@ -704,6 +707,17 @@
             this.gridColumn10.FieldName = "id_rm";
             this.gridColumn10.Name = "gridColumn10";
             // 
+            // gridColumn11
+            // 
+            this.gridColumn11.Caption = "Real";
+            this.gridColumn11.FieldName = "peso_real";
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.OptionsColumn.AllowEdit = false;
+            this.gridColumn11.OptionsFilter.AllowFilter = false;
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 5;
+            this.gridColumn11.Width = 117;
+            // 
             // repositoryItemSpinEdit2
             // 
             this.repositoryItemSpinEdit2.AutoHeight = false;
@@ -720,16 +734,6 @@
             this.repositoryItemButtonEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit2.Name = "repositoryItemButtonEdit2";
-            // 
-            // gridColumn11
-            // 
-            this.gridColumn11.Caption = "Real";
-            this.gridColumn11.FieldName = "peso_real";
-            this.gridColumn11.Name = "gridColumn11";
-            this.gridColumn11.OptionsFilter.AllowFilter = false;
-            this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 5;
-            this.gridColumn11.Width = 117;
             // 
             // xfrmDetalleOrdenesMicrosPesaje
             // 

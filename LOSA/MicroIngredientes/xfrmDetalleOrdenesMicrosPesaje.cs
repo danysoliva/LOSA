@@ -230,6 +230,13 @@ namespace LOSA.MicroIngredientes
                 if (row != null)
                 {
 
+                    if (row.Batch_Completados==row.Batch_Plan)
+                    {
+                        CajaDialogo.Error("YA HA COMPLETADO ESTE PLAN");
+                        return;
+                    }
+
+
                     pesajeIndividual.Batch_Plan = row.Batch_Plan;
                     pesajeIndividual.CantBatchMaximo = (row.Batch_Plan - row.Batch_Completados);
                     pesajeIndividual.id_orden_pesaje_header = row.id_orden_encabezado;
@@ -253,7 +260,20 @@ namespace LOSA.MicroIngredientes
             }
         }
 
+        private void gvPesajeIndividual_RowStyle(object sender, RowStyleEventArgs e)
+        {
+            GridView View = sender as GridView;
+            if (e.RowHandle >= 0)
+            {
+                string CantBatch_Plan = View.GetRowCellDisplayText(e.RowHandle, View.Columns["Batch Plan"]);
+                string batch_completados = View.GetRowCellDisplayText(e.RowHandle, View.Columns["Batch Completados"]);
 
-       
+                if (CantBatch_Plan == batch_completados)
+                {
+                    e.Appearance.BackColor = Color.FromArgb(150, Color.DarkGreen);
+                    //e.Appearance.BackColor2 = Color.White;
+                }
+            }
+        }
     }
 }

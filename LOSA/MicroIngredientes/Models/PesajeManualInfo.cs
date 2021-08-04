@@ -15,5 +15,6 @@ namespace LOSA.MicroIngredientes.Models
         public int DetallePesajeManualPlanID { get; set; }
         public int BatchPlan { get; set; }
         public int AMI_ID { get; set; }
+        public int BasculaID { get; set; }
     }
 }

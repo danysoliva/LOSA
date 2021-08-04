@@ -667,7 +667,9 @@
     <Compile Include="MicroIngredientes\frmSelectLotePesaje.Designer.cs">
       <DependentUpon>frmSelectLotePesaje.cs</DependentUpon>
     </Compile>
+    <Compile Include="MicroIngredientes\Models\PesajeIndividualCompletados.cs" />
     <Compile Include="MicroIngredientes\Models\PesajeIndividualInfo.cs" />
+    <Compile Include="MicroIngredientes\Models\PesajeManualInfo.cs" />
     <Compile Include="MicroIngredientes\xfrmDetalleOrdenesMicros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -697,6 +699,12 @@
     </Compile>
     <Compile Include="MicroIngredientes\xfrmPesajeIndividual.Designer.cs">
       <DependentUpon>xfrmPesajeIndividual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MicroIngredientes\xfrmPesajeIndividualBatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MicroIngredientes\xfrmPesajeIndividualBatch.Designer.cs">
+      <DependentUpon>xfrmPesajeIndividualBatch.cs</DependentUpon>
     </Compile>
     <Compile Include="MicroIngredientes\xfrmSpinBatchPlan.cs">
       <SubType>Form</SubType>
@@ -1760,6 +1768,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MicroIngredientes\xfrmPesajeIndividual.resx">
       <DependentUpon>xfrmPesajeIndividual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MicroIngredientes\xfrmPesajeIndividualBatch.resx">
+      <DependentUpon>xfrmPesajeIndividualBatch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MicroIngredientes\xfrmSpinBatchPlan.resx">
       <DependentUpon>xfrmSpinBatchPlan.cs</DependentUpon>
