@@ -48,6 +48,7 @@ namespace LOSA.Trazabilidad
                 txtDireccion.Text = frm.ProveedorRow.Direccion;
                 txtCorreo.Text = frm.ProveedorRow.Correo;
                 LoadAdjuntosRows();
+                LoadPlantas();
             }
         }
 
@@ -302,6 +303,78 @@ namespace LOSA.Trazabilidad
             }
         }
 
+        private void cmdDelete__ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            //Delete
+            DialogResult r = CajaDialogo.Pregunta("Realmente desea eliminar esta registro?");
+            if (r != DialogResult.Yes)
+                return;
 
+            var gridView = (GridView)gridControl1.FocusedView;
+            var row = (dsMantoTrazabilidad.plantasRow)gridView.GetFocusedDataRow();
+            try
+            {
+
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_set_disable_planta_prv_trz", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", row.id);
+                cmd.ExecuteNonQuery();
+
+                con.Close();
+                LoadPlantas();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            frmCRUD_PlantasPRV frm = new frmCRUD_PlantasPRV(vProveedorActual.Codigo, 0, frmCRUD_PlantasPRV.TipoAccion.Insert, UsuarioLogeado.Id);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                LoadPlantas();
+            }
+        }
+
+        private void LoadPlantas()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("[sp_get_lista_plantas_prv_trz]", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@cardcode",vProveedorActual.Codigo);
+                dsMantoTrazabilidad1.plantas.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsMantoTrazabilidad1.plantas);
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
+
+        private void cmdEditar_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)gridControl1.FocusedView;
+            var row = (dsMantoTrazabilidad.plantasRow)gridView.GetFocusedDataRow();
+
+            frmCRUD_PlantasPRV frm = new frmCRUD_PlantasPRV(vProveedorActual.Codigo, row.id, frmCRUD_PlantasPRV.TipoAccion.Update, UsuarioLogeado.Id);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                LoadPlantas();
+            }
+        }
     }
 }
