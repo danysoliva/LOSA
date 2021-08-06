@@ -85,6 +85,7 @@ namespace LOSA
                 //MessageBox.Show("Contraseña Vacia.");
                 frmMensaje frm = new frmMensaje(frmMensaje.TipoMsj.error, "No puede dejar la contraseña vacia!");
                 frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.MdiParent = this;
                 frm.ShowDialog();
                 return;
             }
@@ -118,6 +119,7 @@ namespace LOSA
                 UserLogin Log1 = new UserLogin();
                 if (Log1.RecuperarRegistroFromUser(user))
                 {
+                    Log1.Pass = txtClave.Text;
                     Log1.GrupoUsuario.GrupoUsuarioActivo = (GrupoUser.GrupoUsuario)Log1.IdGrupo;
                     frmOpciones frm = new frmOpciones(Log1);
                     if (this.MdiParent != null)

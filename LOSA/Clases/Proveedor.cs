@@ -15,6 +15,12 @@ namespace LOSA.Clases
         public string Nombre;
         public string NombreF;
         public string RTN;
+        public string Contacto;
+        public string Telefono1;
+        public string Telefono2;
+        public string Telefono3;
+        public string Direccion;
+        public string Correo;
         public bool Recuperado;
         public Proveedor()
         {
@@ -62,6 +68,12 @@ namespace LOSA.Clases
                     Nombre = dr.GetString(0);
                     NombreF = dr.GetString(1);
                     RTN = dr.GetString(2);
+                    Contacto = dr.GetString(3);
+                    Telefono1 = dr.GetString(4);
+                    Telefono2 = dr.GetString(5);
+                    Telefono3 = dr.GetString(6);
+                    Direccion = dr.GetString(7);
+                    Correo = dr.GetString(8);
                     Recuperado = true;
                 }
                 con.Close();
