@@ -85,6 +85,7 @@ namespace LOSA
                 //MessageBox.Show("Contraseña Vacia.");
                 frmMensaje frm = new frmMensaje(frmMensaje.TipoMsj.error, "No puede dejar la contraseña vacia!");
                 frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.MdiParent = this;
                 frm.ShowDialog();
                 return;
             }
@@ -118,6 +119,7 @@ namespace LOSA
                 UserLogin Log1 = new UserLogin();
                 if (Log1.RecuperarRegistroFromUser(user))
                 {
+                    Log1.Pass = txtClave.Text;
                     Log1.GrupoUsuario.GrupoUsuarioActivo = (GrupoUser.GrupoUsuario)Log1.IdGrupo;
                     frmOpciones frm = new frmOpciones(Log1);
                     if (this.MdiParent != null)
@@ -231,15 +233,16 @@ namespace LOSA
         {
             Teclado.cerrarTeclado();
             UserLogin Log1 = new UserLogin();
-            if (Log1.RecuperarRegistro(1050))
+            if (Log1.RecuperarRegistro(1035))
             {
                 //Log1.GrupoUsuario.GrupoUsuarioActivo = (GrupoUser.GrupoUsuario)Log1.IdGrupo;
-                Log1.GrupoUsuario.GrupoUsuarioActivo = (GrupoUser.GrupoUsuario)1;
+                //Log1.GrupoUsuario.GrupoUsuarioActivo = (GrupoUser.GrupoUsuario)1;
+                Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Calidad;
             }
             else
             {
                 Log1.Id = 1069;
-                Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Produccion;
+                Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Calidad;
             }
             frmOpciones frm = new frmOpciones(Log1);
             frm.Show();

@@ -9,10 +9,18 @@ using System.Threading.Tasks;
 
 namespace LOSA.Clases
 {
-    class Proveedor
+    public class Proveedor
     {
         public string Codigo;
         public string Nombre;
+        public string NombreF;
+        public string RTN;
+        public string Contacto;
+        public string Telefono1;
+        public string Telefono2;
+        public string Telefono3;
+        public string Direccion;
+        public string Correo;
         public bool Recuperado;
         public Proveedor()
         {
@@ -32,6 +40,42 @@ namespace LOSA.Clases
                 Codigo = pCodigo;
                 Nombre = cmd.ExecuteScalar().ToString();
                 Recuperado = true;
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+
+            return Recuperado;
+        }
+
+        public bool RecuperarRegistroWithRTN(string pCodigo)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("[sp_get_datos_proveedorv2]", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@codigo", pCodigo);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    Codigo = pCodigo;
+                    Nombre = dr.GetString(0);
+                    NombreF = dr.GetString(1);
+                    RTN = dr.GetString(2);
+                    Contacto = dr.GetString(3);
+                    Telefono1 = dr.GetString(4);
+                    Telefono2 = dr.GetString(5);
+                    Telefono3 = dr.GetString(6);
+                    Direccion = dr.GetString(7);
+                    Correo = dr.GetString(8);
+                    Recuperado = true;
+                }
                 con.Close();
             }
             catch (Exception ec)

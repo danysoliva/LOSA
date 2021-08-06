@@ -579,7 +579,7 @@ namespace LOSA
 
         private void simpleButton16_Click(object sender, EventArgs e)
         {
-            frmTrazabilidadOpciones frm = new frmTrazabilidadOpciones();
+            frmTrazabilidadOpciones frm = new frmTrazabilidadOpciones(this.UsuarioLogeado);
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }

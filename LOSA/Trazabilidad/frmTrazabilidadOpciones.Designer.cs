@@ -29,8 +29,25 @@ namespace LOSA.Trazabilidad
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTrazabilidadOpciones));
+            this.cmdProveedores = new DevExpress.XtraEditors.SimpleButton();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
+            // 
+            // cmdProveedores
+            // 
+            this.cmdProveedores.Appearance.BackColor = System.Drawing.Color.White;
+            this.cmdProveedores.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdProveedores.Appearance.Options.UseBackColor = true;
+            this.cmdProveedores.Appearance.Options.UseFont = true;
+            this.cmdProveedores.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdProveedores.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.cmdProveedores.Location = new System.Drawing.Point(12, 92);
+            this.cmdProveedores.Name = "cmdProveedores";
+            this.cmdProveedores.Size = new System.Drawing.Size(199, 51);
+            this.cmdProveedores.TabIndex = 8;
+            this.cmdProveedores.Text = "Proveedores";
+            this.cmdProveedores.Click += new System.EventHandler(this.cmdProveedores_Click);
             // 
             // cmdHome
             // 
@@ -46,6 +63,7 @@ namespace LOSA.Trazabilidad
             this.cmdHome.Size = new System.Drawing.Size(199, 51);
             this.cmdHome.TabIndex = 7;
             this.cmdHome.Text = "Cerrar";
+            this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
             // 
             // frmTrazabilidadOpciones
             // 
@@ -54,6 +72,7 @@ namespace LOSA.Trazabilidad
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(723, 524);
+            this.Controls.Add(this.cmdProveedores);
             this.Controls.Add(this.cmdHome);
             this.Name = "frmTrazabilidadOpciones";
             this.Text = "Opciones";
@@ -64,5 +83,6 @@ namespace LOSA.Trazabilidad
         #endregion
 
         private DevExpress.XtraEditors.SimpleButton cmdHome;
+        private DevExpress.XtraEditors.SimpleButton cmdProveedores;
     }
 }
