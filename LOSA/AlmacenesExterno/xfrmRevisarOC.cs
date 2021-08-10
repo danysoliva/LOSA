@@ -156,8 +156,6 @@ namespace LOSA.AlmacenesExterno
                         CajaDialogo.Error("YA SE INGRESO LA MISMA CANTIDAD DE LA ORDEN DE COMPRA");
                         return;
                     }
-
-
                     if (element.diferencia > 0)
                     {
 

@@ -154,7 +154,7 @@
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(89, 245);
+            this.labelControl4.Location = new System.Drawing.Point(89, 209);
             this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(159, 20);
@@ -165,7 +165,7 @@
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(89, 211);
+            this.labelControl5.Location = new System.Drawing.Point(89, 243);
             this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(159, 20);
@@ -175,7 +175,7 @@
             // deFechaVencimiento
             // 
             this.deFechaVencimiento.EditValue = null;
-            this.deFechaVencimiento.Location = new System.Drawing.Point(259, 211);
+            this.deFechaVencimiento.Location = new System.Drawing.Point(259, 243);
             this.deFechaVencimiento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.deFechaVencimiento.Name = "deFechaVencimiento";
             this.deFechaVencimiento.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -192,7 +192,7 @@
             // deFechaProduccion
             // 
             this.deFechaProduccion.EditValue = null;
-            this.deFechaProduccion.Location = new System.Drawing.Point(259, 242);
+            this.deFechaProduccion.Location = new System.Drawing.Point(259, 206);
             this.deFechaProduccion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.deFechaProduccion.Name = "deFechaProduccion";
             this.deFechaProduccion.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

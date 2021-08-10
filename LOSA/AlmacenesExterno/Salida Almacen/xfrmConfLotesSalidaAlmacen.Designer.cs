@@ -160,10 +160,10 @@
             this.labelControl2.Appearance.Options.UseTextOptions = true;
             this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl2.Location = new System.Drawing.Point(630, 10);
+            this.labelControl2.Location = new System.Drawing.Point(630, 12);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(551, 17);
+            this.labelControl2.Size = new System.Drawing.Size(550, 17);
             this.labelControl2.StyleController = this.layoutControl1;
             this.labelControl2.TabIndex = 55;
             this.labelControl2.Text = "Lotes a Transferir";
@@ -175,10 +175,10 @@
             this.labelControl1.Appearance.Options.UseTextOptions = true;
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(11, 10);
+            this.labelControl1.Location = new System.Drawing.Point(12, 12);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(547, 17);
+            this.labelControl1.Size = new System.Drawing.Size(546, 17);
             this.labelControl1.StyleController = this.layoutControl1;
             this.labelControl1.TabIndex = 54;
             this.labelControl1.Text = "Lotes disponibles en Almacén";
@@ -190,14 +190,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcLotesSeleccionados.DataSource = this.loteSeleccionadosBindingSource;
             this.gcLotesSeleccionados.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gcLotesSeleccionados.Location = new System.Drawing.Point(630, 31);
+            this.gcLotesSeleccionados.Location = new System.Drawing.Point(630, 33);
             this.gcLotesSeleccionados.MainView = this.gvLotesSeleccionados;
             this.gcLotesSeleccionados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gcLotesSeleccionados.Name = "gcLotesSeleccionados";
             this.gcLotesSeleccionados.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1,
             this.btnDelete2});
-            this.gcLotesSeleccionados.Size = new System.Drawing.Size(551, 230);
+            this.gcLotesSeleccionados.Size = new System.Drawing.Size(550, 226);
             this.gcLotesSeleccionados.TabIndex = 46;
             this.gcLotesSeleccionados.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvLotesSeleccionados});
@@ -407,7 +407,7 @@
             this.btnDelete.Appearance.Options.UseFont = true;
             this.btnDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.ImageOptions.Image")));
             this.btnDelete.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnDelete.Location = new System.Drawing.Point(562, 160);
+            this.btnDelete.Location = new System.Drawing.Point(562, 161);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(64, 38);
             this.btnDelete.StyleController = this.layoutControl1;
@@ -424,7 +424,7 @@
             this.btnAdd.Appearance.Options.UseFont = true;
             this.btnAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.Image")));
             this.btnAdd.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAdd.Location = new System.Drawing.Point(562, 118);
+            this.btnAdd.Location = new System.Drawing.Point(562, 119);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(64, 38);
             this.btnAdd.StyleController = this.layoutControl1;
@@ -438,13 +438,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcLote.DataSource = this.loteBindingSource;
             this.gcLote.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gcLote.Location = new System.Drawing.Point(11, 31);
+            this.gcLote.Location = new System.Drawing.Point(12, 33);
             this.gcLote.MainView = this.gvLote;
             this.gcLote.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gcLote.Name = "gcLote";
             this.gcLote.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.txtCantSeleccionada});
-            this.gcLote.Size = new System.Drawing.Size(547, 230);
+            this.gcLote.Size = new System.Drawing.Size(546, 226);
             this.gcLote.TabIndex = 45;
             this.gcLote.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvLote});
@@ -641,14 +641,14 @@
             this.layoutControlItem1.Control = this.gcLote;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 21);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(551, 234);
+            this.layoutControlItem1.Size = new System.Drawing.Size(550, 230);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.btnAdd;
-            this.layoutControlItem2.Location = new System.Drawing.Point(551, 108);
+            this.layoutControlItem2.Location = new System.Drawing.Point(550, 107);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(68, 42);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
@@ -657,23 +657,23 @@
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(551, 192);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(550, 191);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(68, 63);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(68, 60);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(551, 21);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(550, 21);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(68, 87);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(68, 86);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.btnDelete;
-            this.layoutControlItem3.Location = new System.Drawing.Point(551, 150);
+            this.layoutControlItem3.Location = new System.Drawing.Point(550, 149);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(68, 42);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
@@ -682,9 +682,9 @@
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.gcLotesSeleccionados;
-            this.layoutControlItem4.Location = new System.Drawing.Point(619, 21);
+            this.layoutControlItem4.Location = new System.Drawing.Point(618, 21);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(555, 234);
+            this.layoutControlItem4.Size = new System.Drawing.Size(554, 230);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
@@ -693,14 +693,14 @@
             this.layoutControlItem5.Control = this.labelControl1;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(551, 21);
+            this.layoutControlItem5.Size = new System.Drawing.Size(550, 21);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(551, 0);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(550, 0);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
             this.emptySpaceItem2.Size = new System.Drawing.Size(68, 21);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
@@ -708,9 +708,9 @@
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.labelControl2;
-            this.layoutControlItem6.Location = new System.Drawing.Point(619, 0);
+            this.layoutControlItem6.Location = new System.Drawing.Point(618, 0);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(555, 21);
+            this.layoutControlItem6.Size = new System.Drawing.Size(554, 21);
             this.layoutControlItem6.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextToControlDistance = 0;
@@ -771,6 +771,7 @@
             this.gvIngreso.OptionsView.ShowAutoFilterRow = true;
             this.gvIngreso.OptionsView.ShowFooter = true;
             this.gvIngreso.OptionsView.ShowGroupPanel = false;
+            this.gvIngreso.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvIngreso_FocusedRowChanged);
             // 
             // colItemCode
             // 

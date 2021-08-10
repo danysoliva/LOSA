@@ -21,7 +21,9 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
         List<Ingresos_Externos_D> lista = new List<Ingresos_Externos_D>();
         Ingreso_Almacenes_Externos_H ingreso_h = new Ingreso_Almacenes_Externos_H();
         int id_salida_h;
-
+        string bogeda;
+        int id_mp;
+        DataOperations dp = new DataOperations();
         public xfrmConfLotesSalidaAlmacen(List<Ingresos_Externos_D> ingresos_Externos_Ds, Ingreso_Almacenes_Externos_H pIngresoAlamecesExternos_H)
         {
             InitializeComponent();
@@ -29,6 +31,28 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             ingreso_h = pIngresoAlamecesExternos_H;
         }
 
+        public void load_lotes()
+        {
+            string query = @"sp_load_lotes_to_seleccionar_Almacen_externo";
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            try
+            {
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query,cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@bodega", bogeda);
+                cmd.Parameters.AddWithValue("@id_mp", id_mp);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                dsSalidasAlmacenesExternos.Lote.Clear();
+                da.Fill(dsSalidasAlmacenesExternos.Lote);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
         private void xfrmConfLotesSalidaAlmacen_Load(object sender, EventArgs e)
         {
             foreach (var item in lista)
@@ -355,6 +379,23 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             {
                 CajaDialogo.Error(ex.Message);
                 transaction.Rollback();
+            }
+        }
+
+        private void gvIngreso_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            try
+            {
+                var gridView = (GridView)gcLote.FocusedView;
+                var row = (dsSalidasAlmacenesExternos.Transferencia_StockRow)gridView.GetFocusedDataRow();
+                bogeda = row.from_almacen;
+                id_mp = row.id_mp;
+                load_lotes();
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message) ;
             }
         }
     }
