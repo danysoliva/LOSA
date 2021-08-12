@@ -126,7 +126,7 @@ namespace LOSA.AlmacenesExterno
                 id_h = frm.ingreso_h.ID;
                 id_proveedor = frm.ingreso_h.CardCode;
                 docEntry = frm.ingreso_h.DocEntry;
-
+                lueAlmacenFROM.EditValue = frm.ingreso_h.BodegaIN;
                 LoadDetailIngresosExternos();
 
                 ingreso_Almacenes_Externos_H = frm.ingreso_h;
@@ -208,7 +208,7 @@ namespace LOSA.AlmacenesExterno
                     return;
                 }
 
-                if (lueAlmacenFROM.EditValue != lueAlmacenDestino.EditValue)
+                if (lueAlmacenFROM.EditValue.ToString() != lueAlmacenDestino.EditValue.ToString())
                 {
 
                     foreach (var item in dsSalidasAlmacenesExternos.Transferencia_Stock)
@@ -224,7 +224,7 @@ namespace LOSA.AlmacenesExterno
                 else
                 {
                     CajaDialogo.Error("EL ALMACEN DE DESTINO DEBE SER DIFERENTE AL ALMACEN ORIGEN");
-                    lueAlmacenFROM.Text = "";
+                    lueAlmacenDestino.EditValue = "";
                 }
             }
             catch (Exception ex)
@@ -271,6 +271,8 @@ namespace LOSA.AlmacenesExterno
                     ingresos_Externos_D.Peso = item.peso;
                     ingresos_Externos_D.Unidades = item.unidades;
                     ingresos_Externos_D.IDMP = item.id_mp;
+                    ingresos_Externos_D.BodegaIN = lueAlmacenFROM.Text;
+                    ingresos_Externos_D.BodegaOUT = lueAlmacenDestino.Text;
 
                     lista.Add(ingresos_Externos_D);
 

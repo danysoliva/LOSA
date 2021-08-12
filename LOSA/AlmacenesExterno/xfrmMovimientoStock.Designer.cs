@@ -385,6 +385,7 @@
             // lueAlmacenFROM
             // 
             this.lueAlmacenFROM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lueAlmacenFROM.Enabled = false;
             this.lueAlmacenFROM.Location = new System.Drawing.Point(905, 118);
             this.lueAlmacenFROM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lueAlmacenFROM.Name = "lueAlmacenFROM";
@@ -439,6 +440,9 @@
             this.lueAlmacenDestino.Properties.AppearanceDropDown.Options.UseFont = true;
             this.lueAlmacenDestino.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueAlmacenDestino.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("WhsCode", "Whs Code", 103, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("WhsName", "Whs Name", 77, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.lueAlmacenDestino.Properties.DataSource = this.warehouseBindingSource;
             this.lueAlmacenDestino.Properties.DisplayMember = "WhsCode";
             this.lueAlmacenDestino.Properties.NullText = "";
@@ -495,7 +499,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "xfrmMovimientoStock";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "xfrmMovimientoStock";
+            this.Text = "Movimiento Stock";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.xfrmMovimientoStock_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gcTransferencia)).EndInit();

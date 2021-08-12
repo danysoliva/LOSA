@@ -70,10 +70,10 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>B8B1E1C226D4161B735B5D87883A090CA12C1142</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>13DFEEC6EEA8F8511E79823E02D353B5FC453115</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>LOSA_3_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>LOSA_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -92,7 +92,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>LOSA_3_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>LOSA_1_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -839,6 +839,7 @@
       <DependentUpon>rptReporteTarimaPT.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <None Include="LOSA_1_TemporaryKey.pfx" />
     <None Include="LOSA_3_TemporaryKey.pfx" />
     <None Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecepcionMP\dsingresos.Designer.cs">

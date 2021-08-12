@@ -21,7 +21,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
         List<Ingresos_Externos_D> lista = new List<Ingresos_Externos_D>();
         Ingreso_Almacenes_Externos_H ingreso_h = new Ingreso_Almacenes_Externos_H();
         int id_salida_h;
-        string bogeda;
+        string bodega;
         int id_mp;
         DataOperations dp = new DataOperations();
         public xfrmConfLotesSalidaAlmacen(List<Ingresos_Externos_D> ingresos_Externos_Ds, Ingreso_Almacenes_Externos_H pIngresoAlamecesExternos_H)
@@ -40,7 +40,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query,cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@bodega", bogeda);
+                cmd.Parameters.AddWithValue("@bodega", bodega);
                 cmd.Parameters.AddWithValue("@id_mp", id_mp);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 dsSalidasAlmacenesExternos.Lote.Clear();
@@ -67,6 +67,8 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
                 workRow["id_mp"] = item.IDMP;
                 workRow["id"] = item.ID;
                 workRow["DocEntrySAP"] = item.DocEntry;
+                workRow["from_almacen"] = item.BodegaIN;
+                workRow["to_almacen"] = item.BodegaOUT;
 
                 dsSalidasAlmacenesExternos.Transferencia_Stock.Rows.Add(workRow);
             }
@@ -75,11 +77,6 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
         private void btnAtras_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void gcIngreso_Click(object sender, EventArgs e)
-        {
-
         }
 
         List<dsSalidasAlmacenesExternos.Lote_SeleccionadosRow> lista_lotes_seleccionados = new List<dsSalidasAlmacenesExternos.Lote_SeleccionadosRow>();
@@ -99,46 +96,18 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
 
                 row.seleccionar = true;
 
-                ObtenerLotes(row.id);
+                ObtenerLotes(row.id,row.id_mp,row.from_almacen);
 
-                //var lista_lotes_ingreso = dsSalidasAlmacenesExternos.Lote.ToList().Where(x=> x.id_detalle==row.id).ToList();
-                //lista_lotes_ingreso.Clear();
+                //CargarLotesTransferidosEnSalidaAlmacen(row.id_mp,row.to_almacen);
 
-                //foreach (var item in dsSalidasAlmacenesExternos.Lote_Seleccionados.ToList())
-                //{
-
-                //lista_lotes = dsSalidasAlmacenesExternos.Lote.ToList();
-                foreach (var item2 in dsSalidasAlmacenesExternos.Lote.ToList().Where(x => x.id_detalle == row.id).ToList())
+               foreach (var item2 in dsSalidasAlmacenesExternos.Lote.ToList().Where(x => x.id_detalle == row.id).ToList())
                 {
                     var cant_disponible = lista_lotes_seleccionados.Where(x => x.id == item2.id).Sum(x => x.CantSeleccionada);
                     var unidades_disponible = lista_lotes_seleccionados.Where(x => x.id == item2.id).Sum(x => x.unidades_seleccionadas);
 
                     item2.cantidad_disponible = item2.cantidad_disponible- cant_disponible;
                     item2.unidades_disponibles = item2.unidades_disponibles - unidades_disponible;
-                    //if (item.id == item2.id)
-                    //{
-                    //    lista_lotes_ingreso.Add(item2);
-                    //}
-
                 }
-
-                //}
-
-
-                //if (dsSalidasAlmacenesExternos.Lote.Rows.Count > 0 && dsSalidasAlmacenesExternos.Lote_Seleccionados.Rows.Count>0)
-                //{
-                //    //dsSalidasAlmacenesExternos.Lote.Clear();
-
-                //    foreach (var item in lista_lotes_ingreso)
-                //    {
-                //        dsSalidasAlmacenesExternos.Lote.Rows.Remove(item);
-                //    }
-
-                //}
-
-
-
-
 
             }
             catch (Exception ex)
@@ -147,21 +116,24 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             }
         }
 
-        private void ObtenerLotes(int id_d)
+        private void ObtenerLotes(int id_d, int id_mp,string bodega_in)
         {
             try
             {
                 DataOperations dp = new DataOperations();
+
+
 
                 using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringLOSA))
                 {
                     cnx.Open();
 
                     dsSalidasAlmacenesExternos.Lote.Clear();
-                    SqlDataAdapter da = new SqlDataAdapter("[dbo].[sp_almacenes_externos_get_lotes_disponibles_by_id_detalle_salida_externa]", cnx);
+                    SqlDataAdapter da = new SqlDataAdapter("[dbo].[sp_almacenes_externos_get_lotes_disponibles_by_id_detalle_salida_externa_V2]", cnx);
 
                     da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                    da.SelectCommand.Parameters.Add("@id_detalle", SqlDbType.Int).Value = id_d;
+                    da.SelectCommand.Parameters.Add("@id_mp", SqlDbType.Int).Value = id_mp;
+                    da.SelectCommand.Parameters.Add("@id_bodega", SqlDbType.VarChar).Value = bodega_in;
 
                     da.Fill(dsSalidasAlmacenesExternos.Lote);
 
@@ -242,6 +214,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
                         row["CantSeleccionada"] = item.CantSeleccionada;
                         row["unidades_seleccionadas"] = item.unidade_seleccionadas;
                         row["id_detalle"] = item.id_detalle;
+                        row["id_ingreso_h"] = item.id_ingreso_h;
 
                         dsSalidasAlmacenesExternos.Lote_Seleccionados.Rows.Add(row);
 
@@ -350,7 +323,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
                         cmd3.Parameters.Add("@unidades", SqlDbType.Decimal).Value = item2.unidades_seleccionadas;
                         cmd3.Parameters.Add("@fecha", SqlDbType.DateTime).Value = DateTime.Now;
                         cmd3.Parameters.Add("@user_creador", SqlDbType.Int).Value = 1035;
-                        cmd3.Parameters.Add("@id_serie", SqlDbType.Int).Value = 0;
+                        cmd3.Parameters.Add("@id_serie", SqlDbType.Int).Value = DBNull.Value;
                         cmd3.Parameters.Add("@DocEntry", SqlDbType.Int).Value = ingreso_h.DocEntry;
                         cmd3.Parameters.Add("@id_mp", SqlDbType.Int).Value = item.id_mp;
                         cmd3.Parameters.Add("@id_lote_externo", SqlDbType.Int).Value = item2.id;
@@ -359,7 +332,8 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
                         cmd3.Parameters.Add("@bodega_in", SqlDbType.VarChar).Value = ingreso_h.BodegaIN;
                         cmd3.Parameters.Add("@bodega_out", SqlDbType.VarChar).Value = ingreso_h.BodegaOUT;
                         cmd3.Parameters.Add("@LineNum", SqlDbType.Int).Value = item.NumLine;
-                        cmd3.Parameters.Add("@id_ingreso_lote", SqlDbType.Int).Value = ingreso_h.ID;
+                        //cmd3.Parameters.Add("@id_ingreso_lote", SqlDbType.Int).Value = ingreso_h.ID;
+                        cmd3.Parameters.Add("@id_ingreso_lote", SqlDbType.Int).Value = item2.id_ingreso_h;
 
                         cmd3.ExecuteNonQuery();
 
@@ -384,19 +358,58 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
 
         private void gvIngreso_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
+            //try
+            //{
+            //    //var gridView = (GridView)gcIngreso.FocusedView;
+            //    var row = (dsSalidasAlmacenesExternos.Transferencia_StockRow)gvIngreso.GetFocusedDataRow();
+
+            //    if (row != null)
+            //    {
+
+            //    bodega = row.from_almacen;
+            //    id_mp = row.id_mp;
+            //    load_lotes();
+
+            //        CargarLotesTransferidosEnSalidaAlmacen(id_mp,bodega);
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+
+            //    CajaDialogo.Error(ex.Message) ;
+            //}
+        }
+
+        private void CargarLotesTransferidosEnSalidaAlmacen(int id_mp, string bodega)
+        {
             try
             {
-                var gridView = (GridView)gcLote.FocusedView;
-                var row = (dsSalidasAlmacenesExternos.Transferencia_StockRow)gridView.GetFocusedDataRow();
-                bogeda = row.from_almacen;
-                id_mp = row.id_mp;
-                load_lotes();
+                DataOperations dp = new DataOperations();
+
+                using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringLOSA))
+                {
+                    cnx.Open();
+
+                    dsSalidasAlmacenesExternos.Lotes_Disponibles_Salida.Clear();
+                    SqlDataAdapter da = new SqlDataAdapter("[dbo].[sp_get_lotes_transferidos_by_id_mp]", cnx);
+
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.Add("@id_mp", SqlDbType.Int).Value = id_mp;
+                    da.SelectCommand.Parameters.Add("@bodega_out", SqlDbType.VarChar).Value = bodega;
+
+                    da.Fill(dsSalidasAlmacenesExternos.Lotes_Disponibles_Salida);
+
+                    cnx.Close();
+                }
             }
             catch (Exception ex)
             {
-
-                CajaDialogo.Error(ex.Message) ;
+                CajaDialogo.Error(ex.Message);
             }
         }
+
+
+
+        
     }
 }

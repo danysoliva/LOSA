@@ -4033,6 +4033,8 @@ namespace LOSA.AlmacenesExterno {
             
             private global::System.Data.DataColumn columnid_d;
             
+            private global::System.Data.DataColumn columnbodega;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public MP_Almacen_Externo_ExistenteDataTable() {
@@ -4132,6 +4134,14 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn bodegaColumn {
+                get {
+                    return this.columnbodega;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4167,7 +4177,7 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MP_Almacen_Externo_ExistenteRow AddMP_Almacen_Externo_ExistenteRow(string itemcode, string itemName, decimal peso, decimal unidades, int NumLine, int id_mp, int DocEntrySAP, int id_d) {
+            public MP_Almacen_Externo_ExistenteRow AddMP_Almacen_Externo_ExistenteRow(string itemcode, string itemName, decimal peso, decimal unidades, int NumLine, int id_mp, int DocEntrySAP, int id_d, string bodega) {
                 MP_Almacen_Externo_ExistenteRow rowMP_Almacen_Externo_ExistenteRow = ((MP_Almacen_Externo_ExistenteRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         itemcode,
@@ -4177,7 +4187,8 @@ namespace LOSA.AlmacenesExterno {
                         NumLine,
                         id_mp,
                         DocEntrySAP,
-                        id_d};
+                        id_d,
+                        bodega};
                 rowMP_Almacen_Externo_ExistenteRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMP_Almacen_Externo_ExistenteRow);
                 return rowMP_Almacen_Externo_ExistenteRow;
@@ -4208,6 +4219,7 @@ namespace LOSA.AlmacenesExterno {
                 this.columnid_mp = base.Columns["id_mp"];
                 this.columnDocEntrySAP = base.Columns["DocEntrySAP"];
                 this.columnid_d = base.Columns["id_d"];
+                this.columnbodega = base.Columns["bodega"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4229,6 +4241,8 @@ namespace LOSA.AlmacenesExterno {
                 base.Columns.Add(this.columnDocEntrySAP);
                 this.columnid_d = new global::System.Data.DataColumn("id_d", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_d);
+                this.columnbodega = new global::System.Data.DataColumn("bodega", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbodega);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4765,6 +4779,7 @@ namespace LOSA.AlmacenesExterno {
                 base.Columns.Add(this.columnpresentacion);
                 this.columnfactor = new global::System.Data.DataColumn("factor", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfactor);
+                this.columnid.DefaultValue = ((int)(0));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4941,11 +4956,11 @@ namespace LOSA.AlmacenesExterno {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string bodega {
                 get {
-                    try {
-                        return ((string)(this[this.tableingreso_externo_h.bodegaColumn]));
+                    if (this.IsbodegaNull()) {
+                        return "";
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'bodega\' in table \'ingreso_externo_h\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableingreso_externo_h.bodegaColumn]));
                     }
                 }
                 set {
@@ -5691,11 +5706,11 @@ namespace LOSA.AlmacenesExterno {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string bodega {
                 get {
-                    try {
-                        return ((string)(this[this.tableRevisionOC.bodegaColumn]));
+                    if (this.IsbodegaNull()) {
+                        return "";
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'bodega\' in table \'RevisionOC\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableRevisionOC.bodegaColumn]));
                     }
                 }
                 set {
@@ -5707,11 +5722,11 @@ namespace LOSA.AlmacenesExterno {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int id_presentacion {
                 get {
-                    try {
-                        return ((int)(this[this.tableRevisionOC.id_presentacionColumn]));
+                    if (this.Isid_presentacionNull()) {
+                        return 0;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'id_presentacion\' in table \'RevisionOC\' is DBNull.", e);
+                    else {
+                        return ((int)(this[this.tableRevisionOC.id_presentacionColumn]));
                     }
                 }
                 set {
@@ -7672,6 +7687,22 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string bodega {
+                get {
+                    try {
+                        return ((string)(this[this.tableMP_Almacen_Externo_Existente.bodegaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'bodega\' in table \'MP_Almacen_Externo_Existente\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMP_Almacen_Externo_Existente.bodegaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsitemcodeNull() {
                 return this.IsNull(this.tableMP_Almacen_Externo_Existente.itemcodeColumn);
             }
@@ -7765,6 +7796,18 @@ namespace LOSA.AlmacenesExterno {
             public void Setid_dNull() {
                 this[this.tableMP_Almacen_Externo_Existente.id_dColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsbodegaNull() {
+                return this.IsNull(this.tableMP_Almacen_Externo_Existente.bodegaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetbodegaNull() {
+                this[this.tableMP_Almacen_Externo_Existente.bodegaColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -7856,11 +7899,11 @@ namespace LOSA.AlmacenesExterno {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int id {
                 get {
-                    try {
-                        return ((int)(this[this.tablepresentacion.idColumn]));
+                    if (this.IsidNull()) {
+                        return 0;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'id\' in table \'presentacion\' is DBNull.", e);
+                    else {
+                        return ((int)(this[this.tablepresentacion.idColumn]));
                     }
                 }
                 set {
