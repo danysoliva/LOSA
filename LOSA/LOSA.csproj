@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>176</ApplicationRevision>
+    <ApplicationRevision>178</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -1338,6 +1338,12 @@
     <Compile Include="TransaccionesMP\frmEntregaTarimaReq.Designer.cs">
       <DependentUpon>frmEntregaTarimaReq.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\frmEntregaTarimaReq_3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmEntregaTarimaReq_3.Designer.cs">
+      <DependentUpon>frmEntregaTarimaReq_3.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesMP\frmEntregaTarimaReq_v2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1379,6 +1385,12 @@
     </Compile>
     <Compile Include="TransaccionesMP\frmRequisiciones.Designer.cs">
       <DependentUpon>frmRequisiciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmResumenToEntregar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmResumenToEntregar.Designer.cs">
+      <DependentUpon>frmResumenToEntregar.cs</DependentUpon>
     </Compile>
     <Compile Include="TransaccionesMP\frmSeleccionLote.cs">
       <SubType>Form</SubType>
@@ -2117,6 +2129,9 @@
     <EmbeddedResource Include="TransaccionesMP\frmEntregaTarimaReq.resx">
       <DependentUpon>frmEntregaTarimaReq.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmEntregaTarimaReq_3.resx">
+      <DependentUpon>frmEntregaTarimaReq_3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmEntregaTarimaReq_v2.resx">
       <DependentUpon>frmEntregaTarimaReq_v2.cs</DependentUpon>
     </EmbeddedResource>
@@ -2137,6 +2152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmRequisiciones.resx">
       <DependentUpon>frmRequisiciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmResumenToEntregar.resx">
+      <DependentUpon>frmResumenToEntregar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmSeleccionLote.resx">
       <DependentUpon>frmSeleccionLote.cs</DependentUpon>
