@@ -167,7 +167,7 @@ namespace LOSA.AlmacenesExterno
             {
 
 
-
+                                                         
                 var gv = (GridView)gcLote.FocusedView;
                 var row = (dsAlmacenesExternos.LoteRow)gv.GetDataRow(gv.FocusedRowHandle);
 

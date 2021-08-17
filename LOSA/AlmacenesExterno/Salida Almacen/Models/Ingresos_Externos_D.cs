@@ -16,5 +16,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen.Models
         public string ItemName { get; set; }
         public decimal Peso { get; set; }
         public decimal Unidades { get; set; }
+        public string BodegaIN { get; set; }
+        public string BodegaOUT { get; set; }
     }
 }

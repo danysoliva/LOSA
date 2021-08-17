@@ -175,6 +175,7 @@ namespace LOSA.Despachos
                 {
 
                 }
+                ds_despachos.detalle_despachos.AcceptChanges();
 
             }
             catch (Exception ex)

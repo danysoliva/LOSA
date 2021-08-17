@@ -58,10 +58,10 @@
             this.grd_bodega = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.warehouseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.colid_presentacion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.txtCantIngresar = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
-            this.ceSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.grd_presentacion = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.presentacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txtCantIngresar = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.ceSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.label2 = new System.Windows.Forms.Label();
             this.txtProveedor = new DevExpress.XtraEditors.TextEdit();
             this.label3 = new System.Windows.Forms.Label();
@@ -77,10 +77,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvIngreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_bodega)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.warehouseBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCantIngresar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ceSeleccionar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_presentacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.presentacionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCantIngresar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ceSeleccionar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProveedor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtComment.Properties)).BeginInit();
@@ -202,7 +202,7 @@
             this.colItemCode.OptionsFilter.AllowFilter = false;
             this.colItemCode.Visible = true;
             this.colItemCode.VisibleIndex = 0;
-            this.colItemCode.Width = 106;
+            this.colItemCode.Width = 101;
             // 
             // colDescription
             // 
@@ -215,7 +215,7 @@
             this.colDescription.OptionsFilter.AllowFilter = false;
             this.colDescription.Visible = true;
             this.colDescription.VisibleIndex = 1;
-            this.colDescription.Width = 214;
+            this.colDescription.Width = 205;
             // 
             // colkg
             // 
@@ -231,7 +231,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "kg", "Total ={0:0.##}")});
             this.colkg.Visible = true;
             this.colkg.VisibleIndex = 2;
-            this.colkg.Width = 105;
+            this.colkg.Width = 100;
             // 
             // colU_sacos
             // 
@@ -257,7 +257,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "CantidadIngresar", "Total ={0:0.##}")});
             this.colCantIngresar.Visible = true;
             this.colCantIngresar.VisibleIndex = 6;
-            this.colCantIngresar.Width = 106;
+            this.colCantIngresar.Width = 92;
             // 
             // colUnidades
             // 
@@ -274,7 +274,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "UnidadesIngresar", "Total ={0:0.##}")});
             this.colUnidades.Visible = true;
             this.colUnidades.VisibleIndex = 7;
-            this.colUnidades.Width = 95;
+            this.colUnidades.Width = 83;
             // 
             // colNumLine
             // 
@@ -306,7 +306,7 @@
             this.gridColumn1.OptionsFilter.AllowFilter = false;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 3;
-            this.gridColumn1.Width = 150;
+            this.gridColumn1.Width = 144;
             // 
             // gridColumn2
             // 
@@ -330,7 +330,7 @@
             this.colSelect.Name = "colSelect";
             this.colSelect.Visible = true;
             this.colSelect.VisibleIndex = 8;
-            this.colSelect.Width = 95;
+            this.colSelect.Width = 90;
             // 
             // colBodega
             // 
@@ -341,7 +341,7 @@
             this.colBodega.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.colBodega.Visible = true;
             this.colBodega.VisibleIndex = 5;
-            this.colBodega.Width = 197;
+            this.colBodega.Width = 173;
             // 
             // grd_bodega
             // 
@@ -361,23 +361,14 @@
             // 
             // colid_presentacion
             // 
-            this.colid_presentacion.Caption = "Presentacion";
+            this.colid_presentacion.Caption = "Presentación";
             this.colid_presentacion.ColumnEdit = this.grd_presentacion;
             this.colid_presentacion.FieldName = "id_presentacion";
             this.colid_presentacion.Name = "colid_presentacion";
+            this.colid_presentacion.OptionsFilter.AllowFilter = false;
             this.colid_presentacion.Visible = true;
             this.colid_presentacion.VisibleIndex = 4;
-            // 
-            // txtCantIngresar
-            // 
-            this.txtCantIngresar.AutoHeight = false;
-            this.txtCantIngresar.Name = "txtCantIngresar";
-            // 
-            // ceSeleccionar
-            // 
-            this.ceSeleccionar.AutoHeight = false;
-            this.ceSeleccionar.Name = "ceSeleccionar";
-            this.ceSeleccionar.CheckedChanged += new System.EventHandler(this.ceSeleccionar_CheckedChanged);
+            this.colid_presentacion.Width = 110;
             // 
             // grd_presentacion
             // 
@@ -394,6 +385,17 @@
             // 
             this.presentacionBindingSource.DataMember = "presentacion";
             this.presentacionBindingSource.DataSource = this.dsAlmacenesExternos;
+            // 
+            // txtCantIngresar
+            // 
+            this.txtCantIngresar.AutoHeight = false;
+            this.txtCantIngresar.Name = "txtCantIngresar";
+            // 
+            // ceSeleccionar
+            // 
+            this.ceSeleccionar.AutoHeight = false;
+            this.ceSeleccionar.Name = "ceSeleccionar";
+            this.ceSeleccionar.CheckedChanged += new System.EventHandler(this.ceSeleccionar_CheckedChanged);
             // 
             // label2
             // 
@@ -523,10 +525,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvIngreso)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_bodega)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.warehouseBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCantIngresar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ceSeleccionar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_presentacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.presentacionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCantIngresar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ceSeleccionar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProveedor.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtComment.Properties)).EndInit();

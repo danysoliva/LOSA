@@ -39,8 +39,8 @@ namespace LOSA.AlmacenesExterno
                 lote.Lote = txtLote.Text;
                 lote.Cantidad = Convert.ToDecimal(txtCantidad.Text);
                 lote.NumLine = -1;
-                lote.FechaProduccion = deFechaProduccion.DateTime;
-                lote.FechaVencimiento = deFechaProduccion.DateTime;
+                lote.FechaProduccion = Convert.ToDateTime(deFechaProduccion.Text);
+                lote.FechaVencimiento = Convert.ToDateTime(deFechaProduccion.Text);
 
                 using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringLOSA))
                 {

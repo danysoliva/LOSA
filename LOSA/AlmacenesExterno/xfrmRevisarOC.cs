@@ -157,6 +157,17 @@ namespace LOSA.AlmacenesExterno
                         return;
                     }
 
+                    if (string.IsNullOrEmpty( element.bodega))
+                    {
+                        CajaDialogo.Error("DEBE SELECCIONAR UN ALMACEN");
+                        return;
+                    }
+
+                    if ( element.id_presentacion==0)
+                    {
+                        CajaDialogo.Error("DEBE SELECCIONAR UNA PRESENTACION");
+                        return;
+                    }
 
                     if (element.diferencia > 0)
                     {
@@ -174,18 +185,30 @@ namespace LOSA.AlmacenesExterno
                         }) ;
 
                     }
+
+                    xfrmAlmacenesExternosDefinirLotes frm = new xfrmAlmacenesExternosDefinirLotes(lista, oc_h, UsuarioLogueado);
+
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    CajaDialogo.Error("DEBE SELECCIONAR UN ITEM");
+                    return;
                 }
             }
 
 
-            //}
-            xfrmAlmacenesExternosDefinirLotes frm = new xfrmAlmacenesExternosDefinirLotes(lista,oc_h,UsuarioLogueado );
+          
+            //xfrmAlmacenesExternosDefinirLotes frm = new xfrmAlmacenesExternosDefinirLotes(lista,oc_h,UsuarioLogueado );
 
-            if (frm.ShowDialog()== DialogResult.OK)
-            {
-                this.Close();
-            }
-            //frm.Show();
+            //if (frm.ShowDialog()== DialogResult.OK)
+            //{
+            //    this.Close();
+            //}
+
         }
 
         private void gvIngreso_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)

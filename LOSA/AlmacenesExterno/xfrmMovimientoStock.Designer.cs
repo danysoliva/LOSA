@@ -41,7 +41,11 @@
             this.colcodeItem = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colmp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfrom_almacen = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.luBodegaFrom = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.warehouseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsAlmacenesExternos = new LOSA.AlmacenesExterno.dsAlmacenesExternos();
             this.colto_almacen = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.luBodegaTO = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.colcantidad_kilos = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colunidades = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -52,10 +56,6 @@
             this.txtCantIngresar = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.ceSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.btnBuscarProd = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.luBodegaFrom = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.warehouseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsAlmacenesExternos = new LOSA.AlmacenesExterno.dsAlmacenesExternos();
-            this.luBodegaTO = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.deFecha = new DevExpress.XtraEditors.DateEdit();
@@ -71,13 +71,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.transferenciaStockBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSalidasAlmacenesExternos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTransferencia)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCantIngresar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ceSeleccionar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBuscarProd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.luBodegaFrom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.warehouseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsAlmacenesExternos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.luBodegaTO)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCantIngresar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ceSeleccionar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBuscarProd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deFecha.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deFecha.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueAlmacenFROM.Properties)).BeginInit();
@@ -173,26 +173,56 @@
             // colfrom_almacen
             // 
             this.colfrom_almacen.Caption = "De Almacén";
+            this.colfrom_almacen.ColumnEdit = this.luBodegaFrom;
             this.colfrom_almacen.FieldName = "from_almacen";
             this.colfrom_almacen.MinWidth = 21;
             this.colfrom_almacen.Name = "colfrom_almacen";
-            this.colfrom_almacen.OptionsColumn.AllowEdit = false;
             this.colfrom_almacen.OptionsFilter.AllowFilter = false;
             this.colfrom_almacen.Visible = true;
             this.colfrom_almacen.VisibleIndex = 2;
             this.colfrom_almacen.Width = 164;
             // 
+            // luBodegaFrom
+            // 
+            this.luBodegaFrom.AutoHeight = false;
+            this.luBodegaFrom.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.luBodegaFrom.DataSource = this.warehouseBindingSource;
+            this.luBodegaFrom.DisplayMember = "WhsCode";
+            this.luBodegaFrom.Name = "luBodegaFrom";
+            this.luBodegaFrom.ValueMember = "WhsCode";
+            // 
+            // warehouseBindingSource
+            // 
+            this.warehouseBindingSource.DataMember = "Warehouse";
+            this.warehouseBindingSource.DataSource = this.dsAlmacenesExternos;
+            // 
+            // dsAlmacenesExternos
+            // 
+            this.dsAlmacenesExternos.DataSetName = "dsAlmacenesExternos";
+            this.dsAlmacenesExternos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // colto_almacen
             // 
             this.colto_almacen.Caption = "Almacén Destino";
+            this.colto_almacen.ColumnEdit = this.luBodegaTO;
             this.colto_almacen.FieldName = "to_almacen";
             this.colto_almacen.MinWidth = 21;
             this.colto_almacen.Name = "colto_almacen";
-            this.colto_almacen.OptionsColumn.AllowEdit = false;
             this.colto_almacen.OptionsFilter.AllowFilter = false;
             this.colto_almacen.Visible = true;
             this.colto_almacen.VisibleIndex = 3;
             this.colto_almacen.Width = 164;
+            // 
+            // luBodegaTO
+            // 
+            this.luBodegaTO.AutoHeight = false;
+            this.luBodegaTO.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.luBodegaTO.DataSource = this.warehouseBindingSource;
+            this.luBodegaTO.DisplayMember = "WhsCode";
+            this.luBodegaTO.Name = "luBodegaTO";
+            this.luBodegaTO.ValueMember = "WhsCode";
             // 
             // colcantidad_kilos
             // 
@@ -281,36 +311,6 @@
             this.btnBuscarProd.Name = "btnBuscarProd";
             this.btnBuscarProd.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnBuscarProd_ButtonClick);
             // 
-            // luBodegaFrom
-            // 
-            this.luBodegaFrom.AutoHeight = false;
-            this.luBodegaFrom.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.luBodegaFrom.DataSource = this.warehouseBindingSource;
-            this.luBodegaFrom.DisplayMember = "WhsCode";
-            this.luBodegaFrom.Name = "luBodegaFrom";
-            this.luBodegaFrom.ValueMember = "WhsCode";
-            // 
-            // warehouseBindingSource
-            // 
-            this.warehouseBindingSource.DataMember = "Warehouse";
-            this.warehouseBindingSource.DataSource = this.dsAlmacenesExternos;
-            // 
-            // dsAlmacenesExternos
-            // 
-            this.dsAlmacenesExternos.DataSetName = "dsAlmacenesExternos";
-            this.dsAlmacenesExternos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // luBodegaTO
-            // 
-            this.luBodegaTO.AutoHeight = false;
-            this.luBodegaTO.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.luBodegaTO.DataSource = this.warehouseBindingSource;
-            this.luBodegaTO.DisplayMember = "WhsCode";
-            this.luBodegaTO.Name = "luBodegaTO";
-            this.luBodegaTO.ValueMember = "WhsCode";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -385,6 +385,7 @@
             // lueAlmacenFROM
             // 
             this.lueAlmacenFROM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lueAlmacenFROM.Enabled = false;
             this.lueAlmacenFROM.Location = new System.Drawing.Point(905, 118);
             this.lueAlmacenFROM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lueAlmacenFROM.Name = "lueAlmacenFROM";
@@ -439,6 +440,9 @@
             this.lueAlmacenDestino.Properties.AppearanceDropDown.Options.UseFont = true;
             this.lueAlmacenDestino.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueAlmacenDestino.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("WhsCode", "Whs Code", 103, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("WhsName", "Whs Name", 77, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.lueAlmacenDestino.Properties.DataSource = this.warehouseBindingSource;
             this.lueAlmacenDestino.Properties.DisplayMember = "WhsCode";
             this.lueAlmacenDestino.Properties.NullText = "";
@@ -495,20 +499,20 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "xfrmMovimientoStock";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "xfrmMovimientoStock";
+            this.Text = "Movimiento Stock";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.xfrmMovimientoStock_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gcTransferencia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.transferenciaStockBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSalidasAlmacenesExternos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTransferencia)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCantIngresar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ceSeleccionar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBuscarProd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.luBodegaFrom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.warehouseBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsAlmacenesExternos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.luBodegaTO)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCantIngresar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ceSeleccionar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBuscarProd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deFecha.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deFecha.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueAlmacenFROM.Properties)).EndInit();

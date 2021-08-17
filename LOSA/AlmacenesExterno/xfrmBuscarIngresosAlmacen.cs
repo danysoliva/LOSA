@@ -60,7 +60,7 @@ namespace LOSA.AlmacenesExterno
                 ingreso_h.CardName = row.CardName;
                 ingreso_h.ID = row.id;
                 ingreso_h.DocEntry = row.DocEntrySAP;
-             
+                ingreso_h.BodegaIN = row.bodega;
 
                 this.DialogResult = DialogResult.OK;
             }
