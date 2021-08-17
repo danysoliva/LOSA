@@ -70,10 +70,10 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>13DFEEC6EEA8F8511E79823E02D353B5FC453115</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>B8B1E1C226D4161B735B5D87883A090CA12C1142</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>LOSA_1_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>LOSA_3_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -92,7 +92,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>LOSA_1_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>LOSA_3_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -1339,6 +1339,12 @@
     <Compile Include="TransaccionesMP\frmEntregaTarimaReq.Designer.cs">
       <DependentUpon>frmEntregaTarimaReq.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\frmEntregaTarimaReq_3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmEntregaTarimaReq_3.Designer.cs">
+      <DependentUpon>frmEntregaTarimaReq_3.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesMP\frmEntregaTarimaReq_v2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1380,6 +1386,12 @@
     </Compile>
     <Compile Include="TransaccionesMP\frmRequisiciones.Designer.cs">
       <DependentUpon>frmRequisiciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmResumenToEntregar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmResumenToEntregar.Designer.cs">
+      <DependentUpon>frmResumenToEntregar.cs</DependentUpon>
     </Compile>
     <Compile Include="TransaccionesMP\frmSeleccionLote.cs">
       <SubType>Form</SubType>
@@ -2113,6 +2125,9 @@
     <EmbeddedResource Include="TransaccionesMP\frmEntregaTarimaReq.resx">
       <DependentUpon>frmEntregaTarimaReq.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmEntregaTarimaReq_3.resx">
+      <DependentUpon>frmEntregaTarimaReq_3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmEntregaTarimaReq_v2.resx">
       <DependentUpon>frmEntregaTarimaReq_v2.cs</DependentUpon>
     </EmbeddedResource>
@@ -2133,6 +2148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmRequisiciones.resx">
       <DependentUpon>frmRequisiciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmResumenToEntregar.resx">
+      <DependentUpon>frmResumenToEntregar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmSeleccionLote.resx">
       <DependentUpon>frmSeleccionLote.cs</DependentUpon>

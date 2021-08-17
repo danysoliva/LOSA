@@ -41,11 +41,28 @@ namespace LOSA.TransaccionesMP
 
         private void cmdEntrega_Click(object sender, EventArgs e)
         {
-            //entregar tarima directamente
-            //frmGestionUbicaciones frm = new frmGestionUbicaciones(UsuarioLogeado);
-            frmEntregaTarimaReq_v2 frm = new frmEntregaTarimaReq_v2(UsuarioLogeado);
-            frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
+            ////entregar tarima directamente
+            ////frmGestionUbicaciones frm = new frmGestionUbicaciones(UsuarioLogeado);
+            //frmEntregaTarimaReq_3 frm = new frmEntregaTarimaReq_3(UsuarioLogeado);
+
+            ////frmEntregaTarimaReq_v2 frm = new frmEntregaTarimaReq_v2(UsuarioLogeado);
+            
+
+            SelectorFor path = new SelectorFor(3);
+            if (path.Camino == 1)
+            {
+                frmEntregaTarimaReq_3 frm = new frmEntregaTarimaReq_3(UsuarioLogeado);
+                frm.WindowState = FormWindowState.Maximized;
+                frm.Show();
+            }
+            else
+            {
+                frmEntregaTarimaReq_v2 frm = new frmEntregaTarimaReq_v2(UsuarioLogeado);
+                frm.WindowState = FormWindowState.Maximized;
+                frm.Show();
+            }
+          
+
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
