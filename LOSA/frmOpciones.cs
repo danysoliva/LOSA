@@ -19,6 +19,7 @@ using LOSA.TransaccionesPT;
 using LOSA.AlmacenesExterno;
 using LOSA.Reportes;
 using LOSA.Trazabilidad;
+using LOSA.Despachos;
 
 namespace LOSA
 {
@@ -580,6 +581,13 @@ namespace LOSA
         private void simpleButton16_Click(object sender, EventArgs e)
         {
             frmTrazabilidadOpciones frm = new frmTrazabilidadOpciones(this.UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void btn_andenes_Click(object sender, EventArgs e)
+        {
+            frmSeleccionAnden frm = new frmSeleccionAnden();
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }

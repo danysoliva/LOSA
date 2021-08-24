@@ -4,6 +4,10 @@
 
     partial class ds_despachos
     {
+        partial class Anden_viewDataTable
+        {
+        }
+
         partial class lineas_orden_cargaDataTable
         {
         }

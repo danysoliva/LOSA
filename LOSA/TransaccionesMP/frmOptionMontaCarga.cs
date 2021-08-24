@@ -99,8 +99,16 @@ namespace LOSA.TransaccionesMP
             }
             else
             {
-                LOSA.Despachos.frm_despacho_v2 FRM = new Despachos.frm_despacho_v2();
-                FRM.Show();
+                if (path.Camino == 2)
+                {
+                    LOSA.Despachos.frm_despacho_v2 FRM = new Despachos.frm_despacho_v2();
+                    FRM.Show();
+                }
+                else
+                {
+                    LOSA.Despachos.frm_despacho_v3 frm = new Despachos.frm_despacho_v3();
+                    frm.Show();
+                }
             }
 
           
