@@ -29,6 +29,54 @@ namespace LOSA.Trazabilidad
             LoadTiposArchivos();
             UsuarioLogeado = pUser;
             LoadAdjuntosRows();
+            LoadRiesgos();
+            LoadAprobaciones();
+        }
+
+        private void LoadAprobaciones()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_lista_aprobaciones", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@cardcode", vProveedorActual.Codigo);
+                dsMantoTrazabilidad1.aprobacion.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsMantoTrazabilidad1.aprobacion);
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
+
+        private void LoadRiesgos()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_lista_riesgos", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@cardcode", vProveedorActual.Codigo);
+                dsMantoTrazabilidad1.riesgos.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsMantoTrazabilidad1.riesgos);
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
         }
 
         private void cmdBuscarProveedores_Click(object sender, EventArgs e)
@@ -36,6 +84,7 @@ namespace LOSA.Trazabilidad
             frmBuscarProvMP frm = new frmBuscarProvMP();
             if(frm.ShowDialog()== DialogResult.OK)
             {
+                
                 txtCodigo.Text = frm.ProveedorRow.Codigo;
                 txtNombre.Text = frm.ProveedorRow.Nombre;
                 txtNombreF.Text = frm.ProveedorRow.NombreF;
@@ -47,8 +96,61 @@ namespace LOSA.Trazabilidad
                 txtTel3.Text = frm.ProveedorRow.Telefono3;
                 txtDireccion.Text = frm.ProveedorRow.Direccion;
                 txtCorreo.Text = frm.ProveedorRow.Correo;
+                
+                this.gridLookUpEdit_Riesgos.EditValueChanged -= new System.EventHandler(this.gridLookUpEdit_Riesgos_EditValueChanged);
+                this.gridLookUpEdit_aprobacion.EditValueChanged -= new System.EventHandler(this.gridLookUpEdit_aprobacion_EditValueChanged);
+                this.toggleSwitch1.EditValueChanged -= new System.EventHandler(this.toggleSwitch1_EditValueChanged);
+                gridLookUpEdit_aprobacion.EditValue = gridLookUpEdit_Riesgos.EditValue = null;
+
+                gridLookUpEdit_aprobacion.EditValue = frm.ProveedorRow.IdAprobacion;
+                gridLookUpEdit_Riesgos.EditValue = frm.ProveedorRow.IdRiesgo;
+                toggleSwitch1.IsOn = frm.ProveedorRow.Auditoria;
                 LoadAdjuntosRows();
                 LoadPlantas();
+                //LoadIngredientes();
+                gridLookUpEdit_aprobacion.Enabled = gridLookUpEdit_Riesgos.Enabled = true;
+                toggleSwitch1.Enabled = true;
+
+                this.gridLookUpEdit_Riesgos.EditValueChanged += new System.EventHandler(this.gridLookUpEdit_Riesgos_EditValueChanged);
+                this.gridLookUpEdit_aprobacion.EditValueChanged += new System.EventHandler(this.gridLookUpEdit_aprobacion_EditValueChanged);
+                this.toggleSwitch1.EditValueChanged += new System.EventHandler(this.toggleSwitch1_EditValueChanged);
+            }
+            else
+            {
+                this.gridLookUpEdit_Riesgos.EditValueChanged -= new System.EventHandler(this.gridLookUpEdit_Riesgos_EditValueChanged);
+                this.gridLookUpEdit_aprobacion.EditValueChanged -= new System.EventHandler(this.gridLookUpEdit_aprobacion_EditValueChanged);
+                this.toggleSwitch1.EditValueChanged -= new System.EventHandler(this.toggleSwitch1_EditValueChanged);
+
+                gridLookUpEdit_aprobacion.Enabled = gridLookUpEdit_Riesgos.Enabled = false;
+                toggleSwitch1.Enabled = false;
+                gridLookUpEdit_aprobacion.EditValue = gridLookUpEdit_Riesgos.EditValue = null;
+
+                this.gridLookUpEdit_Riesgos.EditValueChanged += new System.EventHandler(this.gridLookUpEdit_Riesgos_EditValueChanged);
+                this.gridLookUpEdit_aprobacion.EditValueChanged += new System.EventHandler(this.gridLookUpEdit_aprobacion_EditValueChanged);
+                this.toggleSwitch1.EditValueChanged += new System.EventHandler(this.toggleSwitch1_EditValueChanged);
+            }
+        }
+
+        private void LoadIngredientes()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@cardcode", vProveedorActual.Codigo);
+                dsMantoTrazabilidad1.archivos.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsMantoTrazabilidad1.archivos);
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
             }
         }
 
@@ -375,6 +477,49 @@ namespace LOSA.Trazabilidad
             {
                 LoadPlantas();
             }
+        }
+
+        private void gridLookUpEdit_Riesgos_EditValueChanged(object sender, EventArgs e)
+        {
+            if (vProveedorActual.Recuperado)
+            {
+                if(vProveedorActual.UpdateDatos(gridLookUpEdit_Riesgos.EditValue, 1, false, vProveedorActual.Codigo))
+                {
+                    //accion 
+                    vProveedorActual.IdRiesgo = Convert.ToInt32(gridLookUpEdit_Riesgos.EditValue);
+                }
+            }
+        }
+
+        private void gridLookUpEdit_aprobacion_EditValueChanged(object sender, EventArgs e)
+        {
+            if (vProveedorActual.Recuperado)
+            {
+                if (vProveedorActual.UpdateDatos(gridLookUpEdit_aprobacion.EditValue, 3, false, vProveedorActual.Codigo))
+                {
+                    //accion 
+                    vProveedorActual.IdAprobacion = Convert.ToInt32(gridLookUpEdit_aprobacion.EditValue);
+                }
+            }
+        }
+
+        private void toggleSwitch1_EditValueChanged(object sender, EventArgs e)
+        {
+            if (vProveedorActual.Recuperado)
+            {
+                if (vProveedorActual.UpdateDatos(0, 2, toggleSwitch1.IsOn, vProveedorActual.Codigo))
+                {
+                    //accion 
+                    vProveedorActual.Auditoria = toggleSwitch1.IsOn;
+                }
+            }
+        }
+
+        private void cmdDelete___ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            //Delete Ingredientes
+
+
         }
     }
 }

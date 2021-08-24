@@ -73,6 +73,12 @@ namespace LOSA.Trazabilidad
 
         private void cmdGuardar_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtNombre.Text))
+            {
+                CajaDialogo.Error("No se permite dejar el nombre vacio!");
+                return;
+            }
+
             switch (TipoAccionActual)
             {
                 case TipoAccion.Insert:
