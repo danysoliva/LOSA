@@ -10287,6 +10287,10 @@ namespace LOSA.Despachos {
             
             private global::System.Data.DataColumn columncardcode;
             
+            private global::System.Data.DataColumn columnfurgon;
+            
+            private global::System.Data.DataColumn columnconductorin;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public requisa_ptDataTable() {
@@ -10354,6 +10358,22 @@ namespace LOSA.Despachos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn furgonColumn {
+                get {
+                    return this.columnfurgon;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn conductorinColumn {
+                get {
+                    return this.columnconductorin;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -10389,13 +10409,15 @@ namespace LOSA.Despachos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public requisa_ptRow Addrequisa_ptRow(int id, int NumID, System.DateTime fecha_creacion, string cardcode) {
+            public requisa_ptRow Addrequisa_ptRow(int id, int NumID, System.DateTime fecha_creacion, string cardcode, string furgon, string conductorin) {
                 requisa_ptRow rowrequisa_ptRow = ((requisa_ptRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
                         NumID,
                         fecha_creacion,
-                        cardcode};
+                        cardcode,
+                        furgon,
+                        conductorin};
                 rowrequisa_ptRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowrequisa_ptRow);
                 return rowrequisa_ptRow;
@@ -10422,6 +10444,8 @@ namespace LOSA.Despachos {
                 this.columnNumID = base.Columns["NumID"];
                 this.columnfecha_creacion = base.Columns["fecha_creacion"];
                 this.columncardcode = base.Columns["cardcode"];
+                this.columnfurgon = base.Columns["furgon"];
+                this.columnconductorin = base.Columns["conductorin"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10435,6 +10459,10 @@ namespace LOSA.Despachos {
                 base.Columns.Add(this.columnfecha_creacion);
                 this.columncardcode = new global::System.Data.DataColumn("cardcode", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncardcode);
+                this.columnfurgon = new global::System.Data.DataColumn("furgon", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfurgon);
+                this.columnconductorin = new global::System.Data.DataColumn("conductorin", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnconductorin);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16536,6 +16564,38 @@ namespace LOSA.Despachos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string furgon {
+                get {
+                    try {
+                        return ((string)(this[this.tablerequisa_pt.furgonColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'furgon\' in table \'requisa_pt\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablerequisa_pt.furgonColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string conductorin {
+                get {
+                    try {
+                        return ((string)(this[this.tablerequisa_pt.conductorinColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'conductorin\' in table \'requisa_pt\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablerequisa_pt.conductorinColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tablerequisa_pt.idColumn);
             }
@@ -16580,6 +16640,30 @@ namespace LOSA.Despachos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetcardcodeNull() {
                 this[this.tablerequisa_pt.cardcodeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsfurgonNull() {
+                return this.IsNull(this.tablerequisa_pt.furgonColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetfurgonNull() {
+                this[this.tablerequisa_pt.furgonColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsconductorinNull() {
+                return this.IsNull(this.tablerequisa_pt.conductorinColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetconductorinNull() {
+                this[this.tablerequisa_pt.conductorinColumn] = global::System.Convert.DBNull;
             }
         }
         

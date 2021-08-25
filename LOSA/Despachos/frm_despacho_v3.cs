@@ -361,7 +361,7 @@ namespace LOSA.Despachos
             datosTarimaPorCodBarra(cn);
 
             //Entrega de tarima
-            bool Guardo = false;
+            int Guardo = 0;
             bool error = false;
             bool disponible = false;
             string mensaje = "";
@@ -395,7 +395,7 @@ namespace LOSA.Despachos
                             SqlCommand cmd = new SqlCommand("sp_verifica_diponibilidad_tarima_entrega_pt", con);
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.AddWithValue("@id", tarimaEncontrada.Id);
-                            cmd.Parameters.AddWithValue("@id_despacho", id_despacho);
+                            cmd.Parameters.AddWithValue("@id_despacho", N_Documento);
                             SqlDataReader dr = cmd.ExecuteReader();
                             if (dr.Read())
                             {
@@ -467,20 +467,20 @@ namespace LOSA.Despachos
                         DataOperations dp = new DataOperations();
                         SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                         con.Open();
-                        bool Final = false;
+                        int Final = 0;
                         SqlCommand cmd = new SqlCommand("sp_set_insert_salida_tarima_pt_v4", con);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@idtarima", tarimaEncontrada.Id);
                         cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
                         cmd.Parameters.AddWithValue("@unidades", frm.Ud);
-                        cmd.Parameters.AddWithValue("@id_despacho_h", id_despacho);
+                        cmd.Parameters.AddWithValue("@id_despacho_h", N_Documento);
                         SqlDataReader dr = cmd.ExecuteReader();
                         if (dr.Read())
                         {
-                            Guardo = dr.GetBoolean(0);
-                            Final = dr.GetBoolean(1);
+                            Guardo = dr.GetInt32(0);
+                            Final = dr.GetInt32(1);
                         }
-                        if (Final)
+                        if (Final == 1)
                         {
                             Clear();
                         }
@@ -497,7 +497,7 @@ namespace LOSA.Despachos
                         timerLimpiarMensaje.Start();
                     }
 
-                    if (Guardo)
+                    if (Guardo == 1)
                     {
                         //Mensaje de transaccion exitosa
                         lblMensaje.Text = "Transacción Exitosa!";
@@ -789,7 +789,25 @@ namespace LOSA.Despachos
 
         private void beTarima_KeyDown(object sender, KeyEventArgs e)
         {
-            EntregarTarima();
+            if (e.KeyCode == Keys.Enter)
+            {
+                EntregarTarima();
+            }
+        }
+
+        private void timerLimpiarMensaje_Tick_1(object sender, EventArgs e)
+        {
+
+            load_data();
+            load_filas();
+            timerLimpiarMensaje.Stop();
+            timerLimpiarMensaje.Enabled = false;
+            panelNotificacion.BackColor = Color.White;
+            txtCantidadT.Text = txtPeso.Text = "0";
+            beTarima.Text = "";
+            gcTarima.DataSource = null;
+            lblMensaje.Text = "";
+            beTarima.Focus();
         }
     }
      

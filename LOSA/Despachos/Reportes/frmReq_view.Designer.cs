@@ -45,6 +45,8 @@ namespace LOSA.Despachos.Reportes
             this.colcardcode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSelecionar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colconductorin = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfurgon = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds_despachos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
@@ -70,6 +72,9 @@ namespace LOSA.Despachos.Reportes
             // 
             // grd_data
             // 
+            this.grd_data.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_data.DataMember = "requisa_pt";
             this.grd_data.DataSource = this.ds_despachos;
             this.grd_data.Location = new System.Drawing.Point(3, 85);
@@ -114,7 +119,9 @@ namespace LOSA.Despachos.Reportes
             this.colNumID,
             this.colfecha_creacion,
             this.colcardcode,
-            this.colSelecionar});
+            this.colSelecionar,
+            this.colconductorin,
+            this.colfurgon});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
@@ -135,7 +142,7 @@ namespace LOSA.Despachos.Reportes
             this.colNumID.OptionsColumn.AllowEdit = false;
             this.colNumID.Visible = true;
             this.colNumID.VisibleIndex = 0;
-            this.colNumID.Width = 109;
+            this.colNumID.Width = 52;
             // 
             // colfecha_creacion
             // 
@@ -144,8 +151,8 @@ namespace LOSA.Despachos.Reportes
             this.colfecha_creacion.Name = "colfecha_creacion";
             this.colfecha_creacion.OptionsColumn.AllowEdit = false;
             this.colfecha_creacion.Visible = true;
-            this.colfecha_creacion.VisibleIndex = 1;
-            this.colfecha_creacion.Width = 209;
+            this.colfecha_creacion.VisibleIndex = 4;
+            this.colfecha_creacion.Width = 114;
             // 
             // colcardcode
             // 
@@ -154,8 +161,8 @@ namespace LOSA.Despachos.Reportes
             this.colcardcode.Name = "colcardcode";
             this.colcardcode.OptionsColumn.AllowEdit = false;
             this.colcardcode.Visible = true;
-            this.colcardcode.VisibleIndex = 2;
-            this.colcardcode.Width = 211;
+            this.colcardcode.VisibleIndex = 1;
+            this.colcardcode.Width = 66;
             // 
             // colSelecionar
             // 
@@ -163,7 +170,8 @@ namespace LOSA.Despachos.Reportes
             this.colSelecionar.ColumnEdit = this.btnSeleccionar;
             this.colSelecionar.Name = "colSelecionar";
             this.colSelecionar.Visible = true;
-            this.colSelecionar.VisibleIndex = 3;
+            this.colSelecionar.VisibleIndex = 5;
+            this.colSelecionar.Width = 52;
             // 
             // btnSeleccionar
             // 
@@ -174,6 +182,24 @@ namespace LOSA.Despachos.Reportes
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
+            // 
+            // colconductorin
+            // 
+            this.colconductorin.Caption = "Conductor";
+            this.colconductorin.FieldName = "conductorin";
+            this.colconductorin.Name = "colconductorin";
+            this.colconductorin.Visible = true;
+            this.colconductorin.VisibleIndex = 2;
+            this.colconductorin.Width = 119;
+            // 
+            // colfurgon
+            // 
+            this.colfurgon.Caption = "Furgon";
+            this.colfurgon.FieldName = "furgon";
+            this.colfurgon.Name = "colfurgon";
+            this.colfurgon.Visible = true;
+            this.colfurgon.VisibleIndex = 3;
+            this.colfurgon.Width = 126;
             // 
             // frmReq_view
             // 
@@ -205,5 +231,7 @@ namespace LOSA.Despachos.Reportes
         private DevExpress.XtraGrid.Columns.GridColumn colcardcode;
         private DevExpress.XtraGrid.Columns.GridColumn colSelecionar;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnSeleccionar;
+        private DevExpress.XtraGrid.Columns.GridColumn colconductorin;
+        private DevExpress.XtraGrid.Columns.GridColumn colfurgon;
     }
 }
