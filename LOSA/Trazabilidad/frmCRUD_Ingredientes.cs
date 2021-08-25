@@ -85,7 +85,7 @@ namespace LOSA.Trazabilidad
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("[sp_load_presentacion_pt]", con);
+                SqlCommand cmd = new SqlCommand("[sp_get_presentaciones_activas_v2]", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 //cmd.Parameters.AddWithValue("@idbodega", idBodega);
                 dsMantoTrazabilidad1.presentaciones.Clear();

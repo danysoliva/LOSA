@@ -29,7 +29,6 @@ namespace LOSA.Trazabilidad
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCRUD_Ingredientes));
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -42,17 +41,23 @@ namespace LOSA.Trazabilidad
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridLookUpEdit_MP = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.bindingSourcePresentacion = new System.Windows.Forms.BindingSource(this.components);
+            this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldescripcion1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfactor1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colmaterial = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcode_sap = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.bindingSourceMP = new System.Windows.Forms.BindingSource();
             this.dsMantoTrazabilidad1 = new LOSA.Trazabilidad.dsMantoTrazabilidad();
-            this.bindingSourceMP = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSourcePresentacion = new System.Windows.Forms.BindingSource();
             ((System.ComponentModel.ISupportInitialize)(this.txtProveedor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditPresentacion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit_MP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePresentacion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsMantoTrazabilidad1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceMP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsMantoTrazabilidad1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePresentacion)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -160,6 +165,10 @@ namespace LOSA.Trazabilidad
             // 
             // gridLookUpEdit1View
             // 
+            this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid1,
+            this.coldescripcion1,
+            this.colfactor1});
             this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -173,31 +182,79 @@ namespace LOSA.Trazabilidad
             this.gridLookUpEdit_MP.Properties.Appearance.Options.UseFont = true;
             this.gridLookUpEdit_MP.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.gridLookUpEdit_MP.Properties.DataSource = this.bindingSourceMP;
+            this.gridLookUpEdit_MP.Properties.DisplayMember = "material";
             this.gridLookUpEdit_MP.Properties.PopupView = this.gridView1;
+            this.gridLookUpEdit_MP.Properties.ValueMember = "id";
             this.gridLookUpEdit_MP.Size = new System.Drawing.Size(247, 24);
             this.gridLookUpEdit_MP.TabIndex = 17;
             // 
             // gridView1
             // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid,
+            this.colcode_sap,
+            this.colmaterial});
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
-            // bindingSourcePresentacion
+            // colid1
             // 
-            this.bindingSourcePresentacion.DataMember = "presentaciones";
-            this.bindingSourcePresentacion.DataSource = this.dsMantoTrazabilidad1;
+            this.colid1.FieldName = "id";
+            this.colid1.Name = "colid1";
+            // 
+            // coldescripcion1
+            // 
+            this.coldescripcion1.Caption = "Elija una Opción";
+            this.coldescripcion1.FieldName = "descripcion";
+            this.coldescripcion1.Name = "coldescripcion1";
+            this.coldescripcion1.Visible = true;
+            this.coldescripcion1.VisibleIndex = 0;
+            // 
+            // colfactor1
+            // 
+            this.colfactor1.FieldName = "factor";
+            this.colfactor1.Name = "colfactor1";
+            // 
+            // colid
+            // 
+            this.colid.FieldName = "id";
+            this.colid.Name = "colid";
+            // 
+            // colmaterial
+            // 
+            this.colmaterial.Caption = "NAME";
+            this.colmaterial.FieldName = "material";
+            this.colmaterial.Name = "colmaterial";
+            this.colmaterial.Visible = true;
+            this.colmaterial.VisibleIndex = 1;
+            this.colmaterial.Width = 526;
+            // 
+            // colcode_sap
+            // 
+            this.colcode_sap.Caption = "SAP CODE";
+            this.colcode_sap.FieldName = "code_sap";
+            this.colcode_sap.Name = "colcode_sap";
+            this.colcode_sap.Visible = true;
+            this.colcode_sap.VisibleIndex = 0;
+            this.colcode_sap.Width = 112;
+            // 
+            // bindingSourceMP
+            // 
+            this.bindingSourceMP.DataMember = "material";
+            this.bindingSourceMP.DataSource = this.dsMantoTrazabilidad1;
             // 
             // dsMantoTrazabilidad1
             // 
             this.dsMantoTrazabilidad1.DataSetName = "dsMantoTrazabilidad";
             this.dsMantoTrazabilidad1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // bindingSourceMP
+            // bindingSourcePresentacion
             // 
-            this.bindingSourceMP.DataMember = "material";
-            this.bindingSourceMP.DataSource = this.dsMantoTrazabilidad1;
+            this.bindingSourcePresentacion.DataMember = "presentaciones";
+            this.bindingSourcePresentacion.DataSource = this.dsMantoTrazabilidad1;
             // 
             // frmCRUD_Ingredientes
             // 
@@ -221,9 +278,9 @@ namespace LOSA.Trazabilidad
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit_MP.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePresentacion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsMantoTrazabilidad1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceMP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsMantoTrazabilidad1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePresentacion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,5 +302,11 @@ namespace LOSA.Trazabilidad
         private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit_MP;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.BindingSource bindingSourceMP;
+        private DevExpress.XtraGrid.Columns.GridColumn colid1;
+        private DevExpress.XtraGrid.Columns.GridColumn coldescripcion1;
+        private DevExpress.XtraGrid.Columns.GridColumn colfactor1;
+        private DevExpress.XtraGrid.Columns.GridColumn colid;
+        private DevExpress.XtraGrid.Columns.GridColumn colmaterial;
+        private DevExpress.XtraGrid.Columns.GridColumn colcode_sap;
     }
 }

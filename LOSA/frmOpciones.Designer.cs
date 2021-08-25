@@ -37,6 +37,7 @@
             this.cmdPT = new DevExpress.XtraEditors.SimpleButton();
             this.cmdMP = new DevExpress.XtraEditors.SimpleButton();
             this.TabLogistica = new DevExpress.XtraTab.XtraTabPage();
+            this.btn_andenes = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton13 = new DevExpress.XtraEditors.SimpleButton();
             this.btntarimasactivadasPT = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton14 = new DevExpress.XtraEditors.SimpleButton();
@@ -87,7 +88,6 @@
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.btn_andenes = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -252,6 +252,19 @@
             this.TabLogistica.PageVisible = false;
             this.TabLogistica.Size = new System.Drawing.Size(629, 422);
             this.TabLogistica.Text = "Logistica";
+            // 
+            // btn_andenes
+            // 
+            this.btn_andenes.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_andenes.Appearance.Options.UseFont = true;
+            this.btn_andenes.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btn_andenes.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_andenes.ImageOptions.Image")));
+            this.btn_andenes.Location = new System.Drawing.Point(419, 157);
+            this.btn_andenes.Name = "btn_andenes";
+            this.btn_andenes.Size = new System.Drawing.Size(199, 40);
+            this.btn_andenes.TabIndex = 39;
+            this.btn_andenes.Text = "Configuracion\r\nde andenes";
+            this.btn_andenes.Click += new System.EventHandler(this.btn_andenes_Click);
             // 
             // simpleButton13
             // 
@@ -694,7 +707,7 @@
             this.cmdLotesCalidad.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdLotesCalidad.Appearance.Options.UseFont = true;
             this.cmdLotesCalidad.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdLotesCalidad.ImageOptions.Image = global::LOSA.Properties.Resources.edit_table_1_;
+            this.cmdLotesCalidad.ImageOptions.Image = global::LOSA.Properties.Resources.box32px;
             this.cmdLotesCalidad.Location = new System.Drawing.Point(9, 23);
             this.cmdLotesCalidad.Name = "cmdLotesCalidad";
             this.cmdLotesCalidad.Size = new System.Drawing.Size(199, 71);
@@ -932,19 +945,6 @@
             this.labelControl3.Size = new System.Drawing.Size(372, 39);
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
-            // 
-            // btn_andenes
-            // 
-            this.btn_andenes.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_andenes.Appearance.Options.UseFont = true;
-            this.btn_andenes.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btn_andenes.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton17.ImageOptions.Image")));
-            this.btn_andenes.Location = new System.Drawing.Point(419, 157);
-            this.btn_andenes.Name = "btn_andenes";
-            this.btn_andenes.Size = new System.Drawing.Size(199, 40);
-            this.btn_andenes.TabIndex = 39;
-            this.btn_andenes.Text = "Configuracion\r\nde andenes";
-            this.btn_andenes.Click += new System.EventHandler(this.btn_andenes_Click);
             // 
             // frmOpciones
             // 

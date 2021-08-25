@@ -2906,6 +2906,8 @@ namespace LOSA.Trazabilidad {
             
             private global::System.Data.DataColumn columnmaterial;
             
+            private global::System.Data.DataColumn columncode_sap;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public materialDataTable() {
@@ -2957,6 +2959,14 @@ namespace LOSA.Trazabilidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn code_sapColumn {
+                get {
+                    return this.columncode_sap;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2992,11 +3002,12 @@ namespace LOSA.Trazabilidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public materialRow AddmaterialRow(int id, string material) {
+            public materialRow AddmaterialRow(int id, string material, string code_sap) {
                 materialRow rowmaterialRow = ((materialRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
-                        material};
+                        material,
+                        code_sap};
                 rowmaterialRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowmaterialRow);
                 return rowmaterialRow;
@@ -3021,6 +3032,7 @@ namespace LOSA.Trazabilidad {
             internal void InitVars() {
                 this.columnid = base.Columns["id"];
                 this.columnmaterial = base.Columns["material"];
+                this.columncode_sap = base.Columns["code_sap"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3030,6 +3042,8 @@ namespace LOSA.Trazabilidad {
                 base.Columns.Add(this.columnid);
                 this.columnmaterial = new global::System.Data.DataColumn("material", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmaterial);
+                this.columncode_sap = new global::System.Data.DataColumn("code_sap", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncode_sap);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4278,6 +4292,22 @@ namespace LOSA.Trazabilidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string code_sap {
+                get {
+                    try {
+                        return ((string)(this[this.tablematerial.code_sapColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'code_sap\' in table \'material\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablematerial.code_sapColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tablematerial.idColumn);
             }
@@ -4298,6 +4328,18 @@ namespace LOSA.Trazabilidad {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetmaterialNull() {
                 this[this.tablematerial.materialColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscode_sapNull() {
+                return this.IsNull(this.tablematerial.code_sapColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcode_sapNull() {
+                this[this.tablematerial.code_sapColumn] = global::System.Convert.DBNull;
             }
         }
         
