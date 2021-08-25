@@ -38,7 +38,7 @@ namespace LOSA.Trazabilidad
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.txtProveedor = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.gridLookUpEdit1 = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridLookUpEditPresentacion = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridLookUpEdit_MP = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -46,7 +46,7 @@ namespace LOSA.Trazabilidad
             this.dsMantoTrazabilidad1 = new LOSA.Trazabilidad.dsMantoTrazabilidad();
             this.bindingSourceMP = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.txtProveedor.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditPresentacion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit_MP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -143,20 +143,20 @@ namespace LOSA.Trazabilidad
             this.labelControl5.Text = "Proveedor";
             this.labelControl5.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtComentario_KeyDown);
             // 
-            // gridLookUpEdit1
+            // gridLookUpEditPresentacion
             // 
-            this.gridLookUpEdit1.Location = new System.Drawing.Point(149, 115);
-            this.gridLookUpEdit1.Name = "gridLookUpEdit1";
-            this.gridLookUpEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.gridLookUpEdit1.Properties.Appearance.Options.UseFont = true;
-            this.gridLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.gridLookUpEditPresentacion.Location = new System.Drawing.Point(149, 115);
+            this.gridLookUpEditPresentacion.Name = "gridLookUpEditPresentacion";
+            this.gridLookUpEditPresentacion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridLookUpEditPresentacion.Properties.Appearance.Options.UseFont = true;
+            this.gridLookUpEditPresentacion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gridLookUpEdit1.Properties.DataSource = this.bindingSourcePresentacion;
-            this.gridLookUpEdit1.Properties.DisplayMember = "descripcion";
-            this.gridLookUpEdit1.Properties.PopupView = this.gridLookUpEdit1View;
-            this.gridLookUpEdit1.Properties.ValueMember = "id";
-            this.gridLookUpEdit1.Size = new System.Drawing.Size(247, 24);
-            this.gridLookUpEdit1.TabIndex = 16;
+            this.gridLookUpEditPresentacion.Properties.DataSource = this.bindingSourcePresentacion;
+            this.gridLookUpEditPresentacion.Properties.DisplayMember = "descripcion";
+            this.gridLookUpEditPresentacion.Properties.PopupView = this.gridLookUpEdit1View;
+            this.gridLookUpEditPresentacion.Properties.ValueMember = "id";
+            this.gridLookUpEditPresentacion.Size = new System.Drawing.Size(247, 24);
+            this.gridLookUpEditPresentacion.TabIndex = 16;
             // 
             // gridLookUpEdit1View
             // 
@@ -205,7 +205,7 @@ namespace LOSA.Trazabilidad
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(520, 215);
             this.Controls.Add(this.gridLookUpEdit_MP);
-            this.Controls.Add(this.gridLookUpEdit1);
+            this.Controls.Add(this.gridLookUpEditPresentacion);
             this.Controls.Add(this.txtProveedor);
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.cmdHome);
@@ -217,7 +217,7 @@ namespace LOSA.Trazabilidad
             this.Text = "Plantas";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmCRUD_PlantasPRV_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.txtProveedor.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditPresentacion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit_MP.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
@@ -238,7 +238,7 @@ namespace LOSA.Trazabilidad
         private DevExpress.XtraEditors.SimpleButton cmdHome;
         private DevExpress.XtraEditors.TextEdit txtProveedor;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit1;
+        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEditPresentacion;
         private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
         private dsMantoTrazabilidad dsMantoTrazabilidad1;
         private System.Windows.Forms.BindingSource bindingSourcePresentacion;

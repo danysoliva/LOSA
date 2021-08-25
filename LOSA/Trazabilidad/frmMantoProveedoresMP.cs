@@ -521,5 +521,20 @@ namespace LOSA.Trazabilidad
 
 
         }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+
+            if (!vProveedorActual.Recuperado)
+            {
+                CajaDialogo.Error("Debe seleccionar un proveedor para poder relacionar un archivo Adjunto!");
+                return;
+            }
+            frmCRUD_Ingredientes frm = new frmCRUD_Ingredientes(vProveedorActual.Codigo,1,1, frmCRUD_Ingredientes.TipoAccion.Insert, UsuarioLogeado.Id);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                LoadAdjuntosRows();
+            }
+        }
     }
 }

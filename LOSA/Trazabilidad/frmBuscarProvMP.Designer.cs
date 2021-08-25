@@ -37,12 +37,12 @@ namespace LOSA.Trazabilidad
             this.colNombredeProveedor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNombreForaneo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRTN = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
-            this.cmdExcel = new DevExpress.XtraEditors.SimpleButton();
             this.colaprobacion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colauditoria = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colriesgo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdExcel = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMantoTrazabilidad1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -124,6 +124,36 @@ namespace LOSA.Trazabilidad
             this.colRTN.VisibleIndex = 3;
             this.colRTN.Width = 131;
             // 
+            // colaprobacion
+            // 
+            this.colaprobacion.Caption = "Aprobación";
+            this.colaprobacion.FieldName = "aprobacion";
+            this.colaprobacion.Name = "colaprobacion";
+            this.colaprobacion.OptionsColumn.AllowEdit = false;
+            this.colaprobacion.Visible = true;
+            this.colaprobacion.VisibleIndex = 4;
+            this.colaprobacion.Width = 121;
+            // 
+            // colauditoria
+            // 
+            this.colauditoria.Caption = "Auditoría";
+            this.colauditoria.FieldName = "auditoria";
+            this.colauditoria.Name = "colauditoria";
+            this.colauditoria.OptionsColumn.AllowEdit = false;
+            this.colauditoria.Visible = true;
+            this.colauditoria.VisibleIndex = 5;
+            this.colauditoria.Width = 121;
+            // 
+            // colriesgo
+            // 
+            this.colriesgo.Caption = "Riesgo";
+            this.colriesgo.FieldName = "riesgo";
+            this.colriesgo.Name = "colriesgo";
+            this.colriesgo.OptionsColumn.AllowEdit = false;
+            this.colriesgo.Visible = true;
+            this.colriesgo.VisibleIndex = 6;
+            this.colriesgo.Width = 136;
+            // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -165,33 +195,6 @@ namespace LOSA.Trazabilidad
             this.cmdExcel.TabIndex = 32;
             this.cmdExcel.Text = "Exportar";
             this.cmdExcel.Click += new System.EventHandler(this.cmdExcel_Click);
-            // 
-            // colaprobacion
-            // 
-            this.colaprobacion.Caption = "Aprobación";
-            this.colaprobacion.FieldName = "aprobacion";
-            this.colaprobacion.Name = "colaprobacion";
-            this.colaprobacion.Visible = true;
-            this.colaprobacion.VisibleIndex = 4;
-            this.colaprobacion.Width = 121;
-            // 
-            // colauditoria
-            // 
-            this.colauditoria.Caption = "Auditoría";
-            this.colauditoria.FieldName = "auditoria";
-            this.colauditoria.Name = "colauditoria";
-            this.colauditoria.Visible = true;
-            this.colauditoria.VisibleIndex = 5;
-            this.colauditoria.Width = 121;
-            // 
-            // colriesgo
-            // 
-            this.colriesgo.Caption = "Riesgo";
-            this.colriesgo.FieldName = "riesgo";
-            this.colriesgo.Name = "colriesgo";
-            this.colriesgo.Visible = true;
-            this.colriesgo.VisibleIndex = 6;
-            this.colriesgo.Width = 136;
             // 
             // frmBuscarProvMP
             // 
