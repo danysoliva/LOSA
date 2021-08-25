@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>180</ApplicationRevision>
+    <ApplicationRevision>184</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -70,11 +70,10 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>5A56FE5B36BF1139C0C28330C52B1468E1F78C88</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>B8B1E1C226D4161B735B5D87883A090CA12C1142</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>
-    </ManifestKeyFile>
+    <ManifestKeyFile>LOSA_3_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -93,8 +92,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>
-    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>LOSA_3_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -116,6 +114,7 @@
     <Reference Include="DevExpress.XtraGauges.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Charts.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -418,6 +417,12 @@
     <Compile Include="Despachos\frmRequisicion_Seleccion_Lote.Designer.cs">
       <DependentUpon>frmRequisicion_Seleccion_Lote.cs</DependentUpon>
     </Compile>
+    <Compile Include="Despachos\frmSeleccionAnden.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Despachos\frmSeleccionAnden.Designer.cs">
+      <DependentUpon>frmSeleccionAnden.cs</DependentUpon>
+    </Compile>
     <Compile Include="Despachos\frmseleccionlote.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -435,6 +440,12 @@
     </Compile>
     <Compile Include="Despachos\frm_despacho_v2.Designer.cs">
       <DependentUpon>frm_despacho_v2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Despachos\frm_despacho_v3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Despachos\frm_despacho_v3.Designer.cs">
+      <DependentUpon>frm_despacho_v3.cs</DependentUpon>
     </Compile>
     <Compile Include="Despachos\frm_entregarTarimaPT.cs">
       <SubType>Form</SubType>
@@ -501,6 +512,12 @@
     </Compile>
     <Compile Include="Despachos\fromdespacho.Designer.cs">
       <DependentUpon>fromdespacho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Despachos\Reportes\frmReq_view.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Despachos\Reportes\frmReq_view.Designer.cs">
+      <DependentUpon>frmReq_view.cs</DependentUpon>
     </Compile>
     <Compile Include="Despachos\Reportes\frm_pickboleta.cs">
       <SubType>Form</SubType>
@@ -840,6 +857,7 @@
       <DependentUpon>rptReporteTarimaPT.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <None Include="LOSA_3_TemporaryKey.pfx" />
     <None Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecepcionMP\dsingresos.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1708,6 +1726,9 @@
     <EmbeddedResource Include="Despachos\frmRequisicion_Seleccion_Lote.resx">
       <DependentUpon>frmRequisicion_Seleccion_Lote.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Despachos\frmSeleccionAnden.resx">
+      <DependentUpon>frmSeleccionAnden.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frmseleccionlote.resx">
       <DependentUpon>frmseleccionlote.cs</DependentUpon>
     </EmbeddedResource>
@@ -1716,6 +1737,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frm_despacho_v2.resx">
       <DependentUpon>frm_despacho_v2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Despachos\frm_despacho_v3.resx">
+      <DependentUpon>frm_despacho_v3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frm_entregarTarimaPT.resx">
       <DependentUpon>frm_entregarTarimaPT.cs</DependentUpon>
@@ -1749,6 +1773,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Despachos\fromdespacho.resx">
       <DependentUpon>fromdespacho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Despachos\Reportes\frmReq_view.resx">
+      <DependentUpon>frmReq_view.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Despachos\Reportes\frm_pickboleta.resx">
       <DependentUpon>frm_pickboleta.cs</DependentUpon>

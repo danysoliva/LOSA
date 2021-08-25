@@ -299,6 +299,8 @@
             this.colcantidad.FieldName = "cantidad";
             this.colcantidad.Name = "colcantidad";
             this.colcantidad.OptionsColumn.AllowEdit = false;
+            this.colcantidad.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cantidad", "Ud={0:0.##}")});
             this.colcantidad.Visible = true;
             this.colcantidad.VisibleIndex = 2;
             this.colcantidad.Width = 77;
@@ -319,8 +321,6 @@
             this.colfila.FieldName = "fila";
             this.colfila.Name = "colfila";
             this.colfila.OptionsColumn.AllowEdit = false;
-            this.colfila.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "fila", "SUM={0:0.##}")});
             this.colfila.Visible = true;
             this.colfila.VisibleIndex = 0;
             this.colfila.Width = 77;

@@ -87,6 +87,7 @@
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.btn_andenes = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -221,6 +222,7 @@
             // 
             // TabLogistica
             // 
+            this.TabLogistica.Controls.Add(this.btn_andenes);
             this.TabLogistica.Controls.Add(this.simpleButton13);
             this.TabLogistica.Controls.Add(this.btntarimasactivadasPT);
             this.TabLogistica.Controls.Add(this.simpleButton14);
@@ -257,7 +259,7 @@
             this.simpleButton13.Appearance.Options.UseFont = true;
             this.simpleButton13.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton13.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton13.ImageOptions.Image")));
-            this.simpleButton13.Location = new System.Drawing.Point(213, 341);
+            this.simpleButton13.Location = new System.Drawing.Point(9, 343);
             this.simpleButton13.Name = "simpleButton13";
             this.simpleButton13.Size = new System.Drawing.Size(199, 43);
             this.simpleButton13.TabIndex = 38;
@@ -272,7 +274,7 @@
             this.btntarimasactivadasPT.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btntarimasactivadasPT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btntarimasactivadasPT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btntarimasactivadasPT.ImageOptions.Image")));
-            this.btntarimasactivadasPT.Location = new System.Drawing.Point(419, 341);
+            this.btntarimasactivadasPT.Location = new System.Drawing.Point(215, 343);
             this.btntarimasactivadasPT.Margin = new System.Windows.Forms.Padding(2);
             this.btntarimasactivadasPT.Name = "btntarimasactivadasPT";
             this.btntarimasactivadasPT.Size = new System.Drawing.Size(201, 43);
@@ -288,7 +290,7 @@
             this.simpleButton14.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton14.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton14.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton14.ImageOptions.Image")));
-            this.simpleButton14.Location = new System.Drawing.Point(419, 296);
+            this.simpleButton14.Location = new System.Drawing.Point(419, 343);
             this.simpleButton14.Name = "simpleButton14";
             this.simpleButton14.Size = new System.Drawing.Size(201, 40);
             this.simpleButton14.TabIndex = 36;
@@ -330,7 +332,7 @@
             this.simpleButton10.Appearance.Options.UseFont = true;
             this.simpleButton10.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton10.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton10.ImageOptions.Image")));
-            this.simpleButton10.Location = new System.Drawing.Point(420, 159);
+            this.simpleButton10.Location = new System.Drawing.Point(420, 206);
             this.simpleButton10.Name = "simpleButton10";
             this.simpleButton10.Size = new System.Drawing.Size(199, 40);
             this.simpleButton10.TabIndex = 34;
@@ -345,7 +347,7 @@
             this.simpleButton8.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton8.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton8.ImageOptions.Image")));
-            this.simpleButton8.Location = new System.Drawing.Point(419, 204);
+            this.simpleButton8.Location = new System.Drawing.Point(419, 251);
             this.simpleButton8.Name = "simpleButton8";
             this.simpleButton8.Size = new System.Drawing.Size(199, 40);
             this.simpleButton8.TabIndex = 33;
@@ -384,7 +386,7 @@
             this.btnPlantarimas.Appearance.Options.UseFont = true;
             this.btnPlantarimas.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnPlantarimas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPlantarimas.ImageOptions.Image")));
-            this.btnPlantarimas.Location = new System.Drawing.Point(420, 250);
+            this.btnPlantarimas.Location = new System.Drawing.Point(420, 297);
             this.btnPlantarimas.Name = "btnPlantarimas";
             this.btnPlantarimas.Size = new System.Drawing.Size(198, 40);
             this.btnPlantarimas.TabIndex = 30;
@@ -464,7 +466,7 @@
             this.btnReq_PT.Appearance.Options.UseFont = true;
             this.btnReq_PT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnReq_PT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReq_PT.ImageOptions.Image")));
-            this.btnReq_PT.Location = new System.Drawing.Point(419, 158);
+            this.btnReq_PT.Location = new System.Drawing.Point(419, 205);
             this.btnReq_PT.Name = "btnReq_PT";
             this.btnReq_PT.Size = new System.Drawing.Size(199, 40);
             this.btnReq_PT.TabIndex = 23;
@@ -931,6 +933,19 @@
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
             // 
+            // btn_andenes
+            // 
+            this.btn_andenes.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_andenes.Appearance.Options.UseFont = true;
+            this.btn_andenes.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btn_andenes.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton17.ImageOptions.Image")));
+            this.btn_andenes.Location = new System.Drawing.Point(419, 157);
+            this.btn_andenes.Name = "btn_andenes";
+            this.btn_andenes.Size = new System.Drawing.Size(199, 40);
+            this.btn_andenes.TabIndex = 39;
+            this.btn_andenes.Text = "Configuracion\r\nde andenes";
+            this.btn_andenes.Click += new System.EventHandler(this.btn_andenes_Click);
+            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1015,5 +1030,6 @@
         private DevExpress.XtraEditors.SimpleButton cmdReporteReqManuales;
         private DevExpress.XtraEditors.SimpleButton simpleButton13;
         private DevExpress.XtraEditors.SimpleButton simpleButton16;
+        private DevExpress.XtraEditors.SimpleButton btn_andenes;
     }
 }

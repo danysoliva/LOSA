@@ -335,6 +335,7 @@ namespace LOSA.Despachos
                 CajaDialogo.Error("Debo de colocar por lo menos un Producto Terminado en la orden de carga.");
                 return;
             }
+            int SeAsingna = 0;
             string query = @"";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             cn.Open();
@@ -349,10 +350,12 @@ namespace LOSA.Despachos
                     if (txtboleta.Text == "")
                     {
                         cmd.Parameters.AddWithValue("@boleta", DBNull.Value);
+                        SeAsingna = 0;
                     }
                     else
                     {
                         cmd.Parameters.AddWithValue("@boleta", txtboleta.Text);
+                        SeAsingna = 1;
                     }
                     cmd.ExecuteNonQuery();
                     foreach (ds_despachos.detalle_despachosRow row in ds_despachos.detalle_despachos.Rows)
@@ -415,9 +418,16 @@ namespace LOSA.Despachos
                         }
                     }
                     cn.Close();
-                    CajaDialogo.Information("Transaccion exitosa.");
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
+
+                    frmSeleccionAnden frm = new frmSeleccionAnden(Id_despacho);
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        CajaDialogo.Information("Transaccion exitosa.");
+
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                    
                     break;
                 case OpType.Nuevo:
                    
@@ -428,10 +438,12 @@ namespace LOSA.Despachos
                     if (txtboleta.Text == "")
                     {
                         cmd.Parameters.AddWithValue("@id_serie", DBNull.Value);
+                        SeAsingna = 1;
                     }
                     else
                     {
                         cmd.Parameters.AddWithValue("@id_serie", txtboleta.Text);
+                        SeAsingna = 0;
                     }
                     cmd.Parameters.AddWithValue("@DocEntry", DocEntry);
 
@@ -454,9 +466,14 @@ namespace LOSA.Despachos
                         cmd.ExecuteNonQuery();
                     }
                     cn.Close();
-                    CajaDialogo.Information("Transaccion exitosa.");
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
+                    frmSeleccionAnden frms = new frmSeleccionAnden(Id_despacho);
+                    if (frms.ShowDialog() == DialogResult.OK)
+                    {
+                        CajaDialogo.Information("Transaccion exitosa.");
+
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
                     break;
                 default:
                     break;
