@@ -48,7 +48,7 @@ namespace LOSA.TransaccionesMP
             ////frmEntregaTarimaReq_v2 frm = new frmEntregaTarimaReq_v2(UsuarioLogeado);
             
 
-            SelectorFor path = new SelectorFor(3);
+            SelectorFor path = new SelectorFor(2);
             if (path.Camino == 1)
             {
                 frmEntregaTarimaReq_3 frm = new frmEntregaTarimaReq_3(UsuarioLogeado);

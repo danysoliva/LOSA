@@ -48,6 +48,9 @@
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSeleccionar1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ceSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.colbodega = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grdbodega = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.warehouseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtCantIngresar = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.rgSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemRadioGroup();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
@@ -101,14 +104,13 @@
             this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.colbodega = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.grdbodega = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.warehouseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gcIngreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.confMPIngresadasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsAlmacenesExternos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvIngreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ceSeleccionar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdbodega)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.warehouseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantIngresar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgSeleccionar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
@@ -135,8 +137,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdbodega)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.warehouseBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gcIngreso
@@ -293,6 +293,33 @@
             this.ceSeleccionar.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Radio;
             this.ceSeleccionar.Name = "ceSeleccionar";
             this.ceSeleccionar.Click += new System.EventHandler(this.ceSeleccionar_Click);
+            // 
+            // colbodega
+            // 
+            this.colbodega.Caption = "Bodega";
+            this.colbodega.ColumnEdit = this.grdbodega;
+            this.colbodega.FieldName = "bodega";
+            this.colbodega.Name = "colbodega";
+            this.colbodega.OptionsColumn.AllowEdit = false;
+            this.colbodega.Visible = true;
+            this.colbodega.VisibleIndex = 3;
+            this.colbodega.Width = 125;
+            // 
+            // grdbodega
+            // 
+            this.grdbodega.AutoHeight = false;
+            this.grdbodega.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.grdbodega.DataSource = this.warehouseBindingSource;
+            this.grdbodega.DisplayMember = "WhsName";
+            this.grdbodega.KeyMember = "WhsCode";
+            this.grdbodega.Name = "grdbodega";
+            this.grdbodega.ValueMember = "WhsCode";
+            // 
+            // warehouseBindingSource
+            // 
+            this.warehouseBindingSource.DataMember = "Warehouse";
+            this.warehouseBindingSource.DataSource = this.dsAlmacenesExternos;
             // 
             // txtCantIngresar
             // 
@@ -489,14 +516,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcLoteSelecionados.DataSource = this.loteSeleccionadosBindingSource;
             this.gcLoteSelecionados.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gcLoteSelecionados.Location = new System.Drawing.Point(698, 52);
+            this.gcLoteSelecionados.Location = new System.Drawing.Point(698, 54);
             this.gcLoteSelecionados.MainView = this.gvLotesSeleccionados;
             this.gcLoteSelecionados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gcLoteSelecionados.Name = "gcLoteSelecionados";
             this.gcLoteSelecionados.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit2,
             this.btnDel});
-            this.gcLoteSelecionados.Size = new System.Drawing.Size(503, 280);
+            this.gcLoteSelecionados.Size = new System.Drawing.Size(502, 276);
             this.gcLoteSelecionados.TabIndex = 45;
             this.gcLoteSelecionados.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvLotesSeleccionados});
@@ -661,13 +688,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcLote.DataSource = this.loteBindingSource;
             this.gcLote.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gcLote.Location = new System.Drawing.Point(11, 52);
+            this.gcLote.Location = new System.Drawing.Point(12, 54);
             this.gcLote.MainView = this.gvLote;
             this.gcLote.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gcLote.Name = "gcLote";
             this.gcLote.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.txtCantSeleccionada});
-            this.gcLote.Size = new System.Drawing.Size(542, 280);
+            this.gcLote.Size = new System.Drawing.Size(541, 276);
             this.gcLote.TabIndex = 44;
             this.gcLote.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvLote});
@@ -687,7 +714,7 @@
             this.btnAdd.Appearance.Options.UseFont = true;
             this.btnAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.Image")));
             this.btnAdd.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAdd.Location = new System.Drawing.Point(577, 115);
+            this.btnAdd.Location = new System.Drawing.Point(577, 116);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(96, 38);
             this.btnAdd.StyleController = this.layoutControl1;
@@ -722,7 +749,7 @@
             this.simpleButton3.Appearance.Options.UseFont = true;
             this.simpleButton3.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.simpleButton3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton3.ImageOptions.SvgImage")));
-            this.simpleButton3.Location = new System.Drawing.Point(11, 10);
+            this.simpleButton3.Location = new System.Drawing.Point(12, 12);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(126, 38);
             this.simpleButton3.StyleController = this.layoutControl1;
@@ -740,7 +767,7 @@
             this.btnDelete.Appearance.Options.UseFont = true;
             this.btnDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.ImageOptions.Image")));
             this.btnDelete.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnDelete.Location = new System.Drawing.Point(577, 157);
+            this.btnDelete.Location = new System.Drawing.Point(577, 158);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(96, 38);
             this.btnDelete.StyleController = this.layoutControl1;
@@ -773,14 +800,14 @@
             this.layoutControlItem1.Control = this.gcLote;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 42);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(546, 284);
+            this.layoutControlItem1.Size = new System.Drawing.Size(545, 280);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.btnAdd;
-            this.layoutControlItem2.Location = new System.Drawing.Point(566, 105);
+            this.layoutControlItem2.Location = new System.Drawing.Point(565, 104);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(100, 42);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
@@ -789,16 +816,16 @@
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.gcLoteSelecionados;
-            this.layoutControlItem3.Location = new System.Drawing.Point(687, 42);
+            this.layoutControlItem3.Location = new System.Drawing.Point(686, 42);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(507, 284);
+            this.layoutControlItem3.Size = new System.Drawing.Size(506, 280);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.btnDelete;
-            this.layoutControlItem4.Location = new System.Drawing.Point(566, 147);
+            this.layoutControlItem4.Location = new System.Drawing.Point(565, 146);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(100, 42);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
@@ -808,31 +835,31 @@
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(566, 189);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(565, 188);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(100, 137);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(100, 134);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(666, 42);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(665, 42);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(21, 284);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(21, 280);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem4
             // 
             this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(546, 42);
+            this.emptySpaceItem4.Location = new System.Drawing.Point(545, 42);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(20, 284);
+            this.emptySpaceItem4.Size = new System.Drawing.Size(20, 280);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem5
             // 
             this.emptySpaceItem5.AllowHotTrack = false;
-            this.emptySpaceItem5.Location = new System.Drawing.Point(0, 326);
+            this.emptySpaceItem5.Location = new System.Drawing.Point(0, 322);
             this.emptySpaceItem5.Name = "emptySpaceItem5";
             this.emptySpaceItem5.Size = new System.Drawing.Size(168, 34);
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
@@ -840,9 +867,9 @@
             // emptySpaceItem6
             // 
             this.emptySpaceItem6.AllowHotTrack = false;
-            this.emptySpaceItem6.Location = new System.Drawing.Point(566, 42);
+            this.emptySpaceItem6.Location = new System.Drawing.Point(565, 42);
             this.emptySpaceItem6.Name = "emptySpaceItem6";
-            this.emptySpaceItem6.Size = new System.Drawing.Size(100, 63);
+            this.emptySpaceItem6.Size = new System.Drawing.Size(100, 62);
             this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem1
@@ -850,7 +877,7 @@
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(130, 0);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(1064, 42);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(1062, 42);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem5
@@ -865,9 +892,9 @@
             // emptySpaceItem7
             // 
             this.emptySpaceItem7.AllowHotTrack = false;
-            this.emptySpaceItem7.Location = new System.Drawing.Point(168, 326);
+            this.emptySpaceItem7.Location = new System.Drawing.Point(168, 322);
             this.emptySpaceItem7.Name = "emptySpaceItem7";
-            this.emptySpaceItem7.Size = new System.Drawing.Size(1026, 34);
+            this.emptySpaceItem7.Size = new System.Drawing.Size(1024, 34);
             this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
             // 
             // btnGuardar
@@ -902,33 +929,6 @@
             this.labelControl1.TabIndex = 53;
             this.labelControl1.Text = "Configuracion de Lotes";
             // 
-            // colbodega
-            // 
-            this.colbodega.Caption = "Bodega";
-            this.colbodega.ColumnEdit = this.grdbodega;
-            this.colbodega.FieldName = "bodega";
-            this.colbodega.Name = "colbodega";
-            this.colbodega.OptionsColumn.AllowEdit = false;
-            this.colbodega.Visible = true;
-            this.colbodega.VisibleIndex = 3;
-            this.colbodega.Width = 125;
-            // 
-            // grdbodega
-            // 
-            this.grdbodega.AutoHeight = false;
-            this.grdbodega.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.grdbodega.DataSource = this.warehouseBindingSource;
-            this.grdbodega.DisplayMember = "WhsName";
-            this.grdbodega.KeyMember = "WhsCode";
-            this.grdbodega.Name = "grdbodega";
-            this.grdbodega.ValueMember = "WhsCode";
-            // 
-            // warehouseBindingSource
-            // 
-            this.warehouseBindingSource.DataMember = "Warehouse";
-            this.warehouseBindingSource.DataSource = this.dsAlmacenesExternos;
-            // 
             // xfrmAlmacenesExternosDefinirLotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -950,6 +950,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dsAlmacenesExternos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvIngreso)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ceSeleccionar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdbodega)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.warehouseBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantIngresar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rgSeleccionar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).EndInit();
@@ -976,8 +978,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdbodega)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.warehouseBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -25,20 +25,24 @@ namespace LOSA.TransaccionesMP
         public decimal pesoKg = 0;
         public int id_tm;
         public decimal factor;
+        public decimal ud_enviar = 0;
         DataOperations dp = new DataOperations();
         
         public frmResumenToEntregar(
                                     decimal ExistenciaTM,
                                     decimal PEntregado,
                                     decimal psolicitado,
-                                   DataTable Tarima,
-                                   int Pid_tm)
+                                    DataTable Tarima,
+                                    int Pid_tm
+                                    ,decimal Pfactor)
         {
 
             InitializeComponent();
             gcTarima.DataSource = Tarima;
             this.ExistenciaTM = ExistenciaTM;
-            selecionado = ExistenciaTM;
+            ud_enviar = ExistenciaTM;
+            factor = Pfactor;
+            selecionado = ExistenciaTM * factor;
             entregado = PEntregado;
             Solicitado = psolicitado;
             id_tm = Pid_tm;
@@ -49,7 +53,7 @@ namespace LOSA.TransaccionesMP
             Calculo();
             txtEnviados.Text = string.Format("{0:###,##0.00}", entregado);
             txtSolicitados.Text = string.Format("{0:###,##0.00}", Solicitado);
-            txtPorEnviar.Text = string.Format("{0:###,##0.00}", selecionado);
+            txtPorEnviar.Text = string.Format("{0:###,##0.00}", ud_enviar);
             txtRestante.Text = string.Format("{0:###,##0.00}", RestanteReq);
             textEdit1.Text = string.Format("{0:###,##0.00}", RestanteTm);
             obtener_factor();
@@ -64,17 +68,21 @@ namespace LOSA.TransaccionesMP
             else
             {
                 decimal aux = 0;
-                aux = RestanteReq = RestanteReq - selecionado;
+                aux  = RestanteReq - selecionado;
 
-                if (aux < 0 && aux == 0)
+                if (aux < 0 || aux == 0)
                 {
+                    RestanteTm = selecionado - RestanteReq;
                     RestanteReq = 0;
-                    RestanteTm = ExistenciaTM - selecionado;
+                    ud_enviar = Convert.ToInt32((selecionado - RestanteTm)  / factor);
+                    RestanteTm = Convert.ToInt32(RestanteTm / factor);
                 }
                 else
                 {
+                   
+                    RestanteTm= ExistenciaTM - selecionado / factor;
                     RestanteReq = aux;
-                    RestanteTm = ExistenciaTM - selecionado;
+                    ud_enviar = selecionado / factor;
                 }
 
             }
@@ -116,31 +124,39 @@ namespace LOSA.TransaccionesMP
 
         private void btnUP_Click(object sender, EventArgs e)
         {
-            if (selecionado + 1 > ExistenciaTM)
+            if (selecionado + factor > ExistenciaTM * factor)
             {
 
             }
             else
             {
-                selecionado = selecionado + 1;
-                Calculo();
-                txtPorEnviar.Text = string.Format("{0:###,##0.00}", selecionado);
+                ud_enviar = ud_enviar + 1;
+                selecionado = selecionado + factor;
+                CalculoUD();
+                txtPorEnviar.Text = string.Format("{0:###,##0.00}", ud_enviar);
                 txtRestante.Text = string.Format("{0:###,##0.00}", RestanteReq);
                 textEdit1.Text = string.Format("{0:###,##0.00}", RestanteTm);
             }
         }
 
+        public void CalculoUD() 
+        {
+            selecionado = ud_enviar * factor;
+            RestanteReq = Solicitado - selecionado - entregado;
+            RestanteTm = ExistenciaTM - ud_enviar;
+        } 
         private void btnDown_Click(object sender, EventArgs e)
         {
-            if (selecionado - 1 < 0)
+            if (selecionado - factor < 0)
             {
 
             }
             else
             {
-                selecionado = selecionado - 1;
-                Calculo();
-                txtPorEnviar.Text = string.Format("{0:###,##0.00}", selecionado);
+                ud_enviar = ud_enviar - 1;
+                selecionado = selecionado - factor;
+                CalculoUD();
+                txtPorEnviar.Text = string.Format("{0:###,##0.00}", ud_enviar);
                 txtRestante.Text = string.Format("{0:###,##0.00}", RestanteReq);
                 textEdit1.Text = string.Format("{0:###,##0.00}", RestanteTm);
             }

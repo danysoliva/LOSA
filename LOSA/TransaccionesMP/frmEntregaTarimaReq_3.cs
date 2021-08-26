@@ -208,6 +208,7 @@ namespace LOSA.TransaccionesMP
             decimal ExistenciaTM = 0;
             decimal Pentregado = 0;
             decimal Psolicitado = 0;
+            decimal factor = 0;
             if (tarimaEncontrada != null)
             {
                 if (!RequisicionActual.Recuperado)
@@ -283,7 +284,7 @@ namespace LOSA.TransaccionesMP
                                  ExistenciaTM = dr.GetDecimal(2);
                                  Pentregado = dr.GetDecimal(3);
                                  Psolicitado = dr.GetDecimal(4);
-                            
+                                factor = dr.GetDecimal(5);
                             }
                             dr.Close();
                             con.Close();
@@ -298,7 +299,8 @@ namespace LOSA.TransaccionesMP
                                                                                  , Pentregado
                                                                                  , Psolicitado
                                                                                  , Tarima
-                                                                                 ,idTarima);
+                                                                                 ,idTarima
+                                                                                 ,factor);
                         if (frms.ShowDialog() == DialogResult.OK)
                         {
 
