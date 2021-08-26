@@ -707,7 +707,7 @@
             this.cmdLotesCalidad.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdLotesCalidad.Appearance.Options.UseFont = true;
             this.cmdLotesCalidad.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdLotesCalidad.ImageOptions.Image = global::LOSA.Properties.Resources.edit_table_1_;
+            this.cmdLotesCalidad.ImageOptions.Image = global::LOSA.Properties.Resources.box32px;
             this.cmdLotesCalidad.Location = new System.Drawing.Point(9, 23);
             this.cmdLotesCalidad.Name = "cmdLotesCalidad";
             this.cmdLotesCalidad.Size = new System.Drawing.Size(199, 71);

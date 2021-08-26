@@ -245,6 +245,7 @@ namespace LOSA
                 Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Calidad;
             }
             frmOpciones frm = new frmOpciones(Log1);
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 

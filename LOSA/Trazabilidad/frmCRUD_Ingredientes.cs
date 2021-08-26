@@ -69,7 +69,7 @@ namespace LOSA.Trazabilidad
                         {
                             SAPCODE = mp.CodeMP_SAP;
                             //txtNombre.Text = mp.Name;
-                            gridLookUpEdit1.EditValue = idpres;
+                            gridLookUpEditPresentacion.EditValue = idpres;
                             gridLookUpEdit_MP.EditValue = pidMP;
                         }
                     }
@@ -85,7 +85,7 @@ namespace LOSA.Trazabilidad
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("[sp_load_presentacion_pt]", con);
+                SqlCommand cmd = new SqlCommand("[sp_get_presentaciones_activas_v2]", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 //cmd.Parameters.AddWithValue("@idbodega", idBodega);
                 dsMantoTrazabilidad1.presentaciones.Clear();
@@ -137,21 +137,55 @@ namespace LOSA.Trazabilidad
                 return;
             }
 
+            if (string.IsNullOrEmpty(gridLookUpEditPresentacion.Text))
+            {
+                CajaDialogo.Error("No se permite dejar la Presentación vacía!");
+                return;
+            }
+
             switch (TipoAccionActual)
             {
                 case TipoAccion.Insert:
                     if (vProveedor.RecuperarRegistroWithRTN(CardCode))
                     {
-                        
+                        CrudMP_Prov(1, idmp, idpres, true, vProveedor.Codigo);
                     }
                     break;
                 case TipoAccion.Update:
                     if (vProveedor.RecuperarRegistroWithRTN(CardCode))
                     {
-                        
+                        CrudMP_Prov(2, idmp, idpres, true, vProveedor.Codigo);
                     }
                     break;
             }
+        }
+
+        public bool CrudMP_Prov(int pOption, int pIDMP, int pIdPresentacion, bool pEnable, string pCardCode)
+        {
+            bool a = false;
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_set_mantenaince_mp_trz", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@option", pOption);
+                cmd.Parameters.AddWithValue("@idmp", pIDMP);
+                cmd.Parameters.AddWithValue("@idpresentacion", pIdPresentacion);
+                cmd.Parameters.AddWithValue("@enable", pEnable);
+                cmd.Parameters.AddWithValue("@cardcode", pCardCode);
+                cmd.ExecuteNonQuery();
+                a = true;
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+            return a;
         }
 
         private void txtComentario_KeyDown(object sender, KeyEventArgs e)
