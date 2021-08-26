@@ -32,6 +32,15 @@ namespace LOSA
             InitializeComponent();
             //TouchKeyboardSupport.EnableTouchKeyboard = true;
             //TouchKeyboardSupport.CheckEnableTouchSupport(this);
+            SelectorFor path = new SelectorFor(4);
+            if (path.Camino == 1)
+            {
+                SaltarLogin.Visible = true; 
+            }
+            else
+            {
+                SaltarLogin.Visible = false;
+            }
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
