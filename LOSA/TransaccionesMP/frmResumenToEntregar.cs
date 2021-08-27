@@ -176,7 +176,7 @@ namespace LOSA.TransaccionesMP
                     return;
                 }
             }
-            pesoKg = selecionado * factor;
+            pesoKg = ud_enviar * factor;
             this.DialogResult = DialogResult.OK;
         }
     }

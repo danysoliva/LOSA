@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>187</ApplicationRevision>
+    <ApplicationRevision>191</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -296,6 +296,18 @@
     </Compile>
     <Compile Include="Calidad\frmLotesStatus.Designer.cs">
       <DependentUpon>frmLotesStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\frmMantenimientoIngreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmMantenimientoIngreso.Designer.cs">
+      <DependentUpon>frmMantenimientoIngreso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\frmOlorMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmOlorMantenimiento.Designer.cs">
+      <DependentUpon>frmOlorMantenimiento.cs</DependentUpon>
     </Compile>
     <Compile Include="Calidad\frmreporte_trazabilidad.cs">
       <SubType>Form</SubType>
@@ -1680,6 +1692,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmLotesStatus.resx">
       <DependentUpon>frmLotesStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmMantenimientoIngreso.resx">
+      <DependentUpon>frmMantenimientoIngreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmOlorMantenimiento.resx">
+      <DependentUpon>frmOlorMantenimiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmreporte_trazabilidad.resx">
       <DependentUpon>frmreporte_trazabilidad.cs</DependentUpon>

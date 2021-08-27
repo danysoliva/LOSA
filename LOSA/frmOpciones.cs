@@ -592,5 +592,10 @@ namespace LOSA
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
+
+        private void ManteIngresos_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
