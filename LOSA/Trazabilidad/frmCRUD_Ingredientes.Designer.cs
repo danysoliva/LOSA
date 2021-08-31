@@ -33,31 +33,31 @@ namespace LOSA.Trazabilidad
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.cmdGuardar = new DevExpress.XtraEditors.SimpleButton();
-            this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.txtProveedor = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.gridLookUpEditPresentacion = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.bindingSourcePresentacion = new System.Windows.Forms.BindingSource();
+            this.dsMantoTrazabilidad1 = new LOSA.Trazabilidad.dsMantoTrazabilidad();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridLookUpEdit_MP = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfactor1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colmaterial = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcode_sap = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridLookUpEdit_MP = new DevExpress.XtraEditors.GridLookUpEdit();
             this.bindingSourceMP = new System.Windows.Forms.BindingSource();
-            this.dsMantoTrazabilidad1 = new LOSA.Trazabilidad.dsMantoTrazabilidad();
-            this.bindingSourcePresentacion = new System.Windows.Forms.BindingSource();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcode_sap = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colmaterial = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdGuardar = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtProveedor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditPresentacion.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePresentacion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsMantoTrazabilidad1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit_MP.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceMP)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsMantoTrazabilidad1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePresentacion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -92,39 +92,6 @@ namespace LOSA.Trazabilidad
             this.labelControl3.TabIndex = 3;
             this.labelControl3.Text = "Presentación";
             this.labelControl3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtComentario_KeyDown);
-            // 
-            // cmdGuardar
-            // 
-            this.cmdGuardar.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.cmdGuardar.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.25F);
-            this.cmdGuardar.Appearance.Options.UseBackColor = true;
-            this.cmdGuardar.Appearance.Options.UseFont = true;
-            this.cmdGuardar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdGuardar.ImageOptions.Image")));
-            this.cmdGuardar.Location = new System.Drawing.Point(106, 155);
-            this.cmdGuardar.Name = "cmdGuardar";
-            this.cmdGuardar.Size = new System.Drawing.Size(142, 51);
-            this.cmdGuardar.TabIndex = 4;
-            this.cmdGuardar.Text = "Guardar";
-            this.cmdGuardar.Click += new System.EventHandler(this.cmdGuardar_Click);
-            this.cmdGuardar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtComentario_KeyDown);
-            // 
-            // cmdHome
-            // 
-            this.cmdHome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmdHome.Appearance.BackColor = System.Drawing.Color.White;
-            this.cmdHome.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.cmdHome.Appearance.Options.UseBackColor = true;
-            this.cmdHome.Appearance.Options.UseFont = true;
-            this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.cmdHome.Location = new System.Drawing.Point(254, 155);
-            this.cmdHome.Name = "cmdHome";
-            this.cmdHome.Size = new System.Drawing.Size(142, 51);
-            this.cmdHome.TabIndex = 5;
-            this.cmdHome.Text = "Cerrar";
-            this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
-            this.cmdHome.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtComentario_KeyDown);
             // 
             // txtProveedor
             // 
@@ -163,6 +130,16 @@ namespace LOSA.Trazabilidad
             this.gridLookUpEditPresentacion.Size = new System.Drawing.Size(247, 24);
             this.gridLookUpEditPresentacion.TabIndex = 16;
             // 
+            // bindingSourcePresentacion
+            // 
+            this.bindingSourcePresentacion.DataMember = "presentaciones";
+            this.bindingSourcePresentacion.DataSource = this.dsMantoTrazabilidad1;
+            // 
+            // dsMantoTrazabilidad1
+            // 
+            this.dsMantoTrazabilidad1.DataSetName = "dsMantoTrazabilidad";
+            this.dsMantoTrazabilidad1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // gridLookUpEdit1View
             // 
             this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -173,32 +150,6 @@ namespace LOSA.Trazabilidad
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
-            // gridLookUpEdit_MP
-            // 
-            this.gridLookUpEdit_MP.Location = new System.Drawing.Point(149, 86);
-            this.gridLookUpEdit_MP.Name = "gridLookUpEdit_MP";
-            this.gridLookUpEdit_MP.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.gridLookUpEdit_MP.Properties.Appearance.Options.UseFont = true;
-            this.gridLookUpEdit_MP.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gridLookUpEdit_MP.Properties.DataSource = this.bindingSourceMP;
-            this.gridLookUpEdit_MP.Properties.DisplayMember = "material";
-            this.gridLookUpEdit_MP.Properties.PopupView = this.gridView1;
-            this.gridLookUpEdit_MP.Properties.ValueMember = "id";
-            this.gridLookUpEdit_MP.Size = new System.Drawing.Size(247, 24);
-            this.gridLookUpEdit_MP.TabIndex = 17;
-            // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colid,
-            this.colcode_sap,
-            this.colmaterial});
-            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // colid1
             // 
@@ -218,19 +169,42 @@ namespace LOSA.Trazabilidad
             this.colfactor1.FieldName = "factor";
             this.colfactor1.Name = "colfactor1";
             // 
+            // gridLookUpEdit_MP
+            // 
+            this.gridLookUpEdit_MP.Location = new System.Drawing.Point(149, 86);
+            this.gridLookUpEdit_MP.Name = "gridLookUpEdit_MP";
+            this.gridLookUpEdit_MP.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridLookUpEdit_MP.Properties.Appearance.Options.UseFont = true;
+            this.gridLookUpEdit_MP.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.gridLookUpEdit_MP.Properties.DataSource = this.bindingSourceMP;
+            this.gridLookUpEdit_MP.Properties.DisplayMember = "material";
+            this.gridLookUpEdit_MP.Properties.PopupView = this.gridView1;
+            this.gridLookUpEdit_MP.Properties.ValueMember = "id";
+            this.gridLookUpEdit_MP.Size = new System.Drawing.Size(247, 24);
+            this.gridLookUpEdit_MP.TabIndex = 17;
+            this.gridLookUpEdit_MP.EditValueChanged += new System.EventHandler(this.gridLookUpEdit_MP_EditValueChanged);
+            // 
+            // bindingSourceMP
+            // 
+            this.bindingSourceMP.DataMember = "material";
+            this.bindingSourceMP.DataSource = this.dsMantoTrazabilidad1;
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid,
+            this.colcode_sap,
+            this.colmaterial});
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
             // colid
             // 
             this.colid.FieldName = "id";
             this.colid.Name = "colid";
-            // 
-            // colmaterial
-            // 
-            this.colmaterial.Caption = "NAME";
-            this.colmaterial.FieldName = "material";
-            this.colmaterial.Name = "colmaterial";
-            this.colmaterial.Visible = true;
-            this.colmaterial.VisibleIndex = 1;
-            this.colmaterial.Width = 526;
             // 
             // colcode_sap
             // 
@@ -239,22 +213,49 @@ namespace LOSA.Trazabilidad
             this.colcode_sap.Name = "colcode_sap";
             this.colcode_sap.Visible = true;
             this.colcode_sap.VisibleIndex = 0;
-            this.colcode_sap.Width = 112;
+            this.colcode_sap.Width = 183;
             // 
-            // bindingSourceMP
+            // colmaterial
             // 
-            this.bindingSourceMP.DataMember = "material";
-            this.bindingSourceMP.DataSource = this.dsMantoTrazabilidad1;
+            this.colmaterial.Caption = "NAME";
+            this.colmaterial.FieldName = "material";
+            this.colmaterial.Name = "colmaterial";
+            this.colmaterial.Visible = true;
+            this.colmaterial.VisibleIndex = 1;
+            this.colmaterial.Width = 639;
             // 
-            // dsMantoTrazabilidad1
+            // cmdHome
             // 
-            this.dsMantoTrazabilidad1.DataSetName = "dsMantoTrazabilidad";
-            this.dsMantoTrazabilidad1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.cmdHome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdHome.Appearance.BackColor = System.Drawing.Color.White;
+            this.cmdHome.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.cmdHome.Appearance.Options.UseBackColor = true;
+            this.cmdHome.Appearance.Options.UseFont = true;
+            this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
+            this.cmdHome.Location = new System.Drawing.Point(254, 155);
+            this.cmdHome.Name = "cmdHome";
+            this.cmdHome.Size = new System.Drawing.Size(142, 51);
+            this.cmdHome.TabIndex = 5;
+            this.cmdHome.Text = "Cerrar";
+            this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
+            this.cmdHome.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtComentario_KeyDown);
             // 
-            // bindingSourcePresentacion
+            // cmdGuardar
             // 
-            this.bindingSourcePresentacion.DataMember = "presentaciones";
-            this.bindingSourcePresentacion.DataSource = this.dsMantoTrazabilidad1;
+            this.cmdGuardar.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.cmdGuardar.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.25F);
+            this.cmdGuardar.Appearance.Options.UseBackColor = true;
+            this.cmdGuardar.Appearance.Options.UseFont = true;
+            this.cmdGuardar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdGuardar.ImageOptions.Image")));
+            this.cmdGuardar.Location = new System.Drawing.Point(106, 155);
+            this.cmdGuardar.Name = "cmdGuardar";
+            this.cmdGuardar.Size = new System.Drawing.Size(142, 51);
+            this.cmdGuardar.TabIndex = 4;
+            this.cmdGuardar.Text = "Guardar";
+            this.cmdGuardar.Click += new System.EventHandler(this.cmdGuardar_Click);
+            this.cmdGuardar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtComentario_KeyDown);
             // 
             // frmCRUD_Ingredientes
             // 
@@ -275,12 +276,12 @@ namespace LOSA.Trazabilidad
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmCRUD_PlantasPRV_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.txtProveedor.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditPresentacion.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePresentacion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsMantoTrazabilidad1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit_MP.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceMP)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsMantoTrazabilidad1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePresentacion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

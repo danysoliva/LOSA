@@ -148,13 +148,21 @@ namespace LOSA.Trazabilidad
                 case TipoAccion.Insert:
                     if (vProveedor.RecuperarRegistroWithRTN(CardCode))
                     {
-                        CrudMP_Prov(1, idmp, idpres, true, vProveedor.Codigo);
+                        if(CrudMP_Prov(1, idmp, idpres, true, vProveedor.Codigo))
+                        {
+                            this.DialogResult = DialogResult.OK;
+                            this.Close();
+                        }
                     }
                     break;
                 case TipoAccion.Update:
                     if (vProveedor.RecuperarRegistroWithRTN(CardCode))
                     {
-                        CrudMP_Prov(2, idmp, idpres, true, vProveedor.Codigo);
+                        if(CrudMP_Prov(2, idmp, idpres, true, vProveedor.Codigo))
+                        {
+                            this.DialogResult = DialogResult.OK;
+                            this.Close();
+                        }
                     }
                     break;
             }
@@ -204,6 +212,11 @@ namespace LOSA.Trazabilidad
                 this.DialogResult = DialogResult.Cancel;
                 this.Close();
             }
+        }
+
+        private void gridLookUpEdit_MP_EditValueChanged(object sender, EventArgs e)
+        {
+            idmp = Convert.ToInt32(gridLookUpEdit_MP.EditValue);
         }
     }
 }
