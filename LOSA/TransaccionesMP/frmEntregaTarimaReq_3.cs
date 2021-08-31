@@ -45,6 +45,19 @@ namespace LOSA.TransaccionesMP
 
             
         }
+        public void load_tarimas_scan_v2()
+        {
+            string query = @"sp_load_tarimas_escaneadas_v2";
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            SqlCommand cmd = new SqlCommand(query, cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@id_requisa", RequisicionActual.IdRequisicion);
+            dsTransaccionesMP.viewTarimas.Clear();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dsTransaccionesMP.viewTarimas);
+            cn.Close();
+
+        }
         private void cmdHome_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -80,7 +93,9 @@ namespace LOSA.TransaccionesMP
                     {
                         //pictureBoxIndicadorOk.Visible = true;
                         lblRequisicionEncontrada.Text = RequisicionActual.IdRequisicion.ToString();
+                        load_tarimas_scan_v2();
                         txtTarima.Focus();
+
                     }
                     else
                     {
@@ -101,6 +116,7 @@ namespace LOSA.TransaccionesMP
                     }
                 }
             }
+
         }
 
         private void txtTarima_KeyDown(object sender, KeyEventArgs e)
@@ -108,7 +124,7 @@ namespace LOSA.TransaccionesMP
             if (e.KeyCode == Keys.Enter)
             {
                 EntregarTarima();
-                load_tarimas_scan();
+                load_tarimas_scan_v2();
             }
         }
         private DataTable CreateDataTarima(int idTarima, string pProveedor, string pNombreTarima, string pLote, string pPpresentacion, string codigoSAP, string MP)
@@ -208,6 +224,7 @@ namespace LOSA.TransaccionesMP
             decimal ExistenciaTM = 0;
             decimal Pentregado = 0;
             decimal Psolicitado = 0;
+            decimal factor = 0;
             if (tarimaEncontrada != null)
             {
                 if (!RequisicionActual.Recuperado)
@@ -283,7 +300,7 @@ namespace LOSA.TransaccionesMP
                                  ExistenciaTM = dr.GetDecimal(2);
                                  Pentregado = dr.GetDecimal(3);
                                  Psolicitado = dr.GetDecimal(4);
-                            
+                                factor = dr.GetDecimal(5);
                             }
                             dr.Close();
                             con.Close();
@@ -298,7 +315,8 @@ namespace LOSA.TransaccionesMP
                                                                                  , Pentregado
                                                                                  , Psolicitado
                                                                                  , Tarima
-                                                                                 ,idTarima);
+                                                                                 ,idTarima
+                                                                                 ,factor);
                         if (frms.ShowDialog() == DialogResult.OK)
                         {
 
@@ -315,7 +333,7 @@ namespace LOSA.TransaccionesMP
                                 cmd.Parameters.AddWithValue("@idtarima", tarimaEncontrada.Id);
                                 cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
                                 cmd.Parameters.AddWithValue("@id_req", RequisicionActual.IdRequisicion);
-                                cmd.Parameters.AddWithValue("@cantidad", frms.selecionado);
+                                cmd.Parameters.AddWithValue("@cantidad", frms.ud_enviar);
                                 cmd.Parameters.AddWithValue("@peso", frms.pesoKg);
                                 SqlDataReader dr = cmd.ExecuteReader();
                                 if (dr.Read())

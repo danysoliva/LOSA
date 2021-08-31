@@ -63,6 +63,7 @@
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdRecepcionMPLogistica = new DevExpress.XtraEditors.SimpleButton();
             this.TabCalidad = new DevExpress.XtraTab.XtraTabPage();
+            this.ManteIngresos = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton16 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton11 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
@@ -596,6 +597,7 @@
             // 
             // TabCalidad
             // 
+            this.TabCalidad.Controls.Add(this.ManteIngresos);
             this.TabCalidad.Controls.Add(this.simpleButton16);
             this.TabCalidad.Controls.Add(this.simpleButton11);
             this.TabCalidad.Controls.Add(this.simpleButton9);
@@ -609,6 +611,20 @@
             this.TabCalidad.PageVisible = false;
             this.TabCalidad.Size = new System.Drawing.Size(629, 422);
             this.TabCalidad.Text = "Calidad";
+            // 
+            // ManteIngresos
+            // 
+            this.ManteIngresos.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ManteIngresos.Appearance.Options.UseFont = true;
+            this.ManteIngresos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.ManteIngresos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ManteIngresos.ImageOptions.Image")));
+            this.ManteIngresos.Location = new System.Drawing.Point(427, 23);
+            this.ManteIngresos.Name = "ManteIngresos";
+            this.ManteIngresos.Size = new System.Drawing.Size(199, 71);
+            this.ManteIngresos.TabIndex = 19;
+            this.ManteIngresos.Text = "Mantenimientos";
+            this.ManteIngresos.Visible = false;
+            this.ManteIngresos.Click += new System.EventHandler(this.ManteIngresos_Click);
             // 
             // simpleButton16
             // 
@@ -625,10 +641,10 @@
             // 
             // simpleButton11
             // 
-            this.simpleButton11.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton11.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton11.Appearance.Options.UseFont = true;
             this.simpleButton11.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton11.ImageOptions.Image = global::LOSA.Properties.Resources.edit_table_1_;
+            this.simpleButton11.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton11.ImageOptions.Image")));
             this.simpleButton11.Location = new System.Drawing.Point(224, 177);
             this.simpleButton11.Name = "simpleButton11";
             this.simpleButton11.Size = new System.Drawing.Size(199, 71);
@@ -642,7 +658,7 @@
             this.simpleButton9.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton9.Appearance.Options.UseFont = true;
             this.simpleButton9.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton9.ImageOptions.Image = global::LOSA.Properties.Resources.edit_table_1_;
+            this.simpleButton9.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton9.ImageOptions.Image")));
             this.simpleButton9.Location = new System.Drawing.Point(224, 100);
             this.simpleButton9.Name = "simpleButton9";
             this.simpleButton9.Size = new System.Drawing.Size(199, 71);
@@ -655,7 +671,7 @@
             this.simpleButton6.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton6.Appearance.Options.UseFont = true;
             this.simpleButton6.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton6.ImageOptions.Image = global::LOSA.Properties.Resources.edit_table_1_;
+            this.simpleButton6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton6.ImageOptions.Image")));
             this.simpleButton6.Location = new System.Drawing.Point(224, 23);
             this.simpleButton6.Name = "simpleButton6";
             this.simpleButton6.Size = new System.Drawing.Size(199, 71);
@@ -668,7 +684,7 @@
             this.simpleButton5.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton5.Appearance.Options.UseFont = true;
             this.simpleButton5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton5.ImageOptions.Image = global::LOSA.Properties.Resources.edit_table_1_;
+            this.simpleButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
             this.simpleButton5.Location = new System.Drawing.Point(9, 254);
             this.simpleButton5.Name = "simpleButton5";
             this.simpleButton5.Size = new System.Drawing.Size(199, 71);
@@ -681,7 +697,7 @@
             this.simpleButton4.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton4.Appearance.Options.UseFont = true;
             this.simpleButton4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton4.ImageOptions.Image = global::LOSA.Properties.Resources.edit_table_1_;
+            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
             this.simpleButton4.Location = new System.Drawing.Point(9, 177);
             this.simpleButton4.Name = "simpleButton4";
             this.simpleButton4.Size = new System.Drawing.Size(199, 71);
@@ -694,7 +710,7 @@
             this.btnconfiguracionCal.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnconfiguracionCal.Appearance.Options.UseFont = true;
             this.btnconfiguracionCal.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnconfiguracionCal.ImageOptions.Image = global::LOSA.Properties.Resources.edit_table_1_;
+            this.btnconfiguracionCal.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnconfiguracionCal.ImageOptions.Image")));
             this.btnconfiguracionCal.Location = new System.Drawing.Point(9, 100);
             this.btnconfiguracionCal.Name = "btnconfiguracionCal";
             this.btnconfiguracionCal.Size = new System.Drawing.Size(199, 71);
@@ -955,7 +971,6 @@
             this.Controls.Add(this.cmdHome);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.tabOpciones);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmOpciones";
             this.Text = "frmOpciones";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -1031,5 +1046,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton13;
         private DevExpress.XtraEditors.SimpleButton simpleButton16;
         private DevExpress.XtraEditors.SimpleButton btn_andenes;
+        private DevExpress.XtraEditors.SimpleButton ManteIngresos;
     }
 }

@@ -123,7 +123,7 @@
             // 
             this.btnprueba.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.btnprueba.Appearance.Options.UseFont = true;
-            this.btnprueba.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btnprueba.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnprueba.ImageOptions.Image")));
             this.btnprueba.Location = new System.Drawing.Point(323, 365);
             this.btnprueba.Name = "btnprueba";
             this.btnprueba.Size = new System.Drawing.Size(274, 67);

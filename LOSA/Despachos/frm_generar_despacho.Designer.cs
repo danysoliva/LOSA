@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_generar_despacho));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -39,7 +38,7 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
-            this.detalledespachosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.detalledespachosBindingSource = new System.Windows.Forms.BindingSource();
             this.ds_despachos = new LOSA.Despachos.ds_despachos();
             this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -51,7 +50,7 @@
             this.colunidades = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_presentacion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grd_presentaciones = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.presentacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.presentacionesBindingSource = new System.Windows.Forms.BindingSource();
             this.dsRecepcionMPx = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.colKill = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btn_clear = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();

@@ -32,6 +32,8 @@ namespace LOSA
             InitializeComponent();
             //TouchKeyboardSupport.EnableTouchKeyboard = true;
             //TouchKeyboardSupport.CheckEnableTouchSupport(this);
+           
+          
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)

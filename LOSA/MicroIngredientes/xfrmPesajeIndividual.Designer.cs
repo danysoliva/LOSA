@@ -45,6 +45,8 @@ namespace LOSA.MicroIngredientes
             this.cmdDown = new DevExpress.XtraEditors.SimpleButton();
             this.cmdUp = new DevExpress.XtraEditors.SimpleButton();
             this.cmdClose = new DevExpress.XtraEditors.SimpleButton();
+            this.Bascula2 = new DevExpress.XtraEditors.SimpleButton();
+            this.Bascula1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.lueBascula.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pesajeBasculaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMicros)).BeginInit();
@@ -54,7 +56,7 @@ namespace LOSA.MicroIngredientes
             // 
             // lueBascula
             // 
-            this.lueBascula.Location = new System.Drawing.Point(252, 27);
+            this.lueBascula.Location = new System.Drawing.Point(446, -1);
             this.lueBascula.Name = "lueBascula";
             this.lueBascula.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F);
             this.lueBascula.Properties.Appearance.Options.UseFont = true;
@@ -73,6 +75,7 @@ namespace LOSA.MicroIngredientes
             this.lueBascula.Properties.ValueMember = "id_bascula";
             this.lueBascula.Size = new System.Drawing.Size(173, 30);
             this.lueBascula.TabIndex = 8;
+            this.lueBascula.Visible = false;
             // 
             // pesajeBasculaBindingSource
             // 
@@ -88,11 +91,11 @@ namespace LOSA.MicroIngredientes
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(169, 30);
+            this.label1.Location = new System.Drawing.Point(284, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 19);
+            this.label1.Size = new System.Drawing.Size(71, 19);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Bascula:";
+            this.label1.Text = "Bascula";
             // 
             // simpleButton1
             // 
@@ -100,7 +103,7 @@ namespace LOSA.MicroIngredientes
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(350, 212);
+            this.simpleButton1.Location = new System.Drawing.Point(331, 268);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(75, 44);
             this.simpleButton1.TabIndex = 15;
@@ -113,7 +116,7 @@ namespace LOSA.MicroIngredientes
             this.cmdSum10.Appearance.Options.UseFont = true;
             this.cmdSum10.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdSum10.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.cmdSum10.Location = new System.Drawing.Point(350, 126);
+            this.cmdSum10.Location = new System.Drawing.Point(331, 182);
             this.cmdSum10.Name = "cmdSum10";
             this.cmdSum10.Size = new System.Drawing.Size(75, 44);
             this.cmdSum10.TabIndex = 14;
@@ -124,7 +127,7 @@ namespace LOSA.MicroIngredientes
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(28, 179);
+            this.labelControl1.Location = new System.Drawing.Point(9, 235);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(220, 19);
             this.labelControl1.TabIndex = 11;
@@ -137,7 +140,7 @@ namespace LOSA.MicroIngredientes
             0,
             0,
             0});
-            this.seBatch.Location = new System.Drawing.Point(254, 176);
+            this.seBatch.Location = new System.Drawing.Point(235, 232);
             this.seBatch.Name = "seBatch";
             this.seBatch.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.seBatch.Properties.Appearance.Options.UseFont = true;
@@ -165,7 +168,7 @@ namespace LOSA.MicroIngredientes
             this.lblMensaje.Appearance.Options.UseFont = true;
             this.lblMensaje.Appearance.Options.UseForeColor = true;
             this.lblMensaje.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.lblMensaje.Location = new System.Drawing.Point(431, 174);
+            this.lblMensaje.Location = new System.Drawing.Point(412, 230);
             this.lblMensaje.Name = "lblMensaje";
             this.lblMensaje.Size = new System.Drawing.Size(178, 36);
             this.lblMensaje.TabIndex = 16;
@@ -175,7 +178,7 @@ namespace LOSA.MicroIngredientes
             // progressBarControl1
             // 
             this.progressBarControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.progressBarControl1.Location = new System.Drawing.Point(0, 367);
+            this.progressBarControl1.Location = new System.Drawing.Point(0, 421);
             this.progressBarControl1.Name = "progressBarControl1";
             this.progressBarControl1.Size = new System.Drawing.Size(631, 18);
             this.progressBarControl1.TabIndex = 18;
@@ -187,7 +190,7 @@ namespace LOSA.MicroIngredientes
             this.btnGenerar.Appearance.Options.UseFont = true;
             this.btnGenerar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btnGenerar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnGenerar.ImageOptions.SvgImage")));
-            this.btnGenerar.Location = new System.Drawing.Point(239, 292);
+            this.btnGenerar.Location = new System.Drawing.Point(220, 348);
             this.btnGenerar.Name = "btnGenerar";
             this.btnGenerar.Size = new System.Drawing.Size(75, 63);
             this.btnGenerar.TabIndex = 17;
@@ -199,7 +202,7 @@ namespace LOSA.MicroIngredientes
             this.cmdDown.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdDown.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdDown.ImageOptions.Image")));
             this.cmdDown.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.cmdDown.Location = new System.Drawing.Point(254, 212);
+            this.cmdDown.Location = new System.Drawing.Point(235, 268);
             this.cmdDown.Name = "cmdDown";
             this.cmdDown.Size = new System.Drawing.Size(75, 44);
             this.cmdDown.TabIndex = 13;
@@ -211,7 +214,7 @@ namespace LOSA.MicroIngredientes
             this.cmdUp.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdUp.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdUp.ImageOptions.Image")));
             this.cmdUp.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.cmdUp.Location = new System.Drawing.Point(254, 126);
+            this.cmdUp.Location = new System.Drawing.Point(235, 182);
             this.cmdUp.Name = "cmdUp";
             this.cmdUp.Size = new System.Drawing.Size(75, 44);
             this.cmdUp.TabIndex = 12;
@@ -225,18 +228,52 @@ namespace LOSA.MicroIngredientes
             this.cmdClose.Appearance.Options.UseFont = true;
             this.cmdClose.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
             this.cmdClose.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.cmdClose.Location = new System.Drawing.Point(350, 292);
+            this.cmdClose.Location = new System.Drawing.Point(331, 348);
             this.cmdClose.Name = "cmdClose";
             this.cmdClose.Size = new System.Drawing.Size(75, 63);
             this.cmdClose.TabIndex = 7;
             this.cmdClose.Text = "Cerrar";
             this.cmdClose.Click += new System.EventHandler(this.cmdClose_Click);
             // 
+            // Bascula2
+            // 
+            this.Bascula2.Appearance.BackColor = System.Drawing.Color.White;
+            this.Bascula2.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.Bascula2.Appearance.Options.UseBackColor = true;
+            this.Bascula2.Appearance.Options.UseFont = true;
+            this.Bascula2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.Bascula2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.Bascula2.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.Bascula2.Location = new System.Drawing.Point(331, 53);
+            this.Bascula2.Name = "Bascula2";
+            this.Bascula2.Size = new System.Drawing.Size(164, 103);
+            this.Bascula2.TabIndex = 19;
+            this.Bascula2.Text = "Bascula 2";
+            this.Bascula2.Click += new System.EventHandler(this.Bascula2_Click);
+            // 
+            // Bascula1
+            // 
+            this.Bascula1.Appearance.BackColor = System.Drawing.Color.White;
+            this.Bascula1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bascula1.Appearance.Options.UseBackColor = true;
+            this.Bascula1.Appearance.Options.UseFont = true;
+            this.Bascula1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.Bascula1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.Bascula1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.Bascula1.Location = new System.Drawing.Point(131, 53);
+            this.Bascula1.Name = "Bascula1";
+            this.Bascula1.Size = new System.Drawing.Size(164, 103);
+            this.Bascula1.TabIndex = 20;
+            this.Bascula1.Text = "Bascula 1";
+            this.Bascula1.Click += new System.EventHandler(this.Bascula1_Click);
+            // 
             // xfrmPesajeIndividual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(631, 385);
+            this.ClientSize = new System.Drawing.Size(631, 439);
+            this.Controls.Add(this.Bascula1);
+            this.Controls.Add(this.Bascula2);
             this.Controls.Add(this.progressBarControl1);
             this.Controls.Add(this.btnGenerar);
             this.Controls.Add(this.lblMensaje);
@@ -280,5 +317,7 @@ namespace LOSA.MicroIngredientes
         private DevExpress.XtraEditors.LabelControl lblMensaje;
         private DevExpress.XtraEditors.SimpleButton btnGenerar;
         private DevExpress.XtraEditors.ProgressBarControl progressBarControl1;
+        private DevExpress.XtraEditors.SimpleButton Bascula2;
+        private DevExpress.XtraEditors.SimpleButton Bascula1;
     }
 }

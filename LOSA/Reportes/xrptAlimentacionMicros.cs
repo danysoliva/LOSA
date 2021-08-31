@@ -10,7 +10,7 @@ namespace LOSA.Reportes
 {
     public partial class xrptAlimentacionMicros : DevExpress.XtraReports.UI.XtraReport
     {
-        public xrptAlimentacionMicros()
+        public xrptAlimentacionMicros(int id)
         {
             InitializeComponent();
             DataOperations dp = new DataOperations();

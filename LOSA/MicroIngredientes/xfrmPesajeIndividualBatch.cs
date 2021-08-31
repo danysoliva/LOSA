@@ -25,18 +25,28 @@ namespace LOSA.MicroIngredientes
         public xfrmPesajeIndividualBatch(string completados, string bascula, PesajeIndividualInfo pPesaje)
         {
             InitializeComponent();
-            //batch_completados = completados;
-
             lblCompletados.Text = completados;
             lblBascula.Text = bascula;
             pesajeIndividual = pPesaje;
+            lblRequerido.Text = "Valor Requerido: " + pesajeIndividual.PesoPorBatch.ToString("N2") +" Kg";
         }
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
-            timer1.Enabled = false;
-            fecha = DateTime.Now;
-            this.DialogResult = DialogResult.OK;
+            if (peso_bascula >= limiteInferior && peso_bascula <= limiteSuperior)
+            {
+                timer1.Enabled = false;
+                fecha = DateTime.Now;
+                this.DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                lblError.Visible = true;
+                lblSuperior.Visible = true;
+                lblInferior.Visible = true;
+            }
+
+           
         }
 
         private void cmdClose_Click(object sender, EventArgs e)
@@ -71,7 +81,7 @@ namespace LOSA.MicroIngredientes
             limiteInferior = pesajeIndividual.PesoPorBatch - (pesajeIndividual.PesoPorBatch * Convert.ToDecimal (0.03));
             limiteSuperior = pesajeIndividual.PesoPorBatch + (pesajeIndividual.PesoPorBatch * Convert.ToDecimal (0.03));
 
-            lblValorBascula.Text = "Valor en Báscula: " + peso_bascula;
+            lblValorBascula.Text = "Valor en Báscula: " + peso_bascula.ToString("N2")+ " Kg";
             lblInferior.Text = "Límite Inferior: " + limiteInferior.ToString("N2");
             lblSuperior.Text = "Límite Superior: " + limiteSuperior.ToString("N2");
 
@@ -84,9 +94,9 @@ namespace LOSA.MicroIngredientes
             }
             else
             {
-                lblError.Visible = true;
-                lblSuperior.Visible = true;
-                lblInferior.Visible = true;
+                //lblError.Visible = true;
+                //lblSuperior.Visible = true;
+                //lblInferior.Visible = true;
             }
         }
     }
