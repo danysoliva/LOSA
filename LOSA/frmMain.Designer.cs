@@ -183,7 +183,6 @@ namespace LOSA
             this.SaltarLogin.Size = new System.Drawing.Size(199, 71);
             this.SaltarLogin.TabIndex = 15;
             this.SaltarLogin.Text = "Ingresar";
-            this.SaltarLogin.Visible = false;
             this.SaltarLogin.Click += new System.EventHandler(this.SaltarLogin_Click);
             // 
             // cmdButtonSaltarLogin
@@ -216,7 +215,6 @@ namespace LOSA
             this.cmdMicros.Size = new System.Drawing.Size(199, 59);
             this.cmdMicros.TabIndex = 16;
             this.cmdMicros.Text = "Micro Ingredientes";
-            this.cmdMicros.Visible = false;
             this.cmdMicros.Click += new System.EventHandler(this.cmdMicros_Click);
             // 
             // pictureBox1
