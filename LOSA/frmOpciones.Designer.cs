@@ -63,6 +63,7 @@
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdRecepcionMPLogistica = new DevExpress.XtraEditors.SimpleButton();
             this.TabCalidad = new DevExpress.XtraTab.XtraTabPage();
+            this.ManteIngresos = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton16 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton11 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
@@ -88,7 +89,6 @@
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.ManteIngresos = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -612,6 +612,20 @@
             this.TabCalidad.Size = new System.Drawing.Size(629, 422);
             this.TabCalidad.Text = "Calidad";
             // 
+            // ManteIngresos
+            // 
+            this.ManteIngresos.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ManteIngresos.Appearance.Options.UseFont = true;
+            this.ManteIngresos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.ManteIngresos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ManteIngresos.ImageOptions.Image")));
+            this.ManteIngresos.Location = new System.Drawing.Point(427, 23);
+            this.ManteIngresos.Name = "ManteIngresos";
+            this.ManteIngresos.Size = new System.Drawing.Size(199, 71);
+            this.ManteIngresos.TabIndex = 19;
+            this.ManteIngresos.Text = "Mantenimientos";
+            this.ManteIngresos.Visible = false;
+            this.ManteIngresos.Click += new System.EventHandler(this.ManteIngresos_Click);
+            // 
             // simpleButton16
             // 
             this.simpleButton16.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -948,20 +962,6 @@
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
             // 
-            // ManteIngresos
-            // 
-            this.ManteIngresos.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ManteIngresos.Appearance.Options.UseFont = true;
-            this.ManteIngresos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.ManteIngresos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ManteIngresos.ImageOptions.Image")));
-            this.ManteIngresos.Location = new System.Drawing.Point(427, 23);
-            this.ManteIngresos.Name = "ManteIngresos";
-            this.ManteIngresos.Size = new System.Drawing.Size(199, 71);
-            this.ManteIngresos.TabIndex = 19;
-            this.ManteIngresos.Text = "Mantenimientos";
-            this.ManteIngresos.Visible = false;
-            this.ManteIngresos.Click += new System.EventHandler(this.ManteIngresos_Click);
-            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -971,7 +971,6 @@
             this.Controls.Add(this.cmdHome);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.tabOpciones);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmOpciones";
             this.Text = "frmOpciones";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

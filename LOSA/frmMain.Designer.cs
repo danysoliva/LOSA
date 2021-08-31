@@ -216,6 +216,7 @@ namespace LOSA
             this.cmdMicros.Size = new System.Drawing.Size(199, 59);
             this.cmdMicros.TabIndex = 16;
             this.cmdMicros.Text = "Micro Ingredientes";
+            this.cmdMicros.Visible = false;
             this.cmdMicros.Click += new System.EventHandler(this.cmdMicros_Click);
             // 
             // pictureBox1

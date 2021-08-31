@@ -40,6 +40,7 @@ namespace LOSA.MicroIngredientes
             this.lblError = new DevExpress.XtraEditors.LabelControl();
             this.lblSuperior = new DevExpress.XtraEditors.LabelControl();
             this.lblInferior = new DevExpress.XtraEditors.LabelControl();
+            this.lblRequerido = new DevExpress.XtraEditors.LabelControl();
             this.SuspendLayout();
             // 
             // lblBascula
@@ -49,7 +50,7 @@ namespace LOSA.MicroIngredientes
             this.lblBascula.Appearance.Options.UseTextOptions = true;
             this.lblBascula.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblBascula.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblBascula.Location = new System.Drawing.Point(-1, 67);
+            this.lblBascula.Location = new System.Drawing.Point(-1, 50);
             this.lblBascula.Name = "lblBascula";
             this.lblBascula.Size = new System.Drawing.Size(391, 19);
             this.lblBascula.TabIndex = 20;
@@ -62,7 +63,7 @@ namespace LOSA.MicroIngredientes
             this.lblValorBascula.Appearance.Options.UseTextOptions = true;
             this.lblValorBascula.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblValorBascula.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblValorBascula.Location = new System.Drawing.Point(-1, 92);
+            this.lblValorBascula.Location = new System.Drawing.Point(-1, 75);
             this.lblValorBascula.Name = "lblValorBascula";
             this.lblValorBascula.Size = new System.Drawing.Size(391, 19);
             this.lblValorBascula.TabIndex = 21;
@@ -109,7 +110,7 @@ namespace LOSA.MicroIngredientes
             // 
             // timer1
             // 
-            this.timer1.Interval = 5000;
+            this.timer1.Interval = 4000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // lblError
@@ -160,16 +161,30 @@ namespace LOSA.MicroIngredientes
             this.lblInferior.Text = "LI";
             this.lblInferior.Visible = false;
             // 
+            // lblRequerido
+            // 
+            this.lblRequerido.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRequerido.Appearance.Options.UseFont = true;
+            this.lblRequerido.Appearance.Options.UseTextOptions = true;
+            this.lblRequerido.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblRequerido.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblRequerido.Location = new System.Drawing.Point(-1, 5);
+            this.lblRequerido.Name = "lblRequerido";
+            this.lblRequerido.Size = new System.Drawing.Size(231, 19);
+            this.lblRequerido.TabIndex = 28;
+            this.lblRequerido.Text = "Valor Requerido: 0.00 Kg";
+            // 
             // xfrmPesajeIndividualBatch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(387, 337);
+            this.Controls.Add(this.cmdClose);
+            this.Controls.Add(this.lblRequerido);
             this.Controls.Add(this.lblInferior);
             this.Controls.Add(this.lblSuperior);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.lblCompletados);
-            this.Controls.Add(this.cmdClose);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.lblValorBascula);
             this.Controls.Add(this.lblBascula);
@@ -193,5 +208,6 @@ namespace LOSA.MicroIngredientes
         private DevExpress.XtraEditors.LabelControl lblError;
         private DevExpress.XtraEditors.LabelControl lblSuperior;
         private DevExpress.XtraEditors.LabelControl lblInferior;
+        private DevExpress.XtraEditors.LabelControl lblRequerido;
     }
 }

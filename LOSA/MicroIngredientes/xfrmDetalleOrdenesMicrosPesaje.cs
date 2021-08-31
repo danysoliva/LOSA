@@ -13,6 +13,9 @@ using System.Data.SqlClient;
 using DevExpress.XtraGrid.Views.Grid;
 using LOSA.Micro;
 using LOSA.MicroIngredientes.Models;
+using LOSA.Reportes;
+using DevExpress.XtraReports.UI;
+using LOSA.Utileria;
 
 namespace LOSA.MicroIngredientes
 {
@@ -38,9 +41,30 @@ namespace LOSA.MicroIngredientes
             //codigoOrden = _CodigoOrden;
             LoadData();
             LoadDataIndividual();
+            load_turno();
         }
 
+            public void load_turno() 
+        {
+            try
+            {
+                string Query = @"sp_load_turnos";
+                DataOperations dp = new DataOperations();
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringCostos);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(Query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                dsMicros.turno.Clear();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dsMicros.turno);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
 
+                CajaDialogo.Error(ex.Message) ;
+            }
+        }
         private void LoadData()
         {
             try
@@ -195,7 +219,7 @@ namespace LOSA.MicroIngredientes
 
             if (frm.ShowDialog()== DialogResult.OK)
             {
-                LoadData();
+                //LoadData();
                 gvDetalle_RowClick(null, null);
 
 
@@ -273,6 +297,98 @@ namespace LOSA.MicroIngredientes
                     e.Appearance.BackColor = Color.FromArgb(150, Color.DarkGreen);
                     //e.Appearance.BackColor2 = Color.White;
                 }
+            }
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var gridView = (GridView)gcDetalle.FocusedView;
+                var row = (dsMicros.plan_microshRow)gridView.GetFocusedDataRow();
+                int Selected = row.id_orden_encabezado;
+                decimal Totalreq = row.total_kg;
+                decimal Selecionado = 0;
+                
+                DataOperations dp = new DataOperations();
+                using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
+                
+
+                {
+                    cnx.Open();
+                    dsMicros.plan_microsd.Clear();
+                    SqlDataAdapter da = new SqlDataAdapter("sp_get_detalle_ami_id_V2", cnx);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@ami_id", SqlDbType.Int).Value = row.AMI_ID;
+                    da.Fill(dsMicros.plan_microsd);
+                    cnx.Close();
+
+                }
+
+                foreach (dsMicros.plan_microsdRow detalle in dsMicros.plan_microsd.Rows)
+                {
+                    if (detalle.AMI_ID == row.AMI_ID)
+                    {
+                        Selecionado = Selecionado + detalle.pesaje;
+                    }
+                }
+                if (Selecionado != Totalreq)
+                {
+                    frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, "Debe de seleccionar todas las materias primas.");
+                    if (frm.ShowDialog() == DialogResult.Cancel)
+                    {
+                        return;
+                    }
+                   
+                }
+
+                if (row.id_turno == 0)
+                {
+                    frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, "Debe seleccionar el turno para imprimir el reporte.");
+                    if (frm.ShowDialog() == DialogResult.Cancel)
+                    {
+                        return;
+                    }
+                }
+
+                xrptAlimentacionMicros rpt = new xrptAlimentacionMicros(row.AMI_ID);
+                rpt.ShowPrintMarginsWarning = false;
+                rpt.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
+                rpt.Print();
+
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void PrintingSystem_StartPrint(object sender, DevExpress.XtraPrinting.PrintDocumentEventArgs e)
+        {
+            //Indica el numero de copias de la boleta que seran impresas
+            e.PrintDocument.PrinterSettings.Copies = 1;
+        }
+
+        private void gvDetalle_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            try
+            {
+                var gridView = (GridView)gcDetalle.FocusedView;
+                var row = (dsMicros.plan_microshRow)gridView.GetFocusedDataRow();
+                foreach (dsMicros.plan_microshRow item in dsMicros.plan_microsh.Rows)
+                {
+                    if (row.AMI_ID == item.AMI_ID)
+                    {
+                        row.id_turno = Convert.ToInt32(e.Value);
+                        row.AcceptChanges();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
             }
         }
     }

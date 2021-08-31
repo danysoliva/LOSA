@@ -62,6 +62,7 @@
               <xs:element name="AMI_ID" msprop:Generator_ColumnVarNameInTable="columnAMI_ID" msprop:Generator_ColumnPropNameInRow="AMI_ID" msprop:Generator_ColumnPropNameInTable="AMI_IDColumn" msprop:Generator_UserColumnName="AMI_ID" type="xs:int" minOccurs="0" />
               <xs:element name="order_id" msprop:Generator_ColumnVarNameInTable="columnorder_id" msprop:Generator_ColumnPropNameInRow="order_id" msprop:Generator_ColumnPropNameInTable="order_idColumn" msprop:Generator_UserColumnName="order_id" type="xs:int" minOccurs="0" />
               <xs:element name="order_code" msprop:Generator_ColumnVarNameInTable="columnorder_code" msprop:Generator_ColumnPropNameInRow="order_code" msprop:Generator_ColumnPropNameInTable="order_codeColumn" msprop:Generator_UserColumnName="order_code" type="xs:string" minOccurs="0" />
+              <xs:element name="id_turno" msprop:Generator_ColumnVarNameInTable="columnid_turno" msprop:Generator_ColumnPropNameInRow="id_turno" msprop:Generator_ColumnPropNameInTable="id_turnoColumn" msprop:Generator_UserColumnName="id_turno" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -91,6 +92,14 @@
               <xs:element name="id_bascula" msprop:Generator_ColumnVarNameInTable="columnid_bascula" msprop:Generator_ColumnPropNameInRow="id_bascula" msprop:Generator_ColumnPropNameInTable="id_basculaColumn" msprop:Generator_UserColumnName="id_bascula" type="xs:int" minOccurs="0" />
               <xs:element name="peso" msprop:Generator_ColumnVarNameInTable="columnpeso" msprop:Generator_ColumnPropNameInRow="peso" msprop:Generator_ColumnPropNameInTable="pesoColumn" msprop:Generator_UserColumnName="peso" type="xs:decimal" minOccurs="0" />
               <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="turno" msprop:Generator_TableClassName="turnoDataTable" msprop:Generator_TableVarName="tableturno" msprop:Generator_RowChangedName="turnoRowChanged" msprop:Generator_TablePropName="turno" msprop:Generator_RowDeletingName="turnoRowDeleting" msprop:Generator_RowChangingName="turnoRowChanging" msprop:Generator_RowEvHandlerName="turnoRowChangeEventHandler" msprop:Generator_RowDeletedName="turnoRowDeleted" msprop:Generator_RowClassName="turnoRow" msprop:Generator_UserTableName="turno" msprop:Generator_RowEvArgName="turnoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="Turno" msprop:Generator_ColumnVarNameInTable="columnTurno" msprop:Generator_ColumnPropNameInRow="Turno" msprop:Generator_ColumnPropNameInTable="TurnoColumn" msprop:Generator_UserColumnName="Turno" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

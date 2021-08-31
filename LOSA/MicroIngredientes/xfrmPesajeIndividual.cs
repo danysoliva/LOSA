@@ -19,7 +19,7 @@ namespace LOSA.MicroIngredientes
     {
         //int batchMaximo;
         //int id_orden_pesaje_h;
-
+        int BasculaSelected = 0;
         PesajeIndividualInfo pesajeIndividual = new PesajeIndividualInfo();
 
         public xfrmPesajeIndividual(PesajeIndividualInfo ppesajeIndividual)
@@ -143,15 +143,17 @@ namespace LOSA.MicroIngredientes
             try
             {
 
-                pesajeIndividual.BasculaID = Convert.ToInt32(lueBascula.EditValue);
-
-                List<PesajeIndividualCompletados> pesajesCompletados = new List<PesajeIndividualCompletados>();
-
-                if (string.IsNullOrEmpty(lueBascula.Text))
+                if (BasculaSelected == 0)
                 {
                     CajaDialogo.Error("DEBE SELECCIONAR UNA BASCULA");
                     return;
                 }
+
+                pesajeIndividual.BasculaID = BasculaSelected;
+
+                List<PesajeIndividualCompletados> pesajesCompletados = new List<PesajeIndividualCompletados>();
+
+               
 
                 for (int i = 1; i <= Convert.ToInt32(seBatch.EditValue); i++)
                 {
@@ -302,6 +304,20 @@ namespace LOSA.MicroIngredientes
         private void xfrmPesajeIndividual_Load(object sender, EventArgs e)
         {
            
+        }
+
+        private void Bascula1_Click(object sender, EventArgs e)
+        {
+            BasculaSelected = 1;
+            Bascula1.Appearance.BackColor = Color.FromArgb(51, 196, 129);
+            Bascula2.Appearance.BackColor = Color.FromArgb(255, 255, 255);
+        }
+
+        private void Bascula2_Click(object sender, EventArgs e)
+        {
+            BasculaSelected = 2;
+            Bascula2.Appearance.BackColor = Color.FromArgb(51, 196, 129);
+            Bascula1.Appearance.BackColor = Color.FromArgb(255, 255, 255);
         }
     }
 }
