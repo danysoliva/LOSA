@@ -107,7 +107,7 @@ namespace LOSA.Trazabilidad
                 toggleSwitch1.IsOn = frm.ProveedorRow.Auditoria;
                 LoadAdjuntosRows();
                 LoadPlantas();
-                //LoadIngredientes();
+                LoadIngredientes();
                 gridLookUpEdit_aprobacion.Enabled = gridLookUpEdit_Riesgos.Enabled = true;
                 toggleSwitch1.Enabled = true;
 
@@ -139,12 +139,12 @@ namespace LOSA.Trazabilidad
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("", con);
+                SqlCommand cmd = new SqlCommand("sp_get_lista_ingresdientes_asociados_a_proveedor_trz", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@cardcode", vProveedorActual.Codigo);
-                dsMantoTrazabilidad1.archivos.Clear();
+                dsMantoTrazabilidad1.ingredientes_list.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                adat.Fill(dsMantoTrazabilidad1.archivos);
+                adat.Fill(dsMantoTrazabilidad1.ingredientes_list);
 
                 con.Close();
             }
@@ -518,7 +518,35 @@ namespace LOSA.Trazabilidad
         private void cmdDelete___ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             //Delete Ingredientes
+            DialogResult r = CajaDialogo.Pregunta("¿Esta seguro de eliminar este Ingrediente?");
+            if (r != DialogResult.Yes)
+                return;
 
+            var gridView = (GridView)gridControl3.FocusedView;
+            var row = (dsMantoTrazabilidad.ingredientes_listRow)gridView.GetFocusedDataRow();
+
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_set_disable_row_ingrediente", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", row.id);
+                //cmd.Parameters.AddWithValue("@idmp", row.idmp);
+                //cmd.Parameters.AddWithValue("@idpresentacion", row.idpresentacion);
+                dsMantoTrazabilidad1.plantas.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsMantoTrazabilidad1.plantas);
+
+                con.Close();
+                LoadIngredientes();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
 
         }
 
@@ -533,7 +561,7 @@ namespace LOSA.Trazabilidad
             frmCRUD_Ingredientes frm = new frmCRUD_Ingredientes(vProveedorActual.Codigo,1,1, frmCRUD_Ingredientes.TipoAccion.Insert, UsuarioLogeado.Id);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                LoadAdjuntosRows();
+                LoadIngredientes();
             }
         }
     }
