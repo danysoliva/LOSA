@@ -13,6 +13,8 @@ using ACS.Classes;
 using DevExpress.XtraGrid.Views.Grid;
 using System.Data.SqlClient;
 using LOSA.AlmacenesExterno.Models;
+using LOSA.AlmacenesExterno.Reporteria;
+using DevExpress.XtraReports.UI;
 
 namespace LOSA.AlmacenesExterno.Salida_Almacen
 {
@@ -347,6 +349,15 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
 
                 CajaDialogo.Information("TRANSFERENCIA CREADA EXITOSAMENTE");
                 this.DialogResult = DialogResult.OK;
+
+                xrpt_Main_traslado_almacen report = new xrpt_Main_traslado_almacen();
+                report.Parameters["id_h"].Value = id_salida_h;
+
+                using (ReportPrintTool printTool = new ReportPrintTool(report))
+                {
+                    // Send the report to the default printer.
+                    printTool.ShowPreviewDialog();
+                }
 
             }
             catch (Exception ex)
