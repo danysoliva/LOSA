@@ -35,17 +35,19 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.SubBand1 = new DevExpress.XtraReports.UI.SubBand();
             this.xrLine1 = new DevExpress.XtraReports.UI.XRLine();
             this.xrSubreport2 = new DevExpress.XtraReports.UI.XRSubreport();
+            this.id_h = new DevExpress.XtraReports.Parameters.Parameter();
             this.SubBand2 = new DevExpress.XtraReports.UI.SubBand();
             this.xrSubreport1 = new DevExpress.XtraReports.UI.XRSubreport();
-            this.id_h = new DevExpress.XtraReports.Parameters.Parameter();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // TopMargin
             // 
+            this.TopMargin.HeightF = 50F;
             this.TopMargin.Name = "TopMargin";
             // 
             // BottomMargin
             // 
+            this.BottomMargin.HeightF = 50F;
             this.BottomMargin.Name = "BottomMargin";
             // 
             // Detail
@@ -79,6 +81,14 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.xrSubreport2.ReportSource = new LOSA.AlmacenesExterno.Reporteria.xsr_traslado_lotes();
             this.xrSubreport2.SizeF = new System.Drawing.SizeF(750F, 161.7917F);
             // 
+            // id_h
+            // 
+            this.id_h.Description = "Parameter1";
+            this.id_h.Name = "id_h";
+            this.id_h.Type = typeof(int);
+            this.id_h.ValueInfo = "0";
+            this.id_h.Visible = false;
+            // 
             // SubBand2
             // 
             this.SubBand2.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
@@ -93,14 +103,6 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.xrSubreport1.ReportSource = new LOSA.AlmacenesExterno.Reporteria.xsrTransaccionAlmacenes();
             this.xrSubreport1.SizeF = new System.Drawing.SizeF(750F, 100F);
             // 
-            // id_h
-            // 
-            this.id_h.Description = "Parameter1";
-            this.id_h.Name = "id_h";
-            this.id_h.Type = typeof(int);
-            this.id_h.ValueInfo = "0";
-            this.id_h.Visible = false;
-            // 
             // xrpt_Main_traslado_almacen
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -108,7 +110,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.BottomMargin,
             this.Detail});
             this.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.Margins = new System.Drawing.Printing.Margins(50, 50, 100, 100);
+            this.Margins = new System.Drawing.Printing.Margins(50, 50, 50, 50);
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.id_h});
             this.Version = "18.2";
