@@ -191,12 +191,6 @@
     <Compile Include="AlmacenesExterno\Reporteria\xsr_traslado_lotes.Designer.cs">
       <DependentUpon>xsr_traslado_lotes.cs</DependentUpon>
     </Compile>
-    <Compile Include="AlmacenesExterno\Reporteria\XtraReport1.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="AlmacenesExterno\Reporteria\XtraReport1.Designer.cs">
-      <DependentUpon>XtraReport1.cs</DependentUpon>
-    </Compile>
     <Compile Include="AlmacenesExterno\Salida Almacen\Models\Ingresos_Externos_D.cs" />
     <Compile Include="AlmacenesExterno\Salida Almacen\Models\Salida_Externa_Lote.cs" />
     <Compile Include="AlmacenesExterno\Salida Almacen\xfrmConfLotesSalidaAlmacen.cs">
@@ -1669,9 +1663,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AlmacenesExterno\Reporteria\xsr_traslado_lotes.resx">
       <DependentUpon>xsr_traslado_lotes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AlmacenesExterno\Reporteria\XtraReport1.resx">
-      <DependentUpon>XtraReport1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AlmacenesExterno\Salida Almacen\xfrmConfLotesSalidaAlmacen.resx">
       <DependentUpon>xfrmConfLotesSalidaAlmacen.cs</DependentUpon>

@@ -75,6 +75,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             // 
             this.xrSubreport2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.xrSubreport2.Name = "xrSubreport2";
+            this.xrSubreport2.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("ID_H", this.id_h));
             this.xrSubreport2.ReportSource = new LOSA.AlmacenesExterno.Reporteria.xsr_traslado_lotes();
             this.xrSubreport2.SizeF = new System.Drawing.SizeF(750F, 161.7917F);
             // 
@@ -88,6 +89,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             // 
             this.xrSubreport1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.xrSubreport1.Name = "xrSubreport1";
+            this.xrSubreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("ID_Header", this.id_h));
             this.xrSubreport1.ReportSource = new LOSA.AlmacenesExterno.Reporteria.xsrTransaccionAlmacenes();
             this.xrSubreport1.SizeF = new System.Drawing.SizeF(750F, 100F);
             // 
