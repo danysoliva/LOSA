@@ -4,6 +4,7 @@ using DevExpress.Utils.TouchHelpers;
 using DevExpress.XtraReports.UI;
 using Huellas;
 using LOSA.AlmacenesExterno;
+using LOSA.AlmacenesExterno.Reporteria;
 using LOSA.Clases;
 using LOSA.Micro;
 using LOSA.MicroIngredientes;

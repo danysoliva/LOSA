@@ -17,10 +17,11 @@ namespace LOSA.Reportes
 
             using (SqlConnection cnx = new  SqlConnection(dp.ConnectionStringLOSA))
             {
-                SqlDataAdapter da = new SqlDataAdapter("Select * from pruebaDetail1", cnx);
-                da.Fill(dsReportes1.PruebaDetalle1);
-
-            }
+                string Query = @"";
+                SqlCommand cmd = new SqlCommand(Query,cnx);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dsReportes1.PruebaDetalle1);            }
 
             using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringLOSA))
             {

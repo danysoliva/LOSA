@@ -312,8 +312,6 @@ namespace LOSA.MicroIngredientes
                 
                 DataOperations dp = new DataOperations();
                 using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
-                
-
                 {
                     cnx.Open();
                     dsMicros.plan_microsd.Clear();
@@ -350,6 +348,17 @@ namespace LOSA.MicroIngredientes
                         return;
                     }
                 }
+
+                string query = @"sp_update_plan_asignar_turnos";
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringAPMS);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query,cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_turno", row.id_turno);
+                cmd.Parameters.AddWithValue("@AMI",row.AMI_ID);
+                cmd.ExecuteNonQuery();
+                cn.Close();
+
 
                 xrptAlimentacionMicros rpt = new xrptAlimentacionMicros(row.AMI_ID);
                 rpt.ShowPrintMarginsWarning = false;
