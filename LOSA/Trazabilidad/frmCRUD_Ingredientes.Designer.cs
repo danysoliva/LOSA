@@ -129,6 +129,7 @@ namespace LOSA.Trazabilidad
             this.gridLookUpEditPresentacion.Properties.ValueMember = "id";
             this.gridLookUpEditPresentacion.Size = new System.Drawing.Size(247, 24);
             this.gridLookUpEditPresentacion.TabIndex = 16;
+            this.gridLookUpEditPresentacion.EditValueChanged += new System.EventHandler(this.gridLookUpEditPresentacion_EditValueChanged);
             // 
             // bindingSourcePresentacion
             // 

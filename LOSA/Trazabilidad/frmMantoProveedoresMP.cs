@@ -109,6 +109,7 @@ namespace LOSA.Trazabilidad
                 LoadAdjuntosRows();
                 LoadPlantas();
                 LoadIngredientes();
+                LoadMateriasPrimas();
                 gridLookUpEdit_aprobacion.Enabled = gridLookUpEdit_Riesgos.Enabled = true;
                 toggleSwitch1.Enabled = true;
 
@@ -152,6 +153,30 @@ namespace LOSA.Trazabilidad
             catch (Exception ec)
             {
                 CajaDialogo.Error(ec.Message);
+            }
+        }
+
+        private void LoadMateriasPrimas()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("[sp_get_materia_prima_por_proveedorv2]", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@cardcode", vProveedorActual.Codigo);
+                dsMantoTrazabilidad1.lista_mp.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsMantoTrazabilidad1.lista_mp);
+
+                con.Close();
+
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
             }
         }
 
@@ -543,6 +568,7 @@ namespace LOSA.Trazabilidad
 
                 con.Close();
                 LoadIngredientes();
+                LoadMateriasPrimas();
             }
             catch (Exception ec)
             {
@@ -563,6 +589,7 @@ namespace LOSA.Trazabilidad
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 LoadIngredientes();
+                LoadMateriasPrimas();
             }
         }
 
@@ -572,6 +599,18 @@ namespace LOSA.Trazabilidad
             var row = (dsMantoTrazabilidad.ingredientes_listRow)gridView.GetFocusedDataRow();
             MateriaPrima mp = new MateriaPrima();
             if (mp.RecuperarRegistroFromID_RM(row.idmp))
+            {
+                frmMateriaPrimaViewer frm = new frmMateriaPrimaViewer(mp.CodeMP_SAP);
+                frm.Show();
+            }
+        }
+
+        private void link_materia_prima_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)gridControl4.FocusedView;
+            var row = (dsMantoTrazabilidad.lista_mpRow)gridView.GetFocusedDataRow();
+            MateriaPrima mp = new MateriaPrima();
+            if (mp.RecuperarRegistroFromID_RM(row.idrm))
             {
                 frmMateriaPrimaViewer frm = new frmMateriaPrimaViewer(mp.CodeMP_SAP);
                 frm.Show();

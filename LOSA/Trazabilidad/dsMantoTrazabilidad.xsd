@@ -133,6 +133,17 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="lista_mp" msprop:Generator_TableClassName="lista_mpDataTable" msprop:Generator_TableVarName="tablelista_mp" msprop:Generator_RowChangedName="lista_mpRowChanged" msprop:Generator_TablePropName="lista_mp" msprop:Generator_RowDeletingName="lista_mpRowDeleting" msprop:Generator_RowChangingName="lista_mpRowChanging" msprop:Generator_RowEvHandlerName="lista_mpRowChangeEventHandler" msprop:Generator_RowDeletedName="lista_mpRowDeleted" msprop:Generator_RowClassName="lista_mpRow" msprop:Generator_UserTableName="lista_mp" msprop:Generator_RowEvArgName="lista_mpRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idrm" msdata:Caption="id" msprop:Generator_ColumnVarNameInTable="columnidrm" msprop:Generator_ColumnPropNameInRow="idrm" msprop:Generator_ColumnPropNameInTable="idrmColumn" msprop:Generator_UserColumnName="idrm" type="xs:int" minOccurs="0" />
+              <xs:element name="itemdescrip" msdata:Caption="Name" msprop:Generator_ColumnVarNameInTable="columnitemdescrip" msprop:Generator_ColumnPropNameInRow="itemdescrip" msprop:Generator_ColumnPropNameInTable="itemdescripColumn" msprop:Generator_UserColumnName="itemdescrip" type="xs:string" minOccurs="0" />
+              <xs:element name="presentacion" msdata:Caption="Size" msprop:Generator_ColumnVarNameInTable="columnpresentacion" msprop:Generator_ColumnPropNameInRow="presentacion" msprop:Generator_ColumnPropNameInTable="presentacionColumn" msprop:Generator_UserColumnName="presentacion" type="xs:string" minOccurs="0" />
+              <xs:element name="itemcode" msdata:Caption="Item Code" msprop:Generator_ColumnVarNameInTable="columnitemcode" msprop:Generator_ColumnPropNameInRow="itemcode" msprop:Generator_ColumnPropNameInTable="itemcodeColumn" msprop:Generator_UserColumnName="itemcode" type="xs:string" minOccurs="0" />
+              <xs:element name="cardcode" msdata:Caption="Card Code" msprop:Generator_ColumnVarNameInTable="columncardcode" msprop:Generator_ColumnPropNameInRow="cardcode" msprop:Generator_ColumnPropNameInTable="cardcodeColumn" msprop:Generator_UserColumnName="cardcode" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>
