@@ -2,6 +2,7 @@
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using LOSA.Clases;
+using LOSA.Logistica;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -562,6 +563,18 @@ namespace LOSA.Trazabilidad
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 LoadIngredientes();
+            }
+        }
+
+        private void cmdLinkIngrediente_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)gridControl3.FocusedView;
+            var row = (dsMantoTrazabilidad.ingredientes_listRow)gridView.GetFocusedDataRow();
+            MateriaPrima mp = new MateriaPrima();
+            if (mp.RecuperarRegistroFromID_RM(row.idmp))
+            {
+                frmMateriaPrimaViewer frm = new frmMateriaPrimaViewer(mp.CodeMP_SAP);
+                frm.Show();
             }
         }
     }

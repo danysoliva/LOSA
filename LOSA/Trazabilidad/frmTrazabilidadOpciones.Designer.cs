@@ -31,6 +31,7 @@ namespace LOSA.Trazabilidad
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTrazabilidadOpciones));
             this.cmdProveedores = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
             // 
@@ -41,13 +42,28 @@ namespace LOSA.Trazabilidad
             this.cmdProveedores.Appearance.Options.UseBackColor = true;
             this.cmdProveedores.Appearance.Options.UseFont = true;
             this.cmdProveedores.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdProveedores.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.cmdProveedores.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdProveedores.ImageOptions.SvgImage")));
             this.cmdProveedores.Location = new System.Drawing.Point(12, 92);
             this.cmdProveedores.Name = "cmdProveedores";
             this.cmdProveedores.Size = new System.Drawing.Size(199, 51);
             this.cmdProveedores.TabIndex = 8;
             this.cmdProveedores.Text = "Proveedores";
             this.cmdProveedores.Click += new System.EventHandler(this.cmdProveedores_Click);
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.White;
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.Options.UseBackColor = true;
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(12, 158);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(199, 51);
+            this.simpleButton1.TabIndex = 9;
+            this.simpleButton1.Text = "Materia Prima";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // cmdHome
             // 
@@ -72,6 +88,7 @@ namespace LOSA.Trazabilidad
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(723, 524);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.cmdProveedores);
             this.Controls.Add(this.cmdHome);
             this.Name = "frmTrazabilidadOpciones";
@@ -84,5 +101,6 @@ namespace LOSA.Trazabilidad
 
         private DevExpress.XtraEditors.SimpleButton cmdHome;
         private DevExpress.XtraEditors.SimpleButton cmdProveedores;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }
