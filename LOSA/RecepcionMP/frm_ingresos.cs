@@ -191,7 +191,7 @@ namespace LOSA.RecepcionMP
             {
                 var gridview = (GridView)grd_ingreso.FocusedView;
                 var row = (dsRecepcionMPx.IngresosMPRow)gridview.GetFocusedDataRow();
-                if (row.tipo_ingreso == 1)
+                if (row.tipo_ingreso == 2)
                 {
                     string query = @"sp_obtener_id_mps_from_ingreso";
                     SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);

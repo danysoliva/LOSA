@@ -360,7 +360,7 @@ namespace LOSA.MicroIngredientes
                 cn.Close();
 
 
-                xrptAlimentacionMicros rpt = new xrptAlimentacionMicros(row.AMI_ID);
+                xrptAlimentacionMicros rpt = new xrptAlimentacionMicros(row.AMI_ID, row.id_orden_encabezado);
                 rpt.ShowPrintMarginsWarning = false;
                 rpt.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
                 rpt.Print();

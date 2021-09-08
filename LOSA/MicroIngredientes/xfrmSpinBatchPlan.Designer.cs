@@ -196,6 +196,7 @@
             this.colMaterial.Caption = "Material";
             this.colMaterial.FieldName = "Material";
             this.colMaterial.Name = "colMaterial";
+            this.colMaterial.OptionsColumn.AllowEdit = false;
             this.colMaterial.Visible = true;
             this.colMaterial.VisibleIndex = 0;
             // 
@@ -205,6 +206,7 @@
             this.colPesoporBatch.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colPesoporBatch.FieldName = "Peso por Batch";
             this.colPesoporBatch.Name = "colPesoporBatch";
+            this.colPesoporBatch.OptionsColumn.AllowEdit = false;
             this.colPesoporBatch.Visible = true;
             this.colPesoporBatch.VisibleIndex = 1;
             // 
@@ -213,6 +215,7 @@
             this.colBatchPlan.Caption = "Batch a Pesar";
             this.colBatchPlan.FieldName = "Batch Plan";
             this.colBatchPlan.Name = "colBatchPlan";
+            this.colBatchPlan.OptionsColumn.AllowEdit = false;
             this.colBatchPlan.Visible = true;
             this.colBatchPlan.VisibleIndex = 2;
             // 
@@ -222,6 +225,7 @@
             this.colTotal.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colTotal.FieldName = "Total";
             this.colTotal.Name = "colTotal";
+            this.colTotal.OptionsColumn.AllowEdit = false;
             this.colTotal.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Total", "SUM={0:0.00}")});
             this.colTotal.Visible = true;
@@ -231,6 +235,7 @@
             // 
             this.colBatchCompletados.FieldName = "Batch Completados";
             this.colBatchCompletados.Name = "colBatchCompletados";
+            this.colBatchCompletados.OptionsColumn.AllowEdit = false;
             // 
             // repositoryItemSpinEdit1
             // 

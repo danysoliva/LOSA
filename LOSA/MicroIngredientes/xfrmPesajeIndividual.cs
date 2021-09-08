@@ -165,11 +165,23 @@ namespace LOSA.MicroIngredientes
 
                         PesajeIndividualCompletados pesajeIndividualCompletado = new PesajeIndividualCompletados();
 
-                        pesajeIndividualCompletado.OrdenPesaje_H = pesajeIndividual.id_orden_pesaje_header;
-                        pesajeIndividualCompletado.PesoReal = frm.peso_bascula;
-                        pesajeIndividualCompletado.Fecha = frm.fecha;
+                        frmSelectLotePesaje frm2 = new frmSelectLotePesaje(pesajeIndividual.MateriaPrimaID,
+                                                                            frm.peso_bascula,
+                                                                            1,
+                                                                            pesajeIndividual.id_orden_pesaje_header,
+                                                                            frm.fecha);
+                        if (frm2.ShowDialog() == DialogResult.OK)
+                        {
+                            //LoadData();
+                            pesajeIndividualCompletado.OrdenPesaje_H = pesajeIndividual.id_orden_pesaje_header;
+                            pesajeIndividualCompletado.PesoReal = frm.peso_bascula;
+                            pesajeIndividualCompletado.Fecha = frm.fecha;
+                            
+                            pesajesCompletados.Add(pesajeIndividualCompletado);
 
-                        pesajesCompletados.Add(pesajeIndividualCompletado);
+
+                        }
+                        
 
 
                     }
@@ -178,58 +190,58 @@ namespace LOSA.MicroIngredientes
 
                 }
 
-                DataOperations dp = new DataOperations();
-                SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS);
-                cnx.Open();
+                //DataOperations dp = new DataOperations();
+                //SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS);
+                //cnx.Open();
 
-                transaction = cnx.BeginTransaction("SampleTransaction");
+                //transaction = cnx.BeginTransaction("SampleTransaction");
 
-                if (Convert.ToInt32(seBatch.EditValue) == pesajesCompletados.Count())
-                {
+                //if (Convert.ToInt32(seBatch.EditValue) == pesajesCompletados.Count())
+                //{
 
-                    foreach (var item in pesajesCompletados)
-                    {
+                //    foreach (var item in pesajesCompletados)
+                //    {
 
-                        SqlCommand cmd = new SqlCommand("sp_insert_OP_Orden_pesaje_manual_batch_log", transaction.Connection);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Transaction = transaction;
+                //        SqlCommand cmd = new SqlCommand("sp_insert_OP_Orden_pesaje_manual_batch_log", transaction.Connection);
+                //        cmd.CommandType = CommandType.StoredProcedure;
+                //        cmd.Transaction = transaction;
 
 
-                        cmd.Parameters.Add("@fecha", SqlDbType.DateTime).Value = item.Fecha;
-                        cmd.Parameters.Add("@id_orden_pesaje_h", SqlDbType.Int).Value = pesajeIndividual.id_orden_pesaje_header;
-                        cmd.Parameters.Add("@id_code", SqlDbType.Int).Value = DBNull.Value;
+                //        cmd.Parameters.Add("@fecha", SqlDbType.DateTime).Value = item.Fecha;
+                //        cmd.Parameters.Add("@id_orden_pesaje_h", SqlDbType.Int).Value = pesajeIndividual.id_orden_pesaje_header;
+                //        cmd.Parameters.Add("@id_code", SqlDbType.Int).Value = DBNull.Value;
 
-                        cmd.ExecuteNonQuery();
+                //        cmd.ExecuteNonQuery();
 
-                    }
+                //    }
 
-                    foreach (var item in pesajesCompletados)
-                    {
+                //    foreach (var item in pesajesCompletados)
+                //    {
 
-                        SqlCommand cmd3 = new SqlCommand("sp_insert_OP_Orden_pesaje_manual_transaccion", transaction.Connection);
-                        cmd3.CommandType = CommandType.StoredProcedure;
-                        cmd3.Transaction = transaction;
+                //        SqlCommand cmd3 = new SqlCommand("sp_insert_OP_Orden_pesaje_manual_transaccion", transaction.Connection);
+                //        cmd3.CommandType = CommandType.StoredProcedure;
+                //        cmd3.Transaction = transaction;
 
-                        cmd3.Parameters.Add("@id_orden_encabezado", SqlDbType.Int).Value = item.OrdenPesaje_H;
-                        cmd3.Parameters.Add("@batch_plan", SqlDbType.Int).Value = pesajeIndividual.PesoPorBatch;
-                        cmd3.Parameters.Add("@date", SqlDbType.DateTime).Value = item.Fecha;
-                        cmd3.Parameters.Add("@batch_real", SqlDbType.Decimal).Value = item.PesoReal;
-                        cmd3.Parameters.Add("@id_rm", SqlDbType.Int).Value = pesajeIndividual.MateriaPrimaID;// IdMP;
-                        cmd3.Parameters.Add("@bascula", SqlDbType.VarChar).Value = lueBascula.Text;
-                        cmd3.Parameters.Add("@id_tipo_pesaje", SqlDbType.Int).Value = 2;
-                        cmd3.Parameters.Add("@lote", SqlDbType.VarChar).Value = "";//Dejar este parametro con espacios
-                        cmd3.Parameters.Add("@id_tarima", SqlDbType.VarChar).Value = DBNull.Value;
-                        cmd3.Parameters.Add("@cant_batch", SqlDbType.Int).Value = 1;
-                        cmd3.Parameters.Add("@cant_sacos", SqlDbType.Int).Value = DBNull.Value;
-                        cmd3.Parameters.Add("@ami_id", SqlDbType.Int).Value = DBNull.Value;
-                        cmd3.Parameters.Add("@id_pesaje_manual_plan", SqlDbType.Int).Value = DBNull.Value;
+                //        cmd3.Parameters.Add("@id_orden_encabezado", SqlDbType.Int).Value = item.OrdenPesaje_H;
+                //        cmd3.Parameters.Add("@batch_plan", SqlDbType.Int).Value = pesajeIndividual.PesoPorBatch;
+                //        cmd3.Parameters.Add("@date", SqlDbType.DateTime).Value = item.Fecha;
+                //        cmd3.Parameters.Add("@batch_real", SqlDbType.Decimal).Value = item.PesoReal;
+                //        cmd3.Parameters.Add("@id_rm", SqlDbType.Int).Value = pesajeIndividual.MateriaPrimaID;// IdMP;
+                //        cmd3.Parameters.Add("@bascula", SqlDbType.VarChar).Value = lueBascula.Text;
+                //        cmd3.Parameters.Add("@id_tipo_pesaje", SqlDbType.Int).Value = 2;
+                //        cmd3.Parameters.Add("@lote", SqlDbType.VarChar).Value = "";//Dejar este parametro con espacios
+                //        cmd3.Parameters.Add("@id_tarima", SqlDbType.VarChar).Value = DBNull.Value;
+                //        cmd3.Parameters.Add("@cant_batch", SqlDbType.Int).Value = 1;
+                //        cmd3.Parameters.Add("@cant_sacos", SqlDbType.Int).Value = DBNull.Value;
+                //        cmd3.Parameters.Add("@ami_id", SqlDbType.Int).Value = DBNull.Value;
+                //        cmd3.Parameters.Add("@id_pesaje_manual_plan", SqlDbType.Int).Value = DBNull.Value;
 
-                        cmd3.ExecuteNonQuery();
-                    }
+                //        cmd3.ExecuteNonQuery();
+                //    }
 
-                }
-                transaction.Commit();
-                cnx.Close();
+                //}
+                //transaction.Commit();
+                //cnx.Close();
 
                 this.DialogResult = DialogResult.OK;
 
@@ -237,7 +249,7 @@ namespace LOSA.MicroIngredientes
             catch (Exception ex)
             {
                 transaction.Rollback();
-                CajaDialogo.Error(ex.Message);
+                CajaDialogo.Error(ex.Message);                                      
             }
         }
 
