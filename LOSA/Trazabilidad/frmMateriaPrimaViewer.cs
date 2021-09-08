@@ -13,33 +13,34 @@ using System.Windows.Forms;
 
 namespace LOSA.Logistica
 {
-    public partial class frmLotesXMP : Form
+    public partial class frmMateriaPrimaViewer : Form
     {
         DataOperations dp = new DataOperations();
-        public frmLotesXMP()
+        public frmMateriaPrimaViewer()
         {
             InitializeComponent();
-            cargarMateriaPrima();
+            //cargarMateriaPrima();
             //cargarDatosTarimas();
-            cbMateriaPrima.Enabled = true;
+            //cbMateriaPrima.Enabled = true;
         }
 
-        public frmLotesXMP(string SAPCODE_MP)
+        public frmMateriaPrimaViewer(string SAPCODE_MP)
         {
             InitializeComponent();
-            cargarMateriaPrima();
+            //cargarMateriaPrima();
             //cargarDatosTarimas();
-            cbMateriaPrima.Enabled = false;
-            //MateriaPrima mp = new MateriaPrima();
-            //if (mp.RecuperarRegistroFromCode(SAPCODE_MP))
-            //{
-                cbMateriaPrima.EditValue = SAPCODE_MP;
-                //cbMateriaPrima.Text = mp.Name;
-                cargarDatosTarimas();
+            //cbMateriaPrima.Enabled = false;
+            ////MateriaPrima mp = new MateriaPrima();
+            ////if (mp.RecuperarRegistroFromCode(SAPCODE_MP))
+            ////{
+            //    cbMateriaPrima.EditValue = SAPCODE_MP;
+            //cbMateriaPrima.Text = mp.Name;
+            cargarDatosTarimas(SAPCODE_MP);
+            cargarMateriaPrima(SAPCODE_MP);
             //}
         }
 
-        private void cargarDatosTarimas(int pidmp)
+        private void cargarDatosTarimas(string pCodeSAP)
         {
             try
             {
@@ -50,7 +51,7 @@ namespace LOSA.Logistica
 
                 SqlCommand cmd = new SqlCommand("sp_get_lotes_by_MP_v2", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id_mp", pidmp);
+                cmd.Parameters.AddWithValue("@id_mp", pCodeSAP);
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 dsLogistica.LotesXProveedor.Clear();
                 adat.Fill(dsLogistica.LotesXProveedor);
@@ -63,42 +64,25 @@ namespace LOSA.Logistica
             }
         }
 
-        private void cargarDatosTarimas()
-        {
-            try
-            {
-                    
-                DataOperations dp = new DataOperations();
-                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_lotes_by_MP_v2", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id_mp", cbMateriaPrima.EditValue);
-                SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                dsLogistica.LotesXProveedor.Clear();
-                adat.Fill(dsLogistica.LotesXProveedor);
-                con.Close();
 
-            }
-            catch (Exception ec)
-            {
-                MessageBox.Show(ec.Message);
-            }
-        }
-
-        private void cargarMateriaPrima()
+        private void cargarMateriaPrima(string pCodeSap)
         {
             try
             {
 
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-                string SQL = @"exec sp_get_list_MP_by_tarima";
+                string SQL = @"sp_get_header_resumen_materiaprima";
 
                 dsLogistica.Materia_prima_v2.Clear();
-                SqlDataAdapter adat = new SqlDataAdapter(SQL, cn);
-
-                adat.Fill(dsLogistica.Materia_prima_v2);
+                SqlCommand cmd = new SqlCommand(SQL, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@codesap", pCodeSap);
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                //DataTable table1 = new DataTable();
+                dsMantoTrazabilidad1.view_mp.Clear();
+                adat.Fill(dsMantoTrazabilidad1.view_mp);
+                //vGridControl1.DataSource = table1;
                 cn.Close();
             }
             catch (Exception ec)
@@ -120,7 +104,7 @@ namespace LOSA.Logistica
         private void cbMateriaPrima_EditValueChanged(object sender, EventArgs e)
         {
             //gvLotes.ActiveFilterString = "[itemcode] = '" + cbMateriaPrima.EditValue + "'";
-            cargarDatosTarimas();
+            //cargarDatosTarimas();
         }
     }
 }

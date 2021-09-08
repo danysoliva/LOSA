@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>194</ApplicationRevision>
+    <ApplicationRevision>195</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -131,6 +131,7 @@
     <Reference Include="DevExpress.XtraRichEdit.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraRichEdit.v18.2.Extensions, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraTreeList.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -1628,6 +1629,18 @@
     <Compile Include="Trazabilidad\frmCRUD_PlantasPRV.Designer.cs">
       <DependentUpon>frmCRUD_PlantasPRV.cs</DependentUpon>
     </Compile>
+    <Compile Include="Trazabilidad\frmMateriaPrimaHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trazabilidad\frmMateriaPrimaHome.Designer.cs">
+      <DependentUpon>frmMateriaPrimaHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trazabilidad\frmMateriaPrimaViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trazabilidad\frmMateriaPrimaViewer.Designer.cs">
+      <DependentUpon>frmMateriaPrimaViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Trazabilidad\frmMantoProveedoresMP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2322,6 +2335,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Trazabilidad\frmCRUD_PlantasPRV.resx">
       <DependentUpon>frmCRUD_PlantasPRV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trazabilidad\frmMateriaPrimaHome.resx">
+      <DependentUpon>frmMateriaPrimaHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trazabilidad\frmMateriaPrimaViewer.resx">
+      <DependentUpon>frmMateriaPrimaViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Trazabilidad\frmMantoProveedoresMP.resx">
       <DependentUpon>frmMantoProveedoresMP.cs</DependentUpon>

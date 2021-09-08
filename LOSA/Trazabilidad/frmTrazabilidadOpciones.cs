@@ -33,5 +33,12 @@ namespace LOSA.Trazabilidad
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            frmMateriaPrimaHome frm = new frmMateriaPrimaHome();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
     }
 }

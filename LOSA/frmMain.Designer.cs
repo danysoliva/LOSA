@@ -42,6 +42,7 @@ namespace LOSA
             this.SaltarLogin = new DevExpress.XtraEditors.SimpleButton();
             this.cmdButtonSaltarLogin = new DevExpress.XtraEditors.SimpleButton();
             this.cmdMicros = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.txtClave.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsuario.Properties)).BeginInit();
@@ -178,11 +179,12 @@ namespace LOSA
             this.SaltarLogin.Appearance.Options.UseBorderColor = true;
             this.SaltarLogin.Appearance.Options.UseFont = true;
             this.SaltarLogin.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.SaltarLogin.Location = new System.Drawing.Point(228, 423);
+            this.SaltarLogin.Location = new System.Drawing.Point(119, 427);
             this.SaltarLogin.Name = "SaltarLogin";
             this.SaltarLogin.Size = new System.Drawing.Size(199, 71);
             this.SaltarLogin.TabIndex = 15;
-            this.SaltarLogin.Text = "Ingresar";
+            this.SaltarLogin.Text = "Ingresar Log";
+            this.SaltarLogin.Visible = false;
             this.SaltarLogin.Click += new System.EventHandler(this.SaltarLogin_Click);
             // 
             // cmdButtonSaltarLogin
@@ -217,6 +219,23 @@ namespace LOSA
             this.cmdMicros.Text = "Micro Ingredientes";
             this.cmdMicros.Click += new System.EventHandler(this.cmdMicros_Click);
             // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.simpleButton2.Appearance.BorderColor = System.Drawing.Color.LightSkyBlue;
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton2.Appearance.Options.UseBackColor = true;
+            this.simpleButton2.Appearance.Options.UseBorderColor = true;
+            this.simpleButton2.Appearance.Options.UseFont = true;
+            this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton2.Location = new System.Drawing.Point(325, 427);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton2.TabIndex = 17;
+            this.simpleButton2.Text = "Ingresar Calidad";
+            this.simpleButton2.Visible = false;
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click_1);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::LOSA.Properties.Resources.Users_Group_icon64px;
@@ -235,6 +254,7 @@ namespace LOSA
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(638, 560);
             this.ControlBox = false;
+            this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.cmdMicros);
             this.Controls.Add(this.SaltarLogin);
             this.Controls.Add(this.simpleButton1);
@@ -277,6 +297,7 @@ namespace LOSA
         private SimpleButton SaltarLogin;
         private SimpleButton cmdButtonSaltarLogin;
         private SimpleButton cmdMicros;
+        private SimpleButton simpleButton2;
     }
 }
 

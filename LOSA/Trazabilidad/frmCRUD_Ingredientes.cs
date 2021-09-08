@@ -218,5 +218,10 @@ namespace LOSA.Trazabilidad
         {
             idmp = Convert.ToInt32(gridLookUpEdit_MP.EditValue);
         }
+
+        private void gridLookUpEditPresentacion_EditValueChanged(object sender, EventArgs e)
+        {
+            idpres = Convert.ToInt32(gridLookUpEditPresentacion.EditValue);
+        }
     }
 }
