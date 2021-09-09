@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>196</ApplicationRevision>
+    <ApplicationRevision>197</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -1635,11 +1635,23 @@
     <Compile Include="Trazabilidad\frmMantoProveedoresMP.Designer.cs">
       <DependentUpon>frmMantoProveedoresMP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Trazabilidad\frmOC_SAP_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trazabilidad\frmOC_SAP_View.Designer.cs">
+      <DependentUpon>frmOC_SAP_View.cs</DependentUpon>
+    </Compile>
     <Compile Include="Trazabilidad\frmTrazabilidadOpciones.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Trazabilidad\frmTrazabilidadOpciones.Designer.cs">
       <DependentUpon>frmTrazabilidadOpciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trazabilidad\frmViewBasculaBoleta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trazabilidad\frmViewBasculaBoleta.Designer.cs">
+      <DependentUpon>frmViewBasculaBoleta.cs</DependentUpon>
     </Compile>
     <Compile Include="Utileria\frmMensaje.cs">
       <SubType>Form</SubType>
@@ -1968,6 +1980,7 @@
     <EmbeddedResource Include="Produccion\rptReporteTarimaPT.resx">
       <DependentUpon>rptReporteTarimaPT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -2326,8 +2339,14 @@
     <EmbeddedResource Include="Trazabilidad\frmMantoProveedoresMP.resx">
       <DependentUpon>frmMantoProveedoresMP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Trazabilidad\frmOC_SAP_View.resx">
+      <DependentUpon>frmOC_SAP_View.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Trazabilidad\frmTrazabilidadOpciones.resx">
       <DependentUpon>frmTrazabilidadOpciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trazabilidad\frmViewBasculaBoleta.resx">
+      <DependentUpon>frmViewBasculaBoleta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Utileria\frmMensaje.resx">
       <DependentUpon>frmMensaje.cs</DependentUpon>
