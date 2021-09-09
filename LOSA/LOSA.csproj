@@ -318,6 +318,18 @@
     <Compile Include="Calidad\frmLotesStatus.Designer.cs">
       <DependentUpon>frmLotesStatus.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\frmMantenimientoIngreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmMantenimientoIngreso.Designer.cs">
+      <DependentUpon>frmMantenimientoIngreso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\frmOlorMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmOlorMantenimiento.Designer.cs">
+      <DependentUpon>frmOlorMantenimiento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\frmreporte_trazabilidad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1733,6 +1745,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmLotesStatus.resx">
       <DependentUpon>frmLotesStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmMantenimientoIngreso.resx">
+      <DependentUpon>frmMantenimientoIngreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmOlorMantenimiento.resx">
+      <DependentUpon>frmOlorMantenimiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmreporte_trazabilidad.resx">
       <DependentUpon>frmreporte_trazabilidad.cs</DependentUpon>

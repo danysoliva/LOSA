@@ -447,7 +447,7 @@ namespace LOSA.MicroIngredientes
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
         private DevExpress.XtraEditors.LabelControl lblPesoDisponible;
         private System.Windows.Forms.BindingSource lotesseleccionBindingSource;
-        private Micro.dsMicro dsMicro;
+        public Micro.dsMicro dsMicro;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
