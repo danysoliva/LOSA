@@ -42,6 +42,7 @@ namespace LOSA.MicroIngredientes
             LoadData();
             LoadDataIndividual();
             load_turno();
+            Load_reprint();
         }
 
             public void load_turno() 
@@ -78,6 +79,28 @@ namespace LOSA.MicroIngredientes
                     da.SelectCommand.CommandType = CommandType.StoredProcedure;
                     da.SelectCommand.Parameters.AddWithValue("@orden_id", SqlDbType.Int).Value = id;
                     da.Fill(dsMicros.plan_microsh);
+                    cnx.Close();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+        private void Load_reprint()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
+                {
+                    cnx.Open();
+                    dsMicros.plan_microsh_report.Clear();
+                    SqlDataAdapter da = new SqlDataAdapter("[sp_get_detalle_orden_pesaje_micros_interfacev2_to_reprint]", cnx);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@orden_id", SqlDbType.Int).Value = id;
+                    da.Fill(dsMicros.plan_microsh_report);
                     cnx.Close();
 
                 }
@@ -365,6 +388,20 @@ namespace LOSA.MicroIngredientes
                 rpt.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
                 rpt.Print();
 
+
+                query = @"sp_update_close_pesaje";
+                cn = new SqlConnection(dp.ConnectionStringAPMS);
+                cn.Open();
+                cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_orden_encabezado", row.id_orden_encabezado);
+                cmd.Parameters.AddWithValue("@AMI", row.AMI_ID);
+                cmd.ExecuteNonQuery();
+                cn.Close();
+
+                LoadData();
+
+
             }
             catch (Exception ex)
             {
@@ -393,6 +430,29 @@ namespace LOSA.MicroIngredientes
                         row.AcceptChanges();
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void grd_data_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_reprint_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var gridView = (GridView)gcDetalle.FocusedView;
+                var row = (dsMicros.plan_microsh_reportRow)gridView.GetFocusedDataRow();
+                xrptAlimentacionMicros rpt = new xrptAlimentacionMicros(row.AMI_ID, row.id_orden_encabezado);
+                rpt.ShowPrintMarginsWarning = false;
+                rpt.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
+                rpt.Print();
             }
             catch (Exception ex)
             {

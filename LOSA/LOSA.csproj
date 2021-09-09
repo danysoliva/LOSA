@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>195</ApplicationRevision>
+    <ApplicationRevision>197</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -353,6 +353,12 @@
     </Compile>
     <Compile Include="Calidad\frm_asiganacion_causas.Designer.cs">
       <DependentUpon>frm_asiganacion_causas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\frm_mantenimiento_calidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frm_mantenimiento_calidad.Designer.cs">
+      <DependentUpon>frm_mantenimiento_calidad.cs</DependentUpon>
     </Compile>
     <Compile Include="Calidad\frm_reporte_produccion.cs">
       <SubType>Form</SubType>
@@ -1751,6 +1757,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frm_asiganacion_causas.resx">
       <DependentUpon>frm_asiganacion_causas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frm_mantenimiento_calidad.resx">
+      <DependentUpon>frm_mantenimiento_calidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frm_reporte_produccion.resx">
       <DependentUpon>frm_reporte_produccion.cs</DependentUpon>
