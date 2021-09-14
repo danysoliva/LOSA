@@ -612,6 +612,18 @@
     <Compile Include="Logistica\frmTrazabilidadLote.Designer.cs">
       <DependentUpon>frmTrazabilidadLote.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logistica\xfrmMP_Reproceso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\xfrmMP_Reproceso.Designer.cs">
+      <DependentUpon>xfrmMP_Reproceso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\xfrmIngresosMP_Reproceso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\xfrmIngresosMP_Reproceso.Designer.cs">
+      <DependentUpon>xfrmIngresosMP_Reproceso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimientos\dsMantenimiento.cs">
       <DependentUpon>dsMantenimiento.xsd</DependentUpon>
     </Compile>
@@ -1881,6 +1893,12 @@
     <EmbeddedResource Include="Logistica\frmTrazabilidadLote.resx">
       <DependentUpon>frmTrazabilidadLote.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\xfrmMP_Reproceso.resx">
+      <DependentUpon>xfrmMP_Reproceso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\xfrmIngresosMP_Reproceso.resx">
+      <DependentUpon>xfrmIngresosMP_Reproceso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\frmBodega.resx">
       <DependentUpon>frmBodega.cs</DependentUpon>
     </EmbeddedResource>
@@ -2007,6 +2025,7 @@
     <EmbeddedResource Include="Produccion\rptReporteTarimaPT.resx">
       <DependentUpon>rptReporteTarimaPT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
