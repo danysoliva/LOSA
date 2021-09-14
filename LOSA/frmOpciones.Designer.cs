@@ -37,6 +37,7 @@
             this.cmdPT = new DevExpress.XtraEditors.SimpleButton();
             this.cmdMP = new DevExpress.XtraEditors.SimpleButton();
             this.TabLogistica = new DevExpress.XtraTab.XtraTabPage();
+            this.btnMPReproceso = new DevExpress.XtraEditors.SimpleButton();
             this.btn_andenes = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton13 = new DevExpress.XtraEditors.SimpleButton();
             this.btntarimasactivadasPT = new DevExpress.XtraEditors.SimpleButton();
@@ -126,7 +127,7 @@
             this.tabOpciones.Location = new System.Drawing.Point(2, 89);
             this.tabOpciones.Name = "tabOpciones";
             this.tabOpciones.SelectedTabPage = this.TabMontacarga;
-            this.tabOpciones.Size = new System.Drawing.Size(635, 469);
+            this.tabOpciones.Size = new System.Drawing.Size(635, 488);
             this.tabOpciones.TabIndex = 8;
             this.tabOpciones.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.TabMontacarga,
@@ -145,7 +146,7 @@
             this.TabMontacarga.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabMontacarga.ImageOptions.Image")));
             this.TabMontacarga.Name = "TabMontacarga";
             this.TabMontacarga.PageVisible = false;
-            this.TabMontacarga.Size = new System.Drawing.Size(629, 422);
+            this.TabMontacarga.Size = new System.Drawing.Size(629, 441);
             this.TabMontacarga.Text = "MontaCarga";
             // 
             // labelControl2
@@ -224,6 +225,7 @@
             // 
             // TabLogistica
             // 
+            this.TabLogistica.Controls.Add(this.btnMPReproceso);
             this.TabLogistica.Controls.Add(this.btn_andenes);
             this.TabLogistica.Controls.Add(this.simpleButton13);
             this.TabLogistica.Controls.Add(this.btntarimasactivadasPT);
@@ -252,8 +254,25 @@
             this.TabLogistica.ImageOptions.Image = global::LOSA.Properties.Resources.box;
             this.TabLogistica.Name = "TabLogistica";
             this.TabLogistica.PageVisible = false;
-            this.TabLogistica.Size = new System.Drawing.Size(629, 422);
+            this.TabLogistica.Size = new System.Drawing.Size(629, 441);
             this.TabLogistica.Text = "Logistica";
+            // 
+            // btnMPReproceso
+            // 
+            this.btnMPReproceso.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMPReproceso.Appearance.Options.UseFont = true;
+            this.btnMPReproceso.Appearance.Options.UseTextOptions = true;
+            this.btnMPReproceso.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.btnMPReproceso.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMPReproceso.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnMPReproceso.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMPReproceso.ImageOptions.Image")));
+            this.btnMPReproceso.Location = new System.Drawing.Point(8, 392);
+            this.btnMPReproceso.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMPReproceso.Name = "btnMPReproceso";
+            this.btnMPReproceso.Size = new System.Drawing.Size(199, 43);
+            this.btnMPReproceso.TabIndex = 40;
+            this.btnMPReproceso.Text = " Ingreso MP Reproceso";
+            this.btnMPReproceso.Click += new System.EventHandler(this.btnMPReproceso_Click);
             // 
             // btn_andenes
             // 
@@ -611,7 +630,7 @@
             this.TabCalidad.ImageOptions.Image = global::LOSA.Properties.Resources.medal;
             this.TabCalidad.Name = "TabCalidad";
             this.TabCalidad.PageVisible = false;
-            this.TabCalidad.Size = new System.Drawing.Size(629, 422);
+            this.TabCalidad.Size = new System.Drawing.Size(629, 441);
             this.TabCalidad.Text = "Calidad";
             // 
             // ManteIngresos
@@ -743,7 +762,7 @@
             this.TabAdmin.ImageOptions.Image = global::LOSA.Properties.Resources.admin;
             this.TabAdmin.Name = "TabAdmin";
             this.TabAdmin.PageVisible = false;
-            this.TabAdmin.Size = new System.Drawing.Size(629, 422);
+            this.TabAdmin.Size = new System.Drawing.Size(629, 441);
             this.TabAdmin.Text = "Administrador";
             // 
             // btnEstadosRequisiciones
@@ -821,7 +840,7 @@
             this.tabProduccion.ImageOptions.Image = global::LOSA.Properties.Resources.produccion;
             this.tabProduccion.Name = "tabProduccion";
             this.tabProduccion.PageVisible = false;
-            this.tabProduccion.Size = new System.Drawing.Size(629, 422);
+            this.tabProduccion.Size = new System.Drawing.Size(629, 441);
             this.tabProduccion.Text = "Producción";
             // 
             // simpleButton7
@@ -892,7 +911,7 @@
             this.txtProduccion.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("txtProduccion.ImageOptions.Image")));
             this.txtProduccion.Name = "txtProduccion";
             this.txtProduccion.PageVisible = false;
-            this.txtProduccion.Size = new System.Drawing.Size(629, 422);
+            this.txtProduccion.Size = new System.Drawing.Size(629, 441);
             this.txtProduccion.Text = "Produccion";
             // 
             // cmdReporteReqManuales
@@ -982,7 +1001,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(638, 560);
+            this.ClientSize = new System.Drawing.Size(638, 579);
             this.Controls.Add(this.cmdHome);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.tabOpciones);
@@ -1062,6 +1081,7 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton16;
         private DevExpress.XtraEditors.SimpleButton btn_andenes;
         private DevExpress.XtraEditors.SimpleButton ManteIngresos;
+        private DevExpress.XtraEditors.SimpleButton btnMPReproceso;
         private DevExpress.XtraEditors.SimpleButton simpleButton17;
     }
 }

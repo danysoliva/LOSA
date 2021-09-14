@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>197</ApplicationRevision>
+    <ApplicationRevision>198</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -624,6 +624,18 @@
     <Compile Include="Logistica\frmTrazabilidadLote.Designer.cs">
       <DependentUpon>frmTrazabilidadLote.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logistica\xfrmMP_Reproceso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\xfrmMP_Reproceso.Designer.cs">
+      <DependentUpon>xfrmMP_Reproceso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\xfrmIngresosMP_Reproceso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\xfrmIngresosMP_Reproceso.Designer.cs">
+      <DependentUpon>xfrmIngresosMP_Reproceso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimientos\dsMantenimiento.cs">
       <DependentUpon>dsMantenimiento.xsd</DependentUpon>
     </Compile>
@@ -811,6 +823,12 @@
     </Compile>
     <Compile Include="PlanMPreque\frmverdetalleplan.Designer.cs">
       <DependentUpon>frmverdetalleplan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\BannerTV\frmBannerMainTV_PRD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\BannerTV\frmBannerMainTV_PRD.Designer.cs">
+      <DependentUpon>frmBannerMainTV_PRD.cs</DependentUpon>
     </Compile>
     <Compile Include="Produccion\dsProduccion1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1893,6 +1911,12 @@
     <EmbeddedResource Include="Logistica\frmTrazabilidadLote.resx">
       <DependentUpon>frmTrazabilidadLote.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\xfrmMP_Reproceso.resx">
+      <DependentUpon>xfrmMP_Reproceso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\xfrmIngresosMP_Reproceso.resx">
+      <DependentUpon>xfrmIngresosMP_Reproceso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\frmBodega.resx">
       <DependentUpon>frmBodega.cs</DependentUpon>
     </EmbeddedResource>
@@ -1973,6 +1997,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PlanMPreque\frmverdetalleplan.resx">
       <DependentUpon>frmverdetalleplan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\BannerTV\frmBannerMainTV_PRD.resx">
+      <DependentUpon>frmBannerMainTV_PRD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\ctl_keypadNumber.resx">
       <DependentUpon>ctl_keypadNumber.cs</DependentUpon>

@@ -597,5 +597,24 @@ namespace LOSA
         {
 
         }
+
+        private void btnMPReproceso_Click(object sender, EventArgs e)
+        {
+            //xfrmIngresoMP_Reproceso frm = new xfrmIngresoMP_Reproceso(UsuarioLogeado);
+            // if (this.MdiParent != null)
+            // {
+            //     frm.MdiParent = this.MdiParent;
+            //     frm.FormBorderStyle = FormBorderStyle.Sizable;
+            // }
+            // frm.Show();
+
+           xfrmIngresosMP_Reproceso frm = new xfrmIngresosMP_Reproceso(UsuarioLogeado);
+
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
     }
 }
