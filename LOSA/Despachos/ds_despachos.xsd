@@ -382,6 +382,45 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="existencia_seleccion" msprop:Generator_TableClassName="existencia_seleccionDataTable" msprop:Generator_TableVarName="tableexistencia_seleccion" msprop:Generator_RowChangedName="existencia_seleccionRowChanged" msprop:Generator_TablePropName="existencia_seleccion" msprop:Generator_RowDeletingName="existencia_seleccionRowDeleting" msprop:Generator_RowChangingName="existencia_seleccionRowChanging" msprop:Generator_RowEvHandlerName="existencia_seleccionRowChangeEventHandler" msprop:Generator_RowDeletedName="existencia_seleccionRowDeleted" msprop:Generator_RowClassName="existencia_seleccionRow" msprop:Generator_UserTableName="existencia_seleccion" msprop:Generator_RowEvArgName="existencia_seleccionRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="lote_producto_termiado" msprop:Generator_ColumnVarNameInTable="columnlote_producto_termiado" msprop:Generator_ColumnPropNameInRow="lote_producto_termiado" msprop:Generator_ColumnPropNameInTable="lote_producto_termiadoColumn" msprop:Generator_UserColumnName="lote_producto_termiado" type="xs:int" minOccurs="0" />
+              <xs:element name="vencimiento" msprop:Generator_ColumnVarNameInTable="columnvencimiento" msprop:Generator_ColumnPropNameInRow="vencimiento" msprop:Generator_ColumnPropNameInTable="vencimientoColumn" msprop:Generator_UserColumnName="vencimiento" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_UserColumnName="Cantidad" type="xs:decimal" minOccurs="0" />
+              <xs:element name="seleccionada" msprop:Generator_ColumnVarNameInTable="columnseleccionada" msprop:Generator_ColumnPropNameInRow="seleccionada" msprop:Generator_ColumnPropNameInTable="seleccionadaColumn" msprop:Generator_UserColumnName="seleccionada" type="xs:decimal" minOccurs="0" />
+              <xs:element name="selected" msprop:Generator_ColumnVarNameInTable="columnselected" msprop:Generator_ColumnPropNameInRow="selected" msprop:Generator_ColumnPropNameInTable="selectedColumn" msprop:Generator_UserColumnName="selected" type="xs:boolean" minOccurs="0" />
+              <xs:element name="itemcode" msprop:Generator_ColumnVarNameInTable="columnitemcode" msprop:Generator_ColumnPropNameInRow="itemcode" msprop:Generator_ColumnPropNameInTable="itemcodeColumn" msprop:Generator_UserColumnName="itemcode" type="xs:string" minOccurs="0" />
+              <xs:element name="restante" msprop:Generator_ColumnVarNameInTable="columnrestante" msprop:Generator_ColumnPropNameInRow="restante" msprop:Generator_ColumnPropNameInTable="restanteColumn" msprop:Generator_UserColumnName="restante" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="lotes_selected" msprop:Generator_TableClassName="lotes_selectedDataTable" msprop:Generator_TableVarName="tablelotes_selected" msprop:Generator_TablePropName="lotes_selected" msprop:Generator_RowDeletingName="lotes_selectedRowDeleting" msprop:Generator_RowChangingName="lotes_selectedRowChanging" msprop:Generator_RowEvHandlerName="lotes_selectedRowChangeEventHandler" msprop:Generator_RowDeletedName="lotes_selectedRowDeleted" msprop:Generator_UserTableName="lotes_selected" msprop:Generator_RowChangedName="lotes_selectedRowChanged" msprop:Generator_RowEvArgName="lotes_selectedRowChangeEvent" msprop:Generator_RowClassName="lotes_selectedRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="lote_producto_termiado" msprop:Generator_ColumnVarNameInTable="columnlote_producto_termiado" msprop:Generator_ColumnPropNameInRow="lote_producto_termiado" msprop:Generator_ColumnPropNameInTable="lote_producto_termiadoColumn" msprop:Generator_UserColumnName="lote_producto_termiado" type="xs:int" minOccurs="0" />
+              <xs:element name="vencimiento" msprop:Generator_ColumnVarNameInTable="columnvencimiento" msprop:Generator_ColumnPropNameInRow="vencimiento" msprop:Generator_ColumnPropNameInTable="vencimientoColumn" msprop:Generator_UserColumnName="vencimiento" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_UserColumnName="Cantidad" type="xs:decimal" minOccurs="0" />
+              <xs:element name="seleccionada" msprop:Generator_ColumnVarNameInTable="columnseleccionada" msprop:Generator_ColumnPropNameInRow="seleccionada" msprop:Generator_ColumnPropNameInTable="seleccionadaColumn" msprop:Generator_UserColumnName="seleccionada" type="xs:decimal" minOccurs="0" />
+              <xs:element name="selected" msprop:Generator_ColumnVarNameInTable="columnselected" msprop:Generator_ColumnPropNameInRow="selected" msprop:Generator_ColumnPropNameInTable="selectedColumn" msprop:Generator_UserColumnName="selected" type="xs:boolean" minOccurs="0" />
+              <xs:element name="itemcode" msprop:Generator_ColumnVarNameInTable="columnitemcode" msprop:Generator_ColumnPropNameInRow="itemcode" msprop:Generator_ColumnPropNameInTable="itemcodeColumn" msprop:Generator_UserColumnName="itemcode" type="xs:string" minOccurs="0" />
+              <xs:element name="restante" msprop:Generator_ColumnVarNameInTable="columnrestante" msprop:Generator_ColumnPropNameInRow="restante" msprop:Generator_ColumnPropNameInTable="restanteColumn" msprop:Generator_UserColumnName="restante" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="lotes_selected_all" msprop:Generator_TableClassName="lotes_selected_allDataTable" msprop:Generator_TableVarName="tablelotes_selected_all" msprop:Generator_TablePropName="lotes_selected_all" msprop:Generator_RowDeletingName="lotes_selected_allRowDeleting" msprop:Generator_RowChangingName="lotes_selected_allRowChanging" msprop:Generator_RowEvHandlerName="lotes_selected_allRowChangeEventHandler" msprop:Generator_RowDeletedName="lotes_selected_allRowDeleted" msprop:Generator_UserTableName="lotes_selected_all" msprop:Generator_RowChangedName="lotes_selected_allRowChanged" msprop:Generator_RowEvArgName="lotes_selected_allRowChangeEvent" msprop:Generator_RowClassName="lotes_selected_allRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="lote_producto_termiado" msprop:Generator_ColumnVarNameInTable="columnlote_producto_termiado" msprop:Generator_ColumnPropNameInRow="lote_producto_termiado" msprop:Generator_ColumnPropNameInTable="lote_producto_termiadoColumn" msprop:Generator_UserColumnName="lote_producto_termiado" type="xs:int" minOccurs="0" />
+              <xs:element name="vencimiento" msprop:Generator_ColumnVarNameInTable="columnvencimiento" msprop:Generator_ColumnPropNameInRow="vencimiento" msprop:Generator_ColumnPropNameInTable="vencimientoColumn" msprop:Generator_UserColumnName="vencimiento" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_UserColumnName="Cantidad" type="xs:decimal" minOccurs="0" />
+              <xs:element name="seleccionada" msprop:Generator_ColumnVarNameInTable="columnseleccionada" msprop:Generator_ColumnPropNameInRow="seleccionada" msprop:Generator_ColumnPropNameInTable="seleccionadaColumn" msprop:Generator_UserColumnName="seleccionada" type="xs:decimal" minOccurs="0" />
+              <xs:element name="selected" msprop:Generator_ColumnVarNameInTable="columnselected" msprop:Generator_ColumnPropNameInRow="selected" msprop:Generator_ColumnPropNameInTable="selectedColumn" msprop:Generator_UserColumnName="selected" type="xs:boolean" minOccurs="0" />
+              <xs:element name="itemcode" msprop:Generator_ColumnVarNameInTable="columnitemcode" msprop:Generator_ColumnPropNameInRow="itemcode" msprop:Generator_ColumnPropNameInTable="itemcodeColumn" msprop:Generator_UserColumnName="itemcode" type="xs:string" minOccurs="0" />
+              <xs:element name="restante" msprop:Generator_ColumnVarNameInTable="columnrestante" msprop:Generator_ColumnPropNameInRow="restante" msprop:Generator_ColumnPropNameInTable="restanteColumn" msprop:Generator_UserColumnName="restante" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

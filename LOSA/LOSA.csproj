@@ -534,6 +534,12 @@
     <Compile Include="Despachos\frm_seleccionUD.Designer.cs">
       <DependentUpon>frm_seleccionUD.cs</DependentUpon>
     </Compile>
+    <Compile Include="Despachos\frm_seleccion_lote_pt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Despachos\frm_seleccion_lote_pt.Designer.cs">
+      <DependentUpon>frm_seleccion_lote_pt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Despachos\frm_viewEntrega.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1844,6 +1850,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frm_seleccionUD.resx">
       <DependentUpon>frm_seleccionUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Despachos\frm_seleccion_lote_pt.resx">
+      <DependentUpon>frm_seleccion_lote_pt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frm_viewEntrega.resx">
       <DependentUpon>frm_viewEntrega.cs</DependentUpon>

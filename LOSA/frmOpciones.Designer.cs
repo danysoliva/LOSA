@@ -89,6 +89,7 @@
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton17 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -597,6 +598,7 @@
             // 
             // TabCalidad
             // 
+            this.TabCalidad.Controls.Add(this.simpleButton17);
             this.TabCalidad.Controls.Add(this.ManteIngresos);
             this.TabCalidad.Controls.Add(this.simpleButton16);
             this.TabCalidad.Controls.Add(this.simpleButton11);
@@ -962,6 +964,19 @@
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
             // 
+            // simpleButton17
+            // 
+            this.simpleButton17.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton17.Appearance.Options.UseFont = true;
+            this.simpleButton17.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton17.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton17.ImageOptions.Image")));
+            this.simpleButton17.Location = new System.Drawing.Point(427, 100);
+            this.simpleButton17.Name = "simpleButton17";
+            this.simpleButton17.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton17.TabIndex = 20;
+            this.simpleButton17.Text = "Lecturas NIR";
+            this.simpleButton17.Visible = false;
+            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1047,5 +1062,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton16;
         private DevExpress.XtraEditors.SimpleButton btn_andenes;
         private DevExpress.XtraEditors.SimpleButton ManteIngresos;
+        private DevExpress.XtraEditors.SimpleButton simpleButton17;
     }
 }
