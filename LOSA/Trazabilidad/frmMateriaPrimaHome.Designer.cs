@@ -29,13 +29,19 @@ namespace LOSA.Trazabilidad
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMateriaPrimaHome));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.dsMantoTrazabilidad1 = new LOSA.Trazabilidad.dsMantoTrazabilidad();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colmaterial = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.LinkLotesMP = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colNombreComercial = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTipo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTipoF = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -50,6 +56,7 @@ namespace LOSA.Trazabilidad
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMantoTrazabilidad1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LinkLotesMP)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -62,6 +69,8 @@ namespace LOSA.Trazabilidad
             this.gridControl1.Location = new System.Drawing.Point(2, 64);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
+            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.LinkLotesMP});
             this.gridControl1.Size = new System.Drawing.Size(997, 531);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -92,6 +101,7 @@ namespace LOSA.Trazabilidad
             this.colTipoAlimentación});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowAutoFilterRow = true;
             // 
             // colid
             // 
@@ -112,12 +122,21 @@ namespace LOSA.Trazabilidad
             // colmaterial
             // 
             this.colmaterial.Caption = "Nombre";
+            this.colmaterial.ColumnEdit = this.LinkLotesMP;
             this.colmaterial.FieldName = "material";
             this.colmaterial.Name = "colmaterial";
-            this.colmaterial.OptionsColumn.AllowEdit = false;
             this.colmaterial.Visible = true;
             this.colmaterial.VisibleIndex = 2;
             this.colmaterial.Width = 150;
+            // 
+            // LinkLotesMP
+            // 
+            this.LinkLotesMP.AutoHeight = false;
+            editorButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions1.SvgImage")));
+            this.LinkLotesMP.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.LinkLotesMP.Name = "LinkLotesMP";
+            this.LinkLotesMP.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.LinkLotesMP_ButtonClick);
             // 
             // colNombreComercial
             // 
@@ -248,6 +267,7 @@ namespace LOSA.Trazabilidad
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMantoTrazabilidad1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LinkLotesMP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,5 +292,6 @@ namespace LOSA.Trazabilidad
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.SimpleButton cmdHome;
         private DevExpress.XtraEditors.SimpleButton cmdExcel;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit LinkLotesMP;
     }
 }
