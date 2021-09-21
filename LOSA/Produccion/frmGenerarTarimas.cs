@@ -37,6 +37,7 @@ namespace LOSA.Produccion
         int ControlSelected;
         int centinela_print_multi;
         int PsiguienteSa = 0;
+        int tipoprinte = 0;
 
 
 DataOperations dp = new DataOperations();
@@ -306,7 +307,7 @@ DataOperations dp = new DataOperations();
 
                     int Id_tm = Convert.ToInt32(cmd.ExecuteScalar());
                     cn.Close();
-
+                    tipoprinte = 0;
                     rptReporteTarimaPT boleta = new rptReporteTarimaPT(Id_tm);
                     boleta.ShowPrintMarginsWarning = false;
                     ReportPrintTool printtool = new ReportPrintTool(boleta);
@@ -393,6 +394,7 @@ DataOperations dp = new DataOperations();
                 //CajaDialogo.Information("Impresion completa.");
                 //this.Close();
                 timerPrintMulti.Enabled = true;
+                tipoprinte = 0;
                 centinela_print_multi = 25;
                 timerPrintMulti.Start();
             }
@@ -401,68 +403,88 @@ DataOperations dp = new DataOperations();
         private void timerPrintMulti_Tick(object sender, EventArgs e)
         {
 
-         
-            if (centinela_print_multi > 0)
+
+            if (tipoprinte ==  0)
             {
-                string query = @"sp_insert_tarima_pt_nuevo_v3";
-                try
+                if (centinela_print_multi > 0)
                 {
-                    SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-                    cn.Open();
+                    string query = @"sp_insert_tarima_pt_nuevo_v3";
+                    try
+                    {
+                        SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                        cn.Open();
 
-                    int desde = Convert.ToInt32(txtdesde.Text);
-                    int hasta = Convert.ToInt32(txthasta.Text);
-                    int aux = 0;
-                    SqlCommand cmm = new SqlCommand("sp_generar_codigo_from_tables_id", cn);
-                    cmm.CommandType = CommandType.StoredProcedure;
-                    cmm.Parameters.AddWithValue("@id", 1);
-                    string barcode = cmm.ExecuteScalar().ToString();
+                        int desde = Convert.ToInt32(txtdesde.Text);
+                        int hasta = Convert.ToInt32(txthasta.Text);
+                        int aux = 0;
+                        SqlCommand cmm = new SqlCommand("sp_generar_codigo_from_tables_id", cn);
+                        cmm.CommandType = CommandType.StoredProcedure;
+                        cmm.Parameters.AddWithValue("@id", 1);
+                        string barcode = cmm.ExecuteScalar().ToString();
 
-                    SqlCommand cmd = new SqlCommand(query, cn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@date_vencimiento", string.Format("{0:yyyy-MM-dd}", dt_fechaVencimiento.EditValue));
-                    cmd.Parameters.AddWithValue("@lote", lote);
-                    cmd.Parameters.AddWithValue("@id_presentacion", grdv_data.EditValue);
-                    cmd.Parameters.AddWithValue("@id_pt", id_pt);
-                    cmd.Parameters.AddWithValue("@date_produccion", string.Format("{0:yyyy-MM-dd}", dt_fechaFabricaion.EditValue));
-                    cmd.Parameters.AddWithValue("@cantidad", unidades);
-                    cmd.Parameters.AddWithValue("@peso", txtkg.Text.Trim());
-                    cmd.Parameters.AddWithValue("@itemcode", Itemcode.Trim());
-                    cmd.Parameters.AddWithValue("@id_alimentacion", id_alimentacion);
-                    cmd.Parameters.AddWithValue("@Pcodigo_barra", barcode);
-                    cmd.Parameters.AddWithValue("@id_turno", grdturno.EditValue);
-                    cmd.Parameters.AddWithValue("@desde", desde);
-                    cmd.Parameters.AddWithValue("@hasta", hasta);
+                        SqlCommand cmd = new SqlCommand(query, cn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@date_vencimiento", string.Format("{0:yyyy-MM-dd}", dt_fechaVencimiento.EditValue));
+                        cmd.Parameters.AddWithValue("@lote", lote);
+                        cmd.Parameters.AddWithValue("@id_presentacion", grdv_data.EditValue);
+                        cmd.Parameters.AddWithValue("@id_pt", id_pt);
+                        cmd.Parameters.AddWithValue("@date_produccion", string.Format("{0:yyyy-MM-dd}", dt_fechaFabricaion.EditValue));
+                        cmd.Parameters.AddWithValue("@cantidad", unidades);
+                        cmd.Parameters.AddWithValue("@peso", txtkg.Text.Trim());
+                        cmd.Parameters.AddWithValue("@itemcode", Itemcode.Trim());
+                        cmd.Parameters.AddWithValue("@id_alimentacion", id_alimentacion);
+                        cmd.Parameters.AddWithValue("@Pcodigo_barra", barcode);
+                        cmd.Parameters.AddWithValue("@id_turno", grdturno.EditValue);
+                        cmd.Parameters.AddWithValue("@desde", desde);
+                        cmd.Parameters.AddWithValue("@hasta", hasta);
 
-                    int Id_tm = Convert.ToInt32(cmd.ExecuteScalar());
-                    aux = hasta;
-                    desde = hasta+1;
-                    hasta = aux + unidades;
+                        int Id_tm = Convert.ToInt32(cmd.ExecuteScalar());
+                        aux = hasta;
+                        desde = hasta + 1;
+                        hasta = aux + unidades;
 
-                    cn.Close();
-                    centinela_print_multi--;
+                        cn.Close();
+                        centinela_print_multi--;
 
-                    rptReporteTarimaPT boleta = new rptReporteTarimaPT(Id_tm);
-                    boleta.ShowPrintMarginsWarning = false;
-                    ReportPrintTool printtool = new ReportPrintTool(boleta);
-                    printtool.Print();
+                        rptReporteTarimaPT boleta = new rptReporteTarimaPT(Id_tm);
+                        boleta.ShowPrintMarginsWarning = false;
+                        ReportPrintTool printtool = new ReportPrintTool(boleta);
+                        printtool.Print();
 
-                    
-                    //Thread.Sleep(400);
+
+                        //Thread.Sleep(400);
+                    }
+                    catch (Exception ex)
+                    {
+
+                        CajaDialogo.Error(ex.Message);
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-
-                    CajaDialogo.Error(ex.Message);
+                    timerPrintMulti.Stop();
+                    timerPrintMulti.Enabled = false;
+                    CajaDialogo.Information("Impresion completa.");
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
                 }
             }
             else
             {
-                timerPrintMulti.Stop();
-                timerPrintMulti.Enabled = false;
-                CajaDialogo.Information("Impresion completa.");
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                if (centinela_print_multi < 0)
+                {
+                    foreach (dsProduccion.listaTmPrintedRow row in dsProduccion.listaTmPrinted.Rows)
+                    {
+                        if (row.selectedd)
+                        {
+                            rptReporteTarimaPT boleta = new rptReporteTarimaPT(row.id);
+                            boleta.ShowPrintMarginsWarning = false;
+                            ReportPrintTool printtool = new ReportPrintTool(boleta);
+                            printtool.Print();
+                            centinela_print_multi--;
+                        }
+                    }
+                }
             }
         }
 
@@ -499,6 +521,7 @@ DataOperations dp = new DataOperations();
                 }
 
                 timerPrintMulti.Enabled = true;
+                tipoprinte = 0;
                 centinela_print_multi = 3;
                 timerPrintMulti.Start();
             }
@@ -532,6 +555,7 @@ DataOperations dp = new DataOperations();
                 }
 
                 timerPrintMulti.Enabled = true;
+                tipoprinte = 0;
                 centinela_print_multi = 5;
                 timerPrintMulti.Start();
             }
@@ -711,6 +735,79 @@ DataOperations dp = new DataOperations();
         private void txtdesde_EditValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void simpleButton6_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int count_selected = 0;
+                    foreach (dsProduccion.listaTmPrintedRow row in dsProduccion.listaTmPrinted.Rows)
+                    {
+                        if (row.selectedd)
+                        {
+                         count_selected = count_selected + 1;
+                        }
+                    }
+
+                centinela_print_multi = count_selected;
+                timerPrintMulti.Enabled = true;
+                tipoprinte = 1;
+                centinela_print_multi = 25;
+                timerPrintMulti.Start();
+            }
+            catch (Exception ex)
+            {
+
+                
+            }
+        }
+
+        private void chSeleccionarTodas_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (chSeleccionarTodas.Checked)
+                {
+                    foreach (dsProduccion.listaTmPrintedRow row in dsProduccion.listaTmPrinted.Rows)
+                    {
+                        row.selectedd = true;
+                    }
+                }
+                else
+                {
+                    foreach (dsProduccion.listaTmPrintedRow row in dsProduccion.listaTmPrinted.Rows)
+                    {
+                        row.selectedd = false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                
+            }
+        }
+
+        private void gridv_data_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            try
+            {
+                if (e.Column.Name == "colselectedd")
+                {
+                    var gridView = (GridView)grd_data.FocusedView;
+                    var row = (dsProduccion.listaTmPrintedRow)gridView.GetFocusedDataRow();
+
+                    row.selectedd = Convert.ToBoolean(e.Value);
+
+                    row.AcceptChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                
+            }
         }
     }
 }

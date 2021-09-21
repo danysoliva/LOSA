@@ -88,6 +88,7 @@
             this.colcantidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colturno = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPresentacion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colselectedd = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.txtdesde = new DevExpress.XtraEditors.TextEdit();
             this.txthasta = new DevExpress.XtraEditors.TextEdit();
@@ -104,6 +105,8 @@
             this.btn2 = new DevExpress.XtraEditors.SimpleButton();
             this.btn1 = new DevExpress.XtraEditors.SimpleButton();
             this.toggleSwitch1 = new DevExpress.XtraEditors.ToggleSwitch();
+            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
+            this.chSeleccionarTodas = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_producto.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bagsBindingSource)).BeginInit();
@@ -125,6 +128,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtdesde.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txthasta.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chSeleccionarTodas.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -540,12 +544,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_data.DataMember = "listaTmPrinted";
             this.grd_data.DataSource = this.dsProduccion;
-            this.grd_data.Location = new System.Drawing.Point(21, 316);
+            this.grd_data.Location = new System.Drawing.Point(21, 352);
             this.grd_data.MainView = this.gridv_data;
             this.grd_data.Name = "grd_data";
             this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.bbtnreprint});
-            this.grd_data.Size = new System.Drawing.Size(594, 392);
+            this.grd_data.Size = new System.Drawing.Size(594, 356);
             this.grd_data.TabIndex = 63;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridv_data});
@@ -583,11 +587,13 @@
             this.colpeso,
             this.colcantidad,
             this.colturno,
-            this.colPresentacion});
+            this.colPresentacion,
+            this.colselectedd});
             this.gridv_data.GridControl = this.grd_data;
             this.gridv_data.Name = "gridv_data";
             this.gridv_data.OptionsView.ShowAutoFilterRow = true;
             this.gridv_data.OptionsView.ShowGroupPanel = false;
+            this.gridv_data.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridv_data_CellValueChanging);
             // 
             // colid2
             // 
@@ -709,6 +715,14 @@
             this.colPresentacion.FieldName = "Presentacion";
             this.colPresentacion.Name = "colPresentacion";
             this.colPresentacion.OptionsColumn.AllowEdit = false;
+            // 
+            // colselectedd
+            // 
+            this.colselectedd.Caption = "Selecionar";
+            this.colselectedd.FieldName = "selectedd";
+            this.colselectedd.Name = "colselectedd";
+            this.colselectedd.Visible = true;
+            this.colselectedd.VisibleIndex = 8;
             // 
             // labelControl10
             // 
@@ -889,11 +903,36 @@
             this.toggleSwitch1.TabIndex = 70;
             this.toggleSwitch1.Toggled += new System.EventHandler(this.toggleSwitch1_Toggled);
             // 
+            // simpleButton6
+            // 
+            this.simpleButton6.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.simpleButton6.Appearance.Options.UseFont = true;
+            this.simpleButton6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton6.ImageOptions.Image")));
+            this.simpleButton6.Location = new System.Drawing.Point(363, 297);
+            this.simpleButton6.Name = "simpleButton6";
+            this.simpleButton6.Size = new System.Drawing.Size(252, 49);
+            this.simpleButton6.TabIndex = 71;
+            this.simpleButton6.Text = "Reimprimir seleccionadas";
+            this.simpleButton6.Click += new System.EventHandler(this.simpleButton6_Click);
+            // 
+            // chSeleccionarTodas
+            // 
+            this.chSeleccionarTodas.Location = new System.Drawing.Point(21, 321);
+            this.chSeleccionarTodas.Name = "chSeleccionarTodas";
+            this.chSeleccionarTodas.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chSeleccionarTodas.Properties.Appearance.Options.UseFont = true;
+            this.chSeleccionarTodas.Properties.Caption = "Selecionar todas";
+            this.chSeleccionarTodas.Size = new System.Drawing.Size(183, 25);
+            this.chSeleccionarTodas.TabIndex = 72;
+            this.chSeleccionarTodas.CheckedChanged += new System.EventHandler(this.chSeleccionarTodas_CheckedChanged);
+            // 
             // frmGenerarTarimas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1253, 739);
+            this.Controls.Add(this.chSeleccionarTodas);
+            this.Controls.Add(this.simpleButton6);
             this.Controls.Add(this.simpleButton12);
             this.Controls.Add(this.toggleSwitch1);
             this.Controls.Add(this.simpleButton10);
@@ -960,6 +999,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtdesde.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txthasta.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chSeleccionarTodas.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1036,5 +1076,8 @@
         private DevExpress.XtraEditors.SimpleButton btn4;
         private DevExpress.XtraEditors.SimpleButton btn3;
         private DevExpress.XtraEditors.SimpleButton btn2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton6;
+        private DevExpress.XtraGrid.Columns.GridColumn colselectedd;
+        private DevExpress.XtraEditors.CheckEdit chSeleccionarTodas;
     }
 }

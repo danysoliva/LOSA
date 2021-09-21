@@ -4083,6 +4083,8 @@ namespace LOSA.Produccion {
             
             private global::System.Data.DataColumn columnPresentacion;
             
+            private global::System.Data.DataColumn columnselectedd;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public listaTmPrintedDataTable() {
@@ -4238,6 +4240,14 @@ namespace LOSA.Produccion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn selecteddColumn {
+                get {
+                    return this.columnselectedd;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4273,7 +4283,23 @@ namespace LOSA.Produccion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public listaTmPrintedRow AddlistaTmPrintedRow(int id, string itemcode, string descripcion, string rango, string Estado, string lote, string codigo_tm, System.DateTime fecha_ingreso, System.DateTime fecha_vencimiento, string id_pt, System.DateTime fecha_produccion_producto_termiado, int cantidad, decimal peso, string turno, string Presentacion) {
+            public listaTmPrintedRow AddlistaTmPrintedRow(
+                        int id, 
+                        string itemcode, 
+                        string descripcion, 
+                        string rango, 
+                        string Estado, 
+                        string lote, 
+                        string codigo_tm, 
+                        System.DateTime fecha_ingreso, 
+                        System.DateTime fecha_vencimiento, 
+                        string id_pt, 
+                        System.DateTime fecha_produccion_producto_termiado, 
+                        int cantidad, 
+                        decimal peso, 
+                        string turno, 
+                        string Presentacion, 
+                        bool selectedd) {
                 listaTmPrintedRow rowlistaTmPrintedRow = ((listaTmPrintedRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -4290,7 +4316,8 @@ namespace LOSA.Produccion {
                         cantidad,
                         peso,
                         turno,
-                        Presentacion};
+                        Presentacion,
+                        selectedd};
                 rowlistaTmPrintedRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowlistaTmPrintedRow);
                 return rowlistaTmPrintedRow;
@@ -4328,6 +4355,7 @@ namespace LOSA.Produccion {
                 this.columnpeso = base.Columns["peso"];
                 this.columnturno = base.Columns["turno"];
                 this.columnPresentacion = base.Columns["Presentacion"];
+                this.columnselectedd = base.Columns["selectedd"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4363,6 +4391,9 @@ namespace LOSA.Produccion {
                 base.Columns.Add(this.columnturno);
                 this.columnPresentacion = new global::System.Data.DataColumn("Presentacion", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPresentacion);
+                this.columnselectedd = new global::System.Data.DataColumn("selectedd", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnselectedd);
+                this.columnselectedd.DefaultValue = ((bool)(false));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6563,6 +6594,22 @@ namespace LOSA.Produccion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool selectedd {
+                get {
+                    try {
+                        return ((bool)(this[this.tablelistaTmPrinted.selecteddColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'selectedd\' in table \'listaTmPrinted\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablelistaTmPrinted.selecteddColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tablelistaTmPrinted.idColumn);
             }
@@ -6739,6 +6786,18 @@ namespace LOSA.Produccion {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetPresentacionNull() {
                 this[this.tablelistaTmPrinted.PresentacionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsselecteddNull() {
+                return this.IsNull(this.tablelistaTmPrinted.selecteddColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetselecteddNull() {
+                this[this.tablelistaTmPrinted.selecteddColumn] = global::System.Convert.DBNull;
             }
         }
         
