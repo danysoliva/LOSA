@@ -31,7 +31,6 @@ namespace LOSA.Logistica
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmMP_Reproceso));
-            this.dsLogistica2 = new LOSA.Logistica.dsLogistica2();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.txtCantidadTarimasTotal = new DevExpress.XtraEditors.TextEdit();
             this.glTipoTransaccion = new DevExpress.XtraEditors.GridLookUpEdit();
@@ -62,22 +61,17 @@ namespace LOSA.Logistica
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.dtFechaIngreso = new DevExpress.XtraEditors.DateEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.txtCodigoProveedor = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.slueMP = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.mPReprocesoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsLogistica2 = new LOSA.Logistica.dsLogistica2();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.proveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.glueProveedor = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
-            ((System.ComponentModel.ISupportInitialize)(this.dsLogistica2)).BeginInit();
+            this.proveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadTarimasTotal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glTipoTransaccion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipotransaccioneskardexBindingSource)).BeginInit();
@@ -96,19 +90,12 @@ namespace LOSA.Logistica
             ((System.ComponentModel.ISupportInitialize)(this.txtNumIngreso.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaIngreso.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaIngreso.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCodigoProveedor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slueMP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mPReprocesoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsLogistica2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.glueProveedor.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dsLogistica2
-            // 
-            this.dsLogistica2.DataSetName = "dsLogistica2";
-            this.dsLogistica2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // labelControl13
             // 
@@ -116,7 +103,7 @@ namespace LOSA.Logistica
             this.labelControl13.Appearance.ForeColor = System.Drawing.Color.RoyalBlue;
             this.labelControl13.Appearance.Options.UseFont = true;
             this.labelControl13.Appearance.Options.UseForeColor = true;
-            this.labelControl13.Location = new System.Drawing.Point(355, 399);
+            this.labelControl13.Location = new System.Drawing.Point(355, 357);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(173, 24);
             this.labelControl13.TabIndex = 111;
@@ -125,7 +112,7 @@ namespace LOSA.Logistica
             // txtCantidadTarimasTotal
             // 
             this.txtCantidadTarimasTotal.EditValue = "1";
-            this.txtCantidadTarimasTotal.Location = new System.Drawing.Point(534, 391);
+            this.txtCantidadTarimasTotal.Location = new System.Drawing.Point(534, 349);
             this.txtCantidadTarimasTotal.Name = "txtCantidadTarimasTotal";
             this.txtCantidadTarimasTotal.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCantidadTarimasTotal.Properties.Appearance.Options.UseFont = true;
@@ -137,7 +124,7 @@ namespace LOSA.Logistica
             // glTipoTransaccion
             // 
             this.glTipoTransaccion.EditValue = "";
-            this.glTipoTransaccion.Location = new System.Drawing.Point(463, 357);
+            this.glTipoTransaccion.Location = new System.Drawing.Point(463, 315);
             this.glTipoTransaccion.Name = "glTipoTransaccion";
             this.glTipoTransaccion.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.glTipoTransaccion.Properties.Appearance.Options.UseFont = true;
@@ -189,7 +176,7 @@ namespace LOSA.Logistica
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(331, 360);
+            this.labelControl2.Location = new System.Drawing.Point(331, 318);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(126, 24);
             this.labelControl2.TabIndex = 109;
@@ -199,7 +186,7 @@ namespace LOSA.Logistica
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(12, 313);
+            this.labelControl1.Location = new System.Drawing.Point(12, 271);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(83, 24);
             this.labelControl1.TabIndex = 108;
@@ -208,7 +195,7 @@ namespace LOSA.Logistica
             // txtPeso
             // 
             this.txtPeso.EditValue = "0";
-            this.txtPeso.Location = new System.Drawing.Point(183, 310);
+            this.txtPeso.Location = new System.Drawing.Point(183, 268);
             this.txtPeso.Name = "txtPeso";
             this.txtPeso.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPeso.Properties.Appearance.Options.UseFont = true;
@@ -221,7 +208,7 @@ namespace LOSA.Logistica
             // gridLookUpEditPresentacion
             // 
             this.gridLookUpEditPresentacion.EditValue = "";
-            this.gridLookUpEditPresentacion.Location = new System.Drawing.Point(463, 219);
+            this.gridLookUpEditPresentacion.Location = new System.Drawing.Point(463, 177);
             this.gridLookUpEditPresentacion.Name = "gridLookUpEditPresentacion";
             this.gridLookUpEditPresentacion.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridLookUpEditPresentacion.Properties.Appearance.Options.UseFont = true;
@@ -275,7 +262,7 @@ namespace LOSA.Logistica
             // 
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl11.Appearance.Options.UseFont = true;
-            this.labelControl11.Location = new System.Drawing.Point(341, 222);
+            this.labelControl11.Location = new System.Drawing.Point(341, 180);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(115, 24);
             this.labelControl11.TabIndex = 107;
@@ -285,7 +272,7 @@ namespace LOSA.Logistica
             // 
             this.labelControl10.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(401, 318);
+            this.labelControl10.Location = new System.Drawing.Point(401, 276);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(56, 24);
             this.labelControl10.TabIndex = 106;
@@ -294,7 +281,7 @@ namespace LOSA.Logistica
             // txtLote
             // 
             this.txtLote.EditValue = "";
-            this.txtLote.Location = new System.Drawing.Point(463, 313);
+            this.txtLote.Location = new System.Drawing.Point(463, 271);
             this.txtLote.Name = "txtLote";
             this.txtLote.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLote.Properties.Appearance.Options.UseFont = true;
@@ -305,7 +292,7 @@ namespace LOSA.Logistica
             // dtFechaVencimiento
             // 
             this.dtFechaVencimiento.EditValue = null;
-            this.dtFechaVencimiento.Location = new System.Drawing.Point(183, 396);
+            this.dtFechaVencimiento.Location = new System.Drawing.Point(183, 354);
             this.dtFechaVencimiento.Name = "dtFechaVencimiento";
             this.dtFechaVencimiento.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFechaVencimiento.Properties.Appearance.Options.UseFont = true;
@@ -324,7 +311,7 @@ namespace LOSA.Logistica
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(12, 399);
+            this.labelControl9.Location = new System.Drawing.Point(12, 357);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(165, 24);
             this.labelControl9.TabIndex = 105;
@@ -333,7 +320,7 @@ namespace LOSA.Logistica
             // dtFechaProduccion
             // 
             this.dtFechaProduccion.EditValue = null;
-            this.dtFechaProduccion.Location = new System.Drawing.Point(183, 357);
+            this.dtFechaProduccion.Location = new System.Drawing.Point(183, 315);
             this.dtFechaProduccion.Name = "dtFechaProduccion";
             this.dtFechaProduccion.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFechaProduccion.Properties.Appearance.Options.UseFont = true;
@@ -351,7 +338,7 @@ namespace LOSA.Logistica
             // 
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(12, 360);
+            this.labelControl8.Location = new System.Drawing.Point(12, 318);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(156, 24);
             this.labelControl8.TabIndex = 104;
@@ -361,7 +348,7 @@ namespace LOSA.Logistica
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(12, 271);
+            this.labelControl7.Location = new System.Drawing.Point(12, 229);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(80, 24);
             this.labelControl7.TabIndex = 103;
@@ -370,7 +357,7 @@ namespace LOSA.Logistica
             // txtCantidadT
             // 
             this.txtCantidadT.EditValue = "0";
-            this.txtCantidadT.Location = new System.Drawing.Point(183, 267);
+            this.txtCantidadT.Location = new System.Drawing.Point(183, 225);
             this.txtCantidadT.Name = "txtCantidadT";
             this.txtCantidadT.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCantidadT.Properties.Appearance.Options.UseFont = true;
@@ -384,7 +371,7 @@ namespace LOSA.Logistica
             // txtNumIngreso
             // 
             this.txtNumIngreso.EditValue = "";
-            this.txtNumIngreso.Location = new System.Drawing.Point(463, 267);
+            this.txtNumIngreso.Location = new System.Drawing.Point(463, 225);
             this.txtNumIngreso.Name = "txtNumIngreso";
             this.txtNumIngreso.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumIngreso.Properties.Appearance.Options.UseFont = true;
@@ -397,7 +384,7 @@ namespace LOSA.Logistica
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(351, 275);
+            this.labelControl6.Location = new System.Drawing.Point(351, 233);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(105, 24);
             this.labelControl6.TabIndex = 102;
@@ -406,7 +393,7 @@ namespace LOSA.Logistica
             // dtFechaIngreso
             // 
             this.dtFechaIngreso.EditValue = null;
-            this.dtFechaIngreso.Location = new System.Drawing.Point(183, 219);
+            this.dtFechaIngreso.Location = new System.Drawing.Point(183, 177);
             this.dtFechaIngreso.Name = "dtFechaIngreso";
             this.dtFechaIngreso.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFechaIngreso.Properties.Appearance.Options.UseFont = true;
@@ -424,33 +411,11 @@ namespace LOSA.Logistica
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(12, 222);
+            this.labelControl5.Location = new System.Drawing.Point(12, 180);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(122, 24);
             this.labelControl5.TabIndex = 101;
             this.labelControl5.Text = "Fecha Ingreso";
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(12, 178);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(88, 24);
-            this.labelControl4.TabIndex = 100;
-            this.labelControl4.Text = "Proveedor";
-            // 
-            // txtCodigoProveedor
-            // 
-            this.txtCodigoProveedor.EditValue = "";
-            this.txtCodigoProveedor.Enabled = false;
-            this.txtCodigoProveedor.Location = new System.Drawing.Point(183, 177);
-            this.txtCodigoProveedor.Name = "txtCodigoProveedor";
-            this.txtCodigoProveedor.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigoProveedor.Properties.Appearance.Options.UseFont = true;
-            this.txtCodigoProveedor.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCodigoProveedor.Size = new System.Drawing.Size(142, 28);
-            this.txtCodigoProveedor.TabIndex = 1;
             // 
             // labelControl3
             // 
@@ -486,6 +451,11 @@ namespace LOSA.Logistica
             this.mPReprocesoBindingSource.DataMember = "MP_Reproceso";
             this.mPReprocesoBindingSource.DataSource = this.dsLogistica2;
             // 
+            // dsLogistica2
+            // 
+            this.dsLogistica2.DataSetName = "dsLogistica2";
+            this.dsLogistica2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // searchLookUpEdit1View
             // 
             this.searchLookUpEdit1View.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
@@ -515,58 +485,6 @@ namespace LOSA.Logistica
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 1;
-            // 
-            // proveedoresBindingSource
-            // 
-            this.proveedoresBindingSource.DataMember = "Proveedores";
-            this.proveedoresBindingSource.DataSource = this.dsLogistica2;
-            // 
-            // glueProveedor
-            // 
-            this.glueProveedor.Location = new System.Drawing.Point(341, 177);
-            this.glueProveedor.Name = "glueProveedor";
-            this.glueProveedor.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.glueProveedor.Properties.Appearance.Options.UseFont = true;
-            this.glueProveedor.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.glueProveedor.Properties.DataSource = this.proveedoresBindingSource;
-            this.glueProveedor.Properties.DisplayMember = "cardname";
-            this.glueProveedor.Properties.PopupView = this.gridLookUpEdit1View;
-            this.glueProveedor.Properties.ValueMember = "carcode";
-            this.glueProveedor.Size = new System.Drawing.Size(281, 28);
-            this.glueProveedor.TabIndex = 2;
-            this.glueProveedor.EditValueChanged += new System.EventHandler(this.glueProveedor_EditValueChanged);
-            // 
-            // gridLookUpEdit1View
-            // 
-            this.gridLookUpEdit1View.Appearance.FocusedCell.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.gridLookUpEdit1View.Appearance.FocusedCell.Options.UseFont = true;
-            this.gridLookUpEdit1View.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.gridLookUpEdit1View.Appearance.FocusedRow.Options.UseFont = true;
-            this.gridLookUpEdit1View.Appearance.GroupRow.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.gridLookUpEdit1View.Appearance.GroupRow.Options.UseFont = true;
-            this.gridLookUpEdit1View.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.gridLookUpEdit1View.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gridLookUpEdit1View.Appearance.HideSelectionRow.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.gridLookUpEdit1View.Appearance.HideSelectionRow.Options.UseFont = true;
-            this.gridLookUpEdit1View.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.gridLookUpEdit1View.Appearance.Row.Options.UseFont = true;
-            this.gridLookUpEdit1View.Appearance.SelectedRow.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.gridLookUpEdit1View.Appearance.SelectedRow.Options.UseFont = true;
-            this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn6});
-            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
-            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
-            // gridColumn6
-            // 
-            this.gridColumn6.Caption = "Proveedor";
-            this.gridColumn6.FieldName = "cardname";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 0;
             // 
             // cmdGuardar
             // 
@@ -616,11 +534,16 @@ namespace LOSA.Logistica
             this.labelControl12.TabIndex = 117;
             this.labelControl12.Text = "Ingreso de Materia Prima (Reproceso)";
             // 
+            // proveedoresBindingSource
+            // 
+            this.proveedoresBindingSource.DataMember = "Proveedores";
+            this.proveedoresBindingSource.DataSource = this.dsLogistica2;
+            // 
             // xfrmMP_Reproceso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(636, 441);
+            this.ClientSize = new System.Drawing.Size(636, 404);
             this.Controls.Add(this.labelControl12);
             this.Controls.Add(this.cmdGuardar);
             this.Controls.Add(this.btnAtras);
@@ -645,14 +568,10 @@ namespace LOSA.Logistica
             this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.dtFechaIngreso);
             this.Controls.Add(this.labelControl5);
-            this.Controls.Add(this.labelControl4);
-            this.Controls.Add(this.txtCodigoProveedor);
             this.Controls.Add(this.labelControl3);
-            this.Controls.Add(this.glueProveedor);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "xfrmMP_Reproceso";
             this.Text = "Recepción de MP ";
-            ((System.ComponentModel.ISupportInitialize)(this.dsLogistica2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadTarimasTotal.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glTipoTransaccion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipotransaccioneskardexBindingSource)).EndInit();
@@ -671,13 +590,11 @@ namespace LOSA.Logistica
             ((System.ComponentModel.ISupportInitialize)(this.txtNumIngreso.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaIngreso.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaIngreso.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCodigoProveedor.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.slueMP.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mPReprocesoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsLogistica2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.glueProveedor.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -711,8 +628,6 @@ namespace LOSA.Logistica
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.DateEdit dtFechaIngreso;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.TextEdit txtCodigoProveedor;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.SearchLookUpEdit slueMP;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
@@ -723,9 +638,6 @@ namespace LOSA.Logistica
         private System.Windows.Forms.BindingSource presentacionesBindingSource;
         private RecepcionMP.dsRecepcionMPx dsRecepcionMPx;
         private System.Windows.Forms.BindingSource proveedoresBindingSource;
-        private DevExpress.XtraEditors.GridLookUpEdit glueProveedor;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraEditors.SimpleButton cmdGuardar;
         private DevExpress.XtraEditors.SimpleButton btnAtras;
         private System.Windows.Forms.BindingSource tipotransaccioneskardexBindingSource;
