@@ -410,6 +410,8 @@ namespace LOSA.Despachos
         {
            
             dt = ds_despachos.lotes_selected_all;
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }
