@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>198</ApplicationRevision>
+    <ApplicationRevision>202</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -70,11 +70,10 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>5A56FE5B36BF1139C0C28330C52B1468E1F78C88</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>B8B1E1C226D4161B735B5D87883A090CA12C1142</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>
-    </ManifestKeyFile>
+    <ManifestKeyFile>LOSA_3_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -93,8 +92,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>
-    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>LOSA_3_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -823,6 +821,44 @@
     <Compile Include="Micro\frmOpcionesMicro.Designer.cs">
       <DependentUpon>frmOpcionesMicro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Nir\dsNir.cs">
+      <DependentUpon>dsNir.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Nir\dsNir.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsNir.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Nir\frmLecturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nir\frmLecturas.Designer.cs">
+      <DependentUpon>frmLecturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nir\frmLigarLecturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nir\frmLigarLecturas.Designer.cs">
+      <DependentUpon>frmLigarLecturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nir\frmSeleccionarLectura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nir\frmSeleccionarLectura.Designer.cs">
+      <DependentUpon>frmSeleccionarLectura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nir\frmUnirLigaduras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nir\frmUnirLigaduras.Designer.cs">
+      <DependentUpon>frmUnirLigaduras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nir\frm_cargar_lecturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nir\frm_cargar_lecturas.Designer.cs">
+      <DependentUpon>frm_cargar_lecturas.cs</DependentUpon>
+    </Compile>
     <Compile Include="PlanMPreque\frmLote.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -947,6 +983,18 @@
     </None>
     <None Include="Despachos\Reportes\dsReporte.xss">
       <DependentUpon>dsReporte.xsd</DependentUpon>
+    </None>
+    <None Include="LOSA_3_TemporaryKey.pfx" />
+    <None Include="Nir\dsNir.xsc">
+      <DependentUpon>dsNir.xsd</DependentUpon>
+    </None>
+    <None Include="Nir\dsNir.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsNir.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Nir\dsNir.xss">
+      <DependentUpon>dsNir.xsd</DependentUpon>
     </None>
     <None Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecepcionMP\dsingresos.Designer.cs">
@@ -1247,6 +1295,12 @@
     </Compile>
     <Compile Include="Reportes\frmreporteLotePT.Designer.cs">
       <DependentUpon>frmreporteLotePT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmReporteTMRetenidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmReporteTMRetenidas.Designer.cs">
+      <DependentUpon>frmReporteTMRetenidas.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\frmreporteUbicacion.cs">
       <SubType>Form</SubType>
@@ -2023,6 +2077,21 @@
     <EmbeddedResource Include="Micro\frmOpcionesMicro.resx">
       <DependentUpon>frmOpcionesMicro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Nir\frmLecturas.resx">
+      <DependentUpon>frmLecturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nir\frmLigarLecturas.resx">
+      <DependentUpon>frmLigarLecturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nir\frmSeleccionarLectura.resx">
+      <DependentUpon>frmSeleccionarLectura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nir\frmUnirLigaduras.resx">
+      <DependentUpon>frmUnirLigaduras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nir\frm_cargar_lecturas.resx">
+      <DependentUpon>frm_cargar_lecturas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PlanMPreque\frmLote.resx">
       <DependentUpon>frmLote.cs</DependentUpon>
     </EmbeddedResource>
@@ -2222,6 +2291,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmreporteLotePT.resx">
       <DependentUpon>frmreporteLotePT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmReporteTMRetenidas.resx">
+      <DependentUpon>frmReporteTMRetenidas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmreporteUbicacion.resx">
       <DependentUpon>frmreporteUbicacion.cs</DependentUpon>

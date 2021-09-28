@@ -492,7 +492,7 @@ namespace LOSA.Despachos
                         DataTable dt = frrm.dt;
 
 
-                        query = @"sp_insert_orden_venta_h";//insert heades     
+                        query = @"sp_insert_orden_venta_h_v2";//insert heades     
                         cmd = new SqlCommand(query, cn);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@userId", UsuarioLogeado.Id);
@@ -507,6 +507,7 @@ namespace LOSA.Despachos
                             SeAsingna = 0;
                         }
                         cmd.Parameters.AddWithValue("@DocEntry", DocEntry);
+                        cmd.Parameters.AddWithValue("@id_destino", grd_destino.EditValue == null ? 0 : grd_destino.EditValue);
 
                         Id_despacho = Convert.ToInt32(cmd.ExecuteScalar());
                         cn.Close();

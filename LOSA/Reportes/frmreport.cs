@@ -128,5 +128,11 @@ namespace LOSA.Reportes
             frmrpt_productoterminado frm = new frmrpt_productoterminado();
             frm.Show();
         }
+
+        private void btnReporteRetenido_Click(object sender, EventArgs e)
+        {
+            frmReporteTMRetenidas frm = new frmReporteTMRetenidas();
+            frm.Show();
+        }
     }
 }

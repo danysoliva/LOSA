@@ -20,6 +20,7 @@ using LOSA.AlmacenesExterno;
 using LOSA.Reportes;
 using LOSA.Trazabilidad;
 using LOSA.Despachos;
+using LOSA.Nir;
 
 namespace LOSA
 {
@@ -614,6 +615,12 @@ namespace LOSA
                 frm.MdiParent = this.MdiParent;
 
             frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+        private void simpleButton17_Click(object sender, EventArgs e)
+        {
+            frmLecturas frm = new frmLecturas(UsuarioLogeado);
             frm.Show();
         }
     }
