@@ -597,5 +597,22 @@ namespace LOSA
         {
 
         }
+
+        private void btnMPReproceso_Click(object sender, EventArgs e)
+        {
+
+           xfrmReprocesoMenu frm = new xfrmReprocesoMenu(UsuarioLogeado);
+
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+        private void simpleButton9_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

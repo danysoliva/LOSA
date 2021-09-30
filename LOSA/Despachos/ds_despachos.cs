@@ -4,6 +4,14 @@
 
     partial class ds_despachos
     {
+        partial class cliente_despachoDataTable
+        {
+        }
+
+        partial class lotes_selectedDataTable
+        {
+        }
+
         partial class Anden_viewDataTable
         {
         }

@@ -359,6 +359,8 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
                     printTool.ShowPreviewDialog();
                 }
 
+                       //Generar Ingreso.
+
             }
             catch (Exception ex)
             {

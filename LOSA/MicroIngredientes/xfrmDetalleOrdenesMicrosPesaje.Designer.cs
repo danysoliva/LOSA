@@ -63,6 +63,11 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions7 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject25 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject26 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject27 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject28 = new DevExpress.Utils.SerializableAppearanceObject();
             this.coltotal = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcDetalle = new DevExpress.XtraGrid.GridControl();
             this.dsMicros = new LOSA.MicroIngredientes.dsMicros();
@@ -123,6 +128,20 @@
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemSpinEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.repositoryItemButtonEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.grd_data = new DevExpress.XtraGrid.GridControl();
+            this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid_orden_encabezado2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltotal_kg1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcant_batch2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAMI_ID2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colorder_id2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colorder_code1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_turno = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.LookTurno = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.colreprint = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btn_reprint = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDetalle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMicros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDetalle)).BeginInit();
@@ -147,6 +166,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmdPesarInd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit2)).BeginInit();
+            this.xtraTabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LookTurno)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_reprint)).BeginInit();
             this.SuspendLayout();
             // 
             // coltotal
@@ -179,7 +203,7 @@
             this.cmdPesar,
             this.btnPrint,
             this.LookUpTurno});
-            this.gcDetalle.Size = new System.Drawing.Size(1374, 326);
+            this.gcDetalle.Size = new System.Drawing.Size(1380, 326);
             this.gcDetalle.TabIndex = 0;
             this.gcDetalle.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDetalle});
@@ -410,14 +434,15 @@
             this.xtraTabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.xtraTabControl1.Location = new System.Drawing.Point(4, 82);
+            this.xtraTabControl1.Location = new System.Drawing.Point(4, 97);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.TabPesajeMezcla;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1375, 729);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1381, 714);
             this.xtraTabControl1.TabIndex = 5;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.TabPesajeMezcla,
-            this.TabPesajeIndividual});
+            this.TabPesajeIndividual,
+            this.xtraTabPage1});
             // 
             // TabPesajeMezcla
             // 
@@ -427,7 +452,7 @@
             this.TabPesajeMezcla.Controls.Add(this.gcDetalle);
             this.TabPesajeMezcla.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabPesajeMezcla.ImageOptions.Image")));
             this.TabPesajeMezcla.Name = "TabPesajeMezcla";
-            this.TabPesajeMezcla.Size = new System.Drawing.Size(1369, 682);
+            this.TabPesajeMezcla.Size = new System.Drawing.Size(1375, 667);
             this.TabPesajeMezcla.Text = "Pesaje de Mezcla";
             // 
             // gridControl2
@@ -444,7 +469,7 @@
             this.repositoryItemSpinEdit3,
             this.repositoryItemButtonEdit3,
             this.cmdPesar1});
-            this.gridControl2.Size = new System.Drawing.Size(1370, 350);
+            this.gridControl2.Size = new System.Drawing.Size(1376, 335);
             this.gridControl2.TabIndex = 1;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -648,7 +673,7 @@
             this.TabPesajeIndividual.Controls.Add(this.gcPesajeIndividual);
             this.TabPesajeIndividual.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("TabPesajeIndividual.ImageOptions.SvgImage")));
             this.TabPesajeIndividual.Name = "TabPesajeIndividual";
-            this.TabPesajeIndividual.Size = new System.Drawing.Size(1369, 682);
+            this.TabPesajeIndividual.Size = new System.Drawing.Size(1375, 667);
             this.TabPesajeIndividual.Text = "Pesaje Individual";
             // 
             // gcPesajeIndividual
@@ -663,7 +688,7 @@
             this.repositoryItemSpinEdit2,
             this.repositoryItemButtonEdit2,
             this.cmdPesarInd});
-            this.gcPesajeIndividual.Size = new System.Drawing.Size(1369, 682);
+            this.gcPesajeIndividual.Size = new System.Drawing.Size(1375, 667);
             this.gcPesajeIndividual.TabIndex = 1;
             this.gcPesajeIndividual.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvPesajeIndividual});
@@ -808,6 +833,169 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit2.Name = "repositoryItemButtonEdit2";
             // 
+            // xtraTabPage1
+            // 
+            this.xtraTabPage1.Appearance.Header.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.xtraTabPage1.Appearance.Header.Options.UseFont = true;
+            this.xtraTabPage1.Controls.Add(this.grd_data);
+            this.xtraTabPage1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPage1.ImageOptions.Image")));
+            this.xtraTabPage1.Name = "xtraTabPage1";
+            this.xtraTabPage1.Size = new System.Drawing.Size(1375, 667);
+            this.xtraTabPage1.Text = "Reimpresión de Pesaje";
+            // 
+            // grd_data
+            // 
+            this.grd_data.DataMember = "plan_microsh_report";
+            this.grd_data.DataSource = this.dsMicros;
+            this.grd_data.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grd_data.Location = new System.Drawing.Point(0, 0);
+            this.grd_data.MainView = this.grdv_data;
+            this.grd_data.Name = "grd_data";
+            this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.LookTurno,
+            this.btn_reprint});
+            this.grd_data.Size = new System.Drawing.Size(1375, 667);
+            this.grd_data.TabIndex = 0;
+            this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grdv_data});
+            this.grd_data.Click += new System.EventHandler(this.grd_data_Click);
+            // 
+            // grdv_data
+            // 
+            this.grdv_data.Appearance.Empty.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.grdv_data.Appearance.Empty.Options.UseFont = true;
+            this.grdv_data.Appearance.FilterPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.grdv_data.Appearance.FilterPanel.Options.UseFont = true;
+            this.grdv_data.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold);
+            this.grdv_data.Appearance.FocusedRow.Options.UseFont = true;
+            this.grdv_data.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.grdv_data.Appearance.FooterPanel.Options.UseFont = true;
+            this.grdv_data.Appearance.GroupFooter.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold);
+            this.grdv_data.Appearance.GroupFooter.Options.UseFont = true;
+            this.grdv_data.Appearance.GroupRow.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.grdv_data.Appearance.GroupRow.Options.UseFont = true;
+            this.grdv_data.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold);
+            this.grdv_data.Appearance.HeaderPanel.Options.UseFont = true;
+            this.grdv_data.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold);
+            this.grdv_data.Appearance.Preview.Options.UseFont = true;
+            this.grdv_data.Appearance.Row.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdv_data.Appearance.Row.Options.UseFont = true;
+            this.grdv_data.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold);
+            this.grdv_data.Appearance.TopNewRow.Options.UseFont = true;
+            this.grdv_data.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid_orden_encabezado2,
+            this.coltotal_kg1,
+            this.colfecha2,
+            this.colcant_batch2,
+            this.colAMI_ID2,
+            this.colorder_id2,
+            this.colorder_code1,
+            this.colid_turno,
+            this.colreprint});
+            this.grdv_data.GridControl = this.grd_data;
+            this.grdv_data.Name = "grdv_data";
+            this.grdv_data.OptionsView.ShowAutoFilterRow = true;
+            this.grdv_data.OptionsView.ShowGroupPanel = false;
+            // 
+            // colid_orden_encabezado2
+            // 
+            this.colid_orden_encabezado2.FieldName = "id_orden_encabezado";
+            this.colid_orden_encabezado2.Name = "colid_orden_encabezado2";
+            this.colid_orden_encabezado2.OptionsColumn.AllowEdit = false;
+            // 
+            // coltotal_kg1
+            // 
+            this.coltotal_kg1.Caption = "Total Kg";
+            this.coltotal_kg1.FieldName = "total_kg";
+            this.coltotal_kg1.Name = "coltotal_kg1";
+            this.coltotal_kg1.OptionsColumn.AllowEdit = false;
+            this.coltotal_kg1.Visible = true;
+            this.coltotal_kg1.VisibleIndex = 4;
+            // 
+            // colfecha2
+            // 
+            this.colfecha2.Caption = "Fecha";
+            this.colfecha2.FieldName = "fecha";
+            this.colfecha2.Name = "colfecha2";
+            this.colfecha2.OptionsColumn.AllowEdit = false;
+            this.colfecha2.Visible = true;
+            this.colfecha2.VisibleIndex = 5;
+            // 
+            // colcant_batch2
+            // 
+            this.colcant_batch2.Caption = "Cant. Batch";
+            this.colcant_batch2.FieldName = "cant_batch";
+            this.colcant_batch2.Name = "colcant_batch2";
+            this.colcant_batch2.OptionsColumn.AllowEdit = false;
+            this.colcant_batch2.Visible = true;
+            this.colcant_batch2.VisibleIndex = 3;
+            // 
+            // colAMI_ID2
+            // 
+            this.colAMI_ID2.Caption = "Plan #";
+            this.colAMI_ID2.FieldName = "AMI_ID";
+            this.colAMI_ID2.Name = "colAMI_ID2";
+            this.colAMI_ID2.OptionsColumn.AllowEdit = false;
+            this.colAMI_ID2.Visible = true;
+            this.colAMI_ID2.VisibleIndex = 0;
+            // 
+            // colorder_id2
+            // 
+            this.colorder_id2.Caption = "Order Id";
+            this.colorder_id2.FieldName = "order_id";
+            this.colorder_id2.Name = "colorder_id2";
+            this.colorder_id2.OptionsColumn.AllowEdit = false;
+            this.colorder_id2.Visible = true;
+            this.colorder_id2.VisibleIndex = 1;
+            // 
+            // colorder_code1
+            // 
+            this.colorder_code1.Caption = "Order Code";
+            this.colorder_code1.FieldName = "order_code";
+            this.colorder_code1.Name = "colorder_code1";
+            this.colorder_code1.OptionsColumn.AllowEdit = false;
+            this.colorder_code1.Visible = true;
+            this.colorder_code1.VisibleIndex = 2;
+            // 
+            // colid_turno
+            // 
+            this.colid_turno.Caption = "Turno";
+            this.colid_turno.ColumnEdit = this.LookTurno;
+            this.colid_turno.FieldName = "id_turno";
+            this.colid_turno.Name = "colid_turno";
+            this.colid_turno.OptionsColumn.AllowEdit = false;
+            this.colid_turno.Visible = true;
+            this.colid_turno.VisibleIndex = 6;
+            // 
+            // LookTurno
+            // 
+            this.LookTurno.AutoHeight = false;
+            this.LookTurno.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.LookTurno.DataSource = this.turnoBindingSource;
+            this.LookTurno.DisplayMember = "Turno";
+            this.LookTurno.KeyMember = "id";
+            this.LookTurno.Name = "LookTurno";
+            this.LookTurno.ValueMember = "id";
+            // 
+            // colreprint
+            // 
+            this.colreprint.Caption = "Reimprimir";
+            this.colreprint.ColumnEdit = this.btn_reprint;
+            this.colreprint.Name = "colreprint";
+            this.colreprint.Visible = true;
+            this.colreprint.VisibleIndex = 7;
+            // 
+            // btn_reprint
+            // 
+            this.btn_reprint.AutoHeight = false;
+            editorButtonImageOptions7.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions7.Image")));
+            this.btn_reprint.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions7, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject25, serializableAppearanceObject26, serializableAppearanceObject27, serializableAppearanceObject28, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btn_reprint.Name = "btn_reprint";
+            this.btn_reprint.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btn_reprint.Click += new System.EventHandler(this.btn_reprint_Click);
+            // 
             // xfrmDetalleOrdenesMicrosPesaje
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -850,6 +1038,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmdPesarInd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit2)).EndInit();
+            this.xtraTabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LookTurno)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_reprint)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -916,5 +1109,19 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTurno;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit LookUpTurno;
         private System.Windows.Forms.BindingSource turnoBindingSource;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
+        private DevExpress.XtraGrid.GridControl grd_data;
+        private DevExpress.XtraGrid.Views.Grid.GridView grdv_data;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_orden_encabezado2;
+        private DevExpress.XtraGrid.Columns.GridColumn coltotal_kg1;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecha2;
+        private DevExpress.XtraGrid.Columns.GridColumn colcant_batch2;
+        private DevExpress.XtraGrid.Columns.GridColumn colAMI_ID2;
+        private DevExpress.XtraGrid.Columns.GridColumn colorder_id2;
+        private DevExpress.XtraGrid.Columns.GridColumn colorder_code1;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_turno;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit LookTurno;
+        private DevExpress.XtraGrid.Columns.GridColumn colreprint;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btn_reprint;
     }
 }
