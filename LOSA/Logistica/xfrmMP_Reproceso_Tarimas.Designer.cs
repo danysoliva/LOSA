@@ -473,6 +473,7 @@ namespace LOSA.Logistica
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "xfrmMP_Reproceso_Tarimas";
             this.Text = "xfrmMP_Reproceso_Tarimas";
+            this.Load += new System.EventHandler(this.xfrmMP_Reproceso_Tarimas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pTReprocesoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsLogistica2)).EndInit();
