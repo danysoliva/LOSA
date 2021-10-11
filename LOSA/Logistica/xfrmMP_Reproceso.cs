@@ -96,11 +96,6 @@ namespace LOSA.Logistica
             }
         }
 
-        private void glueProveedor_EditValueChanged(object sender, EventArgs e)
-        {
-            txtCodigoProveedor.Text = glueProveedor.EditValue.ToString();
-        }
-
         private void LoadNumeroTransaccion()
         {
             try
@@ -214,7 +209,7 @@ namespace LOSA.Logistica
                     SqlCommand cmd = new SqlCommand("sp_insert_new_tarima_sin_boleta_mp", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@itemcode", this.ItemCode);
-                    cmd.Parameters.AddWithValue("@id_proveedor", txtCodigoProveedor.Text);
+                    cmd.Parameters.AddWithValue("@id_proveedor", DBNull.Value);
                     cmd.Parameters.AddWithValue("@fecha_ingreso", dtFechaIngreso.EditValue);
                     cmd.Parameters.AddWithValue("@numero_transaccion", txtNumIngreso.Text);
                     cmd.Parameters.AddWithValue("@fecha_vencimiento", dtFechaVencimiento.EditValue);

@@ -199,5 +199,10 @@ namespace LOSA.Logistica
 
             }
         }
+
+        private void xfrmIngresosMP_Reproceso_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

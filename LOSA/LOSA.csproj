@@ -639,6 +639,7 @@
     <Compile Include="Logistica\frmTrazabilidadLote.Designer.cs">
       <DependentUpon>frmTrazabilidadLote.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logistica\Models\Producto_Terminado.cs" />
     <Compile Include="Logistica\xfrmMP_Reproceso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -650,6 +651,24 @@
     </Compile>
     <Compile Include="Logistica\xfrmIngresosMP_Reproceso.Designer.cs">
       <DependentUpon>xfrmIngresosMP_Reproceso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\xfrmMP_Reproceso_Tarimas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\xfrmMP_Reproceso_Tarimas.Designer.cs">
+      <DependentUpon>xfrmMP_Reproceso_Tarimas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\xfrmPT_Reproceso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\xfrmPT_Reproceso.Designer.cs">
+      <DependentUpon>xfrmPT_Reproceso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\xfrmReprocesoMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\xfrmReprocesoMenu.Designer.cs">
+      <DependentUpon>xfrmReprocesoMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Mantenimientos\dsMantenimiento.cs">
       <DependentUpon>dsMantenimiento.xsd</DependentUpon>
@@ -2004,6 +2023,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Logistica\xfrmIngresosMP_Reproceso.resx">
       <DependentUpon>xfrmIngresosMP_Reproceso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\xfrmMP_Reproceso_Tarimas.resx">
+      <DependentUpon>xfrmMP_Reproceso_Tarimas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\xfrmPT_Reproceso.resx">
+      <DependentUpon>xfrmPT_Reproceso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\xfrmReprocesoMenu.resx">
+      <DependentUpon>xfrmReprocesoMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\frmBodega.resx">
       <DependentUpon>frmBodega.cs</DependentUpon>

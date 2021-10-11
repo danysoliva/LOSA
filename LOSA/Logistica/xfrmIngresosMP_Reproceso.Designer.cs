@@ -207,8 +207,6 @@ namespace LOSA.Logistica
             this.coltarimas.Caption = "Ver Detalle";
             this.coltarimas.ColumnEdit = this.btnver;
             this.coltarimas.Name = "coltarimas";
-            this.coltarimas.Visible = true;
-            this.coltarimas.VisibleIndex = 6;
             this.coltarimas.Width = 83;
             // 
             // btnver
@@ -231,8 +229,6 @@ namespace LOSA.Logistica
             this.colprint.Caption = "Imprimir Hoja de Ingreso Compra";
             this.colprint.ColumnEdit = this.btnprint;
             this.colprint.Name = "colprint";
-            this.colprint.Visible = true;
-            this.colprint.VisibleIndex = 7;
             this.colprint.Width = 83;
             // 
             // btnprint
@@ -297,8 +293,6 @@ namespace LOSA.Logistica
             this.colprinttraslado.Caption = "Imprimir Hoja de Ingreso Traslado";
             this.colprinttraslado.ColumnEdit = this.btnprinttraslado;
             this.colprinttraslado.Name = "colprinttraslado";
-            this.colprinttraslado.Visible = true;
-            this.colprinttraslado.VisibleIndex = 8;
             this.colprinttraslado.Width = 85;
             // 
             // btnprinttraslado
@@ -379,6 +373,7 @@ namespace LOSA.Logistica
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "xfrmIngresosMP_Reproceso";
             this.Text = "xfrmIngresosMP_Reproceso";
+            this.Load += new System.EventHandler(this.xfrmIngresosMP_Reproceso_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grd_ingreso)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ingresosMPBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).EndInit();
