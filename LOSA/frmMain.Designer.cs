@@ -233,7 +233,6 @@ namespace LOSA
             this.simpleButton2.Size = new System.Drawing.Size(199, 71);
             this.simpleButton2.TabIndex = 17;
             this.simpleButton2.Text = "Ingresar Calidad";
-            this.simpleButton2.Visible = false;
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click_1);
             // 
             // pictureBox1
@@ -270,7 +269,7 @@ namespace LOSA
             this.Controls.Add(this.cmdCerrar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMain";
-            this.Text = "Form1";
+            this.Text = "LOGIN";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.Click += new System.EventHandler(this.frmMain_Click);

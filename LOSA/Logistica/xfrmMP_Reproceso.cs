@@ -1,6 +1,7 @@
 ﻿using ACS.Classes;
 using DevExpress.XtraEditors;
 using LOSA.Clases;
+using LOSA.RecepcionMP;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -83,11 +84,11 @@ namespace LOSA.Logistica
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_presentaciones_activas", con);
+                SqlCommand cmd = new SqlCommand("[sp_get_presentaciones_activas_v3]", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                dsRecepcionMPx.presentaciones.Clear();
-                adat.Fill(dsRecepcionMPx.presentaciones);
+                dsRecepcionMPx1.presentaciones.Clear();
+                adat.Fill(dsRecepcionMPx1.presentaciones);
                 con.Close();
             }
             catch (Exception ec)
@@ -132,8 +133,9 @@ namespace LOSA.Logistica
                 SqlCommand cmd = new SqlCommand("sp_get_tipo_transaccion_kardex", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                dsRecepcionMPx.Tipo_transacciones_kardex.Clear();
-                adat.Fill(dsRecepcionMPx.Tipo_transacciones_kardex);
+                dsRecepcionMPx1.Tipo_transacciones_kardex.Clear();
+                adat.Fill(dsRecepcionMPx1.Tipo_transacciones_kardex);
+                glTipoTransaccion.EditValue = 1;
                 con.Close();
             }
             catch (Exception ec)
@@ -250,6 +252,42 @@ namespace LOSA.Logistica
                  //txtMP_Name.Text = slueMP.Text;
                 this.ItemCode = slueMP.EditValue.ToString();
 
+        }
+
+        private void gridLookUpEditPresentacion_EditValueChanged(object sender, EventArgs e)
+        {
+            if (gridLookUpEditPresentacion.EditValue == null)
+                return;
+
+            var id_pres = gridLookUpEditPresentacion.EditValue;
+            foreach (dsRecepcionMPx.presentacionesRow row in dsRecepcionMPx1.presentaciones.Rows)
+            {
+                if(row.id == Convert.ToInt32(id_pres))
+                {
+                    decimal Factor = row.factor;
+                    decimal peso = Factor * txtCantidadT.Value;
+                    txtPeso.Text = string.Format("{0:###,##0.00}", peso);
+                    break;
+                }
+            }
+        }
+
+        private void txtCantidadT_EditValueChanged(object sender, EventArgs e)
+        {
+            if (gridLookUpEditPresentacion.EditValue == null)
+                return;
+
+            var id_pres = gridLookUpEditPresentacion.EditValue;
+            foreach (dsRecepcionMPx.presentacionesRow row in dsRecepcionMPx1.presentaciones.Rows)
+            {
+                if (row.id == Convert.ToInt32(id_pres))
+                {
+                    decimal Factor = row.factor;
+                    decimal peso = Factor * txtCantidadT.Value;
+                    txtPeso.Text = string.Format("{0:###,##0.00}", peso);
+                    break;
+                }
+            }
         }
     }
 }
