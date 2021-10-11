@@ -20,6 +20,7 @@ using LOSA.AlmacenesExterno;
 using LOSA.Reportes;
 using LOSA.Trazabilidad;
 using LOSA.Despachos;
+using LOSA.Nir;
 
 namespace LOSA
 {
@@ -595,7 +596,8 @@ namespace LOSA
 
         private void ManteIngresos_Click(object sender, EventArgs e)
         {
-
+            frm_mantenimiento_calidad frm = new frm_mantenimiento_calidad(UsuarioLogeado);
+            frm.Show();
         }
 
         private void btnMPReproceso_Click(object sender, EventArgs e)
@@ -613,6 +615,12 @@ namespace LOSA
         private void simpleButton9_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void simpleButton17_Click(object sender, EventArgs e)
+        {
+            frmLecturas frm = new frmLecturas(UsuarioLogeado);
+            frm.Show();
         }
     }
 }

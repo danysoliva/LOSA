@@ -29,12 +29,27 @@ namespace LOSA.Calidad
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOlorMantenimiento));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
+            this.dsMantenimientoC = new LOSA.Calidad.dsMantenimientoC();
             this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colenable = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnNuevo = new DevExpress.XtraEditors.SimpleButton();
+            this.colEditar = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnEditar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsMantenimientoC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -50,7 +65,7 @@ namespace LOSA.Calidad
             this.cmdHome.Name = "cmdHome";
             this.cmdHome.Size = new System.Drawing.Size(199, 54);
             this.cmdHome.TabIndex = 8;
-            this.cmdHome.Text = "Home";
+            this.cmdHome.Text = "Cerrar";
             this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
             // 
             // labelControl3
@@ -70,13 +85,25 @@ namespace LOSA.Calidad
             // 
             // grd_data
             // 
+            this.grd_data.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grd_data.DataMember = "Olor";
+            this.grd_data.DataSource = this.dsMantenimientoC;
             this.grd_data.Location = new System.Drawing.Point(1, 93);
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
+            this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.btnEditar});
             this.grd_data.Size = new System.Drawing.Size(635, 465);
             this.grd_data.TabIndex = 33;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
+            // 
+            // dsMantenimientoC
+            // 
+            this.dsMantenimientoC.DataSetName = "dsMantenimientoC";
+            this.dsMantenimientoC.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // grdv_data
             // 
@@ -96,16 +123,73 @@ namespace LOSA.Calidad
             this.grdv_data.Appearance.Preview.Options.UseFont = true;
             this.grdv_data.Appearance.Row.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.grdv_data.Appearance.Row.Options.UseFont = true;
+            this.grdv_data.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid,
+            this.coldescripcion,
+            this.colenable,
+            this.colEditar});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
             this.grdv_data.OptionsView.ShowGroupPanel = false;
+            // 
+            // colid
+            // 
+            this.colid.FieldName = "id";
+            this.colid.Name = "colid";
+            // 
+            // coldescripcion
+            // 
+            this.coldescripcion.Caption = "Criterio";
+            this.coldescripcion.FieldName = "descripcion";
+            this.coldescripcion.Name = "coldescripcion";
+            this.coldescripcion.OptionsColumn.AllowEdit = false;
+            this.coldescripcion.Visible = true;
+            this.coldescripcion.VisibleIndex = 0;
+            this.coldescripcion.Width = 553;
+            // 
+            // colenable
+            // 
+            this.colenable.FieldName = "enable";
+            this.colenable.Name = "colenable";
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.Appearance.Options.UseFont = true;
+            this.btnNuevo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.ImageOptions.Image")));
+            this.btnNuevo.Location = new System.Drawing.Point(12, 9);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(155, 54);
+            this.btnNuevo.TabIndex = 34;
+            this.btnNuevo.Text = "Nuevo registro";
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // colEditar
+            // 
+            this.colEditar.Caption = "Editar";
+            this.colEditar.ColumnEdit = this.btnEditar;
+            this.colEditar.Name = "colEditar";
+            this.colEditar.Visible = true;
+            this.colEditar.VisibleIndex = 1;
+            this.colEditar.Width = 64;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            this.btnEditar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // frmOlorMantenimiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(638, 560);
+            this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.grd_data);
             this.Controls.Add(this.cmdHome);
             this.Controls.Add(this.labelControl3);
@@ -114,7 +198,9 @@ namespace LOSA.Calidad
             this.Text = "frmOlorMantenimiento";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsMantenimientoC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -125,5 +211,12 @@ namespace LOSA.Calidad
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraGrid.GridControl grd_data;
         private DevExpress.XtraGrid.Views.Grid.GridView grdv_data;
+        private DevExpress.XtraEditors.SimpleButton btnNuevo;
+        private dsMantenimientoC dsMantenimientoC;
+        private DevExpress.XtraGrid.Columns.GridColumn colid;
+        private DevExpress.XtraGrid.Columns.GridColumn coldescripcion;
+        private DevExpress.XtraGrid.Columns.GridColumn colenable;
+        private DevExpress.XtraGrid.Columns.GridColumn colEditar;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnEditar;
     }
 }

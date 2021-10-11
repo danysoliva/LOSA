@@ -471,7 +471,7 @@ DataOperations dp = new DataOperations();
             }
             else
             {
-                if (centinela_print_multi < 0)
+                if (centinela_print_multi > 0)
                 {
                     foreach (dsProduccion.listaTmPrintedRow row in dsProduccion.listaTmPrinted.Rows)
                     {
@@ -484,6 +484,14 @@ DataOperations dp = new DataOperations();
                             centinela_print_multi--;
                         }
                     }
+                }
+                else
+                {
+                    timerPrintMulti.Stop();
+                    timerPrintMulti.Enabled = false;
+                    CajaDialogo.Information("Impresion completa.");
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
                 }
             }
         }
@@ -753,7 +761,6 @@ DataOperations dp = new DataOperations();
                 centinela_print_multi = count_selected;
                 timerPrintMulti.Enabled = true;
                 tipoprinte = 1;
-                centinela_print_multi = 25;
                 timerPrintMulti.Start();
             }
             catch (Exception ex)

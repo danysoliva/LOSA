@@ -203,7 +203,7 @@
             this.cmdPesar,
             this.btnPrint,
             this.LookUpTurno});
-            this.gcDetalle.Size = new System.Drawing.Size(1380, 326);
+            this.gcDetalle.Size = new System.Drawing.Size(1380, 173);
             this.gcDetalle.TabIndex = 0;
             this.gcDetalle.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDetalle});
@@ -462,14 +462,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl2.DataMember = "plan_microsd";
             this.gridControl2.DataSource = this.dsMicros;
-            this.gridControl2.Location = new System.Drawing.Point(-1, 332);
+            this.gridControl2.Location = new System.Drawing.Point(-1, 179);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
             this.gridControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemSpinEdit3,
             this.repositoryItemButtonEdit3,
             this.cmdPesar1});
-            this.gridControl2.Size = new System.Drawing.Size(1376, 335);
+            this.gridControl2.Size = new System.Drawing.Size(1376, 488);
             this.gridControl2.TabIndex = 1;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});

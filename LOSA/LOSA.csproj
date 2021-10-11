@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>198</ApplicationRevision>
+    <ApplicationRevision>202</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -70,11 +70,10 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>5A56FE5B36BF1139C0C28330C52B1468E1F78C88</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>B8B1E1C226D4161B735B5D87883A090CA12C1142</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>
-    </ManifestKeyFile>
+    <ManifestKeyFile>LOSA_3_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -93,8 +92,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>
-    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>LOSA_3_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -268,6 +266,12 @@
     <Compile Include="AlmacenesExterno\xfrmViewLotes.Designer.cs">
       <DependentUpon>xfrmViewLotes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\ConfiguracionMP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\ConfiguracionMP.Designer.cs">
+      <DependentUpon>ConfiguracionMP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\dsCalidad.cs">
       <DependentUpon>dsCalidad.xsd</DependentUpon>
     </Compile>
@@ -275,6 +279,14 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsCalidad.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\dsMantenimientoC.cs">
+      <DependentUpon>dsMantenimientoC.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\dsMantenimientoC.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsMantenimientoC.xsd</DependentUpon>
     </Compile>
     <Compile Include="Calidad\frmaddcausa.cs">
       <SubType>Form</SubType>
@@ -300,6 +312,12 @@
     <Compile Include="Calidad\frmcausasRetencion.Designer.cs">
       <DependentUpon>frmcausasRetencion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\frmColormantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmColormantenimiento.Designer.cs">
+      <DependentUpon>frmColormantenimiento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\frmEstadosTarimaCalidad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -312,11 +330,23 @@
     <Compile Include="Calidad\frmGestionLotesPT_Calidad.Designer.cs">
       <DependentUpon>frmGestionLotesPT_Calidad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\frmGrumosMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmGrumosMantenimiento.Designer.cs">
+      <DependentUpon>frmGrumosMantenimiento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\frmInfoAdicional.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Calidad\frmInfoAdicional.Designer.cs">
       <DependentUpon>frmInfoAdicional.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\frmInsectosMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmInsectosMantenimiento.Designer.cs">
+      <DependentUpon>frmInsectosMantenimiento.cs</DependentUpon>
     </Compile>
     <Compile Include="Calidad\frmLotesStatus.cs">
       <SubType>Form</SubType>
@@ -330,11 +360,89 @@
     <Compile Include="Calidad\frmMantenimientoIngreso.Designer.cs">
       <DependentUpon>frmMantenimientoIngreso.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\frmMateriaPrimaAjuste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmMateriaPrimaAjuste.Designer.cs">
+      <DependentUpon>frmMateriaPrimaAjuste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\frmNuevoCriterio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmNuevoCriterio.Designer.cs">
+      <DependentUpon>frmNuevoCriterio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\frmNuevoCriterioColor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmNuevoCriterioColor.Designer.cs">
+      <DependentUpon>frmNuevoCriterioColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\frmNuevoCriterioGrumos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmNuevoCriterioGrumos.Designer.cs">
+      <DependentUpon>frmNuevoCriterioGrumos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\frmNuevoCriterioInsectos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmNuevoCriterioInsectos.Designer.cs">
+      <DependentUpon>frmNuevoCriterioInsectos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\frmNuevoCriterioOrigen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmNuevoCriterioOrigen.Designer.cs">
+      <DependentUpon>frmNuevoCriterioOrigen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\frmNuevoCriterioPais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmNuevoCriterioPais.Designer.cs">
+      <DependentUpon>frmNuevoCriterioPais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\frmNuevoCriterioPesca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmNuevoCriterioPesca.Designer.cs">
+      <DependentUpon>frmNuevoCriterioPesca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\frmNuevoCriterioTextura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmNuevoCriterioTextura.Designer.cs">
+      <DependentUpon>frmNuevoCriterioTextura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\frmNuevoCriterioTipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmNuevoCriterioTipo.Designer.cs">
+      <DependentUpon>frmNuevoCriterioTipo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\frmOlorMantenimiento.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Calidad\frmOlorMantenimiento.Designer.cs">
       <DependentUpon>frmOlorMantenimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\frmOrigenMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmOrigenMantenimiento.Designer.cs">
+      <DependentUpon>frmOrigenMantenimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\frmPaisMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmPaisMantenimiento.Designer.cs">
+      <DependentUpon>frmPaisMantenimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\frmPescaMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmPescaMantenimiento.Designer.cs">
+      <DependentUpon>frmPescaMantenimiento.cs</DependentUpon>
     </Compile>
     <Compile Include="Calidad\frmreporte_trazabilidad.cs">
       <SubType>Form</SubType>
@@ -347,6 +455,18 @@
     </Compile>
     <Compile Include="Calidad\frmretencionadd.Designer.cs">
       <DependentUpon>frmretencionadd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\frmTexturaMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmTexturaMantenimiento.Designer.cs">
+      <DependentUpon>frmTexturaMantenimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\frmTipoMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmTipoMantenimiento.Designer.cs">
+      <DependentUpon>frmTipoMantenimiento.cs</DependentUpon>
     </Compile>
     <Compile Include="Calidad\frmview.cs">
       <SubType>Form</SubType>
@@ -842,6 +962,44 @@
     <Compile Include="Micro\frmOpcionesMicro.Designer.cs">
       <DependentUpon>frmOpcionesMicro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Nir\dsNir.cs">
+      <DependentUpon>dsNir.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Nir\dsNir.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsNir.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Nir\frmLecturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nir\frmLecturas.Designer.cs">
+      <DependentUpon>frmLecturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nir\frmLigarLecturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nir\frmLigarLecturas.Designer.cs">
+      <DependentUpon>frmLigarLecturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nir\frmSeleccionarLectura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nir\frmSeleccionarLectura.Designer.cs">
+      <DependentUpon>frmSeleccionarLectura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nir\frmUnirLigaduras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nir\frmUnirLigaduras.Designer.cs">
+      <DependentUpon>frmUnirLigaduras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nir\frm_cargar_lecturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nir\frm_cargar_lecturas.Designer.cs">
+      <DependentUpon>frm_cargar_lecturas.cs</DependentUpon>
+    </Compile>
     <Compile Include="PlanMPreque\frmLote.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -956,6 +1114,17 @@
       <DependentUpon>rptReporteTarimaPT.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <None Include="Calidad\dsMantenimientoC.xsc">
+      <DependentUpon>dsMantenimientoC.xsd</DependentUpon>
+    </None>
+    <None Include="Calidad\dsMantenimientoC.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsMantenimientoC.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Calidad\dsMantenimientoC.xss">
+      <DependentUpon>dsMantenimientoC.xsd</DependentUpon>
+    </None>
     <None Include="Despachos\Reportes\dsReporte.xsc">
       <DependentUpon>dsReporte.xsd</DependentUpon>
     </None>
@@ -966,6 +1135,18 @@
     </None>
     <None Include="Despachos\Reportes\dsReporte.xss">
       <DependentUpon>dsReporte.xsd</DependentUpon>
+    </None>
+    <None Include="LOSA_3_TemporaryKey.pfx" />
+    <None Include="Nir\dsNir.xsc">
+      <DependentUpon>dsNir.xsd</DependentUpon>
+    </None>
+    <None Include="Nir\dsNir.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsNir.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Nir\dsNir.xss">
+      <DependentUpon>dsNir.xsd</DependentUpon>
     </None>
     <None Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecepcionMP\dsingresos.Designer.cs">
@@ -1266,6 +1447,12 @@
     </Compile>
     <Compile Include="Reportes\frmreporteLotePT.Designer.cs">
       <DependentUpon>frmreporteLotePT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmReporteTMRetenidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmReporteTMRetenidas.Designer.cs">
+      <DependentUpon>frmReporteTMRetenidas.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\frmreporteUbicacion.cs">
       <SubType>Form</SubType>
@@ -1802,6 +1989,9 @@
     <EmbeddedResource Include="AlmacenesExterno\xfrmViewLotes.resx">
       <DependentUpon>xfrmViewLotes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\ConfiguracionMP.resx">
+      <DependentUpon>ConfiguracionMP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmaddcausa.resx">
       <DependentUpon>frmaddcausa.cs</DependentUpon>
     </EmbeddedResource>
@@ -1814,14 +2004,23 @@
     <EmbeddedResource Include="Calidad\frmcausasRetencion.resx">
       <DependentUpon>frmcausasRetencion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmColormantenimiento.resx">
+      <DependentUpon>frmColormantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmEstadosTarimaCalidad.resx">
       <DependentUpon>frmEstadosTarimaCalidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmGestionLotesPT_Calidad.resx">
       <DependentUpon>frmGestionLotesPT_Calidad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmGrumosMantenimiento.resx">
+      <DependentUpon>frmGrumosMantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmInfoAdicional.resx">
       <DependentUpon>frmInfoAdicional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmInsectosMantenimiento.resx">
+      <DependentUpon>frmInsectosMantenimiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmLotesStatus.resx">
       <DependentUpon>frmLotesStatus.cs</DependentUpon>
@@ -1829,14 +2028,59 @@
     <EmbeddedResource Include="Calidad\frmMantenimientoIngreso.resx">
       <DependentUpon>frmMantenimientoIngreso.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmMateriaPrimaAjuste.resx">
+      <DependentUpon>frmMateriaPrimaAjuste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmNuevoCriterio.resx">
+      <DependentUpon>frmNuevoCriterio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmNuevoCriterioColor.resx">
+      <DependentUpon>frmNuevoCriterioColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmNuevoCriterioGrumos.resx">
+      <DependentUpon>frmNuevoCriterioGrumos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmNuevoCriterioInsectos.resx">
+      <DependentUpon>frmNuevoCriterioInsectos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmNuevoCriterioOrigen.resx">
+      <DependentUpon>frmNuevoCriterioOrigen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmNuevoCriterioPais.resx">
+      <DependentUpon>frmNuevoCriterioPais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmNuevoCriterioPesca.resx">
+      <DependentUpon>frmNuevoCriterioPesca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmNuevoCriterioTextura.resx">
+      <DependentUpon>frmNuevoCriterioTextura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmNuevoCriterioTipo.resx">
+      <DependentUpon>frmNuevoCriterioTipo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmOlorMantenimiento.resx">
       <DependentUpon>frmOlorMantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmOrigenMantenimiento.resx">
+      <DependentUpon>frmOrigenMantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmPaisMantenimiento.resx">
+      <DependentUpon>frmPaisMantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmPescaMantenimiento.resx">
+      <DependentUpon>frmPescaMantenimiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmreporte_trazabilidad.resx">
       <DependentUpon>frmreporte_trazabilidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmretencionadd.resx">
       <DependentUpon>frmretencionadd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmTexturaMantenimiento.resx">
+      <DependentUpon>frmTexturaMantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmTipoMantenimiento.resx">
+      <DependentUpon>frmTipoMantenimiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmview.resx">
       <DependentUpon>frmview.cs</DependentUpon>
@@ -2051,6 +2295,21 @@
     <EmbeddedResource Include="Micro\frmOpcionesMicro.resx">
       <DependentUpon>frmOpcionesMicro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Nir\frmLecturas.resx">
+      <DependentUpon>frmLecturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nir\frmLigarLecturas.resx">
+      <DependentUpon>frmLigarLecturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nir\frmSeleccionarLectura.resx">
+      <DependentUpon>frmSeleccionarLectura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nir\frmUnirLigaduras.resx">
+      <DependentUpon>frmUnirLigaduras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nir\frm_cargar_lecturas.resx">
+      <DependentUpon>frm_cargar_lecturas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PlanMPreque\frmLote.resx">
       <DependentUpon>frmLote.cs</DependentUpon>
     </EmbeddedResource>
@@ -2250,6 +2509,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmreporteLotePT.resx">
       <DependentUpon>frmreporteLotePT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmReporteTMRetenidas.resx">
+      <DependentUpon>frmReporteTMRetenidas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmreporteUbicacion.resx">
       <DependentUpon>frmreporteUbicacion.cs</DependentUpon>
