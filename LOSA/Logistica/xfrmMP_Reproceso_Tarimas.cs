@@ -140,17 +140,28 @@ namespace LOSA.Logistica
 
                 transaction = conexion.BeginTransaction();
 
-                foreach (var item in productoTerminado_List)
-                {
                     SqlCommand cmd = new SqlCommand("dbo.sp_insert_kardex_PT_reproceso", transaction.Connection);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Transaction = transaction;
 
-                    cmd.Parameters.Add("@idtarima", SqlDbType.Int).Value=item.TarimaID;
+                    //cmd.Parameters.Add("@idtarima", SqlDbType.Int).Value=item.TarimaID;
                     cmd.Parameters.Add("@fecha", SqlDbType.DateTime).Value=DateTime.Now;
                     cmd.Parameters.Add("@user_id", SqlDbType.Int).Value=userLogin.Id;
 
-                    cmd.ExecuteNonQuery();
+                   int id_inserted= Convert.ToInt32( cmd.ExecuteScalar());
+
+                foreach (var item in productoTerminado_List)
+                {
+                    SqlCommand cmd2 = new SqlCommand("dbo.sp_insert_kardex_PT_reproceso_d", transaction.Connection);
+                    cmd2.CommandType = CommandType.StoredProcedure;
+                    cmd2.Transaction = transaction;
+
+                    //cmd.Parameters.Add("@idtarima", SqlDbType.Int).Value=item.TarimaID;
+                    cmd2.Parameters.Add("@id_h", SqlDbType.Int).Value = id_inserted;
+                    cmd2.Parameters.Add("@id_tarima", SqlDbType.Int).Value = item.TarimaID;
+
+                    cmd2.ExecuteNonQuery();
+
                 }
 
                 transaction.Commit();
@@ -163,6 +174,11 @@ namespace LOSA.Logistica
                 CajaDialogo.Error(ex.Message);
                 transaction.Rollback();
             }
+        }
+
+        private void xfrmMP_Reproceso_Tarimas_Load(object sender, EventArgs e)
+        {
+
         }
     }
 } 
