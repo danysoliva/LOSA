@@ -65,7 +65,7 @@
             this.cmdRecepcionMPLogistica = new DevExpress.XtraEditors.SimpleButton();
             this.TabCalidad = new DevExpress.XtraTab.XtraTabPage();
             this.btnNitLecturas = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton17 = new DevExpress.XtraEditors.SimpleButton();
+           // this.simpleButton17 = new DevExpress.XtraEditors.SimpleButton();
             this.ManteIngresos = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton16 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton11 = new DevExpress.XtraEditors.SimpleButton();
@@ -649,16 +649,16 @@
             // 
             // simpleButton17
             // 
-            this.simpleButton17.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton17.Appearance.Options.UseFont = true;
-            this.simpleButton17.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton17.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton17.ImageOptions.Image")));
-            this.simpleButton17.Location = new System.Drawing.Point(427, 100);
-            this.simpleButton17.Name = "simpleButton17";
-            this.simpleButton17.Size = new System.Drawing.Size(199, 71);
-            this.simpleButton17.TabIndex = 20;
-            this.simpleButton17.Text = "Lecturas NIR";
-            this.simpleButton17.Visible = false;
+            //this.simpleButton17.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            //this.simpleButton17.Appearance.Options.UseFont = true;
+            //this.simpleButton17.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            //this.simpleButton17.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton17.ImageOptions.Image")));
+            //this.simpleButton17.Location = new System.Drawing.Point(427, 100);
+            //this.simpleButton17.Name = "simpleButton17";
+            //this.simpleButton17.Size = new System.Drawing.Size(199, 71);
+            //this.simpleButton17.TabIndex = 20;
+            //this.simpleButton17.Text = "Lecturas NIR";
+            //this.simpleButton17.Visible = false;
             // 
             // ManteIngresos
             // 

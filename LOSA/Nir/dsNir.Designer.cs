@@ -1991,6 +1991,8 @@ namespace LOSA.Nir {
             
             private global::System.Data.DataColumn columnid_h;
             
+            private global::System.Data.DataColumn columnselecionada;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public seleccion_lecturaDataTable() {
@@ -2138,6 +2140,14 @@ namespace LOSA.Nir {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn selecionadaColumn {
+                get {
+                    return this.columnselecionada;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2173,7 +2183,7 @@ namespace LOSA.Nir {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public seleccion_lecturaRow Addseleccion_lecturaRow(int id, string lectura, System.DateTime fecha, string curva, string n_curva, string id_bromatologia, decimal broma_porcentaje, decimal GH, decimal NB, decimal TS, string comentario, string nombre_producto, string lote, int id_h) {
+            public seleccion_lecturaRow Addseleccion_lecturaRow(int id, string lectura, System.DateTime fecha, string curva, string n_curva, string id_bromatologia, decimal broma_porcentaje, decimal GH, decimal NB, decimal TS, string comentario, string nombre_producto, string lote, int id_h, bool selecionada) {
                 seleccion_lecturaRow rowseleccion_lecturaRow = ((seleccion_lecturaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -2189,7 +2199,8 @@ namespace LOSA.Nir {
                         comentario,
                         nombre_producto,
                         lote,
-                        id_h};
+                        id_h,
+                        selecionada};
                 rowseleccion_lecturaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowseleccion_lecturaRow);
                 return rowseleccion_lecturaRow;
@@ -2226,6 +2237,7 @@ namespace LOSA.Nir {
                 this.columnnombre_producto = base.Columns["nombre_producto"];
                 this.columnlote = base.Columns["lote"];
                 this.columnid_h = base.Columns["id_h"];
+                this.columnselecionada = base.Columns["selecionada"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2259,6 +2271,9 @@ namespace LOSA.Nir {
                 base.Columns.Add(this.columnlote);
                 this.columnid_h = new global::System.Data.DataColumn("id_h", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_h);
+                this.columnselecionada = new global::System.Data.DataColumn("selecionada", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnselecionada);
+                this.columnselecionada.DefaultValue = ((bool)(false));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3889,6 +3904,22 @@ namespace LOSA.Nir {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool selecionada {
+                get {
+                    try {
+                        return ((bool)(this[this.tableseleccion_lectura.selecionadaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'selecionada\' in table \'seleccion_lectura\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableseleccion_lectura.selecionadaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableseleccion_lectura.idColumn);
             }
@@ -4053,6 +4084,18 @@ namespace LOSA.Nir {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setid_hNull() {
                 this[this.tableseleccion_lectura.id_hColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsselecionadaNull() {
+                return this.IsNull(this.tableseleccion_lectura.selecionadaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetselecionadaNull() {
+                this[this.tableseleccion_lectura.selecionadaColumn] = global::System.Convert.DBNull;
             }
         }
         

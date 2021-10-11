@@ -596,7 +596,8 @@ namespace LOSA
 
         private void ManteIngresos_Click(object sender, EventArgs e)
         {
-
+            frm_mantenimiento_calidad frm = new frm_mantenimiento_calidad(UsuarioLogeado);
+            frm.Show();
         }
 
         private void btnMPReproceso_Click(object sender, EventArgs e)

@@ -107,7 +107,7 @@ namespace LOSA.Nir
                 }
                 else
                 {
-                    if (MessageBox.Show("Desea eliminar esta lectura?", "Desea eliminar esta lectura?", MessageBoxButtons.OK, MessageBoxIcon.Question) == DialogResult.OK)
+                    if (MessageBox.Show("Desea eliminar esta lectura?", "Desea eliminar esta lectura?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         string query = @"sp_unable_lectura_nir";
                         SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);

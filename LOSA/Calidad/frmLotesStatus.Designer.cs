@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLotesStatus));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -128,7 +127,7 @@
             this.colcodigo_barra2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collote12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.btnhabilitarL = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Habilitar_turno = new DevExpress.XtraBars.BarButtonItem();
@@ -141,12 +140,15 @@
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.btnRetenerIngreso = new DevExpress.XtraBars.BarButtonItem();
             this.btnRetenidoTurno = new DevExpress.XtraBars.BarButtonItem();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOdoo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOdoo1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOdoo2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.TabControl1)).BeginInit();
             this.TabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
@@ -265,6 +267,7 @@
             this.colingreso,
             this.colid_mp,
             this.coldetalle,
+            this.colOdoo,
             this.colid_tipotm,
             this.colTurno,
             this.colcodigo_barra,
@@ -311,7 +314,7 @@
             this.colmp.Name = "colmp";
             this.colmp.OptionsColumn.AllowEdit = false;
             this.colmp.Visible = true;
-            this.colmp.VisibleIndex = 2;
+            this.colmp.VisibleIndex = 3;
             // 
             // colproveedor
             // 
@@ -320,7 +323,7 @@
             this.colproveedor.Name = "colproveedor";
             this.colproveedor.OptionsColumn.AllowEdit = false;
             this.colproveedor.Visible = true;
-            this.colproveedor.VisibleIndex = 3;
+            this.colproveedor.VisibleIndex = 4;
             // 
             // colfecha_vence
             // 
@@ -329,7 +332,7 @@
             this.colfecha_vence.Name = "colfecha_vence";
             this.colfecha_vence.OptionsColumn.AllowEdit = false;
             this.colfecha_vence.Visible = true;
-            this.colfecha_vence.VisibleIndex = 4;
+            this.colfecha_vence.VisibleIndex = 5;
             // 
             // colunidades
             // 
@@ -338,7 +341,7 @@
             this.colunidades.Name = "colunidades";
             this.colunidades.OptionsColumn.AllowEdit = false;
             this.colunidades.Visible = true;
-            this.colunidades.VisibleIndex = 5;
+            this.colunidades.VisibleIndex = 6;
             // 
             // colpeso
             // 
@@ -347,7 +350,7 @@
             this.colpeso.Name = "colpeso";
             this.colpeso.OptionsColumn.AllowEdit = false;
             this.colpeso.Visible = true;
-            this.colpeso.VisibleIndex = 6;
+            this.colpeso.VisibleIndex = 7;
             // 
             // colcodigomp
             // 
@@ -373,7 +376,7 @@
             this.colingreso.Name = "colingreso";
             this.colingreso.OptionsColumn.AllowEdit = false;
             this.colingreso.Visible = true;
-            this.colingreso.VisibleIndex = 1;
+            this.colingreso.VisibleIndex = 2;
             // 
             // colid_mp
             // 
@@ -387,7 +390,7 @@
             this.coldetalle.ColumnEdit = this.btndetalle;
             this.coldetalle.Name = "coldetalle";
             this.coldetalle.Visible = true;
-            this.coldetalle.VisibleIndex = 8;
+            this.coldetalle.VisibleIndex = 9;
             // 
             // btndetalle
             // 
@@ -410,7 +413,7 @@
             this.colTurno.Name = "colTurno";
             this.colTurno.OptionsColumn.AllowEdit = false;
             this.colTurno.Visible = true;
-            this.colTurno.VisibleIndex = 7;
+            this.colTurno.VisibleIndex = 8;
             // 
             // colcodigo_barra
             // 
@@ -499,7 +502,8 @@
             this.colid_tipotm1,
             this.colTurno1,
             this.colcodigo_barra1,
-            this.collote11});
+            this.collote11,
+            this.colOdoo1});
             this.gridView1.DetailHeight = 284;
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.gridView1.GridControl = this.gridObservacion;
@@ -545,7 +549,7 @@
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.VisibleIndex = 3;
             this.gridColumn3.Width = 56;
             // 
             // gridColumn4
@@ -556,7 +560,7 @@
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.VisibleIndex = 4;
             this.gridColumn4.Width = 56;
             // 
             // gridColumn5
@@ -567,7 +571,7 @@
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
+            this.gridColumn5.VisibleIndex = 5;
             this.gridColumn5.Width = 56;
             // 
             // gridColumn6
@@ -578,7 +582,7 @@
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.OptionsColumn.AllowEdit = false;
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 5;
+            this.gridColumn6.VisibleIndex = 6;
             this.gridColumn6.Width = 56;
             // 
             // gridColumn7
@@ -589,7 +593,7 @@
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.OptionsColumn.AllowEdit = false;
             this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 6;
+            this.gridColumn7.VisibleIndex = 7;
             this.gridColumn7.Width = 56;
             // 
             // gridColumn8
@@ -624,7 +628,7 @@
             this.colDetalle3.MinWidth = 15;
             this.colDetalle3.Name = "colDetalle3";
             this.colDetalle3.Visible = true;
-            this.colDetalle3.VisibleIndex = 8;
+            this.colDetalle3.VisibleIndex = 9;
             this.colDetalle3.Width = 56;
             // 
             // btndetalle3
@@ -644,7 +648,7 @@
             this.colingreso2.Name = "colingreso2";
             this.colingreso2.OptionsColumn.AllowEdit = false;
             this.colingreso2.Visible = true;
-            this.colingreso2.VisibleIndex = 1;
+            this.colingreso2.VisibleIndex = 2;
             // 
             // colIdmp
             // 
@@ -663,7 +667,7 @@
             this.colTurno1.Name = "colTurno1";
             this.colTurno1.OptionsColumn.AllowEdit = false;
             this.colTurno1.Visible = true;
-            this.colTurno1.VisibleIndex = 7;
+            this.colTurno1.VisibleIndex = 8;
             // 
             // colcodigo_barra1
             // 
@@ -740,7 +744,8 @@
             this.colid_tipotm2,
             this.colTurno2,
             this.colcodigo_barra2,
-            this.collote12});
+            this.collote12,
+            this.colOdoo2});
             this.gridView2.DetailHeight = 284;
             this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.gridView2.GridControl = this.gridRetenidos;
@@ -785,7 +790,7 @@
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.OptionsColumn.AllowEdit = false;
             this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 2;
+            this.gridColumn12.VisibleIndex = 3;
             this.gridColumn12.Width = 56;
             // 
             // gridColumn13
@@ -796,7 +801,7 @@
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.OptionsColumn.AllowEdit = false;
             this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 3;
+            this.gridColumn13.VisibleIndex = 4;
             this.gridColumn13.Width = 56;
             // 
             // gridColumn14
@@ -807,7 +812,7 @@
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.OptionsColumn.AllowEdit = false;
             this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 4;
+            this.gridColumn14.VisibleIndex = 5;
             this.gridColumn14.Width = 56;
             // 
             // gridColumn15
@@ -818,7 +823,7 @@
             this.gridColumn15.Name = "gridColumn15";
             this.gridColumn15.OptionsColumn.AllowEdit = false;
             this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 5;
+            this.gridColumn15.VisibleIndex = 6;
             this.gridColumn15.Width = 56;
             // 
             // gridColumn16
@@ -829,7 +834,7 @@
             this.gridColumn16.Name = "gridColumn16";
             this.gridColumn16.OptionsColumn.AllowEdit = false;
             this.gridColumn16.Visible = true;
-            this.gridColumn16.VisibleIndex = 6;
+            this.gridColumn16.VisibleIndex = 7;
             this.gridColumn16.Width = 56;
             // 
             // gridColumn17
@@ -864,7 +869,7 @@
             this.colver.MinWidth = 15;
             this.colver.Name = "colver";
             this.colver.Visible = true;
-            this.colver.VisibleIndex = 8;
+            this.colver.VisibleIndex = 9;
             this.colver.Width = 56;
             // 
             // btnview
@@ -884,7 +889,7 @@
             this.colingreso3.Name = "colingreso3";
             this.colingreso3.OptionsColumn.AllowEdit = false;
             this.colingreso3.Visible = true;
-            this.colingreso3.VisibleIndex = 1;
+            this.colingreso3.VisibleIndex = 2;
             // 
             // colidmp3
             // 
@@ -903,7 +908,7 @@
             this.colTurno2.Name = "colTurno2";
             this.colTurno2.OptionsColumn.AllowEdit = false;
             this.colTurno2.Visible = true;
-            this.colTurno2.VisibleIndex = 7;
+            this.colTurno2.VisibleIndex = 8;
             // 
             // colcodigo_barra2
             // 
@@ -1113,6 +1118,33 @@
             this.colid.Name = "colid";
             this.colid.Width = 56;
             // 
+            // colOdoo
+            // 
+            this.colOdoo.Caption = "Produccion";
+            this.colOdoo.FieldName = "Odoo";
+            this.colOdoo.Name = "colOdoo";
+            this.colOdoo.OptionsColumn.AllowEdit = false;
+            this.colOdoo.Visible = true;
+            this.colOdoo.VisibleIndex = 1;
+            // 
+            // colOdoo1
+            // 
+            this.colOdoo1.Caption = "Produccion";
+            this.colOdoo1.FieldName = "Odoo";
+            this.colOdoo1.Name = "colOdoo1";
+            this.colOdoo1.OptionsColumn.AllowEdit = false;
+            this.colOdoo1.Visible = true;
+            this.colOdoo1.VisibleIndex = 1;
+            // 
+            // colOdoo2
+            // 
+            this.colOdoo2.Caption = "Produccion";
+            this.colOdoo2.FieldName = "Odoo";
+            this.colOdoo2.Name = "colOdoo2";
+            this.colOdoo2.OptionsColumn.AllowEdit = false;
+            this.colOdoo2.Visible = true;
+            this.colOdoo2.VisibleIndex = 1;
+            // 
             // frmLotesStatus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1244,5 +1276,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn collote1;
         private DevExpress.XtraGrid.Columns.GridColumn collote11;
         private DevExpress.XtraGrid.Columns.GridColumn collote12;
+        private DevExpress.XtraGrid.Columns.GridColumn colOdoo;
+        private DevExpress.XtraGrid.Columns.GridColumn colOdoo1;
+        private DevExpress.XtraGrid.Columns.GridColumn colOdoo2;
     }
 }

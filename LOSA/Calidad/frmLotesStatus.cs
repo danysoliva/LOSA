@@ -44,7 +44,7 @@ namespace LOSA.Calidad
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_tarimas_habilitadas_calidad_V2", con);
+                SqlCommand cmd = new SqlCommand("sp_get_tarimas_habilitadas_calidad_V3", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 dsCalidad1.tarimas_disponibles.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);

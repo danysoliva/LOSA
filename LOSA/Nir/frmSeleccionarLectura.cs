@@ -105,8 +105,83 @@ namespace LOSA.Nir
                     cmd.Parameters.AddWithValue("@id_ingreso", id_lote);
                     cmd.Parameters.AddWithValue("@id_h_lectura", id_h);
                     cmd.ExecuteNonQuery();
+                    cn.Close();
                     this.DialogResult = DialogResult.OK;
                     this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void btnSubirSeleccionada_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int cant = 0;
+                foreach (dsNir.seleccion_lecturaRow row in dsNir.seleccion_lectura.Rows)
+                {
+                    if (row.selecionada)
+                    {
+                        cant++;
+                    }
+                }
+                if (cant > 0)
+                {
+                    if (CajaDialogo.Pregunta("Desea ligar las lecturas selecionadas?") == DialogResult.Yes)
+                    {
+                        foreach (dsNir.seleccion_lecturaRow row in dsNir.seleccion_lectura.Rows)
+                        {
+                            if (row.selecionada)
+                            {
+                                id_lectura = row.id;
+                                id_h = row.id_h;
+                                string query = @"sp_insert_in_trz_nir_ingreso";
+                                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                                cn.Open();
+
+                                SqlCommand cmd = new SqlCommand(query, cn);
+                                cmd.CommandType = CommandType.StoredProcedure;
+                                cmd.Parameters.AddWithValue("@id_lectura", id_lectura);
+                                cmd.Parameters.AddWithValue("@user_id", UsuarioLogeado.Id);
+                                cmd.Parameters.AddWithValue("@id_ingreso", id_lote);
+                                cmd.Parameters.AddWithValue("@id_h_lectura", id_h);
+                                cmd.ExecuteNonQuery();
+                                cn.Close();
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    CajaDialogo.Error("Debe seleccionar al menos una lectura para ligar.");
+                    return;
+                }
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+
+               
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void grdv_data_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            try
+            {
+                if (e.Column.Name == "colselecionada")
+                {
+                    var gridView = (GridView)grd_data.FocusedView;
+                    var row = (dsNir.seleccion_lecturaRow)gridView.GetFocusedDataRow();
+                    row.selecionada = Convert.ToBoolean(e.Value);
+                    row.AcceptChanges();
+
                 }
             }
             catch (Exception ex)

@@ -62,7 +62,7 @@ namespace LOSA.Despachos
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_presentaciones_activas", con);
+                SqlCommand cmd = new SqlCommand("sp_get_presentaciones_activas_v5", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 dsRecepcionMPx.presentaciones.Clear();

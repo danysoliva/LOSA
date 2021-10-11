@@ -38,7 +38,7 @@ namespace LOSA.AlmacenesExterno
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_presentaciones_activas_v2", con);
+                SqlCommand cmd = new SqlCommand("sp_get_presentaciones_activas_v4", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 dsAlmacenesExternos.presentacion.Clear();

@@ -29,17 +29,15 @@ namespace LOSA.Nir
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
-            this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.dsNir = new LOSA.Nir.dsNir();
-            this.seleccionlecturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collectura = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfecha = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -56,10 +54,11 @@ namespace LOSA.Nir
             this.colid_h = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colseleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnseleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.btnSubirSeleccionada = new DevExpress.XtraEditors.SimpleButton();
+            this.colselecionada = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNir)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.seleccionlecturaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnseleccionar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,7 +83,8 @@ namespace LOSA.Nir
             this.grd_data.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grd_data.DataSource = this.seleccionlecturaBindingSource;
+            this.grd_data.DataMember = "seleccion_lectura";
+            this.grd_data.DataSource = this.dsNir;
             this.grd_data.Location = new System.Drawing.Point(1, 86);
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
@@ -94,6 +94,11 @@ namespace LOSA.Nir
             this.grd_data.TabIndex = 11;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
+            // 
+            // dsNir
+            // 
+            this.dsNir.DataSetName = "dsNir";
+            this.dsNir.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // grdv_data
             // 
@@ -136,22 +141,14 @@ namespace LOSA.Nir
             this.colnombre_producto,
             this.collote,
             this.colid_h,
-            this.colseleccionar});
+            this.colseleccionar,
+            this.colselecionada});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
             this.grdv_data.OptionsView.ShowGroupPanel = false;
+            this.grdv_data.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.grdv_data_CellValueChanging);
             this.grdv_data.DoubleClick += new System.EventHandler(this.grdv_data_DoubleClick);
-            // 
-            // dsNir
-            // 
-            this.dsNir.DataSetName = "dsNir";
-            this.dsNir.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // seleccionlecturaBindingSource
-            // 
-            this.seleccionlecturaBindingSource.DataMember = "seleccion_lectura";
-            this.seleccionlecturaBindingSource.DataSource = this.dsNir;
             // 
             // colid
             // 
@@ -264,32 +261,52 @@ namespace LOSA.Nir
             this.colseleccionar.ColumnEdit = this.btnseleccionar;
             this.colseleccionar.Name = "colseleccionar";
             this.colseleccionar.Visible = true;
-            this.colseleccionar.VisibleIndex = 12;
+            this.colseleccionar.VisibleIndex = 13;
             // 
             // btnseleccionar
             // 
             this.btnseleccionar.AutoHeight = false;
-            editorButtonImageOptions2.Image = global::LOSA.Properties.Resources.tap;
+            editorButtonImageOptions1.Image = global::LOSA.Properties.Resources.tap;
             this.btnseleccionar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnseleccionar.Name = "btnseleccionar";
             this.btnseleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnseleccionar.Click += new System.EventHandler(this.btnseleccionar_Click);
+            // 
+            // btnSubirSeleccionada
+            // 
+            this.btnSubirSeleccionada.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubirSeleccionada.Appearance.Options.UseFont = true;
+            this.btnSubirSeleccionada.ImageOptions.Image = global::LOSA.Properties.Resources.tap;
+            this.btnSubirSeleccionada.Location = new System.Drawing.Point(12, 21);
+            this.btnSubirSeleccionada.Name = "btnSubirSeleccionada";
+            this.btnSubirSeleccionada.Size = new System.Drawing.Size(197, 49);
+            this.btnSubirSeleccionada.TabIndex = 12;
+            this.btnSubirSeleccionada.Text = "Subir seleccionadas";
+            this.btnSubirSeleccionada.Click += new System.EventHandler(this.btnSubirSeleccionada_Click);
+            // 
+            // colselecionada
+            // 
+            this.colselecionada.Caption = "Seleccionar";
+            this.colselecionada.FieldName = "selecionada";
+            this.colselecionada.Name = "colselecionada";
+            this.colselecionada.Visible = true;
+            this.colselecionada.VisibleIndex = 12;
             // 
             // frmSeleccionarLectura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(777, 569);
+            this.Controls.Add(this.btnSubirSeleccionada);
             this.Controls.Add(this.grd_data);
             this.Controls.Add(this.cmdHome);
             this.Name = "frmSeleccionarLectura";
             this.Text = "Seleccion de lote";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNir)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.seleccionlecturaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnseleccionar)).EndInit();
             this.ResumeLayout(false);
 
@@ -300,7 +317,6 @@ namespace LOSA.Nir
         private DevExpress.XtraEditors.SimpleButton cmdHome;
         private DevExpress.XtraGrid.GridControl grd_data;
         private DevExpress.XtraGrid.Views.Grid.GridView grdv_data;
-        private System.Windows.Forms.BindingSource seleccionlecturaBindingSource;
         private dsNir dsNir;
         private DevExpress.XtraGrid.Columns.GridColumn colid;
         private DevExpress.XtraGrid.Columns.GridColumn collectura;
@@ -318,5 +334,7 @@ namespace LOSA.Nir
         private DevExpress.XtraGrid.Columns.GridColumn colid_h;
         private DevExpress.XtraGrid.Columns.GridColumn colseleccionar;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnseleccionar;
+        private DevExpress.XtraEditors.SimpleButton btnSubirSeleccionada;
+        private DevExpress.XtraGrid.Columns.GridColumn colselecionada;
     }
 }

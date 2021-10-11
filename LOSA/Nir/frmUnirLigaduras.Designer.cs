@@ -266,9 +266,19 @@ namespace LOSA.Nir
             this.colactivo,
             this.colEliminar});
             this.grdv_lecturas.GridControl = this.grd_lecturas;
+            this.grdv_lecturas.GroupCount = 1;
+            this.grdv_lecturas.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Average, "broma_porcentaje", this.colbroma_porcentaje, "(BP: AVG={0:0.##})"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Average, "GH", this.colGH, "(GH: AVG={0:0.##})"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Average, "NB", this.colNB, "(NB: AVG={0:0.##})"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Average, "TS", this.colTS, "(TS: AVG={0:0.##})")});
             this.grdv_lecturas.Name = "grdv_lecturas";
+            this.grdv_lecturas.OptionsBehavior.AutoExpandAllGroups = true;
             this.grdv_lecturas.OptionsView.ShowAutoFilterRow = true;
+            this.grdv_lecturas.OptionsView.ShowFooter = true;
             this.grdv_lecturas.OptionsView.ShowGroupPanel = false;
+            this.grdv_lecturas.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colid_bromatologia, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // colid
             // 
@@ -331,7 +341,7 @@ namespace LOSA.Nir
             this.colbroma_porcentaje.Name = "colbroma_porcentaje";
             this.colbroma_porcentaje.OptionsColumn.AllowEdit = false;
             this.colbroma_porcentaje.Visible = true;
-            this.colbroma_porcentaje.VisibleIndex = 6;
+            this.colbroma_porcentaje.VisibleIndex = 5;
             // 
             // colGH
             // 
@@ -339,7 +349,7 @@ namespace LOSA.Nir
             this.colGH.Name = "colGH";
             this.colGH.OptionsColumn.AllowEdit = false;
             this.colGH.Visible = true;
-            this.colGH.VisibleIndex = 7;
+            this.colGH.VisibleIndex = 6;
             // 
             // colNB
             // 
@@ -347,7 +357,7 @@ namespace LOSA.Nir
             this.colNB.Name = "colNB";
             this.colNB.OptionsColumn.AllowEdit = false;
             this.colNB.Visible = true;
-            this.colNB.VisibleIndex = 8;
+            this.colNB.VisibleIndex = 7;
             // 
             // colTS
             // 
@@ -355,7 +365,7 @@ namespace LOSA.Nir
             this.colTS.Name = "colTS";
             this.colTS.OptionsColumn.AllowEdit = false;
             this.colTS.Visible = true;
-            this.colTS.VisibleIndex = 9;
+            this.colTS.VisibleIndex = 8;
             // 
             // colcomentario
             // 
@@ -363,7 +373,7 @@ namespace LOSA.Nir
             this.colcomentario.Name = "colcomentario";
             this.colcomentario.OptionsColumn.AllowEdit = false;
             this.colcomentario.Visible = true;
-            this.colcomentario.VisibleIndex = 10;
+            this.colcomentario.VisibleIndex = 9;
             // 
             // collote
             // 
@@ -371,7 +381,7 @@ namespace LOSA.Nir
             this.collote.Name = "collote";
             this.collote.OptionsColumn.AllowEdit = false;
             this.collote.Visible = true;
-            this.collote.VisibleIndex = 11;
+            this.collote.VisibleIndex = 10;
             // 
             // colnombre_producto
             // 
@@ -379,7 +389,7 @@ namespace LOSA.Nir
             this.colnombre_producto.Name = "colnombre_producto";
             this.colnombre_producto.OptionsColumn.AllowEdit = false;
             this.colnombre_producto.Visible = true;
-            this.colnombre_producto.VisibleIndex = 12;
+            this.colnombre_producto.VisibleIndex = 11;
             // 
             // colactivo
             // 
@@ -393,7 +403,7 @@ namespace LOSA.Nir
             this.colEliminar.ColumnEdit = this.btnDesvincular;
             this.colEliminar.Name = "colEliminar";
             this.colEliminar.Visible = true;
-            this.colEliminar.VisibleIndex = 13;
+            this.colEliminar.VisibleIndex = 12;
             // 
             // btnDesvincular
             // 
