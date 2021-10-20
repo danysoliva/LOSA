@@ -268,16 +268,16 @@ namespace LOSA.Logistica
                 }
             }
 
-            //crear lote mp
-            //[]
-            try
-            {
+            ////crear lote mp
+            ////[]
+            //try
+            //{
                 
-            }
-            catch (Exception ec)
-            {
-                CajaDialogo.Error(ec.Message);
-            }
+            //}
+            //catch (Exception ec)
+            //{
+            //    CajaDialogo.Error(ec.Message);
+            //}
 
 
             if (CantGuardo > 0)
