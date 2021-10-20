@@ -270,7 +270,7 @@ namespace LOSA
             this.Controls.Add(this.cmdCerrar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMain";
-            this.Text = "Form1";
+            this.Text = "LOGIN";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.Click += new System.EventHandler(this.frmMain_Click);

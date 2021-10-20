@@ -1,6 +1,7 @@
 ﻿using ACS.Classes;
 using DevExpress.XtraEditors;
 using LOSA.Clases;
+using LOSA.RecepcionMP;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -83,11 +84,11 @@ namespace LOSA.Logistica
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_presentaciones_activas", con);
+                SqlCommand cmd = new SqlCommand("[sp_get_presentaciones_activas_v3]", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                dsRecepcionMPx.presentaciones.Clear();
-                adat.Fill(dsRecepcionMPx.presentaciones);
+                dsRecepcionMPx1.presentaciones.Clear();
+                adat.Fill(dsRecepcionMPx1.presentaciones);
                 con.Close();
             }
             catch (Exception ec)
@@ -132,8 +133,9 @@ namespace LOSA.Logistica
                 SqlCommand cmd = new SqlCommand("sp_get_tipo_transaccion_kardex", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                dsRecepcionMPx.Tipo_transacciones_kardex.Clear();
-                adat.Fill(dsRecepcionMPx.Tipo_transacciones_kardex);
+                dsRecepcionMPx1.Tipo_transacciones_kardex.Clear();
+                adat.Fill(dsRecepcionMPx1.Tipo_transacciones_kardex);
+                glTipoTransaccion.EditValue = 1;
                 con.Close();
             }
             catch (Exception ec)
@@ -163,12 +165,7 @@ namespace LOSA.Logistica
                 return;
             }
 
-            if (string.IsNullOrEmpty(txtLote.Text))
-            {
-                CajaDialogo.Error("Es obligatorio llenar el lote para la tarima!");
-                return;
-            }
-
+        
             if (string.IsNullOrEmpty(dtFechaVencimiento.Text))
             {
                 CajaDialogo.Error("Es obligatorio llenar la fecha de vencimiento de la materia prima!");
@@ -191,6 +188,15 @@ namespace LOSA.Logistica
                 return;
             }
 
+
+            //generar string de lote
+            string lote_string = "Lote(s) PT:";
+            foreach (dsLogistica2.lote_selectedRow row in dsLogistica2.lote_selected.Rows)
+            {
+                lote_string += "  " + row.lote.ToString();
+            }
+            
+
             int CantGuardo = 0;
             //ArrayList Lista = new ArrayList();
             for (int i = 1; i <= cantTarimas; i++)
@@ -206,7 +212,26 @@ namespace LOSA.Logistica
                     cmm.Parameters.AddWithValue("@id", 1);
                     string barcode = cmm.ExecuteScalar().ToString();
 
-                    SqlCommand cmd = new SqlCommand("sp_insert_new_tarima_sin_boleta_mp", con);
+                    SqlCommand cmd1 = new SqlCommand("sp_insert_ingresos", con);
+                    cmd1.CommandType = CommandType.StoredProcedure;
+                    cmd1.Parameters.AddWithValue("@numero_transaccion", txtNumIngreso.Text);
+                    cmd1.Parameters.AddWithValue("@itemcode", this.ItemCode);
+                    cmd1.Parameters.AddWithValue("@itemname", slueMP.Text);
+                    cmd1.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
+                    cmd1.Parameters.AddWithValue("@cardcode", DBNull.Value);
+                    cmd1.Parameters.AddWithValue("@cardname", DBNull.Value);
+                    cmd1.Parameters.AddWithValue("@id_boleta", DBNull.Value);
+                    cmd1.Parameters.AddWithValue("@lote_materia_prima", lote_string);
+                    cmd1.Parameters.AddWithValue("@cant", txtCantidadT.Text);
+                    cmd1.Parameters.AddWithValue("@TotalTarimas", cantTarimas);
+                    cmd1.Parameters.AddWithValue("@pesotaria", 0);
+                    cmd1.Parameters.AddWithValue("@fecha_ingreso", dtFechaIngreso.EditValue);
+                    cmd1.Parameters.AddWithValue("@id_presentacion", gridLookUpEditPresentacion.EditValue);
+                    int id_ingreso_ = Convert.ToInt32(cmd1.ExecuteScalar());
+                    con.Close();
+
+
+                    SqlCommand cmd = new SqlCommand("[sp_insert_new_tarima_sin_boleta_mp_v2]", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@itemcode", this.ItemCode);
                     cmd.Parameters.AddWithValue("@id_proveedor", DBNull.Value);
@@ -214,15 +239,19 @@ namespace LOSA.Logistica
                     cmd.Parameters.AddWithValue("@numero_transaccion", txtNumIngreso.Text);
                     cmd.Parameters.AddWithValue("@fecha_vencimiento", dtFechaVencimiento.EditValue);
                     cmd.Parameters.AddWithValue("@fecha_produccion_materia_prima", dtFechaProduccion.EditValue);
-                    cmd.Parameters.AddWithValue("@lote_materia_prima", txtLote.Text);
+                    cmd.Parameters.AddWithValue("@lote_materia_prima", lote_string);
                     cmd.Parameters.AddWithValue("@id_presentacion", gridLookUpEditPresentacion.EditValue);
                     cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
                     cmd.Parameters.AddWithValue("@id_tipo_transaccion_kardex", glTipoTransaccion.EditValue);
                     cmd.Parameters.AddWithValue("@codigo_barra", barcode);
                     cmd.Parameters.AddWithValue("@cant", txtCantidadT.Text);
                     cmd.Parameters.AddWithValue("@peso", txtPeso.Text);
+                    cmd.Parameters.AddWithValue("@id_ingreso", id_ingreso_);
                     //Lista.Add(Convert.ToInt32(cmd.ExecuteScalar()));
                     cmd.ExecuteScalar();
+
+                    
+
                     CantGuardo++;
                     con.Close();
                     //CajaDialogo.InformationAuto();
@@ -234,9 +263,7 @@ namespace LOSA.Logistica
                 }
             }
 
-
-
-
+          
             if (CantGuardo > 0)
             {
                 CajaDialogo.Information("Datos guardados exitosamente!");
@@ -247,8 +274,65 @@ namespace LOSA.Logistica
         private void slueMP_EditValueChanged(object sender, EventArgs e)
         {
            
-                 //txtMP_Name.Text = slueMP.Text;
-                this.ItemCode = slueMP.EditValue.ToString();
+                     this.ItemCode = slueMP.EditValue.ToString();
+
+        }
+
+        private void gridLookUpEditPresentacion_EditValueChanged(object sender, EventArgs e)
+        {
+            if (gridLookUpEditPresentacion.EditValue == null)
+                return;
+
+            var id_pres = gridLookUpEditPresentacion.EditValue;
+            foreach (dsRecepcionMPx.presentacionesRow row in dsRecepcionMPx1.presentaciones.Rows)
+            {
+                if(row.id == Convert.ToInt32(id_pres))
+                {
+                    decimal Factor = row.factor;
+                    decimal peso = Factor * txtCantidadT.Value;
+                    txtPeso.Text = string.Format("{0:###,##0.00}", peso);
+                    break;
+                }
+            }
+        }
+
+        private void txtCantidadT_EditValueChanged(object sender, EventArgs e)
+        {
+            if (gridLookUpEditPresentacion.EditValue == null)
+                return;
+
+            var id_pres = gridLookUpEditPresentacion.EditValue;
+            foreach (dsRecepcionMPx.presentacionesRow row in dsRecepcionMPx1.presentaciones.Rows)
+            {
+                if (row.id == Convert.ToInt32(id_pres))
+                {
+                    decimal Factor = row.factor;
+                    decimal peso = Factor * txtCantidadT.Value;
+                    txtPeso.Text = string.Format("{0:###,##0.00}", peso);
+                    break;
+                }
+            }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            //Buscar Lote
+            xfrmBuscarLotePT frm = new xfrmBuscarLotePT();
+            if(frm.ShowDialog() == DialogResult.OK)
+            {
+                dsLogistica2.lote_selected.Clear();
+                foreach (int LoteSelected in frm.ListaLotesInt)
+                {
+                    dsLogistica2.lote_selectedRow rowLoteNew = dsLogistica2.lote_selected.Newlote_selectedRow();
+                    rowLoteNew.lote = LoteSelected;
+                    dsLogistica2.lote_selected.Addlote_selectedRow(rowLoteNew);
+                    dsLogistica2.AcceptChanges();
+                }
+            }
+        }
+
+        private void xfrmMP_Reproceso_Load(object sender, EventArgs e)
+        {
 
         }
     }

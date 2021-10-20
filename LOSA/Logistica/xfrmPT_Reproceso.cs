@@ -29,16 +29,13 @@ namespace LOSA.Logistica
         {
             xfrmMP_Reproceso_Tarimas frm = new xfrmMP_Reproceso_Tarimas(userLogin);
 
-            //if (this.MdiParent != null)
-            //    frm.MdiParent = this.MdiParent;
-
             frm.WindowState = FormWindowState.Maximized;
 
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 LoadData();
             }
-            //frm.Show();
+
         }
 
         private void cmdHome_Click(object sender, EventArgs e)
@@ -48,18 +45,13 @@ namespace LOSA.Logistica
 
         private void LoadData()
         {
-            //if (dtFechaDesde.EditValue != null && dtFechaHasta.EditValue != null)
-            //{
-
-                try
+                            try
                 {
                     DataOperations dp = new DataOperations();
                     SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                     con.Open();
                     SqlCommand cmm2 = new SqlCommand("dbo.sp_get_kardex_PT_reproceso", con);
                     cmm2.CommandType = CommandType.StoredProcedure;
-                    //cmm2.Parameters.AddWithValue("@fdesde", dtFechaDesde.EditValue);
-                    //cmm2.Parameters.AddWithValue("@fhasta", dtFechaHasta.EditValue);
 
                     dsLogistica2.PT_Reproceso_Creado .Clear();
                     SqlDataAdapter adat = new SqlDataAdapter(cmm2);
@@ -70,7 +62,7 @@ namespace LOSA.Logistica
                 {
                     CajaDialogo.Error(ec.Message);
                 }
-            //}
+
         }
     }
 }

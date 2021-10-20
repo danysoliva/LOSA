@@ -62,7 +62,6 @@ namespace LOSA.Logistica
             }
         }
 
-        //int count = 0;
         List< Producto_Terminado> productoTerminado_List = new List<Producto_Terminado>();
         private void gvPT_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
@@ -78,8 +77,7 @@ namespace LOSA.Logistica
 
                     if (row.seleccionar == true)
                     {
-                        //count++;
-
+                        //Se agrega elemento a la clase
                         productoTerminado_List.Add(productoTerminado);
                         gvPT.UpdateCurrentRow();
                         labelControl1.Text = "Seleccionado(s): " + productoTerminado_List.Count();
@@ -108,6 +106,7 @@ namespace LOSA.Logistica
 
         private void ceSeleccionar_CheckedChanged(object sender, EventArgs e)
         {
+            //hace refresh del grid despues que cambia el valor de la celda
             gvPT.PostEditor();
         }
 
@@ -144,7 +143,6 @@ namespace LOSA.Logistica
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Transaction = transaction;
 
-                    //cmd.Parameters.Add("@idtarima", SqlDbType.Int).Value=item.TarimaID;
                     cmd.Parameters.Add("@fecha", SqlDbType.DateTime).Value=DateTime.Now;
                     cmd.Parameters.Add("@user_id", SqlDbType.Int).Value=userLogin.Id;
 
@@ -156,7 +154,6 @@ namespace LOSA.Logistica
                     cmd2.CommandType = CommandType.StoredProcedure;
                     cmd2.Transaction = transaction;
 
-                    //cmd.Parameters.Add("@idtarima", SqlDbType.Int).Value=item.TarimaID;
                     cmd2.Parameters.Add("@id_h", SqlDbType.Int).Value = id_inserted;
                     cmd2.Parameters.Add("@id_tarima", SqlDbType.Int).Value = item.TarimaID;
 

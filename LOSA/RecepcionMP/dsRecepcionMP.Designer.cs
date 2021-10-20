@@ -2191,7 +2191,7 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public presentacionesRow AddpresentacionesRow(int id, string descripcion, string factor) {
+            public presentacionesRow AddpresentacionesRow(int id, string descripcion, decimal factor) {
                 presentacionesRow rowpresentacionesRow = ((presentacionesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -2231,7 +2231,7 @@ namespace LOSA.RecepcionMP {
                 base.Columns.Add(this.columnid);
                 this.columndescripcion = new global::System.Data.DataColumn("descripcion", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndescripcion);
-                this.columnfactor = new global::System.Data.DataColumn("factor", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnfactor = new global::System.Data.DataColumn("factor", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfactor);
             }
             
@@ -8392,10 +8392,10 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string factor {
+            public decimal factor {
                 get {
                     try {
-                        return ((string)(this[this.tablepresentaciones.factorColumn]));
+                        return ((decimal)(this[this.tablepresentaciones.factorColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'factor\' in table \'presentaciones\' is DBNull.", e);

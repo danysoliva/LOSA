@@ -70,10 +70,11 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>B8B1E1C226D4161B735B5D87883A090CA12C1142</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>5A56FE5B36BF1139C0C28330C52B1468E1F78C88</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>LOSA_3_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -92,7 +93,8 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>LOSA_3_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -786,6 +788,12 @@
       <DependentUpon>frmTrazabilidadLote.cs</DependentUpon>
     </Compile>
     <Compile Include="Logistica\Models\Producto_Terminado.cs" />
+    <Compile Include="Logistica\xfrmBuscarLotePT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\xfrmBuscarLotePT.Designer.cs">
+      <DependentUpon>xfrmBuscarLotePT.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logistica\xfrmMP_Reproceso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1160,7 +1168,6 @@
     <None Include="Despachos\Reportes\dsReporte.xss">
       <DependentUpon>dsReporte.xsd</DependentUpon>
     </None>
-    <None Include="LOSA_3_TemporaryKey.pfx" />
     <None Include="Nir\dsNir.xsc">
       <DependentUpon>dsNir.xsd</DependentUpon>
     </None>
@@ -2243,6 +2250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Logistica\frmTrazabilidadLote.resx">
       <DependentUpon>frmTrazabilidadLote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\xfrmBuscarLotePT.resx">
+      <DependentUpon>xfrmBuscarLotePT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logistica\xfrmMP_Reproceso.resx">
       <DependentUpon>xfrmMP_Reproceso.cs</DependentUpon>
