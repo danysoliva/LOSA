@@ -45,9 +45,7 @@ namespace LOSA.Logistica
 
         private void LoadData()
         {
-
-
-                try
+                            try
                 {
                     DataOperations dp = new DataOperations();
                     SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
