@@ -72,6 +72,7 @@ namespace LOSA.Nir
         }
         private void cmdHome_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
 
@@ -84,6 +85,7 @@ namespace LOSA.Nir
                 {
 
                     load_Data();
+                    
                 }
 
 

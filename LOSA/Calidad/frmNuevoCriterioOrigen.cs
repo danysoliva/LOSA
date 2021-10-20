@@ -91,7 +91,7 @@ namespace LOSA.Calidad
             }
             else
             {
-                string query = "sp_update_origen_criterio";
+                string query = "sp_update_all_criterio";
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 try
                 {
