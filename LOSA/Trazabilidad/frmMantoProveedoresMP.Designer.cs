@@ -466,6 +466,7 @@ namespace LOSA.Trazabilidad
             this.cmdAbrir.Name = "cmdAbrir";
             this.cmdAbrir.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdAbrir.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdAbrir_ButtonClick);
+            this.cmdAbrir.Click += new System.EventHandler(this.cmdAbrir_Click);
             // 
             // colDelete
             // 

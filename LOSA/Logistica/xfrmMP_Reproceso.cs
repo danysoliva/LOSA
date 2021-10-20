@@ -165,12 +165,7 @@ namespace LOSA.Logistica
                 return;
             }
 
-            //if (string.IsNullOrEmpty(txtLote.Text))
-            //{
-            //    CajaDialogo.Error("Es obligatorio llenar el lote para la tarima!");
-            //    return;
-            //}
-
+        
             if (string.IsNullOrEmpty(dtFechaVencimiento.Text))
             {
                 CajaDialogo.Error("Es obligatorio llenar la fecha de vencimiento de la materia prima!");
@@ -268,18 +263,7 @@ namespace LOSA.Logistica
                 }
             }
 
-            ////crear lote mp
-            ////[]
-            //try
-            //{
-                
-            //}
-            //catch (Exception ec)
-            //{
-            //    CajaDialogo.Error(ec.Message);
-            //}
-
-
+          
             if (CantGuardo > 0)
             {
                 CajaDialogo.Information("Datos guardados exitosamente!");
@@ -290,8 +274,7 @@ namespace LOSA.Logistica
         private void slueMP_EditValueChanged(object sender, EventArgs e)
         {
            
-                 //txtMP_Name.Text = slueMP.Text;
-                this.ItemCode = slueMP.EditValue.ToString();
+                     this.ItemCode = slueMP.EditValue.ToString();
 
         }
 
@@ -346,6 +329,11 @@ namespace LOSA.Logistica
                     dsLogistica2.AcceptChanges();
                 }
             }
+        }
+
+        private void xfrmMP_Reproceso_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

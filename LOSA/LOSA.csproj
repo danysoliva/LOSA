@@ -200,6 +200,12 @@
     <Compile Include="AlmacenesExterno\Reporteria\xsr_traslado_lotes.Designer.cs">
       <DependentUpon>xsr_traslado_lotes.cs</DependentUpon>
     </Compile>
+    <Compile Include="AlmacenesExterno\Salida Almacen\frmIngresoSeleccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlmacenesExterno\Salida Almacen\frmIngresoSeleccion.Designer.cs">
+      <DependentUpon>frmIngresoSeleccion.cs</DependentUpon>
+    </Compile>
     <Compile Include="AlmacenesExterno\Salida Almacen\Models\Ingresos_Externos_D.cs" />
     <Compile Include="AlmacenesExterno\Salida Almacen\Models\Salida_Externa_Lote.cs" />
     <Compile Include="AlmacenesExterno\Salida Almacen\xfrmConfLotesSalidaAlmacen.cs">
@@ -296,6 +302,12 @@
     <Compile Include="Calidad\frmaddcausa.Designer.cs">
       <DependentUpon>frmaddcausa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\frmAdjuntarImagen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmAdjuntarImagen.Designer.cs">
+      <DependentUpon>frmAdjuntarImagen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\frmcalidad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -343,6 +355,12 @@
     </Compile>
     <Compile Include="Calidad\frmInfoAdicional.Designer.cs">
       <DependentUpon>frmInfoAdicional.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\frmInformacionIngresoCalidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmInformacionIngresoCalidad.Designer.cs">
+      <DependentUpon>frmInformacionIngresoCalidad.cs</DependentUpon>
     </Compile>
     <Compile Include="Calidad\frmInsectosMantenimiento.cs">
       <SubType>Form</SubType>
@@ -451,6 +469,12 @@
     </Compile>
     <Compile Include="Calidad\frmreporte_trazabilidad.Designer.cs">
       <DependentUpon>frmreporte_trazabilidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\frmRespuestasCalidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmRespuestasCalidad.Designer.cs">
+      <DependentUpon>frmRespuestasCalidad.cs</DependentUpon>
     </Compile>
     <Compile Include="Calidad\frmretencionadd.cs">
       <SubType>Form</SubType>
@@ -1963,6 +1987,9 @@
     <EmbeddedResource Include="AlmacenesExterno\Reporteria\xsr_traslado_lotes.resx">
       <DependentUpon>xsr_traslado_lotes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AlmacenesExterno\Salida Almacen\frmIngresoSeleccion.resx">
+      <DependentUpon>frmIngresoSeleccion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AlmacenesExterno\Salida Almacen\xfrmConfLotesSalidaAlmacen.resx">
       <DependentUpon>xfrmConfLotesSalidaAlmacen.cs</DependentUpon>
     </EmbeddedResource>
@@ -2002,6 +2029,9 @@
     <EmbeddedResource Include="Calidad\frmaddcausa.resx">
       <DependentUpon>frmaddcausa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmAdjuntarImagen.resx">
+      <DependentUpon>frmAdjuntarImagen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmcalidad.resx">
       <DependentUpon>frmcalidad.cs</DependentUpon>
     </EmbeddedResource>
@@ -2025,6 +2055,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmInfoAdicional.resx">
       <DependentUpon>frmInfoAdicional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmInformacionIngresoCalidad.resx">
+      <DependentUpon>frmInformacionIngresoCalidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmInsectosMantenimiento.resx">
       <DependentUpon>frmInsectosMantenimiento.cs</DependentUpon>
@@ -2079,6 +2112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmreporte_trazabilidad.resx">
       <DependentUpon>frmreporte_trazabilidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmRespuestasCalidad.resx">
+      <DependentUpon>frmRespuestasCalidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmretencionadd.resx">
       <DependentUpon>frmretencionadd.cs</DependentUpon>

@@ -161,6 +161,18 @@ namespace LOSA.Calidad
                 dr.Close();
                 cn.Close();
 
+                cn = new SqlConnection(dp.ConnectionStringLOSA);
+                cn.Open();
+                query = @"sp_load_parametros_nir_to_edit";
+                cmd = new SqlCommand(query,cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue(@"@idmp", idmp);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                dsMantenimientoC.Data.Clear();
+                da.Fill(dsMantenimientoC.Data);
+                cn.Close();
+
+
 
             }
             catch (Exception ex)
@@ -357,9 +369,55 @@ namespace LOSA.Calidad
 
             try
             {
-                string query = @"";
+                string query = @"sp_insert_into_parametros_calidad_mp";
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_mp",idmp);
+                cmd.Parameters.AddWithValue("@id_criterio_color", grd_color.EditValue);
+                cmd.Parameters.AddWithValue("@id_criterio_grumos", grd_grumos.EditValue);
+                cmd.Parameters.AddWithValue("@id_criterio_insectos", grd_insectos.EditValue);
+                cmd.Parameters.AddWithValue("@id_criterio_olor", grd_olor.EditValue);
+                cmd.Parameters.AddWithValue("@id_criterio_textura", grd_textura.EditValue);
+                cmd.Parameters.AddWithValue("@id_criterio_pais", grd_origen.EditValue);
+                cmd.ExecuteNonQuery();
+
+
+                query = @"sp_delete_all_parametros_nir";
+                cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_mp", idmp);
+                cmd.ExecuteNonQuery();
+
+                foreach (dsMantenimientoC.DataRow row in dsMantenimientoC.Data.Rows)
+                {
+                    query = @"sp_insert_new_parametro_validacion";
+                    cmd = new SqlCommand(query, cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id_mp", idmp);
+                    cmd.Parameters.AddWithValue("@maximo", row.Maximo);
+                    cmd.Parameters.AddWithValue("@minimo", row.Minimo);
+                    cmd.Parameters.AddWithValue("@id_bromatologia", row.Parametro);
+                    cmd.ExecuteNonQuery();
+                }
+
+                CajaDialogo.Information("Se ha registrado toda la informacion.");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                grdv_data.DeleteRow(grdv_data.FocusedRowHandle);
+               
             }
             catch (Exception ex)
             {

@@ -616,5 +616,10 @@ namespace LOSA.Trazabilidad
                 frm.Show();
             }
         }
+
+        private void cmdAbrir_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

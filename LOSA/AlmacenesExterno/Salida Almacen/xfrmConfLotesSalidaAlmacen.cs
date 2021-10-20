@@ -353,13 +353,19 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
                 xrpt_Main_traslado_almacen report = new xrpt_Main_traslado_almacen();
                 report.Parameters["id_h"].Value = id_salida_h;
 
+
                 using (ReportPrintTool printTool = new ReportPrintTool(report))
                 {
                     // Send the report to the default printer.
                     printTool.ShowPreviewDialog();
                 }
 
-                       //Generar Ingreso.
+                //Generar Ingreso.
+
+                //frmOpcionIngreso frm = new frmOpcionIngreso();
+
+
+
 
             }
             catch (Exception ex)

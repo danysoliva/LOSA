@@ -26,6 +26,7 @@ namespace LOSA.RecepcionMP
         string ItemCode;
         UserLogin UsuarioLogeado;
         decimal factor;
+        int id_transferencia;
         public frmTarima(UserLogin pUser)
         {
             InitializeComponent();
@@ -35,6 +36,22 @@ namespace LOSA.RecepcionMP
             UsuarioLogeado = pUser;
             LoadPresentaciones();
             LoadNumeroTransaccion();
+        }
+
+        public frmTarima(UserLogin pUser,
+            int id_mp,
+            int  pid_transferencia)
+        {
+            InitializeComponent();
+            DataOperations dp = new DataOperations();
+            dtFechaIngreso.EditValue = dp.dNow();
+            dtFechaVencimiento.Properties.MinValue = dtFechaIngreso.Properties.MinValue = dp.Now();
+            UsuarioLogeado = pUser;
+            LoadPresentaciones();
+            LoadNumeroTransaccion();
+            IdMP = id_mp;
+            id_transferencia = pid_transferencia;
+
         }
 
         private void LoadNumeroTransaccion()
