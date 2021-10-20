@@ -165,11 +165,11 @@ namespace LOSA.Logistica
                 return;
             }
 
-            if (string.IsNullOrEmpty(txtLote.Text))
-            {
-                CajaDialogo.Error("Es obligatorio llenar el lote para la tarima!");
-                return;
-            }
+            //if (string.IsNullOrEmpty(txtLote.Text))
+            //{
+            //    CajaDialogo.Error("Es obligatorio llenar el lote para la tarima!");
+            //    return;
+            //}
 
             if (string.IsNullOrEmpty(dtFechaVencimiento.Text))
             {
@@ -193,6 +193,15 @@ namespace LOSA.Logistica
                 return;
             }
 
+
+            //generar string de lote
+            string lote_string = "Lote(s) PT:";
+            foreach (dsLogistica2.lote_selectedRow row in dsLogistica2.lote_selected.Rows)
+            {
+                lote_string += "  " + row.lote.ToString();
+            }
+            
+
             int CantGuardo = 0;
             //ArrayList Lista = new ArrayList();
             for (int i = 1; i <= cantTarimas; i++)
@@ -208,6 +217,8 @@ namespace LOSA.Logistica
                     cmm.Parameters.AddWithValue("@id", 1);
                     string barcode = cmm.ExecuteScalar().ToString();
 
+                    
+
                     SqlCommand cmd = new SqlCommand("sp_insert_new_tarima_sin_boleta_mp", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@itemcode", this.ItemCode);
@@ -216,7 +227,7 @@ namespace LOSA.Logistica
                     cmd.Parameters.AddWithValue("@numero_transaccion", txtNumIngreso.Text);
                     cmd.Parameters.AddWithValue("@fecha_vencimiento", dtFechaVencimiento.EditValue);
                     cmd.Parameters.AddWithValue("@fecha_produccion_materia_prima", dtFechaProduccion.EditValue);
-                    cmd.Parameters.AddWithValue("@lote_materia_prima", txtLote.Text);
+                    cmd.Parameters.AddWithValue("@lote_materia_prima", lote_string);
                     cmd.Parameters.AddWithValue("@id_presentacion", gridLookUpEditPresentacion.EditValue);
                     cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
                     cmd.Parameters.AddWithValue("@id_tipo_transaccion_kardex", glTipoTransaccion.EditValue);
@@ -225,6 +236,9 @@ namespace LOSA.Logistica
                     cmd.Parameters.AddWithValue("@peso", txtPeso.Text);
                     //Lista.Add(Convert.ToInt32(cmd.ExecuteScalar()));
                     cmd.ExecuteScalar();
+
+                    
+
                     CantGuardo++;
                     con.Close();
                     //CajaDialogo.InformationAuto();
@@ -236,7 +250,44 @@ namespace LOSA.Logistica
                 }
             }
 
+            //crear lote mp
+            //[]
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
 
+                SqlCommand cmd = new SqlCommand("sp_insert_ingresos", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@numero_transaccion", txtNumIngreso.Text);
+                cmd.Parameters.AddWithValue("@itemcode", this.ItemCode);
+                cmd.Parameters.AddWithValue("@itemname", slueMP.Text);
+                cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
+                cmd.Parameters.AddWithValue("@cardcode", DBNull.Value);
+                cmd.Parameters.AddWithValue("@cardname", DBNull.Value);
+                cmd.Parameters.AddWithValue("@id_boleta", DBNull.Value);
+                cmd.Parameters.AddWithValue("@lote_materia_prima", lote_string);
+                cmd.Parameters.AddWithValue("@cant", txtCantidadT.Text);
+                cmd.Parameters.AddWithValue("@TotalTarimas", cantTarimas);
+                cmd.Parameters.AddWithValue("@pesotaria", 0);
+                cmd.Parameters.AddWithValue("@fecha_ingreso", dtFechaIngreso.EditValue);
+                cmd.Parameters.AddWithValue("@id_presentacion", gridLookUpEditPresentacion.EditValue);
+
+                //cmd.Parameters.AddWithValue("@id_proveedor", DBNull.Value);
+                //cmd.Parameters.AddWithValue("@fecha_vencimiento", dtFechaVencimiento.EditValue);
+                //cmd.Parameters.AddWithValue("@fecha_produccion_materia_prima", dtFechaProduccion.EditValue);
+                //cmd.Parameters.AddWithValue("@id_tipo_transaccion_kardex", glTipoTransaccion.EditValue);
+                //cmd.Parameters.AddWithValue("@codigo_barra", barcode);
+                //cmd.Parameters.AddWithValue("@peso", txtPeso.Text);
+                //Lista.Add(Convert.ToInt32(cmd.ExecuteScalar()));
+                cmd.ExecuteScalar();
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
 
 
             if (CantGuardo > 0)
@@ -286,6 +337,23 @@ namespace LOSA.Logistica
                     decimal peso = Factor * txtCantidadT.Value;
                     txtPeso.Text = string.Format("{0:###,##0.00}", peso);
                     break;
+                }
+            }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            //Buscar Lote
+            xfrmBuscarLotePT frm = new xfrmBuscarLotePT();
+            if(frm.ShowDialog() == DialogResult.OK)
+            {
+                dsLogistica2.lote_selected.Clear();
+                foreach (int LoteSelected in frm.ListaLotesInt)
+                {
+                    dsLogistica2.lote_selectedRow rowLoteNew = dsLogistica2.lote_selected.Newlote_selectedRow();
+                    rowLoteNew.lote = LoteSelected;
+                    dsLogistica2.lote_selected.Addlote_selectedRow(rowLoteNew);
+                    dsLogistica2.AcceptChanges();
                 }
             }
         }

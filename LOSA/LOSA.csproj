@@ -764,6 +764,12 @@
       <DependentUpon>frmTrazabilidadLote.cs</DependentUpon>
     </Compile>
     <Compile Include="Logistica\Models\Producto_Terminado.cs" />
+    <Compile Include="Logistica\xfrmBuscarLotePT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\xfrmBuscarLotePT.Designer.cs">
+      <DependentUpon>xfrmBuscarLotePT.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logistica\xfrmMP_Reproceso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2208,6 +2214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Logistica\frmTrazabilidadLote.resx">
       <DependentUpon>frmTrazabilidadLote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\xfrmBuscarLotePT.resx">
+      <DependentUpon>xfrmBuscarLotePT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logistica\xfrmMP_Reproceso.resx">
       <DependentUpon>xfrmMP_Reproceso.cs</DependentUpon>
