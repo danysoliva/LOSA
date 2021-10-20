@@ -217,9 +217,26 @@ namespace LOSA.Logistica
                     cmm.Parameters.AddWithValue("@id", 1);
                     string barcode = cmm.ExecuteScalar().ToString();
 
-                    
+                    SqlCommand cmd1 = new SqlCommand("sp_insert_ingresos", con);
+                    cmd1.CommandType = CommandType.StoredProcedure;
+                    cmd1.Parameters.AddWithValue("@numero_transaccion", txtNumIngreso.Text);
+                    cmd1.Parameters.AddWithValue("@itemcode", this.ItemCode);
+                    cmd1.Parameters.AddWithValue("@itemname", slueMP.Text);
+                    cmd1.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
+                    cmd1.Parameters.AddWithValue("@cardcode", DBNull.Value);
+                    cmd1.Parameters.AddWithValue("@cardname", DBNull.Value);
+                    cmd1.Parameters.AddWithValue("@id_boleta", DBNull.Value);
+                    cmd1.Parameters.AddWithValue("@lote_materia_prima", lote_string);
+                    cmd1.Parameters.AddWithValue("@cant", txtCantidadT.Text);
+                    cmd1.Parameters.AddWithValue("@TotalTarimas", cantTarimas);
+                    cmd1.Parameters.AddWithValue("@pesotaria", 0);
+                    cmd1.Parameters.AddWithValue("@fecha_ingreso", dtFechaIngreso.EditValue);
+                    cmd1.Parameters.AddWithValue("@id_presentacion", gridLookUpEditPresentacion.EditValue);
+                    int id_ingreso_ = Convert.ToInt32(cmd1.ExecuteScalar());
+                    con.Close();
 
-                    SqlCommand cmd = new SqlCommand("sp_insert_new_tarima_sin_boleta_mp", con);
+
+                    SqlCommand cmd = new SqlCommand("[sp_insert_new_tarima_sin_boleta_mp_v2]", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@itemcode", this.ItemCode);
                     cmd.Parameters.AddWithValue("@id_proveedor", DBNull.Value);
@@ -234,6 +251,7 @@ namespace LOSA.Logistica
                     cmd.Parameters.AddWithValue("@codigo_barra", barcode);
                     cmd.Parameters.AddWithValue("@cant", txtCantidadT.Text);
                     cmd.Parameters.AddWithValue("@peso", txtPeso.Text);
+                    cmd.Parameters.AddWithValue("@id_ingreso", id_ingreso_);
                     //Lista.Add(Convert.ToInt32(cmd.ExecuteScalar()));
                     cmd.ExecuteScalar();
 
@@ -254,35 +272,7 @@ namespace LOSA.Logistica
             //[]
             try
             {
-                DataOperations dp = new DataOperations();
-                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                con.Open();
-
-                SqlCommand cmd = new SqlCommand("sp_insert_ingresos", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@numero_transaccion", txtNumIngreso.Text);
-                cmd.Parameters.AddWithValue("@itemcode", this.ItemCode);
-                cmd.Parameters.AddWithValue("@itemname", slueMP.Text);
-                cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
-                cmd.Parameters.AddWithValue("@cardcode", DBNull.Value);
-                cmd.Parameters.AddWithValue("@cardname", DBNull.Value);
-                cmd.Parameters.AddWithValue("@id_boleta", DBNull.Value);
-                cmd.Parameters.AddWithValue("@lote_materia_prima", lote_string);
-                cmd.Parameters.AddWithValue("@cant", txtCantidadT.Text);
-                cmd.Parameters.AddWithValue("@TotalTarimas", cantTarimas);
-                cmd.Parameters.AddWithValue("@pesotaria", 0);
-                cmd.Parameters.AddWithValue("@fecha_ingreso", dtFechaIngreso.EditValue);
-                cmd.Parameters.AddWithValue("@id_presentacion", gridLookUpEditPresentacion.EditValue);
-
-                //cmd.Parameters.AddWithValue("@id_proveedor", DBNull.Value);
-                //cmd.Parameters.AddWithValue("@fecha_vencimiento", dtFechaVencimiento.EditValue);
-                //cmd.Parameters.AddWithValue("@fecha_produccion_materia_prima", dtFechaProduccion.EditValue);
-                //cmd.Parameters.AddWithValue("@id_tipo_transaccion_kardex", glTipoTransaccion.EditValue);
-                //cmd.Parameters.AddWithValue("@codigo_barra", barcode);
-                //cmd.Parameters.AddWithValue("@peso", txtPeso.Text);
-                //Lista.Add(Convert.ToInt32(cmd.ExecuteScalar()));
-                cmd.ExecuteScalar();
-                con.Close();
+                
             }
             catch (Exception ec)
             {
