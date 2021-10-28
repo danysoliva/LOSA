@@ -16,15 +16,11 @@ namespace LOSA.Clases
         private int id;
         private int idGrupo;
         private string nombreUser;
-        private string ADuser;
-        private string pass;
 
         public bool Recuperado { get => recuperado; set => recuperado = value; }
         public int Id { get => id; set => id = value; }
         public int IdGrupo { get => idGrupo; set => idGrupo = value; }
         public string NombreUser { get => nombreUser; set => nombreUser = value; }
-        public string ADuser1 { get => ADuser; set => ADuser = value; }
-        public string Pass { get => pass; set => pass = value; }
 
         public UserLogin()
         {
@@ -40,8 +36,7 @@ namespace LOSA.Clases
                 con.Open();
                 string sql = @"SELECT top 1 id, 
                                        nombre, 
-	                                   id_grupo_losa,
-                                       ADUser
+	                                   id_grupo_losa
                                 FROM [ACS].dbo.conf_usuarios 
                                 where [usuario] ='" + pUser + "'";
                 SqlCommand cmd = new SqlCommand(sql, con);
@@ -52,7 +47,6 @@ namespace LOSA.Clases
                     Id = dr.GetInt32(0);
                     nombreUser = dr.GetString(1);
                     idGrupo = dr.GetInt32(2);
-                    ADuser = dr.GetString(3);
                     recuperado = true;
                 }
                 dr.Close();

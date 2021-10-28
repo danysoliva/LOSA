@@ -28,27 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions9 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLoteActvoGranel));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject33 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject34 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject35 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject36 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions10 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject37 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject38 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject39 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject40 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions12 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject45 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject46 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject47 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject48 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions11 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject41 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject42 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject43 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject44 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.dsRecepcionMPx1 = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -64,10 +64,6 @@
             this.cmdEditar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colitem_code = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colfecha_prod = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colfecha_vence = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcompletar = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cmdCompletar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.cmdEditBarco = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
@@ -83,15 +79,18 @@
             this.cmdActivar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colitem_code1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmdNuevoLote = new DevExpress.XtraEditors.SimpleButton();
+            this.colcompletar = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha_prod = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha_vence = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmdCompletar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colfecha_prod1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfecha_vence1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cmdNuevoLote = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdDesactivar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdEditar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdCompletar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdEditBarco)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
@@ -101,6 +100,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdActivar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdCompletar)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -195,9 +195,9 @@
             // cmdDesactivar
             // 
             this.cmdDesactivar.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions9.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions9.Image")));
             this.cmdDesactivar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions9, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject33, serializableAppearanceObject34, serializableAppearanceObject35, serializableAppearanceObject36, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdDesactivar.Name = "cmdDesactivar";
             this.cmdDesactivar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdDesactivar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdDesactivar_ButtonClick);
@@ -219,9 +219,9 @@
             // cmdEditar
             // 
             this.cmdEditar.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions10.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions10.Image")));
             this.cmdEditar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions10, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject37, serializableAppearanceObject38, serializableAppearanceObject39, serializableAppearanceObject40, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdEditar.Name = "cmdEditar";
             this.cmdEditar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdEditar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdEditar_ButtonClick);
@@ -246,44 +246,6 @@
             this.coldescripcion.VisibleIndex = 1;
             this.coldescripcion.Width = 194;
             // 
-            // colfecha_prod
-            // 
-            this.colfecha_prod.Caption = "Fecha Producción";
-            this.colfecha_prod.FieldName = "fecha_prod";
-            this.colfecha_prod.Name = "colfecha_prod";
-            this.colfecha_prod.Visible = true;
-            this.colfecha_prod.VisibleIndex = 3;
-            this.colfecha_prod.Width = 101;
-            // 
-            // colfecha_vence
-            // 
-            this.colfecha_vence.Caption = "Fecha Vencimiento";
-            this.colfecha_vence.FieldName = "fecha_vence";
-            this.colfecha_vence.Name = "colfecha_vence";
-            this.colfecha_vence.Visible = true;
-            this.colfecha_vence.VisibleIndex = 4;
-            this.colfecha_vence.Width = 93;
-            // 
-            // colcompletar
-            // 
-            this.colcompletar.Caption = "Completar";
-            this.colcompletar.ColumnEdit = this.cmdCompletar;
-            this.colcompletar.FieldName = "completar";
-            this.colcompletar.Name = "colcompletar";
-            this.colcompletar.Visible = true;
-            this.colcompletar.VisibleIndex = 6;
-            this.colcompletar.Width = 63;
-            // 
-            // cmdCompletar
-            // 
-            this.cmdCompletar.AutoHeight = false;
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
-            this.cmdCompletar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.cmdCompletar.Name = "cmdCompletar";
-            this.cmdCompletar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.cmdCompletar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdCompletar_ButtonClick);
-            // 
             // cmdEditBarco
             // 
             this.cmdEditBarco.AutoHeight = false;
@@ -293,9 +255,6 @@
             // 
             // xtraTabControl1
             // 
-            this.xtraTabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.xtraTabControl1.Location = new System.Drawing.Point(5, 33);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
@@ -398,9 +357,9 @@
             // cmdActivar
             // 
             this.cmdActivar.AutoHeight = false;
-            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
+            editorButtonImageOptions12.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions12.Image")));
             this.cmdActivar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions12, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject45, serializableAppearanceObject46, serializableAppearanceObject47, serializableAppearanceObject48, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdActivar.Name = "cmdActivar";
             this.cmdActivar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdActivar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdActivar_ButtonClick);
@@ -425,6 +384,61 @@
             this.coldescripcion1.VisibleIndex = 1;
             this.coldescripcion1.Width = 235;
             // 
+            // cmdNuevoLote
+            // 
+            this.cmdNuevoLote.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdNuevoLote.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.cmdNuevoLote.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdNuevoLote.Appearance.Options.UseBackColor = true;
+            this.cmdNuevoLote.Appearance.Options.UseFont = true;
+            this.cmdNuevoLote.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdNuevoLote.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdNuevoLote.ImageOptions.Image")));
+            this.cmdNuevoLote.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.cmdNuevoLote.Location = new System.Drawing.Point(668, 12);
+            this.cmdNuevoLote.Name = "cmdNuevoLote";
+            this.cmdNuevoLote.Size = new System.Drawing.Size(125, 38);
+            this.cmdNuevoLote.TabIndex = 11;
+            this.cmdNuevoLote.Text = "Nuevo Lote";
+            this.cmdNuevoLote.Click += new System.EventHandler(this.cmdNuevoLote_Click);
+            // 
+            // colcompletar
+            // 
+            this.colcompletar.Caption = "Completar";
+            this.colcompletar.ColumnEdit = this.cmdCompletar;
+            this.colcompletar.FieldName = "completar";
+            this.colcompletar.Name = "colcompletar";
+            this.colcompletar.Visible = true;
+            this.colcompletar.VisibleIndex = 6;
+            this.colcompletar.Width = 63;
+            // 
+            // colfecha_prod
+            // 
+            this.colfecha_prod.Caption = "Fecha Producción";
+            this.colfecha_prod.FieldName = "fecha_prod";
+            this.colfecha_prod.Name = "colfecha_prod";
+            this.colfecha_prod.Visible = true;
+            this.colfecha_prod.VisibleIndex = 3;
+            this.colfecha_prod.Width = 101;
+            // 
+            // colfecha_vence
+            // 
+            this.colfecha_vence.Caption = "Fecha Vencimiento";
+            this.colfecha_vence.FieldName = "fecha_vence";
+            this.colfecha_vence.Name = "colfecha_vence";
+            this.colfecha_vence.Visible = true;
+            this.colfecha_vence.VisibleIndex = 4;
+            this.colfecha_vence.Width = 93;
+            // 
+            // cmdCompletar
+            // 
+            this.cmdCompletar.AutoHeight = false;
+            editorButtonImageOptions11.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions11.Image")));
+            this.cmdCompletar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions11, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject41, serializableAppearanceObject42, serializableAppearanceObject43, serializableAppearanceObject44, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.cmdCompletar.Name = "cmdCompletar";
+            this.cmdCompletar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.cmdCompletar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdCompletar_ButtonClick);
+            // 
             // colfecha_prod1
             // 
             this.colfecha_prod1.Caption = "Fecha Producción";
@@ -445,23 +459,6 @@
             this.colfecha_vence1.VisibleIndex = 4;
             this.colfecha_vence1.Width = 120;
             // 
-            // cmdNuevoLote
-            // 
-            this.cmdNuevoLote.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmdNuevoLote.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.cmdNuevoLote.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdNuevoLote.Appearance.Options.UseBackColor = true;
-            this.cmdNuevoLote.Appearance.Options.UseFont = true;
-            this.cmdNuevoLote.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdNuevoLote.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdNuevoLote.ImageOptions.Image")));
-            this.cmdNuevoLote.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.cmdNuevoLote.Location = new System.Drawing.Point(668, 12);
-            this.cmdNuevoLote.Name = "cmdNuevoLote";
-            this.cmdNuevoLote.Size = new System.Drawing.Size(125, 38);
-            this.cmdNuevoLote.TabIndex = 11;
-            this.cmdNuevoLote.Text = "Nuevo Lote";
-            this.cmdNuevoLote.Click += new System.EventHandler(this.cmdNuevoLote_Click);
-            // 
             // frmLoteActvoGranel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -476,7 +473,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdDesactivar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdEditar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdCompletar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdEditBarco)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
@@ -486,6 +482,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdActivar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdCompletar)).EndInit();
             this.ResumeLayout(false);
 
         }

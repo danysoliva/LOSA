@@ -11,7 +11,6 @@ using DevExpress.XtraEditors;
 using System.Data.SqlClient;
 using LOSA.Clases;
 using ACS.Classes;
-using DevExpress.XtraGrid.Views.Grid;
 
 namespace LOSA.Calidad
 {
@@ -61,7 +60,7 @@ namespace LOSA.Calidad
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            frmretencionadd frm = new frmretencionadd(Tipo_tarima);
+            frmretencionadd frm = new frmretencionadd(1);
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 int id = frm.id;
@@ -107,6 +106,7 @@ namespace LOSA.Calidad
                 dsCalidad.Tarimas.Clear();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dsCalidad.Tarimas);     
+
                 foreach (dsCalidad.TarimasRow row in dsCalidad.Tarimas.Rows)
                 {
                     cmd = new SqlCommand("sp_set_update_tarima_estado_calidad", cn);
@@ -114,6 +114,7 @@ namespace LOSA.Calidad
                     cmd.Parameters.AddWithValue("@id_estado", 3);
                     cmd.Parameters.AddWithValue("@id", row.IdTM);
                     cmd.ExecuteNonQuery();
+
                     foreach (dsCalidad.causaaddRow row2 in dsCalidad.causaadd.Rows)
                     {
                         cmd = new SqlCommand("sp_insert_into_calidad_tarimas", cn);
@@ -135,26 +136,6 @@ namespace LOSA.Calidad
             catch (Exception ex)
             {
                 CajaDialogo.Error(ex.Message);
-            }
-        }
-
-        private void btneliminar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var gridview = (GridView)grd_causa.FocusedView;
-                var row = (dsCalidad.causaaddRow)gridview.GetFocusedDataRow();
-                foreach (DataRow item in dsCalidad.causaadd.Rows)
-                {
-                    if (Convert.ToInt32(item["id"]) == row.id)
-                    {
-                        item.Delete();
-                    }
-                }
-                dsCalidad.causaadd.AcceptChanges();
-            }
-            catch (Exception ex)
-            {
             }
         }
     }

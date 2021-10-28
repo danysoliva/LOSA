@@ -44,26 +44,6 @@ namespace LOSA.Despachos
                 CajaDialogo.Error(ex.Message);
             }
         }
-        public void load_activas()
-        {
-            string query = @"sp_load_info_operador_pt_despachos_todos";
-            SqlConnection CN = new SqlConnection(dp.ConnectionStringLOSA);
-            try
-            {
-                CN.Open();
-                SqlCommand cmd = new SqlCommand(query, CN);
-                cmd.CommandType = CommandType.StoredProcedure;
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                ds_despachos.op_despachos.Clear();
-                da.Fill(ds_despachos.op_despachos);
-                CN.Close();
-            }
-            catch (Exception ex)
-            {
-
-                CajaDialogo.Error(ex.Message);
-            }
-        }
 
         private void cmdHome_Click(object sender, EventArgs e)
         {
@@ -79,51 +59,7 @@ namespace LOSA.Despachos
             frm_entregarTarimaPT frm = new frm_entregarTarimaPT(row.id,row.DespachoN);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                load_data();
-            }
-        }
 
-        private void btnSeguimiento_Click(object sender, EventArgs e)
-        {
-            var gridView = (GridView)grd_data.FocusedView;
-            var row = (ds_despachos.op_despachosRow)gridView.GetFocusedDataRow();
-
-            frm_viewEntrega frm = new frm_viewEntrega(row.id);
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-
-            }
-            
-        }
-
-        private void tgg_ver_Toggled(object sender, EventArgs e)
-        {
-            if (tgg_ver.IsOn)
-            {    //ver todas
-                load_activas();
-            }
-            else
-            {  //ver solo activas
-                load_data();
-            }
-        }
-
-        private void grdv_data_RowStyle(object sender, RowStyleEventArgs e)
-        {
-            var gridView = (GridView)grd_data.FocusedView;
-            var row = (ds_despachos.op_despachosRow)gridView.GetDataRow(e.RowHandle);
-            if (e.RowHandle >= 0)
-            {
-
-                if (row.activo)
-                {
-                    e.Appearance.BackColor = Color.FromArgb(240, 240, 240);
-
-                }
-                else
-                {
-                    e.Appearance.BackColor = Color.FromArgb(77, 201, 176);
-                }
             }
         }
     }

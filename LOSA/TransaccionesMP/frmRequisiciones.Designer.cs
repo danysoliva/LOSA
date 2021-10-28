@@ -65,15 +65,12 @@
             this.btnimprimir = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colFinalizar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnend = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.colfinalizado = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.tggView = new DevExpress.XtraEditors.ToggleSwitch();
             ((System.ComponentModel.ISupportInitialize)(this.grRequisicoinesMP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTarimas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnVerD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnimprimir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnend)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tggView.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAtras
@@ -165,8 +162,7 @@
             this.gridColumn1,
             this.colcomentario,
             this.colimprimir,
-            this.colFinalizar,
-            this.colfinalizado});
+            this.colFinalizar});
             this.gvTarimas.DetailHeight = 284;
             this.gvTarimas.GridControl = this.grRequisicoinesMP;
             this.gvTarimas.Name = "gvTarimas";
@@ -315,7 +311,7 @@
             // 
             // colFinalizar
             // 
-            this.colFinalizar.Caption = "Finalizar/Habilitar";
+            this.colFinalizar.Caption = "Finalizar";
             this.colFinalizar.ColumnEdit = this.btnend;
             this.colFinalizar.Name = "colFinalizar";
             this.colFinalizar.Visible = true;
@@ -332,24 +328,6 @@
             this.btnend.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnend.Click += new System.EventHandler(this.btnend_Click);
             // 
-            // colfinalizado
-            // 
-            this.colfinalizado.FieldName = "finalizado";
-            this.colfinalizado.Name = "colfinalizado";
-            // 
-            // tggView
-            // 
-            this.tggView.EditValue = true;
-            this.tggView.Location = new System.Drawing.Point(12, 12);
-            this.tggView.Name = "tggView";
-            this.tggView.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tggView.Properties.Appearance.Options.UseFont = true;
-            this.tggView.Properties.OffText = "Ver todas";
-            this.tggView.Properties.OnText = "Solo Activas";
-            this.tggView.Size = new System.Drawing.Size(232, 30);
-            this.tggView.TabIndex = 36;
-            this.tggView.Toggled += new System.EventHandler(this.tggView_Toggled);
-            // 
             // frmRequisiciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -357,7 +335,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(638, 560);
             this.ControlBox = false;
-            this.Controls.Add(this.tggView);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.grRequisicoinesMP);
@@ -370,7 +347,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnVerD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnimprimir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnend)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tggView.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -398,7 +374,5 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnimprimir;
         private DevExpress.XtraGrid.Columns.GridColumn colFinalizar;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnend;
-        private DevExpress.XtraEditors.ToggleSwitch tggView;
-        private DevExpress.XtraGrid.Columns.GridColumn colfinalizado;
     }
 }

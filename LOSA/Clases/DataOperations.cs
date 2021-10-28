@@ -88,16 +88,12 @@ namespace ACS.Classes
                                                  User Id=" + Globals.odoo4_DB_User + @";
                                                  Password=" + Globals.odoo4_DB_Pass + @";";
 
-        internal string FTP_Tickets_LOSA = @"ftp://10.50.11.32/ALOSY/";
-        internal string User_FTP_Server = "roger.euceda";
-        internal string Password_UserFTPServer = "Aqua2021?";
-
         //       internal string ConnectionStringPRININ = @"Server=" + Globals.prinin_ServerAddress + @";
         //                                                   Database=" + Globals.prinin_ActiveDB + @";
         //                                                   User Id=" + Globals.prinin_DB_User + @";
         //                                                   Password=" + Globals.prinin_DB_Pass + ";";
 
-
+    
 
         /// <summary>
         /// Objeto de conexion para SAP

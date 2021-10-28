@@ -67,7 +67,7 @@
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
               <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" minOccurs="0" />
-              <xs:element name="factor" msprop:Generator_ColumnVarNameInTable="columnfactor" msprop:Generator_ColumnPropNameInRow="factor" msprop:Generator_ColumnPropNameInTable="factorColumn" msprop:Generator_UserColumnName="factor" type="xs:decimal" minOccurs="0" />
+              <xs:element name="factor" msprop:Generator_ColumnVarNameInTable="columnfactor" msprop:Generator_ColumnPropNameInRow="factor" msprop:Generator_ColumnPropNameInTable="factorColumn" msprop:Generator_UserColumnName="factor" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -145,8 +145,6 @@
               <xs:element name="id_proveedor" msprop:Generator_ColumnVarNameInTable="columnid_proveedor" msprop:Generator_ColumnPropNameInRow="id_proveedor" msprop:Generator_ColumnPropNameInTable="id_proveedorColumn" msprop:Generator_UserColumnName="id_proveedor" type="xs:string" minOccurs="0" />
               <xs:element name="CardName" msprop:Generator_ColumnVarNameInTable="columnCardName" msprop:Generator_ColumnPropNameInRow="CardName" msprop:Generator_ColumnPropNameInTable="CardNameColumn" msprop:Generator_UserColumnName="CardName" type="xs:string" minOccurs="0" />
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
-              <xs:element name="tipo_ingreso" msprop:Generator_ColumnVarNameInTable="columntipo_ingreso" msprop:Generator_ColumnPropNameInRow="tipo_ingreso" msprop:Generator_ColumnPropNameInTable="tipo_ingresoColumn" msprop:Generator_UserColumnName="tipo_ingreso" type="xs:int" minOccurs="0" />
-              <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

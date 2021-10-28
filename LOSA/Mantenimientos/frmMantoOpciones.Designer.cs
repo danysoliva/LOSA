@@ -125,7 +125,7 @@
             this.cmdRegistroLote.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdRegistroLote.Appearance.Options.UseFont = true;
             this.cmdRegistroLote.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdRegistroLote.ImageOptions.Image = global::LOSA.Properties.Resources.edit_table_1_;
+            //this.cmdRegistroLote.ImageOptions.Image = global::LOSA.Properties.Resources.edit_table_1_;
             this.cmdRegistroLote.Location = new System.Drawing.Point(12, 98);
             this.cmdRegistroLote.Name = "cmdRegistroLote";
             this.cmdRegistroLote.Size = new System.Drawing.Size(199, 71);

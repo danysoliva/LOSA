@@ -35,7 +35,6 @@
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnDevoluciones = new DevExpress.XtraEditors.SimpleButton();
-            this.btnprueba = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -58,7 +57,7 @@
             this.cmdDetalleMP.ImageOptions.Image = global::LOSA.Properties.Resources.trucksss;
             this.cmdDetalleMP.Location = new System.Drawing.Point(323, 101);
             this.cmdDetalleMP.Name = "cmdDetalleMP";
-            this.cmdDetalleMP.Size = new System.Drawing.Size(274, 81);
+            this.cmdDetalleMP.Size = new System.Drawing.Size(274, 92);
             this.cmdDetalleMP.TabIndex = 15;
             this.cmdDetalleMP.Text = "Materia Prima entregada";
             this.cmdDetalleMP.Click += new System.EventHandler(this.cmdDetalleMP_Click);
@@ -100,9 +99,9 @@
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(323, 188);
+            this.simpleButton1.Location = new System.Drawing.Point(323, 222);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(274, 77);
+            this.simpleButton1.Size = new System.Drawing.Size(274, 88);
             this.simpleButton1.TabIndex = 19;
             this.simpleButton1.Text = "Requisas";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -112,23 +111,12 @@
             this.btnDevoluciones.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.btnDevoluciones.Appearance.Options.UseFont = true;
             this.btnDevoluciones.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDevoluciones.ImageOptions.Image")));
-            this.btnDevoluciones.Location = new System.Drawing.Point(323, 271);
+            this.btnDevoluciones.Location = new System.Drawing.Point(323, 344);
             this.btnDevoluciones.Name = "btnDevoluciones";
             this.btnDevoluciones.Size = new System.Drawing.Size(274, 88);
-            this.btnDevoluciones.TabIndex = 21;
+            this.btnDevoluciones.TabIndex = 20;
             this.btnDevoluciones.Text = "Devoluciones";
             this.btnDevoluciones.Click += new System.EventHandler(this.btnDevoluciones_Click);
-            // 
-            // btnprueba
-            // 
-            this.btnprueba.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.btnprueba.Appearance.Options.UseFont = true;
-            this.btnprueba.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnprueba.ImageOptions.Image")));
-            this.btnprueba.Location = new System.Drawing.Point(323, 365);
-            this.btnprueba.Name = "btnprueba";
-            this.btnprueba.Size = new System.Drawing.Size(274, 67);
-            this.btnprueba.TabIndex = 22;
-            this.btnprueba.Text = "Avance de requisas";
             // 
             // frmEntregaMontaCarga
             // 
@@ -136,7 +124,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(622, 521);
-            this.Controls.Add(this.btnprueba);
             this.Controls.Add(this.btnDevoluciones);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.cmdHome);
@@ -146,6 +133,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmEntregaMontaCarga";
             this.Text = "frmEntregaMontaCarga";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmEntregaMontaCarga_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -159,6 +147,5 @@
         private DevExpress.XtraEditors.SimpleButton cmdHome;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton btnDevoluciones;
-        private DevExpress.XtraEditors.SimpleButton btnprueba;
     }
 }

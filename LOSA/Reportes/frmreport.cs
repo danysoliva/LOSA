@@ -104,10 +104,7 @@ namespace LOSA.Reportes
 
         private void btnreportIngreso_Click(object sender, EventArgs e)
         {
-            //frnReporteingreso frm = new frnReporteingreso();
-            //frm.Show();
-
-            frmReporteIngreso_v2 frm = new frmReporteIngreso_v2();
+            frnReporteingreso frm = new frnReporteingreso();
             frm.Show();
         }
 
@@ -120,18 +117,6 @@ namespace LOSA.Reportes
         private void simpleButton4_Click(object sender, EventArgs e)
         {
             frm_print_TM_PT frm = new frm_print_TM_PT();
-            frm.Show();
-        }
-
-        private void simpleButton5_Click(object sender, EventArgs e)
-        {
-            frmrpt_productoterminado frm = new frmrpt_productoterminado();
-            frm.Show();
-        }
-
-        private void btnReporteRetenido_Click(object sender, EventArgs e)
-        {
-            frmReporteTMRetenidas frm = new frmReporteTMRetenidas();
             frm.Show();
         }
     }

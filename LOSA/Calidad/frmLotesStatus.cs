@@ -11,8 +11,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LOSA.Clases;
-using System.Collections;
-
 namespace LOSA.Calidad
 {
     public partial class frmLotesStatus : Form
@@ -25,7 +23,6 @@ namespace LOSA.Calidad
         public string CodigoP;
         public string Articulo;
         public int tipo_tm;
-        public int id_turno;
         public frmLotesStatus(UserLogin Puser)
         {
             InitializeComponent();
@@ -44,7 +41,7 @@ namespace LOSA.Calidad
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_tarimas_habilitadas_calidad_V3", con);
+                SqlCommand cmd = new SqlCommand("sp_get_tarimas_habilitadas_calidad", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 dsCalidad1.tarimas_disponibles.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
@@ -65,7 +62,7 @@ namespace LOSA.Calidad
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_tarimas_obs_calidad_v2", con);
+                SqlCommand cmd = new SqlCommand("sp_get_tarimas_obs_calidad", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 dsCalidad1.tarimas_obs.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
@@ -86,7 +83,7 @@ namespace LOSA.Calidad
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_tarimas_ret_calidad_v2", con);
+                SqlCommand cmd = new SqlCommand("sp_get_tarimas_ret_calidad", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 dsCalidad1.tarimas_ret.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
@@ -119,7 +116,6 @@ namespace LOSA.Calidad
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //Observacion
-            ArrayList array = Grid_Get_Selected_Items();
             UpdateEstado(2);
         }
 
@@ -129,86 +125,85 @@ namespace LOSA.Calidad
             //UpdateEstado(3);      
              int  id = 0;
 
-            ArrayList array = Grid_Get_Selected_Items();
-            int tipo_tm = 0;
-            int contadorTm_MP = 0;
-            int contadorTm_PT = 0;
-            foreach (DataRow item in array)
+            switch (gridActual)
             {
-                tipo_tm = Convert.ToInt32(item["id_tipotm"]);
-                if (tipo_tm == 1)
-                {
-                    contadorTm_MP = contadorTm_MP + 1;
-                }
-                else
-                {
-                    contadorTm_PT = contadorTm_PT + 1;
-                }
-                if (contadorTm_MP != 0)
-                {
-                    if (contadorTm_PT != 0)
-                    {
-                        CajaDialogo.Error("Solo puede seleccionar un tipo de tarima Ya sea producto terminado o Materia Prima");
-                        return;
-                    }
-                }
-                
+                case 1:
+                    var gridView = (GridView)grDisponibles.FocusedView;
+                    var row = (dsCalidad.tarimas_disponiblesRow)gridView.GetFocusedDataRow();
+                    id = row.id;
 
-            }
-            if (array.Count > 0)
-            {
-                frm_asiganacion_causas frm = new frm_asiganacion_causas(UsuarioLogeado, array);
-                if (frm.ShowDialog() == DialogResult.OK)
-                {
-
-                    LoadTarimasAvailables();
-                    LoadTarimasObs();
-                    LoadTarimasRet();
-                }
+                    break;
+                case 2:
+                    var gridView1 = (GridView)gridObservacion.FocusedView;
+                    var row1 = (dsCalidad.tarimas_obsRow)gridView1.GetFocusedDataRow();
+                    id = row1.id;
+                    break;
+                case 3:
+                    return;   
+                default:
+                    break;
             }
 
-         
+            frm_asiganacion_causas frm = new frm_asiganacion_causas(UsuarioLogeado, id );
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+
+                LoadTarimasAvailables();
+                LoadTarimasObs();
+                LoadTarimasRet();
+            }
         }
 
         void UpdateEstado(int pIdEstadoNew)
         {
             try
             {
+
                 DataOperations dp = new DataOperations();
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
                 int id = 0;
-                 ArrayList array = Grid_Get_Selected_Items();
-
-                if (array.Count > 0)
+                switch(gridActual)
                 {
-                    foreach (DataRow item in array)
-                    {
-                     
-
-                        if (pIdEstadoNew == 1)
-                        {
-                            SqlCommand command = new SqlCommand("sp_update_calidad_tarimas", con);
-                            command.CommandType = CommandType.StoredProcedure;
-                            command.Parameters.AddWithValue("@id_tarima", item["id"]);
-                            command.Parameters.AddWithValue("@user", UsuarioLogeado.Id);
-                            command.ExecuteNonQuery();
-                        }
-
-                        SqlCommand cmd = new SqlCommand("sp_set_update_tarima_estado_calidad", con);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@id_estado", pIdEstadoNew);
-                        cmd.Parameters.AddWithValue("@id", item["id"]);
-                        cmd.ExecuteNonQuery();
-                    }
-
-
-                    con.Close();
-                    LoadTarimasAvailables();
-                    LoadTarimasObs();
-                    LoadTarimasRet();
+                    case 1:
+                        var gridView = (GridView)grDisponibles.FocusedView;
+                        var row = (dsCalidad.tarimas_disponiblesRow)gridView.GetFocusedDataRow();
+                        id = row.id;
+                       
+                        break;
+                    case 2:
+                        var gridView1 = (GridView)gridObservacion.FocusedView;
+                        var row1 = (dsCalidad.tarimas_obsRow)gridView1.GetFocusedDataRow();
+                        id = row1.id;
+                        break;
+                    case 3:
+                        var gridView2 = (GridView)gridRetenidos.FocusedView;
+                        var row2 = (dsCalidad.tarimas_retRow)gridView2.GetFocusedDataRow();
+                        id = row2.id;
+                        break;
+                    default:
+                        break;
                 }
+
+                if (pIdEstadoNew == 1)
+                {
+                    SqlCommand command = new SqlCommand("sp_update_calidad_tarimas", con);
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@id_tarima", id);
+                    command.Parameters.AddWithValue("@user", UsuarioLogeado.Id);
+                    command.ExecuteNonQuery();
+                }
+
+                SqlCommand cmd = new SqlCommand("sp_set_update_tarima_estado_calidad", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_estado", pIdEstadoNew);
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                LoadTarimasAvailables();
+                LoadTarimasObs();
+                LoadTarimasRet();
             }
             catch (Exception ec)
             {
@@ -261,75 +256,6 @@ namespace LOSA.Calidad
             gridActual = 3;
         }
 
-        private ArrayList Grid_Get_Selected_Items()
-        {
-
-            switch (gridActual)
-            {
-                case 1:
-                    if (gvMateriaPrima.SelectedRowsCount > 0)
-                    {
-                        ArrayList rows = new ArrayList();
-
-                        for (int i = 0; i < gvMateriaPrima.SelectedRowsCount; i++)
-                        {
-                            if (gvMateriaPrima.GetSelectedRows()[i] >= 0)
-                            {
-                                rows.Add(gvMateriaPrima.GetDataRow(gvMateriaPrima.GetSelectedRows()[i]));
-                            }
-                        }
-
-                        return rows;
-                    }
-                    else
-                    {
-                        return null;
-                    }
-                case 2:
-                        if (gridView1.SelectedRowsCount > 0)
-                        {
-                            ArrayList rows = new ArrayList();
-
-                            for (int i = 0; i < gridView1.SelectedRowsCount; i++)
-                            {
-                                if (gridView1.GetSelectedRows()[i] >= 0)
-                                {
-                                    rows.Add(gridView1.GetDataRow(gridView1.GetSelectedRows()[i]));
-                                }
-                            }
-
-                            return rows;
-                        }
-                        else
-                        {
-                            return null;
-                        }
-                case 3:
-                        if (gridView2.SelectedRowsCount > 0)
-                        {
-                            ArrayList rows = new ArrayList();
-
-                            for (int i = 0; i < gridView2.SelectedRowsCount; i++)
-                            {
-                                if (gridView2.GetSelectedRows()[i] >= 0)
-                                {
-                                    rows.Add(gridView2.GetDataRow(gridView2.GetSelectedRows()[i]));
-                                }
-                            }
-
-                            return rows;
-                        }
-                        else
-                        {
-                            return null;
-                        }
-                default:
-                    return null;
-            }
-
-
-           
-        }
         private void btnview_Click(object sender, EventArgs e)
         {
             try
@@ -780,201 +706,6 @@ namespace LOSA.Calidad
         private void btnObservacionIngreso_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             UpdateStatusIngreso(2);
-        }
-
-       public void UpdataeStatusByTurno(int Estado) 
-        {
-            try
-            {
-                DataOperations dp = new DataOperations();
-                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                con.Open();
-                switch (gridActual)
-                {
-                    case 1:   // Habilitado.
-                        var gridView = (GridView)grDisponibles.FocusedView;
-                        var row = (dsCalidad.tarimas_disponiblesRow)gridView.GetFocusedDataRow();
-                        if (row.id_tipotm == 1)
-                        {
-                            CajaDialogo.Information("No se puede habilitar materia prima por turno.");
-                            return;
-                        }
-                        if (row.id_turno == 0)
-                        {
-                            CajaDialogo.Information("La tarima seleccionada no se le configuro el turno.");
-                            return;
-                        }
-                        lote = row.lote;
-                        id_mp = row.id_mp;
-                        CodigoP = row.codigomp;
-                        Articulo = row.mp;
-                        tipo_tm = row.id_tipotm;
-                        id_turno = row.id_turno;
-
-
-                        break;
-                    case 2:   // Observacion.
-                        var gridView1 = (GridView)gridObservacion.FocusedView;
-                        var row1 = (dsCalidad.tarimas_obsRow)gridView1.GetFocusedDataRow();
-                        if (row1.id_tipotm == 1)
-                        {
-                            CajaDialogo.Information("No se puede habilitar materia prima por turno.");
-                            return;
-                        }
-                        if (row1.id_turno == 0)
-                        {
-                            CajaDialogo.Information("La tarima seleccionada no se le configuro el turno.");
-                            return;
-                        }
-                        lote = row1.lote;
-                        id_mp = row1.id_mp;
-                        CodigoP = row1.codigomp;
-                        Articulo = row1.mp;
-                        tipo_tm = row1.id_tipotm;
-                        id_turno = row1.id_turno;
-                        break;
-                    case 3:   // Bloqueado.
-                                var gridView2 = (GridView)gridRetenidos.FocusedView;
-                                var row2 = (dsCalidad.tarimas_retRow)gridView2.GetFocusedDataRow();
-                                if (row2.id_tipotm == 1)
-                                {
-                                    CajaDialogo.Information("Los movimientos por ingreso en producto terminado no estan habilitados.");
-                                    return;
-                                }
-                                if (row2.id_turno == 0)
-                                {
-                                    CajaDialogo.Information("La tarima seleccionada no se le configuro el turno.");
-                                    return;
-                                }
-                        lote = row2.lote;
-                                id_mp = row2.id_mp;
-                                CodigoP = row2.codigomp;
-                                Articulo = row2.mp;
-
-                                tipo_tm = row2.id_tipotm;
-                                 id_turno = row2.id_turno;
-
-                        break;
-                    default:
-                        break;
-
-                      
-                }
-
-                switch (Estado)
-                {
-                    case 1:     // Estamos Habilitando
-                        if (gridActual != 1)
-                        {
-                            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-                            cn.Open();
-
-                            SqlCommand cmd = new SqlCommand("sp_load_idtm_from_lote_v2", cn);
-                            cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("@id_mp", id_mp);
-                            cmd.Parameters.AddWithValue("@id_turno", id_turno);
-                            cmd.Parameters.AddWithValue("@lote", lote);
-                            dsCalidad1.Tarimas.Clear();
-                            SqlDataAdapter da = new SqlDataAdapter(cmd);
-                            da.Fill(dsCalidad1.Tarimas);
-                            foreach (dsCalidad.TarimasRow row in dsCalidad1.Tarimas.Rows)
-                            {
-
-                                SqlCommand command = new SqlCommand("sp_update_calidad_tarimas", cn);
-                                command.CommandType = CommandType.StoredProcedure;
-                                command.Parameters.AddWithValue("@id_tarima", row.IdTM);
-                                command.Parameters.AddWithValue("@user", UsuarioLogeado.Id);
-                                command.ExecuteNonQuery();
-
-
-                                cmd = new SqlCommand("sp_set_update_tarima_estado_calidad", cn);
-                                cmd.CommandType = CommandType.StoredProcedure;
-                                cmd.Parameters.AddWithValue("@id_estado", Estado);
-                                cmd.Parameters.AddWithValue("@id", row.IdTM);
-                                cmd.ExecuteNonQuery();
-
-                            }
-                            cn.Close();
-                            LoadTarimasAvailables();
-                            LoadTarimasObs();
-                            LoadTarimasRet();
-                        }
-                        break;
-                    case 2:        // Estamos Mandando a Observacion
-
-                        if (gridActual != 2)
-                        {
-                            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-                            cn.Open();
-
-                            SqlCommand cmd = new SqlCommand("sp_load_idtm_from_lote_v2", cn);
-                            cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("@id_mp", id_mp);
-                            cmd.Parameters.AddWithValue("@id_turno", id_turno);
-                            cmd.Parameters.AddWithValue("@lote", lote);
-                            dsCalidad1.Tarimas.Clear();
-                            SqlDataAdapter da = new SqlDataAdapter(cmd);
-                            da.Fill(dsCalidad1.Tarimas);
-                            foreach (dsCalidad.TarimasRow row in dsCalidad1.Tarimas.Rows)
-                            {
-
-                                cmd = new SqlCommand("sp_set_update_tarima_estado_calidad", cn);
-                                cmd.CommandType = CommandType.StoredProcedure;
-                                cmd.Parameters.AddWithValue("@id_estado", Estado);
-                                cmd.Parameters.AddWithValue("@id", row.IdTM);
-                                cmd.ExecuteNonQuery();
-
-                            }
-                            cn.Close();
-                            LoadTarimasAvailables();
-                            LoadTarimasObs();
-                            LoadTarimasRet();
-
-                        }   
-                        break;
-                    case 3:        // Estamos reteniendo
-
-                        if (gridActual != 3)
-                        {
-                            frm_retenciones frm = new frm_retenciones(UsuarioLogeado
-                                                                    , CodigoP
-                                                                    , id_mp
-                                                                    , ingreso
-                                                                    , lote
-                                                                    , Articulo
-                                                                    , 1
-                                                                    , id_turno);
-                            if (frm.ShowDialog() == DialogResult.OK)
-                            {
-                                LoadTarimasAvailables();
-                                LoadTarimasObs();
-                                LoadTarimasRet();
-                            }
-                        }
-                        break;
-                    default:
-                        break;
-                }
-            }
-            catch (Exception ex)
-            {
-
-                CajaDialogo.Error(ex.Message);
-            }
-        }
-        private void btn_Habilitar_turno_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            UpdataeStatusByTurno(1);
-        }
-
-        private void btnObservacionTurno_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            UpdataeStatusByTurno(2);
-        }
-
-        private void btnRetenidoTurno_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            UpdataeStatusByTurno(3);
         }
     }
 }

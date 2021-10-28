@@ -63,7 +63,7 @@ namespace LOSA.RecepcionMP
                 SqlConnection con = new SqlConnection(dp.ConnectionStringBascula);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_insert_new_lote_activo_granel_v2", con);
+                SqlCommand cmd = new SqlCommand("sp_insert_new_lote_activo_granel", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@lote", txtLote.Text);
                 cmd.Parameters.AddWithValue("@id_user_create", UsuarioLogeado.Id);

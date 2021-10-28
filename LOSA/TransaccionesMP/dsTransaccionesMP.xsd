@@ -53,7 +53,6 @@
               <xs:element name="estado" msprop:Generator_ColumnVarNameInTable="columnestado" msprop:Generator_ColumnPropNameInRow="estado" msprop:Generator_ColumnPropNameInTable="estadoColumn" msprop:Generator_UserColumnName="estado" type="xs:string" minOccurs="0" />
               <xs:element name="DocEntry" msprop:Generator_ColumnVarNameInTable="columnDocEntry" msprop:Generator_ColumnPropNameInRow="DocEntry" msprop:Generator_ColumnPropNameInTable="DocEntryColumn" msprop:Generator_UserColumnName="DocEntry" type="xs:int" minOccurs="0" />
               <xs:element name="comentario" msprop:Generator_ColumnVarNameInTable="columncomentario" msprop:Generator_ColumnPropNameInRow="comentario" msprop:Generator_ColumnPropNameInTable="comentarioColumn" msprop:Generator_UserColumnName="comentario" type="xs:string" minOccurs="0" />
-              <xs:element name="finalizado" msprop:Generator_ColumnVarNameInTable="columnfinalizado" msprop:Generator_ColumnPropNameInRow="finalizado" msprop:Generator_ColumnPropNameInTable="finalizadoColumn" msprop:Generator_UserColumnName="finalizado" type="xs:boolean" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -93,7 +92,6 @@
               <xs:element name="seleccionado" msprop:Generator_ColumnVarNameInTable="columnseleccionado" msprop:Generator_ColumnPropNameInRow="seleccionado" msprop:Generator_ColumnPropNameInTable="seleccionadoColumn" msprop:Generator_UserColumnName="seleccionado" type="xs:boolean" minOccurs="0" />
               <xs:element name="cants" msprop:Generator_ColumnVarNameInTable="columncants" msprop:Generator_ColumnPropNameInRow="cants" msprop:Generator_ColumnPropNameInTable="cantsColumn" msprop:Generator_UserColumnName="cants" type="xs:decimal" minOccurs="0" />
               <xs:element name="numero_transaccion" msprop:Generator_ColumnVarNameInTable="columnnumero_transaccion" msprop:Generator_ColumnPropNameInRow="numero_transaccion" msprop:Generator_ColumnPropNameInTable="numero_transaccionColumn" msprop:Generator_UserColumnName="numero_transaccion" type="xs:int" minOccurs="0" />
-              <xs:element name="codigo" msprop:Generator_ColumnVarNameInTable="columncodigo" msprop:Generator_ColumnPropNameInRow="codigo" msprop:Generator_ColumnPropNameInTable="codigoColumn" msprop:Generator_UserColumnName="codigo" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -196,19 +194,6 @@
               <xs:element name="cantidaddevo" msprop:Generator_ColumnVarNameInTable="columncantidaddevo" msprop:Generator_ColumnPropNameInRow="cantidaddevo" msprop:Generator_ColumnPropNameInTable="cantidaddevoColumn" msprop:Generator_UserColumnName="cantidaddevo" type="xs:decimal" minOccurs="0" />
               <xs:element name="restante" msprop:Generator_ColumnVarNameInTable="columnrestante" msprop:Generator_ColumnPropNameInRow="restante" msprop:Generator_ColumnPropNameInTable="restanteColumn" msprop:Generator_UserColumnName="restante" type="xs:decimal" minOccurs="0" />
               <xs:element name="id_tarima" msprop:Generator_ColumnVarNameInTable="columnid_tarima" msprop:Generator_ColumnPropNameInRow="id_tarima" msprop:Generator_ColumnPropNameInTable="id_tarimaColumn" msprop:Generator_UserColumnName="id_tarima" type="xs:int" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="viewTarimas" msprop:Generator_TableClassName="viewTarimasDataTable" msprop:Generator_TableVarName="tableviewTarimas" msprop:Generator_TablePropName="viewTarimas" msprop:Generator_RowDeletingName="viewTarimasRowDeleting" msprop:Generator_RowChangingName="viewTarimasRowChanging" msprop:Generator_RowEvHandlerName="viewTarimasRowChangeEventHandler" msprop:Generator_RowDeletedName="viewTarimasRowDeleted" msprop:Generator_UserTableName="viewTarimas" msprop:Generator_RowChangedName="viewTarimasRowChanged" msprop:Generator_RowEvArgName="viewTarimasRowChangeEvent" msprop:Generator_RowClassName="viewTarimasRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
-              <xs:element name="req" msprop:Generator_ColumnVarNameInTable="columnreq" msprop:Generator_ColumnPropNameInRow="req" msprop:Generator_ColumnPropNameInTable="reqColumn" msprop:Generator_UserColumnName="req" type="xs:string" minOccurs="0" />
-              <xs:element name="mp" msprop:Generator_ColumnVarNameInTable="columnmp" msprop:Generator_ColumnPropNameInRow="mp" msprop:Generator_ColumnPropNameInTable="mpColumn" msprop:Generator_UserColumnName="mp" type="xs:string" minOccurs="0" />
-              <xs:element name="cantidad" msprop:Generator_ColumnVarNameInTable="columncantidad" msprop:Generator_ColumnPropNameInRow="cantidad" msprop:Generator_ColumnPropNameInTable="cantidadColumn" msprop:Generator_UserColumnName="cantidad" type="xs:decimal" minOccurs="0" />
-              <xs:element name="kg" msprop:Generator_ColumnVarNameInTable="columnkg" msprop:Generator_ColumnPropNameInRow="kg" msprop:Generator_ColumnPropNameInTable="kgColumn" msprop:Generator_UserColumnName="kg" type="xs:decimal" minOccurs="0" />
-              <xs:element name="tm" msprop:Generator_ColumnVarNameInTable="columntm" msprop:Generator_ColumnPropNameInRow="tm" msprop:Generator_ColumnPropNameInTable="tmColumn" msprop:Generator_UserColumnName="tm" type="xs:string" minOccurs="0" />
-              <xs:element name="lote" msprop:Generator_ColumnVarNameInTable="columnlote" msprop:Generator_ColumnPropNameInRow="lote" msprop:Generator_ColumnPropNameInTable="loteColumn" msprop:Generator_UserColumnName="lote" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

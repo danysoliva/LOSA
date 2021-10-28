@@ -14,7 +14,6 @@ using ACS.Classes;
 using DevExpress.XtraGrid.Views.Grid;
 using LOSA.Despachos;
 using DevExpress.XtraReports.UI;
-using LOSA.Reportes;
 
 namespace LOSA.TransaccionesPT
 {
@@ -26,24 +25,12 @@ namespace LOSA.TransaccionesPT
         {
             InitializeComponent();
             UsuarioLogeado = Puser;
-            load_desicion();
+            load_despachos();
         }
 
-        public void load_despachos_terminados() 
-        {
-            string Query = @"sp_load_informacion_despachos_only_open";
-            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-            cn.Open();
-            SqlCommand cmd = new SqlCommand(Query, cn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            dsPT.Load_despachos.Clear();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dsPT.Load_despachos);
-            cn.Close();
-        }
         public void load_despachos()
         {
-            string Query = @"sp_load_informacion_despachos_v2";
+            string Query = @"sp_load_informacion_despachos";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             cn.Open();
             SqlCommand cmd = new SqlCommand(Query,cn);
@@ -75,7 +62,7 @@ namespace LOSA.TransaccionesPT
                     cmd.ExecuteNonQuery();
                     CajaDialogo.Error("Se finalizo correctamente este despacho.");
                     cn.Close();
-                    load_desicion();
+                    load_despachos();
 
                 }
                 catch (Exception ex)
@@ -104,7 +91,7 @@ namespace LOSA.TransaccionesPT
                     cmd.ExecuteNonQuery();
                     CajaDialogo.Error("Se elimino correctamente este despacho.");
                     cn.Close();
-                    load_desicion();
+                    load_despachos();
 
                 }
                 catch (Exception ex)
@@ -125,7 +112,7 @@ namespace LOSA.TransaccionesPT
                 frm_generar_despacho frm = new frm_generar_despacho(row.id);
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
-                    load_desicion();
+                    load_despachos();
                 }
             }
             catch (Exception ex)
@@ -160,66 +147,6 @@ namespace LOSA.TransaccionesPT
                 {
 
                     CajaDialogo.Error(ex.Message);
-                }
-            }
-        }
-
-        private void btnExcel_Click(object sender, EventArgs e)
-        {
-            frm_nueva_orden frm = new frm_nueva_orden(UsuarioLogeado);
-            frm.Show();
-        }
-
-        private void btn_ligar_oc_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var gridView = (GridView)grd_data.FocusedView;
-                var row = (dsPT.Load_despachosRow)gridView.GetFocusedDataRow();
-
-                frm_Unir frm = new frm_Unir(row.id);
-                frm.Show();
-
-            }
-            catch (Exception ex)
-            {
-
-                CajaDialogo.Error(ex.Message);
-            }
-        }
-
-        public void load_desicion()
-        {
-            if (tggOpen.IsOn)
-            {
-                load_despachos();
-            }
-            else
-            {
-                load_despachos_terminados();
-            }
-
-        }
-        private void tggOpen_Toggled(object sender, EventArgs e)
-        {
-            load_desicion();
-        }
-
-        private void grdv_data_RowStyle(object sender, RowStyleEventArgs e)
-        {
-            var gridView = (GridView)grd_data.FocusedView;
-            var row = (dsPT.Load_despachosRow)gridView.GetDataRow(e.RowHandle);
-            if (e.RowHandle >= 0)
-            {
-
-                if (row.bit_abierto)
-                {
-                    e.Appearance.BackColor = Color.FromArgb(172, 172, 172);
-
-                }
-                else
-                {
-                    e.Appearance.BackColor = Color.FromArgb(77, 201, 176);
                 }
             }
         }

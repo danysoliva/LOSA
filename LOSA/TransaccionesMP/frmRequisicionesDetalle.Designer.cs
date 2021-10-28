@@ -262,7 +262,7 @@
             this.gridColumn1.ColumnEdit = this.btnEdit;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 7;
+            this.gridColumn1.VisibleIndex = 8;
             this.gridColumn1.Width = 85;
             // 
             // btnEdit
@@ -288,6 +288,8 @@
             this.colConsumir.ColumnEdit = this.btnconsumir;
             this.colConsumir.MinWidth = 19;
             this.colConsumir.Name = "colConsumir";
+            this.colConsumir.Visible = true;
+            this.colConsumir.VisibleIndex = 9;
             // 
             // btnconsumir
             // 
@@ -315,6 +317,8 @@
             this.colUdRestante.FieldName = "UdRestante";
             this.colUdRestante.Name = "colUdRestante";
             this.colUdRestante.OptionsColumn.AllowEdit = false;
+            this.colUdRestante.Visible = true;
+            this.colUdRestante.VisibleIndex = 7;
             this.colUdRestante.Width = 55;
             // 
             // chkAutoSelect
@@ -329,7 +333,6 @@
             this.chkAutoSelect.TabIndex = 46;
             this.chkAutoSelect.Text = "Auto Selección";
             this.chkAutoSelect.UseVisualStyleBackColor = false;
-            this.chkAutoSelect.Visible = false;
             this.chkAutoSelect.CheckedChanged += new System.EventHandler(this.chkAutoSelect_CheckedChanged);
             // 
             // frmRequisicionesDetalle

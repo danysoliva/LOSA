@@ -32,13 +32,12 @@ namespace LOSA.Calidad
       
         public void Load_Info()
         {
-            string query = @"ps_load_ingresos_from_tarimas_v2";
+            string query = @"EXEC dbo.ps_load_ingresos_from_tarimas";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             try
             {
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query, cn);
-                cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 dsRecepcionMPx.IngresosMP.Clear();
                 da.Fill(dsRecepcionMPx.IngresosMP);
@@ -61,7 +60,7 @@ namespace LOSA.Calidad
             {
                 var gridview = (GridView)grd_ingreso.FocusedView;
                 var row = (dsRecepcionMPx.IngresosMPRow)gridview.GetFocusedDataRow();
-                rdEstadoTransporte frm = new rdEstadoTransporte( row.id,UsuarioLogeado);
+                frmInfoAdicional frm = new frmInfoAdicional(UsuarioLogeado, row.id);
                 frm.Show();
             }
             catch (Exception ex)

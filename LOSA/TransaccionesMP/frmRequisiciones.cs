@@ -46,27 +46,6 @@ namespace LOSA.TransaccionesMP
                 CajaDialogo.Error(ec.Message);
             }
         }
-        private void LoadDatos_Finalizadas()
-        {
-            try
-            {
-
-                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                con.Open();
-
-                SqlCommand cmd = new SqlCommand("sp_get_requisiciones_pendientes_h_show_finalizadas", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                //cmd.Parameters.AddWithValue("@LastName", txtlastname.Text);
-                dsTransaccionesMP1.requisiciones_h.Clear();
-                SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                adat.Fill(dsTransaccionesMP1.requisiciones_h);
-                con.Close();
-            }
-            catch (Exception ec)
-            {
-                CajaDialogo.Error(ec.Message);
-            }
-        }
 
         private void btnVerD_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
@@ -109,59 +88,21 @@ namespace LOSA.TransaccionesMP
         {
             try
             {
-                var gridView = (GridView)grRequisicoinesMP.FocusedView;
-                var row = (dsTransaccionesMP.requisiciones_hRow)gridView.GetFocusedDataRow();
-
-                if (row.finalizado)
+                if (MessageBox.Show("Desea finalizar la requisa? No podra seguir enviando materia prima despues de esta accion", "Pregunta", MessageBoxButtons.OKCancel,MessageBoxIcon.Question) == DialogResult.OK)
                 {
-                    if (MessageBox.Show("Desea Abrir de nuevo la requisa en cuestion?","Pregunta" , MessageBoxButtons.OKCancel, MessageBoxIcon.Question ) == DialogResult.OK)
-                    {
-                        string query = "sp_reactivar_requisa";
-                        SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-                        cn.Open();
-                        SqlCommand cmd = new SqlCommand(query, cn);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@req", row.id);
-                        cmd.ExecuteNonQuery();
-                        cn.Close();
+                    var gridView = (GridView)grRequisicoinesMP.FocusedView;
+                    var row = (dsTransaccionesMP.requisiciones_hRow)gridView.GetFocusedDataRow();
+                    string query = "sp_finalizar_requisa";
+                    SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                    cn.Open();
+                    SqlCommand cmd = new SqlCommand(query, cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@req", row.id);
+                    cmd.ExecuteNonQuery();
+                    cn.Close();
 
 
-                        if (tggView.IsOn)
-                        {
-                            LoadDatos();
-                        }
-                        else
-                        {
-                            LoadDatos_Finalizadas();
-                        }
-                    }
-
-                }
-                else
-                {
-                    if (MessageBox.Show("Desea finalizar la requisa? No podra seguir enviando materia prima despues de esta accion", "Pregunta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-                    {
-
-                        string query = "sp_finalizar_requisa_v2";
-                        SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-                        cn.Open();
-                        SqlCommand cmd = new SqlCommand(query, cn);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@req", row.id);
-                        cmd.Parameters.AddWithValue("@user_end", UsuarioLogeado.Id);
-                        cmd.ExecuteNonQuery();
-                        cn.Close();
-
-
-                        if (tggView.IsOn)
-                        {
-                            LoadDatos();
-                        }
-                        else
-                        {
-                            LoadDatos_Finalizadas();
-                        }
-                    }
+                    LoadDatos();
                 }
 
             }
@@ -171,18 +112,6 @@ namespace LOSA.TransaccionesMP
                 CajaDialogo.Error(ex.Message);
             }
 
-        }
-
-        private void tggView_Toggled(object sender, EventArgs e)
-        {
-            if (tggView.IsOn)                 // vista Activas
-            {
-                LoadDatos();
-            }
-            else
-            {
-                LoadDatos_Finalizadas();
-            }
         }
     }
 }

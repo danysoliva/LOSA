@@ -164,10 +164,10 @@
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel27.BorderWidth = 2F;
             this.xrLabel27.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel27.LocationFloat = new DevExpress.Utils.PointFloat(334.3749F, 588.14F);
+            this.xrLabel27.LocationFloat = new DevExpress.Utils.PointFloat(161.8801F, 588.14F);
             this.xrLabel27.Name = "xrLabel27";
             this.xrLabel27.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel27.SizeF = new System.Drawing.SizeF(441.6198F, 71.27734F);
+            this.xrLabel27.SizeF = new System.Drawing.SizeF(614.1146F, 71.27734F);
             this.xrLabel27.StylePriority.UseBorders = false;
             this.xrLabel27.StylePriority.UseBorderWidth = false;
             this.xrLabel27.StylePriority.UseFont = false;
@@ -184,7 +184,7 @@
             this.xrLabel26.LocationFloat = new DevExpress.Utils.PointFloat(0F, 588.14F);
             this.xrLabel26.Name = "xrLabel26";
             this.xrLabel26.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel26.SizeF = new System.Drawing.SizeF(322.9167F, 71.27734F);
+            this.xrLabel26.SizeF = new System.Drawing.SizeF(159.7223F, 71.27734F);
             this.xrLabel26.StylePriority.UseBorders = false;
             this.xrLabel26.StylePriority.UseBorderWidth = false;
             this.xrLabel26.StylePriority.UseFont = false;
@@ -484,7 +484,7 @@
             this.lblPresentacion.LocationFloat = new DevExpress.Utils.PointFloat(161.8801F, 542.67F);
             this.lblPresentacion.Name = "lblPresentacion";
             this.lblPresentacion.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblPresentacion.SizeF = new System.Drawing.SizeF(161.0367F, 41.8656F);
+            this.lblPresentacion.SizeF = new System.Drawing.SizeF(161.0366F, 41.8656F);
             this.lblPresentacion.StylePriority.UseBorders = false;
             this.lblPresentacion.StylePriority.UseBorderWidth = false;
             this.lblPresentacion.StylePriority.UseFont = false;

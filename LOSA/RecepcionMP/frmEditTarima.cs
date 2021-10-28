@@ -205,7 +205,7 @@ namespace LOSA.RecepcionMP
                 cmd.Parameters.AddWithValue("@lote_materia_prima", txtLote.Text);
                 cmd.Parameters.AddWithValue("@id_presentacion", gridLookUpEditPresentacion.EditValue);
                 cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
-                cmd.Parameters.AddWithValue("@cantidad", Convert.ToDecimal(txtUnidades.Text));
+                cmd.Parameters.AddWithValue("@cantidad", txtUnidades.Text);
                 cmd.Parameters.AddWithValue("@peso", Convert.ToDecimal(txtPesoKg.Text));
                 cmd.Parameters.AddWithValue("@id_proveedor", glueProveedor.EditValue.ToString());
                 cmd.Parameters.AddWithValue("@itemcode", this.ItemCode);

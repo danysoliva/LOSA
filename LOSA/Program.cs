@@ -42,10 +42,13 @@ namespace LOSA
             }
 
             if(val)//es una tablet encontrada en el registro
+            {
                 Application.Run(new frmMain());
+            }
             else
+            {
                 Application.Run(new MDIParentFormLOSA());
-            
+            }
             
             //
         }
