@@ -270,6 +270,7 @@ namespace LOSA.RecepcionMP
             foreach(dsRecepcionMPx.granelRow row in dsRecepcionMPx1.granel.Rows)
             {
                 //
+                //comment
                 try
                 {
                     DataOperations dp = new DataOperations();
