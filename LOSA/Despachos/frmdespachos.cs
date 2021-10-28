@@ -67,5 +67,11 @@ namespace LOSA.Despachos
                 
             }
         }
+
+        private void btnNuevoOrdenCarga_Click(object sender, EventArgs e)
+        {
+            frm_nueva_orden frm = new frm_nueva_orden(ULogin);
+            frm.Show();
+        }
     }
 }

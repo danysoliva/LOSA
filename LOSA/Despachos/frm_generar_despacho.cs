@@ -14,6 +14,7 @@ using LOSA.Clases;
 using LOSA.Despachos.Reportes;
 using DevExpress.XtraGrid.Views.Grid;
 using LOSA.RecepcionMP;
+using DevExpress.XtraReports.UI;
 
 namespace LOSA.Despachos
 {
@@ -23,7 +24,8 @@ namespace LOSA.Despachos
         private int DocEntry;
         private int LineNum;
         private int Id_despacho;
-        UserLogin UsuarioLogeado; 
+        UserLogin UsuarioLogeado;
+        string codigo_selected;
         public enum OpType
         {
             Update = 1,
@@ -60,7 +62,7 @@ namespace LOSA.Despachos
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_presentaciones_activas", con);
+                SqlCommand cmd = new SqlCommand("sp_get_presentaciones_activas_v5", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 dsRecepcionMPx.presentaciones.Clear();
@@ -149,6 +151,28 @@ namespace LOSA.Despachos
             this.Close();
         }
 
+        public void load_destinos(string cod)
+        {
+            try
+            {
+                string query = @"sp_load_clientes_clientes_to_select";
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query,cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@cliente", cod);
+                ds_despachos.cliente_despacho.Clear();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(ds_despachos.cliente_despacho);
+                cn.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             frm_pickboleta frm = new frm_pickboleta();
@@ -157,6 +181,18 @@ namespace LOSA.Despachos
                 txtboleta.Text = Convert.ToString(frm.id_serie);
                 txtvehiculo.Text = frm.Vehiculo;
                 txtconductor.Text = frm.conductor;
+                codigo_selected = frm.codigo;
+                if (frm.codigo == "CL00009" || frm.codigo == "CL00002")
+                {
+                    load_destinos(frm.codigo);
+                    labelControl8.Enabled = true;
+                    grd_destino.Enabled = true;
+                }
+                else
+                {
+                    labelControl8.Enabled = false;
+                    grd_destino.Enabled = false;
+                }
                 
             }
         }
@@ -175,6 +211,7 @@ namespace LOSA.Despachos
                 {
 
                 }
+                ds_despachos.detalle_despachos.AcceptChanges();
 
             }
             catch (Exception ex)
@@ -334,6 +371,13 @@ namespace LOSA.Despachos
                 CajaDialogo.Error("Debo de colocar por lo menos un Producto Terminado en la orden de carga.");
                 return;
             }
+
+
+            // Aqui va la seleccion de lote.
+           
+
+
+            int SeAsingna = 0;
             string query = @"";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             cn.Open();
@@ -341,6 +385,9 @@ namespace LOSA.Despachos
             switch (Operacion)
             {    
                 case OpType.Update:
+
+
+
                     query = @"sp_update_despacho_header";//insert heades     
                     cmd = new SqlCommand(query, cn);
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -348,10 +395,12 @@ namespace LOSA.Despachos
                     if (txtboleta.Text == "")
                     {
                         cmd.Parameters.AddWithValue("@boleta", DBNull.Value);
+                        SeAsingna = 0;
                     }
                     else
                     {
                         cmd.Parameters.AddWithValue("@boleta", txtboleta.Text);
+                        SeAsingna = 1;
                     }
                     cmd.ExecuteNonQuery();
                     foreach (ds_despachos.detalle_despachosRow row in ds_despachos.detalle_despachos.Rows)
@@ -414,48 +463,107 @@ namespace LOSA.Despachos
                         }
                     }
                     cn.Close();
-                    CajaDialogo.Information("Transaccion exitosa.");
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
+
+                    frmSeleccionAnden frm = new frmSeleccionAnden(Id_despacho);
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        CajaDialogo.Information("Transaccion exitosa.");
+
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                    
                     break;
                 case OpType.Nuevo:
-                   
-                    query = @"sp_insert_orden_venta_h";//insert heades     
-                    cmd = new SqlCommand(query,cn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@userId", UsuarioLogeado.Id);
-                    if (txtboleta.Text == "")
-                    {
-                        cmd.Parameters.AddWithValue("@id_serie", DBNull.Value);
-                    }
-                    else
-                    {
-                        cmd.Parameters.AddWithValue("@id_serie", txtboleta.Text);
-                    }
-                    cmd.Parameters.AddWithValue("@DocEntry", DocEntry);
 
-                    Id_despacho = Convert.ToInt32(cmd.ExecuteScalar());
-                    cn.Close();
-                    cn.Open();
 
-                    foreach (ds_despachos.detalle_despachosRow row in ds_despachos.detalle_despachos.Rows)
+                    if (codigo_selected == "CL00009" || codigo_selected == "CL00002")
                     {
-                        query = @"sp_insert_orden_de_venta_detalle";//insert heades    
+                        if (grd_destino.EditValue == null)
+                        {
+                            CajaDialogo.Error("Debe seleccionar el destino antes del vehiculo para generar el arribo.");
+                            return;
+                        }
+                    }
+                    frm_seleccion_lote_pt frrm = new frm_seleccion_lote_pt(ds_despachos.detalle_despachos);
+                    if (frrm.ShowDialog() == DialogResult.OK)
+                    {
+
+                        DataTable dt = frrm.dt;
+
+
+                        query = @"sp_insert_orden_venta_h_v2";//insert heades     
                         cmd = new SqlCommand(query, cn);
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@itemcode", row.itemcode);
-                        cmd.Parameters.AddWithValue("@peso", row.peso);
-                        cmd.Parameters.AddWithValue("@linenum", row.linenum);
-                        cmd.Parameters.AddWithValue("@DocEntry", row.docentry);
-                        cmd.Parameters.AddWithValue("@unidades", row.unidades);
-                        cmd.Parameters.AddWithValue("@Id_despacho", Id_despacho);
-                        cmd.Parameters.AddWithValue("@id_presentacion", row.id_presentacion);
-                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.AddWithValue("@userId", UsuarioLogeado.Id);
+                        if (txtboleta.Text == "")
+                        {
+                            cmd.Parameters.AddWithValue("@id_serie", DBNull.Value);
+                            SeAsingna = 1;
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@id_serie", txtboleta.Text);
+                            SeAsingna = 0;
+                        }
+                        cmd.Parameters.AddWithValue("@DocEntry", DocEntry);
+                        cmd.Parameters.AddWithValue("@id_destino", grd_destino.EditValue == null ? 0 : grd_destino.EditValue);
+
+                        Id_despacho = Convert.ToInt32(cmd.ExecuteScalar());
+                        cn.Close();
+                        cn.Open();
+
+                        foreach (ds_despachos.detalle_despachosRow row in ds_despachos.detalle_despachos.Rows)
+                        {
+
+
+                            query = @"sp_insert_orden_de_venta_detalle";//insert heades    
+                            cmd = new SqlCommand(query, cn);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@itemcode", row.itemcode);
+                            cmd.Parameters.AddWithValue("@peso", row.peso);
+                            cmd.Parameters.AddWithValue("@linenum", row.linenum);
+                            cmd.Parameters.AddWithValue("@DocEntry", row.docentry);
+                            cmd.Parameters.AddWithValue("@unidades", row.unidades);
+                            cmd.Parameters.AddWithValue("@Id_despacho", Id_despacho);
+                            cmd.Parameters.AddWithValue("@id_presentacion", row.id_presentacion);
+                            int id_detalle = Convert.ToInt32(cmd.ExecuteScalar());
+                            foreach (DataRow rowLote in dt.Rows )
+                            {
+                                if (Convert.ToString(rowLote["itemcode"]) == row.itemcode)
+                                {
+                                    cmd = new SqlCommand("sp_insert_orden_de_venta_detalle_lote", cn);
+                                    cmd.CommandType = CommandType.StoredProcedure;
+                                    cmd.Parameters.AddWithValue("@lote", rowLote["lote_producto_termiado"]);
+                                    cmd.Parameters.AddWithValue("@itemcode", rowLote["itemcode"]);
+                                    cmd.Parameters.AddWithValue("@enable", 1);
+                                    cmd.Parameters.AddWithValue("@cantidad", rowLote["seleccionada"]);
+                                    cmd.Parameters.AddWithValue("@id_detalle", id_detalle);
+                                    cmd.Parameters.AddWithValue("@id_pt", 0);
+                                    cmd.ExecuteNonQuery();
+                                }
+                            }
+                        }
+                        cn.Close();
+                        frmSeleccionAnden frms = new frmSeleccionAnden(Id_despacho);
+                        if (frms.ShowDialog() == DialogResult.OK)
+                        {
+
+
+                            frm_plan cp = new frm_plan(Id_despacho);
+
+                            cp.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                            ReportPrintTool printReport = new ReportPrintTool(cp);
+                            printReport.ShowPreview();
+                            CajaDialogo.Information("Transaccion exitosa.");
+
+                            this.DialogResult = DialogResult.OK;
+                            this.Close();
+                        }
                     }
-                    cn.Close();
-                    CajaDialogo.Information("Transaccion exitosa.");
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
+
+
+                  
                     break;
                 default:
                     break;

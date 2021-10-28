@@ -205,6 +205,7 @@ namespace LOSA.RecepcionMP
             {
 
                 LoadTarimas();
+                
             }
         }
 

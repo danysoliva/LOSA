@@ -31,14 +31,14 @@ namespace LOSA.Calidad
         }
         public void load_data()
         {
-            string query = @"EXEC [dbo].[sp_load_calidad_tarimas]
-	                    	@id_tarima = @parid";
+            string query = @"[dbo].[sp_load_calidad_tarimas]";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             try
             {
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query, cn);
-                cmd.Parameters.Add("@parid", SqlDbType.Int).Value = Parid;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_tarima", Parid);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 dsCalidad.causas_guardadas.Clear();
                 da.Fill(dsCalidad.causas_guardadas);

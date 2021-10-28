@@ -16,6 +16,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LOSA.PlanMPreque;
 using LOSA.TransaccionesPT;
+using LOSA.AlmacenesExterno;
+using LOSA.Reportes;
+using LOSA.Trazabilidad;
+using LOSA.Despachos;
+using LOSA.Nir;
 
 namespace LOSA
 {
@@ -70,6 +75,12 @@ namespace LOSA
                 case GrupoUser.GrupoUsuario.Produccion:
                     tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
                     tabOpciones.TabPages[i].PageVisible = true;
+                    break;
+                case GrupoUser.GrupoUsuario.ProduccionV2:
+                    tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
+                    tabOpciones.TabPages[i].PageVisible = true;
+                    tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
+                    tabOpciones.TabPages[i-1].PageVisible = true;
                     break;
                 default:
                     tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
@@ -454,6 +465,7 @@ namespace LOSA
         private void simpleButton4_Click_1(object sender, EventArgs e)
         {
             frmcalidad frm = new frmcalidad(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
@@ -490,6 +502,124 @@ namespace LOSA
         private void simpleButton8_Click(object sender, EventArgs e)
         {
             frmreporte_trazabilidad frm = new frmreporte_trazabilidad(UsuarioLogeado);
+            frm.Show();
+        }
+
+        private void btnRequisasManuales_Click(object sender, EventArgs e)
+        {
+            frmRequisasManuales frm = new frmRequisasManuales(UsuarioLogeado);
+            frm.Show();
+        }
+
+        private void simpleButton10_Click(object sender, EventArgs e)
+        {
+            frm_ajustes_inventario_PT frm = new frm_ajustes_inventario_PT(UsuarioLogeado);
+            frm.Show();
+        }
+
+        private void simpleButton11_Click(object sender, EventArgs e)
+        {
+            frm_reporte_produccion frm = new frm_reporte_produccion();
+            frm.Show();
+        }
+
+        private void simpleButton12_Click(object sender, EventArgs e)
+        {
+            frm_reporte_produccion frm = new frm_reporte_produccion();
+            frm.Show();
+        }
+
+        private void btnAlmacenesExternos_Click(object sender, EventArgs e)
+        {
+            xfrmAlmacenesExternos_Main frm = new xfrmAlmacenesExternos_Main(UsuarioLogeado);
+            frm.Show();
+        }
+
+        private void simpleButton14_Click(object sender, EventArgs e)
+        {
+            frm_view_ingresos frm = new frm_view_ingresos(UsuarioLogeado);
+            frm.Show();
+        }
+
+        private void simpleButton15_Click(object sender, EventArgs e)
+        {
+            frmRequisiciones frm = new frmRequisiciones(UsuarioLogeado);
+            if (this.MdiParent != null)
+            {
+                frm.MdiParent = this.MdiParent;
+                frm.FormBorderStyle = FormBorderStyle.Sizable;
+            }
+
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+        private void btntarimasactivadasPT_Click(object sender, EventArgs e)
+        {
+            frm_rpt_productoT frm = new frm_rpt_productoT();
+            frm.Show();
+        }
+
+        private void btnTransferencia_Click(object sender, EventArgs e)
+        {
+            xfrmMovimientoStock frm = new xfrmMovimientoStock();
+            frm.Show();
+        }
+
+        private void cmdReporteReqManuales_Click(object sender, EventArgs e)
+        {
+            frmRequisicionesManualesReporte frm = new frmRequisicionesManualesReporte();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void simpleButton13_Click(object sender, EventArgs e)
+        {
+            frmRequisicionesManualesReporte frm = new frmRequisicionesManualesReporte();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void simpleButton16_Click(object sender, EventArgs e)
+        {
+            frmTrazabilidadOpciones frm = new frmTrazabilidadOpciones(this.UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void btn_andenes_Click(object sender, EventArgs e)
+        {
+            frmSeleccionAnden frm = new frmSeleccionAnden();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void ManteIngresos_Click(object sender, EventArgs e)
+        {
+            frm_mantenimiento_calidad frm = new frm_mantenimiento_calidad(UsuarioLogeado);
+            frm.Show();
+        }
+
+        private void btnMPReproceso_Click(object sender, EventArgs e)
+        {
+
+           xfrmReprocesoMenu frm = new xfrmReprocesoMenu(UsuarioLogeado);
+
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+        private void simpleButton9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton17_Click(object sender, EventArgs e)
+        {
+            frmLecturas frm = new frmLecturas(UsuarioLogeado);
             frm.Show();
         }
     }

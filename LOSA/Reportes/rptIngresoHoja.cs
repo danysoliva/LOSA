@@ -16,7 +16,7 @@ namespace LOSA.Reportes
         int Id_mp;
         int id_lote;
             
-        public rptIngresoHoja(int Pid, int Pid_mp)
+        public rptIngresoHoja(int Pid, int Pid_mp,int tipo)
         {
             InitializeComponent();
             Id = Pid;
@@ -25,6 +25,14 @@ namespace LOSA.Reportes
             load_data();
             load_detalle();
             load_lote();
+            if (tipo == 1)
+            {
+                xrLabel1.Text = "COMPRA DE MATERIA PRIMA";
+            }
+            else
+            {
+                xrLabel1.Text = "TRASLADO DE MATERIA PRIMA";
+            }
         }
         public void load_data()
         {

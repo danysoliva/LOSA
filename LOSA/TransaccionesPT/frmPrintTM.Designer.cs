@@ -70,6 +70,7 @@
             this.colimprimir = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnGenerar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
+            this.colSiguiente = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
@@ -147,7 +148,8 @@
             this.colImprimirTm,
             this.colFinalizar,
             this.collote_fp,
-            this.colimprimir});
+            this.colimprimir,
+            this.colSiguiente});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
@@ -302,6 +304,11 @@
             this.cmdHome.Text = "Cerrar";
             this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
             // 
+            // colSiguiente
+            // 
+            this.colSiguiente.FieldName = "Siguiente";
+            this.colSiguiente.Name = "colSiguiente";
+            // 
             // frmPrintTM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -349,5 +356,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn collote_fp;
         private DevExpress.XtraGrid.Columns.GridColumn colimprimir;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnGenerar;
+        private DevExpress.XtraGrid.Columns.GridColumn colSiguiente;
     }
 }

@@ -41,7 +41,6 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.grd_ingreso = new DevExpress.XtraGrid.GridControl();
-            this.dsRecepcionMPx = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.grdv_ingreso = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colNingreso = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colitemcode = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -54,11 +53,13 @@
             this.colprint = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnprint = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
+            this.dsRecepcionMPx = new LOSA.RecepcionMP.dsRecepcionMPx();
+            this.collote = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_ingreso)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_ingreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnprint)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl3
@@ -94,11 +95,6 @@
             this.grd_ingreso.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_ingreso});
             // 
-            // dsRecepcionMPx
-            // 
-            this.dsRecepcionMPx.DataSetName = "dsRecepcionMPx";
-            this.dsRecepcionMPx.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // grdv_ingreso
             // 
             this.grdv_ingreso.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 12F);
@@ -115,7 +111,8 @@
             this.colCardName,
             this.coltarimas,
             this.colid,
-            this.colprint});
+            this.colprint,
+            this.collote});
             this.grdv_ingreso.GridControl = this.grd_ingreso;
             this.grdv_ingreso.Name = "grdv_ingreso";
             this.grdv_ingreso.OptionsView.ShowAutoFilterRow = true;
@@ -138,7 +135,7 @@
             this.colitemcode.Name = "colitemcode";
             this.colitemcode.OptionsColumn.AllowEdit = false;
             this.colitemcode.Visible = true;
-            this.colitemcode.VisibleIndex = 1;
+            this.colitemcode.VisibleIndex = 2;
             this.colitemcode.Width = 102;
             // 
             // colItemName
@@ -148,7 +145,7 @@
             this.colItemName.Name = "colItemName";
             this.colItemName.OptionsColumn.AllowEdit = false;
             this.colItemName.Visible = true;
-            this.colItemName.VisibleIndex = 2;
+            this.colItemName.VisibleIndex = 3;
             this.colItemName.Width = 125;
             // 
             // colid_proveedor
@@ -158,7 +155,7 @@
             this.colid_proveedor.Name = "colid_proveedor";
             this.colid_proveedor.OptionsColumn.AllowEdit = false;
             this.colid_proveedor.Visible = true;
-            this.colid_proveedor.VisibleIndex = 3;
+            this.colid_proveedor.VisibleIndex = 4;
             this.colid_proveedor.Width = 116;
             // 
             // colCardName
@@ -168,7 +165,7 @@
             this.colCardName.Name = "colCardName";
             this.colCardName.OptionsColumn.AllowEdit = false;
             this.colCardName.Visible = true;
-            this.colCardName.VisibleIndex = 4;
+            this.colCardName.VisibleIndex = 5;
             this.colCardName.Width = 167;
             // 
             // coltarimas
@@ -177,7 +174,7 @@
             this.coltarimas.ColumnEdit = this.btnver;
             this.coltarimas.Name = "coltarimas";
             this.coltarimas.Visible = true;
-            this.coltarimas.VisibleIndex = 5;
+            this.coltarimas.VisibleIndex = 6;
             this.coltarimas.Width = 127;
             // 
             // btnver
@@ -227,6 +224,20 @@
             this.cmdHome.Text = "Cerrar";
             this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
             // 
+            // dsRecepcionMPx
+            // 
+            this.dsRecepcionMPx.DataSetName = "dsRecepcionMPx";
+            this.dsRecepcionMPx.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // collote
+            // 
+            this.collote.Caption = "Lote";
+            this.collote.FieldName = "lote";
+            this.collote.Name = "collote";
+            this.collote.OptionsColumn.AllowEdit = false;
+            this.collote.Visible = true;
+            this.collote.VisibleIndex = 1;
+            // 
             // frmcalidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,10 +251,10 @@
             this.Text = "frmcalidad";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.grd_ingreso)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_ingreso)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnver)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnprint)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -265,5 +276,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnprint;
         private DevExpress.XtraEditors.SimpleButton cmdHome;
         private RecepcionMP.dsRecepcionMPx dsRecepcionMPx;
+        private DevExpress.XtraGrid.Columns.GridColumn collote;
     }
 }

@@ -11,16 +11,19 @@ using DevExpress.XtraEditors;
 using System.Data.SqlClient;
 using ACS.Classes;
 using DevExpress.XtraGrid.Views.Grid;
+using LOSA.Clases;
 
 namespace LOSA.TransaccionesMP
 {
     public partial class frmviewrequisas : DevExpress.XtraEditors.XtraForm
     {
         DataOperations dp = new DataOperations();
-        public frmviewrequisas()
+        UserLogin UsuarioLogeado;
+        public frmviewrequisas(UserLogin Puser)
         {
             InitializeComponent();
             LoadDatos();
+            UsuarioLogeado = Puser;
         }
 
         private void cmdHome_Click(object sender, EventArgs e)
@@ -56,7 +59,7 @@ namespace LOSA.TransaccionesMP
             {
                 var gridView = (GridView)grRequisicoinesMP.FocusedView;
                 var row = (dsTransaccionesMP.requisiciones_hRow)gridView.GetFocusedDataRow();
-                frmviewrequisadetallecs frm = new frmviewrequisadetallecs(row.id);
+                frmviewrequisadetallecs frm = new frmviewrequisadetallecs(row.id, UsuarioLogeado);
                 frm.Show();
             }
             catch (Exception ex)

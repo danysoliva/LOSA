@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using System.Data.SqlClient;
 using ACS.Classes;
 using LOSA.Clases;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace LOSA.TransaccionesMP
 {
@@ -18,11 +19,13 @@ namespace LOSA.TransaccionesMP
     {
         DataOperations dp = new DataOperations();
         int IdRequisicionHeader;
-        public frmviewrequisadetallecs(int pIdl)
+        UserLogin UsuarioLogeado; 
+        public frmviewrequisadetallecs(int pIdl, UserLogin Puser)
         {
             InitializeComponent();
             IdRequisicionHeader = pIdl;
             LoadDatos();
+            UsuarioLogeado = Puser;
         }
 
         private void cmdHome_Click(object sender, EventArgs e)
@@ -48,6 +51,34 @@ namespace LOSA.TransaccionesMP
             catch (Exception ec)
             {
                 CajaDialogo.Error(ec.Message);
+            }
+        }
+
+        private void verDetalle_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            try
+            {
+
+                var gridView = (GridView)grDetalleLote.FocusedView;
+                var row = (dsTransaccionesMP.requisiciones_dRow)gridView.GetFocusedDataRow();
+                frmSeleccionLote frm = new frmSeleccionLote(UsuarioLogeado,
+                                                               row.id,
+                                                               row.id_materia_prima,
+                                                               row.solicitada,
+                                                               row.id_unidad_medida,
+                                                               row.unidad
+                                                               , row.pendiente);
+                frm.WindowState = FormWindowState.Maximized;
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    LoadDatos();
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                throw;
             }
         }
     }

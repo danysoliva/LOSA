@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLotesStatus));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -80,6 +79,10 @@
             this.colid_mp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldetalle = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btndetalle = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colid_tipotm = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTurno = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcodigo_barra = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collote1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnEditar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.gridObservacion = new DevExpress.XtraGrid.GridControl();
@@ -98,6 +101,10 @@
             this.btndetalle3 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colingreso2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIdmp = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_tipotm1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTurno1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcodigo_barra1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collote11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
             this.gridRetenidos = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -115,26 +122,33 @@
             this.btnview = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colingreso3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colidmp3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_tipotm2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTurno2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcodigo_barra2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collote12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.btnhabilitarL = new DevExpress.XtraBars.BarButtonItem();
-            this.btnObservarL = new DevExpress.XtraBars.BarButtonItem();
-            this.btnRetenerL = new DevExpress.XtraBars.BarButtonItem();
-            this.btnRetenerIngreso = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Habilitar_turno = new DevExpress.XtraBars.BarButtonItem();
             this.btnhabilitarIngreso = new DevExpress.XtraBars.BarButtonItem();
+            this.btnObservacionTurno = new DevExpress.XtraBars.BarButtonItem();
+            this.btnObservarL = new DevExpress.XtraBars.BarButtonItem();
             this.btnObservacionIngreso = new DevExpress.XtraBars.BarButtonItem();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRetenerL = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRetenerIngreso = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRetenidoTurno = new DevExpress.XtraBars.BarButtonItem();
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colid_tipotm = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colid_tipotm1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colid_tipotm2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOdoo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOdoo1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOdoo2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.TabControl1)).BeginInit();
             this.TabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
@@ -253,13 +267,28 @@
             this.colingreso,
             this.colid_mp,
             this.coldetalle,
-            this.colid_tipotm});
+            this.colOdoo,
+            this.colid_tipotm,
+            this.colTurno,
+            this.colcodigo_barra,
+            this.collote1});
             this.gvMateriaPrima.DetailHeight = 284;
+            this.gvMateriaPrima.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.gvMateriaPrima.GridControl = this.grDisponibles;
+            this.gvMateriaPrima.GroupCount = 1;
+            this.gvMateriaPrima.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "unidades", this.colunidades, "(Cantidad Total ={0:0.##})"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "peso", this.colpeso, "(Peso ={0:0.##.##} Kg.)")});
             this.gvMateriaPrima.Name = "gvMateriaPrima";
+            this.gvMateriaPrima.OptionsBehavior.AutoExpandAllGroups = true;
+            this.gvMateriaPrima.OptionsSelection.MultiSelect = true;
+            this.gvMateriaPrima.OptionsView.GroupDrawMode = DevExpress.XtraGrid.Views.Grid.GroupDrawMode.Office;
             this.gvMateriaPrima.OptionsView.ShowAutoFilterRow = true;
             this.gvMateriaPrima.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
+            this.gvMateriaPrima.OptionsView.ShowFooter = true;
             this.gvMateriaPrima.OptionsView.ShowGroupPanel = false;
+            this.gvMateriaPrima.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.collote1, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gvMateriaPrima.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvMateriaPrima_RowClick);
             this.gvMateriaPrima.DoubleClick += new System.EventHandler(this.gvMateriaPrima_DoubleClick);
             // 
@@ -285,7 +314,7 @@
             this.colmp.Name = "colmp";
             this.colmp.OptionsColumn.AllowEdit = false;
             this.colmp.Visible = true;
-            this.colmp.VisibleIndex = 2;
+            this.colmp.VisibleIndex = 3;
             // 
             // colproveedor
             // 
@@ -294,7 +323,7 @@
             this.colproveedor.Name = "colproveedor";
             this.colproveedor.OptionsColumn.AllowEdit = false;
             this.colproveedor.Visible = true;
-            this.colproveedor.VisibleIndex = 3;
+            this.colproveedor.VisibleIndex = 4;
             // 
             // colfecha_vence
             // 
@@ -303,7 +332,7 @@
             this.colfecha_vence.Name = "colfecha_vence";
             this.colfecha_vence.OptionsColumn.AllowEdit = false;
             this.colfecha_vence.Visible = true;
-            this.colfecha_vence.VisibleIndex = 4;
+            this.colfecha_vence.VisibleIndex = 5;
             // 
             // colunidades
             // 
@@ -312,7 +341,7 @@
             this.colunidades.Name = "colunidades";
             this.colunidades.OptionsColumn.AllowEdit = false;
             this.colunidades.Visible = true;
-            this.colunidades.VisibleIndex = 5;
+            this.colunidades.VisibleIndex = 6;
             // 
             // colpeso
             // 
@@ -321,7 +350,7 @@
             this.colpeso.Name = "colpeso";
             this.colpeso.OptionsColumn.AllowEdit = false;
             this.colpeso.Visible = true;
-            this.colpeso.VisibleIndex = 6;
+            this.colpeso.VisibleIndex = 7;
             // 
             // colcodigomp
             // 
@@ -347,7 +376,7 @@
             this.colingreso.Name = "colingreso";
             this.colingreso.OptionsColumn.AllowEdit = false;
             this.colingreso.Visible = true;
-            this.colingreso.VisibleIndex = 1;
+            this.colingreso.VisibleIndex = 2;
             // 
             // colid_mp
             // 
@@ -361,7 +390,7 @@
             this.coldetalle.ColumnEdit = this.btndetalle;
             this.coldetalle.Name = "coldetalle";
             this.coldetalle.Visible = true;
-            this.coldetalle.VisibleIndex = 7;
+            this.coldetalle.VisibleIndex = 9;
             // 
             // btndetalle
             // 
@@ -372,6 +401,34 @@
             this.btndetalle.Name = "btndetalle";
             this.btndetalle.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btndetalle.Click += new System.EventHandler(this.btndetalle_Click);
+            // 
+            // colid_tipotm
+            // 
+            this.colid_tipotm.FieldName = "id_tipotm";
+            this.colid_tipotm.Name = "colid_tipotm";
+            // 
+            // colTurno
+            // 
+            this.colTurno.FieldName = "Turno";
+            this.colTurno.Name = "colTurno";
+            this.colTurno.OptionsColumn.AllowEdit = false;
+            this.colTurno.Visible = true;
+            this.colTurno.VisibleIndex = 8;
+            // 
+            // colcodigo_barra
+            // 
+            this.colcodigo_barra.FieldName = "codigo_barra";
+            this.colcodigo_barra.Name = "colcodigo_barra";
+            this.colcodigo_barra.OptionsColumn.AllowEdit = false;
+            // 
+            // collote1
+            // 
+            this.collote1.Caption = "Lote";
+            this.collote1.FieldName = "lote1";
+            this.collote1.Name = "collote1";
+            this.collote1.OptionsColumn.AllowEdit = false;
+            this.collote1.Visible = true;
+            this.collote1.VisibleIndex = 4;
             // 
             // btnEditar
             // 
@@ -442,13 +499,28 @@
             this.colDetalle3,
             this.colingreso2,
             this.colIdmp,
-            this.colid_tipotm1});
+            this.colid_tipotm1,
+            this.colTurno1,
+            this.colcodigo_barra1,
+            this.collote11,
+            this.colOdoo1});
             this.gridView1.DetailHeight = 284;
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.gridView1.GridControl = this.gridObservacion;
+            this.gridView1.GroupCount = 1;
+            this.gridView1.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "unidades", this.gridColumn6, "(Cantidad Total ={0:0.##})"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "peso", this.gridColumn7, "(Peso ={0:0.##.##} Kg.)")});
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.AutoExpandAllGroups = true;
+            this.gridView1.OptionsSelection.MultiSelect = true;
+            this.gridView1.OptionsView.GroupDrawMode = DevExpress.XtraGrid.Views.Grid.GroupDrawMode.Office;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
+            this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.collote11, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
             this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
@@ -477,7 +549,7 @@
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.VisibleIndex = 3;
             this.gridColumn3.Width = 56;
             // 
             // gridColumn4
@@ -488,7 +560,7 @@
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.VisibleIndex = 4;
             this.gridColumn4.Width = 56;
             // 
             // gridColumn5
@@ -499,7 +571,7 @@
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
+            this.gridColumn5.VisibleIndex = 5;
             this.gridColumn5.Width = 56;
             // 
             // gridColumn6
@@ -510,7 +582,7 @@
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.OptionsColumn.AllowEdit = false;
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 5;
+            this.gridColumn6.VisibleIndex = 6;
             this.gridColumn6.Width = 56;
             // 
             // gridColumn7
@@ -521,7 +593,7 @@
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.OptionsColumn.AllowEdit = false;
             this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 6;
+            this.gridColumn7.VisibleIndex = 7;
             this.gridColumn7.Width = 56;
             // 
             // gridColumn8
@@ -556,7 +628,7 @@
             this.colDetalle3.MinWidth = 15;
             this.colDetalle3.Name = "colDetalle3";
             this.colDetalle3.Visible = true;
-            this.colDetalle3.VisibleIndex = 7;
+            this.colDetalle3.VisibleIndex = 9;
             this.colDetalle3.Width = 56;
             // 
             // btndetalle3
@@ -576,13 +648,41 @@
             this.colingreso2.Name = "colingreso2";
             this.colingreso2.OptionsColumn.AllowEdit = false;
             this.colingreso2.Visible = true;
-            this.colingreso2.VisibleIndex = 1;
+            this.colingreso2.VisibleIndex = 2;
             // 
             // colIdmp
             // 
             this.colIdmp.Caption = "Idmp";
             this.colIdmp.FieldName = "id_mp";
             this.colIdmp.Name = "colIdmp";
+            // 
+            // colid_tipotm1
+            // 
+            this.colid_tipotm1.FieldName = "id_tipotm";
+            this.colid_tipotm1.Name = "colid_tipotm1";
+            // 
+            // colTurno1
+            // 
+            this.colTurno1.FieldName = "Turno";
+            this.colTurno1.Name = "colTurno1";
+            this.colTurno1.OptionsColumn.AllowEdit = false;
+            this.colTurno1.Visible = true;
+            this.colTurno1.VisibleIndex = 8;
+            // 
+            // colcodigo_barra1
+            // 
+            this.colcodigo_barra1.FieldName = "codigo_barra";
+            this.colcodigo_barra1.Name = "colcodigo_barra1";
+            this.colcodigo_barra1.OptionsColumn.AllowEdit = false;
+            // 
+            // collote11
+            // 
+            this.collote11.Caption = "Lote";
+            this.collote11.FieldName = "lote1";
+            this.collote11.Name = "collote11";
+            this.collote11.OptionsColumn.AllowEdit = false;
+            this.collote11.Visible = true;
+            this.collote11.VisibleIndex = 9;
             // 
             // xtraTabPage3
             // 
@@ -641,13 +741,27 @@
             this.colver,
             this.colingreso3,
             this.colidmp3,
-            this.colid_tipotm2});
+            this.colid_tipotm2,
+            this.colTurno2,
+            this.colcodigo_barra2,
+            this.collote12,
+            this.colOdoo2});
             this.gridView2.DetailHeight = 284;
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.gridView2.GridControl = this.gridRetenidos;
+            this.gridView2.GroupCount = 1;
+            this.gridView2.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "unidades", this.gridColumn15, "(Cantidad Total ={0:0.##})"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "peso", this.gridColumn16, "(Peso ={0:0.##.##} Kg.)")});
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsBehavior.AutoExpandAllGroups = true;
+            this.gridView2.OptionsSelection.MultiSelect = true;
+            this.gridView2.OptionsView.GroupDrawMode = DevExpress.XtraGrid.Views.Grid.GroupDrawMode.Office;
             this.gridView2.OptionsView.ShowAutoFilterRow = true;
             this.gridView2.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
             this.gridView2.OptionsView.ShowGroupPanel = false;
+            this.gridView2.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.collote12, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridView2.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView2_RowClick);
             this.gridView2.DoubleClick += new System.EventHandler(this.gridView2_DoubleClick);
             // 
@@ -676,7 +790,7 @@
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.OptionsColumn.AllowEdit = false;
             this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 2;
+            this.gridColumn12.VisibleIndex = 3;
             this.gridColumn12.Width = 56;
             // 
             // gridColumn13
@@ -687,7 +801,7 @@
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.OptionsColumn.AllowEdit = false;
             this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 3;
+            this.gridColumn13.VisibleIndex = 4;
             this.gridColumn13.Width = 56;
             // 
             // gridColumn14
@@ -698,7 +812,7 @@
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.OptionsColumn.AllowEdit = false;
             this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 4;
+            this.gridColumn14.VisibleIndex = 5;
             this.gridColumn14.Width = 56;
             // 
             // gridColumn15
@@ -709,7 +823,7 @@
             this.gridColumn15.Name = "gridColumn15";
             this.gridColumn15.OptionsColumn.AllowEdit = false;
             this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 5;
+            this.gridColumn15.VisibleIndex = 6;
             this.gridColumn15.Width = 56;
             // 
             // gridColumn16
@@ -720,7 +834,7 @@
             this.gridColumn16.Name = "gridColumn16";
             this.gridColumn16.OptionsColumn.AllowEdit = false;
             this.gridColumn16.Visible = true;
-            this.gridColumn16.VisibleIndex = 6;
+            this.gridColumn16.VisibleIndex = 7;
             this.gridColumn16.Width = 56;
             // 
             // gridColumn17
@@ -755,7 +869,7 @@
             this.colver.MinWidth = 15;
             this.colver.Name = "colver";
             this.colver.Visible = true;
-            this.colver.VisibleIndex = 7;
+            this.colver.VisibleIndex = 9;
             this.colver.Width = 56;
             // 
             // btnview
@@ -775,13 +889,41 @@
             this.colingreso3.Name = "colingreso3";
             this.colingreso3.OptionsColumn.AllowEdit = false;
             this.colingreso3.Visible = true;
-            this.colingreso3.VisibleIndex = 1;
+            this.colingreso3.VisibleIndex = 2;
             // 
             // colidmp3
             // 
             this.colidmp3.Caption = "gridColumn20";
             this.colidmp3.FieldName = "id_mp";
             this.colidmp3.Name = "colidmp3";
+            // 
+            // colid_tipotm2
+            // 
+            this.colid_tipotm2.FieldName = "id_tipotm";
+            this.colid_tipotm2.Name = "colid_tipotm2";
+            // 
+            // colTurno2
+            // 
+            this.colTurno2.FieldName = "Turno";
+            this.colTurno2.Name = "colTurno2";
+            this.colTurno2.OptionsColumn.AllowEdit = false;
+            this.colTurno2.Visible = true;
+            this.colTurno2.VisibleIndex = 8;
+            // 
+            // colcodigo_barra2
+            // 
+            this.colcodigo_barra2.FieldName = "codigo_barra";
+            this.colcodigo_barra2.Name = "colcodigo_barra2";
+            this.colcodigo_barra2.OptionsColumn.AllowEdit = false;
+            // 
+            // collote12
+            // 
+            this.collote12.Caption = "Lote";
+            this.collote12.FieldName = "lote1";
+            this.collote12.Name = "collote12";
+            this.collote12.OptionsColumn.AllowEdit = false;
+            this.collote12.Visible = true;
+            this.collote12.VisibleIndex = 9;
             // 
             // label1
             // 
@@ -797,14 +939,17 @@
             // 
             this.popupMenu1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnhabilitarL),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnObservarL),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnRetenerL),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnRetenerIngreso),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_Habilitar_turno),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnhabilitarIngreso),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnObservacionIngreso)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnObservacionTurno),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnObservarL),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnObservacionIngreso),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnRetenerL),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnRetenerIngreso),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnRetenidoTurno)});
             this.popupMenu1.Manager = this.barManager1;
             this.popupMenu1.Name = "popupMenu1";
             // 
@@ -818,6 +963,55 @@
             this.barButtonItem1.Name = "barButtonItem1";
             this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
+            // btnhabilitarL
+            // 
+            this.btnhabilitarL.Caption = "Habilitar lote";
+            this.btnhabilitarL.Id = 3;
+            this.btnhabilitarL.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnhabilitarL.ImageOptions.Image")));
+            this.btnhabilitarL.Name = "btnhabilitarL";
+            this.btnhabilitarL.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnhabilitarL_ItemClick);
+            // 
+            // btn_Habilitar_turno
+            // 
+            this.btn_Habilitar_turno.Caption = "Habilitar por turno";
+            this.btn_Habilitar_turno.Id = 9;
+            this.btn_Habilitar_turno.ImageOptions.Image = global::LOSA.Properties.Resources.Done_icon;
+            this.btn_Habilitar_turno.Name = "btn_Habilitar_turno";
+            this.btn_Habilitar_turno.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Habilitar_turno_ItemClick);
+            // 
+            // btnhabilitarIngreso
+            // 
+            this.btnhabilitarIngreso.Caption = "Habilitar Ingreso";
+            this.btnhabilitarIngreso.Id = 7;
+            this.btnhabilitarIngreso.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnhabilitarIngreso.ImageOptions.SvgImage")));
+            this.btnhabilitarIngreso.Name = "btnhabilitarIngreso";
+            this.btnhabilitarIngreso.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnhabilitarIngreso_ItemClick);
+            // 
+            // btnObservacionTurno
+            // 
+            this.btnObservacionTurno.Caption = "En Observacion turno";
+            this.btnObservacionTurno.Id = 10;
+            this.btnObservacionTurno.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnObservacionTurno.ImageOptions.Image")));
+            this.btnObservacionTurno.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnObservacionTurno.ImageOptions.LargeImage")));
+            this.btnObservacionTurno.Name = "btnObservacionTurno";
+            this.btnObservacionTurno.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnObservacionTurno_ItemClick);
+            // 
+            // btnObservarL
+            // 
+            this.btnObservarL.Caption = "En Observacion lote";
+            this.btnObservarL.Id = 4;
+            this.btnObservarL.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnObservarL.ImageOptions.Image")));
+            this.btnObservarL.Name = "btnObservarL";
+            this.btnObservarL.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnObservarL_ItemClick);
+            // 
+            // btnObservacionIngreso
+            // 
+            this.btnObservacionIngreso.Caption = "En Observacion Ingreso";
+            this.btnObservacionIngreso.Id = 8;
+            this.btnObservacionIngreso.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnObservacionIngreso.ImageOptions.SvgImage")));
+            this.btnObservacionIngreso.Name = "btnObservacionIngreso";
+            this.btnObservacionIngreso.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnObservacionIngreso_ItemClick);
+            // 
             // barButtonItem2
             // 
             this.barButtonItem2.Caption = "En Observación";
@@ -827,6 +1021,14 @@
             this.barButtonItem2.ItemAppearance.Disabled.Options.UseFont = true;
             this.barButtonItem2.Name = "barButtonItem2";
             this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
+            // 
+            // btnRetenerL
+            // 
+            this.btnRetenerL.Caption = "Retener lote";
+            this.btnRetenerL.Id = 5;
+            this.btnRetenerL.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRetenerL.ImageOptions.Image")));
+            this.btnRetenerL.Name = "btnRetenerL";
+            this.btnRetenerL.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRetenerL_ItemClick);
             // 
             // barButtonItem3
             // 
@@ -838,30 +1040,6 @@
             this.barButtonItem3.Name = "barButtonItem3";
             this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
             // 
-            // btnhabilitarL
-            // 
-            this.btnhabilitarL.Caption = "Habilitar lote";
-            this.btnhabilitarL.Id = 3;
-            this.btnhabilitarL.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnhabilitarL.ImageOptions.Image")));
-            this.btnhabilitarL.Name = "btnhabilitarL";
-            this.btnhabilitarL.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnhabilitarL_ItemClick);
-            // 
-            // btnObservarL
-            // 
-            this.btnObservarL.Caption = "En Observacion lote";
-            this.btnObservarL.Id = 4;
-            this.btnObservarL.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnObservarL.ImageOptions.Image")));
-            this.btnObservarL.Name = "btnObservarL";
-            this.btnObservarL.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnObservarL_ItemClick);
-            // 
-            // btnRetenerL
-            // 
-            this.btnRetenerL.Caption = "Retener lote";
-            this.btnRetenerL.Id = 5;
-            this.btnRetenerL.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRetenerL.ImageOptions.Image")));
-            this.btnRetenerL.Name = "btnRetenerL";
-            this.btnRetenerL.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRetenerL_ItemClick);
-            // 
             // btnRetenerIngreso
             // 
             this.btnRetenerIngreso.Caption = "Retener Ingreso";
@@ -870,21 +1048,14 @@
             this.btnRetenerIngreso.Name = "btnRetenerIngreso";
             this.btnRetenerIngreso.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRetenerIngreso_ItemClick);
             // 
-            // btnhabilitarIngreso
+            // btnRetenidoTurno
             // 
-            this.btnhabilitarIngreso.Caption = "Habilitar Ingreso";
-            this.btnhabilitarIngreso.Id = 7;
-            this.btnhabilitarIngreso.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnhabilitarIngreso.ImageOptions.SvgImage")));
-            this.btnhabilitarIngreso.Name = "btnhabilitarIngreso";
-            this.btnhabilitarIngreso.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnhabilitarIngreso_ItemClick);
-            // 
-            // btnObservacionIngreso
-            // 
-            this.btnObservacionIngreso.Caption = "En Observacion Ingreso";
-            this.btnObservacionIngreso.Id = 8;
-            this.btnObservacionIngreso.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnObservacionIngreso.ImageOptions.SvgImage")));
-            this.btnObservacionIngreso.Name = "btnObservacionIngreso";
-            this.btnObservacionIngreso.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnObservacionIngreso_ItemClick);
+            this.btnRetenidoTurno.Caption = "Retener Turno";
+            this.btnRetenidoTurno.Id = 11;
+            this.btnRetenidoTurno.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRetenidoTurno.ImageOptions.Image")));
+            this.btnRetenidoTurno.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRetenidoTurno.ImageOptions.LargeImage")));
+            this.btnRetenidoTurno.Name = "btnRetenidoTurno";
+            this.btnRetenidoTurno.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRetenidoTurno_ItemClick);
             // 
             // barManager1
             // 
@@ -902,8 +1073,11 @@
             this.btnRetenerL,
             this.btnRetenerIngreso,
             this.btnhabilitarIngreso,
-            this.btnObservacionIngreso});
-            this.barManager1.MaxItemId = 9;
+            this.btnObservacionIngreso,
+            this.btn_Habilitar_turno,
+            this.btnObservacionTurno,
+            this.btnRetenidoTurno});
+            this.barManager1.MaxItemId = 12;
             // 
             // barDockControlTop
             // 
@@ -944,20 +1118,32 @@
             this.colid.Name = "colid";
             this.colid.Width = 56;
             // 
-            // colid_tipotm
+            // colOdoo
             // 
-            this.colid_tipotm.FieldName = "id_tipotm";
-            this.colid_tipotm.Name = "colid_tipotm";
+            this.colOdoo.Caption = "Produccion";
+            this.colOdoo.FieldName = "Odoo";
+            this.colOdoo.Name = "colOdoo";
+            this.colOdoo.OptionsColumn.AllowEdit = false;
+            this.colOdoo.Visible = true;
+            this.colOdoo.VisibleIndex = 1;
             // 
-            // colid_tipotm1
+            // colOdoo1
             // 
-            this.colid_tipotm1.FieldName = "id_tipotm";
-            this.colid_tipotm1.Name = "colid_tipotm1";
+            this.colOdoo1.Caption = "Produccion";
+            this.colOdoo1.FieldName = "Odoo";
+            this.colOdoo1.Name = "colOdoo1";
+            this.colOdoo1.OptionsColumn.AllowEdit = false;
+            this.colOdoo1.Visible = true;
+            this.colOdoo1.VisibleIndex = 1;
             // 
-            // colid_tipotm2
+            // colOdoo2
             // 
-            this.colid_tipotm2.FieldName = "id_tipotm";
-            this.colid_tipotm2.Name = "colid_tipotm2";
+            this.colOdoo2.Caption = "Produccion";
+            this.colOdoo2.FieldName = "Odoo";
+            this.colOdoo2.Name = "colOdoo2";
+            this.colOdoo2.OptionsColumn.AllowEdit = false;
+            this.colOdoo2.Visible = true;
+            this.colOdoo2.VisibleIndex = 1;
             // 
             // frmLotesStatus
             // 
@@ -1078,5 +1264,20 @@
         private DevExpress.XtraGrid.Columns.GridColumn colid_tipotm;
         private DevExpress.XtraGrid.Columns.GridColumn colid_tipotm1;
         private DevExpress.XtraGrid.Columns.GridColumn colid_tipotm2;
+        private DevExpress.XtraGrid.Columns.GridColumn colTurno;
+        private DevExpress.XtraGrid.Columns.GridColumn colTurno1;
+        private DevExpress.XtraGrid.Columns.GridColumn colTurno2;
+        private DevExpress.XtraBars.BarButtonItem btn_Habilitar_turno;
+        private DevExpress.XtraBars.BarButtonItem btnObservacionTurno;
+        private DevExpress.XtraBars.BarButtonItem btnRetenidoTurno;
+        private DevExpress.XtraGrid.Columns.GridColumn colcodigo_barra;
+        private DevExpress.XtraGrid.Columns.GridColumn colcodigo_barra1;
+        private DevExpress.XtraGrid.Columns.GridColumn colcodigo_barra2;
+        private DevExpress.XtraGrid.Columns.GridColumn collote1;
+        private DevExpress.XtraGrid.Columns.GridColumn collote11;
+        private DevExpress.XtraGrid.Columns.GridColumn collote12;
+        private DevExpress.XtraGrid.Columns.GridColumn colOdoo;
+        private DevExpress.XtraGrid.Columns.GridColumn colOdoo1;
+        private DevExpress.XtraGrid.Columns.GridColumn colOdoo2;
     }
 }

@@ -59,7 +59,6 @@ namespace ACS.Classes
         public static string LOSA_DB_Pass = "AquaF33dHN2014";
 
         //LOSA Desarrollo
-
         //public static string LOSA_ServerName = @"GBLDSQ2\GBLDSQ2";
         //public static string LOSA_ActiveDB = "LOSA";
         //public static string LOSA_DB_User = "sa";
@@ -72,8 +71,8 @@ namespace ACS.Classes
         //public static string LOSA_DB_User = "sa";
         //public static string LOSA_DB_Pass = "ABC123xyz";
 
-
-        public static string SAP_ServerAddress = @"AQFSVR006";
+        //SAP
+        public static string SAP_ServerAddress = @"AQFSVR006\AQFSVR006";
         public static string SAP_ServerName = "Servidor de Desarrollo";
         public static string SAP_ActiveDB = "AQUA";
         public static string SAP_DB_User = "sa";
@@ -81,7 +80,7 @@ namespace ACS.Classes
 
 
         // APMS(Aquafeed Pocess Management System)
-        public static string APMS_Server = @"AQFSVR008\WINCC";
+        public static string APMS_Server = @"AQFSVR008\AQFSVR008";
         public static string APMS_DB_User = "sa";
         public static string APMS_DB_Pass = "AquaF33dHN2017";
         public static string APMS_ActiveDB = "APMS";

@@ -1,8 +1,14 @@
 ﻿using ACS.Classes;
 using Core.Clases.Herramientas;
 using DevExpress.Utils.TouchHelpers;
+using DevExpress.XtraReports.UI;
 using Huellas;
+using LOSA.AlmacenesExterno;
+using LOSA.AlmacenesExterno.Reporteria;
 using LOSA.Clases;
+using LOSA.Micro;
+using LOSA.MicroIngredientes;
+using LOSA.Reportes;
 using LOSA.Utileria;
 using System;
 using System.Collections.Generic;
@@ -25,8 +31,10 @@ namespace LOSA
         public frmMain()
         {
             InitializeComponent();
-            //TouchKeyboardSupport.EnableTouchKeyboard = true;
+            //TouchKeyboardSupport.EnableTouchKeyboard = true ;
             //TouchKeyboardSupport.CheckEnableTouchSupport(this);
+
+
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -80,6 +88,7 @@ namespace LOSA
                 //MessageBox.Show("Contraseña Vacia.");
                 frmMensaje frm = new frmMensaje(frmMensaje.TipoMsj.error, "No puede dejar la contraseña vacia!");
                 frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.MdiParent = this;
                 frm.ShowDialog();
                 return;
             }
@@ -113,6 +122,7 @@ namespace LOSA
                 UserLogin Log1 = new UserLogin();
                 if (Log1.RecuperarRegistroFromUser(user))
                 {
+                    Log1.Pass = txtClave.Text;
                     Log1.GrupoUsuario.GrupoUsuarioActivo = (GrupoUser.GrupoUsuario)Log1.IdGrupo;
                     frmOpciones frm = new frmOpciones(Log1);
                     if (this.MdiParent != null)
@@ -226,16 +236,54 @@ namespace LOSA
         {
             Teclado.cerrarTeclado();
             UserLogin Log1 = new UserLogin();
-            if (Log1.RecuperarRegistro(1050))
+            if (Log1.RecuperarRegistro(1035))
             {
-                Log1.GrupoUsuario.GrupoUsuarioActivo = (GrupoUser.GrupoUsuario)Log1.IdGrupo;
+                //Log1.GrupoUsuario.GrupoUsuarioActivo = (GrupoUser.GrupoUsuario)Log1.IdGrupo;
+                //Log1.GrupoUsuario.GrupoUsuarioActivo = (GrupoUser.GrupoUsuario)1;
+                Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Logistica;
             }
             else
             {
                 Log1.Id = 1069;
-                Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Produccion;
+                Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Calidad;
             }
             frmOpciones frm = new frmOpciones(Log1);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void cmdMicros_Click(object sender, EventArgs e)
+        {
+            //frmOpcionesMicro frm = new frmOpcionesMicro();
+            //frm.MdiParent = this.MdiParent;
+            //frm.WindowState = FormWindowState.Maximized;
+            //frm.Show();
+
+            xfrmMenuMicros menu = new xfrmMenuMicros();
+            menu.MdiParent = this.MdiParent;
+            menu.Show();
+
+            //this.DialogResult = DialogResult.Cancel; 
+            //this.Close();
+        }
+
+        private void simpleButton2_Click_1(object sender, EventArgs e)
+        {
+            Teclado.cerrarTeclado();
+            UserLogin Log1 = new UserLogin();
+            if (Log1.RecuperarRegistro(1035))
+            {
+                //Log1.GrupoUsuario.GrupoUsuarioActivo = (GrupoUser.GrupoUsuario)Log1.IdGrupo;
+                //Log1.GrupoUsuario.GrupoUsuarioActivo = (GrupoUser.GrupoUsuario)1;
+                Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Calidad;
+            }
+            else
+            {
+                Log1.Id = 1069;
+                Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Calidad;
+            }
+            frmOpciones frm = new frmOpciones(Log1);
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
     }

@@ -1,4 +1,5 @@
 ﻿using ACS.Classes;
+using LOSA.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,46 @@ namespace LOSA.Logistica
             InitializeComponent();
             cargarMateriaPrima();
             //cargarDatosTarimas();
+            cbMateriaPrima.Enabled = true;
+        }
+
+        public frmLotesXMP(string SAPCODE_MP)
+        {
+            InitializeComponent();
+            cargarMateriaPrima();
+            //cargarDatosTarimas();
+            cbMateriaPrima.Enabled = false;
+            //MateriaPrima mp = new MateriaPrima();
+            //if (mp.RecuperarRegistroFromCode(SAPCODE_MP))
+            //{
+                cbMateriaPrima.EditValue = SAPCODE_MP;
+                //cbMateriaPrima.Text = mp.Name;
+                cargarDatosTarimas();
+            //}
+        }
+
+        private void cargarDatosTarimas(int pidmp)
+        {
+            try
+            {
+
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_lotes_by_MP_v2", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_mp", pidmp);
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                dsLogistica.LotesXProveedor.Clear();
+                adat.Fill(dsLogistica.LotesXProveedor);
+                con.Close();
+
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
         }
 
         private void cargarDatosTarimas()

@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLotesXMP));
             this.gcLotes = new DevExpress.XtraGrid.GridControl();
-            this.lotesXProveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lotesXProveedorBindingSource = new System.Windows.Forms.BindingSource();
             this.dsLogistica = new LOSA.Logistica.dsLogistica2();
             this.gvLotes = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -43,7 +42,7 @@
             this.colidMateriaPrima = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.cbMateriaPrima = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.materiaprimaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.materiaprimaBindingSource = new System.Windows.Forms.BindingSource();
             this.gvMateriaPrima = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colitemcode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colitemdescrip = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -120,8 +119,9 @@
             this.colidMateriaPrima});
             this.gvLotes.GridControl = this.gcLotes;
             this.gvLotes.Name = "gvLotes";
+            this.gvLotes.OptionsView.ShowAutoFilterRow = true;
+            this.gvLotes.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways;
             this.gvLotes.OptionsView.ShowFooter = true;
-            this.gvLotes.OptionsView.ShowGroupPanel = false;
             // 
             // colid
             // 
@@ -281,7 +281,7 @@
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdHome.ImageOptions.Image")));
-            this.cmdHome.Location = new System.Drawing.Point(450, 12);
+            this.cmdHome.Location = new System.Drawing.Point(450, 27);
             this.cmdHome.Name = "cmdHome";
             this.cmdHome.Size = new System.Drawing.Size(144, 59);
             this.cmdHome.TabIndex = 90;

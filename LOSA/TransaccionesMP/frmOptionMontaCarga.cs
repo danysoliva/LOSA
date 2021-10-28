@@ -1,4 +1,5 @@
-﻿using LOSA.Clases;
+﻿using LOSA.Calidad;
+using LOSA.Clases;
 using LOSA.RecepcionMP;
 using LOSA.TransaccionesPT;
 using System;
@@ -90,10 +91,28 @@ namespace LOSA.TransaccionesMP
 
         private void cmdOrdenesCargaPT_Click(object sender, EventArgs e)
         {
-            LOSA.Despachos.frm_despachos frm = new Despachos.frm_despachos();
-            frm.Show();
-            //LOSA.Despachos.frmentregadeproductoT frm = new Despachos.frmentregadeproductoT(UsuarioLogeado);
-            //frm.Show();
+            SelectorFor path = new SelectorFor(1);
+            if (path.Camino == 1)
+            {
+                LOSA.Despachos.frm_despachos frm = new Despachos.frm_despachos();
+                frm.Show();
+            }
+            else
+            {
+                if (path.Camino == 2)
+                {
+                    LOSA.Despachos.frm_despacho_v2 FRM = new Despachos.frm_despacho_v2();
+                    FRM.Show();
+                }
+                else
+                {
+                    LOSA.Despachos.frm_despacho_v3 frm = new Despachos.frm_despacho_v3();
+                    frm.Show();
+                }
+            }
+
+          
+            
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)
@@ -105,6 +124,30 @@ namespace LOSA.TransaccionesMP
         private void cmdTarimasPT_Click(object sender, EventArgs e)
         {
             frmactivacionPT frm = new frmactivacionPT(UsuarioLogeado);
+            frm.Show();
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+            frm_saco_dañado frm = new frm_saco_dañado();
+            frm.Show();
+        }
+
+        private void simpleButton5_Click(object sender, EventArgs e)
+        {
+            frm_reporte_produccion frm = new frm_reporte_produccion();
+            frm.Show();
+        }
+
+        private void simpleButton6_Click(object sender, EventArgs e)
+        {
+            frmRevisionDeActivaciondeTm frm = new frmRevisionDeActivaciondeTm();
+            frm.Show();
+        }
+
+        private void btntarimasactivadasPT_Click(object sender, EventArgs e)
+        {
+            frm_rpt_productoT frm = new frm_rpt_productoT();
             frm.Show();
         }
     }

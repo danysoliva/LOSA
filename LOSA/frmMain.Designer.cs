@@ -36,12 +36,14 @@ namespace LOSA
             this.txtUsuario = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.cmdButtonSaltarLogin = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblVersion = new System.Windows.Forms.Label();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.SaltarLogin = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdButtonSaltarLogin = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdMicros = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.txtClave.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsuario.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -54,7 +56,7 @@ namespace LOSA
             this.cmdCerrar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdCerrar.Location = new System.Drawing.Point(325, 228);
             this.cmdCerrar.Name = "cmdCerrar";
-            this.cmdCerrar.Size = new System.Drawing.Size(199, 71);
+            this.cmdCerrar.Size = new System.Drawing.Size(199, 59);
             this.cmdCerrar.TabIndex = 3;
             this.cmdCerrar.Text = "Cerrar";
             this.cmdCerrar.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -70,7 +72,7 @@ namespace LOSA
             this.cmdLogin.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdLogin.Location = new System.Drawing.Point(122, 228);
             this.cmdLogin.Name = "cmdLogin";
-            this.cmdLogin.Size = new System.Drawing.Size(199, 71);
+            this.cmdLogin.Size = new System.Drawing.Size(199, 59);
             this.cmdLogin.TabIndex = 2;
             this.cmdLogin.Text = "Ingresar";
             this.cmdLogin.Click += new System.EventHandler(this.simpleButton2_Click);
@@ -126,22 +128,6 @@ namespace LOSA
             this.labelControl2.Text = "Clave";
             this.labelControl2.Click += new System.EventHandler(this.labelControl2_Click);
             // 
-            // cmdButtonSaltarLogin
-            // 
-            this.cmdButtonSaltarLogin.Appearance.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.cmdButtonSaltarLogin.Appearance.BorderColor = System.Drawing.Color.MediumAquamarine;
-            this.cmdButtonSaltarLogin.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdButtonSaltarLogin.Appearance.Options.UseBackColor = true;
-            this.cmdButtonSaltarLogin.Appearance.Options.UseBorderColor = true;
-            this.cmdButtonSaltarLogin.Appearance.Options.UseFont = true;
-            this.cmdButtonSaltarLogin.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdButtonSaltarLogin.Location = new System.Drawing.Point(120, 315);
-            this.cmdButtonSaltarLogin.Name = "cmdButtonSaltarLogin";
-            this.cmdButtonSaltarLogin.Size = new System.Drawing.Size(199, 71);
-            this.cmdButtonSaltarLogin.TabIndex = 11;
-            this.cmdButtonSaltarLogin.Text = "Montacarga";
-            this.cmdButtonSaltarLogin.Click += new System.EventHandler(this.cmdButtonSaltarLogin_Click);
-            // 
             // labelControl3
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -158,21 +144,10 @@ namespace LOSA
             this.labelControl3.Text = "Bienvenido";
             this.labelControl3.Click += new System.EventHandler(this.labelControl1_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::LOSA.Properties.Resources.Users_Group_icon64px;
-            this.pictureBox1.Location = new System.Drawing.Point(425, 101);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(99, 94);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // lblVersion
             // 
             this.lblVersion.AutoSize = true;
-            this.lblVersion.Location = new System.Drawing.Point(110, 401);
+            this.lblVersion.Location = new System.Drawing.Point(119, 501);
             this.lblVersion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblVersion.Name = "lblVersion";
             this.lblVersion.Size = new System.Drawing.Size(47, 13);
@@ -188,9 +163,9 @@ namespace LOSA
             this.simpleButton1.Appearance.Options.UseBorderColor = true;
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton1.Location = new System.Drawing.Point(325, 315);
+            this.simpleButton1.Location = new System.Drawing.Point(325, 293);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton1.Size = new System.Drawing.Size(199, 59);
             this.simpleButton1.TabIndex = 14;
             this.simpleButton1.Text = "Alimentación";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_1);
@@ -204,13 +179,73 @@ namespace LOSA
             this.SaltarLogin.Appearance.Options.UseBorderColor = true;
             this.SaltarLogin.Appearance.Options.UseFont = true;
             this.SaltarLogin.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.SaltarLogin.Location = new System.Drawing.Point(224, 417);
+            this.SaltarLogin.Location = new System.Drawing.Point(119, 427);
             this.SaltarLogin.Name = "SaltarLogin";
             this.SaltarLogin.Size = new System.Drawing.Size(199, 71);
             this.SaltarLogin.TabIndex = 15;
-            this.SaltarLogin.Text = "Ingresar";
+            this.SaltarLogin.Text = "Ingresar Log";
             this.SaltarLogin.Visible = false;
             this.SaltarLogin.Click += new System.EventHandler(this.SaltarLogin_Click);
+            // 
+            // cmdButtonSaltarLogin
+            // 
+            this.cmdButtonSaltarLogin.Appearance.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.cmdButtonSaltarLogin.Appearance.BorderColor = System.Drawing.Color.MediumAquamarine;
+            this.cmdButtonSaltarLogin.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdButtonSaltarLogin.Appearance.Options.UseBackColor = true;
+            this.cmdButtonSaltarLogin.Appearance.Options.UseBorderColor = true;
+            this.cmdButtonSaltarLogin.Appearance.Options.UseFont = true;
+            this.cmdButtonSaltarLogin.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdButtonSaltarLogin.Location = new System.Drawing.Point(122, 293);
+            this.cmdButtonSaltarLogin.Name = "cmdButtonSaltarLogin";
+            this.cmdButtonSaltarLogin.Size = new System.Drawing.Size(199, 59);
+            this.cmdButtonSaltarLogin.TabIndex = 11;
+            this.cmdButtonSaltarLogin.Text = "Montacarga";
+            this.cmdButtonSaltarLogin.Click += new System.EventHandler(this.cmdButtonSaltarLogin_Click);
+            // 
+            // cmdMicros
+            // 
+            this.cmdMicros.Appearance.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.cmdMicros.Appearance.BorderColor = System.Drawing.Color.PaleTurquoise;
+            this.cmdMicros.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdMicros.Appearance.Options.UseBackColor = true;
+            this.cmdMicros.Appearance.Options.UseBorderColor = true;
+            this.cmdMicros.Appearance.Options.UseFont = true;
+            this.cmdMicros.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdMicros.Location = new System.Drawing.Point(325, 358);
+            this.cmdMicros.Name = "cmdMicros";
+            this.cmdMicros.Size = new System.Drawing.Size(199, 59);
+            this.cmdMicros.TabIndex = 16;
+            this.cmdMicros.Text = "Micro Ingredientes";
+            this.cmdMicros.Click += new System.EventHandler(this.cmdMicros_Click);
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.simpleButton2.Appearance.BorderColor = System.Drawing.Color.LightSkyBlue;
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton2.Appearance.Options.UseBackColor = true;
+            this.simpleButton2.Appearance.Options.UseBorderColor = true;
+            this.simpleButton2.Appearance.Options.UseFont = true;
+            this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton2.Location = new System.Drawing.Point(325, 427);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton2.TabIndex = 17;
+            this.simpleButton2.Text = "Ingresar Calidad";
+            this.simpleButton2.Visible = false;
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click_1);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::LOSA.Properties.Resources.Users_Group_icon64px;
+            this.pictureBox1.Location = new System.Drawing.Point(425, 101);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(99, 94);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // frmMain
             // 
@@ -219,6 +254,8 @@ namespace LOSA
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(638, 560);
             this.ControlBox = false;
+            this.Controls.Add(this.simpleButton2);
+            this.Controls.Add(this.cmdMicros);
             this.Controls.Add(this.SaltarLogin);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.lblVersion);
@@ -233,7 +270,7 @@ namespace LOSA
             this.Controls.Add(this.cmdCerrar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMain";
-            this.Text = "Form1";
+            this.Text = "LOGIN";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.Click += new System.EventHandler(this.frmMain_Click);
@@ -254,11 +291,13 @@ namespace LOSA
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private DevExpress.XtraEditors.SimpleButton cmdButtonSaltarLogin;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private System.Windows.Forms.Label lblVersion;
         private SimpleButton simpleButton1;
         private SimpleButton SaltarLogin;
+        private SimpleButton cmdButtonSaltarLogin;
+        private SimpleButton cmdMicros;
+        private SimpleButton simpleButton2;
     }
 }
 

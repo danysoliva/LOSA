@@ -21,6 +21,7 @@ namespace LOSA.Despachos.Reportes
         public string Vehiculo;
         public string conductor;
         public string Furgon;
+        public string codigo;
 
         public int id_serie;
         public frm_pickboleta()
@@ -63,6 +64,7 @@ namespace LOSA.Despachos.Reportes
                 Vehiculo = row.vehiculo;
                 Furgon = row.furgon;
                 conductor = row.conductorin;
+                codigo = row.carcode;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
 
@@ -85,6 +87,7 @@ namespace LOSA.Despachos.Reportes
                 Vehiculo = row.vehiculo;
                 Furgon = row.furgon;
                 conductor = row.conductorin;
+                codigo = row.carcode;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
 

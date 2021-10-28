@@ -37,6 +37,7 @@
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.grd_causa = new DevExpress.XtraGrid.GridControl();
+            this.dsCalidad = new LOSA.Calidad.dsCalidad();
             this.grdv_causa = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcomentario = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -52,15 +53,14 @@
             this.txtingreso = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.label1 = new System.Windows.Forms.Label();
-            this.dsCalidad = new LOSA.Calidad.dsCalidad();
             ((System.ComponentModel.ISupportInitialize)(this.grd_causa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsCalidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_causa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btneliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtnombre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtitemcode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtlote.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtingreso.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsCalidad)).BeginInit();
             this.SuspendLayout();
             // 
             // simpleButton1
@@ -112,6 +112,11 @@
             this.grd_causa.TabIndex = 50;
             this.grd_causa.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_causa});
+            // 
+            // dsCalidad
+            // 
+            this.dsCalidad.DataSetName = "dsCalidad";
+            this.dsCalidad.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // grdv_causa
             // 
@@ -180,6 +185,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
             // 
             // btnAgregar
             // 
@@ -280,11 +286,6 @@
             this.label1.TabIndex = 59;
             this.label1.Text = "Causas de Retencion";
             // 
-            // dsCalidad
-            // 
-            this.dsCalidad.DataSetName = "dsCalidad";
-            this.dsCalidad.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // frmcausasRetencion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -307,13 +308,13 @@
             this.Text = "frmcausasRetencion";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.grd_causa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsCalidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_causa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btneliminar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtnombre.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtitemcode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtlote.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtingreso.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsCalidad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

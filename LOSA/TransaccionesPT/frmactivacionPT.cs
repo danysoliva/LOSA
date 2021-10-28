@@ -22,7 +22,8 @@ namespace LOSA.TransaccionesPT
         private decimal factorPresentacion;
         private int IsMicro = 0;
         UserLogin usuarioLogueado;
-        Tarima tarimaEncontrada;   
+        Tarima tarimaEncontrada;
+        public int idUbicacionNueva;
         public frmactivacionPT(UserLogin pUser)
         {
             InitializeComponent();
@@ -61,7 +62,7 @@ namespace LOSA.TransaccionesPT
                         {
                             idTarima = dr.GetInt32(0);
 
-                            if (InfoTarima.RecuperarRegistro(idTarima, ""))
+                            if (InfoTarima.RecuperarRegistro_activacion(idTarima, ""))
                             {
                                 factorPresentacion = InfoTarima.Factor;
                                 tarimaEncontrada = InfoTarima;
@@ -89,6 +90,7 @@ namespace LOSA.TransaccionesPT
                 CajaDialogo.Error(error.Message);
             }
         }
+     
 
         private DataTable CreateDataTarima(int idTarima, string pProveedor, string pNombreTarima, string pLote, string pPpresentacion)
         {
@@ -143,7 +145,7 @@ namespace LOSA.TransaccionesPT
                 else
                 {
                     error = true;
-                    mensaje = "El codigo de barra leido no es correcto!";
+                    mensaje = "La Tarima ya esta activa o no se ha podido encontrar!";
                 }
 
                 if (error)
@@ -182,12 +184,19 @@ namespace LOSA.TransaccionesPT
 
                 if (Guardo)
                 {
+                    idTarima = tarimaEncontrada.Id;
                     //Mensaje de transaccion exitosa
-                    lblMensaje.Text = "Transacción Exitosa!";
-                    panelNotificacion.BackColor = Color.MediumSeaGreen;
-                    timerLimpiarMensaje.Enabled = true;
-                    timerLimpiarMensaje.Start();
+                    lblMensaje.Text = "Tarima Activada";
+                    //panelNotificacion.BackColor = Color.MediumSeaGreen;
+                    //timerLimpiarMensaje.Enabled = true;
+                    //timerLimpiarMensaje.Start();
+
+                    beNuevaUbicacion.Focus();
                 }
+
+                
+
+
             }
             else
             {
@@ -220,12 +229,84 @@ namespace LOSA.TransaccionesPT
             gcTarima.DataSource = null;
             lblMensaje.Text = "";
             txtTarima.Focus();
-            pictureBoxIndicadorOk.Visible = false;
-        }
+            pictureBoxIndicadorOk.Visible = false; 
 
-        private void frmactivacionPT_Load(object sender, EventArgs e)
-        {
+            gcNuevaUbicación.DataSource = null;
+            gcTarima.DataSource = null;
+            beNuevaUbicacion.Text = "";
             txtTarima.Focus();
         }
+
+        private void beNuevaUbicacion_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                gcNuevaUbicación.DataSource = CreateDataNuevaUbicacion(0, beNuevaUbicacion.Text);
+                gvNuevaUbicacion.InitNewRow += GvNuevaUbicacion_InitNewRow;
+                gvNuevaUbicacion.Columns[0].AppearanceCell.Font = new Font("Segoe UI", 11, FontStyle.Bold);
+
+
+                try
+                {
+                    if (gvTarima.RowCount <= 0 || gvNuevaUbicacion.RowCount <= 0)
+                        CajaDialogo.Error("INFORMACION INCOMPLETA");
+                    else
+                    {
+                        DataOperations dp = new DataOperations();
+                        SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                        con.Open();
+
+
+                        SqlCommand cmd = new SqlCommand("sp_cambiar_ubicacion_tarima_v2_activacion", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        Tarima tam1 = new Tarima();
+
+
+                        cmd.Parameters.AddWithValue("@id_tarima", idTarima);
+                        cmd.Parameters.AddWithValue("@idUbicacionNueva", idUbicacionNueva);
+
+                        cmd.ExecuteNonQuery();
+
+                        con.Close();
+                       
+                        panelNotificacion.BackColor = Color.MediumSeaGreen;
+                        timerLimpiarMensaje.Enabled = true;
+                        timerLimpiarMensaje.Start();
+
+                    }
+                }
+                catch (Exception ec)
+                {
+                    CajaDialogo.Error(ec.Message);
+                }
+            }
+        }
+        private void GvNuevaUbicacion_InitNewRow(object sender, DevExpress.XtraGrid.Views.Grid.InitNewRowEventArgs e)
+        {
+
+        }
+        private DataTable CreateDataNuevaUbicacion(int pIdUbicacion, string pCodigoBarra)
+        {
+            DataTable dt = new DataTable();
+            Ubicaciones infoUbicaciones = new Ubicaciones();
+
+            dt.Columns.Add("Detalle", typeof(string));
+            dt.Columns.Add("Valor", typeof(string));
+
+            if (infoUbicaciones.RecuperarRegistro_v2(pIdUbicacion, pCodigoBarra))
+            {
+                //id_um = tam1.IdUnidadMedida.ToString();
+                //cantidadMP = tam1.Cantidad;
+                idUbicacionNueva = infoUbicaciones.Id;
+                //dt.Rows.Add("PASILLO", infoUbicaciones.Pasillo);
+                dt.Rows.Add("RACK", infoUbicaciones.Rack);
+                //dt.Rows.Add("ALTURA", infoUbicaciones.Altura);
+                //dt.Rows.Add("PROFUNDIDAD", infoUbicaciones.Profundidad);
+            }
+
+            return dt;
+        }
+
     }
 }
