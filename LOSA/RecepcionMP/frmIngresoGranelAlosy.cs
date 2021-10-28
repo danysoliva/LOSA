@@ -243,9 +243,9 @@ namespace LOSA.RecepcionMP
             if (chnuevoIngreso.Checked)
             {
                 string quer = @"sp_obtener_numero_ingreso";
-                 cn = new SqlConnection(dp.ConnectionStringLOSA);
+                cn = new SqlConnection(dp.ConnectionStringLOSA);
                 cn.Open();
-                 cmd = new SqlCommand(quer, cn);
+                cmd = new SqlCommand(quer, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 ingreso = Convert.ToInt32(cmd.ExecuteScalar());
                 cn.Close();
@@ -276,7 +276,7 @@ namespace LOSA.RecepcionMP
                      cn = new SqlConnection(dp.ConnectionStringLOSA);
                     cn.Open();
 
-                    string SQL = @"[sp_set_insert_tarimas_graneles_v2]";
+                    string SQL = @"[sp_set_insert_tarimas_graneles_v3]";
                      cmd = new SqlCommand(SQL, cn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id_boleta", row.NBoleta);
@@ -287,6 +287,7 @@ namespace LOSA.RecepcionMP
                     cmd.Parameters.AddWithValue("@id", row.id);
                     cmd.Parameters.AddWithValue("@id_ubicacion", row.id_ubicacion);
                     cmd.Parameters.AddWithValue("@id_ingreso", ingreso);
+                    cmd.Parameters.AddWithValue("@id_user", this.UsuarioLogeado.Id);
 
                     cmd.ExecuteNonQuery();
                     Guardo = true;
