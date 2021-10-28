@@ -267,7 +267,29 @@ namespace LOSA.RecepcionMP
             DialogResult r = CajaDialogo.Pregunta("Esta seguro de generar estos ingresos de Materia Prima Granel?");
             if (r != DialogResult.Yes)
                 return;
-            foreach(dsRecepcionMPx.granelRow row in dsRecepcionMPx1.granel.Rows)
+
+            decimal sumar_Kg = 0;
+            foreach (dsRecepcionMPx.granelRow row in dsRecepcionMPx1.granel.Rows)
+            {
+                sumar_Kg = sumar_Kg + row.PesoProd;
+
+            }
+
+            string query = @"sp_insert_ingreso_granel";
+            SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+            con.Open();
+            SqlCommand Comnd = new SqlCommand(query, con);
+            Comnd.CommandType = CommandType.StoredProcedure;
+            Comnd.Parameters.AddWithValue("@entrada", sumar_Kg);
+            Comnd.Parameters.AddWithValue("@lote", txtLote.Text);
+            Comnd.Parameters.AddWithValue("@id_ingreso", ingreso);
+            Comnd.Parameters.AddWithValue("@item_code", txtCodigoMP.Text);
+            Comnd.Parameters.AddWithValue("@id_user", this.UsuarioLogeado.Id);
+            Comnd.Parameters.AddWithValue("@count_trailetas", dsRecepcionMPx1.granel.Count);
+
+            int Id_lote_generado = Convert.ToInt32(Comnd.ExecuteScalar());
+
+            foreach (dsRecepcionMPx.granelRow row in dsRecepcionMPx1.granel.Rows)
             {
                 //
                 try
@@ -288,6 +310,7 @@ namespace LOSA.RecepcionMP
                     cmd.Parameters.AddWithValue("@id_ubicacion", row.id_ubicacion);
                     cmd.Parameters.AddWithValue("@id_ingreso", ingreso);
                     cmd.Parameters.AddWithValue("@id_user", this.UsuarioLogeado.Id);
+                    cmd.Parameters.AddWithValue("@id_lote_alosy", Id_lote_generado);
 
                     cmd.ExecuteNonQuery();
                     Guardo = true;
