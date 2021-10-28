@@ -288,7 +288,7 @@ namespace LOSA.RecepcionMP
                     cmd.Parameters.AddWithValue("@id_ubicacion", row.id_ubicacion);
                     cmd.Parameters.AddWithValue("@id_ingreso", ingreso);
                     cmd.Parameters.AddWithValue("@id_user", this.UsuarioLogeado.Id);
-
+                    //Comment
                     cmd.ExecuteNonQuery();
                     Guardo = true;
                     cn.Close();
