@@ -5,6 +5,7 @@ using DevExpress.XtraReports.UI;
 using Huellas;
 using LOSA.AlmacenesExterno;
 using LOSA.AlmacenesExterno.Reporteria;
+using LOSA.AlmacenesExterno.Salida_Almacen;
 using LOSA.Clases;
 using LOSA.Micro;
 using LOSA.MicroIngredientes;
@@ -282,6 +283,9 @@ namespace LOSA
                 Log1.Id = 1069;
                 Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Calidad;
             }
+            //frmTipoIngreso_v2 frm = new frmTipoIngreso_v2(45);
+            //frm.Show();
+
             frmOpciones frm = new frmOpciones(Log1);
             frm.MdiParent = this.MdiParent;
             frm.Show();

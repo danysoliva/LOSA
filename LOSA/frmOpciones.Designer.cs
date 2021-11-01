@@ -145,7 +145,7 @@
             this.TabMontacarga.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabMontacarga.ImageOptions.Image")));
             this.TabMontacarga.Name = "TabMontacarga";
             this.TabMontacarga.PageVisible = false;
-            this.TabMontacarga.Size = new System.Drawing.Size(629, 441);
+            this.TabMontacarga.Size = new System.Drawing.Size(644, 441);
             this.TabMontacarga.Text = "MontaCarga";
             // 
             // labelControl2
@@ -253,7 +253,7 @@
             this.TabLogistica.ImageOptions.Image = global::LOSA.Properties.Resources.box;
             this.TabLogistica.Name = "TabLogistica";
             this.TabLogistica.PageVisible = false;
-            this.TabLogistica.Size = new System.Drawing.Size(629, 441);
+            this.TabLogistica.Size = new System.Drawing.Size(644, 441);
             this.TabLogistica.Text = "Logistica";
             // 
             // btnMPReproceso
@@ -760,7 +760,7 @@
             this.TabAdmin.ImageOptions.Image = global::LOSA.Properties.Resources.admin;
             this.TabAdmin.Name = "TabAdmin";
             this.TabAdmin.PageVisible = false;
-            this.TabAdmin.Size = new System.Drawing.Size(629, 441);
+            this.TabAdmin.Size = new System.Drawing.Size(644, 441);
             this.TabAdmin.Text = "Administrador";
             // 
             // btnEstadosRequisiciones
@@ -838,7 +838,7 @@
             this.tabProduccion.ImageOptions.Image = global::LOSA.Properties.Resources.produccion;
             this.tabProduccion.Name = "tabProduccion";
             this.tabProduccion.PageVisible = false;
-            this.tabProduccion.Size = new System.Drawing.Size(629, 441);
+            this.tabProduccion.Size = new System.Drawing.Size(644, 441);
             this.tabProduccion.Text = "Producción";
             // 
             // simpleButton7
@@ -909,7 +909,7 @@
             this.txtProduccion.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("txtProduccion.ImageOptions.Image")));
             this.txtProduccion.Name = "txtProduccion";
             this.txtProduccion.PageVisible = false;
-            this.txtProduccion.Size = new System.Drawing.Size(629, 441);
+            this.txtProduccion.Size = new System.Drawing.Size(644, 441);
             this.txtProduccion.Text = "Produccion";
             // 
             // cmdReporteReqManuales

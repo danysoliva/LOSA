@@ -272,7 +272,6 @@ namespace LOSA.RecepcionMP
             foreach (dsRecepcionMPx.granelRow row in dsRecepcionMPx1.granel.Rows)
             {
                 sumar_Kg = sumar_Kg + row.PesoProd;
-
             }
 
             string query = @"sp_insert_ingreso_granel";
