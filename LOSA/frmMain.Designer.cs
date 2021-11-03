@@ -179,7 +179,7 @@ namespace LOSA
             this.SaltarLogin.Appearance.Options.UseBorderColor = true;
             this.SaltarLogin.Appearance.Options.UseFont = true;
             this.SaltarLogin.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.SaltarLogin.Location = new System.Drawing.Point(119, 427);
+            this.SaltarLogin.Location = new System.Drawing.Point(119, 423);
             this.SaltarLogin.Name = "SaltarLogin";
             this.SaltarLogin.Size = new System.Drawing.Size(199, 71);
             this.SaltarLogin.TabIndex = 15;
@@ -228,12 +228,11 @@ namespace LOSA
             this.simpleButton2.Appearance.Options.UseBorderColor = true;
             this.simpleButton2.Appearance.Options.UseFont = true;
             this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton2.Location = new System.Drawing.Point(325, 427);
+            this.simpleButton2.Location = new System.Drawing.Point(325, 423);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(199, 71);
             this.simpleButton2.TabIndex = 17;
             this.simpleButton2.Text = "Ingresar Calidad";
-            this.simpleButton2.Visible = false;
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click_1);
             // 
             // pictureBox1

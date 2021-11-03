@@ -189,5 +189,25 @@ namespace LOSA.Nir
 
             }
         }
+
+        private void chTodas_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chTodas.Checked)
+            {
+                foreach (dsNir.seleccion_lecturaRow row in dsNir.seleccion_lectura.Rows)
+                {
+                    row.selecionada = true;
+                    row.AcceptChanges();
+                }
+            }
+            else
+            {
+                foreach (dsNir.seleccion_lecturaRow row in dsNir.seleccion_lectura.Rows)
+                {
+                    row.selecionada = false;
+                    row.AcceptChanges();
+                }
+            }
+        }
     }
 }

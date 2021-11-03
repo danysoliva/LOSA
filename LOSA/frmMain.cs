@@ -283,12 +283,12 @@ namespace LOSA
                 Log1.Id = 1069;
                 Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Calidad;
             }
-            //frmTipoIngreso_v2 frm = new frmTipoIngreso_v2(45);
-            //frm.Show();
-
-            frmOpciones frm = new frmOpciones(Log1);
-            frm.MdiParent = this.MdiParent;
+            frmTipoIngreso_v2 frm = new frmTipoIngreso_v2(45);
             frm.Show();
+
+            //frmOpciones frm = new frmOpciones(Log1);
+            //frm.MdiParent = this.MdiParent;
+            //frm.Show();
         }
     }
 }

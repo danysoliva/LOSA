@@ -39,8 +39,30 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             id = id_traslado;
             load_salidoTraslado();
             LoadPresentaciones();
-        }
+            LoadNumeroTransaccion();
 
+            tb_opciones.TabPages[1].PageVisible = false;
+        }
+        private void LoadNumeroTransaccion()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+                SqlCommand cmm2 = new SqlCommand("sp_generar_codigo_from_tables_id", con);
+                cmm2.CommandType = CommandType.StoredProcedure;
+                cmm2.Parameters.AddWithValue("@id", 2);
+                string num_ingreso = cmm2.ExecuteScalar().ToString();
+                txtNumIngreso.Text = num_ingreso;
+                txtingresoGranel.Text = num_ingreso;
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
         public void load_salidoTraslado() 
         {
             try
