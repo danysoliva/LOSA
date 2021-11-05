@@ -29,12 +29,13 @@ namespace LOSA.TransaccionesMP
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEntregaTarimaReq_3));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.lblRequisicionEncontrada = new DevExpress.XtraEditors.LabelControl();
             this.txtRequisicion = new DevExpress.XtraEditors.ButtonEdit();
@@ -57,7 +58,8 @@ namespace LOSA.TransaccionesMP
             this.txtTarima = new DevExpress.XtraEditors.ButtonEdit();
             this.cmdSelectTarima = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.timerLimpiarMensaje = new System.Windows.Forms.Timer();
+            this.timerLimpiarMensaje = new System.Windows.Forms.Timer(this.components);
+            this.cmdLiquidos = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtRequisicion.Properties)).BeginInit();
             this.panelNotificacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
@@ -107,9 +109,9 @@ namespace LOSA.TransaccionesMP
             this.txtRequisicion.Name = "txtRequisicion";
             this.txtRequisicion.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRequisicion.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.txtRequisicion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.txtRequisicion.Properties.MaxLength = 20;
             this.txtRequisicion.Properties.NullText = "Escanee o selecciona una tarima";
             this.txtRequisicion.Size = new System.Drawing.Size(257, 44);
@@ -499,11 +501,28 @@ namespace LOSA.TransaccionesMP
             this.timerLimpiarMensaje.Interval = 4000;
             this.timerLimpiarMensaje.Tick += new System.EventHandler(this.timerLimpiarMensaje_Tick);
             // 
+            // cmdLiquidos
+            // 
+            this.cmdLiquidos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdLiquidos.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.cmdLiquidos.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdLiquidos.Appearance.Options.UseBackColor = true;
+            this.cmdLiquidos.Appearance.Options.UseFont = true;
+            this.cmdLiquidos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdLiquidos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.cmdLiquidos.Location = new System.Drawing.Point(272, 8);
+            this.cmdLiquidos.Name = "cmdLiquidos";
+            this.cmdLiquidos.Size = new System.Drawing.Size(175, 48);
+            this.cmdLiquidos.TabIndex = 111;
+            this.cmdLiquidos.Text = "Liquidos";
+            this.cmdLiquidos.Visible = false;
+            // 
             // frmEntregaTarimaReq_3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(638, 757);
+            this.Controls.Add(this.cmdLiquidos);
             this.Controls.Add(this.gcTarima);
             this.Controls.Add(this.txtTarima);
             this.Controls.Add(this.cmdSelectTarima);
@@ -559,5 +578,6 @@ namespace LOSA.TransaccionesMP
         private DevExpress.XtraGrid.Columns.GridColumn colkg;
         private DevExpress.XtraGrid.Columns.GridColumn coltm;
         private DevExpress.XtraGrid.Columns.GridColumn collote;
+        private DevExpress.XtraEditors.SimpleButton cmdLiquidos;
     }
 }
