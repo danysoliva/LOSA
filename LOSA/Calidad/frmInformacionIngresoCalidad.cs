@@ -60,7 +60,10 @@ namespace LOSA.Calidad
                 load_trasporte_estado_transporte();
                 load_criterios_adicionales();
 
-                pc_Mp.Image= ByteToImage(GetImgByte(full_pathImagen));
+                if (full_pathImagen != "")
+                {
+                    pc_Mp.Image = ByteToImage(GetImgByte(full_pathImagen));
+                }
             }
             else
             {
