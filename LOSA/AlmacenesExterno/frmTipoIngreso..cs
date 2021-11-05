@@ -14,7 +14,7 @@ namespace LOSA.AlmacenesExterno
     public partial class frmTipoIngreso : DevExpress.XtraEditors.XtraForm
     {
        
-        public frmTipoIngreso()
+        public frmTipoIngreso(int v)
         {
             InitializeComponent();
         }

@@ -54,12 +54,14 @@ namespace LOSA.Nir
             this.colid_h = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colseleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnseleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.btnSubirSeleccionada = new DevExpress.XtraEditors.SimpleButton();
             this.colselecionada = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnSubirSeleccionada = new DevExpress.XtraEditors.SimpleButton();
+            this.chTodas = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnseleccionar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chTodas.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -207,24 +209,18 @@ namespace LOSA.Nir
             this.colGH.FieldName = "GH";
             this.colGH.Name = "colGH";
             this.colGH.OptionsColumn.AllowEdit = false;
-            this.colGH.Visible = true;
-            this.colGH.VisibleIndex = 6;
             // 
             // colNB
             // 
             this.colNB.FieldName = "NB";
             this.colNB.Name = "colNB";
             this.colNB.OptionsColumn.AllowEdit = false;
-            this.colNB.Visible = true;
-            this.colNB.VisibleIndex = 7;
             // 
             // colTS
             // 
             this.colTS.FieldName = "TS";
             this.colTS.Name = "colTS";
             this.colTS.OptionsColumn.AllowEdit = false;
-            this.colTS.Visible = true;
-            this.colTS.VisibleIndex = 8;
             // 
             // colcomentario
             // 
@@ -232,7 +228,7 @@ namespace LOSA.Nir
             this.colcomentario.Name = "colcomentario";
             this.colcomentario.OptionsColumn.AllowEdit = false;
             this.colcomentario.Visible = true;
-            this.colcomentario.VisibleIndex = 9;
+            this.colcomentario.VisibleIndex = 6;
             // 
             // colnombre_producto
             // 
@@ -240,7 +236,7 @@ namespace LOSA.Nir
             this.colnombre_producto.Name = "colnombre_producto";
             this.colnombre_producto.OptionsColumn.AllowEdit = false;
             this.colnombre_producto.Visible = true;
-            this.colnombre_producto.VisibleIndex = 10;
+            this.colnombre_producto.VisibleIndex = 7;
             // 
             // collote
             // 
@@ -248,7 +244,7 @@ namespace LOSA.Nir
             this.collote.Name = "collote";
             this.collote.OptionsColumn.AllowEdit = false;
             this.collote.Visible = true;
-            this.collote.VisibleIndex = 11;
+            this.collote.VisibleIndex = 8;
             // 
             // colid_h
             // 
@@ -261,7 +257,7 @@ namespace LOSA.Nir
             this.colseleccionar.ColumnEdit = this.btnseleccionar;
             this.colseleccionar.Name = "colseleccionar";
             this.colseleccionar.Visible = true;
-            this.colseleccionar.VisibleIndex = 13;
+            this.colseleccionar.VisibleIndex = 10;
             // 
             // btnseleccionar
             // 
@@ -272,6 +268,14 @@ namespace LOSA.Nir
             this.btnseleccionar.Name = "btnseleccionar";
             this.btnseleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnseleccionar.Click += new System.EventHandler(this.btnseleccionar_Click);
+            // 
+            // colselecionada
+            // 
+            this.colselecionada.Caption = "Seleccionar";
+            this.colselecionada.FieldName = "selecionada";
+            this.colselecionada.Name = "colselecionada";
+            this.colselecionada.Visible = true;
+            this.colselecionada.VisibleIndex = 9;
             // 
             // btnSubirSeleccionada
             // 
@@ -285,19 +289,23 @@ namespace LOSA.Nir
             this.btnSubirSeleccionada.Text = "Subir seleccionadas";
             this.btnSubirSeleccionada.Click += new System.EventHandler(this.btnSubirSeleccionada_Click);
             // 
-            // colselecionada
+            // chTodas
             // 
-            this.colselecionada.Caption = "Seleccionar";
-            this.colselecionada.FieldName = "selecionada";
-            this.colselecionada.Name = "colselecionada";
-            this.colselecionada.Visible = true;
-            this.colselecionada.VisibleIndex = 12;
+            this.chTodas.Location = new System.Drawing.Point(231, 48);
+            this.chTodas.Name = "chTodas";
+            this.chTodas.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.chTodas.Properties.Appearance.Options.UseFont = true;
+            this.chTodas.Properties.Caption = "Seleccionar todas";
+            this.chTodas.Size = new System.Drawing.Size(252, 22);
+            this.chTodas.TabIndex = 13;
+            this.chTodas.CheckedChanged += new System.EventHandler(this.chTodas_CheckedChanged);
             // 
             // frmSeleccionarLectura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(777, 569);
+            this.Controls.Add(this.chTodas);
             this.Controls.Add(this.btnSubirSeleccionada);
             this.Controls.Add(this.grd_data);
             this.Controls.Add(this.cmdHome);
@@ -308,6 +316,7 @@ namespace LOSA.Nir
             ((System.ComponentModel.ISupportInitialize)(this.dsNir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnseleccionar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chTodas.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -336,5 +345,6 @@ namespace LOSA.Nir
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnseleccionar;
         private DevExpress.XtraEditors.SimpleButton btnSubirSeleccionada;
         private DevExpress.XtraGrid.Columns.GridColumn colselecionada;
+        private DevExpress.XtraEditors.CheckEdit chTodas;
     }
 }

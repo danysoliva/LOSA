@@ -16,6 +16,7 @@ using System.Net;
 using System.IO;
 using System.Diagnostics;
 using LOSA.Nir;
+using LOSA.Trazabilidad;
 
 namespace LOSA.Calidad
 {
@@ -31,6 +32,9 @@ namespace LOSA.Calidad
         string codigo;
         string usercreadorIngreso;
         bool cambioImagen = false;
+        string Direccion;
+        string phone;
+
 
         DataOperations dp = new DataOperations();
         public rdEstadoTransporte(int id_ingreso_lote,
@@ -427,14 +431,17 @@ namespace LOSA.Calidad
                     txtreferencia.Text = dr.IsDBNull(6) ? "" : dr.GetInt32(6).ToString();
                     ChCalidad = dr.IsDBNull(7) ? false : dr.GetBoolean(7);
                     code_sap = dr.IsDBNull(8) ? "" : dr.GetString(8);
-                    code_sap = dr.IsDBNull(8) ? "" : dr.GetString(8);
                     codigo = dr.IsDBNull(9) ? "" : dr.GetString(9);
                     usercreadorIngreso = dr.IsDBNull(10) ? "" : dr.GetString(10);
                     txtuserlogistica.Text = usercreadorIngreso;
                     txtusercalidad.Text = UsuarioLogeado.NombreUser;
                     txttransporte.Text = dr.IsDBNull(11) ? "" : dr.GetString(11);
                     txttransportista.Text = dr.IsDBNull(12) ? "" : dr.GetString(12);
-
+                    phone = dr.IsDBNull(13) ? "" : dr.GetString(13);
+                    Direccion = dr.IsDBNull(14) ? "" : dr.GetString(14);
+                    txtTelefono.Text = phone;
+                    txtdireccion.Text = Direccion;
+                    txtFacturas.Text = dr.IsDBNull(15) ? "" : dr.GetString(15);
                 }
                 dr.Close();
                 cn.Close();
@@ -1040,6 +1047,38 @@ namespace LOSA.Calidad
             {
 
                 CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void btnRevisarBoleta_Click(object sender, EventArgs e)
+        {
+            
+            frmViewBasculaBoleta frm = new frmViewBasculaBoleta(Convert.ToInt32(txtboleta.Text));
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.Show();
+        }
+
+        private void btnOC_Click(object sender, EventArgs e)
+        {
+            frmOC_SAP_View frm = new frmOC_SAP_View(Convert.ToInt32(txtoc.Text));
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.Show();
+        }
+
+        private void btnRecientes_Click(object sender, EventArgs e)
+        {
+            frmRecientes frm = new frmRecientes();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                foreach (dsMantenimientoC.adjuntosRow rw in dsMantenimientoC.adjuntos.Rows)
+                {
+                    if (rw.id_conf == frm.id)
+                    {
+                        rw.bit_subido = true;
+                        rw.path_load = frm.path;
+                        rw.file_name = frm.file_name;
+                    }
+                }
             }
         }
     }

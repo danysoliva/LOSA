@@ -341,7 +341,7 @@ namespace LOSA.Nir
             // 
             // colbroma_porcentaje
             // 
-            this.colbroma_porcentaje.Caption = "Porcentaje Bromatologica";
+            this.colbroma_porcentaje.Caption = "% Bromatologica";
             this.colbroma_porcentaje.FieldName = "broma_porcentaje";
             this.colbroma_porcentaje.Name = "colbroma_porcentaje";
             this.colbroma_porcentaje.OptionsColumn.AllowEdit = false;
@@ -353,24 +353,18 @@ namespace LOSA.Nir
             this.colGH.FieldName = "GH";
             this.colGH.Name = "colGH";
             this.colGH.OptionsColumn.AllowEdit = false;
-            this.colGH.Visible = true;
-            this.colGH.VisibleIndex = 6;
             // 
             // colNB
             // 
             this.colNB.FieldName = "NB";
             this.colNB.Name = "colNB";
             this.colNB.OptionsColumn.AllowEdit = false;
-            this.colNB.Visible = true;
-            this.colNB.VisibleIndex = 7;
             // 
             // colTS
             // 
             this.colTS.FieldName = "TS";
             this.colTS.Name = "colTS";
             this.colTS.OptionsColumn.AllowEdit = false;
-            this.colTS.Visible = true;
-            this.colTS.VisibleIndex = 8;
             // 
             // colcomentario
             // 
@@ -378,7 +372,7 @@ namespace LOSA.Nir
             this.colcomentario.Name = "colcomentario";
             this.colcomentario.OptionsColumn.AllowEdit = false;
             this.colcomentario.Visible = true;
-            this.colcomentario.VisibleIndex = 9;
+            this.colcomentario.VisibleIndex = 6;
             // 
             // collote
             // 
@@ -386,7 +380,7 @@ namespace LOSA.Nir
             this.collote.Name = "collote";
             this.collote.OptionsColumn.AllowEdit = false;
             this.collote.Visible = true;
-            this.collote.VisibleIndex = 10;
+            this.collote.VisibleIndex = 7;
             // 
             // colnombre_producto
             // 
@@ -395,7 +389,7 @@ namespace LOSA.Nir
             this.colnombre_producto.Name = "colnombre_producto";
             this.colnombre_producto.OptionsColumn.AllowEdit = false;
             this.colnombre_producto.Visible = true;
-            this.colnombre_producto.VisibleIndex = 11;
+            this.colnombre_producto.VisibleIndex = 8;
             // 
             // colactivo
             // 
@@ -409,7 +403,7 @@ namespace LOSA.Nir
             this.colEliminar.ColumnEdit = this.btnDesvincular;
             this.colEliminar.Name = "colEliminar";
             this.colEliminar.Visible = true;
-            this.colEliminar.VisibleIndex = 12;
+            this.colEliminar.VisibleIndex = 9;
             // 
             // btnDesvincular
             // 

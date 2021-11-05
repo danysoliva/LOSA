@@ -342,6 +342,65 @@ BIOLOGICO: Heces, Insectos, Lodo, Residuos de Otros Alimentos.
         no5EwZ4rpikAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="btnOC.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <data name="btnRecientes.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        7AAAAOwBeShxvQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAQHSURBVFhH1ZcP
+        bBNVHMfXu2vvujLmQgIGZ4RtMQsQZyz4J0GGY90yxE26dpMtiozNEBzi2OYmMkZ0EJIhwxA6JcbEGBMi
+        8Q/BbBLjogEBGUGzoHMgEATxH27sT5nd2n5973orffQ13K0hhm/ySe9eru/7zfu9e+9dwm1QppAgvK1I
+        0m+CyeS3iNKgIpm/Ju1lBEF9IobuI+wgfBQHnxLT8UdT03x7Cp5BZ1k19ruqsHZ+dlCWpHES5Dh5Zjoh
+        SlNkWf7Tbn/IV7m6ApMhIyMDFknC+0Urgab2KC6t34asu1N9smTuIX7WkO0NLRZFMTB8rR9jo17DXDz/
+        CxIVBe1LVzCmpXPn42Tlq+H7v2tbMT1xio+UqFnzDWupbLH4eZ3roXlzEzJnzERgk4cJcGJ1I0YadzFt
+        HhLSIooDxJOZD3EFyFm0CPWPORgjSskcuxoisu1KzXYQP8o81VkTE8A7dA1uVzGW5CzWRZLNhl35bsaI
+        MjMpGR8ur2Dagk0eiCYhSDxzQtYhMQFoTUkbqsrz0fCi65ZMS5mK1xYWMEYUXoCrdTsmRiCTGk+IG6C7
+        sw39vftuyf3p98KeOpsxovACfPD0KphFcZj0b1GdNTEB/rhyGYIgTCTVDX3nI81uDkAnZNpd03ySILSS
+        5xlFTcK+n07j+NEjuuj+7hg2NjZgqjURXc/WhA3fdBTjwroW9XqooQ356XPGFbP5AvFLDtneUFQAo/iu
+        j+Dll9ZBJCNX/sAjwY4V1ehbu0VdB1pznZhhS/IR8zPEKyNkyYoJcH14EC9UVaLY6dRFiduNnu9Pqf89
+        1NmBtFmz6CxXy2IymWCz2QJmi+UquY9aASfEBBgdGULdhhruksuDhu093RMejdISd2BZ+XPoOHsRR/u9
+        2LTnHShW6yXNi6u4SxAJDeCsqMJJr1/FcABaglXPr+QONw+3y4VT3SdiBti5/zMkp6T8oHlxxQT41zuM
+        Lc2bUV+7QRev1NXiTO+PMQOojI4v1Ly4uq0l6Lr8F9xr1lRrXlwxAehe4Cqme8ETushz5KprQawA7311
+        GPfMTj+geXHFBKDv9NaWN7jDzaOhvg7nz/bFDKDyf5bgYO85PF7w5OuaF1dMgJHBARQVFnKHm0fukhwc
+        +/ZwzABNnr3GXkNagrfadqpl0MO2rS3qDhorwJ23EMXLHRkgmx7Lhwb+4XZolDyHY6yser2hADbyYfL7
+        g1lZPt5uZ4Siwqf85DQVfPfLbwwFoEolbCfQT6yPCViQTV4xp8sQdOj3ftEVNjcSIFL0wKguoZEdTZaN
+        u9tpgF9DXeuUrCjn8lylAc/nhxAPuw90YN6Ch8cssvyJ1rVu2UmIn8lv+Hg1GciRzC8r1iPkmpb4JiUk
+        /AdFqmeg+yb/KgAAAABJRU5ErkJggg==
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>96</value>
   </metadata>
