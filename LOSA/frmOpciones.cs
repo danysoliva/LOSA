@@ -563,7 +563,7 @@ namespace LOSA
 
         private void btnTransferencia_Click(object sender, EventArgs e)
         {
-            xfrmMovimientoStock frm = new xfrmMovimientoStock();
+            xfrmMovimientoStock frm = new xfrmMovimientoStock(UsuarioLogeado);
             frm.Show();
         }
 
