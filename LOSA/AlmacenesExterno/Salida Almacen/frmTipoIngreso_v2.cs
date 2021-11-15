@@ -16,6 +16,7 @@ using Core.Clases.Herramientas;
 using System.Collections;
 using DevExpress.XtraReports.UI;
 using LOSA.Reportes;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace LOSA.AlmacenesExterno.Salida_Almacen
 {
@@ -710,6 +711,24 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
 
                     CajaDialogo.Error(ex.Message);
                 }
+            }
+        }
+
+        private void gridView2_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            try
+            {
+                if (e.Column.Name == "colseleccionar")
+                {
+                    var gridView = (GridView)gridControl1.FocusedView;
+                    var row = (dsRecepcionMPx.granelRow)gridView.GetFocusedDataRow();
+                    row.seleccionar = Convert.ToBoolean(e.Value);
+                    row.AcceptChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                   
             }
         }
     }
