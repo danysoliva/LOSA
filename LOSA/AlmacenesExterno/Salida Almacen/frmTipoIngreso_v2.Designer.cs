@@ -85,18 +85,22 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtIdBoleta = new DevExpress.XtraEditors.TextEdit();
             this.TabGranel = new DevExpress.XtraTab.XtraTabPage();
+            this.txtPesotransferenciaGranel = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
             this.btningreso = new DevExpress.XtraEditors.SimpleButton();
             this.lblingreso = new DevExpress.XtraEditors.LabelControl();
             this.txtingresoGranel = new DevExpress.XtraEditors.TextEdit();
             this.chnuevoIngreso = new DevExpress.XtraEditors.CheckEdit();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.grdUbicaciones = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.ubicacionesgranelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colrack = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcodigo_barra = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.grdbarco = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.barcosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -137,6 +141,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.colProducto = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_Registrar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colseleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.buttonEdit1 = new DevExpress.XtraEditors.ButtonEdit();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.dtVencimientoGranel = new DevExpress.XtraEditors.DateEdit();
@@ -149,6 +154,8 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.txtMPgranel = new DevExpress.XtraEditors.TextEdit();
             this.labelControl24 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSourceUbicaciones = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tb_opciones)).BeginInit();
             this.tb_opciones.SuspendLayout();
             this.tabSacos.SuspendLayout();
@@ -175,11 +182,14 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigoMP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdBoleta.Properties)).BeginInit();
             this.TabGranel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPesotransferenciaGranel.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtingresoGranel.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chnuevoIngreso.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdUbicaciones.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ubicacionesgranelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdbarco.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barcosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMPCgranel.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLoteGranel.Properties)).BeginInit();
@@ -197,6 +207,8 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             ((System.ComponentModel.ISupportInitialize)(this.dtIngresoGranel.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtIngresoGranel.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMPgranel.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceUbicaciones)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -248,7 +260,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.tb_opciones.Location = new System.Drawing.Point(2, 139);
             this.tb_opciones.Name = "tb_opciones";
             this.tb_opciones.SelectedTabPage = this.tabSacos;
-            this.tb_opciones.Size = new System.Drawing.Size(957, 641);
+            this.tb_opciones.Size = new System.Drawing.Size(1528, 662);
             this.tb_opciones.TabIndex = 3;
             this.tb_opciones.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabSacos,
@@ -292,7 +304,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.tabSacos.Controls.Add(this.labelControl2);
             this.tabSacos.Controls.Add(this.txtIdBoleta);
             this.tabSacos.Name = "tabSacos";
-            this.tabSacos.Size = new System.Drawing.Size(951, 606);
+            this.tabSacos.Size = new System.Drawing.Size(1522, 627);
             this.tabSacos.Text = "Ingreso en sacos";
             // 
             // labelControl15
@@ -746,6 +758,8 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             // 
             this.TabGranel.Appearance.Header.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.TabGranel.Appearance.Header.Options.UseFont = true;
+            this.TabGranel.Controls.Add(this.txtPesotransferenciaGranel);
+            this.TabGranel.Controls.Add(this.labelControl19);
             this.TabGranel.Controls.Add(this.btningreso);
             this.TabGranel.Controls.Add(this.lblingreso);
             this.TabGranel.Controls.Add(this.txtingresoGranel);
@@ -770,8 +784,31 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.TabGranel.Controls.Add(this.txtMPgranel);
             this.TabGranel.Controls.Add(this.labelControl24);
             this.TabGranel.Name = "TabGranel";
-            this.TabGranel.Size = new System.Drawing.Size(951, 606);
+            this.TabGranel.Size = new System.Drawing.Size(1522, 627);
             this.TabGranel.Text = "Ingreso en granel";
+            // 
+            // txtPesotransferenciaGranel
+            // 
+            this.txtPesotransferenciaGranel.EditValue = "";
+            this.txtPesotransferenciaGranel.Enabled = false;
+            this.txtPesotransferenciaGranel.Location = new System.Drawing.Point(199, 189);
+            this.txtPesotransferenciaGranel.Name = "txtPesotransferenciaGranel";
+            this.txtPesotransferenciaGranel.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPesotransferenciaGranel.Properties.Appearance.Options.UseFont = true;
+            this.txtPesotransferenciaGranel.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPesotransferenciaGranel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtPesotransferenciaGranel.Size = new System.Drawing.Size(410, 32);
+            this.txtPesotransferenciaGranel.TabIndex = 131;
+            // 
+            // labelControl19
+            // 
+            this.labelControl19.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.labelControl19.Appearance.Options.UseFont = true;
+            this.labelControl19.Location = new System.Drawing.Point(11, 192);
+            this.labelControl19.Name = "labelControl19";
+            this.labelControl19.Size = new System.Drawing.Size(197, 25);
+            this.labelControl19.TabIndex = 132;
+            this.labelControl19.Text = "Peso de transferencia__";
             // 
             // btningreso
             // 
@@ -824,7 +861,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.labelControl16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl16.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl16.Appearance.Options.UseFont = true;
-            this.labelControl16.Location = new System.Drawing.Point(199, 230);
+            this.labelControl16.Location = new System.Drawing.Point(770, 230);
             this.labelControl16.Name = "labelControl16";
             this.labelControl16.Size = new System.Drawing.Size(88, 25);
             this.labelControl16.TabIndex = 126;
@@ -832,15 +869,24 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             // 
             // grdUbicaciones
             // 
-            this.grdUbicaciones.Location = new System.Drawing.Point(199, 261);
+            this.grdUbicaciones.Location = new System.Drawing.Point(199, 255);
             this.grdUbicaciones.Name = "grdUbicaciones";
+            this.grdUbicaciones.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.grdUbicaciones.Properties.Appearance.Options.UseFont = true;
             this.grdUbicaciones.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.grdUbicaciones.Properties.DataSource = this.ubicacionesgranelBindingSource;
             this.grdUbicaciones.Properties.DisplayMember = "rack";
             this.grdUbicaciones.Properties.PopupView = this.gridView3;
             this.grdUbicaciones.Properties.ValueMember = "id";
-            this.grdUbicaciones.Size = new System.Drawing.Size(130, 20);
+            this.grdUbicaciones.Size = new System.Drawing.Size(172, 26);
             this.grdUbicaciones.TabIndex = 125;
+            this.grdUbicaciones.EditValueChanged += new System.EventHandler(this.grdUbicaciones_EditValueChanged);
+            // 
+            // ubicacionesgranelBindingSource
+            // 
+            this.ubicacionesgranelBindingSource.DataMember = "ubicaciones_granel";
+            this.ubicacionesgranelBindingSource.DataSource = this.dsRecepcionMPx1;
             // 
             // gridView3
             // 
@@ -882,15 +928,24 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             // 
             // grdbarco
             // 
-            this.grdbarco.Location = new System.Drawing.Point(5, 261);
+            this.grdbarco.Location = new System.Drawing.Point(11, 255);
             this.grdbarco.Name = "grdbarco";
+            this.grdbarco.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdbarco.Properties.Appearance.Options.UseFont = true;
             this.grdbarco.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.grdbarco.Properties.DataSource = this.barcosBindingSource;
             this.grdbarco.Properties.DisplayMember = "descripcion";
             this.grdbarco.Properties.PopupView = this.gridView1;
             this.grdbarco.Properties.ValueMember = "id";
-            this.grdbarco.Size = new System.Drawing.Size(130, 20);
+            this.grdbarco.Size = new System.Drawing.Size(170, 26);
             this.grdbarco.TabIndex = 123;
+            this.grdbarco.EditValueChanged += new System.EventHandler(this.grdbarco_EditValueChanged);
+            // 
+            // barcosBindingSource
+            // 
+            this.barcosBindingSource.DataMember = "barcos";
+            this.barcosBindingSource.DataSource = this.dsRecepcionMPx1;
             // 
             // gridView1
             // 
@@ -946,7 +1001,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl18.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl18.Appearance.Options.UseFont = true;
-            this.labelControl18.Location = new System.Drawing.Point(36, 199);
+            this.labelControl18.Location = new System.Drawing.Point(1379, 230);
             this.labelControl18.Name = "labelControl18";
             this.labelControl18.Size = new System.Drawing.Size(137, 18);
             this.labelControl18.TabIndex = 120;
@@ -965,7 +1020,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.LookUpEditBarco,
             this.GridLookUpEditUbicaciones});
-            this.gridControl1.Size = new System.Drawing.Size(948, 319);
+            this.gridControl1.Size = new System.Drawing.Size(1519, 352);
             this.gridControl1.TabIndex = 119;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -1017,12 +1072,14 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.colSNegocio,
             this.colProducto,
             this.col_Registrar,
-            this.colseleccionar});
+            this.colseleccionar,
+            this.gridColumn3});
             this.gridView2.GridControl = this.gridControl1;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsCustomization.AllowFilter = false;
             this.gridView2.OptionsFilter.AllowFilterEditor = false;
             this.gridView2.OptionsView.ShowAutoFilterRow = true;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn1
             // 
@@ -1038,7 +1095,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.colcomentarios.OptionsColumn.AllowEdit = false;
             this.colcomentarios.Visible = true;
             this.colcomentarios.VisibleIndex = 6;
-            this.colcomentarios.Width = 292;
+            this.colcomentarios.Width = 210;
             // 
             // colEmpresaTrans
             // 
@@ -1054,7 +1111,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.colfechaEntra.OptionsColumn.AllowEdit = false;
             this.colfechaEntra.Visible = true;
             this.colfechaEntra.VisibleIndex = 0;
-            this.colfechaEntra.Width = 119;
+            this.colfechaEntra.Width = 98;
             // 
             // colFechaFin
             // 
@@ -1070,13 +1127,14 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.colshipid.Name = "colshipid";
             this.colshipid.Visible = true;
             this.colshipid.VisibleIndex = 2;
-            this.colshipid.Width = 128;
+            this.colshipid.Width = 106;
             // 
             // LookUpEditBarco
             // 
             this.LookUpEditBarco.AutoHeight = false;
             this.LookUpEditBarco.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.LookUpEditBarco.DataSource = this.barcosBindingSource;
             this.LookUpEditBarco.DisplayMember = "descripcion";
             this.LookUpEditBarco.Name = "LookUpEditBarco";
             this.LookUpEditBarco.PopupView = this.repositoryItemGridLookUpEdit1View;
@@ -1120,7 +1178,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.colNBoleta.OptionsColumn.AllowEdit = false;
             this.colNBoleta.Visible = true;
             this.colNBoleta.VisibleIndex = 1;
-            this.colNBoleta.Width = 73;
+            this.colNBoleta.Width = 60;
             // 
             // colnumero_factura
             // 
@@ -1148,13 +1206,14 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.colid_ubicacion.Name = "colid_ubicacion";
             this.colid_ubicacion.Visible = true;
             this.colid_ubicacion.VisibleIndex = 5;
-            this.colid_ubicacion.Width = 125;
+            this.colid_ubicacion.Width = 103;
             // 
             // GridLookUpEditUbicaciones
             // 
             this.GridLookUpEditUbicaciones.AutoHeight = false;
             this.GridLookUpEditUbicaciones.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.GridLookUpEditUbicaciones.DataSource = this.ubicacionesgranelBindingSource;
             this.GridLookUpEditUbicaciones.DisplayMember = "rack";
             this.GridLookUpEditUbicaciones.Name = "GridLookUpEditUbicaciones";
             this.GridLookUpEditUbicaciones.PopupView = this.gridView4;
@@ -1186,7 +1245,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.colPesoProd.OptionsColumn.AllowEdit = false;
             this.colPesoProd.Visible = true;
             this.colPesoProd.VisibleIndex = 3;
-            this.colPesoProd.Width = 105;
+            this.colPesoProd.Width = 87;
             // 
             // colpesoSalida
             // 
@@ -1237,7 +1296,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.colSNegocio.OptionsColumn.AllowEdit = false;
             this.colSNegocio.Visible = true;
             this.colSNegocio.VisibleIndex = 4;
-            this.colSNegocio.Width = 129;
+            this.colSNegocio.Width = 107;
             // 
             // colProducto
             // 
@@ -1255,13 +1314,22 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.colseleccionar.Caption = "Seleccionar";
             this.colseleccionar.FieldName = "seleccionar";
             this.colseleccionar.Name = "colseleccionar";
+            this.colseleccionar.Visible = true;
+            this.colseleccionar.VisibleIndex = 7;
+            this.colseleccionar.Width = 80;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "gridColumn3";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Width = 79;
             // 
             // buttonEdit1
             // 
             this.buttonEdit1.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.True;
             this.buttonEdit1.EditValue = "";
             this.buttonEdit1.Enabled = false;
-            this.buttonEdit1.Location = new System.Drawing.Point(389, 249);
+            this.buttonEdit1.Location = new System.Drawing.Point(598, 249);
             this.buttonEdit1.Name = "buttonEdit1";
             this.buttonEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.buttonEdit1.Properties.Appearance.Options.UseFont = true;
@@ -1281,7 +1349,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.simpleButton4.Appearance.Options.UseFont = true;
             this.simpleButton4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton4.ImageOptions.Image = global::LOSA.Properties.Resources.tap;
-            this.simpleButton4.Location = new System.Drawing.Point(497, 241);
+            this.simpleButton4.Location = new System.Drawing.Point(706, 241);
             this.simpleButton4.Name = "simpleButton4";
             this.simpleButton4.Size = new System.Drawing.Size(42, 40);
             this.simpleButton4.TabIndex = 116;
@@ -1409,17 +1477,28 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.simpleButton3.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.simpleButton3.Appearance.Options.UseFont = true;
             this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(778, 8);
+            this.simpleButton3.Location = new System.Drawing.Point(1345, 12);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(174, 64);
             this.simpleButton3.TabIndex = 4;
             this.simpleButton3.Text = "Registrar";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataMember = "barcos";
+            this.bindingSource1.DataSource = this.dsRecepcionMPx1;
+            // 
+            // bindingSourceUbicaciones
+            // 
+            this.bindingSourceUbicaciones.DataMember = "ubicaciones_granel";
+            this.bindingSourceUbicaciones.DataSource = this.dsRecepcionMPx1;
             // 
             // frmTipoIngreso_v2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(960, 780);
+            this.ClientSize = new System.Drawing.Size(1531, 801);
             this.Controls.Add(this.simpleButton3);
             this.Controls.Add(this.tb_opciones);
             this.Controls.Add(this.btngranel);
@@ -1427,7 +1506,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.Controls.Add(this.btnsacos);
             this.Name = "frmTipoIngreso_v2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tipo Ingreso";
+            this.Text = ",";
             ((System.ComponentModel.ISupportInitialize)(this.tb_opciones)).EndInit();
             this.tb_opciones.ResumeLayout(false);
             this.tabSacos.ResumeLayout(false);
@@ -1456,11 +1535,14 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             ((System.ComponentModel.ISupportInitialize)(this.txtIdBoleta.Properties)).EndInit();
             this.TabGranel.ResumeLayout(false);
             this.TabGranel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPesotransferenciaGranel.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtingresoGranel.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chnuevoIngreso.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdUbicaciones.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ubicacionesgranelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdbarco.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barcosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMPCgranel.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLoteGranel.Properties)).EndInit();
@@ -1478,6 +1560,8 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             ((System.ComponentModel.ISupportInitialize)(this.dtIngresoGranel.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtIngresoGranel.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMPgranel.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceUbicaciones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1593,5 +1677,12 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
         private DevExpress.XtraEditors.LabelControl labelControl23;
         private DevExpress.XtraEditors.TextEdit txtMPgranel;
         private DevExpress.XtraEditors.LabelControl labelControl24;
+        private DevExpress.XtraEditors.TextEdit txtPesotransferenciaGranel;
+        private DevExpress.XtraEditors.LabelControl labelControl19;
+        private System.Windows.Forms.BindingSource ubicacionesgranelBindingSource;
+        private System.Windows.Forms.BindingSource barcosBindingSource;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.BindingSource bindingSourceUbicaciones;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
     }
 }

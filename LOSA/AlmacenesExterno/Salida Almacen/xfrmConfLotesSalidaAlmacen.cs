@@ -15,6 +15,7 @@ using System.Data.SqlClient;
 using LOSA.AlmacenesExterno.Models;
 using LOSA.AlmacenesExterno.Reporteria;
 using DevExpress.XtraReports.UI;
+using LOSA.Clases;
 
 namespace LOSA.AlmacenesExterno.Salida_Almacen
 {
@@ -25,10 +26,13 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
         int id_salida_h;
         string bodega;
         int id_mp;
+        int id_salida_d;
         DataOperations dp = new DataOperations();
-        public xfrmConfLotesSalidaAlmacen(List<Ingresos_Externos_D> ingresos_Externos_Ds, Ingreso_Almacenes_Externos_H pIngresoAlamecesExternos_H)
+        UserLogin UsuarioLogeado;
+        public xfrmConfLotesSalidaAlmacen(List<Ingresos_Externos_D> ingresos_Externos_Ds, Ingreso_Almacenes_Externos_H pIngresoAlamecesExternos_H, UserLogin Puser)
         {
             InitializeComponent();
+            UsuarioLogeado = Puser;
             lista = ingresos_Externos_Ds;
             ingreso_h = pIngresoAlamecesExternos_H;
         }
@@ -312,7 +316,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
                     cmd2.Parameters.Add("@LineNum", SqlDbType.Int).Value = item.NumLine;
                     cmd2.Parameters.Add("@DocEntry", SqlDbType.Int).Value = ingreso_h.DocEntry;
 
-                    int id_salida_d = Convert.ToInt32(cmd2.ExecuteScalar());
+                     id_salida_d = Convert.ToInt32(cmd2.ExecuteScalar());
 
 
                     foreach (var item2 in lista_lotes_seleccionados.Where(x => x.id_detalle == item.id).ToList())
@@ -346,7 +350,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
                 transaction.Commit();
                 cnx.Close();
 
-
+                frmTipoIngreso_v2 frm = new frmTipoIngreso_v2(id_salida_d, UsuarioLogeado);
                 CajaDialogo.Information("TRANSFERENCIA CREADA EXITOSAMENTE");
                 this.DialogResult = DialogResult.OK;
 

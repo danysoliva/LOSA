@@ -185,11 +185,6 @@ namespace LOSA.RecepcionMP
                 return;
             }
 
-            //if (txtNumIngreso.Value == 0)
-            //{
-            //    CajaDialogo.Error("Es necesario un Número de Ingreso Valido!");
-            //    return;
-            //}
             bool PuedeContinuar = false;
             foreach (dsRecepcionMPx.granelRow row in dsRecepcionMPx1.granel.Rows)
             {
@@ -240,7 +235,7 @@ namespace LOSA.RecepcionMP
 
             SqlConnection cn;
             SqlCommand cmd;
-            if (chnuevoIngreso.Checked)
+            if (!tggNuevoIngreso.IsOn)
             {
                 string quer = @"sp_obtener_numero_ingreso";
                 cn = new SqlConnection(dp.ConnectionStringLOSA);
@@ -373,6 +368,26 @@ namespace LOSA.RecepcionMP
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 txtingreso.Text = frm.Ingreso.ToString();
+            }
+        }
+
+        private void frmIngresoGranelAlosy_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tggNuevoIngreso_Toggled(object sender, EventArgs e)
+        {
+            if (tggNuevoIngreso.IsOn)
+            {
+                lblingreso.Visible = true;
+                txtingreso.Visible = true;
+                btningreso.Visible = true;
+                btningreso.Enabled = true;
+            }
+            else
+            {
+                btningreso.Enabled = false;
             }
         }
     }
