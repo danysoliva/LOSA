@@ -176,13 +176,17 @@ namespace LOSA.Nir
                     query = @"sp_insert_lectura_nir_detalle";
                     foreach (dsNir.Nir_lecturasRow row in dsNir.Nir_lecturas.Rows)
                     {
+                        string comentario = "";
+                        if (!string.IsNullOrEmpty(row.Comentario))
+                            comentario = row.Comentario;
+
                         cn.Open();
                         cmd = new SqlCommand(query,cn);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@id_h", Id_header);
                         cmd.Parameters.AddWithValue("@lote", row.__Lote);
                         cmd.Parameters.AddWithValue("@nombre_producto", row.Nombre_de_Producto);
-                        cmd.Parameters.AddWithValue("@comentario", row.Comentario);
+                        cmd.Parameters.AddWithValue("@comentario", comentario);
                         cmd.Parameters.AddWithValue("@TS", row.TS);
                         cmd.Parameters.AddWithValue("@NB", row.NB);
                         cmd.Parameters.AddWithValue("@GH", row.GH);
