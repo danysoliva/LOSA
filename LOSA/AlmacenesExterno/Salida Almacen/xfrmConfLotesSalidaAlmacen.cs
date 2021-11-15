@@ -351,17 +351,21 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
                 cnx.Close();
 
                 frmTipoIngreso_v2 frm = new frmTipoIngreso_v2(id_salida_d, UsuarioLogeado);
-                CajaDialogo.Information("TRANSFERENCIA CREADA EXITOSAMENTE");
-                this.DialogResult = DialogResult.OK;
-
-                xrpt_Main_traslado_almacen report = new xrpt_Main_traslado_almacen();
-                report.Parameters["id_h"].Value = id_salida_h;
-
-
-                using (ReportPrintTool printTool = new ReportPrintTool(report))
+                if (frm.ShowDialog() == DialogResult.OK)
                 {
-                    // Send the report to the default printer.
-                    printTool.ShowPreviewDialog();
+
+                    CajaDialogo.Information("TRANSFERENCIA CREADA EXITOSAMENTE");
+                    this.DialogResult = DialogResult.OK;
+
+                    xrpt_Main_traslado_almacen report = new xrpt_Main_traslado_almacen();
+                    report.Parameters["id_h"].Value = id_salida_h;
+
+
+                    using (ReportPrintTool printTool = new ReportPrintTool(report))
+                    {
+                        // Send the report to the default printer.
+                        printTool.ShowPreviewDialog();
+                    }
                 }
 
                 //Generar Ingreso.
