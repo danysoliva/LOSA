@@ -37,6 +37,7 @@
             this.cmdPT = new DevExpress.XtraEditors.SimpleButton();
             this.cmdMP = new DevExpress.XtraEditors.SimpleButton();
             this.TabLogistica = new DevExpress.XtraTab.XtraTabPage();
+            this.btnLiquidos = new DevExpress.XtraEditors.SimpleButton();
             this.btnMPReproceso = new DevExpress.XtraEditors.SimpleButton();
             this.btn_andenes = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton13 = new DevExpress.XtraEditors.SimpleButton();
@@ -224,6 +225,7 @@
             // 
             // TabLogistica
             // 
+            this.TabLogistica.Controls.Add(this.btnLiquidos);
             this.TabLogistica.Controls.Add(this.btnMPReproceso);
             this.TabLogistica.Controls.Add(this.btn_andenes);
             this.TabLogistica.Controls.Add(this.simpleButton13);
@@ -255,6 +257,22 @@
             this.TabLogistica.PageVisible = false;
             this.TabLogistica.Size = new System.Drawing.Size(644, 441);
             this.TabLogistica.Text = "Logistica";
+            // 
+            // btnLiquidos
+            // 
+            this.btnLiquidos.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLiquidos.Appearance.Options.UseFont = true;
+            this.btnLiquidos.Appearance.Options.UseTextOptions = true;
+            this.btnLiquidos.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnLiquidos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnLiquidos.ImageOptions.Image = global::LOSA.Properties.Resources.oil_barrel;
+            this.btnLiquidos.Location = new System.Drawing.Point(214, 392);
+            this.btnLiquidos.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLiquidos.Name = "btnLiquidos";
+            this.btnLiquidos.Size = new System.Drawing.Size(199, 43);
+            this.btnLiquidos.TabIndex = 41;
+            this.btnLiquidos.Text = " Ingreso Líquidos";
+            this.btnLiquidos.Click += new System.EventHandler(this.simpleButton17_Click_1);
             // 
             // btnMPReproceso
             // 
@@ -1067,5 +1085,6 @@
         private DevExpress.XtraEditors.SimpleButton ManteIngresos;
         private DevExpress.XtraEditors.SimpleButton btnMPReproceso;
         private DevExpress.XtraEditors.SimpleButton btnNitLecturas;
+        private DevExpress.XtraEditors.SimpleButton btnLiquidos;
     }
 }

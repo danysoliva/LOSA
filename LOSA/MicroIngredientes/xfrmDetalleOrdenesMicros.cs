@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using ACS.Classes;
 using System.Data.SqlClient;
+using LOSA.MicroIngredientes.Models;
 
 namespace LOSA.MicroIngredientes
 {
@@ -25,6 +26,11 @@ namespace LOSA.MicroIngredientes
             codigoOrden = _CodigoOrden;
             LoadData();
             LoadDataIndividual();
+
+            if (dsMicros.DetalleOrdenesPesajeIndividual.Rows.Count < 1)
+            {
+                btnStartPesaje.Enabled = false;
+            }
         }
 
 
@@ -77,6 +83,8 @@ namespace LOSA.MicroIngredientes
         private void xfrmDetalleOrdenesMicros_Load(object sender, EventArgs e)
         {
             lblTitulo.Text = "Código Orden: "+codigoOrden;
+
+
         }
 
         private void cmdUpdate_Click(object sender, EventArgs e)
@@ -103,6 +111,40 @@ namespace LOSA.MicroIngredientes
         private void cmdClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnStartPesaje_Click(object sender, EventArgs e)
+        {
+            List<PesajeIndividualNew> pesaje_list = new List<PesajeIndividualNew>();
+            PesajeIndividualNew pesaje = new PesajeIndividualNew();
+
+            try
+            {
+                foreach (var item in dsMicros.DetalleOrdenesPesajeIndividual)
+                {
+                    pesaje = new PesajeIndividualNew();
+
+                    pesaje.BatchPlan = 0;
+                    pesaje.MP_ID = item.id_rm;
+                    pesaje.OrdenID = item.id_orden_encabezado;
+                    pesaje.PesoPorBatch = item.Peso_por_Batch;
+                    pesaje.PesoTotal = item.Total;
+                    pesaje.Material = item.Material;
+                    pesaje.BatchCompletados = item.Batch_Completados;
+
+                    pesaje_list.Add(pesaje);
+
+                }
+
+                xfrmResumenMPIndividual frm = new xfrmResumenMPIndividual(pesaje_list);
+
+                frm.Show();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+
         }
     }
 }

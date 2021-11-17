@@ -32,8 +32,6 @@ namespace LOSA.MicroIngredientes
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmPesajeIndividual));
             this.lueBascula = new DevExpress.XtraEditors.LookUpEdit();
-            this.pesajeBasculaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsMicros = new LOSA.MicroIngredientes.dsMicros();
             this.label1 = new System.Windows.Forms.Label();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdSum10 = new DevExpress.XtraEditors.SimpleButton();
@@ -42,16 +40,18 @@ namespace LOSA.MicroIngredientes
             this.lblMensaje = new DevExpress.XtraEditors.LabelControl();
             this.progressBarControl1 = new DevExpress.XtraEditors.ProgressBarControl();
             this.btnGenerar = new DevExpress.XtraEditors.SimpleButton();
+            this.pesajeBasculaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsMicros = new LOSA.MicroIngredientes.dsMicros();
+            this.Bascula1 = new DevExpress.XtraEditors.SimpleButton();
+            this.Bascula2 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdDown = new DevExpress.XtraEditors.SimpleButton();
             this.cmdUp = new DevExpress.XtraEditors.SimpleButton();
             this.cmdClose = new DevExpress.XtraEditors.SimpleButton();
-            this.Bascula2 = new DevExpress.XtraEditors.SimpleButton();
-            this.Bascula1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.lueBascula.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pesajeBasculaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsMicros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.seBatch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pesajeBasculaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsMicros)).BeginInit();
             this.SuspendLayout();
             // 
             // lueBascula
@@ -76,16 +76,6 @@ namespace LOSA.MicroIngredientes
             this.lueBascula.Size = new System.Drawing.Size(173, 30);
             this.lueBascula.TabIndex = 8;
             this.lueBascula.Visible = false;
-            // 
-            // pesajeBasculaBindingSource
-            // 
-            this.pesajeBasculaBindingSource.DataMember = "Pesaje_Bascula";
-            this.pesajeBasculaBindingSource.DataSource = this.dsMicros;
-            // 
-            // dsMicros
-            // 
-            this.dsMicros.DataSetName = "dsMicros";
-            this.dsMicros.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -197,6 +187,48 @@ namespace LOSA.MicroIngredientes
             this.btnGenerar.Text = "Iniciar";
             this.btnGenerar.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
+            // pesajeBasculaBindingSource
+            // 
+            this.pesajeBasculaBindingSource.DataMember = "Pesaje_Bascula";
+            this.pesajeBasculaBindingSource.DataSource = this.dsMicros;
+            // 
+            // dsMicros
+            // 
+            this.dsMicros.DataSetName = "dsMicros";
+            this.dsMicros.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // Bascula1
+            // 
+            this.Bascula1.Appearance.BackColor = System.Drawing.Color.White;
+            this.Bascula1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bascula1.Appearance.Options.UseBackColor = true;
+            this.Bascula1.Appearance.Options.UseFont = true;
+            this.Bascula1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.Bascula1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Bascula1.ImageOptions.Image")));
+            this.Bascula1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.Bascula1.Location = new System.Drawing.Point(131, 53);
+            this.Bascula1.Name = "Bascula1";
+            this.Bascula1.Size = new System.Drawing.Size(164, 103);
+            this.Bascula1.TabIndex = 20;
+            this.Bascula1.Text = "Bascula 1";
+            this.Bascula1.Click += new System.EventHandler(this.Bascula1_Click);
+            // 
+            // Bascula2
+            // 
+            this.Bascula2.Appearance.BackColor = System.Drawing.Color.White;
+            this.Bascula2.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.Bascula2.Appearance.Options.UseBackColor = true;
+            this.Bascula2.Appearance.Options.UseFont = true;
+            this.Bascula2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.Bascula2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Bascula2.ImageOptions.Image")));
+            this.Bascula2.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.Bascula2.Location = new System.Drawing.Point(331, 53);
+            this.Bascula2.Name = "Bascula2";
+            this.Bascula2.Size = new System.Drawing.Size(164, 103);
+            this.Bascula2.TabIndex = 19;
+            this.Bascula2.Text = "Bascula 2";
+            this.Bascula2.Click += new System.EventHandler(this.Bascula2_Click);
+            // 
             // cmdDown
             // 
             this.cmdDown.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
@@ -235,38 +267,6 @@ namespace LOSA.MicroIngredientes
             this.cmdClose.Text = "Cerrar";
             this.cmdClose.Click += new System.EventHandler(this.cmdClose_Click);
             // 
-            // Bascula2
-            // 
-            this.Bascula2.Appearance.BackColor = System.Drawing.Color.White;
-            this.Bascula2.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.Bascula2.Appearance.Options.UseBackColor = true;
-            this.Bascula2.Appearance.Options.UseFont = true;
-            this.Bascula2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.Bascula2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.Bascula2.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.Bascula2.Location = new System.Drawing.Point(331, 53);
-            this.Bascula2.Name = "Bascula2";
-            this.Bascula2.Size = new System.Drawing.Size(164, 103);
-            this.Bascula2.TabIndex = 19;
-            this.Bascula2.Text = "Bascula 2";
-            this.Bascula2.Click += new System.EventHandler(this.Bascula2_Click);
-            // 
-            // Bascula1
-            // 
-            this.Bascula1.Appearance.BackColor = System.Drawing.Color.White;
-            this.Bascula1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Bascula1.Appearance.Options.UseBackColor = true;
-            this.Bascula1.Appearance.Options.UseFont = true;
-            this.Bascula1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.Bascula1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.Bascula1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.Bascula1.Location = new System.Drawing.Point(131, 53);
-            this.Bascula1.Name = "Bascula1";
-            this.Bascula1.Size = new System.Drawing.Size(164, 103);
-            this.Bascula1.TabIndex = 20;
-            this.Bascula1.Text = "Bascula 1";
-            this.Bascula1.Click += new System.EventHandler(this.Bascula1_Click);
-            // 
             // xfrmPesajeIndividual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -292,10 +292,10 @@ namespace LOSA.MicroIngredientes
             this.Text = "xfrmSelectBascula";
             this.Load += new System.EventHandler(this.xfrmPesajeIndividual_Load);
             ((System.ComponentModel.ISupportInitialize)(this.lueBascula.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pesajeBasculaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsMicros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.seBatch.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pesajeBasculaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsMicros)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
