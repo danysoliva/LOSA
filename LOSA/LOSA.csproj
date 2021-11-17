@@ -70,10 +70,10 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>B8B1E1C226D4161B735B5D87883A090CA12C1142</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>B85E4D64CC0C69582286F1DF38EBE01D998FAB97</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>LOSA_3_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>LOSA_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -92,7 +92,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>LOSA_3_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>LOSA_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -177,7 +177,7 @@
     <Compile Include="AlmacenesExterno\Reporteria\xrptAlmacenesExternos.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="AlmacenesExterno\Reporteria\xrptAlmacenesExternos.Designer.cs">
+    <Compile Include="AlmacenesExterno\Reporteria\xrptAlmacenesExternos.designer.cs">
       <DependentUpon>xrptAlmacenesExternos.cs</DependentUpon>
     </Compile>
     <Compile Include="AlmacenesExterno\Reporteria\xrpt_Main_traslado_almacen.cs">
@@ -768,6 +768,61 @@
       <DependentUpon>frmOpciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\GrupoUser.cs" />
+    <Compile Include="Liquidos\dsLiquidos_.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLiquidos_.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Liquidos\frmIngresoCamion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Liquidos\frmIngresoCamion.Designer.cs">
+      <DependentUpon>frmIngresoCamion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Liquidos\frm_select_numero_liquidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Liquidos\frm_select_numero_liquidos.Designer.cs">
+      <DependentUpon>frm_select_numero_liquidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Liquidos\Models\CamionIN.cs" />
+    <Compile Include="Liquidos\Models\Title_MP_Tanque.cs" />
+    <Compile Include="Liquidos\xfrmChooseMP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Liquidos\xfrmChooseMP.Designer.cs">
+      <DependentUpon>xfrmChooseMP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Liquidos\xfrmIngresoLiquidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Liquidos\xfrmIngresoLiquidos.Designer.cs">
+      <DependentUpon>xfrmIngresoLiquidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Liquidos\xfrmLotesPorTanque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Liquidos\xfrmLotesPorTanque.Designer.cs">
+      <DependentUpon>xfrmLotesPorTanque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Liquidos\xfrmTanque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Liquidos\xfrmTanque.Designer.cs">
+      <DependentUpon>xfrmTanque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Liquidos\xfrmTanqueCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Liquidos\xfrmTanqueCRUD.Designer.cs">
+      <DependentUpon>xfrmTanqueCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Liquidos\xfrm_select_camiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Liquidos\xfrm_select_camiones.Designer.cs">
+      <DependentUpon>xfrm_select_camiones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logistica\dsLogistica.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -950,7 +1005,14 @@
     </Compile>
     <Compile Include="MicroIngredientes\Models\PesajeIndividualCompletados.cs" />
     <Compile Include="MicroIngredientes\Models\PesajeIndividualInfo.cs" />
+    <Compile Include="MicroIngredientes\Models\PesajeIndividualNew.cs" />
     <Compile Include="MicroIngredientes\Models\PesajeManualInfo.cs" />
+    <Compile Include="MicroIngredientes\xfrmAsistentePesaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MicroIngredientes\xfrmAsistentePesaje.Designer.cs">
+      <DependentUpon>xfrmAsistentePesaje.cs</DependentUpon>
+    </Compile>
     <Compile Include="MicroIngredientes\xfrmDetalleOrdenesMicros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -975,6 +1037,18 @@
     <Compile Include="MicroIngredientes\xfrmMicroIngredientes.Designer.cs">
       <DependentUpon>xfrmMicroIngredientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="MicroIngredientes\xfrmPesajeIndividualBatchV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MicroIngredientes\xfrmPesajeIndividualBatchV2.Designer.cs">
+      <DependentUpon>xfrmPesajeIndividualBatchV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MicroIngredientes\xfrmPesajeIndividualV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MicroIngredientes\xfrmPesajeIndividualV2.Designer.cs">
+      <DependentUpon>xfrmPesajeIndividualV2.cs</DependentUpon>
+    </Compile>
     <Compile Include="MicroIngredientes\xfrmPesajeIndividual.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -986,6 +1060,18 @@
     </Compile>
     <Compile Include="MicroIngredientes\xfrmPesajeIndividualBatch.Designer.cs">
       <DependentUpon>xfrmPesajeIndividualBatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MicroIngredientes\xfrmConfPlanBatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MicroIngredientes\xfrmConfPlanBatch.Designer.cs">
+      <DependentUpon>xfrmConfPlanBatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MicroIngredientes\xfrmResumenMPIndividual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MicroIngredientes\xfrmResumenMPIndividual.Designer.cs">
+      <DependentUpon>xfrmResumenMPIndividual.cs</DependentUpon>
     </Compile>
     <Compile Include="MicroIngredientes\xfrmSpinBatchPlan.cs">
       <SubType>Form</SubType>
@@ -1178,7 +1264,19 @@
     <None Include="Despachos\Reportes\dsReporte.xss">
       <DependentUpon>dsReporte.xsd</DependentUpon>
     </None>
+    <None Include="Liquidos\dsLiquidos_.xsc">
+      <DependentUpon>dsLiquidos_.xsd</DependentUpon>
+    </None>
+    <None Include="Liquidos\dsLiquidos_.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLiquidos_.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Liquidos\dsLiquidos_.xss">
+      <DependentUpon>dsLiquidos_.xsd</DependentUpon>
+    </None>
     <None Include="LOSA_3_TemporaryKey.pfx" />
+    <None Include="LOSA_TemporaryKey.pfx" />
     <None Include="Nir\dsNir.xsc">
       <DependentUpon>dsNir.xsd</DependentUpon>
     </None>
@@ -2256,6 +2354,30 @@
     <EmbeddedResource Include="frmOpciones.resx">
       <DependentUpon>frmOpciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Liquidos\frmIngresoCamion.resx">
+      <DependentUpon>frmIngresoCamion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Liquidos\frm_select_numero_liquidos.resx">
+      <DependentUpon>frm_select_numero_liquidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Liquidos\xfrmChooseMP.resx">
+      <DependentUpon>xfrmChooseMP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Liquidos\xfrmIngresoLiquidos.resx">
+      <DependentUpon>xfrmIngresoLiquidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Liquidos\xfrmLotesPorTanque.resx">
+      <DependentUpon>xfrmLotesPorTanque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Liquidos\xfrmTanque.resx">
+      <DependentUpon>xfrmTanque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Liquidos\xfrmTanqueCRUD.resx">
+      <DependentUpon>xfrmTanqueCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Liquidos\xfrm_select_camiones.resx">
+      <DependentUpon>xfrm_select_camiones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Logistica\frmLotes.resx">
       <DependentUpon>frmLotes.cs</DependentUpon>
     </EmbeddedResource>
@@ -2334,6 +2456,9 @@
     <EmbeddedResource Include="MicroIngredientes\frmSelectLotePesaje.resx">
       <DependentUpon>frmSelectLotePesaje.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MicroIngredientes\xfrmAsistentePesaje.resx">
+      <DependentUpon>xfrmAsistentePesaje.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MicroIngredientes\xfrmDetalleOrdenesMicros.resx">
       <DependentUpon>xfrmDetalleOrdenesMicros.cs</DependentUpon>
     </EmbeddedResource>
@@ -2346,11 +2471,23 @@
     <EmbeddedResource Include="MicroIngredientes\xfrmMicroIngredientes.resx">
       <DependentUpon>xfrmMicroIngredientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MicroIngredientes\xfrmPesajeIndividualBatchV2.resx">
+      <DependentUpon>xfrmPesajeIndividualBatchV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MicroIngredientes\xfrmPesajeIndividualV2.resx">
+      <DependentUpon>xfrmPesajeIndividualV2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MicroIngredientes\xfrmPesajeIndividual.resx">
       <DependentUpon>xfrmPesajeIndividual.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MicroIngredientes\xfrmPesajeIndividualBatch.resx">
       <DependentUpon>xfrmPesajeIndividualBatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MicroIngredientes\xfrmConfPlanBatch.resx">
+      <DependentUpon>xfrmConfPlanBatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MicroIngredientes\xfrmResumenMPIndividual.resx">
+      <DependentUpon>xfrmResumenMPIndividual.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MicroIngredientes\xfrmSpinBatchPlan.resx">
       <DependentUpon>xfrmSpinBatchPlan.cs</DependentUpon>
@@ -3028,6 +3165,7 @@
     <None Include="Resources\box32px.png" />
     <Content Include="Resources\cancel.png" />
     <Content Include="Resources\cargo.png" />
+    <None Include="Resources\CCT-2000C-SQ-800x800.jpg" />
     <Content Include="Resources\check-in.png" />
     <None Include="Resources\edit-table%281%29.png" />
     <None Include="Resources\Container-icon32px.png" />
@@ -3051,6 +3189,7 @@
     <None Include="Resources\pallet pallet solo.png" />
     <None Include="Resources\pallet32px.png" />
     <None Include="Resources\pallet32px1.png" />
+    <None Include="Resources\oil-barrel.png" />
     <Content Include="Resources\plus.png" />
     <None Include="Resources\produccion.png" />
     <None Include="Resources\Producto_terminado.png" />
@@ -3064,6 +3203,7 @@
     <None Include="Resources\trazabilidad.png" />
     <None Include="Resources\trucksss.png" />
     <Content Include="Resources\user.png" />
+    <None Include="Resources\weighing-machine_32X32.png" />
     <Content Include="Resources\wrench.png" />
   </ItemGroup>
   <ItemGroup>
@@ -3078,8 +3218,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Liquidos\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

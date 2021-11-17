@@ -163,6 +163,16 @@ namespace LOSA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CCT_2000C_SQ_800x800 {
+            get {
+                object obj = ResourceManager.GetObject("CCT_2000C_SQ_800x800", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap check_in {
             get {
                 object obj = ResourceManager.GetObject("check-in", resourceCulture);
@@ -373,6 +383,16 @@ namespace LOSA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap oil_barrel {
+            get {
+                object obj = ResourceManager.GetObject("oil-barrel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pallet_pallet_solo {
             get {
                 object obj = ResourceManager.GetObject("pallet pallet solo", resourceCulture);
@@ -526,6 +546,16 @@ namespace LOSA.Properties {
         internal static System.Drawing.Bitmap Users_Group_icon64px {
             get {
                 object obj = ResourceManager.GetObject("Users-Group-icon64px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap weighing_machine_32X32 {
+            get {
+                object obj = ResourceManager.GetObject("weighing-machine_32X32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

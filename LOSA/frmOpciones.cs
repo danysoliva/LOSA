@@ -21,6 +21,7 @@ using LOSA.Reportes;
 using LOSA.Trazabilidad;
 using LOSA.Despachos;
 using LOSA.Nir;
+using LOSA.Liquidos;
 
 namespace LOSA
 {
@@ -620,6 +621,15 @@ namespace LOSA
         private void simpleButton17_Click(object sender, EventArgs e)
         {
             frmLecturas frm = new frmLecturas(UsuarioLogeado);
+            frm.Show();
+        }
+
+        private void simpleButton17_Click_1(object sender, EventArgs e)
+        {
+            xfrmIngresoLiquidos frm = new xfrmIngresoLiquidos(UsuarioLogeado);
+
+            //xfrmTanque frm = new xfrmTanque();
+
             frm.Show();
         }
     }

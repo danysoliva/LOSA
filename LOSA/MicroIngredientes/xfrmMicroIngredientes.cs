@@ -33,7 +33,7 @@ namespace LOSA.MicroIngredientes
                 {
                     cnx.Open();
                     dsMicros.Micros.Clear();
-                    SqlCommand cmd = new SqlCommand("sp_get_ordenes_pesaje_manual_interface_V3", cnx);
+                    SqlCommand cmd = new SqlCommand("sp_get_ordenes_pesaje_manual_interface_V5", cnx);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@vertodas", toggleSwitch1.IsOn);
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -110,8 +110,37 @@ namespace LOSA.MicroIngredientes
                 var gv = (GridView)gcMicros.FocusedView;
                 var row = (dsMicros.MicrosRow)gv.GetDataRow(gv.FocusedRowHandle);
 
+                DataOperations dp = new DataOperations();
+                Boolean ExisteConfPesajeManual;
+
+                using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
+                {
+                    cnx.Open();
+
+                    SqlCommand cmd = new SqlCommand("dbo.sp_validate_OP_Conf_PesajeIndividual",cnx);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@id_orden", SqlDbType.Int).Value = row.id;
+
+                     ExisteConfPesajeManual = Convert.ToBoolean( cmd.ExecuteScalar());
+
+                    cnx.Close();
+                }
+
                 if (row != null)
                 {
+
+                    if (row.batch_real == 0 && row._Cod__Estado!=70)
+                    {
+                        if (ExisteConfPesajeManual==false)
+                        {
+
+                        xfrmAsistentePesaje frm = new xfrmAsistentePesaje(row.id);
+
+                        frm.Show();
+                        }
+                    }
+                    else
                     if (row._Cod__Estado == 80)
                     {
                         CajaDialogo.Error("Orden ya esta finalizada");
@@ -275,6 +304,11 @@ namespace LOSA.MicroIngredientes
                     e.Appearance.BackColor = Color.FromArgb(200, 255, 255, 255);
                 }
             }
+        }
+
+        private void gcMicros_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
