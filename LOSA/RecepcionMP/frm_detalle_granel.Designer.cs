@@ -44,6 +44,8 @@ namespace LOSA.RecepcionMP
             this.colfecha = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colitem_code = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colitemname = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnImprimirLote = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ingresoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsingresos)).BeginInit();
@@ -77,7 +79,7 @@ namespace LOSA.RecepcionMP
             this.labelControl3.Appearance.Options.UseTextOptions = true;
             this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl3.Location = new System.Drawing.Point(209, 20);
+            this.labelControl3.Location = new System.Drawing.Point(320, 23);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(272, 44);
@@ -145,6 +147,7 @@ namespace LOSA.RecepcionMP
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
+            this.grdv_data.OptionsView.ShowFooter = true;
             this.grdv_data.OptionsView.ShowGroupPanel = false;
             // 
             // colingreso
@@ -173,6 +176,8 @@ namespace LOSA.RecepcionMP
             this.colEntrada.FieldName = "Entrada";
             this.colEntrada.Name = "colEntrada";
             this.colEntrada.OptionsColumn.AllowEdit = false;
+            this.colEntrada.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Entrada", "SUMA={0:d}")});
             this.colEntrada.Visible = true;
             this.colEntrada.VisibleIndex = 6;
             // 
@@ -212,11 +217,37 @@ namespace LOSA.RecepcionMP
             this.colitemname.Visible = true;
             this.colitemname.VisibleIndex = 4;
             // 
+            // btnImprimirLote
+            // 
+            this.btnImprimirLote.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimirLote.Appearance.Options.UseFont = true;
+            this.btnImprimirLote.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimirLote.ImageOptions.Image")));
+            this.btnImprimirLote.Location = new System.Drawing.Point(12, 19);
+            this.btnImprimirLote.Name = "btnImprimirLote";
+            this.btnImprimirLote.Size = new System.Drawing.Size(141, 60);
+            this.btnImprimirLote.TabIndex = 33;
+            this.btnImprimirLote.Text = "Imprimir\r\nCartilla";
+            this.btnImprimirLote.Click += new System.EventHandler(this.btnImprimirLote_Click);
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(159, 19);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(141, 60);
+            this.simpleButton1.TabIndex = 34;
+            this.simpleButton1.Text = "Imprimir\r\nhoja de lote";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // frm_detalle_granel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(829, 641);
+            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.btnImprimirLote);
             this.Controls.Add(this.grd_data);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.btnAtras);
@@ -247,5 +278,7 @@ namespace LOSA.RecepcionMP
         private DevExpress.XtraGrid.Columns.GridColumn colfecha;
         private DevExpress.XtraGrid.Columns.GridColumn colitem_code;
         private DevExpress.XtraGrid.Columns.GridColumn colitemname;
+        private DevExpress.XtraEditors.SimpleButton btnImprimirLote;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

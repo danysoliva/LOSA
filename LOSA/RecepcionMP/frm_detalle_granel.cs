@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using ACS.Classes;
 using LOSA.Clases;
+using LOSA.Reportes;
+using DevExpress.XtraReports.UI;
 
 namespace LOSA.RecepcionMP
 {
@@ -49,6 +51,43 @@ namespace LOSA.RecepcionMP
         private void btnAtras_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnImprimirLote_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                rpt_cartilla report = new rpt_cartilla(id_numero_referencia, true);
+                report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                ReportPrintTool printReport = new ReportPrintTool(report);
+                printReport.ShowPreview();
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+        private void PrintingSystem_StartPrint(object sender, DevExpress.XtraPrinting.PrintDocumentEventArgs e)
+        {
+            //Indica el numero de copias de la boleta que seran impresas
+            e.PrintDocument.PrinterSettings.Copies = 1;
+        }
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+             
+                rptLoteRotulo report = new rptLoteRotulo(id_numero_referencia, true);
+                report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                ReportPrintTool printReport = new ReportPrintTool(report);
+                printReport.ShowPreview();
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
         }
     }
 }

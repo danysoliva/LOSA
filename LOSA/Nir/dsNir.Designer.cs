@@ -1070,6 +1070,9 @@ namespace LOSA.Nir {
                 base.Columns.Add(this._column_Lote);
                 this.columnenable = new global::System.Data.DataColumn("enable", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnenable);
+                this.columnGH.DefaultValue = ((decimal)(-99m));
+                this.columnNB.DefaultValue = ((decimal)(-99m));
+                this.columnTS.DefaultValue = ((decimal)(-99m));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2727,11 +2730,11 @@ namespace LOSA.Nir {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string ID_Bromatologia {
                 get {
-                    try {
-                        return ((string)(this[this.tableNir_lecturas.ID_BromatologiaColumn]));
+                    if (this.IsID_BromatologiaNull()) {
+                        return null;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ID Bromatologia\' de la tabla \'Nir_lecturas\' es DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableNir_lecturas.ID_BromatologiaColumn]));
                     }
                 }
                 set {
@@ -2823,12 +2826,11 @@ namespace LOSA.Nir {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Nombre_de_Producto {
                 get {
-                    try {
-                        return ((string)(this[this.tableNir_lecturas.Nombre_de_ProductoColumn]));
+                    if (this.IsNombre_de_ProductoNull()) {
+                        return null;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Nombre de Producto\' de la tabla \'Nir_lecturas\' es DBNull." +
-                                "", e);
+                    else {
+                        return ((string)(this[this.tableNir_lecturas.Nombre_de_ProductoColumn]));
                     }
                 }
                 set {
@@ -2840,11 +2842,11 @@ namespace LOSA.Nir {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string @__Lote {
                 get {
-                    try {
-                        return ((string)(this[this.tableNir_lecturas.@__LoteColumn]));
+                    if (this.Is__LoteNull()) {
+                        return null;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'#Lote\' de la tabla \'Nir_lecturas\' es DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableNir_lecturas.@__LoteColumn]));
                     }
                 }
                 set {
@@ -3444,11 +3446,11 @@ namespace LOSA.Nir {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string lote {
                 get {
-                    try {
-                        return ((string)(this[this.tablelecturas_ingreso.loteColumn]));
+                    if (this.IsloteNull()) {
+                        return null;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'lote\' de la tabla \'lecturas_ingreso\' es DBNull.", e);
+                    else {
+                        return ((string)(this[this.tablelecturas_ingreso.loteColumn]));
                     }
                 }
                 set {
@@ -3460,12 +3462,11 @@ namespace LOSA.Nir {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string nombre_producto {
                 get {
-                    try {
-                        return ((string)(this[this.tablelecturas_ingreso.nombre_productoColumn]));
+                    if (this.Isnombre_productoNull()) {
+                        return null;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombre_producto\' de la tabla \'lecturas_ingreso\' es DBNull" +
-                                ".", e);
+                    else {
+                        return ((string)(this[this.tablelecturas_ingreso.nombre_productoColumn]));
                     }
                 }
                 set {
@@ -3866,12 +3867,11 @@ namespace LOSA.Nir {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string nombre_producto {
                 get {
-                    try {
-                        return ((string)(this[this.tableseleccion_lectura.nombre_productoColumn]));
+                    if (this.Isnombre_productoNull()) {
+                        return null;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombre_producto\' de la tabla \'seleccion_lectura\' es DBNul" +
-                                "l.", e);
+                    else {
+                        return ((string)(this[this.tableseleccion_lectura.nombre_productoColumn]));
                     }
                 }
                 set {
@@ -3883,11 +3883,11 @@ namespace LOSA.Nir {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string lote {
                 get {
-                    try {
-                        return ((string)(this[this.tableseleccion_lectura.loteColumn]));
+                    if (this.IsloteNull()) {
+                        return null;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'lote\' de la tabla \'seleccion_lectura\' es DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableseleccion_lectura.loteColumn]));
                     }
                 }
                 set {

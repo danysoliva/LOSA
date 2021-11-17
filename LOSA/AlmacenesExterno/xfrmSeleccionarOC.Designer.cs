@@ -113,8 +113,6 @@
             this.colid.MinWidth = 21;
             this.colid.Name = "colid";
             this.colid.OptionsColumn.AllowEdit = false;
-            this.colid.Visible = true;
-            this.colid.VisibleIndex = 0;
             this.colid.Width = 142;
             // 
             // colDocNum
@@ -125,7 +123,7 @@
             this.colDocNum.Name = "colDocNum";
             this.colDocNum.OptionsColumn.AllowEdit = false;
             this.colDocNum.Visible = true;
-            this.colDocNum.VisibleIndex = 1;
+            this.colDocNum.VisibleIndex = 0;
             this.colDocNum.Width = 141;
             // 
             // colCodProv
@@ -135,7 +133,7 @@
             this.colCodProv.Name = "colCodProv";
             this.colCodProv.OptionsColumn.AllowEdit = false;
             this.colCodProv.Visible = true;
-            this.colCodProv.VisibleIndex = 2;
+            this.colCodProv.VisibleIndex = 1;
             this.colCodProv.Width = 141;
             // 
             // colProveedor
@@ -145,7 +143,7 @@
             this.colProveedor.Name = "colProveedor";
             this.colProveedor.OptionsColumn.AllowEdit = false;
             this.colProveedor.Visible = true;
-            this.colProveedor.VisibleIndex = 3;
+            this.colProveedor.VisibleIndex = 2;
             this.colProveedor.Width = 141;
             // 
             // gridColumn1
@@ -155,7 +153,7 @@
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 4;
+            this.gridColumn1.VisibleIndex = 3;
             this.gridColumn1.Width = 141;
             // 
             // colComentario
@@ -165,7 +163,7 @@
             this.colComentario.Name = "colComentario";
             this.colComentario.OptionsColumn.AllowEdit = false;
             this.colComentario.Visible = true;
-            this.colComentario.VisibleIndex = 5;
+            this.colComentario.VisibleIndex = 4;
             this.colComentario.Width = 147;
             // 
             // gridColumn2
@@ -174,7 +172,7 @@
             this.gridColumn2.MinWidth = 21;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 6;
+            this.gridColumn2.VisibleIndex = 5;
             this.gridColumn2.Width = 81;
             // 
             // btnSeleccionar

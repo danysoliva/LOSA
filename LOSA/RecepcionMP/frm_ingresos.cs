@@ -30,7 +30,7 @@ namespace LOSA.RecepcionMP
         }
         public void Load_Info()
         {
-            string query = @"EXEC dbo.ps_load_ingresos_from_tarimas";
+            string query = @"EXEC dbo.ps_load_ingresos_from_tarimas_v4";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             try
             {
@@ -102,8 +102,7 @@ namespace LOSA.RecepcionMP
             {
                 var gridview = (GridView)grd_ingreso.FocusedView;
                 var row = (dsRecepcionMPx.IngresosMPRow)gridview.GetFocusedDataRow();
-                if (row.tipo_ingreso == 1)
-                {
+                
                     string query = @"sp_obtener_id_mps_from_ingreso";
                     SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                     try
@@ -119,7 +118,7 @@ namespace LOSA.RecepcionMP
                         cn.Close();
                         foreach (dsRecepcionMPx.mp_loteRow registro in dsRecepcionMPx.mp_lote.Rows)
                         {
-                            Reportes.rptIngresoHoja report = new Reportes.rptIngresoHoja(row.id, registro.mp,1);
+                            Reportes.rptIngresoHoja report = new Reportes.rptIngresoHoja(row.id, registro.mp);
                             report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
                             ReportPrintTool printReport = new ReportPrintTool(report);
                             printReport.ShowPreview();
@@ -130,11 +129,7 @@ namespace LOSA.RecepcionMP
                     {
 
                     }
-                }
-                else
-                {
-
-                }    
+                
                 
 
             }
@@ -208,7 +203,7 @@ namespace LOSA.RecepcionMP
                         cn.Close();
                         foreach (dsRecepcionMPx.mp_loteRow registro in dsRecepcionMPx.mp_lote.Rows)
                         {
-                            Reportes.rptIngresoHoja report = new Reportes.rptIngresoHoja(row.id, registro.mp, 2);
+                            Reportes.rptIngresoHoja report = new Reportes.rptIngresoHoja(row.id, registro.mp);
                             report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
                             ReportPrintTool printReport = new ReportPrintTool(report);
                             printReport.ShowPreview();
