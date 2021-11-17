@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>203</ApplicationRevision>
+    <ApplicationRevision>206</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -70,7 +70,11 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
+<<<<<<< HEAD
     <ManifestCertificateThumbprint>B85E4D64CC0C69582286F1DF38EBE01D998FAB97</ManifestCertificateThumbprint>
+=======
+    <ManifestCertificateThumbprint>2A5951EBE9F804B3EB7C84F77AD982474D383F8C</ManifestCertificateThumbprint>
+>>>>>>> 7a01ddb6adb7cf6e773e9ae300add12a168d3d68
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>LOSA_TemporaryKey.pfx</ManifestKeyFile>

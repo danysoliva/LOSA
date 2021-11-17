@@ -14,6 +14,7 @@ using ACS.Classes;
 using System.Data.SqlClient;
 using LOSA.AlmacenesExterno.Salida_Almacen.Models;
 using LOSA.AlmacenesExterno.Salida_Almacen;
+using LOSA.Clases;
 
 namespace LOSA.AlmacenesExterno
 {
@@ -23,10 +24,11 @@ namespace LOSA.AlmacenesExterno
         int id_h;
         string id_proveedor;
         int docEntry;
-
-        public xfrmMovimientoStock()
+        UserLogin UsuarioLogeado;
+        public xfrmMovimientoStock(UserLogin Puser)
         {
             InitializeComponent();
+            UsuarioLogeado = Puser;
             ObtenerBodegas();
         }
 
@@ -281,7 +283,7 @@ namespace LOSA.AlmacenesExterno
                 ingreso_Almacenes_Externos_H.BodegaIN = lueAlmacenFROM.Text;
                 ingreso_Almacenes_Externos_H.BodegaOUT = lueAlmacenDestino.Text;
 
-                xfrmConfLotesSalidaAlmacen frm = new xfrmConfLotesSalidaAlmacen(lista, ingreso_Almacenes_Externos_H);
+                xfrmConfLotesSalidaAlmacen frm = new xfrmConfLotesSalidaAlmacen(lista, ingreso_Almacenes_Externos_H, UsuarioLogeado);
 
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
