@@ -12,9 +12,19 @@ namespace LOSA.Reportes
     {
         DataOperations dp = new DataOperations();
         public int Id_detalle;
+        bool isganel = false;
         public rptLoteRotulo(int pId)
         {
             InitializeComponent();
+            isganel = false;
+            Id_detalle = pId;
+            load_data();
+
+        }
+        public rptLoteRotulo(int pId, bool granel)
+        {
+            InitializeComponent();
+            isganel = granel;
             Id_detalle = pId;
             load_data();
 
@@ -22,6 +32,14 @@ namespace LOSA.Reportes
         public void load_data()
         {
             string query = @"rpt_load_informacion_ingreso_lote";
+            if (isganel)
+            {
+                query = @"rpt_load_informacion_ingreso_lote_granel";
+            }
+            else
+            {
+                query = @"rpt_load_informacion_ingreso_lote";
+            }       
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             try
             {

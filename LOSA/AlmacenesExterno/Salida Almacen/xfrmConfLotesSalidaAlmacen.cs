@@ -161,6 +161,8 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             var gvl = (GridView)gcLote.FocusedView;
             var row_lote = (dsSalidasAlmacenesExternos.LoteRow)gvl.GetDataRow(gvl.FocusedRowHandle);
 
+
+
             if (row_lote.cantidad_disponible==0)
             {
                 CajaDialogo.Error("LOTE NO DISPONIBLE");
@@ -350,7 +352,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
                 transaction.Commit();
                 cnx.Close();
 
-                frmTipoIngreso_v2 frm = new frmTipoIngreso_v2(id_salida_d, UsuarioLogeado);
+                frmTipoIngreso_v2 frm = new frmTipoIngreso_v2(id_salida_h, UsuarioLogeado);
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
 

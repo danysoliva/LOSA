@@ -40,8 +40,8 @@ namespace LOSA.Nir
             Load_lecturas();
             if (tipo == 1 )
             {
-                btnupdate.Visible = false;
-                btnSave.Visible = false;
+                //btnupdate.Visible = false;
+                //btnSave.Visible = false;
             }
         }
 
@@ -59,6 +59,21 @@ namespace LOSA.Nir
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dsNir.Nir_lecturas);
                 CN.Close();
+                query = "sp_load_titulo_de_lectura_h";
+
+                CN.Open();
+                cmd = new SqlCommand(query, CN);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id",id_lectura);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    txtcomentario.Text = dr.IsDBNull(0) ? "" : dr.GetString(0);
+                }
+                dr.Close();
+                CN.Close();
+                
+
 
             }
             catch (Exception ex)
@@ -175,17 +190,17 @@ namespace LOSA.Nir
 
                     query = @"sp_insert_lectura_nir_detalle";
                     foreach (dsNir.Nir_lecturasRow row in dsNir.Nir_lecturas.Rows)
-                    {
+                    { 
                         cn.Open();
                         cmd = new SqlCommand(query,cn);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@id_h", Id_header);
-                        cmd.Parameters.AddWithValue("@lote", row.__Lote);
-                        cmd.Parameters.AddWithValue("@nombre_producto", row.Nombre_de_Producto);
-                        cmd.Parameters.AddWithValue("@comentario", row.Comentario);
-                        cmd.Parameters.AddWithValue("@TS", row.TS);
-                        cmd.Parameters.AddWithValue("@NB", row.NB);
-                        cmd.Parameters.AddWithValue("@GH", row.GH);
+                        cmd.Parameters.AddWithValue("@lote", row.__Lote == null ? " " : row.__Lote);
+                        cmd.Parameters.AddWithValue("@nombre_producto", row.Nombre_de_Producto == null ? " " : row.Nombre_de_Producto);
+                        cmd.Parameters.AddWithValue("@comentario", row.Comentario == null ? " " : row.Comentario);
+                        cmd.Parameters.AddWithValue("@TS", row.TS == -99 ? (object)DBNull.Value : row.TS);
+                        cmd.Parameters.AddWithValue("@NB", row.NB == -99 ? (object)DBNull.Value : row.NB);
+                        cmd.Parameters.AddWithValue("@GH", row.GH == -99 ? (object)DBNull.Value : row.GH );
                         cmd.Parameters.AddWithValue("@broma_porcentaje", row.__Bromatologia);
                         cmd.Parameters.AddWithValue("@id_bromatologia", row.ID_Bromatologia);
                         cmd.Parameters.AddWithValue("@n_curva", row.Nombre_de_la_Curva);
@@ -195,7 +210,7 @@ namespace LOSA.Nir
                         cmd.ExecuteNonQuery();
                         cn.Close();               
                     }
-                    CajaDialogo.Information("Se ha cargadp correctamente la plantilla");
+                    CajaDialogo.Information("Se ha cargado correctamente la plantilla");
                     this.DialogResult = DialogResult.OK;
                 }
                 catch (Exception ex)
@@ -209,7 +224,16 @@ namespace LOSA.Nir
             else
             {       //editar
 
-
+                string query = @"sp_update_titulo_de_leccturas";
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query,cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", id_lectura);
+                cmd.Parameters.AddWithValue("@comentario", txtcomentario.Text);
+                cmd.ExecuteNonQuery();
+                CajaDialogo.Information("Se ha cambiado correctamente el nombre de la plantilla");
+                this.DialogResult = DialogResult.OK;
             }
             
         }

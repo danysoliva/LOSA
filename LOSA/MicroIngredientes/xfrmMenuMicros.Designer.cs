@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmMenuMicros));
             this.cmdMicros = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.cmdClose = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.cmdPesarOrden = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdClose = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
             // 
             // cmdMicros
@@ -68,16 +68,6 @@
             this.simpleButton1.Text = "Reportes";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
-            // cmdClose
-            // 
-            this.cmdClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdClose.ImageOptions.Image")));
-            this.cmdClose.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.cmdClose.Location = new System.Drawing.Point(445, 16);
-            this.cmdClose.Name = "cmdClose";
-            this.cmdClose.Size = new System.Drawing.Size(62, 53);
-            this.cmdClose.TabIndex = 19;
-            this.cmdClose.Click += new System.EventHandler(this.cmdClose_Click);
-            // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -103,6 +93,16 @@
             this.cmdPesarOrden.TabIndex = 21;
             this.cmdPesarOrden.Text = "Efectuar Pesaje";
             this.cmdPesarOrden.Click += new System.EventHandler(this.cmdPesarOrden_Click);
+            // 
+            // cmdClose
+            // 
+            this.cmdClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdClose.ImageOptions.Image")));
+            this.cmdClose.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.cmdClose.Location = new System.Drawing.Point(445, 16);
+            this.cmdClose.Name = "cmdClose";
+            this.cmdClose.Size = new System.Drawing.Size(62, 53);
+            this.cmdClose.TabIndex = 19;
+            this.cmdClose.Click += new System.EventHandler(this.cmdClose_Click);
             // 
             // xfrmMenuMicros
             // 

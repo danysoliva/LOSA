@@ -31,6 +31,17 @@ namespace LOSA.AlmacenesExterno
         {
             try
             {
+
+                if (Convert.ToDateTime(deFechaProduccion.Text) ==  Convert.ToDateTime(deFechaVencimiento.Text) )
+                {
+                    CajaDialogo.Error("Las fechas de produccion y vencimiento tienen que ser diferentes.");
+                    return;
+                }
+                if (Convert.ToDateTime(deFechaProduccion.Text) >= Convert.ToDateTime(deFechaVencimiento.Text))
+                {
+                    CajaDialogo.Error("La fecha de produccion no puede ser menor que la fecha de vencimiento.");
+                    return;
+                }
                 DataOperations dp = new DataOperations();
 
                 lote = new Ingreso_Externo_Lote();
@@ -40,7 +51,7 @@ namespace LOSA.AlmacenesExterno
                 lote.Cantidad = Convert.ToDecimal(txtCantidad.Text);
                 lote.NumLine = -1;
                 lote.FechaProduccion = Convert.ToDateTime(deFechaProduccion.Text);
-                lote.FechaVencimiento = Convert.ToDateTime(deFechaProduccion.Text);
+                lote.FechaVencimiento = Convert.ToDateTime(deFechaVencimiento.Text);
 
                 using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringLOSA))
                 {

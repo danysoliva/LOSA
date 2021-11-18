@@ -72,18 +72,18 @@ namespace LOSA.MicroIngredientes
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@id", SqlDbType.Int).Value = pesajeIndividual.BasculaID;
 
-                peso_bascula = Convert.ToDecimal(cmd.ExecuteScalar());
+                peso_bascula = Convert.ToDecimal(cmd.ExecuteScalar())+Convert.ToDecimal(0.06);
 
                 cnx.Close();
 
             }
 
-            limiteInferior = pesajeIndividual.PesoPorBatch - (pesajeIndividual.PesoPorBatch * Convert.ToDecimal (0.03));
-            limiteSuperior = pesajeIndividual.PesoPorBatch + (pesajeIndividual.PesoPorBatch * Convert.ToDecimal (0.03));
+            limiteInferior = pesajeIndividual.PesoPorBatch - (pesajeIndividual.PesoPorBatch * Convert.ToDecimal (0.03)) + Convert.ToDecimal(0.06);
+            limiteSuperior = pesajeIndividual.PesoPorBatch + (pesajeIndividual.PesoPorBatch * Convert.ToDecimal (0.03)) + Convert.ToDecimal(0.06);
 
-            lblValorBascula.Text = "Valor en Báscula: " + peso_bascula.ToString("N2")+ " Kg";
-            lblInferior.Text = "Límite Inferior: " + limiteInferior.ToString("N2");
-            lblSuperior.Text = "Límite Superior: " + limiteSuperior.ToString("N2");
+            lblValorBascula.Text = "Valor en Báscula: " + (peso_bascula).ToString("N2")+ " Kg";
+            lblInferior.Text = "Límite Inferior: " + (limiteInferior).ToString("N2");
+            lblSuperior.Text = "Límite Superior: " + (limiteSuperior).ToString("N2");
 
             if (peso_bascula>=limiteInferior && peso_bascula <= limiteSuperior)
             {

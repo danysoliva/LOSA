@@ -15,16 +15,34 @@ namespace LOSA.Reportes
         DataOperations dp = new DataOperations();
         public int id_lote;
 
+        bool isgranel = false;
         public rpt_cartilla(int Pid)
         {
             InitializeComponent();
             id_lote = Pid;
+            isgranel = false;   
             load_data();
         }
-        
+        public rpt_cartilla(int Pid, bool granel)
+        {
+            InitializeComponent();
+            id_lote = Pid;
+            isgranel = granel;
+            load_data();
+        }
+
+
         public void load_data()
         {
             string query = @"sp_load_rpt_cartilla";
+            if (isgranel)
+            {
+                query = @"sp_load_rpt_cartilla_granel";
+            }
+            else
+            {
+                query = @"sp_load_rpt_cartilla";
+            }
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             try
             {

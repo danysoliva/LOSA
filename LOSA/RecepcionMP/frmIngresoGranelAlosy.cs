@@ -268,20 +268,39 @@ namespace LOSA.RecepcionMP
             {
                 sumar_Kg = sumar_Kg + row.PesoProd;
             }
+            int Id_lote_generado = 0;
+            if (!tggNuevoIngreso.IsOn)
+            {
+                string query = @"sp_insert_ingreso_granel";
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+                SqlCommand Comnd = new SqlCommand(query, con);
+                Comnd.CommandType = CommandType.StoredProcedure;
+                Comnd.Parameters.AddWithValue("@entrada", sumar_Kg);
+                Comnd.Parameters.AddWithValue("@lote", txtLote.Text);
+                Comnd.Parameters.AddWithValue("@id_ingreso", ingreso);
+                Comnd.Parameters.AddWithValue("@item_code", txtCodigoMP.Text);
+                Comnd.Parameters.AddWithValue("@id_user", this.UsuarioLogeado.Id);
+                Comnd.Parameters.AddWithValue("@count_trailetas", dsRecepcionMPx1.granel.Count);
 
-            string query = @"sp_insert_ingreso_granel";
-            SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-            con.Open();
-            SqlCommand Comnd = new SqlCommand(query, con);
-            Comnd.CommandType = CommandType.StoredProcedure;
-            Comnd.Parameters.AddWithValue("@entrada", sumar_Kg);
-            Comnd.Parameters.AddWithValue("@lote", txtLote.Text);
-            Comnd.Parameters.AddWithValue("@id_ingreso", ingreso);
-            Comnd.Parameters.AddWithValue("@item_code", txtCodigoMP.Text);
-            Comnd.Parameters.AddWithValue("@id_user", this.UsuarioLogeado.Id);
-            Comnd.Parameters.AddWithValue("@count_trailetas", dsRecepcionMPx1.granel.Count);
-
-            int Id_lote_generado = Convert.ToInt32(Comnd.ExecuteScalar());
+                Id_lote_generado = Convert.ToInt32(Comnd.ExecuteScalar());
+            }
+            else
+            {
+                string query = @"sp_validar_si_ya_existe_este_ingreso";
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+                SqlCommand Comnd = new SqlCommand(query, con);
+                Comnd.CommandType = CommandType.StoredProcedure;
+                Comnd.Parameters.AddWithValue("@entrada", sumar_Kg);
+                Comnd.Parameters.AddWithValue("@lote", txtLote.Text);
+                Comnd.Parameters.AddWithValue("@id_ingreso", ingreso);
+                Comnd.Parameters.AddWithValue("@item_code", txtCodigoMP.Text);
+                Comnd.Parameters.AddWithValue("@id_user", this.UsuarioLogeado.Id);
+                Comnd.Parameters.AddWithValue("@count_trailetas", dsRecepcionMPx1.granel.Count);
+                Id_lote_generado = Convert.ToInt32(Comnd.ExecuteScalar());
+            }
+            
 
             foreach (dsRecepcionMPx.granelRow row in dsRecepcionMPx1.granel.Rows)
             {

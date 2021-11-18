@@ -340,7 +340,7 @@ namespace LOSA.AlmacenesExterno
                 var SumCantSeleccionados = list_lotes_seleccionados.Sum(x => x.Cantidad);
                 var SumUnidadesSeleccionados = list_lotes_seleccionados.Sum(x => x.Unidades);
 
-                if (totalPeso!= SumCantSeleccionados || totalUnidades != SumUnidadesSeleccionados)
+                if (totalPeso!= SumCantSeleccionados )
                 {
                     CajaDialogo.Error("LA CANTIDAD DE LOTES SELECCIONADOS NO COINCIDEN CON LA MATERIA PRIMA");
                     return;
