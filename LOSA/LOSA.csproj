@@ -70,10 +70,11 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>2A5951EBE9F804B3EB7C84F77AD982474D383F8C</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>5A56FE5B36BF1139C0C28330C52B1468E1F78C88</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>LOSA_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -89,10 +90,11 @@
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>LOSA_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -1178,8 +1180,6 @@
     <None Include="Despachos\Reportes\dsReporte.xss">
       <DependentUpon>dsReporte.xsd</DependentUpon>
     </None>
-    <None Include="LOSA_3_TemporaryKey.pfx" />
-    <None Include="LOSA_TemporaryKey.pfx" />
     <None Include="Nir\dsNir.xsc">
       <DependentUpon>dsNir.xsd</DependentUpon>
     </None>
