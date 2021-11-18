@@ -534,6 +534,11 @@ namespace LOSA
         private void btnAlmacenesExternos_Click(object sender, EventArgs e)
         {
             xfrmAlmacenesExternos_Main frm = new xfrmAlmacenesExternos_Main(UsuarioLogeado);
+            if (this.MdiParent != null)
+            {
+                frm.MdiParent = this.MdiParent;
+                //frm.FormBorderStyle = FormBorderStyle.Sizable;
+            }
             frm.Show();
         }
 

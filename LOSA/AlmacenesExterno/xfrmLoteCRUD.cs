@@ -11,12 +11,13 @@ using DevExpress.XtraEditors;
 using LOSA.AlmacenesExterno.Models;
 using ACS.Classes;
 using System.Data.SqlClient;
+using LOSA.Clases;
 
 namespace LOSA.AlmacenesExterno
 {
     public partial class xfrmLoteCRUD : DevExpress.XtraEditors.XtraForm
     {
-            public    Ingreso_Externo_Lote lote = new Ingreso_Externo_Lote();
+        public Ingreso_Externo_Lote lote = new Ingreso_Externo_Lote();
         public xfrmLoteCRUD()
         {
             InitializeComponent();
@@ -69,6 +70,7 @@ namespace LOSA.AlmacenesExterno
                     cnx.Close();
 
                 }
+
 
                 this.DialogResult = DialogResult.OK;
 

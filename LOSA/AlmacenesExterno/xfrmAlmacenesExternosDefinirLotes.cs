@@ -24,7 +24,7 @@ namespace LOSA.AlmacenesExterno
         OrdenCompra_H oc_h = new OrdenCompra_H();
         decimal totalPeso, totalUnidades;
         UserLogin UsuarioLogueado;
-
+        Ingreso_Externo_Lote LoteExternoVar;
         public xfrmAlmacenesExternosDefinirLotes(List<Conf_MP_Ingresada> pLista, OrdenCompra_H pOC_h,UserLogin pUser)
         {
             InitializeComponent();
@@ -86,7 +86,7 @@ namespace LOSA.AlmacenesExterno
 
         }
 
-          List<Ingreso_Externo_Lote> lotes = new List<Ingreso_Externo_Lote>();
+        List<Ingreso_Externo_Lote> lotes = new List<Ingreso_Externo_Lote>();
         private void simpleButton3_Click(object sender, EventArgs e)
         {
             xfrmLoteCRUD frm = new xfrmLoteCRUD();
@@ -98,6 +98,7 @@ namespace LOSA.AlmacenesExterno
 
             if (frm.ShowDialog()== DialogResult.OK)
             {
+                LoteExternoVar = frm.lote;
                 frm.lote.Row_ = lotes.Count + 1;
                 lotes.Add(frm.lote);
                 int counterRows=1;
@@ -154,6 +155,8 @@ namespace LOSA.AlmacenesExterno
                         CajaDialogo.Error("DEBES SELECCIONAR UNA CANTIDAD MENOR O IGUAL A LA DISPONIBLE");
                         row.CantSeleccionada = 0;
                     }
+                    if (row.CantSeleccionada > 0)
+                        row.Seleccionar = true;
                 }
                 gvIngreso.PostEditor();
             }
@@ -164,33 +167,31 @@ namespace LOSA.AlmacenesExterno
         private void btnAdd_Click(object sender, EventArgs e)
         {
             try
-            {
-
-
-                                                         
+            {                                  
+                //var gv = (GridView)gcLote.FocusedView;
+                //var row = (dsAlmacenesExternos.LoteRow)gv.GetDataRow(gv.FocusedRowHandle);
                 var gv = (GridView)gcLote.FocusedView;
-                var row = (dsAlmacenesExternos.LoteRow)gv.GetDataRow(gv.FocusedRowHandle);
-
-
+                var row = (dsAlmacenesExternos.LoteRow)gv.GetFocusedDataRow();
 
                 int contadorRepetidos = 0;
                 int counterGrid = 0;
 
                 foreach (var item in dsAlmacenesExternos.Lote)
+                //foreach (dsAlmacenesExternos.LoteRow item in dsAlmacenesExternos.Lote)
                 {
-
                     counterGrid++;
                     if (item.Seleccionar == true)
                     {
-                            if (item.CantSeleccionada==0)
-                            {
-                                CajaDialogo.Error("DEBE DE INGRESAR UNA CANTIDAD");
-                                return;
-                            }
                         if (item.CantSeleccionada == 0)
                         {
+                            CajaDialogo.Error("DEBE DE INGRESAR UNA CANTIDAD");
                             return;
                         }
+
+                        //if (item.CantSeleccionada == 0)//Dos veces el mismo if????  Danys Oliva
+                        //{
+                        //    return;
+                        //}
 
                         contadorRepetidos = 0;
                         foreach (var item2 in dsAlmacenesExternos.Lote_Seleccionados)
@@ -203,12 +204,14 @@ namespace LOSA.AlmacenesExterno
 
                         if (contadorRepetidos == 0)
                         {
-                            DataRow workRow = dsAlmacenesExternos.Lote_Seleccionados.NewRow();
+                            //DataRow workRow = dsAlmacenesExternos.Lote_Seleccionados.NewRow();
+                            dsAlmacenesExternos.Lote_SeleccionadosRow workRow = dsAlmacenesExternos.Lote_Seleccionados.NewLote_SeleccionadosRow();
                             Ingreso_Externo_Lote_Seleccionado lote = new Ingreso_Externo_Lote_Seleccionado();
 
-                            workRow[0] = item.id;
-                            workRow[1] = item.cantidad;
-                            workRow[2] = item.unidades;
+                            //Porque usan data row en vez de utilizar el tipo ya definido??? Danys Oliva
+                            workRow.id = item.id;
+                            workRow.cantidad = item.cantidad;
+                            workRow.unidades = item.unidades;
                             workRow[3] = 0;
                             workRow[4] = item.lote;
                             workRow[5] = item.CantSeleccionada;
@@ -218,8 +221,6 @@ namespace LOSA.AlmacenesExterno
                             workRow["fecha_produccion"] = item.fecha_produccion;
 
                             dsAlmacenesExternos.Lote_Seleccionados.Rows.Add(workRow);
-
-
                             ///Guardar en lista los lotes
                             lote.ID = item.id;
                             lote.Cantidad = item.cantidad;
@@ -239,8 +240,7 @@ namespace LOSA.AlmacenesExterno
                         }
                     }
                 }
-                ceSeleccionar_Click(null, null);
-
+                ceSeleccionar_Click(null, null);//Que carajos hace? no hay una descripcion en ningun lado. Danys Oliva
             }
             catch (Exception ex)
             {
@@ -409,6 +409,10 @@ namespace LOSA.AlmacenesExterno
 
                     foreach (var item2 in tmpLotesSeleccionados)
                     {
+                        //int IdLoteExterno = item2.
+
+
+
                         SqlCommand cmd3 = new SqlCommand("sp_almacenes_externos_asignar_lotes_seleccionados ", transaction.Connection);
                         cmd3.Transaction = transaction;
                         cmd3.CommandType = CommandType.StoredProcedure;
@@ -420,6 +424,8 @@ namespace LOSA.AlmacenesExterno
                         cmd3.Parameters.Add("@fecha_produccion", SqlDbType.DateTime).Value = item2.FechaProduccion;
 
                         cmd3.ExecuteNonQuery();
+
+
 
                     }
 
@@ -459,13 +465,12 @@ namespace LOSA.AlmacenesExterno
      
         private void ceSeleccionar_Click(object sender, EventArgs e)
         {
-
             try
             {
-
                 var gv = (GridView)gcIngreso.FocusedView;
                 var row = (dsAlmacenesExternos.Conf_MP_IngresadasRow)gv.GetDataRow(gv.FocusedRowHandle);
 
+                //Quita la seleccion del grid de arriba
                 foreach (var item in dsAlmacenesExternos.Conf_MP_Ingresadas)
                 {
                     item.seleccionar = false;
@@ -474,64 +479,51 @@ namespace LOSA.AlmacenesExterno
                 if (row != null)
                 {
                     row.seleccionar = true;
-
                 }
 
+                //var lotesMPSelecionada = list_lotes_seleccionados.Where(p => p.NumLine == row.LineNum).ToList();
+                //var lotesMP = lotes.Where(p => p.NumLine == -1).ToList();
 
-                //var gv = (GridView)gcIngreso.FocusedView;
-                //var row = (dsAlmacenesExternos.Conf_MP_IngresadasRow)gv.GetDataRow(gv.FocusedRowHandle);
-
-                var lotesMPSelecionada = list_lotes_seleccionados.Where(p => p.NumLine == row.LineNum).ToList();
-
-                var lotesMP = lotes.Where(p => p.NumLine == -1).ToList();
-
-                dsAlmacenesExternos.Lote_Seleccionados.Clear();
+                //dsAlmacenesExternos.Lote_Seleccionados.Clear();
                
-                foreach (var item in lotesMPSelecionada)
-                {
-                    DataRow workRow = dsAlmacenesExternos.Lote_Seleccionados.NewRow();
+                //foreach (var item in lotesMPSelecionada)
+                //{
+                //    DataRow workRow = dsAlmacenesExternos.Lote_Seleccionados.NewRow();
 
-                    workRow[0] = item.ID;
-                    workRow[1] = item.Cantidad;
-                    workRow[2] = item.Unidades;
-                    workRow[3] = 0;
-                    workRow[4] = item.Lote;
-                    workRow[5] = item.Cantidad;
-                    workRow[7] = item.NumLine;
-                    workRow[8] = item.Row_;
-                    workRow["fecha_vencimiento"] = item.FechaVencimiento;
-                    workRow["fecha_produccion"] = item.FechaProduccion;
+                //    workRow[0] = item.ID;
+                //    workRow[1] = item.Cantidad;
+                //    workRow[2] = item.Unidades;
+                //    workRow[3] = 0;
+                //    workRow[4] = item.Lote;
+                //    workRow[5] = item.Cantidad;
+                //    workRow[7] = item.NumLine;
+                //    workRow[8] = item.Row_;
+                //    workRow["fecha_vencimiento"] = item.FechaVencimiento;
+                //    workRow["fecha_produccion"] = item.FechaProduccion;
 
-                    dsAlmacenesExternos.Lote_Seleccionados.Rows.Add(workRow);
-                }
+                //    dsAlmacenesExternos.Lote_Seleccionados.Rows.Add(workRow);
+                //}
 
+                //dsAlmacenesExternos.Lote.Clear();
+                ////int counterRows = 1;
 
+                //foreach (var item in lotesMP)
+                //{
+                //    DataRow workRow = dsAlmacenesExternos.Lote.NewRow();
 
-                dsAlmacenesExternos.Lote.Clear();
-                //int counterRows = 1;
+                //    workRow[0] = item.ID;
+                //    workRow[1] = item.Cantidad;
+                //    workRow[2] = item.Unidades;
+                //    workRow[3] = 0;
+                //    workRow[4] = item.Lote;
+                //    //workRow[7] = row.LineNum;
+                //    workRow[8] = item.Row_;
+                //    workRow["fecha_vencimiento"] = item.FechaVencimiento;
+                //    workRow["fecha_produccion"] = item.FechaProduccion;
+                //    //counterRows++;
 
-                foreach (var item in lotesMP)
-                {
-                    DataRow workRow = dsAlmacenesExternos.Lote.NewRow();
-
-                    workRow[0] = item.ID;
-                    workRow[1] = item.Cantidad;
-                    workRow[2] = item.Unidades;
-                    workRow[3] = 0;
-                    workRow[4] = item.Lote;
-                    //workRow[7] = row.LineNum;
-                    workRow[8] = item.Row_;
-                    //counterRows++;
-
-                    dsAlmacenesExternos.Lote.Rows.Add(workRow);
-                }
-
-
-
-
-
-
-
+                //    dsAlmacenesExternos.Lote.Rows.Add(workRow);
+                //}
 
             }
             catch (Exception exx)

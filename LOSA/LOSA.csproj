@@ -550,6 +550,7 @@
     <Compile Include="Clases\DataOperations.cs" />
     <Compile Include="Clases\Globals.cs" />
     <Compile Include="Clases\ItemMP_Lote.cs" />
+    <Compile Include="Clases\LoteExterno.cs" />
     <Compile Include="Clases\MateriaPrima.cs" />
     <Compile Include="Clases\MicroIngrediente.cs" />
     <Compile Include="Clases\opcionAbrirVentanaTarima.cs" />
