@@ -161,6 +161,8 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             var gvl = (GridView)gcLote.FocusedView;
             var row_lote = (dsSalidasAlmacenesExternos.LoteRow)gvl.GetDataRow(gvl.FocusedRowHandle);
 
+
+
             if (row_lote.cantidad_disponible==0)
             {
                 CajaDialogo.Error("LOTE NO DISPONIBLE");

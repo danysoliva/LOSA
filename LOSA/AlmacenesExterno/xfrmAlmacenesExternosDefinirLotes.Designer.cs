@@ -534,9 +534,9 @@
             // 
             // gvLote
             // 
-            this.gvLote.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.gvLote.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvLote.Appearance.FocusedRow.Options.UseFont = true;
-            this.gvLote.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvLote.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvLote.Appearance.HeaderPanel.Options.UseFont = true;
             this.gvLote.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.gvLote.Appearance.Row.Options.UseFont = true;

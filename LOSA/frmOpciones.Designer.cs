@@ -91,6 +91,7 @@
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.btnAut_Tm = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -634,6 +635,7 @@
             // 
             // TabCalidad
             // 
+            this.TabCalidad.Controls.Add(this.btnAut_Tm);
             this.TabCalidad.Controls.Add(this.btnNitLecturas);
             this.TabCalidad.Controls.Add(this.ManteIngresos);
             this.TabCalidad.Controls.Add(this.simpleButton16);
@@ -999,6 +1001,20 @@
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
             // 
+            // btnAut_Tm
+            // 
+            this.btnAut_Tm.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAut_Tm.Appearance.Options.UseFont = true;
+            this.btnAut_Tm.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnAut_Tm.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton17.ImageOptions.Image")));
+            this.btnAut_Tm.Location = new System.Drawing.Point(435, 100);
+            this.btnAut_Tm.Name = "btnAut_Tm";
+            this.btnAut_Tm.Size = new System.Drawing.Size(199, 71);
+            this.btnAut_Tm.TabIndex = 21;
+            this.btnAut_Tm.Text = "Autorizacion de \r\nTarimas";
+            this.btnAut_Tm.Visible = false;
+            this.btnAut_Tm.Click += new System.EventHandler(this.btnAut_Tm_Click);
+            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1086,5 +1102,6 @@
         private DevExpress.XtraEditors.SimpleButton btnMPReproceso;
         private DevExpress.XtraEditors.SimpleButton btnNitLecturas;
         private DevExpress.XtraEditors.SimpleButton btnLiquidos;
+        private DevExpress.XtraEditors.SimpleButton btnAut_Tm;
     }
 }

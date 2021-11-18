@@ -135,7 +135,7 @@ namespace LOSA.MicroIngredientes
                         if (ExisteConfPesajeManual==false)
                         {
 
-                        xfrmAsistentePesaje frm = new xfrmAsistentePesaje(row.id);
+                        xfrmAsistentePesaje frm = new xfrmAsistentePesaje(row.___Orden, row.id);
 
                         frm.Show();
                         }

@@ -32,7 +32,7 @@ namespace LOSA.AlmacenesExterno
 
                 using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringLOSA))
                 {
-                    SqlDataAdapter da = new SqlDataAdapter("sp_get_OC_H", cnx);
+                    SqlDataAdapter da = new SqlDataAdapter("sp_get_OC_H_v2", cnx);
                     dsAlmacenesExternos.OC.Clear();
 
                     da.Fill(dsAlmacenesExternos.OC);

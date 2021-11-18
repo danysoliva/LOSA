@@ -19,13 +19,13 @@ namespace LOSA.MicroIngredientes
         int ordenID = 0;
         PesajeIndividualNew pesaje = new PesajeIndividualNew();
         List<PesajeIndividualNew> pesaje_list = new List<PesajeIndividualNew>();
+        int PesajeID;
 
-
-        public xfrmAsistentePesaje(int id_orden)
+        public xfrmAsistentePesaje(int id_orden, int id)
         {
             InitializeComponent();
             ordenID = id_orden;
-
+            PesajeID = id;
             LoadData();
         }
 
@@ -43,6 +43,7 @@ namespace LOSA.MicroIngredientes
                     SqlCommand cmd = new SqlCommand("dbo.get_Micro_Order_MP_sin_bines", cnx);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id_order", ordenID);
+                    cmd.Parameters.AddWithValue("@id_pesaje", PesajeID);
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
 
                     da.Fill(dsMicros.New_Pesaje);
@@ -83,7 +84,7 @@ namespace LOSA.MicroIngredientes
                         SqlCommand cmd = new SqlCommand("dbo.sp_insert_MP_Pesaje_Individual", cnx);
                         cmd.CommandType = CommandType.StoredProcedure;
 
-                        cmd.Parameters.Add("@id_orden", SqlDbType.Int).Value = item.id_orden;
+                        cmd.Parameters.Add("@id_orden", SqlDbType.Int).Value = item.id_pesaje;
                         cmd.Parameters.Add("@id_mp", SqlDbType.Int).Value = item.id_mp;
                         cmd.Parameters.Add("@peso_por_batch", SqlDbType.Decimal).Value = item.peso_por_batch;
                         cmd.Parameters.Add("@peso_total", SqlDbType.Decimal).Value = item.Peso_Total;

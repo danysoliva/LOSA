@@ -16,7 +16,7 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
-              <xs:element name="_x0023__x0020_Orden" msprop:Generator_ColumnVarNameInTable="_column__Orden" msprop:Generator_ColumnPropNameInRow="___Orden" msprop:Generator_ColumnPropNameInTable="___OrdenColumn" msprop:Generator_UserColumnName="# Orden" type="xs:string" minOccurs="0" />
+              <xs:element name="_x0023__x0020_Orden" msprop:Generator_ColumnVarNameInTable="_column__Orden" msprop:Generator_ColumnPropNameInRow="___Orden" msprop:Generator_ColumnPropNameInTable="___OrdenColumn" msprop:Generator_UserColumnName="# Orden" type="xs:int" minOccurs="0" />
               <xs:element name="Codigo_x0020_Orden" msprop:Generator_ColumnVarNameInTable="columnCodigo_Orden" msprop:Generator_ColumnPropNameInRow="Codigo_Orden" msprop:Generator_ColumnPropNameInTable="Codigo_OrdenColumn" msprop:Generator_UserColumnName="Codigo Orden" type="xs:string" minOccurs="0" />
               <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" minOccurs="0" />
               <xs:element name="Lote_x0020_PT" msprop:Generator_ColumnVarNameInTable="columnLote_PT" msprop:Generator_ColumnPropNameInRow="Lote_PT" msprop:Generator_ColumnPropNameInTable="Lote_PTColumn" msprop:Generator_UserColumnName="Lote PT" type="xs:string" minOccurs="0" />
@@ -130,6 +130,7 @@
               <xs:element name="batchPlan" msprop:nullValue="0" msprop:Generator_ColumnPropNameInRow="batchPlan" msprop:Generator_ColumnVarNameInTable="columnbatchPlan" msprop:Generator_ColumnPropNameInTable="batchPlanColumn" msprop:Generator_UserColumnName="batchPlan" type="xs:decimal" minOccurs="0" />
               <xs:element name="id_mp" msprop:Generator_ColumnVarNameInTable="columnid_mp" msprop:Generator_ColumnPropNameInRow="id_mp" msprop:Generator_ColumnPropNameInTable="id_mpColumn" msprop:Generator_UserColumnName="id_mp" type="xs:int" minOccurs="0" />
               <xs:element name="batch_completados" msprop:Generator_ColumnVarNameInTable="columnbatch_completados" msprop:Generator_ColumnPropNameInRow="batch_completados" msprop:Generator_ColumnPropNameInTable="batch_completadosColumn" msprop:Generator_UserColumnName="batch_completados" type="xs:int" minOccurs="0" />
+              <xs:element name="id_pesaje" msprop:Generator_ColumnVarNameInTable="columnid_pesaje" msprop:Generator_ColumnPropNameInRow="id_pesaje" msprop:Generator_ColumnPropNameInTable="id_pesajeColumn" msprop:Generator_UserColumnName="id_pesaje" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

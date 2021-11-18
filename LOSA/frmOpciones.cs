@@ -632,5 +632,10 @@ namespace LOSA
 
             frm.Show();
         }
+
+        private void btnAut_Tm_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
