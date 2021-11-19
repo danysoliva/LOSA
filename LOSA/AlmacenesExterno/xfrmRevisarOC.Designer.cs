@@ -103,7 +103,7 @@
             // 
             // btnOC
             // 
-            this.btnOC.Location = new System.Drawing.Point(148, 64);
+            this.btnOC.Location = new System.Drawing.Point(72, 64);
             this.btnOC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOC.Name = "btnOC";
             this.btnOC.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
