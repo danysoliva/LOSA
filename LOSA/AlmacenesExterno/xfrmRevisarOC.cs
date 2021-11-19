@@ -239,16 +239,20 @@ namespace LOSA.AlmacenesExterno
                     return;
                 }
 
-                if (row.seleccionar == true)
+                if (row.CantidadIngresar <= row.diferencia && row.diferencia > 0)
                 {
-                    if (row.diferencia <= 0)
-                    {
-                        CajaDialogo.Error("NO PUEDE SELECCIONAR ESTE ITEM PORQUE YA HA SIDO INGRESADO TOTALMENTE");
-                        row.seleccionar = false;
-                        return;
-                    }
-
+                    row.seleccionar = true;
                 }
+                //if (row.seleccionar == true)
+                //{
+                //    if (row.diferencia <= 0)
+                //    {
+                //        CajaDialogo.Error("NO PUEDE SELECCIONAR ESTE ITEM PORQUE YA HA SIDO INGRESADO TOTALMENTE");
+                //        row.seleccionar = false;
+                //        return;
+                //    }
+
+                //}
             }
         }
 

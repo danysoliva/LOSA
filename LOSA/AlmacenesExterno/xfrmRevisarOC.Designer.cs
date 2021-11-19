@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmRevisarOC));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -38,7 +39,7 @@
             this.btnOC = new DevExpress.XtraEditors.ButtonEdit();
             this.label1 = new System.Windows.Forms.Label();
             this.gcIngreso = new DevExpress.XtraGrid.GridControl();
-            this.revisionOCBindingSource = new System.Windows.Forms.BindingSource();
+            this.revisionOCBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsAlmacenesExternos = new LOSA.AlmacenesExterno.dsAlmacenesExternos();
             this.gvIngreso = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colItemCode = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -55,10 +56,10 @@
             this.colSelect = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBodega = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grd_bodega = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.warehouseBindingSource = new System.Windows.Forms.BindingSource();
+            this.warehouseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.colid_presentacion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grd_presentacion = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.presentacionBindingSource = new System.Windows.Forms.BindingSource();
+            this.presentacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtCantIngresar = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.ceSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.label2 = new System.Windows.Forms.Label();
@@ -94,7 +95,7 @@
             this.btn.Appearance.Options.UseFont = true;
             this.btn.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btn.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btn.Location = new System.Drawing.Point(767, 56);
+            this.btn.Location = new System.Drawing.Point(669, 56);
             this.btn.Name = "btn";
             this.btn.Size = new System.Drawing.Size(154, 47);
             this.btn.TabIndex = 31;
@@ -134,7 +135,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcIngreso.DataSource = this.revisionOCBindingSource;
             this.gcIngreso.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gcIngreso.Location = new System.Drawing.Point(1, 228);
+            this.gcIngreso.Location = new System.Drawing.Point(1, 212);
             this.gcIngreso.MainView = this.gvIngreso;
             this.gcIngreso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gcIngreso.Name = "gcIngreso";
@@ -143,7 +144,7 @@
             this.ceSeleccionar,
             this.grd_bodega,
             this.grd_presentacion});
-            this.gcIngreso.Size = new System.Drawing.Size(1116, 336);
+            this.gcIngreso.Size = new System.Drawing.Size(1018, 352);
             this.gcIngreso.TabIndex = 34;
             this.gcIngreso.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvIngreso});
@@ -403,7 +404,7 @@
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(1, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1116, 20);
+            this.label2.Size = new System.Drawing.Size(1018, 20);
             this.label2.TabIndex = 35;
             this.label2.Text = "Revisión de Orden de Compra";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -457,7 +458,7 @@
             // txtComment
             // 
             this.txtComment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtComment.Location = new System.Drawing.Point(748, 130);
+            this.txtComment.Location = new System.Drawing.Point(650, 130);
             this.txtComment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtComment.Name = "txtComment";
             this.txtComment.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F);
@@ -471,7 +472,7 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(643, 131);
+            this.label5.Location = new System.Drawing.Point(545, 131);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(157, 17);
             this.label5.TabIndex = 41;
@@ -487,7 +488,7 @@
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(939, 56);
+            this.btnAtras.Location = new System.Drawing.Point(841, 56);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(153, 47);
             this.btnAtras.TabIndex = 42;
@@ -498,7 +499,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1115, 564);
+            this.ClientSize = new System.Drawing.Size(1017, 564);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.txtComment);
             this.Controls.Add(this.label5);

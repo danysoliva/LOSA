@@ -72,7 +72,8 @@
   <PropertyGroup>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>LOSA_2_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -88,13 +89,14 @@
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>LOSA_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>1F18626410A9C54DA9C4E70C7076DB684507A65A</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>5A56FE5B36BF1139C0C28330C52B1468E1F78C88</ManifestCertificateThumbprint>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -548,6 +550,7 @@
     <Compile Include="Clases\DataOperations.cs" />
     <Compile Include="Clases\Globals.cs" />
     <Compile Include="Clases\ItemMP_Lote.cs" />
+    <Compile Include="Clases\LoteExterno.cs" />
     <Compile Include="Clases\MateriaPrima.cs" />
     <Compile Include="Clases\MicroIngrediente.cs" />
     <Compile Include="Clases\opcionAbrirVentanaTarima.cs" />
@@ -1286,10 +1289,6 @@
     <None Include="Liquidos\dsLiquidos_.xss">
       <DependentUpon>dsLiquidos_.xsd</DependentUpon>
     </None>
-    <None Include="LOSA_1_TemporaryKey.pfx" />
-    <None Include="LOSA_2_TemporaryKey.pfx" />
-    <None Include="LOSA_3_TemporaryKey.pfx" />
-    <None Include="LOSA_TemporaryKey.pfx" />
     <None Include="Nir\dsNir.xsc">
       <DependentUpon>dsNir.xsd</DependentUpon>
     </None>
@@ -3182,6 +3181,7 @@
     <None Include="Resources\backspace.png" />
     <Content Include="Resources\box.png" />
     <None Include="Resources\box32px.png" />
+    <None Include="Resources\boxPT32px.png" />
     <Content Include="Resources\cancel.png" />
     <Content Include="Resources\cargo.png" />
     <None Include="Resources\CCT-2000C-SQ-800x800.jpg" />
