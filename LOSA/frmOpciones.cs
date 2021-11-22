@@ -643,5 +643,10 @@ namespace LOSA
         {
 
         }
+
+        private void tabEntregaMP_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -192,7 +192,8 @@ namespace LOSA.Calidad
 
 
             WebClient ftpClient = new WebClient();
-            ftpClient.Credentials = new NetworkCredential(dp.User_FTP_Server, dp.Password_UserFTPServer);
+            //ftpClient.Credentials = new NetworkCredential(dp.User_FTP_Server, dp.Password_UserFTPServer);
+            ftpClient.Credentials = new NetworkCredential(UsuarioLogeado.ADuser1, UsuarioLogeado.Pass);
 
             byte[] imageByte = ftpClient.DownloadData(ftpFilePath);
             return imageByte;
