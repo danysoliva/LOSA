@@ -61,7 +61,7 @@ namespace LOSA.AlmacenesExterno
                     cnx.Open();
 
                     dsAlmacenesExternos.Warehouse.Clear();
-                    SqlDataAdapter da = new SqlDataAdapter("sp_get_almacenes_externos_bodegas", cnx);
+                    SqlDataAdapter da = new SqlDataAdapter("sp_get_almacenes_externos_bodegas_v2", cnx);
                     da.Fill(dsAlmacenesExternos.Warehouse);
 
 

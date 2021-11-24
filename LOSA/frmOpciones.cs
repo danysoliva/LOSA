@@ -22,6 +22,7 @@ using LOSA.Trazabilidad;
 using LOSA.Despachos;
 using LOSA.Nir;
 using LOSA.Liquidos;
+using LOSA.AlmacenesExterno.Salida_Almacen;
 
 namespace LOSA
 {
@@ -642,6 +643,17 @@ namespace LOSA
         private void btnAut_Tm_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void tabEntregaMP_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void simpleButton17_Click_2(object sender, EventArgs e)
+        {
+            frmTransPendientes frm = new frmTransPendientes(UsuarioLogeado);
+            frm.Show();
         }
     }
 }

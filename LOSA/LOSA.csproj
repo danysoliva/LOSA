@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>214</ApplicationRevision>
+    <ApplicationRevision>216</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -72,8 +72,7 @@
   <PropertyGroup>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>
-    </ManifestKeyFile>
+    <ManifestKeyFile>LOSA_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -89,14 +88,13 @@
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>
-    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>LOSA_1_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>5A56FE5B36BF1139C0C28330C52B1468E1F78C88</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>6DD8536E8A1C19A8B880E82B56C0013D30A41792</ManifestCertificateThumbprint>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -213,6 +211,12 @@
     </Compile>
     <Compile Include="AlmacenesExterno\Salida Almacen\frmTipoIngreso_v2.Designer.cs">
       <DependentUpon>frmTipoIngreso_v2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AlmacenesExterno\Salida Almacen\frmTransPendientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlmacenesExterno\Salida Almacen\frmTransPendientes.Designer.cs">
+      <DependentUpon>frmTransPendientes.cs</DependentUpon>
     </Compile>
     <Compile Include="AlmacenesExterno\Salida Almacen\Models\Ingresos_Externos_D.cs" />
     <Compile Include="AlmacenesExterno\Salida Almacen\Models\Salida_Externa_Lote.cs" />
@@ -1289,6 +1293,7 @@
     <None Include="Liquidos\dsLiquidos_.xss">
       <DependentUpon>dsLiquidos_.xsd</DependentUpon>
     </None>
+    <None Include="LOSA_1_TemporaryKey.pfx" />
     <None Include="Nir\dsNir.xsc">
       <DependentUpon>dsNir.xsd</DependentUpon>
     </None>
@@ -2117,6 +2122,9 @@
     <EmbeddedResource Include="AlmacenesExterno\Salida Almacen\frmTipoIngreso_v2.resx">
       <DependentUpon>frmTipoIngreso_v2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AlmacenesExterno\Salida Almacen\frmTransPendientes.resx">
+      <DependentUpon>frmTransPendientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AlmacenesExterno\Salida Almacen\xfrmConfLotesSalidaAlmacen.resx">
       <DependentUpon>xfrmConfLotesSalidaAlmacen.cs</DependentUpon>
     </EmbeddedResource>
@@ -2582,6 +2590,7 @@
     <EmbeddedResource Include="Produccion\rptReporteTarimaPT.resx">
       <DependentUpon>rptReporteTarimaPT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -3227,7 +3236,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 y x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
