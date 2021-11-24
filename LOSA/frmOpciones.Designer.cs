@@ -323,6 +323,7 @@
             this.tabMP_Granel.Controls.Add(this.simpleButton2);
             this.tabMP_Granel.Controls.Add(this.btnLiquidos);
             this.tabMP_Granel.Controls.Add(this.simpleButton14);
+            this.tabMP_Granel.Controls.Add(this.btnAlmacenesExternos);
             this.tabMP_Granel.Name = "tabMP_Granel";
             this.tabMP_Granel.Size = new System.Drawing.Size(766, 409);
             this.tabMP_Granel.Text = "MP Granel";
@@ -569,9 +570,7 @@
             this.tabMasterData.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.tabMasterData.Appearance.Header.Options.UseFont = true;
             this.tabMasterData.Controls.Add(this.btn_andenes);
-            this.tabMasterData.Controls.Add(this.simpleButton13);
             this.tabMasterData.Controls.Add(this.simpleButton3);
-            this.tabMasterData.Controls.Add(this.btnAlmacenesExternos);
             this.tabMasterData.Controls.Add(this.cmdUbicaciones);
             this.tabMasterData.Controls.Add(this.btnajuste);
             this.tabMasterData.Controls.Add(this.btnTransferencia);
@@ -598,7 +597,7 @@
             this.simpleButton13.Appearance.Options.UseFont = true;
             this.simpleButton13.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton13.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton13.ImageOptions.Image")));
-            this.simpleButton13.Location = new System.Drawing.Point(4, 296);
+            this.simpleButton13.Location = new System.Drawing.Point(3, 110);
             this.simpleButton13.Name = "simpleButton13";
             this.simpleButton13.Size = new System.Drawing.Size(199, 42);
             this.simpleButton13.TabIndex = 38;
@@ -624,7 +623,7 @@
             this.btnAlmacenesExternos.Appearance.Options.UseFont = true;
             this.btnAlmacenesExternos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAlmacenesExternos.ImageOptions.Image = global::LOSA.Properties.Resources.boxPT32px;
-            this.btnAlmacenesExternos.Location = new System.Drawing.Point(4, 250);
+            this.btnAlmacenesExternos.Location = new System.Drawing.Point(3, 156);
             this.btnAlmacenesExternos.Name = "btnAlmacenesExternos";
             this.btnAlmacenesExternos.Size = new System.Drawing.Size(199, 42);
             this.btnAlmacenesExternos.TabIndex = 35;
@@ -678,6 +677,7 @@
             this.tabReportes.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.tabReportes.Appearance.Header.Options.UseFont = true;
             this.tabReportes.Controls.Add(this.btnreportes);
+            this.tabReportes.Controls.Add(this.simpleButton13);
             this.tabReportes.Controls.Add(this.simpleButton8);
             this.tabReportes.Name = "tabReportes";
             this.tabReportes.Size = new System.Drawing.Size(766, 409);
