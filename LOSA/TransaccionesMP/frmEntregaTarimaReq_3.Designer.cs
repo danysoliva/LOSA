@@ -30,12 +30,12 @@ namespace LOSA.TransaccionesMP
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEntregaTarimaReq_3));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.lblRequisicionEncontrada = new DevExpress.XtraEditors.LabelControl();
             this.txtRequisicion = new DevExpress.XtraEditors.ButtonEdit();
@@ -52,7 +52,6 @@ namespace LOSA.TransaccionesMP
             this.colkg = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltm = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collote = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gcTarima = new DevExpress.XtraGrid.GridControl();
             this.gvTarima = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.txtTarima = new DevExpress.XtraEditors.ButtonEdit();
@@ -60,6 +59,11 @@ namespace LOSA.TransaccionesMP
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.timerLimpiarMensaje = new System.Windows.Forms.Timer(this.components);
             this.cmdLiquidos = new DevExpress.XtraEditors.SimpleButton();
+            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
+            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.txtRequisicion.Properties)).BeginInit();
             this.panelNotificacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
@@ -68,6 +72,12 @@ namespace LOSA.TransaccionesMP
             ((System.ComponentModel.ISupportInitialize)(this.gcTarima)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTarima)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTarima.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
+            this.xtraTabControl1.SuspendLayout();
+            this.xtraTabPage1.SuspendLayout();
+            this.xtraTabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -109,9 +119,9 @@ namespace LOSA.TransaccionesMP
             this.txtRequisicion.Name = "txtRequisicion";
             this.txtRequisicion.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRequisicion.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.txtRequisicion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.txtRequisicion.Properties.MaxLength = 20;
             this.txtRequisicion.Properties.NullText = "Escanee o selecciona una tarima";
             this.txtRequisicion.Size = new System.Drawing.Size(257, 44);
@@ -155,15 +165,13 @@ namespace LOSA.TransaccionesMP
             // 
             // grd_data
             // 
-            this.grd_data.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_data.DataMember = "viewTarimas";
             this.grd_data.DataSource = this.dsTransaccionesMP;
-            this.grd_data.Location = new System.Drawing.Point(0, 447);
+            this.grd_data.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grd_data.Location = new System.Drawing.Point(0, 0);
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
-            this.grd_data.Size = new System.Drawing.Size(638, 236);
+            this.grd_data.Size = new System.Drawing.Size(620, 245);
             this.grd_data.TabIndex = 105;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
@@ -269,19 +277,6 @@ namespace LOSA.TransaccionesMP
             this.collote.OptionsColumn.AllowEdit = false;
             this.collote.Visible = true;
             this.collote.VisibleIndex = 1;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(3, 404);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(258, 37);
-            this.labelControl1.TabIndex = 106;
-            this.labelControl1.Text = "MP Entregada";
             // 
             // gcTarima
             // 
@@ -509,7 +504,7 @@ namespace LOSA.TransaccionesMP
             this.cmdLiquidos.Appearance.Options.UseBackColor = true;
             this.cmdLiquidos.Appearance.Options.UseFont = true;
             this.cmdLiquidos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdLiquidos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.cmdLiquidos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdLiquidos.ImageOptions.Image")));
             this.cmdLiquidos.Location = new System.Drawing.Point(272, 8);
             this.cmdLiquidos.Name = "cmdLiquidos";
             this.cmdLiquidos.Size = new System.Drawing.Size(175, 48);
@@ -517,18 +512,63 @@ namespace LOSA.TransaccionesMP
             this.cmdLiquidos.Text = "Liquidos";
             this.cmdLiquidos.Visible = false;
             // 
+            // xtraTabControl1
+            // 
+            this.xtraTabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.xtraTabControl1.AppearancePage.Header.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.xtraTabControl1.AppearancePage.Header.Options.UseFont = true;
+            this.xtraTabControl1.Location = new System.Drawing.Point(8, 404);
+            this.xtraTabControl1.Name = "xtraTabControl1";
+            this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
+            this.xtraTabControl1.Size = new System.Drawing.Size(626, 285);
+            this.xtraTabControl1.TabIndex = 112;
+            this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.xtraTabPage1,
+            this.xtraTabPage2});
+            // 
+            // xtraTabPage1
+            // 
+            this.xtraTabPage1.Controls.Add(this.grd_data);
+            this.xtraTabPage1.Name = "xtraTabPage1";
+            this.xtraTabPage1.Size = new System.Drawing.Size(620, 245);
+            this.xtraTabPage1.Text = "MP Entregada";
+            // 
+            // xtraTabPage2
+            // 
+            this.xtraTabPage2.Controls.Add(this.gridControl1);
+            this.xtraTabPage2.Name = "xtraTabPage2";
+            this.xtraTabPage2.Size = new System.Drawing.Size(620, 236);
+            this.xtraTabPage2.Text = "Bines Disponibles";
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(0, 0);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(620, 236);
+            this.gridControl1.TabIndex = 0;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            // 
             // frmEntregaTarimaReq_3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(638, 757);
+            this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.cmdLiquidos);
             this.Controls.Add(this.gcTarima);
             this.Controls.Add(this.txtTarima);
             this.Controls.Add(this.cmdSelectTarima);
             this.Controls.Add(this.labelControl2);
-            this.Controls.Add(this.labelControl1);
-            this.Controls.Add(this.grd_data);
             this.Controls.Add(this.panelNotificacion);
             this.Controls.Add(this.lblRequisicionEncontrada);
             this.Controls.Add(this.txtRequisicion);
@@ -548,6 +588,12 @@ namespace LOSA.TransaccionesMP
             ((System.ComponentModel.ISupportInitialize)(this.gcTarima)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTarima)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTarima.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
+            this.xtraTabControl1.ResumeLayout(false);
+            this.xtraTabPage1.ResumeLayout(false);
+            this.xtraTabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -563,7 +609,6 @@ namespace LOSA.TransaccionesMP
         private System.Windows.Forms.Label lblMensaje;
         private DevExpress.XtraGrid.GridControl grd_data;
         private DevExpress.XtraGrid.Views.Grid.GridView grdv_data;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraGrid.GridControl gcTarima;
         private DevExpress.XtraGrid.Views.Grid.GridView gvTarima;
         private DevExpress.XtraEditors.ButtonEdit txtTarima;
@@ -579,5 +624,10 @@ namespace LOSA.TransaccionesMP
         private DevExpress.XtraGrid.Columns.GridColumn coltm;
         private DevExpress.XtraGrid.Columns.GridColumn collote;
         private DevExpress.XtraEditors.SimpleButton cmdLiquidos;
+        private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }

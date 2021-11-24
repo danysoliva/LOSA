@@ -75,7 +75,7 @@
             // 
             // TopMargin
             // 
-            this.TopMargin.HeightF = 228F;
+            this.TopMargin.HeightF = 29.04167F;
             this.TopMargin.Name = "TopMargin";
             // 
             // BottomMargin
@@ -93,7 +93,7 @@
             // 
             this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrPanel1});
-            this.ReportHeader.HeightF = 975.1152F;
+            this.ReportHeader.HeightF = 842.0319F;
             this.ReportHeader.Name = "ReportHeader";
             // 
             // xrPanel1
@@ -139,9 +139,9 @@
             this.xrLine3,
             this.xrLine2,
             this.xrLine1});
-            this.xrPanel1.LocationFloat = new DevExpress.Utils.PointFloat(9.999998F, 222.7494F);
+            this.xrPanel1.LocationFloat = new DevExpress.Utils.PointFloat(9.999998F, 9.999998F);
             this.xrPanel1.Name = "xrPanel1";
-            this.xrPanel1.SizeF = new System.Drawing.SizeF(686.0416F, 742.3658F);
+            this.xrPanel1.SizeF = new System.Drawing.SizeF(686.0416F, 809.5319F);
             this.xrPanel1.StylePriority.UseBorders = false;
             // 
             // txtproveedor
@@ -251,7 +251,7 @@
             // 
             this.txtlote.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtlote.ForeColor = System.Drawing.Color.Black;
-            this.txtlote.LocationFloat = new DevExpress.Utils.PointFloat(9.998886F, 673.1702F);
+            this.txtlote.LocationFloat = new DevExpress.Utils.PointFloat(10.61382F, 730.3363F);
             this.txtlote.Multiline = true;
             this.txtlote.Name = "txtlote";
             this.txtlote.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -264,7 +264,7 @@
             // xrLabel21
             // 
             this.xrLabel21.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold);
-            this.xrLabel21.LocationFloat = new DevExpress.Utils.PointFloat(10.61375F, 589.8005F);
+            this.xrLabel21.LocationFloat = new DevExpress.Utils.PointFloat(9.998861F, 648.662F);
             this.xrLabel21.Multiline = true;
             this.xrLabel21.Name = "xrLabel21";
             this.xrLabel21.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -429,11 +429,11 @@
             // txtCodigos
             // 
             this.txtCodigos.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold);
-            this.txtCodigos.LocationFloat = new DevExpress.Utils.PointFloat(430.8604F, 589.8006F);
+            this.txtCodigos.LocationFloat = new DevExpress.Utils.PointFloat(428.7771F, 648.6622F);
             this.txtCodigos.Multiline = true;
             this.txtCodigos.Name = "txtCodigos";
             this.txtCodigos.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.txtCodigos.SizeF = new System.Drawing.SizeF(240.8449F, 69.1955F);
+            this.txtCodigos.SizeF = new System.Drawing.SizeF(242.9282F, 69.1955F);
             this.txtCodigos.StylePriority.UseFont = false;
             this.txtCodigos.StylePriority.UseTextAlignment = false;
             this.txtCodigos.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
@@ -441,7 +441,7 @@
             // Codigo
             // 
             this.Codigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Codigo.LocationFloat = new DevExpress.Utils.PointFloat(228.3722F, 589.8006F);
+            this.Codigo.LocationFloat = new DevExpress.Utils.PointFloat(228.3722F, 648.6622F);
             this.Codigo.Multiline = true;
             this.Codigo.Name = "Codigo";
             this.Codigo.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -621,7 +621,7 @@
             this.Detail,
             this.ReportHeader});
             this.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.Margins = new System.Drawing.Printing.Margins(23, 122, 228, 55);
+            this.Margins = new System.Drawing.Printing.Margins(23, 122, 29, 55);
             this.Version = "18.2";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 

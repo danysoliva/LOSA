@@ -398,7 +398,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
                     cmd.Parameters.AddWithValue("@fechap", dtProduccionGranel.EditValue);
                     cmd.Parameters.AddWithValue("@fechav", dtVencimientoGranel.EditValue);
 
-                    int id_lote = Convert.ToInt32(cmd.ExecuteNonQuery());
+                    int id_lote = Convert.ToInt32(cmd.ExecuteScalar());
                     cn.Close();
 
                     bool PuedeContinuar = false;
@@ -461,11 +461,13 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
                         return;
 
                     decimal sumar_Kg = 0;
+                    int cantidad_selecionada = 0;
                     foreach (dsRecepcionMPx.granelRow row in dsRecepcionMPx1.granel.Rows)
                     {
                         if (row.seleccionar)
                         {
                             sumar_Kg = sumar_Kg + row.PesoProd;
+                            cantidad_selecionada = cantidad_selecionada + 1;
                         }
                     }
 
@@ -479,36 +481,39 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
                     Comnd.Parameters.AddWithValue("@id_ingreso", ingreso);
                     Comnd.Parameters.AddWithValue("@item_code", txtCodigoMP.Text);
                     Comnd.Parameters.AddWithValue("@id_user", this.UsuarioLogeado.Id);
-                    Comnd.Parameters.AddWithValue("@count_trailetas", dsRecepcionMPx1.granel.Count);
+                    Comnd.Parameters.AddWithValue("@count_trailetas", cantidad_selecionada);
                     Comnd.Parameters.AddWithValue("@id_traslado", id);
-                    con.Close();
                     int Id_lote_generado = Convert.ToInt32(Comnd.ExecuteScalar());
+                    con.Close();
                     foreach (dsRecepcionMPx.granelRow row in dsRecepcionMPx1.granel.Rows)
                     {
                         //
                         try
                         {
-                            DataOperations dp = new DataOperations();
-                            cn = new SqlConnection(dp.ConnectionStringLOSA);
-                            cn.Open();
+                            if (row.seleccionar)
+                            {
+                                DataOperations dp = new DataOperations();
+                                cn = new SqlConnection(dp.ConnectionStringLOSA);
+                                cn.Open();
 
-                            string SQL = @"sp_set_insert_tarimas_graneles_v3";
-                            cmd = new SqlCommand(SQL, cn);
-                            cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("@id_boleta", row.NBoleta);
-                            cmd.Parameters.AddWithValue("@entrada", row.PesoProd);
-                            cmd.Parameters.AddWithValue("@item_code", txtCodigoMP.Text);
-                            cmd.Parameters.AddWithValue("@lote", txtLote.Text);
-                            cmd.Parameters.AddWithValue("@id_lote", id_lote);
-                            cmd.Parameters.AddWithValue("@id", row.id);
-                            cmd.Parameters.AddWithValue("@id_ubicacion", row.id_ubicacion);
-                            cmd.Parameters.AddWithValue("@id_ingreso", ingreso);
-                            cmd.Parameters.AddWithValue("@id_user", this.UsuarioLogeado.Id);
-                            cmd.Parameters.AddWithValue("@id_lote_alosy", Id_lote_generado);
+                                string SQL = @"sp_set_insert_tarimas_graneles_v3";
+                                cmd = new SqlCommand(SQL, cn);
+                                cmd.CommandType = CommandType.StoredProcedure;
+                                cmd.Parameters.AddWithValue("@id_boleta", row.NBoleta);
+                                cmd.Parameters.AddWithValue("@entrada", row.PesoProd);
+                                cmd.Parameters.AddWithValue("@item_code", txtCodigoMP.Text);
+                                cmd.Parameters.AddWithValue("@lote", txtLote.Text);
+                                cmd.Parameters.AddWithValue("@id_lote", id_lote);
+                                cmd.Parameters.AddWithValue("@id", row.id);
+                                cmd.Parameters.AddWithValue("@id_ubicacion", row.id_ubicacion);
+                                cmd.Parameters.AddWithValue("@id_ingreso", ingreso);
+                                cmd.Parameters.AddWithValue("@id_user", this.UsuarioLogeado.Id);
+                                cmd.Parameters.AddWithValue("@id_lote_alosy", Id_lote_generado);
 
-                            cmd.ExecuteNonQuery();
-                            Guardo = true;
-                            cn.Close();
+                                cmd.ExecuteNonQuery();
+                                Guardo = true;
+                                cn.Close();
+                            }
                         }
                         catch (Exception ec)
                         {
@@ -668,9 +673,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
                             List.Add(vid_tarima);
 
                             Guardo = true;
-                            con.Close();
-                            //CajaDialogo.InformationAuto();
-                            this.Close();
+                            con.Close();  
                         }
                         catch (Exception ec)
                         {
@@ -678,6 +681,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
                         }
                     }
 
+                    //CajaDialogo.InformationAuto();
                     if (Guardo)
                     {
                         DialogResult r = CajaDialogo.Pregunta("Desea Imprimir la(s) Hoja(s) de Ingreso?");

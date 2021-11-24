@@ -7,18 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LOSA.AlmacenesExterno.Models
+namespace LOSA.Clases
 {
-    public class Ingreso_Externo_Lote
+    public class LoteExterno
     {
-        public int ID { get; set; }
-        public string Lote { get; set; }
-        public decimal Cantidad { get; set; }
-        public decimal Unidades { get; set; }
-        public int NumLine { get; set; }
-        public int Row_ { get; set; }
-        public DateTime FechaVencimiento { get; set; }
-        public DateTime FechaProduccion { get; set; }
+        public LoteExterno() { }
+
+        int IdLote = 0;
+        int Unidades;
+        string Lote;
+        int Cantidad;
+        int id_detalle = 0;
+        DateTime FechaProduccion;
+        DateTime FechaVencimiento;
+
 
         public bool GuardarLoteExterno()
         {
@@ -33,12 +35,12 @@ namespace LOSA.AlmacenesExterno.Models
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@cantidad", Cantidad);
                 cmd.Parameters.AddWithValue("@unidades", Unidades);
-                cmd.Parameters.AddWithValue("@id_detalle", DBNull.Value);
+                cmd.Parameters.AddWithValue("@id_detalle", 0);
                 cmd.Parameters.AddWithValue("@lote", Lote);
                 cmd.Parameters.AddWithValue("@fecha_vencimiento", FechaVencimiento);
                 cmd.Parameters.AddWithValue("@fecha_produccion", FechaProduccion);
 
-                ID = Convert.ToInt32(cmd.ExecuteScalar());
+                IdLote = Convert.ToInt32(cmd.ExecuteScalar());
                 cnx.Close();
             }
             catch (Exception ec)

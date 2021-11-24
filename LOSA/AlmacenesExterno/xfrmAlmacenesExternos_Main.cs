@@ -31,7 +31,6 @@ namespace LOSA.AlmacenesExterno
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             xfrmRevisarOC frm = new xfrmRevisarOC(UsuarioLogueado);
-
             if (frm.ShowDialog()== DialogResult.OK)
             {
                 LoadIngresosExternos();

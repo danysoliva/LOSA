@@ -192,13 +192,14 @@ namespace LOSA.Calidad
 
 
             WebClient ftpClient = new WebClient();
-            ftpClient.Credentials = new NetworkCredential(dp.User_FTP_Server, dp.Password_UserFTPServer);
+            //ftpClient.Credentials = new NetworkCredential(dp.User_FTP_Server, dp.Password_UserFTPServer);
+            ftpClient.Credentials = new NetworkCredential(UsuarioLogeado.ADuser1, UsuarioLogeado.Pass);
 
             byte[] imageByte = ftpClient.DownloadData(ftpFilePath);
             return imageByte;
         }
 
-        public static Bitmap ByteToImage(byte[] blob)
+        public static Bitmap ByteToImage(byte[] blob)             
         {
             MemoryStream mStream = new MemoryStream();
             byte[] pData = blob;
@@ -870,10 +871,10 @@ namespace LOSA.Calidad
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
                 cmd.Parameters.AddWithValue("@origen", grd_origenespecie.EditValue == null ? (object)DBNull.Value : grd_origenespecie.EditValue);
-                cmd.Parameters.AddWithValue("@porcentajetipo", spTipoporcentaje.Text == "0" ? (object)DBNull.Value : spTipoporcentaje.Text);
+                cmd.Parameters.AddWithValue("@porcentajetipo", spTipoporcentaje.Text == "0" || spsustentable.Text == "" ? (object)DBNull.Value : spTipoporcentaje.Text);
                 cmd.Parameters.AddWithValue("@zonapesca", grd_pesca.EditValue == null ? (object)DBNull.Value : grd_pesca.EditValue);
                 cmd.Parameters.AddWithValue("@planta", txtPLantaSenasa.Text == "" ? (object)DBNull.Value : txtPLantaSenasa.Text);
-                cmd.Parameters.AddWithValue("@porcentajesustentable", spsustentable.Text == "0" ? (object)DBNull.Value : spsustentable.Text);
+                cmd.Parameters.AddWithValue("@porcentajesustentable", spsustentable.Text == "0" || spsustentable.Text == "" ? (object)DBNull.Value : spsustentable.Text);
                 cmd.Parameters.AddWithValue("@paisorigen", grd_origen.EditValue == null ? (object)DBNull.Value : grd_origen.EditValue);
                 cmd.Parameters.AddWithValue("@fishsurse", hyfishsource.Text == "" ? (object)DBNull.Value : hyfishsource.Text);
                 cmd.Parameters.AddWithValue("@iucn", hyIUCN.Text == "" ? (object)DBNull.Value : hyIUCN.Text);

@@ -29,13 +29,12 @@ namespace LOSA.MicroIngredientes
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmPesajeIndividualBatch));
             this.lblBascula = new DevExpress.XtraEditors.LabelControl();
             this.lblValorBascula = new DevExpress.XtraEditors.LabelControl();
             this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.lblCompletados = new DevExpress.XtraEditors.LabelControl();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new System.Windows.Forms.Timer();
             this.lblError = new DevExpress.XtraEditors.LabelControl();
             this.lblSuperior = new DevExpress.XtraEditors.LabelControl();
             this.lblInferior = new DevExpress.XtraEditors.LabelControl();
@@ -74,7 +73,6 @@ namespace LOSA.MicroIngredientes
             this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGuardar.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.Appearance.Options.UseFont = true;
-            this.btnGuardar.Enabled = false;
             this.btnGuardar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btnGuardar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnGuardar.ImageOptions.SvgImage")));
             this.btnGuardar.Location = new System.Drawing.Point(158, 169);
