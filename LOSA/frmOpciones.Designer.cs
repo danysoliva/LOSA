@@ -99,6 +99,7 @@
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.btnPendientes_ingreso_a_planta = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -268,6 +269,7 @@
             // 
             this.TabMP_Sacos.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TabMP_Sacos.Appearance.Header.Options.UseFont = true;
+            this.TabMP_Sacos.Controls.Add(this.btnPendientes_ingreso_a_planta);
             this.TabMP_Sacos.Controls.Add(this.cmdRegistroLote);
             this.TabMP_Sacos.Controls.Add(this.simpleButton13);
             this.TabMP_Sacos.Controls.Add(this.cmdGestionIngresos);
@@ -1096,6 +1098,22 @@
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
             // 
+            // btnPendientes_ingreso_a_planta
+            // 
+            this.btnPendientes_ingreso_a_planta.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPendientes_ingreso_a_planta.Appearance.Options.UseFont = true;
+            this.btnPendientes_ingreso_a_planta.Appearance.Options.UseTextOptions = true;
+            this.btnPendientes_ingreso_a_planta.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btnPendientes_ingreso_a_planta.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnPendientes_ingreso_a_planta.ImageOptions.Image = global::LOSA.Properties.Resources.logout;
+            this.btnPendientes_ingreso_a_planta.Location = new System.Drawing.Point(209, 14);
+            this.btnPendientes_ingreso_a_planta.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPendientes_ingreso_a_planta.Name = "btnPendientes_ingreso_a_planta";
+            this.btnPendientes_ingreso_a_planta.Size = new System.Drawing.Size(199, 42);
+            this.btnPendientes_ingreso_a_planta.TabIndex = 39;
+            this.btnPendientes_ingreso_a_planta.Text = "Trans. pendiente \r\nde ingreso";
+            this.btnPendientes_ingreso_a_planta.Click += new System.EventHandler(this.simpleButton17_Click_2);
+            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1199,5 +1217,6 @@
         private DevExpress.XtraTab.XtraTabPage tabPT;
         private DevExpress.XtraTab.XtraTabPage tabMasterData;
         private DevExpress.XtraTab.XtraTabPage tabReportes;
+        private DevExpress.XtraEditors.SimpleButton btnPendientes_ingreso_a_planta;
     }
 }

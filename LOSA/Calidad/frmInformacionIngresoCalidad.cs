@@ -199,7 +199,7 @@ namespace LOSA.Calidad
             return imageByte;
         }
 
-        public static Bitmap ByteToImage(byte[] blob)
+        public static Bitmap ByteToImage(byte[] blob)             
         {
             MemoryStream mStream = new MemoryStream();
             byte[] pData = blob;
