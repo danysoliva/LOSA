@@ -72,7 +72,7 @@
   <PropertyGroup>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>LOSA_1_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>LOSA_2_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -91,10 +91,10 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>LOSA_1_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>LOSA_2_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>6DD8536E8A1C19A8B880E82B56C0013D30A41792</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>9FE757124F152B7D84EAF5921DEC1FC79FA16A11</ManifestCertificateThumbprint>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -1259,6 +1259,12 @@
     <Compile Include="Produccion\rptReporteTarimaPT.Designer.cs">
       <DependentUpon>rptReporteTarimaPT.cs</DependentUpon>
     </Compile>
+    <Compile Include="Produccion\xfrmCheckActiveBin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\xfrmCheckActiveBin.Designer.cs">
+      <DependentUpon>xfrmCheckActiveBin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <None Include="Calidad\dsMantenimientoC.xsc">
       <DependentUpon>dsMantenimientoC.xsd</DependentUpon>
@@ -1294,6 +1300,7 @@
       <DependentUpon>dsLiquidos_.xsd</DependentUpon>
     </None>
     <None Include="LOSA_1_TemporaryKey.pfx" />
+    <None Include="LOSA_2_TemporaryKey.pfx" />
     <None Include="Nir\dsNir.xsc">
       <DependentUpon>dsNir.xsd</DependentUpon>
     </None>
@@ -2590,6 +2597,9 @@
     <EmbeddedResource Include="Produccion\rptReporteTarimaPT.resx">
       <DependentUpon>rptReporteTarimaPT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\xfrmCheckActiveBin.resx">
+      <DependentUpon>xfrmCheckActiveBin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -3226,6 +3236,9 @@
     <Content Include="Resources\settings.png" />
     <Content Include="Resources\shipping.png" />
     <None Include="Resources\Status-dialog-information-icon72px.png" />
+    <None Include="Resources\tank2.png" />
+    <None Include="Resources\tank3.png" />
+    <None Include="Resources\tanque.png" />
     <Content Include="Resources\tap.png" />
     <None Include="Resources\trazabilidad.png" />
     <None Include="Resources\trucksss.png" />
@@ -3236,7 +3249,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 y x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

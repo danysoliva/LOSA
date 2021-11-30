@@ -655,5 +655,12 @@ namespace LOSA
             frmTransPendientes frm = new frmTransPendientes(UsuarioLogeado);
             frm.Show();
         }
+
+        private void simpleButton17_Click_3(object sender, EventArgs e)
+        {
+            xfrmCheckActiveBin frm = new xfrmCheckActiveBin();
+
+            frm.Show();
+        }
     }
 }
