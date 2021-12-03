@@ -24,11 +24,17 @@ namespace LOSA.RecepcionMP
         private int _idSerie;
         private int _NumBoleta;
         private string _ItemCode;
+        private decimal peso_Bascula;
+        private string oC;
+        private string factura;
 
         public int IdSerie { get { return _idSerie; } set { _idSerie = value; } }
         public int NumBoleta { get { return _NumBoleta; } set { _NumBoleta = value; } }
 
         public string ItemCode { get => _ItemCode; set => _ItemCode = value; }
+        public decimal Peso_Bascula { get => peso_Bascula; set => peso_Bascula = value; }
+        public string OC { get => oC; set => oC = value; }
+        public string Factura { get => factura; set => factura = value; }
 
         public FrmBoleta()
         {
@@ -83,6 +89,9 @@ namespace LOSA.RecepcionMP
             this.IdSerie = row.IDSerie;
             this.NumBoleta = row.NBoleta;
             this.ItemCode = row.itemcode;
+            this.peso_Bascula = row.peso_prod;
+            this.OC = row.oc;
+            this.Factura = row.numero_factura;
             this.DialogResult = DialogResult.OK;
             this.Close();
         }

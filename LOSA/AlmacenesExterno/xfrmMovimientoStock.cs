@@ -287,6 +287,7 @@ namespace LOSA.AlmacenesExterno
 
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
+                    this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
             }

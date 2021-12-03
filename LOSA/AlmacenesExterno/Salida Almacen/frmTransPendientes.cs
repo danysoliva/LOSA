@@ -71,5 +71,14 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
 
             }
         }
+
+        private void btnTransferencia_Click(object sender, EventArgs e)
+        {
+            xfrmMovimientoStock frm = new xfrmMovimientoStock(UsuarioLogeado);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                load_data();
+            }
+        }
     }
 }

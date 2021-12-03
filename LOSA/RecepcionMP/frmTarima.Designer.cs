@@ -78,6 +78,8 @@
             this.btnUbicacion = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.Tg_presentacion_promedio = new DevExpress.XtraEditors.ToggleSwitch();
+            this.txtpresentacionPromedio = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdBoleta.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigoMP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMP_Name.Properties)).BeginInit();
@@ -103,6 +105,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcNuevaUbicación)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvNuevaUbicacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.beNuevaUbicacion.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tg_presentacion_promedio.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtpresentacionPromedio.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -117,7 +121,7 @@
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl1.Location = new System.Drawing.Point(0, 2);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(680, 40);
+            this.labelControl1.Size = new System.Drawing.Size(1037, 40);
             this.labelControl1.TabIndex = 28;
             this.labelControl1.Text = "Registro de Tarima #Lote";
             this.labelControl1.Click += new System.EventHandler(this.btnAtras_Click_1);
@@ -132,7 +136,7 @@
             this.btnAgregar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAgregar.ImageOptions.Image = global::LOSA.Properties.Resources.plus;
             this.btnAgregar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAgregar.Location = new System.Drawing.Point(294, 45);
+            this.btnAgregar.Location = new System.Drawing.Point(651, 45);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(167, 47);
             this.btnAgregar.TabIndex = 27;
@@ -528,6 +532,8 @@
             this.txtPesoKg.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtPesoKg.Size = new System.Drawing.Size(142, 32);
             this.txtPesoKg.TabIndex = 54;
+            this.txtPesoKg.EditValueChanged += new System.EventHandler(this.txtPesoKg_EditValueChanged);
+            this.txtPesoKg.TextChanged += new System.EventHandler(this.txtPesoKg_TextChanged_1);
             // 
             // labelControl13
             // 
@@ -552,7 +558,8 @@
             this.txtCantidadTarimasTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtCantidadTarimasTotal.Size = new System.Drawing.Size(85, 32);
             this.txtCantidadTarimasTotal.TabIndex = 7;
-            this.txtCantidadTarimasTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textEdit1_KeyPress);
+            this.txtCantidadTarimasTotal.TextChanged += new System.EventHandler(this.txtCantidadTarimasTotal_TextChanged);
+            this.txtCantidadTarimasTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidadT_KeyPress);
             // 
             // groupControl2
             // 
@@ -561,9 +568,9 @@
             this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupControl2.AppearanceCaption.Options.UseFont = true;
             this.groupControl2.Controls.Add(this.gcNuevaUbicación);
-            this.groupControl2.Location = new System.Drawing.Point(0, 444);
+            this.groupControl2.Location = new System.Drawing.Point(0, 626);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(680, 77);
+            this.groupControl2.Size = new System.Drawing.Size(1037, 77);
             this.groupControl2.TabIndex = 57;
             this.groupControl2.Text = "Nueva Ubicación";
             this.groupControl2.Visible = false;
@@ -577,7 +584,7 @@
             this.gcNuevaUbicación.Location = new System.Drawing.Point(6, 25);
             this.gcNuevaUbicación.MainView = this.gvNuevaUbicacion;
             this.gcNuevaUbicación.Name = "gcNuevaUbicación";
-            this.gcNuevaUbicación.Size = new System.Drawing.Size(662, 47);
+            this.gcNuevaUbicación.Size = new System.Drawing.Size(1019, 47);
             this.gcNuevaUbicación.TabIndex = 34;
             this.gcNuevaUbicación.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvNuevaUbicacion});
@@ -791,12 +798,40 @@
             this.simpleButton2.TabIndex = 61;
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
+            // Tg_presentacion_promedio
+            // 
+            this.Tg_presentacion_promedio.Location = new System.Drawing.Point(614, 215);
+            this.Tg_presentacion_promedio.Name = "Tg_presentacion_promedio";
+            this.Tg_presentacion_promedio.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tg_presentacion_promedio.Properties.Appearance.Options.UseFont = true;
+            this.Tg_presentacion_promedio.Properties.OffText = "Activar presentacion promedio";
+            this.Tg_presentacion_promedio.Properties.OnText = "Desactivar presentacion promedio";
+            this.Tg_presentacion_promedio.Size = new System.Drawing.Size(411, 32);
+            this.Tg_presentacion_promedio.TabIndex = 62;
+            this.Tg_presentacion_promedio.Toggled += new System.EventHandler(this.Tg_presentacion_promedio_Toggled);
+            this.Tg_presentacion_promedio.Click += new System.EventHandler(this.Tg_presentacion_promedio_Click);
+            // 
+            // txtpresentacionPromedio
+            // 
+            this.txtpresentacionPromedio.EditValue = "0";
+            this.txtpresentacionPromedio.Enabled = false;
+            this.txtpresentacionPromedio.Location = new System.Drawing.Point(452, 217);
+            this.txtpresentacionPromedio.Name = "txtpresentacionPromedio";
+            this.txtpresentacionPromedio.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpresentacionPromedio.Properties.Appearance.Options.UseFont = true;
+            this.txtpresentacionPromedio.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtpresentacionPromedio.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtpresentacionPromedio.Size = new System.Drawing.Size(156, 32);
+            this.txtpresentacionPromedio.TabIndex = 63;
+            // 
             // frmTarima
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(680, 521);
+            this.ClientSize = new System.Drawing.Size(1037, 703);
+            this.Controls.Add(this.txtpresentacionPromedio);
+            this.Controls.Add(this.Tg_presentacion_promedio);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.beNuevaUbicacion);
             this.Controls.Add(this.btnUbicacion);
@@ -864,6 +899,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcNuevaUbicación)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvNuevaUbicacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.beNuevaUbicacion.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tg_presentacion_promedio.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtpresentacionPromedio.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -914,5 +951,7 @@
         private DevExpress.XtraEditors.SimpleButton btnUbicacion;
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.ToggleSwitch Tg_presentacion_promedio;
+        private DevExpress.XtraEditors.TextEdit txtpresentacionPromedio;
     }
 }

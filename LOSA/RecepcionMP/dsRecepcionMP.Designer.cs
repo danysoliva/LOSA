@@ -966,6 +966,12 @@ namespace LOSA.RecepcionMP {
             
             private global::System.Data.DataColumn columnfecha;
             
+            private global::System.Data.DataColumn columnpeso_prod;
+            
+            private global::System.Data.DataColumn columnoc;
+            
+            private global::System.Data.DataColumn columnnumero_factura;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public BasculaDataTable() {
@@ -1089,6 +1095,30 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn peso_prodColumn {
+                get {
+                    return this.columnpeso_prod;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ocColumn {
+                get {
+                    return this.columnoc;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn numero_facturaColumn {
+                get {
+                    return this.columnnumero_factura;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1124,7 +1154,7 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public BasculaRow AddBasculaRow(int IDSerie, int NBoleta, string Descripcion, int idtipo, int estado, string estadoDescripcion, string itemcode, string furgon, string itemdescrip, string proveedor, System.DateTime fecha) {
+            public BasculaRow AddBasculaRow(int IDSerie, int NBoleta, string Descripcion, int idtipo, int estado, string estadoDescripcion, string itemcode, string furgon, string itemdescrip, string proveedor, System.DateTime fecha, decimal peso_prod, string oc, string numero_factura) {
                 BasculaRow rowBasculaRow = ((BasculaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         IDSerie,
@@ -1137,7 +1167,10 @@ namespace LOSA.RecepcionMP {
                         furgon,
                         itemdescrip,
                         proveedor,
-                        fecha};
+                        fecha,
+                        peso_prod,
+                        oc,
+                        numero_factura};
                 rowBasculaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowBasculaRow);
                 return rowBasculaRow;
@@ -1171,6 +1204,9 @@ namespace LOSA.RecepcionMP {
                 this.columnitemdescrip = base.Columns["itemdescrip"];
                 this.columnproveedor = base.Columns["proveedor"];
                 this.columnfecha = base.Columns["fecha"];
+                this.columnpeso_prod = base.Columns["peso_prod"];
+                this.columnoc = base.Columns["oc"];
+                this.columnnumero_factura = base.Columns["numero_factura"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1198,6 +1234,12 @@ namespace LOSA.RecepcionMP {
                 base.Columns.Add(this.columnproveedor);
                 this.columnfecha = new global::System.Data.DataColumn("fecha", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfecha);
+                this.columnpeso_prod = new global::System.Data.DataColumn("peso_prod", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpeso_prod);
+                this.columnoc = new global::System.Data.DataColumn("oc", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnoc);
+                this.columnnumero_factura = new global::System.Data.DataColumn("numero_factura", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnumero_factura);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7609,6 +7651,54 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal peso_prod {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableBascula.peso_prodColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'peso_prod\' de la tabla \'Bascula\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBascula.peso_prodColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string oc {
+                get {
+                    try {
+                        return ((string)(this[this.tableBascula.ocColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'oc\' de la tabla \'Bascula\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBascula.ocColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string numero_factura {
+                get {
+                    try {
+                        return ((string)(this[this.tableBascula.numero_facturaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'numero_factura\' de la tabla \'Bascula\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBascula.numero_facturaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsIDSerieNull() {
                 return this.IsNull(this.tableBascula.IDSerieColumn);
             }
@@ -7737,6 +7827,42 @@ namespace LOSA.RecepcionMP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetfechaNull() {
                 this[this.tableBascula.fechaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Ispeso_prodNull() {
+                return this.IsNull(this.tableBascula.peso_prodColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setpeso_prodNull() {
+                this[this.tableBascula.peso_prodColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsocNull() {
+                return this.IsNull(this.tableBascula.ocColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetocNull() {
+                this[this.tableBascula.ocColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isnumero_facturaNull() {
+                return this.IsNull(this.tableBascula.numero_facturaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setnumero_facturaNull() {
+                this[this.tableBascula.numero_facturaColumn] = global::System.Convert.DBNull;
             }
         }
         
