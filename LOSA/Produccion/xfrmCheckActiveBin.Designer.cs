@@ -465,14 +465,14 @@ namespace LOSA.Produccion
             // 
             // lblBIN
             // 
-            this.lblBIN.Appearance.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBIN.Appearance.Font = new System.Drawing.Font("Tahoma", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBIN.Appearance.Options.UseFont = true;
             this.lblBIN.Appearance.Options.UseTextOptions = true;
             this.lblBIN.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblBIN.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblBIN.Location = new System.Drawing.Point(12, 359);
+            this.lblBIN.Location = new System.Drawing.Point(12, 346);
             this.lblBIN.Name = "lblBIN";
-            this.lblBIN.Size = new System.Drawing.Size(1094, 33);
+            this.lblBIN.Size = new System.Drawing.Size(1094, 78);
             this.lblBIN.TabIndex = 27;
             this.lblBIN.Text = "FD";
             // 

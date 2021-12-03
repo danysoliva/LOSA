@@ -984,11 +984,11 @@
             this.simpleButton17.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton17.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton17.ImageOptions.Image = global::LOSA.Properties.Resources.tanque;
-            this.simpleButton17.Location = new System.Drawing.Point(19, 206);
+            this.simpleButton17.Location = new System.Drawing.Point(237, 206);
             this.simpleButton17.Name = "simpleButton17";
             this.simpleButton17.Size = new System.Drawing.Size(199, 71);
             this.simpleButton17.TabIndex = 17;
-            this.simpleButton17.Text = "Tanque Activo";
+            this.simpleButton17.Text = "Bin Activo";
             this.simpleButton17.Click += new System.EventHandler(this.simpleButton17_Click_3);
             // 
             // simpleButton7
