@@ -54,7 +54,7 @@ namespace LOSA.Produccion
                 {
                     cnx.Open();
 
-                    SqlCommand cmd = new SqlCommand("dbo.sp_get_bin_activo", cnx);
+                    SqlCommand cmd = new SqlCommand("dbo.sp_get_bin_activoV2", cnx);
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     SqlDataReader dr = cmd.ExecuteReader();
@@ -62,7 +62,7 @@ namespace LOSA.Produccion
                     if (dr.Read())
                     {
                         id_active_tank = Convert.ToInt32(dr.GetInt32(0));
-                        //label_tank = dr.GetString(1);
+                        label_tank = dr.GetString(1);
                         //mp = dr.GetString(2);
                     }
 
@@ -74,7 +74,7 @@ namespace LOSA.Produccion
                 if (Convert.ToInt32(pcTank1.Tag.ToString()) == id_active_tank)
                 {
                     pcTank1.BackColor = Color.Lime;
-                    lblBIN.Text = "FD"+ id_active_tank;
+                    //lblBIN.Text = "FD"+ id_active_tank;
                     //lblMP1.Visible = true;
                     //lblMP1.Text = mp;
                 }
@@ -82,7 +82,7 @@ namespace LOSA.Produccion
                 if (Convert.ToInt32(pcTank2.Tag.ToString()) == id_active_tank)
                 {
                     pcTank2.BackColor = Color.Lime;
-                    lblBIN.Text =  "FD" + id_active_tank;
+                    //lblBIN.Text =  "FD" + id_active_tank;
                     //lblMP2.Visible = true;
                     //lblMP2.Text = mp;
                 }
@@ -90,7 +90,7 @@ namespace LOSA.Produccion
                 if (Convert.ToInt32(pcTank3.Tag.ToString()) == id_active_tank)
                 {
                     pcTank3.BackColor = Color.Lime;
-                    lblBIN.Text = "FD" + id_active_tank;
+                    //lblBIN.Text = "FD" + id_active_tank;
                     //lblMP3.Visible = true;
                     //lblMP3.Text = mp;
                 }
@@ -98,7 +98,7 @@ namespace LOSA.Produccion
                 if (Convert.ToInt32(pcTank4.Tag.ToString()) == id_active_tank)
                 {
                     pcTank4.BackColor = Color.Lime;
-                    lblBIN.Text = "FD" + id_active_tank;
+                    //lblBIN.Text = "FD" + id_active_tank;
                     //lblMP4.Visible = true;
                     //lblMP4.Text = mp;
                 }
@@ -106,7 +106,7 @@ namespace LOSA.Produccion
                 if (Convert.ToInt32(pcTank5.Tag.ToString()) == id_active_tank)
                 {
                     pcTank5.BackColor = Color.Lime;
-                    lblBIN.Text = "FD" + id_active_tank;
+                    //lblBIN.Text = "FD" + id_active_tank;
                     //lblMP5.Visible = true;
                     //lblMP5.Text = mp;
                 }
@@ -115,14 +115,14 @@ namespace LOSA.Produccion
                 if (Convert.ToInt32(pcTank6.Tag.ToString()) == id_active_tank)
                 {
                     pcTank6.BackColor = Color.Lime;
-                    lblBIN.Text = "FD" + id_active_tank;
+                    //lblBIN.Text = "FD" + id_active_tank;
                     //lblMP6.Visible = true;
                     //lblMP6.Text = mp;
                 }
                 if (Convert.ToInt32(pcTank7.Tag.ToString()) == id_active_tank)
                 {
                     pcTank7.BackColor = Color.Lime;
-                    lblBIN.Text = "FD" + id_active_tank;
+                    //lblBIN.Text = "FD" + id_active_tank;
                     //lblMP7.Visible = true;
                     //lblMP7.Text = mp;
                 }
@@ -130,7 +130,7 @@ namespace LOSA.Produccion
                 if (Convert.ToInt32(pcTank8.Tag.ToString()) == id_active_tank)
                 {
                     pcTank8.BackColor = Color.Lime;
-                    lblBIN.Text = "FD" + id_active_tank;
+                    //lblBIN.Text = "FD" + id_active_tank;
                     //lblMP8.Visible = true;
                     //lblMP8.Text = mp;
                 }
@@ -138,7 +138,7 @@ namespace LOSA.Produccion
                 if (Convert.ToInt32(pcTank9.Tag.ToString()) == id_active_tank)
                 {
                     pcTank9.BackColor = Color.Lime;
-                    lblBIN.Text = "FD" + id_active_tank;
+                    //lblBIN.Text = "FD" + id_active_tank;
                     //lblMP9.Visible = true;
                     //lblMP9.Text = mp;
                 }
@@ -146,7 +146,7 @@ namespace LOSA.Produccion
                 if (Convert.ToInt32(pcTank10.Tag.ToString()) == id_active_tank)
                 {
                     pcTank10.BackColor = Color.Lime;
-                    lblBIN.Text = "FD" + id_active_tank;
+                    //lblBIN.Text = "FD" + id_active_tank;
                     //lblMP10.Visible = true;
                     //lblMP10.Text = mp;
                 }
@@ -154,7 +154,7 @@ namespace LOSA.Produccion
                 if (Convert.ToInt32(pcTank11.Tag.ToString()) == id_active_tank)
                 {
                     pcTank11.BackColor = Color.Lime;
-                    lblBIN.Text = "FD" + id_active_tank;
+                    //lblBIN.Text = "FD" + id_active_tank;
                     //lblMP11.Visible = true;
                     //lblMP11.Text = mp;
                 }
@@ -162,12 +162,12 @@ namespace LOSA.Produccion
                 if (Convert.ToInt32(pcTank12.Tag.ToString()) == id_active_tank)
                 {
                     pcTank12.BackColor = Color.Lime;
-                    lblBIN.Text = "FD" + id_active_tank;
+                    //lblBIN.Text = "FD" + id_active_tank;
                     //lblMP12.Visible = true;
                     //lblMP12.Text = mp;
                 }
 
-
+                lblBIN.Text = label_tank;
 
 
 
