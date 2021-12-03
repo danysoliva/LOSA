@@ -277,9 +277,6 @@ namespace LOSA.RecepcionMP
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //Click 
-            //dsRecepcionMPx1
-
-
             int Total = 0;
             foreach (dsRecepcionMPx.granelRow row_i in dsRecepcionMPx1.granel.Rows)
             {

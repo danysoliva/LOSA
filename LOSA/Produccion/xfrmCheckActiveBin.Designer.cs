@@ -29,7 +29,6 @@ namespace LOSA.Produccion
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.pcTank1 = new DevExpress.XtraEditors.PanelControl();
             this.pcTank2 = new DevExpress.XtraEditors.PanelControl();
             this.pcTank3 = new DevExpress.XtraEditors.PanelControl();
@@ -69,7 +68,7 @@ namespace LOSA.Produccion
             this.lblMP9 = new DevExpress.XtraEditors.LabelControl();
             this.lblMP11 = new DevExpress.XtraEditors.LabelControl();
             this.lblMP12 = new DevExpress.XtraEditors.LabelControl();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new System.Windows.Forms.Timer();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.pcTank1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcTank2)).BeginInit();
@@ -484,7 +483,7 @@ namespace LOSA.Produccion
             // 
             // lblMP1
             // 
-            this.lblMP1.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMP1.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMP1.Appearance.Options.UseFont = true;
             this.lblMP1.Appearance.Options.UseTextOptions = true;
             this.lblMP1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -496,14 +495,14 @@ namespace LOSA.Produccion
             this.lblMP1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblMP1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblMP1.Name = "lblMP1";
-            this.lblMP1.Size = new System.Drawing.Size(88, 25);
+            this.lblMP1.Size = new System.Drawing.Size(88, 23);
             this.lblMP1.TabIndex = 28;
             this.lblMP1.Tag = "1";
             this.lblMP1.Text = "MP";
             // 
             // lblMP2
             // 
-            this.lblMP2.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMP2.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMP2.Appearance.Options.UseFont = true;
             this.lblMP2.Appearance.Options.UseTextOptions = true;
             this.lblMP2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -515,14 +514,14 @@ namespace LOSA.Produccion
             this.lblMP2.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblMP2.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblMP2.Name = "lblMP2";
-            this.lblMP2.Size = new System.Drawing.Size(88, 25);
+            this.lblMP2.Size = new System.Drawing.Size(88, 23);
             this.lblMP2.TabIndex = 29;
             this.lblMP2.Tag = "2";
             this.lblMP2.Text = "MP";
             // 
             // lblMP10
             // 
-            this.lblMP10.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMP10.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMP10.Appearance.Options.UseFont = true;
             this.lblMP10.Appearance.Options.UseTextOptions = true;
             this.lblMP10.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -534,14 +533,14 @@ namespace LOSA.Produccion
             this.lblMP10.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblMP10.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblMP10.Name = "lblMP10";
-            this.lblMP10.Size = new System.Drawing.Size(88, 25);
+            this.lblMP10.Size = new System.Drawing.Size(88, 23);
             this.lblMP10.TabIndex = 30;
             this.lblMP10.Tag = "10";
             this.lblMP10.Text = "MP";
             // 
             // lblMP3
             // 
-            this.lblMP3.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMP3.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMP3.Appearance.Options.UseFont = true;
             this.lblMP3.Appearance.Options.UseTextOptions = true;
             this.lblMP3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -553,14 +552,14 @@ namespace LOSA.Produccion
             this.lblMP3.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblMP3.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblMP3.Name = "lblMP3";
-            this.lblMP3.Size = new System.Drawing.Size(88, 25);
+            this.lblMP3.Size = new System.Drawing.Size(88, 23);
             this.lblMP3.TabIndex = 31;
             this.lblMP3.Tag = "3";
             this.lblMP3.Text = "MP";
             // 
             // lblMP4
             // 
-            this.lblMP4.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMP4.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMP4.Appearance.Options.UseFont = true;
             this.lblMP4.Appearance.Options.UseTextOptions = true;
             this.lblMP4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -572,14 +571,14 @@ namespace LOSA.Produccion
             this.lblMP4.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblMP4.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblMP4.Name = "lblMP4";
-            this.lblMP4.Size = new System.Drawing.Size(88, 25);
+            this.lblMP4.Size = new System.Drawing.Size(88, 23);
             this.lblMP4.TabIndex = 32;
             this.lblMP4.Tag = "4";
             this.lblMP4.Text = "MP";
             // 
             // lblMP5
             // 
-            this.lblMP5.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMP5.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMP5.Appearance.Options.UseFont = true;
             this.lblMP5.Appearance.Options.UseTextOptions = true;
             this.lblMP5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -591,14 +590,14 @@ namespace LOSA.Produccion
             this.lblMP5.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblMP5.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblMP5.Name = "lblMP5";
-            this.lblMP5.Size = new System.Drawing.Size(88, 25);
+            this.lblMP5.Size = new System.Drawing.Size(88, 23);
             this.lblMP5.TabIndex = 33;
             this.lblMP5.Tag = "5";
             this.lblMP5.Text = "MP";
             // 
             // lblMP6
             // 
-            this.lblMP6.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMP6.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMP6.Appearance.Options.UseFont = true;
             this.lblMP6.Appearance.Options.UseTextOptions = true;
             this.lblMP6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -610,14 +609,14 @@ namespace LOSA.Produccion
             this.lblMP6.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblMP6.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblMP6.Name = "lblMP6";
-            this.lblMP6.Size = new System.Drawing.Size(88, 25);
+            this.lblMP6.Size = new System.Drawing.Size(88, 23);
             this.lblMP6.TabIndex = 34;
             this.lblMP6.Tag = "6";
             this.lblMP6.Text = "MP";
             // 
             // lblMP7
             // 
-            this.lblMP7.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMP7.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMP7.Appearance.Options.UseFont = true;
             this.lblMP7.Appearance.Options.UseTextOptions = true;
             this.lblMP7.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -629,14 +628,14 @@ namespace LOSA.Produccion
             this.lblMP7.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblMP7.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblMP7.Name = "lblMP7";
-            this.lblMP7.Size = new System.Drawing.Size(88, 25);
+            this.lblMP7.Size = new System.Drawing.Size(88, 23);
             this.lblMP7.TabIndex = 35;
             this.lblMP7.Tag = "7";
             this.lblMP7.Text = "MP";
             // 
             // lblMP8
             // 
-            this.lblMP8.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMP8.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMP8.Appearance.Options.UseFont = true;
             this.lblMP8.Appearance.Options.UseTextOptions = true;
             this.lblMP8.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -648,14 +647,14 @@ namespace LOSA.Produccion
             this.lblMP8.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblMP8.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblMP8.Name = "lblMP8";
-            this.lblMP8.Size = new System.Drawing.Size(88, 25);
+            this.lblMP8.Size = new System.Drawing.Size(88, 23);
             this.lblMP8.TabIndex = 36;
             this.lblMP8.Tag = "8";
             this.lblMP8.Text = "MP";
             // 
             // lblMP9
             // 
-            this.lblMP9.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMP9.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMP9.Appearance.Options.UseFont = true;
             this.lblMP9.Appearance.Options.UseTextOptions = true;
             this.lblMP9.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -667,14 +666,14 @@ namespace LOSA.Produccion
             this.lblMP9.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblMP9.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblMP9.Name = "lblMP9";
-            this.lblMP9.Size = new System.Drawing.Size(88, 25);
+            this.lblMP9.Size = new System.Drawing.Size(88, 23);
             this.lblMP9.TabIndex = 37;
             this.lblMP9.Tag = "9";
             this.lblMP9.Text = "MP";
             // 
             // lblMP11
             // 
-            this.lblMP11.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMP11.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMP11.Appearance.Options.UseFont = true;
             this.lblMP11.Appearance.Options.UseTextOptions = true;
             this.lblMP11.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -686,14 +685,14 @@ namespace LOSA.Produccion
             this.lblMP11.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblMP11.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblMP11.Name = "lblMP11";
-            this.lblMP11.Size = new System.Drawing.Size(88, 25);
+            this.lblMP11.Size = new System.Drawing.Size(88, 23);
             this.lblMP11.TabIndex = 38;
             this.lblMP11.Tag = "11";
             this.lblMP11.Text = "MP";
             // 
             // lblMP12
             // 
-            this.lblMP12.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMP12.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMP12.Appearance.Options.UseFont = true;
             this.lblMP12.Appearance.Options.UseTextOptions = true;
             this.lblMP12.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -705,7 +704,7 @@ namespace LOSA.Produccion
             this.lblMP12.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblMP12.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblMP12.Name = "lblMP12";
-            this.lblMP12.Size = new System.Drawing.Size(88, 25);
+            this.lblMP12.Size = new System.Drawing.Size(88, 23);
             this.lblMP12.TabIndex = 39;
             this.lblMP12.Tag = "12";
             this.lblMP12.Text = "MP";
