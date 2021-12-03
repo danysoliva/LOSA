@@ -3237,8 +3237,9 @@
     <Content Include="Resources\shipping.png" />
     <None Include="Resources\Status-dialog-information-icon72px.png" />
     <None Include="Resources\tank2.png" />
-    <None Include="Resources\tank3.png" />
     <None Include="Resources\tanque.png" />
+    <None Include="Resources\tank3.png" />
+    <None Include="Resources\tank31.png" />
     <Content Include="Resources\tap.png" />
     <None Include="Resources\trazabilidad.png" />
     <None Include="Resources\trucksss.png" />
