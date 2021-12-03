@@ -20,21 +20,22 @@ namespace LOSA.RecepcionMP
     {
         ArrayList vLista = new ArrayList();
         public ArrayList ListaResultados;
-        public frmMP_Granel_Selec_MP(ArrayList pArray)
+        public MateriaPrima ItemSelected;
+        public frmMP_Granel_Selec_MP(ArrayList pArray, string CodigoSAP_MP)
         {
             InitializeComponent();
             vLista = pArray;
-            LoadListaMP_Permitidas();
+            LoadListaMP_Permitidas(CodigoSAP_MP);
 
-            foreach (ItemMP_Lote item in pArray)
-            {
-                dsRecepcionMPx.cruce_lote_mpRow row1 = dsRecepcionMPx1.cruce_lote_mp.Newcruce_lote_mpRow();
-                row1.itemcode = item.ItemCode;
-                row1.card_name = item.Card_Name;
-                //pendiente agregar el valor de lote
-                dsRecepcionMPx1.cruce_lote_mp.Addcruce_lote_mpRow(row1);
-                dsRecepcionMPx1.AcceptChanges();
-            }
+            //foreach (MateriaPrima item in pArray)
+            //{
+            //    dsRecepcionMPx.cruce_lote_mpRow row1 = dsRecepcionMPx1.cruce_lote_mp.Newcruce_lote_mpRow();
+            //    row1.itemcode = item.CodeMP_SAP;
+            //    row1.card_name = item.Name;
+            //    //pendiente agregar el valor de lote
+            //    dsRecepcionMPx1.cruce_lote_mp.Addcruce_lote_mpRow(row1);
+            //    dsRecepcionMPx1.AcceptChanges();
+            //}
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)
@@ -49,20 +50,20 @@ namespace LOSA.RecepcionMP
 
         }
 
-        public void LoadListaMP_Permitidas()
+        public void LoadListaMP_Permitidas(string pItemCode)
         {
             try
             {
                 DataOperations dp = new DataOperations();
-                SqlConnection con = new SqlConnection(dp.ConnectionStringBascula);
+                SqlConnection con = new SqlConnection(dp.ConnectionStringCostos);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_lista_lotes_activos_granel", con);
+                SqlCommand cmd = new SqlCommand("sp_get_lista_mp_permitidas_alosy", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                //cmd.Parameters.AddWithValue("@idbodega", idBodega);
-                dsRecepcionMPx1.lista_lotes_activos.Clear();
+                cmd.Parameters.AddWithValue("@code", pItemCode);
+                dsRecepcionMPx1.cruce_lote_mp.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                adat.Fill(dsRecepcionMPx1.lista_lotes_activos);
+                adat.Fill(dsRecepcionMPx1.cruce_lote_mp);
 
                 con.Close();
             }
@@ -132,44 +133,63 @@ namespace LOSA.RecepcionMP
 
         private void cmdSiguiente_Click(object sender, EventArgs e)
         {
-            bool Next = false;
-            foreach(dsRecepcionMPx.cruce_lote_mpRow row in dsRecepcionMPx1.cruce_lote_mp.Rows)
-            {
-                if(row.id_lote > 0)
-                {
-                    Next = true;
-                    break;
-                }
-            }
-            if (!Next)
-            {
-                CajaDialogo.Error("No hay ningun Lote correctamente Seleccionado!\nNo se puede continuar!");
-                return;
-            }
+            //bool Next = false;
+            //foreach(dsRecepcionMPx.cruce_lote_mpRow row in dsRecepcionMPx1.cruce_lote_mp.Rows)
+            //{
+            //    if(row.id_lote > 0)
+            //    {
+            //        Next = true;
+            //        break;
+            //    }
+            //}
+            //if (!Next)
+            //{
+            //    CajaDialogo.Error("No hay ningun Lote correctamente Seleccionado!\nNo se puede continuar!");
+            //    return;
+            //}
 
             ListaResultados = new ArrayList();
             foreach (dsRecepcionMPx.cruce_lote_mpRow row in dsRecepcionMPx1.cruce_lote_mp.Rows)
             {
-                if (row.id_lote > 0)
-                {
-                    ItemMP_Lote Item = new ItemMP_Lote();
-                    Item.ItemCode = row.itemcode;
-                    Item.Lote = row.lote_b; 
-                    Item.Card_Name = row.card_name;
-                    Item.IdLote = row.id_lote;
-                    ListaResultados.Add(Item);
-                }
+                //if (row.id_lote > 0)
+                //{
+                //    ItemMP_Lote Item = new ItemMP_Lote();
+                //    Item.ItemCode = row.itemcode;
+                //    Item.Lote = row.lote_b; 
+                //    Item.Card_Name = row.card_name;
+                //    Item.IdLote = row.id_lote;
+                //    ListaResultados.Add(Item);
+                //}
+                ItemSelected = new MateriaPrima();
+                ItemSelected.CodeMP_SAP = row.itemcode;
+                ItemSelected.Name = row.card_name;
             }
             this.DialogResult = DialogResult.OK;
             this.Close();
 
         }
 
-
-
-
-
-
-
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            dsRecepcionMPx.cruce_lote_mpRow row = (dsRecepcionMPx.cruce_lote_mpRow)sender;
+            ListaResultados = new ArrayList();
+            //foreach (dsRecepcionMPx.cruce_lote_mpRow row in dsRecepcionMPx1.cruce_lote_mp.Rows)
+            //{
+                //if (row.id_lote > 0)
+                //{
+                //    ItemMP_Lote Item = new ItemMP_Lote();
+                //    Item.ItemCode = row.itemcode;
+                //    Item.Lote = row.lote_b; 
+                //    Item.Card_Name = row.card_name;
+                //    Item.IdLote = row.id_lote;
+                //    ListaResultados.Add(Item);
+                //}
+                ItemSelected = new MateriaPrima();
+                ItemSelected.CodeMP_SAP = row.itemcode;
+                ItemSelected.Name = row.card_name;
+            //}
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
     }
 }

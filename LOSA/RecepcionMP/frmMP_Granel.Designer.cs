@@ -82,15 +82,22 @@ namespace LOSA.RecepcionMP
             this.colid_tipo_boleta = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSNegocio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProducto = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cmdChangeRM = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.col_Registrar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdPasarAlosy = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colseleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.checkSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.cmdChangeRM = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.label1 = new System.Windows.Forms.Label();
             this.cmdLoteActivo = new DevExpress.XtraEditors.SimpleButton();
             this.checkBoxSeleccionarTodas = new System.Windows.Forms.CheckBox();
             this.cmdGenerarIngreso = new DevExpress.XtraEditors.SimpleButton();
+            this.popupMenuClickDerecho = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             ((System.ComponentModel.ISupportInitialize)(this.gcMP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMP)).BeginInit();
@@ -100,9 +107,11 @@ namespace LOSA.RecepcionMP
             ((System.ComponentModel.ISupportInitialize)(this.GridLookUpEditUbicaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceUbicaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdChangeRM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdPasarAlosy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkSeleccionar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdChangeRM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenuClickDerecho)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAtras
@@ -200,6 +209,7 @@ namespace LOSA.RecepcionMP
             this.gvMP.OptionsFilter.AllowFilterEditor = false;
             this.gvMP.OptionsView.ShowAutoFilterRow = true;
             this.gvMP.OptionsView.ShowGroupPanel = false;
+            this.gvMP.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvMP_RowClick);
             // 
             // colid
             // 
@@ -446,20 +456,11 @@ namespace LOSA.RecepcionMP
             // 
             // colProducto
             // 
-            this.colProducto.ColumnEdit = this.cmdChangeRM;
             this.colProducto.FieldName = "Producto";
             this.colProducto.Name = "colProducto";
+            this.colProducto.OptionsColumn.AllowEdit = false;
             this.colProducto.Visible = true;
             this.colProducto.VisibleIndex = 5;
-            // 
-            // cmdChangeRM
-            // 
-            this.cmdChangeRM.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
-            this.cmdChangeRM.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.cmdChangeRM.Name = "cmdChangeRM";
-            this.cmdChangeRM.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdChangeRM_ButtonClick);
             // 
             // col_Registrar
             // 
@@ -470,9 +471,9 @@ namespace LOSA.RecepcionMP
             // cmdPasarAlosy
             // 
             this.cmdPasarAlosy.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.cmdPasarAlosy.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdPasarAlosy.Name = "cmdPasarAlosy";
             this.cmdPasarAlosy.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdPasarAlosy.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdPasarAlosy_ButtonClick);
@@ -489,6 +490,15 @@ namespace LOSA.RecepcionMP
             // 
             this.checkSeleccionar.AutoHeight = false;
             this.checkSeleccionar.Name = "checkSeleccionar";
+            // 
+            // cmdChangeRM
+            // 
+            this.cmdChangeRM.AutoHeight = false;
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            this.cmdChangeRM.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.cmdChangeRM.Name = "cmdChangeRM";
+            this.cmdChangeRM.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdChangeRM_ButtonClick);
             // 
             // label1
             // 
@@ -549,6 +559,65 @@ namespace LOSA.RecepcionMP
             this.cmdGenerarIngreso.Text = "Generar Ingreso";
             this.cmdGenerarIngreso.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
+            // popupMenuClickDerecho
+            // 
+            this.popupMenuClickDerecho.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1)});
+            this.popupMenuClickDerecho.Manager = this.barManager1;
+            this.popupMenuClickDerecho.Name = "popupMenuClickDerecho";
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Set Cliente Soya";
+            this.barButtonItem1.Id = 0;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
+            // barManager1
+            // 
+            this.barManager1.DockControls.Add(this.barDockControlTop);
+            this.barManager1.DockControls.Add(this.barDockControlBottom);
+            this.barManager1.DockControls.Add(this.barDockControlLeft);
+            this.barManager1.DockControls.Add(this.barDockControlRight);
+            this.barManager1.Form = this;
+            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.barButtonItem1});
+            this.barManager1.MaxItemId = 1;
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Size = new System.Drawing.Size(1167, 0);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 657);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(1167, 0);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 657);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(1167, 0);
+            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 657);
+            // 
             // frmMP_Granel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -561,6 +630,10 @@ namespace LOSA.RecepcionMP
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.gcMP);
+            this.Controls.Add(this.barDockControlLeft);
+            this.Controls.Add(this.barDockControlRight);
+            this.Controls.Add(this.barDockControlBottom);
+            this.Controls.Add(this.barDockControlTop);
             this.Name = "frmMP_Granel";
             this.Text = "Recepción MP Granel";
             ((System.ComponentModel.ISupportInitialize)(this.gcMP)).EndInit();
@@ -572,9 +645,11 @@ namespace LOSA.RecepcionMP
             ((System.ComponentModel.ISupportInitialize)(this.GridLookUpEditUbicaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceUbicaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdChangeRM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdPasarAlosy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkSeleccionar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdChangeRM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenuClickDerecho)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -630,5 +705,12 @@ namespace LOSA.RecepcionMP
         private GridColumn colrack;
         private GridColumn colcodigo_barra;
         private RepositoryItemButtonEdit cmdChangeRM;
+        private DevExpress.XtraBars.PopupMenu popupMenuClickDerecho;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarManager barManager1;
+        private DevExpress.XtraBars.BarDockControl barDockControlTop;
+        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
+        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
+        private DevExpress.XtraBars.BarDockControl barDockControlRight;
     }
 }
