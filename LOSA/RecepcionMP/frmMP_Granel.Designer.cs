@@ -38,6 +38,11 @@ namespace LOSA.RecepcionMP
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.gcMP = new DevExpress.XtraGrid.GridControl();
             this.dsRecepcionMPx1 = new LOSA.RecepcionMP.dsRecepcionMPx();
@@ -77,6 +82,7 @@ namespace LOSA.RecepcionMP
             this.colid_tipo_boleta = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSNegocio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProducto = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmdChangeRM = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.col_Registrar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdPasarAlosy = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colseleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -94,6 +100,7 @@ namespace LOSA.RecepcionMP
             ((System.ComponentModel.ISupportInitialize)(this.GridLookUpEditUbicaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceUbicaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdChangeRM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdPasarAlosy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkSeleccionar)).BeginInit();
             this.SuspendLayout();
@@ -129,7 +136,8 @@ namespace LOSA.RecepcionMP
             this.cmdPasarAlosy,
             this.checkSeleccionar,
             this.gridLookUpEditBarco,
-            this.GridLookUpEditUbicaciones});
+            this.GridLookUpEditUbicaciones,
+            this.cmdChangeRM});
             this.gcMP.Size = new System.Drawing.Size(1167, 541);
             this.gcMP.TabIndex = 7;
             this.gcMP.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -438,11 +446,20 @@ namespace LOSA.RecepcionMP
             // 
             // colProducto
             // 
+            this.colProducto.ColumnEdit = this.cmdChangeRM;
             this.colProducto.FieldName = "Producto";
             this.colProducto.Name = "colProducto";
-            this.colProducto.OptionsColumn.AllowEdit = false;
             this.colProducto.Visible = true;
             this.colProducto.VisibleIndex = 5;
+            // 
+            // cmdChangeRM
+            // 
+            this.cmdChangeRM.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            this.cmdChangeRM.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.cmdChangeRM.Name = "cmdChangeRM";
+            this.cmdChangeRM.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdChangeRM_ButtonClick);
             // 
             // col_Registrar
             // 
@@ -453,9 +470,9 @@ namespace LOSA.RecepcionMP
             // cmdPasarAlosy
             // 
             this.cmdPasarAlosy.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.cmdPasarAlosy.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdPasarAlosy.Name = "cmdPasarAlosy";
             this.cmdPasarAlosy.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdPasarAlosy.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdPasarAlosy_ButtonClick);
@@ -555,6 +572,7 @@ namespace LOSA.RecepcionMP
             ((System.ComponentModel.ISupportInitialize)(this.GridLookUpEditUbicaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceUbicaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdChangeRM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdPasarAlosy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkSeleccionar)).EndInit();
             this.ResumeLayout(false);
@@ -611,5 +629,6 @@ namespace LOSA.RecepcionMP
         private GridColumn colid2;
         private GridColumn colrack;
         private GridColumn colcodigo_barra;
+        private RepositoryItemButtonEdit cmdChangeRM;
     }
 }

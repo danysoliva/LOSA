@@ -1,4 +1,5 @@
 ﻿using ACS.Classes;
+using DevExpress.XtraGrid.Views.Grid;
 using LOSA.Clases;
 using System;
 using System.Collections;
@@ -18,6 +19,7 @@ namespace LOSA.RecepcionMP
     {
         UserLogin UsuarioLogeado;
         ArrayList list = new ArrayList();
+        ArrayList listMP = new ArrayList();
         public frmMP_Granel(UserLogin pUsuarioLogeado)
         {
             InitializeComponent();
@@ -216,10 +218,110 @@ namespace LOSA.RecepcionMP
             }
         }
 
+        private void AddItemCodeMP(string itemcode, string pName)
+        {
+            if (listMP == null)
+                listMP = new ArrayList();
+        
+            if (listMP.Count == 0)
+            {
+                //Lo agregamos por que es el primero
+                MateriaPrima Item = new MateriaPrima();
+                Item.CodeMP_SAP = itemcode;
+                Item.Name = pName;
+                listMP.Add(Item);
+            }
+            else
+            {
+                //Vamos a verificar si el codigo esta en lista
+                bool Exist = false;
+                foreach (MateriaPrima vItemCode in listMP)
+                {
+                    if (itemcode == vItemCode.CodeMP_SAP)
+                        Exist = true;
+                }
+
+                //Si el codigo no esta en lista lo vamos agregar
+                if (!Exist)
+                {
+                    MateriaPrima Item = new MateriaPrima
+                    {
+                        CodeMP_SAP = itemcode,
+                        Name = pName
+                    };
+                    listMP.Add(Item);
+                }
+
+            }
+        }
+
+        private void cmdChangeRM_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            //dsRecepcionMPx1
+            //granel
+            var gridView = (GridView)gcMP.FocusedView;
+            var row = (dsRecepcionMPx.granelRow)gridView.GetFocusedDataRow();
+
+            if(row.itemcode.Trim() == "MP00003" || row.itemcode.Trim() == "MP00004")
+            {
+                int Total = 0;
+                foreach (dsRecepcionMPx.granelRow row_i in dsRecepcionMPx1.granel.Rows)
+                {
+                    if (row_i.seleccionar)
+                    {
+                        Total++;
+                    }
+                }
+                if (Total == 0)
+                {
+                    CajaDialogo.Error("¡Es necesario seleccionar al menos una boleta!");
+                    return;
+                }
+
+                //Agregamos las boletas seleccionadas
+                listMP = new ArrayList();
+                foreach (dsRecepcionMPx.granelRow row_i in dsRecepcionMPx1.granel.Rows)
+                {
+                    if (row_i.seleccionar)
+                    {
+                        AddItemCodeMP(row_i.itemcode, row_i.Producto);
+                    }
+                }
+
+                frmMP_Granel_Selec_MP frm = new frmMP_Granel_Selec_MP(listMP);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    ArrayList ListaRes = frm.ListaResultados;
+                    foreach (MateriaPrima Item in ListaRes)
+                    {
+                        //hacer la lista de boletas.
+                        ArrayList ListaBoletas = new ArrayList(); 
+                        foreach (dsRecepcionMPx.granelRow row_granel in dsRecepcionMPx1.granel.Rows)
+                        {
+                            if (row_granel.seleccionar)
+                            {
+                                if (row_granel.itemcode == Item.CodeMP_SAP)
+                                {
+                                    ListaBoletas.Add(row_granel);
+                                }
+                            }
+                        }
+
+                        //frmIngresoGranelAlosy frm1 = new frmIngresoGranelAlosy(this.UsuarioLogeado, ListaBoletas, Item);
+                        //if (frm1.ShowDialog() == DialogResult.OK)
+                        //{
+                        //    LoadData();
+                        //}
+                    }
+                }
 
 
+            }
+            else
+            {
+                CajaDialogo.Information("¡Solo se Permite el cambio en Harinas de Soya!");
+            }
 
-
-
+        }
     }
 }
