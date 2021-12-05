@@ -1,4 +1,5 @@
 ﻿using ACS.Classes;
+using DevExpress.XtraGrid.Views.Grid;
 using LOSA.Clases;
 using System;
 using System.Collections;
@@ -18,6 +19,7 @@ namespace LOSA.RecepcionMP
     {
         UserLogin UsuarioLogeado;
         ArrayList list = new ArrayList();
+        ArrayList listMP = new ArrayList();
         public frmMP_Granel(UserLogin pUsuarioLogeado)
         {
             InitializeComponent();
@@ -215,6 +217,113 @@ namespace LOSA.RecepcionMP
 
             }
         }
+
+        private void AddItemCodeMP(string itemcode, string pName)
+        {
+            if (listMP == null)
+                listMP = new ArrayList();
+        
+            if (listMP.Count == 0)
+            {
+                //Lo agregamos por que es el primero
+                MateriaPrima Item = new MateriaPrima();
+                Item.CodeMP_SAP = itemcode;
+                Item.Name = pName;
+                listMP.Add(Item);
+            }
+            else
+            {
+                //Vamos a verificar si el codigo esta en lista
+                bool Exist = false;
+                foreach (MateriaPrima vItemCode in listMP)
+                {
+                    if (itemcode == vItemCode.CodeMP_SAP)
+                        Exist = true;
+                }
+
+                //Si el codigo no esta en lista lo vamos agregar
+                if (!Exist)
+                {
+                    MateriaPrima Item = new MateriaPrima
+                    {
+                        CodeMP_SAP = itemcode,
+                        Name = pName
+                    };
+                    listMP.Add(Item);
+                }
+
+            }
+        }
+
+        private void cmdChangeRM_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            
+
+        }
+
+        private void cmdChangeMP_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void gvMP_RowClick(object sender, RowClickEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            {
+                popupMenuClickDerecho.ShowPopup(Cursor.Position);
+            }
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //Click 
+            int Total = 0;
+            foreach (dsRecepcionMPx.granelRow row_i in dsRecepcionMPx1.granel.Rows)
+            {
+                if (row_i.seleccionar)
+                {
+                    Total++;
+                }
+            }
+            if (Total == 0)
+            {
+                CajaDialogo.Error("¡Es necesario seleccionar al menos una boleta!");
+                return;
+            }
+
+            //Agregamos las boletas seleccionadas
+            listMP = new ArrayList();
+            foreach (dsRecepcionMPx.granelRow row_i in dsRecepcionMPx1.granel.Rows)
+            {
+                if (row_i.seleccionar)
+                    if (row_i.itemcode.Trim() == "MP00003" || row_i.itemcode.Trim() == "MP00004")
+                        AddItemCodeMP(row_i.itemcode, row_i.Producto);
+            }
+
+            if (listMP.Count > 0)
+            {
+                frmMP_Granel_Selec_MP frm = new frmMP_Granel_Selec_MP(listMP, "");
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    foreach (dsRecepcionMPx.granelRow row_granel in dsRecepcionMPx1.granel.Rows)
+                    {
+                        if (row_granel.seleccionar)
+                        {
+                            if (row_granel.itemcode.Trim() == "MP00003" || row_granel.itemcode.Trim() == "MP00004")
+                            {
+                                row_granel.itemcode = frm.ItemSelected.CodeMP_SAP;
+                                row_granel.Producto = frm.ItemSelected.Name;
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                CajaDialogo.Error("¡Solo se permite cambiar Boletas de Materia Prima: Harina de Soya!");
+            }
+        }
+
 
 
 

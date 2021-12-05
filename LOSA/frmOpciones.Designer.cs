@@ -90,6 +90,7 @@
             this.btnTiposPresentaciones = new DevExpress.XtraEditors.SimpleButton();
             this.btnBodegas = new DevExpress.XtraEditors.SimpleButton();
             this.tabProduccion = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton17 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.cmdTarimasPT = new DevExpress.XtraEditors.SimpleButton();
@@ -964,6 +965,7 @@
             // 
             // tabProduccion
             // 
+            this.tabProduccion.Controls.Add(this.simpleButton17);
             this.tabProduccion.Controls.Add(this.simpleButton7);
             this.tabProduccion.Controls.Add(this.btnPrint);
             this.tabProduccion.Controls.Add(this.cmdTarimasPT);
@@ -973,6 +975,21 @@
             this.tabProduccion.PageVisible = false;
             this.tabProduccion.Size = new System.Drawing.Size(772, 441);
             this.tabProduccion.Text = "Producción";
+            // 
+            // simpleButton17
+            // 
+            this.simpleButton17.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton17.Appearance.Options.UseFont = true;
+            this.simpleButton17.Appearance.Options.UseTextOptions = true;
+            this.simpleButton17.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton17.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton17.ImageOptions.Image = global::LOSA.Properties.Resources.tanque;
+            this.simpleButton17.Location = new System.Drawing.Point(237, 206);
+            this.simpleButton17.Name = "simpleButton17";
+            this.simpleButton17.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton17.TabIndex = 17;
+            this.simpleButton17.Text = "Bin Activo";
+            this.simpleButton17.Click += new System.EventHandler(this.simpleButton17_Click_3);
             // 
             // simpleButton7
             // 
@@ -1218,5 +1235,6 @@
         private DevExpress.XtraTab.XtraTabPage tabMasterData;
         private DevExpress.XtraTab.XtraTabPage tabReportes;
         private DevExpress.XtraEditors.SimpleButton btnPendientes_ingreso_a_planta;
+        private DevExpress.XtraEditors.SimpleButton simpleButton17;
     }
 }
