@@ -77,6 +77,7 @@
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnAgregar = new DevExpress.XtraEditors.SimpleButton();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
+            this.colcodigoMP = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_ingreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsAlmacenesExternos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_ingreso)).BeginInit();
@@ -123,6 +124,7 @@
             this.grdv_ingreso.Appearance.Row.Options.UseFont = true;
             this.grdv_ingreso.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colNingreso,
+            this.colcodigoMP,
             this.colitemcode,
             this.colItemName,
             this.colid_proveedor,
@@ -187,8 +189,6 @@
             this.colid_proveedor.Name = "colid_proveedor";
             this.colid_proveedor.OptionsColumn.AllowEdit = false;
             this.colid_proveedor.OptionsFilter.AllowFilter = false;
-            this.colid_proveedor.Visible = true;
-            this.colid_proveedor.VisibleIndex = 1;
             this.colid_proveedor.Width = 101;
             // 
             // colCardName
@@ -405,6 +405,15 @@
             this.btnAtras.Text = "Atras";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
+            // colcodigoMP
+            // 
+            this.colcodigoMP.Caption = "Codigo MP";
+            this.colcodigoMP.FieldName = "codigoMP";
+            this.colcodigoMP.Name = "colcodigoMP";
+            this.colcodigoMP.OptionsColumn.AllowEdit = false;
+            this.colcodigoMP.Visible = true;
+            this.colcodigoMP.VisibleIndex = 1;
+            // 
             // xfrmAlmacenesExternos_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -459,5 +468,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraGrid.Columns.GridColumn colcodigoMP;
     }
 }

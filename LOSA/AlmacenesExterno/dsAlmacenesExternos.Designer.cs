@@ -727,6 +727,8 @@ namespace LOSA.AlmacenesExterno {
             
             private global::System.Data.DataColumn columnunidades;
             
+            private global::System.Data.DataColumn columncodigoMP;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ingreso_externo_hDataTable() {
@@ -874,6 +876,14 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn codigoMPColumn {
+                get {
+                    return this.columncodigoMP;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -909,7 +919,7 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ingreso_externo_hRow Addingreso_externo_hRow(int id, int id_bodega, string bodega, decimal peso, string cardcode, string CardName, System.DateTime fecha_ingreso, int id_user_creador, string usuario, int id_estado, string estado, System.DateTime fecha_documento, int DocEntrySAP, decimal unidades) {
+            public ingreso_externo_hRow Addingreso_externo_hRow(int id, int id_bodega, string bodega, decimal peso, string cardcode, string CardName, System.DateTime fecha_ingreso, int id_user_creador, string usuario, int id_estado, string estado, System.DateTime fecha_documento, int DocEntrySAP, decimal unidades, string codigoMP) {
                 ingreso_externo_hRow rowingreso_externo_hRow = ((ingreso_externo_hRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -925,7 +935,8 @@ namespace LOSA.AlmacenesExterno {
                         estado,
                         fecha_documento,
                         DocEntrySAP,
-                        unidades};
+                        unidades,
+                        codigoMP};
                 rowingreso_externo_hRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowingreso_externo_hRow);
                 return rowingreso_externo_hRow;
@@ -962,6 +973,7 @@ namespace LOSA.AlmacenesExterno {
                 this.columnfecha_documento = base.Columns["fecha_documento"];
                 this.columnDocEntrySAP = base.Columns["DocEntrySAP"];
                 this.columnunidades = base.Columns["unidades"];
+                this.columncodigoMP = base.Columns["codigoMP"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -995,6 +1007,8 @@ namespace LOSA.AlmacenesExterno {
                 base.Columns.Add(this.columnDocEntrySAP);
                 this.columnunidades = new global::System.Data.DataColumn("unidades", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnunidades);
+                this.columncodigoMP = new global::System.Data.DataColumn("codigoMP", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncodigoMP);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1909,6 +1923,8 @@ namespace LOSA.AlmacenesExterno {
             
             private global::System.Data.DataColumn columnid_presentacion;
             
+            private global::System.Data.DataColumn columnrow;
+            
             private static System.DateTime columnfecha_vencimiento_defaultValue = global::System.DateTime.Parse("1900-01-01T00:00:00");
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2026,6 +2042,14 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn rowColumn {
+                get {
+                    return this.columnrow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2061,7 +2085,7 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Conf_MP_IngresadasRow AddConf_MP_IngresadasRow(string ItemCode, decimal CantidadIngresada, string Descripcion, decimal UnidadesIngresar, System.DateTime fecha_vencimiento, int LineNum, int id_mp, bool seleccionar, string bodega, int id_presentacion) {
+            public Conf_MP_IngresadasRow AddConf_MP_IngresadasRow(string ItemCode, decimal CantidadIngresada, string Descripcion, decimal UnidadesIngresar, System.DateTime fecha_vencimiento, int LineNum, int id_mp, bool seleccionar, string bodega, int id_presentacion, int row) {
                 Conf_MP_IngresadasRow rowConf_MP_IngresadasRow = ((Conf_MP_IngresadasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ItemCode,
@@ -2073,7 +2097,8 @@ namespace LOSA.AlmacenesExterno {
                         id_mp,
                         seleccionar,
                         bodega,
-                        id_presentacion};
+                        id_presentacion,
+                        row};
                 rowConf_MP_IngresadasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowConf_MP_IngresadasRow);
                 return rowConf_MP_IngresadasRow;
@@ -2106,6 +2131,7 @@ namespace LOSA.AlmacenesExterno {
                 this.columnseleccionar = base.Columns["seleccionar"];
                 this.columnbodega = base.Columns["bodega"];
                 this.columnid_presentacion = base.Columns["id_presentacion"];
+                this.columnrow = base.Columns["row"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2131,6 +2157,8 @@ namespace LOSA.AlmacenesExterno {
                 base.Columns.Add(this.columnbodega);
                 this.columnid_presentacion = new global::System.Data.DataColumn("id_presentacion", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_presentacion);
+                this.columnrow = new global::System.Data.DataColumn("row", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnrow);
                 this.columnfecha_vencimiento.DefaultValue = ((System.DateTime)(Conf_MP_IngresadasDataTable.columnfecha_vencimiento_defaultValue));
             }
             
@@ -2287,6 +2315,10 @@ namespace LOSA.AlmacenesExterno {
             
             private global::System.Data.DataColumn columnfecha_produccion;
             
+            private global::System.Data.DataColumn columnid_pertenece;
+            
+            private global::System.Data.DataColumn columnLoteNumerador;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public LoteDataTable() {
@@ -2410,6 +2442,22 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_perteneceColumn {
+                get {
+                    return this.columnid_pertenece;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn LoteNumeradorColumn {
+                get {
+                    return this.columnLoteNumerador;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2445,7 +2493,7 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public LoteRow AddLoteRow(int id, decimal cantidad, decimal unidades, string id_detalle, string lote, decimal CantSeleccionada, bool Seleccionar, int num_line, int row_, System.DateTime fecha_vencimiento, System.DateTime fecha_produccion) {
+            public LoteRow AddLoteRow(int id, decimal cantidad, decimal unidades, string id_detalle, string lote, decimal CantSeleccionada, bool Seleccionar, int num_line, int row_, System.DateTime fecha_vencimiento, System.DateTime fecha_produccion, int id_pertenece, int LoteNumerador) {
                 LoteRow rowLoteRow = ((LoteRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -2458,7 +2506,9 @@ namespace LOSA.AlmacenesExterno {
                         num_line,
                         row_,
                         fecha_vencimiento,
-                        fecha_produccion};
+                        fecha_produccion,
+                        id_pertenece,
+                        LoteNumerador};
                 rowLoteRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowLoteRow);
                 return rowLoteRow;
@@ -2492,6 +2542,8 @@ namespace LOSA.AlmacenesExterno {
                 this.columnrow_ = base.Columns["row_"];
                 this.columnfecha_vencimiento = base.Columns["fecha_vencimiento"];
                 this.columnfecha_produccion = base.Columns["fecha_produccion"];
+                this.columnid_pertenece = base.Columns["id_pertenece"];
+                this.columnLoteNumerador = base.Columns["LoteNumerador"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2519,6 +2571,10 @@ namespace LOSA.AlmacenesExterno {
                 base.Columns.Add(this.columnfecha_vencimiento);
                 this.columnfecha_produccion = new global::System.Data.DataColumn("fecha_produccion", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfecha_produccion);
+                this.columnid_pertenece = new global::System.Data.DataColumn("id_pertenece", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_pertenece);
+                this.columnLoteNumerador = new global::System.Data.DataColumn("LoteNumerador", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLoteNumerador);
                 this.columnCantSeleccionada.DefaultValue = ((decimal)(0m));
                 this.columnnum_line.DefaultValue = ((int)(-1));
                 this.columnrow_.DefaultValue = ((int)(0));
@@ -2677,6 +2733,10 @@ namespace LOSA.AlmacenesExterno {
             
             private global::System.Data.DataColumn columnfecha_produccion;
             
+            private global::System.Data.DataColumn columnid_pertenece;
+            
+            private global::System.Data.DataColumn columnLoteNumerador;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Lote_SeleccionadosDataTable() {
@@ -2800,6 +2860,22 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_perteneceColumn {
+                get {
+                    return this.columnid_pertenece;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn LoteNumeradorColumn {
+                get {
+                    return this.columnLoteNumerador;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2835,7 +2911,7 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Lote_SeleccionadosRow AddLote_SeleccionadosRow(int id, decimal cantidad, decimal unidades, string id_detalle, string lote, decimal CantSeleccionada, bool Seleccionar, string num_line, int row_, System.DateTime fecha_vencimiento, System.DateTime fecha_produccion) {
+            public Lote_SeleccionadosRow AddLote_SeleccionadosRow(int id, decimal cantidad, decimal unidades, string id_detalle, string lote, decimal CantSeleccionada, bool Seleccionar, string num_line, int row_, System.DateTime fecha_vencimiento, System.DateTime fecha_produccion, int id_pertenece, int LoteNumerador) {
                 Lote_SeleccionadosRow rowLote_SeleccionadosRow = ((Lote_SeleccionadosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -2848,7 +2924,9 @@ namespace LOSA.AlmacenesExterno {
                         num_line,
                         row_,
                         fecha_vencimiento,
-                        fecha_produccion};
+                        fecha_produccion,
+                        id_pertenece,
+                        LoteNumerador};
                 rowLote_SeleccionadosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowLote_SeleccionadosRow);
                 return rowLote_SeleccionadosRow;
@@ -2882,6 +2960,8 @@ namespace LOSA.AlmacenesExterno {
                 this.columnrow_ = base.Columns["row_"];
                 this.columnfecha_vencimiento = base.Columns["fecha_vencimiento"];
                 this.columnfecha_produccion = base.Columns["fecha_produccion"];
+                this.columnid_pertenece = base.Columns["id_pertenece"];
+                this.columnLoteNumerador = base.Columns["LoteNumerador"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2909,6 +2989,10 @@ namespace LOSA.AlmacenesExterno {
                 base.Columns.Add(this.columnfecha_vencimiento);
                 this.columnfecha_produccion = new global::System.Data.DataColumn("fecha_produccion", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfecha_produccion);
+                this.columnid_pertenece = new global::System.Data.DataColumn("id_pertenece", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_pertenece);
+                this.columnLoteNumerador = new global::System.Data.DataColumn("LoteNumerador", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLoteNumerador);
                 this.columnCantSeleccionada.DefaultValue = ((decimal)(0m));
                 this.columnnum_line.DefaultValue = ((string)("-1"));
                 this.columnrow_.DefaultValue = ((int)(-1));
@@ -5529,6 +5613,22 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string codigoMP {
+                get {
+                    try {
+                        return ((string)(this[this.tableingreso_externo_h.codigoMPColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'codigoMP\' de la tabla \'ingreso_externo_h\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableingreso_externo_h.codigoMPColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableingreso_externo_h.idColumn);
             }
@@ -5693,6 +5793,18 @@ namespace LOSA.AlmacenesExterno {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetunidadesNull() {
                 this[this.tableingreso_externo_h.unidadesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IscodigoMPNull() {
+                return this.IsNull(this.tableingreso_externo_h.codigoMPColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetcodigoMPNull() {
+                this[this.tableingreso_externo_h.codigoMPColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -6495,6 +6607,22 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int row {
+                get {
+                    try {
+                        return ((int)(this[this.tableConf_MP_Ingresadas.rowColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'row\' de la tabla \'Conf_MP_Ingresadas\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableConf_MP_Ingresadas.rowColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsItemCodeNull() {
                 return this.IsNull(this.tableConf_MP_Ingresadas.ItemCodeColumn);
             }
@@ -6611,6 +6739,18 @@ namespace LOSA.AlmacenesExterno {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setid_presentacionNull() {
                 this[this.tableConf_MP_Ingresadas.id_presentacionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsrowNull() {
+                return this.IsNull(this.tableConf_MP_Ingresadas.rowColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetrowNull() {
+                this[this.tableConf_MP_Ingresadas.rowColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -6806,6 +6946,38 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_pertenece {
+                get {
+                    try {
+                        return ((int)(this[this.tableLote.id_perteneceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_pertenece\' de la tabla \'Lote\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLote.id_perteneceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int LoteNumerador {
+                get {
+                    try {
+                        return ((int)(this[this.tableLote.LoteNumeradorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'LoteNumerador\' de la tabla \'Lote\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLote.LoteNumeradorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableLote.idColumn);
             }
@@ -6934,6 +7106,30 @@ namespace LOSA.AlmacenesExterno {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setfecha_produccionNull() {
                 this[this.tableLote.fecha_produccionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_perteneceNull() {
+                return this.IsNull(this.tableLote.id_perteneceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_perteneceNull() {
+                this[this.tableLote.id_perteneceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsLoteNumeradorNull() {
+                return this.IsNull(this.tableLote.LoteNumeradorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetLoteNumeradorNull() {
+                this[this.tableLote.LoteNumeradorColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7131,6 +7327,40 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_pertenece {
+                get {
+                    try {
+                        return ((int)(this[this.tableLote_Seleccionados.id_perteneceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_pertenece\' de la tabla \'Lote_Seleccionados\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableLote_Seleccionados.id_perteneceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int LoteNumerador {
+                get {
+                    try {
+                        return ((int)(this[this.tableLote_Seleccionados.LoteNumeradorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'LoteNumerador\' de la tabla \'Lote_Seleccionados\' es DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableLote_Seleccionados.LoteNumeradorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableLote_Seleccionados.idColumn);
             }
@@ -7259,6 +7489,30 @@ namespace LOSA.AlmacenesExterno {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setfecha_produccionNull() {
                 this[this.tableLote_Seleccionados.fecha_produccionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_perteneceNull() {
+                return this.IsNull(this.tableLote_Seleccionados.id_perteneceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_perteneceNull() {
+                this[this.tableLote_Seleccionados.id_perteneceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsLoteNumeradorNull() {
+                return this.IsNull(this.tableLote_Seleccionados.LoteNumeradorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetLoteNumeradorNull() {
+                this[this.tableLote_Seleccionados.LoteNumeradorColumn] = global::System.Convert.DBNull;
             }
         }
         
