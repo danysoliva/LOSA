@@ -27,6 +27,11 @@ namespace LOSA.RecepcionMP
         UserLogin UsuarioLogeado;
         decimal factor;
         int id_transferencia;
+        decimal peso_boleta;
+        public int Id_ingreso;
+        public string Dscripcion;
+        public string pv;
+        public string cardcode;
         public frmTarima(UserLogin pUser)
         {
             InitializeComponent();
@@ -40,7 +45,7 @@ namespace LOSA.RecepcionMP
 
         public frmTarima(UserLogin pUser,
             int id_mp,
-            int  pid_transferencia)
+            int pid_transferencia)
         {
             InitializeComponent();
             DataOperations dp = new DataOperations();
@@ -105,6 +110,7 @@ namespace LOSA.RecepcionMP
                 this.IdSerie = frm.IdSerie;
                 this.NumBoleta = frm.NumBoleta;
                 this.ItemCode = frm.ItemCode;
+                this.peso_boleta = frm.Peso_Bascula;
                 LoadDatosBoleta();
             }
         }
@@ -151,7 +157,7 @@ namespace LOSA.RecepcionMP
 
         private void txtDescripcionCorta_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
 
                 int id_b = 0;
@@ -159,13 +165,13 @@ namespace LOSA.RecepcionMP
                 {
                     id_b = Convert.ToInt32(txtIdBoleta.Text);
                 }
-                catch{}
+                catch { }
 
                 this.IdSerie = id_b;
                 Boleta bol1 = new Boleta();
                 if (bol1.RecuperarRegistro(this.IdSerie))
                 {
-                   // txtIdBoleta.Text = bol1.NumID.ToString();
+                    // txtIdBoleta.Text = bol1.NumID.ToString();
                 }
                 LoadDatosBoleta();
             }
@@ -217,18 +223,21 @@ namespace LOSA.RecepcionMP
             //    return;
             //}
 
-            if (Convert.ToDecimal(txtUnidades .Text) <= 0)
+            if (Convert.ToDecimal(txtUnidades.Text) <= 0)
             {
                 CajaDialogo.Error("No se puede registrar una tarima con unidades de materia en cero (0)!");
                 return;
             }
 
-            if (string.IsNullOrEmpty(gridLookUpEditPresentacion.Text))
+            if (!Tg_presentacion_promedio.IsOn)
             {
-                CajaDialogo.Error("Es necesario seleccionar la presentacion de la Materia Prima!");
-                return;
+                if (string.IsNullOrEmpty(gridLookUpEditPresentacion.Text))
+                {
+                    CajaDialogo.Error("Es necesario seleccionar la presentacion de la Materia Prima!");
+                    return;
+                }
             }
-            
+
             if (string.IsNullOrEmpty(txtLote.Text))
             {
                 CajaDialogo.Error("Es obligatorio llenar el lote para la tarima!");
@@ -252,7 +261,7 @@ namespace LOSA.RecepcionMP
             {
                 cant = Convert.ToInt32(txtCantidadTarimasTotal.Text);
             }
-            catch 
+            catch
             {
                 cant = 0;
             }
@@ -290,7 +299,7 @@ namespace LOSA.RecepcionMP
             {
                 CajaDialogo.Error(ex.Message);
                 return;
-               
+
             }
 
             bool Guardo = false;
@@ -310,7 +319,7 @@ namespace LOSA.RecepcionMP
                     cmm.Parameters.AddWithValue("@id", 1);
                     string barcode = cmm.ExecuteScalar().ToString();
 
-                    SqlCommand cmd = new SqlCommand("sp_insert_new_tarima", con);
+                    SqlCommand cmd = new SqlCommand("sp_insert_new_tarima_v2", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@itemcode", txtCodigoMP.Text);
                     cmd.Parameters.AddWithValue("@id_proveedor", txtCodigoProveedor.Text);
@@ -326,6 +335,8 @@ namespace LOSA.RecepcionMP
                     cmd.Parameters.AddWithValue("@cant", txtUnidades.Text);
                     cmd.Parameters.AddWithValue("@peso", Convert.ToDecimal(txtPesoKg.Text));
                     cmd.Parameters.AddWithValue("@idlotes", idloteInserted);
+                    cmd.Parameters.AddWithValue("@factor", factor);
+                    cmd.Parameters.AddWithValue("@bit_promedio", Tg_presentacion_promedio.IsOn ? 1 : 0);
                     vid_tarima = Convert.ToInt32(cmd.ExecuteScalar());
 
                     SqlCommand cmdx = new SqlCommand("sp_insert_ubicacion_default", con);// ahora recibe el parametro de ubicacion para poder guardarlo automatico en todas las tarimas
@@ -352,7 +363,7 @@ namespace LOSA.RecepcionMP
             if (Guardo)
             {
                 DialogResult r = CajaDialogo.Pregunta("Desea Imprimir la(s) Hoja(s) de Ingreso?");
-                if(r == DialogResult.Yes)
+                if (r == DialogResult.Yes)
                 {
                     for (int i = 0; i <= (List.Count - 1); i++)
                     {
@@ -363,7 +374,7 @@ namespace LOSA.RecepcionMP
                         report.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
                         report.Print();
 
-                        
+
                     }
                 }
                 rptLoteRotulo boleta = new rptLoteRotulo(idloteInserted);
@@ -445,19 +456,43 @@ namespace LOSA.RecepcionMP
             if (pre1.RecuperarRegistro(Convert.ToInt32(gridLookUpEditPresentacion.EditValue)))
             {
                 factor = pre1.Factor;
-                txtPesoKg.Text = string.Format("{0:###,##0.00}", (factor * Convert.ToDecimal(txtUnidades .Text)));
+                txtPesoKg.Text = string.Format("{0:###,##0.00}", (factor * Convert.ToDecimal(txtUnidades.Text)));
             }
         }
 
-        private void txtUnidades_TextChanged(object sender, EventArgs e)
+        public void CalculodelPromedio()
         {
             try
             {
-                txtPesoKg.Text = string.Format("{0:###,##0.00}", (factor * Convert.ToDecimal(txtUnidades .Text)));
+                int unidades_Tarimas = Convert.ToInt32(txtUnidades.Text);
+                int cantidad_tariams = Convert.ToInt32(txtCantidadTarimasTotal.Text);
+                decimal Unidades_totales = unidades_Tarimas * cantidad_tariams;
+                decimal total_pesoKg = Convert.ToDecimal(txtPesoKg.Text);
+                factor = total_pesoKg / Unidades_totales;
+                txtpresentacionPromedio.Text = string.Format("{0:###,##0.00}", (factor)); 
+
+
             }
-            catch
+            catch (Exception ex)
             {
-                txtPesoKg.Text = "0";
+            }
+        }
+        private void txtUnidades_TextChanged(object sender, EventArgs e)
+        {
+            if (Tg_presentacion_promedio.IsOn) // 
+            {
+                CalculodelPromedio();
+            }
+            else
+            {
+                try
+                {
+                    txtPesoKg.Text = string.Format("{0:###,##0.00}", (factor * Convert.ToDecimal(txtUnidades.Text)));
+                }
+                catch
+                {
+                    txtPesoKg.Text = "0";
+                }
             }
             //txtPesoTM.Text = string.Format("{0:0.00}", (factor * Convert.ToDecimal(txtUnidades.Text)));
         }
@@ -512,6 +547,87 @@ namespace LOSA.RecepcionMP
                 txtMP_Name.Text = frm.MateriaPrima;
             }     
             
+        }
+
+        private void Tg_presentacion_promedio_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void txtPesoKg_EditValueChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Tg_presentacion_promedio_Toggled(object sender, EventArgs e)
+        {
+            if (Tg_presentacion_promedio.IsOn)          // Data
+            {
+                try
+                {
+                    txtpresentacionPromedio.Visible = true;
+                    gridLookUpEditPresentacion.Visible = false;
+                    factor = 0;
+                    labelControl12.Text = "Peso total KG";
+                    txtPesoKg.Enabled = true;
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+            else
+            {
+                txtpresentacionPromedio.Visible = false;
+                gridLookUpEditPresentacion.Visible = true;
+                txtPesoKg.Enabled = false;
+                labelControl12.Text = "Peso Kg por tarima";
+
+                try
+                {
+                    PresentacionX pre1 = new PresentacionX();
+                    if (pre1.RecuperarRegistro(Convert.ToInt32(gridLookUpEditPresentacion.EditValue)))
+                    {
+                        factor = pre1.Factor;
+                        txtPesoKg.Text = string.Format("{0:###,##0.00}", (factor * Convert.ToDecimal(txtUnidades.Text)));
+
+                    }
+                }
+                catch (Exception ex)
+                {
+
+
+                }
+            }
+        }
+
+        private void txtCantidadTarimasTotal_TextChanged(object sender, EventArgs e)
+        {
+            if (Tg_presentacion_promedio.IsOn)
+            {
+                try
+                {
+                    CalculodelPromedio();
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+            else
+            {
+
+            }
+        }
+
+        private void txtPesoKg_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPesoKg_TextChanged_1(object sender, EventArgs e)
+        {
+            CalculodelPromedio();
         }
     }
 }

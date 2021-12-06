@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEditTarima));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.txtCantidadTarimasTotal = new DevExpress.XtraEditors.TextEdit();
             this.txtPesoKg = new DevExpress.XtraEditors.TextEdit();
@@ -74,6 +74,8 @@
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIdProveedor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtCodigoProveedor = new DevExpress.XtraEditors.TextEdit();
+            this.Tg_presentacion_promedio = new DevExpress.XtraEditors.ToggleSwitch();
+            this.txtpresentacionPromedio = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadTarimasTotal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPesoKg.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditPresentacion.Properties)).BeginInit();
@@ -96,6 +98,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dsLogistica21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvProveedores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigoProveedor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tg_presentacion_promedio.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtpresentacionPromedio.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl13
@@ -123,6 +127,7 @@
             this.txtCantidadTarimasTotal.Size = new System.Drawing.Size(102, 32);
             this.txtCantidadTarimasTotal.TabIndex = 64;
             this.txtCantidadTarimasTotal.Visible = false;
+            this.txtCantidadTarimasTotal.TextChanged += new System.EventHandler(this.txtCantidadTarimasTotal_TextChanged);
             // 
             // txtPesoKg
             // 
@@ -136,6 +141,7 @@
             this.txtPesoKg.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtPesoKg.Size = new System.Drawing.Size(142, 32);
             this.txtPesoKg.TabIndex = 84;
+            this.txtPesoKg.TextChanged += new System.EventHandler(this.txtPesoKg_TextChanged);
             // 
             // gridLookUpEditPresentacion
             // 
@@ -427,7 +433,7 @@
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl1.Location = new System.Drawing.Point(7, 3);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(629, 40);
+            this.labelControl1.Size = new System.Drawing.Size(1060, 40);
             this.labelControl1.TabIndex = 68;
             this.labelControl1.Text = "Modificar Tarima #Lote";
             // 
@@ -441,7 +447,7 @@
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(454, 49);
+            this.btnAtras.Location = new System.Drawing.Point(885, 49);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(167, 47);
             this.btnAtras.TabIndex = 66;
@@ -474,17 +480,17 @@
             this.txtMP_Name.Name = "txtMP_Name";
             this.txtMP_Name.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.txtMP_Name.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions1.Image = global::LOSA.Properties.Resources.wheat;
-            serializableAppearanceObject1.BackColor = System.Drawing.Color.Transparent;
-            serializableAppearanceObject1.Options.UseBackColor = true;
-            serializableAppearanceObject2.BackColor = System.Drawing.Color.LightBlue;
-            serializableAppearanceObject2.Options.UseBackColor = true;
-            serializableAppearanceObject3.BackColor = System.Drawing.Color.LightBlue;
-            serializableAppearanceObject3.Options.UseBackColor = true;
-            serializableAppearanceObject4.BackColor = System.Drawing.Color.LightBlue;
-            serializableAppearanceObject4.Options.UseBackColor = true;
+            editorButtonImageOptions2.Image = global::LOSA.Properties.Resources.wheat;
+            serializableAppearanceObject5.BackColor = System.Drawing.Color.Transparent;
+            serializableAppearanceObject5.Options.UseBackColor = true;
+            serializableAppearanceObject6.BackColor = System.Drawing.Color.LightBlue;
+            serializableAppearanceObject6.Options.UseBackColor = true;
+            serializableAppearanceObject7.BackColor = System.Drawing.Color.LightBlue;
+            serializableAppearanceObject7.Options.UseBackColor = true;
+            serializableAppearanceObject8.BackColor = System.Drawing.Color.LightBlue;
+            serializableAppearanceObject8.Options.UseBackColor = true;
             this.txtMP_Name.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.txtMP_Name.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.txtMP_Name.Properties.ReadOnly = true;
             this.txtMP_Name.Size = new System.Drawing.Size(439, 30);
@@ -574,12 +580,39 @@
             this.txtCodigoProveedor.Size = new System.Drawing.Size(142, 28);
             this.txtCodigoProveedor.TabIndex = 91;
             // 
+            // Tg_presentacion_promedio
+            // 
+            this.Tg_presentacion_promedio.Location = new System.Drawing.Point(627, 237);
+            this.Tg_presentacion_promedio.Name = "Tg_presentacion_promedio";
+            this.Tg_presentacion_promedio.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tg_presentacion_promedio.Properties.Appearance.Options.UseFont = true;
+            this.Tg_presentacion_promedio.Properties.OffText = "Activar presentacion promedio";
+            this.Tg_presentacion_promedio.Properties.OnText = "Desactivar presentacion promedio";
+            this.Tg_presentacion_promedio.Size = new System.Drawing.Size(411, 32);
+            this.Tg_presentacion_promedio.TabIndex = 93;
+            this.Tg_presentacion_promedio.Toggled += new System.EventHandler(this.Tg_presentacion_promedio_Toggled);
+            // 
+            // txtpresentacionPromedio
+            // 
+            this.txtpresentacionPromedio.EditValue = "0";
+            this.txtpresentacionPromedio.Enabled = false;
+            this.txtpresentacionPromedio.Location = new System.Drawing.Point(451, 238);
+            this.txtpresentacionPromedio.Name = "txtpresentacionPromedio";
+            this.txtpresentacionPromedio.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpresentacionPromedio.Properties.Appearance.Options.UseFont = true;
+            this.txtpresentacionPromedio.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtpresentacionPromedio.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtpresentacionPromedio.Size = new System.Drawing.Size(170, 32);
+            this.txtpresentacionPromedio.TabIndex = 94;
+            // 
             // frmEditTarima
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(638, 560);
+            this.ClientSize = new System.Drawing.Size(1069, 560);
+            this.Controls.Add(this.txtpresentacionPromedio);
+            this.Controls.Add(this.Tg_presentacion_promedio);
             this.Controls.Add(this.glueProveedor);
             this.Controls.Add(this.txtCodigoProveedor);
             this.Controls.Add(this.txtMP_Name);
@@ -634,6 +667,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dsLogistica21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvProveedores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigoProveedor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tg_presentacion_promedio.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtpresentacionPromedio.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -680,5 +715,7 @@
         private DevExpress.XtraEditors.TextEdit txtCodigoProveedor;
         private Logistica.dsLogistica2 dsLogistica21;
         private System.Windows.Forms.BindingSource bindingSourceProveedores;
+        private DevExpress.XtraEditors.ToggleSwitch Tg_presentacion_promedio;
+        private DevExpress.XtraEditors.TextEdit txtpresentacionPromedio;
     }
 }

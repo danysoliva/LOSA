@@ -30,12 +30,12 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTransPendientes));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
             this.transexternoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsAlmacenesExternos = new LOSA.AlmacenesExterno.dsAlmacenesExternos();
@@ -51,6 +51,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.btnRealizarIngreso = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btn_close = new DevExpress.XtraEditors.SimpleButton();
+            this.btnTransferencia = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transexternoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsAlmacenesExternos)).BeginInit();
@@ -64,12 +65,12 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_data.DataSource = this.transexternoBindingSource;
-            this.grd_data.Location = new System.Drawing.Point(2, 64);
+            this.grd_data.Location = new System.Drawing.Point(2, 112);
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
             this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnRealizarIngreso});
-            this.grd_data.Size = new System.Drawing.Size(1111, 531);
+            this.grd_data.Size = new System.Drawing.Size(1111, 483);
             this.grd_data.TabIndex = 8;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
@@ -198,9 +199,9 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             // btnRealizarIngreso
             // 
             this.btnRealizarIngreso.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.btnRealizarIngreso.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnRealizarIngreso.Name = "btnRealizarIngreso";
             this.btnRealizarIngreso.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnRealizarIngreso.Click += new System.EventHandler(this.btnRealizarIngreso_Click);
@@ -209,7 +210,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(2, 41);
+            this.labelControl1.Location = new System.Drawing.Point(2, 89);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(293, 17);
             this.labelControl1.TabIndex = 9;
@@ -228,11 +229,28 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.btn_close.Text = "Cerrar";
             this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
+            // btnTransferencia
+            // 
+            this.btnTransferencia.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.btnTransferencia.Appearance.Options.UseFont = true;
+            this.btnTransferencia.Appearance.Options.UseTextOptions = true;
+            this.btnTransferencia.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btnTransferencia.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnTransferencia.ImageOptions.Image = global::LOSA.Properties.Resources.logout;
+            this.btnTransferencia.Location = new System.Drawing.Point(13, 15);
+            this.btnTransferencia.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTransferencia.Name = "btnTransferencia";
+            this.btnTransferencia.Size = new System.Drawing.Size(199, 42);
+            this.btnTransferencia.TabIndex = 37;
+            this.btnTransferencia.Text = "Transf. de Almacénes";
+            this.btnTransferencia.Click += new System.EventHandler(this.btnTransferencia_Click);
+            // 
             // frmTransPendientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1112, 595);
+            this.Controls.Add(this.btnTransferencia);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.grd_data);
@@ -267,5 +285,6 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
         private DevExpress.XtraGrid.Columns.GridColumn colcodigo;
         private DevExpress.XtraGrid.Columns.GridColumn colIngresar;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnRealizarIngreso;
+        private DevExpress.XtraEditors.SimpleButton btnTransferencia;
     }
 }

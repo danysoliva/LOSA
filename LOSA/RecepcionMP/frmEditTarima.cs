@@ -145,10 +145,13 @@ namespace LOSA.RecepcionMP
                 return;
             }
 
-            if (string.IsNullOrEmpty(gridLookUpEditPresentacion.Text))
+            if (!Tg_presentacion_promedio.IsOn)
             {
-                CajaDialogo.Error("Es necesario seleccionar la presentacion de la Materia Prima!");
-                return;
+                if (string.IsNullOrEmpty(gridLookUpEditPresentacion.Text))
+                {
+                    CajaDialogo.Error("Es necesario seleccionar la presentacion de la Materia Prima!");
+                    return;
+                }
             }
 
             if (string.IsNullOrEmpty(txtLote.Text))
@@ -226,16 +229,41 @@ namespace LOSA.RecepcionMP
             }
             
         }
-
-        private void txtUnidades_TextChanged(object sender, EventArgs e)
+        public void CalculodelPromedio()
         {
             try
             {
-                txtPesoKg.Text = string.Format("{0:###,##0.00}", (factor * Convert.ToDecimal(txtUnidades.Text)));
+                int unidades_Tarimas = Convert.ToInt32(txtUnidades.Text);
+                int cantidad_tariams = Convert.ToInt32(txtCantidadTarimasTotal.Text);
+                decimal Unidades_totales = unidades_Tarimas * cantidad_tariams;
+                decimal total_pesoKg = Convert.ToDecimal(txtPesoKg.Text);
+                factor = 0;
+                factor = total_pesoKg / Unidades_totales;
+                txtpresentacionPromedio.Text = string.Format("{0:###,##0.00}", (factor));
+
+
             }
-            catch
+            catch (Exception ex)
             {
-                txtPesoKg.Text = "0";
+            }
+        }
+
+        private void txtUnidades_TextChanged(object sender, EventArgs e)
+        {
+            if (Tg_presentacion_promedio.IsOn) // 
+            {
+                CalculodelPromedio();
+            }
+            else
+            {
+                try
+                {
+                    txtPesoKg.Text = string.Format("{0:###,##0.00}", (factor * Convert.ToDecimal(txtUnidades.Text)));
+                }
+                catch
+                {
+                    txtPesoKg.Text = "0";
+                }
             }
         }
 
@@ -291,6 +319,72 @@ namespace LOSA.RecepcionMP
         private void glueProveedor_EditValueChanged(object sender, EventArgs e)
         {
             txtCodigoProveedor.Text = glueProveedor.EditValue.ToString();
+        }
+
+        private void Tg_presentacion_promedio_Toggled(object sender, EventArgs e)
+        {
+            if (Tg_presentacion_promedio.IsOn)          // Data
+            {
+                try
+                {
+                    txtpresentacionPromedio.Visible = true;
+                    gridLookUpEditPresentacion.Visible = false;
+                    factor = 0;
+                    labelControl12.Text = "Peso total KG";
+                    txtPesoKg.Enabled = true;
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+            else
+            {
+                txtpresentacionPromedio.Visible = false;
+                gridLookUpEditPresentacion.Visible = true;
+                txtPesoKg.Enabled = false;
+                labelControl12.Text = "Peso Kg por tarima";
+
+                try
+                {
+                    PresentacionX pre1 = new PresentacionX();
+                    if (pre1.RecuperarRegistro(Convert.ToInt32(gridLookUpEditPresentacion.EditValue)))
+                    {
+                        factor = pre1.Factor;
+                        txtPesoKg.Text = string.Format("{0:###,##0.00}", (factor * Convert.ToDecimal(txtUnidades.Text)));
+
+                    }
+                }
+                catch (Exception ex)
+                {
+
+
+                }
+            }
+        }
+
+        private void txtPesoKg_TextChanged(object sender, EventArgs e)
+        {
+            CalculodelPromedio();
+        }
+
+        private void txtCantidadTarimasTotal_TextChanged(object sender, EventArgs e)
+        {
+            if (Tg_presentacion_promedio.IsOn)
+            {
+                try
+                {
+                    CalculodelPromedio();
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+            else
+            {
+
+            }
         }
     }//end public partial class frmEditTarima
 }//end namespace LOSA.RecepcionMP

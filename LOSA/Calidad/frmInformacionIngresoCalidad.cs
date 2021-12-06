@@ -430,7 +430,7 @@ namespace LOSA.Calidad
                     txtnombreMP.Text = dr.IsDBNull(1) ? "" : dr.GetString(1);
                     txtboleta.Text = dr.IsDBNull(2) ? "" : dr.GetInt32(2).ToString();
                     txtproveedor.Text = dr.IsDBNull(3) ? "" : dr.GetString(3);
-                    txtnumtraslado.Text = !dr.IsDBNull(5) ? "" : dr.GetInt32(5).ToString();
+                    txtnumtraslado.Text = dr.IsDBNull(5) ? "" : dr.GetString(5);
                     txtoc.Text = dr.IsDBNull(6) ? "" : dr.GetString(5).ToString();
                     txtreferencia.Text = dr.IsDBNull(6) ? "" : dr.GetInt32(6).ToString();
                     ChCalidad = dr.IsDBNull(7) ? false : dr.GetBoolean(7);

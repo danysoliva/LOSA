@@ -57,6 +57,13 @@ namespace LOSA.RecepcionMP
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+
+
+            //frmSpet1 frm = new frmSpet1(UsuarioLogeado);
+            //if (frm.ShowDialog() == DialogResult.OK)
+            //{
+            //    Load_Info();
+            //}
             frmTarima frm = new frmTarima(UsuarioLogeado);
             frm.WindowState = FormWindowState.Maximized;
             if (frm.ShowDialog() == DialogResult.OK)
@@ -225,6 +232,52 @@ namespace LOSA.RecepcionMP
             catch (Exception ex)
             {
 
+
+            }
+        }
+        public int isTraslado;   
+        public void validar_tipoingreso(int Id)
+        {
+            string query = @"sp_get_informacion_sobre_tipo_ingreso_and_traslado";
+            try
+            {
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", Id);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    isTraslado = dr.GetInt32(0);
+                }
+                dr.Close();
+                cn.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+        private void btnCopiarAtraslado_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var gridview = (GridView)grd_ingreso.FocusedView;
+                var row = (dsRecepcionMPx.IngresosMPRow)gridview.GetFocusedDataRow();
+                validar_tipoingreso(row.id);
+                if (isTraslado > 0)
+                {
+                    CajaDialogo.Error("Ya se definio previamente este ingreso como un traslado.");
+                    return;
+                }
+
+            }
+            catch (Exception ex)
+            {
 
             }
         }

@@ -135,7 +135,7 @@ namespace LOSA.AlmacenesExterno
             var gv = (GridView)gcIngreso.FocusedView;
 
                        
-            foreach (var element in dsAlmacenesExternos.RevisionOC)
+            foreach (dsAlmacenesExternos.RevisionOCRow element in dsAlmacenesExternos.RevisionOC)
             {
                 if (element.seleccionar == true)
                 {
@@ -151,7 +151,7 @@ namespace LOSA.AlmacenesExterno
                         return;
                     }
 
-                    if (element.diferencia == 0)
+                    if (element.diferencia < 0)
                     {
                         CajaDialogo.Error("YA SE INGRESO LA MISMA CANTIDAD DE LA ORDEN DE COMPRA");
                         return;
@@ -169,7 +169,7 @@ namespace LOSA.AlmacenesExterno
                         return;
                     }
 
-                    if (element.diferencia > 0)
+                    if (element.diferencia >= 0)
                     {
 
                         lista.Add(new Conf_MP_Ingresada
@@ -186,12 +186,7 @@ namespace LOSA.AlmacenesExterno
 
                     }
 
-                    xfrmAlmacenesExternosDefinirLotes frm = new xfrmAlmacenesExternosDefinirLotes(lista, oc_h, UsuarioLogueado);
-
-                    if (frm.ShowDialog() == DialogResult.OK)
-                    {
-                        this.Close();
-                    }
+                   
                 }
                 else
                 {
@@ -199,9 +194,15 @@ namespace LOSA.AlmacenesExterno
                     return;
                 }
             }
+            xfrmAlmacenesExternosDefinirLotes frm = new xfrmAlmacenesExternosDefinirLotes(lista, oc_h, UsuarioLogueado);
+
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
 
 
-          
             //xfrmAlmacenesExternosDefinirLotes frm = new xfrmAlmacenesExternosDefinirLotes(lista,oc_h,UsuarioLogueado );
 
             //if (frm.ShowDialog()== DialogResult.OK)
