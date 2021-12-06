@@ -31,7 +31,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
 
                 xrlIngreso.Text = "Informe de lotes en documento: "+id_h;
 
-                    sqlDataSource1.Queries[0].Parameters[0].Value=id_h;
+                sqlDataSource1.Queries[0].Parameters[0].Value = id_h;
 
                 //    cnx.Close();
 
