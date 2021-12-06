@@ -662,5 +662,11 @@ namespace LOSA
 
             frm.Show();
         }
+
+        private void simpleButton18_Click(object sender, EventArgs e)
+        {
+            frmReporteExterno frm = new frmReporteExterno();
+            frm.Show();
+        }
     }
 }

@@ -160,16 +160,36 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsAlmacenesExternos.xsd</DependentUpon>
     </Compile>
+    <Compile Include="AlmacenesExterno\dsReporteAlmacenExterno.cs">
+      <DependentUpon>dsReporteAlmacenExterno.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AlmacenesExterno\dsReporteAlmacenExterno.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsReporteAlmacenExterno.xsd</DependentUpon>
+    </Compile>
     <Compile Include="AlmacenesExterno\dsSalidasAlmacenesExternos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsSalidasAlmacenesExternos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AlmacenesExterno\frmReporteExterno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlmacenesExterno\frmReporteExterno.Designer.cs">
+      <DependentUpon>frmReporteExterno.cs</DependentUpon>
     </Compile>
     <Compile Include="AlmacenesExterno\frmTipoIngreso..cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AlmacenesExterno\frmTipoIngreso..Designer.cs">
       <DependentUpon>frmTipoIngreso..cs</DependentUpon>
+    </Compile>
+    <Compile Include="AlmacenesExterno\frmvertodasMPinbodega.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlmacenesExterno\frmvertodasMPinbodega.Designer.cs">
+      <DependentUpon>frmvertodasMPinbodega.cs</DependentUpon>
     </Compile>
     <Compile Include="AlmacenesExterno\Models\Conf_MP_Ingresada.cs" />
     <Compile Include="AlmacenesExterno\Models\InfoHeaderRptIngreso.cs" />
@@ -1268,6 +1288,17 @@
       <DependentUpon>xfrmCheckActiveBin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <None Include="AlmacenesExterno\dsReporteAlmacenExterno.xsc">
+      <DependentUpon>dsReporteAlmacenExterno.xsd</DependentUpon>
+    </None>
+    <None Include="AlmacenesExterno\dsReporteAlmacenExterno.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReporteAlmacenExterno.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="AlmacenesExterno\dsReporteAlmacenExterno.xss">
+      <DependentUpon>dsReporteAlmacenExterno.xsd</DependentUpon>
+    </None>
     <None Include="Calidad\dsMantenimientoC.xsc">
       <DependentUpon>dsMantenimientoC.xsd</DependentUpon>
     </None>
@@ -1328,6 +1359,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsRecepcionMP.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RecepcionMP\dsWizard.cs">
+      <DependentUpon>dsWizard.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RecepcionMP\dsWizard.Designer.cs">
+      <DependentUpon>dsWizard.cs</DependentUpon>
     </Compile>
     <Compile Include="RecepcionMP\frmCambioIngreso.cs">
       <SubType>Form</SubType>
@@ -1473,6 +1510,12 @@
     <Compile Include="RecepcionMP\frmSeguimientoRequisas.Designer.cs">
       <DependentUpon>frmSeguimientoRequisas.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecepcionMP\frmSeleccionrLoteExterno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmSeleccionrLoteExterno.Designer.cs">
+      <DependentUpon>frmSeleccionrLoteExterno.cs</DependentUpon>
+    </Compile>
     <Compile Include="RecepcionMP\frmSelectMP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1485,6 +1528,24 @@
     <Compile Include="RecepcionMP\frmShowOnlyLote.Designer.cs">
       <DependentUpon>frmShowOnlyLote.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecepcionMP\frmSpet1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmSpet1.Designer.cs">
+      <DependentUpon>frmSpet1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecepcionMP\frmSpet2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmSpet2.Designer.cs">
+      <DependentUpon>frmSpet2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecepcionMP\frmSpet3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmSpet3.Designer.cs">
+      <DependentUpon>frmSpet3.cs</DependentUpon>
+    </Compile>
     <Compile Include="RecepcionMP\frmTarima.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1496,6 +1557,12 @@
     </Compile>
     <Compile Include="RecepcionMP\frmTarimas.Designer.cs">
       <DependentUpon>frmTarimas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecepcionMP\frmTarima_V2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmTarima_V2.Designer.cs">
+      <DependentUpon>frmTarima_V2.cs</DependentUpon>
     </Compile>
     <Compile Include="RecepcionMP\frmUbicaciones_granel.cs">
       <SubType>Form</SubType>
@@ -2114,8 +2181,14 @@
     <Compile Include="Utileria\frmMensajeCalidad.Designer.cs">
       <DependentUpon>frmMensajeCalidad.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AlmacenesExterno\frmReporteExterno.resx">
+      <DependentUpon>frmReporteExterno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AlmacenesExterno\frmTipoIngreso..resx">
       <DependentUpon>frmTipoIngreso..cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlmacenesExterno\frmvertodasMPinbodega.resx">
+      <DependentUpon>frmvertodasMPinbodega.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AlmacenesExterno\Reporteria\xrptAlmacenesExternos.resx">
       <DependentUpon>xrptAlmacenesExternos.cs</DependentUpon>
@@ -2606,6 +2679,7 @@
     <EmbeddedResource Include="Produccion\xfrmCheckActiveBin.resx">
       <DependentUpon>xfrmCheckActiveBin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -2688,17 +2762,32 @@
     <EmbeddedResource Include="RecepcionMP\frmSeguimientoRequisas.resx">
       <DependentUpon>frmSeguimientoRequisas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frmSeleccionrLoteExterno.resx">
+      <DependentUpon>frmSeleccionrLoteExterno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmSelectMP.resx">
       <DependentUpon>frmSelectMP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmShowOnlyLote.resx">
       <DependentUpon>frmShowOnlyLote.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frmSpet1.resx">
+      <DependentUpon>frmSpet1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frmSpet2.resx">
+      <DependentUpon>frmSpet2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frmSpet3.resx">
+      <DependentUpon>frmSpet3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmTarima.resx">
       <DependentUpon>frmTarima.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmTarimas.resx">
       <DependentUpon>frmTarimas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frmTarima_V2.resx">
+      <DependentUpon>frmTarima_V2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmUbicaciones_granel.resx">
       <DependentUpon>frmUbicaciones_granel.cs</DependentUpon>
@@ -3103,6 +3192,17 @@
     </None>
     <None Include="RecepcionMP\dsingresos.xss">
       <DependentUpon>dsingresos.xsd</DependentUpon>
+    </None>
+    <None Include="RecepcionMP\dsWizard.xsc">
+      <DependentUpon>dsWizard.xsd</DependentUpon>
+    </None>
+    <None Include="RecepcionMP\dsWizard.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsWizard1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RecepcionMP\dsWizard.xss">
+      <DependentUpon>dsWizard.xsd</DependentUpon>
     </None>
     <None Include="RecuentoInventario\dsRecuento.xsc">
       <DependentUpon>dsRecuento.xsd</DependentUpon>

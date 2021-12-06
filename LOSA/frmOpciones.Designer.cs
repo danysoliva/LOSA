@@ -39,6 +39,7 @@
             this.TabLogistica = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.TabMP_Sacos = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton18 = new DevExpress.XtraEditors.SimpleButton();
             this.btnPendientes_ingreso_a_planta = new DevExpress.XtraEditors.SimpleButton();
             this.cmdRegistroLote = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton13 = new DevExpress.XtraEditors.SimpleButton();
@@ -270,6 +271,7 @@
             // 
             this.TabMP_Sacos.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TabMP_Sacos.Appearance.Header.Options.UseFont = true;
+            this.TabMP_Sacos.Controls.Add(this.simpleButton18);
             this.TabMP_Sacos.Controls.Add(this.btnPendientes_ingreso_a_planta);
             this.TabMP_Sacos.Controls.Add(this.cmdRegistroLote);
             this.TabMP_Sacos.Controls.Add(this.simpleButton13);
@@ -281,6 +283,19 @@
             this.TabMP_Sacos.Name = "TabMP_Sacos";
             this.TabMP_Sacos.Size = new System.Drawing.Size(766, 409);
             this.TabMP_Sacos.Text = "MP en Sacos";
+            // 
+            // simpleButton18
+            // 
+            this.simpleButton18.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.simpleButton18.Appearance.Options.UseFont = true;
+            this.simpleButton18.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton18.ImageOptions.Image = global::LOSA.Properties.Resources.boxPT32px;
+            this.simpleButton18.Location = new System.Drawing.Point(209, 63);
+            this.simpleButton18.Name = "simpleButton18";
+            this.simpleButton18.Size = new System.Drawing.Size(199, 42);
+            this.simpleButton18.TabIndex = 40;
+            this.simpleButton18.Text = "Rpt. Almacenes \r\nexternos";
+            this.simpleButton18.Click += new System.EventHandler(this.simpleButton18_Click);
             // 
             // btnPendientes_ingreso_a_planta
             // 
@@ -1236,5 +1251,6 @@
         private DevExpress.XtraTab.XtraTabPage tabReportes;
         private DevExpress.XtraEditors.SimpleButton btnPendientes_ingreso_a_planta;
         private DevExpress.XtraEditors.SimpleButton simpleButton17;
+        private DevExpress.XtraEditors.SimpleButton simpleButton18;
     }
 }
