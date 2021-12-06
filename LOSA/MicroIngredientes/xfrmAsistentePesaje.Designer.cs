@@ -240,7 +240,7 @@ namespace LOSA.MicroIngredientes
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(111, 44);
             this.btnNext.TabIndex = 3;
-            this.btnNext.Text = "Siguiente";
+            this.btnNext.Text = "Finalizar";
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnCancel

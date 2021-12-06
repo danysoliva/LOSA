@@ -17,39 +17,96 @@ namespace LOSA.MicroIngredientes
        public PesajeIndividualNew pesaje = new PesajeIndividualNew();
 
         decimal pesoRealInicial;
+        int modeForm;
 
-        public xfrmConfPlanBatch(PesajeIndividualNew Ppesaje)
+       public enum ModeForm
+        {
+            IniciarPesaje=1,
+            PesarBatch=2
+        }
+
+        public xfrmConfPlanBatch(PesajeIndividualNew Ppesaje,int modeFormP)
         {
             InitializeComponent();
 
             pesaje = Ppesaje;
+
+            modeForm = modeFormP;
         }
 
         private void cmdUp_Click(object sender, EventArgs e)
         {
             int val = Convert.ToInt32(seBatch.EditValue);
 
-            if (val < 200)
+            if (modeForm== Convert.ToInt32( ModeForm.PesarBatch))
             {
-                if ((pesaje.PesoReal+pesoRealInicial) < pesaje.PesoTotal)
+                if ((val + 1) <= pesaje.BatchPlan)
                 {
                     seBatch.EditValue = val + 1;
 
-                    pesaje.BatchPlan = Convert.ToInt32(seBatch.EditValue);
+                    //pesaje.BatchPlan = Convert.ToInt32(seBatch.EditValue);
 
-                    pesaje.PesoReal = pesaje.PesoPorBatch * pesaje.BatchPlan;
+                    pesaje.PesoReal = pesaje.PesoPorBatch * Convert.ToInt32( seBatch.EditValue);
 
                     lblPesoReal.Text = pesaje.PesoReal.ToString();
                 }
             }
+            else
+            {
+                if (val < 200)
+                {
+                    if ((pesaje.PesoReal + pesoRealInicial) < pesaje.PesoTotal)
+                    {
+                        seBatch.EditValue = val + 1;
+
+                        pesaje.BatchPlan = Convert.ToInt32(seBatch.EditValue);
+
+                        pesaje.PesoReal = pesaje.PesoPorBatch * pesaje.BatchPlan;
+
+                        lblPesoReal.Text = pesaje.PesoReal.ToString();
+                    }
+                }
+            }
+
+          
         }
 
         private void cmdDown_Click(object sender, EventArgs e)
         {
             int val = Convert.ToInt32(seBatch.EditValue);
-            
-            if (val > 1)
+
+            if (modeForm == Convert.ToInt32(ModeForm.PesarBatch))
             {
+
+                if (val > 1)
+                {
+
+                    seBatch.EditValue = val - 1;
+
+                    //pesaje.BatchPlan = Convert.ToInt32(seBatch.EditValue);
+
+                    pesaje.PesoReal = pesaje.PesoPorBatch * Convert.ToInt32(seBatch.EditValue);
+
+                    lblPesoReal.Text = pesaje.PesoReal.ToString();
+
+                }
+
+                //if ((val + 1) <= pesaje.BatchPlan)
+                //{
+                //    seBatch.EditValue = val + 1;
+
+                //    //pesaje.BatchPlan = Convert.ToInt32(seBatch.EditValue);
+
+                //    pesaje.PesoReal = pesaje.PesoPorBatch * Convert.ToInt32(seBatch.EditValue);
+
+                //    lblPesoReal.Text = pesaje.PesoReal.ToString();
+                //}
+            }
+            else
+            {
+
+                if (val > 1)
+                {
 
                     seBatch.EditValue = val - 1;
 
@@ -59,6 +116,7 @@ namespace LOSA.MicroIngredientes
 
                     lblPesoReal.Text = pesaje.PesoReal.ToString();
 
+                }
             }
         }
 
@@ -152,6 +210,7 @@ namespace LOSA.MicroIngredientes
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+            pesaje.BatchAPesar= Convert.ToInt32(seBatch.EditValue);
             this.DialogResult = DialogResult.OK;
         }
     }

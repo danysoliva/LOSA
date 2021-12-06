@@ -57,6 +57,7 @@
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.TabPesajeMezcla = new DevExpress.XtraTab.XtraTabPage();
             this.TabPesajeIndividual = new DevExpress.XtraTab.XtraTabPage();
+            this.btnStartPesaje = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -66,7 +67,6 @@
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemSpinEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.repositoryItemButtonEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.btnStartPesaje = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gcDetalle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleOrdenesMicroBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMicros)).BeginInit();
@@ -253,19 +253,34 @@
             this.TabPesajeMezcla.Controls.Add(this.gcDetalle);
             this.TabPesajeMezcla.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabPesajeMezcla.ImageOptions.Image")));
             this.TabPesajeMezcla.Name = "TabPesajeMezcla";
-            this.TabPesajeMezcla.Size = new System.Drawing.Size(864, 366);
+            this.TabPesajeMezcla.Size = new System.Drawing.Size(864, 388);
             this.TabPesajeMezcla.Text = "Pesaje de Mezcla";
             // 
             // TabPesajeIndividual
             // 
             this.TabPesajeIndividual.Appearance.Header.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TabPesajeIndividual.Appearance.Header.Options.UseFont = true;
-            this.TabPesajeIndividual.Controls.Add(this.btnStartPesaje);
             this.TabPesajeIndividual.Controls.Add(this.gridControl1);
             this.TabPesajeIndividual.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("TabPesajeIndividual.ImageOptions.SvgImage")));
             this.TabPesajeIndividual.Name = "TabPesajeIndividual";
             this.TabPesajeIndividual.Size = new System.Drawing.Size(864, 388);
             this.TabPesajeIndividual.Text = "Pesaje Individual";
+            // 
+            // btnStartPesaje
+            // 
+            this.btnStartPesaje.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Success;
+            this.btnStartPesaje.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStartPesaje.Appearance.Options.UseBackColor = true;
+            this.btnStartPesaje.Appearance.Options.UseFont = true;
+            this.btnStartPesaje.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnStartPesaje.ImageOptions.Image = global::LOSA.Properties.Resources.weighing_machine24px;
+            this.btnStartPesaje.Location = new System.Drawing.Point(105, 23);
+            this.btnStartPesaje.Name = "btnStartPesaje";
+            this.btnStartPesaje.Size = new System.Drawing.Size(116, 35);
+            this.btnStartPesaje.TabIndex = 2;
+            this.btnStartPesaje.Text = "Iniciar Pesaje";
+            this.btnStartPesaje.Visible = false;
+            this.btnStartPesaje.Click += new System.EventHandler(this.btnStartPesaje_Click);
             // 
             // gridControl1
             // 
@@ -274,13 +289,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl1.DataMember = "DetalleOrdenesPesajeIndividual";
             this.gridControl1.DataSource = this.dsMicros;
-            this.gridControl1.Location = new System.Drawing.Point(2, 58);
+            this.gridControl1.Location = new System.Drawing.Point(2, 3);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemSpinEdit2,
             this.repositoryItemButtonEdit2});
-            this.gridControl1.Size = new System.Drawing.Size(864, 327);
+            this.gridControl1.Size = new System.Drawing.Size(864, 382);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -370,26 +385,12 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit2.Name = "repositoryItemButtonEdit2";
             // 
-            // btnStartPesaje
-            // 
-            this.btnStartPesaje.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Success;
-            this.btnStartPesaje.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartPesaje.Appearance.Options.UseBackColor = true;
-            this.btnStartPesaje.Appearance.Options.UseFont = true;
-            this.btnStartPesaje.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnStartPesaje.ImageOptions.Image = global::LOSA.Properties.Resources.weighing_machine24px;
-            this.btnStartPesaje.Location = new System.Drawing.Point(736, 3);
-            this.btnStartPesaje.Name = "btnStartPesaje";
-            this.btnStartPesaje.Size = new System.Drawing.Size(116, 49);
-            this.btnStartPesaje.TabIndex = 2;
-            this.btnStartPesaje.Text = "Iniciar Pesaje";
-            this.btnStartPesaje.Click += new System.EventHandler(this.btnStartPesaje_Click);
-            // 
             // xfrmDetalleOrdenesMicros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(879, 522);
+            this.Controls.Add(this.btnStartPesaje);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.cmdClose);
