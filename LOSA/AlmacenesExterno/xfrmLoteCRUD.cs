@@ -22,6 +22,19 @@ namespace LOSA.AlmacenesExterno
         {
             InitializeComponent();
         }
+        public xfrmLoteCRUD(Ingreso_Externo_Lote Plote)
+        {
+            InitializeComponent();
+            lote = Plote;
+
+             txtUnidad.Text = lote.Unidades.ToString();
+             txtLote.Text = lote.Lote.ToString();
+            txtCantidad.Text = lote.Cantidad.ToString(); ;
+            //lote.NumLine = -1;
+            deFechaProduccion.EditValue = lote.FechaProduccion ;
+            deFechaVencimiento.EditValue =  lote.FechaVencimiento ;
+        }
+
 
         private void btnAtras_Click(object sender, EventArgs e)
         {
@@ -43,33 +56,33 @@ namespace LOSA.AlmacenesExterno
                     CajaDialogo.Error("La fecha de produccion no puede ser menor que la fecha de vencimiento.");
                     return;
                 }
-                DataOperations dp = new DataOperations();
+                //DataOperations dp = new DataOperations();
 
                 lote = new Ingreso_Externo_Lote();
 
-                lote.Unidades = Convert.ToDecimal( txtUnidad.Text);
+                lote.Unidades = Convert.ToDecimal(txtUnidad.Text);
                 lote.Lote = txtLote.Text;
                 lote.Cantidad = Convert.ToDecimal(txtCantidad.Text);
                 lote.NumLine = -1;
                 lote.FechaProduccion = Convert.ToDateTime(deFechaProduccion.Text);
                 lote.FechaVencimiento = Convert.ToDateTime(deFechaVencimiento.Text);
 
-                using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringLOSA))
-                {
-                    cnx.Open();
-                    SqlCommand cmd = new SqlCommand("sp_insert_lote_almacenes_externos", cnx);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@cantidad", SqlDbType.Decimal).Value = lote.Cantidad;
-                    cmd.Parameters.Add("@unidades", SqlDbType.Decimal).Value = lote.Unidades;
-                    cmd.Parameters.Add("@id_detalle", SqlDbType.Decimal).Value = 0;
-                    cmd.Parameters.Add("@lote", SqlDbType.VarChar).Value = lote.Lote;
-                    cmd.Parameters.Add("@fecha_vencimiento", SqlDbType.DateTime).Value = lote.FechaVencimiento;
-                    cmd.Parameters.Add("@fecha_produccion", SqlDbType.DateTime).Value = lote.FechaProduccion;
+                //using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringLOSA))
+                //{
+                //    cnx.Open();
+                //    SqlCommand cmd = new SqlCommand("sp_insert_lote_almacenes_externos", cnx);
+                //    cmd.CommandType = CommandType.StoredProcedure;
+                //    cmd.Parameters.Add("@cantidad", SqlDbType.Decimal).Value = lote.Cantidad;
+                //    cmd.Parameters.Add("@unidades", SqlDbType.Decimal).Value = lote.Unidades;
+                //    cmd.Parameters.Add("@id_detalle", SqlDbType.Decimal).Value = 0;
+                //    cmd.Parameters.Add("@lote", SqlDbType.VarChar).Value = lote.Lote;
+                //    cmd.Parameters.Add("@fecha_vencimiento", SqlDbType.DateTime).Value = lote.FechaVencimiento;
+                //    cmd.Parameters.Add("@fecha_produccion", SqlDbType.DateTime).Value = lote.FechaProduccion;
 
-                    lote.ID = Convert.ToInt32(cmd.ExecuteScalar());
-                    cnx.Close();
+                //    lote.ID = Convert.ToInt32(cmd.ExecuteScalar());
+                //    cnx.Close();
 
-                }
+                //}
 
 
                 this.DialogResult = DialogResult.OK;

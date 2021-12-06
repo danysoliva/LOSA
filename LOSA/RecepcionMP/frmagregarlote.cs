@@ -142,10 +142,13 @@ namespace LOSA.RecepcionMP
                 return;
             }
 
-            if (string.IsNullOrEmpty(gridLookUpEditPresentacion.Text))
+            if (!Tg_presentacion_promedio.IsOn)
             {
-                CajaDialogo.Error("Es necesario seleccionar la presentacion de la Materia Prima!");
-                return;
+                if (string.IsNullOrEmpty(gridLookUpEditPresentacion.Text))
+                {
+                    CajaDialogo.Error("Es necesario seleccionar la presentacion de la Materia Prima!");
+                    return;
+                }
             }
 
             if (string.IsNullOrEmpty(txtLote.Text))
@@ -230,7 +233,7 @@ namespace LOSA.RecepcionMP
                     cmm.Parameters.AddWithValue("@id", 1);
                     string barcode = cmm.ExecuteScalar().ToString();
 
-                    SqlCommand cmd = new SqlCommand("sp_insert_new_tarima_lote", con);
+                    SqlCommand cmd = new SqlCommand("sp_insert_new_tarima_lote_v2", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@itemcode", txtCodigoMP.Text);
                     cmd.Parameters.AddWithValue("@id_proveedor", txtCodigoProveedor.Text);
@@ -246,6 +249,8 @@ namespace LOSA.RecepcionMP
                     cmd.Parameters.AddWithValue("@cant", txtUnidades.Text);
                     cmd.Parameters.AddWithValue("@peso", Convert.ToDecimal(txtPesoKg.Text));
                     cmd.Parameters.AddWithValue("@idlotes", idloteInserted);
+                    cmd.Parameters.AddWithValue("@factor", factor);
+                    cmd.Parameters.AddWithValue("@bit_promedio", Tg_presentacion_promedio.IsOn ? 1 : 0);
                     vid_tarima = Convert.ToInt32(cmd.ExecuteScalar());
 
                     SqlCommand cmdx = new SqlCommand("sp_insert_ubicacion_default", con);
@@ -326,13 +331,20 @@ namespace LOSA.RecepcionMP
 
         private void txtUnidades_TextChanged(object sender, EventArgs e)
         {
-            try
+            if (Tg_presentacion_promedio.IsOn) // 
             {
-                txtPesoKg.Text = string.Format("{0:###,##0.00}", (factor * Convert.ToDecimal(txtUnidades.Text)));
+                CalculodelPromedio();
             }
-            catch
+            else
             {
-                txtPesoKg.Text = "0";
+                try
+                {
+                    txtPesoKg.Text = string.Format("{0:###,##0.00}", (factor * Convert.ToDecimal(txtUnidades.Text)));
+                }
+                catch
+                {
+                    txtPesoKg.Text = "0";
+                }
             }
             //txtPesoTM.Text = string.Format("{0:0.00}", (factor * Convert.ToDecimal(txtUnidades.Text)));
         }
@@ -445,6 +457,90 @@ namespace LOSA.RecepcionMP
                 txtMP_Name.Text = frm.ItemName;
             }
         
+        }
+
+        public void CalculodelPromedio()
+        {
+            try
+            {
+                int unidades_Tarimas = Convert.ToInt32(txtUnidades.Text);
+                int cantidad_tariams = Convert.ToInt32(txtCantidadTarimasTotal.Text);
+                decimal Unidades_totales = unidades_Tarimas * cantidad_tariams;
+                decimal total_pesoKg = Convert.ToDecimal(txtPesoKg.Text);
+                factor = total_pesoKg / Unidades_totales;
+                txtpresentacionPromedio.Text = string.Format("{0:###,##0.00}", (factor));
+
+
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        private void txtCantidadTarimasTotal_TextChanged(object sender, EventArgs e)
+        {
+            if (Tg_presentacion_promedio.IsOn)
+            {
+                try
+                {
+                    CalculodelPromedio();
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+            else
+            {
+
+            }
+        }
+
+        private void Tg_presentacion_promedio_Toggled(object sender, EventArgs e)
+        {
+            if (Tg_presentacion_promedio.IsOn)          // Data
+            {
+                try
+                {
+                    txtpresentacionPromedio.Visible = true;
+                    gridLookUpEditPresentacion.Visible = false;
+                    factor = 0;
+                    labelControl12.Text = "Peso total KG";
+                    txtPesoKg.Enabled = true;
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+            else
+            {
+                txtpresentacionPromedio.Visible = false;
+                gridLookUpEditPresentacion.Visible = true;
+                txtPesoKg.Enabled = false;
+                labelControl12.Text = "Peso Kg por tarima";
+
+                try
+                {
+                    PresentacionX pre1 = new PresentacionX();
+                    if (pre1.RecuperarRegistro(Convert.ToInt32(gridLookUpEditPresentacion.EditValue)))
+                    {
+                        factor = pre1.Factor;
+                        txtPesoKg.Text = string.Format("{0:###,##0.00}", (factor * Convert.ToDecimal(txtUnidades.Text)));
+
+                    }
+                }
+                catch (Exception ex)
+                {
+
+
+                }
+            }
+        }
+
+        private void txtPesoKg_TextChanged(object sender, EventArgs e)
+        {
+            CalculodelPromedio();
         }
     }
 }

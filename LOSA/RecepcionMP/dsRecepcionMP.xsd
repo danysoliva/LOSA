@@ -26,6 +26,9 @@
               <xs:element name="itemdescrip" msprop:Generator_ColumnVarNameInTable="columnitemdescrip" msprop:Generator_ColumnPropNameInRow="itemdescrip" msprop:Generator_ColumnPropNameInTable="itemdescripColumn" msprop:Generator_UserColumnName="itemdescrip" type="xs:string" minOccurs="0" />
               <xs:element name="proveedor" msprop:Generator_ColumnVarNameInTable="columnproveedor" msprop:Generator_ColumnPropNameInRow="proveedor" msprop:Generator_ColumnPropNameInTable="proveedorColumn" msprop:Generator_UserColumnName="proveedor" type="xs:string" minOccurs="0" />
               <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="peso_prod" msprop:Generator_ColumnVarNameInTable="columnpeso_prod" msprop:Generator_ColumnPropNameInRow="peso_prod" msprop:Generator_ColumnPropNameInTable="peso_prodColumn" msprop:Generator_UserColumnName="peso_prod" type="xs:decimal" minOccurs="0" />
+              <xs:element name="oc" msprop:Generator_ColumnVarNameInTable="columnoc" msprop:Generator_ColumnPropNameInRow="oc" msprop:Generator_ColumnPropNameInTable="ocColumn" msprop:Generator_UserColumnName="oc" type="xs:string" minOccurs="0" />
+              <xs:element name="numero_factura" msprop:Generator_ColumnVarNameInTable="columnnumero_factura" msprop:Generator_ColumnPropNameInRow="numero_factura" msprop:Generator_ColumnPropNameInTable="numero_facturaColumn" msprop:Generator_UserColumnName="numero_factura" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
