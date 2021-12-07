@@ -30,12 +30,12 @@ namespace LOSA.MicroIngredientes
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmResumenMPIndividual));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gcPesaje = new DevExpress.XtraGrid.GridControl();
             this.newPesajeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsMicros = new LOSA.MicroIngredientes.dsMicros();
@@ -48,10 +48,12 @@ namespace LOSA.MicroIngredientes
             this.colbatchPlan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnBatchPlan = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colid_mp = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRealBatch = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemSpinEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnFinish = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gcPesaje)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.newPesajeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMicros)).BeginInit();
@@ -102,7 +104,8 @@ namespace LOSA.MicroIngredientes
             this.colpeso_por_batch,
             this.colPeso_Total,
             this.colbatchPlan,
-            this.colid_mp});
+            this.colid_mp,
+            this.colRealBatch});
             this.gvPesaje.GridControl = this.gcPesaje;
             this.gvPesaje.Name = "gvPesaje";
             this.gvPesaje.OptionsView.ShowGroupPanel = false;
@@ -124,9 +127,11 @@ namespace LOSA.MicroIngredientes
             this.colmaterial.FieldName = "material";
             this.colmaterial.Name = "colmaterial";
             this.colmaterial.OptionsColumn.AllowEdit = false;
+            this.colmaterial.OptionsColumn.AllowMove = false;
+            this.colmaterial.OptionsFilter.AllowFilter = false;
             this.colmaterial.Visible = true;
             this.colmaterial.VisibleIndex = 0;
-            this.colmaterial.Width = 237;
+            this.colmaterial.Width = 236;
             // 
             // colpeso_por_batch
             // 
@@ -134,9 +139,11 @@ namespace LOSA.MicroIngredientes
             this.colpeso_por_batch.FieldName = "peso_por_batch";
             this.colpeso_por_batch.Name = "colpeso_por_batch";
             this.colpeso_por_batch.OptionsColumn.AllowEdit = false;
+            this.colpeso_por_batch.OptionsColumn.AllowMove = false;
+            this.colpeso_por_batch.OptionsFilter.AllowFilter = false;
             this.colpeso_por_batch.Visible = true;
             this.colpeso_por_batch.VisibleIndex = 1;
-            this.colpeso_por_batch.Width = 237;
+            this.colpeso_por_batch.Width = 183;
             // 
             // colPeso_Total
             // 
@@ -144,9 +151,11 @@ namespace LOSA.MicroIngredientes
             this.colPeso_Total.FieldName = "Peso_Total";
             this.colPeso_Total.Name = "colPeso_Total";
             this.colPeso_Total.OptionsColumn.AllowEdit = false;
+            this.colPeso_Total.OptionsColumn.AllowMove = false;
+            this.colPeso_Total.OptionsFilter.AllowFilter = false;
             this.colPeso_Total.Visible = true;
             this.colPeso_Total.VisibleIndex = 2;
-            this.colPeso_Total.Width = 283;
+            this.colPeso_Total.Width = 186;
             // 
             // colbatchPlan
             // 
@@ -154,18 +163,20 @@ namespace LOSA.MicroIngredientes
             this.colbatchPlan.ColumnEdit = this.btnBatchPlan;
             this.colbatchPlan.FieldName = "batchPlan";
             this.colbatchPlan.Name = "colbatchPlan";
+            this.colbatchPlan.OptionsColumn.AllowMove = false;
+            this.colbatchPlan.OptionsFilter.AllowFilter = false;
             this.colbatchPlan.Visible = true;
             this.colbatchPlan.VisibleIndex = 3;
-            this.colbatchPlan.Width = 192;
+            this.colbatchPlan.Width = 203;
             // 
             // btnBatchPlan
             // 
             this.btnBatchPlan.Appearance.Image = global::LOSA.Properties.Resources.exchange;
             this.btnBatchPlan.Appearance.Options.UseImage = true;
             this.btnBatchPlan.AutoHeight = false;
-            editorButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions1.SvgImage")));
+            editorButtonImageOptions2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions2.SvgImage")));
             this.btnBatchPlan.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnBatchPlan.Name = "btnBatchPlan";
             this.btnBatchPlan.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.btnBatchPlan.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnBatchPlan_ButtonClick);
@@ -174,6 +185,20 @@ namespace LOSA.MicroIngredientes
             // 
             this.colid_mp.FieldName = "id_mp";
             this.colid_mp.Name = "colid_mp";
+            // 
+            // colRealBatch
+            // 
+            this.colRealBatch.AppearanceCell.BackColor = System.Drawing.Color.LemonChiffon;
+            this.colRealBatch.AppearanceCell.Options.UseBackColor = true;
+            this.colRealBatch.Caption = "Batch a pesar";
+            this.colRealBatch.ColumnEdit = this.btnBatchPlan;
+            this.colRealBatch.FieldName = "batch_a_pesar";
+            this.colRealBatch.Name = "colRealBatch";
+            this.colRealBatch.OptionsColumn.AllowMove = false;
+            this.colRealBatch.OptionsFilter.AllowFilter = false;
+            this.colRealBatch.Visible = true;
+            this.colRealBatch.VisibleIndex = 4;
+            this.colRealBatch.Width = 141;
             // 
             // repositoryItemSpinEdit1
             // 
@@ -199,11 +224,12 @@ namespace LOSA.MicroIngredientes
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton1.ImageOptions.Image = global::LOSA.Properties.Resources.weighing_machine_32X32;
             this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(826, 12);
+            this.simpleButton1.Location = new System.Drawing.Point(780, 12);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(114, 69);
             this.simpleButton1.TabIndex = 3;
             this.simpleButton1.Text = "Iniciar Pesaje";
+            this.simpleButton1.Visible = false;
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // simpleButton2
@@ -222,11 +248,26 @@ namespace LOSA.MicroIngredientes
             this.simpleButton2.Text = "Cancelar";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
+            // btnFinish
+            // 
+            this.btnFinish.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinish.Appearance.Options.UseFont = true;
+            this.btnFinish.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnFinish.ImageOptions.Image = global::LOSA.Properties.Resources.checked_32X32;
+            this.btnFinish.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.btnFinish.Location = new System.Drawing.Point(825, 12);
+            this.btnFinish.Name = "btnFinish";
+            this.btnFinish.Size = new System.Drawing.Size(114, 69);
+            this.btnFinish.TabIndex = 5;
+            this.btnFinish.Text = "Finalizar";
+            this.btnFinish.Click += new System.EventHandler(this.btnFinish_Click);
+            // 
             // xfrmResumenMPIndividual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(967, 411);
+            this.Controls.Add(this.btnFinish);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.labelControl1);
@@ -263,5 +304,7 @@ namespace LOSA.MicroIngredientes
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton btnFinish;
+        private DevExpress.XtraGrid.Columns.GridColumn colRealBatch;
     }
 }

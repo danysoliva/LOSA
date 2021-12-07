@@ -29,7 +29,6 @@ namespace LOSA.TransaccionesMP
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEntregaTarimaReq_3));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -57,13 +56,18 @@ namespace LOSA.TransaccionesMP
             this.txtTarima = new DevExpress.XtraEditors.ButtonEdit();
             this.cmdSelectTarima = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.timerLimpiarMensaje = new System.Windows.Forms.Timer(this.components);
+            this.timerLimpiarMensaje = new System.Windows.Forms.Timer();
             this.cmdLiquidos = new DevExpress.XtraEditors.SimpleButton();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colPendienteAsignacion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnombre_comercial = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcodigo_barra = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_tarima = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_estado_tarima = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtRequisicion.Properties)).BeginInit();
             this.panelNotificacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
@@ -89,7 +93,7 @@ namespace LOSA.TransaccionesMP
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.cmdHome.Location = new System.Drawing.Point(453, 8);
+            this.cmdHome.Location = new System.Drawing.Point(453, 16);
             this.cmdHome.Name = "cmdHome";
             this.cmdHome.Size = new System.Drawing.Size(175, 48);
             this.cmdHome.TabIndex = 7;
@@ -103,7 +107,7 @@ namespace LOSA.TransaccionesMP
             this.lblRequisicionEncontrada.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRequisicionEncontrada.Appearance.Options.UseFont = true;
             this.lblRequisicionEncontrada.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblRequisicionEncontrada.Location = new System.Drawing.Point(12, 112);
+            this.lblRequisicionEncontrada.Location = new System.Drawing.Point(12, 116);
             this.lblRequisicionEncontrada.Name = "lblRequisicionEncontrada";
             this.lblRequisicionEncontrada.Size = new System.Drawing.Size(258, 37);
             this.lblRequisicionEncontrada.TabIndex = 103;
@@ -115,7 +119,7 @@ namespace LOSA.TransaccionesMP
             this.txtRequisicion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRequisicion.EditValue = "";
-            this.txtRequisicion.Location = new System.Drawing.Point(182, 62);
+            this.txtRequisicion.Location = new System.Drawing.Point(182, 66);
             this.txtRequisicion.Name = "txtRequisicion";
             this.txtRequisicion.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRequisicion.Properties.Appearance.Options.UseFont = true;
@@ -135,7 +139,7 @@ namespace LOSA.TransaccionesMP
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(3, 69);
+            this.labelControl3.Location = new System.Drawing.Point(3, 73);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(173, 37);
             this.labelControl3.TabIndex = 102;
@@ -452,7 +456,7 @@ namespace LOSA.TransaccionesMP
             this.txtTarima.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTarima.EditValue = "";
-            this.txtTarima.Location = new System.Drawing.Point(195, 155);
+            this.txtTarima.Location = new System.Drawing.Point(195, 159);
             this.txtTarima.Name = "txtTarima";
             this.txtTarima.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTarima.Properties.Appearance.Options.UseFont = true;
@@ -473,7 +477,7 @@ namespace LOSA.TransaccionesMP
             this.cmdSelectTarima.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdSelectTarima.ImageOptions.Image = global::LOSA.Properties.Resources.tap;
             this.cmdSelectTarima.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.cmdSelectTarima.Location = new System.Drawing.Point(458, 155);
+            this.cmdSelectTarima.Location = new System.Drawing.Point(458, 159);
             this.cmdSelectTarima.Name = "cmdSelectTarima";
             this.cmdSelectTarima.Size = new System.Drawing.Size(62, 44);
             this.cmdSelectTarima.TabIndex = 108;
@@ -485,7 +489,7 @@ namespace LOSA.TransaccionesMP
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(67, 162);
+            this.labelControl2.Location = new System.Drawing.Point(67, 166);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(110, 37);
             this.labelControl2.TabIndex = 109;
@@ -505,7 +509,7 @@ namespace LOSA.TransaccionesMP
             this.cmdLiquidos.Appearance.Options.UseFont = true;
             this.cmdLiquidos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdLiquidos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdLiquidos.ImageOptions.Image")));
-            this.cmdLiquidos.Location = new System.Drawing.Point(272, 8);
+            this.cmdLiquidos.Location = new System.Drawing.Point(272, 16);
             this.cmdLiquidos.Name = "cmdLiquidos";
             this.cmdLiquidos.Size = new System.Drawing.Size(175, 48);
             this.cmdLiquidos.TabIndex = 111;
@@ -539,24 +543,69 @@ namespace LOSA.TransaccionesMP
             // 
             this.xtraTabPage2.Controls.Add(this.gridControl1);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(620, 236);
+            this.xtraTabPage2.Size = new System.Drawing.Size(620, 245);
             this.xtraTabPage2.Text = "Bines Disponibles";
             // 
             // gridControl1
             // 
+            this.gridControl1.DataMember = "bines_disponibles";
+            this.gridControl1.DataSource = this.dsTransaccionesMP;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(620, 236);
+            this.gridControl1.Size = new System.Drawing.Size(620, 245);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
+            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.gridView1.Appearance.Row.Options.UseFont = true;
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colPendienteAsignacion,
+            this.colnombre_comercial,
+            this.colcodigo_barra,
+            this.colid_tarima,
+            this.colid_estado_tarima});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            // 
+            // colPendienteAsignacion
+            // 
+            this.colPendienteAsignacion.Caption = "Pendiente Asignación";
+            this.colPendienteAsignacion.FieldName = "PendienteAsignacion";
+            this.colPendienteAsignacion.Name = "colPendienteAsignacion";
+            this.colPendienteAsignacion.Visible = true;
+            this.colPendienteAsignacion.VisibleIndex = 0;
+            // 
+            // colnombre_comercial
+            // 
+            this.colnombre_comercial.Caption = "Materia Prima";
+            this.colnombre_comercial.FieldName = "nombre_comercial";
+            this.colnombre_comercial.Name = "colnombre_comercial";
+            this.colnombre_comercial.Visible = true;
+            this.colnombre_comercial.VisibleIndex = 1;
+            // 
+            // colcodigo_barra
+            // 
+            this.colcodigo_barra.Caption = "Código Barra";
+            this.colcodigo_barra.FieldName = "codigo_barra";
+            this.colcodigo_barra.Name = "colcodigo_barra";
+            this.colcodigo_barra.Visible = true;
+            this.colcodigo_barra.VisibleIndex = 2;
+            // 
+            // colid_tarima
+            // 
+            this.colid_tarima.Caption = "Id Tarima";
+            this.colid_tarima.FieldName = "id_tarima";
+            this.colid_tarima.Name = "colid_tarima";
+            // 
+            // colid_estado_tarima
+            // 
+            this.colid_estado_tarima.FieldName = "id_estado_tarima";
+            this.colid_estado_tarima.Name = "colid_estado_tarima";
             // 
             // frmEntregaTarimaReq_3
             // 
@@ -629,5 +678,10 @@ namespace LOSA.TransaccionesMP
         private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn colPendienteAsignacion;
+        private DevExpress.XtraGrid.Columns.GridColumn colnombre_comercial;
+        private DevExpress.XtraGrid.Columns.GridColumn colcodigo_barra;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_tarima;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_estado_tarima;
     }
 }

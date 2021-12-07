@@ -75,7 +75,7 @@ namespace LOSA.AlmacenesExterno
             var gv = (GridView)grd_ingreso.FocusedView;
             var row = (dsAlmacenesExternos.ingreso_externo_hRow)gv.GetDataRow(gv.FocusedRowHandle);
 
-             xrptAlmacenesExternos report = new xrptAlmacenesExternos(row.id);
+            xrptAlmacenesExternos report = new xrptAlmacenesExternos(row.id);
 
             using (ReportPrintTool printTool = new ReportPrintTool(report))
             {

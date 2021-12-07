@@ -143,13 +143,13 @@ namespace LOSA.MicroIngredientes
             try
             {
 
-                if (BasculaSelected == 0)
-                {
-                    CajaDialogo.Error("DEBE SELECCIONAR UNA BASCULA");
-                    return;
-                }
+                //if (BasculaSelected == 0)
+                //{
+                //    CajaDialogo.Error("DEBE SELECCIONAR UNA BASCULA");
+                //    return;
+                //}
 
-                pesajeIndividual.BasculaID = BasculaSelected;
+                //pesajeIndividual.BasculaID = BasculaSelected;
 
                 List<PesajeIndividualCompletados> pesajesCompletados = new List<PesajeIndividualCompletados>();
 
@@ -158,7 +158,8 @@ namespace LOSA.MicroIngredientes
                 for (int i = 1; i <= Convert.ToInt32(seBatch.EditValue); i++)
                 {
                     string batch_completados = i + " de " + Convert.ToInt32(seBatch.EditValue);
-                    xfrmPesajeIndividualBatch frm = new xfrmPesajeIndividualBatch(batch_completados, "Báscula: " + lueBascula.Text, pesajeIndividual);
+                    //xfrmPesajeIndividualBatch frm = new xfrmPesajeIndividualBatch(batch_completados, "Báscula: " + lueBascula.Text, pesajeIndividual);
+                    xfrmPesajeIndividualBatchV3 frm = new xfrmPesajeIndividualBatchV3(batch_completados, "Báscula: " + lueBascula.Text, pesajeIndividual);
 
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
@@ -166,7 +167,7 @@ namespace LOSA.MicroIngredientes
                         PesajeIndividualCompletados pesajeIndividualCompletado = new PesajeIndividualCompletados();
 
                         frmSelectLotePesaje frm2 = new frmSelectLotePesaje(pesajeIndividual.MateriaPrimaID,
-                                                                            frm.peso_bascula,
+                                                                            frm.peso_bascula_finish,
                                                                             1,
                                                                             pesajeIndividual.id_orden_pesaje_header,
                                                                             frm.fecha);
@@ -174,7 +175,7 @@ namespace LOSA.MicroIngredientes
                         {
                             //LoadData();
                             pesajeIndividualCompletado.OrdenPesaje_H = pesajeIndividual.id_orden_pesaje_header;
-                            pesajeIndividualCompletado.PesoReal = frm.peso_bascula;
+                            pesajeIndividualCompletado.PesoReal = frm.peso_bascula_finish;
                             pesajeIndividualCompletado.Fecha = frm.fecha;
                             
                             pesajesCompletados.Add(pesajeIndividualCompletado);

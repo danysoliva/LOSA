@@ -29,9 +29,33 @@ namespace LOSA.TransaccionesMP
             InitializeComponent();
             usuarioLogueado = Puser;
             load_tarimas_scan();
+            load_bines_disponibles();
             txtRequisicion.Focus();
         }
-                                                                                         
+
+        private void load_bines_disponibles()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_bines_disponibles_liquidos", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@idbodega", idBodega);
+                dsTransaccionesMP.bines_disponibles.Clear();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dsTransaccionesMP.bines_disponibles);
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
+
         public void load_tarimas_scan()
         {
             string query = @"sp_load_tarimas_escaneadas";

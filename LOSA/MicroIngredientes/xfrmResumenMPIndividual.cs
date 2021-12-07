@@ -5,11 +5,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static LOSA.MicroIngredientes.xfrmConfPlanBatch;
 
 namespace LOSA.MicroIngredientes
 {
@@ -17,10 +19,16 @@ namespace LOSA.MicroIngredientes
     {
 
         List<PesajeIndividualNew> pesaje_list = new List<PesajeIndividualNew>();
-        public xfrmResumenMPIndividual(List<PesajeIndividualNew> pPesaje_List)
+
+        int idPesaje;
+
+        int modeForm;
+        public xfrmResumenMPIndividual(List<PesajeIndividualNew> pPesaje_List,int idPesajeP,int modeFormP)
         {
             InitializeComponent();
             pesaje_list = pPesaje_List;
+            idPesaje = idPesajeP;
+            modeForm = modeFormP;
         }
 
         private void xfrmResumenMPIndividual_Load(object sender, EventArgs e)
@@ -29,16 +37,28 @@ namespace LOSA.MicroIngredientes
             {
                 foreach (var item in pesaje_list)
                 {
-                    DataRow row = dsMicros.New_Pesaje.Rows.Add();
+                    //var row =  dsMicros.New_Pesaje.Rows.Add();
+                    var row = (dsMicros.New_PesajeRow)dsMicros.New_Pesaje.Rows.Add();
+                    
 
-                    row["codigo"] = item.Codigo;
-                    row["material"] = item.Material;
-                    row["batchPlan"] = item.BatchPlan-item.BatchCompletados;
-                    row["id_orden"] = item.OrdenID;
-                    row["id_mp"] = item.MP_ID;
-                    row["Peso_Total"] = item.PesoTotal;
-                    row["peso_por_batch"] = item.PesoPorBatch;
-                    row["batch_completados"] = item.BatchCompletados;
+                    //row["codigo"] = item.Codigo;
+                    //row["material"] = item.Material;
+                    //row["batchPlan"] = item.BatchPlan-item.BatchCompletados;
+                    //row["id_orden"] = item.OrdenID;
+                    //row["id_mp"] = item.MP_ID;
+                    //row["Peso_Total"] = item.PesoTotal;
+                    //row["peso_por_batch"] = item.PesoPorBatch;
+                    //row["batch_completados"] = item.BatchCompletados;
+
+
+                    row.codigo = item.Codigo;
+                    row.material = item.Material;
+                    row.batchPlan = item.BatchPlan - item.BatchCompletados;
+                    row.id_orden = item.OrdenID;
+                    row.id_mp = item.MP_ID;
+                    row.Peso_Total = item.PesoTotal;
+                    row.peso_por_batch = item.PesoPorBatch;
+                    row.batch_completados = item.BatchCompletados;
 
                     dsMicros.New_Pesaje.AcceptChanges();
 
@@ -48,6 +68,23 @@ namespace LOSA.MicroIngredientes
                     //row.material = item.Material;
                     //row.batchPlan = item.BatchPlan;
 
+                }
+
+                if (modeForm==1)
+                {
+                    colbatchPlan.Visible = true;
+                    colRealBatch.Visible = false;
+                    btnFinish.Visible = true;
+                    simpleButton1.Visible = false;
+                }
+
+                if (modeForm == 2)
+                {
+                    colbatchPlan.OptionsColumn.AllowEdit = false;
+                    //colbatchPlan.Visible = false;
+                    colRealBatch.Visible = true;
+                    btnFinish.Visible = false;
+                    simpleButton1.Visible = true;
                 }
             }
             catch (Exception ex)
@@ -72,11 +109,22 @@ namespace LOSA.MicroIngredientes
 
                 //if (row.seleccionar == true)
                 //{
-                    xfrmConfPlanBatch frm = new xfrmConfPlanBatch(pesaje);
+                    xfrmConfPlanBatch frm = new xfrmConfPlanBatch(pesaje, modeForm);
 
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
+
+                    //if (modeForm==Convert.ToInt32(ModeForm.IniciarPesaje))
+                    //{
                         row.batchPlan = frm.pesaje.BatchPlan;
+                        row.batch_a_pesar = frm.pesaje.BatchAPesar;
+
+                    ////}
+                    //else
+                    //{
+                    //    row.batchPlan = frm.pesaje.BatchPlan;
+
+                    //}
 
                         dsMicros.AcceptChanges();
 
@@ -99,6 +147,7 @@ namespace LOSA.MicroIngredientes
                         pesaje.OrdenID = item.id_orden;
                         pesaje.MP_ID = item.id_mp;
                         pesaje.PesoReal = item.batch_completados * item.peso_por_batch;
+                        pesaje.BatchAPesar = item.batch_a_pesar;
 
                                 pesaje_list.Add(pesaje);
                             //}
@@ -118,6 +167,14 @@ namespace LOSA.MicroIngredientes
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+            foreach (var item in dsMicros.New_Pesaje)
+            {
+                if (item.batch_a_pesar==0)
+                {
+                    CajaDialogo.Error("DEBE DE INGRESAR LOS BATCH A PESAR");
+                    return;
+                }
+            }
             xfrmPesajeIndividualV2 frm = new xfrmPesajeIndividualV2(pesaje_list);
 
             frm.Show();
@@ -126,6 +183,70 @@ namespace LOSA.MicroIngredientes
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+            SqlTransaction transaccion;
+        private void btnFinish_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+
+            DataOperations dp = new DataOperations();
+
+                SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS);
+
+                //using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
+                //{
+
+                foreach (var item in dsMicros.New_Pesaje)
+                {
+                    if (item.batchPlan==0)
+                    {
+                        CajaDialogo.Error("DEBE DE INGRESAR LA PLANIFICACIÓN DE LOS BATCH");
+                        return;
+                    }
+                }
+               
+                cnx.Open();
+
+                transaccion= cnx.BeginTransaction();
+                Boolean guardar = false;
+
+                foreach (var item in dsMicros.New_Pesaje)
+                {
+                    //if (item.seleccionar == true)
+                    //{
+
+                        SqlCommand cmd = new SqlCommand("dbo.sp_insert_MP_Pesaje_IndividualV2", transaccion.Connection);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Transaction = transaccion;
+
+                        cmd.Parameters.Add("@id_orden", SqlDbType.Int).Value = idPesaje;
+                        cmd.Parameters.Add("@id_mp", SqlDbType.Int).Value = item.id_mp;
+                        cmd.Parameters.Add("@peso_por_batch", SqlDbType.Decimal).Value = item.peso_por_batch;
+                        cmd.Parameters.Add("@peso_total", SqlDbType.Decimal).Value = item.Peso_Total;
+                        cmd.Parameters.Add("@batchPlan", SqlDbType.Int).Value = item.batchPlan;
+
+                        cmd.ExecuteNonQuery();
+                        guardar = true;
+                    //}
+
+                }
+
+                if (guardar== true)
+                {
+                    transaccion.Commit();
+                    this.Close();
+                }
+                cnx.Close();
+            //}
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+                transaccion.Rollback();
+            }
         }
     }
 }

@@ -11,21 +11,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static LOSA.MicroIngredientes.xfrmConfPlanBatch;
 
 namespace LOSA.MicroIngredientes
 {
     public partial class xfrmAsistentePesaje : DevExpress.XtraEditors.XtraForm
     {
-        int ordenID = 0;
+        Int64 ordenID = 0;
         PesajeIndividualNew pesaje = new PesajeIndividualNew();
         List<PesajeIndividualNew> pesaje_list = new List<PesajeIndividualNew>();
         int PesajeID;
+        int BatchPlan;
 
-        public xfrmAsistentePesaje(int id_orden, int id)
+        public xfrmAsistentePesaje(Int64 id_orden, int id,int batchPlanP)
         {
             InitializeComponent();
             ordenID = id_orden;
             PesajeID = id;
+            BatchPlan = batchPlanP;
             LoadData();
         }
 
@@ -69,7 +72,7 @@ namespace LOSA.MicroIngredientes
 
                 var row = (dsMicros.New_PesajeRow)gvPesaje.GetFocusedDataRow();
 
-                //guardar = true;
+                guardar = true;
 
 
                 using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
@@ -78,31 +81,33 @@ namespace LOSA.MicroIngredientes
 
                     foreach (var item in dsMicros.New_Pesaje)
                     {
-                        if (item.seleccionar==true)
+                        if (item.seleccionar == true)
                         {
 
-                        SqlCommand cmd = new SqlCommand("dbo.sp_insert_MP_Pesaje_Individual", cnx);
-                        cmd.CommandType = CommandType.StoredProcedure;
+                            SqlCommand cmd = new SqlCommand("dbo.sp_insert_MP_Pesaje_IndividualV2", cnx);
+                            cmd.CommandType = CommandType.StoredProcedure;
 
-                        cmd.Parameters.Add("@id_orden", SqlDbType.Int).Value = item.id_pesaje;
-                        cmd.Parameters.Add("@id_mp", SqlDbType.Int).Value = item.id_mp;
-                        cmd.Parameters.Add("@peso_por_batch", SqlDbType.Decimal).Value = item.peso_por_batch;
-                        cmd.Parameters.Add("@peso_total", SqlDbType.Decimal).Value = item.Peso_Total;
+                            cmd.Parameters.Add("@id_orden", SqlDbType.Int).Value = PesajeID;
+                            cmd.Parameters.Add("@id_mp", SqlDbType.Int).Value = item.id_mp;
+                            cmd.Parameters.Add("@peso_por_batch", SqlDbType.Decimal).Value = item.peso_por_batch;
+                            cmd.Parameters.Add("@peso_total", SqlDbType.Decimal).Value = item.Peso_Total;
+                            cmd.Parameters.Add("@batchPlan", SqlDbType.Int).Value = BatchPlan;
 
-                        cmd.ExecuteNonQuery();
+
+                            cmd.ExecuteNonQuery();
                         }
 
                     }
-                        cnx.Close();
-                        guardar = true;
+                    cnx.Close();
+                    guardar = true;
                 }
 
                 if (guardar == true)
                 {
 
-                    xfrmResumenMPIndividual frm = new xfrmResumenMPIndividual(pesaje_list);
+                    //xfrmResumenMPIndividual frm = new xfrmResumenMPIndividual(pesaje_list, PesajeID,1);
 
-                    frm.Show();
+                    //frm.Show();
                     this.Close();
                 }
             }
@@ -170,7 +175,7 @@ namespace LOSA.MicroIngredientes
 
                 if (row.seleccionar==true)
                 {
-                    xfrmConfPlanBatch frm = new xfrmConfPlanBatch(pesaje);
+                    xfrmConfPlanBatch frm = new xfrmConfPlanBatch(pesaje,Convert.ToInt32( ModeForm.IniciarPesaje));
 
                     if (frm.ShowDialog()== DialogResult.OK)
                     {

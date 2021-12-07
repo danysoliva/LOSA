@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>226</ApplicationRevision>
+    <ApplicationRevision>224</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -72,7 +72,8 @@
   <PropertyGroup>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>LOSA_3_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -88,13 +89,34 @@
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>LOSA_3_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>11DBC92D92B4EB4A587EA378AD2A6CF4E83C0246</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>5A56FE5B36BF1139C0C28330C52B1468E1F78C88</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -158,36 +180,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsAlmacenesExternos.xsd</DependentUpon>
     </Compile>
-    <Compile Include="AlmacenesExterno\dsReporteAlmacenExterno.cs">
-      <DependentUpon>dsReporteAlmacenExterno.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="AlmacenesExterno\dsReporteAlmacenExterno.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsReporteAlmacenExterno.xsd</DependentUpon>
-    </Compile>
     <Compile Include="AlmacenesExterno\dsSalidasAlmacenesExternos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsSalidasAlmacenesExternos.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="AlmacenesExterno\frmReporteExterno.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AlmacenesExterno\frmReporteExterno.Designer.cs">
-      <DependentUpon>frmReporteExterno.cs</DependentUpon>
     </Compile>
     <Compile Include="AlmacenesExterno\frmTipoIngreso..cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AlmacenesExterno\frmTipoIngreso..Designer.cs">
       <DependentUpon>frmTipoIngreso..cs</DependentUpon>
-    </Compile>
-    <Compile Include="AlmacenesExterno\frmvertodasMPinbodega.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AlmacenesExterno\frmvertodasMPinbodega.Designer.cs">
-      <DependentUpon>frmvertodasMPinbodega.cs</DependentUpon>
     </Compile>
     <Compile Include="AlmacenesExterno\Models\Conf_MP_Ingresada.cs" />
     <Compile Include="AlmacenesExterno\Models\InfoHeaderRptIngreso.cs" />
@@ -1041,6 +1043,7 @@
     <Compile Include="MicroIngredientes\frmSelectLotePesaje.Designer.cs">
       <DependentUpon>frmSelectLotePesaje.cs</DependentUpon>
     </Compile>
+    <Compile Include="MicroIngredientes\Models\OrdenH_Info.cs" />
     <Compile Include="MicroIngredientes\Models\PesajeIndividualCompletados.cs" />
     <Compile Include="MicroIngredientes\Models\PesajeIndividualInfo.cs" />
     <Compile Include="MicroIngredientes\Models\PesajeIndividualNew.cs" />
@@ -1075,11 +1078,11 @@
     <Compile Include="MicroIngredientes\xfrmMicroIngredientes.Designer.cs">
       <DependentUpon>xfrmMicroIngredientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="MicroIngredientes\xfrmPesajeIndividualBatchV2.cs">
+    <Compile Include="MicroIngredientes\xfrmPesajeIndividualBatchV3.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MicroIngredientes\xfrmPesajeIndividualBatchV2.Designer.cs">
-      <DependentUpon>xfrmPesajeIndividualBatchV2.cs</DependentUpon>
+    <Compile Include="MicroIngredientes\xfrmPesajeIndividualBatchV3.Designer.cs">
+      <DependentUpon>xfrmPesajeIndividualBatchV3.cs</DependentUpon>
     </Compile>
     <Compile Include="MicroIngredientes\xfrmPesajeIndividualV2.cs">
       <SubType>Form</SubType>
@@ -1286,17 +1289,6 @@
       <DependentUpon>xfrmCheckActiveBin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <None Include="AlmacenesExterno\dsReporteAlmacenExterno.xsc">
-      <DependentUpon>dsReporteAlmacenExterno.xsd</DependentUpon>
-    </None>
-    <None Include="AlmacenesExterno\dsReporteAlmacenExterno.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsReporteAlmacenExterno.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="AlmacenesExterno\dsReporteAlmacenExterno.xss">
-      <DependentUpon>dsReporteAlmacenExterno.xsd</DependentUpon>
-    </None>
     <None Include="Calidad\dsMantenimientoC.xsc">
       <DependentUpon>dsMantenimientoC.xsd</DependentUpon>
     </None>
@@ -1330,7 +1322,6 @@
     <None Include="Liquidos\dsLiquidos_.xss">
       <DependentUpon>dsLiquidos_.xsd</DependentUpon>
     </None>
-    <None Include="LOSA_3_TemporaryKey.pfx" />
     <None Include="Nir\dsNir.xsc">
       <DependentUpon>dsNir.xsd</DependentUpon>
     </None>
@@ -1358,12 +1349,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsRecepcionMP.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="RecepcionMP\dsWizard.cs">
-      <DependentUpon>dsWizard.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="RecepcionMP\dsWizard.Designer.cs">
-      <DependentUpon>dsWizard.cs</DependentUpon>
     </Compile>
     <Compile Include="RecepcionMP\frmCambioIngreso.cs">
       <SubType>Form</SubType>
@@ -1509,12 +1494,6 @@
     <Compile Include="RecepcionMP\frmSeguimientoRequisas.Designer.cs">
       <DependentUpon>frmSeguimientoRequisas.cs</DependentUpon>
     </Compile>
-    <Compile Include="RecepcionMP\frmSeleccionrLoteExterno.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RecepcionMP\frmSeleccionrLoteExterno.Designer.cs">
-      <DependentUpon>frmSeleccionrLoteExterno.cs</DependentUpon>
-    </Compile>
     <Compile Include="RecepcionMP\frmSelectMP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1527,24 +1506,6 @@
     <Compile Include="RecepcionMP\frmShowOnlyLote.Designer.cs">
       <DependentUpon>frmShowOnlyLote.cs</DependentUpon>
     </Compile>
-    <Compile Include="RecepcionMP\frmSpet1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RecepcionMP\frmSpet1.Designer.cs">
-      <DependentUpon>frmSpet1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RecepcionMP\frmSpet2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RecepcionMP\frmSpet2.Designer.cs">
-      <DependentUpon>frmSpet2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RecepcionMP\frmSpet3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RecepcionMP\frmSpet3.Designer.cs">
-      <DependentUpon>frmSpet3.cs</DependentUpon>
-    </Compile>
     <Compile Include="RecepcionMP\frmTarima.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1556,12 +1517,6 @@
     </Compile>
     <Compile Include="RecepcionMP\frmTarimas.Designer.cs">
       <DependentUpon>frmTarimas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RecepcionMP\frmTarima_V2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RecepcionMP\frmTarima_V2.Designer.cs">
-      <DependentUpon>frmTarima_V2.cs</DependentUpon>
     </Compile>
     <Compile Include="RecepcionMP\frmUbicaciones_granel.cs">
       <SubType>Form</SubType>
@@ -2180,14 +2135,8 @@
     <Compile Include="Utileria\frmMensajeCalidad.Designer.cs">
       <DependentUpon>frmMensajeCalidad.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AlmacenesExterno\frmReporteExterno.resx">
-      <DependentUpon>frmReporteExterno.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AlmacenesExterno\frmTipoIngreso..resx">
       <DependentUpon>frmTipoIngreso..cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AlmacenesExterno\frmvertodasMPinbodega.resx">
-      <DependentUpon>frmvertodasMPinbodega.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AlmacenesExterno\Reporteria\xrptAlmacenesExternos.resx">
       <DependentUpon>xrptAlmacenesExternos.cs</DependentUpon>
@@ -2582,8 +2531,8 @@
     <EmbeddedResource Include="MicroIngredientes\xfrmMicroIngredientes.resx">
       <DependentUpon>xfrmMicroIngredientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MicroIngredientes\xfrmPesajeIndividualBatchV2.resx">
-      <DependentUpon>xfrmPesajeIndividualBatchV2.cs</DependentUpon>
+    <EmbeddedResource Include="MicroIngredientes\xfrmPesajeIndividualBatchV3.resx">
+      <DependentUpon>xfrmPesajeIndividualBatchV3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MicroIngredientes\xfrmPesajeIndividualV2.resx">
       <DependentUpon>xfrmPesajeIndividualV2.cs</DependentUpon>
@@ -2761,32 +2710,17 @@
     <EmbeddedResource Include="RecepcionMP\frmSeguimientoRequisas.resx">
       <DependentUpon>frmSeguimientoRequisas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RecepcionMP\frmSeleccionrLoteExterno.resx">
-      <DependentUpon>frmSeleccionrLoteExterno.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmSelectMP.resx">
       <DependentUpon>frmSelectMP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmShowOnlyLote.resx">
       <DependentUpon>frmShowOnlyLote.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RecepcionMP\frmSpet1.resx">
-      <DependentUpon>frmSpet1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RecepcionMP\frmSpet2.resx">
-      <DependentUpon>frmSpet2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RecepcionMP\frmSpet3.resx">
-      <DependentUpon>frmSpet3.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmTarima.resx">
       <DependentUpon>frmTarima.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmTarimas.resx">
       <DependentUpon>frmTarimas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RecepcionMP\frmTarima_V2.resx">
-      <DependentUpon>frmTarima_V2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmUbicaciones_granel.resx">
       <DependentUpon>frmUbicaciones_granel.cs</DependentUpon>
@@ -3192,17 +3126,6 @@
     <None Include="RecepcionMP\dsingresos.xss">
       <DependentUpon>dsingresos.xsd</DependentUpon>
     </None>
-    <None Include="RecepcionMP\dsWizard.xsc">
-      <DependentUpon>dsWizard.xsd</DependentUpon>
-    </None>
-    <None Include="RecepcionMP\dsWizard.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsWizard1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="RecepcionMP\dsWizard.xss">
-      <DependentUpon>dsWizard.xsd</DependentUpon>
-    </None>
     <None Include="RecuentoInventario\dsRecuento.xsc">
       <DependentUpon>dsRecuento.xsd</DependentUpon>
     </None>
@@ -3319,6 +3242,7 @@
     <None Include="Resources\delete-1-icon72px.png" />
     <None Include="Resources\delete-1-icon128px.png" />
     <None Include="Resources\Done-icon.png" />
+    <None Include="Resources\checked_32X32.png" />
     <Content Include="Resources\edit.png" />
     <None Include="Resources\hapag-4-icon.png" />
     <None Include="Resources\Forklift-icon.png" />
@@ -3357,7 +3281,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 y x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
