@@ -513,11 +513,11 @@ namespace LOSA.AlmacenesExterno
             }
 
 
-            if (Ingresado == TotalLineadeMP)
-            {
-                CajaDialogo.Error("No se puede agregar mas lotes por que la cantidad configurada sobrepasa el limite seleccionado.");
-                return;
-            }
+            //if (Ingresado == TotalLineadeMP)
+            //{
+            //    CajaDialogo.Error("No se puede agregar mas lotes por que la cantidad configurada sobrepasa el limite seleccionado.");
+            //    return;
+            //}
 
 
             xfrmLoteCRUD frm = new xfrmLoteCRUD(lote);
@@ -526,7 +526,10 @@ namespace LOSA.AlmacenesExterno
                  Ingresado = 0;
                 foreach (var items in dsAlmacenesExternos.Lote)
                 {
-                    Ingresado = Ingresado + items.cantidad;
+                    if (items.LoteNumerador != row.LoteNumerador)
+                    {
+                        Ingresado = Ingresado + items.cantidad;
+                    }
                 }
 
                 Ingresado = Ingresado + frm.lote.Cantidad;
@@ -537,7 +540,17 @@ namespace LOSA.AlmacenesExterno
                     return;
                 }
 
+                int RowIdEnMemoria = row.LoteNumerador;
                 gvLote.DeleteRow(gvLote.FocusedRowHandle);
+                foreach (var item in dsTodas.Lote)
+                {
+                    if (item.LoteNumerador == RowIdEnMemoria)
+                    {
+                        item.Delete();
+                        dsTodas.AcceptChanges();
+                        break;
+                    }
+                }
                 LoteExternoVar = frm.lote;
                 frm.lote.Row_ = lotes.Count + 1;
                 lotes.Add(frm.lote);
