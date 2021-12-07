@@ -180,16 +180,34 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsAlmacenesExternos.xsd</DependentUpon>
     </Compile>
+    <Compile Include="AlmacenesExterno\dsReporteAlmacenExterno.cs">
+      <DependentUpon>dsReporteAlmacenExterno.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AlmacenesExterno\dsReporteAlmacenExterno.Designer.cs">
+      <DependentUpon>dsReporteAlmacenExterno.cs</DependentUpon>
+    </Compile>
     <Compile Include="AlmacenesExterno\dsSalidasAlmacenesExternos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsSalidasAlmacenesExternos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AlmacenesExterno\frmReporteExterno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlmacenesExterno\frmReporteExterno.Designer.cs">
+      <DependentUpon>frmReporteExterno.cs</DependentUpon>
     </Compile>
     <Compile Include="AlmacenesExterno\frmTipoIngreso..cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AlmacenesExterno\frmTipoIngreso..Designer.cs">
       <DependentUpon>frmTipoIngreso..cs</DependentUpon>
+    </Compile>
+    <Compile Include="AlmacenesExterno\frmvertodasMPinbodega.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlmacenesExterno\frmvertodasMPinbodega.Designer.cs">
+      <DependentUpon>frmvertodasMPinbodega.cs</DependentUpon>
     </Compile>
     <Compile Include="AlmacenesExterno\Models\Conf_MP_Ingresada.cs" />
     <Compile Include="AlmacenesExterno\Models\InfoHeaderRptIngreso.cs" />
@@ -1295,6 +1313,17 @@
       <DependentUpon>xfrmCheckActiveBin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <None Include="AlmacenesExterno\dsReporteAlmacenExterno.xsc">
+      <DependentUpon>dsReporteAlmacenExterno.xsd</DependentUpon>
+    </None>
+    <None Include="AlmacenesExterno\dsReporteAlmacenExterno.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReporteAlmacenExterno1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AlmacenesExterno\dsReporteAlmacenExterno.xss">
+      <DependentUpon>dsReporteAlmacenExterno.xsd</DependentUpon>
+    </None>
     <None Include="Calidad\dsMantenimientoC.xsc">
       <DependentUpon>dsMantenimientoC.xsd</DependentUpon>
     </None>
@@ -2177,8 +2206,14 @@
     <Compile Include="Utileria\frmMensajeCalidad.Designer.cs">
       <DependentUpon>frmMensajeCalidad.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AlmacenesExterno\frmReporteExterno.resx">
+      <DependentUpon>frmReporteExterno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AlmacenesExterno\frmTipoIngreso..resx">
       <DependentUpon>frmTipoIngreso..cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlmacenesExterno\frmvertodasMPinbodega.resx">
+      <DependentUpon>frmvertodasMPinbodega.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AlmacenesExterno\Reporteria\xrptAlmacenesExternos.resx">
       <DependentUpon>xrptAlmacenesExternos.cs</DependentUpon>

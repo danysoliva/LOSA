@@ -139,54 +139,59 @@ namespace LOSA.MicroIngredientes
 
                 //row2.estado = "70";
 
+
+
+
                 //gv = (GridView)gcMicros.FocusedView;
                 //row = (dsMicros.MicrosRow)gv.GetFocusedDataRow();
 
 
+                if (existeOrdenPesaje==true)
+                {
 
-                //if (row2 != null)
+
+                using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
+                {
+                    cnx.Open();
+
+                    SqlCommand cmd = new SqlCommand("dbo.sp_validate_OP_Conf_PesajeIndividual",cnx);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@id_orden", SqlDbType.Int).Value = orderH.ID;
+
+                     ExisteConfPesajeManual = Convert.ToBoolean( cmd.ExecuteScalar());
+
+                    cnx.Close();
+                }
+
+                //if (row2 != null)  )
                 //{
 
-                if (orderH.BatchReal == 0 && orderH.CodeState == 40)
-                {
-                    //if (ExisteConfPesajeManual == false)
+                    if (orderH.BatchReal == 0 && orderH.CodeState == 70)
                     {
+                        if (ExisteConfPesajeManual == false)
+                        {
 
-                        xfrmAsistentePesaje frm = new xfrmAsistentePesaje(orderH.Order_ID, orderH.ID, orderH.Cant_Batch);
-                        frm.Show();
-                        //if (frm.ShowDialog()== DialogResult.OK )
-                        //{
-                        //    LoadData();
-                        //} 
+                            xfrmAsistentePesaje frm = new xfrmAsistentePesaje(orderH.Order_ID, orderH.ID, orderH.Cant_Batch);
 
+
+                            frm.Show();
+                            //if (frm.ShowDialog()== DialogResult.OK )
+                            //{
+                            //    LoadData();
+
+                            //} 
+
+                        }
                     }
-                }
-                else
-                if (orderH.CodeState == 80)
-                {
-                    CajaDialogo.Error("Orden ya esta finalizada");
-                    return;
-                }
-
-                if (existeOrdenPesaje == true)
-                {
-
-
-                    using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
+                    else
+                    if (orderH.CodeState == 80)
                     {
-                        cnx.Open();
-
-                        SqlCommand cmd = new SqlCommand("dbo.sp_validate_OP_Conf_PesajeIndividual", cnx);
-                        cmd.CommandType = CommandType.StoredProcedure;
-
-                        cmd.Parameters.Add("@id_orden", SqlDbType.Int).Value = orderH.ID;
-
-                        ExisteConfPesajeManual = Convert.ToBoolean(cmd.ExecuteScalar());
-
-                        cnx.Close();
+                        CajaDialogo.Error("Orden ya esta finalizada");
+                        return;
                     }
 
-                    //}
+                //}
 
                 }
 
