@@ -107,7 +107,7 @@ namespace LOSA.AlmacenesExterno
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(12, 8);
+            this.labelControl1.Location = new System.Drawing.Point(4, 1);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(281, 30);
             this.labelControl1.TabIndex = 1;
@@ -163,9 +163,9 @@ namespace LOSA.AlmacenesExterno
             this.btnSalir.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.Appearance.Options.UseFont = true;
             this.btnSalir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.Image")));
-            this.btnSalir.Location = new System.Drawing.Point(1398, 8);
+            this.btnSalir.Location = new System.Drawing.Point(1409, 1);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(121, 55);
+            this.btnSalir.Size = new System.Drawing.Size(121, 40);
             this.btnSalir.TabIndex = 0;
             this.btnSalir.Text = "Cerrar";
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -180,7 +180,7 @@ namespace LOSA.AlmacenesExterno
             this.grd_resumen.Name = "grd_resumen";
             this.grd_resumen.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnCambiodeBodega});
-            this.grd_resumen.Size = new System.Drawing.Size(524, 197);
+            this.grd_resumen.Size = new System.Drawing.Size(631, 292);
             this.grd_resumen.TabIndex = 6;
             this.grd_resumen.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_resumen});
@@ -309,7 +309,7 @@ namespace LOSA.AlmacenesExterno
             this.grd_transito.Location = new System.Drawing.Point(2, 27);
             this.grd_transito.MainView = this.grdv_transito;
             this.grd_transito.Name = "grd_transito";
-            this.grd_transito.Size = new System.Drawing.Size(507, 197);
+            this.grd_transito.Size = new System.Drawing.Size(415, 292);
             this.grd_transito.TabIndex = 7;
             this.grd_transito.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_transito});
@@ -438,7 +438,7 @@ namespace LOSA.AlmacenesExterno
             this.grd_data.Location = new System.Drawing.Point(8, 52);
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
-            this.grd_data.Size = new System.Drawing.Size(1507, 366);
+            this.grd_data.Size = new System.Drawing.Size(1507, 296);
             this.grd_data.TabIndex = 12;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
@@ -594,20 +594,26 @@ namespace LOSA.AlmacenesExterno
             this.colmpNombre.Name = "colmpNombre";
             this.colmpNombre.OptionsColumn.AllowEdit = false;
             this.colmpNombre.Visible = true;
-            this.colmpNombre.VisibleIndex = 10;
+            this.colmpNombre.VisibleIndex = 12;
             this.colmpNombre.Width = 291;
             // 
             // colcodigoMp
             // 
+            this.colcodigoMp.Caption = "Codigo SAP";
             this.colcodigoMp.FieldName = "codigoMp";
             this.colcodigoMp.Name = "colcodigoMp";
             this.colcodigoMp.OptionsColumn.AllowEdit = false;
+            this.colcodigoMp.Visible = true;
+            this.colcodigoMp.VisibleIndex = 11;
             // 
             // colproducCodigo
             // 
+            this.colproducCodigo.Caption = "Cod. Produccion";
             this.colproducCodigo.FieldName = "producCodigo";
             this.colproducCodigo.Name = "colproducCodigo";
             this.colproducCodigo.OptionsColumn.AllowEdit = false;
+            this.colproducCodigo.Visible = true;
+            this.colproducCodigo.VisibleIndex = 10;
             // 
             // colfechaproduccion
             // 
@@ -629,9 +635,9 @@ namespace LOSA.AlmacenesExterno
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl1.Controls.Add(this.labelControl3);
             this.panelControl1.Controls.Add(this.grd_data);
-            this.panelControl1.Location = new System.Drawing.Point(4, 301);
+            this.panelControl1.Location = new System.Drawing.Point(4, 371);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1524, 429);
+            this.panelControl1.Size = new System.Drawing.Size(1524, 359);
             this.panelControl1.TabIndex = 13;
             // 
             // labelControl3
@@ -658,9 +664,9 @@ namespace LOSA.AlmacenesExterno
             this.groupControl1.Controls.Add(this.txtcodigoMP);
             this.groupControl1.Controls.Add(this.txtbodegaName);
             this.groupControl1.Controls.Add(this.txtmp);
-            this.groupControl1.Location = new System.Drawing.Point(4, 69);
+            this.groupControl1.Location = new System.Drawing.Point(4, 44);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(477, 226);
+            this.groupControl1.Size = new System.Drawing.Size(464, 321);
             this.groupControl1.TabIndex = 14;
             this.groupControl1.Text = "Seleccion Efectiva";
             // 
@@ -681,9 +687,9 @@ namespace LOSA.AlmacenesExterno
             this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.groupControl2.AppearanceCaption.Options.UseFont = true;
             this.groupControl2.Controls.Add(this.grd_resumen);
-            this.groupControl2.Location = new System.Drawing.Point(485, 69);
+            this.groupControl2.Location = new System.Drawing.Point(470, 44);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(528, 226);
+            this.groupControl2.Size = new System.Drawing.Size(635, 321);
             this.groupControl2.TabIndex = 15;
             this.groupControl2.Text = "Inventario de Bodegas Externas";
             // 
@@ -693,9 +699,9 @@ namespace LOSA.AlmacenesExterno
             this.groupControl3.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.groupControl3.AppearanceCaption.Options.UseFont = true;
             this.groupControl3.Controls.Add(this.grd_transito);
-            this.groupControl3.Location = new System.Drawing.Point(1017, 69);
+            this.groupControl3.Location = new System.Drawing.Point(1109, 44);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(511, 226);
+            this.groupControl3.Size = new System.Drawing.Size(419, 321);
             this.groupControl3.TabIndex = 16;
             this.groupControl3.Text = "Compras Transito";
             // 

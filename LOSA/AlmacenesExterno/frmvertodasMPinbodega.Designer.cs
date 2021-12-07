@@ -35,6 +35,7 @@ namespace LOSA.AlmacenesExterno
             this.txtBodega = new DevExpress.XtraEditors.TextEdit();
             this.txtbodegaName = new DevExpress.XtraEditors.TextEdit();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
+            this.dsReporteAlmacenExterno = new LOSA.AlmacenesExterno.dsReporteAlmacenExterno();
             this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.coloc1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfactura = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -50,12 +51,11 @@ namespace LOSA.AlmacenesExterno
             this.colproducCodigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfechaproduccion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.dsReporteAlmacenExterno = new LOSA.AlmacenesExterno.dsReporteAlmacenExterno();
             ((System.ComponentModel.ISupportInitialize)(this.txtBodega.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtbodegaName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsReporteAlmacenExterno)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSalir
@@ -119,6 +119,11 @@ namespace LOSA.AlmacenesExterno
             this.grd_data.TabIndex = 14;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
+            // 
+            // dsReporteAlmacenExterno
+            // 
+            this.dsReporteAlmacenExterno.DataSetName = "dsReporteAlmacenExterno";
+            this.dsReporteAlmacenExterno.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // grdv_data
             // 
@@ -271,20 +276,26 @@ namespace LOSA.AlmacenesExterno
             this.colmpNombre.Name = "colmpNombre";
             this.colmpNombre.OptionsColumn.AllowEdit = false;
             this.colmpNombre.Visible = true;
-            this.colmpNombre.VisibleIndex = 10;
+            this.colmpNombre.VisibleIndex = 12;
             this.colmpNombre.Width = 291;
             // 
             // colcodigoMp
             // 
+            this.colcodigoMp.Caption = "Cod. SAP";
             this.colcodigoMp.FieldName = "codigoMp";
             this.colcodigoMp.Name = "colcodigoMp";
             this.colcodigoMp.OptionsColumn.AllowEdit = false;
+            this.colcodigoMp.Visible = true;
+            this.colcodigoMp.VisibleIndex = 11;
             // 
             // colproducCodigo
             // 
+            this.colproducCodigo.Caption = "Cod. Produccion";
             this.colproducCodigo.FieldName = "producCodigo";
             this.colproducCodigo.Name = "colproducCodigo";
             this.colproducCodigo.OptionsColumn.AllowEdit = false;
+            this.colproducCodigo.Visible = true;
+            this.colproducCodigo.VisibleIndex = 10;
             // 
             // colfechaproduccion
             // 
@@ -309,11 +320,6 @@ namespace LOSA.AlmacenesExterno
             this.simpleButton1.Text = "Excel";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
-            // dsReporteAlmacenExterno
-            // 
-            this.dsReporteAlmacenExterno.DataSetName = "dsReporteAlmacenExterno";
-            this.dsReporteAlmacenExterno.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // frmvertodasMPinbodega
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -331,8 +337,8 @@ namespace LOSA.AlmacenesExterno
             ((System.ComponentModel.ISupportInitialize)(this.txtBodega.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtbodegaName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsReporteAlmacenExterno)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

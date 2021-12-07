@@ -202,6 +202,7 @@ namespace LOSA.AlmacenesExterno
             if (wshcode == "")
             {
                 CajaDialogo.Error("Seleccione de Inventario de Boodegas Externas una bodega externa.");
+                return;
             }
             frmvertodasMPinbodega frm = new frmvertodasMPinbodega(namewhs, wshcode);
             frm.Show();
