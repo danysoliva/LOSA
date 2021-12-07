@@ -164,7 +164,7 @@ namespace LOSA.MicroIngredientes
                     cnx.Close();
                 }
 
-                //if (row2 != null)
+                //if (row2 != null)  )
                 //{
 
                     if (orderH.BatchReal == 0 && orderH.CodeState == 70)
