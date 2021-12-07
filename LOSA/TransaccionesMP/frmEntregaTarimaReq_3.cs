@@ -56,6 +56,30 @@ namespace LOSA.TransaccionesMP
             }
         }
 
+
+        private void load_bines_disponiblesByReq(int pIdRequisicion)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_bines_con_disponible_produccion", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_requisicion", pIdRequisicion);
+                dsTransaccionesMP.bines_dispo_prd.Clear();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dsTransaccionesMP.bines_dispo_prd);
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
+
         public void load_tarimas_scan()
         {
             string query = @"sp_load_tarimas_escaneadas";
@@ -118,6 +142,7 @@ namespace LOSA.TransaccionesMP
                         //pictureBoxIndicadorOk.Visible = true;
                         lblRequisicionEncontrada.Text = RequisicionActual.IdRequisicion.ToString();
                         load_tarimas_scan_v2();
+                        load_bines_disponiblesByReq(RequisicionActual.IdRequisicion);
                         txtTarima.Focus();
 
                     }
@@ -234,8 +259,6 @@ namespace LOSA.TransaccionesMP
             }
         }
         public void EntregarTarima()
-        
-        
         {
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             datosTarimaPorCodBarra(cn);
@@ -251,6 +274,7 @@ namespace LOSA.TransaccionesMP
             decimal factor = 0;
             if (tarimaEncontrada != null)
             {
+                //Validar si es una requisicion valida esta cargada.
                 if (!RequisicionActual.Recuperado)
                 {
                     error = true;
@@ -266,8 +290,11 @@ namespace LOSA.TransaccionesMP
                     timerLimpiarMensaje.Start();
                     return;
                 }
+
+                //Validar si la tarima escaneada es valida
                 if (tarimaEncontrada.Recuperado)
                 {
+                    //Validar el estado de la tarima basado con el criterio del Depto de Calidad
                     if (tarimaEncontrada.Id_estadoCalidad > 1)
                     {
                         error = true;
@@ -283,11 +310,10 @@ namespace LOSA.TransaccionesMP
                         return;
                     }
 
-
+                    //Si no se ha generado ninguna validacion previa de bloqueo el programa permitira seguir ejecutando.
                     if (!error)
                     {
-                       
-
+                        //Validar la disponibilidad de la tarima para poder efectuar la entrega
                         try
                         {
                             DataOperations dp = new DataOperations();
@@ -321,9 +347,9 @@ namespace LOSA.TransaccionesMP
                                     return;
                                 }
 
-                                 ExistenciaTM = dr.GetDecimal(2);
-                                 Pentregado = dr.GetDecimal(3);
-                                 Psolicitado = dr.GetDecimal(4);
+                                ExistenciaTM = dr.GetDecimal(2);
+                                Pentregado = dr.GetDecimal(3);
+                                Psolicitado = dr.GetDecimal(4);
                                 factor = dr.GetDecimal(5);
                             }
                             dr.Close();
@@ -339,11 +365,10 @@ namespace LOSA.TransaccionesMP
                                                                                  , Pentregado
                                                                                  , Psolicitado
                                                                                  , Tarima
-                                                                                 ,idTarima
-                                                                                 ,factor);
+                                                                                 , idTarima
+                                                                                 , factor);
                         if (frms.ShowDialog() == DialogResult.OK)
                         {
-
                             try
                             {
 
@@ -399,9 +424,9 @@ namespace LOSA.TransaccionesMP
                             timerLimpiarMensaje.Start();
                             return;
                         }
-                        
 
-                        
+
+
 
                     }
                     else
