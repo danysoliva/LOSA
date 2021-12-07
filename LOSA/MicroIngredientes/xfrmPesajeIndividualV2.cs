@@ -85,11 +85,11 @@ namespace LOSA.MicroIngredientes
             try
             {
 
-                if (BasculaSelected == 0)
-                {
-                    CajaDialogo.Error("DEBE SELECCIONAR UNA BASCULA");
-                    return;
-                }
+                //if (BasculaSelected == 0)
+                //{
+                //    CajaDialogo.Error("DEBE SELECCIONAR UNA BASCULA");
+                //    return;
+                //}
 
                 pesajeIndividual.BasculaID = BasculaSelected;
 
@@ -103,11 +103,11 @@ namespace LOSA.MicroIngredientes
                     string batch_completados = counter + " de " + item.BatchPlan;
 
                     pesajeIndividual.BasculaID = BasculaSelected;
-                    pesajeIndividual.Batch_Plan = item.BatchPlan;
+                    pesajeIndividual.Batch_Plan = item.BatchAPesar;
                     pesajeIndividual.PesoPorBatch = item.PesoPorBatch;
                     //pesajeIndividual
 
-                    xfrmPesajeIndividualBatchV2 frm = new xfrmPesajeIndividualBatchV2(batch_completados, "Báscula: " + lueBascula.Text, pesajeIndividual,item.Material);
+                    xfrmPesajeIndividualBatchV3 frm = new xfrmPesajeIndividualBatchV3(batch_completados, "Báscula: " + lueBascula.Text, pesajeIndividual,item.Material);
 
 
                     for (int i = 1; i <= item.BatchPlan; i++)
@@ -126,7 +126,7 @@ namespace LOSA.MicroIngredientes
 
 
                             frmSelectLotePesaje frm2 = new frmSelectLotePesaje(item.MP_ID,
-                                                                                frm.peso_bascula,
+                                                                                frm.peso_bascula_finish,
                                                                                 1,
                                                                                 item.OrdenID,
                                                                                 frm.fecha);
@@ -134,7 +134,7 @@ namespace LOSA.MicroIngredientes
                             {
                                 //LoadData();
                                 pesajeIndividualCompletado.OrdenPesaje_H = pesajeIndividual.id_orden_pesaje_header;
-                                pesajeIndividualCompletado.PesoReal = frm.peso_bascula;
+                                //pesajeIndividualCompletado.PesoReal = frm.peso_bascula_finish;
                                 pesajeIndividualCompletado.Fecha = frm.fecha;
 
                                 pesajesCompletados.Add(pesajeIndividualCompletado);
@@ -323,11 +323,21 @@ namespace LOSA.MicroIngredientes
             {
                 foreach (var item in pesaje_list)
                 {
-                    DataRow row = dsMicros.New_Pesaje.Rows.Add();
+                    //DataRow row = dsMicros.New_Pesaje.Rows.Add();
+                    var row = (dsMicros.New_PesajeRow) dsMicros.New_Pesaje.Rows.Add();
 
-                    row["codigo"] = item.Codigo;
-                    row["material"] = item.Material;
-                    row["batchPlan"] = item.BatchPlan;
+                    //row["codigo"] = item.Codigo;
+                    //row["material"] = item.Material;
+                    //row["batchPlan"] = item.BatchPlan;
+
+                    row.codigo = item.Codigo;
+                    row.material = item.Material;
+                    row.batchPlan = item.BatchPlan;
+                    row.batch_a_pesar = item.BatchAPesar;
+
+                    //row["codigo"] = item.Codigo;
+                    //row["material"] = item.Material;
+                    //row["batchPlan"] = item.BatchPlan;
 
                     dsMicros.New_Pesaje.AcceptChanges();
 

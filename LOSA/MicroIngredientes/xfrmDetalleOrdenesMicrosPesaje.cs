@@ -288,6 +288,7 @@ namespace LOSA.MicroIngredientes
                     pesajeIndividual.CantBatchMaximo = (row.Batch_Plan - row.Batch_Completados);
                     pesajeIndividual.id_orden_pesaje_header = row.id_orden_encabezado;
                     pesajeIndividual.MateriaPrimaID = row.id_rm;
+                    pesajeIndividual.MateriaPrima = row.Material;
                     pesajeIndividual.Total = row.Total;
                     pesajeIndividual.PesoPorBatch = row.Peso_por_Batch;
                     //pesajeIndividual.AMI_ID = ami_id;

@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using ACS.Classes;
 using System.Data.SqlClient;
 using DevExpress.XtraGrid.Views.Grid;
+using LOSA.MicroIngredientes.Models;
 
 namespace LOSA.MicroIngredientes
 {
@@ -73,6 +74,7 @@ namespace LOSA.MicroIngredientes
 
         }
 
+        Boolean estadoActivoError = false;
         private void CambiarEstado(int caseEstado , dsMicros.MicrosRow row)
         {
             try
@@ -95,23 +97,58 @@ namespace LOSA.MicroIngredientes
                 }
 
                 LoadData();
+
             }
             catch (Exception ex)
             {
                 CajaDialogo.Error(ex.Message);
+                estadoActivoError = true;
             }
 
         }
 
         private void btnActivar_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
+         OrdenH_Info orderH = new OrdenH_Info();
             try
             {
                 var gv = (GridView)gcMicros.FocusedView;
-                var row = (dsMicros.MicrosRow)gv.GetDataRow(gv.FocusedRowHandle);
+                var row = (dsMicros.MicrosRow)gv.GetFocusedDataRow();
 
+
+                //var row2 = row;
                 DataOperations dp = new DataOperations();
                 Boolean ExisteConfPesajeManual;
+                Boolean existeOrdenPesaje=false;
+                int idPesajeOrden = row.id;
+
+
+                CambiarEstado(1, row);
+
+                if (estadoActivoError==true)
+                {
+                    estadoActivoError = false;
+                    return;
+                }
+
+                if (orderH.RecuperaRegistro(idPesajeOrden))
+                {
+                    existeOrdenPesaje = true;
+                }
+
+
+                //row2.estado = "70";
+
+
+
+
+                //gv = (GridView)gcMicros.FocusedView;
+                //row = (dsMicros.MicrosRow)gv.GetFocusedDataRow();
+
+
+                if (existeOrdenPesaje==true)
+                {
+
 
                 using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
                 {
@@ -120,37 +157,44 @@ namespace LOSA.MicroIngredientes
                     SqlCommand cmd = new SqlCommand("dbo.sp_validate_OP_Conf_PesajeIndividual",cnx);
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("@id_orden", SqlDbType.Int).Value = row.id;
+                    cmd.Parameters.Add("@id_orden", SqlDbType.Int).Value = orderH.ID;
 
                      ExisteConfPesajeManual = Convert.ToBoolean( cmd.ExecuteScalar());
 
                     cnx.Close();
                 }
 
-                if (row != null)
-                {
+                //if (row2 != null)
+                //{
 
-                    if (row.batch_real == 0 && row._Cod__Estado!=70)
+                    if (orderH.BatchReal == 0 && orderH.CodeState == 70)
                     {
-                        if (ExisteConfPesajeManual==false)
+                        if (ExisteConfPesajeManual == false)
                         {
 
-                        xfrmAsistentePesaje frm = new xfrmAsistentePesaje(row.___Orden, row.id);
+                            xfrmAsistentePesaje frm = new xfrmAsistentePesaje(orderH.Order_ID, orderH.ID, orderH.Cant_Batch);
 
-                        frm.Show();
+
+                            frm.Show();
+                            //if (frm.ShowDialog()== DialogResult.OK )
+                            //{
+                            //    LoadData();
+
+                            //} 
+
                         }
                     }
                     else
-                    if (row._Cod__Estado == 80)
+                    if (orderH.CodeState == 80)
                     {
                         CajaDialogo.Error("Orden ya esta finalizada");
                         return;
                     }
 
+                //}
+
                 }
 
-
-                CambiarEstado(1, row);
 
             }
             catch (Exception ex)

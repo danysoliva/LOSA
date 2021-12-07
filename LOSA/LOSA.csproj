@@ -98,6 +98,26 @@
   <PropertyGroup>
     <ManifestCertificateThumbprint>5A56FE5B36BF1139C0C28330C52B1468E1F78C88</ManifestCertificateThumbprint>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.DataAccess.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -1023,6 +1043,7 @@
     <Compile Include="MicroIngredientes\frmSelectLotePesaje.Designer.cs">
       <DependentUpon>frmSelectLotePesaje.cs</DependentUpon>
     </Compile>
+    <Compile Include="MicroIngredientes\Models\OrdenH_Info.cs" />
     <Compile Include="MicroIngredientes\Models\PesajeIndividualCompletados.cs" />
     <Compile Include="MicroIngredientes\Models\PesajeIndividualInfo.cs" />
     <Compile Include="MicroIngredientes\Models\PesajeIndividualNew.cs" />
@@ -1057,11 +1078,11 @@
     <Compile Include="MicroIngredientes\xfrmMicroIngredientes.Designer.cs">
       <DependentUpon>xfrmMicroIngredientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="MicroIngredientes\xfrmPesajeIndividualBatchV2.cs">
+    <Compile Include="MicroIngredientes\xfrmPesajeIndividualBatchV3.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MicroIngredientes\xfrmPesajeIndividualBatchV2.Designer.cs">
-      <DependentUpon>xfrmPesajeIndividualBatchV2.cs</DependentUpon>
+    <Compile Include="MicroIngredientes\xfrmPesajeIndividualBatchV3.Designer.cs">
+      <DependentUpon>xfrmPesajeIndividualBatchV3.cs</DependentUpon>
     </Compile>
     <Compile Include="MicroIngredientes\xfrmPesajeIndividualV2.cs">
       <SubType>Form</SubType>
@@ -2510,8 +2531,8 @@
     <EmbeddedResource Include="MicroIngredientes\xfrmMicroIngredientes.resx">
       <DependentUpon>xfrmMicroIngredientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MicroIngredientes\xfrmPesajeIndividualBatchV2.resx">
-      <DependentUpon>xfrmPesajeIndividualBatchV2.cs</DependentUpon>
+    <EmbeddedResource Include="MicroIngredientes\xfrmPesajeIndividualBatchV3.resx">
+      <DependentUpon>xfrmPesajeIndividualBatchV3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MicroIngredientes\xfrmPesajeIndividualV2.resx">
       <DependentUpon>xfrmPesajeIndividualV2.cs</DependentUpon>
@@ -3221,6 +3242,7 @@
     <None Include="Resources\delete-1-icon72px.png" />
     <None Include="Resources\delete-1-icon128px.png" />
     <None Include="Resources\Done-icon.png" />
+    <None Include="Resources\checked_32X32.png" />
     <Content Include="Resources\edit.png" />
     <None Include="Resources\hapag-4-icon.png" />
     <None Include="Resources\Forklift-icon.png" />

@@ -124,19 +124,20 @@ namespace LOSA.MicroIngredientes
                 {
                     pesaje = new PesajeIndividualNew();
 
-                    pesaje.BatchPlan = 0;
+                    pesaje.BatchPlan = item.Batch_Plan;
                     pesaje.MP_ID = item.id_rm;
                     pesaje.OrdenID = item.id_orden_encabezado;
                     pesaje.PesoPorBatch = item.Peso_por_Batch;
                     pesaje.PesoTotal = item.Total;
                     pesaje.Material = item.Material;
                     pesaje.BatchCompletados = item.Batch_Completados;
+                    pesaje.Codigo = item.codigo;
 
                     pesaje_list.Add(pesaje);
 
                 }
 
-                xfrmResumenMPIndividual frm = new xfrmResumenMPIndividual(pesaje_list);
+                xfrmResumenMPIndividual frm = new xfrmResumenMPIndividual(pesaje_list,id,2);
 
                 frm.Show();
             }
