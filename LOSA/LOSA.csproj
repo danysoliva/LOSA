@@ -2007,6 +2007,12 @@
     <Compile Include="TransaccionesMP\frm_reporte_alimentacion.Designer.cs">
       <DependentUpon>frm_reporte_alimentacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\Liquidos\frmBinesEnPRD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\Liquidos\frmBinesEnPRD.Designer.cs">
+      <DependentUpon>frmBinesEnPRD.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesPT\dsPT.cs">
       <DependentUpon>dsPT.xsd</DependentUpon>
     </Compile>
@@ -2707,6 +2713,7 @@
     <EmbeddedResource Include="Produccion\xfrmCheckActiveBin.resx">
       <DependentUpon>xfrmCheckActiveBin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -3007,6 +3014,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frm_reporte_alimentacion.resx">
       <DependentUpon>frm_reporte_alimentacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\Liquidos\frmBinesEnPRD.resx">
+      <DependentUpon>frmBinesEnPRD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesPT\frmactivacionPT.resx">
       <DependentUpon>frmactivacionPT.cs</DependentUpon>

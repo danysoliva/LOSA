@@ -11,6 +11,8 @@ using DevExpress.XtraEditors;
 using ACS.Classes;
 using LOSA.Clases;
 using System.Data.SqlClient;
+using LOSA.TransaccionesMP.Liquidos;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace LOSA.TransaccionesMP
 {
@@ -475,7 +477,8 @@ namespace LOSA.TransaccionesMP
         private void cmdSeleccionar_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             //seleccionar materia prima en planta
-
+            frmBinesEnPRD frm = new frmBinesEnPRD();
+            frm.ShowDialog();
         }
     }
 }
