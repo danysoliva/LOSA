@@ -167,14 +167,8 @@ namespace LOSA.TransaccionesMP
             if (selecionado ==0 )
             {
                 Utileria.frmMensaje frm = new Utileria.frmMensaje(Utileria.frmMensaje.TipoMsj.error, "Debe seleccionar aun que sea una unidad");
-                if (frm.ShowDialog() == DialogResult.OK)
-                {
-                    return;
-                }
-                else
-                {
-                    return;
-                }
+                frm.ShowDialog();
+                return;
             }
             pesoKg = ud_enviar * factor;
             this.DialogResult = DialogResult.OK;

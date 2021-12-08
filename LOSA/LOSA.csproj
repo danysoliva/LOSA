@@ -1094,6 +1094,12 @@
     <Compile Include="MicroIngredientes\xfrmMicroIngredientes.Designer.cs">
       <DependentUpon>xfrmMicroIngredientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="MicroIngredientes\xfrmPesajeIndividualBatchV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MicroIngredientes\xfrmPesajeIndividualBatchV2.Designer.cs">
+      <DependentUpon>xfrmPesajeIndividualBatchV2.cs</DependentUpon>
+    </Compile>
     <Compile Include="MicroIngredientes\xfrmPesajeIndividualBatchV3.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2000,6 +2006,12 @@
     <Compile Include="TransaccionesMP\frm_reporte_alimentacion.Designer.cs">
       <DependentUpon>frm_reporte_alimentacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\Liquidos\frmBinesEnPRD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\Liquidos\frmBinesEnPRD.Designer.cs">
+      <DependentUpon>frmBinesEnPRD.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesPT\dsPT.cs">
       <DependentUpon>dsPT.xsd</DependentUpon>
     </Compile>
@@ -2601,6 +2613,9 @@
     <EmbeddedResource Include="MicroIngredientes\xfrmMicroIngredientes.resx">
       <DependentUpon>xfrmMicroIngredientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MicroIngredientes\xfrmPesajeIndividualBatchV2.resx">
+      <DependentUpon>xfrmPesajeIndividualBatchV2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MicroIngredientes\xfrmPesajeIndividualBatchV3.resx">
       <DependentUpon>xfrmPesajeIndividualBatchV3.cs</DependentUpon>
     </EmbeddedResource>
@@ -2998,6 +3013,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frm_reporte_alimentacion.resx">
       <DependentUpon>frm_reporte_alimentacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\Liquidos\frmBinesEnPRD.resx">
+      <DependentUpon>frmBinesEnPRD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesPT\frmactivacionPT.resx">
       <DependentUpon>frmactivacionPT.cs</DependentUpon>
