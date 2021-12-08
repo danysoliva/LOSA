@@ -471,5 +471,11 @@ namespace LOSA.TransaccionesMP
 
             txtRequisicion.Focus();
         }
+
+        private void cmdSeleccionar_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            //seleccionar materia prima en planta
+
+        }
     }
 }
