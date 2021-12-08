@@ -65,15 +65,7 @@ namespace LOSA.Liquidos
             }
         }
 
-        private void btnTanque6_Click(object sender, EventArgs e)
-        {
-            xfrmLotesPorTanque frm = new xfrmLotesPorTanque(Convert.ToInt32(btnTanque6.Tag), usuarioLogueado);
-
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                loadMPTanques();
-            }
-        }
+       
 
         private void btnTanque3_Click(object sender, EventArgs e)
         {
@@ -85,34 +77,16 @@ namespace LOSA.Liquidos
             }
         }
 
-        private void btnTanque4_Click(object sender, EventArgs e)
-        {
-            xfrmLotesPorTanque frm = new xfrmLotesPorTanque(Convert.ToInt32(btnTanque4.Tag), usuarioLogueado);
+        
 
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                loadMPTanques();
-            }
-        }
-
-        private void btnTanque5_Click(object sender, EventArgs e)
-        {
-            xfrmLotesPorTanque frm = new xfrmLotesPorTanque(Convert.ToInt32(btnTanque5.Tag), usuarioLogueado);
-
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                loadMPTanques();
-            }
-        }
+        
 
         private void xfrmIngresoLiquidos_Load(object sender, EventArgs e)
         {
             labels[0] = lblMP1;
             labels[1] = lblMP2;
             labels[2] = lblMP3;
-            labels[3] = lblMP4;
-            labels[4] = lblMP5;
-            labels[5] = lblMP6;
+
 
             loadMPTanques();
 
@@ -153,9 +127,7 @@ namespace LOSA.Liquidos
                 lblMP1.Text = titulos_Tanque.Where(x => x.TanqueID == Convert.ToInt32(lblMP1.Tag)).FirstOrDefault().MP;
                 lblMP2.Text = titulos_Tanque.Where(x => x.TanqueID == Convert.ToInt32(lblMP2.Tag)).FirstOrDefault().MP;
                 lblMP3.Text = titulos_Tanque.Where(x => x.TanqueID == Convert.ToInt32(lblMP3.Tag)).FirstOrDefault().MP;
-                lblMP4.Text = titulos_Tanque.Where(x => x.TanqueID == Convert.ToInt32(lblMP4.Tag)).FirstOrDefault().MP;
-                lblMP5.Text = titulos_Tanque.Where(x => x.TanqueID == Convert.ToInt32(lblMP5.Tag)).FirstOrDefault().MP;
-                lblMP6.Text = titulos_Tanque.Where(x => x.TanqueID == Convert.ToInt32(lblMP6.Tag)).FirstOrDefault().MP;
+              
 
 
                 //for (int i = 0; i < titulos_Tanque.Count; i++)
