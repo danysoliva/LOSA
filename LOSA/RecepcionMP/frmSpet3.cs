@@ -86,6 +86,11 @@ namespace LOSA.RecepcionMP
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
+            if (txtIngresoSeleccionado.Text == "")
+            {
+                CajaDialogo.Error("Debe selecionar un ingreso externo para poder continuar con esta gestion.");
+                return;
+            }
             switch (Tipo_Ingreso_Selected)
             {
                 case 1:   // 1 pues es sacos

@@ -131,7 +131,12 @@ namespace LOSA.AlmacenesExterno
         private void btn_Click(object sender, EventArgs e)
         {
             List<Conf_MP_Ingresada> lista = new List<Conf_MP_Ingresada>();
-
+            if (txtfactura.Text == "")
+            {
+                CajaDialogo.Error("DEBE ESPECIFICAR LA FACTURA");
+                return;
+            }
+            oc_h.Factura = txtfactura.Text;
             var gv = (GridView)gcIngreso.FocusedView;
 
                        

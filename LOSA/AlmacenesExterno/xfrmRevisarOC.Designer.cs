@@ -70,6 +70,8 @@
             this.txtComment = new DevExpress.XtraEditors.MemoEdit();
             this.label5 = new System.Windows.Forms.Label();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtfactura = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.btnOC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcIngreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.revisionOCBindingSource)).BeginInit();
@@ -84,6 +86,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtProveedor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtComment.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtfactura.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btn
@@ -411,7 +414,7 @@
             // 
             // txtProveedor
             // 
-            this.txtProveedor.Location = new System.Drawing.Point(175, 140);
+            this.txtProveedor.Location = new System.Drawing.Point(172, 105);
             this.txtProveedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtProveedor.Name = "txtProveedor";
             this.txtProveedor.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -424,7 +427,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(24, 145);
+            this.label3.Location = new System.Drawing.Point(21, 110);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(148, 17);
             this.label3.TabIndex = 37;
@@ -434,7 +437,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(24, 169);
+            this.label4.Location = new System.Drawing.Point(21, 134);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(137, 17);
             this.label4.TabIndex = 39;
@@ -442,7 +445,7 @@
             // 
             // txtDate
             // 
-            this.txtDate.Location = new System.Drawing.Point(175, 169);
+            this.txtDate.Location = new System.Drawing.Point(172, 134);
             this.txtDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDate.Name = "txtDate";
             this.txtDate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -495,11 +498,33 @@
             this.btnAtras.Text = "Cancelar";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(21, 162);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(65, 17);
+            this.label6.TabIndex = 44;
+            this.label6.Text = "Factura:";
+            // 
+            // txtfactura
+            // 
+            this.txtfactura.Location = new System.Drawing.Point(172, 163);
+            this.txtfactura.Name = "txtfactura";
+            this.txtfactura.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold);
+            this.txtfactura.Properties.Appearance.Options.UseFont = true;
+            this.txtfactura.Properties.MaxLength = 20;
+            this.txtfactura.Size = new System.Drawing.Size(244, 24);
+            this.txtfactura.TabIndex = 45;
+            // 
             // xfrmRevisarOC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1017, 564);
+            this.Controls.Add(this.txtfactura);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.txtComment);
             this.Controls.Add(this.label5);
@@ -532,6 +557,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtProveedor.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtComment.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtfactura.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -574,5 +600,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colid_presentacion;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit grd_presentacion;
         private System.Windows.Forms.BindingSource presentacionBindingSource;
+        private System.Windows.Forms.Label label6;
+        private DevExpress.XtraEditors.TextEdit txtfactura;
     }
 }

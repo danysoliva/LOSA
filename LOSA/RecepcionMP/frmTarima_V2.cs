@@ -109,6 +109,35 @@ namespace LOSA.RecepcionMP
             this.DialogResult = DialogResult.Abort;
             this.Close();
         }
+        private void LoadDatosBoleta(int idserie)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+                SqlCommand cmd = new SqlCommand("sp_get_detalles_boleta", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@SerieBoleta", idserie);
+                //cmd.Parameters.AddWithValue("@LastName", txtlastname.Text);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    txtCodigoMP.Text = dr.GetString(1);
+                    txtMP_Name.Text = dr.GetString(2);
+                    txtCodigoProveedor.Text = dr.GetString(3);
+                    txtProveedorName.Text = dr.GetString(4);
+                    NumBoleta = dr.GetInt32(0);
+
+                }
+                dr.Close();
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
@@ -119,7 +148,13 @@ namespace LOSA.RecepcionMP
                 txtIdBoleta.Text = frm.NumBoleta.ToString();
                 this.IdSerie = frm.IdSerie;
                 this.NumBoleta = frm.NumBoleta;
-                // this.ItemCode = frm.ItemCode;
+                if (!Istraslado)
+                {
+                    this.ItemCode = frm.ItemCode;
+                    txtCodigoMP.Text = frm.ItemCode;
+                    LoadDatosBoleta(IdSerie);
+                }
+                //
                 txtoc.Text = frm.OC;
                 txtfactura.Text = frm.Factura;
                 this.peso_boleta = frm.Peso_Bascula;
@@ -151,6 +186,24 @@ namespace LOSA.RecepcionMP
             }
         }
 
+        public void clear_data()
+        {
+            txtCodigoMP.Text = "";
+            txtMP_Name.Text = "";
+            txtCodigoProveedor.Text = "";
+            txtProveedorName.Text = "";
+            dtFechaIngreso.EditValue = null;
+            dtFechaProduccion.EditValue = null;
+            dtFechaVencimiento.EditValue = null;
+            txtLote.Text = "";
+            gridLookUpEditPresentacion.EditValue = null;
+            txtpresentacionPromedio.Text = "";
+            txtUnidades.Text = "";
+            txtPesoKg.Text = "";
+            txtCantidadTarimasTotal.Text = "";
+            txtfactura.Text = "";
+            txtoc.Text = "";
+        }
         private void btnGuardarLote_Click(object sender, EventArgs e)
         {
             int idloteInserted;
@@ -252,6 +305,7 @@ namespace LOSA.RecepcionMP
             row["TotalUdlote"] = CantidadDeUd;
             dsWizard.informacionIngreso.Rows.Add(row);
             dsWizard.informacionIngreso.AcceptChanges();
+            clear_data();
 
         }
         private void LoadPresentaciones()
