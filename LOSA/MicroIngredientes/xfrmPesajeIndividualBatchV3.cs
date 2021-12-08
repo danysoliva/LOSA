@@ -29,7 +29,7 @@ namespace LOSA.MicroIngredientes
             //lblBascula.Text = bascula;
             pesajeIndividual = pPesaje;
             lblRequerido.Text = "Valor Requerido: " + pesajeIndividual.PesoPorBatch.ToString("N2") +" Kg";
-            lblBasculaAceptada.Text = pMP;
+            //lblBasculaAceptada.Text = pMP;
         }
 
 
@@ -45,18 +45,18 @@ namespace LOSA.MicroIngredientes
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
-            if (peso_bascula_finish >= limiteInferior && peso_bascula_finish <= limiteSuperior)
-            {
-                timer1.Enabled = false;
-                fecha = DateTime.Now;
-                this.DialogResult = DialogResult.OK;
-            }
-            else
-            {
-                lblError.Visible = true;
-                lblSuperior.Visible = true;
-                lblInferior.Visible = true;
-            }
+            //if (peso_bascula_finish >= limiteInferior && peso_bascula_finish <= limiteSuperior)
+            //{
+            //    timer1.Enabled = false;
+            //    fecha = DateTime.Now;
+            //    this.DialogResult = DialogResult.OK;
+            //}
+            //else
+            //{
+            //    lblError.Visible = true;
+            //    lblSuperior.Visible = true;
+            //    lblInferior.Visible = true;
+            //}
 
            
         }
@@ -72,11 +72,55 @@ namespace LOSA.MicroIngredientes
             lblMP.Text = "Pesaje de "+ pesajeIndividual.MateriaPrima;
         }
 
-          public  decimal peso_bascula_finish = 0;
-            decimal pesoBascula1=0, pesoBascula2=0;
+        public decimal peso_bascula_finish = 0;
+        decimal pesoBascula1=0, pesoBascula2=0;
+
+        private void btnBascula1_Click(object sender, EventArgs e)
+        {
+            if (pesoBascula1 >= limiteInferior && pesoBascula1 <= limiteSuperior)
+            {
+                peso_bascula_finish = pesoBascula1;
+                timer1.Enabled = false;
+                fecha = DateTime.Now;
+                this.DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                lblError.Visible = true;
+                lblSuperior.Visible = true;
+                lblInferior.Visible = true;
+            }
+        }
+
+        private void btnBascula2_Click(object sender, EventArgs e)
+        {
+            if (pesoBascula2 >= limiteInferior && pesoBascula2 <= limiteSuperior)
+            {
+                peso_bascula_finish = pesoBascula2;
+                timer1.Enabled = false;
+                fecha = DateTime.Now;
+                this.DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                lblError.Visible = true;
+                lblSuperior.Visible = true;
+                lblInferior.Visible = true;
+            }
+        }
+
+        private void lblValorBascula1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             DataOperations dp = new DataOperations();
+           
+            //Resetear valor de peso de bascula
+            pesoBascula1 = 0;
+            pesoBascula2 = 0;
 
             using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
             {
@@ -84,10 +128,7 @@ namespace LOSA.MicroIngredientes
                 dsMicros.Pesaje_Bascula.Clear();
                 SqlDataAdapter da = new SqlDataAdapter("dbo.sp_get_basculas_value", cnx);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                //cmd.Parameters.Add("@id", SqlDbType.Int).Value = pesajeIndividual.BasculaID;
                 da.Fill(dsMicros.Pesaje_Bascula);
-
-                //peso_bascula = Convert.ToDecimal(cmd.ExecuteScalar());
 
                 cnx.Close();
 
@@ -109,26 +150,23 @@ namespace LOSA.MicroIngredientes
 
                     }
 
-                    //if (item.peso > Convert.ToDecimal(0.02))
-                    //{
-                    //    lblBascula1.Text = item.descripcion;
-                    //    peso_bascula = item.peso;
-
-                    //}
-                    //else
-                    //{
-                    //    lblBascula1.Text = "No disponible";
-                    //    peso_bascula = 0;
-                    //}
 
                 }
 
             }
 
+
+            //////Test valores random para probar bascula
+            //pesoBascula1 = 0;
+            //pesoBascula2 = 0;
+
             //Random rnd = new Random();
 
-            //pesoBascula1= Convert.ToDecimal(rnd.NextDouble() * (13 - 12) + 12);
+            //pesoBascula1 = Convert.ToDecimal(rnd.NextDouble() * (0.80 - 0.70) + 0.70);
             //lblValorBascula1.Text = "Valor en Báscula: " + pesoBascula1.ToString("N2") + " Kg";
+
+            //pesoBascula2 = Convert.ToDecimal(rnd.NextDouble() * (0.80 - 0.70) + 0.70);
+            //lblValorBascula2.Text = "Valor en Báscula: " + pesoBascula2.ToString("N2") + " Kg";
 
 
 
@@ -141,32 +179,33 @@ namespace LOSA.MicroIngredientes
 
             if (pesoBascula1>=limiteInferior && pesoBascula1 <= limiteSuperior)
             {
-                btnGuardar.Enabled = true;
+                //btnGuardar.Enabled = true;
                 lblError.Visible = false;
                 lblSuperior.Visible = false;
                 lblInferior.Visible = false;
-                peso_bascula_finish = pesoBascula1;
-                lblBasculaAceptada.Text = "Valor Aceptado de Báscula: B1";
-                lblBasculaAceptada.Visible = true;
+                //peso_bascula_finish = pesoBascula1;
+                btnBascula1.Enabled = true;
             }
             else
              if (pesoBascula2 >= limiteInferior && pesoBascula2 <= limiteSuperior)
             {
-                btnGuardar.Enabled = true;
+                //btnGuardar.Enabled = true;
                 lblError.Visible = false;
                 lblSuperior.Visible = false;
                 lblInferior.Visible = false;
-                peso_bascula_finish = pesoBascula2;
-                lblBasculaAceptada.Text = "Valor Aceptado de Báscula: B2";
-                lblBasculaAceptada.Visible = true;
+                //peso_bascula_finish = pesoBascula2;
+                btnBascula2.Enabled = true;
+
             }
             else
             {
-                btnGuardar.Enabled = false;
+                //btnGuardar.Enabled = false;
                 //lblError.Visible = false;
                 lblSuperior.Visible = true;
                 lblInferior.Visible = true;
-                lblBasculaAceptada.Visible = false;
+                btnBascula1.Enabled = false;
+                btnBascula2.Enabled = false;
+
 
             }
         }

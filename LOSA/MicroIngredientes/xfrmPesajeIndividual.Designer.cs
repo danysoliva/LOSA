@@ -90,10 +90,10 @@ namespace LOSA.MicroIngredientes
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(284, 9);
+            this.label1.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(269, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 19);
+            this.label1.Size = new System.Drawing.Size(93, 25);
             this.label1.TabIndex = 9;
             this.label1.Text = "Bascula";
             // 
@@ -125,13 +125,13 @@ namespace LOSA.MicroIngredientes
             // 
             // labelControl1
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Location = new System.Drawing.Point(9, 152);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(220, 19);
+            this.labelControl1.Size = new System.Drawing.Size(221, 23);
             this.labelControl1.TabIndex = 11;
-            this.labelControl1.Text = "Cantidad de Batch a pesar:";
+            this.labelControl1.Text = "Cant. de Batch a pesar:";
             // 
             // seBatch
             // 
@@ -163,14 +163,14 @@ namespace LOSA.MicroIngredientes
             // 
             // lblMensaje
             // 
-            this.lblMensaje.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMensaje.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMensaje.Appearance.ForeColor = System.Drawing.Color.Red;
             this.lblMensaje.Appearance.Options.UseFont = true;
             this.lblMensaje.Appearance.Options.UseForeColor = true;
             this.lblMensaje.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
             this.lblMensaje.Location = new System.Drawing.Point(412, 147);
             this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(178, 36);
+            this.lblMensaje.Size = new System.Drawing.Size(207, 46);
             this.lblMensaje.TabIndex = 16;
             this.lblMensaje.Text = "Excede la cantidad de batch planificado";
             this.lblMensaje.Visible = false;
@@ -186,13 +186,14 @@ namespace LOSA.MicroIngredientes
             // btnGenerar
             // 
             this.btnGenerar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGenerar.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerar.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerar.Appearance.Options.UseFont = true;
+            this.btnGenerar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnGenerar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btnGenerar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnGenerar.ImageOptions.SvgImage")));
-            this.btnGenerar.Location = new System.Drawing.Point(220, 265);
+            this.btnGenerar.Location = new System.Drawing.Point(202, 257);
             this.btnGenerar.Name = "btnGenerar";
-            this.btnGenerar.Size = new System.Drawing.Size(75, 63);
+            this.btnGenerar.Size = new System.Drawing.Size(95, 71);
             this.btnGenerar.TabIndex = 17;
             this.btnGenerar.Text = "Iniciar";
             this.btnGenerar.Click += new System.EventHandler(this.simpleButton2_Click);
@@ -258,13 +259,14 @@ namespace LOSA.MicroIngredientes
             // cmdClose
             // 
             this.cmdClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmdClose.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdClose.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdClose.Appearance.Options.UseFont = true;
+            this.cmdClose.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdClose.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
             this.cmdClose.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.cmdClose.Location = new System.Drawing.Point(331, 265);
+            this.cmdClose.Location = new System.Drawing.Point(333, 257);
             this.cmdClose.Name = "cmdClose";
-            this.cmdClose.Size = new System.Drawing.Size(75, 63);
+            this.cmdClose.Size = new System.Drawing.Size(95, 71);
             this.cmdClose.TabIndex = 7;
             this.cmdClose.Text = "Cerrar";
             this.cmdClose.Click += new System.EventHandler(this.cmdClose_Click);
