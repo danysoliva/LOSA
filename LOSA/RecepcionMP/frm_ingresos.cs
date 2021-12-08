@@ -59,17 +59,17 @@ namespace LOSA.RecepcionMP
         {
 
 
-            frmSpet1 frm = new frmSpet1(UsuarioLogeado);
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                Load_Info();
-            }
-            //frmTarima frm = new frmTarima(UsuarioLogeado);
-            //frm.WindowState = FormWindowState.Maximized;
+            //frmSpet1 frm = new frmSpet1(UsuarioLogeado);
             //if (frm.ShowDialog() == DialogResult.OK)
             //{
             //    Load_Info();
             //}
+            frmTarima frm = new frmTarima(UsuarioLogeado);
+            frm.WindowState = FormWindowState.Maximized;
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                Load_Info();
+            }
         }
 
         private void btnver_Click(object sender, EventArgs e)

@@ -110,7 +110,29 @@ namespace LOSA.RecepcionMP
             }  
             else
             {    //step4
+                switch (Tipo_Ingreso_Selected)
+                {
+                    case 1:   // 1 pues es sacos
+                        frmTarima_V2 frm = new frmTarima_V2(isTraslado, UsuarioLogeado, 0);
+                        switch (frm.ShowDialog())
+                        {
+                            case DialogResult.OK:
+                                this.DialogResult = DialogResult.OK;
+                                break;
+                            case DialogResult.Abort:
+                                break;
+                            case DialogResult.Cancel:
+                                this.DialogResult = DialogResult.Cancel;
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    default:
+                        break;
 
+
+                }
             }
         }
     }

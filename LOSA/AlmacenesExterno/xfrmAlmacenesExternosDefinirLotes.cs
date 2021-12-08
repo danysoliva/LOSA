@@ -306,7 +306,7 @@ namespace LOSA.AlmacenesExterno
                 cnx.Open();
                 transaction = cnx.BeginTransaction("SampleTransaction");
 
-                SqlCommand cmd = new SqlCommand("sp_insert_almacenes_externos_h", transaction.Connection);
+                SqlCommand cmd = new SqlCommand("sp_insert_almacenes_externos_h_v2", transaction.Connection);
                 cmd.Transaction = transaction;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@id_bodega", SqlDbType.Int).Value = 0;
@@ -319,6 +319,7 @@ namespace LOSA.AlmacenesExterno
                 cmd.Parameters.Add("@id_estado", SqlDbType.Int).Value = 0;
                 cmd.Parameters.Add("@fecha_documento", SqlDbType.Date).Value = oc_h.FechaDocumento;
                 cmd.Parameters.Add("@DocEntrySAP", SqlDbType.Int).Value = oc_h.DocNum;
+                cmd.Parameters.Add("@unidades", SqlDbType.Decimal).Value = totalUnidades;
                 cmd.Parameters.Add("@unidades", SqlDbType.Decimal).Value = totalUnidades;
 
 

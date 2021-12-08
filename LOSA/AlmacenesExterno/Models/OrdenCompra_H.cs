@@ -21,6 +21,7 @@ namespace LOSA.AlmacenesExterno.Models
         public int UserID { get; set; }
         public int DocEntrySAP { get; set; }
         public decimal Unidades { get; set; }
+        public string Factura { get; set; }
     }
 
 

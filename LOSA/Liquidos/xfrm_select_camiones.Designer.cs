@@ -185,6 +185,7 @@ namespace LOSA.Liquidos
             // 
             this.colfecha_entrada.FieldName = "fechaEntra";
             this.colfecha_entrada.Name = "colfecha_entrada";
+            this.colfecha_entrada.OptionsColumn.AllowEdit = false;
             this.colfecha_entrada.Visible = true;
             this.colfecha_entrada.VisibleIndex = 1;
             this.colfecha_entrada.Width = 89;
@@ -193,6 +194,7 @@ namespace LOSA.Liquidos
             // 
             this.colfecha_fin.FieldName = "FechaFin";
             this.colfecha_fin.Name = "colfecha_fin";
+            this.colfecha_fin.OptionsColumn.AllowEdit = false;
             this.colfecha_fin.Visible = true;
             this.colfecha_fin.VisibleIndex = 2;
             this.colfecha_fin.Width = 74;
@@ -201,6 +203,7 @@ namespace LOSA.Liquidos
             // 
             this.colshipid.FieldName = "shipid";
             this.colshipid.Name = "colshipid";
+            this.colshipid.OptionsColumn.AllowEdit = false;
             this.colshipid.Visible = true;
             this.colshipid.VisibleIndex = 4;
             this.colshipid.Width = 68;
@@ -215,6 +218,7 @@ namespace LOSA.Liquidos
             // 
             this.colNBoleta.FieldName = "NBoleta";
             this.colNBoleta.Name = "colNBoleta";
+            this.colNBoleta.OptionsColumn.AllowEdit = false;
             this.colNBoleta.Visible = true;
             this.colNBoleta.VisibleIndex = 0;
             this.colNBoleta.Width = 73;
@@ -227,8 +231,10 @@ namespace LOSA.Liquidos
             // 
             // coloperador
             // 
+            this.coloperador.Caption = "Operador";
             this.coloperador.FieldName = "operador";
             this.coloperador.Name = "coloperador";
+            this.coloperador.OptionsColumn.AllowEdit = false;
             this.coloperador.Visible = true;
             this.coloperador.VisibleIndex = 5;
             this.coloperador.Width = 87;
@@ -237,6 +243,7 @@ namespace LOSA.Liquidos
             // 
             this.colpesoBruto.FieldName = "PesoBruto";
             this.colpesoBruto.Name = "colpesoBruto";
+            this.colpesoBruto.OptionsColumn.AllowEdit = false;
             this.colpesoBruto.Visible = true;
             this.colpesoBruto.VisibleIndex = 6;
             this.colpesoBruto.Width = 105;
@@ -245,6 +252,7 @@ namespace LOSA.Liquidos
             // 
             this.colpesonetoIn.FieldName = "PesonetoIn";
             this.colpesonetoIn.Name = "colpesonetoIn";
+            this.colpesonetoIn.OptionsColumn.AllowEdit = false;
             this.colpesonetoIn.Visible = true;
             this.colpesonetoIn.VisibleIndex = 7;
             this.colpesonetoIn.Width = 98;
@@ -253,14 +261,17 @@ namespace LOSA.Liquidos
             // 
             this.colpresoProd.FieldName = "PesoProd";
             this.colpresoProd.Name = "colpresoProd";
+            this.colpresoProd.OptionsColumn.AllowEdit = false;
             this.colpresoProd.Visible = true;
             this.colpresoProd.VisibleIndex = 8;
             this.colpresoProd.Width = 100;
             // 
             // colpesoSalida
             // 
+            this.colpesoSalida.Caption = "Peso Salida";
             this.colpesoSalida.FieldName = "pesoSalida";
             this.colpesoSalida.Name = "colpesoSalida";
+            this.colpesoSalida.OptionsColumn.AllowEdit = false;
             this.colpesoSalida.Visible = true;
             this.colpesoSalida.VisibleIndex = 9;
             this.colpesoSalida.Width = 88;
@@ -275,6 +286,7 @@ namespace LOSA.Liquidos
             // 
             this.colconductorin.FieldName = "conductorin";
             this.colconductorin.Name = "colconductorin";
+            this.colconductorin.OptionsColumn.AllowEdit = false;
             this.colconductorin.Visible = true;
             this.colconductorin.VisibleIndex = 10;
             this.colconductorin.Width = 102;
@@ -283,14 +295,17 @@ namespace LOSA.Liquidos
             // 
             this.colvehiculo.FieldName = "vehiculo";
             this.colvehiculo.Name = "colvehiculo";
+            this.colvehiculo.OptionsColumn.AllowEdit = false;
             this.colvehiculo.Visible = true;
             this.colvehiculo.VisibleIndex = 11;
             this.colvehiculo.Width = 67;
             // 
             // colfurgon
             // 
+            this.colfurgon.Caption = "Furgón";
             this.colfurgon.FieldName = "furgon";
             this.colfurgon.Name = "colfurgon";
+            this.colfurgon.OptionsColumn.AllowEdit = false;
             this.colfurgon.Visible = true;
             this.colfurgon.VisibleIndex = 12;
             this.colfurgon.Width = 77;
@@ -311,6 +326,7 @@ namespace LOSA.Liquidos
             // 
             this.colSNegocio.FieldName = "SNegocio";
             this.colSNegocio.Name = "colSNegocio";
+            this.colSNegocio.OptionsColumn.AllowEdit = false;
             this.colSNegocio.Visible = true;
             this.colSNegocio.VisibleIndex = 13;
             this.colSNegocio.Width = 110;
@@ -319,6 +335,7 @@ namespace LOSA.Liquidos
             // 
             this.colProducto.FieldName = "Producto";
             this.colProducto.Name = "colProducto";
+            this.colProducto.OptionsColumn.AllowEdit = false;
             this.colProducto.Visible = true;
             this.colProducto.VisibleIndex = 3;
             this.colProducto.Width = 111;
