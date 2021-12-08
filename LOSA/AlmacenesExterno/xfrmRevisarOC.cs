@@ -187,6 +187,7 @@ namespace LOSA.AlmacenesExterno
                             MPID = element.id_mp,
                             bodega = element.bodega,
                             id_presentacion = element.id_presentacion
+
                         }) ;
 
                     }

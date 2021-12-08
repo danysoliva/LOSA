@@ -35,7 +35,9 @@ namespace LOSA.RecepcionMP
         public string pv;
         public string cardcode;
         public Decimal LimiteKgloteportraslado;
-
+        int IdHeaderInserted;
+        int IdLoteInserted = 0;
+        DataOperations dp = new DataOperations();
         public frmTarima_V2(bool PIstraslado,
                             UserLogin Puser,
                             int Pid_traslado)
@@ -91,7 +93,74 @@ namespace LOSA.RecepcionMP
                 }
                 foreach (dsWizard.informacionIngresoRow row in dsWizard.informacionIngreso.Rows)
                 {
+                    try
+                    {
+                        SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                        cn.Open();
+                        SqlCommand cmd = new SqlCommand("sp_insert_ingresos_v2", cn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@itemcode", row.itemcode);//
+                        cmd.Parameters.AddWithValue("@itemname", row.itemname);//
+                        cmd.Parameters.AddWithValue("@cardcode",  row.pv);//
+                        cmd.Parameters.AddWithValue("@cardname", row.cardname);  //
+                        cmd.Parameters.AddWithValue("@fecha_ingreso", row.fechaIngreso);
+                        cmd.Parameters.AddWithValue("@numero_transaccion", txtNumIngreso.Text); //
+                        cmd.Parameters.AddWithValue("@lote_materia_prima", row.lote);//
+                        cmd.Parameters.AddWithValue("@id_presentacion", row.id_presentacion);//
+                        cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);//
+                        cmd.Parameters.AddWithValue("@id_boleta", this.IdSerie);//
+                        cmd.Parameters.AddWithValue("@cant", txtUnidades.Text);//
+                        cmd.Parameters.AddWithValue("@TotalTarimas", txtCantidadTarimasTotal.Text);//
+                        cmd.Parameters.AddWithValue("@pesotaria", Convert.ToDecimal(txtPesoKg.Text));//
+                        IdHeaderInserted = Convert.ToInt32(cmd.ExecuteScalar());
+                        cn.Close();
+                        break;
 
+                    }
+                    catch (Exception ex)
+                    {
+                        CajaDialogo.Error(ex.Message);
+                        return;
+
+                    }   
+                }
+
+                foreach (dsWizard.informacionIngresoRow row in dsWizard.informacionIngreso.Rows)
+                {
+                    try
+                    {
+                        SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                        cn.Open();
+                        SqlCommand cmd = new SqlCommand("sp_insert_ingresos_lote_v2", cn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@itemcode", row.itemcode);//
+                        cmd.Parameters.AddWithValue("@itemname", row.itemname);//
+                        cmd.Parameters.AddWithValue("@cardcode", row.pv);//
+                        cmd.Parameters.AddWithValue("@cardname", row.cardname);  //
+                        cmd.Parameters.AddWithValue("@fecha_ingreso", row.fechaIngreso);
+                        cmd.Parameters.AddWithValue("@numero_transaccion", txtNumIngreso.Text); //
+                        cmd.Parameters.AddWithValue("@lote_materia_prima", row.lote);//
+                        cmd.Parameters.AddWithValue("@id_presentacion", row.id_presentacion);//
+                        cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);//
+                        cmd.Parameters.AddWithValue("@id_boleta", this.IdSerie);//
+                        cmd.Parameters.AddWithValue("@cant", row.udxtarima);//
+                        cmd.Parameters.AddWithValue("@TotalTarimas", row.canttarimas);//
+                        cmd.Parameters.AddWithValue("@pesotaria", Convert.ToDecimal(row.pesokgxtarima));//
+
+
+
+                        IdLoteInserted = Convert.ToInt32(cmd.ExecuteScalar());  
+
+
+
+
+                        
+                    }
+                    catch (Exception ex)
+                    {
+
+                        CajaDialogo.Error(ex.Message);
+                    }
                 }
                 this.DialogResult = DialogResult.OK;
                 this.Close();

@@ -320,7 +320,7 @@ namespace LOSA.AlmacenesExterno
                 cmd.Parameters.Add("@fecha_documento", SqlDbType.Date).Value = oc_h.FechaDocumento;
                 cmd.Parameters.Add("@DocEntrySAP", SqlDbType.Int).Value = oc_h.DocNum;
                 cmd.Parameters.Add("@unidades", SqlDbType.Decimal).Value = totalUnidades;
-                cmd.Parameters.Add("@unidades", SqlDbType.Decimal).Value = totalUnidades;
+                cmd.Parameters.Add("@factura", SqlDbType.VarChar).Value = oc_h.Factura ;
 
 
                 id_h = Convert.ToInt32(cmd.ExecuteScalar());

@@ -1501,6 +1501,8 @@ namespace LOSA.AlmacenesExterno {
             
             private global::System.Data.DataColumn columnid_presentacion;
             
+            private global::System.Data.DataColumn columnbodegacodigo;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public RevisionOCDataTable() {
@@ -1648,6 +1650,14 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn bodegacodigoColumn {
+                get {
+                    return this.columnbodegacodigo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1683,7 +1693,7 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RevisionOCRow AddRevisionOCRow(string ItemCode, string Dscription, decimal kg, string U_sacos, decimal CantidadIngresar, decimal UnidadesIngresar, int LineNum, int id_mp, decimal peso_acumulativo, decimal unidades_acumulativas, decimal diferencia, bool seleccionar, string bodega, int id_presentacion) {
+            public RevisionOCRow AddRevisionOCRow(string ItemCode, string Dscription, decimal kg, string U_sacos, decimal CantidadIngresar, decimal UnidadesIngresar, int LineNum, int id_mp, decimal peso_acumulativo, decimal unidades_acumulativas, decimal diferencia, bool seleccionar, string bodega, int id_presentacion, string bodegacodigo) {
                 RevisionOCRow rowRevisionOCRow = ((RevisionOCRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ItemCode,
@@ -1699,7 +1709,8 @@ namespace LOSA.AlmacenesExterno {
                         diferencia,
                         seleccionar,
                         bodega,
-                        id_presentacion};
+                        id_presentacion,
+                        bodegacodigo};
                 rowRevisionOCRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRevisionOCRow);
                 return rowRevisionOCRow;
@@ -1736,6 +1747,7 @@ namespace LOSA.AlmacenesExterno {
                 this.columnseleccionar = base.Columns["seleccionar"];
                 this.columnbodega = base.Columns["bodega"];
                 this.columnid_presentacion = base.Columns["id_presentacion"];
+                this.columnbodegacodigo = base.Columns["bodegacodigo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1769,6 +1781,8 @@ namespace LOSA.AlmacenesExterno {
                 base.Columns.Add(this.columnbodega);
                 this.columnid_presentacion = new global::System.Data.DataColumn("id_presentacion", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_presentacion);
+                this.columnbodegacodigo = new global::System.Data.DataColumn("bodegacodigo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbodegacodigo);
                 this.columnid_mp.DefaultValue = ((int)(0));
             }
             
@@ -1925,6 +1939,8 @@ namespace LOSA.AlmacenesExterno {
             
             private global::System.Data.DataColumn columnrow;
             
+            private global::System.Data.DataColumn columncodigo_bodega;
+            
             private static System.DateTime columnfecha_vencimiento_defaultValue = global::System.DateTime.Parse("1900-01-01T00:00:00");
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2050,6 +2066,14 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn codigo_bodegaColumn {
+                get {
+                    return this.columncodigo_bodega;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2085,7 +2109,7 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Conf_MP_IngresadasRow AddConf_MP_IngresadasRow(string ItemCode, decimal CantidadIngresada, string Descripcion, decimal UnidadesIngresar, System.DateTime fecha_vencimiento, int LineNum, int id_mp, bool seleccionar, string bodega, int id_presentacion, int row) {
+            public Conf_MP_IngresadasRow AddConf_MP_IngresadasRow(string ItemCode, decimal CantidadIngresada, string Descripcion, decimal UnidadesIngresar, System.DateTime fecha_vencimiento, int LineNum, int id_mp, bool seleccionar, string bodega, int id_presentacion, int row, string codigo_bodega) {
                 Conf_MP_IngresadasRow rowConf_MP_IngresadasRow = ((Conf_MP_IngresadasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ItemCode,
@@ -2098,7 +2122,8 @@ namespace LOSA.AlmacenesExterno {
                         seleccionar,
                         bodega,
                         id_presentacion,
-                        row};
+                        row,
+                        codigo_bodega};
                 rowConf_MP_IngresadasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowConf_MP_IngresadasRow);
                 return rowConf_MP_IngresadasRow;
@@ -2132,6 +2157,7 @@ namespace LOSA.AlmacenesExterno {
                 this.columnbodega = base.Columns["bodega"];
                 this.columnid_presentacion = base.Columns["id_presentacion"];
                 this.columnrow = base.Columns["row"];
+                this.columncodigo_bodega = base.Columns["codigo_bodega"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2159,6 +2185,8 @@ namespace LOSA.AlmacenesExterno {
                 base.Columns.Add(this.columnid_presentacion);
                 this.columnrow = new global::System.Data.DataColumn("row", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnrow);
+                this.columncodigo_bodega = new global::System.Data.DataColumn("codigo_bodega", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncodigo_bodega);
                 this.columnfecha_vencimiento.DefaultValue = ((System.DateTime)(Conf_MP_IngresadasDataTable.columnfecha_vencimiento_defaultValue));
             }
             
@@ -6260,6 +6288,22 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string bodegacodigo {
+                get {
+                    try {
+                        return ((string)(this[this.tableRevisionOC.bodegacodigoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'bodegacodigo\' de la tabla \'RevisionOC\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRevisionOC.bodegacodigoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsItemCodeNull() {
                 return this.IsNull(this.tableRevisionOC.ItemCodeColumn);
             }
@@ -6424,6 +6468,18 @@ namespace LOSA.AlmacenesExterno {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setid_presentacionNull() {
                 this[this.tableRevisionOC.id_presentacionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsbodegacodigoNull() {
+                return this.IsNull(this.tableRevisionOC.bodegacodigoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetbodegacodigoNull() {
+                this[this.tableRevisionOC.bodegacodigoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -6623,6 +6679,23 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string codigo_bodega {
+                get {
+                    try {
+                        return ((string)(this[this.tableConf_MP_Ingresadas.codigo_bodegaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'codigo_bodega\' de la tabla \'Conf_MP_Ingresadas\' es DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableConf_MP_Ingresadas.codigo_bodegaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsItemCodeNull() {
                 return this.IsNull(this.tableConf_MP_Ingresadas.ItemCodeColumn);
             }
@@ -6751,6 +6824,18 @@ namespace LOSA.AlmacenesExterno {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetrowNull() {
                 this[this.tableConf_MP_Ingresadas.rowColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscodigo_bodegaNull() {
+                return this.IsNull(this.tableConf_MP_Ingresadas.codigo_bodegaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcodigo_bodegaNull() {
+                this[this.tableConf_MP_Ingresadas.codigo_bodegaColumn] = global::System.Convert.DBNull;
             }
         }
         
