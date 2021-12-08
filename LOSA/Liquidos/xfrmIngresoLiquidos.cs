@@ -118,15 +118,33 @@ namespace LOSA.Liquidos
                         title_MP_Tanque.MP = dr.GetString(1);
 
                         titulos_Tanque.Add(title_MP_Tanque);
+
+                        //Tanque1
+                        if (Convert.ToInt32(lblMP1.Tag)==dr.GetInt32(0))
+                        {
+                            lblMP1.Text= dr.GetString(1);
+                        }
+
+                        //Tanque2
+                        if (Convert.ToInt32(lblMP2.Tag) == dr.GetInt32(0))
+                        {
+                            lblMP2.Text = dr.GetString(1);
+                        }
+
+                        //Tanque3
+                        if (Convert.ToInt32(lblMP3.Tag) == dr.GetInt32(0))
+                        {
+                            lblMP3.Text = dr.GetString(1);
+                        }
                     }
 
                     cnx.Close();
                 }
 
 
-                lblMP1.Text = titulos_Tanque.Where(x => x.TanqueID == Convert.ToInt32(lblMP1.Tag)).FirstOrDefault().MP;
-                lblMP2.Text = titulos_Tanque.Where(x => x.TanqueID == Convert.ToInt32(lblMP2.Tag)).FirstOrDefault().MP;
-                lblMP3.Text = titulos_Tanque.Where(x => x.TanqueID == Convert.ToInt32(lblMP3.Tag)).FirstOrDefault().MP;
+                //lblMP1.Text = titulos_Tanque.Where(x => x.TanqueID == Convert.ToInt32(lblMP1.Tag)).FirstOrDefault().MP;
+                //lblMP2.Text = titulos_Tanque.Where(x => x.TanqueID == Convert.ToInt32(lblMP2.Tag)).FirstOrDefault().MP;
+                //lblMP3.Text = titulos_Tanque.Where(x => x.TanqueID == Convert.ToInt32(lblMP3.Tag)).FirstOrDefault().MP;
               
 
 
