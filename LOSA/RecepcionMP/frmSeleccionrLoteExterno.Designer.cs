@@ -261,12 +261,12 @@ namespace LOSA.RecepcionMP
         private DevExpress.XtraGrid.Columns.GridColumn colbodega;
         private DevExpress.XtraGrid.Columns.GridColumn colDescripcionBodega;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private dsWizard dsWizard;
         private DevExpress.XtraGrid.Columns.GridColumn colSeleccionar;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnSeleccionar;
         private DevExpress.XtraGrid.Columns.GridColumn colcardcode;
         private DevExpress.XtraGrid.Columns.GridColumn colcode_sap;
         private DevExpress.XtraGrid.Columns.GridColumn colnombre_comercial;
         private DevExpress.XtraGrid.Columns.GridColumn colproveedor;
+        private dsWizard dsWizard;
     }
 }

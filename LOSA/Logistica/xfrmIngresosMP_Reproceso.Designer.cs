@@ -82,6 +82,8 @@ namespace LOSA.Logistica
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.btnAgregar = new DevExpress.XtraEditors.SimpleButton();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
+            this.colbit_fin = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_traslado = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_ingreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ingresosMPBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).BeginInit();
@@ -142,11 +144,13 @@ namespace LOSA.Logistica
             this.coltarimas,
             this.colid,
             this.colprint,
+            this.colid_traslado,
             this.colcartilla,
             this.colEditar,
             this.coltipo_ingreso,
             this.coldescripcion,
-            this.colprinttraslado});
+            this.colprinttraslado,
+            this.colbit_fin});
             this.grdv_ingreso.GridControl = this.grd_ingreso;
             this.grdv_ingreso.Name = "grdv_ingreso";
             this.grdv_ingreso.OptionsView.ShowAutoFilterRow = true;
@@ -361,6 +365,16 @@ namespace LOSA.Logistica
             this.btnAtras.Text = "Atras";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
+            // colbit_fin
+            // 
+            this.colbit_fin.FieldName = "bit_fin";
+            this.colbit_fin.Name = "colbit_fin";
+            // 
+            // colid_traslado
+            // 
+            this.colid_traslado.FieldName = "id_traslado";
+            this.colid_traslado.Name = "colid_traslado";
+            // 
             // xfrmIngresosMP_Reproceso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -416,5 +430,7 @@ namespace LOSA.Logistica
         private DevExpress.XtraEditors.SimpleButton btnAtras;
         private System.Windows.Forms.BindingSource ingresosMPBindingSource;
         private RecepcionMP.dsRecepcionMPx dsRecepcionMPx;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_traslado;
+        private DevExpress.XtraGrid.Columns.GridColumn colbit_fin;
     }
 }

@@ -31,11 +31,11 @@ namespace LOSA.RecepcionMP
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTarima_V2));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
@@ -221,7 +221,7 @@ namespace LOSA.RecepcionMP
             // 
             this.txtpresentacionPromedio.EditValue = "0";
             this.txtpresentacionPromedio.Enabled = false;
-            this.txtpresentacionPromedio.Location = new System.Drawing.Point(468, 184);
+            this.txtpresentacionPromedio.Location = new System.Drawing.Point(468, 185);
             this.txtpresentacionPromedio.Name = "txtpresentacionPromedio";
             this.txtpresentacionPromedio.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpresentacionPromedio.Properties.Appearance.Options.UseFont = true;
@@ -318,7 +318,7 @@ namespace LOSA.RecepcionMP
             this.gridLookUpEditPresentacion.Properties.DisplayMember = "descripcion";
             this.gridLookUpEditPresentacion.Properties.PopupView = this.gridLookUpEdit1View;
             this.gridLookUpEditPresentacion.Properties.ValueMember = "id";
-            this.gridLookUpEditPresentacion.Size = new System.Drawing.Size(156, 30);
+            this.gridLookUpEditPresentacion.Size = new System.Drawing.Size(197, 30);
             this.gridLookUpEditPresentacion.TabIndex = 64;
             this.gridLookUpEditPresentacion.EditValueChanged += new System.EventHandler(this.gridLookUpEditPresentacion_EditValueChanged);
             // 
@@ -838,6 +838,7 @@ namespace LOSA.RecepcionMP
             this.colTotalUdlote.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colTotalUdlote.FieldName = "TotalUdlote";
             this.colTotalUdlote.Name = "colTotalUdlote";
+            this.colTotalUdlote.OptionsColumn.AllowEdit = false;
             this.colTotalUdlote.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TotalUdlote", "{0:0.##.##} Ud.")});
             this.colTotalUdlote.Visible = true;
@@ -857,6 +858,7 @@ namespace LOSA.RecepcionMP
             this.coltotalKgLote.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.coltotalKgLote.FieldName = "totalKgLote";
             this.coltotalKgLote.Name = "coltotalKgLote";
+            this.coltotalKgLote.OptionsColumn.AllowEdit = false;
             this.coltotalKgLote.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "totalKgLote", "{0:0.##.##} Kg.")});
             this.coltotalKgLote.Visible = true;
@@ -881,9 +883,9 @@ namespace LOSA.RecepcionMP
             // btnEliminar
             // 
             this.btnEliminar.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.btnEliminar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);

@@ -602,18 +602,18 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
                         cn.Open();
                         SqlCommand cmd = new SqlCommand("sp_insert_ingresos_v3", cn);
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@itemcode", txtCodigoMP.Text);//
-                        cmd.Parameters.AddWithValue("@itemname", txtMP_Name.Text);//
-                        cmd.Parameters.AddWithValue("@cardcode", txtCodigoProveedor.Text);//
-                        cmd.Parameters.AddWithValue("@cardname", txtProveedorName.Text);  //
+                        cmd.Parameters.AddWithValue("@itemcode", txtCodigoMP.Text);//          //
+                        cmd.Parameters.AddWithValue("@itemname", txtMP_Name.Text);//    //
+                        cmd.Parameters.AddWithValue("@cardcode", txtCodigoProveedor.Text);//     //
+                        cmd.Parameters.AddWithValue("@cardname", txtProveedorName.Text);  //    //
                         cmd.Parameters.AddWithValue("@fecha_ingreso", dtFechaIngreso.EditValue);
-                        cmd.Parameters.AddWithValue("@numero_transaccion", txtNumIngreso.Text); //
-                        cmd.Parameters.AddWithValue("@lote_materia_prima", txtLote.Text);//
+                        cmd.Parameters.AddWithValue("@numero_transaccion", txtNumIngreso.Text); //  //
+                        cmd.Parameters.AddWithValue("@lote_materia_prima", txtLote.Text);//     //
                         cmd.Parameters.AddWithValue("@id_presentacion", gridLookUpEditPresentacion.EditValue);//
-                        cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);//
-                        cmd.Parameters.AddWithValue("@id_boleta", this.IdSerie);//
-                        cmd.Parameters.AddWithValue("@cant", txtUnidades.Text);//
-                        cmd.Parameters.AddWithValue("@TotalTarimas", txtCantidadTarimasTotal.Text);//
+                        cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);//        //
+                        cmd.Parameters.AddWithValue("@id_boleta", this.IdSerie);//      //
+                        cmd.Parameters.AddWithValue("@cant", txtUnidades.Text);//   //
+                        cmd.Parameters.AddWithValue("@TotalTarimas", txtCantidadTarimasTotal.Text);// //
                         cmd.Parameters.AddWithValue("@pesotaria", Convert.ToDecimal(txtPesoKg.Text));// 
                         cmd.Parameters.AddWithValue("@id_traslado", id);//
 

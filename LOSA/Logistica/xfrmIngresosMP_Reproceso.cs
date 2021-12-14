@@ -79,7 +79,7 @@ namespace LOSA.Logistica
 
                 if (row.tipo_ingreso == 1)
                 {
-                    frm_ingresos_lotes frmDetalle = new frm_ingresos_lotes(row.id, row.Ningreso, usuarioLogueado);
+                    frm_ingresos_lotes frmDetalle = new frm_ingresos_lotes(row.id, row.Ningreso, usuarioLogueado,false,0 );
                     if (frmDetalle.ShowDialog() == DialogResult.OK)
                     {
                         Load_Info();

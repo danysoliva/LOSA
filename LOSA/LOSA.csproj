@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>230</ApplicationRevision>
+    <ApplicationRevision>235</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -1388,7 +1388,9 @@
       <DependentUpon>dsWizard.xsd</DependentUpon>
     </Compile>
     <Compile Include="RecepcionMP\dsWizard.Designer.cs">
-      <DependentUpon>dsWizard.cs</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsWizard.xsd</DependentUpon>
     </Compile>
     <Compile Include="RecepcionMP\frmCambioIngreso.cs">
       <SubType>Form</SubType>
@@ -1861,6 +1863,11 @@
     <Compile Include="Tools\frmInputBox.Designer.cs">
       <DependentUpon>frmInputBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\dsGranelLoteactivo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsGranelLoteactivo.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesMP\dsTarima.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1933,6 +1940,12 @@
     </Compile>
     <Compile Include="TransaccionesMP\frmGestionUbicaciones.Designer.cs">
       <DependentUpon>frmGestionUbicaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmLoteActivoGranel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmLoteActivoGranel.Designer.cs">
+      <DependentUpon>frmLoteActivoGranel.cs</DependentUpon>
     </Compile>
     <Compile Include="TransaccionesMP\frmOptionMontaCarga.cs">
       <SubType>Form</SubType>
@@ -2978,6 +2991,9 @@
     <EmbeddedResource Include="TransaccionesMP\frmGestionUbicaciones.resx">
       <DependentUpon>frmGestionUbicaciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmLoteActivoGranel.resx">
+      <DependentUpon>frmLoteActivoGranel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmOptionMontaCarga.resx">
       <DependentUpon>frmOptionMontaCarga.cs</DependentUpon>
     </EmbeddedResource>
@@ -3233,9 +3249,9 @@
       <DependentUpon>dsWizard.xsd</DependentUpon>
     </None>
     <None Include="RecepcionMP\dsWizard.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsWizard1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsWizard.Designer.cs</LastGenOutput>
     </None>
     <None Include="RecepcionMP\dsWizard.xss">
       <DependentUpon>dsWizard.xsd</DependentUpon>
@@ -3272,6 +3288,17 @@
     </None>
     <None Include="Requisiciones\dSReportes.xss">
       <DependentUpon>dSReportes.xsd</DependentUpon>
+    </None>
+    <None Include="TransaccionesMP\dsGranelLoteactivo.xsc">
+      <DependentUpon>dsGranelLoteactivo.xsd</DependentUpon>
+    </None>
+    <None Include="TransaccionesMP\dsGranelLoteactivo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsGranelLoteactivo.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TransaccionesMP\dsGranelLoteactivo.xss">
+      <DependentUpon>dsGranelLoteactivo.xsd</DependentUpon>
     </None>
     <None Include="TransaccionesMP\dsTarima.xsc">
       <DependentUpon>dsTarima.xsd</DependentUpon>

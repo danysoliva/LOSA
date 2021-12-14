@@ -71,7 +71,7 @@
             this.btnReporteRetenido.Appearance.Options.UseFont = true;
             this.btnReporteRetenido.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnReporteRetenido.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReporteRetenido.ImageOptions.Image")));
-            this.btnReporteRetenido.Location = new System.Drawing.Point(22, 384);
+            this.btnReporteRetenido.Location = new System.Drawing.Point(22, 268);
             this.btnReporteRetenido.Name = "btnReporteRetenido";
             this.btnReporteRetenido.Size = new System.Drawing.Size(200, 52);
             this.btnReporteRetenido.TabIndex = 44;
@@ -112,7 +112,7 @@
             this.simpleButton3.Appearance.Options.UseFont = true;
             this.simpleButton3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(22, 326);
+            this.simpleButton3.Location = new System.Drawing.Point(22, 210);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(200, 52);
             this.simpleButton3.TabIndex = 41;
@@ -168,11 +168,12 @@
             this.btn_rptubicaciones.Appearance.Options.UseFont = true;
             this.btn_rptubicaciones.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btn_rptubicaciones.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_rptubicaciones.ImageOptions.Image")));
-            this.btn_rptubicaciones.Location = new System.Drawing.Point(22, 268);
+            this.btn_rptubicaciones.Location = new System.Drawing.Point(228, 384);
             this.btn_rptubicaciones.Name = "btn_rptubicaciones";
             this.btn_rptubicaciones.Size = new System.Drawing.Size(200, 52);
             this.btn_rptubicaciones.TabIndex = 27;
             this.btn_rptubicaciones.Text = "Reporte \r\nde Ubicaciones";
+            this.btn_rptubicaciones.Visible = false;
             this.btn_rptubicaciones.Click += new System.EventHandler(this.btn_rptubicaciones_Click);
             // 
             // btnImprimirTm
@@ -181,11 +182,12 @@
             this.btnImprimirTm.Appearance.Options.UseFont = true;
             this.btnImprimirTm.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnImprimirTm.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimirTm.ImageOptions.Image")));
-            this.btnImprimirTm.Location = new System.Drawing.Point(22, 210);
+            this.btnImprimirTm.Location = new System.Drawing.Point(434, 384);
             this.btnImprimirTm.Name = "btnImprimirTm";
             this.btnImprimirTm.Size = new System.Drawing.Size(200, 52);
             this.btnImprimirTm.TabIndex = 26;
             this.btnImprimirTm.Text = "Impresion \r\nde Tarimas";
+            this.btnImprimirTm.Visible = false;
             this.btnImprimirTm.Click += new System.EventHandler(this.btnImprimirTm_Click);
             // 
             // cmdSalidasMP

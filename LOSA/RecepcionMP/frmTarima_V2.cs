@@ -14,6 +14,9 @@ using ACS.Classes;
 using DevExpress.XtraGrid.Views.Grid;
 using LOSA.AlmacenesExterno;
 using Core.Clases.Herramientas;
+using System.Collections;
+using DevExpress.XtraReports.UI;
+using LOSA.Reportes;
 
 namespace LOSA.RecepcionMP
 {
@@ -26,6 +29,7 @@ namespace LOSA.RecepcionMP
         int NumBoleta;
         int IdMP;
         int idUbicacionNueva;
+        int DEFAULT_VALUE = 0;
         string ItemCode;
         decimal factor;
         int id_transferencia;
@@ -36,7 +40,9 @@ namespace LOSA.RecepcionMP
         public string cardcode;
         public Decimal LimiteKgloteportraslado;
         int IdHeaderInserted;
-        int IdLoteInserted = 0;
+        int IdLoteInserted ;
+        int idLoteExterno;
+        
         DataOperations dp = new DataOperations();
         public frmTarima_V2(bool PIstraslado,
                             UserLogin Puser,
@@ -45,6 +51,8 @@ namespace LOSA.RecepcionMP
             InitializeComponent();
             UsuarioLogeado = Puser;
             Istraslado = PIstraslado;
+            IdLoteInserted = DEFAULT_VALUE;
+            idLoteExterno = DEFAULT_VALUE;
             id_Traslado_a_Ingresar = Pid_traslado;
             if (Istraslado)
             {
@@ -111,7 +119,8 @@ namespace LOSA.RecepcionMP
                         cmd.Parameters.AddWithValue("@id_boleta", this.IdSerie);//
                         cmd.Parameters.AddWithValue("@cant", txtUnidades.Text);//
                         cmd.Parameters.AddWithValue("@TotalTarimas", txtCantidadTarimasTotal.Text);//
-                        cmd.Parameters.AddWithValue("@pesotaria", Convert.ToDecimal(txtPesoKg.Text));//
+                        cmd.Parameters.AddWithValue("@pesotaria", Convert.ToDecimal(txtPesoKg.Text));//   
+                        cmd.Parameters.AddWithValue("@traslado", Istraslado ? Convert.ToDecimal(row.id_traslado) : 0);//
                         IdHeaderInserted = Convert.ToInt32(cmd.ExecuteScalar());
                         cn.Close();
                         break;
@@ -124,6 +133,7 @@ namespace LOSA.RecepcionMP
 
                     }   
                 }
+               
 
                 foreach (dsWizard.informacionIngresoRow row in dsWizard.informacionIngreso.Rows)
                 {
@@ -133,28 +143,109 @@ namespace LOSA.RecepcionMP
                         cn.Open();
                         SqlCommand cmd = new SqlCommand("sp_insert_ingresos_lote_v2", cn);
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@itemcode", row.itemcode);//
-                        cmd.Parameters.AddWithValue("@itemname", row.itemname);//
-                        cmd.Parameters.AddWithValue("@cardcode", row.pv);//
-                        cmd.Parameters.AddWithValue("@cardname", row.cardname);  //
-                        cmd.Parameters.AddWithValue("@fecha_ingreso", row.fechaIngreso);
-                        cmd.Parameters.AddWithValue("@numero_transaccion", txtNumIngreso.Text); //
-                        cmd.Parameters.AddWithValue("@lote_materia_prima", row.lote);//
-                        cmd.Parameters.AddWithValue("@id_presentacion", row.id_presentacion);//
-                        cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);//
-                        cmd.Parameters.AddWithValue("@id_boleta", this.IdSerie);//
-                        cmd.Parameters.AddWithValue("@cant", row.udxtarima);//
-                        cmd.Parameters.AddWithValue("@TotalTarimas", row.canttarimas);//
-                        cmd.Parameters.AddWithValue("@pesotaria", Convert.ToDecimal(row.pesokgxtarima));//
+                        cmd.Parameters.AddWithValue("@itemcode", row.itemcode);////
+                        cmd.Parameters.AddWithValue("@itemname", row.itemname);//    //
+                        cmd.Parameters.AddWithValue("@cardcode", row.pv);//        //
+                        cmd.Parameters.AddWithValue("@cardname", row.cardname);  //     //
+                        cmd.Parameters.AddWithValue("@fecha_ingreso", row.fechaIngreso);      // //
+                        cmd.Parameters.AddWithValue("@numero_transaccion", txtNumIngreso.Text); //  //
+                        cmd.Parameters.AddWithValue("@lote_materia_prima", row.lote);//        //
+                        cmd.Parameters.AddWithValue("@id_presentacion", row.id_presentacion);//     //
+                        cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);//   //
+                        cmd.Parameters.AddWithValue("@id_boleta", this.IdSerie);//     //
+                        cmd.Parameters.AddWithValue("@cant", row.udxtarima);//        //
+                        cmd.Parameters.AddWithValue("@TotalTarimas", row.canttarimas);//    //
+                        cmd.Parameters.AddWithValue("@pesotaria", Convert.ToDecimal(row.pesokgxtarima));//   //
+                        cmd.Parameters.AddWithValue("@lote_externo", Istraslado ? Convert.ToDecimal(row.id_Externo) : 0);//   //
+                        cmd.Parameters.AddWithValue("@idheader", IdHeaderInserted);//    //
 
 
 
-                        IdLoteInserted = Convert.ToInt32(cmd.ExecuteScalar());  
+                        IdLoteInserted = Convert.ToInt32(cmd.ExecuteScalar());
+
+                        bool Guardo = false;
+                        int vid_tarima = 0;
+                        ArrayList List = new ArrayList();
+
+                        for (int i = 1; i <= row.canttarimas; i++)
+                        {
+                           
+                                DataOperations dp = new DataOperations();
+                                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                                con.Open();
+
+                                SqlCommand cmm = new SqlCommand("sp_generar_codigo_from_tables_id", con);
+                                cmm.CommandType = CommandType.StoredProcedure;
+                                cmm.Parameters.AddWithValue("@id", 1);
+                                string barcode = cmm.ExecuteScalar().ToString();
+
+                                cmd = new SqlCommand("sp_insert_new_tarima_v2", con);
+                                cmd.CommandType = CommandType.StoredProcedure;
+                                cmd.Parameters.AddWithValue("@itemcode", row.itemcode);
+                                cmd.Parameters.AddWithValue("@id_proveedor", row.pv);
+                                cmd.Parameters.AddWithValue("@fecha_ingreso", row.fechaIngreso);
+                                cmd.Parameters.AddWithValue("@numero_transaccion", txtNumIngreso.Text);
+                                cmd.Parameters.AddWithValue("@fecha_vencimiento", row.fvencimiento);
+                                cmd.Parameters.AddWithValue("@fecha_produccion_materia_prima", row.fproduccion);
+                                cmd.Parameters.AddWithValue("@lote_materia_prima", row.lote);
+                                cmd.Parameters.AddWithValue("@id_presentacion", row.id_presentacion);
+                                cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
+                                cmd.Parameters.AddWithValue("@id_boleta", this.IdSerie);
+                                cmd.Parameters.AddWithValue("@codigo_barra", barcode);
+                                cmd.Parameters.AddWithValue("@cant", row.udxtarima);
+                                cmd.Parameters.AddWithValue("@peso", row.pesokgxtarima);
+                                cmd.Parameters.AddWithValue("@idlotes", IdLoteInserted);
+                                cmd.Parameters.AddWithValue("@factor", row.factor);
+                                cmd.Parameters.AddWithValue("@bit_promedio", Tg_presentacion_promedio.IsOn ? 1 : 0);
+                                vid_tarima = Convert.ToInt32(cmd.ExecuteScalar());
+
+                                string query = @"";
+                                if (Istraslado)
+                                {
+                                    query = @"sp_insert_ubicacion_default_v2";
+
+                                }
+                                else
+                                {
+                                     query = @"sp_insert_ubicacion_default";
+                                }
+                                SqlCommand cmdx = new SqlCommand(query, con);// ahora recibe el parametro de ubicacion para poder guardarlo automatico en todas las tarimas
+                                cmdx.CommandType = CommandType.StoredProcedure;
+                                cmdx.Parameters.AddWithValue("@id_tarima", vid_tarima);
+                                cmdx.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
+                                cmdx.Parameters.AddWithValue("@codigo_barra", barcode);
+                                cmdx.Parameters.AddWithValue("@id_ubicacion", 131); //bodega c500 predeterminada
+                                cmdx.ExecuteNonQuery();
+
+                                List.Add(vid_tarima);
+
+                                Guardo = true;
+                                con.Close();
+                        }
+                        if (Guardo)
+                        {
+                            DialogResult r = CajaDialogo.Pregunta("Desea Imprimir la(s) Hoja(s) de Ingreso?");
+                            if (r == DialogResult.Yes)
+                            {
+                                for (int i = 0; i <= (List.Count - 1); i++)
+                                {
+                                    int id_tarimax = Convert.ToInt32(List[i]);
+                                    rptReporteIngresoTarima report = new rptReporteIngresoTarima(id_tarimax);
+                                    report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                                    report.ShowPrintMarginsWarning = false;
+                                    report.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
+                                    report.Print();
 
 
+                                }
+                            }
+                            rptLoteRotulo boleta = new rptLoteRotulo(IdLoteInserted);
+                            boleta.ShowPrintMarginsWarning = false;
+                            boleta.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
+                            boleta.Print();
+                        }
 
 
-                        
                     }
                     catch (Exception ex)
                     {
@@ -162,9 +253,17 @@ namespace LOSA.RecepcionMP
                         CajaDialogo.Error(ex.Message);
                     }
                 }
+
+               
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
+        }
+
+        private void PrintingSystem_StartPrint(object sender, DevExpress.XtraPrinting.PrintDocumentEventArgs e)
+        {
+            //Indica el numero de copias de la boleta que seran impresas
+            e.PrintDocument.PrinterSettings.Copies = 1;
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
@@ -365,6 +464,8 @@ namespace LOSA.RecepcionMP
             row["factura"] = txtfactura.Text;
             row["bit_promedio"] = Tg_presentacion_promedio.IsOn;
             row["id_presentacion"] = gridLookUpEditPresentacion.EditValue;
+            row["id_Externo"] = idLoteExterno;
+            idLoteExterno = DEFAULT_VALUE;
             decimal CantidadDeUd = 0;
             decimal CantidadDeKG = 0;
             CantidadDeUd = Convert.ToInt32(txtCantidadTarimasTotal.Text) * Convert.ToInt32(txtUnidades.Text);
@@ -405,7 +506,6 @@ namespace LOSA.RecepcionMP
                 {
                     txtpresentacionPromedio.Visible = true;
                     gridLookUpEditPresentacion.Visible = false;
-                    factor = 0;
                     labelControl12.Text = "Peso total KG";
                     txtPesoKg.Enabled = true;
                 }
@@ -514,7 +614,12 @@ namespace LOSA.RecepcionMP
             {
                 try
                 {
-                    txtPesoKg.Text = string.Format("{0:###,##0.00}", (factor * Convert.ToDecimal(txtUnidades.Text)));
+                    PresentacionX pre1 = new PresentacionX();
+                    if (pre1.RecuperarRegistro(Convert.ToInt32(gridLookUpEditPresentacion.EditValue)))
+                    {
+                        factor = pre1.Factor;
+                        txtPesoKg.Text = string.Format("{0:###,##0.00}", (factor * Convert.ToDecimal(txtUnidades.Text)));
+                    }
                 }
                 catch
                 {
@@ -525,11 +630,19 @@ namespace LOSA.RecepcionMP
 
         private void gridLookUpEditPresentacion_EditValueChanged(object sender, EventArgs e)
         {
-            PresentacionX pre1 = new PresentacionX();
-            if (pre1.RecuperarRegistro(Convert.ToInt32(gridLookUpEditPresentacion.EditValue)))
+            try
             {
-                factor = pre1.Factor;
-                txtPesoKg.Text = string.Format("{0:###,##0.00}", (factor * Convert.ToDecimal(txtUnidades.Text)));
+                PresentacionX pre1 = new PresentacionX();
+                if (pre1.RecuperarRegistro(Convert.ToInt32(gridLookUpEditPresentacion.EditValue)))
+                {
+                    factor = pre1.Factor;
+                    txtPesoKg.Text = string.Format("{0:###,##0.00}", (factor * Convert.ToDecimal(txtUnidades.Text)));
+                }
+            }
+            catch (Exception)
+            {
+
+                txtPesoKg.Text = "0";
             }
         }
 
@@ -560,6 +673,7 @@ namespace LOSA.RecepcionMP
                 dtFechaProduccion.EditValue = frm.fproduccion;
                 dtFechaVencimiento.EditValue = frm.fvencimiento;
                 LimiteKgloteportraslado = frm.LimiteKG;
+                idLoteExterno = frm.id_lote_externo;
             }
         }
     }

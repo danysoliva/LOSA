@@ -27,6 +27,7 @@ namespace LOSA.RecepcionMP
         public Decimal LimiteKG;
         public DateTime fproduccion;
         public DateTime fvencimiento;
+        public int id_lote_externo;
         public frmSeleccionrLoteExterno(int Pid_externo)
         {
             InitializeComponent();
@@ -70,6 +71,7 @@ namespace LOSA.RecepcionMP
                 fproduccion = row.fecha_produccion;
                 fvencimiento = row.fecha_vencimiento;
                 LimiteKG = row.Existencia;
+                id_lote_externo = row.id;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
@@ -93,6 +95,7 @@ namespace LOSA.RecepcionMP
                 fproduccion = row.fecha_produccion;
                 fvencimiento = row.fecha_vencimiento;
                 LimiteKG = row.Existencia;
+                id_lote_externo = row.id;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }

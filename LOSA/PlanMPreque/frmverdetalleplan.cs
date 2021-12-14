@@ -79,7 +79,7 @@ namespace LOSA.PlanMPreque
                     SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                     con.Open();
 
-                    SqlCommand cmd = new SqlCommand("sp_insert_in_requisicion_of_plan", con);
+                    SqlCommand cmd = new SqlCommand("sp_insert_in_requisicion_of_plan   ", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id_req_header", id);
                     SqlDataReader dr = cmd.ExecuteReader();

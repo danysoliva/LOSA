@@ -29,7 +29,6 @@ namespace LOSA.RecepcionMP
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSpet1));
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -39,7 +38,6 @@ namespace LOSA.RecepcionMP
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
-            this.tipoIngresoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsWizard = new LOSA.RecepcionMP.dsWizard();
             this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -54,7 +52,6 @@ namespace LOSA.RecepcionMP
             this.step1 = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipoIngresoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsWizard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
             this.panel1.SuspendLayout();
@@ -141,7 +138,8 @@ namespace LOSA.RecepcionMP
             // 
             // grd_data
             // 
-            this.grd_data.DataSource = this.tipoIngresoBindingSource;
+            this.grd_data.DataMember = "tipo_ingreso";
+            this.grd_data.DataSource = this.dsWizard;
             this.grd_data.Location = new System.Drawing.Point(40, 181);
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
@@ -149,11 +147,6 @@ namespace LOSA.RecepcionMP
             this.grd_data.TabIndex = 7;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
-            // 
-            // tipoIngresoBindingSource
-            // 
-            this.tipoIngresoBindingSource.DataMember = "tipo_Ingreso";
-            this.tipoIngresoBindingSource.DataSource = this.dsWizard;
             // 
             // dsWizard
             // 
@@ -325,7 +318,6 @@ namespace LOSA.RecepcionMP
             this.Text = "Configuracion de Ingreso";
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipoIngresoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsWizard)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -357,7 +349,6 @@ namespace LOSA.RecepcionMP
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.PictureEdit step1;
-        private System.Windows.Forms.BindingSource tipoIngresoBindingSource;
         private dsWizard dsWizard;
         private DevExpress.XtraGrid.Columns.GridColumn colid;
         private DevExpress.XtraGrid.Columns.GridColumn coldescripcion;

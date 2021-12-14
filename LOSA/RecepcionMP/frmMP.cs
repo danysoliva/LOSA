@@ -66,18 +66,25 @@ namespace LOSA.RecepcionMP
 
         private void GvMP_DoubleClick(object sender, EventArgs e)
         {
-            //Seleccion del lote
-            //bib
-            var gridView = (GridView)gcMP.FocusedView;
-            var row = (dsRecepcionMPx.Materia_PrimaRow)gridView.GetFocusedDataRow();
+            try
+            {
+                //Seleccion del lote
+                //bib
+                var gridView = (GridView)gcMP.FocusedView;
+                var row = (dsRecepcionMPx.Materia_PrimaRow)gridView.GetFocusedDataRow();
 
-            //this.idProveedor = row.carcode;
-            //this.NombreProveedor = row.cardname;
-            this.MateriaPrima = row.itemdescrip;
-            this.ItemCode = row.itemcode;
-            //this.lote = row.lote_materia_prima;
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+                //this.idProveedor = row.carcode;
+                //this.NombreProveedor = row.cardname;
+                this.MateriaPrima = row.itemdescrip;
+                this.ItemCode = row.itemcode;
+                //this.lote = row.lote_materia_prima;
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            catch (Exception)
+            {
+
+            }
         }
     }
 }
