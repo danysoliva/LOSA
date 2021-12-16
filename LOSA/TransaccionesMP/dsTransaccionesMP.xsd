@@ -220,6 +220,8 @@
               <xs:element name="codigo_barra" msprop:Generator_ColumnVarNameInTable="columncodigo_barra" msprop:Generator_ColumnPropNameInRow="codigo_barra" msprop:Generator_ColumnPropNameInTable="codigo_barraColumn" msprop:Generator_UserColumnName="codigo_barra" type="xs:string" minOccurs="0" />
               <xs:element name="id_tarima" msprop:Generator_ColumnVarNameInTable="columnid_tarima" msprop:Generator_ColumnPropNameInRow="id_tarima" msprop:Generator_ColumnPropNameInTable="id_tarimaColumn" msprop:Generator_UserColumnName="id_tarima" type="xs:int" minOccurs="0" />
               <xs:element name="id_estado_tarima" msprop:Generator_ColumnVarNameInTable="columnid_estado_tarima" msprop:Generator_ColumnPropNameInRow="id_estado_tarima" msprop:Generator_ColumnPropNameInTable="id_estado_tarimaColumn" msprop:Generator_UserColumnName="id_estado_tarima" type="xs:int" minOccurs="0" />
+              <xs:element name="lote_materia_prima" msprop:Generator_ColumnVarNameInTable="columnlote_materia_prima" msprop:Generator_ColumnPropNameInRow="lote_materia_prima" msprop:Generator_ColumnPropNameInTable="lote_materia_primaColumn" msprop:Generator_UserColumnName="lote_materia_prima" type="xs:string" minOccurs="0" />
+              <xs:element name="id_mp" msprop:Generator_ColumnVarNameInTable="columnid_mp" msprop:Generator_ColumnPropNameInRow="id_mp" msprop:Generator_ColumnPropNameInTable="id_mpColumn" msprop:Generator_UserColumnName="id_mp" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

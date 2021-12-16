@@ -29,6 +29,7 @@ namespace LOSA.TransaccionesMP
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEntregaTarimaReq_3));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -56,13 +57,13 @@ namespace LOSA.TransaccionesMP
             this.txtTarima = new DevExpress.XtraEditors.ButtonEdit();
             this.cmdSelectTarima = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.timerLimpiarMensaje = new System.Windows.Forms.Timer();
+            this.timerLimpiarMensaje = new System.Windows.Forms.Timer(this.components);
             this.cmdLiquidos = new DevExpress.XtraEditors.SimpleButton();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.grd_bines = new DevExpress.XtraGrid.GridControl();
+            this.grdv_bines = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_materia_prima = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colmp1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -91,8 +92,8 @@ namespace LOSA.TransaccionesMP
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
             this.xtraTabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_bines)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_bines)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdSeleccionar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -552,35 +553,35 @@ namespace LOSA.TransaccionesMP
             // 
             // xtraTabPage2
             // 
-            this.xtraTabPage2.Controls.Add(this.gridControl1);
+            this.xtraTabPage2.Controls.Add(this.grd_bines);
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.Size = new System.Drawing.Size(620, 245);
             this.xtraTabPage2.Text = "Bines Disponibles PRD";
             // 
-            // gridControl1
+            // grd_bines
             // 
-            this.gridControl1.DataMember = "bines_dispo_prd";
-            this.gridControl1.DataSource = this.dsTransaccionesMP;
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.grd_bines.DataMember = "bines_dispo_prd";
+            this.grd_bines.DataSource = this.dsTransaccionesMP;
+            this.grd_bines.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grd_bines.Location = new System.Drawing.Point(0, 0);
+            this.grd_bines.MainView = this.grdv_bines;
+            this.grd_bines.Name = "grd_bines";
+            this.grd_bines.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cmdSeleccionar});
-            this.gridControl1.Size = new System.Drawing.Size(620, 245);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.grd_bines.Size = new System.Drawing.Size(620, 245);
+            this.grd_bines.TabIndex = 0;
+            this.grd_bines.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grdv_bines});
             // 
-            // gridView1
+            // grdv_bines
             // 
-            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gridView1.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridView1.Appearance.Preview.Options.UseFont = true;
-            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.gridView1.Appearance.Row.Options.UseFont = true;
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.grdv_bines.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdv_bines.Appearance.HeaderPanel.Options.UseFont = true;
+            this.grdv_bines.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdv_bines.Appearance.Preview.Options.UseFont = true;
+            this.grdv_bines.Appearance.Row.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.grdv_bines.Appearance.Row.Options.UseFont = true;
+            this.grdv_bines.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colid1,
             this.colid_materia_prima,
             this.colmp1,
@@ -596,8 +597,9 @@ namespace LOSA.TransaccionesMP
             this.colcode_sap,
             this.colasignado,
             this.ColSeleccionar});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
+            this.grdv_bines.GridControl = this.grd_bines;
+            this.grdv_bines.Name = "grdv_bines";
+            this.grdv_bines.OptionsView.ShowGroupPanel = false;
             // 
             // colid1
             // 
@@ -759,8 +761,8 @@ namespace LOSA.TransaccionesMP
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
             this.xtraTabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_bines)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_bines)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdSeleccionar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -795,8 +797,8 @@ namespace LOSA.TransaccionesMP
         private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl grd_bines;
+        private DevExpress.XtraGrid.Views.Grid.GridView grdv_bines;
         private DevExpress.XtraGrid.Columns.GridColumn colid1;
         private DevExpress.XtraGrid.Columns.GridColumn colid_materia_prima;
         private DevExpress.XtraGrid.Columns.GridColumn colmp1;

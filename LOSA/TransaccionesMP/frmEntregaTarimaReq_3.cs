@@ -477,8 +477,37 @@ namespace LOSA.TransaccionesMP
         private void cmdSeleccionar_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             //seleccionar materia prima en planta
-            frmBinesEnPRD frm = new frmBinesEnPRD();
-            frm.ShowDialog();
+
+            try
+            {
+                var gridView = (GridView)grd_bines.FocusedView;
+                var row = (dsTransaccionesMP.bines_dispo_prdRow)gridView.GetFocusedDataRow();
+
+                if (row.disponibles_prd == 0)
+                {
+                    CajaDialogo.Error("No hay bines pendientes que consumir en produccion.");
+                    return;
+                }
+                if (row.solicitada == row.entregada)
+                {
+                    CajaDialogo.Error("Ya se ha entregado toda la materia prima de este producto.");
+                    return;
+                }
+
+
+                frmBinesEnPRD frm = new frmBinesEnPRD(RequisicionActual.IdRequisicion, row.id_materia_prima);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+
+                    load_tarimas_scan_v2();
+                    load_bines_disponiblesByReq(RequisicionActual.IdRequisicion);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
         }
     }
 }
