@@ -29,7 +29,6 @@ namespace LOSA.MicroIngredientes
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
             DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue1 = new DevExpress.XtraEditors.FormatConditionRuleValue();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
@@ -44,7 +43,6 @@ namespace LOSA.MicroIngredientes
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gcPesaje = new DevExpress.XtraGrid.GridControl();
-            this.newPesajeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsMicros = new LOSA.MicroIngredientes.dsMicros();
             this.gvPesaje = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid_orden = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -61,7 +59,6 @@ namespace LOSA.MicroIngredientes
             this.btnNext = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gcPesaje)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.newPesajeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMicros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPesaje)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
@@ -73,7 +70,8 @@ namespace LOSA.MicroIngredientes
             this.gcPesaje.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcPesaje.DataSource = this.newPesajeBindingSource;
+            this.gcPesaje.DataMember = "New_Pesaje";
+            this.gcPesaje.DataSource = this.dsMicros;
             this.gcPesaje.Location = new System.Drawing.Point(1, 1);
             this.gcPesaje.MainView = this.gvPesaje;
             this.gcPesaje.Name = "gcPesaje";
@@ -84,11 +82,6 @@ namespace LOSA.MicroIngredientes
             this.gcPesaje.TabIndex = 2;
             this.gcPesaje.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvPesaje});
-            // 
-            // newPesajeBindingSource
-            // 
-            this.newPesajeBindingSource.DataMember = "New_Pesaje";
-            this.newPesajeBindingSource.DataSource = this.dsMicros;
             // 
             // dsMicros
             // 
@@ -273,7 +266,6 @@ namespace LOSA.MicroIngredientes
             this.Name = "xfrmAsistentePesaje";
             this.Text = "Pesaje MP";
             ((System.ComponentModel.ISupportInitialize)(this.gcPesaje)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.newPesajeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMicros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPesaje)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
@@ -287,7 +279,6 @@ namespace LOSA.MicroIngredientes
         private DevExpress.XtraGrid.GridControl gcPesaje;
         private DevExpress.XtraGrid.Views.Grid.GridView gvPesaje;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdPesar1;
-        private System.Windows.Forms.BindingSource newPesajeBindingSource;
         private dsMicros dsMicros;
         private DevExpress.XtraGrid.Columns.GridColumn colid_orden;
         private DevExpress.XtraGrid.Columns.GridColumn colcodigo_mp;
