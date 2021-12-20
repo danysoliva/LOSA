@@ -117,6 +117,27 @@ namespace LOSA.TransaccionesMP
                 CajaDialogo.Error(ex.Message);
             }
         }
+
+        public void load_lote_activo_onlySoya()
+        {
+            string Query = @"sp_get_lote_activo_ONLYSOYA";
+            SqlConnection conexion = new SqlConnection(dp.ConnectionStringLOSA);
+            try
+            {
+                conexion.Open();
+                SqlCommand comando = new SqlCommand(Query, conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter adapter = new SqlDataAdapter(comando);
+                dsGranelLoteactivo.LotesActivos.Clear();
+                adapter.Fill(dsGranelLoteactivo.LotesActivos);
+                conexion.Close();
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
         public void load_ubicaciones()
         {
             string Query = @"sp_obtener_ubicaciones_of_granel";
@@ -165,7 +186,7 @@ namespace LOSA.TransaccionesMP
         {
             try
             {
-                if (ItemCode != CADENA_VACIA && id_ubicacion != DEFAULT_VALUE )
+                if (ItemCode != CADENA_VACIA  )
                 {
                     string Query = @"sp_load_inventario_granel";
                     SqlConnection conexion = new SqlConnection(dp.ConnectionStringLOSA);
@@ -173,7 +194,30 @@ namespace LOSA.TransaccionesMP
                     SqlCommand comando = new SqlCommand(Query, conexion);
                     comando.CommandType = CommandType.StoredProcedure;
                     comando.Parameters.AddWithValue("@itemcode", ItemCode);
-                    comando.Parameters.AddWithValue("@id_ubicacion", id_ubicacion);
+                    SqlDataAdapter adapter = new SqlDataAdapter(comando);
+                    dsGranelLoteactivo.ExistenciasGranel.Clear();
+                    adapter.Fill(dsGranelLoteactivo.ExistenciasGranel);
+                    conexion.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        public void Cargar_Existencias_onlySoya()
+        {
+            try
+            {
+                if (ItemCode != CADENA_VACIA)
+                {
+                    string Query = @"sp_load_inventario_granel_onlySoya";
+                    SqlConnection conexion = new SqlConnection(dp.ConnectionStringLOSA);
+                    conexion.Open();
+                    SqlCommand comando = new SqlCommand(Query, conexion);
+                    comando.CommandType = CommandType.StoredProcedure;
                     SqlDataAdapter adapter = new SqlDataAdapter(comando);
                     dsGranelLoteactivo.ExistenciasGranel.Clear();
                     adapter.Fill(dsGranelLoteactivo.ExistenciasGranel);
@@ -221,14 +265,26 @@ namespace LOSA.TransaccionesMP
                     SqlCommand command = new SqlCommand(query,connection);
                     command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@lote",row.lote);
-                    command.Parameters.AddWithValue("@id_ingreso_lote", row.id_lote_alosy == 0? 0 : row.id_lote_alosy);
                     command.Parameters.AddWithValue("@id_mp", row.id_mp);
                     command.Parameters.AddWithValue("@id_ubicacion", row.id_ubicacion);
                     command.Parameters.AddWithValue("@itemcode", row.code_sap);
                     command.ExecuteNonQuery();
                     connection.Close();
-                    load_lote_activo();
-                    Cargar_Existencias();
+
+                    if (ItemCode == "MP00001")
+                    {
+
+                        load_ordenes_en_transito();
+                        load_lote_activo();
+                        Cargar_Existencias();
+                    }
+                    else
+                    {
+
+                        load_ordenes_en_transito_onlySoya();
+                        Cargar_Existencias_onlySoya();
+                        load_lote_activo_onlySoya();
+                    }
                 }
             }
             catch (Exception ex)
@@ -247,7 +303,17 @@ namespace LOSA.TransaccionesMP
                 Operacines op = new Operacines(row.id, row.prioridad);
                 if (op.MoverPrioridad(Operacines.Sentidos.Subir))
                 {
-                    load_lote_activo();
+                    if (ItemCode == "MP00001")
+                    {
+
+                        load_lote_activo();
+                    }
+                    else
+                    {
+
+                      
+                        load_lote_activo_onlySoya();
+                    }
                 }
             }
             catch (Exception ex)
@@ -265,7 +331,17 @@ namespace LOSA.TransaccionesMP
                 Operacines op = new Operacines(row.id, row.prioridad);
                 if (op.MoverPrioridad(Operacines.Sentidos.bajar))
                 {
-                     load_lote_activo();
+                    if (ItemCode == "MP00001")
+                    {
+
+                        load_lote_activo();
+                    }
+                    else
+                    {
+
+                       
+                        load_lote_activo_onlySoya();
+                    }
                 }
             }
             catch (Exception ex)
@@ -294,6 +370,74 @@ namespace LOSA.TransaccionesMP
             {
 
             }
+        }
+        public void load_ordenes_en_transito()
+        {
+            string query = @"sp_load_oc_transito";
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            try
+            {
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@itemcode", ItemCode);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                dsReporteAlmacenExterno.comprasTransito.Clear();
+                da.Fill(dsReporteAlmacenExterno.comprasTransito);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+        public void load_ordenes_en_transito_onlySoya()
+        {
+            string query = @"sp_load_oc_transito_OnlySoya";
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            try
+            {
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                dsReporteAlmacenExterno.comprasTransito.Clear();
+                da.Fill(dsReporteAlmacenExterno.comprasTransito);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+        private void btnSoya_Click(object sender, EventArgs e)
+        {
+            btnTrigo.Appearance.BackColor = Color.FromArgb(235, 236, 239);
+            btnSoya.Appearance.BackColor = Color.FromArgb(0, 178, 148);
+            ItemCode = "--";
+            Dscripcion = "Harina de Soya (Todo)";
+            txtMP.Text = Dscripcion;
+            load_ordenes_en_transito_onlySoya();
+            Cargar_Existencias_onlySoya();
+            load_lote_activo_onlySoya();
+        }
+
+        private void btnTrigo_Click(object sender, EventArgs e)
+        {
+            btnSoya.Appearance.BackColor = Color.FromArgb(235, 236, 239);
+            btnTrigo.Appearance.BackColor = Color.FromArgb(0, 178, 148);
+
+
+            ItemCode = "MP00001";
+            Dscripcion = "Trigo";
+            txtMP.Text = Dscripcion;
+            load_ordenes_en_transito();
+            load_lote_activo();
+
+            
+            Cargar_Existencias();
         }
     }
 }
