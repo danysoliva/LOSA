@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>238</ApplicationRevision>
+    <ApplicationRevision>244</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -821,6 +821,9 @@
       <DependentUpon>frmOpciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\GrupoUser.cs" />
+    <Compile Include="Liquidos\dsLiquidos_.cs">
+      <DependentUpon>dsLiquidos_.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Liquidos\dsLiquidos_.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -831,6 +834,12 @@
     </Compile>
     <Compile Include="Liquidos\frmIngresoCamion.Designer.cs">
       <DependentUpon>frmIngresoCamion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Liquidos\frmTarimasOFLiquidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Liquidos\frmTarimasOFLiquidos.Designer.cs">
+      <DependentUpon>frmTarimasOFLiquidos.cs</DependentUpon>
     </Compile>
     <Compile Include="Liquidos\frm_select_numero_liquidos.cs">
       <SubType>Form</SubType>
@@ -2511,6 +2520,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Liquidos\frmIngresoCamion.resx">
       <DependentUpon>frmIngresoCamion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Liquidos\frmTarimasOFLiquidos.resx">
+      <DependentUpon>frmTarimasOFLiquidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Liquidos\frm_select_numero_liquidos.resx">
       <DependentUpon>frm_select_numero_liquidos.cs</DependentUpon>

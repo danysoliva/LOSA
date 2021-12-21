@@ -193,11 +193,11 @@ namespace LOSA.MicroIngredientes
                     return;
                 }
 
-                if (cantidadDisponible!=0)
-                {
-                    CajaDialogo.Error("HAY TODAVIA PESO POR ASIGNAR");
-                    return;
-                }
+                //if (cantidadDisponible!=0)
+                //{
+                //    CajaDialogo.Error("HAY TODAVIA PESO POR ASIGNAR");
+                //    return;
+                //}
 
 
                 if (type == 1)

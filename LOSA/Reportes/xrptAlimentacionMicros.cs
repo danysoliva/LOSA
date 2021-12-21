@@ -87,7 +87,7 @@ namespace LOSA.Reportes
                     txtlote.Text = dr.GetInt32(2).ToString();
                     txtcodigoPT.Text = dr.GetString(5);
                     txtturno.Text = dr.GetString(7);
-                    txtformula.Text = dr.GetInt32(6).ToString();
+                    txtformula.Text = dr.GetString(6);
                     txtproducto.Text = dr.GetString(4);
                     txt_barcode.Text = dr.GetInt32(9).ToString();
                     batchpesados.Text = dr.GetInt32(8).ToString();

@@ -42,6 +42,8 @@ namespace LOSA.Liquidos
             //IdLoteSelected = pItem.IdLote;
             //LoadBarcos();
             LoadUbicaciones();
+            obtener_ingreso();
+
 
             //if (pItem.RecuperarRegistro(pItem.IdLote))
             //{
@@ -73,7 +75,7 @@ namespace LOSA.Liquidos
             //        row1.barco = rowg.barco;
             //    }
             //    catch { row1.barco = ""; }
-                
+
             //    row1.NBoleta= rowg.NBoleta;
             //    row1.numero_factura= rowg.numero_factura;
             //    row1.Operador= rowg.Operador;
@@ -96,7 +98,7 @@ namespace LOSA.Liquidos
             //        row1.id_ubicacion = rowg.id_ubicacion;
             //    }
             //    catch {  }
-               
+
 
             //    dsRecepcionMPx1.granel.AddgranelRow(row1);
             //    dsRecepcionMPx1.AcceptChanges();
@@ -120,10 +122,32 @@ namespace LOSA.Liquidos
             //IdLoteSelected = pItem.IdLote;
             //LoadBarcos();
             LoadUbicaciones();
+            obtener_ingreso();
 
 
         }
 
+        public void obtener_ingreso()
+        {
+            try
+            {
+                string quer = @"sp_obtener_numero_ingreso_v2";
+                SqlConnection cn;
+                cn = new SqlConnection(dp.ConnectionStringLOSA);
+                cn.Open();
+                SqlCommand cmd;
+                cmd = new SqlCommand(quer, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                ingreso = Convert.ToInt32(cmd.ExecuteScalar());
+                txtingreso.Text = ingreso.ToString();
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
         private void LoadUbicaciones()
          {
             try
@@ -222,6 +246,7 @@ namespace LOSA.Liquidos
                 }
             }
 
+
             foreach (var item in dsLiquidos_.Camiones_IN)
             {
                 if (item.fecha_vencimiento == null)
@@ -281,14 +306,10 @@ namespace LOSA.Liquidos
 
             if (chnuevoIngreso.Checked)
             {
-                string quer = @"sp_obtener_numero_ingreso";
-                //cn = new SqlConnection(dp.ConnectionStringLOSA);
-                //cn.Open();
-                cmd = new SqlCommand(quer, transaction.Connection);
+                string quer = @"sp_updata_numero_ingreso_tables_id";
+                cmd = new SqlCommand(quer, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Transaction = transaction;
-                ingreso = Convert.ToInt32(cmd.ExecuteScalar());
-                //cn.Close();
+                cmd.ExecuteNonQuery();
             }
             else
             {
@@ -427,14 +448,14 @@ namespace LOSA.Liquidos
         {
             if (chnuevoIngreso.Checked)
             {
-                lblingreso.Visible = false;
-                txtingreso.Visible = false;
+               
                 btningreso.Visible = false;
+                obtener_ingreso();
+
             }
             else
             {
-                lblingreso.Visible = true;
-                txtingreso.Visible = true;
+              
                 btningreso.Visible = true;
             }
         }
@@ -522,6 +543,11 @@ namespace LOSA.Liquidos
                     //dsRecepcionMPx1.AcceptChanges();
                 }
             }
+        }
+
+        private void groupControl1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

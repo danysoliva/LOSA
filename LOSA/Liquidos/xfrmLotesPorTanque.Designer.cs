@@ -30,12 +30,13 @@ namespace LOSA.Liquidos
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmLotesPorTanque));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.grd_boleta = new DevExpress.XtraGrid.GridControl();
             this.lOSAIngresoliquidosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dsLiquidos_ = new LOSA.Liquidos.dsLiquidos_();
@@ -49,7 +50,7 @@ namespace LOSA.Liquidos
             this.colcodigo_mp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colmp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_taque = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnusar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colTransferencia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lOSAIngresoliquidosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
@@ -58,7 +59,7 @@ namespace LOSA.Liquidos
             ((System.ComponentModel.ISupportInitialize)(this.lOSAIngresoliquidosBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsLiquidos_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_boleta)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnusar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOSAIngresoliquidosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,8 +74,6 @@ namespace LOSA.Liquidos
             this.grd_boleta.MainView = this.grdv_boleta;
             this.grd_boleta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grd_boleta.Name = "grd_boleta";
-            this.grd_boleta.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.btnusar});
             this.grd_boleta.Size = new System.Drawing.Size(1053, 456);
             this.grd_boleta.TabIndex = 1;
             this.grd_boleta.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -107,7 +106,8 @@ namespace LOSA.Liquidos
             this.colcodigo_prov,
             this.colcodigo_mp,
             this.colmp,
-            this.colid_taque});
+            this.colid_taque,
+            this.colTransferencia});
             this.grdv_boleta.DetailHeight = 284;
             this.grdv_boleta.GridControl = this.grd_boleta;
             this.grdv_boleta.Name = "grdv_boleta";
@@ -128,7 +128,7 @@ namespace LOSA.Liquidos
             this.colid_ingreso.OptionsColumn.AllowEdit = false;
             this.colid_ingreso.Visible = true;
             this.colid_ingreso.VisibleIndex = 0;
-            this.colid_ingreso.Width = 114;
+            this.colid_ingreso.Width = 106;
             // 
             // colkg
             // 
@@ -139,7 +139,7 @@ namespace LOSA.Liquidos
             this.colkg.OptionsColumn.AllowEdit = false;
             this.colkg.Visible = true;
             this.colkg.VisibleIndex = 3;
-            this.colkg.Width = 94;
+            this.colkg.Width = 87;
             // 
             // colid_serie
             // 
@@ -149,7 +149,7 @@ namespace LOSA.Liquidos
             this.colid_serie.OptionsColumn.AllowEdit = false;
             this.colid_serie.Visible = true;
             this.colid_serie.VisibleIndex = 4;
-            this.colid_serie.Width = 119;
+            this.colid_serie.Width = 110;
             // 
             // colproveedor
             // 
@@ -159,7 +159,7 @@ namespace LOSA.Liquidos
             this.colproveedor.OptionsColumn.AllowEdit = false;
             this.colproveedor.Visible = true;
             this.colproveedor.VisibleIndex = 6;
-            this.colproveedor.Width = 251;
+            this.colproveedor.Width = 177;
             // 
             // colcodigo_prov
             // 
@@ -169,7 +169,7 @@ namespace LOSA.Liquidos
             this.colcodigo_prov.OptionsColumn.AllowEdit = false;
             this.colcodigo_prov.Visible = true;
             this.colcodigo_prov.VisibleIndex = 5;
-            this.colcodigo_prov.Width = 97;
+            this.colcodigo_prov.Width = 90;
             // 
             // colcodigo_mp
             // 
@@ -179,7 +179,7 @@ namespace LOSA.Liquidos
             this.colcodigo_mp.OptionsColumn.AllowEdit = false;
             this.colcodigo_mp.Visible = true;
             this.colcodigo_mp.VisibleIndex = 1;
-            this.colcodigo_mp.Width = 152;
+            this.colcodigo_mp.Width = 141;
             // 
             // colmp
             // 
@@ -189,21 +189,27 @@ namespace LOSA.Liquidos
             this.colmp.OptionsColumn.AllowEdit = false;
             this.colmp.Visible = true;
             this.colmp.VisibleIndex = 2;
-            this.colmp.Width = 208;
+            this.colmp.Width = 193;
             // 
             // colid_taque
             // 
             this.colid_taque.FieldName = "id_tanque";
             this.colid_taque.Name = "colid_taque";
             // 
-            // btnusar
+            // colTransferencia
             // 
-            this.btnusar.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
-            this.btnusar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.btnusar.Name = "btnusar";
-            this.btnusar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.colTransferencia.Caption = "Ver Tarimas";
+            repositoryItemButtonEdit1.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            repositoryItemButtonEdit1.Name = "btnverTarimas";
+            repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.colTransferencia.ColumnEdit = repositoryItemButtonEdit1;
+            this.colTransferencia.Name = "colTransferencia";
+            this.colTransferencia.Visible = true;
+            this.colTransferencia.VisibleIndex = 7;
+            this.colTransferencia.Width = 131;
             // 
             // lOSAIngresoliquidosBindingSource
             // 
@@ -217,9 +223,9 @@ namespace LOSA.Liquidos
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
-            this.simpleButton1.Location = new System.Drawing.Point(29, 12);
+            this.simpleButton1.Location = new System.Drawing.Point(12, 15);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(117, 55);
+            this.simpleButton1.Size = new System.Drawing.Size(138, 55);
             this.simpleButton1.TabIndex = 36;
             this.simpleButton1.Text = "Nuevo";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -251,7 +257,7 @@ namespace LOSA.Liquidos
             this.simpleButton2.Appearance.Options.UseForeColor = true;
             this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton2.ImageOptions.SvgImage")));
-            this.simpleButton2.Location = new System.Drawing.Point(191, 12);
+            this.simpleButton2.Location = new System.Drawing.Point(156, 15);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(138, 55);
             this.simpleButton2.TabIndex = 97;
@@ -275,7 +281,7 @@ namespace LOSA.Liquidos
             ((System.ComponentModel.ISupportInitialize)(this.lOSAIngresoliquidosBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsLiquidos_)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_boleta)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnusar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(repositoryItemButtonEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOSAIngresoliquidosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -285,7 +291,6 @@ namespace LOSA.Liquidos
 
         private DevExpress.XtraGrid.GridControl grd_boleta;
         private DevExpress.XtraGrid.Views.Grid.GridView grdv_boleta;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnusar;
         private System.Windows.Forms.BindingSource lOSAIngresoliquidosBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn colid;
         private DevExpress.XtraGrid.Columns.GridColumn colid_ingreso;
@@ -301,5 +306,6 @@ namespace LOSA.Liquidos
         private System.Windows.Forms.BindingSource lOSAIngresoliquidosBindingSource1;
         private dsLiquidos_ dsLiquidos_;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraGrid.Columns.GridColumn colTransferencia;
     }
 }
