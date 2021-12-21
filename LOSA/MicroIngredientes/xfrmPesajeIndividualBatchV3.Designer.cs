@@ -121,7 +121,7 @@ namespace LOSA.MicroIngredientes
             // 
             // timer1
             // 
-            this.timer1.Interval = 4000;
+            this.timer1.Interval = 1500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // lblError

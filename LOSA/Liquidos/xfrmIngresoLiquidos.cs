@@ -46,7 +46,7 @@ namespace LOSA.Liquidos
         }
 
         private void btnTanque1_Click(object sender, EventArgs e)
-        {
+        {                                                         
             xfrmLotesPorTanque frm = new xfrmLotesPorTanque(Convert.ToInt32(btnTanque1.Tag),usuarioLogueado);
 
             if (frm.ShowDialog()== DialogResult.OK)

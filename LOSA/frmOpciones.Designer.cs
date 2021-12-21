@@ -39,24 +39,29 @@
             this.TabLogistica = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.TabMP_Sacos = new DevExpress.XtraTab.XtraTabPage();
+            this.btnAjustesKardex = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdUbicaciones = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_rptubicaciones = new DevExpress.XtraEditors.SimpleButton();
+            this.btnImprimirTm = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton18 = new DevExpress.XtraEditors.SimpleButton();
             this.btnPendientes_ingreso_a_planta = new DevExpress.XtraEditors.SimpleButton();
             this.cmdRegistroLote = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton13 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdGestionIngresos = new DevExpress.XtraEditors.SimpleButton();
             this.cmdRecepcionMPLogistica = new DevExpress.XtraEditors.SimpleButton();
             this.btnAlmacenesExternos = new DevExpress.XtraEditors.SimpleButton();
             this.btnTransferencia = new DevExpress.XtraEditors.SimpleButton();
             this.btnajuste = new DevExpress.XtraEditors.SimpleButton();
             this.tabMP_Granel = new DevExpress.XtraTab.XtraTabPage();
+            this.btnLoteActivoGranel = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.btnLiquidos = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton14 = new DevExpress.XtraEditors.SimpleButton();
             this.tabEntregaMP = new DevExpress.XtraTab.XtraTabPage();
-            this.btnAjustesKardex = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btntarimasactivadasPT = new DevExpress.XtraEditors.SimpleButton();
             this.cmdOrdenesFabricacion = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton13 = new DevExpress.XtraEditors.SimpleButton();
             this.btnPlantarimas = new DevExpress.XtraEditors.SimpleButton();
             this.cmdRequisiciones_ = new DevExpress.XtraEditors.SimpleButton();
             this.btnplanrequisas = new DevExpress.XtraEditors.SimpleButton();
@@ -68,8 +73,6 @@
             this.btnReq_PT = new DevExpress.XtraEditors.SimpleButton();
             this.tabMasterData = new DevExpress.XtraTab.XtraTabPage();
             this.btn_andenes = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.cmdUbicaciones = new DevExpress.XtraEditors.SimpleButton();
             this.tabReportes = new DevExpress.XtraTab.XtraTabPage();
             this.btnreportes = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
@@ -271,10 +274,14 @@
             // 
             this.TabMP_Sacos.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TabMP_Sacos.Appearance.Header.Options.UseFont = true;
+            this.TabMP_Sacos.Controls.Add(this.btnAjustesKardex);
+            this.TabMP_Sacos.Controls.Add(this.cmdUbicaciones);
+            this.TabMP_Sacos.Controls.Add(this.simpleButton3);
+            this.TabMP_Sacos.Controls.Add(this.btn_rptubicaciones);
+            this.TabMP_Sacos.Controls.Add(this.btnImprimirTm);
             this.TabMP_Sacos.Controls.Add(this.simpleButton18);
             this.TabMP_Sacos.Controls.Add(this.btnPendientes_ingreso_a_planta);
             this.TabMP_Sacos.Controls.Add(this.cmdRegistroLote);
-            this.TabMP_Sacos.Controls.Add(this.simpleButton13);
             this.TabMP_Sacos.Controls.Add(this.cmdGestionIngresos);
             this.TabMP_Sacos.Controls.Add(this.cmdRecepcionMPLogistica);
             this.TabMP_Sacos.Controls.Add(this.btnAlmacenesExternos);
@@ -283,6 +290,71 @@
             this.TabMP_Sacos.Name = "TabMP_Sacos";
             this.TabMP_Sacos.Size = new System.Drawing.Size(766, 409);
             this.TabMP_Sacos.Text = "MP en Sacos";
+            // 
+            // btnAjustesKardex
+            // 
+            this.btnAjustesKardex.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.btnAjustesKardex.Appearance.Options.UseFont = true;
+            this.btnAjustesKardex.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnAjustesKardex.ImageOptions.Image = global::LOSA.Properties.Resources.ajustes_kardex;
+            this.btnAjustesKardex.Location = new System.Drawing.Point(210, 302);
+            this.btnAjustesKardex.Name = "btnAjustesKardex";
+            this.btnAjustesKardex.Size = new System.Drawing.Size(197, 42);
+            this.btnAjustesKardex.TabIndex = 13;
+            this.btnAjustesKardex.Text = "Ajustes Kardex";
+            this.btnAjustesKardex.Click += new System.EventHandler(this.BtnAjustesKardex_Click);
+            // 
+            // cmdUbicaciones
+            // 
+            this.cmdUbicaciones.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.cmdUbicaciones.Appearance.Options.UseFont = true;
+            this.cmdUbicaciones.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdUbicaciones.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdUbicaciones.ImageOptions.Image")));
+            this.cmdUbicaciones.Location = new System.Drawing.Point(208, 158);
+            this.cmdUbicaciones.Name = "cmdUbicaciones";
+            this.cmdUbicaciones.Size = new System.Drawing.Size(199, 42);
+            this.cmdUbicaciones.TabIndex = 28;
+            this.cmdUbicaciones.Text = "Gestión Ubicaciones";
+            this.cmdUbicaciones.Click += new System.EventHandler(this.cmdUbicaciones_Click);
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.simpleButton3.Appearance.Options.UseFont = true;
+            this.simpleButton3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton3.ImageOptions.Image = global::LOSA.Properties.Resources.wrench;
+            this.simpleButton3.Location = new System.Drawing.Point(208, 111);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(199, 42);
+            this.simpleButton3.TabIndex = 8;
+            this.simpleButton3.Text = "Mantenimiento";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
+            // 
+            // btn_rptubicaciones
+            // 
+            this.btn_rptubicaciones.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.btn_rptubicaciones.Appearance.Options.UseFont = true;
+            this.btn_rptubicaciones.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btn_rptubicaciones.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_rptubicaciones.ImageOptions.Image")));
+            this.btn_rptubicaciones.Location = new System.Drawing.Point(209, 254);
+            this.btn_rptubicaciones.Name = "btn_rptubicaciones";
+            this.btn_rptubicaciones.Size = new System.Drawing.Size(198, 42);
+            this.btn_rptubicaciones.TabIndex = 42;
+            this.btn_rptubicaciones.Text = "Reporte \r\nde Ubicaciones";
+            this.btn_rptubicaciones.Click += new System.EventHandler(this.btn_rptubicaciones_Click);
+            // 
+            // btnImprimirTm
+            // 
+            this.btnImprimirTm.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.btnImprimirTm.Appearance.Options.UseFont = true;
+            this.btnImprimirTm.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnImprimirTm.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimirTm.ImageOptions.Image")));
+            this.btnImprimirTm.Location = new System.Drawing.Point(209, 207);
+            this.btnImprimirTm.Name = "btnImprimirTm";
+            this.btnImprimirTm.Size = new System.Drawing.Size(198, 41);
+            this.btnImprimirTm.TabIndex = 41;
+            this.btnImprimirTm.Text = "Impresion \r\nde Tarimas";
+            this.btnImprimirTm.Click += new System.EventHandler(this.btnImprimirTm_Click);
             // 
             // simpleButton18
             // 
@@ -328,19 +400,6 @@
             this.cmdRegistroLote.Text = "Ingresos";
             this.cmdRegistroLote.Click += new System.EventHandler(this.cmdRegistroLote_Click);
             // 
-            // simpleButton13
-            // 
-            this.simpleButton13.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.simpleButton13.Appearance.Options.UseFont = true;
-            this.simpleButton13.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton13.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton13.ImageOptions.Image")));
-            this.simpleButton13.Location = new System.Drawing.Point(3, 304);
-            this.simpleButton13.Name = "simpleButton13";
-            this.simpleButton13.Size = new System.Drawing.Size(199, 42);
-            this.simpleButton13.TabIndex = 38;
-            this.simpleButton13.Text = "Reporte Requisiciones \r\nManuales";
-            this.simpleButton13.Click += new System.EventHandler(this.simpleButton13_Click);
-            // 
             // cmdGestionIngresos
             // 
             this.cmdGestionIngresos.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
@@ -373,7 +432,7 @@
             this.btnAlmacenesExternos.Appearance.Options.UseFont = true;
             this.btnAlmacenesExternos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAlmacenesExternos.ImageOptions.Image = global::LOSA.Properties.Resources.boxPT32px;
-            this.btnAlmacenesExternos.Location = new System.Drawing.Point(3, 256);
+            this.btnAlmacenesExternos.Location = new System.Drawing.Point(3, 254);
             this.btnAlmacenesExternos.Name = "btnAlmacenesExternos";
             this.btnAlmacenesExternos.Size = new System.Drawing.Size(199, 42);
             this.btnAlmacenesExternos.TabIndex = 35;
@@ -402,7 +461,7 @@
             this.btnajuste.Appearance.Options.UseFont = true;
             this.btnajuste.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnajuste.ImageOptions.Image = global::LOSA.Properties.Resources.boxPT32px;
-            this.btnajuste.Location = new System.Drawing.Point(3, 208);
+            this.btnajuste.Location = new System.Drawing.Point(3, 206);
             this.btnajuste.Name = "btnajuste";
             this.btnajuste.Size = new System.Drawing.Size(199, 42);
             this.btnajuste.TabIndex = 31;
@@ -413,12 +472,28 @@
             // 
             this.tabMP_Granel.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.tabMP_Granel.Appearance.Header.Options.UseFont = true;
+            this.tabMP_Granel.Controls.Add(this.btnLoteActivoGranel);
             this.tabMP_Granel.Controls.Add(this.simpleButton2);
             this.tabMP_Granel.Controls.Add(this.btnLiquidos);
             this.tabMP_Granel.Controls.Add(this.simpleButton14);
             this.tabMP_Granel.Name = "tabMP_Granel";
             this.tabMP_Granel.Size = new System.Drawing.Size(766, 409);
             this.tabMP_Granel.Text = "MP Granel";
+            // 
+            // btnLoteActivoGranel
+            // 
+            this.btnLoteActivoGranel.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.btnLoteActivoGranel.Appearance.Options.UseFont = true;
+            this.btnLoteActivoGranel.Appearance.Options.UseTextOptions = true;
+            this.btnLoteActivoGranel.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnLoteActivoGranel.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnLoteActivoGranel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLoteActivoGranel.ImageOptions.Image")));
+            this.btnLoteActivoGranel.Location = new System.Drawing.Point(208, 14);
+            this.btnLoteActivoGranel.Name = "btnLoteActivoGranel";
+            this.btnLoteActivoGranel.Size = new System.Drawing.Size(199, 42);
+            this.btnLoteActivoGranel.TabIndex = 42;
+            this.btnLoteActivoGranel.Text = "Lote Activo";
+            this.btnLoteActivoGranel.Click += new System.EventHandler(this.btnLoteActivoGranel_Click);
             // 
             // simpleButton2
             // 
@@ -446,7 +521,7 @@
             this.btnLiquidos.Name = "btnLiquidos";
             this.btnLiquidos.Size = new System.Drawing.Size(199, 42);
             this.btnLiquidos.TabIndex = 41;
-            this.btnLiquidos.Text = " Ingreso Líquidos";
+            this.btnLiquidos.Text = " Ingreso a Tanques";
             this.btnLiquidos.Click += new System.EventHandler(this.simpleButton17_Click_1);
             // 
             // simpleButton14
@@ -468,10 +543,10 @@
             // 
             this.tabEntregaMP.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.tabEntregaMP.Appearance.Header.Options.UseFont = true;
-            this.tabEntregaMP.Controls.Add(this.btnAjustesKardex);
             this.tabEntregaMP.Controls.Add(this.simpleButton1);
             this.tabEntregaMP.Controls.Add(this.btntarimasactivadasPT);
             this.tabEntregaMP.Controls.Add(this.cmdOrdenesFabricacion);
+            this.tabEntregaMP.Controls.Add(this.simpleButton13);
             this.tabEntregaMP.Controls.Add(this.btnPlantarimas);
             this.tabEntregaMP.Controls.Add(this.cmdRequisiciones_);
             this.tabEntregaMP.Controls.Add(this.btnplanrequisas);
@@ -479,19 +554,6 @@
             this.tabEntregaMP.Size = new System.Drawing.Size(766, 409);
             this.tabEntregaMP.Text = "Entrega MP - PRD";
             this.tabEntregaMP.Paint += new System.Windows.Forms.PaintEventHandler(this.tabEntregaMP_Paint);
-            // 
-            // btnAjustesKardex
-            // 
-            this.btnAjustesKardex.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.btnAjustesKardex.Appearance.Options.UseFont = true;
-            this.btnAjustesKardex.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnAjustesKardex.ImageOptions.Image = global::LOSA.Properties.Resources.ajustes_kardex;
-            this.btnAjustesKardex.Location = new System.Drawing.Point(8, 16);
-            this.btnAjustesKardex.Name = "btnAjustesKardex";
-            this.btnAjustesKardex.Size = new System.Drawing.Size(199, 42);
-            this.btnAjustesKardex.TabIndex = 13;
-            this.btnAjustesKardex.Text = "Ajustes Kardex";
-            this.btnAjustesKardex.Click += new System.EventHandler(this.BtnAjustesKardex_Click);
             // 
             // simpleButton1
             // 
@@ -535,6 +597,19 @@
             this.cmdOrdenesFabricacion.TabIndex = 11;
             this.cmdOrdenesFabricacion.Text = "Ordenes de\r\nFabricación";
             this.cmdOrdenesFabricacion.Click += new System.EventHandler(this.cmdProgramaRequisiciones_Click);
+            // 
+            // simpleButton13
+            // 
+            this.simpleButton13.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.simpleButton13.Appearance.Options.UseFont = true;
+            this.simpleButton13.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton13.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton13.ImageOptions.Image")));
+            this.simpleButton13.Location = new System.Drawing.Point(8, 15);
+            this.simpleButton13.Name = "simpleButton13";
+            this.simpleButton13.Size = new System.Drawing.Size(199, 42);
+            this.simpleButton13.TabIndex = 38;
+            this.simpleButton13.Text = "Reporte Requisiciones \r\nManuales";
+            this.simpleButton13.Click += new System.EventHandler(this.simpleButton13_Click);
             // 
             // btnPlantarimas
             // 
@@ -663,8 +738,6 @@
             this.tabMasterData.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.tabMasterData.Appearance.Header.Options.UseFont = true;
             this.tabMasterData.Controls.Add(this.btn_andenes);
-            this.tabMasterData.Controls.Add(this.simpleButton3);
-            this.tabMasterData.Controls.Add(this.cmdUbicaciones);
             this.tabMasterData.Name = "tabMasterData";
             this.tabMasterData.Size = new System.Drawing.Size(766, 409);
             this.tabMasterData.Text = "Configuraciones";
@@ -681,32 +754,6 @@
             this.btn_andenes.TabIndex = 39;
             this.btn_andenes.Text = "Configuracion\r\nde andenes";
             this.btn_andenes.Click += new System.EventHandler(this.btn_andenes_Click);
-            // 
-            // simpleButton3
-            // 
-            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton3.ImageOptions.Image = global::LOSA.Properties.Resources.wrench;
-            this.simpleButton3.Location = new System.Drawing.Point(3, 60);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(199, 42);
-            this.simpleButton3.TabIndex = 8;
-            this.simpleButton3.Text = "Mantenimiento";
-            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
-            // 
-            // cmdUbicaciones
-            // 
-            this.cmdUbicaciones.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.cmdUbicaciones.Appearance.Options.UseFont = true;
-            this.cmdUbicaciones.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdUbicaciones.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdUbicaciones.ImageOptions.Image")));
-            this.cmdUbicaciones.Location = new System.Drawing.Point(3, 108);
-            this.cmdUbicaciones.Name = "cmdUbicaciones";
-            this.cmdUbicaciones.Size = new System.Drawing.Size(199, 42);
-            this.cmdUbicaciones.TabIndex = 28;
-            this.cmdUbicaciones.Text = "Gestión Ubicaciones";
-            this.cmdUbicaciones.Click += new System.EventHandler(this.cmdUbicaciones_Click);
             // 
             // tabReportes
             // 
@@ -1158,6 +1205,7 @@
             this.Name = "frmOpciones";
             this.Text = "Opciones";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmOpciones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).EndInit();
             this.tabOpciones.ResumeLayout(false);
             this.TabMontacarga.ResumeLayout(false);
@@ -1252,5 +1300,8 @@
         private DevExpress.XtraEditors.SimpleButton btnPendientes_ingreso_a_planta;
         private DevExpress.XtraEditors.SimpleButton simpleButton17;
         private DevExpress.XtraEditors.SimpleButton simpleButton18;
+        private DevExpress.XtraEditors.SimpleButton btnLoteActivoGranel;
+        private DevExpress.XtraEditors.SimpleButton btnImprimirTm;
+        private DevExpress.XtraEditors.SimpleButton btn_rptubicaciones;
     }
 }

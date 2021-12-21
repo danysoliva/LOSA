@@ -668,5 +668,28 @@ namespace LOSA
             frmReporteExterno frm = new frmReporteExterno();
             frm.Show();
         }
+
+        private void btnLoteActivoGranel_Click(object sender, EventArgs e)
+        {
+            frmLoteActivoGranel frm = new frmLoteActivoGranel(UsuarioLogeado);
+            frm.Show();
+        }
+
+        private void frmOpciones_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnImprimirTm_Click(object sender, EventArgs e)
+        {
+            frmprint__tarimas frm = new frmprint__tarimas();
+            frm.Show();
+        }
+
+        private void btn_rptubicaciones_Click(object sender, EventArgs e)
+        {
+            rptUbicaciones frm = new rptUbicaciones();
+            frm.Show();
+        }
     }
 }

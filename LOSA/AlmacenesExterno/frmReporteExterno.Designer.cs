@@ -30,11 +30,11 @@ namespace LOSA.AlmacenesExterno
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReporteExterno));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtmp = new DevExpress.XtraEditors.TextEdit();
@@ -126,7 +126,7 @@ namespace LOSA.AlmacenesExterno
             // txtmp
             // 
             this.txtmp.Enabled = false;
-            this.txtmp.Location = new System.Drawing.Point(105, 77);
+            this.txtmp.Location = new System.Drawing.Point(90, 77);
             this.txtmp.Name = "txtmp";
             this.txtmp.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtmp.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -144,13 +144,13 @@ namespace LOSA.AlmacenesExterno
             this.txtcodigoMP.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.txtcodigoMP.Properties.Appearance.Options.UseFont = true;
             this.txtcodigoMP.Properties.Appearance.Options.UseForeColor = true;
-            this.txtcodigoMP.Size = new System.Drawing.Size(97, 22);
+            this.txtcodigoMP.Size = new System.Drawing.Size(82, 22);
             this.txtcodigoMP.TabIndex = 4;
             // 
             // simpleButton1
             // 
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(340, 66);
+            this.simpleButton1.Location = new System.Drawing.Point(325, 64);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(120, 48);
             this.simpleButton1.TabIndex = 5;
@@ -180,7 +180,7 @@ namespace LOSA.AlmacenesExterno
             this.grd_resumen.Name = "grd_resumen";
             this.grd_resumen.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnCambiodeBodega});
-            this.grd_resumen.Size = new System.Drawing.Size(631, 292);
+            this.grd_resumen.Size = new System.Drawing.Size(664, 292);
             this.grd_resumen.TabIndex = 6;
             this.grd_resumen.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_resumen});
@@ -237,7 +237,7 @@ namespace LOSA.AlmacenesExterno
             this.colcodigobog.OptionsColumn.AllowEdit = false;
             this.colcodigobog.Visible = true;
             this.colcodigobog.VisibleIndex = 0;
-            this.colcodigobog.Width = 72;
+            this.colcodigobog.Width = 91;
             // 
             // coldescripcionbog
             // 
@@ -247,7 +247,7 @@ namespace LOSA.AlmacenesExterno
             this.coldescripcionbog.OptionsColumn.AllowEdit = false;
             this.coldescripcionbog.Visible = true;
             this.coldescripcionbog.VisibleIndex = 1;
-            this.coldescripcionbog.Width = 230;
+            this.coldescripcionbog.Width = 222;
             // 
             // coltotalkg
             // 
@@ -261,7 +261,7 @@ namespace LOSA.AlmacenesExterno
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "totalkg", "{0:0.##.##} Kg.")});
             this.coltotalkg.Visible = true;
             this.coltotalkg.VisibleIndex = 2;
-            this.coltotalkg.Width = 74;
+            this.coltotalkg.Width = 162;
             // 
             // coludtotal
             // 
@@ -275,7 +275,7 @@ namespace LOSA.AlmacenesExterno
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "udtotal", "{0:0.##.##} Ud.")});
             this.coludtotal.Visible = true;
             this.coludtotal.VisibleIndex = 3;
-            this.coludtotal.Width = 65;
+            this.coludtotal.Width = 78;
             // 
             // colselected
             // 
@@ -290,14 +290,14 @@ namespace LOSA.AlmacenesExterno
             this.colVer.Name = "colVer";
             this.colVer.Visible = true;
             this.colVer.VisibleIndex = 4;
-            this.colVer.Width = 67;
+            this.colVer.Width = 95;
             // 
             // btnCambiodeBodega
             // 
             this.btnCambiodeBodega.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.btnCambiodeBodega.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnCambiodeBodega.Name = "btnCambiodeBodega";
             this.btnCambiodeBodega.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -309,7 +309,7 @@ namespace LOSA.AlmacenesExterno
             this.grd_transito.Location = new System.Drawing.Point(2, 27);
             this.grd_transito.MainView = this.grdv_transito;
             this.grd_transito.Name = "grd_transito";
-            this.grd_transito.Size = new System.Drawing.Size(415, 292);
+            this.grd_transito.Size = new System.Drawing.Size(395, 292);
             this.grd_transito.TabIndex = 7;
             this.grd_transito.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_transito});
@@ -413,13 +413,13 @@ namespace LOSA.AlmacenesExterno
             this.txtBodega.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.txtBodega.Properties.Appearance.Options.UseFont = true;
             this.txtBodega.Properties.Appearance.Options.UseForeColor = true;
-            this.txtBodega.Size = new System.Drawing.Size(97, 22);
+            this.txtBodega.Size = new System.Drawing.Size(80, 22);
             this.txtBodega.TabIndex = 9;
             // 
             // txtbodegaName
             // 
             this.txtbodegaName.Enabled = false;
-            this.txtbodegaName.Location = new System.Drawing.Point(105, 152);
+            this.txtbodegaName.Location = new System.Drawing.Point(90, 152);
             this.txtbodegaName.Name = "txtbodegaName";
             this.txtbodegaName.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbodegaName.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -666,14 +666,14 @@ namespace LOSA.AlmacenesExterno
             this.groupControl1.Controls.Add(this.txtmp);
             this.groupControl1.Location = new System.Drawing.Point(4, 44);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(464, 321);
+            this.groupControl1.Size = new System.Drawing.Size(452, 321);
             this.groupControl1.TabIndex = 14;
             this.groupControl1.Text = "Seleccion Efectiva";
             // 
             // btnvertodas
             // 
             this.btnvertodas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnvertodas.ImageOptions.Image")));
-            this.btnvertodas.Location = new System.Drawing.Point(340, 139);
+            this.btnvertodas.Location = new System.Drawing.Point(325, 139);
             this.btnvertodas.Name = "btnvertodas";
             this.btnvertodas.Size = new System.Drawing.Size(120, 48);
             this.btnvertodas.TabIndex = 11;
@@ -687,9 +687,9 @@ namespace LOSA.AlmacenesExterno
             this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.groupControl2.AppearanceCaption.Options.UseFont = true;
             this.groupControl2.Controls.Add(this.grd_resumen);
-            this.groupControl2.Location = new System.Drawing.Point(470, 44);
+            this.groupControl2.Location = new System.Drawing.Point(455, 44);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(635, 321);
+            this.groupControl2.Size = new System.Drawing.Size(668, 321);
             this.groupControl2.TabIndex = 15;
             this.groupControl2.Text = "Inventario de Bodegas Externas";
             // 
@@ -699,9 +699,9 @@ namespace LOSA.AlmacenesExterno
             this.groupControl3.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.groupControl3.AppearanceCaption.Options.UseFont = true;
             this.groupControl3.Controls.Add(this.grd_transito);
-            this.groupControl3.Location = new System.Drawing.Point(1109, 44);
+            this.groupControl3.Location = new System.Drawing.Point(1129, 44);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(419, 321);
+            this.groupControl3.Size = new System.Drawing.Size(399, 321);
             this.groupControl3.TabIndex = 16;
             this.groupControl3.Text = "Compras Transito";
             // 

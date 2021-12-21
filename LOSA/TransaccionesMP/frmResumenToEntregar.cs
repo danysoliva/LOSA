@@ -28,6 +28,7 @@ namespace LOSA.TransaccionesMP
         public decimal ud_enviar = 0;
         DataOperations dp = new DataOperations();
         
+        
         public frmResumenToEntregar(
                                     decimal ExistenciaTM,
                                     decimal PEntregado,
@@ -167,17 +168,40 @@ namespace LOSA.TransaccionesMP
             if (selecionado ==0 )
             {
                 Utileria.frmMensaje frm = new Utileria.frmMensaje(Utileria.frmMensaje.TipoMsj.error, "Debe seleccionar aun que sea una unidad");
-                if (frm.ShowDialog() == DialogResult.OK)
-                {
-                    return;
-                }
-                else
-                {
-                    return;
-                }
+                frm.ShowDialog();
+                return;
             }
             pesoKg = ud_enviar * factor;
             this.DialogResult = DialogResult.OK;
+        }
+
+        private void chConsumirPendientes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chConsumirPendientes.Checked)
+            {       //Vamos a consumir lo Pendiente
+                RestanteReq = Solicitado - entregado; // Aqui tenemos lo restante en KG.
+                selecionado = ExistenciaTM * factor; //AQui vemos los Kg que nos faltan.
+                ud_enviar = 0; // Bueno inicializamos a 0 las enviar.
+                decimal Validador = 0; // Es ayuda a llevar la cuenta de los kg que vamos a enviar.
+                while (Validador <= RestanteReq && ExistenciaTM > ud_enviar)
+                {
+                    ud_enviar = ud_enviar + 1;
+                    Validador = Validador + factor;
+                }
+
+                CalculoUD();
+
+                txtPorEnviar.Text = string.Format("{0:###,##0.00}", ud_enviar);
+                txtRestante.Text = string.Format("{0:###,##0.00}", RestanteReq);
+                textEdit1.Text = string.Format("{0:###,##0.00}", RestanteTm);
+
+
+            }
+        }
+
+        private void frmResumenToEntregar_Load(object sender, EventArgs e)
+        {
+            chConsumirPendientes.Checked = true;
         }
     }
 }

@@ -59,17 +59,17 @@ namespace LOSA.RecepcionMP
         {
 
 
-            frmSpet1 frm = new frmSpet1(UsuarioLogeado);
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                Load_Info();
-            }
-            //frmTarima frm = new frmTarima(UsuarioLogeado);
-            //frm.WindowState = FormWindowState.Maximized;
+            //frmSpet1 frm = new frmSpet1(UsuarioLogeado);
             //if (frm.ShowDialog() == DialogResult.OK)
             //{
             //    Load_Info();
             //}
+            frmTarima frm = new frmTarima(UsuarioLogeado);
+            frm.WindowState = FormWindowState.Maximized;
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                Load_Info();
+            }
         }
 
         private void btnver_Click(object sender, EventArgs e)
@@ -81,7 +81,7 @@ namespace LOSA.RecepcionMP
 
                 if (row.tipo_ingreso == 1)
                 {
-                    frm_ingresos_lotes frmDetalle = new frm_ingresos_lotes(row.id, row.Ningreso, UsuarioLogeado);
+                    frm_ingresos_lotes frmDetalle = new frm_ingresos_lotes(row.id, row.Ningreso, UsuarioLogeado, row.bit_fin, row.id_traslado);
                     if (frmDetalle.ShowDialog() == DialogResult.OK)
                     {
                         Load_Info();

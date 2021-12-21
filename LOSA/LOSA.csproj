@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>224</ApplicationRevision>
+    <ApplicationRevision>238</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -72,8 +72,7 @@
   <PropertyGroup>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>
-    </ManifestKeyFile>
+    <ManifestKeyFile>LOSA_5_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -89,14 +88,13 @@
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>
-    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>LOSA_5_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>5A56FE5B36BF1139C0C28330C52B1468E1F78C88</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>721EE6A6B7E89DDDCFECF29D82011935607FA2BA</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -1096,6 +1094,12 @@
     <Compile Include="MicroIngredientes\xfrmMicroIngredientes.Designer.cs">
       <DependentUpon>xfrmMicroIngredientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="MicroIngredientes\xfrmPesajeIndividualBatchV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MicroIngredientes\xfrmPesajeIndividualBatchV2.Designer.cs">
+      <DependentUpon>xfrmPesajeIndividualBatchV2.cs</DependentUpon>
+    </Compile>
     <Compile Include="MicroIngredientes\xfrmPesajeIndividualBatchV3.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1351,6 +1355,7 @@
     <None Include="Liquidos\dsLiquidos_.xss">
       <DependentUpon>dsLiquidos_.xsd</DependentUpon>
     </None>
+    <None Include="LOSA_5_TemporaryKey.pfx" />
     <None Include="Nir\dsNir.xsc">
       <DependentUpon>dsNir.xsd</DependentUpon>
     </None>
@@ -1383,7 +1388,9 @@
       <DependentUpon>dsWizard.xsd</DependentUpon>
     </Compile>
     <Compile Include="RecepcionMP\dsWizard.Designer.cs">
-      <DependentUpon>dsWizard.cs</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsWizard.xsd</DependentUpon>
     </Compile>
     <Compile Include="RecepcionMP\frmCambioIngreso.cs">
       <SubType>Form</SubType>
@@ -1856,6 +1863,11 @@
     <Compile Include="Tools\frmInputBox.Designer.cs">
       <DependentUpon>frmInputBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\dsGranelLoteactivo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsGranelLoteactivo.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesMP\dsTarima.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1929,6 +1941,12 @@
     <Compile Include="TransaccionesMP\frmGestionUbicaciones.Designer.cs">
       <DependentUpon>frmGestionUbicaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\frmLoteActivoGranel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmLoteActivoGranel.Designer.cs">
+      <DependentUpon>frmLoteActivoGranel.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesMP\frmOptionMontaCarga.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2000,6 +2018,12 @@
     </Compile>
     <Compile Include="TransaccionesMP\frm_reporte_alimentacion.Designer.cs">
       <DependentUpon>frm_reporte_alimentacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesMP\Liquidos\frmBinesEnPRD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\Liquidos\frmBinesEnPRD.Designer.cs">
+      <DependentUpon>frmBinesEnPRD.cs</DependentUpon>
     </Compile>
     <Compile Include="TransaccionesPT\dsPT.cs">
       <DependentUpon>dsPT.xsd</DependentUpon>
@@ -2602,6 +2626,9 @@
     <EmbeddedResource Include="MicroIngredientes\xfrmMicroIngredientes.resx">
       <DependentUpon>xfrmMicroIngredientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MicroIngredientes\xfrmPesajeIndividualBatchV2.resx">
+      <DependentUpon>xfrmPesajeIndividualBatchV2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MicroIngredientes\xfrmPesajeIndividualBatchV3.resx">
       <DependentUpon>xfrmPesajeIndividualBatchV3.cs</DependentUpon>
     </EmbeddedResource>
@@ -2964,6 +2991,9 @@
     <EmbeddedResource Include="TransaccionesMP\frmGestionUbicaciones.resx">
       <DependentUpon>frmGestionUbicaciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmLoteActivoGranel.resx">
+      <DependentUpon>frmLoteActivoGranel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmOptionMontaCarga.resx">
       <DependentUpon>frmOptionMontaCarga.cs</DependentUpon>
     </EmbeddedResource>
@@ -2999,6 +3029,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frm_reporte_alimentacion.resx">
       <DependentUpon>frm_reporte_alimentacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\Liquidos\frmBinesEnPRD.resx">
+      <DependentUpon>frmBinesEnPRD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesPT\frmactivacionPT.resx">
       <DependentUpon>frmactivacionPT.cs</DependentUpon>
@@ -3216,9 +3249,9 @@
       <DependentUpon>dsWizard.xsd</DependentUpon>
     </None>
     <None Include="RecepcionMP\dsWizard.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsWizard1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsWizard.Designer.cs</LastGenOutput>
     </None>
     <None Include="RecepcionMP\dsWizard.xss">
       <DependentUpon>dsWizard.xsd</DependentUpon>
@@ -3255,6 +3288,17 @@
     </None>
     <None Include="Requisiciones\dSReportes.xss">
       <DependentUpon>dSReportes.xsd</DependentUpon>
+    </None>
+    <None Include="TransaccionesMP\dsGranelLoteactivo.xsc">
+      <DependentUpon>dsGranelLoteactivo.xsd</DependentUpon>
+    </None>
+    <None Include="TransaccionesMP\dsGranelLoteactivo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsGranelLoteactivo.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TransaccionesMP\dsGranelLoteactivo.xss">
+      <DependentUpon>dsGranelLoteactivo.xsd</DependentUpon>
     </None>
     <None Include="TransaccionesMP\dsTarima.xsc">
       <DependentUpon>dsTarima.xsd</DependentUpon>
@@ -3378,7 +3422,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 y x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

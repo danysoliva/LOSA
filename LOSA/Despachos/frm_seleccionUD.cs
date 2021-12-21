@@ -23,6 +23,14 @@ namespace LOSA.Despachos
             Max = Convert.ToInt32(Pud);
             txtUnidades.Text = Ud.ToString();
         }
+        public frm_seleccionUD(decimal Pud, string ParaDiferenciarTipos)
+        {
+            InitializeComponent();
+            Ud = Convert.ToInt32(Pud);
+            Ud = Convert.ToInt32(Pud);
+            Max = Convert.ToInt32(Pud+ 5);
+            txtUnidades.Text = Ud.ToString();
+        }
 
         private void cmdHome_Click(object sender, EventArgs e)
         {

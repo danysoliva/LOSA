@@ -22,7 +22,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
         public frmTransPendientes(UserLogin Puser)
         {
             InitializeComponent();
-            Puser = UsuarioLogeado;
+            UsuarioLogeado = Puser;
             load_data();
         }
         public void load_data() 

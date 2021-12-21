@@ -1,6 +1,7 @@
 ﻿using ACS.Classes;
 using Core.Clases.Herramientas;
 using LOSA.Clases;
+using LOSA.Despachos;
 using LOSA.Utileria;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,10 @@ namespace LOSA.RecepcionMP
 {
     public partial class frmEntradaMP_new : Form
     {
+        //public decimal CantidadUnidades;
+        public decimal PesoPorTarima;
+        public int DEFAULT_VALUE = 0;
+        public decimal FactorTarima;
         private int idTarima, idUbicacion;
         public enum VentanaTarima
         {
@@ -32,6 +37,10 @@ namespace LOSA.RecepcionMP
             Usuariologeado = pUser;
             dtFecha.DateTime = dp.Now();
             UbicacionVacia();
+            //CantidadUnidades = DEFAULT_VALUE;
+            PesoPorTarima = DEFAULT_VALUE;
+            FactorTarima = DEFAULT_VALUE;
+            
         }
 
         void UbicacionVacia()
@@ -296,12 +305,27 @@ namespace LOSA.RecepcionMP
                 con.Open();
 
 
-                SqlCommand cmd = new SqlCommand("sp_insertMP", con);
+                SqlCommand cmd = new SqlCommand("sp_insertMP_v2", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 Tarima tam1 = new Tarima();
                 Ubicaciones infoUbicacion = new Ubicaciones();
+
+               // CantidadUnidades = tam1.Cantidad;
+                PesoPorTarima = DEFAULT_VALUE;
+                FactorTarima = DEFAULT_VALUE;
+                decimal cantidadMP = tam1.Cantidad;
+
+                frm_seleccionUD frm = new frm_seleccionUD(cantidadMP, "Solo para diferenciar");
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    cantidadMP = frm.Ud;
+                }
+                else
+                {
+
+                    return;
+                }
                 
-                decimal cantidadMP = 0;
                 if (tam1.RecuperarRegistro(idTarima, ""))
                 {
                     if (tam1.IdUnidadMedida > 0)
@@ -361,6 +385,9 @@ namespace LOSA.RecepcionMP
                 //BeUbicacion_ButtonClick(null, null);
             }
             beTarima.Focus();
+           // CantidadUnidades = DEFAULT_VALUE;
+            PesoPorTarima = DEFAULT_VALUE;
+            FactorTarima = DEFAULT_VALUE;
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
@@ -430,6 +457,11 @@ namespace LOSA.RecepcionMP
                 beTarima.Focus();
             }
             Teclado.cerrarTeclado();
+        }
+
+        private void beTarima_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
 
         private DataTable CreateDataUbicacion_v2(string pRack, string pBodega)

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsGranelLoteactivo" targetNamespace="http://tempuri.org/dsGranelLoteactivo.xsd" xmlns:mstns="http://tempuri.org/dsGranelLoteactivo.xsd" xmlns="http://tempuri.org/dsGranelLoteactivo.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsGranelLoteactivo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsGranelLoteactivo" msprop:Generator_UserDSName="dsGranelLoteactivo">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ListaUbicaciones" msprop:Generator_TableClassName="ListaUbicacionesDataTable" msprop:Generator_TableVarName="tableListaUbicaciones" msprop:Generator_RowChangedName="ListaUbicacionesRowChanged" msprop:Generator_TablePropName="ListaUbicaciones" msprop:Generator_RowDeletingName="ListaUbicacionesRowDeleting" msprop:Generator_RowChangingName="ListaUbicacionesRowChanging" msprop:Generator_RowEvHandlerName="ListaUbicacionesRowChangeEventHandler" msprop:Generator_RowDeletedName="ListaUbicacionesRowDeleted" msprop:Generator_RowClassName="ListaUbicacionesRow" msprop:Generator_UserTableName="ListaUbicaciones" msprop:Generator_RowEvArgName="ListaUbicacionesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="rack" msprop:Generator_ColumnVarNameInTable="columnrack" msprop:Generator_ColumnPropNameInRow="rack" msprop:Generator_ColumnPropNameInTable="rackColumn" msprop:Generator_UserColumnName="rack" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="LotesActivos" msprop:Generator_TableClassName="LotesActivosDataTable" msprop:Generator_TableVarName="tableLotesActivos" msprop:Generator_RowChangedName="LotesActivosRowChanged" msprop:Generator_TablePropName="LotesActivos" msprop:Generator_RowDeletingName="LotesActivosRowDeleting" msprop:Generator_RowChangingName="LotesActivosRowChanging" msprop:Generator_RowEvHandlerName="LotesActivosRowChangeEventHandler" msprop:Generator_RowDeletedName="LotesActivosRowDeleted" msprop:Generator_RowClassName="LotesActivosRow" msprop:Generator_UserTableName="LotesActivos" msprop:Generator_RowEvArgName="LotesActivosRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="lote" msprop:Generator_ColumnVarNameInTable="columnlote" msprop:Generator_ColumnPropNameInRow="lote" msprop:Generator_ColumnPropNameInTable="loteColumn" msprop:Generator_UserColumnName="lote" type="xs:string" minOccurs="0" />
+              <xs:element name="material" msprop:Generator_ColumnVarNameInTable="columnmaterial" msprop:Generator_ColumnPropNameInRow="material" msprop:Generator_ColumnPropNameInTable="materialColumn" msprop:Generator_UserColumnName="material" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha_creacion" msprop:Generator_ColumnVarNameInTable="columnfecha_creacion" msprop:Generator_ColumnPropNameInRow="fecha_creacion" msprop:Generator_ColumnPropNameInTable="fecha_creacionColumn" msprop:Generator_UserColumnName="fecha_creacion" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="prioridad" msprop:Generator_ColumnVarNameInTable="columnprioridad" msprop:Generator_ColumnPropNameInRow="prioridad" msprop:Generator_ColumnPropNameInTable="prioridadColumn" msprop:Generator_UserColumnName="prioridad" type="xs:int" minOccurs="0" />
+              <xs:element name="itemcode" msprop:Generator_ColumnVarNameInTable="columnitemcode" msprop:Generator_ColumnPropNameInRow="itemcode" msprop:Generator_ColumnPropNameInTable="itemcodeColumn" msprop:Generator_UserColumnName="itemcode" type="xs:string" minOccurs="0" />
+              <xs:element name="rack" msprop:Generator_ColumnVarNameInTable="columnrack" msprop:Generator_ColumnPropNameInRow="rack" msprop:Generator_ColumnPropNameInTable="rackColumn" msprop:Generator_UserColumnName="rack" type="xs:string" minOccurs="0" />
+              <xs:element name="existencia" msprop:Generator_ColumnVarNameInTable="columnexistencia" msprop:Generator_ColumnPropNameInRow="existencia" msprop:Generator_ColumnPropNameInTable="existenciaColumn" msprop:Generator_UserColumnName="existencia" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ExistenciasGranel" msprop:Generator_TableClassName="ExistenciasGranelDataTable" msprop:Generator_TableVarName="tableExistenciasGranel" msprop:Generator_RowChangedName="ExistenciasGranelRowChanged" msprop:Generator_TablePropName="ExistenciasGranel" msprop:Generator_RowDeletingName="ExistenciasGranelRowDeleting" msprop:Generator_RowChangingName="ExistenciasGranelRowChanging" msprop:Generator_RowEvHandlerName="ExistenciasGranelRowChangeEventHandler" msprop:Generator_RowDeletedName="ExistenciasGranelRowDeleted" msprop:Generator_RowClassName="ExistenciasGranelRow" msprop:Generator_UserTableName="ExistenciasGranel" msprop:Generator_RowEvArgName="ExistenciasGranelRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_mp" msprop:Generator_ColumnVarNameInTable="columnid_mp" msprop:Generator_ColumnPropNameInRow="id_mp" msprop:Generator_ColumnPropNameInTable="id_mpColumn" msprop:Generator_UserColumnName="id_mp" type="xs:int" minOccurs="0" />
+              <xs:element name="id_ubicacion" msprop:Generator_ColumnVarNameInTable="columnid_ubicacion" msprop:Generator_ColumnPropNameInRow="id_ubicacion" msprop:Generator_ColumnPropNameInTable="id_ubicacionColumn" msprop:Generator_UserColumnName="id_ubicacion" type="xs:int" minOccurs="0" />
+              <xs:element name="rack" msprop:Generator_ColumnVarNameInTable="columnrack" msprop:Generator_ColumnPropNameInRow="rack" msprop:Generator_ColumnPropNameInTable="rackColumn" msprop:Generator_UserColumnName="rack" type="xs:string" minOccurs="0" />
+              <xs:element name="lote" msprop:Generator_ColumnVarNameInTable="columnlote" msprop:Generator_ColumnPropNameInRow="lote" msprop:Generator_ColumnPropNameInTable="loteColumn" msprop:Generator_UserColumnName="lote" type="xs:string" minOccurs="0" />
+              <xs:element name="material" msprop:Generator_ColumnVarNameInTable="columnmaterial" msprop:Generator_ColumnPropNameInRow="material" msprop:Generator_ColumnPropNameInTable="materialColumn" msprop:Generator_UserColumnName="material" type="xs:string" minOccurs="0" />
+              <xs:element name="code_sap" msprop:Generator_ColumnVarNameInTable="columncode_sap" msprop:Generator_ColumnPropNameInRow="code_sap" msprop:Generator_ColumnPropNameInTable="code_sapColumn" msprop:Generator_UserColumnName="code_sap" type="xs:string" minOccurs="0" />
+              <xs:element name="codigo" msprop:Generator_ColumnVarNameInTable="columncodigo" msprop:Generator_ColumnPropNameInRow="codigo" msprop:Generator_ColumnPropNameInTable="codigoColumn" msprop:Generator_UserColumnName="codigo" type="xs:string" minOccurs="0" />
+              <xs:element name="id_lote_alosy" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="id_lote_alosy" msprop:Generator_ColumnVarNameInTable="columnid_lote_alosy" msprop:Generator_ColumnPropNameInTable="id_lote_alosyColumn" msprop:Generator_UserColumnName="id_lote_alosy" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="Existencia" msprop:Generator_ColumnVarNameInTable="columnExistencia" msprop:Generator_ColumnPropNameInRow="Existencia" msprop:Generator_ColumnPropNameInTable="ExistenciaColumn" msprop:Generator_UserColumnName="Existencia" type="xs:decimal" minOccurs="0" />
+              <xs:element name="recibido" msprop:Generator_ColumnVarNameInTable="columnrecibido" msprop:Generator_ColumnPropNameInRow="recibido" msprop:Generator_ColumnPropNameInTable="recibidoColumn" msprop:Generator_UserColumnName="recibido" type="xs:decimal" minOccurs="0" />
+              <xs:element name="salida" msprop:Generator_ColumnVarNameInTable="columnsalida" msprop:Generator_ColumnPropNameInRow="salida" msprop:Generator_ColumnPropNameInTable="salidaColumn" msprop:Generator_UserColumnName="salida" type="xs:decimal" minOccurs="0" />
+              <xs:element name="material2" msprop:Generator_ColumnVarNameInTable="columnmaterial2" msprop:Generator_ColumnPropNameInRow="material2" msprop:Generator_ColumnPropNameInTable="material2Column" msprop:Generator_UserColumnName="material2" type="xs:string" minOccurs="0" />
+              <xs:element name="rack2" msprop:Generator_ColumnVarNameInTable="columnrack2" msprop:Generator_ColumnPropNameInRow="rack2" msprop:Generator_ColumnPropNameInTable="rack2Column" msprop:Generator_UserColumnName="rack2" type="xs:string" minOccurs="0" />
+              <xs:element name="ingreso" msprop:Generator_ColumnVarNameInTable="columningreso" msprop:Generator_ColumnPropNameInRow="ingreso" msprop:Generator_ColumnPropNameInTable="ingresoColumn" msprop:Generator_UserColumnName="ingreso" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

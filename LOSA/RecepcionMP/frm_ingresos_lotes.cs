@@ -24,16 +24,17 @@ namespace LOSA.RecepcionMP
         int id_ingreso;
         int numero_transaccion;
         DataOperations dp = new DataOperations();
-        UserLogin UsuarioLogeado;
+        UserLogin UsuarioLogeado; 
         public int Id_ingreso { get => id_ingreso; set => id_ingreso = value; }
         public int Numero_transaccion { get => numero_transaccion; set => numero_transaccion = value; }
 
-        public frm_ingresos_lotes(int Pid_ingreso, int Pnumero_transaccion, UserLogin Puser)
+        public frm_ingresos_lotes(int Pid_ingreso, int Pnumero_transaccion, UserLogin Puser, bool Finalizado, int id_traslado)
         {
             InitializeComponent();
             Numero_transaccion = Pnumero_transaccion;
             Id_ingreso = Pid_ingreso;
             UsuarioLogeado = Puser;
+            btnFinalizar.Visible = !Finalizado && id_traslado !=0 ? true : false;
             LoadTarimas();
         }
 
@@ -241,6 +242,19 @@ namespace LOSA.RecepcionMP
 
                 CajaDialogo.Error(ex.Message);
             } 
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+                
+            }
         }
     }
 }
