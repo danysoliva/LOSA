@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsReportesTRZ" targetNamespace="http://tempuri.org/dsReportesTRZ.xsd" xmlns:mstns="http://tempuri.org/dsReportesTRZ.xsd" xmlns="http://tempuri.org/dsReportesTRZ.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsReportesTRZ" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsReportesTRZ" msprop:Generator_UserDSName="dsReportesTRZ">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="pt_list_trz" msprop:Generator_TableClassName="pt_list_trzDataTable" msprop:Generator_TableVarName="tablept_list_trz" msprop:Generator_TablePropName="pt_list_trz" msprop:Generator_RowDeletingName="pt_list_trzRowDeleting" msprop:Generator_RowChangingName="pt_list_trzRowChanging" msprop:Generator_RowEvHandlerName="pt_list_trzRowChangeEventHandler" msprop:Generator_RowDeletedName="pt_list_trzRowDeleted" msprop:Generator_UserTableName="pt_list_trz" msprop:Generator_RowChangedName="pt_list_trzRowChanged" msprop:Generator_RowEvArgName="pt_list_trzRowChangeEvent" msprop:Generator_RowClassName="pt_list_trzRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Lote_x0020_PT" msprop:Generator_ColumnVarNameInTable="columnLote_PT" msprop:Generator_ColumnPropNameInRow="Lote_PT" msprop:Generator_ColumnPropNameInTable="Lote_PTColumn" msprop:Generator_UserColumnName="Lote PT" type="xs:int" minOccurs="0" />
+              <xs:element name="Producto" msprop:Generator_ColumnVarNameInTable="columnProducto" msprop:Generator_ColumnPropNameInRow="Producto" msprop:Generator_ColumnPropNameInTable="ProductoColumn" msprop:Generator_UserColumnName="Producto" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
