@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace LOSA.Liquidos
 {
@@ -26,7 +27,8 @@ namespace LOSA.Liquidos
         int IdLoteSelected;
         int ingreso;
         int id_tanque;
- 
+        int Default_value = 0;
+        Tanque Tanque;
 
         public frmIngresoCamion(UserLogin pUsuarioLogeado/*, ArrayList pArray,*/, ItemMP_Lote pItem,int pId_Tanque)
         {
@@ -38,6 +40,8 @@ namespace LOSA.Liquidos
             txtMP_Name.Text = pItem.Card_Name;
             id_tanque = pId_Tanque;
             UsuarioLogeado = pUsuarioLogeado;
+            Tanque = new Tanque(pId_Tanque);
+            Inicializar_Informacion();
             //txtLote.Text = pItem.Lote;
             //IdLoteSelected = pItem.IdLote;
             //LoadBarcos();
@@ -118,12 +122,22 @@ namespace LOSA.Liquidos
             txtMP_Name.Text = pItem.Name;
             id_tanque = pId_Tanque;
             UsuarioLogeado = pUsuarioLogeado;
+            Tanque = new Tanque(pId_Tanque);
+            grdUbicaciones.EditValue = pId_Tanque;
+            Inicializar_Informacion();
             //txtLote.Text = pItem.Lote;
             //IdLoteSelected = pItem.IdLote;
             //LoadBarcos();
             LoadUbicaciones();
             obtener_ingreso();
 
+
+        }
+        public void Inicializar_Informacion()
+        {
+            txtcapacidad.Text = Tanque.MaximoCapacidad.ToString();
+            txtEspacioOcupado.Text = Tanque.TotalLleno.ToString();
+            txtDisponible.Text = Tanque.VacioCapacidad.ToString();
 
         }
 
@@ -421,8 +435,7 @@ namespace LOSA.Liquidos
         {
             try
             {
-                if (gridView1.RowCount >= 1)
-                {
+               
 
                     int idUbicaciones = Convert.ToInt32(grdUbicaciones.EditValue);
                     foreach (dsLiquidos_.Camiones_INRow row in dsLiquidos_.Camiones_IN.Rows)
@@ -431,12 +444,7 @@ namespace LOSA.Liquidos
                     }
 
                     dsLiquidos_.Camiones_IN.AcceptChanges();
-                }
-                else
-                {
-                    CajaDialogo.Error("No hay registros seleccionados");
-                    grdUbicaciones.EditValue = null;
-                }
+               
             }
             catch (Exception ex)
             {
@@ -475,7 +483,14 @@ namespace LOSA.Liquidos
      
             if (frm.ShowDialog()== DialogResult.OK)
             {
-                foreach (var item in frm.camiones)
+                var CamionesSeleccionados = from Camion in dsLiquidos_.Camiones_IN.AsEnumerable()
+                                                    select Camion.id;
+
+                var PermitidosParaAgregar = from CamionPermitido in frm.camiones
+                                            where (!CamionesSeleccionados.Contains(CamionPermitido.ID))
+                                            select CamionPermitido;
+
+                foreach (var item in PermitidosParaAgregar)
                 {
 
                    gridView1.AddNewRow();
@@ -536,18 +551,38 @@ namespace LOSA.Liquidos
                     //    row1.id_ubicacion = rowg.id_ubicacion;
                     //}
                     //catch { }
-
                     dsLiquidos_.Camiones_IN.AddCamiones_INRow(row);
                     dsLiquidos_.AcceptChanges();
                     //dsRecepcionMPx1.granel.AddgranelRow(row1);
                     //dsRecepcionMPx1.AcceptChanges();
                 }
+
+                txtTotalIngreso.Text = SumarSeleccionado().ToString();
             }
         }
 
+        public decimal SumarSeleccionado()
+        {
+            return dsLiquidos_.Camiones_IN.Sum(x => x.PesoProd);
+        }
         private void groupControl1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                gridView1.DeleteRow(gridView1.FocusedRowHandle);
+                txtTotalIngreso.Text = SumarSeleccionado().ToString();
+
+
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
     }
 }

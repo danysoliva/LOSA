@@ -20,7 +20,7 @@ namespace LOSA.Trazabilidad.ReportesTRZ
         {
             InitializeComponent();
             txtlote.Text = pLoteMateriaPrima;
-            LoadLotesPT();
+            LoadLotesPT();                                                         
         }
 
         private void LoadLotesPT()
