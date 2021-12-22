@@ -2186,6 +2186,12 @@
     <Compile Include="Trazabilidad\frmCRUD_PlantasPRV.Designer.cs">
       <DependentUpon>frmCRUD_PlantasPRV.cs</DependentUpon>
     </Compile>
+    <Compile Include="Trazabilidad\frmDetalleIngresoTRZ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trazabilidad\frmDetalleIngresoTRZ.Designer.cs">
+      <DependentUpon>frmDetalleIngresoTRZ.cs</DependentUpon>
+    </Compile>
     <Compile Include="Trazabilidad\frmMateriaPrimaHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -3126,6 +3132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Trazabilidad\frmCRUD_PlantasPRV.resx">
       <DependentUpon>frmCRUD_PlantasPRV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trazabilidad\frmDetalleIngresoTRZ.resx">
+      <DependentUpon>frmDetalleIngresoTRZ.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Trazabilidad\frmMateriaPrimaHome.resx">
       <DependentUpon>frmMateriaPrimaHome.cs</DependentUpon>

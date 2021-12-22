@@ -11,6 +11,9 @@ using DevExpress.XtraEditors;
 using ACS.Classes;
 using LOSA.Clases;
 using System.Data.SqlClient;
+using DevExpress.XtraGrid.Views.Grid;
+using LOSA.Trazabilidad;
+using LOSA.Logistica;
 
 namespace LOSA.Calidad
 {
@@ -60,7 +63,7 @@ namespace LOSA.Calidad
         public void load_data()
         {
             
-            string query = @"[sp_load_report_trazabilitadad_lote]";
+            string query = @"[sp_load_report_trazabilitadad_lotev2]";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             try
             {
@@ -140,5 +143,33 @@ namespace LOSA.Calidad
             //Link hacia master de proveedores
 
         }
+
+        private void btnLinkIngreso_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            //Abrir detalle de ingreso MP
+            var gridView = (GridView)grd_data.FocusedView;
+            var row = (dsCalidad.trazabilitadRow)gridView.GetFocusedDataRow();
+            frmDetalleIngresoTRZ frm = new frmDetalleIngresoTRZ(row.ingreso);
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+        private void btnLinkMateriaPrima_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            //rmMateriaPrimaViewer(string SAPCODE_MP, string SAP_CARD_CODE)
+            var gridView = (GridView)grd_data.FocusedView;
+            var row = (dsCalidad.trazabilitadRow)gridView.GetFocusedDataRow();
+            frmMateriaPrimaViewer frm = new frmMateriaPrimaViewer(row.code_sap, row.card_code);
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+
+
+
     }
 }

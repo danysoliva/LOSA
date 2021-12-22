@@ -58,6 +58,7 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             this.colNumID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFac_promix = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsReportesTRZ1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -338,11 +339,28 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             this.labelControl2.TabIndex = 45;
             this.labelControl2.Text = "Clientes que recibieron el Producto ";
             // 
+            // cmdHome
+            // 
+            this.cmdHome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdHome.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.cmdHome.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdHome.Appearance.Options.UseBackColor = true;
+            this.cmdHome.Appearance.Options.UseFont = true;
+            this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdHome.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdHome.ImageOptions.Image")));
+            this.cmdHome.Location = new System.Drawing.Point(976, 1);
+            this.cmdHome.Name = "cmdHome";
+            this.cmdHome.Size = new System.Drawing.Size(156, 52);
+            this.cmdHome.TabIndex = 46;
+            this.cmdHome.Text = "Home";
+            this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
+            // 
             // frmTrazabilidadHaciaAdelanteByMP_Lot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1135, 579);
+            this.Controls.Add(this.cmdHome);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.gridControl2);
             this.Controls.Add(this.btnClearInfo);
@@ -394,5 +412,6 @@ namespace LOSA.Trazabilidad.ReportesTRZ
         private DevExpress.XtraGrid.Columns.GridColumn colcardname;
         private DevExpress.XtraGrid.Columns.GridColumn colFac_promix;
         private DevExpress.XtraGrid.Columns.GridColumn colNumID;
+        private DevExpress.XtraEditors.SimpleButton cmdHome;
     }
 }
