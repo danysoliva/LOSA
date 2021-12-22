@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmreporte_trazabilidad));
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.txtlote = new DevExpress.XtraEditors.TextEdit();
@@ -53,6 +58,9 @@
             this.txtcodigo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.btnExcel = new DevExpress.XtraEditors.SimpleButton();
+            this.colcard_code = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colproveedor_name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnLinkProveedor = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtlote.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCalidad)).BeginInit();
@@ -63,6 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtformula.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtversion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtcodigo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLinkProveedor)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl3
@@ -125,6 +134,8 @@
             this.grd_data.Location = new System.Drawing.Point(0, 0);
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
+            this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.btnLinkProveedor});
             this.grd_data.Size = new System.Drawing.Size(636, 361);
             this.grd_data.TabIndex = 36;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -160,7 +171,9 @@
             this.collote_mp,
             this.colingreso,
             this.colnombre_comercial,
-            this.collotept});
+            this.collotept,
+            this.colcard_code,
+            this.colproveedor_name});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
@@ -208,8 +221,6 @@
             this.collotept.FieldName = "lotept";
             this.collotept.Name = "collotept";
             this.collotept.OptionsColumn.AllowEdit = false;
-            this.collotept.Visible = true;
-            this.collotept.VisibleIndex = 4;
             // 
             // btnClearInfo
             // 
@@ -341,6 +352,32 @@
             this.btnExcel.Text = "Excel";
             this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
+            // colcard_code
+            // 
+            this.colcard_code.Caption = "Cod. Proveedor";
+            this.colcard_code.ColumnEdit = this.btnLinkProveedor;
+            this.colcard_code.FieldName = "card_code";
+            this.colcard_code.Name = "colcard_code";
+            this.colcard_code.Visible = true;
+            this.colcard_code.VisibleIndex = 4;
+            // 
+            // colproveedor_name
+            // 
+            this.colproveedor_name.Caption = "Proveedor";
+            this.colproveedor_name.FieldName = "proveedor_name";
+            this.colproveedor_name.Name = "colproveedor_name";
+            this.colproveedor_name.Visible = true;
+            this.colproveedor_name.VisibleIndex = 5;
+            // 
+            // btnLinkProveedor
+            // 
+            this.btnLinkProveedor.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            this.btnLinkProveedor.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnLinkProveedor.Name = "btnLinkProveedor";
+            this.btnLinkProveedor.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnLinkProveedor_ButtonClick);
+            // 
             // frmreporte_trazabilidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -377,6 +414,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtformula.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtversion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtcodigo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLinkProveedor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -408,5 +446,8 @@
         private DevExpress.XtraEditors.TextEdit txtcodigo;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.SimpleButton btnExcel;
+        private DevExpress.XtraGrid.Columns.GridColumn colcard_code;
+        private DevExpress.XtraGrid.Columns.GridColumn colproveedor_name;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnLinkProveedor;
     }
 }

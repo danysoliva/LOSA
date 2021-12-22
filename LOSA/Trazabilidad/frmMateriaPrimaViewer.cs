@@ -207,6 +207,7 @@ namespace LOSA.Logistica
             frm.StartPosition = FormStartPosition.CenterScreen;
             if (this.MdiParent != null)
                 frm.MdiParent = this.MdiParent;
+            frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
     }

@@ -134,5 +134,11 @@ namespace LOSA.Calidad
                 grdv_data.ExportToXlsx(dialog.FileName);
             }
         }
+
+        private void btnLinkProveedor_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            //Link hacia master de proveedores
+
+        }
     }
 }

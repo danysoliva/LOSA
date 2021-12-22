@@ -1,5 +1,6 @@
 ﻿using ACS.Classes;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -63,6 +64,32 @@ namespace LOSA.Trazabilidad.ReportesTRZ
         private void btnGenerar_Click(object sender, EventArgs e)
         {
             LoadLotesPT();
+        }
+
+        private void gridView1_Click(object sender, EventArgs e)
+        {
+            var gridView = (GridView)gridControl1.FocusedView;
+            var row = (dsReportesTRZ.pt_list_trzRow)gridView.GetFocusedDataRow();
+
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_detalle_destinos_lote_pt_trz", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lotept", row.Lote_PT);
+                dsReportesTRZ1.detalle_destinos.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsReportesTRZ1.detalle_destinos);
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
         }
     }
 }
