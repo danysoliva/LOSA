@@ -1,6 +1,7 @@
 ﻿using ACS.Classes;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
+using LOSA.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -96,6 +97,22 @@ namespace LOSA.Trazabilidad.ReportesTRZ
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void btnLinkBoletaView_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)gridControl2.FocusedView;
+            var row = (dsReportesTRZ.detalle_destinosRow)gridView.GetFocusedDataRow();
+
+            Boleta bol1 = new Boleta();
+            if(bol1.RecuperarRegistroFromNumBoleta(row.NumID))
+            {
+                frmViewBasculaBoleta frm = new frmViewBasculaBoleta(bol1.Id);
+                if (this.MdiParent != null)
+                    frm.MdiParent = this.MdiParent;
+                //frm.WindowState = FormWindowState.Maximized;
+                frm.Show();
+            }
         }
     }
 }

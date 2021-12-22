@@ -49,5 +49,34 @@ namespace LOSA.Clases
             return recuperado;
         }
 
+        public bool RecuperarRegistroFromNumBoleta(int pNumBoleta)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+                string sql = @"sp_get_numero_serie_from_num_boleta_pt";
+                SqlCommand cmd = new SqlCommand(sql, con);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@num_boleta", pNumBoleta);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    this.Id = dr.GetInt32(0);
+                }
+                dr.Close();
+                con.Close();
+                recuperado = true;
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+            return recuperado;
+        }
+
+
+
     }
 }

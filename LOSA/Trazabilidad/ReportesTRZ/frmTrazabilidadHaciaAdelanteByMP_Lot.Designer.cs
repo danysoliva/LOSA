@@ -30,6 +30,11 @@ namespace LOSA.Trazabilidad.ReportesTRZ
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTrazabilidadHaciaAdelanteByMP_Lot));
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.dsReportesTRZ1 = new LOSA.Trazabilidad.ReportesTRZ.dsReportesTRZ();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -56,6 +61,7 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             this.colnumero_factura = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcardname = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNumID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnLinkBoletaView = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colFac_promix = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
@@ -65,6 +71,7 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             ((System.ComponentModel.ISupportInitialize)(this.txtlote.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLinkBoletaView)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -183,6 +190,8 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             this.gridControl2.Location = new System.Drawing.Point(372, 142);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
+            this.gridControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.btnLinkBoletaView});
             this.gridControl2.Size = new System.Drawing.Size(760, 435);
             this.gridControl2.TabIndex = 44;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -322,12 +331,21 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             // colNumID
             // 
             this.colNumID.Caption = "N. Boleta";
+            this.colNumID.ColumnEdit = this.btnLinkBoletaView;
             this.colNumID.FieldName = "NumID";
             this.colNumID.Name = "colNumID";
-            this.colNumID.OptionsColumn.AllowEdit = false;
             this.colNumID.Visible = true;
             this.colNumID.VisibleIndex = 1;
             this.colNumID.Width = 52;
+            // 
+            // btnLinkBoletaView
+            // 
+            this.btnLinkBoletaView.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            this.btnLinkBoletaView.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnLinkBoletaView.Name = "btnLinkBoletaView";
+            this.btnLinkBoletaView.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnLinkBoletaView_ButtonClick);
             // 
             // colFac_promix
             // 
@@ -392,6 +410,7 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             ((System.ComponentModel.ISupportInitialize)(this.txtlote.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLinkBoletaView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -428,5 +447,6 @@ namespace LOSA.Trazabilidad.ReportesTRZ
         private DevExpress.XtraGrid.Columns.GridColumn colFac_promix;
         private DevExpress.XtraGrid.Columns.GridColumn colNumID;
         private DevExpress.XtraEditors.SimpleButton cmdHome;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnLinkBoletaView;
     }
 }
