@@ -213,6 +213,7 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             // 
             this.colDespacho.FieldName = "Despacho";
             this.colDespacho.Name = "colDespacho";
+            this.colDespacho.OptionsColumn.AllowEdit = false;
             this.colDespacho.Visible = true;
             this.colDespacho.VisibleIndex = 0;
             this.colDespacho.Width = 61;
@@ -221,22 +222,26 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             // 
             this.colcliente.FieldName = "cliente";
             this.colcliente.Name = "colcliente";
+            this.colcliente.OptionsColumn.AllowEdit = false;
             // 
             // colKeyBoleta
             // 
             this.colKeyBoleta.Caption = "Id Boleta";
             this.colKeyBoleta.FieldName = "KeyBoleta";
             this.colKeyBoleta.Name = "colKeyBoleta";
+            this.colKeyBoleta.OptionsColumn.AllowEdit = false;
             // 
             // colIdCliente
             // 
             this.colIdCliente.FieldName = "Id Cliente";
             this.colIdCliente.Name = "colIdCliente";
+            this.colIdCliente.OptionsColumn.AllowEdit = false;
             // 
             // colNombreCliente
             // 
             this.colNombreCliente.FieldName = "Nombre Cliente";
             this.colNombreCliente.Name = "colNombreCliente";
+            this.colNombreCliente.OptionsColumn.AllowEdit = false;
             this.colNombreCliente.Visible = true;
             this.colNombreCliente.VisibleIndex = 2;
             this.colNombreCliente.Width = 110;
@@ -245,12 +250,14 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             // 
             this.colcodigo_pais.FieldName = "codigo_pais";
             this.colcodigo_pais.Name = "colcodigo_pais";
+            this.colcodigo_pais.OptionsColumn.AllowEdit = false;
             // 
             // colpais
             // 
             this.colpais.Caption = "País";
             this.colpais.FieldName = "pais";
             this.colpais.Name = "colpais";
+            this.colpais.OptionsColumn.AllowEdit = false;
             this.colpais.Visible = true;
             this.colpais.VisibleIndex = 6;
             this.colpais.Width = 58;
@@ -260,6 +267,7 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             this.coldireccion1.Caption = "Dirección 1";
             this.coldireccion1.FieldName = "direccion1";
             this.coldireccion1.Name = "coldireccion1";
+            this.coldireccion1.OptionsColumn.AllowEdit = false;
             this.coldireccion1.Visible = true;
             this.coldireccion1.VisibleIndex = 7;
             this.coldireccion1.Width = 58;
@@ -269,6 +277,7 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             this.coldireccion2.Caption = "Dirección 2";
             this.coldireccion2.FieldName = "direccion2";
             this.coldireccion2.Name = "coldireccion2";
+            this.coldireccion2.OptionsColumn.AllowEdit = false;
             this.coldireccion2.Visible = true;
             this.coldireccion2.VisibleIndex = 8;
             this.coldireccion2.Width = 58;
@@ -278,6 +287,7 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             this.colciudad.Caption = "Ciudad";
             this.colciudad.FieldName = "ciudad";
             this.colciudad.Name = "colciudad";
+            this.colciudad.OptionsColumn.AllowEdit = false;
             this.colciudad.Visible = true;
             this.colciudad.VisibleIndex = 9;
             this.colciudad.Width = 73;
@@ -287,12 +297,14 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             this.colcliente_aqua.Caption = "Cod. Cliente Aqua";
             this.colcliente_aqua.FieldName = "cliente_aqua";
             this.colcliente_aqua.Name = "colcliente_aqua";
+            this.colcliente_aqua.OptionsColumn.AllowEdit = false;
             // 
             // colnumero_factura
             // 
             this.colnumero_factura.Caption = "Factura Aquafeed";
             this.colnumero_factura.FieldName = "numero_factura";
             this.colnumero_factura.Name = "colnumero_factura";
+            this.colnumero_factura.OptionsColumn.AllowEdit = false;
             this.colnumero_factura.Visible = true;
             this.colnumero_factura.VisibleIndex = 3;
             this.colnumero_factura.Width = 100;
@@ -302,6 +314,7 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             this.colcardname.Caption = "Socio";
             this.colcardname.FieldName = "cardname";
             this.colcardname.Name = "colcardname";
+            this.colcardname.OptionsColumn.AllowEdit = false;
             this.colcardname.Visible = true;
             this.colcardname.VisibleIndex = 4;
             this.colcardname.Width = 72;
@@ -311,6 +324,7 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             this.colNumID.Caption = "N. Boleta";
             this.colNumID.FieldName = "NumID";
             this.colNumID.Name = "colNumID";
+            this.colNumID.OptionsColumn.AllowEdit = false;
             this.colNumID.Visible = true;
             this.colNumID.VisibleIndex = 1;
             this.colNumID.Width = 52;
@@ -320,6 +334,7 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             this.colFac_promix.Caption = "Fact. PROMIX";
             this.colFac_promix.FieldName = "Fac_promix";
             this.colFac_promix.Name = "colFac_promix";
+            this.colFac_promix.OptionsColumn.AllowEdit = false;
             this.colFac_promix.Visible = true;
             this.colFac_promix.VisibleIndex = 5;
             this.colFac_promix.Width = 100;
