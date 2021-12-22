@@ -171,6 +171,17 @@
   <metadata name="dsCalidad.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="editorButtonImageOptions1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAEnRFWHRUaXRsZQBGb3J3YXJk
+        O05leHTrb/bhAAABAklEQVQ4T6WTIQ7CQBBF60FVICAhGAQ3IJii6rgCBu5BggaPR3IBLKpBcQMcJBhS
+        Car8R7bNdCkkDeIl0/1/fndn22Cy3PvEYi0SkTqoWUMr+e1DT6zEQSxEJEIHNWtoePCWAljYio3oZ1kW
+        VIHmPHjfIXkAqQiNqkYLHuel5x3Audha8WbVM/EQmTiKlhfCTuiJeWA4C2twpqG4CELOYuDpzGRNwYQj
+        KxpT2+mE3MXYaAw2oeCaQiNg/sZTTJ2P20nrBjCXj4BfR+gIhkjzTYyMVhzh2xBH4ipoPomupxdDrLrG
+        ucivcSeaXnPpGuGvDwn+/pTzEFLZWu2fyVLjd94HL4pKQlQVHdvbAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="btnClearInfo.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACV0RVh0VGl0

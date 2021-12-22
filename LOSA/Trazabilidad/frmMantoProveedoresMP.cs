@@ -612,7 +612,9 @@ namespace LOSA.Trazabilidad
             MateriaPrima mp = new MateriaPrima();
             if (mp.RecuperarRegistroFromID_RM(row.idrm))
             {
-                frmMateriaPrimaViewer frm = new frmMateriaPrimaViewer(mp.CodeMP_SAP);
+                frmMateriaPrimaViewer frm = new frmMateriaPrimaViewer(mp.CodeMP_SAP, txtCodigo.Text);
+                if (this.MdiParent != null)
+                    frm.MdiParent = this.MdiParent;
                 frm.Show();
             }
         }

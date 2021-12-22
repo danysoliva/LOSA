@@ -2222,6 +2222,17 @@
     <Compile Include="Trazabilidad\frmViewBasculaBoleta.Designer.cs">
       <DependentUpon>frmViewBasculaBoleta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Trazabilidad\ReportesTRZ\dsReportesTRZ.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsReportesTRZ.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Trazabilidad\ReportesTRZ\frmTrazabilidadHaciaAdelanteByMP_Lot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trazabilidad\ReportesTRZ\frmTrazabilidadHaciaAdelanteByMP_Lot.Designer.cs">
+      <DependentUpon>frmTrazabilidadHaciaAdelanteByMP_Lot.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utileria\frmMensaje.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -3134,6 +3145,9 @@
     <EmbeddedResource Include="Trazabilidad\frmViewBasculaBoleta.resx">
       <DependentUpon>frmViewBasculaBoleta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Trazabilidad\ReportesTRZ\frmTrazabilidadHaciaAdelanteByMP_Lot.resx">
+      <DependentUpon>frmTrazabilidadHaciaAdelanteByMP_Lot.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Utileria\frmMensaje.resx">
       <DependentUpon>frmMensaje.cs</DependentUpon>
     </EmbeddedResource>
@@ -3357,6 +3371,17 @@
     </None>
     <None Include="Trazabilidad\dsMantoTrazabilidad.xss">
       <DependentUpon>dsMantoTrazabilidad.xsd</DependentUpon>
+    </None>
+    <None Include="Trazabilidad\ReportesTRZ\dsReportesTRZ.xsc">
+      <DependentUpon>dsReportesTRZ.xsd</DependentUpon>
+    </None>
+    <None Include="Trazabilidad\ReportesTRZ\dsReportesTRZ.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReportesTRZ.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Trazabilidad\ReportesTRZ\dsReportesTRZ.xss">
+      <DependentUpon>dsReportesTRZ.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
