@@ -120,7 +120,7 @@
             this.MinimizeBox = false;
             this.Name = "xfrmMenuMicros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Menú Micro Ingredientes";
+            this.Text = " ";
             this.ResumeLayout(false);
             this.PerformLayout();
 

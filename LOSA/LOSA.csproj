@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>244</ApplicationRevision>
+    <ApplicationRevision>245</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -96,7 +96,7 @@
     </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>5A56FE5B36BF1139C0C28330C52B1468E1F78C88</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>11DBC92D92B4EB4A587EA378AD2A6CF4E83C0246</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -2467,6 +2467,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frm_generar_despacho.resx">
       <DependentUpon>frm_generar_despacho.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frm_mostar_otros_detalles.resx">
       <DependentUpon>frm_mostar_otros_detalles.cs</DependentUpon>
