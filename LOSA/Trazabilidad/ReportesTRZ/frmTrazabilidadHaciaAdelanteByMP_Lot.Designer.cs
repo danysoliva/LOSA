@@ -148,7 +148,6 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             this.txtlote.Name = "txtlote";
             this.txtlote.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtlote.Properties.Appearance.Options.UseFont = true;
-            this.txtlote.Properties.MaxLength = 4;
             this.txtlote.Size = new System.Drawing.Size(155, 32);
             this.txtlote.TabIndex = 40;
             this.txtlote.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtlote_KeyDown);

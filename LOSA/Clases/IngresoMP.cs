@@ -17,9 +17,10 @@ namespace LOSA.Clases
 
         public int NumeroTransaccion;
         public int IdIngresoLote;
+        public string LoteMP;
         public bool Recuperado;
 
-        public bool RecuperarRegistroIdLote_fromNumTransaccion(int pNumTransaccion)
+        public bool RecuperarRegistroIdLote_fromNumTransaccion(int pNumTransaccion, string  pLoteMP)
         {
             try
             {
@@ -27,9 +28,10 @@ namespace LOSA.Clases
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_id_ingreso_from_num_transaccion", con);
+                SqlCommand cmd = new SqlCommand("[sp_get_id_ingreso_from_num_transaccion_v2]", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@numTransaccion", pNumTransaccion);
+                cmd.Parameters.AddWithValue("@lotemp", pLoteMP);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {

@@ -79,6 +79,19 @@
             this.txtcodigo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.btnExcel = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.txtSacosLiberados = new DevExpress.XtraEditors.TextEdit();
+            this.txtTotalKgSacosLiberados = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.txtReprocesoKg = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.txtTotalProducido = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.txtPresentacion = new DevExpress.XtraEditors.TextEdit();
+            this.txtEficiencia = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
+            this.txtTotalMP_Utilizada_kg = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtlote.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCalidad)).BeginInit();
@@ -93,6 +106,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtformula.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtversion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtcodigo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSacosLiberados.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTotalKgSacosLiberados.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtReprocesoKg.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTotalProducido.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPresentacion.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEficiencia.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTotalMP_Utilizada_kg.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl3
@@ -128,11 +148,11 @@
             // 
             // txtlote
             // 
-            this.txtlote.Location = new System.Drawing.Point(84, 80);
+            this.txtlote.Location = new System.Drawing.Point(112, 73);
             this.txtlote.Name = "txtlote";
             this.txtlote.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtlote.Properties.Appearance.Options.UseFont = true;
-            this.txtlote.Properties.MaxLength = 4;
+            this.txtlote.Properties.MaxLength = 5;
             this.txtlote.Size = new System.Drawing.Size(102, 32);
             this.txtlote.TabIndex = 34;
             this.txtlote.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtlote_KeyDown);
@@ -141,7 +161,7 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(7, 86);
+            this.labelControl1.Location = new System.Drawing.Point(7, 79);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(59, 21);
             this.labelControl1.TabIndex = 35;
@@ -160,7 +180,7 @@
             this.btnLinkIngreso,
             this.btnLinkMateriaPrima,
             this.btnTrazabilidadLoteMP});
-            this.grd_data.Size = new System.Drawing.Size(1208, 426);
+            this.grd_data.Size = new System.Drawing.Size(1208, 430);
             this.grd_data.TabIndex = 36;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
@@ -201,7 +221,7 @@
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
-            this.grdv_data.OptionsView.ShowGroupPanel = false;
+            this.grdv_data.OptionsView.ShowFooter = true;
             // 
             // colContado
             // 
@@ -304,7 +324,7 @@
             this.btnClearInfo.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClearInfo.Appearance.Options.UseFont = true;
             this.btnClearInfo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClearInfo.ImageOptions.Image")));
-            this.btnClearInfo.Location = new System.Drawing.Point(316, 71);
+            this.btnClearInfo.Location = new System.Drawing.Point(344, 64);
             this.btnClearInfo.Name = "btnClearInfo";
             this.btnClearInfo.Size = new System.Drawing.Size(118, 41);
             this.btnClearInfo.TabIndex = 37;
@@ -316,7 +336,7 @@
             this.btnGenerar.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnGenerar.Appearance.Options.UseFont = true;
             this.btnGenerar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGenerar.ImageOptions.Image")));
-            this.btnGenerar.Location = new System.Drawing.Point(192, 71);
+            this.btnGenerar.Location = new System.Drawing.Point(220, 64);
             this.btnGenerar.Name = "btnGenerar";
             this.btnGenerar.Size = new System.Drawing.Size(118, 41);
             this.btnGenerar.TabIndex = 38;
@@ -329,27 +349,27 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridSplitContainer1.Grid = this.grd_data;
-            this.gridSplitContainer1.Location = new System.Drawing.Point(1, 198);
+            this.gridSplitContainer1.Location = new System.Drawing.Point(1, 206);
             this.gridSplitContainer1.Name = "gridSplitContainer1";
             this.gridSplitContainer1.Panel1.Controls.Add(this.grd_data);
-            this.gridSplitContainer1.Size = new System.Drawing.Size(1208, 426);
+            this.gridSplitContainer1.Size = new System.Drawing.Size(1208, 430);
             this.gridSplitContainer1.TabIndex = 39;
             // 
             // txtProducto
             // 
             this.txtProducto.Enabled = false;
-            this.txtProducto.Location = new System.Drawing.Point(84, 118);
+            this.txtProducto.Location = new System.Drawing.Point(112, 110);
             this.txtProducto.Name = "txtProducto";
-            this.txtProducto.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProducto.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F, System.Drawing.FontStyle.Bold);
             this.txtProducto.Properties.Appearance.Options.UseFont = true;
-            this.txtProducto.Size = new System.Drawing.Size(233, 32);
+            this.txtProducto.Size = new System.Drawing.Size(233, 28);
             this.txtProducto.TabIndex = 40;
             // 
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(7, 121);
+            this.labelControl2.Location = new System.Drawing.Point(7, 113);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(72, 21);
             this.labelControl2.TabIndex = 41;
@@ -359,7 +379,7 @@
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(7, 159);
+            this.labelControl4.Location = new System.Drawing.Point(7, 144);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(63, 21);
             this.labelControl4.TabIndex = 43;
@@ -369,18 +389,18 @@
             // 
             this.txtformula.Enabled = false;
             this.txtformula.EnterMoveNextControl = true;
-            this.txtformula.Location = new System.Drawing.Point(84, 156);
+            this.txtformula.Location = new System.Drawing.Point(112, 141);
             this.txtformula.Name = "txtformula";
-            this.txtformula.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtformula.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F, System.Drawing.FontStyle.Bold);
             this.txtformula.Properties.Appearance.Options.UseFont = true;
-            this.txtformula.Size = new System.Drawing.Size(233, 32);
+            this.txtformula.Size = new System.Drawing.Size(233, 28);
             this.txtformula.TabIndex = 42;
             // 
             // labelControl5
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(337, 166);
+            this.labelControl5.Location = new System.Drawing.Point(352, 147);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(55, 21);
             this.labelControl5.TabIndex = 45;
@@ -389,28 +409,28 @@
             // txtversion
             // 
             this.txtversion.Enabled = false;
-            this.txtversion.Location = new System.Drawing.Point(437, 160);
+            this.txtversion.Location = new System.Drawing.Point(416, 141);
             this.txtversion.Name = "txtversion";
-            this.txtversion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtversion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F, System.Drawing.FontStyle.Bold);
             this.txtversion.Properties.Appearance.Options.UseFont = true;
-            this.txtversion.Size = new System.Drawing.Size(162, 32);
+            this.txtversion.Size = new System.Drawing.Size(162, 28);
             this.txtversion.TabIndex = 44;
             // 
             // txtcodigo
             // 
             this.txtcodigo.Enabled = false;
-            this.txtcodigo.Location = new System.Drawing.Point(437, 122);
+            this.txtcodigo.Location = new System.Drawing.Point(416, 110);
             this.txtcodigo.Name = "txtcodigo";
-            this.txtcodigo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcodigo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F, System.Drawing.FontStyle.Bold);
             this.txtcodigo.Properties.Appearance.Options.UseFont = true;
-            this.txtcodigo.Size = new System.Drawing.Size(162, 32);
+            this.txtcodigo.Size = new System.Drawing.Size(162, 28);
             this.txtcodigo.TabIndex = 46;
             // 
             // labelControl6
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(337, 125);
+            this.labelControl6.Location = new System.Drawing.Point(352, 113);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(58, 21);
             this.labelControl6.TabIndex = 47;
@@ -429,11 +449,165 @@
             this.btnExcel.Text = "Excel";
             this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
+            // labelControl7
+            // 
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl7.Appearance.Options.UseFont = true;
+            this.labelControl7.Location = new System.Drawing.Point(595, 113);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(72, 21);
+            this.labelControl7.TabIndex = 50;
+            this.labelControl7.Text = "Liberados";
+            // 
+            // txtSacosLiberados
+            // 
+            this.txtSacosLiberados.Enabled = false;
+            this.txtSacosLiberados.Location = new System.Drawing.Point(680, 110);
+            this.txtSacosLiberados.Name = "txtSacosLiberados";
+            this.txtSacosLiberados.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F, System.Drawing.FontStyle.Bold);
+            this.txtSacosLiberados.Properties.Appearance.Options.UseFont = true;
+            this.txtSacosLiberados.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtSacosLiberados.Size = new System.Drawing.Size(113, 28);
+            this.txtSacosLiberados.TabIndex = 49;
+            // 
+            // txtTotalKgSacosLiberados
+            // 
+            this.txtTotalKgSacosLiberados.Enabled = false;
+            this.txtTotalKgSacosLiberados.Location = new System.Drawing.Point(796, 110);
+            this.txtTotalKgSacosLiberados.Name = "txtTotalKgSacosLiberados";
+            this.txtTotalKgSacosLiberados.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F, System.Drawing.FontStyle.Bold);
+            this.txtTotalKgSacosLiberados.Properties.Appearance.Options.UseFont = true;
+            this.txtTotalKgSacosLiberados.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtTotalKgSacosLiberados.Size = new System.Drawing.Size(128, 28);
+            this.txtTotalKgSacosLiberados.TabIndex = 51;
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl9.Appearance.Options.UseFont = true;
+            this.labelControl9.Location = new System.Drawing.Point(595, 144);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(79, 21);
+            this.labelControl9.TabIndex = 54;
+            this.labelControl9.Text = "Reproceso";
+            // 
+            // txtReprocesoKg
+            // 
+            this.txtReprocesoKg.AllowDrop = true;
+            this.txtReprocesoKg.Enabled = false;
+            this.txtReprocesoKg.Location = new System.Drawing.Point(796, 141);
+            this.txtReprocesoKg.Name = "txtReprocesoKg";
+            this.txtReprocesoKg.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F, System.Drawing.FontStyle.Bold);
+            this.txtReprocesoKg.Properties.Appearance.Options.UseFont = true;
+            this.txtReprocesoKg.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtReprocesoKg.Size = new System.Drawing.Size(128, 28);
+            this.txtReprocesoKg.TabIndex = 53;
+            // 
+            // labelControl11
+            // 
+            this.labelControl11.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl11.Appearance.Options.UseFont = true;
+            this.labelControl11.Location = new System.Drawing.Point(595, 175);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(141, 21);
+            this.labelControl11.TabIndex = 56;
+            this.labelControl11.Text = "Total Kg Producido";
+            // 
+            // txtTotalProducido
+            // 
+            this.txtTotalProducido.AllowDrop = true;
+            this.txtTotalProducido.Enabled = false;
+            this.txtTotalProducido.Location = new System.Drawing.Point(796, 172);
+            this.txtTotalProducido.Name = "txtTotalProducido";
+            this.txtTotalProducido.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F, System.Drawing.FontStyle.Bold);
+            this.txtTotalProducido.Properties.Appearance.Options.UseFont = true;
+            this.txtTotalProducido.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtTotalProducido.Size = new System.Drawing.Size(128, 28);
+            this.txtTotalProducido.TabIndex = 57;
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.Location = new System.Drawing.Point(7, 175);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(98, 21);
+            this.labelControl8.TabIndex = 59;
+            this.labelControl8.Text = "Presentación:";
+            // 
+            // txtPresentacion
+            // 
+            this.txtPresentacion.Enabled = false;
+            this.txtPresentacion.EnterMoveNextControl = true;
+            this.txtPresentacion.Location = new System.Drawing.Point(112, 172);
+            this.txtPresentacion.Name = "txtPresentacion";
+            this.txtPresentacion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F, System.Drawing.FontStyle.Bold);
+            this.txtPresentacion.Properties.Appearance.Options.UseFont = true;
+            this.txtPresentacion.Size = new System.Drawing.Size(233, 28);
+            this.txtPresentacion.TabIndex = 58;
+            // 
+            // txtEficiencia
+            // 
+            this.txtEficiencia.AllowDrop = true;
+            this.txtEficiencia.Enabled = false;
+            this.txtEficiencia.Location = new System.Drawing.Point(1073, 171);
+            this.txtEficiencia.Name = "txtEficiencia";
+            this.txtEficiencia.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F, System.Drawing.FontStyle.Bold);
+            this.txtEficiencia.Properties.Appearance.Options.UseFont = true;
+            this.txtEficiencia.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtEficiencia.Size = new System.Drawing.Size(128, 28);
+            this.txtEficiencia.TabIndex = 63;
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl10.Appearance.Options.UseFont = true;
+            this.labelControl10.Location = new System.Drawing.Point(930, 178);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(89, 21);
+            this.labelControl10.TabIndex = 62;
+            this.labelControl10.Text = "% Eficiencia:";
+            // 
+            // labelControl12
+            // 
+            this.labelControl12.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl12.Appearance.Options.UseFont = true;
+            this.labelControl12.Location = new System.Drawing.Point(930, 147);
+            this.labelControl12.Name = "labelControl12";
+            this.labelControl12.Size = new System.Drawing.Size(135, 21);
+            this.labelControl12.TabIndex = 61;
+            this.labelControl12.Text = "Total MP Utilizada:";
+            // 
+            // txtTotalMP_Utilizada_kg
+            // 
+            this.txtTotalMP_Utilizada_kg.AllowDrop = true;
+            this.txtTotalMP_Utilizada_kg.Enabled = false;
+            this.txtTotalMP_Utilizada_kg.Location = new System.Drawing.Point(1073, 140);
+            this.txtTotalMP_Utilizada_kg.Name = "txtTotalMP_Utilizada_kg";
+            this.txtTotalMP_Utilizada_kg.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.25F, System.Drawing.FontStyle.Bold);
+            this.txtTotalMP_Utilizada_kg.Properties.Appearance.Options.UseFont = true;
+            this.txtTotalMP_Utilizada_kg.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtTotalMP_Utilizada_kg.Size = new System.Drawing.Size(128, 28);
+            this.txtTotalMP_Utilizada_kg.TabIndex = 60;
+            // 
             // frmreporte_trazabilidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1210, 625);
+            this.ClientSize = new System.Drawing.Size(1210, 637);
+            this.Controls.Add(this.txtEficiencia);
+            this.Controls.Add(this.labelControl10);
+            this.Controls.Add(this.labelControl12);
+            this.Controls.Add(this.txtTotalMP_Utilizada_kg);
+            this.Controls.Add(this.labelControl8);
+            this.Controls.Add(this.txtPresentacion);
+            this.Controls.Add(this.txtTotalProducido);
+            this.Controls.Add(this.labelControl11);
+            this.Controls.Add(this.labelControl9);
+            this.Controls.Add(this.txtReprocesoKg);
+            this.Controls.Add(this.txtTotalKgSacosLiberados);
+            this.Controls.Add(this.labelControl7);
+            this.Controls.Add(this.txtSacosLiberados);
             this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.txtcodigo);
@@ -471,6 +645,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtformula.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtversion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtcodigo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSacosLiberados.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTotalKgSacosLiberados.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtReprocesoKg.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTotalProducido.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPresentacion.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEficiencia.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTotalMP_Utilizada_kg.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -508,5 +689,18 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnLinkIngreso;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnLinkMateriaPrima;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnTrazabilidadLoteMP;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.TextEdit txtSacosLiberados;
+        private DevExpress.XtraEditors.TextEdit txtTotalKgSacosLiberados;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
+        private DevExpress.XtraEditors.TextEdit txtReprocesoKg;
+        private DevExpress.XtraEditors.LabelControl labelControl11;
+        private DevExpress.XtraEditors.TextEdit txtTotalProducido;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
+        private DevExpress.XtraEditors.TextEdit txtPresentacion;
+        private DevExpress.XtraEditors.TextEdit txtEficiencia;
+        private DevExpress.XtraEditors.LabelControl labelControl10;
+        private DevExpress.XtraEditors.LabelControl labelControl12;
+        private DevExpress.XtraEditors.TextEdit txtTotalMP_Utilizada_kg;
     }
 }

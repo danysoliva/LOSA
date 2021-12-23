@@ -23,6 +23,7 @@ namespace LOSA.Calidad
         DataOperations dp = new DataOperations();
         UserLogin UsuarioLogeado;
         public int lote_fp;
+        LotePT LoteActual;
         public frmreporte_trazabilidad(UserLogin Puser)
         {
             InitializeComponent();
@@ -31,58 +32,95 @@ namespace LOSA.Calidad
         }                
         public void load_header()
         {
-            string sql_h = @"[dbo].[RPT_PRD_Trazabilidad_header_lote]";
-
-            SqlConnection cn = new SqlConnection(dp.ConnectionStringAPMS);
-       
-            try
+            if (!string.IsNullOrEmpty(txtlote.Text))
             {
-                cn.Open();
-                SqlCommand cmd_h = new SqlCommand(sql_h, cn);
-                cmd_h.CommandType = CommandType.StoredProcedure;
-                cmd_h.Parameters.AddWithValue("@num_lote",txtlote.Text);
-                SqlDataReader dr_h = cmd_h.ExecuteReader();
-
-                Int64 AcsId = 0;
-                if (dr_h.Read())
+                LotePT ptProducido = new LotePT();
+                if (ptProducido.RecuperarRegistro(Convert.ToInt32(txtlote.Text)))
                 {
-                    txtcodigo.Text = dr_h.GetString(0);
-                    txtProducto.Text = dr_h.GetString(1);         
-                    txtformula.Text = dr_h.GetInt32(3).ToString();
-                    txtversion.Text = dr_h.GetInt32(4).ToString();   
+                    LoteActual = ptProducido;
+                    txtTotalKgSacosLiberados.Text = string.Format("{0:###,##0.00 Kg}", ptProducido.TotalKg);
+                    txtSacosLiberados.Text = string.Format("{0:###,##0 Sacos}", ptProducido.Unidades);
+                    txtReprocesoKg.Text = string.Format("{0:###,##0.00 Kg}", ptProducido.Reproceso_kg);
+                    txtTotalProducido.Text = string.Format("{0:###,##0.00 Kg}", ptProducido.Reproceso_kg + ptProducido.TotalKg);
+                    txtPresentacion.Text = ptProducido.DescripcionPresentacion;
                 }
-                dr_h.Close();
-            }
-            catch (Exception EX)
-            {
 
-                CajaDialogo.Error(EX.Message);
+                string sql_h = @"[dbo].[RPT_PRD_Trazabilidad_header_lote]";
+
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringAPMS);
+
+                try
+                {
+                    cn.Open();
+                    SqlCommand cmd_h = new SqlCommand(sql_h, cn);
+                    cmd_h.CommandType = CommandType.StoredProcedure;
+                    cmd_h.Parameters.AddWithValue("@num_lote", txtlote.Text);
+                    SqlDataReader dr_h = cmd_h.ExecuteReader();
+
+                    Int64 AcsId = 0;
+                    if (dr_h.Read())
+                    {
+                        txtcodigo.Text = dr_h.GetString(0);
+                        txtProducto.Text = dr_h.GetString(1);
+                        txtformula.Text = dr_h.GetInt32(3).ToString();
+                        txtversion.Text = dr_h.GetInt32(4).ToString();
+                    }
+                    dr_h.Close();
+                }
+                catch (Exception EX)
+                {
+
+                    CajaDialogo.Error(EX.Message);
+                }
+
+
             }
+
+            
 
         }
 
         public void load_data()
         {
-            
-            string query = @"[sp_load_report_trazabilitadad_lotev2]";
-            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-            try
+            if (!string.IsNullOrEmpty(txtlote.Text))
             {
-                cn.Open();
-                SqlCommand cmd = new SqlCommand(query,cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@lotept", txtlote.Text);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                dsCalidad.trazabilitad.Clear();
-                da.Fill(dsCalidad.trazabilitad);
-                cn.Close();
-            }
-            catch (Exception ex)
-            {
+                string query = @"[sp_load_report_trazabilitadad_lotev2]";
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                try
+                {
+                    cn.Open();
+                    SqlCommand cmd = new SqlCommand(query, cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@lotept", txtlote.Text);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    dsCalidad.trazabilitad.Clear();
+                    da.Fill(dsCalidad.trazabilitad);
+                    cn.Close();
+                }
+                catch (Exception ex)
+                {
 
-                CajaDialogo.Error(ex.Message);
+                    CajaDialogo.Error(ex.Message);
+                }
+
+                //Calcular el total MP utilizada
+                decimal TotalMP_kg = 0;
+                foreach (dsCalidad.trazabilitadRow row in dsCalidad.trazabilitad.Rows)
+                {
+                    TotalMP_kg += row.Contado;
+                }
+                txtTotalMP_Utilizada_kg.Text = string.Format("{0:###,##0.00 Kg}", TotalMP_kg);
+                if (LoteActual != null)
+                {
+                    if (LoteActual.Recuperado)
+                    {
+                        if (TotalMP_kg > 0)
+                            txtEficiencia.Text = string.Format("{0:###,##0.00 Kg}", ((LoteActual.Reproceso_kg + LoteActual.TotalKg) / TotalMP_kg)*100);
+                        else
+                            txtEficiencia.Text = string.Format("{0:###,##0.00 Kg}", 0);
+                    }
+                }
             }
-            
         }
          
         private void cmdHome_Click(object sender, EventArgs e)
@@ -159,13 +197,27 @@ namespace LOSA.Calidad
             var row = (dsCalidad.trazabilitadRow)gridView.GetFocusedDataRow();
             //frmDetalleIngresoTRZ frm = new frmDetalleIngresoTRZ(row.ingreso);
             IngresoMP ingreso = new IngresoMP();
-            if (ingreso.RecuperarRegistroIdLote_fromNumTransaccion(row.ingreso))
+            int IngresoActual = 0;
+            try
             {
-                rdEstadoTransporte frm = new rdEstadoTransporte(ingreso.IdIngresoLote, this.UsuarioLogeado);
-                if (this.MdiParent != null)
-                    frm.MdiParent = this.MdiParent;
-                frm.WindowState = FormWindowState.Maximized;
-                frm.Show();
+                IngresoActual = Convert.ToInt32(row.ingreso);
+            }
+            catch { }
+
+            if (IngresoActual > 0)
+            {
+                if (ingreso.RecuperarRegistroIdLote_fromNumTransaccion(row.ingreso, row.lote_mp))
+                {
+                    rdEstadoTransporte frm = new rdEstadoTransporte(ingreso.IdIngresoLote, this.UsuarioLogeado);
+                    if (this.MdiParent != null)
+                        frm.MdiParent = this.MdiParent;
+                    frm.WindowState = FormWindowState.Maximized;
+                    frm.Show();
+                }
+            }
+            else
+            {
+                CajaDialogo.Information("Este Lote no posee datos de Ingreso de Materia Prima!");
             }
             
         }
