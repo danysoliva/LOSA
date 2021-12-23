@@ -44,6 +44,11 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.txtlote = new DevExpress.XtraEditors.TextEdit();
@@ -53,6 +58,7 @@
             this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colContado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collote_mp = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnTrazabilidadLoteMP = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colingreso = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnLinkIngreso = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colnombre_comercial = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -77,6 +83,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCalidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnTrazabilidadLoteMP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLinkIngreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLinkMateriaPrima)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLinkProveedor)).BeginInit();
@@ -121,12 +128,12 @@
             // 
             // txtlote
             // 
-            this.txtlote.Location = new System.Drawing.Point(46, 80);
+            this.txtlote.Location = new System.Drawing.Point(84, 80);
             this.txtlote.Name = "txtlote";
             this.txtlote.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtlote.Properties.Appearance.Options.UseFont = true;
             this.txtlote.Properties.MaxLength = 4;
-            this.txtlote.Size = new System.Drawing.Size(140, 32);
+            this.txtlote.Size = new System.Drawing.Size(102, 32);
             this.txtlote.TabIndex = 34;
             this.txtlote.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtlote_KeyDown);
             // 
@@ -136,9 +143,9 @@
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Location = new System.Drawing.Point(7, 86);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(33, 21);
+            this.labelControl1.Size = new System.Drawing.Size(59, 21);
             this.labelControl1.TabIndex = 35;
-            this.labelControl1.Text = "Lote";
+            this.labelControl1.Text = "Lote PT:";
             // 
             // grd_data
             // 
@@ -151,7 +158,8 @@
             this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnLinkProveedor,
             this.btnLinkIngreso,
-            this.btnLinkMateriaPrima});
+            this.btnLinkMateriaPrima,
+            this.btnTrazabilidadLoteMP});
             this.grd_data.Size = new System.Drawing.Size(1208, 426);
             this.grd_data.TabIndex = 36;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -207,11 +215,20 @@
             // collote_mp
             // 
             this.collote_mp.Caption = "Lote Materia prima";
+            this.collote_mp.ColumnEdit = this.btnTrazabilidadLoteMP;
             this.collote_mp.FieldName = "lote_mp";
             this.collote_mp.Name = "collote_mp";
-            this.collote_mp.OptionsColumn.AllowEdit = false;
             this.collote_mp.Visible = true;
             this.collote_mp.VisibleIndex = 2;
+            // 
+            // btnTrazabilidadLoteMP
+            // 
+            this.btnTrazabilidadLoteMP.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            this.btnTrazabilidadLoteMP.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnTrazabilidadLoteMP.Name = "btnTrazabilidadLoteMP";
+            this.btnTrazabilidadLoteMP.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnTrazabilidadLoteMP_ButtonClick);
             // 
             // colingreso
             // 
@@ -225,9 +242,9 @@
             // btnLinkIngreso
             // 
             this.btnLinkIngreso.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.btnLinkIngreso.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnLinkIngreso.Name = "btnLinkIngreso";
             this.btnLinkIngreso.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnLinkIngreso_ButtonClick);
             // 
@@ -243,9 +260,9 @@
             // btnLinkMateriaPrima
             // 
             this.btnLinkMateriaPrima.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
             this.btnLinkMateriaPrima.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnLinkMateriaPrima.Name = "btnLinkMateriaPrima";
             this.btnLinkMateriaPrima.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnLinkMateriaPrima_ButtonClick);
             // 
@@ -267,7 +284,7 @@
             // colproveedor_name
             // 
             this.colproveedor_name.Caption = "Proveedor";
-            this.colproveedor_name.ColumnEdit = this.btnLinkMateriaPrima;
+            this.colproveedor_name.ColumnEdit = this.btnLinkProveedor;
             this.colproveedor_name.FieldName = "proveedor_name";
             this.colproveedor_name.Name = "colproveedor_name";
             this.colproveedor_name.Visible = true;
@@ -276,9 +293,9 @@
             // btnLinkProveedor
             // 
             this.btnLinkProveedor.AutoHeight = false;
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
             this.btnLinkProveedor.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnLinkProveedor.Name = "btnLinkProveedor";
             this.btnLinkProveedor.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnLinkProveedor_ButtonClick);
             // 
@@ -444,6 +461,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCalidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnTrazabilidadLoteMP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLinkIngreso)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLinkMateriaPrima)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLinkProveedor)).EndInit();
@@ -489,5 +507,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnLinkProveedor;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnLinkIngreso;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnLinkMateriaPrima;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnTrazabilidadLoteMP;
     }
 }

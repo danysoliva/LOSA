@@ -34,6 +34,22 @@ namespace LOSA.Trazabilidad
             LoadAprobaciones();
         }
 
+        public frmMantoProveedoresMP(UserLogin pUser, string pCardCode)
+        {
+            InitializeComponent();
+            vProveedorActual = new Proveedor();
+            UsuarioLogeado = pUser;
+            if (vProveedorActual.RecuperarRegistroWithRTN(pCardCode))
+            {
+                LoadTiposArchivos();
+                LoadAdjuntosRows();
+                LoadRiesgos();
+                LoadAprobaciones();
+                AsignarDatosFromProveedor(vProveedorActual);
+
+            }
+        }
+
         private void LoadAprobaciones()
         {
             try
@@ -85,37 +101,38 @@ namespace LOSA.Trazabilidad
             frmBuscarProvMP frm = new frmBuscarProvMP();
             if(frm.ShowDialog()== DialogResult.OK)
             {
-                
-                txtCodigo.Text = frm.ProveedorRow.Codigo;
-                txtNombre.Text = frm.ProveedorRow.Nombre;
-                txtNombreF.Text = frm.ProveedorRow.NombreF;
-                txtRTN.Text = frm.ProveedorRow.RTN;
-                vProveedorActual = frm.ProveedorRow;
-                txtContacto.Text= frm.ProveedorRow.Contacto;
-                txtTel1.Text = frm.ProveedorRow.Telefono1;
-                txtTel2.Text = frm.ProveedorRow.Telefono2;
-                txtTel3.Text = frm.ProveedorRow.Telefono3;
-                txtDireccion.Text = frm.ProveedorRow.Direccion;
-                txtCorreo.Text = frm.ProveedorRow.Correo;
-                
-                this.gridLookUpEdit_Riesgos.EditValueChanged -= new System.EventHandler(this.gridLookUpEdit_Riesgos_EditValueChanged);
-                this.gridLookUpEdit_aprobacion.EditValueChanged -= new System.EventHandler(this.gridLookUpEdit_aprobacion_EditValueChanged);
-                this.toggleSwitch1.EditValueChanged -= new System.EventHandler(this.toggleSwitch1_EditValueChanged);
-                gridLookUpEdit_aprobacion.EditValue = gridLookUpEdit_Riesgos.EditValue = null;
 
-                gridLookUpEdit_aprobacion.EditValue = frm.ProveedorRow.IdAprobacion;
-                gridLookUpEdit_Riesgos.EditValue = frm.ProveedorRow.IdRiesgo;
-                toggleSwitch1.IsOn = frm.ProveedorRow.Auditoria;
-                LoadAdjuntosRows();
-                LoadPlantas();
-                LoadIngredientes();
-                LoadMateriasPrimas();
-                gridLookUpEdit_aprobacion.Enabled = gridLookUpEdit_Riesgos.Enabled = true;
-                toggleSwitch1.Enabled = true;
+                //txtCodigo.Text = frm.ProveedorRow.Codigo;
+                //txtNombre.Text = frm.ProveedorRow.Nombre;
+                //txtNombreF.Text = frm.ProveedorRow.NombreF;
+                //txtRTN.Text = frm.ProveedorRow.RTN;
+                //vProveedorActual = frm.ProveedorRow;
+                //txtContacto.Text= frm.ProveedorRow.Contacto;
+                //txtTel1.Text = frm.ProveedorRow.Telefono1;
+                //txtTel2.Text = frm.ProveedorRow.Telefono2;
+                //txtTel3.Text = frm.ProveedorRow.Telefono3;
+                //txtDireccion.Text = frm.ProveedorRow.Direccion;
+                //txtCorreo.Text = frm.ProveedorRow.Correo;
 
-                this.gridLookUpEdit_Riesgos.EditValueChanged += new System.EventHandler(this.gridLookUpEdit_Riesgos_EditValueChanged);
-                this.gridLookUpEdit_aprobacion.EditValueChanged += new System.EventHandler(this.gridLookUpEdit_aprobacion_EditValueChanged);
-                this.toggleSwitch1.EditValueChanged += new System.EventHandler(this.toggleSwitch1_EditValueChanged);
+                //this.gridLookUpEdit_Riesgos.EditValueChanged -= new System.EventHandler(this.gridLookUpEdit_Riesgos_EditValueChanged);
+                //this.gridLookUpEdit_aprobacion.EditValueChanged -= new System.EventHandler(this.gridLookUpEdit_aprobacion_EditValueChanged);
+                //this.toggleSwitch1.EditValueChanged -= new System.EventHandler(this.toggleSwitch1_EditValueChanged);
+                //gridLookUpEdit_aprobacion.EditValue = gridLookUpEdit_Riesgos.EditValue = null;
+
+                //gridLookUpEdit_aprobacion.EditValue = frm.ProveedorRow.IdAprobacion;
+                //gridLookUpEdit_Riesgos.EditValue = frm.ProveedorRow.IdRiesgo;
+                //toggleSwitch1.IsOn = frm.ProveedorRow.Auditoria;
+                //LoadAdjuntosRows();
+                //LoadPlantas();
+                //LoadIngredientes();
+                //LoadMateriasPrimas();
+                //gridLookUpEdit_aprobacion.Enabled = gridLookUpEdit_Riesgos.Enabled = true;
+                //toggleSwitch1.Enabled = true;
+
+                //this.gridLookUpEdit_Riesgos.EditValueChanged += new System.EventHandler(this.gridLookUpEdit_Riesgos_EditValueChanged);
+                //this.gridLookUpEdit_aprobacion.EditValueChanged += new System.EventHandler(this.gridLookUpEdit_aprobacion_EditValueChanged);
+                //this.toggleSwitch1.EditValueChanged += new System.EventHandler(this.toggleSwitch1_EditValueChanged);
+                AsignarDatosFromProveedor(frm.ProveedorRow);
             }
             else
             {
@@ -131,6 +148,40 @@ namespace LOSA.Trazabilidad
                 this.gridLookUpEdit_aprobacion.EditValueChanged += new System.EventHandler(this.gridLookUpEdit_aprobacion_EditValueChanged);
                 this.toggleSwitch1.EditValueChanged += new System.EventHandler(this.toggleSwitch1_EditValueChanged);
             }
+        }
+
+        public void AsignarDatosFromProveedor(Proveedor ProveedorRow)
+        {
+            txtCodigo.Text = ProveedorRow.Codigo;
+            txtNombre.Text = ProveedorRow.Nombre;
+            txtNombreF.Text = ProveedorRow.NombreF;
+            txtRTN.Text = ProveedorRow.RTN;
+            vProveedorActual = ProveedorRow;
+            txtContacto.Text = ProveedorRow.Contacto;
+            txtTel1.Text = ProveedorRow.Telefono1;
+            txtTel2.Text = ProveedorRow.Telefono2;
+            txtTel3.Text = ProveedorRow.Telefono3;
+            txtDireccion.Text = ProveedorRow.Direccion;
+            txtCorreo.Text = ProveedorRow.Correo;
+
+            this.gridLookUpEdit_Riesgos.EditValueChanged -= new System.EventHandler(this.gridLookUpEdit_Riesgos_EditValueChanged);
+            this.gridLookUpEdit_aprobacion.EditValueChanged -= new System.EventHandler(this.gridLookUpEdit_aprobacion_EditValueChanged);
+            this.toggleSwitch1.EditValueChanged -= new System.EventHandler(this.toggleSwitch1_EditValueChanged);
+            gridLookUpEdit_aprobacion.EditValue = gridLookUpEdit_Riesgos.EditValue = null;
+
+            gridLookUpEdit_aprobacion.EditValue = ProveedorRow.IdAprobacion;
+            gridLookUpEdit_Riesgos.EditValue = ProveedorRow.IdRiesgo;
+            toggleSwitch1.IsOn = ProveedorRow.Auditoria;
+            LoadAdjuntosRows();
+            LoadPlantas();
+            LoadIngredientes();
+            LoadMateriasPrimas();
+            gridLookUpEdit_aprobacion.Enabled = gridLookUpEdit_Riesgos.Enabled = true;
+            toggleSwitch1.Enabled = true;
+
+            this.gridLookUpEdit_Riesgos.EditValueChanged += new System.EventHandler(this.gridLookUpEdit_Riesgos_EditValueChanged);
+            this.gridLookUpEdit_aprobacion.EditValueChanged += new System.EventHandler(this.gridLookUpEdit_aprobacion_EditValueChanged);
+            this.toggleSwitch1.EditValueChanged += new System.EventHandler(this.toggleSwitch1_EditValueChanged);
         }
 
         private void LoadIngredientes()

@@ -14,6 +14,7 @@ using System.Data.SqlClient;
 using DevExpress.XtraGrid.Views.Grid;
 using LOSA.Trazabilidad;
 using LOSA.Logistica;
+using LOSA.Trazabilidad.ReportesTRZ;
 
 namespace LOSA.Calidad
 {
@@ -141,7 +142,14 @@ namespace LOSA.Calidad
         private void btnLinkProveedor_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             //Link hacia master de proveedores
+            var gridView = (GridView)grd_data.FocusedView;
+            var row = (dsCalidad.trazabilitadRow)gridView.GetFocusedDataRow();
 
+            frmMantoProveedoresMP frm = new frmMantoProveedoresMP(this.UsuarioLogeado, row.card_code);
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
         }
 
         private void btnLinkIngreso_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
@@ -182,6 +190,19 @@ namespace LOSA.Calidad
         private void frmreporte_trazabilidad_Load(object sender, EventArgs e)
         {
             txtlote.Focus();
+        }
+
+        private void btnTrazabilidadLoteMP_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            //Abrir trazabilidad Lote MP
+            var gridView = (GridView)grd_data.FocusedView;
+            var row = (dsCalidad.trazabilitadRow)gridView.GetFocusedDataRow();
+
+            frmTrazabilidadHaciaAdelanteByMP_Lot frm = new frmTrazabilidadHaciaAdelanteByMP_Lot(row.lote_mp);
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
         }
     }
 }
