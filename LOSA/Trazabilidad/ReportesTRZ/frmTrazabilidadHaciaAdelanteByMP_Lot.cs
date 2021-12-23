@@ -24,6 +24,12 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             LoadLotesPT();                                                         
         }
 
+
+        public frmTrazabilidadHaciaAdelanteByMP_Lot()
+        {
+            InitializeComponent();
+        }
+
         private void LoadLotesPT()
         {
             //[sp_load_lotes_pt_trz_from_lote_mp] @lotemp

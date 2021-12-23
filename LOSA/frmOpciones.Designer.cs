@@ -105,6 +105,7 @@
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton19 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -797,6 +798,7 @@
             // 
             // TabCalidad
             // 
+            this.TabCalidad.Controls.Add(this.simpleButton19);
             this.TabCalidad.Controls.Add(this.btnAut_Tm);
             this.TabCalidad.Controls.Add(this.btnNitLecturas);
             this.TabCalidad.Controls.Add(this.ManteIngresos);
@@ -917,7 +919,7 @@
             this.simpleButton5.Name = "simpleButton5";
             this.simpleButton5.Size = new System.Drawing.Size(199, 71);
             this.simpleButton5.TabIndex = 14;
-            this.simpleButton5.Text = "Trazabilidad \r\nde lote";
+            this.simpleButton5.Text = "Trazabilidad \r\nde lote PT";
             this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
             // 
             // simpleButton4
@@ -1193,6 +1195,19 @@
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
             // 
+            // simpleButton19
+            // 
+            this.simpleButton19.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton19.Appearance.Options.UseFont = true;
+            this.simpleButton19.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton19.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton19.ImageOptions.Image")));
+            this.simpleButton19.Location = new System.Drawing.Point(435, 177);
+            this.simpleButton19.Name = "simpleButton19";
+            this.simpleButton19.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton19.TabIndex = 22;
+            this.simpleButton19.Text = "Trazabilidad \r\nde lote MP";
+            this.simpleButton19.Click += new System.EventHandler(this.simpleButton19_Click);
+            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1303,5 +1318,6 @@
         private DevExpress.XtraEditors.SimpleButton btnLoteActivoGranel;
         private DevExpress.XtraEditors.SimpleButton btnImprimirTm;
         private DevExpress.XtraEditors.SimpleButton btn_rptubicaciones;
+        private DevExpress.XtraEditors.SimpleButton simpleButton19;
     }
 }
