@@ -32,8 +32,12 @@ namespace LOSA.Liquidos
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmIngresoCamion));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.dtFechaIngreso = new DevExpress.XtraEditors.DateEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.txtMP_Name = new DevExpress.XtraEditors.TextEdit();
@@ -41,7 +45,7 @@ namespace LOSA.Liquidos
             this.txtCodigoMP = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.camionesINBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.camionesINBindingSource = new System.Windows.Forms.BindingSource();
             this.dsLiquidos_ = new LOSA.Liquidos.dsLiquidos_();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -51,7 +55,7 @@ namespace LOSA.Liquidos
             this.colFechaFin = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colshipid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LookUpEditBarco = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource1 = new System.Windows.Forms.BindingSource();
             this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -62,7 +66,7 @@ namespace LOSA.Liquidos
             this.colPesoBruto = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_ubicacion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GridLookUpEditUbicaciones = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.ubicacionLiquidosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ubicacionLiquidosBindingSource = new System.Windows.Forms.BindingSource();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colPesonetoIn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colitemcode = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -83,17 +87,17 @@ namespace LOSA.Liquidos
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.bindingSourceUbicaciones = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSourceUbicaciones = new System.Windows.Forms.BindingSource();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.cmdGenerarIngreso = new DevExpress.XtraEditors.SimpleButton();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
-            this.barcosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.barcosBindingSource = new System.Windows.Forms.BindingSource();
             this.grdUbicaciones = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colrack = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcodigo_barra = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ubicacionesgranelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ubicacionesgranelBindingSource = new System.Windows.Forms.BindingSource();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.chnuevoIngreso = new DevExpress.XtraEditors.CheckEdit();
             this.txtingreso = new DevExpress.XtraEditors.TextEdit();
@@ -115,10 +119,12 @@ namespace LOSA.Liquidos
             this.txtcapacidad = new DevExpress.XtraEditors.TextEdit();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.colEliminar = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnEliminar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaIngreso.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaIngreso.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMP_Name.Properties)).BeginInit();
@@ -151,6 +157,7 @@ namespace LOSA.Liquidos
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
             this.SuspendLayout();
             // 
             // dtFechaIngreso
@@ -242,7 +249,8 @@ namespace LOSA.Liquidos
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.LookUpEditBarco,
-            this.GridLookUpEditUbicaciones});
+            this.GridLookUpEditUbicaciones,
+            this.btnEliminar});
             this.gridControl1.Size = new System.Drawing.Size(989, 254);
             this.gridControl1.TabIndex = 93;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -310,12 +318,14 @@ namespace LOSA.Liquidos
             this.gridColumn2,
             this.gridColumn3,
             this.gridColumn4,
-            this.gridColumn5});
+            this.gridColumn5,
+            this.colEliminar});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsCustomization.AllowFilter = false;
             this.gridView1.OptionsFilter.AllowFilterEditor = false;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
+            this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // colid
@@ -436,6 +446,8 @@ namespace LOSA.Liquidos
             this.colPesoBruto.FieldName = "PesoBruto";
             this.colPesoBruto.Name = "colPesoBruto";
             this.colPesoBruto.OptionsColumn.AllowEdit = false;
+            this.colPesoBruto.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PesoBruto", "{0:#.##}")});
             // 
             // colid_ubicacion
             // 
@@ -487,6 +499,8 @@ namespace LOSA.Liquidos
             this.colPesoProd.FieldName = "PesoProd";
             this.colPesoProd.Name = "colPesoProd";
             this.colPesoProd.OptionsColumn.AllowEdit = false;
+            this.colPesoProd.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PesoProd", "{0:#.##}")});
             this.colPesoProd.Visible = true;
             this.colPesoProd.VisibleIndex = 2;
             this.colPesoProd.Width = 94;
@@ -835,50 +849,65 @@ namespace LOSA.Liquidos
             // txtDisponible
             // 
             this.txtDisponible.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDisponible.EditValue = "0";
             this.txtDisponible.Location = new System.Drawing.Point(282, 95);
             this.txtDisponible.Name = "txtDisponible";
             this.txtDisponible.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDisponible.Properties.Appearance.Options.UseFont = true;
+            this.txtDisponible.Properties.Mask.EditMask = "n";
+            this.txtDisponible.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtDisponible.Size = new System.Drawing.Size(200, 26);
             this.txtDisponible.TabIndex = 112;
             // 
             // txtAltanque
             // 
             this.txtAltanque.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtAltanque.EditValue = "0";
             this.txtAltanque.Location = new System.Drawing.Point(282, 127);
             this.txtAltanque.Name = "txtAltanque";
             this.txtAltanque.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAltanque.Properties.Appearance.Options.UseFont = true;
+            this.txtAltanque.Properties.Mask.EditMask = "n";
+            this.txtAltanque.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtAltanque.Size = new System.Drawing.Size(200, 26);
             this.txtAltanque.TabIndex = 113;
             // 
             // txtEnTarimas
             // 
             this.txtEnTarimas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEnTarimas.EditValue = "0";
             this.txtEnTarimas.Location = new System.Drawing.Point(282, 159);
             this.txtEnTarimas.Name = "txtEnTarimas";
             this.txtEnTarimas.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEnTarimas.Properties.Appearance.Options.UseFont = true;
+            this.txtEnTarimas.Properties.Mask.EditMask = "n";
+            this.txtEnTarimas.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtEnTarimas.Size = new System.Drawing.Size(200, 26);
             this.txtEnTarimas.TabIndex = 114;
             // 
             // txtTotalIngreso
             // 
             this.txtTotalIngreso.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTotalIngreso.EditValue = "0";
             this.txtTotalIngreso.Location = new System.Drawing.Point(282, 191);
             this.txtTotalIngreso.Name = "txtTotalIngreso";
             this.txtTotalIngreso.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalIngreso.Properties.Appearance.Options.UseFont = true;
+            this.txtTotalIngreso.Properties.Mask.EditMask = "n";
+            this.txtTotalIngreso.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtTotalIngreso.Size = new System.Drawing.Size(200, 26);
             this.txtTotalIngreso.TabIndex = 115;
             // 
             // txtEspacioOcupado
             // 
             this.txtEspacioOcupado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEspacioOcupado.EditValue = "0";
             this.txtEspacioOcupado.Location = new System.Drawing.Point(282, 63);
             this.txtEspacioOcupado.Name = "txtEspacioOcupado";
             this.txtEspacioOcupado.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEspacioOcupado.Properties.Appearance.Options.UseFont = true;
+            this.txtEspacioOcupado.Properties.Mask.EditMask = "n";
+            this.txtEspacioOcupado.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtEspacioOcupado.Size = new System.Drawing.Size(200, 26);
             this.txtEspacioOcupado.TabIndex = 117;
             // 
@@ -896,10 +925,13 @@ namespace LOSA.Liquidos
             // txtcapacidad
             // 
             this.txtcapacidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtcapacidad.EditValue = "0";
             this.txtcapacidad.Location = new System.Drawing.Point(282, 31);
             this.txtcapacidad.Name = "txtcapacidad";
             this.txtcapacidad.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcapacidad.Properties.Appearance.Options.UseFont = true;
+            this.txtcapacidad.Properties.Mask.EditMask = "n";
+            this.txtcapacidad.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtcapacidad.Size = new System.Drawing.Size(200, 26);
             this.txtcapacidad.TabIndex = 119;
             // 
@@ -928,6 +960,39 @@ namespace LOSA.Liquidos
             this.groupControl1.Text = "Tarimas por ingresar";
             this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
+            // labelControl15
+            // 
+            this.labelControl15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl15.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.labelControl15.Appearance.Options.UseFont = true;
+            this.labelControl15.Location = new System.Drawing.Point(17, 92);
+            this.labelControl15.Name = "labelControl15";
+            this.labelControl15.Size = new System.Drawing.Size(141, 25);
+            this.labelControl15.TabIndex = 121;
+            this.labelControl15.Text = "Peso por Tarima:";
+            // 
+            // labelControl14
+            // 
+            this.labelControl14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl14.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.labelControl14.Appearance.Options.UseFont = true;
+            this.labelControl14.Location = new System.Drawing.Point(17, 61);
+            this.labelControl14.Name = "labelControl14";
+            this.labelControl14.Size = new System.Drawing.Size(125, 25);
+            this.labelControl14.TabIndex = 120;
+            this.labelControl14.Text = "Ud por Tarima:";
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl13.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.labelControl13.Appearance.Options.UseFont = true;
+            this.labelControl13.Location = new System.Drawing.Point(17, 30);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Size = new System.Drawing.Size(113, 25);
+            this.labelControl13.TabIndex = 119;
+            this.labelControl13.Text = "Presentacion:";
+            // 
             // groupControl2
             // 
             this.groupControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -951,38 +1016,23 @@ namespace LOSA.Liquidos
             this.groupControl2.TabIndex = 121;
             this.groupControl2.Text = "Resumen";
             // 
-            // labelControl13
+            // colEliminar
             // 
-            this.labelControl13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl13.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.labelControl13.Appearance.Options.UseFont = true;
-            this.labelControl13.Location = new System.Drawing.Point(17, 30);
-            this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Size = new System.Drawing.Size(113, 25);
-            this.labelControl13.TabIndex = 119;
-            this.labelControl13.Text = "Presentacion:";
+            this.colEliminar.Caption = "Descartar";
+            this.colEliminar.ColumnEdit = this.btnEliminar;
+            this.colEliminar.Name = "colEliminar";
+            this.colEliminar.Visible = true;
+            this.colEliminar.VisibleIndex = 8;
             // 
-            // labelControl14
+            // btnEliminar
             // 
-            this.labelControl14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl14.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.labelControl14.Appearance.Options.UseFont = true;
-            this.labelControl14.Location = new System.Drawing.Point(17, 61);
-            this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(125, 25);
-            this.labelControl14.TabIndex = 120;
-            this.labelControl14.Text = "Ud por Tarima:";
-            // 
-            // labelControl15
-            // 
-            this.labelControl15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl15.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.labelControl15.Appearance.Options.UseFont = true;
-            this.labelControl15.Location = new System.Drawing.Point(17, 92);
-            this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(141, 25);
-            this.labelControl15.TabIndex = 121;
-            this.labelControl15.Text = "Peso por Tarima:";
+            this.btnEliminar.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            this.btnEliminar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // frmIngresoCamion
             // 
@@ -1047,6 +1097,7 @@ namespace LOSA.Liquidos
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1139,5 +1190,7 @@ namespace LOSA.Liquidos
         private LabelControl labelControl13;
         private GroupControl groupControl2;
         private LabelControl labelControl15;
+        private DevExpress.XtraGrid.Columns.GridColumn colEliminar;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnEliminar;
     }
 }
