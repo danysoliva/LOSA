@@ -13,6 +13,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Linq;
+using DevExpress.XtraReports.UI;
+using LOSA.Reportes;
 
 namespace LOSA.Liquidos
 {
@@ -27,6 +29,7 @@ namespace LOSA.Liquidos
         int IdLoteSelected;
         int ingreso;
         int id_tanque;
+        decimal factor;
         int Default_value = 0;
         Tanque Tanque;
 
@@ -34,6 +37,7 @@ namespace LOSA.Liquidos
         {
             InitializeComponent();
             UsuarioLogeado = pUsuarioLogeado;
+            LoadPresentaciones();
             //pLista = pArray;
             dtFechaIngreso.EditValue = string.Format("{0:dd/MM/yyyy}", dp.Now());
             txtCodigoMP.Text = pItem.ItemCode;
@@ -115,6 +119,7 @@ namespace LOSA.Liquidos
         public frmIngresoCamion(UserLogin pUsuarioLogeado, MateriaPrima pItem, int pId_Tanque)
         {
             InitializeComponent();
+            LoadPresentaciones();
             UsuarioLogeado = pUsuarioLogeado;
             //pLista = pArray;
             dtFechaIngreso.EditValue = string.Format("{0:dd/MM/yyyy}", dp.Now());
@@ -229,14 +234,19 @@ namespace LOSA.Liquidos
         private void cmdGenerarIngreso_Click(object sender, EventArgs e)
         {
             SqlTransaction transaction;
+            if (string.IsNullOrEmpty(dtFechaProduccion.Text))
+            {
+                CajaDialogo.Error("Es obligatorio llenar la fecha de producción!");
+                return;
+            }
+            string CodigoProveedor = "";
+            string Proveedor = "";
 
-
-            //Guardar Ingresos
-            //if (idUbicacionSelected == 0)
-            //{
-            //    CajaDialogo.Error("Es necesario seleccionar una Ubicación Valida!");
-            //    return;
-            //}
+            if (string.IsNullOrEmpty(dtFechaVencimiento.Text))
+            {
+                CajaDialogo.Error("Es obligatorio llenar la fecha de vencimiento de la materia prima!");
+                return;
+            }
 
             if (gridView1.RowCount<1)
             {
@@ -269,19 +279,6 @@ namespace LOSA.Liquidos
                     return;
                 }
             }
-
-            //if(dtFechaVencimiento.EditValue == null)
-            //{
-            //    CajaDialogo.Error("Es necesario seleccionar una fecha de Vencimiento!");
-            //    return;
-            //}
-
-            //if (dtFechaProduccion.EditValue == null)
-            //{
-            //    CajaDialogo.Error("Es necesario seleccionar una fecha de Producción!");
-            //    return;
-            //}
-
 
             bool PuedeContinuar = false;
             foreach (dsLiquidos_.Camiones_INRow row in dsLiquidos_.Camiones_IN.Rows)
@@ -334,25 +331,22 @@ namespace LOSA.Liquidos
                     return;
                 }
                 ingreso = Convert.ToInt32(txtingreso.Text);
-            }
+            }                                   
 
-           
-            //Validar ingreso si es necesario
             bool Guardo = false;
             DialogResult r = CajaDialogo.Pregunta("Esta seguro de generar estos ingresos de Materia Prima Líquidos?");
             if (r != DialogResult.Yes)
                 return;
 
             decimal sumar_Kg = 0;
+
             foreach (dsLiquidos_.Camiones_INRow row in dsLiquidos_.Camiones_IN.Rows)
             {
                 sumar_Kg = sumar_Kg + row.PesoProd;
 
             }
-
             string query = @"[dbo].[sp_insert_ingreso_mp_h_liquidos]";
-            //SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-            //con.Open();
+
             SqlCommand Comnd = new SqlCommand(query, transaction.Connection);
             Comnd.CommandType = CommandType.StoredProcedure;
             Comnd.Transaction = transaction;
@@ -371,6 +365,8 @@ namespace LOSA.Liquidos
                 //
                 try
                 {
+                    CodigoProveedor = row.cardcode;
+                    Proveedor = row.cardname;
                     DataOperations dp = new DataOperations();
                     //cn = new SqlConnection(dp.ConnectionStringLOSA);
                     //cn.Open();
@@ -390,13 +386,15 @@ namespace LOSA.Liquidos
                     cmd2.Parameters.AddWithValue("@id_ingreso", ingreso);
                     cmd2.Parameters.AddWithValue("@id_user", this.UsuarioLogeado.Id);
                     cmd2.Parameters.AddWithValue("@id_lote_alosy", Id_lote_generado);
-                    cmd2.Parameters.AddWithValue("@fecha_vencimiento", row.fecha_vencimiento);
-                    cmd2.Parameters.AddWithValue("@fecha_produccion", row.fecha_produccion);
+                    cmd2.Parameters.AddWithValue("@fecha_vencimiento", dtFechaVencimiento.EditValue);
+                    cmd2.Parameters.AddWithValue("@fecha_produccion", dtFechaProduccion.EditValue);
                     cmd2.Parameters.AddWithValue("@id_tanque", id_tanque);
                     cmd2.Parameters.AddWithValue("@cardcode", row.cardcode);
                     cmd2.Parameters.AddWithValue("@cardname", row.cardname);
 
                     cmd2.ExecuteNonQuery();
+
+                    
                     Guardo = true;
                     //cn.Close();
                 }
@@ -405,6 +403,97 @@ namespace LOSA.Liquidos
                     MessageBox.Show(ec.Message);
                 }
             }
+            try
+            {
+                string SQL = @"[dbo].[sp_set_insert_ingreso_liquidos]";
+                SqlCommand cmd2 = new SqlCommand(SQL, transaction.Connection);
+                cmd2.Transaction = transaction;
+                cmd2.CommandType = CommandType.StoredProcedure;
+                cmd2.Parameters.AddWithValue("@id_lote_ingreso", Id_lote_generado);
+                cmd2.Parameters.AddWithValue("@entrada", txtAltanque.Text);
+                cmd2.Parameters.AddWithValue("@id_tanque", id_tanque);
+                cmd2.Parameters.AddWithValue("@salida", 0);
+                cmd2.Parameters.AddWithValue("@id_tarima", DBNull.Value);
+                cmd2.Parameters.AddWithValue("@date_ingreso", DateTime.Now);
+                cmd2.Parameters.AddWithValue("@lote", txtLote);
+                cmd2.Parameters.AddWithValue("@item_code", txtCodigoMP.Text);
+                cmd2.ExecuteNonQuery();
+
+                int vid_tarima = Default_value;
+                ArrayList List = new ArrayList();
+                if (Convert.ToInt32(txtCantidaddeTarimas.Text) != 0)
+                {
+                    for (int i = 1; i <= Convert.ToInt32(txtCantidaddeTarimas.Text); i++)
+                    {
+                        
+                            DataOperations dp = new DataOperations();
+
+                            SqlCommand cmm = new SqlCommand("sp_generar_codigo_from_tables_id", transaction.Connection);
+                            cmm.CommandType = CommandType.StoredProcedure;
+                            cmm.Parameters.AddWithValue("@id", 1);
+                            string barcode = cmm.ExecuteScalar().ToString();
+
+                            cmd = new SqlCommand("sp_insert_new_tarima_for__liqud", transaction.Connection);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@itemcode", txtCodigoMP.Text);
+                            cmd.Parameters.AddWithValue("@id_proveedor", CodigoProveedor);
+                            cmd.Parameters.AddWithValue("@fecha_ingreso", dtFechaIngreso.EditValue);
+                            cmd.Parameters.AddWithValue("@numero_transaccion", ingreso);
+                            cmd.Parameters.AddWithValue("@fecha_vencimiento", dtFechaVencimiento.EditValue);
+                            cmd.Parameters.AddWithValue("@fecha_produccion_materia_prima", dtFechaProduccion.EditValue);
+                            cmd.Parameters.AddWithValue("@lote_materia_prima", txtLote.Text);
+                            cmd.Parameters.AddWithValue("@id_presentacion", grd_presentaciones.EditValue);
+                            cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
+                            cmd.Parameters.AddWithValue("@id_boleta", DBNull.Value);
+                            cmd.Parameters.AddWithValue("@codigo_barra", barcode);
+                            cmd.Parameters.AddWithValue("@cant", txtUdporTarima.Text);
+                            cmd.Parameters.AddWithValue("@peso", Convert.ToDecimal(txtPesoKg.Text));
+                            cmd.Parameters.AddWithValue("@idlotes", Id_lote_generado);
+                            cmd.Parameters.AddWithValue("@factor", factor);
+                            cmd.Parameters.AddWithValue("@bit_promedio",  0);
+                             vid_tarima = Convert.ToInt32(cmd.ExecuteScalar());
+
+                            SqlCommand cmdx = new SqlCommand("sp_insert_ubicacion_default", transaction.Connection);// ahora recibe el parametro de ubicacion para poder guardarlo automatico en todas las tarimas
+                            cmdx.CommandType = CommandType.StoredProcedure;
+                            cmdx.Parameters.AddWithValue("@id_tarima", vid_tarima);
+                            cmdx.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
+                            cmdx.Parameters.AddWithValue("@codigo_barra", barcode);
+                            cmdx.Parameters.AddWithValue("@id_ubicacion", 131); //bodega c500 predeterminada
+                            cmdx.ExecuteNonQuery();
+
+                            List.Add(vid_tarima);
+
+                            Guardo = true;
+                       
+                         
+                    }
+                    Guardo = true;
+                    if (CajaDialogo.Pregunta("Desea Imprimir la(s) Hoja(s) de Ingreso?") == DialogResult.Yes)
+                    {
+                        for (int i = 0; i <= (List.Count - 1); i++)
+                        {
+                            int id_tarimax = Convert.ToInt32(List[i]);
+                            rptReporteIngresoTarima report = new rptReporteIngresoTarima(id_tarimax);
+                            report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                            report.ShowPrintMarginsWarning = false;
+                            report.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
+                            report.Print();
+
+
+                        }
+                    }
+                    rptLoteRotulo boleta = new rptLoteRotulo(Id_lote_generado);
+                    boleta.ShowPrintMarginsWarning = false;
+                    boleta.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
+                    boleta.Print();
+                    //CajaDialogo.InformationAuto();
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }   
 
             if (Guardo)
             {
@@ -429,6 +518,11 @@ namespace LOSA.Liquidos
             //    row.shipid = idbarco;
             //}
             //dsRecepcionMPx1.granel.AcceptChanges();
+        }
+        private void PrintingSystem_StartPrint(object sender, DevExpress.XtraPrinting.PrintDocumentEventArgs e)
+        {
+            //Indica el numero de copias de la boleta que seran impresas
+            e.PrintDocument.PrinterSettings.Copies = 1;
         }
 
         private void grdUbicaciones_EditValueChanged(object sender, EventArgs e)
@@ -556,8 +650,9 @@ namespace LOSA.Liquidos
                     //dsRecepcionMPx1.granel.AddgranelRow(row1);
                     //dsRecepcionMPx1.AcceptChanges();
                 }
+                Calcular_Ingreso();
 
-                txtTotalIngreso.Text = SumarSeleccionado().ToString();
+
             }
         }
 
@@ -569,19 +664,146 @@ namespace LOSA.Liquidos
         {
 
         }
+        public void Calcular_Ingreso()
+        {
+            decimal SumaTotal = SumarSeleccionado();
+            decimal ParaEltanque = Default_value;
+            decimal ParaBines = Default_value;
+            if (Tanque.TotalLleno + SumaTotal >= Tanque.MaximoCapacidad)
+            {
+                grupoTarima.Enabled = true;
+                pnTarimas.Enabled = true;
+                ParaBines = SumaTotal - Tanque.VacioCapacidad;
+                ParaEltanque = Tanque.VacioCapacidad;
+                txtAltanque.Text = ParaEltanque.ToString();
+                txtEnTarimas.Text = ParaBines.ToString();
+                txtTotalIngreso.Text = SumaTotal.ToString();
+                grd_presentaciones.EditValue = 8;
+            }
+            else
+            {
+                ParaEltanque = SumaTotal;
+                pnTarimas.Enabled = false;
+                txtAltanque.Text = ParaEltanque.ToString();
+                txtEnTarimas.Text = ParaBines.ToString();
+                txtTotalIngreso.Text = SumaTotal.ToString();
+            }
+
+            try
+            {
+                if (Convert.ToDecimal(txtAltanque.Text) != 0)
+                {
+                    calculoTarimas();
+                }
+            }
+            catch (Exception)
+            {
+
+               
+            }
+
+        }
+        private void LoadPresentaciones()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_presentaciones_activas_onli_liquidos", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                dsRecepcionMPx.presentaciones.Clear();
+                adat.Fill(dsRecepcionMPx.presentaciones);
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             try
             {
                 gridView1.DeleteRow(gridView1.FocusedRowHandle);
-                txtTotalIngreso.Text = SumarSeleccionado().ToString();
+                dsLiquidos_.Camiones_IN.AcceptChanges();
+                Calcular_Ingreso();
 
 
             }
             catch (Exception ex)
             {
 
+            }
+        }
+
+        private void txtUdporTarima_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        public void calculoTarimas()
+        {
+            PresentacionX pre1 = new PresentacionX();
+            if (pre1.RecuperarRegistro(Convert.ToInt32(grd_presentaciones.EditValue)))
+            {
+                factor = pre1.Factor;
+                txtPesoKg.Text = string.Format("{0:###,##0.00}", (factor * Convert.ToDecimal(txtUdporTarima.Text)));
+                decimal TarimasCalculo = Default_value;
+                TarimasCalculo = Convert.ToDecimal(txtEnTarimas.Text) / Convert.ToDecimal(txtPesoKg.Text);
+                int TotalTarimas = Convert.ToInt32(TarimasCalculo);
+                TotalTarimas = TarimasCalculo > TotalTarimas ? TotalTarimas++ : TotalTarimas;
+                txtCantidaddeTarimas.Text = TotalTarimas.ToString();
+            }
+        }
+
+        private void grd_presentaciones_EditValueChanged(object sender, EventArgs e)
+        {
+            PresentacionX pre1 = new PresentacionX();
+            if (pre1.RecuperarRegistro(Convert.ToInt32(grd_presentaciones.EditValue)))
+            {
+                factor = pre1.Factor;
+                txtPesoKg.Text = string.Format("{0:###,##0.00}", (factor * Convert.ToDecimal(txtUdporTarima.Text)));
+                decimal TarimasCalculo = Default_value;
+                TarimasCalculo =  Convert.ToDecimal(txtEnTarimas.Text) / Convert.ToDecimal(txtPesoKg.Text);
+                int TotalTarimas = Convert.ToInt32(TarimasCalculo);
+                TotalTarimas = TarimasCalculo > TotalTarimas ? TotalTarimas++ : TotalTarimas; 
+                txtCantidaddeTarimas.Text = TotalTarimas.ToString();
+            }
+        }
+
+        private void txtUdporTarima_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+
+                decimal TarimasCalculo = Default_value;
+                txtPesoKg.Text = string.Format("{0:###,##0.00}", (factor * Convert.ToDecimal(txtUdporTarima.Text)));
+                TarimasCalculo = Convert.ToDecimal(txtEnTarimas.Text) / Convert.ToDecimal(txtPesoKg.Text);
+                int TotalTarimas = Convert.ToInt32(TarimasCalculo);
+                TotalTarimas = TarimasCalculo > TotalTarimas ? TotalTarimas++ : TotalTarimas;
+                txtCantidaddeTarimas.Text = TotalTarimas.ToString();
+            }
+            catch
+            {
+                txtPesoKg.Text = "0";
             }
         }
     }

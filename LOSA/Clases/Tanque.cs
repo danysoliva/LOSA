@@ -10,6 +10,17 @@ namespace LOSA.Clases
 {
     class Tanque
     {
+        /// <summary>
+        /// Crea una instancia de la clase Empleado
+        /// </summary>
+        /// <param name="numerodeTanque">Esta propiedad es para el id del tanque</param>
+        /// <param name="keyMateriaPrima">Es el Id de la materia prima para el cual se usa el tanque</param>
+        /// <param name="nombreMateriaP">El nombre de la materia prima para el cual se usa el tanque</param>  
+        /// <param name="maximoCapacidad">La capacidad maxima del tanque</param>
+        /// <param name="totalLleno">Segun el inventario, es lo que lleva de lleno el tanque</param>  
+        /// <param name="vacioCapacidad">Segun el inventario, es lo que lleva de vacio el tanque</param>
+        /// 
+
         int numerodeTanque;
         int keyMateriaPrima;
         string nombreMateriaP;
