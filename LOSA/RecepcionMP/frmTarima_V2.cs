@@ -113,7 +113,7 @@ namespace LOSA.RecepcionMP
                         cmd.Parameters.AddWithValue("@cardname", row.cardname);  //
                         cmd.Parameters.AddWithValue("@fecha_ingreso", row.fechaIngreso);
                         cmd.Parameters.AddWithValue("@numero_transaccion", txtNumIngreso.Text); //
-                        cmd.Parameters.AddWithValue("@lote_materia_prima", row.lote);//
+                        cmd.Parameters.AddWithValue("@lote_materia_prima", row.lote);//  
                         cmd.Parameters.AddWithValue("@id_presentacion", row.id_presentacion);//
                         cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);//
                         cmd.Parameters.AddWithValue("@id_boleta", this.IdSerie);//
@@ -262,7 +262,6 @@ namespace LOSA.RecepcionMP
 
         private void PrintingSystem_StartPrint(object sender, DevExpress.XtraPrinting.PrintDocumentEventArgs e)
         {
-            //Indica el numero de copias de la boleta que seran impresas
             e.PrintDocument.PrinterSettings.Copies = 1;
         }
 
@@ -322,7 +321,6 @@ namespace LOSA.RecepcionMP
                     txtCodigoMP.Text = frm.ItemCode;
                     LoadDatosBoleta(IdSerie);
                 }
-                //
                 txtoc.Text = frm.OC;
                 txtfactura.Text = frm.Factura;
                 this.peso_boleta = frm.Peso_Bascula;
