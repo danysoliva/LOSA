@@ -115,9 +115,9 @@ namespace LOSA.Calidad
                     if (LoteActual.Recuperado)
                     {
                         if (TotalMP_kg > 0)
-                            txtEficiencia.Text = string.Format("{0:###,##0.00 Kg}", ((LoteActual.Reproceso_kg + LoteActual.TotalKg) / TotalMP_kg)*100);
+                            txtEficiencia.Text = string.Format("{0:###,##0.00}", ((LoteActual.Reproceso_kg + LoteActual.TotalKg) / TotalMP_kg) *100);
                         else
-                            txtEficiencia.Text = string.Format("{0:###,##0.00 Kg}", 0);
+                            txtEficiencia.Text = string.Format("{0:###,##0.00}", 0);
                     }
                 }
             }
@@ -147,8 +147,8 @@ namespace LOSA.Calidad
             {
                 CajaDialogo.Error("Debe de especificar el lote que desea encontrar resultados.");
             }
-            load_data();
-            load_header(); 
+            load_data();//Detalle
+            load_header();
         }
 
         private void txtlote_KeyDown(object sender, KeyEventArgs e)
@@ -250,7 +250,7 @@ namespace LOSA.Calidad
             var gridView = (GridView)grd_data.FocusedView;
             var row = (dsCalidad.trazabilitadRow)gridView.GetFocusedDataRow();
 
-            frmTrazabilidadHaciaAdelanteByMP_Lot frm = new frmTrazabilidadHaciaAdelanteByMP_Lot(row.lote_mp);
+            frmTrazabilidadHaciaAdelanteByMP_Lot frm = new frmTrazabilidadHaciaAdelanteByMP_Lot(row.lote_mp, row.nombre_comercial);
             if (this.MdiParent != null)
                 frm.MdiParent = this.MdiParent;
             frm.WindowState = FormWindowState.Maximized;

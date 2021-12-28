@@ -203,7 +203,7 @@ namespace LOSA.Logistica
             
             var gridView = (GridView)gcLotes.FocusedView;
             var row = (dsMantoTrazabilidad.lista_lotes_mpRow)gridView.GetFocusedDataRow();
-            frmTrazabilidadHaciaAdelanteByMP_Lot frm = new frmTrazabilidadHaciaAdelanteByMP_Lot(row.Lot);
+            frmTrazabilidadHaciaAdelanteByMP_Lot frm = new frmTrazabilidadHaciaAdelanteByMP_Lot(row.Lot, row.Name);
             frm.StartPosition = FormStartPosition.CenterScreen;
             if (this.MdiParent != null)
                 frm.MdiParent = this.MdiParent;

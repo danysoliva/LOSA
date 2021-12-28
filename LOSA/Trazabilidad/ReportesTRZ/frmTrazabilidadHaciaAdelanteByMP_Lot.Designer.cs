@@ -65,6 +65,7 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             this.colFac_promix = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
+            this.lblMateriaPrimaName = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsReportesTRZ1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -387,11 +388,22 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             this.cmdHome.Text = "Home";
             this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
             // 
+            // lblMateriaPrimaName
+            // 
+            this.lblMateriaPrimaName.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMateriaPrimaName.Appearance.Options.UseFont = true;
+            this.lblMateriaPrimaName.Location = new System.Drawing.Point(76, 19);
+            this.lblMateriaPrimaName.Name = "lblMateriaPrimaName";
+            this.lblMateriaPrimaName.Size = new System.Drawing.Size(61, 21);
+            this.lblMateriaPrimaName.TabIndex = 47;
+            this.lblMateriaPrimaName.Text = "Lote MP";
+            // 
             // frmTrazabilidadHaciaAdelanteByMP_Lot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1135, 579);
+            this.Controls.Add(this.lblMateriaPrimaName);
             this.Controls.Add(this.cmdHome);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.gridControl2);
@@ -447,5 +459,6 @@ namespace LOSA.Trazabilidad.ReportesTRZ
         private DevExpress.XtraGrid.Columns.GridColumn colNumID;
         private DevExpress.XtraEditors.SimpleButton cmdHome;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnLinkBoletaView;
+        private DevExpress.XtraEditors.LabelControl lblMateriaPrimaName;
     }
 }

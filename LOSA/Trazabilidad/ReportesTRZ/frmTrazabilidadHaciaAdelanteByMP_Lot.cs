@@ -17,10 +17,11 @@ namespace LOSA.Trazabilidad.ReportesTRZ
 {
     public partial class frmTrazabilidadHaciaAdelanteByMP_Lot : DevExpress.XtraEditors.XtraForm
     {
-        public frmTrazabilidadHaciaAdelanteByMP_Lot(string pLoteMateriaPrima)
+        public frmTrazabilidadHaciaAdelanteByMP_Lot(string pLoteMateriaPrima, string NameMateriaPrima)
         {
             InitializeComponent();
             txtlote.Text = pLoteMateriaPrima;
+            lblMateriaPrimaName.Text = NameMateriaPrima;
             LoadLotesPT();                                                         
         }
 
