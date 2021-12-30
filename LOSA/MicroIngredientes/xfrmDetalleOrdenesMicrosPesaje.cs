@@ -354,7 +354,7 @@ namespace LOSA.MicroIngredientes
                         Selecionado = Selecionado + detalle.pesaje;
                     }
                 }
-                if (Selecionado != Totalreq)
+                if (Selecionado >= Totalreq)
                 {
                     frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, "Debe de seleccionar todas las materias primas.");
                     if (frm.ShowDialog() == DialogResult.Cancel)
