@@ -96,6 +96,14 @@ namespace LOSA.Calidad
                     dsCalidad.trazabilitad.Clear();
                     da.Fill(dsCalidad.trazabilitad);
                     cn.Close();
+                    if (dsCalidad.trazabilitad.Rows.Count == 0)
+                    {
+                        errorProvider1.SetError(txtlote, "Este lote aun no tiene materias primas utilizadas!");
+                    }
+                    else
+                    {
+                        errorProvider1.Clear();
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -147,7 +155,7 @@ namespace LOSA.Calidad
             {
                 CajaDialogo.Error("Debe de especificar el lote que desea encontrar resultados.");
             }
-            load_data();//Detalle
+            load_data();//Detalle de materias primas usadas en lote de PT
             load_header();
         }
 
