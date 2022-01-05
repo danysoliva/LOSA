@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsReportesInventario" targetNamespace="http://tempuri.org/dsReportesInventario.xsd" xmlns:mstns="http://tempuri.org/dsReportesInventario.xsd" xmlns="http://tempuri.org/dsReportesInventario.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsReportesInventario" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsReportesInventario" msprop:Generator_UserDSName="dsReportesInventario">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="BodegasProveedor" msprop:Generator_TableClassName="BodegasProveedorDataTable" msprop:Generator_TableVarName="tableBodegasProveedor" msprop:Generator_TablePropName="BodegasProveedor" msprop:Generator_RowDeletingName="BodegasProveedorRowDeleting" msprop:Generator_RowChangingName="BodegasProveedorRowChanging" msprop:Generator_RowEvHandlerName="BodegasProveedorRowChangeEventHandler" msprop:Generator_RowDeletedName="BodegasProveedorRowDeleted" msprop:Generator_UserTableName="BodegasProveedor" msprop:Generator_RowChangedName="BodegasProveedorRowChanged" msprop:Generator_RowEvArgName="BodegasProveedorRowChangeEvent" msprop:Generator_RowClassName="BodegasProveedorRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="bodega" msprop:Generator_ColumnVarNameInTable="columnbodega" msprop:Generator_ColumnPropNameInRow="bodega" msprop:Generator_ColumnPropNameInTable="bodegaColumn" msprop:Generator_UserColumnName="bodega" type="xs:string" minOccurs="0" />
+              <xs:element name="proveedor" msprop:Generator_ColumnVarNameInTable="columnproveedor" msprop:Generator_ColumnPropNameInRow="proveedor" msprop:Generator_ColumnPropNameInTable="proveedorColumn" msprop:Generator_UserColumnName="proveedor" type="xs:string" minOccurs="0" />
+              <xs:element name="unidades" msprop:Generator_ColumnVarNameInTable="columnunidades" msprop:Generator_ColumnPropNameInRow="unidades" msprop:Generator_ColumnPropNameInTable="unidadesColumn" msprop:Generator_UserColumnName="unidades" type="xs:int" minOccurs="0" />
+              <xs:element name="kg" msprop:Generator_ColumnVarNameInTable="columnkg" msprop:Generator_ColumnPropNameInRow="kg" msprop:Generator_ColumnPropNameInTable="kgColumn" msprop:Generator_UserColumnName="kg" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CantidadBodega" msprop:Generator_TableClassName="CantidadBodegaDataTable" msprop:Generator_TableVarName="tableCantidadBodega" msprop:Generator_TablePropName="CantidadBodega" msprop:Generator_RowDeletingName="CantidadBodegaRowDeleting" msprop:Generator_RowChangingName="CantidadBodegaRowChanging" msprop:Generator_RowEvHandlerName="CantidadBodegaRowChangeEventHandler" msprop:Generator_RowDeletedName="CantidadBodegaRowDeleted" msprop:Generator_UserTableName="CantidadBodega" msprop:Generator_RowChangedName="CantidadBodegaRowChanged" msprop:Generator_RowEvArgName="CantidadBodegaRowChangeEvent" msprop:Generator_RowClassName="CantidadBodegaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="bodega" msprop:Generator_ColumnVarNameInTable="columnbodega" msprop:Generator_ColumnPropNameInRow="bodega" msprop:Generator_ColumnPropNameInTable="bodegaColumn" msprop:Generator_UserColumnName="bodega" type="xs:string" minOccurs="0" />
+              <xs:element name="Unidades" msprop:Generator_ColumnVarNameInTable="columnUnidades" msprop:Generator_ColumnPropNameInRow="Unidades" msprop:Generator_ColumnPropNameInTable="UnidadesColumn" msprop:Generator_UserColumnName="Unidades" type="xs:string" minOccurs="0" />
+              <xs:element name="CantidadKg" msprop:Generator_ColumnVarNameInTable="columnCantidadKg" msprop:Generator_ColumnPropNameInRow="CantidadKg" msprop:Generator_ColumnPropNameInTable="CantidadKgColumn" msprop:Generator_UserColumnName="CantidadKg" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

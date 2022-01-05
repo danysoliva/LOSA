@@ -405,7 +405,7 @@ namespace LOSA.Liquidos
             }
             try
             {
-                string SQL = @"[dbo].[sp_set_insert_ingreso_liquidos]";
+                string SQL = @"[dbo].[sp_insert_into_the_tank_v2]";
                 SqlCommand cmd2 = new SqlCommand(SQL, transaction.Connection);
                 cmd2.Transaction = transaction;
                 cmd2.CommandType = CommandType.StoredProcedure;
@@ -417,6 +417,7 @@ namespace LOSA.Liquidos
                 cmd2.Parameters.AddWithValue("@date_ingreso", DateTime.Now);
                 cmd2.Parameters.AddWithValue("@lote", txtLote);
                 cmd2.Parameters.AddWithValue("@item_code", txtCodigoMP.Text);
+                cmd2.Parameters.AddWithValue("@id_user", UsuarioLogeado.Id);
                 cmd2.ExecuteNonQuery();
 
                 int vid_tarima = Default_value;
