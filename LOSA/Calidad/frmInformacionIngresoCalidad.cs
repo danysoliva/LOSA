@@ -38,11 +38,12 @@ namespace LOSA.Calidad
 
         DataOperations dp = new DataOperations();
         public rdEstadoTransporte(int id_ingreso_lote,
-                                    UserLogin Puser )
+                                  UserLogin Puser)
         {
             InitializeComponent();
             Id_ingreso = id_ingreso_lote;
             UsuarioLogeado = Puser;
+            //tabControl1.TabPages[4]
             load_data();
             load_data_ingreso();
             Load_cargas_nir();
@@ -51,6 +52,7 @@ namespace LOSA.Calidad
             load_especie();
             load_tipo();
             load_paises();
+            LoadLotesPT();
             if (ChCalidad)
             {
                 load_criterios_configurados();
@@ -72,6 +74,67 @@ namespace LOSA.Calidad
             }
         }
 
+        public rdEstadoTransporte(string pLoteMP,
+                                  UserLogin Puser)
+        {
+            InitializeComponent();
+            Id_ingreso = 0;
+            UsuarioLogeado = Puser;
+            //tabControl1.TabPages[4]
+            load_data(pLoteMP);
+            load_data_ingreso(pLoteMP);
+            Load_cargas_nir(pLoteMP);
+            Inicializar_data_logistica(pLoteMP);
+            load_zonas();
+            load_especie();
+            load_tipo();
+            load_paises();
+            LoadLotesPT();
+            if (ChCalidad)
+            {
+                load_criterios_configurados(pLoteMP);
+                Inicalizar_Archivo_configurados(pLoteMP);
+                get_imagen(pLoteMP);
+                load_empaque_estado_Mp(pLoteMP);
+                load_trasporte_estado_transporte(pLoteMP);
+                load_criterios_adicionales(pLoteMP);
+
+                if (full_pathImagen != "")
+                {
+                    pc_Mp.Image = ByteToImage(GetImgByte(full_pathImagen));
+                }
+            }
+            else
+            {
+                inicializar_criterios();
+                Inicalizar_Archivo();
+            }
+        }
+
+        private void LoadLotesPT()
+        {
+            //[sp_load_lotes_pt_trz_from_lote_mp] @lotemp
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_load_lotes_pt_trz_from_lote_mp", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lotemp", txtloteMP.Text);
+                dsReportesTRZ1.pt_list_trz.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsReportesTRZ1.pt_list_trz);
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
+
         public void load_criterios_adicionales()
         {
             string query = @"sp_load_trz_criterio_ingreso_calidad_adicionales";
@@ -80,6 +143,31 @@ namespace LOSA.Calidad
             SqlCommand cmd = new SqlCommand(query, cn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                grd_origenespecie.EditValue = dr.IsDBNull(0) ? (object)DBNull.Value : dr.GetInt32(0);
+                grd_tipo.EditValue = dr.IsDBNull(1) ? (object)DBNull.Value : dr.GetInt32(1);
+                spTipoporcentaje.EditValue = dr.IsDBNull(2) ? (object)DBNull.Value : dr.GetDecimal(2);
+                grd_pesca.EditValue = dr.IsDBNull(3) ? (object)DBNull.Value : dr.GetInt32(3);
+                txtPLantaSenasa.Text = dr.IsDBNull(4) ? "" : dr.GetString(4);
+                spsustentable.EditValue = dr.IsDBNull(5) ? (object)DBNull.Value : dr.GetDecimal(5);
+                grd_origen.EditValue = dr.IsDBNull(6) ? (object)DBNull.Value : dr.GetInt32(6);
+                hyfishsource.EditValue = dr.IsDBNull(7) ? "" : dr.GetString(7);
+                hyIUCN.EditValue = dr.IsDBNull(8) ? "" : dr.GetString(8);
+                txtusercalidad.Text = dr.IsDBNull(9) ? "" : dr.GetString(9);
+            }
+            dr.Close();
+        }
+
+        public void load_criterios_adicionales(string plotemp)
+        {
+            string query = @"sp_load_trz_criterio_ingreso_calidad_adicionales_by_lotemp";
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            cn.Open();
+            SqlCommand cmd = new SqlCommand(query, cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@_lotemp", plotemp);
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())
             {
@@ -119,6 +207,28 @@ namespace LOSA.Calidad
             dr.Close();
         }
 
+        public void load_empaque_estado_Mp(string lotemp)
+        {
+            string query = @"sp_load_trz_criterio_ingreso_empaque_by_lotemp";
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            cn.Open();
+            SqlCommand cmd = new SqlCommand(query, cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@_lotemp", lotemp);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+
+                rdEmpaque1.EditValue = dr.IsDBNull(1) ? true : dr.GetBoolean(1);
+                rdEmpaque2.EditValue = dr.IsDBNull(2) ? true : dr.GetBoolean(2);
+                rdEmpaque3.EditValue = dr.IsDBNull(3) ? true : dr.GetBoolean(3);
+                rdEmpaque4.EditValue = dr.IsDBNull(4) ? true : dr.GetBoolean(4);
+                rdEstadomp.EditValue = dr.IsDBNull(6) ? true : dr.GetBoolean(6);
+                txtObseracionesMP.Text = dr.IsDBNull(7) ? "" : dr.GetString(7);
+            }
+            dr.Close();
+        }
+
 
         public void load_trasporte_estado_transporte()
         {
@@ -128,6 +238,29 @@ namespace LOSA.Calidad
             SqlCommand cmd = new SqlCommand(query, cn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                rdTranporte1.EditValue = dr.IsDBNull(0) ? true : dr.GetBoolean(0);
+                rdTranporte2.EditValue = dr.IsDBNull(1) ? true : dr.GetBoolean(1);
+                rdTranporte3.EditValue = dr.IsDBNull(2) ? true : dr.GetBoolean(2);
+                rdTranporte4.EditValue = dr.IsDBNull(3) ? true : dr.GetBoolean(3);
+                txtmp1.Text = dr.IsDBNull(4) ? "" : dr.GetString(4);
+                txtmp2.Text = dr.IsDBNull(5) ? "" : dr.GetString(5);
+                txtmp3.Text = dr.IsDBNull(6) ? "" : dr.GetString(6);
+                txtobservacionTras.Text = dr.IsDBNull(7) ? "" : dr.GetString(7);
+            }
+            dr.Close();
+        }
+
+        public void load_trasporte_estado_transporte(string plotemp)
+        {
+            string query = @"sp_load_trz_criterio_ingreso_transporte_by_lotemp";
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            cn.Open();
+            SqlCommand cmd = new SqlCommand(query, cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@_lotemp", plotemp);
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())
             {
@@ -160,6 +293,24 @@ namespace LOSA.Calidad
             }
             dr.Close();
         }
+
+        public void get_imagen(string _lotemp)
+        {
+            string query = @"sp_get_imagen_of_ingreso_calidad_by_lotemp";
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            cn.Open();
+            SqlCommand cmd = new SqlCommand(query, cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@_lotemp", _lotemp);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                fileNameImagen = dr.GetString(0);
+                full_pathImagen = dr.GetString(1);
+            }
+            dr.Close();
+        }
+
         public void Inicalizar_Archivo_configurados()
         {
             try
@@ -174,16 +325,32 @@ namespace LOSA.Calidad
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dsMantenimientoC.adjuntos);
                 cn.Close();
-
-
             }
             catch (Exception ex)
             {
-
                 CajaDialogo.Error(ex.Message);
             }
+        }
 
-
+        public void Inicalizar_Archivo_configurados(string plotemp)
+        {
+            try
+            {
+                string query = @"sp_load_trz_documentos_ingreso_by_lote_mp";
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@_lotemp", plotemp);
+                dsMantenimientoC.adjuntos.Clear();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dsMantenimientoC.adjuntos);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
 
         public byte[] GetImgByte(string ftpFilePath)
@@ -225,15 +392,35 @@ namespace LOSA.Calidad
                 dsMantenimientoC.parametros.Clear();
                 da.Fill(dsMantenimientoC.parametros);
                 cn.Close();
-
             }
             catch (Exception ex)
             {
-
                 CajaDialogo.Error(ex.Message);
             }
-
         }
+
+        public void load_criterios_configurados(string plotemp)
+        {
+            string query = @"sp_load_trz_criterio_ingreso_respuesta_bylotemp";
+            try
+            {
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@_lotemp", plotemp);
+                cmd.Parameters.AddWithValue(@"@id_mp", id_materiaPrima);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                dsMantenimientoC.parametros.Clear();
+                da.Fill(dsMantenimientoC.parametros);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
         public void load_zonas()
         {
             string query = @"sp_load_zona_pesca_calidad";
@@ -328,16 +515,32 @@ namespace LOSA.Calidad
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dsMantenimientoC.logisticaInformacion);
                 cn.Close();
-
-
             }
             catch (Exception ex)
             {
 
                 CajaDialogo.Error(ex.Message);
             }
-
-
+        }
+        public void Inicializar_data_logistica(string plotemp)
+        {
+            try
+            {
+                string query = @"sp_obtener_datos_logistica_to_show_calidad_by_lote";
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue(@"@_lotemp", plotemp);
+                dsMantenimientoC.logisticaInformacion.Clear();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dsMantenimientoC.logisticaInformacion);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
 
         public void Inicalizar_Archivo() 
@@ -390,6 +593,29 @@ namespace LOSA.Calidad
             }
         }
 
+        public void Load_cargas_nir(string plotemp)
+        {
+            string query = @"sp_load_validaciones_del_nir_to_show_calidad_by_lote";
+            try
+            {
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue(@"@id_mp", id_materiaPrima);
+                cmd.Parameters.AddWithValue(@"@_lotemp", plotemp);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                dsMantenimientoC.show_nir.Clear();
+                da.Fill(dsMantenimientoC.show_nir);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
         public void inicializar_criterios()
         {
             string query = @"sp_load_inicializacion_de_criterios_calidad";
@@ -414,7 +640,6 @@ namespace LOSA.Calidad
         }
         public void load_data()
         {
-
             string query = @"sp_get_informacion_get_to_show_calidad";
             try
             {
@@ -449,17 +674,57 @@ namespace LOSA.Calidad
                 }
                 dr.Close();
                 cn.Close();
-
             }
             catch (Exception ex)
             {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
 
+        public void load_data(string pLotemp)
+        {
+            string query = @"sp_get_informacion_get_to_show_calidad_by_lotemp";
+            try
+            {
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@_lote", pLotemp);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    txtloteMP.Text = dr.IsDBNull(0) ? "" : dr.GetString(0);
+                    txtnombreMP.Text = dr.IsDBNull(1) ? "" : dr.GetString(1);
+                    txtboleta.Text = dr.IsDBNull(2) ? "" : dr.GetInt32(2).ToString();
+                    txtproveedor.Text = dr.IsDBNull(3) ? "" : dr.GetString(3);
+                    txtnumtraslado.Text = dr.IsDBNull(5) ? "" : dr.GetString(5);
+                    txtoc.Text = dr.IsDBNull(6) ? "" : dr.GetString(5).ToString();
+                    txtreferencia.Text = dr.IsDBNull(6) ? "" : dr.GetInt32(6).ToString();
+                    ChCalidad = dr.IsDBNull(7) ? false : dr.GetBoolean(7);
+                    code_sap = dr.IsDBNull(8) ? "" : dr.GetString(8);
+                    codigo = dr.IsDBNull(9) ? "" : dr.GetString(9);
+                    usercreadorIngreso = dr.IsDBNull(10) ? "" : dr.GetString(10);
+                    txtuserlogistica.Text = usercreadorIngreso;
+                    txtusercalidad.Text = UsuarioLogeado.NombreUser;
+                    txttransporte.Text = dr.IsDBNull(11) ? "" : dr.GetString(11);
+                    txttransportista.Text = dr.IsDBNull(12) ? "" : dr.GetString(12);
+                    phone = dr.IsDBNull(13) ? "" : dr.GetString(13);
+                    Direccion = dr.IsDBNull(14) ? "" : dr.GetString(14);
+                    txtTelefono.Text = phone;
+                    txtdireccion.Text = Direccion;
+                    txtFacturas.Text = dr.IsDBNull(15) ? "" : dr.GetString(15);
+                }
+                dr.Close();
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
                 CajaDialogo.Error(ex.Message);
             }
         }
         public void load_data_ingreso()
         {
-
             string query = @"sp_get_informacion_get_to_show_calidad_data_mp";
             try
             {
@@ -480,11 +745,38 @@ namespace LOSA.Calidad
                 }
                 dr.Close();
                 cn.Close();
-
             }
             catch (Exception ex)
             {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
 
+        public void load_data_ingreso(string pLotemp)
+        {
+            string query = @"sp_get_informacion_get_to_show_calidad_data_mp_by_lote";
+            try
+            {
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@_lotemp", pLotemp);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    dtproduccion.EditValue = dr.IsDBNull(0) ? DateTime.Now : dr.GetDateTime(0);
+                    dtvencimiento.EditValue = dr.IsDBNull(1) ? DateTime.Now : dr.GetDateTime(1);
+                    txtdiasvencimiento.Text = dr.IsDBNull(2) ? "0" : dr.GetInt32(2).ToString();
+                    txtingresada.Text = dr.IsDBNull(3) ? "" : dr.GetDecimal(3).ToString();
+                    txtinventarioActual.Text = dr.IsDBNull(4) ? "" : dr.GetDecimal(4).ToString();
+                    id_materiaPrima = dr.IsDBNull(5) ? 0 : dr.GetInt32(5);
+                }
+                dr.Close();
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
                 CajaDialogo.Error(ex.Message);
             }
         }
@@ -505,6 +797,7 @@ namespace LOSA.Calidad
 
         private void cmdHome_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
 

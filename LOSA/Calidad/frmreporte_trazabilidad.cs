@@ -259,7 +259,8 @@ namespace LOSA.Calidad
             var gridView = (GridView)grd_data.FocusedView;
             var row = (dsCalidad.trazabilitadRow)gridView.GetFocusedDataRow();
 
-            frmTrazabilidadHaciaAdelanteByMP_Lot frm = new frmTrazabilidadHaciaAdelanteByMP_Lot(row.lote_mp, row.nombre_comercial);
+            //frmTrazabilidadHaciaAdelanteByMP_Lot frm = new frmTrazabilidadHaciaAdelanteByMP_Lot(row.lote_mp, row.nombre_comercial);
+            rdEstadoTransporte frm = new rdEstadoTransporte(row.lote_mp, UsuarioLogeado);
             if (this.MdiParent != null)
                 frm.MdiParent = this.MdiParent;
             frm.WindowState = FormWindowState.Maximized;
