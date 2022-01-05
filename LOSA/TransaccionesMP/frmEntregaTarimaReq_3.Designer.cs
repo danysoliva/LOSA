@@ -80,6 +80,7 @@ namespace LOSA.TransaccionesMP
             this.colasignado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColSeleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colfecha = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtRequisicion.Properties)).BeginInit();
             this.panelNotificacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
@@ -228,7 +229,8 @@ namespace LOSA.TransaccionesMP
             this.colcantidad,
             this.colkg,
             this.coltm,
-            this.collote});
+            this.collote,
+            this.colfecha});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
@@ -247,7 +249,7 @@ namespace LOSA.TransaccionesMP
             this.colreq.Name = "colreq";
             this.colreq.OptionsColumn.AllowEdit = false;
             this.colreq.Visible = true;
-            this.colreq.VisibleIndex = 2;
+            this.colreq.VisibleIndex = 3;
             // 
             // colmp
             // 
@@ -256,7 +258,7 @@ namespace LOSA.TransaccionesMP
             this.colmp.Name = "colmp";
             this.colmp.OptionsColumn.AllowEdit = false;
             this.colmp.Visible = true;
-            this.colmp.VisibleIndex = 3;
+            this.colmp.VisibleIndex = 4;
             // 
             // colcantidad
             // 
@@ -265,7 +267,7 @@ namespace LOSA.TransaccionesMP
             this.colcantidad.Name = "colcantidad";
             this.colcantidad.OptionsColumn.AllowEdit = false;
             this.colcantidad.Visible = true;
-            this.colcantidad.VisibleIndex = 4;
+            this.colcantidad.VisibleIndex = 5;
             // 
             // colkg
             // 
@@ -274,7 +276,7 @@ namespace LOSA.TransaccionesMP
             this.colkg.Name = "colkg";
             this.colkg.OptionsColumn.AllowEdit = false;
             this.colkg.Visible = true;
-            this.colkg.VisibleIndex = 5;
+            this.colkg.VisibleIndex = 6;
             // 
             // coltm
             // 
@@ -292,7 +294,7 @@ namespace LOSA.TransaccionesMP
             this.collote.Name = "collote";
             this.collote.OptionsColumn.AllowEdit = false;
             this.collote.Visible = true;
-            this.collote.VisibleIndex = 1;
+            this.collote.VisibleIndex = 2;
             // 
             // gcTarima
             // 
@@ -727,6 +729,15 @@ namespace LOSA.TransaccionesMP
             this.cmdSeleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdSeleccionar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdSeleccionar_ButtonClick);
             // 
+            // colfecha
+            // 
+            this.colfecha.Caption = "Fecha entrega";
+            this.colfecha.FieldName = "fecha";
+            this.colfecha.Name = "colfecha";
+            this.colfecha.OptionsColumn.AllowEdit = false;
+            this.colfecha.Visible = true;
+            this.colfecha.VisibleIndex = 1;
+            // 
             // frmEntregaTarimaReq_3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -815,5 +826,6 @@ namespace LOSA.TransaccionesMP
         private DevExpress.XtraGrid.Columns.GridColumn colasignado;
         private DevExpress.XtraGrid.Columns.GridColumn ColSeleccionar;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdSeleccionar;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecha;
     }
 }

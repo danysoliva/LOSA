@@ -52,22 +52,24 @@
             this.colingresoagrupador = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCantidadSave = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFechaIngreso = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDiasParaVencer = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.cbMateriaPrima = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.materiaprimaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gvMateriaPrima = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colitemcode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colitemdescrip = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnguardar = new DevExpress.XtraEditors.SimpleButton();
             this.tggOperacion = new DevExpress.XtraEditors.ToggleSwitch();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.materiaprimaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecuento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbMateriaPrima.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.materiaprimaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMateriaPrima)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tggOperacion.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.materiaprimaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -156,7 +158,9 @@
             this.colloteagrupador,
             this.colingresoagrupador,
             this.colCantidadSave,
-            this.colcodigo});
+            this.colcodigo,
+            this.colFechaIngreso,
+            this.colDiasParaVencer});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.GroupCount = 2;
             this.grdv_data.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
@@ -186,7 +190,7 @@
             this.colingreso.FieldName = "ingreso";
             this.colingreso.Name = "colingreso";
             this.colingreso.Visible = true;
-            this.colingreso.VisibleIndex = 1;
+            this.colingreso.VisibleIndex = 2;
             this.colingreso.Width = 68;
             // 
             // collote_materia_prima
@@ -195,7 +199,7 @@
             this.collote_materia_prima.FieldName = "lote_materia_prima";
             this.collote_materia_prima.Name = "collote_materia_prima";
             this.collote_materia_prima.Visible = true;
-            this.collote_materia_prima.VisibleIndex = 2;
+            this.collote_materia_prima.VisibleIndex = 3;
             this.collote_materia_prima.Width = 68;
             // 
             // colitemcode1
@@ -211,7 +215,7 @@
             this.colmaterial.Name = "colmaterial";
             this.colmaterial.OptionsColumn.AllowEdit = false;
             this.colmaterial.Visible = true;
-            this.colmaterial.VisibleIndex = 3;
+            this.colmaterial.VisibleIndex = 4;
             this.colmaterial.Width = 68;
             // 
             // colcantidad
@@ -222,7 +226,7 @@
             this.colcantidad.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cantidad", "SUM={0:0.##}")});
             this.colcantidad.Visible = true;
-            this.colcantidad.VisibleIndex = 5;
+            this.colcantidad.VisibleIndex = 6;
             this.colcantidad.Width = 68;
             // 
             // coldescripcion
@@ -232,7 +236,7 @@
             this.coldescripcion.Name = "coldescripcion";
             this.coldescripcion.OptionsColumn.AllowEdit = false;
             this.coldescripcion.Visible = true;
-            this.coldescripcion.VisibleIndex = 4;
+            this.coldescripcion.VisibleIndex = 5;
             this.coldescripcion.Width = 68;
             // 
             // colfactor
@@ -253,7 +257,7 @@
             this.colEIngreso.FieldName = "EIngreso";
             this.colEIngreso.Name = "colEIngreso";
             this.colEIngreso.Visible = true;
-            this.colEIngreso.VisibleIndex = 7;
+            this.colEIngreso.VisibleIndex = 9;
             this.colEIngreso.Width = 60;
             // 
             // colELote
@@ -262,7 +266,7 @@
             this.colELote.FieldName = "ELote";
             this.colELote.Name = "colELote";
             this.colELote.Visible = true;
-            this.colELote.VisibleIndex = 8;
+            this.colELote.VisibleIndex = 10;
             this.colELote.Width = 60;
             // 
             // coleliminar
@@ -271,7 +275,7 @@
             this.coleliminar.FieldName = "eliminar";
             this.coleliminar.Name = "coleliminar";
             this.coleliminar.Visible = true;
-            this.coleliminar.VisibleIndex = 9;
+            this.coleliminar.VisibleIndex = 11;
             this.coleliminar.Width = 68;
             // 
             // colpesoTM2
@@ -287,7 +291,7 @@
             this.colpesoTM2.UnboundExpression = "[cantidad] * [factor]";
             this.colpesoTM2.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.colpesoTM2.Visible = true;
-            this.colpesoTM2.VisibleIndex = 6;
+            this.colpesoTM2.VisibleIndex = 7;
             this.colpesoTM2.Width = 92;
             // 
             // colloteagrupador
@@ -327,6 +331,22 @@
             this.colcodigo.Visible = true;
             this.colcodigo.VisibleIndex = 0;
             // 
+            // colFechaIngreso
+            // 
+            this.colFechaIngreso.FieldName = "FechaIngreso";
+            this.colFechaIngreso.Name = "colFechaIngreso";
+            this.colFechaIngreso.OptionsColumn.AllowEdit = false;
+            this.colFechaIngreso.Visible = true;
+            this.colFechaIngreso.VisibleIndex = 1;
+            // 
+            // colDiasParaVencer
+            // 
+            this.colDiasParaVencer.FieldName = "DiasParaVencer";
+            this.colDiasParaVencer.Name = "colDiasParaVencer";
+            this.colDiasParaVencer.OptionsColumn.AllowEdit = false;
+            this.colDiasParaVencer.Visible = true;
+            this.colDiasParaVencer.VisibleIndex = 8;
+            // 
             // labelControl2
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -358,11 +378,6 @@
             this.cbMateriaPrima.Size = new System.Drawing.Size(314, 32);
             this.cbMateriaPrima.TabIndex = 95;
             this.cbMateriaPrima.EditValueChanged += new System.EventHandler(this.cbMateriaPrima_EditValueChanged);
-            // 
-            // materiaprimaBindingSource
-            // 
-            this.materiaprimaBindingSource.DataMember = "materia_prima";
-            this.materiaprimaBindingSource.DataSource = this.dsRecuento;
             // 
             // gvMateriaPrima
             // 
@@ -444,6 +459,11 @@
             this.labelControl1.TabIndex = 99;
             this.labelControl1.Text = "Operacion:";
             // 
+            // materiaprimaBindingSource
+            // 
+            this.materiaprimaBindingSource.DataMember = "materia_prima";
+            this.materiaprimaBindingSource.DataSource = this.dsRecuento;
+            // 
             // frmRecuentoInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -465,9 +485,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dsRecuento)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbMateriaPrima.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.materiaprimaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMateriaPrima)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tggOperacion.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.materiaprimaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -484,7 +504,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gvMateriaPrima;
         private DevExpress.XtraGrid.Columns.GridColumn colitemcode;
         private DevExpress.XtraGrid.Columns.GridColumn colitemdescrip;
-        private dsRecuento dsRecuento;
         private DevExpress.XtraGrid.Columns.GridColumn colid;
         private DevExpress.XtraGrid.Columns.GridColumn colingreso;
         private DevExpress.XtraGrid.Columns.GridColumn collote_materia_prima;
@@ -497,7 +516,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colEIngreso;
         private DevExpress.XtraGrid.Columns.GridColumn colELote;
         private DevExpress.XtraGrid.Columns.GridColumn coleliminar;
-        private System.Windows.Forms.BindingSource materiaprimaBindingSource;
         private DevExpress.XtraEditors.SimpleButton btnguardar;
         private DevExpress.XtraGrid.Columns.GridColumn colpesoTM2;
         private DevExpress.XtraGrid.Columns.GridColumn colloteagrupador;
@@ -506,5 +524,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn colcodigo;
         private DevExpress.XtraEditors.ToggleSwitch tggOperacion;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private dsRecuento dsRecuento;
+        private DevExpress.XtraGrid.Columns.GridColumn colFechaIngreso;
+        private DevExpress.XtraGrid.Columns.GridColumn colDiasParaVencer;
+        private System.Windows.Forms.BindingSource materiaprimaBindingSource;
     }
 }
