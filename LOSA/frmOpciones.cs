@@ -482,6 +482,8 @@ namespace LOSA
         private void simpleButton5_Click(object sender, EventArgs e)
         {
             frmreporte_trazabilidad frm = new frmreporte_trazabilidad(UsuarioLogeado);
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 

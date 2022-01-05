@@ -43,6 +43,7 @@ namespace LOSA.Calidad
                     txtReprocesoKg.Text = string.Format("{0:###,##0.00 Kg}", ptProducido.Reproceso_kg);
                     txtTotalProducido.Text = string.Format("{0:###,##0.00 Kg}", ptProducido.Reproceso_kg + ptProducido.TotalKg);
                     txtPresentacion.Text = ptProducido.DescripcionPresentacion;
+                    txtCantidadBatch.Text = string.Format("{0:###,##0}", ptProducido.CantidadBatch);
                 }
 
                 string sql_h = @"[dbo].[RPT_PRD_Trazabilidad_header_lote]";
@@ -258,7 +259,8 @@ namespace LOSA.Calidad
             var gridView = (GridView)grd_data.FocusedView;
             var row = (dsCalidad.trazabilitadRow)gridView.GetFocusedDataRow();
 
-            frmTrazabilidadHaciaAdelanteByMP_Lot frm = new frmTrazabilidadHaciaAdelanteByMP_Lot(row.lote_mp, row.nombre_comercial);
+            //frmTrazabilidadHaciaAdelanteByMP_Lot frm = new frmTrazabilidadHaciaAdelanteByMP_Lot(row.lote_mp, row.nombre_comercial);
+            rdEstadoTransporte frm = new rdEstadoTransporte(row.lote_mp, UsuarioLogeado);
             if (this.MdiParent != null)
                 frm.MdiParent = this.MdiParent;
             frm.WindowState = FormWindowState.Maximized;

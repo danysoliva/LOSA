@@ -22,6 +22,7 @@ namespace LOSA.Clases
         public string CodigoProducto;
         public string DescripcionProducto;
         public string DescripcionPresentacion;
+        public int CantidadBatch;
         public decimal TotalKg;
         public int id_presentacion;
         public decimal FactorPresentacion;
@@ -38,7 +39,7 @@ namespace LOSA.Clases
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_detalle_sacos_producidos_por_pt", con);
+                SqlCommand cmd = new SqlCommand("sp_get_detalle_sacos_producidos_por_pt_v2", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@pt_lote", pLotePT);
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -55,6 +56,7 @@ namespace LOSA.Clases
                     FactorPresentacion = dr.GetDecimal(8);
                     Reproceso_kg = dr.GetDecimal(9);
                     Unidades = dr.GetDecimal(10);
+                    CantidadBatch = dr.GetInt32(11);
                     Recuperado = true;
                 }
                 dr.Close();
