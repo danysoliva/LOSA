@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>268</ApplicationRevision>
+    <ApplicationRevision>265</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -96,7 +96,7 @@
     </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>5A56FE5B36BF1139C0C28330C52B1468E1F78C88</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>11DBC92D92B4EB4A587EA378AD2A6CF4E83C0246</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -595,6 +595,7 @@
     <Compile Include="Clases\Globals.cs" />
     <Compile Include="Clases\IngresoMP.cs" />
     <Compile Include="Clases\ItemMP_Lote.cs" />
+    <Compile Include="Clases\Kardex.cs" />
     <Compile Include="Clases\LoteExterno.cs" />
     <Compile Include="Clases\LotePT.cs" />
     <Compile Include="Clases\MateriaPrima.cs" />
@@ -1696,6 +1697,20 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsReportes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\dsReportesInventario.cs">
+      <DependentUpon>dsReportesInventario.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\dsReportesInventario.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsReportesInventario.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmControlIngreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmControlIngreso.Designer.cs">
+      <DependentUpon>frmControlIngreso.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\frmexistenciaPT.cs">
       <SubType>Form</SubType>
@@ -2908,6 +2923,9 @@
     <EmbeddedResource Include="RecuentoInventario\frmRecuentoInventario.resx">
       <DependentUpon>frmRecuentoInventario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmControlIngreso.resx">
+      <DependentUpon>frmControlIngreso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmexistenciaPT.resx">
       <DependentUpon>frmexistenciaPT.cs</DependentUpon>
     </EmbeddedResource>
@@ -3318,6 +3336,17 @@
     <None Include="Reportes\dsReportes.xss">
       <DependentUpon>dsReportes.xsd</DependentUpon>
     </None>
+    <None Include="Reportes\dsReportesInventario.xsc">
+      <DependentUpon>dsReportesInventario.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\dsReportesInventario.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReportesInventario.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\dsReportesInventario.xss">
+      <DependentUpon>dsReportesInventario.xsd</DependentUpon>
+    </None>
     <None Include="Requisiciones\dSReportes.xsc">
       <DependentUpon>dSReportes.xsd</DependentUpon>
     </None>
@@ -3473,7 +3502,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 y x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

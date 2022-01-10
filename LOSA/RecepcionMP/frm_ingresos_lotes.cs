@@ -226,12 +226,13 @@ namespace LOSA.RecepcionMP
                 }
                 var gridView = (GridView)gridControl1.FocusedView;
                 var row = (dsRecepcionMPx.lista_tarimasRow)gridView.GetFocusedDataRow();
-                string query = @"sp_deshabilitar_tm_por_id";
+                string query = @"sp_deshabilitar_tm_por_id_v2";
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query,cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@idtm", row.id);
+                cmd.Parameters.AddWithValue("@id_user", UsuarioLogeado.Id);
                 cmd.ExecuteNonQuery();
                 CajaDialogo.Information("Se he eliminado correctamente la tarima.");  
                 LoadTarimas();

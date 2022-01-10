@@ -703,5 +703,11 @@ namespace LOSA
 
             frm.Show();
         }
+
+        private void simpleButton20_Click(object sender, EventArgs e)
+        {
+            frmControlIngreso frm = new frmControlIngreso();
+            frm.Show();
+        }
     }
 }
