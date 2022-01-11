@@ -72,7 +72,7 @@
   <PropertyGroup>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>LOSA_5_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>LOSA_3_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -91,10 +91,10 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>LOSA_5_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>LOSA_3_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>721EE6A6B7E89DDDCFECF29D82011935607FA2BA</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>9C4228B54F73D873737459CFC15B1930F74C26DC</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -1355,6 +1355,7 @@
     <None Include="Liquidos\dsLiquidos_.xss">
       <DependentUpon>dsLiquidos_.xsd</DependentUpon>
     </None>
+    <None Include="LOSA_3_TemporaryKey.pfx" />
     <None Include="LOSA_5_TemporaryKey.pfx" />
     <None Include="Nir\dsNir.xsc">
       <DependentUpon>dsNir.xsd</DependentUpon>

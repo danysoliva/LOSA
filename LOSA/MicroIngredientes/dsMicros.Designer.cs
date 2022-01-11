@@ -1616,6 +1616,10 @@ namespace LOSA.MicroIngredientes {
             
             private global::System.Data.DataColumn columnid_turno;
             
+            private global::System.Data.DataColumn columnpt_name;
+            
+            private global::System.Data.DataColumn columnbatch_real;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public plan_microshDataTable() {
@@ -1715,6 +1719,22 @@ namespace LOSA.MicroIngredientes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn pt_nameColumn {
+                get {
+                    return this.columnpt_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn batch_realColumn {
+                get {
+                    return this.columnbatch_real;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1750,7 +1770,7 @@ namespace LOSA.MicroIngredientes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public plan_microshRow Addplan_microshRow(int id_orden_encabezado, decimal total_kg, System.DateTime fecha, int cant_batch, int AMI_ID, int order_id, string order_code, int id_turno) {
+            public plan_microshRow Addplan_microshRow(int id_orden_encabezado, decimal total_kg, System.DateTime fecha, int cant_batch, int AMI_ID, int order_id, string order_code, int id_turno, string pt_name, int batch_real) {
                 plan_microshRow rowplan_microshRow = ((plan_microshRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_orden_encabezado,
@@ -1760,7 +1780,9 @@ namespace LOSA.MicroIngredientes {
                         AMI_ID,
                         order_id,
                         order_code,
-                        id_turno};
+                        id_turno,
+                        pt_name,
+                        batch_real};
                 rowplan_microshRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowplan_microshRow);
                 return rowplan_microshRow;
@@ -1791,6 +1813,8 @@ namespace LOSA.MicroIngredientes {
                 this.columnorder_id = base.Columns["order_id"];
                 this.columnorder_code = base.Columns["order_code"];
                 this.columnid_turno = base.Columns["id_turno"];
+                this.columnpt_name = base.Columns["pt_name"];
+                this.columnbatch_real = base.Columns["batch_real"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1812,6 +1836,10 @@ namespace LOSA.MicroIngredientes {
                 base.Columns.Add(this.columnorder_code);
                 this.columnid_turno = new global::System.Data.DataColumn("id_turno", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_turno);
+                this.columnpt_name = new global::System.Data.DataColumn("pt_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpt_name);
+                this.columnbatch_real = new global::System.Data.DataColumn("batch_real", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbatch_real);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4507,6 +4535,38 @@ namespace LOSA.MicroIngredientes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string pt_name {
+                get {
+                    if (this.Ispt_nameNull()) {
+                        return "";
+                    }
+                    else {
+                        return ((string)(this[this.tableplan_microsh.pt_nameColumn]));
+                    }
+                }
+                set {
+                    this[this.tableplan_microsh.pt_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int batch_real {
+                get {
+                    try {
+                        return ((int)(this[this.tableplan_microsh.batch_realColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'batch_real\' in table \'plan_microsh\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableplan_microsh.batch_realColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isid_orden_encabezadoNull() {
                 return this.IsNull(this.tableplan_microsh.id_orden_encabezadoColumn);
             }
@@ -4599,6 +4659,30 @@ namespace LOSA.MicroIngredientes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setid_turnoNull() {
                 this[this.tableplan_microsh.id_turnoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Ispt_nameNull() {
+                return this.IsNull(this.tableplan_microsh.pt_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setpt_nameNull() {
+                this[this.tableplan_microsh.pt_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isbatch_realNull() {
+                return this.IsNull(this.tableplan_microsh.batch_realColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setbatch_realNull() {
+                this[this.tableplan_microsh.batch_realColumn] = global::System.Convert.DBNull;
             }
         }
         

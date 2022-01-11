@@ -226,7 +226,7 @@
             this.gridColumn4.ColumnEdit = this.btnDetalle;
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 9;
+            this.gridColumn4.VisibleIndex = 8;
             this.gridColumn4.Width = 86;
             // 
             // btnDetalle
@@ -247,7 +247,7 @@
             this.gridColumn5.ColumnEdit = this.btnActivar;
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 10;
+            this.gridColumn5.VisibleIndex = 9;
             this.gridColumn5.Width = 55;
             // 
             // btnActivar
@@ -267,7 +267,7 @@
             this.gridColumn6.ColumnEdit = this.btnSuspender;
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 11;
+            this.gridColumn6.VisibleIndex = 10;
             this.gridColumn6.Width = 59;
             // 
             // btnSuspender
@@ -287,7 +287,7 @@
             this.gridColumn7.ColumnEdit = this.btnFinalizar;
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 12;
+            this.gridColumn7.VisibleIndex = 11;
             this.gridColumn7.Width = 57;
             // 
             // btnFinalizar
@@ -309,7 +309,7 @@
             this.gridColumn8.FieldName = "batch_real";
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 8;
+            this.gridColumn8.VisibleIndex = 12;
             this.gridColumn8.Width = 76;
             // 
             // btnSpin

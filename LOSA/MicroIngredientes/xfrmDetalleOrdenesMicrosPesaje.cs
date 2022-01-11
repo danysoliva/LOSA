@@ -75,7 +75,7 @@ namespace LOSA.MicroIngredientes
                 {
                     cnx.Open();
                     dsMicros.plan_microsh.Clear();
-                    SqlDataAdapter da = new SqlDataAdapter("[sp_get_detalle_orden_pesaje_micros_interfacev2]", cnx);
+                    SqlDataAdapter da = new SqlDataAdapter("[sp_get_detalle_orden_pesaje_micros_interfacev5]", cnx);
                     da.SelectCommand.CommandType = CommandType.StoredProcedure;
                     da.SelectCommand.Parameters.AddWithValue("@orden_id", SqlDbType.Int).Value = id;
                     da.Fill(dsMicros.plan_microsh);
@@ -460,6 +460,64 @@ namespace LOSA.MicroIngredientes
 
                 CajaDialogo.Error(ex.Message);
             }
+        }
+
+        private void btnSpin_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            //try
+            //{
+
+            //    //var gv = (GridView)gcDetalle.FocusedView;
+            //    var row = (dsMicros.plan_microshRow)gvDetalle.GetFocusedDataRow;
+
+            //    if (row._Cod__Estado != 70)
+            //    {
+            //        CajaDialogo.Error("Debe Activar la orden para planificar Batch(es)!");
+            //        return;
+            //    }
+
+
+
+            //    xfrmSpinBatchPlan frm = new xfrmSpinBatchPlan(row.id, row.Codigo_Orden);
+
+            //    if (frm.ShowDialog() == DialogResult.OK)
+            //    {
+            //        int batchDisponibles = 0;
+
+            //        batchDisponibles = row._Cant__Batch - row.batch_real;
+
+
+            //        if (frm.cantBatch <= batchDisponibles)
+            //        {
+            //            DataOperations dp = new DataOperations();
+
+            //            using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
+            //            {
+            //                cnx.Open();
+            //                SqlCommand cmd = new SqlCommand("sp_acumulador_batch_real", cnx);
+            //                cmd.CommandType = CommandType.StoredProcedure;
+
+            //                cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = row.id;
+            //                cmd.Parameters.AddWithValue("@batch_acumulado", SqlDbType.Int).Value = frm.cantBatch;
+
+            //                cmd.ExecuteNonQuery();
+            //                cnx.Close();
+
+            //                LoadData();
+            //            }
+            //        }
+            //        else
+            //        {
+            //            CajaDialogo.Error("DEDE DE PESAR UNA CANTIDAD MENOR O IGUAL A LA CANTIDAD DE BATCH DISPONIBLE");
+            //        }
+
+
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    CajaDialogo.Error(ex.Message);
+            //}
         }
     }
 }

@@ -65,6 +65,8 @@
               <xs:element name="order_id" msprop:Generator_ColumnVarNameInTable="columnorder_id" msprop:Generator_ColumnPropNameInRow="order_id" msprop:Generator_ColumnPropNameInTable="order_idColumn" msprop:Generator_UserColumnName="order_id" type="xs:int" minOccurs="0" />
               <xs:element name="order_code" msprop:Generator_ColumnVarNameInTable="columnorder_code" msprop:Generator_ColumnPropNameInRow="order_code" msprop:Generator_ColumnPropNameInTable="order_codeColumn" msprop:Generator_UserColumnName="order_code" type="xs:string" minOccurs="0" />
               <xs:element name="id_turno" msprop:Generator_ColumnVarNameInTable="columnid_turno" msprop:Generator_ColumnPropNameInRow="id_turno" msprop:Generator_ColumnPropNameInTable="id_turnoColumn" msprop:Generator_UserColumnName="id_turno" type="xs:int" minOccurs="0" />
+              <xs:element name="pt_name" msprop:nullValue="" msprop:Generator_ColumnPropNameInRow="pt_name" msprop:Generator_ColumnVarNameInTable="columnpt_name" msprop:Generator_ColumnPropNameInTable="pt_nameColumn" msprop:Generator_UserColumnName="pt_name" type="xs:string" minOccurs="0" />
+              <xs:element name="batch_real" msprop:Generator_ColumnVarNameInTable="columnbatch_real" msprop:Generator_ColumnPropNameInRow="batch_real" msprop:Generator_ColumnPropNameInTable="batch_realColumn" msprop:Generator_UserColumnName="batch_real" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
