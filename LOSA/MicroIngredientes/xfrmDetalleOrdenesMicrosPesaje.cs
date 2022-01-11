@@ -354,10 +354,10 @@ namespace LOSA.MicroIngredientes
                         Selecionado = Selecionado + detalle.pesaje;
                     }
                 }
-                if (Selecionado != Totalreq)
+                if (Selecionado < Totalreq)
                 {
                     frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, "Debe de seleccionar todas las materias primas.");
-                    if (frm.ShowDialog() == DialogResult.Cancel)
+                    if (frm.ShowDialog() == DialogResult.Cancel )
                     {
                         return;
                     }
@@ -448,7 +448,7 @@ namespace LOSA.MicroIngredientes
         {
             try
             {
-                var gridView = (GridView)gcDetalle.FocusedView;
+                var gridView = (GridView)grd_data.FocusedView;
                 var row = (dsMicros.plan_microsh_reportRow)gridView.GetFocusedDataRow();
                 xrptAlimentacionMicros rpt = new xrptAlimentacionMicros(row.AMI_ID, row.id_orden_encabezado);
                 rpt.ShowPrintMarginsWarning = false;

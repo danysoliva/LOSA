@@ -29,7 +29,6 @@ namespace LOSA.Calidad
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rdEstadoTransporte));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -138,22 +137,22 @@ namespace LOSA.Calidad
             this.panelControl13 = new DevExpress.XtraEditors.PanelControl();
             this.txtPLantaSenasa = new DevExpress.XtraEditors.TextEdit();
             this.grd_tipo = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.tipoingresoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tipoingresoBindingSource = new System.Windows.Forms.BindingSource();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grd_origen = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.paisesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.paisesBindingSource = new System.Windows.Forms.BindingSource();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grd_pesca = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.zonaPescaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.zonaPescaBindingSource = new System.Windows.Forms.BindingSource();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grd_origenespecie = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.origenespecieBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.origenespecieBindingSource = new System.Windows.Forms.BindingSource();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnombre = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -238,8 +237,15 @@ namespace LOSA.Calidad
             this.txtusercalidad = new DevExpress.XtraEditors.TextEdit();
             this.txtobservacionTras = new DevExpress.XtraEditors.MemoEdit();
             this.labelControl52 = new DevExpress.XtraEditors.LabelControl();
+            this.tabPageLotesPT = new System.Windows.Forms.TabPage();
+            this.labelControl31 = new DevExpress.XtraEditors.LabelControl();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.dsReportesTRZ1 = new LOSA.Trazabilidad.ReportesTRZ.dsReportesTRZ();
+            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colLotePT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProducto = new DevExpress.XtraGrid.Columns.GridColumn();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.xtraFolderBrowserDialog1 = new DevExpress.XtraEditors.XtraFolderBrowserDialog(this.components);
+            this.xtraFolderBrowserDialog1 = new DevExpress.XtraEditors.XtraFolderBrowserDialog();
             this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.txtFacturas = new DevExpress.XtraEditors.TextEdit();
@@ -349,6 +355,10 @@ namespace LOSA.Calidad
             ((System.ComponentModel.ISupportInitialize)(this.txtCoordinadorcalidad.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtusercalidad.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtobservacionTras.Properties)).BeginInit();
+            this.tabPageLotesPT.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsReportesTRZ1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFacturas.Properties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -374,11 +384,11 @@ namespace LOSA.Calidad
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(424, 12);
+            this.labelControl1.Location = new System.Drawing.Point(519, 8);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(501, 32);
+            this.labelControl1.Size = new System.Drawing.Size(247, 32);
             this.labelControl1.TabIndex = 8;
-            this.labelControl1.Text = "Informacion de Ingreso de la Materia Prima";
+            this.labelControl1.Text = "Informacion del LOTE";
             // 
             // labelControl2
             // 
@@ -1809,6 +1819,7 @@ namespace LOSA.Calidad
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPageLotesPT);
             this.tabControl1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 270);
             this.tabControl1.Name = "tabControl1";
@@ -2567,6 +2578,72 @@ namespace LOSA.Calidad
             this.labelControl52.TabIndex = 82;
             this.labelControl52.Text = "Observaciones:";
             // 
+            // tabPageLotesPT
+            // 
+            this.tabPageLotesPT.Controls.Add(this.labelControl31);
+            this.tabPageLotesPT.Controls.Add(this.gridControl1);
+            this.tabPageLotesPT.Location = new System.Drawing.Point(4, 30);
+            this.tabPageLotesPT.Name = "tabPageLotesPT";
+            this.tabPageLotesPT.Size = new System.Drawing.Size(1342, 651);
+            this.tabPageLotesPT.TabIndex = 4;
+            this.tabPageLotesPT.Text = "Lotes PT";
+            this.tabPageLotesPT.UseVisualStyleBackColor = true;
+            // 
+            // labelControl31
+            // 
+            this.labelControl31.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl31.Appearance.Options.UseFont = true;
+            this.labelControl31.Location = new System.Drawing.Point(8, 22);
+            this.labelControl31.Name = "labelControl31";
+            this.labelControl31.Size = new System.Drawing.Size(184, 21);
+            this.labelControl31.TabIndex = 42;
+            this.labelControl31.Text = "Lotes PT en que se utilizó";
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.gridControl1.DataMember = "pt_list_trz";
+            this.gridControl1.DataSource = this.dsReportesTRZ1;
+            this.gridControl1.Location = new System.Drawing.Point(8, 49);
+            this.gridControl1.MainView = this.gridView4;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(353, 594);
+            this.gridControl1.TabIndex = 1;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView4});
+            // 
+            // dsReportesTRZ1
+            // 
+            this.dsReportesTRZ1.DataSetName = "dsReportesTRZ";
+            this.dsReportesTRZ1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // gridView4
+            // 
+            this.gridView4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colLotePT,
+            this.colProducto});
+            this.gridView4.GridControl = this.gridControl1;
+            this.gridView4.Name = "gridView4";
+            // 
+            // colLotePT
+            // 
+            this.colLotePT.FieldName = "Lote PT";
+            this.colLotePT.Name = "colLotePT";
+            this.colLotePT.OptionsColumn.AllowEdit = false;
+            this.colLotePT.Visible = true;
+            this.colLotePT.VisibleIndex = 0;
+            this.colLotePT.Width = 140;
+            // 
+            // colProducto
+            // 
+            this.colProducto.FieldName = "Producto";
+            this.colProducto.Name = "colProducto";
+            this.colProducto.OptionsColumn.AllowEdit = false;
+            this.colProducto.Visible = true;
+            this.colProducto.VisibleIndex = 1;
+            this.colProducto.Width = 481;
+            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
@@ -2673,10 +2750,9 @@ namespace LOSA.Calidad
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.cmdHome);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "rdEstadoTransporte";
-            this.Text = "frmInformacionIngresoCalidad";
+            this.Text = "Información Lote";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.txtloteMP.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtnombreMP.Properties)).EndInit();
@@ -2786,6 +2862,11 @@ namespace LOSA.Calidad
             ((System.ComponentModel.ISupportInitialize)(this.txtCoordinadorcalidad.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtusercalidad.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtobservacionTras.Properties)).EndInit();
+            this.tabPageLotesPT.ResumeLayout(false);
+            this.tabPageLotesPT.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsReportesTRZ1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFacturas.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -2987,5 +3068,12 @@ namespace LOSA.Calidad
         private DevExpress.XtraEditors.TextEdit txtFacturas;
         private DevExpress.XtraEditors.SimpleButton btnOC;
         private DevExpress.XtraEditors.SimpleButton btnRecientes;
+        private System.Windows.Forms.TabPage tabPageLotesPT;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
+        private DevExpress.XtraGrid.Columns.GridColumn colLotePT;
+        private DevExpress.XtraGrid.Columns.GridColumn colProducto;
+        private DevExpress.XtraEditors.LabelControl labelControl31;
+        private Trazabilidad.ReportesTRZ.dsReportesTRZ dsReportesTRZ1;
     }
 }

@@ -71,7 +71,7 @@ namespace LOSA.MicroIngredientes
             //lblUnidades.Text = "Unidades sin asignar: " + pCant_batch.ToString("N2");
             Orden_h = id_orden_H;
             Fecha = fecha;
-         cantidadDisponible = total;
+            cantidadDisponible = total;
 
             unidadesDisponibles = Pbatch;
             totalUnidades = Pbatch;
@@ -193,11 +193,11 @@ namespace LOSA.MicroIngredientes
                     return;
                 }
 
-                if (cantidadDisponible!=0)
-                {
-                    CajaDialogo.Error("HAY TODAVIA PESO POR ASIGNAR");
-                    return;
-                }
+                //if (cantidadDisponible!=0)
+                //{
+                //    CajaDialogo.Error("HAY TODAVIA PESO POR ASIGNAR");
+                //    return;
+                //}
 
 
                 if (type == 1)
@@ -250,12 +250,12 @@ namespace LOSA.MicroIngredientes
                     SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS);
                     cnx.Open();
 
-                    transaction = cnx.BeginTransaction("SampleTransaction");
+                    //transaction = cnx.BeginTransaction("SampleTransaction");
 
                   
                         
 
-                            SqlCommand cmd = new SqlCommand("sp_insert_OP_Orden_pesaje_manual_batch_log", transaction.Connection);
+                            SqlCommand cmd = new SqlCommand("sp_insert_OP_Orden_pesaje_manual_batch_log",cnx);
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Transaction = transaction;
 
@@ -271,7 +271,7 @@ namespace LOSA.MicroIngredientes
 
                                     if (row.seleccion)
                                     {
-                                        SqlCommand cmd3 = new SqlCommand("sp_insert_OP_Orden_pesaje_manual_transaccion", transaction.Connection);
+                                        SqlCommand cmd3 = new SqlCommand("sp_insert_OP_Orden_pesaje_manual_transaccion", cnx);
                                         cmd3.CommandType = CommandType.StoredProcedure;
                                         cmd3.Transaction = transaction;
 
@@ -297,7 +297,7 @@ namespace LOSA.MicroIngredientes
 
                         
                     
-                    transaction.Commit();
+                    //transaction.Commit();
                     cnx.Close();
 
                     this.DialogResult = DialogResult.OK;
@@ -307,7 +307,7 @@ namespace LOSA.MicroIngredientes
             }
             catch (Exception ex)
             {
-                transaction.Rollback();
+                //transaction.Rollback();
                 CajaDialogo.Error(ex.Message);
             }
         }

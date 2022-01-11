@@ -104,12 +104,13 @@ namespace LOSA.RecepcionMP
                 }
                 var gridview = (GridView)grd_data.FocusedView;
                 var row = (dsingresos.loteRow)gridview.GetFocusedDataRow();
-                string query = @"sp_eliminar_lote_of_ingreso";
+                string query = @"sp_eliminar_lote_of_ingreso_v2";
                 SqlConnection CN = new SqlConnection(dp.ConnectionStringLOSA);
                 CN.Open();
                 SqlCommand cmd = new SqlCommand(query,CN);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_lote", row.id);
+                cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
 
                 cmd.ExecuteNonQuery();
                 CajaDialogo.Information("Ajuste Realizado");

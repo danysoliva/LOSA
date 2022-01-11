@@ -23,6 +23,7 @@ using LOSA.Despachos;
 using LOSA.Nir;
 using LOSA.Liquidos;
 using LOSA.AlmacenesExterno.Salida_Almacen;
+using LOSA.Trazabilidad.ReportesTRZ;
 
 namespace LOSA
 {
@@ -481,6 +482,8 @@ namespace LOSA
         private void simpleButton5_Click(object sender, EventArgs e)
         {
             frmreporte_trazabilidad frm = new frmreporte_trazabilidad(UsuarioLogeado);
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
@@ -689,6 +692,21 @@ namespace LOSA
         private void btn_rptubicaciones_Click(object sender, EventArgs e)
         {
             rptUbicaciones frm = new rptUbicaciones();
+            frm.Show();
+        }
+
+        private void simpleButton19_Click(object sender, EventArgs e)
+        {
+            frmTrazabilidadHaciaAdelanteByMP_Lot frm = new frmTrazabilidadHaciaAdelanteByMP_Lot();
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+
+            frm.Show();
+        }
+
+        private void simpleButton20_Click(object sender, EventArgs e)
+        {
+            frmControlIngreso frm = new frmControlIngreso();
             frm.Show();
         }
     }

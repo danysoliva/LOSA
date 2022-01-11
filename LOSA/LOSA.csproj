@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>238</ApplicationRevision>
+    <ApplicationRevision>265</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -72,7 +72,8 @@
   <PropertyGroup>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>LOSA_3_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -88,13 +89,14 @@
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>LOSA_3_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>9C4228B54F73D873737459CFC15B1930F74C26DC</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>11DBC92D92B4EB4A587EA378AD2A6CF4E83C0246</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -591,8 +593,11 @@
     <Compile Include="Clases\CajaDialogo.cs" />
     <Compile Include="Clases\DataOperations.cs" />
     <Compile Include="Clases\Globals.cs" />
+    <Compile Include="Clases\IngresoMP.cs" />
     <Compile Include="Clases\ItemMP_Lote.cs" />
+    <Compile Include="Clases\Kardex.cs" />
     <Compile Include="Clases\LoteExterno.cs" />
+    <Compile Include="Clases\LotePT.cs" />
     <Compile Include="Clases\MateriaPrima.cs" />
     <Compile Include="Clases\MicroIngrediente.cs" />
     <Compile Include="Clases\opcionAbrirVentanaTarima.cs" />
@@ -604,6 +609,7 @@
     <Compile Include="Clases\Security.cs" />
     <Compile Include="Clases\SeleccionLoteMPAuto.cs" />
     <Compile Include="Clases\SelectorFor.cs" />
+    <Compile Include="Clases\Tanque.cs" />
     <Compile Include="Clases\Tarima.cs" />
     <Compile Include="Clases\Teclado.cs" />
     <Compile Include="Clases\Ubicaciones.cs" />
@@ -821,6 +827,9 @@
       <DependentUpon>frmOpciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\GrupoUser.cs" />
+    <Compile Include="Liquidos\dsLiquidos_.cs">
+      <DependentUpon>dsLiquidos_.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Liquidos\dsLiquidos_.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -831,6 +840,12 @@
     </Compile>
     <Compile Include="Liquidos\frmIngresoCamion.Designer.cs">
       <DependentUpon>frmIngresoCamion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Liquidos\frmTarimasOFLiquidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Liquidos\frmTarimasOFLiquidos.Designer.cs">
+      <DependentUpon>frmTarimasOFLiquidos.cs</DependentUpon>
     </Compile>
     <Compile Include="Liquidos\frm_select_numero_liquidos.cs">
       <SubType>Form</SubType>
@@ -1355,8 +1370,6 @@
     <None Include="Liquidos\dsLiquidos_.xss">
       <DependentUpon>dsLiquidos_.xsd</DependentUpon>
     </None>
-    <None Include="LOSA_3_TemporaryKey.pfx" />
-    <None Include="LOSA_5_TemporaryKey.pfx" />
     <None Include="Nir\dsNir.xsc">
       <DependentUpon>dsNir.xsd</DependentUpon>
     </None>
@@ -1684,6 +1697,20 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsReportes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\dsReportesInventario.cs">
+      <DependentUpon>dsReportesInventario.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\dsReportesInventario.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsReportesInventario.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmControlIngreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmControlIngreso.Designer.cs">
+      <DependentUpon>frmControlIngreso.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\frmexistenciaPT.cs">
       <SubType>Form</SubType>
@@ -2177,6 +2204,12 @@
     <Compile Include="Trazabilidad\frmCRUD_PlantasPRV.Designer.cs">
       <DependentUpon>frmCRUD_PlantasPRV.cs</DependentUpon>
     </Compile>
+    <Compile Include="Trazabilidad\frmDetalleIngresoTRZ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trazabilidad\frmDetalleIngresoTRZ.Designer.cs">
+      <DependentUpon>frmDetalleIngresoTRZ.cs</DependentUpon>
+    </Compile>
     <Compile Include="Trazabilidad\frmMateriaPrimaHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2212,6 +2245,17 @@
     </Compile>
     <Compile Include="Trazabilidad\frmViewBasculaBoleta.Designer.cs">
       <DependentUpon>frmViewBasculaBoleta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trazabilidad\ReportesTRZ\dsReportesTRZ.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsReportesTRZ.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Trazabilidad\ReportesTRZ\frmTrazabilidadHaciaAdelanteByMP_Lot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trazabilidad\ReportesTRZ\frmTrazabilidadHaciaAdelanteByMP_Lot.Designer.cs">
+      <DependentUpon>frmTrazabilidadHaciaAdelanteByMP_Lot.cs</DependentUpon>
     </Compile>
     <Compile Include="Utileria\frmMensaje.cs">
       <SubType>Form</SubType>
@@ -2458,6 +2502,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frm_generar_despacho.resx">
       <DependentUpon>frm_generar_despacho.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frm_mostar_otros_detalles.resx">
       <DependentUpon>frm_mostar_otros_detalles.cs</DependentUpon>
@@ -2512,6 +2557,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Liquidos\frmIngresoCamion.resx">
       <DependentUpon>frmIngresoCamion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Liquidos\frmTarimasOFLiquidos.resx">
+      <DependentUpon>frmTarimasOFLiquidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Liquidos\frm_select_numero_liquidos.resx">
       <DependentUpon>frm_select_numero_liquidos.cs</DependentUpon>
@@ -2875,6 +2923,9 @@
     <EmbeddedResource Include="RecuentoInventario\frmRecuentoInventario.resx">
       <DependentUpon>frmRecuentoInventario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmControlIngreso.resx">
+      <DependentUpon>frmControlIngreso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmexistenciaPT.resx">
       <DependentUpon>frmexistenciaPT.cs</DependentUpon>
     </EmbeddedResource>
@@ -3103,6 +3154,9 @@
     <EmbeddedResource Include="Trazabilidad\frmCRUD_PlantasPRV.resx">
       <DependentUpon>frmCRUD_PlantasPRV.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Trazabilidad\frmDetalleIngresoTRZ.resx">
+      <DependentUpon>frmDetalleIngresoTRZ.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Trazabilidad\frmMateriaPrimaHome.resx">
       <DependentUpon>frmMateriaPrimaHome.cs</DependentUpon>
     </EmbeddedResource>
@@ -3120,6 +3174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Trazabilidad\frmViewBasculaBoleta.resx">
       <DependentUpon>frmViewBasculaBoleta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trazabilidad\ReportesTRZ\frmTrazabilidadHaciaAdelanteByMP_Lot.resx">
+      <DependentUpon>frmTrazabilidadHaciaAdelanteByMP_Lot.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Utileria\frmMensaje.resx">
       <DependentUpon>frmMensaje.cs</DependentUpon>
@@ -3279,6 +3336,17 @@
     <None Include="Reportes\dsReportes.xss">
       <DependentUpon>dsReportes.xsd</DependentUpon>
     </None>
+    <None Include="Reportes\dsReportesInventario.xsc">
+      <DependentUpon>dsReportesInventario.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\dsReportesInventario.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReportesInventario.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\dsReportesInventario.xss">
+      <DependentUpon>dsReportesInventario.xsd</DependentUpon>
+    </None>
     <None Include="Requisiciones\dSReportes.xsc">
       <DependentUpon>dSReportes.xsd</DependentUpon>
     </None>
@@ -3344,6 +3412,17 @@
     </None>
     <None Include="Trazabilidad\dsMantoTrazabilidad.xss">
       <DependentUpon>dsMantoTrazabilidad.xsd</DependentUpon>
+    </None>
+    <None Include="Trazabilidad\ReportesTRZ\dsReportesTRZ.xsc">
+      <DependentUpon>dsReportesTRZ.xsd</DependentUpon>
+    </None>
+    <None Include="Trazabilidad\ReportesTRZ\dsReportesTRZ.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReportesTRZ.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Trazabilidad\ReportesTRZ\dsReportesTRZ.xss">
+      <DependentUpon>dsReportesTRZ.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

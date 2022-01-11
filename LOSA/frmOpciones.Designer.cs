@@ -39,6 +39,7 @@
             this.TabLogistica = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.TabMP_Sacos = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton20 = new DevExpress.XtraEditors.SimpleButton();
             this.btnAjustesKardex = new DevExpress.XtraEditors.SimpleButton();
             this.cmdUbicaciones = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
@@ -77,6 +78,7 @@
             this.btnreportes = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
             this.TabCalidad = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton19 = new DevExpress.XtraEditors.SimpleButton();
             this.btnAut_Tm = new DevExpress.XtraEditors.SimpleButton();
             this.btnNitLecturas = new DevExpress.XtraEditors.SimpleButton();
             this.ManteIngresos = new DevExpress.XtraEditors.SimpleButton();
@@ -274,6 +276,7 @@
             // 
             this.TabMP_Sacos.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TabMP_Sacos.Appearance.Header.Options.UseFont = true;
+            this.TabMP_Sacos.Controls.Add(this.simpleButton20);
             this.TabMP_Sacos.Controls.Add(this.btnAjustesKardex);
             this.TabMP_Sacos.Controls.Add(this.cmdUbicaciones);
             this.TabMP_Sacos.Controls.Add(this.simpleButton3);
@@ -290,6 +293,19 @@
             this.TabMP_Sacos.Name = "TabMP_Sacos";
             this.TabMP_Sacos.Size = new System.Drawing.Size(766, 409);
             this.TabMP_Sacos.Text = "MP en Sacos";
+            // 
+            // simpleButton20
+            // 
+            this.simpleButton20.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.simpleButton20.Appearance.Options.UseFont = true;
+            this.simpleButton20.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton20.ImageOptions.Image = global::LOSA.Properties.Resources.boxPT32px;
+            this.simpleButton20.Location = new System.Drawing.Point(2, 302);
+            this.simpleButton20.Name = "simpleButton20";
+            this.simpleButton20.Size = new System.Drawing.Size(199, 42);
+            this.simpleButton20.TabIndex = 43;
+            this.simpleButton20.Text = "Control de Ingreso";
+            this.simpleButton20.Click += new System.EventHandler(this.simpleButton20_Click);
             // 
             // btnAjustesKardex
             // 
@@ -797,6 +813,7 @@
             // 
             // TabCalidad
             // 
+            this.TabCalidad.Controls.Add(this.simpleButton19);
             this.TabCalidad.Controls.Add(this.btnAut_Tm);
             this.TabCalidad.Controls.Add(this.btnNitLecturas);
             this.TabCalidad.Controls.Add(this.ManteIngresos);
@@ -812,6 +829,19 @@
             this.TabCalidad.PageVisible = false;
             this.TabCalidad.Size = new System.Drawing.Size(772, 441);
             this.TabCalidad.Text = "Calidad";
+            // 
+            // simpleButton19
+            // 
+            this.simpleButton19.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton19.Appearance.Options.UseFont = true;
+            this.simpleButton19.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton19.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton19.ImageOptions.Image")));
+            this.simpleButton19.Location = new System.Drawing.Point(435, 177);
+            this.simpleButton19.Name = "simpleButton19";
+            this.simpleButton19.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton19.TabIndex = 22;
+            this.simpleButton19.Text = "Trazabilidad \r\nde lote MP";
+            this.simpleButton19.Click += new System.EventHandler(this.simpleButton19_Click);
             // 
             // btnAut_Tm
             // 
@@ -917,7 +947,7 @@
             this.simpleButton5.Name = "simpleButton5";
             this.simpleButton5.Size = new System.Drawing.Size(199, 71);
             this.simpleButton5.TabIndex = 14;
-            this.simpleButton5.Text = "Trazabilidad \r\nde lote";
+            this.simpleButton5.Text = "Trazabilidad \r\nde lote PT";
             this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
             // 
             // simpleButton4
@@ -1303,5 +1333,7 @@
         private DevExpress.XtraEditors.SimpleButton btnLoteActivoGranel;
         private DevExpress.XtraEditors.SimpleButton btnImprimirTm;
         private DevExpress.XtraEditors.SimpleButton btn_rptubicaciones;
+        private DevExpress.XtraEditors.SimpleButton simpleButton19;
+        private DevExpress.XtraEditors.SimpleButton simpleButton20;
     }
 }

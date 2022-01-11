@@ -52,6 +52,7 @@ namespace LOSA.PlanMPreque
 
         private void btnVer_Click(object sender, EventArgs e)
         {
+            
             //boton ver
             var gridView = (GridView)grOrdenFabricacion.FocusedView;
             var row = (dsTransaccionesMP.Plan_requicionesRow)gridView.GetFocusedDataRow();
