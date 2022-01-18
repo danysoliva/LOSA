@@ -464,60 +464,116 @@ namespace LOSA.MicroIngredientes
 
         private void btnSpin_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            //try
-            //{
+            try
+            {
 
-            //    //var gv = (GridView)gcDetalle.FocusedView;
-            //    var row = (dsMicros.plan_microshRow)gvDetalle.GetFocusedDataRow;
+                //var gv = (GridView)gvDetalle.FocusedView;
+                var row = (dsMicros.plan_microshRow)gvDetalle.GetFocusedDataRow();
 
-            //    if (row._Cod__Estado != 70)
-            //    {
-            //        CajaDialogo.Error("Debe Activar la orden para planificar Batch(es)!");
-            //        return;
-            //    }
-
-
-
-            //    xfrmSpinBatchPlan frm = new xfrmSpinBatchPlan(row.id, row.Codigo_Orden);
-
-            //    if (frm.ShowDialog() == DialogResult.OK)
-            //    {
-            //        int batchDisponibles = 0;
-
-            //        batchDisponibles = row._Cant__Batch - row.batch_real;
+                //if (row._Cod__Estado != 70)
+                //{
+                //    CajaDialogo.Error("Debe Activar la orden para planificar Batch(es)!");
+                //    return;
+                //}
 
 
-            //        if (frm.cantBatch <= batchDisponibles)
-            //        {
-            //            DataOperations dp = new DataOperations();
 
-            //            using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
-            //            {
-            //                cnx.Open();
-            //                SqlCommand cmd = new SqlCommand("sp_acumulador_batch_real", cnx);
-            //                cmd.CommandType = CommandType.StoredProcedure;
+                xfrmSpinBatchPlan frm = new xfrmSpinBatchPlan(row.id_orden_encabezado, row.order_code);
 
-            //                cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = row.id;
-            //                cmd.Parameters.AddWithValue("@batch_acumulado", SqlDbType.Int).Value = frm.cantBatch;
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    int batchDisponibles = 0;
 
-            //                cmd.ExecuteNonQuery();
-            //                cnx.Close();
-
-            //                LoadData();
-            //            }
-            //        }
-            //        else
-            //        {
-            //            CajaDialogo.Error("DEDE DE PESAR UNA CANTIDAD MENOR O IGUAL A LA CANTIDAD DE BATCH DISPONIBLE");
-            //        }
+                    batchDisponibles = row.cant_batch - row.batch_real;
 
 
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    CajaDialogo.Error(ex.Message);
-            //}
+                    if (frm.cantBatch <= batchDisponibles)
+                    {
+                        DataOperations dp = new DataOperations();
+
+                        using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
+                        {
+                            cnx.Open();
+                            SqlCommand cmd = new SqlCommand("sp_acumulador_batch_real", cnx);
+                            cmd.CommandType = CommandType.StoredProcedure;
+
+                            cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = row.id_orden_encabezado;
+                            cmd.Parameters.AddWithValue("@batch_acumulado", SqlDbType.Int).Value = frm.cantBatch;
+
+                            cmd.ExecuteNonQuery();
+                            cnx.Close();
+
+                            LoadData();
+                        }
+                    }
+                    else
+                    {
+                        CajaDialogo.Error("DEDE DE PESAR UNA CANTIDAD MENOR O IGUAL A LA CANTIDAD DE BATCH DISPONIBLE");
+                    }
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+
+        }
+
+        private void btnConfiguracion_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var row = (dsMicros.plan_microshRow)gvDetalle.GetFocusedDataRow();
+                DataOperations dp = new DataOperations();
+                OrdenH_Info orderH = new OrdenH_Info();
+                //int idPesajeOrden = row.id_orden_encabezado;
+                //Boolean existeOrdenPesaje = false;
+                Boolean ExisteConfPesajeManual;
+
+                //if (orderH.RecuperaRegistro(idPesajeOrden))
+                //{
+                //    //existeOrdenPesaje = true;
+                //}
+
+                if (row==null)
+                {
+                    CajaDialogo.Error("DEBE SELECCIONAR LA ORDEN ACTIVA");
+                    return;
+                }
+
+                using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
+                {
+                    cnx.Open();
+
+                    SqlCommand cmd = new SqlCommand("dbo.sp_validate_OP_Conf_PesajeIndividual", cnx);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@id_orden", SqlDbType.Int).Value = row.id_orden_encabezado;
+
+                    ExisteConfPesajeManual = Convert.ToBoolean(cmd.ExecuteScalar());
+
+                    cnx.Close();
+                }
+
+
+                if (ExisteConfPesajeManual == false)
+                {
+
+                    xfrmAsistentePesajeV2 frm = new xfrmAsistentePesajeV2(row.order_id, row.id_orden_encabezado, row.cant_batch);
+
+                    frm.Show();
+                }
+                else
+                {
+                    CajaDialogo.Error("YA EXISTE UNA CONFIGURACION PARA ESTA ORDEN");
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
     }
 }

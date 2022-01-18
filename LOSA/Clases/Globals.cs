@@ -86,9 +86,9 @@ namespace ACS.Classes
         public static string APMS_DB_Pass = "AquaF33dHN2017";
         public static string APMS_ActiveDB = "APMS";
 
-        //public static string APMS_Server = @"6XJ7QD2-PC";
+        //public static string APMS_Server = @"AQFSVR007\AQFSVR007";
         //public static string APMS_DB_User = "sa";
-        //public static string APMS_DB_Pass = "Marathon00";
+        //public static string APMS_DB_Pass = "AquaF33dHN2014";
         //public static string APMS_ActiveDB = "APMS";
 
         //ODOO

@@ -118,9 +118,9 @@ namespace LOSA.MicroIngredientes
 
                 //var row2 = row;
                 DataOperations dp = new DataOperations();
-                Boolean ExisteConfPesajeManual;
-                Boolean existeOrdenPesaje=false;
-                int idPesajeOrden = row.id;
+                //Boolean ExisteConfPesajeManual;
+                //Boolean existeOrdenPesaje=false;
+                //int idPesajeOrden = row.id;
 
 
                 CambiarEstado(1, row);
@@ -131,10 +131,10 @@ namespace LOSA.MicroIngredientes
                     return;
                 }
 
-                if (orderH.RecuperaRegistro(idPesajeOrden))
-                {
-                    existeOrdenPesaje = true;
-                }
+                //if (orderH.RecuperaRegistro(idPesajeOrden))
+                //{
+                //    existeOrdenPesaje = true;
+                //}
 
 
                 //row2.estado = "70";
@@ -146,54 +146,54 @@ namespace LOSA.MicroIngredientes
                 //row = (dsMicros.MicrosRow)gv.GetFocusedDataRow();
 
 
-                if (existeOrdenPesaje==true)
-                {
-
-
-                using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
-                {
-                    cnx.Open();
-
-                    SqlCommand cmd = new SqlCommand("dbo.sp_validate_OP_Conf_PesajeIndividual",cnx);
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.Parameters.Add("@id_orden", SqlDbType.Int).Value = orderH.ID;
-
-                     ExisteConfPesajeManual = Convert.ToBoolean( cmd.ExecuteScalar());
-
-                    cnx.Close();
-                }
-
-                //if (row2 != null)  )
+                //if (existeOrdenPesaje==true)
                 //{
 
-                    if (orderH.BatchReal == 0 && orderH.CodeState == 70)
-                    {
-                        if (ExisteConfPesajeManual == false)
-                        {
 
-                            xfrmAsistentePesaje frm = new xfrmAsistentePesaje(orderH.Order_ID, orderH.ID, orderH.Cant_Batch);
+                ////using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
+                ////{
+                ////    cnx.Open();
+
+                ////    SqlCommand cmd = new SqlCommand("dbo.sp_validate_OP_Conf_PesajeIndividual",cnx);
+                ////    cmd.CommandType = CommandType.StoredProcedure;
+
+                ////    cmd.Parameters.Add("@id_orden", SqlDbType.Int).Value = orderH.ID;
+
+                ////     ExisteConfPesajeManual = Convert.ToBoolean( cmd.ExecuteScalar());
+
+                ////    cnx.Close();
+                ////}
+
+                ////if (row2 != null)  )
+                ////{
+
+                //    if (orderH.BatchReal == 0 && orderH.CodeState == 70)
+                //    {
+                //        if (ExisteConfPesajeManual == false)
+                //        {
+
+                //            xfrmAsistentePesaje frm = new xfrmAsistentePesaje(orderH.Order_ID, orderH.ID, orderH.Cant_Batch);
 
 
-                            frm.Show();
-                            //if (frm.ShowDialog()== DialogResult.OK )
-                            //{
-                            //    LoadData();
+                //            frm.Show();
+                //            //if (frm.ShowDialog()== DialogResult.OK )
+                //            //{
+                //            //    LoadData();
 
-                            //} 
+                //            //} 
 
-                        }
-                    }
-                    else
-                    if (orderH.CodeState == 80)
-                    {
-                        CajaDialogo.Error("Orden ya esta finalizada");
-                        return;
-                    }
+                //        }
+                //    }
+                //    else
+                //    if (orderH.CodeState == 80)
+                //    {
+                //        CajaDialogo.Error("Orden ya esta finalizada");
+                //        return;
+                //    }
+
+                ////}
 
                 //}
-
-                }
 
 
             }

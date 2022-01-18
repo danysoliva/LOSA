@@ -57,7 +57,7 @@
         <xs:element name="plan_microsh" msprop:Generator_TableClassName="plan_microshDataTable" msprop:Generator_TableVarName="tableplan_microsh" msprop:Generator_TablePropName="plan_microsh" msprop:Generator_RowDeletingName="plan_microshRowDeleting" msprop:Generator_RowChangingName="plan_microshRowChanging" msprop:Generator_RowEvHandlerName="plan_microshRowChangeEventHandler" msprop:Generator_RowDeletedName="plan_microshRowDeleted" msprop:Generator_UserTableName="plan_microsh" msprop:Generator_RowChangedName="plan_microshRowChanged" msprop:Generator_RowEvArgName="plan_microshRowChangeEvent" msprop:Generator_RowClassName="plan_microshRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id_orden_encabezado" msprop:Generator_ColumnVarNameInTable="columnid_orden_encabezado" msprop:Generator_ColumnPropNameInRow="id_orden_encabezado" msprop:Generator_ColumnPropNameInTable="id_orden_encabezadoColumn" msprop:Generator_UserColumnName="id_orden_encabezado" type="xs:int" minOccurs="0" />
+              <xs:element name="id_orden_encabezado" msprop:nullValue="0" msprop:Generator_ColumnPropNameInRow="id_orden_encabezado" msprop:Generator_ColumnVarNameInTable="columnid_orden_encabezado" msprop:Generator_ColumnPropNameInTable="id_orden_encabezadoColumn" msprop:Generator_UserColumnName="id_orden_encabezado" type="xs:int" default="0" minOccurs="0" />
               <xs:element name="total_kg" msprop:Generator_ColumnVarNameInTable="columntotal_kg" msprop:Generator_ColumnPropNameInRow="total_kg" msprop:Generator_ColumnPropNameInTable="total_kgColumn" msprop:Generator_UserColumnName="total_kg" type="xs:decimal" minOccurs="0" />
               <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" minOccurs="0" />
               <xs:element name="cant_batch" msprop:Generator_ColumnVarNameInTable="columncant_batch" msprop:Generator_ColumnPropNameInRow="cant_batch" msprop:Generator_ColumnPropNameInTable="cant_batchColumn" msprop:Generator_UserColumnName="cant_batch" type="xs:int" minOccurs="0" />
@@ -135,6 +135,15 @@
               <xs:element name="batch_completados" msprop:Generator_ColumnVarNameInTable="columnbatch_completados" msprop:Generator_ColumnPropNameInRow="batch_completados" msprop:Generator_ColumnPropNameInTable="batch_completadosColumn" msprop:Generator_UserColumnName="batch_completados" type="xs:int" minOccurs="0" />
               <xs:element name="id_pesaje" msprop:Generator_ColumnVarNameInTable="columnid_pesaje" msprop:Generator_ColumnPropNameInRow="id_pesaje" msprop:Generator_ColumnPropNameInTable="id_pesajeColumn" msprop:Generator_UserColumnName="id_pesaje" type="xs:int" minOccurs="0" />
               <xs:element name="batch_a_pesar" msprop:nullValue="0" msprop:Generator_ColumnPropNameInRow="batch_a_pesar" msprop:Generator_ColumnVarNameInTable="columnbatch_a_pesar" msprop:Generator_ColumnPropNameInTable="batch_a_pesarColumn" msprop:Generator_UserColumnName="batch_a_pesar" type="xs:int" minOccurs="0" />
+              <xs:element name="id_tipo_pesaje" msprop:nullValue="0" msprop:Generator_ColumnPropNameInRow="id_tipo_pesaje" msprop:Generator_ColumnVarNameInTable="columnid_tipo_pesaje" msprop:Generator_ColumnPropNameInTable="id_tipo_pesajeColumn" msprop:Generator_UserColumnName="id_tipo_pesaje" type="xs:int" default="0" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tipo_pesaje" msprop:Generator_TableClassName="tipo_pesajeDataTable" msprop:Generator_TableVarName="tabletipo_pesaje" msprop:Generator_TablePropName="tipo_pesaje" msprop:Generator_RowDeletingName="tipo_pesajeRowDeleting" msprop:Generator_RowChangingName="tipo_pesajeRowChanging" msprop:Generator_RowEvHandlerName="tipo_pesajeRowChangeEventHandler" msprop:Generator_RowDeletedName="tipo_pesajeRowDeleted" msprop:Generator_UserTableName="tipo_pesaje" msprop:Generator_RowChangedName="tipo_pesajeRowChanged" msprop:Generator_RowEvArgName="tipo_pesajeRowChangeEvent" msprop:Generator_RowClassName="tipo_pesajeRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

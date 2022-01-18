@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -55,7 +56,7 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gcMicros = new DevExpress.XtraGrid.GridControl();
-            this.microsBindingSource = new System.Windows.Forms.BindingSource();
+            this.microsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsMicros = new LOSA.MicroIngredientes.dsMicros();
             this.gvMicros = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -308,8 +309,6 @@
             this.gridColumn8.ColumnEdit = this.btnSpin;
             this.gridColumn8.FieldName = "batch_real";
             this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 12;
             this.gridColumn8.Width = 76;
             // 
             // btnSpin

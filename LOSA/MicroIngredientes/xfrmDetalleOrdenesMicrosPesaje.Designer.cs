@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmDetalleOrdenesMicrosPesaje));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -88,13 +89,13 @@
             this.btnPrint = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colTurno = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LookUpTurno = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.turnoBindingSource = new System.Windows.Forms.BindingSource();
+            this.turnoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnSpin = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.repositoryItemSpinEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.detalleOrdenesMicroBindingSource = new System.Windows.Forms.BindingSource();
+            this.detalleOrdenesMicroBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblTitulo = new DevExpress.XtraEditors.LabelControl();
             this.cmdUpdate = new DevExpress.XtraEditors.SimpleButton();
             this.cmdClose = new DevExpress.XtraEditors.SimpleButton();
@@ -148,6 +149,7 @@
             this.LookTurno = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.colreprint = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btn_reprint = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.btnConfiguracion = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gcDetalle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMicros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDetalle)).BeginInit();
@@ -262,7 +264,7 @@
             this.coltotal_kg.Name = "coltotal_kg";
             this.coltotal_kg.OptionsColumn.AllowEdit = false;
             this.coltotal_kg.Visible = true;
-            this.coltotal_kg.VisibleIndex = 5;
+            this.coltotal_kg.VisibleIndex = 6;
             this.coltotal_kg.Width = 111;
             // 
             // colfecha
@@ -272,7 +274,7 @@
             this.colfecha.Name = "colfecha";
             this.colfecha.OptionsColumn.AllowEdit = false;
             this.colfecha.Visible = true;
-            this.colfecha.VisibleIndex = 6;
+            this.colfecha.VisibleIndex = 7;
             this.colfecha.Width = 109;
             // 
             // colcant_batch
@@ -336,7 +338,7 @@
             this.Colprint.ColumnEdit = this.btnPrint;
             this.Colprint.Name = "Colprint";
             this.Colprint.Visible = true;
-            this.Colprint.VisibleIndex = 8;
+            this.Colprint.VisibleIndex = 9;
             this.Colprint.Width = 123;
             // 
             // btnPrint
@@ -356,7 +358,7 @@
             this.colTurno.FieldName = "id_turno";
             this.colTurno.Name = "colTurno";
             this.colTurno.Visible = true;
-            this.colTurno.VisibleIndex = 7;
+            this.colTurno.VisibleIndex = 8;
             this.colTurno.Width = 205;
             // 
             // LookUpTurno
@@ -391,6 +393,8 @@
             this.gridColumn13.ColumnEdit = this.btnSpin;
             this.gridColumn13.FieldName = "batch_real";
             this.gridColumn13.Name = "gridColumn13";
+            this.gridColumn13.Visible = true;
+            this.gridColumn13.VisibleIndex = 5;
             this.gridColumn13.Width = 108;
             // 
             // btnSpin
@@ -1030,6 +1034,20 @@
             this.btn_reprint.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btn_reprint.Click += new System.EventHandler(this.btn_reprint_Click);
             // 
+            // btnConfiguracion
+            // 
+            this.btnConfiguracion.Appearance.Options.UseTextOptions = true;
+            this.btnConfiguracion.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnConfiguracion.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.btnConfiguracion.ImageOptions.Image = global::LOSA.Properties.Resources.settings;
+            this.btnConfiguracion.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.btnConfiguracion.Location = new System.Drawing.Point(1100, 36);
+            this.btnConfiguracion.Name = "btnConfiguracion";
+            this.btnConfiguracion.Size = new System.Drawing.Size(75, 55);
+            this.btnConfiguracion.TabIndex = 6;
+            this.btnConfiguracion.Text = "Config. Plan";
+            this.btnConfiguracion.Click += new System.EventHandler(this.btnConfiguracion_Click);
+            // 
             // xfrmDetalleOrdenesMicrosPesaje
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -1037,6 +1055,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1384, 813);
+            this.Controls.Add(this.btnConfiguracion);
             this.Controls.Add(this.cmdClose);
             this.Controls.Add(this.cmdUpdate);
             this.Controls.Add(this.lblTitulo);
@@ -1161,5 +1180,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnSpin;
+        private DevExpress.XtraEditors.SimpleButton btnConfiguracion;
     }
 }
