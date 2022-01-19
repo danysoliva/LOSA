@@ -1109,6 +1109,12 @@
     <Compile Include="MicroIngredientes\Models\PesajeIndividualInfo.cs" />
     <Compile Include="MicroIngredientes\Models\PesajeIndividualNew.cs" />
     <Compile Include="MicroIngredientes\Models\PesajeManualInfo.cs" />
+    <Compile Include="MicroIngredientes\xfrmAsistentePesajeV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MicroIngredientes\xfrmAsistentePesajeV2.Designer.cs">
+      <DependentUpon>xfrmAsistentePesajeV2.cs</DependentUpon>
+    </Compile>
     <Compile Include="MicroIngredientes\xfrmAsistentePesaje.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2733,6 +2739,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MicroIngredientes\frmSelectLotePesaje.resx">
       <DependentUpon>frmSelectLotePesaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MicroIngredientes\xfrmAsistentePesajeV2.resx">
+      <DependentUpon>xfrmAsistentePesajeV2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MicroIngredientes\xfrmAsistentePesaje.resx">
       <DependentUpon>xfrmAsistentePesaje.cs</DependentUpon>
