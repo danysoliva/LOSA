@@ -153,7 +153,8 @@ namespace LOSA.MicroIngredientes
                     //xfrmResumenMPIndividual frm = new xfrmResumenMPIndividual(pesaje_list, PesajeID,1);
 
                     //frm.Show();
-                    this.Close();
+                    this.DialogResult = DialogResult.OK;
+
                 }
 
             }

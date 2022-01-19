@@ -134,6 +134,7 @@ namespace LOSA.Despachos
             this.colitemcode.Caption = "Codigo";
             this.colitemcode.FieldName = "itemcode";
             this.colitemcode.Name = "colitemcode";
+            this.colitemcode.OptionsColumn.AllowEdit = false;
             this.colitemcode.Visible = true;
             this.colitemcode.VisibleIndex = 0;
             this.colitemcode.Width = 107;

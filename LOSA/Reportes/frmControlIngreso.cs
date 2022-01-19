@@ -90,6 +90,29 @@ namespace LOSA.Reportes
                 CajaDialogo.Error(ex.Message);
             }
         }
+
+        public void LoadResumenInventario()
+        {
+            string query = @"sp_get_resumen_ingresos";
+            SqlConnection connection = new SqlConnection(dp.ConnectionStringLOSA);
+            try
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(query, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@id_mp", id_mp);
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
+                dsReportesInventario.reporteIngresos.Clear();
+                sqlDataAdapter.Fill(dsReportesInventario.reporteIngresos);
+                connection.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -106,6 +129,7 @@ namespace LOSA.Reportes
                 SetIdMp();
                 LoadInventarioPorBodegaproveedor();
                 LoadInventarioSoloBodegas();
+                LoadResumenInventario();
             }
             catch (Exception ex)
             {

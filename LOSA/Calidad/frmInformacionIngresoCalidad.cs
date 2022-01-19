@@ -43,6 +43,8 @@ namespace LOSA.Calidad
             InitializeComponent();
             Id_ingreso = id_ingreso_lote;
             UsuarioLogeado = Puser;
+
+            tabPageLotesPT.Visible = false;
             //tabControl1.TabPages[4]
             load_data();
             load_data_ingreso();

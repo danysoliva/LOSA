@@ -49,7 +49,7 @@ namespace LOSA.MicroIngredientes
                 CajaDialogo.Error(ex.Message);
             }
         }
-
+                                                         
         private void btnDetalle_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             try
@@ -175,12 +175,12 @@ namespace LOSA.MicroIngredientes
                             xfrmAsistentePesaje frm = new xfrmAsistentePesaje(orderH.Order_ID, orderH.ID, orderH.Cant_Batch);
 
 
-                            frm.Show();
-                            //if (frm.ShowDialog()== DialogResult.OK )
-                            //{
-                            //    LoadData();
+                            //frm.Show();
+                            if (frm.ShowDialog() == DialogResult.OK)
+                            {
+                                //LoadData();
 
-                            //} 
+                            }
 
                         }
                     }
