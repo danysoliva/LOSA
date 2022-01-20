@@ -932,6 +932,12 @@
     <Compile Include="Logistica\frmLotesXProveedor.Designer.cs">
       <DependentUpon>frmLotesXProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logistica\frmNuevoRecuento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\frmNuevoRecuento.Designer.cs">
+      <DependentUpon>frmNuevoRecuento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logistica\frmPlanSemanal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -949,6 +955,12 @@
     </Compile>
     <Compile Include="Logistica\frm_nuevaSemanaPlan.Designer.cs">
       <DependentUpon>frm_nuevaSemanaPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\frm_selecionarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\frm_selecionarProducto.Designer.cs">
+      <DependentUpon>frm_selecionarProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Logistica\Models\Producto_Terminado.cs" />
     <Compile Include="Logistica\xfrmBuscarLotePT.cs">
@@ -2665,6 +2677,9 @@
     <EmbeddedResource Include="Logistica\frmLotesXProveedor.resx">
       <DependentUpon>frmLotesXProveedor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\frmNuevoRecuento.resx">
+      <DependentUpon>frmNuevoRecuento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Logistica\frmPlanSemanal.resx">
       <DependentUpon>frmPlanSemanal.cs</DependentUpon>
     </EmbeddedResource>
@@ -2673,6 +2688,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Logistica\frm_nuevaSemanaPlan.resx">
       <DependentUpon>frm_nuevaSemanaPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\frm_selecionarProducto.resx">
+      <DependentUpon>frm_selecionarProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logistica\xfrmBuscarLotePT.resx">
       <DependentUpon>xfrmBuscarLotePT.cs</DependentUpon>

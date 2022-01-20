@@ -33,16 +33,16 @@ namespace LOSA.Logistica
             this.btn_close = new DevExpress.XtraEditors.SimpleButton();
             this.btnNuevoRecuento = new DevExpress.XtraEditors.SimpleButton();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
+            this.dsCierreMes = new LOSA.Logistica.dsCierreMes();
             this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.coldate_counted = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colmes = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colyear = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colmes_nombre = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.dsCierreMes = new LOSA.Logistica.dsCierreMes();
             this.colcomentario = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCierreMes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_close
@@ -56,6 +56,7 @@ namespace LOSA.Logistica
             this.btn_close.Size = new System.Drawing.Size(92, 47);
             this.btn_close.TabIndex = 0;
             this.btn_close.Text = "Cerrar";
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click_1);
             // 
             // btnNuevoRecuento
             // 
@@ -67,6 +68,7 @@ namespace LOSA.Logistica
             this.btnNuevoRecuento.Size = new System.Drawing.Size(208, 47);
             this.btnNuevoRecuento.TabIndex = 1;
             this.btnNuevoRecuento.Text = "Nuevo recuento";
+            this.btnNuevoRecuento.Click += new System.EventHandler(this.btnNuevoRecuento_Click);
             // 
             // grd_data
             // 
@@ -82,6 +84,11 @@ namespace LOSA.Logistica
             this.grd_data.TabIndex = 2;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
+            // 
+            // dsCierreMes
+            // 
+            this.dsCierreMes.DataSetName = "dsCierreMes";
+            this.dsCierreMes.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // grdv_data
             // 
@@ -156,11 +163,6 @@ namespace LOSA.Logistica
             this.colmes_nombre.VisibleIndex = 0;
             this.colmes_nombre.Width = 151;
             // 
-            // dsCierreMes
-            // 
-            this.dsCierreMes.DataSetName = "dsCierreMes";
-            this.dsCierreMes.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // colcomentario
             // 
             this.colcomentario.Caption = "Comentario";
@@ -184,8 +186,8 @@ namespace LOSA.Logistica
             this.Text = "frmCierreMensual";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCierreMes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -17,11 +17,13 @@ namespace LOSA.Logistica
     public partial class frmCierreMensual : DevExpress.XtraEditors.XtraForm
     {
         DataOperations dp = new DataOperations();
+        UserLogin UsuarioLogeado;
 
-
-        public frmCierreMensual()
+        public frmCierreMensual(UserLogin Puser)
         {
             InitializeComponent();
+            UsuarioLogeado = Puser;
+            load_data();
         }
 
         public void load_data()
@@ -43,6 +45,25 @@ namespace LOSA.Logistica
             {
 
                 
+            }
+        }
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_close_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnNuevoRecuento_Click(object sender, EventArgs e)
+        {
+            frmNuevoRecuento frm = new frmNuevoRecuento(UsuarioLogeado);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                load_data();
             }
         }
     }
