@@ -276,11 +276,15 @@ namespace LOSA
                 //Log1.GrupoUsuario.GrupoUsuarioActivo = (GrupoUser.GrupoUsuario)Log1.IdGrupo;
                 //Log1.GrupoUsuario.GrupoUsuarioActivo = (GrupoUser.GrupoUsuario)1;
                 Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Calidad;
+                Log1.ADuser1 = "op_tablet";
+                Log1.Pass = "Tempo1234";
             }
             else
             {
-                Log1.Id = 1069;
+                Log1.Id = 1067;
                 Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Calidad;
+                Log1.ADuser1 = "op_tablet";
+                Log1.Pass = "Tempo1234";
             }
 
             //frmTipoIngreso_v2 frm = new frmTipoIngreso_v2(53, Log1);
