@@ -67,14 +67,18 @@
             this.cmdRequisiciones_ = new DevExpress.XtraEditors.SimpleButton();
             this.btnplanrequisas = new DevExpress.XtraEditors.SimpleButton();
             this.tabPT = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton22 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton21 = new DevExpress.XtraEditors.SimpleButton();
             this.btndespachos = new DevExpress.XtraEditors.SimpleButton();
             this.btnMPReproceso = new DevExpress.XtraEditors.SimpleButton();
             this.btn_salidapt = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton10 = new DevExpress.XtraEditors.SimpleButton();
             this.btnReq_PT = new DevExpress.XtraEditors.SimpleButton();
             this.tabMasterData = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton23 = new DevExpress.XtraEditors.SimpleButton();
             this.btn_andenes = new DevExpress.XtraEditors.SimpleButton();
             this.tabReportes = new DevExpress.XtraTab.XtraTabPage();
+            this.btnReporteProduccionDespachos = new DevExpress.XtraEditors.SimpleButton();
             this.btnreportes = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
             this.TabCalidad = new DevExpress.XtraTab.XtraTabPage();
@@ -107,6 +111,7 @@
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton24 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -670,6 +675,8 @@
             // 
             this.tabPT.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.tabPT.Appearance.Header.Options.UseFont = true;
+            this.tabPT.Controls.Add(this.simpleButton22);
+            this.tabPT.Controls.Add(this.simpleButton21);
             this.tabPT.Controls.Add(this.btndespachos);
             this.tabPT.Controls.Add(this.btnMPReproceso);
             this.tabPT.Controls.Add(this.btn_salidapt);
@@ -678,6 +685,32 @@
             this.tabPT.Name = "tabPT";
             this.tabPT.Size = new System.Drawing.Size(766, 409);
             this.tabPT.Text = "Producto Terminado";
+            // 
+            // simpleButton22
+            // 
+            this.simpleButton22.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.simpleButton22.Appearance.Options.UseFont = true;
+            this.simpleButton22.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton22.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton22.ImageOptions.Image")));
+            this.simpleButton22.Location = new System.Drawing.Point(208, 62);
+            this.simpleButton22.Name = "simpleButton22";
+            this.simpleButton22.Size = new System.Drawing.Size(199, 42);
+            this.simpleButton22.TabIndex = 42;
+            this.simpleButton22.Text = "Inventario de PT";
+            this.simpleButton22.Click += new System.EventHandler(this.simpleButton22_Click);
+            // 
+            // simpleButton21
+            // 
+            this.simpleButton21.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.simpleButton21.Appearance.Options.UseFont = true;
+            this.simpleButton21.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton21.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton21.ImageOptions.Image")));
+            this.simpleButton21.Location = new System.Drawing.Point(208, 14);
+            this.simpleButton21.Name = "simpleButton21";
+            this.simpleButton21.Size = new System.Drawing.Size(199, 42);
+            this.simpleButton21.TabIndex = 41;
+            this.simpleButton21.Text = "Producto Terminado \r\npor codigo";
+            this.simpleButton21.Click += new System.EventHandler(this.simpleButton21_Click);
             // 
             // btndespachos
             // 
@@ -753,10 +786,25 @@
             // 
             this.tabMasterData.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.tabMasterData.Appearance.Header.Options.UseFont = true;
+            this.tabMasterData.Controls.Add(this.simpleButton24);
+            this.tabMasterData.Controls.Add(this.simpleButton23);
             this.tabMasterData.Controls.Add(this.btn_andenes);
             this.tabMasterData.Name = "tabMasterData";
             this.tabMasterData.Size = new System.Drawing.Size(766, 409);
             this.tabMasterData.Text = "Configuraciones";
+            // 
+            // simpleButton23
+            // 
+            this.simpleButton23.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.simpleButton23.Appearance.Options.UseFont = true;
+            this.simpleButton23.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton23.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton23.ImageOptions.Image")));
+            this.simpleButton23.Location = new System.Drawing.Point(8, 62);
+            this.simpleButton23.Name = "simpleButton23";
+            this.simpleButton23.Size = new System.Drawing.Size(199, 42);
+            this.simpleButton23.TabIndex = 40;
+            this.simpleButton23.Text = "Plan de Trabajo";
+            this.simpleButton23.Click += new System.EventHandler(this.simpleButton23_Click);
             // 
             // btn_andenes
             // 
@@ -764,7 +812,7 @@
             this.btn_andenes.Appearance.Options.UseFont = true;
             this.btn_andenes.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btn_andenes.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_andenes.ImageOptions.Image")));
-            this.btn_andenes.Location = new System.Drawing.Point(3, 14);
+            this.btn_andenes.Location = new System.Drawing.Point(8, 14);
             this.btn_andenes.Name = "btn_andenes";
             this.btn_andenes.Size = new System.Drawing.Size(199, 42);
             this.btn_andenes.TabIndex = 39;
@@ -775,11 +823,27 @@
             // 
             this.tabReportes.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.tabReportes.Appearance.Header.Options.UseFont = true;
+            this.tabReportes.Controls.Add(this.btnReporteProduccionDespachos);
             this.tabReportes.Controls.Add(this.btnreportes);
             this.tabReportes.Controls.Add(this.simpleButton8);
             this.tabReportes.Name = "tabReportes";
             this.tabReportes.Size = new System.Drawing.Size(766, 409);
             this.tabReportes.Text = "Reportes";
+            // 
+            // btnReporteProduccionDespachos
+            // 
+            this.btnReporteProduccionDespachos.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporteProduccionDespachos.Appearance.Options.UseFont = true;
+            this.btnReporteProduccionDespachos.Appearance.Options.UseTextOptions = true;
+            this.btnReporteProduccionDespachos.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnReporteProduccionDespachos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnReporteProduccionDespachos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReporteProduccionDespachos.ImageOptions.Image")));
+            this.btnReporteProduccionDespachos.Location = new System.Drawing.Point(3, 110);
+            this.btnReporteProduccionDespachos.Name = "btnReporteProduccionDespachos";
+            this.btnReporteProduccionDespachos.Size = new System.Drawing.Size(199, 42);
+            this.btnReporteProduccionDespachos.TabIndex = 34;
+            this.btnReporteProduccionDespachos.Text = "Reporte Semanal\r\nDespachos";
+            this.btnReporteProduccionDespachos.Click += new System.EventHandler(this.btnReporteProduccionDespachos_Click);
             // 
             // btnreportes
             // 
@@ -1223,6 +1287,19 @@
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
             // 
+            // simpleButton24
+            // 
+            this.simpleButton24.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.simpleButton24.Appearance.Options.UseFont = true;
+            this.simpleButton24.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton24.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton24.ImageOptions.Image")));
+            this.simpleButton24.Location = new System.Drawing.Point(8, 110);
+            this.simpleButton24.Name = "simpleButton24";
+            this.simpleButton24.Size = new System.Drawing.Size(199, 42);
+            this.simpleButton24.TabIndex = 41;
+            this.simpleButton24.Text = "Inventario Final\r\npor periodo";
+            this.simpleButton24.Click += new System.EventHandler(this.simpleButton24_Click);
+            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1335,5 +1412,10 @@
         private DevExpress.XtraEditors.SimpleButton btn_rptubicaciones;
         private DevExpress.XtraEditors.SimpleButton simpleButton19;
         private DevExpress.XtraEditors.SimpleButton simpleButton20;
+        private DevExpress.XtraEditors.SimpleButton simpleButton21;
+        private DevExpress.XtraEditors.SimpleButton simpleButton22;
+        private DevExpress.XtraEditors.SimpleButton simpleButton23;
+        private DevExpress.XtraEditors.SimpleButton btnReporteProduccionDespachos;
+        private DevExpress.XtraEditors.SimpleButton simpleButton24;
     }
 }

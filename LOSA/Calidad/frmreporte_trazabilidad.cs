@@ -70,15 +70,9 @@ namespace LOSA.Calidad
                 }
                 catch (Exception EX)
                 {
-
                     CajaDialogo.Error(EX.Message);
                 }
-
-
             }
-
-            
-
         }
 
         public void load_data()
@@ -108,7 +102,6 @@ namespace LOSA.Calidad
                 }
                 catch (Exception ex)
                 {
-
                     CajaDialogo.Error(ex.Message);
                 }
 

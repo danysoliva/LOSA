@@ -264,6 +264,7 @@ namespace LOSA.MicroIngredientes
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "xfrmAsistentePesaje";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pesaje MP";
             ((System.ComponentModel.ISupportInitialize)(this.gcPesaje)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMicros)).EndInit();

@@ -602,6 +602,7 @@
     <Compile Include="Clases\MicroIngrediente.cs" />
     <Compile Include="Clases\opcionAbrirVentanaTarima.cs" />
     <Compile Include="Clases\PlantaPrvTrz.cs" />
+    <Compile Include="Clases\Plan_Semanal.cs" />
     <Compile Include="Clases\PresentacionX.cs" />
     <Compile Include="Clases\ProductoTerminado.cs" />
     <Compile Include="Clases\Proveedor.cs" />
@@ -891,10 +892,27 @@
     <Compile Include="Liquidos\xfrm_select_camiones.Designer.cs">
       <DependentUpon>xfrm_select_camiones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logistica\dsCierreMes.cs">
+      <DependentUpon>dsCierreMes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\dsCierreMes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCierreMes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\dsLogistica.cs">
+      <DependentUpon>dsLogistica.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Logistica\dsLogistica.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsLogistica.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\frmCierreMensual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\frmCierreMensual.Designer.cs">
+      <DependentUpon>frmCierreMensual.cs</DependentUpon>
     </Compile>
     <Compile Include="Logistica\frmLotes.cs">
       <SubType>Form</SubType>
@@ -914,11 +932,35 @@
     <Compile Include="Logistica\frmLotesXProveedor.Designer.cs">
       <DependentUpon>frmLotesXProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logistica\frmNuevoRecuento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\frmNuevoRecuento.Designer.cs">
+      <DependentUpon>frmNuevoRecuento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\frmPlanSemanal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\frmPlanSemanal.Designer.cs">
+      <DependentUpon>frmPlanSemanal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logistica\frmTrazabilidadLote.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Logistica\frmTrazabilidadLote.Designer.cs">
       <DependentUpon>frmTrazabilidadLote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\frm_nuevaSemanaPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\frm_nuevaSemanaPlan.Designer.cs">
+      <DependentUpon>frm_nuevaSemanaPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\frm_selecionarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\frm_selecionarProducto.Designer.cs">
+      <DependentUpon>frm_selecionarProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Logistica\Models\Producto_Terminado.cs" />
     <Compile Include="Logistica\xfrmBuscarLotePT.cs">
@@ -1079,6 +1121,12 @@
     <Compile Include="MicroIngredientes\Models\PesajeIndividualInfo.cs" />
     <Compile Include="MicroIngredientes\Models\PesajeIndividualNew.cs" />
     <Compile Include="MicroIngredientes\Models\PesajeManualInfo.cs" />
+    <Compile Include="MicroIngredientes\xfrmAsistentePesajeV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MicroIngredientes\xfrmAsistentePesajeV2.Designer.cs">
+      <DependentUpon>xfrmAsistentePesajeV2.cs</DependentUpon>
+    </Compile>
     <Compile Include="MicroIngredientes\xfrmAsistentePesaje.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1369,6 +1417,17 @@
     </None>
     <None Include="Liquidos\dsLiquidos_.xss">
       <DependentUpon>dsLiquidos_.xsd</DependentUpon>
+    </None>
+    <None Include="Logistica\dsCierreMes.xsc">
+      <DependentUpon>dsCierreMes.xsd</DependentUpon>
+    </None>
+    <None Include="Logistica\dsCierreMes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCierreMes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Logistica\dsCierreMes.xss">
+      <DependentUpon>dsCierreMes.xsd</DependentUpon>
     </None>
     <None Include="Nir\dsNir.xsc">
       <DependentUpon>dsNir.xsd</DependentUpon>
@@ -1730,6 +1789,12 @@
     <Compile Include="Reportes\frmreport.Designer.cs">
       <DependentUpon>frmreport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\frmReporteGeneralProductoTermnado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmReporteGeneralProductoTermnado.Designer.cs">
+      <DependentUpon>frmReporteGeneralProductoTermnado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\frmReporteIngreso_v2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1741,6 +1806,12 @@
     </Compile>
     <Compile Include="Reportes\frmreporteLotePT.Designer.cs">
       <DependentUpon>frmreporteLotePT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmReporteProductoTerminado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmReporteProductoTerminado.Designer.cs">
+      <DependentUpon>frmReporteProductoTerminado.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\frmReporteTMRetenidas.cs">
       <SubType>Form</SubType>
@@ -1760,6 +1831,12 @@
     <Compile Include="Reportes\frmRequisicionesManualesReporte.Designer.cs">
       <DependentUpon>frmRequisicionesManualesReporte.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\frmrptPlansemanal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmrptPlansemanal.Designer.cs">
+      <DependentUpon>frmrptPlansemanal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\frmrpt_lote_mp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1777,6 +1854,12 @@
     </Compile>
     <Compile Include="Reportes\frmtarimasporbodega.Designer.cs">
       <DependentUpon>frmtarimasporbodega.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frm_getfinish.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frm_getfinish.Designer.cs">
+      <DependentUpon>frm_getfinish.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\frm_print_TM_PT.cs">
       <SubType>Form</SubType>
@@ -2582,6 +2665,9 @@
     <EmbeddedResource Include="Liquidos\xfrm_select_camiones.resx">
       <DependentUpon>xfrm_select_camiones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\frmCierreMensual.resx">
+      <DependentUpon>frmCierreMensual.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Logistica\frmLotes.resx">
       <DependentUpon>frmLotes.cs</DependentUpon>
     </EmbeddedResource>
@@ -2591,8 +2677,20 @@
     <EmbeddedResource Include="Logistica\frmLotesXProveedor.resx">
       <DependentUpon>frmLotesXProveedor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\frmNuevoRecuento.resx">
+      <DependentUpon>frmNuevoRecuento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\frmPlanSemanal.resx">
+      <DependentUpon>frmPlanSemanal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Logistica\frmTrazabilidadLote.resx">
       <DependentUpon>frmTrazabilidadLote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\frm_nuevaSemanaPlan.resx">
+      <DependentUpon>frm_nuevaSemanaPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\frm_selecionarProducto.resx">
+      <DependentUpon>frm_selecionarProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logistica\xfrmBuscarLotePT.resx">
       <DependentUpon>xfrmBuscarLotePT.cs</DependentUpon>
@@ -2659,6 +2757,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MicroIngredientes\frmSelectLotePesaje.resx">
       <DependentUpon>frmSelectLotePesaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MicroIngredientes\xfrmAsistentePesajeV2.resx">
+      <DependentUpon>xfrmAsistentePesajeV2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MicroIngredientes\xfrmAsistentePesaje.resx">
       <DependentUpon>xfrmAsistentePesaje.cs</DependentUpon>
@@ -2935,11 +3036,17 @@
     <EmbeddedResource Include="Reportes\frmreport.resx">
       <DependentUpon>frmreport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmReporteGeneralProductoTermnado.resx">
+      <DependentUpon>frmReporteGeneralProductoTermnado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmReporteIngreso_v2.resx">
       <DependentUpon>frmReporteIngreso_v2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmreporteLotePT.resx">
       <DependentUpon>frmreporteLotePT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmReporteProductoTerminado.resx">
+      <DependentUpon>frmReporteProductoTerminado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmReporteTMRetenidas.resx">
       <DependentUpon>frmReporteTMRetenidas.cs</DependentUpon>
@@ -2950,6 +3057,9 @@
     <EmbeddedResource Include="Reportes\frmRequisicionesManualesReporte.resx">
       <DependentUpon>frmRequisicionesManualesReporte.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmrptPlansemanal.resx">
+      <DependentUpon>frmrptPlansemanal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmrpt_lote_mp.resx">
       <DependentUpon>frmrpt_lote_mp.cs</DependentUpon>
     </EmbeddedResource>
@@ -2958,6 +3068,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmtarimasporbodega.resx">
       <DependentUpon>frmtarimasporbodega.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frm_getfinish.resx">
+      <DependentUpon>frm_getfinish.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frm_print_TM_PT.resx">
       <DependentUpon>frm_print_TM_PT.cs</DependentUpon>

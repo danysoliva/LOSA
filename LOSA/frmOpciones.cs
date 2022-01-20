@@ -709,5 +709,35 @@ namespace LOSA
             frmControlIngreso frm = new frmControlIngreso();
             frm.Show();
         }
+
+        private void simpleButton21_Click(object sender, EventArgs e)
+        {
+            frmReporteProductoTerminado frm = new frmReporteProductoTerminado();
+            frm.Show();
+        }
+
+        private void simpleButton22_Click(object sender, EventArgs e)
+        {
+            frmReporteGeneralProductoTermnado frm = new frmReporteGeneralProductoTermnado();
+            frm.Show();
+        }
+
+        private void simpleButton23_Click(object sender, EventArgs e)
+        {
+            frmPlanSemanal frm = new frmPlanSemanal(UsuarioLogeado);
+            frm.Show();
+        }
+
+        private void btnReporteProduccionDespachos_Click(object sender, EventArgs e)
+        {
+            frmrptPlansemanal frm = new frmrptPlansemanal();
+            frm.Show();
+        }
+
+        private void simpleButton24_Click(object sender, EventArgs e)
+        {
+            frmCierreMensual frm = new frmCierreMensual(UsuarioLogeado);
+            frm.Show();
+        }
     }
 }

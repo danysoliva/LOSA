@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -55,7 +56,7 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gcMicros = new DevExpress.XtraGrid.GridControl();
-            this.microsBindingSource = new System.Windows.Forms.BindingSource();
+            this.microsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsMicros = new LOSA.MicroIngredientes.dsMicros();
             this.gvMicros = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -226,7 +227,7 @@
             this.gridColumn4.ColumnEdit = this.btnDetalle;
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 9;
+            this.gridColumn4.VisibleIndex = 8;
             this.gridColumn4.Width = 86;
             // 
             // btnDetalle
@@ -247,7 +248,7 @@
             this.gridColumn5.ColumnEdit = this.btnActivar;
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 10;
+            this.gridColumn5.VisibleIndex = 9;
             this.gridColumn5.Width = 55;
             // 
             // btnActivar
@@ -267,7 +268,7 @@
             this.gridColumn6.ColumnEdit = this.btnSuspender;
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 11;
+            this.gridColumn6.VisibleIndex = 10;
             this.gridColumn6.Width = 59;
             // 
             // btnSuspender
@@ -287,7 +288,7 @@
             this.gridColumn7.ColumnEdit = this.btnFinalizar;
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 12;
+            this.gridColumn7.VisibleIndex = 11;
             this.gridColumn7.Width = 57;
             // 
             // btnFinalizar
@@ -308,8 +309,6 @@
             this.gridColumn8.ColumnEdit = this.btnSpin;
             this.gridColumn8.FieldName = "batch_real";
             this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 8;
             this.gridColumn8.Width = 76;
             // 
             // btnSpin
