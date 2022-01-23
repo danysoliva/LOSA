@@ -2,6 +2,7 @@
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using LOSA.Clases;
+using LOSA.TransaccionesMP.TrzMP_fromLote;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -71,7 +72,50 @@ namespace LOSA.Trazabilidad.ReportesTRZ
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
-            LoadLotesPT();
+            LoteMP LoteMP_ = new LoteMP();
+            if (LoteMP_.RecuperarRegistro(txtlote.Text))
+            {
+                if (LoteMP_.CantidadMP > 1)
+                {
+                    //Mostrar Ventana
+                    frmMP_WithSameLot frm = new frmMP_WithSameLot(LoteMP_);
+                    if(frm.ShowDialog()== DialogResult.OK)
+                    {
+                        LoadLotesPT(frm.IdMP_Selected);
+                        lblMateriaPrimaName.Text = frm.NameMaterialselected;
+                    }
+                }
+                else
+                {
+                    LoadLotesPT(LoteMP_.IdMPSingle);
+                    lblMateriaPrimaName.Text = LoteMP_.NombreComercialSingle;
+                }
+            }
+        }
+
+        private void LoadLotesPT(object idMP_Selected)
+        {
+            //[sp_load_lotes_pt_trz_from_lote_mp] @lotemp
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("[sp_load_lotes_pt_trz_from_lote_mpv2]", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lotemp", txtlote.Text);
+                cmd.Parameters.AddWithValue("@idrm", idMP_Selected);
+                dsReportesTRZ1.pt_list_trz.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsReportesTRZ1.pt_list_trz);
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
         }
 
         private void gridView1_Click(object sender, EventArgs e)

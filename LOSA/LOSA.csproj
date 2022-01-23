@@ -96,7 +96,7 @@
     </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>11DBC92D92B4EB4A587EA378AD2A6CF4E83C0246</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>5A56FE5B36BF1139C0C28330C52B1468E1F78C88</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -597,6 +597,7 @@
     <Compile Include="Clases\ItemMP_Lote.cs" />
     <Compile Include="Clases\Kardex.cs" />
     <Compile Include="Clases\LoteExterno.cs" />
+    <Compile Include="Clases\LoteMP.cs" />
     <Compile Include="Clases\LotePT.cs" />
     <Compile Include="Clases\MateriaPrima.cs" />
     <Compile Include="Clases\MicroIngrediente.cs" />
@@ -2136,6 +2137,17 @@
     <Compile Include="TransaccionesMP\Liquidos\frmBinesEnPRD.Designer.cs">
       <DependentUpon>frmBinesEnPRD.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\TrzMP_fromLote\dsMP_Lotes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsMP_Lotes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesMP\TrzMP_fromLote\frmMP_WithSameLot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\TrzMP_fromLote\frmMP_WithSameLot.Designer.cs">
+      <DependentUpon>frmMP_WithSameLot.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesPT\dsPT.cs">
       <DependentUpon>dsPT.xsd</DependentUpon>
     </Compile>
@@ -3198,6 +3210,9 @@
     <EmbeddedResource Include="TransaccionesMP\Liquidos\frmBinesEnPRD.resx">
       <DependentUpon>frmBinesEnPRD.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\TrzMP_fromLote\frmMP_WithSameLot.resx">
+      <DependentUpon>frmMP_WithSameLot.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesPT\frmactivacionPT.resx">
       <DependentUpon>frmactivacionPT.cs</DependentUpon>
     </EmbeddedResource>
@@ -3504,6 +3519,17 @@
     <None Include="TransaccionesMP\dsTransaccionesMP.xss">
       <DependentUpon>dsTransaccionesMP.xsd</DependentUpon>
     </None>
+    <None Include="TransaccionesMP\TrzMP_fromLote\dsMP_Lotes.xsc">
+      <DependentUpon>dsMP_Lotes.xsd</DependentUpon>
+    </None>
+    <None Include="TransaccionesMP\TrzMP_fromLote\dsMP_Lotes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsMP_Lotes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TransaccionesMP\TrzMP_fromLote\dsMP_Lotes.xss">
+      <DependentUpon>dsMP_Lotes.xsd</DependentUpon>
+    </None>
     <None Include="TransaccionesPT\dsPT.xsc">
       <DependentUpon>dsPT.xsd</DependentUpon>
     </None>
@@ -3615,7 +3641,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 y x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

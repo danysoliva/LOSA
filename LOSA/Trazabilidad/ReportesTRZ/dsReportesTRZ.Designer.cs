@@ -353,6 +353,8 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
             
             private global::System.Data.DataColumn columnProducto;
             
+            private global::System.Data.DataColumn columncant_mp;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public pt_list_trzDataTable() {
@@ -404,6 +406,14 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cant_mpColumn {
+                get {
+                    return this.columncant_mp;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -439,11 +449,12 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public pt_list_trzRow Addpt_list_trzRow(int Lote_PT, string Producto) {
+            public pt_list_trzRow Addpt_list_trzRow(int Lote_PT, string Producto, decimal cant_mp) {
                 pt_list_trzRow rowpt_list_trzRow = ((pt_list_trzRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Lote_PT,
-                        Producto};
+                        Producto,
+                        cant_mp};
                 rowpt_list_trzRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowpt_list_trzRow);
                 return rowpt_list_trzRow;
@@ -468,6 +479,7 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
             internal void InitVars() {
                 this.columnLote_PT = base.Columns["Lote PT"];
                 this.columnProducto = base.Columns["Producto"];
+                this.columncant_mp = base.Columns["cant_mp"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -477,6 +489,9 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
                 base.Columns.Add(this.columnLote_PT);
                 this.columnProducto = new global::System.Data.DataColumn("Producto", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnProducto);
+                this.columncant_mp = new global::System.Data.DataColumn("cant_mp", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncant_mp);
+                this.columncant_mp.Caption = "Cant. MP Utilizada";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1495,6 +1510,22 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal cant_mp {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablept_list_trz.cant_mpColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cant_mp\' in table \'pt_list_trz\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablept_list_trz.cant_mpColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsLote_PTNull() {
                 return this.IsNull(this.tablept_list_trz.Lote_PTColumn);
             }
@@ -1515,6 +1546,18 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetProductoNull() {
                 this[this.tablept_list_trz.ProductoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscant_mpNull() {
+                return this.IsNull(this.tablept_list_trz.cant_mpColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcant_mpNull() {
+                this[this.tablept_list_trz.cant_mpColumn] = global::System.Convert.DBNull;
             }
         }
         

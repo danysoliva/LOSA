@@ -40,6 +40,7 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colLotePT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProducto = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcant_mp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnGenerar = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtlote = new DevExpress.XtraEditors.TextEdit();
@@ -66,6 +67,7 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.lblMateriaPrimaName = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsReportesTRZ1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -84,7 +86,7 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             this.gridControl1.Location = new System.Drawing.Point(2, 93);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(353, 484);
+            this.gridControl1.Size = new System.Drawing.Size(364, 484);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -98,9 +100,12 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colLotePT,
-            this.colProducto});
+            this.colProducto,
+            this.colcant_mp});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowAutoFilterRow = true;
+            this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.Click += new System.EventHandler(this.gridView1_Click);
             // 
             // colLotePT
@@ -110,7 +115,7 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             this.colLotePT.OptionsColumn.AllowEdit = false;
             this.colLotePT.Visible = true;
             this.colLotePT.VisibleIndex = 0;
-            this.colLotePT.Width = 140;
+            this.colLotePT.Width = 67;
             // 
             // colProducto
             // 
@@ -119,14 +124,24 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             this.colProducto.OptionsColumn.AllowEdit = false;
             this.colProducto.Visible = true;
             this.colProducto.VisibleIndex = 1;
-            this.colProducto.Width = 481;
+            this.colProducto.Width = 173;
+            // 
+            // colcant_mp
+            // 
+            this.colcant_mp.DisplayFormat.FormatString = "###,##0.00 Kg";
+            this.colcant_mp.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colcant_mp.FieldName = "cant_mp";
+            this.colcant_mp.Name = "colcant_mp";
+            this.colcant_mp.Visible = true;
+            this.colcant_mp.VisibleIndex = 2;
+            this.colcant_mp.Width = 95;
             // 
             // btnGenerar
             // 
             this.btnGenerar.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnGenerar.Appearance.Options.UseFont = true;
             this.btnGenerar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGenerar.ImageOptions.Image")));
-            this.btnGenerar.Location = new System.Drawing.Point(237, 46);
+            this.btnGenerar.Location = new System.Drawing.Point(248, 46);
             this.btnGenerar.Name = "btnGenerar";
             this.btnGenerar.Size = new System.Drawing.Size(118, 41);
             this.btnGenerar.TabIndex = 42;
@@ -149,7 +164,7 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             this.txtlote.Name = "txtlote";
             this.txtlote.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtlote.Properties.Appearance.Options.UseFont = true;
-            this.txtlote.Size = new System.Drawing.Size(155, 32);
+            this.txtlote.Size = new System.Drawing.Size(166, 32);
             this.txtlote.TabIndex = 40;
             this.txtlote.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtlote_KeyDown);
             // 
@@ -173,7 +188,7 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             this.btnClearInfo.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClearInfo.Appearance.Options.UseFont = true;
             this.btnClearInfo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClearInfo.ImageOptions.Image")));
-            this.btnClearInfo.Location = new System.Drawing.Point(361, 46);
+            this.btnClearInfo.Location = new System.Drawing.Point(372, 46);
             this.btnClearInfo.Name = "btnClearInfo";
             this.btnClearInfo.Size = new System.Drawing.Size(118, 41);
             this.btnClearInfo.TabIndex = 43;
@@ -391,18 +406,31 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             // lblMateriaPrimaName
             // 
             this.lblMateriaPrimaName.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMateriaPrimaName.Appearance.ForeColor = System.Drawing.Color.Blue;
             this.lblMateriaPrimaName.Appearance.Options.UseFont = true;
+            this.lblMateriaPrimaName.Appearance.Options.UseForeColor = true;
             this.lblMateriaPrimaName.Location = new System.Drawing.Point(76, 19);
             this.lblMateriaPrimaName.Name = "lblMateriaPrimaName";
             this.lblMateriaPrimaName.Size = new System.Drawing.Size(61, 21);
             this.lblMateriaPrimaName.TabIndex = 47;
             this.lblMateriaPrimaName.Text = "Lote MP";
             // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Location = new System.Drawing.Point(9, 19);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(61, 21);
+            this.labelControl4.TabIndex = 48;
+            this.labelControl4.Text = "Nombre";
+            // 
             // frmTrazabilidadHaciaAdelanteByMP_Lot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1135, 579);
+            this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.lblMateriaPrimaName);
             this.Controls.Add(this.cmdHome);
             this.Controls.Add(this.labelControl2);
@@ -460,5 +488,7 @@ namespace LOSA.Trazabilidad.ReportesTRZ
         private DevExpress.XtraEditors.SimpleButton cmdHome;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnLinkBoletaView;
         private DevExpress.XtraEditors.LabelControl lblMateriaPrimaName;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraGrid.Columns.GridColumn colcant_mp;
     }
 }
