@@ -3,6 +3,7 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using LOSA.Clases;
 using LOSA.TransaccionesMP.TrzMP_fromLote;
+using LOSA.Trazabilidad.Despachos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -161,9 +162,20 @@ namespace LOSA.Trazabilidad.ReportesTRZ
                 frmViewBasculaBoleta frm = new frmViewBasculaBoleta(bol1.Id);
                 if (this.MdiParent != null)
                     frm.MdiParent = this.MdiParent;
-                //frm.WindowState = FormWindowState.Maximized;
+                frm.WindowState = FormWindowState.Normal;
                 frm.Show();
             }
+        }
+
+        private void cmdDespachoId_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)gridControl2.FocusedView;
+            var row = (dsReportesTRZ.detalle_destinosRow)gridView.GetFocusedDataRow();
+            frmDetalleDespacho frm = new frmDetalleDespacho(row.Despacho);
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+            frm.WindowState = FormWindowState.Normal;
+            frm.Show();
         }
     }
 }

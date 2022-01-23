@@ -2270,6 +2270,12 @@
     <Compile Include="TransaccionesPT\frm_vertarimas_pt.Designer.cs">
       <DependentUpon>frm_vertarimas_pt.cs</DependentUpon>
     </Compile>
+    <Compile Include="Trazabilidad\Despachos\frmDetalleDespacho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trazabilidad\Despachos\frmDetalleDespacho.Designer.cs">
+      <DependentUpon>frmDetalleDespacho.cs</DependentUpon>
+    </Compile>
     <Compile Include="Trazabilidad\dsMantoTrazabilidad.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -3270,6 +3276,9 @@
     <EmbeddedResource Include="TransaccionesPT\frm_vertarimas_pt.resx">
       <DependentUpon>frm_vertarimas_pt.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Trazabilidad\Despachos\frmDetalleDespacho.resx">
+      <DependentUpon>frmDetalleDespacho.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Trazabilidad\frmAdjuntar.resx">
       <DependentUpon>frmAdjuntar.cs</DependentUpon>
     </EmbeddedResource>
@@ -3610,6 +3619,7 @@
     <None Include="Resources\enter.png" />
     <None Include="Resources\information.png" />
     <None Include="Resources\exchange.png" />
+    <None Include="Resources\excel32px.png" />
     <Content Include="Resources\key.png" />
     <None Include="Resources\Materia_Prima.png" />
     <None Include="Resources\logout.png" />
