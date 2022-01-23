@@ -5006,6 +5006,10 @@ namespace LOSA.Calidad {
             
             private global::System.Data.DataColumn columnrownum;
             
+            private global::System.Data.DataColumn columnid_mp;
+            
+            private global::System.Data.DataColumn columnteorico;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public trazabilitadDataTable() {
@@ -5121,6 +5125,22 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_mpColumn {
+                get {
+                    return this.columnid_mp;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn teoricoColumn {
+                get {
+                    return this.columnteorico;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5156,7 +5176,7 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public trazabilitadRow AddtrazabilitadRow(decimal Contado, string lote_mp, int ingreso, string nombre_comercial, int lotept, string card_code, string proveedor_name, string code_sap, int id, int rownum) {
+            public trazabilitadRow AddtrazabilitadRow(decimal Contado, string lote_mp, int ingreso, string nombre_comercial, int lotept, string card_code, string proveedor_name, string code_sap, int id, int rownum, int id_mp, decimal teorico) {
                 trazabilitadRow rowtrazabilitadRow = ((trazabilitadRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Contado,
@@ -5168,7 +5188,9 @@ namespace LOSA.Calidad {
                         proveedor_name,
                         code_sap,
                         id,
-                        rownum};
+                        rownum,
+                        id_mp,
+                        teorico};
                 rowtrazabilitadRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtrazabilitadRow);
                 return rowtrazabilitadRow;
@@ -5201,6 +5223,8 @@ namespace LOSA.Calidad {
                 this.columncode_sap = base.Columns["code_sap"];
                 this.columnid = base.Columns["id"];
                 this.columnrownum = base.Columns["rownum"];
+                this.columnid_mp = base.Columns["id_mp"];
+                this.columnteorico = base.Columns["teorico"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5226,6 +5250,11 @@ namespace LOSA.Calidad {
                 base.Columns.Add(this.columnid);
                 this.columnrownum = new global::System.Data.DataColumn("rownum", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnrownum);
+                this.columnid_mp = new global::System.Data.DataColumn("id_mp", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_mp);
+                this.columnteorico = new global::System.Data.DataColumn("teorico", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnteorico);
+                this.columnteorico.Caption = "Cons. Plan";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8378,6 +8407,38 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_mp {
+                get {
+                    try {
+                        return ((int)(this[this.tabletrazabilitad.id_mpColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'id_mp\' in table \'trazabilitad\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletrazabilitad.id_mpColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal teorico {
+                get {
+                    try {
+                        return ((decimal)(this[this.tabletrazabilitad.teoricoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'teorico\' in table \'trazabilitad\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletrazabilitad.teoricoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsContadoNull() {
                 return this.IsNull(this.tabletrazabilitad.ContadoColumn);
             }
@@ -8494,6 +8555,30 @@ namespace LOSA.Calidad {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetrownumNull() {
                 this[this.tabletrazabilitad.rownumColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_mpNull() {
+                return this.IsNull(this.tabletrazabilitad.id_mpColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_mpNull() {
+                this[this.tabletrazabilitad.id_mpColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsteoricoNull() {
+                return this.IsNull(this.tabletrazabilitad.teoricoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetteoricoNull() {
+                this[this.tabletrazabilitad.teoricoColumn] = global::System.Convert.DBNull;
             }
         }
         

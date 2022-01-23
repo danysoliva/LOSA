@@ -30,16 +30,16 @@ namespace LOSA.Trazabilidad.ReportesTRZ
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTrazabilidadHaciaAdelanteByMP_Lot));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject21 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.dsReportesTRZ1 = new LOSA.Trazabilidad.ReportesTRZ.dsReportesTRZ();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -74,6 +74,7 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.lblMateriaPrimaName = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.colunidades = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsReportesTRZ1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -229,6 +230,7 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             this.colKeyBoleta,
             this.colIdCliente,
             this.colNombreCliente,
+            this.colunidades,
             this.colcodigo_pais,
             this.colpais,
             this.coldireccion1,
@@ -249,14 +251,14 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             this.colDespacho.Name = "colDespacho";
             this.colDespacho.Visible = true;
             this.colDespacho.VisibleIndex = 0;
-            this.colDespacho.Width = 61;
+            this.colDespacho.Width = 55;
             // 
             // cmdDespachoId
             // 
             this.cmdDespachoId.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
             this.cmdDespachoId.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdDespachoId.Name = "cmdDespachoId";
             this.cmdDespachoId.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdDespachoId_ButtonClick);
             // 
@@ -286,7 +288,7 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             this.colNombreCliente.OptionsColumn.AllowEdit = false;
             this.colNombreCliente.Visible = true;
             this.colNombreCliente.VisibleIndex = 2;
-            this.colNombreCliente.Width = 110;
+            this.colNombreCliente.Width = 108;
             // 
             // colcodigo_pais
             // 
@@ -301,8 +303,8 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             this.colpais.Name = "colpais";
             this.colpais.OptionsColumn.AllowEdit = false;
             this.colpais.Visible = true;
-            this.colpais.VisibleIndex = 6;
-            this.colpais.Width = 58;
+            this.colpais.VisibleIndex = 7;
+            this.colpais.Width = 50;
             // 
             // coldireccion1
             // 
@@ -311,8 +313,8 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             this.coldireccion1.Name = "coldireccion1";
             this.coldireccion1.OptionsColumn.AllowEdit = false;
             this.coldireccion1.Visible = true;
-            this.coldireccion1.VisibleIndex = 7;
-            this.coldireccion1.Width = 58;
+            this.coldireccion1.VisibleIndex = 8;
+            this.coldireccion1.Width = 50;
             // 
             // coldireccion2
             // 
@@ -321,8 +323,8 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             this.coldireccion2.Name = "coldireccion2";
             this.coldireccion2.OptionsColumn.AllowEdit = false;
             this.coldireccion2.Visible = true;
-            this.coldireccion2.VisibleIndex = 8;
-            this.coldireccion2.Width = 58;
+            this.coldireccion2.VisibleIndex = 9;
+            this.coldireccion2.Width = 50;
             // 
             // colciudad
             // 
@@ -331,8 +333,8 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             this.colciudad.Name = "colciudad";
             this.colciudad.OptionsColumn.AllowEdit = false;
             this.colciudad.Visible = true;
-            this.colciudad.VisibleIndex = 9;
-            this.colciudad.Width = 73;
+            this.colciudad.VisibleIndex = 10;
+            this.colciudad.Width = 78;
             // 
             // colcliente_aqua
             // 
@@ -348,8 +350,8 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             this.colnumero_factura.Name = "colnumero_factura";
             this.colnumero_factura.OptionsColumn.AllowEdit = false;
             this.colnumero_factura.Visible = true;
-            this.colnumero_factura.VisibleIndex = 3;
-            this.colnumero_factura.Width = 100;
+            this.colnumero_factura.VisibleIndex = 4;
+            this.colnumero_factura.Width = 87;
             // 
             // colcardname
             // 
@@ -358,8 +360,8 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             this.colcardname.Name = "colcardname";
             this.colcardname.OptionsColumn.AllowEdit = false;
             this.colcardname.Visible = true;
-            this.colcardname.VisibleIndex = 4;
-            this.colcardname.Width = 72;
+            this.colcardname.VisibleIndex = 5;
+            this.colcardname.Width = 62;
             // 
             // colNumID
             // 
@@ -369,14 +371,14 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             this.colNumID.Name = "colNumID";
             this.colNumID.Visible = true;
             this.colNumID.VisibleIndex = 1;
-            this.colNumID.Width = 52;
+            this.colNumID.Width = 47;
             // 
             // btnLinkBoletaView
             // 
             this.btnLinkBoletaView.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions6.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions6.Image")));
             this.btnLinkBoletaView.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnLinkBoletaView.Name = "btnLinkBoletaView";
             this.btnLinkBoletaView.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnLinkBoletaView_ButtonClick);
             // 
@@ -387,8 +389,8 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             this.colFac_promix.Name = "colFac_promix";
             this.colFac_promix.OptionsColumn.AllowEdit = false;
             this.colFac_promix.Visible = true;
-            this.colFac_promix.VisibleIndex = 5;
-            this.colFac_promix.Width = 100;
+            this.colFac_promix.VisibleIndex = 6;
+            this.colFac_promix.Width = 87;
             // 
             // labelControl2
             // 
@@ -442,6 +444,18 @@ namespace LOSA.Trazabilidad.ReportesTRZ
             this.labelControl4.Size = new System.Drawing.Size(61, 21);
             this.labelControl4.TabIndex = 48;
             this.labelControl4.Text = "Nombre";
+            // 
+            // colunidades
+            // 
+            this.colunidades.Caption = "Cantidad";
+            this.colunidades.DisplayFormat.FormatString = "###,##0 Sacos";
+            this.colunidades.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colunidades.FieldName = "unidades";
+            this.colunidades.Name = "colunidades";
+            this.colunidades.OptionsColumn.AllowEdit = false;
+            this.colunidades.Visible = true;
+            this.colunidades.VisibleIndex = 3;
+            this.colunidades.Width = 68;
             // 
             // frmTrazabilidadHaciaAdelanteByMP_Lot
             // 
@@ -510,5 +524,6 @@ namespace LOSA.Trazabilidad.ReportesTRZ
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraGrid.Columns.GridColumn colcant_mp;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdDespachoId;
+        private DevExpress.XtraGrid.Columns.GridColumn colunidades;
     }
 }

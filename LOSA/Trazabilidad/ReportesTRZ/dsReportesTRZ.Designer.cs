@@ -690,6 +690,8 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
             
             private global::System.Data.DataColumn columnNumID;
             
+            private global::System.Data.DataColumn columnunidades;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public detalle_destinosDataTable() {
@@ -845,6 +847,14 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn unidadesColumn {
+                get {
+                    return this.columnunidades;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -880,7 +890,23 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public detalle_destinosRow Adddetalle_destinosRow(int Despacho, string cliente, int KeyBoleta, int Id_Cliente, string Nombre_Cliente, string codigo_pais, string pais, string direccion1, string direccion2, string ciudad, string cliente_aqua, string numero_factura, string cardname, string Fac_promix, int NumID) {
+            public detalle_destinosRow Adddetalle_destinosRow(
+                        int Despacho, 
+                        string cliente, 
+                        int KeyBoleta, 
+                        int Id_Cliente, 
+                        string Nombre_Cliente, 
+                        string codigo_pais, 
+                        string pais, 
+                        string direccion1, 
+                        string direccion2, 
+                        string ciudad, 
+                        string cliente_aqua, 
+                        string numero_factura, 
+                        string cardname, 
+                        string Fac_promix, 
+                        int NumID, 
+                        int unidades) {
                 detalle_destinosRow rowdetalle_destinosRow = ((detalle_destinosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Despacho,
@@ -897,7 +923,8 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
                         numero_factura,
                         cardname,
                         Fac_promix,
-                        NumID};
+                        NumID,
+                        unidades};
                 rowdetalle_destinosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdetalle_destinosRow);
                 return rowdetalle_destinosRow;
@@ -935,6 +962,7 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
                 this.columncardname = base.Columns["cardname"];
                 this.columnFac_promix = base.Columns["Fac_promix"];
                 this.columnNumID = base.Columns["NumID"];
+                this.columnunidades = base.Columns["unidades"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -970,6 +998,9 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
                 base.Columns.Add(this.columnFac_promix);
                 this.columnNumID = new global::System.Data.DataColumn("NumID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNumID);
+                this.columnunidades = new global::System.Data.DataColumn("unidades", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnunidades);
+                this.columnunidades.Caption = "Unidades";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2199,6 +2230,22 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int unidades {
+                get {
+                    try {
+                        return ((int)(this[this.tabledetalle_destinos.unidadesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'unidades\' in table \'detalle_destinos\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_destinos.unidadesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsDespachoNull() {
                 return this.IsNull(this.tabledetalle_destinos.DespachoColumn);
             }
@@ -2375,6 +2422,18 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetNumIDNull() {
                 this[this.tabledetalle_destinos.NumIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsunidadesNull() {
+                return this.IsNull(this.tabledetalle_destinos.unidadesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetunidadesNull() {
+                this[this.tabledetalle_destinos.unidadesColumn] = global::System.Convert.DBNull;
             }
         }
         

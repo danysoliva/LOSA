@@ -49,11 +49,11 @@ namespace LOSA.TransaccionesMP.TrzMP_fromLote
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(104, 12);
+            this.labelControl1.Location = new System.Drawing.Point(63, 12);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(398, 25);
+            this.labelControl1.Size = new System.Drawing.Size(456, 25);
             this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Materias Primas que coinciden con el # de Lote";
+            this.labelControl1.Text = "Materias Primas que coinciden con el Número de Lote";
             // 
             // gridControl1
             // 

@@ -17,6 +17,7 @@ namespace LOSA.Clases
         }
 
         public int LotePT_Num;
+        public Int64 OrderNum_prd;
         public Int64 OrderId_prd;
         public string OrderCodePP;
         public string CodigoProducto;
@@ -39,14 +40,14 @@ namespace LOSA.Clases
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_detalle_sacos_producidos_por_pt_v2", con);
+                SqlCommand cmd = new SqlCommand("sp_get_detalle_sacos_producidos_por_pt_v3", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@pt_lote", pLotePT);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
                     LotePT_Num = dr.GetInt32(0);
-                    OrderId_prd = dr.GetInt64(1);
+                    OrderNum_prd = dr.GetInt64(1);
                     OrderCodePP = dr.GetString(2);
                     CodigoProducto = dr.GetString(3);
                     DescripcionProducto = dr.GetString(4);
@@ -57,6 +58,7 @@ namespace LOSA.Clases
                     Reproceso_kg = dr.GetDecimal(9);
                     Unidades = dr.GetDecimal(10);
                     CantidadBatch = dr.GetInt32(11);
+                    OrderId_prd = dr.GetInt64(12);
                     Recuperado = true;
                 }
                 dr.Close();

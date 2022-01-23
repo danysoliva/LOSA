@@ -44,6 +44,8 @@ namespace LOSA.Calidad
                     txtTotalProducido.Text = string.Format("{0:###,##0.00 Kg}", ptProducido.Reproceso_kg + ptProducido.TotalKg);
                     txtPresentacion.Text = ptProducido.DescripcionPresentacion;
                     txtCantidadBatch.Text = string.Format("{0:###,##0}", ptProducido.CantidadBatch);
+                    txtOrderNum.Text = ptProducido.OrderNum_prd.ToString();
+                    txtCodigoPP.Text = ptProducido.OrderCodePP;
                 }
 
                 string sql_h = @"[dbo].[RPT_PRD_Trazabilidad_header_lote]";
