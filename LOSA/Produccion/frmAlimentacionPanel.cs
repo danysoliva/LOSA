@@ -40,6 +40,8 @@ namespace LOSA.Produccion
                 da.Fill(dsProduccion.panelalimentacion);
                 cn.Close();
 
+                timertick.Enabled = true;
+
             }
             catch (Exception ex)
             {
@@ -99,6 +101,7 @@ namespace LOSA.Produccion
                 catch (Exception ex)
                 {
                     CajaDialogo.Error(ex.Message);
+                    timertick.Enabled = false;
                 }
             }
         }

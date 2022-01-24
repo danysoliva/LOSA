@@ -184,6 +184,7 @@ namespace LOSA
             this.SaltarLogin.Size = new System.Drawing.Size(199, 71);
             this.SaltarLogin.TabIndex = 15;
             this.SaltarLogin.Text = "Ingresar Log";
+            this.SaltarLogin.Visible = false;
             this.SaltarLogin.Click += new System.EventHandler(this.SaltarLogin_Click);
             // 
             // cmdButtonSaltarLogin
@@ -232,6 +233,7 @@ namespace LOSA
             this.simpleButton2.Size = new System.Drawing.Size(199, 71);
             this.simpleButton2.TabIndex = 17;
             this.simpleButton2.Text = "Ingresar Calidad";
+            this.simpleButton2.Visible = false;
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click_1);
             // 
             // pictureBox1

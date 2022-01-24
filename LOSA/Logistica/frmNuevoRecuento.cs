@@ -34,8 +34,41 @@ namespace LOSA.Logistica
             NuevoRecuento = new Recuento();
             get_years();
             get_bodegas();
+            Inicializar_productos();
         }
 
+        public void Inicializar_productos()
+        {
+            string query = @"sp_get_inizializar_grid_for_aguste";
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            try
+            {
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                dsCierreMes.Recuento_mp.Clear();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dsCierreMes.Recuento_mp);
+                cn.Close();
+
+                query = @"sp_get_inizializar_grid_for_pt";
+                cn.Open();
+                 cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                dsCierreMes.Recuento_pt.Clear();
+                 da = new SqlDataAdapter(cmd);
+                da.Fill(dsCierreMes.Recuento_pt);
+                cn.Close();
+
+            }
+            catch (Exception ex)
+            {
+            }
+
+
+
+
+        }
             
         public void get_bodegas()
         {

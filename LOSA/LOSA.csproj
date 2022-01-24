@@ -420,6 +420,12 @@
     <Compile Include="Calidad\frmInsectosMantenimiento.Designer.cs">
       <DependentUpon>frmInsectosMantenimiento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\frmIntarioColaLote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmIntarioColaLote.Designer.cs">
+      <DependentUpon>frmIntarioColaLote.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\frmLotesStatus.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -539,6 +545,12 @@
     </Compile>
     <Compile Include="Calidad\frmretencionadd.Designer.cs">
       <DependentUpon>frmretencionadd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\frmSeguimientoAlimentacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmSeguimientoAlimentacion.Designer.cs">
+      <DependentUpon>frmSeguimientoAlimentacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Calidad\frmTexturaMantenimiento.cs">
       <SubType>Form</SubType>
@@ -2454,6 +2466,9 @@
     <EmbeddedResource Include="Calidad\frmInsectosMantenimiento.resx">
       <DependentUpon>frmInsectosMantenimiento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmIntarioColaLote.resx">
+      <DependentUpon>frmIntarioColaLote.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmLotesStatus.resx">
       <DependentUpon>frmLotesStatus.cs</DependentUpon>
     </EmbeddedResource>
@@ -2513,6 +2528,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmretencionadd.resx">
       <DependentUpon>frmretencionadd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmSeguimientoAlimentacion.resx">
+      <DependentUpon>frmSeguimientoAlimentacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmTexturaMantenimiento.resx">
       <DependentUpon>frmTexturaMantenimiento.cs</DependentUpon>

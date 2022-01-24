@@ -1,0 +1,485 @@
+﻿
+namespace LOSA.Calidad
+{
+    partial class frmSeguimientoAlimentacion
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSeguimientoAlimentacion));
+            this.btn_cerrar = new DevExpress.XtraEditors.SimpleButton();
+            this.grd_data = new DevExpress.XtraGrid.GridControl();
+            this.dsCalidad = new LOSA.Calidad.dsCalidad();
+            this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpeso = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcantidad = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltarima_codigo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.timertick = new System.Windows.Forms.Timer(this.components);
+            this.btn_Refresh = new DevExpress.XtraEditors.SimpleButton();
+            this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.grd_consumo = new DevExpress.XtraGrid.GridControl();
+            this.grdv_consumo = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsCalidad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
+            this.splitContainerControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_consumo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_consumo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // btn_cerrar
+            // 
+            this.btn_cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_cerrar.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cerrar.Appearance.Options.UseFont = true;
+            this.btn_cerrar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_cerrar.ImageOptions.Image")));
+            this.btn_cerrar.Location = new System.Drawing.Point(1169, 5);
+            this.btn_cerrar.Name = "btn_cerrar";
+            this.btn_cerrar.Size = new System.Drawing.Size(106, 55);
+            this.btn_cerrar.TabIndex = 0;
+            this.btn_cerrar.Text = "Cerrar";
+            this.btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
+            // 
+            // grd_data
+            // 
+            this.grd_data.DataMember = "alimentacion";
+            this.grd_data.DataSource = this.dsCalidad;
+            this.grd_data.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grd_data.Location = new System.Drawing.Point(2, 28);
+            this.grd_data.MainView = this.grdv_data;
+            this.grd_data.Name = "grd_data";
+            this.grd_data.Size = new System.Drawing.Size(1276, 280);
+            this.grd_data.TabIndex = 1;
+            this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grdv_data});
+            // 
+            // dsCalidad
+            // 
+            this.dsCalidad.DataSetName = "dsCalidad";
+            this.dsCalidad.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // grdv_data
+            // 
+            this.grdv_data.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.grdv_data.Appearance.ColumnFilterButton.Options.UseFont = true;
+            this.grdv_data.Appearance.FilterPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.grdv_data.Appearance.FilterPanel.Options.UseFont = true;
+            this.grdv_data.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdv_data.Appearance.FocusedRow.Options.UseFont = true;
+            this.grdv_data.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.grdv_data.Appearance.FooterPanel.Options.UseFont = true;
+            this.grdv_data.Appearance.GroupFooter.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.grdv_data.Appearance.GroupFooter.Options.UseFont = true;
+            this.grdv_data.Appearance.GroupPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.grdv_data.Appearance.GroupPanel.Options.UseFont = true;
+            this.grdv_data.Appearance.GroupRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.grdv_data.Appearance.GroupRow.Options.UseFont = true;
+            this.grdv_data.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdv_data.Appearance.HeaderPanel.Options.UseFont = true;
+            this.grdv_data.Appearance.OddRow.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.grdv_data.Appearance.OddRow.Options.UseBackColor = true;
+            this.grdv_data.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.grdv_data.Appearance.Preview.Options.UseFont = true;
+            this.grdv_data.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.grdv_data.Appearance.Row.Options.UseFont = true;
+            this.grdv_data.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.grdv_data.Appearance.TopNewRow.Options.UseFont = true;
+            this.grdv_data.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid,
+            this.coldescripcion,
+            this.colfecha,
+            this.colpeso,
+            this.colcantidad,
+            this.colcodigo,
+            this.coltarima_codigo});
+            this.grdv_data.GridControl = this.grd_data;
+            this.grdv_data.Name = "grdv_data";
+            this.grdv_data.OptionsView.ShowAutoFilterRow = true;
+            this.grdv_data.OptionsView.ShowGroupPanel = false;
+            this.grdv_data.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.grdv_data_RowStyle);
+            // 
+            // colid
+            // 
+            this.colid.FieldName = "id";
+            this.colid.Name = "colid";
+            // 
+            // coldescripcion
+            // 
+            this.coldescripcion.Caption = "MP";
+            this.coldescripcion.FieldName = "descripcion";
+            this.coldescripcion.Name = "coldescripcion";
+            this.coldescripcion.OptionsColumn.AllowEdit = false;
+            this.coldescripcion.Visible = true;
+            this.coldescripcion.VisibleIndex = 2;
+            this.coldescripcion.Width = 339;
+            // 
+            // colfecha
+            // 
+            this.colfecha.Caption = "Fecha ";
+            this.colfecha.DisplayFormat.FormatString = "g";
+            this.colfecha.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.colfecha.FieldName = "fecha";
+            this.colfecha.Name = "colfecha";
+            this.colfecha.OptionsColumn.AllowEdit = false;
+            this.colfecha.Visible = true;
+            this.colfecha.VisibleIndex = 3;
+            this.colfecha.Width = 232;
+            // 
+            // colpeso
+            // 
+            this.colpeso.Caption = "Peso";
+            this.colpeso.FieldName = "peso";
+            this.colpeso.Name = "colpeso";
+            this.colpeso.OptionsColumn.AllowEdit = false;
+            this.colpeso.Visible = true;
+            this.colpeso.VisibleIndex = 4;
+            this.colpeso.Width = 196;
+            // 
+            // colcantidad
+            // 
+            this.colcantidad.Caption = "Unidades";
+            this.colcantidad.FieldName = "cantidad";
+            this.colcantidad.Name = "colcantidad";
+            this.colcantidad.OptionsColumn.AllowEdit = false;
+            this.colcantidad.Visible = true;
+            this.colcantidad.VisibleIndex = 5;
+            this.colcantidad.Width = 239;
+            // 
+            // colcodigo
+            // 
+            this.colcodigo.Caption = "Codigo";
+            this.colcodigo.FieldName = "codigo";
+            this.colcodigo.Name = "colcodigo";
+            this.colcodigo.OptionsColumn.AllowEdit = false;
+            this.colcodigo.Visible = true;
+            this.colcodigo.VisibleIndex = 1;
+            this.colcodigo.Width = 157;
+            // 
+            // coltarima_codigo
+            // 
+            this.coltarima_codigo.Caption = "TM";
+            this.coltarima_codigo.FieldName = "tarima_codigo";
+            this.coltarima_codigo.Name = "coltarima_codigo";
+            this.coltarima_codigo.OptionsColumn.AllowEdit = false;
+            this.coltarima_codigo.Visible = true;
+            this.coltarima_codigo.VisibleIndex = 0;
+            this.coltarima_codigo.Width = 92;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(462, 12);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(253, 25);
+            this.labelControl1.TabIndex = 2;
+            this.labelControl1.Text = "Seguimiento de Alimentacion";
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(5, 52);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(230, 55);
+            this.simpleButton1.TabIndex = 3;
+            this.simpleButton1.Text = "Seguimiento cola de lotes";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // timertick
+            // 
+            this.timertick.Interval = 1000;
+            this.timertick.Tick += new System.EventHandler(this.timertick_Tick);
+            // 
+            // btn_Refresh
+            // 
+            this.btn_Refresh.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.btn_Refresh.Appearance.Options.UseFont = true;
+            this.btn_Refresh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Refresh.ImageOptions.Image")));
+            this.btn_Refresh.Location = new System.Drawing.Point(241, 52);
+            this.btn_Refresh.Name = "btn_Refresh";
+            this.btn_Refresh.Size = new System.Drawing.Size(138, 55);
+            this.btn_Refresh.TabIndex = 4;
+            this.btn_Refresh.Text = "Refresh";
+            this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
+            // 
+            // splitContainerControl1
+            // 
+            this.splitContainerControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainerControl1.Horizontal = false;
+            this.splitContainerControl1.Location = new System.Drawing.Point(0, 114);
+            this.splitContainerControl1.Name = "splitContainerControl1";
+            this.splitContainerControl1.Panel1.Controls.Add(this.groupControl2);
+            this.splitContainerControl1.Panel1.Text = "Panel1";
+            this.splitContainerControl1.Panel2.Controls.Add(this.groupControl1);
+            this.splitContainerControl1.Panel2.Text = "Panel2";
+            this.splitContainerControl1.Size = new System.Drawing.Size(1280, 557);
+            this.splitContainerControl1.SplitterPosition = 310;
+            this.splitContainerControl1.TabIndex = 6;
+            // 
+            // groupControl2
+            // 
+            this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupControl2.AppearanceCaption.Options.UseFont = true;
+            this.groupControl2.Controls.Add(this.grd_data);
+            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl2.Location = new System.Drawing.Point(0, 0);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(1280, 310);
+            this.groupControl2.TabIndex = 2;
+            this.groupControl2.Text = "Tarimas pendientes por consumir en el sistema";
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.groupControl1.AppearanceCaption.Options.UseFont = true;
+            this.groupControl1.Controls.Add(this.grd_consumo);
+            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl1.Location = new System.Drawing.Point(0, 0);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(1280, 242);
+            this.groupControl1.TabIndex = 6;
+            this.groupControl1.Text = "Tarimas sin consumir en el sistema";
+            // 
+            // grd_consumo
+            // 
+            this.grd_consumo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grd_consumo.Location = new System.Drawing.Point(2, 28);
+            this.grd_consumo.MainView = this.grdv_consumo;
+            this.grd_consumo.Name = "grd_consumo";
+            this.grd_consumo.Size = new System.Drawing.Size(1276, 212);
+            this.grd_consumo.TabIndex = 0;
+            this.grd_consumo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grdv_consumo});
+            // 
+            // grdv_consumo
+            // 
+            this.grdv_consumo.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.grdv_consumo.Appearance.ColumnFilterButton.Options.UseFont = true;
+            this.grdv_consumo.Appearance.FilterPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.grdv_consumo.Appearance.FilterPanel.Options.UseFont = true;
+            this.grdv_consumo.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.grdv_consumo.Appearance.FocusedRow.Options.UseFont = true;
+            this.grdv_consumo.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.grdv_consumo.Appearance.FooterPanel.Options.UseFont = true;
+            this.grdv_consumo.Appearance.GroupFooter.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.grdv_consumo.Appearance.GroupFooter.Options.UseFont = true;
+            this.grdv_consumo.Appearance.GroupPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.grdv_consumo.Appearance.GroupPanel.Options.UseFont = true;
+            this.grdv_consumo.Appearance.GroupRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.grdv_consumo.Appearance.GroupRow.Options.UseFont = true;
+            this.grdv_consumo.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.grdv_consumo.Appearance.HeaderPanel.Options.UseFont = true;
+            this.grdv_consumo.Appearance.OddRow.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.grdv_consumo.Appearance.OddRow.Options.UseBackColor = true;
+            this.grdv_consumo.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.grdv_consumo.Appearance.Preview.Options.UseFont = true;
+            this.grdv_consumo.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.grdv_consumo.Appearance.Row.Options.UseFont = true;
+            this.grdv_consumo.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.grdv_consumo.Appearance.TopNewRow.Options.UseFont = true;
+            this.grdv_consumo.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn5,
+            this.gridColumn6,
+            this.gridColumn7});
+            this.grdv_consumo.GridControl = this.grd_consumo;
+            this.grdv_consumo.Name = "grdv_consumo";
+            this.grdv_consumo.OptionsView.ShowAutoFilterRow = true;
+            this.grdv_consumo.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.FieldName = "id";
+            this.gridColumn1.Name = "gridColumn1";
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "MP";
+            this.gridColumn2.FieldName = "descripcion";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 2;
+            this.gridColumn2.Width = 339;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Fecha ";
+            this.gridColumn3.DisplayFormat.FormatString = "g";
+            this.gridColumn3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.gridColumn3.FieldName = "fecha";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.AllowEdit = false;
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 3;
+            this.gridColumn3.Width = 232;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Peso";
+            this.gridColumn4.FieldName = "peso";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.OptionsColumn.AllowEdit = false;
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 4;
+            this.gridColumn4.Width = 196;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Unidades";
+            this.gridColumn5.FieldName = "cantidad";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.OptionsColumn.AllowEdit = false;
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 5;
+            this.gridColumn5.Width = 239;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Codigo";
+            this.gridColumn6.FieldName = "codigo";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.OptionsColumn.AllowEdit = false;
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 1;
+            this.gridColumn6.Width = 157;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "TM";
+            this.gridColumn7.FieldName = "tarima_codigo";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.OptionsColumn.AllowEdit = false;
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 0;
+            this.gridColumn7.Width = 92;
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.labelControl1);
+            this.panelControl1.Controls.Add(this.simpleButton1);
+            this.panelControl1.Controls.Add(this.btn_cerrar);
+            this.panelControl1.Controls.Add(this.btn_Refresh);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl1.Location = new System.Drawing.Point(0, 0);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(1280, 112);
+            this.panelControl1.TabIndex = 7;
+            // 
+            // frmSeguimientoAlimentacion
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1280, 675);
+            this.Controls.Add(this.panelControl1);
+            this.Controls.Add(this.splitContainerControl1);
+            this.Name = "frmSeguimientoAlimentacion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Seguimiento de Alimentacion";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsCalidad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
+            this.splitContainerControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grd_consumo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_consumo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
+            this.panelControl1.PerformLayout();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private DevExpress.XtraEditors.SimpleButton btn_cerrar;
+        private DevExpress.XtraGrid.GridControl grd_data;
+        private DevExpress.XtraGrid.Views.Grid.GridView grdv_data;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private dsCalidad dsCalidad;
+        private DevExpress.XtraGrid.Columns.GridColumn colid;
+        private DevExpress.XtraGrid.Columns.GridColumn coldescripcion;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecha;
+        private DevExpress.XtraGrid.Columns.GridColumn colpeso;
+        private DevExpress.XtraGrid.Columns.GridColumn colcantidad;
+        private DevExpress.XtraGrid.Columns.GridColumn colcodigo;
+        private DevExpress.XtraGrid.Columns.GridColumn coltarima_codigo;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private System.Windows.Forms.Timer timertick;
+        private DevExpress.XtraEditors.SimpleButton btn_Refresh;
+        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
+        private DevExpress.XtraEditors.GroupControl groupControl2;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraGrid.GridControl grd_consumo;
+        private DevExpress.XtraGrid.Views.Grid.GridView grdv_consumo;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+    }
+}
