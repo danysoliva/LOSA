@@ -15,6 +15,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using LOSA.Trazabilidad;
 using LOSA.Logistica;
 using LOSA.Trazabilidad.ReportesTRZ;
+using LOSA.Trazabilidad.Despachos;
 
 namespace LOSA.Calidad
 {
@@ -44,6 +45,8 @@ namespace LOSA.Calidad
                     txtTotalProducido.Text = string.Format("{0:###,##0.00 Kg}", ptProducido.Reproceso_kg + ptProducido.TotalKg);
                     txtPresentacion.Text = ptProducido.DescripcionPresentacion;
                     txtCantidadBatch.Text = string.Format("{0:###,##0}", ptProducido.CantidadBatch);
+                    txtOrderNum.Text = ptProducido.OrderNum_prd.ToString();
+                    txtCodigoPP.Text = ptProducido.OrderCodePP;
                 }
 
                 string sql_h = @"[dbo].[RPT_PRD_Trazabilidad_header_lote]";
@@ -151,6 +154,30 @@ namespace LOSA.Calidad
             }
             load_data();//Detalle de materias primas usadas en lote de PT
             load_header();
+            Load_Despachos();
+        }
+
+        private void Load_Despachos()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_detalle_destinos_lote_pt_trz", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lotept", txtlote.Text);
+                dsReportesTRZ1.detalle_destinos.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsReportesTRZ1.detalle_destinos);
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
         }
 
         private void txtlote_KeyDown(object sender, KeyEventArgs e)
@@ -164,11 +191,16 @@ namespace LOSA.Calidad
                 }
                 load_header();
                 load_data();
+                Load_Despachos();
             }
         }
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
+            //Preguntar cual grid se va a exportar.
+            //1 Detalle MP
+            //2 Clientes que Recibieron el Lote PT
+            
             SaveFileDialog dialog = new SaveFileDialog();
             dialog.Filter = "Excel File (.xlsx)|*.xlsx";
             dialog.FilterIndex = 0;
@@ -257,6 +289,33 @@ namespace LOSA.Calidad
             if (this.MdiParent != null)
                 frm.MdiParent = this.MdiParent;
             frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+        private void btnLinkBoletaView_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)gridControl2.FocusedView;
+            var row = (dsReportesTRZ.detalle_destinosRow)gridView.GetFocusedDataRow();
+
+            Boleta bol1 = new Boleta();
+            if (bol1.RecuperarRegistroFromNumBoleta(row.NumID))
+            {
+                frmViewBasculaBoleta frm = new frmViewBasculaBoleta(bol1.Id);
+                if (this.MdiParent != null)
+                    frm.MdiParent = this.MdiParent;
+                frm.WindowState = FormWindowState.Normal;
+                frm.Show();
+            }
+        }
+
+        private void cmdDespachoId_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)gridControl2.FocusedView;
+            var row = (dsReportesTRZ.detalle_destinosRow)gridView.GetFocusedDataRow();
+            frmDetalleDespacho frm = new frmDetalleDespacho(row.Despacho);
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+            frm.WindowState = FormWindowState.Normal;
             frm.Show();
         }
     }

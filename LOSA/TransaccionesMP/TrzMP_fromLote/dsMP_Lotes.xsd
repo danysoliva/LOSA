@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsMP_Lotes" targetNamespace="http://tempuri.org/dsMP_Lotes.xsd" xmlns:mstns="http://tempuri.org/dsMP_Lotes.xsd" xmlns="http://tempuri.org/dsMP_Lotes.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsMP_Lotes" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsMP_Lotes" msprop:Generator_UserDSName="dsMP_Lotes">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="mp_mismo_lote" msprop:Generator_TableClassName="mp_mismo_loteDataTable" msprop:Generator_TableVarName="tablemp_mismo_lote" msprop:Generator_TablePropName="mp_mismo_lote" msprop:Generator_RowDeletingName="mp_mismo_loteRowDeleting" msprop:Generator_RowChangingName="mp_mismo_loteRowChanging" msprop:Generator_RowEvHandlerName="mp_mismo_loteRowChangeEventHandler" msprop:Generator_RowDeletedName="mp_mismo_loteRowDeleted" msprop:Generator_UserTableName="mp_mismo_lote" msprop:Generator_RowChangedName="mp_mismo_loteRowChanged" msprop:Generator_RowEvArgName="mp_mismo_loteRowChangeEvent" msprop:Generator_RowClassName="mp_mismo_loteRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idmp" msprop:Generator_ColumnVarNameInTable="columnidmp" msprop:Generator_ColumnPropNameInRow="idmp" msprop:Generator_ColumnPropNameInTable="idmpColumn" msprop:Generator_UserColumnName="idmp" type="xs:int" minOccurs="0" />
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="nombre_comercial" msprop:Generator_ColumnVarNameInTable="columnnombre_comercial" msprop:Generator_ColumnPropNameInRow="nombre_comercial" msprop:Generator_ColumnPropNameInTable="nombre_comercialColumn" msprop:Generator_UserColumnName="nombre_comercial" type="xs:string" minOccurs="0" />
+              <xs:element name="codigo" msprop:Generator_ColumnVarNameInTable="columncodigo" msprop:Generator_ColumnPropNameInRow="codigo" msprop:Generator_ColumnPropNameInTable="codigoColumn" msprop:Generator_UserColumnName="codigo" type="xs:string" minOccurs="0" />
+              <xs:element name="code_sap" msprop:Generator_ColumnVarNameInTable="columncode_sap" msprop:Generator_ColumnPropNameInRow="code_sap" msprop:Generator_ColumnPropNameInTable="code_sapColumn" msprop:Generator_UserColumnName="code_sap" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

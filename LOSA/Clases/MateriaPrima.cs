@@ -21,6 +21,7 @@ namespace LOSA.Clases
         string _CodeMP_SAP;
         string _CodigoODOO;
         string _Name;
+        string _NameComercial;
         bool _Recuperado;
 
 
@@ -28,6 +29,7 @@ namespace LOSA.Clases
         public string CodeMP_SAP { get => _CodeMP_SAP; set => _CodeMP_SAP = value; }
         public string Codigo { get => _CodigoODOO; set => _CodigoODOO = value; }
         public string Name { get => _Name; set => _Name = value; }
+        public string NameComercial { get => _NameComercial; set => _NameComercial = value; }
         public bool Recuperado { get => _Recuperado; set => _Recuperado = value; }
 
         public bool RecuperarRegistroFromID_RM(int pIdRM)
@@ -47,7 +49,7 @@ namespace LOSA.Clases
                     IdMP_ACS = dr.GetInt32(0);
                     Codigo = dr.GetString(1);
                     Name = dr.GetString(2);
-                    //name sap = dr.GetString(3);
+                    NameComercial = dr.GetString(3);
                     CodeMP_SAP = dr.GetString(4);
                 }
                 dr.Close();
