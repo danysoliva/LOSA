@@ -24,6 +24,7 @@ namespace LOSA.MicroIngredientes
         int id = 0;
         string codigoOrden;
         int id_orden = 0;
+        string pt_name;
 
         public xfrmDetalleOrdenesMicrosPesaje(int _ID, string _CodigoOrden)
         {
@@ -82,6 +83,19 @@ namespace LOSA.MicroIngredientes
                     cnx.Close();
 
                 }
+
+                if (dsMicros.plan_microsh.Rows.Count>0)
+                {
+
+                   lblPT.Text = "PT: "+ dsMicros.plan_microsh.FirstOrDefault().pt_name;
+                   lblBatch.Text = "Batch Real: "+ dsMicros.plan_microsh.FirstOrDefault().batch_real;
+                }
+                else
+                {
+                    lblPT.Text = "PT: #";
+                    lblBatch.Text = "Batch Real: #";
+                }
+                
             }
             catch (Exception ex)
             {
@@ -569,6 +583,65 @@ namespace LOSA.MicroIngredientes
                 {
                     CajaDialogo.Error("YA EXISTE UNA CONFIGURACION PARA ESTA ORDEN");
                 }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void btnBatch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                var row = (dsMicros.plan_microshRow)gvDetalle.GetFocusedDataRow();
+
+                if (row!=null)
+                {
+
+
+                xfrmSpinBatchPlan frm = new xfrmSpinBatchPlan(row.id_orden_encabezado, row.order_code);
+
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    int batchDisponibles = 0;
+
+                    batchDisponibles = row.cant_batch - row.batch_real;
+
+
+                    if (frm.cantBatch <= batchDisponibles)
+                    {
+                        DataOperations dp = new DataOperations();
+
+                        using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
+                        {
+                            cnx.Open();
+                            SqlCommand cmd = new SqlCommand("sp_acumulador_batch_real", cnx);
+                            cmd.CommandType = CommandType.StoredProcedure;
+
+                            cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = row.id_orden_encabezado;
+                            cmd.Parameters.AddWithValue("@batch_acumulado", SqlDbType.Int).Value = frm.cantBatch;
+
+                            cmd.ExecuteNonQuery();
+                            cnx.Close();
+
+                            LoadData();
+                        }
+                    }
+                    else
+                    {
+                        CajaDialogo.Error("DEDE DE PESAR UNA CANTIDAD MENOR O IGUAL A LA CANTIDAD DE BATCH DISPONIBLE");
+                    }
+
+
+                }
+                }
+                else
+                {
+                    CajaDialogo.Error("NO HAY ORDEN ACTIVA");
+                }
+
             }
             catch (Exception ex)
             {
