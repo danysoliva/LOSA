@@ -920,7 +920,6 @@
             this.simpleButton25.Size = new System.Drawing.Size(199, 71);
             this.simpleButton25.TabIndex = 23;
             this.simpleButton25.Text = "Seguimiento de Cola\r\nde Lotes";
-            this.simpleButton25.Visible = false;
             this.simpleButton25.Click += new System.EventHandler(this.simpleButton25_Click);
             // 
             // simpleButton19

@@ -95,7 +95,7 @@ namespace LOSA.Calidad
             this.grd_data.Location = new System.Drawing.Point(2, 28);
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
-            this.grd_data.Size = new System.Drawing.Size(1276, 280);
+            this.grd_data.Size = new System.Drawing.Size(1276, 242);
             this.grd_data.TabIndex = 1;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
@@ -229,11 +229,11 @@ namespace LOSA.Calidad
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(5, 52);
+            this.simpleButton1.Location = new System.Drawing.Point(4, 52);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(230, 55);
+            this.simpleButton1.Size = new System.Drawing.Size(143, 55);
             this.simpleButton1.TabIndex = 3;
-            this.simpleButton1.Text = "Seguimiento cola de lotes";
+            this.simpleButton1.Text = "Seguimiento \r\ncola de lotes";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // timertick
@@ -246,11 +246,11 @@ namespace LOSA.Calidad
             this.btn_Refresh.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btn_Refresh.Appearance.Options.UseFont = true;
             this.btn_Refresh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Refresh.ImageOptions.Image")));
-            this.btn_Refresh.Location = new System.Drawing.Point(241, 52);
+            this.btn_Refresh.Location = new System.Drawing.Point(153, 52);
             this.btn_Refresh.Name = "btn_Refresh";
             this.btn_Refresh.Size = new System.Drawing.Size(138, 55);
             this.btn_Refresh.TabIndex = 4;
-            this.btn_Refresh.Text = "Refresh";
+            this.btn_Refresh.Text = "Recargar";
             this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
             // 
             // splitContainerControl1
@@ -266,7 +266,7 @@ namespace LOSA.Calidad
             this.splitContainerControl1.Panel2.Controls.Add(this.groupControl1);
             this.splitContainerControl1.Panel2.Text = "Panel2";
             this.splitContainerControl1.Size = new System.Drawing.Size(1280, 557);
-            this.splitContainerControl1.SplitterPosition = 310;
+            this.splitContainerControl1.SplitterPosition = 272;
             this.splitContainerControl1.TabIndex = 6;
             // 
             // groupControl2
@@ -277,7 +277,7 @@ namespace LOSA.Calidad
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1280, 310);
+            this.groupControl2.Size = new System.Drawing.Size(1280, 272);
             this.groupControl2.TabIndex = 2;
             this.groupControl2.Text = "Tarimas pendientes por consumir en el sistema";
             // 
@@ -289,17 +289,19 @@ namespace LOSA.Calidad
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1280, 242);
+            this.groupControl1.Size = new System.Drawing.Size(1280, 280);
             this.groupControl1.TabIndex = 6;
-            this.groupControl1.Text = "Tarimas sin consumir en el sistema";
+            this.groupControl1.Text = "Tarimas consumidas en el sistema";
             // 
             // grd_consumo
             // 
+            this.grd_consumo.DataMember = "Consumido";
+            this.grd_consumo.DataSource = this.dsCalidad;
             this.grd_consumo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grd_consumo.Location = new System.Drawing.Point(2, 28);
             this.grd_consumo.MainView = this.grdv_consumo;
             this.grd_consumo.Name = "grd_consumo";
-            this.grd_consumo.Size = new System.Drawing.Size(1276, 212);
+            this.grd_consumo.Size = new System.Drawing.Size(1276, 250);
             this.grd_consumo.TabIndex = 0;
             this.grd_consumo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_consumo});
@@ -360,7 +362,7 @@ namespace LOSA.Calidad
             // 
             // gridColumn3
             // 
-            this.gridColumn3.Caption = "Fecha ";
+            this.gridColumn3.Caption = "Fecha de consumo";
             this.gridColumn3.DisplayFormat.FormatString = "g";
             this.gridColumn3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn3.FieldName = "fecha";
