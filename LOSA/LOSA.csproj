@@ -3614,6 +3614,7 @@
     <None Include="Resources\Accept-icon128px.png" />
     <Content Include="Resources\admin.png" />
     <None Include="Resources\backspace.png" />
+    <None Include="Resources\batch-processing_32X32.png" />
     <Content Include="Resources\box.png" />
     <None Include="Resources\box32px.png" />
     <None Include="Resources\boxPT32px.png" />
