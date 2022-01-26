@@ -37,7 +37,6 @@ namespace LOSA.Calidad
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dsCalidad.ViewCola);
                 cn.Close();
-               
 
             }
             catch (Exception ex)

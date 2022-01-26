@@ -138,32 +138,4 @@
         bIQ07S/ba+QbQN80lQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnIzquierda.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        7AAAAOwBeShxvQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAG4SURBVFhHYxgF
-        QwaEHnvM6bv7ZbDv7tclvnveBKSd+c8KlaI98Nv9yhBo8SMg/g/Dfrtfn/fb8UoFqoR2wHvna2PfPa/f
-        IVsOd8Se12cc9v9ngSqlPsBnORzveusGVU5dQJTlQAwMhTSoFuoBYi0HYZ9db5yh2qgDSLEciC+GrvrP
-        DNVKOSDR8icBe18qQ7VSDiBZ7dUbLBZhw8+9d7/RhGqlHJDocxD+DlZPDt79+hkQL4WHXsD25wpAgbdQ
-        g+mIX70BF2RAzkpMSbrhlSAHfEQTpCd+xqDW8++fSsf//wOB1Xv//mXQm/LzKTZJemC9ab8eMpjM/+Kq
-        PgChoNbz95/pnC+QUtR03vcYUhyh2vXvP0g9Wbj33x/9qT/vWy76bg+2HAbM5n2JBLkKm4XoWKPn71+z
-        BT+8oVqpB0gJCfW+v3/MF353hGqlHiDFEVoT/nzXXvWfDaqVeoAUR5jN+1YG1UZdQKwjTGZ/XwzVQn1A
-        jCPM5v8shyqnDcDnCO0Jf744zP/PAVVKOwDKopq9f3+jWf6NJrkAF7Bc9VHIdM63bqOZPzaZzfve4rv5
-        PxdUahQMZcDAAABlVqhBI360EQAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="btnDerecha.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        7AAAAOwBeShxvQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGsSURBVFhH7ZQ9
-        S8NQFIZjv7BCTdtRHKRJuzhJwcFJkYKrOAmCm5uthdbWuGRqmw7uzoJTJ/+HIPgDpCji0tLPRPDjeG5N
-        MVyOoLU3ivSFB0LOyX1Obm8qTfIvsqhDQCnDplKBXLwMW/MnELRL4oNiVa3AFQIO6moZluwWcUmegh9l
-        l5x8SBOHS9qtYoKCDULsROwQuPgeIeURN0TcgBQhpBAzxKoOPtWAa0JIIWYItQoKLn7HyT5DzBCxKsRx
-        8a8O0UoYsGw/+h72FooB5/hHco8NzRGxEEpI8bETsRIk8EaDa3CDBts5CS9qXMFNamyAB+6mm7Qkb6b9
-        Iu234DfwZNqvUjDXu6WKboDuuiRrjylPGichGkTCnNFjc2XwJYQ1ay2Y792wn4MVRmEqTYsoWH9Es3YG
-        8nGE7aI303mmZDxMHj6ydu1Hfx62e9+Rj/XNF3SY9me7FiXjGbucRS6aBUrGI0TOEiqYZ5TQiTA5i1yw
-        NEo6RKichZ2BQLbb/xX5MPKhtY4H0XTKfQedp0jR3LZbxGdOhxm52C+F8v0LPJjVWb0dtUuT/PVI0hsc
-        pigF4KZCjAAAAABJRU5ErkJggg==
-</value>
-  </data>
 </root>
