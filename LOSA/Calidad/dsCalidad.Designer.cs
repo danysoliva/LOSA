@@ -5894,6 +5894,8 @@ namespace LOSA.Calidad {
             
             private global::System.Data.DataColumn columntarima_codigo;
             
+            private global::System.Data.DataColumn columnlote;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public alimentacionDataTable() {
@@ -5985,6 +5987,14 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn loteColumn {
+                get {
+                    return this.columnlote;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -6020,7 +6030,7 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public alimentacionRow AddalimentacionRow(int id, string descripcion, System.DateTime fecha, decimal peso, decimal cantidad, string codigo, string tarima_codigo) {
+            public alimentacionRow AddalimentacionRow(int id, string descripcion, System.DateTime fecha, decimal peso, decimal cantidad, string codigo, string tarima_codigo, string lote) {
                 alimentacionRow rowalimentacionRow = ((alimentacionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -6029,7 +6039,8 @@ namespace LOSA.Calidad {
                         peso,
                         cantidad,
                         codigo,
-                        tarima_codigo};
+                        tarima_codigo,
+                        lote};
                 rowalimentacionRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowalimentacionRow);
                 return rowalimentacionRow;
@@ -6059,6 +6070,7 @@ namespace LOSA.Calidad {
                 this.columncantidad = base.Columns["cantidad"];
                 this.columncodigo = base.Columns["codigo"];
                 this.columntarima_codigo = base.Columns["tarima_codigo"];
+                this.columnlote = base.Columns["lote"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6078,6 +6090,8 @@ namespace LOSA.Calidad {
                 base.Columns.Add(this.columncodigo);
                 this.columntarima_codigo = new global::System.Data.DataColumn("tarima_codigo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntarima_codigo);
+                this.columnlote = new global::System.Data.DataColumn("lote", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlote);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6225,6 +6239,8 @@ namespace LOSA.Calidad {
             
             private global::System.Data.DataColumn columntarima_codigo;
             
+            private global::System.Data.DataColumn columnlote;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ConsumidoDataTable() {
@@ -6316,6 +6332,14 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn loteColumn {
+                get {
+                    return this.columnlote;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -6351,7 +6375,7 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ConsumidoRow AddConsumidoRow(int id, string descripcion, System.DateTime fecha, decimal peso, decimal cantidad, string codigo, string tarima_codigo) {
+            public ConsumidoRow AddConsumidoRow(int id, string descripcion, System.DateTime fecha, decimal peso, decimal cantidad, string codigo, string tarima_codigo, string lote) {
                 ConsumidoRow rowConsumidoRow = ((ConsumidoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -6360,7 +6384,8 @@ namespace LOSA.Calidad {
                         peso,
                         cantidad,
                         codigo,
-                        tarima_codigo};
+                        tarima_codigo,
+                        lote};
                 rowConsumidoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowConsumidoRow);
                 return rowConsumidoRow;
@@ -6390,6 +6415,7 @@ namespace LOSA.Calidad {
                 this.columncantidad = base.Columns["cantidad"];
                 this.columncodigo = base.Columns["codigo"];
                 this.columntarima_codigo = base.Columns["tarima_codigo"];
+                this.columnlote = base.Columns["lote"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6409,6 +6435,8 @@ namespace LOSA.Calidad {
                 base.Columns.Add(this.columncodigo);
                 this.columntarima_codigo = new global::System.Data.DataColumn("tarima_codigo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntarima_codigo);
+                this.columnlote = new global::System.Data.DataColumn("lote", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlote);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10122,6 +10150,22 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string lote {
+                get {
+                    try {
+                        return ((string)(this[this.tablealimentacion.loteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'lote\' de la tabla \'alimentacion\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablealimentacion.loteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tablealimentacion.idColumn);
             }
@@ -10202,6 +10246,18 @@ namespace LOSA.Calidad {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Settarima_codigoNull() {
                 this[this.tablealimentacion.tarima_codigoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsloteNull() {
+                return this.IsNull(this.tablealimentacion.loteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetloteNull() {
+                this[this.tablealimentacion.loteColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -10333,6 +10389,22 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string lote {
+                get {
+                    try {
+                        return ((string)(this[this.tableConsumido.loteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'lote\' de la tabla \'Consumido\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableConsumido.loteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableConsumido.idColumn);
             }
@@ -10413,6 +10485,18 @@ namespace LOSA.Calidad {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Settarima_codigoNull() {
                 this[this.tableConsumido.tarima_codigoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsloteNull() {
+                return this.IsNull(this.tableConsumido.loteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetloteNull() {
+                this[this.tableConsumido.loteColumn] = global::System.Convert.DBNull;
             }
         }
         
