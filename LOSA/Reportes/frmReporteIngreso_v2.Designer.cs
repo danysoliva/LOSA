@@ -41,7 +41,6 @@ namespace LOSA.Reportes
             this.colyear = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colyeardate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
-            this.rptingresoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colN_Ingreso = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCodigoP = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -59,15 +58,16 @@ namespace LOSA.Reportes
             this.colMP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCodigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colF_Vencimiento = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colantiguedad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colf_consumo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colf_final_consumo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colantiguedad = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcodigo_produccion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colf_produccion = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdYEAR.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yearBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsReportes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rptingresoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,7 +78,7 @@ namespace LOSA.Reportes
             this.btnclose.Appearance.Options.UseFont = true;
             this.btnclose.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnclose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnclose.ImageOptions.Image")));
-            this.btnclose.Location = new System.Drawing.Point(535, 8);
+            this.btnclose.Location = new System.Drawing.Point(1203, 8);
             this.btnclose.Name = "btnclose";
             this.btnclose.Size = new System.Drawing.Size(172, 44);
             this.btnclose.TabIndex = 36;
@@ -182,19 +182,15 @@ namespace LOSA.Reportes
             this.grd_data.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grd_data.DataSource = this.rptingresoBindingSource;
+            this.grd_data.DataMember = "rpt_ingreso";
+            this.grd_data.DataSource = this.dsReportes;
             this.grd_data.Location = new System.Drawing.Point(0, 117);
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
-            this.grd_data.Size = new System.Drawing.Size(711, 404);
+            this.grd_data.Size = new System.Drawing.Size(1379, 404);
             this.grd_data.TabIndex = 43;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
-            // 
-            // rptingresoBindingSource
-            // 
-            this.rptingresoBindingSource.DataMember = "rpt_ingreso";
-            this.rptingresoBindingSource.DataSource = this.dsReportes;
             // 
             // grdv_data
             // 
@@ -221,6 +217,8 @@ namespace LOSA.Reportes
             this.colCodigoP,
             this.colProveedor,
             this.colF_registro,
+            this.colcodigo_produccion,
+            this.colf_produccion,
             this.colBoleta,
             this.colplaca,
             this.colfurgon,
@@ -284,7 +282,7 @@ namespace LOSA.Reportes
             this.colBoleta.Name = "colBoleta";
             this.colBoleta.OptionsColumn.AllowEdit = false;
             this.colBoleta.Visible = true;
-            this.colBoleta.VisibleIndex = 4;
+            this.colBoleta.VisibleIndex = 6;
             // 
             // colplaca
             // 
@@ -293,7 +291,7 @@ namespace LOSA.Reportes
             this.colplaca.Name = "colplaca";
             this.colplaca.OptionsColumn.AllowEdit = false;
             this.colplaca.Visible = true;
-            this.colplaca.VisibleIndex = 5;
+            this.colplaca.VisibleIndex = 7;
             // 
             // colfurgon
             // 
@@ -302,7 +300,7 @@ namespace LOSA.Reportes
             this.colfurgon.Name = "colfurgon";
             this.colfurgon.OptionsColumn.AllowEdit = false;
             this.colfurgon.Visible = true;
-            this.colfurgon.VisibleIndex = 6;
+            this.colfurgon.VisibleIndex = 8;
             // 
             // colFactura
             // 
@@ -311,7 +309,7 @@ namespace LOSA.Reportes
             this.colFactura.Name = "colFactura";
             this.colFactura.OptionsColumn.AllowEdit = false;
             this.colFactura.Visible = true;
-            this.colFactura.VisibleIndex = 7;
+            this.colFactura.VisibleIndex = 9;
             // 
             // colPeso
             // 
@@ -320,7 +318,7 @@ namespace LOSA.Reportes
             this.colPeso.Name = "colPeso";
             this.colPeso.OptionsColumn.AllowEdit = false;
             this.colPeso.Visible = true;
-            this.colPeso.VisibleIndex = 8;
+            this.colPeso.VisibleIndex = 10;
             // 
             // colUnidades
             // 
@@ -329,7 +327,7 @@ namespace LOSA.Reportes
             this.colUnidades.Name = "colUnidades";
             this.colUnidades.OptionsColumn.AllowEdit = false;
             this.colUnidades.Visible = true;
-            this.colUnidades.VisibleIndex = 9;
+            this.colUnidades.VisibleIndex = 11;
             // 
             // colExistencia
             // 
@@ -338,7 +336,7 @@ namespace LOSA.Reportes
             this.colExistencia.Name = "colExistencia";
             this.colExistencia.OptionsColumn.AllowEdit = false;
             this.colExistencia.Visible = true;
-            this.colExistencia.VisibleIndex = 10;
+            this.colExistencia.VisibleIndex = 12;
             // 
             // collote
             // 
@@ -347,7 +345,7 @@ namespace LOSA.Reportes
             this.collote.Name = "collote";
             this.collote.OptionsColumn.AllowEdit = false;
             this.collote.Visible = true;
-            this.collote.VisibleIndex = 11;
+            this.collote.VisibleIndex = 13;
             // 
             // colid_mp
             // 
@@ -362,7 +360,7 @@ namespace LOSA.Reportes
             this.colMP.Name = "colMP";
             this.colMP.OptionsColumn.AllowEdit = false;
             this.colMP.Visible = true;
-            this.colMP.VisibleIndex = 12;
+            this.colMP.VisibleIndex = 14;
             // 
             // colCodigo
             // 
@@ -371,7 +369,7 @@ namespace LOSA.Reportes
             this.colCodigo.Name = "colCodigo";
             this.colCodigo.OptionsColumn.AllowEdit = false;
             this.colCodigo.Visible = true;
-            this.colCodigo.VisibleIndex = 13;
+            this.colCodigo.VisibleIndex = 15;
             // 
             // colF_Vencimiento
             // 
@@ -380,16 +378,7 @@ namespace LOSA.Reportes
             this.colF_Vencimiento.Name = "colF_Vencimiento";
             this.colF_Vencimiento.OptionsColumn.AllowEdit = false;
             this.colF_Vencimiento.Visible = true;
-            this.colF_Vencimiento.VisibleIndex = 14;
-            // 
-            // colantiguedad
-            // 
-            this.colantiguedad.Caption = "Antiguedad";
-            this.colantiguedad.FieldName = "antiguedad";
-            this.colantiguedad.Name = "colantiguedad";
-            this.colantiguedad.OptionsColumn.AllowEdit = false;
-            this.colantiguedad.Visible = true;
-            this.colantiguedad.VisibleIndex = 15;
+            this.colF_Vencimiento.VisibleIndex = 16;
             // 
             // colf_consumo
             // 
@@ -398,7 +387,7 @@ namespace LOSA.Reportes
             this.colf_consumo.Name = "colf_consumo";
             this.colf_consumo.OptionsColumn.AllowEdit = false;
             this.colf_consumo.Visible = true;
-            this.colf_consumo.VisibleIndex = 16;
+            this.colf_consumo.VisibleIndex = 18;
             // 
             // colf_final_consumo
             // 
@@ -407,13 +396,40 @@ namespace LOSA.Reportes
             this.colf_final_consumo.Name = "colf_final_consumo";
             this.colf_final_consumo.OptionsColumn.AllowEdit = false;
             this.colf_final_consumo.Visible = true;
-            this.colf_final_consumo.VisibleIndex = 17;
+            this.colf_final_consumo.VisibleIndex = 19;
+            // 
+            // colantiguedad
+            // 
+            this.colantiguedad.Caption = "Antiguedad";
+            this.colantiguedad.FieldName = "antiguedad";
+            this.colantiguedad.Name = "colantiguedad";
+            this.colantiguedad.OptionsColumn.AllowEdit = false;
+            this.colantiguedad.Visible = true;
+            this.colantiguedad.VisibleIndex = 17;
+            // 
+            // colcodigo_produccion
+            // 
+            this.colcodigo_produccion.Caption = "C. produccion";
+            this.colcodigo_produccion.FieldName = "codigo_produccion";
+            this.colcodigo_produccion.Name = "colcodigo_produccion";
+            this.colcodigo_produccion.OptionsColumn.AllowEdit = false;
+            this.colcodigo_produccion.Visible = true;
+            this.colcodigo_produccion.VisibleIndex = 4;
+            // 
+            // colf_produccion
+            // 
+            this.colf_produccion.Caption = "F produccion";
+            this.colf_produccion.FieldName = "f_produccion";
+            this.colf_produccion.Name = "colf_produccion";
+            this.colf_produccion.OptionsColumn.AllowEdit = false;
+            this.colf_produccion.Visible = true;
+            this.colf_produccion.VisibleIndex = 5;
             // 
             // frmReporteIngreso_v2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(714, 522);
+            this.ClientSize = new System.Drawing.Size(1382, 522);
             this.Controls.Add(this.grd_data);
             this.Controls.Add(this.lblyear);
             this.Controls.Add(this.grdYEAR);
@@ -428,7 +444,6 @@ namespace LOSA.Reportes
             ((System.ComponentModel.ISupportInitialize)(this.dsReportes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rptingresoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -448,7 +463,6 @@ namespace LOSA.Reportes
         private DevExpress.XtraGrid.Views.Grid.GridView grdv_data;
         private System.Windows.Forms.BindingSource yearBindingSource;
         private dsReportes dsReportes;
-        private System.Windows.Forms.BindingSource rptingresoBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn colN_Ingreso;
         private DevExpress.XtraGrid.Columns.GridColumn colCodigoP;
         private DevExpress.XtraGrid.Columns.GridColumn colProveedor;
@@ -468,5 +482,7 @@ namespace LOSA.Reportes
         private DevExpress.XtraGrid.Columns.GridColumn colantiguedad;
         private DevExpress.XtraGrid.Columns.GridColumn colf_consumo;
         private DevExpress.XtraGrid.Columns.GridColumn colf_final_consumo;
+        private DevExpress.XtraGrid.Columns.GridColumn colcodigo_produccion;
+        private DevExpress.XtraGrid.Columns.GridColumn colf_produccion;
     }
 }

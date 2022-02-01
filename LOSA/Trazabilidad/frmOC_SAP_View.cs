@@ -25,7 +25,6 @@ namespace LOSA.Trazabilidad
         {
             try
             {
-
                 DataOperations dp = new DataOperations();
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
@@ -37,7 +36,6 @@ namespace LOSA.Trazabilidad
                 dsMantoTrazabilidad1.OC_SAP_View.Clear();
                 adat.Fill(dsMantoTrazabilidad1.OC_SAP_View);
                 con.Close();
-
             }
             catch (Exception ec)
             {

@@ -39,6 +39,7 @@
             this.TabLogistica = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.TabMP_Sacos = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton26 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton20 = new DevExpress.XtraEditors.SimpleButton();
             this.btnAjustesKardex = new DevExpress.XtraEditors.SimpleButton();
             this.cmdUbicaciones = new DevExpress.XtraEditors.SimpleButton();
@@ -282,6 +283,7 @@
             // 
             this.TabMP_Sacos.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TabMP_Sacos.Appearance.Header.Options.UseFont = true;
+            this.TabMP_Sacos.Controls.Add(this.simpleButton26);
             this.TabMP_Sacos.Controls.Add(this.simpleButton20);
             this.TabMP_Sacos.Controls.Add(this.btnAjustesKardex);
             this.TabMP_Sacos.Controls.Add(this.cmdUbicaciones);
@@ -299,6 +301,22 @@
             this.TabMP_Sacos.Name = "TabMP_Sacos";
             this.TabMP_Sacos.Size = new System.Drawing.Size(766, 409);
             this.TabMP_Sacos.Text = "MP en Sacos";
+            // 
+            // simpleButton26
+            // 
+            this.simpleButton26.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton26.Appearance.Options.UseFont = true;
+            this.simpleButton26.Appearance.Options.UseTextOptions = true;
+            this.simpleButton26.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.simpleButton26.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton26.ImageOptions.Image = global::LOSA.Properties.Resources.eventos;
+            this.simpleButton26.Location = new System.Drawing.Point(416, 14);
+            this.simpleButton26.Margin = new System.Windows.Forms.Padding(4);
+            this.simpleButton26.Name = "simpleButton26";
+            this.simpleButton26.Size = new System.Drawing.Size(199, 42);
+            this.simpleButton26.TabIndex = 44;
+            this.simpleButton26.Text = "Compras en transito";
+            this.simpleButton26.Click += new System.EventHandler(this.simpleButton26_Click);
             // 
             // simpleButton20
             // 
@@ -1433,5 +1451,6 @@
         private DevExpress.XtraEditors.SimpleButton btnReporteProduccionDespachos;
         private DevExpress.XtraEditors.SimpleButton simpleButton24;
         private DevExpress.XtraEditors.SimpleButton simpleButton25;
+        private DevExpress.XtraEditors.SimpleButton simpleButton26;
     }
 }

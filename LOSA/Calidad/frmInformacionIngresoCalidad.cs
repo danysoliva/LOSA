@@ -1380,5 +1380,10 @@ namespace LOSA.Calidad
                 }
             }
         }
+
+        private void btnNoConformidad_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

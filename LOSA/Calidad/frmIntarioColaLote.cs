@@ -11,16 +11,18 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using ACS.Classes;
 using LOSA.Clases;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace LOSA.Calidad
 {
     public partial class frmIntarioColaLote : DevExpress.XtraEditors.XtraForm
     {
         DataOperations dp = new DataOperations();
-
-        public frmIntarioColaLote()
+        UserLogin UsuarioLogeado;
+        public frmIntarioColaLote(UserLogin Puser)
         {
             InitializeComponent();
+            UsuarioLogeado = Puser;
             load_data();
         }
 
@@ -52,6 +54,20 @@ namespace LOSA.Calidad
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
             load_data();
+        }
+
+        private void btn_link_lote_Click(object sender, EventArgs e)
+        {
+            var gridView = (GridView)grd_data.FocusedView;
+            var row = (dsCalidad.ViewColaRow)gridView.GetFocusedDataRow();
+            //frmDetalleIngresoTRZ frm = new frmDetalleIngresoTRZ(row.ingreso);
+
+            //frmTrazabilidadHaciaAdelanteByMP_Lot frm = new frmTrazabilidadHaciaAdelanteByMP_Lot(row.lote_mp, row.nombre_comercial);
+            rdEstadoTransporte frm = new rdEstadoTransporte(row.lote_materia_prima, UsuarioLogeado);
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
         }
     }
 }

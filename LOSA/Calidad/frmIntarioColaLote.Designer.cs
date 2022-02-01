@@ -30,6 +30,11 @@ namespace LOSA.Calidad
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmIntarioColaLote));
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.btn_cerrar = new DevExpress.XtraEditors.SimpleButton();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
             this.dsCalidad = new LOSA.Calidad.dsCalidad();
@@ -37,6 +42,7 @@ namespace LOSA.Calidad
             this.colpeso = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collote_materia_prima = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnumero_ingreso = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btn_link_lote = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colid_materia_prima = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcomercial = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colmp_comercial = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -45,6 +51,7 @@ namespace LOSA.Calidad
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCalidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_link_lote)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_cerrar
@@ -70,6 +77,8 @@ namespace LOSA.Calidad
             this.grd_data.Location = new System.Drawing.Point(0, 96);
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
+            this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.btn_link_lote});
             this.grd_data.Size = new System.Drawing.Size(1369, 653);
             this.grd_data.TabIndex = 2;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -140,9 +149,9 @@ namespace LOSA.Calidad
             // collote_materia_prima
             // 
             this.collote_materia_prima.Caption = "Lote de MP";
+            this.collote_materia_prima.ColumnEdit = this.btn_link_lote;
             this.collote_materia_prima.FieldName = "lote_materia_prima";
             this.collote_materia_prima.Name = "collote_materia_prima";
-            this.collote_materia_prima.OptionsColumn.AllowEdit = false;
             this.collote_materia_prima.Visible = true;
             this.collote_materia_prima.VisibleIndex = 1;
             // 
@@ -151,15 +160,23 @@ namespace LOSA.Calidad
             this.colnumero_ingreso.Caption = "Ingreso";
             this.colnumero_ingreso.FieldName = "numero_ingreso";
             this.colnumero_ingreso.Name = "colnumero_ingreso";
-            this.colnumero_ingreso.OptionsColumn.AllowEdit = false;
             this.colnumero_ingreso.Visible = true;
             this.colnumero_ingreso.VisibleIndex = 2;
+            // 
+            // btn_link_lote
+            // 
+            this.btn_link_lote.AutoHeight = false;
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            this.btn_link_lote.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btn_link_lote.Name = "btn_link_lote";
+            this.btn_link_lote.Click += new System.EventHandler(this.btn_link_lote_Click);
             // 
             // colid_materia_prima
             // 
             this.colid_materia_prima.FieldName = "id_materia_prima";
             this.colid_materia_prima.Name = "colid_materia_prima";
-            this.colid_materia_prima.OptionsColumn.AllowEdit = false;
+            this.colid_materia_prima.OptionsColumn.ReadOnly = true;
             // 
             // colcomercial
             // 
@@ -218,6 +235,7 @@ namespace LOSA.Calidad
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCalidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_link_lote)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,5 +255,6 @@ namespace LOSA.Calidad
         private DevExpress.XtraGrid.Columns.GridColumn colid_materia_prima;
         private DevExpress.XtraGrid.Columns.GridColumn colcomercial;
         private DevExpress.XtraGrid.Columns.GridColumn colmp_comercial;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btn_link_lote;
     }
 }

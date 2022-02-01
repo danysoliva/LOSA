@@ -241,7 +241,7 @@ namespace LOSA.Calidad
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(5, 38);
+            this.simpleButton1.Location = new System.Drawing.Point(5, 28);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(143, 55);
             this.simpleButton1.TabIndex = 3;
@@ -258,7 +258,7 @@ namespace LOSA.Calidad
             this.btn_Refresh.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btn_Refresh.Appearance.Options.UseFont = true;
             this.btn_Refresh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Refresh.ImageOptions.Image")));
-            this.btn_Refresh.Location = new System.Drawing.Point(154, 38);
+            this.btn_Refresh.Location = new System.Drawing.Point(154, 28);
             this.btn_Refresh.Name = "btn_Refresh";
             this.btn_Refresh.Size = new System.Drawing.Size(138, 55);
             this.btn_Refresh.TabIndex = 4;

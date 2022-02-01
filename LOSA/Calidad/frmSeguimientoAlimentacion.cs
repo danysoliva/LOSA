@@ -19,11 +19,12 @@ namespace LOSA.Calidad
     {
 
         DataOperations dp = new DataOperations();
-       
-        public frmSeguimientoAlimentacion()
+        UserLogin UsuarioLogeado;
+        public frmSeguimientoAlimentacion(UserLogin Puser)
         {
             InitializeComponent();
             timertick.Enabled = true;
+            UsuarioLogeado = Puser;
             load_data();
             load_data_v2();
         }
@@ -143,7 +144,7 @@ namespace LOSA.Calidad
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            frmIntarioColaLote frm = new frmIntarioColaLote();
+            frmIntarioColaLote frm = new frmIntarioColaLote(UsuarioLogeado);
             frm.Show();
         }
 

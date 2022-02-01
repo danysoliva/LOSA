@@ -79,7 +79,7 @@ namespace LOSA.Reportes
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
-            if (dsReportes.ingreso_lm.Rows.Count != 0)
+            if (dsReportes.rpt_ingreso.Rows.Count != 0)
             {
                 SaveFileDialog dialog = new SaveFileDialog();
                 dialog.Filter = "Excel File (.xlsx)|*.xlsx";

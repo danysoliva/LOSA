@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>270</ApplicationRevision>
+    <ApplicationRevision>271</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -444,6 +444,12 @@
     <Compile Include="Calidad\frmMateriaPrimaAjuste.Designer.cs">
       <DependentUpon>frmMateriaPrimaAjuste.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\frmNoConfirmidadMP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmNoConfirmidadMP.Designer.cs">
+      <DependentUpon>frmNoConfirmidadMP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\frmNuevoCriterio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -570,6 +576,12 @@
     <Compile Include="Calidad\frmview.Designer.cs">
       <DependentUpon>frmview.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\frmViewEntradas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmViewEntradas.Designer.cs">
+      <DependentUpon>frmViewEntradas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\frm_asiganacion_causas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -600,6 +612,7 @@
     <Compile Include="Calidad\frm_retenciones.Designer.cs">
       <DependentUpon>frm_retenciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\NoConformidad.cs" />
     <Compile Include="Clases\BagsPT.cs" />
     <Compile Include="Clases\Boleta.cs" />
     <Compile Include="Clases\CajaDialogo.cs" />
@@ -2508,6 +2521,9 @@
     <EmbeddedResource Include="Calidad\frmMateriaPrimaAjuste.resx">
       <DependentUpon>frmMateriaPrimaAjuste.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmNoConfirmidadMP.resx">
+      <DependentUpon>frmNoConfirmidadMP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmNuevoCriterio.resx">
       <DependentUpon>frmNuevoCriterio.cs</DependentUpon>
     </EmbeddedResource>
@@ -2570,6 +2586,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmview.resx">
       <DependentUpon>frmview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmViewEntradas.resx">
+      <DependentUpon>frmViewEntradas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frm_asiganacion_causas.resx">
       <DependentUpon>frm_asiganacion_causas.cs</DependentUpon>
