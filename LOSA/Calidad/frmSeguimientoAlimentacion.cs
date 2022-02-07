@@ -19,12 +19,14 @@ namespace LOSA.Calidad
     {
 
         DataOperations dp = new DataOperations();
-       
-        public frmSeguimientoAlimentacion()
+        UserLogin UsuarioLogeado;
+        public frmSeguimientoAlimentacion(UserLogin Puser)
         {
             InitializeComponent();
             timertick.Enabled = true;
+            UsuarioLogeado = Puser;
             load_data();
+            load_data_v2();
         }
 
         public void load_data()
@@ -43,7 +45,7 @@ namespace LOSA.Calidad
             }
             catch (Exception ex)
             {
-
+                                                        
                 CajaDialogo.Error(ex.Message);
             }
         }
@@ -51,14 +53,14 @@ namespace LOSA.Calidad
         {
             try
             {
-                string query = @"sp_inventario_en_produccion_antes_del_consumo";
+                string query = @"sp_get_cola_lote_consumido";
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                dsCalidad.alimentacion.Clear();
-                da.Fill(dsCalidad.alimentacion);
+                dsCalidad.Consumido.Clear();
+                da.Fill(dsCalidad.Consumido);
                 cn.Close();
             }
             catch (Exception ex)
@@ -115,7 +117,7 @@ namespace LOSA.Calidad
 
         private void timertick_Tick(object sender, EventArgs e)
         {
-            int Nuevo = 0;
+            int Nuevo = 0;                             
             if (timertick.Enabled)
             {
                 string Query = @"sp_count_alimentacion_tarima";
@@ -129,6 +131,7 @@ namespace LOSA.Calidad
                     if (Nuevo > 0)
                     {
                         load_data();
+                        load_data_v2();
                     }
                     cn.Close();
                 }
@@ -141,12 +144,14 @@ namespace LOSA.Calidad
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-
+            frmIntarioColaLote frm = new frmIntarioColaLote(UsuarioLogeado);
+            frm.Show();
         }
 
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
             load_data();
+            load_data_v2();
         }
 
         private void grd_consumido_Click(object sender, EventArgs e)

@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>265</ApplicationRevision>
+    <ApplicationRevision>271</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -96,7 +96,7 @@
     </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>5A56FE5B36BF1139C0C28330C52B1468E1F78C88</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>11DBC92D92B4EB4A587EA378AD2A6CF4E83C0246</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -420,6 +420,12 @@
     <Compile Include="Calidad\frmInsectosMantenimiento.Designer.cs">
       <DependentUpon>frmInsectosMantenimiento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\frmIntarioColaLote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmIntarioColaLote.Designer.cs">
+      <DependentUpon>frmIntarioColaLote.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\frmLotesStatus.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -437,6 +443,12 @@
     </Compile>
     <Compile Include="Calidad\frmMateriaPrimaAjuste.Designer.cs">
       <DependentUpon>frmMateriaPrimaAjuste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\frmNoConfirmidadMP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmNoConfirmidadMP.Designer.cs">
+      <DependentUpon>frmNoConfirmidadMP.cs</DependentUpon>
     </Compile>
     <Compile Include="Calidad\frmNuevoCriterio.cs">
       <SubType>Form</SubType>
@@ -540,6 +552,12 @@
     <Compile Include="Calidad\frmretencionadd.Designer.cs">
       <DependentUpon>frmretencionadd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\frmSeguimientoAlimentacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmSeguimientoAlimentacion.Designer.cs">
+      <DependentUpon>frmSeguimientoAlimentacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\frmTexturaMantenimiento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -557,6 +575,12 @@
     </Compile>
     <Compile Include="Calidad\frmview.Designer.cs">
       <DependentUpon>frmview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\frmViewEntradas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmViewEntradas.Designer.cs">
+      <DependentUpon>frmViewEntradas.cs</DependentUpon>
     </Compile>
     <Compile Include="Calidad\frm_asiganacion_causas.cs">
       <SubType>Form</SubType>
@@ -588,6 +612,7 @@
     <Compile Include="Calidad\frm_retenciones.Designer.cs">
       <DependentUpon>frm_retenciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\NoConformidad.cs" />
     <Compile Include="Clases\BagsPT.cs" />
     <Compile Include="Clases\Boleta.cs" />
     <Compile Include="Clases\CajaDialogo.cs" />
@@ -944,6 +969,18 @@
     </Compile>
     <Compile Include="Logistica\frmPlanSemanal.Designer.cs">
       <DependentUpon>frmPlanSemanal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\frmReporteSeguimientoComprasTransito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\frmReporteSeguimientoComprasTransito.Designer.cs">
+      <DependentUpon>frmReporteSeguimientoComprasTransito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\frmSeleccionLoteCierre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\frmSeleccionLoteCierre.Designer.cs">
+      <DependentUpon>frmSeleccionLoteCierre.cs</DependentUpon>
     </Compile>
     <Compile Include="Logistica\frmTrazabilidadLote.cs">
       <SubType>Form</SubType>
@@ -2472,6 +2509,9 @@
     <EmbeddedResource Include="Calidad\frmInsectosMantenimiento.resx">
       <DependentUpon>frmInsectosMantenimiento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmIntarioColaLote.resx">
+      <DependentUpon>frmIntarioColaLote.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmLotesStatus.resx">
       <DependentUpon>frmLotesStatus.cs</DependentUpon>
     </EmbeddedResource>
@@ -2480,6 +2520,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmMateriaPrimaAjuste.resx">
       <DependentUpon>frmMateriaPrimaAjuste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmNoConfirmidadMP.resx">
+      <DependentUpon>frmNoConfirmidadMP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmNuevoCriterio.resx">
       <DependentUpon>frmNuevoCriterio.cs</DependentUpon>
@@ -2532,6 +2575,9 @@
     <EmbeddedResource Include="Calidad\frmretencionadd.resx">
       <DependentUpon>frmretencionadd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmSeguimientoAlimentacion.resx">
+      <DependentUpon>frmSeguimientoAlimentacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmTexturaMantenimiento.resx">
       <DependentUpon>frmTexturaMantenimiento.cs</DependentUpon>
     </EmbeddedResource>
@@ -2540,6 +2586,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmview.resx">
       <DependentUpon>frmview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmViewEntradas.resx">
+      <DependentUpon>frmViewEntradas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frm_asiganacion_causas.resx">
       <DependentUpon>frm_asiganacion_causas.cs</DependentUpon>
@@ -2700,6 +2749,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Logistica\frmPlanSemanal.resx">
       <DependentUpon>frmPlanSemanal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\frmReporteSeguimientoComprasTransito.resx">
+      <DependentUpon>frmReporteSeguimientoComprasTransito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\frmSeleccionLoteCierre.resx">
+      <DependentUpon>frmSeleccionLoteCierre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logistica\frmTrazabilidadLote.resx">
       <DependentUpon>frmTrazabilidadLote.cs</DependentUpon>
@@ -3596,6 +3651,7 @@
     <None Include="Resources\Accept-icon128px.png" />
     <Content Include="Resources\admin.png" />
     <None Include="Resources\backspace.png" />
+    <None Include="Resources\batch-processing_32X32.png" />
     <Content Include="Resources\box.png" />
     <None Include="Resources\box32px.png" />
     <None Include="Resources\boxPT32px.png" />
@@ -3651,7 +3707,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 y x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

@@ -21,6 +21,7 @@ namespace ACS.Classes
             Camaron = 2
         }
 
+
         #region Credenciales Producción
 
         //WINCC
@@ -79,7 +80,7 @@ namespace ACS.Classes
         public static string SAP_DB_User = "sa";
         public static string SAP_DB_Pass = "Aqua2018";
 
-                              
+
         // APMS(Aquafeed Pocess Management System)
         public static string APMS_Server = @"AQFSVR008\AQFSVR008";
         public static string APMS_DB_User = "sa";

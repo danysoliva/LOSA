@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -22,7 +23,6 @@ namespace LOSA
             Application.SetCompatibleTextRenderingDefault(false);
 
             string name_ = Environment.MachineName.ToString();
-
             DataOperations dp = new DataOperations();
             string query = "sp_get_verify_is_tablet_alosy";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
@@ -45,7 +45,7 @@ namespace LOSA
                 Application.Run(new frmMain());
             else
                 Application.Run(new MDIParentFormLOSA());
-            
+
             
             //
         }

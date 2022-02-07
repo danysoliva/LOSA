@@ -29,6 +29,7 @@ namespace LOSA.Calidad
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rdEstadoTransporte));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -137,22 +138,22 @@ namespace LOSA.Calidad
             this.panelControl13 = new DevExpress.XtraEditors.PanelControl();
             this.txtPLantaSenasa = new DevExpress.XtraEditors.TextEdit();
             this.grd_tipo = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.tipoingresoBindingSource = new System.Windows.Forms.BindingSource();
+            this.tipoingresoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grd_origen = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.paisesBindingSource = new System.Windows.Forms.BindingSource();
+            this.paisesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grd_pesca = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.zonaPescaBindingSource = new System.Windows.Forms.BindingSource();
+            this.zonaPescaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grd_origenespecie = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.origenespecieBindingSource = new System.Windows.Forms.BindingSource();
+            this.origenespecieBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnombre = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -245,7 +246,7 @@ namespace LOSA.Calidad
             this.colLotePT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProducto = new DevExpress.XtraGrid.Columns.GridColumn();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.xtraFolderBrowserDialog1 = new DevExpress.XtraEditors.XtraFolderBrowserDialog();
+            this.xtraFolderBrowserDialog1 = new DevExpress.XtraEditors.XtraFolderBrowserDialog(this.components);
             this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.txtFacturas = new DevExpress.XtraEditors.TextEdit();
@@ -2492,9 +2493,9 @@ namespace LOSA.Calidad
             this.labelControl43.Appearance.Options.UseFont = true;
             this.labelControl43.Location = new System.Drawing.Point(907, 14);
             this.labelControl43.Name = "labelControl43";
-            this.labelControl43.Size = new System.Drawing.Size(95, 17);
+            this.labelControl43.Size = new System.Drawing.Size(100, 17);
             this.labelControl43.TabIndex = 63;
-            this.labelControl43.Text = "No confirmidad:";
+            this.labelControl43.Text = "No conformidad:";
             // 
             // txtuserlogistica
             // 
@@ -2524,11 +2525,16 @@ namespace LOSA.Calidad
             // 
             // btnNoConformidad
             // 
-            this.btnNoConformidad.Location = new System.Drawing.Point(1037, 6);
+            this.btnNoConformidad.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnNoConformidad.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNoConformidad.Appearance.Options.UseBackColor = true;
+            this.btnNoConformidad.Appearance.Options.UseFont = true;
+            this.btnNoConformidad.Location = new System.Drawing.Point(1015, 3);
             this.btnNoConformidad.Name = "btnNoConformidad";
             this.btnNoConformidad.Size = new System.Drawing.Size(136, 39);
             this.btnNoConformidad.TabIndex = 64;
             this.btnNoConformidad.Text = "Ver pantalla";
+            this.btnNoConformidad.Click += new System.EventHandler(this.btnNoConformidad_Click);
             // 
             // labelControl41
             // 

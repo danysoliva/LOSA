@@ -739,5 +739,17 @@ namespace LOSA
             frmCierreMensual frm = new frmCierreMensual(UsuarioLogeado);
             frm.Show();
         }
+
+        private void simpleButton25_Click(object sender, EventArgs e)
+        {
+            frmSeguimientoAlimentacion frm = new frmSeguimientoAlimentacion(UsuarioLogeado);
+            frm.Show();
+        }
+
+        private void simpleButton26_Click(object sender, EventArgs e)
+        {
+            frmReporteSeguimientoComprasTransito frm = new frmReporteSeguimientoComprasTransito();
+            frm.Show();
+        }
     }
 }
