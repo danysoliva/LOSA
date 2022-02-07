@@ -59,9 +59,28 @@ namespace LOSA.Trazabilidad.ReportesTRZ
 
         private void txtlote_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            //if(e.KeyCode == Keys.Enter)
+            //{
+            //    LoadLotesPT();
+            //}
+            LoteMP LoteMP_ = new LoteMP();
+            if (LoteMP_.RecuperarRegistro(txtlote.Text))
             {
-                LoadLotesPT();
+                if (LoteMP_.CantidadMP > 1)
+                {
+                    //Mostrar Ventana
+                    frmMP_WithSameLot frm = new frmMP_WithSameLot(LoteMP_);
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        LoadLotesPT(frm.IdMP_Selected);
+                        lblMateriaPrimaName.Text = frm.NameMaterialselected;
+                    }
+                }
+                else
+                {
+                    LoadLotesPT(LoteMP_.IdMPSingle);
+                    lblMateriaPrimaName.Text = LoteMP_.NombreComercialSingle;
+                }
             }
         }
 
