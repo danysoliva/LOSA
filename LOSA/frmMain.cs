@@ -18,6 +18,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Reflection;
 using System.Text;
 using System.Threading;
@@ -178,6 +179,18 @@ namespace LOSA
         private void FrmMain_Load(object sender, EventArgs e)
         {
             lblVersion.Text = AssemblyVersion;
+            string HostName = Dns.GetHostName();
+            if (HostName == "F3DYSQ2" || HostName == "9SSCBV2" || HostName == "9PG91W2")
+            {
+                SaltarLogin.Visible = simpleButton2 .Visible = true;
+                //this.Size = new Size(335, 497);//Grande
+
+            }
+            else
+            {
+                SaltarLogin.Visible = simpleButton2.Visible = false;
+                //this.Size = new Size(335, 442);//Pequeño
+            }
         }
         public string AssemblyVersion
         {
