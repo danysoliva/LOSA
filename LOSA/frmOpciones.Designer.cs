@@ -114,6 +114,7 @@
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton27 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -855,6 +856,7 @@
             // 
             this.tabReportes.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.tabReportes.Appearance.Header.Options.UseFont = true;
+            this.tabReportes.Controls.Add(this.simpleButton27);
             this.tabReportes.Controls.Add(this.btnReporteProduccionDespachos);
             this.tabReportes.Controls.Add(this.btnreportes);
             this.tabReportes.Controls.Add(this.simpleButton8);
@@ -1333,6 +1335,21 @@
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
             // 
+            // simpleButton27
+            // 
+            this.simpleButton27.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton27.Appearance.Options.UseFont = true;
+            this.simpleButton27.Appearance.Options.UseTextOptions = true;
+            this.simpleButton27.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton27.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton27.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton27.ImageOptions.Image")));
+            this.simpleButton27.Location = new System.Drawing.Point(3, 158);
+            this.simpleButton27.Name = "simpleButton27";
+            this.simpleButton27.Size = new System.Drawing.Size(199, 42);
+            this.simpleButton27.TabIndex = 35;
+            this.simpleButton27.Text = "Inventario por Lote MP";
+            this.simpleButton27.Click += new System.EventHandler(this.simpleButton27_Click);
+            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1452,5 +1469,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton24;
         private DevExpress.XtraEditors.SimpleButton simpleButton25;
         private DevExpress.XtraEditors.SimpleButton simpleButton26;
+        private DevExpress.XtraEditors.SimpleButton simpleButton27;
     }
 }
