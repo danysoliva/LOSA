@@ -140,6 +140,7 @@
             this.colingreso_seleccionar});
             this.gridView1.GridControl = this.grDetalle;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanging);
             // 
@@ -155,7 +156,7 @@
             // 
             // colmateriaprima
             // 
-            this.colmateriaprima.Caption = "Materia Prima";
+            this.colmateriaprima.Caption = "Producto";
             this.colmateriaprima.FieldName = "materiaprima";
             this.colmateriaprima.Name = "colmateriaprima";
             this.colmateriaprima.OptionsColumn.AllowEdit = false;

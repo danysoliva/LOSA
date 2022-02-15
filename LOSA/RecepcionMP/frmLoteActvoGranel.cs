@@ -17,6 +17,8 @@ namespace LOSA.RecepcionMP
     public partial class frmLoteActvoGranel : Form
     {
         UserLogin UsuarioLogeado;
+        bool istraslado = false;
+        int Id_traslado;
         public frmLoteActvoGranel(UserLogin pUsuarioLogeado)
         {
             InitializeComponent();
@@ -24,6 +26,18 @@ namespace LOSA.RecepcionMP
             LoadDataActivos();
             LoadDataDesactivados();
         }
+
+
+        public frmLoteActvoGranel(UserLogin pUsuarioLogeado, int id_lote_granel)
+        {
+            InitializeComponent();
+            UsuarioLogeado = pUsuarioLogeado;
+            Id_traslado = id_lote_granel;
+            istraslado = true;
+            LoadDataActivos();
+            LoadDataDesactivados();
+        }
+
 
         private void LoadDataActivos()
         {
@@ -74,10 +88,49 @@ namespace LOSA.RecepcionMP
 
         private void cmdNuevoLote_Click(object sender, EventArgs e)
         {
-            frmAddLoteActivo frm = new frmAddLoteActivo(UsuarioLogeado);
-            if(frm.ShowDialog() == DialogResult.OK)
+            if (istraslado)
             {
-                LoadDataActivos();
+                frmSeleccionrLoteExterno frm = new frmSeleccionrLoteExterno(Id_traslado);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+
+                    try
+                    {
+                        DataOperations dp = new DataOperations();
+                        SqlConnection con = new SqlConnection(dp.ConnectionStringBascula);
+                        con.Open();
+
+                        SqlCommand cmd = new SqlCommand("sp_insert_new_lote_activo_granel_v4", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@lote", frm.lote);
+                        cmd.Parameters.AddWithValue("@id_user_create", UsuarioLogeado.Id);
+                        cmd.Parameters.AddWithValue("@itemcode", frm.Itemcode);
+                        cmd.Parameters.AddWithValue("@fechap", frm.fproduccion);
+                        cmd.Parameters.AddWithValue("@fechav", frm.fvencimiento);
+                        cmd.Parameters.AddWithValue("@id_lote_externo", frm.id_lote_externo);
+
+                        cmd.ExecuteNonQuery();
+
+                        con.Close();
+                    }
+                    catch (Exception ec)
+                    {
+                        CajaDialogo.Error(ec.Message);
+                    }
+
+
+                    LoadDataActivos();
+                    LoadDataDesactivados();
+
+                }
+            }
+            else
+            {
+                frmAddLoteActivo frm = new frmAddLoteActivo(UsuarioLogeado);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    LoadDataActivos();
+                }
             }
         }
 

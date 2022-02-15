@@ -740,10 +740,12 @@ namespace LOSA.Calidad
                 {
                     dtproduccion.EditValue = dr.IsDBNull(0) ? DateTime.Now : dr.GetDateTime(0);
                     dtvencimiento.EditValue = dr.IsDBNull(1) ? DateTime.Now : dr.GetDateTime(1);
-                    txtdiasvencimiento.Text = dr.IsDBNull(2) ? "0" : dr.GetInt32(2).ToString();
-                    txtingresada.Text = dr.IsDBNull(3) ? "" : dr.GetDecimal(3).ToString();
-                    txtinventarioActual.Text = dr.IsDBNull(4) ? "" : dr.GetDecimal(4).ToString();
-                    id_materiaPrima = dr.IsDBNull(5) ? 0 : dr.GetInt32(5);
+                    dt_f_ingreso.EditValue = dr.IsDBNull(2) ? DateTime.Now : dr.GetDateTime(2);
+                    txtdiasvencimiento.Text = dr.IsDBNull(3) ? "0" : dr.GetInt32(3).ToString();
+                    txtingresada.Text = dr.IsDBNull(4) ? "" : dr.GetDecimal(4).ToString();
+                    txtingresadaUD.Text = dr.IsDBNull(5) ? "" : dr.GetDecimal(5).ToString();
+                    txtinventarioActual.Text = dr.IsDBNull(6) ? "" : dr.GetDecimal(6).ToString();
+                    id_materiaPrima = dr.IsDBNull(7) ? 0 : dr.GetInt32(7);
                 }
                 dr.Close();
                 cn.Close();

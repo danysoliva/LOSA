@@ -76,7 +76,7 @@ namespace ACS.Classes
         //SAP
         public static string SAP_ServerAddress = @"AQFSVR006\AQFSVR006";
         public static string SAP_ServerName = "Servidor de Desarrollo";
-        public static string SAP_ActiveDB = "AQUA";
+        public static string SAP_ActiveDB = "AQUA"; 
         public static string SAP_DB_User = "sa";
         public static string SAP_DB_Pass = "Aqua2018";
 

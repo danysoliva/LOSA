@@ -12,6 +12,7 @@ using System.Data.SqlClient;
 using LOSA.Clases;
 using ACS.Classes;
 using DevExpress.XtraGrid.Views.Grid;
+using LOSA.AlmacenesExterno;
 
 namespace LOSA.RecepcionMP
 {
@@ -111,20 +112,40 @@ namespace LOSA.RecepcionMP
                 CajaDialogo.Error("Debe seleccionar un tipo de ingreso.");
                 return;
             }
-            frmSpet2 frm = new frmSpet2(UsuarioLogeado,Descripcion_Tipo_Selected,Tipo_Ingreso_Selected);
-            switch (frm.ShowDialog())
-            {
-               
-                case DialogResult.OK:
+
+            if (Tipo_Ingreso_Selected == 3)
+            {// si es almacen externo abrimos la ventana de almacen externo.
+                xfrmAlmacenesExternos_Main frmExterno = new xfrmAlmacenesExternos_Main(UsuarioLogeado);
+                if (this.MdiParent != null)
+                {
+                    frmExterno.MdiParent = this.MdiParent;
+                    //frm.FormBorderStyle = FormBorderStyle.Sizable;
+                }
+                if (frmExterno.ShowDialog()== DialogResult.OK)
+                {
+
                     this.DialogResult = DialogResult.OK;
                     this.Close();
-                    break;
-                case DialogResult.Cancel:
-                    this.Close();
-                    break;
-                default:
-                    break;
+                }
             }
+            else
+            {
+                frmSpet2 frm = new frmSpet2(UsuarioLogeado, Descripcion_Tipo_Selected, Tipo_Ingreso_Selected);
+                switch (frm.ShowDialog())
+                {
+                    case DialogResult.OK:
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                        break;
+                    case DialogResult.Cancel:
+                        this.Close();
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            
         }
 
         private void grdv_data_DoubleClick(object sender, EventArgs e)
@@ -137,9 +158,7 @@ namespace LOSA.RecepcionMP
                 Descripcion_Tipo_Selected = row.descripcion;
                 foreach (dsWizard.tipo_IngresoRow fila in dsWizard.tipo_Ingreso.Rows)
                 {
-
                     fila.selected = false;
-
                 }
                 dsWizard.tipo_Ingreso.AcceptChanges();
                 foreach (dsWizard.tipo_IngresoRow fila in dsWizard.tipo_Ingreso.Rows)
@@ -162,20 +181,39 @@ namespace LOSA.RecepcionMP
                 CajaDialogo.Error("Debe seleccionar un tipo de ingreso.");
                 return;
             }
-            frmSpet2 frm = new frmSpet2(UsuarioLogeado, Descripcion_Tipo_Selected, Tipo_Ingreso_Selected);
-            switch (frm.ShowDialog())
-            {
+            if (Tipo_Ingreso_Selected == 3)
+            {// si es almacen externo abrimos la ventana de almacen externo.
+                xfrmAlmacenesExternos_Main frmExterno = new xfrmAlmacenesExternos_Main(UsuarioLogeado);
+                if (this.MdiParent != null)
+                {
+                    frmExterno.MdiParent = this.MdiParent;
+                    //frm.FormBorderStyle = FormBorderStyle.Sizable;
+                }
+                if (frmExterno.ShowDialog() == DialogResult.OK)
+                {
 
-                case DialogResult.OK:
                     this.DialogResult = DialogResult.OK;
                     this.Close();
-                    break;
-                case DialogResult.Cancel:
-                    this.Close();
-                    break;
-                default:
-                    break;
+                }
             }
+            else
+            {
+                frmSpet2 frm = new frmSpet2(UsuarioLogeado, Descripcion_Tipo_Selected, Tipo_Ingreso_Selected);
+                switch (frm.ShowDialog())
+                {
+
+                    case DialogResult.OK:
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                        break;
+                    case DialogResult.Cancel:
+                        this.Close();
+                        break;
+                    default:
+                        break;
+                }
+            }
+           
         }
     }
 }

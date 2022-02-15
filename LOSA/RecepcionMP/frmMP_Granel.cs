@@ -20,6 +20,11 @@ namespace LOSA.RecepcionMP
         UserLogin UsuarioLogeado;
         ArrayList list = new ArrayList();
         ArrayList listMP = new ArrayList();
+        int id_lote_Traslado;
+        string itemcode;
+        decimal InAlmacenExterno;
+        dsWizard dsWizard;
+        bool istraslado;
         public frmMP_Granel(UserLogin pUsuarioLogeado)
         {
             InitializeComponent();
@@ -28,6 +33,22 @@ namespace LOSA.RecepcionMP
             LoadBarcos();
             LoadUbicaciones();
         }
+
+        public frmMP_Granel(UserLogin pUsuarioLogeado, bool Istraslado, int idLote)
+        {
+            InitializeComponent();
+            id_lote_Traslado = idLote;
+            istraslado = Istraslado;
+            UsuarioLogeado = pUsuarioLogeado;
+            LoadData();
+            LoadBarcos();
+            LoadUbicaciones();
+
+        }
+
+   
+        
+
 
         private void LoadUbicaciones()
         {
@@ -75,6 +96,29 @@ namespace LOSA.RecepcionMP
             }
         }
 
+        private void LoadData_by_item()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringBascula);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_ingresos_granel_mp", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@idbodega", idBodega);
+                dsRecepcionMPx1.granel.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsRecepcionMPx1.granel);
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
+
         private void LoadData()
         {
             try
@@ -112,8 +156,16 @@ namespace LOSA.RecepcionMP
 
         private void cmdLoteActivo_Click(object sender, EventArgs e)
         {
-            frmLoteActvoGranel frm = new frmLoteActvoGranel(UsuarioLogeado);
-            frm.Show();
+            if (istraslado)
+            {
+                frmLoteActvoGranel frm = new frmLoteActvoGranel(UsuarioLogeado,id_lote_Traslado);
+                frm.Show();
+            }
+            else
+            {
+                frmLoteActvoGranel frm = new frmLoteActvoGranel(UsuarioLogeado);
+                frm.Show();
+            }
         }
 
         private void checkBoxSeleccionarTodas_CheckedChanged(object sender, EventArgs e)
@@ -170,10 +222,21 @@ namespace LOSA.RecepcionMP
                         }
                     }
 
-                    frmIngresoGranelAlosy frm1 = new frmIngresoGranelAlosy(this.UsuarioLogeado, ListaBoletas, Item);
-                    if(frm1.ShowDialog() == DialogResult.OK)
+                    if (istraslado)
                     {
-                        LoadData();
+                        frmIngresoGranelAlosy frm1 = new frmIngresoGranelAlosy(this.UsuarioLogeado, ListaBoletas, Item,istraslado, id_lote_Traslado);
+                        if (frm1.ShowDialog() == DialogResult.OK)
+                        {
+                            LoadData();
+                        }
+                    }
+                    else
+                    {
+                        frmIngresoGranelAlosy frm1 = new frmIngresoGranelAlosy(this.UsuarioLogeado, ListaBoletas, Item);
+                        if (frm1.ShowDialog() == DialogResult.OK)
+                        {
+                            LoadData();
+                        }
                     }
                 }
             }

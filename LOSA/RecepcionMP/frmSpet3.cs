@@ -13,6 +13,7 @@ using LOSA.Clases;
 using ACS.Classes;
 using DevExpress.XtraGrid.Views.Grid;
 using LOSA.AlmacenesExterno;
+using LOSA.Liquidos;
 
 namespace LOSA.RecepcionMP
 {
@@ -108,7 +109,48 @@ namespace LOSA.RecepcionMP
                         default:
                             break;
                     }
-                    break;  
+                    break;
+                case 2:
+                    frmMP_Granel frmGranel = new frmMP_Granel(UsuarioLogeado,isTraslado, id_Traslado_Seleccionado);
+
+
+                    if (this.MdiParent != null)
+                    {
+                        frmGranel.MdiParent = this.MdiParent;
+                        frmGranel.FormBorderStyle = FormBorderStyle.Sizable;
+                    }
+                    frmGranel.WindowState = FormWindowState.Maximized;
+                    switch (frmGranel.ShowDialog())
+                    {
+                        case DialogResult.OK:
+                            this.DialogResult = DialogResult.OK;
+                            break;
+                        case DialogResult.Abort:
+                            break;
+                        case DialogResult.Cancel:
+                            this.DialogResult = DialogResult.Cancel;
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case 4:
+
+                    xfrmIngresoLiquidos frmLiquidos = new xfrmIngresoLiquidos(UsuarioLogeado, isTraslado, id_Traslado_Seleccionado);
+                    switch (frmLiquidos.ShowDialog())
+                    {
+                        case DialogResult.OK:
+                            this.DialogResult = DialogResult.OK;
+                            break;
+                        case DialogResult.Abort:
+                            break;
+                        case DialogResult.Cancel:
+                            this.DialogResult = DialogResult.Cancel;
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
                 default:
                     break;
 

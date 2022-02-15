@@ -785,5 +785,16 @@ namespace LOSA
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
+
+        private void tabMasterData_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void simpleButton29_Click(object sender, EventArgs e)
+        {
+            frmSeguimientoDespachos frm = new frmSeguimientoDespachos();
+            frm.Show();
+        }
     }
 }

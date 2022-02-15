@@ -116,6 +116,7 @@ namespace LOSA.Reportes
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsBehavior.Editable = false;
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
+            this.grdv_data.OptionsView.ShowFooter = true;
             this.grdv_data.OptionsView.ShowGroupPanel = false;
             // 
             // label1

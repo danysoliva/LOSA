@@ -32,7 +32,9 @@ namespace LOSA.Liquidos
         decimal factor;
         int Default_value = 0;
         Tanque Tanque;
-
+        bool Istrans = false;
+        int id_lote_externo = 0;
+        int idSelectedLoteDetalle = 0;
         public frmIngresoCamion(UserLogin pUsuarioLogeado/*, ArrayList pArray,*/, ItemMP_Lote pItem,int pId_Tanque)
         {
             InitializeComponent();
@@ -135,6 +137,33 @@ namespace LOSA.Liquidos
             //LoadBarcos();
             LoadUbicaciones();
             obtener_ingreso();
+
+            simpleButton1.Visible = false;
+
+        }
+
+        public frmIngresoCamion(UserLogin pUsuarioLogeado, MateriaPrima pItem, int pId_Tanque, bool istraslado, int id_traslado)
+        {
+            InitializeComponent();
+            LoadPresentaciones();
+            Istrans = istraslado;
+            id_lote_externo = id_traslado;
+            UsuarioLogeado = pUsuarioLogeado;
+            //pLista = pArray;
+            dtFechaIngreso.EditValue = string.Format("{0:dd/MM/yyyy}", dp.Now());
+            txtCodigoMP.Text = pItem.CodeMP_SAP;
+            txtMP_Name.Text = pItem.Name;
+            id_tanque = pId_Tanque;
+            UsuarioLogeado = pUsuarioLogeado;
+            Tanque = new Tanque(pId_Tanque);
+            grdUbicaciones.EditValue = pId_Tanque;
+            Inicializar_Informacion();
+            //txtLote.Text = pItem.Lote;
+            //IdLoteSelected = pItem.IdLote;
+            //LoadBarcos();
+            LoadUbicaciones();
+            obtener_ingreso(); 
+
 
 
         }
@@ -346,6 +375,14 @@ namespace LOSA.Liquidos
 
             }
             string query = @"[dbo].[sp_insert_ingreso_mp_h_liquidos]";
+            if (Istrans)
+            {
+
+            }
+            else
+            {
+                query = "sp_insert_ingreso_mp_h_liquidos_v2";
+            }
 
             SqlCommand Comnd = new SqlCommand(query, transaction.Connection);
             Comnd.CommandType = CommandType.StoredProcedure;
@@ -357,6 +394,11 @@ namespace LOSA.Liquidos
             Comnd.Parameters.AddWithValue("@item_code", txtCodigoMP.Text);
             Comnd.Parameters.AddWithValue("@id_user", this.UsuarioLogeado.Id);
             Comnd.Parameters.AddWithValue("@count_trailetas", dsLiquidos_.Camiones_IN.Count);
+
+            if (!Istrans)
+            {
+                Comnd.Parameters.AddWithValue("@Id_Externo", id_lote_externo);
+            }
 
             int Id_lote_generado = Convert.ToInt32(Comnd.ExecuteScalar());
 
@@ -805,6 +847,20 @@ namespace LOSA.Liquidos
             catch
             {
                 txtPesoKg.Text = "0";
+            }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            frmSeleccionrLoteExterno frm = new frmSeleccionrLoteExterno(id_lote_externo);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                txtLote.Text = frm.lote;
+                txtCodigoMP.Text = frm.Itemcode;
+                txtMP_Name.Text = frm.Itemname;
+                dtFechaProduccion.EditValue = frm.fproduccion;
+                dtFechaVencimiento.EditValue = frm.fvencimiento;
+                idSelectedLoteDetalle = frm.id_lote_externo;
             }
         }
     }
