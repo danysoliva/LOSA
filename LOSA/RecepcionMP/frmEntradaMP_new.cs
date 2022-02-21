@@ -313,7 +313,7 @@ namespace LOSA.RecepcionMP
                // CantidadUnidades = tam1.Cantidad;
                 PesoPorTarima = DEFAULT_VALUE;
                 FactorTarima = DEFAULT_VALUE;
-                decimal cantidadMP = tam1.Cantidad;
+                decimal cantidadMP = tam1.Cantidad = 60;
 
                 frm_seleccionUD frm = new frm_seleccionUD(cantidadMP, "Solo para diferenciar");
                 if (frm.ShowDialog() == DialogResult.OK)

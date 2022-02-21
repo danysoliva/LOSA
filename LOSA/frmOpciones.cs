@@ -754,11 +754,11 @@ namespace LOSA
 
         private void simpleButton27_Click(object sender, EventArgs e)
         {
-            frmTrazabilidadHaciaAdelanteByMP_Lot frm = new frmTrazabilidadHaciaAdelanteByMP_Lot();
-            if (this.MdiParent != null)
-                frm.MdiParent = this.MdiParent;
+            //frmTrazabilidadHaciaAdelanteByMP_Lot frm = new frmTrazabilidadHaciaAdelanteByMP_Lot();
+            //if (this.MdiParent != null)
+            //    frm.MdiParent = this.MdiParent;
 
-            frm.Show();
+            //frm.Show();
         }
     }
 }
