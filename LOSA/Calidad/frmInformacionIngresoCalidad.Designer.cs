@@ -245,6 +245,7 @@ namespace LOSA.Calidad
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colLotePT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProducto = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tb_inventario = new System.Windows.Forms.TabPage();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.xtraFolderBrowserDialog1 = new DevExpress.XtraEditors.XtraFolderBrowserDialog(this.components);
             this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
@@ -252,6 +253,10 @@ namespace LOSA.Calidad
             this.txtFacturas = new DevExpress.XtraEditors.TextEdit();
             this.btnOC = new DevExpress.XtraEditors.SimpleButton();
             this.btnRecientes = new DevExpress.XtraEditors.SimpleButton();
+            this.txtingresadaUD = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl32 = new DevExpress.XtraEditors.LabelControl();
+            this.dt_f_ingreso = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl44 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txtloteMP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtnombreMP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtboleta.Properties)).BeginInit();
@@ -361,6 +366,9 @@ namespace LOSA.Calidad
             ((System.ComponentModel.ISupportInitialize)(this.dsReportesTRZ1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFacturas.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtingresadaUD.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_f_ingreso.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_f_ingreso.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -455,7 +463,7 @@ namespace LOSA.Calidad
             // 
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(667, 57);
+            this.labelControl8.Location = new System.Drawing.Point(651, 57);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(55, 17);
             this.labelControl8.TabIndex = 15;
@@ -465,7 +473,7 @@ namespace LOSA.Calidad
             // 
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(667, 87);
+            this.labelControl9.Location = new System.Drawing.Point(651, 87);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(124, 17);
             this.labelControl9.TabIndex = 16;
@@ -475,7 +483,7 @@ namespace LOSA.Calidad
             // 
             this.labelControl10.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(667, 117);
+            this.labelControl10.Location = new System.Drawing.Point(651, 117);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(130, 17);
             this.labelControl10.TabIndex = 17;
@@ -485,7 +493,7 @@ namespace LOSA.Calidad
             // 
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl11.Appearance.Options.UseFont = true;
-            this.labelControl11.Location = new System.Drawing.Point(667, 147);
+            this.labelControl11.Location = new System.Drawing.Point(651, 172);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(135, 17);
             this.labelControl11.TabIndex = 18;
@@ -495,17 +503,17 @@ namespace LOSA.Calidad
             // 
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl12.Appearance.Options.UseFont = true;
-            this.labelControl12.Location = new System.Drawing.Point(667, 178);
+            this.labelControl12.Location = new System.Drawing.Point(651, 202);
             this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(117, 17);
+            this.labelControl12.Size = new System.Drawing.Size(140, 17);
             this.labelControl12.TabIndex = 19;
-            this.labelControl12.Text = "Cantidad ingresada:";
+            this.labelControl12.Text = "Ingresado:  Kilogramos:";
             // 
             // labelControl13
             // 
             this.labelControl13.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl13.Appearance.Options.UseFont = true;
-            this.labelControl13.Location = new System.Drawing.Point(667, 207);
+            this.labelControl13.Location = new System.Drawing.Point(651, 235);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(99, 17);
             this.labelControl13.TabIndex = 20;
@@ -598,7 +606,7 @@ namespace LOSA.Calidad
             // txtdiasvencimiento
             // 
             this.txtdiasvencimiento.Enabled = false;
-            this.txtdiasvencimiento.Location = new System.Drawing.Point(805, 140);
+            this.txtdiasvencimiento.Location = new System.Drawing.Point(805, 168);
             this.txtdiasvencimiento.Name = "txtdiasvencimiento";
             this.txtdiasvencimiento.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtdiasvencimiento.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -610,19 +618,21 @@ namespace LOSA.Calidad
             // txtingresada
             // 
             this.txtingresada.Enabled = false;
-            this.txtingresada.Location = new System.Drawing.Point(805, 170);
+            this.txtingresada.Location = new System.Drawing.Point(805, 199);
             this.txtingresada.Name = "txtingresada";
             this.txtingresada.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtingresada.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.txtingresada.Properties.Appearance.Options.UseFont = true;
             this.txtingresada.Properties.Appearance.Options.UseForeColor = true;
+            this.txtingresada.Properties.Mask.EditMask = "n2";
+            this.txtingresada.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtingresada.Size = new System.Drawing.Size(131, 24);
             this.txtingresada.TabIndex = 31;
             // 
             // txtinventarioActual
             // 
             this.txtinventarioActual.Enabled = false;
-            this.txtinventarioActual.Location = new System.Drawing.Point(805, 200);
+            this.txtinventarioActual.Location = new System.Drawing.Point(805, 232);
             this.txtinventarioActual.Name = "txtinventarioActual";
             this.txtinventarioActual.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtinventarioActual.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -635,7 +645,7 @@ namespace LOSA.Calidad
             // 
             this.dtproduccion.EditValue = null;
             this.dtproduccion.Enabled = false;
-            this.dtproduccion.Location = new System.Drawing.Point(805, 80);
+            this.dtproduccion.Location = new System.Drawing.Point(805, 79);
             this.dtproduccion.Name = "dtproduccion";
             this.dtproduccion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.dtproduccion.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -652,7 +662,7 @@ namespace LOSA.Calidad
             // 
             this.dtvencimiento.EditValue = null;
             this.dtvencimiento.Enabled = false;
-            this.dtvencimiento.Location = new System.Drawing.Point(805, 110);
+            this.dtvencimiento.Location = new System.Drawing.Point(805, 108);
             this.dtvencimiento.Name = "dtvencimiento";
             this.dtvencimiento.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.dtvencimiento.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -671,7 +681,7 @@ namespace LOSA.Calidad
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl14.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl14.Appearance.Options.UseFont = true;
-            this.labelControl14.Location = new System.Drawing.Point(278, 234);
+            this.labelControl14.Location = new System.Drawing.Point(276, 264);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(695, 30);
             this.labelControl14.TabIndex = 35;
@@ -691,7 +701,7 @@ namespace LOSA.Calidad
             this.PnNir.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PnNir.Location = new System.Drawing.Point(3, 3);
             this.PnNir.Name = "PnNir";
-            this.PnNir.Size = new System.Drawing.Size(1336, 645);
+            this.PnNir.Size = new System.Drawing.Size(1336, 607);
             this.PnNir.TabIndex = 1;
             // 
             // simpleButton1
@@ -714,7 +724,7 @@ namespace LOSA.Calidad
             this.panelControl9.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl9.Location = new System.Drawing.Point(0, 10);
             this.panelControl9.Name = "panelControl9";
-            this.panelControl9.Size = new System.Drawing.Size(11, 625);
+            this.panelControl9.Size = new System.Drawing.Size(11, 587);
             this.panelControl9.TabIndex = 20;
             // 
             // panelControl2
@@ -725,7 +735,7 @@ namespace LOSA.Calidad
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelControl2.Location = new System.Drawing.Point(1325, 10);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(11, 625);
+            this.panelControl2.Size = new System.Drawing.Size(11, 587);
             this.panelControl2.TabIndex = 19;
             // 
             // panelControl1
@@ -734,7 +744,7 @@ namespace LOSA.Calidad
             this.panelControl1.Appearance.Options.UseBackColor = true;
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl1.Location = new System.Drawing.Point(0, 635);
+            this.panelControl1.Location = new System.Drawing.Point(0, 597);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1336, 10);
             this.panelControl1.TabIndex = 18;
@@ -760,7 +770,7 @@ namespace LOSA.Calidad
             this.grd_nir.Location = new System.Drawing.Point(14, 69);
             this.grd_nir.MainView = this.grdv_nir;
             this.grd_nir.Name = "grd_nir";
-            this.grd_nir.Size = new System.Drawing.Size(1307, 562);
+            this.grd_nir.Size = new System.Drawing.Size(1307, 524);
             this.grd_nir.TabIndex = 1;
             this.grd_nir.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_nir});
@@ -824,6 +834,8 @@ namespace LOSA.Calidad
             // 
             // colMinimo
             // 
+            this.colMinimo.DisplayFormat.FormatString = "{0:#.##} %";
+            this.colMinimo.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colMinimo.FieldName = "Minimo";
             this.colMinimo.Name = "colMinimo";
             this.colMinimo.OptionsColumn.AllowEdit = false;
@@ -832,6 +844,8 @@ namespace LOSA.Calidad
             // 
             // colMaximo
             // 
+            this.colMaximo.DisplayFormat.FormatString = "{0:#.##} %";
+            this.colMaximo.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colMaximo.FieldName = "Maximo";
             this.colMaximo.Name = "colMaximo";
             this.colMaximo.OptionsColumn.AllowEdit = false;
@@ -841,7 +855,7 @@ namespace LOSA.Calidad
             // colporcentaje
             // 
             this.colporcentaje.Caption = "Resultado Promedio";
-            this.colporcentaje.DisplayFormat.FormatString = "###,##0.00";
+            this.colporcentaje.DisplayFormat.FormatString = "{0:#.##} %";
             this.colporcentaje.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colporcentaje.FieldName = "porcentaje";
             this.colporcentaje.Name = "colporcentaje";
@@ -1053,7 +1067,7 @@ namespace LOSA.Calidad
             this.btnAdjuntarImagen.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdjuntarImagen.Appearance.Options.UseFont = true;
             this.btnAdjuntarImagen.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdjuntarImagen.ImageOptions.Image")));
-            this.btnAdjuntarImagen.Location = new System.Drawing.Point(477, 249);
+            this.btnAdjuntarImagen.Location = new System.Drawing.Point(477, 211);
             this.btnAdjuntarImagen.Name = "btnAdjuntarImagen";
             this.btnAdjuntarImagen.Size = new System.Drawing.Size(255, 52);
             this.btnAdjuntarImagen.TabIndex = 2;
@@ -1068,7 +1082,7 @@ namespace LOSA.Calidad
             this.pc_Mp.Name = "pc_Mp";
             this.pc_Mp.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pc_Mp.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
-            this.pc_Mp.Size = new System.Drawing.Size(217, 223);
+            this.pc_Mp.Size = new System.Drawing.Size(217, 185);
             this.pc_Mp.TabIndex = 1;
             // 
             // btnRevisarBoleta
@@ -1278,7 +1292,7 @@ namespace LOSA.Calidad
             this.panelControl3.Controls.Add(this.spTipoporcentaje);
             this.panelControl3.Location = new System.Drawing.Point(2, 290);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(749, 358);
+            this.panelControl3.Size = new System.Drawing.Size(749, 320);
             this.panelControl3.TabIndex = 49;
             // 
             // spsustentable
@@ -1323,7 +1337,7 @@ namespace LOSA.Calidad
             this.panelControl16.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl16.Location = new System.Drawing.Point(0, 11);
             this.panelControl16.Name = "panelControl16";
-            this.panelControl16.Size = new System.Drawing.Size(11, 337);
+            this.panelControl16.Size = new System.Drawing.Size(11, 299);
             this.panelControl16.TabIndex = 62;
             // 
             // panelControl15
@@ -1343,7 +1357,7 @@ namespace LOSA.Calidad
             this.panelControl14.Appearance.Options.UseBackColor = true;
             this.panelControl14.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl14.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl14.Location = new System.Drawing.Point(0, 348);
+            this.panelControl14.Location = new System.Drawing.Point(0, 310);
             this.panelControl14.Name = "panelControl14";
             this.panelControl14.Size = new System.Drawing.Size(738, 10);
             this.panelControl14.TabIndex = 60;
@@ -1356,7 +1370,7 @@ namespace LOSA.Calidad
             this.panelControl13.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelControl13.Location = new System.Drawing.Point(738, 0);
             this.panelControl13.Name = "panelControl13";
-            this.panelControl13.Size = new System.Drawing.Size(11, 358);
+            this.panelControl13.Size = new System.Drawing.Size(11, 320);
             this.panelControl13.TabIndex = 59;
             // 
             // txtPLantaSenasa
@@ -1756,7 +1770,7 @@ namespace LOSA.Calidad
             this.grd_logistica.Location = new System.Drawing.Point(24, 20);
             this.grd_logistica.MainView = this.grdv_logistica;
             this.grd_logistica.Name = "grd_logistica";
-            this.grd_logistica.Size = new System.Drawing.Size(1288, 373);
+            this.grd_logistica.Size = new System.Drawing.Size(1288, 335);
             this.grd_logistica.TabIndex = 39;
             this.grd_logistica.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_logistica});
@@ -1821,11 +1835,12 @@ namespace LOSA.Calidad
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPageLotesPT);
+            this.tabControl1.Controls.Add(this.tb_inventario);
             this.tabControl1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(0, 270);
+            this.tabControl1.Location = new System.Drawing.Point(0, 308);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1350, 685);
+            this.tabControl1.Size = new System.Drawing.Size(1350, 647);
             this.tabControl1.TabIndex = 40;
             // 
             // tabPage1
@@ -1835,7 +1850,7 @@ namespace LOSA.Calidad
             this.tabPage1.Location = new System.Drawing.Point(4, 30);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1342, 651);
+            this.tabPage1.Size = new System.Drawing.Size(1342, 613);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "NIR";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1848,7 +1863,7 @@ namespace LOSA.Calidad
             this.tabPage3.Location = new System.Drawing.Point(4, 30);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1342, 651);
+            this.tabPage3.Size = new System.Drawing.Size(1342, 613);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Datos y Adjuntos";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1866,7 +1881,7 @@ namespace LOSA.Calidad
             this.panelControl5.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelControl5.Location = new System.Drawing.Point(751, 3);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(588, 645);
+            this.panelControl5.Size = new System.Drawing.Size(588, 607);
             this.panelControl5.TabIndex = 50;
             // 
             // panelControl20
@@ -1877,7 +1892,7 @@ namespace LOSA.Calidad
             this.panelControl20.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl20.Location = new System.Drawing.Point(0, 11);
             this.panelControl20.Name = "panelControl20";
-            this.panelControl20.Size = new System.Drawing.Size(11, 624);
+            this.panelControl20.Size = new System.Drawing.Size(11, 586);
             this.panelControl20.TabIndex = 64;
             // 
             // panelControl19
@@ -1886,7 +1901,7 @@ namespace LOSA.Calidad
             this.panelControl19.Appearance.Options.UseBackColor = true;
             this.panelControl19.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl19.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl19.Location = new System.Drawing.Point(0, 635);
+            this.panelControl19.Location = new System.Drawing.Point(0, 597);
             this.panelControl19.Name = "panelControl19";
             this.panelControl19.Size = new System.Drawing.Size(577, 10);
             this.panelControl19.TabIndex = 63;
@@ -1910,7 +1925,7 @@ namespace LOSA.Calidad
             this.panelControl17.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelControl17.Location = new System.Drawing.Point(577, 0);
             this.panelControl17.Name = "panelControl17";
-            this.panelControl17.Size = new System.Drawing.Size(11, 645);
+            this.panelControl17.Size = new System.Drawing.Size(11, 607);
             this.panelControl17.TabIndex = 39;
             // 
             // tabPage4
@@ -1919,7 +1934,7 @@ namespace LOSA.Calidad
             this.tabPage4.Location = new System.Drawing.Point(4, 30);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1342, 651);
+            this.tabPage4.Size = new System.Drawing.Size(1342, 613);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Logistica";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1946,14 +1961,14 @@ namespace LOSA.Calidad
             this.panelControl6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl6.Location = new System.Drawing.Point(3, 3);
             this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(1336, 645);
+            this.panelControl6.Size = new System.Drawing.Size(1336, 607);
             this.panelControl6.TabIndex = 51;
             // 
             // rdEmpaque4
             // 
             this.rdEmpaque4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.rdEmpaque4.EditValue = true;
-            this.rdEmpaque4.Location = new System.Drawing.Point(633, 578);
+            this.rdEmpaque4.Location = new System.Drawing.Point(633, 540);
             this.rdEmpaque4.Name = "rdEmpaque4";
             this.rdEmpaque4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.rdEmpaque4.Properties.Appearance.Options.UseFont = true;
@@ -1967,7 +1982,7 @@ namespace LOSA.Calidad
             // 
             this.rdEmpaque3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.rdEmpaque3.EditValue = true;
-            this.rdEmpaque3.Location = new System.Drawing.Point(633, 524);
+            this.rdEmpaque3.Location = new System.Drawing.Point(633, 486);
             this.rdEmpaque3.Name = "rdEmpaque3";
             this.rdEmpaque3.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.rdEmpaque3.Properties.Appearance.Options.UseFont = true;
@@ -1981,7 +1996,7 @@ namespace LOSA.Calidad
             // 
             this.rdEmpaque2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.rdEmpaque2.EditValue = true;
-            this.rdEmpaque2.Location = new System.Drawing.Point(633, 472);
+            this.rdEmpaque2.Location = new System.Drawing.Point(633, 434);
             this.rdEmpaque2.Name = "rdEmpaque2";
             this.rdEmpaque2.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.rdEmpaque2.Properties.Appearance.Options.UseFont = true;
@@ -1999,7 +2014,7 @@ namespace LOSA.Calidad
             this.panelControl24.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelControl24.Location = new System.Drawing.Point(1325, 11);
             this.panelControl24.Name = "panelControl24";
-            this.panelControl24.Size = new System.Drawing.Size(11, 624);
+            this.panelControl24.Size = new System.Drawing.Size(11, 586);
             this.panelControl24.TabIndex = 61;
             // 
             // panelControl23
@@ -2008,7 +2023,7 @@ namespace LOSA.Calidad
             this.panelControl23.Appearance.Options.UseBackColor = true;
             this.panelControl23.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl23.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl23.Location = new System.Drawing.Point(11, 635);
+            this.panelControl23.Location = new System.Drawing.Point(11, 597);
             this.panelControl23.Name = "panelControl23";
             this.panelControl23.Size = new System.Drawing.Size(1325, 10);
             this.panelControl23.TabIndex = 60;
@@ -2021,7 +2036,7 @@ namespace LOSA.Calidad
             this.panelControl22.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl22.Location = new System.Drawing.Point(0, 11);
             this.panelControl22.Name = "panelControl22";
-            this.panelControl22.Size = new System.Drawing.Size(11, 634);
+            this.panelControl22.Size = new System.Drawing.Size(11, 596);
             this.panelControl22.TabIndex = 59;
             // 
             // panelControl21
@@ -2040,7 +2055,7 @@ namespace LOSA.Calidad
             this.labelControl20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelControl20.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.labelControl20.Appearance.Options.UseFont = true;
-            this.labelControl20.Location = new System.Drawing.Point(70, 584);
+            this.labelControl20.Location = new System.Drawing.Point(70, 546);
             this.labelControl20.Name = "labelControl20";
             this.labelControl20.Size = new System.Drawing.Size(354, 42);
             this.labelControl20.TabIndex = 56;
@@ -2052,7 +2067,7 @@ namespace LOSA.Calidad
             this.labelControl19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelControl19.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.labelControl19.Appearance.Options.UseFont = true;
-            this.labelControl19.Location = new System.Drawing.Point(70, 530);
+            this.labelControl19.Location = new System.Drawing.Point(70, 492);
             this.labelControl19.Name = "labelControl19";
             this.labelControl19.Size = new System.Drawing.Size(467, 42);
             this.labelControl19.TabIndex = 54;
@@ -2064,7 +2079,7 @@ namespace LOSA.Calidad
             this.labelControl18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelControl18.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.labelControl18.Appearance.Options.UseFont = true;
-            this.labelControl18.Location = new System.Drawing.Point(70, 472);
+            this.labelControl18.Location = new System.Drawing.Point(70, 434);
             this.labelControl18.Name = "labelControl18";
             this.labelControl18.Size = new System.Drawing.Size(375, 42);
             this.labelControl18.TabIndex = 52;
@@ -2074,7 +2089,7 @@ namespace LOSA.Calidad
             // 
             this.rdEmpaque1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.rdEmpaque1.EditValue = true;
-            this.rdEmpaque1.Location = new System.Drawing.Point(633, 427);
+            this.rdEmpaque1.Location = new System.Drawing.Point(633, 389);
             this.rdEmpaque1.Name = "rdEmpaque1";
             this.rdEmpaque1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.rdEmpaque1.Properties.Appearance.Options.UseFont = true;
@@ -2089,7 +2104,7 @@ namespace LOSA.Calidad
             this.labelControl17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelControl17.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl17.Appearance.Options.UseFont = true;
-            this.labelControl17.Location = new System.Drawing.Point(70, 435);
+            this.labelControl17.Location = new System.Drawing.Point(70, 397);
             this.labelControl17.Name = "labelControl17";
             this.labelControl17.Size = new System.Drawing.Size(534, 21);
             this.labelControl17.TabIndex = 50;
@@ -2100,7 +2115,7 @@ namespace LOSA.Calidad
             this.labelControl16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelControl16.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl16.Appearance.Options.UseFont = true;
-            this.labelControl16.Location = new System.Drawing.Point(22, 409);
+            this.labelControl16.Location = new System.Drawing.Point(22, 371);
             this.labelControl16.Name = "labelControl16";
             this.labelControl16.Size = new System.Drawing.Size(269, 20);
             this.labelControl16.TabIndex = 49;
@@ -2115,7 +2130,7 @@ namespace LOSA.Calidad
             this.tabPage2.Location = new System.Drawing.Point(4, 30);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1342, 651);
+            this.tabPage2.Size = new System.Drawing.Size(1342, 613);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Estado de Materia prima y transporte";
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
@@ -2165,7 +2180,7 @@ namespace LOSA.Calidad
             this.panelControl4.Controls.Add(this.txtusercalidad);
             this.panelControl4.Location = new System.Drawing.Point(3, 0);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(1331, 584);
+            this.panelControl4.Size = new System.Drawing.Size(1331, 546);
             this.panelControl4.TabIndex = 84;
             // 
             // rdTranporte3
@@ -2225,7 +2240,7 @@ namespace LOSA.Calidad
             this.labelControl53.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelControl53.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl53.Appearance.Options.UseFont = true;
-            this.labelControl53.Location = new System.Drawing.Point(22, 562);
+            this.labelControl53.Location = new System.Drawing.Point(22, 524);
             this.labelControl53.Name = "labelControl53";
             this.labelControl53.Size = new System.Drawing.Size(89, 17);
             this.labelControl53.TabIndex = 83;
@@ -2471,7 +2486,7 @@ namespace LOSA.Calidad
             // radioGroup8
             // 
             this.radioGroup8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.radioGroup8.Location = new System.Drawing.Point(937, 601);
+            this.radioGroup8.Location = new System.Drawing.Point(937, 563);
             this.radioGroup8.Name = "radioGroup8";
             this.radioGroup8.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "ACEPTADO"),
@@ -2567,7 +2582,7 @@ namespace LOSA.Calidad
             // txtobservacionTras
             // 
             this.txtobservacionTras.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txtobservacionTras.Location = new System.Drawing.Point(3, 584);
+            this.txtobservacionTras.Location = new System.Drawing.Point(3, 546);
             this.txtobservacionTras.Name = "txtobservacionTras";
             this.txtobservacionTras.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.txtobservacionTras.Properties.Appearance.Options.UseFont = true;
@@ -2590,7 +2605,7 @@ namespace LOSA.Calidad
             this.tabPageLotesPT.Controls.Add(this.gridControl1);
             this.tabPageLotesPT.Location = new System.Drawing.Point(4, 30);
             this.tabPageLotesPT.Name = "tabPageLotesPT";
-            this.tabPageLotesPT.Size = new System.Drawing.Size(1342, 651);
+            this.tabPageLotesPT.Size = new System.Drawing.Size(1342, 613);
             this.tabPageLotesPT.TabIndex = 4;
             this.tabPageLotesPT.Text = "Lotes PT";
             this.tabPageLotesPT.UseVisualStyleBackColor = true;
@@ -2614,7 +2629,7 @@ namespace LOSA.Calidad
             this.gridControl1.Location = new System.Drawing.Point(8, 49);
             this.gridControl1.MainView = this.gridView4;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(353, 594);
+            this.gridControl1.Size = new System.Drawing.Size(353, 556);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
@@ -2650,6 +2665,16 @@ namespace LOSA.Calidad
             this.colProducto.VisibleIndex = 1;
             this.colProducto.Width = 481;
             // 
+            // tb_inventario
+            // 
+            this.tb_inventario.Location = new System.Drawing.Point(4, 30);
+            this.tb_inventario.Name = "tb_inventario";
+            this.tb_inventario.Padding = new System.Windows.Forms.Padding(3);
+            this.tb_inventario.Size = new System.Drawing.Size(1342, 613);
+            this.tb_inventario.TabIndex = 5;
+            this.tb_inventario.Text = "Inventario de lote";
+            this.tb_inventario.UseVisualStyleBackColor = true;
+            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
@@ -2675,22 +2700,22 @@ namespace LOSA.Calidad
             // 
             this.labelControl15.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl15.Appearance.Options.UseFont = true;
-            this.labelControl15.Location = new System.Drawing.Point(956, 174);
+            this.labelControl15.Location = new System.Drawing.Point(943, 235);
             this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(60, 17);
+            this.labelControl15.Size = new System.Drawing.Size(59, 17);
             this.labelControl15.TabIndex = 42;
-            this.labelControl15.Text = "N_Factura:";
+            this.labelControl15.Text = "N Factura:";
             // 
             // txtFacturas
             // 
             this.txtFacturas.Enabled = false;
-            this.txtFacturas.Location = new System.Drawing.Point(1022, 171);
+            this.txtFacturas.Location = new System.Drawing.Point(1009, 232);
             this.txtFacturas.Name = "txtFacturas";
             this.txtFacturas.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtFacturas.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.txtFacturas.Properties.Appearance.Options.UseFont = true;
             this.txtFacturas.Properties.Appearance.Options.UseForeColor = true;
-            this.txtFacturas.Size = new System.Drawing.Size(144, 24);
+            this.txtFacturas.Size = new System.Drawing.Size(157, 24);
             this.txtFacturas.TabIndex = 43;
             // 
             // btnOC
@@ -2708,12 +2733,63 @@ namespace LOSA.Calidad
             this.btnRecientes.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnRecientes.Appearance.Options.UseFont = true;
             this.btnRecientes.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRecientes.ImageOptions.Image")));
-            this.btnRecientes.Location = new System.Drawing.Point(1139, 219);
+            this.btnRecientes.Location = new System.Drawing.Point(1139, 277);
             this.btnRecientes.Name = "btnRecientes";
             this.btnRecientes.Size = new System.Drawing.Size(197, 45);
             this.btnRecientes.TabIndex = 45;
             this.btnRecientes.Text = "Documentos\r\nRecientes";
             this.btnRecientes.Click += new System.EventHandler(this.btnRecientes_Click);
+            // 
+            // txtingresadaUD
+            // 
+            this.txtingresadaUD.Enabled = false;
+            this.txtingresadaUD.Location = new System.Drawing.Point(1006, 195);
+            this.txtingresadaUD.Name = "txtingresadaUD";
+            this.txtingresadaUD.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtingresadaUD.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.txtingresadaUD.Properties.Appearance.Options.UseFont = true;
+            this.txtingresadaUD.Properties.Appearance.Options.UseForeColor = true;
+            this.txtingresadaUD.Properties.Mask.EditMask = "n2";
+            this.txtingresadaUD.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtingresadaUD.Size = new System.Drawing.Size(160, 24);
+            this.txtingresadaUD.TabIndex = 47;
+            // 
+            // labelControl32
+            // 
+            this.labelControl32.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl32.Appearance.Options.UseFont = true;
+            this.labelControl32.Location = new System.Drawing.Point(942, 201);
+            this.labelControl32.Name = "labelControl32";
+            this.labelControl32.Size = new System.Drawing.Size(58, 17);
+            this.labelControl32.TabIndex = 46;
+            this.labelControl32.Text = "Unidades:";
+            // 
+            // dt_f_ingreso
+            // 
+            this.dt_f_ingreso.EditValue = null;
+            this.dt_f_ingreso.Enabled = false;
+            this.dt_f_ingreso.Location = new System.Drawing.Point(805, 138);
+            this.dt_f_ingreso.Name = "dt_f_ingreso";
+            this.dt_f_ingreso.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.dt_f_ingreso.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.dt_f_ingreso.Properties.Appearance.Options.UseFont = true;
+            this.dt_f_ingreso.Properties.Appearance.Options.UseForeColor = true;
+            this.dt_f_ingreso.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_f_ingreso.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_f_ingreso.Size = new System.Drawing.Size(361, 24);
+            this.dt_f_ingreso.TabIndex = 49;
+            // 
+            // labelControl44
+            // 
+            this.labelControl44.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl44.Appearance.Options.UseFont = true;
+            this.labelControl44.Location = new System.Drawing.Point(651, 144);
+            this.labelControl44.Name = "labelControl44";
+            this.labelControl44.Size = new System.Drawing.Size(103, 17);
+            this.labelControl44.TabIndex = 48;
+            this.labelControl44.Text = "Fecha de Ingreso:";
             // 
             // rdEstadoTransporte
             // 
@@ -2721,6 +2797,10 @@ namespace LOSA.Calidad
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1348, 955);
+            this.Controls.Add(this.dt_f_ingreso);
+            this.Controls.Add(this.labelControl44);
+            this.Controls.Add(this.txtingresadaUD);
+            this.Controls.Add(this.labelControl32);
             this.Controls.Add(this.btnRecientes);
             this.Controls.Add(this.btnOC);
             this.Controls.Add(this.txtFacturas);
@@ -2874,6 +2954,9 @@ namespace LOSA.Calidad
             ((System.ComponentModel.ISupportInitialize)(this.dsReportesTRZ1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFacturas.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtingresadaUD.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_f_ingreso.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_f_ingreso.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3081,5 +3164,10 @@ namespace LOSA.Calidad
         private DevExpress.XtraGrid.Columns.GridColumn colProducto;
         private DevExpress.XtraEditors.LabelControl labelControl31;
         private Trazabilidad.ReportesTRZ.dsReportesTRZ dsReportesTRZ1;
+        private DevExpress.XtraEditors.TextEdit txtingresadaUD;
+        private DevExpress.XtraEditors.LabelControl labelControl32;
+        private DevExpress.XtraEditors.DateEdit dt_f_ingreso;
+        private DevExpress.XtraEditors.LabelControl labelControl44;
+        private System.Windows.Forms.TabPage tb_inventario;
     }
 }

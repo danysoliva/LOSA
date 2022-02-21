@@ -24,6 +24,8 @@ namespace LOSA.RecepcionMP
         string Codigo_Barra_ubicacion;
         int IdLoteSelected;
         int ingreso;
+        bool Istraslado = false;
+        int id_externo_ingreso = 0;
 
         public frmIngresoGranelAlosy(UserLogin pUsuarioLogeado, ArrayList pArray, ItemMP_Lote pItem)
         {
@@ -92,6 +94,84 @@ namespace LOSA.RecepcionMP
                 }
                 catch {  }
                
+
+                dsRecepcionMPx1.granel.AddgranelRow(row1);
+                dsRecepcionMPx1.AcceptChanges();
+            }
+
+
+        }
+
+
+        public frmIngresoGranelAlosy(UserLogin pUsuarioLogeado, ArrayList pArray, ItemMP_Lote pItem, bool istraslado, int id_ingreso)
+        {
+            InitializeComponent();
+            UsuarioLogeado = pUsuarioLogeado;
+            pLista = pArray;
+            dtFechaIngreso.EditValue = string.Format("{0:dd/MM/yyyy}", dp.Now());
+            txtCodigoMP.Text = pItem.ItemCode;
+            txtMP_Name.Text = pItem.Card_Name;
+            txtLote.Text = pItem.Lote;
+            IdLoteSelected = pItem.IdLote;
+            Istraslado = istraslado;
+            id_externo_ingreso = id_ingreso;
+            LoadBarcos();
+            LoadUbicaciones();
+
+            if (pItem.RecuperarRegistro(pItem.IdLote))
+            {
+                dtFechaProduccion.EditValue = pItem.FechaProd;
+                dtFechaVencimiento.EditValue = pItem.FechaVence;
+            }
+
+            foreach (dsRecepcionMPx.granelRow rowg in pArray)
+            {
+                dsRecepcionMPx.granelRow row1 = dsRecepcionMPx1.granel.NewgranelRow();
+                //row1 = rowg;
+                //row1.itemcode = item.ItemCode;
+                //row1.card_name = item.Card_Name;
+                //pendiente agregar el valor de lote
+                row1.id = rowg.id;
+                row1.comentarios = rowg.comentarios;
+                row1.EmpresaTrans = rowg.EmpresaTrans;
+                row1.fechaEntra = rowg.fechaEntra;
+                row1.FechaFin = rowg.FechaFin;
+
+                try
+                {
+                    row1.shipid = rowg.shipid;
+                }
+                catch { row1.shipid = 0; }
+
+                try
+                {
+                    row1.barco = rowg.barco;
+                }
+                catch { row1.barco = ""; }
+
+                row1.NBoleta = rowg.NBoleta;
+                row1.numero_factura = rowg.numero_factura;
+                row1.Operador = rowg.Operador;
+                row1.PesoBruto = rowg.PesoBruto;
+                row1.PesonetoIn = rowg.PesonetoIn;
+                row1.PesoProd = rowg.PesoProd;
+                row1.pesoSalida = rowg.pesoSalida;
+                row1.peso_factura = rowg.peso_factura;
+                row1.conductorin = rowg.conductorin;
+                row1.vehiculo = rowg.vehiculo;
+                row1.furgon = rowg.furgon;
+                row1.TipoBoleta = rowg.TipoBoleta;
+                row1.id_tipo_boleta = rowg.id_tipo_boleta;
+                row1.SNegocio = rowg.SNegocio;
+                row1.Producto = rowg.Producto;
+                row1.itemcode = rowg.itemcode;
+                row1.seleccionar = rowg.seleccionar;
+                try
+                {
+                    row1.id_ubicacion = rowg.id_ubicacion;
+                }
+                catch { }
+
 
                 dsRecepcionMPx1.granel.AddgranelRow(row1);
                 dsRecepcionMPx1.AcceptChanges();
@@ -271,19 +351,39 @@ namespace LOSA.RecepcionMP
             int Id_lote_generado = 0;
             if (!tggNuevoIngreso.IsOn)
             {
-                string query = @"sp_insert_ingreso_granel";
-                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                con.Open();
-                SqlCommand Comnd = new SqlCommand(query, con);
-                Comnd.CommandType = CommandType.StoredProcedure;
-                Comnd.Parameters.AddWithValue("@entrada", sumar_Kg);
-                Comnd.Parameters.AddWithValue("@lote", txtLote.Text);
-                Comnd.Parameters.AddWithValue("@id_ingreso", ingreso);
-                Comnd.Parameters.AddWithValue("@item_code", txtCodigoMP.Text);
-                Comnd.Parameters.AddWithValue("@id_user", this.UsuarioLogeado.Id);
-                Comnd.Parameters.AddWithValue("@count_trailetas", dsRecepcionMPx1.granel.Count);
+                if (Istraslado)
+                {
+                    string query = @"sp_insert_ingreso_granel-v3";
+                    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                    con.Open();
+                    SqlCommand Comnd = new SqlCommand(query, con);
+                    Comnd.CommandType = CommandType.StoredProcedure;
+                    Comnd.Parameters.AddWithValue("@entrada", sumar_Kg);
+                    Comnd.Parameters.AddWithValue("@lote", txtLote.Text);
+                    Comnd.Parameters.AddWithValue("@id_ingreso", ingreso);
+                    Comnd.Parameters.AddWithValue("@item_code", txtCodigoMP.Text);
+                    Comnd.Parameters.AddWithValue("@id_user", this.UsuarioLogeado.Id);
+                    Comnd.Parameters.AddWithValue("@count_trailetas", dsRecepcionMPx1.granel.Count);
+                    Comnd.Parameters.AddWithValue("@id_traslado", id_externo_ingreso);
 
-                Id_lote_generado = Convert.ToInt32(Comnd.ExecuteScalar());
+                    Id_lote_generado = Convert.ToInt32(Comnd.ExecuteScalar());
+                }
+                else
+                {
+                    string query = @"sp_insert_ingreso_granel";
+                    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                    con.Open();
+                    SqlCommand Comnd = new SqlCommand(query, con);
+                    Comnd.CommandType = CommandType.StoredProcedure;
+                    Comnd.Parameters.AddWithValue("@entrada", sumar_Kg);
+                    Comnd.Parameters.AddWithValue("@lote", txtLote.Text);
+                    Comnd.Parameters.AddWithValue("@id_ingreso", ingreso);
+                    Comnd.Parameters.AddWithValue("@item_code", txtCodigoMP.Text);
+                    Comnd.Parameters.AddWithValue("@id_user", this.UsuarioLogeado.Id);
+                    Comnd.Parameters.AddWithValue("@count_trailetas", dsRecepcionMPx1.granel.Count);
+
+                    Id_lote_generado = Convert.ToInt32(Comnd.ExecuteScalar());
+                }
             }
             else
             {

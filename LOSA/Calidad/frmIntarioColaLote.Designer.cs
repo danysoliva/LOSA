@@ -30,24 +30,25 @@ namespace LOSA.Calidad
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmIntarioColaLote));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.btn_cerrar = new DevExpress.XtraEditors.SimpleButton();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
             this.dsCalidad = new LOSA.Calidad.dsCalidad();
             this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colpeso = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collote_materia_prima = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colnumero_ingreso = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btn_link_lote = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colnumero_ingreso = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_materia_prima = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcomercial = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colmp_comercial = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btn_Refresh = new DevExpress.XtraEditors.SimpleButton();
+            this.colBin = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCalidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
@@ -125,7 +126,8 @@ namespace LOSA.Calidad
             this.colnumero_ingreso,
             this.colid_materia_prima,
             this.colcomercial,
-            this.colmp_comercial});
+            this.colmp_comercial,
+            this.colBin});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.GroupCount = 1;
             this.grdv_data.Name = "grdv_data";
@@ -144,7 +146,7 @@ namespace LOSA.Calidad
             this.colpeso.Name = "colpeso";
             this.colpeso.OptionsColumn.AllowEdit = false;
             this.colpeso.Visible = true;
-            this.colpeso.VisibleIndex = 3;
+            this.colpeso.VisibleIndex = 4;
             // 
             // collote_materia_prima
             // 
@@ -153,7 +155,16 @@ namespace LOSA.Calidad
             this.collote_materia_prima.FieldName = "lote_materia_prima";
             this.collote_materia_prima.Name = "collote_materia_prima";
             this.collote_materia_prima.Visible = true;
-            this.collote_materia_prima.VisibleIndex = 1;
+            this.collote_materia_prima.VisibleIndex = 2;
+            // 
+            // btn_link_lote
+            // 
+            this.btn_link_lote.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            this.btn_link_lote.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btn_link_lote.Name = "btn_link_lote";
+            this.btn_link_lote.Click += new System.EventHandler(this.btn_link_lote_Click);
             // 
             // colnumero_ingreso
             // 
@@ -161,16 +172,7 @@ namespace LOSA.Calidad
             this.colnumero_ingreso.FieldName = "numero_ingreso";
             this.colnumero_ingreso.Name = "colnumero_ingreso";
             this.colnumero_ingreso.Visible = true;
-            this.colnumero_ingreso.VisibleIndex = 2;
-            // 
-            // btn_link_lote
-            // 
-            this.btn_link_lote.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
-            this.btn_link_lote.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.btn_link_lote.Name = "btn_link_lote";
-            this.btn_link_lote.Click += new System.EventHandler(this.btn_link_lote_Click);
+            this.colnumero_ingreso.VisibleIndex = 3;
             // 
             // colid_materia_prima
             // 
@@ -219,6 +221,14 @@ namespace LOSA.Calidad
             this.btn_Refresh.Text = "Recargar";
             this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
             // 
+            // colBin
+            // 
+            this.colBin.FieldName = "Bin";
+            this.colBin.Name = "colBin";
+            this.colBin.OptionsColumn.AllowEdit = false;
+            this.colBin.Visible = true;
+            this.colBin.VisibleIndex = 1;
+            // 
             // frmIntarioColaLote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -256,5 +266,6 @@ namespace LOSA.Calidad
         private DevExpress.XtraGrid.Columns.GridColumn colcomercial;
         private DevExpress.XtraGrid.Columns.GridColumn colmp_comercial;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btn_link_lote;
+        private DevExpress.XtraGrid.Columns.GridColumn colBin;
     }
 }

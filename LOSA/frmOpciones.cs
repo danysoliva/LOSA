@@ -754,11 +754,47 @@ namespace LOSA
 
         private void simpleButton27_Click(object sender, EventArgs e)
         {
-            //frmTrazabilidadHaciaAdelanteByMP_Lot frm = new frmTrazabilidadHaciaAdelanteByMP_Lot();
-            //if (this.MdiParent != null)
-            //    frm.MdiParent = this.MdiParent;
+            frmGestionUbicaciones frm = new frmGestionUbicaciones(this.UsuarioLogeado,1);
+            if (this.MdiParent != null)
+            {
+                frm.MdiParent = this.MdiParent;
+                frm.FormBorderStyle = FormBorderStyle.Sizable;
+            }
+            else
+            {
+                frm.FormBorderStyle = FormBorderStyle.None;
+            }
 
-            //frm.Show();
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+        private void simpleButton28_Click(object sender, EventArgs e)
+        {
+            frmGestionUbicaciones frm = new frmGestionUbicaciones(this.UsuarioLogeado, 2);
+            if (this.MdiParent != null)
+            {
+                frm.MdiParent = this.MdiParent;
+                frm.FormBorderStyle = FormBorderStyle.Sizable;
+            }
+            else
+            {
+                frm.FormBorderStyle = FormBorderStyle.None;
+            }
+
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+        private void tabMasterData_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void simpleButton29_Click(object sender, EventArgs e)
+        {
+            frmSeguimientoDespachos frm = new frmSeguimientoDespachos();
+            frm.Show();
         }
     }
 }

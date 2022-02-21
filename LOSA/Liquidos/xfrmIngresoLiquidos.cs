@@ -18,17 +18,27 @@ namespace LOSA.Liquidos
     public partial class xfrmIngresoLiquidos : DevExpress.XtraEditors.XtraForm
     {
         UserLogin usuarioLogueado = new UserLogin();
-
+        bool Istrastado;
+        int id_lote_ext;
 
         LabelControl[] labels = new LabelControl[6];
 
         public xfrmIngresoLiquidos(UserLogin userLogged)
         {
             InitializeComponent();
-            usuarioLogueado = userLogged;
+            Istrastado = false;
+           usuarioLogueado = userLogged;
         }
 
-             
+        public xfrmIngresoLiquidos(UserLogin userLogged, bool isTraslado, int idlote)
+        {
+            InitializeComponent();
+            usuarioLogueado = userLogged;
+            Istrastado = true;
+            id_lote_ext = idlote;
+        }
+
+
 
         private void labelControl2_Click(object sender, EventArgs e)
         {
@@ -42,39 +52,79 @@ namespace LOSA.Liquidos
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Abort;
             this.Close();
         }
 
         private void btnTanque1_Click(object sender, EventArgs e)
-        {                                                         
-            xfrmLotesPorTanque frm = new xfrmLotesPorTanque(Convert.ToInt32(btnTanque1.Tag),usuarioLogueado);
-
-            if (frm.ShowDialog()== DialogResult.OK)
+        {
+            if (Istrastado)
             {
-                loadMPTanques();
-            } 
+                xfrmLotesPorTanque frm = new xfrmLotesPorTanque(Convert.ToInt32(btnTanque1.Tag), usuarioLogueado, Istrastado,id_lote_ext);
+
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    loadMPTanques();
+                }
+            }
+            else
+            {
+                xfrmLotesPorTanque frm = new xfrmLotesPorTanque(Convert.ToInt32(btnTanque1.Tag), usuarioLogueado);
+
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    loadMPTanques();
+                }
+            }
         }
 
         private void btnTanque2_Click(object sender, EventArgs e)
         {
-            xfrmLotesPorTanque frm = new xfrmLotesPorTanque(Convert.ToInt32(btnTanque2.Tag), usuarioLogueado);
-
-            if (frm.ShowDialog() == DialogResult.OK)
+            if (Istrastado)
             {
-                loadMPTanques();
+                xfrmLotesPorTanque frm = new xfrmLotesPorTanque(Convert.ToInt32(btnTanque2.Tag), usuarioLogueado, Istrastado, id_lote_ext);
+
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    loadMPTanques();
+                }
             }
+            else
+            {
+                xfrmLotesPorTanque frm = new xfrmLotesPorTanque(Convert.ToInt32(btnTanque2.Tag), usuarioLogueado);
+
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    loadMPTanques();
+                }
+            }
+            
         }
 
        
 
         private void btnTanque3_Click(object sender, EventArgs e)
         {
-            xfrmLotesPorTanque frm = new xfrmLotesPorTanque(Convert.ToInt32(btnTanque3.Tag), usuarioLogueado);
 
-            if (frm.ShowDialog() == DialogResult.OK)
+            if (Istrastado)
             {
-                loadMPTanques();
+                xfrmLotesPorTanque frm = new xfrmLotesPorTanque(Convert.ToInt32(btnTanque3.Tag), usuarioLogueado, Istrastado, id_lote_ext);
+
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    loadMPTanques();
+                }
             }
+            else
+            {
+                xfrmLotesPorTanque frm = new xfrmLotesPorTanque(Convert.ToInt32(btnTanque3.Tag), usuarioLogueado);
+
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    loadMPTanques();
+                }
+            }
+            
         }
 
         

@@ -18,10 +18,23 @@ namespace LOSA.Liquidos
     {
         int id_taque;
         UserLogin usuarioLogueado = new UserLogin();
+        bool istraslado = false;
+        int id_lote_ext = 0;
         public xfrmLotesPorTanque(int pIdTanque,UserLogin userLogged)
         {
             InitializeComponent();
             id_taque = pIdTanque;
+            istraslado = false;
+            usuarioLogueado = userLogged;
+            LoadIngresosLiquidos();
+        }
+
+        public xfrmLotesPorTanque(int pIdTanque, UserLogin userLogged, bool isTraslado, int idlote)
+        {
+            InitializeComponent();
+            id_taque = pIdTanque;
+            istraslado = true;
+            id_lote_ext = idlote;
             usuarioLogueado = userLogged;
             LoadIngresosLiquidos();
         }
@@ -50,9 +63,18 @@ namespace LOSA.Liquidos
                 {
                     if (mp.RecuperarRegistroFromCode(code_mp))
                     {
-                        frmIngresoCamion frm = new frmIngresoCamion(usuarioLogueado,mp,id_taque);
+                        if (istraslado)
+                        {
+                            frmIngresoCamion frm = new frmIngresoCamion(usuarioLogueado, mp, id_taque, istraslado,id_lote_ext);
 
-                        frm.Show();
+                            frm.Show();
+                        }
+                        else
+                        {
+                            frmIngresoCamion frm = new frmIngresoCamion(usuarioLogueado, mp, id_taque);
+
+                            frm.Show();
+                        }
                     }
                     
                 }

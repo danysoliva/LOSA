@@ -143,7 +143,7 @@ namespace LOSA.RecepcionMP
             this.grd_data.Location = new System.Drawing.Point(40, 181);
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
-            this.grd_data.Size = new System.Drawing.Size(556, 197);
+            this.grd_data.Size = new System.Drawing.Size(556, 231);
             this.grd_data.TabIndex = 7;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
@@ -278,7 +278,7 @@ namespace LOSA.RecepcionMP
             // simpleButton2
             // 
             this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(501, 34);
+            this.simpleButton2.Location = new System.Drawing.Point(506, 34);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(124, 38);
             this.simpleButton2.TabIndex = 2;

@@ -216,8 +216,9 @@ namespace LOSA.Calidad
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDescripcion.Location = new System.Drawing.Point(12, 290);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(861, 171);
+            this.txtDescripcion.Size = new System.Drawing.Size(861, 161);
             this.txtDescripcion.TabIndex = 20;
+            this.txtDescripcion.Click += new System.EventHandler(this.txtDescripcion_Click);
             // 
             // labelControl12
             // 
@@ -234,13 +235,13 @@ namespace LOSA.Calidad
             this.dt_fecha.EditValue = null;
             this.dt_fecha.Location = new System.Drawing.Point(162, 61);
             this.dt_fecha.Name = "dt_fecha";
-            this.dt_fecha.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dt_fecha.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dt_fecha.Properties.Appearance.Options.UseFont = true;
             this.dt_fecha.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dt_fecha.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dt_fecha.Size = new System.Drawing.Size(284, 24);
+            this.dt_fecha.Size = new System.Drawing.Size(305, 22);
             this.dt_fecha.TabIndex = 22;
             // 
             // txt_mp
@@ -248,9 +249,9 @@ namespace LOSA.Calidad
             this.txt_mp.Enabled = false;
             this.txt_mp.Location = new System.Drawing.Point(162, 90);
             this.txt_mp.Name = "txt_mp";
-            this.txt_mp.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.txt_mp.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_mp.Properties.Appearance.Options.UseFont = true;
-            this.txt_mp.Size = new System.Drawing.Size(284, 24);
+            this.txt_mp.Size = new System.Drawing.Size(305, 22);
             this.txt_mp.TabIndex = 23;
             // 
             // txt_proveedor
@@ -258,9 +259,9 @@ namespace LOSA.Calidad
             this.txt_proveedor.Enabled = false;
             this.txt_proveedor.Location = new System.Drawing.Point(162, 120);
             this.txt_proveedor.Name = "txt_proveedor";
-            this.txt_proveedor.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.txt_proveedor.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_proveedor.Properties.Appearance.Options.UseFont = true;
-            this.txt_proveedor.Size = new System.Drawing.Size(284, 24);
+            this.txt_proveedor.Size = new System.Drawing.Size(305, 22);
             this.txt_proveedor.TabIndex = 24;
             // 
             // txttrasportista
@@ -268,9 +269,9 @@ namespace LOSA.Calidad
             this.txttrasportista.Enabled = false;
             this.txttrasportista.Location = new System.Drawing.Point(162, 150);
             this.txttrasportista.Name = "txttrasportista";
-            this.txttrasportista.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.txttrasportista.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txttrasportista.Properties.Appearance.Options.UseFont = true;
-            this.txttrasportista.Size = new System.Drawing.Size(284, 24);
+            this.txttrasportista.Size = new System.Drawing.Size(305, 22);
             this.txttrasportista.TabIndex = 25;
             // 
             // txtTransporte
@@ -278,9 +279,9 @@ namespace LOSA.Calidad
             this.txtTransporte.Enabled = false;
             this.txtTransporte.Location = new System.Drawing.Point(162, 180);
             this.txtTransporte.Name = "txtTransporte";
-            this.txtTransporte.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.txtTransporte.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTransporte.Properties.Appearance.Options.UseFont = true;
-            this.txtTransporte.Size = new System.Drawing.Size(284, 24);
+            this.txtTransporte.Size = new System.Drawing.Size(305, 22);
             this.txtTransporte.TabIndex = 26;
             // 
             // txtoc
@@ -288,36 +289,37 @@ namespace LOSA.Calidad
             this.txtoc.Enabled = false;
             this.txtoc.Location = new System.Drawing.Point(589, 177);
             this.txtoc.Name = "txtoc";
-            this.txtoc.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.txtoc.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtoc.Properties.Appearance.Options.UseFont = true;
-            this.txtoc.Size = new System.Drawing.Size(284, 24);
+            this.txtoc.Size = new System.Drawing.Size(284, 22);
             this.txtoc.TabIndex = 27;
             // 
             // txtkg
             // 
             this.txtkg.Location = new System.Drawing.Point(589, 147);
             this.txtkg.Name = "txtkg";
-            this.txtkg.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.txtkg.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtkg.Properties.Appearance.Options.UseFont = true;
-            this.txtkg.Size = new System.Drawing.Size(172, 24);
+            this.txtkg.Size = new System.Drawing.Size(172, 22);
             this.txtkg.TabIndex = 28;
             // 
             // txtsacos
             // 
             this.txtsacos.Location = new System.Drawing.Point(589, 118);
             this.txtsacos.Name = "txtsacos";
-            this.txtsacos.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.txtsacos.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsacos.Properties.Appearance.Options.UseFont = true;
-            this.txtsacos.Size = new System.Drawing.Size(172, 24);
+            this.txtsacos.Size = new System.Drawing.Size(172, 22);
             this.txtsacos.TabIndex = 29;
             // 
             // txtplaca
             // 
+            this.txtplaca.Enabled = false;
             this.txtplaca.Location = new System.Drawing.Point(589, 90);
             this.txtplaca.Name = "txtplaca";
-            this.txtplaca.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.txtplaca.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtplaca.Properties.Appearance.Options.UseFont = true;
-            this.txtplaca.Size = new System.Drawing.Size(284, 24);
+            this.txtplaca.Size = new System.Drawing.Size(284, 22);
             this.txtplaca.TabIndex = 30;
             // 
             // labelControl13
@@ -339,6 +341,7 @@ namespace LOSA.Calidad
             this.txtAcciones.Name = "txtAcciones";
             this.txtAcciones.Size = new System.Drawing.Size(861, 83);
             this.txtAcciones.TabIndex = 32;
+            this.txtAcciones.Click += new System.EventHandler(this.txtAcciones_Click);
             // 
             // txtUser
             // 
@@ -352,6 +355,7 @@ namespace LOSA.Calidad
             // textEdit10
             // 
             this.textEdit10.EditValue = "Susana Sierra";
+            this.textEdit10.Enabled = false;
             this.textEdit10.Location = new System.Drawing.Point(572, 603);
             this.textEdit10.Name = "textEdit10";
             this.textEdit10.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
@@ -384,9 +388,9 @@ namespace LOSA.Calidad
             this.txtingreso.Enabled = false;
             this.txtingreso.Location = new System.Drawing.Point(589, 207);
             this.txtingreso.Name = "txtingreso";
-            this.txtingreso.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.txtingreso.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtingreso.Properties.Appearance.Options.UseFont = true;
-            this.txtingreso.Size = new System.Drawing.Size(284, 24);
+            this.txtingreso.Size = new System.Drawing.Size(284, 22);
             this.txtingreso.TabIndex = 38;
             // 
             // labelControl16
@@ -429,9 +433,9 @@ namespace LOSA.Calidad
             this.txtCorrelativo.Enabled = false;
             this.txtCorrelativo.Location = new System.Drawing.Point(589, 61);
             this.txtCorrelativo.Name = "txtCorrelativo";
-            this.txtCorrelativo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.txtCorrelativo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCorrelativo.Properties.Appearance.Options.UseFont = true;
-            this.txtCorrelativo.Size = new System.Drawing.Size(284, 24);
+            this.txtCorrelativo.Size = new System.Drawing.Size(284, 22);
             this.txtCorrelativo.TabIndex = 42;
             // 
             // simpleButton2
@@ -492,7 +496,6 @@ namespace LOSA.Calidad
             this.Name = "frmNoConfirmidadMP";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "No conformidad";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.txtDescripcion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_fecha.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_fecha.Properties)).EndInit();

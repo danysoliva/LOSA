@@ -21,6 +21,7 @@ namespace LOSA.TransaccionesMP
     {
         UserLogin UsuarioLogeado;
         int idUbicacionNueva;
+        int TypeOf;
         //public enum VentanaTarima
         //{
         //    asignarUbicacion = 1,
@@ -31,13 +32,60 @@ namespace LOSA.TransaccionesMP
         {
             InitializeComponent();
             UsuarioLogeado = pUser;
+            TypeOf = 1;
+        }
+
+
+        public frmGestionUbicaciones(UserLogin pUser, int PtypeOf)
+        {
+            InitializeComponent();
+            UsuarioLogeado = pUser;
+            TypeOf = PtypeOf;
+            if (TypeOf == 1)
+            {
+                labelControl6.Text = "No. de Ingreso";
+            }
+            else
+            {
+
+                labelControl6.Text = "No. de Lote";
+            }
         }
 
         private void cmdLoad_Click(object sender, EventArgs e)
         {
-            LoadTarimas();
+            if (TypeOf == 1)
+            {
+                LoadTarimas();
+            }
+            else
+            {
+                LoadTarimas_Pt();
+            }
         }
 
+        private void LoadTarimas_Pt()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_detalle_tarimas_from_ingreso_pt", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lote", txtNumIngreso.Text);
+                dsTransaccionesMP1.detalle_tarimas_ingreso.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsTransaccionesMP1.detalle_tarimas_ingreso);
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
         private void LoadTarimas()
         {
             try
@@ -65,7 +113,14 @@ namespace LOSA.TransaccionesMP
         {
             if(e.KeyCode == Keys.Enter)
             {
-                LoadTarimas();
+                if (TypeOf == 1)
+                {
+                    LoadTarimas();
+                }
+                else
+                {
+                    LoadTarimas_Pt();
+                }
             }
         }
 

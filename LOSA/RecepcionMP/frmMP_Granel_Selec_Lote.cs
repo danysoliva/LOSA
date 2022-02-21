@@ -36,6 +36,23 @@ namespace LOSA.RecepcionMP
                 dsRecepcionMPx1.AcceptChanges();
             }
         }
+        public frmMP_Granel_Selec_Lote(ArrayList pArray, int id_externo)
+        {
+            InitializeComponent();
+            vLista = pArray;
+            LoadListaLotesActivos();
+
+            foreach (ItemMP_Lote item in pArray)
+            {
+                dsRecepcionMPx.cruce_lote_mpRow row1 = dsRecepcionMPx1.cruce_lote_mp.Newcruce_lote_mpRow();
+                row1.itemcode = item.ItemCode;
+                row1.card_name = item.Card_Name;
+                //pendiente agregar el valor de lote
+                dsRecepcionMPx1.cruce_lote_mp.Addcruce_lote_mpRow(row1);
+                dsRecepcionMPx1.AcceptChanges();
+            }
+
+        }
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
