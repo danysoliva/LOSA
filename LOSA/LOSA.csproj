@@ -618,7 +618,14 @@
     <Compile Include="Calidad\frm_retenciones.Designer.cs">
       <DependentUpon>frm_retenciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\Model\Lote_Ingreso_Conf_Calidad.cs" />
     <Compile Include="Calidad\NoConformidad.cs" />
+    <Compile Include="Calidad\xfrmWizardConfCalidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\xfrmWizardConfCalidad.Designer.cs">
+      <DependentUpon>xfrmWizardConfCalidad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clases\BagsPT.cs" />
     <Compile Include="Clases\Boleta.cs" />
     <Compile Include="Clases\CajaDialogo.cs" />
@@ -2613,6 +2620,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frm_retenciones.resx">
       <DependentUpon>frm_retenciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\xfrmWizardConfCalidad.resx">
+      <DependentUpon>xfrmWizardConfCalidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frmdespachos.resx">
       <DependentUpon>frmdespachos.cs</DependentUpon>

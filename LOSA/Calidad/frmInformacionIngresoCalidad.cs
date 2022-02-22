@@ -113,6 +113,95 @@ namespace LOSA.Calidad
             }
         }
 
+
+        public rdEstadoTransporte(int id_ingreso_lote, UserLogin Puser,int tipo_transaccion)
+        {
+            InitializeComponent();
+            Id_ingreso = id_ingreso_lote;
+            UsuarioLogeado = Puser;
+
+            tabPageLotesPT.Visible = false;
+            //tabControl1.TabPages[4]
+            load_data();
+            load_data_ingreso();
+            Load_cargas_nir();
+            Inicializar_data_logistica();
+            load_zonas();
+            load_especie();
+            load_tipo();
+            load_paises();
+            LoadLotesPT();
+            if (ChCalidad)
+            {
+                load_criterios_configurados();
+                Inicalizar_Archivo_configurados();
+                get_imagen();
+                load_empaque_estado_Mp();
+                load_trasporte_estado_transporte();
+                load_criterios_adicionales();
+
+                if (full_pathImagen != "")
+                {
+                    pc_Mp.Image = ByteToImage(GetImgByte(full_pathImagen));
+                }
+            }
+            else
+            {
+                inicializar_criterios();
+                Inicalizar_Archivo();
+            }
+
+            btnGuardar.Visible = false;
+            //cmdHome.Visible = false;
+            //btnRevisarBoleta.Enabled = false;
+            //btnOC.Enabled = false;
+            simpleButton1.Enabled = false;
+            ColSeleccionar.OptionsColumn.AllowEdit = false;
+            colbit_subido.OptionsColumn.AllowEdit = false;
+            colAdjuntar.OptionsColumn.AllowEdit = false;
+            //colabrir.OptionsColumn.AllowEdit = false;
+            grd_origenespecie.Enabled = false;
+            grd_pesca.Enabled = false;
+            grd_origen.Enabled = false;
+            Desadjuntar.OptionsColumn.AllowEdit = false;
+            grd_tipo.Enabled = false;
+            btnAdjuntarImagen.Enabled = false;
+            spsustentable.Enabled = false;
+            labelControl5.Visible = false;
+            txtboleta.Visible = false;
+            btnRevisarBoleta.Visible = false;
+            btnOC.Visible = false;
+            txtproveedor.Visible = false;
+            txtoc.Visible = false;
+            txtnumtraslado.Visible = false;
+            labelControl4.Visible = false;
+            labelControl6.Visible=false;
+            labelControl7.Visible=false;
+            txtreferencia.Visible = false;
+            dtproduccion.Visible = false;
+            dtvencimiento.Visible = false;
+            dt_f_ingreso.Visible = false;
+            txtdiasvencimiento.Visible = false;
+            txtingresada.Visible = false;
+            txtinventarioActual.Visible = false;
+            txtingresadaUD.Visible = false;
+            txtFacturas.Visible = false;
+            labelControl8.Visible = false;
+            labelControl9.Visible = false;
+            labelControl10.Visible = false;
+            labelControl11.Visible = false;
+            labelControl12.Visible = false;
+            labelControl13.Visible = false;
+            labelControl44.Visible = false;
+            labelControl32.Visible = false;
+            labelControl15.Visible = false;
+            btnRecientes.Visible = false;
+
+            labelControl14.Location = new Point(labelControl14.Location.X, 167);
+            tabControl1 .Location = new Point(tabControl1.Location.X, 200);
+
+        }
+
         private void LoadLotesPT()
         {
             //[sp_load_lotes_pt_trz_from_lote_mp] @lotemp
