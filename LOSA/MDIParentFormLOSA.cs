@@ -23,6 +23,16 @@ namespace LOSA
             frm.Show();
         }
 
-        
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+        }
+
+        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMain frm = new frmMain();
+            frm.MdiParent = this;
+            frm.WindowState = FormWindowState.Normal;
+            frm.Show();
+        }
     }
 }

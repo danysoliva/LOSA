@@ -134,6 +134,10 @@ namespace LOSA
 
                     this.DialogResult = System.Windows.Forms.DialogResult.OK;
                 }
+                else
+                {
+                    CajaDialogo.Error("Usuario No encontrado en AQFSVR003!");
+                }
             }
             else
             {
