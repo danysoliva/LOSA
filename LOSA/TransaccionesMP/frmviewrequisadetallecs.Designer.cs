@@ -67,8 +67,8 @@
             this.btnconsumir = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.coludenvidas = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colUdRestante = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.verDetalle = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.col = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.verDetalle = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.grDetalleLote)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTarimas)).BeginInit();
@@ -317,6 +317,14 @@
             this.colUdRestante.OptionsColumn.AllowEdit = false;
             this.colUdRestante.Width = 55;
             // 
+            // col
+            // 
+            this.col.Caption = "Ver Detalle";
+            this.col.ColumnEdit = this.verDetalle;
+            this.col.Name = "col";
+            this.col.Visible = true;
+            this.col.VisibleIndex = 6;
+            // 
             // verDetalle
             // 
             this.verDetalle.AutoHeight = false;
@@ -326,14 +334,6 @@
             this.verDetalle.Name = "verDetalle";
             this.verDetalle.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.verDetalle.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.verDetalle_ButtonClick);
-            // 
-            // col
-            // 
-            this.col.Caption = "Ver Detalle";
-            this.col.ColumnEdit = this.verDetalle;
-            this.col.Name = "col";
-            this.col.Visible = true;
-            this.col.VisibleIndex = 6;
             // 
             // frmviewrequisadetallecs
             // 

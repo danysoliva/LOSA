@@ -2796,7 +2796,7 @@ namespace LOSA.Calidad
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1348, 955);
+            this.ClientSize = new System.Drawing.Size(1348, 888);
             this.Controls.Add(this.dt_f_ingreso);
             this.Controls.Add(this.labelControl44);
             this.Controls.Add(this.txtingresadaUD);

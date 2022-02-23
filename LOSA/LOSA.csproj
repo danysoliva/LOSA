@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>277</ApplicationRevision>
+    <ApplicationRevision>278</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -96,7 +96,7 @@
     </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>11DBC92D92B4EB4A587EA378AD2A6CF4E83C0246</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>5A56FE5B36BF1139C0C28330C52B1468E1F78C88</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -618,7 +618,14 @@
     <Compile Include="Calidad\frm_retenciones.Designer.cs">
       <DependentUpon>frm_retenciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\Model\Lote_Ingreso_Conf_Calidad.cs" />
     <Compile Include="Calidad\NoConformidad.cs" />
+    <Compile Include="Calidad\xfrmWizardConfCalidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\xfrmWizardConfCalidad.Designer.cs">
+      <DependentUpon>xfrmWizardConfCalidad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clases\BagsPT.cs" />
     <Compile Include="Clases\Boleta.cs" />
     <Compile Include="Clases\CajaDialogo.cs" />
@@ -2614,6 +2621,9 @@
     <EmbeddedResource Include="Calidad\frm_retenciones.resx">
       <DependentUpon>frm_retenciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\xfrmWizardConfCalidad.resx">
+      <DependentUpon>xfrmWizardConfCalidad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frmdespachos.resx">
       <DependentUpon>frmdespachos.cs</DependentUpon>
     </EmbeddedResource>
@@ -3716,7 +3726,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 y x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

@@ -43,7 +43,7 @@ namespace LOSA.Clases
 	                                   id_grupo_losa,
                                        ADUser
                                 FROM [ACS].dbo.conf_usuarios 
-                                where [usuario] ='" + pUser + "'";
+                                where [ADUser] ='" + pUser + "'";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 //cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataReader dr = cmd.ExecuteReader();
