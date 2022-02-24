@@ -84,6 +84,7 @@
             this.btnreportes = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
             this.TabCalidad = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton29 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton28 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton27 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton25 = new DevExpress.XtraEditors.SimpleButton();
@@ -116,7 +117,6 @@
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton29 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -934,6 +934,19 @@
             this.TabCalidad.Size = new System.Drawing.Size(772, 441);
             this.TabCalidad.Text = "Calidad";
             // 
+            // simpleButton29
+            // 
+            this.simpleButton29.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton29.Appearance.Options.UseFont = true;
+            this.simpleButton29.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton29.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton29.ImageOptions.Image")));
+            this.simpleButton29.Location = new System.Drawing.Point(435, 331);
+            this.simpleButton29.Name = "simpleButton29";
+            this.simpleButton29.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton29.TabIndex = 31;
+            this.simpleButton29.Text = "Seguimiento de\r\ndespachos";
+            this.simpleButton29.Click += new System.EventHandler(this.simpleButton29_Click);
+            // 
             // simpleButton28
             // 
             this.simpleButton28.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
@@ -1116,7 +1129,7 @@
             this.cmdLotesCalidad.Name = "cmdLotesCalidad";
             this.cmdLotesCalidad.Size = new System.Drawing.Size(199, 71);
             this.cmdLotesCalidad.TabIndex = 11;
-            this.cmdLotesCalidad.Text = "Lotes MP";
+            this.cmdLotesCalidad.Text = "Gestion \r\nde Lotes";
             this.cmdLotesCalidad.Click += new System.EventHandler(this.cmdLotesCalidad_Click);
             // 
             // TabAdmin
@@ -1365,19 +1378,6 @@
             this.labelControl3.Size = new System.Drawing.Size(515, 39);
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
-            // 
-            // simpleButton29
-            // 
-            this.simpleButton29.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton29.Appearance.Options.UseFont = true;
-            this.simpleButton29.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton29.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton29.ImageOptions.Image")));
-            this.simpleButton29.Location = new System.Drawing.Point(435, 331);
-            this.simpleButton29.Name = "simpleButton29";
-            this.simpleButton29.Size = new System.Drawing.Size(199, 71);
-            this.simpleButton29.TabIndex = 31;
-            this.simpleButton29.Text = "Seguimiento de\r\ndespachos";
-            this.simpleButton29.Click += new System.EventHandler(this.simpleButton29_Click);
             // 
             // frmOpciones
             // 

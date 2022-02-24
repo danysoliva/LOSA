@@ -57,19 +57,27 @@ namespace LOSA.RecepcionMP
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-
-
-            //frmSpet1 frm = new frmSpet1(UsuarioLogeado);
-            //if (frm.ShowDialog() == DialogResult.OK)
-            //{
-            //    Load_Info();
-            //}
-            frmTarima frm = new frmTarima(UsuarioLogeado);
-            frm.WindowState = FormWindowState.Maximized;
-            if (frm.ShowDialog() == DialogResult.OK)
+            SelectorFor path = new SelectorFor(5);
+            if (path.Camino == 1)
             {
-                Load_Info();
+                frmSpet1 frm = new frmSpet1(UsuarioLogeado);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    Load_Info();
+                }
             }
+            else
+            {
+                frmTarima frm = new frmTarima(UsuarioLogeado);
+                frm.WindowState = FormWindowState.Maximized;
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    Load_Info();
+                }
+            }
+
+
+
         }
 
         private void btnver_Click(object sender, EventArgs e)

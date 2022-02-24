@@ -655,7 +655,7 @@ namespace LOSA
 
         private void simpleButton17_Click_2(object sender, EventArgs e)
         {
-            frmTransPendientes frm = new frmTransPendientes(UsuarioLogeado);
+            frmPendienteAlmacenExterno frm = new frmPendienteAlmacenExterno(UsuarioLogeado);
             frm.Show();
         }
 

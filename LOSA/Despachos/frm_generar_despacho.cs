@@ -182,7 +182,7 @@ namespace LOSA.Despachos
                 txtvehiculo.Text = frm.Vehiculo;
                 txtconductor.Text = frm.conductor;
                 codigo_selected = frm.codigo;
-                if (frm.codigo == "CL00009" || frm.codigo == "CL00002")
+                if (frm.codigo == "CL00009" || frm.codigo == "CL00002" || frm.codigo == "CL00001")
                 {
                     load_destinos(frm.codigo);
                     labelControl8.Enabled = true;
