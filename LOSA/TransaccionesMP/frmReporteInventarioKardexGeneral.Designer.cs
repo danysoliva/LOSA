@@ -77,6 +77,9 @@ namespace LOSA.TransaccionesMP
             // 
             // tabPane1
             // 
+            this.tabPane1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabPane1.AppearanceButton.Hovered.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.tabPane1.AppearanceButton.Hovered.Options.UseFont = true;
             this.tabPane1.AppearanceButton.Normal.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -127,7 +130,7 @@ namespace LOSA.TransaccionesMP
             // 
             this.grdv_data.Appearance.FilterPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.grdv_data.Appearance.FilterPanel.Options.UseFont = true;
-            this.grdv_data.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdv_data.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdv_data.Appearance.FocusedRow.Options.UseFont = true;
             this.grdv_data.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.grdv_data.Appearance.FooterPanel.Options.UseFont = true;
@@ -139,7 +142,7 @@ namespace LOSA.TransaccionesMP
             this.grdv_data.Appearance.HeaderPanel.Options.UseFont = true;
             this.grdv_data.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.grdv_data.Appearance.Preview.Options.UseFont = true;
-            this.grdv_data.Appearance.Row.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.grdv_data.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.grdv_data.Appearance.Row.Options.UseFont = true;
             this.grdv_data.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.grdv_data.Appearance.TopNewRow.Options.UseFont = true;
@@ -253,7 +256,7 @@ namespace LOSA.TransaccionesMP
             // 
             this.grdv_data_resumen.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.grdv_data_resumen.Appearance.ColumnFilterButton.Options.UseFont = true;
-            this.grdv_data_resumen.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.grdv_data_resumen.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.grdv_data_resumen.Appearance.FocusedRow.Options.UseFont = true;
             this.grdv_data_resumen.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.grdv_data_resumen.Appearance.FooterPanel.Options.UseFont = true;
@@ -265,9 +268,9 @@ namespace LOSA.TransaccionesMP
             this.grdv_data_resumen.Appearance.GroupRow.Options.UseFont = true;
             this.grdv_data_resumen.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.grdv_data_resumen.Appearance.HeaderPanel.Options.UseFont = true;
-            this.grdv_data_resumen.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.grdv_data_resumen.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.grdv_data_resumen.Appearance.Preview.Options.UseFont = true;
-            this.grdv_data_resumen.Appearance.Row.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.grdv_data_resumen.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.grdv_data_resumen.Appearance.Row.Options.UseFont = true;
             this.grdv_data_resumen.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.grdv_data_resumen.Appearance.TopNewRow.Options.UseFont = true;
