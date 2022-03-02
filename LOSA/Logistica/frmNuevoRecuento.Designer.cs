@@ -161,6 +161,7 @@ namespace LOSA.Logistica
             this.simpleButton3.Size = new System.Drawing.Size(175, 90);
             this.simpleButton3.TabIndex = 13;
             this.simpleButton3.Text = "Seleccion de lotes";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // simpleButton2
             // 

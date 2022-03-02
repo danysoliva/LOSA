@@ -34,11 +34,8 @@ namespace LOSA.TransaccionesMP
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
-            this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.grd_data_resumen = new DevExpress.XtraGrid.GridControl();
-            this.grdv_data_resumen = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.dsTarima = new LOSA.TransaccionesMP.dsTarima();
+            this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colexistencia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnombre_comercial = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfecha_vence = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -46,21 +43,23 @@ namespace LOSA.TransaccionesMP
             this.colid_mp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collote = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldias = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colexistencia1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colnombre_comercial1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colfecha_vence1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colfecha_produccion1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.grd_data_resumen = new DevExpress.XtraGrid.GridControl();
+            this.grdv_data_resumen = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid_mp1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coldias1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnombre_comercial1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colexistencia1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcode_sap = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsTarima)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
             this.tabNavigationPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data_resumen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data_resumen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsTarima)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClose
@@ -106,9 +105,11 @@ namespace LOSA.TransaccionesMP
             // 
             // grd_data
             // 
+            this.grd_data.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_data.DataMember = "informacion";
             this.grd_data.DataSource = this.dsTarima;
-            this.grd_data.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grd_data.Location = new System.Drawing.Point(0, 0);
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
@@ -116,6 +117,11 @@ namespace LOSA.TransaccionesMP
             this.grd_data.TabIndex = 0;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
+            // 
+            // dsTarima
+            // 
+            this.dsTarima.DataSetName = "dsTarima";
+            this.dsTarima.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // grdv_data
             // 
@@ -150,66 +156,6 @@ namespace LOSA.TransaccionesMP
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
             this.grdv_data.OptionsView.ShowFooter = true;
             this.grdv_data.OptionsView.ShowGroupPanel = false;
-            // 
-            // tabNavigationPage2
-            // 
-            this.tabNavigationPage2.Caption = "Resumen por materia prima";
-            this.tabNavigationPage2.Controls.Add(this.grd_data_resumen);
-            this.tabNavigationPage2.Name = "tabNavigationPage2";
-            this.tabNavigationPage2.Size = new System.Drawing.Size(1362, 648);
-            // 
-            // grd_data_resumen
-            // 
-            this.grd_data_resumen.DataMember = "resumen";
-            this.grd_data_resumen.DataSource = this.dsTarima;
-            this.grd_data_resumen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd_data_resumen.Location = new System.Drawing.Point(0, 0);
-            this.grd_data_resumen.MainView = this.grdv_data_resumen;
-            this.grd_data_resumen.Name = "grd_data_resumen";
-            this.grd_data_resumen.Size = new System.Drawing.Size(1362, 648);
-            this.grd_data_resumen.TabIndex = 0;
-            this.grd_data_resumen.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.grdv_data_resumen});
-            // 
-            // grdv_data_resumen
-            // 
-            this.grdv_data_resumen.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.grdv_data_resumen.Appearance.ColumnFilterButton.Options.UseFont = true;
-            this.grdv_data_resumen.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.grdv_data_resumen.Appearance.FocusedRow.Options.UseFont = true;
-            this.grdv_data_resumen.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.grdv_data_resumen.Appearance.FooterPanel.Options.UseFont = true;
-            this.grdv_data_resumen.Appearance.GroupFooter.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.grdv_data_resumen.Appearance.GroupFooter.Options.UseFont = true;
-            this.grdv_data_resumen.Appearance.GroupPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.grdv_data_resumen.Appearance.GroupPanel.Options.UseFont = true;
-            this.grdv_data_resumen.Appearance.GroupRow.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.grdv_data_resumen.Appearance.GroupRow.Options.UseFont = true;
-            this.grdv_data_resumen.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.grdv_data_resumen.Appearance.HeaderPanel.Options.UseFont = true;
-            this.grdv_data_resumen.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.grdv_data_resumen.Appearance.Preview.Options.UseFont = true;
-            this.grdv_data_resumen.Appearance.Row.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.grdv_data_resumen.Appearance.Row.Options.UseFont = true;
-            this.grdv_data_resumen.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.grdv_data_resumen.Appearance.TopNewRow.Options.UseFont = true;
-            this.grdv_data_resumen.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colexistencia1,
-            this.colnombre_comercial1,
-            this.colfecha_vence1,
-            this.colfecha_produccion1,
-            this.colid_mp1,
-            this.coldias1});
-            this.grdv_data_resumen.GridControl = this.grd_data_resumen;
-            this.grdv_data_resumen.Name = "grdv_data_resumen";
-            this.grdv_data_resumen.OptionsView.ShowAutoFilterRow = true;
-            this.grdv_data_resumen.OptionsView.ShowFooter = true;
-            this.grdv_data_resumen.OptionsView.ShowGroupPanel = false;
-            // 
-            // dsTarima
-            // 
-            this.dsTarima.DataSetName = "dsTarima";
-            this.dsTarima.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // colexistencia
             // 
@@ -281,60 +227,106 @@ namespace LOSA.TransaccionesMP
             this.coldias.VisibleIndex = 4;
             this.coldias.Width = 213;
             // 
-            // colexistencia1
+            // tabNavigationPage2
             // 
-            this.colexistencia1.Caption = "Existencia";
-            this.colexistencia1.DisplayFormat.FormatString = "{0:0.##.##} Kg.";
-            this.colexistencia1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colexistencia1.FieldName = "existencia";
-            this.colexistencia1.Name = "colexistencia1";
-            this.colexistencia1.OptionsColumn.AllowEdit = false;
-            this.colexistencia1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia", "{0:0.##.##} Kg.")});
-            this.colexistencia1.Visible = true;
-            this.colexistencia1.VisibleIndex = 4;
+            this.tabNavigationPage2.Caption = "Resumen por materia prima";
+            this.tabNavigationPage2.Controls.Add(this.grd_data_resumen);
+            this.tabNavigationPage2.Name = "tabNavigationPage2";
+            this.tabNavigationPage2.Size = new System.Drawing.Size(1362, 648);
             // 
-            // colnombre_comercial1
+            // grd_data_resumen
             // 
-            this.colnombre_comercial1.Caption = "Materia Prima";
-            this.colnombre_comercial1.FieldName = "nombre_comercial";
-            this.colnombre_comercial1.Name = "colnombre_comercial1";
-            this.colnombre_comercial1.OptionsColumn.AllowEdit = false;
-            this.colnombre_comercial1.Visible = true;
-            this.colnombre_comercial1.VisibleIndex = 0;
+            this.grd_data_resumen.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grd_data_resumen.DataMember = "totales";
+            this.grd_data_resumen.DataSource = this.dsTarima;
+            this.grd_data_resumen.Location = new System.Drawing.Point(0, 0);
+            this.grd_data_resumen.MainView = this.grdv_data_resumen;
+            this.grd_data_resumen.Name = "grd_data_resumen";
+            this.grd_data_resumen.Size = new System.Drawing.Size(1362, 648);
+            this.grd_data_resumen.TabIndex = 0;
+            this.grd_data_resumen.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grdv_data_resumen});
             // 
-            // colfecha_vence1
+            // grdv_data_resumen
             // 
-            this.colfecha_vence1.Caption = "F. vencimiento";
-            this.colfecha_vence1.FieldName = "fecha_vence";
-            this.colfecha_vence1.Name = "colfecha_vence1";
-            this.colfecha_vence1.OptionsColumn.AllowEdit = false;
-            this.colfecha_vence1.Visible = true;
-            this.colfecha_vence1.VisibleIndex = 2;
-            // 
-            // colfecha_produccion1
-            // 
-            this.colfecha_produccion1.Caption = "F. produccion";
-            this.colfecha_produccion1.FieldName = "fecha_produccion";
-            this.colfecha_produccion1.Name = "colfecha_produccion1";
-            this.colfecha_produccion1.OptionsColumn.AllowEdit = false;
-            this.colfecha_produccion1.Visible = true;
-            this.colfecha_produccion1.VisibleIndex = 1;
+            this.grdv_data_resumen.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.grdv_data_resumen.Appearance.ColumnFilterButton.Options.UseFont = true;
+            this.grdv_data_resumen.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.grdv_data_resumen.Appearance.FocusedRow.Options.UseFont = true;
+            this.grdv_data_resumen.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.grdv_data_resumen.Appearance.FooterPanel.Options.UseFont = true;
+            this.grdv_data_resumen.Appearance.GroupFooter.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.grdv_data_resumen.Appearance.GroupFooter.Options.UseFont = true;
+            this.grdv_data_resumen.Appearance.GroupPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.grdv_data_resumen.Appearance.GroupPanel.Options.UseFont = true;
+            this.grdv_data_resumen.Appearance.GroupRow.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.grdv_data_resumen.Appearance.GroupRow.Options.UseFont = true;
+            this.grdv_data_resumen.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.grdv_data_resumen.Appearance.HeaderPanel.Options.UseFont = true;
+            this.grdv_data_resumen.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.grdv_data_resumen.Appearance.Preview.Options.UseFont = true;
+            this.grdv_data_resumen.Appearance.Row.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.grdv_data_resumen.Appearance.Row.Options.UseFont = true;
+            this.grdv_data_resumen.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.grdv_data_resumen.Appearance.TopNewRow.Options.UseFont = true;
+            this.grdv_data_resumen.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid_mp1,
+            this.colnombre_comercial1,
+            this.colexistencia1,
+            this.colcodigo,
+            this.colcode_sap});
+            this.grdv_data_resumen.GridControl = this.grd_data_resumen;
+            this.grdv_data_resumen.Name = "grdv_data_resumen";
+            this.grdv_data_resumen.OptionsView.ShowAutoFilterRow = true;
+            this.grdv_data_resumen.OptionsView.ShowFooter = true;
+            this.grdv_data_resumen.OptionsView.ShowGroupPanel = false;
             // 
             // colid_mp1
             // 
             this.colid_mp1.FieldName = "id_mp";
             this.colid_mp1.Name = "colid_mp1";
-            this.colid_mp1.OptionsColumn.AllowEdit = false;
             // 
-            // coldias1
+            // colnombre_comercial1
             // 
-            this.coldias1.Caption = "Días";
-            this.coldias1.FieldName = "dias";
-            this.coldias1.Name = "coldias1";
-            this.coldias1.OptionsColumn.AllowEdit = false;
-            this.coldias1.Visible = true;
-            this.coldias1.VisibleIndex = 3;
+            this.colnombre_comercial1.Caption = "MP";
+            this.colnombre_comercial1.FieldName = "nombre_comercial";
+            this.colnombre_comercial1.Name = "colnombre_comercial1";
+            this.colnombre_comercial1.OptionsColumn.AllowEdit = false;
+            this.colnombre_comercial1.Visible = true;
+            this.colnombre_comercial1.VisibleIndex = 2;
+            this.colnombre_comercial1.Width = 590;
+            // 
+            // colexistencia1
+            // 
+            this.colexistencia1.Caption = "Totales";
+            this.colexistencia1.FieldName = "existencia";
+            this.colexistencia1.Name = "colexistencia1";
+            this.colexistencia1.OptionsColumn.AllowEdit = false;
+            this.colexistencia1.Visible = true;
+            this.colexistencia1.VisibleIndex = 3;
+            this.colexistencia1.Width = 513;
+            // 
+            // colcodigo
+            // 
+            this.colcodigo.Caption = "Codigo";
+            this.colcodigo.FieldName = "codigo";
+            this.colcodigo.Name = "colcodigo";
+            this.colcodigo.OptionsColumn.AllowEdit = false;
+            this.colcodigo.Visible = true;
+            this.colcodigo.VisibleIndex = 1;
+            this.colcodigo.Width = 107;
+            // 
+            // colcode_sap
+            // 
+            this.colcode_sap.Caption = "SAP";
+            this.colcode_sap.FieldName = "code_sap";
+            this.colcode_sap.Name = "colcode_sap";
+            this.colcode_sap.OptionsColumn.AllowEdit = false;
+            this.colcode_sap.Visible = true;
+            this.colcode_sap.VisibleIndex = 0;
+            this.colcode_sap.Width = 134;
             // 
             // frmReporteInventarioKardexGeneral
             // 
@@ -350,11 +342,11 @@ namespace LOSA.TransaccionesMP
             this.tabPane1.ResumeLayout(false);
             this.tabNavigationPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsTarima)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
             this.tabNavigationPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grd_data_resumen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data_resumen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsTarima)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -377,11 +369,10 @@ namespace LOSA.TransaccionesMP
         private DevExpress.XtraGrid.Columns.GridColumn colid_mp;
         private DevExpress.XtraGrid.Columns.GridColumn collote;
         private DevExpress.XtraGrid.Columns.GridColumn coldias;
-        private DevExpress.XtraGrid.Columns.GridColumn colexistencia1;
-        private DevExpress.XtraGrid.Columns.GridColumn colnombre_comercial1;
-        private DevExpress.XtraGrid.Columns.GridColumn colfecha_vence1;
-        private DevExpress.XtraGrid.Columns.GridColumn colfecha_produccion1;
         private DevExpress.XtraGrid.Columns.GridColumn colid_mp1;
-        private DevExpress.XtraGrid.Columns.GridColumn coldias1;
+        private DevExpress.XtraGrid.Columns.GridColumn colnombre_comercial1;
+        private DevExpress.XtraGrid.Columns.GridColumn colexistencia1;
+        private DevExpress.XtraGrid.Columns.GridColumn colcodigo;
+        private DevExpress.XtraGrid.Columns.GridColumn colcode_sap;
     }
 }

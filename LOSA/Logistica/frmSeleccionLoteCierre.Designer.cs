@@ -29,6 +29,7 @@ namespace LOSA.Logistica
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSeleccionLoteCierre));
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
@@ -50,6 +51,18 @@ namespace LOSA.Logistica
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.grd_mps = new DevExpress.XtraGrid.GridControl();
             this.grdv_mps = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMP = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.id_mps = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBodega = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grd_bodega = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.bodegasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsCierreMes = new LOSA.Logistica.dsCierreMes();
+            this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colExistencia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colExistenciaAnterior = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPendienteAjustar = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSeleccionado = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -76,6 +89,10 @@ namespace LOSA.Logistica
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_mps)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_mps)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_bodega)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bodegasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsCierreMes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -159,11 +176,13 @@ namespace LOSA.Logistica
             // 
             // grd_existencia_lote
             // 
-            this.grd_existencia_lote.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd_existencia_lote.Location = new System.Drawing.Point(2, 24);
+            this.grd_existencia_lote.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grd_existencia_lote.Location = new System.Drawing.Point(2, 83);
             this.grd_existencia_lote.MainView = this.grdv_existencia_lote;
             this.grd_existencia_lote.Name = "grd_existencia_lote";
-            this.grd_existencia_lote.Size = new System.Drawing.Size(533, 403);
+            this.grd_existencia_lote.Size = new System.Drawing.Size(533, 344);
             this.grd_existencia_lote.TabIndex = 0;
             this.grd_existencia_lote.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_existencia_lote});
@@ -220,11 +239,13 @@ namespace LOSA.Logistica
             // 
             // grd_efectiva
             // 
-            this.grd_efectiva.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd_efectiva.Location = new System.Drawing.Point(2, 24);
+            this.grd_efectiva.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grd_efectiva.Location = new System.Drawing.Point(2, 27);
             this.grd_efectiva.MainView = this.grdv_efectiva;
             this.grd_efectiva.Name = "grd_efectiva";
-            this.grd_efectiva.Size = new System.Drawing.Size(592, 403);
+            this.grd_efectiva.Size = new System.Drawing.Size(592, 400);
             this.grd_efectiva.TabIndex = 2;
             this.grd_efectiva.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_efectiva});
@@ -315,6 +336,8 @@ namespace LOSA.Logistica
             this.grd_mps.Location = new System.Drawing.Point(2, 24);
             this.grd_mps.MainView = this.grdv_mps;
             this.grd_mps.Name = "grd_mps";
+            this.grd_mps.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.grd_bodega});
             this.grd_mps.Size = new System.Drawing.Size(1288, 211);
             this.grd_mps.TabIndex = 0;
             this.grd_mps.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -342,8 +365,123 @@ namespace LOSA.Logistica
             this.grdv_mps.Appearance.Row.Options.UseFont = true;
             this.grdv_mps.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.grdv_mps.Appearance.TopNewRow.Options.UseFont = true;
+            this.grdv_mps.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMP,
+            this.id_mps,
+            this.colBodega,
+            this.colcodigo,
+            this.colExistencia,
+            this.colExistenciaAnterior,
+            this.colPendienteAjustar,
+            this.colSeleccionado});
             this.grdv_mps.GridControl = this.grd_mps;
             this.grdv_mps.Name = "grdv_mps";
+            this.grdv_mps.OptionsView.ShowAutoFilterRow = true;
+            this.grdv_mps.OptionsView.ShowGroupPanel = false;
+            // 
+            // colMP
+            // 
+            this.colMP.Caption = "Materia Prima";
+            this.colMP.FieldName = "descripcion";
+            this.colMP.Name = "colMP";
+            this.colMP.OptionsColumn.AllowEdit = false;
+            this.colMP.Visible = true;
+            this.colMP.VisibleIndex = 0;
+            // 
+            // id_mps
+            // 
+            this.id_mps.Caption = "idmp";
+            this.id_mps.FieldName = "id_mp";
+            this.id_mps.Name = "id_mps";
+            this.id_mps.OptionsColumn.AllowEdit = false;
+            // 
+            // colBodega
+            // 
+            this.colBodega.Caption = "Bodega";
+            this.colBodega.ColumnEdit = this.grd_bodega;
+            this.colBodega.FieldName = "id_bodega";
+            this.colBodega.Name = "colBodega";
+            this.colBodega.OptionsColumn.AllowEdit = false;
+            this.colBodega.Visible = true;
+            this.colBodega.VisibleIndex = 1;
+            // 
+            // grd_bodega
+            // 
+            this.grd_bodega.AutoHeight = false;
+            this.grd_bodega.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.grd_bodega.DataSource = this.bodegasBindingSource;
+            this.grd_bodega.DisplayMember = "descripcion";
+            this.grd_bodega.KeyMember = "id";
+            this.grd_bodega.Name = "grd_bodega";
+            this.grd_bodega.PopupView = this.repositoryItemGridLookUpEdit1View;
+            this.grd_bodega.ValueMember = "id";
+            // 
+            // bodegasBindingSource
+            // 
+            this.bodegasBindingSource.DataMember = "bodegas";
+            this.bodegasBindingSource.DataSource = this.dsCierreMes;
+            // 
+            // dsCierreMes
+            // 
+            this.dsCierreMes.DataSetName = "dsCierreMes";
+            this.dsCierreMes.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // repositoryItemGridLookUpEdit1View
+            // 
+            this.repositoryItemGridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.repositoryItemGridLookUpEdit1View.Name = "repositoryItemGridLookUpEdit1View";
+            this.repositoryItemGridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.repositoryItemGridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // colcodigo
+            // 
+            this.colcodigo.Caption = "Bodega Cod";
+            this.colcodigo.Name = "colcodigo";
+            this.colcodigo.OptionsColumn.AllowEdit = false;
+            // 
+            // colExistencia
+            // 
+            this.colExistencia.Caption = "Nueva Existencia";
+            this.colExistencia.DisplayFormat.FormatString = "{0:0.##.##} Kg";
+            this.colExistencia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colExistencia.FieldName = "peso";
+            this.colExistencia.Name = "colExistencia";
+            this.colExistencia.OptionsColumn.AllowEdit = false;
+            this.colExistencia.Visible = true;
+            this.colExistencia.VisibleIndex = 2;
+            // 
+            // colExistenciaAnterior
+            // 
+            this.colExistenciaAnterior.Caption = "Existencia Anterior";
+            this.colExistenciaAnterior.DisplayFormat.FormatString = "{0:0.##.##} Kg";
+            this.colExistenciaAnterior.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colExistenciaAnterior.FieldName = "ExistenciaAprox";
+            this.colExistenciaAnterior.Name = "colExistenciaAnterior";
+            this.colExistenciaAnterior.OptionsColumn.AllowEdit = false;
+            this.colExistenciaAnterior.Visible = true;
+            this.colExistenciaAnterior.VisibleIndex = 3;
+            // 
+            // colPendienteAjustar
+            // 
+            this.colPendienteAjustar.Caption = "Pendiente";
+            this.colPendienteAjustar.DisplayFormat.FormatString = "{0:0.##.##} Kg";
+            this.colPendienteAjustar.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colPendienteAjustar.FieldName = "colPendienteAjustar";
+            this.colPendienteAjustar.Name = "colPendienteAjustar";
+            this.colPendienteAjustar.OptionsColumn.AllowEdit = false;
+            this.colPendienteAjustar.UnboundExpression = "[peso] - [seleccionado]";
+            this.colPendienteAjustar.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.colPendienteAjustar.Visible = true;
+            this.colPendienteAjustar.VisibleIndex = 4;
+            // 
+            // colSeleccionado
+            // 
+            this.colSeleccionado.Caption = "gridColumn1";
+            this.colSeleccionado.DisplayFormat.FormatString = "{0:0.##.##} Kg";
+            this.colSeleccionado.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colSeleccionado.FieldName = "seleccionado";
+            this.colSeleccionado.Name = "colSeleccionado";
             // 
             // frmSeleccionLoteCierre
             // 
@@ -382,6 +520,10 @@ namespace LOSA.Logistica
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grd_mps)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_mps)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_bodega)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bodegasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsCierreMes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -408,5 +550,17 @@ namespace LOSA.Logistica
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraGrid.GridControl grd_mps;
         private DevExpress.XtraGrid.Views.Grid.GridView grdv_mps;
+        private DevExpress.XtraGrid.Columns.GridColumn colMP;
+        private DevExpress.XtraGrid.Columns.GridColumn id_mps;
+        private DevExpress.XtraGrid.Columns.GridColumn colBodega;
+        private DevExpress.XtraGrid.Columns.GridColumn colcodigo;
+        private DevExpress.XtraGrid.Columns.GridColumn colExistencia;
+        private DevExpress.XtraGrid.Columns.GridColumn colExistenciaAnterior;
+        private DevExpress.XtraGrid.Columns.GridColumn colPendienteAjustar;
+        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit grd_bodega;
+        private System.Windows.Forms.BindingSource bodegasBindingSource;
+        private dsCierreMes dsCierreMes;
+        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit1View;
+        private DevExpress.XtraGrid.Columns.GridColumn colSeleccionado;
     }
 }

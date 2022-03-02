@@ -110,9 +110,9 @@ namespace LOSA.RecepcionMP
             this.labelControl5.Appearance.Options.UseFont = true;
             this.labelControl5.Location = new System.Drawing.Point(130, 104);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(262, 20);
+            this.labelControl5.Size = new System.Drawing.Size(357, 20);
             this.labelControl5.TabIndex = 18;
-            this.labelControl5.Text = "Seleccione el ingreso externo a recibir";
+            this.labelControl5.Text = "Producto de almacen externo para recibir en planta";
             // 
             // labelControl4
             // 
@@ -228,9 +228,9 @@ namespace LOSA.RecepcionMP
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Location = new System.Drawing.Point(26, 130);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(492, 20);
+            this.labelControl2.Size = new System.Drawing.Size(509, 20);
             this.labelControl2.TabIndex = 20;
-            this.labelControl2.Text = "Seleccione el ingreso de almacen externo que desea hacer la transferencia";
+            this.labelControl2.Text = "Seleccione el ingreso de almacen externo para iniciar el proceso del traslado";
             // 
             // txtIngresoSeleccionado
             // 

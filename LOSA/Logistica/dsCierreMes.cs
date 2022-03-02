@@ -4,6 +4,10 @@
 
     partial class dsCierreMes
     {
+        partial class lote_existenciaDataTable
+        {
+        }
+
         partial class Recuento_ptDataTable
         {
         }

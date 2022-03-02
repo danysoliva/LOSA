@@ -50,6 +50,7 @@ namespace LOSA.AlmacenesExterno
             this.coltipo_ingreso = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTerminar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnFinalizar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsAlmacenesExternos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
@@ -234,11 +235,22 @@ namespace LOSA.AlmacenesExterno
             this.btnFinalizar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(12, 12);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(190, 21);
+            this.labelControl1.TabIndex = 9;
+            this.labelControl1.Text = "Transferencias en Proceso";
+            // 
             // frmPendienteAlmacenExterno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1020, 709);
+            this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.grd_data);
             this.Controls.Add(this.cmdHome);
             this.Name = "frmPendienteAlmacenExterno";
@@ -249,6 +261,7 @@ namespace LOSA.AlmacenesExterno
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnFinalizar)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -269,5 +282,6 @@ namespace LOSA.AlmacenesExterno
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnFinalizar;
         private DevExpress.XtraGrid.Columns.GridColumn colid_tipoIngreso;
         private DevExpress.XtraGrid.Columns.GridColumn coltipo_ingreso;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }

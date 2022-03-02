@@ -32,7 +32,7 @@ namespace LOSA.TransaccionesMP {
         
         private informacionDataTable tableinformacion;
         
-        private resumenDataTable tableresumen;
+        private totalesDataTable tabletotales;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -74,8 +74,8 @@ namespace LOSA.TransaccionesMP {
                 if ((ds.Tables["informacion"] != null)) {
                     base.Tables.Add(new informacionDataTable(ds.Tables["informacion"]));
                 }
-                if ((ds.Tables["resumen"] != null)) {
-                    base.Tables.Add(new resumenDataTable(ds.Tables["resumen"]));
+                if ((ds.Tables["totales"] != null)) {
+                    base.Tables.Add(new totalesDataTable(ds.Tables["totales"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -139,9 +139,9 @@ namespace LOSA.TransaccionesMP {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public resumenDataTable resumen {
+        public totalesDataTable totales {
             get {
-                return this.tableresumen;
+                return this.tabletotales;
             }
         }
         
@@ -224,8 +224,8 @@ namespace LOSA.TransaccionesMP {
                 if ((ds.Tables["informacion"] != null)) {
                     base.Tables.Add(new informacionDataTable(ds.Tables["informacion"]));
                 }
-                if ((ds.Tables["resumen"] != null)) {
-                    base.Tables.Add(new resumenDataTable(ds.Tables["resumen"]));
+                if ((ds.Tables["totales"] != null)) {
+                    base.Tables.Add(new totalesDataTable(ds.Tables["totales"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -284,10 +284,10 @@ namespace LOSA.TransaccionesMP {
                     this.tableinformacion.InitVars();
                 }
             }
-            this.tableresumen = ((resumenDataTable)(base.Tables["resumen"]));
+            this.tabletotales = ((totalesDataTable)(base.Tables["totales"]));
             if ((initTable == true)) {
-                if ((this.tableresumen != null)) {
-                    this.tableresumen.InitVars();
+                if ((this.tabletotales != null)) {
+                    this.tabletotales.InitVars();
                 }
             }
         }
@@ -308,8 +308,8 @@ namespace LOSA.TransaccionesMP {
             base.Tables.Add(this.tablealimentacion);
             this.tableinformacion = new informacionDataTable();
             base.Tables.Add(this.tableinformacion);
-            this.tableresumen = new resumenDataTable();
-            base.Tables.Add(this.tableresumen);
+            this.tabletotales = new totalesDataTable();
+            base.Tables.Add(this.tabletotales);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -338,7 +338,7 @@ namespace LOSA.TransaccionesMP {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeresumen() {
+        private bool ShouldSerializetotales() {
             return false;
         }
         
@@ -410,7 +410,7 @@ namespace LOSA.TransaccionesMP {
         public delegate void informacionRowChangeEventHandler(object sender, informacionRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void resumenRowChangeEventHandler(object sender, resumenRowChangeEvent e);
+        public delegate void totalesRowChangeEventHandler(object sender, totalesRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1601,24 +1601,22 @@ namespace LOSA.TransaccionesMP {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class resumenDataTable : global::System.Data.TypedTableBase<resumenRow> {
-            
-            private global::System.Data.DataColumn columnexistencia;
-            
-            private global::System.Data.DataColumn columnnombre_comercial;
-            
-            private global::System.Data.DataColumn columnfecha_vence;
-            
-            private global::System.Data.DataColumn columnfecha_produccion;
+        public partial class totalesDataTable : global::System.Data.TypedTableBase<totalesRow> {
             
             private global::System.Data.DataColumn columnid_mp;
             
-            private global::System.Data.DataColumn columndias;
+            private global::System.Data.DataColumn columnnombre_comercial;
+            
+            private global::System.Data.DataColumn columnexistencia;
+            
+            private global::System.Data.DataColumn columncodigo;
+            
+            private global::System.Data.DataColumn columncode_sap;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public resumenDataTable() {
-                this.TableName = "resumen";
+            public totalesDataTable() {
+                this.TableName = "totales";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -1626,7 +1624,7 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal resumenDataTable(global::System.Data.DataTable table) {
+            internal totalesDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -1643,16 +1641,16 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected resumenDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected totalesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn existenciaColumn {
+            public global::System.Data.DataColumn id_mpColumn {
                 get {
-                    return this.columnexistencia;
+                    return this.columnid_mp;
                 }
             }
             
@@ -1666,33 +1664,25 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn fecha_venceColumn {
+            public global::System.Data.DataColumn existenciaColumn {
                 get {
-                    return this.columnfecha_vence;
+                    return this.columnexistencia;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn fecha_produccionColumn {
+            public global::System.Data.DataColumn codigoColumn {
                 get {
-                    return this.columnfecha_produccion;
+                    return this.columncodigo;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn id_mpColumn {
+            public global::System.Data.DataColumn code_sapColumn {
                 get {
-                    return this.columnid_mp;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn diasColumn {
-                get {
-                    return this.columndias;
+                    return this.columncode_sap;
                 }
             }
             
@@ -1707,50 +1697,49 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public resumenRow this[int index] {
+            public totalesRow this[int index] {
                 get {
-                    return ((resumenRow)(this.Rows[index]));
+                    return ((totalesRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event resumenRowChangeEventHandler resumenRowChanging;
+            public event totalesRowChangeEventHandler totalesRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event resumenRowChangeEventHandler resumenRowChanged;
+            public event totalesRowChangeEventHandler totalesRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event resumenRowChangeEventHandler resumenRowDeleting;
+            public event totalesRowChangeEventHandler totalesRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event resumenRowChangeEventHandler resumenRowDeleted;
+            public event totalesRowChangeEventHandler totalesRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddresumenRow(resumenRow row) {
+            public void AddtotalesRow(totalesRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public resumenRow AddresumenRow(decimal existencia, string nombre_comercial, System.DateTime fecha_vence, System.DateTime fecha_produccion, int id_mp, int dias) {
-                resumenRow rowresumenRow = ((resumenRow)(this.NewRow()));
+            public totalesRow AddtotalesRow(int id_mp, string nombre_comercial, decimal existencia, string codigo, string code_sap) {
+                totalesRow rowtotalesRow = ((totalesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        existencia,
-                        nombre_comercial,
-                        fecha_vence,
-                        fecha_produccion,
                         id_mp,
-                        dias};
-                rowresumenRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowresumenRow);
-                return rowresumenRow;
+                        nombre_comercial,
+                        existencia,
+                        codigo,
+                        code_sap};
+                rowtotalesRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowtotalesRow);
+                return rowtotalesRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                resumenDataTable cln = ((resumenDataTable)(base.Clone()));
+                totalesDataTable cln = ((totalesDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -1758,61 +1747,58 @@ namespace LOSA.TransaccionesMP {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new resumenDataTable();
+                return new totalesDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnexistencia = base.Columns["existencia"];
-                this.columnnombre_comercial = base.Columns["nombre_comercial"];
-                this.columnfecha_vence = base.Columns["fecha_vence"];
-                this.columnfecha_produccion = base.Columns["fecha_produccion"];
                 this.columnid_mp = base.Columns["id_mp"];
-                this.columndias = base.Columns["dias"];
+                this.columnnombre_comercial = base.Columns["nombre_comercial"];
+                this.columnexistencia = base.Columns["existencia"];
+                this.columncodigo = base.Columns["codigo"];
+                this.columncode_sap = base.Columns["code_sap"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnexistencia = new global::System.Data.DataColumn("existencia", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnexistencia);
-                this.columnnombre_comercial = new global::System.Data.DataColumn("nombre_comercial", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnombre_comercial);
-                this.columnfecha_vence = new global::System.Data.DataColumn("fecha_vence", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfecha_vence);
-                this.columnfecha_produccion = new global::System.Data.DataColumn("fecha_produccion", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfecha_produccion);
                 this.columnid_mp = new global::System.Data.DataColumn("id_mp", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_mp);
-                this.columndias = new global::System.Data.DataColumn("dias", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndias);
+                this.columnnombre_comercial = new global::System.Data.DataColumn("nombre_comercial", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombre_comercial);
+                this.columnexistencia = new global::System.Data.DataColumn("existencia", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnexistencia);
+                this.columncodigo = new global::System.Data.DataColumn("codigo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncodigo);
+                this.columncode_sap = new global::System.Data.DataColumn("code_sap", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncode_sap);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public resumenRow NewresumenRow() {
-                return ((resumenRow)(this.NewRow()));
+            public totalesRow NewtotalesRow() {
+                return ((totalesRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new resumenRow(builder);
+                return new totalesRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(resumenRow);
+                return typeof(totalesRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.resumenRowChanged != null)) {
-                    this.resumenRowChanged(this, new resumenRowChangeEvent(((resumenRow)(e.Row)), e.Action));
+                if ((this.totalesRowChanged != null)) {
+                    this.totalesRowChanged(this, new totalesRowChangeEvent(((totalesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1820,8 +1806,8 @@ namespace LOSA.TransaccionesMP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.resumenRowChanging != null)) {
-                    this.resumenRowChanging(this, new resumenRowChangeEvent(((resumenRow)(e.Row)), e.Action));
+                if ((this.totalesRowChanging != null)) {
+                    this.totalesRowChanging(this, new totalesRowChangeEvent(((totalesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1829,8 +1815,8 @@ namespace LOSA.TransaccionesMP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.resumenRowDeleted != null)) {
-                    this.resumenRowDeleted(this, new resumenRowChangeEvent(((resumenRow)(e.Row)), e.Action));
+                if ((this.totalesRowDeleted != null)) {
+                    this.totalesRowDeleted(this, new totalesRowChangeEvent(((totalesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1838,14 +1824,14 @@ namespace LOSA.TransaccionesMP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.resumenRowDeleting != null)) {
-                    this.resumenRowDeleting(this, new resumenRowChangeEvent(((resumenRow)(e.Row)), e.Action));
+                if ((this.totalesRowDeleting != null)) {
+                    this.totalesRowDeleting(this, new totalesRowChangeEvent(((totalesRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveresumenRow(resumenRow row) {
+            public void RemovetotalesRow(totalesRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -1872,7 +1858,7 @@ namespace LOSA.TransaccionesMP {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "resumenDataTable";
+                attribute2.FixedValue = "totalesDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -2480,30 +2466,30 @@ namespace LOSA.TransaccionesMP {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class resumenRow : global::System.Data.DataRow {
+        public partial class totalesRow : global::System.Data.DataRow {
             
-            private resumenDataTable tableresumen;
+            private totalesDataTable tabletotales;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal resumenRow(global::System.Data.DataRowBuilder rb) : 
+            internal totalesRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableresumen = ((resumenDataTable)(this.Table));
+                this.tabletotales = ((totalesDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public decimal existencia {
+            public int id_mp {
                 get {
                     try {
-                        return ((decimal)(this[this.tableresumen.existenciaColumn]));
+                        return ((int)(this[this.tabletotales.id_mpColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'existencia\' de la tabla \'resumen\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_mp\' de la tabla \'totales\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableresumen.existenciaColumn] = value;
+                    this[this.tabletotales.id_mpColumn] = value;
                 }
             }
             
@@ -2512,151 +2498,123 @@ namespace LOSA.TransaccionesMP {
             public string nombre_comercial {
                 get {
                     try {
-                        return ((string)(this[this.tableresumen.nombre_comercialColumn]));
+                        return ((string)(this[this.tabletotales.nombre_comercialColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombre_comercial\' de la tabla \'resumen\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombre_comercial\' de la tabla \'totales\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableresumen.nombre_comercialColumn] = value;
+                    this[this.tabletotales.nombre_comercialColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime fecha_vence {
+            public decimal existencia {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableresumen.fecha_venceColumn]));
+                        return ((decimal)(this[this.tabletotales.existenciaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_vence\' de la tabla \'resumen\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'existencia\' de la tabla \'totales\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableresumen.fecha_venceColumn] = value;
+                    this[this.tabletotales.existenciaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime fecha_produccion {
+            public string codigo {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableresumen.fecha_produccionColumn]));
+                        return ((string)(this[this.tabletotales.codigoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_produccion\' de la tabla \'resumen\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'codigo\' de la tabla \'totales\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableresumen.fecha_produccionColumn] = value;
+                    this[this.tabletotales.codigoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int id_mp {
+            public string code_sap {
                 get {
                     try {
-                        return ((int)(this[this.tableresumen.id_mpColumn]));
+                        return ((string)(this[this.tabletotales.code_sapColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_mp\' de la tabla \'resumen\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'code_sap\' de la tabla \'totales\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableresumen.id_mpColumn] = value;
+                    this[this.tabletotales.code_sapColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int dias {
-                get {
-                    try {
-                        return ((int)(this[this.tableresumen.diasColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'dias\' de la tabla \'resumen\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableresumen.diasColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsexistenciaNull() {
-                return this.IsNull(this.tableresumen.existenciaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetexistenciaNull() {
-                this[this.tableresumen.existenciaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isnombre_comercialNull() {
-                return this.IsNull(this.tableresumen.nombre_comercialColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setnombre_comercialNull() {
-                this[this.tableresumen.nombre_comercialColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isfecha_venceNull() {
-                return this.IsNull(this.tableresumen.fecha_venceColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setfecha_venceNull() {
-                this[this.tableresumen.fecha_venceColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isfecha_produccionNull() {
-                return this.IsNull(this.tableresumen.fecha_produccionColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setfecha_produccionNull() {
-                this[this.tableresumen.fecha_produccionColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isid_mpNull() {
-                return this.IsNull(this.tableresumen.id_mpColumn);
+                return this.IsNull(this.tabletotales.id_mpColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setid_mpNull() {
-                this[this.tableresumen.id_mpColumn] = global::System.Convert.DBNull;
+                this[this.tabletotales.id_mpColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsdiasNull() {
-                return this.IsNull(this.tableresumen.diasColumn);
+            public bool Isnombre_comercialNull() {
+                return this.IsNull(this.tabletotales.nombre_comercialColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetdiasNull() {
-                this[this.tableresumen.diasColumn] = global::System.Convert.DBNull;
+            public void Setnombre_comercialNull() {
+                this[this.tabletotales.nombre_comercialColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsexistenciaNull() {
+                return this.IsNull(this.tabletotales.existenciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetexistenciaNull() {
+                this[this.tabletotales.existenciaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IscodigoNull() {
+                return this.IsNull(this.tabletotales.codigoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetcodigoNull() {
+                this[this.tabletotales.codigoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscode_sapNull() {
+                return this.IsNull(this.tabletotales.code_sapColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcode_sapNull() {
+                this[this.tabletotales.code_sapColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2800,22 +2758,22 @@ namespace LOSA.TransaccionesMP {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class resumenRowChangeEvent : global::System.EventArgs {
+        public class totalesRowChangeEvent : global::System.EventArgs {
             
-            private resumenRow eventRow;
+            private totalesRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public resumenRowChangeEvent(resumenRow row, global::System.Data.DataRowAction action) {
+            public totalesRowChangeEvent(totalesRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public resumenRow Row {
+            public totalesRow Row {
                 get {
                     return this.eventRow;
                 }

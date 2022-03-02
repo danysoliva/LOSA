@@ -20,16 +20,43 @@ namespace LOSA.TransaccionesMP
         public frmReporteInventarioKardexGeneral()
         {
             InitializeComponent();
+            load_data();
+            load_data_totales();
         }
         public void load_data()
         {
-            string query = @"";
+            string query = @"sp_obtener_inventario_general_por_lote";
             try
             {
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query,cn);
                 cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                dsTarima.informacion.Clear();
+                da.Fill(dsTarima.informacion);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        public void load_data_totales()
+        {
+            string query = @"sp_obtener_inventario_general";
+            try
+            {
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                dsTarima.totales.Clear();
+                da.Fill(dsTarima.totales);
+                cn.Close();
             }
             catch (Exception ex)
             {

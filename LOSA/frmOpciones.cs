@@ -796,5 +796,11 @@ namespace LOSA
             frmSeguimientoDespachos frm = new frmSeguimientoDespachos();
             frm.Show();
         }
+
+        private void simpleButton30_Click(object sender, EventArgs e)
+        {
+            frmReporteInventarioKardexGeneral frm = new frmReporteInventarioKardexGeneral();
+            frm.Show();
+        }
     }
 }

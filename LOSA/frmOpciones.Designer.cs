@@ -117,6 +117,7 @@
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton30 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -286,6 +287,7 @@
             // 
             this.TabMP_Sacos.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TabMP_Sacos.Appearance.Header.Options.UseFont = true;
+            this.TabMP_Sacos.Controls.Add(this.simpleButton30);
             this.TabMP_Sacos.Controls.Add(this.simpleButton26);
             this.TabMP_Sacos.Controls.Add(this.simpleButton20);
             this.TabMP_Sacos.Controls.Add(this.btnAjustesKardex);
@@ -353,7 +355,7 @@
             this.cmdUbicaciones.Appearance.Options.UseFont = true;
             this.cmdUbicaciones.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdUbicaciones.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdUbicaciones.ImageOptions.Image")));
-            this.cmdUbicaciones.Location = new System.Drawing.Point(208, 158);
+            this.cmdUbicaciones.Location = new System.Drawing.Point(209, 159);
             this.cmdUbicaciones.Name = "cmdUbicaciones";
             this.cmdUbicaciones.Size = new System.Drawing.Size(199, 42);
             this.cmdUbicaciones.TabIndex = 28;
@@ -366,7 +368,7 @@
             this.simpleButton3.Appearance.Options.UseFont = true;
             this.simpleButton3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton3.ImageOptions.Image = global::LOSA.Properties.Resources.wrench;
-            this.simpleButton3.Location = new System.Drawing.Point(208, 111);
+            this.simpleButton3.Location = new System.Drawing.Point(207, 111);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(199, 42);
             this.simpleButton3.TabIndex = 8;
@@ -462,7 +464,7 @@
             this.cmdRecepcionMPLogistica.Appearance.Options.UseFont = true;
             this.cmdRecepcionMPLogistica.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdRecepcionMPLogistica.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdRecepcionMPLogistica.ImageOptions.Image")));
-            this.cmdRecepcionMPLogistica.Location = new System.Drawing.Point(3, 110);
+            this.cmdRecepcionMPLogistica.Location = new System.Drawing.Point(2, 111);
             this.cmdRecepcionMPLogistica.Name = "cmdRecepcionMPLogistica";
             this.cmdRecepcionMPLogistica.Size = new System.Drawing.Size(199, 42);
             this.cmdRecepcionMPLogistica.TabIndex = 9;
@@ -824,7 +826,7 @@
             this.simpleButton24.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton24.ImageOptions.Image")));
             this.simpleButton24.Location = new System.Drawing.Point(8, 110);
             this.simpleButton24.Name = "simpleButton24";
-            this.simpleButton24.Size = new System.Drawing.Size(199, 42);
+            this.simpleButton24.Size = new System.Drawing.Size(199, 49);
             this.simpleButton24.TabIndex = 41;
             this.simpleButton24.Text = "Inventario Final\r\npor periodo";
             this.simpleButton24.Click += new System.EventHandler(this.simpleButton24_Click);
@@ -1379,6 +1381,22 @@
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
             // 
+            // simpleButton30
+            // 
+            this.simpleButton30.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton30.Appearance.Options.UseFont = true;
+            this.simpleButton30.Appearance.Options.UseTextOptions = true;
+            this.simpleButton30.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.simpleButton30.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton30.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton30.ImageOptions.Image")));
+            this.simpleButton30.Location = new System.Drawing.Point(416, 62);
+            this.simpleButton30.Margin = new System.Windows.Forms.Padding(4);
+            this.simpleButton30.Name = "simpleButton30";
+            this.simpleButton30.Size = new System.Drawing.Size(199, 42);
+            this.simpleButton30.TabIndex = 45;
+            this.simpleButton30.Text = "Reporte de\r\n Kardex General";
+            this.simpleButton30.Click += new System.EventHandler(this.simpleButton30_Click);
+            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1501,5 +1519,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton27;
         private DevExpress.XtraEditors.SimpleButton simpleButton28;
         private DevExpress.XtraEditors.SimpleButton simpleButton29;
+        private DevExpress.XtraEditors.SimpleButton simpleButton30;
     }
 }
