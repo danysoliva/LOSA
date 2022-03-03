@@ -157,7 +157,32 @@ namespace LOSA.Logistica
                 CajaDialogo.Error("Hay lotes seleccionado sin configurar la cantidad a utilizar.");
                 return;
             }
+            var Row = from row in list
+                      where row.seleccionar == true
+                      select row;
+            foreach (var recorrido in Row)
+            {
+                DataRow dr = dsCierreMes.Aceptado_lote.NewRow();
+                dr["id_mp"] = recorrido.id_mp;
+                dr["descripcion"] = recorrido.descripcion;
+                dr["ExistenciaAprox"] = recorrido.ExistenciaAprox;
+                dr["lote"] = recorrido.lote;
+                dr["seleccionar"] = false;
+                dr["utilizado"] = recorrido.utilizado;
+                dr["id_lote_alosy"] = recorrido.id_lote_alosy;
+                dr["id_bodega"] = id_bodega;
+                dr["id_lote_count"] = id_count_selected;
+                dsCierreMes.Aceptado_lote.Rows.Add(dr);
 
+                for (int i = 0; i < dsCierreMes.memory_config.Count; i++)
+                {
+                    //if (dsCierreMes.memory_config.Rows[i].)
+                    //{
+
+                    //}
+                }
+
+            }
 
 
         }

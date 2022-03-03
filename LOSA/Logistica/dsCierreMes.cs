@@ -4,6 +4,10 @@
 
     partial class dsCierreMes
     {
+        partial class memory_configDataTable
+        {
+        }
+
         partial class Aceptado_loteDataTable
         {
         }

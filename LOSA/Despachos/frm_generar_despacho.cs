@@ -98,6 +98,9 @@ namespace LOSA.Despachos
                             txtvehiculo.Text = dr.IsDBNull(1) ? "" : dr.GetString(1);
                             txtconductor.Text = dr.IsDBNull(2) ? "" : dr.GetString(2);
                             DocEntry = dr.IsDBNull(5) ? 0 : dr.GetInt32(5);
+                            grd_destino.EditValue = dr.IsDBNull(6) ? 0 : dr.GetInt32(6);
+                            codigo_selected = dr.IsDBNull(7) ? "" : dr.GetString(7);
+                            load_destinos(codigo_selected);
                         }
                         dr.Close();
                         cn.Close();

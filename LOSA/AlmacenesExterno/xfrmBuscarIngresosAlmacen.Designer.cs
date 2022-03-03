@@ -28,14 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gcIngreso = new DevExpress.XtraGrid.GridControl();
-            this.ingresosalmacenesexternosexistentesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsSalidasAlmacenesExternos = new LOSA.AlmacenesExterno.dsSalidasAlmacenesExternos();
             this.gvIngreso = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -53,7 +51,6 @@
             this.txtCantIngresar = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gcIngreso)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ingresosalmacenesexternosexistentesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSalidasAlmacenesExternos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvIngreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSeleccionar)).BeginInit();
@@ -65,7 +62,8 @@
             this.gcIngreso.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcIngreso.DataSource = this.ingresosalmacenesexternosexistentesBindingSource;
+            this.gcIngreso.DataMember = "Ingresos_almacenes_externos_existentes";
+            this.gcIngreso.DataSource = this.dsSalidasAlmacenesExternos;
             this.gcIngreso.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gcIngreso.Location = new System.Drawing.Point(0, 80);
             this.gcIngreso.MainView = this.gvIngreso;
@@ -78,11 +76,6 @@
             this.gcIngreso.TabIndex = 37;
             this.gcIngreso.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvIngreso});
-            // 
-            // ingresosalmacenesexternosexistentesBindingSource
-            // 
-            this.ingresosalmacenesexternosexistentesBindingSource.DataMember = "Ingresos_almacenes_externos_existentes";
-            this.ingresosalmacenesexternosexistentesBindingSource.DataSource = this.dsSalidasAlmacenesExternos;
             // 
             // dsSalidasAlmacenesExternos
             // 
@@ -292,7 +285,6 @@
             this.Text = "xfrmBuscarIngresosAlmacen";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.gcIngreso)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ingresosalmacenesexternosexistentesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSalidasAlmacenesExternos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvIngreso)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSeleccionar)).EndInit();
@@ -307,7 +299,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gvIngreso;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit txtCantIngresar;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnSeleccionar;
-        private System.Windows.Forms.BindingSource ingresosalmacenesexternosexistentesBindingSource;
         private dsSalidasAlmacenesExternos dsSalidasAlmacenesExternos;
         private DevExpress.XtraGrid.Columns.GridColumn colid;
         private DevExpress.XtraGrid.Columns.GridColumn colcardcode;

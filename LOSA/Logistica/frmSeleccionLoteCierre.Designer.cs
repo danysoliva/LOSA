@@ -689,12 +689,12 @@ namespace LOSA.Logistica
             this.btnConfirmar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnConfirmar.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmar.Appearance.Options.UseFont = true;
-            this.btnConfirmar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btnConfirmar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirmar.ImageOptions.Image")));
             this.btnConfirmar.Location = new System.Drawing.Point(1088, 6);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(111, 50);
             this.btnConfirmar.TabIndex = 4;
-            this.btnConfirmar.Text = "Guardar";
+            this.btnConfirmar.Text = "Confirmar";
             // 
             // frmSeleccionLoteCierre
             // 
