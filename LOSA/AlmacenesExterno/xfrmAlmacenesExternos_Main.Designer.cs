@@ -53,6 +53,7 @@
             this.dsAlmacenesExternos = new LOSA.AlmacenesExterno.dsAlmacenesExternos();
             this.grdv_ingreso = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colNingreso = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcodigoMP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colitemcode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colItemName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_proveedor = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -77,7 +78,6 @@
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnAgregar = new DevExpress.XtraEditors.SimpleButton();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
-            this.colcodigoMP = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_ingreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsAlmacenesExternos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_ingreso)).BeginInit();
@@ -161,6 +161,15 @@
             this.colNingreso.VisibleIndex = 0;
             this.colNingreso.Width = 63;
             // 
+            // colcodigoMP
+            // 
+            this.colcodigoMP.Caption = "Codigo MP";
+            this.colcodigoMP.FieldName = "codigoMP";
+            this.colcodigoMP.Name = "colcodigoMP";
+            this.colcodigoMP.OptionsColumn.AllowEdit = false;
+            this.colcodigoMP.Visible = true;
+            this.colcodigoMP.VisibleIndex = 1;
+            // 
             // colitemcode
             // 
             this.colitemcode.Caption = "ID Bodega";
@@ -179,6 +188,8 @@
             this.colItemName.Name = "colItemName";
             this.colItemName.OptionsColumn.AllowEdit = false;
             this.colItemName.OptionsFilter.AllowFilter = false;
+            this.colItemName.Visible = true;
+            this.colItemName.VisibleIndex = 9;
             this.colItemName.Width = 98;
             // 
             // colid_proveedor
@@ -211,7 +222,7 @@
             this.coltarimas.Name = "coltarimas";
             this.coltarimas.OptionsFilter.AllowFilter = false;
             this.coltarimas.Visible = true;
-            this.coltarimas.VisibleIndex = 9;
+            this.coltarimas.VisibleIndex = 10;
             this.coltarimas.Width = 83;
             // 
             // btnver
@@ -238,7 +249,7 @@
             this.colprint.MinWidth = 17;
             this.colprint.Name = "colprint";
             this.colprint.Visible = true;
-            this.colprint.VisibleIndex = 10;
+            this.colprint.VisibleIndex = 11;
             this.colprint.Width = 83;
             // 
             // btnprint
@@ -404,15 +415,6 @@
             this.btnAtras.TabIndex = 29;
             this.btnAtras.Text = "Atras";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
-            // 
-            // colcodigoMP
-            // 
-            this.colcodigoMP.Caption = "Codigo MP";
-            this.colcodigoMP.FieldName = "codigoMP";
-            this.colcodigoMP.Name = "colcodigoMP";
-            this.colcodigoMP.OptionsColumn.AllowEdit = false;
-            this.colcodigoMP.Visible = true;
-            this.colcodigoMP.VisibleIndex = 1;
             // 
             // xfrmAlmacenesExternos_Main
             // 

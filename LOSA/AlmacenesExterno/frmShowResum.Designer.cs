@@ -30,6 +30,7 @@ namespace LOSA.AlmacenesExterno
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmShowResum));
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -208,6 +209,9 @@ namespace LOSA.AlmacenesExterno
             this.grd_data.DataMember = "detalle_salida";
             this.grd_data.DataSource = this.dsAlmacenesExternos;
             this.grd_data.Dock = System.Windows.Forms.DockStyle.Fill;
+            gridLevelNode1.RelationName = "Level1";
+            this.grd_data.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
             this.grd_data.Location = new System.Drawing.Point(0, 0);
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
@@ -258,6 +262,7 @@ namespace LOSA.AlmacenesExterno
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
+            this.grdv_data.OptionsView.ShowFooter = true;
             this.grdv_data.OptionsView.ShowGroupPanel = false;
             // 
             // colnumero_transaccion
@@ -324,6 +329,8 @@ namespace LOSA.AlmacenesExterno
             this.colcantidad.FieldName = "cantidad";
             this.colcantidad.Name = "colcantidad";
             this.colcantidad.OptionsColumn.AllowEdit = false;
+            this.colcantidad.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cantidad", "{0:#.##}")});
             this.colcantidad.Visible = true;
             this.colcantidad.VisibleIndex = 4;
             this.colcantidad.Width = 93;
@@ -334,6 +341,8 @@ namespace LOSA.AlmacenesExterno
             this.colpeso.FieldName = "peso";
             this.colpeso.Name = "colpeso";
             this.colpeso.OptionsColumn.AllowEdit = false;
+            this.colpeso.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "peso", "{0:#.##}")});
             this.colpeso.Visible = true;
             this.colpeso.VisibleIndex = 5;
             this.colpeso.Width = 103;

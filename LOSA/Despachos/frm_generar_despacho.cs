@@ -395,6 +395,7 @@ namespace LOSA.Despachos
                     cmd = new SqlCommand(query, cn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id_despacho", Id_despacho);
+                    cmd.Parameters.AddWithValue("@id_direccion", grd_destino.EditValue);
                     if (txtboleta.Text == "")
                     {
                         cmd.Parameters.AddWithValue("@boleta", DBNull.Value);
