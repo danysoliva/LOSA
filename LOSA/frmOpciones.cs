@@ -344,7 +344,13 @@ namespace LOSA
         private void cmdLotesCalidad_Click(object sender, EventArgs e)
         {
             frmLotesStatus frm = new frmLotesStatus(UsuarioLogeado);
-            frm.Show();
+            if (this.MdiParent != null)
+            {
+                frm.MdiParent = this.MdiParent;
+                frm.FormBorderStyle = FormBorderStyle.Sizable;
+                frm.ControlBox = true;
+                frm.Show();
+            }
         }
 
         private void btndespachos_Click(object sender, EventArgs e)
