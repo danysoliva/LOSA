@@ -308,12 +308,13 @@ namespace LOSA.RecepcionMP
                 SqlCommand cmd = new SqlCommand("sp_insertMP_v2", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 Tarima tam1 = new Tarima();
+                tam1.RecuperarRegistro(idTarima, "");
                 Ubicaciones infoUbicacion = new Ubicaciones();
 
                // CantidadUnidades = tam1.Cantidad;
                 PesoPorTarima = DEFAULT_VALUE;
                 FactorTarima = DEFAULT_VALUE;
-                decimal cantidadMP = tam1.Cantidad = 60;
+                decimal cantidadMP = tam1.Cantidad;
 
                 frm_seleccionUD frm = new frm_seleccionUD(cantidadMP, "Solo para diferenciar");
                 if (frm.ShowDialog() == DialogResult.OK)

@@ -98,6 +98,9 @@ namespace LOSA.Despachos
                             txtvehiculo.Text = dr.IsDBNull(1) ? "" : dr.GetString(1);
                             txtconductor.Text = dr.IsDBNull(2) ? "" : dr.GetString(2);
                             DocEntry = dr.IsDBNull(5) ? 0 : dr.GetInt32(5);
+                            grd_destino.EditValue = dr.IsDBNull(6) ? 0 : dr.GetInt32(6);
+                            codigo_selected = dr.IsDBNull(7) ? "" : dr.GetString(7);
+                            load_destinos(codigo_selected);
                         }
                         dr.Close();
                         cn.Close();
@@ -182,7 +185,7 @@ namespace LOSA.Despachos
                 txtvehiculo.Text = frm.Vehiculo;
                 txtconductor.Text = frm.conductor;
                 codigo_selected = frm.codigo;
-                if (frm.codigo == "CL00009" || frm.codigo == "CL00002")
+                if (frm.codigo == "CL00009" || frm.codigo == "CL00002" || frm.codigo == "CL00001")
                 {
                     load_destinos(frm.codigo);
                     labelControl8.Enabled = true;
@@ -392,6 +395,7 @@ namespace LOSA.Despachos
                     cmd = new SqlCommand(query, cn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id_despacho", Id_despacho);
+                    cmd.Parameters.AddWithValue("@id_direccion", grd_destino.EditValue);
                     if (txtboleta.Text == "")
                     {
                         cmd.Parameters.AddWithValue("@boleta", DBNull.Value);

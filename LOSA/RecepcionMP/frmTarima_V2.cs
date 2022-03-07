@@ -99,6 +99,15 @@ namespace LOSA.RecepcionMP
                     CajaDialogo.Error("Debe de haber añadido al menos un lote.");
                     return;
                 }
+                decimal totakud = 0;
+                decimal totaltarimas =0;
+                decimal totalpeso=0;
+                foreach (dsWizard.informacionIngresoRow row in dsWizard.informacionIngreso.Rows)
+                {
+                    totakud = totakud + row.TotalUdlote;
+                    totaltarimas = totaltarimas + row.canttarimas;
+                    totalpeso = totalpeso + row.totalKgLote;
+                }
                 foreach (dsWizard.informacionIngresoRow row in dsWizard.informacionIngreso.Rows)
                 {
                     try
@@ -109,17 +118,17 @@ namespace LOSA.RecepcionMP
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@itemcode", row.itemcode);//
                         cmd.Parameters.AddWithValue("@itemname", row.itemname);//
-                        cmd.Parameters.AddWithValue("@cardcode",  row.pv);//
-                        cmd.Parameters.AddWithValue("@cardname", row.cardname);  //
+                        cmd.Parameters.AddWithValue("@cardcode",  row.cardname);//
+                        cmd.Parameters.AddWithValue("@cardname", row.pv);  //
                         cmd.Parameters.AddWithValue("@fecha_ingreso", row.fechaIngreso);
                         cmd.Parameters.AddWithValue("@numero_transaccion", txtNumIngreso.Text); //
                         cmd.Parameters.AddWithValue("@lote_materia_prima", row.lote);//  
                         cmd.Parameters.AddWithValue("@id_presentacion", row.id_presentacion);//
                         cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);//
                         cmd.Parameters.AddWithValue("@id_boleta", this.IdSerie);//
-                        cmd.Parameters.AddWithValue("@cant", txtUnidades.Text);//
-                        cmd.Parameters.AddWithValue("@TotalTarimas", txtCantidadTarimasTotal.Text);//
-                        cmd.Parameters.AddWithValue("@pesotaria", Convert.ToDecimal(txtPesoKg.Text));//   
+                        cmd.Parameters.AddWithValue("@cant", totakud);//
+                        cmd.Parameters.AddWithValue("@TotalTarimas", totaltarimas);//
+                        cmd.Parameters.AddWithValue("@pesotaria", totalpeso);//   
                         cmd.Parameters.AddWithValue("@traslado", Istraslado ? Convert.ToDecimal(row.id_traslado) : 0);//
                         IdHeaderInserted = Convert.ToInt32(cmd.ExecuteScalar());
                         cn.Close();
@@ -145,8 +154,8 @@ namespace LOSA.RecepcionMP
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@itemcode", row.itemcode);////
                         cmd.Parameters.AddWithValue("@itemname", row.itemname);//    //
-                        cmd.Parameters.AddWithValue("@cardcode", row.pv);//        //
-                        cmd.Parameters.AddWithValue("@cardname", row.cardname);  //     //
+                        cmd.Parameters.AddWithValue("@cardcode", row.cardname);//        //
+                        cmd.Parameters.AddWithValue("@cardname", row.pv);  //     //
                         cmd.Parameters.AddWithValue("@fecha_ingreso", row.fechaIngreso);      // //
                         cmd.Parameters.AddWithValue("@numero_transaccion", txtNumIngreso.Text); //  //
                         cmd.Parameters.AddWithValue("@lote_materia_prima", row.lote);//        //
@@ -182,7 +191,7 @@ namespace LOSA.RecepcionMP
                                 cmd = new SqlCommand("sp_insert_new_tarima_v2", con);
                                 cmd.CommandType = CommandType.StoredProcedure;
                                 cmd.Parameters.AddWithValue("@itemcode", row.itemcode);
-                                cmd.Parameters.AddWithValue("@id_proveedor", row.pv);
+                                cmd.Parameters.AddWithValue("@id_proveedor", row.cardname);
                                 cmd.Parameters.AddWithValue("@fecha_ingreso", row.fechaIngreso);
                                 cmd.Parameters.AddWithValue("@numero_transaccion", txtNumIngreso.Text);
                                 cmd.Parameters.AddWithValue("@fecha_vencimiento", row.fvencimiento);

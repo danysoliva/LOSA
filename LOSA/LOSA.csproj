@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>278</ApplicationRevision>
+    <ApplicationRevision>288</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -96,7 +96,7 @@
     </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>5A56FE5B36BF1139C0C28330C52B1468E1F78C88</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>11DBC92D92B4EB4A587EA378AD2A6CF4E83C0246</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -191,11 +191,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsSalidasAlmacenesExternos.xsd</DependentUpon>
     </Compile>
+    <Compile Include="AlmacenesExterno\frmPendienteAlmacenExterno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlmacenesExterno\frmPendienteAlmacenExterno.Designer.cs">
+      <DependentUpon>frmPendienteAlmacenExterno.cs</DependentUpon>
+    </Compile>
     <Compile Include="AlmacenesExterno\frmReporteExterno.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AlmacenesExterno\frmReporteExterno.Designer.cs">
       <DependentUpon>frmReporteExterno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AlmacenesExterno\frmShowResum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlmacenesExterno\frmShowResum.Designer.cs">
+      <DependentUpon>frmShowResum.cs</DependentUpon>
     </Compile>
     <Compile Include="AlmacenesExterno\frmTipoIngreso..cs">
       <SubType>Form</SubType>
@@ -339,6 +351,14 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsCalidad.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\dsInventarioPT.cs">
+      <DependentUpon>dsInventarioPT.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\dsInventarioPT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsInventarioPT.xsd</DependentUpon>
     </Compile>
     <Compile Include="Calidad\dsMantenimientoC.cs">
       <DependentUpon>dsMantenimientoC.xsd</DependentUpon>
@@ -618,7 +638,14 @@
     <Compile Include="Calidad\frm_retenciones.Designer.cs">
       <DependentUpon>frm_retenciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\Model\Lote_Ingreso_Conf_Calidad.cs" />
     <Compile Include="Calidad\NoConformidad.cs" />
+    <Compile Include="Calidad\xfrmWizardConfCalidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\xfrmWizardConfCalidad.Designer.cs">
+      <DependentUpon>xfrmWizardConfCalidad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clases\BagsPT.cs" />
     <Compile Include="Clases\Boleta.cs" />
     <Compile Include="Clases\CajaDialogo.cs" />
@@ -1429,6 +1456,17 @@
     <None Include="AlmacenesExterno\dsReporteAlmacenExterno.xss">
       <DependentUpon>dsReporteAlmacenExterno.xsd</DependentUpon>
     </None>
+    <None Include="Calidad\dsInventarioPT.xsc">
+      <DependentUpon>dsInventarioPT.xsd</DependentUpon>
+    </None>
+    <None Include="Calidad\dsInventarioPT.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsInventarioPT.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Calidad\dsInventarioPT.xss">
+      <DependentUpon>dsInventarioPT.xsd</DependentUpon>
+    </None>
     <None Include="Calidad\dsMantenimientoC.xsc">
       <DependentUpon>dsMantenimientoC.xsd</DependentUpon>
     </None>
@@ -2120,6 +2158,12 @@
     <Compile Include="TransaccionesMP\frmOrdenFabricacionDetalle.Designer.cs">
       <DependentUpon>frmOrdenFabricacionDetalle.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\frmReporteInventarioKardexGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmReporteInventarioKardexGeneral.Designer.cs">
+      <DependentUpon>frmReporteInventarioKardexGeneral.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesMP\frmRequisicionesDetalle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2413,8 +2457,14 @@
     <Compile Include="Utileria\frmMensajeCalidad.Designer.cs">
       <DependentUpon>frmMensajeCalidad.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AlmacenesExterno\frmPendienteAlmacenExterno.resx">
+      <DependentUpon>frmPendienteAlmacenExterno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AlmacenesExterno\frmReporteExterno.resx">
       <DependentUpon>frmReporteExterno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlmacenesExterno\frmShowResum.resx">
+      <DependentUpon>frmShowResum.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AlmacenesExterno\frmTipoIngreso..resx">
       <DependentUpon>frmTipoIngreso..cs</DependentUpon>
@@ -2613,6 +2663,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frm_retenciones.resx">
       <DependentUpon>frm_retenciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\xfrmWizardConfCalidad.resx">
+      <DependentUpon>xfrmWizardConfCalidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frmdespachos.resx">
       <DependentUpon>frmdespachos.cs</DependentUpon>
@@ -2957,7 +3010,7 @@
     <EmbeddedResource Include="Produccion\xfrmCheckActiveBin.resx">
       <DependentUpon>xfrmCheckActiveBin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
+    <None Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -3249,6 +3302,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmOrdenFabricacionDetalle.resx">
       <DependentUpon>frmOrdenFabricacionDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmReporteInventarioKardexGeneral.resx">
+      <DependentUpon>frmReporteInventarioKardexGeneral.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmRequisicionesDetalle.resx">
       <DependentUpon>frmRequisicionesDetalle.cs</DependentUpon>
@@ -3716,7 +3772,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 y x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

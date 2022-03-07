@@ -30,7 +30,8 @@ namespace LOSA.Calidad
             InitializeComponent();
             UsuarioLogeado = Puser;
             txtlote.Focus();
-        }                
+        }    
+        
         public void load_header()
         {
             if (!string.IsNullOrEmpty(txtlote.Text))
@@ -155,6 +156,53 @@ namespace LOSA.Calidad
             load_data();//Detalle de materias primas usadas en lote de PT
             load_header();
             Load_Despachos();
+            load_informacion_de_inventario();
+        }
+        public void load_informacion_de_inventario()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_inventory_trasaccion_pt", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lote", txtlote.Text);
+                dsInventarioPT.transacciones.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsInventarioPT.transacciones);
+
+
+
+                cmd = new SqlCommand("sp_get_inventorio_habilitado", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lote", txtlote.Text);
+                dsInventarioPT.libres.Clear();
+                adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsInventarioPT.libres);
+
+                cmd = new SqlCommand("sp_get_inventorio_observacion_retenido", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lote", txtlote.Text);
+                dsInventarioPT.retenidos.Clear();
+                adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsInventarioPT.retenidos);
+
+                cmd = new SqlCommand("sp_get_resumen_pt_transaccion", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lote", txtlote.Text);
+                dsInventarioPT.resumen.Clear();
+                adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsInventarioPT.resumen);
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+
         }
 
         private void Load_Despachos()
@@ -192,6 +240,7 @@ namespace LOSA.Calidad
                 load_header();
                 load_data();
                 Load_Despachos();
+                load_informacion_de_inventario();
             }
         }
 

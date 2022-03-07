@@ -655,7 +655,7 @@ namespace LOSA
 
         private void simpleButton17_Click_2(object sender, EventArgs e)
         {
-            frmTransPendientes frm = new frmTransPendientes(UsuarioLogeado);
+            frmPendienteAlmacenExterno frm = new frmPendienteAlmacenExterno(UsuarioLogeado);
             frm.Show();
         }
 
@@ -794,6 +794,12 @@ namespace LOSA
         private void simpleButton29_Click(object sender, EventArgs e)
         {
             frmSeguimientoDespachos frm = new frmSeguimientoDespachos();
+            frm.Show();
+        }
+
+        private void simpleButton30_Click(object sender, EventArgs e)
+        {
+            frmReporteInventarioKardexGeneral frm = new frmReporteInventarioKardexGeneral();
             frm.Show();
         }
     }

@@ -132,9 +132,9 @@ namespace LOSA.RecepcionMP
             this.labelControl5.Appearance.Options.UseFont = true;
             this.labelControl5.Location = new System.Drawing.Point(109, 155);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(203, 20);
+            this.labelControl5.Size = new System.Drawing.Size(361, 20);
             this.labelControl5.TabIndex = 6;
-            this.labelControl5.Text = "Seleccione un tipo de ingreso";
+            this.labelControl5.Text = "Seleccione un tipo de bodega a cual se hara ingreso.";
             // 
             // grd_data
             // 
@@ -199,7 +199,7 @@ namespace LOSA.RecepcionMP
             // 
             // coldescripcion
             // 
-            this.coldescripcion.Caption = "Tipo de Ingreso";
+            this.coldescripcion.Caption = "Seleccion de bodega de Materia Prima";
             this.coldescripcion.FieldName = "descripcion";
             this.coldescripcion.Name = "coldescripcion";
             this.coldescripcion.OptionsColumn.AllowEdit = false;
