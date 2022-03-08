@@ -188,8 +188,8 @@
             this.grdv_resumen = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colnombre = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcantidad1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.colpeso1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txtlote.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCalidad)).BeginInit();
@@ -1320,7 +1320,7 @@
             // 
             this.xtraTabPage7.Controls.Add(this.grd_despachos);
             this.xtraTabPage7.Name = "xtraTabPage7";
-            this.xtraTabPage7.Size = new System.Drawing.Size(880, 348);
+            this.xtraTabPage7.Size = new System.Drawing.Size(880, 362);
             this.xtraTabPage7.Text = "Despachos";
             // 
             // grd_despachos
@@ -1331,7 +1331,7 @@
             this.grd_despachos.Location = new System.Drawing.Point(0, 0);
             this.grd_despachos.MainView = this.grdv_despachos;
             this.grd_despachos.Name = "grd_despachos";
-            this.grd_despachos.Size = new System.Drawing.Size(880, 348);
+            this.grd_despachos.Size = new System.Drawing.Size(880, 362);
             this.grd_despachos.TabIndex = 0;
             this.grd_despachos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_despachos});
@@ -1579,7 +1579,7 @@
             // 
             this.xtraTabPage4.Controls.Add(this.grd_retenido);
             this.xtraTabPage4.Name = "xtraTabPage4";
-            this.xtraTabPage4.Size = new System.Drawing.Size(520, 348);
+            this.xtraTabPage4.Size = new System.Drawing.Size(520, 362);
             this.xtraTabPage4.Text = "Retenido";
             // 
             // grd_retenido
@@ -1590,7 +1590,7 @@
             this.grd_retenido.Location = new System.Drawing.Point(0, 0);
             this.grd_retenido.MainView = this.grdv_retenido;
             this.grd_retenido.Name = "grd_retenido";
-            this.grd_retenido.Size = new System.Drawing.Size(520, 348);
+            this.grd_retenido.Size = new System.Drawing.Size(520, 362);
             this.grd_retenido.TabIndex = 38;
             this.grd_retenido.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_retenido});
@@ -1710,7 +1710,7 @@
             // 
             this.xtraTabPage5.Name = "xtraTabPage5";
             this.xtraTabPage5.PageVisible = false;
-            this.xtraTabPage5.Size = new System.Drawing.Size(520, 348);
+            this.xtraTabPage5.Size = new System.Drawing.Size(520, 362);
             this.xtraTabPage5.Text = "No conforme";
             // 
             // grd_resumen
@@ -1782,17 +1782,6 @@
             this.colcantidad1.Visible = true;
             this.colcantidad1.VisibleIndex = 1;
             // 
-            // labelControl16
-            // 
-            this.labelControl16.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl16.Appearance.Options.UseFont = true;
-            this.labelControl16.Location = new System.Drawing.Point(10, 6);
-            this.labelControl16.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.labelControl16.Name = "labelControl16";
-            this.labelControl16.Size = new System.Drawing.Size(184, 21);
-            this.labelControl16.TabIndex = 36;
-            this.labelControl16.Text = "Transacciones de Lote PT";
-            // 
             // colpeso1
             // 
             this.colpeso1.Caption = "Peso";
@@ -1805,6 +1794,17 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "peso", "{0:0.##.##} Kg.")});
             this.colpeso1.Visible = true;
             this.colpeso1.VisibleIndex = 2;
+            // 
+            // labelControl16
+            // 
+            this.labelControl16.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl16.Appearance.Options.UseFont = true;
+            this.labelControl16.Location = new System.Drawing.Point(10, 6);
+            this.labelControl16.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl16.Name = "labelControl16";
+            this.labelControl16.Size = new System.Drawing.Size(184, 21);
+            this.labelControl16.TabIndex = 36;
+            this.labelControl16.Text = "Transacciones de Lote PT";
             // 
             // frmreporte_trazabilidad
             // 

@@ -17,6 +17,7 @@ using System.IO;
 using System.Diagnostics;
 using LOSA.Nir;
 using LOSA.Trazabilidad;
+using LOSA.Trazabilidad.ReportesTRZ;
 
 namespace LOSA.Calidad
 {
@@ -1478,6 +1479,32 @@ namespace LOSA.Calidad
             if (frm.ShowDialog()== DialogResult.OK)
             {
 
+            }
+        }
+
+        private void gridView4_RowClick(object sender, RowClickEventArgs e)
+        {
+            var gridView = (GridView)gridControl1.FocusedView;
+            var row = (dsReportesTRZ.pt_list_trzRow)gridView.GetFocusedDataRow();
+
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_detalle_destinos_lote_pt_trz", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lotept", row.Lote_PT);
+                dsReportesTRZ1.detalle_destinos.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsReportesTRZ1.detalle_destinos);
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
             }
         }
     }
