@@ -657,9 +657,27 @@ namespace LOSA.Calidad
 
 
                         break;
+                    case 4://Rechazado
+                        var gridView3 = (GridView)gridRechazado.FocusedView;
+                        var row3 = (dsCalidad.tarimas_retRow)gridView3.GetFocusedDataRow();
+                        if (row3.id_tipotm == 2)
+                        {
+                            CajaDialogo.Information("Los movimientos por ingreso en producto terminado no estan habilitados.");
+                            return;
+                        }
+                        lote = row3.lote;
+                        ingreso = row3.ingreso;
+                        id_mp = row3.id_mp;
+                        CodigoP = row3.codigomp;
+                        Articulo = row3.mp;
+                        tipo_tm = row3.id_tipotm;
+
+                        break;
                     default:
                         break;
                 }
+
+
                 switch (Estado)
                 {
                     case 1: // Habilitado
@@ -756,6 +774,26 @@ namespace LOSA.Calidad
 
 
                         break;
+                    case 4: // Rechazado
+                        if (gridActual != 4)
+                        {
+                            frmcausasRechazo frm = new frmcausasRechazo(UsuarioLogeado
+                                                                    , CodigoP
+                                                                    , id_mp
+                                                                    , ingreso
+                                                                    , lote
+                                                                    , Articulo
+                                                                    , frmcausasRechazo.Tipo_Reten.Ingreso
+                                                                    , 1);
+                            if (frm.ShowDialog() == DialogResult.OK)
+                            {
+                                LoadTarimasAvailables();
+                                LoadTarimasObs();
+                                LoadTarimasRet();
+                                LoadTarimasRechazadas();
+                            }
+                        }
+                        break;
                     default:
                         break;
                 }
@@ -764,6 +802,27 @@ namespace LOSA.Calidad
             catch (Exception ex)
             {
 
+            }
+        }
+
+        private void LoadTarimasRechazadas()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_tarimas_rechazadas_calidad", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                dsCalidad1.tarimas_rechazadas.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsCalidad1.tarimas_rechazadas);
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
             }
         }
 
@@ -976,5 +1035,30 @@ namespace LOSA.Calidad
         {
             UpdataeStatusByTurno(3);
         }
+
+        private void barButtonRechazarIngreso_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UpdateStatusIngreso(4);
+        }
+
+        private void gridView3_RowClick(object sender, RowClickEventArgs e)
+        {
+            //Row Click Rechazado
+            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            {
+                popupMenu1.ShowPopup(Cursor.Position);
+                gridActual = 4;
+            }
+        }
+
+        private void gridView3_DoubleClick(object sender, EventArgs e)
+        {
+            //Double Click Rechazado
+            popupMenu1.ShowPopup(Cursor.Position);
+            gridActual = 4;
+        }
+
+
+
     }
 }
