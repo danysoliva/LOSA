@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>294</ApplicationRevision>
+    <ApplicationRevision>288</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -96,7 +96,7 @@
     </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>5A56FE5B36BF1139C0C28330C52B1468E1F78C88</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>11DBC92D92B4EB4A587EA378AD2A6CF4E83C0246</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -637,18 +637,6 @@
     </Compile>
     <Compile Include="Calidad\frm_retenciones.Designer.cs">
       <DependentUpon>frm_retenciones.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Calidad\GestionLotesMP\frmcausasRechazo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Calidad\GestionLotesMP\frmcausasRechazo.Designer.cs">
-      <DependentUpon>frmcausasRechazo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Calidad\GestionLotesMP\frmSelectCausaRechazo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Calidad\GestionLotesMP\frmSelectCausaRechazo.Designer.cs">
-      <DependentUpon>frmSelectCausaRechazo.cs</DependentUpon>
     </Compile>
     <Compile Include="Calidad\Model\Lote_Ingreso_Conf_Calidad.cs" />
     <Compile Include="Calidad\NoConformidad.cs" />
@@ -2676,12 +2664,6 @@
     <EmbeddedResource Include="Calidad\frm_retenciones.resx">
       <DependentUpon>frm_retenciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\GestionLotesMP\frmcausasRechazo.resx">
-      <DependentUpon>frmcausasRechazo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\GestionLotesMP\frmSelectCausaRechazo.resx">
-      <DependentUpon>frmSelectCausaRechazo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Calidad\xfrmWizardConfCalidad.resx">
       <DependentUpon>xfrmWizardConfCalidad.cs</DependentUpon>
     </EmbeddedResource>
@@ -3028,6 +3010,7 @@
     <EmbeddedResource Include="Produccion\xfrmCheckActiveBin.resx">
       <DependentUpon>xfrmCheckActiveBin.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -3789,7 +3772,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 y x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
