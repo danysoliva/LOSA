@@ -802,5 +802,11 @@ namespace LOSA
             frmReporteInventarioKardexGeneral frm = new frmReporteInventarioKardexGeneral();
             frm.Show();
         }
+
+        private void simpleButton31_Click(object sender, EventArgs e)
+        {
+            MantiniemintoCliente frm = new MantiniemintoCliente(UsuarioLogeado);
+            frm.Show();
+        }
     }
 }

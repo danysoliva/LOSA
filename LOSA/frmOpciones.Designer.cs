@@ -69,6 +69,7 @@
             this.cmdRequisiciones_ = new DevExpress.XtraEditors.SimpleButton();
             this.btnplanrequisas = new DevExpress.XtraEditors.SimpleButton();
             this.tabPT = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton31 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton22 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton21 = new DevExpress.XtraEditors.SimpleButton();
             this.btndespachos = new DevExpress.XtraEditors.SimpleButton();
@@ -715,6 +716,7 @@
             // 
             this.tabPT.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.tabPT.Appearance.Header.Options.UseFont = true;
+            this.tabPT.Controls.Add(this.simpleButton31);
             this.tabPT.Controls.Add(this.simpleButton22);
             this.tabPT.Controls.Add(this.simpleButton21);
             this.tabPT.Controls.Add(this.btndespachos);
@@ -725,6 +727,19 @@
             this.tabPT.Name = "tabPT";
             this.tabPT.Size = new System.Drawing.Size(766, 409);
             this.tabPT.Text = "Producto Terminado";
+            // 
+            // simpleButton31
+            // 
+            this.simpleButton31.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.simpleButton31.Appearance.Options.UseFont = true;
+            this.simpleButton31.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton31.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton31.ImageOptions.Image")));
+            this.simpleButton31.Location = new System.Drawing.Point(208, 109);
+            this.simpleButton31.Name = "simpleButton31";
+            this.simpleButton31.Size = new System.Drawing.Size(199, 42);
+            this.simpleButton31.TabIndex = 43;
+            this.simpleButton31.Text = "Mantenimiento\r\nde clientes";
+            this.simpleButton31.Click += new System.EventHandler(this.simpleButton31_Click);
             // 
             // simpleButton22
             // 
@@ -1520,5 +1535,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton28;
         private DevExpress.XtraEditors.SimpleButton simpleButton29;
         private DevExpress.XtraEditors.SimpleButton simpleButton30;
+        private DevExpress.XtraEditors.SimpleButton simpleButton31;
     }
 }

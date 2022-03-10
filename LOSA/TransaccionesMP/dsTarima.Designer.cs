@@ -1286,6 +1286,14 @@ namespace LOSA.TransaccionesMP {
             
             private global::System.Data.DataColumn columndias;
             
+            private global::System.Data.DataColumn columnfecha_ingreso;
+            
+            private global::System.Data.DataColumn columnnumero_transaccion;
+            
+            private global::System.Data.DataColumn columncproveedor;
+            
+            private global::System.Data.DataColumn columnproveedor;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public informacionDataTable() {
@@ -1377,6 +1385,38 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn fecha_ingresoColumn {
+                get {
+                    return this.columnfecha_ingreso;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn numero_transaccionColumn {
+                get {
+                    return this.columnnumero_transaccion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cproveedorColumn {
+                get {
+                    return this.columncproveedor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn proveedorColumn {
+                get {
+                    return this.columnproveedor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1412,7 +1452,7 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public informacionRow AddinformacionRow(decimal existencia, string nombre_comercial, System.DateTime fecha_vence, System.DateTime fecha_produccion, int id_mp, string lote, int dias) {
+            public informacionRow AddinformacionRow(decimal existencia, string nombre_comercial, System.DateTime fecha_vence, System.DateTime fecha_produccion, int id_mp, string lote, int dias, System.DateTime fecha_ingreso, int numero_transaccion, string cproveedor, string proveedor) {
                 informacionRow rowinformacionRow = ((informacionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         existencia,
@@ -1421,7 +1461,11 @@ namespace LOSA.TransaccionesMP {
                         fecha_produccion,
                         id_mp,
                         lote,
-                        dias};
+                        dias,
+                        fecha_ingreso,
+                        numero_transaccion,
+                        cproveedor,
+                        proveedor};
                 rowinformacionRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowinformacionRow);
                 return rowinformacionRow;
@@ -1451,6 +1495,10 @@ namespace LOSA.TransaccionesMP {
                 this.columnid_mp = base.Columns["id_mp"];
                 this.columnlote = base.Columns["lote"];
                 this.columndias = base.Columns["dias"];
+                this.columnfecha_ingreso = base.Columns["fecha_ingreso"];
+                this.columnnumero_transaccion = base.Columns["numero_transaccion"];
+                this.columncproveedor = base.Columns["cproveedor"];
+                this.columnproveedor = base.Columns["proveedor"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1470,6 +1518,14 @@ namespace LOSA.TransaccionesMP {
                 base.Columns.Add(this.columnlote);
                 this.columndias = new global::System.Data.DataColumn("dias", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndias);
+                this.columnfecha_ingreso = new global::System.Data.DataColumn("fecha_ingreso", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_ingreso);
+                this.columnnumero_transaccion = new global::System.Data.DataColumn("numero_transaccion", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnumero_transaccion);
+                this.columncproveedor = new global::System.Data.DataColumn("cproveedor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncproveedor);
+                this.columnproveedor = new global::System.Data.DataColumn("proveedor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnproveedor);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2380,6 +2436,70 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime fecha_ingreso {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableinformacion.fecha_ingresoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_ingreso\' de la tabla \'informacion\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableinformacion.fecha_ingresoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int numero_transaccion {
+                get {
+                    try {
+                        return ((int)(this[this.tableinformacion.numero_transaccionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'numero_transaccion\' de la tabla \'informacion\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableinformacion.numero_transaccionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string cproveedor {
+                get {
+                    try {
+                        return ((string)(this[this.tableinformacion.cproveedorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'cproveedor\' de la tabla \'informacion\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableinformacion.cproveedorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string proveedor {
+                get {
+                    try {
+                        return ((string)(this[this.tableinformacion.proveedorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'proveedor\' de la tabla \'informacion\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableinformacion.proveedorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsexistenciaNull() {
                 return this.IsNull(this.tableinformacion.existenciaColumn);
             }
@@ -2460,6 +2580,54 @@ namespace LOSA.TransaccionesMP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetdiasNull() {
                 this[this.tableinformacion.diasColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isfecha_ingresoNull() {
+                return this.IsNull(this.tableinformacion.fecha_ingresoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setfecha_ingresoNull() {
+                this[this.tableinformacion.fecha_ingresoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isnumero_transaccionNull() {
+                return this.IsNull(this.tableinformacion.numero_transaccionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setnumero_transaccionNull() {
+                this[this.tableinformacion.numero_transaccionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IscproveedorNull() {
+                return this.IsNull(this.tableinformacion.cproveedorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetcproveedorNull() {
+                this[this.tableinformacion.cproveedorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsproveedorNull() {
+                return this.IsNull(this.tableinformacion.proveedorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetproveedorNull() {
+                this[this.tableinformacion.proveedorColumn] = global::System.Convert.DBNull;
             }
         }
         

@@ -2357,6 +2357,18 @@
     <Compile Include="TransaccionesPT\frm_vertarimas_pt.Designer.cs">
       <DependentUpon>frm_vertarimas_pt.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesPT\MantenimientoClienteOperaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesPT\MantenimientoClienteOperaciones.Designer.cs">
+      <DependentUpon>MantenimientoClienteOperaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesPT\MantiniemintoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesPT\MantiniemintoCliente.Designer.cs">
+      <DependentUpon>MantiniemintoCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Trazabilidad\Despachos\frmDetalleDespacho.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -3395,6 +3407,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesPT\frm_vertarimas_pt.resx">
       <DependentUpon>frm_vertarimas_pt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesPT\MantenimientoClienteOperaciones.resx">
+      <DependentUpon>MantenimientoClienteOperaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesPT\MantiniemintoCliente.resx">
+      <DependentUpon>MantiniemintoCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Trazabilidad\Despachos\frmDetalleDespacho.resx">
       <DependentUpon>frmDetalleDespacho.cs</DependentUpon>

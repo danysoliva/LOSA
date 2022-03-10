@@ -51,6 +51,10 @@ namespace LOSA.TransaccionesMP
             this.colexistencia1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcode_sap = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha_ingreso = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnumero_transaccion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcproveedor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colproveedor = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
@@ -153,7 +157,11 @@ namespace LOSA.TransaccionesMP
             this.colfecha_produccion,
             this.colid_mp,
             this.collote,
-            this.coldias});
+            this.coldias,
+            this.colfecha_ingreso,
+            this.colnumero_transaccion,
+            this.colcproveedor,
+            this.colproveedor});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
@@ -171,8 +179,8 @@ namespace LOSA.TransaccionesMP
             this.colexistencia.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia", "{0:0.##.##} Kg.")});
             this.colexistencia.Visible = true;
-            this.colexistencia.VisibleIndex = 5;
-            this.colexistencia.Width = 217;
+            this.colexistencia.VisibleIndex = 8;
+            this.colexistencia.Width = 152;
             // 
             // colnombre_comercial
             // 
@@ -182,7 +190,7 @@ namespace LOSA.TransaccionesMP
             this.colnombre_comercial.OptionsColumn.AllowEdit = false;
             this.colnombre_comercial.Visible = true;
             this.colnombre_comercial.VisibleIndex = 0;
-            this.colnombre_comercial.Width = 275;
+            this.colnombre_comercial.Width = 235;
             // 
             // colfecha_vence
             // 
@@ -191,8 +199,8 @@ namespace LOSA.TransaccionesMP
             this.colfecha_vence.Name = "colfecha_vence";
             this.colfecha_vence.OptionsColumn.AllowEdit = false;
             this.colfecha_vence.Visible = true;
-            this.colfecha_vence.VisibleIndex = 3;
-            this.colfecha_vence.Width = 213;
+            this.colfecha_vence.VisibleIndex = 6;
+            this.colfecha_vence.Width = 141;
             // 
             // colfecha_produccion
             // 
@@ -201,8 +209,8 @@ namespace LOSA.TransaccionesMP
             this.colfecha_produccion.Name = "colfecha_produccion";
             this.colfecha_produccion.OptionsColumn.AllowEdit = false;
             this.colfecha_produccion.Visible = true;
-            this.colfecha_produccion.VisibleIndex = 2;
-            this.colfecha_produccion.Width = 213;
+            this.colfecha_produccion.VisibleIndex = 5;
+            this.colfecha_produccion.Width = 141;
             // 
             // colid_mp
             // 
@@ -217,8 +225,8 @@ namespace LOSA.TransaccionesMP
             this.collote.Name = "collote";
             this.collote.OptionsColumn.AllowEdit = false;
             this.collote.Visible = true;
-            this.collote.VisibleIndex = 1;
-            this.collote.Width = 213;
+            this.collote.VisibleIndex = 4;
+            this.collote.Width = 141;
             // 
             // coldias
             // 
@@ -227,8 +235,8 @@ namespace LOSA.TransaccionesMP
             this.coldias.Name = "coldias";
             this.coldias.OptionsColumn.AllowEdit = false;
             this.coldias.Visible = true;
-            this.coldias.VisibleIndex = 4;
-            this.coldias.Width = 213;
+            this.coldias.VisibleIndex = 7;
+            this.coldias.Width = 141;
             // 
             // tabNavigationPage2
             // 
@@ -331,6 +339,42 @@ namespace LOSA.TransaccionesMP
             this.colcode_sap.VisibleIndex = 0;
             this.colcode_sap.Width = 134;
             // 
+            // colfecha_ingreso
+            // 
+            this.colfecha_ingreso.Caption = "F Ingreso";
+            this.colfecha_ingreso.FieldName = "fecha_ingreso";
+            this.colfecha_ingreso.Name = "colfecha_ingreso";
+            this.colfecha_ingreso.OptionsColumn.AllowEdit = false;
+            this.colfecha_ingreso.Visible = true;
+            this.colfecha_ingreso.VisibleIndex = 1;
+            this.colfecha_ingreso.Width = 64;
+            // 
+            // colnumero_transaccion
+            // 
+            this.colnumero_transaccion.Caption = "N Ingreso";
+            this.colnumero_transaccion.FieldName = "numero_transaccion";
+            this.colnumero_transaccion.Name = "colnumero_transaccion";
+            this.colnumero_transaccion.OptionsColumn.AllowEdit = false;
+            this.colnumero_transaccion.Visible = true;
+            this.colnumero_transaccion.VisibleIndex = 3;
+            this.colnumero_transaccion.Width = 120;
+            // 
+            // colcproveedor
+            // 
+            this.colcproveedor.FieldName = "cproveedor";
+            this.colcproveedor.Name = "colcproveedor";
+            this.colcproveedor.OptionsColumn.AllowEdit = false;
+            // 
+            // colproveedor
+            // 
+            this.colproveedor.Caption = "Proveedor";
+            this.colproveedor.FieldName = "proveedor";
+            this.colproveedor.Name = "colproveedor";
+            this.colproveedor.OptionsColumn.AllowEdit = false;
+            this.colproveedor.Visible = true;
+            this.colproveedor.VisibleIndex = 2;
+            this.colproveedor.Width = 209;
+            // 
             // frmReporteInventarioKardexGeneral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -377,5 +421,9 @@ namespace LOSA.TransaccionesMP
         private DevExpress.XtraGrid.Columns.GridColumn colexistencia1;
         private DevExpress.XtraGrid.Columns.GridColumn colcodigo;
         private DevExpress.XtraGrid.Columns.GridColumn colcode_sap;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecha_ingreso;
+        private DevExpress.XtraGrid.Columns.GridColumn colnumero_transaccion;
+        private DevExpress.XtraGrid.Columns.GridColumn colcproveedor;
+        private DevExpress.XtraGrid.Columns.GridColumn colproveedor;
     }
 }
