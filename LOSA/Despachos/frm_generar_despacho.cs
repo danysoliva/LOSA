@@ -48,7 +48,8 @@ namespace LOSA.Despachos
         {
             InitializeComponent();
             Operacion = OpType.Update;
-            this.Id_despacho = id_Despacho; 
+            this.Id_despacho = id_Despacho;
+            grd_destino.Enabled = true;
             LoadPresentaciones();
             load_informacion();
 
