@@ -683,5 +683,27 @@ namespace LOSA.RecepcionMP
                 idLoteExterno = frm.id_lote_externo;
             }
         }
+
+        private void txtIdBoleta_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                int id_b = 0;
+                try
+                {
+                    id_b = Convert.ToInt32(txtIdBoleta.Text);
+                }
+                catch { }
+
+                this.IdSerie = id_b;
+                Boleta bol1 = new Boleta();
+                if (bol1.RecuperarRegistro(this.IdSerie))
+                {
+                    // txtIdBoleta.Text = bol1.NumID.ToString();
+                }
+                LoadDatosBoleta(this.IdSerie);
+            }
+        }
     }
 }

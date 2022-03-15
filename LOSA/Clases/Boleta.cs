@@ -30,7 +30,7 @@ namespace LOSA.Clases
                 con.Open();
                 string sql = @"SELECT [id]
                                      ,[NumID]
-                                FROM [BASCULA_DEV].[dbo].[TS_in_and_out]tt
+                                FROM [BASCULA].[dbo].[TS_in_and_out]tt
                                 where tt.id = " + pIdSerial;
                 SqlCommand cmd = new SqlCommand(sql, con);
                 SqlDataReader dr = cmd.ExecuteReader();
