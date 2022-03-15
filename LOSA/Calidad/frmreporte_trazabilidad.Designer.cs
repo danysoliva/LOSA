@@ -382,7 +382,7 @@
             this.colContado.OptionsColumn.AllowEdit = false;
             this.colContado.Visible = true;
             this.colContado.VisibleIndex = 4;
-            this.colContado.Width = 176;
+            this.colContado.Width = 327;
             // 
             // collote_mp
             // 
@@ -393,7 +393,7 @@
             this.collote_mp.Name = "collote_mp";
             this.collote_mp.Visible = true;
             this.collote_mp.VisibleIndex = 2;
-            this.collote_mp.Width = 197;
+            this.collote_mp.Width = 360;
             // 
             // btnTrazabilidadLoteMP
             // 
@@ -431,7 +431,7 @@
             this.colnombre_comercial.Name = "colnombre_comercial";
             this.colnombre_comercial.Visible = true;
             this.colnombre_comercial.VisibleIndex = 1;
-            this.colnombre_comercial.Width = 215;
+            this.colnombre_comercial.Width = 392;
             // 
             // btnLinkMateriaPrima
             // 
@@ -485,7 +485,7 @@
             this.colrownum.Name = "colrownum";
             this.colrownum.Visible = true;
             this.colrownum.VisibleIndex = 0;
-            this.colrownum.Width = 49;
+            this.colrownum.Width = 52;
             // 
             // colid_mp
             // 
@@ -502,7 +502,7 @@
             this.colteorico.OptionsColumn.AllowEdit = false;
             this.colteorico.Visible = true;
             this.colteorico.VisibleIndex = 3;
-            this.colteorico.Width = 151;
+            this.colteorico.Width = 275;
             // 
             // btnClearInfo
             // 
