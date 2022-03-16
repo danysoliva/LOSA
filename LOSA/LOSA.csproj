@@ -644,23 +644,17 @@
     <Compile Include="Calidad\GestionLotesMP\frmcausasRechazo.Designer.cs">
       <DependentUpon>frmcausasRechazo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\GestionLotesMP\frmcausasRetencionComplete.cs">
+    <Compile Include="Calidad\GestionLotesMP\frmcausasRetencionCompletev2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\GestionLotesMP\frmcausasRetencionComplete.Designer.cs">
-      <DependentUpon>frmcausasRetencionComplete.cs</DependentUpon>
+    <Compile Include="Calidad\GestionLotesMP\frmcausasRetencionCompletev2.Designer.cs">
+      <DependentUpon>frmcausasRetencionCompletev2.cs</DependentUpon>
     </Compile>
     <Compile Include="Calidad\GestionLotesMP\frmSelectCausaRechazo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Calidad\GestionLotesMP\frmSelectCausaRechazo.Designer.cs">
       <DependentUpon>frmSelectCausaRechazo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Calidad\GestionLotesMP\frm_retencionesPT.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Calidad\GestionLotesMP\frm_retencionesPT.Designer.cs">
-      <DependentUpon>frm_retencionesPT.cs</DependentUpon>
     </Compile>
     <Compile Include="Calidad\Model\Lote_Ingreso_Conf_Calidad.cs" />
     <Compile Include="Calidad\NoConformidad.cs" />
@@ -2273,6 +2267,12 @@
     <Compile Include="TransaccionesPT\frmactivacionPT.Designer.cs">
       <DependentUpon>frmactivacionPT.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesPT\frmcausasRetencionComplete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesPT\frmcausasRetencionComplete.Designer.cs">
+      <DependentUpon>frmcausasRetencionComplete.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesPT\frmdespacho.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2345,6 +2345,12 @@
     <Compile Include="TransaccionesPT\frm_planificacion_despachos.Designer.cs">
       <DependentUpon>frm_planificacion_despachos.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesPT\frm_retencionesPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesPT\frm_retencionesPT.Designer.cs">
+      <DependentUpon>frm_retencionesPT.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesPT\frm_rpt_productoT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2380,6 +2386,18 @@
     </Compile>
     <Compile Include="TransaccionesPT\frm_vertarimas_pt.Designer.cs">
       <DependentUpon>frm_vertarimas_pt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesPT\MantenimientoClienteOperaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesPT\MantenimientoClienteOperaciones.Designer.cs">
+      <DependentUpon>MantenimientoClienteOperaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesPT\MantiniemintoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesPT\MantiniemintoCliente.Designer.cs">
+      <DependentUpon>MantiniemintoCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Trazabilidad\Despachos\frmDetalleDespacho.cs">
       <SubType>Form</SubType>
@@ -2691,14 +2709,11 @@
     <EmbeddedResource Include="Calidad\GestionLotesMP\frmcausasRechazo.resx">
       <DependentUpon>frmcausasRechazo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\GestionLotesMP\frmcausasRetencionComplete.resx">
-      <DependentUpon>frmcausasRetencionComplete.cs</DependentUpon>
+    <EmbeddedResource Include="Calidad\GestionLotesMP\frmcausasRetencionCompletev2.resx">
+      <DependentUpon>frmcausasRetencionCompletev2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\GestionLotesMP\frmSelectCausaRechazo.resx">
       <DependentUpon>frmSelectCausaRechazo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\GestionLotesMP\frm_retencionesPT.resx">
-      <DependentUpon>frm_retencionesPT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\xfrmWizardConfCalidad.resx">
       <DependentUpon>xfrmWizardConfCalidad.cs</DependentUpon>
@@ -3378,6 +3393,9 @@
     <EmbeddedResource Include="TransaccionesPT\frmactivacionPT.resx">
       <DependentUpon>frmactivacionPT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesPT\frmcausasRetencionComplete.resx">
+      <DependentUpon>frmcausasRetencionComplete.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesPT\frmdespacho.resx">
       <DependentUpon>frmdespacho.cs</DependentUpon>
     </EmbeddedResource>
@@ -3414,6 +3432,9 @@
     <EmbeddedResource Include="TransaccionesPT\frm_planificacion_despachos.resx">
       <DependentUpon>frm_planificacion_despachos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesPT\frm_retencionesPT.resx">
+      <DependentUpon>frm_retencionesPT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesPT\frm_rpt_productoT.resx">
       <DependentUpon>frm_rpt_productoT.cs</DependentUpon>
     </EmbeddedResource>
@@ -3431,6 +3452,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesPT\frm_vertarimas_pt.resx">
       <DependentUpon>frm_vertarimas_pt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesPT\MantenimientoClienteOperaciones.resx">
+      <DependentUpon>MantenimientoClienteOperaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesPT\MantiniemintoCliente.resx">
+      <DependentUpon>MantiniemintoCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Trazabilidad\Despachos\frmDetalleDespacho.resx">
       <DependentUpon>frmDetalleDespacho.cs</DependentUpon>
@@ -3753,6 +3780,9 @@
     <Content Include="Resources\admin.png" />
     <None Include="Resources\backspace.png" />
     <None Include="Resources\batch-processing_32X32.png" />
+    <Content Include="Resources\ajustes_kardex.png" />
+    <Content Include="Resources\ajustes_kardex2.png" />
+    <Content Include="Resources\alimentacion_manual.png" />
     <Content Include="Resources\box.png" />
     <None Include="Resources\box32px.png" />
     <None Include="Resources\boxPT32px.png" />
@@ -3769,6 +3799,7 @@
     <None Include="Resources\delete-1-icon128px.png" />
     <None Include="Resources\Done-icon.png" />
     <None Include="Resources\checked_32X32.png" />
+    <Content Include="Resources\devoluciones.png" />
     <Content Include="Resources\edit.png" />
     <None Include="Resources\hapag-4-icon.png" />
     <None Include="Resources\Forklift-icon.png" />
@@ -3803,6 +3834,8 @@
     <None Include="Resources\trucksss.png" />
     <Content Include="Resources\user.png" />
     <None Include="Resources\weighing-machine_32X32.png" />
+    <Content Include="Resources\weighing_machine24px.png" />
+    <Content Include="Resources\wheat.png" />
     <Content Include="Resources\wrench.png" />
   </ItemGroup>
   <ItemGroup>

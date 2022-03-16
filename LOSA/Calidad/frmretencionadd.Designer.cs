@@ -204,7 +204,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmretencionadd";
             this.Text = "frmretencionadd";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.grd_causas.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.causasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCalidad)).EndInit();
