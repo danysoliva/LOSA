@@ -1,6 +1,6 @@
 ﻿namespace LOSA.Calidad
 {
-    partial class frmretencionadd
+    partial class frmSelectCausaRechazo
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmretencionadd));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSelectCausaRechazo));
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.label1 = new System.Windows.Forms.Label();
             this.grd_causas = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.causasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.causasBindingSource = new System.Windows.Forms.BindingSource();
             this.dsCalidad = new LOSA.Calidad.dsCalidad();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -90,15 +89,15 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(191, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(218, 25);
+            this.label1.Size = new System.Drawing.Size(206, 25);
             this.label1.TabIndex = 49;
-            this.label1.Text = "Causas de Retencion";
+            this.label1.Text = "Causas de Rechazo";
             // 
             // grd_causas
             // 
             this.grd_causas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grd_causas.Location = new System.Drawing.Point(98, 116);
+            this.grd_causas.Location = new System.Drawing.Point(132, 121);
             this.grd_causas.Name = "grd_causas";
             this.grd_causas.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grd_causas.Properties.Appearance.Options.UseFont = true;
@@ -108,7 +107,7 @@
             this.grd_causas.Properties.DisplayMember = "descripcion";
             this.grd_causas.Properties.PopupView = this.gridLookUpEdit1View;
             this.grd_causas.Properties.ValueMember = "id";
-            this.grd_causas.Size = new System.Drawing.Size(458, 30);
+            this.grd_causas.Size = new System.Drawing.Size(424, 30);
             this.grd_causas.TabIndex = 50;
             // 
             // causasBindingSource
@@ -170,7 +169,7 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(24, 211);
+            this.labelControl2.Location = new System.Drawing.Point(34, 169);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(82, 19);
             this.labelControl2.TabIndex = 52;
@@ -182,15 +181,17 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtcomentario.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcomentario.Location = new System.Drawing.Point(52, 261);
+            this.txtcomentario.Location = new System.Drawing.Point(34, 194);
             this.txtcomentario.MaxLength = 400;
             this.txtcomentario.Multiline = true;
             this.txtcomentario.Name = "txtcomentario";
-            this.txtcomentario.Size = new System.Drawing.Size(491, 164);
+            this.txtcomentario.Size = new System.Drawing.Size(522, 189);
             this.txtcomentario.TabIndex = 53;
             // 
-            // frmretencionadd
+            // frmSelectCausaRechazo
             // 
+            this.Appearance.BackColor = System.Drawing.Color.LightBlue;
+            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(607, 482);
@@ -202,8 +203,8 @@
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.btnAtras);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmretencionadd";
-            this.Text = "frmretencionadd";
+            this.Name = "frmSelectCausaRechazo";
+            this.Text = "frmSelectCausaRechazo";
             ((System.ComponentModel.ISupportInitialize)(this.grd_causas.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.causasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCalidad)).EndInit();
