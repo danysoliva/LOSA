@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSelectCausaRechazo));
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.label1 = new System.Windows.Forms.Label();
             this.grd_causas = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.causasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.causasBindingSource = new System.Windows.Forms.BindingSource();
             this.dsCalidad = new LOSA.Calidad.dsCalidad();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -206,7 +205,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmSelectCausaRechazo";
             this.Text = "frmSelectCausaRechazo";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.grd_causas.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.causasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCalidad)).EndInit();

@@ -313,7 +313,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmcausasRetencionComplete";
             this.Text = "frmcausasRetencionComplete";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.grd_causa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCalidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_causa)).EndInit();

@@ -314,7 +314,6 @@ namespace LOSA.Calidad
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_retencionesPT";
             this.Text = "frm_retencionesPT";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.btneliminar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtingreso.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtlote.Properties)).EndInit();
