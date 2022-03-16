@@ -1,6 +1,6 @@
 ﻿namespace LOSA.Calidad
 {
-    partial class frmcausasRechazo
+    partial class frmcausasRetencionComplete
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmcausasRechazo));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmcausasRetencionComplete));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -103,12 +103,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_causa.DataMember = "causaadd";
             this.grd_causa.DataSource = this.dsCalidad;
-            this.grd_causa.Location = new System.Drawing.Point(0, 113);
+            this.grd_causa.Location = new System.Drawing.Point(0, 130);
             this.grd_causa.MainView = this.grdv_causa;
             this.grd_causa.Name = "grd_causa";
             this.grd_causa.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btneliminar});
-            this.grd_causa.Size = new System.Drawing.Size(623, 408);
+            this.grd_causa.Size = new System.Drawing.Size(623, 391);
             this.grd_causa.TabIndex = 50;
             this.grd_causa.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_causa});
@@ -198,7 +198,7 @@
             this.btnAgregar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAgregar.ImageOptions.Image = global::LOSA.Properties.Resources.plus;
             this.btnAgregar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAgregar.Location = new System.Drawing.Point(110, 65);
+            this.btnAgregar.Location = new System.Drawing.Point(110, 80);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(414, 44);
             this.btnAgregar.TabIndex = 51;
@@ -289,14 +289,12 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(198, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(206, 25);
+            this.label1.Size = new System.Drawing.Size(218, 25);
             this.label1.TabIndex = 59;
-            this.label1.Text = "Causas de Rechazo";
+            this.label1.Text = "Causas de Retencion";
             // 
-            // frmcausasRechazo
+            // frmcausasRetencionComplete
             // 
-            this.Appearance.BackColor = System.Drawing.Color.LightBlue;
-            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(623, 521);
@@ -313,8 +311,8 @@
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.simpleButton1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmcausasRechazo";
-            this.Text = "frmcausasRechazo";
+            this.Name = "frmcausasRetencionComplete";
+            this.Text = "frmcausasRetencionComplete";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.grd_causa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCalidad)).EndInit();

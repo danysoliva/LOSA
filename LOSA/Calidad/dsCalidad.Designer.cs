@@ -980,6 +980,8 @@ namespace LOSA.Calidad {
             
             private global::System.Data.DataColumn columnOdoo;
             
+            private global::System.Data.DataColumn columnseleccionado;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public tarimas_disponiblesDataTable() {
@@ -1159,6 +1161,14 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn seleccionadoColumn {
+                get {
+                    return this.columnseleccionado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1212,7 +1222,8 @@ namespace LOSA.Calidad {
                         string Turno, 
                         string codigo_barra, 
                         string lote1, 
-                        string Odoo) {
+                        string Odoo, 
+                        bool seleccionado) {
                 tarimas_disponiblesRow rowtarimas_disponiblesRow = ((tarimas_disponiblesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -1232,7 +1243,8 @@ namespace LOSA.Calidad {
                         Turno,
                         codigo_barra,
                         lote1,
-                        Odoo};
+                        Odoo,
+                        seleccionado};
                 rowtarimas_disponiblesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtarimas_disponiblesRow);
                 return rowtarimas_disponiblesRow;
@@ -1273,6 +1285,7 @@ namespace LOSA.Calidad {
                 this.columncodigo_barra = base.Columns["codigo_barra"];
                 this.columnlote1 = base.Columns["lote1"];
                 this.columnOdoo = base.Columns["Odoo"];
+                this.columnseleccionado = base.Columns["seleccionado"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1314,6 +1327,9 @@ namespace LOSA.Calidad {
                 base.Columns.Add(this.columnlote1);
                 this.columnOdoo = new global::System.Data.DataColumn("Odoo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOdoo);
+                this.columnseleccionado = new global::System.Data.DataColumn("seleccionado", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnseleccionado);
+                this.columnseleccionado.Caption = "Seleccionado";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1482,6 +1498,8 @@ namespace LOSA.Calidad {
             private global::System.Data.DataColumn columnlote1;
             
             private global::System.Data.DataColumn columnOdoo;
+            
+            private global::System.Data.DataColumn columnseleccionado;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -1662,6 +1680,14 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn seleccionadoColumn {
+                get {
+                    return this.columnseleccionado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1715,7 +1741,8 @@ namespace LOSA.Calidad {
                         string Turno, 
                         string codigo_barra, 
                         string lote1, 
-                        string Odoo) {
+                        string Odoo, 
+                        bool seleccionado) {
                 tarimas_obsRow rowtarimas_obsRow = ((tarimas_obsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -1735,7 +1762,8 @@ namespace LOSA.Calidad {
                         Turno,
                         codigo_barra,
                         lote1,
-                        Odoo};
+                        Odoo,
+                        seleccionado};
                 rowtarimas_obsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtarimas_obsRow);
                 return rowtarimas_obsRow;
@@ -1776,6 +1804,7 @@ namespace LOSA.Calidad {
                 this.columncodigo_barra = base.Columns["codigo_barra"];
                 this.columnlote1 = base.Columns["lote1"];
                 this.columnOdoo = base.Columns["Odoo"];
+                this.columnseleccionado = base.Columns["seleccionado"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1817,6 +1846,9 @@ namespace LOSA.Calidad {
                 base.Columns.Add(this.columnlote1);
                 this.columnOdoo = new global::System.Data.DataColumn("Odoo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOdoo);
+                this.columnseleccionado = new global::System.Data.DataColumn("seleccionado", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnseleccionado);
+                this.columnseleccionado.Caption = "Seleccionado";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1985,6 +2017,8 @@ namespace LOSA.Calidad {
             private global::System.Data.DataColumn columnlote1;
             
             private global::System.Data.DataColumn columnOdoo;
+            
+            private global::System.Data.DataColumn columnseleccionado;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -2165,6 +2199,14 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn seleccionadoColumn {
+                get {
+                    return this.columnseleccionado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2218,7 +2260,8 @@ namespace LOSA.Calidad {
                         string Turno, 
                         string codigo_barra, 
                         string lote1, 
-                        string Odoo) {
+                        string Odoo, 
+                        bool seleccionado) {
                 tarimas_retRow rowtarimas_retRow = ((tarimas_retRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -2238,7 +2281,8 @@ namespace LOSA.Calidad {
                         Turno,
                         codigo_barra,
                         lote1,
-                        Odoo};
+                        Odoo,
+                        seleccionado};
                 rowtarimas_retRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtarimas_retRow);
                 return rowtarimas_retRow;
@@ -2279,6 +2323,7 @@ namespace LOSA.Calidad {
                 this.columncodigo_barra = base.Columns["codigo_barra"];
                 this.columnlote1 = base.Columns["lote1"];
                 this.columnOdoo = base.Columns["Odoo"];
+                this.columnseleccionado = base.Columns["seleccionado"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2320,6 +2365,9 @@ namespace LOSA.Calidad {
                 base.Columns.Add(this.columnlote1);
                 this.columnOdoo = new global::System.Data.DataColumn("Odoo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOdoo);
+                this.columnseleccionado = new global::System.Data.DataColumn("seleccionado", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnseleccionado);
+                this.columnseleccionado.Caption = "Seleccionado";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7480,6 +7528,8 @@ namespace LOSA.Calidad {
             
             private global::System.Data.DataColumn columnOdoo;
             
+            private global::System.Data.DataColumn columnseleccionado;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public tarimas_rechazadasDataTable() {
@@ -7659,6 +7709,14 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn seleccionadoColumn {
+                get {
+                    return this.columnseleccionado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -7712,7 +7770,8 @@ namespace LOSA.Calidad {
                         string Turno, 
                         string codigo_barra, 
                         string lote1, 
-                        string Odoo) {
+                        string Odoo, 
+                        bool seleccionado) {
                 tarimas_rechazadasRow rowtarimas_rechazadasRow = ((tarimas_rechazadasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -7732,7 +7791,8 @@ namespace LOSA.Calidad {
                         Turno,
                         codigo_barra,
                         lote1,
-                        Odoo};
+                        Odoo,
+                        seleccionado};
                 rowtarimas_rechazadasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtarimas_rechazadasRow);
                 return rowtarimas_rechazadasRow;
@@ -7773,6 +7833,7 @@ namespace LOSA.Calidad {
                 this.columncodigo_barra = base.Columns["codigo_barra"];
                 this.columnlote1 = base.Columns["lote1"];
                 this.columnOdoo = base.Columns["Odoo"];
+                this.columnseleccionado = base.Columns["seleccionado"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7814,6 +7875,9 @@ namespace LOSA.Calidad {
                 base.Columns.Add(this.columnlote1);
                 this.columnOdoo = new global::System.Data.DataColumn("Odoo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOdoo);
+                this.columnseleccionado = new global::System.Data.DataColumn("seleccionado", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnseleccionado);
+                this.columnseleccionado.Caption = "Seleccionado";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8244,6 +8308,22 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool seleccionado {
+                get {
+                    try {
+                        return ((bool)(this[this.tabletarimas_disponibles.seleccionadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'seleccionado\' in table \'tarimas_disponibles\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletarimas_disponibles.seleccionadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tabletarimas_disponibles.idColumn);
             }
@@ -8456,6 +8536,18 @@ namespace LOSA.Calidad {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetOdooNull() {
                 this[this.tabletarimas_disponibles.OdooColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsseleccionadoNull() {
+                return this.IsNull(this.tabletarimas_disponibles.seleccionadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetseleccionadoNull() {
+                this[this.tabletarimas_disponibles.seleccionadoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -8763,6 +8855,22 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool seleccionado {
+                get {
+                    try {
+                        return ((bool)(this[this.tabletarimas_obs.seleccionadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'seleccionado\' in table \'tarimas_obs\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletarimas_obs.seleccionadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tabletarimas_obs.idColumn);
             }
@@ -8975,6 +9083,18 @@ namespace LOSA.Calidad {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetOdooNull() {
                 this[this.tabletarimas_obs.OdooColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsseleccionadoNull() {
+                return this.IsNull(this.tabletarimas_obs.seleccionadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetseleccionadoNull() {
+                this[this.tabletarimas_obs.seleccionadoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -9282,6 +9402,22 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool seleccionado {
+                get {
+                    try {
+                        return ((bool)(this[this.tabletarimas_ret.seleccionadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'seleccionado\' in table \'tarimas_ret\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletarimas_ret.seleccionadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tabletarimas_ret.idColumn);
             }
@@ -9494,6 +9630,18 @@ namespace LOSA.Calidad {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetOdooNull() {
                 this[this.tabletarimas_ret.OdooColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsseleccionadoNull() {
+                return this.IsNull(this.tabletarimas_ret.seleccionadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetseleccionadoNull() {
+                this[this.tabletarimas_ret.seleccionadoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -12533,6 +12681,22 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool seleccionado {
+                get {
+                    try {
+                        return ((bool)(this[this.tabletarimas_rechazadas.seleccionadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'seleccionado\' in table \'tarimas_rechazadas\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletarimas_rechazadas.seleccionadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tabletarimas_rechazadas.idColumn);
             }
@@ -12745,6 +12909,18 @@ namespace LOSA.Calidad {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetOdooNull() {
                 this[this.tabletarimas_rechazadas.OdooColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsseleccionadoNull() {
+                return this.IsNull(this.tabletarimas_rechazadas.seleccionadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetseleccionadoNull() {
+                this[this.tabletarimas_rechazadas.seleccionadoColumn] = global::System.Convert.DBNull;
             }
         }
         

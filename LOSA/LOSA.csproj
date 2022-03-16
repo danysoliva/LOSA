@@ -644,11 +644,23 @@
     <Compile Include="Calidad\GestionLotesMP\frmcausasRechazo.Designer.cs">
       <DependentUpon>frmcausasRechazo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\GestionLotesMP\frmcausasRetencionComplete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\GestionLotesMP\frmcausasRetencionComplete.Designer.cs">
+      <DependentUpon>frmcausasRetencionComplete.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\GestionLotesMP\frmSelectCausaRechazo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Calidad\GestionLotesMP\frmSelectCausaRechazo.Designer.cs">
       <DependentUpon>frmSelectCausaRechazo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\GestionLotesMP\frm_retencionesPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\GestionLotesMP\frm_retencionesPT.Designer.cs">
+      <DependentUpon>frm_retencionesPT.cs</DependentUpon>
     </Compile>
     <Compile Include="Calidad\Model\Lote_Ingreso_Conf_Calidad.cs" />
     <Compile Include="Calidad\NoConformidad.cs" />
@@ -2679,8 +2691,14 @@
     <EmbeddedResource Include="Calidad\GestionLotesMP\frmcausasRechazo.resx">
       <DependentUpon>frmcausasRechazo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\GestionLotesMP\frmcausasRetencionComplete.resx">
+      <DependentUpon>frmcausasRetencionComplete.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calidad\GestionLotesMP\frmSelectCausaRechazo.resx">
       <DependentUpon>frmSelectCausaRechazo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\GestionLotesMP\frm_retencionesPT.resx">
+      <DependentUpon>frm_retencionesPT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\xfrmWizardConfCalidad.resx">
       <DependentUpon>xfrmWizardConfCalidad.cs</DependentUpon>
@@ -3028,6 +3046,7 @@
     <EmbeddedResource Include="Produccion\xfrmCheckActiveBin.resx">
       <DependentUpon>xfrmCheckActiveBin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
