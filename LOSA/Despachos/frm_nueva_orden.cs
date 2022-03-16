@@ -20,6 +20,7 @@ namespace LOSA.Despachos
     {
         DataOperations dp = new DataOperations();
         UserLogin UsuarioLogeado;
+        string codigo_selected = "";
         public frm_nueva_orden(UserLogin user)
         {
             InitializeComponent();
@@ -247,7 +248,15 @@ namespace LOSA.Despachos
                     CajaDialogo.Error("Debe agregar un producto al menos a la carga.");
                     return;
                 }
-                string query = @"sp_insert_orden_carga_sin_ov";
+                if (codigo_selected == "CL00009" || codigo_selected == "CL00002")
+                {
+                    if (grd_destino.EditValue == null)
+                    {
+                        CajaDialogo.Error("Debe seleccionar el destino antes del vehiculo para generar el arribo.");
+                        return;
+                    }
+                }
+                string query = @"sp_insert_orden_carga_sin_ov_v2";
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query,cn);
@@ -255,6 +264,7 @@ namespace LOSA.Despachos
                 cmd.Parameters.AddWithValue("@cardcode", grid_cardcode.EditValue);
                 cmd.Parameters.AddWithValue("@iduser", UsuarioLogeado.Id);
                 cmd.Parameters.AddWithValue("@id_serie", txtboleta.Text);
+                cmd.Parameters.AddWithValue("@id_destino", grd_destino.EditValue == null ? 0 : grd_destino.EditValue);
                 int id_inserted = Convert.ToInt32(cmd.ExecuteScalar());
 
                 query = @"sp_insert_despacho_detalle_lotes";
@@ -280,6 +290,34 @@ namespace LOSA.Despachos
 
                 CajaDialogo.Error(ex.Message);
             }
+        }
+        public void load_destinos(string cod)
+        {
+            try
+            {
+                string query = @"sp_load_clientes_clientes_to_select";
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@cliente", cod);
+                ds_despachos.cliente_despacho.Clear();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(ds_despachos.cliente_despacho);
+                cn.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+        private void grid_cardcode_EditValueChanged(object sender, EventArgs e)
+        {
+            grd_destino.Enabled = true;
+            codigo_selected = Convert.ToString(grid_cardcode.EditValue);
+            load_destinos(codigo_selected);
         }
     }
 }

@@ -69,41 +69,5 @@ namespace LOSA.TransaccionesMP
         {
             this.Close();
         }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            if(tabPane1.SelectedPageIndex == 0)
-            {
-                if (dsTarima.informacion.Rows.Count > 0)
-                {
-                    SaveFileDialog dialog = new SaveFileDialog();
-                    dialog.Filter = "Excel File (.xlsx)|*.xlsx";
-                    dialog.FilterIndex = 0;
-
-                    if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                        grd_data.ExportToXlsx(dialog.FileName);
-                }
-                else
-                {
-                    CajaDialogo.Error("No hay datos para exportar!");
-                }
-            }
-            else
-            {
-                if (dsTarima.totales.Rows.Count > 0)
-                {
-                    SaveFileDialog dialog = new SaveFileDialog();
-                    dialog.Filter = "Excel File (.xlsx)|*.xlsx";
-                    dialog.FilterIndex = 0;
-
-                    if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                        grd_data_resumen.ExportToXlsx(dialog.FileName);
-                }
-                else
-                {
-                    CajaDialogo.Error("No hay datos para exportar!");
-                }
-            }
-        }
     }
 }

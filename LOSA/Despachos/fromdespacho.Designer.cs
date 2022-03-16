@@ -80,10 +80,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_lotes.DataMember = "lote_entregado";
             this.grd_lotes.DataSource = this.ds_despachos;
-            this.grd_lotes.Location = new System.Drawing.Point(-1, 316);
+            this.grd_lotes.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grd_lotes.Location = new System.Drawing.Point(-1, 257);
             this.grd_lotes.MainView = this.grdv_lotes;
+            this.grd_lotes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grd_lotes.Name = "grd_lotes";
-            this.grd_lotes.Size = new System.Drawing.Size(817, 279);
+            this.grd_lotes.Size = new System.Drawing.Size(700, 227);
             this.grd_lotes.TabIndex = 0;
             this.grd_lotes.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_lotes});
@@ -111,6 +113,7 @@
             this.collote_producto_termiado,
             this.coliduser,
             this.colse_despacho});
+            this.grdv_lotes.DetailHeight = 284;
             this.grdv_lotes.GridControl = this.grd_lotes;
             this.grdv_lotes.Name = "grdv_lotes";
             this.grdv_lotes.OptionsView.ShowAutoFilterRow = true;
@@ -118,68 +121,79 @@
             // colid
             // 
             this.colid.FieldName = "id";
+            this.colid.MinWidth = 17;
             this.colid.Name = "colid";
-            this.colid.Width = 113;
+            this.colid.Width = 97;
             // 
             // colid_detalle_requisicion
             // 
             this.colid_detalle_requisicion.FieldName = "id_detalle_requisicion";
+            this.colid_detalle_requisicion.MinWidth = 17;
             this.colid_detalle_requisicion.Name = "colid_detalle_requisicion";
+            this.colid_detalle_requisicion.Width = 64;
             // 
             // colcantidad_entregada
             // 
             this.colcantidad_entregada.Caption = "Entregado";
             this.colcantidad_entregada.FieldName = "cantidad_entregada";
+            this.colcantidad_entregada.MinWidth = 17;
             this.colcantidad_entregada.Name = "colcantidad_entregada";
             this.colcantidad_entregada.Visible = true;
             this.colcantidad_entregada.VisibleIndex = 1;
-            this.colcantidad_entregada.Width = 140;
+            this.colcantidad_entregada.Width = 120;
             // 
             // colfecha
             // 
             this.colfecha.Caption = "Fecha ";
             this.colfecha.FieldName = "fecha";
+            this.colfecha.MinWidth = 17;
             this.colfecha.Name = "colfecha";
             this.colfecha.Visible = true;
             this.colfecha.VisibleIndex = 2;
-            this.colfecha.Width = 107;
+            this.colfecha.Width = 92;
             // 
             // colpresentacion
             // 
             this.colpresentacion.Caption = "Presentacion";
             this.colpresentacion.FieldName = "presentacion";
+            this.colpresentacion.MinWidth = 17;
             this.colpresentacion.Name = "colpresentacion";
             this.colpresentacion.Visible = true;
             this.colpresentacion.VisibleIndex = 3;
-            this.colpresentacion.Width = 107;
+            this.colpresentacion.Width = 92;
             // 
             // colid_tarima
             // 
             this.colid_tarima.Caption = "Tarima";
             this.colid_tarima.FieldName = "id_tarima";
+            this.colid_tarima.MinWidth = 17;
             this.colid_tarima.Name = "colid_tarima";
-            this.colid_tarima.Width = 107;
+            this.colid_tarima.Width = 92;
             // 
             // collote_producto_termiado
             // 
             this.collote_producto_termiado.Caption = "Lote";
             this.collote_producto_termiado.FieldName = "lote_producto_termiado";
+            this.collote_producto_termiado.MinWidth = 17;
             this.collote_producto_termiado.Name = "collote_producto_termiado";
             this.collote_producto_termiado.Visible = true;
             this.collote_producto_termiado.VisibleIndex = 0;
-            this.collote_producto_termiado.Width = 116;
+            this.collote_producto_termiado.Width = 99;
             // 
             // coliduser
             // 
             this.coliduser.FieldName = "iduser";
+            this.coliduser.MinWidth = 17;
             this.coliduser.Name = "coliduser";
+            this.coliduser.Width = 64;
             // 
             // colse_despacho
             // 
             this.colse_despacho.Caption = "Despachado";
             this.colse_despacho.FieldName = "se_despacho";
+            this.colse_despacho.MinWidth = 17;
             this.colse_despacho.Name = "colse_despacho";
-            this.colse_despacho.Width = 107;
+            this.colse_despacho.Width = 92;
             // 
             // boletaBindingSource
             // 
@@ -190,9 +204,10 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(33, 226);
+            this.labelControl1.Location = new System.Drawing.Point(28, 184);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(64, 24);
+            this.labelControl1.Size = new System.Drawing.Size(49, 19);
             this.labelControl1.TabIndex = 2;
             this.labelControl1.Text = "Boleta:";
             // 
@@ -200,9 +215,10 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(33, 72);
+            this.labelControl2.Location = new System.Drawing.Point(28, 58);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(69, 24);
+            this.labelControl2.Size = new System.Drawing.Size(54, 19);
             this.labelControl2.TabIndex = 3;
             this.labelControl2.Text = "Cliente:";
             // 
@@ -210,9 +226,10 @@
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(33, 106);
+            this.labelControl3.Location = new System.Drawing.Point(28, 86);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(85, 24);
+            this.labelControl3.Size = new System.Drawing.Size(69, 19);
             this.labelControl3.TabIndex = 4;
             this.labelControl3.Text = "Producto:";
             // 
@@ -220,9 +237,10 @@
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(33, 144);
+            this.labelControl4.Location = new System.Drawing.Point(28, 117);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(178, 24);
+            this.labelControl4.Size = new System.Drawing.Size(140, 19);
             this.labelControl4.TabIndex = 5;
             this.labelControl4.Text = "Cantidad Solicitada:";
             // 
@@ -230,16 +248,18 @@
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(33, 181);
+            this.labelControl5.Location = new System.Drawing.Point(28, 147);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(164, 24);
+            this.labelControl5.Size = new System.Drawing.Size(129, 19);
             this.labelControl5.TabIndex = 6;
             this.labelControl5.Text = "Cantidad a enviar:";
             // 
             // txtCardCode
             // 
             this.txtCardCode.Enabled = false;
-            this.txtCardCode.Location = new System.Drawing.Point(265, 70);
+            this.txtCardCode.Location = new System.Drawing.Point(227, 57);
+            this.txtCardCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCardCode.Name = "txtCardCode";
             this.txtCardCode.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCardCode.Properties.Appearance.Options.UseFont = true;
@@ -247,13 +267,14 @@
             this.txtCardCode.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.txtCardCode.Properties.AppearanceDisabled.Options.UseBackColor = true;
             this.txtCardCode.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.txtCardCode.Size = new System.Drawing.Size(100, 30);
+            this.txtCardCode.Size = new System.Drawing.Size(86, 26);
             this.txtCardCode.TabIndex = 7;
             // 
             // txtCardName
             // 
             this.txtCardName.Enabled = false;
-            this.txtCardName.Location = new System.Drawing.Point(371, 70);
+            this.txtCardName.Location = new System.Drawing.Point(318, 57);
+            this.txtCardName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCardName.Name = "txtCardName";
             this.txtCardName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCardName.Properties.Appearance.Options.UseFont = true;
@@ -261,13 +282,14 @@
             this.txtCardName.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.txtCardName.Properties.AppearanceDisabled.Options.UseBackColor = true;
             this.txtCardName.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.txtCardName.Size = new System.Drawing.Size(409, 30);
+            this.txtCardName.Size = new System.Drawing.Size(351, 26);
             this.txtCardName.TabIndex = 8;
             // 
             // txtItemName
             // 
             this.txtItemName.Enabled = false;
-            this.txtItemName.Location = new System.Drawing.Point(371, 106);
+            this.txtItemName.Location = new System.Drawing.Point(318, 86);
+            this.txtItemName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtItemName.Properties.Appearance.Options.UseFont = true;
@@ -275,13 +297,14 @@
             this.txtItemName.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.txtItemName.Properties.AppearanceDisabled.Options.UseBackColor = true;
             this.txtItemName.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.txtItemName.Size = new System.Drawing.Size(409, 30);
+            this.txtItemName.Size = new System.Drawing.Size(351, 26);
             this.txtItemName.TabIndex = 10;
             // 
             // txtItemCode
             // 
             this.txtItemCode.Enabled = false;
-            this.txtItemCode.Location = new System.Drawing.Point(265, 106);
+            this.txtItemCode.Location = new System.Drawing.Point(227, 86);
+            this.txtItemCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtItemCode.Name = "txtItemCode";
             this.txtItemCode.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtItemCode.Properties.Appearance.Options.UseFont = true;
@@ -289,13 +312,14 @@
             this.txtItemCode.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.txtItemCode.Properties.AppearanceDisabled.Options.UseBackColor = true;
             this.txtItemCode.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.txtItemCode.Size = new System.Drawing.Size(100, 30);
+            this.txtItemCode.Size = new System.Drawing.Size(86, 26);
             this.txtItemCode.TabIndex = 9;
             // 
             // txtcantidad
             // 
             this.txtcantidad.Enabled = false;
-            this.txtcantidad.Location = new System.Drawing.Point(265, 142);
+            this.txtcantidad.Location = new System.Drawing.Point(227, 115);
+            this.txtcantidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtcantidad.Name = "txtcantidad";
             this.txtcantidad.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcantidad.Properties.Appearance.Options.UseFont = true;
@@ -303,13 +327,14 @@
             this.txtcantidad.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.txtcantidad.Properties.AppearanceDisabled.Options.UseBackColor = true;
             this.txtcantidad.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.txtcantidad.Size = new System.Drawing.Size(515, 30);
+            this.txtcantidad.Size = new System.Drawing.Size(441, 26);
             this.txtcantidad.TabIndex = 11;
             // 
             // txtcantidadEnviar
             // 
             this.txtcantidadEnviar.Enabled = false;
-            this.txtcantidadEnviar.Location = new System.Drawing.Point(265, 179);
+            this.txtcantidadEnviar.Location = new System.Drawing.Point(227, 145);
+            this.txtcantidadEnviar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtcantidadEnviar.Name = "txtcantidadEnviar";
             this.txtcantidadEnviar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcantidadEnviar.Properties.Appearance.Options.UseFont = true;
@@ -317,7 +342,7 @@
             this.txtcantidadEnviar.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.txtcantidadEnviar.Properties.AppearanceDisabled.Options.UseBackColor = true;
             this.txtcantidadEnviar.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.txtcantidadEnviar.Size = new System.Drawing.Size(289, 30);
+            this.txtcantidadEnviar.Size = new System.Drawing.Size(248, 26);
             this.txtcantidadEnviar.TabIndex = 12;
             // 
             // btnAtras
@@ -330,10 +355,9 @@
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(654, 5);
-            this.btnAtras.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAtras.Location = new System.Drawing.Point(561, 4);
             this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(151, 56);
+            this.btnAtras.Size = new System.Drawing.Size(129, 46);
             this.btnAtras.TabIndex = 38;
             this.btnAtras.Text = "Atras";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
@@ -347,10 +371,9 @@
             this.btnguardado.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnguardado.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnguardado.ImageOptions.Image")));
             this.btnguardado.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnguardado.Location = new System.Drawing.Point(13, 8);
-            this.btnguardado.Margin = new System.Windows.Forms.Padding(4);
+            this.btnguardado.Location = new System.Drawing.Point(11, 6);
             this.btnguardado.Name = "btnguardado";
-            this.btnguardado.Size = new System.Drawing.Size(143, 55);
+            this.btnguardado.Size = new System.Drawing.Size(123, 45);
             this.btnguardado.TabIndex = 49;
             this.btnguardado.Text = "Guardar";
             this.btnguardado.Click += new System.EventHandler(this.btnguardado_Click);
@@ -365,17 +388,17 @@
             this.labelControl6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl6.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl6.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl6.Location = new System.Drawing.Point(177, 13);
-            this.labelControl6.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl6.Location = new System.Drawing.Point(152, 11);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(454, 49);
+            this.labelControl6.Size = new System.Drawing.Size(389, 40);
             this.labelControl6.TabIndex = 50;
             this.labelControl6.Text = "Orden de Carga";
             // 
             // txtboleta
             // 
             this.txtboleta.Enabled = false;
-            this.txtboleta.Location = new System.Drawing.Point(265, 223);
+            this.txtboleta.Location = new System.Drawing.Point(227, 181);
+            this.txtboleta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtboleta.Name = "txtboleta";
             this.txtboleta.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtboleta.Properties.Appearance.Options.UseFont = true;
@@ -383,7 +406,7 @@
             this.txtboleta.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.txtboleta.Properties.AppearanceDisabled.Options.UseBackColor = true;
             this.txtboleta.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.txtboleta.Size = new System.Drawing.Size(289, 30);
+            this.txtboleta.Size = new System.Drawing.Size(248, 26);
             this.txtboleta.TabIndex = 51;
             // 
             // btnboleta
@@ -395,10 +418,9 @@
             this.btnboleta.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnboleta.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnboleta.ImageOptions.Image")));
             this.btnboleta.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnboleta.Location = new System.Drawing.Point(574, 226);
-            this.btnboleta.Margin = new System.Windows.Forms.Padding(4);
+            this.btnboleta.Location = new System.Drawing.Point(492, 184);
             this.btnboleta.Name = "btnboleta";
-            this.btnboleta.Size = new System.Drawing.Size(206, 45);
+            this.btnboleta.Size = new System.Drawing.Size(177, 37);
             this.btnboleta.TabIndex = 52;
             this.btnboleta.Text = "Buscar ";
             this.btnboleta.Click += new System.EventHandler(this.btnboleta_Click);
@@ -412,19 +434,18 @@
             this.btnactualizar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnactualizar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnactualizar.ImageOptions.Image")));
             this.btnactualizar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnactualizar.Location = new System.Drawing.Point(574, 179);
-            this.btnactualizar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnactualizar.Location = new System.Drawing.Point(492, 145);
             this.btnactualizar.Name = "btnactualizar";
-            this.btnactualizar.Size = new System.Drawing.Size(206, 39);
+            this.btnactualizar.Size = new System.Drawing.Size(177, 32);
             this.btnactualizar.TabIndex = 53;
             this.btnactualizar.Text = "Actualizar";
             this.btnactualizar.Click += new System.EventHandler(this.btnactualizar_Click);
             // 
             // fromdespacho
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(815, 595);
+            this.ClientSize = new System.Drawing.Size(699, 483);
             this.Controls.Add(this.btnactualizar);
             this.Controls.Add(this.btnboleta);
             this.Controls.Add(this.txtboleta);
@@ -444,6 +465,7 @@
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.grd_lotes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "fromdespacho";
             this.Text = "fromdespacho";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

@@ -344,13 +344,7 @@ namespace LOSA
         private void cmdLotesCalidad_Click(object sender, EventArgs e)
         {
             frmLotesStatus frm = new frmLotesStatus(UsuarioLogeado);
-            //if (this.MdiParent != null)
-            //{
-                //frm.MdiParent = this.MdiParent;
-                frm.FormBorderStyle = FormBorderStyle.Sizable;
-                frm.ControlBox = true;
-                frm.Show();
-            //}
+            frm.Show();
         }
 
         private void btndespachos_Click(object sender, EventArgs e)
@@ -806,6 +800,12 @@ namespace LOSA
         private void simpleButton30_Click(object sender, EventArgs e)
         {
             frmReporteInventarioKardexGeneral frm = new frmReporteInventarioKardexGeneral();
+            frm.Show();
+        }
+
+        private void simpleButton31_Click(object sender, EventArgs e)
+        {
+            MantiniemintoCliente frm = new MantiniemintoCliente(UsuarioLogeado);
             frm.Show();
         }
     }

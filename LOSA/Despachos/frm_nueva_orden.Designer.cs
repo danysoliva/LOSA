@@ -70,6 +70,16 @@ namespace LOSA.Despachos
             this.txtvehiculo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.grd_destino = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnombre = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldireccion1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colciudad = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpais = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.clientedespachoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.grid_cardcode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds_despachos)).BeginInit();
@@ -87,6 +97,9 @@ namespace LOSA.Despachos
             ((System.ComponentModel.ISupportInitialize)(this.txtboleta.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtconductor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtvehiculo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_destino.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientedespachoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnNuevoOrdenCarga
@@ -147,6 +160,7 @@ namespace LOSA.Despachos
             this.grid_cardcode.Properties.ValueMember = "cardcode";
             this.grid_cardcode.Size = new System.Drawing.Size(365, 28);
             this.grid_cardcode.TabIndex = 41;
+            this.grid_cardcode.EditValueChanged += new System.EventHandler(this.grid_cardcode_EditValueChanged);
             // 
             // clientesBindingSource
             // 
@@ -219,14 +233,14 @@ namespace LOSA.Despachos
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_data.DataSource = this.lineasordencargaBindingSource;
-            this.grd_data.Location = new System.Drawing.Point(1, 231);
+            this.grd_data.Location = new System.Drawing.Point(1, 268);
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
             this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnclose,
             this.grd_productos,
             this.grd_presentacion});
-            this.grd_data.Size = new System.Drawing.Size(726, 328);
+            this.grd_data.Size = new System.Drawing.Size(726, 291);
             this.grd_data.TabIndex = 43;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
@@ -477,11 +491,123 @@ namespace LOSA.Despachos
             this.labelControl7.TabIndex = 64;
             this.labelControl7.Text = "Vehiculo:";
             // 
+            // grd_destino
+            // 
+            this.grd_destino.Enabled = false;
+            this.grd_destino.Location = new System.Drawing.Point(166, 226);
+            this.grd_destino.Name = "grd_destino";
+            this.grd_destino.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.grd_destino.Properties.Appearance.Options.UseFont = true;
+            this.grd_destino.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.grd_destino.Properties.DataSource = this.clientedespachoBindingSource;
+            this.grd_destino.Properties.DisplayMember = "nombre";
+            this.grd_destino.Properties.PopupView = this.gridView2;
+            this.grd_destino.Properties.ValueMember = "id";
+            this.grd_destino.Size = new System.Drawing.Size(442, 28);
+            this.grd_destino.TabIndex = 69;
+            // 
+            // gridView2
+            // 
+            this.gridView2.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI Light", 11.25F);
+            this.gridView2.Appearance.FooterPanel.Options.UseFont = true;
+            this.gridView2.Appearance.GroupFooter.Font = new System.Drawing.Font("Segoe UI Light", 11.25F);
+            this.gridView2.Appearance.GroupFooter.Options.UseFont = true;
+            this.gridView2.Appearance.GroupPanel.Font = new System.Drawing.Font("Segoe UI Light", 11.25F);
+            this.gridView2.Appearance.GroupPanel.Options.UseFont = true;
+            this.gridView2.Appearance.GroupRow.Font = new System.Drawing.Font("Segoe UI Light", 11.25F);
+            this.gridView2.Appearance.GroupRow.Options.UseFont = true;
+            this.gridView2.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView2.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView2.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI Light", 11.25F);
+            this.gridView2.Appearance.Preview.Options.UseFont = true;
+            this.gridView2.Appearance.Row.Font = new System.Drawing.Font("Segoe UI Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView2.Appearance.Row.Options.UseFont = true;
+            this.gridView2.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI Light", 11.25F);
+            this.gridView2.Appearance.TopNewRow.Options.UseFont = true;
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid1,
+            this.colcodigo,
+            this.colnombre,
+            this.coldireccion1,
+            this.colciudad,
+            this.colpais});
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView2.OptionsView.ShowAutoFilterRow = true;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
+            // colid1
+            // 
+            this.colid1.FieldName = "id";
+            this.colid1.Name = "colid1";
+            this.colid1.OptionsColumn.AllowEdit = false;
+            // 
+            // colcodigo
+            // 
+            this.colcodigo.Caption = "Codigo";
+            this.colcodigo.FieldName = "codigo";
+            this.colcodigo.Name = "colcodigo";
+            this.colcodigo.OptionsColumn.AllowEdit = false;
+            this.colcodigo.Visible = true;
+            this.colcodigo.VisibleIndex = 0;
+            // 
+            // colnombre
+            // 
+            this.colnombre.Caption = "Cliente";
+            this.colnombre.FieldName = "nombre";
+            this.colnombre.Name = "colnombre";
+            this.colnombre.OptionsColumn.AllowEdit = false;
+            this.colnombre.Visible = true;
+            this.colnombre.VisibleIndex = 1;
+            // 
+            // coldireccion1
+            // 
+            this.coldireccion1.FieldName = "direccion1";
+            this.coldireccion1.Name = "coldireccion1";
+            this.coldireccion1.OptionsColumn.AllowEdit = false;
+            // 
+            // colciudad
+            // 
+            this.colciudad.Caption = "Ciudad";
+            this.colciudad.FieldName = "ciudad";
+            this.colciudad.Name = "colciudad";
+            this.colciudad.OptionsColumn.AllowEdit = false;
+            this.colciudad.Visible = true;
+            this.colciudad.VisibleIndex = 2;
+            // 
+            // colpais
+            // 
+            this.colpais.Caption = "País";
+            this.colpais.FieldName = "pais";
+            this.colpais.Name = "colpais";
+            this.colpais.OptionsColumn.AllowEdit = false;
+            this.colpais.Visible = true;
+            this.colpais.VisibleIndex = 3;
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.Location = new System.Drawing.Point(50, 233);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(110, 21);
+            this.labelControl8.TabIndex = 68;
+            this.labelControl8.Text = "Cliente Promix:";
+            // 
+            // clientedespachoBindingSource
+            // 
+            this.clientedespachoBindingSource.DataMember = "cliente_despacho";
+            this.clientedespachoBindingSource.DataSource = this.ds_despachos;
+            // 
             // frm_nueva_orden
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(729, 560);
+            this.Controls.Add(this.grd_destino);
+            this.Controls.Add(this.labelControl8);
             this.Controls.Add(this.txtconductor);
             this.Controls.Add(this.txtvehiculo);
             this.Controls.Add(this.labelControl6);
@@ -517,6 +643,9 @@ namespace LOSA.Despachos
             ((System.ComponentModel.ISupportInitialize)(this.txtboleta.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtconductor.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtvehiculo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_destino.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientedespachoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -558,5 +687,15 @@ namespace LOSA.Despachos
         private DevExpress.XtraEditors.TextEdit txtvehiculo;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.GridLookUpEdit grd_destino;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Columns.GridColumn colid1;
+        private DevExpress.XtraGrid.Columns.GridColumn colcodigo;
+        private DevExpress.XtraGrid.Columns.GridColumn colnombre;
+        private DevExpress.XtraGrid.Columns.GridColumn coldireccion1;
+        private DevExpress.XtraGrid.Columns.GridColumn colciudad;
+        private DevExpress.XtraGrid.Columns.GridColumn colpais;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
+        private System.Windows.Forms.BindingSource clientedespachoBindingSource;
     }
 }

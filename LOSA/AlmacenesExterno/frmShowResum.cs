@@ -113,7 +113,7 @@ namespace LOSA.AlmacenesExterno
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_externo", id_externo);
                 cmd.Parameters.AddWithValue("@id_user", UsuarioLogeado.Id);
-                int id_inserted = Convert.ToInt32(cmd.ExecuteReader());
+                int id_inserted = Convert.ToInt32(cmd.ExecuteScalar());
                 var gridView = (GridView)grd_data.FocusedView;
                 var row = (dsAlmacenesExternos.detalle_salidaRow)gridView.GetFocusedDataRow();
                 foreach (dsAlmacenesExternos.detalle_salidaRow detalleLote in dsAlmacenesExternos.detalle_salida.Rows)
@@ -132,10 +132,11 @@ namespace LOSA.AlmacenesExterno
 
                 }
 
-                query = @"sp_set_up_traslado_detalle";
+                query = @"sp_set_close_traslado_of_ingreso";
                 cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_externo", id_externo);
+                cmd.Parameters.AddWithValue("@id_traslado", id_inserted);
                 cmd.ExecuteNonQuery();
                 cn.Close();
 

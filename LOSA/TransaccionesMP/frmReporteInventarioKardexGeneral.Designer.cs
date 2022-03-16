@@ -51,7 +51,10 @@ namespace LOSA.TransaccionesMP
             this.colexistencia1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcode_sap = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.colfecha_ingreso = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnumero_transaccion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcproveedor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colproveedor = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
@@ -95,7 +98,7 @@ namespace LOSA.TransaccionesMP
             this.tabNavigationPage1,
             this.tabNavigationPage2});
             this.tabPane1.RegularSize = new System.Drawing.Size(1362, 682);
-            this.tabPane1.SelectedPage = this.tabNavigationPage1;
+            this.tabPane1.SelectedPage = this.tabNavigationPage2;
             this.tabPane1.Size = new System.Drawing.Size(1362, 682);
             this.tabPane1.TabIndex = 1;
             this.tabPane1.Text = "tabPane1";
@@ -154,7 +157,11 @@ namespace LOSA.TransaccionesMP
             this.colfecha_produccion,
             this.colid_mp,
             this.collote,
-            this.coldias});
+            this.coldias,
+            this.colfecha_ingreso,
+            this.colnumero_transaccion,
+            this.colcproveedor,
+            this.colproveedor});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
@@ -172,8 +179,8 @@ namespace LOSA.TransaccionesMP
             this.colexistencia.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia", "{0:0.##.##} Kg.")});
             this.colexistencia.Visible = true;
-            this.colexistencia.VisibleIndex = 5;
-            this.colexistencia.Width = 217;
+            this.colexistencia.VisibleIndex = 8;
+            this.colexistencia.Width = 152;
             // 
             // colnombre_comercial
             // 
@@ -183,7 +190,7 @@ namespace LOSA.TransaccionesMP
             this.colnombre_comercial.OptionsColumn.AllowEdit = false;
             this.colnombre_comercial.Visible = true;
             this.colnombre_comercial.VisibleIndex = 0;
-            this.colnombre_comercial.Width = 275;
+            this.colnombre_comercial.Width = 235;
             // 
             // colfecha_vence
             // 
@@ -192,8 +199,8 @@ namespace LOSA.TransaccionesMP
             this.colfecha_vence.Name = "colfecha_vence";
             this.colfecha_vence.OptionsColumn.AllowEdit = false;
             this.colfecha_vence.Visible = true;
-            this.colfecha_vence.VisibleIndex = 3;
-            this.colfecha_vence.Width = 213;
+            this.colfecha_vence.VisibleIndex = 6;
+            this.colfecha_vence.Width = 141;
             // 
             // colfecha_produccion
             // 
@@ -202,8 +209,8 @@ namespace LOSA.TransaccionesMP
             this.colfecha_produccion.Name = "colfecha_produccion";
             this.colfecha_produccion.OptionsColumn.AllowEdit = false;
             this.colfecha_produccion.Visible = true;
-            this.colfecha_produccion.VisibleIndex = 2;
-            this.colfecha_produccion.Width = 213;
+            this.colfecha_produccion.VisibleIndex = 5;
+            this.colfecha_produccion.Width = 141;
             // 
             // colid_mp
             // 
@@ -218,8 +225,8 @@ namespace LOSA.TransaccionesMP
             this.collote.Name = "collote";
             this.collote.OptionsColumn.AllowEdit = false;
             this.collote.Visible = true;
-            this.collote.VisibleIndex = 1;
-            this.collote.Width = 213;
+            this.collote.VisibleIndex = 4;
+            this.collote.Width = 141;
             // 
             // coldias
             // 
@@ -228,8 +235,8 @@ namespace LOSA.TransaccionesMP
             this.coldias.Name = "coldias";
             this.coldias.OptionsColumn.AllowEdit = false;
             this.coldias.Visible = true;
-            this.coldias.VisibleIndex = 4;
-            this.coldias.Width = 213;
+            this.coldias.VisibleIndex = 7;
+            this.coldias.Width = 141;
             // 
             // tabNavigationPage2
             // 
@@ -332,25 +339,47 @@ namespace LOSA.TransaccionesMP
             this.colcode_sap.VisibleIndex = 0;
             this.colcode_sap.Width = 134;
             // 
-            // simpleButton1
+            // colfecha_ingreso
             // 
-            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(1132, 6);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(114, 56);
-            this.simpleButton1.TabIndex = 2;
-            this.simpleButton1.Text = "Exportar";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.colfecha_ingreso.Caption = "F Ingreso";
+            this.colfecha_ingreso.FieldName = "fecha_ingreso";
+            this.colfecha_ingreso.Name = "colfecha_ingreso";
+            this.colfecha_ingreso.OptionsColumn.AllowEdit = false;
+            this.colfecha_ingreso.Visible = true;
+            this.colfecha_ingreso.VisibleIndex = 1;
+            this.colfecha_ingreso.Width = 64;
+            // 
+            // colnumero_transaccion
+            // 
+            this.colnumero_transaccion.Caption = "N Ingreso";
+            this.colnumero_transaccion.FieldName = "numero_transaccion";
+            this.colnumero_transaccion.Name = "colnumero_transaccion";
+            this.colnumero_transaccion.OptionsColumn.AllowEdit = false;
+            this.colnumero_transaccion.Visible = true;
+            this.colnumero_transaccion.VisibleIndex = 3;
+            this.colnumero_transaccion.Width = 120;
+            // 
+            // colcproveedor
+            // 
+            this.colcproveedor.FieldName = "cproveedor";
+            this.colcproveedor.Name = "colcproveedor";
+            this.colcproveedor.OptionsColumn.AllowEdit = false;
+            // 
+            // colproveedor
+            // 
+            this.colproveedor.Caption = "Proveedor";
+            this.colproveedor.FieldName = "proveedor";
+            this.colproveedor.Name = "colproveedor";
+            this.colproveedor.OptionsColumn.AllowEdit = false;
+            this.colproveedor.Visible = true;
+            this.colproveedor.VisibleIndex = 2;
+            this.colproveedor.Width = 209;
             // 
             // frmReporteInventarioKardexGeneral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 758);
-            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.tabPane1);
             this.Controls.Add(this.btnClose);
             this.Name = "frmReporteInventarioKardexGeneral";
@@ -392,6 +421,9 @@ namespace LOSA.TransaccionesMP
         private DevExpress.XtraGrid.Columns.GridColumn colexistencia1;
         private DevExpress.XtraGrid.Columns.GridColumn colcodigo;
         private DevExpress.XtraGrid.Columns.GridColumn colcode_sap;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecha_ingreso;
+        private DevExpress.XtraGrid.Columns.GridColumn colnumero_transaccion;
+        private DevExpress.XtraGrid.Columns.GridColumn colcproveedor;
+        private DevExpress.XtraGrid.Columns.GridColumn colproveedor;
     }
 }
