@@ -69,5 +69,31 @@ namespace LOSA.TransaccionesMP
         {
             this.Close();
         }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            if (tabPane1.SelectedPageIndex == 0)
+            {//Resumen por lote
+                SaveFileDialog dialog = new SaveFileDialog();
+                dialog.Filter = "Excel File (.xlsx)|*.xlsx";
+                dialog.FilterIndex = 0;
+
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    grd_data.ExportToXlsx(dialog.FileName);
+                }
+            }
+            else
+            {//Totales
+                SaveFileDialog dialog = new SaveFileDialog();
+                dialog.Filter = "Excel File (.xlsx)|*.xlsx";
+                dialog.FilterIndex = 0;
+
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    grd_data_resumen.ExportToXlsx(dialog.FileName);
+                }
+            }
+        }
     }
 }

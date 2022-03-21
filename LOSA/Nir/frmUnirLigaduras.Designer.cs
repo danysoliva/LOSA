@@ -67,6 +67,7 @@ namespace LOSA.Nir
             this.colEliminar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnDesvincular = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btnUnir = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAllDesvincular = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtodoo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtsap.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtmp.Properties)).BeginInit();
@@ -428,11 +429,25 @@ namespace LOSA.Nir
             this.btnUnir.Text = "Seleccionar Lectura";
             this.btnUnir.Click += new System.EventHandler(this.btnUnir_Click);
             // 
+            // btnAllDesvincular
+            // 
+            this.btnAllDesvincular.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAllDesvincular.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.btnAllDesvincular.Appearance.Options.UseFont = true;
+            this.btnAllDesvincular.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAllDesvincular.ImageOptions.Image")));
+            this.btnAllDesvincular.Location = new System.Drawing.Point(603, 216);
+            this.btnAllDesvincular.Name = "btnAllDesvincular";
+            this.btnAllDesvincular.Size = new System.Drawing.Size(179, 48);
+            this.btnAllDesvincular.TabIndex = 22;
+            this.btnAllDesvincular.Text = "Desvincular Todas";
+            this.btnAllDesvincular.Click += new System.EventHandler(this.btnAllDesvincular_Click);
+            // 
             // frmUnirLigaduras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1001, 631);
+            this.Controls.Add(this.btnAllDesvincular);
             this.Controls.Add(this.btnUnir);
             this.Controls.Add(this.grd_lecturas);
             this.Controls.Add(this.txtingreso);
@@ -498,5 +513,6 @@ namespace LOSA.Nir
         private DevExpress.XtraGrid.Columns.GridColumn colactivo;
         private DevExpress.XtraGrid.Columns.GridColumn colEliminar;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnDesvincular;
+        private DevExpress.XtraEditors.SimpleButton btnAllDesvincular;
     }
 }

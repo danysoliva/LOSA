@@ -124,5 +124,34 @@ namespace LOSA.Nir
                 }
            
         }
+
+        private void btnAllDesvincular_Click(object sender, EventArgs e)
+        {
+            if (CajaDialogo.Pregunta("Deseas disvincular todas las lectura?") == DialogResult.Yes)
+            {
+                try
+                {
+                        string query = @"sp_delete_link_ingreso_lectura_nir";
+                        SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                        cn.Open();
+
+                    foreach (dsNir.lecturas_ingresoRow row in dsNir.lecturas_ingreso.Rows)
+                    {
+                       
+                        SqlCommand cmd = new SqlCommand(query, cn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@id_lectura", row.id);
+                        cmd.ExecuteNonQuery();
+                        
+                    }
+                        cn.Close();
+                    load_Data();
+                }
+                catch (Exception ex)
+                {
+                    CajaDialogo.Error(ex.Message);
+                }
+            }
+        }
     }
 }

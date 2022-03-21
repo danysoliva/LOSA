@@ -3344,6 +3344,8 @@ namespace LOSA.Logistica {
             
             private global::System.Data.DataColumn columnproducto;
             
+            private global::System.Data.DataColumn columnid_presentacion;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public PT_ReprocesoDataTable() {
@@ -3451,6 +3453,14 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_presentacionColumn {
+                get {
+                    return this.columnid_presentacion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3486,7 +3496,7 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PT_ReprocesoRow AddPT_ReprocesoRow(int id, int id_tarima, decimal cantidad_in, decimal peso_in, bool seleccionar, string codigo_barra, System.DateTime fecha_reg, string lote_producto_termiado, string producto) {
+            public PT_ReprocesoRow AddPT_ReprocesoRow(int id, int id_tarima, decimal cantidad_in, decimal peso_in, bool seleccionar, string codigo_barra, System.DateTime fecha_reg, string lote_producto_termiado, string producto, int id_presentacion) {
                 PT_ReprocesoRow rowPT_ReprocesoRow = ((PT_ReprocesoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -3497,7 +3507,8 @@ namespace LOSA.Logistica {
                         codigo_barra,
                         fecha_reg,
                         lote_producto_termiado,
-                        producto};
+                        producto,
+                        id_presentacion};
                 rowPT_ReprocesoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPT_ReprocesoRow);
                 return rowPT_ReprocesoRow;
@@ -3529,6 +3540,7 @@ namespace LOSA.Logistica {
                 this.columnfecha_reg = base.Columns["fecha_reg"];
                 this.columnlote_producto_termiado = base.Columns["lote_producto_termiado"];
                 this.columnproducto = base.Columns["producto"];
+                this.columnid_presentacion = base.Columns["id_presentacion"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3552,6 +3564,8 @@ namespace LOSA.Logistica {
                 base.Columns.Add(this.columnlote_producto_termiado);
                 this.columnproducto = new global::System.Data.DataColumn("producto", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnproducto);
+                this.columnid_presentacion = new global::System.Data.DataColumn("id_presentacion", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_presentacion);
                 this.columnseleccionar.DefaultValue = ((bool)(false));
             }
             
@@ -8959,6 +8973,22 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_presentacion {
+                get {
+                    try {
+                        return ((int)(this[this.tablePT_Reproceso.id_presentacionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_presentacion\' de la tabla \'PT_Reproceso\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePT_Reproceso.id_presentacionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tablePT_Reproceso.idColumn);
             }
@@ -9063,6 +9093,18 @@ namespace LOSA.Logistica {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetproductoNull() {
                 this[this.tablePT_Reproceso.productoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_presentacionNull() {
+                return this.IsNull(this.tablePT_Reproceso.id_presentacionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_presentacionNull() {
+                this[this.tablePT_Reproceso.id_presentacionColumn] = global::System.Convert.DBNull;
             }
         }
         
