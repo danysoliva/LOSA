@@ -808,5 +808,10 @@ namespace LOSA
             MantiniemintoCliente frm = new MantiniemintoCliente(UsuarioLogeado);
             frm.Show();
         }
+
+        private void tabPT_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
