@@ -12,7 +12,7 @@
         {
         }
 
-        partial class SeleecionLoteDataTable
+        partial class SeleccionLoteDataTable
         {
         }
 

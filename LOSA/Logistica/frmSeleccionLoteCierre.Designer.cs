@@ -38,8 +38,8 @@ namespace LOSA.Logistica
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.chauto = new DevExpress.XtraEditors.CheckEdit();
             this.grd_existencia_lote = new DevExpress.XtraGrid.GridControl();
-            this.seleecionLoteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsCierreMes = new LOSA.Logistica.dsCierreMes();
             this.grdv_existencia_lote = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid_mp = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -93,8 +93,8 @@ namespace LOSA.Logistica
             this.panelControl6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chauto.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_existencia_lote)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.seleecionLoteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCierreMes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_existencia_lote)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
@@ -187,6 +187,7 @@ namespace LOSA.Logistica
             // 
             this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.groupControl2.AppearanceCaption.Options.UseFont = true;
+            this.groupControl2.Controls.Add(this.chauto);
             this.groupControl2.Controls.Add(this.grd_existencia_lote);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(2, 2);
@@ -195,12 +196,24 @@ namespace LOSA.Logistica
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "Existencia de lotes";
             // 
+            // chauto
+            // 
+            this.chauto.Location = new System.Drawing.Point(6, 43);
+            this.chauto.Name = "chauto";
+            this.chauto.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chauto.Properties.Appearance.Options.UseFont = true;
+            this.chauto.Properties.Caption = "Auto Seleccionar Lotes";
+            this.chauto.Size = new System.Drawing.Size(182, 21);
+            this.chauto.TabIndex = 1;
+            this.chauto.CheckedChanged += new System.EventHandler(this.chauto_CheckedChanged);
+            // 
             // grd_existencia_lote
             // 
             this.grd_existencia_lote.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grd_existencia_lote.DataSource = this.seleecionLoteBindingSource;
+            this.grd_existencia_lote.DataMember = "SeleccionLote";
+            this.grd_existencia_lote.DataSource = this.dsCierreMes;
             this.grd_existencia_lote.Location = new System.Drawing.Point(6, 70);
             this.grd_existencia_lote.MainView = this.grdv_existencia_lote;
             this.grd_existencia_lote.Name = "grd_existencia_lote";
@@ -208,11 +221,6 @@ namespace LOSA.Logistica
             this.grd_existencia_lote.TabIndex = 0;
             this.grd_existencia_lote.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_existencia_lote});
-            // 
-            // seleecionLoteBindingSource
-            // 
-            this.seleecionLoteBindingSource.DataMember = "SeleecionLote";
-            this.seleecionLoteBindingSource.DataSource = this.dsCierreMes;
             // 
             // dsCierreMes
             // 
@@ -285,7 +293,7 @@ namespace LOSA.Logistica
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ExistenciaAprox", "{0:#.##}")});
             this.colExistenciaAprox.Visible = true;
             this.colExistenciaAprox.VisibleIndex = 2;
-            this.colExistenciaAprox.Width = 110;
+            this.colExistenciaAprox.Width = 96;
             // 
             // collote
             // 
@@ -306,7 +314,7 @@ namespace LOSA.Logistica
             this.colseleccionar.Name = "colseleccionar";
             this.colseleccionar.Visible = true;
             this.colseleccionar.VisibleIndex = 4;
-            this.colseleccionar.Width = 91;
+            this.colseleccionar.Width = 99;
             // 
             // colutilizado
             // 
@@ -316,7 +324,7 @@ namespace LOSA.Logistica
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "utilizado", "{0:#.##}")});
             this.colutilizado.Visible = true;
             this.colutilizado.VisibleIndex = 3;
-            this.colutilizado.Width = 71;
+            this.colutilizado.Width = 77;
             // 
             // panelControl5
             // 
@@ -718,8 +726,8 @@ namespace LOSA.Logistica
             this.panelControl6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chauto.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_existencia_lote)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.seleecionLoteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCierreMes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_existencia_lote)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
@@ -777,7 +785,6 @@ namespace LOSA.Logistica
         private dsCierreMes dsCierreMes;
         private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit1View;
         private DevExpress.XtraGrid.Columns.GridColumn colSeleccionado;
-        private System.Windows.Forms.BindingSource seleecionLoteBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn colid_mp;
         private DevExpress.XtraGrid.Columns.GridColumn coldescripcion;
         private DevExpress.XtraGrid.Columns.GridColumn colExistenciaAprox;
@@ -797,5 +804,6 @@ namespace LOSA.Logistica
         private DevExpress.XtraGrid.Columns.GridColumn colid_lote_count;
         private DevExpress.XtraGrid.Columns.GridColumn count_id;
         private DevExpress.XtraEditors.SimpleButton btnConfirmar;
+        private DevExpress.XtraEditors.CheckEdit chauto;
     }
 }

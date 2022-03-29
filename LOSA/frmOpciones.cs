@@ -813,5 +813,27 @@ namespace LOSA
         {
 
         }
+
+        private void simpleButton32_Click(object sender, EventArgs e)
+        {
+            xfrmPT_Reproceso frm = new xfrmPT_Reproceso(UsuarioLogeado);
+
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+        private void simpleButton33_Click(object sender, EventArgs e)
+        {
+            xfrmIngresosMP_Reproceso frm = new xfrmIngresosMP_Reproceso(UsuarioLogeado);
+
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
     }
 }

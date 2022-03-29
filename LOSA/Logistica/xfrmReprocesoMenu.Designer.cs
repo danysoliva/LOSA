@@ -50,6 +50,7 @@ namespace LOSA.Logistica
             this.simpleButton18.Size = new System.Drawing.Size(199, 43);
             this.simpleButton18.TabIndex = 42;
             this.simpleButton18.Text = "Producto Terminado (Reproceso)";
+            this.simpleButton18.Visible = false;
             this.simpleButton18.Click += new System.EventHandler(this.simpleButton18_Click);
             // 
             // simpleButton1

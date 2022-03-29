@@ -225,7 +225,7 @@ namespace LOSA.Logistica
                 setIngreso.especie = Convert.ToInt32(rdespecie.EditValue);
                 cmd3.Parameters.AddWithValue("@numero_transaccion",setIngreso.numero_referencia);
                 cmd3.Parameters.AddWithValue("@id_usuario", userLogin.Id);
-                cmd3.Parameters.AddWithValue("@fecha_ingreso", userLogin.Id);
+                cmd3.Parameters.AddWithValue("@id_especie", setIngreso.especie);
                 int id_header = Convert.ToInt32(cmd3.ExecuteScalar());
                 int id_lote = 0;
                 foreach (var Lote in Lotes)
