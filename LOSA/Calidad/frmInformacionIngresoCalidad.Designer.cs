@@ -2182,6 +2182,7 @@ namespace LOSA.Calidad
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(1331, 546);
             this.panelControl4.TabIndex = 84;
+            this.panelControl4.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl4_Paint);
             // 
             // rdTranporte3
             // 

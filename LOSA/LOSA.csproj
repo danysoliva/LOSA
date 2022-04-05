@@ -658,6 +658,44 @@
     </Compile>
     <Compile Include="Calidad\Model\Lote_Ingreso_Conf_Calidad.cs" />
     <Compile Include="Calidad\NoConformidad.cs" />
+    <Compile Include="Calidad\Parametros\dsParametros.cs">
+      <DependentUpon>dsParametros.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\Parametros\dsParametros.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsParametros.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\Parametros\frmConfiguracionPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\Parametros\frmConfiguracionPT.Designer.cs">
+      <DependentUpon>frmConfiguracionPT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\Parametros\frmcrudParametros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\Parametros\frmcrudParametros.Designer.cs">
+      <DependentUpon>frmcrudParametros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\Parametros\frmOpParametros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\Parametros\frmOpParametros.Designer.cs">
+      <DependentUpon>frmOpParametros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\Parametros\frmParametrosProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\Parametros\frmParametrosProducto.Designer.cs">
+      <DependentUpon>frmParametrosProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\Parametros\frmPickParametrs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\Parametros\frmPickParametrs.Designer.cs">
+      <DependentUpon>frmPickParametrs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\xfrmWizardConfCalidad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1495,6 +1533,17 @@
     </None>
     <None Include="Calidad\dsMantenimientoC.xss">
       <DependentUpon>dsMantenimientoC.xsd</DependentUpon>
+    </None>
+    <None Include="Calidad\Parametros\dsParametros.xsc">
+      <DependentUpon>dsParametros.xsd</DependentUpon>
+    </None>
+    <None Include="Calidad\Parametros\dsParametros.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsParametros.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Calidad\Parametros\dsParametros.xss">
+      <DependentUpon>dsParametros.xsd</DependentUpon>
     </None>
     <None Include="Despachos\Reportes\dsReporte.xsc">
       <DependentUpon>dsReporte.xsd</DependentUpon>
@@ -2714,6 +2763,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\GestionLotesMP\frmSelectCausaRechazo.resx">
       <DependentUpon>frmSelectCausaRechazo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\Parametros\frmConfiguracionPT.resx">
+      <DependentUpon>frmConfiguracionPT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\Parametros\frmcrudParametros.resx">
+      <DependentUpon>frmcrudParametros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\Parametros\frmOpParametros.resx">
+      <DependentUpon>frmOpParametros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\Parametros\frmParametrosProducto.resx">
+      <DependentUpon>frmParametrosProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\Parametros\frmPickParametrs.resx">
+      <DependentUpon>frmPickParametrs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\xfrmWizardConfCalidad.resx">
       <DependentUpon>xfrmWizardConfCalidad.cs</DependentUpon>

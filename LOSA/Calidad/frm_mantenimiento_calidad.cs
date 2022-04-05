@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using ACS.Classes;
 using LOSA.Clases;
-
+using LOSA.Calidad.Parametros;
 
 namespace LOSA.Calidad
 {
@@ -99,6 +99,18 @@ namespace LOSA.Calidad
         private void btnconfiguracionCal_Click(object sender, EventArgs e)
         {
             frmcalidadcausas frm = new frmcalidadcausas();
+            frm.Show();
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            frmcrudParametros frm = new frmcrudParametros();
+            frm.Show();
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            frmConfiguracionPT frm = new frmConfiguracionPT();
             frm.Show();
         }
     }

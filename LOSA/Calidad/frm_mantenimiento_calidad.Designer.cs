@@ -43,6 +43,8 @@ namespace LOSA.Calidad
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.ManteIngresos = new DevExpress.XtraEditors.SimpleButton();
             this.btnconfiguracionCal = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
             // 
             // labelControl3
@@ -54,9 +56,10 @@ namespace LOSA.Calidad
             this.labelControl3.Appearance.Options.UseTextOptions = true;
             this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl3.Location = new System.Drawing.Point(148, 15);
+            this.labelControl3.Location = new System.Drawing.Point(173, 18);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(372, 39);
+            this.labelControl3.Size = new System.Drawing.Size(434, 48);
             this.labelControl3.TabIndex = 35;
             this.labelControl3.Text = "Mantenimiento";
             // 
@@ -66,9 +69,10 @@ namespace LOSA.Calidad
             this.btnConfiguracionMP.Appearance.Options.UseFont = true;
             this.btnConfiguracionMP.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnConfiguracionMP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnConfiguracionMP.ImageOptions.Image")));
-            this.btnConfiguracionMP.Location = new System.Drawing.Point(249, 214);
+            this.btnConfiguracionMP.Location = new System.Drawing.Point(290, 263);
+            this.btnConfiguracionMP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnConfiguracionMP.Name = "btnConfiguracionMP";
-            this.btnConfiguracionMP.Size = new System.Drawing.Size(231, 55);
+            this.btnConfiguracionMP.Size = new System.Drawing.Size(269, 68);
             this.btnConfiguracionMP.TabIndex = 36;
             this.btnConfiguracionMP.Text = "Configuracion MP \r\nIngreso";
             this.btnConfiguracionMP.Click += new System.EventHandler(this.btnConfiguracionMP_Click);
@@ -82,9 +86,10 @@ namespace LOSA.Calidad
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.cmdHome.Location = new System.Drawing.Point(448, 8);
+            this.cmdHome.Location = new System.Drawing.Point(523, 10);
+            this.cmdHome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmdHome.Name = "cmdHome";
-            this.cmdHome.Size = new System.Drawing.Size(199, 54);
+            this.cmdHome.Size = new System.Drawing.Size(232, 66);
             this.cmdHome.TabIndex = 7;
             this.cmdHome.Text = "Cerrar";
             this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
@@ -95,9 +100,10 @@ namespace LOSA.Calidad
             this.frmTipo.Appearance.Options.UseFont = true;
             this.frmTipo.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.frmTipo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("frmTipo.ImageOptions.Image")));
-            this.frmTipo.Location = new System.Drawing.Point(249, 153);
+            this.frmTipo.Location = new System.Drawing.Point(290, 188);
+            this.frmTipo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.frmTipo.Name = "frmTipo";
-            this.frmTipo.Size = new System.Drawing.Size(231, 55);
+            this.frmTipo.Size = new System.Drawing.Size(269, 68);
             this.frmTipo.TabIndex = 28;
             this.frmTipo.Text = "Tipo";
             this.frmTipo.Click += new System.EventHandler(this.frmTipo_Click);
@@ -108,9 +114,10 @@ namespace LOSA.Calidad
             this.simpleButton7.Appearance.Options.UseFont = true;
             this.simpleButton7.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton7.ImageOptions.Image")));
-            this.simpleButton7.Location = new System.Drawing.Point(249, 92);
+            this.simpleButton7.Location = new System.Drawing.Point(290, 113);
+            this.simpleButton7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.simpleButton7.Name = "simpleButton7";
-            this.simpleButton7.Size = new System.Drawing.Size(231, 55);
+            this.simpleButton7.Size = new System.Drawing.Size(269, 68);
             this.simpleButton7.TabIndex = 27;
             this.simpleButton7.Text = "Pais de Origen";
             this.simpleButton7.Click += new System.EventHandler(this.simpleButton7_Click);
@@ -121,9 +128,10 @@ namespace LOSA.Calidad
             this.simpleButton6.Appearance.Options.UseFont = true;
             this.simpleButton6.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton6.ImageOptions.Image")));
-            this.simpleButton6.Location = new System.Drawing.Point(12, 458);
+            this.simpleButton6.Location = new System.Drawing.Point(14, 564);
+            this.simpleButton6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.simpleButton6.Name = "simpleButton6";
-            this.simpleButton6.Size = new System.Drawing.Size(231, 55);
+            this.simpleButton6.Size = new System.Drawing.Size(269, 68);
             this.simpleButton6.TabIndex = 26;
             this.simpleButton6.Text = "Zona de Pesca";
             this.simpleButton6.Click += new System.EventHandler(this.simpleButton6_Click);
@@ -134,9 +142,10 @@ namespace LOSA.Calidad
             this.btnOrigenEspecie.Appearance.Options.UseFont = true;
             this.btnOrigenEspecie.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnOrigenEspecie.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOrigenEspecie.ImageOptions.Image")));
-            this.btnOrigenEspecie.Location = new System.Drawing.Point(12, 397);
+            this.btnOrigenEspecie.Location = new System.Drawing.Point(14, 489);
+            this.btnOrigenEspecie.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnOrigenEspecie.Name = "btnOrigenEspecie";
-            this.btnOrigenEspecie.Size = new System.Drawing.Size(231, 55);
+            this.btnOrigenEspecie.Size = new System.Drawing.Size(269, 68);
             this.btnOrigenEspecie.TabIndex = 25;
             this.btnOrigenEspecie.Text = "Origen especie";
             this.btnOrigenEspecie.Click += new System.EventHandler(this.btnOrigenEspecie_Click);
@@ -147,9 +156,10 @@ namespace LOSA.Calidad
             this.btnplaga.Appearance.Options.UseFont = true;
             this.btnplaga.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnplaga.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnplaga.ImageOptions.Image")));
-            this.btnplaga.Location = new System.Drawing.Point(12, 336);
+            this.btnplaga.Location = new System.Drawing.Point(14, 414);
+            this.btnplaga.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnplaga.Name = "btnplaga";
-            this.btnplaga.Size = new System.Drawing.Size(231, 55);
+            this.btnplaga.Size = new System.Drawing.Size(269, 68);
             this.btnplaga.TabIndex = 24;
             this.btnplaga.Text = "Insectos/Plaga";
             this.btnplaga.Click += new System.EventHandler(this.btnplaga_Click);
@@ -160,9 +170,10 @@ namespace LOSA.Calidad
             this.btngrumos.Appearance.Options.UseFont = true;
             this.btngrumos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btngrumos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btngrumos.ImageOptions.Image")));
-            this.btngrumos.Location = new System.Drawing.Point(12, 275);
+            this.btngrumos.Location = new System.Drawing.Point(14, 338);
+            this.btngrumos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btngrumos.Name = "btngrumos";
-            this.btngrumos.Size = new System.Drawing.Size(231, 55);
+            this.btngrumos.Size = new System.Drawing.Size(269, 68);
             this.btngrumos.TabIndex = 23;
             this.btngrumos.Text = "Grumos";
             this.btngrumos.Click += new System.EventHandler(this.btngrumos_Click);
@@ -173,9 +184,10 @@ namespace LOSA.Calidad
             this.btntextura.Appearance.Options.UseFont = true;
             this.btntextura.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btntextura.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btntextura.ImageOptions.Image")));
-            this.btntextura.Location = new System.Drawing.Point(12, 214);
+            this.btntextura.Location = new System.Drawing.Point(14, 263);
+            this.btntextura.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btntextura.Name = "btntextura";
-            this.btntextura.Size = new System.Drawing.Size(231, 55);
+            this.btntextura.Size = new System.Drawing.Size(269, 68);
             this.btntextura.TabIndex = 22;
             this.btntextura.Text = "Textura";
             this.btntextura.Click += new System.EventHandler(this.btntextura_Click);
@@ -186,9 +198,10 @@ namespace LOSA.Calidad
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(12, 153);
+            this.simpleButton1.Location = new System.Drawing.Point(14, 188);
+            this.simpleButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(231, 55);
+            this.simpleButton1.Size = new System.Drawing.Size(269, 68);
             this.simpleButton1.TabIndex = 21;
             this.simpleButton1.Text = "Color";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -199,9 +212,10 @@ namespace LOSA.Calidad
             this.ManteIngresos.Appearance.Options.UseFont = true;
             this.ManteIngresos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.ManteIngresos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ManteIngresos.ImageOptions.Image")));
-            this.ManteIngresos.Location = new System.Drawing.Point(12, 92);
+            this.ManteIngresos.Location = new System.Drawing.Point(14, 113);
+            this.ManteIngresos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ManteIngresos.Name = "ManteIngresos";
-            this.ManteIngresos.Size = new System.Drawing.Size(231, 55);
+            this.ManteIngresos.Size = new System.Drawing.Size(269, 68);
             this.ManteIngresos.TabIndex = 20;
             this.ManteIngresos.Text = "Olor";
             this.ManteIngresos.Click += new System.EventHandler(this.ManteIngresos_Click);
@@ -212,18 +226,49 @@ namespace LOSA.Calidad
             this.btnconfiguracionCal.Appearance.Options.UseFont = true;
             this.btnconfiguracionCal.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnconfiguracionCal.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnconfiguracionCal.ImageOptions.Image")));
-            this.btnconfiguracionCal.Location = new System.Drawing.Point(249, 275);
+            this.btnconfiguracionCal.Location = new System.Drawing.Point(290, 338);
+            this.btnconfiguracionCal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnconfiguracionCal.Name = "btnconfiguracionCal";
-            this.btnconfiguracionCal.Size = new System.Drawing.Size(231, 55);
+            this.btnconfiguracionCal.Size = new System.Drawing.Size(269, 68);
             this.btnconfiguracionCal.TabIndex = 37;
             this.btnconfiguracionCal.Text = "Configuracion";
             this.btnconfiguracionCal.Click += new System.EventHandler(this.btnconfiguracionCal_Click);
             // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton2.Appearance.Options.UseFont = true;
+            this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.simpleButton2.Location = new System.Drawing.Point(290, 414);
+            this.simpleButton2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(269, 68);
+            this.simpleButton2.TabIndex = 38;
+            this.simpleButton2.Text = "Parametros";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton3.Appearance.Options.UseFont = true;
+            this.simpleButton3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.simpleButton3.Location = new System.Drawing.Point(290, 490);
+            this.simpleButton3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(269, 68);
+            this.simpleButton3.TabIndex = 39;
+            this.simpleButton3.Text = "Parametros de PT";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
+            // 
             // frm_mantenimiento_calidad
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(654, 599);
+            this.ClientSize = new System.Drawing.Size(763, 737);
+            this.Controls.Add(this.simpleButton3);
+            this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.btnconfiguracionCal);
             this.Controls.Add(this.btnConfiguracionMP);
             this.Controls.Add(this.cmdHome);
@@ -238,6 +283,7 @@ namespace LOSA.Calidad
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.ManteIngresos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frm_mantenimiento_calidad";
             this.Text = "frm_mantenimiento_calidad";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -261,5 +307,7 @@ namespace LOSA.Calidad
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.SimpleButton btnConfiguracionMP;
         private DevExpress.XtraEditors.SimpleButton btnconfiguracionCal;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton3;
     }
 }

@@ -1480,5 +1480,10 @@ namespace LOSA.Calidad
 
             }
         }
+
+        private void panelControl4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
