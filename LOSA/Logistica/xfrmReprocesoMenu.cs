@@ -34,6 +34,10 @@ namespace LOSA.Logistica
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
+        private void PrintingSystem_StartPrint(object sender, DevExpress.XtraPrinting.PrintDocumentEventArgs e)
+        {
+            e.PrintDocument.PrinterSettings.Copies = 1;
+        }
 
         private void simpleButton18_Click(object sender, EventArgs e)
         {

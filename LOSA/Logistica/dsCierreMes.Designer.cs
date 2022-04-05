@@ -44,7 +44,7 @@ namespace LOSA.Logistica {
         
         private lote_all_dataDataTable tablelote_all_data;
         
-        private SeleecionLoteDataTable tableSeleecionLote;
+        private SeleccionLoteDataTable tableSeleccionLote;
         
         private Aceptado_loteDataTable tableAceptado_lote;
         
@@ -108,8 +108,8 @@ namespace LOSA.Logistica {
                 if ((ds.Tables["lote_all_data"] != null)) {
                     base.Tables.Add(new lote_all_dataDataTable(ds.Tables["lote_all_data"]));
                 }
-                if ((ds.Tables["SeleecionLote"] != null)) {
-                    base.Tables.Add(new SeleecionLoteDataTable(ds.Tables["SeleecionLote"]));
+                if ((ds.Tables["SeleccionLote"] != null)) {
+                    base.Tables.Add(new SeleccionLoteDataTable(ds.Tables["SeleccionLote"]));
                 }
                 if ((ds.Tables["Aceptado_lote"] != null)) {
                     base.Tables.Add(new Aceptado_loteDataTable(ds.Tables["Aceptado_lote"]));
@@ -239,9 +239,9 @@ namespace LOSA.Logistica {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public SeleecionLoteDataTable SeleecionLote {
+        public SeleccionLoteDataTable SeleccionLote {
             get {
-                return this.tableSeleecionLote;
+                return this.tableSeleccionLote;
             }
         }
         
@@ -362,8 +362,8 @@ namespace LOSA.Logistica {
                 if ((ds.Tables["lote_all_data"] != null)) {
                     base.Tables.Add(new lote_all_dataDataTable(ds.Tables["lote_all_data"]));
                 }
-                if ((ds.Tables["SeleecionLote"] != null)) {
-                    base.Tables.Add(new SeleecionLoteDataTable(ds.Tables["SeleecionLote"]));
+                if ((ds.Tables["SeleccionLote"] != null)) {
+                    base.Tables.Add(new SeleccionLoteDataTable(ds.Tables["SeleccionLote"]));
                 }
                 if ((ds.Tables["Aceptado_lote"] != null)) {
                     base.Tables.Add(new Aceptado_loteDataTable(ds.Tables["Aceptado_lote"]));
@@ -464,10 +464,10 @@ namespace LOSA.Logistica {
                     this.tablelote_all_data.InitVars();
                 }
             }
-            this.tableSeleecionLote = ((SeleecionLoteDataTable)(base.Tables["SeleecionLote"]));
+            this.tableSeleccionLote = ((SeleccionLoteDataTable)(base.Tables["SeleccionLote"]));
             if ((initTable == true)) {
-                if ((this.tableSeleecionLote != null)) {
-                    this.tableSeleecionLote.InitVars();
+                if ((this.tableSeleccionLote != null)) {
+                    this.tableSeleccionLote.InitVars();
                 }
             }
             this.tableAceptado_lote = ((Aceptado_loteDataTable)(base.Tables["Aceptado_lote"]));
@@ -512,8 +512,8 @@ namespace LOSA.Logistica {
             base.Tables.Add(this.tablelote_Seleccion);
             this.tablelote_all_data = new lote_all_dataDataTable();
             base.Tables.Add(this.tablelote_all_data);
-            this.tableSeleecionLote = new SeleecionLoteDataTable();
-            base.Tables.Add(this.tableSeleecionLote);
+            this.tableSeleccionLote = new SeleccionLoteDataTable();
+            base.Tables.Add(this.tableSeleccionLote);
             this.tableAceptado_lote = new Aceptado_loteDataTable();
             base.Tables.Add(this.tableAceptado_lote);
             this.tablememory_config = new memory_configDataTable();
@@ -582,7 +582,7 @@ namespace LOSA.Logistica {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeSeleecionLote() {
+        private bool ShouldSerializeSeleccionLote() {
             return false;
         }
         
@@ -684,7 +684,7 @@ namespace LOSA.Logistica {
         public delegate void lote_all_dataRowChangeEventHandler(object sender, lote_all_dataRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void SeleecionLoteRowChangeEventHandler(object sender, SeleecionLoteRowChangeEvent e);
+        public delegate void SeleccionLoteRowChangeEventHandler(object sender, SeleccionLoteRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void Aceptado_loteRowChangeEventHandler(object sender, Aceptado_loteRowChangeEvent e);
@@ -3645,7 +3645,7 @@ namespace LOSA.Logistica {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class SeleecionLoteDataTable : global::System.Data.TypedTableBase<SeleecionLoteRow> {
+        public partial class SeleccionLoteDataTable : global::System.Data.TypedTableBase<SeleccionLoteRow> {
             
             private global::System.Data.DataColumn columnid_mp;
             
@@ -3663,8 +3663,8 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SeleecionLoteDataTable() {
-                this.TableName = "SeleecionLote";
+            public SeleccionLoteDataTable() {
+                this.TableName = "SeleccionLote";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -3672,7 +3672,7 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal SeleecionLoteDataTable(global::System.Data.DataTable table) {
+            internal SeleccionLoteDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -3689,7 +3689,7 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected SeleecionLoteDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected SeleccionLoteDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -3761,34 +3761,34 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SeleecionLoteRow this[int index] {
+            public SeleccionLoteRow this[int index] {
                 get {
-                    return ((SeleecionLoteRow)(this.Rows[index]));
+                    return ((SeleccionLoteRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SeleecionLoteRowChangeEventHandler SeleecionLoteRowChanging;
+            public event SeleccionLoteRowChangeEventHandler SeleccionLoteRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SeleecionLoteRowChangeEventHandler SeleecionLoteRowChanged;
+            public event SeleccionLoteRowChangeEventHandler SeleccionLoteRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SeleecionLoteRowChangeEventHandler SeleecionLoteRowDeleting;
+            public event SeleccionLoteRowChangeEventHandler SeleccionLoteRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SeleecionLoteRowChangeEventHandler SeleecionLoteRowDeleted;
+            public event SeleccionLoteRowChangeEventHandler SeleccionLoteRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddSeleecionLoteRow(SeleecionLoteRow row) {
+            public void AddSeleccionLoteRow(SeleccionLoteRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SeleecionLoteRow AddSeleecionLoteRow(int id_mp, string descripcion, decimal ExistenciaAprox, string lote, bool seleccionar, decimal utilizado, int id_lote_alosy) {
-                SeleecionLoteRow rowSeleecionLoteRow = ((SeleecionLoteRow)(this.NewRow()));
+            public SeleccionLoteRow AddSeleccionLoteRow(int id_mp, string descripcion, decimal ExistenciaAprox, string lote, bool seleccionar, decimal utilizado, int id_lote_alosy) {
+                SeleccionLoteRow rowSeleccionLoteRow = ((SeleccionLoteRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_mp,
                         descripcion,
@@ -3797,15 +3797,15 @@ namespace LOSA.Logistica {
                         seleccionar,
                         utilizado,
                         id_lote_alosy};
-                rowSeleecionLoteRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowSeleecionLoteRow);
-                return rowSeleecionLoteRow;
+                rowSeleccionLoteRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSeleccionLoteRow);
+                return rowSeleccionLoteRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                SeleecionLoteDataTable cln = ((SeleecionLoteDataTable)(base.Clone()));
+                SeleccionLoteDataTable cln = ((SeleccionLoteDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -3813,7 +3813,7 @@ namespace LOSA.Logistica {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new SeleecionLoteDataTable();
+                return new SeleccionLoteDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3850,28 +3850,28 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SeleecionLoteRow NewSeleecionLoteRow() {
-                return ((SeleecionLoteRow)(this.NewRow()));
+            public SeleccionLoteRow NewSeleccionLoteRow() {
+                return ((SeleccionLoteRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new SeleecionLoteRow(builder);
+                return new SeleccionLoteRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(SeleecionLoteRow);
+                return typeof(SeleccionLoteRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.SeleecionLoteRowChanged != null)) {
-                    this.SeleecionLoteRowChanged(this, new SeleecionLoteRowChangeEvent(((SeleecionLoteRow)(e.Row)), e.Action));
+                if ((this.SeleccionLoteRowChanged != null)) {
+                    this.SeleccionLoteRowChanged(this, new SeleccionLoteRowChangeEvent(((SeleccionLoteRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3879,8 +3879,8 @@ namespace LOSA.Logistica {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.SeleecionLoteRowChanging != null)) {
-                    this.SeleecionLoteRowChanging(this, new SeleecionLoteRowChangeEvent(((SeleecionLoteRow)(e.Row)), e.Action));
+                if ((this.SeleccionLoteRowChanging != null)) {
+                    this.SeleccionLoteRowChanging(this, new SeleccionLoteRowChangeEvent(((SeleccionLoteRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3888,8 +3888,8 @@ namespace LOSA.Logistica {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.SeleecionLoteRowDeleted != null)) {
-                    this.SeleecionLoteRowDeleted(this, new SeleecionLoteRowChangeEvent(((SeleecionLoteRow)(e.Row)), e.Action));
+                if ((this.SeleccionLoteRowDeleted != null)) {
+                    this.SeleccionLoteRowDeleted(this, new SeleccionLoteRowChangeEvent(((SeleccionLoteRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3897,14 +3897,14 @@ namespace LOSA.Logistica {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.SeleecionLoteRowDeleting != null)) {
-                    this.SeleecionLoteRowDeleting(this, new SeleecionLoteRowChangeEvent(((SeleecionLoteRow)(e.Row)), e.Action));
+                if ((this.SeleccionLoteRowDeleting != null)) {
+                    this.SeleccionLoteRowDeleting(this, new SeleccionLoteRowChangeEvent(((SeleccionLoteRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveSeleecionLoteRow(SeleecionLoteRow row) {
+            public void RemoveSeleccionLoteRow(SeleccionLoteRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -3931,7 +3931,7 @@ namespace LOSA.Logistica {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "SeleecionLoteDataTable";
+                attribute2.FixedValue = "SeleccionLoteDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -6077,15 +6077,15 @@ namespace LOSA.Logistica {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class SeleecionLoteRow : global::System.Data.DataRow {
+        public partial class SeleccionLoteRow : global::System.Data.DataRow {
             
-            private SeleecionLoteDataTable tableSeleecionLote;
+            private SeleccionLoteDataTable tableSeleccionLote;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal SeleecionLoteRow(global::System.Data.DataRowBuilder rb) : 
+            internal SeleccionLoteRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableSeleecionLote = ((SeleecionLoteDataTable)(this.Table));
+                this.tableSeleccionLote = ((SeleccionLoteDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6093,14 +6093,14 @@ namespace LOSA.Logistica {
             public int id_mp {
                 get {
                     try {
-                        return ((int)(this[this.tableSeleecionLote.id_mpColumn]));
+                        return ((int)(this[this.tableSeleccionLote.id_mpColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_mp\' de la tabla \'SeleecionLote\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_mp\' de la tabla \'SeleccionLote\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSeleecionLote.id_mpColumn] = value;
+                    this[this.tableSeleccionLote.id_mpColumn] = value;
                 }
             }
             
@@ -6109,14 +6109,14 @@ namespace LOSA.Logistica {
             public string descripcion {
                 get {
                     try {
-                        return ((string)(this[this.tableSeleecionLote.descripcionColumn]));
+                        return ((string)(this[this.tableSeleccionLote.descripcionColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'descripcion\' de la tabla \'SeleecionLote\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'descripcion\' de la tabla \'SeleccionLote\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSeleecionLote.descripcionColumn] = value;
+                    this[this.tableSeleccionLote.descripcionColumn] = value;
                 }
             }
             
@@ -6125,14 +6125,14 @@ namespace LOSA.Logistica {
             public decimal ExistenciaAprox {
                 get {
                     try {
-                        return ((decimal)(this[this.tableSeleecionLote.ExistenciaAproxColumn]));
+                        return ((decimal)(this[this.tableSeleccionLote.ExistenciaAproxColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ExistenciaAprox\' de la tabla \'SeleecionLote\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ExistenciaAprox\' de la tabla \'SeleccionLote\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSeleecionLote.ExistenciaAproxColumn] = value;
+                    this[this.tableSeleccionLote.ExistenciaAproxColumn] = value;
                 }
             }
             
@@ -6141,14 +6141,14 @@ namespace LOSA.Logistica {
             public string lote {
                 get {
                     try {
-                        return ((string)(this[this.tableSeleecionLote.loteColumn]));
+                        return ((string)(this[this.tableSeleccionLote.loteColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'lote\' de la tabla \'SeleecionLote\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'lote\' de la tabla \'SeleccionLote\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSeleecionLote.loteColumn] = value;
+                    this[this.tableSeleccionLote.loteColumn] = value;
                 }
             }
             
@@ -6157,14 +6157,14 @@ namespace LOSA.Logistica {
             public bool seleccionar {
                 get {
                     try {
-                        return ((bool)(this[this.tableSeleecionLote.seleccionarColumn]));
+                        return ((bool)(this[this.tableSeleccionLote.seleccionarColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'seleccionar\' de la tabla \'SeleecionLote\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'seleccionar\' de la tabla \'SeleccionLote\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSeleecionLote.seleccionarColumn] = value;
+                    this[this.tableSeleccionLote.seleccionarColumn] = value;
                 }
             }
             
@@ -6173,14 +6173,14 @@ namespace LOSA.Logistica {
             public decimal utilizado {
                 get {
                     try {
-                        return ((decimal)(this[this.tableSeleecionLote.utilizadoColumn]));
+                        return ((decimal)(this[this.tableSeleccionLote.utilizadoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'utilizado\' de la tabla \'SeleecionLote\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'utilizado\' de la tabla \'SeleccionLote\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSeleecionLote.utilizadoColumn] = value;
+                    this[this.tableSeleccionLote.utilizadoColumn] = value;
                 }
             }
             
@@ -6189,99 +6189,99 @@ namespace LOSA.Logistica {
             public int id_lote_alosy {
                 get {
                     try {
-                        return ((int)(this[this.tableSeleecionLote.id_lote_alosyColumn]));
+                        return ((int)(this[this.tableSeleccionLote.id_lote_alosyColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_lote_alosy\' de la tabla \'SeleecionLote\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_lote_alosy\' de la tabla \'SeleccionLote\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSeleecionLote.id_lote_alosyColumn] = value;
+                    this[this.tableSeleccionLote.id_lote_alosyColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isid_mpNull() {
-                return this.IsNull(this.tableSeleecionLote.id_mpColumn);
+                return this.IsNull(this.tableSeleccionLote.id_mpColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setid_mpNull() {
-                this[this.tableSeleecionLote.id_mpColumn] = global::System.Convert.DBNull;
+                this[this.tableSeleccionLote.id_mpColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsdescripcionNull() {
-                return this.IsNull(this.tableSeleecionLote.descripcionColumn);
+                return this.IsNull(this.tableSeleccionLote.descripcionColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetdescripcionNull() {
-                this[this.tableSeleecionLote.descripcionColumn] = global::System.Convert.DBNull;
+                this[this.tableSeleccionLote.descripcionColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsExistenciaAproxNull() {
-                return this.IsNull(this.tableSeleecionLote.ExistenciaAproxColumn);
+                return this.IsNull(this.tableSeleccionLote.ExistenciaAproxColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetExistenciaAproxNull() {
-                this[this.tableSeleecionLote.ExistenciaAproxColumn] = global::System.Convert.DBNull;
+                this[this.tableSeleccionLote.ExistenciaAproxColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsloteNull() {
-                return this.IsNull(this.tableSeleecionLote.loteColumn);
+                return this.IsNull(this.tableSeleccionLote.loteColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetloteNull() {
-                this[this.tableSeleecionLote.loteColumn] = global::System.Convert.DBNull;
+                this[this.tableSeleccionLote.loteColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsseleccionarNull() {
-                return this.IsNull(this.tableSeleecionLote.seleccionarColumn);
+                return this.IsNull(this.tableSeleccionLote.seleccionarColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetseleccionarNull() {
-                this[this.tableSeleecionLote.seleccionarColumn] = global::System.Convert.DBNull;
+                this[this.tableSeleccionLote.seleccionarColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsutilizadoNull() {
-                return this.IsNull(this.tableSeleecionLote.utilizadoColumn);
+                return this.IsNull(this.tableSeleccionLote.utilizadoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetutilizadoNull() {
-                this[this.tableSeleecionLote.utilizadoColumn] = global::System.Convert.DBNull;
+                this[this.tableSeleccionLote.utilizadoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isid_lote_alosyNull() {
-                return this.IsNull(this.tableSeleecionLote.id_lote_alosyColumn);
+                return this.IsNull(this.tableSeleccionLote.id_lote_alosyColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setid_lote_alosyNull() {
-                this[this.tableSeleecionLote.id_lote_alosyColumn] = global::System.Convert.DBNull;
+                this[this.tableSeleccionLote.id_lote_alosyColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7163,22 +7163,22 @@ namespace LOSA.Logistica {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class SeleecionLoteRowChangeEvent : global::System.EventArgs {
+        public class SeleccionLoteRowChangeEvent : global::System.EventArgs {
             
-            private SeleecionLoteRow eventRow;
+            private SeleccionLoteRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SeleecionLoteRowChangeEvent(SeleecionLoteRow row, global::System.Data.DataRowAction action) {
+            public SeleccionLoteRowChangeEvent(SeleccionLoteRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SeleecionLoteRow Row {
+            public SeleccionLoteRow Row {
                 get {
                     return this.eventRow;
                 }

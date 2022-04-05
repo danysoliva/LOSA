@@ -87,7 +87,7 @@ namespace LOSA.RecepcionMP
                 var gridview = (GridView)grd_ingreso.FocusedView;
                 var row = (dsRecepcionMPx.IngresosMPRow)gridview.GetFocusedDataRow();
 
-                if (row.tipo_ingreso == 1)
+                if (row.tipo_ingreso == 1 || row.tipo_ingreso == 5)
                 {
                     frm_ingresos_lotes frmDetalle = new frm_ingresos_lotes(row.id, row.Ningreso, UsuarioLogeado, row.bit_fin, row.id_traslado);
                     if (frmDetalle.ShowDialog() == DialogResult.OK)

@@ -23,6 +23,8 @@ namespace LOSA.Logistica
         decimal NuevaCantidad = 0;
         int id_count_selected;
         decimal sum = 0;
+        int bodega;
+        int IdMpSelected = 0;
         public frmSeleccionLoteCierre(DataTable pdata, UserLogin puserLogin)
         {
             InitializeComponent();
@@ -50,24 +52,43 @@ namespace LOSA.Logistica
 
         public void get_lotes(int id_mp, int id_bodega )
         {
-            string query = @"sp_get_existencia_lote_mp";
-            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-            try
-            {
-                cn.Open();
-                SqlCommand cmd = new SqlCommand(query, cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id_bodega", id_bodega);
-                cmd.Parameters.AddWithValue("@id_mp", id_mp);
-                dsCierreMes.SeleecionLote.Clear();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dsCierreMes.SeleecionLote);
-                cn.Close();
 
-            }
-            catch (Exception ex)
+            dsCierreMes.SeleccionLote.Clear();
+
+            if (dsCierreMes.memory_config.Count(x => x.id_lote_count == id_count_selected)==0)
             {
-                CajaDialogo.Error(ex.Message);
+
+                string query = @"sp_get_existencia_lote_mp";
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                try
+                {
+                    cn.Open();
+                    SqlCommand cmd = new SqlCommand(query, cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id_bodega", id_bodega);
+                    cmd.Parameters.AddWithValue("@id_mp", id_mp);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dsCierreMes.SeleccionLote);
+                    cn.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    CajaDialogo.Error(ex.Message);
+                }
+            }
+            else
+            {
+                foreach (dsCierreMes.SeleccionLoteRow row in dsCierreMes.SeleccionLote.Rows)
+                {
+                    foreach (dsCierreMes.memory_configRow rows in dsCierreMes.memory_config.Rows)
+                    {
+                        if (row.lote== rows.lote)
+                        {
+
+                        }
+                    }
+                }
             }
         }
         public void get_bodegas()
@@ -103,14 +124,20 @@ namespace LOSA.Logistica
 
         private void grdv_mps_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-            var SelectedrOWS = grdv_mps.GetDataRow(e.RowHandle);
+            try
+            {
+                var SelectedrOWS = grdv_mps.GetDataRow(e.RowHandle);
 
-            int id = Convert.ToInt32(SelectedrOWS["id_mp"]);
-            int id_bodega = Convert.ToInt32(SelectedrOWS["id_bodega"]);
-            id_count_selected = Convert.ToInt32(SelectedrOWS["count_id"]);
-            NuevaCantidad = Convert.ToDecimal(SelectedrOWS["peso"]);
-            sum = 0;
-            get_lotes(id, id_bodega);
+                IdMpSelected = Convert.ToInt32(SelectedrOWS["id_mp"]);
+                bodega = Convert.ToInt32(SelectedrOWS["id_bodega"]);
+                id_count_selected = Convert.ToInt32(SelectedrOWS["count_id"]);
+                NuevaCantidad = Convert.ToDecimal(SelectedrOWS["peso"]);
+                sum = 0;
+                get_lotes(IdMpSelected, bodega);
+            }
+            catch (Exception)
+            {
+            }
         }
 
         private void grdv_existencia_lote_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
@@ -122,10 +149,10 @@ namespace LOSA.Logistica
                 if (e.Column.FieldName == "seleccionar")
                 {
                     var gridView = (GridView)grd_existencia_lote.FocusedView;
-                    var row = (dsCierreMes.SeleecionLoteRow)gridView.GetFocusedDataRow();
+                    var row = (dsCierreMes.SeleccionLoteRow)gridView.GetFocusedDataRow();
                     row.seleccionar = Convert.ToBoolean(e.Value);
                     row.AcceptChanges();
-                    var list = dsCierreMes.SeleecionLote.AsEnumerable();
+                    var list = dsCierreMes.SeleccionLote.AsEnumerable();
                     if (list.Count(p => p.seleccionar == true) > 0)
                     {
                         btnDerecha.Enabled = true;
@@ -143,7 +170,6 @@ namespace LOSA.Logistica
             catch (Exception)
             {
 
-                throw;
             }
 
             
@@ -151,7 +177,7 @@ namespace LOSA.Logistica
 
         private void btnDerecha_Click(object sender, EventArgs e)
         {
-            var list = dsCierreMes.SeleecionLote.AsEnumerable();
+            var list = dsCierreMes.SeleccionLote.AsEnumerable();
             if (list.Count(p => p.seleccionar == true && p.utilizado == 0) > 0)
             {
                 CajaDialogo.Error("Hay lotes seleccionado sin configurar la cantidad a utilizar.");
@@ -170,17 +196,23 @@ namespace LOSA.Logistica
                 dr["seleccionar"] = false;
                 dr["utilizado"] = recorrido.utilizado;
                 dr["id_lote_alosy"] = recorrido.id_lote_alosy;
-                dr["id_bodega"] = id_bodega;
+                dr["id_bodega"] = bodega;
                 dr["id_lote_count"] = id_count_selected;
+
                 dsCierreMes.Aceptado_lote.Rows.Add(dr);
-
-                for (int i = 0; i < dsCierreMes.memory_config.Count; i++)
-                {
-                    //if (dsCierreMes.memory_config.Rows[i].)
-                    //{
-
-                    //}
-                }
+                DataRow drw = dsCierreMes.memory_config.NewRow();
+                drw["id_mp"] = recorrido.id_mp;
+                drw["descripcion"] = recorrido.descripcion;
+                drw["ExistenciaAprox"] = recorrido.ExistenciaAprox;
+                drw["lote"] = recorrido.lote;
+                drw["seleccionar"] = false;
+                drw["utilizado"] = recorrido.utilizado;
+                drw["id_lote_alosy"] = recorrido.id_lote_alosy;
+                drw["id_bodega"] = bodega;
+                drw["id_lote_count"] = id_count_selected;
+                dsCierreMes.memory_config.Rows.Add(drw);
+                btnDerecha.Enabled = false;
+                // +
 
             }
 
@@ -191,26 +223,64 @@ namespace LOSA.Logistica
         {
             try
             {
-             
                 if (e.Column.FieldName == "utilizado")
                 {
                     var gridView = (GridView)grd_existencia_lote.FocusedView;
-                    var row = (dsCierreMes.SeleecionLoteRow)gridView.GetFocusedDataRow();
-
+                    var row = (dsCierreMes.SeleccionLoteRow)gridView.GetFocusedDataRow();
                     if ((sum + row.utilizado) > NuevaCantidad)
                     {
                         CajaDialogo.Error("La cantidad configurada en los lotes es mayor a la nueva cantidad.");
                         return;
                     }
-                    var list = dsCierreMes.SeleecionLote.AsEnumerable();
+                    var list = dsCierreMes.SeleccionLote.AsEnumerable();
                     sum = list.Sum(x => x.utilizado);
-
-
-                    
                 }
             }
             catch (Exception ex)
             {
+            }
+        }
+
+        private void chauto_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chauto.Checked == true)
+            {
+                decimal Auxiliar = NuevaCantidad;
+                decimal operador = 0;
+                foreach (dsCierreMes.SeleccionLoteRow row in dsCierreMes.SeleccionLote.Rows)
+                {
+                    operador = 0;
+                    if (Auxiliar != 0)
+                    {
+                        if (row.ExistenciaAprox <= Auxiliar)
+                        {
+                            operador = operador + row.ExistenciaAprox;
+                            Auxiliar = Auxiliar - operador;
+                        }
+                        else
+                        {
+                            operador = operador + Auxiliar;
+                            Auxiliar = 0;
+                        }
+
+                        row.utilizado = operador;
+                        row.seleccionar = true;
+                       
+                    }
+
+                }
+                dsCierreMes.SeleccionLote.AcceptChanges();
+                btnDerecha.Enabled = true;
+            }
+            else
+            {
+                foreach (dsCierreMes.SeleccionLoteRow row in dsCierreMes.SeleccionLote.Rows)
+                {
+                    row.utilizado = 0;
+                    row.seleccionar = false;
+                }
+                dsCierreMes.SeleccionLote.AcceptChanges();
+                btnDerecha.Enabled = false;
             }
         }
     }

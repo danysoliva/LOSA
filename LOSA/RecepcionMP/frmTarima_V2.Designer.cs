@@ -902,9 +902,9 @@ namespace LOSA.RecepcionMP
             this.panel1.Controls.Add(this.btnFinalizar);
             this.panel1.Controls.Add(this.step1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 631);
+            this.panel1.Location = new System.Drawing.Point(0, 657);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1329, 72);
+            this.panel1.Size = new System.Drawing.Size(1329, 46);
             this.panel1.TabIndex = 93;
             // 
             // simpleButton3

@@ -30,22 +30,22 @@ namespace LOSA.Logistica
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmMP_Reproceso_Tarimas));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject21 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.pTReprocesoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsLogistica2 = new LOSA.Logistica.dsLogistica2();
@@ -55,6 +55,7 @@ namespace LOSA.Logistica
             this.colmateriaprima = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_proveedor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colproveedor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_presentacion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfecha_ingreso = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnumero_transaccion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collote_materia_prima = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -79,6 +80,7 @@ namespace LOSA.Logistica
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.dtFechaDesde = new DevExpress.XtraEditors.DateEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.rdespecie = new DevExpress.XtraEditors.RadioGroup();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pTReprocesoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsLogistica2)).BeginInit();
@@ -91,6 +93,7 @@ namespace LOSA.Logistica
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaHasta.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesde.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesde.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdespecie.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -134,6 +137,7 @@ namespace LOSA.Logistica
             this.colmateriaprima,
             this.colid_proveedor,
             this.colproveedor,
+            this.colid_presentacion,
             this.colfecha_ingreso,
             this.colnumero_transaccion,
             this.collote_materia_prima,
@@ -166,6 +170,7 @@ namespace LOSA.Logistica
             this.colid_materia_prima.FieldName = "id_materia_prima";
             this.colid_materia_prima.MinWidth = 15;
             this.colid_materia_prima.Name = "colid_materia_prima";
+            this.colid_materia_prima.OptionsColumn.AllowEdit = false;
             this.colid_materia_prima.Width = 56;
             // 
             // colmateriaprima
@@ -176,14 +181,15 @@ namespace LOSA.Logistica
             this.colmateriaprima.Name = "colmateriaprima";
             this.colmateriaprima.OptionsColumn.AllowEdit = false;
             this.colmateriaprima.Visible = true;
-            this.colmateriaprima.VisibleIndex = 2;
-            this.colmateriaprima.Width = 209;
+            this.colmateriaprima.VisibleIndex = 3;
+            this.colmateriaprima.Width = 173;
             // 
             // colid_proveedor
             // 
             this.colid_proveedor.FieldName = "id_proveedor";
             this.colid_proveedor.MinWidth = 15;
             this.colid_proveedor.Name = "colid_proveedor";
+            this.colid_proveedor.OptionsColumn.AllowEdit = false;
             this.colid_proveedor.Width = 56;
             // 
             // colproveedor
@@ -195,6 +201,11 @@ namespace LOSA.Logistica
             this.colproveedor.OptionsColumn.AllowEdit = false;
             this.colproveedor.Width = 72;
             // 
+            // colid_presentacion
+            // 
+            this.colid_presentacion.FieldName = "id_presentacion";
+            this.colid_presentacion.Name = "colid_presentacion";
+            // 
             // colfecha_ingreso
             // 
             this.colfecha_ingreso.Caption = "Fecha Ingreso";
@@ -205,8 +216,8 @@ namespace LOSA.Logistica
             this.colfecha_ingreso.Name = "colfecha_ingreso";
             this.colfecha_ingreso.OptionsColumn.AllowEdit = false;
             this.colfecha_ingreso.Visible = true;
-            this.colfecha_ingreso.VisibleIndex = 4;
-            this.colfecha_ingreso.Width = 166;
+            this.colfecha_ingreso.VisibleIndex = 5;
+            this.colfecha_ingreso.Width = 137;
             // 
             // colnumero_transaccion
             // 
@@ -224,7 +235,9 @@ namespace LOSA.Logistica
             this.collote_materia_prima.MinWidth = 15;
             this.collote_materia_prima.Name = "collote_materia_prima";
             this.collote_materia_prima.OptionsColumn.AllowEdit = false;
-            this.collote_materia_prima.Width = 72;
+            this.collote_materia_prima.Visible = true;
+            this.collote_materia_prima.VisibleIndex = 2;
+            this.collote_materia_prima.Width = 74;
             // 
             // colid_boleta
             // 
@@ -241,14 +254,15 @@ namespace LOSA.Logistica
             this.colPrint.ColumnEdit = this.btnPrint;
             this.colPrint.MinWidth = 15;
             this.colPrint.Name = "colPrint";
+            this.colPrint.OptionsColumn.AllowEdit = false;
             this.colPrint.Width = 54;
             // 
             // btnPrint
             // 
             this.btnPrint.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
             this.btnPrint.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -258,14 +272,15 @@ namespace LOSA.Logistica
             this.colDuplicar.ColumnEdit = this.cmdDuplicar;
             this.colDuplicar.MinWidth = 15;
             this.colDuplicar.Name = "colDuplicar";
+            this.colDuplicar.OptionsColumn.AllowEdit = false;
             this.colDuplicar.Width = 54;
             // 
             // cmdDuplicar
             // 
             this.cmdDuplicar.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
             this.cmdDuplicar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdDuplicar.Name = "cmdDuplicar";
             this.cmdDuplicar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -280,9 +295,9 @@ namespace LOSA.Logistica
             // btnEditar
             // 
             this.btnEditar.AutoHeight = false;
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            editorButtonImageOptions6.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions6.Image")));
             this.btnEditar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -294,7 +309,7 @@ namespace LOSA.Logistica
             this.colnum.Name = "colnum";
             this.colnum.Visible = true;
             this.colnum.VisibleIndex = 0;
-            this.colnum.Width = 181;
+            this.colnum.Width = 153;
             // 
             // colUbicacion
             // 
@@ -313,7 +328,7 @@ namespace LOSA.Logistica
             this.colcodigo_barra.OptionsColumn.AllowEdit = false;
             this.colcodigo_barra.Visible = true;
             this.colcodigo_barra.VisibleIndex = 1;
-            this.colcodigo_barra.Width = 186;
+            this.colcodigo_barra.Width = 153;
             // 
             // colSeleccionar
             // 
@@ -323,8 +338,8 @@ namespace LOSA.Logistica
             this.colSeleccionar.MaxWidth = 102;
             this.colSeleccionar.Name = "colSeleccionar";
             this.colSeleccionar.Visible = true;
-            this.colSeleccionar.VisibleIndex = 5;
-            this.colSeleccionar.Width = 102;
+            this.colSeleccionar.VisibleIndex = 6;
+            this.colSeleccionar.Width = 90;
             // 
             // ceSeleccionar
             // 
@@ -337,8 +352,10 @@ namespace LOSA.Logistica
             this.colPeso.Caption = "Peso";
             this.colPeso.FieldName = "peso_in";
             this.colPeso.Name = "colPeso";
+            this.colPeso.OptionsColumn.AllowEdit = false;
             this.colPeso.Visible = true;
-            this.colPeso.VisibleIndex = 3;
+            this.colPeso.VisibleIndex = 4;
+            this.colPeso.Width = 61;
             // 
             // cmdHome
             // 
@@ -348,7 +365,7 @@ namespace LOSA.Logistica
             this.cmdHome.Appearance.Options.UseBackColor = true;
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
+            this.cmdHome.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdHome.ImageOptions.Image")));
             this.cmdHome.Location = new System.Drawing.Point(679, 38);
             this.cmdHome.Name = "cmdHome";
             this.cmdHome.Size = new System.Drawing.Size(171, 60);
@@ -456,11 +473,26 @@ namespace LOSA.Logistica
             this.labelControl8.TabIndex = 87;
             this.labelControl8.Text = "Fecha Desde:";
             // 
+            // rdespecie
+            // 
+            this.rdespecie.EditValue = 1;
+            this.rdespecie.Location = new System.Drawing.Point(269, 127);
+            this.rdespecie.Name = "rdespecie";
+            this.rdespecie.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdespecie.Properties.Appearance.Options.UseFont = true;
+            this.rdespecie.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(2, "Camaron", true, 2),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(1, "Tilapia", true, 1)});
+            this.rdespecie.Size = new System.Drawing.Size(211, 48);
+            this.rdespecie.TabIndex = 89;
+            this.rdespecie.SelectedIndexChanged += new System.EventHandler(this.rdespecie_SelectedIndexChanged);
+            // 
             // xfrmMP_Reproceso_Tarimas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(862, 457);
+            this.Controls.Add(this.rdespecie);
             this.Controls.Add(this.dtFechaHasta);
             this.Controls.Add(this.labelControl9);
             this.Controls.Add(this.dtFechaDesde);
@@ -486,6 +518,7 @@ namespace LOSA.Logistica
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaHasta.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesde.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesde.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdespecie.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -526,5 +559,7 @@ namespace LOSA.Logistica
         private DevExpress.XtraEditors.DateEdit dtFechaDesde;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraGrid.Columns.GridColumn colPeso;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_presentacion;
+        private DevExpress.XtraEditors.RadioGroup rdespecie;
     }
 }

@@ -50,6 +50,7 @@ namespace LOSA.Logistica
             this.simpleButton18.Size = new System.Drawing.Size(199, 43);
             this.simpleButton18.TabIndex = 42;
             this.simpleButton18.Text = "Producto Terminado (Reproceso)";
+            this.simpleButton18.Visible = false;
             this.simpleButton18.Click += new System.EventHandler(this.simpleButton18_Click);
             // 
             // simpleButton1
@@ -78,7 +79,7 @@ namespace LOSA.Logistica
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdHome.ImageOptions.Image")));
-            this.cmdHome.Location = new System.Drawing.Point(457, 55);
+            this.cmdHome.Location = new System.Drawing.Point(490, 44);
             this.cmdHome.Name = "cmdHome";
             this.cmdHome.Size = new System.Drawing.Size(144, 59);
             this.cmdHome.TabIndex = 85;
@@ -89,7 +90,7 @@ namespace LOSA.Logistica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(622, 392);
+            this.ClientSize = new System.Drawing.Size(777, 490);
             this.Controls.Add(this.cmdHome);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.simpleButton18);

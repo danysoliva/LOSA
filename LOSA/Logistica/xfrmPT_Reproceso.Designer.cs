@@ -91,7 +91,7 @@ namespace LOSA.Logistica
             this.btnAgregar.ImageOptions.Image = global::LOSA.Properties.Resources.plus;
             this.btnAgregar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnAgregar.Location = new System.Drawing.Point(30, 36);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(180, 58);
             this.btnAgregar.TabIndex = 33;

@@ -293,7 +293,7 @@ namespace LOSA.Logistica
             if (list.Count(p => p.peso > 0) <= 0)
             {
                 CajaDialogo.Error("Debe de haber por lo menos una materia prima para modificar para poder crear el ajuste de inventario.");
-                return; 
+                return;
             }
 
             var SelectedRows = from row in list

@@ -43,6 +43,10 @@ namespace LOSA.TransaccionesMP
             this.colid_mp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collote = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldias = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha_ingreso = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnumero_transaccion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcproveedor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colproveedor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.grd_data_resumen = new DevExpress.XtraGrid.GridControl();
             this.grdv_data_resumen = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -51,10 +55,7 @@ namespace LOSA.TransaccionesMP
             this.colexistencia1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcode_sap = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colfecha_ingreso = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colnumero_transaccion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcproveedor = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colproveedor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnExcel = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
@@ -238,6 +239,42 @@ namespace LOSA.TransaccionesMP
             this.coldias.VisibleIndex = 7;
             this.coldias.Width = 141;
             // 
+            // colfecha_ingreso
+            // 
+            this.colfecha_ingreso.Caption = "F Ingreso";
+            this.colfecha_ingreso.FieldName = "fecha_ingreso";
+            this.colfecha_ingreso.Name = "colfecha_ingreso";
+            this.colfecha_ingreso.OptionsColumn.AllowEdit = false;
+            this.colfecha_ingreso.Visible = true;
+            this.colfecha_ingreso.VisibleIndex = 1;
+            this.colfecha_ingreso.Width = 64;
+            // 
+            // colnumero_transaccion
+            // 
+            this.colnumero_transaccion.Caption = "N Ingreso";
+            this.colnumero_transaccion.FieldName = "numero_transaccion";
+            this.colnumero_transaccion.Name = "colnumero_transaccion";
+            this.colnumero_transaccion.OptionsColumn.AllowEdit = false;
+            this.colnumero_transaccion.Visible = true;
+            this.colnumero_transaccion.VisibleIndex = 3;
+            this.colnumero_transaccion.Width = 120;
+            // 
+            // colcproveedor
+            // 
+            this.colcproveedor.FieldName = "cproveedor";
+            this.colcproveedor.Name = "colcproveedor";
+            this.colcproveedor.OptionsColumn.AllowEdit = false;
+            // 
+            // colproveedor
+            // 
+            this.colproveedor.Caption = "Proveedor";
+            this.colproveedor.FieldName = "proveedor";
+            this.colproveedor.Name = "colproveedor";
+            this.colproveedor.OptionsColumn.AllowEdit = false;
+            this.colproveedor.Visible = true;
+            this.colproveedor.VisibleIndex = 2;
+            this.colproveedor.Width = 209;
+            // 
             // tabNavigationPage2
             // 
             this.tabNavigationPage2.Caption = "Resumen por materia prima";
@@ -339,47 +376,24 @@ namespace LOSA.TransaccionesMP
             this.colcode_sap.VisibleIndex = 0;
             this.colcode_sap.Width = 134;
             // 
-            // colfecha_ingreso
+            // btnExcel
             // 
-            this.colfecha_ingreso.Caption = "F Ingreso";
-            this.colfecha_ingreso.FieldName = "fecha_ingreso";
-            this.colfecha_ingreso.Name = "colfecha_ingreso";
-            this.colfecha_ingreso.OptionsColumn.AllowEdit = false;
-            this.colfecha_ingreso.Visible = true;
-            this.colfecha_ingreso.VisibleIndex = 1;
-            this.colfecha_ingreso.Width = 64;
-            // 
-            // colnumero_transaccion
-            // 
-            this.colnumero_transaccion.Caption = "N Ingreso";
-            this.colnumero_transaccion.FieldName = "numero_transaccion";
-            this.colnumero_transaccion.Name = "colnumero_transaccion";
-            this.colnumero_transaccion.OptionsColumn.AllowEdit = false;
-            this.colnumero_transaccion.Visible = true;
-            this.colnumero_transaccion.VisibleIndex = 3;
-            this.colnumero_transaccion.Width = 120;
-            // 
-            // colcproveedor
-            // 
-            this.colcproveedor.FieldName = "cproveedor";
-            this.colcproveedor.Name = "colcproveedor";
-            this.colcproveedor.OptionsColumn.AllowEdit = false;
-            // 
-            // colproveedor
-            // 
-            this.colproveedor.Caption = "Proveedor";
-            this.colproveedor.FieldName = "proveedor";
-            this.colproveedor.Name = "colproveedor";
-            this.colproveedor.OptionsColumn.AllowEdit = false;
-            this.colproveedor.Visible = true;
-            this.colproveedor.VisibleIndex = 2;
-            this.colproveedor.Width = 209;
+            this.btnExcel.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnExcel.Appearance.Options.UseFont = true;
+            this.btnExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.ImageOptions.Image")));
+            this.btnExcel.Location = new System.Drawing.Point(4, 6);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(108, 46);
+            this.btnExcel.TabIndex = 2;
+            this.btnExcel.Text = "Excel";
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // frmReporteInventarioKardexGeneral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 758);
+            this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.tabPane1);
             this.Controls.Add(this.btnClose);
             this.Name = "frmReporteInventarioKardexGeneral";
@@ -425,5 +439,6 @@ namespace LOSA.TransaccionesMP
         private DevExpress.XtraGrid.Columns.GridColumn colnumero_transaccion;
         private DevExpress.XtraGrid.Columns.GridColumn colcproveedor;
         private DevExpress.XtraGrid.Columns.GridColumn colproveedor;
+        private DevExpress.XtraEditors.SimpleButton btnExcel;
     }
 }
