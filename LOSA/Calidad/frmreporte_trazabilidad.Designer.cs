@@ -190,6 +190,20 @@
             this.colcantidad1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colpeso1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
+            this.xtraTabPage8 = new DevExpress.XtraTab.XtraTabPage();
+            this.gridControlNoConformidades = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collote_producto_termiado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha_produccion_producto_termiado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcodigo_barra = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcantidad2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpeso3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colitemcode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_turno = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldescripcion1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colturno_name = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtlote.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCalidad)).BeginInit();
@@ -250,6 +264,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdv_retenido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_resumen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_resumen)).BeginInit();
+            this.xtraTabPage8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlNoConformidades)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl3
@@ -882,7 +899,8 @@
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
             this.xtraTabPage2,
-            this.PageInventario});
+            this.PageInventario,
+            this.xtraTabPage8});
             // 
             // xtraTabPage1
             // 
@@ -1800,6 +1818,143 @@
             this.labelControl16.TabIndex = 36;
             this.labelControl16.Text = "Transacciones de Lote PT";
             // 
+            // xtraTabPage8
+            // 
+            this.xtraTabPage8.Appearance.Header.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xtraTabPage8.Appearance.Header.Options.UseFont = true;
+            this.xtraTabPage8.Controls.Add(this.gridControlNoConformidades);
+            this.xtraTabPage8.Name = "xtraTabPage8";
+            this.xtraTabPage8.Size = new System.Drawing.Size(1424, 449);
+            this.xtraTabPage8.Text = "Tarimas Rechazadas PT";
+            // 
+            // gridControlNoConformidades
+            // 
+            this.gridControlNoConformidades.DataMember = "tarimas_rechazadas_pt";
+            this.gridControlNoConformidades.DataSource = this.dsReportesTRZ1;
+            this.gridControlNoConformidades.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlNoConformidades.Location = new System.Drawing.Point(0, 0);
+            this.gridControlNoConformidades.MainView = this.gridView1;
+            this.gridControlNoConformidades.Name = "gridControlNoConformidades";
+            this.gridControlNoConformidades.Size = new System.Drawing.Size(1424, 449);
+            this.gridControlNoConformidades.TabIndex = 0;
+            this.gridControlNoConformidades.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid,
+            this.colDescripcion,
+            this.collote_producto_termiado,
+            this.colfecha_produccion_producto_termiado,
+            this.colcodigo_barra,
+            this.colcantidad2,
+            this.colpeso3,
+            this.colitemcode,
+            this.colid_turno,
+            this.coldescripcion1,
+            this.colturno_name});
+            this.gridView1.GridControl = this.gridControlNoConformidades;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowFooter = true;
+            // 
+            // colid
+            // 
+            this.colid.FieldName = "id";
+            this.colid.Name = "colid";
+            // 
+            // colDescripcion
+            // 
+            this.colDescripcion.FieldName = "Descripcion";
+            this.colDescripcion.Name = "colDescripcion";
+            this.colDescripcion.OptionsColumn.AllowEdit = false;
+            this.colDescripcion.Visible = true;
+            this.colDescripcion.VisibleIndex = 0;
+            // 
+            // collote_producto_termiado
+            // 
+            this.collote_producto_termiado.Caption = "Lote";
+            this.collote_producto_termiado.FieldName = "lote_producto_termiado";
+            this.collote_producto_termiado.Name = "collote_producto_termiado";
+            this.collote_producto_termiado.OptionsColumn.AllowEdit = false;
+            this.collote_producto_termiado.Visible = true;
+            this.collote_producto_termiado.VisibleIndex = 1;
+            // 
+            // colfecha_produccion_producto_termiado
+            // 
+            this.colfecha_produccion_producto_termiado.Caption = "Fecha Producción";
+            this.colfecha_produccion_producto_termiado.FieldName = "fecha_produccion_producto_termiado";
+            this.colfecha_produccion_producto_termiado.Name = "colfecha_produccion_producto_termiado";
+            this.colfecha_produccion_producto_termiado.OptionsColumn.AllowEdit = false;
+            this.colfecha_produccion_producto_termiado.Visible = true;
+            this.colfecha_produccion_producto_termiado.VisibleIndex = 2;
+            // 
+            // colcodigo_barra
+            // 
+            this.colcodigo_barra.Caption = "Código Barra";
+            this.colcodigo_barra.FieldName = "codigo_barra";
+            this.colcodigo_barra.Name = "colcodigo_barra";
+            this.colcodigo_barra.OptionsColumn.AllowEdit = false;
+            this.colcodigo_barra.Visible = true;
+            this.colcodigo_barra.VisibleIndex = 3;
+            // 
+            // colcantidad2
+            // 
+            this.colcantidad2.Caption = "Cantidad";
+            this.colcantidad2.FieldName = "cantidad";
+            this.colcantidad2.Name = "colcantidad2";
+            this.colcantidad2.OptionsColumn.AllowEdit = false;
+            this.colcantidad2.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cantidad", "SUMA={0:#.##}")});
+            this.colcantidad2.Visible = true;
+            this.colcantidad2.VisibleIndex = 4;
+            // 
+            // colpeso3
+            // 
+            this.colpeso3.Caption = "Peso";
+            this.colpeso3.DisplayFormat.FormatString = "n2";
+            this.colpeso3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colpeso3.FieldName = "peso";
+            this.colpeso3.Name = "colpeso3";
+            this.colpeso3.OptionsColumn.AllowEdit = false;
+            this.colpeso3.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "peso", "SUMA={0:n2}")});
+            this.colpeso3.Visible = true;
+            this.colpeso3.VisibleIndex = 5;
+            // 
+            // colitemcode
+            // 
+            this.colitemcode.Caption = "Item Code";
+            this.colitemcode.FieldName = "itemcode";
+            this.colitemcode.Name = "colitemcode";
+            this.colitemcode.OptionsColumn.AllowEdit = false;
+            this.colitemcode.Visible = true;
+            this.colitemcode.VisibleIndex = 6;
+            // 
+            // colid_turno
+            // 
+            this.colid_turno.FieldName = "id_turno";
+            this.colid_turno.Name = "colid_turno";
+            this.colid_turno.OptionsColumn.AllowEdit = false;
+            // 
+            // coldescripcion1
+            // 
+            this.coldescripcion1.Caption = "Presentación";
+            this.coldescripcion1.FieldName = "descripcion";
+            this.coldescripcion1.Name = "coldescripcion1";
+            this.coldescripcion1.OptionsColumn.AllowEdit = false;
+            this.coldescripcion1.Visible = true;
+            this.coldescripcion1.VisibleIndex = 7;
+            // 
+            // colturno_name
+            // 
+            this.colturno_name.Caption = "Turno";
+            this.colturno_name.FieldName = "turno_name";
+            this.colturno_name.Name = "colturno_name";
+            this.colturno_name.OptionsColumn.AllowEdit = false;
+            this.colturno_name.Visible = true;
+            this.colturno_name.VisibleIndex = 8;
+            // 
             // frmreporte_trazabilidad
             // 
             this.Appearance.Options.UseFont = true;
@@ -1910,6 +2065,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdv_retenido)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_resumen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_resumen)).EndInit();
+            this.xtraTabPage8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlNoConformidades)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2047,5 +2205,19 @@
         private DevExpress.XtraGrid.Columns.GridColumn colnombre;
         private DevExpress.XtraGrid.Columns.GridColumn colcantidad1;
         private DevExpress.XtraGrid.Columns.GridColumn colpeso1;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage8;
+        private DevExpress.XtraGrid.GridControl gridControlNoConformidades;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn colid;
+        private DevExpress.XtraGrid.Columns.GridColumn colDescripcion;
+        private DevExpress.XtraGrid.Columns.GridColumn collote_producto_termiado;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecha_produccion_producto_termiado;
+        private DevExpress.XtraGrid.Columns.GridColumn colcodigo_barra;
+        private DevExpress.XtraGrid.Columns.GridColumn colcantidad2;
+        private DevExpress.XtraGrid.Columns.GridColumn colpeso3;
+        private DevExpress.XtraGrid.Columns.GridColumn colitemcode;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_turno;
+        private DevExpress.XtraGrid.Columns.GridColumn coldescripcion1;
+        private DevExpress.XtraGrid.Columns.GridColumn colturno_name;
     }
 }
