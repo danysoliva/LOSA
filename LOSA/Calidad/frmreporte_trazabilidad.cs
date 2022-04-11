@@ -157,6 +157,7 @@ namespace LOSA.Calidad
             load_header();
             Load_Despachos();
             load_informacion_de_inventario();
+            load_tarimas_rechazadas();
         }
         public void load_informacion_de_inventario()
         {
@@ -205,6 +206,31 @@ namespace LOSA.Calidad
 
         }
 
+        public void load_tarimas_rechazadas()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_detalle_tarimas_rechazadas_pt_for_trz", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lotept", txtlote.Text);
+                dsReportesTRZ1.tarimas_rechazadas_pt.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsReportesTRZ1.tarimas_rechazadas_pt);
+
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+
+        }
+
         private void Load_Despachos()
         {
             try
@@ -241,6 +267,7 @@ namespace LOSA.Calidad
                 load_data();
                 Load_Despachos();
                 load_informacion_de_inventario();
+                load_tarimas_rechazadas();
             }
         }
 
