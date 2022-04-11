@@ -1,4 +1,4 @@
-﻿using DevExpress.XtraEditors;
+﻿ using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,7 +32,39 @@ namespace LOSA.Calidad.Parametros
             InitializeComponent();
             txtproducto.Text = "(" + Codigo + ") -" + Descripcion;
             load_data();
+            load_grupos();
         }
+
+        public void load_grupos()
+        {
+            try
+            {
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                string Query = @"sp_get_grupos_parametros";
+                try
+                {
+                    cn.Open();
+                    SqlCommand cmd = new SqlCommand(Query, cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    dsParametros.grupos.Clear();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dsParametros.grupos);
+                    cn.Close();
+                }
+                catch (Exception ex)
+                {
+
+                    CajaDialogo.Error(ex.Message);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+
         public void load_data()
         {
             try
@@ -104,6 +136,71 @@ namespace LOSA.Calidad.Parametros
 
 
                 }
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void grd_data_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grdv_data_ShowingEditor(object sender, CancelEventArgs e)
+        {
+            try
+            {
+                var gridView = (GridView)grd_data.FocusedView;
+                var row = (dsParametros.parametroProductoRow)gridView.GetFocusedDataRow();
+                if (row.tipo_rep  != 1 && (grdv_data.FocusedColumn.FieldName == "min"
+                    || grdv_data.FocusedColumn.FieldName == "maximo"))
+                {
+                    e.Cancel = true;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void grdv_data_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            try
+            {
+                var gridView = (GridView)grd_data.FocusedView;
+                var row = (dsParametros.parametroProductoRow)gridView.GetFocusedDataRow();
+                if (e.Column.FieldName == "min")
+                {
+                    row.min = Convert.ToDecimal(e.Value);
+                    row.AcceptChanges();
+                }
+
+                if (e.Column.FieldName == "maximo")
+                {
+                    row.maximo = Convert.ToDecimal(e.Value);
+                    row.AcceptChanges();
+                }
+                if (e.Column.FieldName == "id_printed_cef")
+                {
+                    row.id_printed_cef = Convert.ToBoolean(e.Value);
+                    row.AcceptChanges();
+                }
+                string query = @"sp_update_producto_parametro";
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query,cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_parametros_producto", row.id);
+                cmd.Parameters.AddWithValue("@min", row.min);
+                cmd.Parameters.AddWithValue("@max", row.maximo);
+                cmd.Parameters.AddWithValue("@id_grupo", row.id_grupo);
+                cmd.Parameters.AddWithValue("@is_printed_cef", row.id_printed_cef ? 1 : 0);
+                cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {

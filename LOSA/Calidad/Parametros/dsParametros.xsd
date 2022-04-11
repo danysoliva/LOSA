@@ -60,6 +60,8 @@
               <xs:element name="id_grupo" msprop:Generator_ColumnVarNameInTable="columnid_grupo" msprop:Generator_ColumnPropNameInRow="id_grupo" msprop:Generator_ColumnPropNameInTable="id_grupoColumn" msprop:Generator_UserColumnName="id_grupo" type="xs:int" minOccurs="0" />
               <xs:element name="id_printed_cef" msprop:Generator_ColumnVarNameInTable="columnid_printed_cef" msprop:Generator_ColumnPropNameInRow="id_printed_cef" msprop:Generator_ColumnPropNameInTable="id_printed_cefColumn" msprop:Generator_UserColumnName="id_printed_cef" type="xs:boolean" minOccurs="0" />
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="descipcion" msprop:Generator_ColumnVarNameInTable="columndescipcion" msprop:Generator_ColumnPropNameInRow="descipcion" msprop:Generator_ColumnPropNameInTable="descipcionColumn" msprop:Generator_UserColumnName="descipcion" type="xs:string" minOccurs="0" />
+              <xs:element name="tipo_rep" msprop:Generator_ColumnVarNameInTable="columntipo_rep" msprop:Generator_ColumnPropNameInRow="tipo_rep" msprop:Generator_ColumnPropNameInTable="tipo_repColumn" msprop:Generator_UserColumnName="tipo_rep" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -73,6 +75,67 @@
               <xs:element name="tipos" msprop:Generator_ColumnVarNameInTable="columntipos" msprop:Generator_ColumnPropNameInRow="tipos" msprop:Generator_ColumnPropNameInTable="tiposColumn" msprop:Generator_UserColumnName="tipos" type="xs:string" minOccurs="0" />
               <xs:element name="categoria" msprop:Generator_ColumnVarNameInTable="columncategoria" msprop:Generator_ColumnPropNameInRow="categoria" msprop:Generator_ColumnPropNameInTable="categoriaColumn" msprop:Generator_UserColumnName="categoria" type="xs:string" minOccurs="0" />
               <xs:element name="Selected" msprop:Generator_ColumnVarNameInTable="columnSelected" msprop:Generator_ColumnPropNameInRow="Selected" msprop:Generator_ColumnPropNameInTable="SelectedColumn" msprop:Generator_UserColumnName="Selected" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="grupos" msprop:Generator_TableClassName="gruposDataTable" msprop:Generator_TableVarName="tablegrupos" msprop:Generator_RowChangedName="gruposRowChanged" msprop:Generator_TablePropName="grupos" msprop:Generator_RowDeletingName="gruposRowDeleting" msprop:Generator_RowChangingName="gruposRowChanging" msprop:Generator_RowEvHandlerName="gruposRowChangeEventHandler" msprop:Generator_RowDeletedName="gruposRowDeleted" msprop:Generator_RowClassName="gruposRow" msprop:Generator_UserTableName="grupos" msprop:Generator_RowEvArgName="gruposRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Rangos" msprop:Generator_TableClassName="RangosDataTable" msprop:Generator_TableVarName="tableRangos" msprop:Generator_TablePropName="Rangos" msprop:Generator_RowDeletingName="RangosRowDeleting" msprop:Generator_RowChangingName="RangosRowChanging" msprop:Generator_RowEvHandlerName="RangosRowChangeEventHandler" msprop:Generator_RowDeletedName="RangosRowDeleted" msprop:Generator_UserTableName="Rangos" msprop:Generator_RowChangedName="RangosRowChanged" msprop:Generator_RowEvArgName="RangosRowChangeEvent" msprop:Generator_RowClassName="RangosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="minimo" msprop:Generator_ColumnVarNameInTable="columnminimo" msprop:Generator_ColumnPropNameInRow="minimo" msprop:Generator_ColumnPropNameInTable="minimoColumn" msprop:Generator_UserColumnName="minimo" type="xs:decimal" minOccurs="0" />
+              <xs:element name="maximo" msprop:Generator_ColumnVarNameInTable="columnmaximo" msprop:Generator_ColumnPropNameInRow="maximo" msprop:Generator_ColumnPropNameInTable="maximoColumn" msprop:Generator_UserColumnName="maximo" type="xs:decimal" minOccurs="0" />
+              <xs:element name="parametro" msprop:Generator_ColumnVarNameInTable="columnparametro" msprop:Generator_ColumnPropNameInRow="parametro" msprop:Generator_ColumnPropNameInTable="parametroColumn" msprop:Generator_UserColumnName="parametro" type="xs:string" minOccurs="0" />
+              <xs:element name="valorminimo" msprop:Generator_ColumnVarNameInTable="columnvalorminimo" msprop:Generator_ColumnPropNameInRow="valorminimo" msprop:Generator_ColumnPropNameInTable="valorminimoColumn" msprop:Generator_UserColumnName="valorminimo" type="xs:decimal" minOccurs="0" />
+              <xs:element name="valormaximo" msprop:Generator_ColumnVarNameInTable="columnvalormaximo" msprop:Generator_ColumnPropNameInRow="valormaximo" msprop:Generator_ColumnPropNameInTable="valormaximoColumn" msprop:Generator_UserColumnName="valormaximo" type="xs:decimal" minOccurs="0" />
+              <xs:element name="grupo" msprop:Generator_ColumnVarNameInTable="columngrupo" msprop:Generator_ColumnPropNameInRow="grupo" msprop:Generator_ColumnPropNameInTable="grupoColumn" msprop:Generator_UserColumnName="grupo" type="xs:string" minOccurs="0" />
+              <xs:element name="id_parametro" msprop:Generator_ColumnVarNameInTable="columnid_parametro" msprop:Generator_ColumnPropNameInRow="id_parametro" msprop:Generator_ColumnPropNameInTable="id_parametroColumn" msprop:Generator_UserColumnName="id_parametro" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="decision" msprop:Generator_TableClassName="decisionDataTable" msprop:Generator_TableVarName="tabledecision" msprop:Generator_TablePropName="decision" msprop:Generator_RowDeletingName="decisionRowDeleting" msprop:Generator_RowChangingName="decisionRowChanging" msprop:Generator_RowEvHandlerName="decisionRowChangeEventHandler" msprop:Generator_RowDeletedName="decisionRowDeleted" msprop:Generator_UserTableName="decision" msprop:Generator_RowChangedName="decisionRowChanged" msprop:Generator_RowEvArgName="decisionRowChangeEvent" msprop:Generator_RowClassName="decisionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="parametro" msprop:Generator_ColumnVarNameInTable="columnparametro" msprop:Generator_ColumnPropNameInRow="parametro" msprop:Generator_ColumnPropNameInTable="parametroColumn" msprop:Generator_UserColumnName="parametro" type="xs:string" minOccurs="0" />
+              <xs:element name="decision" msdata:Caption="valormaximo" msprop:Generator_ColumnVarNameInTable="columndecision" msprop:Generator_ColumnPropNameInRow="decision" msprop:Generator_ColumnPropNameInTable="decisionColumn" msprop:Generator_UserColumnName="decision" type="xs:string" minOccurs="0" />
+              <xs:element name="grupo" msprop:Generator_ColumnVarNameInTable="columngrupo" msprop:Generator_ColumnPropNameInRow="grupo" msprop:Generator_ColumnPropNameInTable="grupoColumn" msprop:Generator_UserColumnName="grupo" type="xs:string" minOccurs="0" />
+              <xs:element name="id_parametro" msprop:Generator_ColumnVarNameInTable="columnid_parametro" msprop:Generator_ColumnPropNameInRow="id_parametro" msprop:Generator_ColumnPropNameInTable="id_parametroColumn" msprop:Generator_UserColumnName="id_parametro" type="xs:int" minOccurs="0" />
+              <xs:element name="id_decision" msprop:Generator_ColumnVarNameInTable="columnid_decision" msprop:Generator_ColumnPropNameInRow="id_decision" msprop:Generator_ColumnPropNameInTable="id_decisionColumn" msprop:Generator_UserColumnName="id_decision" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="turno" msprop:Generator_TableClassName="turnoDataTable" msprop:Generator_TableVarName="tableturno" msprop:Generator_RowChangedName="turnoRowChanged" msprop:Generator_TablePropName="turno" msprop:Generator_RowDeletingName="turnoRowDeleting" msprop:Generator_RowChangingName="turnoRowChanging" msprop:Generator_RowEvHandlerName="turnoRowChangeEventHandler" msprop:Generator_RowDeletedName="turnoRowDeleted" msprop:Generator_RowClassName="turnoRow" msprop:Generator_UserTableName="turno" msprop:Generator_RowEvArgName="turnoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="turno" msprop:Generator_ColumnVarNameInTable="columnturno" msprop:Generator_ColumnPropNameInRow="turno" msprop:Generator_ColumnPropNameInTable="turnoColumn" msprop:Generator_UserColumnName="turno" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="parametros_decision" msprop:Generator_TableClassName="parametros_decisionDataTable" msprop:Generator_TableVarName="tableparametros_decision" msprop:Generator_RowChangedName="parametros_decisionRowChanged" msprop:Generator_TablePropName="parametros_decision" msprop:Generator_RowDeletingName="parametros_decisionRowDeleting" msprop:Generator_RowChangingName="parametros_decisionRowChanging" msprop:Generator_RowEvHandlerName="parametros_decisionRowChangeEventHandler" msprop:Generator_RowDeletedName="parametros_decisionRowDeleted" msprop:Generator_RowClassName="parametros_decisionRow" msprop:Generator_UserTableName="parametros_decision" msprop:Generator_RowEvArgName="parametros_decisionRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="parametro" msprop:Generator_ColumnVarNameInTable="columnparametro" msprop:Generator_ColumnPropNameInRow="parametro" msprop:Generator_ColumnPropNameInTable="parametroColumn" msprop:Generator_UserColumnName="parametro" type="xs:string" minOccurs="0" />
+              <xs:element name="selecion" msprop:Generator_ColumnVarNameInTable="columnselecion" msprop:Generator_ColumnPropNameInRow="selecion" msprop:Generator_ColumnPropNameInTable="selecionColumn" msprop:Generator_UserColumnName="selecion" type="xs:int" minOccurs="0" />
+              <xs:element name="id_parametro" msprop:Generator_ColumnVarNameInTable="columnid_parametro" msprop:Generator_ColumnPropNameInRow="id_parametro" msprop:Generator_ColumnPropNameInTable="id_parametroColumn" msprop:Generator_UserColumnName="id_parametro" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="decision_minimos" msprop:Generator_TableClassName="decision_minimosDataTable" msprop:Generator_TableVarName="tabledecision_minimos" msprop:Generator_TablePropName="decision_minimos" msprop:Generator_RowDeletingName="decision_minimosRowDeleting" msprop:Generator_RowChangingName="decision_minimosRowChanging" msprop:Generator_RowEvHandlerName="decision_minimosRowChangeEventHandler" msprop:Generator_RowDeletedName="decision_minimosRowDeleted" msprop:Generator_UserTableName="decision_minimos" msprop:Generator_RowChangedName="decision_minimosRowChanged" msprop:Generator_RowEvArgName="decision_minimosRowChangeEvent" msprop:Generator_RowClassName="decision_minimosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="parametro" msprop:Generator_ColumnVarNameInTable="columnparametro" msprop:Generator_ColumnPropNameInRow="parametro" msprop:Generator_ColumnPropNameInTable="parametroColumn" msprop:Generator_UserColumnName="parametro" type="xs:string" minOccurs="0" />
+              <xs:element name="id_parametro" msprop:Generator_ColumnVarNameInTable="columnid_parametro" msprop:Generator_ColumnPropNameInRow="id_parametro" msprop:Generator_ColumnPropNameInTable="id_parametroColumn" msprop:Generator_UserColumnName="id_parametro" type="xs:int" minOccurs="0" />
+              <xs:element name="valorminimo" msprop:Generator_ColumnVarNameInTable="columnvalorminimo" msprop:Generator_ColumnPropNameInRow="valorminimo" msprop:Generator_ColumnPropNameInTable="valorminimoColumn" msprop:Generator_UserColumnName="valorminimo" type="xs:decimal" minOccurs="0" />
+              <xs:element name="valormaximo" msprop:Generator_ColumnVarNameInTable="columnvalormaximo" msprop:Generator_ColumnPropNameInRow="valormaximo" msprop:Generator_ColumnPropNameInTable="valormaximoColumn" msprop:Generator_UserColumnName="valormaximo" type="xs:decimal" minOccurs="0" />
+              <xs:element name="valor" msprop:Generator_ColumnVarNameInTable="columnvalor" msprop:Generator_ColumnPropNameInRow="valor" msprop:Generator_ColumnPropNameInTable="valorColumn" msprop:Generator_UserColumnName="valor" type="xs:decimal" minOccurs="0" />
+              <xs:element name="resultado" msprop:Generator_ColumnVarNameInTable="columnresultado" msprop:Generator_ColumnPropNameInRow="resultado" msprop:Generator_ColumnPropNameInTable="resultadoColumn" msprop:Generator_UserColumnName="resultado" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

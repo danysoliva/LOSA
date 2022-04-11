@@ -696,6 +696,12 @@
     <Compile Include="Calidad\Parametros\frmPickParametrs.Designer.cs">
       <DependentUpon>frmPickParametrs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\Parametros\FrmRegistroMuestreo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\Parametros\FrmRegistroMuestreo.Designer.cs">
+      <DependentUpon>FrmRegistroMuestreo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\xfrmWizardConfCalidad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2778,6 +2784,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\Parametros\frmPickParametrs.resx">
       <DependentUpon>frmPickParametrs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\Parametros\FrmRegistroMuestreo.resx">
+      <DependentUpon>FrmRegistroMuestreo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\xfrmWizardConfCalidad.resx">
       <DependentUpon>xfrmWizardConfCalidad.cs</DependentUpon>

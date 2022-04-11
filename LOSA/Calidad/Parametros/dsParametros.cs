@@ -4,6 +4,10 @@
 
     partial class dsParametros
     {
+        partial class gruposDataTable
+        {
+        }
+
         partial class productoDataTable
         {
         }
