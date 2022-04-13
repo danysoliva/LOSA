@@ -656,6 +656,7 @@
     <Compile Include="Calidad\GestionLotesMP\frmSelectCausaRechazo.Designer.cs">
       <DependentUpon>frmSelectCausaRechazo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\Model\FFIF_H.cs" />
     <Compile Include="Calidad\Model\Lote_Ingreso_Conf_Calidad.cs" />
     <Compile Include="Calidad\NoConformidad.cs" />
     <Compile Include="Calidad\Parametros\dsParametros.cs">
@@ -702,11 +703,23 @@
     <Compile Include="Calidad\Parametros\FrmRegistroMuestreo.Designer.cs">
       <DependentUpon>FrmRegistroMuestreo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\xfrmCertificadoCalidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\xfrmCertificadoCalidad.Designer.cs">
+      <DependentUpon>xfrmCertificadoCalidad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\xfrmWizardConfCalidad.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Calidad\xfrmWizardConfCalidad.Designer.cs">
       <DependentUpon>xfrmWizardConfCalidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\xfrm_formula_FFIF_New.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\xfrm_formula_FFIF_New.Designer.cs">
+      <DependentUpon>xfrm_formula_FFIF_New.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\BagsPT.cs" />
     <Compile Include="Clases\Boleta.cs" />
@@ -2788,8 +2801,14 @@
     <EmbeddedResource Include="Calidad\Parametros\FrmRegistroMuestreo.resx">
       <DependentUpon>FrmRegistroMuestreo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\xfrmCertificadoCalidad.resx">
+      <DependentUpon>xfrmCertificadoCalidad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calidad\xfrmWizardConfCalidad.resx">
       <DependentUpon>xfrmWizardConfCalidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\xfrm_formula_FFIF_New.resx">
+      <DependentUpon>xfrm_formula_FFIF_New.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frmdespachos.resx">
       <DependentUpon>frmdespachos.cs</DependentUpon>
