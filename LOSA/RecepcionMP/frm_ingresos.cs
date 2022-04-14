@@ -30,7 +30,7 @@ namespace LOSA.RecepcionMP
         }
         public void Load_Info()
         {
-            string query = @"EXEC dbo.ps_load_ingresos_from_tarimas_v4";
+            string query = @"EXEC dbo.ps_load_ingresos_from_tarimas_v5";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             try
             {
