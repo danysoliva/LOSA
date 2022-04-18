@@ -86,6 +86,7 @@
             this.btnreportes = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
             this.TabCalidad = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton32 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton29 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton28 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton27 = new DevExpress.XtraEditors.SimpleButton();
@@ -108,6 +109,7 @@
             this.btnTiposPresentaciones = new DevExpress.XtraEditors.SimpleButton();
             this.btnBodegas = new DevExpress.XtraEditors.SimpleButton();
             this.tabProduccion = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton33 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton17 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
@@ -119,8 +121,6 @@
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton32 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton33 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -971,6 +971,19 @@
             this.TabCalidad.Size = new System.Drawing.Size(772, 441);
             this.TabCalidad.Text = "Calidad";
             // 
+            // simpleButton32
+            // 
+            this.simpleButton32.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.simpleButton32.Appearance.Options.UseFont = true;
+            this.simpleButton32.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton32.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton32.ImageOptions.Image")));
+            this.simpleButton32.Location = new System.Drawing.Point(9, 348);
+            this.simpleButton32.Name = "simpleButton32";
+            this.simpleButton32.Size = new System.Drawing.Size(199, 59);
+            this.simpleButton32.TabIndex = 32;
+            this.simpleButton32.Text = "Definir Reproceso";
+            this.simpleButton32.Click += new System.EventHandler(this.simpleButton32_Click);
+            // 
             // simpleButton29
             // 
             this.simpleButton29.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1262,6 +1275,22 @@
             this.tabProduccion.Size = new System.Drawing.Size(772, 441);
             this.tabProduccion.Text = "Producción";
             // 
+            // simpleButton33
+            // 
+            this.simpleButton33.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton33.Appearance.Options.UseFont = true;
+            this.simpleButton33.Appearance.Options.UseTextOptions = true;
+            this.simpleButton33.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton33.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton33.ImageOptions.Image = global::LOSA.Properties.Resources.pallet32px;
+            this.simpleButton33.Location = new System.Drawing.Point(19, 206);
+            this.simpleButton33.Name = "simpleButton33";
+            this.simpleButton33.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton33.TabIndex = 18;
+            this.simpleButton33.Text = "Tarimas de Reproceso";
+            this.simpleButton33.Visible = false;
+            this.simpleButton33.Click += new System.EventHandler(this.simpleButton33_Click);
+            // 
             // simpleButton17
             // 
             this.simpleButton17.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1416,35 +1445,6 @@
             this.labelControl3.Size = new System.Drawing.Size(515, 39);
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
-            // 
-            // simpleButton32
-            // 
-            this.simpleButton32.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.simpleButton32.Appearance.Options.UseFont = true;
-            this.simpleButton32.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton32.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton32.ImageOptions.Image")));
-            this.simpleButton32.Location = new System.Drawing.Point(9, 348);
-            this.simpleButton32.Name = "simpleButton32";
-            this.simpleButton32.Size = new System.Drawing.Size(199, 59);
-            this.simpleButton32.TabIndex = 32;
-            this.simpleButton32.Text = "Definir Reproceso";
-            this.simpleButton32.Click += new System.EventHandler(this.simpleButton32_Click);
-            // 
-            // simpleButton33
-            // 
-            this.simpleButton33.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton33.Appearance.Options.UseFont = true;
-            this.simpleButton33.Appearance.Options.UseTextOptions = true;
-            this.simpleButton33.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.simpleButton33.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton33.ImageOptions.Image = global::LOSA.Properties.Resources.pallet32px;
-            this.simpleButton33.Location = new System.Drawing.Point(19, 206);
-            this.simpleButton33.Name = "simpleButton33";
-            this.simpleButton33.Size = new System.Drawing.Size(199, 71);
-            this.simpleButton33.TabIndex = 18;
-            this.simpleButton33.Text = "Tarimas de Reproceso";
-            this.simpleButton33.Visible = false;
-            this.simpleButton33.Click += new System.EventHandler(this.simpleButton33_Click);
             // 
             // frmOpciones
             // 

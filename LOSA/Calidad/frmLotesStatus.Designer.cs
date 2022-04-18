@@ -234,9 +234,10 @@
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdHome.ImageOptions.Image")));
-            this.cmdHome.Location = new System.Drawing.Point(861, 12);
+            this.cmdHome.Location = new System.Drawing.Point(1292, 18);
+            this.cmdHome.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdHome.Name = "cmdHome";
-            this.cmdHome.Size = new System.Drawing.Size(156, 52);
+            this.cmdHome.Size = new System.Drawing.Size(234, 80);
             this.cmdHome.TabIndex = 29;
             this.cmdHome.Text = "Home";
             this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
@@ -246,10 +247,11 @@
             this.TabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TabControl1.Location = new System.Drawing.Point(1, 83);
+            this.TabControl1.Location = new System.Drawing.Point(2, 128);
+            this.TabControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TabControl1.Name = "TabControl1";
             this.TabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.TabControl1.Size = new System.Drawing.Size(1022, 475);
+            this.TabControl1.Size = new System.Drawing.Size(1533, 731);
             this.TabControl1.TabIndex = 30;
             this.TabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -263,21 +265,23 @@
             this.xtraTabPage1.Appearance.Header.Options.UseFont = true;
             this.xtraTabPage1.Controls.Add(this.checkDisponibles);
             this.xtraTabPage1.Controls.Add(this.grDisponibles);
+            this.xtraTabPage1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(1016, 441);
+            this.xtraTabPage1.Size = new System.Drawing.Size(1525, 681);
             this.xtraTabPage1.Text = "Disponibles";
             // 
             // checkDisponibles
             // 
             this.checkDisponibles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkDisponibles.Location = new System.Drawing.Point(591, 2);
+            this.checkDisponibles.Location = new System.Drawing.Point(1331, 5);
+            this.checkDisponibles.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.checkDisponibles.MenuManager = this.barManager1;
             this.checkDisponibles.Name = "checkDisponibles";
             this.checkDisponibles.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkDisponibles.Properties.Appearance.Options.UseFont = true;
             this.checkDisponibles.Properties.Caption = "Seleccionar Todas";
             this.checkDisponibles.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkDisponibles.Size = new System.Drawing.Size(81, 13);
+            this.checkDisponibles.Size = new System.Drawing.Size(186, 31);
             this.checkDisponibles.TabIndex = 2;
             this.checkDisponibles.CheckedChanged += new System.EventHandler(this.checkDisponibles_CheckedChanged);
             // 
@@ -313,15 +317,17 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1022, 0);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.barDockControlTop.Size = new System.Drawing.Size(1533, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 560);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 862);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1022, 0);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1533, 0);
             // 
             // barDockControlLeft
             // 
@@ -329,15 +335,17 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 560);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 862);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1022, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(1533, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 560);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 862);
             // 
             // barButtonItem1
             // 
@@ -498,13 +506,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grDisponibles.DataMember = "tarimas_disponibles";
             this.grDisponibles.DataSource = this.dsCalidad1;
-            this.grDisponibles.Location = new System.Drawing.Point(1, 19);
+            this.grDisponibles.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grDisponibles.Location = new System.Drawing.Point(2, 37);
             this.grDisponibles.MainView = this.gvMateriaPrima;
+            this.grDisponibles.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.grDisponibles.Name = "grDisponibles";
             this.grDisponibles.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnEditar,
             this.btndetalle});
-            this.grDisponibles.Size = new System.Drawing.Size(675, 273);
+            this.grDisponibles.Size = new System.Drawing.Size(1519, 644);
             this.grDisponibles.TabIndex = 1;
             this.grDisponibles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvMateriaPrima});
@@ -553,7 +563,8 @@
             this.colseleccionado,
             this.colcodigo_barra,
             this.collote1});
-            this.gvMateriaPrima.DetailHeight = 284;
+            this.gvMateriaPrima.DetailHeight = 437;
+            this.gvMateriaPrima.FixedLineWidth = 3;
             this.gvMateriaPrima.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.gvMateriaPrima.GridControl = this.grDisponibles;
             this.gvMateriaPrima.GroupCount = 1;
@@ -577,112 +588,130 @@
             // colid1
             // 
             this.colid1.FieldName = "id";
+            this.colid1.MinWidth = 30;
             this.colid1.Name = "colid1";
             this.colid1.OptionsColumn.AllowEdit = false;
+            this.colid1.Width = 112;
             // 
             // collote
             // 
             this.collote.Caption = "Lote";
             this.collote.FieldName = "lote";
+            this.collote.MinWidth = 30;
             this.collote.Name = "collote";
             this.collote.OptionsColumn.AllowEdit = false;
             this.collote.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "lote", "Recuento {0}")});
             this.collote.Visible = true;
             this.collote.VisibleIndex = 0;
-            this.collote.Width = 90;
+            this.collote.Width = 135;
             // 
             // colmp
             // 
             this.colmp.Caption = "Nombre";
             this.colmp.FieldName = "mp";
+            this.colmp.MinWidth = 30;
             this.colmp.Name = "colmp";
             this.colmp.OptionsColumn.AllowEdit = false;
             this.colmp.Visible = true;
             this.colmp.VisibleIndex = 3;
-            this.colmp.Width = 90;
+            this.colmp.Width = 135;
             // 
             // colproveedor
             // 
             this.colproveedor.Caption = "Proveedor";
             this.colproveedor.FieldName = "proveedor";
+            this.colproveedor.MinWidth = 30;
             this.colproveedor.Name = "colproveedor";
             this.colproveedor.OptionsColumn.AllowEdit = false;
             this.colproveedor.Visible = true;
             this.colproveedor.VisibleIndex = 4;
-            this.colproveedor.Width = 90;
+            this.colproveedor.Width = 135;
             // 
             // colfecha_vence
             // 
             this.colfecha_vence.Caption = "F. Vence";
             this.colfecha_vence.FieldName = "fecha_vence";
+            this.colfecha_vence.MinWidth = 30;
             this.colfecha_vence.Name = "colfecha_vence";
             this.colfecha_vence.OptionsColumn.AllowEdit = false;
             this.colfecha_vence.Visible = true;
             this.colfecha_vence.VisibleIndex = 5;
-            this.colfecha_vence.Width = 90;
+            this.colfecha_vence.Width = 135;
             // 
             // colunidades
             // 
             this.colunidades.Caption = "Unidades";
             this.colunidades.FieldName = "unidades";
+            this.colunidades.MinWidth = 30;
             this.colunidades.Name = "colunidades";
             this.colunidades.OptionsColumn.AllowEdit = false;
             this.colunidades.Visible = true;
             this.colunidades.VisibleIndex = 6;
-            this.colunidades.Width = 90;
+            this.colunidades.Width = 135;
             // 
             // colpeso
             // 
             this.colpeso.Caption = "Peso";
             this.colpeso.FieldName = "peso";
+            this.colpeso.MinWidth = 30;
             this.colpeso.Name = "colpeso";
             this.colpeso.OptionsColumn.AllowEdit = false;
             this.colpeso.Visible = true;
             this.colpeso.VisibleIndex = 7;
-            this.colpeso.Width = 90;
+            this.colpeso.Width = 135;
             // 
             // colcodigomp
             // 
             this.colcodigomp.FieldName = "codigomp";
+            this.colcodigomp.MinWidth = 30;
             this.colcodigomp.Name = "colcodigomp";
             this.colcodigomp.OptionsColumn.AllowEdit = false;
+            this.colcodigomp.Width = 112;
             // 
             // colestado
             // 
             this.colestado.FieldName = "estado";
+            this.colestado.MinWidth = 30;
             this.colestado.Name = "colestado";
             this.colestado.OptionsColumn.AllowEdit = false;
+            this.colestado.Width = 112;
             // 
             // colestadoid
             // 
             this.colestadoid.FieldName = "estadoid";
+            this.colestadoid.MinWidth = 30;
             this.colestadoid.Name = "colestadoid";
             this.colestadoid.OptionsColumn.AllowEdit = false;
+            this.colestadoid.Width = 112;
             // 
             // colingreso
             // 
             this.colingreso.FieldName = "ingreso";
+            this.colingreso.MinWidth = 30;
             this.colingreso.Name = "colingreso";
             this.colingreso.OptionsColumn.AllowEdit = false;
             this.colingreso.Visible = true;
             this.colingreso.VisibleIndex = 2;
-            this.colingreso.Width = 90;
+            this.colingreso.Width = 135;
             // 
             // colid_mp
             // 
             this.colid_mp.FieldName = "id_mp";
+            this.colid_mp.MinWidth = 30;
             this.colid_mp.Name = "colid_mp";
             this.colid_mp.OptionsColumn.AllowEdit = false;
+            this.colid_mp.Width = 112;
             // 
             // coldetalle
             // 
             this.coldetalle.Caption = "Detalle";
             this.coldetalle.ColumnEdit = this.btndetalle;
+            this.coldetalle.MinWidth = 30;
             this.coldetalle.Name = "coldetalle";
             this.coldetalle.Visible = true;
             this.coldetalle.VisibleIndex = 9;
-            this.coldetalle.Width = 105;
+            this.coldetalle.Width = 157;
             // 
             // btndetalle
             // 
@@ -698,49 +727,58 @@
             // 
             this.colOdoo.Caption = "Produccion";
             this.colOdoo.FieldName = "Odoo";
+            this.colOdoo.MinWidth = 30;
             this.colOdoo.Name = "colOdoo";
             this.colOdoo.OptionsColumn.AllowEdit = false;
             this.colOdoo.Visible = true;
             this.colOdoo.VisibleIndex = 1;
-            this.colOdoo.Width = 90;
+            this.colOdoo.Width = 135;
             // 
             // colid_tipotm
             // 
             this.colid_tipotm.FieldName = "id_tipotm";
+            this.colid_tipotm.MinWidth = 30;
             this.colid_tipotm.Name = "colid_tipotm";
+            this.colid_tipotm.Width = 112;
             // 
             // colTurno
             // 
             this.colTurno.FieldName = "Turno";
+            this.colTurno.MinWidth = 30;
             this.colTurno.Name = "colTurno";
             this.colTurno.OptionsColumn.AllowEdit = false;
             this.colTurno.Visible = true;
             this.colTurno.VisibleIndex = 8;
-            this.colTurno.Width = 90;
+            this.colTurno.Width = 135;
             // 
             // colseleccionado
             // 
             this.colseleccionado.FieldName = "seleccionado";
+            this.colseleccionado.MinWidth = 30;
             this.colseleccionado.Name = "colseleccionado";
             this.colseleccionado.OptionsFilter.AllowAutoFilter = false;
             this.colseleccionado.Visible = true;
             this.colseleccionado.VisibleIndex = 10;
-            this.colseleccionado.Width = 80;
+            this.colseleccionado.Width = 120;
             // 
             // colcodigo_barra
             // 
             this.colcodigo_barra.FieldName = "codigo_barra";
+            this.colcodigo_barra.MinWidth = 30;
             this.colcodigo_barra.Name = "colcodigo_barra";
             this.colcodigo_barra.OptionsColumn.AllowEdit = false;
+            this.colcodigo_barra.Width = 112;
             // 
             // collote1
             // 
             this.collote1.Caption = "Lote";
             this.collote1.FieldName = "lote1";
+            this.collote1.MinWidth = 30;
             this.collote1.Name = "collote1";
             this.collote1.OptionsColumn.AllowEdit = false;
             this.collote1.Visible = true;
             this.collote1.VisibleIndex = 4;
+            this.collote1.Width = 112;
             // 
             // btnEditar
             // 
@@ -758,21 +796,23 @@
             this.xtraTabPage2.Appearance.Header.Options.UseFont = true;
             this.xtraTabPage2.Controls.Add(this.checkObservacion);
             this.xtraTabPage2.Controls.Add(this.gridObservacion);
+            this.xtraTabPage2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(1016, 441);
+            this.xtraTabPage2.Size = new System.Drawing.Size(1525, 681);
             this.xtraTabPage2.Text = "En Observación";
             // 
             // checkObservacion
             // 
             this.checkObservacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkObservacion.Location = new System.Drawing.Point(591, 2);
+            this.checkObservacion.Location = new System.Drawing.Point(1333, 5);
+            this.checkObservacion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.checkObservacion.MenuManager = this.barManager1;
             this.checkObservacion.Name = "checkObservacion";
             this.checkObservacion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkObservacion.Properties.Appearance.Options.UseFont = true;
             this.checkObservacion.Properties.Caption = "Seleccionar Todas";
             this.checkObservacion.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkObservacion.Size = new System.Drawing.Size(81, 13);
+            this.checkObservacion.Size = new System.Drawing.Size(184, 31);
             this.checkObservacion.TabIndex = 3;
             this.checkObservacion.CheckedChanged += new System.EventHandler(this.checkObservacion_CheckedChanged);
             // 
@@ -783,13 +823,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridObservacion.DataMember = "tarimas_obs";
             this.gridObservacion.DataSource = this.dsCalidad1;
-            this.gridObservacion.Location = new System.Drawing.Point(1, 19);
+            this.gridObservacion.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gridObservacion.Location = new System.Drawing.Point(2, 35);
             this.gridObservacion.MainView = this.gridView1;
+            this.gridObservacion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridObservacion.Name = "gridObservacion";
             this.gridObservacion.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1,
             this.btndetalle3});
-            this.gridObservacion.Size = new System.Drawing.Size(675, 273);
+            this.gridObservacion.Size = new System.Drawing.Size(1530, 646);
             this.gridObservacion.TabIndex = 2;
             this.gridObservacion.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -832,7 +874,8 @@
             this.colcodigo_barra1,
             this.collote11,
             this.colOdoo1});
-            this.gridView1.DetailHeight = 284;
+            this.gridView1.DetailHeight = 437;
+            this.gridView1.FixedLineWidth = 3;
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.gridView1.GridControl = this.gridObservacion;
             this.gridView1.GroupCount = 1;
@@ -856,92 +899,92 @@
             // gridColumn1
             // 
             this.gridColumn1.FieldName = "id";
-            this.gridColumn1.MinWidth = 15;
+            this.gridColumn1.MinWidth = 22;
             this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Width = 56;
+            this.gridColumn1.Width = 84;
             // 
             // gridColumn2
             // 
             this.gridColumn2.FieldName = "lote";
-            this.gridColumn2.MinWidth = 15;
+            this.gridColumn2.MinWidth = 22;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "lote", "Recuento {0}")});
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 0;
-            this.gridColumn2.Width = 80;
+            this.gridColumn2.Width = 120;
             // 
             // gridColumn3
             // 
             this.gridColumn3.Caption = "Nombre";
             this.gridColumn3.FieldName = "mp";
-            this.gridColumn3.MinWidth = 15;
+            this.gridColumn3.MinWidth = 22;
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 3;
-            this.gridColumn3.Width = 80;
+            this.gridColumn3.Width = 120;
             // 
             // gridColumn4
             // 
             this.gridColumn4.Caption = "Prov.";
             this.gridColumn4.FieldName = "proveedor";
-            this.gridColumn4.MinWidth = 15;
+            this.gridColumn4.MinWidth = 22;
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 4;
-            this.gridColumn4.Width = 80;
+            this.gridColumn4.Width = 120;
             // 
             // gridColumn5
             // 
             this.gridColumn5.Caption = "F. Vence";
             this.gridColumn5.FieldName = "fecha_vence";
-            this.gridColumn5.MinWidth = 15;
+            this.gridColumn5.MinWidth = 22;
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 5;
-            this.gridColumn5.Width = 80;
+            this.gridColumn5.Width = 120;
             // 
             // gridColumn6
             // 
             this.gridColumn6.Caption = "Unidades";
             this.gridColumn6.FieldName = "unidades";
-            this.gridColumn6.MinWidth = 15;
+            this.gridColumn6.MinWidth = 22;
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.OptionsColumn.AllowEdit = false;
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 6;
-            this.gridColumn6.Width = 80;
+            this.gridColumn6.Width = 120;
             // 
             // gridColumn7
             // 
             this.gridColumn7.Caption = "Peso";
             this.gridColumn7.FieldName = "peso";
-            this.gridColumn7.MinWidth = 15;
+            this.gridColumn7.MinWidth = 22;
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.OptionsColumn.AllowEdit = false;
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 7;
-            this.gridColumn7.Width = 80;
+            this.gridColumn7.Width = 120;
             // 
             // gridColumn8
             // 
             this.gridColumn8.FieldName = "estado";
-            this.gridColumn8.MinWidth = 15;
+            this.gridColumn8.MinWidth = 22;
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.OptionsColumn.AllowEdit = false;
-            this.gridColumn8.Width = 56;
+            this.gridColumn8.Width = 84;
             // 
             // gridColumn9
             // 
             this.gridColumn9.Caption = "Editar Estado";
             this.gridColumn9.ColumnEdit = this.repositoryItemButtonEdit1;
-            this.gridColumn9.MinWidth = 15;
+            this.gridColumn9.MinWidth = 22;
             this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.Width = 56;
+            this.gridColumn9.Width = 84;
             // 
             // repositoryItemButtonEdit1
             // 
@@ -956,11 +999,11 @@
             // 
             this.colDetalle3.Caption = "Detalle";
             this.colDetalle3.ColumnEdit = this.btndetalle3;
-            this.colDetalle3.MinWidth = 15;
+            this.colDetalle3.MinWidth = 22;
             this.colDetalle3.Name = "colDetalle3";
             this.colDetalle3.Visible = true;
             this.colDetalle3.VisibleIndex = 9;
-            this.colDetalle3.Width = 116;
+            this.colDetalle3.Width = 174;
             // 
             // btndetalle3
             // 
@@ -976,65 +1019,77 @@
             // 
             this.colingreso2.Caption = "Ingreso";
             this.colingreso2.FieldName = "ingreso";
+            this.colingreso2.MinWidth = 30;
             this.colingreso2.Name = "colingreso2";
             this.colingreso2.OptionsColumn.AllowEdit = false;
             this.colingreso2.Visible = true;
             this.colingreso2.VisibleIndex = 2;
-            this.colingreso2.Width = 107;
+            this.colingreso2.Width = 160;
             // 
             // colIdmp
             // 
             this.colIdmp.Caption = "Idmp";
             this.colIdmp.FieldName = "id_mp";
+            this.colIdmp.MinWidth = 30;
             this.colIdmp.Name = "colIdmp";
+            this.colIdmp.Width = 112;
             // 
             // colseleccionado1
             // 
             this.colseleccionado1.FieldName = "seleccionado";
+            this.colseleccionado1.MinWidth = 30;
             this.colseleccionado1.Name = "colseleccionado1";
             this.colseleccionado1.OptionsFilter.AllowAutoFilter = false;
             this.colseleccionado1.Visible = true;
             this.colseleccionado1.VisibleIndex = 10;
-            this.colseleccionado1.Width = 78;
+            this.colseleccionado1.Width = 117;
             // 
             // colid_tipotm1
             // 
             this.colid_tipotm1.FieldName = "id_tipotm";
+            this.colid_tipotm1.MinWidth = 30;
             this.colid_tipotm1.Name = "colid_tipotm1";
+            this.colid_tipotm1.Width = 112;
             // 
             // colTurno1
             // 
             this.colTurno1.FieldName = "Turno";
+            this.colTurno1.MinWidth = 30;
             this.colTurno1.Name = "colTurno1";
             this.colTurno1.OptionsColumn.AllowEdit = false;
             this.colTurno1.Visible = true;
             this.colTurno1.VisibleIndex = 8;
-            this.colTurno1.Width = 107;
+            this.colTurno1.Width = 160;
             // 
             // colcodigo_barra1
             // 
             this.colcodigo_barra1.FieldName = "codigo_barra";
+            this.colcodigo_barra1.MinWidth = 30;
             this.colcodigo_barra1.Name = "colcodigo_barra1";
             this.colcodigo_barra1.OptionsColumn.AllowEdit = false;
+            this.colcodigo_barra1.Width = 112;
             // 
             // collote11
             // 
             this.collote11.Caption = "Lote";
             this.collote11.FieldName = "lote1";
+            this.collote11.MinWidth = 30;
             this.collote11.Name = "collote11";
             this.collote11.OptionsColumn.AllowEdit = false;
             this.collote11.Visible = true;
             this.collote11.VisibleIndex = 9;
+            this.collote11.Width = 112;
             // 
             // colOdoo1
             // 
             this.colOdoo1.Caption = "Produccion";
             this.colOdoo1.FieldName = "Odoo";
+            this.colOdoo1.MinWidth = 30;
             this.colOdoo1.Name = "colOdoo1";
             this.colOdoo1.OptionsColumn.AllowEdit = false;
             this.colOdoo1.Visible = true;
             this.colOdoo1.VisibleIndex = 1;
-            this.colOdoo1.Width = 107;
+            this.colOdoo1.Width = 160;
             // 
             // xtraTabPage3
             // 
@@ -1042,21 +1097,23 @@
             this.xtraTabPage3.Appearance.Header.Options.UseFont = true;
             this.xtraTabPage3.Controls.Add(this.checkRetenido);
             this.xtraTabPage3.Controls.Add(this.gridRetenidos);
+            this.xtraTabPage3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(1016, 441);
+            this.xtraTabPage3.Size = new System.Drawing.Size(1525, 681);
             this.xtraTabPage3.Text = "Retenido";
             // 
             // checkRetenido
             // 
             this.checkRetenido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkRetenido.Location = new System.Drawing.Point(591, 2);
+            this.checkRetenido.Location = new System.Drawing.Point(1345, 5);
+            this.checkRetenido.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.checkRetenido.MenuManager = this.barManager1;
             this.checkRetenido.Name = "checkRetenido";
             this.checkRetenido.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkRetenido.Properties.Appearance.Options.UseFont = true;
             this.checkRetenido.Properties.Caption = "Seleccionar Todas";
             this.checkRetenido.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkRetenido.Size = new System.Drawing.Size(81, 13);
+            this.checkRetenido.Size = new System.Drawing.Size(176, 31);
             this.checkRetenido.TabIndex = 4;
             this.checkRetenido.CheckedChanged += new System.EventHandler(this.checkRetenido_CheckedChanged);
             // 
@@ -1067,13 +1124,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridRetenidos.DataMember = "tarimas_ret";
             this.gridRetenidos.DataSource = this.dsCalidad1;
-            this.gridRetenidos.Location = new System.Drawing.Point(1, 19);
+            this.gridRetenidos.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gridRetenidos.Location = new System.Drawing.Point(2, 29);
             this.gridRetenidos.MainView = this.gridView2;
+            this.gridRetenidos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridRetenidos.Name = "gridRetenidos";
             this.gridRetenidos.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit2,
             this.btnview});
-            this.gridRetenidos.Size = new System.Drawing.Size(675, 273);
+            this.gridRetenidos.Size = new System.Drawing.Size(1523, 652);
             this.gridRetenidos.TabIndex = 3;
             this.gridRetenidos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -1116,7 +1175,8 @@
             this.colcodigo_barra2,
             this.collote12,
             this.colOdoo2});
-            this.gridView2.DetailHeight = 284;
+            this.gridView2.DetailHeight = 437;
+            this.gridView2.FixedLineWidth = 3;
             this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.gridView2.GridControl = this.gridRetenidos;
             this.gridView2.GroupCount = 1;
@@ -1140,92 +1200,92 @@
             // gridColumn10
             // 
             this.gridColumn10.FieldName = "id";
-            this.gridColumn10.MinWidth = 15;
+            this.gridColumn10.MinWidth = 22;
             this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.Width = 56;
+            this.gridColumn10.Width = 84;
             // 
             // gridColumn11
             // 
             this.gridColumn11.FieldName = "lote";
-            this.gridColumn11.MinWidth = 15;
+            this.gridColumn11.MinWidth = 22;
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.OptionsColumn.AllowEdit = false;
             this.gridColumn11.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "lote", "Recuento {0}")});
             this.gridColumn11.Visible = true;
             this.gridColumn11.VisibleIndex = 0;
-            this.gridColumn11.Width = 80;
+            this.gridColumn11.Width = 120;
             // 
             // gridColumn12
             // 
             this.gridColumn12.Caption = "Nombre";
             this.gridColumn12.FieldName = "mp";
-            this.gridColumn12.MinWidth = 15;
+            this.gridColumn12.MinWidth = 22;
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.OptionsColumn.AllowEdit = false;
             this.gridColumn12.Visible = true;
             this.gridColumn12.VisibleIndex = 3;
-            this.gridColumn12.Width = 80;
+            this.gridColumn12.Width = 120;
             // 
             // gridColumn13
             // 
             this.gridColumn13.Caption = "Prov.";
             this.gridColumn13.FieldName = "proveedor";
-            this.gridColumn13.MinWidth = 15;
+            this.gridColumn13.MinWidth = 22;
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.OptionsColumn.AllowEdit = false;
             this.gridColumn13.Visible = true;
             this.gridColumn13.VisibleIndex = 4;
-            this.gridColumn13.Width = 80;
+            this.gridColumn13.Width = 120;
             // 
             // gridColumn14
             // 
             this.gridColumn14.Caption = "F. Vence";
             this.gridColumn14.FieldName = "fecha_vence";
-            this.gridColumn14.MinWidth = 15;
+            this.gridColumn14.MinWidth = 22;
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.OptionsColumn.AllowEdit = false;
             this.gridColumn14.Visible = true;
             this.gridColumn14.VisibleIndex = 5;
-            this.gridColumn14.Width = 80;
+            this.gridColumn14.Width = 120;
             // 
             // gridColumn15
             // 
             this.gridColumn15.Caption = "Unidades";
             this.gridColumn15.FieldName = "unidades";
-            this.gridColumn15.MinWidth = 15;
+            this.gridColumn15.MinWidth = 22;
             this.gridColumn15.Name = "gridColumn15";
             this.gridColumn15.OptionsColumn.AllowEdit = false;
             this.gridColumn15.Visible = true;
             this.gridColumn15.VisibleIndex = 6;
-            this.gridColumn15.Width = 80;
+            this.gridColumn15.Width = 120;
             // 
             // gridColumn16
             // 
             this.gridColumn16.Caption = "Peso";
             this.gridColumn16.FieldName = "peso";
-            this.gridColumn16.MinWidth = 15;
+            this.gridColumn16.MinWidth = 22;
             this.gridColumn16.Name = "gridColumn16";
             this.gridColumn16.OptionsColumn.AllowEdit = false;
             this.gridColumn16.Visible = true;
             this.gridColumn16.VisibleIndex = 7;
-            this.gridColumn16.Width = 80;
+            this.gridColumn16.Width = 120;
             // 
             // gridColumn17
             // 
             this.gridColumn17.FieldName = "estado";
-            this.gridColumn17.MinWidth = 15;
+            this.gridColumn17.MinWidth = 22;
             this.gridColumn17.Name = "gridColumn17";
             this.gridColumn17.OptionsColumn.AllowEdit = false;
-            this.gridColumn17.Width = 56;
+            this.gridColumn17.Width = 84;
             // 
             // gridColumn18
             // 
             this.gridColumn18.Caption = "Editar Estado";
             this.gridColumn18.ColumnEdit = this.repositoryItemButtonEdit2;
-            this.gridColumn18.MinWidth = 15;
+            this.gridColumn18.MinWidth = 22;
             this.gridColumn18.Name = "gridColumn18";
-            this.gridColumn18.Width = 56;
+            this.gridColumn18.Width = 84;
             // 
             // repositoryItemButtonEdit2
             // 
@@ -1240,11 +1300,11 @@
             // 
             this.colver.Caption = "Detalle";
             this.colver.ColumnEdit = this.btnview;
-            this.colver.MinWidth = 15;
+            this.colver.MinWidth = 22;
             this.colver.Name = "colver";
             this.colver.Visible = true;
             this.colver.VisibleIndex = 9;
-            this.colver.Width = 116;
+            this.colver.Width = 174;
             // 
             // btnview
             // 
@@ -1260,65 +1320,77 @@
             // 
             this.colingreso3.Caption = "Ingreso";
             this.colingreso3.FieldName = "ingreso";
+            this.colingreso3.MinWidth = 30;
             this.colingreso3.Name = "colingreso3";
             this.colingreso3.OptionsColumn.AllowEdit = false;
             this.colingreso3.Visible = true;
             this.colingreso3.VisibleIndex = 2;
-            this.colingreso3.Width = 107;
+            this.colingreso3.Width = 160;
             // 
             // colidmp3
             // 
             this.colidmp3.Caption = "gridColumn20";
             this.colidmp3.FieldName = "id_mp";
+            this.colidmp3.MinWidth = 30;
             this.colidmp3.Name = "colidmp3";
+            this.colidmp3.Width = 112;
             // 
             // colseleccionado2
             // 
             this.colseleccionado2.FieldName = "seleccionado";
+            this.colseleccionado2.MinWidth = 30;
             this.colseleccionado2.Name = "colseleccionado2";
             this.colseleccionado2.OptionsFilter.AllowAutoFilter = false;
             this.colseleccionado2.Visible = true;
             this.colseleccionado2.VisibleIndex = 10;
-            this.colseleccionado2.Width = 78;
+            this.colseleccionado2.Width = 117;
             // 
             // colid_tipotm2
             // 
             this.colid_tipotm2.FieldName = "id_tipotm";
+            this.colid_tipotm2.MinWidth = 30;
             this.colid_tipotm2.Name = "colid_tipotm2";
+            this.colid_tipotm2.Width = 112;
             // 
             // colTurno2
             // 
             this.colTurno2.FieldName = "Turno";
+            this.colTurno2.MinWidth = 30;
             this.colTurno2.Name = "colTurno2";
             this.colTurno2.OptionsColumn.AllowEdit = false;
             this.colTurno2.Visible = true;
             this.colTurno2.VisibleIndex = 8;
-            this.colTurno2.Width = 107;
+            this.colTurno2.Width = 160;
             // 
             // colcodigo_barra2
             // 
             this.colcodigo_barra2.FieldName = "codigo_barra";
+            this.colcodigo_barra2.MinWidth = 30;
             this.colcodigo_barra2.Name = "colcodigo_barra2";
             this.colcodigo_barra2.OptionsColumn.AllowEdit = false;
+            this.colcodigo_barra2.Width = 112;
             // 
             // collote12
             // 
             this.collote12.Caption = "Lote";
             this.collote12.FieldName = "lote1";
+            this.collote12.MinWidth = 30;
             this.collote12.Name = "collote12";
             this.collote12.OptionsColumn.AllowEdit = false;
             this.collote12.Visible = true;
             this.collote12.VisibleIndex = 9;
+            this.collote12.Width = 112;
             // 
             // colOdoo2
             // 
             this.colOdoo2.Caption = "Produccion";
             this.colOdoo2.FieldName = "Odoo";
+            this.colOdoo2.MinWidth = 30;
             this.colOdoo2.Name = "colOdoo2";
             this.colOdoo2.OptionsColumn.AllowEdit = false;
             this.colOdoo2.Visible = true;
             this.colOdoo2.VisibleIndex = 1;
-            this.colOdoo2.Width = 107;
+            this.colOdoo2.Width = 160;
             // 
             // xtraTabPage4
             // 
@@ -1326,21 +1398,23 @@
             this.xtraTabPage4.Appearance.Header.Options.UseFont = true;
             this.xtraTabPage4.Controls.Add(this.checkRechazado);
             this.xtraTabPage4.Controls.Add(this.gridRechazado);
+            this.xtraTabPage4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.xtraTabPage4.Name = "xtraTabPage4";
-            this.xtraTabPage4.Size = new System.Drawing.Size(1016, 441);
+            this.xtraTabPage4.Size = new System.Drawing.Size(1525, 681);
             this.xtraTabPage4.Text = "Rechazado";
             // 
             // checkRechazado
             // 
             this.checkRechazado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkRechazado.Location = new System.Drawing.Point(591, 2);
+            this.checkRechazado.Location = new System.Drawing.Point(1336, 5);
+            this.checkRechazado.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.checkRechazado.MenuManager = this.barManager1;
             this.checkRechazado.Name = "checkRechazado";
             this.checkRechazado.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkRechazado.Properties.Appearance.Options.UseFont = true;
             this.checkRechazado.Properties.Caption = "Seleccionar Todas";
             this.checkRechazado.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkRechazado.Size = new System.Drawing.Size(81, 13);
+            this.checkRechazado.Size = new System.Drawing.Size(181, 31);
             this.checkRechazado.TabIndex = 5;
             this.checkRechazado.CheckedChanged += new System.EventHandler(this.checkRechazado_CheckedChanged);
             // 
@@ -1351,13 +1425,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridRechazado.DataMember = "tarimas_rechazadas";
             this.gridRechazado.DataSource = this.dsCalidad1;
-            this.gridRechazado.Location = new System.Drawing.Point(1, 19);
+            this.gridRechazado.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gridRechazado.Location = new System.Drawing.Point(2, 29);
             this.gridRechazado.MainView = this.gridView3;
+            this.gridRechazado.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridRechazado.Name = "gridRechazado";
             this.gridRechazado.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit3,
             this.repositoryItemButtonEdit4});
-            this.gridRechazado.Size = new System.Drawing.Size(675, 273);
+            this.gridRechazado.Size = new System.Drawing.Size(1530, 652);
             this.gridRechazado.TabIndex = 4;
             this.gridRechazado.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -1400,7 +1476,8 @@
             this.gridColumn33,
             this.gridColumn34,
             this.gridColumn35});
-            this.gridView3.DetailHeight = 284;
+            this.gridView3.DetailHeight = 437;
+            this.gridView3.FixedLineWidth = 3;
             this.gridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.gridView3.GridControl = this.gridRechazado;
             this.gridView3.GroupCount = 1;
@@ -1424,92 +1501,92 @@
             // gridColumn19
             // 
             this.gridColumn19.FieldName = "id";
-            this.gridColumn19.MinWidth = 15;
+            this.gridColumn19.MinWidth = 22;
             this.gridColumn19.Name = "gridColumn19";
-            this.gridColumn19.Width = 56;
+            this.gridColumn19.Width = 84;
             // 
             // gridColumn20
             // 
             this.gridColumn20.FieldName = "lote";
-            this.gridColumn20.MinWidth = 15;
+            this.gridColumn20.MinWidth = 22;
             this.gridColumn20.Name = "gridColumn20";
             this.gridColumn20.OptionsColumn.AllowEdit = false;
             this.gridColumn20.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "lote", "Recuento {0}")});
             this.gridColumn20.Visible = true;
             this.gridColumn20.VisibleIndex = 0;
-            this.gridColumn20.Width = 80;
+            this.gridColumn20.Width = 120;
             // 
             // gridColumn21
             // 
             this.gridColumn21.Caption = "Nombre";
             this.gridColumn21.FieldName = "mp";
-            this.gridColumn21.MinWidth = 15;
+            this.gridColumn21.MinWidth = 22;
             this.gridColumn21.Name = "gridColumn21";
             this.gridColumn21.OptionsColumn.AllowEdit = false;
             this.gridColumn21.Visible = true;
             this.gridColumn21.VisibleIndex = 3;
-            this.gridColumn21.Width = 80;
+            this.gridColumn21.Width = 120;
             // 
             // gridColumn22
             // 
             this.gridColumn22.Caption = "Prov.";
             this.gridColumn22.FieldName = "proveedor";
-            this.gridColumn22.MinWidth = 15;
+            this.gridColumn22.MinWidth = 22;
             this.gridColumn22.Name = "gridColumn22";
             this.gridColumn22.OptionsColumn.AllowEdit = false;
             this.gridColumn22.Visible = true;
             this.gridColumn22.VisibleIndex = 4;
-            this.gridColumn22.Width = 80;
+            this.gridColumn22.Width = 120;
             // 
             // gridColumn23
             // 
             this.gridColumn23.Caption = "F. Vence";
             this.gridColumn23.FieldName = "fecha_vence";
-            this.gridColumn23.MinWidth = 15;
+            this.gridColumn23.MinWidth = 22;
             this.gridColumn23.Name = "gridColumn23";
             this.gridColumn23.OptionsColumn.AllowEdit = false;
             this.gridColumn23.Visible = true;
             this.gridColumn23.VisibleIndex = 5;
-            this.gridColumn23.Width = 80;
+            this.gridColumn23.Width = 120;
             // 
             // gridColumn24
             // 
             this.gridColumn24.Caption = "Unidades";
             this.gridColumn24.FieldName = "unidades";
-            this.gridColumn24.MinWidth = 15;
+            this.gridColumn24.MinWidth = 22;
             this.gridColumn24.Name = "gridColumn24";
             this.gridColumn24.OptionsColumn.AllowEdit = false;
             this.gridColumn24.Visible = true;
             this.gridColumn24.VisibleIndex = 6;
-            this.gridColumn24.Width = 80;
+            this.gridColumn24.Width = 120;
             // 
             // gridColumn25
             // 
             this.gridColumn25.Caption = "Peso";
             this.gridColumn25.FieldName = "peso";
-            this.gridColumn25.MinWidth = 15;
+            this.gridColumn25.MinWidth = 22;
             this.gridColumn25.Name = "gridColumn25";
             this.gridColumn25.OptionsColumn.AllowEdit = false;
             this.gridColumn25.Visible = true;
             this.gridColumn25.VisibleIndex = 7;
-            this.gridColumn25.Width = 80;
+            this.gridColumn25.Width = 120;
             // 
             // gridColumn26
             // 
             this.gridColumn26.FieldName = "estado";
-            this.gridColumn26.MinWidth = 15;
+            this.gridColumn26.MinWidth = 22;
             this.gridColumn26.Name = "gridColumn26";
             this.gridColumn26.OptionsColumn.AllowEdit = false;
-            this.gridColumn26.Width = 56;
+            this.gridColumn26.Width = 84;
             // 
             // gridColumn27
             // 
             this.gridColumn27.Caption = "Editar Estado";
             this.gridColumn27.ColumnEdit = this.repositoryItemButtonEdit3;
-            this.gridColumn27.MinWidth = 15;
+            this.gridColumn27.MinWidth = 22;
             this.gridColumn27.Name = "gridColumn27";
-            this.gridColumn27.Width = 56;
+            this.gridColumn27.Width = 84;
             // 
             // repositoryItemButtonEdit3
             // 
@@ -1524,11 +1601,11 @@
             // 
             this.gridColumn28.Caption = "Detalle";
             this.gridColumn28.ColumnEdit = this.repositoryItemButtonEdit4;
-            this.gridColumn28.MinWidth = 15;
+            this.gridColumn28.MinWidth = 22;
             this.gridColumn28.Name = "gridColumn28";
             this.gridColumn28.Visible = true;
             this.gridColumn28.VisibleIndex = 9;
-            this.gridColumn28.Width = 116;
+            this.gridColumn28.Width = 174;
             // 
             // repositoryItemButtonEdit4
             // 
@@ -1543,73 +1620,86 @@
             // 
             this.gridColumn29.Caption = "Ingreso";
             this.gridColumn29.FieldName = "ingreso";
+            this.gridColumn29.MinWidth = 30;
             this.gridColumn29.Name = "gridColumn29";
             this.gridColumn29.OptionsColumn.AllowEdit = false;
             this.gridColumn29.Visible = true;
             this.gridColumn29.VisibleIndex = 2;
-            this.gridColumn29.Width = 107;
+            this.gridColumn29.Width = 160;
             // 
             // colseleccionado3
             // 
             this.colseleccionado3.FieldName = "seleccionado";
+            this.colseleccionado3.MinWidth = 30;
             this.colseleccionado3.Name = "colseleccionado3";
             this.colseleccionado3.OptionsFilter.AllowAutoFilter = false;
             this.colseleccionado3.Visible = true;
             this.colseleccionado3.VisibleIndex = 10;
-            this.colseleccionado3.Width = 78;
+            this.colseleccionado3.Width = 117;
             // 
             // gridColumn30
             // 
             this.gridColumn30.Caption = "gridColumn20";
             this.gridColumn30.FieldName = "id_mp";
+            this.gridColumn30.MinWidth = 30;
             this.gridColumn30.Name = "gridColumn30";
+            this.gridColumn30.Width = 112;
             // 
             // gridColumn31
             // 
             this.gridColumn31.FieldName = "id_tipotm";
+            this.gridColumn31.MinWidth = 30;
             this.gridColumn31.Name = "gridColumn31";
+            this.gridColumn31.Width = 112;
             // 
             // gridColumn32
             // 
             this.gridColumn32.FieldName = "Turno";
+            this.gridColumn32.MinWidth = 30;
             this.gridColumn32.Name = "gridColumn32";
             this.gridColumn32.OptionsColumn.AllowEdit = false;
             this.gridColumn32.Visible = true;
             this.gridColumn32.VisibleIndex = 8;
-            this.gridColumn32.Width = 107;
+            this.gridColumn32.Width = 160;
             // 
             // gridColumn33
             // 
             this.gridColumn33.FieldName = "codigo_barra";
+            this.gridColumn33.MinWidth = 30;
             this.gridColumn33.Name = "gridColumn33";
             this.gridColumn33.OptionsColumn.AllowEdit = false;
+            this.gridColumn33.Width = 112;
             // 
             // gridColumn34
             // 
             this.gridColumn34.Caption = "Lote";
             this.gridColumn34.FieldName = "lote1";
+            this.gridColumn34.MinWidth = 30;
             this.gridColumn34.Name = "gridColumn34";
             this.gridColumn34.OptionsColumn.AllowEdit = false;
             this.gridColumn34.Visible = true;
             this.gridColumn34.VisibleIndex = 9;
+            this.gridColumn34.Width = 112;
             // 
             // gridColumn35
             // 
             this.gridColumn35.Caption = "Produccion";
             this.gridColumn35.FieldName = "Odoo";
+            this.gridColumn35.MinWidth = 30;
             this.gridColumn35.Name = "gridColumn35";
             this.gridColumn35.OptionsColumn.AllowEdit = false;
             this.gridColumn35.Visible = true;
             this.gridColumn35.VisibleIndex = 1;
-            this.gridColumn35.Width = 107;
+            this.gridColumn35.Width = 160;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(395, 39);
+            this.label1.Location = new System.Drawing.Point(592, 60);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(175, 25);
+            this.label1.Size = new System.Drawing.Size(258, 37);
             this.label1.TabIndex = 31;
             this.label1.Text = "Gestión de Lotes";
             // 
@@ -1644,10 +1734,10 @@
             // 
             // frmLotesStatus
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1022, 560);
+            this.ClientSize = new System.Drawing.Size(1533, 862);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TabControl1);
             this.Controls.Add(this.cmdHome);
@@ -1655,6 +1745,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmLotesStatus";
             this.Text = "Gestion de Lotes";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
