@@ -368,6 +368,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsMantenimientoC.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\dsTrazabilidadReports.Designer.cs" />
     <Compile Include="Calidad\frmaddcausa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1552,6 +1553,13 @@
     </None>
     <None Include="Calidad\dsMantenimientoC.xss">
       <DependentUpon>dsMantenimientoC.xsd</DependentUpon>
+    </None>
+    <None Include="Calidad\dsTrazabilidadReports.xsc">
+      <DependentUpon>dsTrazabilidadReports.xsd</DependentUpon>
+    </None>
+    <None Include="Calidad\dsTrazabilidadReports.xsd" />
+    <None Include="Calidad\dsTrazabilidadReports.xss">
+      <DependentUpon>dsTrazabilidadReports.xsd</DependentUpon>
     </None>
     <None Include="Calidad\Parametros\dsParametros.xsc">
       <DependentUpon>dsParametros.xsd</DependentUpon>

@@ -340,7 +340,7 @@ namespace LOSA.Trazabilidad
             this.cmdEliminarRow,
             this.cmdAbrir,
             this.cmdDownload});
-            this.gridControl2.Size = new System.Drawing.Size(833, 254);
+            this.gridControl2.Size = new System.Drawing.Size(833, 286);
             this.gridControl2.TabIndex = 2;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -553,7 +553,7 @@ namespace LOSA.Trazabilidad
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cmdDelete_,
             this.cmdEditar});
-            this.gridControl1.Size = new System.Drawing.Size(833, 254);
+            this.gridControl1.Size = new System.Drawing.Size(833, 286);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
