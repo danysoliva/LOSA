@@ -48,6 +48,8 @@ namespace LOSA.Calidad.Parametros {
         
         private decision_minimosDataTable tabledecision_minimos;
         
+        private decision_valuesDataTable tabledecision_values;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -111,6 +113,9 @@ namespace LOSA.Calidad.Parametros {
                 }
                 if ((ds.Tables["decision_minimos"] != null)) {
                     base.Tables.Add(new decision_minimosDataTable(ds.Tables["decision_minimos"]));
+                }
+                if ((ds.Tables["decision_values"] != null)) {
+                    base.Tables.Add(new decision_valuesDataTable(ds.Tables["decision_values"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -252,6 +257,16 @@ namespace LOSA.Calidad.Parametros {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public decision_valuesDataTable decision_values {
+            get {
+                return this.tabledecision_values;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -352,6 +367,9 @@ namespace LOSA.Calidad.Parametros {
                 }
                 if ((ds.Tables["decision_minimos"] != null)) {
                     base.Tables.Add(new decision_minimosDataTable(ds.Tables["decision_minimos"]));
+                }
+                if ((ds.Tables["decision_values"] != null)) {
+                    base.Tables.Add(new decision_valuesDataTable(ds.Tables["decision_values"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -458,6 +476,12 @@ namespace LOSA.Calidad.Parametros {
                     this.tabledecision_minimos.InitVars();
                 }
             }
+            this.tabledecision_values = ((decision_valuesDataTable)(base.Tables["decision_values"]));
+            if ((initTable == true)) {
+                if ((this.tabledecision_values != null)) {
+                    this.tabledecision_values.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -492,6 +516,8 @@ namespace LOSA.Calidad.Parametros {
             base.Tables.Add(this.tableparametros_decision);
             this.tabledecision_minimos = new decision_minimosDataTable();
             base.Tables.Add(this.tabledecision_minimos);
+            this.tabledecision_values = new decision_valuesDataTable();
+            base.Tables.Add(this.tabledecision_values);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -563,6 +589,12 @@ namespace LOSA.Calidad.Parametros {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializedecision_minimos() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializedecision_values() {
             return false;
         }
         
@@ -656,6 +688,9 @@ namespace LOSA.Calidad.Parametros {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void decision_minimosRowChangeEventHandler(object sender, decision_minimosRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void decision_valuesRowChangeEventHandler(object sender, decision_valuesRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -3076,7 +3111,7 @@ namespace LOSA.Calidad.Parametros {
             
             private global::System.Data.DataColumn columnparametro;
             
-            private global::System.Data.DataColumn columndecision;
+            private global::System.Data.DataColumn columnSeleccion;
             
             private global::System.Data.DataColumn columngrupo;
             
@@ -3127,9 +3162,9 @@ namespace LOSA.Calidad.Parametros {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn decisionColumn {
+            public global::System.Data.DataColumn SeleccionColumn {
                 get {
-                    return this.columndecision;
+                    return this.columnSeleccion;
                 }
             }
             
@@ -3194,11 +3229,11 @@ namespace LOSA.Calidad.Parametros {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public decisionRow AdddecisionRow(string parametro, string decision, string grupo, int id_parametro, int id_decision) {
+            public decisionRow AdddecisionRow(string parametro, string Seleccion, string grupo, int id_parametro, int id_decision) {
                 decisionRow rowdecisionRow = ((decisionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         parametro,
-                        decision,
+                        Seleccion,
                         grupo,
                         id_parametro,
                         id_decision};
@@ -3225,7 +3260,7 @@ namespace LOSA.Calidad.Parametros {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnparametro = base.Columns["parametro"];
-                this.columndecision = base.Columns["decision"];
+                this.columnSeleccion = base.Columns["Seleccion"];
                 this.columngrupo = base.Columns["grupo"];
                 this.columnid_parametro = base.Columns["id_parametro"];
                 this.columnid_decision = base.Columns["id_decision"];
@@ -3236,15 +3271,15 @@ namespace LOSA.Calidad.Parametros {
             private void InitClass() {
                 this.columnparametro = new global::System.Data.DataColumn("parametro", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnparametro);
-                this.columndecision = new global::System.Data.DataColumn("decision", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndecision);
+                this.columnSeleccion = new global::System.Data.DataColumn("Seleccion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSeleccion);
                 this.columngrupo = new global::System.Data.DataColumn("grupo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columngrupo);
                 this.columnid_parametro = new global::System.Data.DataColumn("id_parametro", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_parametro);
                 this.columnid_decision = new global::System.Data.DataColumn("id_decision", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_decision);
-                this.columndecision.Caption = "valormaximo";
+                this.columnSeleccion.Caption = "valormaximo";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3641,9 +3676,11 @@ namespace LOSA.Calidad.Parametros {
             
             private global::System.Data.DataColumn columnparametro;
             
-            private global::System.Data.DataColumn columnselecion;
+            private global::System.Data.DataColumn columnid_decision;
             
             private global::System.Data.DataColumn columnid_parametro;
+            
+            private global::System.Data.DataColumn columnDecision;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -3688,9 +3725,9 @@ namespace LOSA.Calidad.Parametros {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn selecionColumn {
+            public global::System.Data.DataColumn id_decisionColumn {
                 get {
-                    return this.columnselecion;
+                    return this.columnid_decision;
                 }
             }
             
@@ -3699,6 +3736,14 @@ namespace LOSA.Calidad.Parametros {
             public global::System.Data.DataColumn id_parametroColumn {
                 get {
                     return this.columnid_parametro;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DecisionColumn {
+                get {
+                    return this.columnDecision;
                 }
             }
             
@@ -3739,12 +3784,13 @@ namespace LOSA.Calidad.Parametros {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public parametros_decisionRow Addparametros_decisionRow(string parametro, int selecion, int id_parametro) {
+            public parametros_decisionRow Addparametros_decisionRow(string parametro, int id_decision, int id_parametro, string Decision) {
                 parametros_decisionRow rowparametros_decisionRow = ((parametros_decisionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         parametro,
-                        selecion,
-                        id_parametro};
+                        id_decision,
+                        id_parametro,
+                        Decision};
                 rowparametros_decisionRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowparametros_decisionRow);
                 return rowparametros_decisionRow;
@@ -3768,8 +3814,9 @@ namespace LOSA.Calidad.Parametros {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnparametro = base.Columns["parametro"];
-                this.columnselecion = base.Columns["selecion"];
+                this.columnid_decision = base.Columns["id_decision"];
                 this.columnid_parametro = base.Columns["id_parametro"];
+                this.columnDecision = base.Columns["Decision"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3777,10 +3824,12 @@ namespace LOSA.Calidad.Parametros {
             private void InitClass() {
                 this.columnparametro = new global::System.Data.DataColumn("parametro", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnparametro);
-                this.columnselecion = new global::System.Data.DataColumn("selecion", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnselecion);
+                this.columnid_decision = new global::System.Data.DataColumn("id_decision", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_decision);
                 this.columnid_parametro = new global::System.Data.DataColumn("id_parametro", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_parametro);
+                this.columnDecision = new global::System.Data.DataColumn("Decision", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDecision);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3926,6 +3975,10 @@ namespace LOSA.Calidad.Parametros {
             
             private global::System.Data.DataColumn columnresultado;
             
+            private global::System.Data.DataColumn columnvalorMostarMinimo;
+            
+            private global::System.Data.DataColumn columnvalorMostarMaximo;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public decision_minimosDataTable() {
@@ -4009,6 +4062,22 @@ namespace LOSA.Calidad.Parametros {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn valorMostarMinimoColumn {
+                get {
+                    return this.columnvalorMostarMinimo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn valorMostarMaximoColumn {
+                get {
+                    return this.columnvalorMostarMaximo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4044,7 +4113,7 @@ namespace LOSA.Calidad.Parametros {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public decision_minimosRow Adddecision_minimosRow(string parametro, int id_parametro, decimal valorminimo, decimal valormaximo, decimal valor, string resultado) {
+            public decision_minimosRow Adddecision_minimosRow(string parametro, int id_parametro, decimal valorminimo, decimal valormaximo, decimal valor, string resultado, string valorMostarMinimo, string valorMostarMaximo) {
                 decision_minimosRow rowdecision_minimosRow = ((decision_minimosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         parametro,
@@ -4052,7 +4121,9 @@ namespace LOSA.Calidad.Parametros {
                         valorminimo,
                         valormaximo,
                         valor,
-                        resultado};
+                        resultado,
+                        valorMostarMinimo,
+                        valorMostarMaximo};
                 rowdecision_minimosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdecision_minimosRow);
                 return rowdecision_minimosRow;
@@ -4081,6 +4152,8 @@ namespace LOSA.Calidad.Parametros {
                 this.columnvalormaximo = base.Columns["valormaximo"];
                 this.columnvalor = base.Columns["valor"];
                 this.columnresultado = base.Columns["resultado"];
+                this.columnvalorMostarMinimo = base.Columns["valorMostarMinimo"];
+                this.columnvalorMostarMaximo = base.Columns["valorMostarMaximo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4098,6 +4171,10 @@ namespace LOSA.Calidad.Parametros {
                 base.Columns.Add(this.columnvalor);
                 this.columnresultado = new global::System.Data.DataColumn("resultado", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnresultado);
+                this.columnvalorMostarMinimo = new global::System.Data.DataColumn("valorMostarMinimo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnvalorMostarMinimo);
+                this.columnvalorMostarMaximo = new global::System.Data.DataColumn("valorMostarMaximo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnvalorMostarMaximo);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4184,6 +4261,267 @@ namespace LOSA.Calidad.Parametros {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "decision_minimosDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class decision_valuesDataTable : global::System.Data.TypedTableBase<decision_valuesRow> {
+            
+            private global::System.Data.DataColumn columnid;
+            
+            private global::System.Data.DataColumn columndescripcion;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decision_valuesDataTable() {
+                this.TableName = "decision_values";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal decision_valuesDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected decision_valuesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn idColumn {
+                get {
+                    return this.columnid;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn descripcionColumn {
+                get {
+                    return this.columndescripcion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decision_valuesRow this[int index] {
+                get {
+                    return ((decision_valuesRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event decision_valuesRowChangeEventHandler decision_valuesRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event decision_valuesRowChangeEventHandler decision_valuesRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event decision_valuesRowChangeEventHandler decision_valuesRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event decision_valuesRowChangeEventHandler decision_valuesRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Adddecision_valuesRow(decision_valuesRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decision_valuesRow Adddecision_valuesRow(int id, string descripcion) {
+                decision_valuesRow rowdecision_valuesRow = ((decision_valuesRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        id,
+                        descripcion};
+                rowdecision_valuesRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowdecision_valuesRow);
+                return rowdecision_valuesRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                decision_valuesDataTable cln = ((decision_valuesDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new decision_valuesDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnid = base.Columns["id"];
+                this.columndescripcion = base.Columns["descripcion"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid);
+                this.columndescripcion = new global::System.Data.DataColumn("descripcion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndescripcion);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decision_valuesRow Newdecision_valuesRow() {
+                return ((decision_valuesRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new decision_valuesRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(decision_valuesRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.decision_valuesRowChanged != null)) {
+                    this.decision_valuesRowChanged(this, new decision_valuesRowChangeEvent(((decision_valuesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.decision_valuesRowChanging != null)) {
+                    this.decision_valuesRowChanging(this, new decision_valuesRowChangeEvent(((decision_valuesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.decision_valuesRowDeleted != null)) {
+                    this.decision_valuesRowDeleted(this, new decision_valuesRowChangeEvent(((decision_valuesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.decision_valuesRowDeleting != null)) {
+                    this.decision_valuesRowDeleting(this, new decision_valuesRowChangeEvent(((decision_valuesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Removedecision_valuesRow(decision_valuesRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsParametros ds = new dsParametros();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "decision_valuesDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -5469,17 +5807,17 @@ namespace LOSA.Calidad.Parametros {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string decision {
+            public string Seleccion {
                 get {
                     try {
-                        return ((string)(this[this.tabledecision.decisionColumn]));
+                        return ((string)(this[this.tabledecision.SeleccionColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'decision\' de la tabla \'decision\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Seleccion\' de la tabla \'decision\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabledecision.decisionColumn] = value;
+                    this[this.tabledecision.SeleccionColumn] = value;
                 }
             }
             
@@ -5545,14 +5883,14 @@ namespace LOSA.Calidad.Parametros {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsdecisionNull() {
-                return this.IsNull(this.tabledecision.decisionColumn);
+            public bool IsSeleccionNull() {
+                return this.IsNull(this.tabledecision.SeleccionColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetdecisionNull() {
-                this[this.tabledecision.decisionColumn] = global::System.Convert.DBNull;
+            public void SetSeleccionNull() {
+                this[this.tabledecision.SeleccionColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5695,17 +6033,18 @@ namespace LOSA.Calidad.Parametros {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int selecion {
+            public int id_decision {
                 get {
                     try {
-                        return ((int)(this[this.tableparametros_decision.selecionColumn]));
+                        return ((int)(this[this.tableparametros_decision.id_decisionColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'selecion\' de la tabla \'parametros_decision\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_decision\' de la tabla \'parametros_decision\' es DBNull." +
+                                "", e);
                     }
                 }
                 set {
-                    this[this.tableparametros_decision.selecionColumn] = value;
+                    this[this.tableparametros_decision.id_decisionColumn] = value;
                 }
             }
             
@@ -5728,6 +6067,22 @@ namespace LOSA.Calidad.Parametros {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Decision {
+                get {
+                    try {
+                        return ((string)(this[this.tableparametros_decision.DecisionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Decision\' de la tabla \'parametros_decision\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableparametros_decision.DecisionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsparametroNull() {
                 return this.IsNull(this.tableparametros_decision.parametroColumn);
             }
@@ -5740,14 +6095,14 @@ namespace LOSA.Calidad.Parametros {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsselecionNull() {
-                return this.IsNull(this.tableparametros_decision.selecionColumn);
+            public bool Isid_decisionNull() {
+                return this.IsNull(this.tableparametros_decision.id_decisionColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetselecionNull() {
-                this[this.tableparametros_decision.selecionColumn] = global::System.Convert.DBNull;
+            public void Setid_decisionNull() {
+                this[this.tableparametros_decision.id_decisionColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5760,6 +6115,18 @@ namespace LOSA.Calidad.Parametros {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setid_parametroNull() {
                 this[this.tableparametros_decision.id_parametroColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDecisionNull() {
+                return this.IsNull(this.tableparametros_decision.DecisionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDecisionNull() {
+                this[this.tableparametros_decision.DecisionColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -5875,6 +6242,40 @@ namespace LOSA.Calidad.Parametros {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string valorMostarMinimo {
+                get {
+                    try {
+                        return ((string)(this[this.tabledecision_minimos.valorMostarMinimoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'valorMostarMinimo\' de la tabla \'decision_minimos\' es DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tabledecision_minimos.valorMostarMinimoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string valorMostarMaximo {
+                get {
+                    try {
+                        return ((string)(this[this.tabledecision_minimos.valorMostarMaximoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'valorMostarMaximo\' de la tabla \'decision_minimos\' es DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tabledecision_minimos.valorMostarMaximoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsparametroNull() {
                 return this.IsNull(this.tabledecision_minimos.parametroColumn);
             }
@@ -5943,6 +6344,101 @@ namespace LOSA.Calidad.Parametros {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetresultadoNull() {
                 this[this.tabledecision_minimos.resultadoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsvalorMostarMinimoNull() {
+                return this.IsNull(this.tabledecision_minimos.valorMostarMinimoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetvalorMostarMinimoNull() {
+                this[this.tabledecision_minimos.valorMostarMinimoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsvalorMostarMaximoNull() {
+                return this.IsNull(this.tabledecision_minimos.valorMostarMaximoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetvalorMostarMaximoNull() {
+                this[this.tabledecision_minimos.valorMostarMaximoColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class decision_valuesRow : global::System.Data.DataRow {
+            
+            private decision_valuesDataTable tabledecision_values;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal decision_valuesRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tabledecision_values = ((decision_valuesDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id {
+                get {
+                    try {
+                        return ((int)(this[this.tabledecision_values.idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id\' de la tabla \'decision_values\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledecision_values.idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string descripcion {
+                get {
+                    try {
+                        return ((string)(this[this.tabledecision_values.descripcionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'descripcion\' de la tabla \'decision_values\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledecision_values.descripcionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsidNull() {
+                return this.IsNull(this.tabledecision_values.idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetidNull() {
+                this[this.tabledecision_values.idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsdescripcionNull() {
+                return this.IsNull(this.tabledecision_values.descripcionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetdescripcionNull() {
+                this[this.tabledecision_values.descripcionColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -6340,6 +6836,40 @@ namespace LOSA.Calidad.Parametros {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public decision_minimosRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class decision_valuesRowChangeEvent : global::System.EventArgs {
+            
+            private decision_valuesRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decision_valuesRowChangeEvent(decision_valuesRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decision_valuesRow Row {
                 get {
                     return this.eventRow;
                 }

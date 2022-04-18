@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLotesStatus));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -73,7 +74,7 @@
             this.TabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.checkDisponibles = new DevExpress.XtraEditors.CheckEdit();
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -191,7 +192,7 @@
             this.gridColumn34 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn35 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu();
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.TabControl1)).BeginInit();
             this.TabControl1.SuspendLayout();
@@ -269,14 +270,14 @@
             // checkDisponibles
             // 
             this.checkDisponibles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkDisponibles.Location = new System.Drawing.Point(886, 3);
+            this.checkDisponibles.Location = new System.Drawing.Point(591, 2);
             this.checkDisponibles.MenuManager = this.barManager1;
             this.checkDisponibles.Name = "checkDisponibles";
             this.checkDisponibles.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkDisponibles.Properties.Appearance.Options.UseFont = true;
             this.checkDisponibles.Properties.Caption = "Seleccionar Todas";
             this.checkDisponibles.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkDisponibles.Size = new System.Drawing.Size(122, 19);
+            this.checkDisponibles.Size = new System.Drawing.Size(81, 13);
             this.checkDisponibles.TabIndex = 2;
             this.checkDisponibles.CheckedChanged += new System.EventHandler(this.checkDisponibles_CheckedChanged);
             // 
@@ -497,13 +498,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grDisponibles.DataMember = "tarimas_disponibles";
             this.grDisponibles.DataSource = this.dsCalidad1;
-            this.grDisponibles.Location = new System.Drawing.Point(2, 28);
+            this.grDisponibles.Location = new System.Drawing.Point(1, 19);
             this.grDisponibles.MainView = this.gvMateriaPrima;
             this.grDisponibles.Name = "grDisponibles";
             this.grDisponibles.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnEditar,
             this.btndetalle});
-            this.grDisponibles.Size = new System.Drawing.Size(1013, 410);
+            this.grDisponibles.Size = new System.Drawing.Size(675, 273);
             this.grDisponibles.TabIndex = 1;
             this.grDisponibles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvMateriaPrima});
@@ -764,14 +765,14 @@
             // checkObservacion
             // 
             this.checkObservacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkObservacion.Location = new System.Drawing.Point(886, 3);
+            this.checkObservacion.Location = new System.Drawing.Point(591, 2);
             this.checkObservacion.MenuManager = this.barManager1;
             this.checkObservacion.Name = "checkObservacion";
             this.checkObservacion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkObservacion.Properties.Appearance.Options.UseFont = true;
             this.checkObservacion.Properties.Caption = "Seleccionar Todas";
             this.checkObservacion.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkObservacion.Size = new System.Drawing.Size(122, 19);
+            this.checkObservacion.Size = new System.Drawing.Size(81, 13);
             this.checkObservacion.TabIndex = 3;
             this.checkObservacion.CheckedChanged += new System.EventHandler(this.checkObservacion_CheckedChanged);
             // 
@@ -782,13 +783,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridObservacion.DataMember = "tarimas_obs";
             this.gridObservacion.DataSource = this.dsCalidad1;
-            this.gridObservacion.Location = new System.Drawing.Point(2, 28);
+            this.gridObservacion.Location = new System.Drawing.Point(1, 19);
             this.gridObservacion.MainView = this.gridView1;
             this.gridObservacion.Name = "gridObservacion";
             this.gridObservacion.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1,
             this.btndetalle3});
-            this.gridObservacion.Size = new System.Drawing.Size(1013, 410);
+            this.gridObservacion.Size = new System.Drawing.Size(675, 273);
             this.gridObservacion.TabIndex = 2;
             this.gridObservacion.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -1048,14 +1049,14 @@
             // checkRetenido
             // 
             this.checkRetenido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkRetenido.Location = new System.Drawing.Point(886, 3);
+            this.checkRetenido.Location = new System.Drawing.Point(591, 2);
             this.checkRetenido.MenuManager = this.barManager1;
             this.checkRetenido.Name = "checkRetenido";
             this.checkRetenido.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkRetenido.Properties.Appearance.Options.UseFont = true;
             this.checkRetenido.Properties.Caption = "Seleccionar Todas";
             this.checkRetenido.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkRetenido.Size = new System.Drawing.Size(122, 19);
+            this.checkRetenido.Size = new System.Drawing.Size(81, 13);
             this.checkRetenido.TabIndex = 4;
             this.checkRetenido.CheckedChanged += new System.EventHandler(this.checkRetenido_CheckedChanged);
             // 
@@ -1066,13 +1067,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridRetenidos.DataMember = "tarimas_ret";
             this.gridRetenidos.DataSource = this.dsCalidad1;
-            this.gridRetenidos.Location = new System.Drawing.Point(2, 28);
+            this.gridRetenidos.Location = new System.Drawing.Point(1, 19);
             this.gridRetenidos.MainView = this.gridView2;
             this.gridRetenidos.Name = "gridRetenidos";
             this.gridRetenidos.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit2,
             this.btnview});
-            this.gridRetenidos.Size = new System.Drawing.Size(1013, 410);
+            this.gridRetenidos.Size = new System.Drawing.Size(675, 273);
             this.gridRetenidos.TabIndex = 3;
             this.gridRetenidos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -1332,14 +1333,14 @@
             // checkRechazado
             // 
             this.checkRechazado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkRechazado.Location = new System.Drawing.Point(886, 3);
+            this.checkRechazado.Location = new System.Drawing.Point(591, 2);
             this.checkRechazado.MenuManager = this.barManager1;
             this.checkRechazado.Name = "checkRechazado";
             this.checkRechazado.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkRechazado.Properties.Appearance.Options.UseFont = true;
             this.checkRechazado.Properties.Caption = "Seleccionar Todas";
             this.checkRechazado.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkRechazado.Size = new System.Drawing.Size(122, 19);
+            this.checkRechazado.Size = new System.Drawing.Size(81, 13);
             this.checkRechazado.TabIndex = 5;
             this.checkRechazado.CheckedChanged += new System.EventHandler(this.checkRechazado_CheckedChanged);
             // 
@@ -1350,13 +1351,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridRechazado.DataMember = "tarimas_rechazadas";
             this.gridRechazado.DataSource = this.dsCalidad1;
-            this.gridRechazado.Location = new System.Drawing.Point(2, 28);
+            this.gridRechazado.Location = new System.Drawing.Point(1, 19);
             this.gridRechazado.MainView = this.gridView3;
             this.gridRechazado.Name = "gridRechazado";
             this.gridRechazado.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit3,
             this.repositoryItemButtonEdit4});
-            this.gridRechazado.Size = new System.Drawing.Size(1013, 410);
+            this.gridRechazado.Size = new System.Drawing.Size(675, 273);
             this.gridRechazado.TabIndex = 4;
             this.gridRechazado.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
