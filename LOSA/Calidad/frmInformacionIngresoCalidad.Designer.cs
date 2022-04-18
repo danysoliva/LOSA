@@ -52,6 +52,16 @@ namespace LOSA.Calidad
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject21 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -257,6 +267,26 @@ namespace LOSA.Calidad
             this.labelControl32 = new DevExpress.XtraEditors.LabelControl();
             this.dt_f_ingreso = new DevExpress.XtraEditors.DateEdit();
             this.labelControl44 = new DevExpress.XtraEditors.LabelControl();
+            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
+            this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colDespacho = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmdDespachoId = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colcliente = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colKeyBoleta = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIdCliente = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNombreCliente = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colunidades = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcodigo_pais = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpais = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldireccion1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldireccion2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colciudad = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcliente_aqua = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnumero_factura = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcardname = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNumID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnLinkBoletaView = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colFac_promix = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtloteMP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtnombreMP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtboleta.Properties)).BeginInit();
@@ -369,6 +399,10 @@ namespace LOSA.Calidad
             ((System.ComponentModel.ISupportInitialize)(this.txtingresadaUD.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_f_ingreso.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_f_ingreso.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdDespachoId)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLinkBoletaView)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -2602,6 +2636,7 @@ namespace LOSA.Calidad
             // 
             // tabPageLotesPT
             // 
+            this.tabPageLotesPT.Controls.Add(this.gridControl2);
             this.tabPageLotesPT.Controls.Add(this.labelControl31);
             this.tabPageLotesPT.Controls.Add(this.gridControl1);
             this.tabPageLotesPT.Location = new System.Drawing.Point(4, 30);
@@ -2630,7 +2665,7 @@ namespace LOSA.Calidad
             this.gridControl1.Location = new System.Drawing.Point(8, 49);
             this.gridControl1.MainView = this.gridView4;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(353, 556);
+            this.gridControl1.Size = new System.Drawing.Size(353, 498);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
@@ -2791,6 +2826,204 @@ namespace LOSA.Calidad
             this.labelControl44.Size = new System.Drawing.Size(103, 17);
             this.labelControl44.TabIndex = 48;
             this.labelControl44.Text = "Fecha de Ingreso:";
+            // 
+            // gridControl2
+            // 
+            this.gridControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridControl2.DataMember = "detalle_destinos";
+            this.gridControl2.DataSource = this.dsReportesTRZ1;
+            this.gridControl2.Location = new System.Drawing.Point(367, 49);
+            this.gridControl2.MainView = this.gridView5;
+            this.gridControl2.Name = "gridControl2";
+            this.gridControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.btnLinkBoletaView,
+            this.cmdDespachoId});
+            this.gridControl2.Size = new System.Drawing.Size(972, 498);
+            this.gridControl2.TabIndex = 46;
+            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView5});
+            // 
+            // gridView5
+            // 
+            this.gridView5.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colDespacho,
+            this.colcliente,
+            this.colKeyBoleta,
+            this.colIdCliente,
+            this.colNombreCliente,
+            this.colunidades,
+            this.colcodigo_pais,
+            this.colpais,
+            this.coldireccion1,
+            this.coldireccion2,
+            this.colciudad,
+            this.colcliente_aqua,
+            this.colnumero_factura,
+            this.colcardname,
+            this.colNumID,
+            this.colFac_promix});
+            this.gridView5.GridControl = this.gridControl2;
+            this.gridView5.Name = "gridView5";
+            // 
+            // colDespacho
+            // 
+            this.colDespacho.ColumnEdit = this.cmdDespachoId;
+            this.colDespacho.FieldName = "Despacho";
+            this.colDespacho.Name = "colDespacho";
+            this.colDespacho.Visible = true;
+            this.colDespacho.VisibleIndex = 0;
+            this.colDespacho.Width = 55;
+            // 
+            // cmdDespachoId
+            // 
+            this.cmdDespachoId.AutoHeight = false;
+            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
+            this.cmdDespachoId.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.cmdDespachoId.Name = "cmdDespachoId";
+            // 
+            // colcliente
+            // 
+            this.colcliente.FieldName = "cliente";
+            this.colcliente.Name = "colcliente";
+            this.colcliente.OptionsColumn.AllowEdit = false;
+            // 
+            // colKeyBoleta
+            // 
+            this.colKeyBoleta.Caption = "Id Boleta";
+            this.colKeyBoleta.FieldName = "KeyBoleta";
+            this.colKeyBoleta.Name = "colKeyBoleta";
+            this.colKeyBoleta.OptionsColumn.AllowEdit = false;
+            // 
+            // colIdCliente
+            // 
+            this.colIdCliente.FieldName = "Id Cliente";
+            this.colIdCliente.Name = "colIdCliente";
+            this.colIdCliente.OptionsColumn.AllowEdit = false;
+            // 
+            // colNombreCliente
+            // 
+            this.colNombreCliente.FieldName = "Nombre Cliente";
+            this.colNombreCliente.Name = "colNombreCliente";
+            this.colNombreCliente.OptionsColumn.AllowEdit = false;
+            this.colNombreCliente.Visible = true;
+            this.colNombreCliente.VisibleIndex = 2;
+            this.colNombreCliente.Width = 108;
+            // 
+            // colunidades
+            // 
+            this.colunidades.Caption = "Cantidad";
+            this.colunidades.DisplayFormat.FormatString = "###,##0 Sacos";
+            this.colunidades.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colunidades.FieldName = "unidades";
+            this.colunidades.Name = "colunidades";
+            this.colunidades.OptionsColumn.AllowEdit = false;
+            this.colunidades.Visible = true;
+            this.colunidades.VisibleIndex = 3;
+            this.colunidades.Width = 68;
+            // 
+            // colcodigo_pais
+            // 
+            this.colcodigo_pais.FieldName = "codigo_pais";
+            this.colcodigo_pais.Name = "colcodigo_pais";
+            this.colcodigo_pais.OptionsColumn.AllowEdit = false;
+            // 
+            // colpais
+            // 
+            this.colpais.Caption = "País";
+            this.colpais.FieldName = "pais";
+            this.colpais.Name = "colpais";
+            this.colpais.OptionsColumn.AllowEdit = false;
+            this.colpais.Visible = true;
+            this.colpais.VisibleIndex = 7;
+            this.colpais.Width = 50;
+            // 
+            // coldireccion1
+            // 
+            this.coldireccion1.Caption = "Dirección 1";
+            this.coldireccion1.FieldName = "direccion1";
+            this.coldireccion1.Name = "coldireccion1";
+            this.coldireccion1.OptionsColumn.AllowEdit = false;
+            this.coldireccion1.Visible = true;
+            this.coldireccion1.VisibleIndex = 8;
+            this.coldireccion1.Width = 50;
+            // 
+            // coldireccion2
+            // 
+            this.coldireccion2.Caption = "Dirección 2";
+            this.coldireccion2.FieldName = "direccion2";
+            this.coldireccion2.Name = "coldireccion2";
+            this.coldireccion2.OptionsColumn.AllowEdit = false;
+            this.coldireccion2.Visible = true;
+            this.coldireccion2.VisibleIndex = 9;
+            this.coldireccion2.Width = 50;
+            // 
+            // colciudad
+            // 
+            this.colciudad.Caption = "Ciudad";
+            this.colciudad.FieldName = "ciudad";
+            this.colciudad.Name = "colciudad";
+            this.colciudad.OptionsColumn.AllowEdit = false;
+            this.colciudad.Visible = true;
+            this.colciudad.VisibleIndex = 10;
+            this.colciudad.Width = 78;
+            // 
+            // colcliente_aqua
+            // 
+            this.colcliente_aqua.Caption = "Cod. Cliente Aqua";
+            this.colcliente_aqua.FieldName = "cliente_aqua";
+            this.colcliente_aqua.Name = "colcliente_aqua";
+            this.colcliente_aqua.OptionsColumn.AllowEdit = false;
+            // 
+            // colnumero_factura
+            // 
+            this.colnumero_factura.Caption = "Factura Aquafeed";
+            this.colnumero_factura.FieldName = "numero_factura";
+            this.colnumero_factura.Name = "colnumero_factura";
+            this.colnumero_factura.OptionsColumn.AllowEdit = false;
+            this.colnumero_factura.Visible = true;
+            this.colnumero_factura.VisibleIndex = 4;
+            this.colnumero_factura.Width = 87;
+            // 
+            // colcardname
+            // 
+            this.colcardname.Caption = "Socio";
+            this.colcardname.FieldName = "cardname";
+            this.colcardname.Name = "colcardname";
+            this.colcardname.OptionsColumn.AllowEdit = false;
+            this.colcardname.Visible = true;
+            this.colcardname.VisibleIndex = 5;
+            this.colcardname.Width = 62;
+            // 
+            // colNumID
+            // 
+            this.colNumID.Caption = "N. Boleta";
+            this.colNumID.ColumnEdit = this.btnLinkBoletaView;
+            this.colNumID.FieldName = "NumID";
+            this.colNumID.Name = "colNumID";
+            this.colNumID.Visible = true;
+            this.colNumID.VisibleIndex = 1;
+            this.colNumID.Width = 47;
+            // 
+            // btnLinkBoletaView
+            // 
+            this.btnLinkBoletaView.AutoHeight = false;
+            editorButtonImageOptions6.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions6.Image")));
+            this.btnLinkBoletaView.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnLinkBoletaView.Name = "btnLinkBoletaView";
+            // 
+            // colFac_promix
+            // 
+            this.colFac_promix.Caption = "Fact. PROMIX";
+            this.colFac_promix.FieldName = "Fac_promix";
+            this.colFac_promix.Name = "colFac_promix";
+            this.colFac_promix.OptionsColumn.AllowEdit = false;
+            this.colFac_promix.Visible = true;
+            this.colFac_promix.VisibleIndex = 6;
+            this.colFac_promix.Width = 87;
             // 
             // rdEstadoTransporte
             // 
@@ -2958,6 +3191,10 @@ namespace LOSA.Calidad
             ((System.ComponentModel.ISupportInitialize)(this.txtingresadaUD.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_f_ingreso.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_f_ingreso.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdDespachoId)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLinkBoletaView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3170,5 +3407,25 @@ namespace LOSA.Calidad
         private DevExpress.XtraEditors.DateEdit dt_f_ingreso;
         private DevExpress.XtraEditors.LabelControl labelControl44;
         private System.Windows.Forms.TabPage tb_inventario;
+        private DevExpress.XtraGrid.GridControl gridControl2;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView5;
+        private DevExpress.XtraGrid.Columns.GridColumn colDespacho;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdDespachoId;
+        private DevExpress.XtraGrid.Columns.GridColumn colcliente;
+        private DevExpress.XtraGrid.Columns.GridColumn colKeyBoleta;
+        private DevExpress.XtraGrid.Columns.GridColumn colIdCliente;
+        private DevExpress.XtraGrid.Columns.GridColumn colNombreCliente;
+        private DevExpress.XtraGrid.Columns.GridColumn colunidades;
+        private DevExpress.XtraGrid.Columns.GridColumn colcodigo_pais;
+        private DevExpress.XtraGrid.Columns.GridColumn colpais;
+        private DevExpress.XtraGrid.Columns.GridColumn coldireccion1;
+        private DevExpress.XtraGrid.Columns.GridColumn coldireccion2;
+        private DevExpress.XtraGrid.Columns.GridColumn colciudad;
+        private DevExpress.XtraGrid.Columns.GridColumn colcliente_aqua;
+        private DevExpress.XtraGrid.Columns.GridColumn colnumero_factura;
+        private DevExpress.XtraGrid.Columns.GridColumn colcardname;
+        private DevExpress.XtraGrid.Columns.GridColumn colNumID;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnLinkBoletaView;
+        private DevExpress.XtraGrid.Columns.GridColumn colFac_promix;
     }
 }
