@@ -158,6 +158,7 @@ namespace LOSA.Calidad
             Load_Despachos();
             load_informacion_de_inventario();
             load_tarimas_rechazadas();
+            load_MuestreoPT();
         }
         public void load_informacion_de_inventario()
         {
@@ -231,6 +232,31 @@ namespace LOSA.Calidad
 
         }
 
+        public void load_MuestreoPT()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_detalle_muestreo_y_parametro_trz", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lote", txtlote.Text);
+                dsTrazabilidadReports1.muestreo_lote.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsTrazabilidadReports1.muestreo_lote);
+
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+
+        }
+
         private void Load_Despachos()
         {
             try
@@ -268,6 +294,7 @@ namespace LOSA.Calidad
                 Load_Despachos();
                 load_informacion_de_inventario();
                 load_tarimas_rechazadas();
+                load_MuestreoPT();
             }
         }
 

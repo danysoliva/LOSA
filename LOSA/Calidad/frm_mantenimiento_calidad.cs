@@ -113,5 +113,11 @@ namespace LOSA.Calidad
             frmConfiguracionPT frm = new frmConfiguracionPT();
             frm.Show();
         }
+
+        private void btnCertificado_Click(object sender, EventArgs e)
+        {
+            xfrmCertificadoCalidad frm = new xfrmCertificadoCalidad();
+            frm.Show();
+        }
     }
 }

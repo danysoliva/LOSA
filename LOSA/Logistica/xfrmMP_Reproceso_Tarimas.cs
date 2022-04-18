@@ -154,6 +154,28 @@ namespace LOSA.Logistica
                 return "";
             }
         }
+
+        private string LoadNumeroReproceso()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+                SqlCommand cmm2 = new SqlCommand("dbo.sp_generar_codigo_from_tables_id_V2", con);
+                cmm2.CommandType = CommandType.StoredProcedure;
+                cmm2.Parameters.AddWithValue("@id", 7);
+                string num_ingreso = cmm2.ExecuteScalar().ToString();
+
+                con.Close();
+                return num_ingreso;
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+                return "";
+            }
+        }
         SqlTransaction transaction;
         private void cmdGuardar_Click(object sender, EventArgs e)
         {
@@ -217,20 +239,22 @@ namespace LOSA.Logistica
 
                 }
 
-                SqlCommand cmd3 = new SqlCommand("sp_insert_ingresos_reproceso_v2", transaction.Connection);
+                SqlCommand cmd3 = new SqlCommand("dbo.sp_insert_ingresos_reproceso_v3", transaction.Connection);
                 cmd3.CommandType = CommandType.StoredProcedure;
                 cmd3.Transaction = transaction;
                 Ingreso setIngreso = new Ingreso();
                 setIngreso.numero_referencia = LoadNumeroTransaccion();
+                setIngreso.Numero_reproceso = LoadNumeroReproceso();
                 setIngreso.especie = Convert.ToInt32(rdespecie.EditValue);
                 cmd3.Parameters.AddWithValue("@numero_transaccion",setIngreso.numero_referencia);
+                cmd3.Parameters.AddWithValue("@numero_reproceso",setIngreso.Numero_reproceso);
                 cmd3.Parameters.AddWithValue("@id_usuario", userLogin.Id);
                 cmd3.Parameters.AddWithValue("@id_especie", setIngreso.especie);
                 int id_header = Convert.ToInt32(cmd3.ExecuteScalar());
                 int id_lote = 0;
                 foreach (var Lote in Lotes)
                 {
-                    cmd3 = new SqlCommand("sp_insert_nuevo_ingreso_mp_reproceso", transaction.Connection);
+                    cmd3 = new SqlCommand("dbo.sp_insert_nuevo_ingreso_mp_reproceso_V2", transaction.Connection);
                     cmd3.Transaction = transaction;
                     cmd3.CommandType = CommandType.StoredProcedure;
                     cmd3.Parameters.AddWithValue("@idh",id_header);
@@ -241,6 +265,7 @@ namespace LOSA.Logistica
                     cmd3.Parameters.AddWithValue("@peso", Lote.total);
                     cmd3.Parameters.AddWithValue("@lotemp", Lote.No_lote);
                     cmd3.Parameters.AddWithValue("@numero_transaccion", setIngreso.numero_referencia);
+                    cmd3.Parameters.AddWithValue("@numero_reproceso", setIngreso.Numero_reproceso);
                     id_lote = Convert.ToInt32(cmd3.ExecuteScalar());
                     bool Guardo = false;
                     int vid_tarima = 0;
@@ -259,9 +284,10 @@ namespace LOSA.Logistica
                         cmm.Parameters.AddWithValue("@id", 1);
                         string barcode = cmm.ExecuteScalar().ToString();
 
-                        cmd3 = new SqlCommand("sp_insert_new_tarima_pt_to_mp", con);
+                        cmd3 = new SqlCommand("dbo.sp_insert_new_tarima_pt_to_mp_V2", con);
                         cmd3.CommandType = CommandType.StoredProcedure;
                         cmd3.Parameters.AddWithValue("@numero_transaccion", setIngreso.numero_referencia);
+                        cmd3.Parameters.AddWithValue("@numero_reproceso", setIngreso.Numero_reproceso);
                         cmd3.Parameters.AddWithValue("@lote_materia_prima",Lote.No_lote);
                         cmd3.Parameters.AddWithValue("@id_presentacion", tarima.id_Presentacion);
                         cmd3.Parameters.AddWithValue("@cant", tarima.cantidad);
@@ -355,5 +381,6 @@ namespace LOSA.Logistica
         public decimal cantidad { get; set; }
         public decimal peso { get; set; }
         public int especie { get; set; }
+        public string Numero_reproceso { get; set; }
     }
 } 
