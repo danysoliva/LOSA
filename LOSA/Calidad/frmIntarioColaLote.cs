@@ -69,5 +69,25 @@ namespace LOSA.Calidad
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
+
+        private void btn_ajustes_cola_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                var gridView = (GridView)grd_data.FocusedView;
+                var row = (dsCalidad.ViewColaRow)gridView.GetFocusedDataRow();
+
+                frmManejoTarimas frm = new frmManejoTarimas(row.lote_materia_prima,row.id_materia_prima);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    load_data();
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+        }
     }
 }
