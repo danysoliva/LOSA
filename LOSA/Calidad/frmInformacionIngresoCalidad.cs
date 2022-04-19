@@ -36,6 +36,10 @@ namespace LOSA.Calidad
         bool cambioImagen = false;
         string Direccion;
         string phone;
+        string CodeSAP_Proveedor;
+        string NombreSAP_Proveedor;
+        int idPlanta_Fabricante;
+        string FabricantePlantaNombre;
 
 
         DataOperations dp = new DataOperations();
@@ -57,6 +61,7 @@ namespace LOSA.Calidad
             load_tipo();
             load_paises();
             LoadLotesPT();
+            LoadInventarioKardex();
             //Load_Despachos();
             if (ChCalidad)
             {
@@ -95,6 +100,7 @@ namespace LOSA.Calidad
             load_tipo();
             load_paises();
             LoadLotesPT();
+            LoadInventarioKardex();
             //Load_Despachos();
             if (ChCalidad)
             {
@@ -135,6 +141,7 @@ namespace LOSA.Calidad
             load_tipo();
             load_paises();
             LoadLotesPT();
+            LoadInventarioKardex();
             //Load_Despachos();
             if (ChCalidad)
             {
@@ -251,6 +258,29 @@ namespace LOSA.Calidad
             catch (Exception ec)
             {
                 CajaDialogo.Error(ec.Message);
+            }
+        }
+
+
+        private void LoadInventarioKardex()
+        {
+            string query = @"sp_obtener_inventario_general_por_lote_trz";
+            try
+            {
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lotemp", txtloteMP.Text);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                dsTarima1.informacion.Clear();
+                da.Fill(dsTarima1.informacion);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
             }
         }
 
@@ -759,7 +789,7 @@ namespace LOSA.Calidad
         }
         public void load_data()
         {
-            string query = @"sp_get_informacion_get_to_show_calidad";
+            string query = @"sp_get_informacion_get_to_show_calidad_v2";
             try
             {
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
@@ -790,6 +820,10 @@ namespace LOSA.Calidad
                     txtTelefono.Text = phone;
                     txtdireccion.Text = Direccion;
                     txtFacturas.Text = dr.IsDBNull(15) ? "" : dr.GetString(15);
+                    CodeSAP_Proveedor = dr.IsDBNull(16) ? "" : dr.GetString(16);
+                    NombreSAP_Proveedor = txtproveedor.Text;
+                    idPlanta_Fabricante = dr.IsDBNull(17) ? 0 : dr.GetInt32(17);
+                    txtFabricante.Text = FabricantePlantaNombre = dr.IsDBNull(18) ? "" : dr.GetString(18);
                 }
                 dr.Close();
                 cn.Close();
@@ -1546,6 +1580,50 @@ namespace LOSA.Calidad
                 frm.MdiParent = this.MdiParent;
             frm.WindowState = FormWindowState.Normal;
             frm.Show();
+        }
+
+        private void cmdSearchFabricantePrv_Click(object sender, EventArgs e)
+        {
+            frmListaFabricantes frm = new frmListaFabricantes(CodeSAP_Proveedor,NombreSAP_Proveedor);
+            if(frm.ShowDialog()== DialogResult.OK)
+            {
+                txtFabricante.Text = frm.NombreFabricanteSeleccionado;
+                //frm.IdFabricanteSeleccionado;
+                UpdateFabricante(Id_ingreso, frm.IdFabricanteSeleccionado);
+            }
+        }
+
+        private void UpdateFabricante(int id_ingreso, int pIdPlantaFabricante)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_set_id_fabricante_ingreso_lote_alosy", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_lote", id_ingreso);
+                cmd.Parameters.AddWithValue("@id_fabricante", pIdPlantaFabricante);
+                cmd.ExecuteNonQuery();
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            frmListaFabricantes frm = new frmListaFabricantes(CodeSAP_Proveedor, NombreSAP_Proveedor);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                txtFabricante.Text = frm.NombreFabricanteSeleccionado;
+                //frm.IdFabricanteSeleccionado;
+                UpdateFabricante(Id_ingreso, frm.IdFabricanteSeleccionado);
+            }
         }
     }
 }
