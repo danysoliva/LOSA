@@ -17,6 +17,8 @@ using System.IO;
 using System.Diagnostics;
 using LOSA.Nir;
 using LOSA.Trazabilidad;
+using LOSA.Trazabilidad.ReportesTRZ;
+using LOSA.Trazabilidad.Despachos;
 
 namespace LOSA.Calidad
 {
@@ -55,6 +57,7 @@ namespace LOSA.Calidad
             load_tipo();
             load_paises();
             LoadLotesPT();
+            //Load_Despachos();
             if (ChCalidad)
             {
                 load_criterios_configurados();
@@ -92,6 +95,7 @@ namespace LOSA.Calidad
             load_tipo();
             load_paises();
             LoadLotesPT();
+            //Load_Despachos();
             if (ChCalidad)
             {
                 load_criterios_configurados(pLoteMP);
@@ -131,6 +135,7 @@ namespace LOSA.Calidad
             load_tipo();
             load_paises();
             LoadLotesPT();
+            //Load_Despachos();
             if (ChCalidad)
             {
                 load_criterios_configurados();
@@ -200,6 +205,29 @@ namespace LOSA.Calidad
             labelControl14.Location = new Point(labelControl14.Location.X, 167);
             tabControl1 .Location = new Point(tabControl1.Location.X, 200);
 
+        }
+
+        private void Load_Despachos(int plote)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_detalle_destinos_lote_pt_trz", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lotept", plote);
+                dsReportesTRZ1.detalle_destinos.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsReportesTRZ1.detalle_destinos);
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
         }
 
         private void LoadLotesPT()
@@ -1484,6 +1512,40 @@ namespace LOSA.Calidad
         private void panelControl4_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void gridView4_RowCellClick(object sender, RowCellClickEventArgs e)
+        {
+            var gridView = (GridView)gridControl1.FocusedView;
+            var row = (dsReportesTRZ.pt_list_trzRow)gridView.GetFocusedDataRow();
+            Load_Despachos(row.Lote_PT);
+        }
+
+        private void btnLinkBoletaView_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)gridControl2.FocusedView;
+            var row = (dsReportesTRZ.detalle_destinosRow)gridView.GetFocusedDataRow();
+
+            Boleta bol1 = new Boleta();
+            if (bol1.RecuperarRegistroFromNumBoleta(row.NumID))
+            {
+                frmViewBasculaBoleta frm = new frmViewBasculaBoleta(bol1.Id);
+                if (this.MdiParent != null)
+                    frm.MdiParent = this.MdiParent;
+                frm.WindowState = FormWindowState.Normal;
+                frm.Show();
+            }
+        }
+
+        private void cmdDespachoId_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)gridControl2.FocusedView;
+            var row = (dsReportesTRZ.detalle_destinosRow)gridView.GetFocusedDataRow();
+            frmDetalleDespacho frm = new frmDetalleDespacho(row.Despacho);
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+            frm.WindowState = FormWindowState.Normal;
+            frm.Show();
         }
     }
 }
