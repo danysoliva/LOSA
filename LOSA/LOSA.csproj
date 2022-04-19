@@ -373,6 +373,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsTrazabilidadReports.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\dsTRZ_Reports.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsTRZ_Reports.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\frmaddcausa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -450,6 +455,12 @@
     </Compile>
     <Compile Include="Calidad\frmIntarioColaLote.Designer.cs">
       <DependentUpon>frmIntarioColaLote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\frmListaFabricantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmListaFabricantes.Designer.cs">
+      <DependentUpon>frmListaFabricantes.cs</DependentUpon>
     </Compile>
     <Compile Include="Calidad\frmLotesStatus.cs">
       <SubType>Form</SubType>
@@ -1575,6 +1586,17 @@
     <None Include="Calidad\dsTrazabilidadReports.xss">
       <DependentUpon>dsTrazabilidadReports.xsd</DependentUpon>
     </None>
+    <None Include="Calidad\dsTRZ_Reports.xsc">
+      <DependentUpon>dsTRZ_Reports.xsd</DependentUpon>
+    </None>
+    <None Include="Calidad\dsTRZ_Reports.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsTRZ_Reports.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Calidad\dsTRZ_Reports.xss">
+      <DependentUpon>dsTRZ_Reports.xsd</DependentUpon>
+    </None>
     <None Include="Calidad\Parametros\dsParametros.xsc">
       <DependentUpon>dsParametros.xsd</DependentUpon>
     </None>
@@ -2699,6 +2721,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmIntarioColaLote.resx">
       <DependentUpon>frmIntarioColaLote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmListaFabricantes.resx">
+      <DependentUpon>frmListaFabricantes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmLotesStatus.resx">
       <DependentUpon>frmLotesStatus.cs</DependentUpon>
