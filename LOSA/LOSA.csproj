@@ -678,6 +678,7 @@
     <Compile Include="Calidad\GestionLotesMP\frmSelectCausaRechazo.Designer.cs">
       <DependentUpon>frmSelectCausaRechazo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\Model\FFIF_D.cs" />
     <Compile Include="Calidad\Model\FFIF_H.cs" />
     <Compile Include="Calidad\Model\Lote_Ingreso_Conf_Calidad.cs" />
     <Compile Include="Calidad\NoConformidad.cs" />
@@ -730,6 +731,12 @@
     </Compile>
     <Compile Include="Calidad\xfrmCertificadoCalidad.Designer.cs">
       <DependentUpon>xfrmCertificadoCalidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\xfrmCertificadoCalidadCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\xfrmCertificadoCalidadCRUD.Designer.cs">
+      <DependentUpon>xfrmCertificadoCalidadCRUD.cs</DependentUpon>
     </Compile>
     <Compile Include="Calidad\xfrmWizardConfCalidad.cs">
       <SubType>Form</SubType>
@@ -2853,6 +2860,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\xfrmCertificadoCalidad.resx">
       <DependentUpon>xfrmCertificadoCalidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\xfrmCertificadoCalidadCRUD.resx">
+      <DependentUpon>xfrmCertificadoCalidadCRUD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\xfrmWizardConfCalidad.resx">
       <DependentUpon>xfrmWizardConfCalidad.cs</DependentUpon>
