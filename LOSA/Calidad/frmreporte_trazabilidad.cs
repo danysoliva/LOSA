@@ -404,9 +404,9 @@ namespace LOSA.Calidad
             if (bol1.RecuperarRegistroFromNumBoleta(row.NumID))
             {
                 frmViewBasculaBoleta frm = new frmViewBasculaBoleta(bol1.Id);
-                if (this.MdiParent != null)
-                    frm.MdiParent = this.MdiParent;
-                frm.WindowState = FormWindowState.Normal;
+                //if (this.MdiParent != null)
+                //    frm.MdiParent = this.MdiParent;
+                //frm.WindowState = FormWindowState.Normal;
                 frm.Show();
             }
         }
