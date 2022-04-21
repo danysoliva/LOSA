@@ -46,6 +46,11 @@ namespace LOSA.Calidad
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gcFFIF_H = new DevExpress.XtraGrid.GridControl();
             this.fFIFHBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsMantenimientoC = new LOSA.Calidad.dsMantenimientoC();
@@ -60,6 +65,7 @@ namespace LOSA.Calidad
             this.btnDelete1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnEdit = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.gcFFIF_D = new DevExpress.XtraGrid.GridControl();
             this.fFIFDBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -74,10 +80,12 @@ namespace LOSA.Calidad
             this.colid_h = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnDelete2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnEditar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnNew = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gcFFIF_H)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fFIFHBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMantenimientoC)).BeginInit();
@@ -90,6 +98,7 @@ namespace LOSA.Calidad
             ((System.ComponentModel.ISupportInitialize)(this.lueFormula)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.formulaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).BeginInit();
             this.SuspendLayout();
             // 
             // gcFFIF_H
@@ -238,6 +247,17 @@ namespace LOSA.Calidad
             this.btnEdit.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnEdit.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnEdit_ButtonClick);
             // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Mes";
+            this.gridColumn4.FieldName = "mes_letras";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.OptionsColumn.AllowEdit = false;
+            this.gridColumn4.OptionsFilter.AllowFilter = false;
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 0;
+            this.gridColumn4.Width = 125;
+            // 
             // btnAdd
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -261,7 +281,8 @@ namespace LOSA.Calidad
             this.gcFFIF_D.Name = "gcFFIF_D";
             this.gcFFIF_D.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.lueFormula,
-            this.btnDelete2});
+            this.btnDelete2,
+            this.btnEditar});
             this.gcFFIF_D.Size = new System.Drawing.Size(973, 230);
             this.gcFFIF_D.TabIndex = 2;
             this.gcFFIF_D.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -285,10 +306,10 @@ namespace LOSA.Calidad
             this.colversion_foranea,
             this.coldate_posted,
             this.colid_h,
-            this.gridColumn1});
+            this.gridColumn1,
+            this.gridColumn5});
             this.gvFFIF_D.GridControl = this.gcFFIF_D;
             this.gvFFIF_D.Name = "gvFFIF_D";
-            this.gvFFIF_D.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             this.gvFFIF_D.OptionsView.ShowGroupPanel = false;
             this.gvFFIF_D.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gvFFIF_D_CellValueChanged);
             this.gvFFIF_D.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gvFFIF_D_RowUpdated);
@@ -302,21 +323,22 @@ namespace LOSA.Calidad
             // 
             this.colFFIF.FieldName = "FFIF";
             this.colFFIF.Name = "colFFIF";
+            this.colFFIF.OptionsColumn.AllowEdit = false;
             this.colFFIF.OptionsFilter.AllowFilter = false;
             this.colFFIF.Visible = true;
             this.colFFIF.VisibleIndex = 0;
-            this.colFFIF.Width = 170;
+            this.colFFIF.Width = 175;
             // 
             // colid_formula
             // 
             this.colid_formula.Caption = "Formula";
-            this.colid_formula.ColumnEdit = this.lueFormula;
-            this.colid_formula.FieldName = "id_formula";
+            this.colid_formula.FieldName = "formula";
             this.colid_formula.Name = "colid_formula";
+            this.colid_formula.OptionsColumn.AllowEdit = false;
             this.colid_formula.OptionsFilter.AllowFilter = false;
             this.colid_formula.Visible = true;
             this.colid_formula.VisibleIndex = 1;
-            this.colid_formula.Width = 391;
+            this.colid_formula.Width = 403;
             // 
             // lueFormula
             // 
@@ -346,20 +368,22 @@ namespace LOSA.Calidad
             this.colversion_foranea.Caption = "Versión Foranea";
             this.colversion_foranea.FieldName = "version_foranea";
             this.colversion_foranea.Name = "colversion_foranea";
+            this.colversion_foranea.OptionsColumn.AllowEdit = false;
             this.colversion_foranea.OptionsFilter.AllowFilter = false;
             this.colversion_foranea.Visible = true;
             this.colversion_foranea.VisibleIndex = 2;
-            this.colversion_foranea.Width = 116;
+            this.colversion_foranea.Width = 119;
             // 
             // coldate_posted
             // 
             this.coldate_posted.Caption = "Fecha Creación";
             this.coldate_posted.FieldName = "date_posted";
             this.coldate_posted.Name = "coldate_posted";
+            this.coldate_posted.OptionsColumn.AllowEdit = false;
             this.coldate_posted.OptionsFilter.AllowFilter = false;
             this.coldate_posted.Visible = true;
             this.coldate_posted.VisibleIndex = 3;
-            this.coldate_posted.Width = 96;
+            this.coldate_posted.Width = 105;
             // 
             // colid_h
             // 
@@ -373,8 +397,8 @@ namespace LOSA.Calidad
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsFilter.AllowFilter = false;
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 4;
-            this.gridColumn1.Width = 78;
+            this.gridColumn1.VisibleIndex = 5;
+            this.gridColumn1.Width = 79;
             // 
             // btnDelete2
             // 
@@ -385,6 +409,26 @@ namespace LOSA.Calidad
             this.btnDelete2.Name = "btnDelete2";
             this.btnDelete2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnDelete2.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnDelete2_ButtonClick);
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Editar";
+            this.gridColumn5.ColumnEdit = this.btnEditar;
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 4;
+            this.gridColumn5.Width = 74;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.AutoHeight = false;
+            editorButtonImageOptions4.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions4.SvgImage")));
+            this.btnEditar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnEditar.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnEditar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnEditar_ButtonClick);
             // 
             // labelControl1
             // 
@@ -406,17 +450,6 @@ namespace LOSA.Calidad
             this.labelControl2.TabIndex = 4;
             this.labelControl2.Text = "Detalle de Certificado";
             // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "Mes";
-            this.gridColumn4.FieldName = "mes_letras";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.OptionsColumn.AllowEdit = false;
-            this.gridColumn4.OptionsFilter.AllowFilter = false;
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 0;
-            this.gridColumn4.Width = 125;
-            // 
             // simpleButton1
             // 
             this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -429,11 +462,24 @@ namespace LOSA.Calidad
             this.simpleButton1.TabIndex = 5;
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
+            // btnNew
+            // 
+            this.btnNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNew.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnNew.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.btnNew.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnNew.ImageOptions.SvgImage")));
+            this.btnNew.Location = new System.Drawing.Point(876, 256);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(61, 33);
+            this.btnNew.TabIndex = 6;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            // 
             // xfrmCertificadoCalidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(972, 526);
+            this.Controls.Add(this.btnNew);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
@@ -457,6 +503,7 @@ namespace LOSA.Calidad
             ((System.ComponentModel.ISupportInitialize)(this.lueFormula)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.formulaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -496,5 +543,8 @@ namespace LOSA.Calidad
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnEditar;
+        private DevExpress.XtraEditors.SimpleButton btnNew;
     }
 }

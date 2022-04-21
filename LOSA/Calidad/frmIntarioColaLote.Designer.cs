@@ -35,6 +35,11 @@ namespace LOSA.Calidad
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.btn_cerrar = new DevExpress.XtraEditors.SimpleButton();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
             this.dsCalidad = new LOSA.Calidad.dsCalidad();
@@ -46,13 +51,16 @@ namespace LOSA.Calidad
             this.colid_materia_prima = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcomercial = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colmp_comercial = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBin = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btn_Refresh = new DevExpress.XtraEditors.SimpleButton();
-            this.colBin = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btn_ajustes_cola = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colAjuste = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCalidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_link_lote)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_ajustes_cola)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_cerrar
@@ -79,7 +87,8 @@ namespace LOSA.Calidad
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
             this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.btn_link_lote});
+            this.btn_link_lote,
+            this.btn_ajustes_cola});
             this.grd_data.Size = new System.Drawing.Size(1369, 653);
             this.grd_data.TabIndex = 2;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -127,7 +136,8 @@ namespace LOSA.Calidad
             this.colid_materia_prima,
             this.colcomercial,
             this.colmp_comercial,
-            this.colBin});
+            this.colBin,
+            this.colAjuste});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.GroupCount = 1;
             this.grdv_data.Name = "grdv_data";
@@ -198,6 +208,14 @@ namespace LOSA.Calidad
             this.colmp_comercial.Visible = true;
             this.colmp_comercial.VisibleIndex = 5;
             // 
+            // colBin
+            // 
+            this.colBin.FieldName = "Bin";
+            this.colBin.Name = "colBin";
+            this.colBin.OptionsColumn.AllowEdit = false;
+            this.colBin.Visible = true;
+            this.colBin.VisibleIndex = 1;
+            // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -221,13 +239,23 @@ namespace LOSA.Calidad
             this.btn_Refresh.Text = "Recargar";
             this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
             // 
-            // colBin
+            // btn_ajustes_cola
             // 
-            this.colBin.FieldName = "Bin";
-            this.colBin.Name = "colBin";
-            this.colBin.OptionsColumn.AllowEdit = false;
-            this.colBin.Visible = true;
-            this.colBin.VisibleIndex = 1;
+            this.btn_ajustes_cola.AutoHeight = false;
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            this.btn_ajustes_cola.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btn_ajustes_cola.Name = "btn_ajustes_cola";
+            this.btn_ajustes_cola.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btn_ajustes_cola.Click += new System.EventHandler(this.btn_ajustes_cola_Click);
+            // 
+            // colAjuste
+            // 
+            this.colAjuste.Caption = "Ajuste de Cola";
+            this.colAjuste.ColumnEdit = this.btn_ajustes_cola;
+            this.colAjuste.Name = "colAjuste";
+            this.colAjuste.Visible = true;
+            this.colAjuste.VisibleIndex = 5;
             // 
             // frmIntarioColaLote
             // 
@@ -246,6 +274,7 @@ namespace LOSA.Calidad
             ((System.ComponentModel.ISupportInitialize)(this.dsCalidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_link_lote)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_ajustes_cola)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -267,5 +296,7 @@ namespace LOSA.Calidad
         private DevExpress.XtraGrid.Columns.GridColumn colmp_comercial;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btn_link_lote;
         private DevExpress.XtraGrid.Columns.GridColumn colBin;
+        private DevExpress.XtraGrid.Columns.GridColumn colAjuste;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btn_ajustes_cola;
     }
 }
