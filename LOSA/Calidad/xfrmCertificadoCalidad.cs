@@ -333,25 +333,41 @@ namespace LOSA.Calidad
             try
             {
 
-                if (Validar_FFIF_D(id_h_active) > 0)
+                //if (Validar_FFIF_D(id_h_active) > 0)
+                //{
+                //    CajaDialogo.Error("YA EXISTE UN FFIF");
+                //    return;
+                //}
+
+                //else
+                //{
+
+                //    FFIF_D item = new FFIF_D();
+
+                //    item.ID_H = id_h_active;
+
+                //    xfrmCertificadoCalidadCRUD frm = new xfrmCertificadoCalidadCRUD((int)Transaccion.Nuevo, item);
+
+                //    if (frm.ShowDialog() == DialogResult.OK)
+                //    {
+                //        loadFFIF_D(id_h_active);
+                //    }
+                //}
+
+                if (id_h_active == 0)
                 {
-                    CajaDialogo.Error("YA EXISTE UN FFIF");
+                    CajaDialogo.Error("Debe seleccionar un mes para poder ingresar los datos del FFIF.");
                     return;
                 }
+                FFIF_D item = new FFIF_D();
 
-                else
+                item.ID_H = id_h_active;
+
+                xfrmCertificadoCalidadCRUD frm = new xfrmCertificadoCalidadCRUD((int)Transaccion.Nuevo, item);
+
+                if (frm.ShowDialog() == DialogResult.OK)
                 {
-
-                    FFIF_D item = new FFIF_D();
-
-                    item.ID_H = id_h_active;
-
-                    xfrmCertificadoCalidadCRUD frm = new xfrmCertificadoCalidadCRUD((int)Transaccion.Nuevo, item);
-
-                    if (frm.ShowDialog() == DialogResult.OK)
-                    {
-                        loadFFIF_D(id_h_active);
-                    }
+                    loadFFIF_D(id_h_active);
                 }
             }
             catch (Exception ex)

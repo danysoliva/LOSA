@@ -518,7 +518,7 @@ namespace LOSA.Calidad.Parametros
                     {
                         cmd = new SqlCommand("sp_set_insert_muestreo_detalle", cn);
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@bit_tipo", 1);
+                        cmd.Parameters.AddWithValue("@bit_tipo", 0);
                         cmd.Parameters.AddWithValue("@id_parametro", row.id_parametro);
                         cmd.Parameters.AddWithValue("@parametro", row.parametro);
                         cmd.Parameters.AddWithValue("@id_decision", row.resultado == "No Cumple" ? 2 : 1  );

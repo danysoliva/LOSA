@@ -73,8 +73,6 @@ namespace LOSA.Calidad
             this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFFIF = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_formula = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.lueFormula = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.formulaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.colversion_foranea = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldate_posted = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_h = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -82,6 +80,8 @@ namespace LOSA.Calidad
             this.btnDelete2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnEditar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.lueFormula = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.formulaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
@@ -95,10 +95,10 @@ namespace LOSA.Calidad
             ((System.ComponentModel.ISupportInitialize)(this.gcFFIF_D)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fFIFDBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvFFIF_D)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueFormula)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.formulaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueFormula)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formulaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gcFFIF_H
@@ -283,7 +283,7 @@ namespace LOSA.Calidad
             this.lueFormula,
             this.btnDelete2,
             this.btnEditar});
-            this.gcFFIF_D.Size = new System.Drawing.Size(973, 230);
+            this.gcFFIF_D.Size = new System.Drawing.Size(973, 386);
             this.gcFFIF_D.TabIndex = 2;
             this.gcFFIF_D.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvFFIF_D});
@@ -339,29 +339,6 @@ namespace LOSA.Calidad
             this.colid_formula.Visible = true;
             this.colid_formula.VisibleIndex = 1;
             this.colid_formula.Width = 403;
-            // 
-            // lueFormula
-            // 
-            this.lueFormula.AutoHeight = false;
-            this.lueFormula.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueFormula.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "id", 31, DevExpress.Utils.FormatType.Numeric, "", false, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "codigo", 41, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "nombre", 150, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("version", "version", 45, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("tipo", "tipo", 28, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.lueFormula.DataSource = this.formulaBindingSource;
-            this.lueFormula.DisplayMember = "nombre";
-            this.lueFormula.Name = "lueFormula";
-            this.lueFormula.PopupWidth = 150;
-            this.lueFormula.PopupWidthMode = DevExpress.XtraEditors.PopupWidthMode.ContentWidth;
-            this.lueFormula.ValueMember = "id";
-            // 
-            // formulaBindingSource
-            // 
-            this.formulaBindingSource.DataMember = "Formula";
-            this.formulaBindingSource.DataSource = this.dsMantenimientoC;
             // 
             // colversion_foranea
             // 
@@ -430,6 +407,29 @@ namespace LOSA.Calidad
             this.btnEditar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnEditar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnEditar_ButtonClick);
             // 
+            // lueFormula
+            // 
+            this.lueFormula.AutoHeight = false;
+            this.lueFormula.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueFormula.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "id", 31, DevExpress.Utils.FormatType.Numeric, "", false, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "codigo", 41, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "nombre", 150, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("version", "version", 45, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("tipo", "tipo", 28, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.lueFormula.DataSource = this.formulaBindingSource;
+            this.lueFormula.DisplayMember = "nombre";
+            this.lueFormula.Name = "lueFormula";
+            this.lueFormula.PopupWidth = 150;
+            this.lueFormula.PopupWidthMode = DevExpress.XtraEditors.PopupWidthMode.ContentWidth;
+            this.lueFormula.ValueMember = "id";
+            // 
+            // formulaBindingSource
+            // 
+            this.formulaBindingSource.DataMember = "Formula";
+            this.formulaBindingSource.DataSource = this.dsMantenimientoC;
+            // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -478,7 +478,7 @@ namespace LOSA.Calidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(972, 526);
+            this.ClientSize = new System.Drawing.Size(972, 682);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.labelControl2);
@@ -500,10 +500,10 @@ namespace LOSA.Calidad
             ((System.ComponentModel.ISupportInitialize)(this.gcFFIF_D)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fFIFDBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvFFIF_D)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueFormula)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.formulaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueFormula)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formulaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

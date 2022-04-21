@@ -34,22 +34,23 @@ namespace LOSA.Calidad
             this.txtFFIF = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.slueFormula = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.formulaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsMantenimientoC = new LOSA.Calidad.dsMantenimientoC();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txtVersionForanea = new DevExpress.XtraEditors.TextEdit();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
-            this.dsMantenimientoC = new LOSA.Calidad.dsMantenimientoC();
-            this.formulaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colversion = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtFFIF.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slueFormula.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formulaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsMantenimientoC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtVersionForanea.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsMantenimientoC)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.formulaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // txtFFIF
@@ -89,15 +90,44 @@ namespace LOSA.Calidad
             this.slueFormula.Size = new System.Drawing.Size(257, 26);
             this.slueFormula.TabIndex = 2;
             // 
+            // formulaBindingSource
+            // 
+            this.formulaBindingSource.DataMember = "Formula";
+            this.formulaBindingSource.DataSource = this.dsMantenimientoC;
+            // 
+            // dsMantenimientoC
+            // 
+            this.dsMantenimientoC.DataSetName = "dsMantenimientoC";
+            this.dsMantenimientoC.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // searchLookUpEdit1View
             // 
             this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
-            this.gridColumn2});
+            this.gridColumn2,
+            this.colversion});
             this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Código";
+            this.gridColumn1.FieldName = "codigo";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Fórmula";
+            this.gridColumn2.FieldName = "nombre";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
             // 
             // labelControl2
             // 
@@ -136,7 +166,7 @@ namespace LOSA.Calidad
             this.btnSave.Appearance.Options.UseFont = true;
             this.btnSave.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnSave.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btnSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.btnSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSave.ImageOptions.SvgImage")));
             this.btnSave.Location = new System.Drawing.Point(89, 183);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(98, 57);
@@ -150,7 +180,7 @@ namespace LOSA.Calidad
             this.btnClose.Appearance.Options.UseFont = true;
             this.btnClose.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnClose.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btnClose.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton2.ImageOptions.SvgImage")));
+            this.btnClose.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnClose.ImageOptions.SvgImage")));
             this.btnClose.Location = new System.Drawing.Point(219, 183);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(98, 57);
@@ -158,31 +188,13 @@ namespace LOSA.Calidad
             this.btnClose.Text = "Cancelar";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // dsMantenimientoC
+            // colversion
             // 
-            this.dsMantenimientoC.DataSetName = "dsMantenimientoC";
-            this.dsMantenimientoC.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // formulaBindingSource
-            // 
-            this.formulaBindingSource.DataMember = "Formula";
-            this.formulaBindingSource.DataSource = this.dsMantenimientoC;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Código";
-            this.gridColumn1.FieldName = "codigo";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Fórmula";
-            this.gridColumn2.FieldName = "nombre";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
+            this.colversion.FieldName = "version";
+            this.colversion.Name = "colversion";
+            this.colversion.OptionsColumn.AllowEdit = false;
+            this.colversion.Visible = true;
+            this.colversion.VisibleIndex = 2;
             // 
             // xfrmCertificadoCalidadCRUD
             // 
@@ -206,10 +218,10 @@ namespace LOSA.Calidad
             this.Load += new System.EventHandler(this.xfrmCertificadoCalidadCRUD_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtFFIF.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.slueFormula.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formulaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsMantenimientoC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtVersionForanea.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsMantenimientoC)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.formulaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,5 +242,6 @@ namespace LOSA.Calidad
         private dsMantenimientoC dsMantenimientoC;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn colversion;
     }
 }

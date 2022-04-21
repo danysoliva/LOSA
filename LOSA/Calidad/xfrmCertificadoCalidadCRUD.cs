@@ -30,8 +30,9 @@ namespace LOSA.Calidad
             InitializeComponent();
 
             tipoTransaccion = transaccion_p;
-            loadFormulas();
             item = item_p;
+
+            loadFormulas();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -61,8 +62,13 @@ namespace LOSA.Calidad
                 using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringLOSA))
                 {
                     cnx.Open();
-                    SqlDataAdapter da = new SqlDataAdapter("dbo.get_formulas", cnx);
-                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    SqlCommand cmd = new SqlCommand("dbo.get_formulas_v2", cnx);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id_h", item.ID_H);
+                    cmd.Parameters.AddWithValue("@id_formula", item.FormulaID);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    
+
                     //da.SelectCommand.Parameters.Add("@id_h", SqlDbType.Int).Value = id_h;
 
                     dsMantenimientoC.Formula.Clear();

@@ -1380,6 +1380,7 @@ namespace LOSA.Calidad {
                 this.columnbit_muestreo = new global::System.Data.DataColumn("bit_muestreo", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnbit_muestreo);
                 this.columnseleccionado.Caption = "Seleccionado";
+                this.columnbit_muestreo.DefaultValue = ((bool)(false));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1914,6 +1915,7 @@ namespace LOSA.Calidad {
                 this.columnbit_muestreo = new global::System.Data.DataColumn("bit_muestreo", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnbit_muestreo);
                 this.columnseleccionado.Caption = "Seleccionado";
+                this.columnbit_muestreo.DefaultValue = ((bool)(false));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7973,6 +7975,7 @@ namespace LOSA.Calidad {
                 this.columnbit_muestreo = new global::System.Data.DataColumn("bit_muestreo", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnbit_muestreo);
                 this.columnseleccionado.Caption = "Seleccionado";
+                this.columnbit_muestreo.DefaultValue = ((bool)(false));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

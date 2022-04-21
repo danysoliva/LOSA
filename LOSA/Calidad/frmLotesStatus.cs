@@ -44,7 +44,7 @@ namespace LOSA.Calidad
                 DataOperations dp = new DataOperations();
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
-
+                //bit_muestreo
                 SqlCommand cmd = new SqlCommand("sp_get_tarimas_habilitadas_calidad_V3", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 dsCalidad1.tarimas_disponibles.Clear();
