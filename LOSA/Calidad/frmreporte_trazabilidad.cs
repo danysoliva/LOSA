@@ -364,7 +364,7 @@ namespace LOSA.Calidad
             //rmMateriaPrimaViewer(string SAPCODE_MP, string SAP_CARD_CODE)
             var gridView = (GridView)grd_data.FocusedView;
             var row = (dsCalidad.trazabilitadRow)gridView.GetFocusedDataRow();
-            frmMateriaPrimaViewer frm = new frmMateriaPrimaViewer(row.code_sap, row.card_code);
+            frmMateriaPrimaViewer frm = new frmMateriaPrimaViewer(row.code_sap, row.lote_mp,0);
             if (this.MdiParent != null)
                 frm.MdiParent = this.MdiParent;
             frm.WindowState = FormWindowState.Maximized;

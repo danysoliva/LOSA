@@ -33,8 +33,19 @@ namespace LOSA.RecepcionMP
             UsuarioLogeado = pUsuarioLogeado;
             pLista = pArray;
             dtFechaIngreso.EditValue = string.Format("{0:dd/MM/yyyy}", dp.Now());
-            txtCodigoMP.Text = pItem.ItemCode;
-            txtMP_Name.Text = pItem.Card_Name;
+            if (pItem.ItemCode == "MP00003" || pItem.ItemCode == "MP00004")
+            {
+                txtCodigoMP.Text = "MP00002";
+
+                txtMP_Name.Text = "Harina de Soya";
+
+            }
+            else
+            {
+
+                txtCodigoMP.Text = pItem.ItemCode;
+                txtMP_Name.Text = pItem.Card_Name;
+            }
             txtLote.Text = pItem.Lote;
             IdLoteSelected = pItem.IdLote;
             LoadBarcos();
