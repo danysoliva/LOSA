@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\aqfsvr003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>306</ApplicationRevision>
+    <ApplicationRevision>308</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -749,6 +749,12 @@
     </Compile>
     <Compile Include="Calidad\xfrm_formula_FFIF_New.Designer.cs">
       <DependentUpon>xfrm_formula_FFIF_New.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\xrpCertificadoCalidad.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Calidad\xrpCertificadoCalidad.Designer.cs">
+      <DependentUpon>xrpCertificadoCalidad.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\BagsPT.cs" />
     <Compile Include="Clases\Boleta.cs" />
@@ -2869,6 +2875,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\xfrm_formula_FFIF_New.resx">
       <DependentUpon>xfrm_formula_FFIF_New.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\xrpCertificadoCalidad.resx">
+      <DependentUpon>xrpCertificadoCalidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frmdespachos.resx">
       <DependentUpon>frmdespachos.cs</DependentUpon>

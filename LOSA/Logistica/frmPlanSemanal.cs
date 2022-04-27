@@ -336,15 +336,64 @@ namespace LOSA.Logistica
                     con.Open();
                     SqlCommand comd = new SqlCommand(SQl, con);
                     comd.CommandType = CommandType.StoredProcedure;
+
                     comd.Parameters.AddWithValue("@id_plan", plan.Id);
                     comd.Parameters.AddWithValue("@id_pt", date.id_pt == 0 ? id_pt : date.id_pt );
-                    comd.Parameters.AddWithValue("@domingo", date.domingo);
-                    comd.Parameters.AddWithValue("@lunes", date.lunes);
-                    comd.Parameters.AddWithValue("@martes", date.martes);
-                    comd.Parameters.AddWithValue("@miercoles", date.miercoles);
-                    comd.Parameters.AddWithValue("@jueves", date.jueves);
-                    comd.Parameters.AddWithValue("@viernes", date.viernes);
-                    comd.Parameters.AddWithValue("@sabado", date.sabado);
+                    try
+                    { comd.Parameters.AddWithValue("@domingo", date.domingo);
+                    }
+                    catch ( Exception ex)
+                    {   comd.Parameters.AddWithValue("@domingo", 0);
+                    }
+                    try
+                    {
+                        comd.Parameters.AddWithValue("@lunes", date.lunes);
+                    }
+                    catch (Exception ex)
+                    {
+                        comd.Parameters.AddWithValue("@lunes", 0);
+                    }
+                    try
+                    {
+
+                        comd.Parameters.AddWithValue("@martes", date.martes);
+                    }
+                    catch (Exception ex)
+                    {
+                        comd.Parameters.AddWithValue("@martes", 0);
+                    }
+                    try
+                    {
+                        comd.Parameters.AddWithValue("@miercoles", date.miercoles);
+                    }
+                    catch (Exception ex)
+                    {
+                        comd.Parameters.AddWithValue("@miercoles", 0);
+                    }
+                    try
+                    {
+                        comd.Parameters.AddWithValue("@jueves", date.jueves);
+                    }
+                    catch (Exception ex)
+                    {
+                        comd.Parameters.AddWithValue("@jueves", 0);
+                    }
+                    try
+                    {
+                        comd.Parameters.AddWithValue("@viernes", date.viernes);
+                    }
+                    catch (Exception ex)
+                    {
+                        comd.Parameters.AddWithValue("@viernes", 0);
+                    }
+                    try
+                    {
+                        comd.Parameters.AddWithValue("@sabado", date.sabado);
+                    }
+                    catch (Exception ex)
+                    {
+                        comd.Parameters.AddWithValue("@sabado", 0);
+                    }
                     comd.Parameters.AddWithValue("@tipo", 0);
                     comd.ExecuteNonQuery();
 
@@ -375,13 +424,63 @@ namespace LOSA.Logistica
                     comd.CommandType = CommandType.StoredProcedure;
                     comd.Parameters.AddWithValue("@id_plan", plan.Id);
                     comd.Parameters.AddWithValue("@id_pt", row.id_pt == 0 ? id_pt : row.id_pt);
-                    comd.Parameters.AddWithValue("@domingo", row.domingo);
-                    comd.Parameters.AddWithValue("@lunes", row.lunes);
-                    comd.Parameters.AddWithValue("@martes", row.martes);
-                    comd.Parameters.AddWithValue("@miercoles", row.miercoles);
-                    comd.Parameters.AddWithValue("@jueves", row.jueves);
-                    comd.Parameters.AddWithValue("@viernes", row.viernes);
-                    comd.Parameters.AddWithValue("@sabado", row.sabado);
+                    try
+                    {
+                        comd.Parameters.AddWithValue("@domingo", row.domingo);
+                    }
+                    catch (Exception ex)
+                    {
+                        comd.Parameters.AddWithValue("@domingo", 0);
+                    }
+                    try
+                    {
+                        comd.Parameters.AddWithValue("@lunes", row.lunes);
+                    }
+                    catch (Exception ex)
+                    {
+                        comd.Parameters.AddWithValue("@lunes", 0);
+                    }
+                    try
+                    {
+
+                        comd.Parameters.AddWithValue("@martes", row.martes);
+                    }
+                    catch (Exception ex)
+                    {
+                        comd.Parameters.AddWithValue("@martes", 0);
+                    }
+                    try
+                    {
+                        comd.Parameters.AddWithValue("@miercoles", row.miercoles);
+                    }
+                    catch (Exception ex)
+                    {
+                        comd.Parameters.AddWithValue("@miercoles", 0);
+                    }
+                    try
+                    {
+                        comd.Parameters.AddWithValue("@jueves", row.jueves);
+                    }
+                    catch (Exception ex)
+                    {
+                        comd.Parameters.AddWithValue("@jueves", 0);
+                    }
+                    try
+                    {
+                        comd.Parameters.AddWithValue("@viernes", row.viernes);
+                    }
+                    catch (Exception ex)
+                    {
+                        comd.Parameters.AddWithValue("@viernes", 0);
+                    }
+                    try
+                    {
+                        comd.Parameters.AddWithValue("@sabado", row.sabado);
+                    }
+                    catch (Exception ex)
+                    {
+                        comd.Parameters.AddWithValue("@sabado", 0);
+                    }
                     comd.Parameters.AddWithValue("@tipo", 1);
                     comd.ExecuteNonQuery();
 

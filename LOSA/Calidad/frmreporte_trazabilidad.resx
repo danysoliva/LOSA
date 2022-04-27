@@ -342,6 +342,26 @@
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>50</value>
   </metadata>
+  <data name="btnCertidicado.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        3QAAAN0BcFOiBwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAMgSURBVFhH7Zfv
+        SxNxHMeloAdBD3rUn9GjHvWgVdgTd6bWdNPyUVEhlFGCkJEiFKRPkqAgoQR7MjIRnLMtWSuMhT+ypqKp
+        bXNzU2/b3e5uPxL10/dzevNuO525I4h88ILvccf3/fp+vp/v7VbA8zz8BYwAUKDGvoBCIBxlwRNYypvg
+        UlgejuxOYImOwsRMIG9QQj4vYb8H/hGB0HIExqZ8eTPrC8nDkd0JRBkWAiE6b7CZ5fMS/tceiC5IYyOY
+        DQfZ3qKjOwqwbEwsX76EowwI84OQ7KMg4bgKyQ/XP6b69EyyT+/NlFAI4BtsdNKbF18nZsA/bofkQDUR
+        0GdBRN6s9OuPqwpwHA+xGLd3IiFI2oxbgVYKfg2UwIqjDFK2YoUI4XWWQL4I9Fw6IGU7D+sjlQDfLqVZ
+        HTRsCVj0X7QXWBzfmJysPDNcYsV5QZJwY2MqBOgIAzPe4J6Y9cwDN0AajkyOZVcLR9aGTJIAVqFRMwHv
+        9DCZlBInxj1XC0fWRyvTAgmLfkzTLYi728WJseHUwpFVV4UkkIxbqROaCvARf3p12HBZAmNVstNAOf/4
+        GMqfVUOgf6YFEGw43HMsO65ceRQpV5ZArhdRlIkpArPgWIhPvIKEs0YWlIFFnyKnxJqyFpF9yhDI9Srm
+        uNxVEAn6IfGyTFVAuF9ow2AJbXtAoqsD+LsmiL8ohXiLAYQGIwgtFPDN54A16FKC6eyxbQUWQotAhyPi
+        OMowMD3nAYZ8J2Q+ty0R8kVcfwX42sotbpmArTiD4SJMua55W4GmJ+3Q3e8Ac68d6h62gdnyHp53dkFn
+        txVG3JOKZ1Wx9SjDCdy10jUpfJNwkKIOqwr4/Bu/4bjqHruTvOF84rVnPkB6JEclYqRJm24qBW5XQaz2
+        8lCGAOHUjSwB+ycXPO0w78jUrEcZKsflVIYjzx6BYH1bly2g+wGNjQe0bcLWe8DfqVb2wPdhvGckK363
+        GbxKxhEck14o0U4Aj+jy4sZ4mfwzelAD/ON66T4KFGJo7KKuQWxAg+EQXXzyiLYVkOMeAf6zQ7oWP0qZ
+        8tNtWHZRQAQKfgNY5AHYcHSpSgAAAABJRU5ErkJggg==
+</value>
+  </data>
   <metadata name="dsReportesTRZ1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>252, 17</value>
   </metadata>
@@ -371,6 +391,6 @@
     <value>392, 17</value>
   </metadata>
   <metadata name="dsTrazabilidadReports1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>524, 17</value>
+    <value>525, 20</value>
   </metadata>
 </root>

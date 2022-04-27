@@ -208,6 +208,7 @@
             this.colresultado_porcentaje = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colmax_plan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_decision = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControlNoConformidades = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -222,6 +223,8 @@
             this.colid_turno = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colturno_name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tggMuestras = new DevExpress.XtraEditors.ToggleSwitch();
+            this.btnCertidicado = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtlote.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCalidad)).BeginInit();
@@ -288,6 +291,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlNoConformidades)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tggMuestras.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl3
@@ -983,6 +987,7 @@
             this.colFac_promix});
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsView.ShowFooter = true;
             // 
             // colDespacho
             // 
@@ -1038,6 +1043,8 @@
             this.colunidades.FieldName = "unidades";
             this.colunidades.Name = "colunidades";
             this.colunidades.OptionsColumn.AllowEdit = false;
+            this.colunidades.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "unidades", "{0:###,##0 Sacos}")});
             this.colunidades.Visible = true;
             this.colunidades.VisibleIndex = 3;
             this.colunidades.Width = 68;
@@ -1160,7 +1167,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1424, 449);
+            this.panelControl1.Size = new System.Drawing.Size(949, 299);
             this.panelControl1.TabIndex = 0;
             // 
             // splitContainerControl2
@@ -1175,7 +1182,7 @@
             this.splitContainerControl2.Panel1.Text = "Panel1";
             this.splitContainerControl2.Panel2.Controls.Add(this.grd_resumen);
             this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(1417, 415);
+            this.splitContainerControl2.Size = new System.Drawing.Size(942, 265);
             this.splitContainerControl2.SplitterPosition = 394;
             this.splitContainerControl2.TabIndex = 37;
             // 
@@ -1188,7 +1195,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.xtraTabControl2);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1417, 394);
+            this.splitContainerControl1.Size = new System.Drawing.Size(942, 260);
             this.splitContainerControl1.SplitterPosition = 886;
             this.splitContainerControl1.TabIndex = 39;
             // 
@@ -1202,7 +1209,7 @@
             this.xtraTabControl3.Location = new System.Drawing.Point(0, 0);
             this.xtraTabControl3.Name = "xtraTabControl3";
             this.xtraTabControl3.SelectedTabPage = this.xtraTabPage6;
-            this.xtraTabControl3.Size = new System.Drawing.Size(886, 394);
+            this.xtraTabControl3.Size = new System.Drawing.Size(886, 260);
             this.xtraTabControl3.TabIndex = 0;
             this.xtraTabControl3.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage6,
@@ -1212,7 +1219,7 @@
             // 
             this.xtraTabPage6.Controls.Add(this.grd_trasacciones);
             this.xtraTabPage6.Name = "xtraTabPage6";
-            this.xtraTabPage6.Size = new System.Drawing.Size(880, 362);
+            this.xtraTabPage6.Size = new System.Drawing.Size(880, 228);
             this.xtraTabPage6.Text = "Transacciones";
             // 
             // grd_trasacciones
@@ -1223,7 +1230,7 @@
             this.grd_trasacciones.Location = new System.Drawing.Point(0, 0);
             this.grd_trasacciones.MainView = this.grdv_trascciones;
             this.grd_trasacciones.Name = "grd_trasacciones";
-            this.grd_trasacciones.Size = new System.Drawing.Size(880, 362);
+            this.grd_trasacciones.Size = new System.Drawing.Size(587, 152);
             this.grd_trasacciones.TabIndex = 0;
             this.grd_trasacciones.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_trascciones});
@@ -1364,7 +1371,7 @@
             this.grd_despachos.Location = new System.Drawing.Point(0, 0);
             this.grd_despachos.MainView = this.grdv_despachos;
             this.grd_despachos.Name = "grd_despachos";
-            this.grd_despachos.Size = new System.Drawing.Size(880, 362);
+            this.grd_despachos.Size = new System.Drawing.Size(587, 241);
             this.grd_despachos.TabIndex = 0;
             this.grd_despachos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_despachos});
@@ -1470,7 +1477,7 @@
             this.xtraTabControl2.Location = new System.Drawing.Point(0, 0);
             this.xtraTabControl2.Name = "xtraTabControl2";
             this.xtraTabControl2.SelectedTabPage = this.xtraTabPage3;
-            this.xtraTabControl2.Size = new System.Drawing.Size(526, 394);
+            this.xtraTabControl2.Size = new System.Drawing.Size(51, 260);
             this.xtraTabControl2.TabIndex = 39;
             this.xtraTabControl2.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage3,
@@ -1481,7 +1488,7 @@
             // 
             this.xtraTabPage3.Controls.Add(this.grd_liberado);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(520, 362);
+            this.xtraTabPage3.Size = new System.Drawing.Size(45, 228);
             this.xtraTabPage3.Text = "Liberado";
             // 
             // grd_liberado
@@ -1492,7 +1499,7 @@
             this.grd_liberado.Location = new System.Drawing.Point(0, 0);
             this.grd_liberado.MainView = this.grdv_liberado;
             this.grd_liberado.Name = "grd_liberado";
-            this.grd_liberado.Size = new System.Drawing.Size(520, 362);
+            this.grd_liberado.Size = new System.Drawing.Size(30, 152);
             this.grd_liberado.TabIndex = 37;
             this.grd_liberado.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_liberado});
@@ -1623,7 +1630,7 @@
             this.grd_retenido.Location = new System.Drawing.Point(0, 0);
             this.grd_retenido.MainView = this.grdv_retenido;
             this.grd_retenido.Name = "grd_retenido";
-            this.grd_retenido.Size = new System.Drawing.Size(520, 362);
+            this.grd_retenido.Size = new System.Drawing.Size(347, 241);
             this.grd_retenido.TabIndex = 38;
             this.grd_retenido.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_retenido});
@@ -1754,7 +1761,7 @@
             this.grd_resumen.Location = new System.Drawing.Point(0, 0);
             this.grd_resumen.MainView = this.grdv_resumen;
             this.grd_resumen.Name = "grd_resumen";
-            this.grd_resumen.Size = new System.Drawing.Size(1417, 16);
+            this.grd_resumen.Size = new System.Drawing.Size(0, 0);
             this.grd_resumen.TabIndex = 38;
             this.grd_resumen.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_resumen});
@@ -1871,6 +1878,21 @@
             // 
             // gridView3
             // 
+            this.gridView3.Appearance.FocusedRow.BackColor = System.Drawing.Color.Transparent;
+            this.gridView3.Appearance.FocusedRow.BackColor2 = System.Drawing.Color.Transparent;
+            this.gridView3.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView3.Appearance.FocusedRow.Options.UseBackColor = true;
+            this.gridView3.Appearance.FocusedRow.Options.UseFont = true;
+            this.gridView3.Appearance.GroupFooter.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gridView3.Appearance.GroupFooter.Options.UseFont = true;
+            this.gridView3.Appearance.GroupPanel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gridView3.Appearance.GroupPanel.Options.UseFont = true;
+            this.gridView3.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView3.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView3.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gridView3.Appearance.Preview.Options.UseFont = true;
+            this.gridView3.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gridView3.Appearance.Row.Options.UseFont = true;
             this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.collote_pt,
             this.colcant_sacos,
@@ -1886,23 +1908,29 @@
             this.colresultado_porcentaje,
             this.colmax_plan,
             this.coldescripcion2,
+            this.colid_decision,
             this.colid1});
             this.gridView3.GridControl = this.gridControlMuestreoPorLote;
             this.gridView3.GroupCount = 1;
             this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsBehavior.AutoExpandAllGroups = true;
+            this.gridView3.OptionsView.ShowGroupPanel = false;
             this.gridView3.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.coldescripcion2, DevExpress.Data.ColumnSortOrder.Ascending)});
+            this.gridView3.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.gridView3_RowStyle);
             // 
             // collote_pt
             // 
             this.collote_pt.FieldName = "lote_pt";
             this.collote_pt.Name = "collote_pt";
+            this.collote_pt.OptionsColumn.AllowEdit = false;
             // 
             // colcant_sacos
             // 
             this.colcant_sacos.Caption = "Cant. Sacos";
             this.colcant_sacos.FieldName = "cant_sacos";
             this.colcant_sacos.Name = "colcant_sacos";
+            this.colcant_sacos.OptionsColumn.AllowEdit = false;
             this.colcant_sacos.Visible = true;
             this.colcant_sacos.VisibleIndex = 0;
             // 
@@ -1911,6 +1939,7 @@
             this.colfecha_creacion.Caption = "Fecha Creado";
             this.colfecha_creacion.FieldName = "fecha_creacion";
             this.colfecha_creacion.Name = "colfecha_creacion";
+            this.colfecha_creacion.OptionsColumn.AllowEdit = false;
             this.colfecha_creacion.Visible = true;
             this.colfecha_creacion.VisibleIndex = 1;
             // 
@@ -1918,12 +1947,14 @@
             // 
             this.colId_lote_pt.FieldName = "Id_lote_pt";
             this.colId_lote_pt.Name = "colId_lote_pt";
+            this.colId_lote_pt.OptionsColumn.AllowEdit = false;
             // 
             // colid_turno_final
             // 
             this.colid_turno_final.Caption = "Turno Final";
             this.colid_turno_final.FieldName = "id_turno_final";
             this.colid_turno_final.Name = "colid_turno_final";
+            this.colid_turno_final.OptionsColumn.AllowEdit = false;
             this.colid_turno_final.Visible = true;
             this.colid_turno_final.VisibleIndex = 2;
             // 
@@ -1932,6 +1963,7 @@
             this.colid_turno_inicial.Caption = "Turno Inicial";
             this.colid_turno_inicial.FieldName = "id_turno_inicial";
             this.colid_turno_inicial.Name = "colid_turno_inicial";
+            this.colid_turno_inicial.OptionsColumn.AllowEdit = false;
             this.colid_turno_inicial.Visible = true;
             this.colid_turno_inicial.VisibleIndex = 3;
             // 
@@ -1940,6 +1972,7 @@
             this.coljornada_inicial.Caption = "Jornada Inicial";
             this.coljornada_inicial.FieldName = "jornada_inicial";
             this.coljornada_inicial.Name = "coljornada_inicial";
+            this.coljornada_inicial.OptionsColumn.AllowEdit = false;
             this.coljornada_inicial.Visible = true;
             this.coljornada_inicial.VisibleIndex = 4;
             // 
@@ -1948,6 +1981,7 @@
             this.coljornada_final.Caption = "Jornada Final";
             this.coljornada_final.FieldName = "jornada_final";
             this.coljornada_final.Name = "coljornada_final";
+            this.coljornada_final.OptionsColumn.AllowEdit = false;
             this.coljornada_final.Visible = true;
             this.coljornada_final.VisibleIndex = 5;
             // 
@@ -1955,12 +1989,14 @@
             // 
             this.colid_parametro.FieldName = "id_parametro";
             this.colid_parametro.Name = "colid_parametro";
+            this.colid_parametro.OptionsColumn.AllowEdit = false;
             // 
             // colparametro
             // 
             this.colparametro.Caption = "Parametro";
             this.colparametro.FieldName = "parametro";
             this.colparametro.Name = "colparametro";
+            this.colparametro.OptionsColumn.AllowEdit = false;
             this.colparametro.Visible = true;
             this.colparametro.VisibleIndex = 6;
             // 
@@ -1969,6 +2005,7 @@
             this.colmin_plan.Caption = "Min";
             this.colmin_plan.FieldName = "min_plan";
             this.colmin_plan.Name = "colmin_plan";
+            this.colmin_plan.OptionsColumn.AllowEdit = false;
             this.colmin_plan.Visible = true;
             this.colmin_plan.VisibleIndex = 7;
             // 
@@ -1977,6 +2014,7 @@
             this.colresultado_porcentaje.Caption = "Resultado %";
             this.colresultado_porcentaje.FieldName = "resultado_porcentaje";
             this.colresultado_porcentaje.Name = "colresultado_porcentaje";
+            this.colresultado_porcentaje.OptionsColumn.AllowEdit = false;
             this.colresultado_porcentaje.Visible = true;
             this.colresultado_porcentaje.VisibleIndex = 8;
             // 
@@ -1985,6 +2023,7 @@
             this.colmax_plan.Caption = "Max";
             this.colmax_plan.FieldName = "max_plan";
             this.colmax_plan.Name = "colmax_plan";
+            this.colmax_plan.OptionsColumn.AllowEdit = false;
             this.colmax_plan.Visible = true;
             this.colmax_plan.VisibleIndex = 9;
             // 
@@ -1993,13 +2032,20 @@
             this.coldescripcion2.Caption = "Categoria";
             this.coldescripcion2.FieldName = "descripcion";
             this.coldescripcion2.Name = "coldescripcion2";
+            this.coldescripcion2.OptionsColumn.AllowEdit = false;
             this.coldescripcion2.Visible = true;
             this.coldescripcion2.VisibleIndex = 10;
+            // 
+            // colid_decision
+            // 
+            this.colid_decision.FieldName = "id_decision";
+            this.colid_decision.Name = "colid_decision";
             // 
             // colid1
             // 
             this.colid1.FieldName = "id";
             this.colid1.Name = "colid1";
+            this.colid1.OptionsColumn.AllowEdit = false;
             // 
             // gridControlNoConformidades
             // 
@@ -2010,7 +2056,7 @@
             this.gridControlNoConformidades.Location = new System.Drawing.Point(0, 0);
             this.gridControlNoConformidades.MainView = this.gridView1;
             this.gridControlNoConformidades.Name = "gridControlNoConformidades";
-            this.gridControlNoConformidades.Size = new System.Drawing.Size(1424, 204);
+            this.gridControlNoConformidades.Size = new System.Drawing.Size(1423, 204);
             this.gridControlNoConformidades.TabIndex = 0;
             this.gridControlNoConformidades.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -2130,12 +2176,42 @@
             this.colturno_name.Visible = true;
             this.colturno_name.VisibleIndex = 8;
             // 
+            // tggMuestras
+            // 
+            this.tggMuestras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tggMuestras.Location = new System.Drawing.Point(1169, 148);
+            this.tggMuestras.Name = "tggMuestras";
+            this.tggMuestras.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tggMuestras.Properties.Appearance.Options.UseFont = true;
+            this.tggMuestras.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.tggMuestras.Properties.OffText = "No cumplen";
+            this.tggMuestras.Properties.OnText = "Todos";
+            this.tggMuestras.Size = new System.Drawing.Size(262, 28);
+            this.tggMuestras.TabIndex = 2;
+            this.tggMuestras.Toggled += new System.EventHandler(this.tggMuestras_Toggled);
+            // 
+            // btnCertidicado
+            // 
+            this.btnCertidicado.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCertidicado.Appearance.Options.UseFont = true;
+            this.btnCertidicado.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCertidicado.ImageOptions.Image")));
+            this.btnCertidicado.Location = new System.Drawing.Point(545, 84);
+            this.btnCertidicado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCertidicado.Name = "btnCertidicado";
+            this.btnCertidicado.Size = new System.Drawing.Size(138, 54);
+            this.btnCertidicado.TabIndex = 71;
+            this.btnCertidicado.Text = "Certificado \r\nde Calidad";
+            this.btnCertidicado.Visible = false;
+            this.btnCertidicado.Click += new System.EventHandler(this.btnCertidicado_Click);
+            // 
             // frmreporte_trazabilidad
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1431, 740);
+            this.Controls.Add(this.btnCertidicado);
+            this.Controls.Add(this.tggMuestras);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.labelControl14);
             this.Controls.Add(this.txtCodigoPP);
@@ -2246,6 +2322,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlNoConformidades)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tggMuestras.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2415,5 +2492,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colmax_plan;
         private DevExpress.XtraGrid.Columns.GridColumn coldescripcion2;
         private DevExpress.XtraGrid.Columns.GridColumn colid1;
+        private DevExpress.XtraEditors.ToggleSwitch tggMuestras;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_decision;
+        private DevExpress.XtraEditors.SimpleButton btnCertidicado;
     }
 }

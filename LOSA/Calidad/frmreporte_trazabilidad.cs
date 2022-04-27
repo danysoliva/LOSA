@@ -236,19 +236,38 @@ namespace LOSA.Calidad
         {
             try
             {
-                DataOperations dp = new DataOperations();
-                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                con.Open();
+              
 
-                SqlCommand cmd = new SqlCommand("sp_get_detalle_muestreo_y_parametro_trz", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@lote", txtlote.Text);
-                dsTrazabilidadReports1.muestreo_lote.Clear();
-                SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                adat.Fill(dsTrazabilidadReports1.muestreo_lote);
+                if (tggMuestras.IsOn)
+                {
+                    DataOperations dp = new DataOperations();
+                    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                    con.Open();
 
+                    SqlCommand cmd = new SqlCommand("sp_get_detalle_muestreo_y_parametro_trz_all", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@lote", txtlote.Text);
+                    dsTrazabilidadReports1.muestreo_lote.Clear();
+                    SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                    adat.Fill(dsTrazabilidadReports1.muestreo_lote);
 
-                con.Close();
+                    con.Close();
+                }
+                else
+                {
+                    DataOperations dp = new DataOperations();
+                    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                    con.Open();
+
+                    SqlCommand cmd = new SqlCommand("sp_get_detalle_muestreo_y_parametro_trz", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@lote", txtlote.Text);
+                    dsTrazabilidadReports1.muestreo_lote.Clear();
+                    SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                    adat.Fill(dsTrazabilidadReports1.muestreo_lote);
+
+                    con.Close();
+                }
             }
             catch (Exception ec)
             {
@@ -265,7 +284,7 @@ namespace LOSA.Calidad
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_detalle_destinos_lote_pt_trz", con);
+                SqlCommand cmd = new SqlCommand("sp_get_detalle_destinos_lote_pt_trz_v2", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@lotept", txtlote.Text);
                 dsReportesTRZ1.detalle_destinos.Clear();
@@ -415,11 +434,41 @@ namespace LOSA.Calidad
         {
             var gridView = (GridView)gridControl2.FocusedView;
             var row = (dsReportesTRZ.detalle_destinosRow)gridView.GetFocusedDataRow();
-            frmDetalleDespacho frm = new frmDetalleDespacho(row.Despacho);
+            frmDetalleDespacho frm = new frmDetalleDespacho(row.Despacho, Convert.ToInt32(txtlote.Text));
             if (this.MdiParent != null)
                 frm.MdiParent = this.MdiParent;
             frm.WindowState = FormWindowState.Normal;
             frm.Show();
+        }
+
+        private void tggMuestras_Toggled(object sender, EventArgs e)
+        {
+            load_MuestreoPT();
+        }
+
+        private void gridView3_RowStyle(object sender, RowStyleEventArgs e)
+        {
+            var gridView = (GridView)gridControlMuestreoPorLote.FocusedView;
+            var row = (dsTrazabilidadReports.muestreo_loteRow)gridView.GetDataRow(e.RowHandle);
+            if (e.RowHandle >= 0)
+            {
+
+                if (row.id_decision == 2)
+                {
+                    e.Appearance.BackColor = Color.FromArgb(232, 187, 185);
+
+                }
+                else
+                {
+                    e.Appearance.BackColor = Color.FromArgb(148, 213, 181);
+                }
+            }
+
+        }
+
+        private void btnCertidicado_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
