@@ -691,6 +691,7 @@ namespace LOSA.Calidad
                                     CajaDialogo.Error("En Producto terminado, no puede liberar varios lotes a la vez.");
                                     return;
                                 }
+                                ListaTarimas.Add(rowHab.id);
                             }
                         }
 

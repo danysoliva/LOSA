@@ -135,12 +135,16 @@ namespace LOSA.TransaccionesPT
 
                 if (tarimaEncontrada.Recuperado)
                 {
+
+                    if (tarimaEncontrada.id_estado_pt > 1)
+                    {
+
+                        error = true;
+                        mensaje = "Ya se ha activado la tarima seleccionada!";
+                    }
+
                     txtCantidadT.Text = tarimaEncontrada.Cantidad.ToString();
                     txtPeso.Text = tarimaEncontrada.Peso.ToString();
-
-
-
-
                 }
                 else
                 {
@@ -214,8 +218,14 @@ namespace LOSA.TransaccionesPT
         {
             if (e.KeyCode == Keys.Enter)
             {
-
-                EntregarTarima();
+                if (lblMensaje.Text != "Tarima Activada")
+                {
+                    EntregarTarima();
+                }
+                else
+                {
+                    beNuevaUbicacion.Focus();
+                }
             }
         }
 
