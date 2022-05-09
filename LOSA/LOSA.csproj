@@ -726,6 +726,12 @@
     <Compile Include="Calidad\Parametros\FrmRegistroMuestreo.Designer.cs">
       <DependentUpon>FrmRegistroMuestreo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\Revision_Sanidad\xfrmRevisionSanidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\Revision_Sanidad\xfrmRevisionSanidad.Designer.cs">
+      <DependentUpon>xfrmRevisionSanidad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\xfrmCertificadoCalidad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -737,6 +743,12 @@
     </Compile>
     <Compile Include="Calidad\xfrmCertificadoCalidadCRUD.Designer.cs">
       <DependentUpon>xfrmCertificadoCalidadCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\xfrmTrazabilidadClientesLotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\xfrmTrazabilidadClientesLotes.Designer.cs">
+      <DependentUpon>xfrmTrazabilidadClientesLotes.cs</DependentUpon>
     </Compile>
     <Compile Include="Calidad\xfrmWizardConfCalidad.cs">
       <SubType>Form</SubType>
@@ -2864,11 +2876,17 @@
     <EmbeddedResource Include="Calidad\Parametros\FrmRegistroMuestreo.resx">
       <DependentUpon>FrmRegistroMuestreo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\Revision_Sanidad\xfrmRevisionSanidad.resx">
+      <DependentUpon>xfrmRevisionSanidad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calidad\xfrmCertificadoCalidad.resx">
       <DependentUpon>xfrmCertificadoCalidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\xfrmCertificadoCalidadCRUD.resx">
       <DependentUpon>xfrmCertificadoCalidadCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\xfrmTrazabilidadClientesLotes.resx">
+      <DependentUpon>xfrmTrazabilidadClientesLotes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\xfrmWizardConfCalidad.resx">
       <DependentUpon>xfrmWizardConfCalidad.cs</DependentUpon>

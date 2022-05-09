@@ -86,6 +86,7 @@
             this.btnreportes = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
             this.TabCalidad = new DevExpress.XtraTab.XtraTabPage();
+            this.btnClientesLote = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton32 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton29 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton28 = new DevExpress.XtraEditors.SimpleButton();
@@ -949,6 +950,7 @@
             // 
             // TabCalidad
             // 
+            this.TabCalidad.Controls.Add(this.btnClientesLote);
             this.TabCalidad.Controls.Add(this.simpleButton32);
             this.TabCalidad.Controls.Add(this.simpleButton29);
             this.TabCalidad.Controls.Add(this.simpleButton28);
@@ -970,6 +972,21 @@
             this.TabCalidad.PageVisible = false;
             this.TabCalidad.Size = new System.Drawing.Size(772, 441);
             this.TabCalidad.Text = "Calidad";
+            // 
+            // btnClientesLote
+            // 
+            this.btnClientesLote.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.btnClientesLote.Appearance.Options.UseFont = true;
+            this.btnClientesLote.Appearance.Options.UseTextOptions = true;
+            this.btnClientesLote.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnClientesLote.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnClientesLote.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClientesLote.ImageOptions.Image")));
+            this.btnClientesLote.Location = new System.Drawing.Point(214, 348);
+            this.btnClientesLote.Name = "btnClientesLote";
+            this.btnClientesLote.Size = new System.Drawing.Size(199, 59);
+            this.btnClientesLote.TabIndex = 33;
+            this.btnClientesLote.Text = "Trazabilidad Clientes-Lote";
+            this.btnClientesLote.Click += new System.EventHandler(this.btnClientesLote_Click);
             // 
             // simpleButton32
             // 
@@ -1572,5 +1589,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton31;
         private DevExpress.XtraEditors.SimpleButton simpleButton32;
         private DevExpress.XtraEditors.SimpleButton simpleButton33;
+        private DevExpress.XtraEditors.SimpleButton btnClientesLote;
     }
 }

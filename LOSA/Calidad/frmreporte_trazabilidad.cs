@@ -30,8 +30,25 @@ namespace LOSA.Calidad
             InitializeComponent();
             UsuarioLogeado = Puser;
             txtlote.Focus();
-        }    
-        
+        }
+
+
+        public frmreporte_trazabilidad(UserLogin Puser,string lote_pt)
+        {
+            InitializeComponent();
+            UsuarioLogeado = Puser;
+            txtlote.Focus();
+
+            txtlote.Text = lote_pt;
+
+            load_header();
+            load_data();
+            Load_Despachos();
+            load_informacion_de_inventario();
+            load_tarimas_rechazadas();
+            load_MuestreoPT();
+        }
+
         public void load_header()
         {
             if (!string.IsNullOrEmpty(txtlote.Text))
@@ -469,6 +486,25 @@ namespace LOSA.Calidad
         private void btnCertidicado_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnTrazabilidadClientes_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            try
+            {
+                var row = (dsReportesTRZ.detalle_destinosRow)gridView2.GetFocusedDataRow();
+
+                xfrmTrazabilidadClientesLotes frm = new xfrmTrazabilidadClientesLotes(UsuarioLogeado, row.Id_Cliente);
+
+                if (this.MdiParent != null)
+                    frm.MdiParent = this.MdiParent;
+                frm.Show();
+
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
     }
 }
