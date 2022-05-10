@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmactivacionPT));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -47,7 +48,7 @@
             this.txtCantidadT = new DevExpress.XtraEditors.TextEdit();
             this.pictureBoxIndicadorOk = new System.Windows.Forms.PictureBox();
             this.txtTarima = new DevExpress.XtraEditors.ButtonEdit();
-            this.timerLimpiarMensaje = new System.Windows.Forms.Timer();
+            this.timerLimpiarMensaje = new System.Windows.Forms.Timer(this.components);
             this.beNuevaUbicacion = new DevExpress.XtraEditors.ButtonEdit();
             this.btnUbicacion = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -117,9 +118,9 @@
             this.panelNotificacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelNotificacion.Controls.Add(this.lblMensaje);
             this.panelNotificacion.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelNotificacion.Location = new System.Drawing.Point(0, 489);
+            this.panelNotificacion.Location = new System.Drawing.Point(0, 514);
             this.panelNotificacion.Name = "panelNotificacion";
-            this.panelNotificacion.Size = new System.Drawing.Size(638, 71);
+            this.panelNotificacion.Size = new System.Drawing.Size(638, 46);
             this.panelNotificacion.TabIndex = 103;
             // 
             // lblMensaje
@@ -130,7 +131,7 @@
             this.lblMensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMensaje.Location = new System.Drawing.Point(3, 5);
             this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(630, 59);
+            this.lblMensaje.Size = new System.Drawing.Size(630, 34);
             this.lblMensaje.TabIndex = 0;
             // 
             // gcTarima

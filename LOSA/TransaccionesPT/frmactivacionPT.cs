@@ -24,6 +24,7 @@ namespace LOSA.TransaccionesPT
         UserLogin usuarioLogueado;
         Tarima tarimaEncontrada;
         public int idUbicacionNueva;
+        int InProgress = 0;
         public frmactivacionPT(UserLogin pUser)
         {
             InitializeComponent();
@@ -194,7 +195,7 @@ namespace LOSA.TransaccionesPT
                     //panelNotificacion.BackColor = Color.MediumSeaGreen;
                     //timerLimpiarMensaje.Enabled = true;
                     //timerLimpiarMensaje.Start();
-
+                    InProgress = 1;
                     beNuevaUbicacion.Focus();
                 }
 
@@ -208,6 +209,7 @@ namespace LOSA.TransaccionesPT
                 panelNotificacion.BackColor = Color.Red;
                 timerLimpiarMensaje.Enabled = true;
                 timerLimpiarMensaje.Start();
+                InProgress = 0;
             }
 
 
@@ -218,7 +220,7 @@ namespace LOSA.TransaccionesPT
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (lblMensaje.Text != "Tarima Activada")
+                if (InProgress == 1) //validacion
                 {
                     EntregarTarima();
                 }
@@ -283,6 +285,7 @@ namespace LOSA.TransaccionesPT
                         panelNotificacion.BackColor = Color.MediumSeaGreen;
                         timerLimpiarMensaje.Enabled = true;
                         timerLimpiarMensaje.Start();
+                        InProgress = 0;
 
                     }
                 }
