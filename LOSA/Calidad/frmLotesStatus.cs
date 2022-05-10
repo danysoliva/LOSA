@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LOSA.Clases;
 using System.Collections;
+using LOSA.Calidad.Parametros;
 
 namespace LOSA.Calidad
 {
@@ -43,7 +44,7 @@ namespace LOSA.Calidad
                 DataOperations dp = new DataOperations();
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
-
+                //bit_muestreo
                 SqlCommand cmd = new SqlCommand("sp_get_tarimas_habilitadas_calidad_V3", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 dsCalidad1.tarimas_disponibles.Clear();
@@ -618,7 +619,8 @@ namespace LOSA.Calidad
                 var gridViewRetenido = (GridView)gridRetenidos.FocusedView;
                 var gridViewRechazado = (GridView)gridRechazado.FocusedView;
                 ArrayList ListaTarimas = null;
-
+                bool existeMuestra = false;
+                string lotePar = "";
                 switch (gridActual)
                 {
                     case 1://habilitado
@@ -634,18 +636,30 @@ namespace LOSA.Calidad
                         //id_mp = row.id_mp;
                         //CodigoP = row.codigomp;
                         //Articulo = row.mp;
+                        existeMuestra = row.bit_muestreo;
                         if (ListaTarimas == null)
                             ListaTarimas = new ArrayList();
+
+                        tipo_tm = row.id_tipotm;
+                        if (tipo_tm == 2)
+                        {
+                            lotePar = row.lote;
+                        }
 
                         foreach (dsCalidad.tarimas_disponiblesRow rowHab in dsCalidad1.tarimas_disponibles.Rows)
                         {
                             if (rowHab.seleccionado)
                             {
+
+                                if (rowHab.lote != lotePar && tipo_tm == 2)
+                                {
+                                    CajaDialogo.Error("En Producto terminado, no puede liberar varios lotes a la vez.");
+                                    return;
+                                }
                                 ListaTarimas.Add(rowHab.id);
                             }
                         }
-                        tipo_tm = row.id_tipotm;
-
+                       
                         break;
                     case 2://observacion
                         
@@ -662,15 +676,26 @@ namespace LOSA.Calidad
                         //Articulo = row1.mp;
                         if (ListaTarimas == null)
                             ListaTarimas = new ArrayList();
+                        tipo_tm = row1.id_tipotm;
+                        if (tipo_tm == 2)
+                        {
+                            lotePar = row1.lote;
+                        }
 
                         foreach (dsCalidad.tarimas_obsRow rowHab in dsCalidad1.tarimas_obs.Rows)
                         {
                             if (rowHab.seleccionado)
                             {
+                                if (rowHab.lote != lotePar && tipo_tm == 2)
+                                {
+                                    CajaDialogo.Error("En Producto terminado, no puede liberar varios lotes a la vez.");
+                                    return;
+                                }
                                 ListaTarimas.Add(rowHab.id);
                             }
                         }
 
+                        existeMuestra = row1.bit_muestreo;
                         tipo_tm = row1.id_tipotm;
 
                         break;
@@ -690,15 +715,26 @@ namespace LOSA.Calidad
                        
                         if (ListaTarimas == null)
                             ListaTarimas = new ArrayList();
+                        tipo_tm = row2.id_tipotm;
+                        if (tipo_tm == 2)
+                        {
+                            lotePar = row2.lote;
+                        }
 
                         foreach (dsCalidad.tarimas_retRow rowHab in dsCalidad1.tarimas_ret.Rows)
                         {
                             if (rowHab.seleccionado)
                             {
+                                if (rowHab.lote != lotePar && tipo_tm == 2)
+                                {
+                                    CajaDialogo.Error("En Producto terminado, no puede liberar varios lotes a la vez.");
+                                    return;
+                                }
                                 ListaTarimas.Add(rowHab.id);
                             }
                         }
 
+                        existeMuestra = row2.bit_muestreo;
                         tipo_tm = row2.id_tipotm;
                         break;
                     case 4://Rechazado
@@ -725,6 +761,8 @@ namespace LOSA.Calidad
                                 ListaTarimas.Add(rowHab.id);
                             }
                         }
+
+                        existeMuestra = row3.bit_muestreo;
                         tipo_tm = row3.id_tipotm;
 
                         break;
@@ -741,13 +779,60 @@ namespace LOSA.Calidad
                     }
                 }
 
-                if(tipo_tm == 1)//MP
+                if(tipo_tm == 1)//MP no tenemos el tipo MP, aun.
                 {
                     UpdateStatusMPByTarima(Estado, ListaTarimas);
                 }
                 else if (tipo_tm == 2)
                 {
-                    UpdateStatusTarimaPT(Estado, ListaTarimas);
+                    if (!existeMuestra)
+                    {
+                        bool AgregarMuestras = false;
+                        if (Estado == 1)
+                        {
+                            AgregarMuestras = true;
+                        }
+                        else
+                        {
+                            if (MessageBox.Show("No existe muestreo a la tarima seleccionada, deseas ingresar la informacion?", "Pregunta sobre Muestreo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            {
+                                AgregarMuestras = true;
+                            }
+                            else
+                            {
+                                AgregarMuestras = false;
+                            }
+                        }
+                        if (AgregarMuestras)
+                        {
+                            FrmRegistroMuestreo frm = new FrmRegistroMuestreo(ListaTarimas, lotePar, UsuarioLogeado);
+                            switch (frm.ShowDialog())
+                            {
+                                case DialogResult.Yes:
+
+                                    UpdateStatusTarimaPT(1, ListaTarimas);
+                                    break;
+                                case DialogResult.No:
+                                    // VA A rechazado.
+                                    UpdateStatusTarimaPT(4, ListaTarimas);
+                                    break;
+                                case DialogResult.Cancel:
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                        else
+                        {
+
+                            UpdateStatusTarimaPT(Estado, ListaTarimas);
+                        }
+                    }
+                    else
+                    {
+
+                        UpdateStatusTarimaPT(Estado, ListaTarimas);
+                    }
                 }
                
             }
@@ -1526,6 +1611,8 @@ namespace LOSA.Calidad
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //UpdateEstado(1);
+
+         
             UpdateStatusTarimas(1);
         }
 

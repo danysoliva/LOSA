@@ -7922,6 +7922,8 @@ namespace LOSA.Calidad {
             
             private global::System.Data.DataColumn columnid_h;
             
+            private global::System.Data.DataColumn columnformula;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public FFIF_DDataTable() {
@@ -8005,6 +8007,14 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn formulaColumn {
+                get {
+                    return this.columnformula;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -8040,7 +8050,7 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public FFIF_DRow AddFFIF_DRow(int id, decimal FFIF, int id_formula, int version_foranea, System.DateTime date_posted, int id_h) {
+            public FFIF_DRow AddFFIF_DRow(int id, decimal FFIF, int id_formula, int version_foranea, System.DateTime date_posted, int id_h, string formula) {
                 FFIF_DRow rowFFIF_DRow = ((FFIF_DRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -8048,7 +8058,8 @@ namespace LOSA.Calidad {
                         id_formula,
                         version_foranea,
                         date_posted,
-                        id_h};
+                        id_h,
+                        formula};
                 rowFFIF_DRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowFFIF_DRow);
                 return rowFFIF_DRow;
@@ -8077,6 +8088,7 @@ namespace LOSA.Calidad {
                 this.columnversion_foranea = base.Columns["version_foranea"];
                 this.columndate_posted = base.Columns["date_posted"];
                 this.columnid_h = base.Columns["id_h"];
+                this.columnformula = base.Columns["formula"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8094,6 +8106,8 @@ namespace LOSA.Calidad {
                 base.Columns.Add(this.columndate_posted);
                 this.columnid_h = new global::System.Data.DataColumn("id_h", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_h);
+                this.columnformula = new global::System.Data.DataColumn("formula", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnformula);
                 this.columnid.DefaultValue = ((int)(0));
                 this.columnversion_foranea.DefaultValue = ((int)(0));
             }
@@ -11321,6 +11335,22 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string formula {
+                get {
+                    try {
+                        return ((string)(this[this.tableFFIF_D.formulaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'formula\' in table \'FFIF_D\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFFIF_D.formulaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableFFIF_D.idColumn);
             }
@@ -11389,6 +11419,18 @@ namespace LOSA.Calidad {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setid_hNull() {
                 this[this.tableFFIF_D.id_hColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsformulaNull() {
+                return this.IsNull(this.tableFFIF_D.formulaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetformulaNull() {
+                this[this.tableFFIF_D.formulaColumn] = global::System.Convert.DBNull;
             }
         }
         

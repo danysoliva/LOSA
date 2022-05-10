@@ -327,5 +327,110 @@ namespace LOSA.Calidad
         {
             this.Close();
         }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                //if (Validar_FFIF_D(id_h_active) > 0)
+                //{
+                //    CajaDialogo.Error("YA EXISTE UN FFIF");
+                //    return;
+                //}
+
+                //else
+                //{
+
+                //    FFIF_D item = new FFIF_D();
+
+                //    item.ID_H = id_h_active;
+
+                //    xfrmCertificadoCalidadCRUD frm = new xfrmCertificadoCalidadCRUD((int)Transaccion.Nuevo, item);
+
+                //    if (frm.ShowDialog() == DialogResult.OK)
+                //    {
+                //        loadFFIF_D(id_h_active);
+                //    }
+                //}
+
+                if (id_h_active == 0)
+                {
+                    CajaDialogo.Error("Debe seleccionar un mes para poder ingresar los datos del FFIF.");
+                    return;
+                }
+                FFIF_D item = new FFIF_D();
+
+                item.ID_H = id_h_active;
+
+                xfrmCertificadoCalidadCRUD frm = new xfrmCertificadoCalidadCRUD((int)Transaccion.Nuevo, item);
+
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    loadFFIF_D(id_h_active);
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+
+        public int Validar_FFIF_D(int id_h)
+        {
+            try
+            {
+
+                DataOperations dp = new DataOperations();
+
+                using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringLOSA))
+                {
+                    cnx.Open();
+
+                    SqlCommand cmd = new SqlCommand("sp_validate_FFIF_Formula_d_by_id_h", cnx);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@id_h", SqlDbType.Int).Value = id_h;
+
+                    int valor = (int)cmd.ExecuteScalar();
+
+                    cnx.Close();
+
+                    return valor;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+                return 0;
+            }
+        }
+
+        private void btnEditar_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            try
+            {
+                var row = (dsMantenimientoC.FFIF_DRow)gvFFIF_D.GetFocusedDataRow();
+
+                FFIF_D item = new FFIF_D();
+
+                item.ID = row.id;
+                item.FFIF = row.FFIF;
+                item.FormulaID = row.id_formula;
+                item.VersionForanea = row.version_foranea;
+
+                xfrmCertificadoCalidadCRUD frm = new xfrmCertificadoCalidadCRUD((int)Transaccion.Editar,item);
+
+                if (frm.ShowDialog()== DialogResult.OK)
+                {
+                    loadFFIF_D(id_h_active);
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
     }
 }

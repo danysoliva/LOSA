@@ -309,6 +309,8 @@ namespace LOSA.Calidad {
             
             private global::System.Data.DataColumn columnid;
             
+            private global::System.Data.DataColumn columnid_decision;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public muestreo_loteDataTable() {
@@ -464,6 +466,14 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_decisionColumn {
+                get {
+                    return this.columnid_decision;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -499,7 +509,23 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public muestreo_loteRow Addmuestreo_loteRow(string lote_pt, string cant_sacos, string fecha_creacion, string Id_lote_pt, string id_turno_final, string id_turno_inicial, string jornada_inicial, string jornada_final, string id_parametro, string parametro, string min_plan, string resultado_porcentaje, string max_plan, string descripcion, string id) {
+            public muestreo_loteRow Addmuestreo_loteRow(
+                        string lote_pt, 
+                        string cant_sacos, 
+                        string fecha_creacion, 
+                        string Id_lote_pt, 
+                        string id_turno_final, 
+                        string id_turno_inicial, 
+                        string jornada_inicial, 
+                        string jornada_final, 
+                        string id_parametro, 
+                        string parametro, 
+                        string min_plan, 
+                        string resultado_porcentaje, 
+                        string max_plan, 
+                        string descripcion, 
+                        string id, 
+                        int id_decision) {
                 muestreo_loteRow rowmuestreo_loteRow = ((muestreo_loteRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         lote_pt,
@@ -516,7 +542,8 @@ namespace LOSA.Calidad {
                         resultado_porcentaje,
                         max_plan,
                         descripcion,
-                        id};
+                        id,
+                        id_decision};
                 rowmuestreo_loteRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowmuestreo_loteRow);
                 return rowmuestreo_loteRow;
@@ -554,6 +581,7 @@ namespace LOSA.Calidad {
                 this.columnmax_plan = base.Columns["max_plan"];
                 this.columndescripcion = base.Columns["descripcion"];
                 this.columnid = base.Columns["id"];
+                this.columnid_decision = base.Columns["id_decision"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -589,6 +617,8 @@ namespace LOSA.Calidad {
                 base.Columns.Add(this.columndescripcion);
                 this.columnid = new global::System.Data.DataColumn("id", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid);
+                this.columnid_decision = new global::System.Data.DataColumn("id_decision", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_decision);
                 this.columnId_lote_pt.Caption = "id_pt";
             }
             
@@ -973,6 +1003,22 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_decision {
+                get {
+                    try {
+                        return ((int)(this[this.tablemuestreo_lote.id_decisionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_decision\' de la tabla \'muestreo_lote\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablemuestreo_lote.id_decisionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Islote_ptNull() {
                 return this.IsNull(this.tablemuestreo_lote.lote_ptColumn);
             }
@@ -1149,6 +1195,18 @@ namespace LOSA.Calidad {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetidNull() {
                 this[this.tablemuestreo_lote.idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_decisionNull() {
+                return this.IsNull(this.tablemuestreo_lote.id_decisionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_decisionNull() {
+                this[this.tablemuestreo_lote.id_decisionColumn] = global::System.Convert.DBNull;
             }
         }
         

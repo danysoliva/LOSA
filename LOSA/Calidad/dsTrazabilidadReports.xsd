@@ -12,7 +12,7 @@
   <xs:element name="dsTrazabilidadReports" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsTrazabilidadReports" msprop:Generator_UserDSName="dsTrazabilidadReports">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="muestreo_lote" msprop:Generator_TableClassName="muestreo_loteDataTable" msprop:Generator_TableVarName="tablemuestreo_lote" msprop:Generator_TablePropName="muestreo_lote" msprop:Generator_RowDeletingName="muestreo_loteRowDeleting" msprop:Generator_RowChangingName="muestreo_loteRowChanging" msprop:Generator_RowEvHandlerName="muestreo_loteRowChangeEventHandler" msprop:Generator_RowDeletedName="muestreo_loteRowDeleted" msprop:Generator_UserTableName="muestreo_lote" msprop:Generator_RowChangedName="muestreo_loteRowChanged" msprop:Generator_RowEvArgName="muestreo_loteRowChangeEvent" msprop:Generator_RowClassName="muestreo_loteRow">
+        <xs:element name="muestreo_lote" msprop:Generator_TableClassName="muestreo_loteDataTable" msprop:Generator_TableVarName="tablemuestreo_lote" msprop:Generator_RowChangedName="muestreo_loteRowChanged" msprop:Generator_TablePropName="muestreo_lote" msprop:Generator_RowDeletingName="muestreo_loteRowDeleting" msprop:Generator_RowChangingName="muestreo_loteRowChanging" msprop:Generator_RowEvHandlerName="muestreo_loteRowChangeEventHandler" msprop:Generator_RowDeletedName="muestreo_loteRowDeleted" msprop:Generator_RowClassName="muestreo_loteRow" msprop:Generator_UserTableName="muestreo_lote" msprop:Generator_RowEvArgName="muestreo_loteRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="lote_pt" msprop:Generator_ColumnVarNameInTable="columnlote_pt" msprop:Generator_ColumnPropNameInRow="lote_pt" msprop:Generator_ColumnPropNameInTable="lote_ptColumn" msprop:Generator_UserColumnName="lote_pt" type="xs:string" minOccurs="0" />
@@ -30,6 +30,7 @@
               <xs:element name="max_plan" msprop:Generator_ColumnVarNameInTable="columnmax_plan" msprop:Generator_ColumnPropNameInRow="max_plan" msprop:Generator_ColumnPropNameInTable="max_planColumn" msprop:Generator_UserColumnName="max_plan" type="xs:string" minOccurs="0" />
               <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" minOccurs="0" />
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" minOccurs="0" />
+              <xs:element name="id_decision" msprop:Generator_ColumnVarNameInTable="columnid_decision" msprop:Generator_ColumnPropNameInRow="id_decision" msprop:Generator_ColumnPropNameInTable="id_decisionColumn" msprop:Generator_UserColumnName="id_decision" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

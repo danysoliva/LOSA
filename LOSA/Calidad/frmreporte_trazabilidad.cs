@@ -16,6 +16,7 @@ using LOSA.Trazabilidad;
 using LOSA.Logistica;
 using LOSA.Trazabilidad.ReportesTRZ;
 using LOSA.Trazabilidad.Despachos;
+using DevExpress.XtraReports.UI;
 
 namespace LOSA.Calidad
 {
@@ -30,8 +31,25 @@ namespace LOSA.Calidad
             InitializeComponent();
             UsuarioLogeado = Puser;
             txtlote.Focus();
-        }    
-        
+        }
+
+
+        public frmreporte_trazabilidad(UserLogin Puser,string lote_pt)
+        {
+            InitializeComponent();
+            UsuarioLogeado = Puser;
+            txtlote.Focus();
+
+            txtlote.Text = lote_pt;
+
+            load_header();
+            load_data();
+            Load_Despachos();
+            load_informacion_de_inventario();
+            load_tarimas_rechazadas();
+            load_MuestreoPT();
+        }
+
         public void load_header()
         {
             if (!string.IsNullOrEmpty(txtlote.Text))
@@ -236,19 +254,38 @@ namespace LOSA.Calidad
         {
             try
             {
-                DataOperations dp = new DataOperations();
-                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                con.Open();
+              
 
-                SqlCommand cmd = new SqlCommand("sp_get_detalle_muestreo_y_parametro_trz", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@lote", txtlote.Text);
-                dsTrazabilidadReports1.muestreo_lote.Clear();
-                SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                adat.Fill(dsTrazabilidadReports1.muestreo_lote);
+                if (tggMuestras.IsOn)
+                {
+                    DataOperations dp = new DataOperations();
+                    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                    con.Open();
 
+                    SqlCommand cmd = new SqlCommand("sp_get_detalle_muestreo_y_parametro_trz_all", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@lote", txtlote.Text);
+                    dsTrazabilidadReports1.muestreo_lote.Clear();
+                    SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                    adat.Fill(dsTrazabilidadReports1.muestreo_lote);
 
-                con.Close();
+                    con.Close();
+                }
+                else
+                {
+                    DataOperations dp = new DataOperations();
+                    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                    con.Open();
+
+                    SqlCommand cmd = new SqlCommand("sp_get_detalle_muestreo_y_parametro_trz", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@lote", txtlote.Text);
+                    dsTrazabilidadReports1.muestreo_lote.Clear();
+                    SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                    adat.Fill(dsTrazabilidadReports1.muestreo_lote);
+
+                    con.Close();
+                }
             }
             catch (Exception ec)
             {
@@ -265,7 +302,7 @@ namespace LOSA.Calidad
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_detalle_destinos_lote_pt_trz", con);
+                SqlCommand cmd = new SqlCommand("sp_get_detalle_destinos_lote_pt_trz_v2", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@lotept", txtlote.Text);
                 dsReportesTRZ1.detalle_destinos.Clear();
@@ -364,7 +401,7 @@ namespace LOSA.Calidad
             //rmMateriaPrimaViewer(string SAPCODE_MP, string SAP_CARD_CODE)
             var gridView = (GridView)grd_data.FocusedView;
             var row = (dsCalidad.trazabilitadRow)gridView.GetFocusedDataRow();
-            frmMateriaPrimaViewer frm = new frmMateriaPrimaViewer(row.code_sap, row.card_code);
+            frmMateriaPrimaViewer frm = new frmMateriaPrimaViewer(row.code_sap, row.lote_mp,0);
             if (this.MdiParent != null)
                 frm.MdiParent = this.MdiParent;
             frm.WindowState = FormWindowState.Maximized;
@@ -404,9 +441,9 @@ namespace LOSA.Calidad
             if (bol1.RecuperarRegistroFromNumBoleta(row.NumID))
             {
                 frmViewBasculaBoleta frm = new frmViewBasculaBoleta(bol1.Id);
-                if (this.MdiParent != null)
-                    frm.MdiParent = this.MdiParent;
-                frm.WindowState = FormWindowState.Normal;
+                //if (this.MdiParent != null)
+                //    frm.MdiParent = this.MdiParent;
+                //frm.WindowState = FormWindowState.Normal;
                 frm.Show();
             }
         }
@@ -415,11 +452,68 @@ namespace LOSA.Calidad
         {
             var gridView = (GridView)gridControl2.FocusedView;
             var row = (dsReportesTRZ.detalle_destinosRow)gridView.GetFocusedDataRow();
-            frmDetalleDespacho frm = new frmDetalleDespacho(row.Despacho);
+            frmDetalleDespacho frm = new frmDetalleDespacho(row.Despacho, Convert.ToInt32(txtlote.Text));
             if (this.MdiParent != null)
                 frm.MdiParent = this.MdiParent;
             frm.WindowState = FormWindowState.Normal;
             frm.Show();
+        }
+
+        private void tggMuestras_Toggled(object sender, EventArgs e)
+        {
+            load_MuestreoPT();
+        }
+
+        private void gridView3_RowStyle(object sender, RowStyleEventArgs e)
+        {
+            var gridView = (GridView)gridControlMuestreoPorLote.FocusedView;
+            var row = (dsTrazabilidadReports.muestreo_loteRow)gridView.GetDataRow(e.RowHandle);
+            if (e.RowHandle >= 0)
+            {
+
+                if (row.id_decision == 2)
+                {
+                    e.Appearance.BackColor = Color.FromArgb(232, 187, 185);
+
+                }
+                else
+                {
+                    e.Appearance.BackColor = Color.FromArgb(148, 213, 181);
+                }
+            }
+
+        }
+
+        private void btnCertidicado_Click(object sender, EventArgs e)
+        {
+            if (txtlote.Text == "")
+            {
+                CajaDialogo.Error("Debe tener seleccionado un lote de PT para imprimir el certificado de calidad.");
+                return;
+            }
+            rpt_certificado_calidad report = new rpt_certificado_calidad(LoteActual.LotePT_Num);
+            report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+            ReportPrintTool printReport = new ReportPrintTool(report);
+            printReport.ShowPreview();
+        }
+
+        private void btnTrazabilidadClientes_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            try
+            {
+                var row = (dsReportesTRZ.detalle_destinosRow)gridView2.GetFocusedDataRow();
+
+                xfrmTrazabilidadClientesLotes frm = new xfrmTrazabilidadClientesLotes(UsuarioLogeado, row.Id_Cliente);
+
+                if (this.MdiParent != null)
+                    frm.MdiParent = this.MdiParent;
+                frm.Show();
+
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
     }
 }

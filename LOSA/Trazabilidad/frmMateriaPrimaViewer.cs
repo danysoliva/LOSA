@@ -43,20 +43,52 @@ namespace LOSA.Logistica
             //}
         }
 
-        public frmMateriaPrimaViewer(string SAPCODE_MP, string SAP_CARD_CODE)
+        public frmMateriaPrimaViewer(string SAPCODE_MP, string PStringParametro, int id_type)
         {
             InitializeComponent();
-            //cargarMateriaPrima();
-            //cargarDatosTarimas();
-            //cbMateriaPrima.Enabled = false;
-            ////MateriaPrima mp = new MateriaPrima();
-            ////if (mp.RecuperarRegistroFromCode(SAPCODE_MP))
-            ////{
-            //    cbMateriaPrima.EditValue = SAPCODE_MP;
-            //cbMateriaPrima.Text = mp.Name;
+            string SAP_CARD_CODE = "";
+            if (id_type == 0)
+            {
+
+                SAP_CARD_CODE = get_card_code(SAPCODE_MP, PStringParametro);
+            }
+            else
+            {
+                SAP_CARD_CODE = PStringParametro;
+            }
             cargarDatosTarimas(SAPCODE_MP, SAP_CARD_CODE);
             cargarMateriaPrima(SAPCODE_MP, SAP_CARD_CODE);
             //}
+        }
+
+        public string get_card_code(string MpCode, string lote_mp)
+        {
+            string query = @"sp_get_card_code_by_itemcode_and_lote";
+            try
+            {
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query,cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@itemcode", MpCode);
+                cmd.Parameters.AddWithValue("@lote", lote_mp);
+                string card_code = "";
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    card_code = dr.GetString(0);
+                }
+                dr.Close();
+                cn.Close();
+                return card_code;
+
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message) ;
+                return "";
+            }
         }
 
         private void cargarDatosTarimas(string pCodeSAP)

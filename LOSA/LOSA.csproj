@@ -13,7 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>\\AQFSVR003\Deploy%24\LOSA\</PublishUrl>
+    <PublishUrl>\\aqfsvr003\Deploy%24\LOSA64\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -23,9 +23,9 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>\\AQFSVR003\Deploy%24\LOSA\</InstallUrl>
+    <InstallUrl>\\aqfsvr003\Deploy%24\LOSA64\</InstallUrl>
     <ApplicationRevision>301</ApplicationRevision>
-    <ApplicationVersion>1.0.0.301</ApplicationVersion>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -344,6 +344,14 @@
     <Compile Include="Calidad\ConfiguracionMP.Designer.cs">
       <DependentUpon>ConfiguracionMP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\drReporteCetificado.cs">
+      <DependentUpon>drReporteCetificado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\drReporteCetificado.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>drReporteCetificado.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\dsCalidad.cs">
       <DependentUpon>dsCalidad.xsd</DependentUpon>
     </Compile>
@@ -368,7 +376,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsMantenimientoC.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\dsTrazabilidadReports.Designer.cs" />
+    <Compile Include="Calidad\dsTrazabilidadReports.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsTrazabilidadReports.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\dsTRZ_Reports.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsTRZ_Reports.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\frmaddcausa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -447,11 +464,23 @@
     <Compile Include="Calidad\frmIntarioColaLote.Designer.cs">
       <DependentUpon>frmIntarioColaLote.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\frmListaFabricantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmListaFabricantes.Designer.cs">
+      <DependentUpon>frmListaFabricantes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\frmLotesStatus.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Calidad\frmLotesStatus.Designer.cs">
       <DependentUpon>frmLotesStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\frmManejoTarimas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmManejoTarimas.Designer.cs">
+      <DependentUpon>frmManejoTarimas.cs</DependentUpon>
     </Compile>
     <Compile Include="Calidad\frmMantenimientoIngreso.cs">
       <SubType>Form</SubType>
@@ -657,6 +686,7 @@
     <Compile Include="Calidad\GestionLotesMP\frmSelectCausaRechazo.Designer.cs">
       <DependentUpon>frmSelectCausaRechazo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\Model\FFIF_D.cs" />
     <Compile Include="Calidad\Model\FFIF_H.cs" />
     <Compile Include="Calidad\Model\Lote_Ingreso_Conf_Calidad.cs" />
     <Compile Include="Calidad\NoConformidad.cs" />
@@ -704,11 +734,35 @@
     <Compile Include="Calidad\Parametros\FrmRegistroMuestreo.Designer.cs">
       <DependentUpon>FrmRegistroMuestreo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\Revision_Sanidad\xfrmRevisionSanidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\Revision_Sanidad\xfrmRevisionSanidad.Designer.cs">
+      <DependentUpon>xfrmRevisionSanidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\rpt_certificado_calidad.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Calidad\rpt_certificado_calidad.Designer.cs">
+      <DependentUpon>rpt_certificado_calidad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\xfrmCertificadoCalidad.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Calidad\xfrmCertificadoCalidad.Designer.cs">
       <DependentUpon>xfrmCertificadoCalidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\xfrmCertificadoCalidadCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\xfrmCertificadoCalidadCRUD.Designer.cs">
+      <DependentUpon>xfrmCertificadoCalidadCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\xfrmTrazabilidadClientesLotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\xfrmTrazabilidadClientesLotes.Designer.cs">
+      <DependentUpon>xfrmTrazabilidadClientesLotes.cs</DependentUpon>
     </Compile>
     <Compile Include="Calidad\xfrmWizardConfCalidad.cs">
       <SubType>Form</SubType>
@@ -721,6 +775,12 @@
     </Compile>
     <Compile Include="Calidad\xfrm_formula_FFIF_New.Designer.cs">
       <DependentUpon>xfrm_formula_FFIF_New.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\xrpCertificadoCalidad.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Calidad\xrpCertificadoCalidad.Designer.cs">
+      <DependentUpon>xrpCertificadoCalidad.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\BagsPT.cs" />
     <Compile Include="Clases\Boleta.cs" />
@@ -1532,6 +1592,17 @@
     <None Include="AlmacenesExterno\dsReporteAlmacenExterno.xss">
       <DependentUpon>dsReporteAlmacenExterno.xsd</DependentUpon>
     </None>
+    <None Include="Calidad\drReporteCetificado.xsc">
+      <DependentUpon>drReporteCetificado.xsd</DependentUpon>
+    </None>
+    <None Include="Calidad\drReporteCetificado.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>drReporteCetificado.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Calidad\drReporteCetificado.xss">
+      <DependentUpon>drReporteCetificado.xsd</DependentUpon>
+    </None>
     <None Include="Calidad\dsInventarioPT.xsc">
       <DependentUpon>dsInventarioPT.xsd</DependentUpon>
     </None>
@@ -1557,9 +1628,24 @@
     <None Include="Calidad\dsTrazabilidadReports.xsc">
       <DependentUpon>dsTrazabilidadReports.xsd</DependentUpon>
     </None>
-    <None Include="Calidad\dsTrazabilidadReports.xsd" />
+    <None Include="Calidad\dsTrazabilidadReports.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsTrazabilidadReports.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Calidad\dsTrazabilidadReports.xss">
       <DependentUpon>dsTrazabilidadReports.xsd</DependentUpon>
+    </None>
+    <None Include="Calidad\dsTRZ_Reports.xsc">
+      <DependentUpon>dsTRZ_Reports.xsd</DependentUpon>
+    </None>
+    <None Include="Calidad\dsTRZ_Reports.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsTRZ_Reports.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Calidad\dsTRZ_Reports.xss">
+      <DependentUpon>dsTRZ_Reports.xsd</DependentUpon>
     </None>
     <None Include="Calidad\Parametros\dsParametros.xsc">
       <DependentUpon>dsParametros.xsd</DependentUpon>
@@ -1617,6 +1703,11 @@
       <DependentUpon>dsNir.xsd</DependentUpon>
     </None>
     <None Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecepcionMP\dsDevoluciones.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDevoluciones.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RecepcionMP\dsingresos.cs">
       <DependentUpon>dsingresos.xsd</DependentUpon>
     </Compile>
@@ -2686,8 +2777,14 @@
     <EmbeddedResource Include="Calidad\frmIntarioColaLote.resx">
       <DependentUpon>frmIntarioColaLote.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmListaFabricantes.resx">
+      <DependentUpon>frmListaFabricantes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmLotesStatus.resx">
       <DependentUpon>frmLotesStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmManejoTarimas.resx">
+      <DependentUpon>frmManejoTarimas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmMantenimientoIngreso.resx">
       <DependentUpon>frmMantenimientoIngreso.cs</DependentUpon>
@@ -2809,14 +2906,29 @@
     <EmbeddedResource Include="Calidad\Parametros\FrmRegistroMuestreo.resx">
       <DependentUpon>FrmRegistroMuestreo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\Revision_Sanidad\xfrmRevisionSanidad.resx">
+      <DependentUpon>xfrmRevisionSanidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\rpt_certificado_calidad.resx">
+      <DependentUpon>rpt_certificado_calidad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calidad\xfrmCertificadoCalidad.resx">
       <DependentUpon>xfrmCertificadoCalidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\xfrmCertificadoCalidadCRUD.resx">
+      <DependentUpon>xfrmCertificadoCalidadCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\xfrmTrazabilidadClientesLotes.resx">
+      <DependentUpon>xfrmTrazabilidadClientesLotes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\xfrmWizardConfCalidad.resx">
       <DependentUpon>xfrmWizardConfCalidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\xfrm_formula_FFIF_New.resx">
       <DependentUpon>xfrm_formula_FFIF_New.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\xrpCertificadoCalidad.resx">
+      <DependentUpon>xrpCertificadoCalidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frmdespachos.resx">
       <DependentUpon>frmdespachos.cs</DependentUpon>
@@ -3712,6 +3824,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="RecepcionMP\dsDevoluciones.xsc">
+      <DependentUpon>dsDevoluciones.xsd</DependentUpon>
+    </None>
+    <None Include="RecepcionMP\dsDevoluciones.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDevoluciones.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="RecepcionMP\dsDevoluciones.xss">
+      <DependentUpon>dsDevoluciones.xsd</DependentUpon>
+    </None>
     <None Include="RecepcionMP\dsingresos.xsc">
       <DependentUpon>dsingresos.xsd</DependentUpon>
     </None>

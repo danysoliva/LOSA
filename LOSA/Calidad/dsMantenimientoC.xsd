@@ -246,6 +246,7 @@
               <xs:element name="version_foranea" msprop:nullValue="0" msprop:Generator_ColumnPropNameInRow="version_foranea" msprop:Generator_ColumnVarNameInTable="columnversion_foranea" msprop:Generator_ColumnPropNameInTable="version_foraneaColumn" msprop:Generator_UserColumnName="version_foranea" type="xs:int" default="0" minOccurs="0" />
               <xs:element name="date_posted" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="date_posted" msprop:Generator_ColumnVarNameInTable="columndate_posted" msprop:Generator_ColumnPropNameInTable="date_postedColumn" msprop:Generator_UserColumnName="date_posted" type="xs:dateTime" minOccurs="0" />
               <xs:element name="id_h" msprop:nullValue="0" msprop:Generator_ColumnPropNameInRow="id_h" msprop:Generator_ColumnVarNameInTable="columnid_h" msprop:Generator_ColumnPropNameInTable="id_hColumn" msprop:Generator_UserColumnName="id_h" type="xs:int" minOccurs="0" />
+              <xs:element name="formula" msprop:Generator_ColumnVarNameInTable="columnformula" msprop:Generator_ColumnPropNameInRow="formula" msprop:Generator_ColumnPropNameInTable="formulaColumn" msprop:Generator_UserColumnName="formula" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
