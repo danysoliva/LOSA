@@ -16,6 +16,7 @@ using LOSA.Trazabilidad;
 using LOSA.Logistica;
 using LOSA.Trazabilidad.ReportesTRZ;
 using LOSA.Trazabilidad.Despachos;
+using DevExpress.XtraReports.UI;
 
 namespace LOSA.Calidad
 {
@@ -485,7 +486,15 @@ namespace LOSA.Calidad
 
         private void btnCertidicado_Click(object sender, EventArgs e)
         {
-            
+            if (txtlote.Text == "")
+            {
+                CajaDialogo.Error("Debe tener seleccionado un lote de PT para imprimir el certificado de calidad.");
+                return;
+            }
+            rpt_certificado_calidad report = new rpt_certificado_calidad(LoteActual.LotePT_Num);
+            report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+            ReportPrintTool printReport = new ReportPrintTool(report);
+            printReport.ShowPreview();
         }
 
         private void btnTrazabilidadClientes_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)

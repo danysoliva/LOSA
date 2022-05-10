@@ -1,4 +1,5 @@
 ﻿using ACS.Classes;
+using DevExpress.XtraGrid.Views.Grid;
 using LOSA.Clases;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,27 @@ namespace LOSA.RecepcionMP
             usuarioLogueado = pUsuarioLogueado;
         }
 
+        public void GET_InventoryEntregado()
+        {
+            try
+            {
+                string Query = @"sp_set_cantidad_devolucion_inventario";
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(Query,cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_tarima", idTarima);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                dsDevoluciones.mp.Clear();
+                da.Fill(dsDevoluciones.mp);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
         private void CmdSelectTarima_Click(object sender, EventArgs e)
         {}
 
@@ -75,6 +97,7 @@ namespace LOSA.RecepcionMP
 
                     cn.Close();
 
+                    GET_InventoryEntregado();
                 }
             }
             catch (Exception error)
@@ -147,32 +170,78 @@ namespace LOSA.RecepcionMP
                 return;
             }
 
+            bool Selected = false;
+            foreach (dsDevoluciones.mpRow row in dsDevoluciones.mp.Rows)
+            {
+                if (row.selected)
+                {
+                    Selected = true;
+                }
+            }
+            if (!Selected)//Validar las requisas actualizadas.
+            {
+                CajaDialogo.Error("Debe seleccionar al menos una requisa que se desee devolver el inventario.");
+                return;
+            }
+
+
             try
             {
 
-                DataOperations dp = new DataOperations();
-                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                con.Open();
+                int CantBack = 0;
+                foreach (dsDevoluciones.mpRow item in dsDevoluciones.mp.Rows)
+                {
+                    if (item.selected)
+                    {
+                        DataOperations dp = new DataOperations();
+                        SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                        con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_insert_kardex_from_devoluciones_form", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id_tarima", this.idTarima);
-                cmd.Parameters.AddWithValue("@tipo_transaccion", 1);
-                cmd.Parameters.AddWithValue("@cantidad", Convert.ToDecimal(txtCantidadT.Text));
-                cmd.Parameters.AddWithValue("@id_usuario", Convert.ToInt32(usuarioLogueado.Id));
-                //cmd.Parameters.AddWithValue("@fecha", dp.Now());
-                cmd.Parameters.AddWithValue("@peso", Convert.ToDecimal(txtPeso.Text));
-                cmd.ExecuteNonQuery();
-                Guardado = true;
-                con.Close();
+                        SqlCommand cmd = new SqlCommand("sp_set_devolucion_of_requisa", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@id_tarima", this.idTarima);
+                        cmd.Parameters.AddWithValue("@id_entrega", item.id);
+                        cmd.Parameters.AddWithValue("@CantUd", item.cantidad_unidades);
+                        cmd.Parameters.AddWithValue("@CantKg", item.cantidad_entregada);
+                        CantBack = Convert.ToInt32(cmd.ExecuteScalar());
+
+                        if (CantBack != 1)
+                        {
+                            CajaDialogo.Error("No se puede devolver las unidades de la requisa " + item.barcode + " por que ya fueron consumidas.");
+
+                        }
+                        else
+                        {
+                            cmd = new SqlCommand("sp_insert_kardex_from_devoluciones_form", con);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@id_tarima", this.idTarima);
+                            cmd.Parameters.AddWithValue("@tipo_transaccion", 1);
+                            cmd.Parameters.AddWithValue("@cantidad", Convert.ToDecimal(item.cantidad_unidades));
+                            cmd.Parameters.AddWithValue("@id_usuario", Convert.ToInt32(item.cantidad_entregada));
+                            //cmd.Parameters.AddWithValue("@fecha", dp.Now());
+                            cmd.Parameters.AddWithValue("@peso", Convert.ToDecimal(txtPeso.Text));
+                            cmd.ExecuteNonQuery();
+
+                            Guardado = true;
+                        }
+
+                        con.Close();
+                    }
+
+                }
+
+                
+
+
+
                 //CajaDialogo.InformationAuto();
-
             }
             catch (Exception ec)
             {
                 Guardado = false;
                 CajaDialogo.Error(ec.Message);
             }
+
 
             if (Guardado == true)
             {
@@ -204,6 +273,68 @@ namespace LOSA.RecepcionMP
         private void frmDevolucionKardex_Load(object sender, EventArgs e)
         {
             beTarima.Focus();
+        }
+
+        private void grdv_requisa_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            try
+            {
+                var gridView = (GridView)grd_requisa.FocusedView;
+                var row = (dsDevoluciones.mpRow)gridView.GetFocusedDataRow();
+                if (e.Column.FieldName == "selected")
+                {
+                    row.selected = Convert.ToBoolean(e.Value);
+                    row.AcceptChanges();
+                }
+
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        private void grdv_requisa_RowStyle(object sender, RowStyleEventArgs e)
+        {
+            try
+            {
+                var gridView = (GridView)grd_requisa.FocusedView;
+                var row = (dsDevoluciones.mpRow)gridView.GetDataRow(e.RowHandle);
+                if (e.RowHandle >= 0)
+                {
+
+                    if (row.selected == true)
+                    {
+                        e.Appearance.BackColor = Color.FromArgb(148, 213, 181);
+
+                    }
+                    else
+                    {
+                        e.Appearance.BackColor = Color.White;
+                    }
+
+
+                    double Unidades;
+                    double Kilogramos;
+
+
+                    Unidades = 0;
+                    Kilogramos = 0;
+                    foreach (dsDevoluciones.mpRow rows in dsDevoluciones.mp.Rows)
+                    {
+                        if (rows.selected)
+                        {
+                            Unidades = Unidades + rows.cantidad_unidades;
+                            Kilogramos = Kilogramos + rows.cantidad_entregada;
+                        }
+                    }
+                    txtPeso.Text = Kilogramos.ToString();
+                    txtCantidadT.Text = Unidades.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
     }
 }
