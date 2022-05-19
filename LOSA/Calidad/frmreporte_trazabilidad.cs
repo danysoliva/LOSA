@@ -101,7 +101,7 @@ namespace LOSA.Calidad
         {
             if (!string.IsNullOrEmpty(txtlote.Text))
             {
-                string query = @"[sp_load_report_trazabilitadad_lotev2]";
+                string query = @"[sp_load_report_trazabilitadad_lotev2_group_by_mp]";
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 try
                 {

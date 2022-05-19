@@ -13,7 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>\\aqfsvr003\Deploy%24\LOSA64\</PublishUrl>
+    <PublishUrl>\\aqfsvr003\Deploy%24\LOSA\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -23,8 +23,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>\\aqfsvr003\Deploy%24\LOSA64\</InstallUrl>
-    <ApplicationRevision>301</ApplicationRevision>
+    <InstallUrl>\\aqfsvr003\Deploy%24\LOSA\</InstallUrl>
+    <ApplicationRevision>314</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -1532,6 +1532,12 @@
     <Compile Include="Produccion\frmRequisasManuales.Designer.cs">
       <DependentUpon>frmRequisasManuales.cs</DependentUpon>
     </Compile>
+    <Compile Include="Produccion\frmrptMpEntregadaaProduccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\frmrptMpEntregadaaProduccion.Designer.cs">
+      <DependentUpon>frmrptMpEntregadaaProduccion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Produccion\frmSolicitarMP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2420,6 +2426,11 @@
     <Compile Include="TransaccionesMP\TrzMP_fromLote\frmMP_WithSameLot.Designer.cs">
       <DependentUpon>frmMP_WithSameLot.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesPT\dsProductos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsProductos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesPT\dsPT.cs">
       <DependentUpon>dsPT.xsd</DependentUpon>
     </Compile>
@@ -2463,6 +2474,12 @@
     </Compile>
     <Compile Include="TransaccionesPT\frmLotePT.Designer.cs">
       <DependentUpon>frmLotePT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesPT\frmPedidosProduccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesPT\frmPedidosProduccion.Designer.cs">
+      <DependentUpon>frmPedidosProduccion.cs</DependentUpon>
     </Compile>
     <Compile Include="TransaccionesPT\frmPlanPT.cs">
       <SubType>Form</SubType>
@@ -3252,6 +3269,9 @@
     <EmbeddedResource Include="Produccion\frmRequisasManuales.resx">
       <DependentUpon>frmRequisasManuales.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\frmrptMpEntregadaaProduccion.resx">
+      <DependentUpon>frmrptMpEntregadaaProduccion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Produccion\frmSolicitarMP.resx">
       <DependentUpon>frmSolicitarMP.cs</DependentUpon>
     </EmbeddedResource>
@@ -3620,6 +3640,9 @@
     <EmbeddedResource Include="TransaccionesPT\frmLotePT.resx">
       <DependentUpon>frmLotePT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesPT\frmPedidosProduccion.resx">
+      <DependentUpon>frmPedidosProduccion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesPT\frmPlanPT.resx">
       <DependentUpon>frmPlanPT.cs</DependentUpon>
     </EmbeddedResource>
@@ -3944,6 +3967,17 @@
     </None>
     <None Include="TransaccionesMP\TrzMP_fromLote\dsMP_Lotes.xss">
       <DependentUpon>dsMP_Lotes.xsd</DependentUpon>
+    </None>
+    <None Include="TransaccionesPT\dsProductos.xsc">
+      <DependentUpon>dsProductos.xsd</DependentUpon>
+    </None>
+    <None Include="TransaccionesPT\dsProductos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsProductos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TransaccionesPT\dsProductos.xss">
+      <DependentUpon>dsProductos.xsd</DependentUpon>
     </None>
     <None Include="TransaccionesPT\dsPT.xsc">
       <DependentUpon>dsPT.xsd</DependentUpon>

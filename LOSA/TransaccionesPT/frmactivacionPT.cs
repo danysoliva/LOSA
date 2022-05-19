@@ -220,7 +220,7 @@ namespace LOSA.TransaccionesPT
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (InProgress == 1) //validacion
+                if (InProgress == 0) //validacion
                 {
                     EntregarTarima();
                 }
