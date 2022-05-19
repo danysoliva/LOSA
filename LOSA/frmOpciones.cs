@@ -838,5 +838,17 @@ namespace LOSA
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
+
+        private void simpleButton34_Click(object sender, EventArgs e)
+        {
+            frmPedidosProduccion frm = new  frmPedidosProduccion();
+            frm.Show();
+        }
+
+        private void btn_report_mp_recibida_Click(object sender, EventArgs e)
+        {
+            frmrptMpEntregadaaProduccion frm = new frmrptMpEntregadaaProduccion();
+            frm.Show();
+        }
     }
 }
