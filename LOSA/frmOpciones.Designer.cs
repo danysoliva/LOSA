@@ -86,6 +86,7 @@
             this.btnreportes = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
             this.TabCalidad = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton34 = new DevExpress.XtraEditors.SimpleButton();
             this.btnClientesLote = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton32 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton29 = new DevExpress.XtraEditors.SimpleButton();
@@ -950,6 +951,7 @@
             // 
             // TabCalidad
             // 
+            this.TabCalidad.Controls.Add(this.simpleButton34);
             this.TabCalidad.Controls.Add(this.btnClientesLote);
             this.TabCalidad.Controls.Add(this.simpleButton32);
             this.TabCalidad.Controls.Add(this.simpleButton29);
@@ -972,6 +974,21 @@
             this.TabCalidad.PageVisible = false;
             this.TabCalidad.Size = new System.Drawing.Size(772, 441);
             this.TabCalidad.Text = "Calidad";
+            // 
+            // simpleButton34
+            // 
+            this.simpleButton34.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.simpleButton34.Appearance.Options.UseFont = true;
+            this.simpleButton34.Appearance.Options.UseTextOptions = true;
+            this.simpleButton34.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton34.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton34.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton34.ImageOptions.Image")));
+            this.simpleButton34.Location = new System.Drawing.Point(419, 348);
+            this.simpleButton34.Name = "simpleButton34";
+            this.simpleButton34.Size = new System.Drawing.Size(199, 59);
+            this.simpleButton34.TabIndex = 34;
+            this.simpleButton34.Text = "Sanidad";
+            this.simpleButton34.Click += new System.EventHandler(this.simpleButton34_Click);
             // 
             // btnClientesLote
             // 
@@ -1590,5 +1607,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton32;
         private DevExpress.XtraEditors.SimpleButton simpleButton33;
         private DevExpress.XtraEditors.SimpleButton btnClientesLote;
+        private DevExpress.XtraEditors.SimpleButton simpleButton34;
     }
 }

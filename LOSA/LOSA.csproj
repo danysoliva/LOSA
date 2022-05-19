@@ -154,6 +154,7 @@
     <Reference Include="DevExpress.XtraRichEdit.v18.2.Extensions, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraTreeList.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraVerticalGrid.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraWizard.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -726,11 +727,70 @@
     <Compile Include="Calidad\Parametros\FrmRegistroMuestreo.Designer.cs">
       <DependentUpon>FrmRegistroMuestreo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calidad\Revision_Sanidad\xfrmRevisionSanidad.cs">
+    <Compile Include="Calidad\Revision_Sanidad\DialogBoxRevision.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calidad\Revision_Sanidad\xfrmRevisionSanidad.Designer.cs">
-      <DependentUpon>xfrmRevisionSanidad.cs</DependentUpon>
+    <Compile Include="Calidad\Revision_Sanidad\DialogBoxRevision.Designer.cs">
+      <DependentUpon>DialogBoxRevision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\Revision_Sanidad\dsSanidad.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsSanidad.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\Revision_Sanidad\Model\InspeccionPresentacionConductor.cs" />
+    <Compile Include="Calidad\Revision_Sanidad\Model\InspeccionSeguridad.cs" />
+    <Compile Include="Calidad\Revision_Sanidad\Model\InspeccionSeguridad_Results.cs" />
+    <Compile Include="Calidad\Revision_Sanidad\Model\RevisionSanidadResumen.cs" />
+    <Compile Include="Calidad\Revision_Sanidad\Model\RPT_VehiculoSanidad.cs" />
+    <Compile Include="Calidad\Revision_Sanidad\Model\VehiculoInfo.cs" />
+    <Compile Include="Calidad\Revision_Sanidad\RPT\xrptVehiculoSanidad.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Calidad\Revision_Sanidad\RPT\xrptVehiculoSanidad.Designer.cs">
+      <DependentUpon>xrptVehiculoSanidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\Revision_Sanidad\xfrmRevisionSanidad_.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Calidad\Revision_Sanidad\xfrmRevisionSanidad_.Designer.cs">
+      <DependentUpon>xfrmRevisionSanidad_.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\Revision_Sanidad\xfrmRevisionSanidad_InspeccionSeguridad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Calidad\Revision_Sanidad\xfrmRevisionSanidad_InspeccionSeguridad.Designer.cs">
+      <DependentUpon>xfrmRevisionSanidad_InspeccionSeguridad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\Revision_Sanidad\xfrmSanidadAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\Revision_Sanidad\xfrmSanidadAdmin.Designer.cs">
+      <DependentUpon>xfrmSanidadAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\Revision_Sanidad\xfrmStepRevisionSanidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\Revision_Sanidad\xfrmStepRevisionSanidad.Designer.cs">
+      <DependentUpon>xfrmStepRevisionSanidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\Revision_Sanidad\xfrmVehiculoInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\Revision_Sanidad\xfrmVehiculoInfo.Designer.cs">
+      <DependentUpon>xfrmVehiculoInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\Revision_Sanidad\xfrmWizardRevisionanidadFirstStep.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Calidad\Revision_Sanidad\xfrmWizardRevisionanidadFirstStep.Designer.cs">
+      <DependentUpon>xfrmWizardRevisionanidadFirstStep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\Revision_Sanidad\XtraUserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Calidad\Revision_Sanidad\XtraUserControl1.Designer.cs">
+      <DependentUpon>XtraUserControl1.cs</DependentUpon>
     </Compile>
     <Compile Include="Calidad\xfrmCertificadoCalidad.cs">
       <SubType>Form</SubType>
@@ -1632,6 +1692,17 @@
     </None>
     <None Include="Calidad\Parametros\dsParametros.xss">
       <DependentUpon>dsParametros.xsd</DependentUpon>
+    </None>
+    <None Include="Calidad\Revision_Sanidad\dsSanidad.xsc">
+      <DependentUpon>dsSanidad.xsd</DependentUpon>
+    </None>
+    <None Include="Calidad\Revision_Sanidad\dsSanidad.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsSanidad.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Calidad\Revision_Sanidad\dsSanidad.xss">
+      <DependentUpon>dsSanidad.xsd</DependentUpon>
     </None>
     <None Include="Despachos\Reportes\dsReporte.xsc">
       <DependentUpon>dsReporte.xsd</DependentUpon>
@@ -2876,8 +2947,29 @@
     <EmbeddedResource Include="Calidad\Parametros\FrmRegistroMuestreo.resx">
       <DependentUpon>FrmRegistroMuestreo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\Revision_Sanidad\xfrmRevisionSanidad.resx">
-      <DependentUpon>xfrmRevisionSanidad.cs</DependentUpon>
+    <EmbeddedResource Include="Calidad\Revision_Sanidad\DialogBoxRevision.resx">
+      <DependentUpon>DialogBoxRevision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\Revision_Sanidad\RPT\xrptVehiculoSanidad.resx">
+      <DependentUpon>xrptVehiculoSanidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\Revision_Sanidad\xfrmRevisionSanidad_.resx">
+      <DependentUpon>xfrmRevisionSanidad_.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\Revision_Sanidad\xfrmRevisionSanidad_InspeccionSeguridad.resx">
+      <DependentUpon>xfrmRevisionSanidad_InspeccionSeguridad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\Revision_Sanidad\xfrmSanidadAdmin.resx">
+      <DependentUpon>xfrmSanidadAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\Revision_Sanidad\xfrmStepRevisionSanidad.resx">
+      <DependentUpon>xfrmStepRevisionSanidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\Revision_Sanidad\xfrmVehiculoInfo.resx">
+      <DependentUpon>xfrmVehiculoInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\Revision_Sanidad\xfrmWizardRevisionanidadFirstStep.resx">
+      <DependentUpon>xfrmWizardRevisionanidadFirstStep.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\xfrmCertificadoCalidad.resx">
       <DependentUpon>xfrmCertificadoCalidad.cs</DependentUpon>
@@ -4008,6 +4100,10 @@
     <None Include="Resources\tanque.png" />
     <None Include="Resources\tank3.png" />
     <None Include="Resources\tank31.png" />
+    <None Include="Resources\step1.png" />
+    <None Include="Resources\step2.png" />
+    <None Include="Resources\step3.png" />
+    <None Include="Resources\step4.png" />
     <Content Include="Resources\tap.png" />
     <None Include="Resources\trazabilidad.png" />
     <None Include="Resources\trucksss.png" />

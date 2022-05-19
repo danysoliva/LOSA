@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace LOSA.Calidad.Revision_Sanidad
 {
-    public partial class xfrmRevisionSanidad : DevExpress.XtraEditors.XtraForm
+    public partial class XtraUserControl1 : DevExpress.XtraEditors.XtraUserControl
     {
-        public xfrmRevisionSanidad()
+        public XtraUserControl1()
         {
             InitializeComponent();
         }

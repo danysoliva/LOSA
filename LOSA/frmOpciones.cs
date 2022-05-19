@@ -1,5 +1,6 @@
 ﻿using LOSA.AlmacenesExterno;
 using LOSA.Calidad;
+using LOSA.Calidad.Revision_Sanidad;
 using LOSA.Clases;
 using LOSA.Despachos;
 using LOSA.Liquidos;
@@ -837,6 +838,33 @@ namespace LOSA
 
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
+        }
+
+        private void simpleButton34_Click(object sender, EventArgs e)
+        {
+            //xfrmRevisionSanidad_InspeccionSeguridad frm = new xfrmRevisionSanidad_InspeccionSeguridad();
+
+            //if (this.MdiParent != null)
+            //    frm.MdiParent = this.MdiParent;
+
+            //frm.WindowState = FormWindowState.Maximized;
+            //frm.Show();
+
+            //xfrmWizardRevisionanidadFirstStep frm = new xfrmWizardRevisionanidadFirstStep();
+
+            ////if (this.MdiParent != null)
+            ////    frm.MdiParent = this.MdiParent;
+
+            ////frm.WindowState = FormWindowState.Maximized;
+            //frm.Show();
+
+
+            //xfrmWizardRevisionanidadFirstStep uc = new xfrmWizardRevisionanidadFirstStep();
+            //uc.Dock = DockStyle.Fill;
+            //this.Controls.Add(uc);
+
+            xfrmSanidadAdmin frm = new xfrmSanidadAdmin();
+            frm.ShowDialog();
         }
     }
 }
