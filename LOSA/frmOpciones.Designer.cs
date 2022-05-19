@@ -982,12 +982,12 @@
             this.simpleButton34.Appearance.Options.UseTextOptions = true;
             this.simpleButton34.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton34.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton34.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton34.ImageOptions.Image")));
+            this.simpleButton34.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton34.ImageOptions.SvgImage")));
             this.simpleButton34.Location = new System.Drawing.Point(419, 348);
             this.simpleButton34.Name = "simpleButton34";
             this.simpleButton34.Size = new System.Drawing.Size(199, 59);
             this.simpleButton34.TabIndex = 34;
-            this.simpleButton34.Text = "Sanidad";
+            this.simpleButton34.Text = "Revisión de Sanidad";
             this.simpleButton34.Click += new System.EventHandler(this.simpleButton34_Click);
             // 
             // btnClientesLote
