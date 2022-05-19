@@ -151,7 +151,7 @@
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdHome.ImageOptions.Image")));
-            this.cmdHome.Location = new System.Drawing.Point(1172, 6);
+            this.cmdHome.Location = new System.Drawing.Point(1232, 6);
             this.cmdHome.Name = "cmdHome";
             this.cmdHome.Size = new System.Drawing.Size(145, 42);
             this.cmdHome.TabIndex = 6;
@@ -168,7 +168,7 @@
             this.tabOpciones.Location = new System.Drawing.Point(5, 89);
             this.tabOpciones.Name = "tabOpciones";
             this.tabOpciones.SelectedTabPage = this.TabMontacarga;
-            this.tabOpciones.Size = new System.Drawing.Size(1321, 647);
+            this.tabOpciones.Size = new System.Drawing.Size(1381, 970);
             this.tabOpciones.TabIndex = 8;
             this.tabOpciones.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.TabMontacarga,
@@ -180,14 +180,14 @@
             // 
             // TabMontacarga
             // 
+            this.TabMontacarga.Controls.Add(this.cmdPT);
             this.TabMontacarga.Controls.Add(this.labelControl2);
             this.TabMontacarga.Controls.Add(this.labelControl1);
-            this.TabMontacarga.Controls.Add(this.cmdPT);
             this.TabMontacarga.Controls.Add(this.cmdMP);
             this.TabMontacarga.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabMontacarga.ImageOptions.Image")));
             this.TabMontacarga.Name = "TabMontacarga";
             this.TabMontacarga.PageVisible = false;
-            this.TabMontacarga.Size = new System.Drawing.Size(1315, 600);
+            this.TabMontacarga.Size = new System.Drawing.Size(1375, 923);
             this.TabMontacarga.Text = "MontaCarga";
             // 
             // labelControl2
@@ -198,9 +198,9 @@
             this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl2.Location = new System.Drawing.Point(742, 799);
+            this.labelControl2.Location = new System.Drawing.Point(363, 398);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(479, 155);
+            this.labelControl2.Size = new System.Drawing.Size(313, 37);
             this.labelControl2.TabIndex = 13;
             this.labelControl2.Text = "Producto Terminado";
             // 
@@ -211,9 +211,9 @@
             this.labelControl1.Appearance.Options.UseTextOptions = true;
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(63, 807);
+            this.labelControl1.Location = new System.Drawing.Point(25, 398);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(479, 70);
+            this.labelControl1.Size = new System.Drawing.Size(313, 37);
             this.labelControl1.TabIndex = 12;
             this.labelControl1.Text = "Materia Prima";
             // 
@@ -237,9 +237,9 @@
             this.cmdPT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdPT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdPT.ImageOptions.Image")));
             this.cmdPT.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
-            this.cmdPT.Location = new System.Drawing.Point(698, 73);
+            this.cmdPT.Location = new System.Drawing.Point(363, 73);
             this.cmdPT.Name = "cmdPT";
-            this.cmdPT.Size = new System.Drawing.Size(585, 720);
+            this.cmdPT.Size = new System.Drawing.Size(313, 319);
             this.cmdPT.TabIndex = 11;
             this.cmdPT.Click += new System.EventHandler(this.cmdPT_Click);
             // 
@@ -260,7 +260,7 @@
             this.cmdMP.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
             this.cmdMP.Location = new System.Drawing.Point(25, 73);
             this.cmdMP.Name = "cmdMP";
-            this.cmdMP.Size = new System.Drawing.Size(583, 720);
+            this.cmdMP.Size = new System.Drawing.Size(313, 319);
             this.cmdMP.TabIndex = 10;
             this.cmdMP.Click += new System.EventHandler(this.cmdMP_Click);
             // 
@@ -270,7 +270,7 @@
             this.TabLogistica.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabLogistica.ImageOptions.Image")));
             this.TabLogistica.Name = "TabLogistica";
             this.TabLogistica.PageVisible = false;
-            this.TabLogistica.Size = new System.Drawing.Size(1315, 600);
+            this.TabLogistica.Size = new System.Drawing.Size(1375, 923);
             this.TabLogistica.Text = "Logistica";
             // 
             // xtraTabControl1
@@ -279,7 +279,7 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(0, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.TabMP_Sacos;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1315, 600);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1375, 923);
             this.xtraTabControl1.TabIndex = 42;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.TabMP_Sacos,
@@ -310,7 +310,7 @@
             this.TabMP_Sacos.Controls.Add(this.btnTransferencia);
             this.TabMP_Sacos.Controls.Add(this.btnajuste);
             this.TabMP_Sacos.Name = "TabMP_Sacos";
-            this.TabMP_Sacos.Size = new System.Drawing.Size(1309, 568);
+            this.TabMP_Sacos.Size = new System.Drawing.Size(1369, 891);
             this.TabMP_Sacos.Text = "MP en Sacos";
             // 
             // simpleButton30
@@ -321,10 +321,10 @@
             this.simpleButton30.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton30.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton30.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton30.ImageOptions.Image")));
-            this.simpleButton30.Location = new System.Drawing.Point(1015, 149);
+            this.simpleButton30.Location = new System.Drawing.Point(547, 86);
             this.simpleButton30.Margin = new System.Windows.Forms.Padding(4);
             this.simpleButton30.Name = "simpleButton30";
-            this.simpleButton30.Size = new System.Drawing.Size(486, 104);
+            this.simpleButton30.Size = new System.Drawing.Size(250, 47);
             this.simpleButton30.TabIndex = 45;
             this.simpleButton30.Text = "Reporte de\r\n Kardex General";
             this.simpleButton30.Click += new System.EventHandler(this.simpleButton30_Click);
@@ -337,10 +337,10 @@
             this.simpleButton26.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton26.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton26.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton26.ImageOptions.Image")));
-            this.simpleButton26.Location = new System.Drawing.Point(1015, 33);
+            this.simpleButton26.Location = new System.Drawing.Point(547, 33);
             this.simpleButton26.Margin = new System.Windows.Forms.Padding(4);
             this.simpleButton26.Name = "simpleButton26";
-            this.simpleButton26.Size = new System.Drawing.Size(486, 104);
+            this.simpleButton26.Size = new System.Drawing.Size(250, 47);
             this.simpleButton26.TabIndex = 44;
             this.simpleButton26.Text = "Compras en transito";
             this.simpleButton26.Click += new System.EventHandler(this.simpleButton26_Click);
@@ -351,9 +351,9 @@
             this.simpleButton20.Appearance.Options.UseFont = true;
             this.simpleButton20.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton20.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton20.ImageOptions.Image")));
-            this.simpleButton20.Location = new System.Drawing.Point(6, 736);
+            this.simpleButton20.Location = new System.Drawing.Point(9, 353);
             this.simpleButton20.Name = "simpleButton20";
-            this.simpleButton20.Size = new System.Drawing.Size(486, 104);
+            this.simpleButton20.Size = new System.Drawing.Size(250, 47);
             this.simpleButton20.TabIndex = 43;
             this.simpleButton20.Text = "Control de Ingreso";
             this.simpleButton20.Click += new System.EventHandler(this.simpleButton20_Click);
@@ -364,9 +364,9 @@
             this.btnAjustesKardex.Appearance.Options.UseFont = true;
             this.btnAjustesKardex.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAjustesKardex.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAjustesKardex.ImageOptions.Image")));
-            this.btnAjustesKardex.Location = new System.Drawing.Point(515, 736);
+            this.btnAjustesKardex.Location = new System.Drawing.Point(277, 354);
             this.btnAjustesKardex.Name = "btnAjustesKardex";
-            this.btnAjustesKardex.Size = new System.Drawing.Size(486, 104);
+            this.btnAjustesKardex.Size = new System.Drawing.Size(250, 47);
             this.btnAjustesKardex.TabIndex = 13;
             this.btnAjustesKardex.Text = "Ajustes Kardex";
             this.btnAjustesKardex.Click += new System.EventHandler(this.BtnAjustesKardex_Click);
@@ -377,9 +377,9 @@
             this.cmdUbicaciones.Appearance.Options.UseFont = true;
             this.cmdUbicaciones.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdUbicaciones.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdUbicaciones.ImageOptions.Image")));
-            this.cmdUbicaciones.Location = new System.Drawing.Point(515, 384);
+            this.cmdUbicaciones.Location = new System.Drawing.Point(277, 194);
             this.cmdUbicaciones.Name = "cmdUbicaciones";
-            this.cmdUbicaciones.Size = new System.Drawing.Size(486, 104);
+            this.cmdUbicaciones.Size = new System.Drawing.Size(250, 47);
             this.cmdUbicaciones.TabIndex = 28;
             this.cmdUbicaciones.Text = "Gestión Ubicaciones";
             this.cmdUbicaciones.Click += new System.EventHandler(this.cmdUbicaciones_Click);
@@ -390,9 +390,9 @@
             this.simpleButton3.Appearance.Options.UseFont = true;
             this.simpleButton3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(515, 268);
+            this.simpleButton3.Location = new System.Drawing.Point(277, 140);
             this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(486, 104);
+            this.simpleButton3.Size = new System.Drawing.Size(250, 47);
             this.simpleButton3.TabIndex = 8;
             this.simpleButton3.Text = "Mantenimiento";
             this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
@@ -403,9 +403,9 @@
             this.btn_rptubicaciones.Appearance.Options.UseFont = true;
             this.btn_rptubicaciones.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btn_rptubicaciones.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_rptubicaciones.ImageOptions.Image")));
-            this.btn_rptubicaciones.Location = new System.Drawing.Point(511, 619);
+            this.btn_rptubicaciones.Location = new System.Drawing.Point(277, 300);
             this.btn_rptubicaciones.Name = "btn_rptubicaciones";
-            this.btn_rptubicaciones.Size = new System.Drawing.Size(489, 104);
+            this.btn_rptubicaciones.Size = new System.Drawing.Size(250, 47);
             this.btn_rptubicaciones.TabIndex = 42;
             this.btn_rptubicaciones.Text = "Reporte \r\nde Ubicaciones";
             this.btn_rptubicaciones.Click += new System.EventHandler(this.btn_rptubicaciones_Click);
@@ -416,9 +416,9 @@
             this.btnImprimirTm.Appearance.Options.UseFont = true;
             this.btnImprimirTm.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnImprimirTm.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimirTm.ImageOptions.Image")));
-            this.btnImprimirTm.Location = new System.Drawing.Point(511, 503);
+            this.btnImprimirTm.Location = new System.Drawing.Point(277, 247);
             this.btnImprimirTm.Name = "btnImprimirTm";
-            this.btnImprimirTm.Size = new System.Drawing.Size(489, 100);
+            this.btnImprimirTm.Size = new System.Drawing.Size(250, 47);
             this.btnImprimirTm.TabIndex = 41;
             this.btnImprimirTm.Text = "Impresion \r\nde Tarimas";
             this.btnImprimirTm.Click += new System.EventHandler(this.btnImprimirTm_Click);
@@ -429,9 +429,9 @@
             this.simpleButton18.Appearance.Options.UseFont = true;
             this.simpleButton18.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton18.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton18.ImageOptions.Image")));
-            this.simpleButton18.Location = new System.Drawing.Point(515, 150);
+            this.simpleButton18.Location = new System.Drawing.Point(277, 87);
             this.simpleButton18.Name = "simpleButton18";
-            this.simpleButton18.Size = new System.Drawing.Size(486, 104);
+            this.simpleButton18.Size = new System.Drawing.Size(250, 47);
             this.simpleButton18.TabIndex = 40;
             this.simpleButton18.Text = "Rpt. Almacenes \r\nexternos";
             this.simpleButton18.Click += new System.EventHandler(this.simpleButton18_Click);
@@ -444,10 +444,10 @@
             this.btnPendientes_ingreso_a_planta.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnPendientes_ingreso_a_planta.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnPendientes_ingreso_a_planta.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPendientes_ingreso_a_planta.ImageOptions.Image")));
-            this.btnPendientes_ingreso_a_planta.Location = new System.Drawing.Point(515, 34);
+            this.btnPendientes_ingreso_a_planta.Location = new System.Drawing.Point(277, 34);
             this.btnPendientes_ingreso_a_planta.Margin = new System.Windows.Forms.Padding(4);
             this.btnPendientes_ingreso_a_planta.Name = "btnPendientes_ingreso_a_planta";
-            this.btnPendientes_ingreso_a_planta.Size = new System.Drawing.Size(486, 104);
+            this.btnPendientes_ingreso_a_planta.Size = new System.Drawing.Size(250, 47);
             this.btnPendientes_ingreso_a_planta.TabIndex = 39;
             this.btnPendientes_ingreso_a_planta.Text = "Trans. pendiente \r\nde ingreso";
             this.btnPendientes_ingreso_a_planta.Click += new System.EventHandler(this.simpleButton17_Click_2);
@@ -462,7 +462,7 @@
             this.cmdRegistroLote.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdRegistroLote.ImageOptions.Image")));
             this.cmdRegistroLote.Location = new System.Drawing.Point(9, 33);
             this.cmdRegistroLote.Name = "cmdRegistroLote";
-            this.cmdRegistroLote.Size = new System.Drawing.Size(486, 104);
+            this.cmdRegistroLote.Size = new System.Drawing.Size(250, 47);
             this.cmdRegistroLote.TabIndex = 10;
             this.cmdRegistroLote.Text = "Ingresos";
             this.cmdRegistroLote.Click += new System.EventHandler(this.cmdRegistroLote_Click);
@@ -473,9 +473,9 @@
             this.cmdGestionIngresos.Appearance.Options.UseFont = true;
             this.cmdGestionIngresos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdGestionIngresos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdGestionIngresos.ImageOptions.Image")));
-            this.cmdGestionIngresos.Location = new System.Drawing.Point(9, 150);
+            this.cmdGestionIngresos.Location = new System.Drawing.Point(9, 86);
             this.cmdGestionIngresos.Name = "cmdGestionIngresos";
-            this.cmdGestionIngresos.Size = new System.Drawing.Size(486, 104);
+            this.cmdGestionIngresos.Size = new System.Drawing.Size(250, 47);
             this.cmdGestionIngresos.TabIndex = 27;
             this.cmdGestionIngresos.Text = "Gestión Ingresos";
             this.cmdGestionIngresos.Click += new System.EventHandler(this.cmdGestionIngresos_Click);
@@ -486,9 +486,9 @@
             this.cmdRecepcionMPLogistica.Appearance.Options.UseFont = true;
             this.cmdRecepcionMPLogistica.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdRecepcionMPLogistica.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdRecepcionMPLogistica.ImageOptions.Image")));
-            this.cmdRecepcionMPLogistica.Location = new System.Drawing.Point(6, 269);
+            this.cmdRecepcionMPLogistica.Location = new System.Drawing.Point(9, 139);
             this.cmdRecepcionMPLogistica.Name = "cmdRecepcionMPLogistica";
-            this.cmdRecepcionMPLogistica.Size = new System.Drawing.Size(486, 104);
+            this.cmdRecepcionMPLogistica.Size = new System.Drawing.Size(250, 47);
             this.cmdRecepcionMPLogistica.TabIndex = 9;
             this.cmdRecepcionMPLogistica.Text = "Ver Tarimas";
             this.cmdRecepcionMPLogistica.Click += new System.EventHandler(this.cmdRecepcionMPLogistica_Click);
@@ -499,9 +499,9 @@
             this.btnAlmacenesExternos.Appearance.Options.UseFont = true;
             this.btnAlmacenesExternos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAlmacenesExternos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAlmacenesExternos.ImageOptions.Image")));
-            this.btnAlmacenesExternos.Location = new System.Drawing.Point(9, 619);
+            this.btnAlmacenesExternos.Location = new System.Drawing.Point(9, 300);
             this.btnAlmacenesExternos.Name = "btnAlmacenesExternos";
-            this.btnAlmacenesExternos.Size = new System.Drawing.Size(486, 104);
+            this.btnAlmacenesExternos.Size = new System.Drawing.Size(250, 47);
             this.btnAlmacenesExternos.TabIndex = 35;
             this.btnAlmacenesExternos.Text = "Almacenes Ext.";
             this.btnAlmacenesExternos.Click += new System.EventHandler(this.btnAlmacenesExternos_Click);
@@ -514,10 +514,10 @@
             this.btnTransferencia.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnTransferencia.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnTransferencia.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTransferencia.ImageOptions.Image")));
-            this.btnTransferencia.Location = new System.Drawing.Point(9, 386);
+            this.btnTransferencia.Location = new System.Drawing.Point(9, 193);
             this.btnTransferencia.Margin = new System.Windows.Forms.Padding(4);
             this.btnTransferencia.Name = "btnTransferencia";
-            this.btnTransferencia.Size = new System.Drawing.Size(486, 104);
+            this.btnTransferencia.Size = new System.Drawing.Size(250, 47);
             this.btnTransferencia.TabIndex = 36;
             this.btnTransferencia.Text = "Transf. de Almacénes";
             this.btnTransferencia.Click += new System.EventHandler(this.btnTransferencia_Click);
@@ -528,9 +528,9 @@
             this.btnajuste.Appearance.Options.UseFont = true;
             this.btnajuste.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnajuste.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnajuste.ImageOptions.Image")));
-            this.btnajuste.Location = new System.Drawing.Point(9, 501);
+            this.btnajuste.Location = new System.Drawing.Point(9, 247);
             this.btnajuste.Name = "btnajuste";
-            this.btnajuste.Size = new System.Drawing.Size(486, 104);
+            this.btnajuste.Size = new System.Drawing.Size(250, 47);
             this.btnajuste.TabIndex = 31;
             this.btnajuste.Text = "Ajuste de Inventario";
             this.btnajuste.Click += new System.EventHandler(this.btnajuste_Click);
@@ -544,7 +544,7 @@
             this.tabMP_Granel.Controls.Add(this.btnLiquidos);
             this.tabMP_Granel.Controls.Add(this.simpleButton14);
             this.tabMP_Granel.Name = "tabMP_Granel";
-            this.tabMP_Granel.Size = new System.Drawing.Size(1309, 568);
+            this.tabMP_Granel.Size = new System.Drawing.Size(1369, 891);
             this.tabMP_Granel.Text = "MP Granel";
             // 
             // btnLoteActivoGranel
@@ -555,9 +555,9 @@
             this.btnLoteActivoGranel.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnLoteActivoGranel.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnLoteActivoGranel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLoteActivoGranel.ImageOptions.Image")));
-            this.btnLoteActivoGranel.Location = new System.Drawing.Point(509, 33);
+            this.btnLoteActivoGranel.Location = new System.Drawing.Point(265, 33);
             this.btnLoteActivoGranel.Name = "btnLoteActivoGranel";
-            this.btnLoteActivoGranel.Size = new System.Drawing.Size(486, 104);
+            this.btnLoteActivoGranel.Size = new System.Drawing.Size(250, 47);
             this.btnLoteActivoGranel.TabIndex = 42;
             this.btnLoteActivoGranel.Text = "Lote Activo";
             this.btnLoteActivoGranel.Click += new System.EventHandler(this.btnLoteActivoGranel_Click);
@@ -570,7 +570,7 @@
             this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
             this.simpleButton2.Location = new System.Drawing.Point(9, 33);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(486, 104);
+            this.simpleButton2.Size = new System.Drawing.Size(250, 47);
             this.simpleButton2.TabIndex = 26;
             this.simpleButton2.Text = "Graneles";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click_1);
@@ -583,10 +583,10 @@
             this.btnLiquidos.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnLiquidos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnLiquidos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLiquidos.ImageOptions.Image")));
-            this.btnLiquidos.Location = new System.Drawing.Point(9, 149);
+            this.btnLiquidos.Location = new System.Drawing.Point(9, 85);
             this.btnLiquidos.Margin = new System.Windows.Forms.Padding(2);
             this.btnLiquidos.Name = "btnLiquidos";
-            this.btnLiquidos.Size = new System.Drawing.Size(486, 104);
+            this.btnLiquidos.Size = new System.Drawing.Size(250, 47);
             this.btnLiquidos.TabIndex = 41;
             this.btnLiquidos.Text = " Ingreso a Tanques";
             this.btnLiquidos.Click += new System.EventHandler(this.simpleButton17_Click_1);
@@ -599,9 +599,9 @@
             this.simpleButton14.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton14.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton14.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton14.ImageOptions.Image")));
-            this.simpleButton14.Location = new System.Drawing.Point(9, 263);
+            this.simpleButton14.Location = new System.Drawing.Point(9, 137);
             this.simpleButton14.Name = "simpleButton14";
-            this.simpleButton14.Size = new System.Drawing.Size(486, 104);
+            this.simpleButton14.Size = new System.Drawing.Size(250, 47);
             this.simpleButton14.TabIndex = 36;
             this.simpleButton14.Text = "Ingreso a granel";
             this.simpleButton14.Click += new System.EventHandler(this.simpleButton14_Click);
@@ -618,7 +618,7 @@
             this.tabEntregaMP.Controls.Add(this.cmdRequisiciones_);
             this.tabEntregaMP.Controls.Add(this.btnplanrequisas);
             this.tabEntregaMP.Name = "tabEntregaMP";
-            this.tabEntregaMP.Size = new System.Drawing.Size(1309, 568);
+            this.tabEntregaMP.Size = new System.Drawing.Size(1369, 891);
             this.tabEntregaMP.Text = "Entrega MP - PRD";
             this.tabEntregaMP.Paint += new System.Windows.Forms.PaintEventHandler(this.tabEntregaMP_Paint);
             // 
@@ -630,9 +630,9 @@
             this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(19, 151);
+            this.simpleButton1.Location = new System.Drawing.Point(19, 87);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(486, 104);
+            this.simpleButton1.Size = new System.Drawing.Size(250, 47);
             this.simpleButton1.TabIndex = 20;
             this.simpleButton1.Text = "Requerido vs Entregado";
             // 
@@ -644,10 +644,10 @@
             this.btntarimasactivadasPT.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btntarimasactivadasPT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btntarimasactivadasPT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btntarimasactivadasPT.ImageOptions.Image")));
-            this.btntarimasactivadasPT.Location = new System.Drawing.Point(19, 263);
+            this.btntarimasactivadasPT.Location = new System.Drawing.Point(19, 139);
             this.btntarimasactivadasPT.Margin = new System.Windows.Forms.Padding(2);
             this.btntarimasactivadasPT.Name = "btntarimasactivadasPT";
-            this.btntarimasactivadasPT.Size = new System.Drawing.Size(486, 104);
+            this.btntarimasactivadasPT.Size = new System.Drawing.Size(250, 47);
             this.btntarimasactivadasPT.TabIndex = 37;
             this.btntarimasactivadasPT.Text = " Ingreso PT";
             this.btntarimasactivadasPT.Click += new System.EventHandler(this.btntarimasactivadasPT_Click);
@@ -658,9 +658,9 @@
             this.cmdOrdenesFabricacion.Appearance.Options.UseFont = true;
             this.cmdOrdenesFabricacion.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdOrdenesFabricacion.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdOrdenesFabricacion.ImageOptions.Image")));
-            this.cmdOrdenesFabricacion.Location = new System.Drawing.Point(19, 375);
+            this.cmdOrdenesFabricacion.Location = new System.Drawing.Point(19, 191);
             this.cmdOrdenesFabricacion.Name = "cmdOrdenesFabricacion";
-            this.cmdOrdenesFabricacion.Size = new System.Drawing.Size(486, 104);
+            this.cmdOrdenesFabricacion.Size = new System.Drawing.Size(250, 47);
             this.cmdOrdenesFabricacion.TabIndex = 11;
             this.cmdOrdenesFabricacion.Text = "Ordenes de\r\nFabricación";
             this.cmdOrdenesFabricacion.Click += new System.EventHandler(this.cmdProgramaRequisiciones_Click);
@@ -673,7 +673,7 @@
             this.simpleButton13.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton13.ImageOptions.Image")));
             this.simpleButton13.Location = new System.Drawing.Point(19, 34);
             this.simpleButton13.Name = "simpleButton13";
-            this.simpleButton13.Size = new System.Drawing.Size(486, 104);
+            this.simpleButton13.Size = new System.Drawing.Size(250, 47);
             this.simpleButton13.TabIndex = 38;
             this.simpleButton13.Text = "Reporte Requisiciones \r\nManuales";
             this.simpleButton13.Click += new System.EventHandler(this.simpleButton13_Click);
@@ -684,9 +684,9 @@
             this.btnPlantarimas.Appearance.Options.UseFont = true;
             this.btnPlantarimas.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnPlantarimas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPlantarimas.ImageOptions.Image")));
-            this.btnPlantarimas.Location = new System.Drawing.Point(19, 719);
+            this.btnPlantarimas.Location = new System.Drawing.Point(19, 350);
             this.btnPlantarimas.Name = "btnPlantarimas";
-            this.btnPlantarimas.Size = new System.Drawing.Size(486, 104);
+            this.btnPlantarimas.Size = new System.Drawing.Size(250, 47);
             this.btnPlantarimas.TabIndex = 30;
             this.btnPlantarimas.Text = "Planes de recibo \r\nde produccion";
             this.btnPlantarimas.Click += new System.EventHandler(this.btnPlantarimas_Click);
@@ -697,9 +697,9 @@
             this.cmdRequisiciones_.Appearance.Options.UseFont = true;
             this.cmdRequisiciones_.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdRequisiciones_.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdRequisiciones_.ImageOptions.Image")));
-            this.cmdRequisiciones_.Location = new System.Drawing.Point(19, 601);
+            this.cmdRequisiciones_.Location = new System.Drawing.Point(19, 297);
             this.cmdRequisiciones_.Name = "cmdRequisiciones_";
-            this.cmdRequisiciones_.Size = new System.Drawing.Size(486, 104);
+            this.cmdRequisiciones_.Size = new System.Drawing.Size(250, 47);
             this.cmdRequisiciones_.TabIndex = 14;
             this.cmdRequisiciones_.Text = "Requisiciones";
             this.cmdRequisiciones_.Click += new System.EventHandler(this.cmdRequisiciones__Click);
@@ -710,9 +710,9 @@
             this.btnplanrequisas.Appearance.Options.UseFont = true;
             this.btnplanrequisas.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnplanrequisas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnplanrequisas.ImageOptions.Image")));
-            this.btnplanrequisas.Location = new System.Drawing.Point(19, 488);
+            this.btnplanrequisas.Location = new System.Drawing.Point(19, 244);
             this.btnplanrequisas.Name = "btnplanrequisas";
-            this.btnplanrequisas.Size = new System.Drawing.Size(486, 104);
+            this.btnplanrequisas.Size = new System.Drawing.Size(250, 47);
             this.btnplanrequisas.TabIndex = 25;
             this.btnplanrequisas.Text = "Plan de\r\nRequisiciones";
             this.btnplanrequisas.Click += new System.EventHandler(this.btnplanrequisas_Click);
@@ -730,7 +730,7 @@
             this.tabPT.Controls.Add(this.simpleButton10);
             this.tabPT.Controls.Add(this.btnReq_PT);
             this.tabPT.Name = "tabPT";
-            this.tabPT.Size = new System.Drawing.Size(1309, 568);
+            this.tabPT.Size = new System.Drawing.Size(1369, 891);
             this.tabPT.Text = "Producto Terminado";
             this.tabPT.Paint += new System.Windows.Forms.PaintEventHandler(this.tabPT_Paint);
             // 
@@ -740,9 +740,9 @@
             this.simpleButton31.Appearance.Options.UseFont = true;
             this.simpleButton31.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton31.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton31.ImageOptions.Image")));
-            this.simpleButton31.Location = new System.Drawing.Point(509, 265);
+            this.simpleButton31.Location = new System.Drawing.Point(293, 139);
             this.simpleButton31.Name = "simpleButton31";
-            this.simpleButton31.Size = new System.Drawing.Size(486, 104);
+            this.simpleButton31.Size = new System.Drawing.Size(250, 47);
             this.simpleButton31.TabIndex = 43;
             this.simpleButton31.Text = "Mantenimiento\r\nde clientes";
             this.simpleButton31.Click += new System.EventHandler(this.simpleButton31_Click);
@@ -753,9 +753,9 @@
             this.simpleButton22.Appearance.Options.UseFont = true;
             this.simpleButton22.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton22.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton22.ImageOptions.Image")));
-            this.simpleButton22.Location = new System.Drawing.Point(509, 150);
+            this.simpleButton22.Location = new System.Drawing.Point(293, 86);
             this.simpleButton22.Name = "simpleButton22";
-            this.simpleButton22.Size = new System.Drawing.Size(486, 104);
+            this.simpleButton22.Size = new System.Drawing.Size(250, 47);
             this.simpleButton22.TabIndex = 42;
             this.simpleButton22.Text = "Inventario de PT";
             this.simpleButton22.Click += new System.EventHandler(this.simpleButton22_Click);
@@ -766,9 +766,9 @@
             this.simpleButton21.Appearance.Options.UseFont = true;
             this.simpleButton21.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton21.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton21.ImageOptions.Image")));
-            this.simpleButton21.Location = new System.Drawing.Point(509, 33);
+            this.simpleButton21.Location = new System.Drawing.Point(293, 33);
             this.simpleButton21.Name = "simpleButton21";
-            this.simpleButton21.Size = new System.Drawing.Size(486, 104);
+            this.simpleButton21.Size = new System.Drawing.Size(250, 47);
             this.simpleButton21.TabIndex = 41;
             this.simpleButton21.Text = "Producto Terminado \r\npor codigo";
             this.simpleButton21.Click += new System.EventHandler(this.simpleButton21_Click);
@@ -781,7 +781,7 @@
             this.btndespachos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btndespachos.ImageOptions.Image")));
             this.btndespachos.Location = new System.Drawing.Point(9, 33);
             this.btndespachos.Name = "btndespachos";
-            this.btndespachos.Size = new System.Drawing.Size(486, 104);
+            this.btndespachos.Size = new System.Drawing.Size(250, 47);
             this.btndespachos.TabIndex = 21;
             this.btndespachos.Text = "Ordenes de venta";
             this.btndespachos.Click += new System.EventHandler(this.btndespachos_Click);
@@ -795,10 +795,10 @@
             this.btnMPReproceso.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMPReproceso.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnMPReproceso.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMPReproceso.ImageOptions.Image")));
-            this.btnMPReproceso.Location = new System.Drawing.Point(6, 489);
+            this.btnMPReproceso.Location = new System.Drawing.Point(9, 244);
             this.btnMPReproceso.Margin = new System.Windows.Forms.Padding(2);
             this.btnMPReproceso.Name = "btnMPReproceso";
-            this.btnMPReproceso.Size = new System.Drawing.Size(486, 104);
+            this.btnMPReproceso.Size = new System.Drawing.Size(250, 47);
             this.btnMPReproceso.TabIndex = 40;
             this.btnMPReproceso.Text = " Ingreso MP Reproceso";
             this.btnMPReproceso.Click += new System.EventHandler(this.btnMPReproceso_Click);
@@ -809,9 +809,9 @@
             this.btn_salidapt.Appearance.Options.UseFont = true;
             this.btn_salidapt.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btn_salidapt.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_salidapt.ImageOptions.SvgImage")));
-            this.btn_salidapt.Location = new System.Drawing.Point(6, 150);
+            this.btn_salidapt.Location = new System.Drawing.Point(9, 86);
             this.btn_salidapt.Name = "btn_salidapt";
-            this.btn_salidapt.Size = new System.Drawing.Size(486, 104);
+            this.btn_salidapt.Size = new System.Drawing.Size(250, 47);
             this.btn_salidapt.TabIndex = 32;
             this.btn_salidapt.Text = "Despachos";
             this.btn_salidapt.Click += new System.EventHandler(this.btn_salidapt_Click);
@@ -822,9 +822,9 @@
             this.simpleButton10.Appearance.Options.UseFont = true;
             this.simpleButton10.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton10.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton10.ImageOptions.Image")));
-            this.simpleButton10.Location = new System.Drawing.Point(6, 265);
+            this.simpleButton10.Location = new System.Drawing.Point(9, 139);
             this.simpleButton10.Name = "simpleButton10";
-            this.simpleButton10.Size = new System.Drawing.Size(486, 104);
+            this.simpleButton10.Size = new System.Drawing.Size(250, 47);
             this.simpleButton10.TabIndex = 34;
             this.simpleButton10.Text = "Ajuste de Inventario PT";
             this.simpleButton10.Click += new System.EventHandler(this.simpleButton10_Click);
@@ -835,9 +835,9 @@
             this.btnReq_PT.Appearance.Options.UseFont = true;
             this.btnReq_PT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnReq_PT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReq_PT.ImageOptions.Image")));
-            this.btnReq_PT.Location = new System.Drawing.Point(6, 380);
+            this.btnReq_PT.Location = new System.Drawing.Point(9, 192);
             this.btnReq_PT.Name = "btnReq_PT";
-            this.btnReq_PT.Size = new System.Drawing.Size(486, 104);
+            this.btnReq_PT.Size = new System.Drawing.Size(250, 47);
             this.btnReq_PT.TabIndex = 23;
             this.btnReq_PT.Text = "Requisiciones PT";
             this.btnReq_PT.Visible = false;
@@ -851,7 +851,7 @@
             this.tabMasterData.Controls.Add(this.simpleButton23);
             this.tabMasterData.Controls.Add(this.btn_andenes);
             this.tabMasterData.Name = "tabMasterData";
-            this.tabMasterData.Size = new System.Drawing.Size(1016, 514);
+            this.tabMasterData.Size = new System.Drawing.Size(1369, 891);
             this.tabMasterData.Text = "Configuraciones";
             this.tabMasterData.Paint += new System.Windows.Forms.PaintEventHandler(this.tabMasterData_Paint);
             // 
@@ -861,9 +861,9 @@
             this.simpleButton24.Appearance.Options.UseFont = true;
             this.simpleButton24.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton24.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton24.ImageOptions.Image")));
-            this.simpleButton24.Location = new System.Drawing.Point(19, 268);
+            this.simpleButton24.Location = new System.Drawing.Point(19, 139);
             this.simpleButton24.Name = "simpleButton24";
-            this.simpleButton24.Size = new System.Drawing.Size(486, 119);
+            this.simpleButton24.Size = new System.Drawing.Size(250, 47);
             this.simpleButton24.TabIndex = 41;
             this.simpleButton24.Text = "Inventario Final\r\npor periodo";
             this.simpleButton24.Click += new System.EventHandler(this.simpleButton24_Click);
@@ -874,9 +874,9 @@
             this.simpleButton23.Appearance.Options.UseFont = true;
             this.simpleButton23.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton23.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton23.ImageOptions.Image")));
-            this.simpleButton23.Location = new System.Drawing.Point(19, 150);
+            this.simpleButton23.Location = new System.Drawing.Point(19, 86);
             this.simpleButton23.Name = "simpleButton23";
-            this.simpleButton23.Size = new System.Drawing.Size(486, 104);
+            this.simpleButton23.Size = new System.Drawing.Size(250, 47);
             this.simpleButton23.TabIndex = 40;
             this.simpleButton23.Text = "Plan de Trabajo";
             this.simpleButton23.Click += new System.EventHandler(this.simpleButton23_Click);
@@ -889,7 +889,7 @@
             this.btn_andenes.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_andenes.ImageOptions.Image")));
             this.btn_andenes.Location = new System.Drawing.Point(19, 33);
             this.btn_andenes.Name = "btn_andenes";
-            this.btn_andenes.Size = new System.Drawing.Size(486, 104);
+            this.btn_andenes.Size = new System.Drawing.Size(250, 47);
             this.btn_andenes.TabIndex = 39;
             this.btn_andenes.Text = "Configuracion\r\nde andenes";
             this.btn_andenes.Click += new System.EventHandler(this.btn_andenes_Click);
@@ -903,7 +903,7 @@
             this.tabReportes.Controls.Add(this.btnreportes);
             this.tabReportes.Controls.Add(this.simpleButton8);
             this.tabReportes.Name = "tabReportes";
-            this.tabReportes.Size = new System.Drawing.Size(1016, 514);
+            this.tabReportes.Size = new System.Drawing.Size(1369, 891);
             this.tabReportes.Text = "Reportes";
             // 
             // simpleButton34
@@ -988,7 +988,7 @@
             this.TabCalidad.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabCalidad.ImageOptions.Image")));
             this.TabCalidad.Name = "TabCalidad";
             this.TabCalidad.PageVisible = false;
-            this.TabCalidad.Size = new System.Drawing.Size(1022, 546);
+            this.TabCalidad.Size = new System.Drawing.Size(1375, 923);
             this.TabCalidad.Text = "Calidad";
             // 
             // btnClientesLote
@@ -999,9 +999,9 @@
             this.btnClientesLote.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnClientesLote.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnClientesLote.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClientesLote.ImageOptions.Image")));
-            this.btnClientesLote.Location = new System.Drawing.Point(523, 850);
+            this.btnClientesLote.Location = new System.Drawing.Point(319, 402);
             this.btnClientesLote.Name = "btnClientesLote";
-            this.btnClientesLote.Size = new System.Drawing.Size(486, 145);
+            this.btnClientesLote.Size = new System.Drawing.Size(268, 63);
             this.btnClientesLote.TabIndex = 33;
             this.btnClientesLote.Text = "Trazabilidad Clientes-Lote";
             this.btnClientesLote.Click += new System.EventHandler(this.btnClientesLote_Click);
@@ -1012,9 +1012,9 @@
             this.simpleButton32.Appearance.Options.UseFont = true;
             this.simpleButton32.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton32.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton32.ImageOptions.Image")));
-            this.simpleButton32.Location = new System.Drawing.Point(23, 850);
+            this.simpleButton32.Location = new System.Drawing.Point(23, 402);
             this.simpleButton32.Name = "simpleButton32";
-            this.simpleButton32.Size = new System.Drawing.Size(486, 145);
+            this.simpleButton32.Size = new System.Drawing.Size(268, 63);
             this.simpleButton32.TabIndex = 32;
             this.simpleButton32.Text = "Definir Reproceso";
             this.simpleButton32.Click += new System.EventHandler(this.simpleButton32_Click);
@@ -1025,9 +1025,9 @@
             this.simpleButton29.Appearance.Options.UseFont = true;
             this.simpleButton29.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton29.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton29.ImageOptions.Image")));
-            this.simpleButton29.Location = new System.Drawing.Point(1023, 692);
+            this.simpleButton29.Location = new System.Drawing.Point(614, 333);
             this.simpleButton29.Name = "simpleButton29";
-            this.simpleButton29.Size = new System.Drawing.Size(486, 145);
+            this.simpleButton29.Size = new System.Drawing.Size(268, 63);
             this.simpleButton29.TabIndex = 31;
             this.simpleButton29.Text = "Seguimiento de\r\ndespachos";
             this.simpleButton29.Click += new System.EventHandler(this.simpleButton29_Click);
@@ -1038,9 +1038,9 @@
             this.simpleButton28.Appearance.Options.UseFont = true;
             this.simpleButton28.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton28.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton28.ImageOptions.Image")));
-            this.simpleButton28.Location = new System.Drawing.Point(523, 692);
+            this.simpleButton28.Location = new System.Drawing.Point(319, 333);
             this.simpleButton28.Name = "simpleButton28";
-            this.simpleButton28.Size = new System.Drawing.Size(486, 145);
+            this.simpleButton28.Size = new System.Drawing.Size(268, 63);
             this.simpleButton28.TabIndex = 30;
             this.simpleButton28.Text = "Gestión Ubicaciones \r\nPT";
             this.simpleButton28.Click += new System.EventHandler(this.simpleButton28_Click);
@@ -1051,9 +1051,9 @@
             this.simpleButton27.Appearance.Options.UseFont = true;
             this.simpleButton27.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton27.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton27.ImageOptions.Image")));
-            this.simpleButton27.Location = new System.Drawing.Point(23, 692);
+            this.simpleButton27.Location = new System.Drawing.Point(23, 333);
             this.simpleButton27.Name = "simpleButton27";
-            this.simpleButton27.Size = new System.Drawing.Size(486, 145);
+            this.simpleButton27.Size = new System.Drawing.Size(268, 63);
             this.simpleButton27.TabIndex = 29;
             this.simpleButton27.Text = "Gestión Ubicaciones \r\nMP";
             this.simpleButton27.Click += new System.EventHandler(this.simpleButton27_Click);
@@ -1064,9 +1064,9 @@
             this.simpleButton25.Appearance.Options.UseFont = true;
             this.simpleButton25.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton25.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton25.ImageOptions.Image")));
-            this.simpleButton25.Location = new System.Drawing.Point(1023, 533);
+            this.simpleButton25.Location = new System.Drawing.Point(614, 264);
             this.simpleButton25.Name = "simpleButton25";
-            this.simpleButton25.Size = new System.Drawing.Size(486, 145);
+            this.simpleButton25.Size = new System.Drawing.Size(268, 63);
             this.simpleButton25.TabIndex = 23;
             this.simpleButton25.Text = "Seguimiento de Cola\r\nde Lotes";
             this.simpleButton25.Click += new System.EventHandler(this.simpleButton25_Click);
@@ -1077,9 +1077,9 @@
             this.simpleButton19.Appearance.Options.UseFont = true;
             this.simpleButton19.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton19.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton19.ImageOptions.Image")));
-            this.simpleButton19.Location = new System.Drawing.Point(1023, 375);
+            this.simpleButton19.Location = new System.Drawing.Point(614, 195);
             this.simpleButton19.Name = "simpleButton19";
-            this.simpleButton19.Size = new System.Drawing.Size(486, 145);
+            this.simpleButton19.Size = new System.Drawing.Size(268, 63);
             this.simpleButton19.TabIndex = 22;
             this.simpleButton19.Text = "Trazabilidad \r\nde lote MP";
             this.simpleButton19.Click += new System.EventHandler(this.simpleButton19_Click);
@@ -1090,9 +1090,9 @@
             this.btnAut_Tm.Appearance.Options.UseFont = true;
             this.btnAut_Tm.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAut_Tm.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAut_Tm.ImageOptions.Image")));
-            this.btnAut_Tm.Location = new System.Drawing.Point(1023, 214);
+            this.btnAut_Tm.Location = new System.Drawing.Point(614, 126);
             this.btnAut_Tm.Name = "btnAut_Tm";
-            this.btnAut_Tm.Size = new System.Drawing.Size(486, 145);
+            this.btnAut_Tm.Size = new System.Drawing.Size(268, 63);
             this.btnAut_Tm.TabIndex = 21;
             this.btnAut_Tm.Text = "Autorizacion de \r\nTarimas";
             this.btnAut_Tm.Visible = false;
@@ -1104,9 +1104,9 @@
             this.btnNitLecturas.Appearance.Options.UseFont = true;
             this.btnNitLecturas.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnNitLecturas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNitLecturas.ImageOptions.Image")));
-            this.btnNitLecturas.Location = new System.Drawing.Point(1023, 57);
+            this.btnNitLecturas.Location = new System.Drawing.Point(614, 57);
             this.btnNitLecturas.Name = "btnNitLecturas";
-            this.btnNitLecturas.Size = new System.Drawing.Size(486, 145);
+            this.btnNitLecturas.Size = new System.Drawing.Size(268, 63);
             this.btnNitLecturas.TabIndex = 20;
             this.btnNitLecturas.Text = "Lecturas NIR";
             this.btnNitLecturas.Click += new System.EventHandler(this.simpleButton17_Click);
@@ -1117,9 +1117,9 @@
             this.ManteIngresos.Appearance.Options.UseFont = true;
             this.ManteIngresos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.ManteIngresos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ManteIngresos.ImageOptions.Image")));
-            this.ManteIngresos.Location = new System.Drawing.Point(523, 533);
+            this.ManteIngresos.Location = new System.Drawing.Point(319, 264);
             this.ManteIngresos.Name = "ManteIngresos";
-            this.ManteIngresos.Size = new System.Drawing.Size(486, 145);
+            this.ManteIngresos.Size = new System.Drawing.Size(268, 63);
             this.ManteIngresos.TabIndex = 19;
             this.ManteIngresos.Text = "Mantenimientos";
             this.ManteIngresos.Click += new System.EventHandler(this.ManteIngresos_Click);
@@ -1130,9 +1130,9 @@
             this.simpleButton16.Appearance.Options.UseFont = true;
             this.simpleButton16.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton16.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton16.ImageOptions.SvgImage")));
-            this.simpleButton16.Location = new System.Drawing.Point(23, 533);
+            this.simpleButton16.Location = new System.Drawing.Point(23, 264);
             this.simpleButton16.Name = "simpleButton16";
-            this.simpleButton16.Size = new System.Drawing.Size(486, 145);
+            this.simpleButton16.Size = new System.Drawing.Size(268, 63);
             this.simpleButton16.TabIndex = 18;
             this.simpleButton16.Text = "Reportes de \r\nTrazabilidad";
             this.simpleButton16.Click += new System.EventHandler(this.simpleButton16_Click);
@@ -1143,9 +1143,9 @@
             this.simpleButton11.Appearance.Options.UseFont = true;
             this.simpleButton11.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton11.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton11.ImageOptions.Image")));
-            this.simpleButton11.Location = new System.Drawing.Point(523, 375);
+            this.simpleButton11.Location = new System.Drawing.Point(319, 195);
             this.simpleButton11.Name = "simpleButton11";
-            this.simpleButton11.Size = new System.Drawing.Size(486, 145);
+            this.simpleButton11.Size = new System.Drawing.Size(268, 63);
             this.simpleButton11.TabIndex = 17;
             this.simpleButton11.Text = "Reporte de \r\nSacos Activados";
             this.simpleButton11.Visible = false;
@@ -1157,9 +1157,9 @@
             this.simpleButton9.Appearance.Options.UseFont = true;
             this.simpleButton9.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton9.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton9.ImageOptions.Image")));
-            this.simpleButton9.Location = new System.Drawing.Point(523, 214);
+            this.simpleButton9.Location = new System.Drawing.Point(319, 126);
             this.simpleButton9.Name = "simpleButton9";
-            this.simpleButton9.Size = new System.Drawing.Size(486, 145);
+            this.simpleButton9.Size = new System.Drawing.Size(268, 63);
             this.simpleButton9.TabIndex = 16;
             this.simpleButton9.Text = "Lotes de PT";
             this.simpleButton9.Visible = false;
@@ -1171,9 +1171,9 @@
             this.simpleButton6.Appearance.Options.UseFont = true;
             this.simpleButton6.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton6.ImageOptions.Image")));
-            this.simpleButton6.Location = new System.Drawing.Point(523, 57);
+            this.simpleButton6.Location = new System.Drawing.Point(319, 57);
             this.simpleButton6.Name = "simpleButton6";
-            this.simpleButton6.Size = new System.Drawing.Size(486, 145);
+            this.simpleButton6.Size = new System.Drawing.Size(268, 63);
             this.simpleButton6.TabIndex = 15;
             this.simpleButton6.Text = "Reporte \r\nde Alimentacion";
             this.simpleButton6.Click += new System.EventHandler(this.simpleButton6_Click);
@@ -1184,9 +1184,9 @@
             this.simpleButton5.Appearance.Options.UseFont = true;
             this.simpleButton5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
-            this.simpleButton5.Location = new System.Drawing.Point(23, 375);
+            this.simpleButton5.Location = new System.Drawing.Point(23, 195);
             this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(486, 145);
+            this.simpleButton5.Size = new System.Drawing.Size(268, 63);
             this.simpleButton5.TabIndex = 14;
             this.simpleButton5.Text = "Trazabilidad \r\nde lote PT";
             this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
@@ -1197,9 +1197,9 @@
             this.simpleButton4.Appearance.Options.UseFont = true;
             this.simpleButton4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
-            this.simpleButton4.Location = new System.Drawing.Point(23, 214);
+            this.simpleButton4.Location = new System.Drawing.Point(23, 126);
             this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(486, 145);
+            this.simpleButton4.Size = new System.Drawing.Size(268, 63);
             this.simpleButton4.TabIndex = 13;
             this.simpleButton4.Text = "Informacion \r\nde Ingreso";
             this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click_1);
@@ -1212,7 +1212,7 @@
             this.cmdLotesCalidad.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdLotesCalidad.ImageOptions.Image")));
             this.cmdLotesCalidad.Location = new System.Drawing.Point(23, 57);
             this.cmdLotesCalidad.Name = "cmdLotesCalidad";
-            this.cmdLotesCalidad.Size = new System.Drawing.Size(486, 145);
+            this.cmdLotesCalidad.Size = new System.Drawing.Size(268, 63);
             this.cmdLotesCalidad.TabIndex = 11;
             this.cmdLotesCalidad.Text = "Gestion \r\nde Lotes";
             this.cmdLotesCalidad.Click += new System.EventHandler(this.cmdLotesCalidad_Click);
@@ -1227,7 +1227,7 @@
             this.TabAdmin.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabAdmin.ImageOptions.Image")));
             this.TabAdmin.Name = "TabAdmin";
             this.TabAdmin.PageVisible = false;
-            this.TabAdmin.Size = new System.Drawing.Size(1022, 546);
+            this.TabAdmin.Size = new System.Drawing.Size(1375, 923);
             this.TabAdmin.Text = "Administrador";
             // 
             // btnEstadosRequisiciones
@@ -1307,7 +1307,7 @@
             this.tabProduccion.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabProduccion.ImageOptions.Image")));
             this.tabProduccion.Name = "tabProduccion";
             this.tabProduccion.PageVisible = false;
-            this.tabProduccion.Size = new System.Drawing.Size(1022, 546);
+            this.tabProduccion.Size = new System.Drawing.Size(1375, 923);
             this.tabProduccion.Text = "Producción";
             // 
             // simpleButton33
@@ -1410,7 +1410,7 @@
             this.txtProduccion.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("txtProduccion.ImageOptions.Image")));
             this.txtProduccion.Name = "txtProduccion";
             this.txtProduccion.PageVisible = false;
-            this.txtProduccion.Size = new System.Drawing.Size(1315, 600);
+            this.txtProduccion.Size = new System.Drawing.Size(1375, 923);
             this.txtProduccion.Text = "Produccion";
             // 
             // btn_report_mp_recibida
@@ -1491,9 +1491,9 @@
             this.labelControl3.Appearance.Options.UseTextOptions = true;
             this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl3.Location = new System.Drawing.Point(29, 44);
+            this.labelControl3.Location = new System.Drawing.Point(123, 44);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(1058, 39);
+            this.labelControl3.Size = new System.Drawing.Size(1118, 39);
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
             // 
@@ -1502,7 +1502,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1324, 738);
+            this.ClientSize = new System.Drawing.Size(1384, 1061);
             this.Controls.Add(this.cmdHome);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.tabOpciones);
