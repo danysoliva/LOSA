@@ -965,7 +965,7 @@
             this.btnLinkBoletaView,
             this.cmdDespachoId,
             this.btnTrazabilidadClientes});
-            this.gridControl2.Size = new System.Drawing.Size(1424, 449);
+            this.gridControl2.Size = new System.Drawing.Size(1139, 359);
             this.gridControl2.TabIndex = 45;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -1938,6 +1938,8 @@
             this.gridView3.GroupCount = 1;
             this.gridView3.Name = "gridView3";
             this.gridView3.OptionsBehavior.AutoExpandAllGroups = true;
+            this.gridView3.OptionsView.ShowAutoFilterRow = true;
+            this.gridView3.OptionsView.ShowFooter = true;
             this.gridView3.OptionsView.ShowGroupPanel = false;
             this.gridView3.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.coldescripcion2, DevExpress.Data.ColumnSortOrder.Ascending)});
@@ -2225,7 +2227,6 @@
             this.btnCertidicado.Size = new System.Drawing.Size(138, 54);
             this.btnCertidicado.TabIndex = 71;
             this.btnCertidicado.Text = "Certificado \r\nde Calidad";
-            this.btnCertidicado.Visible = false;
             this.btnCertidicado.Click += new System.EventHandler(this.btnCertidicado_Click);
             // 
             // frmreporte_trazabilidad

@@ -28,8 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDevolucionKardex));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.beTarima = new DevExpress.XtraEditors.ButtonEdit();
             this.cmdSelectTarima = new DevExpress.XtraEditors.SimpleButton();
@@ -41,11 +46,29 @@
             this.gcTarima = new DevExpress.XtraGrid.GridControl();
             this.gvTarima = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
+            this.grd_requisa = new DevExpress.XtraGrid.GridControl();
+            this.mpBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsDevoluciones = new LOSA.RecepcionMP.dsDevoluciones();
+            this.grdv_requisa = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colbarcode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcantidad_entregada = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcantidad_unidades = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCodigo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcode_sap = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collote_materia_prima = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnombre_comercial = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcodigo_barra = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colselected = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.beTarima.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPeso.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcTarima)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTarima)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_requisa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mpBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsDevoluciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_requisa)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -57,7 +80,7 @@
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdHome.ImageOptions.Image")));
-            this.cmdHome.Location = new System.Drawing.Point(422, 12);
+            this.cmdHome.Location = new System.Drawing.Point(916, 12);
             this.cmdHome.Name = "cmdHome";
             this.cmdHome.Size = new System.Drawing.Size(172, 71);
             this.cmdHome.TabIndex = 28;
@@ -74,12 +97,12 @@
             this.beTarima.Name = "beTarima";
             this.beTarima.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.beTarima.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.beTarima.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.beTarima.Properties.MaxLength = 20;
             this.beTarima.Properties.NullText = "Escanee o selecciona una tarima";
-            this.beTarima.Size = new System.Drawing.Size(327, 32);
+            this.beTarima.Size = new System.Drawing.Size(821, 32);
             this.beTarima.TabIndex = 31;
             this.beTarima.ToolTip = "Hola";
             this.beTarima.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.BeTarima_ButtonClick);
@@ -92,7 +115,7 @@
             this.cmdSelectTarima.Appearance.Options.UseFont = true;
             this.cmdSelectTarima.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdSelectTarima.ImageOptions.Image = global::LOSA.Properties.Resources.tap;
-            this.cmdSelectTarima.Location = new System.Drawing.Point(422, 114);
+            this.cmdSelectTarima.Location = new System.Drawing.Point(916, 114);
             this.cmdSelectTarima.Name = "cmdSelectTarima";
             this.cmdSelectTarima.Size = new System.Drawing.Size(42, 40);
             this.cmdSelectTarima.TabIndex = 30;
@@ -115,7 +138,7 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(47, 398);
+            this.labelControl2.Location = new System.Drawing.Point(23, 637);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(108, 29);
             this.labelControl2.TabIndex = 80;
@@ -124,7 +147,7 @@
             // txtPeso
             // 
             this.txtPeso.EditValue = "0";
-            this.txtPeso.Location = new System.Drawing.Point(218, 395);
+            this.txtPeso.Location = new System.Drawing.Point(194, 634);
             this.txtPeso.Name = "txtPeso";
             this.txtPeso.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPeso.Properties.Appearance.Options.UseFont = true;
@@ -138,7 +161,7 @@
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(47, 353);
+            this.labelControl7.Location = new System.Drawing.Point(364, 642);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(103, 29);
             this.labelControl7.TabIndex = 79;
@@ -147,7 +170,7 @@
             // txtCantidadT
             // 
             this.txtCantidadT.EditValue = "0";
-            this.txtCantidadT.Location = new System.Drawing.Point(218, 349);
+            this.txtCantidadT.Location = new System.Drawing.Point(535, 638);
             this.txtCantidadT.Name = "txtCantidadT";
             this.txtCantidadT.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCantidadT.Properties.Appearance.Options.UseFont = true;
@@ -171,7 +194,7 @@
             this.gcTarima.Location = new System.Drawing.Point(20, 162);
             this.gcTarima.MainView = this.gvTarima;
             this.gcTarima.Name = "gcTarima";
-            this.gcTarima.Size = new System.Drawing.Size(558, 173);
+            this.gcTarima.Size = new System.Drawing.Size(1052, 173);
             this.gcTarima.TabIndex = 81;
             this.gcTarima.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTarima});
@@ -346,11 +369,184 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
+            // grd_requisa
+            // 
+            this.grd_requisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grd_requisa.DataSource = this.mpBindingSource;
+            this.grd_requisa.Location = new System.Drawing.Point(20, 368);
+            this.grd_requisa.MainView = this.grdv_requisa;
+            this.grd_requisa.Name = "grd_requisa";
+            this.grd_requisa.Size = new System.Drawing.Size(1065, 260);
+            this.grd_requisa.TabIndex = 83;
+            this.grd_requisa.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grdv_requisa});
+            // 
+            // mpBindingSource
+            // 
+            this.mpBindingSource.DataMember = "mp";
+            this.mpBindingSource.DataSource = this.dsDevoluciones;
+            // 
+            // dsDevoluciones
+            // 
+            this.dsDevoluciones.DataSetName = "dsDevoluciones";
+            this.dsDevoluciones.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // grdv_requisa
+            // 
+            this.grdv_requisa.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.grdv_requisa.Appearance.ColumnFilterButton.Options.UseFont = true;
+            this.grdv_requisa.Appearance.FocusedRow.BackColor = System.Drawing.Color.Transparent;
+            this.grdv_requisa.Appearance.FocusedRow.BackColor2 = System.Drawing.Color.Transparent;
+            this.grdv_requisa.Appearance.FocusedRow.BorderColor = System.Drawing.Color.Transparent;
+            this.grdv_requisa.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdv_requisa.Appearance.FocusedRow.Options.UseBackColor = true;
+            this.grdv_requisa.Appearance.FocusedRow.Options.UseBorderColor = true;
+            this.grdv_requisa.Appearance.FocusedRow.Options.UseFont = true;
+            this.grdv_requisa.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.grdv_requisa.Appearance.FooterPanel.Options.UseFont = true;
+            this.grdv_requisa.Appearance.GroupFooter.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.grdv_requisa.Appearance.GroupFooter.Options.UseFont = true;
+            this.grdv_requisa.Appearance.GroupPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.grdv_requisa.Appearance.GroupPanel.Options.UseFont = true;
+            this.grdv_requisa.Appearance.GroupRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.grdv_requisa.Appearance.GroupRow.Options.UseFont = true;
+            this.grdv_requisa.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdv_requisa.Appearance.HeaderPanel.Options.UseFont = true;
+            this.grdv_requisa.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.grdv_requisa.Appearance.Preview.Options.UseFont = true;
+            this.grdv_requisa.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 15.75F);
+            this.grdv_requisa.Appearance.Row.Options.UseFont = true;
+            this.grdv_requisa.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.grdv_requisa.Appearance.TopNewRow.Options.UseFont = true;
+            this.grdv_requisa.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colbarcode,
+            this.colcantidad_entregada,
+            this.colcantidad_unidades,
+            this.colCodigo,
+            this.colcode_sap,
+            this.collote_materia_prima,
+            this.colnombre_comercial,
+            this.colcodigo_barra,
+            this.colselected});
+            this.grdv_requisa.GridControl = this.grd_requisa;
+            this.grdv_requisa.Name = "grdv_requisa";
+            this.grdv_requisa.OptionsView.ShowAutoFilterRow = true;
+            this.grdv_requisa.OptionsView.ShowFooter = true;
+            this.grdv_requisa.OptionsView.ShowGroupPanel = false;
+            this.grdv_requisa.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.grdv_requisa_RowStyle);
+            this.grdv_requisa.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.grdv_requisa_CellValueChanging);
+            // 
+            // colbarcode
+            // 
+            this.colbarcode.Caption = "Requisa";
+            this.colbarcode.FieldName = "barcode";
+            this.colbarcode.Name = "colbarcode";
+            this.colbarcode.OptionsColumn.AllowEdit = false;
+            this.colbarcode.Visible = true;
+            this.colbarcode.VisibleIndex = 0;
+            this.colbarcode.Width = 139;
+            // 
+            // colcantidad_entregada
+            // 
+            this.colcantidad_entregada.Caption = "Kg.";
+            this.colcantidad_entregada.DisplayFormat.FormatString = "{0:0.##.##} Kg.";
+            this.colcantidad_entregada.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colcantidad_entregada.FieldName = "cantidad_entregada";
+            this.colcantidad_entregada.Name = "colcantidad_entregada";
+            this.colcantidad_entregada.OptionsColumn.AllowEdit = false;
+            this.colcantidad_entregada.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cantidad_entregada", "{0:0.##.##} Kg.")});
+            this.colcantidad_entregada.Visible = true;
+            this.colcantidad_entregada.VisibleIndex = 5;
+            this.colcantidad_entregada.Width = 86;
+            // 
+            // colcantidad_unidades
+            // 
+            this.colcantidad_unidades.Caption = "Ud";
+            this.colcantidad_unidades.DisplayFormat.FormatString = "{0:0.##.##} Ud.";
+            this.colcantidad_unidades.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colcantidad_unidades.FieldName = "cantidad_unidades";
+            this.colcantidad_unidades.Name = "colcantidad_unidades";
+            this.colcantidad_unidades.OptionsColumn.AllowEdit = false;
+            this.colcantidad_unidades.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cantidad_unidades", "{0:0.##.##} Ud.")});
+            this.colcantidad_unidades.Visible = true;
+            this.colcantidad_unidades.VisibleIndex = 4;
+            this.colcantidad_unidades.Width = 111;
+            // 
+            // colCodigo
+            // 
+            this.colCodigo.FieldName = "Codigo";
+            this.colCodigo.Name = "colCodigo";
+            this.colCodigo.OptionsColumn.AllowEdit = false;
+            // 
+            // colcode_sap
+            // 
+            this.colcode_sap.Caption = "Codigo SAP";
+            this.colcode_sap.FieldName = "code_sap";
+            this.colcode_sap.Name = "colcode_sap";
+            this.colcode_sap.OptionsColumn.AllowEdit = false;
+            this.colcode_sap.Visible = true;
+            this.colcode_sap.VisibleIndex = 2;
+            this.colcode_sap.Width = 125;
+            // 
+            // collote_materia_prima
+            // 
+            this.collote_materia_prima.Caption = "Lote MP";
+            this.collote_materia_prima.FieldName = "lote_materia_prima";
+            this.collote_materia_prima.Name = "collote_materia_prima";
+            this.collote_materia_prima.OptionsColumn.AllowEdit = false;
+            this.collote_materia_prima.Visible = true;
+            this.collote_materia_prima.VisibleIndex = 3;
+            this.collote_materia_prima.Width = 173;
+            // 
+            // colnombre_comercial
+            // 
+            this.colnombre_comercial.Caption = "MP";
+            this.colnombre_comercial.FieldName = "nombre_comercial";
+            this.colnombre_comercial.Name = "colnombre_comercial";
+            this.colnombre_comercial.OptionsColumn.AllowEdit = false;
+            this.colnombre_comercial.Visible = true;
+            this.colnombre_comercial.VisibleIndex = 1;
+            this.colnombre_comercial.Width = 246;
+            // 
+            // colcodigo_barra
+            // 
+            this.colcodigo_barra.Caption = "TM";
+            this.colcodigo_barra.FieldName = "codigo_barra";
+            this.colcodigo_barra.Name = "colcodigo_barra";
+            this.colcodigo_barra.OptionsColumn.AllowEdit = false;
+            this.colcodigo_barra.Width = 143;
+            // 
+            // colselected
+            // 
+            this.colselected.Caption = "Regresar Inventario";
+            this.colselected.FieldName = "selected";
+            this.colselected.Name = "colselected";
+            this.colselected.Visible = true;
+            this.colselected.VisibleIndex = 6;
+            this.colselected.Width = 167;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Location = new System.Drawing.Point(20, 341);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(160, 21);
+            this.labelControl3.TabIndex = 84;
+            this.labelControl3.Text = "Requisas entregadas:";
+            // 
             // frmDevolucionKardex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(606, 482);
+            this.ClientSize = new System.Drawing.Size(1100, 688);
+            this.Controls.Add(this.labelControl3);
+            this.Controls.Add(this.grd_requisa);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.gcTarima);
             this.Controls.Add(this.labelControl2);
@@ -372,6 +568,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcTarima)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTarima)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_requisa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mpBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsDevoluciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_requisa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -390,5 +590,19 @@
         private DevExpress.XtraGrid.GridControl gcTarima;
         private DevExpress.XtraGrid.Views.Grid.GridView gvTarima;
         private DevExpress.XtraEditors.SimpleButton btnGuardar;
+        private DevExpress.XtraGrid.GridControl grd_requisa;
+        private DevExpress.XtraGrid.Views.Grid.GridView grdv_requisa;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private System.Windows.Forms.BindingSource mpBindingSource;
+        private dsDevoluciones dsDevoluciones;
+        private DevExpress.XtraGrid.Columns.GridColumn colbarcode;
+        private DevExpress.XtraGrid.Columns.GridColumn colcantidad_entregada;
+        private DevExpress.XtraGrid.Columns.GridColumn colcantidad_unidades;
+        private DevExpress.XtraGrid.Columns.GridColumn colCodigo;
+        private DevExpress.XtraGrid.Columns.GridColumn colcode_sap;
+        private DevExpress.XtraGrid.Columns.GridColumn collote_materia_prima;
+        private DevExpress.XtraGrid.Columns.GridColumn colnombre_comercial;
+        private DevExpress.XtraGrid.Columns.GridColumn colcodigo_barra;
+        private DevExpress.XtraGrid.Columns.GridColumn colselected;
     }
 }

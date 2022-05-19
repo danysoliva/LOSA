@@ -24,6 +24,7 @@ namespace LOSA.TransaccionesPT
         UserLogin usuarioLogueado;
         Tarima tarimaEncontrada;
         public int idUbicacionNueva;
+        int InProgress = 0;
         public frmactivacionPT(UserLogin pUser)
         {
             InitializeComponent();
@@ -135,12 +136,16 @@ namespace LOSA.TransaccionesPT
 
                 if (tarimaEncontrada.Recuperado)
                 {
+
+                    if (tarimaEncontrada.id_estado_pt > 1)
+                    {
+
+                        error = true;
+                        mensaje = "Ya se ha activado la tarima seleccionada!";
+                    }
+
                     txtCantidadT.Text = tarimaEncontrada.Cantidad.ToString();
                     txtPeso.Text = tarimaEncontrada.Peso.ToString();
-
-
-
-
                 }
                 else
                 {
@@ -190,7 +195,7 @@ namespace LOSA.TransaccionesPT
                     //panelNotificacion.BackColor = Color.MediumSeaGreen;
                     //timerLimpiarMensaje.Enabled = true;
                     //timerLimpiarMensaje.Start();
-
+                    InProgress = 1;
                     beNuevaUbicacion.Focus();
                 }
 
@@ -204,6 +209,7 @@ namespace LOSA.TransaccionesPT
                 panelNotificacion.BackColor = Color.Red;
                 timerLimpiarMensaje.Enabled = true;
                 timerLimpiarMensaje.Start();
+                InProgress = 0;
             }
 
 
@@ -214,8 +220,14 @@ namespace LOSA.TransaccionesPT
         {
             if (e.KeyCode == Keys.Enter)
             {
-
-                EntregarTarima();
+                if (InProgress == 0) //validacion
+                {
+                    EntregarTarima();
+                }
+                else
+                {
+                    beNuevaUbicacion.Focus();
+                }
             }
         }
 
@@ -273,6 +285,7 @@ namespace LOSA.TransaccionesPT
                         panelNotificacion.BackColor = Color.MediumSeaGreen;
                         timerLimpiarMensaje.Enabled = true;
                         timerLimpiarMensaje.Start();
+                        InProgress = 0;
 
                     }
                 }

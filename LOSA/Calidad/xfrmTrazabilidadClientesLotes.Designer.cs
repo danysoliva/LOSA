@@ -53,6 +53,11 @@ namespace LOSA.Calidad
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colciudad = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcliente_aqua = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcodigo_pais = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldireccion1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldireccion2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.slueCliente = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
@@ -132,6 +137,7 @@ namespace LOSA.Calidad
             this.colCantidadDespachado.Caption = "Cant. Despachado";
             this.colCantidadDespachado.FieldName = "CantidadDespachado";
             this.colCantidadDespachado.Name = "colCantidadDespachado";
+            this.colCantidadDespachado.OptionsColumn.AllowEdit = false;
             this.colCantidadDespachado.Visible = true;
             this.colCantidadDespachado.VisibleIndex = 1;
             // 
@@ -140,6 +146,7 @@ namespace LOSA.Calidad
             this.colkg.Caption = "KG";
             this.colkg.FieldName = "kg";
             this.colkg.Name = "colkg";
+            this.colkg.OptionsColumn.AllowEdit = false;
             this.colkg.Visible = true;
             this.colkg.VisibleIndex = 2;
             // 
@@ -164,6 +171,7 @@ namespace LOSA.Calidad
             this.colDescripcion.Caption = "Descripción";
             this.colDescripcion.FieldName = "Descripcion";
             this.colDescripcion.Name = "colDescripcion";
+            this.colDescripcion.OptionsColumn.AllowEdit = false;
             this.colDescripcion.Visible = true;
             this.colDescripcion.VisibleIndex = 5;
             // 
@@ -188,7 +196,12 @@ namespace LOSA.Calidad
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
             this.gridColumn2,
-            this.gridColumn3});
+            this.gridColumn3,
+            this.colciudad,
+            this.colcliente_aqua,
+            this.colcodigo_pais,
+            this.coldireccion1,
+            this.coldireccion2});
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -199,6 +212,7 @@ namespace LOSA.Calidad
             this.gridColumn1.Caption = "Código";
             this.gridColumn1.FieldName = "codigo";
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
             this.gridColumn1.Width = 128;
@@ -208,6 +222,7 @@ namespace LOSA.Calidad
             this.gridColumn2.Caption = "Nombre";
             this.gridColumn2.FieldName = "nombre";
             this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
             this.gridColumn2.Width = 200;
@@ -217,12 +232,55 @@ namespace LOSA.Calidad
             this.gridColumn3.Caption = "Pais";
             this.gridColumn3.FieldName = "pais";
             this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
             this.gridColumn3.Width = 56;
             // 
+            // colciudad
+            // 
+            this.colciudad.FieldName = "ciudad";
+            this.colciudad.Name = "colciudad";
+            this.colciudad.OptionsColumn.AllowEdit = false;
+            this.colciudad.Visible = true;
+            this.colciudad.VisibleIndex = 3;
+            // 
+            // colcliente_aqua
+            // 
+            this.colcliente_aqua.FieldName = "cliente_aqua";
+            this.colcliente_aqua.Name = "colcliente_aqua";
+            this.colcliente_aqua.OptionsColumn.AllowEdit = false;
+            this.colcliente_aqua.Visible = true;
+            this.colcliente_aqua.VisibleIndex = 4;
+            // 
+            // colcodigo_pais
+            // 
+            this.colcodigo_pais.FieldName = "codigo_pais";
+            this.colcodigo_pais.Name = "colcodigo_pais";
+            this.colcodigo_pais.OptionsColumn.AllowEdit = false;
+            this.colcodigo_pais.Visible = true;
+            this.colcodigo_pais.VisibleIndex = 5;
+            // 
+            // coldireccion1
+            // 
+            this.coldireccion1.FieldName = "direccion1";
+            this.coldireccion1.Name = "coldireccion1";
+            this.coldireccion1.OptionsColumn.AllowEdit = false;
+            this.coldireccion1.Visible = true;
+            this.coldireccion1.VisibleIndex = 6;
+            // 
+            // coldireccion2
+            // 
+            this.coldireccion2.FieldName = "direccion2";
+            this.coldireccion2.Name = "coldireccion2";
+            this.coldireccion2.OptionsColumn.AllowEdit = false;
+            this.coldireccion2.Visible = true;
+            this.coldireccion2.VisibleIndex = 7;
+            // 
             // slueCliente
             // 
+            this.slueCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.slueCliente.Location = new System.Drawing.Point(76, 54);
             this.slueCliente.Name = "slueCliente";
             this.slueCliente.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
@@ -315,5 +373,10 @@ namespace LOSA.Calidad
         private DevExpress.XtraEditors.SearchLookUpEdit slueCliente;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.SimpleButton cmdHome;
+        private DevExpress.XtraGrid.Columns.GridColumn colciudad;
+        private DevExpress.XtraGrid.Columns.GridColumn colcliente_aqua;
+        private DevExpress.XtraGrid.Columns.GridColumn colcodigo_pais;
+        private DevExpress.XtraGrid.Columns.GridColumn coldireccion1;
+        private DevExpress.XtraGrid.Columns.GridColumn coldireccion2;
     }
 }

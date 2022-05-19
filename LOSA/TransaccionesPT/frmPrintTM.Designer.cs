@@ -69,8 +69,8 @@
             this.collote_fp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colimprimir = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnGenerar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.colSiguiente = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
@@ -288,6 +288,11 @@
             this.btnGenerar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
             // 
+            // colSiguiente
+            // 
+            this.colSiguiente.FieldName = "Siguiente";
+            this.colSiguiente.Name = "colSiguiente";
+            // 
             // cmdHome
             // 
             this.cmdHome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -303,11 +308,6 @@
             this.cmdHome.TabIndex = 36;
             this.cmdHome.Text = "Cerrar";
             this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
-            // 
-            // colSiguiente
-            // 
-            this.colSiguiente.FieldName = "Siguiente";
-            this.colSiguiente.Name = "colSiguiente";
             // 
             // frmPrintTM
             // 

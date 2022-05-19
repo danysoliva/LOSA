@@ -149,9 +149,9 @@ namespace LOSA.Calidad
                 {
                     cnx.Open();
 
-                    SqlDataAdapter da = new SqlDataAdapter("sp_DespachadoClientes", cnx);
+                    SqlDataAdapter da = new SqlDataAdapter("sp_DespachadoClientes_V2", cnx);
                     da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                    da.SelectCommand.Parameters.Add("@id_cliente", SqlDbType.Int).Value = slueCliente.EditValue;
+                    da.SelectCommand.Parameters.Add("@idCliente", SqlDbType.Int).Value = slueCliente.EditValue;
 
                     dsCalidad.DespachadoClientes.Clear();
 

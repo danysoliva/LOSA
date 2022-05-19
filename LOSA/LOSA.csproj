@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\aqfsvr003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>308</ApplicationRevision>
+    <ApplicationRevision>314</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -344,6 +344,14 @@
     </Compile>
     <Compile Include="Calidad\ConfiguracionMP.Designer.cs">
       <DependentUpon>ConfiguracionMP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\drReporteCetificado.cs">
+      <DependentUpon>drReporteCetificado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\drReporteCetificado.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>drReporteCetificado.xsd</DependentUpon>
     </Compile>
     <Compile Include="Calidad\dsCalidad.cs">
       <DependentUpon>dsCalidad.xsd</DependentUpon>
@@ -791,6 +799,12 @@
     </Compile>
     <Compile Include="Calidad\Revision_Sanidad\XtraUserControl1.Designer.cs">
       <DependentUpon>XtraUserControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\rpt_certificado_calidad.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Calidad\rpt_certificado_calidad.Designer.cs">
+      <DependentUpon>rpt_certificado_calidad.cs</DependentUpon>
     </Compile>
     <Compile Include="Calidad\xfrmCertificadoCalidad.cs">
       <SubType>Form</SubType>
@@ -1578,6 +1592,12 @@
     <Compile Include="Produccion\frmRequisasManuales.Designer.cs">
       <DependentUpon>frmRequisasManuales.cs</DependentUpon>
     </Compile>
+    <Compile Include="Produccion\frmrptMpEntregadaaProduccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\frmrptMpEntregadaaProduccion.Designer.cs">
+      <DependentUpon>frmrptMpEntregadaaProduccion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Produccion\frmSolicitarMP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1637,6 +1657,17 @@
     </None>
     <None Include="AlmacenesExterno\dsReporteAlmacenExterno.xss">
       <DependentUpon>dsReporteAlmacenExterno.xsd</DependentUpon>
+    </None>
+    <None Include="Calidad\drReporteCetificado.xsc">
+      <DependentUpon>drReporteCetificado.xsd</DependentUpon>
+    </None>
+    <None Include="Calidad\drReporteCetificado.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>drReporteCetificado.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Calidad\drReporteCetificado.xss">
+      <DependentUpon>drReporteCetificado.xsd</DependentUpon>
     </None>
     <None Include="Calidad\dsInventarioPT.xsc">
       <DependentUpon>dsInventarioPT.xsd</DependentUpon>
@@ -1749,6 +1780,11 @@
       <DependentUpon>dsNir.xsd</DependentUpon>
     </None>
     <None Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecepcionMP\dsDevoluciones.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDevoluciones.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RecepcionMP\dsingresos.cs">
       <DependentUpon>dsingresos.xsd</DependentUpon>
     </Compile>
@@ -2461,6 +2497,11 @@
     <Compile Include="TransaccionesMP\TrzMP_fromLote\frmMP_WithSameLot.Designer.cs">
       <DependentUpon>frmMP_WithSameLot.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesPT\dsProductos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsProductos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesPT\dsPT.cs">
       <DependentUpon>dsPT.xsd</DependentUpon>
     </Compile>
@@ -2504,6 +2545,12 @@
     </Compile>
     <Compile Include="TransaccionesPT\frmLotePT.Designer.cs">
       <DependentUpon>frmLotePT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesPT\frmPedidosProduccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesPT\frmPedidosProduccion.Designer.cs">
+      <DependentUpon>frmPedidosProduccion.cs</DependentUpon>
     </Compile>
     <Compile Include="TransaccionesPT\frmPlanPT.cs">
       <SubType>Form</SubType>
@@ -2971,6 +3018,9 @@
     <EmbeddedResource Include="Calidad\Revision_Sanidad\xfrmWizardRevisionanidadFirstStep.resx">
       <DependentUpon>xfrmWizardRevisionanidadFirstStep.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\rpt_certificado_calidad.resx">
+      <DependentUpon>rpt_certificado_calidad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calidad\xfrmCertificadoCalidad.resx">
       <DependentUpon>xfrmCertificadoCalidad.cs</DependentUpon>
     </EmbeddedResource>
@@ -3310,6 +3360,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\frmRequisasManuales.resx">
       <DependentUpon>frmRequisasManuales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\frmrptMpEntregadaaProduccion.resx">
+      <DependentUpon>frmrptMpEntregadaaProduccion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\frmSolicitarMP.resx">
       <DependentUpon>frmSolicitarMP.cs</DependentUpon>
@@ -3679,6 +3732,9 @@
     <EmbeddedResource Include="TransaccionesPT\frmLotePT.resx">
       <DependentUpon>frmLotePT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesPT\frmPedidosProduccion.resx">
+      <DependentUpon>frmPedidosProduccion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesPT\frmPlanPT.resx">
       <DependentUpon>frmPlanPT.cs</DependentUpon>
     </EmbeddedResource>
@@ -3883,6 +3939,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="RecepcionMP\dsDevoluciones.xsc">
+      <DependentUpon>dsDevoluciones.xsd</DependentUpon>
+    </None>
+    <None Include="RecepcionMP\dsDevoluciones.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDevoluciones.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="RecepcionMP\dsDevoluciones.xss">
+      <DependentUpon>dsDevoluciones.xsd</DependentUpon>
+    </None>
     <None Include="RecepcionMP\dsingresos.xsc">
       <DependentUpon>dsingresos.xsd</DependentUpon>
     </None>
@@ -3992,6 +4059,17 @@
     </None>
     <None Include="TransaccionesMP\TrzMP_fromLote\dsMP_Lotes.xss">
       <DependentUpon>dsMP_Lotes.xsd</DependentUpon>
+    </None>
+    <None Include="TransaccionesPT\dsProductos.xsc">
+      <DependentUpon>dsProductos.xsd</DependentUpon>
+    </None>
+    <None Include="TransaccionesPT\dsProductos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsProductos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TransaccionesPT\dsProductos.xss">
+      <DependentUpon>dsProductos.xsd</DependentUpon>
     </None>
     <None Include="TransaccionesPT\dsPT.xsc">
       <DependentUpon>dsPT.xsd</DependentUpon>
