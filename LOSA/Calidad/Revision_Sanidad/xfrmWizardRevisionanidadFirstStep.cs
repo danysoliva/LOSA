@@ -129,6 +129,9 @@ namespace LOSA.Calidad.Revision_Sanidad
                     txtProveedorTransporte.Text = vehiculo.ProveedorTransporte;
                     txtHora.Text = vehiculo.Hora;
                     txtPaisDestino.Text = vehiculo.PaisDestino;
+
+                    btnSearch.Enabled = false;
+
                 }
             }
         }

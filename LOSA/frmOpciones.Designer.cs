@@ -982,7 +982,7 @@
             this.simpleButton34.Appearance.Options.UseTextOptions = true;
             this.simpleButton34.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton34.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton34.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton34.ImageOptions.SvgImage")));
+            this.simpleButton34.ImageOptions.Image = global::LOSA.Properties.Resources.checklist;
             this.simpleButton34.Location = new System.Drawing.Point(419, 348);
             this.simpleButton34.Name = "simpleButton34";
             this.simpleButton34.Size = new System.Drawing.Size(199, 59);

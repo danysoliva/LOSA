@@ -906,7 +906,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
                     xrCorrelativo.Text = item.id.ToString().PadLeft(6,'0');
                     xrFechaCreacion.Text = item.fecha_creacion.ToString();
                     xrProveedorTransporte.Text = item.proveedor_transporte;
-
+                    xrPaisDestino.Text = item.pais_destino;
 
                     //Revision 1
                     if (item.revision_1==1)

@@ -4148,6 +4148,7 @@
     <None Include="Resources\delete-1-icon128px.png" />
     <None Include="Resources\Done-icon.png" />
     <None Include="Resources\checked_32X32.png" />
+    <None Include="Resources\checklist.png" />
     <Content Include="Resources\devoluciones.png" />
     <Content Include="Resources\edit.png" />
     <None Include="Resources\hapag-4-icon.png" />

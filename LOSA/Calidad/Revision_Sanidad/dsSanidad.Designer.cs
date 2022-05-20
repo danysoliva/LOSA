@@ -463,6 +463,8 @@ namespace LOSA.Calidad.Revision_Sanidad {
             
             private global::System.Data.DataColumn columnid_estado;
             
+            private global::System.Data.DataColumn columnpais_destino;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public info_vehiculoDataTable() {
@@ -674,6 +676,14 @@ namespace LOSA.Calidad.Revision_Sanidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn pais_destinoColumn {
+                get {
+                    return this.columnpais_destino;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -731,7 +741,8 @@ namespace LOSA.Calidad.Revision_Sanidad {
                         System.DateTime fecha_revision_3, 
                         string estado, 
                         string documento, 
-                        int id_estado) {
+                        int id_estado, 
+                        string pais_destino) {
                 info_vehiculoRow rowinfo_vehiculoRow = ((info_vehiculoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         conductor,
@@ -755,7 +766,8 @@ namespace LOSA.Calidad.Revision_Sanidad {
                         fecha_revision_3,
                         estado,
                         documento,
-                        id_estado};
+                        id_estado,
+                        pais_destino};
                 rowinfo_vehiculoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowinfo_vehiculoRow);
                 return rowinfo_vehiculoRow;
@@ -800,6 +812,7 @@ namespace LOSA.Calidad.Revision_Sanidad {
                 this.columnestado = base.Columns["estado"];
                 this.columndocumento = base.Columns["documento"];
                 this.columnid_estado = base.Columns["id_estado"];
+                this.columnpais_destino = base.Columns["pais_destino"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -849,6 +862,8 @@ namespace LOSA.Calidad.Revision_Sanidad {
                 base.Columns.Add(this.columndocumento);
                 this.columnid_estado = new global::System.Data.DataColumn("id_estado", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_estado);
+                this.columnpais_destino = new global::System.Data.DataColumn("pais_destino", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpais_destino);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2486,6 +2501,22 @@ namespace LOSA.Calidad.Revision_Sanidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string pais_destino {
+                get {
+                    try {
+                        return ((string)(this[this.tableinfo_vehiculo.pais_destinoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pais_destino\' in table \'info_vehiculo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableinfo_vehiculo.pais_destinoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsconductorNull() {
                 return this.IsNull(this.tableinfo_vehiculo.conductorColumn);
             }
@@ -2746,6 +2777,18 @@ namespace LOSA.Calidad.Revision_Sanidad {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setid_estadoNull() {
                 this[this.tableinfo_vehiculo.id_estadoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Ispais_destinoNull() {
+                return this.IsNull(this.tableinfo_vehiculo.pais_destinoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setpais_destinoNull() {
+                this[this.tableinfo_vehiculo.pais_destinoColumn] = global::System.Convert.DBNull;
             }
         }
         

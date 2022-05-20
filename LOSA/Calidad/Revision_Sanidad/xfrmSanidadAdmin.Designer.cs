@@ -30,17 +30,17 @@ namespace LOSA.Calidad.Revision_Sanidad
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions7 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmSanidadAdmin));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject25 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject26 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject27 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject28 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions8 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject29 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject30 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject31 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject32 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.infovehiculoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsSanidad = new LOSA.Calidad.Revision_Sanidad.dsSanidad();
@@ -101,6 +101,8 @@ namespace LOSA.Calidad.Revision_Sanidad
             // 
             this.gvVehiculo.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvVehiculo.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gvVehiculo.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gvVehiculo.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gvVehiculo.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvVehiculo.Appearance.Row.Options.UseFont = true;
             this.gvVehiculo.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -127,7 +129,7 @@ namespace LOSA.Calidad.Revision_Sanidad
             this.colconductor.Name = "colconductor";
             this.colconductor.Visible = true;
             this.colconductor.VisibleIndex = 1;
-            this.colconductor.Width = 219;
+            this.colconductor.Width = 226;
             // 
             // colplaca
             // 
@@ -136,6 +138,7 @@ namespace LOSA.Calidad.Revision_Sanidad
             this.colplaca.Name = "colplaca";
             this.colplaca.Visible = true;
             this.colplaca.VisibleIndex = 2;
+            this.colplaca.Width = 76;
             // 
             // colcontenedor
             // 
@@ -144,6 +147,7 @@ namespace LOSA.Calidad.Revision_Sanidad
             this.colcontenedor.Name = "colcontenedor";
             this.colcontenedor.Visible = true;
             this.colcontenedor.VisibleIndex = 3;
+            this.colcontenedor.Width = 83;
             // 
             // colfecha
             // 
@@ -152,6 +156,7 @@ namespace LOSA.Calidad.Revision_Sanidad
             this.colfecha.Name = "colfecha";
             this.colfecha.Visible = true;
             this.colfecha.VisibleIndex = 4;
+            this.colfecha.Width = 101;
             // 
             // colhora
             // 
@@ -159,13 +164,16 @@ namespace LOSA.Calidad.Revision_Sanidad
             this.colhora.Name = "colhora";
             this.colhora.Visible = true;
             this.colhora.VisibleIndex = 5;
+            this.colhora.Width = 70;
             // 
             // colproveedor
             // 
+            this.colproveedor.Caption = "Proveedor";
             this.colproveedor.FieldName = "proveedor";
             this.colproveedor.Name = "colproveedor";
             this.colproveedor.Visible = true;
             this.colproveedor.VisibleIndex = 6;
+            this.colproveedor.Width = 70;
             // 
             // colcliente
             // 
@@ -174,6 +182,7 @@ namespace LOSA.Calidad.Revision_Sanidad
             this.colcliente.Name = "colcliente";
             this.colcliente.Visible = true;
             this.colcliente.VisibleIndex = 7;
+            this.colcliente.Width = 78;
             // 
             // colcarcode
             // 
@@ -187,14 +196,14 @@ namespace LOSA.Calidad.Revision_Sanidad
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 9;
-            this.gridColumn1.Width = 80;
+            this.gridColumn1.Width = 72;
             // 
             // repositoryItemButtonEdit1
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
-            editorButtonImageOptions7.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions7.SvgImage")));
+            editorButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions1.SvgImage")));
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions7, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject25, serializableAppearanceObject26, serializableAppearanceObject27, serializableAppearanceObject28, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit1.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
@@ -207,25 +216,27 @@ namespace LOSA.Calidad.Revision_Sanidad
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 10;
-            this.gridColumn2.Width = 87;
+            this.gridColumn2.Width = 76;
             // 
             // btnRevision
             // 
             this.btnRevision.AutoHeight = false;
             this.btnRevision.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            editorButtonImageOptions8.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions8.SvgImage")));
+            editorButtonImageOptions2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions2.SvgImage")));
             this.btnRevision.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions8, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject29, serializableAppearanceObject30, serializableAppearanceObject31, serializableAppearanceObject32, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnRevision.Name = "btnRevision";
             this.btnRevision.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnRevision.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnRevision_ButtonClick);
             // 
             // gridColumn3
             // 
+            this.gridColumn3.Caption = "Estado";
             this.gridColumn3.FieldName = "estado";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 8;
+            this.gridColumn3.Width = 91;
             // 
             // gridColumn4
             // 
@@ -234,6 +245,7 @@ namespace LOSA.Calidad.Revision_Sanidad
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 0;
+            this.gridColumn4.Width = 93;
             // 
             // btnAtras
             // 
@@ -261,7 +273,7 @@ namespace LOSA.Calidad.Revision_Sanidad
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
-            this.simpleButton1.Location = new System.Drawing.Point(49, 12);
+            this.simpleButton1.Location = new System.Drawing.Point(26, 12);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(167, 47);
             this.simpleButton1.TabIndex = 39;
@@ -277,7 +289,7 @@ namespace LOSA.Calidad.Revision_Sanidad
             this.btnActualizar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnActualizar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnActualizar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnActualizar.ImageOptions.SvgImage")));
-            this.btnActualizar.Location = new System.Drawing.Point(239, 12);
+            this.btnActualizar.Location = new System.Drawing.Point(213, 12);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(167, 47);
             this.btnActualizar.TabIndex = 40;
@@ -295,7 +307,7 @@ namespace LOSA.Calidad.Revision_Sanidad
             this.Controls.Add(this.gridControl1);
             this.Name = "xfrmSanidadAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "xfrmSanidadAdmin";
+            this.Text = "Admin Sanidad Contenedores";
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.infovehiculoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSanidad)).EndInit();

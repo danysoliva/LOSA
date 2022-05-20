@@ -94,13 +94,19 @@ namespace LOSA.Calidad.Revision_Sanidad
                 var row = (dsSanidad.info_vehiculoRow)gvVehiculo.GetFocusedDataRow();
 
 
-                if (row.id_estado!=1)//Distinto a Aprobado
+                if (row.id_estado != 1)//Distinto a Aprobado
                 {
-
-                xfrmStepRevisionSanidad frm = new xfrmStepRevisionSanidad(row.id);
-                    if (frm.ShowDialog()== DialogResult.OK)
+                    if (validar_revision(row.id))
                     {
-                        LoadRevisionSanidad();
+                        xfrmStepRevisionSanidad frm = new xfrmStepRevisionSanidad(row.id);
+                        if (frm.ShowDialog() == DialogResult.OK)
+                        {
+                            LoadRevisionSanidad();
+                        }
+                    }
+                    else
+                    {
+                        CajaDialogo.Error("No se puede realizar una nueva revisión, se han completado las 3");
                     }
                 }
                 else
@@ -111,7 +117,40 @@ namespace LOSA.Calidad.Revision_Sanidad
             catch (Exception ex)
             {
                 CajaDialogo.Error(ex.Message);
-                
+            }
+        }
+
+        private Boolean validar_revision (int id_h)
+        {
+            try
+            {
+                Boolean valor;
+
+                DataOperations dp = new DataOperations();
+                SqlConnection cnx = new SqlConnection(dp.ConnectionStringLOSA);
+
+                cnx.Open ();
+                SqlCommand cmd = new SqlCommand("dbo.sp_validar_revision_vehiculo_disponible", cnx);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("id_h", SqlDbType.Int).Value = id_h;
+
+                int count = (Convert.ToInt32(cmd.ExecuteScalar()));
+                cnx.Close();
+                if (count<=0)
+                {
+                    valor = false;
+                }
+                else
+                {
+                    valor = true;
+                }
+
+                return valor;
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+                return false;
             }
         }
     }
