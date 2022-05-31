@@ -29,6 +29,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xrSanidad));
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
@@ -365,6 +366,8 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             this.xrTableRow40 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell275 = new DevExpress.XtraReports.UI.XRTableCell();
             this.dsSanidad1 = new LOSA.Calidad.Revision_Sanidad.dsSanidad();
+            this.xrPictureBox1 = new DevExpress.XtraReports.UI.XRPictureBox();
+            this.xrTableCell36 = new DevExpress.XtraReports.UI.XRTableCell();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSanidad1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -388,7 +391,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrTable1});
-            this.ReportHeader.HeightF = 798.5996F;
+            this.ReportHeader.HeightF = 757.1528F;
             this.ReportHeader.Name = "ReportHeader";
             // 
             // xrTable1
@@ -440,7 +443,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             this.xrTableRow38,
             this.xrTableRow39,
             this.xrTableRow40});
-            this.xrTable1.SizeF = new System.Drawing.SizeF(1100F, 753.666F);
+            this.xrTable1.SizeF = new System.Drawing.SizeF(1100F, 756.0164F);
             this.xrTable1.StylePriority.UseBorders = false;
             // 
             // xrTableRow1
@@ -451,7 +454,8 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             this.xrTableRow1.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
             this.xrTableCell1,
             this.xrTableCell3,
-            this.xrCorrelativo});
+            this.xrCorrelativo,
+            this.xrTableCell36});
             this.xrTableRow1.Name = "xrTableRow1";
             this.xrTableRow1.StylePriority.UseBorders = false;
             this.xrTableRow1.Weight = 1D;
@@ -489,7 +493,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             this.xrCorrelativo.StylePriority.UseBorders = false;
             this.xrCorrelativo.StylePriority.UseFont = false;
             this.xrCorrelativo.Text = "No Correlativo";
-            this.xrCorrelativo.Weight = 1D;
+            this.xrCorrelativo.Weight = 0.47471163662997157D;
             // 
             // xrTableRow2
             // 
@@ -625,7 +629,8 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             // xrTableCell8
             // 
-            this.xrTableCell8.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell8.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrTableCell8.Multiline = true;
             this.xrTableCell8.Name = "xrTableCell8";
@@ -703,7 +708,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             this.xrTableRow8.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
             this.xrTableCell15});
             this.xrTableRow8.Name = "xrTableRow8";
-            this.xrTableRow8.Weight = 1D;
+            this.xrTableRow8.Weight = 0.66194182343078245D;
             // 
             // xrTableCell15
             // 
@@ -721,7 +726,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             this.xrTableCell18,
             this.xrProveedorTransporte});
             this.xrTableRow9.Name = "xrTableRow9";
-            this.xrTableRow9.Weight = 1D;
+            this.xrTableRow9.Weight = 1.3380581765692177D;
             // 
             // xrTableCell16
             // 
@@ -1013,7 +1018,6 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             this.xrPaisDestino.Multiline = true;
             this.xrPaisDestino.Name = "xrPaisDestino";
             this.xrPaisDestino.StylePriority.UseBorders = false;
-            this.xrPaisDestino.Text = "xrPaisDestino";
             this.xrPaisDestino.Weight = 1.3776569544137733D;
             // 
             // xrTableRow13
@@ -1258,7 +1262,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             this.xrSanidad_3_1_2,
             this.xrTableCell166});
             this.xrTableRow15.Name = "xrTableRow15";
-            this.xrTableRow15.Weight = 1D;
+            this.xrTableRow15.Weight = 0.84918253177178216D;
             // 
             // xrTableCell35
             // 
@@ -1394,7 +1398,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             // xrTableCell166
             // 
-            this.xrTableCell166.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.xrTableCell166.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.xrTableCell166.Multiline = true;
             this.xrTableCell166.Name = "xrTableCell166";
             this.xrTableCell166.StylePriority.UseBorders = false;
@@ -1418,7 +1422,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             this.xrSanidad_3_2_2,
             this.xrTableCell170});
             this.xrTableRow16.Name = "xrTableRow16";
-            this.xrTableRow16.Weight = 1D;
+            this.xrTableRow16.Weight = 1.1508174682282177D;
             // 
             // xrTableCell40
             // 
@@ -1552,7 +1556,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             // xrTableCell170
             // 
-            this.xrTableCell170.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.xrTableCell170.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.xrTableCell170.Multiline = true;
             this.xrTableCell170.Name = "xrTableCell170";
             this.xrTableCell170.StylePriority.UseBorders = false;
@@ -1708,7 +1712,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             // xrTableCell178
             // 
-            this.xrTableCell178.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.xrTableCell178.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.xrTableCell178.Multiline = true;
             this.xrTableCell178.Name = "xrTableCell178";
             this.xrTableCell178.StylePriority.UseBorders = false;
@@ -1866,7 +1870,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             // xrTableCell186
             // 
-            this.xrTableCell186.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.xrTableCell186.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.xrTableCell186.Multiline = true;
             this.xrTableCell186.Name = "xrTableCell186";
             this.xrTableCell186.StylePriority.UseBorders = false;
@@ -2026,7 +2030,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             // xrTableCell192
             // 
-            this.xrTableCell192.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.xrTableCell192.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.xrTableCell192.Multiline = true;
             this.xrTableCell192.Name = "xrTableCell192";
             this.xrTableCell192.StylePriority.UseBorders = false;
@@ -2187,7 +2191,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             // xrTableCell197
             // 
-            this.xrTableCell197.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.xrTableCell197.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.xrTableCell197.Multiline = true;
             this.xrTableCell197.Name = "xrTableCell197";
             this.xrTableCell197.StylePriority.UseBorders = false;
@@ -2347,7 +2351,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             // xrTableCell208
             // 
-            this.xrTableCell208.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.xrTableCell208.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.xrTableCell208.Multiline = true;
             this.xrTableCell208.Name = "xrTableCell208";
             this.xrTableCell208.StylePriority.UseBorders = false;
@@ -2511,7 +2515,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             // xrTableCell215
             // 
-            this.xrTableCell215.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.xrTableCell215.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.xrTableCell215.Multiline = true;
             this.xrTableCell215.Name = "xrTableCell215";
             this.xrTableCell215.StylePriority.UseBorders = false;
@@ -2676,7 +2680,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             // xrTableCell221
             // 
-            this.xrTableCell221.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.xrTableCell221.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.xrTableCell221.Multiline = true;
             this.xrTableCell221.Name = "xrTableCell221";
             this.xrTableCell221.StylePriority.UseBorders = false;
@@ -2835,7 +2839,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             // xrTableCell226
             // 
-            this.xrTableCell226.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
+            this.xrTableCell226.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.xrTableCell226.Multiline = true;
             this.xrTableCell226.Name = "xrTableCell226";
             this.xrTableCell226.StylePriority.UseBorders = false;
@@ -3063,7 +3067,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             // xrTableCell247
             // 
-            this.xrTableCell247.Borders = DevExpress.XtraPrinting.BorderSide.Top;
+            this.xrTableCell247.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.xrTableCell247.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrTableCell247.Multiline = true;
             this.xrTableCell247.Name = "xrTableCell247";
@@ -3089,7 +3093,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             this.xrRevision1_2,
             this.xrHora1});
             this.xrTableRow25.Name = "xrTableRow25";
-            this.xrTableRow25.Weight = 1D;
+            this.xrTableRow25.Weight = 0.84918253177178216D;
             // 
             // xrTableCell85
             // 
@@ -3208,7 +3212,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             // xrHora1
             // 
-            this.xrHora1.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
+            this.xrHora1.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.xrHora1.Multiline = true;
             this.xrHora1.Name = "xrHora1";
             this.xrHora1.StylePriority.UseBorders = false;
@@ -3230,7 +3234,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             this.xrRevision2_2,
             this.xrHora2});
             this.xrTableRow26.Name = "xrTableRow26";
-            this.xrTableRow26.Weight = 1D;
+            this.xrTableRow26.Weight = 0.849182531771782D;
             // 
             // xrTableCell90
             // 
@@ -3349,7 +3353,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             // xrHora2
             // 
-            this.xrHora2.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
+            this.xrHora2.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.xrHora2.Multiline = true;
             this.xrHora2.Name = "xrHora2";
             this.xrHora2.StylePriority.UseBorders = false;
@@ -3371,7 +3375,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             this.xrRevision3_2,
             this.xrHora3});
             this.xrTableRow27.Name = "xrTableRow27";
-            this.xrTableRow27.Weight = 1D;
+            this.xrTableRow27.Weight = 0.84918253177178227D;
             // 
             // xrTableCell95
             // 
@@ -3490,7 +3494,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             // xrHora3
             // 
-            this.xrHora3.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
+            this.xrHora3.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.xrHora3.Multiline = true;
             this.xrHora3.Name = "xrHora3";
             this.xrHora3.StylePriority.UseBorders = false;
@@ -3509,7 +3513,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             this.xrConductor_4_2,
             this.xrTableCell235});
             this.xrTableRow28.Name = "xrTableRow28";
-            this.xrTableRow28.Weight = 1D;
+            this.xrTableRow28.Weight = 0.84918253177178216D;
             // 
             // xrTableCell100
             // 
@@ -3591,7 +3595,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             // xrTableCell235
             // 
-            this.xrTableCell235.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell235.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.xrTableCell235.Multiline = true;
             this.xrTableCell235.Name = "xrTableCell235";
             this.xrTableCell235.StylePriority.UseBorders = false;
@@ -3606,7 +3610,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             this.xrTableCell108,
             this.xrTableCell109});
             this.xrTableRow29.Name = "xrTableRow29";
-            this.xrTableRow29.Weight = 1D;
+            this.xrTableRow29.Weight = 1.6032698729128714D;
             // 
             // xrTableCell105
             // 
@@ -3653,7 +3657,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             // xrTableCell109
             // 
-            this.xrTableCell109.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.xrTableCell109.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.xrTableCell109.Multiline = true;
             this.xrTableCell109.Name = "xrTableCell109";
             this.xrTableCell109.StylePriority.UseBorders = false;
@@ -3717,7 +3721,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             // xrTableCell114
             // 
-            this.xrTableCell114.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.xrTableCell114.Borders = DevExpress.XtraPrinting.BorderSide.Right;
             this.xrTableCell114.Multiline = true;
             this.xrTableCell114.Name = "xrTableCell114";
             this.xrTableCell114.StylePriority.UseBorders = false;
@@ -3780,7 +3784,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             // xrTableCell119
             // 
-            this.xrTableCell119.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
+            this.xrTableCell119.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell119.Font = new System.Drawing.Font("Arial", 8F);
             this.xrTableCell119.Multiline = true;
             this.xrTableCell119.Name = "xrTableCell119";
@@ -3800,7 +3804,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             this.xrTableCell262,
             this.xrTableCell236});
             this.xrTableRow32.Name = "xrTableRow32";
-            this.xrTableRow32.Weight = 1D;
+            this.xrTableRow32.Weight = 0.84918253177178216D;
             // 
             // xrTableCell120
             // 
@@ -4040,11 +4044,11 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             this.xrTableCell273,
             this.xrTableCell274});
             this.xrTableRow37.Name = "xrTableRow37";
-            this.xrTableRow37.Weight = 1D;
+            this.xrTableRow37.Weight = 0.60801436160356792D;
             // 
             // xrTableCell273
             // 
-            this.xrTableCell273.Borders = DevExpress.XtraPrinting.BorderSide.Right;
+            this.xrTableCell273.Borders = DevExpress.XtraPrinting.BorderSide.Left;
             this.xrTableCell273.Multiline = true;
             this.xrTableCell273.Name = "xrTableCell273";
             this.xrTableCell273.StylePriority.UseBorders = false;
@@ -4067,11 +4071,11 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             this.xrTableCell271,
             this.xrTableCell272});
             this.xrTableRow38.Name = "xrTableRow38";
-            this.xrTableRow38.Weight = 1D;
+            this.xrTableRow38.Weight = 1.0000045553699752D;
             // 
             // xrTableCell281
             // 
-            this.xrTableCell281.Borders = DevExpress.XtraPrinting.BorderSide.Right;
+            this.xrTableCell281.Borders = DevExpress.XtraPrinting.BorderSide.Left;
             this.xrTableCell281.Multiline = true;
             this.xrTableCell281.Name = "xrTableCell281";
             this.xrTableCell281.StylePriority.UseBorders = false;
@@ -4111,11 +4115,11 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             this.xrTableCell270,
             this.xrTableCell292});
             this.xrTableRow39.Name = "xrTableRow39";
-            this.xrTableRow39.Weight = 1D;
+            this.xrTableRow39.Weight = 0.93968740767783521D;
             // 
             // xrTableCell289
             // 
-            this.xrTableCell289.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell289.Borders = DevExpress.XtraPrinting.BorderSide.Left;
             this.xrTableCell289.Multiline = true;
             this.xrTableCell289.Name = "xrTableCell289";
             this.xrTableCell289.StylePriority.UseBorders = false;
@@ -4145,7 +4149,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             // xrTableCell292
             // 
-            this.xrTableCell292.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
+            this.xrTableCell292.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell292.Multiline = true;
             this.xrTableCell292.Name = "xrTableCell292";
             this.xrTableCell292.StylePriority.UseBorders = false;
@@ -4159,11 +4163,11 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             this.xrTableRow40.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
             this.xrTableCell275});
             this.xrTableRow40.Name = "xrTableRow40";
-            this.xrTableRow40.Weight = 1D;
+            this.xrTableRow40.Weight = 1.7278529654527217D;
             // 
             // xrTableCell275
             // 
-            this.xrTableCell275.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.xrTableCell275.Borders = DevExpress.XtraPrinting.BorderSide.Left;
             this.xrTableCell275.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrTableCell275.Multiline = true;
             this.xrTableCell275.Name = "xrTableCell275";
@@ -4176,6 +4180,27 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             this.dsSanidad1.DataSetName = "dsSanidad";
             this.dsSanidad1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // xrPictureBox1
+            // 
+            this.xrPictureBox1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("img", resources.GetString("xrPictureBox1.ImageSource"));
+            this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(65.07379F, 0F);
+            this.xrPictureBox1.Name = "xrPictureBox1";
+            this.xrPictureBox1.SizeF = new System.Drawing.SizeF(75.87671F, 27.68331F);
+            this.xrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
+            // 
+            // xrTableCell36
+            // 
+            this.xrTableCell36.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right) 
+            | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell36.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrPictureBox1});
+            this.xrTableCell36.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell36.Multiline = true;
+            this.xrTableCell36.Name = "xrTableCell36";
+            this.xrTableCell36.StylePriority.UseBorders = false;
+            this.xrTableCell36.StylePriority.UseFont = false;
+            this.xrTableCell36.Weight = 0.52528836337002838D;
             // 
             // xrSanidad
             // 
@@ -4538,5 +4563,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
         private DevExpress.XtraReports.UI.XRTableCell xrProveedorTransporte;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell37;
         private DevExpress.XtraReports.UI.XRTableCell xrPaisDestino;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell36;
+        private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox1;
     }
 }
