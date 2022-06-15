@@ -866,5 +866,15 @@ namespace LOSA
             xfrmSanidadAdmin frm = new xfrmSanidadAdmin();
             frm.ShowDialog();
         }
+
+        private void cmdReportReqManual_Click(object sender, EventArgs e)
+        {
+            frmReporteRequisicionesManuales frm = new frmReporteRequisicionesManuales();
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+
+            frm.Show();
+                
+        }
     }
 }

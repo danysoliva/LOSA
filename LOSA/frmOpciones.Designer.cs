@@ -61,6 +61,7 @@
             this.btnLiquidos = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton14 = new DevExpress.XtraEditors.SimpleButton();
             this.tabEntregaMP = new DevExpress.XtraTab.XtraTabPage();
+            this.cmdReportReqManual = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btntarimasactivadasPT = new DevExpress.XtraEditors.SimpleButton();
             this.cmdOrdenesFabricacion = new DevExpress.XtraEditors.SimpleButton();
@@ -609,6 +610,7 @@
             // 
             this.tabEntregaMP.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.tabEntregaMP.Appearance.Header.Options.UseFont = true;
+            this.tabEntregaMP.Controls.Add(this.cmdReportReqManual);
             this.tabEntregaMP.Controls.Add(this.simpleButton1);
             this.tabEntregaMP.Controls.Add(this.btntarimasactivadasPT);
             this.tabEntregaMP.Controls.Add(this.cmdOrdenesFabricacion);
@@ -620,6 +622,21 @@
             this.tabEntregaMP.Size = new System.Drawing.Size(766, 409);
             this.tabEntregaMP.Text = "Entrega MP - PRD";
             this.tabEntregaMP.Paint += new System.Windows.Forms.PaintEventHandler(this.tabEntregaMP_Paint);
+            // 
+            // cmdReportReqManual
+            // 
+            this.cmdReportReqManual.Appearance.BackColor = System.Drawing.Color.Gainsboro;
+            this.cmdReportReqManual.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.25F);
+            this.cmdReportReqManual.Appearance.Options.UseBackColor = true;
+            this.cmdReportReqManual.Appearance.Options.UseFont = true;
+            this.cmdReportReqManual.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdReportReqManual.ImageOptions.Image = global::LOSA.Properties.Resources.seo_report32px_;
+            this.cmdReportReqManual.Location = new System.Drawing.Point(224, 15);
+            this.cmdReportReqManual.Name = "cmdReportReqManual";
+            this.cmdReportReqManual.Size = new System.Drawing.Size(199, 42);
+            this.cmdReportReqManual.TabIndex = 39;
+            this.cmdReportReqManual.Text = "Reporte de \r\nRequisiciones Manuales";
+            this.cmdReportReqManual.Click += new System.EventHandler(this.cmdReportReqManual_Click);
             // 
             // simpleButton1
             // 
@@ -1608,5 +1625,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton33;
         private DevExpress.XtraEditors.SimpleButton btnClientesLote;
         private DevExpress.XtraEditors.SimpleButton simpleButton34;
+        private DevExpress.XtraEditors.SimpleButton cmdReportReqManual;
     }
 }
