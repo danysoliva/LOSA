@@ -47,13 +47,14 @@ namespace LOSA.Reportes
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_usuario = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colUsuarioSolicita = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPPOrder = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label9 = new System.Windows.Forms.Label();
             this.dtHasta = new DevExpress.XtraEditors.DateEdit();
             this.label6 = new System.Windows.Forms.Label();
             this.dtDesde = new DevExpress.XtraEditors.DateEdit();
             this.btnFiltrar = new DevExpress.XtraEditors.SimpleButton();
-            this.colPPOrder = new DevExpress.XtraGrid.Columns.GridColumn();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsReportesRequisicionesManuales1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -126,7 +127,8 @@ namespace LOSA.Reportes
             this.gridColumn1,
             this.colid_usuario,
             this.colUsuarioSolicita,
-            this.colPPOrder});
+            this.colPPOrder,
+            this.colcodigo});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
@@ -173,21 +175,21 @@ namespace LOSA.Reportes
             this.colMPSAPCODE.FieldName = "MP SAP CODE";
             this.colMPSAPCODE.Name = "colMPSAPCODE";
             this.colMPSAPCODE.Visible = true;
-            this.colMPSAPCODE.VisibleIndex = 4;
+            this.colMPSAPCODE.VisibleIndex = 5;
             // 
             // colNombreMP
             // 
             this.colNombreMP.FieldName = "Nombre MP";
             this.colNombreMP.Name = "colNombreMP";
             this.colNombreMP.Visible = true;
-            this.colNombreMP.VisibleIndex = 5;
+            this.colNombreMP.VisibleIndex = 6;
             // 
             // gridColumn1
             // 
             this.gridColumn1.FieldName = "Cant. Solicitada Kg";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 6;
+            this.gridColumn1.VisibleIndex = 7;
             // 
             // colid_usuario
             // 
@@ -199,7 +201,12 @@ namespace LOSA.Reportes
             this.colUsuarioSolicita.FieldName = "Usuario Solicita";
             this.colUsuarioSolicita.Name = "colUsuarioSolicita";
             this.colUsuarioSolicita.Visible = true;
-            this.colUsuarioSolicita.VisibleIndex = 7;
+            this.colUsuarioSolicita.VisibleIndex = 8;
+            // 
+            // colPPOrder
+            // 
+            this.colPPOrder.FieldName = "PP Order";
+            this.colPPOrder.Name = "colPPOrder";
             // 
             // label9
             // 
@@ -261,14 +268,17 @@ namespace LOSA.Reportes
             this.btnFiltrar.Text = "Cargar";
             this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
-            // colPPOrder
-            // 
-            this.colPPOrder.FieldName = "PP Order";
-            this.colPPOrder.Name = "colPPOrder";
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // colcodigo
+            // 
+            this.colcodigo.Caption = "Código";
+            this.colcodigo.FieldName = "codigo";
+            this.colcodigo.Name = "colcodigo";
+            this.colcodigo.Visible = true;
+            this.colcodigo.VisibleIndex = 4;
             // 
             // frmReporteRequisicionesManuales
             // 
@@ -323,5 +333,6 @@ namespace LOSA.Reportes
         private DevExpress.XtraGrid.Columns.GridColumn colUsuarioSolicita;
         private DevExpress.XtraGrid.Columns.GridColumn colPPOrder;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private DevExpress.XtraGrid.Columns.GridColumn colcodigo;
     }
 }

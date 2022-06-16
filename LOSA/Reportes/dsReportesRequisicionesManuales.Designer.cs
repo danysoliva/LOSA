@@ -303,6 +303,8 @@ namespace LOSA.Reportes {
             
             private global::System.Data.DataColumn columnPP_Order;
             
+            private global::System.Data.DataColumn columncodigo;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public reporte_requisicionesDataTable() {
@@ -434,6 +436,14 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn codigoColumn {
+                get {
+                    return this.columncodigo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -469,7 +479,7 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public reporte_requisicionesRow Addreporte_requisicionesRow(int Cod_Id, long id_orden, System.DateTime Fecha, int Doc_Num, string Code_SAP_PT, string Nombre_PT, string MP_SAP_CODE, string Nombre_MP, decimal _Cant__Solicitada_Kg, int id_usuario, string Usuario_Solicita, string PP_Order) {
+            public reporte_requisicionesRow Addreporte_requisicionesRow(int Cod_Id, long id_orden, System.DateTime Fecha, int Doc_Num, string Code_SAP_PT, string Nombre_PT, string MP_SAP_CODE, string Nombre_MP, decimal _Cant__Solicitada_Kg, int id_usuario, string Usuario_Solicita, string PP_Order, string codigo) {
                 reporte_requisicionesRow rowreporte_requisicionesRow = ((reporte_requisicionesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Cod_Id,
@@ -483,7 +493,8 @@ namespace LOSA.Reportes {
                         _Cant__Solicitada_Kg,
                         id_usuario,
                         Usuario_Solicita,
-                        PP_Order};
+                        PP_Order,
+                        codigo};
                 rowreporte_requisicionesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowreporte_requisicionesRow);
                 return rowreporte_requisicionesRow;
@@ -518,6 +529,7 @@ namespace LOSA.Reportes {
                 this.columnid_usuario = base.Columns["id_usuario"];
                 this.columnUsuario_Solicita = base.Columns["Usuario Solicita"];
                 this.columnPP_Order = base.Columns["PP Order"];
+                this.columncodigo = base.Columns["codigo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -549,6 +561,8 @@ namespace LOSA.Reportes {
                 base.Columns.Add(this.columnUsuario_Solicita);
                 this.columnPP_Order = new global::System.Data.DataColumn("PP Order", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPP_Order);
+                this.columncodigo = new global::System.Data.DataColumn("codigo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncodigo);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -890,6 +904,22 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string codigo {
+                get {
+                    try {
+                        return ((string)(this[this.tablereporte_requisiciones.codigoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'codigo\' de la tabla \'reporte_requisiciones\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablereporte_requisiciones.codigoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsCod_IdNull() {
                 return this.IsNull(this.tablereporte_requisiciones.Cod_IdColumn);
             }
@@ -1030,6 +1060,18 @@ namespace LOSA.Reportes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetPP_OrderNull() {
                 this[this.tablereporte_requisiciones.PP_OrderColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IscodigoNull() {
+                return this.IsNull(this.tablereporte_requisiciones.codigoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetcodigoNull() {
+                this[this.tablereporte_requisiciones.codigoColumn] = global::System.Convert.DBNull;
             }
         }
         
