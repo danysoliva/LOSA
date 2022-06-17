@@ -124,6 +124,7 @@
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton35 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -1418,6 +1419,7 @@
             // 
             // txtProduccion
             // 
+            this.txtProduccion.Controls.Add(this.simpleButton35);
             this.txtProduccion.Controls.Add(this.cmdReporteReqManuales);
             this.txtProduccion.Controls.Add(this.simpleButton15);
             this.txtProduccion.Controls.Add(this.simpleButton12);
@@ -1496,6 +1498,21 @@
             this.labelControl3.Size = new System.Drawing.Size(515, 39);
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
+            // 
+            // simpleButton35
+            // 
+            this.simpleButton35.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton35.Appearance.Options.UseFont = true;
+            this.simpleButton35.Appearance.Options.UseTextOptions = true;
+            this.simpleButton35.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton35.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton35.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton35.ImageOptions.Image")));
+            this.simpleButton35.Location = new System.Drawing.Point(248, 20);
+            this.simpleButton35.Name = "simpleButton35";
+            this.simpleButton35.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton35.TabIndex = 21;
+            this.simpleButton35.Text = "Reporte Entregas a Producción";
+            this.simpleButton35.Click += new System.EventHandler(this.simpleButton35_Click);
             // 
             // frmOpciones
             // 
@@ -1626,5 +1643,6 @@
         private DevExpress.XtraEditors.SimpleButton btnClientesLote;
         private DevExpress.XtraEditors.SimpleButton simpleButton34;
         private DevExpress.XtraEditors.SimpleButton cmdReportReqManual;
+        private DevExpress.XtraEditors.SimpleButton simpleButton35;
     }
 }

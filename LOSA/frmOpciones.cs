@@ -874,7 +874,17 @@ namespace LOSA
                 frm.MdiParent = this.MdiParent;
 
             frm.Show();
-                
+            //frmrptMpEntregadaaProduccion
+        }
+
+        private void simpleButton35_Click(object sender, EventArgs e)
+        {
+            frmrptMpEntregadaaProduccion frm = new frmrptMpEntregadaaProduccion();
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+
+            frm.Show();
+            //
         }
     }
 }
