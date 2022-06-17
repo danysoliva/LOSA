@@ -55,6 +55,7 @@ namespace LOSA.Reportes
             this.dtHasta = new DevExpress.XtraEditors.DateEdit();
             this.dtDesde = new DevExpress.XtraEditors.DateEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridDetalleReq)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsReportes1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -101,7 +102,8 @@ namespace LOSA.Reportes
             this.colDocEntry,
             this.colcomentario,
             this.colbarcode,
-            this.colid_requisa});
+            this.colid_requisa,
+            this.colcodigo});
             this.gridView1.GridControl = this.gridDetalleReq;
             this.gridView1.Name = "gridView1";
             // 
@@ -151,7 +153,7 @@ namespace LOSA.Reportes
             this.colmp.Name = "colmp";
             this.colmp.OptionsColumn.AllowEdit = false;
             this.colmp.Visible = true;
-            this.colmp.VisibleIndex = 3;
+            this.colmp.VisibleIndex = 4;
             this.colmp.Width = 109;
             // 
             // colid_orden
@@ -168,7 +170,7 @@ namespace LOSA.Reportes
             this.colfecha_solicitada.Name = "colfecha_solicitada";
             this.colfecha_solicitada.OptionsColumn.AllowEdit = false;
             this.colfecha_solicitada.Visible = true;
-            this.colfecha_solicitada.VisibleIndex = 4;
+            this.colfecha_solicitada.VisibleIndex = 5;
             this.colfecha_solicitada.Width = 109;
             // 
             // colfecha_a_producir
@@ -189,7 +191,7 @@ namespace LOSA.Reportes
             this.colestado_descripcion.Name = "colestado_descripcion";
             this.colestado_descripcion.OptionsColumn.AllowEdit = false;
             this.colestado_descripcion.Visible = true;
-            this.colestado_descripcion.VisibleIndex = 5;
+            this.colestado_descripcion.VisibleIndex = 6;
             this.colestado_descripcion.Width = 109;
             // 
             // colDocEntry
@@ -204,7 +206,7 @@ namespace LOSA.Reportes
             this.colcomentario.Name = "colcomentario";
             this.colcomentario.OptionsColumn.AllowEdit = false;
             this.colcomentario.Visible = true;
-            this.colcomentario.VisibleIndex = 6;
+            this.colcomentario.VisibleIndex = 7;
             this.colcomentario.Width = 109;
             // 
             // colbarcode
@@ -213,7 +215,7 @@ namespace LOSA.Reportes
             this.colbarcode.Name = "colbarcode";
             this.colbarcode.OptionsColumn.AllowEdit = false;
             this.colbarcode.Visible = true;
-            this.colbarcode.VisibleIndex = 7;
+            this.colbarcode.VisibleIndex = 8;
             this.colbarcode.Width = 109;
             // 
             // colid_requisa
@@ -222,7 +224,7 @@ namespace LOSA.Reportes
             this.colid_requisa.Name = "colid_requisa";
             this.colid_requisa.OptionsColumn.AllowEdit = false;
             this.colid_requisa.Visible = true;
-            this.colid_requisa.VisibleIndex = 8;
+            this.colid_requisa.VisibleIndex = 9;
             this.colid_requisa.Width = 114;
             // 
             // btnAtras
@@ -326,6 +328,14 @@ namespace LOSA.Reportes
             this.labelControl1.TabIndex = 18;
             this.labelControl1.Text = "Requisiciones Adicionales Solicitadas";
             // 
+            // colcodigo
+            // 
+            this.colcodigo.Caption = "Codigo";
+            this.colcodigo.FieldName = "codigo";
+            this.colcodigo.Name = "colcodigo";
+            this.colcodigo.Visible = true;
+            this.colcodigo.VisibleIndex = 3;
+            // 
             // frmRequisicionesManualesReporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -380,5 +390,6 @@ namespace LOSA.Reportes
         private DevExpress.XtraGrid.Columns.GridColumn colcomentario;
         private DevExpress.XtraGrid.Columns.GridColumn colbarcode;
         private DevExpress.XtraGrid.Columns.GridColumn colid_requisa;
+        private DevExpress.XtraGrid.Columns.GridColumn colcodigo;
     }
 }

@@ -6823,6 +6823,8 @@ namespace LOSA.Reportes {
             
             private global::System.Data.DataColumn columnid_requisa;
             
+            private global::System.Data.DataColumn columncodigo;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public rpt_requisiciones_manualesDataTable() {
@@ -6978,6 +6980,14 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn codigoColumn {
+                get {
+                    return this.columncodigo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -7013,7 +7023,23 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public rpt_requisiciones_manualesRow Addrpt_requisiciones_manualesRow(int id, int id_usuario, string usuario_s, decimal cantidad_solicitada, int id_materia_prima, string mp, int id_orden, System.DateTime fecha_solicitada, System.DateTime fecha_a_producir, int id_estado, string estado_descripcion, string DocEntry, string comentario, string barcode, int id_requisa) {
+            public rpt_requisiciones_manualesRow Addrpt_requisiciones_manualesRow(
+                        int id, 
+                        int id_usuario, 
+                        string usuario_s, 
+                        decimal cantidad_solicitada, 
+                        int id_materia_prima, 
+                        string mp, 
+                        int id_orden, 
+                        System.DateTime fecha_solicitada, 
+                        System.DateTime fecha_a_producir, 
+                        int id_estado, 
+                        string estado_descripcion, 
+                        string DocEntry, 
+                        string comentario, 
+                        string barcode, 
+                        int id_requisa, 
+                        string codigo) {
                 rpt_requisiciones_manualesRow rowrpt_requisiciones_manualesRow = ((rpt_requisiciones_manualesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -7030,7 +7056,8 @@ namespace LOSA.Reportes {
                         DocEntry,
                         comentario,
                         barcode,
-                        id_requisa};
+                        id_requisa,
+                        codigo};
                 rowrpt_requisiciones_manualesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowrpt_requisiciones_manualesRow);
                 return rowrpt_requisiciones_manualesRow;
@@ -7068,6 +7095,7 @@ namespace LOSA.Reportes {
                 this.columncomentario = base.Columns["comentario"];
                 this.columnbarcode = base.Columns["barcode"];
                 this.columnid_requisa = base.Columns["id_requisa"];
+                this.columncodigo = base.Columns["codigo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7103,6 +7131,8 @@ namespace LOSA.Reportes {
                 base.Columns.Add(this.columnbarcode);
                 this.columnid_requisa = new global::System.Data.DataColumn("id_requisa", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_requisa);
+                this.columncodigo = new global::System.Data.DataColumn("codigo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncodigo);
                 this.columnid.Caption = "# Requisa Manual";
                 this.columnusuario_s.Caption = "Usuario Solicita";
                 this.columncantidad_solicitada.Caption = "Cantidad Solicitada";
@@ -12902,6 +12932,23 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string codigo {
+                get {
+                    try {
+                        return ((string)(this[this.tablerpt_requisiciones_manuales.codigoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'codigo\' de la tabla \'rpt_requisiciones_manuales\' es DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tablerpt_requisiciones_manuales.codigoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tablerpt_requisiciones_manuales.idColumn);
             }
@@ -13078,6 +13125,18 @@ namespace LOSA.Reportes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setid_requisaNull() {
                 this[this.tablerpt_requisiciones_manuales.id_requisaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IscodigoNull() {
+                return this.IsNull(this.tablerpt_requisiciones_manuales.codigoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetcodigoNull() {
+                this[this.tablerpt_requisiciones_manuales.codigoColumn] = global::System.Convert.DBNull;
             }
         }
         

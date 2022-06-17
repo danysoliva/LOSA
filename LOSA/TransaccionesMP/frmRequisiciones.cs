@@ -95,6 +95,7 @@ namespace LOSA.TransaccionesMP
             Requisiciones.Reportes.lblNumeroReq report = new Requisiciones.Reportes.lblNumeroReq(row.id);
             report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
             report.ShowPrintMarginsWarning = false;
+            //report.ShowPreview();
             report.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
             report.Print();
 

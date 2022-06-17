@@ -867,16 +867,14 @@ namespace LOSA
             frm.ShowDialog();
         }
 
-        private void simpleButton35_Click(object sender, EventArgs e)
+        private void cmdReportReqManual_Click(object sender, EventArgs e)
         {
-            frmrptMpEntregadaaProduccion frm = new frmrptMpEntregadaaProduccion();
+            frmReporteRequisicionesManuales frm = new frmReporteRequisicionesManuales();
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+
             frm.Show();
-
-        }
-
-        private void TabMP_Sacos_Paint(object sender, PaintEventArgs e)
-        {
-
+                
         }
     }
 }
