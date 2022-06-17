@@ -876,5 +876,10 @@ namespace LOSA
             frm.Show();
                 
         }
+
+        private void xtraTabControl1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

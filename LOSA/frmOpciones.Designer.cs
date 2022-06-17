@@ -63,7 +63,6 @@
             this.tabEntregaMP = new DevExpress.XtraTab.XtraTabPage();
             this.cmdReportReqManual = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.btntarimasactivadasPT = new DevExpress.XtraEditors.SimpleButton();
             this.cmdOrdenesFabricacion = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton13 = new DevExpress.XtraEditors.SimpleButton();
             this.btnPlantarimas = new DevExpress.XtraEditors.SimpleButton();
@@ -72,6 +71,7 @@
             this.tabPT = new DevExpress.XtraTab.XtraTabPage();
             this.simpleButton31 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton22 = new DevExpress.XtraEditors.SimpleButton();
+            this.btntarimasactivadasPT = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton21 = new DevExpress.XtraEditors.SimpleButton();
             this.btndespachos = new DevExpress.XtraEditors.SimpleButton();
             this.btnMPReproceso = new DevExpress.XtraEditors.SimpleButton();
@@ -288,6 +288,7 @@
             this.tabPT,
             this.tabMasterData,
             this.tabReportes});
+            this.xtraTabControl1.Click += new System.EventHandler(this.xtraTabControl1_Click);
             // 
             // TabMP_Sacos
             // 
@@ -651,22 +652,6 @@
             this.simpleButton1.TabIndex = 20;
             this.simpleButton1.Text = "Requerido vs Entregado";
             // 
-            // btntarimasactivadasPT
-            // 
-            this.btntarimasactivadasPT.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.btntarimasactivadasPT.Appearance.Options.UseFont = true;
-            this.btntarimasactivadasPT.Appearance.Options.UseTextOptions = true;
-            this.btntarimasactivadasPT.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btntarimasactivadasPT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btntarimasactivadasPT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btntarimasactivadasPT.ImageOptions.Image")));
-            this.btntarimasactivadasPT.Location = new System.Drawing.Point(208, 156);
-            this.btntarimasactivadasPT.Margin = new System.Windows.Forms.Padding(2);
-            this.btntarimasactivadasPT.Name = "btntarimasactivadasPT";
-            this.btntarimasactivadasPT.Size = new System.Drawing.Size(199, 42);
-            this.btntarimasactivadasPT.TabIndex = 37;
-            this.btntarimasactivadasPT.Text = " Ingreso PT";
-            this.btntarimasactivadasPT.Click += new System.EventHandler(this.btntarimasactivadasPT_Click);
-            // 
             // cmdOrdenesFabricacion
             // 
             this.cmdOrdenesFabricacion.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
@@ -775,6 +760,22 @@
             this.simpleButton22.TabIndex = 42;
             this.simpleButton22.Text = "Inventario de PT";
             this.simpleButton22.Click += new System.EventHandler(this.simpleButton22_Click);
+            // 
+            // btntarimasactivadasPT
+            // 
+            this.btntarimasactivadasPT.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.btntarimasactivadasPT.Appearance.Options.UseFont = true;
+            this.btntarimasactivadasPT.Appearance.Options.UseTextOptions = true;
+            this.btntarimasactivadasPT.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btntarimasactivadasPT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btntarimasactivadasPT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btntarimasactivadasPT.ImageOptions.Image")));
+            this.btntarimasactivadasPT.Location = new System.Drawing.Point(208, 156);
+            this.btntarimasactivadasPT.Margin = new System.Windows.Forms.Padding(2);
+            this.btntarimasactivadasPT.Name = "btntarimasactivadasPT";
+            this.btntarimasactivadasPT.Size = new System.Drawing.Size(199, 42);
+            this.btntarimasactivadasPT.TabIndex = 37;
+            this.btntarimasactivadasPT.Text = " Ingreso PT";
+            this.btntarimasactivadasPT.Click += new System.EventHandler(this.btntarimasactivadasPT_Click);
             // 
             // simpleButton21
             // 
