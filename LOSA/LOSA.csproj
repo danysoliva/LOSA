@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\aqfsvr003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>314</ApplicationRevision>
+    <ApplicationRevision>319</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -2318,6 +2318,9 @@
     <Compile Include="Tools\frmInputBox.Designer.cs">
       <DependentUpon>frmInputBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\dsGranelLoteactivo.cs">
+      <DependentUpon>dsGranelLoteactivo.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesMP\dsGranelLoteactivo.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2395,6 +2398,12 @@
     </Compile>
     <Compile Include="TransaccionesMP\frmGestionUbicaciones.Designer.cs">
       <DependentUpon>frmGestionUbicaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmlogMovimientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmlogMovimientos.Designer.cs">
+      <DependentUpon>frmlogMovimientos.cs</DependentUpon>
     </Compile>
     <Compile Include="TransaccionesMP\frmLoteActivoGranel.cs">
       <SubType>Form</SubType>
@@ -3665,6 +3674,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmGestionUbicaciones.resx">
       <DependentUpon>frmGestionUbicaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmlogMovimientos.resx">
+      <DependentUpon>frmlogMovimientos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmLoteActivoGranel.resx">
       <DependentUpon>frmLoteActivoGranel.cs</DependentUpon>

@@ -95,5 +95,10 @@ namespace LOSA.TransaccionesMP
                 }
             }
         }
+
+        private void btn_logmovimiento_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

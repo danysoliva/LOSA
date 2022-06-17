@@ -79,10 +79,10 @@ namespace LOSA.RecepcionMP
             //imprimir
             var gridView = (GridView)gridControl1.FocusedView;
             var row = (dsRecepcionMPx.lista_tarimasRow)gridView.GetFocusedDataRow();
-            rptReporteIngresoTarima report = new rptReporteIngresoTarima(row.id);
-            report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
-            ReportPrintTool printReport = new ReportPrintTool(report);
-            printReport.ShowPreview();
+            rptReporteIngresoTarima boleta = new rptReporteIngresoTarima(row.id);
+            boleta.ShowPrintMarginsWarning = false;
+            boleta.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
+            boleta.Print();
         }
 
         private void cmdDuplicar_Click(object sender, EventArgs e)
@@ -176,10 +176,10 @@ namespace LOSA.RecepcionMP
                             foreach (int i in List1)
                             {
                                 int id_tarimax = i;
-                                rptReporteIngresoTarima report = new rptReporteIngresoTarima(id_tarimax);
-                                report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
-                                ReportPrintTool printReport = new ReportPrintTool(report);
-                                printReport.ShowPreview();
+                                rptReporteIngresoTarima boleta = new rptReporteIngresoTarima(id_tarimax);
+                                boleta.ShowPrintMarginsWarning = false;
+                                boleta.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
+                                boleta.Print();
                             }
                         }
                         LoadTarimas();
@@ -188,7 +188,11 @@ namespace LOSA.RecepcionMP
                 }//end if recuperar registro
             }//end dialog 
         }
-
+        private void PrintingSystem_StartPrint(object sender, DevExpress.XtraPrinting.PrintDocumentEventArgs e)
+        {
+            //Indica el numero de copias de la boleta que seran impresas
+            e.PrintDocument.PrinterSettings.Copies = 1;
+        }
         private void btnEditar_Click(object sender, EventArgs e)
         {
             var gridView = (GridView)gridControl1.FocusedView;

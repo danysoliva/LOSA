@@ -15,7 +15,7 @@ using System.Windows.Forms;
 namespace LOSA.TransaccionesMP
 {
     public partial class frmSeleccionLote : Form
-    {
+    {   
         UserLogin UsuarioLogeado;
         int IdRequisicionDetalle;
         MateriaPrima MP;

@@ -30,6 +30,11 @@ namespace LOSA.TransaccionesMP
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReporteInventarioKardexGeneral));
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
@@ -47,6 +52,12 @@ namespace LOSA.TransaccionesMP
             this.colnumero_transaccion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcproveedor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colproveedor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcodigo1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colingreso = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colsalidas = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcode_sap1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLog = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btn_logmovimiento = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.grd_data_resumen = new DevExpress.XtraGrid.GridControl();
             this.grdv_data_resumen = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -62,6 +73,7 @@ namespace LOSA.TransaccionesMP
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTarima)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_logmovimiento)).BeginInit();
             this.tabNavigationPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data_resumen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data_resumen)).BeginInit();
@@ -121,6 +133,8 @@ namespace LOSA.TransaccionesMP
             this.grd_data.Location = new System.Drawing.Point(0, 0);
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
+            this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.btn_logmovimiento});
             this.grd_data.Size = new System.Drawing.Size(1362, 648);
             this.grd_data.TabIndex = 0;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -162,7 +176,12 @@ namespace LOSA.TransaccionesMP
             this.colfecha_ingreso,
             this.colnumero_transaccion,
             this.colcproveedor,
-            this.colproveedor});
+            this.colproveedor,
+            this.colcodigo1,
+            this.colingreso,
+            this.colsalidas,
+            this.colcode_sap1,
+            this.colLog});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
@@ -180,8 +199,8 @@ namespace LOSA.TransaccionesMP
             this.colexistencia.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia", "{0:0.##.##} Kg.")});
             this.colexistencia.Visible = true;
-            this.colexistencia.VisibleIndex = 8;
-            this.colexistencia.Width = 152;
+            this.colexistencia.VisibleIndex = 12;
+            this.colexistencia.Width = 97;
             // 
             // colnombre_comercial
             // 
@@ -190,8 +209,8 @@ namespace LOSA.TransaccionesMP
             this.colnombre_comercial.Name = "colnombre_comercial";
             this.colnombre_comercial.OptionsColumn.AllowEdit = false;
             this.colnombre_comercial.Visible = true;
-            this.colnombre_comercial.VisibleIndex = 0;
-            this.colnombre_comercial.Width = 235;
+            this.colnombre_comercial.VisibleIndex = 2;
+            this.colnombre_comercial.Width = 192;
             // 
             // colfecha_vence
             // 
@@ -200,8 +219,8 @@ namespace LOSA.TransaccionesMP
             this.colfecha_vence.Name = "colfecha_vence";
             this.colfecha_vence.OptionsColumn.AllowEdit = false;
             this.colfecha_vence.Visible = true;
-            this.colfecha_vence.VisibleIndex = 6;
-            this.colfecha_vence.Width = 141;
+            this.colfecha_vence.VisibleIndex = 8;
+            this.colfecha_vence.Width = 110;
             // 
             // colfecha_produccion
             // 
@@ -210,8 +229,8 @@ namespace LOSA.TransaccionesMP
             this.colfecha_produccion.Name = "colfecha_produccion";
             this.colfecha_produccion.OptionsColumn.AllowEdit = false;
             this.colfecha_produccion.Visible = true;
-            this.colfecha_produccion.VisibleIndex = 5;
-            this.colfecha_produccion.Width = 141;
+            this.colfecha_produccion.VisibleIndex = 7;
+            this.colfecha_produccion.Width = 110;
             // 
             // colid_mp
             // 
@@ -226,8 +245,8 @@ namespace LOSA.TransaccionesMP
             this.collote.Name = "collote";
             this.collote.OptionsColumn.AllowEdit = false;
             this.collote.Visible = true;
-            this.collote.VisibleIndex = 4;
-            this.collote.Width = 141;
+            this.collote.VisibleIndex = 5;
+            this.collote.Width = 110;
             // 
             // coldias
             // 
@@ -236,8 +255,8 @@ namespace LOSA.TransaccionesMP
             this.coldias.Name = "coldias";
             this.coldias.OptionsColumn.AllowEdit = false;
             this.coldias.Visible = true;
-            this.coldias.VisibleIndex = 7;
-            this.coldias.Width = 141;
+            this.coldias.VisibleIndex = 9;
+            this.coldias.Width = 63;
             // 
             // colfecha_ingreso
             // 
@@ -246,8 +265,8 @@ namespace LOSA.TransaccionesMP
             this.colfecha_ingreso.Name = "colfecha_ingreso";
             this.colfecha_ingreso.OptionsColumn.AllowEdit = false;
             this.colfecha_ingreso.Visible = true;
-            this.colfecha_ingreso.VisibleIndex = 1;
-            this.colfecha_ingreso.Width = 64;
+            this.colfecha_ingreso.VisibleIndex = 6;
+            this.colfecha_ingreso.Width = 88;
             // 
             // colnumero_transaccion
             // 
@@ -256,8 +275,8 @@ namespace LOSA.TransaccionesMP
             this.colnumero_transaccion.Name = "colnumero_transaccion";
             this.colnumero_transaccion.OptionsColumn.AllowEdit = false;
             this.colnumero_transaccion.Visible = true;
-            this.colnumero_transaccion.VisibleIndex = 3;
-            this.colnumero_transaccion.Width = 120;
+            this.colnumero_transaccion.VisibleIndex = 4;
+            this.colnumero_transaccion.Width = 94;
             // 
             // colcproveedor
             // 
@@ -272,8 +291,70 @@ namespace LOSA.TransaccionesMP
             this.colproveedor.Name = "colproveedor";
             this.colproveedor.OptionsColumn.AllowEdit = false;
             this.colproveedor.Visible = true;
-            this.colproveedor.VisibleIndex = 2;
-            this.colproveedor.Width = 209;
+            this.colproveedor.VisibleIndex = 3;
+            this.colproveedor.Width = 163;
+            // 
+            // colcodigo1
+            // 
+            this.colcodigo1.Caption = "Codigo";
+            this.colcodigo1.FieldName = "codigo";
+            this.colcodigo1.Name = "colcodigo1";
+            this.colcodigo1.OptionsColumn.AllowEdit = false;
+            this.colcodigo1.Visible = true;
+            this.colcodigo1.VisibleIndex = 0;
+            this.colcodigo1.Width = 61;
+            // 
+            // colingreso
+            // 
+            this.colingreso.Caption = "Ingreso";
+            this.colingreso.DisplayFormat.FormatString = "{0:0.##.##} Kg.";
+            this.colingreso.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colingreso.FieldName = "ingreso";
+            this.colingreso.Name = "colingreso";
+            this.colingreso.OptionsColumn.AllowEdit = false;
+            this.colingreso.Visible = true;
+            this.colingreso.VisibleIndex = 10;
+            this.colingreso.Width = 106;
+            // 
+            // colsalidas
+            // 
+            this.colsalidas.Caption = "Salida";
+            this.colsalidas.DisplayFormat.FormatString = "{0:0.##.##} Kg.";
+            this.colsalidas.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colsalidas.FieldName = "salidas";
+            this.colsalidas.Name = "colsalidas";
+            this.colsalidas.OptionsColumn.AllowEdit = false;
+            this.colsalidas.Visible = true;
+            this.colsalidas.VisibleIndex = 11;
+            this.colsalidas.Width = 89;
+            // 
+            // colcode_sap1
+            // 
+            this.colcode_sap1.Caption = "Codigo SAP";
+            this.colcode_sap1.FieldName = "code_sap";
+            this.colcode_sap1.Name = "colcode_sap1";
+            this.colcode_sap1.OptionsColumn.AllowEdit = false;
+            this.colcode_sap1.Visible = true;
+            this.colcode_sap1.VisibleIndex = 1;
+            this.colcode_sap1.Width = 61;
+            // 
+            // colLog
+            // 
+            this.colLog.Caption = "Log de movimiento";
+            this.colLog.ColumnEdit = this.btn_logmovimiento;
+            this.colLog.Name = "colLog";
+            this.colLog.Visible = true;
+            this.colLog.VisibleIndex = 13;
+            // 
+            // btn_logmovimiento
+            // 
+            this.btn_logmovimiento.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            this.btn_logmovimiento.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btn_logmovimiento.Name = "btn_logmovimiento";
+            this.btn_logmovimiento.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btn_logmovimiento.Click += new System.EventHandler(this.btn_logmovimiento_Click);
             // 
             // tabNavigationPage2
             // 
@@ -405,6 +486,7 @@ namespace LOSA.TransaccionesMP
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTarima)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_logmovimiento)).EndInit();
             this.tabNavigationPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grd_data_resumen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data_resumen)).EndInit();
@@ -440,5 +522,11 @@ namespace LOSA.TransaccionesMP
         private DevExpress.XtraGrid.Columns.GridColumn colcproveedor;
         private DevExpress.XtraGrid.Columns.GridColumn colproveedor;
         private DevExpress.XtraEditors.SimpleButton btnExcel;
+        private DevExpress.XtraGrid.Columns.GridColumn colcodigo1;
+        private DevExpress.XtraGrid.Columns.GridColumn colcode_sap1;
+        private DevExpress.XtraGrid.Columns.GridColumn colLog;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btn_logmovimiento;
+        private DevExpress.XtraGrid.Columns.GridColumn colingreso;
+        private DevExpress.XtraGrid.Columns.GridColumn colsalidas;
     }
 }

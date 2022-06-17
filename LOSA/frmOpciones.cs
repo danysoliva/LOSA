@@ -866,5 +866,17 @@ namespace LOSA
             xfrmSanidadAdmin frm = new xfrmSanidadAdmin();
             frm.ShowDialog();
         }
+
+        private void simpleButton35_Click(object sender, EventArgs e)
+        {
+            frmrptMpEntregadaaProduccion frm = new frmrptMpEntregadaaProduccion();
+            frm.Show();
+
+        }
+
+        private void TabMP_Sacos_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
