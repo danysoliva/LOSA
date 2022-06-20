@@ -261,5 +261,83 @@ namespace LOSA.RecepcionMP
                 
             }
         }
+
+        private void btnPrintSeleccionados_Click(object sender, EventArgs e)
+        {
+            var gridView = (GridView)gridControl1.FocusedView;
+
+            int contador_print = 0;
+            rptReporteIngresoTarima reportResumen = null;
+            for (int i = 0; i < gridView.RowCount; i++)
+            {
+                var row = (dsRecepcionMPx.lista_tarimasRow)gridView.GetDataRow(i);
+
+                if (row.seleccionado == true)
+                {
+                    if (row.id > 0)
+                    {
+                        Tarima tar1 = new Tarima();
+                        if (tar1.RecuperarRegistro(row.id))
+                        {
+                            if (contador_print == 0)
+                            {
+                                reportResumen = new rptReporteIngresoTarima(row.id);
+                                reportResumen.CreateDocument();
+                                contador_print++;
+                            }
+                            else
+                            {
+                                // Create the second report and generate its document.
+                                rptReporteIngresoTarima report2 = new rptReporteIngresoTarima(row.id);
+                                report2.CreateDocument();
+
+                                if (reportResumen != null)
+                                {
+                                    // Add all pages of the second report to the end of the first report.
+                                    reportResumen.ModifyDocument(x => 
+                                    { 
+                                        x.AddPages(report2.Pages); 
+                                    });
+                                }
+                            }
+                        }
+                    }//if row.id>0
+                }//if seleccionado is true
+            }//For
+            if (reportResumen != null)
+            {
+                using (ReportPrintTool printTool = new ReportPrintTool(reportResumen))
+                {
+                    printTool.ShowPreviewDialog();
+                }
+            }
+
+        }
+
+        private void checkBoxSelectAll_CheckedChanged(object sender, EventArgs e)
+        {
+            var gridView = (GridView)gridControl1.FocusedView;
+            int conta = dsRecepcionMPx.lista_tarimas.Count;
+
+            for (int i = 0; i < conta; i++)
+            {
+                dsRecepcionMPx.lista_tarimasRow row = (dsRecepcionMPx.lista_tarimasRow)gridView.GetDataRow(i);
+                int r = gridView.GetVisibleRowHandle(i);
+                if (r >= 0)
+                {
+                    if (row != null)
+                    {
+                        row.seleccionado = checkBoxSelectAll.Checked;
+                    }
+                }
+                else
+                {
+                    if (row != null)
+                    {
+                        row.seleccionado = false;
+                    }
+                }
+            }
+        }
     }
 }
