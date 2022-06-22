@@ -65,6 +65,9 @@ namespace LOSA.Logistica
             this.coldetalle = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnOc = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colLineNum = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tsFiltroxMP = new DevExpress.XtraEditors.ToggleSwitch();
+            this.lblFiltroMP = new DevExpress.XtraEditors.LabelControl();
+            this.btnExport = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grd_mps.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.materiaprimav2BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsLogistica21)).BeginInit();
@@ -74,6 +77,7 @@ namespace LOSA.Logistica
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_entradas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnOc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tsFiltroxMP.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // simpleButton1
@@ -336,11 +340,50 @@ namespace LOSA.Logistica
             this.colLineNum.FieldName = "LineNum";
             this.colLineNum.Name = "colLineNum";
             // 
+            // tsFiltroxMP
+            // 
+            this.tsFiltroxMP.EditValue = true;
+            this.tsFiltroxMP.Location = new System.Drawing.Point(29, 13);
+            this.tsFiltroxMP.Name = "tsFiltroxMP";
+            this.tsFiltroxMP.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.tsFiltroxMP.Properties.Appearance.Options.UseFont = true;
+            this.tsFiltroxMP.Properties.OffText = "Por Materia Prima:";
+            this.tsFiltroxMP.Properties.OnText = "Por Meteria Prima:";
+            this.tsFiltroxMP.Size = new System.Drawing.Size(225, 30);
+            this.tsFiltroxMP.TabIndex = 7;
+            this.tsFiltroxMP.Toggled += new System.EventHandler(this.tsFiltroxMP_Toggled);
+            // 
+            // lblFiltroMP
+            // 
+            this.lblFiltroMP.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblFiltroMP.Appearance.Options.UseFont = true;
+            this.lblFiltroMP.Location = new System.Drawing.Point(251, 18);
+            this.lblFiltroMP.Name = "lblFiltroMP";
+            this.lblFiltroMP.Size = new System.Drawing.Size(12, 20);
+            this.lblFiltroMP.TabIndex = 8;
+            this.lblFiltroMP.Text = "SI";
+            // 
+            // btnExport
+            // 
+            this.btnExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExport.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExport.Appearance.Options.UseFont = true;
+            this.btnExport.ImageOptions.Image = global::LOSA.Properties.Resources.excel32px;
+            this.btnExport.Location = new System.Drawing.Point(1158, 7);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(97, 50);
+            this.btnExport.TabIndex = 9;
+            this.btnExport.Text = "Exportar";
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
             // frmReporteSeguimientoComprasTransito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1391, 687);
+            this.Controls.Add(this.btnExport);
+            this.Controls.Add(this.lblFiltroMP);
+            this.Controls.Add(this.tsFiltroxMP);
             this.Controls.Add(this.grd_data);
             this.Controls.Add(this.grd_mps);
             this.Controls.Add(this.labelControl1);
@@ -358,6 +401,7 @@ namespace LOSA.Logistica
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_entradas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnOc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tsFiltroxMP.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -389,5 +433,8 @@ namespace LOSA.Logistica
         private DevExpress.XtraGrid.Columns.GridColumn coldetalle;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnOc;
         private DevExpress.XtraGrid.Columns.GridColumn colLineNum;
+        private DevExpress.XtraEditors.ToggleSwitch tsFiltroxMP;
+        private DevExpress.XtraEditors.LabelControl lblFiltroMP;
+        private DevExpress.XtraEditors.SimpleButton btnExport;
     }
 }

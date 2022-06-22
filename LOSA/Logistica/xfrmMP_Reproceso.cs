@@ -104,9 +104,9 @@ namespace LOSA.Logistica
                 DataOperations dp = new DataOperations();
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
-                SqlCommand cmm2 = new SqlCommand("sp_generar_codigo_from_tables_id", con);
+                SqlCommand cmm2 = new SqlCommand("dbo.sp_generar_codigo_from_tables_id_V3", con);
                 cmm2.CommandType = CommandType.StoredProcedure;
-                cmm2.Parameters.AddWithValue("@id", 2);
+                cmm2.Parameters.AddWithValue("@id", 7);/*-- 7 es Reproceso*/
                 string num_ingreso = cmm2.ExecuteScalar().ToString();
                 txtNumIngreso.Text = num_ingreso;
                 con.Close();
@@ -207,12 +207,12 @@ namespace LOSA.Logistica
                     SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                     con.Open();
 
-                    SqlCommand cmm = new SqlCommand("sp_generar_codigo_from_tables_id", con);
+                    SqlCommand cmm = new SqlCommand("sp_generar_codigo_from_tables_id_V3", con);
                     cmm.CommandType = CommandType.StoredProcedure;
-                    cmm.Parameters.AddWithValue("@id", 1);
+                    cmm.Parameters.AddWithValue("@id", 7); /*7 Es Reproceso*/
                     string barcode = cmm.ExecuteScalar().ToString();
 
-                    SqlCommand cmd1 = new SqlCommand("sp_insert_ingresos", con);
+                    SqlCommand cmd1 = new SqlCommand("dbo.sp_insert_ingresos_V4", con);
                     cmd1.CommandType = CommandType.StoredProcedure;
                     cmd1.Parameters.AddWithValue("@numero_transaccion", txtNumIngreso.Text);
                     cmd1.Parameters.AddWithValue("@itemcode", this.ItemCode);

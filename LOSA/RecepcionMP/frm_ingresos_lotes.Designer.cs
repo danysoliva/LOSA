@@ -75,8 +75,11 @@
             this.colcantidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEliminar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btneliminarTm = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colseleccionado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnFinalizar = new DevExpress.XtraEditors.SimpleButton();
+            this.btnPrintSeleccionados = new DevExpress.XtraEditors.SimpleButton();
+            this.checkBoxSelectAll = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -96,9 +99,9 @@
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(536, 6);
+            this.btnAtras.Location = new System.Drawing.Point(1031, 6);
             this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(153, 47);
+            this.btnAtras.Size = new System.Drawing.Size(131, 47);
             this.btnAtras.TabIndex = 11;
             this.btnAtras.Text = "Atras";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
@@ -130,7 +133,7 @@
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl3.Location = new System.Drawing.Point(212, 17);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(283, 36);
+            this.labelControl3.Size = new System.Drawing.Size(756, 36);
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Resumen de ingreso";
             // 
@@ -149,7 +152,7 @@
             this.cmdDuplicar,
             this.btnEditar,
             this.btneliminarTm});
-            this.gridControl1.Size = new System.Drawing.Size(714, 399);
+            this.gridControl1.Size = new System.Drawing.Size(1187, 495);
             this.gridControl1.TabIndex = 52;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -182,7 +185,8 @@
             this.colnum,
             this.colcodigo_barra,
             this.colcantidad,
-            this.colEliminar});
+            this.colEliminar,
+            this.colseleccionado});
             this.gridView1.DetailHeight = 284;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
@@ -381,6 +385,14 @@
             this.btneliminarTm.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btneliminarTm.Click += new System.EventHandler(this.btneliminarTm_Click);
             // 
+            // colseleccionado
+            // 
+            this.colseleccionado.Caption = "Seleccionado";
+            this.colseleccionado.FieldName = "seleccionado";
+            this.colseleccionado.Name = "colseleccionado";
+            this.colseleccionado.Visible = true;
+            this.colseleccionado.VisibleIndex = 13;
+            // 
             // simpleButton1
             // 
             this.simpleButton1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -412,11 +424,43 @@
             this.btnFinalizar.Visible = false;
             this.btnFinalizar.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
+            // btnPrintSeleccionados
+            // 
+            this.btnPrintSeleccionados.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrintSeleccionados.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnPrintSeleccionados.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintSeleccionados.Appearance.Options.UseBackColor = true;
+            this.btnPrintSeleccionados.Appearance.Options.UseFont = true;
+            this.btnPrintSeleccionados.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnPrintSeleccionados.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnPrintSeleccionados.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnPrintSeleccionados.ImageOptions.SvgImage")));
+            this.btnPrintSeleccionados.Location = new System.Drawing.Point(827, 6);
+            this.btnPrintSeleccionados.Name = "btnPrintSeleccionados";
+            this.btnPrintSeleccionados.Size = new System.Drawing.Size(183, 73);
+            this.btnPrintSeleccionados.TabIndex = 55;
+            this.btnPrintSeleccionados.Text = "Imprimir Seleccionado";
+            this.btnPrintSeleccionados.Click += new System.EventHandler(this.btnPrintSeleccionados_Click);
+            // 
+            // checkBoxSelectAll
+            // 
+            this.checkBoxSelectAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBoxSelectAll.AutoSize = true;
+            this.checkBoxSelectAll.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBoxSelectAll.Location = new System.Drawing.Point(709, 59);
+            this.checkBoxSelectAll.Name = "checkBoxSelectAll";
+            this.checkBoxSelectAll.Size = new System.Drawing.Size(112, 17);
+            this.checkBoxSelectAll.TabIndex = 66;
+            this.checkBoxSelectAll.Text = "Seleccionar Todas";
+            this.checkBoxSelectAll.UseVisualStyleBackColor = true;
+            this.checkBoxSelectAll.CheckedChanged += new System.EventHandler(this.checkBoxSelectAll_CheckedChanged);
+            // 
             // frm_ingresos_lotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(695, 483);
+            this.ClientSize = new System.Drawing.Size(1168, 579);
+            this.Controls.Add(this.checkBoxSelectAll);
+            this.Controls.Add(this.btnPrintSeleccionados);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.simpleButton1);
@@ -436,6 +480,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btneliminarTm)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -468,5 +513,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colEliminar;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btneliminarTm;
         private DevExpress.XtraEditors.SimpleButton btnFinalizar;
+        private DevExpress.XtraGrid.Columns.GridColumn colseleccionado;
+        private DevExpress.XtraEditors.SimpleButton btnPrintSeleccionados;
+        private System.Windows.Forms.CheckBox checkBoxSelectAll;
     }
 }
