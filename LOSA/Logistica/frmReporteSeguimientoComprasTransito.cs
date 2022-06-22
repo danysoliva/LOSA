@@ -140,13 +140,13 @@ namespace LOSA.Logistica
         {
             if (tsFiltroxMP.IsOn)
             {
-                lblFiltroMP.Text = "SI";
+                //lblFiltroMP.Text = "SI";
                 grd_mps.Visible = true;
                 dsLogistica2.OrdenesCompraTransito.Clear();
             }
             else
             {
-                lblFiltroMP.Text = "NO";
+                //lblFiltroMP.Text = "NO";
                 grd_mps.Visible = false;
                 LoadMPtransitoGeneral();
             }

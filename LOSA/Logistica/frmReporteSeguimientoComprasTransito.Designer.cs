@@ -343,13 +343,13 @@ namespace LOSA.Logistica
             // tsFiltroxMP
             // 
             this.tsFiltroxMP.EditValue = true;
-            this.tsFiltroxMP.Location = new System.Drawing.Point(29, 13);
+            this.tsFiltroxMP.Location = new System.Drawing.Point(180, 7);
             this.tsFiltroxMP.Name = "tsFiltroxMP";
             this.tsFiltroxMP.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.tsFiltroxMP.Properties.Appearance.Options.UseFont = true;
-            this.tsFiltroxMP.Properties.OffText = "Por Materia Prima:";
-            this.tsFiltroxMP.Properties.OnText = "Por Meteria Prima:";
-            this.tsFiltroxMP.Size = new System.Drawing.Size(225, 30);
+            this.tsFiltroxMP.Properties.OffText = "No";
+            this.tsFiltroxMP.Properties.OnText = "Si";
+            this.tsFiltroxMP.Size = new System.Drawing.Size(121, 30);
             this.tsFiltroxMP.TabIndex = 7;
             this.tsFiltroxMP.Toggled += new System.EventHandler(this.tsFiltroxMP_Toggled);
             // 
@@ -357,11 +357,11 @@ namespace LOSA.Logistica
             // 
             this.lblFiltroMP.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.lblFiltroMP.Appearance.Options.UseFont = true;
-            this.lblFiltroMP.Location = new System.Drawing.Point(251, 18);
+            this.lblFiltroMP.Location = new System.Drawing.Point(4, 12);
             this.lblFiltroMP.Name = "lblFiltroMP";
-            this.lblFiltroMP.Size = new System.Drawing.Size(12, 20);
+            this.lblFiltroMP.Size = new System.Drawing.Size(170, 20);
             this.lblFiltroMP.TabIndex = 8;
-            this.lblFiltroMP.Text = "SI";
+            this.lblFiltroMP.Text = "Filtrar por Materia Prima";
             // 
             // btnExport
             // 
