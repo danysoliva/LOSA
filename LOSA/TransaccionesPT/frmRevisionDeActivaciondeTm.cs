@@ -23,7 +23,7 @@ namespace LOSA.TransaccionesPT
             load_data();
         }
 
-        public void load_data()
+        public void load_data()//Cargaremos la lista de las Activadas y las No Activadas
         {
             string query = @"[sp_load_lista_de_tarimas_activas_v2]";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
