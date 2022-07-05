@@ -25,16 +25,28 @@ namespace LOSA.TransaccionesPT
 
         public void load_data()
         {
-            string query = @"sp_load_lista_de_tarimas_activas";
+            string query = @"[sp_load_lista_de_tarimas_activas_v2]";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             try
             {
+                //Tarimas Activadas
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@cant_rows", spinEdit1.EditValue);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 dsPT.loadtml.Clear();
                 da.Fill(dsPT.loadtml);
+
+                //Tarimas No Activadas
+                query = @"[sp_load_lista_de_tarimas_activas_v3]";
+                cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@cant_rows", spinEdit1.EditValue);
+                da = new SqlDataAdapter(cmd);
+                dsPT.loadtml_no_activadas.Clear();
+                da.Fill(dsPT.loadtml_no_activadas);
+
                 cn.Close();
                 
             }
@@ -47,6 +59,16 @@ namespace LOSA.TransaccionesPT
         private void cmdHome_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            load_data();
+        }
+
+        private void labelControl3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
