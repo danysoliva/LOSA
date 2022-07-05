@@ -375,14 +375,43 @@ namespace LOSA.Despachos
                         mensaje = "La tarima no esta activa!";
                     }
 
-                    if (tarimaEncontrada.Id_estadoCalidad > 1)
+                    switch (tarimaEncontrada.id_estado_pt)
                     {
-                        error = true;
-                        mensaje = "La tarima no esta Disponible por parte de Calidad!";
+                        case 1://Virtual
+                            error = true;
+                            mensaje = "Se imprimió el Rotulo de la tarima pero es necesario recepcionar o Activar la tarima!";
+                            break;
+                        case 2://Recepcion
+                            break;
+                        case 3://Desactivado
+                            error = true;
+                            mensaje = "Esta tarima esta desactivada!";
+                            break;
+                        case 4://Entregada
+                            error = true;
+                            mensaje = "Esta tarima ya fue entregada!";
+                            break;
+                        case 5://En Bodega
+                            break;
+                        case 6://Reproceso
+                            break;
+                        default://Cualquier otro caso
+                            break;
                     }
+
 
                     if (!error)
                     {
+                        if (tarimaEncontrada.Id_estadoCalidad > 1)
+                        {
+                            error = true;
+                            mensaje = "La tarima no esta Disponible por parte de Calidad!";
+                        }
+                    }   
+                    
+
+                    if (!error)
+                    {   
                         txtCantidadT.Text = string.Format("{0:###,##0.00}", tarimaEncontrada.Cantidad);
                         txtPeso.Text = string.Format("{0:###,##0.00}", tarimaEncontrada.Peso);
 
