@@ -128,20 +128,26 @@ namespace LOSA.Calidad
                         else
                         {
                             rdEstadoTransporte frm = new rdEstadoTransporte(row.id, UsuarioLogeado);
+                            if (this.MdiParent != null)
+                                frm.MdiParent = this.MdiParent;
                             frm.Show();
                         }
                     }
                     else
                     {
                         rdEstadoTransporte frm = new rdEstadoTransporte(row.id, UsuarioLogeado);
+                        if (this.MdiParent != null)
+                            frm.MdiParent = this.MdiParent;
                         frm.Show();
                     }
 
                 }
                 else
                 {
-                rdEstadoTransporte frm = new rdEstadoTransporte( row.id,UsuarioLogeado);
-                frm.Show();
+                    rdEstadoTransporte frm = new rdEstadoTransporte(row.id, UsuarioLogeado);
+                    if (this.MdiParent != null)
+                        frm.MdiParent = this.MdiParent;
+                    frm.Show();
 
                 }
             }

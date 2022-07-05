@@ -28,6 +28,10 @@ namespace ACS.Classes
         {
             return MessageBox.Show("Transacción Exitosa!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+        public static DialogResult Show(string msj)
+        {
+            return MessageBox.Show(msj, "Información", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+        }
 
         public static DialogResult Pregunta(string msj)
         {

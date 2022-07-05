@@ -347,6 +347,7 @@ namespace LOSA.Clases
                     Id_alimentacion = dr.GetInt32(23);
                     Fecha_produccion_pt = dr.GetDateTime(24);
                     Id_turno = dr.GetInt32(25);
+                    id_estado_pt = dr.GetInt32(26);
                     Recuperado = true;
                 }
                 dr.Close();
