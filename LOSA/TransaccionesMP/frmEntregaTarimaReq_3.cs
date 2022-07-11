@@ -297,10 +297,24 @@ namespace LOSA.TransaccionesMP
                 if (tarimaEncontrada.Recuperado)
                 {
                     //Validar el estado de la tarima basado con el criterio del Depto de Calidad
-                    if (tarimaEncontrada.Id_estadoCalidad > 1)
+                    if (tarimaEncontrada.Id_estadoCalidad > 1) //
                     {
                         error = true;
                         mensaje = "Calidad tiene retenido esta tarima.!";
+                        Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
+                        if (frm.ShowDialog() == DialogResult.Cancel)
+                        {
+
+                        }
+                        panelNotificacion.BackColor = Color.Red;
+                        timerLimpiarMensaje.Enabled = true;
+                        timerLimpiarMensaje.Start();
+                        return;
+                    }
+                    if (tarimaEncontrada.Id_estado_tarima == 1) //1 Recepcionado - 2 En Bodega
+                    {
+                        error = true;
+                        mensaje = "La tarima no esta activada!";
                         Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
                         if (frm.ShowDialog() == DialogResult.Cancel)
                         {
