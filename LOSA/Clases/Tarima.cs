@@ -12,7 +12,7 @@ namespace LOSA.Clases
     public class Tarima
     {
         int _id;
-        String _nombreTarima;
+        String _MateriaPrimaName;
         int _id_materiaprima;
         decimal _cantidad;
         decimal _peso;
@@ -22,6 +22,7 @@ namespace LOSA.Clases
         DateTime _fechaVencimiento;
         DateTime _fechaProduccion;
         string _LoteMP;
+        string _ProductoTerminadoName;
         int _LotePT;
         bool _Enable;
         int _idPresentacion;
@@ -62,7 +63,7 @@ namespace LOSA.Clases
         public string TipoTarimaDescripcion { get => _tipoTarimaDescripcion; set => _tipoTarimaDescripcion = value; }
         public string Proveedor { get => _Proveedor; set => _Proveedor = value; }
         public string LoteMP { get => _LoteMP; set => _LoteMP = value; }
-        public string NombreTarima { get => _nombreTarima; set => _nombreTarima = value; }
+        public string NombreTarima { get => _MateriaPrimaName; set => _MateriaPrimaName = value; }
         public string CodigoBarra { get => _CodigoBarra; set => _CodigoBarra = value; }
         public string MateriaPrima { get => _MateriaPrima; set => _MateriaPrima = value; }
         public DateTime FechaIngreso { get => _FechaIngreso; set => _FechaIngreso = value; }
@@ -83,8 +84,12 @@ namespace LOSA.Clases
         public int Id_alimentacion { get => id_alimentacion; set => id_alimentacion = value; }
         public DateTime Fecha_produccion_pt { get => fecha_produccion_pt; set => fecha_produccion_pt = value; }
         public int Id_turno { get => id_turno; set => id_turno = value; }
-        public string Itemcode1 { get => Itemcode; set => Itemcode = value; }
+        /// <summary>
+        /// ItemCode es Equivalente al Codigo de SAP
+        /// </summary>
+        public string ItemCode { get => Itemcode; set => Itemcode = value; }
         public int id_estado_pt { get; set; }
+        public string ProductoTerminadoName { get => _ProductoTerminadoName; set => _ProductoTerminadoName = value; }
 
         public bool RecuperarRegistro(int pIdTarima, string pCodigoBarra)
         {
@@ -104,7 +109,7 @@ namespace LOSA.Clases
                     Id = dr.GetInt32(0);
                     IdUnidadMedida = dr.GetInt32(1);
                     //Cantidad = 1;
-                    _nombreTarima = dr.GetString(2);
+                    _MateriaPrimaName = dr.GetString(2);
                     TipoTarimaDescripcion = dr.GetString(3);
                     //IdProveedor = dr.GetString(4);
                     Proveedor = dr.GetString(4);
@@ -130,7 +135,7 @@ namespace LOSA.Clases
                     Fecha_produccion_pt = dr.GetDateTime(24);
                     Id_turno = dr.GetInt32(25);
                     IdPresentacion = dr.GetInt32(26);
-                    Itemcode1 = dr.GetString(27);
+                    ItemCode = dr.GetString(27);
                     Recuperado = true;
 
                 }
@@ -162,7 +167,7 @@ namespace LOSA.Clases
                     Id = dr.GetInt32(0);
                    // IdUnidadMedida = dr.GetInt32(1);
                     //Cantidad = 1;
-                    _nombreTarima = dr.GetString(2);
+                    _MateriaPrimaName = dr.GetString(2);
                     TipoTarimaDescripcion = dr.GetString(3);
                     IdProveedor = dr.GetString(4);
                     LoteMP = dr.GetString(5);
@@ -216,7 +221,7 @@ namespace LOSA.Clases
                     Id = dr.GetInt32(0);
                     IdUnidadMedida = dr.GetInt32(1);
                     //Cantidad = 1;
-                    _nombreTarima = dr.GetString(2);
+                    _MateriaPrimaName = dr.GetString(2);
                     TipoTarimaDescripcion = dr.GetString(3);
                     //IdProveedor = dr.GetString(4);
                     Proveedor = dr.GetString(4);
@@ -260,7 +265,7 @@ namespace LOSA.Clases
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_tarima_from_id_v2", con);
+                SqlCommand cmd = new SqlCommand("sp_get_tarima_from_id_v3", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id", pIdTarima);
                 cmd.Parameters.AddWithValue("@codigo_barra", pCodigoBarra);
@@ -270,12 +275,13 @@ namespace LOSA.Clases
                     Id = dr.GetInt32(0);
                     IdUnidadMedida = dr.GetInt32(1);
                     //Cantidad = 1;
-                    _nombreTarima = dr.GetString(2);
+                    _MateriaPrimaName = dr.GetString(2);
                     TipoTarimaDescripcion = dr.GetString(3);
                     //IdProveedor = dr.GetString(4);
                     Proveedor = dr.GetString(4);
 
                     LoteMP = dr.GetString(5);
+                    _Descripcionpresentacion = dr.GetString(6);
                     Cantidad = dr.GetDecimal(7);
                     Id_materiaprima = dr.GetInt32(8);
                     MateriaPrima = dr.GetString(9);
@@ -295,6 +301,9 @@ namespace LOSA.Clases
                     Id_alimentacion = dr.GetInt32(23);
                     Fecha_produccion_pt = dr.GetDateTime(24);
                     Id_turno = dr.GetInt32(25);
+                    id_estado_pt = dr.GetInt32(26);
+                    ProductoTerminadoName = dr.GetString(27);
+                     
                     Recuperado = true;
                 }
                 dr.Close();
@@ -324,7 +333,7 @@ namespace LOSA.Clases
                     Id = dr.GetInt32(0);
                     IdUnidadMedida = dr.GetInt32(1);
                     //Cantidad = 1;
-                    _nombreTarima = dr.GetString(2);
+                    _MateriaPrimaName = dr.GetString(2);
                     TipoTarimaDescripcion = dr.GetString(3);
                     IdProveedor = dr.GetString(4);
                     LoteMP = dr.GetString(5);

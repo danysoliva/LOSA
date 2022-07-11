@@ -892,5 +892,29 @@ namespace ACS.Classes
         }
 
         #endregion
+
+        #region Funciones
+        public decimal ValidateNumberDecimal(object val)
+        {
+            decimal valor = 0;
+            try
+            {
+                valor = Convert.ToDecimal(val);
+            }
+            catch { }
+            return valor;
+        }
+
+        public int ValidateNumberInt32(object val)
+        {
+            int valor = 0;
+            try
+            {
+                valor = Convert.ToInt32(val);
+            }
+            catch { }
+            return valor;
+        }
+        #endregion
     }
 }

@@ -25,7 +25,7 @@ namespace LOSA.TransaccionesMP
         UserLogin usuarioLogueado = new UserLogin();
         Tarima tarimaEncontrada;
         Requisicion RequisicionActual = new Requisicion();
-        DataTable Tarima;
+        DataTable DT_Tarima;
         public frmEntregaTarimaReq_3(UserLogin Puser)
         {
             InitializeComponent();
@@ -178,7 +178,34 @@ namespace LOSA.TransaccionesMP
                 load_tarimas_scan_v2();
             }
         }
-        private DataTable CreateDataTarima(int idTarima, string pProveedor, string pNombreTarima, string pLote, string pPpresentacion, string codigoSAP, string MP)
+        //private DataTable CreateDataTarima(int idTarima, string pProveedor, string pNombreTarima, string pLote, string pPpresentacion, string codigoSAP, string MP)
+        //{
+        //    DataTable dt = new DataTable();
+
+        //    try
+        //    {
+        //        dt.Columns.Add("Detalle", typeof(string));
+        //        dt.Columns.Add("Valor", typeof(string));
+
+
+        //        dt.Rows.Add("TARIMA", idTarima);
+        //        dt.Rows.Add("PROVEEDOR", pProveedor);
+        //        dt.Rows.Add("LOTE", pLote);
+        //        dt.Rows.Add("PRESENTACION", pPpresentacion);
+
+        //        dt.Rows.Add("Codigo", codigoSAP);
+        //        dt.Rows.Add("Materia Prima", MP);
+
+        //        return dt;
+        //    }
+        //    catch (Exception error)
+        //    {
+        //        CajaDialogo.Information(error.Message);
+        //        return dt;
+        //    }
+        //}
+
+        private DataTable CreateDataTarima(Tarima pTarima)
         {
             DataTable dt = new DataTable();
 
@@ -188,13 +215,13 @@ namespace LOSA.TransaccionesMP
                 dt.Columns.Add("Valor", typeof(string));
 
 
-                dt.Rows.Add("TARIMA", idTarima);
-                dt.Rows.Add("PROVEEDOR", pProveedor);
-                dt.Rows.Add("LOTE", pLote);
-                dt.Rows.Add("PRESENTACION", pPpresentacion);
+                dt.Rows.Add("TARIMA", pTarima.Id);
+                dt.Rows.Add("PROVEEDOR", pTarima.Proveedor);
+                dt.Rows.Add("LOTE", pTarima.LoteMP);
+                dt.Rows.Add("PRESENTACION", pTarima.Descripcionpresentacion);
 
-                dt.Rows.Add("Codigo", codigoSAP);
-                dt.Rows.Add("Materia Prima", MP);
+                dt.Rows.Add("Codigo", pTarima.ItemCode);
+                dt.Rows.Add("Materia Prima", pTarima.MateriaPrima);
 
                 return dt;
             }
@@ -211,47 +238,154 @@ namespace LOSA.TransaccionesMP
             {
                 using (connection)
                 {
-                    string SQL = "exec sp_getTarimas_without_filters_v3 @codigo_barra";
-                    SqlCommand cmd = new SqlCommand();
-                    SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-                    cmd.Connection = connection;
-                    cmd.CommandText = SQL;
+                    //string SQL = "exec sp_getTarimas_without_filters_v4 @codigo_barra";
+                    //SqlCommand cmd = new SqlCommand();
+                    //SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                    //cmd.Connection = connection;
+                    //cmd.CommandText = SQL;
 
+                    //cmd.Parameters.AddWithValue("@codigo_barra", txtTarima.Text);
+
+                    //connection.Open();
+
+
+                    //SqlDataReader dr = cmd.ExecuteReader();
+
+                    //if (dr.HasRows)
+                    //{
+                    //    while (dr.Read())
+                    //    {
+                    //        idTarima = dr.GetInt32(0);
+
+                    //        if (InfoTarima.RecuperarRegistro_v3(idTarima, ""))
+                    //        {
+                    //            factorPresentacion = InfoTarima.Factor;
+                    //            tarimaEncontrada = InfoTarima;
+
+                    //        }
+                    //        //gcTarima.DataSource = CreateDataTarima(dr.GetInt32(0), 
+                    //        //                                       dr.GetString(2), 
+                    //        //                                       dr.GetString(1), 
+                    //        //                                       dr.GetString(5), 
+                    //        //                                       dr.GetString(6), 
+                    //        //                                       dr.GetString(11), 
+                    //        //                                       dr.GetString(12));
+                    //        Tarima vTarima = new Tarima();
+                    //        if (vTarima.RecuperarRegistro_v3(idTarima, "")) 
+                    //        {
+                    //            Tarima = CreateDataTarima(vTarima);
+                    //            gcTarima.DataSource = Tarima;
+                    //            //Tarima = CreateDataTarima(dr.GetInt32(0), dr.GetString(2), dr.GetString(1), dr.GetString(5), dr.GetString(6), dr.GetString(11), dr.GetString(12));
+                    //            //Tarima = CreateDataTarima(dr.GetInt32(0), dr.GetString(2), dr.GetString(1), dr.GetString(5), dr.GetString(6), dr.GetString(11), dr.GetString(12));
+                    //            Tarima.AcceptChanges();
+                    //            //gvTarima.InitNewRow += GridView1_InitNewRow;
+                    //            gvTarima.Columns[0].AppearanceCell.Font = new Font("Segoe UI", 11, FontStyle.Bold);
+                    //        }
+                    //    }
+                    //}
+                    //else
+                    //{
+                    //    CajaDialogo.Error("TARIMA NO ENCONTRADA");
+                    //    tarimaEncontrada = null;
+                    //    gcTarima.DataSource = null;
+                    //    txtTarima.Text = "";
+                    //}
+
+                    if (connection.State != ConnectionState.Open)
+                        connection.Open();
+
+                    //Get id Estado Tarima
+                    SqlCommand cmd = new SqlCommand("sp_getTarimas_without_filters_v4", connection);
+                    cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@codigo_barra", txtTarima.Text);
-
-                    connection.Open();
-
-
+                    cmd.Parameters.AddWithValue("@tipo_query", 1);
                     SqlDataReader dr = cmd.ExecuteReader();
-
-                    if (dr.HasRows)
+                    int idEstadoTarima = 0;
+                    if (dr.Read())
                     {
-                        while (dr.Read())
-                        {
-                            idTarima = dr.GetInt32(0);
-
-                            if (InfoTarima.RecuperarRegistro_v3(idTarima, ""))
-                            {
-                                factorPresentacion = InfoTarima.Factor;
-                                tarimaEncontrada = InfoTarima;
-
-                            }
-                            gcTarima.DataSource = CreateDataTarima(dr.GetInt32(0), dr.GetString(2), dr.GetString(1), dr.GetString(5), dr.GetString(6), dr.GetString(11), dr.GetString(12));
-                            Tarima = CreateDataTarima(dr.GetInt32(0), dr.GetString(2), dr.GetString(1), dr.GetString(5), dr.GetString(6), dr.GetString(11), dr.GetString(12));
-                            Tarima.AcceptChanges();
-                            //gvTarima.InitNewRow += GridView1_InitNewRow;
-                            gvTarima.Columns[0].AppearanceCell.Font = new Font("Segoe UI", 11, FontStyle.Bold);
-                        }
+                        idEstadoTarima = dp.ValidateNumberInt32(dr.GetValue(0));
                     }
-                    else
+                    dr.Close();
+
+                    bool Error = false;
+                    string mensaje = " ";
+                    switch (idEstadoTarima)
                     {
-                        CajaDialogo.Error("TARIMA NO ENCONTRADA");
-                        tarimaEncontrada = null;
-                        gcTarima.DataSource = null;
-                        txtTarima.Text = "";
+                        case 0:
+                        default:
+                            mensaje = "TARIMA NO ENCONTRADA";
+                            Error = true;
+                            break;
+                        case 1://Recepcionado
+                            mensaje = "Esta tarima aun no ha sido ingresada a bodega! Solo se genero el rotulo, es necesario activar y ubicar!.";
+                            Error = true;
+                            break;
+                        case 2://En Bodega
+                            break;
+                        case 3://Retenido
+                            mensaje = "Esta Tarima esta Retenida!";
+                            Error = true;
+                            break;
+                        case 4://Comprometido
+                            mensaje = "Esta tarima ya esta comprometida!";
+                            Error = true;
+                            break;
+                        case 5://En Produccion
+                            mensaje = "Esta tarima ya fue entrega a Producción";
+                            Error = true;
+                            break;
+                        case 6://Consumido
+                            mensaje = "Esta Tarima ya fue entregada y consumida por producción!";
+                            Error = true;
+                            break;
+                        case 8://Parcialmente Entregado
+                            break;
+                        case 9://Rechazado
+                            mensaje = "Esta tarima fue Rechazada!";
+                            Error = true;
+                            break;
+                        case 10://Ajuste de Inventario
+                            mensaje = "Esta tarima tuvo salida por ajuste de Inventario!";
+                            Error = true;
+                            break;
                     }
 
-                    cn.Close();
+                    //if (Error)
+                    //{
+                    //    tarimaEncontrada = null;
+                    //    gcTarima.DataSource = null;
+                    //    txtTarima.Text = "";
+                    //    return;
+                    //}
+
+                    if (Error)
+                    {
+                        lblMensaje.Text = mensaje;
+                        Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
+                        frm.ShowDialog();
+                        panelNotificacion.BackColor = Color.FromArgb(255,102,102);
+                        timerLimpiarMensaje.Enabled = true;
+                        timerLimpiarMensaje.Start();
+                        return;
+                    }
+
+
+                    cmd = new SqlCommand("sp_getTarimas_without_filters_v4", connection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@codigo_barra", txtTarima.Text);
+                    cmd.Parameters.AddWithValue("@tipo_query", 2);//Get Data de la tarima
+                    DT_Tarima = new DataTable();
+                    SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                    adat.Fill(DT_Tarima);
+                    //Sacamos el id de la tarima
+                    foreach (DataRow row in DT_Tarima.Rows)
+                    {
+                        idTarima = dp.ValidateNumberInt32(row[0]);
+                        break;
+                    }
+
+                    tarimaEncontrada = new Tarima();
+                    tarimaEncontrada.RecuperarRegistro_v3(idTarima, "");
 
                 }
             }
@@ -297,76 +431,170 @@ namespace LOSA.TransaccionesMP
                 if (tarimaEncontrada.Recuperado)
                 {
                     //Validar el estado de la tarima basado con el criterio del Depto de Calidad
-                    if (tarimaEncontrada.Id_estadoCalidad > 1)
-                    {
-                        error = true;
-                        mensaje = "Calidad tiene retenido esta tarima.!";
-                        Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
-                        if (frm.ShowDialog() == DialogResult.Cancel)
-                        {
+                    //if (tarimaEncontrada.Id_estadoCalidad > 1)
+                    //{
+                    //    error = true;
+                    //    mensaje = "Calidad tiene retenido esta tarima.!";
+                    //    Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
+                    //    if (frm.ShowDialog() == DialogResult.Cancel)
+                    //    {
 
-                        }
+                    //    }
+                    //    panelNotificacion.BackColor = Color.Red;
+                    //    timerLimpiarMensaje.Enabled = true;
+                    //    timerLimpiarMensaje.Start();
+                    //    return;
+                    //}
+
+                    //Validar Estaso de Tarima
+                    switch (tarimaEncontrada.Id_estado_tarima)
+                    {
+                        case 1://Recepcionado
+                            error = true;//No tien ubicacion
+                            mensaje = "Esta tarima aun no ha sido ingresada a bodega! Solo se genero el rotulo, es necesario activar y ubicar!.";
+                            break;
+                        case 2://En Bodega
+                            error = false;
+                            //mensaje = "Calidad tiene En Observación ésta tarima.!";
+                            break;
+                        case 3://Retenido
+                            error = true;
+                            mensaje = "Esta Tarima esta Retenida!";
+                            break;
+                        case 4://Comprometido
+                            error = true;
+                            mensaje = "Esta tarima ya esta comprometida!";
+                            break;
+                        case 5://En Produccion
+                            error = true;//esta habilitada
+                            mensaje = "Esta tarima ya fue entrega a Producción";
+                            break;
+                        case 6://Consumido
+                            error = true;
+                            mensaje = "Esta Tarima ya fue entregada y consumida por producción!";
+                            break;
+                        //case 7://
+                        //    error = true;
+                        //    mensaje = "Calidad tiene Retenida ésta tarima.!";
+                        //    break;
+                        case 8://Parcialmente Entregado
+                            error = false;
+                            //mensaje = "Calidad ha Rechazado ésta tarima.!";
+                            break;
+                        case 9://Rechazado
+                            error = true;
+                            mensaje = "Esta tarima fue Rechazada!";
+                            break;
+                        case 10://Ajuste de Inventario
+                            error = true;
+                            mensaje = "Esta tarima tuvo salida por ajuste de Inventario!";
+                            break;
+                    }
+
+                    if (error)
+                    {
+                        lblMensaje.Text = mensaje;
+                        Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
+                        frm.ShowDialog();
                         panelNotificacion.BackColor = Color.Red;
                         timerLimpiarMensaje.Enabled = true;
                         timerLimpiarMensaje.Start();
                         return;
                     }
 
+
+
+                    //Validacion Estados de Calidad
+                    switch (tarimaEncontrada.Id_estadoCalidad)
+                    {
+                        case 1://Habilitado
+                            error = false;//esta habilitada
+                            break;
+                        case 2://En Observacion
+                            error = true;
+                            mensaje = "Calidad tiene En Observación ésta tarima.!";
+                            break;
+                        case 3://Retenido
+                            error = true;
+                            mensaje = "Calidad tiene Retenida ésta tarima.!";
+                            break;
+                        case 4://Rechazado
+                            error = true;
+                            mensaje = "Calidad ha Rechazado ésta tarima.!";
+                            break;
+                        default:
+                            error = true;//esta habilitada
+                            mensaje = "Esta tarima un no ha sido inspeccionada por Calidad!";
+                            break;
+                    }
+
+                    if(error)
+                    {
+                        lblMensaje.Text = mensaje;
+                        Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
+                        frm.ShowDialog();
+                        panelNotificacion.BackColor = Color.Red;
+                        timerLimpiarMensaje.Enabled = true;
+                        timerLimpiarMensaje.Start();
+                        return;
+                    }
+
+
                     //Si no se ha generado ninguna validacion previa de bloqueo el programa permitira seguir ejecutando.
                     if (!error)
                     {
                         //Validar la disponibilidad de la tarima para poder efectuar la entrega
-                        try
-                        {
-                            DataOperations dp = new DataOperations();
-                            SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                            con.Open();
+                        //try
+                        //{
+                        //    DataOperations dp = new DataOperations();
+                        //    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                        //    con.Open();
 
-                            SqlCommand cmd = new SqlCommand("[dbo].[sp_verifica_diponibilidad_tarima_entrega_v6]", con);
-                            cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("@id", tarimaEncontrada.Id);
-                            cmd.Parameters.AddWithValue("@id_req", RequisicionActual.IdRequisicion);
-                            SqlDataReader dr = cmd.ExecuteReader();
+                        //    SqlCommand cmd = new SqlCommand("[dbo].[sp_verifica_diponibilidad_tarima_entrega_v6]", con);
+                        //    cmd.CommandType = CommandType.StoredProcedure;
+                        //    cmd.Parameters.AddWithValue("@id", tarimaEncontrada.Id);
+                        //    cmd.Parameters.AddWithValue("@id_req", RequisicionActual.IdRequisicion);
+                        //    SqlDataReader dr = cmd.ExecuteReader();
 
-                            if (dr.Read())
-                            {
-                                disponible = dr.GetBoolean(0);
-                                if (!disponible)
-                                {
-                                    error = true;
-                                    mensaje = dr.GetString(1);
-                                    Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
-                                    if (frm.ShowDialog() == DialogResult.Cancel)
-                                    {
+                        //    if (dr.Read())
+                        //    {
+                        //        disponible = dr.GetBoolean(0);
+                        //        //if (!disponible)
+                        //        //{
+                        //        //    error = true;
+                        //        //    mensaje = dr.GetString(1);
+                        //        //    Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
+                        //        //    if (frm.ShowDialog() == DialogResult.Cancel)
+                        //        //    {
 
-                                    }
+                        //        //    }
 
-                                    lblMensaje.Text = mensaje;
+                        //        //    lblMensaje.Text = mensaje;
 
-                                    panelNotificacion.BackColor = Color.Red;
-                                    timerLimpiarMensaje.Enabled = true;
-                                    timerLimpiarMensaje.Start();
-                                    return;
-                                }
+                        //        //    panelNotificacion.BackColor = Color.Red;
+                        //        //    timerLimpiarMensaje.Enabled = true;
+                        //        //    timerLimpiarMensaje.Start();
+                        //        //    return;
+                        //        //}
 
-                                ExistenciaTM = dr.GetDecimal(2);
-                                Pentregado = dr.GetDecimal(3);
-                                Psolicitado = dr.GetDecimal(4);
-                                factor = dr.GetDecimal(5);
-                            }
-                            dr.Close();
-                            con.Close();
+                        //        ExistenciaTM = dr.GetDecimal(2);
+                        //        Pentregado = dr.GetDecimal(3);
+                        //        Psolicitado = dr.GetDecimal(4);
+                        //        factor = dr.GetDecimal(5);
+                        //    }
+                        //    dr.Close();
+                        //    con.Close();
 
-                        }
-                        catch (Exception ec)
-                        {
-                            CajaDialogo.Error(ec.Message);
-                        }
+                        //}
+                        //catch (Exception ec)
+                        //{
+                        //    CajaDialogo.Error(ec.Message);
+                        //}
 
                         frmResumenToEntregar frms = new frmResumenToEntregar(ExistenciaTM
                                                                                  , Pentregado
                                                                                  , Psolicitado
-                                                                                 , Tarima
+                                                                                 , DT_Tarima
                                                                                  , idTarima
                                                                                  , factor);
                         if (frms.ShowDialog() == DialogResult.OK)
@@ -416,6 +644,7 @@ namespace LOSA.TransaccionesMP
                         }
                         else
                         {
+                            lblMensaje.Text = mensaje;
                             Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, "Transaccion Cancelada.");
                             if (frm.ShowDialog() == DialogResult.Cancel)
                             {
@@ -433,6 +662,7 @@ namespace LOSA.TransaccionesMP
                     }
                     else
                     {
+                        lblMensaje.Text = mensaje;
                         Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
                         if (frm.ShowDialog() == DialogResult.Cancel)
                         {

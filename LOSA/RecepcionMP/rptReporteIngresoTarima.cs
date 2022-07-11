@@ -27,7 +27,7 @@ namespace LOSA.RecepcionMP
                 lblNumeroIngreso.Text = tar1.NumeroTransaccion.ToString();
                 lblFechaProduccion.Text = string.Format("{0:dd/MM/yyyy}", tar1.FechaProduccion);
                 lblFechadeVencimiento.Text = string.Format("{0:dd/MM/yyyy}", tar1.FechaVencimiento);
-                txtcodigo.Text = tar1.Itemcode1;
+                txtcodigo.Text = tar1.ItemCode;
                 BarCode1.Text = BarCode2.Text = tar1.CodigoBarra;
             }
 
