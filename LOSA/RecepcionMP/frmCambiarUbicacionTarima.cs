@@ -116,7 +116,7 @@ namespace LOSA.RecepcionMP
             {
 
                 if (beIdTarima.Text.Substring(0,2) != "UB")
-                {
+                { 
                     gcTarima.DataSource = CreateDataTarima(0, beIdTarima.Text);
                     gvTarima.InitNewRow += GvTarima_InitNewRow;
                     gvTarima.Columns[0].AppearanceCell.Font = new Font("Segoe UI", 11, FontStyle.Bold);
