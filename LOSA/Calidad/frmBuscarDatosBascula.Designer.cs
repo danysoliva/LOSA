@@ -34,10 +34,10 @@ namespace LOSA.Calidad
             this.dsTarima1 = new LOSA.TransaccionesMP.dsTarima();
             this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.coldescripcion5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cmdAplicar = new DevExpress.XtraEditors.SimpleButton();
-            this.cmdCancelar = new DevExpress.XtraEditors.SimpleButton();
             this.colfecha_in = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRow = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmdAplicar = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdCancelar = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTarima1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
@@ -84,6 +84,26 @@ namespace LOSA.Calidad
             this.coldescripcion5.VisibleIndex = 2;
             this.coldescripcion5.Width = 334;
             // 
+            // colfecha_in
+            // 
+            this.colfecha_in.DisplayFormat.FormatString = "g";
+            this.colfecha_in.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.colfecha_in.FieldName = "fecha_in";
+            this.colfecha_in.Name = "colfecha_in";
+            this.colfecha_in.OptionsColumn.AllowEdit = false;
+            this.colfecha_in.Visible = true;
+            this.colfecha_in.VisibleIndex = 1;
+            this.colfecha_in.Width = 110;
+            // 
+            // colRow
+            // 
+            this.colRow.FieldName = "Row";
+            this.colRow.Name = "colRow";
+            this.colRow.OptionsColumn.AllowEdit = false;
+            this.colRow.Visible = true;
+            this.colRow.VisibleIndex = 0;
+            this.colRow.Width = 37;
+            // 
             // cmdAplicar
             // 
             this.cmdAplicar.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -109,24 +129,6 @@ namespace LOSA.Calidad
             this.cmdCancelar.TabIndex = 91;
             this.cmdCancelar.Text = "Cancelar";
             this.cmdCancelar.Click += new System.EventHandler(this.cmdCancelar_Click);
-            // 
-            // colfecha_in
-            // 
-            this.colfecha_in.DisplayFormat.FormatString = "g";
-            this.colfecha_in.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.colfecha_in.FieldName = "fecha_in";
-            this.colfecha_in.Name = "colfecha_in";
-            this.colfecha_in.Visible = true;
-            this.colfecha_in.VisibleIndex = 1;
-            this.colfecha_in.Width = 110;
-            // 
-            // colRow
-            // 
-            this.colRow.FieldName = "Row";
-            this.colRow.Name = "colRow";
-            this.colRow.Visible = true;
-            this.colRow.VisibleIndex = 0;
-            this.colRow.Width = 37;
             // 
             // frmBuscarDatosBascula
             // 
