@@ -103,6 +103,16 @@ namespace LOSA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Alerta64px {
+            get {
+                object obj = ResourceManager.GetObject("Alerta64px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap alimentacion_manual {
             get {
                 object obj = ResourceManager.GetObject("alimentacion_manual", resourceCulture);

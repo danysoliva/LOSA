@@ -268,7 +268,7 @@ namespace LOSA
         {
             frmOptionMontaCarga frm = new frmOptionMontaCarga(UsuarioLogeado, 1);//MP
             frm.WindowState = FormWindowState.Maximized;
-            //frm.MdiParent = this.MdiParent;
+            frm.MdiParent = this.MdiParent;
             frm.Show();
 
 

@@ -25,6 +25,7 @@ namespace LOSA.TransaccionesMP
             //entregar viendo el detalle de mp
             frmEntregaDeComponentesReq frm = new frmEntregaDeComponentesReq(UsuarioLogeado);
             frm.WindowState = FormWindowState.Maximized;
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
@@ -48,12 +49,14 @@ namespace LOSA.TransaccionesMP
             {
                 frmEntregaTarimaReq_3 frm = new frmEntregaTarimaReq_3(UsuarioLogeado);
                 frm.WindowState = FormWindowState.Maximized;
+                frm.MdiParent = this.MdiParent;
                 frm.Show();
             }
             else
             {
                 frmEntregaTarimaReq_v2 frm = new frmEntregaTarimaReq_v2(UsuarioLogeado);
                 frm.WindowState = FormWindowState.Maximized;
+                frm.MdiParent = this.MdiParent;
                 frm.Show();
             }
           
@@ -63,12 +66,14 @@ namespace LOSA.TransaccionesMP
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             frmviewrequisas frm = new frmviewrequisas(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
         private void btnDevoluciones_Click(object sender, EventArgs e)
         {
             frmDevoluciones frm = new frmDevoluciones();
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
     }

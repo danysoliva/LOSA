@@ -59,6 +59,7 @@ namespace LOSA
             }
             
             frmOpciones frm = new frmOpciones(Log1);
+            frm.MdiParent = this.MdiParent;
             frm.Show();
             //this.Close();
         }

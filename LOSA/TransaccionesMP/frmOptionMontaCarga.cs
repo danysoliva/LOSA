@@ -66,6 +66,7 @@ namespace LOSA.TransaccionesMP
         {
             frmEntregaMontaCarga frm = new frmEntregaMontaCarga(this.UsuarioLogeado);
             frm.WindowState = FormWindowState.Maximized;
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
@@ -73,6 +74,7 @@ namespace LOSA.TransaccionesMP
         {
             frmEntradaPT frm = new frmEntradaPT(this.UsuarioLogeado);
             frm.WindowState = FormWindowState.Maximized;
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
@@ -80,12 +82,14 @@ namespace LOSA.TransaccionesMP
         {
             frmCambiarUbicacionTarimaPT frm = new frmCambiarUbicacionTarimaPT();
             frm.WindowState = FormWindowState.Maximized;
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             frmDevolucionKardex frm = new frmDevolucionKardex(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
@@ -95,6 +99,7 @@ namespace LOSA.TransaccionesMP
             if (path.Camino == 1)
             {
                 LOSA.Despachos.frm_despachos frm = new Despachos.frm_despachos();
+                frm.MdiParent = this.MdiParent;
                 frm.Show();
             }
             else
@@ -102,11 +107,13 @@ namespace LOSA.TransaccionesMP
                 if (path.Camino == 2)
                 {
                     LOSA.Despachos.frm_despacho_v2 FRM = new Despachos.frm_despacho_v2();
+                    FRM.MdiParent = this.MdiParent;
                     FRM.Show();
                 }
                 else
                 {
                     LOSA.Despachos.frm_despacho_v3 frm = new Despachos.frm_despacho_v3();
+                    frm.MdiParent = this.MdiParent;
                     frm.Show();
                 }
             }
@@ -118,36 +125,42 @@ namespace LOSA.TransaccionesMP
         private void simpleButton3_Click(object sender, EventArgs e)
         {
             LOSA.Reportes.frmreporteUbicacion frm = new Reportes.frmreporteUbicacion();
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
         private void cmdTarimasPT_Click(object sender, EventArgs e)
         {
             frmactivacionPT frm = new frmactivacionPT(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
         private void simpleButton4_Click(object sender, EventArgs e)
         {
             frm_saco_dañado frm = new frm_saco_dañado();
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
         private void simpleButton5_Click(object sender, EventArgs e)
         {
             frm_reporte_produccion frm = new frm_reporte_produccion();
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
         private void simpleButton6_Click(object sender, EventArgs e)
         {
             frmRevisionDeActivaciondeTm frm = new frmRevisionDeActivaciondeTm();
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
         private void btntarimasactivadasPT_Click(object sender, EventArgs e)
         {
             frm_rpt_productoT frm = new frm_rpt_productoT();
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
     }

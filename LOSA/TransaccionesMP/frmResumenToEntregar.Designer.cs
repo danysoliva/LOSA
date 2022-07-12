@@ -41,21 +41,36 @@ namespace LOSA.TransaccionesMP
             this.txtEnviados = new DevExpress.XtraEditors.TextEdit();
             this.txtPorEnviar = new DevExpress.XtraEditors.TextEdit();
             this.txtRestante = new DevExpress.XtraEditors.TextEdit();
-            this.gcTarima = new DevExpress.XtraGrid.GridControl();
-            this.gvTarima = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.btnDown = new DevExpress.XtraEditors.SimpleButton();
             this.btnUP = new DevExpress.XtraEditors.SimpleButton();
             this.chConsumirPendientes = new DevExpress.XtraEditors.CheckEdit();
+            this.gcTarima = new DevExpress.XtraGrid.GridControl();
+            this.gvTarima = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnombreTarima = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnombreProveedor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha_ingreso = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnumero_transaccion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collote_materia_prima = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpresentacion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltipo_tarima = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_boleta = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnum = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIsMicro = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colitemcode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colmp_name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dsTransaccionesMP1 = new LOSA.TransaccionesMP.dsTransaccionesMP();
             ((System.ComponentModel.ISupportInitialize)(this.txtSolicitados.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEnviados.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPorEnviar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRestante.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcTarima)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvTarima)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chConsumirPendientes.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcTarima)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvTarima)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -180,17 +195,71 @@ namespace LOSA.TransaccionesMP
             this.txtRestante.Size = new System.Drawing.Size(300, 36);
             this.txtRestante.TabIndex = 17;
             // 
+            // textEdit1
+            // 
+            this.textEdit1.Enabled = false;
+            this.textEdit1.Location = new System.Drawing.Point(380, 459);
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
+            this.textEdit1.Properties.Appearance.Options.UseFont = true;
+            this.textEdit1.Size = new System.Drawing.Size(300, 36);
+            this.textEdit1.TabIndex = 109;
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl6.Appearance.Options.UseFont = true;
+            this.labelControl6.Location = new System.Drawing.Point(114, 462);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(246, 30);
+            this.labelControl6.TabIndex = 108;
+            this.labelControl6.Text = "Restante en tarima (Ud.):";
+            // 
+            // btnDown
+            // 
+            this.btnDown.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDown.ImageOptions.Image")));
+            this.btnDown.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnDown.Location = new System.Drawing.Point(604, 315);
+            this.btnDown.Name = "btnDown";
+            this.btnDown.Size = new System.Drawing.Size(76, 65);
+            this.btnDown.TabIndex = 111;
+            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
+            // 
+            // btnUP
+            // 
+            this.btnUP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUP.ImageOptions.Image")));
+            this.btnUP.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnUP.Location = new System.Drawing.Point(524, 315);
+            this.btnUP.Name = "btnUP";
+            this.btnUP.Size = new System.Drawing.Size(74, 65);
+            this.btnUP.TabIndex = 110;
+            this.btnUP.Click += new System.EventHandler(this.btnUP_Click);
+            // 
+            // chConsumirPendientes
+            // 
+            this.chConsumirPendientes.Location = new System.Drawing.Point(178, 555);
+            this.chConsumirPendientes.Name = "chConsumirPendientes";
+            this.chConsumirPendientes.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
+            this.chConsumirPendientes.Properties.Appearance.Options.UseFont = true;
+            this.chConsumirPendientes.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.chConsumirPendientes.Properties.Caption = "Consumir lo pendiente de la Requisa";
+            this.chConsumirPendientes.Size = new System.Drawing.Size(440, 36);
+            this.chConsumirPendientes.TabIndex = 112;
+            this.chConsumirPendientes.CheckedChanged += new System.EventHandler(this.chConsumirPendientes_CheckedChanged);
+            // 
             // gcTarima
             // 
             this.gcTarima.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gcTarima.DataMember = "tarima_monta_carga";
+            this.gcTarima.DataSource = this.dsTransaccionesMP1;
             this.gcTarima.EmbeddedNavigator.Appearance.BackColor = System.Drawing.SystemColors.Control;
             this.gcTarima.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
-            this.gcTarima.Location = new System.Drawing.Point(21, 12);
+            this.gcTarima.Location = new System.Drawing.Point(12, 12);
             this.gcTarima.MainView = this.gvTarima;
             this.gcTarima.Name = "gcTarima";
-            this.gcTarima.Size = new System.Drawing.Size(684, 193);
-            this.gcTarima.TabIndex = 107;
+            this.gcTarima.Size = new System.Drawing.Size(674, 193);
+            this.gcTarima.TabIndex = 113;
             this.gcTarima.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTarima});
             // 
@@ -337,80 +406,143 @@ namespace LOSA.TransaccionesMP
             this.gvTarima.Appearance.VertLine.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvTarima.Appearance.VertLine.Options.UseBackColor = true;
             this.gvTarima.Appearance.VertLine.Options.UseFont = true;
+            this.gvTarima.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid2,
+            this.colnombreTarima,
+            this.colnombreProveedor,
+            this.colfecha_ingreso,
+            this.colnumero_transaccion,
+            this.collote_materia_prima,
+            this.colpresentacion,
+            this.coltipo_tarima,
+            this.colid_boleta,
+            this.colnum,
+            this.colIsMicro,
+            this.colitemcode,
+            this.colmp_name});
             this.gvTarima.GridControl = this.gcTarima;
             this.gvTarima.Name = "gvTarima";
             this.gvTarima.OptionsBehavior.AutoSelectAllInEditor = false;
             this.gvTarima.OptionsBehavior.Editable = false;
             this.gvTarima.OptionsView.EnableAppearanceEvenRow = true;
             this.gvTarima.OptionsView.EnableAppearanceOddRow = true;
-            this.gvTarima.OptionsView.ShowColumnHeaders = false;
             this.gvTarima.OptionsView.ShowGroupPanel = false;
             this.gvTarima.OptionsView.ShowIndicator = false;
             this.gvTarima.PaintStyleName = "Flat";
             // 
-            // textEdit1
+            // colid2
             // 
-            this.textEdit1.Enabled = false;
-            this.textEdit1.Location = new System.Drawing.Point(380, 459);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
-            this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Size = new System.Drawing.Size(300, 36);
-            this.textEdit1.TabIndex = 109;
+            this.colid2.FieldName = "id";
+            this.colid2.Name = "colid2";
             // 
-            // labelControl6
+            // colnombreTarima
             // 
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(114, 462);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(246, 30);
-            this.labelControl6.TabIndex = 108;
-            this.labelControl6.Text = "Restante en tarima (Ud.):";
+            this.colnombreTarima.FieldName = "nombreTarima";
+            this.colnombreTarima.Name = "colnombreTarima";
             // 
-            // btnDown
+            // colnombreProveedor
             // 
-            this.btnDown.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDown.ImageOptions.Image")));
-            this.btnDown.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnDown.Location = new System.Drawing.Point(604, 315);
-            this.btnDown.Name = "btnDown";
-            this.btnDown.Size = new System.Drawing.Size(76, 65);
-            this.btnDown.TabIndex = 111;
-            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
+            this.colnombreProveedor.Caption = "Provider";
+            this.colnombreProveedor.FieldName = "nombreProveedor";
+            this.colnombreProveedor.Name = "colnombreProveedor";
+            this.colnombreProveedor.Visible = true;
+            this.colnombreProveedor.VisibleIndex = 3;
+            this.colnombreProveedor.Width = 104;
             // 
-            // btnUP
+            // colfecha_ingreso
             // 
-            this.btnUP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUP.ImageOptions.Image")));
-            this.btnUP.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnUP.Location = new System.Drawing.Point(524, 315);
-            this.btnUP.Name = "btnUP";
-            this.btnUP.Size = new System.Drawing.Size(74, 65);
-            this.btnUP.TabIndex = 110;
-            this.btnUP.Click += new System.EventHandler(this.btnUP_Click);
+            this.colfecha_ingreso.Caption = "Date";
+            this.colfecha_ingreso.FieldName = "fecha_ingreso";
+            this.colfecha_ingreso.Name = "colfecha_ingreso";
+            this.colfecha_ingreso.Visible = true;
+            this.colfecha_ingreso.VisibleIndex = 4;
+            this.colfecha_ingreso.Width = 84;
             // 
-            // chConsumirPendientes
+            // colnumero_transaccion
             // 
-            this.chConsumirPendientes.Location = new System.Drawing.Point(178, 555);
-            this.chConsumirPendientes.Name = "chConsumirPendientes";
-            this.chConsumirPendientes.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
-            this.chConsumirPendientes.Properties.Appearance.Options.UseFont = true;
-            this.chConsumirPendientes.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.chConsumirPendientes.Properties.Caption = "Consumir lo pendiente de la Requisa";
-            this.chConsumirPendientes.Size = new System.Drawing.Size(440, 36);
-            this.chConsumirPendientes.TabIndex = 112;
-            this.chConsumirPendientes.CheckedChanged += new System.EventHandler(this.chConsumirPendientes_CheckedChanged);
+            this.colnumero_transaccion.Caption = "Transaction Num";
+            this.colnumero_transaccion.FieldName = "numero_transaccion";
+            this.colnumero_transaccion.Name = "colnumero_transaccion";
+            this.colnumero_transaccion.Visible = true;
+            this.colnumero_transaccion.VisibleIndex = 5;
+            this.colnumero_transaccion.Width = 76;
+            // 
+            // collote_materia_prima
+            // 
+            this.collote_materia_prima.Caption = "Lot";
+            this.collote_materia_prima.FieldName = "lote_materia_prima";
+            this.collote_materia_prima.Name = "collote_materia_prima";
+            this.collote_materia_prima.Visible = true;
+            this.collote_materia_prima.VisibleIndex = 6;
+            this.collote_materia_prima.Width = 96;
+            // 
+            // colpresentacion
+            // 
+            this.colpresentacion.Caption = "Size";
+            this.colpresentacion.FieldName = "presentacion";
+            this.colpresentacion.Name = "colpresentacion";
+            this.colpresentacion.Visible = true;
+            this.colpresentacion.VisibleIndex = 7;
+            this.colpresentacion.Width = 49;
+            // 
+            // coltipo_tarima
+            // 
+            this.coltipo_tarima.FieldName = "tipo_tarima";
+            this.coltipo_tarima.Name = "coltipo_tarima";
+            // 
+            // colid_boleta
+            // 
+            this.colid_boleta.FieldName = "id_boleta";
+            this.colid_boleta.Name = "colid_boleta";
+            // 
+            // colnum
+            // 
+            this.colnum.Caption = "#";
+            this.colnum.FieldName = "num";
+            this.colnum.Name = "colnum";
+            this.colnum.Visible = true;
+            this.colnum.VisibleIndex = 0;
+            this.colnum.Width = 39;
+            // 
+            // colIsMicro
+            // 
+            this.colIsMicro.FieldName = "IsMicro";
+            this.colIsMicro.Name = "colIsMicro";
+            // 
+            // colitemcode
+            // 
+            this.colitemcode.Caption = "Code";
+            this.colitemcode.FieldName = "itemcode";
+            this.colitemcode.Name = "colitemcode";
+            this.colitemcode.Visible = true;
+            this.colitemcode.VisibleIndex = 1;
+            this.colitemcode.Width = 81;
+            // 
+            // colmp_name
+            // 
+            this.colmp_name.Caption = "Name";
+            this.colmp_name.FieldName = "mp_name";
+            this.colmp_name.Name = "colmp_name";
+            this.colmp_name.Visible = true;
+            this.colmp_name.VisibleIndex = 2;
+            this.colmp_name.Width = 81;
+            // 
+            // dsTransaccionesMP1
+            // 
+            this.dsTransaccionesMP1.DataSetName = "dsTransaccionesMP";
+            this.dsTransaccionesMP1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // frmResumenToEntregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(733, 657);
+            this.Controls.Add(this.gcTarima);
             this.Controls.Add(this.chConsumirPendientes);
             this.Controls.Add(this.btnDown);
             this.Controls.Add(this.btnUP);
             this.Controls.Add(this.textEdit1);
             this.Controls.Add(this.labelControl6);
-            this.Controls.Add(this.gcTarima);
             this.Controls.Add(this.txtRestante);
             this.Controls.Add(this.txtPorEnviar);
             this.Controls.Add(this.txtEnviados);
@@ -424,16 +556,17 @@ namespace LOSA.TransaccionesMP
             this.Controls.Add(this.cmdHome);
             this.Name = "frmResumenToEntregar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmResumenToEntregar";
+            this.Text = "Resumen a Entregar";
             this.Load += new System.EventHandler(this.frmResumenToEntregar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtSolicitados.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEnviados.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPorEnviar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRestante.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcTarima)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvTarima)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chConsumirPendientes.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcTarima)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvTarima)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -452,12 +585,26 @@ namespace LOSA.TransaccionesMP
         private DevExpress.XtraEditors.TextEdit txtEnviados;
         private DevExpress.XtraEditors.TextEdit txtPorEnviar;
         private DevExpress.XtraEditors.TextEdit txtRestante;
-        private DevExpress.XtraGrid.GridControl gcTarima;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvTarima;
         private DevExpress.XtraEditors.TextEdit textEdit1;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.SimpleButton btnDown;
         private DevExpress.XtraEditors.SimpleButton btnUP;
         private DevExpress.XtraEditors.CheckEdit chConsumirPendientes;
+        private DevExpress.XtraGrid.GridControl gcTarima;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvTarima;
+        private DevExpress.XtraGrid.Columns.GridColumn colid2;
+        private DevExpress.XtraGrid.Columns.GridColumn colnombreTarima;
+        private DevExpress.XtraGrid.Columns.GridColumn colnombreProveedor;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecha_ingreso;
+        private DevExpress.XtraGrid.Columns.GridColumn colnumero_transaccion;
+        private DevExpress.XtraGrid.Columns.GridColumn collote_materia_prima;
+        private DevExpress.XtraGrid.Columns.GridColumn colpresentacion;
+        private DevExpress.XtraGrid.Columns.GridColumn coltipo_tarima;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_boleta;
+        private DevExpress.XtraGrid.Columns.GridColumn colnum;
+        private DevExpress.XtraGrid.Columns.GridColumn colIsMicro;
+        private DevExpress.XtraGrid.Columns.GridColumn colitemcode;
+        private DevExpress.XtraGrid.Columns.GridColumn colmp_name;
+        private dsTransaccionesMP dsTransaccionesMP1;
     }
 }

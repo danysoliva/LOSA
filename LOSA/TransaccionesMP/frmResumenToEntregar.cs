@@ -75,8 +75,17 @@ namespace LOSA.TransaccionesMP
                 {
                     RestanteTm = selecionado - RestanteReq;
                     RestanteReq = 0;
-                    ud_enviar = Convert.ToInt32((selecionado - RestanteTm)  / factor);
-                    RestanteTm = Convert.ToInt32(RestanteTm / factor);
+                    if (factor > 0)
+                    {
+                        ud_enviar = Convert.ToInt32((selecionado - RestanteTm) / factor);
+                        RestanteTm = Convert.ToInt32(RestanteTm / factor);
+                    }
+                    else
+                    {
+                        ud_enviar = 0;
+                    }
+
+                    
                 }
                 else
                 {
