@@ -2354,6 +2354,12 @@
     <Compile Include="TransaccionesMP\frmAjusteLotes.Designer.cs">
       <DependentUpon>frmAjusteLotes.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\frmAsjuteInventarioPorLote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmAsjuteInventarioPorLote.Designer.cs">
+      <DependentUpon>frmAsjuteInventarioPorLote.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesMP\frmCambiarUbicacionTarimaPT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -3653,6 +3659,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmAjusteLotes.resx">
       <DependentUpon>frmAjusteLotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmAsjuteInventarioPorLote.resx">
+      <DependentUpon>frmAsjuteInventarioPorLote.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmCambiarUbicacionTarimaPT.resx">
       <DependentUpon>frmCambiarUbicacionTarimaPT.cs</DependentUpon>
