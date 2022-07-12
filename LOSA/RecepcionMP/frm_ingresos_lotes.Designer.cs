@@ -75,12 +75,12 @@
             this.colcantidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEliminar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btneliminarTm = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colestado_tarima = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colseleccionado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnFinalizar = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrintSeleccionados = new DevExpress.XtraEditors.SimpleButton();
             this.checkBoxSelectAll = new System.Windows.Forms.CheckBox();
-            this.colestado_tarima = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -289,7 +289,7 @@
             this.colPrint.MinWidth = 17;
             this.colPrint.Name = "colPrint";
             this.colPrint.Visible = true;
-            this.colPrint.VisibleIndex = 9;
+            this.colPrint.VisibleIndex = 10;
             this.colPrint.Width = 54;
             // 
             // btnPrint
@@ -309,7 +309,7 @@
             this.colDuplicar.MinWidth = 17;
             this.colDuplicar.Name = "colDuplicar";
             this.colDuplicar.Visible = true;
-            this.colDuplicar.VisibleIndex = 10;
+            this.colDuplicar.VisibleIndex = 11;
             this.colDuplicar.Width = 54;
             // 
             // cmdDuplicar
@@ -329,7 +329,7 @@
             this.Editar.MinWidth = 17;
             this.Editar.Name = "Editar";
             this.Editar.Visible = true;
-            this.Editar.VisibleIndex = 11;
+            this.Editar.VisibleIndex = 12;
             this.Editar.Width = 61;
             // 
             // btnEditar
@@ -375,7 +375,7 @@
             this.colEliminar.ColumnEdit = this.btneliminarTm;
             this.colEliminar.Name = "colEliminar";
             this.colEliminar.Visible = true;
-            this.colEliminar.VisibleIndex = 12;
+            this.colEliminar.VisibleIndex = 13;
             // 
             // btneliminarTm
             // 
@@ -386,6 +386,15 @@
             this.btneliminarTm.Name = "btneliminarTm";
             this.btneliminarTm.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btneliminarTm.Click += new System.EventHandler(this.btneliminarTm_Click);
+            // 
+            // colestado_tarima
+            // 
+            this.colestado_tarima.Caption = "Estado de Tarima";
+            this.colestado_tarima.FieldName = "estado_tarima";
+            this.colestado_tarima.Name = "colestado_tarima";
+            this.colestado_tarima.OptionsColumn.AllowEdit = false;
+            this.colestado_tarima.Visible = true;
+            this.colestado_tarima.VisibleIndex = 9;
             // 
             // colseleccionado
             // 
@@ -455,15 +464,6 @@
             this.checkBoxSelectAll.Text = "Seleccionar Todas";
             this.checkBoxSelectAll.UseVisualStyleBackColor = true;
             this.checkBoxSelectAll.CheckedChanged += new System.EventHandler(this.checkBoxSelectAll_CheckedChanged);
-            // 
-            // colestado_tarima
-            // 
-            this.colestado_tarima.Caption = "Estado de Tarima";
-            this.colestado_tarima.FieldName = "estado_tarima";
-            this.colestado_tarima.Name = "colestado_tarima";
-            this.colestado_tarima.OptionsColumn.AllowEdit = false;
-            this.colestado_tarima.Visible = true;
-            this.colestado_tarima.VisibleIndex = 13;
             // 
             // frm_ingresos_lotes
             // 
