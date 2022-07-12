@@ -43,7 +43,7 @@
             // 
             // Detail
             // 
-            this.Detail.HeightF = 7.291667F;
+            this.Detail.HeightF = 3.458405F;
             this.Detail.Name = "Detail";
             this.Detail.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
@@ -74,7 +74,7 @@
             this.xrBarCode1,
             this.xrLabel2,
             this.lblRack});
-            this.PageHeader.HeightF = 506.25F;
+            this.PageHeader.HeightF = 507.2917F;
             this.PageHeader.Name = "PageHeader";
             // 
             // xrBarCode2
@@ -84,7 +84,7 @@
             this.xrBarCode2.Name = "xrBarCode2";
             this.xrBarCode2.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 10, 0, 0, 100F);
             this.xrBarCode2.ShowText = false;
-            this.xrBarCode2.SizeF = new System.Drawing.SizeF(463F, 188.7085F);
+            this.xrBarCode2.SizeF = new System.Drawing.SizeF(321.3333F, 189.7502F);
             this.xrBarCode2.Symbology = code93Generator1;
             this.xrBarCode2.Text = "UB1";
             // 
@@ -95,7 +95,7 @@
             this.xrBarCode1.Name = "xrBarCode1";
             this.xrBarCode1.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 10, 0, 0, 100F);
             this.xrBarCode1.ShowText = false;
-            this.xrBarCode1.SizeF = new System.Drawing.SizeF(463F, 188.7085F);
+            this.xrBarCode1.SizeF = new System.Drawing.SizeF(321.3333F, 189.7501F);
             this.xrBarCode1.Symbology = code93Generator2;
             this.xrBarCode1.Text = "UB1";
             // 
@@ -103,12 +103,12 @@
             // 
             this.xrLabel2.AutoWidth = true;
             this.xrLabel2.CanShrink = true;
-            this.xrLabel2.Font = new System.Drawing.Font("Times New Roman", 42F);
+            this.xrLabel2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 188.7085F);
             this.xrLabel2.Multiline = true;
             this.xrLabel2.Name = "xrLabel2";
             this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel2.SizeF = new System.Drawing.SizeF(463F, 58.41652F);
+            this.xrLabel2.SizeF = new System.Drawing.SizeF(321.3333F, 59.45818F);
             this.xrLabel2.StylePriority.UseFont = false;
             this.xrLabel2.StylePriority.UseTextAlignment = false;
             this.xrLabel2.Text = "RACK";
@@ -118,12 +118,12 @@
             // 
             this.lblRack.AutoWidth = true;
             this.lblRack.CanShrink = true;
-            this.lblRack.Font = new System.Drawing.Font("Times New Roman", 45F);
+            this.lblRack.Font = new System.Drawing.Font("Arial Rounded MT Bold", 45F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRack.LocationFloat = new DevExpress.Utils.PointFloat(0F, 247.125F);
             this.lblRack.Multiline = true;
             this.lblRack.Name = "lblRack";
             this.lblRack.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblRack.SizeF = new System.Drawing.SizeF(462.9999F, 70.41652F);
+            this.lblRack.SizeF = new System.Drawing.SizeF(321.3332F, 71.45816F);
             this.lblRack.StylePriority.UseFont = false;
             this.lblRack.StylePriority.UseTextAlignment = false;
             this.lblRack.Text = "XXXXXXXXXX";
@@ -137,8 +137,8 @@
             this.BottomMargin,
             this.ReportHeader,
             this.PageHeader});
-            this.Margins = new System.Drawing.Printing.Margins(23, 364, 27, 10);
-            this.Version = "17.1";
+            this.Margins = new System.Drawing.Printing.Margins(23, 498, 27, 10);
+            this.Version = "18.2";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }

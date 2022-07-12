@@ -506,20 +506,20 @@ namespace LOSA.TransaccionesMP
                         timerLimpiarMensaje.Start();
                         return;
                     }
-                    if (tarimaEncontrada.Id_estado_tarima == 1) //1 Recepcionado - 2 En Bodega
-                    {
-                        error = true;
-                        mensaje = "La tarima no esta activada!";
-                        Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
-                        if (frm.ShowDialog() == DialogResult.Cancel)
-                        {
+                    //if (tarimaEncontrada.Id_estado_tarima == 1) //1 Recepcionado - 2 En Bodega
+                    //{
+                    //    error = true;
+                    //    mensaje = "La tarima no esta activada!";
+                    //    Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
+                    //    if (frm.ShowDialog() == DialogResult.Cancel)
+                    //    {
 
-                        }
-                        panelNotificacion.BackColor = Color.Red;
-                        timerLimpiarMensaje.Enabled = true;
-                        timerLimpiarMensaje.Start();
-                        return;
-                    }
+                    //    }
+                    //    panelNotificacion.BackColor = Color.Red;
+                    //    timerLimpiarMensaje.Enabled = true;
+                    //    timerLimpiarMensaje.Start();
+                    //    return;
+                    //}
 
 
 
