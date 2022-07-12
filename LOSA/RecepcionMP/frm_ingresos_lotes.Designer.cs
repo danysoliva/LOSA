@@ -80,6 +80,7 @@
             this.btnFinalizar = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrintSeleccionados = new DevExpress.XtraEditors.SimpleButton();
             this.checkBoxSelectAll = new System.Windows.Forms.CheckBox();
+            this.colestado_tarima = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -186,6 +187,7 @@
             this.colcodigo_barra,
             this.colcantidad,
             this.colEliminar,
+            this.colestado_tarima,
             this.colseleccionado});
             this.gridView1.DetailHeight = 284;
             this.gridView1.GridControl = this.gridControl1;
@@ -391,7 +393,7 @@
             this.colseleccionado.FieldName = "seleccionado";
             this.colseleccionado.Name = "colseleccionado";
             this.colseleccionado.Visible = true;
-            this.colseleccionado.VisibleIndex = 13;
+            this.colseleccionado.VisibleIndex = 14;
             // 
             // simpleButton1
             // 
@@ -453,6 +455,15 @@
             this.checkBoxSelectAll.Text = "Seleccionar Todas";
             this.checkBoxSelectAll.UseVisualStyleBackColor = true;
             this.checkBoxSelectAll.CheckedChanged += new System.EventHandler(this.checkBoxSelectAll_CheckedChanged);
+            // 
+            // colestado_tarima
+            // 
+            this.colestado_tarima.Caption = "Estado de Tarima";
+            this.colestado_tarima.FieldName = "estado_tarima";
+            this.colestado_tarima.Name = "colestado_tarima";
+            this.colestado_tarima.OptionsColumn.AllowEdit = false;
+            this.colestado_tarima.Visible = true;
+            this.colestado_tarima.VisibleIndex = 13;
             // 
             // frm_ingresos_lotes
             // 
@@ -516,5 +527,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colseleccionado;
         private DevExpress.XtraEditors.SimpleButton btnPrintSeleccionados;
         private System.Windows.Forms.CheckBox checkBoxSelectAll;
+        private DevExpress.XtraGrid.Columns.GridColumn colestado_tarima;
     }
 }

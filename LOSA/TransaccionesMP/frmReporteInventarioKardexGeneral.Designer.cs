@@ -67,6 +67,7 @@ namespace LOSA.TransaccionesMP
             this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcode_sap = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnExcel = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAjustePorLote = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
@@ -459,21 +460,36 @@ namespace LOSA.TransaccionesMP
             // 
             // btnExcel
             // 
+            this.btnExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExcel.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnExcel.Appearance.Options.UseFont = true;
             this.btnExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.ImageOptions.Image")));
-            this.btnExcel.Location = new System.Drawing.Point(4, 6);
+            this.btnExcel.Location = new System.Drawing.Point(1118, 6);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(108, 46);
+            this.btnExcel.Size = new System.Drawing.Size(114, 56);
             this.btnExcel.TabIndex = 2;
             this.btnExcel.Text = "Excel";
             this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
+            // 
+            // btnAjustePorLote
+            // 
+            this.btnAjustePorLote.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnAjustePorLote.Appearance.Options.UseFont = true;
+            this.btnAjustePorLote.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAjustePorLote.ImageOptions.Image")));
+            this.btnAjustePorLote.Location = new System.Drawing.Point(12, 6);
+            this.btnAjustePorLote.Name = "btnAjustePorLote";
+            this.btnAjustePorLote.Size = new System.Drawing.Size(185, 56);
+            this.btnAjustePorLote.TabIndex = 3;
+            this.btnAjustePorLote.Text = "Agregar Ajuste";
+            this.btnAjustePorLote.Visible = false;
+            this.btnAjustePorLote.Click += new System.EventHandler(this.btnAjustePorLote_Click);
             // 
             // frmReporteInventarioKardexGeneral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 758);
+            this.Controls.Add(this.btnAjustePorLote);
             this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.tabPane1);
             this.Controls.Add(this.btnClose);
@@ -528,5 +544,6 @@ namespace LOSA.TransaccionesMP
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btn_logmovimiento;
         private DevExpress.XtraGrid.Columns.GridColumn colingreso;
         private DevExpress.XtraGrid.Columns.GridColumn colsalidas;
+        private DevExpress.XtraEditors.SimpleButton btnAjustePorLote;
     }
 }

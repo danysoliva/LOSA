@@ -16,6 +16,7 @@ namespace LOSA.RecepcionMP
     public partial class frmMP : Form
     {
         public string idProveedor,MateriaPrima,NombreProveedor,ItemCode;
+        public int id_mp;
         public frmMP()
         {
             InitializeComponent();
@@ -32,8 +33,10 @@ namespace LOSA.RecepcionMP
 
             //this.idProveedor = row.carcode;
             //this.NombreProveedor = row.cardname;
+           
             this.MateriaPrima = row.itemdescrip;
             this.ItemCode = row.itemcode;
+
             //this.lote = row.lote_materia_prima;
             this.DialogResult = DialogResult.OK;
             this.Close();
