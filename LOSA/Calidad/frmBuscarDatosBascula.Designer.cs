@@ -45,14 +45,15 @@ namespace LOSA.Calidad
             // 
             // gridControl3
             // 
-            this.gridControl3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.gridControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl3.DataMember = "ultimas_cargasSelect";
             this.gridControl3.DataSource = this.dsTarima1;
             this.gridControl3.Location = new System.Drawing.Point(1, 2);
             this.gridControl3.MainView = this.gridView6;
             this.gridControl3.Name = "gridControl3";
-            this.gridControl3.Size = new System.Drawing.Size(499, 215);
+            this.gridControl3.Size = new System.Drawing.Size(499, 294);
             this.gridControl3.TabIndex = 89;
             this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView6});
@@ -106,11 +107,12 @@ namespace LOSA.Calidad
             // 
             // cmdAplicar
             // 
+            this.cmdAplicar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cmdAplicar.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdAplicar.Appearance.Options.UseFont = true;
             this.cmdAplicar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdAplicar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdAplicar.ImageOptions.Image")));
-            this.cmdAplicar.Location = new System.Drawing.Point(141, 223);
+            this.cmdAplicar.Location = new System.Drawing.Point(136, 302);
             this.cmdAplicar.Name = "cmdAplicar";
             this.cmdAplicar.Size = new System.Drawing.Size(106, 41);
             this.cmdAplicar.TabIndex = 90;
@@ -119,11 +121,12 @@ namespace LOSA.Calidad
             // 
             // cmdCancelar
             // 
+            this.cmdCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cmdCancelar.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdCancelar.Appearance.Options.UseFont = true;
             this.cmdCancelar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdCancelar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdCancelar.ImageOptions.Image")));
-            this.cmdCancelar.Location = new System.Drawing.Point(253, 223);
+            this.cmdCancelar.Location = new System.Drawing.Point(248, 302);
             this.cmdCancelar.Name = "cmdCancelar";
             this.cmdCancelar.Size = new System.Drawing.Size(106, 41);
             this.cmdCancelar.TabIndex = 91;
@@ -134,7 +137,7 @@ namespace LOSA.Calidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(503, 269);
+            this.ClientSize = new System.Drawing.Size(503, 345);
             this.Controls.Add(this.cmdCancelar);
             this.Controls.Add(this.cmdAplicar);
             this.Controls.Add(this.gridControl3);
