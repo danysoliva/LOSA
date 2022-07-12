@@ -72,6 +72,7 @@
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.dtFechaDesde = new DevExpress.XtraEditors.DateEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.colestado_tarima = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -163,7 +164,8 @@
             this.Editar,
             this.colnum,
             this.colUbicacion,
-            this.colcodigo_barra});
+            this.colcodigo_barra,
+            this.colestado_tarima});
             this.gridView1.DetailHeight = 284;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
@@ -265,7 +267,7 @@
             this.colPrint.MinWidth = 15;
             this.colPrint.Name = "colPrint";
             this.colPrint.Visible = true;
-            this.colPrint.VisibleIndex = 9;
+            this.colPrint.VisibleIndex = 10;
             this.colPrint.Width = 54;
             // 
             // btnPrint
@@ -285,7 +287,7 @@
             this.colDuplicar.MinWidth = 15;
             this.colDuplicar.Name = "colDuplicar";
             this.colDuplicar.Visible = true;
-            this.colDuplicar.VisibleIndex = 10;
+            this.colDuplicar.VisibleIndex = 11;
             this.colDuplicar.Width = 54;
             // 
             // cmdDuplicar
@@ -305,7 +307,7 @@
             this.Editar.MinWidth = 15;
             this.Editar.Name = "Editar";
             this.Editar.Visible = true;
-            this.Editar.VisibleIndex = 11;
+            this.Editar.VisibleIndex = 12;
             this.Editar.Width = 67;
             // 
             // btnEditar
@@ -422,6 +424,15 @@
             this.labelControl8.TabIndex = 54;
             this.labelControl8.Text = "Fecha Desde:";
             // 
+            // colestado_tarima
+            // 
+            this.colestado_tarima.Caption = "Estado de Tarima";
+            this.colestado_tarima.FieldName = "estado_tarima";
+            this.colestado_tarima.Name = "colestado_tarima";
+            this.colestado_tarima.OptionsColumn.AllowEdit = false;
+            this.colestado_tarima.Visible = true;
+            this.colestado_tarima.VisibleIndex = 9;
+            // 
             // frmImprimirHojaIngreso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -487,5 +498,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colnum;
         private DevExpress.XtraGrid.Columns.GridColumn colUbicacion;
         private DevExpress.XtraGrid.Columns.GridColumn colcodigo_barra;
+        private DevExpress.XtraGrid.Columns.GridColumn colestado_tarima;
     }
 }

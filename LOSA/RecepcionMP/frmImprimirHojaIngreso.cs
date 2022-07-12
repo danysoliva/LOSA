@@ -99,6 +99,7 @@ namespace LOSA.RecepcionMP
             //imprimir
             var gridView = (GridView)gridControl1.FocusedView;
             var row = (dsRecepcionMPx.lista_tarimasRow)gridView.GetFocusedDataRow();
+
             rptReporteIngresoTarima report = new rptReporteIngresoTarima(row.id);
             report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
             ReportPrintTool printReport = new ReportPrintTool(report);
