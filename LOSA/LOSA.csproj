@@ -399,6 +399,12 @@
     <Compile Include="Calidad\frmAdjuntarImagen.Designer.cs">
       <DependentUpon>frmAdjuntarImagen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\frmBuscarDatosBascula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmBuscarDatosBascula.Designer.cs">
+      <DependentUpon>frmBuscarDatosBascula.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\frmcalidad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2860,6 +2866,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmAdjuntarImagen.resx">
       <DependentUpon>frmAdjuntarImagen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmBuscarDatosBascula.resx">
+      <DependentUpon>frmBuscarDatosBascula.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmcalidad.resx">
       <DependentUpon>frmcalidad.cs</DependentUpon>

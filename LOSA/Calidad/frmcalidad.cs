@@ -88,13 +88,13 @@ namespace LOSA.Calidad
                 {
                     
                     item_conf = new Lote_Ingreso_Conf_Calidad{
-                    ID = dr.GetInt32(0),
-                    NumeroIngreso = dr.GetInt32(1),
-                    ItemCode = dr.GetString(2),
-                    ID_MP = dr.GetInt32(3),
-                    Lote = dr.GetString(4),
+                                                                    ID = dr.GetInt32(0),
+                                                                    NumeroIngreso = dr.GetInt32(1),
+                                                                    ItemCode = dr.GetString(2),
+                                                                    ID_MP = dr.GetInt32(3),
+                                                                    Lote = dr.GetString(4),
 
-                };
+                                                                };
                 }
 
                 cnx.Close();

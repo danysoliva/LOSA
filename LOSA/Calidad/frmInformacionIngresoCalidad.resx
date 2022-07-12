@@ -312,6 +312,27 @@
   <metadata name="origenespecieBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>318, 56</value>
   </metadata>
+  <data name="cmdSelectUltimasCargas.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        7AAAAOwBeShxvQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAKRSURBVFhH7ddJ
+        yI1RHMfxFxlSKJShlGknYSOkpJQhezayMJWpkBWvlEKZSZGNBSWSKUPGWNlQFhYkMpV5HkKG7/c899Tz
+        3vd5773PHWThV5+653R7zv895zznnrfpX8oQrMVBHK6zHZiENjMP3/AMp5H1kGodxW38xhF0RotMxE9s
+        Qkc7GpRp+ICdoZXKBVxCu9BKvvi4YKodqWzFe1xDXztyZhG+o1doFfIRS5OPIQ58rOCRHYWMhdO4CvZv
+        Qd70h8+YHFqF5C1gNepawHlcRlwCp90BNMWOVBzUJbiKPnbkzGK0WoIJcBP68E52NCjT4WxvD62izIWV
+        fcJTxE1YD0/wGk69r2XmHxkLsMJGFlDyHGj0EpQ8B67g/zkQU66AWs4Bsw4Dko9J/uY5kJlqzoH2GIqu
+        oVU67vphKPnsSs6BDTAdcBYuhz/fLk1xnMVtmIG78Lt3MAiZqeQciAWMhg/04afgkliES+ilw+PWGY13
+        gC8Yhxt4iFZF5D0H3Mlf4Svp90/CIg7BAX3WZ7g8zYW+BeiJzCLynAMx/vU/4CUmFuFAuzEKL+EdIxZh
+        Ud2RWUSlr2FxYhGbkZ6JMRgBi9gDkz60YhHuiR52VFuAmYmsInxDvOSORFb64TnW28hzDmSluAin3H1S
+        Lh5I9/xQj/tAuohKMwtu5hBfQ6/lTssZpK/VxQ6gxVFKBmM/3IiVFuH/IPeTj0nclWvgAFkDR+kC3OXH
+        4cBp41EqzrSD7wqtGrIXL+Cvm8V0w3DE/dRWvBN4VgwMrRryCicwBxbRBeWyBL8wO7RqzHI8wFs49e+w
+        Dx7XWVkGB18ZWnVOb8zHTVjMLWyEu30hLsK3bQUaHg8gfw2v4w2coXPwdyeVpqY/C8EvC4SW1x8AAAAA
+        SUVORK5CYII=
+</value>
+  </data>
+  <metadata name="dsTarima1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
   <data name="labelControl51.Text" xml:space="preserve">
     <value>FISICO: Metal, Piedras, Palos, Plástico, Tornillos, Tuercas, Vidrio.	 	 	 	 	
 QUIMICO: Combustible, ( Diésel, Gasolina, Aceite), Detergente, Pesticidas, 
@@ -345,9 +366,6 @@ BIOLOGICO: Heces, Insectos, Lodo, Residuos de Otros Alimentos.
         Cf7+lPMQUtla7Z/JUuN33gcvikpCVBUd29sAAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="dsTarima1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
-  </metadata>
   <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>157, 17</value>
   </metadata>

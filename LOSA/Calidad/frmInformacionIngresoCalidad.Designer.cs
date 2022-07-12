@@ -29,6 +29,7 @@ namespace LOSA.Calidad
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rdEstadoTransporte));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -147,22 +148,22 @@ namespace LOSA.Calidad
             this.panelControl13 = new DevExpress.XtraEditors.PanelControl();
             this.txtPLantaSenasa = new DevExpress.XtraEditors.TextEdit();
             this.grd_tipo = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.tipoingresoBindingSource = new System.Windows.Forms.BindingSource();
+            this.tipoingresoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grd_origen = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.paisesBindingSource = new System.Windows.Forms.BindingSource();
+            this.paisesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grd_pesca = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.zonaPescaBindingSource = new System.Windows.Forms.BindingSource();
+            this.zonaPescaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grd_origenespecie = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.origenespecieBindingSource = new System.Windows.Forms.BindingSource();
+            this.origenespecieBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnombre = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -192,21 +193,27 @@ namespace LOSA.Calidad
             this.panelControl17 = new DevExpress.XtraEditors.PanelControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
+            this.panelControl25 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.rdEmpaque4 = new DevExpress.XtraEditors.RadioGroup();
+            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.rdEmpaque3 = new DevExpress.XtraEditors.RadioGroup();
+            this.rdEmpaque1 = new DevExpress.XtraEditors.RadioGroup();
             this.rdEmpaque2 = new DevExpress.XtraEditors.RadioGroup();
+            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl24 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl23 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl22 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl21 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
-            this.rdEmpaque1 = new DevExpress.XtraEditors.RadioGroup();
-            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.cmdSelectUltimasCargas = new System.Windows.Forms.Button();
+            this.gridControl3 = new DevExpress.XtraGrid.GridControl();
+            this.dsTarima1 = new LOSA.TransaccionesMP.dsTarima();
+            this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.coldescripcion5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.rdTranporte3 = new DevExpress.XtraEditors.RadioGroup();
             this.rdTranporte2 = new DevExpress.XtraEditors.RadioGroup();
             this.rdTranporte1 = new DevExpress.XtraEditors.RadioGroup();
@@ -278,7 +285,6 @@ namespace LOSA.Calidad
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tb_inventario = new System.Windows.Forms.TabPage();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
-            this.dsTarima1 = new LOSA.TransaccionesMP.dsTarima();
             this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colexistencia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnombre_comercial = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -292,7 +298,7 @@ namespace LOSA.Calidad
             this.colcproveedor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colproveedor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.xtraFolderBrowserDialog1 = new DevExpress.XtraEditors.XtraFolderBrowserDialog();
+            this.xtraFolderBrowserDialog1 = new DevExpress.XtraEditors.XtraFolderBrowserDialog(this.components);
             this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.txtFacturas = new DevExpress.XtraEditors.TextEdit();
@@ -306,7 +312,6 @@ namespace LOSA.Calidad
             this.txtFabricante = new DevExpress.XtraEditors.TextEdit();
             this.cmdSearchFabricantePrv = new System.Windows.Forms.Button();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.panelControl25 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txtloteMP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtnombreMP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtboleta.Properties)).BeginInit();
@@ -382,17 +387,22 @@ namespace LOSA.Calidad
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
             this.panelControl6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl25)).BeginInit();
+            this.panelControl25.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rdEmpaque4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rdEmpaque3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdEmpaque1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rdEmpaque2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl21)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rdEmpaque1.Properties)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsTarima1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rdTranporte3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rdTranporte2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rdTranporte1.Properties)).BeginInit();
@@ -421,15 +431,12 @@ namespace LOSA.Calidad
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             this.tb_inventario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsTarima1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFacturas.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtingresadaUD.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_f_ingreso.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_f_ingreso.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFabricante.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl25)).BeginInit();
-            this.panelControl25.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -742,7 +749,7 @@ namespace LOSA.Calidad
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl14.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl14.Appearance.Options.UseFont = true;
-            this.labelControl14.Location = new System.Drawing.Point(273, 292);
+            this.labelControl14.Location = new System.Drawing.Point(273, 283);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(695, 30);
             this.labelControl14.TabIndex = 35;
@@ -762,7 +769,7 @@ namespace LOSA.Calidad
             this.PnNir.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PnNir.Location = new System.Drawing.Point(3, 3);
             this.PnNir.Name = "PnNir";
-            this.PnNir.Size = new System.Drawing.Size(1333, 521);
+            this.PnNir.Size = new System.Drawing.Size(1333, 532);
             this.PnNir.TabIndex = 1;
             // 
             // simpleButton1
@@ -785,7 +792,7 @@ namespace LOSA.Calidad
             this.panelControl9.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl9.Location = new System.Drawing.Point(0, 10);
             this.panelControl9.Name = "panelControl9";
-            this.panelControl9.Size = new System.Drawing.Size(11, 501);
+            this.panelControl9.Size = new System.Drawing.Size(11, 512);
             this.panelControl9.TabIndex = 20;
             // 
             // panelControl2
@@ -796,7 +803,7 @@ namespace LOSA.Calidad
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelControl2.Location = new System.Drawing.Point(1322, 10);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(11, 501);
+            this.panelControl2.Size = new System.Drawing.Size(11, 512);
             this.panelControl2.TabIndex = 19;
             // 
             // panelControl1
@@ -805,7 +812,7 @@ namespace LOSA.Calidad
             this.panelControl1.Appearance.Options.UseBackColor = true;
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl1.Location = new System.Drawing.Point(0, 511);
+            this.panelControl1.Location = new System.Drawing.Point(0, 522);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1333, 10);
             this.panelControl1.TabIndex = 18;
@@ -831,7 +838,7 @@ namespace LOSA.Calidad
             this.grd_nir.Location = new System.Drawing.Point(14, 69);
             this.grd_nir.MainView = this.grdv_nir;
             this.grd_nir.Name = "grd_nir";
-            this.grd_nir.Size = new System.Drawing.Size(1304, 438);
+            this.grd_nir.Size = new System.Drawing.Size(1304, 449);
             this.grd_nir.TabIndex = 1;
             this.grd_nir.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_nir});
@@ -1820,9 +1827,8 @@ namespace LOSA.Calidad
             // 
             // grd_logistica
             // 
-            this.grd_logistica.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grd_logistica.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.grd_logistica.DataMember = "logisticaInformacion";
             this.grd_logistica.DataSource = this.dsMantenimientoC;
             gridLevelNode1.RelationName = "Level1";
@@ -1831,7 +1837,7 @@ namespace LOSA.Calidad
             this.grd_logistica.Location = new System.Drawing.Point(3, 6);
             this.grd_logistica.MainView = this.grdv_logistica;
             this.grd_logistica.Name = "grd_logistica";
-            this.grd_logistica.Size = new System.Drawing.Size(633, 488);
+            this.grd_logistica.Size = new System.Drawing.Size(633, 499);
             this.grd_logistica.TabIndex = 39;
             this.grd_logistica.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_logistica});
@@ -1898,10 +1904,10 @@ namespace LOSA.Calidad
             this.tabControl1.Controls.Add(this.tabPageLotesPT);
             this.tabControl1.Controls.Add(this.tb_inventario);
             this.tabControl1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(2, 328);
+            this.tabControl1.Location = new System.Drawing.Point(2, 318);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1347, 561);
+            this.tabControl1.Size = new System.Drawing.Size(1347, 572);
             this.tabControl1.TabIndex = 40;
             // 
             // tabPage1
@@ -1911,7 +1917,7 @@ namespace LOSA.Calidad
             this.tabPage1.Location = new System.Drawing.Point(4, 30);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1339, 527);
+            this.tabPage1.Size = new System.Drawing.Size(1339, 538);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "NIR";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1924,7 +1930,7 @@ namespace LOSA.Calidad
             this.tabPage3.Location = new System.Drawing.Point(4, 30);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1339, 527);
+            this.tabPage3.Size = new System.Drawing.Size(1339, 538);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Datos y Adjuntos";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1942,7 +1948,7 @@ namespace LOSA.Calidad
             this.panelControl5.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelControl5.Location = new System.Drawing.Point(748, 3);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(588, 521);
+            this.panelControl5.Size = new System.Drawing.Size(588, 532);
             this.panelControl5.TabIndex = 50;
             // 
             // panelControl20
@@ -1953,7 +1959,7 @@ namespace LOSA.Calidad
             this.panelControl20.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl20.Location = new System.Drawing.Point(0, 11);
             this.panelControl20.Name = "panelControl20";
-            this.panelControl20.Size = new System.Drawing.Size(11, 500);
+            this.panelControl20.Size = new System.Drawing.Size(11, 511);
             this.panelControl20.TabIndex = 64;
             // 
             // panelControl19
@@ -1962,7 +1968,7 @@ namespace LOSA.Calidad
             this.panelControl19.Appearance.Options.UseBackColor = true;
             this.panelControl19.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl19.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl19.Location = new System.Drawing.Point(0, 511);
+            this.panelControl19.Location = new System.Drawing.Point(0, 522);
             this.panelControl19.Name = "panelControl19";
             this.panelControl19.Size = new System.Drawing.Size(577, 10);
             this.panelControl19.TabIndex = 63;
@@ -1986,7 +1992,7 @@ namespace LOSA.Calidad
             this.panelControl17.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelControl17.Location = new System.Drawing.Point(577, 0);
             this.panelControl17.Name = "panelControl17";
-            this.panelControl17.Size = new System.Drawing.Size(11, 521);
+            this.panelControl17.Size = new System.Drawing.Size(11, 532);
             this.panelControl17.TabIndex = 39;
             // 
             // tabPage4
@@ -1995,7 +2001,7 @@ namespace LOSA.Calidad
             this.tabPage4.Location = new System.Drawing.Point(4, 30);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1339, 527);
+            this.tabPage4.Size = new System.Drawing.Size(1339, 538);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Logistica";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -2013,8 +2019,36 @@ namespace LOSA.Calidad
             this.panelControl6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl6.Location = new System.Drawing.Point(3, 3);
             this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(1333, 521);
+            this.panelControl6.Size = new System.Drawing.Size(1333, 532);
             this.panelControl6.TabIndex = 51;
+            // 
+            // panelControl25
+            // 
+            this.panelControl25.Controls.Add(this.labelControl16);
+            this.panelControl25.Controls.Add(this.rdEmpaque4);
+            this.panelControl25.Controls.Add(this.labelControl17);
+            this.panelControl25.Controls.Add(this.rdEmpaque3);
+            this.panelControl25.Controls.Add(this.rdEmpaque1);
+            this.panelControl25.Controls.Add(this.grd_logistica);
+            this.panelControl25.Controls.Add(this.rdEmpaque2);
+            this.panelControl25.Controls.Add(this.labelControl18);
+            this.panelControl25.Controls.Add(this.labelControl19);
+            this.panelControl25.Controls.Add(this.labelControl20);
+            this.panelControl25.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl25.Location = new System.Drawing.Point(11, 11);
+            this.panelControl25.Name = "panelControl25";
+            this.panelControl25.Size = new System.Drawing.Size(1311, 511);
+            this.panelControl25.TabIndex = 64;
+            // 
+            // labelControl16
+            // 
+            this.labelControl16.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
+            this.labelControl16.Appearance.Options.UseFont = true;
+            this.labelControl16.Location = new System.Drawing.Point(664, 6);
+            this.labelControl16.Name = "labelControl16";
+            this.labelControl16.Size = new System.Drawing.Size(252, 19);
+            this.labelControl16.TabIndex = 49;
+            this.labelControl16.Text = "INSPECCION DEL EMPAQUE/ETIQUETA:";
             // 
             // rdEmpaque4
             // 
@@ -2029,6 +2063,16 @@ namespace LOSA.Calidad
             this.rdEmpaque4.Size = new System.Drawing.Size(154, 23);
             this.rdEmpaque4.TabIndex = 63;
             // 
+            // labelControl17
+            // 
+            this.labelControl17.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.labelControl17.Appearance.Options.UseFont = true;
+            this.labelControl17.Location = new System.Drawing.Point(712, 32);
+            this.labelControl17.Name = "labelControl17";
+            this.labelControl17.Size = new System.Drawing.Size(414, 15);
+            this.labelControl17.TabIndex = 50;
+            this.labelControl17.Text = "¿Esta Identificado el producto con fecha de producción y fecha de caducidad?.";
+            // 
             // rdEmpaque3
             // 
             this.rdEmpaque3.EditValue = true;
@@ -2041,95 +2085,6 @@ namespace LOSA.Calidad
             new DevExpress.XtraEditors.Controls.RadioGroupItem(false, "NO")});
             this.rdEmpaque3.Size = new System.Drawing.Size(154, 23);
             this.rdEmpaque3.TabIndex = 62;
-            // 
-            // rdEmpaque2
-            // 
-            this.rdEmpaque2.EditValue = true;
-            this.rdEmpaque2.Location = new System.Drawing.Point(1132, 58);
-            this.rdEmpaque2.Name = "rdEmpaque2";
-            this.rdEmpaque2.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.rdEmpaque2.Properties.Appearance.Options.UseFont = true;
-            this.rdEmpaque2.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(true, "SI"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(false, "NO")});
-            this.rdEmpaque2.Size = new System.Drawing.Size(154, 23);
-            this.rdEmpaque2.TabIndex = 52;
-            // 
-            // panelControl24
-            // 
-            this.panelControl24.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panelControl24.Appearance.Options.UseBackColor = true;
-            this.panelControl24.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl24.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControl24.Location = new System.Drawing.Point(1322, 11);
-            this.panelControl24.Name = "panelControl24";
-            this.panelControl24.Size = new System.Drawing.Size(11, 500);
-            this.panelControl24.TabIndex = 61;
-            // 
-            // panelControl23
-            // 
-            this.panelControl23.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panelControl23.Appearance.Options.UseBackColor = true;
-            this.panelControl23.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl23.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl23.Location = new System.Drawing.Point(11, 511);
-            this.panelControl23.Name = "panelControl23";
-            this.panelControl23.Size = new System.Drawing.Size(1322, 10);
-            this.panelControl23.TabIndex = 60;
-            // 
-            // panelControl22
-            // 
-            this.panelControl22.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panelControl22.Appearance.Options.UseBackColor = true;
-            this.panelControl22.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl22.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl22.Location = new System.Drawing.Point(0, 11);
-            this.panelControl22.Name = "panelControl22";
-            this.panelControl22.Size = new System.Drawing.Size(11, 510);
-            this.panelControl22.TabIndex = 59;
-            // 
-            // panelControl21
-            // 
-            this.panelControl21.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panelControl21.Appearance.Options.UseBackColor = true;
-            this.panelControl21.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl21.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl21.Location = new System.Drawing.Point(0, 0);
-            this.panelControl21.Name = "panelControl21";
-            this.panelControl21.Size = new System.Drawing.Size(1333, 11);
-            this.panelControl21.TabIndex = 58;
-            // 
-            // labelControl20
-            // 
-            this.labelControl20.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.labelControl20.Appearance.Options.UseFont = true;
-            this.labelControl20.Location = new System.Drawing.Point(712, 130);
-            this.labelControl20.Name = "labelControl20";
-            this.labelControl20.Size = new System.Drawing.Size(272, 30);
-            this.labelControl20.TabIndex = 56;
-            this.labelControl20.Text = " Etiqueta en empaque no enlista medicamentos y/o\r\n aditivos diferentes a los de l" +
-    "a ficha técnica?";
-            // 
-            // labelControl19
-            // 
-            this.labelControl19.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.labelControl19.Appearance.Options.UseFont = true;
-            this.labelControl19.Location = new System.Drawing.Point(712, 94);
-            this.labelControl19.Name = "labelControl19";
-            this.labelControl19.Size = new System.Drawing.Size(353, 30);
-            this.labelControl19.TabIndex = 54;
-            this.labelControl19.Text = "¿Viene La carga separada y/o Identificada cuando trae varios LOTES \r\nde producció" +
-    "n?";
-            // 
-            // labelControl18
-            // 
-            this.labelControl18.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.labelControl18.Appearance.Options.UseFont = true;
-            this.labelControl18.Location = new System.Drawing.Point(712, 58);
-            this.labelControl18.Name = "labelControl18";
-            this.labelControl18.Size = new System.Drawing.Size(286, 30);
-            this.labelControl18.TabIndex = 52;
-            this.labelControl18.Text = "¿Se Encuentran empaques Rotos, Sucios o Manchados \r\nde sustancias contaminantes?";
             // 
             // rdEmpaque1
             // 
@@ -2144,25 +2099,94 @@ namespace LOSA.Calidad
             this.rdEmpaque1.Size = new System.Drawing.Size(154, 23);
             this.rdEmpaque1.TabIndex = 51;
             // 
-            // labelControl17
+            // rdEmpaque2
             // 
-            this.labelControl17.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.labelControl17.Appearance.Options.UseFont = true;
-            this.labelControl17.Location = new System.Drawing.Point(712, 32);
-            this.labelControl17.Name = "labelControl17";
-            this.labelControl17.Size = new System.Drawing.Size(414, 15);
-            this.labelControl17.TabIndex = 50;
-            this.labelControl17.Text = "¿Esta Identificado el producto con fecha de producción y fecha de caducidad?.";
+            this.rdEmpaque2.EditValue = true;
+            this.rdEmpaque2.Location = new System.Drawing.Point(1132, 58);
+            this.rdEmpaque2.Name = "rdEmpaque2";
+            this.rdEmpaque2.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.rdEmpaque2.Properties.Appearance.Options.UseFont = true;
+            this.rdEmpaque2.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(true, "SI"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(false, "NO")});
+            this.rdEmpaque2.Size = new System.Drawing.Size(154, 23);
+            this.rdEmpaque2.TabIndex = 52;
             // 
-            // labelControl16
+            // labelControl18
             // 
-            this.labelControl16.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
-            this.labelControl16.Appearance.Options.UseFont = true;
-            this.labelControl16.Location = new System.Drawing.Point(664, 6);
-            this.labelControl16.Name = "labelControl16";
-            this.labelControl16.Size = new System.Drawing.Size(252, 19);
-            this.labelControl16.TabIndex = 49;
-            this.labelControl16.Text = "INSPECCION DEL EMPAQUE/ETIQUETA:";
+            this.labelControl18.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.labelControl18.Appearance.Options.UseFont = true;
+            this.labelControl18.Location = new System.Drawing.Point(712, 58);
+            this.labelControl18.Name = "labelControl18";
+            this.labelControl18.Size = new System.Drawing.Size(286, 30);
+            this.labelControl18.TabIndex = 52;
+            this.labelControl18.Text = "¿Se Encuentran empaques Rotos, Sucios o Manchados \r\nde sustancias contaminantes?";
+            // 
+            // labelControl19
+            // 
+            this.labelControl19.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.labelControl19.Appearance.Options.UseFont = true;
+            this.labelControl19.Location = new System.Drawing.Point(712, 94);
+            this.labelControl19.Name = "labelControl19";
+            this.labelControl19.Size = new System.Drawing.Size(353, 30);
+            this.labelControl19.TabIndex = 54;
+            this.labelControl19.Text = "¿Viene La carga separada y/o Identificada cuando trae varios LOTES \r\nde producció" +
+    "n?";
+            // 
+            // labelControl20
+            // 
+            this.labelControl20.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.labelControl20.Appearance.Options.UseFont = true;
+            this.labelControl20.Location = new System.Drawing.Point(712, 130);
+            this.labelControl20.Name = "labelControl20";
+            this.labelControl20.Size = new System.Drawing.Size(272, 30);
+            this.labelControl20.TabIndex = 56;
+            this.labelControl20.Text = " Etiqueta en empaque no enlista medicamentos y/o\r\n aditivos diferentes a los de l" +
+    "a ficha técnica?";
+            // 
+            // panelControl24
+            // 
+            this.panelControl24.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panelControl24.Appearance.Options.UseBackColor = true;
+            this.panelControl24.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl24.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelControl24.Location = new System.Drawing.Point(1322, 11);
+            this.panelControl24.Name = "panelControl24";
+            this.panelControl24.Size = new System.Drawing.Size(11, 511);
+            this.panelControl24.TabIndex = 61;
+            // 
+            // panelControl23
+            // 
+            this.panelControl23.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panelControl23.Appearance.Options.UseBackColor = true;
+            this.panelControl23.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl23.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelControl23.Location = new System.Drawing.Point(11, 522);
+            this.panelControl23.Name = "panelControl23";
+            this.panelControl23.Size = new System.Drawing.Size(1322, 10);
+            this.panelControl23.TabIndex = 60;
+            // 
+            // panelControl22
+            // 
+            this.panelControl22.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panelControl22.Appearance.Options.UseBackColor = true;
+            this.panelControl22.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl22.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelControl22.Location = new System.Drawing.Point(0, 11);
+            this.panelControl22.Name = "panelControl22";
+            this.panelControl22.Size = new System.Drawing.Size(11, 521);
+            this.panelControl22.TabIndex = 59;
+            // 
+            // panelControl21
+            // 
+            this.panelControl21.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panelControl21.Appearance.Options.UseBackColor = true;
+            this.panelControl21.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl21.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl21.Location = new System.Drawing.Point(0, 0);
+            this.panelControl21.Name = "panelControl21";
+            this.panelControl21.Size = new System.Drawing.Size(1333, 11);
+            this.panelControl21.TabIndex = 58;
             // 
             // tabPage2
             // 
@@ -2173,7 +2197,7 @@ namespace LOSA.Calidad
             this.tabPage2.Location = new System.Drawing.Point(4, 30);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1339, 527);
+            this.tabPage2.Size = new System.Drawing.Size(1339, 538);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Estado de Materia prima y transporte";
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
@@ -2183,6 +2207,8 @@ namespace LOSA.Calidad
             this.panelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl4.Controls.Add(this.cmdSelectUltimasCargas);
+            this.panelControl4.Controls.Add(this.gridControl3);
             this.panelControl4.Controls.Add(this.rdTranporte3);
             this.panelControl4.Controls.Add(this.rdTranporte2);
             this.panelControl4.Controls.Add(this.rdTranporte1);
@@ -2223,9 +2249,54 @@ namespace LOSA.Calidad
             this.panelControl4.Controls.Add(this.txtusercalidad);
             this.panelControl4.Location = new System.Drawing.Point(3, 0);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(1328, 460);
+            this.panelControl4.Size = new System.Drawing.Size(1328, 529);
             this.panelControl4.TabIndex = 84;
             this.panelControl4.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl4_Paint);
+            // 
+            // cmdSelectUltimasCargas
+            // 
+            this.cmdSelectUltimasCargas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdSelectUltimasCargas.Image = ((System.Drawing.Image)(resources.GetObject("cmdSelectUltimasCargas.Image")));
+            this.cmdSelectUltimasCargas.Location = new System.Drawing.Point(1229, 390);
+            this.cmdSelectUltimasCargas.Name = "cmdSelectUltimasCargas";
+            this.cmdSelectUltimasCargas.Size = new System.Drawing.Size(53, 32);
+            this.cmdSelectUltimasCargas.TabIndex = 54;
+            this.cmdSelectUltimasCargas.UseVisualStyleBackColor = false;
+            this.cmdSelectUltimasCargas.Click += new System.EventHandler(this.cmdSelectUltimasCargas_Click);
+            // 
+            // gridControl3
+            // 
+            this.gridControl3.DataMember = "ultimas_cargas";
+            this.gridControl3.DataSource = this.dsTarima1;
+            this.gridControl3.Location = new System.Drawing.Point(873, 389);
+            this.gridControl3.MainView = this.gridView6;
+            this.gridControl3.Name = "gridControl3";
+            this.gridControl3.Size = new System.Drawing.Size(350, 120);
+            this.gridControl3.TabIndex = 88;
+            this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView6});
+            // 
+            // dsTarima1
+            // 
+            this.dsTarima1.DataSetName = "dsTarima";
+            this.dsTarima1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // gridView6
+            // 
+            this.gridView6.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.coldescripcion5});
+            this.gridView6.GridControl = this.gridControl3;
+            this.gridView6.Name = "gridView6";
+            this.gridView6.OptionsView.ShowGroupPanel = false;
+            // 
+            // coldescripcion5
+            // 
+            this.coldescripcion5.Caption = "Descripción";
+            this.coldescripcion5.FieldName = "descripcion";
+            this.coldescripcion5.Name = "coldescripcion5";
+            this.coldescripcion5.OptionsColumn.AllowEdit = false;
+            this.coldescripcion5.Visible = true;
+            this.coldescripcion5.VisibleIndex = 0;
             // 
             // rdTranporte3
             // 
@@ -2284,7 +2355,7 @@ namespace LOSA.Calidad
             this.labelControl53.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelControl53.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl53.Appearance.Options.UseFont = true;
-            this.labelControl53.Location = new System.Drawing.Point(22, 438);
+            this.labelControl53.Location = new System.Drawing.Point(22, 507);
             this.labelControl53.Name = "labelControl53";
             this.labelControl53.Size = new System.Drawing.Size(89, 17);
             this.labelControl53.TabIndex = 83;
@@ -2424,6 +2495,7 @@ namespace LOSA.Calidad
             this.txtmp3.Properties.Appearance.Options.UseFont = true;
             this.txtmp3.Size = new System.Drawing.Size(294, 22);
             this.txtmp3.TabIndex = 79;
+            this.txtmp3.Visible = false;
             // 
             // labelControl47
             // 
@@ -2466,6 +2538,7 @@ namespace LOSA.Calidad
             this.txtmp2.Properties.Appearance.Options.UseFont = true;
             this.txtmp2.Size = new System.Drawing.Size(294, 22);
             this.txtmp2.TabIndex = 78;
+            this.txtmp2.Visible = false;
             // 
             // txtTelefono
             // 
@@ -2496,6 +2569,7 @@ namespace LOSA.Calidad
             this.txtmp1.Properties.Appearance.Options.UseFont = true;
             this.txtmp1.Size = new System.Drawing.Size(294, 22);
             this.txtmp1.TabIndex = 77;
+            this.txtmp1.Visible = false;
             // 
             // labelControl46
             // 
@@ -2530,7 +2604,7 @@ namespace LOSA.Calidad
             // radioGroup8
             // 
             this.radioGroup8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.radioGroup8.Location = new System.Drawing.Point(937, 477);
+            this.radioGroup8.Location = new System.Drawing.Point(937, 546);
             this.radioGroup8.Name = "radioGroup8";
             this.radioGroup8.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "ACEPTADO"),
@@ -2626,7 +2700,7 @@ namespace LOSA.Calidad
             // txtobservacionTras
             // 
             this.txtobservacionTras.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txtobservacionTras.Location = new System.Drawing.Point(3, 460);
+            this.txtobservacionTras.Location = new System.Drawing.Point(3, 471);
             this.txtobservacionTras.Name = "txtobservacionTras";
             this.txtobservacionTras.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.txtobservacionTras.Properties.Appearance.Options.UseFont = true;
@@ -2651,7 +2725,7 @@ namespace LOSA.Calidad
             this.tabPageLotesPT.Controls.Add(this.gridControl1);
             this.tabPageLotesPT.Location = new System.Drawing.Point(4, 30);
             this.tabPageLotesPT.Name = "tabPageLotesPT";
-            this.tabPageLotesPT.Size = new System.Drawing.Size(1339, 527);
+            this.tabPageLotesPT.Size = new System.Drawing.Size(1339, 538);
             this.tabPageLotesPT.TabIndex = 4;
             this.tabPageLotesPT.Text = "Lotes PT";
             this.tabPageLotesPT.UseVisualStyleBackColor = true;
@@ -2940,7 +3014,7 @@ namespace LOSA.Calidad
             this.tb_inventario.Location = new System.Drawing.Point(4, 30);
             this.tb_inventario.Name = "tb_inventario";
             this.tb_inventario.Padding = new System.Windows.Forms.Padding(3);
-            this.tb_inventario.Size = new System.Drawing.Size(1339, 527);
+            this.tb_inventario.Size = new System.Drawing.Size(1339, 538);
             this.tb_inventario.TabIndex = 5;
             this.tb_inventario.Text = "Inventario de lote";
             this.tb_inventario.UseVisualStyleBackColor = true;
@@ -2953,15 +3027,10 @@ namespace LOSA.Calidad
             this.grd_data.Location = new System.Drawing.Point(3, 3);
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
-            this.grd_data.Size = new System.Drawing.Size(1333, 521);
+            this.grd_data.Size = new System.Drawing.Size(1333, 532);
             this.grd_data.TabIndex = 1;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
-            // 
-            // dsTarima1
-            // 
-            this.dsTarima1.DataSetName = "dsTarima";
-            this.dsTarima1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // grdv_data
             // 
@@ -3165,7 +3234,7 @@ namespace LOSA.Calidad
             this.btnRecientes.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnRecientes.Appearance.Options.UseFont = true;
             this.btnRecientes.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRecientes.ImageOptions.Image")));
-            this.btnRecientes.Location = new System.Drawing.Point(1139, 277);
+            this.btnRecientes.Location = new System.Drawing.Point(1139, 270);
             this.btnRecientes.Name = "btnRecientes";
             this.btnRecientes.Size = new System.Drawing.Size(197, 45);
             this.btnRecientes.TabIndex = 45;
@@ -3267,24 +3336,6 @@ namespace LOSA.Calidad
             this.simpleButton2.Size = new System.Drawing.Size(54, 30);
             this.simpleButton2.TabIndex = 53;
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
-            // 
-            // panelControl25
-            // 
-            this.panelControl25.Controls.Add(this.labelControl16);
-            this.panelControl25.Controls.Add(this.rdEmpaque4);
-            this.panelControl25.Controls.Add(this.labelControl17);
-            this.panelControl25.Controls.Add(this.rdEmpaque3);
-            this.panelControl25.Controls.Add(this.rdEmpaque1);
-            this.panelControl25.Controls.Add(this.grd_logistica);
-            this.panelControl25.Controls.Add(this.rdEmpaque2);
-            this.panelControl25.Controls.Add(this.labelControl18);
-            this.panelControl25.Controls.Add(this.labelControl19);
-            this.panelControl25.Controls.Add(this.labelControl20);
-            this.panelControl25.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl25.Location = new System.Drawing.Point(11, 11);
-            this.panelControl25.Name = "panelControl25";
-            this.panelControl25.Size = new System.Drawing.Size(1311, 500);
-            this.panelControl25.TabIndex = 64;
             // 
             // rdEstadoTransporte
             // 
@@ -3416,19 +3467,25 @@ namespace LOSA.Calidad
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
             this.panelControl6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl25)).EndInit();
+            this.panelControl25.ResumeLayout(false);
+            this.panelControl25.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rdEmpaque4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rdEmpaque3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdEmpaque1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rdEmpaque2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl23)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl22)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl21)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rdEmpaque1.Properties)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
             this.panelControl4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsTarima1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rdTranporte3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rdTranporte2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rdTranporte1.Properties)).EndInit();
@@ -3458,16 +3515,12 @@ namespace LOSA.Calidad
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             this.tb_inventario.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsTarima1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFacturas.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtingresadaUD.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_f_ingreso.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_f_ingreso.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFabricante.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl25)).EndInit();
-            this.panelControl25.ResumeLayout(false);
-            this.panelControl25.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3721,5 +3774,9 @@ namespace LOSA.Calidad
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraEditors.PanelControl panelControl25;
+        private System.Windows.Forms.Button cmdSelectUltimasCargas;
+        private DevExpress.XtraGrid.GridControl gridControl3;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView6;
+        private DevExpress.XtraGrid.Columns.GridColumn coldescripcion5;
     }
 }

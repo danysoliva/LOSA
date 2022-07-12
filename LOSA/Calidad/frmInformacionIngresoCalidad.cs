@@ -19,6 +19,7 @@ using LOSA.Nir;
 using LOSA.Trazabilidad;
 using LOSA.Trazabilidad.ReportesTRZ;
 using LOSA.Trazabilidad.Despachos;
+using LOSA.TransaccionesMP;
 
 namespace LOSA.Calidad
 {
@@ -420,9 +421,25 @@ namespace LOSA.Calidad
                 rdTranporte2.EditValue = dr.IsDBNull(1) ? true : dr.GetBoolean(1);
                 rdTranporte3.EditValue = dr.IsDBNull(2) ? true : dr.GetBoolean(2);
                 rdTranporte4.EditValue = dr.IsDBNull(3) ? true : dr.GetBoolean(3);
-                txtmp1.Text = dr.IsDBNull(4) ? "" : dr.GetString(4);
-                txtmp2.Text = dr.IsDBNull(5) ? "" : dr.GetString(5);
-                txtmp3.Text = dr.IsDBNull(6) ? "" : dr.GetString(6);
+                //txtmp1.Text = dr.IsDBNull(4) ? "" : dr.GetString(4);
+                //txtmp2.Text = dr.IsDBNull(5) ? "" : dr.GetString(5);
+                //txtmp3.Text = dr.IsDBNull(6) ? "" : dr.GetString(6);
+                dsTarima.ultimas_cargasRow row1 = dsTarima1.ultimas_cargas.Newultimas_cargasRow();
+                row1.descripcion = dr.IsDBNull(4) ? "" : dr.GetString(4);
+                dsTarima1.ultimas_cargas.Addultimas_cargasRow(row1);
+                dsTarima1.AcceptChanges();
+
+                dsTarima.ultimas_cargasRow row2 = dsTarima1.ultimas_cargas.Newultimas_cargasRow();
+                row2.descripcion = dr.IsDBNull(5) ? "" : dr.GetString(5);
+                dsTarima1.ultimas_cargas.Addultimas_cargasRow(row2);
+                dsTarima1.AcceptChanges();
+
+                dsTarima.ultimas_cargasRow row3 = dsTarima1.ultimas_cargas.Newultimas_cargasRow();
+                row3.descripcion = dr.IsDBNull(6) ? "" : dr.GetString(6);
+                dsTarima1.ultimas_cargas.Addultimas_cargasRow(row3);
+                dsTarima1.AcceptChanges();
+
+
                 txtobservacionTras.Text = dr.IsDBNull(7) ? "" : dr.GetString(7);
             }
             dr.Close();
@@ -443,9 +460,25 @@ namespace LOSA.Calidad
                 rdTranporte2.EditValue = dr.IsDBNull(1) ? true : dr.GetBoolean(1);
                 rdTranporte3.EditValue = dr.IsDBNull(2) ? true : dr.GetBoolean(2);
                 rdTranporte4.EditValue = dr.IsDBNull(3) ? true : dr.GetBoolean(3);
-                txtmp1.Text = dr.IsDBNull(4) ? "" : dr.GetString(4);
-                txtmp2.Text = dr.IsDBNull(5) ? "" : dr.GetString(5);
-                txtmp3.Text = dr.IsDBNull(6) ? "" : dr.GetString(6);
+                //txtmp1.Text = dr.IsDBNull(4) ? "" : dr.GetString(4);
+                //txtmp2.Text = dr.IsDBNull(5) ? "" : dr.GetString(5);
+                //txtmp3.Text = dr.IsDBNull(6) ? "" : dr.GetString(6);
+
+                dsTarima.ultimas_cargasRow row1 = dsTarima1.ultimas_cargas.Newultimas_cargasRow();
+                row1.descripcion = dr.IsDBNull(4) ? "" : dr.GetString(4);
+                dsTarima1.ultimas_cargas.Addultimas_cargasRow(row1);
+                dsTarima1.AcceptChanges();
+
+                dsTarima.ultimas_cargasRow row2 = dsTarima1.ultimas_cargas.Newultimas_cargasRow();
+                row2.descripcion = dr.IsDBNull(5) ? "" : dr.GetString(5);
+                dsTarima1.ultimas_cargas.Addultimas_cargasRow(row2);
+                dsTarima1.AcceptChanges();
+
+                dsTarima.ultimas_cargasRow row3 = dsTarima1.ultimas_cargas.Newultimas_cargasRow();
+                row3.descripcion = dr.IsDBNull(6) ? "" : dr.GetString(6);
+                dsTarima1.ultimas_cargas.Addultimas_cargasRow(row3);
+                dsTarima1.AcceptChanges();
+
                 txtobservacionTras.Text = dr.IsDBNull(7) ? "" : dr.GetString(7);
             }
             dr.Close();
@@ -1376,9 +1409,47 @@ namespace LOSA.Calidad
                 cmd.Parameters.AddWithValue("@resp2", rdTranporte2.EditValue);
                 cmd.Parameters.AddWithValue("@resp3", rdTranporte3.EditValue);
                 cmd.Parameters.AddWithValue("@resp4", rdTranporte4.EditValue);
-                cmd.Parameters.AddWithValue("@materia_prima1", txtmp1.Text);
-                cmd.Parameters.AddWithValue("@materia_prima2", txtmp2.Text);
-                cmd.Parameters.AddWithValue("@materia_prima3", txtmp3.Text);
+                int conta1 = 1;
+                foreach(dsTarima.ultimas_cargasRow row in dsTarima1.ultimas_cargas.Rows)
+                {
+                    switch (conta1)
+                    {
+                        case 1:
+                            cmd.Parameters.AddWithValue("@materia_prima1", row.descripcion);
+                            break;
+                        case 2:
+                            cmd.Parameters.AddWithValue("@materia_prima2", row.descripcion);
+                            break;
+                        case 3:
+                            cmd.Parameters.AddWithValue("@materia_prima3", row.descripcion);
+                            break;
+                    }
+                    conta1++;
+                    if (conta1 > 3)
+                        break;
+                }
+
+                if (conta1 < 4)
+                {
+                    switch (conta1)
+                    {
+                        case 1:
+                            cmd.Parameters.AddWithValue("@materia_prima1", DBNull.Value);
+                            cmd.Parameters.AddWithValue("@materia_prima2", DBNull.Value);
+                            cmd.Parameters.AddWithValue("@materia_prima3", DBNull.Value);
+                            break;
+                        case 2:
+                            cmd.Parameters.AddWithValue("@materia_prima2", DBNull.Value);
+                            cmd.Parameters.AddWithValue("@materia_prima3", DBNull.Value);
+                            break;
+                        case 3:
+                            cmd.Parameters.AddWithValue("@materia_prima3", DBNull.Value);
+                            break;
+                    }
+                }
+                //cmd.Parameters.AddWithValue("@materia_prima1", txtmp1.Text);
+                //cmd.Parameters.AddWithValue("@materia_prima2", txtmp2.Text);
+                //cmd.Parameters.AddWithValue("@materia_prima3", txtmp3.Text);
                 cmd.Parameters.AddWithValue("@observaciones", txtobservacionTras.Text);
                 cmd.ExecuteNonQuery();
                 cn.Close();
@@ -1659,6 +1730,32 @@ namespace LOSA.Calidad
             {
                     LoadLotesPT(LoteMP_.IdMPSingle);                
             }
+        }
+
+        private void cmdSelectUltimasCargas_Click(object sender, EventArgs e)
+        {
+            Boleta bol1 = new Boleta();
+            if (bol1.RecuperarRegistro(dp.ValidateNumberInt32(txtboleta.Text)))
+            {
+                frmBuscarDatosBascula frm = new frmBuscarDatosBascula(bol1.Furgon, bol1.Id, bol1.Placa_vehiculo);
+                if(frm.ShowDialog() == DialogResult.OK)
+                {
+                    dsTarima1.ultimas_cargas.Clear();
+                    foreach (string var_ in frm.ListaDatos)
+                    {
+                        dsTarima.ultimas_cargasRow row1 = dsTarima1.ultimas_cargas.Newultimas_cargasRow();
+                        row1.descripcion = var_;
+                        dsTarima1.ultimas_cargas.Addultimas_cargasRow(row1);
+                        dsTarima1.AcceptChanges();
+                    }
+                }
+            }
+            else
+            {
+                CajaDialogo.Error("No hay una boleta asociada!");
+            }
+            //txtboleta
+
         }
     }
 }
