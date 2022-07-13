@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMP));
             this.gcMP = new DevExpress.XtraGrid.GridControl();
-            this.materiaPrimaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.materiaPrimaBindingSource = new System.Windows.Forms.BindingSource();
             this.dsRecepcionMPx = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.gvMP = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colcardcode = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -42,6 +45,7 @@
             this.colitemcode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colitemdescrip = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
+            this.colid_mp = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gcMP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.materiaPrimaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).BeginInit();
@@ -99,7 +103,8 @@
             this.colcardname,
             this.colSeleccionar,
             this.colitemcode,
-            this.colitemdescrip});
+            this.colitemdescrip,
+            this.colid_mp});
             this.gvMP.GridControl = this.gcMP;
             this.gvMP.Name = "gvMP";
             this.gvMP.OptionsCustomization.AllowFilter = false;
@@ -138,7 +143,7 @@
             this.btnSeleccionar.AutoHeight = false;
             editorButtonImageOptions1.Image = global::LOSA.Properties.Resources.tap;
             this.btnSeleccionar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnSeleccionar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnSeleccionar_ButtonClick);
@@ -180,6 +185,11 @@
             this.btnAtras.Text = "Atrás";
             this.btnAtras.Click += new System.EventHandler(this.BtnAtras_Click);
             // 
+            // colid_mp
+            // 
+            this.colid_mp.FieldName = "id_mp";
+            this.colid_mp.Name = "colid_mp";
+            // 
             // frmMP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,5 +223,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnSeleccionar;
         private DevExpress.XtraGrid.Columns.GridColumn colitemcode;
         private DevExpress.XtraGrid.Columns.GridColumn colitemdescrip;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_mp;
     }
 }

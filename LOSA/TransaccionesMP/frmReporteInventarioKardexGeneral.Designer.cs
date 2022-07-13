@@ -481,7 +481,6 @@ namespace LOSA.TransaccionesMP
             this.btnAjustePorLote.Size = new System.Drawing.Size(185, 56);
             this.btnAjustePorLote.TabIndex = 3;
             this.btnAjustePorLote.Text = "Agregar Ajuste";
-            this.btnAjustePorLote.Visible = false;
             this.btnAjustePorLote.Click += new System.EventHandler(this.btnAjustePorLote_Click);
             // 
             // frmReporteInventarioKardexGeneral

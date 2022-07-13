@@ -19,6 +19,7 @@ namespace LOSA.TransaccionesMP
     {
         private string ItemCode;
         private decimal factorValue;
+        private int Id_MP, Id_Lote_Alosy, Id_Presentacion;
         private UserLogin UsuarioLogueado = new UserLogin();
         public frmAsjuteInventarioPorLote()
         {
@@ -61,6 +62,11 @@ namespace LOSA.TransaccionesMP
                 CajaDialogo.Error("No se puede registrar una cantidad de materia en cero (0)!");
                 return;
             }
+            if (Convert.ToDecimal(txtCantidadUnidades.Text) <= 0)
+            {
+                CajaDialogo.Error("No se puede registrar una cantidad de materia en cero (0)!");
+                return;
+            }
 
             DataOperations dp = new DataOperations();
             try
@@ -69,11 +75,27 @@ namespace LOSA.TransaccionesMP
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("[sp_ajsute_kardex_por_lote]", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                if (tsTipoTransaccion.IsOn)
+                if (tsTipoTransaccion.IsOn == true) //Entrada 
                 {
-
+                    cmd.Parameters.AddWithValue("@cant_entrada",txtPesoKG.Text);
+                    cmd.Parameters.AddWithValue("@cant_salida",0);
+                    cmd.Parameters.AddWithValue("@ud_entrada",txtCantidadUnidades.Text);
+                    cmd.Parameters.AddWithValue("@ud_salida",0);
                 }
-                cmd.ExecuteNonQuery();
+                if (tsTipoTransaccion.IsOn == false) //Salida
+                {                                   
+                    cmd.Parameters.AddWithValue("@cant_entrada",0);
+                    cmd.Parameters.AddWithValue("@cant_salida",txtPesoKG.Text);
+                    cmd.Parameters.AddWithValue("@ud_entrada",0);
+                    cmd.Parameters.AddWithValue("@ud_salida",txtCantidadUnidades.Text);
+                }
+                cmd.Parameters.AddWithValue("id_lote_alosy",Id_Lote_Alosy);
+                cmd.Parameters.AddWithValue("@lote", txtNumLote.Text);
+                cmd.Parameters.AddWithValue("@id_mp", Id_MP);
+                cmd.Parameters.AddWithValue("@itemcode", ItemCode);
+                //cmd.Parameters.AddWithValue("@id_bodega");
+                cmd.Parameters.AddWithValue("@id_usercreate", UsuarioLogueado.Id);
+                //cmd.ExecuteNonQuery();
                 conn.Close();
             }
             catch (Exception ex)
@@ -93,7 +115,8 @@ namespace LOSA.TransaccionesMP
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 txtMP_Name.Text = frm.MateriaPrima;
-                
+                ItemCode = frm.ItemCode;
+                Id_MP = frm.id_mp;
                 //txtCodigoProveedor.Text = frm.idProveedor;
                 //txtProveedorName.Text = frm.NombreProveedor;
                 //this.ItemCode = frm.ItemCode;
@@ -121,6 +144,21 @@ namespace LOSA.TransaccionesMP
         private void txtCantidadUnidades_Leave(object sender, EventArgs e)
         {
             gridLookUpEditPresentacion_EditValueChanged(sender, e);
+        }
+
+        private void txtNumLote_Enter(object sender, EventArgs e)
+        {
+            frmLotePorMP frm = new frmLotePorMP();
+            if (this.MdiParent != null)
+            {
+                frm.FormBorderStyle = FormBorderStyle.Sizable;
+            }
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                txtNumLote.Text = frm.Lote;
+                Id_Lote_Alosy = frm.Id_Lote;
+                Id_Presentacion = frm.Id_UnidadMedida;
+            }
         }
 
         private void gridLookUpEditPresentacion_EditValueChanged(object sender, EventArgs e)

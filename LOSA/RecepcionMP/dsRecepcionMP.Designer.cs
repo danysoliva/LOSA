@@ -64,6 +64,8 @@ namespace LOSA.RecepcionMP {
         
         private mp_loteDataTable tablemp_lote;
         
+        private lista_lotes_mpDataTable tablelista_lotes_mp;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -151,6 +153,9 @@ namespace LOSA.RecepcionMP {
                 }
                 if ((ds.Tables["mp_lote"] != null)) {
                     base.Tables.Add(new mp_loteDataTable(ds.Tables["mp_lote"]));
+                }
+                if ((ds.Tables["lista_lotes_mp"] != null)) {
+                    base.Tables.Add(new lista_lotes_mpDataTable(ds.Tables["lista_lotes_mp"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -372,6 +377,16 @@ namespace LOSA.RecepcionMP {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public lista_lotes_mpDataTable lista_lotes_mp {
+            get {
+                return this.tablelista_lotes_mp;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -496,6 +511,9 @@ namespace LOSA.RecepcionMP {
                 }
                 if ((ds.Tables["mp_lote"] != null)) {
                     base.Tables.Add(new mp_loteDataTable(ds.Tables["mp_lote"]));
+                }
+                if ((ds.Tables["lista_lotes_mp"] != null)) {
+                    base.Tables.Add(new lista_lotes_mpDataTable(ds.Tables["lista_lotes_mp"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -650,6 +668,12 @@ namespace LOSA.RecepcionMP {
                     this.tablemp_lote.InitVars();
                 }
             }
+            this.tablelista_lotes_mp = ((lista_lotes_mpDataTable)(base.Tables["lista_lotes_mp"]));
+            if ((initTable == true)) {
+                if ((this.tablelista_lotes_mp != null)) {
+                    this.tablelista_lotes_mp.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -700,6 +724,8 @@ namespace LOSA.RecepcionMP {
             base.Tables.Add(this.tablebarcos);
             this.tablemp_lote = new mp_loteDataTable();
             base.Tables.Add(this.tablemp_lote);
+            this.tablelista_lotes_mp = new lista_lotes_mpDataTable();
+            base.Tables.Add(this.tablelista_lotes_mp);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -824,6 +850,12 @@ namespace LOSA.RecepcionMP {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializelista_lotes_mp() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -936,6 +968,9 @@ namespace LOSA.RecepcionMP {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void mp_loteRowChangeEventHandler(object sender, mp_loteRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void lista_lotes_mpRowChangeEventHandler(object sender, lista_lotes_mpRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -2860,6 +2895,8 @@ namespace LOSA.RecepcionMP {
             
             private global::System.Data.DataColumn columnitemcode;
             
+            private global::System.Data.DataColumn columnid_mp;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Materia_PrimaDataTable() {
@@ -2927,6 +2964,14 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_mpColumn {
+                get {
+                    return this.columnid_mp;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2962,13 +3007,14 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Materia_PrimaRow AddMateria_PrimaRow(string carcode, string cardname, string itemdescrip, string itemcode) {
+            public Materia_PrimaRow AddMateria_PrimaRow(string carcode, string cardname, string itemdescrip, string itemcode, int id_mp) {
                 Materia_PrimaRow rowMateria_PrimaRow = ((Materia_PrimaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         carcode,
                         cardname,
                         itemdescrip,
-                        itemcode};
+                        itemcode,
+                        id_mp};
                 rowMateria_PrimaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMateria_PrimaRow);
                 return rowMateria_PrimaRow;
@@ -2995,6 +3041,7 @@ namespace LOSA.RecepcionMP {
                 this.columncardname = base.Columns["cardname"];
                 this.columnitemdescrip = base.Columns["itemdescrip"];
                 this.columnitemcode = base.Columns["itemcode"];
+                this.columnid_mp = base.Columns["id_mp"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3008,6 +3055,8 @@ namespace LOSA.RecepcionMP {
                 base.Columns.Add(this.columnitemdescrip);
                 this.columnitemcode = new global::System.Data.DataColumn("itemcode", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnitemcode);
+                this.columnid_mp = new global::System.Data.DataColumn("id_mp", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_mp);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7519,6 +7568,309 @@ namespace LOSA.RecepcionMP {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class lista_lotes_mpDataTable : global::System.Data.TypedTableBase<lista_lotes_mpRow> {
+            
+            private global::System.Data.DataColumn columnid_lote;
+            
+            private global::System.Data.DataColumn columnlote;
+            
+            private global::System.Data.DataColumn columnid_unidadmedida;
+            
+            private global::System.Data.DataColumn columnid_mp;
+            
+            private global::System.Data.DataColumn columnid_tipoIngreso;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public lista_lotes_mpDataTable() {
+                this.TableName = "lista_lotes_mp";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal lista_lotes_mpDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected lista_lotes_mpDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_loteColumn {
+                get {
+                    return this.columnid_lote;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn loteColumn {
+                get {
+                    return this.columnlote;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_unidadmedidaColumn {
+                get {
+                    return this.columnid_unidadmedida;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_mpColumn {
+                get {
+                    return this.columnid_mp;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_tipoIngresoColumn {
+                get {
+                    return this.columnid_tipoIngreso;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public lista_lotes_mpRow this[int index] {
+                get {
+                    return ((lista_lotes_mpRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event lista_lotes_mpRowChangeEventHandler lista_lotes_mpRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event lista_lotes_mpRowChangeEventHandler lista_lotes_mpRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event lista_lotes_mpRowChangeEventHandler lista_lotes_mpRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event lista_lotes_mpRowChangeEventHandler lista_lotes_mpRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Addlista_lotes_mpRow(lista_lotes_mpRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public lista_lotes_mpRow Addlista_lotes_mpRow(int id_lote, string lote, int id_unidadmedida, int id_mp, int id_tipoIngreso) {
+                lista_lotes_mpRow rowlista_lotes_mpRow = ((lista_lotes_mpRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        id_lote,
+                        lote,
+                        id_unidadmedida,
+                        id_mp,
+                        id_tipoIngreso};
+                rowlista_lotes_mpRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowlista_lotes_mpRow);
+                return rowlista_lotes_mpRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                lista_lotes_mpDataTable cln = ((lista_lotes_mpDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new lista_lotes_mpDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnid_lote = base.Columns["id_lote"];
+                this.columnlote = base.Columns["lote"];
+                this.columnid_unidadmedida = base.Columns["id_unidadmedida"];
+                this.columnid_mp = base.Columns["id_mp"];
+                this.columnid_tipoIngreso = base.Columns["id_tipoIngreso"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnid_lote = new global::System.Data.DataColumn("id_lote", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_lote);
+                this.columnlote = new global::System.Data.DataColumn("lote", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlote);
+                this.columnid_unidadmedida = new global::System.Data.DataColumn("id_unidadmedida", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_unidadmedida);
+                this.columnid_mp = new global::System.Data.DataColumn("id_mp", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_mp);
+                this.columnid_tipoIngreso = new global::System.Data.DataColumn("id_tipoIngreso", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_tipoIngreso);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public lista_lotes_mpRow Newlista_lotes_mpRow() {
+                return ((lista_lotes_mpRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new lista_lotes_mpRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(lista_lotes_mpRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.lista_lotes_mpRowChanged != null)) {
+                    this.lista_lotes_mpRowChanged(this, new lista_lotes_mpRowChangeEvent(((lista_lotes_mpRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.lista_lotes_mpRowChanging != null)) {
+                    this.lista_lotes_mpRowChanging(this, new lista_lotes_mpRowChangeEvent(((lista_lotes_mpRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.lista_lotes_mpRowDeleted != null)) {
+                    this.lista_lotes_mpRowDeleted(this, new lista_lotes_mpRowChangeEvent(((lista_lotes_mpRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.lista_lotes_mpRowDeleting != null)) {
+                    this.lista_lotes_mpRowDeleting(this, new lista_lotes_mpRowChangeEvent(((lista_lotes_mpRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Removelista_lotes_mpRow(lista_lotes_mpRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsRecepcionMPx ds = new dsRecepcionMPx();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "lista_lotes_mpDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class BasculaRow : global::System.Data.DataRow {
@@ -9161,6 +9513,22 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_mp {
+                get {
+                    try {
+                        return ((int)(this[this.tableMateria_Prima.id_mpColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_mp\' de la tabla \'Materia_Prima\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMateria_Prima.id_mpColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IscarcodeNull() {
                 return this.IsNull(this.tableMateria_Prima.carcodeColumn);
             }
@@ -9205,6 +9573,18 @@ namespace LOSA.RecepcionMP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetitemcodeNull() {
                 this[this.tableMateria_Prima.itemcodeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_mpNull() {
+                return this.IsNull(this.tableMateria_Prima.id_mpColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_mpNull() {
+                this[this.tableMateria_Prima.id_mpColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -11607,6 +11987,161 @@ namespace LOSA.RecepcionMP {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class lista_lotes_mpRow : global::System.Data.DataRow {
+            
+            private lista_lotes_mpDataTable tablelista_lotes_mp;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal lista_lotes_mpRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablelista_lotes_mp = ((lista_lotes_mpDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_lote {
+                get {
+                    try {
+                        return ((int)(this[this.tablelista_lotes_mp.id_loteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_lote\' de la tabla \'lista_lotes_mp\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablelista_lotes_mp.id_loteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string lote {
+                get {
+                    try {
+                        return ((string)(this[this.tablelista_lotes_mp.loteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'lote\' de la tabla \'lista_lotes_mp\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablelista_lotes_mp.loteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_unidadmedida {
+                get {
+                    try {
+                        return ((int)(this[this.tablelista_lotes_mp.id_unidadmedidaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_unidadmedida\' de la tabla \'lista_lotes_mp\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablelista_lotes_mp.id_unidadmedidaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_mp {
+                get {
+                    try {
+                        return ((int)(this[this.tablelista_lotes_mp.id_mpColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_mp\' de la tabla \'lista_lotes_mp\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablelista_lotes_mp.id_mpColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_tipoIngreso {
+                get {
+                    try {
+                        return ((int)(this[this.tablelista_lotes_mp.id_tipoIngresoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_tipoIngreso\' de la tabla \'lista_lotes_mp\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablelista_lotes_mp.id_tipoIngresoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_loteNull() {
+                return this.IsNull(this.tablelista_lotes_mp.id_loteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_loteNull() {
+                this[this.tablelista_lotes_mp.id_loteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsloteNull() {
+                return this.IsNull(this.tablelista_lotes_mp.loteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetloteNull() {
+                this[this.tablelista_lotes_mp.loteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_unidadmedidaNull() {
+                return this.IsNull(this.tablelista_lotes_mp.id_unidadmedidaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_unidadmedidaNull() {
+                this[this.tablelista_lotes_mp.id_unidadmedidaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_mpNull() {
+                return this.IsNull(this.tablelista_lotes_mp.id_mpColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_mpNull() {
+                this[this.tablelista_lotes_mp.id_mpColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_tipoIngresoNull() {
+                return this.IsNull(this.tablelista_lotes_mp.id_tipoIngresoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_tipoIngresoNull() {
+                this[this.tablelista_lotes_mp.id_tipoIngresoColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -12272,6 +12807,40 @@ namespace LOSA.RecepcionMP {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public mp_loteRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class lista_lotes_mpRowChangeEvent : global::System.EventArgs {
+            
+            private lista_lotes_mpRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public lista_lotes_mpRowChangeEvent(lista_lotes_mpRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public lista_lotes_mpRow Row {
                 get {
                     return this.eventRow;
                 }

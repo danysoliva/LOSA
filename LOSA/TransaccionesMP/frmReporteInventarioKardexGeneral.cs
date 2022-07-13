@@ -104,7 +104,10 @@ namespace LOSA.TransaccionesMP
         private void btnAjustePorLote_Click(object sender, EventArgs e)
         {
             frmAsjuteInventarioPorLote frm = new frmAsjuteInventarioPorLote();
-            frm.Show();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                load_data();
+            }
         }
     }
 }
