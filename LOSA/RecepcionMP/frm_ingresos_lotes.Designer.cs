@@ -309,7 +309,7 @@
             this.colDuplicar.MinWidth = 17;
             this.colDuplicar.Name = "colDuplicar";
             this.colDuplicar.Visible = true;
-            this.colDuplicar.VisibleIndex = 11;
+            this.colDuplicar.VisibleIndex = 12;
             this.colDuplicar.Width = 54;
             // 
             // cmdDuplicar
@@ -329,7 +329,7 @@
             this.Editar.MinWidth = 17;
             this.Editar.Name = "Editar";
             this.Editar.Visible = true;
-            this.Editar.VisibleIndex = 12;
+            this.Editar.VisibleIndex = 11;
             this.Editar.Width = 61;
             // 
             // btnEditar

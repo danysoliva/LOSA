@@ -1,6 +1,7 @@
-﻿namespace LOSA.RecepcionMP
+﻿
+namespace LOSA.TransaccionesMP
 {
-    partial class frmMP
+    partial class frmLotePorMP
     {
         /// <summary>
         /// Required designer variable.
@@ -33,51 +34,47 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMP));
-            this.gcMP = new DevExpress.XtraGrid.GridControl();
-            this.materiaPrimaBindingSource = new System.Windows.Forms.BindingSource();
-            this.dsRecepcionMPx = new LOSA.RecepcionMP.dsRecepcionMPx();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLotePorMP));
+            this.gcLotePorMP = new DevExpress.XtraGrid.GridControl();
+            this.dsRecepcionMPx1 = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.gvMP = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colcardcode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcardname = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSeleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.colitemcode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colitemdescrip = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
+            this.colid_lote = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collote = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnumero_ingreso = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_unidadmedida = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_mp = new DevExpress.XtraGrid.Columns.GridColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.gcMP)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.materiaPrimaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).BeginInit();
+            this.colid_tipoIngreso = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
+            this.colunidad_medida = new DevExpress.XtraGrid.Columns.GridColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.gcLotePorMP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSeleccionar)).BeginInit();
             this.SuspendLayout();
             // 
-            // gcMP
+            // gcLotePorMP
             // 
-            this.gcMP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.gcLotePorMP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcMP.DataSource = this.materiaPrimaBindingSource;
-            this.gcMP.Location = new System.Drawing.Point(0, 92);
-            this.gcMP.MainView = this.gvMP;
-            this.gcMP.Name = "gcMP";
-            this.gcMP.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.gcLotePorMP.DataMember = "lista_lotes_mp";
+            this.gcLotePorMP.DataSource = this.dsRecepcionMPx1;
+            this.gcLotePorMP.Location = new System.Drawing.Point(-5, 69);
+            this.gcLotePorMP.MainView = this.gvMP;
+            this.gcLotePorMP.Name = "gcLotePorMP";
+            this.gcLotePorMP.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnSeleccionar});
-            this.gcMP.Size = new System.Drawing.Size(622, 431);
-            this.gcMP.TabIndex = 0;
-            this.gcMP.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gcLotePorMP.Size = new System.Drawing.Size(730, 513);
+            this.gcLotePorMP.TabIndex = 7;
+            this.gcLotePorMP.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvMP});
             // 
-            // materiaPrimaBindingSource
+            // dsRecepcionMPx1
             // 
-            this.materiaPrimaBindingSource.DataMember = "Materia_Prima";
-            this.materiaPrimaBindingSource.DataSource = this.dsRecepcionMPx;
-            // 
-            // dsRecepcionMPx
-            // 
-            this.dsRecepcionMPx.DataSetName = "dsRecepcionMPx";
-            this.dsRecepcionMPx.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dsRecepcionMPx1.DataSetName = "dsRecepcionMPx";
+            this.dsRecepcionMPx1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gvMP
             // 
@@ -99,44 +96,75 @@
             this.gvMP.Appearance.TopNewRow.BackColor = System.Drawing.Color.White;
             this.gvMP.Appearance.TopNewRow.Options.UseBackColor = true;
             this.gvMP.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colcardcode,
-            this.colcardname,
-            this.colSeleccionar,
-            this.colitemcode,
-            this.colitemdescrip,
-            this.colid_mp});
-            this.gvMP.GridControl = this.gcMP;
+            this.colid_lote,
+            this.collote,
+            this.colnumero_ingreso,
+            this.colid_unidadmedida,
+            this.colid_mp,
+            this.colid_tipoIngreso,
+            this.gridColumn1,
+            this.colunidad_medida});
+            this.gvMP.GridControl = this.gcLotePorMP;
             this.gvMP.Name = "gvMP";
             this.gvMP.OptionsCustomization.AllowFilter = false;
             this.gvMP.OptionsFilter.AllowFilterEditor = false;
             this.gvMP.OptionsView.ShowAutoFilterRow = true;
             this.gvMP.OptionsView.ShowGroupPanel = false;
-            this.gvMP.DoubleClick += new System.EventHandler(this.GvMP_DoubleClick);
+            this.gvMP.DoubleClick += new System.EventHandler(this.gvMP_DoubleClick);
             // 
-            // colcardcode
+            // colid_lote
             // 
-            this.colcardcode.Caption = "Codigo SAP";
-            this.colcardcode.FieldName = "carcode";
-            this.colcardcode.Name = "colcardcode";
-            this.colcardcode.Width = 68;
+            this.colid_lote.Caption = "Codigo Lote";
+            this.colid_lote.FieldName = "id_lote";
+            this.colid_lote.Name = "colid_lote";
+            this.colid_lote.OptionsColumn.AllowEdit = false;
+            this.colid_lote.Visible = true;
+            this.colid_lote.VisibleIndex = 0;
+            this.colid_lote.Width = 130;
             // 
-            // colcardname
+            // collote
             // 
-            this.colcardname.Caption = "Proveedor";
-            this.colcardname.FieldName = "cardname";
-            this.colcardname.Name = "colcardname";
-            this.colcardname.OptionsColumn.AllowEdit = false;
-            this.colcardname.Width = 207;
+            this.collote.Caption = "Lote";
+            this.collote.FieldName = "lote";
+            this.collote.Name = "collote";
+            this.collote.OptionsColumn.AllowEdit = false;
+            this.collote.Visible = true;
+            this.collote.VisibleIndex = 1;
+            this.collote.Width = 144;
             // 
-            // colSeleccionar
+            // colnumero_ingreso
             // 
-            this.colSeleccionar.Caption = "#";
-            this.colSeleccionar.ColumnEdit = this.btnSeleccionar;
-            this.colSeleccionar.MaxWidth = 60;
-            this.colSeleccionar.Name = "colSeleccionar";
-            this.colSeleccionar.Visible = true;
-            this.colSeleccionar.VisibleIndex = 2;
-            this.colSeleccionar.Width = 60;
+            this.colnumero_ingreso.Caption = "# Ingreso";
+            this.colnumero_ingreso.FieldName = "numero_ingreso";
+            this.colnumero_ingreso.Name = "colnumero_ingreso";
+            this.colnumero_ingreso.OptionsColumn.AllowEdit = false;
+            this.colnumero_ingreso.Visible = true;
+            this.colnumero_ingreso.VisibleIndex = 2;
+            this.colnumero_ingreso.Width = 144;
+            // 
+            // colid_unidadmedida
+            // 
+            this.colid_unidadmedida.FieldName = "id_unidadmedida";
+            this.colid_unidadmedida.Name = "colid_unidadmedida";
+            // 
+            // colid_mp
+            // 
+            this.colid_mp.FieldName = "id_mp";
+            this.colid_mp.Name = "colid_mp";
+            // 
+            // colid_tipoIngreso
+            // 
+            this.colid_tipoIngreso.FieldName = "id_tipoIngreso";
+            this.colid_tipoIngreso.Name = "colid_tipoIngreso";
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Seleccionar";
+            this.gridColumn1.ColumnEdit = this.btnSeleccionar;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 4;
+            this.gridColumn1.Width = 150;
             // 
             // btnSeleccionar
             // 
@@ -148,26 +176,6 @@
             this.btnSeleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnSeleccionar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnSeleccionar_ButtonClick);
             // 
-            // colitemcode
-            // 
-            this.colitemcode.Caption = "Cod. MP";
-            this.colitemcode.FieldName = "itemcode";
-            this.colitemcode.Name = "colitemcode";
-            this.colitemcode.OptionsColumn.AllowEdit = false;
-            this.colitemcode.Visible = true;
-            this.colitemcode.VisibleIndex = 0;
-            this.colitemcode.Width = 89;
-            // 
-            // colitemdescrip
-            // 
-            this.colitemdescrip.Caption = "Materia Prima";
-            this.colitemdescrip.FieldName = "itemdescrip";
-            this.colitemdescrip.Name = "colitemdescrip";
-            this.colitemdescrip.OptionsColumn.AllowEdit = false;
-            this.colitemdescrip.Visible = true;
-            this.colitemdescrip.VisibleIndex = 1;
-            this.colitemdescrip.Width = 180;
-            // 
             // btnAtras
             // 
             this.btnAtras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -178,32 +186,34 @@
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(444, 12);
+            this.btnAtras.Location = new System.Drawing.Point(559, 12);
             this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(166, 56);
-            this.btnAtras.TabIndex = 6;
+            this.btnAtras.Size = new System.Drawing.Size(149, 51);
+            this.btnAtras.TabIndex = 8;
             this.btnAtras.Text = "Atrás";
-            this.btnAtras.Click += new System.EventHandler(this.BtnAtras_Click);
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
-            // colid_mp
+            // colunidad_medida
             // 
-            this.colid_mp.FieldName = "id_mp";
-            this.colid_mp.Name = "colid_mp";
+            this.colunidad_medida.Caption = "Presentacion";
+            this.colunidad_medida.FieldName = "unidad_medida";
+            this.colunidad_medida.Name = "colunidad_medida";
+            this.colunidad_medida.OptionsColumn.AllowEdit = false;
+            this.colunidad_medida.Visible = true;
+            this.colunidad_medida.VisibleIndex = 3;
+            this.colunidad_medida.Width = 144;
             // 
-            // frmMP
+            // frmLotePorMP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(622, 521);
+            this.ClientSize = new System.Drawing.Size(720, 571);
             this.Controls.Add(this.btnAtras);
-            this.Controls.Add(this.gcMP);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmMP";
-            this.Text = "frmMP";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)(this.gcMP)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.materiaPrimaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).EndInit();
+            this.Controls.Add(this.gcLotePorMP);
+            this.Name = "frmLotePorMP";
+            this.Text = "Lotes por Materia Prima";
+            ((System.ComponentModel.ISupportInitialize)(this.gcLotePorMP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSeleccionar)).EndInit();
             this.ResumeLayout(false);
@@ -212,17 +222,18 @@
 
         #endregion
 
-        private DevExpress.XtraGrid.GridControl gcMP;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvMP;
         private DevExpress.XtraEditors.SimpleButton btnAtras;
-        private System.Windows.Forms.BindingSource materiaPrimaBindingSource;
-        private dsRecepcionMPx dsRecepcionMPx;
-        private DevExpress.XtraGrid.Columns.GridColumn colcardcode;
-        private DevExpress.XtraGrid.Columns.GridColumn colcardname;
-        private DevExpress.XtraGrid.Columns.GridColumn colSeleccionar;
+        private DevExpress.XtraGrid.GridControl gcLotePorMP;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvMP;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnSeleccionar;
-        private DevExpress.XtraGrid.Columns.GridColumn colitemcode;
-        private DevExpress.XtraGrid.Columns.GridColumn colitemdescrip;
+        private RecepcionMP.dsRecepcionMPx dsRecepcionMPx1;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_lote;
+        private DevExpress.XtraGrid.Columns.GridColumn collote;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_unidadmedida;
         private DevExpress.XtraGrid.Columns.GridColumn colid_mp;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_tipoIngreso;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn colnumero_ingreso;
+        private DevExpress.XtraGrid.Columns.GridColumn colunidad_medida;
     }
 }

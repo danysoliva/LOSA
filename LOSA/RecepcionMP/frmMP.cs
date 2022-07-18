@@ -36,6 +36,7 @@ namespace LOSA.RecepcionMP
            
             this.MateriaPrima = row.itemdescrip;
             this.ItemCode = row.itemcode;
+            this.id_mp = row.id_mp;
 
             //this.lote = row.lote_materia_prima;
             this.DialogResult = DialogResult.OK;
@@ -53,8 +54,9 @@ namespace LOSA.RecepcionMP
             {
 
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-                string SQL = @"exec sp_get_MP";
-
+                string SQL = @"sp_get_MP";
+                SqlCommand cmd = new SqlCommand(SQL, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
                 dsRecepcionMPx.Materia_Prima.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(SQL, cn);
 
@@ -80,6 +82,7 @@ namespace LOSA.RecepcionMP
                 //this.NombreProveedor = row.cardname;
                 this.MateriaPrima = row.itemdescrip;
                 this.ItemCode = row.itemcode;
+                this.id_mp = row.id_mp;
                 //this.lote = row.lote_materia_prima;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
