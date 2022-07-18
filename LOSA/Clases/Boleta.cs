@@ -13,6 +13,8 @@ namespace LOSA.Clases
         int id;
         int _NumID;
         bool recuperado;
+        string _furgon;
+        string _placa_vehiculo;
         public Boleta()
         {
         }
@@ -20,16 +22,21 @@ namespace LOSA.Clases
         public int Id { get => id; set => id = value; }
         public int NumID { get => _NumID; set => _NumID = value; }
         public bool Recuperado { get => recuperado; set => recuperado = value; }
+        public string Furgon { get => _furgon; set => _furgon = value; }
+        public string Placa_vehiculo { get => _placa_vehiculo; set => _placa_vehiculo = value; }
 
         public bool RecuperarRegistro(int pIdSerial)
         {
             try
             {
+                id = pIdSerial;
                 DataOperations dp = new DataOperations();
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
                 string sql = @"SELECT [id]
                                      ,[NumID]
+                                     ,furgon
+                                     ,vehiculo--placa cabezal o vehiculo
                                 FROM [BASCULA].[dbo].[TS_in_and_out]tt
                                 where tt.id = " + pIdSerial;
                 SqlCommand cmd = new SqlCommand(sql, con);
@@ -37,6 +44,8 @@ namespace LOSA.Clases
                 if (dr.Read())
                 {
                     this._NumID = dr.GetInt32(1);
+                    this.Furgon = dr.GetString(2);
+                    this.Placa_vehiculo = dr.GetString(3);
                 }
                 dr.Close();
                 con.Close();

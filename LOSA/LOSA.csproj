@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\aqfsvr003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>333</ApplicationRevision>
+    <ApplicationRevision>335</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -398,6 +398,12 @@
     </Compile>
     <Compile Include="Calidad\frmAdjuntarImagen.Designer.cs">
       <DependentUpon>frmAdjuntarImagen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\frmBuscarDatosBascula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmBuscarDatosBascula.Designer.cs">
+      <DependentUpon>frmBuscarDatosBascula.cs</DependentUpon>
     </Compile>
     <Compile Include="Calidad\frmcalidad.cs">
       <SubType>Form</SubType>
@@ -2420,12 +2426,6 @@
     <Compile Include="TransaccionesMP\frmLoteActivoGranel.Designer.cs">
       <DependentUpon>frmLoteActivoGranel.cs</DependentUpon>
     </Compile>
-    <Compile Include="TransaccionesMP\frmLotePorMP.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TransaccionesMP\frmLotePorMP.Designer.cs">
-      <DependentUpon>frmLotePorMP.cs</DependentUpon>
-    </Compile>
     <Compile Include="TransaccionesMP\frmOptionMontaCarga.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2866,6 +2866,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmAdjuntarImagen.resx">
       <DependentUpon>frmAdjuntarImagen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmBuscarDatosBascula.resx">
+      <DependentUpon>frmBuscarDatosBascula.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmcalidad.resx">
       <DependentUpon>frmcalidad.cs</DependentUpon>
@@ -3709,9 +3712,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmLoteActivoGranel.resx">
       <DependentUpon>frmLoteActivoGranel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TransaccionesMP\frmLotePorMP.resx">
-      <DependentUpon>frmLotePorMP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmOptionMontaCarga.resx">
       <DependentUpon>frmOptionMontaCarga.cs</DependentUpon>

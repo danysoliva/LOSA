@@ -73,6 +73,22 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="ultimas_cargas" msprop:Generator_TableClassName="ultimas_cargasDataTable" msprop:Generator_TableVarName="tableultimas_cargas" msprop:Generator_RowChangedName="ultimas_cargasRowChanged" msprop:Generator_TablePropName="ultimas_cargas" msprop:Generator_RowDeletingName="ultimas_cargasRowDeleting" msprop:Generator_RowChangingName="ultimas_cargasRowChanging" msprop:Generator_RowEvHandlerName="ultimas_cargasRowChangeEventHandler" msprop:Generator_RowDeletedName="ultimas_cargasRowDeleted" msprop:Generator_RowClassName="ultimas_cargasRow" msprop:Generator_UserTableName="ultimas_cargas" msprop:Generator_RowEvArgName="ultimas_cargasRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ultimas_cargasSelect" msprop:Generator_TableClassName="ultimas_cargasSelectDataTable" msprop:Generator_TableVarName="tableultimas_cargasSelect" msprop:Generator_TablePropName="ultimas_cargasSelect" msprop:Generator_RowDeletingName="ultimas_cargasSelectRowDeleting" msprop:Generator_RowChangingName="ultimas_cargasSelectRowChanging" msprop:Generator_RowEvHandlerName="ultimas_cargasSelectRowChangeEventHandler" msprop:Generator_RowDeletedName="ultimas_cargasSelectRowDeleted" msprop:Generator_UserTableName="ultimas_cargasSelect" msprop:Generator_RowChangedName="ultimas_cargasSelectRowChanged" msprop:Generator_RowEvArgName="ultimas_cargasSelectRowChangeEvent" msprop:Generator_RowClassName="ultimas_cargasSelectRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha_in" msdata:Caption="Fecha Ingreso" msprop:Generator_ColumnVarNameInTable="columnfecha_in" msprop:Generator_ColumnPropNameInRow="fecha_in" msprop:Generator_ColumnPropNameInTable="fecha_inColumn" msprop:Generator_UserColumnName="fecha_in" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Row" msdata:Caption="Row#" msprop:Generator_ColumnVarNameInTable="columnRow" msprop:Generator_ColumnPropNameInRow="Row" msprop:Generator_ColumnPropNameInTable="RowColumn" msprop:Generator_UserColumnName="Row" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

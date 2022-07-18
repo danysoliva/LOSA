@@ -298,6 +298,9 @@ namespace LOSA.TransaccionesMP
                     if (connection.State != ConnectionState.Open)
                         connection.Open();
 
+                    string LocalBarcode = txtTarima.Text;
+
+
                     //Get id Estado Tarima
                     SqlCommand cmd = new SqlCommand("sp_getTarimas_without_filters_v4", connection);
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -370,6 +373,8 @@ namespace LOSA.TransaccionesMP
                         panelNotificacion.BackColor = Color.FromArgb(255,102,102);
                         timerLimpiarMensaje.Enabled = true;
                         timerLimpiarMensaje.Start();
+                        tarimaEncontrada = new Tarima();
+                        tarimaEncontrada.RecuperarRegistro_v3(0, LocalBarcode);
                         return;
                     }
 
@@ -412,6 +417,8 @@ namespace LOSA.TransaccionesMP
             decimal Pentregado = 0;
             decimal Psolicitado = 0;
             decimal factor = 0;
+            //tarimaEncontrada = new Tarima();
+            //tarimaEncontrada.RecuperarRegistro(0, txtTarima.Text);
             if (tarimaEncontrada != null)
             {
                 //Validar si es una requisicion valida esta cargada.

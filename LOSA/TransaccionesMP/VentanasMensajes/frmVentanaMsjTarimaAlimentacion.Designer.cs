@@ -29,12 +29,13 @@ namespace LOSA.TransaccionesMP.VentanasMensajes
         /// </summary>
         private void InitializeComponent()
         {
-            this.vGridControl1 = new DevExpress.XtraVerticalGrid.VGridControl();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVentanaMsjTarimaAlimentacion));
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.dsMensajesTransaccionMP1 = new LOSA.TransaccionesMP.VentanasMensajes.dsMensajesTransaccionMP();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.cmdCerrar = new DevExpress.XtraEditors.SimpleButton();
             this.lblMensaje = new DevExpress.XtraEditors.LabelControl();
+            this.vGridControl1 = new DevExpress.XtraVerticalGrid.VGridControl();
+            this.dsMensajesTransaccionMP1 = new LOSA.TransaccionesMP.VentanasMensajes.dsMensajesTransaccionMP();
             this.rowid = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowRequisición = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowItemCode = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
@@ -58,10 +59,64 @@ namespace LOSA.TransaccionesMP.VentanasMensajes
             this.rowCardCode = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowNum_Ingreso = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowCodigo_Barra = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vGridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMensajesTransaccionMP1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             this.SuspendLayout();
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Appearance.Options.UseForeColor = true;
+            this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl2.Location = new System.Drawing.Point(12, 12);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(208, 25);
+            this.labelControl2.TabIndex = 2;
+            this.labelControl2.Text = "Mensaje:";
+            // 
+            // pictureEdit1
+            // 
+            this.pictureEdit1.EditValue = global::LOSA.Properties.Resources.Alerta64px;
+            this.pictureEdit1.Location = new System.Drawing.Point(387, -3);
+            this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit1.Size = new System.Drawing.Size(100, 96);
+            this.pictureEdit1.TabIndex = 3;
+            this.pictureEdit1.EditValueChanged += new System.EventHandler(this.pictureEdit1_EditValueChanged);
+            // 
+            // cmdCerrar
+            // 
+            this.cmdCerrar.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.cmdCerrar.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdCerrar.Appearance.Options.UseBackColor = true;
+            this.cmdCerrar.Appearance.Options.UseFont = true;
+            this.cmdCerrar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdCerrar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdCerrar.ImageOptions.Image")));
+            this.cmdCerrar.Location = new System.Drawing.Point(151, 530);
+            this.cmdCerrar.Name = "cmdCerrar";
+            this.cmdCerrar.Size = new System.Drawing.Size(170, 63);
+            this.cmdCerrar.TabIndex = 4;
+            this.cmdCerrar.Text = "Cerrar";
+            this.cmdCerrar.Click += new System.EventHandler(this.cmdCerrar_Click);
+            // 
+            // lblMensaje
+            // 
+            this.lblMensaje.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblMensaje.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMensaje.Appearance.Options.UseFont = true;
+            this.lblMensaje.Appearance.Options.UseTextOptions = true;
+            this.lblMensaje.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.lblMensaje.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
+            this.lblMensaje.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblMensaje.Location = new System.Drawing.Point(13, 76);
+            this.lblMensaje.Name = "lblMensaje";
+            this.lblMensaje.Size = new System.Drawing.Size(462, 86);
+            this.lblMensaje.TabIndex = 5;
             // 
             // vGridControl1
             // 
@@ -102,64 +157,15 @@ namespace LOSA.TransaccionesMP.VentanasMensajes
             this.vGridControl1.Size = new System.Drawing.Size(463, 356);
             this.vGridControl1.TabIndex = 0;
             // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Appearance.Options.UseForeColor = true;
-            this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl2.Location = new System.Drawing.Point(12, 12);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(208, 25);
-            this.labelControl2.TabIndex = 2;
-            this.labelControl2.Text = "Mensaje:";
-            // 
             // dsMensajesTransaccionMP1
             // 
             this.dsMensajesTransaccionMP1.DataSetName = "dsMensajesTransaccionMP";
             this.dsMensajesTransaccionMP1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // pictureEdit1
-            // 
-            this.pictureEdit1.EditValue = global::LOSA.Properties.Resources.Alerta64px;
-            this.pictureEdit1.Location = new System.Drawing.Point(387, -3);
-            this.pictureEdit1.Name = "pictureEdit1";
-            this.pictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Size = new System.Drawing.Size(100, 96);
-            this.pictureEdit1.TabIndex = 3;
-            this.pictureEdit1.EditValueChanged += new System.EventHandler(this.pictureEdit1_EditValueChanged);
-            // 
-            // cmdCerrar
-            // 
-            this.cmdCerrar.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdCerrar.Appearance.Options.UseFont = true;
-            this.cmdCerrar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdCerrar.Location = new System.Drawing.Point(126, 530);
-            this.cmdCerrar.Name = "cmdCerrar";
-            this.cmdCerrar.Size = new System.Drawing.Size(170, 63);
-            this.cmdCerrar.TabIndex = 4;
-            this.cmdCerrar.Text = "Cerrar";
-            this.cmdCerrar.Click += new System.EventHandler(this.cmdCerrar_Click);
-            // 
-            // lblMensaje
-            // 
-            this.lblMensaje.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblMensaje.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensaje.Appearance.Options.UseFont = true;
-            this.lblMensaje.Appearance.Options.UseTextOptions = true;
-            this.lblMensaje.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.lblMensaje.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
-            this.lblMensaje.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblMensaje.Location = new System.Drawing.Point(13, 76);
-            this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(462, 86);
-            this.lblMensaje.TabIndex = 5;
-            // 
             // rowid
             // 
+            this.rowid.Appearance.Options.UseTextOptions = true;
+            this.rowid.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.rowid.Name = "rowid";
             this.rowid.Properties.Caption = "id";
             this.rowid.Properties.FieldName = "id";
@@ -167,45 +173,66 @@ namespace LOSA.TransaccionesMP.VentanasMensajes
             // 
             // rowRequisición
             // 
+            this.rowRequisición.Appearance.Options.UseTextOptions = true;
+            this.rowRequisición.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.rowRequisición.Name = "rowRequisición";
+            this.rowRequisición.Properties.AllowEdit = false;
             this.rowRequisición.Properties.Caption = "Requisición";
             this.rowRequisición.Properties.FieldName = "Requisición";
             // 
             // rowItemCode
             // 
+            this.rowItemCode.Appearance.Options.UseTextOptions = true;
+            this.rowItemCode.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.rowItemCode.Name = "rowItemCode";
+            this.rowItemCode.Properties.AllowEdit = false;
             this.rowItemCode.Properties.Caption = "Item Code";
             this.rowItemCode.Properties.FieldName = "ItemCode";
             // 
             // rowid_materia_prima
             // 
+            this.rowid_materia_prima.Appearance.Options.UseTextOptions = true;
+            this.rowid_materia_prima.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.rowid_materia_prima.Name = "rowid_materia_prima";
+            this.rowid_materia_prima.Properties.AllowEdit = false;
             this.rowid_materia_prima.Properties.Caption = "id_materia_prima";
             this.rowid_materia_prima.Properties.FieldName = "id_materia_prima";
             this.rowid_materia_prima.Visible = false;
             // 
             // rowMateria_Prima_Nombre
             // 
+            this.rowMateria_Prima_Nombre.Appearance.Options.UseTextOptions = true;
+            this.rowMateria_Prima_Nombre.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.rowMateria_Prima_Nombre.Name = "rowMateria_Prima_Nombre";
+            this.rowMateria_Prima_Nombre.Properties.AllowEdit = false;
             this.rowMateria_Prima_Nombre.Properties.Caption = "Materia Prima Nombre";
             this.rowMateria_Prima_Nombre.Properties.FieldName = "Materia Prima Nombre";
             // 
             // rowMP_Lote
             // 
+            this.rowMP_Lote.Appearance.Options.UseTextOptions = true;
+            this.rowMP_Lote.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.rowMP_Lote.Height = 16;
             this.rowMP_Lote.Name = "rowMP_Lote";
+            this.rowMP_Lote.Properties.AllowEdit = false;
             this.rowMP_Lote.Properties.Caption = "MP Lote";
             this.rowMP_Lote.Properties.FieldName = "MP Lote";
             // 
             // rowUsuario
             // 
+            this.rowUsuario.Appearance.Options.UseTextOptions = true;
+            this.rowUsuario.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.rowUsuario.Name = "rowUsuario";
+            this.rowUsuario.Properties.AllowEdit = false;
             this.rowUsuario.Properties.Caption = "Usuario";
             this.rowUsuario.Properties.FieldName = "Usuario";
             // 
             // rowFecha_Consumo
             // 
+            this.rowFecha_Consumo.Appearance.Options.UseTextOptions = true;
+            this.rowFecha_Consumo.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.rowFecha_Consumo.Name = "rowFecha_Consumo";
+            this.rowFecha_Consumo.Properties.AllowEdit = false;
             this.rowFecha_Consumo.Properties.Caption = "Fecha Consumo";
             this.rowFecha_Consumo.Properties.FieldName = "Fecha Consumo";
             this.rowFecha_Consumo.Properties.Format.FormatString = "g";
@@ -213,39 +240,61 @@ namespace LOSA.TransaccionesMP.VentanasMensajes
             // 
             // rowCantidad
             // 
+            this.rowCantidad.Appearance.Options.UseTextOptions = true;
+            this.rowCantidad.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.rowCantidad.Name = "rowCantidad";
+            this.rowCantidad.Properties.AllowEdit = false;
             this.rowCantidad.Properties.Caption = "Cantidad";
             this.rowCantidad.Properties.FieldName = "Cantidad";
+            this.rowCantidad.Properties.Format.FormatString = "n2";
+            this.rowCantidad.Properties.Format.FormatType = DevExpress.Utils.FormatType.Numeric;
             // 
             // rowPeso
             // 
+            this.rowPeso.Appearance.Options.UseTextOptions = true;
+            this.rowPeso.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.rowPeso.Name = "rowPeso";
+            this.rowPeso.Properties.AllowEdit = false;
             this.rowPeso.Properties.Caption = "Peso";
             this.rowPeso.Properties.FieldName = "Peso";
+            this.rowPeso.Properties.Format.FormatString = "n2";
+            this.rowPeso.Properties.Format.FormatType = DevExpress.Utils.FormatType.Numeric;
             // 
             // rowEstado_Calidad
             // 
+            this.rowEstado_Calidad.Appearance.Options.UseTextOptions = true;
+            this.rowEstado_Calidad.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.rowEstado_Calidad.Name = "rowEstado_Calidad";
+            this.rowEstado_Calidad.Properties.AllowEdit = false;
             this.rowEstado_Calidad.Properties.Caption = "Estado Calidad";
             this.rowEstado_Calidad.Properties.FieldName = "Estado Calidad";
             // 
             // rowid_tarima
             // 
+            this.rowid_tarima.Appearance.Options.UseTextOptions = true;
+            this.rowid_tarima.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.rowid_tarima.Name = "rowid_tarima";
+            this.rowid_tarima.Properties.AllowEdit = false;
             this.rowid_tarima.Properties.Caption = "id_tarima";
             this.rowid_tarima.Properties.FieldName = "id_tarima";
             this.rowid_tarima.Visible = false;
             // 
             // rowConsumido
             // 
+            this.rowConsumido.Appearance.Options.UseTextOptions = true;
+            this.rowConsumido.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.rowConsumido.Name = "rowConsumido";
+            this.rowConsumido.Properties.AllowEdit = false;
             this.rowConsumido.Properties.Caption = "Consumido";
             this.rowConsumido.Properties.FieldName = "Consumido";
             // 
             // rowFecha_Entrega
             // 
+            this.rowFecha_Entrega.Appearance.Options.UseTextOptions = true;
+            this.rowFecha_Entrega.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.rowFecha_Entrega.Height = 18;
             this.rowFecha_Entrega.Name = "rowFecha_Entrega";
+            this.rowFecha_Entrega.Properties.AllowEdit = false;
             this.rowFecha_Entrega.Properties.Caption = "Fecha Entrega";
             this.rowFecha_Entrega.Properties.FieldName = "Fecha Entrega";
             this.rowFecha_Entrega.Properties.Format.FormatString = "g";
@@ -253,12 +302,17 @@ namespace LOSA.TransaccionesMP.VentanasMensajes
             // 
             // rowEstado_Tarima
             // 
+            this.rowEstado_Tarima.Appearance.Options.UseTextOptions = true;
+            this.rowEstado_Tarima.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.rowEstado_Tarima.Name = "rowEstado_Tarima";
+            this.rowEstado_Tarima.Properties.AllowEdit = false;
             this.rowEstado_Tarima.Properties.Caption = "Estado Tarima";
             this.rowEstado_Tarima.Properties.FieldName = "Estado Tarima";
             // 
             // rowLote_PT
             // 
+            this.rowLote_PT.Appearance.Options.UseTextOptions = true;
+            this.rowLote_PT.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.rowLote_PT.Height = 16;
             this.rowLote_PT.Name = "rowLote_PT";
             this.rowLote_PT.Properties.AllowEdit = false;
@@ -267,43 +321,64 @@ namespace LOSA.TransaccionesMP.VentanasMensajes
             // 
             // rowPresentacion
             // 
+            this.rowPresentacion.Appearance.Options.UseTextOptions = true;
+            this.rowPresentacion.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.rowPresentacion.Name = "rowPresentacion";
+            this.rowPresentacion.Properties.AllowEdit = false;
             this.rowPresentacion.Properties.Caption = "Presentacion";
             this.rowPresentacion.Properties.FieldName = "Presentacion";
             // 
             // rowFecha_Vencimiento
             // 
+            this.rowFecha_Vencimiento.Appearance.Options.UseTextOptions = true;
+            this.rowFecha_Vencimiento.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.rowFecha_Vencimiento.Name = "rowFecha_Vencimiento";
+            this.rowFecha_Vencimiento.Properties.AllowEdit = false;
             this.rowFecha_Vencimiento.Properties.Caption = "Fecha Vencimiento";
             this.rowFecha_Vencimiento.Properties.FieldName = "Fecha Vencimiento";
             // 
             // rowFecha_Ingreso
             // 
+            this.rowFecha_Ingreso.Appearance.Options.UseTextOptions = true;
+            this.rowFecha_Ingreso.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.rowFecha_Ingreso.Name = "rowFecha_Ingreso";
+            this.rowFecha_Ingreso.Properties.AllowEdit = false;
             this.rowFecha_Ingreso.Properties.Caption = "Fecha Ingreso";
             this.rowFecha_Ingreso.Properties.FieldName = "Fecha Ingreso";
             // 
             // rowProveedor_Name
             // 
+            this.rowProveedor_Name.Appearance.Options.UseTextOptions = true;
+            this.rowProveedor_Name.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.rowProveedor_Name.Name = "rowProveedor_Name";
+            this.rowProveedor_Name.Properties.AllowEdit = false;
             this.rowProveedor_Name.Properties.Caption = "Proveedor Name";
             this.rowProveedor_Name.Properties.FieldName = "Proveedor Name";
             // 
             // rowCardCode
             // 
+            this.rowCardCode.Appearance.Options.UseTextOptions = true;
+            this.rowCardCode.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.rowCardCode.Name = "rowCardCode";
+            this.rowCardCode.Properties.AllowEdit = false;
             this.rowCardCode.Properties.Caption = "Card Code";
             this.rowCardCode.Properties.FieldName = "CardCode";
             // 
             // rowNum_Ingreso
             // 
+            this.rowNum_Ingreso.Appearance.Options.UseTextOptions = true;
+            this.rowNum_Ingreso.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.rowNum_Ingreso.Name = "rowNum_Ingreso";
+            this.rowNum_Ingreso.Properties.AllowEdit = false;
             this.rowNum_Ingreso.Properties.Caption = "Num Ingreso";
             this.rowNum_Ingreso.Properties.FieldName = "Num Ingreso";
             // 
             // rowCodigo_Barra
             // 
+            this.rowCodigo_Barra.Appearance.Options.UseTextOptions = true;
+            this.rowCodigo_Barra.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.rowCodigo_Barra.Name = "rowCodigo_Barra";
+            this.rowCodigo_Barra.Properties.AllowEdit = false;
             this.rowCodigo_Barra.Properties.Caption = "Codigo Barra";
             this.rowCodigo_Barra.Properties.FieldName = "Codigo Barra";
             // 
@@ -320,9 +395,9 @@ namespace LOSA.TransaccionesMP.VentanasMensajes
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.vGridControl1);
             this.Name = "frmVentanaMsjTarimaAlimentacion";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vGridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMensajesTransaccionMP1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
