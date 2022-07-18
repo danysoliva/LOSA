@@ -92,6 +92,7 @@
               <xs:element name="cantidad" msprop:Generator_ColumnVarNameInTable="columncantidad" msprop:Generator_ColumnPropNameInRow="cantidad" msprop:Generator_ColumnPropNameInTable="cantidadColumn" msprop:Generator_UserColumnName="cantidad" type="xs:int" minOccurs="0" />
               <xs:element name="seleccionado" msprop:Generator_ColumnVarNameInTable="columnseleccionado" msprop:Generator_ColumnPropNameInRow="seleccionado" msprop:Generator_ColumnPropNameInTable="seleccionadoColumn" msprop:Generator_UserColumnName="seleccionado" type="xs:boolean" default="false" minOccurs="0" />
               <xs:element name="estado_tarima" msprop:Generator_ColumnVarNameInTable="columnestado_tarima" msprop:Generator_ColumnPropNameInRow="estado_tarima" msprop:Generator_ColumnPropNameInTable="estado_tarimaColumn" msprop:Generator_UserColumnName="estado_tarima" type="xs:string" minOccurs="0" />
+              <xs:element name="id_estado_tarima" msprop:Generator_ColumnVarNameInTable="columnid_estado_tarima" msprop:Generator_ColumnPropNameInRow="id_estado_tarima" msprop:Generator_ColumnPropNameInTable="id_estado_tarimaColumn" msprop:Generator_UserColumnName="id_estado_tarima" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -276,6 +277,9 @@
               <xs:element name="id_unidadmedida" msprop:Generator_ColumnVarNameInTable="columnid_unidadmedida" msprop:Generator_ColumnPropNameInRow="id_unidadmedida" msprop:Generator_ColumnPropNameInTable="id_unidadmedidaColumn" msprop:Generator_UserColumnName="id_unidadmedida" type="xs:int" minOccurs="0" />
               <xs:element name="id_mp" msprop:Generator_ColumnVarNameInTable="columnid_mp" msprop:Generator_ColumnPropNameInRow="id_mp" msprop:Generator_ColumnPropNameInTable="id_mpColumn" msprop:Generator_UserColumnName="id_mp" type="xs:int" minOccurs="0" />
               <xs:element name="id_tipoIngreso" msprop:Generator_ColumnVarNameInTable="columnid_tipoIngreso" msprop:Generator_ColumnPropNameInRow="id_tipoIngreso" msprop:Generator_ColumnPropNameInTable="id_tipoIngresoColumn" msprop:Generator_UserColumnName="id_tipoIngreso" type="xs:int" minOccurs="0" />
+              <xs:element name="numero_ingreso" msprop:Generator_ColumnVarNameInTable="columnnumero_ingreso" msprop:Generator_ColumnPropNameInRow="numero_ingreso" msprop:Generator_ColumnPropNameInTable="numero_ingresoColumn" msprop:Generator_UserColumnName="numero_ingreso" type="xs:int" minOccurs="0" />
+              <xs:element name="unidad_medida" msprop:Generator_ColumnVarNameInTable="columnunidad_medida" msprop:Generator_ColumnPropNameInRow="unidad_medida" msprop:Generator_ColumnPropNameInTable="unidad_medidaColumn" msprop:Generator_UserColumnName="unidad_medida" type="xs:string" minOccurs="0" />
+              <xs:element name="factor" msprop:Generator_ColumnVarNameInTable="columnfactor" msprop:Generator_ColumnPropNameInRow="factor" msprop:Generator_ColumnPropNameInTable="factorColumn" msprop:Generator_UserColumnName="factor" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

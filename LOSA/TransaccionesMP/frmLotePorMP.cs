@@ -20,11 +20,14 @@ namespace LOSA.TransaccionesMP
         public int Id_Lote;
         public string Lote;
         public int Id_UnidadMedida;
-        public int Id_MP;
+        private int Id_MP;
         public int Id_TipoIngreso;
-        public frmLotePorMP()
+        public int Num_ingreso;
+        public decimal Factor;
+        public frmLotePorMP(int pid_mp)
         {
             InitializeComponent();
+            Id_MP = pid_mp;
             cargarlotespormp();
         }
 
@@ -34,11 +37,11 @@ namespace LOSA.TransaccionesMP
             {
                 DataOperations dp = new DataOperations();
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-                string SQL = @"sp_get_lotes_for_mp";
-                SqlCommand cmd = new SqlCommand(SQL, cn);
+                SqlCommand cmd = new SqlCommand("sp_get_lotes_for_mp", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_mp", Id_MP);
                 dsRecepcionMPx1.lista_lotes_mp.Clear();
-                SqlDataAdapter adat = new SqlDataAdapter(SQL, cn);
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 adat.Fill(dsRecepcionMPx1.lista_lotes_mp);
                 cn.Close();
 
@@ -57,7 +60,8 @@ namespace LOSA.TransaccionesMP
             this.Id_Lote = row.id_lote;
             this.Lote = row.lote;
             this.Id_UnidadMedida = row.id_unidadmedida;
-            //this.Id_MP = ;
+            this.Num_ingreso = row.numero_ingreso;
+            this.Factor = row.factor;
 
             this.DialogResult = DialogResult.OK;
             this.Close();
@@ -71,8 +75,15 @@ namespace LOSA.TransaccionesMP
             this.Id_Lote = row.id_lote;
             this.Lote = row.lote;
             this.Id_UnidadMedida = row.id_unidadmedida;
-            //this.Id_MP = Id_UnidadMedida;
+            this.Num_ingreso = row.numero_ingreso;
+            this.Factor = row.factor;
 
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
             this.DialogResult = DialogResult.OK;
             this.Close();
         }

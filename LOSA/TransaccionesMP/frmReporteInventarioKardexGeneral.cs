@@ -17,11 +17,13 @@ namespace LOSA.TransaccionesMP
     public partial class frmReporteInventarioKardexGeneral : DevExpress.XtraEditors.XtraForm
     {
         DataOperations dp = new DataOperations();
-        public frmReporteInventarioKardexGeneral()
+        UserLogin UsuarioLogeado;
+        public frmReporteInventarioKardexGeneral(UserLogin pUserLogin)
         {
             InitializeComponent();
             load_data();
             load_data_totales();
+            UsuarioLogeado = pUserLogin;
         }
         public void load_data()
         {
@@ -103,7 +105,7 @@ namespace LOSA.TransaccionesMP
 
         private void btnAjustePorLote_Click(object sender, EventArgs e)
         {
-            frmAsjuteInventarioPorLote frm = new frmAsjuteInventarioPorLote();
+            frmAsjuteInventarioPorLote frm = new frmAsjuteInventarioPorLote(UsuarioLogeado);
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 load_data();

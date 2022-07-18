@@ -2473,6 +2473,8 @@ namespace LOSA.RecepcionMP {
             
             private global::System.Data.DataColumn columnestado_tarima;
             
+            private global::System.Data.DataColumn columnid_estado_tarima;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public lista_tarimasDataTable() {
@@ -2628,6 +2630,14 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_estado_tarimaColumn {
+                get {
+                    return this.columnid_estado_tarima;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2663,7 +2673,23 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public lista_tarimasRow Addlista_tarimasRow(int id, int id_materia_prima, string materiaprima, string id_proveedor, string proveedor, System.DateTime fecha_ingreso, int numero_transaccion, string lote_materia_prima, int id_boleta, int num, string ubicacion, string codigo_barra, int cantidad, bool seleccionado, string estado_tarima) {
+            public lista_tarimasRow Addlista_tarimasRow(
+                        int id, 
+                        int id_materia_prima, 
+                        string materiaprima, 
+                        string id_proveedor, 
+                        string proveedor, 
+                        System.DateTime fecha_ingreso, 
+                        int numero_transaccion, 
+                        string lote_materia_prima, 
+                        int id_boleta, 
+                        int num, 
+                        string ubicacion, 
+                        string codigo_barra, 
+                        int cantidad, 
+                        bool seleccionado, 
+                        string estado_tarima, 
+                        int id_estado_tarima) {
                 lista_tarimasRow rowlista_tarimasRow = ((lista_tarimasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -2680,7 +2706,8 @@ namespace LOSA.RecepcionMP {
                         codigo_barra,
                         cantidad,
                         seleccionado,
-                        estado_tarima};
+                        estado_tarima,
+                        id_estado_tarima};
                 rowlista_tarimasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowlista_tarimasRow);
                 return rowlista_tarimasRow;
@@ -2718,6 +2745,7 @@ namespace LOSA.RecepcionMP {
                 this.columncantidad = base.Columns["cantidad"];
                 this.columnseleccionado = base.Columns["seleccionado"];
                 this.columnestado_tarima = base.Columns["estado_tarima"];
+                this.columnid_estado_tarima = base.Columns["id_estado_tarima"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2753,6 +2781,8 @@ namespace LOSA.RecepcionMP {
                 base.Columns.Add(this.columnseleccionado);
                 this.columnestado_tarima = new global::System.Data.DataColumn("estado_tarima", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnestado_tarima);
+                this.columnid_estado_tarima = new global::System.Data.DataColumn("id_estado_tarima", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_estado_tarima);
                 this.columnseleccionado.DefaultValue = ((bool)(false));
             }
             
@@ -7584,6 +7614,12 @@ namespace LOSA.RecepcionMP {
             
             private global::System.Data.DataColumn columnid_tipoIngreso;
             
+            private global::System.Data.DataColumn columnnumero_ingreso;
+            
+            private global::System.Data.DataColumn columnunidad_medida;
+            
+            private global::System.Data.DataColumn columnfactor;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public lista_lotes_mpDataTable() {
@@ -7659,6 +7695,30 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn numero_ingresoColumn {
+                get {
+                    return this.columnnumero_ingreso;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn unidad_medidaColumn {
+                get {
+                    return this.columnunidad_medida;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn factorColumn {
+                get {
+                    return this.columnfactor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -7694,14 +7754,17 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public lista_lotes_mpRow Addlista_lotes_mpRow(int id_lote, string lote, int id_unidadmedida, int id_mp, int id_tipoIngreso) {
+            public lista_lotes_mpRow Addlista_lotes_mpRow(int id_lote, string lote, int id_unidadmedida, int id_mp, int id_tipoIngreso, int numero_ingreso, string unidad_medida, decimal factor) {
                 lista_lotes_mpRow rowlista_lotes_mpRow = ((lista_lotes_mpRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_lote,
                         lote,
                         id_unidadmedida,
                         id_mp,
-                        id_tipoIngreso};
+                        id_tipoIngreso,
+                        numero_ingreso,
+                        unidad_medida,
+                        factor};
                 rowlista_lotes_mpRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowlista_lotes_mpRow);
                 return rowlista_lotes_mpRow;
@@ -7729,6 +7792,9 @@ namespace LOSA.RecepcionMP {
                 this.columnid_unidadmedida = base.Columns["id_unidadmedida"];
                 this.columnid_mp = base.Columns["id_mp"];
                 this.columnid_tipoIngreso = base.Columns["id_tipoIngreso"];
+                this.columnnumero_ingreso = base.Columns["numero_ingreso"];
+                this.columnunidad_medida = base.Columns["unidad_medida"];
+                this.columnfactor = base.Columns["factor"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7744,6 +7810,12 @@ namespace LOSA.RecepcionMP {
                 base.Columns.Add(this.columnid_mp);
                 this.columnid_tipoIngreso = new global::System.Data.DataColumn("id_tipoIngreso", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_tipoIngreso);
+                this.columnnumero_ingreso = new global::System.Data.DataColumn("numero_ingreso", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnumero_ingreso);
+                this.columnunidad_medida = new global::System.Data.DataColumn("unidad_medida", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnunidad_medida);
+                this.columnfactor = new global::System.Data.DataColumn("factor", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfactor);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9254,6 +9326,22 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_estado_tarima {
+                get {
+                    try {
+                        return ((int)(this[this.tablelista_tarimas.id_estado_tarimaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_estado_tarima\' de la tabla \'lista_tarimas\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablelista_tarimas.id_estado_tarimaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tablelista_tarimas.idColumn);
             }
@@ -9430,6 +9518,18 @@ namespace LOSA.RecepcionMP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setestado_tarimaNull() {
                 this[this.tablelista_tarimas.estado_tarimaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_estado_tarimaNull() {
+                return this.IsNull(this.tablelista_tarimas.id_estado_tarimaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_estado_tarimaNull() {
+                this[this.tablelista_tarimas.id_estado_tarimaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -12082,6 +12182,54 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int numero_ingreso {
+                get {
+                    try {
+                        return ((int)(this[this.tablelista_lotes_mp.numero_ingresoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'numero_ingreso\' de la tabla \'lista_lotes_mp\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablelista_lotes_mp.numero_ingresoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string unidad_medida {
+                get {
+                    try {
+                        return ((string)(this[this.tablelista_lotes_mp.unidad_medidaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'unidad_medida\' de la tabla \'lista_lotes_mp\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablelista_lotes_mp.unidad_medidaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal factor {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablelista_lotes_mp.factorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'factor\' de la tabla \'lista_lotes_mp\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablelista_lotes_mp.factorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isid_loteNull() {
                 return this.IsNull(this.tablelista_lotes_mp.id_loteColumn);
             }
@@ -12138,6 +12286,42 @@ namespace LOSA.RecepcionMP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setid_tipoIngresoNull() {
                 this[this.tablelista_lotes_mp.id_tipoIngresoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isnumero_ingresoNull() {
+                return this.IsNull(this.tablelista_lotes_mp.numero_ingresoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setnumero_ingresoNull() {
+                this[this.tablelista_lotes_mp.numero_ingresoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isunidad_medidaNull() {
+                return this.IsNull(this.tablelista_lotes_mp.unidad_medidaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setunidad_medidaNull() {
+                this[this.tablelista_lotes_mp.unidad_medidaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsfactorNull() {
+                return this.IsNull(this.tablelista_lotes_mp.factorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetfactorNull() {
+                this[this.tablelista_lotes_mp.factorColumn] = global::System.Convert.DBNull;
             }
         }
         

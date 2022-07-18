@@ -450,12 +450,14 @@ namespace LOSA
         private void btnPlantarimas_Click(object sender, EventArgs e)
         {
             frm_planificacion_despachos frm = new frm_planificacion_despachos(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
         private void btnajuste_Click(object sender, EventArgs e)
         {
             RecuentoInventario.frmRecuentoInventario frm = new RecuentoInventario.frmRecuentoInventario();
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
@@ -469,6 +471,7 @@ namespace LOSA
         private void btnPrint_Click(object sender, EventArgs e)
         {
             frmPrintTM frm = new frmPrintTM(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
@@ -649,6 +652,7 @@ namespace LOSA
         private void simpleButton17_Click_2(object sender, EventArgs e)
         {
             frmPendienteAlmacenExterno frm = new frmPendienteAlmacenExterno(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
@@ -792,7 +796,7 @@ namespace LOSA
 
         private void simpleButton30_Click(object sender, EventArgs e)
         {
-            frmReporteInventarioKardexGeneral frm = new frmReporteInventarioKardexGeneral();
+            frmReporteInventarioKardexGeneral frm = new frmReporteInventarioKardexGeneral(UsuarioLogeado);
             frm.Show();
         }
 

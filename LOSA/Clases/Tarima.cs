@@ -422,6 +422,57 @@ namespace LOSA.Clases
             return Recuperado;
         }
 
+        public bool RecuperarTarimaPorIngreso(int pNumIngreso)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_row_tarima_from_num_ingreso", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@num_ingreso", pNumIngreso);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    Id = dr.GetInt32(0);
+                    Id_materiaprima = dr.GetInt32(1);
+                    IdProveedor = dr.GetString(2);
+                    FechaIngreso = dr.GetDateTime(3);
+                    NumeroTransaccion = dr.GetInt32(4);
+                    FechaVencimiento = dr.GetDateTime(5);
+                    _fechaProduccion = dr.GetDateTime(6);
+                    _LoteMP = dr.GetString(7);
+                    LotePT = dr.GetInt32(8);
+                    Enable = dr.GetBoolean(9);
+                    IdPresentacion = dr.GetInt32(10);
+                    _idUsuario = dr.GetInt32(11);
+                    _tipotarimaid = dr.GetInt32(12);
+                    IdProductoterminado = dr.GetInt32(13);
+                    _fechaProductoTerminadoProduccion = dr.GetDateTime(14);
+                    IdBoleta = dr.GetInt32(15);
+                    CodigoBarra = dr.GetString(16);
+                    Cantidad = dr.GetDecimal(17);//ó unidades
+                    IdUnidadMedida = dr.GetInt32(18);
+                    _peso = dr.GetDecimal(19);
+                    id_estadoCalidad = dr.GetInt32(20);
+                    Id_ingreso = dr.GetInt32(21);
+                    Id_alimentacion = dr.GetInt32(22);
+                    Fecha_produccion_pt = dr.GetDateTime(23);
+                    Id_turno = dr.GetInt32(24);
+                    Recuperado = true;
+                }
+                dr.Close();
+                conn.Close();
+            }
+            catch (Exception)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+            return Recuperado;
+        }
+       
 
 
     }
