@@ -213,6 +213,16 @@ namespace LOSA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap check32px {
+            get {
+                object obj = ResourceManager.GetObject("check32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap checked_32X32 {
             get {
                 object obj = ResourceManager.GetObject("checked_32X32", resourceCulture);
@@ -236,6 +246,16 @@ namespace LOSA.Properties {
         internal static System.Drawing.Bitmap Checklist_icon {
             get {
                 object obj = ResourceManager.GetObject("Checklist-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap close32px {
+            get {
+                object obj = ResourceManager.GetObject("close32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -716,6 +736,16 @@ namespace LOSA.Properties {
         internal static System.Drawing.Bitmap Users_Group_icon64px {
             get {
                 object obj = ResourceManager.GetObject("Users-Group-icon64px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap web_apply_32px {
+            get {
+                object obj = ResourceManager.GetObject("web_apply_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
