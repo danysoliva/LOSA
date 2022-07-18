@@ -205,6 +205,7 @@ namespace LOSA.AlmacenesExterno
                 return;
             }
             frmvertodasMPinbodega frm = new frmvertodasMPinbodega(namewhs, wshcode);
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
     }

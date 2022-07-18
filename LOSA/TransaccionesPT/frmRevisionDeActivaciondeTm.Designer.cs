@@ -29,11 +29,10 @@ namespace LOSA.TransaccionesPT
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRevisionDeActivaciondeTm));
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
-            this.loadtmlBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.loadtmlBindingSource = new System.Windows.Forms.BindingSource();
             this.dsPT = new LOSA.TransaccionesPT.dsPT();
             this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();

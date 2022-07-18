@@ -47,6 +47,7 @@ namespace LOSA.TransaccionesMP
             this.btnUP = new DevExpress.XtraEditors.SimpleButton();
             this.chConsumirPendientes = new DevExpress.XtraEditors.CheckEdit();
             this.gcTarima = new DevExpress.XtraGrid.GridControl();
+            this.dsTransaccionesMP1 = new LOSA.TransaccionesMP.dsTransaccionesMP();
             this.gvTarima = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnombreTarima = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -61,7 +62,6 @@ namespace LOSA.TransaccionesMP
             this.colIsMicro = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colitemcode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colmp_name = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.dsTransaccionesMP1 = new LOSA.TransaccionesMP.dsTransaccionesMP();
             ((System.ComponentModel.ISupportInitialize)(this.txtSolicitados.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEnviados.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPorEnviar.Properties)).BeginInit();
@@ -69,8 +69,8 @@ namespace LOSA.TransaccionesMP
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chConsumirPendientes.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcTarima)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvTarima)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvTarima)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -262,6 +262,11 @@ namespace LOSA.TransaccionesMP
             this.gcTarima.TabIndex = 113;
             this.gcTarima.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTarima});
+            // 
+            // dsTransaccionesMP1
+            // 
+            this.dsTransaccionesMP1.DataSetName = "dsTransaccionesMP";
+            this.dsTransaccionesMP1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gvTarima
             // 
@@ -527,11 +532,6 @@ namespace LOSA.TransaccionesMP
             this.colmp_name.VisibleIndex = 2;
             this.colmp_name.Width = 81;
             // 
-            // dsTransaccionesMP1
-            // 
-            this.dsTransaccionesMP1.DataSetName = "dsTransaccionesMP";
-            this.dsTransaccionesMP1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // frmResumenToEntregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -565,8 +565,8 @@ namespace LOSA.TransaccionesMP
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chConsumirPendientes.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcTarima)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvTarima)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvTarima)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
