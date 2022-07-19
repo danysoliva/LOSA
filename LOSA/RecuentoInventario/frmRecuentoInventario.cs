@@ -52,16 +52,16 @@ namespace LOSA.RecuentoInventario
             {
 
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-                string SQL = @"sp_load_tarimas_to_edit";
+                string SQL = @"sp_load_tarimas_to_edit_v2";
 
-                dsRecuento.tarimas.Clear();
+                dsRecuento.tarimas_ajuste.Clear();
                 SqlCommand cmd = new SqlCommand(SQL, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_mp", cbMateriaPrima.EditValue);
 
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
 
-                adat.Fill(dsRecuento.tarimas);
+                adat.Fill(dsRecuento.tarimas_ajuste);
                 cn.Close();
             }
             catch (Exception ec)
@@ -72,15 +72,17 @@ namespace LOSA.RecuentoInventario
         }
         private void cbMateriaPrima_EditValueChanged(object sender, EventArgs e)
         {
-            if (tipoOp == 0 )
-            {
-                load_tarimas();
-            }
-            else
-            {
-                load_fuerainventario();
-            }
+            //if (tipoOp == 0 )
+            //{
+            //    load_tarimas();
+            //}
+            //else
+            //{
+            //    load_fuerainventario();
+            //}
+            load_tarimas();
         }
+
         public void load_fuerainventario()
         {
             try
@@ -372,6 +374,39 @@ namespace LOSA.RecuentoInventario
                 {
                     load_fuerainventario();
                 }
+            }
+        }
+
+        private void checkDisponibles_CheckedChanged(object sender, EventArgs e)
+        {
+            int contaHab = dsRecuento.tarimas.Count;
+            var gridViewHabilitado = (GridView)grd_data.FocusedView;
+            for (int i = 0; i < contaHab; i++)
+            {
+                dsRecuento.tarimasRow rowHab = (dsRecuento.tarimasRow)gridViewHabilitado.GetDataRow(i);
+                int r = gridViewHabilitado.GetVisibleRowHandle(i + 1);
+                if (r >= 0)
+                {
+                    if (rowHab != null)
+                    {
+                        rowHab.eliminar = checkDisponibles.Checked;
+                        //ListaTarimas.Add(rowHab.id);
+                    }
+                }
+                else
+                {
+                    if (rowHab != null)
+                        rowHab.eliminar = false;
+                }
+            }
+        }
+
+        private void cmdGestionar_Click(object sender, EventArgs e)
+        {
+            frmAjusteINV_PorTarimas frm = new frmAjusteINV_PorTarimas(dsRecuento);
+            if(frm.ShowDialog()== DialogResult.OK)
+            {
+                load_tarimas();
             }
         }
     }

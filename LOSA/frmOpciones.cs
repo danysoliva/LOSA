@@ -1,4 +1,5 @@
-﻿using LOSA.AlmacenesExterno;
+﻿using ACS.Classes;
+using LOSA.AlmacenesExterno;
 using LOSA.Calidad;
 using LOSA.Calidad.Revision_Sanidad;
 using LOSA.Clases;
@@ -315,6 +316,7 @@ namespace LOSA
         private void btnTrazabilidad_Click(object sender, EventArgs e)
         {
            frmTrazabilidadLote frm = new frmTrazabilidadLote();
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
@@ -325,24 +327,28 @@ namespace LOSA
             //frm.Show();
 
             frmactivacionPT frm = new frmactivacionPT(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
         private void btnDevoluciones_Click(object sender, EventArgs e)
         {
             frmDevolucionKardex frm = new frmDevolucionKardex(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
         private void cmdLotesCalidad_Click(object sender, EventArgs e)
         {
             frmLotesStatus frm = new frmLotesStatus(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
         private void btndespachos_Click(object sender, EventArgs e)
         {
             LOSA.Despachos.frmdespachos frm = new LOSA.Despachos.frmdespachos(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
@@ -355,6 +361,7 @@ namespace LOSA
         private void btnReq_PT_Click(object sender, EventArgs e)
         {
             LOSA.Despachos.frm_Reqresumen_pt frm = new Despachos.frm_Reqresumen_pt(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
@@ -444,6 +451,7 @@ namespace LOSA
         private void btnAlimentacion_Click(object sender, EventArgs e)
         {
             frmPlanPT frm = new frmPlanPT(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
@@ -456,9 +464,12 @@ namespace LOSA
 
         private void btnajuste_Click(object sender, EventArgs e)
         {
+
+            //Poner validacion de permisos de forma restrictiva
             RecuentoInventario.frmRecuentoInventario frm = new RecuentoInventario.frmRecuentoInventario();
             frm.MdiParent = this.MdiParent;
             frm.Show();
+            //CajaDialogo.Error("Esta opcion esta en mantenimiento! No esta disponible actualmente!");
         }
 
         private void simpleButton4_Click_1(object sender, EventArgs e)
@@ -486,48 +497,56 @@ namespace LOSA
         private void btn_salidapt_Click(object sender, EventArgs e)
         {
             frmdespacho frm = new frmdespacho(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
         private void simpleButton6_Click(object sender, EventArgs e)
         {
             frm_reporte_alimentacion frm = new frm_reporte_alimentacion();
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
         private void simpleButton7_Click(object sender, EventArgs e)
         {
             frm_reporte_alimentacion frm = new frm_reporte_alimentacion();
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
         private void simpleButton8_Click(object sender, EventArgs e)
         {
             frmreporte_trazabilidad frm = new frmreporte_trazabilidad(this.UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
         private void btnRequisasManuales_Click(object sender, EventArgs e)
         {
             frmRequisasManuales frm = new frmRequisasManuales(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
         private void simpleButton10_Click(object sender, EventArgs e)
         {
             frm_ajustes_inventario_PT frm = new frm_ajustes_inventario_PT(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
         private void simpleButton11_Click(object sender, EventArgs e)
         {
             frm_reporte_produccion frm = new frm_reporte_produccion();
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
         private void simpleButton12_Click(object sender, EventArgs e)
         {
             frm_reporte_produccion frm = new frm_reporte_produccion();
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
@@ -545,6 +564,7 @@ namespace LOSA
         private void simpleButton14_Click(object sender, EventArgs e)
         {
             frm_view_ingresos frm = new frm_view_ingresos(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
@@ -564,12 +584,14 @@ namespace LOSA
         private void btntarimasactivadasPT_Click(object sender, EventArgs e)
         {
             frm_rpt_productoT frm = new frm_rpt_productoT();
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
         private void btnTransferencia_Click(object sender, EventArgs e)
         {
             xfrmMovimientoStock frm = new xfrmMovimientoStock(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
@@ -604,6 +626,7 @@ namespace LOSA
         private void ManteIngresos_Click(object sender, EventArgs e)
         {
             frm_mantenimiento_calidad frm = new frm_mantenimiento_calidad(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
@@ -627,6 +650,7 @@ namespace LOSA
         private void simpleButton17_Click(object sender, EventArgs e)
         {
             frmLecturas frm = new frmLecturas(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
@@ -635,7 +659,7 @@ namespace LOSA
             xfrmIngresoLiquidos frm = new xfrmIngresoLiquidos(UsuarioLogeado);
 
             //xfrmTanque frm = new xfrmTanque();
-
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
@@ -659,19 +683,21 @@ namespace LOSA
         private void simpleButton17_Click_3(object sender, EventArgs e)
         {
             xfrmCheckActiveBin frm = new xfrmCheckActiveBin();
-
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
         private void simpleButton18_Click(object sender, EventArgs e)
         {
             frmReporteExterno frm = new frmReporteExterno();
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
         private void btnLoteActivoGranel_Click(object sender, EventArgs e)
         {
             frmLoteActivoGranel frm = new frmLoteActivoGranel(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
@@ -683,12 +709,14 @@ namespace LOSA
         private void btnImprimirTm_Click(object sender, EventArgs e)
         {
             frmprint__tarimas frm = new frmprint__tarimas();
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
         private void btn_rptubicaciones_Click(object sender, EventArgs e)
         {
             rptUbicaciones frm = new rptUbicaciones();
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
@@ -704,48 +732,56 @@ namespace LOSA
         private void simpleButton20_Click(object sender, EventArgs e)
         {
             frmControlIngreso frm = new frmControlIngreso();
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
         private void simpleButton21_Click(object sender, EventArgs e)
         {
             frmReporteProductoTerminado frm = new frmReporteProductoTerminado();
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
         private void simpleButton22_Click(object sender, EventArgs e)
         {
             frmReporteGeneralProductoTermnado frm = new frmReporteGeneralProductoTermnado();
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
         private void simpleButton23_Click(object sender, EventArgs e)
         {
             frmPlanSemanal frm = new frmPlanSemanal(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
         private void btnReporteProduccionDespachos_Click(object sender, EventArgs e)
         {
             frmrptPlansemanal frm = new frmrptPlansemanal();
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
         private void simpleButton24_Click(object sender, EventArgs e)
         {
             frmCierreMensual frm = new frmCierreMensual(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
         private void simpleButton25_Click(object sender, EventArgs e)
         {
             frmSeguimientoAlimentacion frm = new frmSeguimientoAlimentacion(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
         private void simpleButton26_Click(object sender, EventArgs e)
         {
             frmReporteSeguimientoComprasTransito frm = new frmReporteSeguimientoComprasTransito();
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
@@ -791,18 +827,21 @@ namespace LOSA
         private void simpleButton29_Click(object sender, EventArgs e)
         {
             frmSeguimientoDespachos frm = new frmSeguimientoDespachos();
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
         private void simpleButton30_Click(object sender, EventArgs e)
         {
-            frmReporteInventarioKardexGeneral frm = new frmReporteInventarioKardexGeneral(UsuarioLogeado);
+            frmReporteInventarioKardexGeneral frm = new frmReporteInventarioKardexGeneral();
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
         private void simpleButton31_Click(object sender, EventArgs e)
         {
             MantiniemintoCliente frm = new MantiniemintoCliente(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 

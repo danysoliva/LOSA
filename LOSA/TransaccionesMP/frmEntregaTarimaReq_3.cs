@@ -659,9 +659,7 @@ namespace LOSA.TransaccionesMP
                                 SqlDataReader dr = cmd.ExecuteReader();
                                 if (dr.Read())
                                 {
-
                                     Guardo = dr.GetInt32(4) == 1 ? true : false;
-
                                 }
                                 dr.Close();
                                 con.Close();

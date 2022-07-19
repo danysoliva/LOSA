@@ -56,7 +56,7 @@ namespace ACS.Classes
         public static string LOSA_ServerAddress = "AQFSVR003";
         public static string LOSA_ServerName = "AQFSVR003";
         //public static string LOSA_ActiveDB = "LOSA";
-        public static string LOSA_ActiveDB = "LOSA";
+        public static string LOSA_ActiveDB = "LOSA2";
         public static string LOSA_DB_User = "sa";
         public static string LOSA_DB_Pass = " AquaF33dHN2014";
 
