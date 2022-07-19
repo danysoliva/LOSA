@@ -308,8 +308,6 @@
             this.colDuplicar.ColumnEdit = this.cmdDuplicar;
             this.colDuplicar.MinWidth = 17;
             this.colDuplicar.Name = "colDuplicar";
-            this.colDuplicar.Visible = true;
-            this.colDuplicar.VisibleIndex = 12;
             this.colDuplicar.Width = 54;
             // 
             // cmdDuplicar
@@ -375,7 +373,7 @@
             this.colEliminar.ColumnEdit = this.btneliminarTm;
             this.colEliminar.Name = "colEliminar";
             this.colEliminar.Visible = true;
-            this.colEliminar.VisibleIndex = 13;
+            this.colEliminar.VisibleIndex = 12;
             // 
             // btneliminarTm
             // 
@@ -402,7 +400,7 @@
             this.colseleccionado.FieldName = "seleccionado";
             this.colseleccionado.Name = "colseleccionado";
             this.colseleccionado.Visible = true;
-            this.colseleccionado.VisibleIndex = 14;
+            this.colseleccionado.VisibleIndex = 13;
             // 
             // simpleButton1
             // 

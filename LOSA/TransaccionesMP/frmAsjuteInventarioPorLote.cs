@@ -351,8 +351,8 @@ namespace LOSA.TransaccionesMP
                 Id_Lote_Alosy = frm.Id_Lote;
                 gridLookUpEditPresentacion.EditValue = frm.Id_UnidadMedida;
                 Numero_transaccion = frm.Num_ingreso;
-                
-                FactorUnidades = frm.Factor; 
+                FactorUnidades = frm.Factor;
+
                 txtCantidadUnidades.Focus();
             }
         }

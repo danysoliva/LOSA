@@ -466,7 +466,7 @@ namespace LOSA.Clases
                 dr.Close();
                 conn.Close();
             }
-            catch (Exception)
+            catch (Exception ec)
             {
                 CajaDialogo.Error(ec.Message);
             }

@@ -133,6 +133,7 @@ namespace LOSA.RecepcionMP
 
         private void cmdGuardar_Click(object sender, EventArgs e)
         {
+            
             if (IdTarima <= 0)
             {
                 CajaDialogo.Error("No se puede registrar una tarima sin la boleta de bascula!");
@@ -192,6 +193,9 @@ namespace LOSA.RecepcionMP
             if (r != DialogResult.Yes)
                 return;
 
+            //Validar consumo de tarima en Alimentacion
+            ValidarConsumoAlimentacion(IdTarima);
+
             try
             {
 
@@ -229,6 +233,33 @@ namespace LOSA.RecepcionMP
             }
             
         }
+
+        private void ValidarConsumoAlimentacion(int pIdTarima)
+        {
+            try
+            {
+                string sql = @"SELECT count(*)
+                               FROM [LOSA].[dbo].[LOSA_alimentacion_tarimas] A
+                                    where id_tarima =" + pIdTarima;
+                DataOperations dp = new DataOperations();
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                int RegistrosConsumo = (int)cmd.ExecuteScalar();
+
+                if (RegistrosConsumo > 0)
+                {
+                    CajaDialogo.Error("No puede editar esta tarima ya que fue entregada parcial o completamente a produccion!");
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
         public void CalculodelPromedio()
         {
             try

@@ -99,7 +99,7 @@ namespace LOSA.RecepcionMP
                     mensaje = "Esta tarima ya esta comprometida!";
                     break;
                 case 5://En Produccion
-                    Error = true;//esta habilitada
+                    Error = true;
                     mensaje = "Esta tarima no se puede imprimir por que ya fue entregada a Produccion";
                     break;
                 case 6://Consumido
@@ -345,10 +345,7 @@ namespace LOSA.RecepcionMP
                                 if (reportResumen != null)
                                 {
                                     // Add all pages of the second report to the end of the first report.
-                                    reportResumen.ModifyDocument(x => 
-                                    { 
-                                        x.AddPages(report2.Pages); 
-                                    });
+                                    reportResumen.ModifyDocument(x => { x.AddPages(report2.Pages); });
                                 }
                             }
                         }
@@ -359,7 +356,7 @@ namespace LOSA.RecepcionMP
             {
                 using (ReportPrintTool printTool = new ReportPrintTool(reportResumen))
                 {
-                    printTool.ShowPreviewDialog();
+                    printTool.Print();
                 }
             }
 
