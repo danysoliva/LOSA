@@ -76,5 +76,12 @@ namespace LOSA.TransaccionesMP
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
+
+        private void btnResumenTarimas_Click(object sender, EventArgs e)
+        {
+            frmMontaCargaTarimaResumen frm = new frmMontaCargaTarimaResumen();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
     }
 }

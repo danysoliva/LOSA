@@ -472,7 +472,51 @@ namespace LOSA.Clases
             }
             return Recuperado;
         }
-       
+
+        public string GetPrinterNameConsola()
+        {
+            string name = "ND";
+            try
+            {
+                string StoreProcedure = @"sp_get_printer_name_impresion_tarima";
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringBas);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(StoreProcedure, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@id", Serial);
+                name = cmd.ExecuteScalar().ToString();
+
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+            return name;
+        }
+
+
+        public string GetPrinterNameLogistica()
+        {
+            string name = "ND";
+            try
+            {
+                string StoreProcedure = @"";
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringBas);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(StoreProcedure, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@id", Serial);
+                name = cmd.ExecuteScalar().ToString();
+
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+            return name;
+        }
+
+
 
 
     }

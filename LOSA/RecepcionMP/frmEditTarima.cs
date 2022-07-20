@@ -240,7 +240,7 @@ namespace LOSA.RecepcionMP
             {
                 string sql = @"SELECT count(*)
                                FROM [LOSA].[dbo].[LOSA_alimentacion_tarimas] A
-                                    where id_tarima =" + pIdTarima;
+                                    where enable = 1 and id_tarima =" + pIdTarima;
                 DataOperations dp = new DataOperations();
                 SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                 conn.Open();

@@ -833,7 +833,7 @@ namespace LOSA
 
         private void simpleButton30_Click(object sender, EventArgs e)
         {
-            frmReporteInventarioKardexGeneral frm = new frmReporteInventarioKardexGeneral();
+            frmReporteInventarioKardexGeneral frm = new frmReporteInventarioKardexGeneral(UsuarioLogeado);
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }

@@ -35,7 +35,7 @@
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnDevoluciones = new DevExpress.XtraEditors.SimpleButton();
-            this.btnprueba = new DevExpress.XtraEditors.SimpleButton();
+            this.btnResumenTarimas = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -119,16 +119,17 @@
             this.btnDevoluciones.Text = "Devoluciones";
             this.btnDevoluciones.Click += new System.EventHandler(this.btnDevoluciones_Click);
             // 
-            // btnprueba
+            // btnResumenTarimas
             // 
-            this.btnprueba.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.btnprueba.Appearance.Options.UseFont = true;
-            this.btnprueba.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnprueba.ImageOptions.Image")));
-            this.btnprueba.Location = new System.Drawing.Point(323, 365);
-            this.btnprueba.Name = "btnprueba";
-            this.btnprueba.Size = new System.Drawing.Size(274, 67);
-            this.btnprueba.TabIndex = 22;
-            this.btnprueba.Text = "Avance de requisas";
+            this.btnResumenTarimas.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.btnResumenTarimas.Appearance.Options.UseFont = true;
+            this.btnResumenTarimas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnprueba.ImageOptions.Image")));
+            this.btnResumenTarimas.Location = new System.Drawing.Point(323, 365);
+            this.btnResumenTarimas.Name = "btnResumenTarimas";
+            this.btnResumenTarimas.Size = new System.Drawing.Size(274, 67);
+            this.btnResumenTarimas.TabIndex = 22;
+            this.btnResumenTarimas.Text = "Tarimas Por Ingreso";
+            this.btnResumenTarimas.Click += new System.EventHandler(this.btnResumenTarimas_Click);
             // 
             // frmEntregaMontaCarga
             // 
@@ -136,7 +137,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(622, 521);
-            this.Controls.Add(this.btnprueba);
+            this.Controls.Add(this.btnResumenTarimas);
             this.Controls.Add(this.btnDevoluciones);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.cmdHome);
@@ -159,6 +160,6 @@
         private DevExpress.XtraEditors.SimpleButton cmdHome;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton btnDevoluciones;
-        private DevExpress.XtraEditors.SimpleButton btnprueba;
+        private DevExpress.XtraEditors.SimpleButton btnResumenTarimas;
     }
 }

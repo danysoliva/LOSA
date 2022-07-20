@@ -2438,6 +2438,12 @@
     <Compile Include="TransaccionesMP\frmLotePorMP.Designer.cs">
       <DependentUpon>frmLotePorMP.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\frmMontaCargaTarimaResumen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmMontaCargaTarimaResumen.Designer.cs">
+      <DependentUpon>frmMontaCargaTarimaResumen.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesMP\frmOptionMontaCarga.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -3730,6 +3736,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmLotePorMP.resx">
       <DependentUpon>frmLotePorMP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmMontaCargaTarimaResumen.resx">
+      <DependentUpon>frmMontaCargaTarimaResumen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmOptionMontaCarga.resx">
       <DependentUpon>frmOptionMontaCarga.cs</DependentUpon>

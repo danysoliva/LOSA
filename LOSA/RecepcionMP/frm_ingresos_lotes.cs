@@ -271,26 +271,74 @@ namespace LOSA.RecepcionMP
             frm.Show();
         }
 
+        private void ValidarConsumoAlimentacion(int pIdTarima)
+        {
+            try
+            {
+                string sql = @"SELECT count(*)
+                               FROM [LOSA].[dbo].[LOSA_alimentacion_tarimas] A
+                                    where enable = 1 and id_tarima =" + pIdTarima;
+                DataOperations dp = new DataOperations();
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                int RegistrosConsumo = (int)cmd.ExecuteScalar();
+
+                if (RegistrosConsumo > 0)
+                {
+                    CajaDialogo.Error("No puede editar esta tarima ya que fue entregada parcial o completamente a produccion!");
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
         private void btneliminarTm_Click(object sender, EventArgs e)
         {
+            var gridView = (GridView)gridControl1.FocusedView;
+            var row = (dsRecepcionMPx.lista_tarimasRow)gridView.GetFocusedDataRow();
+
+            
+
             try
             {
                 if (MessageBox.Show("Desea eliminar la tarima?", "Desea eliminar la tarima?",MessageBoxButtons.OKCancel,MessageBoxIcon.Information) == DialogResult.Cancel)
                 {
                     return;
                 }
-                var gridView = (GridView)gridControl1.FocusedView;
-                var row = (dsRecepcionMPx.lista_tarimasRow)gridView.GetFocusedDataRow();
-                string query = @"sp_deshabilitar_tm_por_id_v2";
-                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-                cn.Open();
-                SqlCommand cmd = new SqlCommand(query,cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idtm", row.id);
-                cmd.Parameters.AddWithValue("@id_user", UsuarioLogeado.Id);
-                cmd.ExecuteNonQuery();
-                CajaDialogo.Information("Se he eliminado correctamente la tarima.");  
-                LoadTarimas();
+
+                string sql = "sp_validacion_tarima_alimentacion";
+                DataOperations dp = new DataOperations();
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd1 = new SqlCommand(sql, conn);
+                cmd1.CommandType = CommandType.StoredProcedure;
+                cmd1.Parameters.AddWithValue("@id_tarima", row.id);
+                int RegistrosConsumo = (int)cmd1.ExecuteScalar();
+
+                //Si RegistrosConsumo es mayor!
+                if (RegistrosConsumo > 0)
+                {
+                    CajaDialogo.Error("No puede ELIMINAR esta tarima ya que fue entregada parcial o completamente a produccion!");
+                    return;
+                }
+                else
+                {
+                    string query = @"sp_deshabilitar_tm_por_id_v2";
+                    SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                    cn.Open();
+                    SqlCommand cmd = new SqlCommand(query, cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@idtm", row.id);
+                    cmd.Parameters.AddWithValue("@id_user", UsuarioLogeado.Id);
+                    cmd.ExecuteNonQuery();
+                    CajaDialogo.Information("Se he eliminado correctamente la tarima.");
+                    LoadTarimas();
+                }
 
             }
             catch (Exception ex)
