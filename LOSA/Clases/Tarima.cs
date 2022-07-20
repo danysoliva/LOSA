@@ -475,11 +475,12 @@ namespace LOSA.Clases
 
         public string GetPrinterNameConsola()
         {
+            DataOperations dp = new DataOperations();
             string name = "ND";
             try
             {
-                string StoreProcedure = @"sp_get_printer_name_impresion_tarima";
-                SqlConnection cn = new SqlConnection(dp.ConnectionStringBas);
+                string StoreProcedure = @"[sp_get_printer_name_impresion_tarima_consola]";
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(StoreProcedure, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -497,11 +498,12 @@ namespace LOSA.Clases
 
         public string GetPrinterNameLogistica()
         {
+            DataOperations dp = new DataOperations();
             string name = "ND";
             try
             {
-                string StoreProcedure = @"";
-                SqlConnection cn = new SqlConnection(dp.ConnectionStringBas);
+                string StoreProcedure = @"sp_get_printer_name_impresion_tarima_logistica";
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(StoreProcedure, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
