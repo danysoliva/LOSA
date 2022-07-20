@@ -203,5 +203,10 @@ namespace LOSA.TransaccionesMP
             CajaDialogo.Information("IMPRESION ENVIADA A IMPRESORA DE CONSOLA TARIMA CON CODIGO:" + row.codigo_barra);
         }
 
+        private void cmdHome_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
     }
 }
