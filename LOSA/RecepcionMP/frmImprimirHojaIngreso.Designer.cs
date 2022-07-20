@@ -304,8 +304,6 @@
             this.Editar.ColumnEdit = this.btnEditar;
             this.Editar.MinWidth = 15;
             this.Editar.Name = "Editar";
-            this.Editar.Visible = true;
-            this.Editar.VisibleIndex = 11;
             this.Editar.Width = 67;
             // 
             // btnEditar

@@ -81,6 +81,7 @@
             this.btnFinalizar = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrintSeleccionados = new DevExpress.XtraEditors.SimpleButton();
             this.checkBoxSelectAll = new System.Windows.Forms.CheckBox();
+            this.colpresentacion = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -183,6 +184,7 @@
             this.colPrint,
             this.colDuplicar,
             this.Editar,
+            this.colpresentacion,
             this.colnum,
             this.colcodigo_barra,
             this.colcantidad,
@@ -218,7 +220,7 @@
             this.colmateriaprima.OptionsColumn.AllowEdit = false;
             this.colmateriaprima.Visible = true;
             this.colmateriaprima.VisibleIndex = 2;
-            this.colmateriaprima.Width = 69;
+            this.colmateriaprima.Width = 64;
             // 
             // colid_proveedor
             // 
@@ -236,7 +238,7 @@
             this.colproveedor.OptionsColumn.AllowEdit = false;
             this.colproveedor.Visible = true;
             this.colproveedor.VisibleIndex = 3;
-            this.colproveedor.Width = 69;
+            this.colproveedor.Width = 64;
             // 
             // colfecha_ingreso
             // 
@@ -247,7 +249,7 @@
             this.colfecha_ingreso.OptionsColumn.AllowEdit = false;
             this.colfecha_ingreso.Visible = true;
             this.colfecha_ingreso.VisibleIndex = 4;
-            this.colfecha_ingreso.Width = 69;
+            this.colfecha_ingreso.Width = 64;
             // 
             // colnumero_transaccion
             // 
@@ -258,7 +260,7 @@
             this.colnumero_transaccion.OptionsColumn.AllowEdit = false;
             this.colnumero_transaccion.Visible = true;
             this.colnumero_transaccion.VisibleIndex = 5;
-            this.colnumero_transaccion.Width = 69;
+            this.colnumero_transaccion.Width = 64;
             // 
             // collote_materia_prima
             // 
@@ -269,7 +271,7 @@
             this.collote_materia_prima.OptionsColumn.AllowEdit = false;
             this.collote_materia_prima.Visible = true;
             this.collote_materia_prima.VisibleIndex = 6;
-            this.collote_materia_prima.Width = 69;
+            this.collote_materia_prima.Width = 64;
             // 
             // colid_boleta
             // 
@@ -280,7 +282,7 @@
             this.colid_boleta.OptionsColumn.AllowEdit = false;
             this.colid_boleta.Visible = true;
             this.colid_boleta.VisibleIndex = 7;
-            this.colid_boleta.Width = 69;
+            this.colid_boleta.Width = 64;
             // 
             // colPrint
             // 
@@ -289,8 +291,8 @@
             this.colPrint.MinWidth = 17;
             this.colPrint.Name = "colPrint";
             this.colPrint.Visible = true;
-            this.colPrint.VisibleIndex = 10;
-            this.colPrint.Width = 69;
+            this.colPrint.VisibleIndex = 11;
+            this.colPrint.Width = 59;
             // 
             // btnPrint
             // 
@@ -309,8 +311,8 @@
             this.colDuplicar.MinWidth = 17;
             this.colDuplicar.Name = "colDuplicar";
             this.colDuplicar.Visible = true;
-            this.colDuplicar.VisibleIndex = 11;
-            this.colDuplicar.Width = 69;
+            this.colDuplicar.VisibleIndex = 12;
+            this.colDuplicar.Width = 59;
             // 
             // cmdDuplicar
             // 
@@ -329,8 +331,8 @@
             this.Editar.MinWidth = 17;
             this.Editar.Name = "Editar";
             this.Editar.Visible = true;
-            this.Editar.VisibleIndex = 12;
-            this.Editar.Width = 78;
+            this.Editar.VisibleIndex = 13;
+            this.Editar.Width = 67;
             // 
             // btnEditar
             // 
@@ -350,7 +352,7 @@
             this.colnum.Name = "colnum";
             this.colnum.Visible = true;
             this.colnum.VisibleIndex = 0;
-            this.colnum.Width = 50;
+            this.colnum.Width = 46;
             // 
             // colcodigo_barra
             // 
@@ -360,7 +362,7 @@
             this.colcodigo_barra.OptionsColumn.AllowEdit = false;
             this.colcodigo_barra.Visible = true;
             this.colcodigo_barra.VisibleIndex = 1;
-            this.colcodigo_barra.Width = 96;
+            this.colcodigo_barra.Width = 90;
             // 
             // colcantidad
             // 
@@ -369,7 +371,7 @@
             this.colcantidad.Name = "colcantidad";
             this.colcantidad.Visible = true;
             this.colcantidad.VisibleIndex = 8;
-            this.colcantidad.Width = 96;
+            this.colcantidad.Width = 90;
             // 
             // colEliminar
             // 
@@ -377,8 +379,8 @@
             this.colEliminar.ColumnEdit = this.btneliminarTm;
             this.colEliminar.Name = "colEliminar";
             this.colEliminar.Visible = true;
-            this.colEliminar.VisibleIndex = 13;
-            this.colEliminar.Width = 82;
+            this.colEliminar.VisibleIndex = 14;
+            this.colEliminar.Width = 71;
             // 
             // btneliminarTm
             // 
@@ -397,8 +399,8 @@
             this.colestado_tarima.Name = "colestado_tarima";
             this.colestado_tarima.OptionsColumn.AllowEdit = false;
             this.colestado_tarima.Visible = true;
-            this.colestado_tarima.VisibleIndex = 9;
-            this.colestado_tarima.Width = 96;
+            this.colestado_tarima.VisibleIndex = 10;
+            this.colestado_tarima.Width = 83;
             // 
             // colseleccionado
             // 
@@ -406,8 +408,8 @@
             this.colseleccionado.FieldName = "seleccionado";
             this.colseleccionado.Name = "colseleccionado";
             this.colseleccionado.Visible = true;
-            this.colseleccionado.VisibleIndex = 14;
-            this.colseleccionado.Width = 119;
+            this.colseleccionado.VisibleIndex = 15;
+            this.colseleccionado.Width = 121;
             // 
             // simpleButton1
             // 
@@ -469,6 +471,15 @@
             this.checkBoxSelectAll.Text = "Seleccionar Todas";
             this.checkBoxSelectAll.UseVisualStyleBackColor = true;
             this.checkBoxSelectAll.CheckedChanged += new System.EventHandler(this.checkBoxSelectAll_CheckedChanged);
+            // 
+            // colpresentacion
+            // 
+            this.colpresentacion.Caption = "Presentacion";
+            this.colpresentacion.FieldName = "presentacion";
+            this.colpresentacion.Name = "colpresentacion";
+            this.colpresentacion.Visible = true;
+            this.colpresentacion.VisibleIndex = 9;
+            this.colpresentacion.Width = 99;
             // 
             // frm_ingresos_lotes
             // 
@@ -533,5 +544,6 @@
         private DevExpress.XtraEditors.SimpleButton btnPrintSeleccionados;
         private System.Windows.Forms.CheckBox checkBoxSelectAll;
         private DevExpress.XtraGrid.Columns.GridColumn colestado_tarima;
+        private DevExpress.XtraGrid.Columns.GridColumn colpresentacion;
     }
 }
