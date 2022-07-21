@@ -31,11 +31,11 @@ namespace LOSA.RecepcionMP
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTarima_V2));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
@@ -158,7 +158,7 @@ namespace LOSA.RecepcionMP
             this.btnAtras.Appearance.Options.UseFont = true;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(1187, 12);
+            this.btnAtras.Location = new System.Drawing.Point(1083, 12);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(130, 47);
             this.btnAtras.TabIndex = 10;
@@ -169,7 +169,7 @@ namespace LOSA.RecepcionMP
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseTextOptions = true;
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -177,44 +177,44 @@ namespace LOSA.RecepcionMP
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl1.Location = new System.Drawing.Point(1, 12);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(1316, 40);
+            this.labelControl1.Size = new System.Drawing.Size(1212, 40);
             this.labelControl1.TabIndex = 29;
             this.labelControl1.Text = "Registro de Ingresos Sacos";
             // 
             // simpleButton1
             // 
             this.simpleButton1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton1.Appearance.Options.UseBackColor = true;
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
             this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.simpleButton1.Location = new System.Drawing.Point(347, 73);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(223, 41);
+            this.simpleButton1.Size = new System.Drawing.Size(180, 41);
             this.simpleButton1.TabIndex = 32;
             this.simpleButton1.Text = "Seleccion de Boleta";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // labelControl2
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Location = new System.Drawing.Point(20, 85);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(168, 25);
+            this.labelControl2.Size = new System.Drawing.Size(118, 17);
             this.labelControl2.TabIndex = 33;
             this.labelControl2.Text = "# Boleta de bascula:";
             // 
             // txtIdBoleta
             // 
             this.txtIdBoleta.EditValue = "";
-            this.txtIdBoleta.Location = new System.Drawing.Point(199, 82);
+            this.txtIdBoleta.Location = new System.Drawing.Point(154, 84);
             this.txtIdBoleta.Name = "txtIdBoleta";
-            this.txtIdBoleta.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdBoleta.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdBoleta.Properties.Appearance.Options.UseFont = true;
             this.txtIdBoleta.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtIdBoleta.Size = new System.Drawing.Size(142, 32);
+            this.txtIdBoleta.Size = new System.Drawing.Size(142, 22);
             this.txtIdBoleta.TabIndex = 31;
             this.txtIdBoleta.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtIdBoleta_KeyDown);
             // 
@@ -222,13 +222,13 @@ namespace LOSA.RecepcionMP
             // 
             this.txtpresentacionPromedio.EditValue = "0";
             this.txtpresentacionPromedio.Enabled = false;
-            this.txtpresentacionPromedio.Location = new System.Drawing.Point(468, 185);
+            this.txtpresentacionPromedio.Location = new System.Drawing.Point(786, 58);
             this.txtpresentacionPromedio.Name = "txtpresentacionPromedio";
-            this.txtpresentacionPromedio.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpresentacionPromedio.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtpresentacionPromedio.Properties.Appearance.Options.UseFont = true;
             this.txtpresentacionPromedio.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtpresentacionPromedio.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtpresentacionPromedio.Size = new System.Drawing.Size(198, 32);
+            this.txtpresentacionPromedio.Size = new System.Drawing.Size(198, 24);
             this.txtpresentacionPromedio.TabIndex = 90;
             this.txtpresentacionPromedio.Visible = false;
             // 
@@ -242,11 +242,12 @@ namespace LOSA.RecepcionMP
             this.Tg_presentacion_promedio.Properties.OnText = "Desactivar presentacion promedio";
             this.Tg_presentacion_promedio.Size = new System.Drawing.Size(411, 32);
             this.Tg_presentacion_promedio.TabIndex = 89;
+            this.Tg_presentacion_promedio.Visible = false;
             this.Tg_presentacion_promedio.Toggled += new System.EventHandler(this.Tg_presentacion_promedio_Toggled);
             // 
             // btnSelecciondeMp
             // 
-            this.btnSelecciondeMp.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelecciondeMp.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSelecciondeMp.Appearance.Options.UseFont = true;
             this.btnSelecciondeMp.ImageOptions.Image = global::LOSA.Properties.Resources.tap;
             this.btnSelecciondeMp.Location = new System.Drawing.Point(752, 98);
@@ -258,26 +259,26 @@ namespace LOSA.RecepcionMP
             // 
             // labelControl13
             // 
-            this.labelControl13.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl13.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl13.Appearance.ForeColor = System.Drawing.Color.RoyalBlue;
             this.labelControl13.Appearance.Options.UseFont = true;
             this.labelControl13.Appearance.Options.UseForeColor = true;
-            this.labelControl13.Location = new System.Drawing.Point(402, 304);
+            this.labelControl13.Location = new System.Drawing.Point(347, 259);
             this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Size = new System.Drawing.Size(173, 24);
+            this.labelControl13.Size = new System.Drawing.Size(137, 20);
             this.labelControl13.TabIndex = 87;
             this.labelControl13.Text = "Cantidad de Tarimas";
             // 
             // txtCantidadTarimasTotal
             // 
             this.txtCantidadTarimasTotal.EditValue = "1";
-            this.txtCantidadTarimasTotal.Location = new System.Drawing.Point(581, 300);
+            this.txtCantidadTarimasTotal.Location = new System.Drawing.Point(582, 252);
             this.txtCantidadTarimasTotal.Name = "txtCantidadTarimasTotal";
-            this.txtCantidadTarimasTotal.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCantidadTarimasTotal.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCantidadTarimasTotal.Properties.Appearance.Options.UseFont = true;
             this.txtCantidadTarimasTotal.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCantidadTarimasTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtCantidadTarimasTotal.Size = new System.Drawing.Size(85, 32);
+            this.txtCantidadTarimasTotal.Size = new System.Drawing.Size(85, 26);
             this.txtCantidadTarimasTotal.TabIndex = 69;
             this.txtCantidadTarimasTotal.TextChanged += new System.EventHandler(this.txtCantidadTarimasTotal_TextChanged);
             this.txtCantidadTarimasTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidadTarimasTotal_KeyPress);
@@ -286,32 +287,32 @@ namespace LOSA.RecepcionMP
             // 
             this.txtPesoKg.EditValue = "0";
             this.txtPesoKg.Enabled = false;
-            this.txtPesoKg.Location = new System.Drawing.Point(199, 258);
+            this.txtPesoKg.Location = new System.Drawing.Point(154, 210);
             this.txtPesoKg.Name = "txtPesoKg";
-            this.txtPesoKg.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPesoKg.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPesoKg.Properties.Appearance.Options.UseFont = true;
             this.txtPesoKg.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPesoKg.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtPesoKg.Size = new System.Drawing.Size(142, 32);
+            this.txtPesoKg.Size = new System.Drawing.Size(142, 22);
             this.txtPesoKg.TabIndex = 86;
             this.txtPesoKg.TextChanged += new System.EventHandler(this.txtPesoKg_TextChanged);
             // 
             // labelControl12
             // 
-            this.labelControl12.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.labelControl12.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl12.Appearance.Options.UseFont = true;
-            this.labelControl12.Location = new System.Drawing.Point(21, 265);
+            this.labelControl12.Location = new System.Drawing.Point(20, 215);
             this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(160, 25);
+            this.labelControl12.Size = new System.Drawing.Size(114, 17);
             this.labelControl12.TabIndex = 85;
             this.labelControl12.Text = "Peso Kg por tarima";
             // 
             // gridLookUpEditPresentacion
             // 
             this.gridLookUpEditPresentacion.EditValue = "";
-            this.gridLookUpEditPresentacion.Location = new System.Drawing.Point(469, 186);
+            this.gridLookUpEditPresentacion.Location = new System.Drawing.Point(469, 171);
             this.gridLookUpEditPresentacion.Name = "gridLookUpEditPresentacion";
-            this.gridLookUpEditPresentacion.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridLookUpEditPresentacion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridLookUpEditPresentacion.Properties.Appearance.Options.UseFont = true;
             this.gridLookUpEditPresentacion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -319,7 +320,7 @@ namespace LOSA.RecepcionMP
             this.gridLookUpEditPresentacion.Properties.DisplayMember = "descripcion";
             this.gridLookUpEditPresentacion.Properties.PopupView = this.gridLookUpEdit1View;
             this.gridLookUpEditPresentacion.Properties.ValueMember = "id";
-            this.gridLookUpEditPresentacion.Size = new System.Drawing.Size(197, 30);
+            this.gridLookUpEditPresentacion.Size = new System.Drawing.Size(197, 22);
             this.gridLookUpEditPresentacion.TabIndex = 64;
             this.gridLookUpEditPresentacion.EditValueChanged += new System.EventHandler(this.gridLookUpEditPresentacion_EditValueChanged);
             // 
@@ -343,6 +344,7 @@ namespace LOSA.RecepcionMP
             this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit1View.OptionsView.ShowAutoFilterRow = true;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
             // colid
@@ -360,42 +362,42 @@ namespace LOSA.RecepcionMP
             // 
             // labelControl11
             // 
-            this.labelControl11.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.labelControl11.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl11.Appearance.Options.UseFont = true;
-            this.labelControl11.Location = new System.Drawing.Point(352, 190);
+            this.labelControl11.Location = new System.Drawing.Point(347, 172);
             this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(113, 25);
+            this.labelControl11.Size = new System.Drawing.Size(77, 17);
             this.labelControl11.TabIndex = 84;
             this.labelControl11.Text = "Presentación:";
             // 
             // labelControl10
             // 
-            this.labelControl10.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(352, 265);
+            this.labelControl10.Location = new System.Drawing.Point(347, 228);
             this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(57, 25);
+            this.labelControl10.Size = new System.Drawing.Size(41, 17);
             this.labelControl10.TabIndex = 83;
             this.labelControl10.Text = "# Lote ";
             // 
             // txtLote
             // 
             this.txtLote.EditValue = "";
-            this.txtLote.Location = new System.Drawing.Point(415, 262);
+            this.txtLote.Location = new System.Drawing.Point(416, 225);
             this.txtLote.Name = "txtLote";
-            this.txtLote.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLote.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtLote.Properties.Appearance.Options.UseFont = true;
             this.txtLote.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtLote.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtLote.Size = new System.Drawing.Size(251, 32);
+            this.txtLote.Size = new System.Drawing.Size(251, 24);
             this.txtLote.TabIndex = 66;
             // 
             // dtFechaVencimiento
             // 
             this.dtFechaVencimiento.EditValue = null;
-            this.dtFechaVencimiento.Location = new System.Drawing.Point(199, 331);
+            this.dtFechaVencimiento.Location = new System.Drawing.Point(154, 262);
             this.dtFechaVencimiento.Name = "dtFechaVencimiento";
-            this.dtFechaVencimiento.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtFechaVencimiento.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFechaVencimiento.Properties.Appearance.Options.UseFont = true;
             this.dtFechaVencimiento.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -404,27 +406,27 @@ namespace LOSA.RecepcionMP
             this.dtFechaVencimiento.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.TouchUI;
             this.dtFechaVencimiento.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.dtFechaVencimiento.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.dtFechaVencimiento.Size = new System.Drawing.Size(142, 30);
+            this.dtFechaVencimiento.Size = new System.Drawing.Size(142, 22);
             this.dtFechaVencimiento.TabIndex = 68;
             // 
             // labelControl9
             // 
             this.labelControl9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl9.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(23, 338);
+            this.labelControl9.Location = new System.Drawing.Point(20, 267);
             this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(160, 25);
+            this.labelControl9.Size = new System.Drawing.Size(108, 17);
             this.labelControl9.TabIndex = 82;
             this.labelControl9.Text = "Fecha Vencimiento";
             // 
             // dtFechaProduccion
             // 
             this.dtFechaProduccion.EditValue = null;
-            this.dtFechaProduccion.Location = new System.Drawing.Point(199, 295);
+            this.dtFechaProduccion.Location = new System.Drawing.Point(154, 236);
             this.dtFechaProduccion.Name = "dtFechaProduccion";
-            this.dtFechaProduccion.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtFechaProduccion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFechaProduccion.Properties.Appearance.Options.UseFont = true;
             this.dtFechaProduccion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -434,39 +436,39 @@ namespace LOSA.RecepcionMP
             this.dtFechaProduccion.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.dtFechaProduccion.Properties.MinValue = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
             this.dtFechaProduccion.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.dtFechaProduccion.Size = new System.Drawing.Size(142, 30);
+            this.dtFechaProduccion.Size = new System.Drawing.Size(142, 22);
             this.dtFechaProduccion.TabIndex = 67;
             // 
             // labelControl8
             // 
-            this.labelControl8.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(23, 302);
+            this.labelControl8.Location = new System.Drawing.Point(20, 241);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(150, 25);
+            this.labelControl8.Size = new System.Drawing.Size(102, 17);
             this.labelControl8.TabIndex = 81;
             this.labelControl8.Text = "Fecha Producción";
             // 
             // labelControl7
             // 
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(20, 231);
+            this.labelControl7.Location = new System.Drawing.Point(21, 185);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(176, 25);
+            this.labelControl7.Size = new System.Drawing.Size(124, 17);
             this.labelControl7.TabIndex = 80;
             this.labelControl7.Text = "Unidades por Tarima";
             // 
             // txtUnidades
             // 
             this.txtUnidades.EditValue = "0";
-            this.txtUnidades.Location = new System.Drawing.Point(199, 224);
+            this.txtUnidades.Location = new System.Drawing.Point(154, 184);
             this.txtUnidades.Name = "txtUnidades";
-            this.txtUnidades.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUnidades.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUnidades.Properties.Appearance.Options.UseFont = true;
             this.txtUnidades.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtUnidades.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtUnidades.Size = new System.Drawing.Size(142, 32);
+            this.txtUnidades.Size = new System.Drawing.Size(142, 22);
             this.txtUnidades.TabIndex = 65;
             this.txtUnidades.TextChanged += new System.EventHandler(this.txtUnidades_TextChanged);
             this.txtUnidades.Enter += new System.EventHandler(this.txtUnidades_Enter);
@@ -475,32 +477,32 @@ namespace LOSA.RecepcionMP
             // txtNumIngreso
             // 
             this.txtNumIngreso.EditValue = "";
-            this.txtNumIngreso.Location = new System.Drawing.Point(469, 224);
+            this.txtNumIngreso.Location = new System.Drawing.Point(470, 197);
             this.txtNumIngreso.Name = "txtNumIngreso";
-            this.txtNumIngreso.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumIngreso.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtNumIngreso.Properties.Appearance.Options.UseFont = true;
             this.txtNumIngreso.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNumIngreso.Properties.ReadOnly = true;
             this.txtNumIngreso.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtNumIngreso.Size = new System.Drawing.Size(197, 32);
+            this.txtNumIngreso.Size = new System.Drawing.Size(197, 24);
             this.txtNumIngreso.TabIndex = 79;
             // 
             // labelControl6
             // 
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(352, 231);
+            this.labelControl6.Location = new System.Drawing.Point(347, 200);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(105, 25);
+            this.labelControl6.Size = new System.Drawing.Size(75, 17);
             this.labelControl6.TabIndex = 78;
             this.labelControl6.Text = "# de Ingreso";
             // 
             // dtFechaIngreso
             // 
             this.dtFechaIngreso.EditValue = null;
-            this.dtFechaIngreso.Location = new System.Drawing.Point(199, 187);
+            this.dtFechaIngreso.Location = new System.Drawing.Point(154, 159);
             this.dtFechaIngreso.Name = "dtFechaIngreso";
-            this.dtFechaIngreso.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtFechaIngreso.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFechaIngreso.Properties.Appearance.Options.UseFont = true;
             this.dtFechaIngreso.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -510,16 +512,16 @@ namespace LOSA.RecepcionMP
             this.dtFechaIngreso.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.dtFechaIngreso.Properties.MinValue = new System.DateTime(2019, 11, 1, 0, 0, 0, 0);
             this.dtFechaIngreso.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.dtFechaIngreso.Size = new System.Drawing.Size(142, 30);
+            this.dtFechaIngreso.Size = new System.Drawing.Size(142, 22);
             this.dtFechaIngreso.TabIndex = 77;
             // 
             // labelControl5
             // 
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(21, 193);
+            this.labelControl5.Location = new System.Drawing.Point(21, 162);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(117, 25);
+            this.labelControl5.Size = new System.Drawing.Size(81, 17);
             this.labelControl5.TabIndex = 76;
             this.labelControl5.Text = "Fecha Ingreso";
             // 
@@ -527,21 +529,21 @@ namespace LOSA.RecepcionMP
             // 
             this.txtProveedorName.EditValue = "";
             this.txtProveedorName.Enabled = false;
-            this.txtProveedorName.Location = new System.Drawing.Point(347, 154);
+            this.txtProveedorName.Location = new System.Drawing.Point(347, 144);
             this.txtProveedorName.Name = "txtProveedorName";
-            this.txtProveedorName.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProveedorName.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProveedorName.Properties.Appearance.Options.UseFont = true;
             this.txtProveedorName.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtProveedorName.Size = new System.Drawing.Size(319, 26);
+            this.txtProveedorName.Size = new System.Drawing.Size(319, 24);
             this.txtProveedorName.TabIndex = 75;
             // 
             // labelControl4
             // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(20, 155);
+            this.labelControl4.Location = new System.Drawing.Point(20, 139);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(87, 25);
+            this.labelControl4.Size = new System.Drawing.Size(61, 17);
             this.labelControl4.TabIndex = 74;
             this.labelControl4.Text = "Proveedor";
             // 
@@ -549,33 +551,33 @@ namespace LOSA.RecepcionMP
             // 
             this.txtCodigoProveedor.EditValue = "";
             this.txtCodigoProveedor.Enabled = false;
-            this.txtCodigoProveedor.Location = new System.Drawing.Point(199, 154);
+            this.txtCodigoProveedor.Location = new System.Drawing.Point(154, 134);
             this.txtCodigoProveedor.Name = "txtCodigoProveedor";
-            this.txtCodigoProveedor.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigoProveedor.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigoProveedor.Properties.Appearance.Options.UseFont = true;
             this.txtCodigoProveedor.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCodigoProveedor.Size = new System.Drawing.Size(142, 26);
+            this.txtCodigoProveedor.Size = new System.Drawing.Size(142, 22);
             this.txtCodigoProveedor.TabIndex = 73;
             // 
             // txtMP_Name
             // 
             this.txtMP_Name.EditValue = "";
             this.txtMP_Name.Enabled = false;
-            this.txtMP_Name.Location = new System.Drawing.Point(347, 122);
+            this.txtMP_Name.Location = new System.Drawing.Point(347, 118);
             this.txtMP_Name.Name = "txtMP_Name";
-            this.txtMP_Name.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMP_Name.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMP_Name.Properties.Appearance.Options.UseFont = true;
             this.txtMP_Name.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtMP_Name.Size = new System.Drawing.Size(319, 26);
+            this.txtMP_Name.Size = new System.Drawing.Size(319, 24);
             this.txtMP_Name.TabIndex = 72;
             // 
             // labelControl3
             // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(20, 119);
+            this.labelControl3.Location = new System.Drawing.Point(20, 110);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(119, 25);
+            this.labelControl3.Size = new System.Drawing.Size(82, 17);
             this.labelControl3.TabIndex = 71;
             this.labelControl3.Text = "Materia Prima";
             // 
@@ -583,23 +585,23 @@ namespace LOSA.RecepcionMP
             // 
             this.txtCodigoMP.EditValue = "";
             this.txtCodigoMP.Enabled = false;
-            this.txtCodigoMP.Location = new System.Drawing.Point(199, 120);
+            this.txtCodigoMP.Location = new System.Drawing.Point(154, 109);
             this.txtCodigoMP.Name = "txtCodigoMP";
-            this.txtCodigoMP.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigoMP.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigoMP.Properties.Appearance.Options.UseFont = true;
             this.txtCodigoMP.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCodigoMP.Size = new System.Drawing.Size(142, 26);
+            this.txtCodigoMP.Size = new System.Drawing.Size(142, 22);
             this.txtCodigoMP.TabIndex = 70;
             // 
             // labelControl14
             // 
             this.labelControl14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl14.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.labelControl14.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl14.Appearance.Options.UseFont = true;
-            this.labelControl14.Location = new System.Drawing.Point(8, 380);
+            this.labelControl14.Location = new System.Drawing.Point(20, 307);
             this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(175, 25);
+            this.labelControl14.Size = new System.Drawing.Size(123, 17);
             this.labelControl14.TabIndex = 91;
             this.labelControl14.Text = "Resumen de ingreso:";
             // 
@@ -607,12 +609,12 @@ namespace LOSA.RecepcionMP
             // 
             this.grd_data.DataMember = "informacionIngreso";
             this.grd_data.DataSource = this.dsWizard;
-            this.grd_data.Location = new System.Drawing.Point(31, 411);
+            this.grd_data.Location = new System.Drawing.Point(12, 360);
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
             this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnEliminar});
-            this.grd_data.Size = new System.Drawing.Size(1267, 214);
+            this.grd_data.Size = new System.Drawing.Size(1202, 265);
             this.grd_data.TabIndex = 92;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
@@ -884,9 +886,9 @@ namespace LOSA.RecepcionMP
             // btnEliminar
             // 
             this.btnEliminar.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
             this.btnEliminar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -902,15 +904,15 @@ namespace LOSA.RecepcionMP
             this.panel1.Controls.Add(this.btnFinalizar);
             this.panel1.Controls.Add(this.step1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 657);
+            this.panel1.Location = new System.Drawing.Point(0, 634);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1329, 46);
+            this.panel1.Size = new System.Drawing.Size(1225, 60);
             this.panel1.TabIndex = 93;
             // 
             // simpleButton3
             // 
             this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(1056, 19);
+            this.simpleButton3.Location = new System.Drawing.Point(959, 14);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(124, 38);
             this.simpleButton3.TabIndex = 10;
@@ -920,7 +922,7 @@ namespace LOSA.RecepcionMP
             // pictureEdit4
             // 
             this.pictureEdit4.EditValue = ((object)(resources.GetObject("pictureEdit4.EditValue")));
-            this.pictureEdit4.Location = new System.Drawing.Point(261, 19);
+            this.pictureEdit4.Location = new System.Drawing.Point(261, 14);
             this.pictureEdit4.Name = "pictureEdit4";
             this.pictureEdit4.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit4.Properties.Appearance.Options.UseBackColor = true;
@@ -933,7 +935,7 @@ namespace LOSA.RecepcionMP
             // pictureEdit3
             // 
             this.pictureEdit3.EditValue = ((object)(resources.GetObject("pictureEdit3.EditValue")));
-            this.pictureEdit3.Location = new System.Drawing.Point(189, 19);
+            this.pictureEdit3.Location = new System.Drawing.Point(189, 14);
             this.pictureEdit3.Name = "pictureEdit3";
             this.pictureEdit3.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit3.Properties.Appearance.Options.UseBackColor = true;
@@ -946,7 +948,7 @@ namespace LOSA.RecepcionMP
             // pictureEdit2
             // 
             this.pictureEdit2.EditValue = ((object)(resources.GetObject("pictureEdit2.EditValue")));
-            this.pictureEdit2.Location = new System.Drawing.Point(109, 19);
+            this.pictureEdit2.Location = new System.Drawing.Point(109, 14);
             this.pictureEdit2.Name = "pictureEdit2";
             this.pictureEdit2.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit2.Properties.Appearance.Options.UseBackColor = true;
@@ -971,17 +973,17 @@ namespace LOSA.RecepcionMP
             this.btnFinalizar.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFinalizar.Appearance.Options.UseFont = true;
             this.btnFinalizar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnFinalizar.ImageOptions.Image")));
-            this.btnFinalizar.Location = new System.Drawing.Point(1186, 19);
+            this.btnFinalizar.Location = new System.Drawing.Point(1089, 14);
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(124, 38);
             this.btnFinalizar.TabIndex = 2;
-            this.btnFinalizar.Text = "Finalizar!";
+            this.btnFinalizar.Text = "Finalizar";
             this.btnFinalizar.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
             // step1
             // 
             this.step1.EditValue = ((object)(resources.GetObject("step1.EditValue")));
-            this.step1.Location = new System.Drawing.Point(31, 19);
+            this.step1.Location = new System.Drawing.Point(31, 14);
             this.step1.Name = "step1";
             this.step1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.step1.Properties.Appearance.Options.UseBackColor = true;
@@ -996,7 +998,7 @@ namespace LOSA.RecepcionMP
             this.btnGuardarLote.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarLote.Appearance.Options.UseFont = true;
             this.btnGuardarLote.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarLote.ImageOptions.Image")));
-            this.btnGuardarLote.Location = new System.Drawing.Point(935, 358);
+            this.btnGuardarLote.Location = new System.Drawing.Point(850, 307);
             this.btnGuardarLote.Name = "btnGuardarLote";
             this.btnGuardarLote.Size = new System.Drawing.Size(200, 47);
             this.btnGuardarLote.TabIndex = 94;
@@ -1008,7 +1010,7 @@ namespace LOSA.RecepcionMP
             this.btnSeleccionarLote.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSeleccionarLote.Appearance.Options.UseFont = true;
             this.btnSeleccionarLote.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionarLote.ImageOptions.Image")));
-            this.btnSeleccionarLote.Location = new System.Drawing.Point(1141, 358);
+            this.btnSeleccionarLote.Location = new System.Drawing.Point(1056, 307);
             this.btnSeleccionarLote.Name = "btnSeleccionarLote";
             this.btnSeleccionarLote.Size = new System.Drawing.Size(157, 47);
             this.btnSeleccionarLote.TabIndex = 95;
@@ -1017,39 +1019,39 @@ namespace LOSA.RecepcionMP
             // 
             // labelControl16
             // 
-            this.labelControl16.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.labelControl16.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.labelControl16.Appearance.Options.UseFont = true;
-            this.labelControl16.Location = new System.Drawing.Point(688, 265);
+            this.labelControl16.Location = new System.Drawing.Point(688, 259);
             this.labelControl16.Name = "labelControl16";
-            this.labelControl16.Size = new System.Drawing.Size(113, 25);
+            this.labelControl16.Size = new System.Drawing.Size(81, 17);
             this.labelControl16.TabIndex = 99;
             this.labelControl16.Text = "O. de compra";
             // 
             // txtoc
             // 
             this.txtoc.EditValue = "";
-            this.txtoc.Location = new System.Drawing.Point(819, 262);
+            this.txtoc.Location = new System.Drawing.Point(786, 254);
             this.txtoc.Name = "txtoc";
-            this.txtoc.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtoc.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtoc.Properties.Appearance.Options.UseFont = true;
             this.txtoc.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtoc.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtoc.Size = new System.Drawing.Size(265, 32);
+            this.txtoc.Size = new System.Drawing.Size(265, 24);
             this.txtoc.TabIndex = 96;
             // 
             // labelControl17
             // 
-            this.labelControl17.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.labelControl17.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.labelControl17.Appearance.Options.UseFont = true;
-            this.labelControl17.Location = new System.Drawing.Point(686, 231);
+            this.labelControl17.Location = new System.Drawing.Point(686, 229);
             this.labelControl17.Name = "labelControl17";
-            this.labelControl17.Size = new System.Drawing.Size(104, 25);
+            this.labelControl17.Size = new System.Drawing.Size(73, 17);
             this.labelControl17.TabIndex = 97;
             this.labelControl17.Text = "# de Factura";
             // 
             // btnSelccionarProveedor
             // 
-            this.btnSelccionarProveedor.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.btnSelccionarProveedor.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSelccionarProveedor.Appearance.Options.UseFont = true;
             this.btnSelccionarProveedor.ImageOptions.Image = global::LOSA.Properties.Resources.tap;
             this.btnSelccionarProveedor.Location = new System.Drawing.Point(752, 140);
@@ -1062,20 +1064,20 @@ namespace LOSA.RecepcionMP
             // txtfactura
             // 
             this.txtfactura.EditValue = "";
-            this.txtfactura.Location = new System.Drawing.Point(819, 224);
+            this.txtfactura.Location = new System.Drawing.Point(785, 226);
             this.txtfactura.Name = "txtfactura";
-            this.txtfactura.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtfactura.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtfactura.Properties.Appearance.Options.UseFont = true;
             this.txtfactura.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtfactura.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtfactura.Size = new System.Drawing.Size(265, 32);
+            this.txtfactura.Size = new System.Drawing.Size(265, 24);
             this.txtfactura.TabIndex = 101;
             // 
             // frmTarima_V2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1329, 703);
+            this.ClientSize = new System.Drawing.Size(1225, 694);
             this.Controls.Add(this.txtfactura);
             this.Controls.Add(this.btnSelccionarProveedor);
             this.Controls.Add(this.labelControl16);

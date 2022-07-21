@@ -39,8 +39,17 @@ namespace LOSA.RecepcionMP
         public string pv;
         public string cardcode;
         public Decimal LimiteKgloteportraslado;
+
+        /// <summary>
+        /// [LOSA_ingreso_mp_h].id
+        /// </summary>
         int IdHeaderInserted;
+
+        /// <summary>
+        /// ID Lote Alosy [LOSA_ingreso_mp_lotes].id
+        /// </summary>
         int IdLoteInserted ;
+
         int idLoteExterno;
         
         DataOperations dp = new DataOperations();
@@ -91,7 +100,7 @@ namespace LOSA.RecepcionMP
         private void simpleButton4_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Desea crear el ingreso con esta configuracion?. Debe definir los lotes que se han generado.",
-                "Desea crear el ingreso con esta configuracion?.Debe definir los lotes que se han generado",
+                                "Desea crear el ingreso con esta configuracion?.Debe definir los lotes que se han generado",
                 MessageBoxButtons.OK, MessageBoxIcon.Question) == DialogResult.OK)
             {
                 if (dsWizard.informacionIngreso.Rows.Count ==0)
@@ -178,58 +187,59 @@ namespace LOSA.RecepcionMP
 
                         for (int i = 1; i <= row.canttarimas; i++)
                         {
-                           
-                                DataOperations dp = new DataOperations();
-                                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                                con.Open();
 
-                                SqlCommand cmm = new SqlCommand("sp_generar_codigo_from_tables_id", con);
-                                cmm.CommandType = CommandType.StoredProcedure;
-                                cmm.Parameters.AddWithValue("@id", 1);
-                                string barcode = cmm.ExecuteScalar().ToString();
+                            DataOperations dp = new DataOperations();
+                            SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                            con.Open();
 
-                                cmd = new SqlCommand("sp_insert_new_tarima_v2", con);
-                                cmd.CommandType = CommandType.StoredProcedure;
-                                cmd.Parameters.AddWithValue("@itemcode", row.itemcode);
-                                cmd.Parameters.AddWithValue("@id_proveedor", row.cardname);
-                                cmd.Parameters.AddWithValue("@fecha_ingreso", row.fechaIngreso);
-                                cmd.Parameters.AddWithValue("@numero_transaccion", txtNumIngreso.Text);
-                                cmd.Parameters.AddWithValue("@fecha_vencimiento", row.fvencimiento);
-                                cmd.Parameters.AddWithValue("@fecha_produccion_materia_prima", row.fproduccion);
-                                cmd.Parameters.AddWithValue("@lote_materia_prima", row.lote);
-                                cmd.Parameters.AddWithValue("@id_presentacion", row.id_presentacion);
-                                cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
-                                cmd.Parameters.AddWithValue("@id_boleta", this.IdSerie);
-                                cmd.Parameters.AddWithValue("@codigo_barra", barcode);
-                                cmd.Parameters.AddWithValue("@cant", row.udxtarima);
-                                cmd.Parameters.AddWithValue("@peso", row.pesokgxtarima);
-                                cmd.Parameters.AddWithValue("@idlotes", IdLoteInserted);
-                                cmd.Parameters.AddWithValue("@factor", row.factor);
-                                cmd.Parameters.AddWithValue("@bit_promedio", Tg_presentacion_promedio.IsOn ? 1 : 0);
-                                vid_tarima = Convert.ToInt32(cmd.ExecuteScalar());
+                            SqlCommand cmm = new SqlCommand("sp_generar_codigo_from_tables_id", con);
+                            cmm.CommandType = CommandType.StoredProcedure;
+                            cmm.Parameters.AddWithValue("@id", 1);
+                            string barcode = cmm.ExecuteScalar().ToString();
 
-                                string query = @"";
-                                if (Istraslado)
-                                {
-                                    query = @"sp_insert_ubicacion_default_v2";
+                            cmd = new SqlCommand("sp_insert_new_tarima_v3", con);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@itemcode", row.itemcode);
+                            cmd.Parameters.AddWithValue("@id_proveedor", row.cardname);
+                            cmd.Parameters.AddWithValue("@fecha_ingreso", row.fechaIngreso);
+                            cmd.Parameters.AddWithValue("@numero_transaccion", txtNumIngreso.Text);
+                            cmd.Parameters.AddWithValue("@fecha_vencimiento", row.fvencimiento);
+                            cmd.Parameters.AddWithValue("@fecha_produccion_materia_prima", row.fproduccion);
+                            cmd.Parameters.AddWithValue("@lote_materia_prima", row.lote);
+                            cmd.Parameters.AddWithValue("@id_presentacion", row.id_presentacion);
+                            cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
+                            cmd.Parameters.AddWithValue("@id_boleta", this.IdSerie);
+                            cmd.Parameters.AddWithValue("@codigo_barra", barcode);
+                            cmd.Parameters.AddWithValue("@cant", row.udxtarima);
+                            cmd.Parameters.AddWithValue("@peso", row.pesokgxtarima);
+                            cmd.Parameters.AddWithValue("@idlotes", IdLoteInserted);
+                            cmd.Parameters.AddWithValue("@factor", row.factor);
+                            cmd.Parameters.AddWithValue("@bit_promedio", Tg_presentacion_promedio.IsOn ? 1 : 0);
+                            cmd.Parameters.AddWithValue("@is_traslado_externo", Istraslado ? Convert.ToDecimal(row.id_Externo) : 0);
+                            vid_tarima = Convert.ToInt32(cmd.ExecuteScalar());
 
-                                }
-                                else
-                                {
-                                     query = @"sp_insert_ubicacion_default";
-                                }
-                                SqlCommand cmdx = new SqlCommand(query, con);// ahora recibe el parametro de ubicacion para poder guardarlo automatico en todas las tarimas
-                                cmdx.CommandType = CommandType.StoredProcedure;
-                                cmdx.Parameters.AddWithValue("@id_tarima", vid_tarima);
-                                cmdx.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
-                                cmdx.Parameters.AddWithValue("@codigo_barra", barcode);
-                                cmdx.Parameters.AddWithValue("@id_ubicacion", 131); //bodega c500 predeterminada
-                                cmdx.ExecuteNonQuery();
+                            string query = @"";
+                            if (Istraslado)
+                            {
+                                query = @"sp_insert_ubicacion_default_v2";
 
-                                List.Add(vid_tarima);
+                            }
+                            else
+                            {
+                                query = @"sp_insert_ubicacion_default";
+                            }
+                            SqlCommand cmdx = new SqlCommand(query, con);// ahora recibe el parametro de ubicacion para poder guardarlo automatico en todas las tarimas
+                            cmdx.CommandType = CommandType.StoredProcedure;
+                            cmdx.Parameters.AddWithValue("@id_tarima", vid_tarima);
+                            cmdx.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
+                            cmdx.Parameters.AddWithValue("@codigo_barra", barcode);
+                            cmdx.Parameters.AddWithValue("@id_ubicacion", 131); //bodega c500 predeterminada
+                            cmdx.ExecuteNonQuery();
 
-                                Guardo = true;
-                                con.Close();
+                            List.Add(vid_tarima);
+
+                            Guardo = true;
+                            con.Close();
                         }
                         if (Guardo)
                         {
