@@ -368,7 +368,6 @@
             this.colid_presentacion.ColumnEdit = this.grd_presentacion;
             this.colid_presentacion.FieldName = "id_presentacion";
             this.colid_presentacion.Name = "colid_presentacion";
-            this.colid_presentacion.OptionsFilter.AllowFilter = false;
             this.colid_presentacion.Visible = true;
             this.colid_presentacion.VisibleIndex = 4;
             this.colid_presentacion.Width = 110;
