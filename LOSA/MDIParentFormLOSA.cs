@@ -13,23 +13,100 @@ namespace LOSA
     public partial class MDIParentFormLOSA : Form
     {
         private int childFormNumber = 0;
-
+        frmMain frm;
         public MDIParentFormLOSA()
         {
             InitializeComponent();
-            frmMain frm = new frmMain();
+            frm = new frmMain();
             frm.MdiParent = this;
             frm.WindowState = FormWindowState.Normal;
             frm.Show();
         }
 
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e) 
+        {
+            //frm = new frmMain();
+            //frm.MdiParent = this;
+            //frm.WindowState = FormWindowState.Normal;
+            //frm.Show();
+        }
+        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //frm = new frmMain();
+            //frm.MdiParent = this;
+            //frm.WindowState = FormWindowState.Normal;
+            //frm.Show();
+        }
+
+        private void MDIParentFormLOSA_Click(object sender, EventArgs e)  
+        {
+            //Form frmx = (Form)sender;
+            //if (frmx.Name == "Gat")
+            //{
+            //    frm = new frmMain();
+            //    frm.MdiParent = this;
+            //    frm.WindowState = FormWindowState.Normal;
+
+            //    frm.Show();
+            //}
+        }
+
+        private void MDIParentFormLOSA_MouseClick(object sender, MouseEventArgs e)
+        {
+            //if (e.Button == MouseButtons.Right)
+            //{
+            //    frm = new frmMain();
+            //    frm.MdiParent = this;
+            //    frm.WindowState = FormWindowState.Normal;
+
+            //    frm.Show();
+            //}
+        }
+
+        private void panelControl1_MouseClick(object sender, MouseEventArgs e)
         {
         }
 
-        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
+        private void contextMenuStrip1_MouseClick(object sender, MouseEventArgs e)
         {
-            frmMain frm = new frmMain();
+            //if (e.Button == MouseButtons.Right)
+            //{
+            //    frm = new frmMain();
+            //    frm.MdiParent = this;
+            //    frm.WindowState = FormWindowState.Normal;
+
+            //    frm.Show();
+            //}
+        }
+
+        private void MDIParentFormLOSA_MouseClick_1(object sender, MouseEventArgs e)
+        {
+            //if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            //{
+            //    popupMenu1.ShowPopup(Cursor.Position);
+            //}
+        }
+
+        private void MDIParentFormLOSA_Click_1(object sender, EventArgs e)
+        {
+            //if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            //{
+            //    popupMenu1.ShowPopup(Cursor.Position);
+            //}
+        }
+
+        private void abrirLoginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form frm1 in this.MdiChildren)
+            {
+                //if (frm.Name == "frmMain")
+                //{
+                //    frm.Dispose();
+                //    return;
+                //}
+                frm1.Dispose();
+            }
+            frm = new frmMain();
             frm.MdiParent = this;
             frm.WindowState = FormWindowState.Normal;
             frm.Show();
