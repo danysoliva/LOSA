@@ -380,8 +380,26 @@ namespace LOSA.AlmacenesExterno
                 cnx.Close();
 
                 CajaDialogo.Information("SE HA GUARDADO EL REGISTRO EXITOSAMENTE");
+                try
+                {
+                    dp = new DataOperations();
+                    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                    con.Open();
 
-                xrptAlmacenesExternos report = new xrptAlmacenesExternos(id_h);
+                    SqlCommand cmd3 = new SqlCommand("sp_almacenes_externos_rpt_info_ingreso", con);
+                    cmd3.CommandType = CommandType.StoredProcedure;
+                    cmd3.Parameters.AddWithValue("@id_h", id_h);
+                    dsSalidasAlmacenesExternos1.reporte_ingreso_h_almacen_externo.Clear();
+                    SqlDataAdapter adat = new SqlDataAdapter(cmd3);
+                    adat.Fill(dsSalidasAlmacenesExternos1.reporte_ingreso_h_almacen_externo);
+
+                    con.Close();
+                }
+                catch (Exception ec)
+                {
+                    CajaDialogo.Error(ec.Message);
+                }
+                xrptAlmacenesExternos report = new xrptAlmacenesExternos(id_h) { DataSource = dsSalidasAlmacenesExternos1, DataMember = "reporte_ingreso_h_almacen_externo" };
 
                 using (ReportPrintTool printTool = new ReportPrintTool(report))
                 {
