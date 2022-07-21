@@ -78,6 +78,7 @@
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnAgregar = new DevExpress.XtraEditors.SimpleButton();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
+            this.dsSalidasAlmacenesExternos1 = new LOSA.AlmacenesExterno.dsSalidasAlmacenesExternos();
             ((System.ComponentModel.ISupportInitialize)(this.grd_ingreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsAlmacenesExternos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_ingreso)).BeginInit();
@@ -85,6 +86,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnprint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnccartilla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsSalidasAlmacenesExternos1)).BeginInit();
             this.SuspendLayout();
             // 
             // grd_ingreso
@@ -416,6 +418,11 @@
             this.btnAtras.Text = "Atras";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
+            // dsSalidasAlmacenesExternos1
+            // 
+            this.dsSalidasAlmacenesExternos1.DataSetName = "dsSalidasAlmacenesExternos";
+            this.dsSalidasAlmacenesExternos1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // xfrmAlmacenesExternos_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -436,6 +443,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnprint)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnccartilla)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsSalidasAlmacenesExternos1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -471,5 +479,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private DevExpress.XtraGrid.Columns.GridColumn colcodigoMP;
+        private dsSalidasAlmacenesExternos dsSalidasAlmacenesExternos1;
     }
 }

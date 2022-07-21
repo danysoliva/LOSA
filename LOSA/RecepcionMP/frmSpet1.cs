@@ -22,6 +22,7 @@ namespace LOSA.RecepcionMP
         public string Descripcion_Tipo_Selected = "";
         DataOperations dp = new DataOperations();
         UserLogin UsuarioLogeado;
+        public object MDI_Parent;
         public frmSpet1(UserLogin Puser)
         {
             InitializeComponent();
@@ -118,8 +119,8 @@ namespace LOSA.RecepcionMP
                 xfrmAlmacenesExternos_Main frmExterno = new xfrmAlmacenesExternos_Main(UsuarioLogeado);
                 if (this.MdiParent != null)
                 {
-                    frmExterno.MdiParent = this.MdiParent;
-                    //frm.FormBorderStyle = FormBorderStyle.Sizable;
+                    //frmExterno.MdiParent = this.MdiParent;
+                    frmExterno.MdiParent = (Form)MDI_Parent;
                 }
                 if (frmExterno.ShowDialog()== DialogResult.OK)
                 {
@@ -186,8 +187,9 @@ namespace LOSA.RecepcionMP
                 xfrmAlmacenesExternos_Main frmExterno = new xfrmAlmacenesExternos_Main(UsuarioLogeado);
                 if (this.MdiParent != null)
                 {
-                    frmExterno.MdiParent = this.MdiParent;
+                    //frmExterno.MdiParent = this.MdiParent;
                     //frm.FormBorderStyle = FormBorderStyle.Sizable;
+                    frmExterno.MdiParent = (Form)MDI_Parent;
                 }
                 if (frmExterno.ShowDialog() == DialogResult.OK)
                 {

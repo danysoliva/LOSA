@@ -68,5 +68,26 @@ namespace LOSA.AlmacenesExterno
         {
             this.Close();
         }
+
+        private void gvOC_DoubleClick(object sender, EventArgs e)
+        {
+            //var gv = (GridView)gcOC.FocusedView;
+            //var row = (dsAlmacenesExternos.OCRow)gv.GetDataRow(gv.FocusedRowHandle);
+            var gridView = (GridView)gcOC.FocusedView;
+            var row = (dsAlmacenesExternos.OCRow)gridView.GetFocusedDataRow();
+
+            oc = new OrdenCompra_H();
+
+            if (row != null)
+            {
+                oc.ID = row.id;
+                oc.FechaDocumento = row.Fecha_Documento;
+                oc.DocNum = row.DocNum;
+                oc.CodProv = row.CodProv;
+                oc.Proveedor = row.Proveedor;
+                oc.Comentario = row.Comentario;
+                this.DialogResult = DialogResult.OK;
+            }
+        }
     }
 }

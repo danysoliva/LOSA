@@ -123,4 +123,10 @@
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
     <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9InNwX2FsbWFjZW5lc19leHRlcm5vc19ycHRfaW5mb19pbmdyZXNvIj48RmllbGQgTmFtZT0icm93XyIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9Iml0ZW1jb2RlIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ikl0ZW1OYW1lIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9ImNhbnRpZGFkIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJUb3RhbCIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0ibG90ZSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJBbG1hY2VuIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9ImNhbnRpZGFkX2xvdGUiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9ImZlY2hhX3ZlbmNpbWllbnRvIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iZmVjaGFfcHJvZHVjY2lvbiIgVHlwZT0iRGF0ZVRpbWUiIC8+PEZpZWxkIE5hbWU9ImZlY2hhX2FkbWlzaW9uIiBUeXBlPSJEYXRlVGltZSIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
   </data>
+  <metadata name="toastNotificationsManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
+  <metadata name="dsSalidasAlmacenesExternos1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 95</value>
+  </metadata>
 </root>

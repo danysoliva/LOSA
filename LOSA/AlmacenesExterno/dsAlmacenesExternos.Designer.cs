@@ -5493,6 +5493,8 @@ namespace LOSA.AlmacenesExterno {
             
             private global::System.Data.DataColumn columntipo_ingreso;
             
+            private global::System.Data.DataColumn columnfecha_creacion;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public informacionDataTable() {
@@ -5600,6 +5602,14 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn fecha_creacionColumn {
+                get {
+                    return this.columnfecha_creacion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5635,7 +5645,7 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public informacionRow AddinformacionRow(int id, int numero_ingreso, string proveedor, string itemcode, string descripcion, decimal cantidad, decimal peso, int id_tipoIngreso, string tipo_ingreso) {
+            public informacionRow AddinformacionRow(int id, int numero_ingreso, string proveedor, string itemcode, string descripcion, decimal cantidad, decimal peso, int id_tipoIngreso, string tipo_ingreso, System.DateTime fecha_creacion) {
                 informacionRow rowinformacionRow = ((informacionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -5646,7 +5656,8 @@ namespace LOSA.AlmacenesExterno {
                         cantidad,
                         peso,
                         id_tipoIngreso,
-                        tipo_ingreso};
+                        tipo_ingreso,
+                        fecha_creacion};
                 rowinformacionRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowinformacionRow);
                 return rowinformacionRow;
@@ -5678,6 +5689,7 @@ namespace LOSA.AlmacenesExterno {
                 this.columnpeso = base.Columns["peso"];
                 this.columnid_tipoIngreso = base.Columns["id_tipoIngreso"];
                 this.columntipo_ingreso = base.Columns["tipo_ingreso"];
+                this.columnfecha_creacion = base.Columns["fecha_creacion"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5701,6 +5713,8 @@ namespace LOSA.AlmacenesExterno {
                 base.Columns.Add(this.columnid_tipoIngreso);
                 this.columntipo_ingreso = new global::System.Data.DataColumn("tipo_ingreso", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntipo_ingreso);
+                this.columnfecha_creacion = new global::System.Data.DataColumn("fecha_creacion", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_creacion);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9899,6 +9913,22 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime fecha_creacion {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableinformacion.fecha_creacionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_creacion\' de la tabla \'informacion\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableinformacion.fecha_creacionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableinformacion.idColumn);
             }
@@ -10003,6 +10033,18 @@ namespace LOSA.AlmacenesExterno {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Settipo_ingresoNull() {
                 this[this.tableinformacion.tipo_ingresoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isfecha_creacionNull() {
+                return this.IsNull(this.tableinformacion.fecha_creacionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setfecha_creacionNull() {
+                this[this.tableinformacion.fecha_creacionColumn] = global::System.Convert.DBNull;
             }
         }
         

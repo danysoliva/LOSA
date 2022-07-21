@@ -84,10 +84,14 @@
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
+            this.toastNotificationsManager1 = new DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager(this.components);
+            this.dsSalidasAlmacenesExternos1 = new LOSA.AlmacenesExterno.dsSalidasAlmacenesExternos();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsSalidasAlmacenesExternos1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // TopMargin
@@ -614,6 +618,15 @@
             this.ReportHeader.KeepTogether = true;
             this.ReportHeader.Name = "ReportHeader";
             // 
+            // toastNotificationsManager1
+            // 
+            this.toastNotificationsManager1.ApplicationId = "a8ad3f61-bbfd-4246-8860-3fcfea70b6bc";
+            // 
+            // dsSalidasAlmacenesExternos1
+            // 
+            this.dsSalidasAlmacenesExternos1.DataSetName = "dsSalidasAlmacenesExternos";
+            this.dsSalidasAlmacenesExternos1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // xrptAlmacenesExternos
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -623,9 +636,9 @@
             this.groupHeaderBand1,
             this.ReportHeader});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
-            this.sqlDataSource1});
-            this.DataMember = "sp_almacenes_externos_rpt_info_ingreso";
-            this.DataSource = this.sqlDataSource1;
+            this.dsSalidasAlmacenesExternos1});
+            this.DataMember = "reporte_ingreso_h_almacen_externo";
+            this.DataSource = this.dsSalidasAlmacenesExternos1;
             this.Font = new System.Drawing.Font("Arial", 9.75F);
             this.Margins = new System.Drawing.Printing.Margins(60, 60, 100, 100);
             this.Version = "18.2";
@@ -633,6 +646,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsSalidasAlmacenesExternos1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
@@ -691,5 +706,8 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel3;
         private DevExpress.XtraReports.UI.XRLabel xrLabel2;
         private DevExpress.XtraReports.UI.ReportHeaderBand ReportHeader;
+        private DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager toastNotificationsManager1;
+        private dsSalidasAlmacenesExternos dsSalidasAlmacenesExternos1;
+        //private dsReporteAlmacenExterno dsReporteAlmacenExterno1;
     }
 }

@@ -73,10 +73,32 @@ namespace LOSA.AlmacenesExterno
 
         private void btnprint_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            var gv = (GridView)grd_ingreso.FocusedView;
-            var row = (dsAlmacenesExternos.ingreso_externo_hRow)gv.GetDataRow(gv.FocusedRowHandle);
+            //var gv = (GridView)grd_ingreso.FocusedView;
+            //var row = (dsAlmacenesExternos.ingreso_externo_hRow)gv.GetDataRow(gv.FocusedRowHandle);
+            var gridView = (GridView)grd_ingreso.FocusedView;
+            var row = (dsAlmacenesExternos.ingreso_externo_hRow)gridView.GetFocusedDataRow();
 
-            xrptAlmacenesExternos report = new xrptAlmacenesExternos(row.id);
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_almacenes_externos_rpt_info_ingreso", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_h", row.id);
+                dsSalidasAlmacenesExternos1.reporte_ingreso_h_almacen_externo.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsSalidasAlmacenesExternos1.reporte_ingreso_h_almacen_externo);
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+
+            xrptAlmacenesExternos report = new xrptAlmacenesExternos(row.id) { DataSource = dsSalidasAlmacenesExternos1,DataMember = "reporte_ingreso_h_almacen_externo"};
 
             using (ReportPrintTool printTool = new ReportPrintTool(report))
             {

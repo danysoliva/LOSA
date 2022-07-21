@@ -61,6 +61,7 @@ namespace LOSA.RecepcionMP
             if (path.Camino == 1)
             {
                 frmSpet1 frm = new frmSpet1(UsuarioLogeado);
+                frm.MDI_Parent = this.MdiParent;
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
                     Load_Info();

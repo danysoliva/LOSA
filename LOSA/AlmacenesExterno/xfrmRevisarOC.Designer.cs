@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmRevisarOC));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.btn = new DevExpress.XtraEditors.SimpleButton();
             this.btnOC = new DevExpress.XtraEditors.ButtonEdit();
             this.label1 = new System.Windows.Forms.Label();
@@ -72,6 +72,17 @@
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.label6 = new System.Windows.Forms.Label();
             this.txtfactura = new DevExpress.XtraEditors.TextEdit();
+            this.repositoryItemGridLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.GridLookUpEdit_Presntacion = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.repositoryItemGridLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpresentacion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfactor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.GridLookUpEdit_HaciaBodega = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colWhsCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colWhsName = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.btnOC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcIngreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.revisionOCBindingSource)).BeginInit();
@@ -87,6 +98,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtComment.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtfactura.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridLookUpEdit_Presntacion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit2View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridLookUpEdit_HaciaBodega)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn
@@ -112,9 +129,9 @@
             this.btnOC.Name = "btnOC";
             this.btnOC.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOC.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions1.SvgImage")));
+            editorButtonImageOptions2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions2.SvgImage")));
             this.btnOC.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnOC.Properties.ReadOnly = true;
             this.btnOC.Size = new System.Drawing.Size(271, 38);
             this.btnOC.TabIndex = 32;
@@ -146,7 +163,10 @@
             this.txtCantIngresar,
             this.ceSeleccionar,
             this.grd_bodega,
-            this.grd_presentacion});
+            this.grd_presentacion,
+            this.repositoryItemGridLookUpEdit1,
+            this.GridLookUpEdit_Presntacion,
+            this.GridLookUpEdit_HaciaBodega});
             this.gcIngreso.Size = new System.Drawing.Size(1018, 352);
             this.gcIngreso.TabIndex = 34;
             this.gcIngreso.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -223,7 +243,7 @@
             // colkg
             // 
             this.colkg.Caption = "KG (OC)";
-            this.colkg.DisplayFormat.FormatString = "{0:N2}";
+            this.colkg.DisplayFormat.FormatString = "n2";
             this.colkg.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colkg.FieldName = "kg";
             this.colkg.MinWidth = 21;
@@ -338,7 +358,7 @@
             // colBodega
             // 
             this.colBodega.Caption = "Hacia la bodega:";
-            this.colBodega.ColumnEdit = this.grd_bodega;
+            this.colBodega.ColumnEdit = this.GridLookUpEdit_HaciaBodega;
             this.colBodega.FieldName = "bodega";
             this.colBodega.Name = "colBodega";
             this.colBodega.UnboundType = DevExpress.Data.UnboundColumnType.String;
@@ -365,7 +385,7 @@
             // colid_presentacion
             // 
             this.colid_presentacion.Caption = "Presentación";
-            this.colid_presentacion.ColumnEdit = this.grd_presentacion;
+            this.colid_presentacion.ColumnEdit = this.GridLookUpEdit_Presntacion;
             this.colid_presentacion.FieldName = "id_presentacion";
             this.colid_presentacion.Name = "colid_presentacion";
             this.colid_presentacion.OptionsFilter.AllowFilter = false;
@@ -518,6 +538,109 @@
             this.txtfactura.Size = new System.Drawing.Size(244, 24);
             this.txtfactura.TabIndex = 45;
             // 
+            // repositoryItemGridLookUpEdit1
+            // 
+            this.repositoryItemGridLookUpEdit1.AutoHeight = false;
+            this.repositoryItemGridLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemGridLookUpEdit1.Name = "repositoryItemGridLookUpEdit1";
+            this.repositoryItemGridLookUpEdit1.PopupView = this.repositoryItemGridLookUpEdit1View;
+            // 
+            // repositoryItemGridLookUpEdit1View
+            // 
+            this.repositoryItemGridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.repositoryItemGridLookUpEdit1View.Name = "repositoryItemGridLookUpEdit1View";
+            this.repositoryItemGridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.repositoryItemGridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // GridLookUpEdit_Presntacion
+            // 
+            this.GridLookUpEdit_Presntacion.AutoHeight = false;
+            this.GridLookUpEdit_Presntacion.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.GridLookUpEdit_Presntacion.DataSource = this.presentacionBindingSource;
+            this.GridLookUpEdit_Presntacion.DisplayMember = "presentacion";
+            this.GridLookUpEdit_Presntacion.Name = "GridLookUpEdit_Presntacion";
+            this.GridLookUpEdit_Presntacion.PopupView = this.repositoryItemGridLookUpEdit2View;
+            this.GridLookUpEdit_Presntacion.ValueMember = "id";
+            // 
+            // repositoryItemGridLookUpEdit2View
+            // 
+            this.repositoryItemGridLookUpEdit2View.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.repositoryItemGridLookUpEdit2View.Appearance.HeaderPanel.Options.UseFont = true;
+            this.repositoryItemGridLookUpEdit2View.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.repositoryItemGridLookUpEdit2View.Appearance.Row.Options.UseFont = true;
+            this.repositoryItemGridLookUpEdit2View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid,
+            this.colpresentacion,
+            this.colfactor});
+            this.repositoryItemGridLookUpEdit2View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.repositoryItemGridLookUpEdit2View.Name = "repositoryItemGridLookUpEdit2View";
+            this.repositoryItemGridLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.repositoryItemGridLookUpEdit2View.OptionsView.ShowAutoFilterRow = true;
+            this.repositoryItemGridLookUpEdit2View.OptionsView.ShowGroupPanel = false;
+            // 
+            // colid
+            // 
+            this.colid.FieldName = "id";
+            this.colid.Name = "colid";
+            // 
+            // colpresentacion
+            // 
+            this.colpresentacion.Caption = "Presentación";
+            this.colpresentacion.FieldName = "presentacion";
+            this.colpresentacion.Name = "colpresentacion";
+            this.colpresentacion.OptionsColumn.AllowEdit = false;
+            this.colpresentacion.Visible = true;
+            this.colpresentacion.VisibleIndex = 0;
+            // 
+            // colfactor
+            // 
+            this.colfactor.FieldName = "factor";
+            this.colfactor.Name = "colfactor";
+            // 
+            // GridLookUpEdit_HaciaBodega
+            // 
+            this.GridLookUpEdit_HaciaBodega.AutoHeight = false;
+            this.GridLookUpEdit_HaciaBodega.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.GridLookUpEdit_HaciaBodega.DataSource = this.warehouseBindingSource;
+            this.GridLookUpEdit_HaciaBodega.DisplayMember = "WhsName";
+            this.GridLookUpEdit_HaciaBodega.Name = "GridLookUpEdit_HaciaBodega";
+            this.GridLookUpEdit_HaciaBodega.PopupView = this.gridView1;
+            this.GridLookUpEdit_HaciaBodega.ValueMember = "WhsCode";
+            // 
+            // gridView1
+            // 
+            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.Row.Options.UseFont = true;
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colWhsCode,
+            this.colWhsName});
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // colWhsCode
+            // 
+            this.colWhsCode.Caption = "Código";
+            this.colWhsCode.FieldName = "WhsCode";
+            this.colWhsCode.Name = "colWhsCode";
+            this.colWhsCode.OptionsColumn.FixedWidth = true;
+            this.colWhsCode.Visible = true;
+            this.colWhsCode.VisibleIndex = 0;
+            // 
+            // colWhsName
+            // 
+            this.colWhsName.Caption = "Nombre";
+            this.colWhsName.FieldName = "WhsName";
+            this.colWhsName.Name = "colWhsName";
+            this.colWhsName.Visible = true;
+            this.colWhsName.VisibleIndex = 1;
+            // 
             // xfrmRevisarOC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -558,6 +681,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtComment.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtfactura.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridLookUpEdit_Presntacion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit2View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridLookUpEdit_HaciaBodega)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -602,5 +731,16 @@
         private System.Windows.Forms.BindingSource presentacionBindingSource;
         private System.Windows.Forms.Label label6;
         private DevExpress.XtraEditors.TextEdit txtfactura;
+        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit GridLookUpEdit_Presntacion;
+        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit2View;
+        private DevExpress.XtraGrid.Columns.GridColumn colid;
+        private DevExpress.XtraGrid.Columns.GridColumn colpresentacion;
+        private DevExpress.XtraGrid.Columns.GridColumn colfactor;
+        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEdit1;
+        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit1View;
+        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit GridLookUpEdit_HaciaBodega;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn colWhsCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colWhsName;
     }
 }

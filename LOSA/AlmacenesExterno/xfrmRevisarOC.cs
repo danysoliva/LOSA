@@ -250,16 +250,20 @@ namespace LOSA.AlmacenesExterno
                 {
                     row.seleccionar = true;
                 }
-                //if (row.seleccionar == true)
-                //{
-                //    if (row.diferencia <= 0)
-                //    {
-                //        CajaDialogo.Error("NO PUEDE SELECCIONAR ESTE ITEM PORQUE YA HA SIDO INGRESADO TOTALMENTE");
-                //        row.seleccionar = false;
-                //        return;
-                //    }
+            }
 
-                //}
+            switch(e.Column.FieldName)
+            {
+                case "id_presentacion":
+                case "CantidadIngresar":
+                    PresentacionX pres1 = new PresentacionX();
+                    if (pres1.RecuperarRegistro(row.id_presentacion))
+                    {
+                        DataOperations dp = new DataOperations();
+                        if(pres1.Factor>0)
+                            row.UnidadesIngresar = Math.Round( ( dp.ValidateNumberDecimal(row.CantidadIngresar) / pres1.Factor),0);
+                    }
+                    break;
             }
         }
 

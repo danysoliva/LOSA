@@ -34,6 +34,8 @@ namespace LOSA.AlmacenesExterno {
         
         private Lotes_Disponibles_SalidaDataTable tableLotes_Disponibles_Salida;
         
+        private reporte_ingreso_h_almacen_externoDataTable tablereporte_ingreso_h_almacen_externo;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -76,6 +78,9 @@ namespace LOSA.AlmacenesExterno {
                 }
                 if ((ds.Tables["Lotes_Disponibles_Salida"] != null)) {
                     base.Tables.Add(new Lotes_Disponibles_SalidaDataTable(ds.Tables["Lotes_Disponibles_Salida"]));
+                }
+                if ((ds.Tables["reporte_ingreso_h_almacen_externo"] != null)) {
+                    base.Tables.Add(new reporte_ingreso_h_almacen_externoDataTable(ds.Tables["reporte_ingreso_h_almacen_externo"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -142,6 +147,16 @@ namespace LOSA.AlmacenesExterno {
         public Lotes_Disponibles_SalidaDataTable Lotes_Disponibles_Salida {
             get {
                 return this.tableLotes_Disponibles_Salida;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public reporte_ingreso_h_almacen_externoDataTable reporte_ingreso_h_almacen_externo {
+            get {
+                return this.tablereporte_ingreso_h_almacen_externo;
             }
         }
         
@@ -227,6 +242,9 @@ namespace LOSA.AlmacenesExterno {
                 if ((ds.Tables["Lotes_Disponibles_Salida"] != null)) {
                     base.Tables.Add(new Lotes_Disponibles_SalidaDataTable(ds.Tables["Lotes_Disponibles_Salida"]));
                 }
+                if ((ds.Tables["reporte_ingreso_h_almacen_externo"] != null)) {
+                    base.Tables.Add(new reporte_ingreso_h_almacen_externoDataTable(ds.Tables["reporte_ingreso_h_almacen_externo"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -290,6 +308,12 @@ namespace LOSA.AlmacenesExterno {
                     this.tableLotes_Disponibles_Salida.InitVars();
                 }
             }
+            this.tablereporte_ingreso_h_almacen_externo = ((reporte_ingreso_h_almacen_externoDataTable)(base.Tables["reporte_ingreso_h_almacen_externo"]));
+            if ((initTable == true)) {
+                if ((this.tablereporte_ingreso_h_almacen_externo != null)) {
+                    this.tablereporte_ingreso_h_almacen_externo.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -310,6 +334,8 @@ namespace LOSA.AlmacenesExterno {
             base.Tables.Add(this.tableLote);
             this.tableLotes_Disponibles_Salida = new Lotes_Disponibles_SalidaDataTable();
             base.Tables.Add(this.tableLotes_Disponibles_Salida);
+            this.tablereporte_ingreso_h_almacen_externo = new reporte_ingreso_h_almacen_externoDataTable();
+            base.Tables.Add(this.tablereporte_ingreso_h_almacen_externo);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -339,6 +365,12 @@ namespace LOSA.AlmacenesExterno {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializeLotes_Disponibles_Salida() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializereporte_ingreso_h_almacen_externo() {
             return false;
         }
         
@@ -411,6 +443,9 @@ namespace LOSA.AlmacenesExterno {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void Lotes_Disponibles_SalidaRowChangeEventHandler(object sender, Lotes_Disponibles_SalidaRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void reporte_ingreso_h_almacen_externoRowChangeEventHandler(object sender, reporte_ingreso_h_almacen_externoRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -2341,6 +2376,393 @@ namespace LOSA.AlmacenesExterno {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class reporte_ingreso_h_almacen_externoDataTable : global::System.Data.TypedTableBase<reporte_ingreso_h_almacen_externoRow> {
+            
+            private global::System.Data.DataColumn columnAlmacen;
+            
+            private global::System.Data.DataColumn columncantidad;
+            
+            private global::System.Data.DataColumn columncantidad_lote;
+            
+            private global::System.Data.DataColumn columnfecha_adminision;
+            
+            private global::System.Data.DataColumn columnfecha_produccion;
+            
+            private global::System.Data.DataColumn columnfecha_vencimiento;
+            
+            private global::System.Data.DataColumn columnitemcode;
+            
+            private global::System.Data.DataColumn columnItemName;
+            
+            private global::System.Data.DataColumn columnlote;
+            
+            private global::System.Data.DataColumn columnrow_;
+            
+            private global::System.Data.DataColumn columnTotal;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public reporte_ingreso_h_almacen_externoDataTable() {
+                this.TableName = "reporte_ingreso_h_almacen_externo";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal reporte_ingreso_h_almacen_externoDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected reporte_ingreso_h_almacen_externoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn AlmacenColumn {
+                get {
+                    return this.columnAlmacen;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cantidadColumn {
+                get {
+                    return this.columncantidad;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cantidad_loteColumn {
+                get {
+                    return this.columncantidad_lote;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn fecha_adminisionColumn {
+                get {
+                    return this.columnfecha_adminision;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn fecha_produccionColumn {
+                get {
+                    return this.columnfecha_produccion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn fecha_vencimientoColumn {
+                get {
+                    return this.columnfecha_vencimiento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn itemcodeColumn {
+                get {
+                    return this.columnitemcode;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ItemNameColumn {
+                get {
+                    return this.columnItemName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn loteColumn {
+                get {
+                    return this.columnlote;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn row_Column {
+                get {
+                    return this.columnrow_;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TotalColumn {
+                get {
+                    return this.columnTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public reporte_ingreso_h_almacen_externoRow this[int index] {
+                get {
+                    return ((reporte_ingreso_h_almacen_externoRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event reporte_ingreso_h_almacen_externoRowChangeEventHandler reporte_ingreso_h_almacen_externoRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event reporte_ingreso_h_almacen_externoRowChangeEventHandler reporte_ingreso_h_almacen_externoRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event reporte_ingreso_h_almacen_externoRowChangeEventHandler reporte_ingreso_h_almacen_externoRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event reporte_ingreso_h_almacen_externoRowChangeEventHandler reporte_ingreso_h_almacen_externoRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Addreporte_ingreso_h_almacen_externoRow(reporte_ingreso_h_almacen_externoRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public reporte_ingreso_h_almacen_externoRow Addreporte_ingreso_h_almacen_externoRow(string Almacen, decimal cantidad, decimal cantidad_lote, System.DateTime fecha_adminision, System.DateTime fecha_produccion, System.DateTime fecha_vencimiento, string itemcode, string ItemName, string lote, int row_, decimal Total) {
+                reporte_ingreso_h_almacen_externoRow rowreporte_ingreso_h_almacen_externoRow = ((reporte_ingreso_h_almacen_externoRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Almacen,
+                        cantidad,
+                        cantidad_lote,
+                        fecha_adminision,
+                        fecha_produccion,
+                        fecha_vencimiento,
+                        itemcode,
+                        ItemName,
+                        lote,
+                        row_,
+                        Total};
+                rowreporte_ingreso_h_almacen_externoRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowreporte_ingreso_h_almacen_externoRow);
+                return rowreporte_ingreso_h_almacen_externoRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                reporte_ingreso_h_almacen_externoDataTable cln = ((reporte_ingreso_h_almacen_externoDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new reporte_ingreso_h_almacen_externoDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnAlmacen = base.Columns["Almacen"];
+                this.columncantidad = base.Columns["cantidad"];
+                this.columncantidad_lote = base.Columns["cantidad_lote"];
+                this.columnfecha_adminision = base.Columns["fecha_adminision"];
+                this.columnfecha_produccion = base.Columns["fecha_produccion"];
+                this.columnfecha_vencimiento = base.Columns["fecha_vencimiento"];
+                this.columnitemcode = base.Columns["itemcode"];
+                this.columnItemName = base.Columns["ItemName"];
+                this.columnlote = base.Columns["lote"];
+                this.columnrow_ = base.Columns["row_"];
+                this.columnTotal = base.Columns["Total"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnAlmacen = new global::System.Data.DataColumn("Almacen", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAlmacen);
+                this.columncantidad = new global::System.Data.DataColumn("cantidad", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncantidad);
+                this.columncantidad_lote = new global::System.Data.DataColumn("cantidad_lote", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncantidad_lote);
+                this.columnfecha_adminision = new global::System.Data.DataColumn("fecha_adminision", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_adminision);
+                this.columnfecha_produccion = new global::System.Data.DataColumn("fecha_produccion", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_produccion);
+                this.columnfecha_vencimiento = new global::System.Data.DataColumn("fecha_vencimiento", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_vencimiento);
+                this.columnitemcode = new global::System.Data.DataColumn("itemcode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnitemcode);
+                this.columnItemName = new global::System.Data.DataColumn("ItemName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnItemName);
+                this.columnlote = new global::System.Data.DataColumn("lote", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlote);
+                this.columnrow_ = new global::System.Data.DataColumn("row_", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnrow_);
+                this.columnTotal = new global::System.Data.DataColumn("Total", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotal);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public reporte_ingreso_h_almacen_externoRow Newreporte_ingreso_h_almacen_externoRow() {
+                return ((reporte_ingreso_h_almacen_externoRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new reporte_ingreso_h_almacen_externoRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(reporte_ingreso_h_almacen_externoRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.reporte_ingreso_h_almacen_externoRowChanged != null)) {
+                    this.reporte_ingreso_h_almacen_externoRowChanged(this, new reporte_ingreso_h_almacen_externoRowChangeEvent(((reporte_ingreso_h_almacen_externoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.reporte_ingreso_h_almacen_externoRowChanging != null)) {
+                    this.reporte_ingreso_h_almacen_externoRowChanging(this, new reporte_ingreso_h_almacen_externoRowChangeEvent(((reporte_ingreso_h_almacen_externoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.reporte_ingreso_h_almacen_externoRowDeleted != null)) {
+                    this.reporte_ingreso_h_almacen_externoRowDeleted(this, new reporte_ingreso_h_almacen_externoRowChangeEvent(((reporte_ingreso_h_almacen_externoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.reporte_ingreso_h_almacen_externoRowDeleting != null)) {
+                    this.reporte_ingreso_h_almacen_externoRowDeleting(this, new reporte_ingreso_h_almacen_externoRowChangeEvent(((reporte_ingreso_h_almacen_externoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Removereporte_ingreso_h_almacen_externoRow(reporte_ingreso_h_almacen_externoRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsSalidasAlmacenesExternos ds = new dsSalidasAlmacenesExternos();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "reporte_ingreso_h_almacen_externoDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class Ingresos_almacenes_externos_existentesRow : global::System.Data.DataRow {
@@ -3946,6 +4368,340 @@ namespace LOSA.AlmacenesExterno {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class reporte_ingreso_h_almacen_externoRow : global::System.Data.DataRow {
+            
+            private reporte_ingreso_h_almacen_externoDataTable tablereporte_ingreso_h_almacen_externo;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal reporte_ingreso_h_almacen_externoRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablereporte_ingreso_h_almacen_externo = ((reporte_ingreso_h_almacen_externoDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Almacen {
+                get {
+                    try {
+                        return ((string)(this[this.tablereporte_ingreso_h_almacen_externo.AlmacenColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Almacen\' de la tabla \'reporte_ingreso_h_almacen_externo\' " +
+                                "es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablereporte_ingreso_h_almacen_externo.AlmacenColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal cantidad {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablereporte_ingreso_h_almacen_externo.cantidadColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'cantidad\' de la tabla \'reporte_ingreso_h_almacen_externo\'" +
+                                " es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablereporte_ingreso_h_almacen_externo.cantidadColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal cantidad_lote {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablereporte_ingreso_h_almacen_externo.cantidad_loteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'cantidad_lote\' de la tabla \'reporte_ingreso_h_almacen_ext" +
+                                "erno\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablereporte_ingreso_h_almacen_externo.cantidad_loteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime fecha_adminision {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablereporte_ingreso_h_almacen_externo.fecha_adminisionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_adminision\' de la tabla \'reporte_ingreso_h_almacen_" +
+                                "externo\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablereporte_ingreso_h_almacen_externo.fecha_adminisionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime fecha_produccion {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablereporte_ingreso_h_almacen_externo.fecha_produccionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_produccion\' de la tabla \'reporte_ingreso_h_almacen_" +
+                                "externo\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablereporte_ingreso_h_almacen_externo.fecha_produccionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime fecha_vencimiento {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablereporte_ingreso_h_almacen_externo.fecha_vencimientoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_vencimiento\' de la tabla \'reporte_ingreso_h_almacen" +
+                                "_externo\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablereporte_ingreso_h_almacen_externo.fecha_vencimientoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string itemcode {
+                get {
+                    try {
+                        return ((string)(this[this.tablereporte_ingreso_h_almacen_externo.itemcodeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'itemcode\' de la tabla \'reporte_ingreso_h_almacen_externo\'" +
+                                " es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablereporte_ingreso_h_almacen_externo.itemcodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string ItemName {
+                get {
+                    try {
+                        return ((string)(this[this.tablereporte_ingreso_h_almacen_externo.ItemNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ItemName\' de la tabla \'reporte_ingreso_h_almacen_externo\'" +
+                                " es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablereporte_ingreso_h_almacen_externo.ItemNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string lote {
+                get {
+                    try {
+                        return ((string)(this[this.tablereporte_ingreso_h_almacen_externo.loteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'lote\' de la tabla \'reporte_ingreso_h_almacen_externo\' es " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablereporte_ingreso_h_almacen_externo.loteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int row_ {
+                get {
+                    try {
+                        return ((int)(this[this.tablereporte_ingreso_h_almacen_externo.row_Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'row_\' de la tabla \'reporte_ingreso_h_almacen_externo\' es " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablereporte_ingreso_h_almacen_externo.row_Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal Total {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablereporte_ingreso_h_almacen_externo.TotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Total\' de la tabla \'reporte_ingreso_h_almacen_externo\' es" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablereporte_ingreso_h_almacen_externo.TotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsAlmacenNull() {
+                return this.IsNull(this.tablereporte_ingreso_h_almacen_externo.AlmacenColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetAlmacenNull() {
+                this[this.tablereporte_ingreso_h_almacen_externo.AlmacenColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IscantidadNull() {
+                return this.IsNull(this.tablereporte_ingreso_h_almacen_externo.cantidadColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetcantidadNull() {
+                this[this.tablereporte_ingreso_h_almacen_externo.cantidadColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscantidad_loteNull() {
+                return this.IsNull(this.tablereporte_ingreso_h_almacen_externo.cantidad_loteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcantidad_loteNull() {
+                this[this.tablereporte_ingreso_h_almacen_externo.cantidad_loteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isfecha_adminisionNull() {
+                return this.IsNull(this.tablereporte_ingreso_h_almacen_externo.fecha_adminisionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setfecha_adminisionNull() {
+                this[this.tablereporte_ingreso_h_almacen_externo.fecha_adminisionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isfecha_produccionNull() {
+                return this.IsNull(this.tablereporte_ingreso_h_almacen_externo.fecha_produccionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setfecha_produccionNull() {
+                this[this.tablereporte_ingreso_h_almacen_externo.fecha_produccionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isfecha_vencimientoNull() {
+                return this.IsNull(this.tablereporte_ingreso_h_almacen_externo.fecha_vencimientoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setfecha_vencimientoNull() {
+                this[this.tablereporte_ingreso_h_almacen_externo.fecha_vencimientoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsitemcodeNull() {
+                return this.IsNull(this.tablereporte_ingreso_h_almacen_externo.itemcodeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetitemcodeNull() {
+                this[this.tablereporte_ingreso_h_almacen_externo.itemcodeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsItemNameNull() {
+                return this.IsNull(this.tablereporte_ingreso_h_almacen_externo.ItemNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetItemNameNull() {
+                this[this.tablereporte_ingreso_h_almacen_externo.ItemNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsloteNull() {
+                return this.IsNull(this.tablereporte_ingreso_h_almacen_externo.loteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetloteNull() {
+                this[this.tablereporte_ingreso_h_almacen_externo.loteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isrow_Null() {
+                return this.IsNull(this.tablereporte_ingreso_h_almacen_externo.row_Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setrow_Null() {
+                this[this.tablereporte_ingreso_h_almacen_externo.row_Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsTotalNull() {
+                return this.IsNull(this.tablereporte_ingreso_h_almacen_externo.TotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetTotalNull() {
+                this[this.tablereporte_ingreso_h_almacen_externo.TotalColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -4101,6 +4857,40 @@ namespace LOSA.AlmacenesExterno {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Lotes_Disponibles_SalidaRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class reporte_ingreso_h_almacen_externoRowChangeEvent : global::System.EventArgs {
+            
+            private reporte_ingreso_h_almacen_externoRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public reporte_ingreso_h_almacen_externoRowChangeEvent(reporte_ingreso_h_almacen_externoRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public reporte_ingreso_h_almacen_externoRow Row {
                 get {
                     return this.eventRow;
                 }
