@@ -34,16 +34,6 @@
             this.grd_data = new DevExpress.XtraGrid.GridControl();
             this.dsRecuento = new LOSA.RecuentoInventario.dsRecuento();
             this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.cbMateriaPrima = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.materiaprimaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gvMateriaPrima = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colitemcode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colitemdescrip = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.tggOperacion = new DevExpress.XtraEditors.ToggleSwitch();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.cmdGestionar = new DevExpress.XtraEditors.SimpleButton();
-            this.checkDisponibles = new DevExpress.XtraEditors.CheckEdit();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colingreso = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collote_materia_prima = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -59,6 +49,16 @@
             this.colcant_prd = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcant_bodega = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colseleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.cbMateriaPrima = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.materiaprimaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gvMateriaPrima = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colitemcode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colitemdescrip = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tggOperacion = new DevExpress.XtraEditors.ToggleSwitch();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.cmdGestionar = new DevExpress.XtraEditors.SimpleButton();
+            this.checkDisponibles = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecuento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
@@ -165,6 +165,121 @@
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
             this.grdv_data.OptionsView.ShowFooter = true;
             this.grdv_data.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.grdv_data_CellValueChanging);
+            // 
+            // colid
+            // 
+            this.colid.FieldName = "id";
+            this.colid.Name = "colid";
+            this.colid.OptionsColumn.AllowEdit = false;
+            // 
+            // colingreso
+            // 
+            this.colingreso.FieldName = "ingreso";
+            this.colingreso.Name = "colingreso";
+            this.colingreso.OptionsColumn.AllowEdit = false;
+            this.colingreso.Visible = true;
+            this.colingreso.VisibleIndex = 0;
+            // 
+            // collote_materia_prima
+            // 
+            this.collote_materia_prima.FieldName = "lote_materia_prima";
+            this.collote_materia_prima.Name = "collote_materia_prima";
+            this.collote_materia_prima.OptionsColumn.AllowEdit = false;
+            this.collote_materia_prima.Visible = true;
+            this.collote_materia_prima.VisibleIndex = 1;
+            // 
+            // colitemcode1
+            // 
+            this.colitemcode1.FieldName = "itemcode";
+            this.colitemcode1.Name = "colitemcode1";
+            this.colitemcode1.OptionsColumn.AllowEdit = false;
+            this.colitemcode1.Visible = true;
+            this.colitemcode1.VisibleIndex = 2;
+            // 
+            // colmaterial
+            // 
+            this.colmaterial.FieldName = "material";
+            this.colmaterial.Name = "colmaterial";
+            this.colmaterial.OptionsColumn.AllowEdit = false;
+            this.colmaterial.Visible = true;
+            this.colmaterial.VisibleIndex = 3;
+            // 
+            // colcantidad
+            // 
+            this.colcantidad.FieldName = "cantidad";
+            this.colcantidad.Name = "colcantidad";
+            this.colcantidad.OptionsColumn.AllowEdit = false;
+            this.colcantidad.Visible = true;
+            this.colcantidad.VisibleIndex = 4;
+            // 
+            // coldescripcion
+            // 
+            this.coldescripcion.FieldName = "descripcion";
+            this.coldescripcion.Name = "coldescripcion";
+            this.coldescripcion.OptionsColumn.AllowEdit = false;
+            this.coldescripcion.Visible = true;
+            this.coldescripcion.VisibleIndex = 5;
+            // 
+            // colfactor
+            // 
+            this.colfactor.FieldName = "factor";
+            this.colfactor.Name = "colfactor";
+            this.colfactor.OptionsColumn.AllowEdit = false;
+            // 
+            // colpeso
+            // 
+            this.colpeso.DisplayFormat.FormatString = "n2";
+            this.colpeso.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colpeso.FieldName = "peso";
+            this.colpeso.Name = "colpeso";
+            this.colpeso.OptionsColumn.AllowEdit = false;
+            this.colpeso.Visible = true;
+            this.colpeso.VisibleIndex = 6;
+            // 
+            // colcodigo
+            // 
+            this.colcodigo.FieldName = "codigo";
+            this.colcodigo.Name = "colcodigo";
+            this.colcodigo.OptionsColumn.AllowEdit = false;
+            this.colcodigo.Visible = true;
+            this.colcodigo.VisibleIndex = 7;
+            // 
+            // colFechaIngreso
+            // 
+            this.colFechaIngreso.FieldName = "FechaIngreso";
+            this.colFechaIngreso.Name = "colFechaIngreso";
+            this.colFechaIngreso.OptionsColumn.AllowEdit = false;
+            this.colFechaIngreso.Visible = true;
+            this.colFechaIngreso.VisibleIndex = 8;
+            // 
+            // colDiasParaVencer
+            // 
+            this.colDiasParaVencer.FieldName = "DiasParaVencer";
+            this.colDiasParaVencer.Name = "colDiasParaVencer";
+            this.colDiasParaVencer.OptionsColumn.AllowEdit = false;
+            // 
+            // colcant_prd
+            // 
+            this.colcant_prd.FieldName = "cant_prd";
+            this.colcant_prd.Name = "colcant_prd";
+            this.colcant_prd.OptionsColumn.AllowEdit = false;
+            this.colcant_prd.Visible = true;
+            this.colcant_prd.VisibleIndex = 9;
+            // 
+            // colcant_bodega
+            // 
+            this.colcant_bodega.FieldName = "cant_bodega";
+            this.colcant_bodega.Name = "colcant_bodega";
+            this.colcant_bodega.OptionsColumn.AllowEdit = false;
+            this.colcant_bodega.Visible = true;
+            this.colcant_bodega.VisibleIndex = 10;
+            // 
+            // colseleccionar
+            // 
+            this.colseleccionar.FieldName = "seleccionar";
+            this.colseleccionar.Name = "colseleccionar";
+            this.colseleccionar.Visible = true;
+            this.colseleccionar.VisibleIndex = 11;
             // 
             // labelControl2
             // 
@@ -297,121 +412,6 @@
             this.checkDisponibles.Size = new System.Drawing.Size(124, 19);
             this.checkDisponibles.TabIndex = 101;
             this.checkDisponibles.CheckedChanged += new System.EventHandler(this.checkDisponibles_CheckedChanged);
-            // 
-            // colid
-            // 
-            this.colid.FieldName = "id";
-            this.colid.Name = "colid";
-            this.colid.OptionsColumn.AllowEdit = false;
-            // 
-            // colingreso
-            // 
-            this.colingreso.FieldName = "ingreso";
-            this.colingreso.Name = "colingreso";
-            this.colingreso.OptionsColumn.AllowEdit = false;
-            this.colingreso.Visible = true;
-            this.colingreso.VisibleIndex = 0;
-            // 
-            // collote_materia_prima
-            // 
-            this.collote_materia_prima.FieldName = "lote_materia_prima";
-            this.collote_materia_prima.Name = "collote_materia_prima";
-            this.collote_materia_prima.OptionsColumn.AllowEdit = false;
-            this.collote_materia_prima.Visible = true;
-            this.collote_materia_prima.VisibleIndex = 1;
-            // 
-            // colitemcode1
-            // 
-            this.colitemcode1.FieldName = "itemcode";
-            this.colitemcode1.Name = "colitemcode1";
-            this.colitemcode1.OptionsColumn.AllowEdit = false;
-            this.colitemcode1.Visible = true;
-            this.colitemcode1.VisibleIndex = 2;
-            // 
-            // colmaterial
-            // 
-            this.colmaterial.FieldName = "material";
-            this.colmaterial.Name = "colmaterial";
-            this.colmaterial.OptionsColumn.AllowEdit = false;
-            this.colmaterial.Visible = true;
-            this.colmaterial.VisibleIndex = 3;
-            // 
-            // colcantidad
-            // 
-            this.colcantidad.FieldName = "cantidad";
-            this.colcantidad.Name = "colcantidad";
-            this.colcantidad.OptionsColumn.AllowEdit = false;
-            this.colcantidad.Visible = true;
-            this.colcantidad.VisibleIndex = 4;
-            // 
-            // coldescripcion
-            // 
-            this.coldescripcion.FieldName = "descripcion";
-            this.coldescripcion.Name = "coldescripcion";
-            this.coldescripcion.OptionsColumn.AllowEdit = false;
-            this.coldescripcion.Visible = true;
-            this.coldescripcion.VisibleIndex = 5;
-            // 
-            // colfactor
-            // 
-            this.colfactor.FieldName = "factor";
-            this.colfactor.Name = "colfactor";
-            this.colfactor.OptionsColumn.AllowEdit = false;
-            // 
-            // colpeso
-            // 
-            this.colpeso.DisplayFormat.FormatString = "n2";
-            this.colpeso.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colpeso.FieldName = "peso";
-            this.colpeso.Name = "colpeso";
-            this.colpeso.OptionsColumn.AllowEdit = false;
-            this.colpeso.Visible = true;
-            this.colpeso.VisibleIndex = 6;
-            // 
-            // colcodigo
-            // 
-            this.colcodigo.FieldName = "codigo";
-            this.colcodigo.Name = "colcodigo";
-            this.colcodigo.OptionsColumn.AllowEdit = false;
-            this.colcodigo.Visible = true;
-            this.colcodigo.VisibleIndex = 7;
-            // 
-            // colFechaIngreso
-            // 
-            this.colFechaIngreso.FieldName = "FechaIngreso";
-            this.colFechaIngreso.Name = "colFechaIngreso";
-            this.colFechaIngreso.OptionsColumn.AllowEdit = false;
-            this.colFechaIngreso.Visible = true;
-            this.colFechaIngreso.VisibleIndex = 8;
-            // 
-            // colDiasParaVencer
-            // 
-            this.colDiasParaVencer.FieldName = "DiasParaVencer";
-            this.colDiasParaVencer.Name = "colDiasParaVencer";
-            this.colDiasParaVencer.OptionsColumn.AllowEdit = false;
-            // 
-            // colcant_prd
-            // 
-            this.colcant_prd.FieldName = "cant_prd";
-            this.colcant_prd.Name = "colcant_prd";
-            this.colcant_prd.OptionsColumn.AllowEdit = false;
-            this.colcant_prd.Visible = true;
-            this.colcant_prd.VisibleIndex = 9;
-            // 
-            // colcant_bodega
-            // 
-            this.colcant_bodega.FieldName = "cant_bodega";
-            this.colcant_bodega.Name = "colcant_bodega";
-            this.colcant_bodega.OptionsColumn.AllowEdit = false;
-            this.colcant_bodega.Visible = true;
-            this.colcant_bodega.VisibleIndex = 10;
-            // 
-            // colseleccionar
-            // 
-            this.colseleccionar.FieldName = "seleccionar";
-            this.colseleccionar.Name = "colseleccionar";
-            this.colseleccionar.Visible = true;
-            this.colseleccionar.VisibleIndex = 11;
             // 
             // frmRecuentoInventario
             // 

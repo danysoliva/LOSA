@@ -478,14 +478,14 @@ namespace LOSA.Clases
             string name = "ND";
             try
             {
+                DataOperations dp = new DataOperations();
                 string StoreProcedure = @"sp_get_printer_name_impresion_tarima";
-                SqlConnection cn = new SqlConnection(dp.ConnectionStringBas);
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringBascula);
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(StoreProcedure, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 //cmd.Parameters.AddWithValue("@id", Serial);
                 name = cmd.ExecuteScalar().ToString();
-
             }
             catch (Exception ex)
             {
@@ -500,8 +500,9 @@ namespace LOSA.Clases
             string name = "ND";
             try
             {
+                DataOperations dp = new DataOperations();
                 string StoreProcedure = @"";
-                SqlConnection cn = new SqlConnection(dp.ConnectionStringBas);
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringBascula);
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(StoreProcedure, cn);
                 cmd.CommandType = CommandType.StoredProcedure;

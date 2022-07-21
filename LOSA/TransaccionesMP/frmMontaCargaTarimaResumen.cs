@@ -20,7 +20,7 @@ namespace LOSA.TransaccionesMP
 {
     public partial class frmMontaCargaTarimaResumen : DevExpress.XtraEditors.XtraForm
     {
-        DataOperations dp = DataOperations;
+        DataOperations dp = new DataOperations();
         public string ItemCode;
         public int Id_MP;
 
