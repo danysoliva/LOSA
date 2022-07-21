@@ -35,6 +35,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
             this.abrirLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblServerName = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -46,7 +47,8 @@
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripSplitButton1});
+            this.toolStripSplitButton1,
+            this.lblServerName});
             this.statusStrip1.Location = new System.Drawing.Point(0, 666);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1070, 22);
@@ -67,9 +69,14 @@
             // abrirLoginToolStripMenuItem
             // 
             this.abrirLoginToolStripMenuItem.Name = "abrirLoginToolStripMenuItem";
-            this.abrirLoginToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.abrirLoginToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.abrirLoginToolStripMenuItem.Text = "Abrir Login";
             this.abrirLoginToolStripMenuItem.Click += new System.EventHandler(this.abrirLoginToolStripMenuItem_Click);
+            // 
+            // lblServerName
+            // 
+            this.lblServerName.Name = "lblServerName";
+            this.lblServerName.Size = new System.Drawing.Size(0, 17);
             // 
             // MDIParentFormLOSA
             // 
@@ -97,6 +104,7 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton1;
         private System.Windows.Forms.ToolStripMenuItem abrirLoginToolStripMenuItem;
+        private System.Windows.Forms.ToolStripStatusLabel lblServerName;
     }
 }
 

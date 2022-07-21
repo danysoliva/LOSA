@@ -173,6 +173,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ACS\RRHH\dsRRHH_reportes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRRHH_reportes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ACS\RRHH\frmReporteAsistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ACS\RRHH\frmReporteAsistencia.Designer.cs">
+      <DependentUpon>frmReporteAsistencia.cs</DependentUpon>
+    </Compile>
     <Compile Include="AlmacenesExterno\dsAlmacenesExternos.cs">
       <DependentUpon>dsAlmacenesExternos.xsd</DependentUpon>
     </Compile>
@@ -1654,6 +1665,17 @@
       <DependentUpon>xfrmCheckActiveBin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <None Include="ACS\RRHH\dsRRHH_reportes.xsc">
+      <DependentUpon>dsRRHH_reportes.xsd</DependentUpon>
+    </None>
+    <None Include="ACS\RRHH\dsRRHH_reportes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRRHH_reportes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ACS\RRHH\dsRRHH_reportes.xss">
+      <DependentUpon>dsRRHH_reportes.xsd</DependentUpon>
+    </None>
     <None Include="AlmacenesExterno\dsReporteAlmacenExterno.xsc">
       <DependentUpon>dsReporteAlmacenExterno.xsd</DependentUpon>
     </None>
@@ -2807,6 +2829,9 @@
     <Compile Include="Utileria\frmMensajeCalidad.Designer.cs">
       <DependentUpon>frmMensajeCalidad.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ACS\RRHH\frmReporteAsistencia.resx">
+      <DependentUpon>frmReporteAsistencia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AlmacenesExterno\frmPendienteAlmacenExterno.resx">
       <DependentUpon>frmPendienteAlmacenExterno.cs</DependentUpon>
     </EmbeddedResource>
