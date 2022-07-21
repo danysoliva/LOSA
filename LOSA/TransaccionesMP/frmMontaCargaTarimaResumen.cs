@@ -131,6 +131,8 @@ namespace LOSA.TransaccionesMP
             tarimaprint.PrinterName = tari1.GetPrinterNameLogistica();//Falta el SP 
             ReportPrintTool printTool = new ReportPrintTool(tarimaprint);
             printTool.Print();
+
+            CajaDialogo.Information("IMPRESION ENVIADA A IMPRESORA DE LOGISTICA TARIMA CON CODIGO:" + row.codigo_barra);
         }
 
         private void btnImprimirConsola_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
@@ -197,7 +199,14 @@ namespace LOSA.TransaccionesMP
             tarimaprint.PrinterName = tari1.GetPrinterNameConsola();
             ReportPrintTool printTool = new ReportPrintTool(tarimaprint);
             printTool.Print();
+
+            CajaDialogo.Information("IMPRESION ENVIADA A IMPRESORA DE CONSOLA TARIMA CON CODIGO:" + row.codigo_barra);
         }
 
+        private void cmdHome_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
     }
 }

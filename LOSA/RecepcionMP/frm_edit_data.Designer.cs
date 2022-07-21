@@ -83,7 +83,7 @@ namespace LOSA.RecepcionMP
             this.labelControl3.Location = new System.Drawing.Point(231, 13);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(272, 44);
+            this.labelControl3.Size = new System.Drawing.Size(932, 44);
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Editar ingreso";
             // 
@@ -108,7 +108,7 @@ namespace LOSA.RecepcionMP
             editorButtonImageOptions1.Image = global::LOSA.Properties.Resources.tap;
             this.btnfindMP.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.btnfindMP.Size = new System.Drawing.Size(172, 38);
+            this.btnfindMP.Size = new System.Drawing.Size(157, 38);
             this.btnfindMP.TabIndex = 34;
             this.btnfindMP.EditValueChanged += new System.EventHandler(this.btnfindMP_EditValueChanged);
             this.btnfindMP.Click += new System.EventHandler(this.btnfindMP_Click);
@@ -154,7 +154,7 @@ namespace LOSA.RecepcionMP
             editorButtonImageOptions2.Image = global::LOSA.Properties.Resources.tap;
             this.buttonEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.buttonEdit1.Size = new System.Drawing.Size(172, 38);
+            this.buttonEdit1.Size = new System.Drawing.Size(157, 38);
             this.buttonEdit1.TabIndex = 38;
             this.buttonEdit1.EditValueChanged += new System.EventHandler(this.buttonEdit1_EditValueChanged);
             this.buttonEdit1.Click += new System.EventHandler(this.buttonEdit1_Click);
@@ -190,7 +190,7 @@ namespace LOSA.RecepcionMP
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(634, 7);
+            this.btnAtras.Location = new System.Drawing.Point(1294, 7);
             this.btnAtras.Margin = new System.Windows.Forms.Padding(4);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(178, 58);
@@ -225,7 +225,7 @@ namespace LOSA.RecepcionMP
             this.grd_data.Location = new System.Drawing.Point(-1, 306);
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
-            this.grd_data.Size = new System.Drawing.Size(817, 304);
+            this.grd_data.Size = new System.Drawing.Size(1477, 304);
             this.grd_data.TabIndex = 42;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
@@ -332,7 +332,7 @@ namespace LOSA.RecepcionMP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(819, 609);
+            this.ClientSize = new System.Drawing.Size(1479, 609);
             this.Controls.Add(this.tgTodos);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.grd_data);
