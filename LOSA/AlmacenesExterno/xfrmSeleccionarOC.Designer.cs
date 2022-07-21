@@ -45,9 +45,9 @@
             this.colComentario = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colItemcode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
-            this.colItemcode = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gcOC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsAlmacenesExternos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvOC)).BeginInit();
@@ -100,6 +100,7 @@
             this.gvOC.Name = "gvOC";
             this.gvOC.OptionsView.ShowAutoFilterRow = true;
             this.gvOC.OptionsView.ShowGroupPanel = false;
+            this.gvOC.DoubleClick += new System.EventHandler(this.gvOC_DoubleClick);
             // 
             // colid
             // 
@@ -179,6 +180,16 @@
             this.btnSeleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnSeleccionar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnSeleccionar_ButtonClick);
             // 
+            // colItemcode
+            // 
+            this.colItemcode.Caption = "C. Articulo";
+            this.colItemcode.FieldName = "Itemcode";
+            this.colItemcode.Name = "colItemcode";
+            this.colItemcode.OptionsColumn.AllowEdit = false;
+            this.colItemcode.Visible = true;
+            this.colItemcode.VisibleIndex = 1;
+            this.colItemcode.Width = 85;
+            // 
             // labelControl1
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -211,16 +222,6 @@
             this.btnAtras.TabIndex = 37;
             this.btnAtras.Text = "Atras";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
-            // 
-            // colItemcode
-            // 
-            this.colItemcode.Caption = "C. Articulo";
-            this.colItemcode.FieldName = "Itemcode";
-            this.colItemcode.Name = "colItemcode";
-            this.colItemcode.OptionsColumn.AllowEdit = false;
-            this.colItemcode.Visible = true;
-            this.colItemcode.VisibleIndex = 1;
-            this.colItemcode.Width = 85;
             // 
             // xfrmSeleccionarOC
             // 

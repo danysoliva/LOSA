@@ -29,12 +29,12 @@ namespace LOSA.AlmacenesExterno
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPendienteAlmacenExterno));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
             this.dsAlmacenesExternos = new LOSA.AlmacenesExterno.dsAlmacenesExternos();
@@ -51,6 +51,7 @@ namespace LOSA.AlmacenesExterno
             this.colTerminar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnFinalizar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.colfecha_creacion = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsAlmacenesExternos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
@@ -131,6 +132,7 @@ namespace LOSA.AlmacenesExterno
             this.colpeso,
             this.colid_tipoIngreso,
             this.coltipo_ingreso,
+            this.colfecha_creacion,
             this.colTerminar});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
@@ -152,7 +154,7 @@ namespace LOSA.AlmacenesExterno
             this.colnumero_ingreso.OptionsColumn.AllowEdit = false;
             this.colnumero_ingreso.Visible = true;
             this.colnumero_ingreso.VisibleIndex = 0;
-            this.colnumero_ingreso.Width = 70;
+            this.colnumero_ingreso.Width = 65;
             // 
             // colproveedor
             // 
@@ -161,8 +163,8 @@ namespace LOSA.AlmacenesExterno
             this.colproveedor.Name = "colproveedor";
             this.colproveedor.OptionsColumn.AllowEdit = false;
             this.colproveedor.Visible = true;
-            this.colproveedor.VisibleIndex = 3;
-            this.colproveedor.Width = 209;
+            this.colproveedor.VisibleIndex = 4;
+            this.colproveedor.Width = 179;
             // 
             // colitemcode
             // 
@@ -171,8 +173,8 @@ namespace LOSA.AlmacenesExterno
             this.colitemcode.Name = "colitemcode";
             this.colitemcode.OptionsColumn.AllowEdit = false;
             this.colitemcode.Visible = true;
-            this.colitemcode.VisibleIndex = 1;
-            this.colitemcode.Width = 107;
+            this.colitemcode.VisibleIndex = 2;
+            this.colitemcode.Width = 91;
             // 
             // coldescripcion
             // 
@@ -181,28 +183,32 @@ namespace LOSA.AlmacenesExterno
             this.coldescripcion.Name = "coldescripcion";
             this.coldescripcion.OptionsColumn.AllowEdit = false;
             this.coldescripcion.Visible = true;
-            this.coldescripcion.VisibleIndex = 2;
-            this.coldescripcion.Width = 250;
+            this.coldescripcion.VisibleIndex = 3;
+            this.coldescripcion.Width = 215;
             // 
             // colcantidad
             // 
             this.colcantidad.Caption = "Cantidad";
+            this.colcantidad.DisplayFormat.FormatString = "n2";
+            this.colcantidad.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colcantidad.FieldName = "cantidad";
             this.colcantidad.Name = "colcantidad";
             this.colcantidad.OptionsColumn.AllowEdit = false;
             this.colcantidad.Visible = true;
-            this.colcantidad.VisibleIndex = 4;
-            this.colcantidad.Width = 115;
+            this.colcantidad.VisibleIndex = 5;
+            this.colcantidad.Width = 98;
             // 
             // colpeso
             // 
             this.colpeso.Caption = "Peso";
+            this.colpeso.DisplayFormat.FormatString = "n2";
+            this.colpeso.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colpeso.FieldName = "peso";
             this.colpeso.Name = "colpeso";
             this.colpeso.OptionsColumn.AllowEdit = false;
             this.colpeso.Visible = true;
-            this.colpeso.VisibleIndex = 5;
-            this.colpeso.Width = 103;
+            this.colpeso.VisibleIndex = 6;
+            this.colpeso.Width = 88;
             // 
             // colid_tipoIngreso
             // 
@@ -222,15 +228,15 @@ namespace LOSA.AlmacenesExterno
             this.colTerminar.ColumnEdit = this.btnFinalizar;
             this.colTerminar.Name = "colTerminar";
             this.colTerminar.Visible = true;
-            this.colTerminar.VisibleIndex = 6;
-            this.colTerminar.Width = 146;
+            this.colTerminar.VisibleIndex = 7;
+            this.colTerminar.Width = 132;
             // 
             // btnFinalizar
             // 
             this.btnFinalizar.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.btnFinalizar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
@@ -244,6 +250,17 @@ namespace LOSA.AlmacenesExterno
             this.labelControl1.Size = new System.Drawing.Size(190, 21);
             this.labelControl1.TabIndex = 9;
             this.labelControl1.Text = "Transferencias en Proceso";
+            // 
+            // colfecha_creacion
+            // 
+            this.colfecha_creacion.Caption = "Fecha Creado";
+            this.colfecha_creacion.DisplayFormat.FormatString = "g";
+            this.colfecha_creacion.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.colfecha_creacion.FieldName = "fecha_creacion";
+            this.colfecha_creacion.Name = "colfecha_creacion";
+            this.colfecha_creacion.Visible = true;
+            this.colfecha_creacion.VisibleIndex = 1;
+            this.colfecha_creacion.Width = 132;
             // 
             // frmPendienteAlmacenExterno
             // 
@@ -283,5 +300,6 @@ namespace LOSA.AlmacenesExterno
         private DevExpress.XtraGrid.Columns.GridColumn colid_tipoIngreso;
         private DevExpress.XtraGrid.Columns.GridColumn coltipo_ingreso;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecha_creacion;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ACS.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,7 @@ namespace LOSA
         public MDIParentFormLOSA()
         {
             InitializeComponent();
+            lblServerName.Text = "Server Name: " + Globals.LOSA_ServerName + "  DB: " + Globals.LOSA_ActiveDB;
             frm = new frmMain();
             frm.MdiParent = this;
             frm.WindowState = FormWindowState.Normal;
