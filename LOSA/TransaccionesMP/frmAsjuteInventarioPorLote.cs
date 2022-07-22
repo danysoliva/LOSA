@@ -310,6 +310,8 @@ namespace LOSA.TransaccionesMP
             txtLoteNuevo.Enabled = false;
             txtLoteNuevo.Visible = false;
             buttonProveedores.Enabled = false;
+            txtCantidadTarimas.Enabled = false;
+            txtUnidadsPorTarima.Enabled = false;
             buttonProveedores.Text = "";
         }
 

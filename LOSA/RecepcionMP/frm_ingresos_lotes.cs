@@ -249,6 +249,56 @@ namespace LOSA.RecepcionMP
             var gridView = (GridView)gridControl1.FocusedView;
             var row = (dsRecepcionMPx.lista_tarimasRow)gridView.GetFocusedDataRow();
 
+            string mensaje = "";
+            bool Error = false;
+            switch (row.id_estado_tarima)
+            {
+                case 1://Recepcionado
+                    Error = false;
+                    break;
+                case 2://En Bodega
+                    Error = false;
+                    //mensaje = "No puede Editar la Tarima por que ya se encuentra en Bodgea!";
+                    break;
+                case 3://Retenido
+                    Error = false;
+                    break;
+                case 4://Comprometido
+                    Error = true;
+                    mensaje = "No se puede Editar la tarima por que se encuentra Comprometida";
+                    break;
+                case 5://En Produccion
+                    Error = true;
+                    mensaje = "Esta tarima no se puede editar por que ya fue entregada a Produccion";
+                    break;
+                case 6://Consumido
+                    Error = true;
+                    mensaje = "Esta tarima no se puede editar por que ya fue entregada y consumida por producción!";
+                    break;
+                //case 7://
+                //    error = true;
+                //    mensaje = "Calidad tiene Retenida ésta tarima.!";
+                //    break;
+                case 8://Parcialmente Entregado
+                    Error = true;
+                    mensaje = "Esta Tarima ya fue parcialemente entregada no se puede editar!";
+                    break;
+                case 9://Rechazado
+                    Error = true;
+                    mensaje = "Esta tarima fue Rechazada!";
+                    break;
+                case 10://Ajuste de Inventario
+                    Error = true;
+                    mensaje = "Esta tarima no se puede editar por que ya se le dio salida por ajuste de inventario!";
+                    break;
+            }
+
+            if (Error)
+            {
+                CajaDialogo.Error(mensaje);
+                return;
+            }
+
             frmEditTarima frm = new frmEditTarima(row.id, this.UsuarioLogeado);
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
