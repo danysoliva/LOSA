@@ -97,6 +97,7 @@ namespace LOSA.TransaccionesMP
                         cmd.Parameters.AddWithValue("@cant_salida", 0);
                         cmd.Parameters.AddWithValue("@ud_entrada", txtCantidadUnidades.Text);
                         cmd.Parameters.AddWithValue("@ud_salida", 0);
+                        cmd.Parameters.AddWithValue("@id_referencia_operacion", Id_Lote_Alosy);
                         cmd.Parameters.AddWithValue("@id_lote_alosy", Id_Lote_Alosy);
                         cmd.Parameters.AddWithValue("@lote", txtNumLote.Text);
                         cmd.Parameters.AddWithValue("@id_mp", Id_MP);
@@ -205,6 +206,7 @@ namespace LOSA.TransaccionesMP
                         cmd.Parameters.AddWithValue("@cant_salida", txtPesoKG.Text);
                         cmd.Parameters.AddWithValue("@ud_entrada", 0);
                         cmd.Parameters.AddWithValue("@ud_salida", txtCantidadUnidades.Text);
+                        cmd.Parameters.AddWithValue("@id_referencia_operacion", Id_Lote_Alosy);
                         cmd.Parameters.AddWithValue("id_lote_alosy", Id_Lote_Alosy);
                         cmd.Parameters.AddWithValue("@lote", txtNumLote.Text);
                         cmd.Parameters.AddWithValue("@id_mp", Id_MP);
