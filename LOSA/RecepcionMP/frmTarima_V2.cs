@@ -215,7 +215,7 @@ namespace LOSA.RecepcionMP
                             cmd.Parameters.AddWithValue("@idlotes", IdLoteInserted);
                             cmd.Parameters.AddWithValue("@factor", row.factor);
                             cmd.Parameters.AddWithValue("@bit_promedio", Tg_presentacion_promedio.IsOn ? 1 : 0);
-                            cmd.Parameters.AddWithValue("@is_traslado_externo", Istraslado ? Convert.ToDecimal(row.id_Externo) : 0);
+                            cmd.Parameters.AddWithValue("@is_traslado_externo", Istraslado );
                             vid_tarima = Convert.ToInt32(cmd.ExecuteScalar());
 
                             string query = @"";
