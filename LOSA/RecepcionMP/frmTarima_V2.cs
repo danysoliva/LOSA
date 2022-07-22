@@ -151,10 +151,12 @@ namespace LOSA.RecepcionMP
 
                     }   
                 }
-               
 
+                bool Guardo = false;
+                ArrayList List = new ArrayList();
                 foreach (dsWizard.informacionIngresoRow row in dsWizard.informacionIngreso.Rows)
                 {
+                    
                     try
                     {
                         SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
@@ -181,9 +183,9 @@ namespace LOSA.RecepcionMP
 
                         IdLoteInserted = Convert.ToInt32(cmd.ExecuteScalar());
 
-                        bool Guardo = false;
+                        
                         int vid_tarima = 0;
-                        ArrayList List = new ArrayList();
+                        
 
                         for (int i = 1; i <= row.canttarimas; i++)
                         {
@@ -241,28 +243,7 @@ namespace LOSA.RecepcionMP
                             Guardo = true;
                             con.Close();
                         }
-                        if (Guardo)
-                        {
-                            DialogResult r = CajaDialogo.Pregunta("Desea Imprimir la(s) Hoja(s) de Ingreso?");
-                            if (r == DialogResult.Yes)
-                            {
-                                for (int i = 0; i <= (List.Count - 1); i++)
-                                {
-                                    int id_tarimax = Convert.ToInt32(List[i]);
-                                    rptReporteIngresoTarima report = new rptReporteIngresoTarima(id_tarimax);
-                                    report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
-                                    report.ShowPrintMarginsWarning = false;
-                                    report.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
-                                    report.Print();
-
-
-                                }
-                            }
-                            rptLoteRotulo boleta = new rptLoteRotulo(IdLoteInserted);
-                            boleta.ShowPrintMarginsWarning = false;
-                            boleta.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
-                            boleta.Print();
-                        }
+                        
 
 
                     }
@@ -273,7 +254,30 @@ namespace LOSA.RecepcionMP
                     }
                 }
 
-               
+                if (Guardo)
+                {
+                    DialogResult r = CajaDialogo.Pregunta("Desea Imprimir la(s) Hoja(s) de Ingreso?");
+                    if (r == DialogResult.Yes)
+                    {
+                        for (int i = 0; i <= (List.Count - 1); i++)
+                        {
+                            int id_tarimax = Convert.ToInt32(List[i]);
+                            rptReporteIngresoTarima report = new rptReporteIngresoTarima(id_tarimax);
+                            report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                            report.ShowPrintMarginsWarning = false;
+                            report.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
+                            report.Print();
+
+
+                        }
+                    }
+                    rptLoteRotulo boleta = new rptLoteRotulo(IdLoteInserted);
+                    boleta.ShowPrintMarginsWarning = false;
+                    boleta.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
+                    boleta.Print();
+                }
+
+
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
