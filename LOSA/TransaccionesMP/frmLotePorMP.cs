@@ -84,7 +84,7 @@ namespace LOSA.TransaccionesMP
 
         private void btnAtras_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
+            //this.DialogResult = DialogResult.OK;
             this.Close();
         }
     }

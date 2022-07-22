@@ -30,6 +30,7 @@ namespace LOSA.TransaccionesMP
             UsuarioLogueado = pUserLogin;
             radioLoteExistente.Checked = true;
             LoadPresentaciones();
+
         }
 
 
@@ -55,7 +56,7 @@ namespace LOSA.TransaccionesMP
         }
 
 
-
+        SqlTransaction transaction;
         private void cmdGuardar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtMP_Name.Text))
@@ -104,6 +105,10 @@ namespace LOSA.TransaccionesMP
                         cmd.Parameters.AddWithValue("@id_usercreate", UsuarioLogueado.Id);
                         cmd.ExecuteNonQuery();
                         conn.Close();
+
+                        CajaDialogo.Information("Transaccion Exitosa!");
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
                     }
                     catch (Exception ex)
                     {
@@ -113,87 +118,74 @@ namespace LOSA.TransaccionesMP
                 if(radioLoteNuevo.Checked)
                 {
                     DataOperations dp = new DataOperations();
-                    using (SqlConnection connection = new SqlConnection(dp.ConnectionStringLOSA))
+                    SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                    int id_lote_h = 0;
+
+                    conn.Open();
+                    transaction = conn.BeginTransaction("SampleTransaction");
+
+                    try
                     {
-                        connection.Open();
+                        //EN CASO DE SER UN LOTE NUEVO CREAMOS EL LOTE 
 
-                        SqlCommand command = connection.CreateCommand();
-                        SqlTransaction transaction;
-
-                        // Start a local transaction.
-                        transaction = connection.BeginTransaction("SampleTransaction");
-
-                        // Must assign both transaction object and connection
-                        // to Command object for a pending local transaction
-                        command.Connection = connection;
+                        //INSERT DE ENCABEZADO
+                        SqlCommand command = new SqlCommand("sp_insert_mp_lote_h_for_kardex", transaction.Connection);
                         command.Transaction = transaction;
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@numero_transaccion", Numero_transaccion);
+                        command.Parameters.AddWithValue("@itemcode", ItemCode);
+                        command.Parameters.AddWithValue("@itemname", txtMP_Name.Text);
+                        command.Parameters.AddWithValue("@usuario_creado", UsuarioLogueado.Id);
+                        command.Parameters.AddWithValue("@cardname", buttonProveedores.Text);
+                        command.Parameters.AddWithValue("@cardcode", cardcode);
 
-                   
+                        id_lote_h = Convert.ToInt32(command.ExecuteScalar());
 
-                        try
-                        {
-                            //EN CASO DE SER UN LOTE NUEVO CREAMOS EL LOTE 
+                        //INSERT DE DETALLE
+                        SqlCommand cmd2 = new SqlCommand("sp_insert_mp_lote_d_for_kardex_ajuste",transaction.Connection);
+                        cmd2.Transaction = transaction;
+                        cmd2.CommandType = CommandType.StoredProcedure;
+                        cmd2.Parameters.AddWithValue("@id_h", id_lote_h);
+                        cmd2.Parameters.AddWithValue("@numero_transaccion", Numero_transaccion);
+                        cmd2.Parameters.AddWithValue("@lote", txtLoteNuevo.Text);
+                        cmd2.Parameters.AddWithValue("@cantidadtotal", txtCantidadUnidades.Text);
+                        cmd2.Parameters.AddWithValue("@cantidadportarima", dp.ValidateNumberInt32(txtUnidadsPorTarima.Text));
+                        cmd2.Parameters.AddWithValue("@totaltarimas", dp.ValidateNumberInt32(txtCantidadTarimas));
+                        cmd2.Parameters.AddWithValue("@id_unidadmedida", gridLookUpEditPresentacion.EditValue);
+                        cmd2.Parameters.AddWithValue("@peso", Convert.ToDecimal(txtPesoKG.Text));
+                        cmd2.Parameters.AddWithValue("@id_mp", Id_MP);
+                        //command.Parameters.AddWithValue("@id_lote_externo",);
+                        cmd2.ExecuteNonQuery();
 
-                            //INSERT DE ENCABEZADO
-                            command.CommandText = "sp_insert_mp_lote_h_for_kardex";
-                            command.CommandType = CommandType.StoredProcedure;
-                            command.Parameters.AddWithValue("@numero_transaccion", Numero_transaccion);
-                            command.Parameters.AddWithValue("@itemcode", ItemCode);
-                            command.Parameters.AddWithValue("@itemname", txtMP_Name.Text);
-                            command.Parameters.AddWithValue("@usuario_creado", UsuarioLogueado.Id);
-                            command.Parameters.AddWithValue("@cardname", buttonProveedores.Text);
-                            command.Parameters.AddWithValue("@cardcode", cardcode);
-                            //command.Parameters.AddWithValue("@idboleta",null);
-                            int id_lote_h = Convert.ToInt32(command.ExecuteScalar());
+                        //REALIZAMOS EL INSERT DEL MOVIMIENTO EN KARDEX
+                        SqlCommand cmd3 = new SqlCommand("sp_ajuste_kardex_por_lote", transaction.Connection);
+                        cmd3.Transaction = transaction;
+                        cmd3.CommandType = CommandType.StoredProcedure;
+                        cmd3.Parameters.AddWithValue("@cant_entrada", txtPesoKG.Text);
+                        cmd3.Parameters.AddWithValue("@cant_salida", 0);
+                        cmd3.Parameters.AddWithValue("@ud_entrada", txtCantidadUnidades.Text);
+                        cmd3.Parameters.AddWithValue("@ud_salida", 0);
+                        cmd3.Parameters.AddWithValue("@id_referencia_operacion", id_lote_h);
+                        cmd3.Parameters.AddWithValue("id_lote_alosy", id_lote_h);
+                        cmd3.Parameters.AddWithValue("@lote", txtLoteNuevo.Text);
+                        cmd3.Parameters.AddWithValue("@id_mp", Id_MP);
+                        cmd3.Parameters.AddWithValue("@itemcode", ItemCode);
+                        cmd3.Parameters.AddWithValue("@id_usercreate", UsuarioLogueado.Id);
+                        cmd3.ExecuteNonQuery();
+                        //Attempt to commit the transaction.
 
-                            //decimal cantidadportarima = 0;
-                            //decimal totaltarimas = 0;
+                        transaction.Commit();
+                        conn.Close();
 
-                            //totaltarimas = factorValue
+                        CajaDialogo.Information("Transaccion de Lote Exitosa!");
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
 
-                            //INSERT DE DETALLE
-                            command.CommandText = "sp_insert_mp_lote_d_for_kardex_ajuste";
-                            command.CommandType = CommandType.StoredProcedure;
-                            command.Parameters.AddWithValue("@id_h", id_lote_h);
-                            command.Parameters.AddWithValue("@numero_transaccion", Numero_transaccion);
-                            command.Parameters.AddWithValue("@lote", txtNumLote.Text);
-                            command.Parameters.AddWithValue("@cantidadtotal", txtCantidadUnidades.Text);
-                            command.Parameters.AddWithValue("@cantidadportarima", null);
-                            command.Parameters.AddWithValue("@totaltarimas", null);
-                            command.Parameters.AddWithValue("@id_unidadmedida", gridLookUpEditPresentacion.EditValue);
-                            command.Parameters.AddWithValue("@peso", Convert.ToDecimal(txtPesoKG.Text));
-                            command.Parameters.AddWithValue("@id_mp", Id_MP);
-                            //command.Parameters.AddWithValue("@id_lote_externo",);
-                            command.ExecuteNonQuery();
-
-                            //REALIZAMOS EL INSERT DEL MOVIMIENTO EN KARDEX
-                            command.CommandText = "sp_ajuste_kardex_por_lote";
-                            command.CommandType = CommandType.StoredProcedure;
-                            command.Parameters.AddWithValue("@cant_entrada", txtPesoKG.Text);
-                            command.Parameters.AddWithValue("@cant_salida", 0);
-                            command.Parameters.AddWithValue("@ud_entrada", txtCantidadUnidades.Text);
-                            command.Parameters.AddWithValue("@ud_salida", 0);
-                            command.Parameters.AddWithValue("id_lote_alosy", Id_Lote_Alosy);
-                            command.Parameters.AddWithValue("@lote", txtNumLote.Text);
-                            command.Parameters.AddWithValue("@id_mp", Id_MP);
-                            command.Parameters.AddWithValue("@itemcode", ItemCode);
-                            command.Parameters.AddWithValue("@id_usercreate", UsuarioLogueado.Id);
-                            //command.ExecuteNonQuery();
-                            // Attempt to commit the transaction.
-                            //transaction.Commit();
-                        }
-                        catch (Exception ex)
-                        {
-                            // Attempt to roll back the transaction.
-                            try
-                            {
-                                transaction.Rollback();
-                            }
-                            catch (Exception ex2)
-                            {
-                                CajaDialogo.Error(ex2.Message);
-                            }
-                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        CajaDialogo.Error(ex.Message);
+                        transaction.Rollback();
                     }
                 }
                
@@ -221,6 +213,10 @@ namespace LOSA.TransaccionesMP
                         cmd.Parameters.AddWithValue("@id_usercreate", UsuarioLogueado.Id);
                         cmd.ExecuteNonQuery();
                         conn.Close();
+
+                        CajaDialogo.Information("Transaccion Exitosa!");
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
                     }
                     catch (Exception ex)
                     {
@@ -228,9 +224,8 @@ namespace LOSA.TransaccionesMP
                     }
                 }
             }
-            CajaDialogo.Information("Transaccion Exitosa!");
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            
+            
         }
 
         private void txtMP_Name_Click(object sender, EventArgs e)
@@ -291,6 +286,8 @@ namespace LOSA.TransaccionesMP
             txtLoteNuevo.Enabled = true;
             txtLoteNuevo.Visible = true;
             buttonProveedores.Enabled = true;
+            txtCantidadTarimas.Enabled = true;
+            txtUnidadsPorTarima.Enabled = true;
             txtCantidadUnidades.Text = "";
             txtPesoKG.Text = "";
         }

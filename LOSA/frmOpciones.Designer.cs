@@ -445,6 +445,7 @@
             this.btnPendientes_ingreso_a_planta.Appearance.Options.UseTextOptions = true;
             this.btnPendientes_ingreso_a_planta.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnPendientes_ingreso_a_planta.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnPendientes_ingreso_a_planta.Enabled = false;
             this.btnPendientes_ingreso_a_planta.ImageOptions.Image = global::LOSA.Properties.Resources.logout;
             this.btnPendientes_ingreso_a_planta.Location = new System.Drawing.Point(210, 15);
             this.btnPendientes_ingreso_a_planta.Margin = new System.Windows.Forms.Padding(4);
