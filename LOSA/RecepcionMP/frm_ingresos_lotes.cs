@@ -280,8 +280,8 @@ namespace LOSA.RecepcionMP
                 //    mensaje = "Calidad tiene Retenida ésta tarima.!";
                 //    break;
                 case 8://Parcialmente Entregado
-                    Error = true;
-                    mensaje = "Esta Tarima ya fue parcialemente entregada no se puede editar!";
+                    Error = false;
+                    //mensaje = "Esta Tarima ya fue parcialemente entregada no se puede editar!";
                     break;
                 case 9://Rechazado
                     Error = true;
