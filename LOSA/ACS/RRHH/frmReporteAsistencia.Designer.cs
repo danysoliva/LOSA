@@ -29,6 +29,7 @@ namespace LOSA.ACS.RRHH
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReporteAsistencia));
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.dsRRHH_reportes1 = new LOSA.ACS.RRHH.dsRRHH_reportes();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -55,9 +56,18 @@ namespace LOSA.ACS.RRHH
             this.colsalida_sabado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colentrada_domingo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsalida_domingo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dt_final = new DevExpress.XtraEditors.DateEdit();
+            this.dt_inicial = new DevExpress.XtraEditors.DateEdit();
+            this.lblFechas = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRRHH_reportes1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_final.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_final.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_inicial.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_inicial.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -318,18 +328,104 @@ namespace LOSA.ACS.RRHH
             this.colsalida_domingo.VisibleIndex = 18;
             this.colsalida_domingo.Width = 55;
             // 
+            // dt_final
+            // 
+            this.dt_final.EditValue = null;
+            this.dt_final.Location = new System.Drawing.Point(119, 60);
+            this.dt_final.Name = "dt_final";
+            this.dt_final.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.dt_final.Properties.Appearance.ForeColor = System.Drawing.Color.DimGray;
+            this.dt_final.Properties.Appearance.Options.UseFont = true;
+            this.dt_final.Properties.Appearance.Options.UseForeColor = true;
+            this.dt_final.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_final.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.True;
+            this.dt_final.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_final.Properties.DisplayFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
+            this.dt_final.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.dt_final.Properties.EditFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
+            this.dt_final.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.dt_final.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.dt_final.Size = new System.Drawing.Size(212, 26);
+            this.dt_final.TabIndex = 18;
+            // 
+            // dt_inicial
+            // 
+            this.dt_inicial.EditValue = null;
+            this.dt_inicial.Location = new System.Drawing.Point(119, 19);
+            this.dt_inicial.Name = "dt_inicial";
+            this.dt_inicial.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.dt_inicial.Properties.Appearance.ForeColor = System.Drawing.Color.DimGray;
+            this.dt_inicial.Properties.Appearance.Options.UseFont = true;
+            this.dt_inicial.Properties.Appearance.Options.UseForeColor = true;
+            this.dt_inicial.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_inicial.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.True;
+            this.dt_inicial.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_inicial.Properties.DisplayFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
+            this.dt_inicial.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.dt_inicial.Properties.EditFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
+            this.dt_inicial.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.dt_inicial.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.dt_inicial.Size = new System.Drawing.Size(212, 26);
+            this.dt_inicial.TabIndex = 17;
+            // 
+            // lblFechas
+            // 
+            this.lblFechas.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.lblFechas.Appearance.Options.UseFont = true;
+            this.lblFechas.Location = new System.Drawing.Point(7, 20);
+            this.lblFechas.Name = "lblFechas";
+            this.lblFechas.Size = new System.Drawing.Size(123, 21);
+            this.lblFechas.TabIndex = 14;
+            this.lblFechas.Text = "Fecha Inicial_____";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(7, 62);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(114, 21);
+            this.labelControl1.TabIndex = 15;
+            this.labelControl1.Text = "Fecha Final_____";
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(337, 39);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(143, 47);
+            this.simpleButton1.TabIndex = 16;
+            this.simpleButton1.Text = "Generar reporte";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // frmReporteAsistencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1131, 514);
+            this.Controls.Add(this.dt_final);
+            this.Controls.Add(this.dt_inicial);
+            this.Controls.Add(this.lblFechas);
+            this.Controls.Add(this.labelControl1);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.gridControl1);
             this.Name = "frmReporteAsistencia";
             this.Text = "Resumen Asistencia";
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRRHH_reportes1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_final.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_final.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_inicial.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_inicial.Properties)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -361,5 +457,10 @@ namespace LOSA.ACS.RRHH
         private DevExpress.XtraGrid.Columns.GridColumn colsalida_domingo;
         private DevExpress.XtraGrid.Columns.GridColumn coldesde;
         private DevExpress.XtraGrid.Columns.GridColumn colhasta;
+        private DevExpress.XtraEditors.DateEdit dt_final;
+        private DevExpress.XtraEditors.DateEdit dt_inicial;
+        private DevExpress.XtraEditors.LabelControl lblFechas;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }
