@@ -119,6 +119,7 @@
             this.cmdTarimasPT = new DevExpress.XtraEditors.SimpleButton();
             this.btnAlimentacionManual = new DevExpress.XtraEditors.SimpleButton();
             this.txtProduccion = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton36 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton35 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdReporteReqManuales = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton15 = new DevExpress.XtraEditors.SimpleButton();
@@ -1421,6 +1422,7 @@
             // 
             // txtProduccion
             // 
+            this.txtProduccion.Controls.Add(this.simpleButton36);
             this.txtProduccion.Controls.Add(this.simpleButton35);
             this.txtProduccion.Controls.Add(this.cmdReporteReqManuales);
             this.txtProduccion.Controls.Add(this.simpleButton15);
@@ -1431,6 +1433,21 @@
             this.txtProduccion.PageVisible = false;
             this.txtProduccion.Size = new System.Drawing.Size(772, 441);
             this.txtProduccion.Text = "Produccion";
+            // 
+            // simpleButton36
+            // 
+            this.simpleButton36.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton36.Appearance.Options.UseFont = true;
+            this.simpleButton36.Appearance.Options.UseTextOptions = true;
+            this.simpleButton36.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton36.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton36.ImageOptions.Image = global::LOSA.Properties.Resources.portapapeles32px;
+            this.simpleButton36.Location = new System.Drawing.Point(248, 97);
+            this.simpleButton36.Name = "simpleButton36";
+            this.simpleButton36.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton36.TabIndex = 22;
+            this.simpleButton36.Text = "Reporte de Asistencia";
+            this.simpleButton36.Click += new System.EventHandler(this.simpleButton36_Click);
             // 
             // simpleButton35
             // 
@@ -1645,5 +1662,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton34;
         private DevExpress.XtraEditors.SimpleButton cmdReportReqManual;
         private DevExpress.XtraEditors.SimpleButton simpleButton35;
+        private DevExpress.XtraEditors.SimpleButton simpleButton36;
     }
 }

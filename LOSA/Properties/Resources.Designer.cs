@@ -513,6 +513,16 @@ namespace LOSA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap portapapeles32px {
+            get {
+                object obj = ResourceManager.GetObject("portapapeles32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap produccion {
             get {
                 object obj = ResourceManager.GetObject("produccion", resourceCulture);

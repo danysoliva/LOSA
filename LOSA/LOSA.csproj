@@ -4293,6 +4293,7 @@
     <Content Include="Resources\plus.png" />
     <None Include="Resources\produccion.png" />
     <None Include="Resources\Producto_terminado.png" />
+    <None Include="Resources\portapapeles32px.png" />
     <Content Include="Resources\production.png" />
     <Content Include="Resources\raw-material.png" />
     <Content Include="Resources\raw-material1.png" />

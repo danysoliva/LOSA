@@ -1,5 +1,6 @@
 ﻿using ACS.Classes;
 using DevExpress.XtraEditors;
+using LOSA.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,9 +16,11 @@ namespace LOSA.ACS.RRHH
 {
     public partial class frmReporteAsistencia : DevExpress.XtraEditors.XtraForm
     {
-        public frmReporteAsistencia()
+        UserLogin UsuarioLogeado;
+        public frmReporteAsistencia(UserLogin pUser)
         {
             InitializeComponent();
+            UsuarioLogeado = pUser;
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -49,7 +52,7 @@ namespace LOSA.ACS.RRHH
             try
             {
                 DataOperations dp = new DataOperations();
-                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                SqlConnection con = new SqlConnection(dp.ConnectionStringCostos);
                 con.Open();
 
                 SqlCommand cmd = new SqlCommand("sp_load_marcas_turno_by_day", con);
@@ -65,6 +68,23 @@ namespace LOSA.ACS.RRHH
             catch (Exception ec)
             {
                 CajaDialogo.Error(ec.Message);
+            }
+        }
+
+        private void btnexport_Click(object sender, EventArgs e)
+        {
+            if (dsRRHH_reportes1.resumen_asistencia.Count < 1)
+            {
+                CajaDialogo.Error("Debe de generar el reporte primero.");
+                return;
+            }
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "Excel File (.xlsx)|*.xlsx";
+            dialog.FilterIndex = 0;
+
+            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                gridControl1.ExportToXlsx(dialog.FileName);
             }
         }
     }
