@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmRevisarOC));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -39,7 +38,7 @@
             this.btnOC = new DevExpress.XtraEditors.ButtonEdit();
             this.label1 = new System.Windows.Forms.Label();
             this.gcIngreso = new DevExpress.XtraGrid.GridControl();
-            this.revisionOCBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.revisionOCBindingSource = new System.Windows.Forms.BindingSource();
             this.dsAlmacenesExternos = new LOSA.AlmacenesExterno.dsAlmacenesExternos();
             this.gvIngreso = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colItemCode = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -56,13 +55,13 @@
             this.colSelect = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBodega = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GridLookUpEdit_HaciaBodega = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.warehouseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.warehouseBindingSource = new System.Windows.Forms.BindingSource();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colWhsCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colWhsName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_presentacion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GridLookUpEdit_Presntacion = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.presentacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.presentacionBindingSource = new System.Windows.Forms.BindingSource();
             this.repositoryItemGridLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colpresentacion = new DevExpress.XtraGrid.Columns.GridColumn();

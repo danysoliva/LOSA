@@ -39,6 +39,7 @@ namespace LOSA.ACS.RRHH
             this.colnombre = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colturno_id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colturno_name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldepartamento = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldesde = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colhasta = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsemana = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -56,15 +57,14 @@ namespace LOSA.ACS.RRHH
             this.colsalida_sabado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colentrada_domingo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsalida_domingo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colStartOfWeek = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colEndOfWeek = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dt_final = new DevExpress.XtraEditors.DateEdit();
             this.dt_inicial = new DevExpress.XtraEditors.DateEdit();
             this.lblFechas = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnexport = new DevExpress.XtraEditors.SimpleButton();
-            this.coldepartamento = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colStartOfWeek = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colEndOfWeek = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRRHH_reportes1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -81,10 +81,10 @@ namespace LOSA.ACS.RRHH
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl1.DataMember = "resumen_asistencia";
             this.gridControl1.DataSource = this.dsRRHH_reportes1;
-            this.gridControl1.Location = new System.Drawing.Point(2, 101);
+            this.gridControl1.Location = new System.Drawing.Point(2, 79);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1126, 410);
+            this.gridControl1.Size = new System.Drawing.Size(1126, 432);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -172,6 +172,16 @@ namespace LOSA.ACS.RRHH
             this.colturno_name.Name = "colturno_name";
             this.colturno_name.OptionsColumn.AllowEdit = false;
             this.colturno_name.Width = 42;
+            // 
+            // coldepartamento
+            // 
+            this.coldepartamento.Caption = "Departamento";
+            this.coldepartamento.FieldName = "departamento";
+            this.coldepartamento.Name = "coldepartamento";
+            this.coldepartamento.OptionsColumn.AllowEdit = false;
+            this.coldepartamento.Visible = true;
+            this.coldepartamento.VisibleIndex = 2;
+            this.coldepartamento.Width = 68;
             // 
             // coldesde
             // 
@@ -352,6 +362,22 @@ namespace LOSA.ACS.RRHH
             this.colsalida_domingo.VisibleIndex = 18;
             this.colsalida_domingo.Width = 82;
             // 
+            // colStartOfWeek
+            // 
+            this.colStartOfWeek.FieldName = "StartOfWeek";
+            this.colStartOfWeek.Name = "colStartOfWeek";
+            this.colStartOfWeek.OptionsColumn.AllowEdit = false;
+            this.colStartOfWeek.Visible = true;
+            this.colStartOfWeek.VisibleIndex = 3;
+            // 
+            // colEndOfWeek
+            // 
+            this.colEndOfWeek.FieldName = "EndOfWeek";
+            this.colEndOfWeek.Name = "colEndOfWeek";
+            this.colEndOfWeek.OptionsColumn.AllowEdit = false;
+            this.colEndOfWeek.Visible = true;
+            this.colEndOfWeek.VisibleIndex = 4;
+            // 
             // dt_final
             // 
             this.dt_final.EditValue = null;
@@ -400,7 +426,7 @@ namespace LOSA.ACS.RRHH
             // 
             this.lblFechas.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.lblFechas.Appearance.Options.UseFont = true;
-            this.lblFechas.Location = new System.Drawing.Point(7, 20);
+            this.lblFechas.Location = new System.Drawing.Point(7, 25);
             this.lblFechas.Name = "lblFechas";
             this.lblFechas.Size = new System.Drawing.Size(123, 21);
             this.lblFechas.TabIndex = 14;
@@ -410,7 +436,7 @@ namespace LOSA.ACS.RRHH
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(7, 49);
+            this.labelControl1.Location = new System.Drawing.Point(7, 53);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(114, 21);
             this.labelControl1.TabIndex = 15;
@@ -421,9 +447,9 @@ namespace LOSA.ACS.RRHH
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(346, 26);
+            this.simpleButton1.Location = new System.Drawing.Point(337, 20);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(143, 47);
+            this.simpleButton1.Size = new System.Drawing.Size(143, 53);
             this.simpleButton1.TabIndex = 16;
             this.simpleButton1.Text = "Generar reporte";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -433,38 +459,12 @@ namespace LOSA.ACS.RRHH
             this.btnexport.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnexport.Appearance.Options.UseFont = true;
             this.btnexport.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnexport.ImageOptions.Image")));
-            this.btnexport.Location = new System.Drawing.Point(495, 26);
+            this.btnexport.Location = new System.Drawing.Point(486, 20);
             this.btnexport.Name = "btnexport";
-            this.btnexport.Size = new System.Drawing.Size(146, 47);
+            this.btnexport.Size = new System.Drawing.Size(146, 54);
             this.btnexport.TabIndex = 19;
             this.btnexport.Text = "Exportar a excel";
             this.btnexport.Click += new System.EventHandler(this.btnexport_Click);
-            // 
-            // coldepartamento
-            // 
-            this.coldepartamento.Caption = "Departamento";
-            this.coldepartamento.FieldName = "departamento";
-            this.coldepartamento.Name = "coldepartamento";
-            this.coldepartamento.OptionsColumn.AllowEdit = false;
-            this.coldepartamento.Visible = true;
-            this.coldepartamento.VisibleIndex = 2;
-            this.coldepartamento.Width = 68;
-            // 
-            // colStartOfWeek
-            // 
-            this.colStartOfWeek.FieldName = "StartOfWeek";
-            this.colStartOfWeek.Name = "colStartOfWeek";
-            this.colStartOfWeek.OptionsColumn.AllowEdit = false;
-            this.colStartOfWeek.Visible = true;
-            this.colStartOfWeek.VisibleIndex = 3;
-            // 
-            // colEndOfWeek
-            // 
-            this.colEndOfWeek.FieldName = "EndOfWeek";
-            this.colEndOfWeek.Name = "colEndOfWeek";
-            this.colEndOfWeek.OptionsColumn.AllowEdit = false;
-            this.colEndOfWeek.Visible = true;
-            this.colEndOfWeek.VisibleIndex = 4;
             // 
             // frmReporteAsistencia
             // 

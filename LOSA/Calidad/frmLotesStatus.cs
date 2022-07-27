@@ -1611,8 +1611,6 @@ namespace LOSA.Calidad
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //UpdateEstado(1);
-
-         
             UpdateStatusTarimas(1);
         }
 
