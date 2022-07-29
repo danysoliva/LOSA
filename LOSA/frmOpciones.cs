@@ -1,4 +1,5 @@
 ﻿using ACS.Classes;
+using LOSA.ACS.RRHH;
 using LOSA.AlmacenesExterno;
 using LOSA.Calidad;
 using LOSA.Calidad.Revision_Sanidad;
@@ -933,6 +934,15 @@ namespace LOSA
         private void xtraTabControl1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void simpleButton36_Click(object sender, EventArgs e)
+        {
+            frmReporteAsistencia frm = new frmReporteAsistencia(this.UsuarioLogeado);
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+
+            frm.Show();
         }
     }
 }

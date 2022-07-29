@@ -43,7 +43,7 @@ namespace LOSA.Calidad.Parametros
         {
             int Maximo = 0;
             int minimo = 0;
-            foreach (int  item in Tarimas)
+            foreach (int item in Tarimas)
             {
                 if (Maximo == 0)
                 {
@@ -68,7 +68,6 @@ namespace LOSA.Calidad.Parametros
                         minimo = item;
                     }
                 }
-
             }
 
             string query = @"sp_get_rango_codigo_tarima_by_id";
@@ -93,7 +92,6 @@ namespace LOSA.Calidad.Parametros
             }
             catch (Exception ex)
             {
-
                 CajaDialogo.Error(ex.Message);
             }
                      
