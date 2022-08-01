@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
@@ -50,7 +51,7 @@
             this.colseleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.cbMateriaPrima = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.materiaprimaBindingSource = new System.Windows.Forms.BindingSource();
+            this.materiaprimaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gvMateriaPrima = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colitemcode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colitemdescrip = new DevExpress.XtraGrid.Columns.GridColumn();

@@ -22,7 +22,9 @@ namespace LOSA.RecuentoInventario
         {
             InitializeComponent();
             dsParametro = pdsParametro;
-            
+            radioGroupTipoTransaccion.EditValue = 2;
+
+
         }
 
         private void gridView1_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)
@@ -59,7 +61,7 @@ namespace LOSA.RecuentoInventario
             bool Exito = false;
             DataOperations dp = new DataOperations();
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-            int TiempoP = 2000;
+            int TiempoP = 1000;
             SplashForm frmProceso = new SplashForm();
             try
             {
@@ -71,7 +73,7 @@ namespace LOSA.RecuentoInventario
                     {
                         if (row.seleccionar)
                         {
-                            string query = @"sp_eliminar_tarima";
+                            string query = @"sp_revivir_tarima";
                             SqlCommand cmd = new SqlCommand(query, cn);
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.AddWithValue("@id_tarima", row.id);
@@ -101,7 +103,7 @@ namespace LOSA.RecuentoInventario
                     {
                         if (row.seleccionar)
                         {
-                            string query = @"sp_revivir_tarima";
+                            string query = @"sp_eliminar_tarima";
                             SqlCommand cmd = new SqlCommand(query, cn);
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.AddWithValue("@id_tarima", row.id);

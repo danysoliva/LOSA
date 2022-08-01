@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmAlmacenesExternosDefinirLotes));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -53,7 +54,7 @@
             this.ceSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.colbodega = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grdbodega = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.warehouseBindingSource = new System.Windows.Forms.BindingSource();
+            this.warehouseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.colrow = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCodigoBodega = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtCantIngresar = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
