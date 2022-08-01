@@ -63,6 +63,36 @@ namespace LOSA.Clases
             }
             return Recuperado;
         }
+        //
+        public bool Get_if_mp_is_granel(int pIdRM)
+        {
+            bool r = false;
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_si_mp_is_granel", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_mp_is_mp_granel", pIdRM);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    int i = dr.GetInt32(0);
+                    if (i > 0)
+                        r = true;
+                }
+                dr.Close();
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                r = false;
+                CajaDialogo.Error(ec.Message);
+            }
+            return r;
+        }
 
         public bool RecuperarRegistroFromID_pt(int pIdPT)
         {
