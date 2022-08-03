@@ -690,7 +690,7 @@ namespace LOSA
 
         private void simpleButton18_Click(object sender, EventArgs e)
         {
-            frmReporteExterno frm = new frmReporteExterno();
+            frmReporteExterno frm = new frmReporteExterno(this.UsuarioLogeado);
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }

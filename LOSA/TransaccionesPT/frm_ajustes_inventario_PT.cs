@@ -106,6 +106,12 @@ namespace LOSA.TransaccionesPT
 
 
 
-        }
+        }//btnEjecutar_Click
+
+
+
+
+
+
     }
 }

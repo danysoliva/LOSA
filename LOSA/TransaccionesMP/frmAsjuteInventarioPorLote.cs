@@ -24,13 +24,94 @@ namespace LOSA.TransaccionesMP
         private string cardcode; //Codigo de Proveedor
         UserLogin UsuarioLogueado;
         private decimal FactorUnidades;
+        MateriaPrima MateriaPrimaActual;
         public frmAsjuteInventarioPorLote(UserLogin pUserLogin)
         {
             InitializeComponent();
             UsuarioLogueado = pUserLogin;
             radioLoteExistente.Checked = true;
             LoadPresentaciones();
+        }
 
+        public frmAsjuteInventarioPorLote(UserLogin pUserLogin, int pIdMP, int id_lote_alosy, string pLote)
+        {
+            InitializeComponent();
+            MateriaPrima MateriaPrimaActual = new MateriaPrima();
+            UsuarioLogueado = pUserLogin;
+            radioLoteExistente.Checked = true;
+            LoadPresentaciones();
+            if (MateriaPrimaActual.RecuperarRegistroFromID_RM(pIdMP))
+            {
+                Id_MP = pIdMP;
+                txtMP_Name.Text = MateriaPrimaActual.NameComercial;
+                radioLoteExistente.Checked = true;
+                radioLoteNuevo.Checked = false;
+                SearchLoteAuto(pIdMP, pLote);
+
+                //frmLotePorMP frm = new frmLotePorMP(Id_MP);
+                //if (this.MdiParent != null)
+                //{
+                //    frm.FormBorderStyle = FormBorderStyle.Sizable;
+                //}
+                //if (frm.ShowDialog() == DialogResult.OK)
+                //{
+                //    txtNumLote.Text = frm.Lote;
+                //    Id_Lote_Alosy = frm.Id_Lote;
+                //    gridLookUpEditPresentacion.EditValue = frm.Id_UnidadMedida;
+                //    Numero_transaccion = frm.Num_ingreso;
+                //    FactorUnidades = frm.Factor;
+
+                //    txtCantidadUnidades.Focus();
+                //}
+            }
+        }
+
+        void SearchLoteAuto(int pidmp, string plote_)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand("sp_get_lotes_for_mp_from_lot_and_id_mp", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_mp", pidmp);
+                cmd.Parameters.AddWithValue("@plote", plote_);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    Id_Lote_Alosy = dr.GetInt32(2);
+                    if (Id_Lote_Alosy > 0)
+                    {
+                        //txtLoteNuevo.Enabled = true;
+                        //txtNumLote.Enabled= false;
+                        MateriaPrima mat1 = new MateriaPrima();
+                        if (mat1.RecuperarRegistroFromID_RM(pidmp))
+                        {
+                            ItemCode = mat1.CodeMP_SAP;//Codigo MP de SAP
+                            MateriaPrimaActual = mat1;
+                        }
+                        txtLoteNuevo.Text = txtNumLote.Text = dr.GetString(0);
+                        Numero_transaccion = dr.GetInt32(1); // Numero de Ingresp
+
+                        factorValue = dr.GetDecimal(5);
+                        Id_Presentacion = dr.GetInt32(6);
+                        Id_MP = pidmp;
+                        //cardcode; //Codigo de Proveedor
+                    }
+                    else
+                    {
+                        //txtLoteNuevo.Enabled = false;
+                        //txtNumLote.Enabled = true;
+                    }
+                }
+                dr.Close();
+                cn.Close();
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
         }
 
 

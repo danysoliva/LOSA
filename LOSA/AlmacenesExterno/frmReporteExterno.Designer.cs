@@ -30,11 +30,11 @@ namespace LOSA.AlmacenesExterno
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReporteExterno));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtmp = new DevExpress.XtraEditors.TextEdit();
@@ -75,7 +75,9 @@ namespace LOSA.AlmacenesExterno
             this.colcodigoMp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colproducCodigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfechaproduccion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colseleccion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.cmdAjusteInv = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.btnvertodas = new DevExpress.XtraEditors.SimpleButton();
@@ -107,7 +109,7 @@ namespace LOSA.AlmacenesExterno
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(4, 1);
+            this.labelControl1.Location = new System.Drawing.Point(6, 8);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(281, 30);
             this.labelControl1.TabIndex = 1;
@@ -126,7 +128,7 @@ namespace LOSA.AlmacenesExterno
             // txtmp
             // 
             this.txtmp.Enabled = false;
-            this.txtmp.Location = new System.Drawing.Point(90, 77);
+            this.txtmp.Location = new System.Drawing.Point(4, 77);
             this.txtmp.Name = "txtmp";
             this.txtmp.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtmp.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -138,7 +140,7 @@ namespace LOSA.AlmacenesExterno
             // txtcodigoMP
             // 
             this.txtcodigoMP.Enabled = false;
-            this.txtcodigoMP.Location = new System.Drawing.Point(2, 77);
+            this.txtcodigoMP.Location = new System.Drawing.Point(105, 52);
             this.txtcodigoMP.Name = "txtcodigoMP";
             this.txtcodigoMP.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtcodigoMP.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -150,7 +152,7 @@ namespace LOSA.AlmacenesExterno
             // simpleButton1
             // 
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(325, 64);
+            this.simpleButton1.Location = new System.Drawing.Point(239, 51);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(120, 48);
             this.simpleButton1.TabIndex = 5;
@@ -163,7 +165,7 @@ namespace LOSA.AlmacenesExterno
             this.btnSalir.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.Appearance.Options.UseFont = true;
             this.btnSalir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.Image")));
-            this.btnSalir.Location = new System.Drawing.Point(1409, 1);
+            this.btnSalir.Location = new System.Drawing.Point(1159, 1);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(121, 40);
             this.btnSalir.TabIndex = 0;
@@ -180,7 +182,7 @@ namespace LOSA.AlmacenesExterno
             this.grd_resumen.Name = "grd_resumen";
             this.grd_resumen.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnCambiodeBodega});
-            this.grd_resumen.Size = new System.Drawing.Size(664, 292);
+            this.grd_resumen.Size = new System.Drawing.Size(493, 292);
             this.grd_resumen.TabIndex = 6;
             this.grd_resumen.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_resumen});
@@ -252,13 +254,13 @@ namespace LOSA.AlmacenesExterno
             // coltotalkg
             // 
             this.coltotalkg.Caption = "Kilogramos";
-            this.coltotalkg.DisplayFormat.FormatString = "{0:0.##.##} Kg.";
+            this.coltotalkg.DisplayFormat.FormatString = "{0:##,###,##0.00} Kg";
             this.coltotalkg.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.coltotalkg.FieldName = "totalkg";
             this.coltotalkg.Name = "coltotalkg";
             this.coltotalkg.OptionsColumn.AllowEdit = false;
             this.coltotalkg.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "totalkg", "{0:0.##.##} Kg.")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "totalkg", "{0:##,###,##0.00} Kg")});
             this.coltotalkg.Visible = true;
             this.coltotalkg.VisibleIndex = 2;
             this.coltotalkg.Width = 162;
@@ -266,13 +268,13 @@ namespace LOSA.AlmacenesExterno
             // coludtotal
             // 
             this.coludtotal.Caption = "Unidades";
-            this.coludtotal.DisplayFormat.FormatString = "{0:0.##.##} Ud.";
+            this.coludtotal.DisplayFormat.FormatString = "{0:##,###,##0} Ud";
             this.coludtotal.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.coludtotal.FieldName = "udtotal";
             this.coludtotal.Name = "coludtotal";
             this.coludtotal.OptionsColumn.AllowEdit = false;
             this.coludtotal.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "udtotal", "{0:0.##.##} Ud.")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "udtotal", "{0:##,###,##0} Ud")});
             this.coludtotal.Visible = true;
             this.coludtotal.VisibleIndex = 3;
             this.coludtotal.Width = 78;
@@ -288,16 +290,14 @@ namespace LOSA.AlmacenesExterno
             this.colVer.Caption = "Ver Detalle";
             this.colVer.ColumnEdit = this.btnCambiodeBodega;
             this.colVer.Name = "colVer";
-            this.colVer.Visible = true;
-            this.colVer.VisibleIndex = 4;
             this.colVer.Width = 95;
             // 
             // btnCambiodeBodega
             // 
             this.btnCambiodeBodega.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
             this.btnCambiodeBodega.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnCambiodeBodega.Name = "btnCambiodeBodega";
             this.btnCambiodeBodega.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -369,13 +369,13 @@ namespace LOSA.AlmacenesExterno
             // coltotalkg1
             // 
             this.coltotalkg1.Caption = "Kilogramos";
-            this.coltotalkg1.DisplayFormat.FormatString = "{0:0.##.##} Kg.";
+            this.coltotalkg1.DisplayFormat.FormatString = "{0:##,###,##0.00} Kg";
             this.coltotalkg1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.coltotalkg1.FieldName = "totalkg";
             this.coltotalkg1.Name = "coltotalkg1";
             this.coltotalkg1.OptionsColumn.AllowEdit = false;
             this.coltotalkg1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "totalkg", "{0:0.##.##} Kg.")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "totalkg", "{0:##,###,##0.00} Kg")});
             this.coltotalkg1.Visible = true;
             this.coltotalkg1.VisibleIndex = 2;
             this.coltotalkg1.Width = 82;
@@ -383,13 +383,13 @@ namespace LOSA.AlmacenesExterno
             // coludtotal1
             // 
             this.coludtotal1.Caption = "Unidades";
-            this.coludtotal1.DisplayFormat.FormatString = "{0:0.##.##} Ud.";
+            this.coludtotal1.DisplayFormat.FormatString = "{0:##,###,##0} Ud";
             this.coludtotal1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.coludtotal1.FieldName = "udtotal";
             this.coludtotal1.Name = "coludtotal1";
             this.coludtotal1.OptionsColumn.AllowEdit = false;
             this.coludtotal1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "udtotal", "{0:0.##.##} Ud.")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "udtotal", "{0:##,###,##0} Ud")});
             this.coludtotal1.Visible = true;
             this.coludtotal1.VisibleIndex = 3;
             this.coludtotal1.Width = 87;
@@ -398,7 +398,7 @@ namespace LOSA.AlmacenesExterno
             // 
             this.lblBodega.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBodega.Appearance.Options.UseFont = true;
-            this.lblBodega.Location = new System.Drawing.Point(8, 126);
+            this.lblBodega.Location = new System.Drawing.Point(8, 132);
             this.lblBodega.Name = "lblBodega";
             this.lblBodega.Size = new System.Drawing.Size(118, 20);
             this.lblBodega.TabIndex = 8;
@@ -407,7 +407,7 @@ namespace LOSA.AlmacenesExterno
             // txtBodega
             // 
             this.txtBodega.Enabled = false;
-            this.txtBodega.Location = new System.Drawing.Point(4, 152);
+            this.txtBodega.Location = new System.Drawing.Point(132, 130);
             this.txtBodega.Name = "txtBodega";
             this.txtBodega.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtBodega.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -419,7 +419,7 @@ namespace LOSA.AlmacenesExterno
             // txtbodegaName
             // 
             this.txtbodegaName.Enabled = false;
-            this.txtbodegaName.Location = new System.Drawing.Point(90, 152);
+            this.txtbodegaName.Location = new System.Drawing.Point(4, 158);
             this.txtbodegaName.Name = "txtbodegaName";
             this.txtbodegaName.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbodegaName.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -438,7 +438,7 @@ namespace LOSA.AlmacenesExterno
             this.grd_data.Location = new System.Drawing.Point(8, 52);
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
-            this.grd_data.Size = new System.Drawing.Size(1507, 296);
+            this.grd_data.Size = new System.Drawing.Size(1268, 296);
             this.grd_data.TabIndex = 12;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
@@ -482,12 +482,14 @@ namespace LOSA.AlmacenesExterno
             this.colmpNombre,
             this.colcodigoMp,
             this.colproducCodigo,
-            this.colfechaproduccion});
+            this.colfechaproduccion,
+            this.colseleccion});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
             this.grdv_data.OptionsView.ShowFooter = true;
             this.grdv_data.OptionsView.ShowGroupPanel = false;
+            this.grdv_data.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.grdv_data_CellValueChanging);
             // 
             // coloc1
             // 
@@ -532,13 +534,13 @@ namespace LOSA.AlmacenesExterno
             // coltotalkg2
             // 
             this.coltotalkg2.Caption = "Kilogramos";
-            this.coltotalkg2.DisplayFormat.FormatString = "{0:0.##.##} Kg.";
+            this.coltotalkg2.DisplayFormat.FormatString = "{0:##,###,##0.00} Kg";
             this.coltotalkg2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.coltotalkg2.FieldName = "totalkg";
             this.coltotalkg2.Name = "coltotalkg2";
             this.coltotalkg2.OptionsColumn.AllowEdit = false;
             this.coltotalkg2.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "totalkg", "{0:0.##.##} Kg.")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "totalkg", "{0:##,###,##0.00} Kg")});
             this.coltotalkg2.Visible = true;
             this.coltotalkg2.VisibleIndex = 4;
             this.coltotalkg2.Width = 77;
@@ -546,13 +548,13 @@ namespace LOSA.AlmacenesExterno
             // coludtotal2
             // 
             this.coludtotal2.Caption = "Unidades";
-            this.coludtotal2.DisplayFormat.FormatString = "{0:0.##.##} Ud.";
+            this.coludtotal2.DisplayFormat.FormatString = "{0:##,###,##0} Ud";
             this.coludtotal2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.coludtotal2.FieldName = "udtotal";
             this.coludtotal2.Name = "coludtotal2";
             this.coludtotal2.OptionsColumn.AllowEdit = false;
             this.coludtotal2.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "udtotal", "{0:0.##.##} Ud.")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "udtotal", "{0:##,###,##0} Ud")});
             this.coludtotal2.Visible = true;
             this.coludtotal2.VisibleIndex = 5;
             this.coludtotal2.Width = 88;
@@ -625,6 +627,13 @@ namespace LOSA.AlmacenesExterno
             this.colfechaproduccion.VisibleIndex = 6;
             this.colfechaproduccion.Width = 100;
             // 
+            // colseleccion
+            // 
+            this.colseleccion.FieldName = "seleccion";
+            this.colseleccion.Name = "colseleccion";
+            this.colseleccion.Visible = true;
+            this.colseleccion.VisibleIndex = 13;
+            // 
             // panelControl1
             // 
             this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -633,12 +642,26 @@ namespace LOSA.AlmacenesExterno
             this.panelControl1.Appearance.BackColor = System.Drawing.Color.Teal;
             this.panelControl1.Appearance.Options.UseBackColor = true;
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl1.Controls.Add(this.cmdAjusteInv);
             this.panelControl1.Controls.Add(this.labelControl3);
             this.panelControl1.Controls.Add(this.grd_data);
             this.panelControl1.Location = new System.Drawing.Point(4, 371);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1524, 359);
+            this.panelControl1.Size = new System.Drawing.Size(1285, 359);
             this.panelControl1.TabIndex = 13;
+            // 
+            // cmdAjusteInv
+            // 
+            this.cmdAjusteInv.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdAjusteInv.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdAjusteInv.Appearance.Options.UseFont = true;
+            this.cmdAjusteInv.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdAjusteInv.ImageOptions.Image")));
+            this.cmdAjusteInv.Location = new System.Drawing.Point(1155, 6);
+            this.cmdAjusteInv.Name = "cmdAjusteInv";
+            this.cmdAjusteInv.Size = new System.Drawing.Size(121, 40);
+            this.cmdAjusteInv.TabIndex = 14;
+            this.cmdAjusteInv.Text = "Ajuste Inv";
+            this.cmdAjusteInv.Click += new System.EventHandler(this.cmdAjusteInv_Click);
             // 
             // labelControl3
             // 
@@ -666,14 +689,14 @@ namespace LOSA.AlmacenesExterno
             this.groupControl1.Controls.Add(this.txtmp);
             this.groupControl1.Location = new System.Drawing.Point(4, 44);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(452, 321);
+            this.groupControl1.Size = new System.Drawing.Size(368, 321);
             this.groupControl1.TabIndex = 14;
             this.groupControl1.Text = "Seleccion Efectiva";
             // 
             // btnvertodas
             // 
             this.btnvertodas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnvertodas.ImageOptions.Image")));
-            this.btnvertodas.Location = new System.Drawing.Point(325, 139);
+            this.btnvertodas.Location = new System.Drawing.Point(239, 132);
             this.btnvertodas.Name = "btnvertodas";
             this.btnvertodas.Size = new System.Drawing.Size(120, 48);
             this.btnvertodas.TabIndex = 11;
@@ -682,24 +705,23 @@ namespace LOSA.AlmacenesExterno
             // 
             // groupControl2
             // 
-            this.groupControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.groupControl2.AppearanceCaption.Options.UseFont = true;
             this.groupControl2.Controls.Add(this.grd_resumen);
-            this.groupControl2.Location = new System.Drawing.Point(455, 44);
+            this.groupControl2.Location = new System.Drawing.Point(378, 44);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(668, 321);
+            this.groupControl2.Size = new System.Drawing.Size(497, 321);
             this.groupControl2.TabIndex = 15;
             this.groupControl2.Text = "Inventario de Bodegas Externas";
             // 
             // groupControl3
             // 
-            this.groupControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupControl3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupControl3.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.groupControl3.AppearanceCaption.Options.UseFont = true;
             this.groupControl3.Controls.Add(this.grd_transito);
-            this.groupControl3.Location = new System.Drawing.Point(1129, 44);
+            this.groupControl3.Location = new System.Drawing.Point(881, 44);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Size = new System.Drawing.Size(399, 321);
             this.groupControl3.TabIndex = 16;
@@ -709,7 +731,7 @@ namespace LOSA.AlmacenesExterno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1531, 731);
+            this.ClientSize = new System.Drawing.Size(1292, 731);
             this.Controls.Add(this.groupControl3);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
@@ -796,5 +818,7 @@ namespace LOSA.AlmacenesExterno
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraGrid.Columns.GridColumn colfechaproduccion;
         private DevExpress.XtraEditors.SimpleButton btnvertodas;
+        private DevExpress.XtraEditors.SimpleButton cmdAjusteInv;
+        private DevExpress.XtraGrid.Columns.GridColumn colseleccion;
     }
 }

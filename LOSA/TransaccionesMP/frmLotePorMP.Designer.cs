@@ -46,8 +46,8 @@ namespace LOSA.TransaccionesMP
             this.colid_tipoIngreso = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.colunidad_medida = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gcLotePorMP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMP)).BeginInit();
@@ -176,6 +176,16 @@ namespace LOSA.TransaccionesMP
             this.btnSeleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnSeleccionar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnSeleccionar_ButtonClick);
             // 
+            // colunidad_medida
+            // 
+            this.colunidad_medida.Caption = "Presentacion";
+            this.colunidad_medida.FieldName = "unidad_medida";
+            this.colunidad_medida.Name = "colunidad_medida";
+            this.colunidad_medida.OptionsColumn.AllowEdit = false;
+            this.colunidad_medida.Visible = true;
+            this.colunidad_medida.VisibleIndex = 3;
+            this.colunidad_medida.Width = 144;
+            // 
             // btnAtras
             // 
             this.btnAtras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -192,16 +202,6 @@ namespace LOSA.TransaccionesMP
             this.btnAtras.TabIndex = 8;
             this.btnAtras.Text = "Atrás";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
-            // 
-            // colunidad_medida
-            // 
-            this.colunidad_medida.Caption = "Presentacion";
-            this.colunidad_medida.FieldName = "unidad_medida";
-            this.colunidad_medida.Name = "colunidad_medida";
-            this.colunidad_medida.OptionsColumn.AllowEdit = false;
-            this.colunidad_medida.Visible = true;
-            this.colunidad_medida.VisibleIndex = 3;
-            this.colunidad_medida.Width = 144;
             // 
             // frmLotePorMP
             // 

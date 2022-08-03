@@ -102,7 +102,7 @@ namespace LOSA.TransaccionesPT
                         cmd.ExecuteNonQuery();
                     }
                     query = @"sp_cambiar_ejecutado_ajuste_inventario";
-                   cmd = new SqlCommand(query,cn);
+                    cmd = new SqlCommand(query,cn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id_h", id_ajuste);
                     cmd.ExecuteNonQuery();
