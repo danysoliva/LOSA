@@ -60,6 +60,7 @@ namespace LOSA.RecuentoInventario
             // 
             // radioGroupTipoTransaccion
             // 
+            this.radioGroupTipoTransaccion.EditValue = true;
             this.radioGroupTipoTransaccion.Location = new System.Drawing.Point(133, 50);
             this.radioGroupTipoTransaccion.Name = "radioGroupTipoTransaccion";
             this.radioGroupTipoTransaccion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -69,6 +70,7 @@ namespace LOSA.RecuentoInventario
             this.radioGroupTipoTransaccion.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(1, "Entrada"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(2, "Salida")});
+            this.radioGroupTipoTransaccion.Properties.ReadOnly = true;
             this.radioGroupTipoTransaccion.Size = new System.Drawing.Size(192, 25);
             this.radioGroupTipoTransaccion.TabIndex = 0;
             // 

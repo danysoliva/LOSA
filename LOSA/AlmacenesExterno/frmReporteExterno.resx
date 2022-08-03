@@ -166,7 +166,7 @@
   <metadata name="dsReporteAlmacenExterno.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="editorButtonImageOptions1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="editorButtonImageOptions3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
         WQAAAFkBqp2phgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAJHSURBVDhPY1A1
@@ -180,6 +180,20 @@
         /x1fBMdLq+J+aytIQ2IABPRdvS/X7Tn1H4ZBgRgV4Po/M9rvf+G8Zf97q7JQDDg/p+q/j6VuDlQ7GEiJ
         KasFSKkhsIul4aKJ+dHvFlYnfToys/YjsgFfd0/7n+BugRmY6EBdRkzP19bw4Oyq5PdTSuPf/zg0D2TA
         378nlyzY1ZvnDFVGFJDn5OQ0a0kP2fX/6CIdqBgUMDAAAKwo4oRjcRMzAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="cmdAjusteInv.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        sQAAALEBxi1JjQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAHHSURBVFhHxddJ
+        SsRAFMbxIDjhsBLEpcNOF15G0Wt4BEH0BrZ6A0+hC8eNww10py5VUDf6/YtUY3e/TlUl1fSDH4Skknqd
+        pF5eFwkxI9tyIrfyKj8ltm/kWLaEsdliQQ7lU34jMZZEV6R2TMqufIg1SQzuzoGMS1KQ+aNYF63jQuYl
+        KtblRawLNfEsa1IZ/PJBTO49Sd87MSF3Yp2Y06WY7wQvnHVCFRK+79oXY186gqWW+rYz8UjpodwX61uW
+        pR2sc2tglVPxwbY1pgpFy8WspBQZr2kC3PFpceXVGhDSNAFsiiuZ1sGQHAkcifuwWAdDciRwJcXbvx0W
+        lhoTdNsRH2xbY0JLlKLnloR1EH6p1Y3QEv2S4ScQegRcwLq9MY8gVKDcIxj6S0hFsg6G5EigJa6Hsw6G
+        5EhgQ1w5fC93pGiaQLsUE3WqYdMEXBX0QSdEA2kN7KfJ55jltygdQfdqDa7CxKmTY096YlTOxTohJzrk
+        vm06DSPdq3ViDpVNqQ9a50EkweSrEhVzcibWhepI+mPig+dE91r1sQrhXF64MakdS0K5TumaKWys856l
+        1iSoWvRw1O9r4UvGLwTb7KO7prxOSUQUxR+4zdDMk5Q7GwAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="btnvertodas.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -200,4 +214,7 @@
         rdyaHFWf3XJh12p1RfIvS5jJ3MrKNOTWFA0bYZwgJSC31mBoNL8ABl0pV/WSmGUAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>59</value>
+  </metadata>
 </root>

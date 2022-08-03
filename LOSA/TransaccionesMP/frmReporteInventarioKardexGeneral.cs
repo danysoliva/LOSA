@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using LOSA.Clases;
 using ACS.Classes;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace LOSA.TransaccionesMP
 {
@@ -106,6 +107,19 @@ namespace LOSA.TransaccionesMP
         private void btnAjustePorLote_Click(object sender, EventArgs e)
         {
             frmAsjuteInventarioPorLote frm = new frmAsjuteInventarioPorLote(UsuarioLogeado);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                load_data();
+            }
+        }
+
+        private void buttonEdit_AjusteINV_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            //AJUSTE de KARDEX General
+            var gridView = (GridView)grd_data.FocusedView;
+            var row = (dsTarima.informacionRow)gridView.GetFocusedDataRow();
+
+            frmAsjuteInventarioPorLote frm = new frmAsjuteInventarioPorLote(UsuarioLogeado, row.id_mp, 0, row.lote);
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 load_data();

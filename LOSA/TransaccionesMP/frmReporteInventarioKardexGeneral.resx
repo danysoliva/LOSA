@@ -141,25 +141,6 @@
   <metadata name="dsTarima.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="editorButtonImageOptions1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        hQAAAIUB4uz/wQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAALtSURBVEhL7ZTd
-        S5NhGMbFgw76oKP+jeik/yOwE10bzm3qpiNwm7oVNpspuqaRHdRBJkFYYgdRVixc+9BO/GIlUyeGpqJJ
-        BCJlidvdfT0+z3jd62SCh11wM3if9/1d9577oyRffr+/1OPxlDU2Ng7w71eOHY6fHEmOoNvtvihfPb5c
-        LtdlCaIjIsMm/U6n84L8rDhxxlf4498KdLP3EbW9iVFH/DPdiUxS6+Aweds6ckYOh2PFZrNdkp8fLZm5
-        gDcH2qlzcol61kkX3at75H/3iTxeLzU0NJDJZNrmxM5JzOGSdz6t4KHF7UPhKkIc9uR38jQ1kdlsJovF
-        Epaow8XgMsA5k4KZ58f1pT1yfpiimpoaMhgM2erq6vMSpxfDn8MAd54Pwr/xhe7TradDB577vmWoIv2H
-        7HV1VF5eTlyLdonTi+FoRQpwQbUQwDsSM6KgKO7d2R/UvbIrzm6sZKgs/ZfsvY+FAV9TXOL0YoAoLrpF
-        a+Dt6s51jIrAq4g4cy3vCYPagbfCgGuRlji9+EMMEbV/nDpg0NL/gppVW3J9fMF7/M60ODMv7goDa9+Q
-        MvgicXoxQAwW+lxrgAimNoWBr6sn96x1NSvgCGNTizCoqqp6L3F6MSAICLJFn2sNcOeB19Hc9XWuZali
-        YT97U2pLwBFcZIPE6YXdwgYZmGCI0OdaExXIXMGvcphDDwXcaDTuMKZ0n1ZA2C0wwIRiiNDnaEV0i5sL
-        qu5cwS2D4Vz29fX1tyWmsLC47Hb7Mq8MMaEYIvS5gqrAtajMEUgqHo/vTExMFB40JSwu7BaMPyYUQ+R4
-        0Ee1z4bJ9uRlrqBaeDgcFlG0CW/Is9gtGH8tTBu4c74WfyKR+AX42NgYRSKR4k0g7BaMPyaU/9FCZWXl
-        DFrRarVek6+UbGxsnEkmk+tzc3OUSqUoGo0ez6QYEdEpNlhSJrFY7L9JYTHsNBusKRPUZHR0dEsen4zy
-        TUZGRkgenZykSXp+fj47Pj4++w+rXIXCKWnK3AAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="btnExcel.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAB10RVh0VGl0

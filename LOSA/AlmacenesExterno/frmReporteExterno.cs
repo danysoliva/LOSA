@@ -13,6 +13,7 @@ using System.Data.SqlClient;
 using ACS.Classes;
 using LOSA.Clases;
 using DevExpress.XtraGrid.Views.Grid;
+using LOSA.AlmacenesExterno.AjusteInvAlmaExterno;
 
 namespace LOSA.AlmacenesExterno
 {
@@ -23,9 +24,11 @@ namespace LOSA.AlmacenesExterno
         public string wshcode = "";
         public string namewhs = "";
 
-        public frmReporteExterno()
+        UserLogin UsuarioLogeado;
+        public frmReporteExterno(UserLogin pUserLogeado)
         {
             InitializeComponent();
+            UsuarioLogeado = pUserLogeado;
             load_Almacenes_ext_init();
         }
        
@@ -207,6 +210,88 @@ namespace LOSA.AlmacenesExterno
             frmvertodasMPinbodega frm = new frmvertodasMPinbodega(namewhs, wshcode);
             frm.MdiParent = this.MdiParent;
             frm.Show();
+        }
+
+        private void cmdAjusteInv_Click(object sender, EventArgs e)
+        {
+            int conta = 0;
+            var gridView = (GridView)grd_data.FocusedView;
+            dsReporteAlmacenExterno.controlBodegaExternaRow row =null;
+            //var row = (dsReporteAlmacenExterno.controlBodegaExternaRow)gridView.GetFocusedDataRow();
+            foreach (dsReporteAlmacenExterno.controlBodegaExternaRow rowy in dsReporteAlmacenExterno.controlBodegaExterna)
+            {
+                if (rowy.seleccion)
+                {
+                    conta++;
+                    row = rowy;
+                }
+            }
+            if (conta <= 0)
+            {
+                CajaDialogo.Error("Debe seleccionar un lote!");
+                return;
+            }
+
+           
+
+            if (row.udtotal > 0)
+            {
+                //Permitimos seguir al ajuste
+                LoteAlmacenExternoD Lote1 = new LoteAlmacenExternoD();
+                Lote1.oc = row.oc;
+                Lote1.factura = row.factura;
+                Lote1.fingreso = row.fingreso;
+                Lote1.lote = row.lote;
+                Lote1.totalkg = row.totalkg;
+                Lote1.udtotal = row.udtotal;
+                Lote1.fvencimiento = row.fvencimiento;
+                Lote1.diastovencimiento = row.diastovencimiento;
+                Lote1.diasalmacenado = row.diasalmacenado;
+                Lote1.mpNombre = row.mpNombre;
+                Lote1.codigoMp = row.codigoMp;
+                Lote1.producCodigo = row.producCodigo;
+                Lote1.fechaproduccion = row.fechaproduccion;
+                Lote1.id_mp = row.id_mp;
+                Lote1.id_lote_externo = row.id_lote_externo;
+                Lote1.id_presentacion = row.id_presentacion;
+                Lote1.id_ingreso_lote = row.id_ingreso_lote;
+                Lote1.BodegaIn = row.bodega_in;
+                Lote1.id_detalle = row.id_detalle;
+                frmAddAjusteAlmacenExterno frm = new frmAddAjusteAlmacenExterno(Lote1, this.UsuarioLogeado.Id);
+                if(frm.ShowDialog()== DialogResult.OK)
+                {
+                    load_data_con_parametro();
+                    load_InventarioAlmacenExterno_x_MP();
+                }
+            }
+            else
+            {
+                CajaDialogo.Error("No se puede hacer una salida, la cantidad actual es Cero (0)!");
+                return;
+            }
+        }
+
+        private void grdv_data_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            int conta = 0;
+            foreach (dsReporteAlmacenExterno.controlBodegaExternaRow rowy in dsReporteAlmacenExterno.controlBodegaExterna)
+            {
+                if (rowy.seleccion)
+                {
+                    conta++;
+                }
+            }
+
+            if (conta > 0)
+            {
+                foreach (dsReporteAlmacenExterno.controlBodegaExternaRow rowy in dsReporteAlmacenExterno.controlBodegaExterna)
+                {
+                    rowy.seleccion = false;
+                }
+                var gridView = (GridView)grd_data.FocusedView;
+                var row = (dsReporteAlmacenExterno.controlBodegaExternaRow)gridView.GetDataRow(e.RowHandle);
+                row.seleccion = true;
+            }
         }
     }
 }
