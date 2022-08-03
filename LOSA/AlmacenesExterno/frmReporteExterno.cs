@@ -234,7 +234,7 @@ namespace LOSA.AlmacenesExterno
 
            
 
-            if (row.udtotal > 0)
+            if (row.totalkg > 0)
             {
                 //Permitimos seguir al ajuste
                 LoteAlmacenExternoD Lote1 = new LoteAlmacenExternoD();

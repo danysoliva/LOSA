@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmRevisarOC));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.btn = new DevExpress.XtraEditors.SimpleButton();
             this.btnOC = new DevExpress.XtraEditors.ButtonEdit();
             this.label1 = new System.Windows.Forms.Label();
@@ -115,7 +115,7 @@
             this.btn.Appearance.Options.UseFont = true;
             this.btn.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btn.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btn.Location = new System.Drawing.Point(669, 56);
+            this.btn.Location = new System.Drawing.Point(650, 56);
             this.btn.Name = "btn";
             this.btn.Size = new System.Drawing.Size(154, 47);
             this.btn.TabIndex = 31;
@@ -124,16 +124,16 @@
             // 
             // btnOC
             // 
-            this.btnOC.Location = new System.Drawing.Point(145, 63);
+            this.btnOC.Location = new System.Drawing.Point(172, 63);
             this.btnOC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOC.Name = "btnOC";
             this.btnOC.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOC.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions2.SvgImage")));
+            editorButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions1.SvgImage")));
             this.btnOC.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnOC.Properties.ReadOnly = true;
-            this.btnOC.Size = new System.Drawing.Size(271, 38);
+            this.btnOC.Size = new System.Drawing.Size(244, 38);
             this.btnOC.TabIndex = 32;
             this.btnOC.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnOC_ButtonClick);
             this.btnOC.EditValueChanged += new System.EventHandler(this.btnOC_EditValueChanged);
@@ -142,11 +142,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(24, 74);
+            this.label1.Location = new System.Drawing.Point(21, 84);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 17);
+            this.label1.Size = new System.Drawing.Size(178, 17);
             this.label1.TabIndex = 33;
-            this.label1.Text = "Orden Compra:";
+            this.label1.Text = "Orden Compra:_______";
             // 
             // gcIngreso
             // 
@@ -549,21 +549,21 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(21, 110);
+            this.label3.Location = new System.Drawing.Point(21, 112);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(148, 17);
+            this.label3.Size = new System.Drawing.Size(175, 17);
             this.label3.TabIndex = 37;
-            this.label3.Text = "Proveedor:_______";
+            this.label3.Text = "Proveedor:__________";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(21, 134);
+            this.label4.Location = new System.Drawing.Point(21, 142);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(137, 17);
+            this.label4.Size = new System.Drawing.Size(200, 17);
             this.label4.TabIndex = 39;
-            this.label4.Text = "Fecha Documento:";
+            this.label4.Text = "Fecha Documento:_______";
             // 
             // txtDate
             // 
@@ -583,7 +583,7 @@
             // txtComment
             // 
             this.txtComment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtComment.Location = new System.Drawing.Point(650, 130);
+            this.txtComment.Location = new System.Drawing.Point(650, 110);
             this.txtComment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtComment.Name = "txtComment";
             this.txtComment.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F);
@@ -597,7 +597,7 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(545, 131);
+            this.label5.Location = new System.Drawing.Point(530, 171);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(157, 17);
             this.label5.TabIndex = 41;
@@ -624,11 +624,11 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(21, 162);
+            this.label6.Location = new System.Drawing.Point(21, 170);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 17);
+            this.label6.Size = new System.Drawing.Size(200, 17);
             this.label6.TabIndex = 44;
-            this.label6.Text = "Factura:";
+            this.label6.Text = "Factura:_______________";
             // 
             // txtfactura
             // 
@@ -645,6 +645,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1017, 564);
+            this.Controls.Add(this.btnOC);
+            this.Controls.Add(this.txtDate);
             this.Controls.Add(this.txtfactura);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnAtras);
@@ -652,18 +654,15 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtProveedor);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtDate);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.gcIngreso);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnOC);
             this.Controls.Add(this.btn);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "xfrmRevisarOC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "xfrmSeleccionarOC";
+            this.Text = "Ingreso Almacen Externo";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.btnOC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcIngreso)).EndInit();

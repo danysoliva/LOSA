@@ -33,8 +33,8 @@ namespace LOSA.AlmacenesExterno.AjusteInvAlmaExterno
             this.txtMateriaPrimaName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.spinEditPesoKg = new DevExpress.XtraEditors.SpinEdit();
@@ -92,17 +92,6 @@ namespace LOSA.AlmacenesExterno.AjusteInvAlmaExterno
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.radioButton1.Location = new System.Drawing.Point(40, 12);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(71, 21);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.Text = "Entrada";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
@@ -115,6 +104,17 @@ namespace LOSA.AlmacenesExterno.AjusteInvAlmaExterno
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Salida";
             this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.radioButton1.Location = new System.Drawing.Point(40, 12);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(71, 21);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.Text = "Entrada";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // labelControl3
             // 
@@ -165,6 +165,8 @@ namespace LOSA.AlmacenesExterno.AjusteInvAlmaExterno
             this.spinEditUnidades.Properties.Appearance.Options.UseFont = true;
             this.spinEditUnidades.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spinEditUnidades.Properties.IsFloatValue = false;
+            this.spinEditUnidades.Properties.Mask.EditMask = "N00";
             this.spinEditUnidades.Size = new System.Drawing.Size(361, 24);
             this.spinEditUnidades.TabIndex = 7;
             // 
