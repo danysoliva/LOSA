@@ -125,5 +125,23 @@ namespace LOSA.TransaccionesMP
                 load_data();
             }
         }
+
+        private void grdv_data_RowStyle(object sender, RowStyleEventArgs e)
+        {
+            if (e.RowHandle >= 0)
+            {
+                var gridView = (GridView)grd_data.FocusedView;
+                //var row = (dsNotas.notas_resumenRow)gridView.GetFocusedDataRow();
+                var row = (dsTarima.informacionRow)gridView.GetDataRow(e.RowHandle);
+                if (row != null)
+                {
+                    if (row.existencia>0)
+                        e.Appearance.BackColor = Color.FromArgb(255, 255, 255);//verde
+                    else
+                        e.Appearance.BackColor = Color.FromArgb(255, 102, 102);//rojo
+
+                }
+            }
+        }
     }
 }

@@ -225,31 +225,32 @@ namespace LOSA.AlmacenesExterno
 
             if (row != null)
             {
-                if (row.CantidadIngresar > row.kg)
-                {
-                    CajaDialogo.Error("LA CANTIDAD INGRESADA ES SUPERIOR A LO QUE DISPONE LA ORDEN DE COMPRA");
-                    row.CantidadIngresar = 0;
-                    return;
-                }
+                //Habilitar esta validacion luego de cargar saldos iniciales
+                //if (row.CantidadIngresar > row.kg)
+                //{
+                //    CajaDialogo.Error("LA CANTIDAD INGRESADA ES SUPERIOR A LO QUE DISPONE LA ORDEN DE COMPRA");
+                //    row.CantidadIngresar = 0;
+                //    return;
+                //}
 
-                if (row.diferencia <= 0 )
-                {
-                    CajaDialogo.Error("YA SE INGRESO LA MISMA CANTIDAD DE LA ORDEN DE COMPRA");
-                    row.CantidadIngresar = 0;
-                    return;
-                }
+                //if (row.diferencia <= 0 )
+                //{
+                //    CajaDialogo.Error("YA SE INGRESO LA MISMA CANTIDAD DE LA ORDEN DE COMPRA");
+                //    row.CantidadIngresar = 0;
+                //    return;
+                //}
 
-                if ( row.CantidadIngresar > row.diferencia && row.diferencia > 0)
-                {
-                    CajaDialogo.Error("DEBE DE INGRESAR UNA CANTIDAD MENOR O IGUAL A " + row.diferencia+ " Para esta MP");
-                    row.CantidadIngresar = 0;
-                    return;
-                }
+                //if ( row.CantidadIngresar > row.diferencia && row.diferencia > 0)
+                //{
+                //    CajaDialogo.Error("DEBE DE INGRESAR UNA CANTIDAD MENOR O IGUAL A " + row.diferencia+ " Para esta MP");
+                //    row.CantidadIngresar = 0;
+                //    return;
+                //}
 
-                if (row.CantidadIngresar <= row.diferencia && row.diferencia > 0)
-                {
-                    row.seleccionar = true;
-                }
+                //if (row.CantidadIngresar <= row.diferencia && row.diferencia > 0)
+                //{
+                //    row.seleccionar = true;
+                //}
             }
 
             switch(e.Column.FieldName)
