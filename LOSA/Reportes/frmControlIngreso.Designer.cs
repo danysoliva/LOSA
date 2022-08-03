@@ -76,6 +76,7 @@ namespace LOSA.Reportes
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmdExcel = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grdBodegaPlanta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bodegasProveedorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsReportesInventario)).BeginInit();
@@ -603,11 +604,25 @@ namespace LOSA.Reportes
             this.coldescripcion.Visible = true;
             this.coldescripcion.VisibleIndex = 0;
             // 
+            // cmdExcel
+            // 
+            this.cmdExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdExcel.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdExcel.Appearance.Options.UseFont = true;
+            this.cmdExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.cmdExcel.Location = new System.Drawing.Point(1415, 3);
+            this.cmdExcel.Name = "cmdExcel";
+            this.cmdExcel.Size = new System.Drawing.Size(111, 53);
+            this.cmdExcel.TabIndex = 7;
+            this.cmdExcel.Text = "Exportar";
+            this.cmdExcel.Click += new System.EventHandler(this.cmdExcel_Click);
+            // 
             // frmControlIngreso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1657, 772);
+            this.Controls.Add(this.cmdExcel);
             this.Controls.Add(this.SeleccionMp);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.grdResumenIngreso);
@@ -682,5 +697,6 @@ namespace LOSA.Reportes
         private DevExpress.XtraGrid.Columns.GridColumn colpeso_entrada;
         private DevExpress.XtraGrid.Columns.GridColumn colvehiculo;
         private DevExpress.XtraGrid.Columns.GridColumn colfurgon;
+        private DevExpress.XtraEditors.SimpleButton cmdExcel;
     }
 }
