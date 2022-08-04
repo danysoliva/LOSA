@@ -12,6 +12,7 @@ using LOSA.Nir;
 using LOSA.PlanMPreque;
 using LOSA.Produccion;
 using LOSA.RecepcionMP;
+using LOSA.RecuentoInventario;
 using LOSA.Reportes;
 using LOSA.TransaccionesMP;
 using LOSA.TransaccionesPT;
@@ -947,7 +948,11 @@ namespace LOSA
 
         private void cmdReporteInventarioPorFecha_Click(object sender, EventArgs e)
         {
+            frmReporteInvPorLoteA_LaFecha frm = new frmReporteInvPorLoteA_LaFecha(this.UsuarioLogeado);
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
 
+            frm.Show();
         }
     }
 }

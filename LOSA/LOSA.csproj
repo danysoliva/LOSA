@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\aqfsvr003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>350</ApplicationRevision>
+    <ApplicationRevision>352</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -2125,6 +2125,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsRecuento.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RecuentoInventario\dsReportesRecuentosINV.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsReportesRecuentosINV.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RecuentoInventario\frmAjusteINV_PorTarimas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2136,6 +2141,12 @@
     </Compile>
     <Compile Include="RecuentoInventario\frmRecuentoInventario.Designer.cs">
       <DependentUpon>frmRecuentoInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecuentoInventario\frmReporteInvPorLoteA_LaFecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecuentoInventario\frmReporteInvPorLoteA_LaFecha.Designer.cs">
+      <DependentUpon>frmReporteInvPorLoteA_LaFecha.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\dsReportes.cs">
       <DependentUpon>dsReportes.xsd</DependentUpon>
@@ -3630,6 +3641,9 @@
     <EmbeddedResource Include="RecuentoInventario\frmRecuentoInventario.resx">
       <DependentUpon>frmRecuentoInventario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RecuentoInventario\frmReporteInvPorLoteA_LaFecha.resx">
+      <DependentUpon>frmReporteInvPorLoteA_LaFecha.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmControlIngreso.resx">
       <DependentUpon>frmControlIngreso.cs</DependentUpon>
     </EmbeddedResource>
@@ -4094,6 +4108,17 @@
     <None Include="RecuentoInventario\dsRecuento.xss">
       <DependentUpon>dsRecuento.xsd</DependentUpon>
     </None>
+    <None Include="RecuentoInventario\dsReportesRecuentosINV.xsc">
+      <DependentUpon>dsReportesRecuentosINV.xsd</DependentUpon>
+    </None>
+    <None Include="RecuentoInventario\dsReportesRecuentosINV.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReportesRecuentosINV.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="RecuentoInventario\dsReportesRecuentosINV.xss">
+      <DependentUpon>dsReportesRecuentosINV.xsd</DependentUpon>
+    </None>
     <None Include="Reportes\dsReportes.xsc">
       <DependentUpon>dsReportes.xsd</DependentUpon>
     </None>
@@ -4316,6 +4341,7 @@
     <None Include="Resources\seo-report24px.png" />
     <None Include="Resources\seo-report64px.png" />
     <None Include="Resources\seo-report32px_.png" />
+    <None Include="Resources\refresh-button32px.png" />
     <Content Include="Resources\settings.png" />
     <Content Include="Resources\shipping.png" />
     <None Include="Resources\Status-dialog-information-icon72px.png" />

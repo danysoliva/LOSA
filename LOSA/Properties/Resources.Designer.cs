@@ -603,6 +603,16 @@ namespace LOSA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap refresh_button32px {
+            get {
+                object obj = ResourceManager.GetObject("refresh-button32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap seo_report24px {
             get {
                 object obj = ResourceManager.GetObject("seo-report24px", resourceCulture);

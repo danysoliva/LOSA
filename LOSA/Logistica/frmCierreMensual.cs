@@ -44,7 +44,7 @@ namespace LOSA.Logistica
             catch (Exception ex)
             {
 
-                
+                CajaDialogo.Error(ex.Message);
             }
         }
 
