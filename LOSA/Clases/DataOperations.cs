@@ -915,6 +915,17 @@ namespace ACS.Classes
             catch { }
             return valor;
         }
+
+        public string ValidateNumberString(object val)
+        {
+            string valor = "";
+            try
+            {
+                valor = val.ToString();
+            }
+            catch { }
+            return valor;
+        }
         #endregion
     }
 }

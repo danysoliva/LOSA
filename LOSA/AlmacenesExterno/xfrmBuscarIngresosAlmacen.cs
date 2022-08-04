@@ -50,6 +50,17 @@ namespace LOSA.AlmacenesExterno
         private void btnSeleccionar_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
 
+            RowSelected();
+
+        }
+
+        private void gvIngreso_DoubleClick(object sender, EventArgs e)
+        {
+            RowSelected();
+        }
+
+        void RowSelected()
+        {
             try
             {
 
@@ -68,7 +79,6 @@ namespace LOSA.AlmacenesExterno
             {
                 CajaDialogo.Error(ex.Message);
             }
-
         }
     }
 }

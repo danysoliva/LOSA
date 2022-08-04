@@ -48,8 +48,10 @@
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfactura = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtCantIngresar = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.gcIngreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSalidasAlmacenesExternos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvIngreso)).BeginInit();
@@ -90,7 +92,7 @@
             this.gvIngreso.Appearance.FooterPanel.Options.UseFont = true;
             this.gvIngreso.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvIngreso.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gvIngreso.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.gvIngreso.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.gvIngreso.Appearance.Row.Options.UseFont = true;
             this.gvIngreso.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colid,
@@ -103,13 +105,14 @@
             this.colSeleccionar,
             this.gridColumn1,
             this.gridColumn2,
-            this.gridColumn3});
+            this.gridColumn3,
+            this.colfactura});
             this.gvIngreso.DetailHeight = 284;
             this.gvIngreso.GridControl = this.gcIngreso;
             this.gvIngreso.Name = "gvIngreso";
             this.gvIngreso.OptionsView.ShowAutoFilterRow = true;
             this.gvIngreso.OptionsView.ShowFooter = true;
-            this.gvIngreso.OptionsView.ShowGroupPanel = false;
+            this.gvIngreso.DoubleClick += new System.EventHandler(this.gvIngreso_DoubleClick);
             // 
             // colid
             // 
@@ -121,7 +124,7 @@
             this.colid.OptionsFilter.AllowFilter = false;
             this.colid.Visible = true;
             this.colid.VisibleIndex = 0;
-            this.colid.Width = 81;
+            this.colid.Width = 58;
             // 
             // colcardcode
             // 
@@ -133,7 +136,7 @@
             this.colcardcode.OptionsFilter.AllowFilter = false;
             this.colcardcode.Visible = true;
             this.colcardcode.VisibleIndex = 3;
-            this.colcardcode.Width = 81;
+            this.colcardcode.Width = 95;
             // 
             // colCardName
             // 
@@ -145,7 +148,7 @@
             this.colCardName.OptionsFilter.AllowFilter = false;
             this.colCardName.Visible = true;
             this.colCardName.VisibleIndex = 4;
-            this.colCardName.Width = 81;
+            this.colCardName.Width = 95;
             // 
             // colfecha_ingreso
             // 
@@ -157,7 +160,7 @@
             this.colfecha_ingreso.OptionsFilter.AllowFilter = false;
             this.colfecha_ingreso.Visible = true;
             this.colfecha_ingreso.VisibleIndex = 5;
-            this.colfecha_ingreso.Width = 81;
+            this.colfecha_ingreso.Width = 95;
             // 
             // colDocEntrySAP
             // 
@@ -168,7 +171,7 @@
             this.colDocEntrySAP.OptionsFilter.AllowFilter = false;
             this.colDocEntrySAP.Visible = true;
             this.colDocEntrySAP.VisibleIndex = 6;
-            this.colDocEntrySAP.Width = 81;
+            this.colDocEntrySAP.Width = 95;
             // 
             // colpeso
             // 
@@ -179,8 +182,8 @@
             this.colpeso.OptionsColumn.AllowEdit = false;
             this.colpeso.OptionsFilter.AllowFilter = false;
             this.colpeso.Visible = true;
-            this.colpeso.VisibleIndex = 7;
-            this.colpeso.Width = 81;
+            this.colpeso.VisibleIndex = 8;
+            this.colpeso.Width = 78;
             // 
             // colunidades
             // 
@@ -191,8 +194,8 @@
             this.colunidades.OptionsColumn.AllowEdit = false;
             this.colunidades.OptionsFilter.AllowFilter = false;
             this.colunidades.Visible = true;
-            this.colunidades.VisibleIndex = 8;
-            this.colunidades.Width = 81;
+            this.colunidades.VisibleIndex = 9;
+            this.colunidades.Width = 78;
             // 
             // colSeleccionar
             // 
@@ -202,13 +205,13 @@
             this.colSeleccionar.Name = "colSeleccionar";
             this.colSeleccionar.OptionsFilter.AllowFilter = false;
             this.colSeleccionar.Visible = true;
-            this.colSeleccionar.VisibleIndex = 10;
-            this.colSeleccionar.Width = 81;
+            this.colSeleccionar.VisibleIndex = 11;
+            this.colSeleccionar.Width = 83;
             // 
             // btnSeleccionar
             // 
             this.btnSeleccionar.AutoHeight = false;
-            editorButtonImageOptions2.Image = global::LOSA.Properties.Resources.tap;
+            editorButtonImageOptions2.Image = global::LOSA.Properties.Resources.tap24px;
             this.btnSeleccionar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnSeleccionar.Name = "btnSeleccionar";
@@ -225,7 +228,7 @@
             this.gridColumn1.OptionsFilter.AllowFilter = false;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 1;
-            this.gridColumn1.Width = 81;
+            this.gridColumn1.Width = 73;
             // 
             // gridColumn2
             // 
@@ -237,7 +240,7 @@
             this.gridColumn2.OptionsFilter.AllowFilter = false;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 2;
-            this.gridColumn2.Width = 81;
+            this.gridColumn2.Width = 119;
             // 
             // gridColumn3
             // 
@@ -247,8 +250,17 @@
             this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.OptionsFilter.AllowFilter = false;
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 9;
-            this.gridColumn3.Width = 64;
+            this.gridColumn3.VisibleIndex = 10;
+            this.gridColumn3.Width = 82;
+            // 
+            // colfactura
+            // 
+            this.colfactura.FieldName = "factura";
+            this.colfactura.Name = "colfactura";
+            this.colfactura.OptionsColumn.AllowEdit = false;
+            this.colfactura.Visible = true;
+            this.colfactura.VisibleIndex = 7;
+            this.colfactura.Width = 150;
             // 
             // txtCantIngresar
             // 
@@ -272,24 +284,35 @@
             this.btnAtras.Text = "Cancelar";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(12, 34);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(200, 21);
+            this.labelControl1.TabIndex = 45;
+            this.labelControl1.Text = "Seleccione la Materia Prima";
+            // 
             // xfrmBuscarIngresosAlmacen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1119, 602);
+            this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.gcIngreso);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "xfrmBuscarIngresosAlmacen";
             this.Text = "xfrmBuscarIngresosAlmacen";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.gcIngreso)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSalidasAlmacenesExternos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvIngreso)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSeleccionar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantIngresar)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -312,5 +335,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraGrid.Columns.GridColumn colfactura;
     }
 }

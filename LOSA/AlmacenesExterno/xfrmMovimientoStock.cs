@@ -316,6 +316,18 @@ namespace LOSA.AlmacenesExterno
             deFecha.EditValue = DateTime.Now;
         }
 
-              
+        private void gvTransferencia_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            if(e.Column.FieldName == "to_almacen")
+            {
+                DataOperations dp = new DataOperations();
+                if (!string.IsNullOrEmpty(dp.ValidateNumberString(e.Value)))
+                {
+                    var gv = (GridView)gcTransferencia.FocusedView;
+                    var row = (dsSalidasAlmacenesExternos.Transferencia_StockRow)gv.GetDataRow(e.RowHandle);
+                    row.seleccionar = true;
+                }
+            }    
+        }
     }
 }
