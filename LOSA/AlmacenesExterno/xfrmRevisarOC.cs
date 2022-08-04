@@ -82,10 +82,16 @@ namespace LOSA.AlmacenesExterno
 
         private void btnAtras_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
 
         private void btnOC_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            AbrirBusquedaOC();
+        }
+
+        private void AbrirBusquedaOC()
         {
             xfrmSeleccionarOC frm = new xfrmSeleccionarOC();
 
@@ -117,7 +123,11 @@ namespace LOSA.AlmacenesExterno
                     da.SelectCommand.Parameters.Add("@DocEntry", SqlDbType.Int).Value = id;
                     da.Fill(dsAlmacenesExternos.RevisionOC);
                     cnx.Close();
-
+                    if (string.IsNullOrEmpty(txtfactura.Text))
+                    {
+                        errorProvider1.SetError(txtfactura, "Ingrese el numero de Factura!");
+                        txtfactura.Focus();
+                    }
                 }
 
             }
@@ -156,11 +166,12 @@ namespace LOSA.AlmacenesExterno
                         return;
                     }
 
-                    if (element.diferencia < 0)
-                    {
-                        CajaDialogo.Error("YA SE INGRESO LA MISMA CANTIDAD DE LA ORDEN DE COMPRA");
-                        return;
-                    }
+                    //Rehabilitar codigo despues de fijar inv iniciales
+                    //if (element.diferencia < 0)
+                    //{
+                    //    CajaDialogo.Error("YA SE INGRESO LA MISMA CANTIDAD DE LA ORDEN DE COMPRA");
+                    //    return;
+                    //}
 
                     if (string.IsNullOrEmpty( element.bodega))
                     {
@@ -174,7 +185,7 @@ namespace LOSA.AlmacenesExterno
                         return;
                     }
 
-                    if (element.diferencia >= 0)
+                    //if (element.diferencia >= 0)
                     {
 
                         lista.Add(new Conf_MP_Ingresada
@@ -261,8 +272,14 @@ namespace LOSA.AlmacenesExterno
                     if (pres1.RecuperarRegistro(row.id_presentacion))
                     {
                         DataOperations dp = new DataOperations();
-                        if(pres1.Factor>0)
-                            row.UnidadesIngresar = Math.Round( ( dp.ValidateNumberDecimal(row.CantidadIngresar) / pres1.Factor),0);
+                        if (pres1.Factor > 0)
+                        {
+                            row.UnidadesIngresar = Math.Round((dp.ValidateNumberDecimal(row.CantidadIngresar) / pres1.Factor), 0);
+                            if(row.UnidadesIngresar>0)
+                                row.seleccionar = true;
+                            else
+                                row.seleccionar = false;
+                        }
                     }
                     break;
             }
@@ -283,6 +300,33 @@ namespace LOSA.AlmacenesExterno
             //    }
 
             //}
+        }
+
+        private void txtfactura_Validated(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtfactura.Text))
+            {
+                errorProvider1.Clear();
+            }
+        }
+
+        private void btnOC_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void xfrmRevisarOC_Activated(object sender, EventArgs e)
+        {
+            btnOC.Focus();
+        }
+
+        private void gcIngreso_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Escape)
+            {
+                this.DialogResult = DialogResult.Cancel;
+                this.Close();
+            }
         }
     }
 }

@@ -421,7 +421,7 @@
             this.gvLote.Appearance.HeaderPanel.Options.UseFont = true;
             this.gvLote.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.gvLote.Appearance.Preview.Options.UseFont = true;
-            this.gvLote.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.gvLote.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.gvLote.Appearance.Row.Options.UseFont = true;
             this.gvLote.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colid1,
@@ -455,7 +455,13 @@
             // 
             // colcantidad1
             // 
+            this.colcantidad1.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.colcantidad1.AppearanceCell.Options.UseFont = true;
+            this.colcantidad1.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.colcantidad1.AppearanceHeader.Options.UseFont = true;
             this.colcantidad1.Caption = "Cantidad Seleccionada";
+            this.colcantidad1.DisplayFormat.FormatString = "##,###,##0.00 Kg";
+            this.colcantidad1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colcantidad1.FieldName = "cantidad";
             this.colcantidad1.Name = "colcantidad1";
             this.colcantidad1.OptionsColumn.AllowEdit = false;
@@ -463,36 +469,54 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cantidad", "SUMA={0:#.##}")});
             this.colcantidad1.Visible = true;
             this.colcantidad1.VisibleIndex = 1;
-            this.colcantidad1.Width = 130;
+            this.colcantidad1.Width = 136;
             // 
             // colunidades1
             // 
+            this.colunidades1.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.colunidades1.AppearanceCell.Options.UseFont = true;
+            this.colunidades1.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.colunidades1.AppearanceHeader.Options.UseFont = true;
             this.colunidades1.Caption = "Unidades";
+            this.colunidades1.DisplayFormat.FormatString = "##,###,##0 Ud";
+            this.colunidades1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colunidades1.FieldName = "unidades";
             this.colunidades1.Name = "colunidades1";
             this.colunidades1.OptionsColumn.AllowEdit = false;
             this.colunidades1.Visible = true;
             this.colunidades1.VisibleIndex = 2;
-            this.colunidades1.Width = 302;
+            this.colunidades1.Width = 292;
             // 
             // colid_detalle1
             // 
+            this.colid_detalle1.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.colid_detalle1.AppearanceCell.Options.UseFont = true;
+            this.colid_detalle1.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.colid_detalle1.AppearanceHeader.Options.UseFont = true;
             this.colid_detalle1.FieldName = "id_detalle";
             this.colid_detalle1.Name = "colid_detalle1";
             this.colid_detalle1.OptionsColumn.AllowEdit = false;
             // 
             // collote
             // 
+            this.collote.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.collote.AppearanceCell.Options.UseFont = true;
+            this.collote.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.collote.AppearanceHeader.Options.UseFont = true;
             this.collote.Caption = "Lote";
             this.collote.FieldName = "lote";
             this.collote.Name = "collote";
             this.collote.OptionsColumn.AllowEdit = false;
             this.collote.Visible = true;
             this.collote.VisibleIndex = 0;
-            this.collote.Width = 320;
+            this.collote.Width = 313;
             // 
             // colCantSeleccionada
             // 
+            this.colCantSeleccionada.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.colCantSeleccionada.AppearanceCell.Options.UseFont = true;
+            this.colCantSeleccionada.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.colCantSeleccionada.AppearanceHeader.Options.UseFont = true;
             this.colCantSeleccionada.Caption = "Cant. Seleccionada";
             this.colCantSeleccionada.ColumnEdit = this.txtCantSeleccionada;
             this.colCantSeleccionada.FieldName = "CantSeleccionada";
@@ -507,61 +531,94 @@
             // 
             // colSeleccionar
             // 
+            this.colSeleccionar.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.colSeleccionar.AppearanceCell.Options.UseFont = true;
+            this.colSeleccionar.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.colSeleccionar.AppearanceHeader.Options.UseFont = true;
             this.colSeleccionar.FieldName = "Seleccionar";
             this.colSeleccionar.Name = "colSeleccionar";
             this.colSeleccionar.OptionsColumn.AllowEdit = false;
             // 
             // colnum_line
             // 
+            this.colnum_line.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.colnum_line.AppearanceCell.Options.UseFont = true;
+            this.colnum_line.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.colnum_line.AppearanceHeader.Options.UseFont = true;
             this.colnum_line.FieldName = "num_line";
             this.colnum_line.Name = "colnum_line";
             this.colnum_line.OptionsColumn.AllowEdit = false;
             // 
             // colrow_
             // 
+            this.colrow_.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.colrow_.AppearanceCell.Options.UseFont = true;
+            this.colrow_.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.colrow_.AppearanceHeader.Options.UseFont = true;
             this.colrow_.FieldName = "row_";
             this.colrow_.Name = "colrow_";
             this.colrow_.OptionsColumn.AllowEdit = false;
             // 
             // colfecha_vencimiento
             // 
+            this.colfecha_vencimiento.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.colfecha_vencimiento.AppearanceCell.Options.UseFont = true;
+            this.colfecha_vencimiento.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.colfecha_vencimiento.AppearanceHeader.Options.UseFont = true;
             this.colfecha_vencimiento.Caption = "Fecha Venc.";
             this.colfecha_vencimiento.FieldName = "fecha_vencimiento";
             this.colfecha_vencimiento.Name = "colfecha_vencimiento";
             this.colfecha_vencimiento.OptionsColumn.AllowEdit = false;
             this.colfecha_vencimiento.Visible = true;
             this.colfecha_vencimiento.VisibleIndex = 4;
-            this.colfecha_vencimiento.Width = 314;
+            this.colfecha_vencimiento.Width = 304;
             // 
             // colfecha_produccion
             // 
+            this.colfecha_produccion.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.colfecha_produccion.AppearanceCell.Options.UseFont = true;
+            this.colfecha_produccion.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.colfecha_produccion.AppearanceHeader.Options.UseFont = true;
             this.colfecha_produccion.Caption = "Fecha Prod.";
             this.colfecha_produccion.FieldName = "fecha_produccion";
             this.colfecha_produccion.Name = "colfecha_produccion";
             this.colfecha_produccion.OptionsColumn.AllowEdit = false;
             this.colfecha_produccion.Visible = true;
             this.colfecha_produccion.VisibleIndex = 3;
-            this.colfecha_produccion.Width = 302;
+            this.colfecha_produccion.Width = 292;
             // 
             // colid_pertenece
             // 
+            this.colid_pertenece.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.colid_pertenece.AppearanceCell.Options.UseFont = true;
+            this.colid_pertenece.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.colid_pertenece.AppearanceHeader.Options.UseFont = true;
             this.colid_pertenece.FieldName = "id_pertenece";
             this.colid_pertenece.Name = "colid_pertenece";
             this.colid_pertenece.OptionsColumn.AllowEdit = false;
             // 
             // colLoteNumerador
             // 
+            this.colLoteNumerador.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.colLoteNumerador.AppearanceCell.Options.UseFont = true;
+            this.colLoteNumerador.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.colLoteNumerador.AppearanceHeader.Options.UseFont = true;
             this.colLoteNumerador.FieldName = "LoteNumerador";
             this.colLoteNumerador.Name = "colLoteNumerador";
             this.colLoteNumerador.OptionsColumn.AllowEdit = false;
             // 
             // colEliminar2
             // 
+            this.colEliminar2.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.colEliminar2.AppearanceCell.Options.UseFont = true;
+            this.colEliminar2.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.colEliminar2.AppearanceHeader.Options.UseFont = true;
             this.colEliminar2.Caption = "Eliminar";
             this.colEliminar2.ColumnEdit = this.btnEliminar;
             this.colEliminar2.Name = "colEliminar2";
             this.colEliminar2.Visible = true;
             this.colEliminar2.VisibleIndex = 6;
+            this.colEliminar2.Width = 78;
             // 
             // btnEliminar
             // 
@@ -575,11 +632,16 @@
             // 
             // coloEdit
             // 
+            this.coloEdit.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.coloEdit.AppearanceCell.Options.UseFont = true;
+            this.coloEdit.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.coloEdit.AppearanceHeader.Options.UseFont = true;
             this.coloEdit.Caption = "Editar";
             this.coloEdit.ColumnEdit = this.btnEditar;
             this.coloEdit.Name = "coloEdit";
             this.coloEdit.Visible = true;
             this.coloEdit.VisibleIndex = 5;
+            this.coloEdit.Width = 72;
             // 
             // btnEditar
             // 

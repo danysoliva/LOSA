@@ -93,5 +93,35 @@ namespace LOSA.AlmacenesExterno
                 CajaDialogo.Error(ex.Message);
             }
         }
+
+        private void txtLote_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                txtCantidad.Focus();
+        }
+
+        private void txtCantidad_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                txtUnidad.Focus();
+        }
+
+        private void txtUnidad_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                deFechaProduccion.Focus();
+        }
+
+        private void deFechaProduccion_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                deFechaVencimiento.Focus();
+        }
+
+        private void deFechaVencimiento_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnGuardar_Click(sender, new EventArgs());
+        }
     }
 }

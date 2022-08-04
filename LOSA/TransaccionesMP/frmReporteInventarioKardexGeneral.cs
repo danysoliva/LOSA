@@ -12,6 +12,7 @@ using System.Data.SqlClient;
 using LOSA.Clases;
 using ACS.Classes;
 using DevExpress.XtraGrid.Views.Grid;
+using System.Threading;
 
 namespace LOSA.TransaccionesMP
 {
@@ -24,6 +25,9 @@ namespace LOSA.TransaccionesMP
             InitializeComponent();
             load_data();
             load_data_totales();
+            //load_dataPRD();
+            //backgroundWorkerResumenMP.RunWorkerAsync();
+            //backgroundWorkerPRD.RunWorkerAsync();
             UsuarioLogeado = pUserLogin;
         }
         public void load_data()
@@ -45,6 +49,31 @@ namespace LOSA.TransaccionesMP
 
                 CajaDialogo.Error(ex.Message);
             }
+            //backgroundWorkerResumenMP.CancelAsync();
+            //backgroundWorkerResumenMP.Dispose();
+        }
+
+        public void load_dataPRD()
+        {
+            string query = @"sp_get_detalle_lotes_entregados_a_prd";
+            try
+            {
+                DataOperations dp1 = new DataOperations();
+                SqlConnection cn = new SqlConnection(dp1.ConnectionStringLOSA);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                dsTarima.informacionPRD.Clear();
+                da.Fill(dsTarima.informacionPRD);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+            //backgroundWorkerPRD.CancelAsync();
+            //backgroundWorkerPRD.Dispose();
         }
 
         public void load_data_totales()
@@ -142,6 +171,68 @@ namespace LOSA.TransaccionesMP
 
                 }
             }
+        }
+
+        private void backgroundWorkerPRD_DoWork(object sender, DoWorkEventArgs e)
+        {
+            //load_dataPRD();
+            //load_data_totales();
+            //load_data();
+            //backgroundWorkerPRD.CancelAsync();
+
+            BackgroundWorker worker = sender as BackgroundWorker;
+
+            if (worker.CancellationPending == true)
+            {
+                e.Cancel = true;                
+            }
+            else
+            {
+                load_dataPRD();
+                worker.CancelAsync();
+            }
+            
+        }
+
+        private void backgroundWorkerResumenMP_DoWork(object sender, DoWorkEventArgs e)
+        {
+            //load_data_totales();
+            //load_dataPRD();
+            //load_data();
+            //backgroundWorkerResumenMP.CancelAsync();
+            BackgroundWorker worker = sender as BackgroundWorker;
+
+            if (worker.CancellationPending == true)
+            {
+                e.Cancel = true;
+            }
+            else
+            {
+                load_data();
+                worker.CancelAsync();
+            }
+        }
+
+        private void tabPane1_SelectedPageChanged(object sender, DevExpress.XtraBars.Navigation.SelectedPageChangedEventArgs e)
+        {
+            //if (backgroundWorkerPRD.IsBusy || backgroundWorkerResumenMP.IsBusy)
+            //{
+            switch (e.Page.Caption)
+            {
+                case "Resumen por materia prima":
+                    if (dsTarima.totales.Count == 0)
+                        load_data_totales();
+                    break;
+                case "En Bodega PRD":
+                    if(dsTarima.informacionPRD.Count==0)
+                        load_dataPRD();
+                    break;
+                case "Resumen por lote":
+                    if (dsTarima.informacion.Count == 0)
+                        load_data();
+                    break;
+            }
+            //}
         }
     }
 }

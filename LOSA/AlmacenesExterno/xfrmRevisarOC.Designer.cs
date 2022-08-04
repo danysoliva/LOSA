@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmRevisarOC));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.btn = new DevExpress.XtraEditors.SimpleButton();
             this.btnOC = new DevExpress.XtraEditors.ButtonEdit();
             this.label1 = new System.Windows.Forms.Label();
@@ -83,6 +83,7 @@
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.label6 = new System.Windows.Forms.Label();
             this.txtfactura = new DevExpress.XtraEditors.TextEdit();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.btnOC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcIngreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.revisionOCBindingSource)).BeginInit();
@@ -104,6 +105,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtComment.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtfactura.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn
@@ -121,22 +123,25 @@
             this.btn.TabIndex = 31;
             this.btn.Text = "Conf. Lotes";
             this.btn.Click += new System.EventHandler(this.btn_Click);
+            this.btn.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gcIngreso_KeyDown);
             // 
             // btnOC
             // 
+            this.btnOC.EditValue = "";
             this.btnOC.Location = new System.Drawing.Point(172, 63);
             this.btnOC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOC.Name = "btnOC";
             this.btnOC.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOC.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions1.SvgImage")));
+            editorButtonImageOptions2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions2.SvgImage")));
             this.btnOC.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnOC.Properties.NullText = "F2 para abrir la busqueda de OC";
             this.btnOC.Properties.ReadOnly = true;
             this.btnOC.Size = new System.Drawing.Size(244, 38);
             this.btnOC.TabIndex = 32;
             this.btnOC.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnOC_ButtonClick);
-            this.btnOC.EditValueChanged += new System.EventHandler(this.btnOC_EditValueChanged);
+            this.btnOC.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gcIngreso_KeyDown);
             // 
             // label1
             // 
@@ -144,9 +149,9 @@
             this.label1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(21, 84);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 17);
+            this.label1.Size = new System.Drawing.Size(173, 17);
             this.label1.TabIndex = 33;
-            this.label1.Text = "Orden Compra:_______";
+            this.label1.Text = "Orden Compra_______";
             // 
             // gcIngreso
             // 
@@ -171,6 +176,7 @@
             this.gcIngreso.TabIndex = 34;
             this.gcIngreso.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvIngreso});
+            this.gcIngreso.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gcIngreso_KeyDown);
             // 
             // revisionOCBindingSource
             // 
@@ -544,6 +550,7 @@
             this.txtProveedor.Properties.ReadOnly = true;
             this.txtProveedor.Size = new System.Drawing.Size(244, 24);
             this.txtProveedor.TabIndex = 36;
+            this.txtProveedor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gcIngreso_KeyDown);
             // 
             // label3
             // 
@@ -551,9 +558,9 @@
             this.label3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(21, 112);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(175, 17);
+            this.label3.Size = new System.Drawing.Size(170, 17);
             this.label3.TabIndex = 37;
-            this.label3.Text = "Proveedor:__________";
+            this.label3.Text = "Proveedor__________";
             // 
             // label4
             // 
@@ -561,9 +568,9 @@
             this.label4.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(21, 142);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(200, 17);
+            this.label4.Size = new System.Drawing.Size(195, 17);
             this.label4.TabIndex = 39;
-            this.label4.Text = "Fecha Documento:_______";
+            this.label4.Text = "Fecha Documento_______";
             // 
             // txtDate
             // 
@@ -579,6 +586,7 @@
             this.txtDate.Properties.ReadOnly = true;
             this.txtDate.Size = new System.Drawing.Size(244, 24);
             this.txtDate.TabIndex = 38;
+            this.txtDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gcIngreso_KeyDown);
             // 
             // txtComment
             // 
@@ -591,6 +599,7 @@
             this.txtComment.Properties.ReadOnly = true;
             this.txtComment.Size = new System.Drawing.Size(344, 78);
             this.txtComment.TabIndex = 40;
+            this.txtComment.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gcIngreso_KeyDown);
             // 
             // label5
             // 
@@ -599,9 +608,9 @@
             this.label5.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(530, 171);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(157, 17);
+            this.label5.Size = new System.Drawing.Size(152, 17);
             this.label5.TabIndex = 41;
-            this.label5.Text = "Comentario:_______";
+            this.label5.Text = "Comentario_______";
             // 
             // btnAtras
             // 
@@ -617,8 +626,9 @@
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(153, 47);
             this.btnAtras.TabIndex = 42;
-            this.btnAtras.Text = "Cancelar";
+            this.btnAtras.Text = "Cancelar [ESC]";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
+            this.btnAtras.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gcIngreso_KeyDown);
             // 
             // label6
             // 
@@ -626,9 +636,9 @@
             this.label6.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(21, 170);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(200, 17);
+            this.label6.Size = new System.Drawing.Size(195, 17);
             this.label6.TabIndex = 44;
-            this.label6.Text = "Factura:_______________";
+            this.label6.Text = "Factura_______________";
             // 
             // txtfactura
             // 
@@ -639,6 +649,12 @@
             this.txtfactura.Properties.MaxLength = 20;
             this.txtfactura.Size = new System.Drawing.Size(244, 24);
             this.txtfactura.TabIndex = 45;
+            this.txtfactura.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gcIngreso_KeyDown);
+            this.txtfactura.Validated += new System.EventHandler(this.txtfactura_Validated);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // xfrmRevisarOC
             // 
@@ -662,8 +678,10 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "xfrmRevisarOC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ingreso Almacen Externo";
+            this.Text = "Ingreso Almacen Externo [ESC para cerrar la ventana]";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Activated += new System.EventHandler(this.xfrmRevisarOC_Activated);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gcIngreso_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.btnOC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcIngreso)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.revisionOCBindingSource)).EndInit();
@@ -685,6 +703,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtComment.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtfactura.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -740,5 +759,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colWhsCode;
         private DevExpress.XtraGrid.Columns.GridColumn colWhsName;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -48,6 +48,7 @@
             this.colItemcode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
+            this.colItemName = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gcOC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsAlmacenesExternos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvOC)).BeginInit();
@@ -84,7 +85,7 @@
             this.gvOC.Appearance.FocusedRow.Options.UseFont = true;
             this.gvOC.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvOC.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gvOC.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.gvOC.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.gvOC.Appearance.Row.Options.UseFont = true;
             this.gvOC.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colid,
@@ -94,7 +95,8 @@
             this.gridColumn1,
             this.colComentario,
             this.gridColumn2,
-            this.colItemcode});
+            this.colItemcode,
+            this.colItemName});
             this.gvOC.DetailHeight = 284;
             this.gvOC.GridControl = this.gcOC;
             this.gvOC.Name = "gvOC";
@@ -120,7 +122,7 @@
             this.colDocNum.OptionsColumn.AllowEdit = false;
             this.colDocNum.Visible = true;
             this.colDocNum.VisibleIndex = 0;
-            this.colDocNum.Width = 102;
+            this.colDocNum.Width = 86;
             // 
             // colCodProv
             // 
@@ -138,8 +140,8 @@
             this.colProveedor.Name = "colProveedor";
             this.colProveedor.OptionsColumn.AllowEdit = false;
             this.colProveedor.Visible = true;
-            this.colProveedor.VisibleIndex = 2;
-            this.colProveedor.Width = 330;
+            this.colProveedor.VisibleIndex = 4;
+            this.colProveedor.Width = 273;
             // 
             // gridColumn1
             // 
@@ -148,8 +150,8 @@
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 3;
-            this.gridColumn1.Width = 135;
+            this.gridColumn1.VisibleIndex = 1;
+            this.gridColumn1.Width = 117;
             // 
             // colComentario
             // 
@@ -158,8 +160,8 @@
             this.colComentario.Name = "colComentario";
             this.colComentario.OptionsColumn.AllowEdit = false;
             this.colComentario.Visible = true;
-            this.colComentario.VisibleIndex = 4;
-            this.colComentario.Width = 180;
+            this.colComentario.VisibleIndex = 5;
+            this.colComentario.Width = 181;
             // 
             // gridColumn2
             // 
@@ -167,8 +169,8 @@
             this.gridColumn2.MinWidth = 21;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 5;
-            this.gridColumn2.Width = 112;
+            this.gridColumn2.VisibleIndex = 6;
+            this.gridColumn2.Width = 73;
             // 
             // btnSeleccionar
             // 
@@ -187,8 +189,8 @@
             this.colItemcode.Name = "colItemcode";
             this.colItemcode.OptionsColumn.AllowEdit = false;
             this.colItemcode.Visible = true;
-            this.colItemcode.VisibleIndex = 1;
-            this.colItemcode.Width = 85;
+            this.colItemcode.VisibleIndex = 2;
+            this.colItemcode.Width = 84;
             // 
             // labelControl1
             // 
@@ -223,6 +225,15 @@
             this.btnAtras.Text = "Atras";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
+            // colItemName
+            // 
+            this.colItemName.Caption = "Materia Prima";
+            this.colItemName.FieldName = "ItemName";
+            this.colItemName.Name = "colItemName";
+            this.colItemName.Visible = true;
+            this.colItemName.VisibleIndex = 3;
+            this.colItemName.Width = 130;
+            // 
             // xfrmSeleccionarOC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -231,11 +242,9 @@
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.gcOC);
             this.Controls.Add(this.labelControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "xfrmSeleccionarOC";
-            this.Text = "xfrmSeleccionarOC";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Text = "Seleccione una Orden de Compra";
             ((System.ComponentModel.ISupportInitialize)(this.gcOC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsAlmacenesExternos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvOC)).EndInit();
@@ -260,5 +269,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.SimpleButton btnAtras;
         private DevExpress.XtraGrid.Columns.GridColumn colItemcode;
+        private DevExpress.XtraGrid.Columns.GridColumn colItemName;
     }
 }

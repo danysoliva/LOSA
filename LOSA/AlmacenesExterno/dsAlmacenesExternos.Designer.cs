@@ -799,6 +799,10 @@ namespace LOSA.AlmacenesExterno {
             
             private global::System.Data.DataColumn columncodigoMP;
             
+            private global::System.Data.DataColumn columnDocNum;
+            
+            private global::System.Data.DataColumn columnItemName;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ingreso_externo_hDataTable() {
@@ -954,6 +958,22 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DocNumColumn {
+                get {
+                    return this.columnDocNum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ItemNameColumn {
+                get {
+                    return this.columnItemName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -989,7 +1009,24 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ingreso_externo_hRow Addingreso_externo_hRow(int id, int id_bodega, string bodega, decimal peso, string cardcode, string CardName, System.DateTime fecha_ingreso, int id_user_creador, string usuario, int id_estado, string estado, System.DateTime fecha_documento, int DocEntrySAP, decimal unidades, string codigoMP) {
+            public ingreso_externo_hRow Addingreso_externo_hRow(
+                        int id, 
+                        int id_bodega, 
+                        string bodega, 
+                        decimal peso, 
+                        string cardcode, 
+                        string CardName, 
+                        System.DateTime fecha_ingreso, 
+                        int id_user_creador, 
+                        string usuario, 
+                        int id_estado, 
+                        string estado, 
+                        System.DateTime fecha_documento, 
+                        int DocEntrySAP, 
+                        decimal unidades, 
+                        string codigoMP, 
+                        int DocNum, 
+                        string ItemName) {
                 ingreso_externo_hRow rowingreso_externo_hRow = ((ingreso_externo_hRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -1006,7 +1043,9 @@ namespace LOSA.AlmacenesExterno {
                         fecha_documento,
                         DocEntrySAP,
                         unidades,
-                        codigoMP};
+                        codigoMP,
+                        DocNum,
+                        ItemName};
                 rowingreso_externo_hRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowingreso_externo_hRow);
                 return rowingreso_externo_hRow;
@@ -1044,6 +1083,8 @@ namespace LOSA.AlmacenesExterno {
                 this.columnDocEntrySAP = base.Columns["DocEntrySAP"];
                 this.columnunidades = base.Columns["unidades"];
                 this.columncodigoMP = base.Columns["codigoMP"];
+                this.columnDocNum = base.Columns["DocNum"];
+                this.columnItemName = base.Columns["ItemName"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1079,6 +1120,11 @@ namespace LOSA.AlmacenesExterno {
                 base.Columns.Add(this.columnunidades);
                 this.columncodigoMP = new global::System.Data.DataColumn("codigoMP", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncodigoMP);
+                this.columnDocNum = new global::System.Data.DataColumn("DocNum", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDocNum);
+                this.columnItemName = new global::System.Data.DataColumn("ItemName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnItemName);
+                this.columnItemName.Caption = "Nombre MP";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1226,6 +1272,8 @@ namespace LOSA.AlmacenesExterno {
             
             private global::System.Data.DataColumn columnItemcode;
             
+            private global::System.Data.DataColumn columnItemName;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public OCDataTable() {
@@ -1317,6 +1365,14 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ItemNameColumn {
+                get {
+                    return this.columnItemName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1352,7 +1408,7 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public OCRow AddOCRow(int id, int DocNum, string CodProv, string Proveedor, System.DateTime Fecha_Documento, string Comentario, string Itemcode) {
+            public OCRow AddOCRow(int id, int DocNum, string CodProv, string Proveedor, System.DateTime Fecha_Documento, string Comentario, string Itemcode, string ItemName) {
                 OCRow rowOCRow = ((OCRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -1361,7 +1417,8 @@ namespace LOSA.AlmacenesExterno {
                         Proveedor,
                         Fecha_Documento,
                         Comentario,
-                        Itemcode};
+                        Itemcode,
+                        ItemName};
                 rowOCRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowOCRow);
                 return rowOCRow;
@@ -1391,6 +1448,7 @@ namespace LOSA.AlmacenesExterno {
                 this.columnFecha_Documento = base.Columns["Fecha_Documento"];
                 this.columnComentario = base.Columns["Comentario"];
                 this.columnItemcode = base.Columns["Itemcode"];
+                this.columnItemName = base.Columns["ItemName"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1410,6 +1468,8 @@ namespace LOSA.AlmacenesExterno {
                 base.Columns.Add(this.columnComentario);
                 this.columnItemcode = new global::System.Data.DataColumn("Itemcode", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnItemcode);
+                this.columnItemName = new global::System.Data.DataColumn("ItemName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnItemName);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6459,6 +6519,38 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int DocNum {
+                get {
+                    try {
+                        return ((int)(this[this.tableingreso_externo_h.DocNumColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DocNum\' de la tabla \'ingreso_externo_h\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableingreso_externo_h.DocNumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string ItemName {
+                get {
+                    try {
+                        return ((string)(this[this.tableingreso_externo_h.ItemNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ItemName\' de la tabla \'ingreso_externo_h\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableingreso_externo_h.ItemNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableingreso_externo_h.idColumn);
             }
@@ -6636,6 +6728,30 @@ namespace LOSA.AlmacenesExterno {
             public void SetcodigoMPNull() {
                 this[this.tableingreso_externo_h.codigoMPColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDocNumNull() {
+                return this.IsNull(this.tableingreso_externo_h.DocNumColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDocNumNull() {
+                this[this.tableingreso_externo_h.DocNumColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsItemNameNull() {
+                return this.IsNull(this.tableingreso_externo_h.ItemNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetItemNameNull() {
+                this[this.tableingreso_externo_h.ItemNameColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -6766,6 +6882,22 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string ItemName {
+                get {
+                    try {
+                        return ((string)(this[this.tableOC.ItemNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ItemName\' de la tabla \'OC\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOC.ItemNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableOC.idColumn);
             }
@@ -6846,6 +6978,18 @@ namespace LOSA.AlmacenesExterno {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetItemcodeNull() {
                 this[this.tableOC.ItemcodeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsItemNameNull() {
+                return this.IsNull(this.tableOC.ItemNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetItemNameNull() {
+                this[this.tableOC.ItemNameColumn] = global::System.Convert.DBNull;
             }
         }
         

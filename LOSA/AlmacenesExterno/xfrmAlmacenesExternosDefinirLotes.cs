@@ -318,7 +318,26 @@ namespace LOSA.AlmacenesExterno
                 cmd.Parameters.Add("@enable", SqlDbType.Bit).Value = 1;
                 cmd.Parameters.Add("@id_estado", SqlDbType.Int).Value = 0;
                 cmd.Parameters.Add("@fecha_documento", SqlDbType.Date).Value = oc_h.FechaDocumento;
-                cmd.Parameters.Add("@DocEntrySAP", SqlDbType.Int).Value = oc_h.DocNum;
+                //cmd.Parameters.Add("@DocEntrySAP", SqlDbType.Int).Value = oc_h.DocNum;
+                
+                if(oc_h.DocEntrySAP == 0)
+                {
+                    if(oc_h.RecuperarRegistro(oc_h.DocNum))
+                    {
+                        cmd.Parameters.Add("@DocEntrySAP", SqlDbType.Int).Value = oc_h.DocEntrySAP;
+                    }
+                    else
+                    {
+                        CajaDialogo.Error("No se pudo recuperar el DocEntry de la OC de SAP!\nPor favor solicite soporte con este caso...");
+                        return;
+                    }
+                }
+                else
+                {
+                    cmd.Parameters.Add("@DocEntrySAP", SqlDbType.Int).Value = oc_h.DocEntrySAP;
+                }
+
+                
                 cmd.Parameters.Add("@unidades", SqlDbType.Decimal).Value = totalUnidades;
                 cmd.Parameters.Add("@factura", SqlDbType.VarChar).Value = oc_h.Factura ;
 
