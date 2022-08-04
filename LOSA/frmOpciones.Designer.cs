@@ -126,6 +126,7 @@
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.cmdReporteInventarioPorFecha = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -296,6 +297,7 @@
             // 
             this.TabMP_Sacos.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TabMP_Sacos.Appearance.Header.Options.UseFont = true;
+            this.TabMP_Sacos.Controls.Add(this.cmdReporteInventarioPorFecha);
             this.TabMP_Sacos.Controls.Add(this.simpleButton30);
             this.TabMP_Sacos.Controls.Add(this.simpleButton26);
             this.TabMP_Sacos.Controls.Add(this.simpleButton20);
@@ -367,7 +369,7 @@
             this.btnAjustesKardex.Appearance.Options.UseFont = true;
             this.btnAjustesKardex.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAjustesKardex.ImageOptions.Image = global::LOSA.Properties.Resources.ajustes_kardex;
-            this.btnAjustesKardex.Location = new System.Drawing.Point(415, 158);
+            this.btnAjustesKardex.Location = new System.Drawing.Point(415, 205);
             this.btnAjustesKardex.Name = "btnAjustesKardex";
             this.btnAjustesKardex.Size = new System.Drawing.Size(199, 42);
             this.btnAjustesKardex.TabIndex = 13;
@@ -532,7 +534,7 @@
             this.btnajuste.Appearance.Options.UseFont = true;
             this.btnajuste.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnajuste.ImageOptions.Image = global::LOSA.Properties.Resources.boxPT32px;
-            this.btnajuste.Location = new System.Drawing.Point(415, 111);
+            this.btnajuste.Location = new System.Drawing.Point(415, 158);
             this.btnajuste.Name = "btnajuste";
             this.btnajuste.Size = new System.Drawing.Size(199, 42);
             this.btnajuste.TabIndex = 31;
@@ -1532,6 +1534,22 @@
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
             // 
+            // cmdReporteInventarioPorFecha
+            // 
+            this.cmdReporteInventarioPorFecha.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdReporteInventarioPorFecha.Appearance.Options.UseFont = true;
+            this.cmdReporteInventarioPorFecha.Appearance.Options.UseTextOptions = true;
+            this.cmdReporteInventarioPorFecha.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.cmdReporteInventarioPorFecha.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdReporteInventarioPorFecha.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton37.ImageOptions.Image")));
+            this.cmdReporteInventarioPorFecha.Location = new System.Drawing.Point(416, 110);
+            this.cmdReporteInventarioPorFecha.Margin = new System.Windows.Forms.Padding(4);
+            this.cmdReporteInventarioPorFecha.Name = "cmdReporteInventarioPorFecha";
+            this.cmdReporteInventarioPorFecha.Size = new System.Drawing.Size(199, 42);
+            this.cmdReporteInventarioPorFecha.TabIndex = 46;
+            this.cmdReporteInventarioPorFecha.Text = "Reporte de Inventario\r\npor Fecha";
+            this.cmdReporteInventarioPorFecha.Click += new System.EventHandler(this.cmdReporteInventarioPorFecha_Click);
+            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1663,5 +1681,6 @@
         private DevExpress.XtraEditors.SimpleButton cmdReportReqManual;
         private DevExpress.XtraEditors.SimpleButton simpleButton35;
         private DevExpress.XtraEditors.SimpleButton simpleButton36;
+        private DevExpress.XtraEditors.SimpleButton cmdReporteInventarioPorFecha;
     }
 }

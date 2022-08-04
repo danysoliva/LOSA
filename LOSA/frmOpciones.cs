@@ -944,5 +944,10 @@ namespace LOSA
 
             frm.Show();
         }
+
+        private void cmdReporteInventarioPorFecha_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
