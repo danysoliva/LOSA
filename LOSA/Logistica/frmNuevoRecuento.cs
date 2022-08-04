@@ -39,7 +39,7 @@ namespace LOSA.Logistica
 
         public void Inicializar_productos()
         {
-            string query = @"sp_get_inizializar_grid_for_aguste";
+            string query = @"[sp_get_inizializar_grid_for_agusteV2]";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             try
             {
@@ -51,7 +51,7 @@ namespace LOSA.Logistica
                 da.Fill(dsCierreMes.Recuento_mp);
                 cn.Close();
 
-                query = @"sp_get_inizializar_grid_for_pt";
+                query = @"[sp_get_inizializar_grid_for_ptV2]";
                 cn.Open();
                  cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -63,11 +63,8 @@ namespace LOSA.Logistica
             }
             catch (Exception ex)
             {
+                CajaDialogo.Error(ex.Message);
             }
-
-
-
-
         }
             
         public void get_bodegas()

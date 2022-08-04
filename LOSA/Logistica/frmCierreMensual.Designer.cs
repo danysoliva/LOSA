@@ -38,7 +38,7 @@ namespace LOSA.Logistica
             this.btn_close = new DevExpress.XtraEditors.SimpleButton();
             this.btnNuevoRecuento = new DevExpress.XtraEditors.SimpleButton();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
-            this.dsCierreMes = new LOSA.Logistica.dsCierreMes();
+            this.dsCierreMes1 = new LOSA.Logistica.dsCierreMes();
             this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.coldate_counted = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colmes = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -49,7 +49,7 @@ namespace LOSA.Logistica
             this.repositoryVerDetalle = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsCierreMes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsCierreMes1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryVerDetalle)).BeginInit();
             this.SuspendLayout();
@@ -85,7 +85,7 @@ namespace LOSA.Logistica
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_data.DataMember = "recuentos_h";
-            this.grd_data.DataSource = this.dsCierreMes;
+            this.grd_data.DataSource = this.dsCierreMes1;
             this.grd_data.Location = new System.Drawing.Point(2, 71);
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
@@ -96,10 +96,10 @@ namespace LOSA.Logistica
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
             // 
-            // dsCierreMes
+            // dsCierreMes1
             // 
-            this.dsCierreMes.DataSetName = "dsCierreMes";
-            this.dsCierreMes.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dsCierreMes1.DataSetName = "dsCierreMes";
+            this.dsCierreMes1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // grdv_data
             // 
@@ -224,7 +224,7 @@ namespace LOSA.Logistica
             this.Text = "frmCierreMensual";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsCierreMes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsCierreMes1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryVerDetalle)).EndInit();
             this.ResumeLayout(false);
@@ -241,7 +241,7 @@ namespace LOSA.Logistica
         private DevExpress.XtraGrid.Columns.GridColumn colmes;
         private DevExpress.XtraGrid.Columns.GridColumn colyear;
         private DevExpress.XtraGrid.Columns.GridColumn colmes_nombre;
-        private dsCierreMes dsCierreMes;
+        private dsCierreMes dsCierreMes1;
         private DevExpress.XtraGrid.Columns.GridColumn colcomentario;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryVerDetalle;
