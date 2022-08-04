@@ -136,5 +136,26 @@ namespace LOSA.Reportes
 
             }
         }
+
+        private void cmdExcel_Click(object sender, EventArgs e)
+        {
+            if (dsReportesInventario.reporteIngresos.Rows.Count != 0)
+            {
+                SaveFileDialog dialog = new SaveFileDialog();
+                dialog.Filter = "Excel File (.xlsx)|*.xlsx";
+                dialog.FilterIndex = 0;
+
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    grdResumenIngreso.ExportToXlsx(dialog.FileName);
+                }
+            }
+            else
+            {
+                CajaDialogo.Error("Debe seleccionar una Materia Prima para exportar el reporte");
+                SeleccionMp.ShowPopup();
+                return;
+            }
+        }
     }
 }
