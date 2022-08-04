@@ -1196,6 +1196,12 @@
     <Compile Include="Logistica\frmCierreMensual.Designer.cs">
       <DependentUpon>frmCierreMensual.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logistica\frmCierreMensual_Detalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\frmCierreMensual_Detalle.Designer.cs">
+      <DependentUpon>frmCierreMensual_Detalle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logistica\frmLotes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -3261,6 +3267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Logistica\frmCierreMensual.resx">
       <DependentUpon>frmCierreMensual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\frmCierreMensual_Detalle.resx">
+      <DependentUpon>frmCierreMensual_Detalle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logistica\frmLotes.resx">
       <DependentUpon>frmLotes.cs</DependentUpon>

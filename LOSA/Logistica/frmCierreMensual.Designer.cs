@@ -45,8 +45,9 @@ namespace LOSA.Logistica
             this.colyear = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colmes_nombre = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcomentario = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryVerDetalle = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryVerDetalle = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCierreMes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
@@ -130,7 +131,8 @@ namespace LOSA.Logistica
             this.colyear,
             this.colmes_nombre,
             this.colcomentario,
-            this.gridColumn1});
+            this.gridColumn1,
+            this.colid});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
@@ -184,6 +186,15 @@ namespace LOSA.Logistica
             this.colcomentario.VisibleIndex = 3;
             this.colcomentario.Width = 546;
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Ver Detalle";
+            this.gridColumn1.ColumnEdit = this.repositoryVerDetalle;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 4;
+            this.gridColumn1.Width = 134;
+            // 
             // repositoryVerDetalle
             // 
             this.repositoryVerDetalle.AutoHeight = false;
@@ -194,14 +205,11 @@ namespace LOSA.Logistica
             this.repositoryVerDetalle.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryVerDetalle.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryVerDetalle_ButtonClick);
             // 
-            // gridColumn1
+            // colid
             // 
-            this.gridColumn1.Caption = "Ver Detalle";
-            this.gridColumn1.ColumnEdit = this.repositoryVerDetalle;
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 4;
-            this.gridColumn1.Width = 134;
+            this.colid.Caption = "Id_h";
+            this.colid.FieldName = "id";
+            this.colid.Name = "colid";
             // 
             // frmCierreMensual
             // 
@@ -237,5 +245,6 @@ namespace LOSA.Logistica
         private DevExpress.XtraGrid.Columns.GridColumn colcomentario;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryVerDetalle;
+        private DevExpress.XtraGrid.Columns.GridColumn colid;
     }
 }
