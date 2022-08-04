@@ -78,6 +78,7 @@
             this.simpleButton1.Size = new System.Drawing.Size(199, 71);
             this.simpleButton1.TabIndex = 37;
             this.simpleButton1.Text = "Ajuste de Lotes";
+            this.simpleButton1.Visible = false;
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // cmdUbicaciones

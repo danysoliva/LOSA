@@ -363,15 +363,15 @@
             // 
             // btnAjustesKardex
             // 
-            this.btnAjustesKardex.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.btnAjustesKardex.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.btnAjustesKardex.Appearance.Options.UseFont = true;
             this.btnAjustesKardex.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAjustesKardex.ImageOptions.Image = global::LOSA.Properties.Resources.ajustes_kardex;
-            this.btnAjustesKardex.Location = new System.Drawing.Point(210, 302);
+            this.btnAjustesKardex.Location = new System.Drawing.Point(415, 158);
             this.btnAjustesKardex.Name = "btnAjustesKardex";
             this.btnAjustesKardex.Size = new System.Drawing.Size(199, 42);
             this.btnAjustesKardex.TabIndex = 13;
-            this.btnAjustesKardex.Text = "Ajustes Kardex";
+            this.btnAjustesKardex.Text = "Agregar Tarima Manual MP";
             this.btnAjustesKardex.Click += new System.EventHandler(this.BtnAjustesKardex_Click);
             // 
             // cmdUbicaciones
@@ -380,7 +380,7 @@
             this.cmdUbicaciones.Appearance.Options.UseFont = true;
             this.cmdUbicaciones.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdUbicaciones.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdUbicaciones.ImageOptions.Image")));
-            this.cmdUbicaciones.Location = new System.Drawing.Point(210, 158);
+            this.cmdUbicaciones.Location = new System.Drawing.Point(210, 110);
             this.cmdUbicaciones.Name = "cmdUbicaciones";
             this.cmdUbicaciones.Size = new System.Drawing.Size(199, 42);
             this.cmdUbicaciones.TabIndex = 28;
@@ -393,7 +393,7 @@
             this.simpleButton3.Appearance.Options.UseFont = true;
             this.simpleButton3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton3.ImageOptions.Image = global::LOSA.Properties.Resources.wrench;
-            this.simpleButton3.Location = new System.Drawing.Point(210, 110);
+            this.simpleButton3.Location = new System.Drawing.Point(210, 62);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(199, 42);
             this.simpleButton3.TabIndex = 8;
@@ -406,7 +406,7 @@
             this.btn_rptubicaciones.Appearance.Options.UseFont = true;
             this.btn_rptubicaciones.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btn_rptubicaciones.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_rptubicaciones.ImageOptions.Image")));
-            this.btn_rptubicaciones.Location = new System.Drawing.Point(209, 254);
+            this.btn_rptubicaciones.Location = new System.Drawing.Point(209, 206);
             this.btn_rptubicaciones.Name = "btn_rptubicaciones";
             this.btn_rptubicaciones.Size = new System.Drawing.Size(200, 42);
             this.btn_rptubicaciones.TabIndex = 42;
@@ -419,7 +419,7 @@
             this.btnImprimirTm.Appearance.Options.UseFont = true;
             this.btnImprimirTm.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnImprimirTm.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimirTm.ImageOptions.Image")));
-            this.btnImprimirTm.Location = new System.Drawing.Point(209, 207);
+            this.btnImprimirTm.Location = new System.Drawing.Point(209, 159);
             this.btnImprimirTm.Name = "btnImprimirTm";
             this.btnImprimirTm.Size = new System.Drawing.Size(200, 41);
             this.btnImprimirTm.TabIndex = 41;
@@ -432,7 +432,7 @@
             this.simpleButton18.Appearance.Options.UseFont = true;
             this.simpleButton18.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton18.ImageOptions.Image = global::LOSA.Properties.Resources.boxPT32px;
-            this.simpleButton18.Location = new System.Drawing.Point(210, 62);
+            this.simpleButton18.Location = new System.Drawing.Point(4, 206);
             this.simpleButton18.Name = "simpleButton18";
             this.simpleButton18.Size = new System.Drawing.Size(199, 42);
             this.simpleButton18.TabIndex = 40;
@@ -507,7 +507,7 @@
             this.btnAlmacenesExternos.Name = "btnAlmacenesExternos";
             this.btnAlmacenesExternos.Size = new System.Drawing.Size(199, 42);
             this.btnAlmacenesExternos.TabIndex = 35;
-            this.btnAlmacenesExternos.Text = "Almacenes Ext.";
+            this.btnAlmacenesExternos.Text = "Transferencias \r\nAlmacenes Ext.";
             this.btnAlmacenesExternos.Click += new System.EventHandler(this.btnAlmacenesExternos_Click);
             // 
             // btnTransferencia
@@ -528,15 +528,15 @@
             // 
             // btnajuste
             // 
-            this.btnajuste.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.btnajuste.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.25F);
             this.btnajuste.Appearance.Options.UseFont = true;
             this.btnajuste.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnajuste.ImageOptions.Image = global::LOSA.Properties.Resources.boxPT32px;
-            this.btnajuste.Location = new System.Drawing.Point(3, 206);
+            this.btnajuste.Location = new System.Drawing.Point(415, 111);
             this.btnajuste.Name = "btnajuste";
             this.btnajuste.Size = new System.Drawing.Size(199, 42);
             this.btnajuste.TabIndex = 31;
-            this.btnajuste.Text = "Ajuste de Inventario";
+            this.btnajuste.Text = "Ajuste de Inventario \r\npor Tarima";
             this.btnajuste.Click += new System.EventHandler(this.btnajuste_Click);
             // 
             // tabMP_Granel
