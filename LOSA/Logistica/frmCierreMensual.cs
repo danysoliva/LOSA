@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using ACS.Classes;
 using LOSA.Clases;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace LOSA.Logistica
 {
@@ -36,8 +37,8 @@ namespace LOSA.Logistica
                 SqlCommand cmd = new SqlCommand(query,cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                dsCierreMes.recuentos_h.Clear();
-                da.Fill(dsCierreMes.recuentos_h);
+                dsCierreMes1.recuentos_h.Clear();
+                da.Fill(dsCierreMes1.recuentos_h);
                 cn.Close();
 
             }
@@ -65,6 +66,16 @@ namespace LOSA.Logistica
             {
                 load_data();
             }
+        }
+
+        private void repositoryVerDetalle_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gv = (GridView)grd_data.FocusedView;
+            var row = (dsCierreMes.recuentos_hRow)gv.GetDataRow(gv.FocusedRowHandle);
+
+            frmCierreMensual_Detalle frm = new frmCierreMensual_Detalle(row.id);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
         }
     }
 }

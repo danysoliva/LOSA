@@ -340,6 +340,12 @@
     <Compile Include="AlmacenesExterno\xfrmMovimientoStock.Designer.cs">
       <DependentUpon>xfrmMovimientoStock.cs</DependentUpon>
     </Compile>
+    <Compile Include="AlmacenesExterno\xfrmMovimientoStockMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlmacenesExterno\xfrmMovimientoStockMain.Designer.cs">
+      <DependentUpon>xfrmMovimientoStockMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="AlmacenesExterno\xfrmRevisarOC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1195,6 +1201,12 @@
     </Compile>
     <Compile Include="Logistica\frmCierreMensual.Designer.cs">
       <DependentUpon>frmCierreMensual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\frmCierreMensual_Detalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\frmCierreMensual_Detalle.Designer.cs">
+      <DependentUpon>frmCierreMensual_Detalle.cs</DependentUpon>
     </Compile>
     <Compile Include="Logistica\frmLotes.cs">
       <SubType>Form</SubType>
@@ -2915,6 +2927,9 @@
     <EmbeddedResource Include="AlmacenesExterno\xfrmMovimientoStock.resx">
       <DependentUpon>xfrmMovimientoStock.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AlmacenesExterno\xfrmMovimientoStockMain.resx">
+      <DependentUpon>xfrmMovimientoStockMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AlmacenesExterno\xfrmRevisarOC.resx">
       <DependentUpon>xfrmRevisarOC.cs</DependentUpon>
     </EmbeddedResource>
@@ -3272,6 +3287,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Logistica\frmCierreMensual.resx">
       <DependentUpon>frmCierreMensual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\frmCierreMensual_Detalle.resx">
+      <DependentUpon>frmCierreMensual_Detalle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logistica\frmLotes.resx">
       <DependentUpon>frmLotes.cs</DependentUpon>

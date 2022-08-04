@@ -39,7 +39,7 @@ namespace LOSA.Logistica
 
         public void Inicializar_productos()
         {
-            string query = @"sp_get_inizializar_grid_for_aguste";
+            string query = @"[sp_get_inizializar_grid_for_agusteV2]";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             try
             {
@@ -51,7 +51,7 @@ namespace LOSA.Logistica
                 da.Fill(dsCierreMes.Recuento_mp);
                 cn.Close();
 
-                query = @"sp_get_inizializar_grid_for_pt";
+                query = @"[sp_get_inizializar_grid_for_ptV2]";
                 cn.Open();
                  cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -63,11 +63,8 @@ namespace LOSA.Logistica
             }
             catch (Exception ex)
             {
+                CajaDialogo.Error(ex.Message);
             }
-
-
-
-
         }
             
         public void get_bodegas()
@@ -309,6 +306,19 @@ namespace LOSA.Logistica
 
             }
             
+        }
+
+        private void grdv_dataMP_CellValueChanged(object sender, CellValueChangedEventArgs e)
+        {
+            var gridview1 = (GridView)grd_dataMp.FocusedView;
+            var row = (dsCierreMes.Recuento_mpRow)gridview1.GetFocusedDataRow();
+
+            foreach (dsCierreMes.Recuento_mpRow row2 in dsCierreMes.Recuento_mp.Rows)
+            {
+                row2.diferencia = row2.ExistenciaAprox - row2.toma_fisica;
+
+                row2.peso = row2.toma_fisica;
+            }
         }
     }
 }
