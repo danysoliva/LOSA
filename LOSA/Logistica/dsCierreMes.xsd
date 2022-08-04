@@ -53,6 +53,7 @@
               <xs:element name="count_id" msprop:Generator_ColumnVarNameInTable="columncount_id" msprop:Generator_ColumnPropNameInRow="count_id" msprop:Generator_ColumnPropNameInTable="count_idColumn" msprop:Generator_UserColumnName="count_id" type="xs:int" default="0" minOccurs="0" />
               <xs:element name="code_sap" msprop:Generator_ColumnVarNameInTable="columncode_sap" msprop:Generator_ColumnPropNameInRow="code_sap" msprop:Generator_ColumnPropNameInTable="code_sapColumn" msprop:Generator_UserColumnName="code_sap" type="xs:string" minOccurs="0" />
               <xs:element name="lote" msprop:Generator_ColumnVarNameInTable="columnlote" msprop:Generator_ColumnPropNameInRow="lote" msprop:Generator_ColumnPropNameInTable="loteColumn" msprop:Generator_UserColumnName="lote" type="xs:string" minOccurs="0" />
+              <xs:element name="toma_fisica" msprop:Generator_ColumnVarNameInTable="columntoma_fisica" msprop:Generator_ColumnPropNameInRow="toma_fisica" msprop:Generator_ColumnPropNameInTable="toma_fisicaColumn" msprop:Generator_UserColumnName="toma_fisica" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -67,6 +68,7 @@
               <xs:element name="diferencia" msprop:Generator_ColumnVarNameInTable="columndiferencia" msprop:Generator_ColumnPropNameInRow="diferencia" msprop:Generator_ColumnPropNameInTable="diferenciaColumn" msprop:Generator_UserColumnName="diferencia" type="xs:decimal" minOccurs="0" />
               <xs:element name="ExistenciaAprox" msprop:Generator_ColumnVarNameInTable="columnExistenciaAprox" msprop:Generator_ColumnPropNameInRow="ExistenciaAprox" msprop:Generator_ColumnPropNameInTable="ExistenciaAproxColumn" msprop:Generator_UserColumnName="ExistenciaAprox" type="xs:decimal" minOccurs="0" />
               <xs:element name="code_sap" msprop:Generator_ColumnVarNameInTable="columncode_sap" msprop:Generator_ColumnPropNameInRow="code_sap" msprop:Generator_ColumnPropNameInTable="code_sapColumn" msprop:Generator_UserColumnName="code_sap" type="xs:string" minOccurs="0" />
+              <xs:element name="toma_fisica" msprop:Generator_ColumnVarNameInTable="columntoma_fisica" msprop:Generator_ColumnPropNameInRow="toma_fisica" msprop:Generator_ColumnPropNameInTable="toma_fisicaColumn" msprop:Generator_UserColumnName="toma_fisica" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

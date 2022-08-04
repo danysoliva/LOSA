@@ -307,5 +307,18 @@ namespace LOSA.Logistica
             }
             
         }
+
+        private void grdv_dataMP_CellValueChanged(object sender, CellValueChangedEventArgs e)
+        {
+            var gridview1 = (GridView)grd_dataMp.FocusedView;
+            var row = (dsCierreMes.Recuento_mpRow)gridview1.GetFocusedDataRow();
+
+            foreach (dsCierreMes.Recuento_mpRow row2 in dsCierreMes.Recuento_mp.Rows)
+            {
+                row2.diferencia = row2.ExistenciaAprox - row2.toma_fisica;
+
+                row2.peso = row2.toma_fisica;
+            }
+        }
     }
 }

@@ -340,6 +340,12 @@
     <Compile Include="AlmacenesExterno\xfrmMovimientoStock.Designer.cs">
       <DependentUpon>xfrmMovimientoStock.cs</DependentUpon>
     </Compile>
+    <Compile Include="AlmacenesExterno\xfrmMovimientoStockMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlmacenesExterno\xfrmMovimientoStockMain.Designer.cs">
+      <DependentUpon>xfrmMovimientoStockMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="AlmacenesExterno\xfrmRevisarOC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2909,6 +2915,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AlmacenesExterno\xfrmMovimientoStock.resx">
       <DependentUpon>xfrmMovimientoStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlmacenesExterno\xfrmMovimientoStockMain.resx">
+      <DependentUpon>xfrmMovimientoStockMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AlmacenesExterno\xfrmRevisarOC.resx">
       <DependentUpon>xfrmRevisarOC.cs</DependentUpon>
