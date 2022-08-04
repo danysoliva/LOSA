@@ -66,5 +66,10 @@ namespace LOSA.Logistica
                 load_data();
             }
         }
+
+        private void repositoryVerDetalle_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+
+        }
     }
 }

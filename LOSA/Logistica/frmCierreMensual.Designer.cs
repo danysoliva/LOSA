@@ -30,6 +30,11 @@ namespace LOSA.Logistica
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCierreMensual));
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.btn_close = new DevExpress.XtraEditors.SimpleButton();
             this.btnNuevoRecuento = new DevExpress.XtraEditors.SimpleButton();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
@@ -40,9 +45,12 @@ namespace LOSA.Logistica
             this.colyear = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colmes_nombre = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcomentario = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryVerDetalle = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCierreMes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryVerDetalle)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_close
@@ -80,6 +88,8 @@ namespace LOSA.Logistica
             this.grd_data.Location = new System.Drawing.Point(2, 71);
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
+            this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryVerDetalle});
             this.grd_data.Size = new System.Drawing.Size(1187, 623);
             this.grd_data.TabIndex = 2;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -119,7 +129,8 @@ namespace LOSA.Logistica
             this.colmes,
             this.colyear,
             this.colmes_nombre,
-            this.colcomentario});
+            this.colcomentario,
+            this.gridColumn1});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
@@ -134,7 +145,7 @@ namespace LOSA.Logistica
             this.coldate_counted.OptionsColumn.AllowEdit = false;
             this.coldate_counted.Visible = true;
             this.coldate_counted.VisibleIndex = 2;
-            this.coldate_counted.Width = 219;
+            this.coldate_counted.Width = 205;
             // 
             // colmes
             // 
@@ -151,7 +162,7 @@ namespace LOSA.Logistica
             this.colyear.OptionsColumn.AllowEdit = false;
             this.colyear.Visible = true;
             this.colyear.VisibleIndex = 1;
-            this.colyear.Width = 153;
+            this.colyear.Width = 143;
             // 
             // colmes_nombre
             // 
@@ -161,7 +172,7 @@ namespace LOSA.Logistica
             this.colmes_nombre.OptionsColumn.AllowEdit = false;
             this.colmes_nombre.Visible = true;
             this.colmes_nombre.VisibleIndex = 0;
-            this.colmes_nombre.Width = 151;
+            this.colmes_nombre.Width = 141;
             // 
             // colcomentario
             // 
@@ -171,7 +182,26 @@ namespace LOSA.Logistica
             this.colcomentario.OptionsColumn.AllowEdit = false;
             this.colcomentario.Visible = true;
             this.colcomentario.VisibleIndex = 3;
-            this.colcomentario.Width = 646;
+            this.colcomentario.Width = 546;
+            // 
+            // repositoryVerDetalle
+            // 
+            this.repositoryVerDetalle.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            this.repositoryVerDetalle.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.repositoryVerDetalle.Name = "repositoryVerDetalle";
+            this.repositoryVerDetalle.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryVerDetalle.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryVerDetalle_ButtonClick);
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Ver Detalle";
+            this.gridColumn1.ColumnEdit = this.repositoryVerDetalle;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 4;
+            this.gridColumn1.Width = 134;
             // 
             // frmCierreMensual
             // 
@@ -188,6 +218,7 @@ namespace LOSA.Logistica
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCierreMes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryVerDetalle)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -204,5 +235,7 @@ namespace LOSA.Logistica
         private DevExpress.XtraGrid.Columns.GridColumn colmes_nombre;
         private dsCierreMes dsCierreMes;
         private DevExpress.XtraGrid.Columns.GridColumn colcomentario;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryVerDetalle;
     }
 }
