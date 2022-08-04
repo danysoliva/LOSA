@@ -33,10 +33,9 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.SubBand1 = new DevExpress.XtraReports.UI.SubBand();
-            this.xrLine1 = new DevExpress.XtraReports.UI.XRLine();
-            this.xrSubreport2 = new DevExpress.XtraReports.UI.XRSubreport();
             this.id_h = new DevExpress.XtraReports.Parameters.Parameter();
             this.SubBand2 = new DevExpress.XtraReports.UI.SubBand();
+            this.xrSubreport2 = new DevExpress.XtraReports.UI.XRSubreport();
             this.xrSubreport1 = new DevExpress.XtraReports.UI.XRSubreport();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
@@ -61,25 +60,10 @@ namespace LOSA.AlmacenesExterno.Reporteria
             // SubBand1
             // 
             this.SubBand1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrLine1,
             this.xrSubreport2});
-            this.SubBand1.HeightF = 194.7917F;
+            this.SubBand1.HeightF = 181.25F;
             this.SubBand1.KeepTogether = true;
             this.SubBand1.Name = "SubBand1";
-            // 
-            // xrLine1
-            // 
-            this.xrLine1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 161.7917F);
-            this.xrLine1.Name = "xrLine1";
-            this.xrLine1.SizeF = new System.Drawing.SizeF(750F, 23F);
-            // 
-            // xrSubreport2
-            // 
-            this.xrSubreport2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
-            this.xrSubreport2.Name = "xrSubreport2";
-            this.xrSubreport2.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("ID_H", this.id_h));
-            this.xrSubreport2.ReportSource = new LOSA.AlmacenesExterno.Reporteria.xsr_traslado_lotes();
-            this.xrSubreport2.SizeF = new System.Drawing.SizeF(750F, 161.7917F);
             // 
             // id_h
             // 
@@ -94,6 +78,14 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.SubBand2.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrSubreport1});
             this.SubBand2.Name = "SubBand2";
+            // 
+            // xrSubreport2
+            // 
+            this.xrSubreport2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.xrSubreport2.Name = "xrSubreport2";
+            this.xrSubreport2.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("ID_H", this.id_h));
+            this.xrSubreport2.ReportSource = new LOSA.AlmacenesExterno.Reporteria.xsr_traslado_lotes();
+            this.xrSubreport2.SizeF = new System.Drawing.SizeF(750F, 161.7917F);
             // 
             // xrSubreport1
             // 
@@ -127,7 +119,6 @@ namespace LOSA.AlmacenesExterno.Reporteria
         private DevExpress.XtraReports.UI.XRSubreport xrSubreport1;
         private DevExpress.XtraReports.UI.SubBand SubBand2;
         private DevExpress.XtraReports.UI.XRSubreport xrSubreport2;
-        private DevExpress.XtraReports.UI.XRLine xrLine1;
         private DevExpress.XtraReports.Parameters.Parameter id_h;
     }
 }

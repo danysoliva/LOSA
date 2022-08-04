@@ -284,9 +284,9 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
 
                 cmd.Parameters.Add("@bodega_in", SqlDbType.VarChar).Value = ingreso_h.BodegaIN;
                 cmd.Parameters.Add("@bodega_out", SqlDbType.VarChar).Value = ingreso_h.BodegaOUT;
-                cmd.Parameters.Add("@fecha", SqlDbType.DateTime).Value = DateTime.Now.Date;
+                cmd.Parameters.Add("@fecha", SqlDbType.DateTime).Value = dp.Now();
                 cmd.Parameters.Add("@DocEntry", SqlDbType.Int).Value = ingreso_h.DocEntry;
-                cmd.Parameters.Add("@user_creador", SqlDbType.Int).Value = 1035;
+                cmd.Parameters.Add("@user_creador", SqlDbType.Int).Value = this.UsuarioLogeado.Id;
                 cmd.Parameters.Add("@numero_transaccion", SqlDbType.Int).Value = 0;
                 cmd.Parameters.Add("@id_ingreso", SqlDbType.Int).Value = ingreso_h.ID;
 

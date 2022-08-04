@@ -56,9 +56,9 @@ namespace LOSA.AlmacenesExterno
             this.repositoryVerDetalle = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryPrint = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colusuario = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.btnTransferencia = new DevExpress.XtraEditors.SimpleButton();
-            this.colusuario = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gcTransferencia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSalidasAlmacenesExternos1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTransferencia)).BeginInit();
@@ -174,6 +174,7 @@ namespace LOSA.AlmacenesExterno
             // 
             // colnumero_transaccion
             // 
+            this.colnumero_transaccion.Caption = "# Ingreso";
             this.colnumero_transaccion.FieldName = "numero_transaccion";
             this.colnumero_transaccion.Name = "colnumero_transaccion";
             this.colnumero_transaccion.OptionsColumn.AllowEdit = false;
@@ -185,8 +186,6 @@ namespace LOSA.AlmacenesExterno
             this.colid_ingreso.FieldName = "id_ingreso";
             this.colid_ingreso.Name = "colid_ingreso";
             this.colid_ingreso.OptionsColumn.AllowEdit = false;
-            this.colid_ingreso.Visible = true;
-            this.colid_ingreso.VisibleIndex = 6;
             // 
             // gridColumn1
             // 
@@ -209,7 +208,7 @@ namespace LOSA.AlmacenesExterno
             this.gridColumn2.ColumnEdit = this.repositoryPrint;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 7;
+            this.gridColumn2.VisibleIndex = 6;
             // 
             // repositoryPrint
             // 
@@ -220,6 +219,15 @@ namespace LOSA.AlmacenesExterno
             this.repositoryPrint.Name = "repositoryPrint";
             this.repositoryPrint.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryPrint.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryPrint_ButtonClick);
+            // 
+            // colusuario
+            // 
+            this.colusuario.Caption = "Usuario ";
+            this.colusuario.FieldName = "usuario";
+            this.colusuario.Name = "colusuario";
+            this.colusuario.OptionsColumn.AllowEdit = false;
+            this.colusuario.Visible = true;
+            this.colusuario.VisibleIndex = 4;
             // 
             // btnAtras
             // 
@@ -253,15 +261,6 @@ namespace LOSA.AlmacenesExterno
             this.btnTransferencia.TabIndex = 45;
             this.btnTransferencia.Text = "Transf. de Almacénes";
             this.btnTransferencia.Click += new System.EventHandler(this.btnTransferencia_Click);
-            // 
-            // colusuario
-            // 
-            this.colusuario.Caption = "Usuario ";
-            this.colusuario.FieldName = "usuario";
-            this.colusuario.Name = "colusuario";
-            this.colusuario.OptionsColumn.AllowEdit = false;
-            this.colusuario.Visible = true;
-            this.colusuario.VisibleIndex = 4;
             // 
             // xfrmMovimientoStockMain
             // 
