@@ -135,6 +135,7 @@ namespace LOSA.RecepcionMP
                         foreach (dsRecepcionMPx.mp_loteRow registro in dsRecepcionMPx.mp_lote.Rows)
                         {
                             Reportes.rptIngresoHoja report = new Reportes.rptIngresoHoja(row.id, registro.mp);
+                            report.Parameters["id_ingreso"].Value = row.id;
                             report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
                             ReportPrintTool printReport = new ReportPrintTool(report);
                             printReport.ShowPreview();

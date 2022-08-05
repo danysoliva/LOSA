@@ -2380,6 +2380,12 @@
     <Compile Include="Reportes\xrptAlimentacionMicros.Designer.cs">
       <DependentUpon>xrptAlimentacionMicros.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\IngresoMP\subReporteIngresoHoja.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\IngresoMP\subReporteIngresoHoja.Designer.cs">
+      <DependentUpon>subReporteIngresoHoja.cs</DependentUpon>
+    </Compile>
     <Compile Include="Requisiciones\dSReportes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -3767,6 +3773,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\xrptAlimentacionMicros.resx">
       <DependentUpon>xrptAlimentacionMicros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\IngresoMP\subReporteIngresoHoja.resx">
+      <DependentUpon>subReporteIngresoHoja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Requisiciones\Reportes\rpt_requisa.resx">
       <DependentUpon>rpt_requisa.cs</DependentUpon>
