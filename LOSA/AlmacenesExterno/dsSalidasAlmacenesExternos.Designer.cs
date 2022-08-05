@@ -3278,6 +3278,8 @@ namespace LOSA.AlmacenesExterno {
             
             private global::System.Data.DataColumn columnDocEntry;
             
+            private global::System.Data.DataColumn columncode_sap;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Salida_Almacen_DetalleDataTable() {
@@ -3377,6 +3379,14 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn code_sapColumn {
+                get {
+                    return this.columncode_sap;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3412,7 +3422,7 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Salida_Almacen_DetalleRow AddSalida_Almacen_DetalleRow(int id, int id_mp, string materia_prima, int id_h, decimal peso, decimal unidades, bool enable, int DocEntry) {
+            public Salida_Almacen_DetalleRow AddSalida_Almacen_DetalleRow(int id, int id_mp, string materia_prima, int id_h, decimal peso, decimal unidades, bool enable, int DocEntry, string code_sap) {
                 Salida_Almacen_DetalleRow rowSalida_Almacen_DetalleRow = ((Salida_Almacen_DetalleRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -3422,7 +3432,8 @@ namespace LOSA.AlmacenesExterno {
                         peso,
                         unidades,
                         enable,
-                        DocEntry};
+                        DocEntry,
+                        code_sap};
                 rowSalida_Almacen_DetalleRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSalida_Almacen_DetalleRow);
                 return rowSalida_Almacen_DetalleRow;
@@ -3453,6 +3464,7 @@ namespace LOSA.AlmacenesExterno {
                 this.columnunidades = base.Columns["unidades"];
                 this.columnenable = base.Columns["enable"];
                 this.columnDocEntry = base.Columns["DocEntry"];
+                this.columncode_sap = base.Columns["code_sap"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3474,6 +3486,8 @@ namespace LOSA.AlmacenesExterno {
                 base.Columns.Add(this.columnenable);
                 this.columnDocEntry = new global::System.Data.DataColumn("DocEntry", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDocEntry);
+                this.columncode_sap = new global::System.Data.DataColumn("code_sap", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncode_sap);
                 this.columnenable.DefaultValue = ((bool)(true));
             }
             
@@ -3626,6 +3640,12 @@ namespace LOSA.AlmacenesExterno {
             
             private global::System.Data.DataColumn columnfecha_fabricacion;
             
+            private global::System.Data.DataColumn columnbodega_in;
+            
+            private global::System.Data.DataColumn columnbodega_out;
+            
+            private global::System.Data.DataColumn columnlote;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Salida_Almacen_D_LoteDataTable() {
@@ -3733,6 +3753,30 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn bodega_inColumn {
+                get {
+                    return this.columnbodega_in;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn bodega_outColumn {
+                get {
+                    return this.columnbodega_out;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn loteColumn {
+                get {
+                    return this.columnlote;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3768,7 +3812,7 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Salida_Almacen_D_LoteRow AddSalida_Almacen_D_LoteRow(int id, decimal peso, decimal unidades, System.DateTime fecha, int user_creador, string usuario, string DocEntry, System.DateTime fecha_vencimiento, string fecha_fabricacion) {
+            public Salida_Almacen_D_LoteRow AddSalida_Almacen_D_LoteRow(int id, decimal peso, decimal unidades, System.DateTime fecha, int user_creador, string usuario, string DocEntry, System.DateTime fecha_vencimiento, string fecha_fabricacion, string bodega_in, string bodega_out, string lote) {
                 Salida_Almacen_D_LoteRow rowSalida_Almacen_D_LoteRow = ((Salida_Almacen_D_LoteRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -3779,7 +3823,10 @@ namespace LOSA.AlmacenesExterno {
                         usuario,
                         DocEntry,
                         fecha_vencimiento,
-                        fecha_fabricacion};
+                        fecha_fabricacion,
+                        bodega_in,
+                        bodega_out,
+                        lote};
                 rowSalida_Almacen_D_LoteRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSalida_Almacen_D_LoteRow);
                 return rowSalida_Almacen_D_LoteRow;
@@ -3811,6 +3858,9 @@ namespace LOSA.AlmacenesExterno {
                 this.columnDocEntry = base.Columns["DocEntry"];
                 this.columnfecha_vencimiento = base.Columns["fecha_vencimiento"];
                 this.columnfecha_fabricacion = base.Columns["fecha_fabricacion"];
+                this.columnbodega_in = base.Columns["bodega_in"];
+                this.columnbodega_out = base.Columns["bodega_out"];
+                this.columnlote = base.Columns["lote"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3834,6 +3884,14 @@ namespace LOSA.AlmacenesExterno {
                 base.Columns.Add(this.columnfecha_vencimiento);
                 this.columnfecha_fabricacion = new global::System.Data.DataColumn("fecha_fabricacion", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfecha_fabricacion);
+                this.columnbodega_in = new global::System.Data.DataColumn("bodega_in", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbodega_in);
+                this.columnbodega_out = new global::System.Data.DataColumn("bodega_out", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbodega_out);
+                this.columnlote = new global::System.Data.DataColumn("lote", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlote);
+                this.columnbodega_in.Caption = "Origen";
+                this.columnbodega_out.Caption = "Destino";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6375,6 +6433,23 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string code_sap {
+                get {
+                    try {
+                        return ((string)(this[this.tableSalida_Almacen_Detalle.code_sapColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'code_sap\' de la tabla \'Salida_Almacen_Detalle\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableSalida_Almacen_Detalle.code_sapColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableSalida_Almacen_Detalle.idColumn);
             }
@@ -6467,6 +6542,18 @@ namespace LOSA.AlmacenesExterno {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetDocEntryNull() {
                 this[this.tableSalida_Almacen_Detalle.DocEntryColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscode_sapNull() {
+                return this.IsNull(this.tableSalida_Almacen_Detalle.code_sapColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcode_sapNull() {
+                this[this.tableSalida_Almacen_Detalle.code_sapColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -6633,6 +6720,56 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string bodega_in {
+                get {
+                    try {
+                        return ((string)(this[this.tableSalida_Almacen_D_Lote.bodega_inColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'bodega_in\' de la tabla \'Salida_Almacen_D_Lote\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableSalida_Almacen_D_Lote.bodega_inColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string bodega_out {
+                get {
+                    try {
+                        return ((string)(this[this.tableSalida_Almacen_D_Lote.bodega_outColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'bodega_out\' de la tabla \'Salida_Almacen_D_Lote\' es DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableSalida_Almacen_D_Lote.bodega_outColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string lote {
+                get {
+                    try {
+                        return ((string)(this[this.tableSalida_Almacen_D_Lote.loteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'lote\' de la tabla \'Salida_Almacen_D_Lote\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSalida_Almacen_D_Lote.loteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableSalida_Almacen_D_Lote.idColumn);
             }
@@ -6737,6 +6874,42 @@ namespace LOSA.AlmacenesExterno {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setfecha_fabricacionNull() {
                 this[this.tableSalida_Almacen_D_Lote.fecha_fabricacionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isbodega_inNull() {
+                return this.IsNull(this.tableSalida_Almacen_D_Lote.bodega_inColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setbodega_inNull() {
+                this[this.tableSalida_Almacen_D_Lote.bodega_inColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isbodega_outNull() {
+                return this.IsNull(this.tableSalida_Almacen_D_Lote.bodega_outColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setbodega_outNull() {
+                this[this.tableSalida_Almacen_D_Lote.bodega_outColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsloteNull() {
+                return this.IsNull(this.tableSalida_Almacen_D_Lote.loteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetloteNull() {
+                this[this.tableSalida_Almacen_D_Lote.loteColumn] = global::System.Convert.DBNull;
             }
         }
         

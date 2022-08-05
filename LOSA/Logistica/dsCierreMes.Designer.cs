@@ -2600,6 +2600,8 @@ namespace LOSA.Logistica {
             
             private global::System.Data.DataColumn columndescripcion;
             
+            private global::System.Data.DataColumn columnwhs_code;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bodegasDataTable() {
@@ -2651,6 +2653,14 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn whs_codeColumn {
+                get {
+                    return this.columnwhs_code;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2686,11 +2696,12 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bodegasRow AddbodegasRow(int id, string descripcion) {
+            public bodegasRow AddbodegasRow(int id, string descripcion, string whs_code) {
                 bodegasRow rowbodegasRow = ((bodegasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
-                        descripcion};
+                        descripcion,
+                        whs_code};
                 rowbodegasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowbodegasRow);
                 return rowbodegasRow;
@@ -2715,6 +2726,7 @@ namespace LOSA.Logistica {
             internal void InitVars() {
                 this.columnid = base.Columns["id"];
                 this.columndescripcion = base.Columns["descripcion"];
+                this.columnwhs_code = base.Columns["whs_code"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2724,6 +2736,8 @@ namespace LOSA.Logistica {
                 base.Columns.Add(this.columnid);
                 this.columndescripcion = new global::System.Data.DataColumn("descripcion", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndescripcion);
+                this.columnwhs_code = new global::System.Data.DataColumn("whs_code", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwhs_code);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6274,6 +6288,22 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string whs_code {
+                get {
+                    try {
+                        return ((string)(this[this.tablebodegas.whs_codeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'whs_code\' de la tabla \'bodegas\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablebodegas.whs_codeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tablebodegas.idColumn);
             }
@@ -6294,6 +6324,18 @@ namespace LOSA.Logistica {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetdescripcionNull() {
                 this[this.tablebodegas.descripcionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iswhs_codeNull() {
+                return this.IsNull(this.tablebodegas.whs_codeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setwhs_codeNull() {
+                this[this.tablebodegas.whs_codeColumn] = global::System.Convert.DBNull;
             }
         }
         

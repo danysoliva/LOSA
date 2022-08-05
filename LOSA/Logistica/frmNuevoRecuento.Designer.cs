@@ -29,6 +29,7 @@ namespace LOSA.Logistica
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNuevoRecuento));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -48,7 +49,7 @@ namespace LOSA.Logistica
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.grd_meses_disponibles = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.mesesBindingSource = new System.Windows.Forms.BindingSource();
+            this.mesesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsCierreMes = new LOSA.Logistica.dsCierreMes();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colmes_numero = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -57,7 +58,7 @@ namespace LOSA.Logistica
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.grd_years = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.yearsBindingSource = new System.Windows.Forms.BindingSource();
+            this.yearsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colejercicio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
@@ -71,7 +72,7 @@ namespace LOSA.Logistica
             this.colpeso = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_bodega = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grd_bodegas = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.bodegasBindingSource = new System.Windows.Forms.BindingSource();
+            this.bodegasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.coldiferencia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colExistenciaAprox = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -98,6 +99,8 @@ namespace LOSA.Logistica
             this.btneliminarpt = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colcode_sap1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltoma_fisica1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colwhs_code = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldescripcion1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
@@ -562,7 +565,7 @@ namespace LOSA.Logistica
             this.grd_bodegas.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.grd_bodegas.DataSource = this.bodegasBindingSource;
-            this.grd_bodegas.DisplayMember = "descripcion";
+            this.grd_bodegas.DisplayMember = "whs_code";
             this.grd_bodegas.KeyMember = "id";
             this.grd_bodegas.Name = "grd_bodegas";
             this.grd_bodegas.PopupView = this.repositoryItemGridLookUpEdit1View;
@@ -575,9 +578,13 @@ namespace LOSA.Logistica
             // 
             // repositoryItemGridLookUpEdit1View
             // 
+            this.repositoryItemGridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colwhs_code,
+            this.coldescripcion1});
             this.repositoryItemGridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.repositoryItemGridLookUpEdit1View.Name = "repositoryItemGridLookUpEdit1View";
             this.repositoryItemGridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.repositoryItemGridLookUpEdit1View.OptionsView.ShowAutoFilterRow = true;
             this.repositoryItemGridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
             // coldiferencia
@@ -891,6 +898,22 @@ namespace LOSA.Logistica
             this.coltoma_fisica1.VisibleIndex = 4;
             this.coltoma_fisica1.Width = 144;
             // 
+            // colwhs_code
+            // 
+            this.colwhs_code.Caption = "Whs Code";
+            this.colwhs_code.FieldName = "whs_code";
+            this.colwhs_code.Name = "colwhs_code";
+            this.colwhs_code.Visible = true;
+            this.colwhs_code.VisibleIndex = 0;
+            // 
+            // coldescripcion1
+            // 
+            this.coldescripcion1.Caption = "Descripcion";
+            this.coldescripcion1.FieldName = "descripcion";
+            this.coldescripcion1.Name = "coldescripcion1";
+            this.coldescripcion1.Visible = true;
+            this.coldescripcion1.VisibleIndex = 1;
+            // 
             // frmNuevoRecuento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -992,5 +1015,7 @@ namespace LOSA.Logistica
         private DevExpress.XtraGrid.Columns.GridColumn coltoma_fisica;
         private DevExpress.XtraGrid.Columns.GridColumn collote;
         private DevExpress.XtraGrid.Columns.GridColumn coltoma_fisica1;
+        private DevExpress.XtraGrid.Columns.GridColumn colwhs_code;
+        private DevExpress.XtraGrid.Columns.GridColumn coldescripcion1;
     }
 }
