@@ -130,6 +130,39 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="Salida_Almacen_Detalle" msprop:Generator_TableClassName="Salida_Almacen_DetalleDataTable" msprop:Generator_TableVarName="tableSalida_Almacen_Detalle" msprop:Generator_RowChangedName="Salida_Almacen_DetalleRowChanged" msprop:Generator_TablePropName="Salida_Almacen_Detalle" msprop:Generator_RowDeletingName="Salida_Almacen_DetalleRowDeleting" msprop:Generator_RowChangingName="Salida_Almacen_DetalleRowChanging" msprop:Generator_RowEvHandlerName="Salida_Almacen_DetalleRowChangeEventHandler" msprop:Generator_RowDeletedName="Salida_Almacen_DetalleRowDeleted" msprop:Generator_RowClassName="Salida_Almacen_DetalleRow" msprop:Generator_UserTableName="Salida_Almacen_Detalle" msprop:Generator_RowEvArgName="Salida_Almacen_DetalleRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="id_mp" msprop:Generator_ColumnVarNameInTable="columnid_mp" msprop:Generator_ColumnPropNameInRow="id_mp" msprop:Generator_ColumnPropNameInTable="id_mpColumn" msprop:Generator_UserColumnName="id_mp" type="xs:int" minOccurs="0" />
+              <xs:element name="materia_prima" msprop:Generator_ColumnVarNameInTable="columnmateria_prima" msprop:Generator_ColumnPropNameInRow="materia_prima" msprop:Generator_ColumnPropNameInTable="materia_primaColumn" msprop:Generator_UserColumnName="materia_prima" type="xs:string" minOccurs="0" />
+              <xs:element name="id_h" msprop:Generator_ColumnVarNameInTable="columnid_h" msprop:Generator_ColumnPropNameInRow="id_h" msprop:Generator_ColumnPropNameInTable="id_hColumn" msprop:Generator_UserColumnName="id_h" type="xs:int" minOccurs="0" />
+              <xs:element name="peso" msprop:Generator_ColumnVarNameInTable="columnpeso" msprop:Generator_ColumnPropNameInRow="peso" msprop:Generator_ColumnPropNameInTable="pesoColumn" msprop:Generator_UserColumnName="peso" type="xs:decimal" minOccurs="0" />
+              <xs:element name="unidades" msprop:Generator_ColumnVarNameInTable="columnunidades" msprop:Generator_ColumnPropNameInRow="unidades" msprop:Generator_ColumnPropNameInTable="unidadesColumn" msprop:Generator_UserColumnName="unidades" type="xs:decimal" minOccurs="0" />
+              <xs:element name="enable" msprop:Generator_ColumnVarNameInTable="columnenable" msprop:Generator_ColumnPropNameInRow="enable" msprop:Generator_ColumnPropNameInTable="enableColumn" msprop:Generator_UserColumnName="enable" type="xs:boolean" default="true" minOccurs="0" />
+              <xs:element name="DocEntry" msprop:Generator_ColumnVarNameInTable="columnDocEntry" msprop:Generator_ColumnPropNameInRow="DocEntry" msprop:Generator_ColumnPropNameInTable="DocEntryColumn" msprop:Generator_UserColumnName="DocEntry" type="xs:int" minOccurs="0" />
+              <xs:element name="code_sap" msprop:Generator_ColumnVarNameInTable="columncode_sap" msprop:Generator_ColumnPropNameInRow="code_sap" msprop:Generator_ColumnPropNameInTable="code_sapColumn" msprop:Generator_UserColumnName="code_sap" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Salida_Almacen_D_Lote" msprop:Generator_TableClassName="Salida_Almacen_D_LoteDataTable" msprop:Generator_TableVarName="tableSalida_Almacen_D_Lote" msprop:Generator_RowChangedName="Salida_Almacen_D_LoteRowChanged" msprop:Generator_TablePropName="Salida_Almacen_D_Lote" msprop:Generator_RowDeletingName="Salida_Almacen_D_LoteRowDeleting" msprop:Generator_RowChangingName="Salida_Almacen_D_LoteRowChanging" msprop:Generator_RowEvHandlerName="Salida_Almacen_D_LoteRowChangeEventHandler" msprop:Generator_RowDeletedName="Salida_Almacen_D_LoteRowDeleted" msprop:Generator_RowClassName="Salida_Almacen_D_LoteRow" msprop:Generator_UserTableName="Salida_Almacen_D_Lote" msprop:Generator_RowEvArgName="Salida_Almacen_D_LoteRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="peso" msprop:Generator_ColumnVarNameInTable="columnpeso" msprop:Generator_ColumnPropNameInRow="peso" msprop:Generator_ColumnPropNameInTable="pesoColumn" msprop:Generator_UserColumnName="peso" type="xs:decimal" minOccurs="0" />
+              <xs:element name="unidades" msprop:Generator_ColumnVarNameInTable="columnunidades" msprop:Generator_ColumnPropNameInRow="unidades" msprop:Generator_ColumnPropNameInTable="unidadesColumn" msprop:Generator_UserColumnName="unidades" type="xs:decimal" minOccurs="0" />
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="user_creador" msprop:Generator_ColumnVarNameInTable="columnuser_creador" msprop:Generator_ColumnPropNameInRow="user_creador" msprop:Generator_ColumnPropNameInTable="user_creadorColumn" msprop:Generator_UserColumnName="user_creador" type="xs:int" minOccurs="0" />
+              <xs:element name="usuario" msprop:Generator_ColumnVarNameInTable="columnusuario" msprop:Generator_ColumnPropNameInRow="usuario" msprop:Generator_ColumnPropNameInTable="usuarioColumn" msprop:Generator_UserColumnName="usuario" type="xs:string" minOccurs="0" />
+              <xs:element name="DocEntry" msprop:Generator_ColumnVarNameInTable="columnDocEntry" msprop:Generator_ColumnPropNameInRow="DocEntry" msprop:Generator_ColumnPropNameInTable="DocEntryColumn" msprop:Generator_UserColumnName="DocEntry" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha_vencimiento" msprop:Generator_ColumnVarNameInTable="columnfecha_vencimiento" msprop:Generator_ColumnPropNameInRow="fecha_vencimiento" msprop:Generator_ColumnPropNameInTable="fecha_vencimientoColumn" msprop:Generator_UserColumnName="fecha_vencimiento" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="fecha_fabricacion" msprop:Generator_ColumnVarNameInTable="columnfecha_fabricacion" msprop:Generator_ColumnPropNameInRow="fecha_fabricacion" msprop:Generator_ColumnPropNameInTable="fecha_fabricacionColumn" msprop:Generator_UserColumnName="fecha_fabricacion" type="xs:string" minOccurs="0" />
+              <xs:element name="bodega_in" msdata:Caption="Origen" msprop:Generator_ColumnVarNameInTable="columnbodega_in" msprop:Generator_ColumnPropNameInRow="bodega_in" msprop:Generator_ColumnPropNameInTable="bodega_inColumn" msprop:Generator_UserColumnName="bodega_in" type="xs:string" minOccurs="0" />
+              <xs:element name="bodega_out" msdata:Caption="Destino" msprop:Generator_ColumnVarNameInTable="columnbodega_out" msprop:Generator_ColumnPropNameInRow="bodega_out" msprop:Generator_ColumnPropNameInTable="bodega_outColumn" msprop:Generator_UserColumnName="bodega_out" type="xs:string" minOccurs="0" />
+              <xs:element name="lote" msprop:Generator_ColumnVarNameInTable="columnlote" msprop:Generator_ColumnPropNameInRow="lote" msprop:Generator_ColumnPropNameInTable="loteColumn" msprop:Generator_UserColumnName="lote" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

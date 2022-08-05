@@ -82,5 +82,17 @@ namespace LOSA.AlmacenesExterno
                 printTool.ShowPreviewDialog();
             }
         }
+
+        private void repositoryVerDetalle_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridview1 = (GridView)gcTransferencia.FocusedView;
+            var row = (dsSalidasAlmacenesExternos.Salida_Almacen_HeaderRow)gridview1.GetFocusedDataRow();
+
+            xfrmMovimientoStockDetalle frm = new xfrmMovimientoStockDetalle(row.id, row.bodega_in, row.bodega_out, row.fecha);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                load_data();
+            }
+        }
     }
 }
