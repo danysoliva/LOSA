@@ -291,9 +291,9 @@ namespace LOSA.ACS.RRHH {
             
             private global::System.Data.DataColumn columnsemana;
             
-            private global::System.Data.DataColumn columnentrada_lunes;
+            private global::System.Data.DataColumn columnentrada_1;
             
-            private global::System.Data.DataColumn columnsalida_lunes;
+            private global::System.Data.DataColumn columnsalida_1;
             
             private global::System.Data.DataColumn columnentrada_martes;
             
@@ -408,17 +408,17 @@ namespace LOSA.ACS.RRHH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn entrada_lunesColumn {
+            public global::System.Data.DataColumn entrada_1Column {
                 get {
-                    return this.columnentrada_lunes;
+                    return this.columnentrada_1;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn salida_lunesColumn {
+            public global::System.Data.DataColumn salida_1Column {
                 get {
-                    return this.columnsalida_lunes;
+                    return this.columnsalida_1;
                 }
             }
             
@@ -586,8 +586,8 @@ namespace LOSA.ACS.RRHH {
                         int turno_id, 
                         string turno_name, 
                         int semana, 
-                        System.DateTime entrada_lunes, 
-                        System.DateTime salida_lunes, 
+                        System.DateTime entrada_1, 
+                        System.DateTime salida_1, 
                         System.DateTime entrada_martes, 
                         System.DateTime salida_martes, 
                         System.DateTime entrada_miercoles, 
@@ -611,8 +611,8 @@ namespace LOSA.ACS.RRHH {
                         turno_id,
                         turno_name,
                         semana,
-                        entrada_lunes,
-                        salida_lunes,
+                        entrada_1,
+                        salida_1,
                         entrada_martes,
                         salida_martes,
                         entrada_miercoles,
@@ -656,8 +656,8 @@ namespace LOSA.ACS.RRHH {
                 this.columnturno_id = base.Columns["turno_id"];
                 this.columnturno_name = base.Columns["turno_name"];
                 this.columnsemana = base.Columns["semana"];
-                this.columnentrada_lunes = base.Columns["entrada_lunes"];
-                this.columnsalida_lunes = base.Columns["salida_lunes"];
+                this.columnentrada_1 = base.Columns["entrada_1"];
+                this.columnsalida_1 = base.Columns["salida_1"];
                 this.columnentrada_martes = base.Columns["entrada_martes"];
                 this.columnsalida_martes = base.Columns["salida_martes"];
                 this.columnentrada_miercoles = base.Columns["entrada_miercoles"];
@@ -690,10 +690,10 @@ namespace LOSA.ACS.RRHH {
                 base.Columns.Add(this.columnturno_name);
                 this.columnsemana = new global::System.Data.DataColumn("semana", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsemana);
-                this.columnentrada_lunes = new global::System.Data.DataColumn("entrada_lunes", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnentrada_lunes);
-                this.columnsalida_lunes = new global::System.Data.DataColumn("salida_lunes", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsalida_lunes);
+                this.columnentrada_1 = new global::System.Data.DataColumn("entrada_1", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnentrada_1);
+                this.columnsalida_1 = new global::System.Data.DataColumn("salida_1", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsalida_1);
                 this.columnentrada_martes = new global::System.Data.DataColumn("entrada_martes", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnentrada_martes);
                 this.columnsalida_martes = new global::System.Data.DataColumn("salida_martes", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
@@ -728,20 +728,20 @@ namespace LOSA.ACS.RRHH {
                 this.columnnombre.Caption = "Nombre";
                 this.columnturno_name.Caption = "Turno";
                 this.columnsemana.Caption = "Semana";
-                this.columnentrada_lunes.Caption = "E Lunes";
-                this.columnsalida_lunes.Caption = "S Lunes";
-                this.columnentrada_martes.Caption = "E Martes";
-                this.columnsalida_martes.Caption = "S Martes";
-                this.columnentrada_miercoles.Caption = "E Miércoles";
-                this.columnsalida_miercoles.Caption = "S Miércoles";
-                this.columnentrada_jueves.Caption = "E Jueves";
-                this.columnsalida_jueves.Caption = "S Jueves";
-                this.columnentrada_viernes.Caption = "E Viernes";
-                this.columnsalida_viernes.Caption = "S Viernes";
-                this.columnentrada_sabado.Caption = "E Sabado";
-                this.columnsalida_sabado.Caption = "S Sabado";
-                this.columnentrada_domingo.Caption = "E Domingo";
-                this.columnsalida_domingo.Caption = "S Domingo";
+                this.columnentrada_1.Caption = "E1";
+                this.columnsalida_1.Caption = "S1";
+                this.columnentrada_martes.Caption = "E2";
+                this.columnsalida_martes.Caption = "S2";
+                this.columnentrada_miercoles.Caption = "E3";
+                this.columnsalida_miercoles.Caption = "S3";
+                this.columnentrada_jueves.Caption = "E4";
+                this.columnsalida_jueves.Caption = "S4";
+                this.columnentrada_viernes.Caption = "E5";
+                this.columnsalida_viernes.Caption = "S5";
+                this.columnentrada_sabado.Caption = "E6";
+                this.columnsalida_sabado.Caption = "S6";
+                this.columnentrada_domingo.Caption = "E7";
+                this.columnsalida_domingo.Caption = "S7";
                 this.columnStartOfWeek.Caption = "Fecha Desde";
                 this.columnEndOfWeek.Caption = "Fecha Hasta";
             }
@@ -982,35 +982,33 @@ namespace LOSA.ACS.RRHH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime entrada_lunes {
+            public System.DateTime entrada_1 {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableresumen_asistencia.entrada_lunesColumn]));
+                        return ((global::System.DateTime)(this[this.tableresumen_asistencia.entrada_1Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'entrada_lunes\' de la tabla \'resumen_asistencia\' es DBNull" +
-                                ".", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'entrada_1\' de la tabla \'resumen_asistencia\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableresumen_asistencia.entrada_lunesColumn] = value;
+                    this[this.tableresumen_asistencia.entrada_1Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime salida_lunes {
+            public System.DateTime salida_1 {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableresumen_asistencia.salida_lunesColumn]));
+                        return ((global::System.DateTime)(this[this.tableresumen_asistencia.salida_1Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'salida_lunes\' de la tabla \'resumen_asistencia\' es DBNull." +
-                                "", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'salida_1\' de la tabla \'resumen_asistencia\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableresumen_asistencia.salida_lunesColumn] = value;
+                    this[this.tableresumen_asistencia.salida_1Column] = value;
                 }
             }
             
@@ -1341,26 +1339,26 @@ namespace LOSA.ACS.RRHH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isentrada_lunesNull() {
-                return this.IsNull(this.tableresumen_asistencia.entrada_lunesColumn);
+            public bool Isentrada_1Null() {
+                return this.IsNull(this.tableresumen_asistencia.entrada_1Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setentrada_lunesNull() {
-                this[this.tableresumen_asistencia.entrada_lunesColumn] = global::System.Convert.DBNull;
+            public void Setentrada_1Null() {
+                this[this.tableresumen_asistencia.entrada_1Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Issalida_lunesNull() {
-                return this.IsNull(this.tableresumen_asistencia.salida_lunesColumn);
+            public bool Issalida_1Null() {
+                return this.IsNull(this.tableresumen_asistencia.salida_1Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setsalida_lunesNull() {
-                this[this.tableresumen_asistencia.salida_lunesColumn] = global::System.Convert.DBNull;
+            public void Setsalida_1Null() {
+                this[this.tableresumen_asistencia.salida_1Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

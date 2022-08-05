@@ -43,8 +43,6 @@ namespace LOSA.ACS.RRHH
             this.coldesde = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colhasta = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsemana = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colentrada_lunes = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colsalida_lunes = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colentrada_martes = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsalida_martes = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colentrada_miercoles = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -58,6 +56,8 @@ namespace LOSA.ACS.RRHH
             this.colentrada_domingo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsalida_domingo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStartOfWeek = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colentrada_1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colsalida_1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEndOfWeek = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dt_final = new DevExpress.XtraEditors.DateEdit();
             this.dt_inicial = new DevExpress.XtraEditors.DateEdit();
@@ -111,8 +111,6 @@ namespace LOSA.ACS.RRHH
             this.coldesde,
             this.colhasta,
             this.colsemana,
-            this.colentrada_lunes,
-            this.colsalida_lunes,
             this.colentrada_martes,
             this.colsalida_martes,
             this.colentrada_miercoles,
@@ -126,6 +124,8 @@ namespace LOSA.ACS.RRHH
             this.colentrada_domingo,
             this.colsalida_domingo,
             this.colStartOfWeek,
+            this.colentrada_1,
+            this.colsalida_1,
             this.colEndOfWeek});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
@@ -149,7 +149,7 @@ namespace LOSA.ACS.RRHH
             this.colcodigo.OptionsColumn.AllowEdit = false;
             this.colcodigo.Visible = true;
             this.colcodigo.VisibleIndex = 0;
-            this.colcodigo.Width = 35;
+            this.colcodigo.Width = 40;
             // 
             // colnombre
             // 
@@ -207,28 +207,6 @@ namespace LOSA.ACS.RRHH
             this.colsemana.Name = "colsemana";
             this.colsemana.OptionsColumn.AllowEdit = false;
             this.colsemana.Width = 26;
-            // 
-            // colentrada_lunes
-            // 
-            this.colentrada_lunes.DisplayFormat.FormatString = "g";
-            this.colentrada_lunes.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.colentrada_lunes.FieldName = "entrada_lunes";
-            this.colentrada_lunes.Name = "colentrada_lunes";
-            this.colentrada_lunes.OptionsColumn.AllowEdit = false;
-            this.colentrada_lunes.Visible = true;
-            this.colentrada_lunes.VisibleIndex = 5;
-            this.colentrada_lunes.Width = 52;
-            // 
-            // colsalida_lunes
-            // 
-            this.colsalida_lunes.DisplayFormat.FormatString = "g";
-            this.colsalida_lunes.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.colsalida_lunes.FieldName = "salida_lunes";
-            this.colsalida_lunes.Name = "colsalida_lunes";
-            this.colsalida_lunes.OptionsColumn.AllowEdit = false;
-            this.colsalida_lunes.Visible = true;
-            this.colsalida_lunes.VisibleIndex = 6;
-            this.colsalida_lunes.Width = 47;
             // 
             // colentrada_martes
             // 
@@ -370,6 +348,24 @@ namespace LOSA.ACS.RRHH
             this.colStartOfWeek.Visible = true;
             this.colStartOfWeek.VisibleIndex = 3;
             // 
+            // colentrada_1
+            // 
+            this.colentrada_1.DisplayFormat.FormatString = "g";
+            this.colentrada_1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colentrada_1.FieldName = "entrada_1";
+            this.colentrada_1.Name = "colentrada_1";
+            this.colentrada_1.Visible = true;
+            this.colentrada_1.VisibleIndex = 5;
+            // 
+            // colsalida_1
+            // 
+            this.colsalida_1.DisplayFormat.FormatString = "g";
+            this.colsalida_1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colsalida_1.FieldName = "salida_1";
+            this.colsalida_1.Name = "colsalida_1";
+            this.colsalida_1.Visible = true;
+            this.colsalida_1.VisibleIndex = 6;
+            // 
             // colEndOfWeek
             // 
             this.colEndOfWeek.FieldName = "EndOfWeek";
@@ -504,8 +500,6 @@ namespace LOSA.ACS.RRHH
         private DevExpress.XtraGrid.Columns.GridColumn colturno_id;
         private DevExpress.XtraGrid.Columns.GridColumn colturno_name;
         private DevExpress.XtraGrid.Columns.GridColumn colsemana;
-        private DevExpress.XtraGrid.Columns.GridColumn colentrada_lunes;
-        private DevExpress.XtraGrid.Columns.GridColumn colsalida_lunes;
         private DevExpress.XtraGrid.Columns.GridColumn colentrada_martes;
         private DevExpress.XtraGrid.Columns.GridColumn colsalida_martes;
         private DevExpress.XtraGrid.Columns.GridColumn colentrada_miercoles;
@@ -529,5 +523,7 @@ namespace LOSA.ACS.RRHH
         private DevExpress.XtraGrid.Columns.GridColumn coldepartamento;
         private DevExpress.XtraGrid.Columns.GridColumn colStartOfWeek;
         private DevExpress.XtraGrid.Columns.GridColumn colEndOfWeek;
+        private DevExpress.XtraGrid.Columns.GridColumn colentrada_1;
+        private DevExpress.XtraGrid.Columns.GridColumn colsalida_1;
     }
 }
