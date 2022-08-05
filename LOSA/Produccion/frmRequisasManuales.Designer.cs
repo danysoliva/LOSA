@@ -57,6 +57,7 @@ namespace LOSA.Produccion
             this.btn_reqmanual = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colImprimir = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnImprimir = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colid_requisa_manual = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.requisastoaddBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProduccion)).BeginInit();
@@ -153,7 +154,8 @@ namespace LOSA.Produccion
             this.colItemCode,
             this.colItemName,
             this.colAgregar,
-            this.colImprimir});
+            this.colImprimir,
+            this.colid_requisa_manual});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
@@ -217,7 +219,7 @@ namespace LOSA.Produccion
             this.colAgregar.ColumnEdit = this.btn_reqmanual;
             this.colAgregar.Name = "colAgregar";
             this.colAgregar.Visible = true;
-            this.colAgregar.VisibleIndex = 4;
+            this.colAgregar.VisibleIndex = 5;
             this.colAgregar.Width = 102;
             // 
             // btn_reqmanual
@@ -236,7 +238,7 @@ namespace LOSA.Produccion
             this.colImprimir.ColumnEdit = this.btnImprimir;
             this.colImprimir.Name = "colImprimir";
             this.colImprimir.Visible = true;
-            this.colImprimir.VisibleIndex = 5;
+            this.colImprimir.VisibleIndex = 6;
             // 
             // btnImprimir
             // 
@@ -247,6 +249,13 @@ namespace LOSA.Produccion
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
+            // colid_requisa_manual
+            // 
+            this.colid_requisa_manual.FieldName = "id_requisa_manual";
+            this.colid_requisa_manual.Name = "colid_requisa_manual";
+            this.colid_requisa_manual.Visible = true;
+            this.colid_requisa_manual.VisibleIndex = 4;
             // 
             // frmRequisasManuales
             // 
@@ -289,5 +298,6 @@ namespace LOSA.Produccion
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btn_reqmanual;
         private DevExpress.XtraGrid.Columns.GridColumn colImprimir;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnImprimir;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_requisa_manual;
     }
 }

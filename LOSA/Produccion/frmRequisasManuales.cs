@@ -29,7 +29,7 @@ namespace LOSA.Produccion
 
         public void load_data() 
         {
-            string query = @"sp_obtener_requisas_to_get_rm_manual";
+            string query = @"sp_obtener_requisas_to_get_rm_manualv2";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             try
             {
@@ -89,18 +89,23 @@ namespace LOSA.Produccion
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_req", row.id);
                 int Id_RequsaManual = Convert.ToInt32(cmd.ExecuteScalar());
-
-                Requisiciones.Reportes.lblNumeroReq report = new Requisiciones.Reportes.lblNumeroReq(Id_RequsaManual);
-                report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
-                report.ShowPrintMarginsWarning = false;
-                report.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
-                report.Print();
-
+                
+                if (Id_RequsaManual > 0)
+                {
+                    Requisiciones.Reportes.lblNumeroReq report = new Requisiciones.Reportes.lblNumeroReq(Id_RequsaManual);
+                    report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                    report.ShowPrintMarginsWarning = false;
+                    report.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
+                    report.Print();
+                }
+                else
+                {
+                    CajaDialogo.Error("Esta requisa aun no tiene lineas de detalle!");
+                }
             }
             catch (Exception ex)
             {
-
-                
+                CajaDialogo.Error(ex.Message);
             }
         }
     }

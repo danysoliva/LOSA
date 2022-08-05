@@ -13,7 +13,7 @@
     <Shape ID="DesignTable:panelalimentacion" ZOrder="3" X="577" Y="456" Height="219" Width="173" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="215" />
     <Shape ID="DesignTable:unidades_tarima" ZOrder="10" X="189" Y="105" Height="86" Width="161" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="82" />
     <Shape ID="DesignTable:bags" ZOrder="9" X="813" Y="117" Height="105" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="101" />
-    <Shape ID="DesignTable:requisas_toadd" ZOrder="8" X="1211" Y="282" Height="143" Width="153" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="24" SplitterPosition="139" />
+    <Shape ID="DesignTable:requisas_toadd" ZOrder="8" X="1211" Y="282" Height="162" Width="153" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="24" SplitterPosition="139" />
     <Shape ID="DesignTable:MpList" ZOrder="7" X="1184" Y="554" Height="86" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="82" />
     <Shape ID="DesignTable:lista_mp" ZOrder="6" X="1130" Y="680" Height="124" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="120" />
     <Shape ID="DesignTable:turno" ZOrder="5" X="995" Y="382" Height="67" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="63" />

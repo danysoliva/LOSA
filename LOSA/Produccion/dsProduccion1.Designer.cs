@@ -2944,6 +2944,8 @@ namespace LOSA.Produccion {
             
             private global::System.Data.DataColumn columnItemName;
             
+            private global::System.Data.DataColumn columnid_requisa_manual;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public requisas_toaddDataTable() {
@@ -3027,6 +3029,14 @@ namespace LOSA.Produccion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_requisa_manualColumn {
+                get {
+                    return this.columnid_requisa_manual;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3062,7 +3072,7 @@ namespace LOSA.Produccion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public requisas_toaddRow Addrequisas_toaddRow(int id, int id_orden, System.DateTime fecha_solicitada, int DocEntry, string ItemCode, string ItemName) {
+            public requisas_toaddRow Addrequisas_toaddRow(int id, int id_orden, System.DateTime fecha_solicitada, int DocEntry, string ItemCode, string ItemName, int id_requisa_manual) {
                 requisas_toaddRow rowrequisas_toaddRow = ((requisas_toaddRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -3070,7 +3080,8 @@ namespace LOSA.Produccion {
                         fecha_solicitada,
                         DocEntry,
                         ItemCode,
-                        ItemName};
+                        ItemName,
+                        id_requisa_manual};
                 rowrequisas_toaddRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowrequisas_toaddRow);
                 return rowrequisas_toaddRow;
@@ -3099,6 +3110,7 @@ namespace LOSA.Produccion {
                 this.columnDocEntry = base.Columns["DocEntry"];
                 this.columnItemCode = base.Columns["ItemCode"];
                 this.columnItemName = base.Columns["ItemName"];
+                this.columnid_requisa_manual = base.Columns["id_requisa_manual"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3116,6 +3128,9 @@ namespace LOSA.Produccion {
                 base.Columns.Add(this.columnItemCode);
                 this.columnItemName = new global::System.Data.DataColumn("ItemName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnItemName);
+                this.columnid_requisa_manual = new global::System.Data.DataColumn("id_requisa_manual", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_requisa_manual);
+                this.columnid_requisa_manual.Caption = "Id Requisa Manual";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6340,6 +6355,23 @@ namespace LOSA.Produccion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_requisa_manual {
+                get {
+                    try {
+                        return ((int)(this[this.tablerequisas_toadd.id_requisa_manualColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_requisa_manual\' de la tabla \'requisas_toadd\' es DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tablerequisas_toadd.id_requisa_manualColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tablerequisas_toadd.idColumn);
             }
@@ -6408,6 +6440,18 @@ namespace LOSA.Produccion {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetItemNameNull() {
                 this[this.tablerequisas_toadd.ItemNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_requisa_manualNull() {
+                return this.IsNull(this.tablerequisas_toadd.id_requisa_manualColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_requisa_manualNull() {
+                this[this.tablerequisas_toadd.id_requisa_manualColumn] = global::System.Convert.DBNull;
             }
         }
         
