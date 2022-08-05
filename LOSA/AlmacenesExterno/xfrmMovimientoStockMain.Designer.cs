@@ -123,26 +123,29 @@ namespace LOSA.AlmacenesExterno
             // 
             // colid
             // 
+            this.colid.Caption = "# Transaccion";
             this.colid.FieldName = "id";
             this.colid.Name = "colid";
+            this.colid.Visible = true;
+            this.colid.VisibleIndex = 0;
             // 
             // colbodega_in
             // 
-            this.colbodega_in.Caption = "Bodega Entrada";
+            this.colbodega_in.Caption = "Bodega Origen";
             this.colbodega_in.FieldName = "bodega_in";
             this.colbodega_in.Name = "colbodega_in";
             this.colbodega_in.OptionsColumn.AllowEdit = false;
             this.colbodega_in.Visible = true;
-            this.colbodega_in.VisibleIndex = 0;
+            this.colbodega_in.VisibleIndex = 1;
             // 
             // colbodega_out
             // 
-            this.colbodega_out.Caption = "Bodega Salida";
+            this.colbodega_out.Caption = "Bodega Destino";
             this.colbodega_out.FieldName = "bodega_out";
             this.colbodega_out.Name = "colbodega_out";
             this.colbodega_out.OptionsColumn.AllowEdit = false;
             this.colbodega_out.Visible = true;
-            this.colbodega_out.VisibleIndex = 1;
+            this.colbodega_out.VisibleIndex = 2;
             // 
             // colfecha
             // 
@@ -151,7 +154,7 @@ namespace LOSA.AlmacenesExterno
             this.colfecha.Name = "colfecha";
             this.colfecha.OptionsColumn.AllowEdit = false;
             this.colfecha.Visible = true;
-            this.colfecha.VisibleIndex = 2;
+            this.colfecha.VisibleIndex = 3;
             // 
             // colenable
             // 
@@ -164,7 +167,7 @@ namespace LOSA.AlmacenesExterno
             this.colDocEntry.Name = "colDocEntry";
             this.colDocEntry.OptionsColumn.AllowEdit = false;
             this.colDocEntry.Visible = true;
-            this.colDocEntry.VisibleIndex = 3;
+            this.colDocEntry.VisibleIndex = 4;
             // 
             // coluser_creador
             // 
@@ -179,7 +182,7 @@ namespace LOSA.AlmacenesExterno
             this.colnumero_transaccion.Name = "colnumero_transaccion";
             this.colnumero_transaccion.OptionsColumn.AllowEdit = false;
             this.colnumero_transaccion.Visible = true;
-            this.colnumero_transaccion.VisibleIndex = 5;
+            this.colnumero_transaccion.VisibleIndex = 6;
             // 
             // colid_ingreso
             // 
@@ -201,6 +204,7 @@ namespace LOSA.AlmacenesExterno
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryVerDetalle.Name = "repositoryVerDetalle";
             this.repositoryVerDetalle.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryVerDetalle.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryVerDetalle_ButtonClick);
             // 
             // gridColumn2
             // 
@@ -208,7 +212,7 @@ namespace LOSA.AlmacenesExterno
             this.gridColumn2.ColumnEdit = this.repositoryPrint;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 6;
+            this.gridColumn2.VisibleIndex = 7;
             // 
             // repositoryPrint
             // 
@@ -227,7 +231,7 @@ namespace LOSA.AlmacenesExterno
             this.colusuario.Name = "colusuario";
             this.colusuario.OptionsColumn.AllowEdit = false;
             this.colusuario.Visible = true;
-            this.colusuario.VisibleIndex = 4;
+            this.colusuario.VisibleIndex = 5;
             // 
             // btnAtras
             // 
