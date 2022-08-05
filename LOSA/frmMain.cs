@@ -187,13 +187,13 @@ namespace LOSA
             string HostName = Dns.GetHostName();
             if (HostName == "F3DYSQ2" || HostName == "9SSCBV2" || HostName == "9PG91W2")
             {
-                SaltarLogin.Visible = simpleButton2 .Visible = true;
+                SaltarLogin.Visible = simpleButton2 .Visible = SaltarLoginPRD.Visible= true;
                 //this.Size = new Size(335, 497);//Grande
 
             }
             else
             {
-                SaltarLogin.Visible = simpleButton2.Visible = false;
+                SaltarLogin.Visible = simpleButton2.Visible = SaltarLoginPRD.Visible = false;
                 //this.Size = new Size(335, 442);//Pequeño
             }
         }
@@ -312,6 +312,31 @@ namespace LOSA
             frm.MdiParent = this.MdiParent;
             frm.Show();
             this.Close();
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SaltarLoginPRD_Click(object sender, EventArgs e)
+        {
+            Teclado.cerrarTeclado();
+            UserLogin Log1 = new UserLogin();
+            if (Log1.RecuperarRegistro(1035))
+            {
+                //Log1.GrupoUsuario.GrupoUsuarioActivo = (GrupoUser.GrupoUsuario)Log1.IdGrupo;
+                //Log1.GrupoUsuario.GrupoUsuarioActivo = (GrupoUser.GrupoUsuario)1;
+                Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.ProduccionV2;
+            }
+            else
+            {
+                Log1.Id = 1069;
+                Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Calidad;
+            }
+            frmOpciones frm = new frmOpciones(Log1);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
         }
     }
 }

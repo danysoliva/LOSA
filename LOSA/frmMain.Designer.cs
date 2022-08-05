@@ -44,6 +44,7 @@ namespace LOSA
             this.cmdMicros = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.SaltarLoginPRD = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtClave.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsuario.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -247,13 +248,31 @@ namespace LOSA
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // SaltarLoginPRD
+            // 
+            this.SaltarLoginPRD.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.SaltarLoginPRD.Appearance.BorderColor = System.Drawing.Color.LightSkyBlue;
+            this.SaltarLoginPRD.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaltarLoginPRD.Appearance.Options.UseBackColor = true;
+            this.SaltarLoginPRD.Appearance.Options.UseBorderColor = true;
+            this.SaltarLoginPRD.Appearance.Options.UseFont = true;
+            this.SaltarLoginPRD.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.SaltarLoginPRD.Location = new System.Drawing.Point(324, 500);
+            this.SaltarLoginPRD.Name = "SaltarLoginPRD";
+            this.SaltarLoginPRD.Size = new System.Drawing.Size(199, 71);
+            this.SaltarLoginPRD.TabIndex = 18;
+            this.SaltarLoginPRD.Text = "Ingresar PRD";
+            this.SaltarLoginPRD.Visible = false;
+            this.SaltarLoginPRD.Click += new System.EventHandler(this.SaltarLoginPRD_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(638, 560);
+            this.ClientSize = new System.Drawing.Size(638, 578);
             this.ControlBox = false;
+            this.Controls.Add(this.SaltarLoginPRD);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.cmdMicros);
             this.Controls.Add(this.SaltarLogin);
@@ -297,6 +316,7 @@ namespace LOSA
         private SimpleButton cmdButtonSaltarLogin;
         private SimpleButton cmdMicros;
         private SimpleButton simpleButton2;
+        private SimpleButton SaltarLoginPRD;
     }
 }
 
