@@ -28,6 +28,9 @@ namespace LOSA.TransaccionesMP
         public frmAsjuteInventarioPorLote(UserLogin pUserLogin)
         {
             InitializeComponent();
+            DataOperations dp1 = new DataOperations();
+            dtFechaDocumento.DateTime = dp1.Now();
+            LoadMaestrosBodegas();
             UsuarioLogueado = pUserLogin;
             radioLoteExistente.Checked = true;
             LoadPresentaciones();
@@ -36,6 +39,9 @@ namespace LOSA.TransaccionesMP
         public frmAsjuteInventarioPorLote(UserLogin pUserLogin, int pIdMP, int id_lote_alosy, string pLote)
         {
             InitializeComponent();
+            DataOperations dp1 = new DataOperations();
+            dtFechaDocumento.DateTime = dp1.Now();
+            LoadMaestrosBodegas();
             MateriaPrima MateriaPrimaActual = new MateriaPrima();
             UsuarioLogueado = pUserLogin;
             radioLoteExistente.Checked = true;
@@ -63,6 +69,32 @@ namespace LOSA.TransaccionesMP
 
                 //    txtCantidadUnidades.Focus();
                 //}
+            }
+        }
+
+        private void LoadMaestrosBodegas()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_maestro_bodegas_ajuste_kardex", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@idbodega", idBodega);
+                dsTarima1.bodega_origen.Clear();
+                dsTarima1.bodega_destino.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsTarima1.bodega_origen);
+                adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsTarima1.bodega_destino);
+                
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
             }
         }
 
@@ -164,6 +196,16 @@ namespace LOSA.TransaccionesMP
                 CajaDialogo.Error("No se puede registrar una cantidad de materia en cero (0)!");
                 return;
             }
+
+            if (!string.IsNullOrEmpty(dtFechaDocumento.Text))
+            {
+                if (dtFechaDocumento.DateTime.Year <= 2020)
+                {
+                    CajaDialogo.Error("Es necesario ingresar una fecha de documento valida!");
+                    return;
+                }
+            }
+
             DataOperations dp = new DataOperations();
             
 
@@ -176,7 +218,7 @@ namespace LOSA.TransaccionesMP
                         
                         SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                         conn.Open();
-                        SqlCommand cmd = new SqlCommand("sp_ajuste_kardex_por_lote", conn);
+                        SqlCommand cmd = new SqlCommand("sp_ajuste_kardex_por_lote_v2", conn);
                         cmd.CommandType = CommandType.StoredProcedure;
                         //cmd.Parameters.AddWithValue("@cant_entrada", txtPesoKG.Text);
                         cmd.Parameters.AddWithValue("@cant_entrada", spinEditPesoKg.EditValue);
@@ -190,6 +232,17 @@ namespace LOSA.TransaccionesMP
                         cmd.Parameters.AddWithValue("@itemcode", ItemCode);
                         //cmd.Parameters.AddWithValue("@id_bodega");
                         cmd.Parameters.AddWithValue("@id_usercreate", UsuarioLogueado.Id);
+                        cmd.Parameters.AddWithValue("@fechaDocumento", dtFechaDocumento.DateTime);
+                        if(dp.ValidateNumberInt32(gridLookUpEditOrigen.EditValue)>0)
+                            cmd.Parameters.AddWithValue("@bodega_origen", gridLookUpEditOrigen.EditValue);
+                        else
+                            cmd.Parameters.AddWithValue("@bodega_origen", DBNull.Value);
+
+                        if (dp.ValidateNumberInt32(gridLookUpEditDestino.EditValue) > 0)
+                            cmd.Parameters.AddWithValue("@bodega_destino", gridLookUpEditDestino.EditValue);
+                        else
+                            cmd.Parameters.AddWithValue("@bodega_destino", DBNull.Value);
+
                         cmd.ExecuteNonQuery();
                         conn.Close();
 
