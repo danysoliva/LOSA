@@ -21,7 +21,8 @@ namespace LOSA.Reportes
         public rptIngresoHoja(int Pid, int Pid_mp)
         {
             InitializeComponent();
-            Id = Pid;
+            id_ingreso.Value = Id = Pid;
+            
             Id_mp = Pid_mp;
             validar_tipoingreso();
             if (isGranel == 1)
