@@ -129,6 +129,8 @@ namespace LOSA.ACS.RRHH
             this.colEndOfWeek});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowAutoFilterRow = true;
+            this.gridView1.OptionsView.ShowFooter = true;
             // 
             // colid_marca
             // 
@@ -210,7 +212,7 @@ namespace LOSA.ACS.RRHH
             // 
             // colentrada_martes
             // 
-            this.colentrada_martes.DisplayFormat.FormatString = "g";
+            this.colentrada_martes.DisplayFormat.FormatString = "f";
             this.colentrada_martes.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colentrada_martes.FieldName = "entrada_martes";
             this.colentrada_martes.Name = "colentrada_martes";
@@ -221,7 +223,7 @@ namespace LOSA.ACS.RRHH
             // 
             // colsalida_martes
             // 
-            this.colsalida_martes.DisplayFormat.FormatString = "g";
+            this.colsalida_martes.DisplayFormat.FormatString = "f";
             this.colsalida_martes.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colsalida_martes.FieldName = "salida_martes";
             this.colsalida_martes.Name = "colsalida_martes";
@@ -232,7 +234,7 @@ namespace LOSA.ACS.RRHH
             // 
             // colentrada_miercoles
             // 
-            this.colentrada_miercoles.DisplayFormat.FormatString = "g";
+            this.colentrada_miercoles.DisplayFormat.FormatString = "f";
             this.colentrada_miercoles.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colentrada_miercoles.FieldName = "entrada_miercoles";
             this.colentrada_miercoles.Name = "colentrada_miercoles";
@@ -243,7 +245,7 @@ namespace LOSA.ACS.RRHH
             // 
             // colsalida_miercoles
             // 
-            this.colsalida_miercoles.DisplayFormat.FormatString = "g";
+            this.colsalida_miercoles.DisplayFormat.FormatString = "f";
             this.colsalida_miercoles.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colsalida_miercoles.FieldName = "salida_miercoles";
             this.colsalida_miercoles.Name = "colsalida_miercoles";
@@ -254,7 +256,7 @@ namespace LOSA.ACS.RRHH
             // 
             // colentrada_jueves
             // 
-            this.colentrada_jueves.DisplayFormat.FormatString = "g";
+            this.colentrada_jueves.DisplayFormat.FormatString = "f";
             this.colentrada_jueves.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colentrada_jueves.FieldName = "entrada_jueves";
             this.colentrada_jueves.Name = "colentrada_jueves";
@@ -265,7 +267,7 @@ namespace LOSA.ACS.RRHH
             // 
             // colsalida_jueves
             // 
-            this.colsalida_jueves.DisplayFormat.FormatString = "g";
+            this.colsalida_jueves.DisplayFormat.FormatString = "f";
             this.colsalida_jueves.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colsalida_jueves.FieldName = "salida_jueves";
             this.colsalida_jueves.Name = "colsalida_jueves";
@@ -276,7 +278,7 @@ namespace LOSA.ACS.RRHH
             // 
             // colentrada_viernes
             // 
-            this.colentrada_viernes.DisplayFormat.FormatString = "g";
+            this.colentrada_viernes.DisplayFormat.FormatString = "f";
             this.colentrada_viernes.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colentrada_viernes.FieldName = "entrada_viernes";
             this.colentrada_viernes.Name = "colentrada_viernes";
@@ -287,7 +289,7 @@ namespace LOSA.ACS.RRHH
             // 
             // colsalida_viernes
             // 
-            this.colsalida_viernes.DisplayFormat.FormatString = "g";
+            this.colsalida_viernes.DisplayFormat.FormatString = "f";
             this.colsalida_viernes.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colsalida_viernes.FieldName = "salida_viernes";
             this.colsalida_viernes.Name = "colsalida_viernes";
@@ -298,7 +300,7 @@ namespace LOSA.ACS.RRHH
             // 
             // colentrada_sabado
             // 
-            this.colentrada_sabado.DisplayFormat.FormatString = "g";
+            this.colentrada_sabado.DisplayFormat.FormatString = "f";
             this.colentrada_sabado.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colentrada_sabado.FieldName = "entrada_sabado";
             this.colentrada_sabado.Name = "colentrada_sabado";
@@ -309,7 +311,7 @@ namespace LOSA.ACS.RRHH
             // 
             // colsalida_sabado
             // 
-            this.colsalida_sabado.DisplayFormat.FormatString = "g";
+            this.colsalida_sabado.DisplayFormat.FormatString = "f";
             this.colsalida_sabado.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colsalida_sabado.FieldName = "salida_sabado";
             this.colsalida_sabado.Name = "colsalida_sabado";
@@ -320,7 +322,7 @@ namespace LOSA.ACS.RRHH
             // 
             // colentrada_domingo
             // 
-            this.colentrada_domingo.DisplayFormat.FormatString = "g";
+            this.colentrada_domingo.DisplayFormat.FormatString = "f";
             this.colentrada_domingo.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colentrada_domingo.FieldName = "entrada_domingo";
             this.colentrada_domingo.Name = "colentrada_domingo";
@@ -331,7 +333,7 @@ namespace LOSA.ACS.RRHH
             // 
             // colsalida_domingo
             // 
-            this.colsalida_domingo.DisplayFormat.FormatString = "g";
+            this.colsalida_domingo.DisplayFormat.FormatString = "f";
             this.colsalida_domingo.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colsalida_domingo.FieldName = "salida_domingo";
             this.colsalida_domingo.Name = "colsalida_domingo";
@@ -350,7 +352,7 @@ namespace LOSA.ACS.RRHH
             // 
             // colentrada_1
             // 
-            this.colentrada_1.DisplayFormat.FormatString = "g";
+            this.colentrada_1.DisplayFormat.FormatString = "f";
             this.colentrada_1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colentrada_1.FieldName = "entrada_1";
             this.colentrada_1.Name = "colentrada_1";
@@ -359,7 +361,7 @@ namespace LOSA.ACS.RRHH
             // 
             // colsalida_1
             // 
-            this.colsalida_1.DisplayFormat.FormatString = "g";
+            this.colsalida_1.DisplayFormat.FormatString = "f";
             this.colsalida_1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colsalida_1.FieldName = "salida_1";
             this.colsalida_1.Name = "colsalida_1";
