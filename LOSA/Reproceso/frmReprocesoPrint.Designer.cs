@@ -1,7 +1,7 @@
 ﻿
-namespace LOSA.Logistica
+namespace LOSA.Reproceso
 {
-    partial class xfrmPT_Reproceso
+    partial class frmReprocesoPrint
     {
         /// <summary>
         /// Required designer variable.
@@ -29,26 +29,25 @@ namespace LOSA.Logistica
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions7 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmPT_Reproceso));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject25 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject26 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject27 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject28 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions8 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject29 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject30 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject31 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject32 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions9 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject33 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject34 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject35 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject36 = new DevExpress.Utils.SerializableAppearanceObject();
-            this.btnAgregar = new DevExpress.XtraEditors.SimpleButton();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReprocesoPrint));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.pTReprocesoCreadoBindingSource = new System.Windows.Forms.BindingSource();
-            this.dsLogistica2 = new LOSA.Logistica.dsLogistica2();
+            this.dsLogistica21 = new LOSA.Logistica.dsLogistica2();
             this.gvPT = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_materia_prima = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -67,12 +66,14 @@ namespace LOSA.Logistica
             this.colcodigo_barra = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcantidad = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collote_producto_termiado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colseleccionado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ceSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
-            this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.btnPrintSeleccionados = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pTReprocesoCreadoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsLogistica2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsLogistica21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdDuplicar)).BeginInit();
@@ -80,30 +81,30 @@ namespace LOSA.Logistica
             ((System.ComponentModel.ISupportInitialize)(this.ceSeleccionar)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnAgregar
+            // cmdHome
             // 
-            this.btnAgregar.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnAgregar.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Appearance.Options.UseBackColor = true;
-            this.btnAgregar.Appearance.Options.UseFont = true;
-            this.btnAgregar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnAgregar.ImageOptions.Image = global::LOSA.Properties.Resources.plus;
-            this.btnAgregar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAgregar.Location = new System.Drawing.Point(30, 36);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(180, 58);
-            this.btnAgregar.TabIndex = 33;
-            this.btnAgregar.Text = "Agregar Ingreso";
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            this.cmdHome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdHome.Appearance.BackColor = System.Drawing.Color.White;
+            this.cmdHome.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdHome.Appearance.Options.UseBackColor = true;
+            this.cmdHome.Appearance.Options.UseFont = true;
+            this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
+            this.cmdHome.Location = new System.Drawing.Point(944, 49);
+            this.cmdHome.Name = "cmdHome";
+            this.cmdHome.Size = new System.Drawing.Size(162, 56);
+            this.cmdHome.TabIndex = 88;
+            this.cmdHome.Text = "Cerrar";
+            this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
             // 
             // gridControl1
             // 
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.DataSource = this.pTReprocesoCreadoBindingSource;
-            this.gridControl1.Location = new System.Drawing.Point(-2, 112);
+            this.gridControl1.DataMember = "PT_Reproceso_Creado";
+            this.gridControl1.DataSource = this.dsLogistica21;
+            this.gridControl1.Location = new System.Drawing.Point(3, 134);
             this.gridControl1.MainView = this.gvPT;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -111,20 +112,15 @@ namespace LOSA.Logistica
             this.cmdDuplicar,
             this.btnEditar,
             this.ceSeleccionar});
-            this.gridControl1.Size = new System.Drawing.Size(1121, 448);
-            this.gridControl1.TabIndex = 53;
+            this.gridControl1.Size = new System.Drawing.Size(1103, 487);
+            this.gridControl1.TabIndex = 87;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvPT});
             // 
-            // pTReprocesoCreadoBindingSource
+            // dsLogistica21
             // 
-            this.pTReprocesoCreadoBindingSource.DataMember = "PT_Reproceso_Creado";
-            this.pTReprocesoCreadoBindingSource.DataSource = this.dsLogistica2;
-            // 
-            // dsLogistica2
-            // 
-            this.dsLogistica2.DataSetName = "dsLogistica2";
-            this.dsLogistica2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dsLogistica21.DataSetName = "dsLogistica2";
+            this.dsLogistica21.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gvPT
             // 
@@ -146,7 +142,11 @@ namespace LOSA.Logistica
             this.colUbicacion,
             this.colcodigo_barra,
             this.gridColumn1,
-            this.gridColumn2});
+            this.gridColumn2,
+            this.colcantidad,
+            this.collote_producto_termiado,
+            this.colseleccionado});
+            this.gvPT.CustomizationFormBounds = new System.Drawing.Rectangle(904, 313, 260, 332);
             this.gvPT.DetailHeight = 284;
             this.gvPT.GridControl = this.gridControl1;
             this.gvPT.Name = "gvPT";
@@ -175,8 +175,8 @@ namespace LOSA.Logistica
             this.colmateriaprima.Name = "colmateriaprima";
             this.colmateriaprima.OptionsColumn.AllowEdit = false;
             this.colmateriaprima.Visible = true;
-            this.colmateriaprima.VisibleIndex = 2;
-            this.colmateriaprima.Width = 207;
+            this.colmateriaprima.VisibleIndex = 1;
+            this.colmateriaprima.Width = 217;
             // 
             // colid_proveedor
             // 
@@ -204,8 +204,8 @@ namespace LOSA.Logistica
             this.colfecha_ingreso.Name = "colfecha_ingreso";
             this.colfecha_ingreso.OptionsColumn.AllowEdit = false;
             this.colfecha_ingreso.Visible = true;
-            this.colfecha_ingreso.VisibleIndex = 4;
-            this.colfecha_ingreso.Width = 113;
+            this.colfecha_ingreso.VisibleIndex = 5;
+            this.colfecha_ingreso.Width = 124;
             // 
             // colPrint
             // 
@@ -213,16 +213,19 @@ namespace LOSA.Logistica
             this.colPrint.ColumnEdit = this.btnPrint;
             this.colPrint.MinWidth = 15;
             this.colPrint.Name = "colPrint";
-            this.colPrint.Width = 54;
+            this.colPrint.Visible = true;
+            this.colPrint.VisibleIndex = 7;
+            this.colPrint.Width = 95;
             // 
             // btnPrint
             // 
             this.btnPrint.AutoHeight = false;
-            editorButtonImageOptions7.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions7.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.btnPrint.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions7, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject25, serializableAppearanceObject26, serializableAppearanceObject27, serializableAppearanceObject28, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnPrint.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnPrint_ButtonClick);
             // 
             // colDuplicar
             // 
@@ -235,9 +238,9 @@ namespace LOSA.Logistica
             // cmdDuplicar
             // 
             this.cmdDuplicar.AutoHeight = false;
-            editorButtonImageOptions8.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions8.Image")));
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.cmdDuplicar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions8, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject29, serializableAppearanceObject30, serializableAppearanceObject31, serializableAppearanceObject32, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdDuplicar.Name = "cmdDuplicar";
             this.cmdDuplicar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -252,9 +255,9 @@ namespace LOSA.Logistica
             // btnEditar
             // 
             this.btnEditar.AutoHeight = false;
-            editorButtonImageOptions9.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions9.Image")));
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
             this.btnEditar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions9, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject33, serializableAppearanceObject34, serializableAppearanceObject35, serializableAppearanceObject36, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -265,9 +268,7 @@ namespace LOSA.Logistica
             this.colnum.MinWidth = 15;
             this.colnum.Name = "colnum";
             this.colnum.OptionsColumn.AllowEdit = false;
-            this.colnum.Visible = true;
-            this.colnum.VisibleIndex = 0;
-            this.colnum.Width = 149;
+            this.colnum.Width = 158;
             // 
             // colUbicacion
             // 
@@ -276,7 +277,9 @@ namespace LOSA.Logistica
             this.colUbicacion.MinWidth = 15;
             this.colUbicacion.Name = "colUbicacion";
             this.colUbicacion.OptionsColumn.AllowEdit = false;
-            this.colUbicacion.Width = 109;
+            this.colUbicacion.Visible = true;
+            this.colUbicacion.VisibleIndex = 6;
+            this.colUbicacion.Width = 88;
             // 
             // colcodigo_barra
             // 
@@ -285,18 +288,15 @@ namespace LOSA.Logistica
             this.colcodigo_barra.Name = "colcodigo_barra";
             this.colcodigo_barra.OptionsColumn.AllowEdit = false;
             this.colcodigo_barra.Visible = true;
-            this.colcodigo_barra.VisibleIndex = 1;
-            this.colcodigo_barra.Width = 184;
+            this.colcodigo_barra.VisibleIndex = 0;
+            this.colcodigo_barra.Width = 176;
             // 
             // gridColumn1
             // 
             this.gridColumn1.Caption = "Ingresado Por";
             this.gridColumn1.FieldName = "creado_por";
             this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.OptionsColumn.AllowEdit = false;
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 5;
-            this.gridColumn1.Width = 104;
+            this.gridColumn1.Width = 134;
             // 
             // gridColumn2
             // 
@@ -305,30 +305,43 @@ namespace LOSA.Logistica
             this.gridColumn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn2.FieldName = "peso";
             this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 3;
-            this.gridColumn2.Width = 98;
+            this.gridColumn2.VisibleIndex = 4;
+            this.gridColumn2.Width = 96;
+            // 
+            // colcantidad
+            // 
+            this.colcantidad.DisplayFormat.FormatString = "{0:0.##} Ud ";
+            this.colcantidad.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colcantidad.FieldName = "cantidad";
+            this.colcantidad.Name = "colcantidad";
+            this.colcantidad.OptionsColumn.AllowEdit = false;
+            this.colcantidad.Visible = true;
+            this.colcantidad.VisibleIndex = 3;
+            this.colcantidad.Width = 105;
+            // 
+            // collote_producto_termiado
+            // 
+            this.collote_producto_termiado.FieldName = "lote_producto_termiado";
+            this.collote_producto_termiado.Name = "collote_producto_termiado";
+            this.collote_producto_termiado.OptionsColumn.AllowEdit = false;
+            this.collote_producto_termiado.Visible = true;
+            this.collote_producto_termiado.VisibleIndex = 2;
+            this.collote_producto_termiado.Width = 104;
+            // 
+            // colseleccionado
+            // 
+            this.colseleccionado.FieldName = "seleccionado";
+            this.colseleccionado.Name = "colseleccionado";
+            this.colseleccionado.Visible = true;
+            this.colseleccionado.VisibleIndex = 8;
+            this.colseleccionado.Width = 80;
             // 
             // ceSeleccionar
             // 
             this.ceSeleccionar.AutoHeight = false;
             this.ceSeleccionar.Name = "ceSeleccionar";
-            // 
-            // cmdHome
-            // 
-            this.cmdHome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmdHome.Appearance.BackColor = System.Drawing.Color.White;
-            this.cmdHome.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdHome.Appearance.Options.UseBackColor = true;
-            this.cmdHome.Appearance.Options.UseFont = true;
-            this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.cmdHome.Location = new System.Drawing.Point(936, 36);
-            this.cmdHome.Name = "cmdHome";
-            this.cmdHome.Size = new System.Drawing.Size(171, 60);
-            this.cmdHome.TabIndex = 54;
-            this.cmdHome.Text = "Cerrar";
-            this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
             // 
             // labelControl2
             // 
@@ -339,27 +352,41 @@ namespace LOSA.Logistica
             this.labelControl2.Appearance.Options.UseTextOptions = true;
             this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl2.Location = new System.Drawing.Point(0, 54);
+            this.labelControl2.Location = new System.Drawing.Point(3, 56);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(1119, 23);
-            this.labelControl2.TabIndex = 85;
+            this.labelControl2.Size = new System.Drawing.Size(1103, 23);
+            this.labelControl2.TabIndex = 89;
             this.labelControl2.Text = "Producto Terminado para Reproceso";
             // 
-            // xfrmPT_Reproceso
+            // btnPrintSeleccionados
+            // 
+            this.btnPrintSeleccionados.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnPrintSeleccionados.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintSeleccionados.Appearance.Options.UseBackColor = true;
+            this.btnPrintSeleccionados.Appearance.Options.UseFont = true;
+            this.btnPrintSeleccionados.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnPrintSeleccionados.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnPrintSeleccionados.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnPrintSeleccionados.ImageOptions.SvgImage")));
+            this.btnPrintSeleccionados.Location = new System.Drawing.Point(22, 49);
+            this.btnPrintSeleccionados.Name = "btnPrintSeleccionados";
+            this.btnPrintSeleccionados.Size = new System.Drawing.Size(197, 56);
+            this.btnPrintSeleccionados.TabIndex = 90;
+            this.btnPrintSeleccionados.Text = "Imprimir Seleccionado";
+            this.btnPrintSeleccionados.Click += new System.EventHandler(this.btnPrintSeleccionados_Click);
+            // 
+            // frmReprocesoPrint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1119, 561);
+            this.ClientSize = new System.Drawing.Size(1109, 622);
+            this.ControlBox = false;
+            this.Controls.Add(this.btnPrintSeleccionados);
             this.Controls.Add(this.cmdHome);
             this.Controls.Add(this.gridControl1);
-            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.labelControl2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "xfrmPT_Reproceso";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Name = "frmReprocesoPrint";
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pTReprocesoCreadoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsLogistica2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsLogistica21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdDuplicar)).EndInit();
@@ -371,7 +398,7 @@ namespace LOSA.Logistica
 
         #endregion
 
-        private DevExpress.XtraEditors.SimpleButton btnAgregar;
+        private DevExpress.XtraEditors.SimpleButton cmdHome;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gvPT;
         private DevExpress.XtraGrid.Columns.GridColumn colid;
@@ -390,11 +417,13 @@ namespace LOSA.Logistica
         private DevExpress.XtraGrid.Columns.GridColumn colUbicacion;
         private DevExpress.XtraGrid.Columns.GridColumn colcodigo_barra;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit ceSeleccionar;
-        private DevExpress.XtraEditors.SimpleButton cmdHome;
-        private System.Windows.Forms.BindingSource pTReprocesoCreadoBindingSource;
-        private dsLogistica2 dsLogistica2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit ceSeleccionar;
         private DevExpress.XtraEditors.LabelControl labelControl2;
+        private Logistica.dsLogistica2 dsLogistica21;
+        private DevExpress.XtraGrid.Columns.GridColumn colcantidad;
+        private DevExpress.XtraGrid.Columns.GridColumn collote_producto_termiado;
+        private DevExpress.XtraEditors.SimpleButton btnPrintSeleccionados;
+        private DevExpress.XtraGrid.Columns.GridColumn colseleccionado;
     }
 }

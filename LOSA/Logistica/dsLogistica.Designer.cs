@@ -3716,6 +3716,12 @@ namespace LOSA.Logistica {
             
             private global::System.Data.DataColumn columncreado_por;
             
+            private global::System.Data.DataColumn columnlote_producto_termiado;
+            
+            private global::System.Data.DataColumn columncantidad;
+            
+            private global::System.Data.DataColumn columnseleccionado;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public PT_Reproceso_CreadoDataTable() {
@@ -3815,6 +3821,30 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn lote_producto_termiadoColumn {
+                get {
+                    return this.columnlote_producto_termiado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cantidadColumn {
+                get {
+                    return this.columncantidad;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn seleccionadoColumn {
+                get {
+                    return this.columnseleccionado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3850,7 +3880,7 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PT_Reproceso_CreadoRow AddPT_Reproceso_CreadoRow(int id, int id_tarima, string codigo_barra, decimal peso, string producto, System.DateTime fecha_registro, int user_id, string creado_por) {
+            public PT_Reproceso_CreadoRow AddPT_Reproceso_CreadoRow(int id, int id_tarima, string codigo_barra, decimal peso, string producto, System.DateTime fecha_registro, int user_id, string creado_por, string lote_producto_termiado, decimal cantidad, bool seleccionado) {
                 PT_Reproceso_CreadoRow rowPT_Reproceso_CreadoRow = ((PT_Reproceso_CreadoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -3860,7 +3890,10 @@ namespace LOSA.Logistica {
                         producto,
                         fecha_registro,
                         user_id,
-                        creado_por};
+                        creado_por,
+                        lote_producto_termiado,
+                        cantidad,
+                        seleccionado};
                 rowPT_Reproceso_CreadoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPT_Reproceso_CreadoRow);
                 return rowPT_Reproceso_CreadoRow;
@@ -3891,6 +3924,9 @@ namespace LOSA.Logistica {
                 this.columnfecha_registro = base.Columns["fecha_registro"];
                 this.columnuser_id = base.Columns["user_id"];
                 this.columncreado_por = base.Columns["creado_por"];
+                this.columnlote_producto_termiado = base.Columns["lote_producto_termiado"];
+                this.columncantidad = base.Columns["cantidad"];
+                this.columnseleccionado = base.Columns["seleccionado"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3912,6 +3948,16 @@ namespace LOSA.Logistica {
                 base.Columns.Add(this.columnuser_id);
                 this.columncreado_por = new global::System.Data.DataColumn("creado_por", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncreado_por);
+                this.columnlote_producto_termiado = new global::System.Data.DataColumn("lote_producto_termiado", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlote_producto_termiado);
+                this.columncantidad = new global::System.Data.DataColumn("cantidad", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncantidad);
+                this.columnseleccionado = new global::System.Data.DataColumn("seleccionado", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnseleccionado);
+                this.columnlote_producto_termiado.Caption = "Lote PT";
+                this.columncantidad.Caption = "Cantidad";
+                this.columnseleccionado.Caption = "Seleccionar:";
+                this.columnseleccionado.DefaultValue = ((bool)(false));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9254,6 +9300,56 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string lote_producto_termiado {
+                get {
+                    try {
+                        return ((string)(this[this.tablePT_Reproceso_Creado.lote_producto_termiadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'lote_producto_termiado\' de la tabla \'PT_Reproceso_Creado\'" +
+                                " es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePT_Reproceso_Creado.lote_producto_termiadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal cantidad {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablePT_Reproceso_Creado.cantidadColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'cantidad\' de la tabla \'PT_Reproceso_Creado\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePT_Reproceso_Creado.cantidadColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool seleccionado {
+                get {
+                    try {
+                        return ((bool)(this[this.tablePT_Reproceso_Creado.seleccionadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'seleccionado\' de la tabla \'PT_Reproceso_Creado\' es DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tablePT_Reproceso_Creado.seleccionadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tablePT_Reproceso_Creado.idColumn);
             }
@@ -9346,6 +9442,42 @@ namespace LOSA.Logistica {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setcreado_porNull() {
                 this[this.tablePT_Reproceso_Creado.creado_porColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Islote_producto_termiadoNull() {
+                return this.IsNull(this.tablePT_Reproceso_Creado.lote_producto_termiadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setlote_producto_termiadoNull() {
+                this[this.tablePT_Reproceso_Creado.lote_producto_termiadoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IscantidadNull() {
+                return this.IsNull(this.tablePT_Reproceso_Creado.cantidadColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetcantidadNull() {
+                this[this.tablePT_Reproceso_Creado.cantidadColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsseleccionadoNull() {
+                return this.IsNull(this.tablePT_Reproceso_Creado.seleccionadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetseleccionadoNull() {
+                this[this.tablePT_Reproceso_Creado.seleccionadoColumn] = global::System.Convert.DBNull;
             }
         }
         

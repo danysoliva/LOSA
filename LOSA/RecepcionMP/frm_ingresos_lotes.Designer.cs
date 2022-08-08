@@ -70,6 +70,7 @@
             this.cmdDuplicar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.Editar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnEditar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colpresentacion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnum = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcodigo_barra = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcantidad = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -81,7 +82,6 @@
             this.btnFinalizar = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrintSeleccionados = new DevExpress.XtraEditors.SimpleButton();
             this.checkBoxSelectAll = new System.Windows.Forms.CheckBox();
-            this.colpresentacion = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -344,6 +344,15 @@
             this.btnEditar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
+            // colpresentacion
+            // 
+            this.colpresentacion.Caption = "Presentacion";
+            this.colpresentacion.FieldName = "presentacion";
+            this.colpresentacion.Name = "colpresentacion";
+            this.colpresentacion.Visible = true;
+            this.colpresentacion.VisibleIndex = 9;
+            this.colpresentacion.Width = 99;
+            // 
             // colnum
             // 
             this.colnum.Caption = "#";
@@ -471,15 +480,6 @@
             this.checkBoxSelectAll.Text = "Seleccionar Todas";
             this.checkBoxSelectAll.UseVisualStyleBackColor = true;
             this.checkBoxSelectAll.CheckedChanged += new System.EventHandler(this.checkBoxSelectAll_CheckedChanged);
-            // 
-            // colpresentacion
-            // 
-            this.colpresentacion.Caption = "Presentacion";
-            this.colpresentacion.FieldName = "presentacion";
-            this.colpresentacion.Name = "colpresentacion";
-            this.colpresentacion.Visible = true;
-            this.colpresentacion.VisibleIndex = 9;
-            this.colpresentacion.Width = 99;
             // 
             // frm_ingresos_lotes
             // 

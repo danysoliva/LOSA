@@ -29,7 +29,6 @@ namespace LOSA.Logistica
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -57,7 +56,7 @@ namespace LOSA.Logistica
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
             this.grd_ingreso = new DevExpress.XtraGrid.GridControl();
-            this.ingresosMPBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ingresosMPBindingSource = new System.Windows.Forms.BindingSource();
             this.dsRecepcionMPx = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.grdv_ingreso = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colNingreso = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -70,6 +69,8 @@ namespace LOSA.Logistica
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colprint = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnprint = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colid_traslado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collote = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcartilla = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnccartilla = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colEditar = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -78,12 +79,11 @@ namespace LOSA.Logistica
             this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colprinttraslado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnprinttraslado = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colbit_fin = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.btnAgregar = new DevExpress.XtraEditors.SimpleButton();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
-            this.colbit_fin = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colid_traslado = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_ingreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ingresosMPBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).BeginInit();
@@ -145,6 +145,7 @@ namespace LOSA.Logistica
             this.colid,
             this.colprint,
             this.colid_traslado,
+            this.collote,
             this.colcartilla,
             this.colEditar,
             this.coltipo_ingreso,
@@ -164,7 +165,7 @@ namespace LOSA.Logistica
             this.colNingreso.OptionsColumn.AllowEdit = false;
             this.colNingreso.Visible = true;
             this.colNingreso.VisibleIndex = 0;
-            this.colNingreso.Width = 56;
+            this.colNingreso.Width = 90;
             // 
             // colitemcode
             // 
@@ -174,7 +175,7 @@ namespace LOSA.Logistica
             this.colitemcode.OptionsColumn.AllowEdit = false;
             this.colitemcode.Visible = true;
             this.colitemcode.VisibleIndex = 1;
-            this.colitemcode.Width = 78;
+            this.colitemcode.Width = 127;
             // 
             // colItemName
             // 
@@ -184,7 +185,7 @@ namespace LOSA.Logistica
             this.colItemName.OptionsColumn.AllowEdit = false;
             this.colItemName.Visible = true;
             this.colItemName.VisibleIndex = 2;
-            this.colItemName.Width = 96;
+            this.colItemName.Width = 156;
             // 
             // colid_proveedor
             // 
@@ -194,7 +195,7 @@ namespace LOSA.Logistica
             this.colid_proveedor.OptionsColumn.AllowEdit = false;
             this.colid_proveedor.Visible = true;
             this.colid_proveedor.VisibleIndex = 3;
-            this.colid_proveedor.Width = 89;
+            this.colid_proveedor.Width = 145;
             // 
             // colCardName
             // 
@@ -204,14 +205,16 @@ namespace LOSA.Logistica
             this.colCardName.OptionsColumn.AllowEdit = false;
             this.colCardName.Visible = true;
             this.colCardName.VisibleIndex = 4;
-            this.colCardName.Width = 128;
+            this.colCardName.Width = 174;
             // 
             // coltarimas
             // 
             this.coltarimas.Caption = "Ver Detalle";
             this.coltarimas.ColumnEdit = this.btnver;
             this.coltarimas.Name = "coltarimas";
-            this.coltarimas.Width = 83;
+            this.coltarimas.Visible = true;
+            this.coltarimas.VisibleIndex = 6;
+            this.coltarimas.Width = 145;
             // 
             // btnver
             // 
@@ -244,6 +247,18 @@ namespace LOSA.Logistica
             this.btnprint.Name = "btnprint";
             this.btnprint.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnprint.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnprint_ButtonClick);
+            // 
+            // colid_traslado
+            // 
+            this.colid_traslado.FieldName = "id_traslado";
+            this.colid_traslado.Name = "colid_traslado";
+            // 
+            // collote
+            // 
+            this.collote.Caption = "Lote";
+            this.collote.FieldName = "lote";
+            this.collote.Name = "collote";
+            this.collote.Width = 104;
             // 
             // colcartilla
             // 
@@ -290,7 +305,7 @@ namespace LOSA.Logistica
             this.coldescripcion.OptionsColumn.AllowEdit = false;
             this.coldescripcion.Visible = true;
             this.coldescripcion.VisibleIndex = 5;
-            this.coldescripcion.Width = 63;
+            this.coldescripcion.Width = 140;
             // 
             // colprinttraslado
             // 
@@ -308,6 +323,11 @@ namespace LOSA.Logistica
             this.btnprinttraslado.Name = "btnprinttraslado";
             this.btnprinttraslado.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnprinttraslado.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnprinttraslado_ButtonClick);
+            // 
+            // colbit_fin
+            // 
+            this.colbit_fin.FieldName = "bit_fin";
+            this.colbit_fin.Name = "colbit_fin";
             // 
             // repositoryItemTextEdit1
             // 
@@ -345,6 +365,7 @@ namespace LOSA.Logistica
             this.btnAgregar.Size = new System.Drawing.Size(180, 58);
             this.btnAgregar.TabIndex = 32;
             this.btnAgregar.Text = "Agregar Ingreso";
+            this.btnAgregar.Visible = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnAtras
@@ -364,16 +385,6 @@ namespace LOSA.Logistica
             this.btnAtras.TabIndex = 31;
             this.btnAtras.Text = "Atras";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
-            // 
-            // colbit_fin
-            // 
-            this.colbit_fin.FieldName = "bit_fin";
-            this.colbit_fin.Name = "colbit_fin";
-            // 
-            // colid_traslado
-            // 
-            this.colid_traslado.FieldName = "id_traslado";
-            this.colid_traslado.Name = "colid_traslado";
             // 
             // xfrmIngresosMP_Reproceso
             // 
@@ -432,5 +443,6 @@ namespace LOSA.Logistica
         private RecepcionMP.dsRecepcionMPx dsRecepcionMPx;
         private DevExpress.XtraGrid.Columns.GridColumn colid_traslado;
         private DevExpress.XtraGrid.Columns.GridColumn colbit_fin;
+        private DevExpress.XtraGrid.Columns.GridColumn collote;
     }
 }
