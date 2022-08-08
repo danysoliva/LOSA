@@ -29,8 +29,6 @@ namespace LOSA.Logistica
         {
             xfrmMP_Reproceso_Tarimas frm = new xfrmMP_Reproceso_Tarimas(userLogin);
 
-            frm.WindowState = FormWindowState.Maximized;
-
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 LoadData();

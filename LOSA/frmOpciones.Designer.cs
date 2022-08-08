@@ -39,6 +39,7 @@
             this.TabLogistica = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.TabMP_Sacos = new DevExpress.XtraTab.XtraTabPage();
+            this.cmdReporteInventarioPorFecha = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton30 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton26 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton20 = new DevExpress.XtraEditors.SimpleButton();
@@ -126,7 +127,6 @@
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.cmdReporteInventarioPorFecha = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -318,6 +318,22 @@
             this.TabMP_Sacos.Size = new System.Drawing.Size(766, 409);
             this.TabMP_Sacos.Text = "MP en Sacos";
             // 
+            // cmdReporteInventarioPorFecha
+            // 
+            this.cmdReporteInventarioPorFecha.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdReporteInventarioPorFecha.Appearance.Options.UseFont = true;
+            this.cmdReporteInventarioPorFecha.Appearance.Options.UseTextOptions = true;
+            this.cmdReporteInventarioPorFecha.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.cmdReporteInventarioPorFecha.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdReporteInventarioPorFecha.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdReporteInventarioPorFecha.ImageOptions.Image")));
+            this.cmdReporteInventarioPorFecha.Location = new System.Drawing.Point(416, 110);
+            this.cmdReporteInventarioPorFecha.Margin = new System.Windows.Forms.Padding(4);
+            this.cmdReporteInventarioPorFecha.Name = "cmdReporteInventarioPorFecha";
+            this.cmdReporteInventarioPorFecha.Size = new System.Drawing.Size(199, 42);
+            this.cmdReporteInventarioPorFecha.TabIndex = 46;
+            this.cmdReporteInventarioPorFecha.Text = "Reporte de Inventario\r\npor Fecha";
+            this.cmdReporteInventarioPorFecha.Click += new System.EventHandler(this.cmdReporteInventarioPorFecha_Click);
+            // 
             // simpleButton30
             // 
             this.simpleButton30.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -443,19 +459,18 @@
             // 
             // btnPendientes_ingreso_a_planta
             // 
-            this.btnPendientes_ingreso_a_planta.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPendientes_ingreso_a_planta.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.btnPendientes_ingreso_a_planta.Appearance.Options.UseFont = true;
             this.btnPendientes_ingreso_a_planta.Appearance.Options.UseTextOptions = true;
             this.btnPendientes_ingreso_a_planta.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnPendientes_ingreso_a_planta.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnPendientes_ingreso_a_planta.Enabled = false;
             this.btnPendientes_ingreso_a_planta.ImageOptions.Image = global::LOSA.Properties.Resources.logout;
             this.btnPendientes_ingreso_a_planta.Location = new System.Drawing.Point(210, 15);
             this.btnPendientes_ingreso_a_planta.Margin = new System.Windows.Forms.Padding(4);
             this.btnPendientes_ingreso_a_planta.Name = "btnPendientes_ingreso_a_planta";
             this.btnPendientes_ingreso_a_planta.Size = new System.Drawing.Size(199, 42);
             this.btnPendientes_ingreso_a_planta.TabIndex = 39;
-            this.btnPendientes_ingreso_a_planta.Text = "Trans. pendiente \r\nde ingreso";
+            this.btnPendientes_ingreso_a_planta.Text = "Reproceso";
             this.btnPendientes_ingreso_a_planta.Click += new System.EventHandler(this.simpleButton17_Click_2);
             // 
             // cmdRegistroLote
@@ -1434,7 +1449,7 @@
             this.txtProduccion.Name = "txtProduccion";
             this.txtProduccion.PageVisible = false;
             this.txtProduccion.Size = new System.Drawing.Size(772, 441);
-            this.txtProduccion.Text = "Produccion";
+            this.txtProduccion.Text = "Produccion Administrativo";
             // 
             // simpleButton36
             // 
@@ -1533,22 +1548,6 @@
             this.labelControl3.Size = new System.Drawing.Size(515, 39);
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
-            // 
-            // cmdReporteInventarioPorFecha
-            // 
-            this.cmdReporteInventarioPorFecha.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdReporteInventarioPorFecha.Appearance.Options.UseFont = true;
-            this.cmdReporteInventarioPorFecha.Appearance.Options.UseTextOptions = true;
-            this.cmdReporteInventarioPorFecha.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.cmdReporteInventarioPorFecha.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdReporteInventarioPorFecha.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton37.ImageOptions.Image")));
-            this.cmdReporteInventarioPorFecha.Location = new System.Drawing.Point(416, 110);
-            this.cmdReporteInventarioPorFecha.Margin = new System.Windows.Forms.Padding(4);
-            this.cmdReporteInventarioPorFecha.Name = "cmdReporteInventarioPorFecha";
-            this.cmdReporteInventarioPorFecha.Size = new System.Drawing.Size(199, 42);
-            this.cmdReporteInventarioPorFecha.TabIndex = 46;
-            this.cmdReporteInventarioPorFecha.Text = "Reporte de Inventario\r\npor Fecha";
-            this.cmdReporteInventarioPorFecha.Click += new System.EventHandler(this.cmdReporteInventarioPorFecha_Click);
             // 
             // frmOpciones
             // 

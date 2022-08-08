@@ -678,8 +678,14 @@ namespace LOSA
 
         private void simpleButton17_Click_2(object sender, EventArgs e)
         {
-            frmPendienteAlmacenExterno frm = new frmPendienteAlmacenExterno(UsuarioLogeado);
-            frm.MdiParent = this.MdiParent;
+            //frmPendienteAlmacenExterno frm = new frmPendienteAlmacenExterno(UsuarioLogeado);
+            //Reproceso.frmReprocesoPrint frm = new Reproceso.frmReprocesoPrint();
+            //frm.MdiParent = this.MdiParent;
+            //frm.Show();
+            xfrmIngresosMP_Reproceso frm = new xfrmIngresosMP_Reproceso(UsuarioLogeado);
+
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 

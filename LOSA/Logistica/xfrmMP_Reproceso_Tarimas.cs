@@ -194,7 +194,7 @@ namespace LOSA.Logistica
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Transaction = transaction;
 
-                cmd.Parameters.Add("@fecha", SqlDbType.DateTime).Value = DateTime.Now;
+                cmd.Parameters.Add("@fecha", SqlDbType.DateTime).Value = dp.Now();
                 cmd.Parameters.Add("@user_id", SqlDbType.Int).Value = userLogin.Id;
 
                 int id_inserted = Convert.ToInt32(cmd.ExecuteScalar());
@@ -297,6 +297,12 @@ namespace LOSA.Logistica
                         cmd3.Parameters.AddWithValue("@idlotes", id_lote);
                         cmd3.Parameters.AddWithValue("@id_Tarima",tarima.ID );
                         cmd3.Parameters.AddWithValue("@id_especie", setIngreso.especie);
+                        //Tarima tarima2 = new Tarima();
+                        //int Id_LOTEPT = tarima2.LotePT;
+                        //int Id_ProductoT = tarima2.IdProductoterminado;
+                        //Esto es para que al momento de imprimir la tarima de Reproceso, podamos obtener la informacion del PT del cual se saco.
+                        //cmd3.Parameters.AddWithValue("@lote_producto_termiado", Id_LOTEPT);
+                        //cmd3.Parameters.AddWithValue("@id_producto_termiado", Id_ProductoT);
 
                         cmd3.Parameters.AddWithValue("@bit_promedio", 0);
                         vid_tarima = Convert.ToInt32(cmd3.ExecuteScalar());
@@ -324,7 +330,7 @@ namespace LOSA.Logistica
                             for (int i = 0; i <= (List.Count - 1); i++)
                             {
                                 int id_tarimax = Convert.ToInt32(List[i]);
-                                rptReporteIngresoTarima report = new rptReporteIngresoTarima(id_tarimax);
+                                Reproceso.rptTarimaReproceso report = new Reproceso.rptTarimaReproceso(id_tarimax);
                                 report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
                                 report.ShowPrintMarginsWarning = false;
                                 report.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);

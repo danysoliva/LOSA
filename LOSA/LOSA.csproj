@@ -2386,6 +2386,18 @@
     <Compile Include="Reportes\IngresoMP\subReporteIngresoHoja.Designer.cs">
       <DependentUpon>subReporteIngresoHoja.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reproceso\frmReprocesoPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reproceso\frmReprocesoPrint.Designer.cs">
+      <DependentUpon>frmReprocesoPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reproceso\rptTarimaReproceso.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reproceso\rptTarimaReproceso.Designer.cs">
+      <DependentUpon>rptTarimaReproceso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Requisiciones\dSReportes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -3775,6 +3787,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\IngresoMP\subReporteIngresoHoja.resx">
       <DependentUpon>subReporteIngresoHoja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reproceso\frmReprocesoPrint.resx">
+      <DependentUpon>frmReprocesoPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reproceso\rptTarimaReproceso.resx">
+      <DependentUpon>rptTarimaReproceso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Requisiciones\Reportes\rpt_requisa.resx">
       <DependentUpon>rpt_requisa.cs</DependentUpon>

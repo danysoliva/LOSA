@@ -82,58 +82,71 @@ namespace LOSA.RecepcionMP
 
             bool Error = false;
             string mensaje = " ";
-            switch (row.id_estado_tarima)
+
+            if (row.id_materia_prima == 1101 || row.id_materia_prima == 1110)
             {
-                case 1://Recepcionado
-                    Error = false;
-                    break;
-                case 2://En Bodega
-                    Error = false;
-                    //mensaje = "Calidad tiene En Observación ésta tarima.!";
-                    break;
-                case 3://Retenido
-                    Error = false;
-                    break;
-                case 4://Comprometido
-                    Error = true;
-                    mensaje = "Esta tarima ya esta comprometida!";
-                    break;
-                case 5://En Produccion
-                    Error = true;
-                    mensaje = "Esta tarima no se puede imprimir por que ya fue entregada a Produccion";
-                    break;
-                case 6://Consumido
-                    Error = true;
-                    mensaje = "Esta tarima no se puede imprimir por que ya fue entregada y consumida por producción!";
-                    break;
-                //case 7://
-                //    error = true;
-                //    mensaje = "Calidad tiene Retenida ésta tarima.!";
-                //    break;
-                case 8://Parcialmente Entregado
-                    Error = false;
-                    //mensaje = "Calidad ha Rechazado ésta tarima.!";
-                    break;
-                case 9://Rechazado
-                    Error = true;
-                    mensaje = "Esta tarima fue Rechazada!";
-                    break;
-                case 10://Ajuste de Inventario
-                    Error = true;
-                    mensaje = "Esta tarima no se puede imprimir por que ya se le dio salida por ajuste de inventario!";
-                    break;
+                Reproceso.rptTarimaReproceso boleta = new Reproceso.rptTarimaReproceso(row.id);
+                boleta.ShowPrintMarginsWarning = false;
+                boleta.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
+                boleta.ShowPreviewDialog();
+            }
+            else
+            {
+                switch (row.id_estado_tarima)
+                {
+                    case 1://Recepcionado
+                        Error = false;
+                        break;
+                    case 2://En Bodega
+                        Error = false;
+                        //mensaje = "Calidad tiene En Observación ésta tarima.!";
+                        break;
+                    case 3://Retenido
+                        Error = false;
+                        break;
+                    case 4://Comprometido
+                        Error = true;
+                        mensaje = "Esta tarima ya esta comprometida!";
+                        break;
+                    case 5://En Produccion
+                        Error = true;
+                        mensaje = "Esta tarima no se puede imprimir por que ya fue entregada a Produccion";
+                        break;
+                    case 6://Consumido
+                        Error = true;
+                        mensaje = "Esta tarima no se puede imprimir por que ya fue entregada y consumida por producción!";
+                        break;
+                    //case 7://
+                    //    error = true;
+                    //    mensaje = "Calidad tiene Retenida ésta tarima.!";
+                    //    break;
+                    case 8://Parcialmente Entregado
+                        Error = false;
+                        //mensaje = "Calidad ha Rechazado ésta tarima.!";
+                        break;
+                    case 9://Rechazado
+                        Error = true;
+                        mensaje = "Esta tarima fue Rechazada!";
+                        break;
+                    case 10://Ajuste de Inventario
+                        Error = true;
+                        mensaje = "Esta tarima no se puede imprimir por que ya se le dio salida por ajuste de inventario!";
+                        break;
+                }
+
+                if (Error)
+                {
+                    CajaDialogo.Error(mensaje);
+                    return;
+                }
+
+                rptReporteIngresoTarima boleta = new rptReporteIngresoTarima(row.id);
+                boleta.ShowPrintMarginsWarning = false;
+                boleta.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
+                boleta.Print();
             }
 
-            if (Error)
-            {
-                CajaDialogo.Error(mensaje);
-                return;
-            }
-
-            rptReporteIngresoTarima boleta = new rptReporteIngresoTarima(row.id);
-            boleta.ShowPrintMarginsWarning = false;
-            boleta.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
-            boleta.Print();
+            
         }
 
         private void cmdDuplicar_Click(object sender, EventArgs e)
