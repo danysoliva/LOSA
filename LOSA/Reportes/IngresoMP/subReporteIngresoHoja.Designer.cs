@@ -238,8 +238,8 @@ namespace LOSA.Reportes
             this.sqlDataSource2.Name = "sqlDataSource2";
             storedProcQuery1.Name = "sp_rpt_print_detalle_lote";
             queryParameter1.Name = "@id_ingreso";
-            queryParameter1.Type = typeof(int);
-            queryParameter1.ValueInfo = "2112";
+            queryParameter1.Type = typeof(DevExpress.DataAccess.Expression);
+            queryParameter1.Value = new DevExpress.DataAccess.Expression("?id_ingreso", typeof(int));
             storedProcQuery1.Parameters.Add(queryParameter1);
             storedProcQuery1.StoredProcName = "sp_rpt_print_detalle_lote";
             this.sqlDataSource2.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
