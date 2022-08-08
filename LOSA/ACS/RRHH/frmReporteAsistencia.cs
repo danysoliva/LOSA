@@ -49,6 +49,7 @@ namespace LOSA.ACS.RRHH
                 CajaDialogo.Error("Debe especificar un rango de fechas valido!");
                 return;
             }
+
             try
             {
                 DataOperations dp = new DataOperations();
@@ -87,5 +88,10 @@ namespace LOSA.ACS.RRHH
                 gridControl1.ExportToXlsx(dialog.FileName);
             }
         }
+
+
+
+
+
     }
 }
