@@ -20,7 +20,7 @@ namespace LOSA.TransaccionesPT
         {
             InitializeComponent();
             id_pt = pid_pt;
-            Load_Data();
+            //Load_Data();
         }
     }
 }
