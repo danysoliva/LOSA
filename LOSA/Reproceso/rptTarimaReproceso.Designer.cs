@@ -456,7 +456,7 @@ namespace LOSA.Reproceso
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel1.BorderWidth = 2F;
             this.xrLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(6.103516E-05F, 150.5F);
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 253.0241F);
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel1.SizeF = new System.Drawing.SizeF(776F, 29.25F);
@@ -473,11 +473,11 @@ namespace LOSA.Reproceso
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.lblNombreProducto.BorderWidth = 2F;
-            this.lblNombreProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreProducto.LocationFloat = new DevExpress.Utils.PointFloat(6.103516E-05F, 186.4375F);
+            this.lblNombreProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold);
+            this.lblNombreProducto.LocationFloat = new DevExpress.Utils.PointFloat(0F, 282.2741F);
             this.lblNombreProducto.Name = "lblNombreProducto";
             this.lblNombreProducto.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblNombreProducto.SizeF = new System.Drawing.SizeF(776F, 82.37497F);
+            this.lblNombreProducto.SizeF = new System.Drawing.SizeF(776F, 47.92F);
             this.lblNombreProducto.StylePriority.UseBorders = false;
             this.lblNombreProducto.StylePriority.UseBorderWidth = false;
             this.lblNombreProducto.StylePriority.UseFont = false;
@@ -490,11 +490,11 @@ namespace LOSA.Reproceso
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.lblTipoReproceso.BorderWidth = 2F;
-            this.lblTipoReproceso.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoReproceso.LocationFloat = new DevExpress.Utils.PointFloat(0F, 275.2708F);
+            this.lblTipoReproceso.Font = new System.Drawing.Font("Microsoft Sans Serif", 39.75F, System.Drawing.FontStyle.Bold);
+            this.lblTipoReproceso.LocationFloat = new DevExpress.Utils.PointFloat(0F, 159.1957F);
             this.lblTipoReproceso.Name = "lblTipoReproceso";
             this.lblTipoReproceso.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblTipoReproceso.SizeF = new System.Drawing.SizeF(776.0001F, 47.91666F);
+            this.lblTipoReproceso.SizeF = new System.Drawing.SizeF(776F, 82.37F);
             this.lblTipoReproceso.StylePriority.UseBorders = false;
             this.lblTipoReproceso.StylePriority.UseBorderWidth = false;
             this.lblTipoReproceso.StylePriority.UseFont = false;

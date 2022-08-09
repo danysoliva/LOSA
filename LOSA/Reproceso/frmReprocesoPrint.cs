@@ -22,6 +22,8 @@ namespace LOSA.Reproceso
         public frmReprocesoPrint()
         {
             InitializeComponent();
+            
+            radioGroup1.EditValue = 1110;
             LoadData();
         }
 
@@ -37,12 +39,12 @@ namespace LOSA.Reproceso
                 DataOperations dp = new DataOperations();
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
-                SqlCommand cmm2 = new SqlCommand("dbo.sp_get_kardex_PT_reproceso", con);
+                SqlCommand cmm2 = new SqlCommand("[sp_get_tarimas_PT_reproceso]", con);
                 cmm2.CommandType = CommandType.StoredProcedure;
-
-                dsLogistica21.PT_Reproceso_Creado.Clear();
+                cmm2.Parameters.AddWithValue("@id_mp", radioGroup1.EditValue);
+                dsLogistica21.PT_Reproceso_Tarimas.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmm2);
-                adat.Fill(dsLogistica21.PT_Reproceso_Creado);
+                adat.Fill(dsLogistica21.PT_Reproceso_Tarimas);
                 con.Close();
             }
             catch (Exception ec)
@@ -65,7 +67,7 @@ namespace LOSA.Reproceso
             rptTarimaReproceso reportResumen = null;
             for (int i = 0; i < gridView.RowCount; i++)
             {
-                var row = (dsLogistica2.PT_ReprocesoRow)gridView.GetDataRow(i);
+                var row = (dsLogistica2.PT_Reproceso_TarimasRow)gridView.GetDataRow(i);
 
                 //bool Error = false;
                 //string mensaje = " ";
@@ -117,7 +119,7 @@ namespace LOSA.Reproceso
                 //    return;
                 //}
 
-                if (row.seleccionar == true)
+                if (row.seleccionado == true)
                 {
                     if (row.id > 0)
                     {
@@ -155,10 +157,17 @@ namespace LOSA.Reproceso
             }
         }
 
-        private void btnPrint_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+      
+
+        private void radioGroup1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        private void repositoryItemButtonImprimir_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             var gridview = (GridView)gridControl1.FocusedView;
-            var row = (dsLogistica2.PT_Reproceso_CreadoRow)gridview.GetFocusedDataRow();
+            var row = (dsLogistica2.PT_Reproceso_TarimasRow)gridview.GetFocusedDataRow();
 
             rptTarimaReproceso report = new rptTarimaReproceso(row.id);
             report.PrintingSystem.Document.AutoFitToPagesWidth = 1;

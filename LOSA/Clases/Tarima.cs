@@ -45,7 +45,8 @@ namespace LOSA.Clases
         int id_alimentacion;
         private int id_turno;
         DateTime fecha_produccion_pt;
-        string Itemcode; 
+        string Itemcode;
+        int _id_tarima_reproceso;
         public Tarima()
         {
 
@@ -90,6 +91,10 @@ namespace LOSA.Clases
         public string ItemCode { get => Itemcode; set => Itemcode = value; }
         public int id_estado_pt { get; set; }
         public string ProductoTerminadoName { get => _ProductoTerminadoName; set => _ProductoTerminadoName = value; }
+        /// <summary>
+        /// ID de PT de la nueva Tarima de MP Reproceso
+        /// </summary>
+        public int Id_tarima_reproceso { get => _id_tarima_reproceso; set => _id_tarima_reproceso = value; }
 
         public bool RecuperarRegistro(int pIdTarima, string pCodigoBarra)
         {
@@ -99,7 +104,7 @@ namespace LOSA.Clases
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_tarima_from_id", con);
+                SqlCommand cmd = new SqlCommand("sp_get_tarima_from_idV4", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id", pIdTarima);
                 cmd.Parameters.AddWithValue("@codigo_barra", pCodigoBarra);
@@ -136,6 +141,7 @@ namespace LOSA.Clases
                     Id_turno = dr.GetInt32(25);
                     IdPresentacion = dr.GetInt32(26);
                     ItemCode = dr.GetString(27);
+                    Id_tarima_reproceso = dr.GetInt32(28);
                     Recuperado = true;
 
                 }
