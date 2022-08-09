@@ -52,6 +52,21 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
 
             tb_opciones.TabPages[1].PageVisible = false;
         }
+        public frmTipoIngreso_v2(int id_traslado, UserLogin Puser, string pItemCode)
+        {
+            InitializeComponent();
+            ItemCode = pItemCode;
+            id = id_traslado;
+            load_salidoTraslado();
+            LoadPresentaciones();
+            LoadNumeroTransaccion();
+            LoadData();
+            LoadBarcos();
+            LoadUbicaciones();
+            UsuarioLogeado = Puser;
+
+            tb_opciones.TabPages[1].PageVisible = false;
+        }
         private void LoadData()
         {
             try
@@ -360,20 +375,16 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
                         CajaDialogo.Error("Debe registrar la ubicacion en la que el modulo se pueda registrar.");
                         return;
                     }
-
-
                     if (dtProduccionGranel.EditValue == null)
                     {
                         CajaDialogo.Error("Debe ingresar la fecha de Producción!");
                         return;
                     }
-
                     if (dtVencimientoGranel.EditValue == null)
                     {
                         CajaDialogo.Error("Debe ingresar la fecha de Vencimiento!");
                         return;
                     }
-
                     if (Convert.ToDateTime(dtProduccionGranel.EditValue) >= Convert.ToDateTime(dtVencimientoGranel.EditValue))
                     {
                         CajaDialogo.Error("La fecha de vencimiento no puede ser menor o igual a la fecha de Producción!");

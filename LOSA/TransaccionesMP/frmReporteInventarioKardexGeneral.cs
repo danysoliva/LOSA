@@ -23,16 +23,16 @@ namespace LOSA.TransaccionesMP
         public frmReporteInventarioKardexGeneral(UserLogin pUserLogin)
         {
             InitializeComponent();
-            load_data();
+            load_dataPorLotes();
             load_data_totales();
             //load_dataPRD();
             //backgroundWorkerResumenMP.RunWorkerAsync();
             //backgroundWorkerPRD.RunWorkerAsync();
             UsuarioLogeado = pUserLogin;
         }
-        public void load_data()
+        public void load_dataPorLotes()
         {
-            string query = @"sp_obtener_inventario_general_por_lote";
+            string query = @"sp_obtener_inventario_general_por_lotev2";
             try
             {
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
@@ -66,6 +66,29 @@ namespace LOSA.TransaccionesMP
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 dsTarima.informacionPRD.Clear();
                 da.Fill(dsTarima.informacionPRD);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+            //backgroundWorkerPRD.CancelAsync();
+            //backgroundWorkerPRD.Dispose();
+        }
+
+        public void load_dataResumenMP_por_bodega()
+        {
+            string query = @"[sp_obtener_inventario_general_por_bodega]";
+            try
+            {
+                DataOperations dp1 = new DataOperations();
+                SqlConnection cn = new SqlConnection(dp1.ConnectionStringLOSA);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                dsTarima.totales_bodega.Clear();
+                da.Fill(dsTarima.totales_bodega);
                 cn.Close();
             }
             catch (Exception ex)
@@ -138,7 +161,7 @@ namespace LOSA.TransaccionesMP
             frmAsjuteInventarioPorLote frm = new frmAsjuteInventarioPorLote(UsuarioLogeado);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                load_data();
+                load_dataPorLotes();
             }
         }
 
@@ -151,7 +174,7 @@ namespace LOSA.TransaccionesMP
             frmAsjuteInventarioPorLote frm = new frmAsjuteInventarioPorLote(UsuarioLogeado, row.id_mp, 0, row.lote);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                load_data();
+                load_dataPorLotes();
             }
         }
 
@@ -208,7 +231,7 @@ namespace LOSA.TransaccionesMP
             }
             else
             {
-                load_data();
+                load_dataPorLotes();
                 worker.CancelAsync();
             }
         }
@@ -229,7 +252,11 @@ namespace LOSA.TransaccionesMP
                     break;
                 case "Resumen por lote":
                     if (dsTarima.informacion.Count == 0)
-                        load_data();
+                        load_dataPorLotes();
+                    break;
+                case "Resumen por MP y Bodega":
+                    if (dsTarima.totales_bodega.Count == 0)
+                        load_dataResumenMP_por_bodega();
                     break;
             }
             //}

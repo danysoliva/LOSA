@@ -33,16 +33,25 @@ namespace LOSA.ACS.RRHH
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.dsRRHH_reportes1 = new LOSA.ACS.RRHH.dsRRHH_reportes();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colid_marca = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dt_final = new DevExpress.XtraEditors.DateEdit();
+            this.dt_inicial = new DevExpress.XtraEditors.DateEdit();
+            this.lblFechas = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnexport = new DevExpress.XtraEditors.SimpleButton();
+            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
+            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid_emp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnombre = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colturno_id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colturno_name = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coldepartamento = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coldesde = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colhasta = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsemana = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colentrada_1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colsalida_1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colentrada_martes = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsalida_martes = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colentrada_miercoles = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -56,15 +65,22 @@ namespace LOSA.ACS.RRHH
             this.colentrada_domingo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsalida_domingo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStartOfWeek = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colentrada_1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colsalida_1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEndOfWeek = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.dt_final = new DevExpress.XtraEditors.DateEdit();
-            this.dt_inicial = new DevExpress.XtraEditors.DateEdit();
-            this.lblFechas = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnexport = new DevExpress.XtraEditors.SimpleButton();
+            this.coldepartamento = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_emp1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcodigo1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnombre1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colsemana1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDomingo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLunes = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMartes = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMiercoles = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colJueves = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colViernes = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSabado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colStartOfWeek1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colEndOfWeek1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldepartamento1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRRHH_reportes1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -72,19 +88,23 @@ namespace LOSA.ACS.RRHH
             ((System.ComponentModel.ISupportInitialize)(this.dt_final.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_inicial.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_inicial.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
+            this.xtraTabControl1.SuspendLayout();
+            this.xtraTabPage1.SuspendLayout();
+            this.xtraTabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
             // 
-            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl1.DataMember = "resumen_asistencia";
             this.gridControl1.DataSource = this.dsRRHH_reportes1;
-            this.gridControl1.Location = new System.Drawing.Point(2, 79);
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1126, 432);
+            this.gridControl1.Size = new System.Drawing.Size(1123, 397);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -101,16 +121,14 @@ namespace LOSA.ACS.RRHH
             this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridView1.Appearance.Row.Options.UseFont = true;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colid_marca,
             this.colid_emp,
             this.colcodigo,
             this.colnombre,
             this.colturno_id,
             this.colturno_name,
-            this.coldepartamento,
-            this.coldesde,
-            this.colhasta,
             this.colsemana,
+            this.colentrada_1,
+            this.colsalida_1,
             this.colentrada_martes,
             this.colsalida_martes,
             this.colentrada_miercoles,
@@ -124,257 +142,12 @@ namespace LOSA.ACS.RRHH
             this.colentrada_domingo,
             this.colsalida_domingo,
             this.colStartOfWeek,
-            this.colentrada_1,
-            this.colsalida_1,
-            this.colEndOfWeek});
+            this.colEndOfWeek,
+            this.coldepartamento});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowFooter = true;
-            // 
-            // colid_marca
-            // 
-            this.colid_marca.FieldName = "id_marca";
-            this.colid_marca.Name = "colid_marca";
-            this.colid_marca.OptionsColumn.AllowEdit = false;
-            // 
-            // colid_emp
-            // 
-            this.colid_emp.FieldName = "id_emp";
-            this.colid_emp.Name = "colid_emp";
-            this.colid_emp.OptionsColumn.AllowEdit = false;
-            // 
-            // colcodigo
-            // 
-            this.colcodigo.FieldName = "codigo";
-            this.colcodigo.Name = "colcodigo";
-            this.colcodigo.OptionsColumn.AllowEdit = false;
-            this.colcodigo.Visible = true;
-            this.colcodigo.VisibleIndex = 0;
-            this.colcodigo.Width = 40;
-            // 
-            // colnombre
-            // 
-            this.colnombre.FieldName = "nombre";
-            this.colnombre.Name = "colnombre";
-            this.colnombre.OptionsColumn.AllowEdit = false;
-            this.colnombre.Visible = true;
-            this.colnombre.VisibleIndex = 1;
-            this.colnombre.Width = 131;
-            // 
-            // colturno_id
-            // 
-            this.colturno_id.FieldName = "turno_id";
-            this.colturno_id.Name = "colturno_id";
-            this.colturno_id.OptionsColumn.AllowEdit = false;
-            // 
-            // colturno_name
-            // 
-            this.colturno_name.FieldName = "turno_name";
-            this.colturno_name.Name = "colturno_name";
-            this.colturno_name.OptionsColumn.AllowEdit = false;
-            this.colturno_name.Width = 42;
-            // 
-            // coldepartamento
-            // 
-            this.coldepartamento.Caption = "Departamento";
-            this.coldepartamento.FieldName = "departamento";
-            this.coldepartamento.Name = "coldepartamento";
-            this.coldepartamento.OptionsColumn.AllowEdit = false;
-            this.coldepartamento.Visible = true;
-            this.coldepartamento.VisibleIndex = 2;
-            this.coldepartamento.Width = 68;
-            // 
-            // coldesde
-            // 
-            this.coldesde.DisplayFormat.FormatString = "d";
-            this.coldesde.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.coldesde.FieldName = "desde";
-            this.coldesde.Name = "coldesde";
-            this.coldesde.OptionsColumn.AllowEdit = false;
-            this.coldesde.Width = 64;
-            // 
-            // colhasta
-            // 
-            this.colhasta.DisplayFormat.FormatString = "d";
-            this.colhasta.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.colhasta.FieldName = "hasta";
-            this.colhasta.Name = "colhasta";
-            this.colhasta.OptionsColumn.AllowEdit = false;
-            this.colhasta.Width = 58;
-            // 
-            // colsemana
-            // 
-            this.colsemana.FieldName = "semana";
-            this.colsemana.Name = "colsemana";
-            this.colsemana.OptionsColumn.AllowEdit = false;
-            this.colsemana.Width = 26;
-            // 
-            // colentrada_martes
-            // 
-            this.colentrada_martes.DisplayFormat.FormatString = "f";
-            this.colentrada_martes.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.colentrada_martes.FieldName = "entrada_martes";
-            this.colentrada_martes.Name = "colentrada_martes";
-            this.colentrada_martes.OptionsColumn.AllowEdit = false;
-            this.colentrada_martes.Visible = true;
-            this.colentrada_martes.VisibleIndex = 7;
-            this.colentrada_martes.Width = 49;
-            // 
-            // colsalida_martes
-            // 
-            this.colsalida_martes.DisplayFormat.FormatString = "f";
-            this.colsalida_martes.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.colsalida_martes.FieldName = "salida_martes";
-            this.colsalida_martes.Name = "colsalida_martes";
-            this.colsalida_martes.OptionsColumn.AllowEdit = false;
-            this.colsalida_martes.Visible = true;
-            this.colsalida_martes.VisibleIndex = 8;
-            this.colsalida_martes.Width = 47;
-            // 
-            // colentrada_miercoles
-            // 
-            this.colentrada_miercoles.DisplayFormat.FormatString = "f";
-            this.colentrada_miercoles.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.colentrada_miercoles.FieldName = "entrada_miercoles";
-            this.colentrada_miercoles.Name = "colentrada_miercoles";
-            this.colentrada_miercoles.OptionsColumn.AllowEdit = false;
-            this.colentrada_miercoles.Visible = true;
-            this.colentrada_miercoles.VisibleIndex = 9;
-            this.colentrada_miercoles.Width = 46;
-            // 
-            // colsalida_miercoles
-            // 
-            this.colsalida_miercoles.DisplayFormat.FormatString = "f";
-            this.colsalida_miercoles.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.colsalida_miercoles.FieldName = "salida_miercoles";
-            this.colsalida_miercoles.Name = "colsalida_miercoles";
-            this.colsalida_miercoles.OptionsColumn.AllowEdit = false;
-            this.colsalida_miercoles.Visible = true;
-            this.colsalida_miercoles.VisibleIndex = 10;
-            this.colsalida_miercoles.Width = 58;
-            // 
-            // colentrada_jueves
-            // 
-            this.colentrada_jueves.DisplayFormat.FormatString = "f";
-            this.colentrada_jueves.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.colentrada_jueves.FieldName = "entrada_jueves";
-            this.colentrada_jueves.Name = "colentrada_jueves";
-            this.colentrada_jueves.OptionsColumn.AllowEdit = false;
-            this.colentrada_jueves.Visible = true;
-            this.colentrada_jueves.VisibleIndex = 11;
-            this.colentrada_jueves.Width = 56;
-            // 
-            // colsalida_jueves
-            // 
-            this.colsalida_jueves.DisplayFormat.FormatString = "f";
-            this.colsalida_jueves.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.colsalida_jueves.FieldName = "salida_jueves";
-            this.colsalida_jueves.Name = "colsalida_jueves";
-            this.colsalida_jueves.OptionsColumn.AllowEdit = false;
-            this.colsalida_jueves.Visible = true;
-            this.colsalida_jueves.VisibleIndex = 12;
-            this.colsalida_jueves.Width = 59;
-            // 
-            // colentrada_viernes
-            // 
-            this.colentrada_viernes.DisplayFormat.FormatString = "f";
-            this.colentrada_viernes.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.colentrada_viernes.FieldName = "entrada_viernes";
-            this.colentrada_viernes.Name = "colentrada_viernes";
-            this.colentrada_viernes.OptionsColumn.AllowEdit = false;
-            this.colentrada_viernes.Visible = true;
-            this.colentrada_viernes.VisibleIndex = 13;
-            this.colentrada_viernes.Width = 56;
-            // 
-            // colsalida_viernes
-            // 
-            this.colsalida_viernes.DisplayFormat.FormatString = "f";
-            this.colsalida_viernes.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.colsalida_viernes.FieldName = "salida_viernes";
-            this.colsalida_viernes.Name = "colsalida_viernes";
-            this.colsalida_viernes.OptionsColumn.AllowEdit = false;
-            this.colsalida_viernes.Visible = true;
-            this.colsalida_viernes.VisibleIndex = 14;
-            this.colsalida_viernes.Width = 49;
-            // 
-            // colentrada_sabado
-            // 
-            this.colentrada_sabado.DisplayFormat.FormatString = "f";
-            this.colentrada_sabado.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.colentrada_sabado.FieldName = "entrada_sabado";
-            this.colentrada_sabado.Name = "colentrada_sabado";
-            this.colentrada_sabado.OptionsColumn.AllowEdit = false;
-            this.colentrada_sabado.Visible = true;
-            this.colentrada_sabado.VisibleIndex = 15;
-            this.colentrada_sabado.Width = 46;
-            // 
-            // colsalida_sabado
-            // 
-            this.colsalida_sabado.DisplayFormat.FormatString = "f";
-            this.colsalida_sabado.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.colsalida_sabado.FieldName = "salida_sabado";
-            this.colsalida_sabado.Name = "colsalida_sabado";
-            this.colsalida_sabado.OptionsColumn.AllowEdit = false;
-            this.colsalida_sabado.Visible = true;
-            this.colsalida_sabado.VisibleIndex = 16;
-            this.colsalida_sabado.Width = 50;
-            // 
-            // colentrada_domingo
-            // 
-            this.colentrada_domingo.DisplayFormat.FormatString = "f";
-            this.colentrada_domingo.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.colentrada_domingo.FieldName = "entrada_domingo";
-            this.colentrada_domingo.Name = "colentrada_domingo";
-            this.colentrada_domingo.OptionsColumn.AllowEdit = false;
-            this.colentrada_domingo.Visible = true;
-            this.colentrada_domingo.VisibleIndex = 17;
-            this.colentrada_domingo.Width = 55;
-            // 
-            // colsalida_domingo
-            // 
-            this.colsalida_domingo.DisplayFormat.FormatString = "f";
-            this.colsalida_domingo.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.colsalida_domingo.FieldName = "salida_domingo";
-            this.colsalida_domingo.Name = "colsalida_domingo";
-            this.colsalida_domingo.OptionsColumn.AllowEdit = false;
-            this.colsalida_domingo.Visible = true;
-            this.colsalida_domingo.VisibleIndex = 18;
-            this.colsalida_domingo.Width = 82;
-            // 
-            // colStartOfWeek
-            // 
-            this.colStartOfWeek.FieldName = "StartOfWeek";
-            this.colStartOfWeek.Name = "colStartOfWeek";
-            this.colStartOfWeek.OptionsColumn.AllowEdit = false;
-            this.colStartOfWeek.Visible = true;
-            this.colStartOfWeek.VisibleIndex = 3;
-            // 
-            // colentrada_1
-            // 
-            this.colentrada_1.DisplayFormat.FormatString = "f";
-            this.colentrada_1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colentrada_1.FieldName = "entrada_1";
-            this.colentrada_1.Name = "colentrada_1";
-            this.colentrada_1.Visible = true;
-            this.colentrada_1.VisibleIndex = 5;
-            // 
-            // colsalida_1
-            // 
-            this.colsalida_1.DisplayFormat.FormatString = "f";
-            this.colsalida_1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colsalida_1.FieldName = "salida_1";
-            this.colsalida_1.Name = "colsalida_1";
-            this.colsalida_1.Visible = true;
-            this.colsalida_1.VisibleIndex = 6;
-            // 
-            // colEndOfWeek
-            // 
-            this.colEndOfWeek.FieldName = "EndOfWeek";
-            this.colEndOfWeek.Name = "colEndOfWeek";
-            this.colEndOfWeek.OptionsColumn.AllowEdit = false;
-            this.colEndOfWeek.Visible = true;
-            this.colEndOfWeek.VisibleIndex = 4;
             // 
             // dt_final
             // 
@@ -459,23 +232,406 @@ namespace LOSA.ACS.RRHH
             this.btnexport.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnexport.ImageOptions.Image")));
             this.btnexport.Location = new System.Drawing.Point(486, 20);
             this.btnexport.Name = "btnexport";
-            this.btnexport.Size = new System.Drawing.Size(146, 54);
+            this.btnexport.Size = new System.Drawing.Size(146, 53);
             this.btnexport.TabIndex = 19;
             this.btnexport.Text = "Exportar a excel";
             this.btnexport.Click += new System.EventHandler(this.btnexport_Click);
+            // 
+            // xtraTabControl1
+            // 
+            this.xtraTabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.xtraTabControl1.Location = new System.Drawing.Point(2, 90);
+            this.xtraTabControl1.Name = "xtraTabControl1";
+            this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
+            this.xtraTabControl1.Size = new System.Drawing.Size(1129, 425);
+            this.xtraTabControl1.TabIndex = 20;
+            this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.xtraTabPage1,
+            this.xtraTabPage2});
+            this.xtraTabControl1.SelectedPageChanged += new DevExpress.XtraTab.TabPageChangedEventHandler(this.xtraTabControl1_SelectedPageChanged);
+            // 
+            // xtraTabPage1
+            // 
+            this.xtraTabPage1.Controls.Add(this.gridControl1);
+            this.xtraTabPage1.Name = "xtraTabPage1";
+            this.xtraTabPage1.Size = new System.Drawing.Size(1123, 397);
+            this.xtraTabPage1.Text = "Asistencia Resumen con Hora";
+            // 
+            // xtraTabPage2
+            // 
+            this.xtraTabPage2.Controls.Add(this.gridControl2);
+            this.xtraTabPage2.Name = "xtraTabPage2";
+            this.xtraTabPage2.Size = new System.Drawing.Size(1123, 397);
+            this.xtraTabPage2.Text = "Marcas de Entrada por día";
+            // 
+            // gridControl2
+            // 
+            this.gridControl2.DataMember = "resumen_asistenciaEntradas";
+            this.gridControl2.DataSource = this.dsRRHH_reportes1;
+            this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl2.Location = new System.Drawing.Point(0, 0);
+            this.gridControl2.MainView = this.gridView2;
+            this.gridControl2.Name = "gridControl2";
+            this.gridControl2.Size = new System.Drawing.Size(1123, 397);
+            this.gridControl2.TabIndex = 1;
+            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            // 
+            // gridView2
+            // 
+            this.gridView2.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView2.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView2.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView2.Appearance.Row.Options.UseFont = true;
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid_emp1,
+            this.colcodigo1,
+            this.colnombre1,
+            this.colsemana1,
+            this.colDomingo,
+            this.colLunes,
+            this.colMartes,
+            this.colMiercoles,
+            this.colJueves,
+            this.colViernes,
+            this.colSabado,
+            this.colStartOfWeek1,
+            this.colEndOfWeek1,
+            this.coldepartamento1});
+            this.gridView2.GridControl = this.gridControl2;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsView.ShowAutoFilterRow = true;
+            this.gridView2.OptionsView.ShowFooter = true;
+            // 
+            // colid_emp
+            // 
+            this.colid_emp.FieldName = "id_emp";
+            this.colid_emp.Name = "colid_emp";
+            // 
+            // colcodigo
+            // 
+            this.colcodigo.FieldName = "codigo";
+            this.colcodigo.Name = "colcodigo";
+            this.colcodigo.OptionsColumn.AllowEdit = false;
+            this.colcodigo.Visible = true;
+            this.colcodigo.VisibleIndex = 0;
+            // 
+            // colnombre
+            // 
+            this.colnombre.FieldName = "nombre";
+            this.colnombre.Name = "colnombre";
+            this.colnombre.OptionsColumn.AllowEdit = false;
+            this.colnombre.Visible = true;
+            this.colnombre.VisibleIndex = 1;
+            // 
+            // colturno_id
+            // 
+            this.colturno_id.FieldName = "turno_id";
+            this.colturno_id.Name = "colturno_id";
+            this.colturno_id.OptionsColumn.AllowEdit = false;
+            // 
+            // colturno_name
+            // 
+            this.colturno_name.FieldName = "turno_name";
+            this.colturno_name.Name = "colturno_name";
+            this.colturno_name.OptionsColumn.AllowEdit = false;
+            // 
+            // colsemana
+            // 
+            this.colsemana.FieldName = "semana";
+            this.colsemana.Name = "colsemana";
+            this.colsemana.OptionsColumn.AllowEdit = false;
+            this.colsemana.Visible = true;
+            this.colsemana.VisibleIndex = 3;
+            // 
+            // colentrada_1
+            // 
+            this.colentrada_1.FieldName = "entrada_1";
+            this.colentrada_1.Name = "colentrada_1";
+            this.colentrada_1.OptionsColumn.AllowEdit = false;
+            this.colentrada_1.Visible = true;
+            this.colentrada_1.VisibleIndex = 8;
+            // 
+            // colsalida_1
+            // 
+            this.colsalida_1.FieldName = "salida_1";
+            this.colsalida_1.Name = "colsalida_1";
+            this.colsalida_1.OptionsColumn.AllowEdit = false;
+            this.colsalida_1.Visible = true;
+            this.colsalida_1.VisibleIndex = 9;
+            // 
+            // colentrada_martes
+            // 
+            this.colentrada_martes.FieldName = "entrada_martes";
+            this.colentrada_martes.Name = "colentrada_martes";
+            this.colentrada_martes.OptionsColumn.AllowEdit = false;
+            this.colentrada_martes.Visible = true;
+            this.colentrada_martes.VisibleIndex = 10;
+            // 
+            // colsalida_martes
+            // 
+            this.colsalida_martes.FieldName = "salida_martes";
+            this.colsalida_martes.Name = "colsalida_martes";
+            this.colsalida_martes.OptionsColumn.AllowEdit = false;
+            this.colsalida_martes.Visible = true;
+            this.colsalida_martes.VisibleIndex = 11;
+            // 
+            // colentrada_miercoles
+            // 
+            this.colentrada_miercoles.FieldName = "entrada_miercoles";
+            this.colentrada_miercoles.Name = "colentrada_miercoles";
+            this.colentrada_miercoles.OptionsColumn.AllowEdit = false;
+            this.colentrada_miercoles.Visible = true;
+            this.colentrada_miercoles.VisibleIndex = 12;
+            // 
+            // colsalida_miercoles
+            // 
+            this.colsalida_miercoles.FieldName = "salida_miercoles";
+            this.colsalida_miercoles.Name = "colsalida_miercoles";
+            this.colsalida_miercoles.OptionsColumn.AllowEdit = false;
+            this.colsalida_miercoles.Visible = true;
+            this.colsalida_miercoles.VisibleIndex = 13;
+            // 
+            // colentrada_jueves
+            // 
+            this.colentrada_jueves.FieldName = "entrada_jueves";
+            this.colentrada_jueves.Name = "colentrada_jueves";
+            this.colentrada_jueves.OptionsColumn.AllowEdit = false;
+            this.colentrada_jueves.Visible = true;
+            this.colentrada_jueves.VisibleIndex = 14;
+            // 
+            // colsalida_jueves
+            // 
+            this.colsalida_jueves.FieldName = "salida_jueves";
+            this.colsalida_jueves.Name = "colsalida_jueves";
+            this.colsalida_jueves.OptionsColumn.AllowEdit = false;
+            this.colsalida_jueves.Visible = true;
+            this.colsalida_jueves.VisibleIndex = 15;
+            // 
+            // colentrada_viernes
+            // 
+            this.colentrada_viernes.FieldName = "entrada_viernes";
+            this.colentrada_viernes.Name = "colentrada_viernes";
+            this.colentrada_viernes.OptionsColumn.AllowEdit = false;
+            this.colentrada_viernes.Visible = true;
+            this.colentrada_viernes.VisibleIndex = 16;
+            // 
+            // colsalida_viernes
+            // 
+            this.colsalida_viernes.FieldName = "salida_viernes";
+            this.colsalida_viernes.Name = "colsalida_viernes";
+            this.colsalida_viernes.OptionsColumn.AllowEdit = false;
+            this.colsalida_viernes.Visible = true;
+            this.colsalida_viernes.VisibleIndex = 17;
+            // 
+            // colentrada_sabado
+            // 
+            this.colentrada_sabado.FieldName = "entrada_sabado";
+            this.colentrada_sabado.Name = "colentrada_sabado";
+            this.colentrada_sabado.OptionsColumn.AllowEdit = false;
+            this.colentrada_sabado.Visible = true;
+            this.colentrada_sabado.VisibleIndex = 18;
+            // 
+            // colsalida_sabado
+            // 
+            this.colsalida_sabado.FieldName = "salida_sabado";
+            this.colsalida_sabado.Name = "colsalida_sabado";
+            this.colsalida_sabado.OptionsColumn.AllowEdit = false;
+            this.colsalida_sabado.Visible = true;
+            this.colsalida_sabado.VisibleIndex = 19;
+            // 
+            // colentrada_domingo
+            // 
+            this.colentrada_domingo.FieldName = "entrada_domingo";
+            this.colentrada_domingo.Name = "colentrada_domingo";
+            this.colentrada_domingo.OptionsColumn.AllowEdit = false;
+            this.colentrada_domingo.Visible = true;
+            this.colentrada_domingo.VisibleIndex = 6;
+            // 
+            // colsalida_domingo
+            // 
+            this.colsalida_domingo.FieldName = "salida_domingo";
+            this.colsalida_domingo.Name = "colsalida_domingo";
+            this.colsalida_domingo.OptionsColumn.AllowEdit = false;
+            this.colsalida_domingo.Visible = true;
+            this.colsalida_domingo.VisibleIndex = 7;
+            // 
+            // colStartOfWeek
+            // 
+            this.colStartOfWeek.FieldName = "StartOfWeek";
+            this.colStartOfWeek.Name = "colStartOfWeek";
+            this.colStartOfWeek.OptionsColumn.AllowEdit = false;
+            this.colStartOfWeek.Visible = true;
+            this.colStartOfWeek.VisibleIndex = 4;
+            // 
+            // colEndOfWeek
+            // 
+            this.colEndOfWeek.FieldName = "EndOfWeek";
+            this.colEndOfWeek.Name = "colEndOfWeek";
+            this.colEndOfWeek.OptionsColumn.AllowEdit = false;
+            this.colEndOfWeek.Visible = true;
+            this.colEndOfWeek.VisibleIndex = 5;
+            // 
+            // coldepartamento
+            // 
+            this.coldepartamento.Caption = "Turno";
+            this.coldepartamento.FieldName = "departamento";
+            this.coldepartamento.Name = "coldepartamento";
+            this.coldepartamento.OptionsColumn.AllowEdit = false;
+            this.coldepartamento.Visible = true;
+            this.coldepartamento.VisibleIndex = 2;
+            // 
+            // colid_emp1
+            // 
+            this.colid_emp1.FieldName = "id_emp";
+            this.colid_emp1.Name = "colid_emp1";
+            // 
+            // colcodigo1
+            // 
+            this.colcodigo1.FieldName = "codigo";
+            this.colcodigo1.Name = "colcodigo1";
+            this.colcodigo1.OptionsColumn.AllowEdit = false;
+            this.colcodigo1.Visible = true;
+            this.colcodigo1.VisibleIndex = 0;
+            this.colcodigo1.Width = 47;
+            // 
+            // colnombre1
+            // 
+            this.colnombre1.FieldName = "nombre";
+            this.colnombre1.Name = "colnombre1";
+            this.colnombre1.OptionsColumn.AllowEdit = false;
+            this.colnombre1.Visible = true;
+            this.colnombre1.VisibleIndex = 1;
+            this.colnombre1.Width = 142;
+            // 
+            // colsemana1
+            // 
+            this.colsemana1.FieldName = "semana";
+            this.colsemana1.Name = "colsemana1";
+            this.colsemana1.OptionsColumn.AllowEdit = false;
+            this.colsemana1.Visible = true;
+            this.colsemana1.VisibleIndex = 3;
+            this.colsemana1.Width = 57;
+            // 
+            // colDomingo
+            // 
+            this.colDomingo.AppearanceCell.Options.UseTextOptions = true;
+            this.colDomingo.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDomingo.FieldName = "Domingo";
+            this.colDomingo.Name = "colDomingo";
+            this.colDomingo.OptionsColumn.AllowEdit = false;
+            this.colDomingo.Visible = true;
+            this.colDomingo.VisibleIndex = 6;
+            this.colDomingo.Width = 82;
+            // 
+            // colLunes
+            // 
+            this.colLunes.AppearanceCell.Options.UseTextOptions = true;
+            this.colLunes.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colLunes.FieldName = "Lunes";
+            this.colLunes.Name = "colLunes";
+            this.colLunes.OptionsColumn.AllowEdit = false;
+            this.colLunes.Visible = true;
+            this.colLunes.VisibleIndex = 7;
+            this.colLunes.Width = 82;
+            // 
+            // colMartes
+            // 
+            this.colMartes.AppearanceCell.Options.UseTextOptions = true;
+            this.colMartes.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMartes.FieldName = "Martes";
+            this.colMartes.Name = "colMartes";
+            this.colMartes.OptionsColumn.AllowEdit = false;
+            this.colMartes.Visible = true;
+            this.colMartes.VisibleIndex = 8;
+            this.colMartes.Width = 82;
+            // 
+            // colMiercoles
+            // 
+            this.colMiercoles.AppearanceCell.Options.UseTextOptions = true;
+            this.colMiercoles.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMiercoles.FieldName = "Miercoles";
+            this.colMiercoles.Name = "colMiercoles";
+            this.colMiercoles.OptionsColumn.AllowEdit = false;
+            this.colMiercoles.Visible = true;
+            this.colMiercoles.VisibleIndex = 9;
+            this.colMiercoles.Width = 82;
+            // 
+            // colJueves
+            // 
+            this.colJueves.AppearanceCell.Options.UseTextOptions = true;
+            this.colJueves.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colJueves.FieldName = "Jueves";
+            this.colJueves.Name = "colJueves";
+            this.colJueves.OptionsColumn.AllowEdit = false;
+            this.colJueves.Visible = true;
+            this.colJueves.VisibleIndex = 10;
+            this.colJueves.Width = 82;
+            // 
+            // colViernes
+            // 
+            this.colViernes.AppearanceCell.Options.UseTextOptions = true;
+            this.colViernes.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colViernes.FieldName = "Viernes";
+            this.colViernes.Name = "colViernes";
+            this.colViernes.OptionsColumn.AllowEdit = false;
+            this.colViernes.Visible = true;
+            this.colViernes.VisibleIndex = 11;
+            this.colViernes.Width = 82;
+            // 
+            // colSabado
+            // 
+            this.colSabado.AppearanceCell.Options.UseTextOptions = true;
+            this.colSabado.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSabado.FieldName = "Sabado";
+            this.colSabado.Name = "colSabado";
+            this.colSabado.OptionsColumn.AllowEdit = false;
+            this.colSabado.Visible = true;
+            this.colSabado.VisibleIndex = 12;
+            this.colSabado.Width = 121;
+            // 
+            // colStartOfWeek1
+            // 
+            this.colStartOfWeek1.FieldName = "StartOfWeek";
+            this.colStartOfWeek1.Name = "colStartOfWeek1";
+            this.colStartOfWeek1.OptionsColumn.AllowEdit = false;
+            this.colStartOfWeek1.Visible = true;
+            this.colStartOfWeek1.VisibleIndex = 4;
+            this.colStartOfWeek1.Width = 82;
+            // 
+            // colEndOfWeek1
+            // 
+            this.colEndOfWeek1.FieldName = "EndOfWeek";
+            this.colEndOfWeek1.Name = "colEndOfWeek1";
+            this.colEndOfWeek1.OptionsColumn.AllowEdit = false;
+            this.colEndOfWeek1.Visible = true;
+            this.colEndOfWeek1.VisibleIndex = 5;
+            this.colEndOfWeek1.Width = 82;
+            // 
+            // coldepartamento1
+            // 
+            this.coldepartamento1.Caption = "Turno";
+            this.coldepartamento1.FieldName = "departamento";
+            this.coldepartamento1.Name = "coldepartamento1";
+            this.coldepartamento1.OptionsColumn.AllowEdit = false;
+            this.coldepartamento1.Visible = true;
+            this.coldepartamento1.VisibleIndex = 2;
+            this.coldepartamento1.Width = 82;
             // 
             // frmReporteAsistencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1131, 514);
+            this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.btnexport);
             this.Controls.Add(this.dt_final);
             this.Controls.Add(this.dt_inicial);
             this.Controls.Add(this.lblFechas);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.simpleButton1);
-            this.Controls.Add(this.gridControl1);
             this.Name = "frmReporteAsistencia";
             this.Text = "Resumen Asistencia";
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
@@ -485,6 +641,12 @@ namespace LOSA.ACS.RRHH
             ((System.ComponentModel.ISupportInitialize)(this.dt_final.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_inicial.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_inicial.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
+            this.xtraTabControl1.ResumeLayout(false);
+            this.xtraTabPage1.ResumeLayout(false);
+            this.xtraTabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -495,13 +657,25 @@ namespace LOSA.ACS.RRHH
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private dsRRHH_reportes dsRRHH_reportes1;
-        private DevExpress.XtraGrid.Columns.GridColumn colid_marca;
+        private DevExpress.XtraEditors.DateEdit dt_final;
+        private DevExpress.XtraEditors.DateEdit dt_inicial;
+        private DevExpress.XtraEditors.LabelControl lblFechas;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnexport;
+        private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
+        private DevExpress.XtraGrid.GridControl gridControl2;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraGrid.Columns.GridColumn colid_emp;
         private DevExpress.XtraGrid.Columns.GridColumn colcodigo;
         private DevExpress.XtraGrid.Columns.GridColumn colnombre;
         private DevExpress.XtraGrid.Columns.GridColumn colturno_id;
         private DevExpress.XtraGrid.Columns.GridColumn colturno_name;
         private DevExpress.XtraGrid.Columns.GridColumn colsemana;
+        private DevExpress.XtraGrid.Columns.GridColumn colentrada_1;
+        private DevExpress.XtraGrid.Columns.GridColumn colsalida_1;
         private DevExpress.XtraGrid.Columns.GridColumn colentrada_martes;
         private DevExpress.XtraGrid.Columns.GridColumn colsalida_martes;
         private DevExpress.XtraGrid.Columns.GridColumn colentrada_miercoles;
@@ -514,18 +688,22 @@ namespace LOSA.ACS.RRHH
         private DevExpress.XtraGrid.Columns.GridColumn colsalida_sabado;
         private DevExpress.XtraGrid.Columns.GridColumn colentrada_domingo;
         private DevExpress.XtraGrid.Columns.GridColumn colsalida_domingo;
-        private DevExpress.XtraGrid.Columns.GridColumn coldesde;
-        private DevExpress.XtraGrid.Columns.GridColumn colhasta;
-        private DevExpress.XtraEditors.DateEdit dt_final;
-        private DevExpress.XtraEditors.DateEdit dt_inicial;
-        private DevExpress.XtraEditors.LabelControl lblFechas;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.SimpleButton btnexport;
-        private DevExpress.XtraGrid.Columns.GridColumn coldepartamento;
         private DevExpress.XtraGrid.Columns.GridColumn colStartOfWeek;
         private DevExpress.XtraGrid.Columns.GridColumn colEndOfWeek;
-        private DevExpress.XtraGrid.Columns.GridColumn colentrada_1;
-        private DevExpress.XtraGrid.Columns.GridColumn colsalida_1;
+        private DevExpress.XtraGrid.Columns.GridColumn coldepartamento;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_emp1;
+        private DevExpress.XtraGrid.Columns.GridColumn colcodigo1;
+        private DevExpress.XtraGrid.Columns.GridColumn colnombre1;
+        private DevExpress.XtraGrid.Columns.GridColumn colsemana1;
+        private DevExpress.XtraGrid.Columns.GridColumn colDomingo;
+        private DevExpress.XtraGrid.Columns.GridColumn colLunes;
+        private DevExpress.XtraGrid.Columns.GridColumn colMartes;
+        private DevExpress.XtraGrid.Columns.GridColumn colMiercoles;
+        private DevExpress.XtraGrid.Columns.GridColumn colJueves;
+        private DevExpress.XtraGrid.Columns.GridColumn colViernes;
+        private DevExpress.XtraGrid.Columns.GridColumn colSabado;
+        private DevExpress.XtraGrid.Columns.GridColumn colStartOfWeek1;
+        private DevExpress.XtraGrid.Columns.GridColumn colEndOfWeek1;
+        private DevExpress.XtraGrid.Columns.GridColumn coldepartamento1;
     }
 }
