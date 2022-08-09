@@ -69,6 +69,7 @@ namespace LOSA.Reportes
             this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdAjuste = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
@@ -533,18 +534,31 @@ namespace LOSA.Reportes
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(12, 13);
+            this.simpleButton1.Location = new System.Drawing.Point(1093, 13);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(106, 42);
             this.simpleButton1.TabIndex = 5;
             this.simpleButton1.Text = "Excel";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
+            // cmdAjuste
+            // 
+            this.cmdAjuste.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdAjuste.Appearance.Options.UseFont = true;
+            this.cmdAjuste.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.cmdAjuste.Location = new System.Drawing.Point(12, 12);
+            this.cmdAjuste.Name = "cmdAjuste";
+            this.cmdAjuste.Size = new System.Drawing.Size(167, 38);
+            this.cmdAjuste.TabIndex = 6;
+            this.cmdAjuste.Text = "Ajuste de Inventario";
+            this.cmdAjuste.Click += new System.EventHandler(this.cmdAjuste_Click);
+            // 
             // frmReporteGeneralProductoTermnado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1329, 670);
+            this.Controls.Add(this.cmdAjuste);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.btnClose);
@@ -608,5 +622,6 @@ namespace LOSA.Reportes
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
         private dsReportesInventario dsReportesInventario;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton cmdAjuste;
     }
 }

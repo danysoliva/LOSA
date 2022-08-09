@@ -30,22 +30,22 @@ namespace LOSA.TransaccionesMP
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAsjuteInventarioPorLote));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAsjuteInventarioPorLote));
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.tsTipoTransaccion = new DevExpress.XtraEditors.ToggleSwitch();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
@@ -62,8 +62,6 @@ namespace LOSA.TransaccionesMP
             this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFactor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.cmdGuardar = new DevExpress.XtraEditors.SimpleButton();
-            this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.radioLoteExistente = new System.Windows.Forms.RadioButton();
             this.radioLoteNuevo = new System.Windows.Forms.RadioButton();
@@ -81,18 +79,20 @@ namespace LOSA.TransaccionesMP
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.gridLookUpEditOrigen = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridLookUpEditDestino = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.bindingSourceBodOrigen = new System.Windows.Forms.BindingSource(this.components);
             this.dsTarima1 = new LOSA.TransaccionesMP.dsTarima();
-            this.bindingSourceBodDestino = new System.Windows.Forms.BindingSource(this.components);
-            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
-            this.dtFechaDocumento = new DevExpress.XtraEditors.DateEdit();
+            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridLookUpEditDestino = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.bindingSourceBodDestino = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
+            this.dtFechaDocumento = new DevExpress.XtraEditors.DateEdit();
+            this.cmdGuardar = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tsTipoTransaccion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadUnidades.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMP_Name.Properties)).BeginInit();
@@ -110,12 +110,12 @@ namespace LOSA.TransaccionesMP
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditOrigen.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditDestino.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceBodOrigen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTarima1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditDestino.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceBodDestino)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDocumento.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDocumento.Properties)).BeginInit();
             this.SuspendLayout();
@@ -195,17 +195,17 @@ namespace LOSA.TransaccionesMP
             this.txtMP_Name.Name = "txtMP_Name";
             this.txtMP_Name.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.txtMP_Name.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions3.Image = global::LOSA.Properties.Resources.wheat;
-            serializableAppearanceObject9.BackColor = System.Drawing.Color.Transparent;
-            serializableAppearanceObject9.Options.UseBackColor = true;
-            serializableAppearanceObject10.BackColor = System.Drawing.Color.LightBlue;
-            serializableAppearanceObject10.Options.UseBackColor = true;
-            serializableAppearanceObject11.BackColor = System.Drawing.Color.LightBlue;
-            serializableAppearanceObject11.Options.UseBackColor = true;
-            serializableAppearanceObject12.BackColor = System.Drawing.Color.LightBlue;
-            serializableAppearanceObject12.Options.UseBackColor = true;
+            editorButtonImageOptions1.Image = global::LOSA.Properties.Resources.wheat;
+            serializableAppearanceObject1.BackColor = System.Drawing.Color.Transparent;
+            serializableAppearanceObject1.Options.UseBackColor = true;
+            serializableAppearanceObject2.BackColor = System.Drawing.Color.LightBlue;
+            serializableAppearanceObject2.Options.UseBackColor = true;
+            serializableAppearanceObject3.BackColor = System.Drawing.Color.LightBlue;
+            serializableAppearanceObject3.Options.UseBackColor = true;
+            serializableAppearanceObject4.BackColor = System.Drawing.Color.LightBlue;
+            serializableAppearanceObject4.Options.UseBackColor = true;
             this.txtMP_Name.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.txtMP_Name.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.txtMP_Name.Properties.ReadOnly = true;
             this.txtMP_Name.Size = new System.Drawing.Size(355, 32);
@@ -218,17 +218,17 @@ namespace LOSA.TransaccionesMP
             this.txtNumLote.Name = "txtNumLote";
             this.txtNumLote.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.txtNumLote.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions4.Image = global::LOSA.Properties.Resources.wheat;
-            serializableAppearanceObject13.BackColor = System.Drawing.Color.Transparent;
-            serializableAppearanceObject13.Options.UseBackColor = true;
-            serializableAppearanceObject14.BackColor = System.Drawing.Color.LightBlue;
-            serializableAppearanceObject14.Options.UseBackColor = true;
-            serializableAppearanceObject15.BackColor = System.Drawing.Color.LightBlue;
-            serializableAppearanceObject15.Options.UseBackColor = true;
-            serializableAppearanceObject16.BackColor = System.Drawing.Color.LightBlue;
-            serializableAppearanceObject16.Options.UseBackColor = true;
+            editorButtonImageOptions2.Image = global::LOSA.Properties.Resources.wheat;
+            serializableAppearanceObject5.BackColor = System.Drawing.Color.Transparent;
+            serializableAppearanceObject5.Options.UseBackColor = true;
+            serializableAppearanceObject6.BackColor = System.Drawing.Color.LightBlue;
+            serializableAppearanceObject6.Options.UseBackColor = true;
+            serializableAppearanceObject7.BackColor = System.Drawing.Color.LightBlue;
+            serializableAppearanceObject7.Options.UseBackColor = true;
+            serializableAppearanceObject8.BackColor = System.Drawing.Color.LightBlue;
+            serializableAppearanceObject8.Options.UseBackColor = true;
             this.txtNumLote.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.txtNumLote.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.txtNumLote.Properties.ReadOnly = true;
             this.txtNumLote.Size = new System.Drawing.Size(355, 32);
@@ -306,39 +306,6 @@ namespace LOSA.TransaccionesMP
             this.labelControl11.TabIndex = 101;
             this.labelControl11.Text = "Presentación";
             // 
-            // cmdGuardar
-            // 
-            this.cmdGuardar.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.cmdGuardar.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdGuardar.Appearance.Options.UseBackColor = true;
-            this.cmdGuardar.Appearance.Options.UseFont = true;
-            this.cmdGuardar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdGuardar.ImageOptions.Image")));
-            this.cmdGuardar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.cmdGuardar.Location = new System.Drawing.Point(17, 25);
-            this.cmdGuardar.Name = "cmdGuardar";
-            this.cmdGuardar.Size = new System.Drawing.Size(167, 49);
-            this.cmdGuardar.TabIndex = 16;
-            this.cmdGuardar.Text = "Guardar";
-            this.cmdGuardar.Click += new System.EventHandler(this.cmdGuardar_Click);
-            // 
-            // btnAtras
-            // 
-            this.btnAtras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAtras.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnAtras.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtras.Appearance.Options.UseBackColor = true;
-            this.btnAtras.Appearance.Options.UseFont = true;
-            this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
-            this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(443, 25);
-            this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(167, 49);
-            this.btnAtras.TabIndex = 82;
-            this.btnAtras.Text = "Atras";
-            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
-            // 
             // labelControl3
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
@@ -401,17 +368,17 @@ namespace LOSA.TransaccionesMP
             this.buttonProveedores.Name = "buttonProveedores";
             this.buttonProveedores.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.buttonProveedores.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions1.Image = global::LOSA.Properties.Resources.wheat;
-            serializableAppearanceObject1.BackColor = System.Drawing.Color.Transparent;
-            serializableAppearanceObject1.Options.UseBackColor = true;
-            serializableAppearanceObject2.BackColor = System.Drawing.Color.LightBlue;
-            serializableAppearanceObject2.Options.UseBackColor = true;
-            serializableAppearanceObject3.BackColor = System.Drawing.Color.LightBlue;
-            serializableAppearanceObject3.Options.UseBackColor = true;
-            serializableAppearanceObject4.BackColor = System.Drawing.Color.LightBlue;
-            serializableAppearanceObject4.Options.UseBackColor = true;
+            editorButtonImageOptions3.Image = global::LOSA.Properties.Resources.wheat;
+            serializableAppearanceObject9.BackColor = System.Drawing.Color.Transparent;
+            serializableAppearanceObject9.Options.UseBackColor = true;
+            serializableAppearanceObject10.BackColor = System.Drawing.Color.LightBlue;
+            serializableAppearanceObject10.Options.UseBackColor = true;
+            serializableAppearanceObject11.BackColor = System.Drawing.Color.LightBlue;
+            serializableAppearanceObject11.Options.UseBackColor = true;
+            serializableAppearanceObject12.BackColor = System.Drawing.Color.LightBlue;
+            serializableAppearanceObject12.Options.UseBackColor = true;
             this.buttonProveedores.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.buttonProveedores.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.buttonProveedores.Properties.ReadOnly = true;
             this.buttonProveedores.Size = new System.Drawing.Size(355, 32);
@@ -533,6 +500,16 @@ namespace LOSA.TransaccionesMP
             this.gridLookUpEditOrigen.Size = new System.Drawing.Size(355, 26);
             this.gridLookUpEditOrigen.TabIndex = 118;
             // 
+            // bindingSourceBodOrigen
+            // 
+            this.bindingSourceBodOrigen.DataMember = "bodega_origen";
+            this.bindingSourceBodOrigen.DataSource = this.dsTarima1;
+            // 
+            // dsTarima1
+            // 
+            this.dsTarima1.DataSetName = "dsTarima";
+            this.dsTarima1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // gridLookUpEdit1View
             // 
             this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -542,6 +519,20 @@ namespace LOSA.TransaccionesMP
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // colid1
+            // 
+            this.colid1.FieldName = "id";
+            this.colid1.Name = "colid1";
+            // 
+            // coldescripcion1
+            // 
+            this.coldescripcion1.Caption = "Bodega";
+            this.coldescripcion1.FieldName = "descripcion";
+            this.coldescripcion1.Name = "coldescripcion1";
+            this.coldescripcion1.OptionsColumn.AllowEdit = false;
+            this.coldescripcion1.Visible = true;
+            this.coldescripcion1.VisibleIndex = 0;
             // 
             // gridLookUpEditDestino
             // 
@@ -558,6 +549,11 @@ namespace LOSA.TransaccionesMP
             this.gridLookUpEditDestino.Size = new System.Drawing.Size(355, 26);
             this.gridLookUpEditDestino.TabIndex = 119;
             // 
+            // bindingSourceBodDestino
+            // 
+            this.bindingSourceBodDestino.DataMember = "bodega_destino";
+            this.bindingSourceBodDestino.DataSource = this.dsTarima1;
+            // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -568,20 +564,19 @@ namespace LOSA.TransaccionesMP
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
-            // bindingSourceBodOrigen
+            // colid2
             // 
-            this.bindingSourceBodOrigen.DataMember = "bodega_origen";
-            this.bindingSourceBodOrigen.DataSource = this.dsTarima1;
+            this.colid2.FieldName = "id";
+            this.colid2.Name = "colid2";
             // 
-            // dsTarima1
+            // coldescripcion2
             // 
-            this.dsTarima1.DataSetName = "dsTarima";
-            this.dsTarima1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bindingSourceBodDestino
-            // 
-            this.bindingSourceBodDestino.DataMember = "bodega_destino";
-            this.bindingSourceBodDestino.DataSource = this.dsTarima1;
+            this.coldescripcion2.Caption = "Bodega";
+            this.coldescripcion2.FieldName = "descripcion";
+            this.coldescripcion2.Name = "coldescripcion2";
+            this.coldescripcion2.OptionsColumn.AllowEdit = false;
+            this.coldescripcion2.Visible = true;
+            this.coldescripcion2.VisibleIndex = 0;
             // 
             // labelControl12
             // 
@@ -609,39 +604,44 @@ namespace LOSA.TransaccionesMP
             this.dtFechaDocumento.Size = new System.Drawing.Size(355, 26);
             this.dtFechaDocumento.TabIndex = 121;
             // 
-            // colid1
+            // cmdGuardar
             // 
-            this.colid1.FieldName = "id";
-            this.colid1.Name = "colid1";
+            this.cmdGuardar.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.cmdGuardar.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdGuardar.Appearance.Options.UseBackColor = true;
+            this.cmdGuardar.Appearance.Options.UseFont = true;
+            this.cmdGuardar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdGuardar.ImageOptions.Image")));
+            this.cmdGuardar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.cmdGuardar.Location = new System.Drawing.Point(17, 25);
+            this.cmdGuardar.Name = "cmdGuardar";
+            this.cmdGuardar.Size = new System.Drawing.Size(167, 49);
+            this.cmdGuardar.TabIndex = 16;
+            this.cmdGuardar.Text = "Guardar";
+            this.cmdGuardar.Click += new System.EventHandler(this.cmdGuardar_Click);
             // 
-            // coldescripcion1
+            // btnAtras
             // 
-            this.coldescripcion1.Caption = "Bodega";
-            this.coldescripcion1.FieldName = "descripcion";
-            this.coldescripcion1.Name = "coldescripcion1";
-            this.coldescripcion1.OptionsColumn.AllowEdit = false;
-            this.coldescripcion1.Visible = true;
-            this.coldescripcion1.VisibleIndex = 0;
-            // 
-            // colid2
-            // 
-            this.colid2.FieldName = "id";
-            this.colid2.Name = "colid2";
-            // 
-            // coldescripcion2
-            // 
-            this.coldescripcion2.Caption = "Bodega";
-            this.coldescripcion2.FieldName = "descripcion";
-            this.coldescripcion2.Name = "coldescripcion2";
-            this.coldescripcion2.OptionsColumn.AllowEdit = false;
-            this.coldescripcion2.Visible = true;
-            this.coldescripcion2.VisibleIndex = 0;
+            this.btnAtras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAtras.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnAtras.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtras.Appearance.Options.UseBackColor = true;
+            this.btnAtras.Appearance.Options.UseFont = true;
+            this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
+            this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnAtras.Location = new System.Drawing.Point(443, 25);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(167, 49);
+            this.btnAtras.TabIndex = 82;
+            this.btnAtras.Text = "Atras";
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
             // frmAsjuteInventarioPorLote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(628, 608);
+            this.ClientSize = new System.Drawing.Size(634, 614);
             this.ControlBox = false;
             this.Controls.Add(this.dtFechaDocumento);
             this.Controls.Add(this.labelControl12);
@@ -670,8 +670,8 @@ namespace LOSA.TransaccionesMP
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.cmdGuardar);
             this.Controls.Add(this.btnAtras);
-            this.Controls.Add(this.txtLoteNuevo);
             this.Controls.Add(this.txtNumLote);
+            this.Controls.Add(this.txtLoteNuevo);
             this.Name = "frmAsjuteInventarioPorLote";
             this.ShowIcon = false;
             this.Text = "Ajuste de Inventario por Lote";
@@ -692,12 +692,12 @@ namespace LOSA.TransaccionesMP
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditOrigen.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditDestino.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceBodOrigen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTarima1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditDestino.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceBodDestino)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDocumento.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDocumento.Properties)).EndInit();
             this.ResumeLayout(false);

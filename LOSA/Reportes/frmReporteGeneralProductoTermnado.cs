@@ -90,5 +90,10 @@ namespace LOSA.Reportes
             {
             }
         }
+
+        private void cmdAjuste_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
