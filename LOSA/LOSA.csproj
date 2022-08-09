@@ -2648,6 +2648,12 @@
     <Compile Include="TransaccionesPT\frmactivacionPT.Designer.cs">
       <DependentUpon>frmactivacionPT.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesPT\frmAjusteIKardexPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesPT\frmAjusteIKardexPT.Designer.cs">
+      <DependentUpon>frmAjusteIKardexPT.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesPT\frmcausasRetencionComplete.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2678,6 +2684,12 @@
     <Compile Include="TransaccionesPT\frmLotePT.Designer.cs">
       <DependentUpon>frmLotePT.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesPT\frmLotesxPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesPT\frmLotesxPT.Designer.cs">
+      <DependentUpon>frmLotesxPT.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesPT\frmPedidosProduccion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2695,6 +2707,12 @@
     </Compile>
     <Compile Include="TransaccionesPT\frmPrintTM.Designer.cs">
       <DependentUpon>frmPrintTM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesPT\frmPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesPT\frmPT.Designer.cs">
+      <DependentUpon>frmPT.cs</DependentUpon>
     </Compile>
     <Compile Include="TransaccionesPT\frmRevisionDeActivaciondeTm.cs">
       <SubType>Form</SubType>
@@ -3896,6 +3914,9 @@
     <EmbeddedResource Include="TransaccionesPT\frmactivacionPT.resx">
       <DependentUpon>frmactivacionPT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesPT\frmAjusteIKardexPT.resx">
+      <DependentUpon>frmAjusteIKardexPT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesPT\frmcausasRetencionComplete.resx">
       <DependentUpon>frmcausasRetencionComplete.cs</DependentUpon>
     </EmbeddedResource>
@@ -3911,6 +3932,9 @@
     <EmbeddedResource Include="TransaccionesPT\frmLotePT.resx">
       <DependentUpon>frmLotePT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesPT\frmLotesxPT.resx">
+      <DependentUpon>frmLotesxPT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesPT\frmPedidosProduccion.resx">
       <DependentUpon>frmPedidosProduccion.cs</DependentUpon>
     </EmbeddedResource>
@@ -3919,6 +3943,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesPT\frmPrintTM.resx">
       <DependentUpon>frmPrintTM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesPT\frmPT.resx">
+      <DependentUpon>frmPT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesPT\frmRevisionDeActivaciondeTm.resx">
       <DependentUpon>frmRevisionDeActivaciondeTm.cs</DependentUpon>

@@ -284,7 +284,7 @@ namespace LOSA.Logistica
                         cmm.Parameters.AddWithValue("@id", 1);
                         string barcode = cmm.ExecuteScalar().ToString();
 
-                        cmd3 = new SqlCommand("dbo.sp_insert_new_tarima_pt_to_mp_V2", con);
+                        cmd3 = new SqlCommand("dbo.sp_insert_new_tarima_pt_to_mp_V3", con);
                         cmd3.CommandType = CommandType.StoredProcedure;
                         cmd3.Parameters.AddWithValue("@numero_transaccion", setIngreso.numero_referencia);
                         cmd3.Parameters.AddWithValue("@numero_reproceso", setIngreso.Numero_reproceso);
@@ -297,12 +297,7 @@ namespace LOSA.Logistica
                         cmd3.Parameters.AddWithValue("@idlotes", id_lote);
                         cmd3.Parameters.AddWithValue("@id_Tarima",tarima.ID );
                         cmd3.Parameters.AddWithValue("@id_especie", setIngreso.especie);
-                        //Tarima tarima2 = new Tarima();
-                        //int Id_LOTEPT = tarima2.LotePT;
-                        //int Id_ProductoT = tarima2.IdProductoterminado;
-                        //Esto es para que al momento de imprimir la tarima de Reproceso, podamos obtener la informacion del PT del cual se saco.
-                        //cmd3.Parameters.AddWithValue("@lote_producto_termiado", Id_LOTEPT);
-                        //cmd3.Parameters.AddWithValue("@id_producto_termiado", Id_ProductoT);
+                        cmd3.Parameters.AddWithValue("@id_tarima_reproceso", tarima.TarimaID);
 
                         cmd3.Parameters.AddWithValue("@bit_promedio", 0);
                         vid_tarima = Convert.ToInt32(cmd3.ExecuteScalar());

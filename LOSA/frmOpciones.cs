@@ -682,8 +682,8 @@ namespace LOSA
             //Reproceso.frmReprocesoPrint frm = new Reproceso.frmReprocesoPrint();
             //frm.MdiParent = this.MdiParent;
             //frm.Show();
-            xfrmIngresosMP_Reproceso frm = new xfrmIngresosMP_Reproceso(UsuarioLogeado);
-
+            //xfrmIngresosMP_Reproceso frm = new xfrmIngresosMP_Reproceso(UsuarioLogeado);
+            Reproceso.frmReprocesoPrint frm = new Reproceso.frmReprocesoPrint();
             if (this.MdiParent != null)
                 frm.MdiParent = this.MdiParent;
             frm.Show();
@@ -866,7 +866,7 @@ namespace LOSA
             if (this.MdiParent != null)
                 frm.MdiParent = this.MdiParent;
 
-            frm.WindowState = FormWindowState.Maximized;
+            //frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
 
