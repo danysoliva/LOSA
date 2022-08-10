@@ -26,6 +26,8 @@ namespace LOSA.ACS.RRHH {
         
         private resumen_asistenciaDataTable tableresumen_asistencia;
         
+        private resumen_asistenciaEntradasDataTable tableresumen_asistenciaEntradas;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -57,6 +59,9 @@ namespace LOSA.ACS.RRHH {
                 if ((ds.Tables["resumen_asistencia"] != null)) {
                     base.Tables.Add(new resumen_asistenciaDataTable(ds.Tables["resumen_asistencia"]));
                 }
+                if ((ds.Tables["resumen_asistenciaEntradas"] != null)) {
+                    base.Tables.Add(new resumen_asistenciaEntradasDataTable(ds.Tables["resumen_asistenciaEntradas"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -82,6 +87,16 @@ namespace LOSA.ACS.RRHH {
         public resumen_asistenciaDataTable resumen_asistencia {
             get {
                 return this.tableresumen_asistencia;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public resumen_asistenciaEntradasDataTable resumen_asistenciaEntradas {
+            get {
+                return this.tableresumen_asistenciaEntradas;
             }
         }
         
@@ -155,6 +170,9 @@ namespace LOSA.ACS.RRHH {
                 if ((ds.Tables["resumen_asistencia"] != null)) {
                     base.Tables.Add(new resumen_asistenciaDataTable(ds.Tables["resumen_asistencia"]));
                 }
+                if ((ds.Tables["resumen_asistenciaEntradas"] != null)) {
+                    base.Tables.Add(new resumen_asistenciaEntradasDataTable(ds.Tables["resumen_asistenciaEntradas"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -194,6 +212,12 @@ namespace LOSA.ACS.RRHH {
                     this.tableresumen_asistencia.InitVars();
                 }
             }
+            this.tableresumen_asistenciaEntradas = ((resumen_asistenciaEntradasDataTable)(base.Tables["resumen_asistenciaEntradas"]));
+            if ((initTable == true)) {
+                if ((this.tableresumen_asistenciaEntradas != null)) {
+                    this.tableresumen_asistenciaEntradas.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -206,11 +230,19 @@ namespace LOSA.ACS.RRHH {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableresumen_asistencia = new resumen_asistenciaDataTable();
             base.Tables.Add(this.tableresumen_asistencia);
+            this.tableresumen_asistenciaEntradas = new resumen_asistenciaEntradasDataTable();
+            base.Tables.Add(this.tableresumen_asistenciaEntradas);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializeresumen_asistencia() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeresumen_asistenciaEntradas() {
             return false;
         }
         
@@ -271,6 +303,9 @@ namespace LOSA.ACS.RRHH {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void resumen_asistenciaRowChangeEventHandler(object sender, resumen_asistenciaRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void resumen_asistenciaEntradasRowChangeEventHandler(object sender, resumen_asistenciaEntradasRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -586,20 +621,20 @@ namespace LOSA.ACS.RRHH {
                         int turno_id, 
                         string turno_name, 
                         int semana, 
-                        System.DateTime entrada_1, 
-                        System.DateTime salida_1, 
-                        System.DateTime entrada_martes, 
-                        System.DateTime salida_martes, 
-                        System.DateTime entrada_miercoles, 
-                        System.DateTime salida_miercoles, 
-                        System.DateTime entrada_jueves, 
-                        System.DateTime salida_jueves, 
-                        System.DateTime entrada_viernes, 
-                        System.DateTime salida_viernes, 
-                        System.DateTime entrada_sabado, 
-                        System.DateTime salida_sabado, 
-                        System.DateTime entrada_domingo, 
-                        System.DateTime salida_domingo, 
+                        string entrada_1, 
+                        string salida_1, 
+                        string entrada_martes, 
+                        string salida_martes, 
+                        string entrada_miercoles, 
+                        string salida_miercoles, 
+                        string entrada_jueves, 
+                        string salida_jueves, 
+                        string entrada_viernes, 
+                        string salida_viernes, 
+                        string entrada_sabado, 
+                        string salida_sabado, 
+                        string entrada_domingo, 
+                        string salida_domingo, 
                         System.DateTime StartOfWeek, 
                         System.DateTime EndOfWeek, 
                         string departamento) {
@@ -690,33 +725,33 @@ namespace LOSA.ACS.RRHH {
                 base.Columns.Add(this.columnturno_name);
                 this.columnsemana = new global::System.Data.DataColumn("semana", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsemana);
-                this.columnentrada_1 = new global::System.Data.DataColumn("entrada_1", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnentrada_1 = new global::System.Data.DataColumn("entrada_1", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnentrada_1);
-                this.columnsalida_1 = new global::System.Data.DataColumn("salida_1", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnsalida_1 = new global::System.Data.DataColumn("salida_1", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsalida_1);
-                this.columnentrada_martes = new global::System.Data.DataColumn("entrada_martes", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnentrada_martes = new global::System.Data.DataColumn("entrada_martes", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnentrada_martes);
-                this.columnsalida_martes = new global::System.Data.DataColumn("salida_martes", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnsalida_martes = new global::System.Data.DataColumn("salida_martes", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsalida_martes);
-                this.columnentrada_miercoles = new global::System.Data.DataColumn("entrada_miercoles", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnentrada_miercoles = new global::System.Data.DataColumn("entrada_miercoles", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnentrada_miercoles);
-                this.columnsalida_miercoles = new global::System.Data.DataColumn("salida_miercoles", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnsalida_miercoles = new global::System.Data.DataColumn("salida_miercoles", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsalida_miercoles);
-                this.columnentrada_jueves = new global::System.Data.DataColumn("entrada_jueves", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnentrada_jueves = new global::System.Data.DataColumn("entrada_jueves", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnentrada_jueves);
-                this.columnsalida_jueves = new global::System.Data.DataColumn("salida_jueves", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnsalida_jueves = new global::System.Data.DataColumn("salida_jueves", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsalida_jueves);
-                this.columnentrada_viernes = new global::System.Data.DataColumn("entrada_viernes", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnentrada_viernes = new global::System.Data.DataColumn("entrada_viernes", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnentrada_viernes);
-                this.columnsalida_viernes = new global::System.Data.DataColumn("salida_viernes", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnsalida_viernes = new global::System.Data.DataColumn("salida_viernes", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsalida_viernes);
-                this.columnentrada_sabado = new global::System.Data.DataColumn("entrada_sabado", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnentrada_sabado = new global::System.Data.DataColumn("entrada_sabado", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnentrada_sabado);
-                this.columnsalida_sabado = new global::System.Data.DataColumn("salida_sabado", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnsalida_sabado = new global::System.Data.DataColumn("salida_sabado", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsalida_sabado);
-                this.columnentrada_domingo = new global::System.Data.DataColumn("entrada_domingo", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnentrada_domingo = new global::System.Data.DataColumn("entrada_domingo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnentrada_domingo);
-                this.columnsalida_domingo = new global::System.Data.DataColumn("salida_domingo", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnsalida_domingo = new global::System.Data.DataColumn("salida_domingo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsalida_domingo);
                 this.columnStartOfWeek = new global::System.Data.DataColumn("StartOfWeek", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnStartOfWeek);
@@ -728,20 +763,20 @@ namespace LOSA.ACS.RRHH {
                 this.columnnombre.Caption = "Nombre";
                 this.columnturno_name.Caption = "Turno";
                 this.columnsemana.Caption = "Semana";
-                this.columnentrada_1.Caption = "E1";
-                this.columnsalida_1.Caption = "S1";
-                this.columnentrada_martes.Caption = "E2";
-                this.columnsalida_martes.Caption = "S2";
-                this.columnentrada_miercoles.Caption = "E3";
-                this.columnsalida_miercoles.Caption = "S3";
-                this.columnentrada_jueves.Caption = "E4";
-                this.columnsalida_jueves.Caption = "S4";
-                this.columnentrada_viernes.Caption = "E5";
-                this.columnsalida_viernes.Caption = "S5";
-                this.columnentrada_sabado.Caption = "E6";
-                this.columnsalida_sabado.Caption = "S6";
-                this.columnentrada_domingo.Caption = "E7";
-                this.columnsalida_domingo.Caption = "S7";
+                this.columnentrada_1.Caption = "E2";
+                this.columnsalida_1.Caption = "S2";
+                this.columnentrada_martes.Caption = "E3";
+                this.columnsalida_martes.Caption = "S3";
+                this.columnentrada_miercoles.Caption = "E4";
+                this.columnsalida_miercoles.Caption = "S4";
+                this.columnentrada_jueves.Caption = "E5";
+                this.columnsalida_jueves.Caption = "S5";
+                this.columnentrada_viernes.Caption = "E6";
+                this.columnsalida_viernes.Caption = "S6";
+                this.columnentrada_sabado.Caption = "E7";
+                this.columnsalida_sabado.Caption = "S7";
+                this.columnentrada_domingo.Caption = "E1";
+                this.columnsalida_domingo.Caption = "S1";
                 this.columnStartOfWeek.Caption = "Fecha Desde";
                 this.columnEndOfWeek.Caption = "Fecha Hasta";
             }
@@ -830,6 +865,442 @@ namespace LOSA.ACS.RRHH {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "resumen_asistenciaDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class resumen_asistenciaEntradasDataTable : global::System.Data.TypedTableBase<resumen_asistenciaEntradasRow> {
+            
+            private global::System.Data.DataColumn columnid_emp;
+            
+            private global::System.Data.DataColumn columncodigo;
+            
+            private global::System.Data.DataColumn columnnombre;
+            
+            private global::System.Data.DataColumn columnsemana;
+            
+            private global::System.Data.DataColumn columnDomingo;
+            
+            private global::System.Data.DataColumn columnLunes;
+            
+            private global::System.Data.DataColumn columnMartes;
+            
+            private global::System.Data.DataColumn columnMiercoles;
+            
+            private global::System.Data.DataColumn columnJueves;
+            
+            private global::System.Data.DataColumn columnViernes;
+            
+            private global::System.Data.DataColumn columnSabado;
+            
+            private global::System.Data.DataColumn columnStartOfWeek;
+            
+            private global::System.Data.DataColumn columnEndOfWeek;
+            
+            private global::System.Data.DataColumn columndepartamento;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public resumen_asistenciaEntradasDataTable() {
+                this.TableName = "resumen_asistenciaEntradas";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal resumen_asistenciaEntradasDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected resumen_asistenciaEntradasDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_empColumn {
+                get {
+                    return this.columnid_emp;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn codigoColumn {
+                get {
+                    return this.columncodigo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn nombreColumn {
+                get {
+                    return this.columnnombre;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn semanaColumn {
+                get {
+                    return this.columnsemana;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DomingoColumn {
+                get {
+                    return this.columnDomingo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn LunesColumn {
+                get {
+                    return this.columnLunes;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn MartesColumn {
+                get {
+                    return this.columnMartes;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn MiercolesColumn {
+                get {
+                    return this.columnMiercoles;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn JuevesColumn {
+                get {
+                    return this.columnJueves;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ViernesColumn {
+                get {
+                    return this.columnViernes;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SabadoColumn {
+                get {
+                    return this.columnSabado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn StartOfWeekColumn {
+                get {
+                    return this.columnStartOfWeek;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn EndOfWeekColumn {
+                get {
+                    return this.columnEndOfWeek;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn departamentoColumn {
+                get {
+                    return this.columndepartamento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public resumen_asistenciaEntradasRow this[int index] {
+                get {
+                    return ((resumen_asistenciaEntradasRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event resumen_asistenciaEntradasRowChangeEventHandler resumen_asistenciaEntradasRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event resumen_asistenciaEntradasRowChangeEventHandler resumen_asistenciaEntradasRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event resumen_asistenciaEntradasRowChangeEventHandler resumen_asistenciaEntradasRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event resumen_asistenciaEntradasRowChangeEventHandler resumen_asistenciaEntradasRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Addresumen_asistenciaEntradasRow(resumen_asistenciaEntradasRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public resumen_asistenciaEntradasRow Addresumen_asistenciaEntradasRow(int id_emp, string codigo, string nombre, int semana, string Domingo, string Lunes, string Martes, string Miercoles, string Jueves, string Viernes, string Sabado, System.DateTime StartOfWeek, System.DateTime EndOfWeek, string departamento) {
+                resumen_asistenciaEntradasRow rowresumen_asistenciaEntradasRow = ((resumen_asistenciaEntradasRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        id_emp,
+                        codigo,
+                        nombre,
+                        semana,
+                        Domingo,
+                        Lunes,
+                        Martes,
+                        Miercoles,
+                        Jueves,
+                        Viernes,
+                        Sabado,
+                        StartOfWeek,
+                        EndOfWeek,
+                        departamento};
+                rowresumen_asistenciaEntradasRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowresumen_asistenciaEntradasRow);
+                return rowresumen_asistenciaEntradasRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                resumen_asistenciaEntradasDataTable cln = ((resumen_asistenciaEntradasDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new resumen_asistenciaEntradasDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnid_emp = base.Columns["id_emp"];
+                this.columncodigo = base.Columns["codigo"];
+                this.columnnombre = base.Columns["nombre"];
+                this.columnsemana = base.Columns["semana"];
+                this.columnDomingo = base.Columns["Domingo"];
+                this.columnLunes = base.Columns["Lunes"];
+                this.columnMartes = base.Columns["Martes"];
+                this.columnMiercoles = base.Columns["Miercoles"];
+                this.columnJueves = base.Columns["Jueves"];
+                this.columnViernes = base.Columns["Viernes"];
+                this.columnSabado = base.Columns["Sabado"];
+                this.columnStartOfWeek = base.Columns["StartOfWeek"];
+                this.columnEndOfWeek = base.Columns["EndOfWeek"];
+                this.columndepartamento = base.Columns["departamento"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnid_emp = new global::System.Data.DataColumn("id_emp", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_emp);
+                this.columncodigo = new global::System.Data.DataColumn("codigo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncodigo);
+                this.columnnombre = new global::System.Data.DataColumn("nombre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombre);
+                this.columnsemana = new global::System.Data.DataColumn("semana", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsemana);
+                this.columnDomingo = new global::System.Data.DataColumn("Domingo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDomingo);
+                this.columnLunes = new global::System.Data.DataColumn("Lunes", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLunes);
+                this.columnMartes = new global::System.Data.DataColumn("Martes", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMartes);
+                this.columnMiercoles = new global::System.Data.DataColumn("Miercoles", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMiercoles);
+                this.columnJueves = new global::System.Data.DataColumn("Jueves", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnJueves);
+                this.columnViernes = new global::System.Data.DataColumn("Viernes", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnViernes);
+                this.columnSabado = new global::System.Data.DataColumn("Sabado", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSabado);
+                this.columnStartOfWeek = new global::System.Data.DataColumn("StartOfWeek", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStartOfWeek);
+                this.columnEndOfWeek = new global::System.Data.DataColumn("EndOfWeek", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEndOfWeek);
+                this.columndepartamento = new global::System.Data.DataColumn("departamento", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndepartamento);
+                this.columncodigo.Caption = "Código";
+                this.columnnombre.Caption = "Nombre";
+                this.columnsemana.Caption = "Semana";
+                this.columnMiercoles.Caption = "Miércoles";
+                this.columnSabado.Caption = "Sábado";
+                this.columnStartOfWeek.Caption = "Fecha Desde";
+                this.columnEndOfWeek.Caption = "Fecha Hasta";
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public resumen_asistenciaEntradasRow Newresumen_asistenciaEntradasRow() {
+                return ((resumen_asistenciaEntradasRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new resumen_asistenciaEntradasRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(resumen_asistenciaEntradasRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.resumen_asistenciaEntradasRowChanged != null)) {
+                    this.resumen_asistenciaEntradasRowChanged(this, new resumen_asistenciaEntradasRowChangeEvent(((resumen_asistenciaEntradasRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.resumen_asistenciaEntradasRowChanging != null)) {
+                    this.resumen_asistenciaEntradasRowChanging(this, new resumen_asistenciaEntradasRowChangeEvent(((resumen_asistenciaEntradasRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.resumen_asistenciaEntradasRowDeleted != null)) {
+                    this.resumen_asistenciaEntradasRowDeleted(this, new resumen_asistenciaEntradasRowChangeEvent(((resumen_asistenciaEntradasRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.resumen_asistenciaEntradasRowDeleting != null)) {
+                    this.resumen_asistenciaEntradasRowDeleting(this, new resumen_asistenciaEntradasRowChangeEvent(((resumen_asistenciaEntradasRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Removeresumen_asistenciaEntradasRow(resumen_asistenciaEntradasRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsRRHH_reportes ds = new dsRRHH_reportes();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "resumen_asistenciaEntradasDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -982,10 +1453,10 @@ namespace LOSA.ACS.RRHH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime entrada_1 {
+            public string entrada_1 {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableresumen_asistencia.entrada_1Column]));
+                        return ((string)(this[this.tableresumen_asistencia.entrada_1Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'entrada_1\' de la tabla \'resumen_asistencia\' es DBNull.", e);
@@ -998,10 +1469,10 @@ namespace LOSA.ACS.RRHH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime salida_1 {
+            public string salida_1 {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableresumen_asistencia.salida_1Column]));
+                        return ((string)(this[this.tableresumen_asistencia.salida_1Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'salida_1\' de la tabla \'resumen_asistencia\' es DBNull.", e);
@@ -1014,10 +1485,10 @@ namespace LOSA.ACS.RRHH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime entrada_martes {
+            public string entrada_martes {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableresumen_asistencia.entrada_martesColumn]));
+                        return ((string)(this[this.tableresumen_asistencia.entrada_martesColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'entrada_martes\' de la tabla \'resumen_asistencia\' es DBNul" +
@@ -1031,10 +1502,10 @@ namespace LOSA.ACS.RRHH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime salida_martes {
+            public string salida_martes {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableresumen_asistencia.salida_martesColumn]));
+                        return ((string)(this[this.tableresumen_asistencia.salida_martesColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'salida_martes\' de la tabla \'resumen_asistencia\' es DBNull" +
@@ -1048,10 +1519,10 @@ namespace LOSA.ACS.RRHH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime entrada_miercoles {
+            public string entrada_miercoles {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableresumen_asistencia.entrada_miercolesColumn]));
+                        return ((string)(this[this.tableresumen_asistencia.entrada_miercolesColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'entrada_miercoles\' de la tabla \'resumen_asistencia\' es DB" +
@@ -1065,10 +1536,10 @@ namespace LOSA.ACS.RRHH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime salida_miercoles {
+            public string salida_miercoles {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableresumen_asistencia.salida_miercolesColumn]));
+                        return ((string)(this[this.tableresumen_asistencia.salida_miercolesColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'salida_miercoles\' de la tabla \'resumen_asistencia\' es DBN" +
@@ -1082,10 +1553,10 @@ namespace LOSA.ACS.RRHH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime entrada_jueves {
+            public string entrada_jueves {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableresumen_asistencia.entrada_juevesColumn]));
+                        return ((string)(this[this.tableresumen_asistencia.entrada_juevesColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'entrada_jueves\' de la tabla \'resumen_asistencia\' es DBNul" +
@@ -1099,10 +1570,10 @@ namespace LOSA.ACS.RRHH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime salida_jueves {
+            public string salida_jueves {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableresumen_asistencia.salida_juevesColumn]));
+                        return ((string)(this[this.tableresumen_asistencia.salida_juevesColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'salida_jueves\' de la tabla \'resumen_asistencia\' es DBNull" +
@@ -1116,10 +1587,10 @@ namespace LOSA.ACS.RRHH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime entrada_viernes {
+            public string entrada_viernes {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableresumen_asistencia.entrada_viernesColumn]));
+                        return ((string)(this[this.tableresumen_asistencia.entrada_viernesColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'entrada_viernes\' de la tabla \'resumen_asistencia\' es DBNu" +
@@ -1133,10 +1604,10 @@ namespace LOSA.ACS.RRHH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime salida_viernes {
+            public string salida_viernes {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableresumen_asistencia.salida_viernesColumn]));
+                        return ((string)(this[this.tableresumen_asistencia.salida_viernesColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'salida_viernes\' de la tabla \'resumen_asistencia\' es DBNul" +
@@ -1150,10 +1621,10 @@ namespace LOSA.ACS.RRHH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime entrada_sabado {
+            public string entrada_sabado {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableresumen_asistencia.entrada_sabadoColumn]));
+                        return ((string)(this[this.tableresumen_asistencia.entrada_sabadoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'entrada_sabado\' de la tabla \'resumen_asistencia\' es DBNul" +
@@ -1167,10 +1638,10 @@ namespace LOSA.ACS.RRHH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime salida_sabado {
+            public string salida_sabado {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableresumen_asistencia.salida_sabadoColumn]));
+                        return ((string)(this[this.tableresumen_asistencia.salida_sabadoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'salida_sabado\' de la tabla \'resumen_asistencia\' es DBNull" +
@@ -1184,10 +1655,10 @@ namespace LOSA.ACS.RRHH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime entrada_domingo {
+            public string entrada_domingo {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableresumen_asistencia.entrada_domingoColumn]));
+                        return ((string)(this[this.tableresumen_asistencia.entrada_domingoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'entrada_domingo\' de la tabla \'resumen_asistencia\' es DBNu" +
@@ -1201,10 +1672,10 @@ namespace LOSA.ACS.RRHH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime salida_domingo {
+            public string salida_domingo {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableresumen_asistencia.salida_domingoColumn]));
+                        return ((string)(this[this.tableresumen_asistencia.salida_domingoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'salida_domingo\' de la tabla \'resumen_asistencia\' es DBNul" +
@@ -1543,6 +2014,427 @@ namespace LOSA.ACS.RRHH {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class resumen_asistenciaEntradasRow : global::System.Data.DataRow {
+            
+            private resumen_asistenciaEntradasDataTable tableresumen_asistenciaEntradas;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal resumen_asistenciaEntradasRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableresumen_asistenciaEntradas = ((resumen_asistenciaEntradasDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_emp {
+                get {
+                    try {
+                        return ((int)(this[this.tableresumen_asistenciaEntradas.id_empColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_emp\' de la tabla \'resumen_asistenciaEntradas\' es DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableresumen_asistenciaEntradas.id_empColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string codigo {
+                get {
+                    try {
+                        return ((string)(this[this.tableresumen_asistenciaEntradas.codigoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'codigo\' de la tabla \'resumen_asistenciaEntradas\' es DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableresumen_asistenciaEntradas.codigoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string nombre {
+                get {
+                    try {
+                        return ((string)(this[this.tableresumen_asistenciaEntradas.nombreColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombre\' de la tabla \'resumen_asistenciaEntradas\' es DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableresumen_asistenciaEntradas.nombreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int semana {
+                get {
+                    try {
+                        return ((int)(this[this.tableresumen_asistenciaEntradas.semanaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'semana\' de la tabla \'resumen_asistenciaEntradas\' es DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableresumen_asistenciaEntradas.semanaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Domingo {
+                get {
+                    try {
+                        return ((string)(this[this.tableresumen_asistenciaEntradas.DomingoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Domingo\' de la tabla \'resumen_asistenciaEntradas\' es DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableresumen_asistenciaEntradas.DomingoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Lunes {
+                get {
+                    try {
+                        return ((string)(this[this.tableresumen_asistenciaEntradas.LunesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Lunes\' de la tabla \'resumen_asistenciaEntradas\' es DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableresumen_asistenciaEntradas.LunesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Martes {
+                get {
+                    try {
+                        return ((string)(this[this.tableresumen_asistenciaEntradas.MartesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Martes\' de la tabla \'resumen_asistenciaEntradas\' es DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableresumen_asistenciaEntradas.MartesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Miercoles {
+                get {
+                    try {
+                        return ((string)(this[this.tableresumen_asistenciaEntradas.MiercolesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Miercoles\' de la tabla \'resumen_asistenciaEntradas\' es DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableresumen_asistenciaEntradas.MiercolesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Jueves {
+                get {
+                    try {
+                        return ((string)(this[this.tableresumen_asistenciaEntradas.JuevesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Jueves\' de la tabla \'resumen_asistenciaEntradas\' es DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableresumen_asistenciaEntradas.JuevesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Viernes {
+                get {
+                    try {
+                        return ((string)(this[this.tableresumen_asistenciaEntradas.ViernesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Viernes\' de la tabla \'resumen_asistenciaEntradas\' es DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableresumen_asistenciaEntradas.ViernesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Sabado {
+                get {
+                    try {
+                        return ((string)(this[this.tableresumen_asistenciaEntradas.SabadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Sabado\' de la tabla \'resumen_asistenciaEntradas\' es DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableresumen_asistenciaEntradas.SabadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime StartOfWeek {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableresumen_asistenciaEntradas.StartOfWeekColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'StartOfWeek\' de la tabla \'resumen_asistenciaEntradas\' es " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableresumen_asistenciaEntradas.StartOfWeekColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime EndOfWeek {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableresumen_asistenciaEntradas.EndOfWeekColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'EndOfWeek\' de la tabla \'resumen_asistenciaEntradas\' es DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableresumen_asistenciaEntradas.EndOfWeekColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string departamento {
+                get {
+                    try {
+                        return ((string)(this[this.tableresumen_asistenciaEntradas.departamentoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'departamento\' de la tabla \'resumen_asistenciaEntradas\' es" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableresumen_asistenciaEntradas.departamentoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_empNull() {
+                return this.IsNull(this.tableresumen_asistenciaEntradas.id_empColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_empNull() {
+                this[this.tableresumen_asistenciaEntradas.id_empColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IscodigoNull() {
+                return this.IsNull(this.tableresumen_asistenciaEntradas.codigoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetcodigoNull() {
+                this[this.tableresumen_asistenciaEntradas.codigoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsnombreNull() {
+                return this.IsNull(this.tableresumen_asistenciaEntradas.nombreColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetnombreNull() {
+                this[this.tableresumen_asistenciaEntradas.nombreColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IssemanaNull() {
+                return this.IsNull(this.tableresumen_asistenciaEntradas.semanaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetsemanaNull() {
+                this[this.tableresumen_asistenciaEntradas.semanaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDomingoNull() {
+                return this.IsNull(this.tableresumen_asistenciaEntradas.DomingoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDomingoNull() {
+                this[this.tableresumen_asistenciaEntradas.DomingoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsLunesNull() {
+                return this.IsNull(this.tableresumen_asistenciaEntradas.LunesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetLunesNull() {
+                this[this.tableresumen_asistenciaEntradas.LunesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsMartesNull() {
+                return this.IsNull(this.tableresumen_asistenciaEntradas.MartesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetMartesNull() {
+                this[this.tableresumen_asistenciaEntradas.MartesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsMiercolesNull() {
+                return this.IsNull(this.tableresumen_asistenciaEntradas.MiercolesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetMiercolesNull() {
+                this[this.tableresumen_asistenciaEntradas.MiercolesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsJuevesNull() {
+                return this.IsNull(this.tableresumen_asistenciaEntradas.JuevesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetJuevesNull() {
+                this[this.tableresumen_asistenciaEntradas.JuevesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsViernesNull() {
+                return this.IsNull(this.tableresumen_asistenciaEntradas.ViernesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetViernesNull() {
+                this[this.tableresumen_asistenciaEntradas.ViernesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsSabadoNull() {
+                return this.IsNull(this.tableresumen_asistenciaEntradas.SabadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetSabadoNull() {
+                this[this.tableresumen_asistenciaEntradas.SabadoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsStartOfWeekNull() {
+                return this.IsNull(this.tableresumen_asistenciaEntradas.StartOfWeekColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetStartOfWeekNull() {
+                this[this.tableresumen_asistenciaEntradas.StartOfWeekColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsEndOfWeekNull() {
+                return this.IsNull(this.tableresumen_asistenciaEntradas.EndOfWeekColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetEndOfWeekNull() {
+                this[this.tableresumen_asistenciaEntradas.EndOfWeekColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsdepartamentoNull() {
+                return this.IsNull(this.tableresumen_asistenciaEntradas.departamentoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetdepartamentoNull() {
+                this[this.tableresumen_asistenciaEntradas.departamentoColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -1562,6 +2454,40 @@ namespace LOSA.ACS.RRHH {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public resumen_asistenciaRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class resumen_asistenciaEntradasRowChangeEvent : global::System.EventArgs {
+            
+            private resumen_asistenciaEntradasRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public resumen_asistenciaEntradasRowChangeEvent(resumen_asistenciaEntradasRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public resumen_asistenciaEntradasRow Row {
                 get {
                     return this.eventRow;
                 }

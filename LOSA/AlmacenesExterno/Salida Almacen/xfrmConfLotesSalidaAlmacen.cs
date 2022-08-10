@@ -321,7 +321,8 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
                      id_salida_d = Convert.ToInt32(cmd2.ExecuteScalar());
 
 
-                    foreach (var item2 in lista_lotes_seleccionados.Where(x => x.id_detalle == item.id).ToList())
+                    //foreach (var item2 in lista_lotes_seleccionados.Where(x => x.id_detalle == item.id).ToList())
+                    foreach(dsSalidasAlmacenesExternos.Lote_SeleccionadosRow item2 in dsSalidasAlmacenesExternos.Lote_Seleccionados)
                     {
                         SqlCommand cmd3 = new SqlCommand("sp_salida_almacenes_externos_lotes_insert ", transaction.Connection);
                         cmd3.CommandType = CommandType.StoredProcedure;
@@ -330,7 +331,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
                         cmd3.Parameters.Add("@peso", SqlDbType.Decimal).Value = item2.CantSeleccionada;
                         cmd3.Parameters.Add("@unidades", SqlDbType.Decimal).Value = item2.unidades_seleccionadas;
                         cmd3.Parameters.Add("@fecha", SqlDbType.DateTime).Value = DateTime.Now;
-                        cmd3.Parameters.Add("@user_creador", SqlDbType.Int).Value = 1035;
+                        cmd3.Parameters.Add("@user_creador", SqlDbType.Int).Value = UsuarioLogeado.Id;
                         cmd3.Parameters.Add("@id_serie", SqlDbType.Int).Value = DBNull.Value;
                         cmd3.Parameters.Add("@DocEntry", SqlDbType.Int).Value = ingreso_h.DocEntry;
                         cmd3.Parameters.Add("@id_mp", SqlDbType.Int).Value = item.id_mp;
@@ -352,21 +353,24 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
                 transaction.Commit();
                 cnx.Close();
 
-                frmTipoIngreso_v2 frm = new frmTipoIngreso_v2(id_salida_h, UsuarioLogeado);
-                if (frm.ShowDialog() == DialogResult.OK)
+                foreach (var item in dsSalidasAlmacenesExternos.Transferencia_Stock)
                 {
-
-                    CajaDialogo.Information("TRANSFERENCIA CREADA EXITOSAMENTE");
-                    this.DialogResult = DialogResult.OK;
-
-                    xrpt_Main_traslado_almacen report = new xrpt_Main_traslado_almacen();
-                    report.Parameters["id_h"].Value = id_salida_h;
-
-
-                    using (ReportPrintTool printTool = new ReportPrintTool(report))
+                    frmTipoIngreso_v2 frm = new frmTipoIngreso_v2(id_salida_h, UsuarioLogeado, item.itemcode);
+                    if (frm.ShowDialog() == DialogResult.OK)
                     {
-                        // Send the report to the default printer.
-                        printTool.ShowPreviewDialog();
+
+                        CajaDialogo.Information("TRANSFERENCIA CREADA EXITOSAMENTE");
+                        this.DialogResult = DialogResult.OK;
+
+                        xrpt_Main_traslado_almacen report = new xrpt_Main_traslado_almacen();
+                        report.Parameters["id_h"].Value = id_salida_h;
+
+
+                        using (ReportPrintTool printTool = new ReportPrintTool(report))
+                        {
+                            // Send the report to the default printer.
+                            printTool.ShowPreviewDialog();
+                        }
                     }
                 }
 
@@ -380,8 +384,8 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             }
             catch (Exception ex)
             {
-                CajaDialogo.Error(ex.Message);
                 transaction.Rollback();
+                CajaDialogo.Error(ex.Message);
             }
         }
 
@@ -437,8 +441,39 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             }
         }
 
+        private void gvLotesSeleccionados_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            //try
+            //{
+            //    var gv = (GridView)gcIngreso.FocusedView;
+            //    var row = (dsSalidasAlmacenesExternos.Transferencia_StockRow)gv.GetDataRow(gv.FocusedRowHandle);
 
 
-        
+            //    foreach (var item in dsSalidasAlmacenesExternos.Transferencia_Stock)
+            //    {
+            //        item.seleccionar = false;
+            //    }
+
+            //    row.seleccionar = true;
+
+            //    ObtenerLotes(row.id, row.id_mp, row.from_almacen);
+
+            //    //CargarLotesTransferidosEnSalidaAlmacen(row.id_mp,row.to_almacen);
+
+            //    foreach (var item2 in dsSalidasAlmacenesExternos.Lote.ToList().Where(x => x.id_detalle == row.id).ToList())
+            //    {
+            //        var cant_disponible = lista_lotes_seleccionados.Where(x => x.id == item2.id).Sum(x => x.CantSeleccionada);
+            //        var unidades_disponible = lista_lotes_seleccionados.Where(x => x.id == item2.id).Sum(x => x.unidades_seleccionadas);
+
+            //        item2.cantidad_disponible = item2.cantidad_disponible - cant_disponible;
+            //        item2.unidades_disponibles = item2.unidades_disponibles - unidades_disponible;
+            //    }
+
+            //}
+            //catch (Exception ex)
+            //{
+            //    CajaDialogo.Error(ex.Message);
+            //}
+        }
     }
 }
