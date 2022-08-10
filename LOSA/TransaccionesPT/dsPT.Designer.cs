@@ -9266,17 +9266,19 @@ namespace LOSA.TransaccionesPT {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class lote_ptDataTable : global::System.Data.TypedTableBase<lote_ptRow> {
             
-            private global::System.Data.DataColumn columnid;
+            private global::System.Data.DataColumn columnPT_Id;
+            
+            private global::System.Data.DataColumn columnLote_PT;
             
             private global::System.Data.DataColumn columncode_sap;
             
-            private global::System.Data.DataColumn columnid_pt;
+            private global::System.Data.DataColumn columnNombre_Comercial;
             
-            private global::System.Data.DataColumn columnproducto;
+            private global::System.Data.DataColumn columnDescripcion_Interna;
             
-            private global::System.Data.DataColumn columnlot_number;
+            private global::System.Data.DataColumn columnid_orden;
             
-            private global::System.Data.DataColumn columnid_lote_pt;
+            private global::System.Data.DataColumn columnPlan_Date;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -9313,9 +9315,17 @@ namespace LOSA.TransaccionesPT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn idColumn {
+            public global::System.Data.DataColumn PT_IdColumn {
                 get {
-                    return this.columnid;
+                    return this.columnPT_Id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Lote_PTColumn {
+                get {
+                    return this.columnLote_PT;
                 }
             }
             
@@ -9329,33 +9339,33 @@ namespace LOSA.TransaccionesPT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn id_ptColumn {
+            public global::System.Data.DataColumn Nombre_ComercialColumn {
                 get {
-                    return this.columnid_pt;
+                    return this.columnNombre_Comercial;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn productoColumn {
+            public global::System.Data.DataColumn Descripcion_InternaColumn {
                 get {
-                    return this.columnproducto;
+                    return this.columnDescripcion_Interna;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn lot_numberColumn {
+            public global::System.Data.DataColumn id_ordenColumn {
                 get {
-                    return this.columnlot_number;
+                    return this.columnid_orden;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn id_lote_ptColumn {
+            public global::System.Data.DataColumn Plan_DateColumn {
                 get {
-                    return this.columnid_lote_pt;
+                    return this.columnPlan_Date;
                 }
             }
             
@@ -9396,15 +9406,16 @@ namespace LOSA.TransaccionesPT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public lote_ptRow Addlote_ptRow(int id, string code_sap, int id_pt, string producto, int lot_number, int id_lote_pt) {
+            public lote_ptRow Addlote_ptRow(int PT_Id, int Lote_PT, string code_sap, string Nombre_Comercial, string Descripcion_Interna, int id_orden, System.DateTime Plan_Date) {
                 lote_ptRow rowlote_ptRow = ((lote_ptRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        id,
+                        PT_Id,
+                        Lote_PT,
                         code_sap,
-                        id_pt,
-                        producto,
-                        lot_number,
-                        id_lote_pt};
+                        Nombre_Comercial,
+                        Descripcion_Interna,
+                        id_orden,
+                        Plan_Date};
                 rowlote_ptRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowlote_ptRow);
                 return rowlote_ptRow;
@@ -9427,29 +9438,32 @@ namespace LOSA.TransaccionesPT {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnid = base.Columns["id"];
+                this.columnPT_Id = base.Columns["PT_Id"];
+                this.columnLote_PT = base.Columns["Lote_PT"];
                 this.columncode_sap = base.Columns["code_sap"];
-                this.columnid_pt = base.Columns["id_pt"];
-                this.columnproducto = base.Columns["producto"];
-                this.columnlot_number = base.Columns["lot_number"];
-                this.columnid_lote_pt = base.Columns["id_lote_pt"];
+                this.columnNombre_Comercial = base.Columns["Nombre_Comercial"];
+                this.columnDescripcion_Interna = base.Columns["Descripcion_Interna"];
+                this.columnid_orden = base.Columns["id_orden"];
+                this.columnPlan_Date = base.Columns["Plan_Date"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid);
+                this.columnPT_Id = new global::System.Data.DataColumn("PT_Id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPT_Id);
+                this.columnLote_PT = new global::System.Data.DataColumn("Lote_PT", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLote_PT);
                 this.columncode_sap = new global::System.Data.DataColumn("code_sap", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncode_sap);
-                this.columnid_pt = new global::System.Data.DataColumn("id_pt", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid_pt);
-                this.columnproducto = new global::System.Data.DataColumn("producto", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnproducto);
-                this.columnlot_number = new global::System.Data.DataColumn("lot_number", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnlot_number);
-                this.columnid_lote_pt = new global::System.Data.DataColumn("id_lote_pt", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid_lote_pt);
+                this.columnNombre_Comercial = new global::System.Data.DataColumn("Nombre_Comercial", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNombre_Comercial);
+                this.columnDescripcion_Interna = new global::System.Data.DataColumn("Descripcion_Interna", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescripcion_Interna);
+                this.columnid_orden = new global::System.Data.DataColumn("id_orden", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_orden);
+                this.columnPlan_Date = new global::System.Data.DataColumn("Plan_Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPlan_Date);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15040,17 +15054,33 @@ namespace LOSA.TransaccionesPT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int id {
+            public int PT_Id {
                 get {
                     try {
-                        return ((int)(this[this.tablelote_pt.idColumn]));
+                        return ((int)(this[this.tablelote_pt.PT_IdColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id\' de la tabla \'lote_pt\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'PT_Id\' de la tabla \'lote_pt\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablelote_pt.idColumn] = value;
+                    this[this.tablelote_pt.PT_IdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Lote_PT {
+                get {
+                    try {
+                        return ((int)(this[this.tablelote_pt.Lote_PTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Lote_PT\' de la tabla \'lote_pt\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablelote_pt.Lote_PTColumn] = value;
                 }
             }
             
@@ -15072,78 +15102,90 @@ namespace LOSA.TransaccionesPT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int id_pt {
+            public string Nombre_Comercial {
                 get {
                     try {
-                        return ((int)(this[this.tablelote_pt.id_ptColumn]));
+                        return ((string)(this[this.tablelote_pt.Nombre_ComercialColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_pt\' de la tabla \'lote_pt\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Nombre_Comercial\' de la tabla \'lote_pt\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablelote_pt.id_ptColumn] = value;
+                    this[this.tablelote_pt.Nombre_ComercialColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string producto {
+            public string Descripcion_Interna {
                 get {
                     try {
-                        return ((string)(this[this.tablelote_pt.productoColumn]));
+                        return ((string)(this[this.tablelote_pt.Descripcion_InternaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'producto\' de la tabla \'lote_pt\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Descripcion_Interna\' de la tabla \'lote_pt\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablelote_pt.productoColumn] = value;
+                    this[this.tablelote_pt.Descripcion_InternaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int lot_number {
+            public int id_orden {
                 get {
                     try {
-                        return ((int)(this[this.tablelote_pt.lot_numberColumn]));
+                        return ((int)(this[this.tablelote_pt.id_ordenColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'lot_number\' de la tabla \'lote_pt\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_orden\' de la tabla \'lote_pt\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablelote_pt.lot_numberColumn] = value;
+                    this[this.tablelote_pt.id_ordenColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int id_lote_pt {
+            public System.DateTime Plan_Date {
                 get {
                     try {
-                        return ((int)(this[this.tablelote_pt.id_lote_ptColumn]));
+                        return ((global::System.DateTime)(this[this.tablelote_pt.Plan_DateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_lote_pt\' de la tabla \'lote_pt\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Plan_Date\' de la tabla \'lote_pt\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablelote_pt.id_lote_ptColumn] = value;
+                    this[this.tablelote_pt.Plan_DateColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsidNull() {
-                return this.IsNull(this.tablelote_pt.idColumn);
+            public bool IsPT_IdNull() {
+                return this.IsNull(this.tablelote_pt.PT_IdColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetidNull() {
-                this[this.tablelote_pt.idColumn] = global::System.Convert.DBNull;
+            public void SetPT_IdNull() {
+                this[this.tablelote_pt.PT_IdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsLote_PTNull() {
+                return this.IsNull(this.tablelote_pt.Lote_PTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetLote_PTNull() {
+                this[this.tablelote_pt.Lote_PTColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15160,50 +15202,50 @@ namespace LOSA.TransaccionesPT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isid_ptNull() {
-                return this.IsNull(this.tablelote_pt.id_ptColumn);
+            public bool IsNombre_ComercialNull() {
+                return this.IsNull(this.tablelote_pt.Nombre_ComercialColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setid_ptNull() {
-                this[this.tablelote_pt.id_ptColumn] = global::System.Convert.DBNull;
+            public void SetNombre_ComercialNull() {
+                this[this.tablelote_pt.Nombre_ComercialColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsproductoNull() {
-                return this.IsNull(this.tablelote_pt.productoColumn);
+            public bool IsDescripcion_InternaNull() {
+                return this.IsNull(this.tablelote_pt.Descripcion_InternaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetproductoNull() {
-                this[this.tablelote_pt.productoColumn] = global::System.Convert.DBNull;
+            public void SetDescripcion_InternaNull() {
+                this[this.tablelote_pt.Descripcion_InternaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Islot_numberNull() {
-                return this.IsNull(this.tablelote_pt.lot_numberColumn);
+            public bool Isid_ordenNull() {
+                return this.IsNull(this.tablelote_pt.id_ordenColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setlot_numberNull() {
-                this[this.tablelote_pt.lot_numberColumn] = global::System.Convert.DBNull;
+            public void Setid_ordenNull() {
+                this[this.tablelote_pt.id_ordenColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isid_lote_ptNull() {
-                return this.IsNull(this.tablelote_pt.id_lote_ptColumn);
+            public bool IsPlan_DateNull() {
+                return this.IsNull(this.tablelote_pt.Plan_DateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setid_lote_ptNull() {
-                this[this.tablelote_pt.id_lote_ptColumn] = global::System.Convert.DBNull;
+            public void SetPlan_DateNull() {
+                this[this.tablelote_pt.Plan_DateColumn] = global::System.Convert.DBNull;
             }
         }
         

@@ -16,8 +16,8 @@ namespace LOSA.TransaccionesPT
 {
     public partial class frmLotesxPT : DevExpress.XtraEditors.XtraForm
     {
-        public string code_sap, Descripcion;
-        public int id_pt, lot_number, id_Lote_PT;
+        public string code_sap, Descripcion, ItemCode;
+        public int id_pt, lot_number;
 
         private void btnAtras_Click(object sender, EventArgs e)
         {
@@ -30,9 +30,10 @@ namespace LOSA.TransaccionesPT
             var row = (dsPT.lote_ptRow)gridView.GetFocusedDataRow();
 
             this.code_sap = row.code_sap;
-            this.Descripcion = row.producto;
-            this.lot_number = row.lot_number;
-            this.id_Lote_PT = row.id_lote_pt;
+            this.Descripcion = row.Nombre_Comercial;
+            this.lot_number = row.Lote_PT;
+            
+            //this.ItemCode = row.id_lote_pt;
 
             this.DialogResult = DialogResult.OK;
             this.Close();
@@ -44,9 +45,9 @@ namespace LOSA.TransaccionesPT
             var row = (dsPT.lote_ptRow)gridView.GetFocusedDataRow();
 
             this.code_sap = row.code_sap;
-            this.Descripcion = row.producto;
-            this.lot_number = row.lot_number;
-            this.id_Lote_PT = row.id_lote_pt;
+            this.Descripcion = row.Nombre_Comercial;
+            this.lot_number = row.Lote_PT;
+            //this.ItemCode = row.id_lote_pt;
 
             this.DialogResult = DialogResult.OK;
             this.Close();
@@ -65,7 +66,7 @@ namespace LOSA.TransaccionesPT
             try
             {
                 DataOperations dp = new DataOperations();
-                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringAPMS);
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(Query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
