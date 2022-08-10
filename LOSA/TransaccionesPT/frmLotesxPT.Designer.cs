@@ -30,22 +30,23 @@ namespace LOSA.TransaccionesPT
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLotesxPT));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.gridLotePT = new DevExpress.XtraGrid.GridControl();
             this.dsPT1 = new LOSA.TransaccionesPT.dsPT();
             this.gvLotePT = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.btnSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcode_sap = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_pt = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colproducto = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collot_number = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colid_lote_pt = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridLotePT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPT1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvLotePT)).BeginInit();
@@ -114,7 +115,8 @@ namespace LOSA.TransaccionesPT
             this.colid_pt,
             this.colproducto,
             this.collot_number,
-            this.gridColumn1});
+            this.gridColumn1,
+            this.colid_lote_pt});
             this.gvLotePT.GridControl = this.gridLotePT;
             this.gvLotePT.Name = "gvLotePT";
             this.gvLotePT.OptionsCustomization.AllowFilter = false;
@@ -122,16 +124,6 @@ namespace LOSA.TransaccionesPT
             this.gvLotePT.OptionsView.ShowAutoFilterRow = true;
             this.gvLotePT.OptionsView.ShowGroupPanel = false;
             this.gvLotePT.DoubleClick += new System.EventHandler(this.gvLotePT_DoubleClick);
-            // 
-            // btnSeleccionar
-            // 
-            this.btnSeleccionar.AutoHeight = false;
-            editorButtonImageOptions3.Image = global::LOSA.Properties.Resources.tap;
-            this.btnSeleccionar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.btnSeleccionar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnSeleccionar_ButtonClick);
             // 
             // colid
             // 
@@ -174,6 +166,21 @@ namespace LOSA.TransaccionesPT
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 2;
             // 
+            // btnSeleccionar
+            // 
+            this.btnSeleccionar.AutoHeight = false;
+            editorButtonImageOptions1.Image = global::LOSA.Properties.Resources.tap;
+            this.btnSeleccionar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnSeleccionar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnSeleccionar_ButtonClick);
+            // 
+            // colid_lote_pt
+            // 
+            this.colid_lote_pt.FieldName = "id_lote_pt";
+            this.colid_lote_pt.Name = "colid_lote_pt";
+            // 
             // frmLotesxPT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -205,5 +212,6 @@ namespace LOSA.TransaccionesPT
         private DevExpress.XtraGrid.Columns.GridColumn colproducto;
         private DevExpress.XtraGrid.Columns.GridColumn collot_number;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_lote_pt;
     }
 }

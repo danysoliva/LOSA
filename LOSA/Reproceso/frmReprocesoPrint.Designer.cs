@@ -77,6 +77,7 @@ namespace LOSA.Reproceso
             this.colestado_tarima = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_estado_tarima = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colpresentacion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpeso = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_tarima_reproceso = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonImprimir = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -86,7 +87,6 @@ namespace LOSA.Reproceso
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.btnPrintSeleccionados = new DevExpress.XtraEditors.SimpleButton();
             this.radioGroup1 = new DevExpress.XtraEditors.RadioGroup();
-            this.colpeso = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdDuplicar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).BeginInit();
@@ -194,9 +194,12 @@ namespace LOSA.Reproceso
             this.gvPT.CustomizationFormBounds = new System.Drawing.Rectangle(904, 313, 260, 332);
             this.gvPT.DetailHeight = 284;
             this.gvPT.GridControl = this.gridControl1;
+            this.gvPT.GroupCount = 1;
             this.gvPT.Name = "gvPT";
             this.gvPT.OptionsView.ShowAutoFilterRow = true;
-            this.gvPT.OptionsView.ShowGroupPanel = false;
+            this.gvPT.OptionsView.ShowFooter = true;
+            this.gvPT.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.collote_materia_prima, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // colid
             // 
@@ -268,8 +271,10 @@ namespace LOSA.Reproceso
             this.colcantidad.FieldName = "cantidad";
             this.colcantidad.Name = "colcantidad";
             this.colcantidad.OptionsColumn.AllowEdit = false;
+            this.colcantidad.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cantidad", "SUMA={0:0.##} Ud")});
             this.colcantidad.Visible = true;
-            this.colcantidad.VisibleIndex = 5;
+            this.colcantidad.VisibleIndex = 4;
             this.colcantidad.Width = 95;
             // 
             // colnum
@@ -280,7 +285,7 @@ namespace LOSA.Reproceso
             this.colnum.OptionsColumn.AllowEdit = false;
             this.colnum.Visible = true;
             this.colnum.VisibleIndex = 0;
-            this.colnum.Width = 37;
+            this.colnum.Width = 41;
             // 
             // collote_materia_prima
             // 
@@ -312,8 +317,20 @@ namespace LOSA.Reproceso
             this.colpresentacion.Name = "colpresentacion";
             this.colpresentacion.OptionsColumn.AllowEdit = false;
             this.colpresentacion.Visible = true;
-            this.colpresentacion.VisibleIndex = 4;
+            this.colpresentacion.VisibleIndex = 3;
             this.colpresentacion.Width = 127;
+            // 
+            // colpeso
+            // 
+            this.colpeso.DisplayFormat.FormatString = "{0:0.##.##} Kg";
+            this.colpeso.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colpeso.FieldName = "peso";
+            this.colpeso.Name = "colpeso";
+            this.colpeso.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "peso", "SUMA={0:0.##.##} Kg")});
+            this.colpeso.Visible = true;
+            this.colpeso.VisibleIndex = 5;
+            this.colpeso.Width = 92;
             // 
             // colid_tarima_reproceso
             // 
@@ -327,7 +344,7 @@ namespace LOSA.Reproceso
             this.gridColumn1.ColumnEdit = this.repositoryItemButtonImprimir;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 7;
+            this.gridColumn1.VisibleIndex = 6;
             this.gridColumn1.Width = 132;
             // 
             // repositoryItemButtonImprimir
@@ -360,7 +377,7 @@ namespace LOSA.Reproceso
             this.colseleccionado.FieldName = "seleccionado";
             this.colseleccionado.Name = "colseleccionado";
             this.colseleccionado.Visible = true;
-            this.colseleccionado.VisibleIndex = 8;
+            this.colseleccionado.VisibleIndex = 7;
             this.colseleccionado.Width = 126;
             // 
             // labelControl2
@@ -411,16 +428,6 @@ namespace LOSA.Reproceso
             this.radioGroup1.Size = new System.Drawing.Size(365, 43);
             this.radioGroup1.TabIndex = 91;
             this.radioGroup1.SelectedIndexChanged += new System.EventHandler(this.radioGroup1_SelectedIndexChanged);
-            // 
-            // colpeso
-            // 
-            this.colpeso.DisplayFormat.FormatString = "{0:0.##.##} Kg";
-            this.colpeso.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colpeso.FieldName = "peso";
-            this.colpeso.Name = "colpeso";
-            this.colpeso.Visible = true;
-            this.colpeso.VisibleIndex = 6;
-            this.colpeso.Width = 92;
             // 
             // frmReprocesoPrint
             // 

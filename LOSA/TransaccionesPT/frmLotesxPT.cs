@@ -17,7 +17,7 @@ namespace LOSA.TransaccionesPT
     public partial class frmLotesxPT : DevExpress.XtraEditors.XtraForm
     {
         public string code_sap, Descripcion;
-        public int id_pt, lot_number;
+        public int id_pt, lot_number, id_Lote_PT;
 
         private void btnAtras_Click(object sender, EventArgs e)
         {
@@ -32,6 +32,7 @@ namespace LOSA.TransaccionesPT
             this.code_sap = row.code_sap;
             this.Descripcion = row.producto;
             this.lot_number = row.lot_number;
+            this.id_Lote_PT = row.id_lote_pt;
 
             this.DialogResult = DialogResult.OK;
             this.Close();
@@ -45,6 +46,7 @@ namespace LOSA.TransaccionesPT
             this.code_sap = row.code_sap;
             this.Descripcion = row.producto;
             this.lot_number = row.lot_number;
+            this.id_Lote_PT = row.id_lote_pt;
 
             this.DialogResult = DialogResult.OK;
             this.Close();
@@ -54,7 +56,7 @@ namespace LOSA.TransaccionesPT
         {
             InitializeComponent();
             id_pt = pid_pt;
-            //Load_Data();
+            Load_Data();
         }
 
         public void Load_Data()

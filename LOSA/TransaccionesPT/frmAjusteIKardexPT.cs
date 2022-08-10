@@ -22,7 +22,8 @@ namespace LOSA.TransaccionesPT
         string code_sap; //Codigo de MP de SAP
         private decimal factorValue;
         private decimal FactorUnidades;
-        int Id_PT; //ID de Producto Terminado - Tabla en AQFSVR003.ACS
+        int Id_PT; //ID de Producto Terminado - Tabla en AQFSVR003.ACS4
+        int Id_Lote_PT; //Id de lote de Producto Terminado
         public frmAjusteIKardexPT(UserLogin pUserLogin)
         {
             InitializeComponent();
@@ -75,15 +76,16 @@ namespace LOSA.TransaccionesPT
 
         private void txtNumLote_Click(object sender, EventArgs e)
         {
-            if (true)
-            {
+            //if (true)
+            //{
 
-            }
+            //}
             frmLotesxPT frm = new frmLotesxPT(Id_PT);
             frm.MdiParent = this.MdiParent;
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 txtNumLote.Text = Convert.ToString(frm.lot_number);
+                Id_Lote_PT = frm.id_Lote_PT;
             }
         }
 
@@ -161,6 +163,11 @@ namespace LOSA.TransaccionesPT
                 CajaDialogo.Error("Es necesario seleccionar el Producto Terminado!");
                 return;
             }
+            if (string.IsNullOrEmpty(txtNumLote.Text))
+            {
+                CajaDialogo.Error("Es Necesario seleccionar un Numero de Lote de Producto Terminado");
+                return;
+            }
             if (gridLookUpEditPresentacion.EditValue == null)
             {
                 CajaDialogo.Error("Debe Seleccionar el tipo de presentacion!");
@@ -195,19 +202,22 @@ namespace LOSA.TransaccionesPT
                         SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                         conn.Open();
                         SqlCommand cmd = new SqlCommand("sp_insert_ajuste_kardex_pt", conn);
-                        cmd.Parameters.AddWithValue("@cantidad_in", txtCantidadUnidades.Text);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@cantidad_in", Convert.ToDecimal(txtCantidadUnidades.Text));
                         cmd.Parameters.AddWithValue("@cantidad_out", 0);
                         cmd.Parameters.AddWithValue("@tipo_op", 1);//Entrada
-                        cmd.Parameters.AddWithValue("@id_tarima", null); //No nos interesa la tarima
+                        //cmd.Parameters.AddWithValue("@id_tarima", null); //No nos interesa la tarima
                         cmd.Parameters.AddWithValue("@peso_in", spinEditPesoKg.EditValue);
                         cmd.Parameters.AddWithValue("@peso_out", 0);
-                        cmd.Parameters.AddWithValue("@id_doc", null);//No tenemos un documento, por que es ajuste
+                        //cmd.Parameters.AddWithValue("@id_doc", null);//No tenemos un documento, por que es ajuste
                         cmd.Parameters.AddWithValue("@id_pt", Id_PT);
                         cmd.Parameters.AddWithValue("@lote_pt",txtNumLote.Text);
                         cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
                         cmd.Parameters.AddWithValue("@fecha_doc", dtFechaDocumento.EditValue);
                         cmd.Parameters.AddWithValue("@id_bodega_origen", gridLookUpEditOrigen.EditValue);
                         cmd.Parameters.AddWithValue("@id_bodega_destino", gridLookUpEditDestino.EditValue);
+                        cmd.Parameters.AddWithValue("@int_tipo_op", 1); // 1 Es Entrada
+                        cmd.Parameters.AddWithValue("@id_lote_pt", Id_Lote_PT);
                         cmd.ExecuteNonQuery();
                         conn.Close();
 
@@ -227,19 +237,21 @@ namespace LOSA.TransaccionesPT
                         SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                         conn.Open();
                         SqlCommand cmd = new SqlCommand("sp_insert_ajuste_kardex_pt", conn);
-                        cmd.Parameters.AddWithValue("@cantidad_in", txtCantidadUnidades.Text);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@cantidad_in", Convert.ToDecimal(txtCantidadUnidades.Text));
                         cmd.Parameters.AddWithValue("@cantidad_out", 0);
                         cmd.Parameters.AddWithValue("@tipo_op", 1);//Entrada
-                        cmd.Parameters.AddWithValue("@id_tarima", null);
+                        //cmd.Parameters.AddWithValue("@id_tarima", null);
                         cmd.Parameters.AddWithValue("@peso_in", spinEditPesoKg.EditValue);
                         cmd.Parameters.AddWithValue("@peso_out", 0);
-                        cmd.Parameters.AddWithValue("@id_doc", null);
+                        //cmd.Parameters.AddWithValue("@id_doc", null);
                         cmd.Parameters.AddWithValue("@id_pt", Id_PT);
                         cmd.Parameters.AddWithValue("@lote_pt", txtLoteNuevo.Text);
                         cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
                         cmd.Parameters.AddWithValue("@fecha_doc", dtFechaDocumento.EditValue);
                         cmd.Parameters.AddWithValue("@id_bodega_origen", gridLookUpEditOrigen.EditValue);
                         cmd.Parameters.AddWithValue("@id_bodega_destino", gridLookUpEditDestino.EditValue);
+                        cmd.Parameters.AddWithValue("@int_tipo_op", 1); // 1 Es Entrada
                         cmd.ExecuteNonQuery();
 
                         CajaDialogo.Information("Transaccion de Entrada Exitosa!");
@@ -261,19 +273,22 @@ namespace LOSA.TransaccionesPT
                         SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                         conn.Open();
                         SqlCommand cmd = new SqlCommand("sp_insert_ajuste_kardex_pt", conn);
+                        cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@cantidad_in", 0);
-                        cmd.Parameters.AddWithValue("@cantidad_out", txtCantidadUnidades.Text);
+                        cmd.Parameters.AddWithValue("@cantidad_out", Convert.ToDecimal(txtCantidadUnidades.Text));
                         cmd.Parameters.AddWithValue("@tipo_op", 0); //Salida
-                        cmd.Parameters.AddWithValue("@id_tarima", null);
+                        //cmd.Parameters.AddWithValue("@id_tarima", null);
                         cmd.Parameters.AddWithValue("@peso_in", 0);
                         cmd.Parameters.AddWithValue("@peso_out", spinEditPesoKg.EditValue);
-                        cmd.Parameters.AddWithValue("@id_doc", null);
+                        //cmd.Parameters.AddWithValue("@id_doc", null);
                         cmd.Parameters.AddWithValue("@id_pt", Id_PT);
                         cmd.Parameters.AddWithValue("@lote_pt", txtNumLote.Text);
                         cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
                         cmd.Parameters.AddWithValue("@fecha_doc", dtFechaDocumento.EditValue);
                         cmd.Parameters.AddWithValue("@id_bodega_origen", gridLookUpEditOrigen.EditValue);
                         cmd.Parameters.AddWithValue("@id_bodega_destino", gridLookUpEditDestino.EditValue);
+                        cmd.Parameters.AddWithValue("@int_tipo_op", 2); // 2 Es Salida
+                        cmd.Parameters.AddWithValue("@id_lote_pt", Id_Lote_PT);
                         cmd.ExecuteNonQuery();
 
                         CajaDialogo.Information("Transaccion de Salida Exitosa!");

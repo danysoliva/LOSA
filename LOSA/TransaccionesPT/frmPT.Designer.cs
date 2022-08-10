@@ -43,8 +43,8 @@ namespace LOSA.TransaccionesPT
             this.colproducto = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.colDescripcion_Tecnica = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gcMP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPT1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMP)).BeginInit();
@@ -151,6 +151,16 @@ namespace LOSA.TransaccionesPT
             this.btnSeleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnSeleccionar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnSeleccionar_ButtonClick);
             // 
+            // colDescripcion_Tecnica
+            // 
+            this.colDescripcion_Tecnica.Caption = "Nombre Tecnico";
+            this.colDescripcion_Tecnica.FieldName = "Descripcion_Tecnica";
+            this.colDescripcion_Tecnica.Name = "colDescripcion_Tecnica";
+            this.colDescripcion_Tecnica.OptionsColumn.AllowEdit = false;
+            this.colDescripcion_Tecnica.Visible = true;
+            this.colDescripcion_Tecnica.VisibleIndex = 2;
+            this.colDescripcion_Tecnica.Width = 179;
+            // 
             // btnAtras
             // 
             this.btnAtras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -167,15 +177,6 @@ namespace LOSA.TransaccionesPT
             this.btnAtras.TabIndex = 8;
             this.btnAtras.Text = "Atrás";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
-            // 
-            // colDescripcion_Tecnica
-            // 
-            this.colDescripcion_Tecnica.Caption = "Nombre Tecnico";
-            this.colDescripcion_Tecnica.FieldName = "Descripcion_Tecnica";
-            this.colDescripcion_Tecnica.Name = "colDescripcion_Tecnica";
-            this.colDescripcion_Tecnica.Visible = true;
-            this.colDescripcion_Tecnica.VisibleIndex = 2;
-            this.colDescripcion_Tecnica.Width = 179;
             // 
             // frmPT
             // 

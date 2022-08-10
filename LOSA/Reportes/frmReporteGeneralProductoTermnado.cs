@@ -38,7 +38,7 @@ namespace LOSA.Reportes
         {
             try
             {
-                string query = @"sp_get_inventario_existencia_pt_by_especie";
+                string query = @"sp_get_kardex_pt_by_especieV2";
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query, cn);

@@ -204,8 +204,6 @@ namespace LOSA.Reportes
             this.colCodigo.FieldName = "Codigo";
             this.colCodigo.Name = "colCodigo";
             this.colCodigo.OptionsColumn.AllowEdit = false;
-            this.colCodigo.Visible = true;
-            this.colCodigo.VisibleIndex = 2;
             this.colCodigo.Width = 84;
             // 
             // colcode_sap
@@ -216,7 +214,7 @@ namespace LOSA.Reportes
             this.colcode_sap.OptionsColumn.AllowEdit = false;
             this.colcode_sap.Visible = true;
             this.colcode_sap.VisibleIndex = 1;
-            this.colcode_sap.Width = 80;
+            this.colcode_sap.Width = 129;
             // 
             // colexistencia
             // 
@@ -227,8 +225,8 @@ namespace LOSA.Reportes
             this.colexistencia.Name = "colexistencia";
             this.colexistencia.OptionsColumn.AllowEdit = false;
             this.colexistencia.Visible = true;
-            this.colexistencia.VisibleIndex = 8;
-            this.colexistencia.Width = 112;
+            this.colexistencia.VisibleIndex = 4;
+            this.colexistencia.Width = 176;
             // 
             // colexistenciakg
             // 
@@ -239,8 +237,8 @@ namespace LOSA.Reportes
             this.colexistenciakg.Name = "colexistenciakg";
             this.colexistenciakg.OptionsColumn.AllowEdit = false;
             this.colexistenciakg.Visible = true;
-            this.colexistenciakg.VisibleIndex = 9;
-            this.colexistenciakg.Width = 112;
+            this.colexistenciakg.VisibleIndex = 5;
+            this.colexistenciakg.Width = 176;
             // 
             // colProducto1
             // 
@@ -249,8 +247,8 @@ namespace LOSA.Reportes
             this.colProducto1.Name = "colProducto1";
             this.colProducto1.OptionsColumn.AllowEdit = false;
             this.colProducto1.Visible = true;
-            this.colProducto1.VisibleIndex = 3;
-            this.colProducto1.Width = 192;
+            this.colProducto1.VisibleIndex = 2;
+            this.colProducto1.Width = 312;
             // 
             // collote_producto_termiado
             // 
@@ -259,8 +257,8 @@ namespace LOSA.Reportes
             this.collote_producto_termiado.Name = "collote_producto_termiado";
             this.collote_producto_termiado.OptionsColumn.AllowEdit = false;
             this.collote_producto_termiado.Visible = true;
-            this.collote_producto_termiado.VisibleIndex = 4;
-            this.collote_producto_termiado.Width = 69;
+            this.collote_producto_termiado.VisibleIndex = 3;
+            this.collote_producto_termiado.Width = 122;
             // 
             // colwhs_equivalente
             // 
@@ -270,7 +268,7 @@ namespace LOSA.Reportes
             this.colwhs_equivalente.OptionsColumn.AllowEdit = false;
             this.colwhs_equivalente.Visible = true;
             this.colwhs_equivalente.VisibleIndex = 0;
-            this.colwhs_equivalente.Width = 85;
+            this.colwhs_equivalente.Width = 138;
             // 
             // colbodega
             // 
@@ -284,8 +282,6 @@ namespace LOSA.Reportes
             this.colfecha_produccion.FieldName = "fecha_produccion";
             this.colfecha_produccion.Name = "colfecha_produccion";
             this.colfecha_produccion.OptionsColumn.AllowEdit = false;
-            this.colfecha_produccion.Visible = true;
-            this.colfecha_produccion.VisibleIndex = 5;
             this.colfecha_produccion.Width = 112;
             // 
             // colfecha_vencimiento
@@ -294,8 +290,6 @@ namespace LOSA.Reportes
             this.colfecha_vencimiento.FieldName = "fecha_vencimiento";
             this.colfecha_vencimiento.Name = "colfecha_vencimiento";
             this.colfecha_vencimiento.OptionsColumn.AllowEdit = false;
-            this.colfecha_vencimiento.Visible = true;
-            this.colfecha_vencimiento.VisibleIndex = 6;
             this.colfecha_vencimiento.Width = 112;
             // 
             // colvencer
@@ -304,8 +298,6 @@ namespace LOSA.Reportes
             this.colvencer.FieldName = "vencer";
             this.colvencer.Name = "colvencer";
             this.colvencer.OptionsColumn.AllowEdit = false;
-            this.colvencer.Visible = true;
-            this.colvencer.VisibleIndex = 7;
             this.colvencer.Width = 112;
             // 
             // colRetenido
@@ -314,8 +306,6 @@ namespace LOSA.Reportes
             this.colRetenido.FieldName = "Retenido";
             this.colRetenido.Name = "colRetenido";
             this.colRetenido.OptionsColumn.AllowEdit = false;
-            this.colRetenido.Visible = true;
-            this.colRetenido.VisibleIndex = 11;
             this.colRetenido.Width = 109;
             // 
             // coltm1
@@ -327,8 +317,8 @@ namespace LOSA.Reportes
             this.coltm1.Name = "coltm1";
             this.coltm1.OptionsColumn.AllowEdit = false;
             this.coltm1.Visible = true;
-            this.coltm1.VisibleIndex = 10;
-            this.coltm1.Width = 151;
+            this.coltm1.VisibleIndex = 6;
+            this.coltm1.Width = 248;
             // 
             // tabNavigationPage2
             // 
@@ -404,8 +394,6 @@ namespace LOSA.Reportes
             this.gridColumn8.FieldName = "Codigo";
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.OptionsColumn.AllowEdit = false;
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 2;
             this.gridColumn8.Width = 84;
             // 
             // gridColumn9
@@ -427,7 +415,7 @@ namespace LOSA.Reportes
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.OptionsColumn.AllowEdit = false;
             this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 8;
+            this.gridColumn10.VisibleIndex = 4;
             this.gridColumn10.Width = 112;
             // 
             // gridColumn11
@@ -439,7 +427,7 @@ namespace LOSA.Reportes
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.OptionsColumn.AllowEdit = false;
             this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 9;
+            this.gridColumn11.VisibleIndex = 5;
             this.gridColumn11.Width = 112;
             // 
             // gridColumn12
@@ -449,7 +437,7 @@ namespace LOSA.Reportes
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.OptionsColumn.AllowEdit = false;
             this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 3;
+            this.gridColumn12.VisibleIndex = 2;
             this.gridColumn12.Width = 192;
             // 
             // gridColumn13
@@ -459,7 +447,7 @@ namespace LOSA.Reportes
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.OptionsColumn.AllowEdit = false;
             this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 4;
+            this.gridColumn13.VisibleIndex = 3;
             this.gridColumn13.Width = 69;
             // 
             // gridColumn14
@@ -484,8 +472,6 @@ namespace LOSA.Reportes
             this.gridColumn16.FieldName = "fecha_produccion";
             this.gridColumn16.Name = "gridColumn16";
             this.gridColumn16.OptionsColumn.AllowEdit = false;
-            this.gridColumn16.Visible = true;
-            this.gridColumn16.VisibleIndex = 5;
             this.gridColumn16.Width = 112;
             // 
             // gridColumn17
@@ -494,8 +480,6 @@ namespace LOSA.Reportes
             this.gridColumn17.FieldName = "fecha_vencimiento";
             this.gridColumn17.Name = "gridColumn17";
             this.gridColumn17.OptionsColumn.AllowEdit = false;
-            this.gridColumn17.Visible = true;
-            this.gridColumn17.VisibleIndex = 6;
             this.gridColumn17.Width = 112;
             // 
             // gridColumn18
@@ -504,8 +488,6 @@ namespace LOSA.Reportes
             this.gridColumn18.FieldName = "vencer";
             this.gridColumn18.Name = "gridColumn18";
             this.gridColumn18.OptionsColumn.AllowEdit = false;
-            this.gridColumn18.Visible = true;
-            this.gridColumn18.VisibleIndex = 7;
             this.gridColumn18.Width = 112;
             // 
             // gridColumn19
@@ -514,8 +496,6 @@ namespace LOSA.Reportes
             this.gridColumn19.FieldName = "Retenido";
             this.gridColumn19.Name = "gridColumn19";
             this.gridColumn19.OptionsColumn.AllowEdit = false;
-            this.gridColumn19.Visible = true;
-            this.gridColumn19.VisibleIndex = 11;
             this.gridColumn19.Width = 109;
             // 
             // gridColumn20
@@ -527,7 +507,7 @@ namespace LOSA.Reportes
             this.gridColumn20.Name = "gridColumn20";
             this.gridColumn20.OptionsColumn.AllowEdit = false;
             this.gridColumn20.Visible = true;
-            this.gridColumn20.VisibleIndex = 10;
+            this.gridColumn20.VisibleIndex = 6;
             this.gridColumn20.Width = 151;
             // 
             // simpleButton1

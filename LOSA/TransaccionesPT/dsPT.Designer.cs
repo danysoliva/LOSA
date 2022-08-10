@@ -9276,6 +9276,8 @@ namespace LOSA.TransaccionesPT {
             
             private global::System.Data.DataColumn columnlot_number;
             
+            private global::System.Data.DataColumn columnid_lote_pt;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public lote_ptDataTable() {
@@ -9351,6 +9353,14 @@ namespace LOSA.TransaccionesPT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_lote_ptColumn {
+                get {
+                    return this.columnid_lote_pt;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -9386,14 +9396,15 @@ namespace LOSA.TransaccionesPT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public lote_ptRow Addlote_ptRow(int id, string code_sap, int id_pt, string producto, int lot_number) {
+            public lote_ptRow Addlote_ptRow(int id, string code_sap, int id_pt, string producto, int lot_number, int id_lote_pt) {
                 lote_ptRow rowlote_ptRow = ((lote_ptRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
                         code_sap,
                         id_pt,
                         producto,
-                        lot_number};
+                        lot_number,
+                        id_lote_pt};
                 rowlote_ptRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowlote_ptRow);
                 return rowlote_ptRow;
@@ -9421,6 +9432,7 @@ namespace LOSA.TransaccionesPT {
                 this.columnid_pt = base.Columns["id_pt"];
                 this.columnproducto = base.Columns["producto"];
                 this.columnlot_number = base.Columns["lot_number"];
+                this.columnid_lote_pt = base.Columns["id_lote_pt"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9436,6 +9448,8 @@ namespace LOSA.TransaccionesPT {
                 base.Columns.Add(this.columnproducto);
                 this.columnlot_number = new global::System.Data.DataColumn("lot_number", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnlot_number);
+                this.columnid_lote_pt = new global::System.Data.DataColumn("id_lote_pt", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_lote_pt);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15106,6 +15120,22 @@ namespace LOSA.TransaccionesPT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_lote_pt {
+                get {
+                    try {
+                        return ((int)(this[this.tablelote_pt.id_lote_ptColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_lote_pt\' de la tabla \'lote_pt\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablelote_pt.id_lote_ptColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tablelote_pt.idColumn);
             }
@@ -15162,6 +15192,18 @@ namespace LOSA.TransaccionesPT {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setlot_numberNull() {
                 this[this.tablelote_pt.lot_numberColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_lote_ptNull() {
+                return this.IsNull(this.tablelote_pt.id_lote_ptColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_lote_ptNull() {
+                this[this.tablelote_pt.id_lote_ptColumn] = global::System.Convert.DBNull;
             }
         }
         
