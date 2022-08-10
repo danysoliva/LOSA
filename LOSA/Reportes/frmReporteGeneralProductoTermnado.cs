@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using LOSA.Clases;
 using ACS.Classes;
+using LOSA.TransaccionesPT;
 
 namespace LOSA.Reportes
 {
@@ -19,12 +20,14 @@ namespace LOSA.Reportes
        
         int Especie;
         DataOperations dp = new DataOperations();
-        
-        public frmReporteGeneralProductoTermnado()
+        UserLogin UsuarioLogeado;
+        public frmReporteGeneralProductoTermnado(UserLogin pUserLogin)
         {
             InitializeComponent();
+            UsuarioLogeado = pUserLogin;
             Especie = 2;
             get_inventario();
+
         }
       
         private void btnClose_Click(object sender, EventArgs e)
@@ -88,12 +91,18 @@ namespace LOSA.Reportes
             }
             catch (Exception ex)
             {
+                CajaDialogo.Error(ex.Message);
             }
         }
 
         private void cmdAjuste_Click(object sender, EventArgs e)
         {
-
+            frmAjusteIKardexPT frm = new frmAjusteIKardexPT(UsuarioLogeado);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                Especie = 2;
+                get_inventario();
+            }
         }
     }
 }

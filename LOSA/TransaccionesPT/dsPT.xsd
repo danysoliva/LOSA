@@ -333,6 +333,18 @@
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
               <xs:element name="code_sap" msprop:Generator_ColumnVarNameInTable="columncode_sap" msprop:Generator_ColumnPropNameInRow="code_sap" msprop:Generator_ColumnPropNameInTable="code_sapColumn" msprop:Generator_UserColumnName="code_sap" type="xs:string" minOccurs="0" />
               <xs:element name="producto" msprop:Generator_ColumnVarNameInTable="columnproducto" msprop:Generator_ColumnPropNameInRow="producto" msprop:Generator_ColumnPropNameInTable="productoColumn" msprop:Generator_UserColumnName="producto" type="xs:string" minOccurs="0" />
+              <xs:element name="Descripcion_Tecnica" msprop:Generator_ColumnVarNameInTable="columnDescripcion_Tecnica" msprop:Generator_ColumnPropNameInRow="Descripcion_Tecnica" msprop:Generator_ColumnPropNameInTable="Descripcion_TecnicaColumn" msprop:Generator_UserColumnName="Descripcion_Tecnica" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="lote_pt" msprop:Generator_TableClassName="lote_ptDataTable" msprop:Generator_TableVarName="tablelote_pt" msprop:Generator_RowChangedName="lote_ptRowChanged" msprop:Generator_TablePropName="lote_pt" msprop:Generator_RowDeletingName="lote_ptRowDeleting" msprop:Generator_RowChangingName="lote_ptRowChanging" msprop:Generator_RowEvHandlerName="lote_ptRowChangeEventHandler" msprop:Generator_RowDeletedName="lote_ptRowDeleted" msprop:Generator_RowClassName="lote_ptRow" msprop:Generator_UserTableName="lote_pt" msprop:Generator_RowEvArgName="lote_ptRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="code_sap" msprop:Generator_ColumnVarNameInTable="columncode_sap" msprop:Generator_ColumnPropNameInRow="code_sap" msprop:Generator_ColumnPropNameInTable="code_sapColumn" msprop:Generator_UserColumnName="code_sap" type="xs:string" minOccurs="0" />
+              <xs:element name="id_pt" msprop:Generator_ColumnVarNameInTable="columnid_pt" msprop:Generator_ColumnPropNameInRow="id_pt" msprop:Generator_ColumnPropNameInTable="id_ptColumn" msprop:Generator_UserColumnName="id_pt" type="xs:int" minOccurs="0" />
+              <xs:element name="producto" msprop:Generator_ColumnVarNameInTable="columnproducto" msprop:Generator_ColumnPropNameInRow="producto" msprop:Generator_ColumnPropNameInTable="productoColumn" msprop:Generator_UserColumnName="producto" type="xs:string" minOccurs="0" />
+              <xs:element name="lot_number" msprop:Generator_ColumnVarNameInTable="columnlot_number" msprop:Generator_ColumnPropNameInRow="lot_number" msprop:Generator_ColumnPropNameInTable="lot_numberColumn" msprop:Generator_UserColumnName="lot_number" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

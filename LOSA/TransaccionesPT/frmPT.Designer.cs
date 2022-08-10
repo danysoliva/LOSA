@@ -36,18 +36,19 @@ namespace LOSA.TransaccionesPT
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPT));
             this.gcMP = new DevExpress.XtraGrid.GridControl();
-            this.gvMP = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.btnSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.dsPT1 = new LOSA.TransaccionesPT.dsPT();
+            this.gvMP = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcode_sap = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colproducto = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
+            this.colDescripcion_Tecnica = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gcMP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsPT1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSeleccionar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsPT1)).BeginInit();
             this.SuspendLayout();
             // 
             // gcMP
@@ -66,6 +67,11 @@ namespace LOSA.TransaccionesPT
             this.gcMP.TabIndex = 7;
             this.gcMP.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvMP});
+            // 
+            // dsPT1
+            // 
+            this.dsPT1.DataSetName = "dsPT";
+            this.dsPT1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gvMP
             // 
@@ -90,7 +96,8 @@ namespace LOSA.TransaccionesPT
             this.colid,
             this.colcode_sap,
             this.colproducto,
-            this.gridColumn1});
+            this.gridColumn1,
+            this.colDescripcion_Tecnica});
             this.gvMP.GridControl = this.gcMP;
             this.gvMP.Name = "gvMP";
             this.gvMP.OptionsCustomization.AllowFilter = false;
@@ -98,6 +105,41 @@ namespace LOSA.TransaccionesPT
             this.gvMP.OptionsView.ShowAutoFilterRow = true;
             this.gvMP.OptionsView.ShowGroupPanel = false;
             this.gvMP.DoubleClick += new System.EventHandler(this.gvMP_DoubleClick);
+            // 
+            // colid
+            // 
+            this.colid.FieldName = "id";
+            this.colid.Name = "colid";
+            this.colid.OptionsColumn.AllowEdit = false;
+            // 
+            // colcode_sap
+            // 
+            this.colcode_sap.Caption = "Codigo SAP";
+            this.colcode_sap.FieldName = "code_sap";
+            this.colcode_sap.Name = "colcode_sap";
+            this.colcode_sap.OptionsColumn.AllowEdit = false;
+            this.colcode_sap.Visible = true;
+            this.colcode_sap.VisibleIndex = 0;
+            this.colcode_sap.Width = 129;
+            // 
+            // colproducto
+            // 
+            this.colproducto.Caption = "Producto";
+            this.colproducto.FieldName = "producto";
+            this.colproducto.Name = "colproducto";
+            this.colproducto.OptionsColumn.AllowEdit = false;
+            this.colproducto.Visible = true;
+            this.colproducto.VisibleIndex = 1;
+            this.colproducto.Width = 226;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Seleccionar";
+            this.gridColumn1.ColumnEdit = this.btnSeleccionar;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 3;
+            this.gridColumn1.Width = 158;
             // 
             // btnSeleccionar
             // 
@@ -126,43 +168,14 @@ namespace LOSA.TransaccionesPT
             this.btnAtras.Text = "Atrás";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
-            // dsPT1
+            // colDescripcion_Tecnica
             // 
-            this.dsPT1.DataSetName = "dsPT";
-            this.dsPT1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // colid
-            // 
-            this.colid.FieldName = "id";
-            this.colid.Name = "colid";
-            this.colid.OptionsColumn.AllowEdit = false;
-            // 
-            // colcode_sap
-            // 
-            this.colcode_sap.Caption = "Codigo SAP";
-            this.colcode_sap.FieldName = "code_sap";
-            this.colcode_sap.Name = "colcode_sap";
-            this.colcode_sap.OptionsColumn.AllowEdit = false;
-            this.colcode_sap.Visible = true;
-            this.colcode_sap.VisibleIndex = 0;
-            this.colcode_sap.Width = 222;
-            // 
-            // colproducto
-            // 
-            this.colproducto.Caption = "Producto";
-            this.colproducto.FieldName = "producto";
-            this.colproducto.Name = "colproducto";
-            this.colproducto.Visible = true;
-            this.colproducto.VisibleIndex = 1;
-            this.colproducto.Width = 470;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Seleccionar";
-            this.gridColumn1.ColumnEdit = this.btnSeleccionar;
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 2;
+            this.colDescripcion_Tecnica.Caption = "Nombre Tecnico";
+            this.colDescripcion_Tecnica.FieldName = "Descripcion_Tecnica";
+            this.colDescripcion_Tecnica.Name = "colDescripcion_Tecnica";
+            this.colDescripcion_Tecnica.Visible = true;
+            this.colDescripcion_Tecnica.VisibleIndex = 2;
+            this.colDescripcion_Tecnica.Width = 179;
             // 
             // frmPT
             // 
@@ -175,9 +188,9 @@ namespace LOSA.TransaccionesPT
             this.ShowIcon = false;
             this.Text = "Listado de Producto Terminado";
             ((System.ComponentModel.ISupportInitialize)(this.gcMP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsPT1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSeleccionar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsPT1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -193,5 +206,6 @@ namespace LOSA.TransaccionesPT
         private DevExpress.XtraGrid.Columns.GridColumn colcode_sap;
         private DevExpress.XtraGrid.Columns.GridColumn colproducto;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn colDescripcion_Tecnica;
     }
 }

@@ -88,6 +88,7 @@ namespace LOSA.Reportes
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Appearance.Options.UseFont = true;
+            this.btnClose.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.ImageOptions.Image")));
             this.btnClose.Location = new System.Drawing.Point(1223, 8);
             this.btnClose.Name = "btnClose";
@@ -531,12 +532,14 @@ namespace LOSA.Reportes
             // 
             // simpleButton1
             // 
+            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(1093, 13);
+            this.simpleButton1.Location = new System.Drawing.Point(1093, 8);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(106, 42);
+            this.simpleButton1.Size = new System.Drawing.Size(104, 47);
             this.simpleButton1.TabIndex = 5;
             this.simpleButton1.Text = "Excel";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -545,10 +548,11 @@ namespace LOSA.Reportes
             // 
             this.cmdAjuste.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdAjuste.Appearance.Options.UseFont = true;
-            this.cmdAjuste.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.cmdAjuste.Location = new System.Drawing.Point(12, 12);
+            this.cmdAjuste.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdAjuste.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdAjuste.ImageOptions.Image")));
+            this.cmdAjuste.Location = new System.Drawing.Point(12, 8);
             this.cmdAjuste.Name = "cmdAjuste";
-            this.cmdAjuste.Size = new System.Drawing.Size(167, 38);
+            this.cmdAjuste.Size = new System.Drawing.Size(172, 47);
             this.cmdAjuste.TabIndex = 6;
             this.cmdAjuste.Text = "Ajuste de Inventario";
             this.cmdAjuste.Click += new System.EventHandler(this.cmdAjuste_Click);

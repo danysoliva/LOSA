@@ -754,7 +754,7 @@ namespace LOSA
 
         private void simpleButton22_Click(object sender, EventArgs e)
         {
-            frmReporteGeneralProductoTermnado frm = new frmReporteGeneralProductoTermnado();
+            frmReporteGeneralProductoTermnado frm = new frmReporteGeneralProductoTermnado(UsuarioLogeado);
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }

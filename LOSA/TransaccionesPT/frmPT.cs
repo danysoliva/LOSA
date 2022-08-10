@@ -26,7 +26,6 @@ namespace LOSA.TransaccionesPT
 
         private void cargardatos()
         {
-           
             try
             {
                 DataOperations dp = new DataOperations();

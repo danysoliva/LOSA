@@ -641,7 +641,7 @@ namespace LOSA.TransaccionesMP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 614);
+            this.ClientSize = new System.Drawing.Size(640, 620);
             this.ControlBox = false;
             this.Controls.Add(this.dtFechaDocumento);
             this.Controls.Add(this.labelControl12);
@@ -670,8 +670,8 @@ namespace LOSA.TransaccionesMP
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.cmdGuardar);
             this.Controls.Add(this.btnAtras);
-            this.Controls.Add(this.txtNumLote);
             this.Controls.Add(this.txtLoteNuevo);
+            this.Controls.Add(this.txtNumLote);
             this.Name = "frmAsjuteInventarioPorLote";
             this.ShowIcon = false;
             this.Text = "Ajuste de Inventario por Lote";
