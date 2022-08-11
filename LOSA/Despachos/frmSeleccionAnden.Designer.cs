@@ -117,7 +117,7 @@ namespace LOSA.Despachos
             // 
             this.grdv_data.Appearance.FilterPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.grdv_data.Appearance.FilterPanel.Options.UseFont = true;
-            this.grdv_data.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
+            this.grdv_data.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdv_data.Appearance.FocusedRow.Options.UseFont = true;
             this.grdv_data.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.grdv_data.Appearance.FooterPanel.Options.UseFont = true;
@@ -253,6 +253,7 @@ namespace LOSA.Despachos
             this.colconductor.Caption = "Conductor";
             this.colconductor.FieldName = "conductor";
             this.colconductor.Name = "colconductor";
+            this.colconductor.OptionsColumn.AllowEdit = false;
             this.colconductor.Visible = true;
             this.colconductor.VisibleIndex = 5;
             // 
