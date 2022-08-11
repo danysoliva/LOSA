@@ -58,7 +58,6 @@ namespace LOSA.TransaccionesPT
             this.bodegaorigenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.radioLoteNuevo = new System.Windows.Forms.RadioButton();
             this.radioLoteExistente = new System.Windows.Forms.RadioButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txtPT_Name = new DevExpress.XtraEditors.ButtonEdit();
@@ -66,7 +65,6 @@ namespace LOSA.TransaccionesPT
             this.tsTipoTransaccion = new DevExpress.XtraEditors.ToggleSwitch();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.txtNumLote = new DevExpress.XtraEditors.ButtonEdit();
-            this.txtLoteNuevo = new DevExpress.XtraEditors.TextEdit();
             this.cmdGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.gridLookUpEditPresentacion = new DevExpress.XtraEditors.GridLookUpEdit();
@@ -95,7 +93,6 @@ namespace LOSA.TransaccionesPT
             ((System.ComponentModel.ISupportInitialize)(this.txtPT_Name.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tsTipoTransaccion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumLote.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtLoteNuevo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditPresentacion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.presentacionesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).BeginInit();
@@ -245,20 +242,6 @@ namespace LOSA.TransaccionesPT
             this.labelControl9.TabIndex = 130;
             this.labelControl9.Text = "Bodega Origen";
             // 
-            // radioLoteNuevo
-            // 
-            this.radioLoteNuevo.AutoSize = true;
-            this.radioLoteNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.radioLoteNuevo.Location = new System.Drawing.Point(408, 185);
-            this.radioLoteNuevo.Name = "radioLoteNuevo";
-            this.radioLoteNuevo.Size = new System.Drawing.Size(125, 28);
-            this.radioLoteNuevo.TabIndex = 129;
-            this.radioLoteNuevo.TabStop = true;
-            this.radioLoteNuevo.Text = "Lote Nuevo";
-            this.radioLoteNuevo.UseVisualStyleBackColor = true;
-            this.radioLoteNuevo.Visible = false;
-            this.radioLoteNuevo.CheckedChanged += new System.EventHandler(this.radioLoteNuevo_CheckedChanged);
-            // 
             // radioLoteExistente
             // 
             this.radioLoteExistente.AutoSize = true;
@@ -360,16 +343,6 @@ namespace LOSA.TransaccionesPT
             this.txtNumLote.Size = new System.Drawing.Size(355, 30);
             this.txtNumLote.TabIndex = 138;
             this.txtNumLote.Click += new System.EventHandler(this.txtNumLote_Click);
-            // 
-            // txtLoteNuevo
-            // 
-            this.txtLoteNuevo.Location = new System.Drawing.Point(222, 368);
-            this.txtLoteNuevo.Name = "txtLoteNuevo";
-            this.txtLoteNuevo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.txtLoteNuevo.Properties.Appearance.Options.UseFont = true;
-            this.txtLoteNuevo.Size = new System.Drawing.Size(355, 26);
-            this.txtLoteNuevo.TabIndex = 136;
-            this.txtLoteNuevo.Visible = false;
             // 
             // cmdGuardar
             // 
@@ -540,15 +513,12 @@ namespace LOSA.TransaccionesPT
             this.Controls.Add(this.gridLookUpEditPresentacion);
             this.Controls.Add(this.labelControl11);
             this.Controls.Add(this.labelControl5);
-            this.Controls.Add(this.txtNumLote);
-            this.Controls.Add(this.txtLoteNuevo);
             this.Controls.Add(this.dtFechaDocumento);
             this.Controls.Add(this.labelControl12);
             this.Controls.Add(this.gridLookUpEditDestino);
             this.Controls.Add(this.gridLookUpEditOrigen);
             this.Controls.Add(this.labelControl10);
             this.Controls.Add(this.labelControl9);
-            this.Controls.Add(this.radioLoteNuevo);
             this.Controls.Add(this.radioLoteExistente);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.txtPT_Name);
@@ -556,6 +526,7 @@ namespace LOSA.TransaccionesPT
             this.Controls.Add(this.tsTipoTransaccion);
             this.Controls.Add(this.cmdGuardar);
             this.Controls.Add(this.btnAtras);
+            this.Controls.Add(this.txtNumLote);
             this.Name = "frmAjusteIKardexPT";
             this.Text = "Ajuste de Inventario Por Lote PT";
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDocumento.Properties.CalendarTimeProperties)).EndInit();
@@ -572,7 +543,6 @@ namespace LOSA.TransaccionesPT
             ((System.ComponentModel.ISupportInitialize)(this.txtPT_Name.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tsTipoTransaccion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumLote.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtLoteNuevo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditPresentacion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.presentacionesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).EndInit();
@@ -598,7 +568,6 @@ namespace LOSA.TransaccionesPT
         private DevExpress.XtraGrid.Columns.GridColumn coldescripcion1;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.LabelControl labelControl9;
-        private System.Windows.Forms.RadioButton radioLoteNuevo;
         private System.Windows.Forms.RadioButton radioLoteExistente;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.ButtonEdit txtPT_Name;
@@ -608,7 +577,6 @@ namespace LOSA.TransaccionesPT
         private DevExpress.XtraEditors.SimpleButton btnAtras;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.ButtonEdit txtNumLote;
-        private DevExpress.XtraEditors.TextEdit txtLoteNuevo;
         private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEditPresentacion;
         private System.Windows.Forms.BindingSource presentacionesBindingSource;
         private RecepcionMP.dsRecepcionMPx dsRecepcionMPx;

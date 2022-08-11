@@ -35,22 +35,7 @@ namespace LOSA.Reportes
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.grd_inventario_camaron = new DevExpress.XtraGrid.GridControl();
-            this.dsReportesInventario = new LOSA.Reportes.dsReportesInventario();
             this.grdv_inventario_camaron = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colid_producto_termiado = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCodigo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcode_sap = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colexistencia = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colexistenciakg = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colProducto1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.collote_producto_termiado = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colwhs_equivalente = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colbodega = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colfecha_produccion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colfecha_vencimiento = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colvencer = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRetenido = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coltm1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.grd_inventario_Tilapia = new DevExpress.XtraGrid.GridControl();
             this.grdv_inventario_Tilapia = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -70,17 +55,25 @@ namespace LOSA.Reportes
             this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdAjuste = new DevExpress.XtraEditors.SimpleButton();
+            this.dsReportesInventario1 = new LOSA.Reportes.dsReportesInventario();
+            this.colid_pt = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcode_sap = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProducto = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collote_pt = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colexistencia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colkilogramos = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltm = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_inventario_camaron)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsReportesInventario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_inventario_camaron)).BeginInit();
             this.tabNavigationPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_inventario_Tilapia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_inventario_Tilapia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsReportesInventario1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClose
@@ -138,8 +131,8 @@ namespace LOSA.Reportes
             // 
             // grd_inventario_camaron
             // 
-            this.grd_inventario_camaron.DataMember = "inventario";
-            this.grd_inventario_camaron.DataSource = this.dsReportesInventario;
+            this.grd_inventario_camaron.DataMember = "inventario_kardex";
+            this.grd_inventario_camaron.DataSource = this.dsReportesInventario1;
             this.grd_inventario_camaron.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grd_inventario_camaron.Location = new System.Drawing.Point(0, 0);
             this.grd_inventario_camaron.MainView = this.grdv_inventario_camaron;
@@ -148,11 +141,6 @@ namespace LOSA.Reportes
             this.grd_inventario_camaron.TabIndex = 0;
             this.grd_inventario_camaron.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_inventario_camaron});
-            // 
-            // dsReportesInventario
-            // 
-            this.dsReportesInventario.DataSetName = "dsReportesInventario";
-            this.dsReportesInventario.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // grdv_inventario_camaron
             // 
@@ -173,152 +161,17 @@ namespace LOSA.Reportes
             this.grdv_inventario_camaron.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.grdv_inventario_camaron.Appearance.TopNewRow.Options.UseFont = true;
             this.grdv_inventario_camaron.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colid_producto_termiado,
-            this.colCodigo,
+            this.colid_pt,
             this.colcode_sap,
+            this.colProducto,
+            this.collote_pt,
             this.colexistencia,
-            this.colexistenciakg,
-            this.colProducto1,
-            this.collote_producto_termiado,
-            this.colwhs_equivalente,
-            this.colbodega,
-            this.colfecha_produccion,
-            this.colfecha_vencimiento,
-            this.colvencer,
-            this.colRetenido,
-            this.coltm1});
+            this.colkilogramos,
+            this.coltm});
             this.grdv_inventario_camaron.GridControl = this.grd_inventario_camaron;
             this.grdv_inventario_camaron.Name = "grdv_inventario_camaron";
             this.grdv_inventario_camaron.OptionsView.ShowAutoFilterRow = true;
             this.grdv_inventario_camaron.OptionsView.ShowGroupPanel = false;
-            // 
-            // colid_producto_termiado
-            // 
-            this.colid_producto_termiado.FieldName = "id_producto_termiado";
-            this.colid_producto_termiado.Name = "colid_producto_termiado";
-            this.colid_producto_termiado.OptionsColumn.AllowEdit = false;
-            // 
-            // colCodigo
-            // 
-            this.colCodigo.Caption = "Cod. odoo";
-            this.colCodigo.FieldName = "Codigo";
-            this.colCodigo.Name = "colCodigo";
-            this.colCodigo.OptionsColumn.AllowEdit = false;
-            this.colCodigo.Width = 84;
-            // 
-            // colcode_sap
-            // 
-            this.colcode_sap.Caption = "Cod. SAP";
-            this.colcode_sap.FieldName = "code_sap";
-            this.colcode_sap.Name = "colcode_sap";
-            this.colcode_sap.OptionsColumn.AllowEdit = false;
-            this.colcode_sap.Visible = true;
-            this.colcode_sap.VisibleIndex = 1;
-            this.colcode_sap.Width = 129;
-            // 
-            // colexistencia
-            // 
-            this.colexistencia.Caption = "Unidades";
-            this.colexistencia.DisplayFormat.FormatString = "{0:0.##.##} Ud";
-            this.colexistencia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colexistencia.FieldName = "existencia";
-            this.colexistencia.Name = "colexistencia";
-            this.colexistencia.OptionsColumn.AllowEdit = false;
-            this.colexistencia.Visible = true;
-            this.colexistencia.VisibleIndex = 4;
-            this.colexistencia.Width = 176;
-            // 
-            // colexistenciakg
-            // 
-            this.colexistenciakg.Caption = "Kilogramos";
-            this.colexistenciakg.DisplayFormat.FormatString = "{0:0.##.##} Kg";
-            this.colexistenciakg.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colexistenciakg.FieldName = "existenciakg";
-            this.colexistenciakg.Name = "colexistenciakg";
-            this.colexistenciakg.OptionsColumn.AllowEdit = false;
-            this.colexistenciakg.Visible = true;
-            this.colexistenciakg.VisibleIndex = 5;
-            this.colexistenciakg.Width = 176;
-            // 
-            // colProducto1
-            // 
-            this.colProducto1.Caption = "N Producto";
-            this.colProducto1.FieldName = "Producto";
-            this.colProducto1.Name = "colProducto1";
-            this.colProducto1.OptionsColumn.AllowEdit = false;
-            this.colProducto1.Visible = true;
-            this.colProducto1.VisibleIndex = 2;
-            this.colProducto1.Width = 312;
-            // 
-            // collote_producto_termiado
-            // 
-            this.collote_producto_termiado.Caption = "Lote";
-            this.collote_producto_termiado.FieldName = "lote_producto_termiado";
-            this.collote_producto_termiado.Name = "collote_producto_termiado";
-            this.collote_producto_termiado.OptionsColumn.AllowEdit = false;
-            this.collote_producto_termiado.Visible = true;
-            this.collote_producto_termiado.VisibleIndex = 3;
-            this.collote_producto_termiado.Width = 122;
-            // 
-            // colwhs_equivalente
-            // 
-            this.colwhs_equivalente.Caption = "Bodega";
-            this.colwhs_equivalente.FieldName = "whs_equivalente";
-            this.colwhs_equivalente.Name = "colwhs_equivalente";
-            this.colwhs_equivalente.OptionsColumn.AllowEdit = false;
-            this.colwhs_equivalente.Visible = true;
-            this.colwhs_equivalente.VisibleIndex = 0;
-            this.colwhs_equivalente.Width = 138;
-            // 
-            // colbodega
-            // 
-            this.colbodega.FieldName = "bodega";
-            this.colbodega.Name = "colbodega";
-            this.colbodega.OptionsColumn.AllowEdit = false;
-            // 
-            // colfecha_produccion
-            // 
-            this.colfecha_produccion.Caption = "F. Produccion";
-            this.colfecha_produccion.FieldName = "fecha_produccion";
-            this.colfecha_produccion.Name = "colfecha_produccion";
-            this.colfecha_produccion.OptionsColumn.AllowEdit = false;
-            this.colfecha_produccion.Width = 112;
-            // 
-            // colfecha_vencimiento
-            // 
-            this.colfecha_vencimiento.Caption = "F. Vencimiento";
-            this.colfecha_vencimiento.FieldName = "fecha_vencimiento";
-            this.colfecha_vencimiento.Name = "colfecha_vencimiento";
-            this.colfecha_vencimiento.OptionsColumn.AllowEdit = false;
-            this.colfecha_vencimiento.Width = 112;
-            // 
-            // colvencer
-            // 
-            this.colvencer.Caption = "Días para vencer";
-            this.colvencer.FieldName = "vencer";
-            this.colvencer.Name = "colvencer";
-            this.colvencer.OptionsColumn.AllowEdit = false;
-            this.colvencer.Width = 112;
-            // 
-            // colRetenido
-            // 
-            this.colRetenido.Caption = "Observaciones";
-            this.colRetenido.FieldName = "Retenido";
-            this.colRetenido.Name = "colRetenido";
-            this.colRetenido.OptionsColumn.AllowEdit = false;
-            this.colRetenido.Width = 109;
-            // 
-            // coltm1
-            // 
-            this.coltm1.Caption = "Toneladas";
-            this.coltm1.DisplayFormat.FormatString = "{0:0.##.##} TM";
-            this.coltm1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.coltm1.FieldName = "tm";
-            this.coltm1.Name = "coltm1";
-            this.coltm1.OptionsColumn.AllowEdit = false;
-            this.coltm1.Visible = true;
-            this.coltm1.VisibleIndex = 6;
-            this.coltm1.Width = 248;
             // 
             // tabNavigationPage2
             // 
@@ -334,7 +187,6 @@ namespace LOSA.Reportes
             // grd_inventario_Tilapia
             // 
             this.grd_inventario_Tilapia.DataMember = "inventario";
-            this.grd_inventario_Tilapia.DataSource = this.dsReportesInventario;
             this.grd_inventario_Tilapia.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grd_inventario_Tilapia.Location = new System.Drawing.Point(0, 0);
             this.grd_inventario_Tilapia.MainView = this.grdv_inventario_Tilapia;
@@ -537,6 +389,76 @@ namespace LOSA.Reportes
             this.cmdAjuste.Text = "Ajuste de Inventario";
             this.cmdAjuste.Click += new System.EventHandler(this.cmdAjuste_Click);
             // 
+            // dsReportesInventario1
+            // 
+            this.dsReportesInventario1.DataSetName = "dsReportesInventario";
+            this.dsReportesInventario1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // colid_pt
+            // 
+            this.colid_pt.FieldName = "id_pt";
+            this.colid_pt.Name = "colid_pt";
+            // 
+            // colcode_sap
+            // 
+            this.colcode_sap.Caption = "Cod. SAP";
+            this.colcode_sap.FieldName = "code_sap";
+            this.colcode_sap.Name = "colcode_sap";
+            this.colcode_sap.OptionsColumn.AllowEdit = false;
+            this.colcode_sap.Visible = true;
+            this.colcode_sap.VisibleIndex = 0;
+            // 
+            // colProducto
+            // 
+            this.colProducto.Caption = "N Producto";
+            this.colProducto.FieldName = "Producto";
+            this.colProducto.Name = "colProducto";
+            this.colProducto.OptionsColumn.AllowEdit = false;
+            this.colProducto.Visible = true;
+            this.colProducto.VisibleIndex = 1;
+            // 
+            // collote_pt
+            // 
+            this.collote_pt.Caption = "Lote";
+            this.collote_pt.FieldName = "lote_pt";
+            this.collote_pt.Name = "collote_pt";
+            this.collote_pt.OptionsColumn.AllowEdit = false;
+            this.collote_pt.Visible = true;
+            this.collote_pt.VisibleIndex = 2;
+            // 
+            // colexistencia
+            // 
+            this.colexistencia.Caption = "Unidades";
+            this.colexistencia.DisplayFormat.FormatString = "{0:0.##.##} Ud";
+            this.colexistencia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colexistencia.FieldName = "existencia";
+            this.colexistencia.Name = "colexistencia";
+            this.colexistencia.OptionsColumn.AllowEdit = false;
+            this.colexistencia.Visible = true;
+            this.colexistencia.VisibleIndex = 3;
+            // 
+            // colkilogramos
+            // 
+            this.colkilogramos.Caption = "Kilogramos";
+            this.colkilogramos.DisplayFormat.FormatString = "{0:0.##.##} Kg";
+            this.colkilogramos.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colkilogramos.FieldName = "kilogramos";
+            this.colkilogramos.Name = "colkilogramos";
+            this.colkilogramos.OptionsColumn.AllowEdit = false;
+            this.colkilogramos.Visible = true;
+            this.colkilogramos.VisibleIndex = 4;
+            // 
+            // coltm
+            // 
+            this.coltm.Caption = "Toneladas";
+            this.coltm.DisplayFormat.FormatString = "{0:0.##.##} TM";
+            this.coltm.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.coltm.FieldName = "tm";
+            this.coltm.Name = "coltm";
+            this.coltm.OptionsColumn.AllowEdit = false;
+            this.coltm.Visible = true;
+            this.coltm.VisibleIndex = 5;
+            // 
             // frmReporteGeneralProductoTermnado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -556,11 +478,11 @@ namespace LOSA.Reportes
             this.tabPane1.ResumeLayout(false);
             this.tabNavigationPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grd_inventario_camaron)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsReportesInventario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_inventario_camaron)).EndInit();
             this.tabNavigationPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grd_inventario_Tilapia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_inventario_Tilapia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsReportesInventario1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -573,20 +495,6 @@ namespace LOSA.Reportes
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage1;
         private DevExpress.XtraGrid.GridControl grd_inventario_camaron;
         private DevExpress.XtraGrid.Views.Grid.GridView grdv_inventario_camaron;
-        private DevExpress.XtraGrid.Columns.GridColumn colid_producto_termiado;
-        private DevExpress.XtraGrid.Columns.GridColumn colCodigo;
-        private DevExpress.XtraGrid.Columns.GridColumn colcode_sap;
-        private DevExpress.XtraGrid.Columns.GridColumn colexistencia;
-        private DevExpress.XtraGrid.Columns.GridColumn colexistenciakg;
-        private DevExpress.XtraGrid.Columns.GridColumn colProducto1;
-        private DevExpress.XtraGrid.Columns.GridColumn collote_producto_termiado;
-        private DevExpress.XtraGrid.Columns.GridColumn colwhs_equivalente;
-        private DevExpress.XtraGrid.Columns.GridColumn colbodega;
-        private DevExpress.XtraGrid.Columns.GridColumn colfecha_produccion;
-        private DevExpress.XtraGrid.Columns.GridColumn colfecha_vencimiento;
-        private DevExpress.XtraGrid.Columns.GridColumn colvencer;
-        private DevExpress.XtraGrid.Columns.GridColumn colRetenido;
-        private DevExpress.XtraGrid.Columns.GridColumn coltm1;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage2;
         private DevExpress.XtraGrid.GridControl grd_inventario_Tilapia;
         private DevExpress.XtraGrid.Views.Grid.GridView grdv_inventario_Tilapia;
@@ -604,8 +512,15 @@ namespace LOSA.Reportes
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
-        private dsReportesInventario dsReportesInventario;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton cmdAjuste;
+        private dsReportesInventario dsReportesInventario1;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_pt;
+        private DevExpress.XtraGrid.Columns.GridColumn colcode_sap;
+        private DevExpress.XtraGrid.Columns.GridColumn colProducto;
+        private DevExpress.XtraGrid.Columns.GridColumn collote_pt;
+        private DevExpress.XtraGrid.Columns.GridColumn colexistencia;
+        private DevExpress.XtraGrid.Columns.GridColumn colkilogramos;
+        private DevExpress.XtraGrid.Columns.GridColumn coltm;
     }
 }

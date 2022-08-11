@@ -32,7 +32,7 @@ namespace LOSA.TransaccionesPT
             LoadPresentaciones();
             radioLoteExistente.Checked = true;
             txtNumLote.Visible = true;
-            txtLoteNuevo.Visible = false;
+            //txtLoteNuevo.Visible = false;
             LoadMaestrosBodegas();
         }
 
@@ -85,7 +85,7 @@ namespace LOSA.TransaccionesPT
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 txtNumLote.Text = Convert.ToString(frm.lot_number);
-                ItemCode = frm.ItemCode;
+                ItemCode = frm.code_sap;
             }
         }
 
@@ -147,13 +147,6 @@ namespace LOSA.TransaccionesPT
             {
                 CajaDialogo.Error(ex.Message);
             }
-
-            if (radioLoteNuevo.Checked)
-            {
-                spinEditPesoKg.EditValue = (factorValue * cantidad_).ToString();
-            }
-            else
-                spinEditPesoKg.EditValue = (factorValue * cantidad_).ToString();
         }
 
         private void cmdGuardar_Click(object sender, EventArgs e)
@@ -205,7 +198,7 @@ namespace LOSA.TransaccionesPT
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@cantidad_in", Convert.ToDecimal(txtCantidadUnidades.Text));
                         cmd.Parameters.AddWithValue("@cantidad_out", 0);
-                        cmd.Parameters.AddWithValue("@tipo_op", 1);//Entrada
+                        //cmd.Parameters.AddWithValue("@tipo_op", 1);//Entrada
                         //cmd.Parameters.AddWithValue("@id_tarima", null); //No nos interesa la tarima
                         cmd.Parameters.AddWithValue("@peso_in", spinEditPesoKg.EditValue);
                         cmd.Parameters.AddWithValue("@peso_out", 0);
@@ -214,8 +207,15 @@ namespace LOSA.TransaccionesPT
                         cmd.Parameters.AddWithValue("@lote_pt",txtNumLote.Text);
                         cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
                         cmd.Parameters.AddWithValue("@fecha_doc", dtFechaDocumento.EditValue);
-                        cmd.Parameters.AddWithValue("@id_bodega_origen", gridLookUpEditOrigen.EditValue);
-                        cmd.Parameters.AddWithValue("@id_bodega_destino", gridLookUpEditDestino.EditValue);
+                        if (dp.ValidateNumberInt32(gridLookUpEditOrigen.EditValue) > 0)
+                            cmd.Parameters.AddWithValue("@id_bodega_origen", gridLookUpEditOrigen.EditValue);
+                        else
+                            cmd.Parameters.AddWithValue("@id_bodega_origen", DBNull.Value);
+
+                        if (dp.ValidateNumberInt32(gridLookUpEditDestino.EditValue) > 0)
+                            cmd.Parameters.AddWithValue("@id_bodega_destino", gridLookUpEditDestino.EditValue);
+                        else
+                            cmd.Parameters.AddWithValue("@id_bodega_destino", DBNull.Value);
                         cmd.Parameters.AddWithValue("@int_tipo_op", 1); // 1 Es Entrada
                         cmd.Parameters.AddWithValue("@ItemCode", ItemCode);
                         cmd.ExecuteNonQuery();
@@ -230,39 +230,7 @@ namespace LOSA.TransaccionesPT
                         CajaDialogo.Error(ex.Message);
                     }
                 }
-                if (radioLoteNuevo.Checked)
-                {
-                    try
-                    {
-                        SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
-                        conn.Open();
-                        SqlCommand cmd = new SqlCommand("sp_insert_ajuste_kardex_pt", conn);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@cantidad_in", Convert.ToDecimal(txtCantidadUnidades.Text));
-                        cmd.Parameters.AddWithValue("@cantidad_out", 0);
-                        cmd.Parameters.AddWithValue("@tipo_op", 1);//Entrada
-                        //cmd.Parameters.AddWithValue("@id_tarima", null);
-                        cmd.Parameters.AddWithValue("@peso_in", spinEditPesoKg.EditValue);
-                        cmd.Parameters.AddWithValue("@peso_out", 0);
-                        //cmd.Parameters.AddWithValue("@id_doc", null);
-                        cmd.Parameters.AddWithValue("@id_pt", Id_PT);
-                        cmd.Parameters.AddWithValue("@lote_pt", txtLoteNuevo.Text);
-                        cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
-                        cmd.Parameters.AddWithValue("@fecha_doc", dtFechaDocumento.EditValue);
-                        cmd.Parameters.AddWithValue("@id_bodega_origen", gridLookUpEditOrigen.EditValue);
-                        cmd.Parameters.AddWithValue("@id_bodega_destino", gridLookUpEditDestino.EditValue);
-                        cmd.Parameters.AddWithValue("@int_tipo_op", 1); // 1 Es Entrada
-                        cmd.ExecuteNonQuery();
-
-                        CajaDialogo.Information("Transaccion de Entrada Exitosa!");
-                        this.DialogResult = DialogResult.OK;
-                        this.Close();
-                    }
-                    catch (Exception ex)
-                    {
-                        CajaDialogo.Error(ex.Message);
-                    }
-                }
+                
             }
             if (tsTipoTransaccion.IsOn == false) //SALIDA EN EL KARDEX GENERAL
             {
@@ -276,7 +244,7 @@ namespace LOSA.TransaccionesPT
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@cantidad_in", 0);
                         cmd.Parameters.AddWithValue("@cantidad_out", Convert.ToDecimal(txtCantidadUnidades.Text));
-                        cmd.Parameters.AddWithValue("@tipo_op", 0); //Salida
+                        //cmd.Parameters.AddWithValue("@tipo_op", 0); //Salida
                         //cmd.Parameters.AddWithValue("@id_tarima", null);
                         cmd.Parameters.AddWithValue("@peso_in", 0);
                         cmd.Parameters.AddWithValue("@peso_out", spinEditPesoKg.EditValue);
@@ -285,8 +253,15 @@ namespace LOSA.TransaccionesPT
                         cmd.Parameters.AddWithValue("@lote_pt", txtNumLote.Text);
                         cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
                         cmd.Parameters.AddWithValue("@fecha_doc", dtFechaDocumento.EditValue);
-                        cmd.Parameters.AddWithValue("@id_bodega_origen", gridLookUpEditOrigen.EditValue);
-                        cmd.Parameters.AddWithValue("@id_bodega_destino", gridLookUpEditDestino.EditValue);
+                        if (dp.ValidateNumberInt32(gridLookUpEditOrigen.EditValue) > 0)
+                            cmd.Parameters.AddWithValue("@id_bodega_origen", gridLookUpEditOrigen.EditValue);
+                        else
+                            cmd.Parameters.AddWithValue("@id_bodega_origen", DBNull.Value);
+
+                        if (dp.ValidateNumberInt32(gridLookUpEditDestino.EditValue) > 0)
+                            cmd.Parameters.AddWithValue("@id_bodega_destino", gridLookUpEditDestino.EditValue);
+                        else
+                            cmd.Parameters.AddWithValue("@id_bodega_destino", DBNull.Value);
                         cmd.Parameters.AddWithValue("@int_tipo_op", 2); // 2 Es Salida
                         cmd.Parameters.AddWithValue("@ItemCode", ItemCode);
                         cmd.ExecuteNonQuery();
@@ -306,14 +281,14 @@ namespace LOSA.TransaccionesPT
         private void radioLoteExistente_CheckedChanged(object sender, EventArgs e)
         {
             txtNumLote.Visible = true;
-            txtLoteNuevo.Visible = false;
+            //txtLoteNuevo.Visible = false;
             
         }
 
         private void radioLoteNuevo_CheckedChanged(object sender, EventArgs e)
         {
             txtNumLote.Visible = false;
-            txtLoteNuevo.Visible = false;
+            //txtLoteNuevo.Visible = false;
             spinEditPesoKg.EditValue = 0;
             txtCantidadUnidades.Text = "0";
         }
@@ -322,14 +297,14 @@ namespace LOSA.TransaccionesPT
         {
             if (tsTipoTransaccion.IsOn == true)
             {
-                radioLoteNuevo.Checked = false;
-                radioLoteNuevo.Visible = false;
+                //radioLoteNuevo.Checked = false;
+                //radioLoteNuevo.Visible = false;
                 radioLoteExistente.Checked = true;
             }
             else
             {
-                radioLoteNuevo.Checked = false;
-                radioLoteNuevo.Visible = false;
+                //radioLoteNuevo.Checked = false;
+                //radioLoteNuevo.Visible = false;
                 radioLoteExistente.Checked = true;
             }
         }

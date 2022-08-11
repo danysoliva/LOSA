@@ -45,8 +45,8 @@ namespace LOSA.Reportes
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Especie", Especie);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                dsReportesInventario.inventario.Clear();
-                da.Fill(dsReportesInventario.inventario);
+                dsReportesInventario1.inventario_kardex.Clear();
+                da.Fill(dsReportesInventario1.inventario_kardex);
                 cn.Close();
             }
             catch (Exception ex)
