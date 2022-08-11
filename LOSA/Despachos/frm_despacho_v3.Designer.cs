@@ -159,7 +159,7 @@ namespace LOSA.Despachos
             // 
             this.txtDocumento.EditValue = "0";
             this.txtDocumento.Enabled = false;
-            this.txtDocumento.Location = new System.Drawing.Point(429, 70);
+            this.txtDocumento.Location = new System.Drawing.Point(423, 60);
             this.txtDocumento.Name = "txtDocumento";
             this.txtDocumento.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDocumento.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -170,14 +170,14 @@ namespace LOSA.Despachos
             this.txtDocumento.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtDocumento.Properties.NullText = "0";
             this.txtDocumento.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtDocumento.Size = new System.Drawing.Size(79, 28);
+            this.txtDocumento.Size = new System.Drawing.Size(165, 28);
             this.txtDocumento.TabIndex = 125;
             // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(203, 71);
+            this.labelControl1.Location = new System.Drawing.Point(197, 61);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(220, 25);
             this.labelControl1.TabIndex = 124;
@@ -189,7 +189,7 @@ namespace LOSA.Despachos
             this.beTarima.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.beTarima.EditValue = "";
-            this.beTarima.Location = new System.Drawing.Point(308, 270);
+            this.beTarima.Location = new System.Drawing.Point(308, 334);
             this.beTarima.Name = "beTarima";
             this.beTarima.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.beTarima.Properties.Appearance.Options.UseFont = true;
@@ -209,7 +209,7 @@ namespace LOSA.Despachos
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(197, 273);
+            this.labelControl4.Location = new System.Drawing.Point(197, 337);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(110, 37);
             this.labelControl4.TabIndex = 128;
@@ -221,10 +221,10 @@ namespace LOSA.Despachos
             this.gridControl1.DataSource = this.ds_despachos;
             this.gridControl1.EmbeddedNavigator.Appearance.BackColor = System.Drawing.SystemColors.Control;
             this.gridControl1.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
-            this.gridControl1.Location = new System.Drawing.Point(197, 106);
+            this.gridControl1.Location = new System.Drawing.Point(197, 96);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(311, 158);
+            this.gridControl1.Size = new System.Drawing.Size(391, 119);
             this.gridControl1.TabIndex = 126;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -410,7 +410,7 @@ namespace LOSA.Despachos
             this.panelNotificacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelNotificacion.Controls.Add(this.lblMensaje);
             this.panelNotificacion.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelNotificacion.Location = new System.Drawing.Point(0, 624);
+            this.panelNotificacion.Location = new System.Drawing.Point(0, 718);
             this.panelNotificacion.Name = "panelNotificacion";
             this.panelNotificacion.Size = new System.Drawing.Size(1106, 49);
             this.panelNotificacion.TabIndex = 129;
@@ -453,10 +453,10 @@ namespace LOSA.Despachos
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_tm.DataMember = "producto_carga";
             this.grd_tm.DataSource = this.ds_despachos;
-            this.grd_tm.Location = new System.Drawing.Point(2, 510);
+            this.grd_tm.Location = new System.Drawing.Point(0, 572);
             this.grd_tm.MainView = this.grdv_tm;
             this.grd_tm.Name = "grd_tm";
-            this.grd_tm.Size = new System.Drawing.Size(1105, 112);
+            this.grd_tm.Size = new System.Drawing.Size(1106, 144);
             this.grd_tm.TabIndex = 130;
             this.grd_tm.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_tm});
@@ -560,7 +560,7 @@ namespace LOSA.Despachos
             | System.Windows.Forms.AnchorStyles.Left)));
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(11, 476);
+            this.labelControl5.Location = new System.Drawing.Point(12, 541);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(182, 25);
             this.labelControl5.TabIndex = 136;
@@ -572,7 +572,7 @@ namespace LOSA.Despachos
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(744, 480);
+            this.labelControl2.Location = new System.Drawing.Point(744, 540);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(83, 24);
             this.labelControl2.TabIndex = 135;
@@ -583,7 +583,7 @@ namespace LOSA.Despachos
             this.txtPeso.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPeso.EditValue = "0";
-            this.txtPeso.Location = new System.Drawing.Point(939, 474);
+            this.txtPeso.Location = new System.Drawing.Point(939, 536);
             this.txtPeso.Name = "txtPeso";
             this.txtPeso.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPeso.Properties.Appearance.Options.UseFont = true;
@@ -599,7 +599,7 @@ namespace LOSA.Despachos
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(747, 440);
+            this.labelControl7.Location = new System.Drawing.Point(744, 506);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(80, 24);
             this.labelControl7.TabIndex = 134;
@@ -610,7 +610,7 @@ namespace LOSA.Despachos
             this.txtCantidadT.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCantidadT.EditValue = "0";
-            this.txtCantidadT.Location = new System.Drawing.Point(939, 436);
+            this.txtCantidadT.Location = new System.Drawing.Point(939, 502);
             this.txtCantidadT.Name = "txtCantidadT";
             this.txtCantidadT.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCantidadT.Properties.Appearance.Options.UseFont = true;
@@ -628,7 +628,7 @@ namespace LOSA.Despachos
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcTarima.EmbeddedNavigator.Appearance.BackColor = System.Drawing.SystemColors.Control;
             this.gcTarima.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
-            this.gcTarima.Location = new System.Drawing.Point(197, 317);
+            this.gcTarima.Location = new System.Drawing.Point(197, 381);
             this.gcTarima.MainView = this.gvTarima;
             this.gcTarima.Name = "gcTarima";
             this.gcTarima.Size = new System.Drawing.Size(897, 116);
@@ -835,7 +835,7 @@ namespace LOSA.Despachos
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 673);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 767);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Size = new System.Drawing.Size(1106, 23);
             // 
@@ -845,7 +845,7 @@ namespace LOSA.Despachos
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 673);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 767);
             // 
             // barDockControlRight
             // 
@@ -853,7 +853,7 @@ namespace LOSA.Despachos
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1106, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 673);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 767);
             // 
             // barButtonItem1
             // 
@@ -973,17 +973,31 @@ namespace LOSA.Despachos
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridDetalleDespacho.DataMember = "despacho_estado_detalle";
             this.gridDetalleDespacho.DataSource = this.dsTransaccionesDespacho1;
-            this.gridDetalleDespacho.Location = new System.Drawing.Point(514, 69);
+            this.gridDetalleDespacho.Location = new System.Drawing.Point(197, 221);
             this.gridDetalleDespacho.MainView = this.gridView2;
             this.gridDetalleDespacho.MenuManager = this.barManager1;
             this.gridDetalleDespacho.Name = "gridDetalleDespacho";
-            this.gridDetalleDespacho.Size = new System.Drawing.Size(313, 195);
+            this.gridDetalleDespacho.Size = new System.Drawing.Size(558, 108);
             this.gridDetalleDespacho.TabIndex = 153;
             this.gridDetalleDespacho.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             // 
             // gridView2
             // 
+            this.gridView2.Appearance.HeaderPanel.BackColor = System.Drawing.Color.Silver;
+            this.gridView2.Appearance.HeaderPanel.BorderColor = System.Drawing.Color.Silver;
+            this.gridView2.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView2.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
+            this.gridView2.Appearance.HeaderPanel.Options.UseBackColor = true;
+            this.gridView2.Appearance.HeaderPanel.Options.UseBorderColor = true;
+            this.gridView2.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView2.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.gridView2.Appearance.Row.BackColor = System.Drawing.Color.White;
+            this.gridView2.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView2.Appearance.Row.ForeColor = System.Drawing.Color.Black;
+            this.gridView2.Appearance.Row.Options.UseBackColor = true;
+            this.gridView2.Appearance.Row.Options.UseFont = true;
+            this.gridView2.Appearance.Row.Options.UseForeColor = true;
             this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colitemcode,
             this.colNombrePT,
@@ -1080,7 +1094,7 @@ namespace LOSA.Despachos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1106, 696);
+            this.ClientSize = new System.Drawing.Size(1106, 790);
             this.Controls.Add(this.gridDetalleDespacho);
             this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.Anden7);

@@ -51,6 +51,7 @@ namespace LOSA.Despachos
             this.colSeleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colAnden = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colconductor = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds_despachos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
@@ -67,7 +68,7 @@ namespace LOSA.Despachos
             this.btnatras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnatras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnatras.ImageOptions.Image")));
             this.btnatras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnatras.Location = new System.Drawing.Point(613, 7);
+            this.btnatras.Location = new System.Drawing.Point(598, 28);
             this.btnatras.Name = "btnatras";
             this.btnatras.Size = new System.Drawing.Size(109, 44);
             this.btnatras.TabIndex = 48;
@@ -84,7 +85,7 @@ namespace LOSA.Despachos
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(136, 12);
+            this.labelControl1.Location = new System.Drawing.Point(138, 28);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(398, 40);
             this.labelControl1.TabIndex = 49;
@@ -144,7 +145,8 @@ namespace LOSA.Despachos
             this.colplaca,
             this.colfurgon,
             this.colSeleccionar,
-            this.colAnden});
+            this.colAnden,
+            this.colconductor});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
@@ -208,7 +210,7 @@ namespace LOSA.Despachos
             this.colplaca.Name = "colplaca";
             this.colplaca.OptionsColumn.AllowEdit = false;
             this.colplaca.Visible = true;
-            this.colplaca.VisibleIndex = 5;
+            this.colplaca.VisibleIndex = 6;
             // 
             // colfurgon
             // 
@@ -217,7 +219,7 @@ namespace LOSA.Despachos
             this.colfurgon.Name = "colfurgon";
             this.colfurgon.OptionsColumn.AllowEdit = false;
             this.colfurgon.Visible = true;
-            this.colfurgon.VisibleIndex = 6;
+            this.colfurgon.VisibleIndex = 7;
             // 
             // colSeleccionar
             // 
@@ -225,7 +227,7 @@ namespace LOSA.Despachos
             this.colSeleccionar.ColumnEdit = this.btnSeleccionar;
             this.colSeleccionar.Name = "colSeleccionar";
             this.colSeleccionar.Visible = true;
-            this.colSeleccionar.VisibleIndex = 7;
+            this.colSeleccionar.VisibleIndex = 8;
             // 
             // btnSeleccionar
             // 
@@ -245,6 +247,14 @@ namespace LOSA.Despachos
             this.colAnden.OptionsColumn.AllowEdit = false;
             this.colAnden.Visible = true;
             this.colAnden.VisibleIndex = 0;
+            // 
+            // colconductor
+            // 
+            this.colconductor.Caption = "Conductor";
+            this.colconductor.FieldName = "conductor";
+            this.colconductor.Name = "colconductor";
+            this.colconductor.Visible = true;
+            this.colconductor.VisibleIndex = 5;
             // 
             // frmSeleccionAnden
             // 
@@ -284,5 +294,6 @@ namespace LOSA.Despachos
         private DevExpress.XtraGrid.Columns.GridColumn colSeleccionar;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnSeleccionar;
         private DevExpress.XtraGrid.Columns.GridColumn colAnden;
+        private DevExpress.XtraGrid.Columns.GridColumn colconductor;
     }
 }
