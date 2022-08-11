@@ -45,7 +45,7 @@ namespace LOSA.Despachos
         }
         public void load_infor() 
         {
-            string query = @"sp_load_view";
+            string query = @"sp_load_viewV2";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             try
             {

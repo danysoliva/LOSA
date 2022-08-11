@@ -60,15 +60,15 @@
             // 
             this.btnAtras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAtras.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnAtras.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtras.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAtras.Appearance.Options.UseBackColor = true;
             this.btnAtras.Appearance.Options.UseFont = true;
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(561, 9);
+            this.btnAtras.Location = new System.Drawing.Point(573, 32);
             this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(157, 69);
+            this.btnAtras.Size = new System.Drawing.Size(114, 57);
             this.btnAtras.TabIndex = 34;
             this.btnAtras.Text = "Atras";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
@@ -98,13 +98,13 @@
             this.grd_despachos.DataMember = "orden_venta";
             this.grd_despachos.DataSource = this.ds_despachos;
             this.grd_despachos.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grd_despachos.Location = new System.Drawing.Point(-2, 85);
+            this.grd_despachos.Location = new System.Drawing.Point(-2, 103);
             this.grd_despachos.MainView = this.grdv_despachos;
             this.grd_despachos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grd_despachos.Name = "grd_despachos";
             this.grd_despachos.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btn_ver});
-            this.grd_despachos.Size = new System.Drawing.Size(731, 477);
+            this.grd_despachos.Size = new System.Drawing.Size(731, 459);
             this.grd_despachos.TabIndex = 36;
             this.grd_despachos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_despachos});
@@ -240,15 +240,15 @@
             // btnNuevoOrdenCarga
             // 
             this.btnNuevoOrdenCarga.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnNuevoOrdenCarga.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.btnNuevoOrdenCarga.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoOrdenCarga.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btnNuevoOrdenCarga.Appearance.Options.UseBackColor = true;
             this.btnNuevoOrdenCarga.Appearance.Options.UseFont = true;
             this.btnNuevoOrdenCarga.Appearance.Options.UseForeColor = true;
             this.btnNuevoOrdenCarga.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnNuevoOrdenCarga.Location = new System.Drawing.Point(12, 12);
+            this.btnNuevoOrdenCarga.Location = new System.Drawing.Point(12, 32);
             this.btnNuevoOrdenCarga.Name = "btnNuevoOrdenCarga";
-            this.btnNuevoOrdenCarga.Size = new System.Drawing.Size(154, 66);
+            this.btnNuevoOrdenCarga.Size = new System.Drawing.Size(127, 57);
             this.btnNuevoOrdenCarga.TabIndex = 37;
             this.btnNuevoOrdenCarga.Text = "Orden de \r\ncarga manual";
             this.btnNuevoOrdenCarga.Click += new System.EventHandler(this.btnNuevoOrdenCarga_Click);
