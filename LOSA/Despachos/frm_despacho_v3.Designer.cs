@@ -29,16 +29,17 @@ namespace LOSA.Despachos
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_despacho_v3));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.ds_despachos = new LOSA.Despachos.ds_despachos();
-            this.timerLimpiarMensaje = new System.Windows.Forms.Timer();
+            this.timerLimpiarMensaje = new System.Windows.Forms.Timer(this.components);
             this.txtDocumento = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.beTarima = new DevExpress.XtraEditors.ButtonEdit();
@@ -66,8 +67,8 @@ namespace LOSA.Despachos
             this.txtCantidadT = new DevExpress.XtraEditors.TextEdit();
             this.gcTarima = new DevExpress.XtraGrid.GridControl();
             this.gvTarima = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.chEnable = new System.Windows.Forms.Timer();
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.chEnable = new System.Windows.Forms.Timer(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -169,7 +170,7 @@ namespace LOSA.Despachos
             this.txtDocumento.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtDocumento.Properties.NullText = "0";
             this.txtDocumento.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtDocumento.Size = new System.Drawing.Size(172, 28);
+            this.txtDocumento.Size = new System.Drawing.Size(79, 28);
             this.txtDocumento.TabIndex = 125;
             // 
             // labelControl1
@@ -192,9 +193,9 @@ namespace LOSA.Despachos
             this.beTarima.Name = "beTarima";
             this.beTarima.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.beTarima.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.beTarima.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.beTarima.Properties.MaxLength = 20;
             this.beTarima.Properties.NullText = "Escanee o selecciona una tarima";
             this.beTarima.Size = new System.Drawing.Size(749, 44);
@@ -223,7 +224,7 @@ namespace LOSA.Despachos
             this.gridControl1.Location = new System.Drawing.Point(197, 106);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(404, 158);
+            this.gridControl1.Size = new System.Drawing.Size(311, 158);
             this.gridControl1.TabIndex = 126;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -392,7 +393,7 @@ namespace LOSA.Despachos
             this.colColumna.Name = "colColumna";
             this.colColumna.Visible = true;
             this.colColumna.VisibleIndex = 0;
-            this.colColumna.Width = 171;
+            this.colColumna.Width = 128;
             // 
             // colDescripcion
             // 
@@ -401,7 +402,7 @@ namespace LOSA.Despachos
             this.colDescripcion.Name = "colDescripcion";
             this.colDescripcion.Visible = true;
             this.colDescripcion.VisibleIndex = 1;
-            this.colDescripcion.Width = 229;
+            this.colDescripcion.Width = 179;
             // 
             // panelNotificacion
             // 
@@ -422,7 +423,7 @@ namespace LOSA.Despachos
             this.lblMensaje.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMensaje.Location = new System.Drawing.Point(-5, 0);
             this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(1108, 45);
+            this.lblMensaje.Size = new System.Drawing.Size(1152, 45);
             this.lblMensaje.TabIndex = 99;
             // 
             // colproducto
@@ -972,11 +973,11 @@ namespace LOSA.Despachos
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridDetalleDespacho.DataMember = "despacho_estado_detalle";
             this.gridDetalleDespacho.DataSource = this.dsTransaccionesDespacho1;
-            this.gridDetalleDespacho.Location = new System.Drawing.Point(607, 69);
+            this.gridDetalleDespacho.Location = new System.Drawing.Point(514, 69);
             this.gridDetalleDespacho.MainView = this.gridView2;
             this.gridDetalleDespacho.MenuManager = this.barManager1;
             this.gridDetalleDespacho.Name = "gridDetalleDespacho";
-            this.gridDetalleDespacho.Size = new System.Drawing.Size(494, 195);
+            this.gridDetalleDespacho.Size = new System.Drawing.Size(313, 195);
             this.gridDetalleDespacho.TabIndex = 153;
             this.gridDetalleDespacho.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -1005,7 +1006,7 @@ namespace LOSA.Despachos
             this.colitemcode.OptionsColumn.AllowEdit = false;
             this.colitemcode.Visible = true;
             this.colitemcode.VisibleIndex = 0;
-            this.colitemcode.Width = 66;
+            this.colitemcode.Width = 58;
             // 
             // colNombrePT
             // 
@@ -1014,7 +1015,7 @@ namespace LOSA.Despachos
             this.colNombrePT.OptionsColumn.AllowEdit = false;
             this.colNombrePT.Visible = true;
             this.colNombrePT.VisibleIndex = 1;
-            this.colNombrePT.Width = 80;
+            this.colNombrePT.Width = 67;
             // 
             // colid_presentacion
             // 
@@ -1055,7 +1056,7 @@ namespace LOSA.Despachos
             this.colSolicitado.OptionsColumn.AllowEdit = false;
             this.colSolicitado.Visible = true;
             this.colSolicitado.VisibleIndex = 2;
-            this.colSolicitado.Width = 82;
+            this.colSolicitado.Width = 56;
             // 
             // colentregado
             // 
@@ -1064,7 +1065,7 @@ namespace LOSA.Despachos
             this.colentregado.OptionsColumn.AllowEdit = false;
             this.colentregado.Visible = true;
             this.colentregado.VisibleIndex = 3;
-            this.colentregado.Width = 82;
+            this.colentregado.Width = 59;
             // 
             // colPendiente
             // 
@@ -1073,7 +1074,7 @@ namespace LOSA.Despachos
             this.colPendiente.OptionsColumn.AllowEdit = false;
             this.colPendiente.Visible = true;
             this.colPendiente.VisibleIndex = 4;
-            this.colPendiente.Width = 94;
+            this.colPendiente.Width = 55;
             // 
             // frm_despacho_v3
             // 
