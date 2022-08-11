@@ -263,15 +263,23 @@ namespace LOSA
         private void cmdPT_Click(object sender, EventArgs e)
         {
             frmOptionMontaCarga frm = new frmOptionMontaCarga(UsuarioLogeado, 2);//pt
-            frm.WindowState = FormWindowState.Maximized;
+            //frm.WindowState = FormWindowState.Maximized;
+            if (this.MdiParent != null)
+            {
+                frm.MdiParent = this.MdiParent;
+                frm.FormBorderStyle = FormBorderStyle.Sizable;
+            }
             frm.Show();
         }
 
         private void cmdMP_Click(object sender, EventArgs e)
         {
             frmOptionMontaCarga frm = new frmOptionMontaCarga(UsuarioLogeado, 1);//MP
-            frm.WindowState = FormWindowState.Maximized;
-            frm.MdiParent = this.MdiParent;
+            if (this.MdiParent != null)
+            {
+                frm.MdiParent = this.MdiParent;
+                frm.FormBorderStyle = FormBorderStyle.Sizable;
+            }
             frm.Show();
 
 

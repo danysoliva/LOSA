@@ -62,7 +62,7 @@
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.cmdHome.Location = new System.Drawing.Point(436, 4);
+            this.cmdHome.Location = new System.Drawing.Point(703, 4);
             this.cmdHome.Name = "cmdHome";
             this.cmdHome.Size = new System.Drawing.Size(199, 71);
             this.cmdHome.TabIndex = 7;
@@ -79,7 +79,7 @@
             this.tabOpciones.Location = new System.Drawing.Point(4, 90);
             this.tabOpciones.Name = "tabOpciones";
             this.tabOpciones.SelectedTabPage = this.TabMateriaPrima;
-            this.tabOpciones.Size = new System.Drawing.Size(635, 469);
+            this.tabOpciones.Size = new System.Drawing.Size(902, 535);
             this.tabOpciones.TabIndex = 9;
             this.tabOpciones.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.TabMateriaPrima,
@@ -96,7 +96,7 @@
             this.TabMateriaPrima.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabMateriaPrima.ImageOptions.Image")));
             this.TabMateriaPrima.Name = "TabMateriaPrima";
             this.TabMateriaPrima.PageVisible = false;
-            this.TabMateriaPrima.Size = new System.Drawing.Size(629, 422);
+            this.TabMateriaPrima.Size = new System.Drawing.Size(896, 488);
             this.TabMateriaPrima.Text = "Materia Prima";
             // 
             // simpleButton3
@@ -197,7 +197,7 @@
             this.TabProductoTerminado.ImageOptions.Image = global::LOSA.Properties.Resources.Container_icon32px;
             this.TabProductoTerminado.Name = "TabProductoTerminado";
             this.TabProductoTerminado.PageVisible = false;
-            this.TabProductoTerminado.Size = new System.Drawing.Size(629, 422);
+            this.TabProductoTerminado.Size = new System.Drawing.Size(896, 488);
             this.TabProductoTerminado.Text = "Producto Terminado";
             // 
             // btntarimasactivadasPT
@@ -324,12 +324,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(638, 560);
+            this.ClientSize = new System.Drawing.Size(905, 626);
             this.Controls.Add(this.tabOpciones);
             this.Controls.Add(this.cmdHome);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmOptionMontaCarga";
-            this.Text = "frmOptionMontaCarga";
+            this.Text = "Opciones";
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).EndInit();
             this.tabOpciones.ResumeLayout(false);
             this.TabMateriaPrima.ResumeLayout(false);
