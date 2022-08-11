@@ -142,6 +142,7 @@ namespace LOSA.TransaccionesPT
             try
             {
                 cantidad_ = Convert.ToDecimal(txtCantidadUnidades.Text);
+                spinEditPesoKg.EditValue = (factorValue * cantidad_).ToString();
             }
             catch (Exception ex)
             {

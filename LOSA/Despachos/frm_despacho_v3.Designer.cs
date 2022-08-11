@@ -1009,8 +1009,11 @@ namespace LOSA.Despachos
             this.colSolicitado,
             this.colentregado,
             this.colPendiente});
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView2.GridControl = this.gridDetalleDespacho;
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsNavigation.AutoMoveRowFocus = false;
+            this.gridView2.OptionsSelection.InvertSelection = true;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
             // colitemcode

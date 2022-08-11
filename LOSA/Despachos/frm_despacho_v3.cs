@@ -581,11 +581,21 @@ namespace LOSA.Despachos
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 adat.Fill(dsTransaccionesDespacho1.despacho_estado_detalle);
                 con.Close();
+
+                //Quitar el focus a la row por default
+                FocusRowInGrid();
             }
             catch (Exception ec)
             {
                 CajaDialogo.Error(ec.Message);
             }
+        }
+
+        public void FocusRowInGrid()
+        {
+            var gridView = (GridView)gridControl1.FocusedView;
+            gridView.ClearSelection();
+            gridView1.UnselectRow(1);
         }
 
         private void chEnable_Tick(object sender, EventArgs e)
