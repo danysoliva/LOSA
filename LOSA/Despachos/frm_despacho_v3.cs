@@ -483,6 +483,7 @@ namespace LOSA.Despachos
                 if (error)
                 {
                     lblMensaje.Text = mensaje;
+                    lblMensaje.ForeColor = Color.White;
                     panelNotificacion.BackColor = Color.Red;
                     timerLimpiarMensaje.Enabled = true;
                     timerLimpiarMensaje.Start();
@@ -521,6 +522,7 @@ namespace LOSA.Despachos
                     {
                         //CajaDialogo.Error(ec.Message);
                         lblMensaje.Text = ec.Message;
+                        lblMensaje.ForeColor = Color.White;
                         panelNotificacion.BackColor = Color.Red;
                         timerLimpiarMensaje.Enabled = true;
                         timerLimpiarMensaje.Start();
@@ -541,6 +543,7 @@ namespace LOSA.Despachos
             {
                 lblMensaje.Text = "No se encontro el registro de la tarima!";
                 panelNotificacion.BackColor = Color.Red;
+                lblMensaje.ForeColor = Color.White;
                 timerLimpiarMensaje.Enabled = true;
                 timerLimpiarMensaje.Start();
             }
@@ -557,6 +560,32 @@ namespace LOSA.Despachos
 
         }
 
+        /// <summary>
+        /// Recibe el parametro de Id Despacho (int)
+        /// </summary>
+        /// <param name="p_id_h"></param>
+        void LoadDetalleDespachoStatus(int p_id_h)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_detalle_despacho_status", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_h", p_id_h);
+
+                dsTransaccionesDespacho1.despacho_estado_detalle.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsTransaccionesDespacho1.despacho_estado_detalle);
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
 
         private void chEnable_Tick(object sender, EventArgs e)
         {
@@ -748,6 +777,8 @@ namespace LOSA.Despachos
             }
             load_datar();
             load_filas();
+            if (N_Documento > 0)
+                LoadDetalleDespachoStatus(N_Documento);
         }
 
         public void load_filas()

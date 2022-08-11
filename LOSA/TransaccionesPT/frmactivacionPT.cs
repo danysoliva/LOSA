@@ -171,10 +171,26 @@ namespace LOSA.TransaccionesPT
                     con.Open();
 
                     //SqlCommand cmd = new SqlCommand("sp_set_insert_salida_tarima_bodega_mp", con);
-                    SqlCommand cmd = new SqlCommand("sp_activar_tarima_producto_terminado", con);  // Update de Data
+                    SqlCommand cmd = new SqlCommand("[sp_activar_tarima_producto_terminado_v2]", con);  // Update de Data
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id_selected", tarimaEncontrada.Id);
                     cmd.Parameters.AddWithValue("@codigo_barra", tarimaEncontrada.CodigoBarra);
+                    if (usuarioLogueado != null)
+                    {
+                        if (usuarioLogueado.Id > 0)
+                        {
+                            cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@id_usuario", DBNull.Value);
+                        }
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@id_usuario", DBNull.Value);
+                    }
+                    
                     Guardo = Convert.ToBoolean(cmd.ExecuteScalar());
                     con.Close();
                 }

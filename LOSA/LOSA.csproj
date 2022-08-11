@@ -13,7 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>\\aqfsvr003\Deploy%24\LOSA\</PublishUrl>
+    <PublishUrl>\\aqfsvr003\Deploy%24\LOSA64\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -23,8 +23,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>\\aqfsvr003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>363</ApplicationRevision>
+    <InstallUrl>\\aqfsvr003\Deploy%24\LOSA64\</InstallUrl>
+    <ApplicationRevision>364</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -911,6 +911,11 @@
     <Compile Include="Clases\Ubicaciones.cs" />
     <Compile Include="Clases\Ubicacion_Tarima.cs" />
     <Compile Include="Clases\UserLogin.cs" />
+    <Compile Include="Despachos\dsTransaccionesDespacho.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsTransaccionesDespacho.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Despachos\ds_despachos.cs">
       <DependentUpon>ds_despachos.xsd</DependentUpon>
     </Compile>
@@ -1791,6 +1796,17 @@
     </None>
     <None Include="Calidad\Revision_Sanidad\dsSanidad.xss">
       <DependentUpon>dsSanidad.xsd</DependentUpon>
+    </None>
+    <None Include="Despachos\dsTransaccionesDespacho.xsc">
+      <DependentUpon>dsTransaccionesDespacho.xsd</DependentUpon>
+    </None>
+    <None Include="Despachos\dsTransaccionesDespacho.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsTransaccionesDespacho.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Despachos\dsTransaccionesDespacho.xss">
+      <DependentUpon>dsTransaccionesDespacho.xsd</DependentUpon>
     </None>
     <None Include="Despachos\Reportes\dsReporte.xsc">
       <DependentUpon>dsReporte.xsd</DependentUpon>
