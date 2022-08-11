@@ -65,9 +65,10 @@ namespace LOSA.Reproceso
 
             int contador_print = 0;
             rptTarimaReproceso reportResumen = null;
-            for (int i = 0; i < gridView.RowCount; i++)
+            //for (int i = 0; i < gridView.RowCount; i++)
+            foreach(dsLogistica2.PT_Reproceso_TarimasRow row in dsLogistica21.PT_Reproceso_Tarimas)
             {
-                var row = (dsLogistica2.PT_Reproceso_TarimasRow)gridView.GetDataRow(i);
+                //var row = (dsLogistica2.PT_Reproceso_TarimasRow)gridView.GetDataRow(i);
 
                 //bool Error = false;
                 //string mensaje = " ";

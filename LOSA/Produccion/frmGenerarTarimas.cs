@@ -253,6 +253,11 @@ DataOperations dp = new DataOperations();
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+            PrintRotuloTarima(1);
+        }
+
+        private void PrintRotuloTarima(int vCantidadPrint)
+        {
             if (grdturno.EditValue == null)
             {
                 CajaDialogo.Error("Debe de seleccionar el turno");
@@ -274,53 +279,87 @@ DataOperations dp = new DataOperations();
                 CajaDialogo.Error("Debe especificar el saco final de la tarima.");
                 return;
             }
-            if (MessageBox.Show("Desea imprimir solo una hoja de este producto?","Pregunta", MessageBoxButtons.OKCancel,MessageBoxIcon.Question) == DialogResult.OK)
+
+            if (dt_fechaVencimiento != null)
             {
-                string query = @"sp_insert_tarima_pt_nuevo_v3";
-                try
+                if (dt_fechaVencimiento.DateTime.Year<2018)
                 {
-                    SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-                    cn.Open();
-                    int desde = Convert.ToInt32(txtdesde.Text);
-                    int hasta = Convert.ToInt32(txthasta.Text); 
-
-                    SqlCommand cmm = new SqlCommand("sp_generar_codigo_from_tables_id", cn);
-                    cmm.CommandType = CommandType.StoredProcedure;
-                    cmm.Parameters.AddWithValue("@id", 1);
-                    string barcode = cmm.ExecuteScalar().ToString();
-
-                    SqlCommand cmd = new SqlCommand(query, cn);
-                    cmd.CommandType = CommandType.StoredProcedure;                               
-                    cmd.Parameters.AddWithValue("@date_vencimiento", string.Format("{0:yyyy-MM-dd}", dt_fechaVencimiento.EditValue));
-                    cmd.Parameters.AddWithValue("@lote", lote);
-                    cmd.Parameters.AddWithValue("@id_presentacion", grdv_data.EditValue);
-                    cmd.Parameters.AddWithValue("@id_pt", id_pt);
-                    cmd.Parameters.AddWithValue("@date_produccion", string.Format("{0:yyyy-MM-dd}", dt_fechaFabricaion.EditValue));
-                    cmd.Parameters.AddWithValue("@cantidad", unidades);
-                    cmd.Parameters.AddWithValue("@peso", txtkg.Text.Trim());
-                    cmd.Parameters.AddWithValue("@itemcode", Itemcode.Trim());
-                    cmd.Parameters.AddWithValue("@id_alimentacion", id_alimentacion);   
-                    cmd.Parameters.AddWithValue("@Pcodigo_barra", barcode);
-                    cmd.Parameters.AddWithValue("@id_turno", grdturno.EditValue);
-                    cmd.Parameters.AddWithValue("@desde", desde);
-                    cmd.Parameters.AddWithValue("@hasta", hasta);
-
-                    int Id_tm = Convert.ToInt32(cmd.ExecuteScalar());
-                    cn.Close();
-                    tipoprinte = 0;
-                    rptReporteTarimaPT boleta = new rptReporteTarimaPT(Id_tm);
-                    boleta.ShowPrintMarginsWarning = false;
-                    ReportPrintTool printtool = new ReportPrintTool(boleta);
-                    printtool.Print();
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
-                }
-                catch (Exception ex)
-                {
-
-                    CajaDialogo.Error(ex.Message);
+                    CajaDialogo.Error("Ingrese una fecha de vencimiento valida!");
+                    return;
                 }
             }
+
+
+            string msj_ = "";
+            switch (vCantidadPrint)
+            {//
+                case 1:
+                    msj_ = "Desea imprimir solo una hoja de este producto?";
+                    break;
+                case 3:
+                    msj_ = "Desea imprimir tres (3) hojas de este producto?";
+                    break;
+                case 5:
+                    msj_ = "Desea imprimir cinco (5) hojas de este producto?";
+                    break;
+                case 25:
+                    msj_ = "Desea imprimir veinticinco (25) hojas de este producto?";
+                    break;
+                default:
+                    msj_ = "Desea imprimir solo una hoja de este producto?";
+                    break;
+            }
+            //if (MessageBox.Show(msj_, "Pregunta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            //{
+            //    string query = @"sp_insert_tarima_pt_nuevo_v3";
+            //    try
+            //    {
+            //        SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            //        cn.Open();
+            //        int desde = Convert.ToInt32(txtdesde.Text);
+            //        int hasta = Convert.ToInt32(txthasta.Text);
+
+            //        SqlCommand cmm = new SqlCommand("sp_generar_codigo_from_tables_id", cn);
+            //        cmm.CommandType = CommandType.StoredProcedure;
+            //        cmm.Parameters.AddWithValue("@id", 1);
+            //        string barcode = cmm.ExecuteScalar().ToString();
+
+            //        SqlCommand cmd = new SqlCommand(query, cn);
+            //        cmd.CommandType = CommandType.StoredProcedure;
+            //        cmd.Parameters.AddWithValue("@date_vencimiento", string.Format("{0:yyyy-MM-dd}", dt_fechaVencimiento.EditValue));
+            //        cmd.Parameters.AddWithValue("@lote", lote);
+            //        cmd.Parameters.AddWithValue("@id_presentacion", grdv_data.EditValue);
+            //        cmd.Parameters.AddWithValue("@id_pt", id_pt);
+            //        cmd.Parameters.AddWithValue("@date_produccion", string.Format("{0:yyyy-MM-dd}", dt_fechaFabricaion.EditValue));
+            //        cmd.Parameters.AddWithValue("@cantidad", unidades);
+            //        cmd.Parameters.AddWithValue("@peso", txtkg.Text.Trim());
+            //        cmd.Parameters.AddWithValue("@itemcode", Itemcode.Trim());
+            //        cmd.Parameters.AddWithValue("@id_alimentacion", id_alimentacion);
+            //        cmd.Parameters.AddWithValue("@Pcodigo_barra", barcode);
+            //        cmd.Parameters.AddWithValue("@id_turno", grdturno.EditValue);
+            //        cmd.Parameters.AddWithValue("@desde", desde);
+            //        cmd.Parameters.AddWithValue("@hasta", hasta);
+
+            //        int Id_tm = Convert.ToInt32(cmd.ExecuteScalar());
+            //        cn.Close();
+            //        tipoprinte = 0;
+            //        rptReporteTarimaPT boleta = new rptReporteTarimaPT(Id_tm);
+            //        boleta.ShowPrintMarginsWarning = false;
+            //        ReportPrintTool printtool = new ReportPrintTool(boleta);
+            //        printtool.Print();
+            //        this.DialogResult = DialogResult.OK;
+            //        this.Close();
+            //    }
+            //    catch (Exception ex)
+            //    {
+
+            //        CajaDialogo.Error(ex.Message);
+            //    }
+            //}
+            timerPrintMulti.Enabled = true;
+            tipoprinte = 0;
+            centinela_print_multi = vCantidadPrint;
+            timerPrintMulti.Start();
         }
 
         private void btn_print25_Click(object sender, EventArgs e)
@@ -402,9 +441,7 @@ DataOperations dp = new DataOperations();
 
         private void timerPrintMulti_Tick(object sender, EventArgs e)
         {
-
-
-            if (tipoprinte ==  0)
+            if (tipoprinte ==  0)//Impresion por primera vez
             {
                 if (centinela_print_multi > 0)
                 {
@@ -456,7 +493,6 @@ DataOperations dp = new DataOperations();
                     }
                     catch (Exception ex)
                     {
-
                         CajaDialogo.Error(ex.Message);
                     }
                 }
@@ -469,7 +505,7 @@ DataOperations dp = new DataOperations();
                     this.Close();
                 }
             }
-            else
+            else//Reimpresion
             {
                 if (centinela_print_multi > 0)
                 {

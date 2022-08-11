@@ -8112,6 +8112,7 @@ namespace LOSA.Logistica {
                 base.Columns.Add(this.columnseleccionado);
                 this.columnlote_materia_prima.Caption = "Lote";
                 this.columnpeso.Caption = "Peso";
+                this.columnseleccionado.Caption = "Seleccionado";
                 this.columnseleccionado.DefaultValue = ((bool)(false));
             }
             
