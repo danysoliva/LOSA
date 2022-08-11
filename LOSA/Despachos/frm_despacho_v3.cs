@@ -870,6 +870,48 @@ namespace LOSA.Despachos
             lblMensaje.Text = "";
             beTarima.Focus();
         }
+
+        private void gridView2_RowStyle(object sender, RowStyleEventArgs e)
+        {
+            GridView View = sender as GridView;
+            if (e.RowHandle >= 0)
+            {
+                decimal pendiente = Convert.ToDecimal(View.GetRowCellDisplayText(e.RowHandle, View.Columns["Pendiente"]));
+
+                if (pendiente <= 0)
+                {
+                    e.Appearance.BackColor = Color.LightGreen;
+                    
+                }
+                else
+                {
+                    e.Appearance.BackColor = Color.White;
+                }
+                //switch (Estado)
+                //{
+                //    case "10":
+                //        e.Appearance.BackColor = Color.FromArgb(158, 219, 149);
+                //        break;
+                //    case "20":
+                //        e.Appearance.BackColor = Color.FromArgb(255, 223, 102);
+                //        break;
+                //    case "30":
+                //        e.Appearance.BackColor = Color.FromArgb(169, 148, 129);
+                //        break;
+                //    case "40":
+                //        e.Appearance.BackColor = Color.FromArgb(88, 69, 54);
+                //        break;
+                //    case "50":
+                //        e.Appearance.BackColor = Color.FromArgb(255, 223, 102);
+                //        break;
+                //    case "70":
+                //        e.Appearance.BackColor = Color.FromArgb(158, 158, 158);
+                //        break;
+                //    default:
+                //        break;
+                //}
+            }
+        }
     }
      
 }
