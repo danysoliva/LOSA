@@ -1937,6 +1937,8 @@ namespace LOSA.Reportes {
             
             private global::System.Data.DataColumn columnTm;
             
+            private global::System.Data.DataColumn columnDataColumn1;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public OCDataTable() {
@@ -2020,6 +2022,14 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DataColumn1Column {
+                get {
+                    return this.columnDataColumn1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2055,7 +2065,7 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public OCRow AddOCRow(int OC, string producto, string Destino, decimal Unidades, decimal Kg, decimal Tm) {
+            public OCRow AddOCRow(int OC, string producto, string Destino, decimal Unidades, decimal Kg, decimal Tm, string DataColumn1) {
                 OCRow rowOCRow = ((OCRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         OC,
@@ -2063,7 +2073,8 @@ namespace LOSA.Reportes {
                         Destino,
                         Unidades,
                         Kg,
-                        Tm};
+                        Tm,
+                        DataColumn1};
                 rowOCRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowOCRow);
                 return rowOCRow;
@@ -2092,6 +2103,7 @@ namespace LOSA.Reportes {
                 this.columnUnidades = base.Columns["Unidades"];
                 this.columnKg = base.Columns["Kg"];
                 this.columnTm = base.Columns["Tm"];
+                this.columnDataColumn1 = base.Columns["DataColumn1"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2109,6 +2121,8 @@ namespace LOSA.Reportes {
                 base.Columns.Add(this.columnKg);
                 this.columnTm = new global::System.Data.DataColumn("Tm", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTm);
+                this.columnDataColumn1 = new global::System.Data.DataColumn("DataColumn1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDataColumn1);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4439,6 +4453,22 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DataColumn1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableOC.DataColumn1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DataColumn1\' de la tabla \'OC\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOC.DataColumn1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsOCNull() {
                 return this.IsNull(this.tableOC.OCColumn);
             }
@@ -4507,6 +4537,18 @@ namespace LOSA.Reportes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetTmNull() {
                 this[this.tableOC.TmColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDataColumn1Null() {
+                return this.IsNull(this.tableOC.DataColumn1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDataColumn1Null() {
+                this[this.tableOC.DataColumn1Column] = global::System.Convert.DBNull;
             }
         }
         
