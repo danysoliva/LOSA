@@ -41,21 +41,29 @@ namespace LOSA.Reportes
             this.colcode_sap = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProducto = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collote_pt = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colexistencia = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colkilogramos = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coltm = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcantidad_in = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcantidad_out = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colexistencia_unidades = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpeso_in = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpeso_out = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colexistencia_kg = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colexistencia_tm = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.grd_inventario_Tilapia = new DevExpress.XtraGrid.GridControl();
             this.grdv_inventario_Tilapia = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.cmdAjuste = new DevExpress.XtraEditors.SimpleButton();
             this.colid_pt1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcode_sap1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProducto1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collote_pt1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colexistencia1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colkilogramos1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coltm1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcantidad_in1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcantidad_out1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colexistencia_unidades1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpeso_in1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpeso_out1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colexistencia_kg1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colexistencia_tm1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdAjuste = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
@@ -163,9 +171,13 @@ namespace LOSA.Reportes
             this.colcode_sap,
             this.colProducto,
             this.collote_pt,
-            this.colexistencia,
-            this.colkilogramos,
-            this.coltm});
+            this.colcantidad_in,
+            this.colcantidad_out,
+            this.colexistencia_unidades,
+            this.colpeso_in,
+            this.colpeso_out,
+            this.colexistencia_kg,
+            this.colexistencia_tm});
             this.grdv_inventario_camaron.GridControl = this.grd_inventario_camaron;
             this.grdv_inventario_camaron.Name = "grdv_inventario_camaron";
             this.grdv_inventario_camaron.OptionsView.ShowAutoFilterRow = true;
@@ -175,6 +187,7 @@ namespace LOSA.Reportes
             // 
             this.colid_pt.FieldName = "id_pt";
             this.colid_pt.Name = "colid_pt";
+            this.colid_pt.OptionsColumn.AllowEdit = false;
             // 
             // colcode_sap
             // 
@@ -196,45 +209,81 @@ namespace LOSA.Reportes
             // 
             // collote_pt
             // 
-            this.collote_pt.Caption = "Lote";
+            this.collote_pt.Caption = "# Lote";
             this.collote_pt.FieldName = "lote_pt";
             this.collote_pt.Name = "collote_pt";
             this.collote_pt.OptionsColumn.AllowEdit = false;
             this.collote_pt.Visible = true;
             this.collote_pt.VisibleIndex = 2;
             // 
-            // colexistencia
+            // colcantidad_in
             // 
-            this.colexistencia.Caption = "Unidades";
-            this.colexistencia.DisplayFormat.FormatString = "{0:0.##.##} Ud";
-            this.colexistencia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colexistencia.FieldName = "existencia";
-            this.colexistencia.Name = "colexistencia";
-            this.colexistencia.OptionsColumn.AllowEdit = false;
-            this.colexistencia.Visible = true;
-            this.colexistencia.VisibleIndex = 3;
+            this.colcantidad_in.Caption = "Unidades Entrada";
+            this.colcantidad_in.DisplayFormat.FormatString = "{0:0.##.##} Ud";
+            this.colcantidad_in.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colcantidad_in.FieldName = "cantidad_in";
+            this.colcantidad_in.Name = "colcantidad_in";
+            this.colcantidad_in.OptionsColumn.AllowEdit = false;
             // 
-            // colkilogramos
+            // colcantidad_out
             // 
-            this.colkilogramos.Caption = "Kilogramos";
-            this.colkilogramos.DisplayFormat.FormatString = "{0:0.##.##} Kg";
-            this.colkilogramos.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colkilogramos.FieldName = "kilogramos";
-            this.colkilogramos.Name = "colkilogramos";
-            this.colkilogramos.OptionsColumn.AllowEdit = false;
-            this.colkilogramos.Visible = true;
-            this.colkilogramos.VisibleIndex = 4;
+            this.colcantidad_out.Caption = "Unidades Salida";
+            this.colcantidad_out.DisplayFormat.FormatString = "{0:0.##.##} Ud";
+            this.colcantidad_out.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colcantidad_out.FieldName = "cantidad_out";
+            this.colcantidad_out.Name = "colcantidad_out";
+            this.colcantidad_out.OptionsColumn.AllowEdit = false;
             // 
-            // coltm
+            // colexistencia_unidades
             // 
-            this.coltm.Caption = "Toneladas";
-            this.coltm.DisplayFormat.FormatString = "{0:0.##.##} TM";
-            this.coltm.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.coltm.FieldName = "tm";
-            this.coltm.Name = "coltm";
-            this.coltm.OptionsColumn.AllowEdit = false;
-            this.coltm.Visible = true;
-            this.coltm.VisibleIndex = 5;
+            this.colexistencia_unidades.Caption = "Unidades en Existencia";
+            this.colexistencia_unidades.DisplayFormat.FormatString = "{0:0.##.##} Ud";
+            this.colexistencia_unidades.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colexistencia_unidades.FieldName = "existencia_unidades";
+            this.colexistencia_unidades.Name = "colexistencia_unidades";
+            this.colexistencia_unidades.OptionsColumn.AllowEdit = false;
+            this.colexistencia_unidades.Visible = true;
+            this.colexistencia_unidades.VisibleIndex = 3;
+            // 
+            // colpeso_in
+            // 
+            this.colpeso_in.Caption = "Peso Entrada";
+            this.colpeso_in.DisplayFormat.FormatString = "{0:0.##.##} Kg";
+            this.colpeso_in.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colpeso_in.FieldName = "peso_in";
+            this.colpeso_in.Name = "colpeso_in";
+            this.colpeso_in.OptionsColumn.AllowEdit = false;
+            // 
+            // colpeso_out
+            // 
+            this.colpeso_out.Caption = "Peso Salida";
+            this.colpeso_out.DisplayFormat.FormatString = "{0:0.##.##} Kg";
+            this.colpeso_out.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colpeso_out.FieldName = "peso_out";
+            this.colpeso_out.Name = "colpeso_out";
+            this.colpeso_out.OptionsColumn.AllowEdit = false;
+            // 
+            // colexistencia_kg
+            // 
+            this.colexistencia_kg.Caption = "Kilogramos";
+            this.colexistencia_kg.DisplayFormat.FormatString = "{0:0.##.##} Kg";
+            this.colexistencia_kg.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colexistencia_kg.FieldName = "existencia_kg";
+            this.colexistencia_kg.Name = "colexistencia_kg";
+            this.colexistencia_kg.OptionsColumn.AllowEdit = false;
+            this.colexistencia_kg.Visible = true;
+            this.colexistencia_kg.VisibleIndex = 4;
+            // 
+            // colexistencia_tm
+            // 
+            this.colexistencia_tm.Caption = "Toneladas";
+            this.colexistencia_tm.DisplayFormat.FormatString = "{0:0.##.##} TM";
+            this.colexistencia_tm.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colexistencia_tm.FieldName = "existencia_tm";
+            this.colexistencia_tm.Name = "colexistencia_tm";
+            this.colexistencia_tm.OptionsColumn.AllowEdit = false;
+            this.colexistencia_tm.Visible = true;
+            this.colexistencia_tm.VisibleIndex = 5;
             // 
             // tabNavigationPage2
             // 
@@ -283,13 +332,118 @@ namespace LOSA.Reportes
             this.colcode_sap1,
             this.colProducto1,
             this.collote_pt1,
-            this.colexistencia1,
-            this.colkilogramos1,
-            this.coltm1});
+            this.colcantidad_in1,
+            this.colcantidad_out1,
+            this.colexistencia_unidades1,
+            this.colpeso_in1,
+            this.colpeso_out1,
+            this.colexistencia_kg1,
+            this.colexistencia_tm1});
             this.grdv_inventario_Tilapia.GridControl = this.grd_inventario_Tilapia;
             this.grdv_inventario_Tilapia.Name = "grdv_inventario_Tilapia";
             this.grdv_inventario_Tilapia.OptionsView.ShowAutoFilterRow = true;
             this.grdv_inventario_Tilapia.OptionsView.ShowGroupPanel = false;
+            // 
+            // colid_pt1
+            // 
+            this.colid_pt1.FieldName = "id_pt";
+            this.colid_pt1.Name = "colid_pt1";
+            // 
+            // colcode_sap1
+            // 
+            this.colcode_sap1.Caption = "Cod. SAP";
+            this.colcode_sap1.FieldName = "code_sap";
+            this.colcode_sap1.Name = "colcode_sap1";
+            this.colcode_sap1.OptionsColumn.AllowEdit = false;
+            this.colcode_sap1.Visible = true;
+            this.colcode_sap1.VisibleIndex = 0;
+            // 
+            // colProducto1
+            // 
+            this.colProducto1.Caption = "N Producto";
+            this.colProducto1.FieldName = "Producto";
+            this.colProducto1.Name = "colProducto1";
+            this.colProducto1.OptionsColumn.AllowEdit = false;
+            this.colProducto1.Visible = true;
+            this.colProducto1.VisibleIndex = 1;
+            // 
+            // collote_pt1
+            // 
+            this.collote_pt1.Caption = "# Lote";
+            this.collote_pt1.FieldName = "lote_pt";
+            this.collote_pt1.Name = "collote_pt1";
+            this.collote_pt1.OptionsColumn.AllowEdit = false;
+            this.collote_pt1.Visible = true;
+            this.collote_pt1.VisibleIndex = 2;
+            // 
+            // colcantidad_in1
+            // 
+            this.colcantidad_in1.Caption = "Cantidad Entrada";
+            this.colcantidad_in1.DisplayFormat.FormatString = "{0:0.##.##} Ud";
+            this.colcantidad_in1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colcantidad_in1.FieldName = "cantidad_in";
+            this.colcantidad_in1.Name = "colcantidad_in1";
+            this.colcantidad_in1.OptionsColumn.AllowEdit = false;
+            // 
+            // colcantidad_out1
+            // 
+            this.colcantidad_out1.Caption = "Cantidad Salida";
+            this.colcantidad_out1.DisplayFormat.FormatString = "{0:0.##.##} Ud";
+            this.colcantidad_out1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colcantidad_out1.FieldName = "cantidad_out";
+            this.colcantidad_out1.Name = "colcantidad_out1";
+            this.colcantidad_out1.OptionsColumn.AllowEdit = false;
+            // 
+            // colexistencia_unidades1
+            // 
+            this.colexistencia_unidades1.Caption = "Unidades en Existencia";
+            this.colexistencia_unidades1.DisplayFormat.FormatString = "{0:0.##.##} Ud";
+            this.colexistencia_unidades1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colexistencia_unidades1.FieldName = "existencia_unidades";
+            this.colexistencia_unidades1.Name = "colexistencia_unidades1";
+            this.colexistencia_unidades1.OptionsColumn.AllowEdit = false;
+            this.colexistencia_unidades1.Visible = true;
+            this.colexistencia_unidades1.VisibleIndex = 3;
+            // 
+            // colpeso_in1
+            // 
+            this.colpeso_in1.Caption = "Peso Entrada";
+            this.colpeso_in1.DisplayFormat.FormatString = "{0:0.##.##} Kg";
+            this.colpeso_in1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colpeso_in1.FieldName = "peso_in";
+            this.colpeso_in1.Name = "colpeso_in1";
+            this.colpeso_in1.OptionsColumn.AllowEdit = false;
+            // 
+            // colpeso_out1
+            // 
+            this.colpeso_out1.Caption = "Peso Salida";
+            this.colpeso_out1.DisplayFormat.FormatString = "{0:0.##.##} Kg";
+            this.colpeso_out1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colpeso_out1.FieldName = "peso_out";
+            this.colpeso_out1.Name = "colpeso_out1";
+            this.colpeso_out1.OptionsColumn.AllowEdit = false;
+            // 
+            // colexistencia_kg1
+            // 
+            this.colexistencia_kg1.Caption = "Kilogramos";
+            this.colexistencia_kg1.DisplayFormat.FormatString = "{0:0.##.##} Kg";
+            this.colexistencia_kg1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colexistencia_kg1.FieldName = "existencia_kg";
+            this.colexistencia_kg1.Name = "colexistencia_kg1";
+            this.colexistencia_kg1.OptionsColumn.AllowEdit = false;
+            this.colexistencia_kg1.Visible = true;
+            this.colexistencia_kg1.VisibleIndex = 4;
+            // 
+            // colexistencia_tm1
+            // 
+            this.colexistencia_tm1.Caption = "Toneladas";
+            this.colexistencia_tm1.DisplayFormat.FormatString = "{0:0.##.##} TM";
+            this.colexistencia_tm1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colexistencia_tm1.FieldName = "existencia_tm";
+            this.colexistencia_tm1.Name = "colexistencia_tm1";
+            this.colexistencia_tm1.OptionsColumn.AllowEdit = false;
+            this.colexistencia_tm1.Visible = true;
+            this.colexistencia_tm1.VisibleIndex = 5;
             // 
             // simpleButton1
             // 
@@ -317,59 +471,6 @@ namespace LOSA.Reportes
             this.cmdAjuste.TabIndex = 6;
             this.cmdAjuste.Text = "Ajuste de Inventario";
             this.cmdAjuste.Click += new System.EventHandler(this.cmdAjuste_Click);
-            // 
-            // colid_pt1
-            // 
-            this.colid_pt1.FieldName = "id_pt";
-            this.colid_pt1.Name = "colid_pt1";
-            // 
-            // colcode_sap1
-            // 
-            this.colcode_sap1.Caption = "Cod. SAP";
-            this.colcode_sap1.FieldName = "code_sap";
-            this.colcode_sap1.Name = "colcode_sap1";
-            this.colcode_sap1.Visible = true;
-            this.colcode_sap1.VisibleIndex = 0;
-            // 
-            // colProducto1
-            // 
-            this.colProducto1.Caption = "N Producto";
-            this.colProducto1.FieldName = "Producto";
-            this.colProducto1.Name = "colProducto1";
-            this.colProducto1.Visible = true;
-            this.colProducto1.VisibleIndex = 1;
-            // 
-            // collote_pt1
-            // 
-            this.collote_pt1.Caption = "Lote";
-            this.collote_pt1.FieldName = "lote_pt";
-            this.collote_pt1.Name = "collote_pt1";
-            this.collote_pt1.Visible = true;
-            this.collote_pt1.VisibleIndex = 2;
-            // 
-            // colexistencia1
-            // 
-            this.colexistencia1.Caption = "Unidades";
-            this.colexistencia1.FieldName = "existencia";
-            this.colexistencia1.Name = "colexistencia1";
-            this.colexistencia1.Visible = true;
-            this.colexistencia1.VisibleIndex = 3;
-            // 
-            // colkilogramos1
-            // 
-            this.colkilogramos1.Caption = "Kilogramos";
-            this.colkilogramos1.FieldName = "kilogramos";
-            this.colkilogramos1.Name = "colkilogramos1";
-            this.colkilogramos1.Visible = true;
-            this.colkilogramos1.VisibleIndex = 4;
-            // 
-            // coltm1
-            // 
-            this.coltm1.Caption = "Toneladas";
-            this.coltm1.FieldName = "tm";
-            this.coltm1.Name = "coltm1";
-            this.coltm1.Visible = true;
-            this.coltm1.VisibleIndex = 5;
             // 
             // frmReporteGeneralProductoTermnado
             // 
@@ -417,15 +518,23 @@ namespace LOSA.Reportes
         private DevExpress.XtraGrid.Columns.GridColumn colcode_sap;
         private DevExpress.XtraGrid.Columns.GridColumn colProducto;
         private DevExpress.XtraGrid.Columns.GridColumn collote_pt;
-        private DevExpress.XtraGrid.Columns.GridColumn colexistencia;
-        private DevExpress.XtraGrid.Columns.GridColumn colkilogramos;
-        private DevExpress.XtraGrid.Columns.GridColumn coltm;
+        private DevExpress.XtraGrid.Columns.GridColumn colcantidad_in;
+        private DevExpress.XtraGrid.Columns.GridColumn colcantidad_out;
+        private DevExpress.XtraGrid.Columns.GridColumn colexistencia_unidades;
+        private DevExpress.XtraGrid.Columns.GridColumn colpeso_in;
+        private DevExpress.XtraGrid.Columns.GridColumn colpeso_out;
+        private DevExpress.XtraGrid.Columns.GridColumn colexistencia_kg;
+        private DevExpress.XtraGrid.Columns.GridColumn colexistencia_tm;
         private DevExpress.XtraGrid.Columns.GridColumn colid_pt1;
         private DevExpress.XtraGrid.Columns.GridColumn colcode_sap1;
         private DevExpress.XtraGrid.Columns.GridColumn colProducto1;
         private DevExpress.XtraGrid.Columns.GridColumn collote_pt1;
-        private DevExpress.XtraGrid.Columns.GridColumn colexistencia1;
-        private DevExpress.XtraGrid.Columns.GridColumn colkilogramos1;
-        private DevExpress.XtraGrid.Columns.GridColumn coltm1;
+        private DevExpress.XtraGrid.Columns.GridColumn colcantidad_in1;
+        private DevExpress.XtraGrid.Columns.GridColumn colcantidad_out1;
+        private DevExpress.XtraGrid.Columns.GridColumn colexistencia_unidades1;
+        private DevExpress.XtraGrid.Columns.GridColumn colpeso_in1;
+        private DevExpress.XtraGrid.Columns.GridColumn colpeso_out1;
+        private DevExpress.XtraGrid.Columns.GridColumn colexistencia_kg1;
+        private DevExpress.XtraGrid.Columns.GridColumn colexistencia_tm1;
     }
 }

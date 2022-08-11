@@ -147,6 +147,7 @@ namespace LOSA.TransaccionesPT
             {
                 CajaDialogo.Error(ex.Message);
             }
+            spinEditPesoKg.EditValue = (factorValue * cantidad_).ToString();
         }
 
         private void cmdGuardar_Click(object sender, EventArgs e)
@@ -307,6 +308,20 @@ namespace LOSA.TransaccionesPT
                 //radioLoteNuevo.Visible = false;
                 radioLoteExistente.Checked = true;
             }
+        }
+
+        private void txtCantidadUnidades_KeyDown(object sender, KeyEventArgs e)
+        {
+            decimal cantidad_ = 0;
+            try
+            {
+                cantidad_ = Convert.ToDecimal(txtCantidadUnidades.Text);
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+            spinEditPesoKg.EditValue = (factorValue * cantidad_).ToString();
         }
     }
 }
