@@ -23,7 +23,7 @@ namespace LOSA.TransaccionesPT
         private decimal factorValue;
         private decimal FactorUnidades;
         int Id_PT; //ID de Producto Terminado - Tabla en AQFSVR003.ACS4
-        int Id_Lote_PT; //Id de lote de Producto Terminado
+        string ItemCode; //Id de lote de Producto Terminado
         public frmAjusteIKardexPT(UserLogin pUserLogin)
         {
             InitializeComponent();
@@ -85,7 +85,7 @@ namespace LOSA.TransaccionesPT
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 txtNumLote.Text = Convert.ToString(frm.lot_number);
-                Id_Lote_PT = frm.id_Lote_PT;
+                ItemCode = frm.ItemCode;
             }
         }
 
@@ -217,7 +217,7 @@ namespace LOSA.TransaccionesPT
                         cmd.Parameters.AddWithValue("@id_bodega_origen", gridLookUpEditOrigen.EditValue);
                         cmd.Parameters.AddWithValue("@id_bodega_destino", gridLookUpEditDestino.EditValue);
                         cmd.Parameters.AddWithValue("@int_tipo_op", 1); // 1 Es Entrada
-                        cmd.Parameters.AddWithValue("@id_lote_pt", Id_Lote_PT);
+                        cmd.Parameters.AddWithValue("@ItemCode", ItemCode);
                         cmd.ExecuteNonQuery();
                         conn.Close();
 
@@ -288,7 +288,7 @@ namespace LOSA.TransaccionesPT
                         cmd.Parameters.AddWithValue("@id_bodega_origen", gridLookUpEditOrigen.EditValue);
                         cmd.Parameters.AddWithValue("@id_bodega_destino", gridLookUpEditDestino.EditValue);
                         cmd.Parameters.AddWithValue("@int_tipo_op", 2); // 2 Es Salida
-                        cmd.Parameters.AddWithValue("@id_lote_pt", Id_Lote_PT);
+                        cmd.Parameters.AddWithValue("@ItemCode", ItemCode);
                         cmd.ExecuteNonQuery();
 
                         CajaDialogo.Information("Transaccion de Salida Exitosa!");
@@ -313,7 +313,7 @@ namespace LOSA.TransaccionesPT
         private void radioLoteNuevo_CheckedChanged(object sender, EventArgs e)
         {
             txtNumLote.Visible = false;
-            txtLoteNuevo.Visible = true;
+            txtLoteNuevo.Visible = false;
             spinEditPesoKg.EditValue = 0;
             txtCantidadUnidades.Text = "0";
         }
@@ -322,8 +322,8 @@ namespace LOSA.TransaccionesPT
         {
             if (tsTipoTransaccion.IsOn == true)
             {
-                radioLoteNuevo.Checked = true;
-                radioLoteNuevo.Visible = true;
+                radioLoteNuevo.Checked = false;
+                radioLoteNuevo.Visible = false;
                 radioLoteExistente.Checked = true;
             }
             else
