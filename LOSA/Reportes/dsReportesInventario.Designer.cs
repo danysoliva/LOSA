@@ -3066,11 +3066,19 @@ namespace LOSA.Reportes {
             
             private global::System.Data.DataColumn columnlote_pt;
             
-            private global::System.Data.DataColumn columnexistencia;
+            private global::System.Data.DataColumn columncantidad_in;
             
-            private global::System.Data.DataColumn columnkilogramos;
+            private global::System.Data.DataColumn columncantidad_out;
             
-            private global::System.Data.DataColumn columntm;
+            private global::System.Data.DataColumn columnexistencia_unidades;
+            
+            private global::System.Data.DataColumn columnpeso_in;
+            
+            private global::System.Data.DataColumn columnpeso_out;
+            
+            private global::System.Data.DataColumn columnexistencia_kg;
+            
+            private global::System.Data.DataColumn columnexistencia_tm;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -3139,25 +3147,57 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn existenciaColumn {
+            public global::System.Data.DataColumn cantidad_inColumn {
                 get {
-                    return this.columnexistencia;
+                    return this.columncantidad_in;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn kilogramosColumn {
+            public global::System.Data.DataColumn cantidad_outColumn {
                 get {
-                    return this.columnkilogramos;
+                    return this.columncantidad_out;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn tmColumn {
+            public global::System.Data.DataColumn existencia_unidadesColumn {
                 get {
-                    return this.columntm;
+                    return this.columnexistencia_unidades;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn peso_inColumn {
+                get {
+                    return this.columnpeso_in;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn peso_outColumn {
+                get {
+                    return this.columnpeso_out;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn existencia_kgColumn {
+                get {
+                    return this.columnexistencia_kg;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn existencia_tmColumn {
+                get {
+                    return this.columnexistencia_tm;
                 }
             }
             
@@ -3198,16 +3238,20 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public inventario_kardexRow Addinventario_kardexRow(int id_pt, string code_sap, string Producto, int lote_pt, decimal existencia, decimal kilogramos, decimal tm) {
+            public inventario_kardexRow Addinventario_kardexRow(int id_pt, string code_sap, string Producto, int lote_pt, decimal cantidad_in, decimal cantidad_out, decimal existencia_unidades, decimal peso_in, decimal peso_out, decimal existencia_kg, decimal existencia_tm) {
                 inventario_kardexRow rowinventario_kardexRow = ((inventario_kardexRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_pt,
                         code_sap,
                         Producto,
                         lote_pt,
-                        existencia,
-                        kilogramos,
-                        tm};
+                        cantidad_in,
+                        cantidad_out,
+                        existencia_unidades,
+                        peso_in,
+                        peso_out,
+                        existencia_kg,
+                        existencia_tm};
                 rowinventario_kardexRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowinventario_kardexRow);
                 return rowinventario_kardexRow;
@@ -3234,9 +3278,13 @@ namespace LOSA.Reportes {
                 this.columncode_sap = base.Columns["code_sap"];
                 this.columnProducto = base.Columns["Producto"];
                 this.columnlote_pt = base.Columns["lote_pt"];
-                this.columnexistencia = base.Columns["existencia"];
-                this.columnkilogramos = base.Columns["kilogramos"];
-                this.columntm = base.Columns["tm"];
+                this.columncantidad_in = base.Columns["cantidad_in"];
+                this.columncantidad_out = base.Columns["cantidad_out"];
+                this.columnexistencia_unidades = base.Columns["existencia_unidades"];
+                this.columnpeso_in = base.Columns["peso_in"];
+                this.columnpeso_out = base.Columns["peso_out"];
+                this.columnexistencia_kg = base.Columns["existencia_kg"];
+                this.columnexistencia_tm = base.Columns["existencia_tm"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3250,12 +3298,20 @@ namespace LOSA.Reportes {
                 base.Columns.Add(this.columnProducto);
                 this.columnlote_pt = new global::System.Data.DataColumn("lote_pt", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnlote_pt);
-                this.columnexistencia = new global::System.Data.DataColumn("existencia", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnexistencia);
-                this.columnkilogramos = new global::System.Data.DataColumn("kilogramos", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnkilogramos);
-                this.columntm = new global::System.Data.DataColumn("tm", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntm);
+                this.columncantidad_in = new global::System.Data.DataColumn("cantidad_in", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncantidad_in);
+                this.columncantidad_out = new global::System.Data.DataColumn("cantidad_out", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncantidad_out);
+                this.columnexistencia_unidades = new global::System.Data.DataColumn("existencia_unidades", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnexistencia_unidades);
+                this.columnpeso_in = new global::System.Data.DataColumn("peso_in", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpeso_in);
+                this.columnpeso_out = new global::System.Data.DataColumn("peso_out", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpeso_out);
+                this.columnexistencia_kg = new global::System.Data.DataColumn("existencia_kg", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnexistencia_kg);
+                this.columnexistencia_tm = new global::System.Data.DataColumn("existencia_tm", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnexistencia_tm);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5337,49 +5393,116 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public decimal existencia {
+            public decimal cantidad_in {
                 get {
                     try {
-                        return ((decimal)(this[this.tableinventario_kardex.existenciaColumn]));
+                        return ((decimal)(this[this.tableinventario_kardex.cantidad_inColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'existencia\' de la tabla \'inventario_kardex\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'cantidad_in\' de la tabla \'inventario_kardex\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableinventario_kardex.existenciaColumn] = value;
+                    this[this.tableinventario_kardex.cantidad_inColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public decimal kilogramos {
+            public decimal cantidad_out {
                 get {
                     try {
-                        return ((decimal)(this[this.tableinventario_kardex.kilogramosColumn]));
+                        return ((decimal)(this[this.tableinventario_kardex.cantidad_outColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'kilogramos\' de la tabla \'inventario_kardex\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'cantidad_out\' de la tabla \'inventario_kardex\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableinventario_kardex.kilogramosColumn] = value;
+                    this[this.tableinventario_kardex.cantidad_outColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public decimal tm {
+            public decimal existencia_unidades {
                 get {
                     try {
-                        return ((decimal)(this[this.tableinventario_kardex.tmColumn]));
+                        return ((decimal)(this[this.tableinventario_kardex.existencia_unidadesColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'tm\' de la tabla \'inventario_kardex\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'existencia_unidades\' de la tabla \'inventario_kardex\' es D" +
+                                "BNull.", e);
                     }
                 }
                 set {
-                    this[this.tableinventario_kardex.tmColumn] = value;
+                    this[this.tableinventario_kardex.existencia_unidadesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal peso_in {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableinventario_kardex.peso_inColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'peso_in\' de la tabla \'inventario_kardex\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableinventario_kardex.peso_inColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal peso_out {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableinventario_kardex.peso_outColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'peso_out\' de la tabla \'inventario_kardex\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableinventario_kardex.peso_outColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal existencia_kg {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableinventario_kardex.existencia_kgColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'existencia_kg\' de la tabla \'inventario_kardex\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableinventario_kardex.existencia_kgColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal existencia_tm {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableinventario_kardex.existencia_tmColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'existencia_tm\' de la tabla \'inventario_kardex\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableinventario_kardex.existencia_tmColumn] = value;
                 }
             }
             
@@ -5433,38 +5556,86 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsexistenciaNull() {
-                return this.IsNull(this.tableinventario_kardex.existenciaColumn);
+            public bool Iscantidad_inNull() {
+                return this.IsNull(this.tableinventario_kardex.cantidad_inColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetexistenciaNull() {
-                this[this.tableinventario_kardex.existenciaColumn] = global::System.Convert.DBNull;
+            public void Setcantidad_inNull() {
+                this[this.tableinventario_kardex.cantidad_inColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IskilogramosNull() {
-                return this.IsNull(this.tableinventario_kardex.kilogramosColumn);
+            public bool Iscantidad_outNull() {
+                return this.IsNull(this.tableinventario_kardex.cantidad_outColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetkilogramosNull() {
-                this[this.tableinventario_kardex.kilogramosColumn] = global::System.Convert.DBNull;
+            public void Setcantidad_outNull() {
+                this[this.tableinventario_kardex.cantidad_outColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IstmNull() {
-                return this.IsNull(this.tableinventario_kardex.tmColumn);
+            public bool Isexistencia_unidadesNull() {
+                return this.IsNull(this.tableinventario_kardex.existencia_unidadesColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SettmNull() {
-                this[this.tableinventario_kardex.tmColumn] = global::System.Convert.DBNull;
+            public void Setexistencia_unidadesNull() {
+                this[this.tableinventario_kardex.existencia_unidadesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Ispeso_inNull() {
+                return this.IsNull(this.tableinventario_kardex.peso_inColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setpeso_inNull() {
+                this[this.tableinventario_kardex.peso_inColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Ispeso_outNull() {
+                return this.IsNull(this.tableinventario_kardex.peso_outColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setpeso_outNull() {
+                this[this.tableinventario_kardex.peso_outColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isexistencia_kgNull() {
+                return this.IsNull(this.tableinventario_kardex.existencia_kgColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setexistencia_kgNull() {
+                this[this.tableinventario_kardex.existencia_kgColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isexistencia_tmNull() {
+                return this.IsNull(this.tableinventario_kardex.existencia_tmColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setexistencia_tmNull() {
+                this[this.tableinventario_kardex.existencia_tmColumn] = global::System.Convert.DBNull;
             }
         }
         

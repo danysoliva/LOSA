@@ -117,7 +117,7 @@ namespace LOSA.Despachos
             // 
             this.grdv_data.Appearance.FilterPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.grdv_data.Appearance.FilterPanel.Options.UseFont = true;
-            this.grdv_data.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
+            this.grdv_data.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdv_data.Appearance.FocusedRow.Options.UseFont = true;
             this.grdv_data.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.grdv_data.Appearance.FooterPanel.Options.UseFont = true;
@@ -127,11 +127,11 @@ namespace LOSA.Despachos
             this.grdv_data.Appearance.GroupPanel.Options.UseFont = true;
             this.grdv_data.Appearance.GroupRow.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.grdv_data.Appearance.GroupRow.Options.UseFont = true;
-            this.grdv_data.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdv_data.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdv_data.Appearance.HeaderPanel.Options.UseFont = true;
             this.grdv_data.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.grdv_data.Appearance.Preview.Options.UseFont = true;
-            this.grdv_data.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdv_data.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdv_data.Appearance.Row.Options.UseFont = true;
             this.grdv_data.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdv_data.Appearance.TopNewRow.Options.UseFont = true;
@@ -253,6 +253,7 @@ namespace LOSA.Despachos
             this.colconductor.Caption = "Conductor";
             this.colconductor.FieldName = "conductor";
             this.colconductor.Name = "colconductor";
+            this.colconductor.OptionsColumn.AllowEdit = false;
             this.colconductor.Visible = true;
             this.colconductor.VisibleIndex = 5;
             // 

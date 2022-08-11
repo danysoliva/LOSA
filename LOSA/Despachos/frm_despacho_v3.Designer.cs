@@ -969,15 +969,13 @@ namespace LOSA.Despachos
             // 
             // gridDetalleDespacho
             // 
-            this.gridDetalleDespacho.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridDetalleDespacho.DataMember = "despacho_estado_detalle";
             this.gridDetalleDespacho.DataSource = this.dsTransaccionesDespacho1;
             this.gridDetalleDespacho.Location = new System.Drawing.Point(197, 221);
             this.gridDetalleDespacho.MainView = this.gridView2;
             this.gridDetalleDespacho.MenuManager = this.barManager1;
             this.gridDetalleDespacho.Name = "gridDetalleDespacho";
-            this.gridDetalleDespacho.Size = new System.Drawing.Size(558, 108);
+            this.gridDetalleDespacho.Size = new System.Drawing.Size(539, 108);
             this.gridDetalleDespacho.TabIndex = 153;
             this.gridDetalleDespacho.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -1015,6 +1013,7 @@ namespace LOSA.Despachos
             this.gridView2.OptionsNavigation.AutoMoveRowFocus = false;
             this.gridView2.OptionsSelection.InvertSelection = true;
             this.gridView2.OptionsView.ShowGroupPanel = false;
+            this.gridView2.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.gridView2_RowStyle);
             // 
             // colitemcode
             // 

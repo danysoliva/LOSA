@@ -13,7 +13,7 @@
     <Shape ID="DesignTable:OC" ZOrder="5" X="866" Y="309" Height="162" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="158" />
     <Shape ID="DesignTable:inventario" ZOrder="4" X="297" Y="348" Height="334" Width="155" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="330" />
     <Shape ID="DesignTable:despachado" ZOrder="3" X="88" Y="226" Height="219" Width="172" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="215" />
-    <Shape ID="DesignTable:inventario_kardex" ZOrder="2" X="466" Y="342" Height="162" Width="170" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="158" />
+    <Shape ID="DesignTable:inventario_kardex" ZOrder="2" X="466" Y="342" Height="238" Width="170" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="234" />
   </Shapes>
   <Connectors />
 </DiagramLayout>
