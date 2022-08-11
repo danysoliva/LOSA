@@ -532,6 +532,7 @@ namespace LOSA.Despachos
                     {
                         //Mensaje de transaccion exitosa
                         lblMensaje.Text = "Transacción Exitosa!";
+                        LoadDetalleDespachoStatus(N_Documento);
                         panelNotificacion.BackColor = Color.MediumSeaGreen;
                         timerLimpiarMensaje.Enabled = true;
                         timerLimpiarMensaje.Start();
