@@ -15,6 +15,7 @@ using LOSA.RecepcionMP;
 using DevExpress.XtraReports.UI;
 using System.Threading;
 using DevExpress.XtraGrid.Views.Grid;
+using System.Collections;
 
 namespace LOSA.Produccion
 {
@@ -315,15 +316,16 @@ DataOperations dp = new DataOperations();
                 return;
             }
 
-            timerPrintMulti.Enabled = true;
-            tipoprinte = 0;
+            //timerPrintMulti.Enabled = true;
+            //tipoprinte = 0;
             centinela_print_multi = vCantidadPrint;
-            timerPrintMulti.Start();
+            //timerPrintMulti.Start();
 
             //foreach (var item in centinela_print_multi)
             //{
 
             //}
+            ArrayList ListaTarimas = new ArrayList();
 
             for (int i = 0; i < centinela_print_multi; i++)
             {
@@ -357,12 +359,35 @@ DataOperations dp = new DataOperations();
                     cmd.Parameters.AddWithValue("@hasta", hasta);
 
                     int Id_tm = Convert.ToInt32(cmd.ExecuteScalar());
+                    ListaTarimas.Add(Id_tm);
                     cn.Close();
-                    tipoprinte = 0;
+                    //tipoprinte = 0;
 
-                    int contador_print = 0;
-                    rptReporteTarimaPT report1 = new rptReporteTarimaPT(Id_tm);
-        
+                    
+                    //rptReporteTarimaPT boleta = new rptReporteTarimaPT(Id_tm);
+                    //boleta.ShowPrintMarginsWarning = false;
+                    //ReportPrintTool printtool = new ReportPrintTool(boleta);
+                    //printtool.ShowPreviewDialog();
+                    //this.DialogResult = DialogResult.OK;
+                    //this.Close();
+                }
+                catch (Exception ex)
+                {
+
+                    CajaDialogo.Error(ex.Message);
+                }
+
+
+            }
+
+            if (ListaTarimas.Count >= 1)
+            {
+                int contador_print = 0;
+                rptReporteTarimaPT report1 = null;
+                foreach (int Id_tm in ListaTarimas)
+                {
+                    report1 = new rptReporteTarimaPT(Id_tm);
+
                     if (Id_tm > 0)
                     {
                         Tarima tar1 = new Tarima();
@@ -386,30 +411,25 @@ DataOperations dp = new DataOperations();
                             }
                         }
                     }
-                    if (report1 != null)
-                    {
-                        using (ReportPrintTool prinTool = new ReportPrintTool(report1))
-                        {
-                            prinTool.ShowPreviewDialog();
-                        } 
+                }//end foreach
 
-                    }
-                    
-                    //rptReporteTarimaPT boleta = new rptReporteTarimaPT(Id_tm);
-                    //boleta.ShowPrintMarginsWarning = false;
-                    //ReportPrintTool printtool = new ReportPrintTool(boleta);
-                    //printtool.ShowPreviewDialog();
-                    //this.DialogResult = DialogResult.OK;
-                    //this.Close();
-                }
-                catch (Exception ex)
+                //Impresión de un solo objeto Reporte
+                if (report1 != null)
                 {
+                    using (ReportPrintTool prinTool = new ReportPrintTool(report1))
+                    {
+                        prinTool.ShowPreviewDialog();
+                    }
 
-                    CajaDialogo.Error(ex.Message);
                 }
-
-
+                
             }
+
+
+
+
+
+
         }
 
         private void btn_print25_Click(object sender, EventArgs e)
@@ -839,26 +859,82 @@ DataOperations dp = new DataOperations();
 
         private void simpleButton6_Click(object sender, EventArgs e)
         {
-            try
+            //try
+            //{
+            //    int count_selected = 0;
+            //        foreach (dsProduccion.listaTmPrintedRow row in dsProduccion.listaTmPrinted.Rows)
+            //        {
+            //            if (row.selectedd)
+            //            {
+            //             count_selected = count_selected + 1;
+            //            }
+            //        }
+
+            //    centinela_print_multi = count_selected;
+            //    timerPrintMulti.Enabled = true;
+            //    tipoprinte = 1;
+            //    timerPrintMulti.Start();
+            //}
+            //catch (Exception ex)
+            //{
+            //    CajaDialogo.Error(ex.Message);
+
+            //}
+
+            ArrayList ListaTarimas = new ArrayList();
+
+            foreach (dsProduccion.listaTmPrintedRow row in dsProduccion.listaTmPrinted.Rows)
             {
-                int count_selected = 0;
-                    foreach (dsProduccion.listaTmPrintedRow row in dsProduccion.listaTmPrinted.Rows)
+                if (row.selectedd)
+                {
+                    ListaTarimas.Add(row.id);
+                }//end if (row.selectedd)
+
+            }//end foreach (dsProduccion.listaTmPrintedRow row in dsProduccion.listaTmPrinted.Rows)
+
+            if (ListaTarimas.Count >= 1)
+            {
+                int contador_print = 0;
+                rptReporteTarimaPT report1 = null;
+                foreach (int Id_tm in ListaTarimas)
+                {
+                    report1 = new rptReporteTarimaPT(Id_tm);
+
+                    if (Id_tm > 0)
                     {
-                        if (row.selectedd)
+                        Tarima tar1 = new Tarima();
+                        if (tar1.RecuperarRegistro(Id_tm))
                         {
-                         count_selected = count_selected + 1;
+                            if (contador_print == 0)
+                            {
+                                report1 = new rptReporteTarimaPT(Id_tm);
+                                report1.CreateDocument();
+                                contador_print++;
+                            }
+                            else
+                            {
+                                rptReporteTarimaPT report2 = new rptReporteTarimaPT(Id_tm);
+                                report2.CreateDocument();
+
+                                if (report1 != null)
+                                {
+                                    report1.ModifyDocument(x => { x.AddPages(report2.Pages); });
+                                }
+                            }
                         }
                     }
+                }//end foreach
 
-                centinela_print_multi = count_selected;
-                timerPrintMulti.Enabled = true;
-                tipoprinte = 1;
-                timerPrintMulti.Start();
-            }
-            catch (Exception ex)
-            {
-                CajaDialogo.Error(ex.Message);
-                
+                //Impresión de un solo objeto Reporte
+                if (report1 != null)
+                {
+                    using (ReportPrintTool prinTool = new ReportPrintTool(report1))
+                    {
+                        prinTool.ShowPreviewDialog();
+                    }
+
+                }
+
             }
         }
 
