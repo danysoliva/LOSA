@@ -7776,6 +7776,10 @@ namespace LOSA.Logistica {
             
             private global::System.Data.DataColumn columnseleccionado;
             
+            private global::System.Data.DataColumn columnfecha_produccion_materia_prima;
+            
+            private global::System.Data.DataColumn columnfecha_vencimiento;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public PT_Reproceso_TarimasDataTable() {
@@ -7955,6 +7959,22 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn fecha_produccion_materia_primaColumn {
+                get {
+                    return this.columnfecha_produccion_materia_prima;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn fecha_vencimientoColumn {
+                get {
+                    return this.columnfecha_vencimiento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -8008,7 +8028,9 @@ namespace LOSA.Logistica {
                         int id_tarima_reproceso, 
                         string lote_materia_prima, 
                         decimal peso, 
-                        bool seleccionado) {
+                        bool seleccionado, 
+                        System.DateTime fecha_produccion_materia_prima, 
+                        System.DateTime fecha_vencimiento) {
                 PT_Reproceso_TarimasRow rowPT_Reproceso_TarimasRow = ((PT_Reproceso_TarimasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -8028,7 +8050,9 @@ namespace LOSA.Logistica {
                         id_tarima_reproceso,
                         lote_materia_prima,
                         peso,
-                        seleccionado};
+                        seleccionado,
+                        fecha_produccion_materia_prima,
+                        fecha_vencimiento};
                 rowPT_Reproceso_TarimasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPT_Reproceso_TarimasRow);
                 return rowPT_Reproceso_TarimasRow;
@@ -8069,6 +8093,8 @@ namespace LOSA.Logistica {
                 this.columnlote_materia_prima = base.Columns["lote_materia_prima"];
                 this.columnpeso = base.Columns["peso"];
                 this.columnseleccionado = base.Columns["seleccionado"];
+                this.columnfecha_produccion_materia_prima = base.Columns["fecha_produccion_materia_prima"];
+                this.columnfecha_vencimiento = base.Columns["fecha_vencimiento"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8110,10 +8136,16 @@ namespace LOSA.Logistica {
                 base.Columns.Add(this.columnpeso);
                 this.columnseleccionado = new global::System.Data.DataColumn("seleccionado", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnseleccionado);
+                this.columnfecha_produccion_materia_prima = new global::System.Data.DataColumn("fecha_produccion_materia_prima", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_produccion_materia_prima);
+                this.columnfecha_vencimiento = new global::System.Data.DataColumn("fecha_vencimiento", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_vencimiento);
                 this.columnlote_materia_prima.Caption = "Lote";
                 this.columnpeso.Caption = "Peso";
                 this.columnseleccionado.Caption = "Seleccionado";
                 this.columnseleccionado.DefaultValue = ((bool)(false));
+                this.columnfecha_produccion_materia_prima.Caption = "Fecha Produccion MP";
+                this.columnfecha_vencimiento.Caption = "Fecha Vencimiento";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12918,6 +12950,40 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime fecha_produccion_materia_prima {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablePT_Reproceso_Tarimas.fecha_produccion_materia_primaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_produccion_materia_prima\' de la tabla \'PT_Reproceso" +
+                                "_Tarimas\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePT_Reproceso_Tarimas.fecha_produccion_materia_primaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime fecha_vencimiento {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablePT_Reproceso_Tarimas.fecha_vencimientoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_vencimiento\' de la tabla \'PT_Reproceso_Tarimas\' es " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePT_Reproceso_Tarimas.fecha_vencimientoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tablePT_Reproceso_Tarimas.idColumn);
             }
@@ -13130,6 +13196,30 @@ namespace LOSA.Logistica {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetseleccionadoNull() {
                 this[this.tablePT_Reproceso_Tarimas.seleccionadoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isfecha_produccion_materia_primaNull() {
+                return this.IsNull(this.tablePT_Reproceso_Tarimas.fecha_produccion_materia_primaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setfecha_produccion_materia_primaNull() {
+                this[this.tablePT_Reproceso_Tarimas.fecha_produccion_materia_primaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isfecha_vencimientoNull() {
+                return this.IsNull(this.tablePT_Reproceso_Tarimas.fecha_vencimientoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setfecha_vencimientoNull() {
+                this[this.tablePT_Reproceso_Tarimas.fecha_vencimientoColumn] = global::System.Convert.DBNull;
             }
         }
         

@@ -691,7 +691,7 @@ namespace LOSA
             //frm.MdiParent = this.MdiParent;
             //frm.Show();
             //xfrmIngresosMP_Reproceso frm = new xfrmIngresosMP_Reproceso(UsuarioLogeado);
-            Reproceso.frmReprocesoPrint frm = new Reproceso.frmReprocesoPrint();
+            Reproceso.frmReprocesoPrint frm = new Reproceso.frmReprocesoPrint(this.UsuarioLogeado);
             if (this.MdiParent != null)
                 frm.MdiParent = this.MdiParent;
             frm.Show();

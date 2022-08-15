@@ -87,6 +87,8 @@ namespace LOSA.Reproceso
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.btnPrintSeleccionados = new DevExpress.XtraEditors.SimpleButton();
             this.radioGroup1 = new DevExpress.XtraEditors.RadioGroup();
+            this.colfecha_produccion_materia_prima = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha_vencimiento = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdDuplicar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).BeginInit();
@@ -166,9 +168,9 @@ namespace LOSA.Reproceso
             // 
             // gvPT
             // 
-            this.gvPT.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvPT.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvPT.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gvPT.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvPT.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvPT.Appearance.Row.Options.UseFont = true;
             this.gvPT.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colid,
@@ -183,6 +185,8 @@ namespace LOSA.Reproceso
             this.colcantidad,
             this.colnum,
             this.collote_materia_prima,
+            this.colfecha_vencimiento,
+            this.colfecha_produccion_materia_prima,
             this.colestado_tarima,
             this.colid_estado_tarima,
             this.colpresentacion,
@@ -200,6 +204,7 @@ namespace LOSA.Reproceso
             this.gvPT.OptionsView.ShowFooter = true;
             this.gvPT.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.collote_materia_prima, DevExpress.Data.ColumnSortOrder.Ascending)});
+            this.gvPT.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gvPT_CellValueChanged);
             // 
             // colid
             // 
@@ -237,7 +242,7 @@ namespace LOSA.Reproceso
             this.colfecha_ingreso.OptionsColumn.AllowEdit = false;
             this.colfecha_ingreso.Visible = true;
             this.colfecha_ingreso.VisibleIndex = 2;
-            this.colfecha_ingreso.Width = 169;
+            this.colfecha_ingreso.Width = 128;
             // 
             // colnumero_transaccion
             // 
@@ -251,6 +256,7 @@ namespace LOSA.Reproceso
             // 
             this.colid_boleta.FieldName = "id_boleta";
             this.colid_boleta.Name = "colid_boleta";
+            this.colid_boleta.OptionsColumn.AllowEdit = false;
             this.colid_boleta.Width = 91;
             // 
             // colcodigo_barra
@@ -261,7 +267,7 @@ namespace LOSA.Reproceso
             this.colcodigo_barra.OptionsColumn.AllowEdit = false;
             this.colcodigo_barra.Visible = true;
             this.colcodigo_barra.VisibleIndex = 1;
-            this.colcodigo_barra.Width = 188;
+            this.colcodigo_barra.Width = 152;
             // 
             // colcantidad
             // 
@@ -274,8 +280,8 @@ namespace LOSA.Reproceso
             this.colcantidad.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cantidad", "SUMA={0:0.##} Ud")});
             this.colcantidad.Visible = true;
-            this.colcantidad.VisibleIndex = 4;
-            this.colcantidad.Width = 95;
+            this.colcantidad.VisibleIndex = 6;
+            this.colcantidad.Width = 112;
             // 
             // colnum
             // 
@@ -308,6 +314,7 @@ namespace LOSA.Reproceso
             // 
             this.colid_estado_tarima.FieldName = "id_estado_tarima";
             this.colid_estado_tarima.Name = "colid_estado_tarima";
+            this.colid_estado_tarima.OptionsColumn.AllowEdit = false;
             this.colid_estado_tarima.Width = 91;
             // 
             // colpresentacion
@@ -317,8 +324,8 @@ namespace LOSA.Reproceso
             this.colpresentacion.Name = "colpresentacion";
             this.colpresentacion.OptionsColumn.AllowEdit = false;
             this.colpresentacion.Visible = true;
-            this.colpresentacion.VisibleIndex = 3;
-            this.colpresentacion.Width = 127;
+            this.colpresentacion.VisibleIndex = 5;
+            this.colpresentacion.Width = 138;
             // 
             // colpeso
             // 
@@ -326,16 +333,18 @@ namespace LOSA.Reproceso
             this.colpeso.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colpeso.FieldName = "peso";
             this.colpeso.Name = "colpeso";
+            this.colpeso.OptionsColumn.AllowEdit = false;
             this.colpeso.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "peso", "SUMA={0:0.##.##} Kg")});
             this.colpeso.Visible = true;
-            this.colpeso.VisibleIndex = 5;
-            this.colpeso.Width = 92;
+            this.colpeso.VisibleIndex = 7;
+            this.colpeso.Width = 115;
             // 
             // colid_tarima_reproceso
             // 
             this.colid_tarima_reproceso.FieldName = "id_tarima_reproceso";
             this.colid_tarima_reproceso.Name = "colid_tarima_reproceso";
+            this.colid_tarima_reproceso.OptionsColumn.AllowEdit = false;
             this.colid_tarima_reproceso.Width = 129;
             // 
             // gridColumn1
@@ -344,8 +353,8 @@ namespace LOSA.Reproceso
             this.gridColumn1.ColumnEdit = this.repositoryItemButtonImprimir;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 6;
-            this.gridColumn1.Width = 132;
+            this.gridColumn1.VisibleIndex = 8;
+            this.gridColumn1.Width = 66;
             // 
             // repositoryItemButtonImprimir
             // 
@@ -362,6 +371,7 @@ namespace LOSA.Reproceso
             this.gridColumn2.Caption = "Detalle";
             this.gridColumn2.ColumnEdit = this.repositoryItemVerDetalle;
             this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
             // 
             // repositoryItemVerDetalle
             // 
@@ -377,8 +387,8 @@ namespace LOSA.Reproceso
             this.colseleccionado.FieldName = "seleccionado";
             this.colseleccionado.Name = "colseleccionado";
             this.colseleccionado.Visible = true;
-            this.colseleccionado.VisibleIndex = 7;
-            this.colseleccionado.Width = 126;
+            this.colseleccionado.VisibleIndex = 9;
+            this.colseleccionado.Width = 77;
             // 
             // labelControl2
             // 
@@ -428,6 +438,24 @@ namespace LOSA.Reproceso
             this.radioGroup1.Size = new System.Drawing.Size(365, 43);
             this.radioGroup1.TabIndex = 91;
             this.radioGroup1.SelectedIndexChanged += new System.EventHandler(this.radioGroup1_SelectedIndexChanged);
+            // 
+            // colfecha_produccion_materia_prima
+            // 
+            this.colfecha_produccion_materia_prima.FieldName = "fecha_produccion_materia_prima";
+            this.colfecha_produccion_materia_prima.Name = "colfecha_produccion_materia_prima";
+            this.colfecha_produccion_materia_prima.OptionsColumn.AllowEdit = false;
+            this.colfecha_produccion_materia_prima.Visible = true;
+            this.colfecha_produccion_materia_prima.VisibleIndex = 3;
+            this.colfecha_produccion_materia_prima.Width = 156;
+            // 
+            // colfecha_vencimiento
+            // 
+            this.colfecha_vencimiento.FieldName = "fecha_vencimiento";
+            this.colfecha_vencimiento.Name = "colfecha_vencimiento";
+            this.colfecha_vencimiento.OptionsColumn.AllowEdit = false;
+            this.colfecha_vencimiento.Visible = true;
+            this.colfecha_vencimiento.VisibleIndex = 4;
+            this.colfecha_vencimiento.Width = 100;
             // 
             // frmReprocesoPrint
             // 
@@ -488,5 +516,7 @@ namespace LOSA.Reproceso
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemVerDetalle;
         private DevExpress.XtraGrid.Columns.GridColumn colseleccionado;
         private DevExpress.XtraGrid.Columns.GridColumn colpeso;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecha_vencimiento;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecha_produccion_materia_prima;
     }
 }

@@ -306,15 +306,15 @@ DataOperations dp = new DataOperations();
                     msj_ = "Desea imprimir veinticinco (25) hojas de este producto?";
                     break;
                 default:
-                    msj_ = "Desea imprimir solo una hoja de este producto?";
+                    msj_ = "Desea imprimir una hoja de este producto?";
                     break;
             }
 
-            //if (MessageBox.Show(msj_, "Pregunta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-            //{
-            //    
-            //}
-            
+            if (CajaDialogo.Pregunta(msj_) != DialogResult.Yes)
+            {
+                return;
+            }
+
             timerPrintMulti.Enabled = true;
             tipoprinte = 0;
             centinela_print_multi = vCantidadPrint;

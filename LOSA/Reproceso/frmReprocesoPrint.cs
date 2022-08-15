@@ -19,10 +19,11 @@ namespace LOSA.Reproceso
 {
     public partial class frmReprocesoPrint : DevExpress.XtraEditors.XtraForm
     {
-        public frmReprocesoPrint()
+        UserLogin UsuarioLogeado;
+        public frmReprocesoPrint(UserLogin pUsuarioLogeado)
         {
             InitializeComponent();
-            
+            UsuarioLogeado = pUsuarioLogeado;
             radioGroup1.EditValue = 1110;
             LoadData();
         }
@@ -174,6 +175,32 @@ namespace LOSA.Reproceso
             report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
             ReportPrintTool printReport = new ReportPrintTool(report);
             printReport.ShowPreview();
+        }
+
+        private void gvPT_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            if(e.Column.FieldName == "seleccionado")
+            {
+                if (Convert.ToBoolean(e.Value))
+                {
+                    var gridView = (GridView)gridControl1.FocusedView;
+                    var row = (dsLogistica2.PT_Reproceso_TarimasRow)gridView.GetFocusedDataRow();
+
+                    if(row.fecha_produccion_materia_prima.Date.Year <= 1901)
+                    {
+                        CajaDialogo.Error("La fecha de Producción no es valida! Es necesario actualizar este Dato...");
+                        row.seleccionado = false;
+                        return;
+                    }
+
+                    if (row.fecha_vencimiento.Date.Year <= 1901)
+                    {
+                        CajaDialogo.Error("La fecha de Vencimiento no es valida! Es necesario actualizar este Dato...");
+                        row.seleccionado = false;
+                        return;
+                    }
+                }
+            }
         }
     }
 }

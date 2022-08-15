@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MDIParentFormLOSA));
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.toolTip = new System.Windows.Forms.ToolTip();
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
             this.abrirLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -88,6 +87,7 @@
             this.IsMdiContainer = true;
             this.Name = "MDIParentFormLOSA";
             this.Text = "ALOSY";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Click += new System.EventHandler(this.MDIParentFormLOSA_Click_1);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.MDIParentFormLOSA_MouseClick_1);
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
