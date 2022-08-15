@@ -309,134 +309,185 @@ DataOperations dp = new DataOperations();
                     msj_ = "Desea imprimir solo una hoja de este producto?";
                     break;
             }
+
             //if (MessageBox.Show(msj_, "Pregunta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             //{
-            //    string query = @"sp_insert_tarima_pt_nuevo_v3";
-            //    try
-            //    {
-            //        SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-            //        cn.Open();
-            //        int desde = Convert.ToInt32(txtdesde.Text);
-            //        int hasta = Convert.ToInt32(txthasta.Text);
-
-            //        SqlCommand cmm = new SqlCommand("sp_generar_codigo_from_tables_id", cn);
-            //        cmm.CommandType = CommandType.StoredProcedure;
-            //        cmm.Parameters.AddWithValue("@id", 1);
-            //        string barcode = cmm.ExecuteScalar().ToString();
-
-            //        SqlCommand cmd = new SqlCommand(query, cn);
-            //        cmd.CommandType = CommandType.StoredProcedure;
-            //        cmd.Parameters.AddWithValue("@date_vencimiento", string.Format("{0:yyyy-MM-dd}", dt_fechaVencimiento.EditValue));
-            //        cmd.Parameters.AddWithValue("@lote", lote);
-            //        cmd.Parameters.AddWithValue("@id_presentacion", grdv_data.EditValue);
-            //        cmd.Parameters.AddWithValue("@id_pt", id_pt);
-            //        cmd.Parameters.AddWithValue("@date_produccion", string.Format("{0:yyyy-MM-dd}", dt_fechaFabricaion.EditValue));
-            //        cmd.Parameters.AddWithValue("@cantidad", unidades);
-            //        cmd.Parameters.AddWithValue("@peso", txtkg.Text.Trim());
-            //        cmd.Parameters.AddWithValue("@itemcode", Itemcode.Trim());
-            //        cmd.Parameters.AddWithValue("@id_alimentacion", id_alimentacion);
-            //        cmd.Parameters.AddWithValue("@Pcodigo_barra", barcode);
-            //        cmd.Parameters.AddWithValue("@id_turno", grdturno.EditValue);
-            //        cmd.Parameters.AddWithValue("@desde", desde);
-            //        cmd.Parameters.AddWithValue("@hasta", hasta);
-
-            //        int Id_tm = Convert.ToInt32(cmd.ExecuteScalar());
-            //        cn.Close();
-            //        tipoprinte = 0;
-            //        rptReporteTarimaPT boleta = new rptReporteTarimaPT(Id_tm);
-            //        boleta.ShowPrintMarginsWarning = false;
-            //        ReportPrintTool printtool = new ReportPrintTool(boleta);
-            //        printtool.Print();
-            //        this.DialogResult = DialogResult.OK;
-            //        this.Close();
-            //    }
-            //    catch (Exception ex)
-            //    {
-
-            //        CajaDialogo.Error(ex.Message);
-            //    }
+            //    
             //}
+            
             timerPrintMulti.Enabled = true;
             tipoprinte = 0;
             centinela_print_multi = vCantidadPrint;
             timerPrintMulti.Start();
+
+            //foreach (var item in centinela_print_multi)
+            //{
+
+            //}
+
+            for (int i = 0; i < centinela_print_multi; i++)
+            {
+                string query = @"sp_insert_tarima_pt_nuevo_v3";
+                try
+                {
+                    SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                    cn.Open();
+                    int desde = Convert.ToInt32(txtdesde.Text);
+                    int hasta = Convert.ToInt32(txthasta.Text);
+
+                    SqlCommand cmm = new SqlCommand("sp_generar_codigo_from_tables_id", cn);
+                    cmm.CommandType = CommandType.StoredProcedure;
+                    cmm.Parameters.AddWithValue("@id", 1);
+                    string barcode = cmm.ExecuteScalar().ToString();
+
+                    SqlCommand cmd = new SqlCommand(query, cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@date_vencimiento", string.Format("{0:yyyy-MM-dd}", dt_fechaVencimiento.EditValue));
+                    cmd.Parameters.AddWithValue("@lote", lote);
+                    cmd.Parameters.AddWithValue("@id_presentacion", grdv_data.EditValue);
+                    cmd.Parameters.AddWithValue("@id_pt", id_pt);
+                    cmd.Parameters.AddWithValue("@date_produccion", string.Format("{0:yyyy-MM-dd}", dt_fechaFabricaion.EditValue));
+                    cmd.Parameters.AddWithValue("@cantidad", unidades);
+                    cmd.Parameters.AddWithValue("@peso", txtkg.Text.Trim());
+                    cmd.Parameters.AddWithValue("@itemcode", Itemcode.Trim());
+                    cmd.Parameters.AddWithValue("@id_alimentacion", id_alimentacion);
+                    cmd.Parameters.AddWithValue("@Pcodigo_barra", barcode);
+                    cmd.Parameters.AddWithValue("@id_turno", grdturno.EditValue);
+                    cmd.Parameters.AddWithValue("@desde", desde);
+                    cmd.Parameters.AddWithValue("@hasta", hasta);
+
+                    int Id_tm = Convert.ToInt32(cmd.ExecuteScalar());
+                    cn.Close();
+                    tipoprinte = 0;
+
+                    int contador_print = 0;
+                    rptReporteTarimaPT report1 = new rptReporteTarimaPT(Id_tm);
+        
+                    if (Id_tm > 0)
+                    {
+                        Tarima tar1 = new Tarima();
+                        if (tar1.RecuperarRegistro(Id_tm))
+                        {
+                            if (contador_print == 0)
+                            {
+                                report1 = new rptReporteTarimaPT(Id_tm);
+                                report1.CreateDocument();
+                                contador_print++;
+                            }
+                            else
+                            {
+                                rptReporteTarimaPT report2 = new rptReporteTarimaPT(Id_tm);
+                                report2.CreateDocument();
+
+                                if (report1 != null)
+                                {
+                                    report1.ModifyDocument(x => { x.AddPages(report2.Pages); });
+                                }
+                            }
+                        }
+                    }
+                    if (report1 != null)
+                    {
+                        using (ReportPrintTool prinTool = new ReportPrintTool(report1))
+                        {
+                            prinTool.ShowPreviewDialog();
+                        } 
+
+                    }
+                    
+                    //rptReporteTarimaPT boleta = new rptReporteTarimaPT(Id_tm);
+                    //boleta.ShowPrintMarginsWarning = false;
+                    //ReportPrintTool printtool = new ReportPrintTool(boleta);
+                    //printtool.ShowPreviewDialog();
+                    //this.DialogResult = DialogResult.OK;
+                    //this.Close();
+                }
+                catch (Exception ex)
+                {
+
+                    CajaDialogo.Error(ex.Message);
+                }
+
+
+            }
         }
 
         private void btn_print25_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Desea imprimir 25 tarimas de este producto?", "Pregunta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-            {
-                if (grdturno.EditValue == null)
-                {
-                    CajaDialogo.Error("Debe de seleccionar el turno");
-                    return;
-                }
-                if (grdv_data.EditValue == null)
-                {
-                    CajaDialogo.Error("Debe de seleccionar la presentacion");
-                    return;
-                }
-                if (txtdesde.Text == "")
-                {
-                    CajaDialogo.Error("Debe especificar el saco inicial de la tarima.");
-                    return;
-                }
-                if (txthasta.Text == "")
-                {
-                    CajaDialogo.Error("Debe especificar el saco final de la tarima.");
-                    return;
-                }
-                //int contador = 25;
-                //for (int i = 0; i < contador; i++)
-                //{
-                //    string query = @"sp_insert_tarima_pt_nuevo";
-                //    try
-                //    {
-                //        SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-                //        cn.Open();
+            PrintRotuloTarima(25);
+            //if (MessageBox.Show("Desea imprimir 25 tarimas de este producto?", "Pregunta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            //{
+            //    if (grdturno.EditValue == null)
+            //    {
+            //        CajaDialogo.Error("Debe de seleccionar el turno");
+            //        return;
+            //    }
+            //    if (grdv_data.EditValue == null)
+            //    {
+            //        CajaDialogo.Error("Debe de seleccionar la presentacion");
+            //        return;
+            //    }
+            //    if (txtdesde.Text == "")
+            //    {
+            //        CajaDialogo.Error("Debe especificar el saco inicial de la tarima.");
+            //        return;
+            //    }
+            //    if (txthasta.Text == "")
+            //    {
+            //        CajaDialogo.Error("Debe especificar el saco final de la tarima.");
+            //        return;
+            //    }
+            //    //int contador = 25;
+            //    //for (int i = 0; i < contador; i++)
+            //    //{
+            //    //    string query = @"sp_insert_tarima_pt_nuevo";
+            //    //    try
+            //    //    {
+            //    //        SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            //    //        cn.Open();
 
 
-                //        SqlCommand cmm = new SqlCommand("sp_generar_codigo_from_tables_id", cn);
-                //        cmm.CommandType = CommandType.StoredProcedure;
-                //        cmm.Parameters.AddWithValue("@id", 1);
-                //        string barcode = cmm.ExecuteScalar().ToString();
+            //    //        SqlCommand cmm = new SqlCommand("sp_generar_codigo_from_tables_id", cn);
+            //    //        cmm.CommandType = CommandType.StoredProcedure;
+            //    //        cmm.Parameters.AddWithValue("@id", 1);
+            //    //        string barcode = cmm.ExecuteScalar().ToString();
 
-                //        SqlCommand cmd = new SqlCommand(query, cn);
-                //        cmd.CommandType = CommandType.StoredProcedure;
-                //        cmd.Parameters.AddWithValue("@date_vencimiento", string.Format("{0:yyyy-MM-dd}", dt_fechaVencimiento.EditValue));
-                //        cmd.Parameters.AddWithValue("@lote", lote);
-                //        cmd.Parameters.AddWithValue("@id_presentacion", presentacion);
-                //        cmd.Parameters.AddWithValue("@id_pt", id_pt);
-                //        cmd.Parameters.AddWithValue("@date_produccion", string.Format("{0:yyyy-MM-dd}", dt_fechaFabricaion.EditValue));
-                //        cmd.Parameters.AddWithValue("@cantidad", unidades);
-                //        cmd.Parameters.AddWithValue("@peso", txtkg.Text.Trim());
-                //        cmd.Parameters.AddWithValue("@itemcode", Itemcode.Trim());
-                //        cmd.Parameters.AddWithValue("@id_alimentacion", id_alimentacion);
-                //        cmd.Parameters.AddWithValue("@Pcodigo_barra", barcode);
+            //    //        SqlCommand cmd = new SqlCommand(query, cn);
+            //    //        cmd.CommandType = CommandType.StoredProcedure;
+            //    //        cmd.Parameters.AddWithValue("@date_vencimiento", string.Format("{0:yyyy-MM-dd}", dt_fechaVencimiento.EditValue));
+            //    //        cmd.Parameters.AddWithValue("@lote", lote);
+            //    //        cmd.Parameters.AddWithValue("@id_presentacion", presentacion);
+            //    //        cmd.Parameters.AddWithValue("@id_pt", id_pt);
+            //    //        cmd.Parameters.AddWithValue("@date_produccion", string.Format("{0:yyyy-MM-dd}", dt_fechaFabricaion.EditValue));
+            //    //        cmd.Parameters.AddWithValue("@cantidad", unidades);
+            //    //        cmd.Parameters.AddWithValue("@peso", txtkg.Text.Trim());
+            //    //        cmd.Parameters.AddWithValue("@itemcode", Itemcode.Trim());
+            //    //        cmd.Parameters.AddWithValue("@id_alimentacion", id_alimentacion);
+            //    //        cmd.Parameters.AddWithValue("@Pcodigo_barra", barcode);
 
-                //        int Id_tm = Convert.ToInt32(cmd.ExecuteScalar());
-                //        cn.Close();
+            //    //        int Id_tm = Convert.ToInt32(cmd.ExecuteScalar());
+            //    //        cn.Close();
 
-                //        rptReporteTarimaPT boleta = new rptReporteTarimaPT(Id_tm);
-                //        boleta.ShowPrintMarginsWarning = false;
-                //        ReportPrintTool printtool = new ReportPrintTool(boleta);
-                //        printtool.Print();
+            //    //        rptReporteTarimaPT boleta = new rptReporteTarimaPT(Id_tm);
+            //    //        boleta.ShowPrintMarginsWarning = false;
+            //    //        ReportPrintTool printtool = new ReportPrintTool(boleta);
+            //    //        printtool.Print();
 
-                //        Thread.Sleep(400);
-                //    }
-                //    catch (Exception ex)
-                //    {
+            //    //        Thread.Sleep(400);
+            //    //    }
+            //    //    catch (Exception ex)
+            //    //    {
 
-                //        CajaDialogo.Error(ex.Message);
-                //    }
-                //}
-                //CajaDialogo.Information("Impresion completa.");
-                //this.Close();
-                timerPrintMulti.Enabled = true;
-                tipoprinte = 0;
-                centinela_print_multi = 25;
-                timerPrintMulti.Start();
-            }
+            //    //        CajaDialogo.Error(ex.Message);
+            //    //    }
+            //    //}
+            //    //CajaDialogo.Information("Impresion completa.");
+            //    //this.Close();
+            //    timerPrintMulti.Enabled = true;
+            //    tipoprinte = 0;
+            //    centinela_print_multi = 25;
+            //    timerPrintMulti.Start();
+            //}
         }
 
         private void timerPrintMulti_Tick(object sender, EventArgs e)
@@ -539,70 +590,75 @@ DataOperations dp = new DataOperations();
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Desea imprimir 3 tarimas de este producto?", "Pregunta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-            {
-                if (grdturno.EditValue == null)
-                {
-                    CajaDialogo.Error("Debe de seleccionar el turno");
-                    return;
-                }
+
+            PrintRotuloTarima(3);
+            //if (MessageBox.Show("Desea imprimir 3 tarimas de este producto?", "Pregunta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            //{
+            //    if (grdturno.EditValue == null)
+            //    {
+            //        CajaDialogo.Error("Debe de seleccionar el turno");
+            //        return;
+            //    }
 
 
-                if (grdv_data.EditValue == null)
-                {
-                    CajaDialogo.Error("Debe de seleccionar la presentacion");
-                    return;
-                }
-                if (txtdesde.Text == "")
-                {
-                    CajaDialogo.Error("Debe especificar el saco inicial de la tarima.");
-                    return;
-                }
-                if (txthasta.Text == "")
-                {
-                    CajaDialogo.Error("Debe especificar el saco final de la tarima.");
-                    return;
-                }
+            //    if (grdv_data.EditValue == null)
+            //    {
+            //        CajaDialogo.Error("Debe de seleccionar la presentacion");
+            //        return;
+            //    }
+            //    if (txtdesde.Text == "")
+            //    {
+            //        CajaDialogo.Error("Debe especificar el saco inicial de la tarima.");
+            //        return;
+            //    }
+            //    if (txthasta.Text == "")
+            //    {
+            //        CajaDialogo.Error("Debe especificar el saco final de la tarima.");
+            //        return;
+            //    }
 
-                timerPrintMulti.Enabled = true;
-                tipoprinte = 0;
-                centinela_print_multi = 3;
-                timerPrintMulti.Start();
-            }
+            //    timerPrintMulti.Enabled = true;
+            //    tipoprinte = 0;
+            //    centinela_print_multi = 3;
+            //    timerPrintMulti.Start();
+            //}
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Desea imprimir 5 tarimas de este producto?", "Pregunta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-            {
-                if (grdturno.EditValue == null)
-                {
-                    CajaDialogo.Error("Debe de seleccionar el turno");
-                    return;
-                }
 
-                if (grdv_data.EditValue == null)
-                {
-                    CajaDialogo.Error("Debe de seleccionar la presentacion");
-                    return;
-                }
+            PrintRotuloTarima(5);
 
-                if (txtdesde.Text == "")
-                {
-                    CajaDialogo.Error("Debe especificar el saco inicial de la tarima.");
-                    return;
-                }
-                if (txthasta.Text == "")
-                {
-                    CajaDialogo.Error("Debe especificar el saco final de la tarima.");
-                    return;
-                }
+            //if (MessageBox.Show("Desea imprimir 5 tarimas de este producto?", "Pregunta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            //{
+            //    if (grdturno.EditValue == null)
+            //    {
+            //        CajaDialogo.Error("Debe de seleccionar el turno");
+            //        return;
+            //    }
 
-                timerPrintMulti.Enabled = true;
-                tipoprinte = 0;
-                centinela_print_multi = 5;
-                timerPrintMulti.Start();
-            }
+            //    if (grdv_data.EditValue == null)
+            //    {
+            //        CajaDialogo.Error("Debe de seleccionar la presentacion");
+            //        return;
+            //    }
+
+            //    if (txtdesde.Text == "")
+            //    {
+            //        CajaDialogo.Error("Debe especificar el saco inicial de la tarima.");
+            //        return;
+            //    }
+            //    if (txthasta.Text == "")
+            //    {
+            //        CajaDialogo.Error("Debe especificar el saco final de la tarima.");
+            //        return;
+            //    }
+
+            //    timerPrintMulti.Enabled = true;
+            //    tipoprinte = 0;
+            //    centinela_print_multi = 5;
+            //    timerPrintMulti.Start();
+            //}
         }
 
         private void btn1_Click(object sender, EventArgs e)
@@ -801,7 +857,7 @@ DataOperations dp = new DataOperations();
             }
             catch (Exception ex)
             {
-
+                CajaDialogo.Error(ex.Message);
                 
             }
         }
@@ -827,8 +883,7 @@ DataOperations dp = new DataOperations();
             }
             catch (Exception ex)
             {
-
-                
+                CajaDialogo.Error(ex.Message);
             }
         }
 
@@ -848,8 +903,8 @@ DataOperations dp = new DataOperations();
             }
             catch (Exception ex)
             {
+                CajaDialogo.Error(ex.Message);
 
-                
             }
         }
     }
