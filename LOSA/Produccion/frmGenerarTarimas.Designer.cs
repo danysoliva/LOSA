@@ -28,13 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGenerarTarimas));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -45,7 +39,7 @@
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.txt_producto = new DevExpress.XtraEditors.TextEdit();
             this.grdv_data = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.bagsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bagsBindingSource = new System.Windows.Forms.BindingSource();
             this.dsProduccion = new LOSA.Produccion.dsProduccion();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -61,10 +55,10 @@
             this.dt_fechaVencimiento = new DevExpress.XtraEditors.DateEdit();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btn_print25 = new DevExpress.XtraEditors.SimpleButton();
-            this.timerPrintMulti = new System.Windows.Forms.Timer(this.components);
+            this.timerPrintMulti = new System.Windows.Forms.Timer();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.grdturno = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.turnoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.turnoBindingSource = new System.Windows.Forms.BindingSource();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescrip = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -140,7 +134,7 @@
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.cmdHome.Location = new System.Drawing.Point(1089, 2);
+            this.cmdHome.Location = new System.Drawing.Point(785, 2);
             this.cmdHome.Name = "cmdHome";
             this.cmdHome.Size = new System.Drawing.Size(161, 51);
             this.cmdHome.TabIndex = 37;
@@ -158,7 +152,7 @@
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl3.Location = new System.Drawing.Point(107, 2);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(987, 39);
+            this.labelControl3.Size = new System.Drawing.Size(683, 39);
             this.labelControl3.TabIndex = 38;
             this.labelControl3.Text = "Generar Tarimas";
             this.labelControl3.Click += new System.EventHandler(this.labelControl3_Click);
@@ -549,7 +543,7 @@
             this.grd_data.Name = "grd_data";
             this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.bbtnreprint});
-            this.grd_data.Size = new System.Drawing.Size(634, 356);
+            this.grd_data.Size = new System.Drawing.Size(773, 356);
             this.grd_data.TabIndex = 63;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridv_data});
@@ -668,9 +662,8 @@
             // bbtnreprint
             // 
             this.bbtnreprint.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.bbtnreprint.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph)});
             this.bbtnreprint.Name = "bbtnreprint";
             this.bbtnreprint.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.bbtnreprint.Click += new System.EventHandler(this.bbtnreprint_Click);
@@ -774,7 +767,7 @@
             this.simpleButton12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton12.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton12.ImageOptions.Image")));
             this.simpleButton12.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.simpleButton12.Location = new System.Drawing.Point(700, 469);
+            this.simpleButton12.Location = new System.Drawing.Point(839, 490);
             this.simpleButton12.Name = "simpleButton12";
             this.simpleButton12.Size = new System.Drawing.Size(98, 46);
             this.simpleButton12.TabIndex = 11;
@@ -785,7 +778,7 @@
             this.simpleButton10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton10.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton10.ImageOptions.Image")));
             this.simpleButton10.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.simpleButton10.Location = new System.Drawing.Point(648, 469);
+            this.simpleButton10.Location = new System.Drawing.Point(787, 490);
             this.simpleButton10.Name = "simpleButton10";
             this.simpleButton10.Size = new System.Drawing.Size(46, 46);
             this.simpleButton10.TabIndex = 9;
@@ -796,7 +789,7 @@
             this.simpleButton7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton7.ImageOptions.Image")));
             this.simpleButton7.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.simpleButton7.Location = new System.Drawing.Point(752, 316);
+            this.simpleButton7.Location = new System.Drawing.Point(891, 337);
             this.simpleButton7.Name = "simpleButton7";
             this.simpleButton7.Size = new System.Drawing.Size(46, 46);
             this.simpleButton7.TabIndex = 8;
@@ -807,7 +800,7 @@
             this.simpleButton8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton8.ImageOptions.Image")));
             this.simpleButton8.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.simpleButton8.Location = new System.Drawing.Point(700, 316);
+            this.simpleButton8.Location = new System.Drawing.Point(839, 337);
             this.simpleButton8.Name = "simpleButton8";
             this.simpleButton8.Size = new System.Drawing.Size(46, 46);
             this.simpleButton8.TabIndex = 7;
@@ -818,7 +811,7 @@
             this.simpleButton9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton9.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton9.ImageOptions.Image")));
             this.simpleButton9.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.simpleButton9.Location = new System.Drawing.Point(648, 316);
+            this.simpleButton9.Location = new System.Drawing.Point(787, 337);
             this.simpleButton9.Name = "simpleButton9";
             this.simpleButton9.Size = new System.Drawing.Size(46, 46);
             this.simpleButton9.TabIndex = 6;
@@ -829,7 +822,7 @@
             this.simpleButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
             this.simpleButton4.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.simpleButton4.Location = new System.Drawing.Point(752, 368);
+            this.simpleButton4.Location = new System.Drawing.Point(891, 389);
             this.simpleButton4.Name = "simpleButton4";
             this.simpleButton4.Size = new System.Drawing.Size(46, 46);
             this.simpleButton4.TabIndex = 5;
@@ -840,7 +833,7 @@
             this.simpleButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
             this.simpleButton5.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.simpleButton5.Location = new System.Drawing.Point(700, 368);
+            this.simpleButton5.Location = new System.Drawing.Point(839, 389);
             this.simpleButton5.Name = "simpleButton5";
             this.simpleButton5.Size = new System.Drawing.Size(46, 46);
             this.simpleButton5.TabIndex = 4;
@@ -851,7 +844,7 @@
             this.btn4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn4.ImageOptions.Image")));
             this.btn4.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btn4.Location = new System.Drawing.Point(648, 368);
+            this.btn4.Location = new System.Drawing.Point(787, 389);
             this.btn4.Name = "btn4";
             this.btn4.Size = new System.Drawing.Size(46, 46);
             this.btn4.TabIndex = 3;
@@ -862,7 +855,7 @@
             this.btn3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn3.ImageOptions.Image")));
             this.btn3.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btn3.Location = new System.Drawing.Point(752, 420);
+            this.btn3.Location = new System.Drawing.Point(891, 441);
             this.btn3.Name = "btn3";
             this.btn3.Size = new System.Drawing.Size(46, 46);
             this.btn3.TabIndex = 2;
@@ -873,7 +866,7 @@
             this.btn2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn2.ImageOptions.Image")));
             this.btn2.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btn2.Location = new System.Drawing.Point(700, 420);
+            this.btn2.Location = new System.Drawing.Point(839, 441);
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(46, 46);
             this.btn2.TabIndex = 1;
@@ -884,7 +877,7 @@
             this.btn1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn1.ImageOptions.Image")));
             this.btn1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btn1.Location = new System.Drawing.Point(648, 420);
+            this.btn1.Location = new System.Drawing.Point(787, 441);
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(46, 46);
             this.btn1.TabIndex = 0;
@@ -930,7 +923,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1253, 739);
+            this.ClientSize = new System.Drawing.Size(949, 739);
             this.Controls.Add(this.chSeleccionarTodas);
             this.Controls.Add(this.simpleButton6);
             this.Controls.Add(this.simpleButton12);
