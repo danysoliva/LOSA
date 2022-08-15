@@ -19,10 +19,13 @@ namespace LOSA.TransaccionesMP
     {
         DataOperations dp = new DataOperations();
         int IdRequisicionHeader;
-        UserLogin UsuarioLogeado; 
-        public frmviewrequisadetallecs(int pIdl, UserLogin Puser)
+        UserLogin UsuarioLogeado;
+        int LotePT;
+        public frmviewrequisadetallecs(int pIdl, UserLogin Puser, int pLote)
         {
             InitializeComponent();
+            LotePT = pLote;
+            txtLote.Text = pLote.ToString();
             IdRequisicionHeader = pIdl;
             LoadDatos();
             UsuarioLogeado = Puser;

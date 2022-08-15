@@ -28,8 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmnewplan));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.grOrdenFabricacion = new DevExpress.XtraGrid.GridControl();
             this.dsTransaccionesMP1 = new LOSA.TransaccionesMP.dsTransaccionesMP();
@@ -45,6 +49,7 @@
             this.btnVer = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colSeleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
+            this.colLote = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grOrdenFabricacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTarimas)).BeginInit();
@@ -110,6 +115,7 @@
             this.gvTarimas.Appearance.TopNewRow.Options.UseBackColor = true;
             this.gvTarimas.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colDocEntry,
+            this.colLote,
             this.colItemCode,
             this.colProdName,
             this.colfecha,
@@ -139,7 +145,7 @@
             this.colItemCode.FieldName = "ItemCode";
             this.colItemCode.Name = "colItemCode";
             this.colItemCode.Visible = true;
-            this.colItemCode.VisibleIndex = 1;
+            this.colItemCode.VisibleIndex = 2;
             // 
             // colProdName
             // 
@@ -147,7 +153,7 @@
             this.colProdName.FieldName = "ProdName";
             this.colProdName.Name = "colProdName";
             this.colProdName.Visible = true;
-            this.colProdName.VisibleIndex = 2;
+            this.colProdName.VisibleIndex = 3;
             // 
             // colfecha
             // 
@@ -155,7 +161,7 @@
             this.colfecha.FieldName = "fecha";
             this.colfecha.Name = "colfecha";
             this.colfecha.Visible = true;
-            this.colfecha.VisibleIndex = 3;
+            this.colfecha.VisibleIndex = 4;
             // 
             // colPlannedQty
             // 
@@ -163,7 +169,7 @@
             this.colPlannedQty.FieldName = "PlannedQty";
             this.colPlannedQty.Name = "colPlannedQty";
             this.colPlannedQty.Visible = true;
-            this.colPlannedQty.VisibleIndex = 4;
+            this.colPlannedQty.VisibleIndex = 5;
             // 
             // colEstado
             // 
@@ -171,7 +177,7 @@
             this.colEstado.FieldName = "Estado";
             this.colEstado.Name = "colEstado";
             this.colEstado.Visible = true;
-            this.colEstado.VisibleIndex = 5;
+            this.colEstado.VisibleIndex = 6;
             // 
             // colComments
             // 
@@ -179,7 +185,7 @@
             this.colComments.FieldName = "Comments";
             this.colComments.Name = "colComments";
             this.colComments.Visible = true;
-            this.colComments.VisibleIndex = 6;
+            this.colComments.VisibleIndex = 7;
             // 
             // colVer
             // 
@@ -187,14 +193,14 @@
             this.colVer.ColumnEdit = this.btnVer;
             this.colVer.Name = "colVer";
             this.colVer.Visible = true;
-            this.colVer.VisibleIndex = 7;
+            this.colVer.VisibleIndex = 8;
             // 
             // btnVer
             // 
             this.btnVer.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
             this.btnVer.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnVer.Name = "btnVer";
             this.btnVer.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
@@ -222,6 +228,14 @@
             this.btnAtras.Text = "Atras";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
+            // colLote
+            // 
+            this.colLote.FieldName = "Lote";
+            this.colLote.Name = "colLote";
+            this.colLote.OptionsColumn.AllowEdit = false;
+            this.colLote.Visible = true;
+            this.colLote.VisibleIndex = 1;
+            // 
             // frmnewplan
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -232,10 +246,9 @@
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.grOrdenFabricacion);
             this.Controls.Add(this.labelControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmnewplan";
-            this.Text = "frmnewplan";
+            this.Text = "Ordenes de Fab. Planificadas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.grOrdenFabricacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).EndInit();
@@ -262,5 +275,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSeleccionar;
         private DevExpress.XtraEditors.SimpleButton btnAtras;
         private TransaccionesMP.dsTransaccionesMP dsTransaccionesMP1;
+        private DevExpress.XtraGrid.Columns.GridColumn colLote;
     }
 }

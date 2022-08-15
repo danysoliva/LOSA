@@ -13,9 +13,10 @@ namespace LOSA.Requisiciones.Reportes
     {
         DataOperations dp = new DataOperations();
         int ID; 
-        public lblNumeroReq(int Pid)
+        public lblNumeroReq(int Pid, int pLote)
         {
             InitializeComponent();
+            lblLotePT.Text = pLote.ToString();
             ID = Pid;
             load_data();
         }

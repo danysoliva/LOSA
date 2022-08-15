@@ -28,8 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrdenFabricacionDetalle));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.grOrdenFabricacion = new DevExpress.XtraGrid.GridControl();
             this.dsTransaccionesMP1 = new LOSA.TransaccionesMP.dsTransaccionesMP();
@@ -45,6 +49,8 @@
             this.btnVer = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.cmdGuardar = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.txtLote = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.grOrdenFabricacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTarimas)).BeginInit();
@@ -63,7 +69,7 @@
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl1.Location = new System.Drawing.Point(167, 11);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(348, 40);
+            this.labelControl1.Size = new System.Drawing.Size(414, 40);
             this.labelControl1.TabIndex = 32;
             this.labelControl1.Text = "Detalle Orden de Fabricación";
             // 
@@ -74,12 +80,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grOrdenFabricacion.DataMember = "orden_fabricacion_d";
             this.grOrdenFabricacion.DataSource = this.dsTransaccionesMP1;
-            this.grOrdenFabricacion.Location = new System.Drawing.Point(2, 57);
+            this.grOrdenFabricacion.Location = new System.Drawing.Point(2, 92);
             this.grOrdenFabricacion.MainView = this.gvTarimas;
             this.grOrdenFabricacion.Name = "grOrdenFabricacion";
             this.grOrdenFabricacion.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnVer});
-            this.grOrdenFabricacion.Size = new System.Drawing.Size(635, 502);
+            this.grOrdenFabricacion.Size = new System.Drawing.Size(701, 467);
             this.grOrdenFabricacion.TabIndex = 31;
             this.grOrdenFabricacion.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTarimas});
@@ -190,9 +196,9 @@
             // btnVer
             // 
             this.btnVer.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.btnVer.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnVer.Name = "btnVer";
             this.btnVer.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -206,7 +212,7 @@
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(493, 6);
+            this.btnAtras.Location = new System.Drawing.Point(559, 6);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(144, 47);
             this.btnAtras.TabIndex = 30;
@@ -229,23 +235,48 @@
             this.cmdGuardar.Text = "Planificar";
             this.cmdGuardar.Click += new System.EventHandler(this.cmdGuardar_Click);
             // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(5, 66);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(52, 20);
+            this.labelControl2.TabIndex = 34;
+            this.labelControl2.Text = "Lote PT:";
+            // 
+            // txtLote
+            // 
+            this.txtLote.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLote.Appearance.Options.UseFont = true;
+            this.txtLote.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.txtLote.Location = new System.Drawing.Point(63, 66);
+            this.txtLote.Name = "txtLote";
+            this.txtLote.Size = new System.Drawing.Size(106, 20);
+            this.txtLote.TabIndex = 35;
+            this.txtLote.Text = "N/D";
+            // 
             // frmOrdenFabricacionDetalle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(638, 560);
+            this.ClientSize = new System.Drawing.Size(704, 560);
+            this.Controls.Add(this.txtLote);
+            this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.cmdGuardar);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.grOrdenFabricacion);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.ImeMode = System.Windows.Forms.ImeMode.On;
             this.Name = "frmOrdenFabricacionDetalle";
+            this.ShowIcon = false;
             ((System.ComponentModel.ISupportInitialize)(this.grOrdenFabricacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTarimas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnVer)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -266,5 +297,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colConsumo;
         private DevExpress.XtraGrid.Columns.GridColumn colPendiente;
         private DevExpress.XtraEditors.SimpleButton cmdGuardar;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl txtLote;
     }
 }

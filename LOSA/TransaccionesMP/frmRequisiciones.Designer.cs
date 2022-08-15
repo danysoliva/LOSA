@@ -67,6 +67,7 @@
             this.btnend = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colfinalizado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tggView = new DevExpress.XtraEditors.ToggleSwitch();
+            this.colLote = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grRequisicoinesMP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTarimas)).BeginInit();
@@ -86,7 +87,7 @@
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(489, 3);
+            this.btnAtras.Location = new System.Drawing.Point(655, 3);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(148, 47);
             this.btnAtras.TabIndex = 33;
@@ -105,7 +106,7 @@
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl1.Location = new System.Drawing.Point(135, 12);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(348, 40);
+            this.labelControl1.Size = new System.Drawing.Size(514, 40);
             this.labelControl1.TabIndex = 35;
             this.labelControl1.Text = "Requisiciones MP";
             // 
@@ -123,7 +124,7 @@
             this.btnVerD,
             this.btnimprimir,
             this.btnend});
-            this.grRequisicoinesMP.Size = new System.Drawing.Size(635, 502);
+            this.grRequisicoinesMP.Size = new System.Drawing.Size(801, 523);
             this.grRequisicoinesMP.TabIndex = 34;
             this.grRequisicoinesMP.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTarimas});
@@ -153,6 +154,7 @@
             this.gvTarimas.Appearance.TopNewRow.BackColor = System.Drawing.Color.White;
             this.gvTarimas.Appearance.TopNewRow.Options.UseBackColor = true;
             this.gvTarimas.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colLote,
             this.colid,
             this.colid_usuario,
             this.coluser_,
@@ -184,7 +186,6 @@
             this.colid.Name = "colid";
             this.colid.Visible = true;
             this.colid.VisibleIndex = 0;
-            this.colid.Width = 49;
             // 
             // colid_usuario
             // 
@@ -202,8 +203,8 @@
             this.coluser_.Name = "coluser_";
             this.coluser_.OptionsColumn.AllowEdit = false;
             this.coluser_.Visible = true;
-            this.coluser_.VisibleIndex = 1;
-            this.coluser_.Width = 64;
+            this.coluser_.VisibleIndex = 2;
+            this.coluser_.Width = 76;
             // 
             // colid_orden
             // 
@@ -220,8 +221,8 @@
             this.colfecha_solicitada.Name = "colfecha_solicitada";
             this.colfecha_solicitada.OptionsColumn.AllowEdit = false;
             this.colfecha_solicitada.Visible = true;
-            this.colfecha_solicitada.VisibleIndex = 2;
-            this.colfecha_solicitada.Width = 64;
+            this.colfecha_solicitada.VisibleIndex = 3;
+            this.colfecha_solicitada.Width = 76;
             // 
             // colfecha_a_producir
             // 
@@ -230,8 +231,8 @@
             this.colfecha_a_producir.MinWidth = 15;
             this.colfecha_a_producir.Name = "colfecha_a_producir";
             this.colfecha_a_producir.Visible = true;
-            this.colfecha_a_producir.VisibleIndex = 3;
-            this.colfecha_a_producir.Width = 64;
+            this.colfecha_a_producir.VisibleIndex = 4;
+            this.colfecha_a_producir.Width = 76;
             // 
             // colid_estado
             // 
@@ -248,8 +249,8 @@
             this.colestado.Name = "colestado";
             this.colestado.OptionsColumn.AllowEdit = false;
             this.colestado.Visible = true;
-            this.colestado.VisibleIndex = 4;
-            this.colestado.Width = 64;
+            this.colestado.VisibleIndex = 5;
+            this.colestado.Width = 76;
             // 
             // colDocEntry
             // 
@@ -259,8 +260,8 @@
             this.colDocEntry.Name = "colDocEntry";
             this.colDocEntry.OptionsColumn.AllowEdit = false;
             this.colDocEntry.Visible = true;
-            this.colDocEntry.VisibleIndex = 5;
-            this.colDocEntry.Width = 67;
+            this.colDocEntry.VisibleIndex = 6;
+            this.colDocEntry.Width = 79;
             // 
             // gridColumn1
             // 
@@ -269,8 +270,8 @@
             this.gridColumn1.MinWidth = 15;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 7;
-            this.gridColumn1.Width = 32;
+            this.gridColumn1.VisibleIndex = 8;
+            this.gridColumn1.Width = 37;
             // 
             // btnVerD
             // 
@@ -290,8 +291,8 @@
             this.colcomentario.Name = "colcomentario";
             this.colcomentario.OptionsColumn.AllowEdit = false;
             this.colcomentario.Visible = true;
-            this.colcomentario.VisibleIndex = 6;
-            this.colcomentario.Width = 59;
+            this.colcomentario.VisibleIndex = 7;
+            this.colcomentario.Width = 70;
             // 
             // colimprimir
             // 
@@ -300,8 +301,8 @@
             this.colimprimir.MinWidth = 15;
             this.colimprimir.Name = "colimprimir";
             this.colimprimir.Visible = true;
-            this.colimprimir.VisibleIndex = 8;
-            this.colimprimir.Width = 56;
+            this.colimprimir.VisibleIndex = 9;
+            this.colimprimir.Width = 66;
             // 
             // btnimprimir
             // 
@@ -319,8 +320,7 @@
             this.colFinalizar.ColumnEdit = this.btnend;
             this.colFinalizar.Name = "colFinalizar";
             this.colFinalizar.Visible = true;
-            this.colFinalizar.VisibleIndex = 9;
-            this.colFinalizar.Width = 56;
+            this.colFinalizar.VisibleIndex = 10;
             // 
             // btnend
             // 
@@ -350,20 +350,27 @@
             this.tggView.TabIndex = 36;
             this.tggView.Toggled += new System.EventHandler(this.tggView_Toggled);
             // 
+            // colLote
+            // 
+            this.colLote.FieldName = "Lote";
+            this.colLote.Name = "colLote";
+            this.colLote.OptionsColumn.AllowEdit = false;
+            this.colLote.Visible = true;
+            this.colLote.VisibleIndex = 1;
+            this.colLote.Width = 77;
+            // 
             // frmRequisiciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(638, 560);
-            this.ControlBox = false;
+            this.ClientSize = new System.Drawing.Size(804, 581);
             this.Controls.Add(this.tggView);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.grRequisicoinesMP);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmRequisiciones";
-            this.Text = "frmRequisiciones";
+            this.ShowIcon = false;
             ((System.ComponentModel.ISupportInitialize)(this.grRequisicoinesMP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTarimas)).EndInit();
@@ -400,5 +407,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnend;
         private DevExpress.XtraEditors.ToggleSwitch tggView;
         private DevExpress.XtraGrid.Columns.GridColumn colfinalizado;
+        private DevExpress.XtraGrid.Columns.GridColumn colLote;
     }
 }

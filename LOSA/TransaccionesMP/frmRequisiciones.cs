@@ -74,7 +74,7 @@ namespace LOSA.TransaccionesMP
             var gridView = (GridView)grRequisicoinesMP.FocusedView;
             var row = (dsTransaccionesMP.requisiciones_hRow)gridView.GetFocusedDataRow();
 
-            frmRequisicionesDetalle frm = new frmRequisicionesDetalle(UsuarioLogeado, row.id);
+            frmRequisicionesDetalle frm = new frmRequisicionesDetalle(UsuarioLogeado, row.id, row.Lote);
             frm.WindowState = FormWindowState.Maximized;
             if(frm.ShowDialog()== DialogResult.OK)
             {
@@ -92,7 +92,8 @@ namespace LOSA.TransaccionesMP
         {
             var gridView = (GridView)grRequisicoinesMP.FocusedView;
             var row = (dsTransaccionesMP.requisiciones_hRow)gridView.GetFocusedDataRow();
-            Requisiciones.Reportes.lblNumeroReq report = new Requisiciones.Reportes.lblNumeroReq(row.id);
+
+            Requisiciones.Reportes.lblNumeroReq report = new Requisiciones.Reportes.lblNumeroReq(row.id, row.Lote);
             report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
             report.ShowPrintMarginsWarning = false;
             //report.ShowPreview();

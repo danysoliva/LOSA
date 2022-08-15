@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrdenesFabricacion));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.grOrdenFabricacion = new DevExpress.XtraGrid.GridControl();
             this.dsTransaccionesMP1 = new LOSA.TransaccionesMP.dsTransaccionesMP();
@@ -46,6 +50,7 @@
             this.colSeleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.chkTodos = new System.Windows.Forms.CheckBox();
+            this.colLote = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grOrdenFabricacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTarimas)).BeginInit();
@@ -119,7 +124,8 @@
             this.colEstado,
             this.colComments,
             this.colVer,
-            this.colSeleccionar});
+            this.colSeleccionar,
+            this.colLote});
             this.gvTarimas.GridControl = this.grOrdenFabricacion;
             this.gvTarimas.Name = "gvTarimas";
             this.gvTarimas.OptionsCustomization.AllowFilter = false;
@@ -141,7 +147,7 @@
             this.colItemCode.FieldName = "ItemCode";
             this.colItemCode.Name = "colItemCode";
             this.colItemCode.Visible = true;
-            this.colItemCode.VisibleIndex = 1;
+            this.colItemCode.VisibleIndex = 2;
             // 
             // colProdName
             // 
@@ -149,7 +155,7 @@
             this.colProdName.FieldName = "ProdName";
             this.colProdName.Name = "colProdName";
             this.colProdName.Visible = true;
-            this.colProdName.VisibleIndex = 2;
+            this.colProdName.VisibleIndex = 3;
             // 
             // colfecha
             // 
@@ -157,7 +163,7 @@
             this.colfecha.FieldName = "fecha";
             this.colfecha.Name = "colfecha";
             this.colfecha.Visible = true;
-            this.colfecha.VisibleIndex = 3;
+            this.colfecha.VisibleIndex = 4;
             // 
             // colPlannedQty
             // 
@@ -165,7 +171,7 @@
             this.colPlannedQty.FieldName = "PlannedQty";
             this.colPlannedQty.Name = "colPlannedQty";
             this.colPlannedQty.Visible = true;
-            this.colPlannedQty.VisibleIndex = 4;
+            this.colPlannedQty.VisibleIndex = 5;
             // 
             // colEstado
             // 
@@ -173,7 +179,7 @@
             this.colEstado.FieldName = "Estado";
             this.colEstado.Name = "colEstado";
             this.colEstado.Visible = true;
-            this.colEstado.VisibleIndex = 5;
+            this.colEstado.VisibleIndex = 6;
             // 
             // colComments
             // 
@@ -181,7 +187,7 @@
             this.colComments.FieldName = "Comments";
             this.colComments.Name = "colComments";
             this.colComments.Visible = true;
-            this.colComments.VisibleIndex = 6;
+            this.colComments.VisibleIndex = 7;
             // 
             // colVer
             // 
@@ -189,14 +195,14 @@
             this.colVer.ColumnEdit = this.btnVer;
             this.colVer.Name = "colVer";
             this.colVer.Visible = true;
-            this.colVer.VisibleIndex = 7;
+            this.colVer.VisibleIndex = 8;
             // 
             // btnVer
             // 
             this.btnVer.AutoHeight = false;
             editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.btnVer.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnVer.Name = "btnVer";
             this.btnVer.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnVer.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnVer_ButtonClick);
@@ -237,6 +243,14 @@
             this.chkTodos.UseVisualStyleBackColor = true;
             this.chkTodos.Visible = false;
             // 
+            // colLote
+            // 
+            this.colLote.FieldName = "Lote";
+            this.colLote.Name = "colLote";
+            this.colLote.OptionsColumn.AllowEdit = false;
+            this.colLote.Visible = true;
+            this.colLote.VisibleIndex = 1;
+            // 
             // frmOrdenesFabricacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -248,9 +262,8 @@
             this.Controls.Add(this.chkTodos);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.grOrdenFabricacion);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmOrdenesFabricacion";
-            this.Text = "frmRequisiciones";
+            this.Text = "Ordenes de Fabricación";
             ((System.ComponentModel.ISupportInitialize)(this.grOrdenFabricacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTarimas)).EndInit();
@@ -278,5 +291,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnVer;
         private DevExpress.XtraGrid.Columns.GridColumn colSeleccionar;
         private System.Windows.Forms.CheckBox chkTodos;
+        private DevExpress.XtraGrid.Columns.GridColumn colLote;
     }
 }

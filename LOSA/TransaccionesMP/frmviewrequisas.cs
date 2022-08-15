@@ -59,13 +59,12 @@ namespace LOSA.TransaccionesMP
             {
                 var gridView = (GridView)grRequisicoinesMP.FocusedView;
                 var row = (dsTransaccionesMP.requisiciones_hRow)gridView.GetFocusedDataRow();
-                frmviewrequisadetallecs frm = new frmviewrequisadetallecs(row.id, UsuarioLogeado);
+                frmviewrequisadetallecs frm = new frmviewrequisadetallecs(row.id, UsuarioLogeado, row.Lote);
                 frm.Show();
             }
             catch (Exception ex)
             {
-
-               
+                CajaDialogo.Error("Error al abrir la ventana de detalle de Requisa en la opcino de Montacargas. Error: "+ ex.Message);
             }
         }
     }

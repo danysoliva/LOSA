@@ -18,9 +18,12 @@ namespace LOSA.TransaccionesMP
         UserLogin UsuarioLogeado;
         int DocEntry;
         string comentario;
-        public frmOrdenFabricacionDetalle(int pIdOrdenFabricacion, UserLogin puser, string Comment)
+        int LotePT;
+        public frmOrdenFabricacionDetalle(int pIdOrdenFabricacion, UserLogin puser, string Comment, int pLote)
         {
             InitializeComponent();
+            LotePT = pLote;
+            txtLote.Text = pLote.ToString();
             UsuarioLogeado = puser;
             DocEntry = pIdOrdenFabricacion;
             comentario = Comment;

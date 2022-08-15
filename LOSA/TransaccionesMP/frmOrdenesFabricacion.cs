@@ -65,7 +65,7 @@ namespace LOSA.TransaccionesMP
             }
             catch {}
 
-            frmOrdenFabricacionDetalle frm = new frmOrdenFabricacionDetalle(row.DocEntry, this.UsuarioLogeado, comment);
+            frmOrdenFabricacionDetalle frm = new frmOrdenFabricacionDetalle(row.DocEntry, this.UsuarioLogeado, comment, row.Lote);
             frm.WindowState = FormWindowState.Maximized;
             if(frm.ShowDialog() == DialogResult.OK)
             {

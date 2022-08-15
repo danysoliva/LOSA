@@ -92,7 +92,7 @@ namespace LOSA.Produccion
                 
                 if (Id_RequsaManual > 0)
                 {
-                    Requisiciones.Reportes.lblNumeroReq report = new Requisiciones.Reportes.lblNumeroReq(Id_RequsaManual);
+                    Requisiciones.Reportes.lblNumeroReq report = new Requisiciones.Reportes.lblNumeroReq(Id_RequsaManual, row.Lote);
                     report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
                     report.ShowPrintMarginsWarning = false;
                     report.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
@@ -126,7 +126,7 @@ namespace LOSA.Produccion
 
                 if (Id_RequsaManual > 0)
                 {
-                    Requisiciones.Reportes.lblNumeroReq report = new Requisiciones.Reportes.lblNumeroReq(Id_RequsaManual);
+                    Requisiciones.Reportes.lblNumeroReq report = new Requisiciones.Reportes.lblNumeroReq(Id_RequsaManual, row.Lote);
                     report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
                     report.ShowPrintMarginsWarning = false;
                     report.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);

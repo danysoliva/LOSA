@@ -64,7 +64,7 @@ namespace LOSA.PlanMPreque
             }
             catch { }
 
-            frmverdetalleplan frm = new frmverdetalleplan(row.idplan, this.UsuarioLogeado, comment);
+            frmverdetalleplan frm = new frmverdetalleplan(row.idplan, this.UsuarioLogeado, comment, row.Lote);
             frm.WindowState = FormWindowState.Maximized;
             if (frm.ShowDialog() == DialogResult.OK)
             {
