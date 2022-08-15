@@ -66,7 +66,7 @@ namespace LOSA.RecepcionMP
                 txtNumIngreso.Text = string.Format("{0:###,##0}", tam.NumeroTransaccion);
                 txtLote.Text = tam.LoteMP;
                 txtPesoKg.Text = string.Format("{0:###,##0.00}", tam.Peso);
-                dtFechaProduccion.EditValue = string.Format("{0:dd/MM/yyyy}", tam.FechaProduccion);
+                dtFechaProduccion.EditValue = string.Format("{0:dd/MM/yyyy}", tam.FechaProduccionMP);
                 dtFechaVencimiento.EditValue = string.Format("{0:dd/MM/yyyy}", tam.FechaVencimiento);
                 txtIdBoleta.Text = tam.IdBoleta.ToString();
                 MateriaPrima mp = new MateriaPrima();

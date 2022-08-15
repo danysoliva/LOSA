@@ -69,7 +69,7 @@ namespace LOSA.Clases
         public string MateriaPrima { get => _MateriaPrima; set => _MateriaPrima = value; }
         public DateTime FechaIngreso { get => _FechaIngreso; set => _FechaIngreso = value; }
         public int NumeroTransaccion { get => _numeroTransaccion; set => _numeroTransaccion = value; }
-        public DateTime FechaProduccion { get => _fechaProduccion; set => _fechaProduccion = value; }
+        public DateTime FechaProduccionMP { get => _fechaProduccion; set => _fechaProduccion = value; }
         public DateTime FechaVencimiento { get => _fechaVencimiento; set => _fechaVencimiento = value; }
         public int IdBoleta { get => _idBoleta; set => _idBoleta = value; }
         public decimal Peso { get => _peso; set => _peso = value; }
@@ -125,7 +125,7 @@ namespace LOSA.Clases
                     MateriaPrima = dr.GetString(9);
                     FechaIngreso = dr.GetDateTime(10);
                     NumeroTransaccion = dr.GetInt32(11);
-                    FechaProduccion = dr.GetDateTime(12);
+                    FechaProduccionMP = dr.GetDateTime(12);
                     FechaVencimiento = dr.GetDateTime(13);
                     IdBoleta = dr.GetInt32(14);
                     CodigoBarra = dr.GetString(15);
@@ -182,7 +182,7 @@ namespace LOSA.Clases
                     MateriaPrima = dr.GetString(9);
                     FechaIngreso = dr.GetDateTime(10);
                     NumeroTransaccion = dr.GetInt32(11);
-                    FechaProduccion = dr.GetDateTime(12);
+                    FechaProduccionMP = dr.GetDateTime(12);
                     FechaVencimiento = dr.GetDateTime(13);
                     IdBoleta = dr.GetInt32(14);
                     CodigoBarra = dr.GetString(15);
@@ -238,7 +238,7 @@ namespace LOSA.Clases
                     MateriaPrima = dr.GetString(9);
                     FechaIngreso = dr.GetDateTime(10);
                     NumeroTransaccion = dr.GetInt32(11);
-                    FechaProduccion = dr.GetDateTime(12);
+                    FechaProduccionMP = dr.GetDateTime(12);
                     FechaVencimiento = dr.GetDateTime(13);
                     IdBoleta = dr.GetInt32(14);
                     CodigoBarra = dr.GetString(15);
@@ -293,7 +293,7 @@ namespace LOSA.Clases
                     MateriaPrima = dr.GetString(9);
                     FechaIngreso = dr.GetDateTime(10);
                     NumeroTransaccion = dr.GetInt32(11);
-                    FechaProduccion = dr.GetDateTime(12);
+                    FechaProduccionMP = dr.GetDateTime(12);
                     FechaVencimiento = dr.GetDateTime(13);
                     IdBoleta = dr.GetInt32(14);
                     CodigoBarra = dr.GetString(15);
@@ -348,7 +348,7 @@ namespace LOSA.Clases
                     MateriaPrima = dr.GetString(9);
                     FechaIngreso = dr.GetDateTime(10);
                     NumeroTransaccion = dr.GetInt32(11);
-                    FechaProduccion = dr.GetDateTime(12);
+                    FechaProduccionMP = dr.GetDateTime(12);
                     FechaVencimiento = dr.GetDateTime(13);
                     IdBoleta = dr.GetInt32(14);
                     CodigoBarra = dr.GetString(15);

@@ -132,7 +132,7 @@ namespace LOSA.RecepcionMP
                             cmd.Parameters.AddWithValue("@fecha_ingreso", tar1.FechaIngreso);
                             cmd.Parameters.AddWithValue("@numero_transaccion", tar1.NumeroTransaccion);
                             cmd.Parameters.AddWithValue("@fecha_vencimiento", tar1.FechaVencimiento);
-                            cmd.Parameters.AddWithValue("@fecha_produccion_materia_prima", tar1.FechaProduccion);
+                            cmd.Parameters.AddWithValue("@fecha_produccion_materia_prima", tar1.FechaProduccionMP);
                             cmd.Parameters.AddWithValue("@lote_materia_prima", tar1.LoteMP);
                             cmd.Parameters.AddWithValue("@id_presentacion", tar1.IdPresentacion);
                             cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
