@@ -100,10 +100,9 @@ namespace LOSA
             btnajuste.Enabled =
             cmdUbicaciones.Enabled =
             simpleButton3.Enabled =
-            btndespachos.Enabled =         
-            btnReq_PT.Enabled =           
+            btndespachos.Enabled =
+            btnReq_PT.Enabled =
             simpleButton2.Enabled =
-            simpleButton1.Enabled =
             btnPlantarimas.Enabled = false;
         }
 

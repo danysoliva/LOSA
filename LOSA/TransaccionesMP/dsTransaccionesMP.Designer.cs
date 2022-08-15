@@ -964,7 +964,7 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ordenes_fabricacion_hRow Addordenes_fabricacion_hRow(int DocEntry, string ItemCode, string ProdName, System.DateTime fecha, decimal PlannedQty, string Estado, string Comments, bool Seleccionar, string Lote) {
+            public ordenes_fabricacion_hRow Addordenes_fabricacion_hRow(int DocEntry, string ItemCode, string ProdName, System.DateTime fecha, decimal PlannedQty, string Estado, string Comments, bool Seleccionar, int Lote) {
                 ordenes_fabricacion_hRow rowordenes_fabricacion_hRow = ((ordenes_fabricacion_hRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         DocEntry,
@@ -1028,7 +1028,7 @@ namespace LOSA.TransaccionesMP {
                 base.Columns.Add(this.columnComments);
                 this.columnSeleccionar = new global::System.Data.DataColumn("Seleccionar", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSeleccionar);
-                this.columnLote = new global::System.Data.DataColumn("Lote", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnLote = new global::System.Data.DataColumn("Lote", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLote);
             }
             
@@ -6911,10 +6911,10 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Lote {
+            public int Lote {
                 get {
                     try {
-                        return ((string)(this[this.tableordenes_fabricacion_h.LoteColumn]));
+                        return ((int)(this[this.tableordenes_fabricacion_h.LoteColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'Lote\' de la tabla \'ordenes_fabricacion_h\' es DBNull.", e);

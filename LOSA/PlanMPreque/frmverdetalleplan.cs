@@ -19,6 +19,7 @@ namespace LOSA.PlanMPreque
         UserLogin UsuarioLogeado;
         string comentario;
         int IDplan;
+        int LotePT;
         public frmverdetalleplan(int Parid, UserLogin Puser, string comment, int pLote)
         {
             InitializeComponent();
