@@ -515,6 +515,8 @@ namespace LOSA.RecepcionMP
             }//For
             if (reportResumen != null)
             {
+                reportResumen.ShowPrintMarginsWarning = false;
+
                 using (ReportPrintTool printTool = new ReportPrintTool(reportResumen))
                 {
                     printTool.ShowPreviewDialog();

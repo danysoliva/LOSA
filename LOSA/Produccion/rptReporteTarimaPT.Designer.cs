@@ -872,6 +872,7 @@
             this.PageHeader,
             this.ReportHeader});
             this.Margins = new System.Drawing.Printing.Margins(36, 38, 30, 11);
+            this.ShowPrintMarginsWarning = false;
             this.Version = "18.2";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 

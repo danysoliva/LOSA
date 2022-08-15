@@ -379,14 +379,13 @@ DataOperations dp = new DataOperations();
 
 
             }
-
+            rptReporteTarimaPT report1 = null;
             if (ListaTarimas.Count >= 1)
             {
                 int contador_print = 0;
-                rptReporteTarimaPT report1 = null;
                 foreach (int Id_tm in ListaTarimas)
                 {
-                    report1 = new rptReporteTarimaPT(Id_tm);
+                    //report1 = new rptReporteTarimaPT(Id_tm);
 
                     if (Id_tm > 0)
                     {
@@ -416,20 +415,15 @@ DataOperations dp = new DataOperations();
                 //Impresión de un solo objeto Reporte
                 if (report1 != null)
                 {
+                    //report1.ShowPrintMarginsWarning = false;
+
                     using (ReportPrintTool prinTool = new ReportPrintTool(report1))
                     {
-                        prinTool.ShowPreviewDialog();
+                        report1.ShowPreviewMarginLines = false;
+                        prinTool.Print();
                     }
-
                 }
-                
             }
-
-
-
-
-
-
         }
 
         private void btn_print25_Click(object sender, EventArgs e)
