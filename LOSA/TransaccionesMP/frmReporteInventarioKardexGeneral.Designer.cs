@@ -113,12 +113,12 @@ namespace LOSA.TransaccionesMP
             this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_bodega = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colwhs_equivalente = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnExcel = new DevExpress.XtraEditors.SimpleButton();
             this.btnAjustePorLote = new DevExpress.XtraEditors.SimpleButton();
             this.backgroundWorkerPRD = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorkerResumenMP = new System.ComponentModel.BackgroundWorker();
-            this.colid_bodega = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colwhs_equivalente = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
@@ -880,6 +880,20 @@ namespace LOSA.TransaccionesMP
             this.gridColumn22.VisibleIndex = 0;
             this.gridColumn22.Width = 136;
             // 
+            // colid_bodega
+            // 
+            this.colid_bodega.FieldName = "id_bodega";
+            this.colid_bodega.Name = "colid_bodega";
+            // 
+            // colwhs_equivalente
+            // 
+            this.colwhs_equivalente.Caption = "Bodega";
+            this.colwhs_equivalente.FieldName = "whs_equivalente";
+            this.colwhs_equivalente.Name = "colwhs_equivalente";
+            this.colwhs_equivalente.Visible = true;
+            this.colwhs_equivalente.VisibleIndex = 1;
+            this.colwhs_equivalente.Width = 165;
+            // 
             // btnExcel
             // 
             this.btnExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -914,20 +928,6 @@ namespace LOSA.TransaccionesMP
             // 
             this.backgroundWorkerResumenMP.WorkerSupportsCancellation = true;
             this.backgroundWorkerResumenMP.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerResumenMP_DoWork);
-            // 
-            // colid_bodega
-            // 
-            this.colid_bodega.FieldName = "id_bodega";
-            this.colid_bodega.Name = "colid_bodega";
-            // 
-            // colwhs_equivalente
-            // 
-            this.colwhs_equivalente.Caption = "Bodega";
-            this.colwhs_equivalente.FieldName = "whs_equivalente";
-            this.colwhs_equivalente.Name = "colwhs_equivalente";
-            this.colwhs_equivalente.Visible = true;
-            this.colwhs_equivalente.VisibleIndex = 1;
-            this.colwhs_equivalente.Width = 165;
             // 
             // frmReporteInventarioKardexGeneral
             // 

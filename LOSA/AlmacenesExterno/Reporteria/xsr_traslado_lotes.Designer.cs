@@ -29,7 +29,6 @@ namespace LOSA.AlmacenesExterno.Reporteria
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xsr_traslado_lotes));
@@ -59,7 +58,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel7 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrlID = new DevExpress.XtraReports.UI.XRLabel();
-            this.dsTrasladoLotes = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
+            this.dsTrasladoLotes = new DevExpress.DataAccess.Sql.SqlDataSource();
             this.ID_H = new DevExpress.XtraReports.Parameters.Parameter();
             this.groupHeaderBand1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.xrTable2 = new DevExpress.XtraReports.UI.XRTable();

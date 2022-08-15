@@ -29,7 +29,6 @@ namespace LOSA.Despachos
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_despacho_v3));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -39,7 +38,7 @@ namespace LOSA.Despachos
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.ds_despachos = new LOSA.Despachos.ds_despachos();
-            this.timerLimpiarMensaje = new System.Windows.Forms.Timer(this.components);
+            this.timerLimpiarMensaje = new System.Windows.Forms.Timer();
             this.txtDocumento = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.beTarima = new DevExpress.XtraEditors.ButtonEdit();
@@ -67,8 +66,8 @@ namespace LOSA.Despachos
             this.txtCantidadT = new DevExpress.XtraEditors.TextEdit();
             this.gcTarima = new DevExpress.XtraGrid.GridControl();
             this.gvTarima = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.chEnable = new System.Windows.Forms.Timer(this.components);
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.chEnable = new System.Windows.Forms.Timer();
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
