@@ -18,6 +18,7 @@ namespace LOSA.Clases
         private string nombreUser;
         private string ADuser;
         private string pass;
+        private int idnivel;
 
         public bool Recuperado { get => recuperado; set => recuperado = value; }
         public int Id { get => id; set => id = value; }
@@ -25,6 +26,7 @@ namespace LOSA.Clases
         public string NombreUser { get => nombreUser; set => nombreUser = value; }
         public string ADuser1 { get => ADuser; set => ADuser = value; }
         public string Pass { get => pass; set => pass = value; }
+        public int Idnivel { get => idnivel; set => idnivel = value; }
 
         public UserLogin()
         {

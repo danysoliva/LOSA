@@ -725,6 +725,23 @@
     <Compile Include="Calidad\GestionLotesMP\frmSelectCausaRechazo.Designer.cs">
       <DependentUpon>frmSelectCausaRechazo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\LoteConfConsumo\dsConfigLoteConsumo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsConfigLoteConsumo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\LoteConfConsumo\frmConfigLoteConsumoFirst.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\LoteConfConsumo\frmConfigLoteConsumoFirst.Designer.cs">
+      <DependentUpon>frmConfigLoteConsumoFirst.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\LoteConfConsumo\frmSearchMP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\LoteConfConsumo\frmSearchMP.Designer.cs">
+      <DependentUpon>frmSearchMP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\Model\FFIF_D.cs" />
     <Compile Include="Calidad\Model\FFIF_H.cs" />
     <Compile Include="Calidad\Model\Lote_Ingreso_Conf_Calidad.cs" />
@@ -1774,6 +1791,17 @@
     </None>
     <None Include="Calidad\dsTRZ_Reports.xss">
       <DependentUpon>dsTRZ_Reports.xsd</DependentUpon>
+    </None>
+    <None Include="Calidad\LoteConfConsumo\dsConfigLoteConsumo.xsc">
+      <DependentUpon>dsConfigLoteConsumo.xsd</DependentUpon>
+    </None>
+    <None Include="Calidad\LoteConfConsumo\dsConfigLoteConsumo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsConfigLoteConsumo.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Calidad\LoteConfConsumo\dsConfigLoteConsumo.xss">
+      <DependentUpon>dsConfigLoteConsumo.xsd</DependentUpon>
     </None>
     <None Include="Calidad\Parametros\dsParametros.xsc">
       <DependentUpon>dsParametros.xsd</DependentUpon>
@@ -3156,6 +3184,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\GestionLotesMP\frmSelectCausaRechazo.resx">
       <DependentUpon>frmSelectCausaRechazo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\LoteConfConsumo\frmConfigLoteConsumoFirst.resx">
+      <DependentUpon>frmConfigLoteConsumoFirst.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\LoteConfConsumo\frmSearchMP.resx">
+      <DependentUpon>frmSearchMP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\Parametros\frmConfiguracionPT.resx">
       <DependentUpon>frmConfiguracionPT.cs</DependentUpon>

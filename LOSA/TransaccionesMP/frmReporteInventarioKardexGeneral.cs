@@ -23,6 +23,25 @@ namespace LOSA.TransaccionesMP
         public frmReporteInventarioKardexGeneral(UserLogin pUserLogin)
         {
             InitializeComponent();
+
+            switch (pUserLogin.Idnivel)
+            {
+                case 1://Basic View
+                    btnAjustePorLote.Visible = false;
+                    break;
+                case 2://Basic No Autorization
+                    btnAjustePorLote.Visible = false;
+                    break;
+                case 3://Medium Autorization
+
+                    break;
+                case 4://Depth With Delta
+                    break;
+                case 5://Depth Without Delta
+                    break;
+                default:
+                    break;
+            }
             load_dataPorLotes();
             load_data_totales();
             //load_dataPRD();
