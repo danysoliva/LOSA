@@ -14,6 +14,7 @@ using LOSA.Produccion;
 using LOSA.RecepcionMP;
 using LOSA.RecuentoInventario;
 using LOSA.Reportes;
+using LOSA.Reproceso;
 using LOSA.TransaccionesMP;
 using LOSA.TransaccionesPT;
 using LOSA.Trazabilidad;
@@ -114,7 +115,6 @@ namespace LOSA
 
         private void cmdHome_Click(object sender, EventArgs e)
         {
-            
             this.Close();
         }
 
@@ -868,8 +868,9 @@ namespace LOSA
 
         private void simpleButton32_Click(object sender, EventArgs e)
         {
-            xfrmPT_Reproceso frm = new xfrmPT_Reproceso(UsuarioLogeado);
-
+            //xfrmPT_Reproceso frm = new xfrmPT_Reproceso(UsuarioLogeado);
+            //xfrmReprocesoMenu frm = new xfrmReprocesoMenu(UsuarioLogeado);
+            frmEleccionReproceso frm = new frmEleccionReproceso(UsuarioLogeado);
             if (this.MdiParent != null)
                 frm.MdiParent = this.MdiParent;
 

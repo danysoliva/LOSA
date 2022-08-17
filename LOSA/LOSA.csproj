@@ -2402,6 +2402,12 @@
     <Compile Include="Reportes\IngresoMP\subReporteIngresoHoja.Designer.cs">
       <DependentUpon>subReporteIngresoHoja.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reproceso\frmEleccionReproceso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reproceso\frmEleccionReproceso.Designer.cs">
+      <DependentUpon>frmEleccionReproceso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reproceso\frmReprocesoPrint.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -3569,6 +3575,7 @@
     <EmbeddedResource Include="Produccion\xfrmCheckActiveBin.resx">
       <DependentUpon>xfrmCheckActiveBin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -3822,6 +3829,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\IngresoMP\subReporteIngresoHoja.resx">
       <DependentUpon>subReporteIngresoHoja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reproceso\frmEleccionReproceso.resx">
+      <DependentUpon>frmEleccionReproceso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reproceso\frmReprocesoPrint.resx">
       <DependentUpon>frmReprocesoPrint.cs</DependentUpon>
