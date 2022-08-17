@@ -24,6 +24,24 @@ namespace LOSA.Reportes
         public frmReporteGeneralProductoTermnado(UserLogin pUserLogin)
         {
             InitializeComponent();
+            switch (pUserLogin.Idnivel)
+            {
+                case 1://Basic View
+                    cmdAjuste.Visible = false;
+                    break;
+                case 2://Basic No Autorization
+                    cmdAjuste.Visible = false;
+                    break;
+                case 3://Medium Autorization
+
+                    break;
+                case 4://Depth With Delta
+                    break;
+                case 5://Depth Without Delta
+                    break;
+                default:
+                    break;
+            }
             UsuarioLogeado = pUserLogin;
             Especie = 2;
             get_inventario();

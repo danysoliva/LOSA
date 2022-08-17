@@ -27,6 +27,7 @@ namespace LOSA
     public partial class frmOpciones : Form
     {
         UserLogin UsuarioLogeado;
+        
         public frmOpciones(UserLogin pUser)
         {
             InitializeComponent();
@@ -49,6 +50,7 @@ namespace LOSA
                     {
                         case 1://Basic View
                             BasicView();
+                            UsuarioLogeado.Idnivel = idNivel;
                             break;
                         case 2://Basic No Autorization
 

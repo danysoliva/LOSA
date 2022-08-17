@@ -179,9 +179,12 @@ namespace LOSA.Reportes
             this.colexistencia_kg,
             this.colexistencia_tm});
             this.grdv_inventario_camaron.GridControl = this.grd_inventario_camaron;
+            this.grdv_inventario_camaron.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_kg", null, "(Kilogramos: SUMA={0:0.##.##} Kg)"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_unidades", null, "(Unidades en Existencia: SUMA={0:0.##.##} Ud)"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_tm", null, "(Toneladas: SUMA={0:0.##.##} TM)")});
             this.grdv_inventario_camaron.Name = "grdv_inventario_camaron";
             this.grdv_inventario_camaron.OptionsView.ShowAutoFilterRow = true;
-            this.grdv_inventario_camaron.OptionsView.ShowGroupPanel = false;
             // 
             // colid_pt
             // 
@@ -340,9 +343,12 @@ namespace LOSA.Reportes
             this.colexistencia_kg1,
             this.colexistencia_tm1});
             this.grdv_inventario_Tilapia.GridControl = this.grd_inventario_Tilapia;
+            this.grdv_inventario_Tilapia.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_kg", null, "(Kilogramos: SUMA={0:0.##.##} Kg)"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_unidades", null, "(Unidades en Existencia: SUMA={0:0.##.##} Ud)"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_tm", null, "(Unidades en Existencia: SUMA={0:0.##.##} TM)")});
             this.grdv_inventario_Tilapia.Name = "grdv_inventario_Tilapia";
             this.grdv_inventario_Tilapia.OptionsView.ShowAutoFilterRow = true;
-            this.grdv_inventario_Tilapia.OptionsView.ShowGroupPanel = false;
             // 
             // colid_pt1
             // 
