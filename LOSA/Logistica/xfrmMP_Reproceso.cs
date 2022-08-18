@@ -231,7 +231,7 @@ namespace LOSA.Logistica
                     con.Close();
 
 
-                    SqlCommand cmd = new SqlCommand("[sp_insert_new_tarima_sin_boleta_mp_v2]", con);
+                    SqlCommand cmd = new SqlCommand("[sp_insert_new_tarima_sin_boleta_mp_v3]", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@itemcode", this.ItemCode);
                     cmd.Parameters.AddWithValue("@id_proveedor", DBNull.Value);

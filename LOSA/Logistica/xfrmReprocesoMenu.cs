@@ -17,7 +17,7 @@ namespace LOSA.Logistica
 
         UserLogin UsuarioLogeado;
 
-        public xfrmReprocesoMenu( UserLogin pUser)
+        public xfrmReprocesoMenu(UserLogin pUser)
         {
             InitializeComponent();
 

@@ -18,9 +18,10 @@ namespace LOSA.Reproceso
     public partial class frmEleccionReproceso : DevExpress.XtraEditors.XtraForm
     {
         UserLogin UsuarioLogeado;
-        public frmEleccionReproceso(UserLogin pUserLogin)
+        public frmEleccionReproceso(UserLogin userLogin)
         {
             InitializeComponent();
+            UsuarioLogeado = userLogin;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
