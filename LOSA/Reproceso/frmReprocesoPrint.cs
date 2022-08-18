@@ -172,6 +172,14 @@ namespace LOSA.Reproceso
             var gridview = (GridView)gridControl1.FocusedView;
             var row = (dsLogistica2.PT_Reproceso_TarimasRow)gridview.GetFocusedDataRow();
 
+
+
+            //if (row.fecha_produccion_materia_prima == DateTime.)
+            //{
+            //    CajaDialogo.Error("La fecha de Produccion Materia Prima debe ser cambiada! Solicite a Calidad el Cambio de la Fecha de Produccion");
+            //    return;
+            //}
+
             rptTarimaReproceso report = new rptTarimaReproceso(row.id);
             report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
             ReportPrintTool printReport = new ReportPrintTool(report);
@@ -209,25 +217,29 @@ namespace LOSA.Reproceso
             var gridView = (GridView)gridControl1.FocusedView;
             var row = (dsLogistica2.PT_Reproceso_TarimasRow)gridView.GetFocusedDataRow();
 
-            frmEditTarima frm = new frmEditTarima(row.id, this.UsuarioLogeado);
-            frm.MdiParent = this.MdiParent;
-            frm.Show();
+           
 
-            //switch (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo)
-            //{
-            //    case GrupoUser.GrupoUsuario.Logistica:
-            //        CajaDialogo.Error("No esta autorizado, Solo Calidad puede Editar Tarimas de Reproceso");
-            //        break;
+            switch (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo)
+            {
+                case GrupoUser.GrupoUsuario.Logistica:
+                    CajaDialogo.Error("No esta autorizado, Solo Calidad puede Editar Tarimas de Reproceso");
+                    break;
 
-            //    case GrupoUser.GrupoUsuario.Calidad:
-            //        //Ventana de Editar Tarima
-                    
-            //        break;
+                case GrupoUser.GrupoUsuario.Calidad:
+                    //Ventana de Editar Tarima
+                    frmEditarTarimaReproceso frm = new frmEditarTarimaReproceso(row.id, this.UsuarioLogeado);
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        LoadData();
+                    }
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                    break;
 
-            //    default:
-            //        break;
-                    
-            //}
+                default:
+                    break;
+
+            }
         }
     }
 }

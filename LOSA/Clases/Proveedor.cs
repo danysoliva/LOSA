@@ -41,8 +41,15 @@ namespace LOSA.Clases
                 SqlCommand cmd = new SqlCommand("sp_get_datos_proveedor", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@codigo", pCodigo);
-                Codigo = pCodigo;
-                Nombre = cmd.ExecuteScalar().ToString();
+                if (pCodigo == "")
+                {
+                    Nombre = "Aquafeed S.A de C.V.";
+                }
+                else
+                {
+                    Codigo = pCodigo;
+                    Nombre = cmd.ExecuteScalar().ToString();
+                }
                 Recuperado = true;
                 con.Close();
             }
