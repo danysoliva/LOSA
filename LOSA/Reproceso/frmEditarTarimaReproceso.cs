@@ -227,7 +227,7 @@ namespace LOSA.Reproceso
                 return;
                 
             }
-            if (dtFechaProduccion.DateTime.Year > 2019)
+            if (dtFechaProduccion.DateTime.Year < 2019)
             {
                 CajaDialogo.Error("La Fecha de Produccion debe tener una Fecha Valida");
                 return;
@@ -285,8 +285,6 @@ namespace LOSA.Reproceso
                 cmd.ExecuteScalar();
                 con.Close();
 
-                SplashForm form1 = new SplashForm(2);
-                form1.Show();
                 this.DialogResult = DialogResult.OK;
                 this.Close();
 
