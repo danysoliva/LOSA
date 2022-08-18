@@ -78,6 +78,7 @@
             this.xrLabel19 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLine1 = new DevExpress.XtraReports.UI.XRLine();
             this.ds_despachos1 = new LOSA.Despachos.ds_despachos();
+            this.lblVersionALOSY = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.ds_despachos1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
@@ -154,6 +155,7 @@
             // PageHeader
             // 
             this.PageHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.lblVersionALOSY,
             this.lbldestino,
             this.lblOC,
             this.xrLabel30,
@@ -637,6 +639,17 @@
             this.ds_despachos1.DataSetName = "ds_despachos";
             this.ds_despachos1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // lblVersionALOSY
+            // 
+            this.lblVersionALOSY.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVersionALOSY.LocationFloat = new DevExpress.Utils.PointFloat(426.4351F, 13.00001F);
+            this.lblVersionALOSY.Multiline = true;
+            this.lblVersionALOSY.Name = "lblVersionALOSY";
+            this.lblVersionALOSY.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lblVersionALOSY.SizeF = new System.Drawing.SizeF(224.5649F, 16F);
+            this.lblVersionALOSY.StylePriority.UseFont = false;
+            this.lblVersionALOSY.Text = "Version Sistema ALOSY";
+            // 
             // rpt_despacho
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -705,5 +718,6 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel6;
         private DevExpress.XtraReports.UI.XRLine xrLine2;
         private DevExpress.XtraReports.UI.XRLabel xrLabel5;
+        private DevExpress.XtraReports.UI.XRLabel lblVersionALOSY;
     }
 }

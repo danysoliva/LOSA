@@ -555,7 +555,7 @@ namespace LOSA.Despachos
                         {
 
 
-                            frm_plan cp = new frm_plan(Id_despacho);
+                            frm_plan cp = new frm_plan(Id_despacho, this.UsuarioLogeado);
 
                             cp.PrintingSystem.Document.AutoFitToPagesWidth = 1;
                             ReportPrintTool printReport = new ReportPrintTool(cp);
