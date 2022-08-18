@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using LOSA.Clases;
 using ACS.Classes;
 using System.Data;
+using System.Reflection;
 
 namespace LOSA.Despachos.Reportes
 {
@@ -17,8 +18,26 @@ namespace LOSA.Despachos.Reportes
         public rpt_despacho(int idDespacho)
         {
             InitializeComponent();
+            lblVersionALOSY.Text = AssemblyVersion;
             ParId = idDespacho;
             load_informacio();
+        }
+
+        public string AssemblyVersion
+        {
+            get
+            {
+                if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
+                {
+                    Version ver = System.Deployment.Application.ApplicationDeployment.CurrentDeployment.CurrentVersion;
+                    return string.Format("Product Name: {4}, Version: {0}.{1}.{2}.{3}", ver.Major, ver.Minor, ver.Build, ver.Revision, Assembly.GetEntryAssembly().GetName().Name);
+                }
+                else
+                {
+                    var ver = Assembly.GetExecutingAssembly().GetName().Version;
+                    return string.Format("Product Name: {4}, Version: {0}.{1}.{2}.{3}", ver.Major, ver.Minor, ver.Build, ver.Revision, Assembly.GetEntryAssembly().GetName().Name);
+                }
+            }
         }
         public void load_informacio()
         {
