@@ -2430,6 +2430,12 @@
     <Compile Include="Reportes\IngresoMP\subReporteIngresoHoja.Designer.cs">
       <DependentUpon>subReporteIngresoHoja.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reproceso\frmEditarTarimaReproceso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reproceso\frmEditarTarimaReproceso.Designer.cs">
+      <DependentUpon>frmEditarTarimaReproceso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reproceso\frmEleccionReproceso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -3863,6 +3869,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\IngresoMP\subReporteIngresoHoja.resx">
       <DependentUpon>subReporteIngresoHoja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reproceso\frmEditarTarimaReproceso.resx">
+      <DependentUpon>frmEditarTarimaReproceso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reproceso\frmEleccionReproceso.resx">
       <DependentUpon>frmEleccionReproceso.cs</DependentUpon>

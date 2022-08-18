@@ -205,15 +205,18 @@ namespace LOSA.Reproceso
             this.gridColumn2,
             this.colseleccionado,
             this.gridColumn3});
-            this.gvPT.CustomizationFormBounds = new System.Drawing.Rectangle(904, 313, 260, 332);
+            this.gvPT.CustomizationFormBounds = new System.Drawing.Rectangle(-1315, 297, 260, 332);
             this.gvPT.DetailHeight = 284;
             this.gvPT.GridControl = this.gridControl1;
             this.gvPT.GroupCount = 1;
+            this.gvPT.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "peso", null, "(Peso: SUMA={0:0.##.##} Kg)")});
             this.gvPT.Name = "gvPT";
             this.gvPT.OptionsView.ShowAutoFilterRow = true;
             this.gvPT.OptionsView.ShowFooter = true;
             this.gvPT.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.collote_materia_prima, DevExpress.Data.ColumnSortOrder.Ascending)});
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.collote_materia_prima, DevExpress.Data.ColumnSortOrder.Ascending),
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colfecha_ingreso, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gvPT.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gvPT_CellValueChanged);
             // 
             // colid
@@ -381,7 +384,7 @@ namespace LOSA.Reproceso
             this.gridColumn1.ColumnEdit = this.repositoryItemButtonImprimir;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 8;
+            this.gridColumn1.VisibleIndex = 9;
             this.gridColumn1.Width = 66;
             // 
             // repositoryItemButtonImprimir
@@ -415,7 +418,7 @@ namespace LOSA.Reproceso
             this.colseleccionado.FieldName = "seleccionado";
             this.colseleccionado.Name = "colseleccionado";
             this.colseleccionado.Visible = true;
-            this.colseleccionado.VisibleIndex = 9;
+            this.colseleccionado.VisibleIndex = 10;
             this.colseleccionado.Width = 77;
             // 
             // gridColumn3
@@ -423,6 +426,8 @@ namespace LOSA.Reproceso
             this.gridColumn3.Caption = "Editar";
             this.gridColumn3.ColumnEdit = this.repositoryEditar;
             this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 8;
             // 
             // repositoryEditar
             // 
