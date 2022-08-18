@@ -176,19 +176,31 @@ namespace LOSA.Logistica
                 return "";
             }
         }
-        SqlTransaction transaction;
+        
         private void cmdGuardar_Click(object sender, EventArgs e)
         {
+            DataOperations dp = new DataOperations();
+            SqlConnection conexion = new SqlConnection(dp.ConnectionStringLOSA);
+            SqlTransaction transaction = null;
+            try
+            {
+                conexion.Open();
+                transaction = conexion.BeginTransaction();
+            }
+            catch(Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+                return;
+            }
+
 
             try
             {
-
-                DataOperations dp = new DataOperations();
-                SqlConnection conexion = new SqlConnection(dp.ConnectionStringLOSA);
-
-                conexion.Open();
-
-                transaction = conexion.BeginTransaction();
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                    transaction = conexion.BeginTransaction();
+                }
 
                 SqlCommand cmd = new SqlCommand("dbo.sp_insert_kardex_PT_reproceso", transaction.Connection);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -239,7 +251,7 @@ namespace LOSA.Logistica
 
                 }
 
-                SqlCommand cmd3 = new SqlCommand("dbo.sp_insert_ingresos_reproceso_v3", transaction.Connection);
+                SqlCommand cmd3 = new SqlCommand("sp_insert_ingresos_reproceso_v3", transaction.Connection);
                 cmd3.CommandType = CommandType.StoredProcedure;
                 cmd3.Transaction = transaction;
                 Ingreso setIngreso = new Ingreso();
@@ -250,11 +262,14 @@ namespace LOSA.Logistica
                 cmd3.Parameters.AddWithValue("@numero_reproceso",setIngreso.Numero_reproceso);
                 cmd3.Parameters.AddWithValue("@id_usuario", userLogin.Id);
                 cmd3.Parameters.AddWithValue("@id_especie", setIngreso.especie);
+                
                 int id_header = Convert.ToInt32(cmd3.ExecuteScalar());
+
                 int id_lote = 0;
+
                 foreach (var Lote in Lotes)
                 {
-                    cmd3 = new SqlCommand("dbo.sp_insert_nuevo_ingreso_mp_reproceso_V2", transaction.Connection);
+                    cmd3 = new SqlCommand("sp_insert_nuevo_ingreso_mp_reproceso_V2", transaction.Connection);
                     cmd3.Transaction = transaction;
                     cmd3.CommandType = CommandType.StoredProcedure;
                     cmd3.Parameters.AddWithValue("@idh",id_header);
@@ -272,20 +287,22 @@ namespace LOSA.Logistica
                     ArrayList List = new ArrayList();
 
                     foreach (var tarima in (from tarimas in productoTerminado_List
-                                        where tarimas.lote == Lote.No_lote
-                                        select tarimas))
+                                            where tarimas.lote == Lote.No_lote
+                                            select tarimas))
                     {
 
-                        SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                        con.Open();
+                        //SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                        //con.Open();
 
-                        SqlCommand cmm = new SqlCommand("sp_generar_codigo_from_tables_id", con);
+                        SqlCommand cmm = new SqlCommand("sp_generar_codigo_from_tables_id", transaction.Connection);
                         cmm.CommandType = CommandType.StoredProcedure;
+                        cmm.Transaction = transaction;
                         cmm.Parameters.AddWithValue("@id", 1);
                         string barcode = cmm.ExecuteScalar().ToString();
 
-                        cmd3 = new SqlCommand("dbo.sp_insert_new_tarima_pt_to_mp_V3", con);
+                        cmd3 = new SqlCommand("sp_insert_new_tarima_pt_to_mp_V3", transaction.Connection);
                         cmd3.CommandType = CommandType.StoredProcedure;
+                        cmd3.Transaction = transaction;
                         cmd3.Parameters.AddWithValue("@numero_transaccion", setIngreso.numero_referencia);
                         cmd3.Parameters.AddWithValue("@numero_reproceso", setIngreso.Numero_reproceso);
                         cmd3.Parameters.AddWithValue("@lote_materia_prima",Lote.No_lote);
@@ -298,14 +315,15 @@ namespace LOSA.Logistica
                         cmd3.Parameters.AddWithValue("@id_Tarima",tarima.ID );
                         cmd3.Parameters.AddWithValue("@id_especie", setIngreso.especie);
                         cmd3.Parameters.AddWithValue("@id_tarima_reproceso", tarima.TarimaID);
-
                         cmd3.Parameters.AddWithValue("@bit_promedio", 0);
+
                         vid_tarima = Convert.ToInt32(cmd3.ExecuteScalar());
 
                         string query = @"";
                         query = @"sp_insert_ubicacion_default";
-                        SqlCommand cmdx = new SqlCommand(query, con);// ahora recibe el parametro de ubicacion para poder guardarlo automatico en todas las tarimas
+                        SqlCommand cmdx = new SqlCommand(query, transaction.Connection);// ahora recibe el parametro de ubicacion para poder guardarlo automatico en todas las tarimas
                         cmdx.CommandType = CommandType.StoredProcedure;
+                        cmdx.Transaction = transaction;
                         cmdx.Parameters.AddWithValue("@id_tarima", vid_tarima);
                         cmdx.Parameters.AddWithValue("@id_usuario", userLogin.Id);
                         cmdx.Parameters.AddWithValue("@codigo_barra", barcode);
@@ -315,7 +333,7 @@ namespace LOSA.Logistica
                         List.Add(vid_tarima);
 
                         Guardo = true;
-                        con.Close();
+                        //con.Close();
                     }
                     //if (Guardo)
                     //{
@@ -341,15 +359,15 @@ namespace LOSA.Logistica
                     //}
                 }
                 transaction.Commit();
-
+                conexion.Close();
 
                 CajaDialogo.Information("DATOS GUARDADOS");
                 this.DialogResult = DialogResult.OK;
             }
             catch (Exception ex)
             {
-                CajaDialogo.Error(ex.Message);
                 transaction.Rollback();
+                CajaDialogo.Error(ex.Message);
             }
         }
         private void PrintingSystem_StartPrint(object sender, DevExpress.XtraPrinting.PrintDocumentEventArgs e)
