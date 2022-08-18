@@ -378,7 +378,7 @@ namespace LOSA
 
         private void btnreportes_Click(object sender, EventArgs e)
         {
-            LOSA.Reportes.frmreport frm = new Reportes.frmreport();
+            LOSA.Reportes.frmreport frm = new Reportes.frmreport(this.UsuarioLogeado);
             if (this.MdiParent != null)
             {
                 frm.MdiParent = this.MdiParent;
@@ -778,7 +778,9 @@ namespace LOSA
         private void btnReporteProduccionDespachos_Click(object sender, EventArgs e)
         {
             frmrptPlansemanal frm = new frmrptPlansemanal();
-            frm.MdiParent = this.MdiParent;
+            if(this.MdiParent != null)
+                if(!frm.IsMdiChild)
+                frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 

@@ -413,6 +413,16 @@ namespace LOSA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Finance_Expired_icon32px {
+            get {
+                object obj = ResourceManager.GetObject("Finance-Expired-icon32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap floppy_disk32px {
             get {
                 object obj = ResourceManager.GetObject("floppy-disk32px", resourceCulture);
