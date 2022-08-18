@@ -139,7 +139,7 @@ namespace LOSA.TransaccionesPT
         {
             var gridView = (GridView)grd_data.FocusedView;
             var row = (dsPT.Load_despachosRow)gridView.GetFocusedDataRow();
-            frm_view_entrega_despacho frm = new frm_view_entrega_despacho(row.id);
+            frm_view_entrega_despacho frm = new frm_view_entrega_despacho(row.id, this.UsuarioLogeado);
             frm.Show();
         }
 
@@ -222,6 +222,17 @@ namespace LOSA.TransaccionesPT
                     e.Appearance.BackColor = Color.FromArgb(77, 201, 176);
                 }
             }
+        }
+
+        private void cmdImprimirPlanDespachoPreliminar_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)grd_data.FocusedView;
+            var row = (dsPT.Load_despachosRow)gridView.GetFocusedDataRow();
+            Despachos.Reportes.frm_plan cp = new Despachos.Reportes.frm_plan(row.NumID, this.UsuarioLogeado);
+
+            cp.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+            ReportPrintTool printReport = new ReportPrintTool(cp);
+            printReport.ShowPreview();
         }
     }
 }

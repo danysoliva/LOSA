@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Data.SqlClient;
 using LOSA.Clases;
 using ACS.Classes;
+using System.Reflection;
 
 namespace LOSA.Despachos.Reportes
 {
@@ -13,9 +14,13 @@ namespace LOSA.Despachos.Reportes
     {
         public int Id_despachos;
         DataOperations dp = new DataOperations();
-        public frm_plan(int Pid_despacho)
+        UserLogin UsuarioLogeado;
+        public frm_plan(int Pid_despacho, UserLogin pUsuarioLogeado)
         {
             InitializeComponent();
+            lblVersionALOSY.Text = AssemblyVersion;
+            UsuarioLogeado = pUsuarioLogeado;
+            lblUser.Text = pUsuarioLogeado.NombreUser;
             Id_despachos = Pid_despacho;
             load_header();
             load_detalle();
@@ -41,7 +46,9 @@ namespace LOSA.Despachos.Reportes
                     txtfurgon.Text = dr.GetString(6);
                     txtcodigoCLiente.Text = dr.GetString(7);
                     txtcliente.Text = dr.GetString(9);
-
+                    txtMotorista.Text = lblMotoristaFirma.Text = dr.GetString(10);
+                    lblIdentidadNumberMotorista.Text = dr.GetString(11);
+                    lblDestino.Text = dr.GetString(12);
                 }
                
             }
@@ -49,6 +56,23 @@ namespace LOSA.Despachos.Reportes
             {
 
                 CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        public string AssemblyVersion
+        {
+            get
+            {
+                if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
+                {
+                    Version ver = System.Deployment.Application.ApplicationDeployment.CurrentDeployment.CurrentVersion;
+                    return string.Format("Product Name: {4}, Version: {0}.{1}.{2}.{3}", ver.Major, ver.Minor, ver.Build, ver.Revision, Assembly.GetEntryAssembly().GetName().Name);
+                }
+                else
+                {
+                    var ver = Assembly.GetExecutingAssembly().GetName().Version;
+                    return string.Format("Product Name: {4}, Version: {0}.{1}.{2}.{3}", ver.Major, ver.Minor, ver.Build, ver.Revision, Assembly.GetEntryAssembly().GetName().Name);
+                }
             }
         }
 

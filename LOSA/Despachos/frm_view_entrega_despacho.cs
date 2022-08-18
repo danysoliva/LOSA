@@ -12,6 +12,8 @@ using System.Data.SqlClient;
 using ACS.Classes;
 using LOSA.Clases;
 using DevExpress.XtraGrid.Views.Grid;
+using LOSA.Despachos.Reportes;
+using DevExpress.XtraReports.UI;
 
 namespace LOSA.Despachos
 {
@@ -19,13 +21,39 @@ namespace LOSA.Despachos
     {
         DataOperations dp = new DataOperations();
         public int Pid;
-        public frm_view_entrega_despacho(int id_despacho)
+        UserLogin UsuarioLogeado;
+        public frm_view_entrega_despacho(int id_despacho, UserLogin pUsuarioLogeado)
         {
             InitializeComponent();
+            UsuarioLogeado = pUsuarioLogeado;
             Pid = id_despacho;
             load_informacion();
             load_filas();
+            load_filasPlanDespacho();
         }
+
+        private void load_filasPlanDespacho()
+        {
+            string query = @"sp_data_load_rpt_plan_detalle_v1";
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            try
+            {
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", Pid);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                dsReporte1.detalle.Clear();
+                da.Fill(dsReporte1.detalle);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
         public void load_filas()
         {
             string query = @"sp_load_tarimas_to_orden_despacho";
@@ -61,11 +89,21 @@ namespace LOSA.Despachos
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    txtconductor.Text = dr.IsDBNull(6) ? "" : dr.GetString(6);
+                    dtFecha.EditValue = dr.IsDBNull(1) ? DateTime.Now : dr.GetDateTime(1);
                     txtplaca.Text = dr.IsDBNull(3) ? " " : dr.GetString(3);
-                    txtoc.Text = dr.IsDBNull(5) ? " " : dr.GetString(5);
                     txtfurgon.Text = dr.IsDBNull(4) ? "" : dr.GetString(4);
-                    dtFecha.EditValue = dr.IsDBNull(1) ? DateTime.Now : dr.GetDateTime(1);   
+                    txtoc.Text = dr.IsDBNull(5) ? " " : dr.GetString(5);
+                    txtconductor.Text = dr.IsDBNull(6) ? "" : dr.GetString(6);
+
+                    if (!dr.IsDBNull(dr.GetOrdinal("NumDespacho")))
+                        txtNumDoc.Text = dr.GetInt32(7).ToString();
+                    else
+                        txtNumDoc.Text = "";
+
+                    if (!dr.IsDBNull(dr.GetOrdinal("NumBoleta")))
+                        txtNumBoleta.Text = dr.GetInt32(8).ToString();
+                    else
+                        txtNumBoleta.Text = "";
                 }
                 dr.Close();
                 cn.Close();
@@ -218,6 +256,32 @@ namespace LOSA.Despachos
 
 
             }
+        }
+
+        private void xtraTabControl1_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
+        {
+            
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "Excel File (.xlsx)|*.xlsx";
+            dialog.FilterIndex = 0;
+
+            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                gridControl1.ExportToXlsx(dialog.FileName);
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            var gridView = (GridView)gridControl1.FocusedView;
+            var row = (dsReporte.detalleRow)gridView.GetFocusedDataRow();
+            Despachos.Reportes.frm_plan cp = new Despachos.Reportes.frm_plan(dp.ValidateNumberInt32(txtNumDoc.Text), this.UsuarioLogeado);
+
+            cp.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+            ReportPrintTool printReport = new ReportPrintTool(cp);
+            printReport.ShowPreview();
         }
     }
 }
