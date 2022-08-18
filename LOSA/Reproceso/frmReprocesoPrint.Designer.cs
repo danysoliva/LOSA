@@ -55,6 +55,11 @@ namespace LOSA.Reproceso
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject21 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
             this.btnPrint = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.cmdDuplicar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btnEditar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -74,6 +79,8 @@ namespace LOSA.Reproceso
             this.colcantidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnum = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collote_materia_prima = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha_vencimiento = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha_produccion_materia_prima = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colestado_tarima = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_estado_tarima = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colpresentacion = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -84,11 +91,11 @@ namespace LOSA.Reproceso
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemVerDetalle = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colseleccionado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryEditar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.btnPrintSeleccionados = new DevExpress.XtraEditors.SimpleButton();
             this.radioGroup1 = new DevExpress.XtraEditors.RadioGroup();
-            this.colfecha_produccion_materia_prima = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colfecha_vencimiento = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdDuplicar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).BeginInit();
@@ -97,6 +104,7 @@ namespace LOSA.Reproceso
             ((System.ComponentModel.ISupportInitialize)(this.gvPT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonImprimir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemVerDetalle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryEditar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -155,7 +163,8 @@ namespace LOSA.Reproceso
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonImprimir,
-            this.repositoryItemVerDetalle});
+            this.repositoryItemVerDetalle,
+            this.repositoryEditar});
             this.gridControl1.Size = new System.Drawing.Size(1103, 487);
             this.gridControl1.TabIndex = 87;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -194,7 +203,8 @@ namespace LOSA.Reproceso
             this.colid_tarima_reproceso,
             this.gridColumn1,
             this.gridColumn2,
-            this.colseleccionado});
+            this.colseleccionado,
+            this.gridColumn3});
             this.gvPT.CustomizationFormBounds = new System.Drawing.Rectangle(904, 313, 260, 332);
             this.gvPT.DetailHeight = 284;
             this.gvPT.GridControl = this.gridControl1;
@@ -302,6 +312,24 @@ namespace LOSA.Reproceso
             this.collote_materia_prima.VisibleIndex = 3;
             this.collote_materia_prima.Width = 119;
             // 
+            // colfecha_vencimiento
+            // 
+            this.colfecha_vencimiento.FieldName = "fecha_vencimiento";
+            this.colfecha_vencimiento.Name = "colfecha_vencimiento";
+            this.colfecha_vencimiento.OptionsColumn.AllowEdit = false;
+            this.colfecha_vencimiento.Visible = true;
+            this.colfecha_vencimiento.VisibleIndex = 4;
+            this.colfecha_vencimiento.Width = 100;
+            // 
+            // colfecha_produccion_materia_prima
+            // 
+            this.colfecha_produccion_materia_prima.FieldName = "fecha_produccion_materia_prima";
+            this.colfecha_produccion_materia_prima.Name = "colfecha_produccion_materia_prima";
+            this.colfecha_produccion_materia_prima.OptionsColumn.AllowEdit = false;
+            this.colfecha_produccion_materia_prima.Visible = true;
+            this.colfecha_produccion_materia_prima.VisibleIndex = 3;
+            this.colfecha_produccion_materia_prima.Width = 156;
+            // 
             // colestado_tarima
             // 
             this.colestado_tarima.Caption = "Estado Tarima";
@@ -390,6 +418,22 @@ namespace LOSA.Reproceso
             this.colseleccionado.VisibleIndex = 9;
             this.colseleccionado.Width = 77;
             // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Editar";
+            this.gridColumn3.ColumnEdit = this.repositoryEditar;
+            this.gridColumn3.Name = "gridColumn3";
+            // 
+            // repositoryEditar
+            // 
+            this.repositoryEditar.AutoHeight = false;
+            editorButtonImageOptions6.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions6.SvgImage")));
+            this.repositoryEditar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.repositoryEditar.Name = "repositoryEditar";
+            this.repositoryEditar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryEditar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryEditar_ButtonClick);
+            // 
             // labelControl2
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -439,24 +483,6 @@ namespace LOSA.Reproceso
             this.radioGroup1.TabIndex = 91;
             this.radioGroup1.SelectedIndexChanged += new System.EventHandler(this.radioGroup1_SelectedIndexChanged);
             // 
-            // colfecha_produccion_materia_prima
-            // 
-            this.colfecha_produccion_materia_prima.FieldName = "fecha_produccion_materia_prima";
-            this.colfecha_produccion_materia_prima.Name = "colfecha_produccion_materia_prima";
-            this.colfecha_produccion_materia_prima.OptionsColumn.AllowEdit = false;
-            this.colfecha_produccion_materia_prima.Visible = true;
-            this.colfecha_produccion_materia_prima.VisibleIndex = 3;
-            this.colfecha_produccion_materia_prima.Width = 156;
-            // 
-            // colfecha_vencimiento
-            // 
-            this.colfecha_vencimiento.FieldName = "fecha_vencimiento";
-            this.colfecha_vencimiento.Name = "colfecha_vencimiento";
-            this.colfecha_vencimiento.OptionsColumn.AllowEdit = false;
-            this.colfecha_vencimiento.Visible = true;
-            this.colfecha_vencimiento.VisibleIndex = 4;
-            this.colfecha_vencimiento.Width = 100;
-            // 
             // frmReprocesoPrint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -477,6 +503,7 @@ namespace LOSA.Reproceso
             ((System.ComponentModel.ISupportInitialize)(this.gvPT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonImprimir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemVerDetalle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryEditar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).EndInit();
             this.ResumeLayout(false);
 
@@ -518,5 +545,7 @@ namespace LOSA.Reproceso
         private DevExpress.XtraGrid.Columns.GridColumn colpeso;
         private DevExpress.XtraGrid.Columns.GridColumn colfecha_vencimiento;
         private DevExpress.XtraGrid.Columns.GridColumn colfecha_produccion_materia_prima;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryEditar;
     }
 }

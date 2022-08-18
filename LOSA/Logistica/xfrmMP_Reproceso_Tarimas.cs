@@ -21,7 +21,7 @@ namespace LOSA.Logistica
 {
     public partial class xfrmMP_Reproceso_Tarimas : DevExpress.XtraEditors.XtraForm
     {
-        UserLogin userLogin = new UserLogin();
+        UserLogin userLogin;
         public xfrmMP_Reproceso_Tarimas(UserLogin pUser)
         {
             InitializeComponent();
@@ -317,28 +317,28 @@ namespace LOSA.Logistica
                         Guardo = true;
                         con.Close();
                     }
-                    if (Guardo)
-                    {
-                        DialogResult r = CajaDialogo.Pregunta("Desea Imprimir la(s) Hoja(s) de Ingreso?");
-                        if (r == DialogResult.Yes)
-                        {
-                            for (int i = 0; i <= (List.Count - 1); i++)
-                            {
-                                int id_tarimax = Convert.ToInt32(List[i]);
-                                Reproceso.rptTarimaReproceso report = new Reproceso.rptTarimaReproceso(id_tarimax);
-                                report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
-                                report.ShowPrintMarginsWarning = false;
-                                report.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
-                                report.Print();
+                    //if (Guardo)
+                    //{
+                    //    DialogResult r = CajaDialogo.Pregunta("Desea Imprimir la(s) Hoja(s) de Ingreso?");
+                    //    if (r == DialogResult.Yes)
+                    //    {
+                    //        for (int i = 0; i <= (List.Count - 1); i++)
+                    //        {
+                    //            int id_tarimax = Convert.ToInt32(List[i]);
+                    //            Reproceso.rptTarimaReproceso report = new Reproceso.rptTarimaReproceso(id_tarimax);
+                    //            report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                    //            report.ShowPrintMarginsWarning = false;
+                    //            report.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
+                    //            report.Print();
 
 
-                            }
-                        }
-                        rptLoteRotulo boleta = new rptLoteRotulo(id_lote);
-                        boleta.ShowPrintMarginsWarning = false;
-                        boleta.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
-                        boleta.Print();
-                    }
+                    //        }
+                    //    }
+                    //    rptLoteRotulo boleta = new rptLoteRotulo(id_lote);
+                    //    boleta.ShowPrintMarginsWarning = false;
+                    //    boleta.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
+                    //    boleta.Print();
+                    //}
                 }
                 transaction.Commit();
 

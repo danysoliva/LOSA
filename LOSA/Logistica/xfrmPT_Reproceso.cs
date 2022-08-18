@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LOSA.Reproceso;
 
 namespace LOSA.Logistica
 {
@@ -28,11 +29,12 @@ namespace LOSA.Logistica
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             xfrmMP_Reproceso_Tarimas frm = new xfrmMP_Reproceso_Tarimas(userLogin);
-
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 LoadData();
             }
+
+            
 
         }
 

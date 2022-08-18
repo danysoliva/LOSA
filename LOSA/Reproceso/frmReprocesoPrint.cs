@@ -14,6 +14,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using LOSA.Logistica;
 using DevExpress.XtraReports.UI;
 using LOSA.Clases;
+using LOSA.RecepcionMP;
 
 namespace LOSA.Reproceso
 {
@@ -201,6 +202,32 @@ namespace LOSA.Reproceso
                     }
                 }
             }
+        }
+
+        private void repositoryEditar_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)gridControl1.FocusedView;
+            var row = (dsLogistica2.PT_Reproceso_TarimasRow)gridView.GetFocusedDataRow();
+
+            frmEditTarima frm = new frmEditTarima(row.id, this.UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+
+            //switch (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo)
+            //{
+            //    case GrupoUser.GrupoUsuario.Logistica:
+            //        CajaDialogo.Error("No esta autorizado, Solo Calidad puede Editar Tarimas de Reproceso");
+            //        break;
+
+            //    case GrupoUser.GrupoUsuario.Calidad:
+            //        //Ventana de Editar Tarima
+                    
+            //        break;
+
+            //    default:
+            //        break;
+                    
+            //}
         }
     }
 }

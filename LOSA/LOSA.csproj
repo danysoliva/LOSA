@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\aqfsvr003\Deploy%24\LOSA64\</InstallUrl>
-    <ApplicationRevision>369</ApplicationRevision>
+    <ApplicationRevision>370</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -2430,6 +2430,12 @@
     <Compile Include="Reportes\IngresoMP\subReporteIngresoHoja.Designer.cs">
       <DependentUpon>subReporteIngresoHoja.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reproceso\frmEleccionReproceso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reproceso\frmEleccionReproceso.Designer.cs">
+      <DependentUpon>frmEleccionReproceso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reproceso\frmReprocesoPrint.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -3857,6 +3863,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\IngresoMP\subReporteIngresoHoja.resx">
       <DependentUpon>subReporteIngresoHoja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reproceso\frmEleccionReproceso.resx">
+      <DependentUpon>frmEleccionReproceso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reproceso\frmReprocesoPrint.resx">
       <DependentUpon>frmReprocesoPrint.cs</DependentUpon>
