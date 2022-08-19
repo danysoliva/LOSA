@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmreport));
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
             this.btnReporteRetenido = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
@@ -65,6 +66,21 @@
             this.labelControl1.TabIndex = 8;
             this.labelControl1.Text = "Reportes";
             // 
+            // simpleButton6
+            // 
+            this.simpleButton6.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton6.Appearance.Options.UseFont = true;
+            this.simpleButton6.Appearance.Options.UseTextOptions = true;
+            this.simpleButton6.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton6.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton6.ImageOptions.Image = global::LOSA.Properties.Resources.Finance_Expired_icon32px;
+            this.simpleButton6.Location = new System.Drawing.Point(433, 442);
+            this.simpleButton6.Name = "simpleButton6";
+            this.simpleButton6.Size = new System.Drawing.Size(199, 52);
+            this.simpleButton6.TabIndex = 45;
+            this.simpleButton6.Text = "Proximos a Vencer";
+            this.simpleButton6.Click += new System.EventHandler(this.simpleButton6_Click);
+            // 
             // btnReporteRetenido
             // 
             this.btnReporteRetenido.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -88,7 +104,7 @@
             this.simpleButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
             this.simpleButton5.Location = new System.Drawing.Point(433, 326);
             this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(198, 52);
+            this.simpleButton5.Size = new System.Drawing.Size(199, 52);
             this.simpleButton5.TabIndex = 43;
             this.simpleButton5.Text = "Reportes de Producto terminado";
             this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
@@ -182,9 +198,9 @@
             this.btnImprimirTm.Appearance.Options.UseFont = true;
             this.btnImprimirTm.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnImprimirTm.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimirTm.ImageOptions.Image")));
-            this.btnImprimirTm.Location = new System.Drawing.Point(434, 384);
+            this.btnImprimirTm.Location = new System.Drawing.Point(433, 384);
             this.btnImprimirTm.Name = "btnImprimirTm";
-            this.btnImprimirTm.Size = new System.Drawing.Size(200, 52);
+            this.btnImprimirTm.Size = new System.Drawing.Size(199, 52);
             this.btnImprimirTm.TabIndex = 26;
             this.btnImprimirTm.Text = "Impresion \r\nde Tarimas";
             this.btnImprimirTm.Visible = false;
@@ -315,6 +331,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(714, 522);
+            this.Controls.Add(this.simpleButton6);
             this.Controls.Add(this.btnReporteRetenido);
             this.Controls.Add(this.simpleButton5);
             this.Controls.Add(this.simpleButton4);
@@ -362,5 +379,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
         private DevExpress.XtraEditors.SimpleButton simpleButton5;
         private DevExpress.XtraEditors.SimpleButton btnReporteRetenido;
+        private DevExpress.XtraEditors.SimpleButton simpleButton6;
     }
 }

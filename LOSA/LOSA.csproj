@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\aqfsvr003\Deploy%24\LOSA64\</InstallUrl>
-    <ApplicationRevision>371</ApplicationRevision>
+    <ApplicationRevision>372</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -724,6 +724,9 @@
     </Compile>
     <Compile Include="Calidad\GestionLotesMP\frmSelectCausaRechazo.Designer.cs">
       <DependentUpon>frmSelectCausaRechazo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\LoteConfConsumo\dsConfigLoteConsumo.cs">
+      <DependentUpon>dsConfigLoteConsumo.xsd</DependentUpon>
     </Compile>
     <Compile Include="Calidad\LoteConfConsumo\dsConfigLoteConsumo.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -2663,6 +2666,12 @@
     <Compile Include="TransaccionesMP\Liquidos\frmBinesEnPRD.Designer.cs">
       <DependentUpon>frmBinesEnPRD.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\Reportes\frmReporteKardexGeneralVencimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\Reportes\frmReporteKardexGeneralVencimiento.Designer.cs">
+      <DependentUpon>frmReporteKardexGeneralVencimiento.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesMP\TrzMP_fromLote\dsMP_Lotes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -3975,6 +3984,9 @@
     <EmbeddedResource Include="TransaccionesMP\Liquidos\frmBinesEnPRD.resx">
       <DependentUpon>frmBinesEnPRD.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\Reportes\frmReporteKardexGeneralVencimiento.resx">
+      <DependentUpon>frmReporteKardexGeneralVencimiento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\TrzMP_fromLote\frmMP_WithSameLot.resx">
       <DependentUpon>frmMP_WithSameLot.cs</DependentUpon>
     </EmbeddedResource>
@@ -4473,6 +4485,7 @@
     <None Include="Resources\excel32px.png" />
     <None Include="Resources\floppy-disk32px.png" />
     <None Include="Resources\edit24px.png" />
+    <None Include="Resources\Finance-Expired-icon32px.png" />
     <Content Include="Resources\key.png" />
     <None Include="Resources\Materia_Prima.png" />
     <None Include="Resources\logout.png" />

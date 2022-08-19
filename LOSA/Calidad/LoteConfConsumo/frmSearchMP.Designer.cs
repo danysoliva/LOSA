@@ -40,6 +40,7 @@ namespace LOSA.Calidad.LoteConfConsumo
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSeleccionado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.colconcat_ = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtParametroBusqueda.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlDetalleMP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsConfigLoteConsumo1)).BeginInit();
@@ -54,6 +55,8 @@ namespace LOSA.Calidad.LoteConfConsumo
             this.txtParametroBusqueda.Properties.Appearance.Options.UseFont = true;
             this.txtParametroBusqueda.Size = new System.Drawing.Size(427, 24);
             this.txtParametroBusqueda.TabIndex = 0;
+            this.txtParametroBusqueda.EditValueChanged += new System.EventHandler(this.txtParametroBusqueda_EditValueChanged);
+            this.txtParametroBusqueda.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtParametroBusqueda_KeyDown);
             // 
             // cmdAplicar
             // 
@@ -108,11 +111,13 @@ namespace LOSA.Calidad.LoteConfConsumo
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colItemCode,
             this.colName,
-            this.colSeleccionado});
+            this.colSeleccionado,
+            this.colconcat_});
             this.gridView1.GridControl = this.gridControlDetalleMP;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanging);
+            this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
             // colItemCode
             // 
@@ -125,7 +130,8 @@ namespace LOSA.Calidad.LoteConfConsumo
             // 
             // colName
             // 
-            this.colName.FieldName = "Name";
+            this.colName.Caption = "Item Name";
+            this.colName.FieldName = "Name_";
             this.colName.Name = "colName";
             this.colName.OptionsColumn.AllowEdit = false;
             this.colName.Visible = true;
@@ -149,6 +155,11 @@ namespace LOSA.Calidad.LoteConfConsumo
             this.labelControl1.Size = new System.Drawing.Size(172, 17);
             this.labelControl1.TabIndex = 11;
             this.labelControl1.Text = "Seleccione una Materia Prima";
+            // 
+            // colconcat_
+            // 
+            this.colconcat_.FieldName = "concat_";
+            this.colconcat_.Name = "colconcat_";
             // 
             // frmSearchMP
             // 
@@ -184,5 +195,6 @@ namespace LOSA.Calidad.LoteConfConsumo
         private DevExpress.XtraGrid.Columns.GridColumn colItemCode;
         private DevExpress.XtraGrid.Columns.GridColumn colName;
         private DevExpress.XtraGrid.Columns.GridColumn colSeleccionado;
+        private DevExpress.XtraGrid.Columns.GridColumn colconcat_;
     }
 }

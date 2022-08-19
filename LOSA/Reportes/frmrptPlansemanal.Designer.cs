@@ -880,7 +880,6 @@ namespace LOSA.Reportes
             this.ClientSize = new System.Drawing.Size(1406, 689);
             this.Controls.Add(this.pnWorkPlace);
             this.Controls.Add(this.splitContainerControl1);
-            this.IsMdiContainer = true;
             this.Name = "frmrptPlansemanal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

@@ -126,6 +126,7 @@
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.cmdVerConfiguracionLotesVencimientoMP = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -170,7 +171,7 @@
             this.tabOpciones.Location = new System.Drawing.Point(5, 89);
             this.tabOpciones.Name = "tabOpciones";
             this.tabOpciones.SelectedTabPage = this.TabMontacarga;
-            this.tabOpciones.Size = new System.Drawing.Size(778, 488);
+            this.tabOpciones.Size = new System.Drawing.Size(778, 565);
             this.tabOpciones.TabIndex = 8;
             this.tabOpciones.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.TabMontacarga,
@@ -973,6 +974,7 @@
             // 
             // TabCalidad
             // 
+            this.TabCalidad.Controls.Add(this.cmdVerConfiguracionLotesVencimientoMP);
             this.TabCalidad.Controls.Add(this.simpleButton34);
             this.TabCalidad.Controls.Add(this.btnClientesLote);
             this.TabCalidad.Controls.Add(this.simpleButton32);
@@ -994,7 +996,7 @@
             this.TabCalidad.ImageOptions.Image = global::LOSA.Properties.Resources.medal;
             this.TabCalidad.Name = "TabCalidad";
             this.TabCalidad.PageVisible = false;
-            this.TabCalidad.Size = new System.Drawing.Size(772, 441);
+            this.TabCalidad.Size = new System.Drawing.Size(772, 518);
             this.TabCalidad.Text = "Calidad";
             // 
             // simpleButton34
@@ -1533,12 +1535,27 @@
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
             // 
+            // cmdVerConfiguracionLotesVencimientoMP
+            // 
+            this.cmdVerConfiguracionLotesVencimientoMP.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.cmdVerConfiguracionLotesVencimientoMP.Appearance.Options.UseFont = true;
+            this.cmdVerConfiguracionLotesVencimientoMP.Appearance.Options.UseTextOptions = true;
+            this.cmdVerConfiguracionLotesVencimientoMP.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.cmdVerConfiguracionLotesVencimientoMP.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdVerConfiguracionLotesVencimientoMP.ImageOptions.Image = global::LOSA.Properties.Resources.Finance_Expired_icon32px;
+            this.cmdVerConfiguracionLotesVencimientoMP.Location = new System.Drawing.Point(419, 413);
+            this.cmdVerConfiguracionLotesVencimientoMP.Name = "cmdVerConfiguracionLotesVencimientoMP";
+            this.cmdVerConfiguracionLotesVencimientoMP.Size = new System.Drawing.Size(199, 59);
+            this.cmdVerConfiguracionLotesVencimientoMP.TabIndex = 35;
+            this.cmdVerConfiguracionLotesVencimientoMP.Text = "Primeros a Vencer por MP";
+            this.cmdVerConfiguracionLotesVencimientoMP.Click += new System.EventHandler(this.cmdVerConfiguracionLotesVencimientoMP_Click);
+            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(781, 579);
+            this.ClientSize = new System.Drawing.Size(781, 656);
             this.Controls.Add(this.cmdHome);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.tabOpciones);
@@ -1664,5 +1681,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton35;
         private DevExpress.XtraEditors.SimpleButton simpleButton36;
         private DevExpress.XtraEditors.SimpleButton cmdReporteInventarioPorFecha;
+        private DevExpress.XtraEditors.SimpleButton cmdVerConfiguracionLotesVencimientoMP;
     }
 }
