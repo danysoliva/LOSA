@@ -63,10 +63,8 @@ namespace LOSA.Calidad.LoteConfConsumo
 
                 SqlCommand cmd = new SqlCommand("sp_get_lista_materias_primas", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                if (!string.IsNullOrEmpty(txtParametroBusqueda.Text))
-                    cmd.Parameters.AddWithValue("@parametro_busqueda", Convert.ToInt32(TipoBusquedaActual));
-                else
-                    cmd.Parameters.AddWithValue("@parametro_busqueda", DBNull.Value);
+                cmd.Parameters.AddWithValue("@parametro_busqueda", Convert.ToInt32(TipoBusquedaActual));
+
 
                 dsConfigLoteConsumo1.search_mp.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
