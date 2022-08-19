@@ -172,13 +172,13 @@ namespace LOSA.Reproceso
             var gridview = (GridView)gridControl1.FocusedView;
             var row = (dsLogistica2.PT_Reproceso_TarimasRow)gridview.GetFocusedDataRow();
 
+            DateTime dtFechaNull = Convert.ToDateTime("1/1/1901 15:00:00");
 
-
-            //if (row.fecha_produccion_materia_prima == DateTime.)
-            //{
-            //    CajaDialogo.Error("La fecha de Produccion Materia Prima debe ser cambiada! Solicite a Calidad el Cambio de la Fecha de Produccion");
-            //    return;
-            //}
+            if (row.fecha_produccion_materia_prima == dtFechaNull)
+            {
+                CajaDialogo.Error("La fecha de Produccion Materia Prima debe ser cambiada! Solicite a Calidad el Cambio de la Fecha de Produccion");
+                return;
+            }
 
             rptTarimaReproceso report = new rptTarimaReproceso(row.id);
             report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
@@ -232,8 +232,7 @@ namespace LOSA.Reproceso
                     {
                         LoadData();
                     }
-                    frm.MdiParent = this.MdiParent;
-                    frm.Show();
+                   
                     break;
 
                 default:

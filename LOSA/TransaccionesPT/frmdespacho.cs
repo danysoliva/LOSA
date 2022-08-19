@@ -145,8 +145,8 @@ namespace LOSA.TransaccionesPT
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Desea imprimir el reporte de detalle de carga?", "Pregunta" , MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
-            {
+            //if (MessageBox.Show("Desea imprimir el reporte de detalle de carga?", "Pregunta" , MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+            //{
                 try
                 {
                     var gridView = (GridView)grd_data.FocusedView;
@@ -161,7 +161,7 @@ namespace LOSA.TransaccionesPT
 
                     CajaDialogo.Error(ex.Message);
                 }
-            }
+            //}
         }
 
         private void btnExcel_Click(object sender, EventArgs e)

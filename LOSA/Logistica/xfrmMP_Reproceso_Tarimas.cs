@@ -311,7 +311,7 @@ namespace LOSA.Logistica
                         cmd3.Parameters.AddWithValue("@peso", tarima.peso);
                         cmd3.Parameters.AddWithValue("@id_usuario", userLogin.Id);
                         cmd3.Parameters.AddWithValue("@codigo_barra", barcode);
-                        cmd3.Parameters.AddWithValue("@idlotes", id_lote);
+                        //cmd3.Parameters.AddWithValue("@idlotes", null);
                         cmd3.Parameters.AddWithValue("@id_Tarima",tarima.ID );
                         cmd3.Parameters.AddWithValue("@id_especie", setIngreso.especie);
                         cmd3.Parameters.AddWithValue("@id_tarima_reproceso", tarima.TarimaID);
@@ -363,6 +363,8 @@ namespace LOSA.Logistica
 
                 CajaDialogo.Information("DATOS GUARDADOS");
                 this.DialogResult = DialogResult.OK;
+
+                LoadData();
             }
             catch (Exception ex)
             {

@@ -34,7 +34,7 @@ namespace LOSA.Reproceso
                 id_tarima_PT = tar1.Id_tarima_reproceso;
 
                 Tarima tar2 = new Tarima();
-                tar2.RecuperarRegistro(id_tarima_PT);
+                tar2.RecuperarTarimaPT(id_tarima_PT);
                 if (tar2.ProductoTerminadoName == null)
                 {
                     lblNombreProducto.Text = tar1.MateriaPrima;

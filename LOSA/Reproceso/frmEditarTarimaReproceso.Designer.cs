@@ -64,6 +64,7 @@ namespace LOSA.Reproceso
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.dsRecepcionMPx1 = new LOSA.RecepcionMP.dsRecepcionMPx();
+            this.presentacionesBindingSource = new System.Windows.Forms.BindingSource();
             ((System.ComponentModel.ISupportInitialize)(this.txtMP_Name.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtpresentacionPromedio.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tg_presentacion_promedio.Properties)).BeginInit();
@@ -81,6 +82,7 @@ namespace LOSA.Reproceso
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaIngreso.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaIngreso.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.presentacionesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdGuardar
@@ -239,11 +241,13 @@ namespace LOSA.Reproceso
             this.gridLookUpEditPresentacion.Properties.Appearance.Options.UseFont = true;
             this.gridLookUpEditPresentacion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.gridLookUpEditPresentacion.Properties.DataSource = this.presentacionesBindingSource;
             this.gridLookUpEditPresentacion.Properties.DisplayMember = "descripcion";
             this.gridLookUpEditPresentacion.Properties.PopupView = this.gridLookUpEdit1View;
             this.gridLookUpEditPresentacion.Properties.ValueMember = "id";
             this.gridLookUpEditPresentacion.Size = new System.Drawing.Size(170, 30);
             this.gridLookUpEditPresentacion.TabIndex = 95;
+            this.gridLookUpEditPresentacion.EditValueChanged += new System.EventHandler(this.gridLookUpEditPresentacion_EditValueChanged);
             // 
             // gridLookUpEdit1View
             // 
@@ -449,13 +453,17 @@ namespace LOSA.Reproceso
             this.dsRecepcionMPx1.DataSetName = "dsRecepcionMPx";
             this.dsRecepcionMPx1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // presentacionesBindingSource
+            // 
+            this.presentacionesBindingSource.DataMember = "presentaciones";
+            this.presentacionesBindingSource.DataSource = this.dsRecepcionMPx1;
+            // 
             // frmEditarTarimaReproceso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(958, 528);
             this.Controls.Add(this.labelControl12);
-            this.Controls.Add(this.txtpresentacionPromedio);
             this.Controls.Add(this.Tg_presentacion_promedio);
             this.Controls.Add(this.labelControl13);
             this.Controls.Add(this.txtCantidadTarimasTotal);
@@ -479,6 +487,7 @@ namespace LOSA.Reproceso
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.cmdGuardar);
             this.Controls.Add(this.labelControl1);
+            this.Controls.Add(this.txtpresentacionPromedio);
             this.Name = "frmEditarTarimaReproceso";
             this.Text = "frmEditarTarimaReproceso";
             ((System.ComponentModel.ISupportInitialize)(this.txtMP_Name.Properties)).EndInit();
@@ -498,6 +507,7 @@ namespace LOSA.Reproceso
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaIngreso.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaIngreso.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.presentacionesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -534,5 +544,6 @@ namespace LOSA.Reproceso
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl12;
         private RecepcionMP.dsRecepcionMPx dsRecepcionMPx1;
+        private System.Windows.Forms.BindingSource presentacionesBindingSource;
     }
 }
