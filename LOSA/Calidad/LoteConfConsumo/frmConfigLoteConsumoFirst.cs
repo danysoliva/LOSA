@@ -28,8 +28,8 @@ namespace LOSA.Calidad.LoteConfConsumo
             frmSearchMP frm = new frmSearchMP(frmSearchMP.TipoBusqueda.MateriaPrima);
             if(frm.ShowDialog()== DialogResult.OK)
             {
-                LoadLotesMP(frm.MateriaPrimaSelected.IdMP_ACS);
-                textEdit1.Text = frm.MateriaPrimaSelected.CodeMP_SAP + " " + frm.MateriaPrimaSelected.NameComercial;
+                LoadLotesMP(frm.ItemSeleccionado.id);
+                textEdit1.Text = frm.ItemSeleccionado.ItemCode + " " + frm.ItemSeleccionado.ItemName;
             }
         }
 

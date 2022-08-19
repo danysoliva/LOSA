@@ -17,7 +17,8 @@ namespace LOSA.Calidad.LoteConfConsumo
 {
     public partial class frmSearchMP : DevExpress.XtraEditors.XtraForm
     {
-        public MateriaPrima MateriaPrimaSelected;
+        //public MateriaPrima MateriaPrimaSelected;
+        public ItemBusqueda ItemSeleccionado;
         DataView dv;// = new DataView(dsConfigLoteConsumo1.search_mp);
         public enum TipoBusqueda
         {
@@ -47,7 +48,8 @@ namespace LOSA.Calidad.LoteConfConsumo
                     break;
             }
 
-            MateriaPrimaSelected = new MateriaPrima();
+            //MateriaPrimaSelected = new MateriaPrima();
+            ItemSeleccionado = new ItemBusqueda();
             LoadData();
         }
 
@@ -62,7 +64,7 @@ namespace LOSA.Calidad.LoteConfConsumo
                 SqlCommand cmd = new SqlCommand("sp_get_lista_materias_primas", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 if (!string.IsNullOrEmpty(txtParametroBusqueda.Text))
-                    cmd.Parameters.AddWithValue("@parametro_busqueda", txtParametroBusqueda.Text);
+                    cmd.Parameters.AddWithValue("@parametro_busqueda", Convert.ToInt32(TipoBusquedaActual));
                 else
                     cmd.Parameters.AddWithValue("@parametro_busqueda", DBNull.Value);
 
@@ -93,19 +95,15 @@ namespace LOSA.Calidad.LoteConfConsumo
                 var row = (dsConfigLoteConsumo.search_mpRow)gridView.GetFocusedDataRow();
                 if (Convert.ToBoolean(e.Value))
                 {
-                    if (MateriaPrimaSelected.RecuperarRegistroFromID_RM(row.id))
-                    {
-                        MateriaPrimaSelected.IdMP_ACS = row.id;
-                        MateriaPrimaSelected.CodeMP_SAP = row.ItemCode;
-                        row.Seleccionado = true;
-                    }
-                    //IdUserNewAssigned = row.id;
-                    //row.seleccionado = true;
+                    ItemSeleccionado.id = row.id;
+                    ItemSeleccionado.ItemCode = row.ItemCode;
+                    ItemSeleccionado.ItemName = row.Name_;
+                    row.Seleccionado = true;
                 }
 
                 foreach (dsConfigLoteConsumo.search_mpRow row1 in dsConfigLoteConsumo1.search_mp)
                 {
-                    if (row1.id != MateriaPrimaSelected.IdMP_ACS)
+                    if (row1.id != ItemSeleccionado.id)
                         row1.Seleccionado = false;
                 }
             }
@@ -130,14 +128,12 @@ namespace LOSA.Calidad.LoteConfConsumo
                 {
                     var gridView = (GridView)gridControlDetalleMP.FocusedView;
                     var row = (dsConfigLoteConsumo.search_mpRow)gridView.GetDataRow(0);
-                    
-                    if (MateriaPrimaSelected.RecuperarRegistroFromID_RM(row.id))
-                    {
-                        MateriaPrimaSelected.IdMP_ACS = row.id;
-                        MateriaPrimaSelected.CodeMP_SAP = row.ItemCode;
-                        row.Seleccionado = true;
-                        cmdAplicar_Click(new object(), new EventArgs());
-                    }
+
+                    ItemSeleccionado.id = row.id;
+                    ItemSeleccionado.ItemCode = row.ItemCode;
+                    ItemSeleccionado.ItemName = row.Name_;
+                    row.Seleccionado = true;
+                    cmdAplicar_Click(new object(), new EventArgs());
                 }
             }
         }
@@ -153,21 +149,22 @@ namespace LOSA.Calidad.LoteConfConsumo
             var gridView = (GridView)gridControlDetalleMP.FocusedView;
             var row = (dsConfigLoteConsumo.search_mpRow)gridView.GetFocusedDataRow();
 
-
-            if (MateriaPrimaSelected.RecuperarRegistroFromID_RM(row.id))
-            {
-                MateriaPrimaSelected.IdMP_ACS = row.id;
-                MateriaPrimaSelected.CodeMP_SAP = row.ItemCode;
-                row.Seleccionado = true;
-                cmdAplicar_Click(new object(), new EventArgs());
-            }
+            ItemSeleccionado.id = row.id;
+            ItemSeleccionado.ItemCode = row.ItemCode;
+            ItemSeleccionado.ItemName = row.Name_;
+            row.Seleccionado = true;
+            cmdAplicar_Click(new object(), new EventArgs());
 
             foreach (dsConfigLoteConsumo.search_mpRow row1 in dsConfigLoteConsumo1.search_mp)
             {
-                if (row1.id != MateriaPrimaSelected.IdMP_ACS)
+                if (row1.id != ItemSeleccionado.id)
                     row1.Seleccionado = false;
             }
-
         }
+
+
+
+
+
     }
 }
