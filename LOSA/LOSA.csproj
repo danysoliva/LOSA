@@ -725,6 +725,9 @@
     <Compile Include="Calidad\GestionLotesMP\frmSelectCausaRechazo.Designer.cs">
       <DependentUpon>frmSelectCausaRechazo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\LoteConfConsumo\dsConfigLoteConsumo.cs">
+      <DependentUpon>dsConfigLoteConsumo.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\LoteConfConsumo\dsConfigLoteConsumo.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

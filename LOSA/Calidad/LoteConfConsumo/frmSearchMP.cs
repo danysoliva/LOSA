@@ -18,9 +18,35 @@ namespace LOSA.Calidad.LoteConfConsumo
     public partial class frmSearchMP : DevExpress.XtraEditors.XtraForm
     {
         public MateriaPrima MateriaPrimaSelected;
-        public frmSearchMP()
+        DataView dv;// = new DataView(dsConfigLoteConsumo1.search_mp);
+        public enum TipoBusqueda
+        {
+            MateriaPrima = 1,
+            ProductoTerminado = 2,
+            Empleados = 3
+        }
+
+        TipoBusqueda TipoBusquedaActual;
+        string StoreProcedureConfigActual;
+        public frmSearchMP(TipoBusqueda pTipo)
         {
             InitializeComponent();
+            TipoBusquedaActual = pTipo;
+            switch (TipoBusquedaActual)
+            {
+                case TipoBusqueda.MateriaPrima:
+                    StoreProcedureConfigActual = "sp_get_lista_materias_primas";
+                    break;
+                case TipoBusqueda.ProductoTerminado:
+                    StoreProcedureConfigActual = "";
+                    break;
+                case TipoBusqueda.Empleados:
+                    StoreProcedureConfigActual = "";
+                    break;
+                default:
+                    break;
+            }
+
             MateriaPrimaSelected = new MateriaPrima();
             LoadData();
         }
@@ -44,6 +70,7 @@ namespace LOSA.Calidad.LoteConfConsumo
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 adat.Fill(dsConfigLoteConsumo1.search_mp);
 
+                dv = new DataView(dsConfigLoteConsumo1.search_mp);
                 con.Close();
             }
             catch (Exception ec)
@@ -93,6 +120,54 @@ namespace LOSA.Calidad.LoteConfConsumo
         {
             this.DialogResult = DialogResult.OK;
             this.Close();
+        }
+
+        private void txtParametroBusqueda_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                if(dv.Count == 1)
+                {
+                    var gridView = (GridView)gridControlDetalleMP.FocusedView;
+                    var row = (dsConfigLoteConsumo.search_mpRow)gridView.GetDataRow(0);
+                    
+                    if (MateriaPrimaSelected.RecuperarRegistroFromID_RM(row.id))
+                    {
+                        MateriaPrimaSelected.IdMP_ACS = row.id;
+                        MateriaPrimaSelected.CodeMP_SAP = row.ItemCode;
+                        row.Seleccionado = true;
+                        cmdAplicar_Click(new object(), new EventArgs());
+                    }
+                }
+            }
+        }
+
+        private void txtParametroBusqueda_EditValueChanged(object sender, EventArgs e)
+        {
+            dv.RowFilter = @"[concat_] like '%" + txtParametroBusqueda.Text + "%'";
+            gridControlDetalleMP.DataSource = dv;
+        }
+
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            var gridView = (GridView)gridControlDetalleMP.FocusedView;
+            var row = (dsConfigLoteConsumo.search_mpRow)gridView.GetFocusedDataRow();
+
+
+            if (MateriaPrimaSelected.RecuperarRegistroFromID_RM(row.id))
+            {
+                MateriaPrimaSelected.IdMP_ACS = row.id;
+                MateriaPrimaSelected.CodeMP_SAP = row.ItemCode;
+                row.Seleccionado = true;
+                cmdAplicar_Click(new object(), new EventArgs());
+            }
+
+            foreach (dsConfigLoteConsumo.search_mpRow row1 in dsConfigLoteConsumo1.search_mp)
+            {
+                if (row1.id != MateriaPrimaSelected.IdMP_ACS)
+                    row1.Seleccionado = false;
+            }
+
         }
     }
 }

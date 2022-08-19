@@ -4,6 +4,7 @@ using System.Collections;
 using System.ComponentModel;
 using DevExpress.XtraReports.UI;
 using LOSA.Clases;
+using ACS.Classes;
 
 namespace LOSA.RecepcionMP
 {
@@ -12,6 +13,9 @@ namespace LOSA.RecepcionMP
         public rptReporteIngresoTarima(int idTarima)
         {
             InitializeComponent();
+            DataOperations dp = new DataOperations();
+            lblVersion.Text = dp.AssemblyVersion;
+
             Tarima tar1 = new Tarima();
             if (tar1.RecuperarRegistro(idTarima, ""))
             {
@@ -29,6 +33,7 @@ namespace LOSA.RecepcionMP
                 lblFechadeVencimiento.Text = string.Format("{0:dd/MM/yyyy}", tar1.FechaVencimiento);
                 txtcodigo.Text = tar1.ItemCode;
                 BarCode1.Text = BarCode2.Text = tar1.CodigoBarra;
+                
             }
 
         }

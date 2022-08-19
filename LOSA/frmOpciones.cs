@@ -2,6 +2,7 @@
 using LOSA.ACS.RRHH;
 using LOSA.AlmacenesExterno;
 using LOSA.Calidad;
+using LOSA.Calidad.LoteConfConsumo;
 using LOSA.Calidad.Revision_Sanidad;
 using LOSA.Clases;
 using LOSA.Despachos;
@@ -968,6 +969,15 @@ namespace LOSA
         private void cmdReporteInventarioPorFecha_Click(object sender, EventArgs e)
         {
             frmReporteInvPorLoteA_LaFecha frm = new frmReporteInvPorLoteA_LaFecha(this.UsuarioLogeado);
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+
+            frm.Show();
+        }
+
+        private void cmdVerConfiguracionLotesVencimientoMP_Click(object sender, EventArgs e)
+        {
+            frmConfigLoteConsumoFirst frm = new frmConfigLoteConsumoFirst(UsuarioLogeado);
             if (this.MdiParent != null)
                 frm.MdiParent = this.MdiParent;
 
