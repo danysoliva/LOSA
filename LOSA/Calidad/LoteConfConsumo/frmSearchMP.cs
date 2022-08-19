@@ -24,7 +24,8 @@ namespace LOSA.Calidad.LoteConfConsumo
         {
             MateriaPrima = 1,
             ProductoTerminado = 2,
-            Empleados = 3
+            Empleados = 3,
+            BodegasALOSY = 4
         }
 
         TipoBusqueda TipoBusquedaActual;
