@@ -25,7 +25,8 @@ namespace LOSA.Calidad.LoteConfConsumo
             MateriaPrima = 1,
             ProductoTerminado = 2,
             Empleados = 3,
-            BodegasALOSY = 4
+            PresentacionEmpaqueALOSY = 4,
+            BodegasALOSY = 5
         }
 
         TipoBusqueda TipoBusquedaActual;
