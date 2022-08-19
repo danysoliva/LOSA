@@ -47,6 +47,7 @@ namespace LOSA.Clases
         DateTime fecha_produccion_pt;
         string Itemcode;
         int _id_tarima_reproceso;
+        string _productoTerminadoName_Detalle;
         public Tarima()
         {
 
@@ -95,6 +96,7 @@ namespace LOSA.Clases
         /// ID de PT de la nueva Tarima de MP Reproceso
         /// </summary>
         public int Id_tarima_reproceso { get => _id_tarima_reproceso; set => _id_tarima_reproceso = value; }
+        public string ProductoTerminadoName_Detalle { get => _productoTerminadoName_Detalle; set => _productoTerminadoName_Detalle = value; }
 
         public bool RecuperarRegistro(int pIdTarima, string pCodigoBarra)
         {
@@ -171,7 +173,7 @@ namespace LOSA.Clases
                 if (dr.Read())
                 {
                     Id = dr.GetInt32(0);
-                   // IdUnidadMedida = dr.GetInt32(1);
+                    // IdUnidadMedida = dr.GetInt32(1);
                     //Cantidad = 1;
                     _MateriaPrimaName = dr.GetString(2);
                     TipoTarimaDescripcion = dr.GetString(3);
@@ -251,6 +253,7 @@ namespace LOSA.Clases
                     Id_estado_tarima = dr.GetInt32(22);
                     Id_alimentacion = dr.GetInt32(23);
                     Fecha_produccion_pt = dr.GetDateTime(24);
+                    ProductoTerminadoName = dr.GetString(25);
                     Id_turno = dr.GetInt32(25);
                     Recuperado = true;
                 }
@@ -309,7 +312,7 @@ namespace LOSA.Clases
                     Id_turno = dr.GetInt32(25);
                     id_estado_pt = dr.GetInt32(26);
                     ProductoTerminadoName = dr.GetString(27);
-                     
+
                     Recuperado = true;
                 }
                 dr.Close();
@@ -413,7 +416,7 @@ namespace LOSA.Clases
                     _peso = dr.GetDecimal(19);
                     id_estadoCalidad = dr.GetInt32(20);
                     Id_ingreso = dr.GetInt32(21);
-                    Id_alimentacion = dr.GetInt32(22);   
+                    Id_alimentacion = dr.GetInt32(22);
                     Fecha_produccion_pt = dr.GetDateTime(23);
                     Id_turno = dr.GetInt32(24);
                     Recuperado = true;
@@ -468,6 +471,7 @@ namespace LOSA.Clases
                     Id_alimentacion = dr.GetInt32(22);
                     Fecha_produccion_pt = dr.GetDateTime(23);
                     Id_turno = dr.GetInt32(24);
+
                     Recuperado = true;
                 }
                 dr.Close();
@@ -544,7 +548,7 @@ namespace LOSA.Clases
                 cmd.CommandType = CommandType.StoredProcedure;
                 //cmd.Parameters.AddWithValue("@id", Serial);
                 name = cmd.ExecuteScalar().ToString();
-                
+
             }
             catch (Exception ex)
             {
@@ -577,7 +581,50 @@ namespace LOSA.Clases
         }
 
 
+        public bool RecuperarTarimaPT(int pIdTarima)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
 
+                SqlCommand cmd = new SqlCommand("sp_get_tarima_pt_for_id", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", pIdTarima);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    Id = dr.GetInt32(0);
+                    FechaIngreso = dr.GetDateTime(1);
+                    FechaVencimiento = dr.GetDateTime(2);
+                    LotePT = dr.GetInt32(3);
+                    IdPresentacion = dr.GetInt32(4);
+                    _idUsuario = dr.GetInt32(5);
+                    _tipotarimaid = dr.GetInt32(6);
+                    IdProductoterminado = dr.GetInt32(7);
+                    Fecha_produccion_pt = dr.GetDateTime(8);
+                    CodigoBarra = dr.GetString(9);
+                    Cantidad = dr.GetDecimal(10);//ó unidades
+                    _peso = dr.GetDecimal(11);
+                    ItemCode = dr.GetString(12);
+                    id_estadoCalidad = dr.GetInt32(13);
+                    Id_turno = dr.GetInt32(14);
+                    id_estado_pt = dr.GetInt32(15);
+                    Id_alimentacion = dr.GetInt32(16);
+                    ProductoTerminadoName = dr.GetString(17);
+                    ProductoTerminadoName_Detalle = dr.GetString(18);
+                    Recuperado = true;
+                }
+                dr.Close();
+                conn.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+            return Recuperado;
 
+        }
     }
 }

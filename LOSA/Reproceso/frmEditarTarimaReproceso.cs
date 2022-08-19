@@ -282,7 +282,7 @@ namespace LOSA.Reproceso
                 //cmd.Parameters.AddWithValue("@id_proveedor", glueProveedor.EditValue.ToString());
                 cmd.Parameters.AddWithValue("@itemcode", this.ItemCode);
                 cmd.Parameters.AddWithValue("@id", this.IdTarima);
-                cmd.ExecuteScalar();
+                cmd.ExecuteNonQuery();
                 con.Close();
 
                 this.DialogResult = DialogResult.OK;
@@ -318,6 +318,16 @@ namespace LOSA.Reproceso
             catch (Exception ex)
             {
                 CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void gridLookUpEditPresentacion_EditValueChanged(object sender, EventArgs e)
+        {
+            PresentacionX pre1 = new PresentacionX();
+            if (pre1.RecuperarRegistro(Convert.ToInt32(gridLookUpEditPresentacion.EditValue)))
+            {
+                factor = pre1.Factor;
+                txtPesoKg.Text = string.Format("{0:###,##0.00}", (factor * Convert.ToDecimal(txtUnidades.Text)));
             }
         }
     }
