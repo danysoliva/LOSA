@@ -99,6 +99,7 @@ namespace LOSA.RecepcionMP
         }
         private void simpleButton4_Click(object sender, EventArgs e)
         {
+            int id_salida_h =0;
             if (MessageBox.Show("Desea crear el ingreso con esta configuracion?. Debe definir los lotes que se han generado.",
                                 "Desea crear el ingreso con esta configuracion?.Debe definir los lotes que se han generado",
                 MessageBoxButtons.OK, MessageBoxIcon.Question) == DialogResult.OK)
@@ -117,12 +118,14 @@ namespace LOSA.RecepcionMP
                     totaltarimas = totaltarimas + row.canttarimas;
                     totalpeso = totalpeso + row.totalKgLote;
                 }
+
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                cn.Open();
                 foreach (dsWizard.informacionIngresoRow row in dsWizard.informacionIngreso.Rows)
                 {
                     try
                     {
-                        SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-                        cn.Open();
+                        
                         SqlCommand cmd = new SqlCommand("sp_insert_ingresos_v2", cn);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@itemcode", row.itemcode);//
@@ -140,7 +143,7 @@ namespace LOSA.RecepcionMP
                         cmd.Parameters.AddWithValue("@pesotaria", totalpeso);//   
                         cmd.Parameters.AddWithValue("@traslado", Istraslado ? Convert.ToDecimal(row.id_traslado) : 0);//
                         IdHeaderInserted = Convert.ToInt32(cmd.ExecuteScalar());
-                        cn.Close();
+                        //cn.Close();
                         break;
 
                     }
@@ -152,6 +155,35 @@ namespace LOSA.RecepcionMP
                     }   
                 }
 
+
+                //Insert salida H en Almacen externo
+                IngresoExternoD ingExD = new IngresoExternoD();
+
+                ingExD.RecuperaRegistroInFromIdIngresoH_and_MP_Code(id_Traslado_a_Ingresar);
+
+                SqlCommand cmdh = new SqlCommand("sp_salida_almacenes_externos_h_insert", cn);
+                cmdh.CommandType = CommandType.StoredProcedure;
+                //cmdh.Transaction = transaction;
+                cmdh.Parameters.Add("@bodega_in", SqlDbType.VarChar).Value = "BG001";
+                if(string.IsNullOrEmpty(ingExD.BodegaIn))
+                    cmdh.Parameters.Add("@bodega_out", SqlDbType.VarChar).Value = DBNull.Value;
+                else
+                    cmdh.Parameters.Add("@bodega_out", SqlDbType.VarChar).Value = ingExD.BodegaIn;
+
+                cmdh.Parameters.Add("@fecha", SqlDbType.DateTime).Value = dp.Now();
+
+                if(ingExD.DocEntrySAP>0)
+                    cmdh.Parameters.Add("@DocEntry", SqlDbType.Int).Value = ingExD.DocEntrySAP;
+                else
+                    cmdh.Parameters.Add("@DocEntry", SqlDbType.Int).Value = DBNull.Value;
+
+                cmdh.Parameters.Add("@user_creador", SqlDbType.Int).Value = this.UsuarioLogeado.Id;
+                cmdh.Parameters.Add("@numero_transaccion", SqlDbType.Int).Value = 0;
+                cmdh.Parameters.Add("@id_ingreso", SqlDbType.Int).Value = DBNull.Value;
+
+                id_salida_h = Convert.ToInt32(cmdh.ExecuteScalar());
+
+
                 bool Guardo = false;
                 ArrayList List = new ArrayList();
                 foreach (dsWizard.informacionIngresoRow row in dsWizard.informacionIngreso.Rows)
@@ -159,8 +191,8 @@ namespace LOSA.RecepcionMP
                     
                     try
                     {
-                        SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-                        cn.Open();
+                        //SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                        //cn.Open();
                         SqlCommand cmd = new SqlCommand("sp_insert_ingresos_lote_v2", cn);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@itemcode", row.itemcode);////
@@ -199,7 +231,7 @@ namespace LOSA.RecepcionMP
                             cmm.Parameters.AddWithValue("@id", 1);
                             string barcode = cmm.ExecuteScalar().ToString();
 
-                            cmd = new SqlCommand("sp_insert_new_tarima_v3", con);
+                            cmd = new SqlCommand("sp_insert_new_tarima_v4", con);
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.AddWithValue("@itemcode", row.itemcode);
                             cmd.Parameters.AddWithValue("@id_proveedor", row.cardname);
@@ -218,6 +250,8 @@ namespace LOSA.RecepcionMP
                             cmd.Parameters.AddWithValue("@factor", row.factor);
                             cmd.Parameters.AddWithValue("@bit_promedio", Tg_presentacion_promedio.IsOn ? 1 : 0);
                             cmd.Parameters.AddWithValue("@is_traslado_externo", Istraslado );
+                            cmd.Parameters.AddWithValue("@id_salida_h", id_salida_h);
+
                             vid_tarima = Convert.ToInt32(cmd.ExecuteScalar());
 
                             string query = @"";
@@ -253,6 +287,7 @@ namespace LOSA.RecepcionMP
                         CajaDialogo.Error(ex.Message);
                     }
                 }
+                cn.Close();
 
                 if (Guardo)
                 {
