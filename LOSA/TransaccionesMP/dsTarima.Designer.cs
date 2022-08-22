@@ -1792,6 +1792,7 @@ namespace LOSA.TransaccionesMP {
                 base.Columns.Add(this.columningreso);
                 this.columnsalidas = new global::System.Data.DataColumn("salidas", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsalidas);
+                this.columnfecha_ingreso.Caption = "Fecha Ingreso";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

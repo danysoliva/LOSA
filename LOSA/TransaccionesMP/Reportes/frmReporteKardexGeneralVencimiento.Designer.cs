@@ -229,7 +229,7 @@ namespace LOSA.TransaccionesMP
             this.colexistencia.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia", "{0:0.##.##} Kg.")});
             this.colexistencia.Visible = true;
-            this.colexistencia.VisibleIndex = 9;
+            this.colexistencia.VisibleIndex = 10;
             this.colexistencia.Width = 87;
             // 
             // colnombre_comercial
@@ -249,7 +249,7 @@ namespace LOSA.TransaccionesMP
             this.colfecha_vence.Name = "colfecha_vence";
             this.colfecha_vence.OptionsColumn.AllowEdit = false;
             this.colfecha_vence.Visible = true;
-            this.colfecha_vence.VisibleIndex = 7;
+            this.colfecha_vence.VisibleIndex = 8;
             this.colfecha_vence.Width = 98;
             // 
             // colfecha_produccion
@@ -259,7 +259,7 @@ namespace LOSA.TransaccionesMP
             this.colfecha_produccion.Name = "colfecha_produccion";
             this.colfecha_produccion.OptionsColumn.AllowEdit = false;
             this.colfecha_produccion.Visible = true;
-            this.colfecha_produccion.VisibleIndex = 6;
+            this.colfecha_produccion.VisibleIndex = 7;
             this.colfecha_produccion.Width = 98;
             // 
             // colid_mp
@@ -275,7 +275,7 @@ namespace LOSA.TransaccionesMP
             this.collote.Name = "collote";
             this.collote.OptionsColumn.AllowEdit = false;
             this.collote.Visible = true;
-            this.collote.VisibleIndex = 3;
+            this.collote.VisibleIndex = 4;
             this.collote.Width = 98;
             // 
             // coldias
@@ -285,7 +285,7 @@ namespace LOSA.TransaccionesMP
             this.coldias.Name = "coldias";
             this.coldias.OptionsColumn.AllowEdit = false;
             this.coldias.Visible = true;
-            this.coldias.VisibleIndex = 8;
+            this.coldias.VisibleIndex = 9;
             this.coldias.Width = 56;
             // 
             // colfecha_ingreso
@@ -294,6 +294,8 @@ namespace LOSA.TransaccionesMP
             this.colfecha_ingreso.FieldName = "fecha_ingreso";
             this.colfecha_ingreso.Name = "colfecha_ingreso";
             this.colfecha_ingreso.OptionsColumn.AllowEdit = false;
+            this.colfecha_ingreso.Visible = true;
+            this.colfecha_ingreso.VisibleIndex = 3;
             this.colfecha_ingreso.Width = 79;
             // 
             // colnumero_transaccion
@@ -319,7 +321,7 @@ namespace LOSA.TransaccionesMP
             this.colproveedor.Name = "colproveedor";
             this.colproveedor.OptionsColumn.AllowEdit = false;
             this.colproveedor.Visible = true;
-            this.colproveedor.VisibleIndex = 5;
+            this.colproveedor.VisibleIndex = 6;
             this.colproveedor.Width = 146;
             // 
             // colcodigo1
@@ -329,7 +331,7 @@ namespace LOSA.TransaccionesMP
             this.colcodigo1.Name = "colcodigo1";
             this.colcodigo1.OptionsColumn.AllowEdit = false;
             this.colcodigo1.Visible = true;
-            this.colcodigo1.VisibleIndex = 4;
+            this.colcodigo1.VisibleIndex = 5;
             this.colcodigo1.Width = 54;
             // 
             // colingreso
