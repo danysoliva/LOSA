@@ -122,5 +122,10 @@ namespace LOSA.Reportes
                 get_inventario();
             }
         }
+
+        private void cmdRecargar_Click(object sender, EventArgs e)
+        {
+            get_inventario();
+        }
     }
 }
