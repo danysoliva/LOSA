@@ -87,6 +87,7 @@
             this.btnreportes = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
             this.TabCalidad = new DevExpress.XtraTab.XtraTabPage();
+            this.cmdVerConfiguracionLotesVencimientoMP = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton34 = new DevExpress.XtraEditors.SimpleButton();
             this.btnClientesLote = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton32 = new DevExpress.XtraEditors.SimpleButton();
@@ -126,7 +127,6 @@
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.cmdVerConfiguracionLotesVencimientoMP = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -190,7 +190,7 @@
             this.TabMontacarga.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabMontacarga.ImageOptions.Image")));
             this.TabMontacarga.Name = "TabMontacarga";
             this.TabMontacarga.PageVisible = false;
-            this.TabMontacarga.Size = new System.Drawing.Size(772, 441);
+            this.TabMontacarga.Size = new System.Drawing.Size(772, 518);
             this.TabMontacarga.Text = "MontaCarga";
             // 
             // labelControl2
@@ -273,7 +273,7 @@
             this.TabLogistica.ImageOptions.Image = global::LOSA.Properties.Resources.box;
             this.TabLogistica.Name = "TabLogistica";
             this.TabLogistica.PageVisible = false;
-            this.TabLogistica.Size = new System.Drawing.Size(772, 441);
+            this.TabLogistica.Size = new System.Drawing.Size(772, 518);
             this.TabLogistica.Text = "Logistica";
             // 
             // xtraTabControl1
@@ -282,7 +282,7 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(0, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.TabMP_Sacos;
-            this.xtraTabControl1.Size = new System.Drawing.Size(772, 441);
+            this.xtraTabControl1.Size = new System.Drawing.Size(772, 518);
             this.xtraTabControl1.TabIndex = 42;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.TabMP_Sacos,
@@ -315,7 +315,7 @@
             this.TabMP_Sacos.Controls.Add(this.btnTransferencia);
             this.TabMP_Sacos.Controls.Add(this.btnajuste);
             this.TabMP_Sacos.Name = "TabMP_Sacos";
-            this.TabMP_Sacos.Size = new System.Drawing.Size(766, 409);
+            this.TabMP_Sacos.Size = new System.Drawing.Size(766, 486);
             this.TabMP_Sacos.Text = "MP en Sacos";
             // 
             // cmdReporteInventarioPorFecha
@@ -565,7 +565,7 @@
             this.tabMP_Granel.Controls.Add(this.btnLiquidos);
             this.tabMP_Granel.Controls.Add(this.simpleButton14);
             this.tabMP_Granel.Name = "tabMP_Granel";
-            this.tabMP_Granel.Size = new System.Drawing.Size(766, 409);
+            this.tabMP_Granel.Size = new System.Drawing.Size(766, 486);
             this.tabMP_Granel.Text = "MP Granel";
             // 
             // btnLoteActivoGranel
@@ -638,7 +638,7 @@
             this.tabEntregaMP.Controls.Add(this.cmdRequisiciones_);
             this.tabEntregaMP.Controls.Add(this.btnplanrequisas);
             this.tabEntregaMP.Name = "tabEntregaMP";
-            this.tabEntregaMP.Size = new System.Drawing.Size(766, 409);
+            this.tabEntregaMP.Size = new System.Drawing.Size(766, 486);
             this.tabEntregaMP.Text = "Entrega MP - PRD";
             this.tabEntregaMP.Paint += new System.Windows.Forms.PaintEventHandler(this.tabEntregaMP_Paint);
             // 
@@ -736,7 +736,7 @@
             this.tabPT.Controls.Add(this.simpleButton10);
             this.tabPT.Controls.Add(this.btnReq_PT);
             this.tabPT.Name = "tabPT";
-            this.tabPT.Size = new System.Drawing.Size(766, 409);
+            this.tabPT.Size = new System.Drawing.Size(766, 486);
             this.tabPT.Text = "Producto Terminado";
             this.tabPT.Paint += new System.Windows.Forms.PaintEventHandler(this.tabPT_Paint);
             // 
@@ -873,7 +873,7 @@
             this.tabMasterData.Controls.Add(this.simpleButton23);
             this.tabMasterData.Controls.Add(this.btn_andenes);
             this.tabMasterData.Name = "tabMasterData";
-            this.tabMasterData.Size = new System.Drawing.Size(766, 409);
+            this.tabMasterData.Size = new System.Drawing.Size(766, 486);
             this.tabMasterData.Text = "Configuraciones";
             this.tabMasterData.Paint += new System.Windows.Forms.PaintEventHandler(this.tabMasterData_Paint);
             // 
@@ -924,7 +924,7 @@
             this.tabReportes.Controls.Add(this.btnreportes);
             this.tabReportes.Controls.Add(this.simpleButton8);
             this.tabReportes.Name = "tabReportes";
-            this.tabReportes.Size = new System.Drawing.Size(766, 409);
+            this.tabReportes.Size = new System.Drawing.Size(766, 486);
             this.tabReportes.Text = "Reportes";
             // 
             // btnReporteProduccionDespachos
@@ -998,6 +998,21 @@
             this.TabCalidad.PageVisible = false;
             this.TabCalidad.Size = new System.Drawing.Size(772, 518);
             this.TabCalidad.Text = "Calidad";
+            // 
+            // cmdVerConfiguracionLotesVencimientoMP
+            // 
+            this.cmdVerConfiguracionLotesVencimientoMP.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.cmdVerConfiguracionLotesVencimientoMP.Appearance.Options.UseFont = true;
+            this.cmdVerConfiguracionLotesVencimientoMP.Appearance.Options.UseTextOptions = true;
+            this.cmdVerConfiguracionLotesVencimientoMP.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.cmdVerConfiguracionLotesVencimientoMP.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdVerConfiguracionLotesVencimientoMP.ImageOptions.Image = global::LOSA.Properties.Resources.Finance_Expired_icon32px;
+            this.cmdVerConfiguracionLotesVencimientoMP.Location = new System.Drawing.Point(419, 413);
+            this.cmdVerConfiguracionLotesVencimientoMP.Name = "cmdVerConfiguracionLotesVencimientoMP";
+            this.cmdVerConfiguracionLotesVencimientoMP.Size = new System.Drawing.Size(199, 59);
+            this.cmdVerConfiguracionLotesVencimientoMP.TabIndex = 35;
+            this.cmdVerConfiguracionLotesVencimientoMP.Text = "Primeros a Vencer por MP";
+            this.cmdVerConfiguracionLotesVencimientoMP.Click += new System.EventHandler(this.cmdVerConfiguracionLotesVencimientoMP_Click);
             // 
             // simpleButton34
             // 
@@ -1250,7 +1265,7 @@
             this.TabAdmin.ImageOptions.Image = global::LOSA.Properties.Resources.admin;
             this.TabAdmin.Name = "TabAdmin";
             this.TabAdmin.PageVisible = false;
-            this.TabAdmin.Size = new System.Drawing.Size(772, 441);
+            this.TabAdmin.Size = new System.Drawing.Size(772, 518);
             this.TabAdmin.Text = "Administrador";
             // 
             // btnEstadosRequisiciones
@@ -1330,7 +1345,7 @@
             this.tabProduccion.ImageOptions.Image = global::LOSA.Properties.Resources.produccion;
             this.tabProduccion.Name = "tabProduccion";
             this.tabProduccion.PageVisible = false;
-            this.tabProduccion.Size = new System.Drawing.Size(772, 441);
+            this.tabProduccion.Size = new System.Drawing.Size(772, 518);
             this.tabProduccion.Text = "Producción";
             // 
             // simpleButton33
@@ -1434,7 +1449,7 @@
             this.txtProduccion.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("txtProduccion.ImageOptions.Image")));
             this.txtProduccion.Name = "txtProduccion";
             this.txtProduccion.PageVisible = false;
-            this.txtProduccion.Size = new System.Drawing.Size(772, 441);
+            this.txtProduccion.Size = new System.Drawing.Size(772, 518);
             this.txtProduccion.Text = "Produccion Administrativo";
             // 
             // simpleButton36
@@ -1534,21 +1549,6 @@
             this.labelControl3.Size = new System.Drawing.Size(515, 39);
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
-            // 
-            // cmdVerConfiguracionLotesVencimientoMP
-            // 
-            this.cmdVerConfiguracionLotesVencimientoMP.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.cmdVerConfiguracionLotesVencimientoMP.Appearance.Options.UseFont = true;
-            this.cmdVerConfiguracionLotesVencimientoMP.Appearance.Options.UseTextOptions = true;
-            this.cmdVerConfiguracionLotesVencimientoMP.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.cmdVerConfiguracionLotesVencimientoMP.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdVerConfiguracionLotesVencimientoMP.ImageOptions.Image = global::LOSA.Properties.Resources.Finance_Expired_icon32px;
-            this.cmdVerConfiguracionLotesVencimientoMP.Location = new System.Drawing.Point(419, 413);
-            this.cmdVerConfiguracionLotesVencimientoMP.Name = "cmdVerConfiguracionLotesVencimientoMP";
-            this.cmdVerConfiguracionLotesVencimientoMP.Size = new System.Drawing.Size(199, 59);
-            this.cmdVerConfiguracionLotesVencimientoMP.TabIndex = 35;
-            this.cmdVerConfiguracionLotesVencimientoMP.Text = "Primeros a Vencer por MP";
-            this.cmdVerConfiguracionLotesVencimientoMP.Click += new System.EventHandler(this.cmdVerConfiguracionLotesVencimientoMP_Click);
             // 
             // frmOpciones
             // 
