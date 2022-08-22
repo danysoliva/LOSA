@@ -431,7 +431,7 @@
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(7, 3);
+            this.labelControl1.Location = new System.Drawing.Point(9, 36);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(1060, 40);
             this.labelControl1.TabIndex = 68;
@@ -590,12 +590,12 @@
             this.Tg_presentacion_promedio.Properties.OnText = "Desactivar presentacion promedio";
             this.Tg_presentacion_promedio.Size = new System.Drawing.Size(411, 32);
             this.Tg_presentacion_promedio.TabIndex = 93;
+            this.Tg_presentacion_promedio.Visible = false;
             this.Tg_presentacion_promedio.Toggled += new System.EventHandler(this.Tg_presentacion_promedio_Toggled);
             // 
             // txtpresentacionPromedio
             // 
             this.txtpresentacionPromedio.EditValue = "0";
-            this.txtpresentacionPromedio.Enabled = false;
             this.txtpresentacionPromedio.Location = new System.Drawing.Point(451, 238);
             this.txtpresentacionPromedio.Name = "txtpresentacionPromedio";
             this.txtpresentacionPromedio.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -604,6 +604,7 @@
             this.txtpresentacionPromedio.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtpresentacionPromedio.Size = new System.Drawing.Size(170, 32);
             this.txtpresentacionPromedio.TabIndex = 94;
+            this.txtpresentacionPromedio.Visible = false;
             // 
             // frmEditTarima
             // 
@@ -611,7 +612,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1069, 560);
-            this.Controls.Add(this.txtpresentacionPromedio);
             this.Controls.Add(this.Tg_presentacion_promedio);
             this.Controls.Add(this.glueProveedor);
             this.Controls.Add(this.txtCodigoProveedor);
@@ -621,7 +621,6 @@
             this.Controls.Add(this.labelControl13);
             this.Controls.Add(this.txtCantidadTarimasTotal);
             this.Controls.Add(this.txtPesoKg);
-            this.Controls.Add(this.gridLookUpEditPresentacion);
             this.Controls.Add(this.labelControl11);
             this.Controls.Add(this.cmdGuardar);
             this.Controls.Add(this.labelControl10);
@@ -640,11 +639,12 @@
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.txtIdBoleta);
-            this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.btnAtras);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Controls.Add(this.gridLookUpEditPresentacion);
+            this.Controls.Add(this.txtpresentacionPromedio);
+            this.Controls.Add(this.labelControl1);
             this.Name = "frmEditTarima";
-            this.Text = "frmEditTarima";
+            this.ShowIcon = false;
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadTarimasTotal.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPesoKg.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditPresentacion.Properties)).EndInit();

@@ -122,7 +122,7 @@ namespace LOSA.TransaccionesPT
             {
                 var gridView = (GridView)grd_data.FocusedView;
                 var row = (dsPT.Load_despachosRow)gridView.GetFocusedDataRow();
-                frm_generar_despacho frm = new frm_generar_despacho(row.id);
+                frm_generar_despacho frm = new frm_generar_despacho(row.id, this.UsuarioLogeado);
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
                     load_desicion();

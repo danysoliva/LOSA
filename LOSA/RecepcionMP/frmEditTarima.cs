@@ -264,12 +264,14 @@ namespace LOSA.RecepcionMP
         {
             try
             {
-                int unidades_Tarimas = Convert.ToInt32(txtUnidades.Text);
+                DataOperations dp = new DataOperations();
+                int unidades_Tarimas = Convert.ToInt32(dp.ValidateNumberDecimal(txtUnidades.EditValue));
                 int cantidad_tariams = Convert.ToInt32(txtCantidadTarimasTotal.Text);
                 decimal Unidades_totales = unidades_Tarimas * cantidad_tariams;
                 decimal total_pesoKg = Convert.ToDecimal(txtPesoKg.Text);
                 factor = 0;
-                factor = total_pesoKg / Unidades_totales;
+                if (Unidades_totales > 0)
+                    factor = total_pesoKg / Unidades_totales;
                 txtpresentacionPromedio.Text = string.Format("{0:###,##0.00}", (factor));
 
 

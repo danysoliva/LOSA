@@ -261,15 +261,14 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
         SqlTransaction transaction;
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if (dsSalidasAlmacenesExternos.Lote_Seleccionados.Rows.Count == 0)
+            {
+                CajaDialogo.Error("DEBE DE SELECCIONAR LOS LOTES A TRANSFERIR");
+                return;
+            }
+
             try
             {
-
-                if (dsSalidasAlmacenesExternos.Lote_Seleccionados.Rows.Count==0)
-                {
-                    CajaDialogo.Error("DEBE DE SELECCIONAR LOS LOTES A TRANSFERIR");
-                    return;
-                }
-
                 DataOperations dp = new DataOperations();
                 SqlConnection cnx = new SqlConnection(dp.ConnectionStringLOSA);
 
@@ -280,8 +279,6 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
                 SqlCommand cmd = new SqlCommand("sp_salida_almacenes_externos_h_insert", transaction.Connection);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Transaction = transaction;
-
-
                 cmd.Parameters.Add("@bodega_in", SqlDbType.VarChar).Value = ingreso_h.BodegaIN;
                 cmd.Parameters.Add("@bodega_out", SqlDbType.VarChar).Value = ingreso_h.BodegaOUT;
                 cmd.Parameters.Add("@fecha", SqlDbType.DateTime).Value = dp.Now();
