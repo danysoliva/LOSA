@@ -36,6 +36,7 @@ namespace LOSA.Despachos
         {
             InitializeComponent();
             Operacion = OpType.Nuevo;
+
             this.DocEntry = DocEntry;
             this.LineNum = LineNum;
             UsuarioLogeado = Puser;
@@ -44,9 +45,14 @@ namespace LOSA.Despachos
 
         }
 
-        public frm_generar_despacho(int id_Despacho)
+        public frm_generar_despacho(int id_Despacho, UserLogin Puser)
         {
             InitializeComponent();
+            if (id_Despacho > 0)
+                txtNumDespacho.Text = id_Despacho.ToString();
+            else
+                txtNumDespacho.Text = "";
+
             Operacion = OpType.Update;
             this.Id_despacho = id_Despacho;
             grd_destino.Enabled = true;
@@ -108,7 +114,7 @@ namespace LOSA.Despachos
 
                         cn.Open();
 
-                        query = @"sp_load_info_despacho";
+                        query = @"sp_load_info_despacho_complete";
                         cmd = new SqlCommand(query, cn);   
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@id_h", Id_despacho);
@@ -134,8 +140,8 @@ namespace LOSA.Despachos
                 }
 
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                ds_despachos.detalle_despachos.Clear();
-                da.Fill(ds_despachos.detalle_despachos);
+                ds_despachos.detalle_despachosComplete.Clear();
+                da.Fill(ds_despachos.detalle_despachosComplete);
                 cn.Close();
 
                 Sumar_totales();
@@ -264,11 +270,17 @@ namespace LOSA.Despachos
         public void Sumar_totales()
         {
             decimal totalKg = 0;
-            int totalUd =0;       
-            foreach (ds_despachos.detalle_despachosRow row in ds_despachos.detalle_despachos.Rows)
+            int totalUd =0;
+            //foreach (ds_despachos.detalle_despachosRow row in ds_despachos.detalle_despachos.Rows)
+            //{
+            //    totalKg = totalKg + row.peso;
+            //    totalUd = totalUd + row.unidades;
+            //}
+
+            foreach (ds_despachos.detalle_despachosCompleteRow row in ds_despachos.detalle_despachosComplete.Rows)
             {
-                totalKg = totalKg + row.peso;
-                totalUd = totalUd + row.unidades;
+                totalKg = totalKg + row.Kg_linea;
+                totalUd = totalUd + row.cantidad;
             }
 
             txtunidades.Text = totalUd.ToString();
