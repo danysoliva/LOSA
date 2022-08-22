@@ -57,6 +57,7 @@
             this.btnTransferencia = new DevExpress.XtraEditors.SimpleButton();
             this.btnajuste = new DevExpress.XtraEditors.SimpleButton();
             this.tabMP_Granel = new DevExpress.XtraTab.XtraTabPage();
+            this.cmdLoteActivoGranel = new DevExpress.XtraEditors.SimpleButton();
             this.btnLoteActivoGranel = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.btnLiquidos = new DevExpress.XtraEditors.SimpleButton();
@@ -560,6 +561,7 @@
             // 
             this.tabMP_Granel.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.tabMP_Granel.Appearance.Header.Options.UseFont = true;
+            this.tabMP_Granel.Controls.Add(this.cmdLoteActivoGranel);
             this.tabMP_Granel.Controls.Add(this.btnLoteActivoGranel);
             this.tabMP_Granel.Controls.Add(this.simpleButton2);
             this.tabMP_Granel.Controls.Add(this.btnLiquidos);
@@ -567,6 +569,22 @@
             this.tabMP_Granel.Name = "tabMP_Granel";
             this.tabMP_Granel.Size = new System.Drawing.Size(766, 486);
             this.tabMP_Granel.Text = "MP Granel";
+            // 
+            // cmdLoteActivoGranel
+            // 
+            this.cmdLoteActivoGranel.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.cmdLoteActivoGranel.Appearance.Options.UseFont = true;
+            this.cmdLoteActivoGranel.Appearance.Options.UseTextOptions = true;
+            this.cmdLoteActivoGranel.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.cmdLoteActivoGranel.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdLoteActivoGranel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdLoteActivoGranel.ImageOptions.Image")));
+            this.cmdLoteActivoGranel.Location = new System.Drawing.Point(208, 108);
+            this.cmdLoteActivoGranel.Name = "cmdLoteActivoGranel";
+            this.cmdLoteActivoGranel.Size = new System.Drawing.Size(199, 42);
+            this.cmdLoteActivoGranel.TabIndex = 43;
+            this.cmdLoteActivoGranel.Text = "Lote Activo V2";
+            this.cmdLoteActivoGranel.Visible = false;
+            this.cmdLoteActivoGranel.Click += new System.EventHandler(this.cmdLoteActivoGranel_Click);
             // 
             // btnLoteActivoGranel
             // 
@@ -1682,5 +1700,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton36;
         private DevExpress.XtraEditors.SimpleButton cmdReporteInventarioPorFecha;
         private DevExpress.XtraEditors.SimpleButton cmdVerConfiguracionLotesVencimientoMP;
+        private DevExpress.XtraEditors.SimpleButton cmdLoteActivoGranel;
     }
 }

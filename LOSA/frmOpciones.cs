@@ -983,5 +983,12 @@ namespace LOSA
 
             frm.Show();
         }
+
+        private void cmdLoteActivoGranel_Click(object sender, EventArgs e)
+        {
+            frmLoteActivoGranelV2 frm = new frmLoteActivoGranelV2(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
     }
 }

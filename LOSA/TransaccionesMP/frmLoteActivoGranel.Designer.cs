@@ -240,7 +240,7 @@ namespace LOSA.TransaccionesMP
             // txtMP
             // 
             this.txtMP.Enabled = false;
-            this.txtMP.Location = new System.Drawing.Point(121, 169);
+            this.txtMP.Location = new System.Drawing.Point(8, 206);
             this.txtMP.Name = "txtMP";
             this.txtMP.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtMP.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
