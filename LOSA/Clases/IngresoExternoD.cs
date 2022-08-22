@@ -16,7 +16,7 @@ namespace LOSA.Clases
         public IngresoExternoD()
         {
             BodegaIn = "";
-            DocEntrySAP = "";
+            DocEntrySAP = 0;
         }
 
 
