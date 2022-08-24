@@ -29,7 +29,6 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTipoIngreso_v2));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -57,7 +56,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.txtPesoKg = new DevExpress.XtraEditors.TextEdit();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.gridLookUpEditPresentacion = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.bindingSourcePresentaciones = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSourcePresentaciones = new System.Windows.Forms.BindingSource();
             this.dsRecepcionMPx1 = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -93,14 +92,14 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.chnuevoIngreso = new DevExpress.XtraEditors.CheckEdit();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.grdUbicaciones = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.ubicacionesgranelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ubicacionesgranelBindingSource = new System.Windows.Forms.BindingSource();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colrack = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcodigo_barra = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.grdbarco = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.barcosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.barcosBindingSource = new System.Windows.Forms.BindingSource();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -154,8 +153,8 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.txtMPgranel = new DevExpress.XtraEditors.TextEdit();
             this.labelControl24 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingSourceUbicaciones = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource1 = new System.Windows.Forms.BindingSource();
+            this.bindingSourceUbicaciones = new System.Windows.Forms.BindingSource();
             ((System.ComponentModel.ISupportInitialize)(this.tb_opciones)).BeginInit();
             this.tb_opciones.SuspendLayout();
             this.tabSacos.SuspendLayout();
@@ -260,7 +259,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.tb_opciones.Location = new System.Drawing.Point(2, 139);
             this.tb_opciones.Name = "tb_opciones";
             this.tb_opciones.SelectedTabPage = this.tabSacos;
-            this.tb_opciones.Size = new System.Drawing.Size(1528, 662);
+            this.tb_opciones.Size = new System.Drawing.Size(1329, 662);
             this.tb_opciones.TabIndex = 3;
             this.tb_opciones.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabSacos,
@@ -304,7 +303,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.tabSacos.Controls.Add(this.labelControl2);
             this.tabSacos.Controls.Add(this.txtIdBoleta);
             this.tabSacos.Name = "tabSacos";
-            this.tabSacos.Size = new System.Drawing.Size(1522, 627);
+            this.tabSacos.Size = new System.Drawing.Size(1323, 627);
             this.tabSacos.Text = "Ingreso en sacos";
             // 
             // labelControl15
@@ -758,6 +757,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             // 
             this.TabGranel.Appearance.Header.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.TabGranel.Appearance.Header.Options.UseFont = true;
+            this.TabGranel.Controls.Add(this.buttonEdit1);
             this.TabGranel.Controls.Add(this.txtPesotransferenciaGranel);
             this.TabGranel.Controls.Add(this.labelControl19);
             this.TabGranel.Controls.Add(this.btningreso);
@@ -772,7 +772,6 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.TabGranel.Controls.Add(this.txtLoteGranel);
             this.TabGranel.Controls.Add(this.labelControl18);
             this.TabGranel.Controls.Add(this.gridControl1);
-            this.TabGranel.Controls.Add(this.buttonEdit1);
             this.TabGranel.Controls.Add(this.simpleButton4);
             this.TabGranel.Controls.Add(this.dtVencimientoGranel);
             this.TabGranel.Controls.Add(this.labelControl20);
@@ -784,7 +783,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.TabGranel.Controls.Add(this.txtMPgranel);
             this.TabGranel.Controls.Add(this.labelControl24);
             this.TabGranel.Name = "TabGranel";
-            this.TabGranel.Size = new System.Drawing.Size(1522, 627);
+            this.TabGranel.Size = new System.Drawing.Size(1323, 627);
             this.TabGranel.Text = "Ingreso en granel";
             // 
             // txtPesotransferenciaGranel
@@ -861,7 +860,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.labelControl16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl16.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl16.Appearance.Options.UseFont = true;
-            this.labelControl16.Location = new System.Drawing.Point(770, 230);
+            this.labelControl16.Location = new System.Drawing.Point(574, 227);
             this.labelControl16.Name = "labelControl16";
             this.labelControl16.Size = new System.Drawing.Size(88, 25);
             this.labelControl16.TabIndex = 126;
@@ -1020,7 +1019,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.LookUpEditBarco,
             this.GridLookUpEditUbicaciones});
-            this.gridControl1.Size = new System.Drawing.Size(1519, 352);
+            this.gridControl1.Size = new System.Drawing.Size(1320, 352);
             this.gridControl1.TabIndex = 119;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -1330,7 +1329,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.buttonEdit1.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.True;
             this.buttonEdit1.EditValue = "";
             this.buttonEdit1.Enabled = false;
-            this.buttonEdit1.Location = new System.Drawing.Point(598, 249);
+            this.buttonEdit1.Location = new System.Drawing.Point(574, 249);
             this.buttonEdit1.Name = "buttonEdit1";
             this.buttonEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.buttonEdit1.Properties.Appearance.Options.UseFont = true;
@@ -1350,7 +1349,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.simpleButton4.Appearance.Options.UseFont = true;
             this.simpleButton4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton4.ImageOptions.Image = global::LOSA.Properties.Resources.tap;
-            this.simpleButton4.Location = new System.Drawing.Point(706, 241);
+            this.simpleButton4.Location = new System.Drawing.Point(682, 241);
             this.simpleButton4.Name = "simpleButton4";
             this.simpleButton4.Size = new System.Drawing.Size(42, 40);
             this.simpleButton4.TabIndex = 116;
@@ -1475,10 +1474,11 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             // 
             // simpleButton3
             // 
+            this.simpleButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton3.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.simpleButton3.Appearance.Options.UseFont = true;
             this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(1345, 12);
+            this.simpleButton3.Location = new System.Drawing.Point(1146, 12);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(174, 64);
             this.simpleButton3.TabIndex = 4;
@@ -1499,7 +1499,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1531, 801);
+            this.ClientSize = new System.Drawing.Size(1332, 801);
             this.Controls.Add(this.simpleButton3);
             this.Controls.Add(this.tb_opciones);
             this.Controls.Add(this.btngranel);

@@ -22,7 +22,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
 {
     public partial class frmTipoIngreso_v2 : DevExpress.XtraEditors.XtraForm
     {
-        public int id;
+        public int idTransferencia_Externa_SalidaH;
         public int IdSerie;
         public string ItemCode;
         public string ItemName;
@@ -41,7 +41,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
         public frmTipoIngreso_v2(int id_traslado, UserLogin Puser)
         {
             InitializeComponent();
-            id = id_traslado;
+            idTransferencia_Externa_SalidaH = id_traslado;
             load_salidoTraslado();
             LoadPresentaciones();
             LoadNumeroTransaccion();
@@ -56,7 +56,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
         {
             InitializeComponent();
             ItemCode = pItemCode;
-            id = id_traslado;
+            idTransferencia_Externa_SalidaH = id_traslado;
             load_salidoTraslado();
             LoadPresentaciones();
             LoadNumeroTransaccion();
@@ -161,7 +161,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id_transporte", id);
+                cmd.Parameters.AddWithValue("@id_transporte", idTransferencia_Externa_SalidaH);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
@@ -493,8 +493,12 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
                     Comnd.Parameters.AddWithValue("@item_code", txtCodigoMP.Text);
                     Comnd.Parameters.AddWithValue("@id_user", this.UsuarioLogeado.Id);
                     Comnd.Parameters.AddWithValue("@count_trailetas", cantidad_selecionada);
-                    Comnd.Parameters.AddWithValue("@id_traslado", id);
+                    Comnd.Parameters.AddWithValue("@id_traslado", idTransferencia_Externa_SalidaH);
                     int Id_lote_generado = Convert.ToInt32(Comnd.ExecuteScalar());
+
+
+
+
                     con.Close();
                     foreach (dsRecepcionMPx.granelRow row in dsRecepcionMPx1.granel.Rows)
                     {
@@ -626,7 +630,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
                         cmd.Parameters.AddWithValue("@cant", txtUnidades.Text);//   //
                         cmd.Parameters.AddWithValue("@TotalTarimas", txtCantidadTarimasTotal.Text);// //
                         cmd.Parameters.AddWithValue("@pesotaria", Convert.ToDecimal(txtPesoKg.Text));// 
-                        cmd.Parameters.AddWithValue("@id_traslado", id);//
+                        cmd.Parameters.AddWithValue("@id_traslado", idTransferencia_Externa_SalidaH);//
 
                         idloteInserted = Convert.ToInt32(cmd.ExecuteScalar());
                         cn.Close();

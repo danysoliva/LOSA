@@ -7573,7 +7573,7 @@ namespace LOSA.Reportes {
                         string MP, 
                         string Codigo, 
                         System.DateTime F_Vencimiento, 
-                        string antiguedad, 
+                        int antiguedad, 
                         System.DateTime f_consumo, 
                         System.DateTime f_final_consumo, 
                         System.DateTime f_produccion, 
@@ -7681,7 +7681,7 @@ namespace LOSA.Reportes {
                 base.Columns.Add(this.columnCodigo);
                 this.columnF_Vencimiento = new global::System.Data.DataColumn("F_Vencimiento", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnF_Vencimiento);
-                this.columnantiguedad = new global::System.Data.DataColumn("antiguedad", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnantiguedad = new global::System.Data.DataColumn("antiguedad", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnantiguedad);
                 this.columnf_consumo = new global::System.Data.DataColumn("f_consumo", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnf_consumo);
@@ -13412,10 +13412,10 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string antiguedad {
+            public int antiguedad {
                 get {
                     try {
-                        return ((string)(this[this.tablerpt_ingreso.antiguedadColumn]));
+                        return ((int)(this[this.tablerpt_ingreso.antiguedadColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'antiguedad\' de la tabla \'rpt_ingreso\' es DBNull.", e);

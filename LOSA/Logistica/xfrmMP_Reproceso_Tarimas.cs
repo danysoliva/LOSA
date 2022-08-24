@@ -378,16 +378,19 @@ namespace LOSA.Logistica
         }
 
 
-        private void xfrmMP_Reproceso_Tarimas_Load(object sender, EventArgs e)
-        {
-
-        }
+        private void xfrmMP_Reproceso_Tarimas_Load(object sender, EventArgs e) { }
 
         private void rdespecie_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadData();
         }
+
+        private void cmdRefresh_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
     }
+
     public class Lote
     {
         public string No_lote { get; set; }
@@ -396,6 +399,7 @@ namespace LOSA.Logistica
         public int presentacion { get; set; }
         public int cant_tarimas { get; set; }
     }
+
     public class Ingreso
     {
         public string numero_referencia { get; set; }
@@ -404,4 +408,6 @@ namespace LOSA.Logistica
         public int especie { get; set; }
         public string Numero_reproceso { get; set; }
     }
+
+
 } 

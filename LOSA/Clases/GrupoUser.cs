@@ -18,8 +18,8 @@ namespace LOSA
             Calidad = 2,
             Administradores = 3,
             Produccion=4,
-            ProduccionV2 = 5
-
+            ProduccionV2 = 5,
+            Contabilidad = 6
         }
 
         public GrupoUsuario GrupoUsuarioActivo;

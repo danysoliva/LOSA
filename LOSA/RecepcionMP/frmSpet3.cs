@@ -162,5 +162,36 @@ namespace LOSA.RecepcionMP
         {
 
         }
+
+        private void cmdEditarLote_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)grd_data.FocusedView;
+            var row = (dsWizard.verLotesRow)gridView.GetFocusedDataRow();
+
+            frmEditLoteExterno frm = new frmEditLoteExterno(row.lote);
+            if(frm.ShowDialog()== DialogResult.OK)
+            {
+                try
+                {
+                    DataOperations dp = new DataOperations();
+                    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                    con.Open();
+
+                    SqlCommand cmd = new SqlCommand("sp_set_update_lote_externo_alosy_d", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@lote", frm.NewLoteSet_user);
+                    cmd.Parameters.AddWithValue("@lote_old", row.lote);
+                    cmd.Parameters.AddWithValue("@id", row.id);
+                    cmd.Parameters.AddWithValue("@id_user", this.UsuarioLogeado.Id);
+                    cmd.ExecuteNonQuery();
+                    row.lote = frm.NewLoteSet_user;
+                    con.Close();
+                }
+                catch (Exception ec)
+                {
+                    CajaDialogo.Error(ec.Message);
+                }
+            }
+        }
     }
 }

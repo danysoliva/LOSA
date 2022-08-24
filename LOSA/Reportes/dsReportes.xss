@@ -24,7 +24,7 @@
     <Shape ID="DesignTable:PruebaDetalle1" ZOrder="6" X="633" Y="48" Height="125" Width="178" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
     <Shape ID="DesignTable:PruebaDetalle2" ZOrder="5" X="829" Y="49" Height="125" Width="187" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
     <Shape ID="DesignTable:rpt_requisiciones_manuales" ZOrder="4" X="431" Y="175" Height="467" Width="224" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="463" />
-    <Shape ID="DesignTable:rpt_ingreso" ZOrder="3" X="1065" Y="268" Height="429" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="425" />
+    <Shape ID="DesignTable:rpt_ingreso" ZOrder="3" X="1065" Y="268" Height="505" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="501" />
     <Shape ID="DesignTable:detalle_rpt_micros" ZOrder="2" X="44" Y="398" Height="257" Width="182" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="253" />
     <Shape ID="DesignTable:detalle_rpt_5toNivel" ZOrder="1" X="787" Y="339" Height="467" Width="182" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="463" />
   </Shapes>

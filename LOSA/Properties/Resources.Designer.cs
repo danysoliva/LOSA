@@ -433,6 +433,16 @@ namespace LOSA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap floppy_disk32px1 {
+            get {
+                object obj = ResourceManager.GetObject("floppy-disk32px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Forklift_icon {
             get {
                 object obj = ResourceManager.GetObject("Forklift-icon", resourceCulture);

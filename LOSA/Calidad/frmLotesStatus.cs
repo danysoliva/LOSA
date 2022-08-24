@@ -27,9 +27,13 @@ namespace LOSA.Calidad
         public string Articulo;
         public int tipo_tm;
         public int id_turno;
+        DataOperations DpLocal;
         public frmLotesStatus(UserLogin Puser)
         {
             InitializeComponent();
+            DpLocal = new DataOperations();
+            dtFechaDesde.DateTime = DpLocal.Now().AddMonths(-1);
+            dtFechaHasta.DateTime = DpLocal.Now();
             UsuarioLogeado = Puser;
             LoadTarimasAvailables();
             LoadTarimasObs();
@@ -39,22 +43,55 @@ namespace LOSA.Calidad
 
         private void LoadTarimasAvailables()
         {
-            try
+            if (toggleSwitchVerTodos_Disponibles.IsOn)
             {
-                DataOperations dp = new DataOperations();
-                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                con.Open();
-                //bit_muestreo
-                SqlCommand cmd = new SqlCommand("sp_get_tarimas_habilitadas_calidad_V3", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                dsCalidad1.tarimas_disponibles.Clear();
-                SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                adat.Fill(dsCalidad1.tarimas_disponibles);
-                con.Close();
+                try
+                {
+                    DataOperations dp = new DataOperations();
+                    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                    con.Open();
+                    //bit_muestreo
+                    SqlCommand cmd = new SqlCommand("sp_get_tarimas_habilitadas_calidad_V3", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    dsCalidad1.tarimas_disponibles.Clear();
+                    SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                    adat.Fill(dsCalidad1.tarimas_disponibles);
+                    con.Close();
+                }
+                catch (Exception ec)
+                {
+                    CajaDialogo.Error(ec.Message);
+                }
             }
-            catch (Exception ec)
+            else
             {
-                CajaDialogo.Error(ec.Message);
+                if (dtFechaDesde.DateTime.Year >= 2010)
+                {
+                    try
+                    {
+                        DataOperations dp = new DataOperations();
+                        SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                        con.Open();
+                        //bit_muestreo
+                        SqlCommand cmd = new SqlCommand("sp_get_tarimas_habilitadas_calidad_V5", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@desde", dtFechaDesde.DateTime);
+                        cmd.Parameters.AddWithValue("@hasta", dtFechaHasta.DateTime);
+                        dsCalidad1.tarimas_disponibles.Clear();
+                        SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                        adat.Fill(dsCalidad1.tarimas_disponibles);
+                        con.Close();
+                    }
+                    catch (Exception ec)
+                    {
+                        CajaDialogo.Error(ec.Message);
+                    }
+                }
+                else
+                {
+                    CajaDialogo.Error("Debe ingresar un rango de fecha valido!");
+                }
             }
         }
 
@@ -1791,6 +1828,20 @@ namespace LOSA.Calidad
             checkRechazado.CheckedChanged -= new EventHandler(checkRechazado_CheckedChanged);
             checkRechazado.Checked = false;
             checkRechazado.CheckedChanged += new EventHandler(checkRechazado_CheckedChanged);
+        }
+
+        private void toggleSwitchVerTodos_Disponibles_Toggled(object sender, EventArgs e)
+        {
+            if (toggleSwitchVerTodos_Disponibles.IsOn)
+            
+                dtFechaHasta.Enabled = dtFechaDesde.Enabled = false;
+            else
+                dtFechaHasta.Enabled = dtFechaDesde.Enabled = true;
+        }
+
+        private void cmdRefresh_Click(object sender, EventArgs e)
+        {
+            LoadTarimasAvailables();
         }
     }
 }
