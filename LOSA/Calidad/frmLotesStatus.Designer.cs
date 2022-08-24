@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLotesStatus));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -73,8 +72,9 @@
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.TabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
-            this.checkDisponibles = new DevExpress.XtraEditors.CheckEdit();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.cmdRefresh = new DevExpress.XtraEditors.SimpleButton();
+            this.toggleSwitchVerTodos_Disponibles = new DevExpress.XtraEditors.ToggleSwitch();
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -95,6 +95,12 @@
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.dtFechaHasta = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.dtFechaDesde = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.checkDisponibles = new DevExpress.XtraEditors.CheckEdit();
             this.grDisponibles = new DevExpress.XtraGrid.GridControl();
             this.dsCalidad1 = new LOSA.Calidad.dsCalidad();
             this.gvMateriaPrima = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -192,13 +198,18 @@
             this.gridColumn34 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn35 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.TabControl1)).BeginInit();
             this.TabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.checkDisponibles.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitchVerTodos_Disponibles.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaHasta.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaHasta.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesde.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesde.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkDisponibles.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grDisponibles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCalidad1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMateriaPrima)).BeginInit();
@@ -261,25 +272,47 @@
             // 
             this.xtraTabPage1.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 10.25F);
             this.xtraTabPage1.Appearance.Header.Options.UseFont = true;
+            this.xtraTabPage1.Controls.Add(this.cmdRefresh);
+            this.xtraTabPage1.Controls.Add(this.toggleSwitchVerTodos_Disponibles);
+            this.xtraTabPage1.Controls.Add(this.labelControl1);
+            this.xtraTabPage1.Controls.Add(this.dtFechaHasta);
+            this.xtraTabPage1.Controls.Add(this.labelControl9);
+            this.xtraTabPage1.Controls.Add(this.dtFechaDesde);
+            this.xtraTabPage1.Controls.Add(this.labelControl8);
             this.xtraTabPage1.Controls.Add(this.checkDisponibles);
             this.xtraTabPage1.Controls.Add(this.grDisponibles);
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Size = new System.Drawing.Size(1016, 441);
             this.xtraTabPage1.Text = "Disponibles";
             // 
-            // checkDisponibles
+            // cmdRefresh
             // 
-            this.checkDisponibles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkDisponibles.Location = new System.Drawing.Point(887, 3);
-            this.checkDisponibles.MenuManager = this.barManager1;
-            this.checkDisponibles.Name = "checkDisponibles";
-            this.checkDisponibles.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkDisponibles.Properties.Appearance.Options.UseFont = true;
-            this.checkDisponibles.Properties.Caption = "Seleccionar Todas";
-            this.checkDisponibles.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkDisponibles.Size = new System.Drawing.Size(124, 19);
-            this.checkDisponibles.TabIndex = 2;
-            this.checkDisponibles.CheckedChanged += new System.EventHandler(this.checkDisponibles_CheckedChanged);
+            this.cmdRefresh.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.cmdRefresh.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdRefresh.Appearance.Options.UseBackColor = true;
+            this.cmdRefresh.Appearance.Options.UseFont = true;
+            this.cmdRefresh.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdRefresh.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.cmdRefresh.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdRefresh.ImageOptions.SvgImage")));
+            this.cmdRefresh.Location = new System.Drawing.Point(274, 59);
+            this.cmdRefresh.Name = "cmdRefresh";
+            this.cmdRefresh.Size = new System.Drawing.Size(171, 48);
+            this.cmdRefresh.TabIndex = 94;
+            this.cmdRefresh.Text = "Refresh";
+            this.cmdRefresh.Click += new System.EventHandler(this.cmdRefresh_Click);
+            // 
+            // toggleSwitchVerTodos_Disponibles
+            // 
+            this.toggleSwitchVerTodos_Disponibles.Location = new System.Drawing.Point(117, 84);
+            this.toggleSwitchVerTodos_Disponibles.MenuManager = this.barManager1;
+            this.toggleSwitchVerTodos_Disponibles.Name = "toggleSwitchVerTodos_Disponibles";
+            this.toggleSwitchVerTodos_Disponibles.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toggleSwitchVerTodos_Disponibles.Properties.Appearance.Options.UseFont = true;
+            this.toggleSwitchVerTodos_Disponibles.Properties.OffText = "No";
+            this.toggleSwitchVerTodos_Disponibles.Properties.OnText = "Si";
+            this.toggleSwitchVerTodos_Disponibles.Size = new System.Drawing.Size(142, 28);
+            this.toggleSwitchVerTodos_Disponibles.TabIndex = 93;
+            this.toggleSwitchVerTodos_Disponibles.Toggled += new System.EventHandler(this.toggleSwitchVerTodos_Disponibles_Toggled);
             // 
             // barManager1
             // 
@@ -491,6 +524,83 @@
             this.barButtonItem6.Name = "barButtonItem6";
             this.barButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
             // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(11, 86);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(73, 21);
+            this.labelControl1.TabIndex = 92;
+            this.labelControl1.Text = "Ver Todos:";
+            // 
+            // dtFechaHasta
+            // 
+            this.dtFechaHasta.EditValue = null;
+            this.dtFechaHasta.Location = new System.Drawing.Point(117, 51);
+            this.dtFechaHasta.Name = "dtFechaHasta";
+            this.dtFechaHasta.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtFechaHasta.Properties.Appearance.Options.UseFont = true;
+            this.dtFechaHasta.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtFechaHasta.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtFechaHasta.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.TouchUI;
+            this.dtFechaHasta.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.dtFechaHasta.Size = new System.Drawing.Size(142, 26);
+            this.dtFechaHasta.TabIndex = 90;
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.labelControl9.Appearance.Options.UseFont = true;
+            this.labelControl9.Location = new System.Drawing.Point(11, 54);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(86, 21);
+            this.labelControl9.TabIndex = 91;
+            this.labelControl9.Text = "Fecha Hasta:";
+            // 
+            // dtFechaDesde
+            // 
+            this.dtFechaDesde.EditValue = null;
+            this.dtFechaDesde.Location = new System.Drawing.Point(117, 19);
+            this.dtFechaDesde.Name = "dtFechaDesde";
+            this.dtFechaDesde.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtFechaDesde.Properties.Appearance.Options.UseFont = true;
+            this.dtFechaDesde.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtFechaDesde.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtFechaDesde.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.TouchUI;
+            this.dtFechaDesde.Properties.MinValue = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
+            this.dtFechaDesde.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.dtFechaDesde.Size = new System.Drawing.Size(142, 26);
+            this.dtFechaDesde.TabIndex = 88;
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.Location = new System.Drawing.Point(11, 22);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(90, 21);
+            this.labelControl8.TabIndex = 89;
+            this.labelControl8.Text = "Fecha Desde:";
+            // 
+            // checkDisponibles
+            // 
+            this.checkDisponibles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkDisponibles.Location = new System.Drawing.Point(887, 3);
+            this.checkDisponibles.MenuManager = this.barManager1;
+            this.checkDisponibles.Name = "checkDisponibles";
+            this.checkDisponibles.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkDisponibles.Properties.Appearance.Options.UseFont = true;
+            this.checkDisponibles.Properties.Caption = "Seleccionar Todas";
+            this.checkDisponibles.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.checkDisponibles.Size = new System.Drawing.Size(124, 19);
+            this.checkDisponibles.TabIndex = 2;
+            this.checkDisponibles.CheckedChanged += new System.EventHandler(this.checkDisponibles_CheckedChanged);
+            // 
             // grDisponibles
             // 
             this.grDisponibles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -498,13 +608,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grDisponibles.DataMember = "tarimas_disponibles";
             this.grDisponibles.DataSource = this.dsCalidad1;
-            this.grDisponibles.Location = new System.Drawing.Point(1, 24);
+            this.grDisponibles.Location = new System.Drawing.Point(1, 121);
             this.grDisponibles.MainView = this.gvMateriaPrima;
             this.grDisponibles.Name = "grDisponibles";
             this.grDisponibles.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnEditar,
             this.btndetalle});
-            this.grDisponibles.Size = new System.Drawing.Size(1013, 419);
+            this.grDisponibles.Size = new System.Drawing.Size(1013, 322);
             this.grDisponibles.TabIndex = 1;
             this.grDisponibles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvMateriaPrima});
@@ -1661,8 +1771,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.TabControl1)).EndInit();
             this.TabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.checkDisponibles.Properties)).EndInit();
+            this.xtraTabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitchVerTodos_Disponibles.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaHasta.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaHasta.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesde.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesde.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkDisponibles.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grDisponibles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCalidad1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMateriaPrima)).EndInit();
@@ -1818,5 +1934,12 @@
         private DevExpress.XtraGrid.Columns.GridColumn colseleccionado2;
         private DevExpress.XtraEditors.CheckEdit checkRechazado;
         private DevExpress.XtraGrid.Columns.GridColumn colseleccionado3;
+        private DevExpress.XtraEditors.DateEdit dtFechaDesde;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
+        private DevExpress.XtraEditors.DateEdit dtFechaHasta;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
+        private DevExpress.XtraEditors.ToggleSwitch toggleSwitchVerTodos_Disponibles;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.SimpleButton cmdRefresh;
     }
 }

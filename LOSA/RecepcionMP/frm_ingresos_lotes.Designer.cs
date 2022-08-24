@@ -117,7 +117,7 @@
             this.btnAgregar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAgregar.ImageOptions.Image = global::LOSA.Properties.Resources.plus;
             this.btnAgregar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAgregar.Location = new System.Drawing.Point(117, 6);
+            this.btnAgregar.Location = new System.Drawing.Point(114, 6);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(110, 73);
             this.btnAgregar.TabIndex = 29;
@@ -494,10 +494,9 @@
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.btnAtras);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frm_ingresos_lotes";
-            this.Text = "frm_ingresos_lotes";
+            this.ShowIcon = false;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).EndInit();
