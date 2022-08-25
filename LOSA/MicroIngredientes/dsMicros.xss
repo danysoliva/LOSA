@@ -9,7 +9,7 @@
     <Shape ID="DesignTable:Micros" ZOrder="3" X="134" Y="177" Height="201" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="197" />
     <Shape ID="DesignTable:DetalleOrdenesMicro" ZOrder="10" X="385" Y="224" Height="106" Width="188" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
     <Shape ID="DesignTable:DetalleOrdenesPesajeIndividual" ZOrder="9" X="383" Y="384" Height="200" Width="249" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="196" />
-    <Shape ID="DesignTable:plan_microsh" ZOrder="8" X="761" Y="112" Height="219" Width="159" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="215" />
+    <Shape ID="DesignTable:plan_microsh" ZOrder="8" X="761" Y="112" Height="238" Width="159" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="234" />
     <Shape ID="DesignTable:plan_microsd" ZOrder="7" X="699" Y="417" Height="239" Width="202" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="253" />
     <Shape ID="DesignTable:Pesaje_Bascula" ZOrder="2" X="117" Y="416" Height="86" Width="151" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="82" />
     <Shape ID="DesignTable:turno" ZOrder="6" X="438" Y="593" Height="49" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="63" />
