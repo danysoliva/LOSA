@@ -199,7 +199,7 @@ namespace LOSA.Despachos
             // colunidades
             // 
             this.colunidades.Caption = "Unidades";
-            this.colunidades.FieldName = "unidades";
+            this.colunidades.FieldName = "cantidad";
             this.colunidades.Name = "colunidades";
             this.colunidades.OptionsColumn.AllowEdit = false;
             this.colunidades.Visible = true;
