@@ -128,6 +128,7 @@
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.cmdReporteProximosVencer = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -992,6 +993,7 @@
             // 
             // TabCalidad
             // 
+            this.TabCalidad.Controls.Add(this.cmdReporteProximosVencer);
             this.TabCalidad.Controls.Add(this.cmdVerConfiguracionLotesVencimientoMP);
             this.TabCalidad.Controls.Add(this.simpleButton34);
             this.TabCalidad.Controls.Add(this.btnClientesLote);
@@ -1568,6 +1570,21 @@
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
             // 
+            // cmdReporteProximosVencer
+            // 
+            this.cmdReporteProximosVencer.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdReporteProximosVencer.Appearance.Options.UseFont = true;
+            this.cmdReporteProximosVencer.Appearance.Options.UseTextOptions = true;
+            this.cmdReporteProximosVencer.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.cmdReporteProximosVencer.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdReporteProximosVencer.ImageOptions.Image = global::LOSA.Properties.Resources.Finance_Expired_icon32px;
+            this.cmdReporteProximosVencer.Location = new System.Drawing.Point(214, 413);
+            this.cmdReporteProximosVencer.Name = "cmdReporteProximosVencer";
+            this.cmdReporteProximosVencer.Size = new System.Drawing.Size(199, 59);
+            this.cmdReporteProximosVencer.TabIndex = 46;
+            this.cmdReporteProximosVencer.Text = "Proximos a Vencer";
+            this.cmdReporteProximosVencer.Click += new System.EventHandler(this.cmdReporteProximosVencer_Click);
+            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1701,5 +1718,6 @@
         private DevExpress.XtraEditors.SimpleButton cmdReporteInventarioPorFecha;
         private DevExpress.XtraEditors.SimpleButton cmdVerConfiguracionLotesVencimientoMP;
         private DevExpress.XtraEditors.SimpleButton cmdLoteActivoGranel;
+        private DevExpress.XtraEditors.SimpleButton cmdReporteProximosVencer;
     }
 }

@@ -29,6 +29,10 @@ namespace LOSA.TransaccionesPT
             InitializeComponent();
             UsuarioLogeado = pUserLogin;
             dtFechaDocumento.DateTime = dp1.Now();
+
+            gridLookUpEditDestino.EditValue = 10;
+            gridLookUpEditOrigen.EditValue = 0;
+
             LoadPresentaciones();
             radioLoteExistente.Checked = true;
             txtNumLote.Visible = true;
@@ -61,7 +65,7 @@ namespace LOSA.TransaccionesPT
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_presentaciones_activas", con);
+                SqlCommand cmd = new SqlCommand("sp_get_presentaciones_activas_ajuste_PT", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 dsRecepcionMPx.presentaciones.Clear();
@@ -302,12 +306,16 @@ namespace LOSA.TransaccionesPT
                 //radioLoteNuevo.Checked = false;
                 //radioLoteNuevo.Visible = false;
                 radioLoteExistente.Checked = true;
+                gridLookUpEditDestino.EditValue = 10;
+                gridLookUpEditOrigen.EditValue = 0;
             }
             else
             {
                 //radioLoteNuevo.Checked = false;
                 //radioLoteNuevo.Visible = false;
                 radioLoteExistente.Checked = true;
+                gridLookUpEditOrigen.EditValue = 10;
+                gridLookUpEditDestino.EditValue = 0;
             }
         }
 

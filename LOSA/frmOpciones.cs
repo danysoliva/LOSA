@@ -1016,5 +1016,13 @@ namespace LOSA
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
+
+        private void cmdReporteProximosVencer_Click(object sender, EventArgs e)
+        {
+            frmReporteKardexGeneralVencimiento frm = new frmReporteKardexGeneralVencimiento(this.UsuarioLogeado);
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
     }
 }
