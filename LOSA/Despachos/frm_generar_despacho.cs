@@ -123,7 +123,7 @@ namespace LOSA.Despachos
                        
                         break;
                     case OpType.Nuevo:
-                              query = @"sp_get_data_of_orden_venta_detalle_por_crear";  
+                        query = @"sp_get_data_of_orden_venta_detalle_por_crear";  
                         cmd = new SqlCommand(query, cn);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@DocEntry", DocEntry);
@@ -212,7 +212,7 @@ namespace LOSA.Despachos
             try
             {
                 var gridView = (GridView)grd_data.FocusedView;
-                var row = (ds_despachos.detalle_despachosRow)gridView.GetFocusedDataRow();
+                var row = (ds_despachos.detalle_despachosCompleteRow)gridView.GetFocusedDataRow();
                 if (row.id == 0)
                 {
                     grdv_data.DeleteRow(grdv_data.FocusedRowHandle);
@@ -221,7 +221,7 @@ namespace LOSA.Despachos
                 {
 
                 }
-                ds_despachos.detalle_despachos.AcceptChanges();
+                ds_despachos.detalle_despachosComplete.AcceptChanges();
 
             }
             catch (Exception ex)
@@ -238,9 +238,9 @@ namespace LOSA.Despachos
             {
                 try
                 {
-                    foreach (ds_despachos.detalle_despachosRow row in ds_despachos.detalle_despachos.Rows)
+                    foreach (ds_despachos.detalle_despachosCompleteRow row in ds_despachos.detalle_despachosComplete.Rows)
                     {
-                        if (row.docentry == frm.DocEntry && row.linenum == frm.LineNUm)
+                        if (row.DocEntry == frm.DocEntry && row.id == frm.LineNUm)
                         {
                             CajaDialogo.Error("Ya se ha agregado este articulo de esta orden de venta a este despacho. Por favor selecionar otro");
                             return;
@@ -257,7 +257,7 @@ namespace LOSA.Despachos
                     cmd.Parameters.AddWithValue("@DocEntry", frm.DocEntry);
                     cmd.Parameters.AddWithValue("@LineNum", frm.LineNUm);
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    da.Fill(ds_despachos.detalle_despachos);
+                    da.Fill(ds_despachos.detalle_despachosComplete);
                     cn.Close();
                 }
                 catch (Exception ex)
@@ -279,8 +279,8 @@ namespace LOSA.Despachos
 
             foreach (ds_despachos.detalle_despachosCompleteRow row in ds_despachos.detalle_despachosComplete.Rows)
             {
-                totalKg = totalKg + row.Kg_linea;
-                totalUd = totalUd + row.cantidad;
+                //totalKg = totalKg + row.Kg_linea;
+                //totalUd = totalUd + row.cantidad;
             }
 
             txtunidades.Text = totalUd.ToString();
@@ -290,66 +290,76 @@ namespace LOSA.Despachos
 
         private void grdv_data_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-            try
-            {
+            //try
+            //{
 
-                if (e.Column.Name == "colunidades")
-                {
-                    var gridView = (GridView)grd_data.FocusedView;
-                    var row = (ds_despachos.detalle_despachosRow)gridView.GetFocusedDataRow();
-                    decimal factor = 1;
-                    if (row.id_presentacion != 0)
-                    {
-                        foreach (dsRecepcionMPx.presentacionesRow pres in dsRecepcionMPx.presentaciones.Rows)
-                        {
+            //    if (e.Column.Name == "colunidades")
+            //    {
+            //        var gridView = (GridView)grd_data.FocusedView;
+            //        var row = (ds_despachos.detalle_despachosCompleteRow)gridView.GetFocusedDataRow();
+            //        decimal factor = 1;
+            //        if (row.id_presentacion != 0)
+            //        {
+            //            foreach (dsRecepcionMPx.presentacionesRow pres in dsRecepcionMPx.presentaciones.Rows)
+            //            {
 
-                            if (row.id_presentacion == pres.id)
-                            {
-                                factor = Convert.ToDecimal(pres.factor);
-                            }
-                        }
-                        row.unidades = Convert.ToInt32(e.Value);
-                        row.peso = factor * Convert.ToInt32(e.Value);
-                        row.AcceptChanges();
-                        Sumar_totales();
+            //                if (row.id_presentacion == pres.id)
+            //                {
+            //                    factor = Convert.ToDecimal(pres.factor);
+            //                }
+            //            }
+            //            row.cantidad = Convert.ToInt32(e.Value);
+            //            //row.unidades = Convert.ToInt32(e.Value);
+            //            //decimal prese = dp.ValidateNumberDecimal(row.presentacion);
+            //            //row.peso = factor * Convert.ToInt32(e.Value);
+            //            row.Kg_linea = factor * row.cantidad;
+            //            row.tm_linea = row.Kg_linea / 1000;
+            //            row.AcceptChanges();
+            //            Sumar_totales();
 
-                    }
-                }
-                if (e.Column.Name == "colid_presentacion")
-                {
-                    var gridView = (GridView)grd_data.FocusedView;
-                    var row = (ds_despachos.detalle_despachosRow)gridView.GetFocusedDataRow();
-                    decimal factor = 1;
+            //        }
+            //    }
+            //    if (e.Column.Name == "colpresentacion")
+            //    {
+            //        var gridView = (GridView)grd_data.FocusedView;
+            //        var row = (ds_despachos.detalle_despachosCompleteRow)gridView.GetFocusedDataRow();
+            //        decimal factor = 1;
 
-                    row.id_presentacion = Convert.ToInt32(e.Value);
-                    if (row.id_presentacion != 0)
-                    {
-                        foreach (dsRecepcionMPx.presentacionesRow pres in dsRecepcionMPx.presentaciones.Rows)
-                        {
+            //        row.id_presentacion = Convert.ToInt32(e.Value);
+            //        if (row.id_presentacion != 0)
+            //        {
+            //            foreach (dsRecepcionMPx.presentacionesRow pres in dsRecepcionMPx.presentaciones.Rows)
+            //            {
 
-                            if (row.id_presentacion == pres.id)
-                            {
-                                factor = Convert.ToDecimal(pres.factor);
-                            }
-                        }  
-                        row.peso = factor * row.unidades;
-                        row.AcceptChanges();
-                        Sumar_totales();
-                    }
-                }
+            //                if (row.id_presentacion == pres.id)
+            //                {
+            //                    factor = Convert.ToDecimal(pres.factor);
+            //                }
+            //            }
+            //            //row.peso = factor * row.unidades;
+            //            row.cantidad = Convert.ToInt32(e.Value);
+            //            //row.unidades = Convert.ToInt32(e.Value);
+            //            //decimal prese = dp.ValidateNumberDecimal(row.presentacion);
+            //            //row.peso = factor * Convert.ToInt32(e.Value);
+            //            row.Kg_linea = factor * row.cantidad;
+            //            row.tm_linea = row.Kg_linea / 1000;
+            //            row.AcceptChanges();
+            //            Sumar_totales();
+            //        }
+            //    }
                                    
 
-            }
-            catch (Exception ex)
-            {
+            //}
+            //catch (Exception ex)
+            //{
 
                 
-            }
+            //}
         }
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            ds_despachos.detalle_despachos.AcceptChanges();
+                ds_despachos.detalle_despachosComplete.AcceptChanges();
             if (txtboleta.Text == "")
             {
                 if (MessageBox.Show("Desea crear la orden de carga sin ligar una boleta? Se puede ligar en cualquier momento del proceso.", "Mensaje del sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
@@ -367,12 +377,12 @@ namespace LOSA.Despachos
             int count = 0;
             string producto = "";
 
-            foreach (ds_despachos.detalle_despachosRow row in ds_despachos.detalle_despachos.Rows)
+            foreach (ds_despachos.detalle_despachosCompleteRow row in ds_despachos.detalle_despachosComplete.Rows)
             {
                 if (row.id_presentacion == 0)
                 {
                     count = count + 1;
-                    producto = row.dscripcion;
+                    producto = row.itemname;
                 }
             }
 
@@ -382,7 +392,7 @@ namespace LOSA.Despachos
                 return;
             }
 
-            if (ds_despachos.detalle_despachos.Count == 0)
+            if (ds_despachos.detalle_despachosComplete.Count == 0)
             {
                 CajaDialogo.Error("Debo de colocar por lo menos un Producto Terminado en la orden de carga.");
                 return;
@@ -420,7 +430,7 @@ namespace LOSA.Despachos
                         SeAsingna = 1;
                     }
                     cmd.ExecuteNonQuery();
-                    foreach (ds_despachos.detalle_despachosRow row in ds_despachos.detalle_despachos.Rows)
+                    foreach (ds_despachos.detalle_despachosCompleteRow row in ds_despachos.detalle_despachosComplete.Rows)
                     {
                         if (row.id == 0) //nuevo
                         {
@@ -428,10 +438,10 @@ namespace LOSA.Despachos
                             cmd = new SqlCommand(query, cn);
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.AddWithValue("@itemcode", row.itemcode);
-                            cmd.Parameters.AddWithValue("@peso", row.peso);
-                            cmd.Parameters.AddWithValue("@linenum", row.linenum);
-                            cmd.Parameters.AddWithValue("@DocEntry", row.docentry);
-                            cmd.Parameters.AddWithValue("@unidades", row.unidades);
+                            cmd.Parameters.AddWithValue("@peso", row.Kg_linea);
+                            cmd.Parameters.AddWithValue("@linenum", row.id);
+                            cmd.Parameters.AddWithValue("@DocEntry", row.DocEntry);
+                            cmd.Parameters.AddWithValue("@unidades", row.cantidad);
                             cmd.Parameters.AddWithValue("@Id_despacho", Id_despacho);
                             cmd.Parameters.AddWithValue("@id_presentacion", row.id_presentacion);
                             cmd.ExecuteNonQuery();
@@ -444,11 +454,11 @@ namespace LOSA.Despachos
                             cmd = new SqlCommand(query,cn);
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.AddWithValue("@id_detalle", row.id);
-                            cmd.Parameters.AddWithValue("@pesoIn", row.peso);
-                            cmd.Parameters.AddWithValue("@unidadesIn", row.unidades);
+                            cmd.Parameters.AddWithValue("@pesoIn", row.Kg_linea);
+                            cmd.Parameters.AddWithValue("@unidadesIn", row.cantidad);
                             cmd.Parameters.AddWithValue("@itemcode", row.itemcode);
-                            cmd.Parameters.AddWithValue("@DocEntry", row.docentry);
-                            cmd.Parameters.AddWithValue("@lineNum", row.linenum);
+                            cmd.Parameters.AddWithValue("@DocEntry", row.DocEntry);
+                            cmd.Parameters.AddWithValue("@lineNum", row.id);
                             SqlDataReader dr = cmd.ExecuteReader();
                             bool error = false;
                             string Msj = "";
@@ -470,10 +480,10 @@ namespace LOSA.Despachos
                             cmd = new SqlCommand(query, cn);
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.AddWithValue("@itemcode", row.itemcode);
-                            cmd.Parameters.AddWithValue("@peso", row.peso);
-                            cmd.Parameters.AddWithValue("@lineNum", row.linenum);
-                            cmd.Parameters.AddWithValue("@docentry", row.docentry);
-                            cmd.Parameters.AddWithValue("@unidades", row.unidades);
+                            cmd.Parameters.AddWithValue("@peso", row.Kg_linea);
+                            cmd.Parameters.AddWithValue("@lineNum", row.id);
+                            cmd.Parameters.AddWithValue("@docentry", row.DocEntry);
+                            cmd.Parameters.AddWithValue("@unidades", row.cantidad);
                             cmd.Parameters.AddWithValue("@id_detalle", row.id);
                             cmd.Parameters.AddWithValue("@id_presentacion", row.id_presentacion);
                             cmd.ExecuteNonQuery();
@@ -502,7 +512,7 @@ namespace LOSA.Despachos
                             return;
                         }
                     }
-                    frm_seleccion_lote_pt frrm = new frm_seleccion_lote_pt(ds_despachos.detalle_despachos);
+                    frm_seleccion_lote_pt frrm = new frm_seleccion_lote_pt(ds_despachos.detalle_despachosComplete);
                     if (frrm.ShowDialog() == DialogResult.OK)
                     {
 
@@ -530,7 +540,7 @@ namespace LOSA.Despachos
                         cn.Close();
                         cn.Open();
 
-                        foreach (ds_despachos.detalle_despachosRow row in ds_despachos.detalle_despachos.Rows)
+                        foreach (ds_despachos.detalle_despachosCompleteRow row in ds_despachos.detalle_despachosComplete.Rows)
                         {
 
 
@@ -538,10 +548,10 @@ namespace LOSA.Despachos
                             cmd = new SqlCommand(query, cn);
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.AddWithValue("@itemcode", row.itemcode);
-                            cmd.Parameters.AddWithValue("@peso", row.peso);
-                            cmd.Parameters.AddWithValue("@linenum", row.linenum);
-                            cmd.Parameters.AddWithValue("@DocEntry", row.docentry);
-                            cmd.Parameters.AddWithValue("@unidades", row.unidades);
+                            cmd.Parameters.AddWithValue("@peso", row.Kg_linea);
+                            cmd.Parameters.AddWithValue("@linenum", row.id);
+                            cmd.Parameters.AddWithValue("@DocEntry", row.DocEntry);
+                            cmd.Parameters.AddWithValue("@unidades", row.cantidad);
                             cmd.Parameters.AddWithValue("@Id_despacho", Id_despacho);
                             cmd.Parameters.AddWithValue("@id_presentacion", row.id_presentacion);
                             int id_detalle = Convert.ToInt32(cmd.ExecuteScalar());
@@ -587,6 +597,97 @@ namespace LOSA.Despachos
             }
 
 
+        }
+
+        private void grdv_data_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            try
+            {
+
+                if (e.Column.Name == "colcantidad")
+                {
+                    var gridView = (GridView)grd_data.FocusedView;
+                    var row = (ds_despachos.detalle_despachosCompleteRow)gridView.GetFocusedDataRow();
+                    decimal factor = 1;
+                    if (row.id_presentacion != 0)
+                    {
+                        //foreach (dsRecepcionMPx.presentacionesRow pres in dsRecepcionMPx.presentaciones.Rows)
+                        //{
+
+                        //    if (row.id_presentacion == pres.id)
+                        //    {
+                        //        factor = Convert.ToDecimal(pres.factor);
+                        //    }
+                        //}
+                        PresentacionX pres1 = new PresentacionX();
+                        if (pres1.RecuperarRegistro(row.id_presentacion))
+                        {
+                            row.cantidad = Convert.ToInt32(e.Value);
+                            row.Kg_linea = pres1.Factor * row.cantidad;
+                            row.tm_linea = row.Kg_linea / 1000;
+                            
+                        }
+                        else
+                        {
+                            row.Kg_linea = Convert.ToDecimal(row.presentacion) * row.cantidad;
+                            row.tm_linea = row.Kg_linea / 1000;
+                        }
+                        row.AcceptChanges();
+                        Sumar_totales();
+
+                    }
+                }
+                if (e.Column.Name == "colpresentacion")
+                {
+                    var gridView = (GridView)grd_data.FocusedView;
+                    var row = (ds_despachos.detalle_despachosCompleteRow)gridView.GetFocusedDataRow();
+                    decimal factor = 1;
+
+                    row.id_presentacion = Convert.ToInt32(e.Value);
+                    if (row.id_presentacion != 0)
+                    {
+                        //foreach (dsRecepcionMPx.presentacionesRow pres in dsRecepcionMPx.presentaciones.Rows)
+                        //{
+
+                        //    if (row.id_presentacion == pres.id)
+                        //    {
+                        //        factor = Convert.ToDecimal(pres.factor);
+                        //    }
+                        //}
+                        //row.peso = factor * row.unidades;
+                        //row.cantidad = Convert.ToInt32(e.Value);
+                        ////row.unidades = Convert.ToInt32(e.Value);
+                        ////decimal prese = dp.ValidateNumberDecimal(row.presentacion);
+                        ////row.peso = factor * Convert.ToInt32(e.Value);
+                        //row.Kg_linea = factor * row.cantidad;
+                        //row.tm_linea = row.Kg_linea / 1000;
+                        //row.AcceptChanges();
+                        //Sumar_totales();
+                        PresentacionX pres1 = new PresentacionX();
+                        if (pres1.RecuperarRegistro(row.id_presentacion))
+                        {
+                            row.cantidad = Convert.ToInt32(e.Value);
+                            row.Kg_linea = pres1.Factor * row.cantidad;
+                            row.tm_linea = row.Kg_linea / 1000;
+
+                        }
+                        else
+                        {
+                            row.Kg_linea = Convert.ToDecimal(row.presentacion) * row.cantidad;
+                            row.tm_linea = row.Kg_linea / 1000;
+                        }
+                        row.AcceptChanges();
+                        Sumar_totales();
+                    }
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+
+
+            }
         }
     }
 }

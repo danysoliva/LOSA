@@ -83,7 +83,7 @@ namespace LOSA.Despachos
                 var row = gridView.GetFocusedDataRow();
                  itemcode = row["itemcode"].ToString();
                 load_data(itemcode);
-                Ud_selected = Convert.ToInt32(row["unidades"]);
+                Ud_selected = Convert.ToInt32(row["cantidad"]);
                 chautoseleccion.Checked = false;
                 if (ds_despachos.lotes_selected_all.Count > 0)
                 {

@@ -209,6 +209,7 @@
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
             this.grdv_data.OptionsView.ShowFooter = true;
+            this.grdv_data.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.grdv_data_CellValueChanged);
             this.grdv_data.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.grdv_data_CellValueChanging);
             // 
             // colRowNum
@@ -244,7 +245,6 @@
             // 
             this.colcantidad.FieldName = "cantidad";
             this.colcantidad.Name = "colcantidad";
-            this.colcantidad.OptionsColumn.AllowEdit = false;
             this.colcantidad.Visible = true;
             this.colcantidad.VisibleIndex = 5;
             // 
@@ -252,7 +252,6 @@
             // 
             this.colpresentacion.FieldName = "presentacion";
             this.colpresentacion.Name = "colpresentacion";
-            this.colpresentacion.OptionsColumn.AllowEdit = false;
             this.colpresentacion.Visible = true;
             this.colpresentacion.VisibleIndex = 6;
             this.colpresentacion.Width = 150;
