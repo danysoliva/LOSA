@@ -26,6 +26,7 @@ namespace LOSA.Reproceso
             InitializeComponent();
             UsuarioLogeado = pUsuarioLogeado;
             radioGroup1.EditValue = 1110;
+            
             LoadData();
         }
 

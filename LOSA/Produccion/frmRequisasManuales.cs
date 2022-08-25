@@ -62,6 +62,7 @@ namespace LOSA.Produccion
                 var row = (dsProduccion.requisas_toaddRow)gridView.GetFocusedDataRow();
 
                 frm_requisaManual frm = new frm_requisaManual(row.id, UsuarioLogeado);
+                frm.MdiParent = this.MdiParent;
                 frm.Show();
             }
             catch (Exception ex)

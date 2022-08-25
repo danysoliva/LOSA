@@ -27,7 +27,7 @@ namespace LOSA.Logistica
             InitializeComponent();
             userLogin = pUser;
 
-            dtFechaDesde.DateTime = DateTime.Now.AddDays(-1); ;
+            dtFechaDesde.DateTime = DateTime.Now.AddDays(-15);
             dtFechaHasta.DateTime = DateTime.Now;
             LoadData();
         }

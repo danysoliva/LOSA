@@ -195,71 +195,84 @@ namespace LOSA.Logistica
             {
                 lote_string += "  " + row.lote.ToString();
             }
-            
 
+
+            SqlTransaction transaction;
             int CantGuardo = 0;
+
+            DataOperations dp = new DataOperations();
+            SqlConnection connection = new SqlConnection(dp.ConnectionStringLOSA);
+
+            connection.Open();
+
+            transaction = connection.BeginTransaction("SampleTransaction");
             //ArrayList Lista = new ArrayList();
+
+
+
+            SqlCommand cmd_header = new SqlCommand("sp_insert_ingresos_mp_h_reproceso", transaction.Connection);
+            cmd_header.CommandType = CommandType.StoredProcedure;
+            cmd_header.Transaction = transaction;
+            cmd_header.Parameters.AddWithValue("@numero_transaccion", dp.ValidateNumberInt32(txtNumIngreso.Text));
+            cmd_header.Parameters.AddWithValue("@itemcode",this.ItemCode);
+            cmd_header.Parameters.AddWithValue("@itemname", slueMP.Text);
+            cmd_header.Parameters.AddWithValue("@id_usuario",usuarioLogueado.Id);
+            cmd_header.Parameters.AddWithValue("@fecha_ingreso",dtFechaIngreso.EditValue);
+            int id_h_ingreso = Convert.ToInt32(cmd_header.ExecuteScalar());
+
+            SqlCommand cmd1 = new SqlCommand("sp_insert_ingresos_V5", transaction.Connection);
+            cmd1.CommandType = CommandType.StoredProcedure;
+            cmd1.Transaction = transaction;
+            cmd1.Parameters.AddWithValue("@idheader", id_h_ingreso);
+            cmd1.Parameters.AddWithValue("@numero_transaccion", Convert.ToInt32(txtNumIngreso.Text));
+            cmd1.Parameters.AddWithValue("@itemcode", this.ItemCode);
+            cmd1.Parameters.AddWithValue("@lote_materia_prima", lote_string);
+            cmd1.Parameters.AddWithValue("@unidadesxtarima", Convert.ToDecimal(txtCantidadT.Text));
+            cmd1.Parameters.AddWithValue("@TotalTarimas", cantTarimas);
+            //cmd1.Parameters.AddWithValue("@pesotarima", dp.ValidateNumberDecimal(txtPeso.Text));
+            cmd1.Parameters.AddWithValue("@fecha_ingreso", dtFechaIngreso.EditValue);
+            cmd1.Parameters.AddWithValue("@id_presentacion", gridLookUpEditPresentacion.EditValue);
+            int id_ingreso_ = Convert.ToInt32(cmd1.ExecuteScalar());
+
             for (int i = 1; i <= cantTarimas; i++)
             {
                 try
                 {
-                    DataOperations dp = new DataOperations();
-                    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                    con.Open();
-
-                    SqlCommand cmm = new SqlCommand("sp_generar_codigo_from_tables_id_V3", con);
-                    cmm.CommandType = CommandType.StoredProcedure;
-                    cmm.Parameters.AddWithValue("@id", 7); /*7 Es Reproceso*/
-                    string barcode = cmm.ExecuteScalar().ToString();
-
-                    SqlCommand cmd1 = new SqlCommand("dbo.sp_insert_ingresos_V4", con);
-                    cmd1.CommandType = CommandType.StoredProcedure;
-                    cmd1.Parameters.AddWithValue("@numero_transaccion", txtNumIngreso.Text);
-                    cmd1.Parameters.AddWithValue("@itemcode", this.ItemCode);
-                    cmd1.Parameters.AddWithValue("@itemname", slueMP.Text);
-                    cmd1.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
-                    cmd1.Parameters.AddWithValue("@cardcode", DBNull.Value);
-                    cmd1.Parameters.AddWithValue("@cardname", DBNull.Value);
-                    cmd1.Parameters.AddWithValue("@id_boleta", DBNull.Value);
-                    cmd1.Parameters.AddWithValue("@lote_materia_prima", lote_string);
-                    cmd1.Parameters.AddWithValue("@cant", txtCantidadT.Text);
-                    cmd1.Parameters.AddWithValue("@TotalTarimas", cantTarimas);
-                    cmd1.Parameters.AddWithValue("@pesotaria", 0);
-                    cmd1.Parameters.AddWithValue("@fecha_ingreso", dtFechaIngreso.EditValue);
-                    cmd1.Parameters.AddWithValue("@id_presentacion", gridLookUpEditPresentacion.EditValue);
-                    int id_ingreso_ = Convert.ToInt32(cmd1.ExecuteScalar());
-                    con.Close();
-
-
-                    SqlCommand cmd = new SqlCommand("[sp_insert_new_tarima_sin_boleta_mp_v3]", con);
+                    SqlCommand cmd = new SqlCommand("sp_generar_codigo_from_tables_id_V3", transaction.Connection);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@itemcode", this.ItemCode);
-                    cmd.Parameters.AddWithValue("@id_proveedor", DBNull.Value);
-                    cmd.Parameters.AddWithValue("@fecha_ingreso", dtFechaIngreso.EditValue);
-                    cmd.Parameters.AddWithValue("@numero_transaccion", txtNumIngreso.Text);
-                    cmd.Parameters.AddWithValue("@fecha_vencimiento", dtFechaVencimiento.EditValue);
-                    cmd.Parameters.AddWithValue("@fecha_produccion_materia_prima", dtFechaProduccion.EditValue);
-                    cmd.Parameters.AddWithValue("@lote_materia_prima", lote_string);
-                    cmd.Parameters.AddWithValue("@id_presentacion", gridLookUpEditPresentacion.EditValue);
-                    cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
-                    cmd.Parameters.AddWithValue("@id_tipo_transaccion_kardex", glTipoTransaccion.EditValue);
-                    cmd.Parameters.AddWithValue("@codigo_barra", barcode);
-                    cmd.Parameters.AddWithValue("@cant", txtCantidadT.Text);
-                    cmd.Parameters.AddWithValue("@peso", txtPeso.Text);
-                    cmd.Parameters.AddWithValue("@id_ingreso", id_ingreso_);
-                    //Lista.Add(Convert.ToInt32(cmd.ExecuteScalar()));
-                    cmd.ExecuteScalar();
+                    cmd.Transaction = transaction;
+                    cmd.Parameters.AddWithValue("@id", 7); /*7 Es Reproceso*/
+                    string barcode = cmd.ExecuteScalar().ToString();
 
-                    
+                    SqlCommand cmd2 = new SqlCommand("sp_insert_new_tarima_sin_boleta_mp_v3", transaction.Connection);
+                    cmd2.CommandType = CommandType.StoredProcedure;
+                    cmd2.Transaction = transaction;
+                    cmd2.Parameters.AddWithValue("@itemcode", this.ItemCode);
+                    cmd2.Parameters.AddWithValue("@id_proveedor", DBNull.Value);
+                    cmd2.Parameters.AddWithValue("@fecha_ingreso", dtFechaIngreso.EditValue);
+                    cmd2.Parameters.AddWithValue("@numero_transaccion", txtNumIngreso.Text);
+                    cmd2.Parameters.AddWithValue("@fecha_vencimiento", dtFechaVencimiento.EditValue);
+                    cmd2.Parameters.AddWithValue("@fecha_produccion_materia_prima", dtFechaProduccion.EditValue);
+                    cmd2.Parameters.AddWithValue("@lote_materia_prima", lote_string);
+                    cmd2.Parameters.AddWithValue("@id_presentacion", gridLookUpEditPresentacion.EditValue);
+                    cmd2.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
+                    cmd2.Parameters.AddWithValue("@id_tipo_transaccion_kardex", glTipoTransaccion.EditValue);
+                    cmd2.Parameters.AddWithValue("@codigo_barra", barcode);
+                    cmd2.Parameters.AddWithValue("@cant", txtCantidadT.Text);
+                    cmd2.Parameters.AddWithValue("@peso", txtPeso.Text);
+                    cmd2.Parameters.AddWithValue("@id_ingreso", id_ingreso_); //Ingreso de Reproceso
+                    cmd2.ExecuteNonQuery();
 
                     CantGuardo++;
-                    con.Close();
-                    //CajaDialogo.InformationAuto();
 
+                    // Attempt to commit the transaction.
+                    transaction.Commit();
+                    connection.Close();
                 }
-                catch (Exception ec)
+                catch (Exception ex)
                 {
-                    CajaDialogo.Error(ec.Message);
+                    CajaDialogo.Error(ex.Message);
+                    transaction.Rollback();
                 }
             }
 
@@ -274,7 +287,7 @@ namespace LOSA.Logistica
         private void slueMP_EditValueChanged(object sender, EventArgs e)
         {
            
-                     this.ItemCode = slueMP.EditValue.ToString();
+             this.ItemCode = slueMP.EditValue.ToString();
 
         }
 

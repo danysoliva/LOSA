@@ -156,10 +156,9 @@ namespace LOSA.Produccion
             this.Controls.Add(this.txtMP);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmSolicitarMP";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmSolicitarMP";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.txtMP.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_kg.Properties)).EndInit();

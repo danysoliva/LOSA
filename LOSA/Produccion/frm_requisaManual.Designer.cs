@@ -46,9 +46,9 @@ namespace LOSA.Produccion
             this.colid_materia_prima = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcode_sap = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcantidad_solicitada = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btn_reqmanual = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.cmdGuardar = new DevExpress.XtraEditors.SimpleButton();
-            this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listampBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProduccion)).BeginInit();
@@ -65,7 +65,7 @@ namespace LOSA.Produccion
             this.labelControl3.Appearance.Options.UseTextOptions = true;
             this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl3.Location = new System.Drawing.Point(78, 12);
+            this.labelControl3.Location = new System.Drawing.Point(102, 45);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(444, 39);
             this.labelControl3.TabIndex = 33;
@@ -80,9 +80,9 @@ namespace LOSA.Produccion
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.cmdHome.Location = new System.Drawing.Point(430, 8);
+            this.cmdHome.Location = new System.Drawing.Point(473, 57);
             this.cmdHome.Name = "cmdHome";
-            this.cmdHome.Size = new System.Drawing.Size(199, 71);
+            this.cmdHome.Size = new System.Drawing.Size(153, 58);
             this.cmdHome.TabIndex = 34;
             this.cmdHome.Text = "Cerrar";
             this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
@@ -178,6 +178,16 @@ namespace LOSA.Produccion
             this.colcantidad_solicitada.VisibleIndex = 2;
             this.colcantidad_solicitada.Width = 239;
             // 
+            // coldescripcion
+            // 
+            this.coldescripcion.Caption = "MP";
+            this.coldescripcion.FieldName = "descripcion";
+            this.coldescripcion.Name = "coldescripcion";
+            this.coldescripcion.OptionsColumn.AllowEdit = false;
+            this.coldescripcion.Visible = true;
+            this.coldescripcion.VisibleIndex = 1;
+            this.coldescripcion.Width = 236;
+            // 
             // btn_reqmanual
             // 
             this.btn_reqmanual.AutoHeight = false;
@@ -196,22 +206,12 @@ namespace LOSA.Produccion
             this.cmdGuardar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdGuardar.ImageOptions.Image")));
             this.cmdGuardar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.cmdGuardar.Location = new System.Drawing.Point(12, 12);
+            this.cmdGuardar.Location = new System.Drawing.Point(12, 57);
             this.cmdGuardar.Name = "cmdGuardar";
-            this.cmdGuardar.Size = new System.Drawing.Size(191, 67);
+            this.cmdGuardar.Size = new System.Drawing.Size(166, 58);
             this.cmdGuardar.TabIndex = 36;
             this.cmdGuardar.Text = "Solicitar \r\nMateriales";
             this.cmdGuardar.Click += new System.EventHandler(this.cmdGuardar_Click);
-            // 
-            // coldescripcion
-            // 
-            this.coldescripcion.Caption = "MP";
-            this.coldescripcion.FieldName = "descripcion";
-            this.coldescripcion.Name = "coldescripcion";
-            this.coldescripcion.OptionsColumn.AllowEdit = false;
-            this.coldescripcion.Visible = true;
-            this.coldescripcion.VisibleIndex = 1;
-            this.coldescripcion.Width = 236;
             // 
             // frm_requisaManual
             // 
