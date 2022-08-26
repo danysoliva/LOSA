@@ -46,14 +46,12 @@ namespace LOSA.Calidad.LoteConfConsumo
             {
                 CajaDialogo.Error("La Fecha no puede quedar vacia!");
                 return;
-
             }
 
             if (dtFechaVencimiento.DateTime.Year < 2020)
             {
                 CajaDialogo.Error("La fecha de vencimiento debe ser una fecha valida");
                 return;
-
             }
 
             try
@@ -62,7 +60,7 @@ namespace LOSA.Calidad.LoteConfConsumo
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("sp_update_fecha_venc_ingresos", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id_ingreso", id_lote_alosy);
+                cmd.Parameters.AddWithValue("@id_ingreso", Convert.ToInt32(txtNumIngreso.Text));
                 cmd.Parameters.AddWithValue("@id_lote_alosy",id_lote_alosy);
                 cmd.Parameters.AddWithValue("@id_mp",id_mp);
                 cmd.Parameters.AddWithValue("@fecha_anterior", Convert.ToDateTime(fecha_anterior));
