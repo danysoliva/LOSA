@@ -51,7 +51,8 @@ namespace LOSA.TransaccionesMP
         }
         public void load_dataPorLotes()
         {
-            string query = @"sp_obtener_inventario_general_por_lotev2";
+            //string query = @"sp_obtener_inventario_general_por_lotev2";
+            string query = @"sp_get_kardex_by_lot";
             try
             {
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
@@ -59,8 +60,10 @@ namespace LOSA.TransaccionesMP
                 SqlCommand cmd = new SqlCommand(query,cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                dsTarima.informacion.Clear();
-                da.Fill(dsTarima.informacion);
+                //dsTarima.informacion.Clear();
+                //da.Fill(dsTarima.informacion);
+                dsTarima.kardex_by_lot.Clear();
+                da.Fill(dsTarima.kardex_by_lot);
                 cn.Close();
             }
             catch (Exception ex)
@@ -97,7 +100,8 @@ namespace LOSA.TransaccionesMP
 
         public void load_dataResumenMP_por_bodega()
         {
-            string query = @"[sp_obtener_inventario_general_por_bodega]";
+            //string query = @"[sp_obtener_inventario_general_por_bodega]";
+            string query = @"[sp_obtener_inventario_general_por_bodega_v2]";
             try
             {
                 DataOperations dp1 = new DataOperations();
@@ -106,9 +110,13 @@ namespace LOSA.TransaccionesMP
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                dsTarima.totales_bodega.Clear();
-                da.Fill(dsTarima.totales_bodega);
+                dsTarima.totales_bodegav2.Clear();
+                da.Fill(dsTarima.totales_bodegav2);
                 cn.Close();
+                //gridControl2.au
+                //gridControl2.Views[0].
+                gridView2.ExpandAllGroups();
+                //var row = (dsMensualidades.mensualidadesRow)gridView.GetFocusedDataRow();
             }
             catch (Exception ex)
             {
@@ -120,7 +128,8 @@ namespace LOSA.TransaccionesMP
 
         public void load_data_totales()
         {
-            string query = @"sp_obtener_inventario_general";
+            //string query = @"sp_obtener_inventario_general";
+            string query = @"[sp_obtener_inventario_general_v2]";
             try
             {
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
@@ -188,7 +197,7 @@ namespace LOSA.TransaccionesMP
         {
             //AJUSTE de KARDEX General
             var gridView = (GridView)grd_data.FocusedView;
-            var row = (dsTarima.informacionRow)gridView.GetFocusedDataRow();
+            var row = (dsTarima.kardex_by_lotRow)gridView.GetFocusedDataRow();
 
             frmAsjuteInventarioPorLote frm = new frmAsjuteInventarioPorLote(UsuarioLogeado, row.id_mp, 0, row.lote);
             if (frm.ShowDialog() == DialogResult.OK)
@@ -199,20 +208,20 @@ namespace LOSA.TransaccionesMP
 
         private void grdv_data_RowStyle(object sender, RowStyleEventArgs e)
         {
-            if (e.RowHandle >= 0)
-            {
-                var gridView = (GridView)grd_data.FocusedView;
-                //var row = (dsNotas.notas_resumenRow)gridView.GetFocusedDataRow();
-                var row = (dsTarima.informacionRow)gridView.GetDataRow(e.RowHandle);
-                if (row != null)
-                {
-                    if (row.existencia>0)
-                        e.Appearance.BackColor = Color.FromArgb(255, 255, 255);//verde
-                    else
-                        e.Appearance.BackColor = Color.FromArgb(255, 102, 102);//rojo
+            //if (e.RowHandle >= 0)
+            //{
+            //    var gridView = (GridView)grd_data.FocusedView;
+            //    //var row = (dsNotas.notas_resumenRow)gridView.GetFocusedDataRow();
+            //    var row = (dsTarima.kardex_by_lotRow)gridView.GetDataRow(e.RowHandle);
+            //    if (row != null)
+            //    {
+            //        if (row.existencia>0)
+            //            e.Appearance.BackColor = Color.FromArgb(255, 255, 255);//verde
+            //        else
+            //            e.Appearance.BackColor = Color.FromArgb(255, 102, 102);//rojo
 
-                }
-            }
+            //    }
+            //}
         }
 
         private void backgroundWorkerPRD_DoWork(object sender, DoWorkEventArgs e)
