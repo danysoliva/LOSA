@@ -190,10 +190,10 @@ namespace LOSA.Logistica
 
 
             //generar string de lote
-            string lote_string = "Lote(s) PT:";
+            string lote_string = "";
             foreach (dsLogistica2.lote_selectedRow row in dsLogistica2.lote_selected.Rows)
             {
-                lote_string += "  " + row.lote.ToString();
+                lote_string =  row.lote.ToString();
             }
 
 
@@ -283,7 +283,7 @@ namespace LOSA.Logistica
                         command.CommandText = "sp_generar_codigo_from_tables_id_V3";
                         //command.CommandType = CommandType.StoredProcedure;
                         //command.Transaction = transaction;
-                        command.Parameters.AddWithValue("@id", 7); /*7 Es Reproceso*/
+                        command.Parameters.AddWithValue("@id", 1); /*Ingreso */
                         string barcode = command.ExecuteScalar().ToString();
 
                         //SqlCommand command = new SqlCommand("sp_insert_new_tarima_sin_boleta_mp_v3", connection);
