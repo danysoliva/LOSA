@@ -13,7 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>\\aqfsvr003\Deploy%24\LOSA\</PublishUrl>
+    <PublishUrl>\\aqfsvr003\Deploy%24\LOSA64\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -23,8 +23,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>\\aqfsvr003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>384</ApplicationRevision>
+    <InstallUrl>\\aqfsvr003\Deploy%24\LOSA64\</InstallUrl>
+    <ApplicationRevision>385</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -738,6 +738,12 @@
     </Compile>
     <Compile Include="Calidad\LoteConfConsumo\frmConfigLoteConsumoFirst.Designer.cs">
       <DependentUpon>frmConfigLoteConsumoFirst.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\LoteConfConsumo\frmEditFechaVencimientoIngreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\LoteConfConsumo\frmEditFechaVencimientoIngreso.Designer.cs">
+      <DependentUpon>frmEditFechaVencimientoIngreso.cs</DependentUpon>
     </Compile>
     <Compile Include="Calidad\LoteConfConsumo\frmSearchMP.cs">
       <SubType>Form</SubType>
@@ -3225,6 +3231,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\LoteConfConsumo\frmConfigLoteConsumoFirst.resx">
       <DependentUpon>frmConfigLoteConsumoFirst.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\LoteConfConsumo\frmEditFechaVencimientoIngreso.resx">
+      <DependentUpon>frmEditFechaVencimientoIngreso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\LoteConfConsumo\frmSearchMP.resx">
       <DependentUpon>frmSearchMP.cs</DependentUpon>

@@ -643,6 +643,8 @@ namespace LOSA.Calidad.LoteConfConsumo {
             
             private global::System.Data.DataColumn columnfecha_vence;
             
+            private global::System.Data.DataColumn columnid_lote_alosy;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public config_loteDataTable() {
@@ -782,6 +784,14 @@ namespace LOSA.Calidad.LoteConfConsumo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_lote_alosyColumn {
+                get {
+                    return this.columnid_lote_alosy;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -817,7 +827,7 @@ namespace LOSA.Calidad.LoteConfConsumo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public config_loteRow Addconfig_loteRow(int Linea, decimal existencia, string nombre_comercial, System.DateTime fecha_produccion, int id_mp, string lote, string proveedor, string cproveedor, int numero_transaccion, int id_tipoIngreso, int dias, string code_sap, System.DateTime fecha_vence) {
+            public config_loteRow Addconfig_loteRow(int Linea, decimal existencia, string nombre_comercial, System.DateTime fecha_produccion, int id_mp, string lote, string proveedor, string cproveedor, int numero_transaccion, int id_tipoIngreso, int dias, string code_sap, System.DateTime fecha_vence, int id_lote_alosy) {
                 config_loteRow rowconfig_loteRow = ((config_loteRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Linea,
@@ -832,7 +842,8 @@ namespace LOSA.Calidad.LoteConfConsumo {
                         id_tipoIngreso,
                         dias,
                         code_sap,
-                        fecha_vence};
+                        fecha_vence,
+                        id_lote_alosy};
                 rowconfig_loteRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowconfig_loteRow);
                 return rowconfig_loteRow;
@@ -868,6 +879,7 @@ namespace LOSA.Calidad.LoteConfConsumo {
                 this.columndias = base.Columns["dias"];
                 this.columncode_sap = base.Columns["code_sap"];
                 this.columnfecha_vence = base.Columns["fecha_vence"];
+                this.columnid_lote_alosy = base.Columns["id_lote_alosy"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -899,6 +911,8 @@ namespace LOSA.Calidad.LoteConfConsumo {
                 base.Columns.Add(this.columncode_sap);
                 this.columnfecha_vence = new global::System.Data.DataColumn("fecha_vence", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfecha_vence);
+                this.columnid_lote_alosy = new global::System.Data.DataColumn("id_lote_alosy", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_lote_alosy);
                 this.columnexistencia.Caption = "Existencia";
                 this.columnnombre_comercial.Caption = "Item Name";
                 this.columnfecha_produccion.Caption = "Fecha Producción";
@@ -1414,6 +1428,22 @@ namespace LOSA.Calidad.LoteConfConsumo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_lote_alosy {
+                get {
+                    try {
+                        return ((int)(this[this.tableconfig_lote.id_lote_alosyColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_lote_alosy\' de la tabla \'config_lote\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableconfig_lote.id_lote_alosyColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsLineaNull() {
                 return this.IsNull(this.tableconfig_lote.LineaColumn);
             }
@@ -1566,6 +1596,18 @@ namespace LOSA.Calidad.LoteConfConsumo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setfecha_venceNull() {
                 this[this.tableconfig_lote.fecha_venceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_lote_alosyNull() {
+                return this.IsNull(this.tableconfig_lote.id_lote_alosyColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_lote_alosyNull() {
+                this[this.tableconfig_lote.id_lote_alosyColumn] = global::System.Convert.DBNull;
             }
         }
         
