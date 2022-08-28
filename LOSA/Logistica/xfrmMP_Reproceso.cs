@@ -15,6 +15,7 @@ using System.Windows.Forms;
 
 namespace LOSA.Logistica
 {
+
     public partial class xfrmMP_Reproceso : DevExpress.XtraEditors.XtraForm
     {
         UserLogin usuarioLogueado;
@@ -188,6 +189,16 @@ namespace LOSA.Logistica
                 return;
             }
 
+            foreach (dsLogistica2.lote_selectedRow row in dsLogistica2.lote_selected.Rows)
+            {
+                
+            }
+            if (dsLogistica2.lote_selected.Count == 0)
+            {
+                CajaDialogo.Error("Debe seleccionar un Lote de Producto Terminado");
+                return;
+            }
+
 
             //generar string de lote
             string lote_string = "";
@@ -258,7 +269,7 @@ namespace LOSA.Logistica
                     command.Parameters.AddWithValue("@numero_transaccion", Convert.ToInt32(txtNumIngreso.Text));
                     command.Parameters.AddWithValue("@itemcode", this.ItemCode);
                     command.Parameters.AddWithValue("@lote_materia_prima", lote_string);
-                    command.Parameters.AddWithValue("@unidadesxtarima", Convert.ToDecimal(txtCantidadT.Text));
+                    command.Parameters.AddWithValue("@unidadesxtarima", txtCantidadT.EditValue);
                     command.Parameters.AddWithValue("@TotalTarimas", cantTarimas);
                     //command.Parameters.AddWithValue("@pesotarima", dp.ValidateNumberDecimal(txtPeso.Text));
                     command.Parameters.AddWithValue("@fecha_ingreso", dtFechaIngreso.EditValue);
@@ -302,8 +313,8 @@ namespace LOSA.Logistica
                         command.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
                         command.Parameters.AddWithValue("@id_tipo_transaccion_kardex", glTipoTransaccion.EditValue);
                         command.Parameters.AddWithValue("@codigo_barra", barcode);
-                        command.Parameters.AddWithValue("@cant", txtCantidadT.Text);
-                        command.Parameters.AddWithValue("@peso", txtPeso.Text);
+                        command.Parameters.AddWithValue("@cant", txtCantidadT.EditValue);
+                        command.Parameters.AddWithValue("@peso", Convert.ToDecimal(txtPeso.Text));
                         command.Parameters.AddWithValue("@id_ingreso", id_ingreso_); //Ingreso de Reproceso
                         command.ExecuteNonQuery();
 
@@ -313,6 +324,9 @@ namespace LOSA.Logistica
 
                     transaction.Commit();
                     connection.Close();
+
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
                 }
                 catch (Exception ex)
                 {
@@ -394,6 +408,11 @@ namespace LOSA.Logistica
         private void xfrmMP_Reproceso_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void gridView2_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            
         }
     }
 }

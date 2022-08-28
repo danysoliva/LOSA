@@ -40,7 +40,7 @@ namespace LOSA.Logistica
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-           xfrmMP_Reproceso frm = new xfrmMP_Reproceso(usuarioLogueado);
+            xfrmMP_Reproceso frm = new xfrmMP_Reproceso(usuarioLogueado);
             frm.WindowState = FormWindowState.Normal;
             if (frm.ShowDialog() == DialogResult.OK)
             {

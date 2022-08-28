@@ -55,6 +55,19 @@ namespace LOSA.TransaccionesMP
             this.colfecha = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcTarima = new DevExpress.XtraGrid.GridControl();
             this.gvTarima = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnombreTarima = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnombreProveedor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha_ingreso = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnumero_transaccion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collote_materia_prima = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpresentacion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltipo_tarima = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_boleta = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnum = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIsMicro = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colitemcode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colmp_name = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtTarima = new DevExpress.XtraEditors.ButtonEdit();
             this.cmdSelectTarima = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -81,19 +94,6 @@ namespace LOSA.TransaccionesMP
             this.colasignado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColSeleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.colid2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colnombreTarima = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colnombreProveedor = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colfecha_ingreso = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colnumero_transaccion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.collote_materia_prima = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colpresentacion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coltipo_tarima = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colid_boleta = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colnum = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colIsMicro = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colitemcode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colmp_name = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtRequisicion.Properties)).BeginInit();
             this.panelNotificacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
@@ -506,6 +506,95 @@ namespace LOSA.TransaccionesMP
             this.gvTarima.OptionsView.ShowIndicator = false;
             this.gvTarima.PaintStyleName = "Flat";
             // 
+            // colid2
+            // 
+            this.colid2.FieldName = "id";
+            this.colid2.Name = "colid2";
+            // 
+            // colnombreTarima
+            // 
+            this.colnombreTarima.FieldName = "nombreTarima";
+            this.colnombreTarima.Name = "colnombreTarima";
+            // 
+            // colnombreProveedor
+            // 
+            this.colnombreProveedor.FieldName = "nombreProveedor";
+            this.colnombreProveedor.Name = "colnombreProveedor";
+            this.colnombreProveedor.Visible = true;
+            this.colnombreProveedor.VisibleIndex = 3;
+            this.colnombreProveedor.Width = 104;
+            // 
+            // colfecha_ingreso
+            // 
+            this.colfecha_ingreso.FieldName = "fecha_ingreso";
+            this.colfecha_ingreso.Name = "colfecha_ingreso";
+            this.colfecha_ingreso.Visible = true;
+            this.colfecha_ingreso.VisibleIndex = 4;
+            this.colfecha_ingreso.Width = 84;
+            // 
+            // colnumero_transaccion
+            // 
+            this.colnumero_transaccion.FieldName = "numero_transaccion";
+            this.colnumero_transaccion.Name = "colnumero_transaccion";
+            this.colnumero_transaccion.Visible = true;
+            this.colnumero_transaccion.VisibleIndex = 5;
+            this.colnumero_transaccion.Width = 76;
+            // 
+            // collote_materia_prima
+            // 
+            this.collote_materia_prima.FieldName = "lote_materia_prima";
+            this.collote_materia_prima.Name = "collote_materia_prima";
+            this.collote_materia_prima.Visible = true;
+            this.collote_materia_prima.VisibleIndex = 6;
+            this.collote_materia_prima.Width = 96;
+            // 
+            // colpresentacion
+            // 
+            this.colpresentacion.FieldName = "presentacion";
+            this.colpresentacion.Name = "colpresentacion";
+            this.colpresentacion.Visible = true;
+            this.colpresentacion.VisibleIndex = 7;
+            this.colpresentacion.Width = 49;
+            // 
+            // coltipo_tarima
+            // 
+            this.coltipo_tarima.FieldName = "tipo_tarima";
+            this.coltipo_tarima.Name = "coltipo_tarima";
+            // 
+            // colid_boleta
+            // 
+            this.colid_boleta.FieldName = "id_boleta";
+            this.colid_boleta.Name = "colid_boleta";
+            // 
+            // colnum
+            // 
+            this.colnum.FieldName = "num";
+            this.colnum.Name = "colnum";
+            this.colnum.Visible = true;
+            this.colnum.VisibleIndex = 0;
+            this.colnum.Width = 39;
+            // 
+            // colIsMicro
+            // 
+            this.colIsMicro.FieldName = "IsMicro";
+            this.colIsMicro.Name = "colIsMicro";
+            // 
+            // colitemcode
+            // 
+            this.colitemcode.FieldName = "itemcode";
+            this.colitemcode.Name = "colitemcode";
+            this.colitemcode.Visible = true;
+            this.colitemcode.VisibleIndex = 1;
+            this.colitemcode.Width = 81;
+            // 
+            // colmp_name
+            // 
+            this.colmp_name.FieldName = "mp_name";
+            this.colmp_name.Name = "colmp_name";
+            this.colmp_name.Visible = true;
+            this.colmp_name.VisibleIndex = 2;
+            this.colmp_name.Width = 81;
+            // 
             // txtTarima
             // 
             this.txtTarima.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.True;
@@ -770,95 +859,6 @@ namespace LOSA.TransaccionesMP
             this.cmdSeleccionar.Name = "cmdSeleccionar";
             this.cmdSeleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdSeleccionar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdSeleccionar_ButtonClick);
-            // 
-            // colid2
-            // 
-            this.colid2.FieldName = "id";
-            this.colid2.Name = "colid2";
-            // 
-            // colnombreTarima
-            // 
-            this.colnombreTarima.FieldName = "nombreTarima";
-            this.colnombreTarima.Name = "colnombreTarima";
-            // 
-            // colnombreProveedor
-            // 
-            this.colnombreProveedor.FieldName = "nombreProveedor";
-            this.colnombreProveedor.Name = "colnombreProveedor";
-            this.colnombreProveedor.Visible = true;
-            this.colnombreProveedor.VisibleIndex = 3;
-            this.colnombreProveedor.Width = 104;
-            // 
-            // colfecha_ingreso
-            // 
-            this.colfecha_ingreso.FieldName = "fecha_ingreso";
-            this.colfecha_ingreso.Name = "colfecha_ingreso";
-            this.colfecha_ingreso.Visible = true;
-            this.colfecha_ingreso.VisibleIndex = 4;
-            this.colfecha_ingreso.Width = 84;
-            // 
-            // colnumero_transaccion
-            // 
-            this.colnumero_transaccion.FieldName = "numero_transaccion";
-            this.colnumero_transaccion.Name = "colnumero_transaccion";
-            this.colnumero_transaccion.Visible = true;
-            this.colnumero_transaccion.VisibleIndex = 5;
-            this.colnumero_transaccion.Width = 76;
-            // 
-            // collote_materia_prima
-            // 
-            this.collote_materia_prima.FieldName = "lote_materia_prima";
-            this.collote_materia_prima.Name = "collote_materia_prima";
-            this.collote_materia_prima.Visible = true;
-            this.collote_materia_prima.VisibleIndex = 6;
-            this.collote_materia_prima.Width = 96;
-            // 
-            // colpresentacion
-            // 
-            this.colpresentacion.FieldName = "presentacion";
-            this.colpresentacion.Name = "colpresentacion";
-            this.colpresentacion.Visible = true;
-            this.colpresentacion.VisibleIndex = 7;
-            this.colpresentacion.Width = 49;
-            // 
-            // coltipo_tarima
-            // 
-            this.coltipo_tarima.FieldName = "tipo_tarima";
-            this.coltipo_tarima.Name = "coltipo_tarima";
-            // 
-            // colid_boleta
-            // 
-            this.colid_boleta.FieldName = "id_boleta";
-            this.colid_boleta.Name = "colid_boleta";
-            // 
-            // colnum
-            // 
-            this.colnum.FieldName = "num";
-            this.colnum.Name = "colnum";
-            this.colnum.Visible = true;
-            this.colnum.VisibleIndex = 0;
-            this.colnum.Width = 39;
-            // 
-            // colIsMicro
-            // 
-            this.colIsMicro.FieldName = "IsMicro";
-            this.colIsMicro.Name = "colIsMicro";
-            // 
-            // colitemcode
-            // 
-            this.colitemcode.FieldName = "itemcode";
-            this.colitemcode.Name = "colitemcode";
-            this.colitemcode.Visible = true;
-            this.colitemcode.VisibleIndex = 1;
-            this.colitemcode.Width = 81;
-            // 
-            // colmp_name
-            // 
-            this.colmp_name.FieldName = "mp_name";
-            this.colmp_name.Name = "colmp_name";
-            this.colmp_name.Visible = true;
-            this.colmp_name.VisibleIndex = 2;
-            this.colmp_name.Width = 81;
             // 
             // frmEntregaTarimaReq_3
             // 

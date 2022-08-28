@@ -1,6 +1,7 @@
 ﻿using ACS.Classes;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
+using LOSA.Clases;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,10 +19,12 @@ namespace LOSA.Logistica
     public partial class xfrmBuscarLotePT : DevExpress.XtraEditors.XtraForm
     {
         public ArrayList ListaLotesInt;
+        public ItemBusqueda ItemSeleccionado;
         public xfrmBuscarLotePT()
         {
             InitializeComponent();
             ListaLotesInt = new ArrayList();
+            ItemSeleccionado = new ItemBusqueda();
             LoadDatos();
         }
 
@@ -81,6 +84,28 @@ namespace LOSA.Logistica
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void gridView1_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            if (e.Column.FieldName == "seleccion")
+            {
+                var gridView = (GridView)gridControl1.FocusedView;
+                var row = (dsLogistica2.lotes_ptRow)gridView.GetFocusedDataRow();
+
+                ItemSeleccionado.lote = 0;
+                if (Convert.ToBoolean(e.Value))
+                {
+                    ItemSeleccionado.lote = row.lote;
+                    row.seleccion = true;
+                }
+
+                foreach (dsLogistica2.lotes_ptRow row1 in dsLogistica21.lotes_pt)
+                {
+                    if (row1.lote != ItemSeleccionado.lote)
+                        row1.seleccion = false;
+                }
+            }
         }
     }
 }

@@ -88,6 +88,7 @@
             this.btnreportes = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
             this.TabCalidad = new DevExpress.XtraTab.XtraTabPage();
+            this.cmdReporteProximosVencer = new DevExpress.XtraEditors.SimpleButton();
             this.cmdVerConfiguracionLotesVencimientoMP = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton34 = new DevExpress.XtraEditors.SimpleButton();
             this.btnClientesLote = new DevExpress.XtraEditors.SimpleButton();
@@ -128,7 +129,6 @@
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.cmdReporteProximosVencer = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -1019,6 +1019,21 @@
             this.TabCalidad.Size = new System.Drawing.Size(772, 518);
             this.TabCalidad.Text = "Calidad";
             // 
+            // cmdReporteProximosVencer
+            // 
+            this.cmdReporteProximosVencer.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdReporteProximosVencer.Appearance.Options.UseFont = true;
+            this.cmdReporteProximosVencer.Appearance.Options.UseTextOptions = true;
+            this.cmdReporteProximosVencer.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.cmdReporteProximosVencer.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdReporteProximosVencer.ImageOptions.Image = global::LOSA.Properties.Resources.Finance_Expired_icon32px;
+            this.cmdReporteProximosVencer.Location = new System.Drawing.Point(214, 413);
+            this.cmdReporteProximosVencer.Name = "cmdReporteProximosVencer";
+            this.cmdReporteProximosVencer.Size = new System.Drawing.Size(199, 59);
+            this.cmdReporteProximosVencer.TabIndex = 46;
+            this.cmdReporteProximosVencer.Text = "Proximos a Vencer";
+            this.cmdReporteProximosVencer.Click += new System.EventHandler(this.cmdReporteProximosVencer_Click);
+            // 
             // cmdVerConfiguracionLotesVencimientoMP
             // 
             this.cmdVerConfiguracionLotesVencimientoMP.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
@@ -1569,21 +1584,6 @@
             this.labelControl3.Size = new System.Drawing.Size(515, 39);
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
-            // 
-            // cmdReporteProximosVencer
-            // 
-            this.cmdReporteProximosVencer.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdReporteProximosVencer.Appearance.Options.UseFont = true;
-            this.cmdReporteProximosVencer.Appearance.Options.UseTextOptions = true;
-            this.cmdReporteProximosVencer.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.cmdReporteProximosVencer.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdReporteProximosVencer.ImageOptions.Image = global::LOSA.Properties.Resources.Finance_Expired_icon32px;
-            this.cmdReporteProximosVencer.Location = new System.Drawing.Point(214, 413);
-            this.cmdReporteProximosVencer.Name = "cmdReporteProximosVencer";
-            this.cmdReporteProximosVencer.Size = new System.Drawing.Size(199, 59);
-            this.cmdReporteProximosVencer.TabIndex = 46;
-            this.cmdReporteProximosVencer.Text = "Proximos a Vencer";
-            this.cmdReporteProximosVencer.Click += new System.EventHandler(this.cmdReporteProximosVencer_Click);
             // 
             // frmOpciones
             // 
