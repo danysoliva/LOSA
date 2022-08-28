@@ -99,7 +99,7 @@ namespace LOSA.RecepcionMP
             this.cmdGuardar.Name = "cmdGuardar";
             this.cmdGuardar.Size = new System.Drawing.Size(153, 49);
             this.cmdGuardar.TabIndex = 29;
-            this.cmdGuardar.Text = "Cancelar";
+            this.cmdGuardar.Text = "Guardar";
             this.cmdGuardar.Click += new System.EventHandler(this.cmdGuardar_Click);
             // 
             // simpleButton1

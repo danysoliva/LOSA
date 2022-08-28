@@ -30,6 +30,11 @@ namespace LOSA.Calidad.LoteConfConsumo
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConfigLoteConsumoFirst));
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -52,10 +57,13 @@ namespace LOSA.Calidad.LoteConfConsumo
             this.coldias = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcode_sap = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfecha_vence = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryEditarFechaVenc = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colid_lote_alosy = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsConfigLoteConsumo1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryEditarFechaVenc)).BeginInit();
             this.SuspendLayout();
             // 
             // simpleButton1
@@ -139,6 +147,8 @@ namespace LOSA.Calidad.LoteConfConsumo
             this.gridControl1.Location = new System.Drawing.Point(1, 114);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
+            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryEditarFechaVenc});
             this.gridControl1.Size = new System.Drawing.Size(691, 391);
             this.gridControl1.TabIndex = 12;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -151,6 +161,8 @@ namespace LOSA.Calidad.LoteConfConsumo
             // 
             // gridView1
             // 
+            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colLinea,
             this.colexistencia,
@@ -164,7 +176,8 @@ namespace LOSA.Calidad.LoteConfConsumo
             this.colid_tipoIngreso,
             this.coldias,
             this.colcode_sap,
-            this.colfecha_vence});
+            this.colfecha_vence,
+            this.colid_lote_alosy});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
@@ -175,7 +188,7 @@ namespace LOSA.Calidad.LoteConfConsumo
             this.colLinea.OptionsColumn.AllowEdit = false;
             this.colLinea.Visible = true;
             this.colLinea.VisibleIndex = 0;
-            this.colLinea.Width = 35;
+            this.colLinea.Width = 44;
             // 
             // colexistencia
             // 
@@ -185,8 +198,8 @@ namespace LOSA.Calidad.LoteConfConsumo
             this.colexistencia.Name = "colexistencia";
             this.colexistencia.OptionsColumn.AllowEdit = false;
             this.colexistencia.Visible = true;
-            this.colexistencia.VisibleIndex = 8;
-            this.colexistencia.Width = 61;
+            this.colexistencia.VisibleIndex = 9;
+            this.colexistencia.Width = 67;
             // 
             // colnombre_comercial
             // 
@@ -195,7 +208,7 @@ namespace LOSA.Calidad.LoteConfConsumo
             this.colnombre_comercial.OptionsColumn.AllowEdit = false;
             this.colnombre_comercial.Visible = true;
             this.colnombre_comercial.VisibleIndex = 2;
-            this.colnombre_comercial.Width = 132;
+            this.colnombre_comercial.Width = 111;
             // 
             // colfecha_produccion
             // 
@@ -203,8 +216,8 @@ namespace LOSA.Calidad.LoteConfConsumo
             this.colfecha_produccion.Name = "colfecha_produccion";
             this.colfecha_produccion.OptionsColumn.AllowEdit = false;
             this.colfecha_produccion.Visible = true;
-            this.colfecha_produccion.VisibleIndex = 3;
-            this.colfecha_produccion.Width = 79;
+            this.colfecha_produccion.VisibleIndex = 4;
+            this.colfecha_produccion.Width = 69;
             // 
             // colid_mp
             // 
@@ -218,8 +231,8 @@ namespace LOSA.Calidad.LoteConfConsumo
             this.collote.Name = "collote";
             this.collote.OptionsColumn.AllowEdit = false;
             this.collote.Visible = true;
-            this.collote.VisibleIndex = 6;
-            this.collote.Width = 84;
+            this.collote.VisibleIndex = 7;
+            this.collote.Width = 53;
             // 
             // colproveedor
             // 
@@ -227,8 +240,8 @@ namespace LOSA.Calidad.LoteConfConsumo
             this.colproveedor.Name = "colproveedor";
             this.colproveedor.OptionsColumn.AllowEdit = false;
             this.colproveedor.Visible = true;
-            this.colproveedor.VisibleIndex = 7;
-            this.colproveedor.Width = 113;
+            this.colproveedor.VisibleIndex = 8;
+            this.colproveedor.Width = 72;
             // 
             // colcproveedor
             // 
@@ -242,6 +255,8 @@ namespace LOSA.Calidad.LoteConfConsumo
             this.colnumero_transaccion.FieldName = "numero_transaccion";
             this.colnumero_transaccion.Name = "colnumero_transaccion";
             this.colnumero_transaccion.OptionsColumn.AllowEdit = false;
+            this.colnumero_transaccion.Visible = true;
+            this.colnumero_transaccion.VisibleIndex = 3;
             // 
             // colid_tipoIngreso
             // 
@@ -255,8 +270,8 @@ namespace LOSA.Calidad.LoteConfConsumo
             this.coldias.Name = "coldias";
             this.coldias.OptionsColumn.AllowEdit = false;
             this.coldias.Visible = true;
-            this.coldias.VisibleIndex = 5;
-            this.coldias.Width = 40;
+            this.coldias.VisibleIndex = 6;
+            this.coldias.Width = 49;
             // 
             // colcode_sap
             // 
@@ -265,16 +280,34 @@ namespace LOSA.Calidad.LoteConfConsumo
             this.colcode_sap.OptionsColumn.AllowEdit = false;
             this.colcode_sap.Visible = true;
             this.colcode_sap.VisibleIndex = 1;
-            this.colcode_sap.Width = 58;
+            this.colcode_sap.Width = 50;
             // 
             // colfecha_vence
             // 
+            this.colfecha_vence.ColumnEdit = this.repositoryEditarFechaVenc;
+            this.colfecha_vence.DisplayFormat.FormatString = "d";
+            this.colfecha_vence.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colfecha_vence.FieldName = "fecha_vence";
             this.colfecha_vence.Name = "colfecha_vence";
-            this.colfecha_vence.OptionsColumn.AllowEdit = false;
+            this.colfecha_vence.OptionsColumn.ReadOnly = true;
             this.colfecha_vence.Visible = true;
-            this.colfecha_vence.VisibleIndex = 4;
-            this.colfecha_vence.Width = 71;
+            this.colfecha_vence.VisibleIndex = 5;
+            this.colfecha_vence.Width = 79;
+            // 
+            // repositoryEditarFechaVenc
+            // 
+            this.repositoryEditarFechaVenc.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            this.repositoryEditarFechaVenc.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.repositoryEditarFechaVenc.Name = "repositoryEditarFechaVenc";
+            this.repositoryEditarFechaVenc.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.repositoryEditarFechaVenc.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryEditarFechaVenc_ButtonClick);
+            // 
+            // colid_lote_alosy
+            // 
+            this.colid_lote_alosy.FieldName = "id_lote_alosy";
+            this.colid_lote_alosy.Name = "colid_lote_alosy";
             // 
             // frmConfigLoteConsumoFirst
             // 
@@ -294,6 +327,7 @@ namespace LOSA.Calidad.LoteConfConsumo
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsConfigLoteConsumo1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryEditarFechaVenc)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,5 +357,7 @@ namespace LOSA.Calidad.LoteConfConsumo
         private DevExpress.XtraGrid.Columns.GridColumn coldias;
         private DevExpress.XtraGrid.Columns.GridColumn colcode_sap;
         private DevExpress.XtraGrid.Columns.GridColumn colfecha_vence;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryEditarFechaVenc;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_lote_alosy;
     }
 }

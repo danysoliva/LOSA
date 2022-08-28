@@ -1,6 +1,8 @@
 ﻿using ACS.Classes;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
 using LOSA.Clases;
+using LOSA.RecepcionMP;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,7 +43,7 @@ namespace LOSA.Calidad.LoteConfConsumo
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_detalle_lotes_configurados_por_mp", con);
+                SqlCommand cmd = new SqlCommand("sp_get_detalle_lotes_configurados_por_mpv2", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@idmp", pidRM);
                 dsConfigLoteConsumo1.config_lote.Clear();
@@ -71,6 +73,18 @@ namespace LOSA.Calidad.LoteConfConsumo
 
             if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 gridControl1.ExportToXlsx(dialog.FileName);
+        }
+
+        private void repositoryEditarFechaVenc_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)gridControl1.FocusedView;
+            var row = (dsConfigLoteConsumo.config_loteRow)gridView.GetFocusedDataRow();
+
+            frmEditFechaVencimientoIngreso frm = new frmEditFechaVencimientoIngreso(row.id_mp, row.numero_transaccion, row.lote, row.fecha_vence, row.id_lote_alosy, UsuarioLogeado);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                LoadLotesMP(row.id_mp);
+            }
         }
     }
 }

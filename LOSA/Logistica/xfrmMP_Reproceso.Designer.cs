@@ -29,11 +29,12 @@ namespace LOSA.Logistica
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmMP_Reproceso));
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.txtCantidadTarimasTotal = new DevExpress.XtraEditors.TextEdit();
             this.glTipoTransaccion = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.tipotransaccioneskardexBindingSource = new System.Windows.Forms.BindingSource();
+            this.tipotransaccioneskardexBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsRecepcionMPx1 = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -42,7 +43,7 @@ namespace LOSA.Logistica
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtPeso = new DevExpress.XtraEditors.TextEdit();
             this.gridLookUpEditPresentacion = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.presentacionesBindingSource = new System.Windows.Forms.BindingSource();
+            this.presentacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gvLookUpEditPresentacion = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -60,7 +61,7 @@ namespace LOSA.Logistica
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.slueMP = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.mPReprocesoBindingSource = new System.Windows.Forms.BindingSource();
+            this.mPReprocesoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsLogistica2 = new LOSA.Logistica.dsLogistica2();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -68,7 +69,7 @@ namespace LOSA.Logistica
             this.cmdGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
-            this.proveedoresBindingSource = new System.Windows.Forms.BindingSource();
+            this.proveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtCantidadT = new DevExpress.XtraEditors.SpinEdit();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -575,6 +576,7 @@ namespace LOSA.Logistica
             this.gridView2.GridControl = this.gridControl1;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsView.ShowGroupPanel = false;
+            this.gridView2.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView2_CellValueChanging);
             // 
             // collote
             // 
