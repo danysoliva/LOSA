@@ -25,6 +25,24 @@ namespace LOSA.RecepcionMP
         public frmAjustesKardex(UserLogin pUserLogueado)
         {
             InitializeComponent();
+            switch (pUserLogueado.Idnivel)
+            {
+                case 1://Basic View
+                    cmdGuardar.Visible = false;
+                    break;
+                case 2://Basic No Autorization
+                    cmdGuardar.Visible = false;
+                    break;
+                case 3://Medium Autorization
+
+                    break;
+                case 4://Depth With Delta
+                    break;
+                case 5://Depth Without Delta
+                    break;
+                default:
+                    break;
+            }
             LoadPresentaciones();
             LoadTipoTransaccion();
             LoadNumeroTransaccion();

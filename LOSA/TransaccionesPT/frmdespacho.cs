@@ -25,6 +25,24 @@ namespace LOSA.TransaccionesPT
         public frmdespacho(UserLogin Puser)
         {
             InitializeComponent();
+            switch (Puser.Idnivel)
+            {
+                case 1://Basic View
+                    cmdAddOrdeCargaManual.Visible = false;
+                    break;
+                case 2://Basic No Autorization
+                    cmdAddOrdeCargaManual.Visible = false;
+                    break;
+                case 3://Medium Autorization
+
+                    break;
+                case 4://Depth With Delta
+                    break;
+                case 5://Depth Without Delta
+                    break;
+                default:
+                    break;
+            }
             UsuarioLogeado = Puser;
             load_desicion();
         }

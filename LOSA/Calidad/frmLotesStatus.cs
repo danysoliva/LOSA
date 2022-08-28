@@ -32,8 +32,14 @@ namespace LOSA.Calidad
         {
             InitializeComponent();
             DpLocal = new DataOperations();
-            dtFechaDesde.DateTime = DpLocal.Now().AddMonths(-1);
-            dtFechaHasta.DateTime = DpLocal.Now();
+            dtFechaDesdeObservacion.DateTime =
+            dtFechaDesdeDisponibles.DateTime = DpLocal.Now().AddDays(-3);
+
+            dtFechaHastaObservacion.DateTime =
+            dtFechaHastaDisponibles.DateTime = DpLocal.Now().AddDays(1);
+            
+
+
             UsuarioLogeado = Puser;
             LoadTarimasAvailables();
             LoadTarimasObs();
@@ -65,7 +71,7 @@ namespace LOSA.Calidad
             }
             else
             {
-                if (dtFechaDesde.DateTime.Year >= 2010)
+                if (dtFechaDesdeDisponibles.DateTime.Year >= 2010)
                 {
                     try
                     {
@@ -76,8 +82,8 @@ namespace LOSA.Calidad
                         SqlCommand cmd = new SqlCommand("sp_get_tarimas_habilitadas_calidad_V5", con);
                         cmd.CommandType = CommandType.StoredProcedure;
 
-                        cmd.Parameters.AddWithValue("@desde", dtFechaDesde.DateTime);
-                        cmd.Parameters.AddWithValue("@hasta", dtFechaHasta.DateTime);
+                        cmd.Parameters.AddWithValue("@desde", dtFechaDesdeDisponibles.DateTime);
+                        cmd.Parameters.AddWithValue("@hasta", dtFechaHastaDisponibles.DateTime);
                         dsCalidad1.tarimas_disponibles.Clear();
                         SqlDataAdapter adat = new SqlDataAdapter(cmd);
                         adat.Fill(dsCalidad1.tarimas_disponibles);
@@ -97,22 +103,73 @@ namespace LOSA.Calidad
 
         private void LoadTarimasObs()
         {
-            try
-            {
-                DataOperations dp = new DataOperations();
-                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                con.Open();
+            //try
+            //{
+            //    DataOperations dp = new DataOperations();
+            //    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+            //    con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_tarimas_obs_calidad_v2", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                dsCalidad1.tarimas_obs.Clear();
-                SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                adat.Fill(dsCalidad1.tarimas_obs);
-                con.Close();
-            }
-            catch (Exception ec)
+            //    SqlCommand cmd = new SqlCommand("sp_get_tarimas_obs_calidad_v2", con);
+            //    cmd.CommandType = CommandType.StoredProcedure;
+            //    dsCalidad1.tarimas_obs.Clear();
+            //    SqlDataAdapter adat = new SqlDataAdapter(cmd);
+            //    adat.Fill(dsCalidad1.tarimas_obs);
+            //    con.Close();
+            //}
+            //catch (Exception ec)
+            //{
+            //    CajaDialogo.Error(ec.Message);
+            //}
+
+            if (toggleSwitchVerTodos_Observacion.IsOn)
             {
-                CajaDialogo.Error(ec.Message);
+                try
+                {
+                    DataOperations dp = new DataOperations();
+                    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                    con.Open();
+
+                    SqlCommand cmd = new SqlCommand("sp_get_tarimas_obs_calidad_v2", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    dsCalidad1.tarimas_obs.Clear();
+                    SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                    adat.Fill(dsCalidad1.tarimas_obs);
+                    con.Close();
+                }
+                catch (Exception ec)
+                {
+                    CajaDialogo.Error(ec.Message);
+                }
+            }
+            else
+            {
+                if (dtFechaDesdeObservacion.DateTime.Year >= 2010)
+                {
+                    try
+                    {
+                        DataOperations dp = new DataOperations();
+                        SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                        con.Open();
+
+                        SqlCommand cmd = new SqlCommand("sp_get_tarimas_obs_calidad_v3", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@desde", dtFechaDesdeObservacion.DateTime);
+                        cmd.Parameters.AddWithValue("@hasta", dtFechaHastaObservacion.DateTime);
+                        dsCalidad1.tarimas_obs.Clear();
+                        SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                        adat.Fill(dsCalidad1.tarimas_obs);
+                        con.Close();
+
+                    }
+                    catch (Exception ec)
+                    {
+                        CajaDialogo.Error(ec.Message);
+                    }
+                }
+                else
+                {
+                    CajaDialogo.Error("Debe ingresar un rango de fecha valido!");
+                }
             }
         }
 
@@ -1834,14 +1891,28 @@ namespace LOSA.Calidad
         {
             if (toggleSwitchVerTodos_Disponibles.IsOn)
             
-                dtFechaHasta.Enabled = dtFechaDesde.Enabled = false;
+                dtFechaHastaDisponibles.Enabled = dtFechaDesdeDisponibles.Enabled = false;
             else
-                dtFechaHasta.Enabled = dtFechaDesde.Enabled = true;
+                dtFechaHastaDisponibles.Enabled = dtFechaDesdeDisponibles.Enabled = true;
         }
 
         private void cmdRefresh_Click(object sender, EventArgs e)
         {
             LoadTarimasAvailables();
+        }
+
+        private void cmdRefreshObservacion_Click(object sender, EventArgs e)
+        {
+            LoadTarimasObs();
+        }
+
+        private void toggleSwitchVerTodos_Observacion_Toggled(object sender, EventArgs e)
+        {
+            if (toggleSwitchVerTodos_Observacion.IsOn)
+
+                dtFechaDesdeObservacion.Enabled = dtFechaHastaObservacion.Enabled = false;
+            else
+                dtFechaHastaObservacion.Enabled = dtFechaDesdeObservacion.Enabled = true;
         }
     }
 }
