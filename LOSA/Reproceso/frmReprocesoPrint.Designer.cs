@@ -208,15 +208,11 @@ namespace LOSA.Reproceso
             this.gvPT.CustomizationFormBounds = new System.Drawing.Rectangle(-1315, 297, 260, 332);
             this.gvPT.DetailHeight = 284;
             this.gvPT.GridControl = this.gridControl1;
-            this.gvPT.GroupCount = 1;
             this.gvPT.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "peso", null, "(Peso: SUMA={0:0.##.##} Kg)")});
             this.gvPT.Name = "gvPT";
             this.gvPT.OptionsView.ShowAutoFilterRow = true;
             this.gvPT.OptionsView.ShowFooter = true;
-            this.gvPT.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.collote_materia_prima, DevExpress.Data.ColumnSortOrder.Ascending),
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colfecha_ingreso, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gvPT.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gvPT_CellValueChanged);
             // 
             // colid
@@ -254,7 +250,7 @@ namespace LOSA.Reproceso
             this.colfecha_ingreso.Name = "colfecha_ingreso";
             this.colfecha_ingreso.OptionsColumn.AllowEdit = false;
             this.colfecha_ingreso.Visible = true;
-            this.colfecha_ingreso.VisibleIndex = 2;
+            this.colfecha_ingreso.VisibleIndex = 3;
             this.colfecha_ingreso.Width = 128;
             // 
             // colnumero_transaccion
@@ -279,7 +275,7 @@ namespace LOSA.Reproceso
             this.colcodigo_barra.Name = "colcodigo_barra";
             this.colcodigo_barra.OptionsColumn.AllowEdit = false;
             this.colcodigo_barra.Visible = true;
-            this.colcodigo_barra.VisibleIndex = 1;
+            this.colcodigo_barra.VisibleIndex = 2;
             this.colcodigo_barra.Width = 152;
             // 
             // colcantidad
@@ -293,7 +289,7 @@ namespace LOSA.Reproceso
             this.colcantidad.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cantidad", "SUMA={0:0.##} Ud")});
             this.colcantidad.Visible = true;
-            this.colcantidad.VisibleIndex = 6;
+            this.colcantidad.VisibleIndex = 7;
             this.colcantidad.Width = 112;
             // 
             // colnum
@@ -312,7 +308,7 @@ namespace LOSA.Reproceso
             this.collote_materia_prima.Name = "collote_materia_prima";
             this.collote_materia_prima.OptionsColumn.AllowEdit = false;
             this.collote_materia_prima.Visible = true;
-            this.collote_materia_prima.VisibleIndex = 3;
+            this.collote_materia_prima.VisibleIndex = 1;
             this.collote_materia_prima.Width = 119;
             // 
             // colfecha_vencimiento
@@ -321,7 +317,7 @@ namespace LOSA.Reproceso
             this.colfecha_vencimiento.Name = "colfecha_vencimiento";
             this.colfecha_vencimiento.OptionsColumn.AllowEdit = false;
             this.colfecha_vencimiento.Visible = true;
-            this.colfecha_vencimiento.VisibleIndex = 4;
+            this.colfecha_vencimiento.VisibleIndex = 5;
             this.colfecha_vencimiento.Width = 100;
             // 
             // colfecha_produccion_materia_prima
@@ -330,7 +326,7 @@ namespace LOSA.Reproceso
             this.colfecha_produccion_materia_prima.Name = "colfecha_produccion_materia_prima";
             this.colfecha_produccion_materia_prima.OptionsColumn.AllowEdit = false;
             this.colfecha_produccion_materia_prima.Visible = true;
-            this.colfecha_produccion_materia_prima.VisibleIndex = 3;
+            this.colfecha_produccion_materia_prima.VisibleIndex = 4;
             this.colfecha_produccion_materia_prima.Width = 156;
             // 
             // colestado_tarima
@@ -355,7 +351,7 @@ namespace LOSA.Reproceso
             this.colpresentacion.Name = "colpresentacion";
             this.colpresentacion.OptionsColumn.AllowEdit = false;
             this.colpresentacion.Visible = true;
-            this.colpresentacion.VisibleIndex = 5;
+            this.colpresentacion.VisibleIndex = 6;
             this.colpresentacion.Width = 138;
             // 
             // colpeso
@@ -368,7 +364,7 @@ namespace LOSA.Reproceso
             this.colpeso.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "peso", "SUMA={0:0.##.##} Kg")});
             this.colpeso.Visible = true;
-            this.colpeso.VisibleIndex = 7;
+            this.colpeso.VisibleIndex = 8;
             this.colpeso.Width = 115;
             // 
             // colid_tarima_reproceso
@@ -384,7 +380,7 @@ namespace LOSA.Reproceso
             this.gridColumn1.ColumnEdit = this.repositoryItemButtonImprimir;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 9;
+            this.gridColumn1.VisibleIndex = 10;
             this.gridColumn1.Width = 66;
             // 
             // repositoryItemButtonImprimir
@@ -418,7 +414,7 @@ namespace LOSA.Reproceso
             this.colseleccionado.FieldName = "seleccionado";
             this.colseleccionado.Name = "colseleccionado";
             this.colseleccionado.Visible = true;
-            this.colseleccionado.VisibleIndex = 10;
+            this.colseleccionado.VisibleIndex = 11;
             this.colseleccionado.Width = 77;
             // 
             // gridColumn3
@@ -427,7 +423,7 @@ namespace LOSA.Reproceso
             this.gridColumn3.ColumnEdit = this.repositoryEditar;
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 8;
+            this.gridColumn3.VisibleIndex = 9;
             // 
             // repositoryEditar
             // 

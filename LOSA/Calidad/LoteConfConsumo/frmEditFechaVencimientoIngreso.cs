@@ -58,7 +58,7 @@ namespace LOSA.Calidad.LoteConfConsumo
             {
                 SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("sp_update_fecha_venc_ingresos", conn);
+                SqlCommand cmd = new SqlCommand("sp_update_fecha_venc_ingresos2", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_ingreso", Convert.ToInt32(txtNumIngreso.Text));
                 cmd.Parameters.AddWithValue("@id_lote_alosy",id_lote_alosy);
@@ -66,6 +66,7 @@ namespace LOSA.Calidad.LoteConfConsumo
                 cmd.Parameters.AddWithValue("@fecha_anterior", Convert.ToDateTime(fecha_anterior));
                 cmd.Parameters.AddWithValue("@fecha_nueva",dtFechaVencimiento.EditValue);
                 cmd.Parameters.AddWithValue("@id_user", UsuarioLogeado.Id);
+                cmd.Parameters.AddWithValue("@lote",txtLoteMP.Text);
                 cmd.ExecuteNonQuery();
 
                 this.DialogResult = DialogResult.OK;

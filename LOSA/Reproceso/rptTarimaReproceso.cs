@@ -37,7 +37,15 @@ namespace LOSA.Reproceso
                 tar2.RecuperarTarimaPT(id_tarima_PT);
                 if (tar2.ProductoTerminadoName == null)
                 {
-                    lblNombreProducto.Text = tar1.MateriaPrima;
+                    LotePT PT = new LotePT();
+                    if (PT.RecuperarRegistro(Convert.ToInt32(tar1.LoteMP)))
+                    {
+                        lblNombreProducto.Text = PT.DescripcionProducto;
+                    }
+                    else
+                    {
+                        lblNombreProducto.Text = tar1.MateriaPrima;
+                    }
                 }
                 else
                 {
