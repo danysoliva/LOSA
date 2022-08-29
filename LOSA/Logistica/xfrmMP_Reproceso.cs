@@ -262,18 +262,25 @@ namespace LOSA.Logistica
 
                     //command = new SqlCommand("sp_insert_ingresos_V5", connection);
                     command.Parameters.Clear();
-                    command.CommandText = "sp_insert_ingresos_V5";
+                    command.CommandText = "sp_insert_ingresos_V6";
                     //command.CommandType = CommandType.StoredProcedure;
                     //command.Transaction = transaction;
                     command.Parameters.AddWithValue("@idheader", id_h_ingreso);
                     command.Parameters.AddWithValue("@numero_transaccion", Convert.ToInt32(txtNumIngreso.Text));
                     command.Parameters.AddWithValue("@itemcode", this.ItemCode);
                     command.Parameters.AddWithValue("@lote_materia_prima", lote_string);
+                    LotePT LotePT = new LotePT();
+                    LotePT.RecuperarRegistro(Convert.ToInt32(lote_string));
+                    int idptReproceso = LotePT.id_pt;
+                    string OrderCodepp = LotePT.OrderCodePP;
+
                     command.Parameters.AddWithValue("@unidadesxtarima", txtCantidadT.EditValue);
                     command.Parameters.AddWithValue("@TotalTarimas", cantTarimas);
                     //command.Parameters.AddWithValue("@pesotarima", dp.ValidateNumberDecimal(txtPeso.Text));
                     command.Parameters.AddWithValue("@fecha_ingreso", dtFechaIngreso.EditValue);
                     command.Parameters.AddWithValue("@id_presentacion", gridLookUpEditPresentacion.EditValue);
+                    command.Parameters.AddWithValue("@idptReproceso", idptReproceso);
+                    command.Parameters.AddWithValue("@OrderCodepp", OrderCodepp);
                     int id_ingreso_ = 0;
 
                     SqlDataReader drx = command.ExecuteReader();
