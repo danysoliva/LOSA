@@ -205,7 +205,7 @@ namespace LOSA.AlmacenesExterno.AjusteInvAlmaExterno
             this.cmdCancelar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdCancelar.Image = global::LOSA.Properties.Resources.close32px1;
             this.cmdCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cmdCancelar.Location = new System.Drawing.Point(244, 304);
+            this.cmdCancelar.Location = new System.Drawing.Point(280, 284);
             this.cmdCancelar.Name = "cmdCancelar";
             this.cmdCancelar.Size = new System.Drawing.Size(105, 42);
             this.cmdCancelar.TabIndex = 12;
@@ -219,7 +219,7 @@ namespace LOSA.AlmacenesExterno.AjusteInvAlmaExterno
             this.cmdguardar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdguardar.Image = global::LOSA.Properties.Resources.floppy_disk32px;
             this.cmdguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cmdguardar.Location = new System.Drawing.Point(133, 304);
+            this.cmdguardar.Location = new System.Drawing.Point(169, 284);
             this.cmdguardar.Name = "cmdguardar";
             this.cmdguardar.Size = new System.Drawing.Size(105, 42);
             this.cmdguardar.TabIndex = 11;
@@ -234,7 +234,7 @@ namespace LOSA.AlmacenesExterno.AjusteInvAlmaExterno
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(536, 358);
+            this.ClientSize = new System.Drawing.Size(536, 335);
             this.Controls.Add(this.cmdCancelar);
             this.Controls.Add(this.cmdguardar);
             this.Controls.Add(this.txtLoteMP);
