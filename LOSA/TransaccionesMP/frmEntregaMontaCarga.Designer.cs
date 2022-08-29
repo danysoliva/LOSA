@@ -123,7 +123,7 @@
             // 
             this.btnResumenTarimas.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.btnResumenTarimas.Appearance.Options.UseFont = true;
-            this.btnResumenTarimas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnprueba.ImageOptions.Image")));
+            this.btnResumenTarimas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnResumenTarimas.ImageOptions.Image")));
             this.btnResumenTarimas.Location = new System.Drawing.Point(323, 365);
             this.btnResumenTarimas.Name = "btnResumenTarimas";
             this.btnResumenTarimas.Size = new System.Drawing.Size(274, 67);

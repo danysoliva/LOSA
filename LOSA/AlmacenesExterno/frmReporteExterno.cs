@@ -56,7 +56,6 @@ namespace LOSA.AlmacenesExterno
         }
         public void load_InventarioAlmacenExterno_x_MP()
         {
-
             string query = @"sp_get_existencia_almacen_externo";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             try
@@ -72,7 +71,6 @@ namespace LOSA.AlmacenesExterno
             }
             catch (Exception ex)
             {
-
                 CajaDialogo.Error(ex.Message);
             }
         }
