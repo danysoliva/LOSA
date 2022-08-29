@@ -739,6 +739,12 @@
     <Compile Include="Calidad\LoteConfConsumo\frmConfigLoteConsumoFirst.Designer.cs">
       <DependentUpon>frmConfigLoteConsumoFirst.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\LoteConfConsumo\frmEditFechaVencimientoIngreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\LoteConfConsumo\frmEditFechaVencimientoIngreso.Designer.cs">
+      <DependentUpon>frmEditFechaVencimientoIngreso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\LoteConfConsumo\frmSearchMP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -3225,6 +3231,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\LoteConfConsumo\frmConfigLoteConsumoFirst.resx">
       <DependentUpon>frmConfigLoteConsumoFirst.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\LoteConfConsumo\frmEditFechaVencimientoIngreso.resx">
+      <DependentUpon>frmEditFechaVencimientoIngreso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\LoteConfConsumo\frmSearchMP.resx">
       <DependentUpon>frmSearchMP.cs</DependentUpon>
