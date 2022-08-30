@@ -262,6 +262,12 @@ namespace LOSA.RecepcionMP
             var gridView = (GridView)gridControl1.FocusedView;
             var row = (dsRecepcionMPx.lista_tarimasRow)gridView.GetFocusedDataRow();
 
+
+            //if (row.fecha_ingreso > )
+            //{
+
+            //}
+
             string mensaje = "";
             bool Error = false;
             switch (row.id_estado_tarima)
