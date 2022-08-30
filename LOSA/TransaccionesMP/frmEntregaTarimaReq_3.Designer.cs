@@ -31,11 +31,11 @@ namespace LOSA.TransaccionesMP
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEntregaTarimaReq_3));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.lblRequisicionEncontrada = new DevExpress.XtraEditors.LabelControl();
             this.txtRequisicion = new DevExpress.XtraEditors.ButtonEdit();
@@ -94,6 +94,7 @@ namespace LOSA.TransaccionesMP
             this.colasignado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColSeleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.cmdLotesProximosVencerMP = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtRequisicion.Properties)).BeginInit();
             this.panelNotificacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
@@ -120,7 +121,7 @@ namespace LOSA.TransaccionesMP
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.cmdHome.Location = new System.Drawing.Point(453, 16);
+            this.cmdHome.Location = new System.Drawing.Point(488, 16);
             this.cmdHome.Name = "cmdHome";
             this.cmdHome.Size = new System.Drawing.Size(175, 48);
             this.cmdHome.TabIndex = 7;
@@ -134,9 +135,9 @@ namespace LOSA.TransaccionesMP
             this.lblRequisicionEncontrada.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRequisicionEncontrada.Appearance.Options.UseFont = true;
             this.lblRequisicionEncontrada.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblRequisicionEncontrada.Location = new System.Drawing.Point(12, 116);
+            this.lblRequisicionEncontrada.Location = new System.Drawing.Point(12, 119);
             this.lblRequisicionEncontrada.Name = "lblRequisicionEncontrada";
-            this.lblRequisicionEncontrada.Size = new System.Drawing.Size(622, 37);
+            this.lblRequisicionEncontrada.Size = new System.Drawing.Size(657, 37);
             this.lblRequisicionEncontrada.TabIndex = 103;
             // 
             // txtRequisicion
@@ -145,7 +146,7 @@ namespace LOSA.TransaccionesMP
             this.txtRequisicion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRequisicion.EditValue = "";
-            this.txtRequisicion.Location = new System.Drawing.Point(182, 66);
+            this.txtRequisicion.Location = new System.Drawing.Point(182, 73);
             this.txtRequisicion.Name = "txtRequisicion";
             this.txtRequisicion.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRequisicion.Properties.Appearance.Options.UseFont = true;
@@ -153,7 +154,7 @@ namespace LOSA.TransaccionesMP
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph)});
             this.txtRequisicion.Properties.MaxLength = 20;
             this.txtRequisicion.Properties.NullText = "Escanee o selecciona una tarima";
-            this.txtRequisicion.Size = new System.Drawing.Size(257, 44);
+            this.txtRequisicion.Size = new System.Drawing.Size(259, 44);
             this.txtRequisicion.TabIndex = 101;
             this.txtRequisicion.ToolTip = "Hola";
             this.txtRequisicion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRequisicion_KeyDown);
@@ -164,7 +165,7 @@ namespace LOSA.TransaccionesMP
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(3, 73);
+            this.labelControl3.Location = new System.Drawing.Point(3, 80);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(173, 37);
             this.labelControl3.TabIndex = 102;
@@ -178,7 +179,7 @@ namespace LOSA.TransaccionesMP
             this.panelNotificacion.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelNotificacion.Location = new System.Drawing.Point(0, 686);
             this.panelNotificacion.Name = "panelNotificacion";
-            this.panelNotificacion.Size = new System.Drawing.Size(638, 71);
+            this.panelNotificacion.Size = new System.Drawing.Size(673, 71);
             this.panelNotificacion.TabIndex = 104;
             // 
             // lblMensaje
@@ -186,10 +187,10 @@ namespace LOSA.TransaccionesMP
             this.lblMensaje.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblMensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMensaje.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMensaje.Location = new System.Drawing.Point(3, 5);
             this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(630, 59);
+            this.lblMensaje.Size = new System.Drawing.Size(665, 59);
             this.lblMensaje.TabIndex = 0;
             // 
             // grd_data
@@ -200,7 +201,7 @@ namespace LOSA.TransaccionesMP
             this.grd_data.Location = new System.Drawing.Point(0, 0);
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
-            this.grd_data.Size = new System.Drawing.Size(620, 245);
+            this.grd_data.Size = new System.Drawing.Size(652, 245);
             this.grd_data.TabIndex = 105;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
@@ -333,7 +334,7 @@ namespace LOSA.TransaccionesMP
             this.gcTarima.Location = new System.Drawing.Point(12, 205);
             this.gcTarima.MainView = this.gvTarima;
             this.gcTarima.Name = "gcTarima";
-            this.gcTarima.Size = new System.Drawing.Size(614, 193);
+            this.gcTarima.Size = new System.Drawing.Size(654, 193);
             this.gcTarima.TabIndex = 110;
             this.gcTarima.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTarima});
@@ -601,7 +602,7 @@ namespace LOSA.TransaccionesMP
             this.txtTarima.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTarima.EditValue = "";
-            this.txtTarima.Location = new System.Drawing.Point(195, 159);
+            this.txtTarima.Location = new System.Drawing.Point(182, 159);
             this.txtTarima.Name = "txtTarima";
             this.txtTarima.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTarima.Properties.Appearance.Options.UseFont = true;
@@ -609,7 +610,7 @@ namespace LOSA.TransaccionesMP
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph)});
             this.txtTarima.Properties.MaxLength = 20;
             this.txtTarima.Properties.NullText = "Escanee o selecciona una tarima";
-            this.txtTarima.Size = new System.Drawing.Size(257, 44);
+            this.txtTarima.Size = new System.Drawing.Size(259, 44);
             this.txtTarima.TabIndex = 107;
             this.txtTarima.ToolTip = "Hola";
             this.txtTarima.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTarima_KeyDown);
@@ -622,7 +623,7 @@ namespace LOSA.TransaccionesMP
             this.cmdSelectTarima.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdSelectTarima.ImageOptions.Image = global::LOSA.Properties.Resources.tap;
             this.cmdSelectTarima.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.cmdSelectTarima.Location = new System.Drawing.Point(458, 159);
+            this.cmdSelectTarima.Location = new System.Drawing.Point(447, 159);
             this.cmdSelectTarima.Name = "cmdSelectTarima";
             this.cmdSelectTarima.Size = new System.Drawing.Size(62, 44);
             this.cmdSelectTarima.TabIndex = 108;
@@ -654,7 +655,7 @@ namespace LOSA.TransaccionesMP
             this.cmdLiquidos.Appearance.Options.UseFont = true;
             this.cmdLiquidos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdLiquidos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdLiquidos.ImageOptions.Image")));
-            this.cmdLiquidos.Location = new System.Drawing.Point(272, 16);
+            this.cmdLiquidos.Location = new System.Drawing.Point(307, 16);
             this.cmdLiquidos.Name = "cmdLiquidos";
             this.cmdLiquidos.Size = new System.Drawing.Size(175, 48);
             this.cmdLiquidos.TabIndex = 111;
@@ -671,7 +672,7 @@ namespace LOSA.TransaccionesMP
             this.xtraTabControl1.Location = new System.Drawing.Point(8, 404);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(626, 285);
+            this.xtraTabControl1.Size = new System.Drawing.Size(658, 285);
             this.xtraTabControl1.TabIndex = 112;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -681,7 +682,7 @@ namespace LOSA.TransaccionesMP
             // 
             this.xtraTabPage1.Controls.Add(this.grd_data);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(620, 245);
+            this.xtraTabPage1.Size = new System.Drawing.Size(652, 245);
             this.xtraTabPage1.Text = "MP Entregada";
             // 
             // xtraTabPage2
@@ -853,18 +854,33 @@ namespace LOSA.TransaccionesMP
             // cmdSeleccionar
             // 
             this.cmdSeleccionar.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.cmdSeleccionar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdSeleccionar.Name = "cmdSeleccionar";
             this.cmdSeleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdSeleccionar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdSeleccionar_ButtonClick);
+            // 
+            // cmdLotesProximosVencerMP
+            // 
+            this.cmdLotesProximosVencerMP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdLotesProximosVencerMP.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdLotesProximosVencerMP.Appearance.Options.UseFont = true;
+            this.cmdLotesProximosVencerMP.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdLotesProximosVencerMP.ImageOptions.SvgImage")));
+            this.cmdLotesProximosVencerMP.Location = new System.Drawing.Point(478, 159);
+            this.cmdLotesProximosVencerMP.Name = "cmdLotesProximosVencerMP";
+            this.cmdLotesProximosVencerMP.Size = new System.Drawing.Size(188, 44);
+            this.cmdLotesProximosVencerMP.TabIndex = 113;
+            this.cmdLotesProximosVencerMP.Text = "Orden Lotes MP \r\nUltima Tarima Escaneada";
+            this.cmdLotesProximosVencerMP.Click += new System.EventHandler(this.cmdLotesProximosVencerMP_Click);
             // 
             // frmEntregaTarimaReq_3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(638, 757);
+            this.ClientSize = new System.Drawing.Size(673, 757);
+            this.Controls.Add(this.txtRequisicion);
+            this.Controls.Add(this.cmdLotesProximosVencerMP);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.cmdLiquidos);
             this.Controls.Add(this.gcTarima);
@@ -873,12 +889,10 @@ namespace LOSA.TransaccionesMP
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.panelNotificacion);
             this.Controls.Add(this.lblRequisicionEncontrada);
-            this.Controls.Add(this.txtRequisicion);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.cmdHome);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmEntregaTarimaReq_3";
-            this.Text = "frmEntregaTarimaReq_3";
+            this.ShowIcon = false;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Activated += new System.EventHandler(this.frmEntregaTarimaReq_3_Activated);
             this.Load += new System.EventHandler(this.frmEntregaTarimaReq_3_Load);
@@ -962,5 +976,6 @@ namespace LOSA.TransaccionesMP
         private DevExpress.XtraGrid.Columns.GridColumn colIsMicro;
         private DevExpress.XtraGrid.Columns.GridColumn colitemcode;
         private DevExpress.XtraGrid.Columns.GridColumn colmp_name;
+        private DevExpress.XtraEditors.SimpleButton cmdLotesProximosVencerMP;
     }
 }
