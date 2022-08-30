@@ -29,16 +29,6 @@ namespace LOSA.AlmacenesExterno
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.gcTransferencia = new DevExpress.XtraGrid.GridControl();
             this.dsSalidasAlmacenesExternos1 = new LOSA.AlmacenesExterno.dsSalidasAlmacenesExternos();
@@ -52,11 +42,6 @@ namespace LOSA.AlmacenesExterno
             this.colenable = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDocEntry = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcode_sap = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.txtCantIngresar = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
-            this.ceSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
-            this.btnBuscarProd = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.luBodegaFrom = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.luBodegaTO = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -71,29 +56,14 @@ namespace LOSA.AlmacenesExterno
             this.colbodega_in = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colbodega_out = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collote = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
-            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
-            this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.repositoryItemLookUpEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.lblNumTrans = new DevExpress.XtraEditors.LabelControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.gcTransferencia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSalidasAlmacenesExternos1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTransferencia)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCantIngresar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ceSeleccionar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBuscarProd)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.luBodegaFrom)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.luBodegaTO)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             this.SuspendLayout();
@@ -108,7 +78,7 @@ namespace LOSA.AlmacenesExterno
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(1047, 12);
+            this.btnAtras.Location = new System.Drawing.Point(1059, 12);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(153, 47);
             this.btnAtras.TabIndex = 44;
@@ -124,13 +94,7 @@ namespace LOSA.AlmacenesExterno
             this.gcTransferencia.MainView = this.gvTransferencia;
             this.gcTransferencia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gcTransferencia.Name = "gcTransferencia";
-            this.gcTransferencia.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.txtCantIngresar,
-            this.ceSeleccionar,
-            this.btnBuscarProd,
-            this.luBodegaFrom,
-            this.luBodegaTO});
-            this.gcTransferencia.Size = new System.Drawing.Size(1194, 184);
+            this.gcTransferencia.Size = new System.Drawing.Size(1217, 184);
             this.gcTransferencia.TabIndex = 45;
             this.gcTransferencia.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTransferencia});
@@ -200,17 +164,17 @@ namespace LOSA.AlmacenesExterno
             this.colpeso.FieldName = "peso";
             this.colpeso.Name = "colpeso";
             this.colpeso.OptionsColumn.AllowEdit = false;
-            this.colpeso.Visible = true;
-            this.colpeso.VisibleIndex = 3;
             // 
             // colunidades
             // 
             this.colunidades.Caption = "Cantidad";
-            this.colunidades.DisplayFormat.FormatString = "{0:0.##.##} Kg";
+            this.colunidades.DisplayFormat.FormatString = "{0:0.##.##} Ud";
             this.colunidades.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colunidades.FieldName = "unidades";
             this.colunidades.Name = "colunidades";
             this.colunidades.OptionsColumn.AllowEdit = false;
+            this.colunidades.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "unidades", "SUMA={0:0.##.##} Ud")});
             this.colunidades.Visible = true;
             this.colunidades.VisibleIndex = 2;
             // 
@@ -233,59 +197,17 @@ namespace LOSA.AlmacenesExterno
             this.colcode_sap.Visible = true;
             this.colcode_sap.VisibleIndex = 0;
             // 
-            // txtCantIngresar
-            // 
-            this.txtCantIngresar.AutoHeight = false;
-            this.txtCantIngresar.Name = "txtCantIngresar";
-            // 
-            // ceSeleccionar
-            // 
-            this.ceSeleccionar.AutoHeight = false;
-            this.ceSeleccionar.Name = "ceSeleccionar";
-            // 
-            // btnBuscarProd
-            // 
-            this.btnBuscarProd.AutoHeight = false;
-            editorButtonImageOptions1.Image = global::LOSA.Properties.Resources.trazabilidad;
-            this.btnBuscarProd.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.btnBuscarProd.Name = "btnBuscarProd";
-            // 
-            // luBodegaFrom
-            // 
-            this.luBodegaFrom.AutoHeight = false;
-            this.luBodegaFrom.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.luBodegaFrom.DisplayMember = "WhsCode";
-            this.luBodegaFrom.Name = "luBodegaFrom";
-            this.luBodegaFrom.ValueMember = "WhsCode";
-            // 
-            // luBodegaTO
-            // 
-            this.luBodegaTO.AutoHeight = false;
-            this.luBodegaTO.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.luBodegaTO.DisplayMember = "WhsCode";
-            this.luBodegaTO.Name = "luBodegaTO";
-            this.luBodegaTO.ValueMember = "WhsCode";
-            // 
             // gridControl1
             // 
             this.gridControl1.DataMember = "Salida_Almacen_D_Lote";
             this.gridControl1.DataSource = this.dsSalidasAlmacenesExternos1;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gridControl1.Location = new System.Drawing.Point(0, 309);
+            this.gridControl1.Location = new System.Drawing.Point(0, 297);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemTextEdit1,
-            this.repositoryItemCheckEdit1,
-            this.repositoryItemButtonEdit1,
-            this.repositoryItemLookUpEdit1,
-            this.repositoryItemLookUpEdit2});
-            this.gridControl1.Size = new System.Drawing.Size(1205, 262);
+            this.gridControl1.Size = new System.Drawing.Size(1217, 357);
             this.gridControl1.TabIndex = 46;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -331,9 +253,11 @@ namespace LOSA.AlmacenesExterno
             this.colpeso1.Caption = "Cantidad";
             this.colpeso1.FieldName = "peso";
             this.colpeso1.Name = "colpeso1";
+            this.colpeso1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "peso", "SUMA={0:#.##}")});
             this.colpeso1.Visible = true;
-            this.colpeso1.VisibleIndex = 3;
-            this.colpeso1.Width = 176;
+            this.colpeso1.VisibleIndex = 5;
+            this.colpeso1.Width = 184;
             // 
             // colunidades1
             // 
@@ -371,8 +295,8 @@ namespace LOSA.AlmacenesExterno
             this.colfecha_vencimiento.FieldName = "fecha_vencimiento";
             this.colfecha_vencimiento.Name = "colfecha_vencimiento";
             this.colfecha_vencimiento.Visible = true;
-            this.colfecha_vencimiento.VisibleIndex = 4;
-            this.colfecha_vencimiento.Width = 222;
+            this.colfecha_vencimiento.VisibleIndex = 3;
+            this.colfecha_vencimiento.Width = 225;
             // 
             // colfecha_fabricacion
             // 
@@ -382,8 +306,8 @@ namespace LOSA.AlmacenesExterno
             this.colfecha_fabricacion.FieldName = "fecha_fabricacion";
             this.colfecha_fabricacion.Name = "colfecha_fabricacion";
             this.colfecha_fabricacion.Visible = true;
-            this.colfecha_fabricacion.VisibleIndex = 5;
-            this.colfecha_fabricacion.Width = 272;
+            this.colfecha_fabricacion.VisibleIndex = 4;
+            this.colfecha_fabricacion.Width = 276;
             // 
             // colbodega_in
             // 
@@ -391,7 +315,7 @@ namespace LOSA.AlmacenesExterno
             this.colbodega_in.Name = "colbodega_in";
             this.colbodega_in.Visible = true;
             this.colbodega_in.VisibleIndex = 1;
-            this.colbodega_in.Width = 128;
+            this.colbodega_in.Width = 136;
             // 
             // colbodega_out
             // 
@@ -399,7 +323,7 @@ namespace LOSA.AlmacenesExterno
             this.colbodega_out.Name = "colbodega_out";
             this.colbodega_out.Visible = true;
             this.colbodega_out.VisibleIndex = 2;
-            this.colbodega_out.Width = 150;
+            this.colbodega_out.Width = 152;
             // 
             // collote
             // 
@@ -408,43 +332,7 @@ namespace LOSA.AlmacenesExterno
             this.collote.Name = "collote";
             this.collote.Visible = true;
             this.collote.VisibleIndex = 0;
-            this.collote.Width = 221;
-            // 
-            // repositoryItemTextEdit1
-            // 
-            this.repositoryItemTextEdit1.AutoHeight = false;
-            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
-            // 
-            // repositoryItemCheckEdit1
-            // 
-            this.repositoryItemCheckEdit1.AutoHeight = false;
-            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
-            // 
-            // repositoryItemButtonEdit1
-            // 
-            this.repositoryItemButtonEdit1.AutoHeight = false;
-            editorButtonImageOptions2.Image = global::LOSA.Properties.Resources.trazabilidad;
-            this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
-            // 
-            // repositoryItemLookUpEdit1
-            // 
-            this.repositoryItemLookUpEdit1.AutoHeight = false;
-            this.repositoryItemLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemLookUpEdit1.DisplayMember = "WhsCode";
-            this.repositoryItemLookUpEdit1.Name = "repositoryItemLookUpEdit1";
-            this.repositoryItemLookUpEdit1.ValueMember = "WhsCode";
-            // 
-            // repositoryItemLookUpEdit2
-            // 
-            this.repositoryItemLookUpEdit2.AutoHeight = false;
-            this.repositoryItemLookUpEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemLookUpEdit2.DisplayMember = "WhsCode";
-            this.repositoryItemLookUpEdit2.Name = "repositoryItemLookUpEdit2";
-            this.repositoryItemLookUpEdit2.ValueMember = "WhsCode";
+            this.collote.Width = 226;
             // 
             // labelControl1
             // 
@@ -475,14 +363,14 @@ namespace LOSA.AlmacenesExterno
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1205, 86);
+            this.panelControl1.Size = new System.Drawing.Size(1217, 86);
             this.panelControl1.TabIndex = 49;
             // 
             // xfrmMovimientoStockDetalle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1205, 571);
+            this.ClientSize = new System.Drawing.Size(1217, 654);
             this.ControlBox = false;
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.gridControl1);
@@ -493,18 +381,8 @@ namespace LOSA.AlmacenesExterno
             ((System.ComponentModel.ISupportInitialize)(this.gcTransferencia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSalidasAlmacenesExternos1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTransferencia)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCantIngresar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ceSeleccionar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBuscarProd)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.luBodegaFrom)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.luBodegaTO)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
@@ -517,18 +395,8 @@ namespace LOSA.AlmacenesExterno
         private DevExpress.XtraEditors.SimpleButton btnAtras;
         private DevExpress.XtraGrid.GridControl gcTransferencia;
         private DevExpress.XtraGrid.Views.Grid.GridView gvTransferencia;
-        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit txtCantIngresar;
-        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit ceSeleccionar;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnBuscarProd;
-        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit luBodegaFrom;
-        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit luBodegaTO;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
-        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
-        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit1;
-        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit2;
         private dsSalidasAlmacenesExternos dsSalidasAlmacenesExternos1;
         private DevExpress.XtraGrid.Columns.GridColumn colid;
         private DevExpress.XtraGrid.Columns.GridColumn colid_mp;

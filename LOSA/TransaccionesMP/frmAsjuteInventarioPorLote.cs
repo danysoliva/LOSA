@@ -53,6 +53,7 @@ namespace LOSA.TransaccionesMP
                 radioLoteExistente.Checked = true;
                 radioLoteNuevo.Checked = false;
                 SearchLoteAuto(pIdMP, pLote);
+                ItemCode = MateriaPrimaActual.CodeMP_SAP;
 
                 //frmLotePorMP frm = new frmLotePorMP(Id_MP);
                 //if (this.MdiParent != null)
@@ -346,7 +347,7 @@ namespace LOSA.TransaccionesMP
                         cmd.Parameters.AddWithValue("@ud_entrada", 0);
                         cmd.Parameters.AddWithValue("@ud_salida", spinEditUnidades.EditValue);
                         cmd.Parameters.AddWithValue("@id_referencia_operacion", Id_Lote_Alosy);
-                        cmd.Parameters.AddWithValue("id_lote_alosy", Id_Lote_Alosy);
+                        cmd.Parameters.AddWithValue("@id_lote_alosy", Id_Lote_Alosy);
                         cmd.Parameters.AddWithValue("@lote", txtNumLote.Text);
                         cmd.Parameters.AddWithValue("@id_mp", Id_MP);
                         cmd.Parameters.AddWithValue("@itemcode", ItemCode);

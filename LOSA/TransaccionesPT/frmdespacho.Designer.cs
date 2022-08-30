@@ -493,12 +493,13 @@
             this.cmdAddOrdeCargaManual.Appearance.Options.UseBackColor = true;
             this.cmdAddOrdeCargaManual.Appearance.Options.UseFont = true;
             this.cmdAddOrdeCargaManual.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdAddOrdeCargaManual.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.ImageOptions.Image")));
+            this.cmdAddOrdeCargaManual.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdAddOrdeCargaManual.ImageOptions.Image")));
             this.cmdAddOrdeCargaManual.Location = new System.Drawing.Point(12, 32);
             this.cmdAddOrdeCargaManual.Name = "cmdAddOrdeCargaManual";
             this.cmdAddOrdeCargaManual.Size = new System.Drawing.Size(178, 56);
             this.cmdAddOrdeCargaManual.TabIndex = 40;
             this.cmdAddOrdeCargaManual.Text = "Orden de \r\nCarga Manual";
+            this.cmdAddOrdeCargaManual.Visible = false;
             this.cmdAddOrdeCargaManual.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // tggOpen
