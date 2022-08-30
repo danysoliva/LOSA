@@ -277,8 +277,16 @@ namespace LOSA.TransaccionesMP
                         command.Parameters.AddWithValue("@itemcode", ItemCode);
                         command.Parameters.AddWithValue("@itemname", txtMP_Name.Text);
                         command.Parameters.AddWithValue("@usuario_creado", UsuarioLogueado.Id);
-                        command.Parameters.AddWithValue("@cardname", buttonProveedores.Text);
-                        command.Parameters.AddWithValue("@cardcode", cardcode);
+                        if (ItemCode == "MP00080" || ItemCode == "MP00081")//Reproceso Tilapia - Camaron
+                        {
+                            command.Parameters.AddWithValue("@cardname", DBNull.Value);
+                            command.Parameters.AddWithValue("@cardcode", DBNull.Value);
+                        }
+                        else
+                        {
+                            command.Parameters.AddWithValue("@cardname", buttonProveedores.Text);
+                            command.Parameters.AddWithValue("@cardcode", cardcode);
+                        }
 
                         id_lote_h = Convert.ToInt32(command.ExecuteScalar());
 
