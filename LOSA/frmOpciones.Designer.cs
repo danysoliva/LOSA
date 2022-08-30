@@ -842,6 +842,7 @@
             this.btnMPReproceso.Size = new System.Drawing.Size(199, 42);
             this.btnMPReproceso.TabIndex = 40;
             this.btnMPReproceso.Text = " Ingreso MP Reproceso";
+            this.btnMPReproceso.Visible = false;
             this.btnMPReproceso.Click += new System.EventHandler(this.btnMPReproceso_Click);
             // 
             // btn_salidapt
