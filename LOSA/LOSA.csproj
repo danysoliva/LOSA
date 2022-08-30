@@ -919,6 +919,7 @@
     <Compile Include="Clases\LoteAlmacenExternoD.cs" />
     <Compile Include="Clases\LoteExterno.cs" />
     <Compile Include="Clases\LoteMP.cs" />
+    <Compile Include="Clases\LoteMP_ProximoVencer.cs" />
     <Compile Include="Clases\LotePT.cs" />
     <Compile Include="Clases\MateriaPrima.cs" />
     <Compile Include="Clases\MicroIngrediente.cs" />
@@ -2494,6 +2495,11 @@
     <Compile Include="Tools\frmInputBox.Designer.cs">
       <DependentUpon>frmInputBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\DataSet\dsLotesProxVencer.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLotesProxVencer.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesMP\dsGranelLoteactivo.cs">
       <DependentUpon>dsGranelLoteactivo.xsd</DependentUpon>
     </Compile>
@@ -2622,6 +2628,12 @@
     </Compile>
     <Compile Include="TransaccionesMP\frmOrdenFabricacionDetalle.Designer.cs">
       <DependentUpon>frmOrdenFabricacionDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmProximosA_vencer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmProximosA_vencer.Designer.cs">
+      <DependentUpon>frmProximosA_vencer.cs</DependentUpon>
     </Compile>
     <Compile Include="TransaccionesMP\frmReporteInventarioKardexGeneral.cs">
       <SubType>Form</SubType>
@@ -3983,6 +3995,9 @@
     <EmbeddedResource Include="TransaccionesMP\frmOrdenFabricacionDetalle.resx">
       <DependentUpon>frmOrdenFabricacionDetalle.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmProximosA_vencer.resx">
+      <DependentUpon>frmProximosA_vencer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmReporteInventarioKardexGeneral.resx">
       <DependentUpon>frmReporteInventarioKardexGeneral.cs</DependentUpon>
     </EmbeddedResource>
@@ -4357,6 +4372,17 @@
     </None>
     <None Include="Requisiciones\dSReportes.xss">
       <DependentUpon>dSReportes.xsd</DependentUpon>
+    </None>
+    <None Include="TransaccionesMP\DataSet\dsLotesProxVencer.xsc">
+      <DependentUpon>dsLotesProxVencer.xsd</DependentUpon>
+    </None>
+    <None Include="TransaccionesMP\DataSet\dsLotesProxVencer.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLotesProxVencer.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TransaccionesMP\DataSet\dsLotesProxVencer.xss">
+      <DependentUpon>dsLotesProxVencer.xsd</DependentUpon>
     </None>
     <None Include="TransaccionesMP\dsGranelLoteactivo.xsc">
       <DependentUpon>dsGranelLoteactivo.xsd</DependentUpon>

@@ -158,22 +158,22 @@ namespace LOSA
 
         private void frmMain_Click(object sender, EventArgs e)
         {
-            Teclado.cerrarTeclado();
+            //Teclado.cerrarTeclado();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Teclado.cerrarTeclado();
+            //Teclado.cerrarTeclado();
         }
 
         private void labelControl2_Click(object sender, EventArgs e)
         {
-            Teclado.cerrarTeclado();
+            //Teclado.cerrarTeclado();
         }
 
         private void labelControl1_Click(object sender, EventArgs e)
         {
-            Teclado.cerrarTeclado();
+            //Teclado.cerrarTeclado();
         }
 
         private void txtClave_Enter(object sender, EventArgs e)
@@ -337,6 +337,11 @@ namespace LOSA
             frmOpciones frm = new frmOpciones(Log1);
             frm.MdiParent = this.MdiParent;
             frm.Show();
+        }
+
+        private void cmdAbrirTeclado_Click(object sender, EventArgs e)
+        {
+            Teclado.abrirTeclado();
         }
     }
 }

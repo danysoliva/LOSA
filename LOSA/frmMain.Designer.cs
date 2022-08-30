@@ -30,6 +30,7 @@ namespace LOSA
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.cmdCerrar = new DevExpress.XtraEditors.SimpleButton();
             this.cmdLogin = new DevExpress.XtraEditors.SimpleButton();
             this.txtClave = new DevExpress.XtraEditors.TextEdit();
@@ -45,6 +46,7 @@ namespace LOSA
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.SaltarLoginPRD = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdAbrirTeclado = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtClave.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsuario.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -265,6 +267,19 @@ namespace LOSA
             this.SaltarLoginPRD.Visible = false;
             this.SaltarLoginPRD.Click += new System.EventHandler(this.SaltarLoginPRD_Click);
             // 
+            // cmdAbrirTeclado
+            // 
+            this.cmdAbrirTeclado.Appearance.BackColor = System.Drawing.Color.White;
+            this.cmdAbrirTeclado.Appearance.Options.UseBackColor = true;
+            this.cmdAbrirTeclado.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdAbrirTeclado.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
+            this.cmdAbrirTeclado.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton3.ImageOptions.SvgImage")));
+            this.cmdAbrirTeclado.Location = new System.Drawing.Point(530, 160);
+            this.cmdAbrirTeclado.Name = "cmdAbrirTeclado";
+            this.cmdAbrirTeclado.Size = new System.Drawing.Size(54, 35);
+            this.cmdAbrirTeclado.TabIndex = 19;
+            this.cmdAbrirTeclado.Click += new System.EventHandler(this.cmdAbrirTeclado_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -272,6 +287,7 @@ namespace LOSA
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(638, 578);
             this.ControlBox = false;
+            this.Controls.Add(this.cmdAbrirTeclado);
             this.Controls.Add(this.SaltarLoginPRD);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.cmdMicros);
@@ -317,6 +333,7 @@ namespace LOSA
         private SimpleButton cmdMicros;
         private SimpleButton simpleButton2;
         private SimpleButton SaltarLoginPRD;
+        private SimpleButton cmdAbrirTeclado;
     }
 }
 

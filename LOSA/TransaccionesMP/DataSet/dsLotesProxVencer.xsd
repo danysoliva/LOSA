@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsLotesProxVencer" targetNamespace="http://tempuri.org/dsLotesProxVencer.xsd" xmlns:mstns="http://tempuri.org/dsLotesProxVencer.xsd" xmlns="http://tempuri.org/dsLotesProxVencer.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsLotesProxVencer" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsLotesProxVencer" msprop:Generator_UserDSName="dsLotesProxVencer">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="lotes_mp_prox_vencer" msprop:Generator_TableClassName="lotes_mp_prox_vencerDataTable" msprop:Generator_TableVarName="tablelotes_mp_prox_vencer" msprop:Generator_TablePropName="lotes_mp_prox_vencer" msprop:Generator_RowDeletingName="lotes_mp_prox_vencerRowDeleting" msprop:Generator_RowChangingName="lotes_mp_prox_vencerRowChanging" msprop:Generator_RowEvHandlerName="lotes_mp_prox_vencerRowChangeEventHandler" msprop:Generator_RowDeletedName="lotes_mp_prox_vencerRowDeleted" msprop:Generator_UserTableName="lotes_mp_prox_vencer" msprop:Generator_RowChangedName="lotes_mp_prox_vencerRowChanged" msprop:Generator_RowEvArgName="lotes_mp_prox_vencerRowChangeEvent" msprop:Generator_RowClassName="lotes_mp_prox_vencerRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Linea" msprop:Generator_ColumnVarNameInTable="columnLinea" msprop:Generator_ColumnPropNameInRow="Linea" msprop:Generator_ColumnPropNameInTable="LineaColumn" msprop:Generator_UserColumnName="Linea" type="xs:int" minOccurs="0" />
+              <xs:element name="itemcode" msdata:Caption="Item Code" msprop:Generator_ColumnVarNameInTable="columnitemcode" msprop:Generator_ColumnPropNameInRow="itemcode" msprop:Generator_ColumnPropNameInTable="itemcodeColumn" msprop:Generator_UserColumnName="itemcode" type="xs:string" minOccurs="0" />
+              <xs:element name="nombre_comercial" msdata:Caption="Item Name" msprop:Generator_ColumnVarNameInTable="columnnombre_comercial" msprop:Generator_ColumnPropNameInRow="nombre_comercial" msprop:Generator_ColumnPropNameInTable="nombre_comercialColumn" msprop:Generator_UserColumnName="nombre_comercial" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha_vence" msdata:Caption="Fecha Vence" msprop:Generator_ColumnVarNameInTable="columnfecha_vence" msprop:Generator_ColumnPropNameInRow="fecha_vence" msprop:Generator_ColumnPropNameInTable="fecha_venceColumn" msprop:Generator_UserColumnName="fecha_vence" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="id_mp" msprop:Generator_ColumnVarNameInTable="columnid_mp" msprop:Generator_ColumnPropNameInRow="id_mp" msprop:Generator_ColumnPropNameInTable="id_mpColumn" msprop:Generator_UserColumnName="id_mp" type="xs:int" minOccurs="0" />
+              <xs:element name="lote" msdata:Caption="Lote" msprop:Generator_ColumnVarNameInTable="columnlote" msprop:Generator_ColumnPropNameInRow="lote" msprop:Generator_ColumnPropNameInTable="loteColumn" msprop:Generator_UserColumnName="lote" type="xs:string" minOccurs="0" />
+              <xs:element name="dias" msdata:Caption="Dias para Vencer" msprop:Generator_ColumnVarNameInTable="columndias" msprop:Generator_ColumnPropNameInRow="dias" msprop:Generator_ColumnPropNameInTable="diasColumn" msprop:Generator_UserColumnName="dias" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
