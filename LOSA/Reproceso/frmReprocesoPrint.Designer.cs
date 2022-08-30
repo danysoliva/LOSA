@@ -448,7 +448,7 @@ namespace LOSA.Reproceso
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(1103, 23);
             this.labelControl2.TabIndex = 89;
-            this.labelControl2.Text = "Producto Terminado para Reproceso";
+            this.labelControl2.Text = "Materia Prima Reproceso - Por Lote";
             // 
             // btnPrintSeleccionados
             // 

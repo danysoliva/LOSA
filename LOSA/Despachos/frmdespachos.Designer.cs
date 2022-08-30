@@ -251,6 +251,7 @@
             this.btnNuevoOrdenCarga.Size = new System.Drawing.Size(127, 57);
             this.btnNuevoOrdenCarga.TabIndex = 37;
             this.btnNuevoOrdenCarga.Text = "Orden de \r\ncarga manual";
+            this.btnNuevoOrdenCarga.Visible = false;
             this.btnNuevoOrdenCarga.Click += new System.EventHandler(this.btnNuevoOrdenCarga_Click);
             // 
             // frmdespachos
