@@ -561,21 +561,29 @@ namespace LOSA.TransaccionesMP
 
         private void spinEditUnidades_EditValueChanged(object sender, EventArgs e)
         {
-            decimal cantidad_ = 0;
-            try
+            
+        }
+
+        private void spinEditUnidades_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
             {
-                cantidad_ = Convert.ToDecimal(spinEditUnidades.EditValue);
+                decimal cantidad_ = 0;
+                try
+                {
+                    cantidad_ = Convert.ToDecimal(spinEditUnidades.EditValue);
+                }
+                catch (Exception ex)
+                {
+                    CajaDialogo.Error(ex.Message);
+                }
+                if (radioLoteNuevo.Checked)
+                {
+                    spinEditPesoKg.EditValue = (factorValue * cantidad_).ToString();
+                }
+                else
+                    spinEditPesoKg.EditValue = (FactorUnidades * cantidad_).ToString();
             }
-            catch (Exception ex)
-            {
-                CajaDialogo.Error(ex.Message);
-            }
-            if (radioLoteNuevo.Checked)
-            {
-                spinEditPesoKg.EditValue = (factorValue * cantidad_).ToString();
-            }
-            else
-                spinEditPesoKg.EditValue = (FactorUnidades * cantidad_).ToString();
         }
 
         private void txtNumLote_Enter(object sender, EventArgs e)
