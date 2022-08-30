@@ -633,25 +633,25 @@ namespace LOSA.TransaccionesMP
                             CajaDialogo.Error(ec.Message);
                         }
 
-                        //Validar Lotes proximos a vencer
-                        LoteMP_ProximoVencer LoteMp1 = new LoteMP_ProximoVencer();
-                        if (LoteMp1.RecuperarRegistro(tarimaEncontrada.Id_materiaprima))
-                        {
-                            if (tarimaEncontrada.LoteMP.Trim() != LoteMp1.LoteMP.Trim())
-                            {
-                                mensaje = "Solo se puede entregar el siguiente lote de MP a vencer!" +
-                                              "\nPor favor consulte la lista de lotes proximos a vencer en la seccion de arriba." +
-                                              " En caso de requerir entregar un lote distinto al proximo a vencer, debe contactar al departamento de Calidad...";
-                                //frmVentanaMsjTarimaAlimentacion frm =
-                                //    new frmVentanaMsjTarimaAlimentacion(mensaje, tarimaEncontrada.CodigoBarra);
-                                //frm.ShowDialog();
-                                lblMensaje.Text = mensaje;
-                                panelNotificacion.BackColor = Color.Red;
-                                timerLimpiarMensaje.Enabled = true;
-                                timerLimpiarMensaje.Start();
-                                return;
-                            }
-                        }
+                        ////Validar Lotes proximos a vencer
+                        //LoteMP_ProximoVencer LoteMp1 = new LoteMP_ProximoVencer();
+                        //if (LoteMp1.RecuperarRegistro(tarimaEncontrada.Id_materiaprima))
+                        //{
+                        //    if (tarimaEncontrada.LoteMP.Trim() != LoteMp1.LoteMP.Trim())
+                        //    {
+                        //        mensaje = "Solo se puede entregar el siguiente lote de MP a vencer!" +
+                        //                      "\nPor favor consulte la lista de lotes proximos a vencer en la seccion de arriba." +
+                        //                      " En caso de requerir entregar un lote distinto al proximo a vencer, debe contactar al departamento de Calidad...";
+                        //        //frmVentanaMsjTarimaAlimentacion frm =
+                        //        //    new frmVentanaMsjTarimaAlimentacion(mensaje, tarimaEncontrada.CodigoBarra);
+                        //        //frm.ShowDialog();
+                        //        lblMensaje.Text = mensaje;
+                        //        panelNotificacion.BackColor = Color.Red;
+                        //        timerLimpiarMensaje.Enabled = true;
+                        //        timerLimpiarMensaje.Start();
+                        //        return;
+                        //    }
+                        //}
                         
 
                         frmResumenToEntregar frms = new frmResumenToEntregar(ExistenciaTM
