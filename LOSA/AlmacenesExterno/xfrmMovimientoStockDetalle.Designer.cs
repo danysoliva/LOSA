@@ -78,7 +78,7 @@ namespace LOSA.AlmacenesExterno
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(1059, 12);
+            this.btnAtras.Location = new System.Drawing.Point(1065, 12);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(153, 47);
             this.btnAtras.TabIndex = 44;
@@ -158,12 +158,14 @@ namespace LOSA.AlmacenesExterno
             // 
             // colpeso
             // 
-            this.colpeso.Caption = "Total";
+            this.colpeso.Caption = "Total Kg";
             this.colpeso.DisplayFormat.FormatString = "{0:0.##.##} Kg";
             this.colpeso.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colpeso.FieldName = "peso";
             this.colpeso.Name = "colpeso";
             this.colpeso.OptionsColumn.AllowEdit = false;
+            this.colpeso.Visible = true;
+            this.colpeso.VisibleIndex = 2;
             // 
             // colunidades
             // 
@@ -175,8 +177,6 @@ namespace LOSA.AlmacenesExterno
             this.colunidades.OptionsColumn.AllowEdit = false;
             this.colunidades.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "unidades", "SUMA={0:0.##.##} Ud")});
-            this.colunidades.Visible = true;
-            this.colunidades.VisibleIndex = 2;
             // 
             // colenable
             // 
@@ -203,11 +203,11 @@ namespace LOSA.AlmacenesExterno
             this.gridControl1.DataSource = this.dsSalidasAlmacenesExternos1;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gridControl1.Location = new System.Drawing.Point(0, 297);
+            this.gridControl1.Location = new System.Drawing.Point(0, 303);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1217, 357);
+            this.gridControl1.Size = new System.Drawing.Size(1223, 357);
             this.gridControl1.TabIndex = 46;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -250,20 +250,28 @@ namespace LOSA.AlmacenesExterno
             // 
             // colpeso1
             // 
-            this.colpeso1.Caption = "Cantidad";
+            this.colpeso1.Caption = "Cantidad Kg";
+            this.colpeso1.DisplayFormat.FormatString = "{0:0.##.##} Kg";
+            this.colpeso1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colpeso1.FieldName = "peso";
             this.colpeso1.Name = "colpeso1";
             this.colpeso1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "peso", "SUMA={0:#.##}")});
             this.colpeso1.Visible = true;
-            this.colpeso1.VisibleIndex = 5;
+            this.colpeso1.VisibleIndex = 6;
             this.colpeso1.Width = 184;
             // 
             // colunidades1
             // 
-            this.colunidades1.Caption = "Cantidad";
+            this.colunidades1.Caption = "Cantidad Ud";
+            this.colunidades1.DisplayFormat.FormatString = "{0:0.##.##} Ud";
+            this.colunidades1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colunidades1.FieldName = "unidades";
             this.colunidades1.Name = "colunidades1";
+            this.colunidades1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "unidades", "SUMA={0:#.##}")});
+            this.colunidades1.Visible = true;
+            this.colunidades1.VisibleIndex = 5;
             this.colunidades1.Width = 190;
             // 
             // colfecha
@@ -363,14 +371,14 @@ namespace LOSA.AlmacenesExterno
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1217, 86);
+            this.panelControl1.Size = new System.Drawing.Size(1223, 86);
             this.panelControl1.TabIndex = 49;
             // 
             // xfrmMovimientoStockDetalle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1217, 654);
+            this.ClientSize = new System.Drawing.Size(1223, 660);
             this.ControlBox = false;
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.gridControl1);
