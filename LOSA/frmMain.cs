@@ -153,7 +153,7 @@ namespace LOSA
 
         private void txtUsuario_Enter(object sender, EventArgs e)
         {
-            Teclado.abrirTeclado();
+            //Teclado.abrirTeclado();
         }
 
         private void frmMain_Click(object sender, EventArgs e)
