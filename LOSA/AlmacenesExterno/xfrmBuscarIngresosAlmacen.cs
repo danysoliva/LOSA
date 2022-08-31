@@ -39,7 +39,7 @@ namespace LOSA.AlmacenesExterno
 
                 dsSalidasAlmacenesExternos.Ingresos_almacenes_externos_existentes.Clear();
 
-                SqlDataAdapter da = new SqlDataAdapter("[dbo].[sp_get_ingresos_almacenes_externos_disponibles]", cnx);
+                SqlDataAdapter da = new SqlDataAdapter("[dbo].[sp_get_ingresos_almacenes_externos_disponiblesV2]", cnx);
                 da.Fill(dsSalidasAlmacenesExternos.Ingresos_almacenes_externos_existentes);
                 cnx.Close();
 
@@ -49,9 +49,7 @@ namespace LOSA.AlmacenesExterno
          public   Ingreso_Almacenes_Externos_H ingreso_h   = new Ingreso_Almacenes_Externos_H();
         private void btnSeleccionar_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-
             RowSelected();
-
         }
 
         private void gvIngreso_DoubleClick(object sender, EventArgs e)
@@ -63,7 +61,6 @@ namespace LOSA.AlmacenesExterno
         {
             try
             {
-
                 var gv = (GridView)gcIngreso.FocusedView;
                 var row = (dsSalidasAlmacenesExternos.Ingresos_almacenes_externos_existentesRow)gv.GetDataRow(gv.FocusedRowHandle);
 
@@ -72,6 +69,7 @@ namespace LOSA.AlmacenesExterno
                 ingreso_h.ID = row.id;
                 ingreso_h.DocEntry = row.DocEntrySAP;
                 ingreso_h.BodegaIN = row.bodega;
+                ingreso_h.Id_presentacion = row.id_presentacion;
 
                 this.DialogResult = DialogResult.OK;
             }

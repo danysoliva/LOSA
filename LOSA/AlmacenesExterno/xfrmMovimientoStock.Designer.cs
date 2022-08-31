@@ -28,21 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gcTransferencia = new DevExpress.XtraGrid.GridControl();
-            this.transferenciaStockBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.transferenciaStockBindingSource = new System.Windows.Forms.BindingSource();
             this.dsSalidasAlmacenesExternos = new LOSA.AlmacenesExterno.dsSalidasAlmacenesExternos();
             this.gvTransferencia = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colcodeItem = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colmp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfrom_almacen = new DevExpress.XtraGrid.Columns.GridColumn();
             this.luBodegaFrom = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.warehouseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.warehouseBindingSource = new System.Windows.Forms.BindingSource();
             this.dsAlmacenesExternos = new LOSA.AlmacenesExterno.dsAlmacenesExternos();
             this.colto_almacen = new DevExpress.XtraGrid.Columns.GridColumn();
             this.luBodegaTO = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
@@ -67,6 +66,7 @@
             this.lueAlmacenDestino = new DevExpress.XtraEditors.LookUpEdit();
             this.btnConfLotes = new DevExpress.XtraEditors.SimpleButton();
             this.txtProveedor = new DevExpress.XtraEditors.MemoEdit();
+            this.colid_presentacion = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gcTransferencia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transferenciaStockBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSalidasAlmacenesExternos)).BeginInit();
@@ -138,7 +138,8 @@
             this.gridColumn2,
             this.gridColumn3,
             this.gridColumn4,
-            this.gridColumn5});
+            this.gridColumn5,
+            this.colid_presentacion});
             this.gvTransferencia.DetailHeight = 284;
             this.gvTransferencia.GridControl = this.gcTransferencia;
             this.gvTransferencia.Name = "gvTransferencia";
@@ -481,6 +482,11 @@
             this.txtProveedor.Size = new System.Drawing.Size(244, 78);
             this.txtProveedor.TabIndex = 50;
             // 
+            // colid_presentacion
+            // 
+            this.colid_presentacion.FieldName = "id_presentacion";
+            this.colid_presentacion.Name = "colid_presentacion";
+            // 
             // xfrmMovimientoStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -560,5 +566,6 @@
         private DevExpress.XtraEditors.SimpleButton btnConfLotes;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraEditors.MemoEdit txtProveedor;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_presentacion;
     }
 }
