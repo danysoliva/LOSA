@@ -472,5 +472,23 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             //    CajaDialogo.Error(ex.Message);
             //}
         }
+
+        private void gvLote_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            var gridview1 = (GridView)gcLote.FocusedView;
+            var row = (dsSalidasAlmacenesExternos.LoteRow)gridView1.GetFocusedDataRow();
+
+            PresentacionX present = new PresentacionX();
+            present.RecuperarRegistro(row.id_presentacion);
+
+            try
+            {
+                row.CantSeleccionada = (dp.ValidateNumberInt32((row.unidade_seleccionadas) * dp.ValidateNumberDecimal(present.Factor)));
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
     }
 }

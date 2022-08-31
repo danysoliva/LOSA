@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmConfLotesSalidaAlmacen));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -37,7 +36,7 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.gcLotesSeleccionados = new DevExpress.XtraGrid.GridControl();
-            this.loteSeleccionadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.loteSeleccionadosBindingSource = new System.Windows.Forms.BindingSource();
             this.dsSalidasAlmacenesExternos = new LOSA.AlmacenesExterno.dsSalidasAlmacenesExternos();
             this.gvLotesSeleccionados = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -61,7 +60,7 @@
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.gcLote = new DevExpress.XtraGrid.GridControl();
-            this.loteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.loteBindingSource = new System.Windows.Forms.BindingSource();
             this.gvLote = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcantidad = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -87,9 +86,9 @@
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.lotesDisponiblesSalidaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lotesDisponiblesSalidaBindingSource = new System.Windows.Forms.BindingSource();
             this.gcIngreso = new DevExpress.XtraGrid.GridControl();
-            this.transferenciaStockBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.transferenciaStockBindingSource = new System.Windows.Forms.BindingSource();
             this.gvIngreso = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colItemCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCantidadIngresada = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -109,6 +108,7 @@
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid_presentacion = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcLotesSeleccionados)).BeginInit();
@@ -231,7 +231,7 @@
             this.gridColumn5.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.gridColumn5.AppearanceCell.Options.UseBackColor = true;
             this.gridColumn5.Caption = "Cantidad ";
-            this.gridColumn5.DisplayFormat.FormatString = "{0:N2}";
+            this.gridColumn5.DisplayFormat.FormatString = "{0:0.##.##} Kg";
             this.gridColumn5.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn5.FieldName = "cantidad";
             this.gridColumn5.MinWidth = 21;
@@ -242,14 +242,14 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cantidad", "Total={0:N2}")});
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 3;
-            this.gridColumn5.Width = 117;
+            this.gridColumn5.Width = 106;
             // 
             // gridColumn6
             // 
             this.gridColumn6.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.gridColumn6.AppearanceCell.Options.UseBackColor = true;
             this.gridColumn6.Caption = "Unidades";
-            this.gridColumn6.DisplayFormat.FormatString = "{0:N2}";
+            this.gridColumn6.DisplayFormat.FormatString = "{0:0.##.##} Ud";
             this.gridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn6.FieldName = "unidades";
             this.gridColumn6.MinWidth = 21;
@@ -259,7 +259,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "unidades", "Total={0:N2}")});
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 4;
-            this.gridColumn6.Width = 68;
+            this.gridColumn6.Width = 61;
             // 
             // gridColumn8
             // 
@@ -278,13 +278,13 @@
             this.gridColumn10.OptionsFilter.AllowFilter = false;
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 0;
-            this.gridColumn10.Width = 66;
+            this.gridColumn10.Width = 61;
             // 
             // gridColumn13
             // 
             this.gridColumn13.Caption = "Cant. Seleccionada";
             this.gridColumn13.ColumnEdit = this.repositoryItemTextEdit1;
-            this.gridColumn13.DisplayFormat.FormatString = "{0:N2}";
+            this.gridColumn13.DisplayFormat.FormatString = "{0:0.##.##} Kg";
             this.gridColumn13.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn13.FieldName = "CantSeleccionada";
             this.gridColumn13.MinWidth = 21;
@@ -308,7 +308,7 @@
             this.gridColumn14.OptionsFilter.AllowFilter = false;
             this.gridColumn14.Visible = true;
             this.gridColumn14.VisibleIndex = 5;
-            this.gridColumn14.Width = 54;
+            this.gridColumn14.Width = 49;
             // 
             // gridColumn15
             // 
@@ -352,7 +352,7 @@
             this.gridColumn22.OptionsFilter.AllowFilter = false;
             this.gridColumn22.Visible = true;
             this.gridColumn22.VisibleIndex = 6;
-            this.gridColumn22.Width = 81;
+            this.gridColumn22.Width = 78;
             // 
             // btnDelete2
             // 
@@ -366,6 +366,8 @@
             // gridColumn24
             // 
             this.gridColumn24.Caption = "Unidades Seleccionadas";
+            this.gridColumn24.DisplayFormat.FormatString = "{0:0.##.##} Ud";
+            this.gridColumn24.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn24.FieldName = "unidades_seleccionadas";
             this.gridColumn24.MinWidth = 21;
             this.gridColumn24.Name = "gridColumn24";
@@ -373,7 +375,7 @@
             this.gridColumn24.OptionsFilter.AllowFilter = false;
             this.gridColumn24.Visible = true;
             this.gridColumn24.VisibleIndex = 2;
-            this.gridColumn24.Width = 81;
+            this.gridColumn24.Width = 73;
             // 
             // gridColumn29
             // 
@@ -488,7 +490,8 @@
             this.gridColumn11,
             this.gridColumn12,
             this.gridColumn23,
-            this.gridColumn28});
+            this.gridColumn28,
+            this.colid_presentacion});
             this.gvLote.DetailHeight = 284;
             this.gvLote.GridControl = this.gcLote;
             this.gvLote.Name = "gvLote";
@@ -496,6 +499,7 @@
             this.gvLote.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             this.gvLote.OptionsView.ShowFooter = true;
             this.gvLote.OptionsView.ShowGroupPanel = false;
+            this.gvLote.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gvLote_CellValueChanged);
             // 
             // colid
             // 
@@ -509,7 +513,7 @@
             this.colcantidad.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.colcantidad.AppearanceCell.Options.UseBackColor = true;
             this.colcantidad.Caption = "Cantidad Disponible";
-            this.colcantidad.DisplayFormat.FormatString = "{0:N2}";
+            this.colcantidad.DisplayFormat.FormatString = "{0:0.##.##} Kg";
             this.colcantidad.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colcantidad.FieldName = "cantidad_disponible";
             this.colcantidad.MinWidth = 21;
@@ -527,7 +531,7 @@
             this.colunidades.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.colunidades.AppearanceCell.Options.UseBackColor = true;
             this.colunidades.Caption = "Unidades";
-            this.colunidades.DisplayFormat.FormatString = "{0:N2}";
+            this.colunidades.DisplayFormat.FormatString = "{0:0.##.##} Ud";
             this.colunidades.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colunidades.FieldName = "unidades_disponibles";
             this.colunidades.MinWidth = 21;
@@ -562,11 +566,12 @@
             // 
             this.gridColumn2.Caption = "Cant. Seleccionada";
             this.gridColumn2.ColumnEdit = this.txtCantSeleccionada;
-            this.gridColumn2.DisplayFormat.FormatString = "{0:N2}";
+            this.gridColumn2.DisplayFormat.FormatString = "{0:0.##.##} Kg";
             this.gridColumn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn2.FieldName = "CantSeleccionada";
             this.gridColumn2.MinWidth = 21;
             this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.OptionsFilter.AllowFilter = false;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 3;
@@ -628,7 +633,7 @@
             // gridColumn23
             // 
             this.gridColumn23.Caption = "Unidades Seleccionadas";
-            this.gridColumn23.DisplayFormat.FormatString = "{0:N2}";
+            this.gridColumn23.DisplayFormat.FormatString = "{0:0.##.##} Ud";
             this.gridColumn23.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn23.FieldName = "unidade_seleccionadas";
             this.gridColumn23.MinWidth = 21;
@@ -983,6 +988,11 @@
             // 
             this.gridView1.Name = "gridView1";
             // 
+            // colid_presentacion
+            // 
+            this.colid_presentacion.FieldName = "id_presentacion";
+            this.colid_presentacion.Name = "colid_presentacion";
+            // 
             // xfrmConfLotesSalidaAlmacen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1107,5 +1117,6 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_presentacion;
     }
 }

@@ -25,6 +25,7 @@ namespace LOSA.AlmacenesExterno
         string id_proveedor;
         int docEntry;
         UserLogin UsuarioLogeado;
+        int id_presentacion;
         public xfrmMovimientoStock(UserLogin Puser)
         {
             InitializeComponent();
@@ -129,6 +130,7 @@ namespace LOSA.AlmacenesExterno
                 id_proveedor = frm.ingreso_h.CardCode;
                 docEntry = frm.ingreso_h.DocEntry;
                 lueAlmacenFROM.EditValue = frm.ingreso_h.BodegaIN;
+                id_presentacion = frm.ingreso_h.Id_presentacion; 
                 LoadDetailIngresosExternos();
 
                 ingreso_Almacenes_Externos_H = frm.ingreso_h;
@@ -275,6 +277,7 @@ namespace LOSA.AlmacenesExterno
                     ingresos_Externos_D.IDMP = item.id_mp;
                     ingresos_Externos_D.BodegaIN = lueAlmacenFROM.Text;
                     ingresos_Externos_D.BodegaOUT = lueAlmacenDestino.Text;
+                    
 
                     lista.Add(ingresos_Externos_D);
 

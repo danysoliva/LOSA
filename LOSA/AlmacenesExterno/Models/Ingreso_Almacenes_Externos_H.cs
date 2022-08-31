@@ -14,5 +14,6 @@ namespace LOSA.AlmacenesExterno.Models
         public int DocEntry { get; set; }
         public string BodegaIN { get; set; }
         public string BodegaOUT { get; set; }
+        public int Id_presentacion { get; set; }
     }
 }
