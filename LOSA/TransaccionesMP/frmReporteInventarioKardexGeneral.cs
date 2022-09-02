@@ -190,7 +190,7 @@ namespace LOSA.TransaccionesMP
                     grd_data.ExportToXlsx(dialog.FileName);
                 }
             }
-            if (tabPane1.SelectedPageIndex == 3)
+            if (tabPane1.SelectedPageIndex == 1)
             {//Resumen por Mp y Bodega
                 SaveFileDialog dialog = new SaveFileDialog();
                 dialog.Filter = "Excel File (.xlsx)|*.xlsx";
@@ -198,10 +198,21 @@ namespace LOSA.TransaccionesMP
 
                 if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    gridControl2.ExportToXlsx(dialog.FileName);
+                    grd_data_resumen.ExportToXlsx(dialog.FileName);
                 }
             }
-            if (tabPane1.SelectedPageIndex == 4)
+            if (tabPane1.SelectedPageIndex == 2)
+            {//Resumen por Mp y Bodega
+                SaveFileDialog dialog = new SaveFileDialog();
+                dialog.Filter = "Excel File (.xlsx)|*.xlsx";
+                dialog.FilterIndex = 0;
+
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    gridControl1.ExportToXlsx(dialog.FileName);
+                }
+            }
+            if (tabPane1.SelectedPageIndex == 3)
             {//Resumen por lote
                 SaveFileDialog dialog = new SaveFileDialog();
                 dialog.Filter = "Excel File (.xlsx)|*.xlsx";
@@ -209,7 +220,7 @@ namespace LOSA.TransaccionesMP
 
                 if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    gridReproceso.ExportToXlsx(dialog.FileName);
+                    gridControl2.ExportToXlsx(dialog.FileName);
                 }
             }
             else
@@ -220,7 +231,7 @@ namespace LOSA.TransaccionesMP
 
                 if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    grd_data_resumen.ExportToXlsx(dialog.FileName);
+                    gridReproceso.ExportToXlsx(dialog.FileName);
                 }
             }
 
