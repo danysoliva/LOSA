@@ -2969,6 +2969,12 @@
     <Compile Include="Trazabilidad\frmOC_SAP_View.Designer.cs">
       <DependentUpon>frmOC_SAP_View.cs</DependentUpon>
     </Compile>
+    <Compile Include="Trazabilidad\frmRutasTrazabilidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trazabilidad\frmRutasTrazabilidad.Designer.cs">
+      <DependentUpon>frmRutasTrazabilidad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Trazabilidad\frmTrazabilidadOpciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -3662,6 +3668,7 @@
     <EmbeddedResource Include="Produccion\xfrmCheckActiveBin.resx">
       <DependentUpon>xfrmCheckActiveBin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -4150,6 +4157,9 @@
     <EmbeddedResource Include="Trazabilidad\frmOC_SAP_View.resx">
       <DependentUpon>frmOC_SAP_View.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Trazabilidad\frmRutasTrazabilidad.resx">
+      <DependentUpon>frmRutasTrazabilidad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Trazabilidad\frmTrazabilidadOpciones.resx">
       <DependentUpon>frmTrazabilidadOpciones.cs</DependentUpon>
     </EmbeddedResource>
@@ -4575,6 +4585,8 @@
     <None Include="Resources\step2.png" />
     <None Include="Resources\step3.png" />
     <None Include="Resources\step4.png" />
+    <None Include="Resources\signpost.png" />
+    <None Include="Resources\signpost24X24.png" />
     <Content Include="Resources\tap.png" />
     <None Include="Resources\trazabilidad.png" />
     <None Include="Resources\trucksss.png" />

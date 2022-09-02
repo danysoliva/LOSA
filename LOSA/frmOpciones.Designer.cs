@@ -88,6 +88,7 @@
             this.btnreportes = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
             this.TabCalidad = new DevExpress.XtraTab.XtraTabPage();
+            this.btnRutas = new DevExpress.XtraEditors.SimpleButton();
             this.cmdReporteProximosVencer = new DevExpress.XtraEditors.SimpleButton();
             this.cmdVerConfiguracionLotesVencimientoMP = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton34 = new DevExpress.XtraEditors.SimpleButton();
@@ -994,6 +995,7 @@
             // 
             // TabCalidad
             // 
+            this.TabCalidad.Controls.Add(this.btnRutas);
             this.TabCalidad.Controls.Add(this.cmdReporteProximosVencer);
             this.TabCalidad.Controls.Add(this.cmdVerConfiguracionLotesVencimientoMP);
             this.TabCalidad.Controls.Add(this.simpleButton34);
@@ -1019,6 +1021,21 @@
             this.TabCalidad.PageVisible = false;
             this.TabCalidad.Size = new System.Drawing.Size(772, 518);
             this.TabCalidad.Text = "Calidad";
+            // 
+            // btnRutas
+            // 
+            this.btnRutas.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.btnRutas.Appearance.Options.UseFont = true;
+            this.btnRutas.Appearance.Options.UseTextOptions = true;
+            this.btnRutas.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnRutas.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnRutas.ImageOptions.Image = global::LOSA.Properties.Resources.signpost24X24;
+            this.btnRutas.Location = new System.Drawing.Point(9, 413);
+            this.btnRutas.Name = "btnRutas";
+            this.btnRutas.Size = new System.Drawing.Size(199, 59);
+            this.btnRutas.TabIndex = 47;
+            this.btnRutas.Text = "Rutas de Trazabilidad";
+            this.btnRutas.Click += new System.EventHandler(this.btnRutas_Click);
             // 
             // cmdReporteProximosVencer
             // 
@@ -1720,5 +1737,6 @@
         private DevExpress.XtraEditors.SimpleButton cmdVerConfiguracionLotesVencimientoMP;
         private DevExpress.XtraEditors.SimpleButton cmdLoteActivoGranel;
         private DevExpress.XtraEditors.SimpleButton cmdReporteProximosVencer;
+        private DevExpress.XtraEditors.SimpleButton btnRutas;
     }
 }
