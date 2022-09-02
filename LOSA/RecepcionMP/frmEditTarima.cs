@@ -196,6 +196,7 @@ namespace LOSA.RecepcionMP
             //Validar consumo de tarima en Alimentacion
             ValidarConsumoAlimentacion(IdTarima);
 
+
             try
             {
 

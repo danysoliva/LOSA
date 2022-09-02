@@ -190,6 +190,17 @@ namespace LOSA.TransaccionesMP
                     grd_data.ExportToXlsx(dialog.FileName);
                 }
             }
+            if (tabPane1.SelectedPageIndex == 3)
+            {//Resumen por Mp y Bodega
+                SaveFileDialog dialog = new SaveFileDialog();
+                dialog.Filter = "Excel File (.xlsx)|*.xlsx";
+                dialog.FilterIndex = 0;
+
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    gridControl2.ExportToXlsx(dialog.FileName);
+                }
+            }
             if (tabPane1.SelectedPageIndex == 4)
             {//Resumen por lote
                 SaveFileDialog dialog = new SaveFileDialog();
