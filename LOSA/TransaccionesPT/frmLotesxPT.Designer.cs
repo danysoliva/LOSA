@@ -39,6 +39,7 @@ namespace LOSA.TransaccionesPT
             this.gridLotePT = new DevExpress.XtraGrid.GridControl();
             this.dsPT1 = new LOSA.TransaccionesPT.dsPT();
             this.gvLotePT = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.btnSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colPT_Id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLote_PT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcode_sap = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -47,7 +48,6 @@ namespace LOSA.TransaccionesPT
             this.colid_orden = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPlan_Date = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLotePT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPT1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvLotePT)).BeginInit();
@@ -127,74 +127,6 @@ namespace LOSA.TransaccionesPT
             this.gvLotePT.OptionsView.ShowGroupPanel = false;
             this.gvLotePT.DoubleClick += new System.EventHandler(this.gvLotePT_DoubleClick);
             // 
-            // colPT_Id
-            // 
-            this.colPT_Id.FieldName = "PT_Id";
-            this.colPT_Id.Name = "colPT_Id";
-            // 
-            // colLote_PT
-            // 
-            this.colLote_PT.Caption = "# Lote";
-            this.colLote_PT.FieldName = "Lote_PT";
-            this.colLote_PT.Name = "colLote_PT";
-            this.colLote_PT.OptionsColumn.AllowEdit = false;
-            this.colLote_PT.Visible = true;
-            this.colLote_PT.VisibleIndex = 1;
-            this.colLote_PT.Width = 106;
-            // 
-            // colcode_sap
-            // 
-            this.colcode_sap.Caption = "Codigo SAP";
-            this.colcode_sap.FieldName = "code_sap";
-            this.colcode_sap.Name = "colcode_sap";
-            this.colcode_sap.OptionsColumn.AllowEdit = false;
-            this.colcode_sap.Visible = true;
-            this.colcode_sap.VisibleIndex = 0;
-            this.colcode_sap.Width = 104;
-            // 
-            // colNombre_Comercial
-            // 
-            this.colNombre_Comercial.Caption = "Nombre Comercial";
-            this.colNombre_Comercial.FieldName = "Nombre_Comercial";
-            this.colNombre_Comercial.Name = "colNombre_Comercial";
-            this.colNombre_Comercial.OptionsColumn.AllowEdit = false;
-            this.colNombre_Comercial.Visible = true;
-            this.colNombre_Comercial.VisibleIndex = 2;
-            this.colNombre_Comercial.Width = 124;
-            // 
-            // colDescripcion_Interna
-            // 
-            this.colDescripcion_Interna.Caption = "Nombre";
-            this.colDescripcion_Interna.FieldName = "Descripcion_Interna";
-            this.colDescripcion_Interna.Name = "colDescripcion_Interna";
-            this.colDescripcion_Interna.OptionsColumn.AllowEdit = false;
-            this.colDescripcion_Interna.Width = 101;
-            // 
-            // colid_orden
-            // 
-            this.colid_orden.FieldName = "id_orden";
-            this.colid_orden.Name = "colid_orden";
-            this.colid_orden.OptionsColumn.AllowEdit = false;
-            // 
-            // colPlan_Date
-            // 
-            this.colPlan_Date.Caption = "Fecha de Produccion";
-            this.colPlan_Date.FieldName = "Plan_Date";
-            this.colPlan_Date.Name = "colPlan_Date";
-            this.colPlan_Date.OptionsColumn.AllowEdit = false;
-            this.colPlan_Date.Visible = true;
-            this.colPlan_Date.VisibleIndex = 3;
-            this.colPlan_Date.Width = 152;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Seleccionar";
-            this.gridColumn1.ColumnEdit = this.btnSeleccionar;
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 4;
-            this.gridColumn1.Width = 108;
-            // 
             // btnSeleccionar
             // 
             this.btnSeleccionar.AutoHeight = false;
@@ -204,6 +136,70 @@ namespace LOSA.TransaccionesPT
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnSeleccionar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnSeleccionar_ButtonClick);
+            // 
+            // colPT_Id
+            // 
+            this.colPT_Id.FieldName = "PT_Id";
+            this.colPT_Id.Name = "colPT_Id";
+            // 
+            // colLote_PT
+            // 
+            this.colLote_PT.Caption = "Lote PT";
+            this.colLote_PT.FieldName = "Lote_PT";
+            this.colLote_PT.Name = "colLote_PT";
+            this.colLote_PT.OptionsColumn.AllowEdit = false;
+            this.colLote_PT.Visible = true;
+            this.colLote_PT.VisibleIndex = 0;
+            this.colLote_PT.Width = 79;
+            // 
+            // colcode_sap
+            // 
+            this.colcode_sap.Caption = "Item Code";
+            this.colcode_sap.FieldName = "code_sap";
+            this.colcode_sap.Name = "colcode_sap";
+            this.colcode_sap.OptionsColumn.AllowEdit = false;
+            this.colcode_sap.Visible = true;
+            this.colcode_sap.VisibleIndex = 1;
+            this.colcode_sap.Width = 105;
+            // 
+            // colNombre_Comercial
+            // 
+            this.colNombre_Comercial.Caption = "Nombre PT";
+            this.colNombre_Comercial.FieldName = "Nombre_Comercial";
+            this.colNombre_Comercial.Name = "colNombre_Comercial";
+            this.colNombre_Comercial.OptionsColumn.AllowEdit = false;
+            this.colNombre_Comercial.Visible = true;
+            this.colNombre_Comercial.VisibleIndex = 2;
+            this.colNombre_Comercial.Width = 216;
+            // 
+            // colDescripcion_Interna
+            // 
+            this.colDescripcion_Interna.FieldName = "Descripcion_Interna";
+            this.colDescripcion_Interna.Name = "colDescripcion_Interna";
+            // 
+            // colid_orden
+            // 
+            this.colid_orden.FieldName = "id_orden";
+            this.colid_orden.Name = "colid_orden";
+            // 
+            // colPlan_Date
+            // 
+            this.colPlan_Date.Caption = "Fecha";
+            this.colPlan_Date.FieldName = "Plan_Date";
+            this.colPlan_Date.Name = "colPlan_Date";
+            this.colPlan_Date.OptionsColumn.AllowEdit = false;
+            this.colPlan_Date.Visible = true;
+            this.colPlan_Date.VisibleIndex = 3;
+            this.colPlan_Date.Width = 90;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Seleccionar";
+            this.gridColumn1.ColumnEdit = this.btnSeleccionar;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 4;
+            this.gridColumn1.Width = 104;
             // 
             // frmLotesxPT
             // 

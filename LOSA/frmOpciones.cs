@@ -1024,5 +1024,13 @@ namespace LOSA
                 frm.MdiParent = this.MdiParent;
             frm.Show();
         }
+
+        private void btnRutas_Click(object sender, EventArgs e)
+        {
+            frmRutasTrazabilidad frm = new frmRutasTrazabilidad(this.UsuarioLogeado);
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
     }
 }
