@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmConfLotesSalidaAlmacen));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.gcLotesSeleccionados = new DevExpress.XtraGrid.GridControl();
             this.loteSeleccionadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -62,6 +62,20 @@
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.gcLote = new DevExpress.XtraGrid.GridControl();
             this.gvLote = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcantidad_disponible = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colunidades_disponibles = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_detalle = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collote = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCantSeleccionada = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSeleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnum_line = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colrow_ = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha_vencimiento = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha_produccion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colunidade_seleccionadas = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_ingreso_h = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_presentacion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtCantSeleccionada = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -96,20 +110,6 @@
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcantidad_disponible = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colunidades_disponibles = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colid_detalle = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.collote = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCantSeleccionada = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSeleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colnum_line = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colrow_ = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colfecha_vencimiento = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colfecha_produccion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colunidade_seleccionadas = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colid_ingreso_h = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colid_presentacion = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcLotesSeleccionados)).BeginInit();
@@ -359,9 +359,9 @@
             // btnDelete2
             // 
             this.btnDelete2.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.btnDelete2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnDelete2.Name = "btnDelete2";
             this.btnDelete2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -473,7 +473,7 @@
             this.gvLote.Appearance.FocusedRow.Options.UseFont = true;
             this.gvLote.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.gvLote.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gvLote.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.gvLote.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvLote.Appearance.Row.Options.UseFont = true;
             this.gvLote.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colid,
@@ -497,7 +497,121 @@
             this.gvLote.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             this.gvLote.OptionsView.ShowFooter = true;
             this.gvLote.OptionsView.ShowGroupPanel = false;
-            this.gvLote.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gvLote_CellValueChanged);
+            // 
+            // colid
+            // 
+            this.colid.FieldName = "id";
+            this.colid.Name = "colid";
+            // 
+            // colcantidad_disponible
+            // 
+            this.colcantidad_disponible.Caption = "Cantidad Disponible";
+            this.colcantidad_disponible.DisplayFormat.FormatString = "{0:0.#,#.##} Kg";
+            this.colcantidad_disponible.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colcantidad_disponible.FieldName = "cantidad_disponible";
+            this.colcantidad_disponible.Name = "colcantidad_disponible";
+            this.colcantidad_disponible.OptionsColumn.AllowEdit = false;
+            this.colcantidad_disponible.Visible = true;
+            this.colcantidad_disponible.VisibleIndex = 1;
+            this.colcantidad_disponible.Width = 82;
+            // 
+            // colunidades_disponibles
+            // 
+            this.colunidades_disponibles.Caption = "Unidades Disponibles";
+            this.colunidades_disponibles.DisplayFormat.FormatString = "{0:0.#,#.##} Ud";
+            this.colunidades_disponibles.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colunidades_disponibles.FieldName = "unidades_disponibles";
+            this.colunidades_disponibles.Name = "colunidades_disponibles";
+            this.colunidades_disponibles.OptionsColumn.AllowEdit = false;
+            this.colunidades_disponibles.Visible = true;
+            this.colunidades_disponibles.VisibleIndex = 2;
+            this.colunidades_disponibles.Width = 65;
+            // 
+            // colid_detalle
+            // 
+            this.colid_detalle.FieldName = "id_detalle";
+            this.colid_detalle.Name = "colid_detalle";
+            // 
+            // collote
+            // 
+            this.collote.Caption = "Lote";
+            this.collote.FieldName = "lote";
+            this.collote.Name = "collote";
+            this.collote.OptionsColumn.AllowEdit = false;
+            this.collote.Visible = true;
+            this.collote.VisibleIndex = 0;
+            this.collote.Width = 57;
+            // 
+            // colCantSeleccionada
+            // 
+            this.colCantSeleccionada.Caption = "Cant. Seleccionada";
+            this.colCantSeleccionada.DisplayFormat.FormatString = "{0:0.##.##} Kg";
+            this.colCantSeleccionada.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colCantSeleccionada.FieldName = "CantSeleccionada";
+            this.colCantSeleccionada.Name = "colCantSeleccionada";
+            this.colCantSeleccionada.Visible = true;
+            this.colCantSeleccionada.VisibleIndex = 3;
+            this.colCantSeleccionada.Width = 73;
+            // 
+            // colSeleccionar
+            // 
+            this.colSeleccionar.Caption = "Selecc.";
+            this.colSeleccionar.FieldName = "Seleccionar";
+            this.colSeleccionar.Name = "colSeleccionar";
+            this.colSeleccionar.Visible = true;
+            this.colSeleccionar.VisibleIndex = 7;
+            this.colSeleccionar.Width = 65;
+            // 
+            // colnum_line
+            // 
+            this.colnum_line.FieldName = "num_line";
+            this.colnum_line.Name = "colnum_line";
+            // 
+            // colrow_
+            // 
+            this.colrow_.FieldName = "row_";
+            this.colrow_.Name = "colrow_";
+            // 
+            // colfecha_vencimiento
+            // 
+            this.colfecha_vencimiento.Caption = "Fecha Venc.";
+            this.colfecha_vencimiento.FieldName = "fecha_vencimiento";
+            this.colfecha_vencimiento.Name = "colfecha_vencimiento";
+            this.colfecha_vencimiento.OptionsColumn.AllowEdit = false;
+            this.colfecha_vencimiento.Visible = true;
+            this.colfecha_vencimiento.VisibleIndex = 5;
+            this.colfecha_vencimiento.Width = 55;
+            // 
+            // colfecha_produccion
+            // 
+            this.colfecha_produccion.Caption = "Fecha Prod.";
+            this.colfecha_produccion.FieldName = "fecha_produccion";
+            this.colfecha_produccion.Name = "colfecha_produccion";
+            this.colfecha_produccion.OptionsColumn.AllowEdit = false;
+            this.colfecha_produccion.Visible = true;
+            this.colfecha_produccion.VisibleIndex = 6;
+            this.colfecha_produccion.Width = 55;
+            // 
+            // colunidade_seleccionadas
+            // 
+            this.colunidade_seleccionadas.Caption = "Unidades Seleccionadas";
+            this.colunidade_seleccionadas.DisplayFormat.FormatString = "{0:0.##.##} Ud";
+            this.colunidade_seleccionadas.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colunidade_seleccionadas.FieldName = "unidade_seleccionadas";
+            this.colunidade_seleccionadas.Name = "colunidade_seleccionadas";
+            this.colunidade_seleccionadas.Visible = true;
+            this.colunidade_seleccionadas.VisibleIndex = 4;
+            this.colunidade_seleccionadas.Width = 85;
+            // 
+            // colid_ingreso_h
+            // 
+            this.colid_ingreso_h.FieldName = "id_ingreso_h";
+            this.colid_ingreso_h.Name = "colid_ingreso_h";
+            // 
+            // colid_presentacion
+            // 
+            this.colid_presentacion.FieldName = "id_presentacion";
+            this.colid_presentacion.Name = "colid_presentacion";
             // 
             // txtCantSeleccionada
             // 
@@ -848,122 +962,6 @@
             // gridView1
             // 
             this.gridView1.Name = "gridView1";
-            // 
-            // colid
-            // 
-            this.colid.FieldName = "id";
-            this.colid.Name = "colid";
-            // 
-            // colcantidad_disponible
-            // 
-            this.colcantidad_disponible.Caption = "Cantidad Disponible";
-            this.colcantidad_disponible.DisplayFormat.FormatString = "{0:0.#,#.##} Kg";
-            this.colcantidad_disponible.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colcantidad_disponible.FieldName = "cantidad_disponible";
-            this.colcantidad_disponible.Name = "colcantidad_disponible";
-            this.colcantidad_disponible.OptionsColumn.AllowEdit = false;
-            this.colcantidad_disponible.Visible = true;
-            this.colcantidad_disponible.VisibleIndex = 1;
-            this.colcantidad_disponible.Width = 82;
-            // 
-            // colunidades_disponibles
-            // 
-            this.colunidades_disponibles.Caption = "Unidades Disponibles";
-            this.colunidades_disponibles.DisplayFormat.FormatString = "{0:0.#,#.##} Ud";
-            this.colunidades_disponibles.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colunidades_disponibles.FieldName = "unidades_disponibles";
-            this.colunidades_disponibles.Name = "colunidades_disponibles";
-            this.colunidades_disponibles.OptionsColumn.AllowEdit = false;
-            this.colunidades_disponibles.Visible = true;
-            this.colunidades_disponibles.VisibleIndex = 2;
-            this.colunidades_disponibles.Width = 65;
-            // 
-            // colid_detalle
-            // 
-            this.colid_detalle.FieldName = "id_detalle";
-            this.colid_detalle.Name = "colid_detalle";
-            // 
-            // collote
-            // 
-            this.collote.Caption = "Lote";
-            this.collote.FieldName = "lote";
-            this.collote.Name = "collote";
-            this.collote.OptionsColumn.AllowEdit = false;
-            this.collote.Visible = true;
-            this.collote.VisibleIndex = 0;
-            this.collote.Width = 57;
-            // 
-            // colCantSeleccionada
-            // 
-            this.colCantSeleccionada.Caption = "Cant. Seleccionada";
-            this.colCantSeleccionada.DisplayFormat.FormatString = "{0:0.##.##} Kg";
-            this.colCantSeleccionada.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colCantSeleccionada.FieldName = "CantSeleccionada";
-            this.colCantSeleccionada.Name = "colCantSeleccionada";
-            this.colCantSeleccionada.OptionsColumn.AllowEdit = false;
-            this.colCantSeleccionada.Visible = true;
-            this.colCantSeleccionada.VisibleIndex = 3;
-            this.colCantSeleccionada.Width = 73;
-            // 
-            // colSeleccionar
-            // 
-            this.colSeleccionar.Caption = "Selecc.";
-            this.colSeleccionar.FieldName = "Seleccionar";
-            this.colSeleccionar.Name = "colSeleccionar";
-            this.colSeleccionar.Visible = true;
-            this.colSeleccionar.VisibleIndex = 7;
-            this.colSeleccionar.Width = 65;
-            // 
-            // colnum_line
-            // 
-            this.colnum_line.FieldName = "num_line";
-            this.colnum_line.Name = "colnum_line";
-            // 
-            // colrow_
-            // 
-            this.colrow_.FieldName = "row_";
-            this.colrow_.Name = "colrow_";
-            // 
-            // colfecha_vencimiento
-            // 
-            this.colfecha_vencimiento.Caption = "Fecha Venc.";
-            this.colfecha_vencimiento.FieldName = "fecha_vencimiento";
-            this.colfecha_vencimiento.Name = "colfecha_vencimiento";
-            this.colfecha_vencimiento.OptionsColumn.AllowEdit = false;
-            this.colfecha_vencimiento.Visible = true;
-            this.colfecha_vencimiento.VisibleIndex = 5;
-            this.colfecha_vencimiento.Width = 55;
-            // 
-            // colfecha_produccion
-            // 
-            this.colfecha_produccion.Caption = "Fecha Prod.";
-            this.colfecha_produccion.FieldName = "fecha_produccion";
-            this.colfecha_produccion.Name = "colfecha_produccion";
-            this.colfecha_produccion.OptionsColumn.AllowEdit = false;
-            this.colfecha_produccion.Visible = true;
-            this.colfecha_produccion.VisibleIndex = 6;
-            this.colfecha_produccion.Width = 55;
-            // 
-            // colunidade_seleccionadas
-            // 
-            this.colunidade_seleccionadas.Caption = "Unidades Seleccionadas";
-            this.colunidade_seleccionadas.DisplayFormat.FormatString = "{0:0.##.##} Ud";
-            this.colunidade_seleccionadas.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colunidade_seleccionadas.FieldName = "unidade_seleccionadas";
-            this.colunidade_seleccionadas.Name = "colunidade_seleccionadas";
-            this.colunidade_seleccionadas.Visible = true;
-            this.colunidade_seleccionadas.VisibleIndex = 4;
-            this.colunidade_seleccionadas.Width = 85;
-            // 
-            // colid_ingreso_h
-            // 
-            this.colid_ingreso_h.FieldName = "id_ingreso_h";
-            this.colid_ingreso_h.Name = "colid_ingreso_h";
-            // 
-            // colid_presentacion
-            // 
-            this.colid_presentacion.FieldName = "id_presentacion";
-            this.colid_presentacion.Name = "colid_presentacion";
             // 
             // xfrmConfLotesSalidaAlmacen
             // 

@@ -44,11 +44,35 @@ namespace LOSA.TransaccionesMP
             }
             load_dataPorLotes();
             load_data_totales();
+            Load_dataReprocesoPorLote();
             //load_dataPRD();
             //backgroundWorkerResumenMP.RunWorkerAsync();
             //backgroundWorkerPRD.RunWorkerAsync();
             UsuarioLogeado = pUserLogin;
         }
+
+        private void Load_dataReprocesoPorLote()
+        {
+            
+            string query = @"sp_get_kardex_by_lot_reproceso";
+            try
+            {
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                dsTarima.kardex_by_Reproceso.Clear();
+                da.Fill(dsTarima.kardex_by_Reproceso);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
         public void load_dataPorLotes()
         {
             //string query = @"sp_obtener_inventario_general_por_lotev2";
@@ -166,8 +190,8 @@ namespace LOSA.TransaccionesMP
                     grd_data.ExportToXlsx(dialog.FileName);
                 }
             }
-            else
-            {//Totales
+            if (tabPane1.SelectedPageIndex == 1)
+            {//Resumen por Mp y Bodega
                 SaveFileDialog dialog = new SaveFileDialog();
                 dialog.Filter = "Excel File (.xlsx)|*.xlsx";
                 dialog.FilterIndex = 0;
@@ -177,6 +201,41 @@ namespace LOSA.TransaccionesMP
                     grd_data_resumen.ExportToXlsx(dialog.FileName);
                 }
             }
+            if (tabPane1.SelectedPageIndex == 2)
+            {//Resumen por Mp y Bodega
+                SaveFileDialog dialog = new SaveFileDialog();
+                dialog.Filter = "Excel File (.xlsx)|*.xlsx";
+                dialog.FilterIndex = 0;
+
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    gridControl1.ExportToXlsx(dialog.FileName);
+                }
+            }
+            if (tabPane1.SelectedPageIndex == 3)
+            {//Resumen por lote
+                SaveFileDialog dialog = new SaveFileDialog();
+                dialog.Filter = "Excel File (.xlsx)|*.xlsx";
+                dialog.FilterIndex = 0;
+
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    gridControl2.ExportToXlsx(dialog.FileName);
+                }
+            }
+            else
+            {//Totales
+                SaveFileDialog dialog = new SaveFileDialog();
+                dialog.Filter = "Excel File (.xlsx)|*.xlsx";
+                dialog.FilterIndex = 0;
+
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    gridReproceso.ExportToXlsx(dialog.FileName);
+                }
+            }
+
+            
         }
 
         private void btn_logmovimiento_Click(object sender, EventArgs e)
@@ -288,6 +347,18 @@ namespace LOSA.TransaccionesMP
                     break;
             }
             //}
+        }
+
+        private void repositoryAjuste_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)gridReproceso.FocusedView;
+            var row = (dsTarima.kardex_by_ReprocesoRow)gridView.GetFocusedDataRow();
+
+            frmAsjuteInventarioPorLote frm = new frmAsjuteInventarioPorLote(UsuarioLogeado, row.id_mp, 0, row.lote);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                Load_dataReprocesoPorLote();
+            }
         }
     }
 }

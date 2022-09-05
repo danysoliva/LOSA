@@ -361,6 +361,15 @@ namespace LOSA.TransaccionesMP
                         cmd.Parameters.AddWithValue("@itemcode", ItemCode);
                         //cmd.Parameters.AddWithValue("@id_bodega");
                         cmd.Parameters.AddWithValue("@id_usercreate", UsuarioLogueado.Id);
+                        if (dp.ValidateNumberInt32(gridLookUpEditOrigen.EditValue) > 0)
+                            cmd.Parameters.AddWithValue("@bodega_origen", gridLookUpEditOrigen.EditValue);
+                        else
+                            cmd.Parameters.AddWithValue("@bodega_origen", DBNull.Value);
+
+                        if (dp.ValidateNumberInt32(gridLookUpEditDestino.EditValue) > 0)
+                            cmd.Parameters.AddWithValue("@bodega_destino", gridLookUpEditDestino.EditValue);
+                        else
+                            cmd.Parameters.AddWithValue("@bodega_destino", DBNull.Value);
                         cmd.ExecuteNonQuery();
                         conn.Close();
 

@@ -13,7 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>\\aqfsvr003\Deploy%24\LOSA\</PublishUrl>
+    <PublishUrl>\\aqfsvr003\Deploy%24\LOSA64\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -23,8 +23,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>\\aqfsvr003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>391</ApplicationRevision>
+    <InstallUrl>\\aqfsvr003\Deploy%24\LOSA64\</InstallUrl>
+    <ApplicationRevision>393</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -2969,6 +2969,12 @@
     <Compile Include="Trazabilidad\frmOC_SAP_View.Designer.cs">
       <DependentUpon>frmOC_SAP_View.cs</DependentUpon>
     </Compile>
+    <Compile Include="Trazabilidad\frmRutasTrazabilidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trazabilidad\frmRutasTrazabilidad.Designer.cs">
+      <DependentUpon>frmRutasTrazabilidad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Trazabilidad\frmTrazabilidadOpciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -4151,6 +4157,9 @@
     <EmbeddedResource Include="Trazabilidad\frmOC_SAP_View.resx">
       <DependentUpon>frmOC_SAP_View.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Trazabilidad\frmRutasTrazabilidad.resx">
+      <DependentUpon>frmRutasTrazabilidad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Trazabilidad\frmTrazabilidadOpciones.resx">
       <DependentUpon>frmTrazabilidadOpciones.cs</DependentUpon>
     </EmbeddedResource>
@@ -4576,6 +4585,8 @@
     <None Include="Resources\step2.png" />
     <None Include="Resources\step3.png" />
     <None Include="Resources\step4.png" />
+    <None Include="Resources\signpost.png" />
+    <None Include="Resources\signpost24X24.png" />
     <Content Include="Resources\tap.png" />
     <None Include="Resources\trazabilidad.png" />
     <None Include="Resources\trucksss.png" />

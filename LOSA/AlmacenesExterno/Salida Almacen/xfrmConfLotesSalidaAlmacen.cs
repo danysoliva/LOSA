@@ -475,28 +475,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
 
         private void gvLote_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-            var gv = (GridView)gcLote.FocusedView;
-            var row = (dsSalidasAlmacenesExternos.LoteRow)gvLote.GetDataRow(gv.FocusedRowHandle);
 
-            try
-            {
-                PresentacionX present = new PresentacionX();
-                present.RecuperarRegistro(row.id_presentacion);
-
-                row.CantSeleccionada = (dp.ValidateNumberInt32((row.unidade_seleccionadas) * dp.ValidateNumberDecimal(present.Factor)));
-
-                if (row.unidade_seleccionadas > 0)
-                {
-                    row.Seleccionar = true;
-                }
-                else
-                    row.Seleccionar = false;
-
-            }
-            catch (Exception ex)
-            {
-                CajaDialogo.Error(ex.Message);
-            }
         }
     }
 }
