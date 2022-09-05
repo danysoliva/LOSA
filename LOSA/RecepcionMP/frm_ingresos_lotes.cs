@@ -262,11 +262,15 @@ namespace LOSA.RecepcionMP
             var gridView = (GridView)gridControl1.FocusedView;
             var row = (dsRecepcionMPx.lista_tarimasRow)gridView.GetFocusedDataRow();
 
+            TimeSpan diasaprox = dp.Now() - row.fecha_ingreso;
 
-            //if (row.fecha_ingreso > )
-            //{
+            int Dias = Convert.ToInt32(diasaprox.Days);
 
-            //}
+            if (Dias > 0)
+            {
+                CajaDialogo.Error("No puede editar tarimas que tengan mas de un dia de ingreso.");
+                return;
+            }
 
             string mensaje = "";
             bool Error = false;
