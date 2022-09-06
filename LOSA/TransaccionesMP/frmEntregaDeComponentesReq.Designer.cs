@@ -47,8 +47,8 @@
             this.colpeso = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colmp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collote = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.timertick = new System.Windows.Forms.Timer(this.components);
             this.colfecha_entrega = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.timertick = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.beIdTarima.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProduccion1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
@@ -221,15 +221,10 @@
             this.collote.VisibleIndex = 1;
             this.collote.Width = 123;
             // 
-            // timertick
-            // 
-            this.timertick.Interval = 1000;
-            this.timertick.Tick += new System.EventHandler(this.timertick_Tick);
-            // 
             // colfecha_entrega
             // 
             this.colfecha_entrega.Caption = "Fecha de Entrega";
-            this.colfecha_entrega.DisplayFormat.FormatString = "d";
+            this.colfecha_entrega.DisplayFormat.FormatString = "G";
             this.colfecha_entrega.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colfecha_entrega.FieldName = "fecha_entrega";
             this.colfecha_entrega.Name = "colfecha_entrega";
@@ -237,6 +232,11 @@
             this.colfecha_entrega.Visible = true;
             this.colfecha_entrega.VisibleIndex = 2;
             this.colfecha_entrega.Width = 139;
+            // 
+            // timertick
+            // 
+            this.timertick.Interval = 1000;
+            this.timertick.Tick += new System.EventHandler(this.timertick_Tick);
             // 
             // frmEntregaDeComponentesReq
             // 
