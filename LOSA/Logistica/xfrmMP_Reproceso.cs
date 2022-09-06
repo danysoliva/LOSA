@@ -166,7 +166,12 @@ namespace LOSA.Logistica
                 return;
             }
 
-        
+            if (string.IsNullOrEmpty(dtFechaProduccion.Text))
+            {
+                CajaDialogo.Error("Es obligatorio llenar la fecha de produccion de la materia prima!");
+                return;
+            }
+
             if (string.IsNullOrEmpty(dtFechaVencimiento.Text))
             {
                 CajaDialogo.Error("Es obligatorio llenar la fecha de vencimiento de la materia prima!");
