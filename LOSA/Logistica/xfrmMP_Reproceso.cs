@@ -334,7 +334,7 @@ namespace LOSA.Logistica
 
                     }
 
-                    transaction.Commit();
+                    //transaction.Commit();
                     connection.Close();
 
                     this.DialogResult = DialogResult.OK;
@@ -360,8 +360,9 @@ namespace LOSA.Logistica
         private void slueMP_EditValueChanged(object sender, EventArgs e)
         {
            
-             this.ItemCode = slueMP.EditValue.ToString();
+            this.ItemCode = slueMP.EditValue.ToString();
 
+            
         }
 
         private void gridLookUpEditPresentacion_EditValueChanged(object sender, EventArgs e)
@@ -414,15 +415,43 @@ namespace LOSA.Logistica
                     dsLogistica2.lote_selected.Addlote_selectedRow(rowLoteNew);
                     dsLogistica2.AcceptChanges();
                 }
+
+                if (dsLogistica2.lote_selected.Count != 0)
+                {
+                    int LoteSelc = 0;
+                    foreach (dsLogistica2.lote_selectedRow row2 in dsLogistica2.lote_selected.Rows)
+                    {
+                        LoteSelc = row2.lote;
+                    }
+
+                    LotePT infoPT = new LotePT();
+                    infoPT.RecuperarRegistro(LoteSelc);
+
+                    if (infoPT.especie == 1)//Tilapia
+                    {
+                        foreach (dsLogistica2.MP_ReprocesoRow row3 in dsLogistica2.MP_Reproceso.Rows)
+                        {
+                            slueMP.EditValue = "MP00080";
+                              
+                        }
+                        ItemCode = Convert.ToString(slueMP.EditValue);
+
+                    }
+                    else
+                    {
+                        foreach (dsLogistica2.MP_ReprocesoRow row3 in dsLogistica2.MP_Reproceso.Rows)
+                        {
+                            
+                            slueMP.EditValue = "MP00081";
+
+                        }
+                        ItemCode = Convert.ToString(slueMP.EditValue);
+                    }
+                }
             }
         }
 
-        private void xfrmMP_Reproceso_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gridView2_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        private void gridView2_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             
         }
