@@ -147,13 +147,27 @@ namespace LOSA.Logistica
 
         private void cmdGuardar_Click(object sender, EventArgs e)
         {
+
+            foreach (dsLogistica2.lote_selectedRow row in dsLogistica2.lote_selected.Rows)
+            {
+                if (dsLogistica2.lote_selected.Count == 0)
+                {
+                    CajaDialogo.Error("Debe seleccionar un Lote de Producto Terminado");
+                    return;
+                }
+            }
+
             if (string.IsNullOrEmpty(slueMP.Text))
             {
                 CajaDialogo.Error("Es necesario seleccionar la Materia Prima!");
                 return;
             }
 
-
+            if (string.IsNullOrEmpty(dtFechaIngreso.Text))
+            {
+                CajaDialogo.Error("Es obligatorio llenar la fecha de ingreso de la materia prima!");
+                return;
+            }
             if (Convert.ToDecimal(txtCantidadT.Text) <= 0)
             {
                 CajaDialogo.Error("No se puede registrar una tarima con cantidad de materia en cero (0)!");
@@ -194,15 +208,7 @@ namespace LOSA.Logistica
                 return;
             }
 
-            foreach (dsLogistica2.lote_selectedRow row in dsLogistica2.lote_selected.Rows)
-            {
-                
-            }
-            if (dsLogistica2.lote_selected.Count == 0)
-            {
-                CajaDialogo.Error("Debe seleccionar un Lote de Producto Terminado");
-                return;
-            }
+
 
 
             //generar string de lote
@@ -334,7 +340,7 @@ namespace LOSA.Logistica
 
                     }
 
-                    //transaction.Commit();
+                    transaction.Commit();
                     connection.Close();
 
                     this.DialogResult = DialogResult.OK;

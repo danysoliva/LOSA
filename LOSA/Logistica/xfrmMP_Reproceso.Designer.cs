@@ -75,6 +75,12 @@ namespace LOSA.Logistica
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.collote = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridLookUpTurno = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.gridLookCausa = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadTarimasTotal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glTipoTransaccion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipotransaccioneskardexBindingSource)).BeginInit();
@@ -99,6 +105,10 @@ namespace LOSA.Logistica
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpTurno.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookCausa.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl13
@@ -588,11 +598,77 @@ namespace LOSA.Logistica
             this.collote.Visible = true;
             this.collote.VisibleIndex = 0;
             // 
+            // gridLookUpTurno
+            // 
+            this.gridLookUpTurno.Location = new System.Drawing.Point(183, 471);
+            this.gridLookUpTurno.Name = "gridLookUpTurno";
+            this.gridLookUpTurno.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.gridLookUpTurno.Properties.Appearance.Options.UseFont = true;
+            this.gridLookUpTurno.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.gridLookUpTurno.Properties.PopupView = this.gridLookUpEdit1View;
+            this.gridLookUpTurno.Size = new System.Drawing.Size(142, 32);
+            this.gridLookUpTurno.TabIndex = 122;
+            this.gridLookUpTurno.Visible = false;
+            // 
+            // gridLookUpEdit1View
+            // 
+            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
+            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Location = new System.Drawing.Point(12, 479);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(51, 24);
+            this.labelControl4.TabIndex = 123;
+            this.labelControl4.Text = "Turno";
+            this.labelControl4.Visible = false;
+            // 
+            // gridLookCausa
+            // 
+            this.gridLookCausa.Location = new System.Drawing.Point(463, 429);
+            this.gridLookCausa.Name = "gridLookCausa";
+            this.gridLookCausa.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.gridLookCausa.Properties.Appearance.Options.UseFont = true;
+            this.gridLookCausa.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.gridLookCausa.Properties.PopupView = this.gridView3;
+            this.gridLookCausa.Size = new System.Drawing.Size(159, 32);
+            this.gridLookCausa.TabIndex = 124;
+            this.gridLookCausa.Visible = false;
+            // 
+            // gridView3
+            // 
+            this.gridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView3.OptionsView.ShowGroupPanel = false;
+            // 
+            // labelControl14
+            // 
+            this.labelControl14.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl14.Appearance.Options.UseFont = true;
+            this.labelControl14.Location = new System.Drawing.Point(349, 433);
+            this.labelControl14.Name = "labelControl14";
+            this.labelControl14.Size = new System.Drawing.Size(53, 24);
+            this.labelControl14.TabIndex = 125;
+            this.labelControl14.Text = "Causa";
+            this.labelControl14.Visible = false;
+            // 
             // xfrmMP_Reproceso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(637, 618);
+            this.ClientSize = new System.Drawing.Size(637, 555);
+            this.Controls.Add(this.labelControl14);
+            this.Controls.Add(this.gridLookCausa);
+            this.Controls.Add(this.labelControl4);
+            this.Controls.Add(this.gridLookUpTurno);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.txtCantidadT);
@@ -645,6 +721,10 @@ namespace LOSA.Logistica
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpTurno.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookCausa.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -695,5 +775,11 @@ namespace LOSA.Logistica
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraGrid.Columns.GridColumn collote;
+        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpTurno;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.GridLookUpEdit gridLookCausa;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private DevExpress.XtraEditors.LabelControl labelControl14;
     }
 }
