@@ -180,7 +180,7 @@ namespace LOSA.TransaccionesMP
                 {
                     if (radioLoteNuevo.Checked)
                     {
-                        CajaDialogo.Error("No puede realizar una entrada de Reproceso de un Lote Nuevo! Debe generaro Calidad");
+                        CajaDialogo.Error("No puede realizar una entrada de Reproceso de un Lote Nuevo! Debe ingresarlo Calidad");
                         return;
                     }
                 }
@@ -193,7 +193,7 @@ namespace LOSA.TransaccionesMP
                 {
                     if (radioLoteNuevo.Checked)
                     {
-                        CajaDialogo.Error("No puede realizar una entrada de Reproceso de un Lote Nuevo! Debe generaro Calidad");
+                        CajaDialogo.Error("No puede realizar una entrada de Reproceso de un Lote Nuevo! Debe Ingresarlo Calidad");
                         return;
                     }
                 }
@@ -206,11 +206,11 @@ namespace LOSA.TransaccionesMP
                 return;
             }
 
-            if (gridLookUpEditPresentacion.EditValue == null)
-            {
-                CajaDialogo.Error("Debe Seleccionar el tipo de presentacion!");
-                return;
-            }
+            //if (gridLookUpEditPresentacion.EditValue == null)
+            //{
+            //    CajaDialogo.Error("Debe Seleccionar el tipo de presentacion!");
+            //    return;
+            //}
 
             //if (Convert.ToDecimal(txtPesoKG.Text) <= 0)
             if (Convert.ToDecimal(spinEditPesoKg.EditValue) <= 0)
