@@ -56,6 +56,7 @@ namespace LOSA.Trazabilidad
         string CodeSAP_Proveedor;
         string NombreSAP_Proveedor;
 
+        int navigationPageSeleccionado;
 
        
 
@@ -79,10 +80,38 @@ namespace LOSA.Trazabilidad
 
             acordionRuta4.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
             acordionRuta4.Appearance.Normal.ForeColor = Color.FromArgb(80, 80,80);
-            dsReportesTRZ.pt_list_trz.Clear();
-            dsReportesTRZ.detalle_destinos.Clear();
 
-            navigationFrame1.SelectedPage=npRuta1;
+            this.rutaActiva = 1;
+
+
+            lote_fp = 0;
+            txtlote.Text = "";
+            dsCalidad.trazabilitad.Clear();
+            dsInventarioPT.transacciones.Clear();
+            dsInventarioPT.despachos.Clear();
+            txtversion.Text = "";
+            txtformula.Text = "";
+            txtProducto.Text = "";
+            txtPresentacion.Text = "";
+            txtOrderNum.Text = "";
+            txtCodigoPP.Text = "";
+            txtSacosLiberados.Text = "";
+            txtTotalMP_Utilizada_kg.Text = "";
+            txtCantidadBatch.Text = "";
+            txtcodigo.Text = "";
+            txtTotalKgSacosLiberados.Text = "";
+            txtOrderNum.Text = "";
+            txtCodigoPP.Text = "";
+            txtPresentacion.Text = "";
+            txtCantidadBatch.Text = "";
+            txtEficiencia.Text = "";
+            txtReprocesoKg.Text = "";
+            txtTotalProducido.Text = "";
+
+            btnBack.Text = "Inicio";
+            btnBack.Visible = true;
+
+            navigationFrame1.SelectedPage = navigationFrame1.SelectedPage = npReporteTrazabilidad;
         }
 
         private void acordionRuta2_Click(object sender, EventArgs e)
@@ -100,21 +129,13 @@ namespace LOSA.Trazabilidad
             acordionRuta4.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
             acordionRuta4.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
 
-            lote_fp = 0;
-            txtlote.Text = "";
-            dsCalidad.trazabilitad.Clear();
-            dsInventarioPT.transacciones.Clear();
-            dsInventarioPT.despachos.Clear();
-            txtversion.Text = "";
-            txtformula.Text = "";
-            txtProducto.Text = "";
-            txtPresentacion.Text = "";
-            txtOrderNum.Text = "";
-            txtCodigoPP.Text = "";
-            txtSacosLiberados.Text = "";
-            txtTotalMP_Utilizada_kg.Text = "";
-            txtcodigo.Text = "";
-            navigationFrame1.SelectedPage = navigationFrame1.SelectedPage = npReporteTrazabilidad ;
+            this.rutaActiva = 2;
+
+
+            dsReportesTRZ.pt_list_trz.Clear();
+            dsReportesTRZ.detalle_destinos.Clear();
+
+            navigationFrame1.SelectedPage = npRuta1;
         }
 
         private void acordionRuta3_Click(object sender, EventArgs e)
@@ -130,6 +151,11 @@ namespace LOSA.Trazabilidad
 
             acordionRuta4.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
             acordionRuta4.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+            this.rutaActiva = 3;
+
+            btnBack.Text = "Back";
+
 
             navigationFrame1.SelectedPage = navigationPage3;
         }
@@ -148,9 +174,41 @@ namespace LOSA.Trazabilidad
             acordionRuta1.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
             acordionRuta1.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
 
-            //navigationFrame1.SelectedPage = npInfoLote;
+            this.rutaActiva = 4;
+
+
+            lote_fp = 0;
+            txtlote.Text = "";
+            dsCalidad.trazabilitad.Clear();
+            dsInventarioPT.transacciones.Clear();
+            dsInventarioPT.despachos.Clear();
+            txtversion.Text = "";
+            txtformula.Text = "";
+            txtProducto.Text = "";
+            txtPresentacion.Text = "";
+            txtOrderNum.Text = "";
+            txtCodigoPP.Text = "";
+            txtSacosLiberados.Text = "";
+            txtTotalMP_Utilizada_kg.Text = "";
+            txtCantidadBatch.Text = "";
+            txtcodigo.Text = "";
+            txtTotalKgSacosLiberados.Text = "";
+            txtOrderNum.Text = "";
+            txtCodigoPP.Text = "";
+            txtPresentacion.Text = "";
+            txtCantidadBatch.Text = "";
+            txtEficiencia.Text = "";
+            txtReprocesoKg.Text = "";
+            txtTotalProducido.Text = "";
+            btnBack.Visible = true;
+
+            navigationFrame1.SelectedPage = navigationFrame1.SelectedPage = npReporteTrazabilidad;
         }
 
+
+        #region Ruta 3
+
+        #endregion
         private void LoadClientes()
         {
             try
@@ -229,48 +287,57 @@ namespace LOSA.Trazabilidad
 
         public void load_header()
         {
-            if (!string.IsNullOrEmpty(txtlote.Text))
+            try
             {
-                LotePT ptProducido = new LotePT();
-                if (ptProducido.RecuperarRegistro(Convert.ToInt32(txtlote.Text)))
+
+
+                if (!string.IsNullOrEmpty(txtlote.Text))
                 {
-                    LoteActual = ptProducido;
-                    txtTotalKgSacosLiberados.Text = string.Format("{0:###,##0.00 Kg}", ptProducido.TotalKg);
-                    txtSacosLiberados.Text = string.Format("{0:###,##0 Sacos}", ptProducido.Unidades);
-                    txtReprocesoKg.Text = string.Format("{0:###,##0.00 Kg}", ptProducido.Reproceso_kg);
-                    txtTotalProducido.Text = string.Format("{0:###,##0.00 Kg}", ptProducido.Reproceso_kg + ptProducido.TotalKg);
-                    txtPresentacion.Text = ptProducido.DescripcionPresentacion;
-                    txtCantidadBatch.Text = string.Format("{0:###,##0}", ptProducido.CantidadBatch);
-                    txtOrderNum.Text = ptProducido.OrderNum_prd.ToString();
-                    txtCodigoPP.Text = ptProducido.OrderCodePP;
-                }
-
-                string sql_h = @"[dbo].[RPT_PRD_Trazabilidad_header_lote]";
-
-                SqlConnection cn = new SqlConnection(dp.ConnectionStringAPMS);
-
-                try
-                {
-                    cn.Open();
-                    SqlCommand cmd_h = new SqlCommand(sql_h, cn);
-                    cmd_h.CommandType = CommandType.StoredProcedure;
-                    cmd_h.Parameters.AddWithValue("@num_lote", txtlote.Text);
-                    SqlDataReader dr_h = cmd_h.ExecuteReader();
-
-                    Int64 AcsId = 0;
-                    if (dr_h.Read())
+                    LotePT ptProducido = new LotePT();
+                    if (ptProducido.RecuperarRegistro(Convert.ToInt32(txtlote.Text)))
                     {
-                        txtcodigo.Text = dr_h.GetString(0);
-                        txtProducto.Text = dr_h.GetString(1);
-                        txtformula.Text = dr_h.GetInt32(3).ToString();
-                        txtversion.Text = dr_h.GetInt32(4).ToString();
+                        LoteActual = ptProducido;
+                        txtTotalKgSacosLiberados.Text = string.Format("{0:###,##0.00 Kg}", ptProducido.TotalKg);
+                        txtSacosLiberados.Text = string.Format("{0:###,##0 Sacos}", ptProducido.Unidades);
+                        txtReprocesoKg.Text = string.Format("{0:###,##0.00 Kg}", ptProducido.Reproceso_kg);
+                        txtTotalProducido.Text = string.Format("{0:###,##0.00 Kg}", ptProducido.Reproceso_kg + ptProducido.TotalKg);
+                        txtPresentacion.Text = ptProducido.DescripcionPresentacion;
+                        txtCantidadBatch.Text = string.Format("{0:###,##0}", ptProducido.CantidadBatch);
+                        txtOrderNum.Text = ptProducido.OrderNum_prd.ToString();
+                        txtCodigoPP.Text = ptProducido.OrderCodePP;
                     }
-                    dr_h.Close();
+
+                    string sql_h = @"[dbo].[RPT_PRD_Trazabilidad_header_lote]";
+
+                    SqlConnection cn = new SqlConnection(dp.ConnectionStringAPMS);
+
+                    try
+                    {
+                        cn.Open();
+                        SqlCommand cmd_h = new SqlCommand(sql_h, cn);
+                        cmd_h.CommandType = CommandType.StoredProcedure;
+                        cmd_h.Parameters.AddWithValue("@num_lote", txtlote.Text);
+                        SqlDataReader dr_h = cmd_h.ExecuteReader();
+
+                        Int64 AcsId = 0;
+                        if (dr_h.Read())
+                        {
+                            txtcodigo.Text = dr_h.GetString(0);
+                            txtProducto.Text = dr_h.GetString(1);
+                            txtformula.Text = dr_h.GetInt32(3).ToString();
+                            txtversion.Text = dr_h.GetInt32(4).ToString();
+                        }
+                        dr_h.Close();
+                    }
+                    catch (Exception EX)
+                    {
+                        CajaDialogo.Error(EX.Message);
+                    }
                 }
-                catch (Exception EX)
-                {
-                    CajaDialogo.Error(EX.Message);
-                }
+            }
+            catch (Exception)
+            {
+
             }
         }
 
@@ -326,7 +393,14 @@ namespace LOSA.Trazabilidad
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            navigationFrame1.SelectedPage = navigationPage3;
+           
+
+            if (rutaActiva==1 || rutaActiva == 4)
+            {
+                this.navigationFrame1.SelectedPage = npMain;
+            }
+            else
+                navigationFrame1.SelectedPage = navigationPage3;
         }
 
         private void btnGenerar_Click(object sender, EventArgs e)
@@ -492,6 +566,17 @@ namespace LOSA.Trazabilidad
             txtformula.Text = "";
             txtProducto.Text = "";
             txtcodigo.Text = "";
+            txtTotalMP_Utilizada_kg.Text = "";
+            txtReprocesoKg.Text = "";
+            txtTotalProducido.Text = "";
+            txtSacosLiberados.Text = "";
+            txtTotalKgSacosLiberados.Text = "";
+            txtOrderNum.Text = "";
+            txtCodigoPP.Text = "";
+            txtPresentacion.Text = "";
+            txtCantidadBatch.Text = "";
+            txtEficiencia.Text = "";
+            
         }
 
         private void btnCertidicado_Click(object sender, EventArgs e)
@@ -611,7 +696,7 @@ namespace LOSA.Trazabilidad
 
         private void cmdDespachoId_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            var gridView = (GridView)gridControl2.FocusedView;
+            var gridView = (GridView)gcClientesRecibieronLotePT.FocusedView;
             var row = (dsReportesTRZ.detalle_destinosRow)gridView.GetFocusedDataRow();
 
             navigationFrame1.SelectedPage = npRuta3DetalleDespacho;
@@ -1779,15 +1864,15 @@ namespace LOSA.Trazabilidad
             if (bol1.RecuperarRegistroFromNumBoleta(row.NumID))
             {
 
-                navigationFrame1.SelectedPage = npBoletaView;
+                //frmViewBasculaBoleta frm = new frmViewBasculaBoleta(bol1.Id);
                 LoadLines(bol1.Id);
-                //    frmViewBasculaBoleta frm = new frmViewBasculaBoleta(bol1.Id);
-                //    if (this.MdiParent != null)
-                //        frm.MdiParent = this.MdiParent;
-                //    frm.WindowState = FormWindowState.Normal;
-                //    frm.Show();
-               }
+                navigationFrame1.SelectedPage = npBoletaView;
+                //if (this.MdiParent != null)
+                //    frm.MdiParent = this.MdiParent;
+                //frm.WindowState = FormWindowState.Normal;
+                //frm.Show();
             }
+        }
 
 
         private void LoadLines(int pIdSerial_)
@@ -1805,7 +1890,7 @@ namespace LOSA.Trazabilidad
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 DataTable Table_ = new DataTable();
                 adat.Fill(Table_);
-                this.vGridControl1.DataSource = Table_;
+                this.vGridControl2.DataSource = Table_;
                 con.Close();
 
             }
@@ -1821,5 +1906,36 @@ namespace LOSA.Trazabilidad
         }
         #endregion
 
+        private void btnLinkBoletaView_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)gcClientesRecibieronLotePT.FocusedView;
+            var row = (dsReportesTRZ.detalle_destinosRow)gridView.GetFocusedDataRow();
+
+            Boleta bol1 = new Boleta();
+            if (bol1.RecuperarRegistroFromNumBoleta(row.NumID))
+            {
+                frmViewBasculaBoleta frm = new frmViewBasculaBoleta(bol1.Id);
+                //if (this.MdiParent != null)
+                //    frm.MdiParent = this.MdiParent;
+                //frm.WindowState = FormWindowState.Normal;
+                frm.Show();
+            }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnRuta3Home_Click(object sender, EventArgs e)
+        {
+            this.navigationFrame1.SelectedPage = npMain;
+            slueCliente.Text = "";
+        }
+
+        private void simpleButton5_Click(object sender, EventArgs e)
+        {
+            this.navigationFrame1.SelectedPage = npMain;
+        }
     }
 }

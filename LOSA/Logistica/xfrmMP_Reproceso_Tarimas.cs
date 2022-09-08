@@ -316,6 +316,7 @@ namespace LOSA.Logistica
                         cmd3.Parameters.AddWithValue("@id_especie", setIngreso.especie);
                         cmd3.Parameters.AddWithValue("@id_tarima_reproceso", tarima.TarimaID);
                         cmd3.Parameters.AddWithValue("@bit_promedio", 0);
+                        cmd3.Parameters.AddWithValue("@id_proveedor", DBNull.Value);
 
                         vid_tarima = Convert.ToInt32(cmd3.ExecuteScalar());
 

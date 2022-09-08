@@ -393,6 +393,7 @@
             this.btnAjustesKardex.Size = new System.Drawing.Size(199, 42);
             this.btnAjustesKardex.TabIndex = 13;
             this.btnAjustesKardex.Text = "Agregar Tarima Manual MP";
+            this.btnAjustesKardex.Visible = false;
             this.btnAjustesKardex.Click += new System.EventHandler(this.BtnAjustesKardex_Click);
             // 
             // cmdUbicaciones

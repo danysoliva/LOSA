@@ -39,13 +39,13 @@ namespace LOSA.Reportes
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_detalle_mp_entregada_from_bod_mp", con);
+                SqlCommand cmd = new SqlCommand("sp_get_detalle_mp_entregada_from_bod_mpV2", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@desde", dtDesde.EditValue);
                 cmd.Parameters.AddWithValue("@hasta", dtHasta.EditValue);
-                dsReportes1.salida_mp.Clear();
+                dsReportes1.salida_mpV2.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                adat.Fill(dsReportes1.salida_mp);
+                adat.Fill(dsReportes1.salida_mpV2);
 
                 con.Close();
             }

@@ -147,13 +147,27 @@ namespace LOSA.Logistica
 
         private void cmdGuardar_Click(object sender, EventArgs e)
         {
+
+            foreach (dsLogistica2.lote_selectedRow row in dsLogistica2.lote_selected.Rows)
+            {
+                if (dsLogistica2.lote_selected.Count == 0)
+                {
+                    CajaDialogo.Error("Debe seleccionar un Lote de Producto Terminado");
+                    return;
+                }
+            }
+
             if (string.IsNullOrEmpty(slueMP.Text))
             {
                 CajaDialogo.Error("Es necesario seleccionar la Materia Prima!");
                 return;
             }
 
-
+            if (string.IsNullOrEmpty(dtFechaIngreso.Text))
+            {
+                CajaDialogo.Error("Es obligatorio llenar la fecha de ingreso de la materia prima!");
+                return;
+            }
             if (Convert.ToDecimal(txtCantidadT.Text) <= 0)
             {
                 CajaDialogo.Error("No se puede registrar una tarima con cantidad de materia en cero (0)!");
@@ -166,7 +180,12 @@ namespace LOSA.Logistica
                 return;
             }
 
-        
+            if (string.IsNullOrEmpty(dtFechaProduccion.Text))
+            {
+                CajaDialogo.Error("Es obligatorio llenar la fecha de produccion de la materia prima!");
+                return;
+            }
+
             if (string.IsNullOrEmpty(dtFechaVencimiento.Text))
             {
                 CajaDialogo.Error("Es obligatorio llenar la fecha de vencimiento de la materia prima!");
@@ -189,15 +208,7 @@ namespace LOSA.Logistica
                 return;
             }
 
-            foreach (dsLogistica2.lote_selectedRow row in dsLogistica2.lote_selected.Rows)
-            {
-                
-            }
-            if (dsLogistica2.lote_selected.Count == 0)
-            {
-                CajaDialogo.Error("Debe seleccionar un Lote de Producto Terminado");
-                return;
-            }
+
 
 
             //generar string de lote
@@ -355,8 +366,9 @@ namespace LOSA.Logistica
         private void slueMP_EditValueChanged(object sender, EventArgs e)
         {
            
-             this.ItemCode = slueMP.EditValue.ToString();
+            this.ItemCode = slueMP.EditValue.ToString();
 
+            
         }
 
         private void gridLookUpEditPresentacion_EditValueChanged(object sender, EventArgs e)
@@ -409,15 +421,43 @@ namespace LOSA.Logistica
                     dsLogistica2.lote_selected.Addlote_selectedRow(rowLoteNew);
                     dsLogistica2.AcceptChanges();
                 }
+
+                if (dsLogistica2.lote_selected.Count != 0)
+                {
+                    int LoteSelc = 0;
+                    foreach (dsLogistica2.lote_selectedRow row2 in dsLogistica2.lote_selected.Rows)
+                    {
+                        LoteSelc = row2.lote;
+                    }
+
+                    LotePT infoPT = new LotePT();
+                    infoPT.RecuperarRegistro(LoteSelc);
+
+                    if (infoPT.especie == 1)//Tilapia
+                    {
+                        foreach (dsLogistica2.MP_ReprocesoRow row3 in dsLogistica2.MP_Reproceso.Rows)
+                        {
+                            slueMP.EditValue = "MP00080";
+                              
+                        }
+                        ItemCode = Convert.ToString(slueMP.EditValue);
+
+                    }
+                    else
+                    {
+                        foreach (dsLogistica2.MP_ReprocesoRow row3 in dsLogistica2.MP_Reproceso.Rows)
+                        {
+                            
+                            slueMP.EditValue = "MP00081";
+
+                        }
+                        ItemCode = Convert.ToString(slueMP.EditValue);
+                    }
+                }
             }
         }
 
-        private void xfrmMP_Reproceso_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gridView2_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        private void gridView2_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             
         }

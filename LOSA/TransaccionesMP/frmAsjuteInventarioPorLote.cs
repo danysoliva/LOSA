@@ -173,17 +173,44 @@ namespace LOSA.TransaccionesMP
         SqlTransaction transaction;
         private void cmdGuardar_Click(object sender, EventArgs e)
         {
+            //Reproceso de Tilapia
+            if (ItemCode == "MP00080")
+            {
+                if (tsTipoTransaccion.IsOn == true)
+                {
+                    if (radioLoteNuevo.Checked)
+                    {
+                        CajaDialogo.Error("No puede realizar una entrada de Reproceso de un Lote Nuevo! Debe ingresarlo Calidad");
+                        return;
+                    }
+                }
+            }
+
+            //Reproceso de Camaron
+            if (ItemCode == "MP00081")
+            {
+                if (tsTipoTransaccion.IsOn == true)
+                {
+                    if (radioLoteNuevo.Checked)
+                    {
+                        CajaDialogo.Error("No puede realizar una entrada de Reproceso de un Lote Nuevo! Debe Ingresarlo Calidad");
+                        return;
+                    }
+                }
+            }
+
+
             if (string.IsNullOrEmpty(txtMP_Name.Text))
             {
                 CajaDialogo.Error("Es necesario seleccionar la Materia Prima!");
                 return;
             }
 
-            if (gridLookUpEditPresentacion.EditValue == null)
-            {
-                CajaDialogo.Error("Debe Seleccionar el tipo de presentacion!");
-                return;
-            }
+            //if (gridLookUpEditPresentacion.EditValue == null)
+            //{
+            //    CajaDialogo.Error("Debe Seleccionar el tipo de presentacion!");
+            //    return;
+            //}
 
             //if (Convert.ToDecimal(txtPesoKG.Text) <= 0)
             if (Convert.ToDecimal(spinEditPesoKg.EditValue) <= 0)
@@ -219,7 +246,7 @@ namespace LOSA.TransaccionesMP
                         
                         SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                         conn.Open();
-                        SqlCommand cmd = new SqlCommand("sp_ajuste_kardex_por_lote_v2", conn);
+                        SqlCommand cmd = new SqlCommand("sp_ajuste_kardex_por_lote_v3", conn);
                         cmd.CommandType = CommandType.StoredProcedure;
                         //cmd.Parameters.AddWithValue("@cant_entrada", txtPesoKG.Text);
                         cmd.Parameters.AddWithValue("@cant_entrada", spinEditPesoKg.EditValue);
@@ -243,7 +270,7 @@ namespace LOSA.TransaccionesMP
                             cmd.Parameters.AddWithValue("@bodega_destino", gridLookUpEditDestino.EditValue);
                         else
                             cmd.Parameters.AddWithValue("@bodega_destino", DBNull.Value);
-
+                        cmd.Parameters.AddWithValue("@id_presentacion", gridLookUpEditPresentacion.EditValue);
                         cmd.ExecuteNonQuery();
                         conn.Close();
 
@@ -307,19 +334,30 @@ namespace LOSA.TransaccionesMP
                         cmd2.ExecuteNonQuery();
 
                         //REALIZAMOS EL INSERT DEL MOVIMIENTO EN KARDEX
-                        SqlCommand cmd3 = new SqlCommand("sp_ajuste_kardex_por_lote", transaction.Connection);
+                        SqlCommand cmd3 = new SqlCommand("sp_ajuste_kardex_por_lote_v3", transaction.Connection);
                         cmd3.Transaction = transaction;
                         cmd3.CommandType = CommandType.StoredProcedure;
                         cmd3.Parameters.AddWithValue("@cant_entrada", spinEditPesoKg.EditValue);
                         cmd3.Parameters.AddWithValue("@cant_salida", 0);
                         cmd3.Parameters.AddWithValue("@ud_entrada", spinEditUnidades.EditValue);
                         cmd3.Parameters.AddWithValue("@ud_salida", 0);
+                        cmd3.Parameters.AddWithValue("@fechaDocumento", dtFechaDocumento.EditValue);
+                        if (dp.ValidateNumberInt32(gridLookUpEditOrigen.EditValue) > 0)
+                            cmd3.Parameters.AddWithValue("@bodega_origen", gridLookUpEditOrigen.EditValue);
+                        else
+                            cmd3.Parameters.AddWithValue("@bodega_origen", DBNull.Value);
+
+                        if (dp.ValidateNumberInt32(gridLookUpEditDestino.EditValue) > 0)
+                            cmd3.Parameters.AddWithValue("@bodega_destino", gridLookUpEditDestino.EditValue);
+                        else
+                            cmd3.Parameters.AddWithValue("@bodega_destino", DBNull.Value);
                         cmd3.Parameters.AddWithValue("@id_referencia_operacion", id_lote_h);
                         cmd3.Parameters.AddWithValue("id_lote_alosy", id_lote_h);
                         cmd3.Parameters.AddWithValue("@lote", txtLoteNuevo.Text);
                         cmd3.Parameters.AddWithValue("@id_mp", Id_MP);
                         cmd3.Parameters.AddWithValue("@itemcode", ItemCode);
                         cmd3.Parameters.AddWithValue("@id_usercreate", UsuarioLogueado.Id);
+                        cmd3.Parameters.AddWithValue("@id_presentacion", gridLookUpEditPresentacion.EditValue);
                         cmd3.ExecuteNonQuery();
                         //Attempt to commit the transaction.
 
@@ -348,19 +386,19 @@ namespace LOSA.TransaccionesMP
                         //DataOperations dp = new DataOperations();
                         SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                         conn.Open();
-                        SqlCommand cmd = new SqlCommand("[sp_ajuste_kardex_por_lote]", conn);
+                        SqlCommand cmd = new SqlCommand("sp_ajuste_kardex_por_lote_v3", conn);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@cant_entrada", 0);
                         cmd.Parameters.AddWithValue("@cant_salida", spinEditPesoKg.EditValue);
-                        cmd.Parameters.AddWithValue("@ud_entrada", 0);
-                        cmd.Parameters.AddWithValue("@ud_salida", spinEditUnidades.EditValue);
                         cmd.Parameters.AddWithValue("@id_referencia_operacion", Id_Lote_Alosy);
                         cmd.Parameters.AddWithValue("@id_lote_alosy", Id_Lote_Alosy);
                         cmd.Parameters.AddWithValue("@lote", txtNumLote.Text);
                         cmd.Parameters.AddWithValue("@id_mp", Id_MP);
                         cmd.Parameters.AddWithValue("@itemcode", ItemCode);
-                        //cmd.Parameters.AddWithValue("@id_bodega");
                         cmd.Parameters.AddWithValue("@id_usercreate", UsuarioLogueado.Id);
+                        cmd.Parameters.AddWithValue("@ud_entrada", 0);
+                        cmd.Parameters.AddWithValue("@ud_salida", spinEditUnidades.EditValue);
+                        cmd.Parameters.AddWithValue("@fechaDocumento", dtFechaDocumento.EditValue);                        
                         if (dp.ValidateNumberInt32(gridLookUpEditOrigen.EditValue) > 0)
                             cmd.Parameters.AddWithValue("@bodega_origen", gridLookUpEditOrigen.EditValue);
                         else
@@ -370,6 +408,7 @@ namespace LOSA.TransaccionesMP
                             cmd.Parameters.AddWithValue("@bodega_destino", gridLookUpEditDestino.EditValue);
                         else
                             cmd.Parameters.AddWithValue("@bodega_destino", DBNull.Value);
+                        cmd.Parameters.AddWithValue("id_presentacion", gridLookUpEditPresentacion.EditValue);
                         cmd.ExecuteNonQuery();
                         conn.Close();
 
