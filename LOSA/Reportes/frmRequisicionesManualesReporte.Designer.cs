@@ -48,6 +48,7 @@ namespace LOSA.Reportes
             this.colcomentario = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colbarcode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_requisa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,7 +56,6 @@ namespace LOSA.Reportes
             this.dtHasta = new DevExpress.XtraEditors.DateEdit();
             this.dtDesde = new DevExpress.XtraEditors.DateEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridDetalleReq)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsReportes1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -227,6 +227,14 @@ namespace LOSA.Reportes
             this.colid_requisa.VisibleIndex = 9;
             this.colid_requisa.Width = 114;
             // 
+            // colcodigo
+            // 
+            this.colcodigo.Caption = "Codigo";
+            this.colcodigo.FieldName = "codigo";
+            this.colcodigo.Name = "colcodigo";
+            this.colcodigo.Visible = true;
+            this.colcodigo.VisibleIndex = 3;
+            // 
             // btnAtras
             // 
             this.btnAtras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -327,14 +335,6 @@ namespace LOSA.Reportes
             this.labelControl1.Size = new System.Drawing.Size(349, 30);
             this.labelControl1.TabIndex = 18;
             this.labelControl1.Text = "Requisiciones Adicionales Solicitadas";
-            // 
-            // colcodigo
-            // 
-            this.colcodigo.Caption = "Codigo";
-            this.colcodigo.FieldName = "codigo";
-            this.colcodigo.Name = "colcodigo";
-            this.colcodigo.Visible = true;
-            this.colcodigo.VisibleIndex = 3;
             // 
             // frmRequisicionesManualesReporte
             // 
