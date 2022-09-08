@@ -163,9 +163,12 @@
             // 
             // colitemcode
             // 
+            this.colitemcode.Caption = "Item Code";
             this.colitemcode.FieldName = "itemcode";
             this.colitemcode.Name = "colitemcode";
             this.colitemcode.OptionsColumn.AllowEdit = false;
+            this.colitemcode.Visible = true;
+            this.colitemcode.VisibleIndex = 0;
             // 
             // colItemName
             // 
@@ -174,7 +177,7 @@
             this.colItemName.Name = "colItemName";
             this.colItemName.OptionsColumn.AllowEdit = false;
             this.colItemName.Visible = true;
-            this.colItemName.VisibleIndex = 0;
+            this.colItemName.VisibleIndex = 1;
             this.colItemName.Width = 90;
             // 
             // colpeso
@@ -184,7 +187,7 @@
             this.colpeso.Name = "colpeso";
             this.colpeso.OptionsColumn.AllowEdit = false;
             this.colpeso.Visible = true;
-            this.colpeso.VisibleIndex = 2;
+            this.colpeso.VisibleIndex = 3;
             this.colpeso.Width = 90;
             // 
             // colfechacreacion
@@ -194,7 +197,7 @@
             this.colfechacreacion.Name = "colfechacreacion";
             this.colfechacreacion.OptionsColumn.AllowEdit = false;
             this.colfechacreacion.Visible = true;
-            this.colfechacreacion.VisibleIndex = 3;
+            this.colfechacreacion.VisibleIndex = 4;
             this.colfechacreacion.Width = 90;
             // 
             // colabierto
@@ -268,7 +271,7 @@
             this.collote_fp.Name = "collote_fp";
             this.collote_fp.OptionsColumn.AllowEdit = false;
             this.collote_fp.Visible = true;
-            this.collote_fp.VisibleIndex = 1;
+            this.collote_fp.VisibleIndex = 2;
             // 
             // colimprimir
             // 
@@ -276,7 +279,7 @@
             this.colimprimir.ColumnEdit = this.btnGenerar;
             this.colimprimir.Name = "colimprimir";
             this.colimprimir.Visible = true;
-            this.colimprimir.VisibleIndex = 4;
+            this.colimprimir.VisibleIndex = 5;
             // 
             // btnGenerar
             // 

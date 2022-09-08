@@ -41,7 +41,7 @@ namespace LOSA.Produccion
         int tipoprinte = 0;
 
 
-DataOperations dp = new DataOperations();
+        DataOperations dp = new DataOperations();
         public frmGenerarTarimas(int Pid_ali, int NextPrint)
         {
             InitializeComponent();

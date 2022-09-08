@@ -31,6 +31,7 @@ namespace LOSA.Clases
         public decimal Reproceso_kg;
         public decimal Unidades;
         public int id_pt;
+        public int especie;
 
         public bool RecuperarRegistro(int pLotePT)
         {
@@ -61,6 +62,7 @@ namespace LOSA.Clases
                     CantidadBatch = dr.GetInt32(11);
                     OrderId_prd = dr.GetInt64(12);
                     id_pt = dr.GetInt32(13);
+                    especie = dr.GetInt32(14);
                     Recuperado = true;
                 }
                 dr.Close();
