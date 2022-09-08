@@ -107,10 +107,11 @@ namespace LOSA.Calidad
                     {
                         string Query = "";
                         SqlCommand cmd = new SqlCommand(Query, cn);
-                        cmd = new SqlCommand("sp_set_update_tarima_estado_calidad", cn);//Actualizar el estado de calidad.
+                        cmd = new SqlCommand("sp_set_update_tarima_estado_calidadV2", cn);//Actualizar el estado de calidad.
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@id_estado", 4);//Rechazado
                         cmd.Parameters.AddWithValue("@id", idTm);
+                        cmd.Parameters.AddWithValue("@user", UsuarioLogeado.Id);
                         cmd.ExecuteNonQuery();
 
                         foreach (dsCalidad.causaaddRow row2 in dsCalidad.causaadd.Rows)//Guardar las causas del rechazo
@@ -156,6 +157,7 @@ namespace LOSA.Calidad
             }
             catch (Exception ex)
             {
+                CajaDialogo.Error(ex.Message);
             }
         }
     }

@@ -210,4 +210,13 @@
         b8uJ+ZOwNQgPPo9+8w8imt94911hKQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="turnoV2BindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>763, 56</value>
+  </metadata>
+  <metadata name="dsProduccion.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>478, 56</value>
+  </metadata>
+  <metadata name="turnoBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>603, 56</value>
+  </metadata>
 </root>

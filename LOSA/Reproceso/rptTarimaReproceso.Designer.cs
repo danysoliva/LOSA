@@ -57,6 +57,8 @@ namespace LOSA.Reproceso
             this.xrLabel18 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel17 = new DevExpress.XtraReports.UI.XRLabel();
             this.PageHeader = new DevExpress.XtraReports.UI.PageHeaderBand();
+            this.xrlblTurno = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.BarCode1 = new DevExpress.XtraReports.UI.XRBarCode();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.lblNombreProducto = new DevExpress.XtraReports.UI.XRLabel();
@@ -415,6 +417,8 @@ namespace LOSA.Reproceso
             // PageHeader
             // 
             this.PageHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrlblTurno,
+            this.xrLabel2,
             this.BarCode1,
             this.xrLabel1,
             this.lblNombreProducto,
@@ -436,6 +440,41 @@ namespace LOSA.Reproceso
             this.txtcodigo});
             this.PageHeader.HeightF = 827.4582F;
             this.PageHeader.Name = "PageHeader";
+            // 
+            // xrlblTurno
+            // 
+            this.xrlblTurno.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            | DevExpress.XtraPrinting.BorderSide.Right) 
+            | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrlblTurno.BorderWidth = 2F;
+            this.xrlblTurno.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.xrlblTurno.LocationFloat = new DevExpress.Utils.PointFloat(459.6041F, 587.2083F);
+            this.xrlblTurno.Name = "xrlblTurno";
+            this.xrlblTurno.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrlblTurno.SizeF = new System.Drawing.SizeF(316.3905F, 34F);
+            this.xrlblTurno.StylePriority.UseBorders = false;
+            this.xrlblTurno.StylePriority.UseBorderWidth = false;
+            this.xrlblTurno.StylePriority.UseFont = false;
+            this.xrlblTurno.StylePriority.UseTextAlignment = false;
+            this.xrlblTurno.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // xrLabel2
+            // 
+            this.xrLabel2.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            | DevExpress.XtraPrinting.BorderSide.Right) 
+            | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrLabel2.BorderWidth = 2F;
+            this.xrLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(334.375F, 587.2083F);
+            this.xrLabel2.Name = "xrLabel2";
+            this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel2.SizeF = new System.Drawing.SizeF(118.71F, 34F);
+            this.xrLabel2.StylePriority.UseBorders = false;
+            this.xrLabel2.StylePriority.UseBorderWidth = false;
+            this.xrLabel2.StylePriority.UseFont = false;
+            this.xrLabel2.StylePriority.UseTextAlignment = false;
+            this.xrLabel2.Text = "Turno:";
+            this.xrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // BarCode1
             // 
@@ -715,10 +754,12 @@ namespace LOSA.Reproceso
             // BarCode2
             // 
             this.BarCode2.AutoModule = true;
+            this.BarCode2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BarCode2.LocationFloat = new DevExpress.Utils.PointFloat(207.771F, 709.4166F);
             this.BarCode2.Name = "BarCode2";
             this.BarCode2.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 10, 0, 0, 100F);
             this.BarCode2.SizeF = new System.Drawing.SizeF(374.4166F, 114F);
+            this.BarCode2.StylePriority.UseFont = false;
             this.BarCode2.StylePriority.UseTextAlignment = false;
             this.BarCode2.Symbology = code93Generator2;
             this.BarCode2.Text = "TM0000000009";
@@ -730,11 +771,11 @@ namespace LOSA.Reproceso
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel4.BorderWidth = 2F;
-            this.xrLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(334.8333F, 553.2083F);
             this.xrLabel4.Name = "xrLabel4";
             this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel4.SizeF = new System.Drawing.SizeF(118.7084F, 66.75F);
+            this.xrLabel4.SizeF = new System.Drawing.SizeF(118.71F, 34F);
             this.xrLabel4.StylePriority.UseBorders = false;
             this.xrLabel4.StylePriority.UseBorderWidth = false;
             this.xrLabel4.StylePriority.UseFont = false;
@@ -748,11 +789,11 @@ namespace LOSA.Reproceso
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.txtcodigo.BorderWidth = 2F;
-            this.txtcodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcodigo.LocationFloat = new DevExpress.Utils.PointFloat(459.6043F, 553.2083F);
+            this.txtcodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.txtcodigo.LocationFloat = new DevExpress.Utils.PointFloat(459.6041F, 553.2083F);
             this.txtcodigo.Name = "txtcodigo";
             this.txtcodigo.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.txtcodigo.SizeF = new System.Drawing.SizeF(316.3905F, 66.75F);
+            this.txtcodigo.SizeF = new System.Drawing.SizeF(316.3905F, 34F);
             this.txtcodigo.StylePriority.UseBorders = false;
             this.txtcodigo.StylePriority.UseBorderWidth = false;
             this.txtcodigo.StylePriority.UseFont = false;
@@ -820,5 +861,7 @@ namespace LOSA.Reproceso
         private DevExpress.XtraReports.UI.XRBarCode BarCode2;
         private DevExpress.XtraReports.UI.XRLabel xrLabel4;
         private DevExpress.XtraReports.UI.XRLabel txtcodigo;
+        private DevExpress.XtraReports.UI.XRLabel xrlblTurno;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel2;
     }
 }

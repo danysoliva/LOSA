@@ -32,6 +32,7 @@ namespace LOSA.Reproceso
                 txtcodigo.Text = tar1.ItemCode;
                 BarCode1.Text = BarCode2.Text = tar1.CodigoBarra;
                 id_tarima_PT = tar1.Id_tarima_reproceso;
+                xrlblTurno.Text = tar1.Turno;
 
                 Tarima tar2 = new Tarima();
                 tar2.RecuperarTarimaPT(id_tarima_PT);

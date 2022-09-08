@@ -444,7 +444,7 @@ namespace LOSA.Calidad
             }
             catch (Exception ex)
             {
-                
+                CajaDialogo.Error(ex.Message);
             }
 
         }
@@ -1118,10 +1118,11 @@ namespace LOSA.Calidad
                             command.Parameters.AddWithValue("@user", UsuarioLogeado.Id);
                             command.ExecuteNonQuery();
 
-                            SqlCommand cmd = new SqlCommand("sp_set_update_tarima_estado_calidad", cn);
+                            SqlCommand cmd = new SqlCommand("sp_set_update_tarima_estado_calidadV2", cn);
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.AddWithValue("@id_estado", Estado);//1=Habilitado
                             cmd.Parameters.AddWithValue("@id", idTarima);
+                            cmd.Parameters.AddWithValue("@user", UsuarioLogeado.Id);
                             cmd.ExecuteNonQuery();
 
                         }
@@ -1167,10 +1168,11 @@ namespace LOSA.Calidad
                         //foreach (dsCalidad.TarimasRow row in dsCalidad1.Tarimas.Rows)
                         foreach (int idTarima in ListaTarimas)
                         {
-                            SqlCommand cmd = new SqlCommand("sp_set_update_tarima_estado_calidad", cn);
+                            SqlCommand cmd = new SqlCommand("sp_set_update_tarima_estado_calidadV2", cn);
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.AddWithValue("@id_estado", 2);//observacion
                             cmd.Parameters.AddWithValue("@id", idTarima);
+                            cmd.Parameters.AddWithValue("@user", UsuarioLogeado.Id);
                             cmd.ExecuteNonQuery();
 
                         }

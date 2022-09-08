@@ -116,10 +116,11 @@ namespace LOSA.Calidad
                 {
                     string Query = "";
                     SqlCommand cmd = new SqlCommand(Query, cn);
-                    cmd = new SqlCommand("sp_set_update_tarima_estado_calidad", cn);
+                    cmd = new SqlCommand("sp_set_update_tarima_estado_calidadV2", cn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id_estado", 3);//Retenido
                     cmd.Parameters.AddWithValue("@id", idTarima);
+                    cmd.Parameters.AddWithValue("@user", UsuarioLogeado.Id);
                     cmd.ExecuteNonQuery();
                     foreach (dsCalidad.causaaddRow row2 in dsCalidad.causaadd.Rows)
                     {
