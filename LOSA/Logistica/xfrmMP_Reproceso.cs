@@ -20,12 +20,13 @@ namespace LOSA.Logistica
     {
         UserLogin usuarioLogueado;
         private string ItemCode;
-
+        DataOperations dp1 = new DataOperations();
         public xfrmMP_Reproceso(UserLogin pUse)
         {
             InitializeComponent();
             usuarioLogueado = pUse;
 
+            dtFechaIngreso.EditValue = dp1.Now();
             CargarMP();
             cargarDatosProveedor();
             LoadPresentaciones();
@@ -424,12 +425,20 @@ namespace LOSA.Logistica
             var id_pres = gridLookUpEditPresentacion.EditValue;
             foreach (dsRecepcionMPx.presentacionesRow row in dsRecepcionMPx1.presentaciones.Rows)
             {
-                if (row.id == Convert.ToInt32(id_pres))
+                if (Convert.ToString(id_pres) == "")
                 {
-                    decimal Factor = row.factor;
-                    decimal peso = Factor * txtCantidadT.Value;
-                    txtPeso.Text = string.Format("{0:###,##0.00}", peso);
-                    break;
+                    //Si no a seleccionado, no hace nada!
+                }
+                else
+                {
+                    if (row.id == Convert.ToInt32(id_pres))
+                    {
+
+                        decimal Factor = row.factor;
+                        decimal peso = Factor * txtCantidadT.Value;
+                        txtPeso.Text = string.Format("{0:###,##0.00}", peso);
+                        break;
+                    }
                 }
             }
         }
@@ -468,7 +477,6 @@ namespace LOSA.Logistica
                               
                         }
                         ItemCode = Convert.ToString(slueMP.EditValue);
-                        
 
                     }
                     else
@@ -481,6 +489,7 @@ namespace LOSA.Logistica
                         }
                         ItemCode = Convert.ToString(slueMP.EditValue);
                     }
+                    //dtFechaProduccion.EditValue = infoPT.
                     txtproductoterminado.Text = infoPT.DescripcionProducto;
                 }
             }
@@ -489,6 +498,15 @@ namespace LOSA.Logistica
         private void gridView2_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             
+        }
+
+        private void dtFechaProduccion_EditValueChanged(object sender, EventArgs e)
+        {
+            DateTime dtFechaVenc = Convert.ToDateTime(dtFechaProduccion.EditValue);
+
+            dtFechaVenc = dtFechaVenc.AddDays(150);
+
+            dtFechaVencimiento.EditValue = dtFechaVenc;
         }
     }
 }

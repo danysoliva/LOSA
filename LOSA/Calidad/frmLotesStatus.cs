@@ -1918,5 +1918,15 @@ namespace LOSA.Calidad
             else
                 dtFechaHastaObservacion.Enabled = dtFechaDesdeObservacion.Enabled = true;
         }
+
+        private void btnRefreshRetenido_Click(object sender, EventArgs e)
+        {
+            LoadTarimasRet();
+        }
+
+        private void btnRefreshRechazado_Click(object sender, EventArgs e)
+        {
+            LoadTarimasRechazadas();
+        }
     }
 }

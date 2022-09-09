@@ -30,46 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLotesStatus));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions19 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject73 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject74 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject75 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject76 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions20 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject77 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject78 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject79 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject80 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions17 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject65 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject66 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject67 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject68 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions18 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject69 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject70 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject71 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject72 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions21 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject81 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject82 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject83 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject84 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions22 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject85 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject86 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject87 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject88 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions23 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject89 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject90 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject91 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject92 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions24 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject93 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject94 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject95 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject96 = new DevExpress.Utils.SerializableAppearanceObject();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.TabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
@@ -127,6 +87,13 @@
             this.collote1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnEditar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.cmdRefreshObservacion = new DevExpress.XtraEditors.SimpleButton();
+            this.toggleSwitchVerTodos_Observacion = new DevExpress.XtraEditors.ToggleSwitch();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.dtFechaHastaObservacion = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.dtFechaDesdeObservacion = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.checkObservacion = new DevExpress.XtraEditors.CheckEdit();
             this.gridObservacion = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -201,13 +168,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cmdRefreshObservacion = new DevExpress.XtraEditors.SimpleButton();
-            this.toggleSwitchVerTodos_Observacion = new DevExpress.XtraEditors.ToggleSwitch();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.dtFechaHastaObservacion = new DevExpress.XtraEditors.DateEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.dtFechaDesdeObservacion = new DevExpress.XtraEditors.DateEdit();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.btnRefreshRetenido = new DevExpress.XtraEditors.SimpleButton();
+            this.btnRefreshRechazado = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.TabControl1)).BeginInit();
             this.TabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
@@ -224,6 +186,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.btndetalle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).BeginInit();
             this.xtraTabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitchVerTodos_Observacion.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaHastaObservacion.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaHastaObservacion.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesdeObservacion.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesdeObservacion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkObservacion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridObservacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -242,11 +209,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitchVerTodos_Observacion.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFechaHastaObservacion.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFechaHastaObservacion.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesdeObservacion.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesdeObservacion.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -305,8 +267,8 @@
             this.cmdRefreshDisponibles.Appearance.Options.UseBackColor = true;
             this.cmdRefreshDisponibles.Appearance.Options.UseFont = true;
             this.cmdRefreshDisponibles.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdRefreshDisponibles.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdRefreshDisponibles.ImageOptions.Image")));
             this.cmdRefreshDisponibles.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.cmdRefreshDisponibles.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdRefresh.ImageOptions.SvgImage")));
             this.cmdRefreshDisponibles.Location = new System.Drawing.Point(274, 59);
             this.cmdRefreshDisponibles.Name = "cmdRefreshDisponibles";
             this.cmdRefreshDisponibles.Size = new System.Drawing.Size(171, 48);
@@ -810,9 +772,8 @@
             // btndetalle
             // 
             this.btndetalle.AutoHeight = false;
-            editorButtonImageOptions19.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions19.Image")));
             this.btndetalle.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions19, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject73, serializableAppearanceObject74, serializableAppearanceObject75, serializableAppearanceObject76, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph)});
             this.btndetalle.Name = "btndetalle";
             this.btndetalle.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btndetalle.Click += new System.EventHandler(this.btndetalle_Click);
@@ -868,9 +829,8 @@
             // btnEditar
             // 
             this.btnEditar.AutoHeight = false;
-            editorButtonImageOptions20.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions20.Image")));
             this.btnEditar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions20, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject77, serializableAppearanceObject78, serializableAppearanceObject79, serializableAppearanceObject80, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph)});
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnEditar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnEditar_ButtonClick);
@@ -891,6 +851,98 @@
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.Size = new System.Drawing.Size(1016, 441);
             this.xtraTabPage2.Text = "En Observación";
+            // 
+            // cmdRefreshObservacion
+            // 
+            this.cmdRefreshObservacion.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.cmdRefreshObservacion.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdRefreshObservacion.Appearance.Options.UseBackColor = true;
+            this.cmdRefreshObservacion.Appearance.Options.UseFont = true;
+            this.cmdRefreshObservacion.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdRefreshObservacion.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdRefreshObservacion.ImageOptions.Image")));
+            this.cmdRefreshObservacion.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.cmdRefreshObservacion.Location = new System.Drawing.Point(272, 54);
+            this.cmdRefreshObservacion.Name = "cmdRefreshObservacion";
+            this.cmdRefreshObservacion.Size = new System.Drawing.Size(171, 48);
+            this.cmdRefreshObservacion.TabIndex = 101;
+            this.cmdRefreshObservacion.Text = "Refresh";
+            this.cmdRefreshObservacion.Click += new System.EventHandler(this.cmdRefreshObservacion_Click);
+            // 
+            // toggleSwitchVerTodos_Observacion
+            // 
+            this.toggleSwitchVerTodos_Observacion.Location = new System.Drawing.Point(115, 79);
+            this.toggleSwitchVerTodos_Observacion.MenuManager = this.barManager1;
+            this.toggleSwitchVerTodos_Observacion.Name = "toggleSwitchVerTodos_Observacion";
+            this.toggleSwitchVerTodos_Observacion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toggleSwitchVerTodos_Observacion.Properties.Appearance.Options.UseFont = true;
+            this.toggleSwitchVerTodos_Observacion.Properties.OffText = "No";
+            this.toggleSwitchVerTodos_Observacion.Properties.OnText = "Si";
+            this.toggleSwitchVerTodos_Observacion.Size = new System.Drawing.Size(142, 28);
+            this.toggleSwitchVerTodos_Observacion.TabIndex = 100;
+            this.toggleSwitchVerTodos_Observacion.Toggled += new System.EventHandler(this.toggleSwitchVerTodos_Observacion_Toggled);
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(9, 81);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(73, 21);
+            this.labelControl2.TabIndex = 99;
+            this.labelControl2.Text = "Ver Todos:";
+            // 
+            // dtFechaHastaObservacion
+            // 
+            this.dtFechaHastaObservacion.EditValue = null;
+            this.dtFechaHastaObservacion.Location = new System.Drawing.Point(115, 46);
+            this.dtFechaHastaObservacion.Name = "dtFechaHastaObservacion";
+            this.dtFechaHastaObservacion.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtFechaHastaObservacion.Properties.Appearance.Options.UseFont = true;
+            this.dtFechaHastaObservacion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtFechaHastaObservacion.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtFechaHastaObservacion.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.TouchUI;
+            this.dtFechaHastaObservacion.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.dtFechaHastaObservacion.Size = new System.Drawing.Size(142, 26);
+            this.dtFechaHastaObservacion.TabIndex = 97;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Location = new System.Drawing.Point(9, 49);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(86, 21);
+            this.labelControl3.TabIndex = 98;
+            this.labelControl3.Text = "Fecha Hasta:";
+            // 
+            // dtFechaDesdeObservacion
+            // 
+            this.dtFechaDesdeObservacion.EditValue = null;
+            this.dtFechaDesdeObservacion.Location = new System.Drawing.Point(115, 14);
+            this.dtFechaDesdeObservacion.Name = "dtFechaDesdeObservacion";
+            this.dtFechaDesdeObservacion.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtFechaDesdeObservacion.Properties.Appearance.Options.UseFont = true;
+            this.dtFechaDesdeObservacion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtFechaDesdeObservacion.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtFechaDesdeObservacion.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.TouchUI;
+            this.dtFechaDesdeObservacion.Properties.MinValue = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
+            this.dtFechaDesdeObservacion.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.dtFechaDesdeObservacion.Size = new System.Drawing.Size(142, 26);
+            this.dtFechaDesdeObservacion.TabIndex = 95;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Location = new System.Drawing.Point(9, 17);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(90, 21);
+            this.labelControl4.TabIndex = 96;
+            this.labelControl4.Text = "Fecha Desde:";
             // 
             // checkObservacion
             // 
@@ -1076,9 +1128,8 @@
             // repositoryItemButtonEdit1
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
-            editorButtonImageOptions17.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions17.Image")));
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions17, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject65, serializableAppearanceObject66, serializableAppearanceObject67, serializableAppearanceObject68, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -1095,9 +1146,8 @@
             // btndetalle3
             // 
             this.btndetalle3.AutoHeight = false;
-            editorButtonImageOptions18.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions18.Image")));
             this.btndetalle3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions18, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject69, serializableAppearanceObject70, serializableAppearanceObject71, serializableAppearanceObject72, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph)});
             this.btndetalle3.Name = "btndetalle3";
             this.btndetalle3.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btndetalle3.Click += new System.EventHandler(this.btndetalle3_Click);
@@ -1170,6 +1220,7 @@
             // 
             this.xtraTabPage3.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 10.25F);
             this.xtraTabPage3.Appearance.Header.Options.UseFont = true;
+            this.xtraTabPage3.Controls.Add(this.btnRefreshRetenido);
             this.xtraTabPage3.Controls.Add(this.checkRetenido);
             this.xtraTabPage3.Controls.Add(this.gridRetenidos);
             this.xtraTabPage3.Name = "xtraTabPage3";
@@ -1197,13 +1248,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridRetenidos.DataMember = "tarimas_ret";
             this.gridRetenidos.DataSource = this.dsCalidad1;
-            this.gridRetenidos.Location = new System.Drawing.Point(1, 19);
+            this.gridRetenidos.Location = new System.Drawing.Point(1, 59);
             this.gridRetenidos.MainView = this.gridView2;
             this.gridRetenidos.Name = "gridRetenidos";
             this.gridRetenidos.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit2,
             this.btnview});
-            this.gridRetenidos.Size = new System.Drawing.Size(1015, 424);
+            this.gridRetenidos.Size = new System.Drawing.Size(1015, 384);
             this.gridRetenidos.TabIndex = 3;
             this.gridRetenidos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -1360,9 +1411,8 @@
             // repositoryItemButtonEdit2
             // 
             this.repositoryItemButtonEdit2.AutoHeight = false;
-            editorButtonImageOptions21.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions21.Image")));
             this.repositoryItemButtonEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions21, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject81, serializableAppearanceObject82, serializableAppearanceObject83, serializableAppearanceObject84, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph)});
             this.repositoryItemButtonEdit2.Name = "repositoryItemButtonEdit2";
             this.repositoryItemButtonEdit2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -1379,9 +1429,8 @@
             // btnview
             // 
             this.btnview.AutoHeight = false;
-            editorButtonImageOptions22.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions22.Image")));
             this.btnview.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions22, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject85, serializableAppearanceObject86, serializableAppearanceObject87, serializableAppearanceObject88, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph)});
             this.btnview.Name = "btnview";
             this.btnview.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnview.Click += new System.EventHandler(this.btnview_Click);
@@ -1454,6 +1503,7 @@
             // 
             this.xtraTabPage4.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 10.25F);
             this.xtraTabPage4.Appearance.Header.Options.UseFont = true;
+            this.xtraTabPage4.Controls.Add(this.btnRefreshRechazado);
             this.xtraTabPage4.Controls.Add(this.checkRechazado);
             this.xtraTabPage4.Controls.Add(this.gridRechazado);
             this.xtraTabPage4.Name = "xtraTabPage4";
@@ -1481,13 +1531,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridRechazado.DataMember = "tarimas_rechazadas";
             this.gridRechazado.DataSource = this.dsCalidad1;
-            this.gridRechazado.Location = new System.Drawing.Point(1, 19);
+            this.gridRechazado.Location = new System.Drawing.Point(1, 59);
             this.gridRechazado.MainView = this.gridView3;
             this.gridRechazado.Name = "gridRechazado";
             this.gridRechazado.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit3,
             this.repositoryItemButtonEdit4});
-            this.gridRechazado.Size = new System.Drawing.Size(1020, 424);
+            this.gridRechazado.Size = new System.Drawing.Size(1020, 384);
             this.gridRechazado.TabIndex = 4;
             this.gridRechazado.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -1644,9 +1694,8 @@
             // repositoryItemButtonEdit3
             // 
             this.repositoryItemButtonEdit3.AutoHeight = false;
-            editorButtonImageOptions23.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions23.Image")));
             this.repositoryItemButtonEdit3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions23, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject89, serializableAppearanceObject90, serializableAppearanceObject91, serializableAppearanceObject92, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph)});
             this.repositoryItemButtonEdit3.Name = "repositoryItemButtonEdit3";
             this.repositoryItemButtonEdit3.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -1663,9 +1712,8 @@
             // repositoryItemButtonEdit4
             // 
             this.repositoryItemButtonEdit4.AutoHeight = false;
-            editorButtonImageOptions24.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions24.Image")));
             this.repositoryItemButtonEdit4.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions24, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject93, serializableAppearanceObject94, serializableAppearanceObject95, serializableAppearanceObject96, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph)});
             this.repositoryItemButtonEdit4.Name = "repositoryItemButtonEdit4";
             this.repositoryItemButtonEdit4.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -1772,97 +1820,37 @@
             this.colid.Name = "colid";
             this.colid.Width = 56;
             // 
-            // cmdRefreshObservacion
+            // btnRefreshRetenido
             // 
-            this.cmdRefreshObservacion.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.cmdRefreshObservacion.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdRefreshObservacion.Appearance.Options.UseBackColor = true;
-            this.cmdRefreshObservacion.Appearance.Options.UseFont = true;
-            this.cmdRefreshObservacion.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdRefreshObservacion.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.cmdRefreshObservacion.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
-            this.cmdRefreshObservacion.Location = new System.Drawing.Point(272, 54);
-            this.cmdRefreshObservacion.Name = "cmdRefreshObservacion";
-            this.cmdRefreshObservacion.Size = new System.Drawing.Size(171, 48);
-            this.cmdRefreshObservacion.TabIndex = 101;
-            this.cmdRefreshObservacion.Text = "Refresh";
-            this.cmdRefreshObservacion.Click += new System.EventHandler(this.cmdRefreshObservacion_Click);
+            this.btnRefreshRetenido.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.btnRefreshRetenido.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefreshRetenido.Appearance.Options.UseBackColor = true;
+            this.btnRefreshRetenido.Appearance.Options.UseFont = true;
+            this.btnRefreshRetenido.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnRefreshRetenido.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnRefreshRetenido.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnRefreshRetenido.Location = new System.Drawing.Point(3, 5);
+            this.btnRefreshRetenido.Name = "btnRefreshRetenido";
+            this.btnRefreshRetenido.Size = new System.Drawing.Size(171, 48);
+            this.btnRefreshRetenido.TabIndex = 102;
+            this.btnRefreshRetenido.Text = "Refresh";
+            this.btnRefreshRetenido.Click += new System.EventHandler(this.btnRefreshRetenido_Click);
             // 
-            // toggleSwitchVerTodos_Observacion
+            // btnRefreshRechazado
             // 
-            this.toggleSwitchVerTodos_Observacion.Location = new System.Drawing.Point(115, 79);
-            this.toggleSwitchVerTodos_Observacion.MenuManager = this.barManager1;
-            this.toggleSwitchVerTodos_Observacion.Name = "toggleSwitchVerTodos_Observacion";
-            this.toggleSwitchVerTodos_Observacion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toggleSwitchVerTodos_Observacion.Properties.Appearance.Options.UseFont = true;
-            this.toggleSwitchVerTodos_Observacion.Properties.OffText = "No";
-            this.toggleSwitchVerTodos_Observacion.Properties.OnText = "Si";
-            this.toggleSwitchVerTodos_Observacion.Size = new System.Drawing.Size(142, 28);
-            this.toggleSwitchVerTodos_Observacion.TabIndex = 100;
-            this.toggleSwitchVerTodos_Observacion.Toggled += new System.EventHandler(this.toggleSwitchVerTodos_Observacion_Toggled);
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(9, 81);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(73, 21);
-            this.labelControl2.TabIndex = 99;
-            this.labelControl2.Text = "Ver Todos:";
-            // 
-            // dtFechaHastaObservacion
-            // 
-            this.dtFechaHastaObservacion.EditValue = null;
-            this.dtFechaHastaObservacion.Location = new System.Drawing.Point(115, 46);
-            this.dtFechaHastaObservacion.Name = "dtFechaHastaObservacion";
-            this.dtFechaHastaObservacion.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtFechaHastaObservacion.Properties.Appearance.Options.UseFont = true;
-            this.dtFechaHastaObservacion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtFechaHastaObservacion.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtFechaHastaObservacion.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.TouchUI;
-            this.dtFechaHastaObservacion.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.dtFechaHastaObservacion.Size = new System.Drawing.Size(142, 26);
-            this.dtFechaHastaObservacion.TabIndex = 97;
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(9, 49);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(86, 21);
-            this.labelControl3.TabIndex = 98;
-            this.labelControl3.Text = "Fecha Hasta:";
-            // 
-            // dtFechaDesdeObservacion
-            // 
-            this.dtFechaDesdeObservacion.EditValue = null;
-            this.dtFechaDesdeObservacion.Location = new System.Drawing.Point(115, 14);
-            this.dtFechaDesdeObservacion.Name = "dtFechaDesdeObservacion";
-            this.dtFechaDesdeObservacion.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtFechaDesdeObservacion.Properties.Appearance.Options.UseFont = true;
-            this.dtFechaDesdeObservacion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtFechaDesdeObservacion.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtFechaDesdeObservacion.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.TouchUI;
-            this.dtFechaDesdeObservacion.Properties.MinValue = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
-            this.dtFechaDesdeObservacion.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.dtFechaDesdeObservacion.Size = new System.Drawing.Size(142, 26);
-            this.dtFechaDesdeObservacion.TabIndex = 95;
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(9, 17);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(90, 21);
-            this.labelControl4.TabIndex = 96;
-            this.labelControl4.Text = "Fecha Desde:";
+            this.btnRefreshRechazado.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.btnRefreshRechazado.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefreshRechazado.Appearance.Options.UseBackColor = true;
+            this.btnRefreshRechazado.Appearance.Options.UseFont = true;
+            this.btnRefreshRechazado.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnRefreshRechazado.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btnRefreshRechazado.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnRefreshRechazado.Location = new System.Drawing.Point(3, 5);
+            this.btnRefreshRechazado.Name = "btnRefreshRechazado";
+            this.btnRefreshRechazado.Size = new System.Drawing.Size(171, 48);
+            this.btnRefreshRechazado.TabIndex = 102;
+            this.btnRefreshRechazado.Text = "Refresh";
+            this.btnRefreshRechazado.Click += new System.EventHandler(this.btnRefreshRechazado_Click);
             // 
             // frmLotesStatus
             // 
@@ -1898,6 +1886,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).EndInit();
             this.xtraTabPage2.ResumeLayout(false);
             this.xtraTabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitchVerTodos_Observacion.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaHastaObservacion.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaHastaObservacion.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesdeObservacion.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesdeObservacion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkObservacion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridObservacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
@@ -1916,11 +1909,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitchVerTodos_Observacion.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFechaHastaObservacion.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFechaHastaObservacion.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesdeObservacion.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesdeObservacion.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2066,5 +2054,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.DateEdit dtFechaDesdeObservacion;
         private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.SimpleButton btnRefreshRetenido;
+        private DevExpress.XtraEditors.SimpleButton btnRefreshRechazado;
     }
 }

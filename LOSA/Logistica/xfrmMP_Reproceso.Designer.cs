@@ -76,18 +76,18 @@ namespace LOSA.Logistica
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.collote = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridLookUpTurno = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.turnoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.turnoV2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsProduccion = new LOSA.Produccion.dsProduccion();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colturno = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.turnoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.gridLookCausa = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.txtproductoterminado = new System.Windows.Forms.TextBox();
-            this.turnoV2BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colturno = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadTarimasTotal.Properties)).BeginInit();
@@ -115,12 +115,12 @@ namespace LOSA.Logistica
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpTurno.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.turnoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.turnoV2BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProduccion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.turnoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookCausa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.turnoV2BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             this.SuspendLayout();
@@ -353,6 +353,7 @@ namespace LOSA.Logistica
             this.dtFechaProduccion.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
             this.dtFechaProduccion.Size = new System.Drawing.Size(134, 30);
             this.dtFechaProduccion.TabIndex = 9;
+            this.dtFechaProduccion.EditValueChanged += new System.EventHandler(this.dtFechaProduccion_EditValueChanged);
             // 
             // labelControl8
             // 
@@ -628,10 +629,10 @@ namespace LOSA.Logistica
             this.gridLookUpTurno.Size = new System.Drawing.Size(134, 32);
             this.gridLookUpTurno.TabIndex = 122;
             // 
-            // turnoBindingSource
+            // turnoV2BindingSource
             // 
-            this.turnoBindingSource.DataMember = "turno";
-            this.turnoBindingSource.DataSource = this.dsProduccion;
+            this.turnoV2BindingSource.DataMember = "turnoV2";
+            this.turnoV2BindingSource.DataSource = this.dsProduccion;
             // 
             // dsProduccion
             // 
@@ -651,6 +652,25 @@ namespace LOSA.Logistica
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // colid1
+            // 
+            this.colid1.FieldName = "id";
+            this.colid1.Name = "colid1";
+            // 
+            // colturno
+            // 
+            this.colturno.Caption = "Turno";
+            this.colturno.FieldName = "turno";
+            this.colturno.Name = "colturno";
+            this.colturno.OptionsColumn.AllowEdit = false;
+            this.colturno.Visible = true;
+            this.colturno.VisibleIndex = 0;
+            // 
+            // turnoBindingSource
+            // 
+            this.turnoBindingSource.DataMember = "turno";
+            this.turnoBindingSource.DataSource = this.dsProduccion;
             // 
             // labelControl4
             // 
@@ -711,25 +731,6 @@ namespace LOSA.Logistica
             this.txtproductoterminado.Name = "txtproductoterminado";
             this.txtproductoterminado.Size = new System.Drawing.Size(431, 30);
             this.txtproductoterminado.TabIndex = 127;
-            // 
-            // turnoV2BindingSource
-            // 
-            this.turnoV2BindingSource.DataMember = "turnoV2";
-            this.turnoV2BindingSource.DataSource = this.dsProduccion;
-            // 
-            // colid1
-            // 
-            this.colid1.FieldName = "id";
-            this.colid1.Name = "colid1";
-            // 
-            // colturno
-            // 
-            this.colturno.Caption = "Turno";
-            this.colturno.FieldName = "turno";
-            this.colturno.Name = "colturno";
-            this.colturno.OptionsColumn.AllowEdit = false;
-            this.colturno.Visible = true;
-            this.colturno.VisibleIndex = 0;
             // 
             // gridControl2
             // 
@@ -813,12 +814,12 @@ namespace LOSA.Logistica
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpTurno.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.turnoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.turnoV2BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProduccion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.turnoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookCausa.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.turnoV2BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             this.ResumeLayout(false);
