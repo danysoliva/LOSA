@@ -60,7 +60,7 @@ namespace LOSA.MicroIngredientes
 
                 if (row != null)
                 {
-                    xfrmDetalleOrdenesMicros frm = new xfrmDetalleOrdenesMicros(row.id, row.Codigo_Orden);
+                    xfrmDetalleOrdenesMicros frm = new xfrmDetalleOrdenesMicros(row.id, row.Codigo_Orden, row.Lote_PT);
                     //frm.MdiParent = this.MdiParent;
                     frm.ShowDialog();
                 }

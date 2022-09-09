@@ -764,7 +764,7 @@ namespace LOSA.MicroIngredientes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MicrosRow AddMicrosRow(int id, int ___Orden, string Codigo_Orden, System.DateTime Fecha, string Lote_PT, int _Cant__Batch, int _Cod__Estado, string estado, int batch_real, string pt_name) {
+            public MicrosRow AddMicrosRow(int id, int ___Orden, string Codigo_Orden, System.DateTime Fecha, int Lote_PT, int _Cant__Batch, int _Cod__Estado, string estado, int batch_real, string pt_name) {
                 MicrosRow rowMicrosRow = ((MicrosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -824,7 +824,7 @@ namespace LOSA.MicroIngredientes {
                 base.Columns.Add(this.columnCodigo_Orden);
                 this.columnFecha = new global::System.Data.DataColumn("Fecha", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFecha);
-                this.columnLote_PT = new global::System.Data.DataColumn("Lote PT", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnLote_PT = new global::System.Data.DataColumn("Lote PT", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLote_PT);
                 this._columnCant__Batch = new global::System.Data.DataColumn("Cant. Batch", typeof(int), null, global::System.Data.MappingType.Element);
                 this._columnCant__Batch.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnCant__Batch");
@@ -4070,10 +4070,10 @@ namespace LOSA.MicroIngredientes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Lote_PT {
+            public int Lote_PT {
                 get {
                     try {
-                        return ((string)(this[this.tableMicros.Lote_PTColumn]));
+                        return ((int)(this[this.tableMicros.Lote_PTColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'Lote PT\' de la tabla \'Micros\' es DBNull.", e);

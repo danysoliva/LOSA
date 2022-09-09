@@ -18,11 +18,13 @@ namespace LOSA.MicroIngredientes
     {
         int id = 0;
         string codigoOrden;
+        int LotePT;
 
-        public xfrmDetalleOrdenesMicros(int _ID, string _CodigoOrden)
+        public xfrmDetalleOrdenesMicros(int _ID, string _CodigoOrden, int LotePt)
         {
             InitializeComponent();
             id = _ID;
+            LotePT = LotePt;
             codigoOrden = _CodigoOrden;
             LoadData();
             LoadDataIndividual();
@@ -82,7 +84,7 @@ namespace LOSA.MicroIngredientes
 
         private void xfrmDetalleOrdenesMicros_Load(object sender, EventArgs e)
         {
-            lblTitulo.Text = "Código Orden: "+codigoOrden;
+            lblTitulo.Text = "Código Orden: "+codigoOrden + " Lote: " + LotePT.ToString();
 
 
         }
