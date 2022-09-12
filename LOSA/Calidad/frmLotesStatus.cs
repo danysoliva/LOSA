@@ -1928,5 +1928,41 @@ namespace LOSA.Calidad
         {
             LoadTarimasRechazadas();
         }
+
+        private void repositoryItemHisotrialTarima_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridview = (GridView)grDisponibles.FocusedView;
+            var row = (dsCalidad.tarimas_disponiblesRow)gvMateriaPrima.GetFocusedDataRow();
+
+            frmVerHistorialEstadoTarima frm = new frmVerHistorialEstadoTarima(row.id);
+            frm.Show();
+        }
+
+        private void repositoryVerHistorial_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridview = (GridView)grDisponibles.FocusedView;
+            var row = (dsCalidad.tarimas_disponiblesRow)gvMateriaPrima.GetFocusedDataRow();
+
+            frmVerHistorialEstadoTarima frm = new frmVerHistorialEstadoTarima(row.id);
+            frm.Show();
+        }
+
+        private void repositoryHistorialTarima_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridview = (GridView)grDisponibles.FocusedView;
+            var row = (dsCalidad.tarimas_disponiblesRow)gvMateriaPrima.GetFocusedDataRow();
+
+            frmVerHistorialEstadoTarima frm = new frmVerHistorialEstadoTarima(row.id);
+            frm.Show();
+        }
+
+        private void repositoryItemHisotialVer_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridview = (GridView)grDisponibles.FocusedView;
+            var row = (dsCalidad.tarimas_disponiblesRow)gvMateriaPrima.GetFocusedDataRow();
+
+            frmVerHistorialEstadoTarima frm = new frmVerHistorialEstadoTarima(row.id);
+            frm.Show();
+        }
     }
 }

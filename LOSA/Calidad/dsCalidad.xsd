@@ -344,6 +344,21 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="historialestados" msprop:Generator_TableClassName="historialestadosDataTable" msprop:Generator_TableVarName="tablehistorialestados" msprop:Generator_RowChangedName="historialestadosRowChanged" msprop:Generator_TablePropName="historialestados" msprop:Generator_RowDeletingName="historialestadosRowDeleting" msprop:Generator_RowChangingName="historialestadosRowChanging" msprop:Generator_RowEvHandlerName="historialestadosRowChangeEventHandler" msprop:Generator_RowDeletedName="historialestadosRowDeleted" msprop:Generator_RowClassName="historialestadosRow" msprop:Generator_UserTableName="historialestados" msprop:Generator_RowEvArgName="historialestadosRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="id_tarima" msprop:Generator_ColumnVarNameInTable="columnid_tarima" msprop:Generator_ColumnPropNameInRow="id_tarima" msprop:Generator_ColumnPropNameInTable="id_tarimaColumn" msprop:Generator_UserColumnName="id_tarima" type="xs:int" minOccurs="0" />
+              <xs:element name="id_estado_old" msprop:Generator_ColumnVarNameInTable="columnid_estado_old" msprop:Generator_ColumnPropNameInRow="id_estado_old" msprop:Generator_ColumnPropNameInTable="id_estado_oldColumn" msprop:Generator_UserColumnName="id_estado_old" type="xs:int" minOccurs="0" />
+              <xs:element name="estado_old" msdata:Caption="Estado Anterior" msprop:Generator_ColumnVarNameInTable="columnestado_old" msprop:Generator_ColumnPropNameInRow="estado_old" msprop:Generator_ColumnPropNameInTable="estado_oldColumn" msprop:Generator_UserColumnName="estado_old" type="xs:string" minOccurs="0" />
+              <xs:element name="id_estado_new" msprop:Generator_ColumnVarNameInTable="columnid_estado_new" msprop:Generator_ColumnPropNameInRow="id_estado_new" msprop:Generator_ColumnPropNameInTable="id_estado_newColumn" msprop:Generator_UserColumnName="id_estado_new" type="xs:int" minOccurs="0" />
+              <xs:element name="estado_new" msdata:Caption="Estado Nuevo" msprop:Generator_ColumnVarNameInTable="columnestado_new" msprop:Generator_ColumnPropNameInRow="estado_new" msprop:Generator_ColumnPropNameInTable="estado_newColumn" msprop:Generator_UserColumnName="estado_new" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha_modificacion" msdata:Caption="Fecha de Modificacion" msprop:Generator_ColumnVarNameInTable="columnfecha_modificacion" msprop:Generator_ColumnPropNameInRow="fecha_modificacion" msprop:Generator_ColumnPropNameInTable="fecha_modificacionColumn" msprop:Generator_UserColumnName="fecha_modificacion" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="user_id" msprop:Generator_ColumnVarNameInTable="columnuser_id" msprop:Generator_ColumnPropNameInRow="user_id" msprop:Generator_ColumnPropNameInTable="user_idColumn" msprop:Generator_UserColumnName="user_id" type="xs:int" minOccurs="0" />
+              <xs:element name="usuario" msdata:Caption="Usuario" msprop:Generator_ColumnVarNameInTable="columnusuario" msprop:Generator_ColumnPropNameInRow="usuario" msprop:Generator_ColumnPropNameInTable="usuarioColumn" msprop:Generator_UserColumnName="usuario" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>
