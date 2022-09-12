@@ -30,11 +30,33 @@ namespace LOSA.Logistica
             dtFechaDesde.DateTime = DateTime.Now.AddDays(-15);
             dtFechaHasta.DateTime = DateTime.Now;
             LoadData();
+            CargarTurnos();
         }
 
         private void cmdHome_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void CargarTurnos()
+        {
+            try
+            {
+                string query = @"sp_load_turnos";
+                DataOperations dp = new DataOperations();
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                dsProduccion.turnoV2.Clear();
+                adat.Fill(dsProduccion.turnoV2);
+                conn.Close();
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
         }
 
         private void LoadData()
@@ -179,6 +201,13 @@ namespace LOSA.Logistica
         
         private void cmdGuardar_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(gridLookUpTurno.Text))
+            {
+                CajaDialogo.Error("Debe Seleccionar un Turno!");
+                return;
+            }
+
+
             DataOperations dp = new DataOperations();
             SqlConnection conexion = new SqlConnection(dp.ConnectionStringLOSA);
             SqlTransaction transaction = null;
@@ -300,7 +329,7 @@ namespace LOSA.Logistica
                         cmm.Parameters.AddWithValue("@id", 1);
                         string barcode = cmm.ExecuteScalar().ToString();
 
-                        cmd3 = new SqlCommand("sp_insert_new_tarima_pt_to_mp_V3", transaction.Connection);
+                        cmd3 = new SqlCommand("sp_insert_new_tarima_pt_to_mp_V4", transaction.Connection);
                         cmd3.CommandType = CommandType.StoredProcedure;
                         cmd3.Transaction = transaction;
                         cmd3.Parameters.AddWithValue("@numero_transaccion", setIngreso.numero_referencia);
@@ -317,6 +346,7 @@ namespace LOSA.Logistica
                         cmd3.Parameters.AddWithValue("@id_tarima_reproceso", tarima.TarimaID);
                         cmd3.Parameters.AddWithValue("@bit_promedio", 0);
                         cmd3.Parameters.AddWithValue("@id_proveedor", DBNull.Value);
+                        cmd3.Parameters.AddWithValue("@id_turno", gridLookUpTurno.EditValue);
 
                         vid_tarima = Convert.ToInt32(cmd3.ExecuteScalar());
 

@@ -1285,6 +1285,12 @@
     <Compile Include="Logistica\frmPlanSemanal.Designer.cs">
       <DependentUpon>frmPlanSemanal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logistica\frmRecuentoInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\frmRecuentoInventario.Designer.cs">
+      <DependentUpon>frmRecuentoInventario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logistica\frmReporteSeguimientoComprasTransito.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -3475,6 +3481,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Logistica\frmPlanSemanal.resx">
       <DependentUpon>frmPlanSemanal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\frmRecuentoInventario.resx">
+      <DependentUpon>frmRecuentoInventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logistica\frmReporteSeguimientoComprasTransito.resx">
       <DependentUpon>frmReporteSeguimientoComprasTransito.cs</DependentUpon>
