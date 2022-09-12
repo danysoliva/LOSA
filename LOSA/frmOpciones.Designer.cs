@@ -1067,7 +1067,7 @@
             this.cmdVerConfiguracionLotesVencimientoMP.Name = "cmdVerConfiguracionLotesVencimientoMP";
             this.cmdVerConfiguracionLotesVencimientoMP.Size = new System.Drawing.Size(199, 59);
             this.cmdVerConfiguracionLotesVencimientoMP.TabIndex = 35;
-            this.cmdVerConfiguracionLotesVencimientoMP.Text = "Primeros a Vencer por MP";
+            this.cmdVerConfiguracionLotesVencimientoMP.Text = "Gestión de Primeros a Vencer por MP";
             this.cmdVerConfiguracionLotesVencimientoMP.Click += new System.EventHandler(this.cmdVerConfiguracionLotesVencimientoMP_Click);
             // 
             // simpleButton34

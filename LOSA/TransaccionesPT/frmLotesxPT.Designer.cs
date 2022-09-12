@@ -39,7 +39,6 @@ namespace LOSA.TransaccionesPT
             this.gridLotePT = new DevExpress.XtraGrid.GridControl();
             this.dsPT1 = new LOSA.TransaccionesPT.dsPT();
             this.gvLotePT = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.btnSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colPT_Id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLote_PT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcode_sap = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -48,6 +47,7 @@ namespace LOSA.TransaccionesPT
             this.colid_orden = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPlan_Date = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLotePT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPT1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvLotePT)).BeginInit();
@@ -127,16 +127,6 @@ namespace LOSA.TransaccionesPT
             this.gvLotePT.OptionsView.ShowGroupPanel = false;
             this.gvLotePT.DoubleClick += new System.EventHandler(this.gvLotePT_DoubleClick);
             // 
-            // btnSeleccionar
-            // 
-            this.btnSeleccionar.AutoHeight = false;
-            editorButtonImageOptions1.Image = global::LOSA.Properties.Resources.tap;
-            this.btnSeleccionar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.btnSeleccionar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnSeleccionar_ButtonClick);
-            // 
             // colPT_Id
             // 
             this.colPT_Id.FieldName = "PT_Id";
@@ -200,6 +190,16 @@ namespace LOSA.TransaccionesPT
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 4;
             this.gridColumn1.Width = 104;
+            // 
+            // btnSeleccionar
+            // 
+            this.btnSeleccionar.AutoHeight = false;
+            editorButtonImageOptions1.Image = global::LOSA.Properties.Resources.tap;
+            this.btnSeleccionar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnSeleccionar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnSeleccionar_ButtonClick);
             // 
             // frmLotesxPT
             // 

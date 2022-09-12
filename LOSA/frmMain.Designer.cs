@@ -273,7 +273,7 @@ namespace LOSA
             this.cmdAbrirTeclado.Appearance.Options.UseBackColor = true;
             this.cmdAbrirTeclado.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdAbrirTeclado.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
-            this.cmdAbrirTeclado.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton3.ImageOptions.SvgImage")));
+            this.cmdAbrirTeclado.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdAbrirTeclado.ImageOptions.SvgImage")));
             this.cmdAbrirTeclado.Location = new System.Drawing.Point(530, 160);
             this.cmdAbrirTeclado.Name = "cmdAbrirTeclado";
             this.cmdAbrirTeclado.Size = new System.Drawing.Size(54, 35);

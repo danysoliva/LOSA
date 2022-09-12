@@ -1469,6 +1469,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsMicros.xsd</DependentUpon>
     </Compile>
+    <Compile Include="MicroIngredientes\frmDetalleFormula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MicroIngredientes\frmDetalleFormula.Designer.cs">
+      <DependentUpon>frmDetalleFormula.cs</DependentUpon>
+    </Compile>
     <Compile Include="MicroIngredientes\frmSelectLotePesaje.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -3562,6 +3568,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MDIParentFormLOSA.resx">
       <DependentUpon>MDIParentFormLOSA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MicroIngredientes\frmDetalleFormula.resx">
+      <DependentUpon>frmDetalleFormula.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MicroIngredientes\frmSelectLotePesaje.resx">
       <DependentUpon>frmSelectLotePesaje.cs</DependentUpon>

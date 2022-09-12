@@ -764,7 +764,7 @@ namespace LOSA.MicroIngredientes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MicrosRow AddMicrosRow(int id, int ___Orden, string Codigo_Orden, System.DateTime Fecha, string Lote_PT, int _Cant__Batch, int _Cod__Estado, string estado, int batch_real, string pt_name) {
+            public MicrosRow AddMicrosRow(int id, int ___Orden, string Codigo_Orden, System.DateTime Fecha, int Lote_PT, int _Cant__Batch, int _Cod__Estado, string estado, int batch_real, string pt_name) {
                 MicrosRow rowMicrosRow = ((MicrosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -824,7 +824,7 @@ namespace LOSA.MicroIngredientes {
                 base.Columns.Add(this.columnCodigo_Orden);
                 this.columnFecha = new global::System.Data.DataColumn("Fecha", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFecha);
-                this.columnLote_PT = new global::System.Data.DataColumn("Lote PT", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnLote_PT = new global::System.Data.DataColumn("Lote PT", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLote_PT);
                 this._columnCant__Batch = new global::System.Data.DataColumn("Cant. Batch", typeof(int), null, global::System.Data.MappingType.Element);
                 this._columnCant__Batch.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnCant__Batch");
@@ -3005,6 +3005,8 @@ namespace LOSA.MicroIngredientes {
             
             private global::System.Data.DataColumn columnid_turno;
             
+            private global::System.Data.DataColumn columnlot;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public plan_microsh_reportDataTable() {
@@ -3104,6 +3106,14 @@ namespace LOSA.MicroIngredientes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn lotColumn {
+                get {
+                    return this.columnlot;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3139,7 +3149,7 @@ namespace LOSA.MicroIngredientes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public plan_microsh_reportRow Addplan_microsh_reportRow(int id_orden_encabezado, decimal total_kg, System.DateTime fecha, int cant_batch, int AMI_ID, int order_id, string order_code, int id_turno) {
+            public plan_microsh_reportRow Addplan_microsh_reportRow(int id_orden_encabezado, decimal total_kg, System.DateTime fecha, int cant_batch, int AMI_ID, int order_id, string order_code, int id_turno, int lot) {
                 plan_microsh_reportRow rowplan_microsh_reportRow = ((plan_microsh_reportRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_orden_encabezado,
@@ -3149,7 +3159,8 @@ namespace LOSA.MicroIngredientes {
                         AMI_ID,
                         order_id,
                         order_code,
-                        id_turno};
+                        id_turno,
+                        lot};
                 rowplan_microsh_reportRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowplan_microsh_reportRow);
                 return rowplan_microsh_reportRow;
@@ -3180,6 +3191,7 @@ namespace LOSA.MicroIngredientes {
                 this.columnorder_id = base.Columns["order_id"];
                 this.columnorder_code = base.Columns["order_code"];
                 this.columnid_turno = base.Columns["id_turno"];
+                this.columnlot = base.Columns["lot"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3201,6 +3213,9 @@ namespace LOSA.MicroIngredientes {
                 base.Columns.Add(this.columnorder_code);
                 this.columnid_turno = new global::System.Data.DataColumn("id_turno", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_turno);
+                this.columnlot = new global::System.Data.DataColumn("lot", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlot);
+                this.columnlot.Caption = "Lote PT";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4070,10 +4085,10 @@ namespace LOSA.MicroIngredientes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Lote_PT {
+            public int Lote_PT {
                 get {
                     try {
-                        return ((string)(this[this.tableMicros.Lote_PTColumn]));
+                        return ((int)(this[this.tableMicros.Lote_PTColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'Lote PT\' de la tabla \'Micros\' es DBNull.", e);
@@ -5765,6 +5780,22 @@ namespace LOSA.MicroIngredientes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int lot {
+                get {
+                    try {
+                        return ((int)(this[this.tableplan_microsh_report.lotColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'lot\' de la tabla \'plan_microsh_report\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableplan_microsh_report.lotColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isid_orden_encabezadoNull() {
                 return this.IsNull(this.tableplan_microsh_report.id_orden_encabezadoColumn);
             }
@@ -5857,6 +5888,18 @@ namespace LOSA.MicroIngredientes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setid_turnoNull() {
                 this[this.tableplan_microsh_report.id_turnoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IslotNull() {
+                return this.IsNull(this.tableplan_microsh_report.lotColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetlotNull() {
+                this[this.tableplan_microsh_report.lotColumn] = global::System.Convert.DBNull;
             }
         }
         

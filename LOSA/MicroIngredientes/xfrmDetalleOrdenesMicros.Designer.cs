@@ -67,6 +67,7 @@
             this.repositoryItemSpinEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.repositoryItemButtonEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btnStartPesaje = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdConfigurarDetalle = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gcDetalle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleOrdenesMicroBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMicros)).BeginInit();
@@ -95,7 +96,7 @@
             this.gcDetalle.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemSpinEdit1,
             this.repositoryItemButtonEdit1});
-            this.gcDetalle.Size = new System.Drawing.Size(864, 366);
+            this.gcDetalle.Size = new System.Drawing.Size(864, 382);
             this.gcDetalle.TabIndex = 0;
             this.gcDetalle.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDetalle});
@@ -206,9 +207,9 @@
             this.lblTitulo.Appearance.Options.UseTextOptions = true;
             this.lblTitulo.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblTitulo.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblTitulo.Location = new System.Drawing.Point(254, 44);
+            this.lblTitulo.Location = new System.Drawing.Point(227, 44);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(334, 34);
+            this.lblTitulo.Size = new System.Drawing.Size(468, 34);
             this.lblTitulo.TabIndex = 2;
             this.lblTitulo.Text = "Detalle Micro Ingredientes";
             // 
@@ -273,7 +274,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl1.DataMember = "DetalleOrdenesPesajeIndividual";
             this.gridControl1.DataSource = this.dsMicros;
-            this.gridControl1.Location = new System.Drawing.Point(2, 3);
+            this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -377,7 +378,7 @@
             this.btnStartPesaje.Appearance.Options.UseFont = true;
             this.btnStartPesaje.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnStartPesaje.ImageOptions.Image = global::LOSA.Properties.Resources.weighing_machine24px;
-            this.btnStartPesaje.Location = new System.Drawing.Point(105, 23);
+            this.btnStartPesaje.Location = new System.Drawing.Point(12, 23);
             this.btnStartPesaje.Name = "btnStartPesaje";
             this.btnStartPesaje.Size = new System.Drawing.Size(116, 35);
             this.btnStartPesaje.TabIndex = 2;
@@ -385,11 +386,22 @@
             this.btnStartPesaje.Visible = false;
             this.btnStartPesaje.Click += new System.EventHandler(this.btnStartPesaje_Click);
             // 
+            // cmdConfigurarDetalle
+            // 
+            this.cmdConfigurarDetalle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.cmdConfigurarDetalle.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.cmdConfigurarDetalle.Location = new System.Drawing.Point(620, 25);
+            this.cmdConfigurarDetalle.Name = "cmdConfigurarDetalle";
+            this.cmdConfigurarDetalle.Size = new System.Drawing.Size(75, 55);
+            this.cmdConfigurarDetalle.TabIndex = 6;
+            this.cmdConfigurarDetalle.Click += new System.EventHandler(this.cmdConfigurarDetalle_Click);
+            // 
             // xfrmDetalleOrdenesMicros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(879, 522);
+            this.Controls.Add(this.cmdConfigurarDetalle);
             this.Controls.Add(this.btnStartPesaje);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.xtraTabControl1);
@@ -449,5 +461,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit repositoryItemSpinEdit2;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit2;
         private DevExpress.XtraEditors.SimpleButton btnStartPesaje;
+        private DevExpress.XtraEditors.SimpleButton cmdConfigurarDetalle;
     }
 }
