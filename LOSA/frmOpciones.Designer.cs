@@ -130,6 +130,7 @@
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.btnRecuento = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -300,6 +301,7 @@
             // 
             this.TabMP_Sacos.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TabMP_Sacos.Appearance.Header.Options.UseFont = true;
+            this.TabMP_Sacos.Controls.Add(this.btnRecuento);
             this.TabMP_Sacos.Controls.Add(this.cmdReporteInventarioPorFecha);
             this.TabMP_Sacos.Controls.Add(this.simpleButton30);
             this.TabMP_Sacos.Controls.Add(this.simpleButton26);
@@ -1604,6 +1606,20 @@
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
             // 
+            // btnRecuento
+            // 
+            this.btnRecuento.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.btnRecuento.Appearance.Options.UseFont = true;
+            this.btnRecuento.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnRecuento.Enabled = false;
+            this.btnRecuento.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.btnRecuento.Location = new System.Drawing.Point(209, 254);
+            this.btnRecuento.Name = "btnRecuento";
+            this.btnRecuento.Size = new System.Drawing.Size(200, 42);
+            this.btnRecuento.TabIndex = 47;
+            this.btnRecuento.Text = "Recuento de Inventario";
+            this.btnRecuento.Click += new System.EventHandler(this.btnRecuento_Click_1);
+            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1739,5 +1755,6 @@
         private DevExpress.XtraEditors.SimpleButton cmdLoteActivoGranel;
         private DevExpress.XtraEditors.SimpleButton cmdReporteProximosVencer;
         private DevExpress.XtraEditors.SimpleButton btnRutas;
+        private DevExpress.XtraEditors.SimpleButton btnRecuento;
     }
 }

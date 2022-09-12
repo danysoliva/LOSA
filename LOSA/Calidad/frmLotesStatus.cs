@@ -444,7 +444,7 @@ namespace LOSA.Calidad
             }
             catch (Exception ex)
             {
-                
+                CajaDialogo.Error(ex.Message);
             }
 
         }
@@ -810,7 +810,7 @@ namespace LOSA.Calidad
                         if (ListaTarimas == null)
                             ListaTarimas = new ArrayList();
                         tipo_tm = row2.id_tipotm;
-                        if (tipo_tm == 2)
+                        if (tipo_tm == 2)//Tarima Producto Terminado
                         {
                             lotePar = row2.lote;
                         }
@@ -964,10 +964,11 @@ namespace LOSA.Calidad
                                 command.ExecuteNonQuery();
 
 
-                                SqlCommand cmd = new SqlCommand("sp_set_update_tarima_estado_calidad", cn);
+                                SqlCommand cmd = new SqlCommand("sp_set_update_tarima_estado_calidadV2", cn);
                                 cmd.CommandType = CommandType.StoredProcedure;
                                 cmd.Parameters.AddWithValue("@id_estado", Estado);
                                 cmd.Parameters.AddWithValue("@id", idtarima);
+                                cmd.Parameters.AddWithValue("@user", UsuarioLogeado.Id);
                                 cmd.ExecuteNonQuery();
 
                             }
@@ -997,10 +998,11 @@ namespace LOSA.Calidad
                             foreach (int idtarima in ListaTarimas)
                             {
 
-                                SqlCommand cmd = new SqlCommand("sp_set_update_tarima_estado_calidad", cn);
+                                SqlCommand cmd = new SqlCommand("sp_set_update_tarima_estado_calidadV2", cn);
                                 cmd.CommandType = CommandType.StoredProcedure;
                                 cmd.Parameters.AddWithValue("@id_estado", Estado);
                                 cmd.Parameters.AddWithValue("@id", idtarima);
+                                cmd.Parameters.AddWithValue("@user", UsuarioLogeado.Id);
                                 cmd.ExecuteNonQuery();
 
                             }
@@ -1118,10 +1120,11 @@ namespace LOSA.Calidad
                             command.Parameters.AddWithValue("@user", UsuarioLogeado.Id);
                             command.ExecuteNonQuery();
 
-                            SqlCommand cmd = new SqlCommand("sp_set_update_tarima_estado_calidad", cn);
+                            SqlCommand cmd = new SqlCommand("sp_set_update_tarima_estado_calidadV2", cn);
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.AddWithValue("@id_estado", Estado);//1=Habilitado
                             cmd.Parameters.AddWithValue("@id", idTarima);
+                            cmd.Parameters.AddWithValue("@user", UsuarioLogeado.Id);
                             cmd.ExecuteNonQuery();
 
                         }
@@ -1167,10 +1170,11 @@ namespace LOSA.Calidad
                         //foreach (dsCalidad.TarimasRow row in dsCalidad1.Tarimas.Rows)
                         foreach (int idTarima in ListaTarimas)
                         {
-                            SqlCommand cmd = new SqlCommand("sp_set_update_tarima_estado_calidad", cn);
+                            SqlCommand cmd = new SqlCommand("sp_set_update_tarima_estado_calidadV2", cn);
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.AddWithValue("@id_estado", 2);//observacion
                             cmd.Parameters.AddWithValue("@id", idTarima);
+                            cmd.Parameters.AddWithValue("@user", UsuarioLogeado.Id);
                             cmd.ExecuteNonQuery();
 
                         }
@@ -1913,6 +1917,52 @@ namespace LOSA.Calidad
                 dtFechaDesdeObservacion.Enabled = dtFechaHastaObservacion.Enabled = false;
             else
                 dtFechaHastaObservacion.Enabled = dtFechaDesdeObservacion.Enabled = true;
+        }
+
+        private void btnRefreshRetenido_Click(object sender, EventArgs e)
+        {
+            LoadTarimasRet();
+        }
+
+        private void btnRefreshRechazado_Click(object sender, EventArgs e)
+        {
+            LoadTarimasRechazadas();
+        }
+
+        private void repositoryItemHisotrialTarima_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridview = (GridView)grDisponibles.FocusedView;
+            var row = (dsCalidad.tarimas_disponiblesRow)gvMateriaPrima.GetFocusedDataRow();
+
+            frmVerHistorialEstadoTarima frm = new frmVerHistorialEstadoTarima(row.id);
+            frm.Show();
+        }
+
+        private void repositoryVerHistorial_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridview = (GridView)grDisponibles.FocusedView;
+            var row = (dsCalidad.tarimas_disponiblesRow)gvMateriaPrima.GetFocusedDataRow();
+
+            frmVerHistorialEstadoTarima frm = new frmVerHistorialEstadoTarima(row.id);
+            frm.Show();
+        }
+
+        private void repositoryHistorialTarima_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridview = (GridView)grDisponibles.FocusedView;
+            var row = (dsCalidad.tarimas_disponiblesRow)gvMateriaPrima.GetFocusedDataRow();
+
+            frmVerHistorialEstadoTarima frm = new frmVerHistorialEstadoTarima(row.id);
+            frm.Show();
+        }
+
+        private void repositoryItemHisotialVer_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridview = (GridView)grDisponibles.FocusedView;
+            var row = (dsCalidad.tarimas_disponiblesRow)gvMateriaPrima.GetFocusedDataRow();
+
+            frmVerHistorialEstadoTarima frm = new frmVerHistorialEstadoTarima(row.id);
+            frm.Show();
         }
     }
 }

@@ -20,17 +20,40 @@ namespace LOSA.Logistica
     {
         UserLogin usuarioLogueado;
         private string ItemCode;
-
+        DataOperations dp1 = new DataOperations();
         public xfrmMP_Reproceso(UserLogin pUse)
         {
             InitializeComponent();
             usuarioLogueado = pUse;
 
+            dtFechaIngreso.EditValue = dp1.Now();
             CargarMP();
             cargarDatosProveedor();
             LoadPresentaciones();
             LoadNumeroTransaccion();
             LoadTipoTransaccion();
+            CargarTurnos();
+        }
+
+        private void CargarTurnos()
+        {
+            try
+            {
+                string query = @"sp_load_turnos";
+                DataOperations dp = new DataOperations();
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                dsProduccion.turnoV2.Clear();
+                adat.Fill(dsProduccion.turnoV2);
+                conn.Close();
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
         }
 
         private void CargarMP()
@@ -208,7 +231,11 @@ namespace LOSA.Logistica
                 return;
             }
 
-
+            if (string.IsNullOrEmpty(gridLookUpTurno.Text))
+            {
+                CajaDialogo.Error("Debe seleccionar el Turno!");
+                return;
+            }
 
 
             //generar string de lote
@@ -284,7 +311,7 @@ namespace LOSA.Logistica
                     LotePT.RecuperarRegistro(Convert.ToInt32(lote_string));
                     int idptReproceso = LotePT.id_pt;
                     string OrderCodepp = LotePT.OrderCodePP;
-
+                    
                     command.Parameters.AddWithValue("@unidadesxtarima", txtCantidadT.EditValue);
                     command.Parameters.AddWithValue("@TotalTarimas", cantTarimas);
                     //command.Parameters.AddWithValue("@pesotarima", dp.ValidateNumberDecimal(txtPeso.Text));
@@ -318,7 +345,7 @@ namespace LOSA.Logistica
                         //SqlCommand command = new SqlCommand("sp_insert_new_tarima_sin_boleta_mp_v3", connection);
                         //command.CommandType = CommandType.StoredProcedure;
                         //command.Transaction = transaction;
-                        command.CommandText = "sp_insert_new_tarima_sin_boleta_mp_v3";
+                        command.CommandText = "sp_insert_new_tarima_sin_boleta_mp_v4";
                         command.Parameters.Clear();
                         command.Parameters.AddWithValue("@itemcode", this.ItemCode);
                         command.Parameters.AddWithValue("@id_proveedor", DBNull.Value);
@@ -334,6 +361,7 @@ namespace LOSA.Logistica
                         command.Parameters.AddWithValue("@cant", txtCantidadT.EditValue);
                         command.Parameters.AddWithValue("@peso", Convert.ToDecimal(txtPeso.Text));
                         command.Parameters.AddWithValue("@id_ingreso", id_ingreso_); //Ingreso de Reproceso
+                        command.Parameters.AddWithValue("@id_turno", gridLookUpTurno.EditValue);
                         command.ExecuteNonQuery();
 
                         CantGuardo++;
@@ -397,12 +425,20 @@ namespace LOSA.Logistica
             var id_pres = gridLookUpEditPresentacion.EditValue;
             foreach (dsRecepcionMPx.presentacionesRow row in dsRecepcionMPx1.presentaciones.Rows)
             {
-                if (row.id == Convert.ToInt32(id_pres))
+                if (Convert.ToString(id_pres) == "")
                 {
-                    decimal Factor = row.factor;
-                    decimal peso = Factor * txtCantidadT.Value;
-                    txtPeso.Text = string.Format("{0:###,##0.00}", peso);
-                    break;
+                    //Si no a seleccionado, no hace nada!
+                }
+                else
+                {
+                    if (row.id == Convert.ToInt32(id_pres))
+                    {
+
+                        decimal Factor = row.factor;
+                        decimal peso = Factor * txtCantidadT.Value;
+                        txtPeso.Text = string.Format("{0:###,##0.00}", peso);
+                        break;
+                    }
                 }
             }
         }
@@ -453,6 +489,8 @@ namespace LOSA.Logistica
                         }
                         ItemCode = Convert.ToString(slueMP.EditValue);
                     }
+                    //dtFechaProduccion.EditValue = infoPT.
+                    txtproductoterminado.Text = infoPT.DescripcionProducto;
                 }
             }
         }
@@ -460,6 +498,15 @@ namespace LOSA.Logistica
         private void gridView2_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             
+        }
+
+        private void dtFechaProduccion_EditValueChanged(object sender, EventArgs e)
+        {
+            DateTime dtFechaVenc = Convert.ToDateTime(dtFechaProduccion.EditValue);
+
+            dtFechaVenc = dtFechaVenc.AddDays(150);
+
+            dtFechaVencimiento.EditValue = dtFechaVenc;
         }
     }
 }

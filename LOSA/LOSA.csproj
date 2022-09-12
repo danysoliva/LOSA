@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\aqfsvr003\Deploy%24\LOSA64\</InstallUrl>
-    <ApplicationRevision>396</ApplicationRevision>
+    <ApplicationRevision>398</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -665,6 +665,12 @@
     <Compile Include="Calidad\frmTipoMantenimiento.Designer.cs">
       <DependentUpon>frmTipoMantenimiento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\frmVerHistorialEstadoTarima.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmVerHistorialEstadoTarima.Designer.cs">
+      <DependentUpon>frmVerHistorialEstadoTarima.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\frmview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1278,6 +1284,12 @@
     </Compile>
     <Compile Include="Logistica\frmPlanSemanal.Designer.cs">
       <DependentUpon>frmPlanSemanal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\frmRecuentoInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\frmRecuentoInventario.Designer.cs">
+      <DependentUpon>frmRecuentoInventario.cs</DependentUpon>
     </Compile>
     <Compile Include="Logistica\frmReporteSeguimientoComprasTransito.cs">
       <SubType>Form</SubType>
@@ -3223,6 +3235,9 @@
     <EmbeddedResource Include="Calidad\frmTipoMantenimiento.resx">
       <DependentUpon>frmTipoMantenimiento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmVerHistorialEstadoTarima.resx">
+      <DependentUpon>frmVerHistorialEstadoTarima.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmview.resx">
       <DependentUpon>frmview.cs</DependentUpon>
     </EmbeddedResource>
@@ -3472,6 +3487,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Logistica\frmPlanSemanal.resx">
       <DependentUpon>frmPlanSemanal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\frmRecuentoInventario.resx">
+      <DependentUpon>frmRecuentoInventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logistica\frmReporteSeguimientoComprasTransito.resx">
       <DependentUpon>frmReporteSeguimientoComprasTransito.cs</DependentUpon>
