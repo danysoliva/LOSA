@@ -149,5 +149,10 @@ namespace LOSA.MicroIngredientes
             }
 
         }
+
+        private void cmdConfigurarDetalle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
