@@ -77,5 +77,14 @@ namespace LOSA.Logistica
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
+
+        private void cmdNuevoRecuento_Click(object sender, EventArgs e)
+        {
+            frmRecuentoInventario frm = new frmRecuentoInventario(UsuarioLogeado);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                load_data();
+            }
+        }
     }
 }

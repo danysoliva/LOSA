@@ -150,12 +150,13 @@ namespace LOSA.Despachos
                 var gridView = (GridView)grd_data.FocusedView;
                 var row = (ds_despachos.producto_cargaRow)gridView.GetFocusedDataRow();
 
-                string query = @"sp_deshabilitar_row_of_despachos_tarima";
+                string query = @"sp_deshabilitar_row_of_despachos_tarimaV2";
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query,cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id", row.id);
+                cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
                 cmd.ExecuteNonQuery();
                 cn.Close();
                 load_filas();
