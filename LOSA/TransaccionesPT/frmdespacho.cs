@@ -107,12 +107,20 @@ namespace LOSA.TransaccionesPT
 
         private void btndelete_Click(object sender, EventArgs e)
         {
+            var gridView = (GridView)grd_data.FocusedView;
+            var row = (dsPT.Load_despachosRow)gridView.GetFocusedDataRow();
+
+            if (row.bit_abierto == false)
+            {
+                CajaDialogo.Error("No puede eliminar una Despacho Cerrado! Contacte a su Administrador!");
+                return;
+            }
+
             if (MessageBox.Show("Desea eliminar este despacho? No podra hacer ninguna otra transaccion de el y las tarimas recibidas volveran al inventario.", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             {
                 try
                 {
-                    var gridView = (GridView)grd_data.FocusedView;
-                    var row = (dsPT.Load_despachosRow)gridView.GetFocusedDataRow();
+                   
                     string query = @"sp_eliminar_despacho";
                     SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                     cn.Open();
