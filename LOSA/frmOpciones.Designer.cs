@@ -39,6 +39,7 @@
             this.TabLogistica = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.TabMP_Sacos = new DevExpress.XtraTab.XtraTabPage();
+            this.btnRecuento = new DevExpress.XtraEditors.SimpleButton();
             this.cmdReporteInventarioPorFecha = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton30 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton26 = new DevExpress.XtraEditors.SimpleButton();
@@ -130,7 +131,6 @@
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.btnRecuento = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -322,6 +322,21 @@
             this.TabMP_Sacos.Name = "TabMP_Sacos";
             this.TabMP_Sacos.Size = new System.Drawing.Size(766, 486);
             this.TabMP_Sacos.Text = "MP en Sacos";
+            // 
+            // btnRecuento
+            // 
+            this.btnRecuento.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.btnRecuento.Appearance.Options.UseFont = true;
+            this.btnRecuento.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnRecuento.Enabled = false;
+            this.btnRecuento.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnRecuento.ImageOptions.SvgImage")));
+            this.btnRecuento.Location = new System.Drawing.Point(209, 254);
+            this.btnRecuento.Name = "btnRecuento";
+            this.btnRecuento.Size = new System.Drawing.Size(200, 42);
+            this.btnRecuento.TabIndex = 47;
+            this.btnRecuento.Text = "Recuento de Inventario";
+            this.btnRecuento.Visible = false;
+            this.btnRecuento.Click += new System.EventHandler(this.btnRecuento_Click_1);
             // 
             // cmdReporteInventarioPorFecha
             // 
@@ -1605,20 +1620,6 @@
             this.labelControl3.Size = new System.Drawing.Size(515, 39);
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
-            // 
-            // btnRecuento
-            // 
-            this.btnRecuento.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.btnRecuento.Appearance.Options.UseFont = true;
-            this.btnRecuento.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnRecuento.Enabled = false;
-            this.btnRecuento.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
-            this.btnRecuento.Location = new System.Drawing.Point(209, 254);
-            this.btnRecuento.Name = "btnRecuento";
-            this.btnRecuento.Size = new System.Drawing.Size(200, 42);
-            this.btnRecuento.TabIndex = 47;
-            this.btnRecuento.Text = "Recuento de Inventario";
-            this.btnRecuento.Click += new System.EventHandler(this.btnRecuento_Click_1);
             // 
             // frmOpciones
             // 
