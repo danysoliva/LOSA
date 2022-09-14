@@ -15,7 +15,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LOSA.Tools;
-
+using LOSA.Reproceso;
 
 namespace LOSA.RecepcionMP
 {
@@ -28,14 +28,20 @@ namespace LOSA.RecepcionMP
         public int Id_ingreso { get => id_ingreso; set => id_ingreso = value; }
         public int Numero_transaccion { get => numero_transaccion; set => numero_transaccion = value; }
 
-        public frm_ingresos_lotes(int Pid_ingreso, int Pnumero_transaccion, UserLogin Puser, bool Finalizado, int id_traslado)
+        string ItemCode;
+
+        public frm_ingresos_lotes(int Pid_ingreso, int Pnumero_transaccion, UserLogin Puser, bool Finalizado, int id_traslado, string pItemCode)
         {
             InitializeComponent();
+            
+
             Numero_transaccion = Pnumero_transaccion;
             Id_ingreso = Pid_ingreso;
             UsuarioLogeado = Puser;
             btnFinalizar.Visible = !Finalizado && id_traslado !=0 ? true : false;
+            ItemCode = pItemCode;
             LoadTarimas();
+
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
@@ -321,10 +327,19 @@ namespace LOSA.RecepcionMP
                 CajaDialogo.Error(mensaje);
                 return;
             }
-
-            frmEditTarima frm = new frmEditTarima(row.id, this.UsuarioLogeado);
-            frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
+            
+            //if (ItemCode == "MP00080" || ItemCode == "MP00081")
+            //{
+            //    frmEditarTarimaReproceso frmRP = new frmEditarTarimaReproceso(row.id, this.UsuarioLogeado);
+            //    frmRP.WindowState = FormWindowState.Maximized;
+            //    frmRP.Show();
+            //}
+            //else
+            //{
+                frmEditTarima frm = new frmEditTarima(row.id, this.UsuarioLogeado);
+                frm.WindowState = FormWindowState.Maximized;
+                frm.Show();
+            //}
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
