@@ -75,7 +75,7 @@
             // 
             // TopMargin
             // 
-            this.TopMargin.HeightF = 29.04167F;
+            this.TopMargin.HeightF = 29F;
             this.TopMargin.Name = "TopMargin";
             // 
             // BottomMargin
@@ -621,7 +621,7 @@
             this.Detail,
             this.ReportHeader});
             this.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.Margins = new System.Drawing.Printing.Margins(23, 122, 29, 55);
+            this.Margins = new System.Drawing.Printing.Margins(91, 57, 29, 55);
             this.Version = "18.2";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 

@@ -7450,6 +7450,8 @@ namespace LOSA.Despachos {
             
             private global::System.Data.DataColumn columncodigo_unite;
             
+            private global::System.Data.DataColumn columncodigo_sap;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public lineas_despacho_rptDataTable() {
@@ -7533,6 +7535,14 @@ namespace LOSA.Despachos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn codigo_sapColumn {
+                get {
+                    return this.columncodigo_sap;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -7568,7 +7578,7 @@ namespace LOSA.Despachos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public lineas_despacho_rptRow Addlineas_despacho_rptRow(int fila, int lote, int cantidad, string presentacion, string producto, string codigo_unite) {
+            public lineas_despacho_rptRow Addlineas_despacho_rptRow(int fila, int lote, int cantidad, string presentacion, string producto, string codigo_unite, string codigo_sap) {
                 lineas_despacho_rptRow rowlineas_despacho_rptRow = ((lineas_despacho_rptRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         fila,
@@ -7576,7 +7586,8 @@ namespace LOSA.Despachos {
                         cantidad,
                         presentacion,
                         producto,
-                        codigo_unite};
+                        codigo_unite,
+                        codigo_sap};
                 rowlineas_despacho_rptRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowlineas_despacho_rptRow);
                 return rowlineas_despacho_rptRow;
@@ -7605,6 +7616,7 @@ namespace LOSA.Despachos {
                 this.columnpresentacion = base.Columns["presentacion"];
                 this.columnproducto = base.Columns["producto"];
                 this.columncodigo_unite = base.Columns["codigo_unite"];
+                this.columncodigo_sap = base.Columns["codigo_sap"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7622,6 +7634,8 @@ namespace LOSA.Despachos {
                 base.Columns.Add(this.columnproducto);
                 this.columncodigo_unite = new global::System.Data.DataColumn("codigo_unite", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncodigo_unite);
+                this.columncodigo_sap = new global::System.Data.DataColumn("codigo_sap", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncodigo_sap);
                 this.columncodigo_unite.Caption = "Codigo Unite";
             }
             
@@ -17051,6 +17065,22 @@ namespace LOSA.Despachos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string codigo_sap {
+                get {
+                    try {
+                        return ((string)(this[this.tablelineas_despacho_rpt.codigo_sapColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'codigo_sap\' de la tabla \'lineas_despacho_rpt\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablelineas_despacho_rpt.codigo_sapColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsfilaNull() {
                 return this.IsNull(this.tablelineas_despacho_rpt.filaColumn);
             }
@@ -17119,6 +17149,18 @@ namespace LOSA.Despachos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setcodigo_uniteNull() {
                 this[this.tablelineas_despacho_rpt.codigo_uniteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscodigo_sapNull() {
+                return this.IsNull(this.tablelineas_despacho_rpt.codigo_sapColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcodigo_sapNull() {
+                this[this.tablelineas_despacho_rpt.codigo_sapColumn] = global::System.Convert.DBNull;
             }
         }
         
