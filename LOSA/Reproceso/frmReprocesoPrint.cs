@@ -228,8 +228,8 @@ namespace LOSA.Reproceso
 
                 case GrupoUser.GrupoUsuario.Calidad:
                     //Ventana de Editar Tarima
-                    //frmEditarTarimaReproceso frm = new frmEditarTarimaReproceso(row.id, this.UsuarioLogeado);
-                    frmEditTarima frm = new frmEditTarima(row.id, this.UsuarioLogeado);
+                    frmEditarTarimaReproceso frm = new frmEditarTarimaReproceso(row.id, this.UsuarioLogeado);
+                    //frmEditTarima frm = new frmEditTarima(row.id, this.UsuarioLogeado);
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
                         LoadData();

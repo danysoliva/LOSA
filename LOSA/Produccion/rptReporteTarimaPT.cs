@@ -27,7 +27,7 @@ namespace LOSA.RecepcionMP
                 {
                     lblNombreProducto.Text = pt.descripcion;
 
-                    lblNumeroIngreso.Text = pt.Codigo;
+                    lblNumeroIngreso.Text = pt.codigo_unite;
                     BagsPT bag = new BagsPT();
                     if (bag.RecuperarRegistro_v2(tar1.IdPresentacion))
                     {

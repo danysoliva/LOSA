@@ -35,6 +35,7 @@
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.PageHeader = new DevExpress.XtraReports.UI.PageHeaderBand();
+            this.lblCodeSAP = new DevExpress.XtraReports.UI.XRLabel();
             this.BarCode2 = new DevExpress.XtraReports.UI.XRBarCode();
             this.BarCode1 = new DevExpress.XtraReports.UI.XRBarCode();
             this.xrLabel27 = new DevExpress.XtraReports.UI.XRLabel();
@@ -80,7 +81,6 @@
             this.xrPanel3 = new DevExpress.XtraReports.UI.XRPanel();
             this.xrLabel14 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel13 = new DevExpress.XtraReports.UI.XRLabel();
-            this.lblCodeSAP = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -134,6 +134,24 @@
             this.xrLabel1});
             this.PageHeader.HeightF = 814.5833F;
             this.PageHeader.Name = "PageHeader";
+            // 
+            // lblCodeSAP
+            // 
+            this.lblCodeSAP.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            | DevExpress.XtraPrinting.BorderSide.Right) 
+            | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lblCodeSAP.BorderWidth = 2F;
+            this.lblCodeSAP.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodeSAP.LocationFloat = new DevExpress.Utils.PointFloat(9.536743E-05F, 265.2708F);
+            this.lblCodeSAP.Name = "lblCodeSAP";
+            this.lblCodeSAP.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lblCodeSAP.SizeF = new System.Drawing.SizeF(261.4584F, 53.41666F);
+            this.lblCodeSAP.StylePriority.UseBorders = false;
+            this.lblCodeSAP.StylePriority.UseBorderWidth = false;
+            this.lblCodeSAP.StylePriority.UseFont = false;
+            this.lblCodeSAP.StylePriority.UseTextAlignment = false;
+            this.lblCodeSAP.Text = "Codigo SAP";
+            this.lblCodeSAP.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // BarCode2
             // 
@@ -413,10 +431,10 @@
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.lblNumeroIngreso.BorderWidth = 2F;
             this.lblNumeroIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumeroIngreso.LocationFloat = new DevExpress.Utils.PointFloat(404.1667F, 265.2708F);
+            this.lblNumeroIngreso.LocationFloat = new DevExpress.Utils.PointFloat(481.2501F, 265.2708F);
             this.lblNumeroIngreso.Name = "lblNumeroIngreso";
             this.lblNumeroIngreso.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblNumeroIngreso.SizeF = new System.Drawing.SizeF(371.8334F, 53.41666F);
+            this.lblNumeroIngreso.SizeF = new System.Drawing.SizeF(294.7501F, 53.41666F);
             this.lblNumeroIngreso.StylePriority.UseBorders = false;
             this.lblNumeroIngreso.StylePriority.UseBorderWidth = false;
             this.lblNumeroIngreso.StylePriority.UseFont = false;
@@ -433,12 +451,12 @@
             this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(273.9584F, 265.2708F);
             this.xrLabel5.Name = "xrLabel5";
             this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel5.SizeF = new System.Drawing.SizeF(115.6251F, 53.41666F);
+            this.xrLabel5.SizeF = new System.Drawing.SizeF(192.5417F, 53.41666F);
             this.xrLabel5.StylePriority.UseBorders = false;
             this.xrLabel5.StylePriority.UseBorderWidth = false;
             this.xrLabel5.StylePriority.UseFont = false;
             this.xrLabel5.StylePriority.UseTextAlignment = false;
-            this.xrLabel5.Text = "Codigo";
+            this.xrLabel5.Text = "Codigo Unite";
             this.xrLabel5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // lblFechaIngreso
@@ -864,24 +882,6 @@
             this.xrLabel13.StylePriority.UseTextAlignment = false;
             this.xrLabel13.Text = "Elaborado Por:";
             this.xrLabel13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // lblCodeSAP
-            // 
-            this.lblCodeSAP.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
-            | DevExpress.XtraPrinting.BorderSide.Right) 
-            | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.lblCodeSAP.BorderWidth = 2F;
-            this.lblCodeSAP.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodeSAP.LocationFloat = new DevExpress.Utils.PointFloat(9.536743E-05F, 265.2708F);
-            this.lblCodeSAP.Name = "lblCodeSAP";
-            this.lblCodeSAP.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblCodeSAP.SizeF = new System.Drawing.SizeF(261.4584F, 53.41666F);
-            this.lblCodeSAP.StylePriority.UseBorders = false;
-            this.lblCodeSAP.StylePriority.UseBorderWidth = false;
-            this.lblCodeSAP.StylePriority.UseFont = false;
-            this.lblCodeSAP.StylePriority.UseTextAlignment = false;
-            this.lblCodeSAP.Text = "Codigo SAP";
-            this.lblCodeSAP.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // rptReporteTarimaPT
             // 

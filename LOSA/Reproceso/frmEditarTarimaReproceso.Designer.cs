@@ -31,11 +31,11 @@ namespace LOSA.Reproceso
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEditarTarimaReproceso));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.cmdGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -133,7 +133,7 @@ namespace LOSA.Reproceso
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(999, 40);
             this.labelControl1.TabIndex = 69;
-            this.labelControl1.Text = "Modificar Tarima #Lote";
+            this.labelControl1.Text = "Modificar Tarima Reproceso";
             // 
             // txtMP_Name
             // 
@@ -142,17 +142,17 @@ namespace LOSA.Reproceso
             this.txtMP_Name.Name = "txtMP_Name";
             this.txtMP_Name.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.txtMP_Name.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions2.Image = global::LOSA.Properties.Resources.wheat;
-            serializableAppearanceObject5.BackColor = System.Drawing.Color.Transparent;
-            serializableAppearanceObject5.Options.UseBackColor = true;
-            serializableAppearanceObject6.BackColor = System.Drawing.Color.LightBlue;
-            serializableAppearanceObject6.Options.UseBackColor = true;
-            serializableAppearanceObject7.BackColor = System.Drawing.Color.LightBlue;
-            serializableAppearanceObject7.Options.UseBackColor = true;
-            serializableAppearanceObject8.BackColor = System.Drawing.Color.LightBlue;
-            serializableAppearanceObject8.Options.UseBackColor = true;
+            editorButtonImageOptions1.Image = global::LOSA.Properties.Resources.wheat;
+            serializableAppearanceObject1.BackColor = System.Drawing.Color.Transparent;
+            serializableAppearanceObject1.Options.UseBackColor = true;
+            serializableAppearanceObject2.BackColor = System.Drawing.Color.LightBlue;
+            serializableAppearanceObject2.Options.UseBackColor = true;
+            serializableAppearanceObject3.BackColor = System.Drawing.Color.LightBlue;
+            serializableAppearanceObject3.Options.UseBackColor = true;
+            serializableAppearanceObject4.BackColor = System.Drawing.Color.LightBlue;
+            serializableAppearanceObject4.Options.UseBackColor = true;
             this.txtMP_Name.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.txtMP_Name.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.txtMP_Name.Properties.ReadOnly = true;
             this.txtMP_Name.Size = new System.Drawing.Size(439, 30);
@@ -217,7 +217,7 @@ namespace LOSA.Reproceso
             this.txtCantidadTarimasTotal.Properties.Appearance.Options.UseFont = true;
             this.txtCantidadTarimasTotal.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCantidadTarimasTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtCantidadTarimasTotal.Size = new System.Drawing.Size(102, 32);
+            this.txtCantidadTarimasTotal.Size = new System.Drawing.Size(112, 32);
             this.txtCantidadTarimasTotal.TabIndex = 100;
             this.txtCantidadTarimasTotal.Visible = false;
             // 
@@ -464,7 +464,7 @@ namespace LOSA.Reproceso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1016, 528);
+            this.ClientSize = new System.Drawing.Size(1016, 510);
             this.Controls.Add(this.labelControl12);
             this.Controls.Add(this.Tg_presentacion_promedio);
             this.Controls.Add(this.labelControl13);
@@ -491,7 +491,6 @@ namespace LOSA.Reproceso
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.txtpresentacionPromedio);
             this.Name = "frmEditarTarimaReproceso";
-            this.Text = "frmEditarTarimaReproceso";
             ((System.ComponentModel.ISupportInitialize)(this.txtMP_Name.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtpresentacionPromedio.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tg_presentacion_promedio.Properties)).EndInit();

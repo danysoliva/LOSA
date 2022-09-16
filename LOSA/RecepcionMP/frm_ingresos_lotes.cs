@@ -158,6 +158,14 @@ namespace LOSA.RecepcionMP
         private void cmdDuplicar_Click(object sender, EventArgs e)
         {
             //Duplicar la tarima
+            var gridView = (GridView)gridControl1.FocusedView;
+            var row = (dsRecepcionMPx.lista_tarimasRow)gridView.GetFocusedDataRow();
+
+            if (row.id_materia_prima == 1101 || row.id_materia_prima == 1110)
+            {
+                CajaDialogo.Error("No puede duplicar Tarimas de Reproceso, Genere un Ingreso Nuevo!");
+            }
+
             frmInputBox frm = new frmInputBox();
             frm.Text = "Duplicar Tarima";
             frm.lblInstrucciones.Text = "Ingrese la cantidad de tarimas a duplicar:";
@@ -179,8 +187,7 @@ namespace LOSA.RecepcionMP
                     return;
                 }
 
-                var gridView = (GridView)gridControl1.FocusedView;
-                var row = (dsRecepcionMPx.lista_tarimasRow)gridView.GetFocusedDataRow();
+                
 
                 ArrayList List1 = new ArrayList();
 
@@ -327,19 +334,36 @@ namespace LOSA.RecepcionMP
                 CajaDialogo.Error(mensaje);
                 return;
             }
-            
-            //if (ItemCode == "MP00080" || ItemCode == "MP00081")
-            //{
-            //    frmEditarTarimaReproceso frmRP = new frmEditarTarimaReproceso(row.id, this.UsuarioLogeado);
-            //    frmRP.WindowState = FormWindowState.Maximized;
-            //    frmRP.Show();
-            //}
-            //else
-            //{
+
+            if (ItemCode == "MP00080" || ItemCode == "MP00081")
+            {
+                switch (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo)
+                {
+                    case GrupoUser.GrupoUsuario.Logistica:
+                        CajaDialogo.Error("No esta autorizado, Solo Calidad puede Editar Tarimas de Reproceso");
+                        break;
+
+                    case GrupoUser.GrupoUsuario.Calidad:
+                        //Ventana de Editar Tarima
+                        frmEditarTarimaReproceso frmRP = new frmEditarTarimaReproceso(row.id, this.UsuarioLogeado);
+                        //frmEditTarima frm = new frmEditTarima(row.id, this.UsuarioLogeado);
+                        if (frmRP.ShowDialog() == DialogResult.OK)
+                        {
+                            LoadTarimas();
+                        }
+
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+            else
+            {
                 frmEditTarima frm = new frmEditTarima(row.id, this.UsuarioLogeado);
                 frm.WindowState = FormWindowState.Maximized;
                 frm.Show();
-            //}
+            }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
