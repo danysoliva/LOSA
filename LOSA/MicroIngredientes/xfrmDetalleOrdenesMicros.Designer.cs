@@ -388,7 +388,7 @@
             // 
             // cmdConfigurarDetalle
             // 
-            this.cmdConfigurarDetalle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.cmdConfigurarDetalle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdConfigurarDetalle.ImageOptions.Image")));
             this.cmdConfigurarDetalle.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.cmdConfigurarDetalle.Location = new System.Drawing.Point(620, 25);
             this.cmdConfigurarDetalle.Name = "cmdConfigurarDetalle";

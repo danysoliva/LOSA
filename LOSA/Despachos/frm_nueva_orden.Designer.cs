@@ -71,6 +71,7 @@ namespace LOSA.Despachos
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.grd_destino = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.clientedespachoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -79,7 +80,6 @@ namespace LOSA.Despachos
             this.colciudad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colpais = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.clientedespachoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.grid_cardcode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds_despachos)).BeginInit();
@@ -98,8 +98,8 @@ namespace LOSA.Despachos
             ((System.ComponentModel.ISupportInitialize)(this.txtconductor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtvehiculo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_destino.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientedespachoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnNuevoOrdenCarga
@@ -507,6 +507,11 @@ namespace LOSA.Despachos
             this.grd_destino.Size = new System.Drawing.Size(442, 28);
             this.grd_destino.TabIndex = 69;
             // 
+            // clientedespachoBindingSource
+            // 
+            this.clientedespachoBindingSource.DataMember = "cliente_despacho";
+            this.clientedespachoBindingSource.DataSource = this.ds_despachos;
+            // 
             // gridView2
             // 
             this.gridView2.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI Light", 11.25F);
@@ -596,11 +601,6 @@ namespace LOSA.Despachos
             this.labelControl8.TabIndex = 68;
             this.labelControl8.Text = "Cliente Promix:";
             // 
-            // clientedespachoBindingSource
-            // 
-            this.clientedespachoBindingSource.DataMember = "cliente_despacho";
-            this.clientedespachoBindingSource.DataSource = this.ds_despachos;
-            // 
             // frm_nueva_orden
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -644,8 +644,8 @@ namespace LOSA.Despachos
             ((System.ComponentModel.ISupportInitialize)(this.txtconductor.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtvehiculo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_destino.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientedespachoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

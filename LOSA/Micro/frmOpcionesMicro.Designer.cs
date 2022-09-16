@@ -30,16 +30,16 @@ namespace LOSA.Micro
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOpcionesMicro));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRule3ColorScale formatConditionRule3ColorScale1 = new DevExpress.XtraEditors.FormatConditionRule3ColorScale();
             DevExpress.XtraGrid.GridFormatRule gridFormatRule2 = new DevExpress.XtraGrid.GridFormatRule();
             DevExpress.XtraEditors.FormatConditionRule3ColorScale formatConditionRule3ColorScale2 = new DevExpress.XtraEditors.FormatConditionRule3ColorScale();
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule3 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRule3ColorScale formatConditionRule3ColorScale3 = new DevExpress.XtraEditors.FormatConditionRule3ColorScale();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnNavegacionLote = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.tabOpciones = new DevExpress.XtraTab.XtraTabControl();
@@ -47,6 +47,21 @@ namespace LOSA.Micro
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.dsMicro1 = new LOSA.Micro.dsMicro();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colexistencia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnombre_comercial = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha_vence = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha_produccion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_mp = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collote1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldias = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha_ingreso = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnumero_transaccion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcproveedor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colproveedor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcode_sap = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colingreso = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colsalidas = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TabReporte = new DevExpress.XtraTab.XtraTabPage();
             this.gcDetalleSacos = new DevExpress.XtraGrid.GridControl();
             this.sacosdetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -90,21 +105,6 @@ namespace LOSA.Micro
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdClose = new DevExpress.XtraEditors.SimpleButton();
-            this.colexistencia = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colnombre_comercial = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colfecha_vence = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colfecha_produccion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colid_mp = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.collote1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coldias = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colfecha_ingreso = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colnumero_transaccion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcproveedor = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colproveedor = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcode_sap = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colingreso = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colsalidas = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.btnNavegacionLote)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
@@ -143,10 +143,10 @@ namespace LOSA.Micro
             // btnNavegacionLote
             // 
             this.btnNavegacionLote.AutoHeight = false;
-            editorButtonImageOptions2.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions1.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.btnNavegacionLote.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnNavegacionLote.Name = "btnNavegacionLote";
             this.btnNavegacionLote.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             // 
@@ -219,13 +219,143 @@ namespace LOSA.Micro
             this.colcodigo,
             this.colingreso,
             this.colsalidas});
-            gridFormatRule2.Name = "Format0";
-            gridFormatRule2.Rule = formatConditionRule3ColorScale2;
-            this.gridView1.FormatRules.Add(gridFormatRule2);
+            gridFormatRule1.Name = "Format0";
+            gridFormatRule1.Rule = formatConditionRule3ColorScale1;
+            this.gridView1.FormatRules.Add(gridFormatRule1);
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // colexistencia
+            // 
+            this.colexistencia.Caption = "Existencia";
+            this.colexistencia.FieldName = "existencia";
+            this.colexistencia.Name = "colexistencia";
+            this.colexistencia.OptionsColumn.AllowEdit = false;
+            this.colexistencia.Visible = true;
+            this.colexistencia.VisibleIndex = 9;
+            this.colexistencia.Width = 72;
+            // 
+            // colnombre_comercial
+            // 
+            this.colnombre_comercial.Caption = "Nombre";
+            this.colnombre_comercial.FieldName = "nombre_comercial";
+            this.colnombre_comercial.Name = "colnombre_comercial";
+            this.colnombre_comercial.OptionsColumn.AllowEdit = false;
+            this.colnombre_comercial.Visible = true;
+            this.colnombre_comercial.VisibleIndex = 0;
+            this.colnombre_comercial.Width = 159;
+            // 
+            // colfecha_vence
+            // 
+            this.colfecha_vence.Caption = "Fecha Vence";
+            this.colfecha_vence.FieldName = "fecha_vence";
+            this.colfecha_vence.Name = "colfecha_vence";
+            this.colfecha_vence.OptionsColumn.AllowEdit = false;
+            this.colfecha_vence.Visible = true;
+            this.colfecha_vence.VisibleIndex = 1;
+            this.colfecha_vence.Width = 102;
+            // 
+            // colfecha_produccion
+            // 
+            this.colfecha_produccion.FieldName = "fecha_produccion";
+            this.colfecha_produccion.Name = "colfecha_produccion";
+            this.colfecha_produccion.OptionsColumn.AllowEdit = false;
+            // 
+            // colid_mp
+            // 
+            this.colid_mp.FieldName = "id_mp";
+            this.colid_mp.Name = "colid_mp";
+            this.colid_mp.OptionsColumn.AllowEdit = false;
+            // 
+            // collote1
+            // 
+            this.collote1.Caption = "Lote";
+            this.collote1.FieldName = "lote";
+            this.collote1.Name = "collote1";
+            this.collote1.OptionsColumn.AllowEdit = false;
+            this.collote1.Visible = true;
+            this.collote1.VisibleIndex = 2;
+            this.collote1.Width = 125;
+            // 
+            // coldias
+            // 
+            this.coldias.FieldName = "dias";
+            this.coldias.Name = "coldias";
+            this.coldias.OptionsColumn.AllowEdit = false;
+            // 
+            // colfecha_ingreso
+            // 
+            this.colfecha_ingreso.Caption = "Fecha Ingreso";
+            this.colfecha_ingreso.FieldName = "fecha_ingreso";
+            this.colfecha_ingreso.Name = "colfecha_ingreso";
+            this.colfecha_ingreso.OptionsColumn.AllowEdit = false;
+            this.colfecha_ingreso.Visible = true;
+            this.colfecha_ingreso.VisibleIndex = 3;
+            this.colfecha_ingreso.Width = 93;
+            // 
+            // colnumero_transaccion
+            // 
+            this.colnumero_transaccion.Caption = "Num Ingreso";
+            this.colnumero_transaccion.FieldName = "numero_transaccion";
+            this.colnumero_transaccion.Name = "colnumero_transaccion";
+            this.colnumero_transaccion.OptionsColumn.AllowEdit = false;
+            this.colnumero_transaccion.Visible = true;
+            this.colnumero_transaccion.VisibleIndex = 4;
+            this.colnumero_transaccion.Width = 115;
+            // 
+            // colcproveedor
+            // 
+            this.colcproveedor.FieldName = "cproveedor";
+            this.colcproveedor.Name = "colcproveedor";
+            this.colcproveedor.OptionsColumn.AllowEdit = false;
+            // 
+            // colproveedor
+            // 
+            this.colproveedor.FieldName = "proveedor";
+            this.colproveedor.Name = "colproveedor";
+            this.colproveedor.OptionsColumn.AllowEdit = false;
+            // 
+            // colcode_sap
+            // 
+            this.colcode_sap.Caption = "Item Code";
+            this.colcode_sap.FieldName = "code_sap";
+            this.colcode_sap.Name = "colcode_sap";
+            this.colcode_sap.OptionsColumn.AllowEdit = false;
+            this.colcode_sap.Visible = true;
+            this.colcode_sap.VisibleIndex = 5;
+            this.colcode_sap.Width = 84;
+            // 
+            // colcodigo
+            // 
+            this.colcodigo.Caption = "Código";
+            this.colcodigo.FieldName = "codigo";
+            this.colcodigo.Name = "colcodigo";
+            this.colcodigo.OptionsColumn.AllowEdit = false;
+            this.colcodigo.Visible = true;
+            this.colcodigo.VisibleIndex = 6;
+            this.colcodigo.Width = 74;
+            // 
+            // colingreso
+            // 
+            this.colingreso.Caption = "Ingreso";
+            this.colingreso.FieldName = "ingreso";
+            this.colingreso.Name = "colingreso";
+            this.colingreso.OptionsColumn.AllowEdit = false;
+            this.colingreso.Visible = true;
+            this.colingreso.VisibleIndex = 7;
+            this.colingreso.Width = 88;
+            // 
+            // colsalidas
+            // 
+            this.colsalidas.Caption = "Salidas";
+            this.colsalidas.FieldName = "salidas";
+            this.colsalidas.Name = "colsalidas";
+            this.colsalidas.OptionsColumn.AllowEdit = false;
+            this.colsalidas.Visible = true;
+            this.colsalidas.VisibleIndex = 8;
+            this.colsalidas.Width = 71;
             // 
             // TabReporte
             // 
@@ -280,23 +410,23 @@ namespace LOSA.Micro
             this.collote,
             this.colbascula,
             this.gridColumn11});
-            gridFormatRule3.Column = this.gridColumn11;
-            gridFormatRule3.Name = "Format0";
-            formatConditionRule3ColorScale3.Maximum = new decimal(new int[] {
+            gridFormatRule2.Column = this.gridColumn11;
+            gridFormatRule2.Name = "Format0";
+            formatConditionRule3ColorScale2.Maximum = new decimal(new int[] {
             100,
             0,
             0,
             0});
-            formatConditionRule3ColorScale3.MaximumType = DevExpress.XtraEditors.FormatConditionValueType.Number;
-            formatConditionRule3ColorScale3.Middle = new decimal(new int[] {
+            formatConditionRule3ColorScale2.MaximumType = DevExpress.XtraEditors.FormatConditionValueType.Number;
+            formatConditionRule3ColorScale2.Middle = new decimal(new int[] {
             50,
             0,
             0,
             0});
-            formatConditionRule3ColorScale3.MiddleType = DevExpress.XtraEditors.FormatConditionValueType.Number;
-            formatConditionRule3ColorScale3.MinimumType = DevExpress.XtraEditors.FormatConditionValueType.Number;
-            gridFormatRule3.Rule = formatConditionRule3ColorScale3;
-            this.gvDetalleSacos.FormatRules.Add(gridFormatRule3);
+            formatConditionRule3ColorScale2.MiddleType = DevExpress.XtraEditors.FormatConditionValueType.Number;
+            formatConditionRule3ColorScale2.MinimumType = DevExpress.XtraEditors.FormatConditionValueType.Number;
+            gridFormatRule2.Rule = formatConditionRule3ColorScale2;
+            this.gvDetalleSacos.FormatRules.Add(gridFormatRule2);
             this.gvDetalleSacos.GridControl = this.gcDetalleSacos;
             this.gvDetalleSacos.Name = "gvDetalleSacos";
             this.gvDetalleSacos.OptionsView.ShowFooter = true;
@@ -735,136 +865,6 @@ namespace LOSA.Micro
             this.cmdClose.Size = new System.Drawing.Size(75, 39);
             this.cmdClose.TabIndex = 10;
             this.cmdClose.Click += new System.EventHandler(this.cmdClose_Click);
-            // 
-            // colexistencia
-            // 
-            this.colexistencia.Caption = "Existencia";
-            this.colexistencia.FieldName = "existencia";
-            this.colexistencia.Name = "colexistencia";
-            this.colexistencia.OptionsColumn.AllowEdit = false;
-            this.colexistencia.Visible = true;
-            this.colexistencia.VisibleIndex = 9;
-            this.colexistencia.Width = 72;
-            // 
-            // colnombre_comercial
-            // 
-            this.colnombre_comercial.Caption = "Nombre";
-            this.colnombre_comercial.FieldName = "nombre_comercial";
-            this.colnombre_comercial.Name = "colnombre_comercial";
-            this.colnombre_comercial.OptionsColumn.AllowEdit = false;
-            this.colnombre_comercial.Visible = true;
-            this.colnombre_comercial.VisibleIndex = 0;
-            this.colnombre_comercial.Width = 159;
-            // 
-            // colfecha_vence
-            // 
-            this.colfecha_vence.Caption = "Fecha Vence";
-            this.colfecha_vence.FieldName = "fecha_vence";
-            this.colfecha_vence.Name = "colfecha_vence";
-            this.colfecha_vence.OptionsColumn.AllowEdit = false;
-            this.colfecha_vence.Visible = true;
-            this.colfecha_vence.VisibleIndex = 1;
-            this.colfecha_vence.Width = 102;
-            // 
-            // colfecha_produccion
-            // 
-            this.colfecha_produccion.FieldName = "fecha_produccion";
-            this.colfecha_produccion.Name = "colfecha_produccion";
-            this.colfecha_produccion.OptionsColumn.AllowEdit = false;
-            // 
-            // colid_mp
-            // 
-            this.colid_mp.FieldName = "id_mp";
-            this.colid_mp.Name = "colid_mp";
-            this.colid_mp.OptionsColumn.AllowEdit = false;
-            // 
-            // collote1
-            // 
-            this.collote1.Caption = "Lote";
-            this.collote1.FieldName = "lote";
-            this.collote1.Name = "collote1";
-            this.collote1.OptionsColumn.AllowEdit = false;
-            this.collote1.Visible = true;
-            this.collote1.VisibleIndex = 2;
-            this.collote1.Width = 125;
-            // 
-            // coldias
-            // 
-            this.coldias.FieldName = "dias";
-            this.coldias.Name = "coldias";
-            this.coldias.OptionsColumn.AllowEdit = false;
-            // 
-            // colfecha_ingreso
-            // 
-            this.colfecha_ingreso.Caption = "Fecha Ingreso";
-            this.colfecha_ingreso.FieldName = "fecha_ingreso";
-            this.colfecha_ingreso.Name = "colfecha_ingreso";
-            this.colfecha_ingreso.OptionsColumn.AllowEdit = false;
-            this.colfecha_ingreso.Visible = true;
-            this.colfecha_ingreso.VisibleIndex = 3;
-            this.colfecha_ingreso.Width = 93;
-            // 
-            // colnumero_transaccion
-            // 
-            this.colnumero_transaccion.Caption = "Num Ingreso";
-            this.colnumero_transaccion.FieldName = "numero_transaccion";
-            this.colnumero_transaccion.Name = "colnumero_transaccion";
-            this.colnumero_transaccion.OptionsColumn.AllowEdit = false;
-            this.colnumero_transaccion.Visible = true;
-            this.colnumero_transaccion.VisibleIndex = 4;
-            this.colnumero_transaccion.Width = 115;
-            // 
-            // colcproveedor
-            // 
-            this.colcproveedor.FieldName = "cproveedor";
-            this.colcproveedor.Name = "colcproveedor";
-            this.colcproveedor.OptionsColumn.AllowEdit = false;
-            // 
-            // colproveedor
-            // 
-            this.colproveedor.FieldName = "proveedor";
-            this.colproveedor.Name = "colproveedor";
-            this.colproveedor.OptionsColumn.AllowEdit = false;
-            // 
-            // colcode_sap
-            // 
-            this.colcode_sap.Caption = "Item Code";
-            this.colcode_sap.FieldName = "code_sap";
-            this.colcode_sap.Name = "colcode_sap";
-            this.colcode_sap.OptionsColumn.AllowEdit = false;
-            this.colcode_sap.Visible = true;
-            this.colcode_sap.VisibleIndex = 5;
-            this.colcode_sap.Width = 84;
-            // 
-            // colcodigo
-            // 
-            this.colcodigo.Caption = "Código";
-            this.colcodigo.FieldName = "codigo";
-            this.colcodigo.Name = "colcodigo";
-            this.colcodigo.OptionsColumn.AllowEdit = false;
-            this.colcodigo.Visible = true;
-            this.colcodigo.VisibleIndex = 6;
-            this.colcodigo.Width = 74;
-            // 
-            // colingreso
-            // 
-            this.colingreso.Caption = "Ingreso";
-            this.colingreso.FieldName = "ingreso";
-            this.colingreso.Name = "colingreso";
-            this.colingreso.OptionsColumn.AllowEdit = false;
-            this.colingreso.Visible = true;
-            this.colingreso.VisibleIndex = 7;
-            this.colingreso.Width = 88;
-            // 
-            // colsalidas
-            // 
-            this.colsalidas.Caption = "Salidas";
-            this.colsalidas.FieldName = "salidas";
-            this.colsalidas.Name = "colsalidas";
-            this.colsalidas.OptionsColumn.AllowEdit = false;
-            this.colsalidas.Visible = true;
-            this.colsalidas.VisibleIndex = 8;
-            this.colsalidas.Width = 71;
             // 
             // frmOpcionesMicro
             // 

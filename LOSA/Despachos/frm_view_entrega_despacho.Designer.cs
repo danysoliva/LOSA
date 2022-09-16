@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_view_entrega_despacho));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -57,7 +58,7 @@
             this.txtoc = new DevExpress.XtraEditors.TextEdit();
             this.dtFecha = new DevExpress.XtraEditors.DateEdit();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
-            this.productocargaBindingSource = new System.Windows.Forms.BindingSource();
+            this.productocargaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ds_despachos = new LOSA.Despachos.ds_despachos();
             this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
