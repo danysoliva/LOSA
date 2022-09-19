@@ -62,6 +62,7 @@ namespace LOSA.Calidad
                     dsCalidad1.tarimas_disponibles.Clear();
                     SqlDataAdapter adat = new SqlDataAdapter(cmd);
                     adat.Fill(dsCalidad1.tarimas_disponibles);
+                    gvMateriaPrima.CollapseAllGroups();
                     con.Close();
                 }
                 catch (Exception ec)
@@ -87,6 +88,7 @@ namespace LOSA.Calidad
                         dsCalidad1.tarimas_disponibles.Clear();
                         SqlDataAdapter adat = new SqlDataAdapter(cmd);
                         adat.Fill(dsCalidad1.tarimas_disponibles);
+                        gvMateriaPrima.CollapseAllGroups();
                         con.Close();
                     }
                     catch (Exception ec)
@@ -134,6 +136,7 @@ namespace LOSA.Calidad
                     dsCalidad1.tarimas_obs.Clear();
                     SqlDataAdapter adat = new SqlDataAdapter(cmd);
                     adat.Fill(dsCalidad1.tarimas_obs);
+                    gridView1.CollapseAllGroups();
                     con.Close();
                 }
                 catch (Exception ec)
@@ -158,6 +161,7 @@ namespace LOSA.Calidad
                         dsCalidad1.tarimas_obs.Clear();
                         SqlDataAdapter adat = new SqlDataAdapter(cmd);
                         adat.Fill(dsCalidad1.tarimas_obs);
+                        gvMateriaPrima.CollapseAllGroups();
                         con.Close();
 
                     }
@@ -186,6 +190,7 @@ namespace LOSA.Calidad
                 dsCalidad1.tarimas_ret.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 adat.Fill(dsCalidad1.tarimas_ret);
+                gridView2.CollapseAllGroups();
                 con.Close();
             }
             catch (Exception ec)
@@ -1281,6 +1286,7 @@ namespace LOSA.Calidad
                 dsCalidad1.tarimas_rechazadas.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 adat.Fill(dsCalidad1.tarimas_rechazadas);
+                gridView3.CollapseAllGroups();
                 con.Close();
             }
             catch (Exception ec)
@@ -1868,6 +1874,16 @@ namespace LOSA.Calidad
             checkDisponibles.CheckedChanged -= new EventHandler(checkDisponibles_CheckedChanged);
             checkDisponibles.Checked = false;
             checkDisponibles.CheckedChanged += new EventHandler(checkDisponibles_CheckedChanged);
+            //gvMateriaPrima.CollapseAllGroups();
+
+            if (gvMateriaPrima.ActiveFilter.IsEmpty)
+            {
+                gvMateriaPrima.CollapseAllGroups();
+            }
+            else
+            {
+                gvMateriaPrima.ExpandAllGroups();
+            }
         }
 
         private void gridView1_ColumnFilterChanged(object sender, EventArgs e)
@@ -1875,6 +1891,14 @@ namespace LOSA.Calidad
             checkObservacion.CheckedChanged -= new EventHandler(checkObservacion_CheckedChanged);
             checkObservacion.Checked = false;
             checkObservacion.CheckedChanged += new EventHandler(checkObservacion_CheckedChanged);
+            if (gridView1.ActiveFilter.IsEmpty)
+            {
+                gridView1.CollapseAllGroups();
+            }
+            else
+            {
+                gridView1.ExpandAllGroups();
+            }
         }
 
         private void gridView2_ColumnFilterChanged(object sender, EventArgs e)
@@ -1882,6 +1906,14 @@ namespace LOSA.Calidad
             checkRetenido.CheckedChanged -= new EventHandler(checkRetenido_CheckedChanged);
             checkRetenido.Checked = false;
             checkRetenido.CheckedChanged += new EventHandler(checkRetenido_CheckedChanged);
+            if (gridView2.ActiveFilter.IsEmpty)
+            {
+                gridView2.CollapseAllGroups();
+            }
+            else
+            {
+                gridView2.ExpandAllGroups();
+            }
         }
 
         private void gridView3_ColumnFilterChanged(object sender, EventArgs e)
@@ -1889,6 +1921,14 @@ namespace LOSA.Calidad
             checkRechazado.CheckedChanged -= new EventHandler(checkRechazado_CheckedChanged);
             checkRechazado.Checked = false;
             checkRechazado.CheckedChanged += new EventHandler(checkRechazado_CheckedChanged);
+            if (gridView3.ActiveFilter.IsEmpty)
+            {
+                gridView3.CollapseAllGroups();
+            }
+            else
+            {
+                gridView3.ExpandAllGroups();
+            }
         }
 
         private void toggleSwitchVerTodos_Disponibles_Toggled(object sender, EventArgs e)
@@ -1940,8 +1980,8 @@ namespace LOSA.Calidad
 
         private void repositoryVerHistorial_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            var gridview = (GridView)grDisponibles.FocusedView;
-            var row = (dsCalidad.tarimas_disponiblesRow)gvMateriaPrima.GetFocusedDataRow();
+            var gridview = (GridView)gridObservacion.FocusedView;
+            var row = (dsCalidad.tarimas_obsRow)gridView1.GetFocusedDataRow();
 
             frmVerHistorialEstadoTarima frm = new frmVerHistorialEstadoTarima(row.id);
             frm.Show();
@@ -1949,8 +1989,8 @@ namespace LOSA.Calidad
 
         private void repositoryHistorialTarima_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            var gridview = (GridView)grDisponibles.FocusedView;
-            var row = (dsCalidad.tarimas_disponiblesRow)gvMateriaPrima.GetFocusedDataRow();
+            var gridview = (GridView)gridRetenidos.FocusedView;
+            var row = (dsCalidad.tarimas_retRow)gridView2.GetFocusedDataRow();
 
             frmVerHistorialEstadoTarima frm = new frmVerHistorialEstadoTarima(row.id);
             frm.Show();
@@ -1958,8 +1998,8 @@ namespace LOSA.Calidad
 
         private void repositoryItemHisotialVer_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            var gridview = (GridView)grDisponibles.FocusedView;
-            var row = (dsCalidad.tarimas_disponiblesRow)gvMateriaPrima.GetFocusedDataRow();
+            var gridview = (GridView)gridRechazado.FocusedView;
+            var row = (dsCalidad.tarimas_rechazadasRow)gridView3.GetFocusedDataRow();
 
             frmVerHistorialEstadoTarima frm = new frmVerHistorialEstadoTarima(row.id);
             frm.Show();

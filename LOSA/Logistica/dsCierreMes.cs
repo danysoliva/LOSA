@@ -4,6 +4,10 @@
 
     partial class dsCierreMes
     {
+        partial class Recuento_mpV2DataTable
+        {
+        }
+
         partial class memory_configDataTable
         {
         }

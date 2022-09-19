@@ -34,6 +34,8 @@
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.PageHeader = new DevExpress.XtraReports.UI.PageHeaderBand();
+            this.txtcodigocopia = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel43 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel45 = new DevExpress.XtraReports.UI.XRLabel();
             this.txtcodigo = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLine3 = new DevExpress.XtraReports.UI.XRLine();
@@ -159,15 +161,13 @@
             this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel43 = new DevExpress.XtraReports.UI.XRLabel();
-            this.txtcodigocopia = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // TopMargin
             // 
-            this.TopMargin.HeightF = 38F;
+            this.TopMargin.HeightF = 85.91666F;
             this.TopMargin.Name = "TopMargin";
             // 
             // BottomMargin
@@ -276,6 +276,32 @@
             this.xrLabel1});
             this.PageHeader.HeightF = 1690.824F;
             this.PageHeader.Name = "PageHeader";
+            // 
+            // txtcodigocopia
+            // 
+            this.txtcodigocopia.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcodigocopia.LocationFloat = new DevExpress.Utils.PointFloat(297.8973F, 709.1779F);
+            this.txtcodigocopia.Multiline = true;
+            this.txtcodigocopia.Name = "txtcodigocopia";
+            this.txtcodigocopia.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.txtcodigocopia.SizeF = new System.Drawing.SizeF(220.1892F, 15F);
+            this.txtcodigocopia.StylePriority.UseFont = false;
+            this.txtcodigocopia.StylePriority.UseTextAlignment = false;
+            this.txtcodigocopia.Text = "Codigo";
+            this.txtcodigocopia.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
+            // 
+            // xrLabel43
+            // 
+            this.xrLabel43.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel43.LocationFloat = new DevExpress.Utils.PointFloat(77.70811F, 709.1779F);
+            this.xrLabel43.Multiline = true;
+            this.xrLabel43.Name = "xrLabel43";
+            this.xrLabel43.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel43.SizeF = new System.Drawing.SizeF(220.1892F, 15F);
+            this.xrLabel43.StylePriority.UseFont = false;
+            this.xrLabel43.StylePriority.UseTextAlignment = false;
+            this.xrLabel43.Text = "Codigo";
+            this.xrLabel43.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
             // xrLabel45
             // 
@@ -1553,32 +1579,6 @@
             this.xrLabel2.StylePriority.UseBorders = false;
             this.xrLabel2.Text = "CARTILLAS DE PROGRAMACION";
             // 
-            // xrLabel43
-            // 
-            this.xrLabel43.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel43.LocationFloat = new DevExpress.Utils.PointFloat(77.70811F, 709.1779F);
-            this.xrLabel43.Multiline = true;
-            this.xrLabel43.Name = "xrLabel43";
-            this.xrLabel43.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel43.SizeF = new System.Drawing.SizeF(220.1892F, 15F);
-            this.xrLabel43.StylePriority.UseFont = false;
-            this.xrLabel43.StylePriority.UseTextAlignment = false;
-            this.xrLabel43.Text = "Codigo";
-            this.xrLabel43.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
-            // 
-            // txtcodigocopia
-            // 
-            this.txtcodigocopia.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcodigocopia.LocationFloat = new DevExpress.Utils.PointFloat(297.8973F, 709.1779F);
-            this.txtcodigocopia.Multiline = true;
-            this.txtcodigocopia.Name = "txtcodigocopia";
-            this.txtcodigocopia.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.txtcodigocopia.SizeF = new System.Drawing.SizeF(220.1892F, 15F);
-            this.txtcodigocopia.StylePriority.UseFont = false;
-            this.txtcodigocopia.StylePriority.UseTextAlignment = false;
-            this.txtcodigocopia.Text = "Codigo";
-            this.txtcodigocopia.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
-            // 
             // rpt_cartilla
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -1587,7 +1587,7 @@
             this.Detail,
             this.PageHeader});
             this.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.Margins = new System.Drawing.Printing.Margins(100, 100, 38, 106);
+            this.Margins = new System.Drawing.Printing.Margins(100, 100, 86, 106);
             this.Version = "18.2";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();

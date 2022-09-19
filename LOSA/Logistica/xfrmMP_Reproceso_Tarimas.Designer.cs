@@ -29,7 +29,6 @@ namespace LOSA.Logistica
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmMP_Reproceso_Tarimas));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -47,7 +46,7 @@ namespace LOSA.Logistica
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.pTReprocesoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pTReprocesoBindingSource = new System.Windows.Forms.BindingSource();
             this.dsLogistica2 = new LOSA.Logistica.dsLogistica2();
             this.gvPT = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -84,11 +83,11 @@ namespace LOSA.Logistica
             this.cmdRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.gridLookUpTurno = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.turnoV2BindingSource = new System.Windows.Forms.BindingSource();
+            this.dsProduccion = new LOSA.Produccion.dsProduccion();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colturno = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.dsProduccion = new LOSA.Produccion.dsProduccion();
-            this.turnoV2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pTReprocesoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsLogistica2)).BeginInit();
@@ -103,9 +102,9 @@ namespace LOSA.Logistica
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesde.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rdespecie.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpTurno.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsProduccion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.turnoV2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsProduccion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -519,7 +518,7 @@ namespace LOSA.Logistica
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(672, 118);
+            this.labelControl4.Location = new System.Drawing.Point(673, 136);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(41, 21);
             this.labelControl4.TabIndex = 125;
@@ -528,7 +527,7 @@ namespace LOSA.Logistica
             // gridLookUpTurno
             // 
             this.gridLookUpTurno.EditValue = "";
-            this.gridLookUpTurno.Location = new System.Drawing.Point(719, 115);
+            this.gridLookUpTurno.Location = new System.Drawing.Point(720, 133);
             this.gridLookUpTurno.Name = "gridLookUpTurno";
             this.gridLookUpTurno.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.gridLookUpTurno.Properties.Appearance.Options.UseFont = true;
@@ -540,6 +539,16 @@ namespace LOSA.Logistica
             this.gridLookUpTurno.Properties.ValueMember = "id";
             this.gridLookUpTurno.Size = new System.Drawing.Size(154, 26);
             this.gridLookUpTurno.TabIndex = 124;
+            // 
+            // turnoV2BindingSource
+            // 
+            this.turnoV2BindingSource.DataMember = "turnoV2";
+            this.turnoV2BindingSource.DataSource = this.dsProduccion;
+            // 
+            // dsProduccion
+            // 
+            this.dsProduccion.DataSetName = "dsProduccion";
+            this.dsProduccion.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridLookUpEdit1View
             // 
@@ -568,16 +577,6 @@ namespace LOSA.Logistica
             this.colturno.OptionsColumn.AllowEdit = false;
             this.colturno.Visible = true;
             this.colturno.VisibleIndex = 0;
-            // 
-            // dsProduccion
-            // 
-            this.dsProduccion.DataSetName = "dsProduccion";
-            this.dsProduccion.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // turnoV2BindingSource
-            // 
-            this.turnoV2BindingSource.DataMember = "turnoV2";
-            this.turnoV2BindingSource.DataSource = this.dsProduccion;
             // 
             // xfrmMP_Reproceso_Tarimas
             // 
@@ -617,9 +616,9 @@ namespace LOSA.Logistica
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesde.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rdespecie.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpTurno.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsProduccion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.turnoV2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsProduccion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

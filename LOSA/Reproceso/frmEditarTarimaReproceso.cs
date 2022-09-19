@@ -268,7 +268,7 @@ namespace LOSA.Reproceso
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_update_tarima_reproceso_v3", con);
+                SqlCommand cmd = new SqlCommand("sp_update_tarima_reproceso_v4", con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@fecha_ingreso", Convert.ToDateTime(dtFechaIngreso.EditValue));

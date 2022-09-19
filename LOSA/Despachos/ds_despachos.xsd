@@ -269,6 +269,8 @@
               <xs:element name="cantidad" msprop:Generator_ColumnVarNameInTable="columncantidad" msprop:Generator_ColumnPropNameInRow="cantidad" msprop:Generator_ColumnPropNameInTable="cantidadColumn" msprop:Generator_UserColumnName="cantidad" type="xs:int" minOccurs="0" />
               <xs:element name="presentacion" msprop:Generator_ColumnVarNameInTable="columnpresentacion" msprop:Generator_ColumnPropNameInRow="presentacion" msprop:Generator_ColumnPropNameInTable="presentacionColumn" msprop:Generator_UserColumnName="presentacion" type="xs:string" minOccurs="0" />
               <xs:element name="producto" msprop:Generator_ColumnVarNameInTable="columnproducto" msprop:Generator_ColumnPropNameInRow="producto" msprop:Generator_ColumnPropNameInTable="productoColumn" msprop:Generator_UserColumnName="producto" type="xs:string" minOccurs="0" />
+              <xs:element name="codigo_unite" msdata:Caption="Codigo Unite" msprop:Generator_ColumnVarNameInTable="columncodigo_unite" msprop:Generator_ColumnPropNameInRow="codigo_unite" msprop:Generator_ColumnPropNameInTable="codigo_uniteColumn" msprop:Generator_UserColumnName="codigo_unite" type="xs:string" minOccurs="0" />
+              <xs:element name="codigo_sap" msprop:Generator_ColumnVarNameInTable="columncodigo_sap" msprop:Generator_ColumnPropNameInRow="codigo_sap" msprop:Generator_ColumnPropNameInTable="codigo_sapColumn" msprop:Generator_UserColumnName="codigo_sap" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -280,6 +282,7 @@
               <xs:element name="pallet" msprop:Generator_ColumnVarNameInTable="columnpallet" msprop:Generator_ColumnPropNameInRow="pallet" msprop:Generator_ColumnPropNameInTable="palletColumn" msprop:Generator_UserColumnName="pallet" type="xs:int" minOccurs="0" />
               <xs:element name="sacos" msprop:Generator_ColumnVarNameInTable="columnsacos" msprop:Generator_ColumnPropNameInRow="sacos" msprop:Generator_ColumnPropNameInTable="sacosColumn" msprop:Generator_UserColumnName="sacos" type="xs:int" minOccurs="0" />
               <xs:element name="total" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:int" minOccurs="0" />
+              <xs:element name="presentacion" msprop:Generator_ColumnVarNameInTable="columnpresentacion" msprop:Generator_ColumnPropNameInRow="presentacion" msprop:Generator_ColumnPropNameInTable="presentacionColumn" msprop:Generator_UserColumnName="presentacion" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

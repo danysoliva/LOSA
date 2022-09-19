@@ -27,7 +27,7 @@ namespace LOSA.RecepcionMP
                 {
                     lblNombreProducto.Text = pt.descripcion;
 
-                    lblNumeroIngreso.Text = pt.Codigo;
+                    lblNumeroIngreso.Text = pt.codigo_unite;
                     BagsPT bag = new BagsPT();
                     if (bag.RecuperarRegistro_v2(tar1.IdPresentacion))
                     {
@@ -45,6 +45,7 @@ namespace LOSA.RecepcionMP
                 lblFechadeVencimiento.Text = string.Format("{0:dd/MM/yyyy}", tar1.FechaVencimiento);
                 lblTurno.Text = tar1.Id_turno.ToString();
                 BarCode1.Text = BarCode2.Text = tar1.CodigoBarra;
+                lblCodeSAP.Text = tar1.ItemCode;
             }
 
         }

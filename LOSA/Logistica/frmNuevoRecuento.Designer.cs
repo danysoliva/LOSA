@@ -29,7 +29,6 @@ namespace LOSA.Logistica
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNuevoRecuento));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -49,7 +48,7 @@ namespace LOSA.Logistica
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.grd_meses_disponibles = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.mesesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mesesBindingSource = new System.Windows.Forms.BindingSource();
             this.dsCierreMes = new LOSA.Logistica.dsCierreMes();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colmes_numero = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -58,7 +57,7 @@ namespace LOSA.Logistica
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.grd_years = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.yearsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.yearsBindingSource = new System.Windows.Forms.BindingSource();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colejercicio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
@@ -72,8 +71,10 @@ namespace LOSA.Logistica
             this.colpeso = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_bodega = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grd_bodegas = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.bodegasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bodegasBindingSource = new System.Windows.Forms.BindingSource();
             this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colwhs_code = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldescripcion1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldiferencia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colExistenciaAprox = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coleliminar = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -99,8 +100,6 @@ namespace LOSA.Logistica
             this.btneliminarpt = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colcode_sap1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltoma_fisica1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colwhs_code = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coldescripcion1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
@@ -506,10 +505,12 @@ namespace LOSA.Logistica
             this.coltoma_fisica,
             this.collote});
             this.grdv_dataMP.GridControl = this.grd_dataMp;
+            this.grdv_dataMP.GroupCount = 1;
             this.grdv_dataMP.Name = "grdv_dataMP";
             this.grdv_dataMP.OptionsView.EnableAppearanceOddRow = true;
             this.grdv_dataMP.OptionsView.ShowAutoFilterRow = true;
-            this.grdv_dataMP.OptionsView.ShowGroupPanel = false;
+            this.grdv_dataMP.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colid_bodega, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.grdv_dataMP.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.grdv_dataMP_CellValueChanged);
             this.grdv_dataMP.InvalidRowException += new DevExpress.XtraGrid.Views.Base.InvalidRowExceptionEventHandler(this.grdv_dataMP_InvalidRowException);
             this.grdv_dataMP.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.grdv_dataMP_ValidateRow);
@@ -546,7 +547,7 @@ namespace LOSA.Logistica
             this.colpeso.FieldName = "peso";
             this.colpeso.Name = "colpeso";
             this.colpeso.Visible = true;
-            this.colpeso.VisibleIndex = 8;
+            this.colpeso.VisibleIndex = 7;
             this.colpeso.Width = 132;
             // 
             // colid_bodega
@@ -587,6 +588,22 @@ namespace LOSA.Logistica
             this.repositoryItemGridLookUpEdit1View.OptionsView.ShowAutoFilterRow = true;
             this.repositoryItemGridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
+            // colwhs_code
+            // 
+            this.colwhs_code.Caption = "Whs Code";
+            this.colwhs_code.FieldName = "whs_code";
+            this.colwhs_code.Name = "colwhs_code";
+            this.colwhs_code.Visible = true;
+            this.colwhs_code.VisibleIndex = 0;
+            // 
+            // coldescripcion1
+            // 
+            this.coldescripcion1.Caption = "Descripcion";
+            this.coldescripcion1.FieldName = "descripcion";
+            this.coldescripcion1.Name = "coldescripcion1";
+            this.coldescripcion1.Visible = true;
+            this.coldescripcion1.VisibleIndex = 1;
+            // 
             // coldiferencia
             // 
             this.coldiferencia.AppearanceCell.BackColor = System.Drawing.Color.Silver;
@@ -598,7 +615,7 @@ namespace LOSA.Logistica
             this.coldiferencia.Name = "coldiferencia";
             this.coldiferencia.OptionsColumn.AllowEdit = false;
             this.coldiferencia.Visible = true;
-            this.coldiferencia.VisibleIndex = 7;
+            this.coldiferencia.VisibleIndex = 6;
             this.coldiferencia.Width = 163;
             // 
             // colExistenciaAprox
@@ -612,7 +629,7 @@ namespace LOSA.Logistica
             this.colExistenciaAprox.Name = "colExistenciaAprox";
             this.colExistenciaAprox.OptionsColumn.AllowEdit = false;
             this.colExistenciaAprox.Visible = true;
-            this.colExistenciaAprox.VisibleIndex = 5;
+            this.colExistenciaAprox.VisibleIndex = 4;
             this.colExistenciaAprox.Width = 143;
             // 
             // coleliminar
@@ -621,7 +638,7 @@ namespace LOSA.Logistica
             this.coleliminar.ColumnEdit = this.btnEliminar;
             this.coleliminar.Name = "coleliminar";
             this.coleliminar.Visible = true;
-            this.coleliminar.VisibleIndex = 9;
+            this.coleliminar.VisibleIndex = 8;
             this.coleliminar.Width = 148;
             // 
             // btnEliminar
@@ -662,7 +679,7 @@ namespace LOSA.Logistica
             this.coltoma_fisica.FieldName = "toma_fisica";
             this.coltoma_fisica.Name = "coltoma_fisica";
             this.coltoma_fisica.Visible = true;
-            this.coltoma_fisica.VisibleIndex = 6;
+            this.coltoma_fisica.VisibleIndex = 5;
             this.coltoma_fisica.Width = 140;
             // 
             // collote
@@ -897,22 +914,6 @@ namespace LOSA.Logistica
             this.coltoma_fisica1.Visible = true;
             this.coltoma_fisica1.VisibleIndex = 4;
             this.coltoma_fisica1.Width = 144;
-            // 
-            // colwhs_code
-            // 
-            this.colwhs_code.Caption = "Whs Code";
-            this.colwhs_code.FieldName = "whs_code";
-            this.colwhs_code.Name = "colwhs_code";
-            this.colwhs_code.Visible = true;
-            this.colwhs_code.VisibleIndex = 0;
-            // 
-            // coldescripcion1
-            // 
-            this.coldescripcion1.Caption = "Descripcion";
-            this.coldescripcion1.FieldName = "descripcion";
-            this.coldescripcion1.Name = "coldescripcion1";
-            this.coldescripcion1.Visible = true;
-            this.coldescripcion1.VisibleIndex = 1;
             // 
             // frmNuevoRecuento
             // 

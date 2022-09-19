@@ -48,6 +48,7 @@ namespace LOSA.Logistica
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryVerDetalle = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmdNuevoRecuento = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCierreMes1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
@@ -211,11 +212,25 @@ namespace LOSA.Logistica
             this.colid.FieldName = "id";
             this.colid.Name = "colid";
             // 
+            // cmdNuevoRecuento
+            // 
+            this.cmdNuevoRecuento.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdNuevoRecuento.Appearance.Options.UseFont = true;
+            this.cmdNuevoRecuento.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdNuevoRecuento.ImageOptions.Image")));
+            this.cmdNuevoRecuento.Location = new System.Drawing.Point(237, 7);
+            this.cmdNuevoRecuento.Name = "cmdNuevoRecuento";
+            this.cmdNuevoRecuento.Size = new System.Drawing.Size(208, 47);
+            this.cmdNuevoRecuento.TabIndex = 3;
+            this.cmdNuevoRecuento.Text = "Nuevo recuento V2";
+            this.cmdNuevoRecuento.Visible = false;
+            this.cmdNuevoRecuento.Click += new System.EventHandler(this.cmdNuevoRecuento_Click);
+            // 
             // frmCierreMensual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1194, 693);
+            this.Controls.Add(this.cmdNuevoRecuento);
             this.Controls.Add(this.grd_data);
             this.Controls.Add(this.btnNuevoRecuento);
             this.Controls.Add(this.btn_close);
@@ -246,5 +261,6 @@ namespace LOSA.Logistica
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryVerDetalle;
         private DevExpress.XtraGrid.Columns.GridColumn colid;
+        private DevExpress.XtraEditors.SimpleButton cmdNuevoRecuento;
     }
 }

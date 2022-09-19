@@ -29,12 +29,13 @@ namespace LOSA.Reproceso
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEditarTarimaReproceso));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.cmdGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -46,6 +47,8 @@ namespace LOSA.Reproceso
             this.txtCantidadTarimasTotal = new DevExpress.XtraEditors.TextEdit();
             this.txtPesoKg = new DevExpress.XtraEditors.TextEdit();
             this.gridLookUpEditPresentacion = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.presentacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsRecepcionMPx1 = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -63,14 +66,14 @@ namespace LOSA.Reproceso
             this.dtFechaIngreso = new DevExpress.XtraEditors.DateEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
-            this.dsRecepcionMPx1 = new LOSA.RecepcionMP.dsRecepcionMPx();
-            this.presentacionesBindingSource = new System.Windows.Forms.BindingSource();
             ((System.ComponentModel.ISupportInitialize)(this.txtMP_Name.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtpresentacionPromedio.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tg_presentacion_promedio.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadTarimasTotal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPesoKg.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditPresentacion.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.presentacionesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLote.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaVencimiento.Properties.CalendarTimeProperties)).BeginInit();
@@ -81,8 +84,6 @@ namespace LOSA.Reproceso
             ((System.ComponentModel.ISupportInitialize)(this.txtNumIngreso.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaIngreso.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaIngreso.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.presentacionesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdGuardar
@@ -111,7 +112,7 @@ namespace LOSA.Reproceso
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(766, 37);
+            this.btnAtras.Location = new System.Drawing.Point(824, 37);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(167, 47);
             this.btnAtras.TabIndex = 67;
@@ -130,27 +131,28 @@ namespace LOSA.Reproceso
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl1.Location = new System.Drawing.Point(5, 2);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(941, 40);
+            this.labelControl1.Size = new System.Drawing.Size(999, 40);
             this.labelControl1.TabIndex = 69;
-            this.labelControl1.Text = "Modificar Tarima #Lote";
+            this.labelControl1.Text = "Modificar Tarima Reproceso";
             // 
             // txtMP_Name
             // 
+            this.txtMP_Name.Enabled = false;
             this.txtMP_Name.Location = new System.Drawing.Point(207, 136);
             this.txtMP_Name.Name = "txtMP_Name";
             this.txtMP_Name.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.txtMP_Name.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions2.Image = global::LOSA.Properties.Resources.wheat;
-            serializableAppearanceObject5.BackColor = System.Drawing.Color.Transparent;
-            serializableAppearanceObject5.Options.UseBackColor = true;
-            serializableAppearanceObject6.BackColor = System.Drawing.Color.LightBlue;
-            serializableAppearanceObject6.Options.UseBackColor = true;
-            serializableAppearanceObject7.BackColor = System.Drawing.Color.LightBlue;
-            serializableAppearanceObject7.Options.UseBackColor = true;
-            serializableAppearanceObject8.BackColor = System.Drawing.Color.LightBlue;
-            serializableAppearanceObject8.Options.UseBackColor = true;
+            editorButtonImageOptions1.Image = global::LOSA.Properties.Resources.wheat;
+            serializableAppearanceObject1.BackColor = System.Drawing.Color.Transparent;
+            serializableAppearanceObject1.Options.UseBackColor = true;
+            serializableAppearanceObject2.BackColor = System.Drawing.Color.LightBlue;
+            serializableAppearanceObject2.Options.UseBackColor = true;
+            serializableAppearanceObject3.BackColor = System.Drawing.Color.LightBlue;
+            serializableAppearanceObject3.Options.UseBackColor = true;
+            serializableAppearanceObject4.BackColor = System.Drawing.Color.LightBlue;
+            serializableAppearanceObject4.Options.UseBackColor = true;
             this.txtMP_Name.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.txtMP_Name.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.txtMP_Name.Properties.ReadOnly = true;
             this.txtMP_Name.Size = new System.Drawing.Size(439, 30);
@@ -189,7 +191,7 @@ namespace LOSA.Reproceso
             this.Tg_presentacion_promedio.Properties.Appearance.Options.UseFont = true;
             this.Tg_presentacion_promedio.Properties.OffText = "Activar presentacion promedio";
             this.Tg_presentacion_promedio.Properties.OnText = "Desactivar presentacion promedio";
-            this.Tg_presentacion_promedio.Size = new System.Drawing.Size(411, 32);
+            this.Tg_presentacion_promedio.Size = new System.Drawing.Size(334, 32);
             this.Tg_presentacion_promedio.TabIndex = 112;
             this.Tg_presentacion_promedio.Toggled += new System.EventHandler(this.Tg_presentacion_promedio_Toggled);
             // 
@@ -215,7 +217,7 @@ namespace LOSA.Reproceso
             this.txtCantidadTarimasTotal.Properties.Appearance.Options.UseFont = true;
             this.txtCantidadTarimasTotal.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCantidadTarimasTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtCantidadTarimasTotal.Size = new System.Drawing.Size(102, 32);
+            this.txtCantidadTarimasTotal.Size = new System.Drawing.Size(112, 32);
             this.txtCantidadTarimasTotal.TabIndex = 100;
             this.txtCantidadTarimasTotal.Visible = false;
             // 
@@ -248,6 +250,16 @@ namespace LOSA.Reproceso
             this.gridLookUpEditPresentacion.Size = new System.Drawing.Size(170, 30);
             this.gridLookUpEditPresentacion.TabIndex = 95;
             this.gridLookUpEditPresentacion.EditValueChanged += new System.EventHandler(this.gridLookUpEditPresentacion_EditValueChanged);
+            // 
+            // presentacionesBindingSource
+            // 
+            this.presentacionesBindingSource.DataMember = "presentaciones";
+            this.presentacionesBindingSource.DataSource = this.dsRecepcionMPx1;
+            // 
+            // dsRecepcionMPx1
+            // 
+            this.dsRecepcionMPx1.DataSetName = "dsRecepcionMPx";
+            this.dsRecepcionMPx1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridLookUpEdit1View
             // 
@@ -448,21 +460,11 @@ namespace LOSA.Reproceso
             this.labelControl12.TabIndex = 114;
             this.labelControl12.Text = "Peso Kg";
             // 
-            // dsRecepcionMPx1
-            // 
-            this.dsRecepcionMPx1.DataSetName = "dsRecepcionMPx";
-            this.dsRecepcionMPx1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // presentacionesBindingSource
-            // 
-            this.presentacionesBindingSource.DataMember = "presentaciones";
-            this.presentacionesBindingSource.DataSource = this.dsRecepcionMPx1;
-            // 
             // frmEditarTarimaReproceso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(958, 528);
+            this.ClientSize = new System.Drawing.Size(1016, 510);
             this.Controls.Add(this.labelControl12);
             this.Controls.Add(this.Tg_presentacion_promedio);
             this.Controls.Add(this.labelControl13);
@@ -489,13 +491,14 @@ namespace LOSA.Reproceso
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.txtpresentacionPromedio);
             this.Name = "frmEditarTarimaReproceso";
-            this.Text = "frmEditarTarimaReproceso";
             ((System.ComponentModel.ISupportInitialize)(this.txtMP_Name.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtpresentacionPromedio.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tg_presentacion_promedio.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadTarimasTotal.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPesoKg.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditPresentacion.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.presentacionesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLote.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaVencimiento.Properties.CalendarTimeProperties)).EndInit();
@@ -506,8 +509,6 @@ namespace LOSA.Reproceso
             ((System.ComponentModel.ISupportInitialize)(this.txtNumIngreso.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaIngreso.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaIngreso.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.presentacionesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -60,7 +60,7 @@ namespace LOSA.Despachos
 
         public void load_informacion_detalle()
         {
-            string query = @"rpt_load_data_despacho_detalle";
+            string query = @"rpt_load_data_despacho_detalleV2";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             try
             {
@@ -82,7 +82,7 @@ namespace LOSA.Despachos
 
         public void load_informacion_resumen()
         {
-            string query = @"rpt_load_data_despacho_resumen";
+            string query = @"rpt_load_data_despacho_resumenV2";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             try
             {

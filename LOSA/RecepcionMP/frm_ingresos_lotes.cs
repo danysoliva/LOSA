@@ -15,7 +15,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LOSA.Tools;
-
+using LOSA.Reproceso;
 
 namespace LOSA.RecepcionMP
 {
@@ -28,14 +28,20 @@ namespace LOSA.RecepcionMP
         public int Id_ingreso { get => id_ingreso; set => id_ingreso = value; }
         public int Numero_transaccion { get => numero_transaccion; set => numero_transaccion = value; }
 
-        public frm_ingresos_lotes(int Pid_ingreso, int Pnumero_transaccion, UserLogin Puser, bool Finalizado, int id_traslado)
+        string ItemCode;
+
+        public frm_ingresos_lotes(int Pid_ingreso, int Pnumero_transaccion, UserLogin Puser, bool Finalizado, int id_traslado, string pItemCode)
         {
             InitializeComponent();
+            
+
             Numero_transaccion = Pnumero_transaccion;
             Id_ingreso = Pid_ingreso;
             UsuarioLogeado = Puser;
             btnFinalizar.Visible = !Finalizado && id_traslado !=0 ? true : false;
+            ItemCode = pItemCode;
             LoadTarimas();
+
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
@@ -152,6 +158,14 @@ namespace LOSA.RecepcionMP
         private void cmdDuplicar_Click(object sender, EventArgs e)
         {
             //Duplicar la tarima
+            var gridView = (GridView)gridControl1.FocusedView;
+            var row = (dsRecepcionMPx.lista_tarimasRow)gridView.GetFocusedDataRow();
+
+            if (row.id_materia_prima == 1101 || row.id_materia_prima == 1110)
+            {
+                CajaDialogo.Error("No puede duplicar Tarimas de Reproceso, Genere un Ingreso Nuevo!");
+            }
+
             frmInputBox frm = new frmInputBox();
             frm.Text = "Duplicar Tarima";
             frm.lblInstrucciones.Text = "Ingrese la cantidad de tarimas a duplicar:";
@@ -173,8 +187,7 @@ namespace LOSA.RecepcionMP
                     return;
                 }
 
-                var gridView = (GridView)gridControl1.FocusedView;
-                var row = (dsRecepcionMPx.lista_tarimasRow)gridView.GetFocusedDataRow();
+                
 
                 ArrayList List1 = new ArrayList();
 
@@ -322,9 +335,35 @@ namespace LOSA.RecepcionMP
                 return;
             }
 
-            frmEditTarima frm = new frmEditTarima(row.id, this.UsuarioLogeado);
-            frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
+            if (ItemCode == "MP00080" || ItemCode == "MP00081")
+            {
+                switch (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo)
+                {
+                    case GrupoUser.GrupoUsuario.Logistica:
+                        CajaDialogo.Error("No esta autorizado, Solo Calidad puede Editar Tarimas de Reproceso");
+                        break;
+
+                    case GrupoUser.GrupoUsuario.Calidad:
+                        //Ventana de Editar Tarima
+                        frmEditarTarimaReproceso frmRP = new frmEditarTarimaReproceso(row.id, this.UsuarioLogeado);
+                        //frmEditTarima frm = new frmEditTarima(row.id, this.UsuarioLogeado);
+                        if (frmRP.ShowDialog() == DialogResult.OK)
+                        {
+                            LoadTarimas();
+                        }
+
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+            else
+            {
+                frmEditTarima frm = new frmEditTarima(row.id, this.UsuarioLogeado);
+                frm.WindowState = FormWindowState.Maximized;
+                frm.Show();
+            }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)

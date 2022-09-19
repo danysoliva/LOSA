@@ -33,6 +33,29 @@ namespace LOSA.Logistica
             LoadNumeroTransaccion();
             LoadTipoTransaccion();
             CargarTurnos();
+            CargarCausasReproceso();
+        }
+
+        private void CargarCausasReproceso()
+        {
+            try
+            {
+                string query = @"sp_obtener_causas_por_tipo_de_tarima";
+                DataOperations dp = new DataOperations();
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@tipo_tarima", 2); //Tipo de Tarima 2: Producto Terminado
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                dsProduccion.lista_causas_pt.Clear();
+                adat.Fill(dsProduccion.lista_causas_pt);
+                conn.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
         }
 
         private void CargarTurnos()
@@ -363,6 +386,9 @@ namespace LOSA.Logistica
                         command.Parameters.AddWithValue("@id_ingreso", id_ingreso_); //Ingreso de Reproceso
                         command.Parameters.AddWithValue("@id_turno", gridLookUpTurno.EditValue);
                         command.ExecuteNonQuery();
+
+                        //Aqui va ir el foreach con las causas 
+                        //En proceso..
 
                         CantGuardo++;
 

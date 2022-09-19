@@ -184,6 +184,17 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="lista_causas_pt" msprop:Generator_TableClassName="lista_causas_ptDataTable" msprop:Generator_TableVarName="tablelista_causas_pt" msprop:Generator_RowChangedName="lista_causas_ptRowChanged" msprop:Generator_TablePropName="lista_causas_pt" msprop:Generator_RowDeletingName="lista_causas_ptRowDeleting" msprop:Generator_RowChangingName="lista_causas_ptRowChanging" msprop:Generator_RowEvHandlerName="lista_causas_ptRowChangeEventHandler" msprop:Generator_RowDeletedName="lista_causas_ptRowDeleted" msprop:Generator_RowClassName="lista_causas_ptRow" msprop:Generator_UserTableName="lista_causas_pt" msprop:Generator_RowEvArgName="lista_causas_ptRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="descripcion" msdata:Caption="Causa" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" minOccurs="0" />
+              <xs:element name="tipo_tarima" msprop:Generator_ColumnVarNameInTable="columntipo_tarima" msprop:Generator_ColumnPropNameInRow="tipo_tarima" msprop:Generator_ColumnPropNameInTable="tipo_tarimaColumn" msprop:Generator_UserColumnName="tipo_tarima" type="xs:int" minOccurs="0" />
+              <xs:element name="seleccionado" msprop:Generator_ColumnVarNameInTable="columnseleccionado" msprop:Generator_ColumnPropNameInRow="seleccionado" msprop:Generator_ColumnPropNameInTable="seleccionadoColumn" msprop:Generator_UserColumnName="seleccionado" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="comentario" msprop:Generator_ColumnVarNameInTable="columncomentario" msprop:Generator_ColumnPropNameInRow="comentario" msprop:Generator_ColumnPropNameInTable="comentarioColumn" msprop:Generator_UserColumnName="comentario" type="xs:string" default="" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

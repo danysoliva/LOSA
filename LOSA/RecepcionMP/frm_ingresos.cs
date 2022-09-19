@@ -90,7 +90,7 @@ namespace LOSA.RecepcionMP
 
                 if (row.tipo_ingreso == 1 || row.tipo_ingreso == 5)
                 {
-                    frm_ingresos_lotes frmDetalle = new frm_ingresos_lotes(row.id, row.Ningreso, UsuarioLogeado, row.bit_fin, row.id_traslado);
+                    frm_ingresos_lotes frmDetalle = new frm_ingresos_lotes(row.id, row.Ningreso, UsuarioLogeado, row.bit_fin, row.id_traslado, row.itemcode);
                     if (frmDetalle.ShowDialog() == DialogResult.OK)
                     {
                         Load_Info();

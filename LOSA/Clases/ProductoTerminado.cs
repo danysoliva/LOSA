@@ -11,7 +11,7 @@ namespace LOSA.Clases
     public class ProductoTerminado
     {
         string ConnectionString;
-        public string codigo, descripcion, fecha, estado, formula_code, tamaño, diametro, registro;
+        public string codigo, descripcion, fecha, estado, formula_code, tamaño, diametro, registro, codigo_unite;
         public TimeSpan horasP;
         public decimal proteinas, grasa, size;
         public int id, id_bag, id_category, id_proceso, id_portafolio, id_tamaño, especie, family, idOr;
@@ -82,6 +82,7 @@ namespace LOSA.Clases
                     diametro = dl.GetString(17);
                     Codigo = dl.GetString(18);
                     // horasP = dl.GetTimeSpan(18);
+
                     recuperado = true;
                 }
             }
@@ -117,6 +118,7 @@ namespace LOSA.Clases
                                       ,coalesce ([Registro], ' ') as [Registro]
                                       ,coalesce ([diametro], ' ') as [diametro]
                                       ,Codigo
+                                      ,coalesce(codigo_unite,'N/A') as codigo_unite
                                   FROM [ACS].[dbo].[PT_Productos]
                                   where id = '" + IdProd + "'";
                 //,coalesce([HorasTon], '00:00:00 a.m.') as HorasP
@@ -147,6 +149,7 @@ namespace LOSA.Clases
                     diametro = dl.GetString(17);    
                     Codigo = dl.GetString(18);
                     // horasP = dl.GetTimeSpan(18);
+                    codigo_unite = dl.GetString(19);
                     recuperado = true;
                 }
             }

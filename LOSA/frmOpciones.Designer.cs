@@ -335,6 +335,7 @@
             this.btnRecuento.Size = new System.Drawing.Size(200, 42);
             this.btnRecuento.TabIndex = 47;
             this.btnRecuento.Text = "Recuento de Inventario";
+            this.btnRecuento.Visible = false;
             this.btnRecuento.Click += new System.EventHandler(this.btnRecuento_Click_1);
             // 
             // cmdReporteInventarioPorFecha
