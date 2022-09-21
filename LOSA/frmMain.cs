@@ -276,8 +276,18 @@ namespace LOSA
             //frm.MdiParent = this.MdiParent;
             //frm.WindowState = FormWindowState.Maximized;
             //frm.Show();
+            UserLogin Log1 = new UserLogin();
+            if (Log1.RecuperarRegistro(1067))
+            {
+                Log1.GrupoUsuario.GrupoUsuarioActivo = (GrupoUser.GrupoUsuario)Log1.IdGrupo;
+            }
+            else
+            {
+                Log1.Id = 1067;
+                Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Produccion;
+            }
 
-            xfrmMenuMicros menu = new xfrmMenuMicros();
+            xfrmMenuMicros menu = new xfrmMenuMicros(Log1);
             menu.MdiParent = this.MdiParent;
             menu.Show();
 

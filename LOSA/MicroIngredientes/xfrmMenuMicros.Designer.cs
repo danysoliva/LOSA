@@ -114,11 +114,11 @@
             this.Controls.Add(this.cmdClose);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.cmdMicros);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "xfrmMenuMicros";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
             this.ResumeLayout(false);

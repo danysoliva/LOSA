@@ -11,6 +11,8 @@ using DevExpress.XtraEditors;
 using ACS.Classes;
 using System.Data.SqlClient;
 using LOSA.MicroIngredientes.Models;
+using LOSA.Clases;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace LOSA.MicroIngredientes
 {
@@ -19,10 +21,12 @@ namespace LOSA.MicroIngredientes
         int id = 0;
         string codigoOrden;
         int LotePT;
+        UserLogin UsuarioLogeado;
 
-        public xfrmDetalleOrdenesMicros(int _ID, string _CodigoOrden, int LotePt)
+        public xfrmDetalleOrdenesMicros(int _ID, string _CodigoOrden, int LotePt, UserLogin pUser)
         {
             InitializeComponent();
+            UsuarioLogeado = pUser;
             id = _ID;
             LotePT = LotePt;
             codigoOrden = _CodigoOrden;
@@ -68,7 +72,7 @@ namespace LOSA.MicroIngredientes
                 {
                     cnx.Open();
                     dsMicros.DetalleOrdenesPesajeIndividual.Clear();
-                    SqlDataAdapter da = new SqlDataAdapter("[sp_get_detalle_orden_pesaje_micros_interface_indiv]", cnx);
+                    SqlDataAdapter da = new SqlDataAdapter("[sp_get_detalle_orden_pesaje_micros_interface_indiv_v2]", cnx);
                     da.SelectCommand.CommandType = CommandType.StoredProcedure;
                     da.SelectCommand.Parameters.AddWithValue("@orden_id", SqlDbType.Int).Value = id;
                     da.Fill(dsMicros.DetalleOrdenesPesajeIndividual);
@@ -152,6 +156,99 @@ namespace LOSA.MicroIngredientes
 
         private void cmdConfigurarDetalle_Click(object sender, EventArgs e)
         {
+            int tipo_pesaje = 0;
+            if (xtraTabControl1.SelectedTabPageIndex == 0)
+                tipo_pesaje = 1;//mezcla
+            else
+                tipo_pesaje = 2;//Individual
+
+            frmDetalleFormula frm = new frmDetalleFormula(UsuarioLogeado, LotePT, id, tipo_pesaje);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    DataOperations dp = new DataOperations();
+                    SqlConnection con = new SqlConnection(dp.ConnectionStringAPMS);
+                    con.Open();
+
+                    SqlCommand cmd = new SqlCommand("sp_set_insert_new_mp_for_pesaje_micros", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id_orden_encabezado", id);
+                    cmd.Parameters.AddWithValue("@id_rm", frm.IdRM);
+                    cmd.Parameters.AddWithValue("@batch_plan", frm.CantBatch);
+                    cmd.Parameters.AddWithValue("@id_tipo_pesaje", tipo_pesaje);
+                    cmd.Parameters.AddWithValue("@set_point", frm.PlanByBatch);
+                    cmd.Parameters.AddWithValue("@set_point_total", frm.PlanBatchTotal);
+                    cmd.ExecuteNonQuery();
+
+                    con.Close();
+
+                    if (xtraTabControl1.SelectedTabPageIndex == 0)
+                        LoadData();
+                    else
+                        LoadDataIndividual();
+
+                }
+                catch (Exception ec)
+                {
+                    CajaDialogo.Error(ec.Message);
+                }
+            }
+
+         
+
+
+        }
+
+        private void cmdEliminar_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            //Mezclas o Nucleos
+            //Validar si hay batch que se hayan pesado de esta materia prima antes de permitir eliminar
+            var gridView = (GridView)gcDetalle.FocusedView;
+            var row = (dsMicros.DetalleOrdenesMicroRow)gridView.GetFocusedDataRow();
+
+            FuncionesMicroI Fn = new FuncionesMicroI();
+            decimal valor = Fn.GetValorPesadoPorRM(row.id_RM, id);
+
+            if (valor > 0)
+            {
+                CajaDialogo.Error("Ya se efectuaron pesajes de este material! No se permite eliminmar esta Materia Prima. Solicite ayuda de su supervisor o el depto. de IT");
+                return;
+            }
+
+            DialogResult r = CajaDialogo.Pregunta("Esta seguro que desea quitar esta materia prima de Micro Ingredientes?");
+            if (r != DialogResult.Yes)
+                return;
+
+            //Update enable = 0 al row 
+            if (Fn.SetEnableRM_and_order(row.id_RM, id, false))
+                LoadData();
+
+        }
+
+        private void cmdEliminarI_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            //Individuales
+            //Validar si hay batch que se hayan pesado de esta materia prima antes de permitir eliminar
+            var gridView = (GridView)gridControl1.FocusedView;
+            var row = (dsMicros.DetalleOrdenesPesajeIndividualRow)gridView.GetFocusedDataRow();
+
+            FuncionesMicroI Fn = new FuncionesMicroI();
+            decimal valor = Fn.GetValorPesadoPorRM(row.id_rm, id);
+
+            if (valor > 0)
+            {
+                CajaDialogo.Error("Ya se efectuaron pesajes de este material! No se permite eliminmar esta Materia Prima. Solicite ayuda de su supervisor o el depto. de IT");
+                return;
+            }
+
+            DialogResult r = CajaDialogo.Pregunta("Esta seguro que desea quitar esta materia prima de Micro Ingredientes?");
+            if (r != DialogResult.Yes)
+                return;
+
+            //Update enable = 0 al row 
+            if (Fn.SetEnableRM_and_order(row.id_rm, id, false))
+                LoadDataIndividual();
 
         }
     }

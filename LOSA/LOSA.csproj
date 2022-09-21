@@ -1481,6 +1481,7 @@
     <Compile Include="MicroIngredientes\frmSelectLotePesaje.Designer.cs">
       <DependentUpon>frmSelectLotePesaje.cs</DependentUpon>
     </Compile>
+    <Compile Include="MicroIngredientes\Models\FuncionesMicroI.cs" />
     <Compile Include="MicroIngredientes\Models\OrdenH_Info.cs" />
     <Compile Include="MicroIngredientes\Models\PesajeIndividualCompletados.cs" />
     <Compile Include="MicroIngredientes\Models\PesajeIndividualInfo.cs" />
