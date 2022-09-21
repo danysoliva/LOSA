@@ -110,6 +110,33 @@ namespace LOSA.TransaccionesPT
             var gridView = (GridView)grd_data.FocusedView;
             var row = (dsPT.Load_despachosRow)gridView.GetFocusedDataRow();
 
+            int contaBoleta = 1;
+            try
+            {
+
+                string query = @"sp_get_validar_si_boleta_salio";
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringBascula);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@boleta", row.Boleta);
+                //cmd.ExecuteNonQuery();
+                contaBoleta =Convert.ToInt32(cmd.ExecuteScalar());
+                cn.Close();
+
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+
+            if (contaBoleta == 0) //Si es 0! ya existe un registro de salida de este vehiculo y furgon.
+            {
+                CajaDialogo.Error("No puede eliminar el despacho por que ya existe un Registro de Salida del Vehículo!");
+                return;
+            }
+
+
             if (row.bit_abierto == false)
             {
                 CajaDialogo.Error("No puede eliminar una Despacho Cerrado! Contacte a su Administrador!");
@@ -118,6 +145,7 @@ namespace LOSA.TransaccionesPT
 
             if (MessageBox.Show("Desea eliminar este despacho? No podra hacer ninguna otra transaccion de el y las tarimas recibidas volveran al inventario.", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             {
+
                 try
                 {
                    

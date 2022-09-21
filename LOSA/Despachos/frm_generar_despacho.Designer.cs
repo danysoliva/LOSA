@@ -642,7 +642,6 @@
             this.Controls.Add(this.txtunidades);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.txtboleta);
-            this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.labelControl3);
@@ -651,6 +650,7 @@
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.btnatras);
+            this.Controls.Add(this.btn_guardar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_generar_despacho";
             this.Text = "frm_generar_despacho";

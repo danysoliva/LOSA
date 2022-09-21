@@ -95,6 +95,7 @@
             this.txtNumDoc = new DevExpress.XtraEditors.TextEdit();
             this.txtNumBoleta = new DevExpress.XtraEditors.TextEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.colcodigo_barra = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtconductor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtplaca.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtfurgon.Properties)).BeginInit();
@@ -307,6 +308,7 @@
             this.colpresentacion,
             this.colfila,
             this.collote,
+            this.colcodigo_barra,
             this.colproducto,
             this.colfilaUP,
             this.colfilaDown,
@@ -331,7 +333,7 @@
             this.colcantidad.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cantidad", "Ud={0:0.##}")});
             this.colcantidad.Visible = true;
-            this.colcantidad.VisibleIndex = 2;
+            this.colcantidad.VisibleIndex = 3;
             this.colcantidad.Width = 77;
             // 
             // colpresentacion
@@ -341,7 +343,7 @@
             this.colpresentacion.Name = "colpresentacion";
             this.colpresentacion.OptionsColumn.AllowEdit = false;
             this.colpresentacion.Visible = true;
-            this.colpresentacion.VisibleIndex = 3;
+            this.colpresentacion.VisibleIndex = 4;
             this.colpresentacion.Width = 77;
             // 
             // colfila
@@ -371,7 +373,7 @@
             this.colproducto.Name = "colproducto";
             this.colproducto.OptionsColumn.AllowEdit = false;
             this.colproducto.Visible = true;
-            this.colproducto.VisibleIndex = 4;
+            this.colproducto.VisibleIndex = 5;
             this.colproducto.Width = 103;
             // 
             // colfilaUP
@@ -380,7 +382,7 @@
             this.colfilaUP.ColumnEdit = this.btnUp;
             this.colfilaUP.Name = "colfilaUP";
             this.colfilaUP.Visible = true;
-            this.colfilaUP.VisibleIndex = 5;
+            this.colfilaUP.VisibleIndex = 6;
             this.colfilaUP.Width = 65;
             // 
             // btnUp
@@ -399,7 +401,7 @@
             this.colfilaDown.ColumnEdit = this.btnDown;
             this.colfilaDown.Name = "colfilaDown";
             this.colfilaDown.Visible = true;
-            this.colfilaDown.VisibleIndex = 6;
+            this.colfilaDown.VisibleIndex = 7;
             this.colfilaDown.Width = 69;
             // 
             // btnDown
@@ -418,7 +420,7 @@
             this.btneliminarLinea.ColumnEdit = this.btnEliminar;
             this.btneliminarLinea.Name = "btneliminarLinea";
             this.btneliminarLinea.Visible = true;
-            this.btneliminarLinea.VisibleIndex = 7;
+            this.btneliminarLinea.VisibleIndex = 8;
             this.btneliminarLinea.Width = 77;
             // 
             // btnEliminar
@@ -660,6 +662,15 @@
             this.labelControl8.TabIndex = 54;
             this.labelControl8.Text = "Num. Boleta";
             // 
+            // colcodigo_barra
+            // 
+            this.colcodigo_barra.Caption = "COD. BARRA";
+            this.colcodigo_barra.FieldName = "codigo_barra";
+            this.colcodigo_barra.Name = "colcodigo_barra";
+            this.colcodigo_barra.OptionsColumn.AllowEdit = false;
+            this.colcodigo_barra.Visible = true;
+            this.colcodigo_barra.VisibleIndex = 2;
+            // 
             // frm_view_entrega_despacho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -764,5 +775,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colpresentacion1;
         private DevExpress.XtraGrid.Columns.GridColumn coltm_linea;
         private DevExpress.XtraGrid.Columns.GridColumn colKg_linea;
+        private DevExpress.XtraGrid.Columns.GridColumn colcodigo_barra;
     }
 }

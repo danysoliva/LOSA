@@ -145,11 +145,38 @@ namespace LOSA.Despachos
         }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            var gridView = (GridView)grd_data.FocusedView;
+            var row = (ds_despachos.producto_cargaRow)gridView.GetFocusedDataRow();
+
+            int contaBoleta = 0;
+
             try
             {
-                var gridView = (GridView)grd_data.FocusedView;
-                var row = (ds_despachos.producto_cargaRow)gridView.GetFocusedDataRow();
 
+                string query = @"sp_get_validar_si_boleta_salio";
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringBascula);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@boleta",Convert.ToInt32(txtNumBoleta.Text));
+                //cmd.ExecuteNonQuery();
+                contaBoleta = Convert.ToInt32(cmd.ExecuteScalar());
+                cn.Close();
+
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+
+            if (contaBoleta == 0) //Si es 0! ya existe un registro de salida de este vehiculo y furgon.
+            {
+                CajaDialogo.Error("No puede eliminar el despacho por que ya existe un Registro de Salida del Vehículo!");
+                return;
+            }
+            
+            try
+            {
                 string query = @"sp_deshabilitar_row_of_despachos_tarimaV2";
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 cn.Open();
