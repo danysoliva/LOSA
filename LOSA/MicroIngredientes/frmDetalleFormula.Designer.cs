@@ -45,9 +45,9 @@ namespace LOSA.MicroIngredientes
             this.colpeso_batch = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltotal = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcant_paradas = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.label1 = new System.Windows.Forms.Label();
             this.col_seleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdSelecionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblLote = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -61,7 +61,7 @@ namespace LOSA.MicroIngredientes
             this.cmdClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdClose.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
             this.cmdClose.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.cmdClose.Location = new System.Drawing.Point(544, 7);
+            this.cmdClose.Location = new System.Drawing.Point(790, 7);
             this.cmdClose.Name = "cmdClose";
             this.cmdClose.Size = new System.Drawing.Size(75, 39);
             this.cmdClose.TabIndex = 11;
@@ -79,7 +79,7 @@ namespace LOSA.MicroIngredientes
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cmdSelecionar});
-            this.gridControl1.Size = new System.Drawing.Size(617, 407);
+            this.gridControl1.Size = new System.Drawing.Size(863, 495);
             this.gridControl1.TabIndex = 12;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -163,16 +163,6 @@ namespace LOSA.MicroIngredientes
             this.colcant_paradas.VisibleIndex = 3;
             this.colcant_paradas.Width = 62;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 21);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Listado de Materiales";
-            // 
             // col_seleccionar
             // 
             this.col_seleccionar.Caption = "Seleccionar";
@@ -192,6 +182,16 @@ namespace LOSA.MicroIngredientes
             this.cmdSelecionar.Name = "cmdSelecionar";
             this.cmdSelecionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdSelecionar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdSelecionar_ButtonClick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(1, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(157, 21);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Listado de Materiales";
             // 
             // label2
             // 
@@ -216,7 +216,7 @@ namespace LOSA.MicroIngredientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(621, 464);
+            this.ClientSize = new System.Drawing.Size(867, 552);
             this.Controls.Add(this.lblLote);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
