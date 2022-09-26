@@ -144,7 +144,7 @@ namespace LOSA.RecepcionMP
                     }
                     catch (Exception ex)
                     {
-
+                        CajaDialogo.Error(ex.Message);
                     }
                 
                 

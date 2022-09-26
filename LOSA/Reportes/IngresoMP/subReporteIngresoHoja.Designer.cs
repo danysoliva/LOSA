@@ -157,7 +157,7 @@ namespace LOSA.Reportes
             // 
             // BottomMargin
             // 
-            this.BottomMargin.HeightF = 0F;
+            this.BottomMargin.HeightF = 1.583306F;
             this.BottomMargin.Name = "BottomMargin";
             this.BottomMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
@@ -264,7 +264,7 @@ namespace LOSA.Reportes
             this.sqlDataSource2});
             this.DataMember = "sp_rpt_print_detalle_lote";
             this.DataSource = this.sqlDataSource2;
-            this.Margins = new System.Drawing.Printing.Margins(100, 100, 3, 0);
+            this.Margins = new System.Drawing.Printing.Margins(100, 100, 3, 2);
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.id_ingreso});
             this.Version = "18.2";

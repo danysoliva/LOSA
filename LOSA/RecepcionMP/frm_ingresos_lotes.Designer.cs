@@ -349,6 +349,7 @@
             this.colpresentacion.Caption = "Presentacion";
             this.colpresentacion.FieldName = "presentacion";
             this.colpresentacion.Name = "colpresentacion";
+            this.colpresentacion.OptionsColumn.AllowEdit = false;
             this.colpresentacion.Visible = true;
             this.colpresentacion.VisibleIndex = 9;
             this.colpresentacion.Width = 99;
@@ -359,6 +360,7 @@
             this.colnum.FieldName = "num";
             this.colnum.MinWidth = 17;
             this.colnum.Name = "colnum";
+            this.colnum.OptionsColumn.AllowEdit = false;
             this.colnum.Visible = true;
             this.colnum.VisibleIndex = 0;
             this.colnum.Width = 46;
@@ -378,6 +380,7 @@
             this.colcantidad.Caption = "Cantidad";
             this.colcantidad.FieldName = "cantidad";
             this.colcantidad.Name = "colcantidad";
+            this.colcantidad.OptionsColumn.AllowEdit = false;
             this.colcantidad.Visible = true;
             this.colcantidad.VisibleIndex = 8;
             this.colcantidad.Width = 90;
