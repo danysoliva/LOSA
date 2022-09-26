@@ -251,7 +251,7 @@ namespace LOSA.MicroIngredientes
             pesajeManualInfo.BatchPlan = row.cant_batch;
             pesajeManualInfo.AMI_ID = ami_id;
 
-        frmSelectLotePesaje frm = new frmSelectLotePesaje(pesajeManualInfo);
+            frmSelectLotePesaje frm = new frmSelectLotePesaje(pesajeManualInfo);
             //frm.MdiParent = this.MdiParent;
 
             if (frm.ShowDialog()== DialogResult.OK)

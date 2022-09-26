@@ -409,10 +409,9 @@ namespace LOSA.MicroIngredientes
             this.Controls.Add(this.cmdClose);
             this.Controls.Add(this.cmdUpdate);
             this.Controls.Add(this.gcLotesSeleccionados);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmSelectLotePesaje";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Lotes Disponibles";
             ((System.ComponentModel.ISupportInitialize)(this.gcLotesSeleccionados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lotesseleccionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMicro)).EndInit();

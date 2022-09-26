@@ -9,19 +9,22 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using LOSA.Micro;
+using LOSA.Clases;
 
 namespace LOSA.MicroIngredientes
 {
     public partial class xfrmMenuMicros : DevExpress.XtraEditors.XtraForm
     {
-        public xfrmMenuMicros()
+        UserLogin UsuarioLogeado;
+        public xfrmMenuMicros(UserLogin pUsuarioLogeado)
         {
             InitializeComponent();
+            UsuarioLogeado = pUsuarioLogeado;
         }
 
         private void cmdMicros_Click(object sender, EventArgs e)
         {
-            xfrmMicroIngredientes frm = new xfrmMicroIngredientes();
+            xfrmMicroIngredientes frm = new xfrmMicroIngredientes(this.UsuarioLogeado);
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
