@@ -15,14 +15,14 @@ using DevExpress.XtraGrid.Views.Grid;
 
 namespace LOSA.Logistica
 {
-    public partial class frmRecuentoInventario : DevExpress.XtraEditors.XtraForm
+    public partial class frmRecuentoInventarios : DevExpress.XtraEditors.XtraForm
     {
         UserLogin UsuarioLogeado;
         Recuento NuevoRecuento;
         int DEFAULT_VALUE = 0;
         DataOperations dp = new DataOperations();
 
-        public frmRecuentoInventario(UserLogin pUserLogin)
+        public frmRecuentoInventarios(UserLogin pUserLogin)
         {
             InitializeComponent();
             UsuarioLogeado = pUserLogin;

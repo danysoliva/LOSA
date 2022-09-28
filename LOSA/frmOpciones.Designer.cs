@@ -328,7 +328,6 @@
             this.btnRecuento.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.btnRecuento.Appearance.Options.UseFont = true;
             this.btnRecuento.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnRecuento.Enabled = false;
             this.btnRecuento.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnRecuento.ImageOptions.SvgImage")));
             this.btnRecuento.Location = new System.Drawing.Point(209, 254);
             this.btnRecuento.Name = "btnRecuento";

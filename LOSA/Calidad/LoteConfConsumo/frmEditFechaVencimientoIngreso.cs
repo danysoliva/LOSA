@@ -20,11 +20,13 @@ namespace LOSA.Calidad.LoteConfConsumo
         public int id_mp;
         public int id_lote_alosy;
         public DateTime fecha_anterior;
+        int id_ingreso;
         UserLogin UsuarioLogeado;
         public frmEditFechaVencimientoIngreso(int pid_mp, int pnumero_transaccion, string plote, DateTime pfecha_venceVieja, int pid_lote_alosy, UserLogin puser)
         {
             InitializeComponent();
             id_mp = pid_mp;
+        
             txtNumIngreso.Text = pnumero_transaccion.ToString();
             txtLoteMP.Text = plote;
 
@@ -32,6 +34,22 @@ namespace LOSA.Calidad.LoteConfConsumo
             dtFechaVencimiento.EditValue = fecha_anterior;
 
             id_lote_alosy = pid_lote_alosy;
+            UsuarioLogeado = puser;
+        }
+
+        public frmEditFechaVencimientoIngreso(int pid_mp, string plote, DateTime pfecha_venceVieja, UserLogin puser)
+        {
+            InitializeComponent();
+            id_mp = pid_mp;
+
+            txtNumIngreso.Text = " ";
+            id_ingreso = 0;
+            
+            txtLoteMP.Text = plote;
+
+            fecha_anterior = pfecha_venceVieja;
+            dtFechaVencimiento.EditValue = fecha_anterior;
+            
             UsuarioLogeado = puser;
         }
 
@@ -60,7 +78,19 @@ namespace LOSA.Calidad.LoteConfConsumo
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("sp_update_fecha_venc_ingresos2", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id_ingreso", Convert.ToInt32(txtNumIngreso.Text));
+                if (id_ingreso == 0)
+                {
+                    cmd.Parameters.AddWithValue("@id_ingreso", id_ingreso);
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@id_ingreso", Convert.ToInt32(txtNumIngreso.Text));
+                }
+                
+                //if (id_lote_alosy == 0)
+                //{
+                //    id_lote_alosy = null;
+                //}
                 cmd.Parameters.AddWithValue("@id_lote_alosy",id_lote_alosy);
                 cmd.Parameters.AddWithValue("@id_mp",id_mp);
                 cmd.Parameters.AddWithValue("@fecha_anterior", Convert.ToDateTime(fecha_anterior));

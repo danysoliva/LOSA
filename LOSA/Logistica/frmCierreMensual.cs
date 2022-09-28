@@ -80,7 +80,7 @@ namespace LOSA.Logistica
 
         private void cmdNuevoRecuento_Click(object sender, EventArgs e)
         {
-            frmRecuentoInventario frm = new frmRecuentoInventario(UsuarioLogeado);
+            frmRecuentoInventarios frm = new frmRecuentoInventarios(UsuarioLogeado);
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 load_data();

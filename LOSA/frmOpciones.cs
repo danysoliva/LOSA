@@ -1035,10 +1035,8 @@ namespace LOSA
 
         private void btnRecuento_Click_1(object sender, EventArgs e)
         {
-            Logistica.frmRecuentoInventario frm = new Logistica.frmRecuentoInventario(this.UsuarioLogeado);
-            if (this.MdiParent != null)
-                frm.MdiParent = this.MdiParent;
-            frm.Show();
+            Logistica.frmRecuentoInventarios frmRecuentoInventario = new Logistica.frmRecuentoInventarios(this.UsuarioLogeado);
+            frmRecuentoInventario.Show();
         }
     }
 }
