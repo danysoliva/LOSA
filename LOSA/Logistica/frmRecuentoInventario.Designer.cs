@@ -1,7 +1,7 @@
 ﻿
 namespace LOSA.Logistica
 {
-    partial class frmRecuentoInventario
+    partial class frmRecuentoInventarios
     {
         /// <summary>
         /// Required designer variable.
@@ -29,17 +29,18 @@ namespace LOSA.Logistica
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRecuentoInventario));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRecuentoInventarios));
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.dtFechaRecu = new DevExpress.XtraEditors.DateEdit();
             this.grd_meses_disponibles = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.mesesBindingSource = new System.Windows.Forms.BindingSource();
+            this.mesesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsCierreMes1 = new LOSA.Logistica.dsCierreMes();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colmes_numero = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -48,7 +49,7 @@ namespace LOSA.Logistica
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.grd_years = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.yearsBindingSource = new System.Windows.Forms.BindingSource();
+            this.yearsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colejercicio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnSeleLote = new DevExpress.XtraEditors.SimpleButton();
@@ -70,13 +71,13 @@ namespace LOSA.Logistica
             this.collote = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltoma_fisica = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldiferencia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnueva_cantidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryEliminar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabMP = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPT = new DevExpress.XtraTab.XtraTabPage();
-            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
-            this.colnueva_cantidad = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
@@ -511,6 +512,14 @@ namespace LOSA.Logistica
             this.coldiferencia.Visible = true;
             this.coldiferencia.VisibleIndex = 9;
             // 
+            // colnueva_cantidad
+            // 
+            this.colnueva_cantidad.Caption = "Nueva Cantidad";
+            this.colnueva_cantidad.FieldName = "nueva_cantidad";
+            this.colnueva_cantidad.Name = "colnueva_cantidad";
+            this.colnueva_cantidad.Visible = true;
+            this.colnueva_cantidad.VisibleIndex = 10;
+            // 
             // gridColumn1
             // 
             this.gridColumn1.Caption = "Eliminar";
@@ -522,9 +531,9 @@ namespace LOSA.Logistica
             // repositoryEliminar
             // 
             this.repositoryEliminar.AutoHeight = false;
-            editorButtonImageOptions3.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions3.SvgImage")));
+            editorButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions1.SvgImage")));
             this.repositoryEliminar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Eliminar", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Eliminar", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryEliminar.Name = "repositoryEliminar";
             this.repositoryEliminar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryEliminar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryEliminar_ButtonClick);
@@ -558,23 +567,14 @@ namespace LOSA.Logistica
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
-            // colnueva_cantidad
-            // 
-            this.colnueva_cantidad.Caption = "Nueva Cantidad";
-            this.colnueva_cantidad.FieldName = "nueva_cantidad";
-            this.colnueva_cantidad.Name = "colnueva_cantidad";
-            this.colnueva_cantidad.Visible = true;
-            this.colnueva_cantidad.VisibleIndex = 10;
-            // 
-            // frmRecuentoInventario
+            // frmRecuentoInventarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1324, 702);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.panelControl1);
-            this.IsMdiContainer = true;
-            this.Name = "frmRecuentoInventario";
+            this.Name = "frmRecuentoInventarios";
             this.ShowIcon = false;
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);

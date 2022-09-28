@@ -145,6 +145,10 @@ namespace LOSA.Despachos
         }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            DialogResult r = CajaDialogo.Pregunta("Desea Eliminar esta tarima de este Despacho?La tarima volvera a Bodega.");
+            if (r != System.Windows.Forms.DialogResult.Yes)
+                return;
+           
             var gridView = (GridView)grd_data.FocusedView;
             var row = (ds_despachos.producto_cargaRow)gridView.GetFocusedDataRow();
 
@@ -174,7 +178,7 @@ namespace LOSA.Despachos
                 CajaDialogo.Error("No puede eliminar el despacho por que ya existe un Registro de Salida del Vehículo!");
                 return;
             }
-            
+
             try
             {
                 string query = @"sp_deshabilitar_row_of_despachos_tarimaV2";

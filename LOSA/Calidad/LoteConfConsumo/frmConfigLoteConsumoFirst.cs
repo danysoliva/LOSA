@@ -80,11 +80,24 @@ namespace LOSA.Calidad.LoteConfConsumo
             var gridView = (GridView)gridControl1.FocusedView;
             var row = (dsConfigLoteConsumo.config_loteRow)gridView.GetFocusedDataRow();
 
-            frmEditFechaVencimientoIngreso frm = new frmEditFechaVencimientoIngreso(row.id_mp, row.numero_transaccion, row.lote, row.fecha_vence, row.id_lote_alosy, UsuarioLogeado);
-            if (frm.ShowDialog() == DialogResult.OK)
+            if (row.id_mp == 1101 || row.id_mp == 1110)
             {
-                LoadLotesMP(row.id_mp);
+                frmEditFechaVencimientoIngreso frm = new frmEditFechaVencimientoIngreso(row.id_mp, row.lote, row.fecha_vence, UsuarioLogeado);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    LoadLotesMP(row.id_mp);
+                }
             }
+            else
+            {
+
+                frmEditFechaVencimientoIngreso frm = new frmEditFechaVencimientoIngreso(row.id_mp, row.numero_transaccion, row.lote, row.fecha_vence, row.id_lote_alosy, UsuarioLogeado);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    LoadLotesMP(row.id_mp);
+                }
+            }
+
         }
     }
 }

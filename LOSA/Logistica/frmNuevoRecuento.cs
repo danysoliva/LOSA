@@ -39,7 +39,7 @@ namespace LOSA.Logistica
 
         public void Inicializar_productos()
         {
-            string query = @"[sp_get_inizializar_grid_for_agusteV2]";
+            string query = @"sp_get_inizializar_grid_for_MP_ajusteV2";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             try
             {
