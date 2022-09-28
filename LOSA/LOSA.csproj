@@ -1469,11 +1469,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsMicros.xsd</DependentUpon>
     </Compile>
+    <Compile Include="MicroIngredientes\frmAlimentacionPanelMicro_i.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MicroIngredientes\frmAlimentacionPanelMicro_i.Designer.cs">
+      <DependentUpon>frmAlimentacionPanelMicro_i.cs</DependentUpon>
+    </Compile>
     <Compile Include="MicroIngredientes\frmDetalleFormula.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MicroIngredientes\frmDetalleFormula.Designer.cs">
       <DependentUpon>frmDetalleFormula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MicroIngredientes\frmEntregaTarimaMicros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MicroIngredientes\frmEntregaTarimaMicros.Designer.cs">
+      <DependentUpon>frmEntregaTarimaMicros.cs</DependentUpon>
     </Compile>
     <Compile Include="MicroIngredientes\frmSelectLotePesaje.cs">
       <SubType>Form</SubType>
@@ -3570,8 +3582,14 @@
     <EmbeddedResource Include="MDIParentFormLOSA.resx">
       <DependentUpon>MDIParentFormLOSA.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MicroIngredientes\frmAlimentacionPanelMicro_i.resx">
+      <DependentUpon>frmAlimentacionPanelMicro_i.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MicroIngredientes\frmDetalleFormula.resx">
       <DependentUpon>frmDetalleFormula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MicroIngredientes\frmEntregaTarimaMicros.resx">
+      <DependentUpon>frmEntregaTarimaMicros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MicroIngredientes\frmSelectLotePesaje.resx">
       <DependentUpon>frmSelectLotePesaje.cs</DependentUpon>
