@@ -245,7 +245,22 @@ namespace LOSA.RecepcionMP
                             cmd.Parameters.AddWithValue("@id_boleta", this.IdSerie);
                             cmd.Parameters.AddWithValue("@codigo_barra", barcode);
                             cmd.Parameters.AddWithValue("@cant", row.udxtarima);
-                            cmd.Parameters.AddWithValue("@peso", row.pesokgxtarima);
+
+                            int CantUnidadesTarima = 0;
+                            try
+                            {
+                                CantUnidadesTarima = dp.ValidateNumberInt32(row.udxtarima);
+                            }
+                            catch { }
+
+                            decimal PesoTotalTarima = 0;
+                            try
+                            {
+                                PesoTotalTarima = dp.ValidateNumberDecimal(row.factor) * CantUnidadesTarima;
+                            }
+                            catch { }
+
+                            cmd.Parameters.AddWithValue("@peso", PesoTotalTarima);
                             cmd.Parameters.AddWithValue("@idlotes", IdLoteInserted);
                             cmd.Parameters.AddWithValue("@factor", row.factor);
                             cmd.Parameters.AddWithValue("@bit_promedio", Tg_presentacion_promedio.IsOn ? 1 : 0);
