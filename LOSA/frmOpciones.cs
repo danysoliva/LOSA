@@ -1038,5 +1038,19 @@ namespace LOSA
             Logistica.frmRecuentoInventarios frmRecuentoInventario = new Logistica.frmRecuentoInventarios(this.UsuarioLogeado);
             frmRecuentoInventario.Show();
         }
+
+        private void simpleButton1_Click_1(object sender, EventArgs e)
+        {
+            frmEntregaTarimaMicros frm = new frmEntregaTarimaMicros(UsuarioLogeado);
+            if (this.MdiParent != null)
+            {
+                frm.MdiParent = this.MdiParent;
+                frm.FormBorderStyle = FormBorderStyle.Sizable;
+            }
+            frm.Show();
+        }
+
+
+
     }
 }
