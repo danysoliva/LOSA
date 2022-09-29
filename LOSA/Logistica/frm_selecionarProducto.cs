@@ -20,7 +20,7 @@ namespace LOSA.Logistica
         DataOperations dp = new DataOperations();
         int Tab_Active;
         int DEFAULT_VALUE = 0;
-        public string codigo;
+        public string codigo, itemcode;
         public int id;
         public string descripcion;
         public frm_selecionarProducto(int Ptab)
@@ -46,6 +46,7 @@ namespace LOSA.Logistica
             }
             catch (Exception ex)
             {
+                CajaDialogo.Error(ex.Message);
             }
         }
         public void get_mp()
@@ -65,6 +66,7 @@ namespace LOSA.Logistica
             }
             catch (Exception ex)
             {
+                CajaDialogo.Error(ex.Message);
             }
         }
         public void get_articulos()
@@ -88,6 +90,7 @@ namespace LOSA.Logistica
                 codigo = row.codigo;
                 id = row.id;
                 descripcion = row.producto;
+                itemcode = row.itemcode;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
 
@@ -107,6 +110,7 @@ namespace LOSA.Logistica
                 codigo = row.codigo;
                 id = row.id;
                 descripcion = row.producto;
+                itemcode = row.itemcode;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
 
