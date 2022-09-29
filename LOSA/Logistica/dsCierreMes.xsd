@@ -55,6 +55,7 @@
               <xs:element name="lote" msprop:Generator_ColumnVarNameInTable="columnlote" msprop:Generator_ColumnPropNameInRow="lote" msprop:Generator_ColumnPropNameInTable="loteColumn" msprop:Generator_UserColumnName="lote" type="xs:string" minOccurs="0" />
               <xs:element name="toma_fisica" msprop:Generator_ColumnVarNameInTable="columntoma_fisica" msprop:Generator_ColumnPropNameInRow="toma_fisica" msprop:Generator_ColumnPropNameInTable="toma_fisicaColumn" msprop:Generator_UserColumnName="toma_fisica" type="xs:decimal" minOccurs="0" />
               <xs:element name="whs_equivalente" msprop:Generator_ColumnVarNameInTable="columnwhs_equivalente" msprop:Generator_ColumnPropNameInRow="whs_equivalente" msprop:Generator_ColumnPropNameInTable="whs_equivalenteColumn" msprop:Generator_UserColumnName="whs_equivalente" type="xs:string" minOccurs="0" />
+              <xs:element name="seleccion" msdata:Caption="Ajuste de Lote" msprop:Generator_ColumnVarNameInTable="columnseleccion" msprop:Generator_ColumnPropNameInRow="seleccion" msprop:Generator_ColumnPropNameInTable="seleccionColumn" msprop:Generator_UserColumnName="seleccion" type="xs:boolean" default="false" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

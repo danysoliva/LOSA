@@ -321,12 +321,16 @@ namespace LOSA.Logistica
             {
                 //case "diferencia":
                 case "toma_fisica":
-                    row.diferencia = row.ExistenciaAprox - row.toma_fisica;
+                    //row.diferencia = row.ExistenciaAprox - row.toma_fisica;
+                    row.diferencia = row.toma_fisica - row.ExistenciaAprox;
                     row.peso = row.toma_fisica;
                     break;
                 default:
                     break;
             }
+            if (row.diferencia > 0 || row.diferencia < 0)
+                row.seleccion = true;
+
 
             //foreach (dsCierreMes.Recuento_mpRow row2 in dsCierreMes.Recuento_mp.Rows)
             //{
@@ -350,18 +354,25 @@ namespace LOSA.Logistica
             }
 
             var list = dsCierreMes.Recuento_mp.AsEnumerable();
-            if (list.Count(p => p.toma_fisica > 0) <= 0)
+            if (list.Count(p => p.peso > 0) <= 0)
             {
                 CajaDialogo.Error("Debe de haber por lo menos una materia prima para modificar para poder crear el ajuste de inventario.");
                 return;
             }
 
             var SelectedRows = from row in list
-                               where row.diferencia > 0 || row.diferencia < 0
+                               where /*row.seleccion = true ||*/ row.peso > 0 /* row.diferencia > 0 || row.diferencia < 0*/
                                select row;
+
+            var SelectedRowsChecked = from row in list
+                                      where row.seleccion = true || row.toma_fisica == 0
+                                      select row;
+
 
             DataTable tableOps = new DataTable();
             tableOps = SelectedRows.CopyToDataTable<DataRow>();
+            tableOps = SelectedRowsChecked.CopyToDataTable<DataRow>();
+            //tableOps = SelectedRowsCheck.CopyToDataTable<DataRow>();
 
             int id_year = Convert.ToInt32(grd_years.EditValue);
             int id_mese = Convert.ToInt32(grd_meses_disponibles.EditValue);
