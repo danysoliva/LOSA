@@ -398,6 +398,7 @@ namespace LOSA.RecuentoInventario
             this.grd_bodega.DisplayMember = "whs_code";
             this.grd_bodega.Name = "grd_bodega";
             this.grd_bodega.PopupView = this.repositoryItemGridLookUpEdit1View;
+            this.grd_bodega.ValueMember = "id";
             // 
             // bodegasBindingSource
             // 
