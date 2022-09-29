@@ -32,6 +32,8 @@
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.tabOpciones = new DevExpress.XtraTab.XtraTabControl();
             this.TabMontacarga = new DevExpress.XtraTab.XtraTabPage();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.cmdPT = new DevExpress.XtraEditors.SimpleButton();
@@ -131,8 +133,6 @@
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -200,6 +200,47 @@
             this.TabMontacarga.PageVisible = false;
             this.TabMontacarga.Size = new System.Drawing.Size(835, 518);
             this.TabMontacarga.Text = "MontaCarga";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Appearance.Options.UseTextOptions = true;
+            this.labelControl4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl4.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.labelControl4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl4.Location = new System.Drawing.Point(580, 327);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(206, 63);
+            this.labelControl4.TabIndex = 15;
+            this.labelControl4.Text = "Micro Ingredientes";
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.Options.UseBackColor = true;
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.Appearance.Options.UseImage = true;
+            this.simpleButton1.Appearance.Options.UseTextOptions = true;
+            this.simpleButton1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton1.AppearanceHovered.BackColor = System.Drawing.Color.Transparent;
+            this.simpleButton1.AppearanceHovered.BackColor2 = System.Drawing.Color.Transparent;
+            this.simpleButton1.AppearanceHovered.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.AppearanceHovered.Image")));
+            this.simpleButton1.AppearanceHovered.Options.UseBackColor = true;
+            this.simpleButton1.AppearanceHovered.Options.UseImage = true;
+            this.simpleButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton1.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
+            this.simpleButton1.Location = new System.Drawing.Point(564, 29);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(239, 295);
+            this.simpleButton1.TabIndex = 14;
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_1);
             // 
             // labelControl2
             // 
@@ -324,7 +365,7 @@
             this.TabMP_Sacos.Controls.Add(this.btnTransferencia);
             this.TabMP_Sacos.Controls.Add(this.btnajuste);
             this.TabMP_Sacos.Name = "TabMP_Sacos";
-            this.TabMP_Sacos.Size = new System.Drawing.Size(766, 486);
+            this.TabMP_Sacos.Size = new System.Drawing.Size(829, 486);
             this.TabMP_Sacos.Text = "MP en Sacos";
             // 
             // btnRecuento
@@ -590,7 +631,7 @@
             this.tabMP_Granel.Controls.Add(this.btnLiquidos);
             this.tabMP_Granel.Controls.Add(this.simpleButton14);
             this.tabMP_Granel.Name = "tabMP_Granel";
-            this.tabMP_Granel.Size = new System.Drawing.Size(766, 486);
+            this.tabMP_Granel.Size = new System.Drawing.Size(829, 486);
             this.tabMP_Granel.Text = "MP Granel";
             // 
             // cmdLoteActivoGranel
@@ -777,7 +818,7 @@
             this.tabPT.Controls.Add(this.simpleButton10);
             this.tabPT.Controls.Add(this.btnReq_PT);
             this.tabPT.Name = "tabPT";
-            this.tabPT.Size = new System.Drawing.Size(766, 486);
+            this.tabPT.Size = new System.Drawing.Size(829, 486);
             this.tabPT.Text = "Producto Terminado";
             this.tabPT.Paint += new System.Windows.Forms.PaintEventHandler(this.tabPT_Paint);
             // 
@@ -915,7 +956,7 @@
             this.tabMasterData.Controls.Add(this.simpleButton23);
             this.tabMasterData.Controls.Add(this.btn_andenes);
             this.tabMasterData.Name = "tabMasterData";
-            this.tabMasterData.Size = new System.Drawing.Size(766, 486);
+            this.tabMasterData.Size = new System.Drawing.Size(829, 486);
             this.tabMasterData.Text = "Configuraciones";
             this.tabMasterData.Paint += new System.Windows.Forms.PaintEventHandler(this.tabMasterData_Paint);
             // 
@@ -966,7 +1007,7 @@
             this.tabReportes.Controls.Add(this.btnreportes);
             this.tabReportes.Controls.Add(this.simpleButton8);
             this.tabReportes.Name = "tabReportes";
-            this.tabReportes.Size = new System.Drawing.Size(766, 486);
+            this.tabReportes.Size = new System.Drawing.Size(829, 486);
             this.tabReportes.Text = "Reportes";
             // 
             // btnReporteProduccionDespachos
@@ -1339,7 +1380,7 @@
             this.TabAdmin.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabAdmin.ImageOptions.Image")));
             this.TabAdmin.Name = "TabAdmin";
             this.TabAdmin.PageVisible = false;
-            this.TabAdmin.Size = new System.Drawing.Size(772, 518);
+            this.TabAdmin.Size = new System.Drawing.Size(835, 518);
             this.TabAdmin.Text = "Administrador";
             // 
             // btnEstadosRequisiciones
@@ -1523,7 +1564,7 @@
             this.txtProduccion.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("txtProduccion.ImageOptions.Image")));
             this.txtProduccion.Name = "txtProduccion";
             this.txtProduccion.PageVisible = false;
-            this.txtProduccion.Size = new System.Drawing.Size(772, 518);
+            this.txtProduccion.Size = new System.Drawing.Size(835, 518);
             this.txtProduccion.Text = "Produccion Administrativo";
             // 
             // simpleButton36
@@ -1623,46 +1664,6 @@
             this.labelControl3.Size = new System.Drawing.Size(578, 39);
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Appearance.Options.UseTextOptions = true;
-            this.labelControl4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl4.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.labelControl4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl4.Location = new System.Drawing.Point(580, 327);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(206, 63);
-            this.labelControl4.TabIndex = 15;
-            this.labelControl4.Text = "Micro Ingredientes";
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton1.Appearance.Options.UseBackColor = true;
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Appearance.Options.UseImage = true;
-            this.simpleButton1.Appearance.Options.UseTextOptions = true;
-            this.simpleButton1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
-            this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.simpleButton1.AppearanceHovered.BackColor = System.Drawing.Color.Transparent;
-            this.simpleButton1.AppearanceHovered.BackColor2 = System.Drawing.Color.Transparent;
-            this.simpleButton1.AppearanceHovered.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.AppearanceHovered.Image")));
-            this.simpleButton1.AppearanceHovered.Options.UseBackColor = true;
-            this.simpleButton1.AppearanceHovered.Options.UseImage = true;
-            this.simpleButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton1.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(564, 29);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(239, 295);
-            this.simpleButton1.TabIndex = 14;
             // 
             // frmOpciones
             // 
