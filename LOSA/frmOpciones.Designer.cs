@@ -131,6 +131,8 @@
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -158,7 +160,7 @@
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdHome.ImageOptions.Image")));
-            this.cmdHome.Location = new System.Drawing.Point(629, 6);
+            this.cmdHome.Location = new System.Drawing.Point(692, 6);
             this.cmdHome.Name = "cmdHome";
             this.cmdHome.Size = new System.Drawing.Size(145, 42);
             this.cmdHome.TabIndex = 6;
@@ -175,7 +177,7 @@
             this.tabOpciones.Location = new System.Drawing.Point(5, 89);
             this.tabOpciones.Name = "tabOpciones";
             this.tabOpciones.SelectedTabPage = this.TabMontacarga;
-            this.tabOpciones.Size = new System.Drawing.Size(778, 565);
+            this.tabOpciones.Size = new System.Drawing.Size(841, 565);
             this.tabOpciones.TabIndex = 8;
             this.tabOpciones.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.TabMontacarga,
@@ -187,6 +189,8 @@
             // 
             // TabMontacarga
             // 
+            this.TabMontacarga.Controls.Add(this.labelControl4);
+            this.TabMontacarga.Controls.Add(this.simpleButton1);
             this.TabMontacarga.Controls.Add(this.labelControl2);
             this.TabMontacarga.Controls.Add(this.labelControl1);
             this.TabMontacarga.Controls.Add(this.cmdPT);
@@ -194,7 +198,7 @@
             this.TabMontacarga.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabMontacarga.ImageOptions.Image")));
             this.TabMontacarga.Name = "TabMontacarga";
             this.TabMontacarga.PageVisible = false;
-            this.TabMontacarga.Size = new System.Drawing.Size(772, 518);
+            this.TabMontacarga.Size = new System.Drawing.Size(835, 518);
             this.TabMontacarga.Text = "MontaCarga";
             // 
             // labelControl2
@@ -277,7 +281,7 @@
             this.TabLogistica.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabLogistica.ImageOptions.Image")));
             this.TabLogistica.Name = "TabLogistica";
             this.TabLogistica.PageVisible = false;
-            this.TabLogistica.Size = new System.Drawing.Size(772, 518);
+            this.TabLogistica.Size = new System.Drawing.Size(835, 518);
             this.TabLogistica.Text = "Logistica";
             // 
             // xtraTabControl1
@@ -286,7 +290,7 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(0, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.TabMP_Sacos;
-            this.xtraTabControl1.Size = new System.Drawing.Size(772, 518);
+            this.xtraTabControl1.Size = new System.Drawing.Size(835, 518);
             this.xtraTabControl1.TabIndex = 42;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.TabMP_Sacos,
@@ -675,7 +679,7 @@
             this.tabEntregaMP.Controls.Add(this.cmdRequisiciones_);
             this.tabEntregaMP.Controls.Add(this.btnplanrequisas);
             this.tabEntregaMP.Name = "tabEntregaMP";
-            this.tabEntregaMP.Size = new System.Drawing.Size(766, 486);
+            this.tabEntregaMP.Size = new System.Drawing.Size(829, 486);
             this.tabEntregaMP.Text = "Entrega MP - PRD";
             this.tabEntregaMP.Paint += new System.Windows.Forms.PaintEventHandler(this.tabEntregaMP_Paint);
             // 
@@ -1036,7 +1040,7 @@
             this.TabCalidad.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabCalidad.ImageOptions.Image")));
             this.TabCalidad.Name = "TabCalidad";
             this.TabCalidad.PageVisible = false;
-            this.TabCalidad.Size = new System.Drawing.Size(772, 518);
+            this.TabCalidad.Size = new System.Drawing.Size(835, 518);
             this.TabCalidad.Text = "Calidad";
             // 
             // btnRutas
@@ -1415,7 +1419,7 @@
             this.tabProduccion.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabProduccion.ImageOptions.Image")));
             this.tabProduccion.Name = "tabProduccion";
             this.tabProduccion.PageVisible = false;
-            this.tabProduccion.Size = new System.Drawing.Size(772, 518);
+            this.tabProduccion.Size = new System.Drawing.Size(835, 518);
             this.tabProduccion.Text = "Producción";
             // 
             // simpleButton33
@@ -1616,16 +1620,56 @@
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl3.Location = new System.Drawing.Point(66, 44);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(515, 39);
+            this.labelControl3.Size = new System.Drawing.Size(578, 39);
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Appearance.Options.UseTextOptions = true;
+            this.labelControl4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl4.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.labelControl4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl4.Location = new System.Drawing.Point(580, 327);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(206, 63);
+            this.labelControl4.TabIndex = 15;
+            this.labelControl4.Text = "Micro Ingredientes";
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.Options.UseBackColor = true;
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.Appearance.Options.UseImage = true;
+            this.simpleButton1.Appearance.Options.UseTextOptions = true;
+            this.simpleButton1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton1.AppearanceHovered.BackColor = System.Drawing.Color.Transparent;
+            this.simpleButton1.AppearanceHovered.BackColor2 = System.Drawing.Color.Transparent;
+            this.simpleButton1.AppearanceHovered.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.AppearanceHovered.Image")));
+            this.simpleButton1.AppearanceHovered.Options.UseBackColor = true;
+            this.simpleButton1.AppearanceHovered.Options.UseImage = true;
+            this.simpleButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton1.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
+            this.simpleButton1.Location = new System.Drawing.Point(564, 29);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(239, 295);
+            this.simpleButton1.TabIndex = 14;
             // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(781, 656);
+            this.ClientSize = new System.Drawing.Size(844, 656);
             this.Controls.Add(this.cmdHome);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.tabOpciones);
@@ -1756,5 +1800,7 @@
         private DevExpress.XtraEditors.SimpleButton cmdReporteProximosVencer;
         private DevExpress.XtraEditors.SimpleButton btnRutas;
         private DevExpress.XtraEditors.SimpleButton btnRecuento;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }
