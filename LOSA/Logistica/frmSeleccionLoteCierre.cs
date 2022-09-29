@@ -283,5 +283,10 @@ namespace LOSA.Logistica
                 btnDerecha.Enabled = false;
             }
         }
+
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

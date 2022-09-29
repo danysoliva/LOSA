@@ -703,6 +703,7 @@ namespace LOSA.Logistica
             this.btnConfirmar.Size = new System.Drawing.Size(111, 50);
             this.btnConfirmar.TabIndex = 4;
             this.btnConfirmar.Text = "Confirmar";
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // frmSeleccionLoteCierre
             // 

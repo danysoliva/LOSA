@@ -16,6 +16,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraEditors.Controls;
+using LOSA.RecuentoInventario;
 
 namespace LOSA.Logistica
 {
@@ -35,6 +36,7 @@ namespace LOSA.Logistica
             get_years();
             get_bodegas();
             Inicializar_productos();
+            dateEdit1.EditValue = dp.Now();
         }
 
         public void Inicializar_productos()
@@ -237,50 +239,50 @@ namespace LOSA.Logistica
 
         private void grdv_dataMP_ValidateRow(object sender, ValidateRowEventArgs e)
         {
-            GridView view = sender as GridView;
-            GridColumn colBodega = view.Columns["colid_bodega"];
-            var gridView = (GridView)grd_dataMp.FocusedView;
-            var RowSelecionada = (dsCierreMes.Recuento_mpRow)gridView.GetFocusedDataRow();
-            //Get the value of the first column
-            //Get the value of the second column
-            //Validity criterion
-            IEnumerable<DataRow> YaEstaLabodega = from row in dsCierreMes.Recuento_mp.AsEnumerable()
-                                                  where row.id_mp == RowSelecionada.id_mp && row.id_bodega == Convert.ToInt32(RowSelecionada.id_bodega)
-                                                  select row;
+            //GridView view = sender as GridView;
+            //GridColumn colBodega = view.Columns["colid_bodega"];
+            //var gridView = (GridView)grd_dataMp.FocusedView;
+            //var RowSelecionada = (dsCierreMes.Recuento_mpRow)gridView.GetFocusedDataRow();
+            ////Get the value of the first column
+            ////Get the value of the second column
+            ////Validity criterion
+            //IEnumerable<DataRow> YaEstaLabodega = from row in dsCierreMes.Recuento_mp.AsEnumerable()
+            //                                      where row.id_mp == RowSelecionada.id_mp && row.id_bodega == Convert.ToInt32(RowSelecionada.id_bodega)
+            //                                      select row;
 
-            if (YaEstaLabodega.Count() > 1)
-            {
-                e.Valid = false;
-                view.SetColumnError(colBodega, "Se ha seleccionado dos veces la misma bodega para una materia prima.",DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical);
+            //if (YaEstaLabodega.Count() > 1)
+            //{
+            //    e.Valid = false;
+            //    view.SetColumnError(colBodega, "Se ha seleccionado dos veces la misma bodega para una materia prima.",DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical);
                 
-            }
+            //}
 
-            //Bueno si nos dejan... nos vamos a querer toda la bici... bueno vamo a calcular cuanto inventario tenemos 
-            //-- Siempre pongo las dos guiones como que si estuviera en SQL server
-            // Si lees esto me deben un cafe, sea quien seas. Hail Marathon. att Rodrigo  si ya me botaron 94388749   o mandame una captura de este
-            // Mensaje y dime que te parecio mi codigo, no es mucho pero es trabajo honesto es una broma muy famosa en el año 2021. 
+            ////Bueno si nos dejan... nos vamos a querer toda la bici... bueno vamo a calcular cuanto inventario tenemos 
+            ////-- Siempre pongo las dos guiones como que si estuviera en SQL server
+            //// Si lees esto me deben un cafe, sea quien seas. Hail Marathon. att Rodrigo  si ya me botaron 94388749   o mandame una captura de este
+            //// Mensaje y dime que te parecio mi codigo, no es mucho pero es trabajo honesto es una broma muy famosa en el año 2021. 
 
-            int id_mp_selected = RowSelecionada.id_mp;
-            // vamos a consultar en el kardex el invenario de esta MP.
-            Kardex RegistroMP = new Kardex();
-            if (RegistroMP.GetTotalInventarioKgByMp(id_mp_selected,RowSelecionada.id_bodega))
-            {
-                RowSelecionada.ExistenciaAprox = RegistroMP.TotalInventarioMP;
-                RowSelecionada.diferencia = RowSelecionada.ExistenciaAprox - RowSelecionada.peso;
-                RowSelecionada.AcceptChanges();   
-            }
-            else
-            { 
-                RowSelecionada.diferencia = 0 - RowSelecionada.peso;
-                RowSelecionada.AcceptChanges();
-            }
+            //int id_mp_selected = RowSelecionada.id_mp;
+            //// vamos a consultar en el kardex el invenario de esta MP.
+            //Kardex RegistroMP = new Kardex();
+            //if (RegistroMP.GetTotalInventarioKgByMp(id_mp_selected,RowSelecionada.id_bodega))
+            //{
+            //    RowSelecionada.ExistenciaAprox = RegistroMP.TotalInventarioMP;
+            //    RowSelecionada.diferencia = RowSelecionada.ExistenciaAprox - RowSelecionada.peso;
+            //    RowSelecionada.AcceptChanges();   
+            //}
+            //else
+            //{ 
+            //    RowSelecionada.diferencia = 0 - RowSelecionada.peso;
+            //    RowSelecionada.AcceptChanges();
+            //}
 
         }
 
         private void grdv_dataMP_InvalidRowException(object sender, InvalidRowExceptionEventArgs e)
         {
-            e.ErrorText = "Una materia prima no puede ajustarse si se ha seleccionado dos veces la misma bodega.";
-            e.WindowCaption = "Error en la configuracion.";
+            //e.ErrorText = "Una materia prima no puede ajustarse si se ha seleccionado dos veces la misma bodega.";
+            //    e.WindowCaption = "Error en la configuracion.";
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)
@@ -313,11 +315,60 @@ namespace LOSA.Logistica
             var gridview1 = (GridView)grd_dataMp.FocusedView;
             var row = (dsCierreMes.Recuento_mpRow)gridview1.GetFocusedDataRow();
 
-            foreach (dsCierreMes.Recuento_mpRow row2 in dsCierreMes.Recuento_mp.Rows)
+            switch (e.Column.FieldName)
             {
-                row2.diferencia = row2.ExistenciaAprox - row2.toma_fisica;
+                //case "diferencia":
+                case "toma_fisica":
+                    row.diferencia = row.ExistenciaAprox - row.toma_fisica;
+                    row.peso = row.toma_fisica;
+                    break;
+                default:
+                    break;
+            }
 
-                row2.peso = row2.toma_fisica;
+            //foreach (dsCierreMes.Recuento_mpRow row2 in dsCierreMes.Recuento_mp.Rows)
+            //{
+            //    row2.diferencia = row2.ExistenciaAprox - row2.toma_fisica;
+
+            //    row2.peso = row2.toma_fisica;
+            //}
+        }
+
+        private void cmdVerDetalle_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(grd_years.Text))
+            {
+                CajaDialogo.Error("Debe seleccionar el año!");
+                return;
+            }
+            if (string.IsNullOrEmpty(grd_meses_disponibles.Text))
+            {
+                CajaDialogo.Error("Debe seleccionar el mes!");
+                return;
+            }
+
+            var list = dsCierreMes.Recuento_mp.AsEnumerable();
+            if (list.Count(p => p.toma_fisica > 0) <= 0)
+            {
+                CajaDialogo.Error("Debe de haber por lo menos una materia prima para modificar para poder crear el ajuste de inventario.");
+                return;
+            }
+
+            var SelectedRows = from row in list
+                               where row.diferencia > 0 || row.diferencia < 0
+                               select row;
+
+            DataTable tableOps = new DataTable();
+            tableOps = SelectedRows.CopyToDataTable<DataRow>();
+
+            int id_year = Convert.ToInt32(grd_years.EditValue);
+            int id_mese = Convert.ToInt32(grd_meses_disponibles.EditValue);
+            DateTime fecha_recuento = Convert.ToDateTime(dateEdit1.EditValue);
+
+            frmDetalleRecuento frm = new frmDetalleRecuento(tableOps, UsuarioLogeado, id_year, id_mese, fecha_recuento);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+
             }
         }
     }
