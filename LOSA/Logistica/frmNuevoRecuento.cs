@@ -188,6 +188,7 @@ namespace LOSA.Logistica
                     dr["id_mp"] = frm.id;
                     dr["descripcion"] = frm.descripcion;
                     dr["odoo"] = frm.codigo;
+                    dr["code_sap"] = frm.itemcode;
                     dr["peso"] = DEFAULT_VALUE;
                     dr["diferencia"] = DEFAULT_VALUE;
                     dr["id_bodega"] = DEFAULT_VALUE;
@@ -201,6 +202,7 @@ namespace LOSA.Logistica
                     dr["id_mp"] = frm.id;
                     dr["descripcion"] = frm.descripcion;
                     dr["odoo"] = frm.codigo;
+                    dr["code_sap"] = frm.itemcode;
                     dr["peso"] = DEFAULT_VALUE;
                     dr["diferencia"] = DEFAULT_VALUE;
                     dr["id_bodega"] = DEFAULT_VALUE;
