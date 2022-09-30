@@ -119,7 +119,7 @@ namespace LOSA.RecuentoInventario
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
 
-            DialogResult r = CajaDialogo.Pregunta("Desea Guardar los cambios?");
+            DialogResult r = CajaDialogo.Pregunta("Desea Guardar los cambios?Se realizara un ajuste de cada Registro en Kardex.");
             if (r == DialogResult.Yes)
 
 
