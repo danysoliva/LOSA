@@ -30,16 +30,16 @@ namespace LOSA.Logistica
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNuevoRecuento));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.cmdVerDetalle = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
@@ -50,7 +50,7 @@ namespace LOSA.Logistica
             this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.grd_meses_disponibles = new DevExpress.XtraEditors.GridLookUpEdit();
             this.mesesBindingSource = new System.Windows.Forms.BindingSource();
-            this.dsCierreMes = new LOSA.Logistica.dsCierreMes();
+            this.dsCierreMes1 = new LOSA.Logistica.dsCierreMes();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colmes_numero = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colmes = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -84,6 +84,7 @@ namespace LOSA.Logistica
             this.colcount_id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltoma_fisica = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collote = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colseleccion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.grd_data_pt = new DevExpress.XtraGrid.GridControl();
@@ -101,14 +102,13 @@ namespace LOSA.Logistica
             this.btneliminarpt = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colcode_sap1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltoma_fisica1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colseleccion = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_meses_disponibles.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mesesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsCierreMes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsCierreMes1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_years.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yearsBindingSource)).BeginInit();
@@ -288,12 +288,12 @@ namespace LOSA.Logistica
             // mesesBindingSource
             // 
             this.mesesBindingSource.DataMember = "meses";
-            this.mesesBindingSource.DataSource = this.dsCierreMes;
+            this.mesesBindingSource.DataSource = this.dsCierreMes1;
             // 
-            // dsCierreMes
+            // dsCierreMes1
             // 
-            this.dsCierreMes.DataSetName = "dsCierreMes";
-            this.dsCierreMes.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dsCierreMes1.DataSetName = "dsCierreMes";
+            this.dsCierreMes1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridView1
             // 
@@ -386,7 +386,7 @@ namespace LOSA.Logistica
             // yearsBindingSource
             // 
             this.yearsBindingSource.DataMember = "years";
-            this.yearsBindingSource.DataSource = this.dsCierreMes;
+            this.yearsBindingSource.DataSource = this.dsCierreMes1;
             // 
             // gridLookUpEdit1View
             // 
@@ -472,7 +472,7 @@ namespace LOSA.Logistica
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_dataMp.DataMember = "Recuento_mp";
-            this.grd_dataMp.DataSource = this.dsCierreMes;
+            this.grd_dataMp.DataSource = this.dsCierreMes1;
             this.grd_dataMp.Location = new System.Drawing.Point(8, 11);
             this.grd_dataMp.MainView = this.grdv_dataMP;
             this.grd_dataMp.Name = "grd_dataMp";
@@ -594,7 +594,7 @@ namespace LOSA.Logistica
             // bodegasBindingSource
             // 
             this.bodegasBindingSource.DataMember = "bodegas";
-            this.bodegasBindingSource.DataSource = this.dsCierreMes;
+            this.bodegasBindingSource.DataSource = this.dsCierreMes1;
             // 
             // repositoryItemGridLookUpEdit1View
             // 
@@ -661,9 +661,9 @@ namespace LOSA.Logistica
             // btnEliminar
             // 
             this.btnEliminar.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
             this.btnEliminar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -709,6 +709,14 @@ namespace LOSA.Logistica
             this.collote.VisibleIndex = 4;
             this.collote.Width = 136;
             // 
+            // colseleccion
+            // 
+            this.colseleccion.FieldName = "seleccion";
+            this.colseleccion.Name = "colseleccion";
+            this.colseleccion.Visible = true;
+            this.colseleccion.VisibleIndex = 9;
+            this.colseleccion.Width = 123;
+            // 
             // xtraTabPage2
             // 
             this.xtraTabPage2.Appearance.Header.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
@@ -742,7 +750,7 @@ namespace LOSA.Logistica
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_data_pt.DataMember = "Recuento_pt";
-            this.grd_data_pt.DataSource = this.dsCierreMes;
+            this.grd_data_pt.DataSource = this.dsCierreMes1;
             this.grd_data_pt.Location = new System.Drawing.Point(8, 11);
             this.grd_data_pt.MainView = this.grdv_data_pt;
             this.grd_data_pt.Name = "grd_data_pt";
@@ -904,9 +912,9 @@ namespace LOSA.Logistica
             // btneliminarpt
             // 
             this.btneliminarpt.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
             this.btneliminarpt.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btneliminarpt.Name = "btneliminarpt";
             this.btneliminarpt.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btneliminarpt.Click += new System.EventHandler(this.btneliminarpt_Click);
@@ -932,14 +940,6 @@ namespace LOSA.Logistica
             this.coltoma_fisica1.VisibleIndex = 4;
             this.coltoma_fisica1.Width = 144;
             // 
-            // colseleccion
-            // 
-            this.colseleccion.FieldName = "seleccion";
-            this.colseleccion.Name = "colseleccion";
-            this.colseleccion.Visible = true;
-            this.colseleccion.VisibleIndex = 9;
-            this.colseleccion.Width = 123;
-            // 
             // frmNuevoRecuento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -956,7 +956,7 @@ namespace LOSA.Logistica
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_meses_disponibles.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mesesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsCierreMes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsCierreMes1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_years.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.yearsBindingSource)).EndInit();
@@ -1003,7 +1003,7 @@ namespace LOSA.Logistica
         private DevExpress.XtraGrid.GridControl grd_data_pt;
         private DevExpress.XtraGrid.Views.Grid.GridView grdv_data_pt;
         private System.Windows.Forms.BindingSource yearsBindingSource;
-        private dsCierreMes dsCierreMes;
+        private dsCierreMes dsCierreMes1;
         private System.Windows.Forms.BindingSource mesesBindingSource;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton btn_Export;

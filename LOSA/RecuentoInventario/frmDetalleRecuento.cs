@@ -184,30 +184,35 @@ namespace LOSA.RecuentoInventario
 
                         command.ExecuteNonQuery();
 
-                        //Insert Kardex General
-                        //Aqui ira si es una Salida de Kardex
+                        //if (Convert.ToInt32(row["id_bodega"]) == 1) //Bodega: Materia Prima BG001
+                        //{
+                            //Insert Kardex General
+                            //Aqui ira si es una Salida de Kardex
 
-                        //Aqui ira si es una Entrada al Kardex
-                        command.CommandText = "sp_insert_kardex_general_inventario_final";
-                        command.Parameters.Clear();
-                        //command.Parameters.AddWithValue("@id_operacion", 2); //Ajuste de Inventario
-                        //command.Parameters.AddWithValue("@entrada", 2);
-                        //command.Parameters.AddWithValue("@salida", 2);
-                        //command.Parameters.AddWithValue("@id_referencia_operacion", 2);
-                        //command.Parameters.AddWithValue("@id_lote_alosy", 2);
-                        command.Parameters.AddWithValue("@lote", Convert.ToString(row["lote"]));
-                        command.Parameters.AddWithValue("@id_mp", Convert.ToInt32(row["id_mp"]));
-                        //command.Parameters.AddWithValue("@itemcode", 2);
-                        command.Parameters.AddWithValue("@id_bodega", Convert.ToInt32(row["id_bodega"]));
-                        command.Parameters.AddWithValue("@user_id", UsuarioLogeado.Id);
-                        //command.Parameters.AddWithValue("@ud_entrada", 2);
-                        //command.Parameters.AddWithValue("@ud_salida", 2);
-                        //command.Parameters.AddWithValue("@id_bodega_origen", 2);
-                        //command.Parameters.AddWithValue("@id_ubicacion", 2);
-                        //command.Parameters.AddWithValue("@id_presentacion", 2);
-                        command.Parameters.AddWithValue("@diferencia_peso", Convert.ToDecimal(row["diferencia"]));
+                            //Aqui ira si es una Entrada al Kardex
+                            command.CommandText = "sp_insert_kardex_general_inventario_final";
+                            command.Parameters.Clear();
+                            //command.Parameters.AddWithValue("@id_operacion", 2); //Ajuste de Inventario
+                            //command.Parameters.AddWithValue("@entrada", 2);
+                            //command.Parameters.AddWithValue("@salida", 2);
+                            //command.Parameters.AddWithValue("@id_referencia_operacion", 2);
+                            //command.Parameters.AddWithValue("@id_lote_alosy", 2);
+                            command.Parameters.AddWithValue("@lote", Convert.ToString(row["lote"]));
+                            command.Parameters.AddWithValue("@id_mp", Convert.ToInt32(row["id_mp"]));
+                            //command.Parameters.AddWithValue("@itemcode", 2);
+                            command.Parameters.AddWithValue("@id_bodega", Convert.ToInt32(row["id_bodega"]));
+                            command.Parameters.AddWithValue("@user_id", UsuarioLogeado.Id);
+                            //command.Parameters.AddWithValue("@ud_entrada", 2);
+                            //command.Parameters.AddWithValue("@ud_salida", 2);
+                            //command.Parameters.AddWithValue("@id_bodega_origen", 2);
+                            //command.Parameters.AddWithValue("@id_ubicacion", 2);
+                            //command.Parameters.AddWithValue("@id_presentacion", 2);
+                            command.Parameters.AddWithValue("@diferencia_peso", Convert.ToDecimal(row["ExistenciaAprox"]));
+                            command.Parameters.AddWithValue("@existencia_nueva", Convert.ToDecimal(row["peso"]));
 
-                        command.ExecuteNonQuery();
+                            command.ExecuteNonQuery();
+                        //}
+                        
                     }
 
                     transaction.Commit();
