@@ -4947,7 +4947,11 @@ namespace LOSA.Logistica {
             
             private global::System.Data.DataColumn columnFecha_conteo;
             
-            private global::System.Data.DataColumn columndiferencia_pero;
+            private global::System.Data.DataColumn columndiferencia_peso;
+            
+            private global::System.Data.DataColumn columnexistencia_aprox;
+            
+            private global::System.Data.DataColumn columnexistencia_fisica;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -5072,9 +5076,25 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn diferencia_peroColumn {
+            public global::System.Data.DataColumn diferencia_pesoColumn {
                 get {
-                    return this.columndiferencia_pero;
+                    return this.columndiferencia_peso;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn existencia_aproxColumn {
+                get {
+                    return this.columnexistencia_aprox;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn existencia_fisicaColumn {
+                get {
+                    return this.columnexistencia_fisica;
                 }
             }
             
@@ -5115,7 +5135,7 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public recuentos_dRow Addrecuentos_dRow(int id, int id_mp, string code_sap, string materia_prima, int id_bodega, string bodega, string lote, int id_lote_alosy, int id_header, decimal peso, System.DateTime Fecha_conteo, decimal diferencia_pero) {
+            public recuentos_dRow Addrecuentos_dRow(int id, int id_mp, string code_sap, string materia_prima, int id_bodega, string bodega, string lote, int id_lote_alosy, int id_header, decimal peso, System.DateTime Fecha_conteo, decimal diferencia_peso, decimal existencia_aprox, decimal existencia_fisica) {
                 recuentos_dRow rowrecuentos_dRow = ((recuentos_dRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -5129,7 +5149,9 @@ namespace LOSA.Logistica {
                         id_header,
                         peso,
                         Fecha_conteo,
-                        diferencia_pero};
+                        diferencia_peso,
+                        existencia_aprox,
+                        existencia_fisica};
                 rowrecuentos_dRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowrecuentos_dRow);
                 return rowrecuentos_dRow;
@@ -5163,7 +5185,9 @@ namespace LOSA.Logistica {
                 this.columnid_header = base.Columns["id_header"];
                 this.columnpeso = base.Columns["peso"];
                 this.columnFecha_conteo = base.Columns["Fecha_conteo"];
-                this.columndiferencia_pero = base.Columns["diferencia_pero"];
+                this.columndiferencia_peso = base.Columns["diferencia_peso"];
+                this.columnexistencia_aprox = base.Columns["existencia_aprox"];
+                this.columnexistencia_fisica = base.Columns["existencia_fisica"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5191,8 +5215,12 @@ namespace LOSA.Logistica {
                 base.Columns.Add(this.columnpeso);
                 this.columnFecha_conteo = new global::System.Data.DataColumn("Fecha_conteo", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFecha_conteo);
-                this.columndiferencia_pero = new global::System.Data.DataColumn("diferencia_pero", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndiferencia_pero);
+                this.columndiferencia_peso = new global::System.Data.DataColumn("diferencia_peso", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndiferencia_peso);
+                this.columnexistencia_aprox = new global::System.Data.DataColumn("existencia_aprox", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnexistencia_aprox);
+                this.columnexistencia_fisica = new global::System.Data.DataColumn("existencia_fisica", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnexistencia_fisica);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8372,17 +8400,49 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public decimal diferencia_pero {
+            public decimal diferencia_peso {
                 get {
                     try {
-                        return ((decimal)(this[this.tablerecuentos_d.diferencia_peroColumn]));
+                        return ((decimal)(this[this.tablerecuentos_d.diferencia_pesoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'diferencia_pero\' de la tabla \'recuentos_d\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'diferencia_peso\' de la tabla \'recuentos_d\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablerecuentos_d.diferencia_peroColumn] = value;
+                    this[this.tablerecuentos_d.diferencia_pesoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal existencia_aprox {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablerecuentos_d.existencia_aproxColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'existencia_aprox\' de la tabla \'recuentos_d\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablerecuentos_d.existencia_aproxColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal existencia_fisica {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablerecuentos_d.existencia_fisicaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'existencia_fisica\' de la tabla \'recuentos_d\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablerecuentos_d.existencia_fisicaColumn] = value;
                 }
             }
             
@@ -8520,14 +8580,38 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isdiferencia_peroNull() {
-                return this.IsNull(this.tablerecuentos_d.diferencia_peroColumn);
+            public bool Isdiferencia_pesoNull() {
+                return this.IsNull(this.tablerecuentos_d.diferencia_pesoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setdiferencia_peroNull() {
-                this[this.tablerecuentos_d.diferencia_peroColumn] = global::System.Convert.DBNull;
+            public void Setdiferencia_pesoNull() {
+                this[this.tablerecuentos_d.diferencia_pesoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isexistencia_aproxNull() {
+                return this.IsNull(this.tablerecuentos_d.existencia_aproxColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setexistencia_aproxNull() {
+                this[this.tablerecuentos_d.existencia_aproxColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isexistencia_fisicaNull() {
+                return this.IsNull(this.tablerecuentos_d.existencia_fisicaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setexistencia_fisicaNull() {
+                this[this.tablerecuentos_d.existencia_fisicaColumn] = global::System.Convert.DBNull;
             }
         }
         

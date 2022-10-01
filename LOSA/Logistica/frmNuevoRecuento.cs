@@ -399,8 +399,13 @@ namespace LOSA.Logistica
             frmDetalleRecuento frm = new frmDetalleRecuento(tableOps, UsuarioLogeado, id_year, id_mese, fecha_recuento);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-
+                Inicializar_productos();
             }
+        }
+
+        private void grd_bodegas_ButtonClick(object sender, ButtonPressedEventArgs e)
+        {
+
         }
     }
 }

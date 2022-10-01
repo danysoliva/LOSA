@@ -101,6 +101,12 @@ namespace LOSA.Logistica
             }
         }
 
+        private void cmdHome_Click(object sender, EventArgs e)
+        {
+            //this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
         private void grdv_data_DoubleClick(object sender, EventArgs e)
         {
             try

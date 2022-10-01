@@ -103,6 +103,7 @@ namespace LOSA.Logistica
             this.btneliminarpt = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colcode_sap1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltoma_fisica1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
@@ -437,7 +438,8 @@ namespace LOSA.Logistica
             this.xtraTabControl1.TabIndex = 0;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
-            this.xtraTabPage2});
+            this.xtraTabPage2,
+            this.xtraTabPage3});
             this.xtraTabControl1.SelectedPageChanged += new DevExpress.XtraTab.TabPageChangedEventHandler(this.xtraTabControl1_SelectedPageChanged);
             // 
             // xtraTabPage1
@@ -587,10 +589,10 @@ namespace LOSA.Logistica
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.grd_bodegas.DataSource = this.bodegasBindingSource;
             this.grd_bodegas.DisplayMember = "whs_code";
-            this.grd_bodegas.KeyMember = "id";
             this.grd_bodegas.Name = "grd_bodegas";
             this.grd_bodegas.PopupView = this.repositoryItemGridLookUpEdit1View;
             this.grd_bodegas.ValueMember = "id";
+            this.grd_bodegas.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.grd_bodegas_ButtonClick);
             // 
             // bodegasBindingSource
             // 
@@ -731,6 +733,7 @@ namespace LOSA.Logistica
             this.xtraTabPage2.Appearance.PageClient.Options.UseBackColor = true;
             this.xtraTabPage2.Controls.Add(this.panel1);
             this.xtraTabPage2.Name = "xtraTabPage2";
+            this.xtraTabPage2.PageVisible = false;
             this.xtraTabPage2.Size = new System.Drawing.Size(1362, 519);
             this.xtraTabPage2.Text = "Producto Terminado";
             // 
@@ -940,6 +943,13 @@ namespace LOSA.Logistica
             this.coltoma_fisica1.VisibleIndex = 4;
             this.coltoma_fisica1.Width = 144;
             // 
+            // xtraTabPage3
+            // 
+            this.xtraTabPage3.Name = "xtraTabPage3";
+            this.xtraTabPage3.PageVisible = false;
+            this.xtraTabPage3.Size = new System.Drawing.Size(1362, 519);
+            this.xtraTabPage3.Text = "Reproceso";
+            // 
             // frmNuevoRecuento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1045,5 +1055,6 @@ namespace LOSA.Logistica
         private DevExpress.XtraGrid.Columns.GridColumn coldescripcion1;
         private DevExpress.XtraEditors.SimpleButton cmdVerDetalle;
         private DevExpress.XtraGrid.Columns.GridColumn colseleccion;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage3;
     }
 }

@@ -166,7 +166,7 @@ namespace LOSA.RecuentoInventario
                     command.Parameters.AddWithValue("@comentario", txtComentario.Text);
                     int id_header_recuento = Convert.ToInt32(command.ExecuteScalar());
 
-                    for (int i = 0; i <= grdv_mps.SelectedRowsCount; i++)
+                    for (int i = 0; i < grdv_mps.SelectedRowsCount; i++)
                     {
                         DataRow row = grdv_mps.GetDataRow(i);
                         //Insert en Detalle de Recuento Final
@@ -207,9 +207,10 @@ namespace LOSA.RecuentoInventario
                             //command.Parameters.AddWithValue("@id_bodega_origen", 2);
                             //command.Parameters.AddWithValue("@id_ubicacion", 2);
                             //command.Parameters.AddWithValue("@id_presentacion", 2);
-                            command.Parameters.AddWithValue("@diferencia_peso", Convert.ToDecimal(row["ExistenciaAprox"]));
+                            //command.Parameters.AddWithValue("@diferencia_peso", Convert.ToDecimal(row["diferencia"]));
                             command.Parameters.AddWithValue("@existencia_nueva", Convert.ToDecimal(row["peso"]));
-                            command.Parameters.AddWithValue("@numero_transaccion", Convert.ToInt32(row[""]));
+                            command.Parameters.AddWithValue("@existencia_anterior", Convert.ToDecimal(row["ExistenciaAprox"]));
+                            command.Parameters.AddWithValue("@numero_transaccion", Convert.ToInt32(row["numero_transaccion"]));
 
                             command.ExecuteNonQuery();
                         //}
@@ -218,6 +219,9 @@ namespace LOSA.RecuentoInventario
 
                     transaction.Commit();
                     connection.Close();
+
+                    this.DialogResult = this.DialogResult;
+                    this.Close();
                 }
                 catch (Exception ex)
                 {
