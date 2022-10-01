@@ -1622,6 +1622,8 @@ namespace LOSA.Logistica {
             
             private global::System.Data.DataColumn columnseleccion;
             
+            private global::System.Data.DataColumn columnnumero_transaccion;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Recuento_mpDataTable() {
@@ -1769,6 +1771,14 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn numero_transaccionColumn {
+                get {
+                    return this.columnnumero_transaccion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1804,7 +1814,7 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Recuento_mpRow AddRecuento_mpRow(int id_mp, string descripcion, string odoo, decimal peso, int id_bodega, decimal diferencia, decimal ExistenciaAprox, decimal seleccionado, int count_id, string code_sap, string lote, decimal toma_fisica, string whs_equivalente, bool seleccion) {
+            public Recuento_mpRow AddRecuento_mpRow(int id_mp, string descripcion, string odoo, decimal peso, int id_bodega, decimal diferencia, decimal ExistenciaAprox, decimal seleccionado, int count_id, string code_sap, string lote, decimal toma_fisica, string whs_equivalente, bool seleccion, int numero_transaccion) {
                 Recuento_mpRow rowRecuento_mpRow = ((Recuento_mpRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_mp,
@@ -1820,7 +1830,8 @@ namespace LOSA.Logistica {
                         lote,
                         toma_fisica,
                         whs_equivalente,
-                        seleccion};
+                        seleccion,
+                        numero_transaccion};
                 rowRecuento_mpRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRecuento_mpRow);
                 return rowRecuento_mpRow;
@@ -1857,6 +1868,7 @@ namespace LOSA.Logistica {
                 this.columntoma_fisica = base.Columns["toma_fisica"];
                 this.columnwhs_equivalente = base.Columns["whs_equivalente"];
                 this.columnseleccion = base.Columns["seleccion"];
+                this.columnnumero_transaccion = base.Columns["numero_transaccion"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1890,6 +1902,8 @@ namespace LOSA.Logistica {
                 base.Columns.Add(this.columnwhs_equivalente);
                 this.columnseleccion = new global::System.Data.DataColumn("seleccion", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnseleccion);
+                this.columnnumero_transaccion = new global::System.Data.DataColumn("numero_transaccion", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnumero_transaccion);
                 this.columnseleccionado.DefaultValue = ((decimal)(0m));
                 this.columncount_id.DefaultValue = ((int)(0));
                 this.columnseleccion.Caption = "Ajuste de Lote";
@@ -6268,6 +6282,22 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int numero_transaccion {
+                get {
+                    try {
+                        return ((int)(this[this.tableRecuento_mp.numero_transaccionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'numero_transaccion\' de la tabla \'Recuento_mp\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRecuento_mp.numero_transaccionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isid_mpNull() {
                 return this.IsNull(this.tableRecuento_mp.id_mpColumn);
             }
@@ -6432,6 +6462,18 @@ namespace LOSA.Logistica {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetseleccionNull() {
                 this[this.tableRecuento_mp.seleccionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isnumero_transaccionNull() {
+                return this.IsNull(this.tableRecuento_mp.numero_transaccionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setnumero_transaccionNull() {
+                this[this.tableRecuento_mp.numero_transaccionColumn] = global::System.Convert.DBNull;
             }
         }
         

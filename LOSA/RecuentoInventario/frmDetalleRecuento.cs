@@ -209,6 +209,7 @@ namespace LOSA.RecuentoInventario
                             //command.Parameters.AddWithValue("@id_presentacion", 2);
                             command.Parameters.AddWithValue("@diferencia_peso", Convert.ToDecimal(row["ExistenciaAprox"]));
                             command.Parameters.AddWithValue("@existencia_nueva", Convert.ToDecimal(row["peso"]));
+                            command.Parameters.AddWithValue("@numero_transaccion", Convert.ToInt32(row[""]));
 
                             command.ExecuteNonQuery();
                         //}

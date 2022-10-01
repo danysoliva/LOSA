@@ -29,12 +29,13 @@ namespace LOSA.RecuentoInventario
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDetalleRecuento));
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtComentario = new System.Windows.Forms.TextBox();
             this.grd_meses_disponibles = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.mesesBindingSource = new System.Windows.Forms.BindingSource();
+            this.mesesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsCierreMes1 = new LOSA.Logistica.dsCierreMes();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colmes_numero = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -42,7 +43,7 @@ namespace LOSA.RecuentoInventario
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.grd_years = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.yearsBindingSource = new System.Windows.Forms.BindingSource();
+            this.yearsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colejercicio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnConfirmar = new DevExpress.XtraEditors.SimpleButton();
@@ -55,7 +56,7 @@ namespace LOSA.RecuentoInventario
             this.id_mp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.id_bodega = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grd_bodega = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.bodegasBindingSource = new System.Windows.Forms.BindingSource();
+            this.bodegasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colExistencia = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -63,6 +64,7 @@ namespace LOSA.RecuentoInventario
             this.coldiferencia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSeleccionado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.count_id = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ColNumeroTransaccion = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_meses_disponibles.Properties)).BeginInit();
@@ -348,7 +350,8 @@ namespace LOSA.RecuentoInventario
             this.colExistenciaAnterior,
             this.coldiferencia,
             this.colSeleccionado,
-            this.count_id});
+            this.count_id,
+            this.ColNumeroTransaccion});
             this.grdv_mps.GridControl = this.grd_mps;
             this.grdv_mps.Name = "grdv_mps";
             this.grdv_mps.OptionsView.ShowAutoFilterRow = true;
@@ -361,7 +364,7 @@ namespace LOSA.RecuentoInventario
             this.collote.Name = "collote";
             this.collote.OptionsColumn.AllowEdit = false;
             this.collote.Visible = true;
-            this.collote.VisibleIndex = 1;
+            this.collote.VisibleIndex = 2;
             // 
             // colMP
             // 
@@ -387,7 +390,7 @@ namespace LOSA.RecuentoInventario
             this.id_bodega.Name = "id_bodega";
             this.id_bodega.OptionsColumn.AllowEdit = false;
             this.id_bodega.Visible = true;
-            this.id_bodega.VisibleIndex = 2;
+            this.id_bodega.VisibleIndex = 3;
             // 
             // grd_bodega
             // 
@@ -427,7 +430,7 @@ namespace LOSA.RecuentoInventario
             this.colExistencia.Name = "colExistencia";
             this.colExistencia.OptionsColumn.AllowEdit = false;
             this.colExistencia.Visible = true;
-            this.colExistencia.VisibleIndex = 4;
+            this.colExistencia.VisibleIndex = 5;
             // 
             // colExistenciaAnterior
             // 
@@ -438,7 +441,7 @@ namespace LOSA.RecuentoInventario
             this.colExistenciaAnterior.Name = "colExistenciaAnterior";
             this.colExistenciaAnterior.OptionsColumn.AllowEdit = false;
             this.colExistenciaAnterior.Visible = true;
-            this.colExistenciaAnterior.VisibleIndex = 3;
+            this.colExistenciaAnterior.VisibleIndex = 4;
             // 
             // coldiferencia
             // 
@@ -451,7 +454,7 @@ namespace LOSA.RecuentoInventario
             this.coldiferencia.UnboundExpression = "[peso] - [seleccionado]";
             this.coldiferencia.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.coldiferencia.Visible = true;
-            this.coldiferencia.VisibleIndex = 5;
+            this.coldiferencia.VisibleIndex = 6;
             // 
             // colSeleccionado
             // 
@@ -467,6 +470,15 @@ namespace LOSA.RecuentoInventario
             this.count_id.FieldName = "count_id";
             this.count_id.Name = "count_id";
             this.count_id.OptionsColumn.AllowEdit = false;
+            // 
+            // ColNumeroTransaccion
+            // 
+            this.ColNumeroTransaccion.Caption = "Num. Ingreso";
+            this.ColNumeroTransaccion.FieldName = "numero_transaccion";
+            this.ColNumeroTransaccion.Name = "ColNumeroTransaccion";
+            this.ColNumeroTransaccion.OptionsColumn.AllowEdit = false;
+            this.ColNumeroTransaccion.Visible = true;
+            this.ColNumeroTransaccion.VisibleIndex = 1;
             // 
             // frmDetalleRecuento
             // 
@@ -531,5 +543,6 @@ namespace LOSA.RecuentoInventario
         private System.Windows.Forms.BindingSource mesesBindingSource;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.TextBox txtComentario;
+        private DevExpress.XtraGrid.Columns.GridColumn ColNumeroTransaccion;
     }
 }

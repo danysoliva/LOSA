@@ -376,6 +376,7 @@ namespace LOSA.Logistica
                     row1.lote = row.lote;
                     row1.toma_fisica = row.toma_fisica;
                     row1.whs_equivalente = row.whs_equivalente;
+                    row1.numero_transaccion = row.numero_transaccion;
                     tableOps.AddRecuento_mpRow(row1);
                     tableOps.AcceptChanges();
                 }
