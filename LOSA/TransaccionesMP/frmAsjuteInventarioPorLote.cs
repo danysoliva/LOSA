@@ -71,6 +71,12 @@ namespace LOSA.TransaccionesMP
                 //    txtCantidadUnidades.Focus();
                 //}
             }
+            if (Id_MP == 1110 || Id_MP == 1101)
+            {
+                txtNumLote.Text = pLote; 
+                gridLookUpEditDestino.EditValue = 10;
+                gridLookUpEditOrigen.EditValue = 2;
+            }
         }
 
         private void LoadMaestrosBodegas()
@@ -577,12 +583,23 @@ namespace LOSA.TransaccionesMP
                 radioLoteNuevo.Checked = true;
                 radioLoteNuevo.Visible = true;
                 radioLoteExistente.Checked = true;
+                if (Id_MP == 1110 || Id_MP == 1101)
+                {
+                    gridLookUpEditDestino.EditValue = 10;
+                    gridLookUpEditOrigen.EditValue = 2;
+                }
             }
             else
             {
                 radioLoteNuevo.Checked = false;
                 radioLoteNuevo.Visible = false;
                 radioLoteExistente.Checked = true;
+                if (Id_MP == 1110 || Id_MP == 1101)
+                {
+                    gridLookUpEditDestino.EditValue = 2;
+                    gridLookUpEditOrigen.EditValue = 10;
+                }
+               
             }
         }
 
