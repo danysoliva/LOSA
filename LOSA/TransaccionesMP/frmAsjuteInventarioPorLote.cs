@@ -73,9 +73,10 @@ namespace LOSA.TransaccionesMP
             }
             if (Id_MP == 1110 || Id_MP == 1101)
             {
+                tsTipoTransaccion.IsOn = false;
                 txtNumLote.Text = pLote; 
-                gridLookUpEditDestino.EditValue = 10;
-                gridLookUpEditOrigen.EditValue = 2;
+                gridLookUpEditDestino.EditValue = 2;
+                gridLookUpEditOrigen.EditValue = 10;
             }
         }
 

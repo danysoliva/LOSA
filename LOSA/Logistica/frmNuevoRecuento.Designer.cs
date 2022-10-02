@@ -569,7 +569,7 @@ namespace LOSA.Logistica
             this.colpeso.FieldName = "peso";
             this.colpeso.Name = "colpeso";
             this.colpeso.Visible = true;
-            this.colpeso.VisibleIndex = 8;
+            this.colpeso.VisibleIndex = 7;
             this.colpeso.Width = 146;
             // 
             // colid_bodega
@@ -637,7 +637,7 @@ namespace LOSA.Logistica
             this.coldiferencia.Name = "coldiferencia";
             this.coldiferencia.OptionsColumn.AllowEdit = false;
             this.coldiferencia.Visible = true;
-            this.coldiferencia.VisibleIndex = 7;
+            this.coldiferencia.VisibleIndex = 6;
             this.coldiferencia.Width = 148;
             // 
             // colExistenciaAprox
@@ -651,7 +651,7 @@ namespace LOSA.Logistica
             this.colExistenciaAprox.Name = "colExistenciaAprox";
             this.colExistenciaAprox.OptionsColumn.AllowEdit = false;
             this.colExistenciaAprox.Visible = true;
-            this.colExistenciaAprox.VisibleIndex = 5;
+            this.colExistenciaAprox.VisibleIndex = 4;
             this.colExistenciaAprox.Width = 167;
             // 
             // coleliminar
@@ -699,7 +699,7 @@ namespace LOSA.Logistica
             this.coltoma_fisica.FieldName = "toma_fisica";
             this.coltoma_fisica.Name = "coltoma_fisica";
             this.coltoma_fisica.Visible = true;
-            this.coltoma_fisica.VisibleIndex = 6;
+            this.coltoma_fisica.VisibleIndex = 5;
             this.coltoma_fisica.Width = 130;
             // 
             // collote
@@ -707,16 +707,12 @@ namespace LOSA.Logistica
             this.collote.Caption = "Lote";
             this.collote.FieldName = "lote";
             this.collote.Name = "collote";
-            this.collote.Visible = true;
-            this.collote.VisibleIndex = 4;
             this.collote.Width = 136;
             // 
             // colseleccion
             // 
             this.colseleccion.FieldName = "seleccion";
             this.colseleccion.Name = "colseleccion";
-            this.colseleccion.Visible = true;
-            this.colseleccion.VisibleIndex = 9;
             this.colseleccion.Width = 123;
             // 
             // xtraTabPage2

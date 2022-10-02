@@ -41,7 +41,8 @@ namespace LOSA.Logistica
 
         public void Inicializar_productos()
         {
-            string query = @"sp_get_inizializar_grid_for_MP_ajusteV2";
+            string query = @"sp_get_inizializar_grid_for_MP_ajusteV3";
+            //string query = @"sp_get_inizializar_grid_for_MP_ajusteV2";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             try
             {
@@ -339,11 +340,11 @@ namespace LOSA.Logistica
 
         private void cmdVerDetalle_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(grd_years.Text))
-            {
-                CajaDialogo.Error("Debe seleccionar el año!");
-                return;
-            }
+            //if (string.IsNullOrEmpty(grd_years.Text))
+            //{
+            //    CajaDialogo.Error("Debe seleccionar el año!");
+            //    return;
+            //}
             if (string.IsNullOrEmpty(grd_meses_disponibles.Text))
             {
                 CajaDialogo.Error("Debe seleccionar el mes!");
@@ -373,10 +374,10 @@ namespace LOSA.Logistica
                     row1.diferencia = row.diferencia;
                     row1.ExistenciaAprox = row.ExistenciaAprox;
                     row1.code_sap = row.code_sap;
-                    row1.lote = row.lote;
+                    //row1.lote = row.lote;
                     row1.toma_fisica = row.toma_fisica;
                     row1.whs_equivalente = row.whs_equivalente;
-                    row1.numero_transaccion = row.numero_transaccion;
+                    //row1.numero_transaccion = row.numero_transaccion;
                     tableOps.AddRecuento_mpRow(row1);
                     tableOps.AcceptChanges();
                 }
