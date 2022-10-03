@@ -26,26 +26,70 @@ namespace LOSA.RecepcionMP
         {
             InitializeComponent();
             UsuarioLogeado = User;
+
+            dp = new DataOperations();
+            dtFechaDesdeDisponibles.DateTime = dp.Now().AddDays(-182);
+
+            dtFechaHastaDisponibles.DateTime = dp.Now().AddDays(1);
+
             Load_Info();
+
+
         }
         public void Load_Info()
         {
-            string query = @"EXEC dbo.ps_load_ingresos_from_tarimas_v5";
-            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-            try
-            {
-                cn.Open();
-                SqlCommand cmd = new SqlCommand(query, cn);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                dsRecepcionMPx.IngresosMP.Clear();
-                da.Fill(dsRecepcionMPx.IngresosMP);
-                cn.Close();
-            }
-            catch (Exception ex)
-            {
 
-                CajaDialogo.Error("Error al cargar la informacion: " + ex.Message);
+            if (toggleSwitchVerTodos_Disponibles.IsOn)
+            {
+                string query = @"EXEC dbo.ps_load_ingresos_from_tarimas_v5";
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                try
+                {
+                    cn.Open();
+                    SqlCommand cmd = new SqlCommand(query, cn);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    dsRecepcionMPx.IngresosMP.Clear();
+                    da.Fill(dsRecepcionMPx.IngresosMP);
+                    cn.Close();
+                }
+                catch (Exception ex)
+                {
+
+                    CajaDialogo.Error("Error al cargar la informacion: " + ex.Message);
+                }
             }
+            else
+            {
+                if (dtFechaDesdeDisponibles.DateTime.Year >= 2018)
+                {
+                    try
+                    {
+                        DataOperations dp = new DataOperations();
+                        SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                        conn.Close();
+                        SqlCommand cmd = new SqlCommand("ps_load_ingresos_from_tarimas_con_filtro_fecha", conn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@desde", dtFechaDesdeDisponibles.DateTime);
+                        cmd.Parameters.AddWithValue("@hasta", dtFechaHastaDisponibles.DateTime);
+                        dsRecepcionMPx.IngresosMP.Clear();
+                        SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                        adat.Fill(dsRecepcionMPx.IngresosMP);
+                        conn.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        CajaDialogo.Error(ex.Message);
+                    }
+                }
+                else
+                {
+                    CajaDialogo.Error("Debe ingresar un rango de fecha valido!");
+                }
+            
+            }
+
+
+            
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
@@ -173,7 +217,7 @@ namespace LOSA.RecepcionMP
                 var row = (dsRecepcionMPx.IngresosMPRow)gridview.GetFocusedDataRow();
                 if (row.tipo_ingreso == 1)
                 {
-                    frm_edit_data frm = new frm_edit_data(row.id);
+                    frm_edit_data frm = new frm_edit_data(row.id, row.fecha_creacion, UsuarioLogeado);
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
                         Load_Info();
@@ -290,6 +334,20 @@ namespace LOSA.RecepcionMP
             {
 
             }
+        }
+
+        private void cmdRefreshDisponibles_Click(object sender, EventArgs e)
+        {
+            Load_Info();
+        }
+
+        private void toggleSwitchVerTodos_Disponibles_Toggled(object sender, EventArgs e)
+        {
+            if (toggleSwitchVerTodos_Disponibles.IsOn)
+
+                dtFechaHastaDisponibles.Enabled = dtFechaDesdeDisponibles.Enabled = false;
+            else
+                dtFechaHastaDisponibles.Enabled = dtFechaDesdeDisponibles.Enabled = true;
         }
     }
 }

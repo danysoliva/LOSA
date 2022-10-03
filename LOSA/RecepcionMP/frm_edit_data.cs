@@ -23,12 +23,16 @@ namespace LOSA.RecepcionMP
         public string Dscripcion;
         public string pv;
         public string cardcode;
-        public frm_edit_data(int Pingreso)
+        public DateTime fecha_creacion;
+        UserLogin UsuarioLogeado;
+        public frm_edit_data(int Pingreso, DateTime pfecha_creacion, UserLogin pUserLogin)
         {
             InitializeComponent();
+            UsuarioLogeado = pUserLogin;
             Id_ingreso = Pingreso;
             load_data();
             load_detalle_lote();
+            fecha_creacion = pfecha_creacion;
         }
 
         public void load_detalle_lote()
@@ -226,8 +230,38 @@ namespace LOSA.RecepcionMP
             }
             catch (Exception ex)
             {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
 
-                
+        private void repositoryItemButtonEditarLote_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridview = (GridView)grd_data.FocusedView;
+            var row = (dsingresos.detalle_loteRow)gridview.GetFocusedDataRow();
+
+            TimeSpan diasaprox = dp.Now() - fecha_creacion;
+
+            int Dias = Convert.ToInt32(diasaprox.Days);
+
+            if (Dias > 1)//Si es mayor que 1, la tarima lleve mas de dos dias en la bodega.
+            {
+                CajaDialogo.Error("No puede editar lote que tengan mas de dos dias de ingreso.");
+                return;
+            }
+
+            try
+            {
+                frm_edit_lote frm = new frm_edit_lote(row.lote, row.numero_transaccion, UsuarioLogeado);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    load_data();
+                    load_detalle_lote();
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
     }
