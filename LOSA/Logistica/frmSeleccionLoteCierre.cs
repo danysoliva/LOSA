@@ -25,16 +25,14 @@ namespace LOSA.Logistica
         decimal sum = 0;
         int bodega;
         int IdMpSelected = 0;
-        public frmSeleccionLoteCierre(UserLogin puserLogin, DataTable pdata)
+        public frmSeleccionLoteCierre(UserLogin puserLogin, DataRow pdata)
         {
             InitializeComponent();
             UsuarioLogeado = puserLogin;
-            MpList = pdata;
+            //MpList = pdata;
             get_bodegas();
             enumerar_rows();
             grd_mps.DataSource = pdata;
-
-
         }
 
         public void enumerar_rows()

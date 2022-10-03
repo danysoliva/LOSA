@@ -48,6 +48,7 @@
             this.colfecha = new DevExpress.XtraGrid.Columns.GridColumn();
             this.basculaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.colconductor = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.basculaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMP)).BeginInit();
@@ -111,7 +112,8 @@
             this.colFurgon,
             this.colMateriaPrima,
             this.colProveedor,
-            this.colfecha});
+            this.colfecha,
+            this.colconductor});
             this.gvBascula.GridControl = this.gridControl1;
             this.gvBascula.Name = "gvBascula";
             this.gvBascula.OptionsCustomization.AllowFilter = false;
@@ -132,7 +134,7 @@
             this.colNBoleta.OptionsColumn.AllowEdit = false;
             this.colNBoleta.Visible = true;
             this.colNBoleta.VisibleIndex = 0;
-            this.colNBoleta.Width = 81;
+            this.colNBoleta.Width = 72;
             // 
             // colDescripcion
             // 
@@ -161,8 +163,8 @@
             this.colestadoDescripcion.Name = "colestadoDescripcion";
             this.colestadoDescripcion.OptionsColumn.AllowEdit = false;
             this.colestadoDescripcion.Visible = true;
-            this.colestadoDescripcion.VisibleIndex = 2;
-            this.colestadoDescripcion.Width = 154;
+            this.colestadoDescripcion.VisibleIndex = 3;
+            this.colestadoDescripcion.Width = 126;
             // 
             // colSeleccionar
             // 
@@ -193,7 +195,7 @@
             this.colFurgon.OptionsColumn.AllowEdit = false;
             this.colFurgon.Visible = true;
             this.colFurgon.VisibleIndex = 1;
-            this.colFurgon.Width = 87;
+            this.colFurgon.Width = 77;
             // 
             // colMateriaPrima
             // 
@@ -202,8 +204,8 @@
             this.colMateriaPrima.Name = "colMateriaPrima";
             this.colMateriaPrima.OptionsColumn.AllowEdit = false;
             this.colMateriaPrima.Visible = true;
-            this.colMateriaPrima.VisibleIndex = 3;
-            this.colMateriaPrima.Width = 90;
+            this.colMateriaPrima.VisibleIndex = 4;
+            this.colMateriaPrima.Width = 73;
             // 
             // colProveedor
             // 
@@ -212,18 +214,19 @@
             this.colProveedor.Name = "colProveedor";
             this.colProveedor.OptionsColumn.AllowEdit = false;
             this.colProveedor.Visible = true;
-            this.colProveedor.VisibleIndex = 4;
-            this.colProveedor.Width = 98;
+            this.colProveedor.VisibleIndex = 5;
+            this.colProveedor.Width = 80;
             // 
             // colfecha
             // 
+            this.colfecha.Caption = "Fecha";
             this.colfecha.DisplayFormat.FormatString = "g";
             this.colfecha.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colfecha.FieldName = "fecha";
             this.colfecha.Name = "colfecha";
             this.colfecha.Visible = true;
-            this.colfecha.VisibleIndex = 5;
-            this.colfecha.Width = 94;
+            this.colfecha.VisibleIndex = 6;
+            this.colfecha.Width = 84;
             // 
             // basculaBindingSource
             // 
@@ -244,6 +247,16 @@
             this.simpleButton1.TabIndex = 4;
             this.simpleButton1.Text = "Cancelar";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_1);
+            // 
+            // colconductor
+            // 
+            this.colconductor.Caption = "Conductor";
+            this.colconductor.FieldName = "conductor";
+            this.colconductor.Name = "colconductor";
+            this.colconductor.OptionsColumn.AllowEdit = false;
+            this.colconductor.Visible = true;
+            this.colconductor.VisibleIndex = 2;
+            this.colconductor.Width = 92;
             // 
             // FrmBoleta
             // 
@@ -292,5 +305,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colMateriaPrima;
         private DevExpress.XtraGrid.Columns.GridColumn colProveedor;
         private DevExpress.XtraGrid.Columns.GridColumn colfecha;
+        private DevExpress.XtraGrid.Columns.GridColumn colconductor;
     }
 }
