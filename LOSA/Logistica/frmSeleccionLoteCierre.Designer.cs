@@ -51,7 +51,6 @@ namespace LOSA.Logistica
             this.colutilizado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.btnReactivarLote = new DevExpress.XtraEditors.SimpleButton();
             this.grd_efectiva = new DevExpress.XtraGrid.GridControl();
             this.grdv_efectiva = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid_mp1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -339,7 +338,6 @@ namespace LOSA.Logistica
             // 
             this.groupControl3.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupControl3.AppearanceCaption.Options.UseFont = true;
-            this.groupControl3.Controls.Add(this.btnReactivarLote);
             this.groupControl3.Controls.Add(this.grd_efectiva);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(2, 2);
@@ -347,17 +345,6 @@ namespace LOSA.Logistica
             this.groupControl3.Size = new System.Drawing.Size(548, 429);
             this.groupControl3.TabIndex = 3;
             this.groupControl3.Text = "Configuracion Efectiva";
-            // 
-            // btnReactivarLote
-            // 
-            this.btnReactivarLote.Enabled = false;
-            this.btnReactivarLote.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReactivarLote.ImageOptions.Image")));
-            this.btnReactivarLote.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
-            this.btnReactivarLote.Location = new System.Drawing.Point(18, 31);
-            this.btnReactivarLote.Name = "btnReactivarLote";
-            this.btnReactivarLote.Size = new System.Drawing.Size(170, 46);
-            this.btnReactivarLote.TabIndex = 1;
-            this.btnReactivarLote.Text = "Reingreso de lote";
             // 
             // grd_efectiva
             // 
@@ -790,7 +777,6 @@ namespace LOSA.Logistica
         private DevExpress.XtraGrid.Columns.GridColumn coldescripcion;
         private DevExpress.XtraGrid.Columns.GridColumn colExistenciaAprox;
         private DevExpress.XtraGrid.Columns.GridColumn collote;
-        private DevExpress.XtraEditors.SimpleButton btnReactivarLote;
         private DevExpress.XtraGrid.Columns.GridColumn colseleccionar;
         private DevExpress.XtraGrid.Columns.GridColumn colutilizado;
         private DevExpress.XtraGrid.Columns.GridColumn colid_lote_alosy;

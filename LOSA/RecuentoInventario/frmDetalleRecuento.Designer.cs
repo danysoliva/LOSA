@@ -51,7 +51,6 @@ namespace LOSA.RecuentoInventario
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.grd_mps = new DevExpress.XtraGrid.GridControl();
             this.grdv_mps = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.collote = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.id_mp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.id_bodega = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -64,7 +63,6 @@ namespace LOSA.RecuentoInventario
             this.coldiferencia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSeleccionado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.count_id = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ColNumeroTransaccion = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_meses_disponibles.Properties)).BeginInit();
@@ -341,7 +339,6 @@ namespace LOSA.RecuentoInventario
             this.grdv_mps.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.grdv_mps.Appearance.TopNewRow.Options.UseFont = true;
             this.grdv_mps.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.collote,
             this.colMP,
             this.id_mp,
             this.id_bodega,
@@ -350,21 +347,11 @@ namespace LOSA.RecuentoInventario
             this.colExistenciaAnterior,
             this.coldiferencia,
             this.colSeleccionado,
-            this.count_id,
-            this.ColNumeroTransaccion});
+            this.count_id});
             this.grdv_mps.GridControl = this.grd_mps;
             this.grdv_mps.Name = "grdv_mps";
             this.grdv_mps.OptionsView.ShowAutoFilterRow = true;
             this.grdv_mps.OptionsView.ShowGroupPanel = false;
-            // 
-            // collote
-            // 
-            this.collote.Caption = "Lote";
-            this.collote.FieldName = "lote";
-            this.collote.Name = "collote";
-            this.collote.OptionsColumn.AllowEdit = false;
-            this.collote.Visible = true;
-            this.collote.VisibleIndex = 2;
             // 
             // colMP
             // 
@@ -390,7 +377,7 @@ namespace LOSA.RecuentoInventario
             this.id_bodega.Name = "id_bodega";
             this.id_bodega.OptionsColumn.AllowEdit = false;
             this.id_bodega.Visible = true;
-            this.id_bodega.VisibleIndex = 3;
+            this.id_bodega.VisibleIndex = 1;
             // 
             // grd_bodega
             // 
@@ -430,7 +417,7 @@ namespace LOSA.RecuentoInventario
             this.colExistencia.Name = "colExistencia";
             this.colExistencia.OptionsColumn.AllowEdit = false;
             this.colExistencia.Visible = true;
-            this.colExistencia.VisibleIndex = 5;
+            this.colExistencia.VisibleIndex = 3;
             // 
             // colExistenciaAnterior
             // 
@@ -441,7 +428,7 @@ namespace LOSA.RecuentoInventario
             this.colExistenciaAnterior.Name = "colExistenciaAnterior";
             this.colExistenciaAnterior.OptionsColumn.AllowEdit = false;
             this.colExistenciaAnterior.Visible = true;
-            this.colExistenciaAnterior.VisibleIndex = 4;
+            this.colExistenciaAnterior.VisibleIndex = 2;
             // 
             // coldiferencia
             // 
@@ -454,7 +441,7 @@ namespace LOSA.RecuentoInventario
             this.coldiferencia.UnboundExpression = "[peso] - [seleccionado]";
             this.coldiferencia.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.coldiferencia.Visible = true;
-            this.coldiferencia.VisibleIndex = 6;
+            this.coldiferencia.VisibleIndex = 4;
             // 
             // colSeleccionado
             // 
@@ -470,15 +457,6 @@ namespace LOSA.RecuentoInventario
             this.count_id.FieldName = "count_id";
             this.count_id.Name = "count_id";
             this.count_id.OptionsColumn.AllowEdit = false;
-            // 
-            // ColNumeroTransaccion
-            // 
-            this.ColNumeroTransaccion.Caption = "Num. Ingreso";
-            this.ColNumeroTransaccion.FieldName = "numero_transaccion";
-            this.ColNumeroTransaccion.Name = "ColNumeroTransaccion";
-            this.ColNumeroTransaccion.OptionsColumn.AllowEdit = false;
-            this.ColNumeroTransaccion.Visible = true;
-            this.ColNumeroTransaccion.VisibleIndex = 1;
             // 
             // frmDetalleRecuento
             // 
@@ -528,7 +506,6 @@ namespace LOSA.RecuentoInventario
         private DevExpress.XtraEditors.SimpleButton btnConfirmar;
         private DevExpress.XtraEditors.SimpleButton cmdClose;
         private Logistica.dsCierreMes dsCierreMes1;
-        private DevExpress.XtraGrid.Columns.GridColumn collote;
         private System.Windows.Forms.BindingSource bodegasBindingSource;
         private DevExpress.XtraEditors.GridLookUpEdit grd_meses_disponibles;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
@@ -543,6 +520,5 @@ namespace LOSA.RecuentoInventario
         private System.Windows.Forms.BindingSource mesesBindingSource;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.TextBox txtComentario;
-        private DevExpress.XtraGrid.Columns.GridColumn ColNumeroTransaccion;
     }
 }

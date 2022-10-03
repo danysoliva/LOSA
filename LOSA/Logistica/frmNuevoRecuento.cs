@@ -291,25 +291,25 @@ namespace LOSA.Logistica
         private void simpleButton3_Click(object sender, EventArgs e)
         {
 
-            var list = dsCierreMes1.Recuento_mp.AsEnumerable();
-            if (list.Count(p => p.peso > 0) <= 0)
-            {
-                CajaDialogo.Error("Debe de haber por lo menos una materia prima para modificar para poder crear el ajuste de inventario.");
-                return;
-            }
+            //var list = dsCierreMes1.Recuento_mp.AsEnumerable();
+            //if (list.Count(p => p.peso > 0) <= 0)
+            //{
+            //    CajaDialogo.Error("Debe de haber por lo menos una materia prima para modificar para poder crear el ajuste de inventario.");
+            //    return;
+            //}
 
-            var SelectedRows = from row in list
-                               where row.peso > 0
-                               select row;
+            //var SelectedRows = from row in list
+            //                   where row.peso > 0
+            //                   select row;
 
-            DataTable tableOps = new DataTable();
+            //DataTable tableOps = new DataTable();
 
-            tableOps = SelectedRows.CopyToDataTable<DataRow>();
-            frmSeleccionLoteCierre frm = new frmSeleccionLoteCierre(tableOps,UsuarioLogeado);
-            if (frm.ShowDialog()== DialogResult.OK)
-            {
+            //tableOps = SelectedRows.CopyToDataTable<DataRow>();
+            //frmSeleccionLoteCierre frm = new frmSeleccionLoteCierre(tableOps, UsuarioLogeado);
+            //if (frm.ShowDialog()== DialogResult.OK)
+            //{
 
-            }
+            //}
             
         }
 

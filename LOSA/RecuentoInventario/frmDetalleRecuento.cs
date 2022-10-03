@@ -119,115 +119,127 @@ namespace LOSA.RecuentoInventario
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
 
-            DialogResult r = CajaDialogo.Pregunta("Desea Guardar los cambios?Se realizara un ajuste de cada Registro en Kardex.");
-            if (r == DialogResult.Yes)
+            //DialogResult r = CajaDialogo.Pregunta("Desea Guardar los cambios?Se realizara un ajuste de cada Registro en Kardex.");
+            //if (r == DialogResult.Yes)
 
 
-            if (string.IsNullOrEmpty(grd_years.Text))
-            {
-                CajaDialogo.Error("Debe seleccionar el año!");
-                return;
-            }
-            if (string.IsNullOrEmpty(grd_meses_disponibles.Text))
-            {
-                CajaDialogo.Error("Debe seleccionar el mes!");
-                return;
-            }
-            if (string.IsNullOrEmpty(txtComentario.Text))
-            {
-                CajaDialogo.Error("Debe agregar un comentario de referencia");
-                return;
-            }
+            //if (string.IsNullOrEmpty(grd_years.Text))
+            //{
+            //    CajaDialogo.Error("Debe seleccionar el año!");
+            //    return;
+            //}
+            //if (string.IsNullOrEmpty(grd_meses_disponibles.Text))
+            //{
+            //    CajaDialogo.Error("Debe seleccionar el mes!");
+            //    return;
+            //}
+            //if (string.IsNullOrEmpty(txtComentario.Text))
+            //{
+            //    CajaDialogo.Error("Debe agregar un comentario de referencia");
+            //    return;
+            //}
 
             using (SqlConnection connection = new SqlConnection(dp.ConnectionStringLOSA))
             {
-                connection.Open();
 
-                SqlCommand command = connection.CreateCommand();
-                command.CommandType = CommandType.StoredProcedure;
-                SqlTransaction transaction;
-
-                // Start a local transaction.
-                transaction = connection.BeginTransaction("SampleTransaction");
-
-                // Must assign both transaction object and connection
-                // to Command object for a pending local transaction
-                command.Connection = connection;
-                command.Transaction = transaction;
-
-                try
+                for (int i = 0; i < grdv_mps.SelectedRowsCount; i++)
                 {
+                    DataRow row = grdv_mps.GetDataRow(i);
 
-                    command.CommandText = "sp_insert_encabezado_recuento_final_header";
-                    command.Parameters.AddWithValue("@user_created", UsuarioLogeado.Id);
-                    command.Parameters.AddWithValue("@mes", grd_meses_disponibles.EditValue);
-                    command.Parameters.AddWithValue("@year", grd_years.EditValue);
-                    command.Parameters.AddWithValue("@fecha_conteo", fecha_rec);
-                    command.Parameters.AddWithValue("@comentario", txtComentario.Text);
-                    int id_header_recuento = Convert.ToInt32(command.ExecuteScalar());
-
-                    for (int i = 0; i < grdv_mps.SelectedRowsCount; i++)
-                    {
-                        DataRow row = grdv_mps.GetDataRow(i);
-                        //Insert en Detalle de Recuento Final
-                        command.Parameters.Clear();
-                        command.CommandText = "sp_insert_inventario_final_detalle";
-                        command.Parameters.AddWithValue("@id_header", id_header_recuento);
-                        command.Parameters.AddWithValue("@id_mp", Convert.ToInt32(row["id_mp"]));
-                        command.Parameters.AddWithValue("@id_bodega", Convert.ToInt32(row["id_bodega"]));
-                        command.Parameters.AddWithValue("@lote", Convert.ToString(row["lote"]));
-                        //command.Parameters.AddWithValue("@id_lote_alosy",);
-                        command.Parameters.AddWithValue("@peso", Convert.ToDecimal(row["peso"])); //nueva existencia
-                        command.Parameters.AddWithValue("@diferencia_peso", Convert.ToDecimal(row["diferencia"]));
-                        command.Parameters.AddWithValue("@existencia_aprox", Convert.ToDecimal(row["ExistenciaAprox"]));
-                        command.Parameters.AddWithValue("@existencia_fisica", Convert.ToDecimal(row["peso"]));
-
-                        command.ExecuteNonQuery();
-
-                        //if (Convert.ToInt32(row["id_bodega"]) == 1) //Bodega: Materia Prima BG001
-                        //{
-                            //Insert Kardex General
-                            //Aqui ira si es una Salida de Kardex
-
-                            //Aqui ira si es una Entrada al Kardex
-                            command.CommandText = "sp_insert_kardex_general_inventario_final";
-                            command.Parameters.Clear();
-                            //command.Parameters.AddWithValue("@id_operacion", 2); //Ajuste de Inventario
-                            //command.Parameters.AddWithValue("@entrada", 2);
-                            //command.Parameters.AddWithValue("@salida", 2);
-                            //command.Parameters.AddWithValue("@id_referencia_operacion", 2);
-                            //command.Parameters.AddWithValue("@id_lote_alosy", 2);
-                            command.Parameters.AddWithValue("@lote", Convert.ToString(row["lote"]));
-                            command.Parameters.AddWithValue("@id_mp", Convert.ToInt32(row["id_mp"]));
-                            //command.Parameters.AddWithValue("@itemcode", 2);
-                            command.Parameters.AddWithValue("@id_bodega", Convert.ToInt32(row["id_bodega"]));
-                            command.Parameters.AddWithValue("@user_id", UsuarioLogeado.Id);
-                            //command.Parameters.AddWithValue("@ud_entrada", 2);
-                            //command.Parameters.AddWithValue("@ud_salida", 2);
-                            //command.Parameters.AddWithValue("@id_bodega_origen", 2);
-                            //command.Parameters.AddWithValue("@id_ubicacion", 2);
-                            //command.Parameters.AddWithValue("@id_presentacion", 2);
-                            //command.Parameters.AddWithValue("@diferencia_peso", Convert.ToDecimal(row["diferencia"]));
-                            command.Parameters.AddWithValue("@existencia_nueva", Convert.ToDecimal(row["peso"]));
-                            command.Parameters.AddWithValue("@existencia_anterior", Convert.ToDecimal(row["ExistenciaAprox"]));
-                            command.Parameters.AddWithValue("@numero_transaccion", Convert.ToInt32(row["numero_transaccion"]));
-
-                            command.ExecuteNonQuery();
-                        //}
-                        
-                    }
-
-                    transaction.Commit();
-                    connection.Close();
-
-                    this.DialogResult = this.DialogResult;
-                    this.Close();
+                    Logistica.frmSeleccionLoteCierre frm = new Logistica.frmSeleccionLoteCierre(UsuarioLogeado, row);
+                    frm.Show();
                 }
-                catch (Exception ex)
-                {
-                    transaction.Rollback();
-                    CajaDialogo.Error(ex.Message);
-                }
+
+
+
+               // connection.Open();
+
+               // SqlCommand command = connection.CreateCommand();
+               // command.CommandType = CommandType.StoredProcedure;
+               // SqlTransaction transaction;
+
+               // Start a local transaction.
+               // transaction = connection.BeginTransaction("SampleTransaction");
+
+               // Must assign both transaction object and connection
+               // to Command object for a pending local transaction
+
+               //command.Connection = connection;
+               // command.Transaction = transaction;
+
+               // try
+               // {
+
+               //     command.CommandText = "sp_insert_encabezado_recuento_final_header";
+               //     command.Parameters.AddWithValue("@user_created", UsuarioLogeado.Id);
+               //     command.Parameters.AddWithValue("@mes", grd_meses_disponibles.EditValue);
+               //     command.Parameters.AddWithValue("@year", grd_years.EditValue);
+               //     command.Parameters.AddWithValue("@fecha_conteo", fecha_rec);
+               //     command.Parameters.AddWithValue("@comentario", txtComentario.Text);
+               //     int id_header_recuento = Convert.ToInt32(command.ExecuteScalar());
+
+               //     for (int i = 0; i < grdv_mps.SelectedRowsCount; i++)
+               //     {
+               //         DataRow row = grdv_mps.GetDataRow(i);
+               //         Insert en Detalle de Recuento Final
+               //         command.Parameters.Clear();
+               //         command.CommandText = "sp_insert_inventario_final_detalle";
+               //         command.Parameters.AddWithValue("@id_header", id_header_recuento);
+               //         command.Parameters.AddWithValue("@id_mp", Convert.ToInt32(row["id_mp"]));
+               //         command.Parameters.AddWithValue("@id_bodega", Convert.ToInt32(row["id_bodega"]));
+               //         command.Parameters.AddWithValue("@lote", Convert.ToString(row["lote"]));
+               //         command.Parameters.AddWithValue("@id_lote_alosy",);
+               //         command.Parameters.AddWithValue("@peso", Convert.ToDecimal(row["peso"])); //nueva existencia
+               //         command.Parameters.AddWithValue("@diferencia_peso", Convert.ToDecimal(row["diferencia"]));
+               //         command.Parameters.AddWithValue("@existencia_aprox", Convert.ToDecimal(row["ExistenciaAprox"]));
+               //         command.Parameters.AddWithValue("@existencia_fisica", Convert.ToDecimal(row["peso"]));
+
+               //         command.ExecuteNonQuery();
+
+               //         if (Convert.ToInt32(row["id_bodega"]) == 1) //Bodega: Materia Prima BG001
+               //         {
+               //             Insert Kardex General
+               //             Aqui ira si es una Salida de Kardex
+
+               //             Aqui ira si es una Entrada al Kardex
+               //             command.CommandText = "sp_insert_kardex_general_inventario_final";
+               //             command.Parameters.Clear();
+               //             command.Parameters.AddWithValue("@id_operacion", 2); //Ajuste de Inventario
+               //             command.Parameters.AddWithValue("@entrada", 2);
+               //             command.Parameters.AddWithValue("@salida", 2);
+               //             command.Parameters.AddWithValue("@id_referencia_operacion", 2);
+               //             command.Parameters.AddWithValue("@id_lote_alosy", 2);
+               //             command.Parameters.AddWithValue("@lote", Convert.ToString(row["lote"]));
+               //             command.Parameters.AddWithValue("@id_mp", Convert.ToInt32(row["id_mp"]));
+               //             command.Parameters.AddWithValue("@itemcode", 2);
+               //             command.Parameters.AddWithValue("@id_bodega", Convert.ToInt32(row["id_bodega"]));
+               //             command.Parameters.AddWithValue("@user_id", UsuarioLogeado.Id);
+               //             command.Parameters.AddWithValue("@ud_entrada", 2);
+               //             command.Parameters.AddWithValue("@ud_salida", 2);
+               //             command.Parameters.AddWithValue("@id_bodega_origen", 2);
+               //             command.Parameters.AddWithValue("@id_ubicacion", 2);
+               //             command.Parameters.AddWithValue("@id_presentacion", 2);
+               //             command.Parameters.AddWithValue("@diferencia_peso", Convert.ToDecimal(row["diferencia"]));
+               //             command.Parameters.AddWithValue("@existencia_nueva", Convert.ToDecimal(row["peso"]));
+               //             command.Parameters.AddWithValue("@existencia_anterior", Convert.ToDecimal(row["ExistenciaAprox"]));
+               //             command.Parameters.AddWithValue("@numero_transaccion", Convert.ToInt32(row["numero_transaccion"]));
+
+               //             command.ExecuteNonQuery();
+               //         }
+
+               //     }
+
+               //     transaction.Commit();
+               //     connection.Close();
+
+                //    this.DialogResult = this.DialogResult;
+                //    this.Close();
+                //}
+                //catch (Exception ex)
+                //{
+                //    transaction.Rollback();
+                //    CajaDialogo.Error(ex.Message);
+                //}
             }
         }
     }
