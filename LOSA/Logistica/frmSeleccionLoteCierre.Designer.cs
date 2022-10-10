@@ -204,6 +204,7 @@ namespace LOSA.Logistica
             this.chauto.Properties.Caption = "Auto Seleccionar Lotes";
             this.chauto.Size = new System.Drawing.Size(182, 21);
             this.chauto.TabIndex = 1;
+            this.chauto.Visible = false;
             this.chauto.CheckedChanged += new System.EventHandler(this.chauto_CheckedChanged);
             // 
             // grd_existencia_lote
@@ -489,6 +490,8 @@ namespace LOSA.Logistica
             this.btnIzquierda.Name = "btnIzquierda";
             this.btnIzquierda.Size = new System.Drawing.Size(113, 46);
             this.btnIzquierda.TabIndex = 1;
+            this.btnIzquierda.Visible = false;
+            this.btnIzquierda.Click += new System.EventHandler(this.btnIzquierda_Click);
             // 
             // btnDerecha
             // 
@@ -653,10 +656,10 @@ namespace LOSA.Logistica
             // 
             // colPendienteAjustar
             // 
-            this.colPendienteAjustar.Caption = "Pendiente";
+            this.colPendienteAjustar.Caption = "Diferencia";
             this.colPendienteAjustar.DisplayFormat.FormatString = "{0:0.##.##} Kg";
             this.colPendienteAjustar.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colPendienteAjustar.FieldName = "colPendienteAjustar";
+            this.colPendienteAjustar.FieldName = "diferencia";
             this.colPendienteAjustar.Name = "colPendienteAjustar";
             this.colPendienteAjustar.OptionsColumn.AllowEdit = false;
             this.colPendienteAjustar.UnboundExpression = "[peso] - [seleccionado]";

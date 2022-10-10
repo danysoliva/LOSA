@@ -19,7 +19,7 @@ namespace LOSA.Logistica
     {
         UserLogin UsuarioLogeado;
         DataOperations dp = new DataOperations();
-        DataTable MpList;
+        //DataTable MpList;
         decimal NuevaCantidad = 0;
         int id_count_selected;
         decimal sum = 0;
@@ -29,25 +29,30 @@ namespace LOSA.Logistica
         {
             InitializeComponent();
             UsuarioLogeado = puserLogin;
-            MpList = pdata;
+           
             get_bodegas();
-            enumerar_rows();
+            //enumerar_rows();
             grd_mps.DataSource = pdata;
 
+        }
 
+
+        private void CargarMP()
+        {
+           
         }
 
         public void enumerar_rows()
         {
-            int enumerador = 0;
-            foreach (DataRow row in MpList.Rows)
-            {
-                row["count_id"] = enumerador;
+            //int enumerador = 0;
+            //foreach (DataRow row in MpList)
+            //{
+            //    row["count_id"] = enumerador;
                
-                enumerador++;
-            }
+            //    enumerador++;
+            //}
 
-            MpList.AcceptChanges();
+            //MpList.AcceptChanges();
         }
 
         public void get_lotes(int id_mp, int id_bodega )
@@ -285,6 +290,12 @@ namespace LOSA.Logistica
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        private void btnIzquierda_Click(object sender, EventArgs e)
         {
 
         }

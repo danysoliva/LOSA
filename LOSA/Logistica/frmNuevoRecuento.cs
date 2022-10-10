@@ -17,6 +17,7 @@ using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraEditors.Controls;
 using LOSA.RecuentoInventario;
+using System.Globalization;
 
 namespace LOSA.Logistica
 {
@@ -37,6 +38,9 @@ namespace LOSA.Logistica
             get_bodegas();
             Inicializar_productos();
             dateEdit1.EditValue = dp.Now();
+
+            grd_years.Text = Convert.ToString(dateEdit1.DateTime.Year);
+            grd_meses_disponibles.Text = Convert.ToString(dateEdit1.DateTime.Month); 
         }
 
         public void Inicializar_productos()
@@ -323,6 +327,9 @@ namespace LOSA.Logistica
                 //case "diferencia":
                 case "toma_fisica":
                     //row.diferencia = row.ExistenciaAprox - row.toma_fisica;
+                    if (row.toma_fisica == 0)
+                        row.diferencia = row.ExistenciaAprox;
+
                     row.diferencia = row.toma_fisica - row.ExistenciaAprox;
                     row.peso = row.toma_fisica;
 
@@ -330,6 +337,8 @@ namespace LOSA.Logistica
                         row.seleccion = true;
                     else
                         row.seleccion = false;
+
+                    
 
                     break;
                 default:
