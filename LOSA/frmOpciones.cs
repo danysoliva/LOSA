@@ -21,6 +21,7 @@ using LOSA.TransaccionesPT;
 using LOSA.Trazabilidad;
 using LOSA.Trazabilidad.ReportesTRZ;
 using System;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace LOSA
@@ -748,7 +749,35 @@ namespace LOSA
 
         private void frmOpciones_Load(object sender, EventArgs e)
         {
+            try
+            {
+                bool newVersion;
+                NotificacionesGenerales notifications = new NotificacionesGenerales();
 
+                if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
+                {
+                    Version ver = System.Deployment.Application.ApplicationDeployment.CurrentDeployment.CurrentVersion;
+                    notifications.Major = ver.Major;
+                    notifications.Minor = ver.Minor;
+                    notifications.Build = ver.Build;
+                    notifications.Revision = ver.Revision;
+                }
+                else
+                {
+                    var ver = Assembly.GetExecutingAssembly().GetName().Version;
+                    notifications.Major = ver.Major;
+                    notifications.Minor = ver.Minor;
+                    notifications.Build = ver.Build;
+                    notifications.Revision = ver.Revision;
+                }
+
+                newVersion = notifications.ValidarVersionBuild(notifications.Major, notifications.Minor, notifications.Build, notifications.Revision);
+
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
 
         private void btnImprimirTm_Click(object sender, EventArgs e)

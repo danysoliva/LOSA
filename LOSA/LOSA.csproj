@@ -915,6 +915,7 @@
     <Compile Include="Clases\BagsPT.cs" />
     <Compile Include="Clases\Boleta.cs" />
     <Compile Include="Clases\CajaDialogo.cs" />
+    <Compile Include="Clases\CheckNewVersion.cs" />
     <Compile Include="Clases\DataOperations.cs" />
     <Compile Include="Clases\Globals.cs" />
     <Compile Include="Clases\IngresoExternoD.cs" />
@@ -929,6 +930,7 @@
     <Compile Include="Clases\LotePT.cs" />
     <Compile Include="Clases\MateriaPrima.cs" />
     <Compile Include="Clases\MicroIngrediente.cs" />
+    <Compile Include="Clases\NotificacionesGenerales.cs" />
     <Compile Include="Clases\opcionAbrirVentanaTarima.cs" />
     <Compile Include="Clases\OrdenProduccionH.cs" />
     <Compile Include="Clases\PlantaPrvTrz.cs" />
@@ -1499,6 +1501,12 @@
     <Compile Include="MicroIngredientes\Models\PesajeIndividualInfo.cs" />
     <Compile Include="MicroIngredientes\Models\PesajeIndividualNew.cs" />
     <Compile Include="MicroIngredientes\Models\PesajeManualInfo.cs" />
+    <Compile Include="MicroIngredientes\Reportes\rptReporteIngresoTarimaMicros.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MicroIngredientes\Reportes\rptReporteIngresoTarimaMicros.Designer.cs">
+      <DependentUpon>rptReporteIngresoTarimaMicros.cs</DependentUpon>
+    </Compile>
     <Compile Include="MicroIngredientes\xfrmAsistentePesajeV2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2526,6 +2534,12 @@
     <Compile Include="Tools\frmInputBox.Designer.cs">
       <DependentUpon>frmInputBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tools\xfrmPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\xfrmPopup.Designer.cs">
+      <DependentUpon>xfrmPopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesMP\DataSet\dsLotesProxVencer.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -3452,6 +3466,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmOpciones.resx">
       <DependentUpon>frmOpciones.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Liquidos\frmIngresoCamion.resx">
       <DependentUpon>frmIngresoCamion.cs</DependentUpon>
@@ -3593,6 +3608,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MicroIngredientes\frmSelectLotePesaje.resx">
       <DependentUpon>frmSelectLotePesaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MicroIngredientes\Reportes\rptReporteIngresoTarimaMicros.resx">
+      <DependentUpon>rptReporteIngresoTarimaMicros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MicroIngredientes\xfrmAsistentePesajeV2.resx">
       <DependentUpon>xfrmAsistentePesajeV2.cs</DependentUpon>
@@ -3992,6 +4010,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\frmInputBox.resx">
       <DependentUpon>frmInputBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\xfrmPopup.resx">
+      <DependentUpon>xfrmPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmAjusteLotes.resx">
       <DependentUpon>frmAjusteLotes.cs</DependentUpon>
@@ -4609,6 +4630,8 @@
     <None Include="Resources\pallet32px.png" />
     <None Include="Resources\pallet32px1.png" />
     <None Include="Resources\oil-barrel.png" />
+    <None Include="Resources\pin16x16.png" />
+    <None Include="Resources\pin_expand_16x16.png" />
     <Content Include="Resources\plus.png" />
     <None Include="Resources\produccion.png" />
     <None Include="Resources\Producto_terminado.png" />
@@ -4647,7 +4670,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 y x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
