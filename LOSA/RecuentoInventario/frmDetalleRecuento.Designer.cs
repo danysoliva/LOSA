@@ -51,7 +51,6 @@ namespace LOSA.RecuentoInventario
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.grd_mps = new DevExpress.XtraGrid.GridControl();
             this.grdv_mps = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.collote = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.id_mp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.id_bodega = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -103,7 +102,7 @@ namespace LOSA.RecuentoInventario
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(411, 30);
+            this.labelControl1.Location = new System.Drawing.Point(411, 26);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(74, 17);
             this.labelControl1.TabIndex = 13;
@@ -340,7 +339,6 @@ namespace LOSA.RecuentoInventario
             this.grdv_mps.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.grdv_mps.Appearance.TopNewRow.Options.UseFont = true;
             this.grdv_mps.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.collote,
             this.colMP,
             this.id_mp,
             this.id_bodega,
@@ -354,15 +352,6 @@ namespace LOSA.RecuentoInventario
             this.grdv_mps.Name = "grdv_mps";
             this.grdv_mps.OptionsView.ShowAutoFilterRow = true;
             this.grdv_mps.OptionsView.ShowGroupPanel = false;
-            // 
-            // collote
-            // 
-            this.collote.Caption = "Lote";
-            this.collote.FieldName = "lote";
-            this.collote.Name = "collote";
-            this.collote.OptionsColumn.AllowEdit = false;
-            this.collote.Visible = true;
-            this.collote.VisibleIndex = 1;
             // 
             // colMP
             // 
@@ -388,7 +377,7 @@ namespace LOSA.RecuentoInventario
             this.id_bodega.Name = "id_bodega";
             this.id_bodega.OptionsColumn.AllowEdit = false;
             this.id_bodega.Visible = true;
-            this.id_bodega.VisibleIndex = 2;
+            this.id_bodega.VisibleIndex = 1;
             // 
             // grd_bodega
             // 
@@ -428,7 +417,7 @@ namespace LOSA.RecuentoInventario
             this.colExistencia.Name = "colExistencia";
             this.colExistencia.OptionsColumn.AllowEdit = false;
             this.colExistencia.Visible = true;
-            this.colExistencia.VisibleIndex = 4;
+            this.colExistencia.VisibleIndex = 3;
             // 
             // colExistenciaAnterior
             // 
@@ -439,7 +428,7 @@ namespace LOSA.RecuentoInventario
             this.colExistenciaAnterior.Name = "colExistenciaAnterior";
             this.colExistenciaAnterior.OptionsColumn.AllowEdit = false;
             this.colExistenciaAnterior.Visible = true;
-            this.colExistenciaAnterior.VisibleIndex = 3;
+            this.colExistenciaAnterior.VisibleIndex = 2;
             // 
             // coldiferencia
             // 
@@ -452,7 +441,7 @@ namespace LOSA.RecuentoInventario
             this.coldiferencia.UnboundExpression = "[peso] - [seleccionado]";
             this.coldiferencia.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.coldiferencia.Visible = true;
-            this.coldiferencia.VisibleIndex = 5;
+            this.coldiferencia.VisibleIndex = 4;
             // 
             // colSeleccionado
             // 
@@ -517,7 +506,6 @@ namespace LOSA.RecuentoInventario
         private DevExpress.XtraEditors.SimpleButton btnConfirmar;
         private DevExpress.XtraEditors.SimpleButton cmdClose;
         private Logistica.dsCierreMes dsCierreMes1;
-        private DevExpress.XtraGrid.Columns.GridColumn collote;
         private System.Windows.Forms.BindingSource bodegasBindingSource;
         private DevExpress.XtraEditors.GridLookUpEdit grd_meses_disponibles;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;

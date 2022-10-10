@@ -234,6 +234,7 @@
             // txtLote
             // 
             this.txtLote.EditValue = "";
+            this.txtLote.Enabled = false;
             this.txtLote.Location = new System.Drawing.Point(451, 330);
             this.txtLote.Name = "txtLote";
             this.txtLote.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

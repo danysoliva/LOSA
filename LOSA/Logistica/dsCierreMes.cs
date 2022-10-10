@@ -4,6 +4,10 @@
 
     partial class dsCierreMes
     {
+        partial class recuentos_dDataTable
+        {
+        }
+
         partial class Recuento_mpV2DataTable
         {
         }

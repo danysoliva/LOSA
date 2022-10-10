@@ -55,6 +55,8 @@
               <xs:element name="lote" msprop:Generator_ColumnVarNameInTable="columnlote" msprop:Generator_ColumnPropNameInRow="lote" msprop:Generator_ColumnPropNameInTable="loteColumn" msprop:Generator_UserColumnName="lote" type="xs:string" minOccurs="0" />
               <xs:element name="toma_fisica" msprop:Generator_ColumnVarNameInTable="columntoma_fisica" msprop:Generator_ColumnPropNameInRow="toma_fisica" msprop:Generator_ColumnPropNameInTable="toma_fisicaColumn" msprop:Generator_UserColumnName="toma_fisica" type="xs:decimal" minOccurs="0" />
               <xs:element name="whs_equivalente" msprop:Generator_ColumnVarNameInTable="columnwhs_equivalente" msprop:Generator_ColumnPropNameInRow="whs_equivalente" msprop:Generator_ColumnPropNameInTable="whs_equivalenteColumn" msprop:Generator_UserColumnName="whs_equivalente" type="xs:string" minOccurs="0" />
+              <xs:element name="seleccion" msdata:Caption="Ajuste de Lote" msprop:Generator_ColumnVarNameInTable="columnseleccion" msprop:Generator_ColumnPropNameInRow="seleccion" msprop:Generator_ColumnPropNameInTable="seleccionColumn" msprop:Generator_UserColumnName="seleccion" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="numero_transaccion" msprop:Generator_ColumnVarNameInTable="columnnumero_transaccion" msprop:Generator_ColumnPropNameInRow="numero_transaccion" msprop:Generator_ColumnPropNameInTable="numero_transaccionColumn" msprop:Generator_UserColumnName="numero_transaccion" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -182,7 +184,9 @@
               <xs:element name="id_header" msprop:Generator_ColumnVarNameInTable="columnid_header" msprop:Generator_ColumnPropNameInRow="id_header" msprop:Generator_ColumnPropNameInTable="id_headerColumn" msprop:Generator_UserColumnName="id_header" type="xs:int" minOccurs="0" />
               <xs:element name="peso" msprop:Generator_ColumnVarNameInTable="columnpeso" msprop:Generator_ColumnPropNameInRow="peso" msprop:Generator_ColumnPropNameInTable="pesoColumn" msprop:Generator_UserColumnName="peso" type="xs:decimal" minOccurs="0" />
               <xs:element name="Fecha_conteo" msprop:Generator_ColumnVarNameInTable="columnFecha_conteo" msprop:Generator_ColumnPropNameInRow="Fecha_conteo" msprop:Generator_ColumnPropNameInTable="Fecha_conteoColumn" msprop:Generator_UserColumnName="Fecha_conteo" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="diferencia_pero" msprop:Generator_ColumnVarNameInTable="columndiferencia_pero" msprop:Generator_ColumnPropNameInRow="diferencia_pero" msprop:Generator_ColumnPropNameInTable="diferencia_peroColumn" msprop:Generator_UserColumnName="diferencia_pero" type="xs:decimal" minOccurs="0" />
+              <xs:element name="diferencia_peso" msprop:Generator_ColumnVarNameInTable="columndiferencia_peso" msprop:Generator_ColumnPropNameInRow="diferencia_peso" msprop:Generator_ColumnPropNameInTable="diferencia_pesoColumn" msprop:Generator_UserColumnName="diferencia_peso" type="xs:decimal" minOccurs="0" />
+              <xs:element name="existencia_aprox" msprop:Generator_ColumnVarNameInTable="columnexistencia_aprox" msprop:Generator_ColumnPropNameInRow="existencia_aprox" msprop:Generator_ColumnPropNameInTable="existencia_aproxColumn" msprop:Generator_UserColumnName="existencia_aprox" type="xs:decimal" minOccurs="0" />
+              <xs:element name="existencia_fisica" msprop:Generator_ColumnVarNameInTable="columnexistencia_fisica" msprop:Generator_ColumnPropNameInRow="existencia_fisica" msprop:Generator_ColumnPropNameInTable="existencia_fisicaColumn" msprop:Generator_UserColumnName="existencia_fisica" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

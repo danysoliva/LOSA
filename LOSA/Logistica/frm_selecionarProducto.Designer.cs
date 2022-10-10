@@ -29,6 +29,7 @@ namespace LOSA.Logistica
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -36,7 +37,7 @@ namespace LOSA.Logistica
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
-            this.articulosBindingSource = new System.Windows.Forms.BindingSource();
+            this.articulosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsCierreMes = new LOSA.Logistica.dsCierreMes();
             this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -65,6 +66,7 @@ namespace LOSA.Logistica
             this.cmdHome.Size = new System.Drawing.Size(111, 46);
             this.cmdHome.TabIndex = 7;
             this.cmdHome.Text = "Cerrar";
+            this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
             // 
             // grd_data
             // 

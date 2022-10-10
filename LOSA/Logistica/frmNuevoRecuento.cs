@@ -41,25 +41,26 @@ namespace LOSA.Logistica
 
         public void Inicializar_productos()
         {
-            string query = @"sp_get_inizializar_grid_for_MP_ajusteV2";
+            string query = @"sp_get_inizializar_grid_for_MP_ajusteV3";
+            //string query = @"sp_get_inizializar_grid_for_MP_ajusteV2";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             try
             {
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                dsCierreMes.Recuento_mp.Clear();
+                dsCierreMes1.Recuento_mp.Clear();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dsCierreMes.Recuento_mp);
+                da.Fill(dsCierreMes1.Recuento_mp);
                 cn.Close();
 
                 query = @"[sp_get_inizializar_grid_for_ptV2]";
                 cn.Open();
                  cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                dsCierreMes.Recuento_pt.Clear();
+                dsCierreMes1.Recuento_pt.Clear();
                  da = new SqlDataAdapter(cmd);
-                da.Fill(dsCierreMes.Recuento_pt);
+                da.Fill(dsCierreMes1.Recuento_pt);
                 cn.Close();
 
             }
@@ -78,9 +79,9 @@ namespace LOSA.Logistica
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                dsCierreMes.bodegas.Clear();
+                dsCierreMes1.bodegas.Clear();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dsCierreMes.bodegas);
+                da.Fill(dsCierreMes1.bodegas);
                 cn.Close();
 
             }
@@ -100,8 +101,8 @@ namespace LOSA.Logistica
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@year", NuevoRecuento.year);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                dsCierreMes.meses.Clear();
-                da.Fill(dsCierreMes.meses);
+                dsCierreMes1.meses.Clear();
+                da.Fill(dsCierreMes1.meses);
                 cn.Close();
 
 
@@ -121,8 +122,8 @@ namespace LOSA.Logistica
                 SqlCommand cmd = new SqlCommand(query,cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                dsCierreMes.years.Clear();
-                da.Fill(dsCierreMes.years);
+                dsCierreMes1.years.Clear();
+                da.Fill(dsCierreMes1.years);
                 cn.Close();
                
                 
@@ -184,7 +185,7 @@ namespace LOSA.Logistica
             {
                 if (tabActive == 0)
                 {
-                    DataRow dr = dsCierreMes.Recuento_mp.NewRow();
+                    DataRow dr = dsCierreMes1.Recuento_mp.NewRow();
                     dr["id_mp"] = frm.id;
                     dr["descripcion"] = frm.descripcion;
                     dr["odoo"] = frm.codigo;
@@ -193,12 +194,12 @@ namespace LOSA.Logistica
                     dr["diferencia"] = DEFAULT_VALUE;
                     dr["id_bodega"] = DEFAULT_VALUE;
                     dr["ExistenciaAprox"] = DEFAULT_VALUE;
-                    dsCierreMes.Recuento_mp.Rows.Add(dr);
-                    dsCierreMes.Recuento_mp.AcceptChanges();
+                    dsCierreMes1.Recuento_mp.Rows.Add(dr);
+                    dsCierreMes1.Recuento_mp.AcceptChanges();
                 }
                 else
                 {
-                    DataRow dr = dsCierreMes.Recuento_pt.NewRow();
+                    DataRow dr = dsCierreMes1.Recuento_pt.NewRow();
                     dr["id_mp"] = frm.id;
                     dr["descripcion"] = frm.descripcion;
                     dr["odoo"] = frm.codigo;
@@ -207,8 +208,8 @@ namespace LOSA.Logistica
                     dr["diferencia"] = DEFAULT_VALUE;
                     dr["id_bodega"] = DEFAULT_VALUE;
                     dr["ExistenciaAprox"] = DEFAULT_VALUE;
-                    dsCierreMes.Recuento_pt.Rows.Add(dr);
-                    dsCierreMes.Recuento_pt.AcceptChanges();
+                    dsCierreMes1.Recuento_pt.Rows.Add(dr);
+                    dsCierreMes1.Recuento_pt.AcceptChanges();
                 }
             }
         }
@@ -218,7 +219,7 @@ namespace LOSA.Logistica
             try
             {
                 grdv_dataMP.DeleteRow(grdv_dataMP.FocusedRowHandle);
-                dsCierreMes.Recuento_mp.AcceptChanges();
+                dsCierreMes1.Recuento_mp.AcceptChanges();
             }
             catch (Exception )
             {
@@ -231,7 +232,7 @@ namespace LOSA.Logistica
             try
             {
                 grdv_data_pt.DeleteRow(grdv_data_pt.FocusedRowHandle);
-                dsCierreMes.Recuento_pt.AcceptChanges();
+                dsCierreMes1.Recuento_pt.AcceptChanges();
             }
             catch (Exception)
             {
@@ -290,25 +291,25 @@ namespace LOSA.Logistica
         private void simpleButton3_Click(object sender, EventArgs e)
         {
 
-            var list = dsCierreMes.Recuento_mp.AsEnumerable();
-            if (list.Count(p => p.peso > 0) <= 0)
-            {
-                CajaDialogo.Error("Debe de haber por lo menos una materia prima para modificar para poder crear el ajuste de inventario.");
-                return;
-            }
+            //var list = dsCierreMes1.Recuento_mp.AsEnumerable();
+            //if (list.Count(p => p.peso > 0) <= 0)
+            //{
+            //    CajaDialogo.Error("Debe de haber por lo menos una materia prima para modificar para poder crear el ajuste de inventario.");
+            //    return;
+            //}
 
-            var SelectedRows = from row in list
-                               where row.peso > 0
-                               select row;
+            //var SelectedRows = from row in list
+            //                   where row.peso > 0
+            //                   select row;
 
-            DataTable tableOps = new DataTable();
+            //DataTable tableOps = new DataTable();
 
-            tableOps = SelectedRows.CopyToDataTable<DataRow>();
-            frmSeleccionLoteCierre frm = new frmSeleccionLoteCierre(tableOps,UsuarioLogeado);
-            if (frm.ShowDialog()== DialogResult.OK)
-            {
+            //tableOps = SelectedRows.CopyToDataTable<DataRow>();
+            //frmSeleccionLoteCierre frm = new frmSeleccionLoteCierre(tableOps, UsuarioLogeado);
+            //if (frm.ShowDialog()== DialogResult.OK)
+            //{
 
-            }
+            //}
             
         }
 
@@ -321,47 +322,76 @@ namespace LOSA.Logistica
             {
                 //case "diferencia":
                 case "toma_fisica":
-                    row.diferencia = row.ExistenciaAprox - row.toma_fisica;
+                    //row.diferencia = row.ExistenciaAprox - row.toma_fisica;
+                    row.diferencia = row.toma_fisica - row.ExistenciaAprox;
                     row.peso = row.toma_fisica;
+
+                    if (row.diferencia != 0)
+                        row.seleccion = true;
+                    else
+                        row.seleccion = false;
+
                     break;
                 default:
                     break;
             }
-
-            //foreach (dsCierreMes.Recuento_mpRow row2 in dsCierreMes.Recuento_mp.Rows)
-            //{
-            //    row2.diferencia = row2.ExistenciaAprox - row2.toma_fisica;
-
-            //    row2.peso = row2.toma_fisica;
-            //}
+           
         }
 
         private void cmdVerDetalle_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(grd_years.Text))
-            {
-                CajaDialogo.Error("Debe seleccionar el año!");
-                return;
-            }
+            //if (string.IsNullOrEmpty(grd_years.Text))
+            //{
+            //    CajaDialogo.Error("Debe seleccionar el año!");
+            //    return;
+            //}
             if (string.IsNullOrEmpty(grd_meses_disponibles.Text))
             {
                 CajaDialogo.Error("Debe seleccionar el mes!");
                 return;
             }
 
-            var list = dsCierreMes.Recuento_mp.AsEnumerable();
-            if (list.Count(p => p.toma_fisica > 0) <= 0)
+            var list = dsCierreMes1.Recuento_mp.AsEnumerable();
+            if (list.Count(p => p.peso > 0) <= 0)
             {
                 CajaDialogo.Error("Debe de haber por lo menos una materia prima para modificar para poder crear el ajuste de inventario.");
                 return;
             }
 
-            var SelectedRows = from row in list
-                               where row.diferencia > 0 || row.diferencia < 0
-                               select row;
+            //var SelectedRows = from row in list
+            //                   where row.seleccion = true /*|| row.peso > 0  row.diferencia > 0 || row.diferencia < 0*/
+            //                   select row;
+            dsCierreMes.Recuento_mpDataTable tableOps = new dsCierreMes.Recuento_mpDataTable();
+            foreach (dsCierreMes.Recuento_mpRow row in dsCierreMes1.Recuento_mp)
+            {
+                if (row.seleccion)
+                {
+                    dsCierreMes.Recuento_mpRow row1 = tableOps.NewRecuento_mpRow();
+                    row1.id_mp = row.id_mp;
+                    row1.descripcion = row.descripcion;
+                    row1.peso = row.peso;
+                    row1.id_bodega = row.id_bodega;
+                    row1.diferencia = row.diferencia;
+                    row1.ExistenciaAprox = row.ExistenciaAprox;
+                    row1.code_sap = row.code_sap;
+                    //row1.lote = row.lote;
+                    row1.toma_fisica = row.toma_fisica;
+                    row1.whs_equivalente = row.whs_equivalente;
+                    //row1.numero_transaccion = row.numero_transaccion;
+                    tableOps.AddRecuento_mpRow(row1);
+                    tableOps.AcceptChanges();
+                }
+            }
 
-            DataTable tableOps = new DataTable();
-            tableOps = SelectedRows.CopyToDataTable<DataRow>();
+            //var SelectedRowsChecked = from row in list
+            //                          where row.seleccion = true || row.toma_fisica == 0
+            //                          select row;
+
+
+            
+            //tableOps = SelectedRows.CopyToDataTable<DataRow>();
+            
+
 
             int id_year = Convert.ToInt32(grd_years.EditValue);
             int id_mese = Convert.ToInt32(grd_meses_disponibles.EditValue);
@@ -370,8 +400,13 @@ namespace LOSA.Logistica
             frmDetalleRecuento frm = new frmDetalleRecuento(tableOps, UsuarioLogeado, id_year, id_mese, fecha_recuento);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-
+                Inicializar_productos();
             }
+        }
+
+        private void grd_bodegas_ButtonClick(object sender, ButtonPressedEventArgs e)
+        {
+
         }
     }
 }
