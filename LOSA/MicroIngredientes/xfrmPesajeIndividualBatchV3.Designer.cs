@@ -29,18 +29,17 @@ namespace LOSA.MicroIngredientes
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmPesajeIndividualBatchV3));
             this.lblBascula1 = new DevExpress.XtraEditors.LabelControl();
             this.lblValorBascula1 = new DevExpress.XtraEditors.LabelControl();
             this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.lblCompletados = new DevExpress.XtraEditors.LabelControl();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new System.Windows.Forms.Timer();
             this.lblError = new DevExpress.XtraEditors.LabelControl();
             this.lblSuperior = new DevExpress.XtraEditors.LabelControl();
             this.lblInferior = new DevExpress.XtraEditors.LabelControl();
             this.lblRequerido = new DevExpress.XtraEditors.LabelControl();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource1 = new System.Windows.Forms.BindingSource();
             this.dsMicros = new LOSA.MicroIngredientes.dsMicros();
             this.lblValorBascula2 = new DevExpress.XtraEditors.LabelControl();
             this.lblBascula2 = new DevExpress.XtraEditors.LabelControl();
@@ -287,7 +286,7 @@ namespace LOSA.MicroIngredientes
             this.lblLote.Name = "lblLote";
             this.lblLote.Size = new System.Drawing.Size(670, 32);
             this.lblLote.TabIndex = 37;
-            this.lblLote.Text = "labelControl2";
+            this.lblLote.Text = "Lote";
             // 
             // labelControl1
             // 
