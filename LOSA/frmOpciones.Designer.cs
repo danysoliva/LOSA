@@ -42,7 +42,6 @@
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.TabMP_Sacos = new DevExpress.XtraTab.XtraTabPage();
             this.btnTransferenciaPendiente = new DevExpress.XtraEditors.SimpleButton();
-            this.btnRecuento = new DevExpress.XtraEditors.SimpleButton();
             this.cmdReporteInventarioPorFecha = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton30 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton26 = new DevExpress.XtraEditors.SimpleButton();
@@ -348,7 +347,6 @@
             this.TabMP_Sacos.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TabMP_Sacos.Appearance.Header.Options.UseFont = true;
             this.TabMP_Sacos.Controls.Add(this.btnTransferenciaPendiente);
-            this.TabMP_Sacos.Controls.Add(this.btnRecuento);
             this.TabMP_Sacos.Controls.Add(this.cmdReporteInventarioPorFecha);
             this.TabMP_Sacos.Controls.Add(this.simpleButton30);
             this.TabMP_Sacos.Controls.Add(this.simpleButton26);
@@ -376,27 +374,13 @@
             this.btnTransferenciaPendiente.Appearance.Options.UseFont = true;
             this.btnTransferenciaPendiente.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnTransferenciaPendiente.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnTransferenciaPendiente.ImageOptions.SvgImage")));
-            this.btnTransferenciaPendiente.Location = new System.Drawing.Point(210, 302);
+            this.btnTransferenciaPendiente.Location = new System.Drawing.Point(208, 254);
             this.btnTransferenciaPendiente.Name = "btnTransferenciaPendiente";
             this.btnTransferenciaPendiente.Size = new System.Drawing.Size(259, 42);
             this.btnTransferenciaPendiente.TabIndex = 48;
             this.btnTransferenciaPendiente.Text = "Pendiente de Transferir a Planta";
             this.btnTransferenciaPendiente.Visible = false;
             this.btnTransferenciaPendiente.Click += new System.EventHandler(this.btnTransferenciaPendiente_Click);
-            // 
-            // btnRecuento
-            // 
-            this.btnRecuento.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.btnRecuento.Appearance.Options.UseFont = true;
-            this.btnRecuento.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnRecuento.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnRecuento.ImageOptions.SvgImage")));
-            this.btnRecuento.Location = new System.Drawing.Point(209, 254);
-            this.btnRecuento.Name = "btnRecuento";
-            this.btnRecuento.Size = new System.Drawing.Size(200, 42);
-            this.btnRecuento.TabIndex = 47;
-            this.btnRecuento.Text = "Recuento de Inventario";
-            this.btnRecuento.Visible = false;
-            this.btnRecuento.Click += new System.EventHandler(this.btnRecuento_Click_1);
             // 
             // cmdReporteInventarioPorFecha
             // 
@@ -1816,7 +1800,6 @@
         private DevExpress.XtraEditors.SimpleButton cmdLoteActivoGranel;
         private DevExpress.XtraEditors.SimpleButton cmdReporteProximosVencer;
         private DevExpress.XtraEditors.SimpleButton btnRutas;
-        private DevExpress.XtraEditors.SimpleButton btnRecuento;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton btnTransferenciaPendiente;
