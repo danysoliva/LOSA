@@ -49,7 +49,9 @@ namespace LOSA.Logistica
             this.colid_header = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colpeso = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFecha_conteo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coldiferencia_pero = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldiferencia_peso = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colexistencia_aprox = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colexistencia_fisica = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryVerDetalle = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btn_close = new DevExpress.XtraEditors.SimpleButton();
             this.cmdExcel = new DevExpress.XtraEditors.SimpleButton();
@@ -117,7 +119,9 @@ namespace LOSA.Logistica
             this.colid_header,
             this.colpeso,
             this.colFecha_conteo,
-            this.coldiferencia_pero});
+            this.coldiferencia_peso,
+            this.colexistencia_aprox,
+            this.colexistencia_fisica});
             this.grdv_data.GridControl = this.grd_data_d;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsBehavior.Editable = false;
@@ -184,7 +188,7 @@ namespace LOSA.Logistica
             // 
             // colpeso
             // 
-            this.colpeso.Caption = "Peso";
+            this.colpeso.Caption = "Nueva Cantidad";
             this.colpeso.DisplayFormat.FormatString = "{0:0.##.##} Kg";
             this.colpeso.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colpeso.FieldName = "peso";
@@ -197,10 +201,35 @@ namespace LOSA.Logistica
             this.colFecha_conteo.FieldName = "Fecha_conteo";
             this.colFecha_conteo.Name = "colFecha_conteo";
             // 
-            // coldiferencia_pero
+            // coldiferencia_peso
             // 
-            this.coldiferencia_pero.FieldName = "diferencia_pero";
-            this.coldiferencia_pero.Name = "coldiferencia_pero";
+            this.coldiferencia_peso.Caption = "Diferencia";
+            this.coldiferencia_peso.DisplayFormat.FormatString = "{0:0.##.##} Kg";
+            this.coldiferencia_peso.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.coldiferencia_peso.FieldName = "diferencia_peso";
+            this.coldiferencia_peso.Name = "coldiferencia_peso";
+            this.coldiferencia_peso.Visible = true;
+            this.coldiferencia_peso.VisibleIndex = 5;
+            // 
+            // colexistencia_aprox
+            // 
+            this.colexistencia_aprox.Caption = "Existencia Anterior";
+            this.colexistencia_aprox.DisplayFormat.FormatString = "{0:0.##.##} Kg";
+            this.colexistencia_aprox.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colexistencia_aprox.FieldName = "existencia_aprox";
+            this.colexistencia_aprox.Name = "colexistencia_aprox";
+            this.colexistencia_aprox.Visible = true;
+            this.colexistencia_aprox.VisibleIndex = 6;
+            // 
+            // colexistencia_fisica
+            // 
+            this.colexistencia_fisica.Caption = "Toma Fisica";
+            this.colexistencia_fisica.DisplayFormat.FormatString = "{0:0.##.##} Kg";
+            this.colexistencia_fisica.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colexistencia_fisica.FieldName = "existencia_fisica";
+            this.colexistencia_fisica.Name = "colexistencia_fisica";
+            this.colexistencia_fisica.Visible = true;
+            this.colexistencia_fisica.VisibleIndex = 7;
             // 
             // repositoryVerDetalle
             // 
@@ -272,7 +301,9 @@ namespace LOSA.Logistica
         private DevExpress.XtraGrid.Columns.GridColumn colid_header;
         private DevExpress.XtraGrid.Columns.GridColumn colpeso;
         private DevExpress.XtraGrid.Columns.GridColumn colFecha_conteo;
-        private DevExpress.XtraGrid.Columns.GridColumn coldiferencia_pero;
         private DevExpress.XtraEditors.SimpleButton cmdExcel;
+        private DevExpress.XtraGrid.Columns.GridColumn coldiferencia_peso;
+        private DevExpress.XtraGrid.Columns.GridColumn colexistencia_aprox;
+        private DevExpress.XtraGrid.Columns.GridColumn colexistencia_fisica;
     }
 }

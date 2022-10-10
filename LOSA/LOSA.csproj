@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\aqfsvr003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>402</ApplicationRevision>
+    <ApplicationRevision>405</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -2201,6 +2201,12 @@
     <Compile Include="RecepcionMP\frm_edit_data.Designer.cs">
       <DependentUpon>frm_edit_data.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecepcionMP\frm_edit_lote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frm_edit_lote.Designer.cs">
+      <DependentUpon>frm_edit_lote.cs</DependentUpon>
+    </Compile>
     <Compile Include="RecepcionMP\frm_ingresos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2255,6 +2261,12 @@
     </Compile>
     <Compile Include="RecuentoInventario\frmAjusteINV_PorTarimas.Designer.cs">
       <DependentUpon>frmAjusteINV_PorTarimas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecuentoInventario\frmDetalleRecuento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecuentoInventario\frmDetalleRecuento.Designer.cs">
+      <DependentUpon>frmDetalleRecuento.cs</DependentUpon>
     </Compile>
     <Compile Include="RecuentoInventario\frmRecuentoInventario.cs">
       <SubType>Form</SubType>
@@ -3863,6 +3875,9 @@
     <EmbeddedResource Include="RecepcionMP\frm_edit_data.resx">
       <DependentUpon>frm_edit_data.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frm_edit_lote.resx">
+      <DependentUpon>frm_edit_lote.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frm_ingresos.resx">
       <DependentUpon>frm_ingresos.cs</DependentUpon>
     </EmbeddedResource>
@@ -3883,6 +3898,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RecuentoInventario\frmAjusteINV_PorTarimas.resx">
       <DependentUpon>frmAjusteINV_PorTarimas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecuentoInventario\frmDetalleRecuento.resx">
+      <DependentUpon>frmDetalleRecuento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RecuentoInventario\frmRecuentoInventario.resx">
       <DependentUpon>frmRecuentoInventario.cs</DependentUpon>

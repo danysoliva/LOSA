@@ -25,7 +25,7 @@ namespace LOSA.Logistica
         decimal sum = 0;
         int bodega;
         int IdMpSelected = 0;
-        public frmSeleccionLoteCierre(DataTable pdata, UserLogin puserLogin)
+        public frmSeleccionLoteCierre(UserLogin puserLogin, DataTable pdata)
         {
             InitializeComponent();
             UsuarioLogeado = puserLogin;
@@ -282,6 +282,11 @@ namespace LOSA.Logistica
                 dsCierreMes.SeleccionLote.AcceptChanges();
                 btnDerecha.Enabled = false;
             }
+        }
+
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
