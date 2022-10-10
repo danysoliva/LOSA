@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEditTarima));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.txtCantidadTarimasTotal = new DevExpress.XtraEditors.TextEdit();
             this.txtPesoKg = new DevExpress.XtraEditors.TextEdit();
@@ -480,17 +480,17 @@
             this.txtMP_Name.Name = "txtMP_Name";
             this.txtMP_Name.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.txtMP_Name.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions2.Image = global::LOSA.Properties.Resources.wheat;
-            serializableAppearanceObject5.BackColor = System.Drawing.Color.Transparent;
-            serializableAppearanceObject5.Options.UseBackColor = true;
-            serializableAppearanceObject6.BackColor = System.Drawing.Color.LightBlue;
-            serializableAppearanceObject6.Options.UseBackColor = true;
-            serializableAppearanceObject7.BackColor = System.Drawing.Color.LightBlue;
-            serializableAppearanceObject7.Options.UseBackColor = true;
-            serializableAppearanceObject8.BackColor = System.Drawing.Color.LightBlue;
-            serializableAppearanceObject8.Options.UseBackColor = true;
+            editorButtonImageOptions1.Image = global::LOSA.Properties.Resources.wheat;
+            serializableAppearanceObject1.BackColor = System.Drawing.Color.Transparent;
+            serializableAppearanceObject1.Options.UseBackColor = true;
+            serializableAppearanceObject2.BackColor = System.Drawing.Color.LightBlue;
+            serializableAppearanceObject2.Options.UseBackColor = true;
+            serializableAppearanceObject3.BackColor = System.Drawing.Color.LightBlue;
+            serializableAppearanceObject3.Options.UseBackColor = true;
+            serializableAppearanceObject4.BackColor = System.Drawing.Color.LightBlue;
+            serializableAppearanceObject4.Options.UseBackColor = true;
             this.txtMP_Name.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.txtMP_Name.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.txtMP_Name.Properties.ReadOnly = true;
             this.txtMP_Name.Size = new System.Drawing.Size(439, 30);

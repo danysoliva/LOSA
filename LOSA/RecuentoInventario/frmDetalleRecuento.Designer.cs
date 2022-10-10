@@ -29,12 +29,13 @@ namespace LOSA.RecuentoInventario
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDetalleRecuento));
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtComentario = new System.Windows.Forms.TextBox();
             this.grd_meses_disponibles = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.mesesBindingSource = new System.Windows.Forms.BindingSource();
+            this.mesesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsCierreMes1 = new LOSA.Logistica.dsCierreMes();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colmes_numero = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -42,7 +43,7 @@ namespace LOSA.RecuentoInventario
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.grd_years = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.yearsBindingSource = new System.Windows.Forms.BindingSource();
+            this.yearsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colejercicio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnConfirmar = new DevExpress.XtraEditors.SimpleButton();
@@ -55,7 +56,7 @@ namespace LOSA.RecuentoInventario
             this.id_mp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.id_bodega = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grd_bodega = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.bodegasBindingSource = new System.Windows.Forms.BindingSource();
+            this.bodegasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colExistencia = new DevExpress.XtraGrid.Columns.GridColumn();
