@@ -62,7 +62,7 @@ namespace LOSA.Logistica
         private void btnNuevoRecuento_Click(object sender, EventArgs e)
         {
             frmNuevoRecuento frm = new frmNuevoRecuento(UsuarioLogeado);
-            frm.MdiParent = this.MdiParent;
+            //frm.MdiParent = this.MdiParent;
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 load_data();

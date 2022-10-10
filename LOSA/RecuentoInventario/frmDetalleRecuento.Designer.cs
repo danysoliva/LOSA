@@ -63,6 +63,7 @@ namespace LOSA.RecuentoInventario
             this.coldiferencia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSeleccionado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.count_id = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmdSelecLote = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_meses_disponibles.Properties)).BeginInit();
@@ -83,6 +84,7 @@ namespace LOSA.RecuentoInventario
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.cmdSelecLote);
             this.panelControl2.Controls.Add(this.labelControl1);
             this.panelControl2.Controls.Add(this.txtComentario);
             this.panelControl2.Controls.Add(this.grd_meses_disponibles);
@@ -275,6 +277,7 @@ namespace LOSA.RecuentoInventario
             this.btnConfirmar.Size = new System.Drawing.Size(111, 50);
             this.btnConfirmar.TabIndex = 6;
             this.btnConfirmar.Text = "Confirmar";
+            this.btnConfirmar.Visible = false;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // cmdClose
@@ -300,12 +303,14 @@ namespace LOSA.RecuentoInventario
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(1266, 592);
             this.groupControl1.TabIndex = 0;
-            this.groupControl1.Text = "Materias Primas a Modificar";
+            this.groupControl1.Text = "Materias Primas a Ajustar";
             // 
             // grd_mps
             // 
             this.grd_mps.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.grd_mps.DataMember = "Recuento_mp";
+            this.grd_mps.DataSource = this.dsCierreMes1;
             this.grd_mps.Location = new System.Drawing.Point(2, 24);
             this.grd_mps.MainView = this.grdv_mps;
             this.grd_mps.Name = "grd_mps";
@@ -458,6 +463,21 @@ namespace LOSA.RecuentoInventario
             this.count_id.Name = "count_id";
             this.count_id.OptionsColumn.AllowEdit = false;
             // 
+            // cmdSelecLote
+            // 
+            this.cmdSelecLote.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdSelecLote.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdSelecLote.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.cmdSelecLote.Appearance.Options.UseFont = true;
+            this.cmdSelecLote.Appearance.Options.UseForeColor = true;
+            this.cmdSelecLote.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdVerDetalle.ImageOptions.Image")));
+            this.cmdSelecLote.Location = new System.Drawing.Point(782, 9);
+            this.cmdSelecLote.Name = "cmdSelecLote";
+            this.cmdSelecLote.Size = new System.Drawing.Size(209, 50);
+            this.cmdSelecLote.TabIndex = 15;
+            this.cmdSelecLote.Text = "Seleccionar Lotes";
+            this.cmdSelecLote.Click += new System.EventHandler(this.cmdSelecLote_Click);
+            // 
             // frmDetalleRecuento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -520,5 +540,6 @@ namespace LOSA.RecuentoInventario
         private System.Windows.Forms.BindingSource mesesBindingSource;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.TextBox txtComentario;
+        private DevExpress.XtraEditors.SimpleButton cmdSelecLote;
     }
 }

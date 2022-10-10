@@ -1,6 +1,7 @@
 ﻿using ACS.Classes;
 using LOSA.ACS.RRHH;
 using LOSA.AlmacenesExterno;
+using LOSA.AlmacenesExterno.Salida_Almacen;
 using LOSA.Calidad;
 using LOSA.Calidad.LoteConfConsumo;
 using LOSA.Calidad.Revision_Sanidad;
@@ -1050,7 +1051,13 @@ namespace LOSA
             frm.Show();
         }
 
-
-
+        private void btnTransferenciaPendiente_Click(object sender, EventArgs e)
+        {
+            frmTransPendientes frm = new frmTransPendientes(UsuarioLogeado);
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+            frm.Show();
+            
+        }
     }
 }
