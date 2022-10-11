@@ -7913,6 +7913,10 @@ namespace LOSA.TransaccionesPT {
             
             private global::System.Data.DataColumn columnfecha_vencimiento;
             
+            private global::System.Data.DataColumn columncodigo_unite;
+            
+            private global::System.Data.DataColumn columnDescripcion_Tecnica;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public rpt_ingresoPTDataTable() {
@@ -8036,6 +8040,22 @@ namespace LOSA.TransaccionesPT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn codigo_uniteColumn {
+                get {
+                    return this.columncodigo_unite;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Descripcion_TecnicaColumn {
+                get {
+                    return this.columnDescripcion_Tecnica;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -8071,7 +8091,7 @@ namespace LOSA.TransaccionesPT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public rpt_ingresoPTRow Addrpt_ingresoPTRow(int id, string codigo_barra, string itemcode, string producto, int cantidad, string estado, decimal peso, int lote, string turno, System.DateTime _F__Produccion, System.DateTime fecha_vencimiento) {
+            public rpt_ingresoPTRow Addrpt_ingresoPTRow(int id, string codigo_barra, string itemcode, string producto, int cantidad, string estado, decimal peso, int lote, string turno, System.DateTime _F__Produccion, System.DateTime fecha_vencimiento, string codigo_unite, string Descripcion_Tecnica) {
                 rpt_ingresoPTRow rowrpt_ingresoPTRow = ((rpt_ingresoPTRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -8084,7 +8104,9 @@ namespace LOSA.TransaccionesPT {
                         lote,
                         turno,
                         _F__Produccion,
-                        fecha_vencimiento};
+                        fecha_vencimiento,
+                        codigo_unite,
+                        Descripcion_Tecnica};
                 rowrpt_ingresoPTRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowrpt_ingresoPTRow);
                 return rowrpt_ingresoPTRow;
@@ -8118,6 +8140,8 @@ namespace LOSA.TransaccionesPT {
                 this.columnturno = base.Columns["turno"];
                 this._columnF__Produccion = base.Columns["F. Produccion"];
                 this.columnfecha_vencimiento = base.Columns["fecha_vencimiento"];
+                this.columncodigo_unite = base.Columns["codigo_unite"];
+                this.columnDescripcion_Tecnica = base.Columns["Descripcion_Tecnica"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8147,6 +8171,10 @@ namespace LOSA.TransaccionesPT {
                 base.Columns.Add(this._columnF__Produccion);
                 this.columnfecha_vencimiento = new global::System.Data.DataColumn("fecha_vencimiento", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfecha_vencimiento);
+                this.columncodigo_unite = new global::System.Data.DataColumn("codigo_unite", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncodigo_unite);
+                this.columnDescripcion_Tecnica = new global::System.Data.DataColumn("Descripcion_Tecnica", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescripcion_Tecnica);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14566,6 +14594,39 @@ namespace LOSA.TransaccionesPT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string codigo_unite {
+                get {
+                    try {
+                        return ((string)(this[this.tablerpt_ingresoPT.codigo_uniteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'codigo_unite\' de la tabla \'rpt_ingresoPT\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablerpt_ingresoPT.codigo_uniteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Descripcion_Tecnica {
+                get {
+                    try {
+                        return ((string)(this[this.tablerpt_ingresoPT.Descripcion_TecnicaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Descripcion_Tecnica\' de la tabla \'rpt_ingresoPT\' es DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tablerpt_ingresoPT.Descripcion_TecnicaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tablerpt_ingresoPT.idColumn);
             }
@@ -14694,6 +14755,30 @@ namespace LOSA.TransaccionesPT {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setfecha_vencimientoNull() {
                 this[this.tablerpt_ingresoPT.fecha_vencimientoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscodigo_uniteNull() {
+                return this.IsNull(this.tablerpt_ingresoPT.codigo_uniteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcodigo_uniteNull() {
+                this[this.tablerpt_ingresoPT.codigo_uniteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDescripcion_TecnicaNull() {
+                return this.IsNull(this.tablerpt_ingresoPT.Descripcion_TecnicaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDescripcion_TecnicaNull() {
+                this[this.tablerpt_ingresoPT.Descripcion_TecnicaColumn] = global::System.Convert.DBNull;
             }
         }
         

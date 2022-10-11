@@ -40,9 +40,9 @@ namespace LOSA.TransaccionesPT
                     cmm2.Parameters.AddWithValue("@dtdesde", dtFechaDesde.EditValue);
                     cmm2.Parameters.AddWithValue("@dthasta", dtFechaHasta.EditValue);
 
-                    dsPT.rpt_ingresoPT.Clear();
+                    dsPT1.rpt_ingresoPT.Clear();
                     SqlDataAdapter adat = new SqlDataAdapter(cmm2);
-                    adat.Fill(dsPT.rpt_ingresoPT);
+                    adat.Fill(dsPT1.rpt_ingresoPT);
                     con.Close();
                 }
                 catch (Exception ec)
