@@ -16,7 +16,7 @@ namespace LOSA.MicroIngredientes.Reportes
             DataOperations dp = new DataOperations();
             lblVersion.Text = dp.AssemblyVersion;
 
-            Tarima tar1 = new Tarima();
+            TarimaMicroingrediente tar1 = new TarimaMicroingrediente();
             if (tar1.RecuperarRegistroTarimaMicros(idTarima, ""))
             {
                 //IdUnidadMedida = dr.GetInt32(1);

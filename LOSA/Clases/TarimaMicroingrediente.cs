@@ -30,6 +30,10 @@ namespace LOSA.Clases
         int _idBoleta;
         string _CodigoBarra;
         int _id_ingreso;
+        String _Proveedor;
+        String _MateriaPrimaName;
+        string Itemcode;
+        string _MateriaPrima;
 
 
 
@@ -47,7 +51,11 @@ namespace LOSA.Clases
         public string CodigoBarra { get => _CodigoBarra; set => _CodigoBarra = value; }
         public decimal Cantidad { get => _cantidad; set => _cantidad = value; }
         public int Id_ingreso { get => _id_ingreso; set => _id_ingreso = value; }
-
+        public string Proveedor { get => _Proveedor; set => _Proveedor = value; }
+        public string LoteMP { get => _LoteMP; set => _LoteMP = value; }
+        public string NombreTarima { get => _MateriaPrimaName; set => _MateriaPrimaName = value; }
+        public string ItemCode { get => Itemcode; set => Itemcode = value; }
+        public string MateriaPrima { get => _MateriaPrima; set => _MateriaPrima = value; }
 
 
         public TarimaMicroingrediente()
