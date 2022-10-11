@@ -29,6 +29,7 @@ namespace LOSA.TransaccionesMP
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEntregaTarimaMicros));
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.panelNotificacion = new System.Windows.Forms.Panel();
@@ -36,6 +37,21 @@ namespace LOSA.TransaccionesMP
             this.grd_data_entregadaMicros = new DevExpress.XtraGrid.GridControl();
             this.dsMicro1 = new LOSA.Micro.dsMicro();
             this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colexistencia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnombre_comercial = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha_vence = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha_produccion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_mp = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collote = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldias = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha_ingreso1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnumero_transaccion1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcproveedor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colproveedor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcode_sap1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colingreso = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colsalidas = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dsTransaccionesMP = new LOSA.TransaccionesMP.dsTransaccionesMP();
             this.gcTarima = new DevExpress.XtraGrid.GridControl();
             this.gvTarima = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -55,26 +71,10 @@ namespace LOSA.TransaccionesMP
             this.txtTarima = new DevExpress.XtraEditors.ButtonEdit();
             this.cmdSelectTarima = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.timerLimpiarMensaje = new System.Windows.Forms.Timer();
+            this.timerLimpiarMensaje = new System.Windows.Forms.Timer(this.components);
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
-            this.cmdLotesProximosVencerMP = new DevExpress.XtraEditors.SimpleButton();
-            this.colexistencia = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colnombre_comercial = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colfecha_vence = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colfecha_produccion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colid_mp = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.collote = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coldias = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colfecha_ingreso1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colnumero_transaccion1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcproveedor = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colproveedor = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcode_sap1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colingreso = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colsalidas = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grid_mp_disponible_prd = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -92,6 +92,7 @@ namespace LOSA.TransaccionesMP
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmdLotesProximosVencerMP = new DevExpress.XtraEditors.SimpleButton();
             this.panelNotificacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data_entregadaMicros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMicro1)).BeginInit();
@@ -209,6 +210,103 @@ namespace LOSA.TransaccionesMP
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
             this.grdv_data.OptionsView.ShowFooter = true;
             this.grdv_data.OptionsView.ShowGroupPanel = false;
+            // 
+            // colexistencia
+            // 
+            this.colexistencia.Caption = "Existencia";
+            this.colexistencia.FieldName = "existencia";
+            this.colexistencia.Name = "colexistencia";
+            this.colexistencia.Visible = true;
+            this.colexistencia.VisibleIndex = 6;
+            this.colexistencia.Width = 101;
+            // 
+            // colnombre_comercial
+            // 
+            this.colnombre_comercial.FieldName = "nombre_comercial";
+            this.colnombre_comercial.Name = "colnombre_comercial";
+            this.colnombre_comercial.Visible = true;
+            this.colnombre_comercial.VisibleIndex = 1;
+            this.colnombre_comercial.Width = 90;
+            // 
+            // colfecha_vence
+            // 
+            this.colfecha_vence.FieldName = "fecha_vence";
+            this.colfecha_vence.Name = "colfecha_vence";
+            this.colfecha_vence.Visible = true;
+            this.colfecha_vence.VisibleIndex = 2;
+            this.colfecha_vence.Width = 90;
+            // 
+            // colfecha_produccion
+            // 
+            this.colfecha_produccion.FieldName = "fecha_produccion";
+            this.colfecha_produccion.Name = "colfecha_produccion";
+            // 
+            // colid_mp
+            // 
+            this.colid_mp.FieldName = "id_mp";
+            this.colid_mp.Name = "colid_mp";
+            // 
+            // collote
+            // 
+            this.collote.FieldName = "lote";
+            this.collote.Name = "collote";
+            this.collote.Visible = true;
+            this.collote.VisibleIndex = 3;
+            this.collote.Width = 90;
+            // 
+            // coldias
+            // 
+            this.coldias.FieldName = "dias";
+            this.coldias.Name = "coldias";
+            // 
+            // colfecha_ingreso1
+            // 
+            this.colfecha_ingreso1.FieldName = "fecha_ingreso";
+            this.colfecha_ingreso1.Name = "colfecha_ingreso1";
+            // 
+            // colnumero_transaccion1
+            // 
+            this.colnumero_transaccion1.FieldName = "numero_transaccion";
+            this.colnumero_transaccion1.Name = "colnumero_transaccion1";
+            // 
+            // colcproveedor
+            // 
+            this.colcproveedor.FieldName = "cproveedor";
+            this.colcproveedor.Name = "colcproveedor";
+            // 
+            // colproveedor
+            // 
+            this.colproveedor.FieldName = "proveedor";
+            this.colproveedor.Name = "colproveedor";
+            // 
+            // colcode_sap1
+            // 
+            this.colcode_sap1.FieldName = "code_sap";
+            this.colcode_sap1.Name = "colcode_sap1";
+            this.colcode_sap1.Visible = true;
+            this.colcode_sap1.VisibleIndex = 0;
+            this.colcode_sap1.Width = 83;
+            // 
+            // colcodigo
+            // 
+            this.colcodigo.FieldName = "codigo";
+            this.colcodigo.Name = "colcodigo";
+            // 
+            // colingreso
+            // 
+            this.colingreso.FieldName = "ingreso";
+            this.colingreso.Name = "colingreso";
+            this.colingreso.Visible = true;
+            this.colingreso.VisibleIndex = 4;
+            this.colingreso.Width = 90;
+            // 
+            // colsalidas
+            // 
+            this.colsalidas.FieldName = "salidas";
+            this.colsalidas.Name = "colsalidas";
+            this.colsalidas.Visible = true;
+            this.colsalidas.VisibleIndex = 5;
+            this.colsalidas.Width = 90;
             // 
             // dsTransaccionesMP
             // 
@@ -568,117 +666,6 @@ namespace LOSA.TransaccionesMP
             this.xtraTabPage2.Size = new System.Drawing.Size(652, 306);
             this.xtraTabPage2.Text = "MP Disponible PRD";
             // 
-            // cmdLotesProximosVencerMP
-            // 
-            this.cmdLotesProximosVencerMP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmdLotesProximosVencerMP.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdLotesProximosVencerMP.Appearance.Options.UseFont = true;
-            this.cmdLotesProximosVencerMP.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdLotesProximosVencerMP.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdLotesProximosVencerMP.ImageOptions.SvgImage")));
-            this.cmdLotesProximosVencerMP.Location = new System.Drawing.Point(475, 56);
-            this.cmdLotesProximosVencerMP.Name = "cmdLotesProximosVencerMP";
-            this.cmdLotesProximosVencerMP.Size = new System.Drawing.Size(188, 44);
-            this.cmdLotesProximosVencerMP.TabIndex = 113;
-            this.cmdLotesProximosVencerMP.Text = "Orden Lotes MP \r\nUltima Tarima Escaneada";
-            this.cmdLotesProximosVencerMP.Click += new System.EventHandler(this.cmdLotesProximosVencerMP_Click);
-            // 
-            // colexistencia
-            // 
-            this.colexistencia.Caption = "Existencia";
-            this.colexistencia.FieldName = "existencia";
-            this.colexistencia.Name = "colexistencia";
-            this.colexistencia.Visible = true;
-            this.colexistencia.VisibleIndex = 6;
-            this.colexistencia.Width = 101;
-            // 
-            // colnombre_comercial
-            // 
-            this.colnombre_comercial.FieldName = "nombre_comercial";
-            this.colnombre_comercial.Name = "colnombre_comercial";
-            this.colnombre_comercial.Visible = true;
-            this.colnombre_comercial.VisibleIndex = 1;
-            this.colnombre_comercial.Width = 90;
-            // 
-            // colfecha_vence
-            // 
-            this.colfecha_vence.FieldName = "fecha_vence";
-            this.colfecha_vence.Name = "colfecha_vence";
-            this.colfecha_vence.Visible = true;
-            this.colfecha_vence.VisibleIndex = 2;
-            this.colfecha_vence.Width = 90;
-            // 
-            // colfecha_produccion
-            // 
-            this.colfecha_produccion.FieldName = "fecha_produccion";
-            this.colfecha_produccion.Name = "colfecha_produccion";
-            // 
-            // colid_mp
-            // 
-            this.colid_mp.FieldName = "id_mp";
-            this.colid_mp.Name = "colid_mp";
-            // 
-            // collote
-            // 
-            this.collote.FieldName = "lote";
-            this.collote.Name = "collote";
-            this.collote.Visible = true;
-            this.collote.VisibleIndex = 3;
-            this.collote.Width = 90;
-            // 
-            // coldias
-            // 
-            this.coldias.FieldName = "dias";
-            this.coldias.Name = "coldias";
-            // 
-            // colfecha_ingreso1
-            // 
-            this.colfecha_ingreso1.FieldName = "fecha_ingreso";
-            this.colfecha_ingreso1.Name = "colfecha_ingreso1";
-            // 
-            // colnumero_transaccion1
-            // 
-            this.colnumero_transaccion1.FieldName = "numero_transaccion";
-            this.colnumero_transaccion1.Name = "colnumero_transaccion1";
-            // 
-            // colcproveedor
-            // 
-            this.colcproveedor.FieldName = "cproveedor";
-            this.colcproveedor.Name = "colcproveedor";
-            // 
-            // colproveedor
-            // 
-            this.colproveedor.FieldName = "proveedor";
-            this.colproveedor.Name = "colproveedor";
-            // 
-            // colcode_sap1
-            // 
-            this.colcode_sap1.FieldName = "code_sap";
-            this.colcode_sap1.Name = "colcode_sap1";
-            this.colcode_sap1.Visible = true;
-            this.colcode_sap1.VisibleIndex = 0;
-            this.colcode_sap1.Width = 83;
-            // 
-            // colcodigo
-            // 
-            this.colcodigo.FieldName = "codigo";
-            this.colcodigo.Name = "colcodigo";
-            // 
-            // colingreso
-            // 
-            this.colingreso.FieldName = "ingreso";
-            this.colingreso.Name = "colingreso";
-            this.colingreso.Visible = true;
-            this.colingreso.VisibleIndex = 4;
-            this.colingreso.Width = 90;
-            // 
-            // colsalidas
-            // 
-            this.colsalidas.FieldName = "salidas";
-            this.colsalidas.Name = "colsalidas";
-            this.colsalidas.Visible = true;
-            this.colsalidas.VisibleIndex = 5;
-            this.colsalidas.Width = 90;
-            // 
             // grid_mp_disponible_prd
             // 
             this.grid_mp_disponible_prd.DataMember = "informacionPRD_micro_tentative";
@@ -834,6 +821,20 @@ namespace LOSA.TransaccionesMP
             this.gridColumn15.Visible = true;
             this.gridColumn15.VisibleIndex = 5;
             this.gridColumn15.Width = 90;
+            // 
+            // cmdLotesProximosVencerMP
+            // 
+            this.cmdLotesProximosVencerMP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdLotesProximosVencerMP.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdLotesProximosVencerMP.Appearance.Options.UseFont = true;
+            this.cmdLotesProximosVencerMP.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdLotesProximosVencerMP.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdLotesProximosVencerMP.ImageOptions.SvgImage")));
+            this.cmdLotesProximosVencerMP.Location = new System.Drawing.Point(475, 56);
+            this.cmdLotesProximosVencerMP.Name = "cmdLotesProximosVencerMP";
+            this.cmdLotesProximosVencerMP.Size = new System.Drawing.Size(188, 44);
+            this.cmdLotesProximosVencerMP.TabIndex = 113;
+            this.cmdLotesProximosVencerMP.Text = "Orden Lotes MP \r\nUltima Tarima Escaneada";
+            this.cmdLotesProximosVencerMP.Click += new System.EventHandler(this.cmdLotesProximosVencerMP_Click);
             // 
             // frmEntregaTarimaMicros
             // 

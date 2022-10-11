@@ -37,15 +37,15 @@ namespace LOSA.Produccion
                 //int id_tank = 0;
 
 
-                pcTank1.BackColor = Color.Silver;
-                pcTank2.BackColor = Color.Silver;
-                pcTank3.BackColor = Color.Silver;
-                pcTank5.BackColor = Color.Silver;
-                pcTank4.BackColor = Color.Silver;
-                pcTank6.BackColor = Color.Silver;
-                pcTank7.BackColor = Color.Silver;
-                pcTank8.BackColor = Color.Silver;
-                pcTank9.BackColor = Color.Silver;
+                pcTank1.BackColor  = Color.Silver;
+                pcTank2.BackColor  = Color.Silver;
+                pcTank3.BackColor  = Color.Silver;
+                pcTank5.BackColor  = Color.Silver;
+                pcTank4.BackColor  = Color.Silver;
+                pcTank6.BackColor  = Color.Silver;
+                pcTank7.BackColor  = Color.Silver;
+                pcTank8.BackColor  = Color.Silver;
+                pcTank9.BackColor  = Color.Silver;
                 pcTank10.BackColor = Color.Silver;
                 pcTank11.BackColor = Color.Silver;
                 pcTank12.BackColor = Color.Silver;
