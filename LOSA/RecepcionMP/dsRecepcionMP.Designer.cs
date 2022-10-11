@@ -1007,6 +1007,8 @@ namespace LOSA.RecepcionMP {
             
             private global::System.Data.DataColumn columnnumero_factura;
             
+            private global::System.Data.DataColumn columnconductor;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public BasculaDataTable() {
@@ -1154,6 +1156,14 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn conductorColumn {
+                get {
+                    return this.columnconductor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1189,7 +1199,7 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public BasculaRow AddBasculaRow(int IDSerie, int NBoleta, string Descripcion, int idtipo, int estado, string estadoDescripcion, string itemcode, string furgon, string itemdescrip, string proveedor, System.DateTime fecha, decimal peso_prod, string oc, string numero_factura) {
+            public BasculaRow AddBasculaRow(int IDSerie, int NBoleta, string Descripcion, int idtipo, int estado, string estadoDescripcion, string itemcode, string furgon, string itemdescrip, string proveedor, System.DateTime fecha, decimal peso_prod, string oc, string numero_factura, string conductor) {
                 BasculaRow rowBasculaRow = ((BasculaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         IDSerie,
@@ -1205,7 +1215,8 @@ namespace LOSA.RecepcionMP {
                         fecha,
                         peso_prod,
                         oc,
-                        numero_factura};
+                        numero_factura,
+                        conductor};
                 rowBasculaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowBasculaRow);
                 return rowBasculaRow;
@@ -1242,6 +1253,7 @@ namespace LOSA.RecepcionMP {
                 this.columnpeso_prod = base.Columns["peso_prod"];
                 this.columnoc = base.Columns["oc"];
                 this.columnnumero_factura = base.Columns["numero_factura"];
+                this.columnconductor = base.Columns["conductor"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1275,6 +1287,8 @@ namespace LOSA.RecepcionMP {
                 base.Columns.Add(this.columnoc);
                 this.columnnumero_factura = new global::System.Data.DataColumn("numero_factura", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnumero_factura);
+                this.columnconductor = new global::System.Data.DataColumn("conductor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnconductor);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8211,6 +8225,22 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string conductor {
+                get {
+                    try {
+                        return ((string)(this[this.tableBascula.conductorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'conductor\' de la tabla \'Bascula\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBascula.conductorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsIDSerieNull() {
                 return this.IsNull(this.tableBascula.IDSerieColumn);
             }
@@ -8375,6 +8405,18 @@ namespace LOSA.RecepcionMP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setnumero_facturaNull() {
                 this[this.tableBascula.numero_facturaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsconductorNull() {
+                return this.IsNull(this.tableBascula.conductorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetconductorNull() {
+                this[this.tableBascula.conductorColumn] = global::System.Convert.DBNull;
             }
         }
         

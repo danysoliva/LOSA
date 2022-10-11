@@ -29,6 +29,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTipoIngreso_v2));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -56,7 +57,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.txtPesoKg = new DevExpress.XtraEditors.TextEdit();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.gridLookUpEditPresentacion = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.bindingSourcePresentaciones = new System.Windows.Forms.BindingSource();
+            this.bindingSourcePresentaciones = new System.Windows.Forms.BindingSource(this.components);
             this.dsRecepcionMPx1 = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -84,6 +85,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtIdBoleta = new DevExpress.XtraEditors.TextEdit();
             this.TabGranel = new DevExpress.XtraTab.XtraTabPage();
+            this.buttonEdit1 = new DevExpress.XtraEditors.ButtonEdit();
             this.txtPesotransferenciaGranel = new DevExpress.XtraEditors.TextEdit();
             this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
             this.btningreso = new DevExpress.XtraEditors.SimpleButton();
@@ -92,14 +94,14 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.chnuevoIngreso = new DevExpress.XtraEditors.CheckEdit();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.grdUbicaciones = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.ubicacionesgranelBindingSource = new System.Windows.Forms.BindingSource();
+            this.ubicacionesgranelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colrack = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcodigo_barra = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.grdbarco = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.barcosBindingSource = new System.Windows.Forms.BindingSource();
+            this.barcosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -141,7 +143,6 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.col_Registrar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colseleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.buttonEdit1 = new DevExpress.XtraEditors.ButtonEdit();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.dtVencimientoGranel = new DevExpress.XtraEditors.DateEdit();
             this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
@@ -153,8 +154,8 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.txtMPgranel = new DevExpress.XtraEditors.TextEdit();
             this.labelControl24 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource();
-            this.bindingSourceUbicaciones = new System.Windows.Forms.BindingSource();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSourceUbicaciones = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tb_opciones)).BeginInit();
             this.tb_opciones.SuspendLayout();
             this.tabSacos.SuspendLayout();
@@ -181,6 +182,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigoMP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdBoleta.Properties)).BeginInit();
             this.TabGranel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPesotransferenciaGranel.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtingresoGranel.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chnuevoIngreso.Properties)).BeginInit();
@@ -198,7 +200,6 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridLookUpEditUbicaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtVencimientoGranel.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtVencimientoGranel.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtProduccionGranel.Properties.CalendarTimeProperties)).BeginInit();
@@ -745,6 +746,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             // txtIdBoleta
             // 
             this.txtIdBoleta.EditValue = "";
+            this.txtIdBoleta.Enabled = false;
             this.txtIdBoleta.Location = new System.Drawing.Point(175, 89);
             this.txtIdBoleta.Name = "txtIdBoleta";
             this.txtIdBoleta.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -785,6 +787,25 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.TabGranel.Name = "TabGranel";
             this.TabGranel.Size = new System.Drawing.Size(1323, 627);
             this.TabGranel.Text = "Ingreso en granel";
+            // 
+            // buttonEdit1
+            // 
+            this.buttonEdit1.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.True;
+            this.buttonEdit1.EditValue = "";
+            this.buttonEdit1.Enabled = false;
+            this.buttonEdit1.Location = new System.Drawing.Point(574, 249);
+            this.buttonEdit1.Name = "buttonEdit1";
+            this.buttonEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.buttonEdit1.Properties.Appearance.Options.UseFont = true;
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            this.buttonEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.buttonEdit1.Properties.MaxLength = 20;
+            this.buttonEdit1.Properties.NullText = "Escanee o selecciona una tarima";
+            this.buttonEdit1.Size = new System.Drawing.Size(102, 32);
+            this.buttonEdit1.TabIndex = 117;
+            this.buttonEdit1.ToolTip = "Hola";
+            this.buttonEdit1.Visible = false;
             // 
             // txtPesotransferenciaGranel
             // 
@@ -1324,25 +1345,6 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Width = 79;
             // 
-            // buttonEdit1
-            // 
-            this.buttonEdit1.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.True;
-            this.buttonEdit1.EditValue = "";
-            this.buttonEdit1.Enabled = false;
-            this.buttonEdit1.Location = new System.Drawing.Point(574, 249);
-            this.buttonEdit1.Name = "buttonEdit1";
-            this.buttonEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.buttonEdit1.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
-            this.buttonEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.buttonEdit1.Properties.MaxLength = 20;
-            this.buttonEdit1.Properties.NullText = "Escanee o selecciona una tarima";
-            this.buttonEdit1.Size = new System.Drawing.Size(102, 32);
-            this.buttonEdit1.TabIndex = 117;
-            this.buttonEdit1.ToolTip = "Hola";
-            this.buttonEdit1.Visible = false;
-            // 
             // simpleButton4
             // 
             this.simpleButton4.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1535,6 +1537,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             ((System.ComponentModel.ISupportInitialize)(this.txtIdBoleta.Properties)).EndInit();
             this.TabGranel.ResumeLayout(false);
             this.TabGranel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPesotransferenciaGranel.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtingresoGranel.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chnuevoIngreso.Properties)).EndInit();
@@ -1552,7 +1555,6 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridLookUpEditUbicaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtVencimientoGranel.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtVencimientoGranel.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtProduccionGranel.Properties.CalendarTimeProperties)).EndInit();
