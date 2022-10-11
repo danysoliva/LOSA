@@ -944,6 +944,7 @@
     <Compile Include="Clases\SelectorFor.cs" />
     <Compile Include="Clases\Tanque.cs" />
     <Compile Include="Clases\Tarima.cs" />
+    <Compile Include="Clases\TarimaMicroingrediente.cs" />
     <Compile Include="Clases\Teclado.cs" />
     <Compile Include="Clases\Ubicaciones.cs" />
     <Compile Include="Clases\Ubicacion_Tarima.cs" />
