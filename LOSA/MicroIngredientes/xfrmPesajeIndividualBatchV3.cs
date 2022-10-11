@@ -1,5 +1,6 @@
 ﻿using ACS.Classes;
 using DevExpress.XtraEditors;
+using LOSA.Clases;
 using LOSA.MicroIngredientes.Models;
 using System;
 using System.Collections.Generic;
@@ -112,6 +113,25 @@ namespace LOSA.MicroIngredientes
         private void lblValorBascula1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtCodBarra_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                Tarima tarima = new Tarima();
+
+                if (!string.IsNullOrEmpty( txtCodBarra.Text))
+                {
+                    tarima.RecuperarTarimaPorCodBarra(txtCodBarra.Text);
+                    lblMP.Text = tarima.MateriaPrima;
+                    lblLote.Text = tarima.LoteMP;
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
