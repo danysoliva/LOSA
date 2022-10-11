@@ -15,6 +15,7 @@ namespace LOSA.Clases
         int _id;
         int _id_materiaprima;
         decimal _cantidad;
+        decimal _cantidadKg;
         decimal _peso;
         string _idProveedor;
         DateTime _FechaIngreso;
@@ -34,13 +35,14 @@ namespace LOSA.Clases
         String _MateriaPrimaName;
         string Itemcode;
         string _MateriaPrima;
+        int _idTarimaOrigen;
 
 
 
         public int Id { get => _id; set => _id = value; }
         public int Id_materiaprima { get => _id_materiaprima; set => _id_materiaprima = value; }
         public bool Recuperado { get => _Recuperad; set => _Recuperad = value; }
-        public string IdProveedor { get => _idProveedor; set => _idProveedor = value; }
+        public string CardCode { get => _idProveedor; set => _idProveedor = value; }
         public DateTime FechaIngreso { get => _FechaIngreso; set => _FechaIngreso = value; }
         public int NumeroTransaccion { get => _numeroTransaccion; set => _numeroTransaccion = value; }
         public DateTime FechaProduccionMP { get => _fechaProduccion; set => _fechaProduccion = value; }
@@ -50,13 +52,14 @@ namespace LOSA.Clases
         public int IdBoleta { get => _idBoleta; set => _idBoleta = value; }
         public string CodigoBarra { get => _CodigoBarra; set => _CodigoBarra = value; }
         public decimal Cantidad { get => _cantidad; set => _cantidad = value; }
+        public decimal CantidadKg { get => _cantidadKg; set => _cantidadKg = value; }
         public int Id_ingreso { get => _id_ingreso; set => _id_ingreso = value; }
         public string Proveedor { get => _Proveedor; set => _Proveedor = value; }
         public string LoteMP { get => _LoteMP; set => _LoteMP = value; }
         public string NombreTarima { get => _MateriaPrimaName; set => _MateriaPrimaName = value; }
         public string ItemCode { get => Itemcode; set => Itemcode = value; }
         public string MateriaPrima { get => _MateriaPrima; set => _MateriaPrima = value; }
-
+        public int IdTarimaOrigen { get => _idTarimaOrigen; set => _idTarimaOrigen = value; }
 
         public TarimaMicroingrediente()
         {
@@ -71,35 +74,73 @@ namespace LOSA.Clases
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_row_tarima_micros_from_id", con);
+                SqlCommand cmd = new SqlCommand("sp_get_row_tarima_micros_from_id_v2", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id", pIdTarima);
-                //cmd.Parameters.AddWithValue("@codigo_barra", pCodigoBarra);
+                cmd.Parameters.AddWithValue("@barcode", pCodigoBarra);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
                     Id = dr.GetInt32(0);
                     Id_materiaprima = dr.GetInt32(1);
-                    IdProveedor = dr.GetString(2);
+                    if (!dr.IsDBNull(dr.GetOrdinal("CardCode")))
+                        CardCode = dr.GetString(2);
+                    else
+                        CardCode = null;
+
                     FechaIngreso = dr.GetDateTime(3);
-                    NumeroTransaccion = dr.GetInt32(4);
+
+                    if (!dr.IsDBNull(dr.GetOrdinal("numero_transaccion")))
+                        NumeroTransaccion = dr.GetInt32(4);
+                    else
+                        NumeroTransaccion = 0;
+
                     FechaVencimiento = dr.GetDateTime(5);
                     _fechaProduccion = dr.GetDateTime(6);
-                    _LoteMP = dr.GetString(7);
+
+                    if (!dr.IsDBNull(dr.GetOrdinal("lote_materia_prima")))
+                        _LoteMP = dr.GetString(7);
+                    else
+                        _LoteMP = null;
+
                     Enable = dr.GetBoolean(8);
-                    IdPresentacion = dr.GetInt32(9);
-                    _idUsuario = dr.GetInt32(10);
-                    _tipotarimaid = dr.GetInt32(11);
-                    IdBoleta = dr.GetInt32(12);
-                    CodigoBarra = dr.GetString(13);
-                    Cantidad = dr.GetDecimal(14);//ó unidades
-                    Id_ingreso = dr.GetInt32(15);
+
+                    if (!dr.IsDBNull(dr.GetOrdinal("id_presentacion")))
+                        IdPresentacion = dr.GetInt32(9);
+                    else
+                        IdPresentacion = 0;
+
+                    if (!dr.IsDBNull(dr.GetOrdinal("id_usuario")))
+                        _idUsuario = dr.GetInt32(10);
+                    else
+                        _idUsuario = 0;
+
+                    if (!dr.IsDBNull(dr.GetOrdinal("codigo_barra")))
+                        CodigoBarra = dr.GetString(11);
+                    else
+                        CodigoBarra = null;
+
+                    Cantidad = dr.GetDecimal(12);//ó unidades
+                    CantidadKg = dr.GetDecimal(13);
+
+                    if (!dr.IsDBNull(dr.GetOrdinal("id_tarima_origen")))
+                        IdTarimaOrigen = dr.GetInt32(14);
+                    else
+                        IdTarimaOrigen = 0;
+
+                    if (!dr.IsDBNull(dr.GetOrdinal("itemcode")))
+                        ItemCode = dr.GetString(15);
+                    else
+                        ItemCode = null;
+
+                    Recuperado = true;
                 }
                 dr.Close();
                 con.Close();
             }
             catch (Exception ec)
             {
+                Recuperado = false;
                 CajaDialogo.Error(ec.Message);
             }
             return Recuperado;
