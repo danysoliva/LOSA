@@ -417,5 +417,15 @@ namespace LOSA.Logistica
         {
 
         }
+
+        private void btn_Export_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Import_Excel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

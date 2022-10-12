@@ -32,6 +32,7 @@ namespace LOSA.RecuentoInventario
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDetalleRecuento));
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.cmdSelecLote = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtComentario = new System.Windows.Forms.TextBox();
             this.grd_meses_disponibles = new DevExpress.XtraEditors.GridLookUpEdit();
@@ -63,7 +64,9 @@ namespace LOSA.RecuentoInventario
             this.coldiferencia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSeleccionado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.count_id = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cmdSelecLote = new DevExpress.XtraEditors.SimpleButton();
+            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
+            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_meses_disponibles.Properties)).BeginInit();
@@ -80,6 +83,8 @@ namespace LOSA.RecuentoInventario
             ((System.ComponentModel.ISupportInitialize)(this.grd_bodega)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bodegasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
+            this.xtraTabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControl2
@@ -99,6 +104,22 @@ namespace LOSA.RecuentoInventario
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(1270, 668);
             this.panelControl2.TabIndex = 2;
+            // 
+            // cmdSelecLote
+            // 
+            this.cmdSelecLote.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdSelecLote.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdSelecLote.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.cmdSelecLote.Appearance.Options.UseFont = true;
+            this.cmdSelecLote.Appearance.Options.UseForeColor = true;
+            this.cmdSelecLote.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdSelecLote.ImageOptions.Image")));
+            this.cmdSelecLote.Location = new System.Drawing.Point(782, 9);
+            this.cmdSelecLote.Name = "cmdSelecLote";
+            this.cmdSelecLote.Size = new System.Drawing.Size(183, 50);
+            this.cmdSelecLote.TabIndex = 15;
+            this.cmdSelecLote.Text = "Seleccionar Lotes";
+            this.cmdSelecLote.Visible = false;
+            this.cmdSelecLote.Click += new System.EventHandler(this.cmdSelecLote_Click);
             // 
             // labelControl1
             // 
@@ -272,11 +293,11 @@ namespace LOSA.RecuentoInventario
             this.btnConfirmar.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmar.Appearance.Options.UseFont = true;
             this.btnConfirmar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirmar.ImageOptions.Image")));
-            this.btnConfirmar.Location = new System.Drawing.Point(1010, 9);
+            this.btnConfirmar.Location = new System.Drawing.Point(971, 9);
             this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(111, 50);
+            this.btnConfirmar.Size = new System.Drawing.Size(159, 50);
             this.btnConfirmar.TabIndex = 6;
-            this.btnConfirmar.Text = "Confirmar";
+            this.btnConfirmar.Text = "Guardar Recuento";
             this.btnConfirmar.Visible = false;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
@@ -297,11 +318,11 @@ namespace LOSA.RecuentoInventario
             // 
             this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
+            this.groupControl1.Controls.Add(this.xtraTabControl1);
             this.groupControl1.Controls.Add(this.grd_mps);
-            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupControl1.Location = new System.Drawing.Point(2, 74);
+            this.groupControl1.Location = new System.Drawing.Point(2, 76);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1266, 592);
+            this.groupControl1.Size = new System.Drawing.Size(1098, 590);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Materias Primas a Ajustar";
             // 
@@ -311,12 +332,12 @@ namespace LOSA.RecuentoInventario
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_mps.DataMember = "Recuento_mp";
             this.grd_mps.DataSource = this.dsCierreMes1;
-            this.grd_mps.Location = new System.Drawing.Point(2, 24);
+            this.grd_mps.Location = new System.Drawing.Point(2, 22);
             this.grd_mps.MainView = this.grdv_mps;
             this.grd_mps.Name = "grd_mps";
             this.grd_mps.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.grd_bodega});
-            this.grd_mps.Size = new System.Drawing.Size(1262, 566);
+            this.grd_mps.Size = new System.Drawing.Size(1091, 566);
             this.grd_mps.TabIndex = 0;
             this.grd_mps.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_mps});
@@ -463,20 +484,28 @@ namespace LOSA.RecuentoInventario
             this.count_id.Name = "count_id";
             this.count_id.OptionsColumn.AllowEdit = false;
             // 
-            // cmdSelecLote
+            // xtraTabControl1
             // 
-            this.cmdSelecLote.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmdSelecLote.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdSelecLote.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
-            this.cmdSelecLote.Appearance.Options.UseFont = true;
-            this.cmdSelecLote.Appearance.Options.UseForeColor = true;
-            this.cmdSelecLote.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdVerDetalle.ImageOptions.Image")));
-            this.cmdSelecLote.Location = new System.Drawing.Point(782, 9);
-            this.cmdSelecLote.Name = "cmdSelecLote";
-            this.cmdSelecLote.Size = new System.Drawing.Size(209, 50);
-            this.cmdSelecLote.TabIndex = 15;
-            this.cmdSelecLote.Text = "Seleccionar Lotes";
-            this.cmdSelecLote.Click += new System.EventHandler(this.cmdSelecLote_Click);
+            this.xtraTabControl1.Location = new System.Drawing.Point(284, 141);
+            this.xtraTabControl1.Name = "xtraTabControl1";
+            this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
+            this.xtraTabControl1.Size = new System.Drawing.Size(425, 300);
+            this.xtraTabControl1.TabIndex = 16;
+            this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.xtraTabPage1,
+            this.xtraTabPage2});
+            // 
+            // xtraTabPage1
+            // 
+            this.xtraTabPage1.Name = "xtraTabPage1";
+            this.xtraTabPage1.Size = new System.Drawing.Size(419, 272);
+            this.xtraTabPage1.Text = "xtraTabPage1";
+            // 
+            // xtraTabPage2
+            // 
+            this.xtraTabPage2.Name = "xtraTabPage2";
+            this.xtraTabPage2.Size = new System.Drawing.Size(294, 272);
+            this.xtraTabPage2.Text = "xtraTabPage2";
             // 
             // frmDetalleRecuento
             // 
@@ -502,6 +531,8 @@ namespace LOSA.RecuentoInventario
             ((System.ComponentModel.ISupportInitialize)(this.grd_bodega)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bodegasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
+            this.xtraTabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -541,5 +572,8 @@ namespace LOSA.RecuentoInventario
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.TextBox txtComentario;
         private DevExpress.XtraEditors.SimpleButton cmdSelecLote;
+        private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
     }
 }

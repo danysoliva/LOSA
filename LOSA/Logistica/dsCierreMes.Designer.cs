@@ -781,6 +781,8 @@ namespace LOSA.Logistica {
             
             private global::System.Data.DataColumn columncomentario;
             
+            private global::System.Data.DataColumn columncontabilizacion;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public recuentos_hDataTable() {
@@ -864,6 +866,14 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn contabilizacionColumn {
+                get {
+                    return this.columncontabilizacion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -899,7 +909,7 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public recuentos_hRow Addrecuentos_hRow(int id, System.DateTime date_counted, int mes, int year, string mes_nombre, string comentario) {
+            public recuentos_hRow Addrecuentos_hRow(int id, System.DateTime date_counted, int mes, int year, string mes_nombre, string comentario, bool contabilizacion) {
                 recuentos_hRow rowrecuentos_hRow = ((recuentos_hRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -907,7 +917,8 @@ namespace LOSA.Logistica {
                         mes,
                         year,
                         mes_nombre,
-                        comentario};
+                        comentario,
+                        contabilizacion};
                 rowrecuentos_hRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowrecuentos_hRow);
                 return rowrecuentos_hRow;
@@ -936,6 +947,7 @@ namespace LOSA.Logistica {
                 this.columnyear = base.Columns["year"];
                 this.columnmes_nombre = base.Columns["mes_nombre"];
                 this.columncomentario = base.Columns["comentario"];
+                this.columncontabilizacion = base.Columns["contabilizacion"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -953,6 +965,8 @@ namespace LOSA.Logistica {
                 base.Columns.Add(this.columnmes_nombre);
                 this.columncomentario = new global::System.Data.DataColumn("comentario", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncomentario);
+                this.columncontabilizacion = new global::System.Data.DataColumn("contabilizacion", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncontabilizacion);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5885,6 +5899,22 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool contabilizacion {
+                get {
+                    try {
+                        return ((bool)(this[this.tablerecuentos_h.contabilizacionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'contabilizacion\' de la tabla \'recuentos_h\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablerecuentos_h.contabilizacionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tablerecuentos_h.idColumn);
             }
@@ -5953,6 +5983,18 @@ namespace LOSA.Logistica {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetcomentarioNull() {
                 this[this.tablerecuentos_h.comentarioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IscontabilizacionNull() {
+                return this.IsNull(this.tablerecuentos_h.contabilizacionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetcontabilizacionNull() {
+                this[this.tablerecuentos_h.contabilizacionColumn] = global::System.Convert.DBNull;
             }
         }
         

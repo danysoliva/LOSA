@@ -25,6 +25,13 @@ namespace LOSA.Logistica
             load_data();
         }
 
+        public frmCierreMensual_Detalle(int pid_header, Boolean boolContabilizacion)
+        {
+            InitializeComponent();
+            id_header = pid_header;
+            load_data();
+        }
+
 
         public void load_data()
         {

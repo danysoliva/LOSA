@@ -81,10 +81,24 @@ namespace LOSA.Logistica
 
         private void cmdNuevoRecuento_Click(object sender, EventArgs e)
         {
-            frmRecuentoInventarios frm = new frmRecuentoInventarios(UsuarioLogeado);
-            if (frm.ShowDialog() == DialogResult.OK)
+
+        }
+
+        private void reposbtnContabilizar_Click(object sender, EventArgs e)
+        {
+            var gv = (GridView)grd_data.FocusedView;
+            var row = (dsCierreMes.recuentos_hRow)gv.GetDataRow(gv.FocusedRowHandle);
+
+            if (row.contabilizacion == true)
             {
-                load_data();
+                CajaDialogo.Error("Este Recuento ya fue contabilizado, cree uno nuevo!");
+                return;
+            }
+            else
+            {
+                frmCierreMensual_Detalle frm = new frmCierreMensual_Detalle(row.id, row.contabilizacion);
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
             }
         }
     }

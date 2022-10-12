@@ -55,6 +55,7 @@ namespace LOSA.Logistica
             this.repositoryVerDetalle = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btn_close = new DevExpress.XtraEditors.SimpleButton();
             this.cmdExcel = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdEjecutarContabilizacion = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data_d)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCierreMes1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
@@ -258,18 +259,30 @@ namespace LOSA.Logistica
             this.cmdExcel.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdExcel.Appearance.Options.UseFont = true;
             this.cmdExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdExcel.ImageOptions.Image")));
-            this.cmdExcel.Location = new System.Drawing.Point(4, 2);
+            this.cmdExcel.Location = new System.Drawing.Point(145, 1);
             this.cmdExcel.Name = "cmdExcel";
             this.cmdExcel.Size = new System.Drawing.Size(111, 47);
             this.cmdExcel.TabIndex = 8;
             this.cmdExcel.Text = "Exportar";
             this.cmdExcel.Click += new System.EventHandler(this.cmdExcel_Click);
             // 
+            // cmdEjecutarContabilizacion
+            // 
+            this.cmdEjecutarContabilizacion.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdEjecutarContabilizacion.Appearance.Options.UseFont = true;
+            this.cmdEjecutarContabilizacion.ImageOptions.Image = global::LOSA.Properties.Resources.production;
+            this.cmdEjecutarContabilizacion.Location = new System.Drawing.Point(12, 2);
+            this.cmdEjecutarContabilizacion.Name = "cmdEjecutarContabilizacion";
+            this.cmdEjecutarContabilizacion.Size = new System.Drawing.Size(111, 47);
+            this.cmdEjecutarContabilizacion.TabIndex = 9;
+            this.cmdEjecutarContabilizacion.Text = "Exportar";
+            // 
             // frmCierreMensual_Detalle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1194, 693);
+            this.Controls.Add(this.cmdEjecutarContabilizacion);
             this.Controls.Add(this.cmdExcel);
             this.Controls.Add(this.grd_data_d);
             this.Controls.Add(this.btn_close);
@@ -305,5 +318,6 @@ namespace LOSA.Logistica
         private DevExpress.XtraGrid.Columns.GridColumn coldiferencia_peso;
         private DevExpress.XtraGrid.Columns.GridColumn colexistencia_aprox;
         private DevExpress.XtraGrid.Columns.GridColumn colexistencia_fisica;
+        private DevExpress.XtraEditors.SimpleButton cmdEjecutarContabilizacion;
     }
 }
