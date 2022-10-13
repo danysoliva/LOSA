@@ -75,6 +75,9 @@ namespace LOSA.MicroIngredientes
 
         public decimal peso_bascula_finish = 0;
         decimal pesoBascula1=0, pesoBascula2=0;
+        public int idTarimaOrigen=0;
+        public string lote_tarima_micros;
+
 
         private void btnBascula1_Click(object sender, EventArgs e)
         {
@@ -119,13 +122,22 @@ namespace LOSA.MicroIngredientes
         {
             try
             {
-                Tarima tarima = new Tarima();
+                TarimaMicroingrediente tarima = new TarimaMicroingrediente();
 
                 if (!string.IsNullOrEmpty( txtCodBarra.Text))
                 {
-                    tarima.RecuperarTarimaPorCodBarra(txtCodBarra.Text);
-                    lblMP.Text = tarima.MateriaPrima;
-                    lblLote.Text = tarima.LoteMP;
+                    if (pesajeIndividual.MateriaPrimaID!= tarima.Id_materiaprima)
+                    {
+                        CajaDialogo.Error("La materia prima escaneada no coincide con la que se está pesando");
+                        return;
+                    }
+
+                    idTarimaOrigen = tarima.IdTarimaOrigen;
+                    lote_tarima_micros = tarima.LoteMP;
+
+                    tarima.RecuperarRegistroPorCodBarra(txtCodBarra.Text);
+                    lblMP.Text = "MP: "+tarima.MateriaPrima;
+                    lblLote.Text = "Lote: "+tarima.LoteMP;
                 }
             }
             catch (Exception ex)

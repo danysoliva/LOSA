@@ -20,16 +20,23 @@ namespace LOSA.MicroIngredientes
         //int batchMaximo;
         //int id_orden_pesaje_h;
         int BasculaSelected = 0;
+        int tipoPesaje = 0;
+
+       public enum TipoPesaje
+        {
+            PesajeNucleo=1,
+            PesajeIndividual=2
+        }
+
         PesajeIndividualInfo pesajeIndividual = new PesajeIndividualInfo();
 
-        public xfrmPesajeIndividual(PesajeIndividualInfo ppesajeIndividual)
+        public xfrmPesajeIndividual(PesajeIndividualInfo ppesajeIndividual, int pTipoPesaje)
         {
             InitializeComponent();
-            //batchMaximo = pBatchMaximo;
             pesajeIndividual = ppesajeIndividual;
             seBatch.Properties.MaxValue = ppesajeIndividual.CantBatchMaximo;
             LoadBasculas();
-            //id_orden_pesaje_h = pid_orden_pesaje_h;
+            tipoPesaje = pTipoPesaje;
         }
 
         private void cmdClose_Click(object sender, EventArgs e)
@@ -152,45 +159,160 @@ namespace LOSA.MicroIngredientes
                 //pesajeIndividual.BasculaID = BasculaSelected;
 
                 List<PesajeIndividualCompletados> pesajesCompletados = new List<PesajeIndividualCompletados>();
+                                DataOperations dp = new DataOperations();
 
-               
+                ///******Por Validar**********
 
-                for (int i = 1; i <= Convert.ToInt32(seBatch.EditValue); i++)
-                {
-                    string batch_completados = i + " de " + Convert.ToInt32(seBatch.EditValue);
-                    //xfrmPesajeIndividualBatch frm = new xfrmPesajeIndividualBatch(batch_completados, "Báscula: " + lueBascula.Text, pesajeIndividual);
-                    xfrmPesajeIndividualBatchV3 frm = new xfrmPesajeIndividualBatchV3(batch_completados, "Báscula: " + lueBascula.Text, pesajeIndividual);
-
-                    if (frm.ShowDialog() == DialogResult.OK)
-                    {
-
-                        PesajeIndividualCompletados pesajeIndividualCompletado = new PesajeIndividualCompletados();
-
-                        frmSelectLotePesaje frm2 = new frmSelectLotePesaje(pesajeIndividual.MateriaPrimaID,
-                                                                            frm.peso_bascula_finish,
-                                                                            1,
-                                                                            pesajeIndividual.id_orden_pesaje_header,
-                                                                            frm.fecha);
-                        if (frm2.ShowDialog() == DialogResult.OK)
-                        {
-                            //LoadData();
-                            pesajeIndividualCompletado.OrdenPesaje_H = pesajeIndividual.id_orden_pesaje_header;
-                            pesajeIndividualCompletado.PesoReal = frm.peso_bascula_finish;
-                            pesajeIndividualCompletado.Fecha = frm.fecha;
-                            
-                            pesajesCompletados.Add(pesajeIndividualCompletado);
+                //switch (tipoPesaje)
+                //{
+                //    case (int)TipoPesaje.PesajeNucleo:
 
 
-                        }
-                        
+                //        for (int i = 1; i <= pesajeIndividual.CantBatch; i++)
+                //        {
+                //            string batch_completados2 = i + " de " + pesajeIndividual.CantBatch;
+                //            xfrmPesajeIndividualBatchV3 frm2 = new xfrmPesajeIndividualBatchV3(batch_completados2, "Báscula: " + lueBascula.Text, pesajeIndividual);
 
 
-                    }
-                    else
-                        return;
+                //            if (frm2.ShowDialog() == DialogResult.OK)
+                //            {
+                //                using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
+                //                {
+                //                    cnx.Open();
 
-                }
+                //                    SqlCommand cmd = new SqlCommand("sp_insert_OP_Orden_pesaje_manual_transaccion", cnx);
+                //                    cmd.CommandType = CommandType.StoredProcedure;
 
+
+                //                    cmd.Parameters.Add("@id_orden_encabezado", SqlDbType.Int).Value = pesajeIndividual.id_orden_pesaje_header;
+                //                    cmd.Parameters.Add("@batch_plan", SqlDbType.Int).Value = pesajeIndividual.Batch_Plan;
+                //                    cmd.Parameters.Add("@date", SqlDbType.DateTime).Value = DateTime.Now;
+                //                    cmd.Parameters.Add("@batch_real", SqlDbType.Decimal).Value = frm2.peso_bascula_finish;
+                //                    cmd.Parameters.Add("@id_rm", SqlDbType.Int).Value = pesajeIndividual.MateriaPrimaID;// IdMP;
+                //                    cmd.Parameters.Add("@bascula", SqlDbType.VarChar).Value = "B1";
+                //                    cmd.Parameters.Add("@id_tipo_pesaje", SqlDbType.Int).Value = 1;
+                //                    cmd.Parameters.Add("@lote", SqlDbType.VarChar).Value = frm2.lote_tarima_micros; //??
+                //                    cmd.Parameters.Add("@id_tarima", SqlDbType.VarChar).Value = frm2.idTarimaOrigen;//??
+                //                    cmd.Parameters.Add("@cant_batch", SqlDbType.Int).Value = pesajeIndividual.CantBatch;
+                //                    //cmd.Parameters.Add("@id_pesaje_manual_plan", SqlDbType.Int).Value = id_d;//??
+                //                    cmd.Parameters.Add("@id_pesaje_manual_plan", SqlDbType.Int).Value = DBNull.Value;//??
+                //                    cmd.Parameters.Add("@cant_sacos", SqlDbType.Decimal).Value = pesajeIndividual.CantBatch;//??
+                //                    cmd.Parameters.Add("@ami_id", SqlDbType.Int).Value = pesajeIndividual.AMI_ID;
+
+                //                    cmd.ExecuteNonQuery();
+
+                //                    cnx.Close();
+                //                }
+                //            }
+
+                //        }
+
+                //        break;
+
+
+                //    case (int)TipoPesaje.PesajeIndividual:
+                //        for (int i = 1; i <= Convert.ToInt32(seBatch.EditValue); i++)
+                //        {
+                //            string batch_completados = i + " de " + Convert.ToInt32(seBatch.EditValue);
+                //            //xfrmPesajeIndividualBatch frm = new xfrmPesajeIndividualBatch(batch_completados, "Báscula: " + lueBascula.Text, pesajeIndividual);
+                //            xfrmPesajeIndividualBatchV3 frm = new xfrmPesajeIndividualBatchV3(batch_completados, "Báscula: " + lueBascula.Text, pesajeIndividual);
+
+                //            if (frm.ShowDialog() == DialogResult.OK)
+                //            {
+
+                //                PesajeIndividualCompletados pesajeIndividualCompletado = new PesajeIndividualCompletados();
+
+                //                //frmSelectLotePesaje frm2 = new frmSelectLotePesaje(pesajeIndividual.MateriaPrimaID,
+                //                //                                                    frm.peso_bascula_finish,
+                //                //                                                    1,
+                //                //                                                    pesajeIndividual.id_orden_pesaje_header,
+                //                //                                                    frm.fecha);
+
+                //                //if (frm2.ShowDialog() == DialogResult.OK)
+                //                //{
+                //                //    //LoadData();
+                //                pesajeIndividualCompletado.OrdenPesaje_H = pesajeIndividual.id_orden_pesaje_header;
+                //                pesajeIndividualCompletado.PesoReal = frm.peso_bascula_finish;
+                //                pesajeIndividualCompletado.Fecha = frm.fecha;
+                //                pesajesCompletados.Add(pesajeIndividualCompletado);
+
+
+
+                //                ///******Por Validar**********
+                //                //DataOperations dp = new DataOperations();
+                //                //SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS);
+                //                //cnx.Open();
+
+                //                ////transaction = cnx.BeginTransaction("SampleTransaction");
+
+
+
+
+                //                //SqlCommand cmd = new SqlCommand("sp_insert_OP_Orden_pesaje_manual_batch_log", cnx);
+                //                //cmd.CommandType = CommandType.StoredProcedure;
+                //                //cmd.Transaction = transaction;
+
+
+                //                //cmd.Parameters.Add("@fecha", SqlDbType.DateTime).Value = Fecha;
+                //                //cmd.Parameters.Add("@id_orden_pesaje_h", SqlDbType.Int).Value = Orden_h;
+                //                //cmd.Parameters.Add("@id_code", SqlDbType.Int).Value = DBNull.Value;
+
+                //                //cmd.ExecuteNonQuery();
+
+                //                //foreach (dsMicro.lotes_seleccionRow row in dsMicro.lotes_seleccion.Rows)
+                //                //{
+
+                //                //    if (row.seleccion)
+                //                //    {
+                //                //        SqlCommand cmd3 = new SqlCommand("sp_insert_OP_Orden_pesaje_manual_transaccion", cnx);
+                //                //        cmd3.CommandType = CommandType.StoredProcedure;
+                //                //        cmd3.Transaction = transaction;
+
+                //                //        cmd3.Parameters.Add("@id_orden_encabezado", SqlDbType.Int).Value = Orden_h;
+                //                //        cmd3.Parameters.Add("@batch_plan", SqlDbType.Int).Value = total;
+                //                //        cmd3.Parameters.Add("@date", SqlDbType.DateTime).Value = Fecha;
+                //                //        cmd3.Parameters.Add("@batch_real", SqlDbType.Decimal).Value = row.cant_seleccionada;
+                //                //        cmd3.Parameters.Add("@id_rm", SqlDbType.Int).Value = IdMP;// IdMP;
+                //                //        cmd3.Parameters.Add("@bascula", SqlDbType.VarChar).Value = "B1";
+                //                //        cmd3.Parameters.Add("@id_tipo_pesaje", SqlDbType.Int).Value = 2;
+                //                //        cmd3.Parameters.Add("@lote", SqlDbType.VarChar).Value = row.lote_materia_prima;//Dejar este parametro con espacios
+                //                //        cmd3.Parameters.Add("@id_tarima", SqlDbType.VarChar).Value = row.id_tarima;
+                //                //        cmd3.Parameters.Add("@cant_batch", SqlDbType.Int).Value = 1;
+                //                //        cmd3.Parameters.Add("@cant_sacos", SqlDbType.Int).Value = row.unidades_seleccionadas;
+                //                //        cmd3.Parameters.Add("@ami_id", SqlDbType.Int).Value = DBNull.Value;
+                //                //        cmd3.Parameters.Add("@id_pesaje_manual_plan", SqlDbType.Int).Value = DBNull.Value;
+
+                //                //        cmd3.ExecuteNonQuery();
+                //                //    }
+
+
+                //                //}
+
+
+
+                //                //transaction.Commit();
+                //                cnx.Close();
+
+
+
+
+                //            }
+                //            else
+                //                return;
+
+                //        }
+
+                //        break;
+                //}
+
+
+
+
+
+
+
+
+                //OLD*************
                 //DataOperations dp = new DataOperations();
                 //SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS);
                 //cnx.Open();
@@ -316,7 +438,15 @@ namespace LOSA.MicroIngredientes
 
         private void xfrmPesajeIndividual_Load(object sender, EventArgs e)
         {
-           
+            if (tipoPesaje==(int)TipoPesaje.PesajeNucleo)
+            {
+                labelControl1.Visible = false;
+                cmdUp.Visible = false;
+                cmdDown.Visible = false;
+                seBatch.Visible = false;
+                simpleButton1.Visible = false;
+                cmdSum10.Visible = false;
+            }
         }
 
         private void Bascula1_Click(object sender, EventArgs e)
