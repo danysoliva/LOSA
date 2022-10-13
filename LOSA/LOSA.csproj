@@ -1598,6 +1598,9 @@
     <Compile Include="MicroIngredientes\xfrmSpinBatchPlan.Designer.cs">
       <DependentUpon>xfrmSpinBatchPlan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Micro\dsMicro.cs">
+      <DependentUpon>dsMicro.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Micro\dsMicro.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

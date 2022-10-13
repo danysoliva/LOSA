@@ -180,11 +180,6 @@ namespace LOSA.MicroIngredientes
             this.Close();
         }
 
-        private void gvDetalle_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
-        {
-            
-        }
-
         int ami_id=0;
         private void gvDetalle_RowClick(object sender, RowClickEventArgs e)
         {
@@ -481,7 +476,7 @@ namespace LOSA.MicroIngredientes
             try
             {
 
-                //var gv = (GridView)gvDetalle.FocusedView;
+                //var gv = (GridView)gvDetalle.FocusedView;plan_microsh
                 var row = (dsMicros.plan_microshRow)gvDetalle.GetFocusedDataRow();
 
                 //if (row._Cod__Estado != 70)

@@ -10,7 +10,7 @@ namespace LOSA.MicroIngredientes.Reportes
 {
     public partial class rptReporteIngresoTarimaMicros : DevExpress.XtraReports.UI.XtraReport
     {
-        public rptReporteIngresoTarimaMicros(int idTarima)
+        public rptReporteIngresoTarimaMicros(Int64 idTarima)
         {
             InitializeComponent();
             DataOperations dp = new DataOperations();
@@ -23,10 +23,13 @@ namespace LOSA.MicroIngredientes.Reportes
                 lblCantidad.Text = string.Format("{0:0.00}", tar1.Cantidad);
                 //NombreTarima = dr.GetString(2);
                 //TipoTarimaDescripcion = dr.GetString(3);
-                lblProveedor.Text = tar1.Proveedor;
+                lblProveedor.Text = tar1.CardCode;
                 lblLote.Text = tar1.LoteMP;
                 lblCantidad.Text = tar1.Cantidad.ToString();
-                lblNombreProducto.Text = tar1.MateriaPrima;
+                MateriaPrima mp = new MateriaPrima();
+                if (mp.RecuperarRegistroFromID_RM(tar1.Id_materiaprima))
+                    lblNombreProducto.Text = mp.NameComercial;
+                
                 lblFechaIngreso.Text = string.Format("{0:dd/MM/yyyy}", tar1.FechaIngreso);
                 lblNumeroIngreso.Text = tar1.NumeroTransaccion.ToString();
                 lblFechaProduccion.Text = string.Format("{0:dd/MM/yyyy}", tar1.FechaProduccionMP);

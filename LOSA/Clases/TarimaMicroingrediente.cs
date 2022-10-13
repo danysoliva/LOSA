@@ -12,7 +12,7 @@ namespace LOSA.Clases
    public class TarimaMicroingrediente
     {
 
-        int _id;
+        Int64 _id;
         int _id_materiaprima;
         decimal _cantidad;
         decimal _cantidadKg;
@@ -39,7 +39,7 @@ namespace LOSA.Clases
 
 
 
-        public int Id { get => _id; set => _id = value; }
+        public Int64 Id { get => _id; set => _id = value; }
         public int Id_materiaprima { get => _id_materiaprima; set => _id_materiaprima = value; }
         public bool Recuperado { get => _Recuperad; set => _Recuperad = value; }
         public string CardCode { get => _idProveedor; set => _idProveedor = value; }
@@ -66,7 +66,7 @@ namespace LOSA.Clases
 
         }
 
-        public bool RecuperarRegistroTarimaMicros(int pIdTarima, string pCodigoBarra)
+        public bool RecuperarRegistroTarimaMicros(Int64 pIdTarima, string pCodigoBarra)
         {
             try
             {
@@ -81,7 +81,7 @@ namespace LOSA.Clases
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    Id = dr.GetInt32(0);
+                    Id = dr.GetInt64(0);
                     Id_materiaprima = dr.GetInt32(1);
                     if (!dr.IsDBNull(dr.GetOrdinal("CardCode")))
                         CardCode = dr.GetString(2);

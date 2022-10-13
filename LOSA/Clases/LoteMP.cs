@@ -22,7 +22,38 @@ namespace LOSA.Clases
         public ArrayList MateriaPrimasList;
         public string NombreMPSingle;
         public string NombreComercialSingle;
+        public int IdPresentacion;
         public int IdMPSingle;
+
+
+        public bool RecuperarRegistro(int pIdLoteALOSY)
+        {
+            Recuperado = false;
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_datos_lote_from_id_lote_ALOSY_clase", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_lote_ALOSY", pIdLoteALOSY);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    IdPresentacion = dr.GetInt32(0);
+                    if (IdPresentacion > 0)
+                        Recuperado = true;
+                }
+                dr.Close();
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+            return Recuperado;
+        }
 
         public bool     RecuperarRegistro(string pLotemp)
         {
