@@ -317,6 +317,8 @@ namespace LOSA.Clases
                     Id_turno = dr.GetInt32(25);
                     id_estado_pt = dr.GetInt32(26);
                     ProductoTerminadoName = dr.GetString(27);
+                    if (!dr.IsDBNull(dr.GetOrdinal("id_presentacion")))
+                        IdPresentacion = dr.GetInt32(28);
 
                     Recuperado = true;
                 }
