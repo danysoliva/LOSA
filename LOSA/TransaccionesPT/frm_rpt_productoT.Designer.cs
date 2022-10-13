@@ -40,8 +40,7 @@ namespace LOSA.TransaccionesPT
             this.btnactualizar = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
-            this.rptingresoPTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsPT = new LOSA.TransaccionesPT.dsPT();
+            this.dsPT1 = new LOSA.TransaccionesPT.dsPT();
             this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcodigo_barra = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -54,14 +53,17 @@ namespace LOSA.TransaccionesPT
             this.colturno = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfecha_vencimiento = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcodigo_unite = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rptingresoPTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.colDescripcion_Tecnica = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaHasta.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaHasta.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesde.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesde.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rptingresoPTBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsPT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsPT1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rptingresoPTBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -187,7 +189,8 @@ namespace LOSA.TransaccionesPT
             this.grd_data.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grd_data.DataSource = this.rptingresoPTBindingSource;
+            this.grd_data.DataMember = "rpt_ingresoPT";
+            this.grd_data.DataSource = this.dsPT1;
             this.grd_data.Location = new System.Drawing.Point(3, 172);
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
@@ -196,15 +199,10 @@ namespace LOSA.TransaccionesPT
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
             // 
-            // rptingresoPTBindingSource
+            // dsPT1
             // 
-            this.rptingresoPTBindingSource.DataMember = "rpt_ingresoPT";
-            this.rptingresoPTBindingSource.DataSource = this.dsPT;
-            // 
-            // dsPT
-            // 
-            this.dsPT.DataSetName = "dsPT";
-            this.dsPT.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dsPT1.DataSetName = "dsPT";
+            this.dsPT1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // grdv_data
             // 
@@ -239,7 +237,9 @@ namespace LOSA.TransaccionesPT
             this.collote,
             this.colturno,
             this.gridColumn1,
-            this.colfecha_vencimiento});
+            this.colfecha_vencimiento,
+            this.colcodigo_unite,
+            this.colDescripcion_Tecnica});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
@@ -258,6 +258,7 @@ namespace LOSA.TransaccionesPT
             this.colcodigo_barra.OptionsColumn.AllowEdit = false;
             this.colcodigo_barra.Visible = true;
             this.colcodigo_barra.VisibleIndex = 0;
+            this.colcodigo_barra.Width = 56;
             // 
             // colitemcode
             // 
@@ -267,6 +268,7 @@ namespace LOSA.TransaccionesPT
             this.colitemcode.OptionsColumn.AllowEdit = false;
             this.colitemcode.Visible = true;
             this.colitemcode.VisibleIndex = 1;
+            this.colitemcode.Width = 56;
             // 
             // colproducto
             // 
@@ -275,7 +277,8 @@ namespace LOSA.TransaccionesPT
             this.colproducto.Name = "colproducto";
             this.colproducto.OptionsColumn.AllowEdit = false;
             this.colproducto.Visible = true;
-            this.colproducto.VisibleIndex = 2;
+            this.colproducto.VisibleIndex = 3;
+            this.colproducto.Width = 53;
             // 
             // colcantidad
             // 
@@ -284,7 +287,8 @@ namespace LOSA.TransaccionesPT
             this.colcantidad.Name = "colcantidad";
             this.colcantidad.OptionsColumn.AllowEdit = false;
             this.colcantidad.Visible = true;
-            this.colcantidad.VisibleIndex = 6;
+            this.colcantidad.VisibleIndex = 7;
+            this.colcantidad.Width = 53;
             // 
             // colestado
             // 
@@ -293,7 +297,8 @@ namespace LOSA.TransaccionesPT
             this.colestado.Name = "colestado";
             this.colestado.OptionsColumn.AllowEdit = false;
             this.colestado.Visible = true;
-            this.colestado.VisibleIndex = 9;
+            this.colestado.VisibleIndex = 10;
+            this.colestado.Width = 58;
             // 
             // colpeso
             // 
@@ -302,7 +307,8 @@ namespace LOSA.TransaccionesPT
             this.colpeso.Name = "colpeso";
             this.colpeso.OptionsColumn.AllowEdit = false;
             this.colpeso.Visible = true;
-            this.colpeso.VisibleIndex = 7;
+            this.colpeso.VisibleIndex = 8;
+            this.colpeso.Width = 53;
             // 
             // collote
             // 
@@ -311,7 +317,8 @@ namespace LOSA.TransaccionesPT
             this.collote.Name = "collote";
             this.collote.OptionsColumn.AllowEdit = false;
             this.collote.Visible = true;
-            this.collote.VisibleIndex = 5;
+            this.collote.VisibleIndex = 6;
+            this.collote.Width = 53;
             // 
             // colturno
             // 
@@ -320,7 +327,8 @@ namespace LOSA.TransaccionesPT
             this.colturno.Name = "colturno";
             this.colturno.OptionsColumn.AllowEdit = false;
             this.colturno.Visible = true;
-            this.colturno.VisibleIndex = 8;
+            this.colturno.VisibleIndex = 9;
+            this.colturno.Width = 53;
             // 
             // gridColumn1
             // 
@@ -329,7 +337,8 @@ namespace LOSA.TransaccionesPT
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 3;
+            this.gridColumn1.VisibleIndex = 4;
+            this.gridColumn1.Width = 53;
             // 
             // colfecha_vencimiento
             // 
@@ -338,7 +347,29 @@ namespace LOSA.TransaccionesPT
             this.colfecha_vencimiento.Name = "colfecha_vencimiento";
             this.colfecha_vencimiento.OptionsColumn.AllowEdit = false;
             this.colfecha_vencimiento.Visible = true;
-            this.colfecha_vencimiento.VisibleIndex = 4;
+            this.colfecha_vencimiento.VisibleIndex = 5;
+            this.colfecha_vencimiento.Width = 53;
+            // 
+            // colcodigo_unite
+            // 
+            this.colcodigo_unite.Caption = "Codigo Unite";
+            this.colcodigo_unite.FieldName = "codigo_unite";
+            this.colcodigo_unite.Name = "colcodigo_unite";
+            this.colcodigo_unite.OptionsColumn.AllowEdit = false;
+            this.colcodigo_unite.Visible = true;
+            this.colcodigo_unite.VisibleIndex = 2;
+            this.colcodigo_unite.Width = 76;
+            // 
+            // rptingresoPTBindingSource
+            // 
+            this.rptingresoPTBindingSource.DataMember = "rpt_ingresoPT";
+            // 
+            // colDescripcion_Tecnica
+            // 
+            this.colDescripcion_Tecnica.Caption = "Descripcion Tecnica";
+            this.colDescripcion_Tecnica.FieldName = "Descripcion_Tecnica";
+            this.colDescripcion_Tecnica.Name = "colDescripcion_Tecnica";
+            this.colDescripcion_Tecnica.OptionsColumn.AllowEdit = false;
             // 
             // frm_rpt_productoT
             // 
@@ -363,9 +394,9 @@ namespace LOSA.TransaccionesPT
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesde.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesde.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rptingresoPTBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsPT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsPT1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rptingresoPTBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -384,7 +415,6 @@ namespace LOSA.TransaccionesPT
         private DevExpress.XtraGrid.GridControl grd_data;
         private DevExpress.XtraGrid.Views.Grid.GridView grdv_data;
         private System.Windows.Forms.BindingSource rptingresoPTBindingSource;
-        private dsPT dsPT;
         private DevExpress.XtraGrid.Columns.GridColumn colid;
         private DevExpress.XtraGrid.Columns.GridColumn colcodigo_barra;
         private DevExpress.XtraGrid.Columns.GridColumn colitemcode;
@@ -396,5 +426,8 @@ namespace LOSA.TransaccionesPT
         private DevExpress.XtraGrid.Columns.GridColumn colturno;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn colfecha_vencimiento;
+        private dsPT dsPT1;
+        private DevExpress.XtraGrid.Columns.GridColumn colcodigo_unite;
+        private DevExpress.XtraGrid.Columns.GridColumn colDescripcion_Tecnica;
     }
 }
