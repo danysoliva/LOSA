@@ -29,17 +29,18 @@ namespace LOSA.MicroIngredientes
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmPesajeIndividualBatchV3));
             this.lblBascula1 = new DevExpress.XtraEditors.LabelControl();
             this.lblValorBascula1 = new DevExpress.XtraEditors.LabelControl();
             this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.lblCompletados = new DevExpress.XtraEditors.LabelControl();
-            this.timer1 = new System.Windows.Forms.Timer();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblError = new DevExpress.XtraEditors.LabelControl();
             this.lblSuperior = new DevExpress.XtraEditors.LabelControl();
             this.lblInferior = new DevExpress.XtraEditors.LabelControl();
             this.lblRequerido = new DevExpress.XtraEditors.LabelControl();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dsMicros = new LOSA.MicroIngredientes.dsMicros();
             this.lblValorBascula2 = new DevExpress.XtraEditors.LabelControl();
             this.lblBascula2 = new DevExpress.XtraEditors.LabelControl();
@@ -50,9 +51,13 @@ namespace LOSA.MicroIngredientes
             this.lblLote = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.cmdClose = new DevExpress.XtraEditors.SimpleButton();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMicros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodBarra.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblBascula1
@@ -90,7 +95,7 @@ namespace LOSA.MicroIngredientes
             this.btnGuardar.Enabled = false;
             this.btnGuardar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btnGuardar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnGuardar.ImageOptions.SvgImage")));
-            this.btnGuardar.Location = new System.Drawing.Point(549, 420);
+            this.btnGuardar.Location = new System.Drawing.Point(549, 522);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(97, 63);
             this.btnGuardar.TabIndex = 22;
@@ -105,7 +110,7 @@ namespace LOSA.MicroIngredientes
             this.lblCompletados.Appearance.Options.UseTextOptions = true;
             this.lblCompletados.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblCompletados.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblCompletados.Location = new System.Drawing.Point(-1, 481);
+            this.lblCompletados.Location = new System.Drawing.Point(-1, 583);
             this.lblCompletados.Name = "lblCompletados";
             this.lblCompletados.Size = new System.Drawing.Size(671, 23);
             this.lblCompletados.TabIndex = 24;
@@ -127,7 +132,7 @@ namespace LOSA.MicroIngredientes
             this.lblError.Appearance.Options.UseTextOptions = true;
             this.lblError.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblError.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblError.Location = new System.Drawing.Point(-1, 369);
+            this.lblError.Location = new System.Drawing.Point(-1, 471);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(671, 26);
             this.lblError.TabIndex = 25;
@@ -145,7 +150,7 @@ namespace LOSA.MicroIngredientes
             this.lblSuperior.Appearance.Options.UseTextOptions = true;
             this.lblSuperior.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblSuperior.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblSuperior.Location = new System.Drawing.Point(-1, 397);
+            this.lblSuperior.Location = new System.Drawing.Point(-1, 499);
             this.lblSuperior.Name = "lblSuperior";
             this.lblSuperior.Size = new System.Drawing.Size(671, 29);
             this.lblSuperior.TabIndex = 26;
@@ -163,7 +168,7 @@ namespace LOSA.MicroIngredientes
             this.lblInferior.Appearance.Options.UseTextOptions = true;
             this.lblInferior.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblInferior.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblInferior.Location = new System.Drawing.Point(-1, 426);
+            this.lblInferior.Location = new System.Drawing.Point(-1, 528);
             this.lblInferior.Name = "lblInferior";
             this.lblInferior.Size = new System.Drawing.Size(671, 32);
             this.lblInferior.TabIndex = 27;
@@ -228,7 +233,7 @@ namespace LOSA.MicroIngredientes
             this.lblMP.Appearance.Options.UseTextOptions = true;
             this.lblMP.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblMP.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblMP.Location = new System.Drawing.Point(0, 297);
+            this.lblMP.Location = new System.Drawing.Point(0, 282);
             this.lblMP.Name = "lblMP";
             this.lblMP.Size = new System.Drawing.Size(670, 32);
             this.lblMP.TabIndex = 32;
@@ -244,7 +249,7 @@ namespace LOSA.MicroIngredientes
             this.btnBascula1.Location = new System.Drawing.Point(105, 188);
             this.btnBascula1.Name = "btnBascula1";
             this.btnBascula1.Size = new System.Drawing.Size(93, 74);
-            this.btnBascula1.TabIndex = 33;
+            this.btnBascula1.TabIndex = 1;
             this.btnBascula1.Text = "Guardar";
             this.btnBascula1.Click += new System.EventHandler(this.btnBascula1_Click);
             // 
@@ -259,7 +264,7 @@ namespace LOSA.MicroIngredientes
             this.btnBascula2.Location = new System.Drawing.Point(446, 188);
             this.btnBascula2.Name = "btnBascula2";
             this.btnBascula2.Size = new System.Drawing.Size(93, 74);
-            this.btnBascula2.TabIndex = 34;
+            this.btnBascula2.TabIndex = 2;
             this.btnBascula2.Text = "Guardar";
             this.btnBascula2.Click += new System.EventHandler(this.btnBascula2_Click);
             // 
@@ -270,7 +275,7 @@ namespace LOSA.MicroIngredientes
             this.txtCodBarra.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodBarra.Properties.Appearance.Options.UseFont = true;
             this.txtCodBarra.Size = new System.Drawing.Size(219, 26);
-            this.txtCodBarra.TabIndex = 35;
+            this.txtCodBarra.TabIndex = 0;
             this.txtCodBarra.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodBarra_KeyDown);
             // 
             // lblLote
@@ -282,11 +287,12 @@ namespace LOSA.MicroIngredientes
             this.lblLote.Appearance.Options.UseTextOptions = true;
             this.lblLote.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblLote.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblLote.Location = new System.Drawing.Point(0, 331);
+            this.lblLote.Location = new System.Drawing.Point(204, 244);
             this.lblLote.Name = "lblLote";
-            this.lblLote.Size = new System.Drawing.Size(670, 32);
+            this.lblLote.Size = new System.Drawing.Size(236, 32);
             this.lblLote.TabIndex = 37;
             this.lblLote.Text = "Lote";
+            this.lblLote.Visible = false;
             // 
             // labelControl1
             // 
@@ -312,11 +318,28 @@ namespace LOSA.MicroIngredientes
             this.cmdClose.TabIndex = 23;
             this.cmdClose.Click += new System.EventHandler(this.cmdClose_Click);
             // 
+            // gridControl1
+            // 
+            this.gridControl1.Location = new System.Drawing.Point(0, 320);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(670, 145);
+            this.gridControl1.TabIndex = 38;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
             // xfrmPesajeIndividualBatchV3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(671, 511);
+            this.ClientSize = new System.Drawing.Size(671, 624);
+            this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.lblLote);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.txtCodBarra);
@@ -343,6 +366,8 @@ namespace LOSA.MicroIngredientes
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMicros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodBarra.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -368,5 +393,7 @@ namespace LOSA.MicroIngredientes
         private DevExpress.XtraEditors.TextEdit txtCodBarra;
         private DevExpress.XtraEditors.LabelControl lblLote;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }
