@@ -133,6 +133,11 @@ namespace LOSA.Clases
                     else
                         ItemCode = null;
 
+                    if (!dr.IsDBNull(dr.GetOrdinal("materia_prima_name")))
+                        MateriaPrima = dr.GetString(16);
+                    else
+                        MateriaPrima = null;
+
                     Recuperado = true;
                 }
                 dr.Close();

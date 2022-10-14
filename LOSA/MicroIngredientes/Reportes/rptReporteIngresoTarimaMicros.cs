@@ -21,14 +21,21 @@ namespace LOSA.MicroIngredientes.Reportes
             {
                 //IdUnidadMedida = dr.GetInt32(1);
                 lblCantidad.Text = string.Format("{0:0.00}", tar1.Cantidad);
+                lblCantKg.Text = string.Format("{0:0.00}", tar1.CantidadKg);
                 //NombreTarima = dr.GetString(2);
                 //TipoTarimaDescripcion = dr.GetString(3);
-                lblProveedor.Text = tar1.CardCode;
+                Proveedor prv = new Proveedor();
+                if (prv.RecuperarRegistro(tar1.CardCode))
+                    lblProveedor.Text = tar1.CardCode + " - " + prv.Nombre;
+                else
+                    lblProveedor.Text = tar1.CardCode;
                 lblLote.Text = tar1.LoteMP;
                 lblCantidad.Text = tar1.Cantidad.ToString();
-                MateriaPrima mp = new MateriaPrima();
-                if (mp.RecuperarRegistroFromID_RM(tar1.Id_materiaprima))
-                    lblNombreProducto.Text = mp.NameComercial;
+                //MateriaPrima mp = new MateriaPrima();
+                //if (mp.RecuperarRegistroFromID_RM(tar1.Id_materiaprima))
+                //    lblNombreProducto.Text = mp.NameComercial;
+                lblNombreProducto.Text = tar1.MateriaPrima;
+                
                 
                 lblFechaIngreso.Text = string.Format("{0:dd/MM/yyyy}", tar1.FechaIngreso);
                 lblNumeroIngreso.Text = tar1.NumeroTransaccion.ToString();

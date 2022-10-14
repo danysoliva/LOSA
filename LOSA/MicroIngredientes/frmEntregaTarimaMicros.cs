@@ -1039,5 +1039,18 @@ namespace LOSA.TransaccionesMP
                 LoadTarimas();
             }
         }
+
+        private void cmdVistaPrevia_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)gridControlTarimasMicros.FocusedView;
+            var row = (dsMicro.tarimas_microRow)gridView.GetFocusedDataRow();
+
+            rptReporteIngresoTarimaMicros report = new rptReporteIngresoTarimaMicros(row.id);// { DataSource = dsCompras1, DataMember = "oc_detalle", ShowPrintMarginsWarning = false };
+            report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+            report.ShowPrintMarginsWarning = false;
+            ReportPrintTool printReport = new ReportPrintTool(report);
+
+            printReport.ShowPreview();
+        }
     }
 }
