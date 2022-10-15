@@ -335,9 +335,9 @@ namespace LOSA.Trazabilidad
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                CajaDialogo.Error(ex.Message);
             }
         }
 
