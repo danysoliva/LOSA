@@ -15,6 +15,9 @@ using LOSA.TransaccionesMP.Liquidos;
 using DevExpress.XtraGrid.Views.Grid;
 using LOSA.TransaccionesMP.VentanasMensajes;
 using LOSA.MicroIngredientes;
+using LOSA.Micro;
+using LOSA.MicroIngredientes.Reportes;
+using DevExpress.XtraReports.UI;
 
 namespace LOSA.TransaccionesMP
 {
@@ -337,7 +340,11 @@ namespace LOSA.TransaccionesMP
                                 }
 
                             }
-
+                            else
+                            {
+                                txtTarima.Text = "";
+                                txtTarima.Focus();
+                            }
                             if (Guardo)
                             {
                                 //Mensaje de transaccion exitosa
@@ -345,6 +352,7 @@ namespace LOSA.TransaccionesMP
                                 panelNotificacion.BackColor = Color.MediumSeaGreen;
                                 timerLimpiarMensaje.Enabled = true;
                                 timerLimpiarMensaje.Start();
+                                LoadDataMicros();
                             }
 
                         }
@@ -379,7 +387,8 @@ namespace LOSA.TransaccionesMP
 
 
 
-                    TarimasParaMicros();
+                    //TarimasParaMicros();
+                    //LoadDataMicros();
                 }
             }
         }
@@ -891,6 +900,157 @@ namespace LOSA.TransaccionesMP
         private void cmdLiquidos_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cmdTrasladarA_Micros_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)grid_mp_disponible_prd.FocusedView;
+            var row = (dsMicro.informacionPRD_micro_tentativeRow)gridView.GetFocusedDataRow();
+
+
+            frm_entrega_tarima_micros frmx = new frm_entrega_tarima_micros
+                (row.id_mp, row.id_lote_alosy, row.lote);
+
+            //Validar la disponibilidad de la tarima para poder efectuar la entrega
+            //SqlCommand cmd = new SqlCommand("[sp_get_lotes_micro_ingredientes_V5]", con);
+            //cmd.CommandType = CommandType.StoredProcedure;
+            //cmd.Parameters.AddWithValue("@id_tarima", tarimaEncontrada.Id);
+            //cmd.Parameters.AddWithValue("@bar_code", tarimaEncontrada.CodigoBarra);
+            //SqlDataAdapter adat = new SqlDataAdapter(cmd);
+            //dsMicro2.informacionPRD_micro.Clear();
+            //adat.Fill(dsMicro2.informacionPRD_micro);
+
+            //frmResumenToEntregar frms = new frmResumenToEntregar(ExistenciaTM
+            //                                                    , Pentregado
+            //                                                    , 0//Psolicitado
+            //                                                    , DT_Tarima
+            //                                                    , idTarima
+            //                                                    , factor);
+            //if (frms.ShowDialog() == DialogResult.OK)
+            bool Guardo = false;
+            if (frmx.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("[sp_insert_tarima_micro_ing_out_tarima]", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@numero_transaccion", row.numero_transaccion);
+                    cmd.Parameters.AddWithValue("@id_materia_prima", row.id_mp);
+                    cmd.Parameters.AddWithValue("@lotemp", row.lote);
+                    cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
+                    cmd.Parameters.AddWithValue("@cantidad_unidades", frmx.UdEnviar);
+                    cmd.Parameters.AddWithValue("@cantidadkg", frmx.KgEnviar);
+                    
+
+                    //cmd.Parameters.AddWithValue("@id_req", RequisicionActual.IdRequisicion);
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        Guardo = dr.GetInt32(0) == 1 ? true : false;
+                    }
+                    dr.Close();
+                    con.Close();
+
+                }
+                catch (Exception ec)
+                {
+                    //CajaDialogo.Error(ec.Message);
+                    lblMensaje.Text = ec.Message;
+                    panelNotificacion.BackColor = Color.Red;
+                    timerLimpiarMensaje.Enabled = true;
+                    timerLimpiarMensaje.Start();
+                }
+
+            }
+            else
+            {
+                txtTarima.Text = "";
+                txtTarima.Focus();
+            }
+            if (Guardo)
+            {
+                //Mensaje de transaccion exitosa
+                lblMensaje.Text = "Transacción Exitosa!";
+                panelNotificacion.BackColor = Color.MediumSeaGreen;
+                timerLimpiarMensaje.Enabled = true;
+                timerLimpiarMensaje.Start();
+                LoadDataMicros();
+            }
+        }
+
+        private void cmdRecargar_Click(object sender, EventArgs e)
+        {
+            LoadDataMicros();
+        }
+
+        private void cmdImprimirHoja_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            
+
+        }
+
+        private void cmdPrint_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)gridControlTarimasMicros.FocusedView;
+            var row = (dsMicro.tarimas_microRow)gridView.GetFocusedDataRow();
+
+            rptReporteIngresoTarimaMicros report = new rptReporteIngresoTarimaMicros(row.id);// { DataSource = dsCompras1, DataMember = "oc_detalle", ShowPrintMarginsWarning = false };
+            report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+            report.ShowPrintMarginsWarning = false;
+            ReportPrintTool printReport = new ReportPrintTool(report);
+
+            printReport.Print();
+        }
+
+        private void xtraTabControl1_TabIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void LoadTarimas()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_tarimas_resumen_micros_actives", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@idbodega", idBodega);
+                dsMicro1.tarimas_micro.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsMicro1.tarimas_micro);
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
+
+        private void xtraTabControl1_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
+        {
+            if (xtraTabControl1.SelectedTabPageIndex == 2)
+            {
+                LoadTarimas();
+            }
+        }
+
+        private void cmdVistaPrevia_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)gridControlTarimasMicros.FocusedView;
+            var row = (dsMicro.tarimas_microRow)gridView.GetFocusedDataRow();
+
+            rptReporteIngresoTarimaMicros report = new rptReporteIngresoTarimaMicros(row.id);// { DataSource = dsCompras1, DataMember = "oc_detalle", ShowPrintMarginsWarning = false };
+            report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+            report.ShowPrintMarginsWarning = false;
+            ReportPrintTool printReport = new ReportPrintTool(report);
+
+            printReport.ShowPreview();
         }
     }
 }

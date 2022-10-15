@@ -34,6 +34,7 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.cmdPesarOrden = new DevExpress.XtraEditors.SimpleButton();
             this.cmdClose = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
             // 
             // cmdMicros
@@ -104,11 +105,28 @@
             this.cmdClose.TabIndex = 19;
             this.cmdClose.Click += new System.EventHandler(this.cmdClose_Click);
             // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.simpleButton2.Appearance.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton2.Appearance.Options.UseBackColor = true;
+            this.simpleButton2.Appearance.Options.UseBorderColor = true;
+            this.simpleButton2.Appearance.Options.UseFont = true;
+            this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton2.Location = new System.Drawing.Point(270, 151);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(199, 59);
+            this.simpleButton2.TabIndex = 22;
+            this.simpleButton2.Text = "Materia Prima Micros";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
             // xfrmMenuMicros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(519, 231);
+            this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.cmdPesarOrden);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.cmdClose);
@@ -133,5 +151,6 @@
         private DevExpress.XtraEditors.SimpleButton cmdClose;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.SimpleButton cmdPesarOrden;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
     }
 }

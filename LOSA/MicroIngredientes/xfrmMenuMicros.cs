@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using LOSA.Micro;
 using LOSA.Clases;
+using LOSA.TransaccionesMP;
 
 namespace LOSA.MicroIngredientes
 {
@@ -49,5 +50,21 @@ namespace LOSA.MicroIngredientes
             frm.Show();
             this.Close();
         }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            frmEntregaTarimaMicros frm = new frmEntregaTarimaMicros(UsuarioLogeado);
+            if (this.MdiParent != null)
+            {
+                frm.MdiParent = this.MdiParent;
+                frm.FormBorderStyle = FormBorderStyle.Sizable;
+            }
+            frm.Show();
+        }
+
+
+
+
+
     }
 }

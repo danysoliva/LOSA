@@ -29,7 +29,28 @@ namespace LOSA.TransaccionesMP
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEntregaTarimaMicros));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions8 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject29 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject30 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject31 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject32 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject21 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions7 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject25 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject26 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject27 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject28 = new DevExpress.Utils.SerializableAppearanceObject();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.panelNotificacion = new System.Windows.Forms.Panel();
             this.lblMensaje = new System.Windows.Forms.Label();
@@ -51,11 +72,13 @@ namespace LOSA.TransaccionesMP
             this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colingreso = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsalidas = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col_imprimir = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmdImprimirHoja = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.dsTransaccionesMP = new LOSA.TransaccionesMP.dsTransaccionesMP();
             this.txtTarima = new DevExpress.XtraEditors.ButtonEdit();
             this.cmdSelectTarima = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.timerLimpiarMensaje = new System.Windows.Forms.Timer();
+            this.timerLimpiarMensaje = new System.Windows.Forms.Timer(this.components);
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
@@ -76,12 +99,45 @@ namespace LOSA.TransaccionesMP
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col_add_to_micros = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmdTrasladarA_Micros = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
+            this.gridControlTarimasMicros = new DevExpress.XtraGrid.GridControl();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_materia_prima = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnombre_comercial1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCardCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha_creada = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha_ingreso = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnumero_transaccion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha_vencimiento = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha_produccion_materia_prima = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collote_materia_prima = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colenable = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_presentacion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfactor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpresentacion_name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_usuario = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colusuario_name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcodigo_barra = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcantidad = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colitemcode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_tarima_origen = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcantidad_kg = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colenable_name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPrint = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmdPrint = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.cmdLotesProximosVencerMP = new DevExpress.XtraEditors.SimpleButton();
             this.dsMicro2 = new LOSA.Micro.dsMicro();
+            this.cmdRecargar = new DevExpress.XtraEditors.SimpleButton();
+            this.colPreview = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmdVistaPrevia = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.panelNotificacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data_entregadaMicros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMicro1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdImprimirHoja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTarima.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -90,7 +146,13 @@ namespace LOSA.TransaccionesMP
             this.xtraTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_mp_disponible_prd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdTrasladarA_Micros)).BeginInit();
+            this.xtraTabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlTarimasMicros)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMicro2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdVistaPrevia)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -102,7 +164,7 @@ namespace LOSA.TransaccionesMP
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.cmdHome.Location = new System.Drawing.Point(488, 2);
+            this.cmdHome.Location = new System.Drawing.Point(606, 2);
             this.cmdHome.Name = "cmdHome";
             this.cmdHome.Size = new System.Drawing.Size(175, 48);
             this.cmdHome.TabIndex = 7;
@@ -117,7 +179,7 @@ namespace LOSA.TransaccionesMP
             this.panelNotificacion.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelNotificacion.Location = new System.Drawing.Point(0, 686);
             this.panelNotificacion.Name = "panelNotificacion";
-            this.panelNotificacion.Size = new System.Drawing.Size(673, 71);
+            this.panelNotificacion.Size = new System.Drawing.Size(791, 71);
             this.panelNotificacion.TabIndex = 104;
             // 
             // lblMensaje
@@ -128,7 +190,7 @@ namespace LOSA.TransaccionesMP
             this.lblMensaje.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMensaje.Location = new System.Drawing.Point(3, 5);
             this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(665, 59);
+            this.lblMensaje.Size = new System.Drawing.Size(783, 59);
             this.lblMensaje.TabIndex = 0;
             // 
             // grd_data_entregadaMicros
@@ -139,7 +201,9 @@ namespace LOSA.TransaccionesMP
             this.grd_data_entregadaMicros.Location = new System.Drawing.Point(0, 0);
             this.grd_data_entregadaMicros.MainView = this.grdv_data;
             this.grd_data_entregadaMicros.Name = "grd_data_entregadaMicros";
-            this.grd_data_entregadaMicros.Size = new System.Drawing.Size(652, 534);
+            this.grd_data_entregadaMicros.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.cmdImprimirHoja});
+            this.grd_data_entregadaMicros.Size = new System.Drawing.Size(770, 534);
             this.grd_data_entregadaMicros.TabIndex = 105;
             this.grd_data_entregadaMicros.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
@@ -155,7 +219,7 @@ namespace LOSA.TransaccionesMP
             this.grdv_data.Appearance.ColumnFilterButton.Options.UseFont = true;
             this.grdv_data.Appearance.FilterPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.grdv_data.Appearance.FilterPanel.Options.UseFont = true;
-            this.grdv_data.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdv_data.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold);
             this.grdv_data.Appearance.FocusedRow.Options.UseFont = true;
             this.grdv_data.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.grdv_data.Appearance.FooterPanel.Options.UseFont = true;
@@ -169,7 +233,7 @@ namespace LOSA.TransaccionesMP
             this.grdv_data.Appearance.HeaderPanel.Options.UseFont = true;
             this.grdv_data.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.grdv_data.Appearance.Preview.Options.UseFont = true;
-            this.grdv_data.Appearance.Row.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.grdv_data.Appearance.Row.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
             this.grdv_data.Appearance.Row.Options.UseFont = true;
             this.grdv_data.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.grdv_data.Appearance.TopNewRow.Options.UseFont = true;
@@ -188,7 +252,8 @@ namespace LOSA.TransaccionesMP
             this.colcode_sap1,
             this.colcodigo,
             this.colingreso,
-            this.colsalidas});
+            this.colsalidas,
+            this.col_imprimir});
             this.grdv_data.GridControl = this.grd_data_entregadaMicros;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
@@ -200,6 +265,7 @@ namespace LOSA.TransaccionesMP
             this.colexistencia.Caption = "Existencia";
             this.colexistencia.FieldName = "existencia";
             this.colexistencia.Name = "colexistencia";
+            this.colexistencia.OptionsColumn.AllowEdit = false;
             this.colexistencia.Visible = true;
             this.colexistencia.VisibleIndex = 6;
             this.colexistencia.Width = 101;
@@ -208,6 +274,7 @@ namespace LOSA.TransaccionesMP
             // 
             this.colnombre_comercial.FieldName = "nombre_comercial";
             this.colnombre_comercial.Name = "colnombre_comercial";
+            this.colnombre_comercial.OptionsColumn.AllowEdit = false;
             this.colnombre_comercial.Visible = true;
             this.colnombre_comercial.VisibleIndex = 1;
             this.colnombre_comercial.Width = 90;
@@ -216,6 +283,7 @@ namespace LOSA.TransaccionesMP
             // 
             this.colfecha_vence.FieldName = "fecha_vence";
             this.colfecha_vence.Name = "colfecha_vence";
+            this.colfecha_vence.OptionsColumn.AllowEdit = false;
             this.colfecha_vence.Visible = true;
             this.colfecha_vence.VisibleIndex = 2;
             this.colfecha_vence.Width = 90;
@@ -224,16 +292,19 @@ namespace LOSA.TransaccionesMP
             // 
             this.colfecha_produccion.FieldName = "fecha_produccion";
             this.colfecha_produccion.Name = "colfecha_produccion";
+            this.colfecha_produccion.OptionsColumn.AllowEdit = false;
             // 
             // colid_mp
             // 
             this.colid_mp.FieldName = "id_mp";
             this.colid_mp.Name = "colid_mp";
+            this.colid_mp.OptionsColumn.AllowEdit = false;
             // 
             // collote
             // 
             this.collote.FieldName = "lote";
             this.collote.Name = "collote";
+            this.collote.OptionsColumn.AllowEdit = false;
             this.collote.Visible = true;
             this.collote.VisibleIndex = 3;
             this.collote.Width = 90;
@@ -242,31 +313,37 @@ namespace LOSA.TransaccionesMP
             // 
             this.coldias.FieldName = "dias";
             this.coldias.Name = "coldias";
+            this.coldias.OptionsColumn.AllowEdit = false;
             // 
             // colfecha_ingreso1
             // 
             this.colfecha_ingreso1.FieldName = "fecha_ingreso";
             this.colfecha_ingreso1.Name = "colfecha_ingreso1";
+            this.colfecha_ingreso1.OptionsColumn.AllowEdit = false;
             // 
             // colnumero_transaccion1
             // 
             this.colnumero_transaccion1.FieldName = "numero_transaccion";
             this.colnumero_transaccion1.Name = "colnumero_transaccion1";
+            this.colnumero_transaccion1.OptionsColumn.AllowEdit = false;
             // 
             // colcproveedor
             // 
             this.colcproveedor.FieldName = "cproveedor";
             this.colcproveedor.Name = "colcproveedor";
+            this.colcproveedor.OptionsColumn.AllowEdit = false;
             // 
             // colproveedor
             // 
             this.colproveedor.FieldName = "proveedor";
             this.colproveedor.Name = "colproveedor";
+            this.colproveedor.OptionsColumn.AllowEdit = false;
             // 
             // colcode_sap1
             // 
             this.colcode_sap1.FieldName = "code_sap";
             this.colcode_sap1.Name = "colcode_sap1";
+            this.colcode_sap1.OptionsColumn.AllowEdit = false;
             this.colcode_sap1.Visible = true;
             this.colcode_sap1.VisibleIndex = 0;
             this.colcode_sap1.Width = 83;
@@ -275,11 +352,13 @@ namespace LOSA.TransaccionesMP
             // 
             this.colcodigo.FieldName = "codigo";
             this.colcodigo.Name = "colcodigo";
+            this.colcodigo.OptionsColumn.AllowEdit = false;
             // 
             // colingreso
             // 
             this.colingreso.FieldName = "ingreso";
             this.colingreso.Name = "colingreso";
+            this.colingreso.OptionsColumn.AllowEdit = false;
             this.colingreso.Visible = true;
             this.colingreso.VisibleIndex = 4;
             this.colingreso.Width = 90;
@@ -288,9 +367,26 @@ namespace LOSA.TransaccionesMP
             // 
             this.colsalidas.FieldName = "salidas";
             this.colsalidas.Name = "colsalidas";
+            this.colsalidas.OptionsColumn.AllowEdit = false;
             this.colsalidas.Visible = true;
             this.colsalidas.VisibleIndex = 5;
             this.colsalidas.Width = 90;
+            // 
+            // col_imprimir
+            // 
+            this.col_imprimir.Caption = "Imprimir";
+            this.col_imprimir.ColumnEdit = this.cmdImprimirHoja;
+            this.col_imprimir.Name = "col_imprimir";
+            // 
+            // cmdImprimirHoja
+            // 
+            this.cmdImprimirHoja.AutoHeight = false;
+            editorButtonImageOptions5.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions5.SvgImage")));
+            this.cmdImprimirHoja.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.cmdImprimirHoja.Name = "cmdImprimirHoja";
+            this.cmdImprimirHoja.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.cmdImprimirHoja.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdImprimirHoja_ButtonClick);
             // 
             // dsTransaccionesMP
             // 
@@ -311,7 +407,7 @@ namespace LOSA.TransaccionesMP
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph)});
             this.txtTarima.Properties.MaxLength = 20;
             this.txtTarima.Properties.NullText = "Escanee o selecciona una tarima";
-            this.txtTarima.Size = new System.Drawing.Size(268, 44);
+            this.txtTarima.Size = new System.Drawing.Size(386, 44);
             this.txtTarima.TabIndex = 107;
             this.txtTarima.ToolTip = "Hola";
             this.txtTarima.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTarima_KeyDown);
@@ -324,7 +420,7 @@ namespace LOSA.TransaccionesMP
             this.cmdSelectTarima.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdSelectTarima.ImageOptions.Image = global::LOSA.Properties.Resources.tap;
             this.cmdSelectTarima.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.cmdSelectTarima.Location = new System.Drawing.Point(407, 56);
+            this.cmdSelectTarima.Location = new System.Drawing.Point(525, 56);
             this.cmdSelectTarima.Name = "cmdSelectTarima";
             this.cmdSelectTarima.Size = new System.Drawing.Size(62, 44);
             this.cmdSelectTarima.TabIndex = 108;
@@ -357,24 +453,27 @@ namespace LOSA.TransaccionesMP
             this.xtraTabControl1.Location = new System.Drawing.Point(8, 106);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(658, 574);
+            this.xtraTabControl1.Size = new System.Drawing.Size(776, 574);
             this.xtraTabControl1.TabIndex = 112;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
-            this.xtraTabPage2});
+            this.xtraTabPage2,
+            this.xtraTabPage3});
+            this.xtraTabControl1.SelectedPageChanged += new DevExpress.XtraTab.TabPageChangedEventHandler(this.xtraTabControl1_SelectedPageChanged);
+            this.xtraTabControl1.TabIndexChanged += new System.EventHandler(this.xtraTabControl1_TabIndexChanged);
             // 
             // xtraTabPage1
             // 
             this.xtraTabPage1.Controls.Add(this.grd_data_entregadaMicros);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(652, 534);
+            this.xtraTabPage1.Size = new System.Drawing.Size(770, 534);
             this.xtraTabPage1.Text = "MP Entregada Micros";
             // 
             // xtraTabPage2
             // 
             this.xtraTabPage2.Controls.Add(this.grid_mp_disponible_prd);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(652, 306);
+            this.xtraTabPage2.Size = new System.Drawing.Size(770, 534);
             this.xtraTabPage2.Text = "MP Disponible PRD";
             // 
             // grid_mp_disponible_prd
@@ -385,7 +484,9 @@ namespace LOSA.TransaccionesMP
             this.grid_mp_disponible_prd.Location = new System.Drawing.Point(0, 0);
             this.grid_mp_disponible_prd.MainView = this.gridView1;
             this.grid_mp_disponible_prd.Name = "grid_mp_disponible_prd";
-            this.grid_mp_disponible_prd.Size = new System.Drawing.Size(652, 306);
+            this.grid_mp_disponible_prd.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.cmdTrasladarA_Micros});
+            this.grid_mp_disponible_prd.Size = new System.Drawing.Size(770, 534);
             this.grid_mp_disponible_prd.TabIndex = 106;
             this.grid_mp_disponible_prd.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -396,7 +497,7 @@ namespace LOSA.TransaccionesMP
             this.gridView1.Appearance.ColumnFilterButton.Options.UseFont = true;
             this.gridView1.Appearance.FilterPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.gridView1.Appearance.FilterPanel.Options.UseFont = true;
-            this.gridView1.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.gridView1.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold);
             this.gridView1.Appearance.FocusedRow.Options.UseFont = true;
             this.gridView1.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.gridView1.Appearance.FooterPanel.Options.UseFont = true;
@@ -410,7 +511,7 @@ namespace LOSA.TransaccionesMP
             this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
             this.gridView1.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.gridView1.Appearance.Preview.Options.UseFont = true;
-            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold);
             this.gridView1.Appearance.Row.Options.UseFont = true;
             this.gridView1.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.gridView1.Appearance.TopNewRow.Options.UseFont = true;
@@ -429,7 +530,8 @@ namespace LOSA.TransaccionesMP
             this.gridColumn12,
             this.gridColumn13,
             this.gridColumn14,
-            this.gridColumn15});
+            this.gridColumn15,
+            this.col_add_to_micros});
             this.gridView1.GridControl = this.grid_mp_disponible_prd;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
@@ -441,6 +543,7 @@ namespace LOSA.TransaccionesMP
             this.gridColumn1.Caption = "Existencia";
             this.gridColumn1.FieldName = "existencia";
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 6;
             this.gridColumn1.Width = 101;
@@ -449,6 +552,7 @@ namespace LOSA.TransaccionesMP
             // 
             this.gridColumn2.FieldName = "nombre_comercial";
             this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
             this.gridColumn2.Width = 90;
@@ -457,6 +561,7 @@ namespace LOSA.TransaccionesMP
             // 
             this.gridColumn3.FieldName = "fecha_vence";
             this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
             this.gridColumn3.Width = 90;
@@ -465,16 +570,19 @@ namespace LOSA.TransaccionesMP
             // 
             this.gridColumn4.FieldName = "fecha_produccion";
             this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.OptionsColumn.AllowEdit = false;
             // 
             // gridColumn5
             // 
             this.gridColumn5.FieldName = "id_mp";
             this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.OptionsColumn.AllowEdit = false;
             // 
             // gridColumn6
             // 
             this.gridColumn6.FieldName = "lote";
             this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.OptionsColumn.AllowEdit = false;
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 3;
             this.gridColumn6.Width = 90;
@@ -483,31 +591,37 @@ namespace LOSA.TransaccionesMP
             // 
             this.gridColumn7.FieldName = "dias";
             this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.OptionsColumn.AllowEdit = false;
             // 
             // gridColumn8
             // 
             this.gridColumn8.FieldName = "fecha_ingreso";
             this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.OptionsColumn.AllowEdit = false;
             // 
             // gridColumn9
             // 
             this.gridColumn9.FieldName = "numero_transaccion";
             this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.OptionsColumn.AllowEdit = false;
             // 
             // gridColumn10
             // 
             this.gridColumn10.FieldName = "cproveedor";
             this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.OptionsColumn.AllowEdit = false;
             // 
             // gridColumn11
             // 
             this.gridColumn11.FieldName = "proveedor";
             this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.OptionsColumn.AllowEdit = false;
             // 
             // gridColumn12
             // 
             this.gridColumn12.FieldName = "code_sap";
             this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.OptionsColumn.AllowEdit = false;
             this.gridColumn12.Visible = true;
             this.gridColumn12.VisibleIndex = 0;
             this.gridColumn12.Width = 83;
@@ -516,11 +630,13 @@ namespace LOSA.TransaccionesMP
             // 
             this.gridColumn13.FieldName = "codigo";
             this.gridColumn13.Name = "gridColumn13";
+            this.gridColumn13.OptionsColumn.AllowEdit = false;
             // 
             // gridColumn14
             // 
             this.gridColumn14.FieldName = "ingreso";
             this.gridColumn14.Name = "gridColumn14";
+            this.gridColumn14.OptionsColumn.AllowEdit = false;
             this.gridColumn14.Visible = true;
             this.gridColumn14.VisibleIndex = 4;
             this.gridColumn14.Width = 90;
@@ -529,9 +645,265 @@ namespace LOSA.TransaccionesMP
             // 
             this.gridColumn15.FieldName = "salidas";
             this.gridColumn15.Name = "gridColumn15";
+            this.gridColumn15.OptionsColumn.AllowEdit = false;
             this.gridColumn15.Visible = true;
             this.gridColumn15.VisibleIndex = 5;
             this.gridColumn15.Width = 90;
+            // 
+            // col_add_to_micros
+            // 
+            this.col_add_to_micros.Caption = "Micros Traslados";
+            this.col_add_to_micros.ColumnEdit = this.cmdTrasladarA_Micros;
+            this.col_add_to_micros.Name = "col_add_to_micros";
+            this.col_add_to_micros.Visible = true;
+            this.col_add_to_micros.VisibleIndex = 7;
+            // 
+            // cmdTrasladarA_Micros
+            // 
+            this.cmdTrasladarA_Micros.AutoHeight = false;
+            editorButtonImageOptions8.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions8.Image")));
+            this.cmdTrasladarA_Micros.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions8, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject29, serializableAppearanceObject30, serializableAppearanceObject31, serializableAppearanceObject32, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.cmdTrasladarA_Micros.Name = "cmdTrasladarA_Micros";
+            this.cmdTrasladarA_Micros.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.cmdTrasladarA_Micros.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdTrasladarA_Micros_ButtonClick);
+            // 
+            // xtraTabPage3
+            // 
+            this.xtraTabPage3.Controls.Add(this.gridControlTarimasMicros);
+            this.xtraTabPage3.Name = "xtraTabPage3";
+            this.xtraTabPage3.Size = new System.Drawing.Size(770, 534);
+            this.xtraTabPage3.Text = "Tarimas";
+            // 
+            // gridControlTarimasMicros
+            // 
+            this.gridControlTarimasMicros.DataMember = "tarimas_micro";
+            this.gridControlTarimasMicros.DataSource = this.dsMicro1;
+            this.gridControlTarimasMicros.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlTarimasMicros.Location = new System.Drawing.Point(0, 0);
+            this.gridControlTarimasMicros.MainView = this.gridView2;
+            this.gridControlTarimasMicros.Name = "gridControlTarimasMicros";
+            this.gridControlTarimasMicros.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.cmdPrint,
+            this.cmdVistaPrevia});
+            this.gridControlTarimasMicros.Size = new System.Drawing.Size(770, 534);
+            this.gridControlTarimasMicros.TabIndex = 0;
+            this.gridControlTarimasMicros.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            // 
+            // gridView2
+            // 
+            this.gridView2.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView2.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView2.Appearance.Row.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView2.Appearance.Row.Options.UseFont = true;
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid,
+            this.colid_materia_prima,
+            this.colnombre_comercial1,
+            this.colCardCode,
+            this.colfecha_creada,
+            this.colfecha_ingreso,
+            this.colnumero_transaccion,
+            this.colfecha_vencimiento,
+            this.colfecha_produccion_materia_prima,
+            this.collote_materia_prima,
+            this.colenable,
+            this.colid_presentacion,
+            this.colfactor,
+            this.colpresentacion_name,
+            this.colid_usuario,
+            this.colusuario_name,
+            this.colcodigo_barra,
+            this.colcantidad,
+            this.colitemcode,
+            this.colid_tarima_origen,
+            this.colcantidad_kg,
+            this.colenable_name,
+            this.colPrint,
+            this.colPreview});
+            this.gridView2.GridControl = this.gridControlTarimasMicros;
+            this.gridView2.Name = "gridView2";
+            // 
+            // colid
+            // 
+            this.colid.FieldName = "id";
+            this.colid.Name = "colid";
+            this.colid.OptionsColumn.AllowEdit = false;
+            // 
+            // colid_materia_prima
+            // 
+            this.colid_materia_prima.FieldName = "id_materia_prima";
+            this.colid_materia_prima.Name = "colid_materia_prima";
+            this.colid_materia_prima.OptionsColumn.AllowEdit = false;
+            // 
+            // colnombre_comercial1
+            // 
+            this.colnombre_comercial1.FieldName = "nombre_comercial";
+            this.colnombre_comercial1.Name = "colnombre_comercial1";
+            this.colnombre_comercial1.OptionsColumn.AllowEdit = false;
+            this.colnombre_comercial1.Visible = true;
+            this.colnombre_comercial1.VisibleIndex = 1;
+            this.colnombre_comercial1.Width = 69;
+            // 
+            // colCardCode
+            // 
+            this.colCardCode.FieldName = "CardCode";
+            this.colCardCode.Name = "colCardCode";
+            this.colCardCode.OptionsColumn.AllowEdit = false;
+            // 
+            // colfecha_creada
+            // 
+            this.colfecha_creada.FieldName = "fecha_creada";
+            this.colfecha_creada.Name = "colfecha_creada";
+            this.colfecha_creada.OptionsColumn.AllowEdit = false;
+            this.colfecha_creada.Width = 74;
+            // 
+            // colfecha_ingreso
+            // 
+            this.colfecha_ingreso.FieldName = "fecha_ingreso";
+            this.colfecha_ingreso.Name = "colfecha_ingreso";
+            this.colfecha_ingreso.OptionsColumn.AllowEdit = false;
+            // 
+            // colnumero_transaccion
+            // 
+            this.colnumero_transaccion.FieldName = "numero_transaccion";
+            this.colnumero_transaccion.Name = "colnumero_transaccion";
+            this.colnumero_transaccion.OptionsColumn.AllowEdit = false;
+            // 
+            // colfecha_vencimiento
+            // 
+            this.colfecha_vencimiento.FieldName = "fecha_vencimiento";
+            this.colfecha_vencimiento.Name = "colfecha_vencimiento";
+            this.colfecha_vencimiento.OptionsColumn.AllowEdit = false;
+            this.colfecha_vencimiento.Visible = true;
+            this.colfecha_vencimiento.VisibleIndex = 3;
+            this.colfecha_vencimiento.Width = 88;
+            // 
+            // colfecha_produccion_materia_prima
+            // 
+            this.colfecha_produccion_materia_prima.FieldName = "fecha_produccion_materia_prima";
+            this.colfecha_produccion_materia_prima.Name = "colfecha_produccion_materia_prima";
+            this.colfecha_produccion_materia_prima.OptionsColumn.AllowEdit = false;
+            // 
+            // collote_materia_prima
+            // 
+            this.collote_materia_prima.FieldName = "lote_materia_prima";
+            this.collote_materia_prima.Name = "collote_materia_prima";
+            this.collote_materia_prima.OptionsColumn.AllowEdit = false;
+            this.collote_materia_prima.Visible = true;
+            this.collote_materia_prima.VisibleIndex = 2;
+            this.collote_materia_prima.Width = 82;
+            // 
+            // colenable
+            // 
+            this.colenable.FieldName = "enable";
+            this.colenable.Name = "colenable";
+            this.colenable.OptionsColumn.AllowEdit = false;
+            // 
+            // colid_presentacion
+            // 
+            this.colid_presentacion.FieldName = "id_presentacion";
+            this.colid_presentacion.Name = "colid_presentacion";
+            this.colid_presentacion.OptionsColumn.AllowEdit = false;
+            // 
+            // colfactor
+            // 
+            this.colfactor.FieldName = "factor";
+            this.colfactor.Name = "colfactor";
+            this.colfactor.OptionsColumn.AllowEdit = false;
+            // 
+            // colpresentacion_name
+            // 
+            this.colpresentacion_name.FieldName = "presentacion_name";
+            this.colpresentacion_name.Name = "colpresentacion_name";
+            this.colpresentacion_name.OptionsColumn.AllowEdit = false;
+            this.colpresentacion_name.Visible = true;
+            this.colpresentacion_name.VisibleIndex = 4;
+            this.colpresentacion_name.Width = 58;
+            // 
+            // colid_usuario
+            // 
+            this.colid_usuario.FieldName = "id_usuario";
+            this.colid_usuario.Name = "colid_usuario";
+            this.colid_usuario.OptionsColumn.AllowEdit = false;
+            // 
+            // colusuario_name
+            // 
+            this.colusuario_name.FieldName = "usuario_name";
+            this.colusuario_name.Name = "colusuario_name";
+            this.colusuario_name.OptionsColumn.AllowEdit = false;
+            // 
+            // colcodigo_barra
+            // 
+            this.colcodigo_barra.FieldName = "codigo_barra";
+            this.colcodigo_barra.Name = "colcodigo_barra";
+            this.colcodigo_barra.OptionsColumn.AllowEdit = false;
+            this.colcodigo_barra.Visible = true;
+            this.colcodigo_barra.VisibleIndex = 8;
+            this.colcodigo_barra.Width = 131;
+            // 
+            // colcantidad
+            // 
+            this.colcantidad.FieldName = "cantidad";
+            this.colcantidad.Name = "colcantidad";
+            this.colcantidad.OptionsColumn.AllowEdit = false;
+            this.colcantidad.Visible = true;
+            this.colcantidad.VisibleIndex = 5;
+            this.colcantidad.Width = 59;
+            // 
+            // colitemcode
+            // 
+            this.colitemcode.Caption = "Item Code";
+            this.colitemcode.FieldName = "itemcode";
+            this.colitemcode.Name = "colitemcode";
+            this.colitemcode.OptionsColumn.AllowEdit = false;
+            this.colitemcode.Visible = true;
+            this.colitemcode.VisibleIndex = 0;
+            this.colitemcode.Width = 52;
+            // 
+            // colid_tarima_origen
+            // 
+            this.colid_tarima_origen.FieldName = "id_tarima_origen";
+            this.colid_tarima_origen.Name = "colid_tarima_origen";
+            this.colid_tarima_origen.OptionsColumn.AllowEdit = false;
+            // 
+            // colcantidad_kg
+            // 
+            this.colcantidad_kg.FieldName = "cantidad_kg";
+            this.colcantidad_kg.Name = "colcantidad_kg";
+            this.colcantidad_kg.OptionsColumn.AllowEdit = false;
+            this.colcantidad_kg.Visible = true;
+            this.colcantidad_kg.VisibleIndex = 6;
+            this.colcantidad_kg.Width = 59;
+            // 
+            // colenable_name
+            // 
+            this.colenable_name.FieldName = "enable_name";
+            this.colenable_name.Name = "colenable_name";
+            this.colenable_name.OptionsColumn.AllowEdit = false;
+            this.colenable_name.Visible = true;
+            this.colenable_name.VisibleIndex = 7;
+            this.colenable_name.Width = 33;
+            // 
+            // colPrint
+            // 
+            this.colPrint.Caption = "Imprimir Rótulo";
+            this.colPrint.ColumnEdit = this.cmdPrint;
+            this.colPrint.Name = "colPrint";
+            this.colPrint.Visible = true;
+            this.colPrint.VisibleIndex = 10;
+            this.colPrint.Width = 58;
+            // 
+            // cmdPrint
+            // 
+            this.cmdPrint.AutoHeight = false;
+            editorButtonImageOptions6.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions6.SvgImage")));
+            this.cmdPrint.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.cmdPrint.Name = "cmdPrint";
+            this.cmdPrint.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.cmdPrint.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdPrint_ButtonClick);
             // 
             // cmdLotesProximosVencerMP
             // 
@@ -540,7 +912,7 @@ namespace LOSA.TransaccionesMP
             this.cmdLotesProximosVencerMP.Appearance.Options.UseFont = true;
             this.cmdLotesProximosVencerMP.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdLotesProximosVencerMP.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdLotesProximosVencerMP.ImageOptions.SvgImage")));
-            this.cmdLotesProximosVencerMP.Location = new System.Drawing.Point(475, 56);
+            this.cmdLotesProximosVencerMP.Location = new System.Drawing.Point(593, 56);
             this.cmdLotesProximosVencerMP.Name = "cmdLotesProximosVencerMP";
             this.cmdLotesProximosVencerMP.Size = new System.Drawing.Size(188, 44);
             this.cmdLotesProximosVencerMP.TabIndex = 113;
@@ -553,11 +925,47 @@ namespace LOSA.TransaccionesMP
             this.dsMicro2.DataSetName = "dsMicro";
             this.dsMicro2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // cmdRecargar
+            // 
+            this.cmdRecargar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdRecargar.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.cmdRecargar.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdRecargar.Appearance.Options.UseBackColor = true;
+            this.cmdRecargar.Appearance.Options.UseFont = true;
+            this.cmdRecargar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdRecargar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdRecargar.ImageOptions.SvgImage")));
+            this.cmdRecargar.Location = new System.Drawing.Point(425, 2);
+            this.cmdRecargar.Name = "cmdRecargar";
+            this.cmdRecargar.Size = new System.Drawing.Size(175, 48);
+            this.cmdRecargar.TabIndex = 114;
+            this.cmdRecargar.Text = "Refrescar";
+            this.cmdRecargar.Click += new System.EventHandler(this.cmdRecargar_Click);
+            // 
+            // colPreview
+            // 
+            this.colPreview.Caption = "Vista Previa";
+            this.colPreview.ColumnEdit = this.cmdVistaPrevia;
+            this.colPreview.Name = "colPreview";
+            this.colPreview.Visible = true;
+            this.colPreview.VisibleIndex = 9;
+            this.colPreview.Width = 63;
+            // 
+            // cmdVistaPrevia
+            // 
+            this.cmdVistaPrevia.AutoHeight = false;
+            editorButtonImageOptions7.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions7.SvgImage")));
+            this.cmdVistaPrevia.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions7, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject25, serializableAppearanceObject26, serializableAppearanceObject27, serializableAppearanceObject28, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.cmdVistaPrevia.Name = "cmdVistaPrevia";
+            this.cmdVistaPrevia.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.cmdVistaPrevia.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdVistaPrevia_ButtonClick);
+            // 
             // frmEntregaTarimaMicros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(673, 757);
+            this.ClientSize = new System.Drawing.Size(791, 757);
+            this.Controls.Add(this.cmdRecargar);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.cmdLotesProximosVencerMP);
             this.Controls.Add(this.txtTarima);
@@ -574,6 +982,7 @@ namespace LOSA.TransaccionesMP
             ((System.ComponentModel.ISupportInitialize)(this.grd_data_entregadaMicros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMicro1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdImprimirHoja)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTarima.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
@@ -582,7 +991,13 @@ namespace LOSA.TransaccionesMP
             this.xtraTabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grid_mp_disponible_prd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdTrasladarA_Micros)).EndInit();
+            this.xtraTabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlTarimasMicros)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdPrint)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMicro2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdVistaPrevia)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -638,5 +1053,39 @@ namespace LOSA.TransaccionesMP
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
         private Micro.dsMicro dsMicro2;
+        private DevExpress.XtraGrid.Columns.GridColumn col_add_to_micros;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdTrasladarA_Micros;
+        private DevExpress.XtraEditors.SimpleButton cmdRecargar;
+        private DevExpress.XtraGrid.Columns.GridColumn col_imprimir;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdImprimirHoja;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage3;
+        private DevExpress.XtraGrid.GridControl gridControlTarimasMicros;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Columns.GridColumn colid;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_materia_prima;
+        private DevExpress.XtraGrid.Columns.GridColumn colnombre_comercial1;
+        private DevExpress.XtraGrid.Columns.GridColumn colCardCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecha_creada;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecha_ingreso;
+        private DevExpress.XtraGrid.Columns.GridColumn colnumero_transaccion;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecha_vencimiento;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecha_produccion_materia_prima;
+        private DevExpress.XtraGrid.Columns.GridColumn collote_materia_prima;
+        private DevExpress.XtraGrid.Columns.GridColumn colenable;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_presentacion;
+        private DevExpress.XtraGrid.Columns.GridColumn colfactor;
+        private DevExpress.XtraGrid.Columns.GridColumn colpresentacion_name;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_usuario;
+        private DevExpress.XtraGrid.Columns.GridColumn colusuario_name;
+        private DevExpress.XtraGrid.Columns.GridColumn colcodigo_barra;
+        private DevExpress.XtraGrid.Columns.GridColumn colcantidad;
+        private DevExpress.XtraGrid.Columns.GridColumn colitemcode;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_tarima_origen;
+        private DevExpress.XtraGrid.Columns.GridColumn colcantidad_kg;
+        private DevExpress.XtraGrid.Columns.GridColumn colenable_name;
+        private DevExpress.XtraGrid.Columns.GridColumn colPrint;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdPrint;
+        private DevExpress.XtraGrid.Columns.GridColumn colPreview;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdVistaPrevia;
     }
 }

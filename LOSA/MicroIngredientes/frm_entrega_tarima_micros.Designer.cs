@@ -57,6 +57,8 @@ namespace LOSA.MicroIngredientes
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtKgEnviar = new DevExpress.XtraEditors.TextEdit();
+            this.lblPresentacionRotulo = new DevExpress.XtraEditors.LabelControl();
+            this.lblPresentacion = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.dsMicro2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
@@ -249,17 +251,17 @@ namespace LOSA.MicroIngredientes
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(361, 30);
+            this.label1.Size = new System.Drawing.Size(280, 30);
             this.label1.TabIndex = 116;
-            this.label1.Text = "Cantidad disponible por tarima y Lote";
+            this.label1.Text = "Cantidad disponible por Lote";
             // 
             // btnDown
             // 
             this.btnDown.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDown.ImageOptions.Image")));
             this.btnDown.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnDown.Location = new System.Drawing.Point(568, 288);
+            this.btnDown.Location = new System.Drawing.Point(567, 354);
             this.btnDown.Name = "btnDown";
-            this.btnDown.Size = new System.Drawing.Size(76, 65);
+            this.btnDown.Size = new System.Drawing.Size(76, 83);
             this.btnDown.TabIndex = 121;
             this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
@@ -267,9 +269,9 @@ namespace LOSA.MicroIngredientes
             // 
             this.btnUP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUP.ImageOptions.Image")));
             this.btnUP.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnUP.Location = new System.Drawing.Point(488, 288);
+            this.btnUP.Location = new System.Drawing.Point(487, 354);
             this.btnUP.Name = "btnUP";
-            this.btnUP.Size = new System.Drawing.Size(74, 65);
+            this.btnUP.Size = new System.Drawing.Size(74, 83);
             this.btnUP.TabIndex = 120;
             this.btnUP.Click += new System.EventHandler(this.btnUP_Click);
             // 
@@ -277,7 +279,7 @@ namespace LOSA.MicroIngredientes
             // 
             this.txtPorEnviar.EditValue = "0";
             this.txtPorEnviar.Enabled = false;
-            this.txtPorEnviar.Location = new System.Drawing.Point(344, 299);
+            this.txtPorEnviar.Location = new System.Drawing.Point(343, 354);
             this.txtPorEnviar.Name = "txtPorEnviar";
             this.txtPorEnviar.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.txtPorEnviar.Properties.Appearance.Options.UseFont = true;
@@ -292,7 +294,7 @@ namespace LOSA.MicroIngredientes
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(18, 302);
+            this.labelControl3.Location = new System.Drawing.Point(17, 357);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(306, 30);
             this.labelControl3.TabIndex = 118;
@@ -307,7 +309,7 @@ namespace LOSA.MicroIngredientes
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(194, 396);
+            this.simpleButton1.Location = new System.Drawing.Point(193, 451);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(175, 48);
             this.simpleButton1.TabIndex = 123;
@@ -323,7 +325,7 @@ namespace LOSA.MicroIngredientes
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.cmdHome.Location = new System.Drawing.Point(387, 396);
+            this.cmdHome.Location = new System.Drawing.Point(386, 451);
             this.cmdHome.Name = "cmdHome";
             this.cmdHome.Size = new System.Drawing.Size(175, 48);
             this.cmdHome.TabIndex = 122;
@@ -334,7 +336,7 @@ namespace LOSA.MicroIngredientes
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(167, 349);
+            this.labelControl1.Location = new System.Drawing.Point(166, 404);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(157, 30);
             this.labelControl1.TabIndex = 124;
@@ -344,7 +346,7 @@ namespace LOSA.MicroIngredientes
             // 
             this.txtKgEnviar.EditValue = "0";
             this.txtKgEnviar.Enabled = false;
-            this.txtKgEnviar.Location = new System.Drawing.Point(344, 346);
+            this.txtKgEnviar.Location = new System.Drawing.Point(343, 401);
             this.txtKgEnviar.Name = "txtKgEnviar";
             this.txtKgEnviar.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.txtKgEnviar.Properties.Appearance.Options.UseFont = true;
@@ -355,11 +357,33 @@ namespace LOSA.MicroIngredientes
             this.txtKgEnviar.Size = new System.Drawing.Size(138, 36);
             this.txtKgEnviar.TabIndex = 125;
             // 
+            // lblPresentacionRotulo
+            // 
+            this.lblPresentacionRotulo.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPresentacionRotulo.Appearance.Options.UseFont = true;
+            this.lblPresentacionRotulo.Location = new System.Drawing.Point(157, 305);
+            this.lblPresentacionRotulo.Name = "lblPresentacionRotulo";
+            this.lblPresentacionRotulo.Size = new System.Drawing.Size(166, 30);
+            this.lblPresentacionRotulo.TabIndex = 127;
+            this.lblPresentacionRotulo.Text = "Presentación Ud:";
+            // 
+            // lblPresentacion
+            // 
+            this.lblPresentacion.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPresentacion.Appearance.Options.UseFont = true;
+            this.lblPresentacion.Location = new System.Drawing.Point(343, 305);
+            this.lblPresentacion.Name = "lblPresentacion";
+            this.lblPresentacion.Size = new System.Drawing.Size(45, 30);
+            this.lblPresentacion.TabIndex = 128;
+            this.lblPresentacion.Text = "0 Kg";
+            // 
             // frm_entrega_tarima_micros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(727, 456);
+            this.ClientSize = new System.Drawing.Size(727, 503);
+            this.Controls.Add(this.lblPresentacion);
+            this.Controls.Add(this.lblPresentacionRotulo);
             this.Controls.Add(this.txtKgEnviar);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.simpleButton1);
@@ -411,5 +435,7 @@ namespace LOSA.MicroIngredientes
         private DevExpress.XtraEditors.SimpleButton cmdHome;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit txtKgEnviar;
+        private DevExpress.XtraEditors.LabelControl lblPresentacionRotulo;
+        private DevExpress.XtraEditors.LabelControl lblPresentacion;
     }
 }
