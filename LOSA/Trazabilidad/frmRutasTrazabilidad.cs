@@ -111,7 +111,11 @@ namespace LOSA.Trazabilidad
             btnBack.Text = "Inicio";
             btnBack.Visible = true;
 
-            navigationFrame1.SelectedPage = navigationFrame1.SelectedPage = npReporteTrazabilidad;
+            dsReportesTRZ.pt_list_trz.Clear();
+            dsReportesTRZ.detalle_destinos.Clear();
+            lblMateriaPrimaName.Text = "";
+
+            navigationFrame1.SelectedPage = npRuta1;
         }
 
         private void acordionRuta2_Click(object sender, EventArgs e)
@@ -134,6 +138,7 @@ namespace LOSA.Trazabilidad
 
             dsReportesTRZ.pt_list_trz.Clear();
             dsReportesTRZ.detalle_destinos.Clear();
+            lblMateriaPrimaName.Text = "";
 
             navigationFrame1.SelectedPage = npRuta1;
         }
