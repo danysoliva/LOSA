@@ -690,5 +690,23 @@ namespace LOSA.MicroIngredientes
                 CajaDialogo.Error(ex.Message);
             }
         }
+
+        private void cmdVistaPreviaPesaje_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            try
+            {
+                var gridView = (GridView)grd_data.FocusedView;
+                var row = (dsMicros.plan_microsh_reportRow)gridView.GetFocusedDataRow();
+                xrptAlimentacionMicros rpt = new xrptAlimentacionMicros(row.AMI_ID, row.id_orden_encabezado);
+                rpt.ShowPrintMarginsWarning = false;
+                rpt.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
+                rpt.ShowPreview();
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
     }
 }
