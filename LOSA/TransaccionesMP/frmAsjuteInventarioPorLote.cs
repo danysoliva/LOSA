@@ -242,7 +242,38 @@ namespace LOSA.TransaccionesMP
             }
 
             DataOperations dp = new DataOperations();
-            
+
+            //Si es traslado lo vamos a obligar a poner la bodega de destino
+            if (!toggleSwTipoOperacion.IsOn)
+            {
+                if (dp.ValidateNumberInt32(gridLookUpEditDestino.EditValue) <= 0)
+                {
+                    CajaDialogo.Error("Es necesario seleccionar una bodega de destino correcta! Esta efectuando un traslado...");
+                    return;
+                }
+            }
+
+            //Si es traslado lo vamos a obligar a poner la bodega de destino
+            if (!toggleSwTipoOperacion.IsOn)
+            {
+                if (dp.ValidateNumberInt32(gridLookUpEditOrigen.EditValue) <= 0)
+                {
+                    CajaDialogo.Error("Es necesario seleccionar una bodega de Origen correcta! Esta efectuando un traslado...");
+                    return;
+                }
+            }
+
+
+            //Si es Ajuste lo vamos a obligar a poner la bodega de Origen
+            if (toggleSwTipoOperacion.IsOn)
+            {
+                if (dp.ValidateNumberInt32(gridLookUpEditOrigen.EditValue) <= 0)
+                {
+                    CajaDialogo.Error("Es necesario seleccionar una bodega de Origen correcta! Esta efectuando un Ajuste...");
+                    return;
+                }
+            }
+
 
             if (tsTipoTransaccion.IsOn) //ENTRADA EN EL KARDEX GENERAL
             {
@@ -253,7 +284,7 @@ namespace LOSA.TransaccionesMP
                         
                         SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                         conn.Open();
-                        SqlCommand cmd = new SqlCommand("sp_ajuste_kardex_por_lote_v3", conn);
+                        SqlCommand cmd = new SqlCommand("sp_ajuste_kardex_por_lote_v4", conn);
                         cmd.CommandType = CommandType.StoredProcedure;
                         //cmd.Parameters.AddWithValue("@cant_entrada", txtPesoKG.Text);
                         cmd.Parameters.AddWithValue("@cant_entrada", spinEditPesoKg.EditValue);
@@ -268,16 +299,24 @@ namespace LOSA.TransaccionesMP
                         //cmd.Parameters.AddWithValue("@id_bodega");
                         cmd.Parameters.AddWithValue("@id_usercreate", UsuarioLogueado.Id);
                         cmd.Parameters.AddWithValue("@fechaDocumento", dtFechaDocumento.DateTime);
+                        
                         if(dp.ValidateNumberInt32(gridLookUpEditOrigen.EditValue)>0)
                             cmd.Parameters.AddWithValue("@bodega_origen", gridLookUpEditOrigen.EditValue);
                         else
                             cmd.Parameters.AddWithValue("@bodega_origen", DBNull.Value);
 
-                        if (dp.ValidateNumberInt32(gridLookUpEditDestino.EditValue) > 0)
-                            cmd.Parameters.AddWithValue("@bodega_destino", gridLookUpEditDestino.EditValue);
+                        if (toggleSwTipoOperacion.IsOn)//Ajuste
+                        {
+                            //Ponemos el mismo valor, esto es por que es un ajuste a una sola bodega, entrada o salida
+                            cmd.Parameters.AddWithValue("@bodega_destino", gridLookUpEditOrigen.EditValue);
+                        }
                         else
-                            cmd.Parameters.AddWithValue("@bodega_destino", DBNull.Value);
+                        {   //Dejamos el destino seleccionado, haremos una salida y una entrada respectivamente
+                            cmd.Parameters.AddWithValue("@bodega_destino", gridLookUpEditDestino.EditValue);
+                        }
+
                         cmd.Parameters.AddWithValue("@id_presentacion", gridLookUpEditPresentacion.EditValue);
+                        cmd.Parameters.AddWithValue("@tipo_operacion", toggleSwTipoOperacion.IsOn);
                         cmd.ExecuteNonQuery();
                         conn.Close();
 
@@ -341,7 +380,7 @@ namespace LOSA.TransaccionesMP
                         cmd2.ExecuteNonQuery();
 
                         //REALIZAMOS EL INSERT DEL MOVIMIENTO EN KARDEX
-                        SqlCommand cmd3 = new SqlCommand("sp_ajuste_kardex_por_lote_v3", transaction.Connection);
+                        SqlCommand cmd3 = new SqlCommand("sp_ajuste_kardex_por_lote_v4", transaction.Connection);
                         cmd3.Transaction = transaction;
                         cmd3.CommandType = CommandType.StoredProcedure;
                         cmd3.Parameters.AddWithValue("@cant_entrada", spinEditPesoKg.EditValue);
@@ -354,10 +393,21 @@ namespace LOSA.TransaccionesMP
                         else
                             cmd3.Parameters.AddWithValue("@bodega_origen", DBNull.Value);
 
-                        if (dp.ValidateNumberInt32(gridLookUpEditDestino.EditValue) > 0)
-                            cmd3.Parameters.AddWithValue("@bodega_destino", gridLookUpEditDestino.EditValue);
+                        //if (dp.ValidateNumberInt32(gridLookUpEditDestino.EditValue) > 0)
+                        //    cmd3.Parameters.AddWithValue("@bodega_destino", gridLookUpEditDestino.EditValue);
+                        //else
+                        //    cmd3.Parameters.AddWithValue("@bodega_destino", DBNull.Value);
+                        
+                        if (toggleSwTipoOperacion.IsOn)//Ajuste
+                        {
+                            //Ponemos el mismo valor, esto es por que es un ajuste a una sola bodega, entrada o salida
+                            cmd3.Parameters.AddWithValue("@bodega_destino", gridLookUpEditOrigen.EditValue);
+                        }
                         else
-                            cmd3.Parameters.AddWithValue("@bodega_destino", DBNull.Value);
+                        {   //Dejamos el destino seleccionado, haremos una salida y una entrada respectivamente
+                            cmd3.Parameters.AddWithValue("@bodega_destino", gridLookUpEditDestino.EditValue);
+                        }
+
                         cmd3.Parameters.AddWithValue("@id_referencia_operacion", id_lote_h);
                         cmd3.Parameters.AddWithValue("id_lote_alosy", id_lote_h);
                         cmd3.Parameters.AddWithValue("@lote", txtLoteNuevo.Text);
@@ -365,6 +415,7 @@ namespace LOSA.TransaccionesMP
                         cmd3.Parameters.AddWithValue("@itemcode", ItemCode);
                         cmd3.Parameters.AddWithValue("@id_usercreate", UsuarioLogueado.Id);
                         cmd3.Parameters.AddWithValue("@id_presentacion", gridLookUpEditPresentacion.EditValue);
+                        cmd3.Parameters.AddWithValue("@tipo_operacion", toggleSwTipoOperacion.IsOn);
                         cmd3.ExecuteNonQuery();
                         //Attempt to commit the transaction.
 
@@ -393,7 +444,7 @@ namespace LOSA.TransaccionesMP
                         //DataOperations dp = new DataOperations();
                         SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                         conn.Open();
-                        SqlCommand cmd = new SqlCommand("sp_ajuste_kardex_por_lote_v3", conn);
+                        SqlCommand cmd = new SqlCommand("sp_ajuste_kardex_por_lote_v4", conn);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@cant_entrada", 0);
                         cmd.Parameters.AddWithValue("@cant_salida", spinEditPesoKg.EditValue);
@@ -416,6 +467,7 @@ namespace LOSA.TransaccionesMP
                         else
                             cmd.Parameters.AddWithValue("@bodega_destino", DBNull.Value);
                         cmd.Parameters.AddWithValue("id_presentacion", gridLookUpEditPresentacion.EditValue);
+                        cmd.Parameters.AddWithValue("@tipo_operacion", 1);//Forzosamente debe ser ajuste
                         cmd.ExecuteNonQuery();
                         conn.Close();
 
@@ -589,6 +641,11 @@ namespace LOSA.TransaccionesMP
                     gridLookUpEditDestino.EditValue = 10;
                     gridLookUpEditOrigen.EditValue = 2;
                 }
+
+                ////Vamos a desbloquear el traslado si es Entrada
+                //toggleSwTipoOperacion.IsOn = true;
+                //toggleSwTipoOperacion.Enabled = false;
+
             }
             else
             {
@@ -600,7 +657,10 @@ namespace LOSA.TransaccionesMP
                     gridLookUpEditDestino.EditValue = 2;
                     gridLookUpEditOrigen.EditValue = 10;
                 }
-               
+
+                ////Vamos a bloquear el traslado si es Salida
+                //toggleSwTipoOperacion.IsOn = true;
+                //toggleSwTipoOperacion.Enabled = false;
             }
         }
 
@@ -657,6 +717,26 @@ namespace LOSA.TransaccionesMP
                 }
                 else
                     spinEditPesoKg.EditValue = (FactorUnidades * cantidad_).ToString();
+            }
+        }
+
+        private void toggleSwTipoOperacion_Toggled(object sender, EventArgs e)
+        {
+            if (toggleSwTipoOperacion.IsOn)//Ajuste
+            {
+                gridLookUpEditDestino.Visible = lblBodegaDestino.Visible = false;
+                lblBodegaOrigen.Text = "Bodega____________________";
+
+                tsTipoTransaccion.Visible = lblTipo_transaccion.Visible = true;
+                //tsTipoTransaccion.IsOn = tsTipoTransaccion.Enabled = false;
+            }
+            else//Traslado
+            {
+                gridLookUpEditDestino.Visible = lblBodegaDestino.Visible = true;
+                lblBodegaOrigen.Text = "Bodega Origen____________";
+
+                tsTipoTransaccion.Visible = lblTipo_transaccion.Visible = false;
+                tsTipoTransaccion.IsOn = true;
             }
         }
 
