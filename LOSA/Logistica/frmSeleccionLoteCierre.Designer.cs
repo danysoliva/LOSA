@@ -490,7 +490,6 @@ namespace LOSA.Logistica
             this.btnIzquierda.Name = "btnIzquierda";
             this.btnIzquierda.Size = new System.Drawing.Size(113, 46);
             this.btnIzquierda.TabIndex = 1;
-            this.btnIzquierda.Visible = false;
             this.btnIzquierda.Click += new System.EventHandler(this.btnIzquierda_Click);
             // 
             // btnDerecha
@@ -687,6 +686,7 @@ namespace LOSA.Logistica
             this.btnConfirmar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnConfirmar.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmar.Appearance.Options.UseFont = true;
+            this.btnConfirmar.Enabled = false;
             this.btnConfirmar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirmar.ImageOptions.Image")));
             this.btnConfirmar.Location = new System.Drawing.Point(1088, 6);
             this.btnConfirmar.Name = "btnConfirmar";

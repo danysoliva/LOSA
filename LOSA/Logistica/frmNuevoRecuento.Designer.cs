@@ -202,6 +202,7 @@ namespace LOSA.Logistica
             this.btn_Export.TabIndex = 11;
             this.btn_Export.Text = "Descargar Plantilla";
             this.btn_Export.Visible = false;
+            this.btn_Export.Click += new System.EventHandler(this.btn_Export_Click);
             // 
             // btn_Import_Excel
             // 
@@ -217,6 +218,7 @@ namespace LOSA.Logistica
             this.btn_Import_Excel.TabIndex = 10;
             this.btn_Import_Excel.Text = "Importar Excel";
             this.btn_Import_Excel.Visible = false;
+            this.btn_Import_Excel.Click += new System.EventHandler(this.btn_Import_Excel_Click);
             // 
             // simpleButton1
             // 
@@ -561,6 +563,7 @@ namespace LOSA.Logistica
             this.colid_bodega.ColumnEdit = this.grd_bodegas;
             this.colid_bodega.FieldName = "id_bodega";
             this.colid_bodega.Name = "colid_bodega";
+            this.colid_bodega.OptionsColumn.AllowEdit = false;
             this.colid_bodega.Visible = true;
             this.colid_bodega.VisibleIndex = 1;
             this.colid_bodega.Width = 146;
