@@ -27,11 +27,15 @@ namespace LOSA.RecuentoInventario
         int id_year;
         int id_mes;
         DateTime fecha_rec;
+        int Id_header;
+        bool contabilizado;
 
         public frmDetalleRecuento(DataTable pdata, UserLogin puserLogin,int pidyear,int pidmes, DateTime pfecha_recuento)
         {
             InitializeComponent();
             UsuarioLogeado = puserLogin;
+            cmdSelecLote.Visible = false;
+            btnConfirmar.Visible = true;
             //pidyear = Convert.ToInt32(grd_years.EditValue);
             //NuevoRecuento = new Recuento();
             id_year = pidyear;
@@ -46,6 +50,44 @@ namespace LOSA.RecuentoInventario
             grd_years.EditValue = id_year;
             grd_meses_disponibles.EditValue = id_mes;
             //mes = Convert.ToInt32(grd_meses_disponibles.EditValue);
+        }
+
+        public frmDetalleRecuento(UserLogin puserLogin, int pid_recuento, bool pcontabilizado)
+        {
+            InitializeComponent();
+            dsCierreMes1.Recuento_mp.Clear();
+            cmdSelecLote.Visible = true;
+            btnConfirmar.Visible = false;
+            UsuarioLogeado = puserLogin;
+            Id_header = pid_recuento;
+            contabilizado = pcontabilizado;
+            load_data_contabilizar();
+            get_meses_by_year();
+            get_bodegas();
+            get_years();
+            
+        }
+
+        public void load_data_contabilizar()
+        {
+            string query = @"sp_get_inventario_final_detalle_contabilizar";
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            try
+            {
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                cmd.Parameters.AddWithValue("@id_header", Id_header);
+                dsCierreMes1.recuentos_d.Clear();
+                da.Fill(dsCierreMes1.Recuento_mp);
+                cn.Close();
+
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
 
         public void get_meses_by_year()
@@ -251,6 +293,11 @@ namespace LOSA.RecuentoInventario
 
                 dsCierreMes.Recuento_mpDataTable tableOps = new dsCierreMes.Recuento_mpDataTable();
 
+                //foreach (dsCierreMes.recuentos_dRow row1 in dsCierreMes1.recuentos_d.Rows)
+                //{
+                //    DataRow row2 = grdv_mps.GetDataRow(i);
+                //}
+
                 for (int i = 0; i < grdv_mps.SelectedRowsCount; i++)
                 {
 
@@ -280,6 +327,53 @@ namespace LOSA.RecuentoInventario
                         }
                     }
                 }
+            }
+        }
+
+        private void grdv_mps_DoubleClick(object sender, EventArgs e)
+        {
+            var gv = (GridView)grd_mps.FocusedView;
+            var row = (dsCierreMes.Recuento_mpRow)gv.GetDataRow(gv.FocusedRowHandle);
+
+            if (contabilizado == false)
+            {
+                using (SqlConnection connection = new SqlConnection(dp.ConnectionStringLOSA))
+                {
+                    dsCierreMes.Recuento_mpDataTable tableOps = new dsCierreMes.Recuento_mpDataTable();
+                    for (int i = 0; i < grdv_mps.SelectedRowsCount; i++)
+                    {
+
+                        DataRow row2 = grdv_mps.GetDataRow(i);
+
+                        if (Convert.ToDecimal(row2["diferencia"]) > 0 || Convert.ToDecimal(row2["diferencia"]) < 0)
+                        {
+                            dsCierreMes.Recuento_mpRow row1 = tableOps.NewRecuento_mpRow();
+                            row1.id_mp = Convert.ToInt32(row2["id_mp"]);
+                            row1.descripcion = Convert.ToString(row2["descripcion"]);
+                            row1.peso = Convert.ToDecimal(row2["peso"]);
+                            row1.id_bodega = Convert.ToInt32(row2["id_bodega"]);
+                            row1.diferencia = Convert.ToDecimal(row2["diferencia"]);
+                            row1.ExistenciaAprox = Convert.ToDecimal(row2["ExistenciaAprox"]);
+                            row1.code_sap = Convert.ToString(row2["code_sap"]);
+                            //row1.lote = row.lote;
+                            row1.toma_fisica = Convert.ToDecimal(row2["toma_fisica"]);
+                            //row1.whs_equivalente = row.whs_equivalente;
+                            //row1.numero_transaccion = row.numero_transaccion;
+                            tableOps.AddRecuento_mpRow(row1);
+                            tableOps.AcceptChanges();
+
+                            Logistica.frmSeleccionLoteCierre frm = new Logistica.frmSeleccionLoteCierre(UsuarioLogeado, tableOps);
+                            if (frm.ShowDialog() == DialogResult.OK)
+                            {
+
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                //
             }
         }
     }

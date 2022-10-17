@@ -12,6 +12,7 @@ using System.Data.SqlClient;
 using ACS.Classes;
 using LOSA.Clases;
 using DevExpress.XtraGrid.Views.Grid;
+using LOSA.RecuentoInventario;
 
 namespace LOSA.Logistica
 {
@@ -96,7 +97,8 @@ namespace LOSA.Logistica
             }
             else
             {
-                frmCierreMensual_Detalle frm = new frmCierreMensual_Detalle(row.id, row.contabilizacion);
+                //frmCierreMensual_Detalle frm = new frmCierreMensual_Detalle(row.id, row.contabilizacion);
+                frmDetalleRecuento frm = new frmDetalleRecuento(UsuarioLogeado, row.id, row.contabilizacion);
                 frm.MdiParent = this.MdiParent;
                 frm.Show();
             }

@@ -36,12 +36,6 @@ namespace LOSA.Logistica
 
         }
 
-
-        private void CargarMP()
-        {
-           
-        }
-
         public void enumerar_rows()
         {
             //int enumerador = 0;
@@ -188,6 +182,7 @@ namespace LOSA.Logistica
                 CajaDialogo.Error("Hay lotes seleccionado sin configurar la cantidad a utilizar.");
                 return;
             }
+
             var Row = from row in list
                       where row.seleccionar == true
                       select row;
@@ -291,13 +286,90 @@ namespace LOSA.Logistica
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
+            if (grdv_efectiva.RowCount == 0)
+            {
+                CajaDialogo.Error("No hay Materia Prima que aplicar en Kardex!");
+                return;
+            }
+
+            foreach (dsCierreMes.Aceptado_loteRow row in dsCierreMes.Aceptado_lote.Rows)
+            {
+                if (row.utilizado == 0)
+                {
+                    CajaDialogo.Error("No se puede ajustar valor 0 al Lote" + row.lote);
+                    return;
+                }
+            }
+            
+            int id_bodega;
+            for (int i = 0; i < grdv_mps.SelectedRowsCount; i++)
+            {
+                DataRow row2 = grdv_mps.GetDataRow(i);
+
+                //id_mp = Convert.ToInt32(row2["id_mp"]);
+                id_bodega = Convert.ToInt32(row2["id_bodega"]);
+
+            }
+
+            string query = @"[sp_insert_kardex_general_inventario_final]";
+            SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@id_mp", IdMpSelected);
+            foreach (dsCierreMes.Aceptado_loteRow row in dsCierreMes.Aceptado_lote.Rows)
+            {
+                cmd.Parameters.AddWithValue("@lote",row.lote);
+                cmd.Parameters.AddWithValue("@id_lote_alosy", row.id_lote_alosy);
+                cmd.Parameters.AddWithValue("@id_bodega", row.id_bodega);
+                cmd.Parameters.AddWithValue("", row.utilizado); //Esto es lo que esta 
+            }
+
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
 
         private void btnIzquierda_Click(object sender, EventArgs e)
         {
+            var list = dsCierreMes.SeleccionLote.AsEnumerable();
+            if (list.Count(p => p.seleccionar == true) > 0)
+            {
+                CajaDialogo.Error("Hay lotes seleccionado sin configurar la cantidad a utilizar.");
+                return;
+            }
+            var Row = from row in list
+                      where row.seleccionar == true
+                      select row;
+            foreach (var recorrido in Row)
+            {
+                DataRow dr = dsCierreMes.Aceptado_lote.NewRow();
+                dr["id_mp"] = recorrido.id_mp;
+                dr["descripcion"] = recorrido.descripcion;
+                dr["ExistenciaAprox"] = recorrido.ExistenciaAprox;
+                dr["lote"] = recorrido.lote;
+                dr["seleccionar"] = false;
+                dr["utilizado"] = recorrido.utilizado;
+                dr["id_lote_alosy"] = recorrido.id_lote_alosy;
+                dr["id_bodega"] = bodega;
+                dr["id_lote_count"] = id_count_selected;
 
+                dsCierreMes.Aceptado_lote.Rows.Add(dr);
+                DataRow drw = dsCierreMes.memory_config.NewRow();
+                drw["id_mp"] = recorrido.id_mp;
+                drw["descripcion"] = recorrido.descripcion;
+                drw["ExistenciaAprox"] = recorrido.ExistenciaAprox;
+                drw["lote"] = recorrido.lote;
+                drw["seleccionar"] = false;
+                drw["utilizado"] = recorrido.utilizado;
+                drw["id_lote_alosy"] = recorrido.id_lote_alosy;
+                drw["id_bodega"] = bodega;
+                drw["id_lote_count"] = id_count_selected;
+                dsCierreMes.memory_config.Rows.Add(drw);
+                //btnDerecha.Enabled = false;
+                btnIzquierda.Enabled = false;
+                // +
+
+            }
         }
     }
 }

@@ -279,7 +279,7 @@ namespace LOSA.RecepcionMP
 
             int Dias = Convert.ToInt32(diasaprox.Days);
 
-            if (Dias > 1)//Si es mayor que 1, la tarima lleve mas de dos dias en la bodega.
+            if (Dias > 3)//Si es mayor que 3, la tarima lleve mas de dos dias en la bodega.
             {
                 CajaDialogo.Error("No puede editar tarimas que tengan mas de dos dias de ingreso.");
                 return;
