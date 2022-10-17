@@ -341,6 +341,7 @@
               <xs:element name="pais" msprop:Generator_ColumnVarNameInTable="columnpais" msprop:Generator_ColumnPropNameInRow="pais" msprop:Generator_ColumnPropNameInTable="paisColumn" msprop:Generator_UserColumnName="pais" type="xs:string" minOccurs="0" />
               <xs:element name="cliente_aqua" msprop:Generator_ColumnVarNameInTable="columncliente_aqua" msprop:Generator_ColumnPropNameInRow="cliente_aqua" msprop:Generator_ColumnPropNameInTable="cliente_aquaColumn" msprop:Generator_UserColumnName="cliente_aqua" type="xs:string" minOccurs="0" />
               <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="seleccionado" msdata:Caption="Seleccionar" msprop:Generator_ColumnVarNameInTable="columnseleccionado" msprop:Generator_ColumnPropNameInRow="seleccionado" msprop:Generator_ColumnPropNameInTable="seleccionadoColumn" msprop:Generator_UserColumnName="seleccionado" type="xs:boolean" default="false" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

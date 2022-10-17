@@ -64,7 +64,7 @@ namespace LOSA.Clases
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_recupera_registro_lotemp_list", con);
+                SqlCommand cmd = new SqlCommand("sp_get_recupera_registro_lotemp_listv2", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@lotemp", pLotemp);
                 SqlDataReader dr = cmd.ExecuteReader();
