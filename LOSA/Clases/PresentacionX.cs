@@ -21,13 +21,14 @@ namespace LOSA.Clases
         bool enable;
         DateTime fecha;
         decimal factor;
-        bool Recuperado;
+        bool _Recuperado;
 
         public int Id { get => id; set => id = value; }
         public string Descripcion { get => descripcion; set => descripcion = value; }
         public bool Enable { get => enable; set => enable = value; }
         public DateTime Fecha { get => fecha; set => fecha = value; }
         public decimal Factor { get => factor; set => factor = value; }
+        public bool Recuperado { get => _Recuperado; set => _Recuperado = value; }
 
         public bool RecuperarRegistro(int pId)
         {

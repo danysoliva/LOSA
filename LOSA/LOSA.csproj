@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\aqfsvr003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>407</ApplicationRevision>
+    <ApplicationRevision>409</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -1496,6 +1496,12 @@
     <Compile Include="MicroIngredientes\frmSelectLotePesaje.Designer.cs">
       <DependentUpon>frmSelectLotePesaje.cs</DependentUpon>
     </Compile>
+    <Compile Include="MicroIngredientes\frm_entrega_tarima_micros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MicroIngredientes\frm_entrega_tarima_micros.Designer.cs">
+      <DependentUpon>frm_entrega_tarima_micros.cs</DependentUpon>
+    </Compile>
     <Compile Include="MicroIngredientes\Models\FuncionesMicroI.cs" />
     <Compile Include="MicroIngredientes\Models\OrdenH_Info.cs" />
     <Compile Include="MicroIngredientes\Models\PesajeIndividualCompletados.cs" />
@@ -1591,6 +1597,9 @@
     </Compile>
     <Compile Include="MicroIngredientes\xfrmSpinBatchPlan.Designer.cs">
       <DependentUpon>xfrmSpinBatchPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Micro\dsMicro.cs">
+      <DependentUpon>dsMicro.xsd</DependentUpon>
     </Compile>
     <Compile Include="Micro\dsMicro.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -3621,6 +3630,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MicroIngredientes\frmSelectLotePesaje.resx">
       <DependentUpon>frmSelectLotePesaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MicroIngredientes\frm_entrega_tarima_micros.resx">
+      <DependentUpon>frm_entrega_tarima_micros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MicroIngredientes\Reportes\rptReporteIngresoTarimaMicros.resx">
       <DependentUpon>rptReporteIngresoTarimaMicros.cs</DependentUpon>

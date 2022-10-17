@@ -86,6 +86,31 @@ namespace LOSA
                     tabOpciones.TabPages[i].PageVisible = true;
                     tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
                     tabOpciones.TabPages[i-1].PageVisible = true;
+
+                    idNivel = pUser.idNivelAcceso(pUser.Id, 7);//7 = ALOSY
+                    switch (idNivel)
+                    {
+                        case 1://Basic View
+                            BasicView();
+                            UsuarioLogeado.Idnivel = idNivel;
+                            break;
+                        case 2://Basic No Autorization
+
+                            break;
+                        case 3://Medium Autorization
+
+                            break;
+                        case 4://Depth With Delta
+
+                            break;
+                        case 5://Depth Without Delta
+
+                            break;
+                        default:
+                            tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
+                            tabOpciones.TabPages[i].PageVisible = true;
+                            break;
+                    }
                     break;
                 case GrupoUser.GrupoUsuario.Contabilidad:
                     int idNivel2 = pUser.idNivelAcceso(pUser.Id, 7);//7 = ALOSY

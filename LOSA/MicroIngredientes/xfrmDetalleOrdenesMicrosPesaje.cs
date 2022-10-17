@@ -16,6 +16,7 @@ using LOSA.MicroIngredientes.Models;
 using LOSA.Reportes;
 using DevExpress.XtraReports.UI;
 using LOSA.Utileria;
+using static LOSA.MicroIngredientes.xfrmPesajeIndividual;
 
 namespace LOSA.MicroIngredientes
 {
@@ -46,7 +47,7 @@ namespace LOSA.MicroIngredientes
             Load_reprint();
         }
 
-            public void load_turno() 
+        public void load_turno()
         {
             try
             {
@@ -64,7 +65,7 @@ namespace LOSA.MicroIngredientes
             catch (Exception ex)
             {
 
-                CajaDialogo.Error(ex.Message) ;
+                CajaDialogo.Error(ex.Message);
             }
         }
         private void LoadData()
@@ -84,18 +85,18 @@ namespace LOSA.MicroIngredientes
 
                 }
 
-                if (dsMicros.plan_microsh.Rows.Count>0)
+                if (dsMicros.plan_microsh.Rows.Count > 0)
                 {
 
-                   lblPT.Text = "PT: "+ dsMicros.plan_microsh.FirstOrDefault().pt_name;
-                   lblBatch.Text = "Batch Real: "+ dsMicros.plan_microsh.FirstOrDefault().batch_real;
+                    lblPT.Text = "PT: " + dsMicros.plan_microsh.FirstOrDefault().pt_name;
+                    lblBatch.Text = "Batch Real: " + dsMicros.plan_microsh.FirstOrDefault().batch_real;
                 }
                 else
                 {
                     lblPT.Text = "PT: #";
                     lblBatch.Text = "Batch Real: #";
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -150,7 +151,7 @@ namespace LOSA.MicroIngredientes
 
         private void xfrmDetalleOrdenesMicros_Load(object sender, EventArgs e)
         {
-            lblTitulo.Text = "Código Orden: "+codigoOrden;
+            lblTitulo.Text = "Código Orden: " + codigoOrden;
         }
 
         private void cmdUpdate_Click(object sender, EventArgs e)
@@ -182,10 +183,10 @@ namespace LOSA.MicroIngredientes
 
         private void gvDetalle_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
         {
-            
+
         }
 
-        int ami_id=0;
+        int ami_id = 0;
         private void gvDetalle_RowClick(object sender, RowClickEventArgs e)
         {
             //Cargar el detalle
@@ -194,7 +195,7 @@ namespace LOSA.MicroIngredientes
 
             ami_id = row.AMI_ID;
 
-            if (row!=null)
+            if (row != null)
             {
                 id_orden = row.id_orden_encabezado;
             }
@@ -230,38 +231,79 @@ namespace LOSA.MicroIngredientes
 
         private void cmdPesar1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-
-            var gridView = (GridView)gridControl2.FocusedView;
-            var row = (dsMicros.plan_microsdRow)gridView.GetFocusedDataRow();
-
-            if (row.pesaje >= row.total)
+            try
             {
-                CajaDialogo.Error("YA SE PESÓ ESTA MATERIA PRIMA");
-                return;
+
+                var gridView = (GridView)gridControl2.FocusedView;
+                var row = (dsMicros.plan_microsdRow)gridView.GetFocusedDataRow();
+
+                if (row.pesaje >= row.total)
+                {
+                    CajaDialogo.Error("YA SE PESÓ ESTA MATERIA PRIMA");
+                    return;
+                }
+
+                PesajeManualInfo pesajeManualInfo = new PesajeManualInfo();
+
+                //pesajeManualInfo.MateriaPrimaID = row.id_rm;
+                //pesajeManualInfo.Total = row.total;
+                //pesajeManualInfo.OrdenID = id_orden;
+                //pesajeManualInfo.CantBatch = row.cant_batch;
+                //pesajeManualInfo.DetallePesajeManualPlanID = row.id_orden_pesaje_manual_plan;
+                //pesajeManualInfo.BatchPlan = row.cant_batch;
+                //pesajeManualInfo.AMI_ID = ami_id;
+
+                //frmSelectLotePesaje frm = new frmSelectLotePesaje(pesajeManualInfo);
+
+
+                //if (frm.ShowDialog()== DialogResult.OK)
+                //{
+                //    //LoadData();
+                //    gvDetalle_RowClick(null, null);
+
+
+                //}
+
+
+
+
+                ////var row = (dsMicros.DetalleOrdenesPesajeIndividualRow)gvPesajeIndividual.GetDataRow(gvPesajeIndividual.FocusedRowHandle);
+                PesajeIndividualInfo pesajeIndividual = new PesajeIndividualInfo();
+
+                //if (row != null)
+                //{
+
+                //    if (row.Batch_Completados == row.Batch_Plan)
+                //    {
+                //        CajaDialogo.Error("YA HA COMPLETADO ESTE PLAN");
+                //        return;
+                //    }
+
+
+                pesajeIndividual.Batch_Plan = row.cant_batch;
+                pesajeIndividual.CantBatchMaximo = Convert.ToInt32( (row.total - row.batch_real));
+                //pesajeIndividual.CantBatchMaximo = (row.Batch_Plan - row.Batch_Completados);
+                pesajeIndividual.id_orden_pesaje_header = row.id_orden_encabezado;
+                pesajeIndividual.MateriaPrimaID = row.id_rm;
+                pesajeIndividual.MateriaPrima = row.namerm;
+                pesajeIndividual.Total = row.total;
+                pesajeIndividual.PesoPorBatch = row.set_point;
+                pesajeIndividual.AMI_ID = ami_id;
+                pesajeIndividual.CantBatch = row.cant_batch;
+
+                xfrmPesajeIndividual frm = new xfrmPesajeIndividual(pesajeIndividual,(int)TipoPesaje.PesajeNucleo);
+
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    LoadDataIndividual();
+                }
             }
-            //Pesar
-
-            PesajeManualInfo pesajeManualInfo = new PesajeManualInfo();
-
-            pesajeManualInfo.MateriaPrimaID = row.id_rm;
-            pesajeManualInfo.Total = row.total;
-            pesajeManualInfo.OrdenID = id_orden;
-            pesajeManualInfo.CantBatch = row.cant_batch;
-            pesajeManualInfo.DetallePesajeManualPlanID=row.id_orden_pesaje_manual_plan;
-            pesajeManualInfo.BatchPlan = row.cant_batch;
-            pesajeManualInfo.AMI_ID = ami_id;
-
-            frmSelectLotePesaje frm = new frmSelectLotePesaje(pesajeManualInfo);
-            //frm.MdiParent = this.MdiParent;
-
-            if (frm.ShowDialog()== DialogResult.OK)
+            
+            catch (Exception ex)
             {
-                //LoadData();
-                gvDetalle_RowClick(null, null);
-
-
+                CajaDialogo.Error(ex.Message);
             }
-            //frm.Show();
+
         }
 
         private void gridView2_RowStyle(object sender, RowStyleEventArgs e)
@@ -308,7 +350,7 @@ namespace LOSA.MicroIngredientes
                     //pesajeIndividual.AMI_ID = ami_id;
 
 
-                    xfrmPesajeIndividual frm = new xfrmPesajeIndividual(pesajeIndividual);
+                    xfrmPesajeIndividual frm = new xfrmPesajeIndividual(pesajeIndividual,(int)TipoPesaje.PesajeIndividual);
 
                     if (frm.ShowDialog() == DialogResult.OK)
                     {

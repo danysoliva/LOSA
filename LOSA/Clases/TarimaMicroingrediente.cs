@@ -12,7 +12,7 @@ namespace LOSA.Clases
    public class TarimaMicroingrediente
     {
 
-        int _id;
+        Int64 _id;
         int _id_materiaprima;
         decimal _cantidad;
         decimal _cantidadKg;
@@ -39,7 +39,7 @@ namespace LOSA.Clases
 
 
 
-        public int Id { get => _id; set => _id = value; }
+        public Int64 Id { get => _id; set => _id = value; }
         public int Id_materiaprima { get => _id_materiaprima; set => _id_materiaprima = value; }
         public bool Recuperado { get => _Recuperad; set => _Recuperad = value; }
         public string CardCode { get => _idProveedor; set => _idProveedor = value; }
@@ -66,7 +66,7 @@ namespace LOSA.Clases
 
         }
 
-        public bool RecuperarRegistroTarimaMicros(int pIdTarima, string pCodigoBarra)
+        public bool RecuperarRegistroTarimaMicros(Int64 pIdTarima, string pCodigoBarra)
         {
             try
             {
@@ -81,7 +81,7 @@ namespace LOSA.Clases
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    Id = dr.GetInt32(0);
+                    Id = dr.GetInt64(0);
                     Id_materiaprima = dr.GetInt32(1);
                     if (!dr.IsDBNull(dr.GetOrdinal("CardCode")))
                         CardCode = dr.GetString(2);
@@ -133,6 +133,11 @@ namespace LOSA.Clases
                     else
                         ItemCode = null;
 
+                    if (!dr.IsDBNull(dr.GetOrdinal("materia_prima_name")))
+                        MateriaPrima = dr.GetString(16);
+                    else
+                        MateriaPrima = null;
+
                     Recuperado = true;
                 }
                 dr.Close();
@@ -144,6 +149,55 @@ namespace LOSA.Clases
                 CajaDialogo.Error(ec.Message);
             }
             return Recuperado;
+        }
+
+        public bool RecuperarRegistroPorCodBarra(string codBarra)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_tarima_for_codigo_barra", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@codBarra", codBarra);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    //Id = dr.GetInt32(0);
+                    //FechaIngreso = dr.GetDateTime(1);
+                    //FechaVencimiento = dr.GetDateTime(2);
+                    //LotePT = dr.GetInt32(3);
+                    //IdPresentacion = dr.GetInt32(4);
+                    //_idUsuario = dr.GetInt32(5);
+                    //_tipotarimaid = dr.GetInt32(6);
+                    //IdProductoterminado = dr.GetInt32(7);
+                    //Fecha_produccion_pt = dr.GetDateTime(8);
+                    LoteMP = dr.GetString(3);
+                    CodigoBarra = dr.GetString(6);
+                    MateriaPrima = dr.GetString(9);
+                    IdTarimaOrigen = dr.GetInt32(10);
+                    //Cantidad = dr.GetDecimal(10);//ó unidades
+                    //_peso = dr.GetDecimal(11);
+                    //ItemCode = dr.GetString(12);
+                    //id_estadoCalidad = dr.GetInt32(13);
+                    //Id_turno = dr.GetInt32(14);
+                    //id_estado_pt = dr.GetInt32(15);
+                    //Id_alimentacion = dr.GetInt32(16);
+                    //ProductoTerminadoName = dr.GetString(17);
+                    //ProductoTerminadoName_Detalle = dr.GetString(18);
+                    Recuperado = true;
+                }
+                dr.Close();
+                conn.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+            return Recuperado;
+
         }
     }
 }
