@@ -328,11 +328,14 @@ namespace LOSA.Logistica
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@id_mp", IdMpSelected);
             cmd.Parameters.AddWithValue("@id_bodega", id_bodegaMP);
+            cmd.Parameters.AddWithValue("@user_id", UsuarioLogeado.Id);
+            cmd.Parameters.AddWithValue("@existencia_anterior", existencia_anterior);
+            cmd.Parameters.AddWithValue("@existencia_nueva", existencia_nueva);
             foreach (dsCierreMes.Aceptado_loteRow row in dsCierreMes.Aceptado_lote.Rows)
             {
                 cmd.Parameters.AddWithValue("@lote",row.lote);
                 cmd.Parameters.AddWithValue("@id_lote_alosy", row.id_lote_alosy);
-                cmd.Parameters.AddWithValue("@id_bodega", row.id_bodega);
+                //cmd.Parameters.AddWithValue("@id_bodega", row.id_bodega);
                 cmd.Parameters.AddWithValue("@diferencia", row.utilizado); //Esto es el valor de lo que se va dar Salida/Entrada en Kardex
                 cmd.ExecuteNonQuery();
             }
