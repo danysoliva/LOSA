@@ -46,7 +46,7 @@ namespace LOSA.MicroIngredientes {
         
         private detalle_formulaDataTable tabledetalle_formula;
         
-        private DataTable1DataTable tableDataTable1;
+        private MP_EscaneoDataTable tableMP_Escaneo;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -109,8 +109,8 @@ namespace LOSA.MicroIngredientes {
                 if ((ds.Tables["detalle_formula"] != null)) {
                     base.Tables.Add(new detalle_formulaDataTable(ds.Tables["detalle_formula"]));
                 }
-                if ((ds.Tables["DataTable1"] != null)) {
-                    base.Tables.Add(new DataTable1DataTable(ds.Tables["DataTable1"]));
+                if ((ds.Tables["MP_Escaneo"] != null)) {
+                    base.Tables.Add(new MP_EscaneoDataTable(ds.Tables["MP_Escaneo"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -244,9 +244,9 @@ namespace LOSA.MicroIngredientes {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public DataTable1DataTable DataTable1 {
+        public MP_EscaneoDataTable MP_Escaneo {
             get {
-                return this.tableDataTable1;
+                return this.tableMP_Escaneo;
             }
         }
         
@@ -350,8 +350,8 @@ namespace LOSA.MicroIngredientes {
                 if ((ds.Tables["detalle_formula"] != null)) {
                     base.Tables.Add(new detalle_formulaDataTable(ds.Tables["detalle_formula"]));
                 }
-                if ((ds.Tables["DataTable1"] != null)) {
-                    base.Tables.Add(new DataTable1DataTable(ds.Tables["DataTable1"]));
+                if ((ds.Tables["MP_Escaneo"] != null)) {
+                    base.Tables.Add(new MP_EscaneoDataTable(ds.Tables["MP_Escaneo"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -452,10 +452,10 @@ namespace LOSA.MicroIngredientes {
                     this.tabledetalle_formula.InitVars();
                 }
             }
-            this.tableDataTable1 = ((DataTable1DataTable)(base.Tables["DataTable1"]));
+            this.tableMP_Escaneo = ((MP_EscaneoDataTable)(base.Tables["MP_Escaneo"]));
             if ((initTable == true)) {
-                if ((this.tableDataTable1 != null)) {
-                    this.tableDataTable1.InitVars();
+                if ((this.tableMP_Escaneo != null)) {
+                    this.tableMP_Escaneo.InitVars();
                 }
             }
         }
@@ -490,8 +490,8 @@ namespace LOSA.MicroIngredientes {
             base.Tables.Add(this.tabletipo_pesaje);
             this.tabledetalle_formula = new detalle_formulaDataTable();
             base.Tables.Add(this.tabledetalle_formula);
-            this.tableDataTable1 = new DataTable1DataTable();
-            base.Tables.Add(this.tableDataTable1);
+            this.tableMP_Escaneo = new MP_EscaneoDataTable();
+            base.Tables.Add(this.tableMP_Escaneo);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -562,7 +562,7 @@ namespace LOSA.MicroIngredientes {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeDataTable1() {
+        private bool ShouldSerializeMP_Escaneo() {
             return false;
         }
         
@@ -655,7 +655,7 @@ namespace LOSA.MicroIngredientes {
         public delegate void detalle_formulaRowChangeEventHandler(object sender, detalle_formulaRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void DataTable1RowChangeEventHandler(object sender, DataTable1RowChangeEvent e);
+        public delegate void MP_EscaneoRowChangeEventHandler(object sender, MP_EscaneoRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -4417,7 +4417,7 @@ namespace LOSA.MicroIngredientes {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class DataTable1DataTable : global::System.Data.TypedTableBase<DataTable1Row> {
+        public partial class MP_EscaneoDataTable : global::System.Data.TypedTableBase<MP_EscaneoRow> {
             
             private global::System.Data.DataColumn columnmp;
             
@@ -4425,10 +4425,16 @@ namespace LOSA.MicroIngredientes {
             
             private global::System.Data.DataColumn columnid_tarima_origen;
             
+            private global::System.Data.DataColumn columnpeso;
+            
+            private global::System.Data.DataColumn columnid_mp;
+            
+            private global::System.Data.DataColumn columnid_tarima_micro;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DataTable1DataTable() {
-                this.TableName = "DataTable1";
+            public MP_EscaneoDataTable() {
+                this.TableName = "MP_Escaneo";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -4436,7 +4442,7 @@ namespace LOSA.MicroIngredientes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal DataTable1DataTable(global::System.Data.DataTable table) {
+            internal MP_EscaneoDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -4453,7 +4459,7 @@ namespace LOSA.MicroIngredientes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected DataTable1DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected MP_EscaneoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -4484,6 +4490,30 @@ namespace LOSA.MicroIngredientes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn pesoColumn {
+                get {
+                    return this.columnpeso;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_mpColumn {
+                get {
+                    return this.columnid_mp;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_tarima_microColumn {
+                get {
+                    return this.columnid_tarima_micro;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4493,47 +4523,50 @@ namespace LOSA.MicroIngredientes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DataTable1Row this[int index] {
+            public MP_EscaneoRow this[int index] {
                 get {
-                    return ((DataTable1Row)(this.Rows[index]));
+                    return ((MP_EscaneoRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event DataTable1RowChangeEventHandler DataTable1RowChanging;
+            public event MP_EscaneoRowChangeEventHandler MP_EscaneoRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event DataTable1RowChangeEventHandler DataTable1RowChanged;
+            public event MP_EscaneoRowChangeEventHandler MP_EscaneoRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event DataTable1RowChangeEventHandler DataTable1RowDeleting;
+            public event MP_EscaneoRowChangeEventHandler MP_EscaneoRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event DataTable1RowChangeEventHandler DataTable1RowDeleted;
+            public event MP_EscaneoRowChangeEventHandler MP_EscaneoRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddDataTable1Row(DataTable1Row row) {
+            public void AddMP_EscaneoRow(MP_EscaneoRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DataTable1Row AddDataTable1Row(string mp, string lote, string id_tarima_origen) {
-                DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
+            public MP_EscaneoRow AddMP_EscaneoRow(string mp, string lote, int id_tarima_origen, decimal peso, int id_mp, long id_tarima_micro) {
+                MP_EscaneoRow rowMP_EscaneoRow = ((MP_EscaneoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         mp,
                         lote,
-                        id_tarima_origen};
-                rowDataTable1Row.ItemArray = columnValuesArray;
-                this.Rows.Add(rowDataTable1Row);
-                return rowDataTable1Row;
+                        id_tarima_origen,
+                        peso,
+                        id_mp,
+                        id_tarima_micro};
+                rowMP_EscaneoRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowMP_EscaneoRow);
+                return rowMP_EscaneoRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                DataTable1DataTable cln = ((DataTable1DataTable)(base.Clone()));
+                MP_EscaneoDataTable cln = ((MP_EscaneoDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -4541,7 +4574,7 @@ namespace LOSA.MicroIngredientes {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new DataTable1DataTable();
+                return new MP_EscaneoDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4550,6 +4583,9 @@ namespace LOSA.MicroIngredientes {
                 this.columnmp = base.Columns["mp"];
                 this.columnlote = base.Columns["lote"];
                 this.columnid_tarima_origen = base.Columns["id_tarima_origen"];
+                this.columnpeso = base.Columns["peso"];
+                this.columnid_mp = base.Columns["id_mp"];
+                this.columnid_tarima_micro = base.Columns["id_tarima_micro"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4559,34 +4595,40 @@ namespace LOSA.MicroIngredientes {
                 base.Columns.Add(this.columnmp);
                 this.columnlote = new global::System.Data.DataColumn("lote", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnlote);
-                this.columnid_tarima_origen = new global::System.Data.DataColumn("id_tarima_origen", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnid_tarima_origen = new global::System.Data.DataColumn("id_tarima_origen", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_tarima_origen);
+                this.columnpeso = new global::System.Data.DataColumn("peso", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpeso);
+                this.columnid_mp = new global::System.Data.DataColumn("id_mp", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_mp);
+                this.columnid_tarima_micro = new global::System.Data.DataColumn("id_tarima_micro", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_tarima_micro);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DataTable1Row NewDataTable1Row() {
-                return ((DataTable1Row)(this.NewRow()));
+            public MP_EscaneoRow NewMP_EscaneoRow() {
+                return ((MP_EscaneoRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new DataTable1Row(builder);
+                return new MP_EscaneoRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(DataTable1Row);
+                return typeof(MP_EscaneoRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.DataTable1RowChanged != null)) {
-                    this.DataTable1RowChanged(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
+                if ((this.MP_EscaneoRowChanged != null)) {
+                    this.MP_EscaneoRowChanged(this, new MP_EscaneoRowChangeEvent(((MP_EscaneoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -4594,8 +4636,8 @@ namespace LOSA.MicroIngredientes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.DataTable1RowChanging != null)) {
-                    this.DataTable1RowChanging(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
+                if ((this.MP_EscaneoRowChanging != null)) {
+                    this.MP_EscaneoRowChanging(this, new MP_EscaneoRowChangeEvent(((MP_EscaneoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -4603,8 +4645,8 @@ namespace LOSA.MicroIngredientes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.DataTable1RowDeleted != null)) {
-                    this.DataTable1RowDeleted(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
+                if ((this.MP_EscaneoRowDeleted != null)) {
+                    this.MP_EscaneoRowDeleted(this, new MP_EscaneoRowChangeEvent(((MP_EscaneoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -4612,14 +4654,14 @@ namespace LOSA.MicroIngredientes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.DataTable1RowDeleting != null)) {
-                    this.DataTable1RowDeleting(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
+                if ((this.MP_EscaneoRowDeleting != null)) {
+                    this.MP_EscaneoRowDeleting(this, new MP_EscaneoRowChangeEvent(((MP_EscaneoRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveDataTable1Row(DataTable1Row row) {
+            public void RemoveMP_EscaneoRow(MP_EscaneoRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -4646,7 +4688,7 @@ namespace LOSA.MicroIngredientes {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "DataTable1DataTable";
+                attribute2.FixedValue = "MP_EscaneoDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -7219,15 +7261,15 @@ namespace LOSA.MicroIngredientes {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class DataTable1Row : global::System.Data.DataRow {
+        public partial class MP_EscaneoRow : global::System.Data.DataRow {
             
-            private DataTable1DataTable tableDataTable1;
+            private MP_EscaneoDataTable tableMP_Escaneo;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal DataTable1Row(global::System.Data.DataRowBuilder rb) : 
+            internal MP_EscaneoRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableDataTable1 = ((DataTable1DataTable)(this.Table));
+                this.tableMP_Escaneo = ((MP_EscaneoDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7235,14 +7277,14 @@ namespace LOSA.MicroIngredientes {
             public string mp {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable1.mpColumn]));
+                        return ((string)(this[this.tableMP_Escaneo.mpColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'mp\' in table \'DataTable1\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'mp\' in table \'MP_Escaneo\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable1.mpColumn] = value;
+                    this[this.tableMP_Escaneo.mpColumn] = value;
                 }
             }
             
@@ -7251,67 +7293,151 @@ namespace LOSA.MicroIngredientes {
             public string lote {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable1.loteColumn]));
+                        return ((string)(this[this.tableMP_Escaneo.loteColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'lote\' in table \'DataTable1\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'lote\' in table \'MP_Escaneo\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable1.loteColumn] = value;
+                    this[this.tableMP_Escaneo.loteColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string id_tarima_origen {
+            public int id_tarima_origen {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable1.id_tarima_origenColumn]));
+                        return ((int)(this[this.tableMP_Escaneo.id_tarima_origenColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'id_tarima_origen\' in table \'DataTable1\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'id_tarima_origen\' in table \'MP_Escaneo\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable1.id_tarima_origenColumn] = value;
+                    this[this.tableMP_Escaneo.id_tarima_origenColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal peso {
+                get {
+                    if (this.IspesoNull()) {
+                        return 0m;
+                    }
+                    else {
+                        return ((decimal)(this[this.tableMP_Escaneo.pesoColumn]));
+                    }
+                }
+                set {
+                    this[this.tableMP_Escaneo.pesoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_mp {
+                get {
+                    try {
+                        return ((int)(this[this.tableMP_Escaneo.id_mpColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'id_mp\' in table \'MP_Escaneo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMP_Escaneo.id_mpColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long id_tarima_micro {
+                get {
+                    if (this.Isid_tarima_microNull()) {
+                        return 0;
+                    }
+                    else {
+                        return ((long)(this[this.tableMP_Escaneo.id_tarima_microColumn]));
+                    }
+                }
+                set {
+                    this[this.tableMP_Escaneo.id_tarima_microColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsmpNull() {
-                return this.IsNull(this.tableDataTable1.mpColumn);
+                return this.IsNull(this.tableMP_Escaneo.mpColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetmpNull() {
-                this[this.tableDataTable1.mpColumn] = global::System.Convert.DBNull;
+                this[this.tableMP_Escaneo.mpColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsloteNull() {
-                return this.IsNull(this.tableDataTable1.loteColumn);
+                return this.IsNull(this.tableMP_Escaneo.loteColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetloteNull() {
-                this[this.tableDataTable1.loteColumn] = global::System.Convert.DBNull;
+                this[this.tableMP_Escaneo.loteColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isid_tarima_origenNull() {
-                return this.IsNull(this.tableDataTable1.id_tarima_origenColumn);
+                return this.IsNull(this.tableMP_Escaneo.id_tarima_origenColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setid_tarima_origenNull() {
-                this[this.tableDataTable1.id_tarima_origenColumn] = global::System.Convert.DBNull;
+                this[this.tableMP_Escaneo.id_tarima_origenColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IspesoNull() {
+                return this.IsNull(this.tableMP_Escaneo.pesoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetpesoNull() {
+                this[this.tableMP_Escaneo.pesoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_mpNull() {
+                return this.IsNull(this.tableMP_Escaneo.id_mpColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_mpNull() {
+                this[this.tableMP_Escaneo.id_mpColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_tarima_microNull() {
+                return this.IsNull(this.tableMP_Escaneo.id_tarima_microColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_tarima_microNull() {
+                this[this.tableMP_Escaneo.id_tarima_microColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7693,22 +7819,22 @@ namespace LOSA.MicroIngredientes {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class DataTable1RowChangeEvent : global::System.EventArgs {
+        public class MP_EscaneoRowChangeEvent : global::System.EventArgs {
             
-            private DataTable1Row eventRow;
+            private MP_EscaneoRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DataTable1RowChangeEvent(DataTable1Row row, global::System.Data.DataRowAction action) {
+            public MP_EscaneoRowChangeEvent(MP_EscaneoRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DataTable1Row Row {
+            public MP_EscaneoRow Row {
                 get {
                     return this.eventRow;
                 }

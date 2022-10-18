@@ -31,6 +31,11 @@ namespace LOSA.MicroIngredientes
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmPesajeIndividualBatchV3));
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.lblBascula1 = new DevExpress.XtraEditors.LabelControl();
             this.lblValorBascula1 = new DevExpress.XtraEditors.LabelControl();
             this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
@@ -48,16 +53,30 @@ namespace LOSA.MicroIngredientes
             this.btnBascula1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnBascula2 = new DevExpress.XtraEditors.SimpleButton();
             this.txtCodBarra = new DevExpress.XtraEditors.TextEdit();
-            this.lblLote = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.cmdClose = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.dsMicrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gvPesaje = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colmp = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collote = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_tarima_origen = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpeso = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_mp = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnDelete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.lblPesoAcumulado = new DevExpress.XtraEditors.LabelControl();
+            this.lblPesoAcumulado2 = new DevExpress.XtraEditors.LabelControl();
+            this.btnBasc1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnBasc2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnBascAmbas = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMicros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodBarra.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsMicrosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvPesaje)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
             this.SuspendLayout();
             // 
             // lblBascula1
@@ -67,7 +86,7 @@ namespace LOSA.MicroIngredientes
             this.lblBascula1.Appearance.Options.UseTextOptions = true;
             this.lblBascula1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblBascula1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblBascula1.Location = new System.Drawing.Point(0, 111);
+            this.lblBascula1.Location = new System.Drawing.Point(0, 163);
             this.lblBascula1.Name = "lblBascula1";
             this.lblBascula1.Size = new System.Drawing.Size(307, 19);
             this.lblBascula1.TabIndex = 20;
@@ -80,9 +99,9 @@ namespace LOSA.MicroIngredientes
             this.lblValorBascula1.Appearance.Options.UseTextOptions = true;
             this.lblValorBascula1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblValorBascula1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblValorBascula1.Location = new System.Drawing.Point(-1, 136);
+            this.lblValorBascula1.Location = new System.Drawing.Point(-1, 188);
             this.lblValorBascula1.Name = "lblValorBascula1";
-            this.lblValorBascula1.Size = new System.Drawing.Size(308, 30);
+            this.lblValorBascula1.Size = new System.Drawing.Size(386, 30);
             this.lblValorBascula1.TabIndex = 21;
             this.lblValorBascula1.Text = "Valor en Báscula: 0.00 Kg";
             this.lblValorBascula1.Click += new System.EventHandler(this.lblValorBascula1_Click);
@@ -95,7 +114,7 @@ namespace LOSA.MicroIngredientes
             this.btnGuardar.Enabled = false;
             this.btnGuardar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btnGuardar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnGuardar.ImageOptions.SvgImage")));
-            this.btnGuardar.Location = new System.Drawing.Point(549, 522);
+            this.btnGuardar.Location = new System.Drawing.Point(635, 622);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(97, 63);
             this.btnGuardar.TabIndex = 22;
@@ -110,9 +129,9 @@ namespace LOSA.MicroIngredientes
             this.lblCompletados.Appearance.Options.UseTextOptions = true;
             this.lblCompletados.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblCompletados.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblCompletados.Location = new System.Drawing.Point(-1, 583);
+            this.lblCompletados.Location = new System.Drawing.Point(-1, 689);
             this.lblCompletados.Name = "lblCompletados";
-            this.lblCompletados.Size = new System.Drawing.Size(671, 23);
+            this.lblCompletados.Size = new System.Drawing.Size(757, 23);
             this.lblCompletados.TabIndex = 24;
             this.lblCompletados.Text = "Asistente";
             // 
@@ -132,9 +151,9 @@ namespace LOSA.MicroIngredientes
             this.lblError.Appearance.Options.UseTextOptions = true;
             this.lblError.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblError.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblError.Location = new System.Drawing.Point(-1, 471);
+            this.lblError.Location = new System.Drawing.Point(-1, 571);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(671, 26);
+            this.lblError.Size = new System.Drawing.Size(757, 26);
             this.lblError.TabIndex = 25;
             this.lblError.Text = "El valor pesado no esta dentro de los limites de tolerancia";
             this.lblError.Visible = false;
@@ -150,9 +169,9 @@ namespace LOSA.MicroIngredientes
             this.lblSuperior.Appearance.Options.UseTextOptions = true;
             this.lblSuperior.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblSuperior.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblSuperior.Location = new System.Drawing.Point(-1, 499);
+            this.lblSuperior.Location = new System.Drawing.Point(-1, 612);
             this.lblSuperior.Name = "lblSuperior";
-            this.lblSuperior.Size = new System.Drawing.Size(671, 29);
+            this.lblSuperior.Size = new System.Drawing.Size(757, 29);
             this.lblSuperior.TabIndex = 26;
             this.lblSuperior.Text = "LS";
             this.lblSuperior.Visible = false;
@@ -168,9 +187,9 @@ namespace LOSA.MicroIngredientes
             this.lblInferior.Appearance.Options.UseTextOptions = true;
             this.lblInferior.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblInferior.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblInferior.Location = new System.Drawing.Point(-1, 528);
+            this.lblInferior.Location = new System.Drawing.Point(-1, 641);
             this.lblInferior.Name = "lblInferior";
-            this.lblInferior.Size = new System.Drawing.Size(671, 32);
+            this.lblInferior.Size = new System.Drawing.Size(757, 32);
             this.lblInferior.TabIndex = 27;
             this.lblInferior.Text = "LI";
             this.lblInferior.Visible = false;
@@ -184,7 +203,7 @@ namespace LOSA.MicroIngredientes
             this.lblRequerido.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblRequerido.Location = new System.Drawing.Point(-1, 5);
             this.lblRequerido.Name = "lblRequerido";
-            this.lblRequerido.Size = new System.Drawing.Size(671, 28);
+            this.lblRequerido.Size = new System.Drawing.Size(757, 28);
             this.lblRequerido.TabIndex = 28;
             this.lblRequerido.Text = "Valor Requerido: 0.00 Kg";
             // 
@@ -205,9 +224,9 @@ namespace LOSA.MicroIngredientes
             this.lblValorBascula2.Appearance.Options.UseTextOptions = true;
             this.lblValorBascula2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblValorBascula2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblValorBascula2.Location = new System.Drawing.Point(346, 136);
+            this.lblValorBascula2.Location = new System.Drawing.Point(391, 188);
             this.lblValorBascula2.Name = "lblValorBascula2";
-            this.lblValorBascula2.Size = new System.Drawing.Size(308, 30);
+            this.lblValorBascula2.Size = new System.Drawing.Size(359, 30);
             this.lblValorBascula2.TabIndex = 31;
             this.lblValorBascula2.Text = "Valor en Báscula: 0.00 Kg";
             // 
@@ -218,7 +237,7 @@ namespace LOSA.MicroIngredientes
             this.lblBascula2.Appearance.Options.UseTextOptions = true;
             this.lblBascula2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblBascula2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblBascula2.Location = new System.Drawing.Point(346, 111);
+            this.lblBascula2.Location = new System.Drawing.Point(442, 163);
             this.lblBascula2.Name = "lblBascula2";
             this.lblBascula2.Size = new System.Drawing.Size(308, 19);
             this.lblBascula2.TabIndex = 30;
@@ -233,9 +252,9 @@ namespace LOSA.MicroIngredientes
             this.lblMP.Appearance.Options.UseTextOptions = true;
             this.lblMP.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblMP.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblMP.Location = new System.Drawing.Point(0, 282);
+            this.lblMP.Location = new System.Drawing.Point(0, 338);
             this.lblMP.Name = "lblMP";
-            this.lblMP.Size = new System.Drawing.Size(670, 32);
+            this.lblMP.Size = new System.Drawing.Size(756, 32);
             this.lblMP.TabIndex = 32;
             this.lblMP.Text = "MP";
             // 
@@ -246,7 +265,7 @@ namespace LOSA.MicroIngredientes
             this.btnBascula1.Enabled = false;
             this.btnBascula1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btnBascula1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnBascula1.ImageOptions.SvgImage")));
-            this.btnBascula1.Location = new System.Drawing.Point(105, 188);
+            this.btnBascula1.Location = new System.Drawing.Point(105, 269);
             this.btnBascula1.Name = "btnBascula1";
             this.btnBascula1.Size = new System.Drawing.Size(93, 74);
             this.btnBascula1.TabIndex = 1;
@@ -261,7 +280,7 @@ namespace LOSA.MicroIngredientes
             this.btnBascula2.Enabled = false;
             this.btnBascula2.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btnBascula2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnBascula2.ImageOptions.SvgImage")));
-            this.btnBascula2.Location = new System.Drawing.Point(446, 188);
+            this.btnBascula2.Location = new System.Drawing.Point(532, 269);
             this.btnBascula2.Name = "btnBascula2";
             this.btnBascula2.Size = new System.Drawing.Size(93, 74);
             this.btnBascula2.TabIndex = 2;
@@ -270,29 +289,14 @@ namespace LOSA.MicroIngredientes
             // 
             // txtCodBarra
             // 
-            this.txtCodBarra.Location = new System.Drawing.Point(122, 63);
+            this.txtCodBarra.Location = new System.Drawing.Point(122, 117);
             this.txtCodBarra.Name = "txtCodBarra";
             this.txtCodBarra.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodBarra.Properties.Appearance.Options.UseFont = true;
-            this.txtCodBarra.Size = new System.Drawing.Size(219, 26);
+            this.txtCodBarra.Size = new System.Drawing.Size(324, 26);
             this.txtCodBarra.TabIndex = 0;
+            this.txtCodBarra.EditValueChanged += new System.EventHandler(this.txtCodBarra_EditValueChanged);
             this.txtCodBarra.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodBarra_KeyDown);
-            // 
-            // lblLote
-            // 
-            this.lblLote.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblLote.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLote.Appearance.Options.UseFont = true;
-            this.lblLote.Appearance.Options.UseTextOptions = true;
-            this.lblLote.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.lblLote.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblLote.Location = new System.Drawing.Point(204, 244);
-            this.lblLote.Name = "lblLote";
-            this.lblLote.Size = new System.Drawing.Size(236, 32);
-            this.lblLote.TabIndex = 37;
-            this.lblLote.Text = "Lote";
-            this.lblLote.Visible = false;
             // 
             // labelControl1
             // 
@@ -301,7 +305,7 @@ namespace LOSA.MicroIngredientes
             this.labelControl1.Appearance.Options.UseTextOptions = true;
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(23, 57);
+            this.labelControl1.Location = new System.Drawing.Point(23, 111);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(93, 32);
             this.labelControl1.TabIndex = 36;
@@ -312,7 +316,7 @@ namespace LOSA.MicroIngredientes
             this.cmdClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdClose.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
             this.cmdClose.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.cmdClose.Location = new System.Drawing.Point(584, 5);
+            this.cmdClose.Location = new System.Drawing.Point(670, 5);
             this.cmdClose.Name = "cmdClose";
             this.cmdClose.Size = new System.Drawing.Size(75, 39);
             this.cmdClose.TabIndex = 23;
@@ -320,27 +324,182 @@ namespace LOSA.MicroIngredientes
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(0, 320);
-            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.DataMember = "MP_Escaneo";
+            this.gridControl1.DataSource = this.dsMicrosBindingSource;
+            this.gridControl1.Location = new System.Drawing.Point(0, 381);
+            this.gridControl1.MainView = this.gvPesaje;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(670, 145);
+            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.btnDelete});
+            this.gridControl1.Size = new System.Drawing.Size(756, 174);
             this.gridControl1.TabIndex = 38;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gvPesaje});
             // 
-            // gridView1
+            // dsMicrosBindingSource
             // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.dsMicrosBindingSource.DataSource = this.dsMicros;
+            this.dsMicrosBindingSource.Position = 0;
+            // 
+            // gvPesaje
+            // 
+            this.gvPesaje.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvPesaje.Appearance.FooterPanel.Options.UseFont = true;
+            this.gvPesaje.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvPesaje.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gvPesaje.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvPesaje.Appearance.Row.Options.UseFont = true;
+            this.gvPesaje.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colmp,
+            this.collote,
+            this.colid_tarima_origen,
+            this.colpeso,
+            this.colid_mp,
+            this.gridColumn1});
+            this.gvPesaje.GridControl = this.gridControl1;
+            this.gvPesaje.Name = "gvPesaje";
+            this.gvPesaje.OptionsView.ShowFooter = true;
+            this.gvPesaje.OptionsView.ShowGroupPanel = false;
+            // 
+            // colmp
+            // 
+            this.colmp.Caption = "Materia Prima";
+            this.colmp.FieldName = "mp";
+            this.colmp.Name = "colmp";
+            this.colmp.OptionsColumn.AllowEdit = false;
+            this.colmp.Visible = true;
+            this.colmp.VisibleIndex = 0;
+            this.colmp.Width = 222;
+            // 
+            // collote
+            // 
+            this.collote.Caption = "Lote";
+            this.collote.FieldName = "lote";
+            this.collote.Name = "collote";
+            this.collote.OptionsColumn.AllowEdit = false;
+            this.collote.Visible = true;
+            this.collote.VisibleIndex = 1;
+            this.collote.Width = 261;
+            // 
+            // colid_tarima_origen
+            // 
+            this.colid_tarima_origen.FieldName = "id_tarima_origen";
+            this.colid_tarima_origen.Name = "colid_tarima_origen";
+            // 
+            // colpeso
+            // 
+            this.colpeso.Caption = "Peso";
+            this.colpeso.DisplayFormat.FormatString = "{0:N2} Kg";
+            this.colpeso.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colpeso.FieldName = "peso";
+            this.colpeso.Name = "colpeso";
+            this.colpeso.OptionsColumn.AllowEdit = false;
+            this.colpeso.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "peso", "P. Acumulado={0:N2} Kg")});
+            this.colpeso.Visible = true;
+            this.colpeso.VisibleIndex = 2;
+            this.colpeso.Width = 185;
+            // 
+            // colid_mp
+            // 
+            this.colid_mp.FieldName = "id_mp";
+            this.colid_mp.Name = "colid_mp";
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Borrar";
+            this.gridColumn1.ColumnEdit = this.btnDelete;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 3;
+            this.gridColumn1.Width = 70;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            this.btnDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnDelete.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnDelete_ButtonClick);
+            // 
+            // lblPesoAcumulado
+            // 
+            this.lblPesoAcumulado.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPesoAcumulado.Appearance.Options.UseFont = true;
+            this.lblPesoAcumulado.Appearance.Options.UseTextOptions = true;
+            this.lblPesoAcumulado.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblPesoAcumulado.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblPesoAcumulado.Location = new System.Drawing.Point(12, 224);
+            this.lblPesoAcumulado.Name = "lblPesoAcumulado";
+            this.lblPesoAcumulado.Size = new System.Drawing.Size(373, 30);
+            this.lblPesoAcumulado.TabIndex = 39;
+            this.lblPesoAcumulado.Text = "P. Acumulado + Valor en Báscula: 0.00 Kg";
+            // 
+            // lblPesoAcumulado2
+            // 
+            this.lblPesoAcumulado2.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPesoAcumulado2.Appearance.Options.UseFont = true;
+            this.lblPesoAcumulado2.Appearance.Options.UseTextOptions = true;
+            this.lblPesoAcumulado2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblPesoAcumulado2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblPesoAcumulado2.Location = new System.Drawing.Point(391, 224);
+            this.lblPesoAcumulado2.Name = "lblPesoAcumulado2";
+            this.lblPesoAcumulado2.Size = new System.Drawing.Size(364, 30);
+            this.lblPesoAcumulado2.TabIndex = 40;
+            this.lblPesoAcumulado2.Text = "P. Acumulado + Valor en Báscula: 0.00 Kg";
+            // 
+            // btnBasc1
+            // 
+            this.btnBasc1.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBasc1.Appearance.Options.UseFont = true;
+            this.btnBasc1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnBasc1.ImageOptions.Image = global::LOSA.Properties.Resources.weighing_machine_32X321;
+            this.btnBasc1.Location = new System.Drawing.Point(201, 49);
+            this.btnBasc1.Name = "btnBasc1";
+            this.btnBasc1.Size = new System.Drawing.Size(112, 49);
+            this.btnBasc1.TabIndex = 41;
+            this.btnBasc1.Text = "Báscula 1";
+            this.btnBasc1.Click += new System.EventHandler(this.btnBasc1_Click);
+            // 
+            // btnBasc2
+            // 
+            this.btnBasc2.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnBasc2.Appearance.Options.UseFont = true;
+            this.btnBasc2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnBasc2.ImageOptions.Image = global::LOSA.Properties.Resources.weighing_machine_32X32;
+            this.btnBasc2.Location = new System.Drawing.Point(322, 49);
+            this.btnBasc2.Name = "btnBasc2";
+            this.btnBasc2.Size = new System.Drawing.Size(112, 49);
+            this.btnBasc2.TabIndex = 42;
+            this.btnBasc2.Text = "Báscula 2";
+            this.btnBasc2.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
+            // btnBascAmbas
+            // 
+            this.btnBascAmbas.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnBascAmbas.Appearance.Options.UseFont = true;
+            this.btnBascAmbas.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnBascAmbas.ImageOptions.Image = global::LOSA.Properties.Resources.sigma_32X32;
+            this.btnBascAmbas.Location = new System.Drawing.Point(443, 49);
+            this.btnBascAmbas.Name = "btnBascAmbas";
+            this.btnBascAmbas.Size = new System.Drawing.Size(112, 49);
+            this.btnBascAmbas.TabIndex = 43;
+            this.btnBascAmbas.Text = "Todas";
+            this.btnBascAmbas.Click += new System.EventHandler(this.btnBascAmbas_Click);
             // 
             // xfrmPesajeIndividualBatchV3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(671, 624);
+            this.ClientSize = new System.Drawing.Size(757, 777);
+            this.Controls.Add(this.btnBascAmbas);
+            this.Controls.Add(this.btnBasc2);
+            this.Controls.Add(this.btnBasc1);
+            this.Controls.Add(this.lblPesoAcumulado2);
+            this.Controls.Add(this.lblPesoAcumulado);
             this.Controls.Add(this.gridControl1);
-            this.Controls.Add(this.lblLote);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.txtCodBarra);
             this.Controls.Add(this.btnBascula2);
@@ -355,8 +514,8 @@ namespace LOSA.MicroIngredientes
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.lblValorBascula1);
             this.Controls.Add(this.lblBascula1);
-            this.Controls.Add(this.lblRequerido);
             this.Controls.Add(this.lblCompletados);
+            this.Controls.Add(this.lblRequerido);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "xfrmPesajeIndividualBatchV3";
@@ -367,7 +526,9 @@ namespace LOSA.MicroIngredientes
             ((System.ComponentModel.ISupportInitialize)(this.dsMicros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodBarra.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsMicrosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvPesaje)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -391,9 +552,21 @@ namespace LOSA.MicroIngredientes
         private DevExpress.XtraEditors.SimpleButton btnBascula1;
         private DevExpress.XtraEditors.SimpleButton btnBascula2;
         private DevExpress.XtraEditors.TextEdit txtCodBarra;
-        private DevExpress.XtraEditors.LabelControl lblLote;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvPesaje;
+        private System.Windows.Forms.BindingSource dsMicrosBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colmp;
+        private DevExpress.XtraGrid.Columns.GridColumn collote;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_tarima_origen;
+        private DevExpress.XtraGrid.Columns.GridColumn colpeso;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_mp;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnDelete;
+        private DevExpress.XtraEditors.LabelControl lblPesoAcumulado;
+        private DevExpress.XtraEditors.LabelControl lblPesoAcumulado2;
+        private DevExpress.XtraEditors.SimpleButton btnBasc1;
+        private DevExpress.XtraEditors.SimpleButton btnBasc2;
+        private DevExpress.XtraEditors.SimpleButton btnBascAmbas;
     }
 }

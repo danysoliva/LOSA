@@ -703,6 +703,16 @@ namespace LOSA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sigma_32X32 {
+            get {
+                object obj = ResourceManager.GetObject("sigma_32X32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap signpost {
             get {
                 object obj = ResourceManager.GetObject("signpost", resourceCulture);
@@ -886,6 +896,16 @@ namespace LOSA.Properties {
         internal static System.Drawing.Bitmap weighing_machine_32X32 {
             get {
                 object obj = ResourceManager.GetObject("weighing-machine_32X32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap weighing_machine_32X321 {
+            get {
+                object obj = ResourceManager.GetObject("weighing-machine_32X321", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
