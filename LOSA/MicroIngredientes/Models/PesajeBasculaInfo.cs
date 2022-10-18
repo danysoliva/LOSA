@@ -19,6 +19,7 @@ namespace LOSA.MicroIngredientes.Models
         public decimal PesoXBatch { get; set; }
         public string MateriaPrima { get; set; }
         public int CantBatch { get; set; }
+        public int BasculaId { get; set; }
     }
 
 }

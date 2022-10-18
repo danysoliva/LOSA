@@ -31,14 +31,14 @@ namespace LOSA.Trazabilidad
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRutasTrazabilidad));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.navigationFrame1 = new DevExpress.XtraBars.Navigation.NavigationFrame();
-            this.npRuta1 = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.npRuta2 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.labelControl25 = new DevExpress.XtraEditors.LabelControl();
             this.gcDespachoRuta2 = new DevExpress.XtraGrid.GridControl();
             this.dsReportesTRZ = new LOSA.Trazabilidad.ReportesTRZ.dsReportesTRZ();
@@ -572,6 +572,21 @@ namespace LOSA.Trazabilidad
             this.npBoletaView = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.btnBackRuta1 = new DevExpress.XtraEditors.SimpleButton();
             this.vGridControl2 = new DevExpress.XtraVerticalGrid.VGridControl();
+            this.npRuta1 = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.labelControl81 = new DevExpress.XtraEditors.LabelControl();
+            this.gcPT_Ruta1 = new DevExpress.XtraGrid.GridControl();
+            this.gvPT_Ruta1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn89 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn90 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn91 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl82 = new DevExpress.XtraEditors.LabelControl();
+            this.lblLoteNameRuta1 = new DevExpress.XtraEditors.LabelControl();
+            this.btnBorrarRuta1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnGenerateRuta1 = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl84 = new DevExpress.XtraEditors.LabelControl();
+            this.txtLoteMPRuta1 = new DevExpress.XtraEditors.TextEdit();
+            this.btnHome_Ruta1 = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl85 = new DevExpress.XtraEditors.LabelControl();
             this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.acordionRuta1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -582,7 +597,7 @@ namespace LOSA.Trazabilidad
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).BeginInit();
             this.navigationFrame1.SuspendLayout();
-            this.npRuta1.SuspendLayout();
+            this.npRuta2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcDespachoRuta2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsReportesTRZ)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDespacho)).BeginInit();
@@ -793,6 +808,10 @@ namespace LOSA.Trazabilidad
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
             this.npBoletaView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vGridControl2)).BeginInit();
+            this.npRuta1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcPT_Ruta1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvPT_Ruta1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLoteMPRuta1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -802,7 +821,7 @@ namespace LOSA.Trazabilidad
             this.navigationFrame1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.navigationFrame1.Controls.Add(this.npRuta1);
+            this.navigationFrame1.Controls.Add(this.npRuta2);
             this.navigationFrame1.Controls.Add(this.npMain);
             this.navigationFrame1.Controls.Add(this.navigationPage3);
             this.navigationFrame1.Controls.Add(this.npInfoLote);
@@ -810,37 +829,39 @@ namespace LOSA.Trazabilidad
             this.navigationFrame1.Controls.Add(this.npRuta3MP);
             this.navigationFrame1.Controls.Add(this.npRuta3DetalleDespacho);
             this.navigationFrame1.Controls.Add(this.npBoletaView);
+            this.navigationFrame1.Controls.Add(this.npRuta1);
             this.navigationFrame1.Location = new System.Drawing.Point(266, 0);
             this.navigationFrame1.Name = "navigationFrame1";
             this.navigationFrame1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
-            this.npRuta1,
+            this.npRuta2,
             this.npMain,
             this.navigationPage3,
             this.npInfoLote,
             this.npReporteTrazabilidad,
             this.npRuta3MP,
             this.npRuta3DetalleDespacho,
-            this.npBoletaView});
+            this.npBoletaView,
+            this.npRuta1});
             this.navigationFrame1.SelectedPage = this.npMain;
             this.navigationFrame1.Size = new System.Drawing.Size(1301, 856);
             this.navigationFrame1.TabIndex = 0;
             this.navigationFrame1.Text = "navigationFrame1";
             // 
-            // npRuta1
+            // npRuta2
             // 
-            this.npRuta1.Controls.Add(this.labelControl25);
-            this.npRuta1.Controls.Add(this.gcDespachoRuta2);
-            this.npRuta1.Controls.Add(this.gcLotePT);
-            this.npRuta1.Controls.Add(this.labelControl23);
-            this.npRuta1.Controls.Add(this.lblMateriaPrimaName);
-            this.npRuta1.Controls.Add(this.simpleButton6);
-            this.npRuta1.Controls.Add(this.btnGenerarRuta1);
-            this.npRuta1.Controls.Add(this.labelControl24);
-            this.npRuta1.Controls.Add(this.txtLoteRuta1);
-            this.npRuta1.Controls.Add(this.simpleButton5);
-            this.npRuta1.Controls.Add(this.labelControl22);
-            this.npRuta1.Name = "npRuta1";
-            this.npRuta1.Size = new System.Drawing.Size(1301, 856);
+            this.npRuta2.Controls.Add(this.labelControl25);
+            this.npRuta2.Controls.Add(this.gcDespachoRuta2);
+            this.npRuta2.Controls.Add(this.gcLotePT);
+            this.npRuta2.Controls.Add(this.labelControl23);
+            this.npRuta2.Controls.Add(this.lblMateriaPrimaName);
+            this.npRuta2.Controls.Add(this.simpleButton6);
+            this.npRuta2.Controls.Add(this.btnGenerarRuta1);
+            this.npRuta2.Controls.Add(this.labelControl24);
+            this.npRuta2.Controls.Add(this.txtLoteRuta1);
+            this.npRuta2.Controls.Add(this.simpleButton5);
+            this.npRuta2.Controls.Add(this.labelControl22);
+            this.npRuta2.Name = "npRuta2";
+            this.npRuta2.Size = new System.Drawing.Size(1301, 856);
             // 
             // labelControl25
             // 
@@ -1285,7 +1306,7 @@ namespace LOSA.Trazabilidad
             this.cmdBuscarCliente_.Appearance.Options.UseBackColor = true;
             this.cmdBuscarCliente_.Appearance.Options.UseFont = true;
             this.cmdBuscarCliente_.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdBuscarCliente_.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.cmdBuscarCliente_.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdBuscarCliente_.ImageOptions.SvgImage")));
             this.cmdBuscarCliente_.Location = new System.Drawing.Point(873, 58);
             this.cmdBuscarCliente_.Name = "cmdBuscarCliente_";
             this.cmdBuscarCliente_.Size = new System.Drawing.Size(144, 41);
@@ -1421,9 +1442,9 @@ namespace LOSA.Trazabilidad
             // cmdEliminar
             // 
             this.cmdEliminar.AutoHeight = false;
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.cmdEliminar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdEliminar.Name = "cmdEliminar";
             this.cmdEliminar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdEliminar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdEliminar_ButtonClick);
@@ -6962,6 +6983,186 @@ namespace LOSA.Trazabilidad
             this.vGridControl2.Size = new System.Drawing.Size(1293, 775);
             this.vGridControl2.TabIndex = 1;
             // 
+            // npRuta1
+            // 
+            this.npRuta1.Controls.Add(this.labelControl81);
+            this.npRuta1.Controls.Add(this.gcPT_Ruta1);
+            this.npRuta1.Controls.Add(this.labelControl82);
+            this.npRuta1.Controls.Add(this.lblLoteNameRuta1);
+            this.npRuta1.Controls.Add(this.btnBorrarRuta1);
+            this.npRuta1.Controls.Add(this.btnGenerateRuta1);
+            this.npRuta1.Controls.Add(this.labelControl84);
+            this.npRuta1.Controls.Add(this.txtLoteMPRuta1);
+            this.npRuta1.Controls.Add(this.btnHome_Ruta1);
+            this.npRuta1.Controls.Add(this.labelControl85);
+            this.npRuta1.Name = "npRuta1";
+            this.npRuta1.Size = new System.Drawing.Size(1301, 856);
+            // 
+            // labelControl81
+            // 
+            this.labelControl81.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl81.Appearance.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold);
+            this.labelControl81.Appearance.Options.UseFont = true;
+            this.labelControl81.Appearance.Options.UseTextOptions = true;
+            this.labelControl81.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl81.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl81.Location = new System.Drawing.Point(364, 133);
+            this.labelControl81.Name = "labelControl81";
+            this.labelControl81.Size = new System.Drawing.Size(925, 24);
+            this.labelControl81.TabIndex = 68;
+            this.labelControl81.Text = "Inventario";
+            // 
+            // gcPT_Ruta1
+            // 
+            this.gcPT_Ruta1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.gcPT_Ruta1.DataMember = "pt_list_trz";
+            this.gcPT_Ruta1.DataSource = this.dsReportesTRZ;
+            this.gcPT_Ruta1.Location = new System.Drawing.Point(3, 133);
+            this.gcPT_Ruta1.MainView = this.gvPT_Ruta1;
+            this.gcPT_Ruta1.Name = "gcPT_Ruta1";
+            this.gcPT_Ruta1.Size = new System.Drawing.Size(364, 708);
+            this.gcPT_Ruta1.TabIndex = 66;
+            this.gcPT_Ruta1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvPT_Ruta1});
+            // 
+            // gvPT_Ruta1
+            // 
+            this.gvPT_Ruta1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn89,
+            this.gridColumn90,
+            this.gridColumn91});
+            this.gvPT_Ruta1.GridControl = this.gcPT_Ruta1;
+            this.gvPT_Ruta1.Name = "gvPT_Ruta1";
+            this.gvPT_Ruta1.OptionsView.ShowAutoFilterRow = true;
+            this.gvPT_Ruta1.OptionsView.ShowFooter = true;
+            // 
+            // gridColumn89
+            // 
+            this.gridColumn89.FieldName = "Lote PT";
+            this.gridColumn89.Name = "gridColumn89";
+            this.gridColumn89.OptionsColumn.AllowEdit = false;
+            this.gridColumn89.Visible = true;
+            this.gridColumn89.VisibleIndex = 0;
+            this.gridColumn89.Width = 67;
+            // 
+            // gridColumn90
+            // 
+            this.gridColumn90.FieldName = "Producto";
+            this.gridColumn90.Name = "gridColumn90";
+            this.gridColumn90.OptionsColumn.AllowEdit = false;
+            this.gridColumn90.Visible = true;
+            this.gridColumn90.VisibleIndex = 1;
+            this.gridColumn90.Width = 173;
+            // 
+            // gridColumn91
+            // 
+            this.gridColumn91.DisplayFormat.FormatString = "###,##0.00 Kg";
+            this.gridColumn91.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn91.FieldName = "cant_mp";
+            this.gridColumn91.Name = "gridColumn91";
+            this.gridColumn91.OptionsColumn.AllowEdit = false;
+            this.gridColumn91.Visible = true;
+            this.gridColumn91.VisibleIndex = 2;
+            this.gridColumn91.Width = 95;
+            // 
+            // labelControl82
+            // 
+            this.labelControl82.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl82.Appearance.Options.UseFont = true;
+            this.labelControl82.Location = new System.Drawing.Point(28, 49);
+            this.labelControl82.Name = "labelControl82";
+            this.labelControl82.Size = new System.Drawing.Size(61, 21);
+            this.labelControl82.TabIndex = 65;
+            this.labelControl82.Text = "Nombre";
+            // 
+            // lblLoteNameRuta1
+            // 
+            this.lblLoteNameRuta1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoteNameRuta1.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.lblLoteNameRuta1.Appearance.Options.UseFont = true;
+            this.lblLoteNameRuta1.Appearance.Options.UseForeColor = true;
+            this.lblLoteNameRuta1.Location = new System.Drawing.Point(95, 49);
+            this.lblLoteNameRuta1.Name = "lblLoteNameRuta1";
+            this.lblLoteNameRuta1.Size = new System.Drawing.Size(61, 21);
+            this.lblLoteNameRuta1.TabIndex = 64;
+            this.lblLoteNameRuta1.Text = "Lote MP";
+            // 
+            // btnBorrarRuta1
+            // 
+            this.btnBorrarRuta1.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorrarRuta1.Appearance.Options.UseFont = true;
+            this.btnBorrarRuta1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrarRuta1.ImageOptions.Image")));
+            this.btnBorrarRuta1.Location = new System.Drawing.Point(391, 76);
+            this.btnBorrarRuta1.Name = "btnBorrarRuta1";
+            this.btnBorrarRuta1.Size = new System.Drawing.Size(118, 41);
+            this.btnBorrarRuta1.TabIndex = 63;
+            this.btnBorrarRuta1.Text = "Borrar";
+            this.btnBorrarRuta1.Click += new System.EventHandler(this.btnBorrarRuta1_Click);
+            // 
+            // btnGenerateRuta1
+            // 
+            this.btnGenerateRuta1.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnGenerateRuta1.Appearance.Options.UseFont = true;
+            this.btnGenerateRuta1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGenerateRuta1.ImageOptions.Image")));
+            this.btnGenerateRuta1.Location = new System.Drawing.Point(267, 76);
+            this.btnGenerateRuta1.Name = "btnGenerateRuta1";
+            this.btnGenerateRuta1.Size = new System.Drawing.Size(118, 41);
+            this.btnGenerateRuta1.TabIndex = 62;
+            this.btnGenerateRuta1.Text = "Generar";
+            this.btnGenerateRuta1.Click += new System.EventHandler(this.btnGenerateRuta1_Click);
+            // 
+            // labelControl84
+            // 
+            this.labelControl84.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl84.Appearance.Options.UseFont = true;
+            this.labelControl84.Location = new System.Drawing.Point(28, 91);
+            this.labelControl84.Name = "labelControl84";
+            this.labelControl84.Size = new System.Drawing.Size(61, 21);
+            this.labelControl84.TabIndex = 61;
+            this.labelControl84.Text = "Lote MP";
+            // 
+            // txtLoteMPRuta1
+            // 
+            this.txtLoteMPRuta1.Location = new System.Drawing.Point(95, 85);
+            this.txtLoteMPRuta1.Name = "txtLoteMPRuta1";
+            this.txtLoteMPRuta1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLoteMPRuta1.Properties.Appearance.Options.UseFont = true;
+            this.txtLoteMPRuta1.Size = new System.Drawing.Size(166, 32);
+            this.txtLoteMPRuta1.TabIndex = 60;
+            // 
+            // btnHome_Ruta1
+            // 
+            this.btnHome_Ruta1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHome_Ruta1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnHome_Ruta1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome_Ruta1.Appearance.Options.UseBackColor = true;
+            this.btnHome_Ruta1.Appearance.Options.UseFont = true;
+            this.btnHome_Ruta1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnHome_Ruta1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHome_Ruta1.ImageOptions.Image")));
+            this.btnHome_Ruta1.Location = new System.Drawing.Point(1117, 15);
+            this.btnHome_Ruta1.Name = "btnHome_Ruta1";
+            this.btnHome_Ruta1.Size = new System.Drawing.Size(156, 52);
+            this.btnHome_Ruta1.TabIndex = 59;
+            this.btnHome_Ruta1.Text = "Home";
+            this.btnHome_Ruta1.Click += new System.EventHandler(this.btnHome_Ruta1_Click);
+            // 
+            // labelControl85
+            // 
+            this.labelControl85.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl85.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl85.Appearance.Options.UseFont = true;
+            this.labelControl85.Appearance.Options.UseTextOptions = true;
+            this.labelControl85.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl85.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl85.Location = new System.Drawing.Point(2, 20);
+            this.labelControl85.Name = "labelControl85";
+            this.labelControl85.Size = new System.Drawing.Size(1295, 39);
+            this.labelControl85.TabIndex = 58;
+            this.labelControl85.Text = "Trazabilidad de lote MP hacia Inventario Actual";
+            // 
             // accordionControl1
             // 
             this.accordionControl1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -7049,8 +7250,8 @@ namespace LOSA.Trazabilidad
             this.ShowIcon = false;
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).EndInit();
             this.navigationFrame1.ResumeLayout(false);
-            this.npRuta1.ResumeLayout(false);
-            this.npRuta1.PerformLayout();
+            this.npRuta2.ResumeLayout(false);
+            this.npRuta2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcDespachoRuta2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsReportesTRZ)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDespacho)).EndInit();
@@ -7270,6 +7471,11 @@ namespace LOSA.Trazabilidad
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
             this.npBoletaView.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.vGridControl2)).EndInit();
+            this.npRuta1.ResumeLayout(false);
+            this.npRuta1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcPT_Ruta1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvPT_Ruta1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLoteMPRuta1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
@@ -7279,7 +7485,7 @@ namespace LOSA.Trazabilidad
         #endregion
 
         private DevExpress.XtraBars.Navigation.NavigationFrame navigationFrame1;
-        private DevExpress.XtraBars.Navigation.NavigationPage npRuta1;
+        private DevExpress.XtraBars.Navigation.NavigationPage npRuta2;
         private DevExpress.XtraBars.Navigation.NavigationPage npMain;
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage3;
         private DevExpress.XtraBars.Navigation.NavigationPage npInfoLote;
@@ -7821,5 +8027,20 @@ namespace LOSA.Trazabilidad
         private DevExpress.XtraGrid.Columns.GridColumn colnombre1;
         private DevExpress.XtraGrid.Columns.GridColumn colEliminar;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdEliminar;
+        private DevExpress.XtraBars.Navigation.NavigationPage npRuta1;
+        private DevExpress.XtraGrid.GridControl gcPT_Ruta1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvPT_Ruta1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn89;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn90;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn91;
+        private DevExpress.XtraEditors.LabelControl labelControl82;
+        private DevExpress.XtraEditors.LabelControl lblLoteNameRuta1;
+        private DevExpress.XtraEditors.SimpleButton btnBorrarRuta1;
+        private DevExpress.XtraEditors.SimpleButton btnGenerateRuta1;
+        private DevExpress.XtraEditors.LabelControl labelControl84;
+        private DevExpress.XtraEditors.TextEdit txtLoteMPRuta1;
+        private DevExpress.XtraEditors.SimpleButton btnHome_Ruta1;
+        private DevExpress.XtraEditors.LabelControl labelControl81;
+        private DevExpress.XtraEditors.LabelControl labelControl85;
     }
 }

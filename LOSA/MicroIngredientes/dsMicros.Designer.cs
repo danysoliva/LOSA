@@ -4603,6 +4603,7 @@ namespace LOSA.MicroIngredientes {
                 base.Columns.Add(this.columnid_mp);
                 this.columnid_tarima_micro = new global::System.Data.DataColumn("id_tarima_micro", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_tarima_micro);
+                this.columnpeso.DefaultValue = ((decimal)(0m));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

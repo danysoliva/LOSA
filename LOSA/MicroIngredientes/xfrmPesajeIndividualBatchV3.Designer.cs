@@ -295,7 +295,6 @@ namespace LOSA.MicroIngredientes
             this.txtCodBarra.Properties.Appearance.Options.UseFont = true;
             this.txtCodBarra.Size = new System.Drawing.Size(324, 26);
             this.txtCodBarra.TabIndex = 0;
-            this.txtCodBarra.EditValueChanged += new System.EventHandler(this.txtCodBarra_EditValueChanged);
             this.txtCodBarra.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodBarra_KeyDown);
             // 
             // labelControl1
