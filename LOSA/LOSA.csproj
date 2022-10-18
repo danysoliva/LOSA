@@ -1504,6 +1504,7 @@
     </Compile>
     <Compile Include="MicroIngredientes\Models\FuncionesMicroI.cs" />
     <Compile Include="MicroIngredientes\Models\OrdenH_Info.cs" />
+    <Compile Include="MicroIngredientes\Models\PesajeBasculaInfo.cs" />
     <Compile Include="MicroIngredientes\Models\PesajeIndividualCompletados.cs" />
     <Compile Include="MicroIngredientes\Models\PesajeIndividualInfo.cs" />
     <Compile Include="MicroIngredientes\Models\PesajeIndividualNew.cs" />
@@ -4687,6 +4688,7 @@
     <None Include="Resources\step4.png" />
     <None Include="Resources\signpost.png" />
     <None Include="Resources\signpost24X24.png" />
+    <None Include="Resources\sigma_32X32.png" />
     <Content Include="Resources\tap.png" />
     <None Include="Resources\trazabilidad.png" />
     <None Include="Resources\trucksss.png" />
@@ -4694,6 +4696,7 @@
     <Content Include="Resources\user.png" />
     <None Include="Resources\weighing-machine_32X32.png" />
     <None Include="Resources\web_apply_32px.png" />
+    <None Include="Resources\weighing-machine_32X321.png" />
     <Content Include="Resources\weighing_machine24px.png" />
     <Content Include="Resources\wheat.png" />
     <Content Include="Resources\wrench.png" />
