@@ -25,6 +25,10 @@ namespace LOSA.Logistica
         decimal sum = 0;
         int bodega;
         int IdMpSelected = 0;
+        public int id_bodegaMP;
+        decimal existencia_anterior;
+        decimal existencia_nueva;
+
         public frmSeleccionLoteCierre(UserLogin puserLogin, DataTable pdata)
         {
             InitializeComponent();
@@ -183,6 +187,10 @@ namespace LOSA.Logistica
                 return;
             }
 
+            decimal ValorUtilizado = list.Sum(p => p.utilizado );
+             
+
+
             var Row = from row in list
                       where row.seleccionar == true
                       select row;
@@ -301,13 +309,15 @@ namespace LOSA.Logistica
                 }
             }
             
-            int id_bodega;
+            
             for (int i = 0; i < grdv_mps.SelectedRowsCount; i++)
             {
                 DataRow row2 = grdv_mps.GetDataRow(i);
 
                 //id_mp = Convert.ToInt32(row2["id_mp"]);
-                id_bodega = Convert.ToInt32(row2["id_bodega"]);
+                id_bodegaMP = Convert.ToInt32(row2["id_bodega"]);
+                existencia_anterior = Convert.ToDecimal(row2["ExistenciaAprox"]);//Existencia en Bodega al momento del Recuento-Contabilizado
+                existencia_nueva = Convert.ToDecimal(row2["peso"]);//Nueva Cantidad - Toma Fisica
 
             }
 
@@ -317,12 +327,14 @@ namespace LOSA.Logistica
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@id_mp", IdMpSelected);
+            cmd.Parameters.AddWithValue("@id_bodega", id_bodegaMP);
             foreach (dsCierreMes.Aceptado_loteRow row in dsCierreMes.Aceptado_lote.Rows)
             {
                 cmd.Parameters.AddWithValue("@lote",row.lote);
                 cmd.Parameters.AddWithValue("@id_lote_alosy", row.id_lote_alosy);
                 cmd.Parameters.AddWithValue("@id_bodega", row.id_bodega);
-                cmd.Parameters.AddWithValue("", row.utilizado); //Esto es lo que esta 
+                cmd.Parameters.AddWithValue("@diferencia", row.utilizado); //Esto es el valor de lo que se va dar Salida/Entrada en Kardex
+                cmd.ExecuteNonQuery();
             }
 
             this.DialogResult = DialogResult.OK;
@@ -331,7 +343,7 @@ namespace LOSA.Logistica
 
         private void btnIzquierda_Click(object sender, EventArgs e)
         {
-            var list = dsCierreMes.SeleccionLote.AsEnumerable();
+            var list = dsCierreMes.Aceptado_lote.AsEnumerable();
             if (list.Count(p => p.seleccionar == true) > 0)
             {
                 CajaDialogo.Error("Hay lotes seleccionado sin configurar la cantidad a utilizar.");
@@ -366,9 +378,57 @@ namespace LOSA.Logistica
                 drw["id_lote_count"] = id_count_selected;
                 dsCierreMes.memory_config.Rows.Add(drw);
                 //btnDerecha.Enabled = false;
-                btnIzquierda.Enabled = false;
+                btnIzquierda.Enabled = true;
                 // +
 
+            }
+        }
+
+        private void grdv_efectiva_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+
+            try
+            {
+                if (e.Column.FieldName == "seleccionar")
+                {
+                    var gridView = (GridView)grd_efectiva.FocusedView;
+                    var row = (dsCierreMes.Aceptado_loteRow)grdv_efectiva.GetFocusedDataRow();
+                    row.seleccionar = Convert.ToBoolean(e.Value);
+                    row.AcceptChanges();
+                    var list = dsCierreMes.Aceptado_lote.AsEnumerable();
+                    if (list.Count(p => p.seleccionar == true) > 0)
+                    {
+                        btnDerecha.Enabled = true;
+                    }
+                    else
+                    {
+                        btnDerecha.Enabled = false;
+                    }
+                }
+            }
+            catch (Exception EX)
+            {
+                CajaDialogo.Error(EX.Message);
+            }
+        }
+
+        private void repositorybtnDelete_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            DialogResult r = CajaDialogo.Pregunta("Desea eliminar este detalle?");
+            if (r != System.Windows.Forms.DialogResult.Yes)
+                return;
+
+            var gridView1 = (GridView)grd_efectiva.FocusedView;
+            var row = (dsCierreMes.Aceptado_loteRow)grdv_efectiva.GetFocusedDataRow();
+
+            try
+            {
+                gridView1.DeleteRow(gridView1.FocusedRowHandle);
+                dsCierreMes.Aceptado_lote.Clear();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
             }
         }
     }
