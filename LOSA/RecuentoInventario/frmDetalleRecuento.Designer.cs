@@ -48,6 +48,7 @@ namespace LOSA.RecuentoInventario
             this.colExistenciaAnterior = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldiferencia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSeleccionado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcode_sap = new DevExpress.XtraGrid.Columns.GridColumn();
             this.count_id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabPagePT = new DevExpress.XtraTab.XtraTabPage();
             this.grd_pt = new DevExpress.XtraGrid.GridControl();
@@ -70,7 +71,6 @@ namespace LOSA.RecuentoInventario
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colejercicio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdClose = new DevExpress.XtraEditors.SimpleButton();
-            this.colcode_sap = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -192,6 +192,7 @@ namespace LOSA.RecuentoInventario
             this.grdv_mps.Name = "grdv_mps";
             this.grdv_mps.OptionsView.ShowAutoFilterRow = true;
             this.grdv_mps.OptionsView.ShowGroupPanel = false;
+            this.grdv_mps.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.grdv_mps_RowStyle);
             this.grdv_mps.DoubleClick += new System.EventHandler(this.grdv_mps_DoubleClick);
             // 
             // colMP
@@ -291,6 +292,15 @@ namespace LOSA.RecuentoInventario
             this.colSeleccionado.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSeleccionado.FieldName = "seleccionado";
             this.colSeleccionado.Name = "colSeleccionado";
+            // 
+            // colcode_sap
+            // 
+            this.colcode_sap.Caption = "Cod SAP";
+            this.colcode_sap.FieldName = "code_sap";
+            this.colcode_sap.Name = "colcode_sap";
+            this.colcode_sap.OptionsColumn.AllowEdit = false;
+            this.colcode_sap.Visible = true;
+            this.colcode_sap.VisibleIndex = 0;
             // 
             // count_id
             // 
@@ -571,15 +581,6 @@ namespace LOSA.RecuentoInventario
             this.cmdClose.TabIndex = 5;
             this.cmdClose.Text = "Cancelar";
             this.cmdClose.Click += new System.EventHandler(this.cmdClose_Click);
-            // 
-            // colcode_sap
-            // 
-            this.colcode_sap.Caption = "Cod SAP";
-            this.colcode_sap.FieldName = "code_sap";
-            this.colcode_sap.Name = "colcode_sap";
-            this.colcode_sap.OptionsColumn.AllowEdit = false;
-            this.colcode_sap.Visible = true;
-            this.colcode_sap.VisibleIndex = 0;
             // 
             // frmDetalleRecuento
             // 

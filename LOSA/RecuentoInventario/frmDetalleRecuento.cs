@@ -325,6 +325,8 @@ namespace LOSA.RecuentoInventario
                         {
 
                         }
+
+                        //Row Style - Vamos a Pintar de Verde si cumple los parametros
                     }
                 }
             }
@@ -365,7 +367,7 @@ namespace LOSA.RecuentoInventario
                             Logistica.frmSeleccionLoteCierre frm = new Logistica.frmSeleccionLoteCierre(UsuarioLogeado, tableOps);
                             if (frm.ShowDialog() == DialogResult.OK)
                             {
-
+                                
                             }
                         }
                     }
@@ -374,6 +376,15 @@ namespace LOSA.RecuentoInventario
             else
             {
                 //
+            }
+        }
+
+        private void grdv_mps_RowStyle(object sender, RowStyleEventArgs e)
+        {
+            GridView View = sender as GridView;
+            if (e.RowHandle >= 0)
+            {
+                //Si el valor que se agrego igual a la diferencia en 0!
             }
         }
     }
