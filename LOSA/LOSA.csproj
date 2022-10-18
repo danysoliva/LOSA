@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\aqfsvr003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>411</ApplicationRevision>
+    <ApplicationRevision>410</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -1504,6 +1504,7 @@
     </Compile>
     <Compile Include="MicroIngredientes\Models\FuncionesMicroI.cs" />
     <Compile Include="MicroIngredientes\Models\OrdenH_Info.cs" />
+    <Compile Include="MicroIngredientes\Models\PesajeBasculaInfo.cs" />
     <Compile Include="MicroIngredientes\Models\PesajeIndividualCompletados.cs" />
     <Compile Include="MicroIngredientes\Models\PesajeIndividualInfo.cs" />
     <Compile Include="MicroIngredientes\Models\PesajeIndividualNew.cs" />
@@ -2988,6 +2989,12 @@
     <Compile Include="Trazabilidad\frmAdjuntar.Designer.cs">
       <DependentUpon>frmAdjuntar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Trazabilidad\frmBuscarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trazabilidad\frmBuscarCliente.Designer.cs">
+      <DependentUpon>frmBuscarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Trazabilidad\frmBuscarProvMP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -4231,6 +4238,9 @@
     <EmbeddedResource Include="Trazabilidad\frmAdjuntar.resx">
       <DependentUpon>frmAdjuntar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Trazabilidad\frmBuscarCliente.resx">
+      <DependentUpon>frmBuscarCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Trazabilidad\frmBuscarProvMP.resx">
       <DependentUpon>frmBuscarProvMP.cs</DependentUpon>
     </EmbeddedResource>
@@ -4687,6 +4697,7 @@
     <None Include="Resources\step4.png" />
     <None Include="Resources\signpost.png" />
     <None Include="Resources\signpost24X24.png" />
+    <None Include="Resources\sigma_32X32.png" />
     <Content Include="Resources\tap.png" />
     <None Include="Resources\trazabilidad.png" />
     <None Include="Resources\trucksss.png" />
@@ -4694,6 +4705,7 @@
     <Content Include="Resources\user.png" />
     <None Include="Resources\weighing-machine_32X32.png" />
     <None Include="Resources\web_apply_32px.png" />
+    <None Include="Resources\weighing-machine_32X321.png" />
     <Content Include="Resources\weighing_machine24px.png" />
     <Content Include="Resources\wheat.png" />
     <Content Include="Resources\wrench.png" />

@@ -292,7 +292,6 @@ namespace LOSA.MicroIngredientes
                                         cmd3.ExecuteNonQuery();
                                     }
 
-
                             }
 
                         

@@ -165,7 +165,7 @@ namespace LOSA.Clases
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    //Id = dr.GetInt32(0);
+                    Id = dr.GetInt64(0);
                     //FechaIngreso = dr.GetDateTime(1);
                     //FechaVencimiento = dr.GetDateTime(2);
                     //LotePT = dr.GetInt32(3);
@@ -178,6 +178,7 @@ namespace LOSA.Clases
                     CodigoBarra = dr.GetString(6);
                     MateriaPrima = dr.GetString(9);
                     IdTarimaOrigen = dr.GetInt32(10);
+                    Id_materiaprima = dr.GetInt32(11);
                     //Cantidad = dr.GetDecimal(10);//ó unidades
                     //_peso = dr.GetDecimal(11);
                     //ItemCode = dr.GetString(12);

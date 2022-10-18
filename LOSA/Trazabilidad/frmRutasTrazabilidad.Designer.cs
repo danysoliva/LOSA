@@ -31,6 +31,11 @@ namespace LOSA.Trazabilidad
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRutasTrazabilidad));
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.navigationFrame1 = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.npRuta1 = new DevExpress.XtraBars.Navigation.NavigationPage();
@@ -74,11 +79,25 @@ namespace LOSA.Trazabilidad
             this.labelControl80 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl79 = new DevExpress.XtraEditors.LabelControl();
             this.navigationPage3 = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.cmdBuscarCliente_ = new DevExpress.XtraEditors.SimpleButton();
+            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
+            this.dsCalidad = new LOSA.Calidad.dsCalidad();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcodigo1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcodigo_pais1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldireccion11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldireccion21 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colciudad1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpais1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcliente_aqua1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnombre1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colEliminar = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmdEliminar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btnRuta3Home = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
             this.grDetalle = new DevExpress.XtraGrid.GridControl();
             this.despachadoClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsCalidad = new LOSA.Calidad.dsCalidad();
             this.gvDespachado = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.collote_producto_termiado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnVer = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -574,9 +593,12 @@ namespace LOSA.Trazabilidad
             ((System.ComponentModel.ISupportInitialize)(this.txtLoteRuta1.Properties)).BeginInit();
             this.npMain.SuspendLayout();
             this.navigationPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsCalidad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grDetalle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.despachadoClientesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsCalidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDespachado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnVer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slueCliente.Properties)).BeginInit();
@@ -1246,6 +1268,8 @@ namespace LOSA.Trazabilidad
             // 
             // navigationPage3
             // 
+            this.navigationPage3.Controls.Add(this.cmdBuscarCliente_);
+            this.navigationPage3.Controls.Add(this.gridControl2);
             this.navigationPage3.Controls.Add(this.btnRuta3Home);
             this.navigationPage3.Controls.Add(this.labelControl20);
             this.navigationPage3.Controls.Add(this.grDetalle);
@@ -1253,6 +1277,156 @@ namespace LOSA.Trazabilidad
             this.navigationPage3.Controls.Add(this.labelControl6);
             this.navigationPage3.Name = "navigationPage3";
             this.navigationPage3.Size = new System.Drawing.Size(1301, 856);
+            // 
+            // cmdBuscarCliente_
+            // 
+            this.cmdBuscarCliente_.Appearance.BackColor = System.Drawing.Color.LightBlue;
+            this.cmdBuscarCliente_.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdBuscarCliente_.Appearance.Options.UseBackColor = true;
+            this.cmdBuscarCliente_.Appearance.Options.UseFont = true;
+            this.cmdBuscarCliente_.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdBuscarCliente_.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.cmdBuscarCliente_.Location = new System.Drawing.Point(873, 58);
+            this.cmdBuscarCliente_.Name = "cmdBuscarCliente_";
+            this.cmdBuscarCliente_.Size = new System.Drawing.Size(144, 41);
+            this.cmdBuscarCliente_.TabIndex = 98;
+            this.cmdBuscarCliente_.Text = "Buscar";
+            this.cmdBuscarCliente_.Click += new System.EventHandler(this.cmdBuscarCliente__Click);
+            // 
+            // gridControl2
+            // 
+            this.gridControl2.DataMember = "Direccion_Clientes";
+            this.gridControl2.DataSource = this.dsCalidad;
+            this.gridControl2.Location = new System.Drawing.Point(94, 58);
+            this.gridControl2.MainView = this.gridView2;
+            this.gridControl2.Name = "gridControl2";
+            this.gridControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.cmdEliminar});
+            this.gridControl2.Size = new System.Drawing.Size(773, 101);
+            this.gridControl2.TabIndex = 97;
+            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            this.gridControl2.Click += new System.EventHandler(this.gridControl2_Click);
+            // 
+            // dsCalidad
+            // 
+            this.dsCalidad.DataSetName = "dsCalidad";
+            this.dsCalidad.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // gridView2
+            // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid6,
+            this.colcodigo1,
+            this.colcodigo_pais1,
+            this.coldireccion11,
+            this.coldireccion21,
+            this.colciudad1,
+            this.colpais1,
+            this.colcliente_aqua1,
+            this.colnombre1,
+            this.colEliminar});
+            this.gridView2.GridControl = this.gridControl2;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
+            // colid6
+            // 
+            this.colid6.FieldName = "id";
+            this.colid6.Name = "colid6";
+            this.colid6.OptionsColumn.AllowEdit = false;
+            // 
+            // colcodigo1
+            // 
+            this.colcodigo1.Caption = "Código";
+            this.colcodigo1.FieldName = "codigo";
+            this.colcodigo1.Name = "colcodigo1";
+            this.colcodigo1.OptionsColumn.AllowEdit = false;
+            this.colcodigo1.Visible = true;
+            this.colcodigo1.VisibleIndex = 0;
+            this.colcodigo1.Width = 66;
+            // 
+            // colcodigo_pais1
+            // 
+            this.colcodigo_pais1.FieldName = "codigo_pais";
+            this.colcodigo_pais1.Name = "colcodigo_pais1";
+            this.colcodigo_pais1.OptionsColumn.AllowEdit = false;
+            // 
+            // coldireccion11
+            // 
+            this.coldireccion11.Caption = "Dirección";
+            this.coldireccion11.FieldName = "direccion1";
+            this.coldireccion11.Name = "coldireccion11";
+            this.coldireccion11.OptionsColumn.AllowEdit = false;
+            this.coldireccion11.Visible = true;
+            this.coldireccion11.VisibleIndex = 4;
+            this.coldireccion11.Width = 115;
+            // 
+            // coldireccion21
+            // 
+            this.coldireccion21.Caption = "Dirección 2";
+            this.coldireccion21.FieldName = "direccion2";
+            this.coldireccion21.Name = "coldireccion21";
+            this.coldireccion21.OptionsColumn.AllowEdit = false;
+            this.coldireccion21.Visible = true;
+            this.coldireccion21.VisibleIndex = 5;
+            this.coldireccion21.Width = 94;
+            // 
+            // colciudad1
+            // 
+            this.colciudad1.Caption = "Ciudad";
+            this.colciudad1.FieldName = "ciudad";
+            this.colciudad1.Name = "colciudad1";
+            this.colciudad1.OptionsColumn.AllowEdit = false;
+            this.colciudad1.Visible = true;
+            this.colciudad1.VisibleIndex = 3;
+            this.colciudad1.Width = 109;
+            // 
+            // colpais1
+            // 
+            this.colpais1.Caption = "País";
+            this.colpais1.FieldName = "pais";
+            this.colpais1.Name = "colpais1";
+            this.colpais1.OptionsColumn.AllowEdit = false;
+            this.colpais1.Visible = true;
+            this.colpais1.VisibleIndex = 2;
+            this.colpais1.Width = 86;
+            // 
+            // colcliente_aqua1
+            // 
+            this.colcliente_aqua1.FieldName = "cliente_aqua";
+            this.colcliente_aqua1.Name = "colcliente_aqua1";
+            this.colcliente_aqua1.OptionsColumn.AllowEdit = false;
+            // 
+            // colnombre1
+            // 
+            this.colnombre1.Caption = "Nombre";
+            this.colnombre1.FieldName = "nombre";
+            this.colnombre1.Name = "colnombre1";
+            this.colnombre1.OptionsColumn.AllowEdit = false;
+            this.colnombre1.Visible = true;
+            this.colnombre1.VisibleIndex = 1;
+            this.colnombre1.Width = 245;
+            // 
+            // colEliminar
+            // 
+            this.colEliminar.Caption = "Eliminar";
+            this.colEliminar.ColumnEdit = this.cmdEliminar;
+            this.colEliminar.Name = "colEliminar";
+            this.colEliminar.Visible = true;
+            this.colEliminar.VisibleIndex = 6;
+            this.colEliminar.Width = 40;
+            // 
+            // cmdEliminar
+            // 
+            this.cmdEliminar.AutoHeight = false;
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            this.cmdEliminar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.cmdEliminar.Name = "cmdEliminar";
+            this.cmdEliminar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.cmdEliminar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdEliminar_ButtonClick);
             // 
             // btnRuta3Home
             // 
@@ -1291,12 +1465,12 @@ namespace LOSA.Trazabilidad
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grDetalle.DataSource = this.despachadoClientesBindingSource;
-            this.grDetalle.Location = new System.Drawing.Point(3, 126);
+            this.grDetalle.Location = new System.Drawing.Point(3, 165);
             this.grDetalle.MainView = this.gvDespachado;
             this.grDetalle.Name = "grDetalle";
             this.grDetalle.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnVer});
-            this.grDetalle.Size = new System.Drawing.Size(1295, 727);
+            this.grDetalle.Size = new System.Drawing.Size(1295, 688);
             this.grDetalle.TabIndex = 84;
             this.grDetalle.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDespachado});
@@ -1305,11 +1479,6 @@ namespace LOSA.Trazabilidad
             // 
             this.despachadoClientesBindingSource.DataMember = "DespachadoClientes";
             this.despachadoClientesBindingSource.DataSource = this.dsCalidad;
-            // 
-            // dsCalidad
-            // 
-            this.dsCalidad.DataSetName = "dsCalidad";
-            this.dsCalidad.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gvDespachado
             // 
@@ -1394,7 +1563,7 @@ namespace LOSA.Trazabilidad
             // 
             this.slueCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.slueCliente.Location = new System.Drawing.Point(243, 66);
+            this.slueCliente.Location = new System.Drawing.Point(1088, 131);
             this.slueCliente.Name = "slueCliente";
             this.slueCliente.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.slueCliente.Properties.Appearance.Options.UseFont = true;
@@ -1405,8 +1574,9 @@ namespace LOSA.Trazabilidad
             this.slueCliente.Properties.NullText = "";
             this.slueCliente.Properties.PopupView = this.gridView1;
             this.slueCliente.Properties.ValueMember = "id";
-            this.slueCliente.Size = new System.Drawing.Size(839, 28);
+            this.slueCliente.Size = new System.Drawing.Size(95, 28);
             this.slueCliente.TabIndex = 83;
+            this.slueCliente.Visible = false;
             this.slueCliente.EditValueChanged += new System.EventHandler(this.slueCliente_EditValueChanged);
             // 
             // direccionClientesBindingSource
@@ -1504,11 +1674,11 @@ namespace LOSA.Trazabilidad
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(174, 67);
+            this.labelControl6.Location = new System.Drawing.Point(9, 58);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(63, 24);
+            this.labelControl6.Size = new System.Drawing.Size(79, 24);
             this.labelControl6.TabIndex = 82;
-            this.labelControl6.Text = "Cliente:";
+            this.labelControl6.Text = "Cliente(s)";
             // 
             // npInfoLote
             // 
@@ -6892,9 +7062,12 @@ namespace LOSA.Trazabilidad
             this.npMain.ResumeLayout(false);
             this.navigationPage3.ResumeLayout(false);
             this.navigationPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsCalidad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdEliminar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grDetalle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.despachadoClientesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsCalidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDespachado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnVer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.slueCliente.Properties)).EndInit();
@@ -7634,5 +7807,19 @@ namespace LOSA.Trazabilidad
         private DevExpress.XtraVerticalGrid.VGridControl vGridControl2;
         private DevExpress.XtraEditors.SimpleButton btnSalir;
         private DevExpress.XtraEditors.SimpleButton btnRuta3Home;
+        private DevExpress.XtraGrid.GridControl gridControl2;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraEditors.SimpleButton cmdBuscarCliente_;
+        private DevExpress.XtraGrid.Columns.GridColumn colid6;
+        private DevExpress.XtraGrid.Columns.GridColumn colcodigo1;
+        private DevExpress.XtraGrid.Columns.GridColumn colcodigo_pais1;
+        private DevExpress.XtraGrid.Columns.GridColumn coldireccion11;
+        private DevExpress.XtraGrid.Columns.GridColumn coldireccion21;
+        private DevExpress.XtraGrid.Columns.GridColumn colciudad1;
+        private DevExpress.XtraGrid.Columns.GridColumn colpais1;
+        private DevExpress.XtraGrid.Columns.GridColumn colcliente_aqua1;
+        private DevExpress.XtraGrid.Columns.GridColumn colnombre1;
+        private DevExpress.XtraGrid.Columns.GridColumn colEliminar;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdEliminar;
     }
 }

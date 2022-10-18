@@ -237,22 +237,23 @@ namespace LOSA.MicroIngredientes
                 var gridView = (GridView)gridControl2.FocusedView;
                 var row = (dsMicros.plan_microsdRow)gridView.GetFocusedDataRow();
 
-                if (row.pesaje >= row.total)
-                {
-                    CajaDialogo.Error("YA SE PESÓ ESTA MATERIA PRIMA");
-                    return;
-                }
+                //if (row.pesaje >= row.total)
+                //{
+                //    CajaDialogo.Error("YA SE PESÓ ESTA MATERIA PRIMA");
+                //    return;
+                //}
 
                 PesajeManualInfo pesajeManualInfo = new PesajeManualInfo();
 
-                //pesajeManualInfo.MateriaPrimaID = row.id_rm;
-                //pesajeManualInfo.Total = row.total;
-                //pesajeManualInfo.OrdenID = id_orden;
-                //pesajeManualInfo.CantBatch = row.cant_batch;
-                //pesajeManualInfo.DetallePesajeManualPlanID = row.id_orden_pesaje_manual_plan;
-                //pesajeManualInfo.BatchPlan = row.cant_batch;
-                //pesajeManualInfo.AMI_ID = ami_id;
-
+                pesajeManualInfo.MateriaPrimaID = row.id_rm;
+                pesajeManualInfo.Total = row.total;
+                pesajeManualInfo.OrdenID = id_orden;
+                pesajeManualInfo.CantBatch = row.cant_batch;
+                pesajeManualInfo.DetallePesajeManualPlanID = row.id_orden_pesaje_manual_plan;
+                pesajeManualInfo.BatchPlan = row.cant_batch;
+                pesajeManualInfo.AMI_ID = ami_id;
+                pesajeManualInfo.PesoPorBatch = row.set_point;
+                //pesajeManualInfo.CantBatchMaximo=
                 //frmSelectLotePesaje frm = new frmSelectLotePesaje(pesajeManualInfo);
 
 
@@ -268,7 +269,8 @@ namespace LOSA.MicroIngredientes
 
 
                 ////var row = (dsMicros.DetalleOrdenesPesajeIndividualRow)gvPesajeIndividual.GetDataRow(gvPesajeIndividual.FocusedRowHandle);
-                PesajeIndividualInfo pesajeIndividual = new PesajeIndividualInfo();
+                //PesajeIndividualInfo pesajeIndividual = new PesajeIndividualInfo();
+                PesajeBasculaInfo pesaje = new PesajeBasculaInfo();
 
                 //if (row != null)
                 //{
@@ -280,18 +282,18 @@ namespace LOSA.MicroIngredientes
                 //    }
 
 
-                pesajeIndividual.Batch_Plan = row.cant_batch;
-                pesajeIndividual.CantBatchMaximo = Convert.ToInt32( (row.total - row.batch_real));
+                pesaje.Batch_Plan = row.cant_batch;
+                pesaje.CantBatchMaximo = Convert.ToInt32((row.total - row.batch_real));
                 //pesajeIndividual.CantBatchMaximo = (row.Batch_Plan - row.Batch_Completados);
-                pesajeIndividual.id_orden_pesaje_header = row.id_orden_encabezado;
-                pesajeIndividual.MateriaPrimaID = row.id_rm;
-                pesajeIndividual.MateriaPrima = row.namerm;
-                pesajeIndividual.Total = row.total;
-                pesajeIndividual.PesoPorBatch = row.set_point;
-                pesajeIndividual.AMI_ID = ami_id;
-                pesajeIndividual.CantBatch = row.cant_batch;
+                pesaje.id_orden_pesaje_header = row.id_orden_encabezado;
+                pesaje.MateriaPrimaID = row.id_rm;
+                pesaje.MateriaPrima = row.namerm;
+                pesaje.Total = row.total;
+                pesaje.PesoPorBatch = row.set_point;
+                pesaje.AMI_ID = ami_id;
+                pesaje.CantBatch = row.cant_batch;
 
-                xfrmPesajeIndividual frm = new xfrmPesajeIndividual(pesajeIndividual,(int)TipoPesaje.PesajeNucleo);
+                xfrmPesajeIndividual frm = new xfrmPesajeIndividual(pesaje, (int)TipoPesaje.PesajeNucleo);
 
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
@@ -328,7 +330,9 @@ namespace LOSA.MicroIngredientes
             {
 
                 var row = (dsMicros.DetalleOrdenesPesajeIndividualRow)gvPesajeIndividual.GetDataRow(gvPesajeIndividual.FocusedRowHandle);
-                PesajeIndividualInfo pesajeIndividual = new PesajeIndividualInfo();
+                //PesajeIndividualInfo pesajeIndividual = new PesajeIndividualInfo();
+                PesajeBasculaInfo pesaje = new PesajeBasculaInfo();
+
 
                 if (row != null)
                 {
@@ -340,17 +344,17 @@ namespace LOSA.MicroIngredientes
                     }
 
 
-                    pesajeIndividual.Batch_Plan = row.Batch_Plan;
-                    pesajeIndividual.CantBatchMaximo = (row.Batch_Plan - row.Batch_Completados);
-                    pesajeIndividual.id_orden_pesaje_header = row.id_orden_encabezado;
-                    pesajeIndividual.MateriaPrimaID = row.id_rm;
-                    pesajeIndividual.MateriaPrima = row.Material;
-                    pesajeIndividual.Total = row.Total;
-                    pesajeIndividual.PesoPorBatch = row.Peso_por_Batch;
+                    pesaje.Batch_Plan = row.Batch_Plan;
+                    pesaje.CantBatchMaximo = (row.Batch_Plan - row.Batch_Completados);
+                    pesaje.id_orden_pesaje_header = row.id_orden_encabezado;
+                    pesaje.MateriaPrimaID = row.id_rm;
+                    pesaje.MateriaPrima = row.Material;
+                    pesaje.Total = row.Total;
+                    pesaje.PesoPorBatch = row.Peso_por_Batch;
                     //pesajeIndividual.AMI_ID = ami_id;
 
 
-                    xfrmPesajeIndividual frm = new xfrmPesajeIndividual(pesajeIndividual,(int)TipoPesaje.PesajeIndividual);
+                    xfrmPesajeIndividual frm = new xfrmPesajeIndividual(pesaje, (int)TipoPesaje.PesajeIndividual);
 
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
@@ -687,6 +691,24 @@ namespace LOSA.MicroIngredientes
             }
             catch (Exception ex)
             {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void cmdVistaPreviaPesaje_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            try
+            {
+                var gridView = (GridView)grd_data.FocusedView;
+                var row = (dsMicros.plan_microsh_reportRow)gridView.GetFocusedDataRow();
+                xrptAlimentacionMicros rpt = new xrptAlimentacionMicros(row.AMI_ID, row.id_orden_encabezado);
+                rpt.ShowPrintMarginsWarning = false;
+                rpt.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
+                rpt.ShowPreview();
+            }
+            catch (Exception ex)
+            {
+
                 CajaDialogo.Error(ex.Message);
             }
         }

@@ -29,6 +29,7 @@ namespace LOSA.MicroIngredientes
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSelectLotePesaje));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -36,7 +37,7 @@ namespace LOSA.MicroIngredientes
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gcLotesSeleccionados = new DevExpress.XtraGrid.GridControl();
-            this.lotesseleccionBindingSource = new System.Windows.Forms.BindingSource();
+            this.lotesseleccionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsMicro = new LOSA.Micro.dsMicro();
             this.gvLotesSeleccionados = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colunidades = new DevExpress.XtraGrid.Columns.GridColumn();
