@@ -30,11 +30,16 @@ namespace LOSA.Logistica
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCierreMensual));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject21 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
             this.btn_close = new DevExpress.XtraEditors.SimpleButton();
             this.btnNuevoRecuento = new DevExpress.XtraEditors.SimpleButton();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
@@ -48,11 +53,14 @@ namespace LOSA.Logistica
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryVerDetalle = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cmdNuevoRecuento = new DevExpress.XtraEditors.SimpleButton();
+            this.reposbtnContabilizar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcontabilizacion = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCierreMes1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryVerDetalle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposbtnContabilizar)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_close
@@ -91,7 +99,8 @@ namespace LOSA.Logistica
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
             this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryVerDetalle});
+            this.repositoryVerDetalle,
+            this.reposbtnContabilizar});
             this.grd_data.Size = new System.Drawing.Size(1187, 623);
             this.grd_data.TabIndex = 2;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -133,7 +142,9 @@ namespace LOSA.Logistica
             this.colmes_nombre,
             this.colcomentario,
             this.gridColumn1,
-            this.colid});
+            this.colid,
+            this.gridColumn2,
+            this.colcontabilizacion});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
@@ -148,7 +159,7 @@ namespace LOSA.Logistica
             this.coldate_counted.OptionsColumn.AllowEdit = false;
             this.coldate_counted.Visible = true;
             this.coldate_counted.VisibleIndex = 2;
-            this.coldate_counted.Width = 205;
+            this.coldate_counted.Width = 181;
             // 
             // colmes
             // 
@@ -165,7 +176,7 @@ namespace LOSA.Logistica
             this.colyear.OptionsColumn.AllowEdit = false;
             this.colyear.Visible = true;
             this.colyear.VisibleIndex = 1;
-            this.colyear.Width = 143;
+            this.colyear.Width = 126;
             // 
             // colmes_nombre
             // 
@@ -175,7 +186,7 @@ namespace LOSA.Logistica
             this.colmes_nombre.OptionsColumn.AllowEdit = false;
             this.colmes_nombre.Visible = true;
             this.colmes_nombre.VisibleIndex = 0;
-            this.colmes_nombre.Width = 141;
+            this.colmes_nombre.Width = 124;
             // 
             // colcomentario
             // 
@@ -185,7 +196,7 @@ namespace LOSA.Logistica
             this.colcomentario.OptionsColumn.AllowEdit = false;
             this.colcomentario.Visible = true;
             this.colcomentario.VisibleIndex = 3;
-            this.colcomentario.Width = 546;
+            this.colcomentario.Width = 355;
             // 
             // gridColumn1
             // 
@@ -193,15 +204,15 @@ namespace LOSA.Logistica
             this.gridColumn1.ColumnEdit = this.repositoryVerDetalle;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 4;
-            this.gridColumn1.Width = 134;
+            this.gridColumn1.VisibleIndex = 5;
+            this.gridColumn1.Width = 110;
             // 
             // repositoryVerDetalle
             // 
             this.repositoryVerDetalle.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
             this.repositoryVerDetalle.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryVerDetalle.Name = "repositoryVerDetalle";
             this.repositoryVerDetalle.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryVerDetalle.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryVerDetalle_ButtonClick);
@@ -212,36 +223,51 @@ namespace LOSA.Logistica
             this.colid.FieldName = "id";
             this.colid.Name = "colid";
             // 
-            // cmdNuevoRecuento
+            // reposbtnContabilizar
             // 
-            this.cmdNuevoRecuento.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdNuevoRecuento.Appearance.Options.UseFont = true;
-            this.cmdNuevoRecuento.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdNuevoRecuento.ImageOptions.Image")));
-            this.cmdNuevoRecuento.Location = new System.Drawing.Point(237, 7);
-            this.cmdNuevoRecuento.Name = "cmdNuevoRecuento";
-            this.cmdNuevoRecuento.Size = new System.Drawing.Size(208, 47);
-            this.cmdNuevoRecuento.TabIndex = 3;
-            this.cmdNuevoRecuento.Text = "Nuevo recuento V2";
-            this.cmdNuevoRecuento.Visible = false;
-            this.cmdNuevoRecuento.Click += new System.EventHandler(this.cmdNuevoRecuento_Click);
+            this.reposbtnContabilizar.AutoHeight = false;
+            editorButtonImageOptions6.Image = global::LOSA.Properties.Resources.production;
+            this.reposbtnContabilizar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.reposbtnContabilizar.Name = "reposbtnContabilizar";
+            this.reposbtnContabilizar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.reposbtnContabilizar.Click += new System.EventHandler(this.reposbtnContabilizar_Click);
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Contabilizar";
+            this.gridColumn2.ColumnEdit = this.reposbtnContabilizar;
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 6;
+            this.gridColumn2.Width = 133;
+            // 
+            // colcontabilizacion
+            // 
+            this.colcontabilizacion.Caption = "Contabilizado";
+            this.colcontabilizacion.FieldName = "contabilizacion";
+            this.colcontabilizacion.Name = "colcontabilizacion";
+            this.colcontabilizacion.OptionsColumn.AllowEdit = false;
+            this.colcontabilizacion.Visible = true;
+            this.colcontabilizacion.VisibleIndex = 4;
+            this.colcontabilizacion.Width = 140;
             // 
             // frmCierreMensual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1194, 693);
-            this.Controls.Add(this.cmdNuevoRecuento);
             this.Controls.Add(this.grd_data);
             this.Controls.Add(this.btnNuevoRecuento);
             this.Controls.Add(this.btn_close);
             this.Name = "frmCierreMensual";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmCierreMensual";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCierreMes1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryVerDetalle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposbtnContabilizar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -261,6 +287,8 @@ namespace LOSA.Logistica
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryVerDetalle;
         private DevExpress.XtraGrid.Columns.GridColumn colid;
-        private DevExpress.XtraEditors.SimpleButton cmdNuevoRecuento;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit reposbtnContabilizar;
+        private DevExpress.XtraGrid.Columns.GridColumn colcontabilizacion;
     }
 }

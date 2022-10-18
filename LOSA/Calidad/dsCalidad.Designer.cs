@@ -8922,6 +8922,8 @@ namespace LOSA.Calidad {
             
             private global::System.Data.DataColumn columnnombre;
             
+            private global::System.Data.DataColumn columnseleccionado;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Direccion_ClientesDataTable() {
@@ -9029,6 +9031,14 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn seleccionadoColumn {
+                get {
+                    return this.columnseleccionado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -9064,7 +9074,7 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Direccion_ClientesRow AddDireccion_ClientesRow(int id, string codigo, string codigo_pais, string direccion1, string direccion2, string ciudad, string pais, string cliente_aqua, string nombre) {
+            public Direccion_ClientesRow AddDireccion_ClientesRow(int id, string codigo, string codigo_pais, string direccion1, string direccion2, string ciudad, string pais, string cliente_aqua, string nombre, bool seleccionado) {
                 Direccion_ClientesRow rowDireccion_ClientesRow = ((Direccion_ClientesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -9075,7 +9085,8 @@ namespace LOSA.Calidad {
                         ciudad,
                         pais,
                         cliente_aqua,
-                        nombre};
+                        nombre,
+                        seleccionado};
                 rowDireccion_ClientesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDireccion_ClientesRow);
                 return rowDireccion_ClientesRow;
@@ -9107,6 +9118,7 @@ namespace LOSA.Calidad {
                 this.columnpais = base.Columns["pais"];
                 this.columncliente_aqua = base.Columns["cliente_aqua"];
                 this.columnnombre = base.Columns["nombre"];
+                this.columnseleccionado = base.Columns["seleccionado"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9130,6 +9142,10 @@ namespace LOSA.Calidad {
                 base.Columns.Add(this.columncliente_aqua);
                 this.columnnombre = new global::System.Data.DataColumn("nombre", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnombre);
+                this.columnseleccionado = new global::System.Data.DataColumn("seleccionado", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnseleccionado);
+                this.columnseleccionado.Caption = "Seleccionar";
+                this.columnseleccionado.DefaultValue = ((bool)(false));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15302,6 +15318,23 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool seleccionado {
+                get {
+                    try {
+                        return ((bool)(this[this.tableDireccion_Clientes.seleccionadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'seleccionado\' de la tabla \'Direccion_Clientes\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableDireccion_Clientes.seleccionadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableDireccion_Clientes.idColumn);
             }
@@ -15406,6 +15439,18 @@ namespace LOSA.Calidad {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetnombreNull() {
                 this[this.tableDireccion_Clientes.nombreColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsseleccionadoNull() {
+                return this.IsNull(this.tableDireccion_Clientes.seleccionadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetseleccionadoNull() {
+                this[this.tableDireccion_Clientes.seleccionadoColumn] = global::System.Convert.DBNull;
             }
         }
         

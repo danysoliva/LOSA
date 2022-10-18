@@ -63,8 +63,9 @@ namespace LOSA.Trazabilidad
         public frmRutasTrazabilidad(UserLogin log)
         {
             InitializeComponent();
-            LoadClientes();
+            //LoadClientes();
             this.navigationFrame1.SelectedPage = npMain;
+            txtLoteRuta1.Text = "";
         }
 
         private void acordionRuta1_Click(object sender, EventArgs e)
@@ -763,7 +764,7 @@ namespace LOSA.Trazabilidad
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("[sp_load_lotes_pt_trz_from_lote_mpv2]", con);
+                SqlCommand cmd = new SqlCommand("[sp_load_lotes_pt_trz_from_lote_mpv3]", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@lotemp", txtLoteRuta1.Text);
                 cmd.Parameters.AddWithValue("@idrm", idMP_Selected);
@@ -1941,6 +1942,102 @@ namespace LOSA.Trazabilidad
         private void simpleButton5_Click(object sender, EventArgs e)
         {
             this.navigationFrame1.SelectedPage = npMain;
+        }
+
+        private void gridControl2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmdEliminar_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            //Eliminar cliente seleccionado
+            //Eliminar row del grid
+            DialogResult r = MessageBox.Show("¿Desea Eliminar ésta linea?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (r != DialogResult.Yes)
+                return;
+
+            var gridView = (GridView)gridControl2.FocusedView;
+            var row = (dsCalidad.Direccion_ClientesRow)gridView.GetFocusedDataRow();
+
+            bool deleted = false;
+            try
+            {
+                gridView2.DeleteRow(gridView.FocusedRowHandle);
+                deleted = true;
+                dsCalidad.Direccion_Clientes.AcceptChanges();
+            }
+            catch (Exception ec)
+            {
+                //CajaDialogo.Error(ec.Message);
+            }
+
+            if (deleted)
+                LoadDataClientes();
+
+        }
+
+        private void LoadDataClientes()
+        {
+            dsCalidad.DespachadoClientes.Clear();
+            try
+            {
+                DataOperations dp = new DataOperations();
+                if (dsCalidad.Direccion_Clientes.Count > 0)
+                {
+                    foreach (dsCalidad.Direccion_ClientesRow row in dsCalidad.Direccion_Clientes)
+                    {
+                        using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringLOSA))
+                        {
+                            cnx.Open();
+
+                            SqlDataAdapter da = new SqlDataAdapter("sp_DespachadoClientes_V2", cnx);
+                            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                            da.SelectCommand.Parameters.Add("@idCliente", SqlDbType.Int).Value = row.id;
+
+                            //dsCalidad.DespachadoClientes.Clear();
+
+                            da.Fill(dsCalidad.DespachadoClientes);
+
+                            cnx.Close();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void cmdBuscarCliente__Click(object sender, EventArgs e)
+        {
+            frmBuscarCliente frm = new frmBuscarCliente();
+            if(frm.ShowDialog() == DialogResult.OK)
+            {
+                foreach(dsCalidad.Direccion_ClientesRow row in frm.dsCalidad1.Direccion_Clientes)
+                {
+                    if (row.seleccionado)
+                    {
+                        dsCalidad.Direccion_ClientesRow row1 = dsCalidad.Direccion_Clientes.NewDireccion_ClientesRow();
+                        row1.id = row.id;
+                        row1.codigo = row.codigo;
+                        row1.nombre = row.nombre;
+                        row1.codigo_pais = row.codigo_pais;
+                        row1.direccion1 = row.direccion1;
+                        row1.direccion2 = row.direccion2;
+                        row1.ciudad = row.ciudad;
+                        row1.pais = row.pais;
+                        row1.cliente_aqua = row.cliente_aqua;
+                        //dsCompras.oc_d_normalRow row1 = dsCompras.oc_d_normal.Newoc_d_normalRow();
+                        //dsCompras.oc_d_normal.Addoc_d_normalRow(row1);
+                        dsCalidad.Direccion_Clientes.AddDireccion_ClientesRow(row1);
+                        dsCalidad.AcceptChanges();
+                        //dsCompras.AcceptChanges();
+                    }
+                }
+                LoadDataClientes();
+            }
         }
     }
 }

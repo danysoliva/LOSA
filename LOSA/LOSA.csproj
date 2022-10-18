@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\aqfsvr003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>409</ApplicationRevision>
+    <ApplicationRevision>410</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -2989,6 +2989,12 @@
     <Compile Include="Trazabilidad\frmAdjuntar.Designer.cs">
       <DependentUpon>frmAdjuntar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Trazabilidad\frmBuscarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trazabilidad\frmBuscarCliente.Designer.cs">
+      <DependentUpon>frmBuscarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Trazabilidad\frmBuscarProvMP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -4231,6 +4237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Trazabilidad\frmAdjuntar.resx">
       <DependentUpon>frmAdjuntar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trazabilidad\frmBuscarCliente.resx">
+      <DependentUpon>frmBuscarCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Trazabilidad\frmBuscarProvMP.resx">
       <DependentUpon>frmBuscarProvMP.cs</DependentUpon>
