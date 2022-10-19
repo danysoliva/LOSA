@@ -26,6 +26,7 @@ namespace LOSA.MicroIngredientes
         string codigoOrden;
         int id_orden = 0;
         string pt_name;
+        int TotalBatchOrden;
 
         public xfrmDetalleOrdenesMicrosPesaje(int _ID, string _CodigoOrden)
         {
@@ -39,12 +40,42 @@ namespace LOSA.MicroIngredientes
         public xfrmDetalleOrdenesMicrosPesaje()
         {
             InitializeComponent();
-            //id = _ID;
-            //codigoOrden = _CodigoOrden;
+            LoadHeader();
             LoadData();
             LoadDataIndividual();
             load_turno();
             Load_reprint();
+        }
+
+        private void LoadHeader()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
+                {
+                    cnx.Open();
+                    dsMicros.Micros.Clear();
+                    SqlCommand cmd = new SqlCommand("sp_get_ordenes_pesaje_manual_interface_V6", cnx);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    //cmd.Parameters.AddWithValue("@vertodas", toggleSwitch1.IsOn);
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        lblNumOrden.Text = dr.GetInt64(1).ToString();
+                        lblCodOrden.Text = dr.GetString(2);
+                        lbl_Lote.Text = dr.GetInt32(4).ToString();
+                        TotalBatchOrden = dr.GetInt32(5);
+                        lblTotalBatchOrden.Text = TotalBatchOrden.ToString();
+                        lblPT.Text = dr.GetString(9);
+                        lblItemCode.Text = dr.GetString(10);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
 
         public void load_turno()
@@ -85,17 +116,17 @@ namespace LOSA.MicroIngredientes
 
                 }
 
-                if (dsMicros.plan_microsh.Rows.Count > 0)
-                {
+                //if (dsMicros.plan_microsh.Rows.Count > 0)
+                //{
 
-                    lblPT.Text = "PT: " + dsMicros.plan_microsh.FirstOrDefault().pt_name;
-                    lblBatch.Text = "Batch Real: " + dsMicros.plan_microsh.FirstOrDefault().batch_real;
-                }
-                else
-                {
-                    lblPT.Text = "PT: #";
-                    lblBatch.Text = "Batch Real: #";
-                }
+                //    lblPT.Text = "PT: " + dsMicros.plan_microsh.FirstOrDefault().pt_name;
+                //    lblBatch.Text = "Batch Real: " + dsMicros.plan_microsh.FirstOrDefault().batch_real;
+                //}
+                //else
+                //{
+                //    lblPT.Text = "PT: #";
+                //    lblBatch.Text = "Batch Real: #";
+                //}
 
             }
             catch (Exception ex)
@@ -151,7 +182,7 @@ namespace LOSA.MicroIngredientes
 
         private void xfrmDetalleOrdenesMicros_Load(object sender, EventArgs e)
         {
-            lblTitulo.Text = "Código Orden: " + codigoOrden;
+            //lblNumOrden.Text = "Código Orden: " + codigoOrden;
         }
 
         private void cmdUpdate_Click(object sender, EventArgs e)
@@ -643,45 +674,50 @@ namespace LOSA.MicroIngredientes
 
                 var row = (dsMicros.plan_microshRow)gvDetalle.GetFocusedDataRow();
 
-                if (row!=null)
+                if (row != null)
                 {
 
 
-                xfrmSpinBatchPlan frm = new xfrmSpinBatchPlan(row.id_orden_encabezado, row.order_code);
+                    xfrmSpinBatchPlan frm = new xfrmSpinBatchPlan(row.id_orden_encabezado, row.order_code);
 
-                if (frm.ShowDialog() == DialogResult.OK)
-                {
-                    int batchDisponibles = 0;
-
-                    batchDisponibles = row.cant_batch - row.batch_real;
-
-
-                    if (frm.cantBatch <= batchDisponibles)
+                    if (frm.ShowDialog() == DialogResult.OK)
                     {
+                        int batchDisponibles = 0;
                         DataOperations dp = new DataOperations();
-
-                        using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
+                        int BatchPlaneados = 0;
+                        foreach (dsMicros.plan_microshRow rowh in dsMicros.plan_microsh)
                         {
-                            cnx.Open();
-                            SqlCommand cmd = new SqlCommand("sp_acumulador_batch_real", cnx);
-                            cmd.CommandType = CommandType.StoredProcedure;
-
-                            cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = row.id_orden_encabezado;
-                            cmd.Parameters.AddWithValue("@batch_acumulado", SqlDbType.Int).Value = frm.cantBatch;
-
-                            cmd.ExecuteNonQuery();
-                            cnx.Close();
-
-                            LoadData();
+                            BatchPlaneados += dp.ValidateNumberInt32(rowh.cant_batch);
                         }
-                    }
-                    else
-                    {
-                        CajaDialogo.Error("DEDE DE PESAR UNA CANTIDAD MENOR O IGUAL A LA CANTIDAD DE BATCH DISPONIBLE");
-                    }
+                        batchDisponibles = TotalBatchOrden - BatchPlaneados;
 
 
-                }
+                        if (frm.cantBatch <= batchDisponibles)
+                        {
+
+
+                            using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
+                            {
+                                cnx.Open();
+                                SqlCommand cmd = new SqlCommand("sp_acumulador_batch_real", cnx);
+                                cmd.CommandType = CommandType.StoredProcedure;
+
+                                cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = row.id_orden_encabezado;
+                                cmd.Parameters.AddWithValue("@batch_acumulado", SqlDbType.Int).Value = frm.cantBatch;
+
+                                cmd.ExecuteNonQuery();
+                                cnx.Close();
+
+                                LoadData();
+                            }
+                        }
+                        else
+                        {
+                            CajaDialogo.Error("DEDE DE PESAR UNA CANTIDAD MENOR O IGUAL A LA CANTIDAD DE BATCH DISPONIBLE");
+                        }
+
+
+                    }
                 }
                 else
                 {
