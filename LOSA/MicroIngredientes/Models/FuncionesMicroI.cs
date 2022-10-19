@@ -64,7 +64,31 @@ namespace LOSA.MicroIngredientes.Models
             }
             return valor;
         }
+        public bool SetEnableRM_pesajeIndividual(int p_id, bool penable)
+        {
+            bool valor = false;
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringAPMS);
+                con.Open();
 
+                SqlCommand cmd = new SqlCommand("sp_update_enable_pesaje_individual_micros", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@enable", penable);
+                //cmd.Parameters.AddWithValue("@id_orden", pIdOrdenH);
+                cmd.Parameters.AddWithValue("@id", p_id);
+                if (dp.ValidateNumberInt32(cmd.ExecuteScalar()) > 0)
+                    valor = true;
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+            return valor;
+        }
 
 
 

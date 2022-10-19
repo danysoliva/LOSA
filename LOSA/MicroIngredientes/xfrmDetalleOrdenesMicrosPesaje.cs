@@ -25,6 +25,7 @@ namespace LOSA.MicroIngredientes
         int id = 0;
         string codigoOrden;
         int id_orden = 0;
+        Int64 id_order_apms = 0;
         string pt_name;
         int TotalBatchOrden;
 
@@ -62,7 +63,8 @@ namespace LOSA.MicroIngredientes
                     SqlDataReader dr = cmd.ExecuteReader();
                     if (dr.Read())
                     {
-                        lblNumOrden.Text = dr.GetInt64(1).ToString();
+                        id_order_apms = dr.GetInt64(1);
+                        lblNumOrden.Text = id_orden.ToString();
                         lblCodOrden.Text = dr.GetString(2);
                         lbl_Lote.Text = dr.GetInt32(4).ToString();
                         TotalBatchOrden = dr.GetInt32(5);
@@ -166,9 +168,9 @@ namespace LOSA.MicroIngredientes
                 {
                     cnx.Open();
                     dsMicros.DetalleOrdenesPesajeIndividual.Clear();
-                    SqlDataAdapter da = new SqlDataAdapter("[sp_get_detalle_orden_pesaje_micros_interface_indiv_activa_V2]", cnx);
+                    SqlDataAdapter da = new SqlDataAdapter("[sp_get_detalle_orden_pesaje_micros_interface_indiv_v2]", cnx);
                     da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                    //da.SelectCommand.Parameters.AddWithValue("@orden_id", SqlDbType.Int).Value = id;
+                    da.SelectCommand.Parameters.AddWithValue("@orden_id", id_order_apms);
                     da.Fill(dsMicros.DetalleOrdenesPesajeIndividual);
                     cnx.Close();
 
@@ -422,8 +424,8 @@ namespace LOSA.MicroIngredientes
                 var gridView = (GridView)gcDetalle.FocusedView;
                 var row = (dsMicros.plan_microshRow)gridView.GetFocusedDataRow();
                 int Selected = row.id_orden_encabezado;
-                decimal Totalreq = row.total_kg;
-                decimal Selecionado = 0;
+                //decimal Totalreq = row.total_kg;
+                //decimal Selecionado = 0;
                 
                 DataOperations dp = new DataOperations();
                 using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
@@ -438,16 +440,16 @@ namespace LOSA.MicroIngredientes
 
                 }
 
-                foreach (dsMicros.plan_microsdRow detalle in dsMicros.plan_microsd.Rows)
+                //foreach (dsMicros.plan_microsdRow detalle in dsMicros.plan_microsd.Rows)
+                //{
+                //    if (detalle.AMI_ID == row.AMI_ID)
+                //    {
+                //        Selecionado = Selecionado + detalle.pesaje;
+                //    }
+                //}
+                if (row.cant_batch> row.batch_real)
                 {
-                    if (detalle.AMI_ID == row.AMI_ID)
-                    {
-                        Selecionado = Selecionado + detalle.pesaje;
-                    }
-                }
-                if (Selecionado < Totalreq)
-                {
-                    frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, "Debe de seleccionar todas las materias primas.");
+                    frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, "Debe de pesar todas las materias primas.");
                     if (frm.ShowDialog() == DialogResult.Cancel )
                     {
                         return;
@@ -455,24 +457,24 @@ namespace LOSA.MicroIngredientes
                    
                 }
 
-                if (row.id_turno == 0)
-                {
-                    frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, "Debe seleccionar el turno para imprimir el reporte.");
-                    if (frm.ShowDialog() == DialogResult.Cancel)
-                    {
-                        return;
-                    }
-                }
+                //if (row.id_turno == 0)
+                //{
+                //    frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, "Debe seleccionar el turno para imprimir el reporte.");
+                //    if (frm.ShowDialog() == DialogResult.Cancel)
+                //    {
+                //        return;
+                //    }
+                //}
 
-                string query = @"sp_update_plan_asignar_turnos";
-                SqlConnection cn = new SqlConnection(dp.ConnectionStringAPMS);
-                cn.Open();
-                SqlCommand cmd = new SqlCommand(query,cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id_turno", row.id_turno);
-                cmd.Parameters.AddWithValue("@AMI",row.AMI_ID);
-                cmd.ExecuteNonQuery();
-                cn.Close();
+                //string query = @"sp_update_plan_asignar_turnos";
+                //SqlConnection cn = new SqlConnection(dp.ConnectionStringAPMS);
+                //cn.Open();
+                //SqlCommand cmd = new SqlCommand(query,cn);
+                //cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@id_turno", row.id_turno);
+                //cmd.Parameters.AddWithValue("@AMI",row.AMI_ID);
+                //cmd.ExecuteNonQuery();
+                //cn.Close();
 
 
                 xrptAlimentacionMicros rpt = new xrptAlimentacionMicros(row.AMI_ID, row.id_orden_encabezado);
@@ -481,17 +483,17 @@ namespace LOSA.MicroIngredientes
                 rpt.Print();
 
 
-                query = @"sp_update_close_pesaje";
-                cn = new SqlConnection(dp.ConnectionStringAPMS);
+                string query = @"sp_update_close_pesaje";
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringAPMS);
                 cn.Open();
-                cmd = new SqlCommand(query, cn);
+                SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_orden_encabezado", row.id_orden_encabezado);
                 cmd.Parameters.AddWithValue("@AMI", row.AMI_ID);
                 cmd.ExecuteNonQuery();
                 cn.Close();
 
-                LoadData();
+                //LoadData();
 
 
             }
