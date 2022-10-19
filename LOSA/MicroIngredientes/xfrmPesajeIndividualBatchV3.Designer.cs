@@ -480,12 +480,12 @@ namespace LOSA.MicroIngredientes
             this.btnBascAmbas.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnBascAmbas.Appearance.Options.UseFont = true;
             this.btnBascAmbas.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnBascAmbas.ImageOptions.Image = global::LOSA.Properties.Resources.sigma_32X32;
+            this.btnBascAmbas.ImageOptions.Image = global::LOSA.Properties.Resources.weighing_machine_32X32;
             this.btnBascAmbas.Location = new System.Drawing.Point(443, 49);
             this.btnBascAmbas.Name = "btnBascAmbas";
             this.btnBascAmbas.Size = new System.Drawing.Size(112, 49);
             this.btnBascAmbas.TabIndex = 43;
-            this.btnBascAmbas.Text = "Todas";
+            this.btnBascAmbas.Text = "Ambas";
             this.btnBascAmbas.Click += new System.EventHandler(this.btnBascAmbas_Click);
             // 
             // xfrmPesajeIndividualBatchV3

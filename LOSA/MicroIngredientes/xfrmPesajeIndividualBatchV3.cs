@@ -119,6 +119,8 @@ namespace LOSA.MicroIngredientes
 
         private void btnDelete_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
+
+            indicePeso = gvPesaje.FocusedRowHandle - 1;
             gvPesaje.DeleteRow(gvPesaje.FocusedRowHandle);
             timer1.Enabled = true;
 
@@ -296,8 +298,8 @@ namespace LOSA.MicroIngredientes
                         limiteSuperior = pesaje.PesoPorBatch + (pesaje.PesoPorBatch * Convert.ToDecimal(0.03));
 
                         //lblValorBascula1.Text = "Valor en Báscula: " + peso_bascula.ToString("N2")+ " Kg";
-                        lblInferior.Text = "Límite Inferior: " + limiteInferior.ToString("N2");
-                        lblSuperior.Text = "Límite Superior: " + limiteSuperior.ToString("N2");
+                        lblInferior.Text = "Límite Máximo: " + limiteInferior.ToString("N2");
+                        lblSuperior.Text = "Límite Mínimo: " + limiteSuperior.ToString("N2");
 
 
                         switch (BasculaId)
@@ -436,9 +438,7 @@ namespace LOSA.MicroIngredientes
             pesoBasculaAcumulado2= Convert.ToDecimal(colpeso.Summary[0].SummaryValue.ToString());
             pesoBasculaAcumuladoALL= Convert.ToDecimal(colpeso.Summary[0].SummaryValue.ToString());
 
-            pesoBasculaAcumuladoTMP1 = Convert.ToDecimal(colpeso.Summary[0].SummaryValue.ToString());
-            pesoBasculaAcumuladoTMP2 = Convert.ToDecimal(colpeso.Summary[0].SummaryValue.ToString());
-            pesoBasculaAcumuladoTMP_ALL = Convert.ToDecimal(colpeso.Summary[0].SummaryValue.ToString());
+           
 
             using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
             {
@@ -461,11 +461,15 @@ namespace LOSA.MicroIngredientes
 
                         //pesoBascula1 = Convert.ToDecimal("0.7");
                         Random rand = new Random();
-                        pesoBascula1 = Convert.ToDecimal( rand.NextDouble() * (6 - 2) + 2);
+                        pesoBascula1 = Convert.ToDecimal( rand.NextDouble() * (4 - 1) + 1);
 
                         if (BasculaId == (int)Basculas.Bascula1 || BasculaId == (int)Basculas.Ambas)
                         {
                             lblValorBascula1.Text = "Valor en Báscula: " + pesoBascula1.ToString("N2") + " Kg";
+
+                            pesoBasculaAcumuladoTMP1 = Convert.ToDecimal(colpeso.Summary[0].SummaryValue.ToString());
+                            pesoBasculaAcumuladoTMP_ALL = Convert.ToDecimal(colpeso.Summary[0].SummaryValue.ToString());
+
 
                         }
                         else
@@ -474,7 +478,7 @@ namespace LOSA.MicroIngredientes
 
                         }
 
-                        pesoBasculaAcumuladoTMP1 = pesoBasculaAcumuladoTMP1 + pesoBascula1;
+                        //pesoBasculaAcumuladoTMP1 = pesoBasculaAcumuladoTMP1 + pesoBascula1;
 
                     }
                     else if (item.id_bascula == (int)Basculas.Bascula2)
@@ -485,7 +489,7 @@ namespace LOSA.MicroIngredientes
                         //lblValorBascula2.Text = "Valor en Báscula: " + item.peso.ToString("N2") + " Kg";
 
                         Random rand2 = new Random();
-                        pesoBascula2 = Convert.ToDecimal(rand2.NextDouble() * (6 - 2) + 2);
+                        pesoBascula2 = Convert.ToDecimal(rand2.NextDouble() * (4 - 1) + 1);
                         //pesoBascula2 = Convert.ToDecimal("0.7");
 
 
@@ -493,6 +497,8 @@ namespace LOSA.MicroIngredientes
                         if (BasculaId == (int)Basculas.Bascula2 || BasculaId == (int)Basculas.Ambas)
                         {
                             lblValorBascula2.Text = "Valor en Báscula: " + pesoBascula2.ToString("N2") + " Kg";
+                            pesoBasculaAcumuladoTMP2 = Convert.ToDecimal(colpeso.Summary[0].SummaryValue.ToString());
+                            pesoBasculaAcumuladoTMP_ALL = Convert.ToDecimal(colpeso.Summary[0].SummaryValue.ToString());
 
                         }
                         else
@@ -501,7 +507,7 @@ namespace LOSA.MicroIngredientes
 
                         }
 
-                        pesoBasculaAcumuladoTMP2 = pesoBasculaAcumuladoTMP2 + pesoBascula2;
+                        //pesoBasculaAcumuladoTMP2 = pesoBasculaAcumuladoTMP2 + pesoBascula2;
                         //BasculaId = item.id_bascula;
 
                     }
@@ -509,14 +515,16 @@ namespace LOSA.MicroIngredientes
 
             }
 
+
+
             var row = (dsMicros.MP_EscaneoRow)gvPesaje.GetDataRow(indicePeso);            
 
             limiteInferior = pesaje.PesoPorBatch - (pesaje.PesoPorBatch * Convert.ToDecimal(0.03));
             limiteSuperior = pesaje.PesoPorBatch + (pesaje.PesoPorBatch * Convert.ToDecimal(0.03));
 
             //lblValorBascula1.Text = "Valor en Báscula: " + peso_bascula.ToString("N2")+ " Kg";
-            lblInferior.Text = "Límite Inferior: " + limiteInferior.ToString("N2") + " Kg";
-            lblSuperior.Text = "Límite Superior: " + limiteSuperior.ToString("N2") + " Kg";
+            lblInferior.Text = "Límite Máximo: " + limiteInferior.ToString("N2") + " Kg";
+            lblSuperior.Text = "Límite Mínimo: " + limiteSuperior.ToString("N2") + " Kg";
 
 
             switch (BasculaId)
@@ -562,7 +570,7 @@ namespace LOSA.MicroIngredientes
 
                         }
 
-                        lblError.Text = "El Peso Acumulado es de " + pesoBasculaAcumulado1 + " Kg no esta dentro de los límites de tolerancia";
+                        lblError.Text = "El Peso Acumulado es de " + pesoBasculaAcumulado1.ToString("N2") + " Kg no esta dentro de los límites de tolerancia";
                         lblError.ForeColor = Color.Red;
                         lblPesoAcumulado.Text = "P. Acumulado + Valor en Báscula:" + pesoBasculaAcumuladoTMP1.ToString("N2") + " Kg";
                         lblPesoAcumulado2.Text = "P. Acumulado + Valor en Báscula:" + pesoBasculaAcumuladoTMP2.ToString("N2") + " Kg";
@@ -651,16 +659,17 @@ namespace LOSA.MicroIngredientes
                         lblSuperior.Visible = false;
                         lblInferior.Visible = false;
                         //peso_bascula_finish = pesoBascula2;
-                        //btnBascula2.Enabled = true;
+                        btnBascula1.Enabled = true;
+                        btnBascula2.Enabled = true;
                         lblError.Text = "El peso acumulado es de " + pesoBasculaAcumuladoALL.ToString("N2") + " Kg";
                         lblError.ForeColor = Color.Green;
                         txtCodBarra.Enabled = false;
-                        timer1.Enabled = false;
+                        //timer1.Enabled = false;
                     }
                     else
                     {
 
-                        pesoBasculaAcumuladoTMP_ALL = pesoBasculaAcumuladoTMP_ALL + pesoBascula1+ pesoBascula2;
+                        //pesoBasculaAcumuladoTMP_ALL = pesoBasculaAcumuladoTMP_ALL + pesoBascula1+ pesoBascula2;
 
                         if (indicePeso >= 0 && gvPesaje.RowCount > 0)
                         {
