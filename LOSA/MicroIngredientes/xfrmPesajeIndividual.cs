@@ -385,7 +385,7 @@ namespace LOSA.MicroIngredientes
                 //transaction.Commit();
                 //cnx.Close();
 
-                //this.DialogResult = DialogResult.OK;
+                this.DialogResult = DialogResult.OK;
 
             }
             catch (Exception ex)
