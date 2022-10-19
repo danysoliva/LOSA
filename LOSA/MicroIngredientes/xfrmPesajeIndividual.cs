@@ -221,11 +221,11 @@ namespace LOSA.MicroIngredientes
 
                                     foreach (var item in frm2.PesajeAcumulado)
                                     {
-                                        SqlCommand cmd2 = new SqlCommand("sp_new", transaction.Connection);
+                                        SqlCommand cmd2 = new SqlCommand("[dbo].[sp_LOSA_insert_detallePesajeBascula_Micros]", transaction.Connection);
                                         cmd2.CommandType = CommandType.StoredProcedure;
                                         cmd2.Transaction = transaction;
 
-                                        cmd2.Parameters.Add("@id_orden_pesaje_manual_transaccion", SqlDbType.Int).Value = id_orden_pesaje_manual_transaccion;
+                                        cmd2.Parameters.Add("@id_orden_h", SqlDbType.Int).Value = id_orden_pesaje_manual_transaccion;
                                         cmd2.Parameters.Add("@id_tarima_micro", SqlDbType.Int).Value = item.TarimaMicroId;
                                         cmd2.Parameters.Add("@id_tarima_origen", SqlDbType.Int).Value = item.TarimaOrigeId;
                                         cmd2.Parameters.Add("@id_mp", SqlDbType.Int).Value = item.MateriaPrimaId;
@@ -300,12 +300,12 @@ namespace LOSA.MicroIngredientes
 
                                 foreach (var item in frm.PesajeAcumulado)
                                 {
-                                    SqlCommand cmd4 = new SqlCommand("sp_new", transaction.Connection);
+                                    SqlCommand cmd4 = new SqlCommand("[dbo].[sp_LOSA_insert_detallePesajeBascula_Micros]", transaction.Connection);
                                     cmd4.CommandType = CommandType.StoredProcedure;
                                     cmd4.Transaction = transaction;
 
-                                    cmd4.Parameters.Add("@id_orden_pesaje_manual_transaccion", SqlDbType.Int).Value = id_orden_pesaje_manual_transaccion2;
-                                    cmd4.Parameters.Add("@id_tarima_micro", SqlDbType.Int).Value = item.TarimaMicroId;
+                                    cmd4.Parameters.Add("@id_orden_h", SqlDbType.Int).Value = id_orden_pesaje_manual_transaccion2;
+                                    cmd4.Parameters.Add("@id_tarima_micros", SqlDbType.Int).Value = item.TarimaMicroId;
                                     cmd4.Parameters.Add("@id_tarima_origen", SqlDbType.Int).Value = item.TarimaOrigeId;
                                     cmd4.Parameters.Add("@id_mp", SqlDbType.Int).Value = item.MateriaPrimaId;
                                     cmd4.Parameters.Add("@lote", SqlDbType.VarChar).Value = item.Lote;
