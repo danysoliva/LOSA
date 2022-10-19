@@ -102,7 +102,7 @@ namespace LOSA.RecepcionMP
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             SelectorFor path = new SelectorFor(5);
-            if (path.Camino == 1)
+            if (path.Camino == 1)//Ruta activa 
             {
                 frmSpet1 frm = new frmSpet1(UsuarioLogeado);
                 frm.MDI_Parent = this.MdiParent;
