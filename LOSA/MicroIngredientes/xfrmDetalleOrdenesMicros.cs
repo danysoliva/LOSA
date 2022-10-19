@@ -247,7 +247,8 @@ namespace LOSA.MicroIngredientes
                 return;
 
             //Update enable = 0 al row 
-            if (Fn.SetEnableRM_and_order(row.id_rm, id, false))
+            //if (Fn.SetEnableRM_and_order(row.id_rm, id, false))
+            if (Fn.SetEnableRM_pesajeIndividual(row.id, false))
                 LoadDataIndividual();
 
         }
