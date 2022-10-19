@@ -41,9 +41,11 @@ namespace LOSA.MicroIngredientes
                     da.SelectCommand.Parameters.AddWithValue("@orden_id", SqlDbType.Int).Value = Id;
                     da.Fill(dsMicros1.DetalleOrdenesMicro);
                     cnx.Close();
+                  
                     foreach (dsMicros.DetalleOrdenesMicroRow row in dsMicros1.DetalleOrdenesMicro)
                     {
                         row.Batch_Plan = 1;
+                        row.Total = row.Peso_por_Batch * 1 ;
                     }
                 }
             }
@@ -141,5 +143,7 @@ namespace LOSA.MicroIngredientes
                 seBatch.EditValue = n;
             }
         }
+
+       
     }
 }
