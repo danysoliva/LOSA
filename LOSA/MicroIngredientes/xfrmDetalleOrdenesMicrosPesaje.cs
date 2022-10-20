@@ -266,7 +266,6 @@ namespace LOSA.MicroIngredientes
         {
             try
             {
-
                 var gridView = (GridView)gridControl2.FocusedView;
                 var row = (dsMicros.plan_microsdRow)gridView.GetFocusedDataRow();
 
