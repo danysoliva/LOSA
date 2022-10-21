@@ -28,15 +28,50 @@ namespace LOSA.Logistica
         public int id_bodegaMP;
         decimal existencia_anterior;
         decimal existencia_nueva;
+        int id_detalle_recuento;
+        decimal acumulado;
 
-        public frmSeleccionLoteCierre(UserLogin puserLogin, DataTable pdata)
+        public frmSeleccionLoteCierre(UserLogin puserLogin, DataTable pdata, int pid_detalle_recuento)
         {
             InitializeComponent();
             UsuarioLogeado = puserLogin;
-           
+            id_detalle_recuento = pid_detalle_recuento;
             get_bodegas();
             //enumerar_rows();
             grd_mps.DataSource = pdata;
+
+            btnConfirmar.Enabled = false;
+            CalculoAcumuladoPendiente();
+        }
+
+        private void CalculoAcumuladoPendiente()
+        {
+            try
+            {
+                for (int i = 0; i < grdv_mps.SelectedRowsCount; i++)
+                {
+                    DataRow row2 = grdv_mps.GetDataRow(i);
+
+                    decimal existencia_sistema = Convert.ToDecimal(row2["ExistenciaAprox"]);
+                    decimal existencia_fisica = Convert.ToDecimal(row2["toma_fisica"]);
+
+                    if (existencia_sistema > existencia_fisica)
+                    {
+                        acumulado = (existencia_sistema - existencia_fisica);
+                        lblAjuste.Text = "Pendiente de Ajustar en Salida";
+                    }
+                    else
+                    {
+                        acumulado = (existencia_fisica - existencia_sistema);
+                        lblAjuste.Text = "Pendiente de Ajustar en Entrada";
+                    }
+                }
+                txtPendiente.EditValue = acumulado;
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
 
         }
 
@@ -117,7 +152,9 @@ namespace LOSA.Logistica
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel;
+            
+            //this.DialogResult = DialogResult.OK;
+            this.Close();
         }
 
         private void splitterControl1_SplitterMoved(object sender, SplitterEventArgs e)
@@ -134,7 +171,7 @@ namespace LOSA.Logistica
                 IdMpSelected = Convert.ToInt32(SelectedrOWS["id_mp"]);
                 bodega = Convert.ToInt32(SelectedrOWS["id_bodega"]);
                 id_count_selected = Convert.ToInt32(SelectedrOWS["count_id"]);
-                NuevaCantidad = Convert.ToDecimal(SelectedrOWS["peso"]);
+                NuevaCantidad = Convert.ToDecimal(SelectedrOWS["toma_fisica"]);
                 sum = 0;
                 get_lotes(IdMpSelected, bodega);
             }
@@ -144,9 +181,7 @@ namespace LOSA.Logistica
         }
 
         private void grdv_existencia_lote_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
-        {
-           
-               
+        {  
             try
             {
                 if (e.Column.FieldName == "seleccionar")
@@ -165,17 +200,11 @@ namespace LOSA.Logistica
                         btnDerecha.Enabled = false;
                     }
                 }
-
-
-
-                
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                CajaDialogo.Error(ex.Message);
             }
-
-            
         }
 
         private void btnDerecha_Click(object sender, EventArgs e)
@@ -187,9 +216,19 @@ namespace LOSA.Logistica
                 return;
             }
 
-            decimal ValorUtilizado = list.Sum(p => p.utilizado );
-             
+            decimal ValorUtilizado = list.Sum(p => p.utilizado);
 
+            foreach (dsCierreMes.SeleccionLoteRow item in dsCierreMes.SeleccionLote.Rows)
+            {
+                if (item.seleccionar == true)
+                {
+                    if (item.utilizado > item.ExistenciaAprox)
+                    {
+                        CajaDialogo.Error("A un Lote seleccionado se le esta asignando una cantidad mayor a lo que contiene en existencia!");
+                        return;
+                    }
+                }
+            }
 
             var Row = from row in list
                       where row.seleccionar == true
@@ -221,7 +260,7 @@ namespace LOSA.Logistica
                 dsCierreMes.memory_config.Rows.Add(drw);
                 btnDerecha.Enabled = false;
                 // +
-
+                btnConfirmar.Enabled = true;
             }
 
 
@@ -317,7 +356,7 @@ namespace LOSA.Logistica
                 //id_mp = Convert.ToInt32(row2["id_mp"]);
                 id_bodegaMP = Convert.ToInt32(row2["id_bodega"]);
                 existencia_anterior = Convert.ToDecimal(row2["ExistenciaAprox"]);//Existencia en Bodega al momento del Recuento-Contabilizado
-                existencia_nueva = Convert.ToDecimal(row2["peso"]);//Nueva Cantidad - Toma Fisica
+                existencia_nueva = Convert.ToDecimal(row2["toma_fisica"]);//Nueva Cantidad - Toma Fisica
 
             }
 
@@ -326,22 +365,40 @@ namespace LOSA.Logistica
             conn.Open();
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@id_mp", IdMpSelected);
-            cmd.Parameters.AddWithValue("@id_bodega", id_bodegaMP);
-            cmd.Parameters.AddWithValue("@user_id", UsuarioLogeado.Id);
-            cmd.Parameters.AddWithValue("@existencia_anterior", existencia_anterior);
-            cmd.Parameters.AddWithValue("@existencia_nueva", existencia_nueva);
+
+            decimal AcumuladoUtilizado = 0;
+            decimal AcumuladoCentinela = 0;
+
             foreach (dsCierreMes.Aceptado_loteRow row in dsCierreMes.Aceptado_lote.Rows)
             {
+                cmd.Parameters.AddWithValue("@id_mp", IdMpSelected);
+                cmd.Parameters.AddWithValue("@id_bodega", id_bodegaMP);
+                cmd.Parameters.AddWithValue("@user_id", UsuarioLogeado.Id);
+                cmd.Parameters.AddWithValue("@existencia_anterior", existencia_anterior);
+                cmd.Parameters.AddWithValue("@existencia_nueva", existencia_nueva);
+                cmd.Parameters.AddWithValue("@id_detalle_recuento", id_detalle_recuento);
+
                 cmd.Parameters.AddWithValue("@lote",row.lote);
                 cmd.Parameters.AddWithValue("@id_lote_alosy", row.id_lote_alosy);
                 //cmd.Parameters.AddWithValue("@id_bodega", row.id_bodega);
+
                 cmd.Parameters.AddWithValue("@diferencia", row.utilizado); //Esto es el valor de lo que se va dar Salida/Entrada en Kardex
-                cmd.ExecuteNonQuery();
+                AcumuladoCentinela = row.utilizado;
+                AcumuladoUtilizado = AcumuladoUtilizado + AcumuladoCentinela;
+                cmd.ExecuteScalar();
             }
 
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            if (AcumuladoUtilizado < 0)
+            {
+
+            }
+            DialogResult r = CajaDialogo.Pregunta("No se a ajustado al Kardex la Diferencia configurada, desde seguir ajustando?");
+            if (r == System.Windows.Forms.DialogResult.No)
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            
         }
 
         private void btnIzquierda_Click(object sender, EventArgs e)

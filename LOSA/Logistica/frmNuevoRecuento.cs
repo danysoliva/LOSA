@@ -18,6 +18,8 @@ using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraEditors.Controls;
 using LOSA.RecuentoInventario;
 using System.Globalization;
+using System.Data.OleDb;
+using Huellas;
 
 namespace LOSA.Logistica
 {
@@ -420,12 +422,88 @@ namespace LOSA.Logistica
 
         private void btn_Export_Click(object sender, EventArgs e)
         {
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "Excel File (.xlsx)|*.xlsx";
+            dialog.FilterIndex = 0;
 
+            if (xtraTabControl1.SelectedTabPageIndex == 0) //Si esta Seleccionada MP
+            {
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    grd_dataMp.ExportToXlsx(dialog.FileName);
+                    
+                }
+            }
+            if (xtraTabControl1.SelectedTabPageIndex == 1) //Si esta Seleccionada PT
+            {
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    grd_data_pt.ExportToXlsx(dialog.FileName);
+                }
+            }
+            if (xtraTabControl1.SelectedTabPageIndex == 2) //Si esta Seleccionada Reproceso
+            {
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    grd_dataMp.ExportToXlsx(dialog.FileName);
+                }
+            }
         }
 
         private void btn_Import_Excel_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (xtraTabControl1.SelectedTabPageIndex == 0)//Si estamos en MP
+                {
+                    string file_name = string.Empty;
 
+                    OpenFileDialog dialog = new OpenFileDialog();
+                    dialog.Filter = "Excel File(.xlsx)| *.xlsx";
+                    dialog.Title = "Seleccione el archivo importado anteriormente";
+                    dsCierreMes dsCierre = new dsCierreMes();
+                    if (dialog.ShowDialog() == DialogResult.OK)
+                    {
+                        file_name = @dialog.FileName.ToString();
+                        string Connection = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + file_name + "; Extended Properties=\"Excel 12.0 Xml; HDR = YES\"";
+                        OleDbConnection con = new OleDbConnection(Connection);
+                        OleDbDataAdapter myCommand = new OleDbDataAdapter("Select * from [Sheet$]", con);
+                        dsCierre.Recuento_mp.Clear();
+
+
+                        SplashForm frm = new SplashForm();
+                        try
+                        {
+                            myCommand.Fill(dsCierre.LoadExcel);
+                            foreach (dsCierreMes.Recuento_mpRow row in dsCierreMes1.Recuento_mp.Rows)
+                            {
+                                foreach (dsCierreMes.LoadExcelRow row2 in dsCierre.LoadExcel.Rows)
+                                {
+                                    if (row.code_sap == row2.Codigo || row.whs_equivalente == row2.Bodega)
+                                    {
+                                        row.toma_fisica = row2.Toma_Fisica;
+                                    }
+                                }
+                            }
+                            dsCierreMes1.Recuento_mp.AcceptChanges();
+                        }
+                        catch (Exception ec)
+                        {
+                            CajaDialogo.Error(ec.Message);
+                        }
+
+                    }
+                }
+                if (xtraTabControl1.SelectedTabPageIndex == 1)//Si estamos en PT
+                {
+
+                }
+
+            }
+            catch (Exception ex) 
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
     }
 }
