@@ -54,6 +54,8 @@ namespace LOSA.Logistica {
         
         private Recuento_mpV2DataTable tableRecuento_mpV2;
         
+        private LoadExcelDataTable tableLoadExcel;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -126,6 +128,9 @@ namespace LOSA.Logistica {
                 }
                 if ((ds.Tables["Recuento_mpV2"] != null)) {
                     base.Tables.Add(new Recuento_mpV2DataTable(ds.Tables["Recuento_mpV2"]));
+                }
+                if ((ds.Tables["LoadExcel"] != null)) {
+                    base.Tables.Add(new LoadExcelDataTable(ds.Tables["LoadExcel"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -297,6 +302,16 @@ namespace LOSA.Logistica {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public LoadExcelDataTable LoadExcel {
+            get {
+                return this.tableLoadExcel;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -406,6 +421,9 @@ namespace LOSA.Logistica {
                 }
                 if ((ds.Tables["Recuento_mpV2"] != null)) {
                     base.Tables.Add(new Recuento_mpV2DataTable(ds.Tables["Recuento_mpV2"]));
+                }
+                if ((ds.Tables["LoadExcel"] != null)) {
+                    base.Tables.Add(new LoadExcelDataTable(ds.Tables["LoadExcel"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -530,6 +548,12 @@ namespace LOSA.Logistica {
                     this.tableRecuento_mpV2.InitVars();
                 }
             }
+            this.tableLoadExcel = ((LoadExcelDataTable)(base.Tables["LoadExcel"]));
+            if ((initTable == true)) {
+                if ((this.tableLoadExcel != null)) {
+                    this.tableLoadExcel.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -570,6 +594,8 @@ namespace LOSA.Logistica {
             base.Tables.Add(this.tablerecuentos_d);
             this.tableRecuento_mpV2 = new Recuento_mpV2DataTable();
             base.Tables.Add(this.tableRecuento_mpV2);
+            this.tableLoadExcel = new LoadExcelDataTable();
+            base.Tables.Add(this.tableLoadExcel);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -659,6 +685,12 @@ namespace LOSA.Logistica {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializeRecuento_mpV2() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeLoadExcel() {
             return false;
         }
         
@@ -761,6 +793,9 @@ namespace LOSA.Logistica {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void Recuento_mpV2RowChangeEventHandler(object sender, Recuento_mpV2RowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void LoadExcelRowChangeEventHandler(object sender, LoadExcelRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1612,8 +1647,6 @@ namespace LOSA.Logistica {
             
             private global::System.Data.DataColumn columndescripcion;
             
-            private global::System.Data.DataColumn columnodoo;
-            
             private global::System.Data.DataColumn columnpeso;
             
             private global::System.Data.DataColumn columnid_bodega;
@@ -1628,15 +1661,13 @@ namespace LOSA.Logistica {
             
             private global::System.Data.DataColumn columncode_sap;
             
-            private global::System.Data.DataColumn columnlote;
-            
             private global::System.Data.DataColumn columntoma_fisica;
             
             private global::System.Data.DataColumn columnwhs_equivalente;
             
             private global::System.Data.DataColumn columnseleccion;
             
-            private global::System.Data.DataColumn columnnumero_transaccion;
+            private global::System.Data.DataColumn columnid;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -1684,14 +1715,6 @@ namespace LOSA.Logistica {
             public global::System.Data.DataColumn descripcionColumn {
                 get {
                     return this.columndescripcion;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn odooColumn {
-                get {
-                    return this.columnodoo;
                 }
             }
             
@@ -1753,14 +1776,6 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn loteColumn {
-                get {
-                    return this.columnlote;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn toma_fisicaColumn {
                 get {
                     return this.columntoma_fisica;
@@ -1785,9 +1800,9 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn numero_transaccionColumn {
+            public global::System.Data.DataColumn idColumn {
                 get {
-                    return this.columnnumero_transaccion;
+                    return this.columnid;
                 }
             }
             
@@ -1828,12 +1843,11 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Recuento_mpRow AddRecuento_mpRow(int id_mp, string descripcion, string odoo, decimal peso, int id_bodega, decimal diferencia, decimal ExistenciaAprox, decimal seleccionado, int count_id, string code_sap, string lote, decimal toma_fisica, string whs_equivalente, bool seleccion, int numero_transaccion) {
+            public Recuento_mpRow AddRecuento_mpRow(int id_mp, string descripcion, decimal peso, int id_bodega, decimal diferencia, decimal ExistenciaAprox, decimal seleccionado, int count_id, string code_sap, decimal toma_fisica, string whs_equivalente, bool seleccion, int id) {
                 Recuento_mpRow rowRecuento_mpRow = ((Recuento_mpRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_mp,
                         descripcion,
-                        odoo,
                         peso,
                         id_bodega,
                         diferencia,
@@ -1841,11 +1855,10 @@ namespace LOSA.Logistica {
                         seleccionado,
                         count_id,
                         code_sap,
-                        lote,
                         toma_fisica,
                         whs_equivalente,
                         seleccion,
-                        numero_transaccion};
+                        id};
                 rowRecuento_mpRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRecuento_mpRow);
                 return rowRecuento_mpRow;
@@ -1870,7 +1883,6 @@ namespace LOSA.Logistica {
             internal void InitVars() {
                 this.columnid_mp = base.Columns["id_mp"];
                 this.columndescripcion = base.Columns["descripcion"];
-                this.columnodoo = base.Columns["odoo"];
                 this.columnpeso = base.Columns["peso"];
                 this.columnid_bodega = base.Columns["id_bodega"];
                 this.columndiferencia = base.Columns["diferencia"];
@@ -1878,11 +1890,10 @@ namespace LOSA.Logistica {
                 this.columnseleccionado = base.Columns["seleccionado"];
                 this.columncount_id = base.Columns["count_id"];
                 this.columncode_sap = base.Columns["code_sap"];
-                this.columnlote = base.Columns["lote"];
                 this.columntoma_fisica = base.Columns["toma_fisica"];
                 this.columnwhs_equivalente = base.Columns["whs_equivalente"];
                 this.columnseleccion = base.Columns["seleccion"];
-                this.columnnumero_transaccion = base.Columns["numero_transaccion"];
+                this.columnid = base.Columns["id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1892,8 +1903,6 @@ namespace LOSA.Logistica {
                 base.Columns.Add(this.columnid_mp);
                 this.columndescripcion = new global::System.Data.DataColumn("descripcion", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndescripcion);
-                this.columnodoo = new global::System.Data.DataColumn("odoo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnodoo);
                 this.columnpeso = new global::System.Data.DataColumn("peso", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpeso);
                 this.columnid_bodega = new global::System.Data.DataColumn("id_bodega", typeof(int), null, global::System.Data.MappingType.Element);
@@ -1908,16 +1917,14 @@ namespace LOSA.Logistica {
                 base.Columns.Add(this.columncount_id);
                 this.columncode_sap = new global::System.Data.DataColumn("code_sap", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncode_sap);
-                this.columnlote = new global::System.Data.DataColumn("lote", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnlote);
                 this.columntoma_fisica = new global::System.Data.DataColumn("toma_fisica", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntoma_fisica);
                 this.columnwhs_equivalente = new global::System.Data.DataColumn("whs_equivalente", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnwhs_equivalente);
                 this.columnseleccion = new global::System.Data.DataColumn("seleccion", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnseleccion);
-                this.columnnumero_transaccion = new global::System.Data.DataColumn("numero_transaccion", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnumero_transaccion);
+                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid);
                 this.columnseleccionado.DefaultValue = ((decimal)(0m));
                 this.columncount_id.DefaultValue = ((int)(0));
                 this.columnseleccion.Caption = "Ajuste de Lote";
@@ -5788,6 +5795,411 @@ namespace LOSA.Logistica {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class LoadExcelDataTable : global::System.Data.TypedTableBase<LoadExcelRow> {
+            
+            private global::System.Data.DataColumn columnid_mp;
+            
+            private global::System.Data.DataColumn columndescripcion;
+            
+            private global::System.Data.DataColumn columnpeso;
+            
+            private global::System.Data.DataColumn columnid_bodega;
+            
+            private global::System.Data.DataColumn columndiferencia;
+            
+            private global::System.Data.DataColumn columnExistenciaAprox;
+            
+            private global::System.Data.DataColumn columnseleccionado;
+            
+            private global::System.Data.DataColumn columncount_id;
+            
+            private global::System.Data.DataColumn columnCodigo;
+            
+            private global::System.Data.DataColumn columnToma_Fisica;
+            
+            private global::System.Data.DataColumn columnBodega;
+            
+            private global::System.Data.DataColumn columnseleccion;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public LoadExcelDataTable() {
+                this.TableName = "LoadExcel";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal LoadExcelDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected LoadExcelDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_mpColumn {
+                get {
+                    return this.columnid_mp;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn descripcionColumn {
+                get {
+                    return this.columndescripcion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn pesoColumn {
+                get {
+                    return this.columnpeso;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_bodegaColumn {
+                get {
+                    return this.columnid_bodega;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn diferenciaColumn {
+                get {
+                    return this.columndiferencia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ExistenciaAproxColumn {
+                get {
+                    return this.columnExistenciaAprox;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn seleccionadoColumn {
+                get {
+                    return this.columnseleccionado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn count_idColumn {
+                get {
+                    return this.columncount_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CodigoColumn {
+                get {
+                    return this.columnCodigo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Toma_FisicaColumn {
+                get {
+                    return this.columnToma_Fisica;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn BodegaColumn {
+                get {
+                    return this.columnBodega;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn seleccionColumn {
+                get {
+                    return this.columnseleccion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public LoadExcelRow this[int index] {
+                get {
+                    return ((LoadExcelRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event LoadExcelRowChangeEventHandler LoadExcelRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event LoadExcelRowChangeEventHandler LoadExcelRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event LoadExcelRowChangeEventHandler LoadExcelRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event LoadExcelRowChangeEventHandler LoadExcelRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddLoadExcelRow(LoadExcelRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public LoadExcelRow AddLoadExcelRow(int id_mp, string descripcion, decimal peso, int id_bodega, decimal diferencia, decimal ExistenciaAprox, decimal seleccionado, int count_id, string Codigo, decimal Toma_Fisica, string Bodega, bool seleccion) {
+                LoadExcelRow rowLoadExcelRow = ((LoadExcelRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        id_mp,
+                        descripcion,
+                        peso,
+                        id_bodega,
+                        diferencia,
+                        ExistenciaAprox,
+                        seleccionado,
+                        count_id,
+                        Codigo,
+                        Toma_Fisica,
+                        Bodega,
+                        seleccion};
+                rowLoadExcelRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowLoadExcelRow);
+                return rowLoadExcelRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                LoadExcelDataTable cln = ((LoadExcelDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new LoadExcelDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnid_mp = base.Columns["id_mp"];
+                this.columndescripcion = base.Columns["descripcion"];
+                this.columnpeso = base.Columns["peso"];
+                this.columnid_bodega = base.Columns["id_bodega"];
+                this.columndiferencia = base.Columns["diferencia"];
+                this.columnExistenciaAprox = base.Columns["ExistenciaAprox"];
+                this.columnseleccionado = base.Columns["seleccionado"];
+                this.columncount_id = base.Columns["count_id"];
+                this.columnCodigo = base.Columns["Codigo"];
+                this.columnToma_Fisica = base.Columns["Toma Fisica"];
+                this.columnBodega = base.Columns["Bodega"];
+                this.columnseleccion = base.Columns["seleccion"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnid_mp = new global::System.Data.DataColumn("id_mp", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_mp);
+                this.columndescripcion = new global::System.Data.DataColumn("descripcion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndescripcion);
+                this.columnpeso = new global::System.Data.DataColumn("peso", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpeso);
+                this.columnid_bodega = new global::System.Data.DataColumn("id_bodega", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_bodega);
+                this.columndiferencia = new global::System.Data.DataColumn("diferencia", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndiferencia);
+                this.columnExistenciaAprox = new global::System.Data.DataColumn("ExistenciaAprox", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExistenciaAprox);
+                this.columnseleccionado = new global::System.Data.DataColumn("seleccionado", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnseleccionado);
+                this.columncount_id = new global::System.Data.DataColumn("count_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncount_id);
+                this.columnCodigo = new global::System.Data.DataColumn("Codigo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodigo);
+                this.columnToma_Fisica = new global::System.Data.DataColumn("Toma Fisica", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnToma_Fisica);
+                this.columnBodega = new global::System.Data.DataColumn("Bodega", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBodega);
+                this.columnseleccion = new global::System.Data.DataColumn("seleccion", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnseleccion);
+                this.columnseleccionado.DefaultValue = ((decimal)(0m));
+                this.columncount_id.DefaultValue = ((int)(0));
+                this.columnseleccion.Caption = "Ajuste de Lote";
+                this.columnseleccion.DefaultValue = ((bool)(false));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public LoadExcelRow NewLoadExcelRow() {
+                return ((LoadExcelRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new LoadExcelRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(LoadExcelRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.LoadExcelRowChanged != null)) {
+                    this.LoadExcelRowChanged(this, new LoadExcelRowChangeEvent(((LoadExcelRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.LoadExcelRowChanging != null)) {
+                    this.LoadExcelRowChanging(this, new LoadExcelRowChangeEvent(((LoadExcelRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.LoadExcelRowDeleted != null)) {
+                    this.LoadExcelRowDeleted(this, new LoadExcelRowChangeEvent(((LoadExcelRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.LoadExcelRowDeleting != null)) {
+                    this.LoadExcelRowDeleting(this, new LoadExcelRowChangeEvent(((LoadExcelRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveLoadExcelRow(LoadExcelRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsCierreMes ds = new dsCierreMes();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "LoadExcelDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class recuentos_hRow : global::System.Data.DataRow {
@@ -6160,22 +6572,6 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string odoo {
-                get {
-                    try {
-                        return ((string)(this[this.tableRecuento_mp.odooColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'odoo\' de la tabla \'Recuento_mp\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableRecuento_mp.odooColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public decimal peso {
                 get {
                     try {
@@ -6288,22 +6684,6 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string lote {
-                get {
-                    try {
-                        return ((string)(this[this.tableRecuento_mp.loteColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'lote\' de la tabla \'Recuento_mp\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableRecuento_mp.loteColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public decimal toma_fisica {
                 get {
                     try {
@@ -6352,17 +6732,17 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int numero_transaccion {
+            public int id {
                 get {
                     try {
-                        return ((int)(this[this.tableRecuento_mp.numero_transaccionColumn]));
+                        return ((int)(this[this.tableRecuento_mp.idColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'numero_transaccion\' de la tabla \'Recuento_mp\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id\' de la tabla \'Recuento_mp\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableRecuento_mp.numero_transaccionColumn] = value;
+                    this[this.tableRecuento_mp.idColumn] = value;
                 }
             }
             
@@ -6388,18 +6768,6 @@ namespace LOSA.Logistica {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetdescripcionNull() {
                 this[this.tableRecuento_mp.descripcionColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsodooNull() {
-                return this.IsNull(this.tableRecuento_mp.odooColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetodooNull() {
-                this[this.tableRecuento_mp.odooColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6488,18 +6856,6 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsloteNull() {
-                return this.IsNull(this.tableRecuento_mp.loteColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetloteNull() {
-                this[this.tableRecuento_mp.loteColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Istoma_fisicaNull() {
                 return this.IsNull(this.tableRecuento_mp.toma_fisicaColumn);
             }
@@ -6536,14 +6892,14 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isnumero_transaccionNull() {
-                return this.IsNull(this.tableRecuento_mp.numero_transaccionColumn);
+            public bool IsidNull() {
+                return this.IsNull(this.tableRecuento_mp.idColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setnumero_transaccionNull() {
-                this[this.tableRecuento_mp.numero_transaccionColumn] = global::System.Convert.DBNull;
+            public void SetidNull() {
+                this[this.tableRecuento_mp.idColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -9037,6 +9393,357 @@ namespace LOSA.Logistica {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class LoadExcelRow : global::System.Data.DataRow {
+            
+            private LoadExcelDataTable tableLoadExcel;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal LoadExcelRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableLoadExcel = ((LoadExcelDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_mp {
+                get {
+                    try {
+                        return ((int)(this[this.tableLoadExcel.id_mpColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_mp\' de la tabla \'LoadExcel\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLoadExcel.id_mpColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string descripcion {
+                get {
+                    try {
+                        return ((string)(this[this.tableLoadExcel.descripcionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'descripcion\' de la tabla \'LoadExcel\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLoadExcel.descripcionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal peso {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableLoadExcel.pesoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'peso\' de la tabla \'LoadExcel\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLoadExcel.pesoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_bodega {
+                get {
+                    try {
+                        return ((int)(this[this.tableLoadExcel.id_bodegaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_bodega\' de la tabla \'LoadExcel\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLoadExcel.id_bodegaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal diferencia {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableLoadExcel.diferenciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'diferencia\' de la tabla \'LoadExcel\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLoadExcel.diferenciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal ExistenciaAprox {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableLoadExcel.ExistenciaAproxColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ExistenciaAprox\' de la tabla \'LoadExcel\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLoadExcel.ExistenciaAproxColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal seleccionado {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableLoadExcel.seleccionadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'seleccionado\' de la tabla \'LoadExcel\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLoadExcel.seleccionadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int count_id {
+                get {
+                    try {
+                        return ((int)(this[this.tableLoadExcel.count_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'count_id\' de la tabla \'LoadExcel\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLoadExcel.count_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Codigo {
+                get {
+                    try {
+                        return ((string)(this[this.tableLoadExcel.CodigoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Codigo\' de la tabla \'LoadExcel\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLoadExcel.CodigoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal Toma_Fisica {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableLoadExcel.Toma_FisicaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Toma Fisica\' de la tabla \'LoadExcel\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLoadExcel.Toma_FisicaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Bodega {
+                get {
+                    try {
+                        return ((string)(this[this.tableLoadExcel.BodegaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Bodega\' de la tabla \'LoadExcel\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLoadExcel.BodegaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool seleccion {
+                get {
+                    try {
+                        return ((bool)(this[this.tableLoadExcel.seleccionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'seleccion\' de la tabla \'LoadExcel\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLoadExcel.seleccionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_mpNull() {
+                return this.IsNull(this.tableLoadExcel.id_mpColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_mpNull() {
+                this[this.tableLoadExcel.id_mpColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsdescripcionNull() {
+                return this.IsNull(this.tableLoadExcel.descripcionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetdescripcionNull() {
+                this[this.tableLoadExcel.descripcionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IspesoNull() {
+                return this.IsNull(this.tableLoadExcel.pesoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetpesoNull() {
+                this[this.tableLoadExcel.pesoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_bodegaNull() {
+                return this.IsNull(this.tableLoadExcel.id_bodegaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_bodegaNull() {
+                this[this.tableLoadExcel.id_bodegaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsdiferenciaNull() {
+                return this.IsNull(this.tableLoadExcel.diferenciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetdiferenciaNull() {
+                this[this.tableLoadExcel.diferenciaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsExistenciaAproxNull() {
+                return this.IsNull(this.tableLoadExcel.ExistenciaAproxColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetExistenciaAproxNull() {
+                this[this.tableLoadExcel.ExistenciaAproxColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsseleccionadoNull() {
+                return this.IsNull(this.tableLoadExcel.seleccionadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetseleccionadoNull() {
+                this[this.tableLoadExcel.seleccionadoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscount_idNull() {
+                return this.IsNull(this.tableLoadExcel.count_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcount_idNull() {
+                this[this.tableLoadExcel.count_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCodigoNull() {
+                return this.IsNull(this.tableLoadExcel.CodigoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCodigoNull() {
+                this[this.tableLoadExcel.CodigoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsToma_FisicaNull() {
+                return this.IsNull(this.tableLoadExcel.Toma_FisicaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetToma_FisicaNull() {
+                this[this.tableLoadExcel.Toma_FisicaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsBodegaNull() {
+                return this.IsNull(this.tableLoadExcel.BodegaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetBodegaNull() {
+                this[this.tableLoadExcel.BodegaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsseleccionNull() {
+                return this.IsNull(this.tableLoadExcel.seleccionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetseleccionNull() {
+                this[this.tableLoadExcel.seleccionColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -9532,6 +10239,40 @@ namespace LOSA.Logistica {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Recuento_mpV2Row Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class LoadExcelRowChangeEvent : global::System.EventArgs {
+            
+            private LoadExcelRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public LoadExcelRowChangeEvent(LoadExcelRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public LoadExcelRow Row {
                 get {
                     return this.eventRow;
                 }

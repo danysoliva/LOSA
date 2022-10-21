@@ -13,6 +13,7 @@ using LOSA.Clases;
 using ACS.Classes;
 using DevExpress.XtraGrid.Views.Grid;
 using System.Threading;
+using LOSA.Calidad.LoteConfConsumo;
 
 namespace LOSA.TransaccionesMP
 {
@@ -223,6 +224,17 @@ namespace LOSA.TransaccionesMP
                     gridControl2.ExportToXlsx(dialog.FileName);
                 }
             }
+            if (tabPane1.SelectedPageIndex == 5)//Materia Prima por Bodega
+            {
+                SaveFileDialog dialog = new SaveFileDialog();
+                dialog.Filter = "Excel File (.xlsx)|*.xlsx";
+                dialog.FilterIndex = 0;
+
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    grdMPBodega.ExportToXlsx(dialog.FileName);
+                }
+            }
             else
             {//Totales
                 SaveFileDialog dialog = new SaveFileDialog();
@@ -358,6 +370,40 @@ namespace LOSA.TransaccionesMP
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 Load_dataReprocesoPorLote();
+            }
+        }
+
+        private void btnSearchMP_Click(object sender, EventArgs e)
+        {
+            frmSearchMP frm = new frmSearchMP(frmSearchMP.TipoBusqueda.MateriaPrima);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                LoadBodegaMP(frm.ItemSeleccionado.id);
+                textEdit1.Text = frm.ItemSeleccionado.ItemCode + " " + frm.ItemSeleccionado.ItemName;
+            }
+        }
+
+        private void LoadBodegaMP(int pidRM)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_obtener_inventario_general_por_bodega_for_MP", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_mp", pidRM);
+                dsTarima.mp_bodega_lote.Clear();
+                //dsPresupuesto1.estados.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsTarima.mp_bodega_lote);
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
             }
         }
     }

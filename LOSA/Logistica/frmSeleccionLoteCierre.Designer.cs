@@ -31,11 +31,11 @@ namespace LOSA.Logistica
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSeleccionLoteCierre));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -56,6 +56,8 @@ namespace LOSA.Logistica
             this.colutilizado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.txtPendiente = new DevExpress.XtraEditors.TextEdit();
+            this.lblAjuste = new DevExpress.XtraEditors.LabelControl();
             this.grd_efectiva = new DevExpress.XtraGrid.GridControl();
             this.grdv_efectiva = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid_mp1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -67,6 +69,8 @@ namespace LOSA.Logistica
             this.colid_lote_alosy1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_bodega = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_lote_count = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositorybtnDelete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.btnIzquierda = new DevExpress.XtraEditors.SimpleButton();
             this.btnDerecha = new DevExpress.XtraEditors.SimpleButton();
@@ -87,8 +91,6 @@ namespace LOSA.Logistica
             this.colSeleccionado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.count_id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnConfirmar = new DevExpress.XtraEditors.SimpleButton();
-            this.repositorybtnDelete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -107,8 +109,10 @@ namespace LOSA.Logistica
             this.panelControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPendiente.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_efectiva)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_efectiva)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositorybtnDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -120,7 +124,6 @@ namespace LOSA.Logistica
             ((System.ComponentModel.ISupportInitialize)(this.grd_bodega)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bodegasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositorybtnDelete)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -350,6 +353,8 @@ namespace LOSA.Logistica
             // 
             this.groupControl3.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupControl3.AppearanceCaption.Options.UseFont = true;
+            this.groupControl3.Controls.Add(this.txtPendiente);
+            this.groupControl3.Controls.Add(this.lblAjuste);
             this.groupControl3.Controls.Add(this.grd_efectiva);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(2, 2);
@@ -357,6 +362,27 @@ namespace LOSA.Logistica
             this.groupControl3.Size = new System.Drawing.Size(548, 429);
             this.groupControl3.TabIndex = 3;
             this.groupControl3.Text = "Configuracion Efectiva";
+            // 
+            // txtPendiente
+            // 
+            this.txtPendiente.Enabled = false;
+            this.txtPendiente.Location = new System.Drawing.Point(281, 40);
+            this.txtPendiente.Name = "txtPendiente";
+            this.txtPendiente.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPendiente.Properties.Appearance.Options.UseFont = true;
+            this.txtPendiente.Properties.Mask.EditMask = "Kg";
+            this.txtPendiente.Size = new System.Drawing.Size(132, 24);
+            this.txtPendiente.TabIndex = 4;
+            // 
+            // lblAjuste
+            // 
+            this.lblAjuste.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAjuste.Appearance.Options.UseFont = true;
+            this.lblAjuste.Location = new System.Drawing.Point(94, 45);
+            this.lblAjuste.Name = "lblAjuste";
+            this.lblAjuste.Size = new System.Drawing.Size(120, 17);
+            this.lblAjuste.TabIndex = 3;
+            this.lblAjuste.Text = "Pendiente de Ajustar";
             // 
             // grd_efectiva
             // 
@@ -489,6 +515,24 @@ namespace LOSA.Logistica
             this.colid_lote_count.OptionsColumn.AllowEdit = false;
             this.colid_lote_count.Width = 59;
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Eliminar";
+            this.gridColumn1.ColumnEdit = this.repositorybtnDelete;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 4;
+            // 
+            // repositorybtnDelete
+            // 
+            this.repositorybtnDelete.AutoHeight = false;
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            this.repositorybtnDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.repositorybtnDelete.Name = "repositorybtnDelete";
+            this.repositorybtnDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositorybtnDelete.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositorybtnDelete_ButtonClick);
+            // 
             // panelControl4
             // 
             this.panelControl4.Controls.Add(this.btnIzquierda);
@@ -508,6 +552,7 @@ namespace LOSA.Logistica
             this.btnIzquierda.Name = "btnIzquierda";
             this.btnIzquierda.Size = new System.Drawing.Size(113, 46);
             this.btnIzquierda.TabIndex = 1;
+            this.btnIzquierda.Visible = false;
             this.btnIzquierda.Click += new System.EventHandler(this.btnIzquierda_Click);
             // 
             // btnDerecha
@@ -625,7 +670,7 @@ namespace LOSA.Logistica
             this.grd_bodega.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.grd_bodega.DataSource = this.bodegasBindingSource;
-            this.grd_bodega.DisplayMember = "descripcion";
+            this.grd_bodega.DisplayMember = "whs_code";
             this.grd_bodega.KeyMember = "id";
             this.grd_bodega.Name = "grd_bodega";
             this.grd_bodega.PopupView = this.repositoryItemGridLookUpEdit1View;
@@ -654,11 +699,11 @@ namespace LOSA.Logistica
             this.colExistencia.Caption = "Nueva Existencia";
             this.colExistencia.DisplayFormat.FormatString = "{0:0.##.##} Kg";
             this.colExistencia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colExistencia.FieldName = "peso";
+            this.colExistencia.FieldName = "toma_fisica";
             this.colExistencia.Name = "colExistencia";
             this.colExistencia.OptionsColumn.AllowEdit = false;
             this.colExistencia.Visible = true;
-            this.colExistencia.VisibleIndex = 2;
+            this.colExistencia.VisibleIndex = 3;
             // 
             // colExistenciaAnterior
             // 
@@ -669,7 +714,7 @@ namespace LOSA.Logistica
             this.colExistenciaAnterior.Name = "colExistenciaAnterior";
             this.colExistenciaAnterior.OptionsColumn.AllowEdit = false;
             this.colExistenciaAnterior.Visible = true;
-            this.colExistenciaAnterior.VisibleIndex = 3;
+            this.colExistenciaAnterior.VisibleIndex = 2;
             // 
             // colPendienteAjustar
             // 
@@ -712,24 +757,6 @@ namespace LOSA.Logistica
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
-            // repositorybtnDelete
-            // 
-            this.repositorybtnDelete.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
-            this.repositorybtnDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.repositorybtnDelete.Name = "repositorybtnDelete";
-            this.repositorybtnDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.repositorybtnDelete.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositorybtnDelete_ButtonClick);
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Eliminar";
-            this.gridColumn1.ColumnEdit = this.repositorybtnDelete;
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 4;
-            // 
             // frmSeleccionLoteCierre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -760,8 +787,11 @@ namespace LOSA.Logistica
             this.panelControl5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
+            this.groupControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPendiente.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_efectiva)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_efectiva)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositorybtnDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
@@ -773,7 +803,6 @@ namespace LOSA.Logistica
             ((System.ComponentModel.ISupportInitialize)(this.grd_bodega)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bodegasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositorybtnDelete)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -833,5 +862,7 @@ namespace LOSA.Logistica
         private DevExpress.XtraEditors.CheckEdit chauto;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositorybtnDelete;
+        private DevExpress.XtraEditors.TextEdit txtPendiente;
+        private DevExpress.XtraEditors.LabelControl lblAjuste;
     }
 }

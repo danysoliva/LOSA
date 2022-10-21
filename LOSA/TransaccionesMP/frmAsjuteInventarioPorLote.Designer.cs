@@ -672,11 +672,10 @@ namespace LOSA.TransaccionesMP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(652, 669);
+            this.ClientSize = new System.Drawing.Size(658, 675);
             this.ControlBox = false;
             this.Controls.Add(this.txtCantidadTarimas);
             this.Controls.Add(this.txtUnidadsPorTarima);
-            this.Controls.Add(this.txtLoteNuevo);
             this.Controls.Add(this.toggleSwTipoOperacion);
             this.Controls.Add(this.labelControl13);
             this.Controls.Add(this.spinEditUnidades);
@@ -705,6 +704,7 @@ namespace LOSA.TransaccionesMP
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.txtNumLote);
             this.Controls.Add(this.labelControl5);
+            this.Controls.Add(this.txtLoteNuevo);
             this.Name = "frmAsjuteInventarioPorLote";
             this.ShowIcon = false;
             this.Text = "Ajuste de Inventario por Lote";

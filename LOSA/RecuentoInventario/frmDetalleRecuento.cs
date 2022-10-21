@@ -29,6 +29,7 @@ namespace LOSA.RecuentoInventario
         DateTime fecha_rec;
         int Id_header;
         bool contabilizado;
+        int id_detalle_recuento;
 
         public frmDetalleRecuento(DataTable pdata, UserLogin puserLogin,int pidyear,int pidmes, DateTime pfecha_recuento)
         {
@@ -176,11 +177,11 @@ namespace LOSA.RecuentoInventario
             //    CajaDialogo.Error("Debe seleccionar el mes!");
             //    return;
             //}
-            //if (string.IsNullOrEmpty(txtComentario.Text))
-            //{
-            //    CajaDialogo.Error("Debe agregar un comentario de referencia");
-            //    return;
-            //}
+            if (string.IsNullOrEmpty(txtComentario.Text))
+            {
+                CajaDialogo.Error("Debe agregar un comentario de referencia");
+                return;
+            }
 
 
             using (SqlConnection connection = new SqlConnection(dp.ConnectionStringLOSA))
@@ -224,7 +225,7 @@ namespace LOSA.RecuentoInventario
 
 
                     ////Insert en Detalle de Recuento Final MATERIA PRIMA
-                    for (int i = 0; i < grdv_mps.SelectedRowsCount; i++)
+                    for (int i = 0; i < grdv_mps.DataRowCount; i++)
                     {
                         DataRow row = grdv_mps.GetDataRow(i);
                         
@@ -242,6 +243,7 @@ namespace LOSA.RecuentoInventario
                         command.Parameters.AddWithValue("@tipo_producto", 1); //Es Tipo de Producto: Materia Prima
                         command.ExecuteNonQuery();
                     }
+                    
 
                     ////Insert en Detalle de Recuento Final PRODUCTO TERMINADO
                     //for (int i = 0; i < grdv_mps.SelectedRowsCount; i++)
@@ -268,6 +270,7 @@ namespace LOSA.RecuentoInventario
                     transaction.Commit();
                     connection.Close();
 
+                    CajaDialogo.Information("Recuento Guardado con Exito!");
                     this.DialogResult = this.DialogResult;
                     this.Close();
                 }
@@ -281,55 +284,55 @@ namespace LOSA.RecuentoInventario
 
         private void cmdSelecLote_Click(object sender, EventArgs e)
         {
-            using (SqlConnection connection = new SqlConnection(dp.ConnectionStringLOSA))
-            {
+            //using (SqlConnection connection = new SqlConnection(dp.ConnectionStringLOSA))
+            //{
 
-                //for (int i = 0; i < grdv_mps.SelectedRowsCount; i++)
-                //{
-                //    DataRow row = grdv_mps.GetDataRow(i);
+            //    //for (int i = 0; i < grdv_mps.SelectedRowsCount; i++)
+            //    //{
+            //    //    DataRow row = grdv_mps.GetDataRow(i);
 
-                //    
-                //}
+            //    //    
+            //    //}
 
-                dsCierreMes.Recuento_mpDataTable tableOps = new dsCierreMes.Recuento_mpDataTable();
+            //    dsCierreMes.Recuento_mpDataTable tableOps = new dsCierreMes.Recuento_mpDataTable();
 
-                //foreach (dsCierreMes.recuentos_dRow row1 in dsCierreMes1.recuentos_d.Rows)
-                //{
-                //    DataRow row2 = grdv_mps.GetDataRow(i);
-                //}
+            //    //foreach (dsCierreMes.recuentos_dRow row1 in dsCierreMes1.recuentos_d.Rows)
+            //    //{
+            //    //    DataRow row2 = grdv_mps.GetDataRow(i);
+            //    //}
 
-                for (int i = 0; i < grdv_mps.SelectedRowsCount; i++)
-                {
+            //    for (int i = 0; i < grdv_mps.SelectedRowsCount; i++)
+            //    {
 
-                    DataRow row2 = grdv_mps.GetDataRow(i);
+            //        DataRow row2 = grdv_mps.GetDataRow(i);
 
-                    if (Convert.ToDecimal(row2["diferencia"]) > 0 || Convert.ToDecimal(row2["diferencia"]) < 0)
-                    {
-                        dsCierreMes.Recuento_mpRow row1 = tableOps.NewRecuento_mpRow();
-                        row1.id_mp = Convert.ToInt32(row2["id_mp"]);
-                        row1.descripcion = Convert.ToString(row2["descripcion"]);
-                        row1.peso = Convert.ToDecimal(row2["peso"]);
-                        row1.id_bodega = Convert.ToInt32(row2["id_bodega"]);
-                        row1.diferencia = Convert.ToDecimal(row2["diferencia"]);
-                        row1.ExistenciaAprox = Convert.ToDecimal(row2["ExistenciaAprox"]);
-                        row1.code_sap = Convert.ToString(row2["code_sap"]);
-                        //row1.lote = row.lote;
-                        row1.toma_fisica = Convert.ToDecimal(row2["toma_fisica"]);
-                        //row1.whs_equivalente = row.whs_equivalente;
-                        //row1.numero_transaccion = row.numero_transaccion;
-                        tableOps.AddRecuento_mpRow(row1);
-                        tableOps.AcceptChanges();
+            //        if (Convert.ToDecimal(row2["diferencia"]) > 0 || Convert.ToDecimal(row2["diferencia"]) < 0)
+            //        {
+            //            dsCierreMes.Recuento_mpRow row1 = tableOps.NewRecuento_mpRow();
+            //            row1.id_mp = Convert.ToInt32(row2["id_mp"]);
+            //            row1.descripcion = Convert.ToString(row2["descripcion"]);
+            //            row1.peso = Convert.ToDecimal(row2["peso"]);
+            //            row1.id_bodega = Convert.ToInt32(row2["id_bodega"]);
+            //            row1.diferencia = Convert.ToDecimal(row2["diferencia"]);
+            //            row1.ExistenciaAprox = Convert.ToDecimal(row2["ExistenciaAprox"]);
+            //            row1.code_sap = Convert.ToString(row2["code_sap"]);
+            //            //row1.lote = row.lote;
+            //            row1.toma_fisica = Convert.ToDecimal(row2["toma_fisica"]);
+            //            //row1.whs_equivalente = row.whs_equivalente;
+            //            //row1.numero_transaccion = row.numero_transaccion;
+            //            tableOps.AddRecuento_mpRow(row1);
+            //            tableOps.AcceptChanges();
 
-                        Logistica.frmSeleccionLoteCierre frm = new Logistica.frmSeleccionLoteCierre(UsuarioLogeado, tableOps);
-                        if (frm.ShowDialog() == DialogResult.OK)
-                        {
+            //            Logistica.frmSeleccionLoteCierre frm = new Logistica.frmSeleccionLoteCierre(UsuarioLogeado, tableOps);
+            //            if (frm.ShowDialog() == DialogResult.OK)
+            //            {
 
-                        }
+            //            }
 
-                        //Row Style - Vamos a Pintar de Verde si cumple los parametros
-                    }
-                }
-            }
+            //            //Row Style - Vamos a Pintar de Verde si cumple los parametros
+            //        }
+            //    }
+            //}
         }
 
         private void grdv_mps_DoubleClick(object sender, EventArgs e)
@@ -337,55 +340,94 @@ namespace LOSA.RecuentoInventario
             var gv = (GridView)grd_mps.FocusedView;
             var row = (dsCierreMes.Recuento_mpRow)gv.GetDataRow(gv.FocusedRowHandle);
 
-            if (contabilizado == false)
+            try
             {
-                using (SqlConnection connection = new SqlConnection(dp.ConnectionStringLOSA))
+                if (contabilizado == false)
                 {
-                    dsCierreMes.Recuento_mpDataTable tableOps = new dsCierreMes.Recuento_mpDataTable();
-                    for (int i = 0; i < grdv_mps.SelectedRowsCount; i++)
+                    using (SqlConnection connection = new SqlConnection(dp.ConnectionStringLOSA))
                     {
+                        dsCierreMes.Recuento_mpDataTable tableOps = new dsCierreMes.Recuento_mpDataTable();
 
-                        DataRow row2 = grdv_mps.GetDataRow(i);
+                        
+                        DataTable TABLAOPSNew = new DataTable();
 
-                        if (Convert.ToDecimal(row2["diferencia"]) > 0 || Convert.ToDecimal(row2["diferencia"]) < 0)
+                        //foreach (dsCierreMes.Recuento_mpRow item in dsCierreMes1.Recuento_mp.Rows)
+                        for (int i = 0; i < grdv_mps.SelectedRowsCount; i++)
                         {
+                            DataRow row2 = grdv_mps.GetFocusedDataRow();
+
                             dsCierreMes.Recuento_mpRow row1 = tableOps.NewRecuento_mpRow();
-                            row1.id_mp = Convert.ToInt32(row2["id_mp"]);
-                            row1.descripcion = Convert.ToString(row2["descripcion"]);
-                            row1.peso = Convert.ToDecimal(row2["peso"]);
-                            row1.id_bodega = Convert.ToInt32(row2["id_bodega"]);
-                            row1.diferencia = Convert.ToDecimal(row2["diferencia"]);
-                            row1.ExistenciaAprox = Convert.ToDecimal(row2["ExistenciaAprox"]);
-                            row1.code_sap = Convert.ToString(row2["code_sap"]);
-                            //row1.lote = row.lote;
-                            row1.toma_fisica = Convert.ToDecimal(row2["toma_fisica"]);
-                            //row1.whs_equivalente = row.whs_equivalente;
-                            //row1.numero_transaccion = row.numero_transaccion;
+
+                            row1.id_mp = Convert.ToInt32(grdv_mps.GetFocusedRowCellValue(id_mp));
+                            row1.descripcion = Convert.ToString(grdv_mps.GetFocusedRowCellValue(colMP));
+                            row1.id_bodega = Convert.ToInt32(grdv_mps.GetFocusedRowCellValue(id_bodega));
+                            row1.ExistenciaAprox = Convert.ToDecimal(grdv_mps.GetFocusedRowCellValue(colExistenciaAnterior));
+                            row1.toma_fisica = Convert.ToDecimal(grdv_mps.GetFocusedRowCellValue(colExistencia));
+                            row1.diferencia = Convert.ToDecimal(grdv_mps.GetFocusedRowCellValue(coldiferencia));
+                            id_detalle_recuento = Convert.ToInt32(grdv_mps.GetFocusedRowCellValue(count_id));
+
                             tableOps.AddRecuento_mpRow(row1);
                             tableOps.AcceptChanges();
 
-                            Logistica.frmSeleccionLoteCierre frm = new Logistica.frmSeleccionLoteCierre(UsuarioLogeado, tableOps);
-                            if (frm.ShowDialog() == DialogResult.OK)
-                            {
-                                
-                            }
+                            
+                            TABLAOPSNew = tableOps;
                         }
+                        Logistica.frmSeleccionLoteCierre frm = new frmSeleccionLoteCierre(UsuarioLogeado, TABLAOPSNew, id_detalle_recuento);
+                        if (frm.ShowDialog() == DialogResult.OK)
+                        {
+                            tableOps.Clear();
+                        }
+
+                        //for (int i = 0; i < grdv_mps.SelectedRowsCount; i++)
+                        //{
+
+                        //    DataRow row2 = grdv_mps.GetDataRow(i);
+
+                        //    if (Convert.ToDecimal(row2["diferencia"]) > 0 || Convert.ToDecimal(row2["diferencia"]) < 0)
+                        //    {
+                        //        dsCierreMes.Recuento_mpRow row1 = tableOps.NewRecuento_mpRow();
+                        //        row1.id_mp = Convert.ToInt32(row2["id_mp"]);
+                        //        row1.descripcion = Convert.ToString(row2["descripcion"]);
+                        //        row1.peso = Convert.ToDecimal(row2["peso"]);
+                        //        row1.id_bodega = Convert.ToInt32(row2["id_bodega"]);
+                        //        row1.diferencia = Convert.ToDecimal(row2["diferencia"]);
+                        //        row1.ExistenciaAprox = Convert.ToDecimal(row2["ExistenciaAprox"]);
+                        //        row1.code_sap = Convert.ToString(row2["code_sap"]);
+                        //        //row1.lote = row.lote;
+                        //        row1.toma_fisica = Convert.ToDecimal(row2["toma_fisica"]);
+                        //        //row1.whs_equivalente = row.whs_equivalente;
+                        //        //row1.numero_transaccion = row.numero_transaccion;
+                        //        int id_detalle_recuento = row.id;
+
+                        //        tableOps.AddRecuento_mpRow(row1);
+                        //        tableOps.AcceptChanges();
+
+                        //        DataTable TABLEOPS = tableOps;
+                        //        //tableOps.Clear();
+
+                        //        Logistica.frmSeleccionLoteCierre frm = new Logistica.frmSeleccionLoteCierre(UsuarioLogeado, tableOps, id_detalle_recuento);
+                        //        if (frm.ShowDialog() == DialogResult.OK)
+                        //        {
+                        //            //tableOps.Clear();
+                        //        }
+                        //    }
+                        //}
                     }
                 }
             }
-            else
+            catch (Exception ex)
             {
-                //
+                CajaDialogo.Error(ex.Message);
             }
         }
 
         private void grdv_mps_RowStyle(object sender, RowStyleEventArgs e)
         {
-            GridView View = sender as GridView;
-            if (e.RowHandle >= 0)
-            {
-                //Si el valor que se agrego igual a la diferencia en 0!
-            }
+            //GridView View = sender as GridView;
+            //if (e.RowHandle >= 0)
+            //{
+            //    //Si el valor que se agrego igual a la diferencia en 0!
+            //}
         }
     }
 }

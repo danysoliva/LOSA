@@ -52,6 +52,8 @@ namespace LOSA.TransaccionesMP {
         
         private kardex_by_ReprocesoDataTable tablekardex_by_Reproceso;
         
+        private mp_bodega_loteDataTable tablemp_bodega_lote;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -121,6 +123,9 @@ namespace LOSA.TransaccionesMP {
                 }
                 if ((ds.Tables["kardex_by_Reproceso"] != null)) {
                     base.Tables.Add(new kardex_by_ReprocesoDataTable(ds.Tables["kardex_by_Reproceso"]));
+                }
+                if ((ds.Tables["mp_bodega_lote"] != null)) {
+                    base.Tables.Add(new mp_bodega_loteDataTable(ds.Tables["mp_bodega_lote"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -282,6 +287,16 @@ namespace LOSA.TransaccionesMP {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public mp_bodega_loteDataTable mp_bodega_lote {
+            get {
+                return this.tablemp_bodega_lote;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -388,6 +403,9 @@ namespace LOSA.TransaccionesMP {
                 }
                 if ((ds.Tables["kardex_by_Reproceso"] != null)) {
                     base.Tables.Add(new kardex_by_ReprocesoDataTable(ds.Tables["kardex_by_Reproceso"]));
+                }
+                if ((ds.Tables["mp_bodega_lote"] != null)) {
+                    base.Tables.Add(new mp_bodega_loteDataTable(ds.Tables["mp_bodega_lote"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -506,6 +524,12 @@ namespace LOSA.TransaccionesMP {
                     this.tablekardex_by_Reproceso.InitVars();
                 }
             }
+            this.tablemp_bodega_lote = ((mp_bodega_loteDataTable)(base.Tables["mp_bodega_lote"]));
+            if ((initTable == true)) {
+                if ((this.tablemp_bodega_lote != null)) {
+                    this.tablemp_bodega_lote.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -544,6 +568,8 @@ namespace LOSA.TransaccionesMP {
             base.Tables.Add(this.tabletotales_bodegav2);
             this.tablekardex_by_Reproceso = new kardex_by_ReprocesoDataTable();
             base.Tables.Add(this.tablekardex_by_Reproceso);
+            this.tablemp_bodega_lote = new mp_bodega_loteDataTable();
+            base.Tables.Add(this.tablemp_bodega_lote);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -627,6 +653,12 @@ namespace LOSA.TransaccionesMP {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializekardex_by_Reproceso() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializemp_bodega_lote() {
             return false;
         }
         
@@ -726,6 +758,9 @@ namespace LOSA.TransaccionesMP {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void kardex_by_ReprocesoRowChangeEventHandler(object sender, kardex_by_ReprocesoRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void mp_bodega_loteRowChangeEventHandler(object sender, mp_bodega_loteRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -5356,6 +5391,379 @@ namespace LOSA.TransaccionesMP {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class mp_bodega_loteDataTable : global::System.Data.TypedTableBase<mp_bodega_loteRow> {
+            
+            private global::System.Data.DataColumn columnexistencia;
+            
+            private global::System.Data.DataColumn columnexistencia_ud;
+            
+            private global::System.Data.DataColumn columnexistencia_tm;
+            
+            private global::System.Data.DataColumn columnnombre_comercial;
+            
+            private global::System.Data.DataColumn columnid_mp;
+            
+            private global::System.Data.DataColumn columncode_sap;
+            
+            private global::System.Data.DataColumn columnwhs_equivalente;
+            
+            private global::System.Data.DataColumn columnTipoId;
+            
+            private global::System.Data.DataColumn columnTipoName;
+            
+            private global::System.Data.DataColumn columnlote;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public mp_bodega_loteDataTable() {
+                this.TableName = "mp_bodega_lote";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal mp_bodega_loteDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected mp_bodega_loteDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn existenciaColumn {
+                get {
+                    return this.columnexistencia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn existencia_udColumn {
+                get {
+                    return this.columnexistencia_ud;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn existencia_tmColumn {
+                get {
+                    return this.columnexistencia_tm;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn nombre_comercialColumn {
+                get {
+                    return this.columnnombre_comercial;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_mpColumn {
+                get {
+                    return this.columnid_mp;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn code_sapColumn {
+                get {
+                    return this.columncode_sap;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn whs_equivalenteColumn {
+                get {
+                    return this.columnwhs_equivalente;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TipoIdColumn {
+                get {
+                    return this.columnTipoId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TipoNameColumn {
+                get {
+                    return this.columnTipoName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn loteColumn {
+                get {
+                    return this.columnlote;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public mp_bodega_loteRow this[int index] {
+                get {
+                    return ((mp_bodega_loteRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event mp_bodega_loteRowChangeEventHandler mp_bodega_loteRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event mp_bodega_loteRowChangeEventHandler mp_bodega_loteRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event mp_bodega_loteRowChangeEventHandler mp_bodega_loteRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event mp_bodega_loteRowChangeEventHandler mp_bodega_loteRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Addmp_bodega_loteRow(mp_bodega_loteRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public mp_bodega_loteRow Addmp_bodega_loteRow(decimal existencia, int existencia_ud, decimal existencia_tm, string nombre_comercial, int id_mp, string code_sap, string whs_equivalente, int TipoId, string TipoName, string lote) {
+                mp_bodega_loteRow rowmp_bodega_loteRow = ((mp_bodega_loteRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        existencia,
+                        existencia_ud,
+                        existencia_tm,
+                        nombre_comercial,
+                        id_mp,
+                        code_sap,
+                        whs_equivalente,
+                        TipoId,
+                        TipoName,
+                        lote};
+                rowmp_bodega_loteRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowmp_bodega_loteRow);
+                return rowmp_bodega_loteRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                mp_bodega_loteDataTable cln = ((mp_bodega_loteDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new mp_bodega_loteDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnexistencia = base.Columns["existencia"];
+                this.columnexistencia_ud = base.Columns["existencia_ud"];
+                this.columnexistencia_tm = base.Columns["existencia_tm"];
+                this.columnnombre_comercial = base.Columns["nombre_comercial"];
+                this.columnid_mp = base.Columns["id_mp"];
+                this.columncode_sap = base.Columns["code_sap"];
+                this.columnwhs_equivalente = base.Columns["whs_equivalente"];
+                this.columnTipoId = base.Columns["TipoId"];
+                this.columnTipoName = base.Columns["TipoName"];
+                this.columnlote = base.Columns["lote"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnexistencia = new global::System.Data.DataColumn("existencia", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnexistencia);
+                this.columnexistencia_ud = new global::System.Data.DataColumn("existencia_ud", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnexistencia_ud);
+                this.columnexistencia_tm = new global::System.Data.DataColumn("existencia_tm", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnexistencia_tm);
+                this.columnnombre_comercial = new global::System.Data.DataColumn("nombre_comercial", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombre_comercial);
+                this.columnid_mp = new global::System.Data.DataColumn("id_mp", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_mp);
+                this.columncode_sap = new global::System.Data.DataColumn("code_sap", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncode_sap);
+                this.columnwhs_equivalente = new global::System.Data.DataColumn("whs_equivalente", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwhs_equivalente);
+                this.columnTipoId = new global::System.Data.DataColumn("TipoId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTipoId);
+                this.columnTipoName = new global::System.Data.DataColumn("TipoName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTipoName);
+                this.columnlote = new global::System.Data.DataColumn("lote", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlote);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public mp_bodega_loteRow Newmp_bodega_loteRow() {
+                return ((mp_bodega_loteRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new mp_bodega_loteRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(mp_bodega_loteRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.mp_bodega_loteRowChanged != null)) {
+                    this.mp_bodega_loteRowChanged(this, new mp_bodega_loteRowChangeEvent(((mp_bodega_loteRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.mp_bodega_loteRowChanging != null)) {
+                    this.mp_bodega_loteRowChanging(this, new mp_bodega_loteRowChangeEvent(((mp_bodega_loteRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.mp_bodega_loteRowDeleted != null)) {
+                    this.mp_bodega_loteRowDeleted(this, new mp_bodega_loteRowChangeEvent(((mp_bodega_loteRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.mp_bodega_loteRowDeleting != null)) {
+                    this.mp_bodega_loteRowDeleting(this, new mp_bodega_loteRowChangeEvent(((mp_bodega_loteRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Removemp_bodega_loteRow(mp_bodega_loteRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsTarima ds = new dsTarima();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "mp_bodega_loteDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class proveedoresRow : global::System.Data.DataRow {
@@ -8266,6 +8674,302 @@ namespace LOSA.TransaccionesMP {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class mp_bodega_loteRow : global::System.Data.DataRow {
+            
+            private mp_bodega_loteDataTable tablemp_bodega_lote;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal mp_bodega_loteRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablemp_bodega_lote = ((mp_bodega_loteDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal existencia {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablemp_bodega_lote.existenciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'existencia\' de la tabla \'mp_bodega_lote\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablemp_bodega_lote.existenciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int existencia_ud {
+                get {
+                    try {
+                        return ((int)(this[this.tablemp_bodega_lote.existencia_udColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'existencia_ud\' de la tabla \'mp_bodega_lote\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablemp_bodega_lote.existencia_udColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal existencia_tm {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablemp_bodega_lote.existencia_tmColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'existencia_tm\' de la tabla \'mp_bodega_lote\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablemp_bodega_lote.existencia_tmColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string nombre_comercial {
+                get {
+                    try {
+                        return ((string)(this[this.tablemp_bodega_lote.nombre_comercialColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombre_comercial\' de la tabla \'mp_bodega_lote\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tablemp_bodega_lote.nombre_comercialColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_mp {
+                get {
+                    try {
+                        return ((int)(this[this.tablemp_bodega_lote.id_mpColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_mp\' de la tabla \'mp_bodega_lote\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablemp_bodega_lote.id_mpColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string code_sap {
+                get {
+                    try {
+                        return ((string)(this[this.tablemp_bodega_lote.code_sapColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'code_sap\' de la tabla \'mp_bodega_lote\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablemp_bodega_lote.code_sapColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string whs_equivalente {
+                get {
+                    try {
+                        return ((string)(this[this.tablemp_bodega_lote.whs_equivalenteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'whs_equivalente\' de la tabla \'mp_bodega_lote\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablemp_bodega_lote.whs_equivalenteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int TipoId {
+                get {
+                    try {
+                        return ((int)(this[this.tablemp_bodega_lote.TipoIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TipoId\' de la tabla \'mp_bodega_lote\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablemp_bodega_lote.TipoIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string TipoName {
+                get {
+                    try {
+                        return ((string)(this[this.tablemp_bodega_lote.TipoNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TipoName\' de la tabla \'mp_bodega_lote\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablemp_bodega_lote.TipoNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string lote {
+                get {
+                    try {
+                        return ((string)(this[this.tablemp_bodega_lote.loteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'lote\' de la tabla \'mp_bodega_lote\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablemp_bodega_lote.loteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsexistenciaNull() {
+                return this.IsNull(this.tablemp_bodega_lote.existenciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetexistenciaNull() {
+                this[this.tablemp_bodega_lote.existenciaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isexistencia_udNull() {
+                return this.IsNull(this.tablemp_bodega_lote.existencia_udColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setexistencia_udNull() {
+                this[this.tablemp_bodega_lote.existencia_udColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isexistencia_tmNull() {
+                return this.IsNull(this.tablemp_bodega_lote.existencia_tmColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setexistencia_tmNull() {
+                this[this.tablemp_bodega_lote.existencia_tmColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isnombre_comercialNull() {
+                return this.IsNull(this.tablemp_bodega_lote.nombre_comercialColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setnombre_comercialNull() {
+                this[this.tablemp_bodega_lote.nombre_comercialColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_mpNull() {
+                return this.IsNull(this.tablemp_bodega_lote.id_mpColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_mpNull() {
+                this[this.tablemp_bodega_lote.id_mpColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscode_sapNull() {
+                return this.IsNull(this.tablemp_bodega_lote.code_sapColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcode_sapNull() {
+                this[this.tablemp_bodega_lote.code_sapColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iswhs_equivalenteNull() {
+                return this.IsNull(this.tablemp_bodega_lote.whs_equivalenteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setwhs_equivalenteNull() {
+                this[this.tablemp_bodega_lote.whs_equivalenteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsTipoIdNull() {
+                return this.IsNull(this.tablemp_bodega_lote.TipoIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetTipoIdNull() {
+                this[this.tablemp_bodega_lote.TipoIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsTipoNameNull() {
+                return this.IsNull(this.tablemp_bodega_lote.TipoNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetTipoNameNull() {
+                this[this.tablemp_bodega_lote.TipoNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsloteNull() {
+                return this.IsNull(this.tablemp_bodega_lote.loteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetloteNull() {
+                this[this.tablemp_bodega_lote.loteColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -8727,6 +9431,40 @@ namespace LOSA.TransaccionesMP {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public kardex_by_ReprocesoRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class mp_bodega_loteRowChangeEvent : global::System.EventArgs {
+            
+            private mp_bodega_loteRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public mp_bodega_loteRowChangeEvent(mp_bodega_loteRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public mp_bodega_loteRow Row {
                 get {
                     return this.eventRow;
                 }

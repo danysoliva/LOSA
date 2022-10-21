@@ -4,6 +4,10 @@
 
     partial class dsCierreMes
     {
+        partial class LoadExcelDataTable
+        {
+        }
+
         partial class recuentos_dDataTable
         {
         }
