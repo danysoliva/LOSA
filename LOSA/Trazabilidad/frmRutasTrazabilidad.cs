@@ -2092,14 +2092,51 @@ namespace LOSA.Trazabilidad
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
                         LoadLotesPT_Ruta1(frm.IdMP_Selected);
-                       lblLoteNameRuta1.Text = frm.NameMaterialselected;
+                        lblLoteNameRuta1.Text = frm.NameMaterialselected;
+                        LoadInventarioLotesRuta1();
+                        lblLoteNameRuta1_Rotulo.Visible = lblLoteNameRuta1.Visible = true;
+                        errorProvider1.Clear();
                     }
                 }
                 else
                 {
                     LoadLotesPT_Ruta1(LoteMP_.IdMPSingle);
                     lblLoteNameRuta1.Text = LoteMP_.NombreComercialSingle;
+                    LoadInventarioLotesRuta1();
+                    lblLoteNameRuta1_Rotulo.Visible = lblLoteNameRuta1.Visible = true;
+                    errorProvider1.Clear();
                 }
+            }
+            else
+            {
+                errorProvider1.SetError(txtLoteMPRuta1, "No se encontro ningun PT que haya utilizado este lote!");
+                lblLoteNameRuta1_Rotulo.Visible = lblLoteNameRuta1.Visible = false;
+            }
+        }
+
+
+        void LoadInventarioLotesRuta1()
+        {
+            //sp_get_kardex_by_lot_trz
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("[sp_get_kardex_by_lot_trz]", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lote", txtLoteMPRuta1.Text);
+                //cmd.Parameters.AddWithValue("@idrm", idMP_Selected);
+                dsReportesTRZ.Inventario_mp_lote_ruta1.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsReportesTRZ.Inventario_mp_lote_ruta1);
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
             }
         }
 
@@ -2113,6 +2150,16 @@ namespace LOSA.Trazabilidad
         {
             txtLoteRuta1.Text = "";
             txtLoteRuta1.Focus();
+        }
+
+        private void cmdExportExcelClientes_lotes_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "Excel File (.xlsx)|*.xlsx";
+            dialog.FilterIndex = 0;
+
+            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                grDetalle.ExportToXlsx(dialog.FileName);
         }
     }
 }
