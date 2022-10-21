@@ -375,6 +375,11 @@ namespace LOSA.TransaccionesMP
 
         private void btnSearchMP_Click(object sender, EventArgs e)
         {
+            LoadLotesBG();
+        }
+
+        private void LoadLotesBG()
+        {
             frmSearchMP frm = new frmSearchMP(frmSearchMP.TipoBusqueda.MateriaPrima);
             if (frm.ShowDialog() == DialogResult.OK)
             {
@@ -405,6 +410,69 @@ namespace LOSA.TransaccionesMP
             {
                 CajaDialogo.Error(ec.Message);
             }
+        }
+
+        private void repositoryItemLogKardex_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var GridView = (GridView)grdMPBodega.FocusedView;
+            var row = (dsTarima.mp_bodega_loteRow)GridView.GetFocusedDataRow();
+
+            frmLogKardex frm = new frmLogKardex(row.id_mp, row.lote, row.id_bodega);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                LoadLotesBG();
+            }
+        }
+
+        private void repositoryItemAjuste_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var GridView = (GridView)grdMPBodega.FocusedView;
+            var row = (dsTarima.mp_bodega_loteRow)GridView.GetFocusedDataRow();
+
+            if (row.existencia > 0)
+            {
+                CajaDialogo.Error("Esta funcion esta solo activa para ajustar valores menores que 0");
+                return;
+            }
+            else
+            {
+                decimal Existencia_Positiva = 0;
+                decimal Unidades_Positiva = 0;
+                Existencia_Positiva = Math.Abs(row.existencia);
+                Unidades_Positiva = Math.Abs(row.existencia_ud);
+
+                DialogResult r = CajaDialogo.Pregunta("Se va ajustar el Lote: "+ row.lote+" Desea continuar? Cantidad a Ajustar: " + Existencia_Positiva);
+                if (r != System.Windows.Forms.DialogResult.Yes)
+                    return;
+
+                try
+                {
+                    DataOperations dp = new DataOperations();
+                    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                    con.Open();
+
+                    SqlCommand cmd = new SqlCommand("sp_insert_kardex_ajuste", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@entrada", Existencia_Positiva);
+                    //cmd.Parameters.AddWithValue("@id_referencia_operacion", );
+                    //cmd.Parameters.AddWithValue("@id_lote_alosy",  );
+                    cmd.Parameters.AddWithValue("@lote", row.lote);
+                    cmd.Parameters.AddWithValue("@id_mp", row.id_mp);
+                    cmd.Parameters.AddWithValue("@itemcode", row.code_sap );
+                    cmd.Parameters.AddWithValue("@id_bodega", row.id_bodega);
+                    cmd.Parameters.AddWithValue("@user_id", UsuarioLogeado.Id);
+                    cmd.Parameters.AddWithValue("@ud_entrada", Unidades_Positiva);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+
+                    LoadBodegaMP(row.id_mp);
+                }
+                catch (Exception ec)
+                {
+                    CajaDialogo.Error(ec.Message);
+                }
+            }
+
         }
     }
 }
