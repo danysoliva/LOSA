@@ -224,6 +224,17 @@ namespace LOSA.TransaccionesMP
                     gridControl2.ExportToXlsx(dialog.FileName);
                 }
             }
+            if (tabPane1.SelectedPageIndex == 5)//Materia Prima por Bodega
+            {
+                SaveFileDialog dialog = new SaveFileDialog();
+                dialog.Filter = "Excel File (.xlsx)|*.xlsx";
+                dialog.FilterIndex = 0;
+
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    grdMPBodega.ExportToXlsx(dialog.FileName);
+                }
+            }
             else
             {//Totales
                 SaveFileDialog dialog = new SaveFileDialog();
