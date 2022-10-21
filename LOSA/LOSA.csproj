@@ -3061,6 +3061,9 @@
     <Compile Include="Trazabilidad\frmViewBasculaBoleta.Designer.cs">
       <DependentUpon>frmViewBasculaBoleta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Trazabilidad\ReportesTRZ\dsReportesTRZ.cs">
+      <DependentUpon>dsReportesTRZ.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Trazabilidad\ReportesTRZ\dsReportesTRZ.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
