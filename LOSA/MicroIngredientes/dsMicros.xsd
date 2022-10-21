@@ -52,6 +52,7 @@
               <xs:element name="id_rm" msprop:Generator_ColumnVarNameInTable="columnid_rm" msprop:Generator_ColumnPropNameInRow="id_rm" msprop:Generator_ColumnPropNameInTable="id_rmColumn" msprop:Generator_UserColumnName="id_rm" type="xs:int" minOccurs="0" />
               <xs:element name="peso_real" msprop:Generator_ColumnVarNameInTable="columnpeso_real" msprop:Generator_ColumnPropNameInRow="peso_real" msprop:Generator_ColumnPropNameInTable="peso_realColumn" msprop:Generator_UserColumnName="peso_real" type="xs:decimal" minOccurs="0" />
               <xs:element name="codigo" msprop:Generator_ColumnVarNameInTable="columncodigo" msprop:Generator_ColumnPropNameInRow="codigo" msprop:Generator_ColumnPropNameInTable="codigoColumn" msprop:Generator_UserColumnName="codigo" type="xs:string" minOccurs="0" />
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -168,7 +169,7 @@
               <xs:element name="mp" msprop:Generator_ColumnVarNameInTable="columnmp" msprop:Generator_ColumnPropNameInRow="mp" msprop:Generator_ColumnPropNameInTable="mpColumn" msprop:Generator_UserColumnName="mp" type="xs:string" minOccurs="0" />
               <xs:element name="lote" msprop:Generator_ColumnVarNameInTable="columnlote" msprop:Generator_ColumnPropNameInRow="lote" msprop:Generator_ColumnPropNameInTable="loteColumn" msprop:Generator_UserColumnName="lote" type="xs:string" minOccurs="0" />
               <xs:element name="id_tarima_origen" msprop:Generator_ColumnVarNameInTable="columnid_tarima_origen" msprop:Generator_ColumnPropNameInRow="id_tarima_origen" msprop:Generator_ColumnPropNameInTable="id_tarima_origenColumn" msprop:Generator_UserColumnName="id_tarima_origen" type="xs:int" minOccurs="0" />
-              <xs:element name="peso" msprop:nullValue="0" msprop:Generator_ColumnPropNameInRow="peso" msprop:Generator_ColumnVarNameInTable="columnpeso" msprop:Generator_ColumnPropNameInTable="pesoColumn" msprop:Generator_UserColumnName="peso" type="xs:decimal" minOccurs="0" />
+              <xs:element name="peso" msprop:nullValue="0" msprop:Generator_ColumnPropNameInRow="peso" msprop:Generator_ColumnVarNameInTable="columnpeso" msprop:Generator_ColumnPropNameInTable="pesoColumn" msprop:Generator_UserColumnName="peso" type="xs:decimal" default="0" minOccurs="0" />
               <xs:element name="id_mp" msprop:Generator_ColumnVarNameInTable="columnid_mp" msprop:Generator_ColumnPropNameInRow="id_mp" msprop:Generator_ColumnPropNameInTable="id_mpColumn" msprop:Generator_UserColumnName="id_mp" type="xs:int" minOccurs="0" />
               <xs:element name="id_tarima_micro" msprop:nullValue="0" msprop:Generator_ColumnPropNameInRow="id_tarima_micro" msprop:Generator_ColumnVarNameInTable="columnid_tarima_micro" msprop:Generator_ColumnPropNameInTable="id_tarima_microColumn" msprop:Generator_UserColumnName="id_tarima_micro" type="xs:long" minOccurs="0" />
             </xs:sequence>

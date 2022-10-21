@@ -82,38 +82,44 @@ namespace LOSA.Trazabilidad
             acordionRuta4.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
             acordionRuta4.Appearance.Normal.ForeColor = Color.FromArgb(80, 80,80);
 
+
+            if (this.rutaActiva!=1)
+            {
+            dsReportesTRZ.pt_list_trz.Clear();
+            }
+
+
             this.rutaActiva = 1;
 
 
-            lote_fp = 0;
-            txtlote.Text = "";
-            dsCalidad.trazabilitad.Clear();
-            dsInventarioPT.transacciones.Clear();
-            dsInventarioPT.despachos.Clear();
-            txtversion.Text = "";
-            txtformula.Text = "";
-            txtProducto.Text = "";
-            txtPresentacion.Text = "";
-            txtOrderNum.Text = "";
-            txtCodigoPP.Text = "";
-            txtSacosLiberados.Text = "";
-            txtTotalMP_Utilizada_kg.Text = "";
-            txtCantidadBatch.Text = "";
-            txtcodigo.Text = "";
-            txtTotalKgSacosLiberados.Text = "";
-            txtOrderNum.Text = "";
-            txtCodigoPP.Text = "";
-            txtPresentacion.Text = "";
-            txtCantidadBatch.Text = "";
-            txtEficiencia.Text = "";
-            txtReprocesoKg.Text = "";
-            txtTotalProducido.Text = "";
+            //lote_fp = 0;
+            //txtlote.Text = "";
+            //dsCalidad.trazabilitad.Clear();
+            //dsInventarioPT.transacciones.Clear();
+            //dsInventarioPT.despachos.Clear();
+            //txtversion.Text = "";
+            //txtformula.Text = "";
+            //txtProducto.Text = "";
+            //txtPresentacion.Text = "";
+            //txtOrderNum.Text = "";
+            //txtCodigoPP.Text = "";
+            //txtSacosLiberados.Text = "";
+            //txtTotalMP_Utilizada_kg.Text = "";
+            //txtCantidadBatch.Text = "";
+            //txtcodigo.Text = "";
+            //txtTotalKgSacosLiberados.Text = "";
+            //txtOrderNum.Text = "";
+            //txtCodigoPP.Text = "";
+            //txtPresentacion.Text = "";
+            //txtCantidadBatch.Text = "";
+            //txtEficiencia.Text = "";
+            //txtReprocesoKg.Text = "";
+            //txtTotalProducido.Text = "";
 
-            btnBack.Text = "Inicio";
-            btnBack.Visible = true;
+            //btnBack.Text = "Inicio";
+            //btnBack.Visible = true;
 
-            dsReportesTRZ.pt_list_trz.Clear();
-            dsReportesTRZ.detalle_destinos.Clear();
+            //dsReportesTRZ.detalle_destinos.Clear();
             lblMateriaPrimaName.Text = "";
 
             navigationFrame1.SelectedPage = npRuta1;
@@ -134,14 +140,20 @@ namespace LOSA.Trazabilidad
             acordionRuta4.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
             acordionRuta4.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
 
+
+            if (this.rutaActiva != 2)
+            {
+                dsReportesTRZ.pt_list_trz.Clear();
+                dsReportesTRZ.detalle_destinos.Clear();
+                lblMateriaPrimaName.Text = "";
+            }
+
             this.rutaActiva = 2;
 
 
-            dsReportesTRZ.pt_list_trz.Clear();
-            dsReportesTRZ.detalle_destinos.Clear();
-            lblMateriaPrimaName.Text = "";
+            //dsReportesTRZ.pt_list_trz.Clear();
 
-            navigationFrame1.SelectedPage = npRuta1;
+            navigationFrame1.SelectedPage = npRuta2;
         }
 
         private void acordionRuta3_Click(object sender, EventArgs e)
@@ -684,7 +696,7 @@ namespace LOSA.Trazabilidad
         {
             if (rutaActiva == 1)
             {
-                navigationFrame1.SelectedPage = npRuta1;
+                navigationFrame1.SelectedPage = npRuta2;
             }
             else
                 navigationFrame1.SelectedPage = npReporteTrazabilidad;
@@ -743,19 +755,46 @@ namespace LOSA.Trazabilidad
                     frmMP_WithSameLot frm = new frmMP_WithSameLot(LoteMP_);
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
-                        LoadLotesPT_Ruta1(frm.IdMP_Selected);
+                        LoadLotesPT_Ruta2(frm.IdMP_Selected);
                         lblMateriaPrimaName.Text = frm.NameMaterialselected;
                     }
                 }
                 else
                 {
-                    LoadLotesPT_Ruta1(LoteMP_.IdMPSingle);
+                    LoadLotesPT_Ruta2(LoteMP_.IdMPSingle);
                     lblMateriaPrimaName.Text = LoteMP_.NombreComercialSingle;
                 }
             }
         }
 
+
         private void LoadLotesPT_Ruta1(object idMP_Selected)
+        {
+            //[sp_load_lotes_pt_trz_from_lote_mp] @lotemp
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("[sp_load_lotes_pt_trz_from_lote_mpv3]", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lotemp", txtLoteMPRuta1.Text);
+                cmd.Parameters.AddWithValue("@idrm", idMP_Selected);
+                dsReportesTRZ.pt_list_trz.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsReportesTRZ.pt_list_trz);
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
+
+
+        private void LoadLotesPT_Ruta2(object idMP_Selected)
         {
             //[sp_load_lotes_pt_trz_from_lote_mp] @lotemp
             try
@@ -797,13 +836,13 @@ namespace LOSA.Trazabilidad
                     frmMP_WithSameLot frm = new frmMP_WithSameLot(LoteMP_);
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
-                        LoadLotesPT_Ruta1(frm.IdMP_Selected);
+                        LoadLotesPT_Ruta2(frm.IdMP_Selected);
                         lblMateriaPrimaName.Text = frm.NameMaterialselected;
                     }
                 }
                 else
                 {
-                    LoadLotesPT_Ruta1(LoteMP_.IdMPSingle);
+                    LoadLotesPT_Ruta2(LoteMP_.IdMPSingle);
                     lblMateriaPrimaName.Text = LoteMP_.NombreComercialSingle;
                 }
             }
@@ -1908,7 +1947,7 @@ namespace LOSA.Trazabilidad
 
         private void btnBackRuta1_Click(object sender, EventArgs e)
         {
-            navigationFrame1.SelectedPage = npRuta1;
+            navigationFrame1.SelectedPage = npRuta2;
         }
         #endregion
 
@@ -2038,6 +2077,42 @@ namespace LOSA.Trazabilidad
                 }
                 LoadDataClientes();
             }
+        }
+
+        private void btnGenerateRuta1_Click(object sender, EventArgs e)
+        {
+            LoteMP LoteMP_ = new LoteMP();
+
+            if (LoteMP_.RecuperarRegistro(txtLoteMPRuta1.Text))
+            {
+                if (LoteMP_.CantidadMP > 1)
+                {
+                    //Mostrar Ventana
+                    frmMP_WithSameLot frm = new frmMP_WithSameLot(LoteMP_);
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        LoadLotesPT_Ruta1(frm.IdMP_Selected);
+                       lblLoteNameRuta1.Text = frm.NameMaterialselected;
+                    }
+                }
+                else
+                {
+                    LoadLotesPT_Ruta1(LoteMP_.IdMPSingle);
+                    lblLoteNameRuta1.Text = LoteMP_.NombreComercialSingle;
+                }
+            }
+        }
+
+        private void btnHome_Ruta1_Click(object sender, EventArgs e)
+        {
+            this.navigationFrame1.SelectedPage = npMain;
+            this.dsReportesTRZ.pt_list_trz.Clear();
+        }
+
+        private void btnBorrarRuta1_Click(object sender, EventArgs e)
+        {
+            txtLoteRuta1.Text = "";
+            txtLoteRuta1.Focus();
         }
     }
 }
