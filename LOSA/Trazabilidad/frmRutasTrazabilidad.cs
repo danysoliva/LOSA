@@ -85,7 +85,7 @@ namespace LOSA.Trazabilidad
 
             if (this.rutaActiva!=1)
             {
-            dsReportesTRZ.pt_list_trz.Clear();
+                //dsReportesTRZ.pt_list_trz.Clear();
             }
 
 
@@ -2169,13 +2169,17 @@ namespace LOSA.Trazabilidad
         private void btnHome_Ruta1_Click(object sender, EventArgs e)
         {
             this.navigationFrame1.SelectedPage = npMain;
-            this.dsReportesTRZ.pt_list_trz.Clear();
+            //this.dsReportesTRZ.pt_list_trz.Clear();
         }
 
         private void btnBorrarRuta1_Click(object sender, EventArgs e)
         {
             txtLoteMPRuta1.Text = "";
             txtLoteMPRuta1.Focus();
+            dsReportesTRZ.pt_list_trz.Clear();
+            dsReportesTRZ.Inventario_mp_lote_ruta1.Clear();
+            dsReportesTRZ.reproceso_lote_pt_ruta1.Clear();
+            dsReportesTRZ.ingresos_mp_lote_ruta1.Clear();
         }
 
         private void cmdExportExcelClientes_lotes_Click(object sender, EventArgs e)
