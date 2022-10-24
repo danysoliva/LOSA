@@ -28,6 +28,7 @@ namespace LOSA.Logistica
         public int id_bodegaMP;
         decimal existencia_anterior;
         decimal existencia_nueva;
+        decimal diferenciaMP;
         int id_detalle_recuento;
         decimal acumulado;
 
@@ -173,6 +174,10 @@ namespace LOSA.Logistica
                 id_count_selected = Convert.ToInt32(SelectedrOWS["count_id"]);
                 NuevaCantidad = Convert.ToDecimal(SelectedrOWS["toma_fisica"]);
                 sum = 0;
+                if (bodega == 17 || bodega == 18 || bodega == 28)
+                {
+
+                }
                 get_lotes(IdMpSelected, bodega);
             }
             catch (Exception)
@@ -357,10 +362,11 @@ namespace LOSA.Logistica
                 id_bodegaMP = Convert.ToInt32(row2["id_bodega"]);
                 existencia_anterior = Convert.ToDecimal(row2["ExistenciaAprox"]);//Existencia en Bodega al momento del Recuento-Contabilizado
                 existencia_nueva = Convert.ToDecimal(row2["toma_fisica"]);//Nueva Cantidad - Toma Fisica
+                diferenciaMP = Convert.ToDecimal(row2["diferencia"]);//Diferencia = Existencia - Toma Fisica
 
             }
 
-            string query = @"[sp_insert_kardex_general_inventario_final]";
+            string query = @"sp_insert_kardex_general_inventario_final";
             SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
             conn.Open();
             SqlCommand cmd = new SqlCommand(query, conn);
@@ -376,28 +382,33 @@ namespace LOSA.Logistica
                 cmd.Parameters.AddWithValue("@user_id", UsuarioLogeado.Id);
                 cmd.Parameters.AddWithValue("@existencia_anterior", existencia_anterior);
                 cmd.Parameters.AddWithValue("@existencia_nueva", existencia_nueva);
+                cmd.Parameters.AddWithValue("@diferenciaMP", diferenciaMP);
                 cmd.Parameters.AddWithValue("@id_detalle_recuento", id_detalle_recuento);
 
                 cmd.Parameters.AddWithValue("@lote",row.lote);
                 cmd.Parameters.AddWithValue("@id_lote_alosy", row.id_lote_alosy);
                 //cmd.Parameters.AddWithValue("@id_bodega", row.id_bodega);
 
-                cmd.Parameters.AddWithValue("@diferencia", row.utilizado); //Esto es el valor de lo que se va dar Salida/Entrada en Kardex
+                cmd.Parameters.AddWithValue("@utilizado", row.utilizado); //Esto es el valor de lo que se va dar Salida/Entrada en Kardex
                 AcumuladoCentinela = row.utilizado;
                 AcumuladoUtilizado = AcumuladoUtilizado + AcumuladoCentinela;
                 cmd.ExecuteScalar();
-            }
 
-            if (AcumuladoUtilizado < 0)
-            {
-
-            }
-            DialogResult r = CajaDialogo.Pregunta("No se a ajustado al Kardex la Diferencia configurada, desde seguir ajustando?");
-            if (r == System.Windows.Forms.DialogResult.No)
-            {
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
+
+
+            //if (AcumuladoUtilizado < 0)
+            //{
+
+            //}
+            //DialogResult r = CajaDialogo.Pregunta("No se a ajustado al Kardex la Diferencia configurada, desde seguir ajustando?");
+            //if (r == System.Windows.Forms.DialogResult.No)
+            //{
+            //    this.DialogResult = DialogResult.OK;
+            //    this.Close();
+            //}
             
         }
 

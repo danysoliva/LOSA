@@ -349,6 +349,15 @@ namespace LOSA.Logistica
            
         }
 
+        private void CalculoExistencias()
+        {
+            foreach (dsCierreMes.Recuento_mpRow item in dsCierreMes1.Recuento_mp.Rows)
+            {
+                item.diferencia  = item.peso = item.ExistenciaAprox - item.toma_fisica; 
+            }
+        
+        }
+
         private void cmdVerDetalle_Click(object sender, EventArgs e)
         {
             //if (string.IsNullOrEmpty(grd_years.Text))
@@ -375,7 +384,7 @@ namespace LOSA.Logistica
             dsCierreMes.Recuento_mpDataTable tableOps = new dsCierreMes.Recuento_mpDataTable();
             foreach (dsCierreMes.Recuento_mpRow row in dsCierreMes1.Recuento_mp)
             {
-                if (row.seleccion)
+                if (row.diferencia < 0 || row.diferencia > 0)
                 {
                     dsCierreMes.Recuento_mpRow row1 = tableOps.NewRecuento_mpRow();
                     row1.id_mp = row.id_mp;
@@ -479,13 +488,15 @@ namespace LOSA.Logistica
                             {
                                 foreach (dsCierreMes.LoadExcelRow row2 in dsCierre.LoadExcel.Rows)
                                 {
-                                    if (row.code_sap == row2.Codigo || row.whs_equivalente == row2.Bodega)
+                                    if (row.code_sap == row2.Codigo && row.whs_equivalente == row2.Bodega)
                                     {
                                         row.toma_fisica = row2.Toma_Fisica;
                                     }
                                 }
                             }
                             dsCierreMes1.Recuento_mp.AcceptChanges();
+
+                            CalculoExistencias();
                         }
                         catch (Exception ec)
                         {

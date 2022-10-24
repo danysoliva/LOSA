@@ -190,9 +190,6 @@ namespace LOSA.RecuentoInventario
                 //for (int i = 0; i < grdv_mps.SelectedRowsCount; i++)
                 //{
                 //    DataRow row = grdv_mps.GetDataRow(i);
-
-
-
                 //    
                 //}
 
@@ -376,6 +373,7 @@ namespace LOSA.RecuentoInventario
                         if (frm.ShowDialog() == DialogResult.OK)
                         {
                             tableOps.Clear();
+                            
                         }
 
                         //for (int i = 0; i < grdv_mps.SelectedRowsCount; i++)
