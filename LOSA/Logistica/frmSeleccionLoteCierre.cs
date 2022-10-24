@@ -130,6 +130,32 @@ namespace LOSA.Logistica
                 }
             }
         }
+
+        public void getlotes_ext(int id_mp, int id_bodega)
+        {
+            dsCierreMes.SeleccionLote.Clear();
+
+            if (dsCierreMes.memory_config.Count(x => x.id_lote_count == id_count_selected)==0)
+            {
+                string query = @"sp_load_lotes_bodega_externa_inventario_final";
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                try
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(query,conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id_bodega",id_bodega);
+                    cmd.Parameters.AddWithValue("@id_mp", id_mp);
+                    SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                    adat.Fill(dsCierreMes.SeleccionLote);
+                    conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    CajaDialogo.Error(ex.Message);
+                }
+            }
+        }
         public void get_bodegas()
         {
             string query = @"sp_get_bodegas_id_descripcion";
@@ -174,11 +200,15 @@ namespace LOSA.Logistica
                 id_count_selected = Convert.ToInt32(SelectedrOWS["count_id"]);
                 NuevaCantidad = Convert.ToDecimal(SelectedrOWS["toma_fisica"]);
                 sum = 0;
-                if (bodega == 17 || bodega == 18 || bodega == 28)
+                if (bodega == 17 || bodega == 18 || bodega == 19 || bodega == 20 || bodega == 21 || bodega == 28)
                 {
 
                 }
-                get_lotes(IdMpSelected, bodega);
+                else
+                {
+                    get_lotes(IdMpSelected, bodega);
+                }
+                
             }
             catch (Exception)
             {
