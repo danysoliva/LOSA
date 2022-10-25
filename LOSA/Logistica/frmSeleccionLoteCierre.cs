@@ -202,7 +202,7 @@ namespace LOSA.Logistica
                 sum = 0;
                 if (bodega == 17 || bodega == 18 || bodega == 19 || bodega == 20 || bodega == 21 || bodega == 28)
                 {
-
+                    getlotes_ext(IdMpSelected, bodega);
                 }
                 else
                 {
@@ -210,8 +210,9 @@ namespace LOSA.Logistica
                 }
                 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                CajaDialogo.Error(ex.Message);
             }
         }
 
