@@ -460,7 +460,6 @@ namespace LOSA.TransaccionesMP
             this.xtraTabPage2,
             this.xtraTabPage3});
             this.xtraTabControl1.SelectedPageChanged += new DevExpress.XtraTab.TabPageChangedEventHandler(this.xtraTabControl1_SelectedPageChanged);
-            this.xtraTabControl1.TabIndexChanged += new System.EventHandler(this.xtraTabControl1_TabIndexChanged);
             // 
             // xtraTabPage1
             // 

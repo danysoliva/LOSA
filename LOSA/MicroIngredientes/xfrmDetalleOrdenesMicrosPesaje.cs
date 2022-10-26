@@ -64,7 +64,7 @@ namespace LOSA.MicroIngredientes
                     if (dr.Read())
                     {
                         id_order_apms = dr.GetInt64(1);
-                        lblNumOrden.Text = id_orden.ToString();
+                        lblNumOrden.Text = id_order_apms.ToString();
                         lblCodOrden.Text = dr.GetString(2);
                         lbl_Lote.Text = dr.GetInt32(4).ToString();
                         TotalBatchOrden = dr.GetInt32(5);
@@ -266,7 +266,6 @@ namespace LOSA.MicroIngredientes
         {
             try
             {
-
                 var gridView = (GridView)gridControl2.FocusedView;
                 var row = (dsMicros.plan_microsdRow)gridView.GetFocusedDataRow();
 

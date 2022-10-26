@@ -102,10 +102,8 @@ namespace LOSA.MicroIngredientes
 
         private void btnBascula1_Click(object sender, EventArgs e)
         {
-
             try
             {
-
                 PesajeAcumulado = new List<LoteMPAcumulado>();
 
                 foreach (dsMicros.MP_EscaneoRow row in dsMicros.MP_Escaneo.Rows)

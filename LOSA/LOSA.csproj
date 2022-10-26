@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\aqfsvr003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>410</ApplicationRevision>
+    <ApplicationRevision>415</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -2581,6 +2581,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsGranelLoteactivo.xsd</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\dsTarima.cs">
+      <DependentUpon>dsTarima.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesMP\dsTarima.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2659,6 +2662,12 @@
     </Compile>
     <Compile Include="TransaccionesMP\frmGestionUbicaciones.Designer.cs">
       <DependentUpon>frmGestionUbicaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmLogKardex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmLogKardex.Designer.cs">
+      <DependentUpon>frmLogKardex.cs</DependentUpon>
     </Compile>
     <Compile Include="TransaccionesMP\frmLoteActivoGranel.cs">
       <SubType>Form</SubType>
@@ -3065,6 +3074,9 @@
     </Compile>
     <Compile Include="Trazabilidad\frmViewBasculaBoleta.Designer.cs">
       <DependentUpon>frmViewBasculaBoleta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trazabilidad\ReportesTRZ\dsReportesTRZ.cs">
+      <DependentUpon>dsReportesTRZ.xsd</DependentUpon>
     </Compile>
     <Compile Include="Trazabilidad\ReportesTRZ\dsReportesTRZ.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -4089,6 +4101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmGestionUbicaciones.resx">
       <DependentUpon>frmGestionUbicaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmLogKardex.resx">
+      <DependentUpon>frmLogKardex.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmLoteActivoGranel.resx">
       <DependentUpon>frmLoteActivoGranel.cs</DependentUpon>

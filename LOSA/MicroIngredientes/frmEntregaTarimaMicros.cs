@@ -1004,11 +1004,6 @@ namespace LOSA.TransaccionesMP
             printReport.Print();
         }
 
-        private void xtraTabControl1_TabIndexChanged(object sender, EventArgs e)
-        {
-           
-        }
-
         private void LoadTarimas()
         {
             try

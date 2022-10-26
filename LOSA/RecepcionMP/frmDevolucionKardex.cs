@@ -156,7 +156,7 @@ namespace LOSA.RecepcionMP
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
             bool Guardado = false;
-            int vid_tarima = 0;
+            //int vid_tarima = 0;
 
             if (gvTarima.RowCount <= 0)
             {
@@ -188,7 +188,7 @@ namespace LOSA.RecepcionMP
             try
             {
 
-                int CantBack = 0;
+                //int CantBack = 0;
                 foreach (dsDevoluciones.mpRow item in dsDevoluciones.mp.Rows)
                 {
                     if (item.selected)
@@ -197,33 +197,34 @@ namespace LOSA.RecepcionMP
                         SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                         con.Open();
 
-                        SqlCommand cmd = new SqlCommand("sp_set_devolucion_of_requisa", con);
+                        //SqlCommand cmd = new SqlCommand("sp_set_devolucion_of_requisa", con);
+                        //cmd.CommandType = CommandType.StoredProcedure;
+                        //cmd.Parameters.AddWithValue("@id_tarima", this.idTarima);
+                        //cmd.Parameters.AddWithValue("@id_entrega", item.id);
+                        //cmd.Parameters.AddWithValue("@CantUd", item.cantidad_unidades);
+                        //cmd.Parameters.AddWithValue("@CantKg", item.cantidad_entregada);
+                        //CantBack = Convert.ToInt32(cmd.ExecuteScalar());
+
+                        //if (CantBack != 1)
+                        //{
+                        //    CajaDialogo.Error("No se puede devolver las unidades de la requisa " + item.barcode + " por que ya fueron consumidas.");
+
+                        //}
+                        //else
+                        //{
+                        SqlCommand cmd = new SqlCommand("sp_insert_kardex_from_devoluciones_form", con);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@id_tarima", this.idTarima);
                         cmd.Parameters.AddWithValue("@id_entrega", item.id);
-                        cmd.Parameters.AddWithValue("@CantUd", item.cantidad_unidades);
-                        cmd.Parameters.AddWithValue("@CantKg", item.cantidad_entregada);
-                        CantBack = Convert.ToInt32(cmd.ExecuteScalar());
+                        cmd.Parameters.AddWithValue("@tipo_transaccion", 1);
+                        cmd.Parameters.AddWithValue("@cantidad", Convert.ToDecimal(item.cantidad_unidades));
+                        cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
+                        //cmd.Parameters.AddWithValue("@peso", Convert.ToDecimal(txtPeso.Text));
+                        cmd.Parameters.AddWithValue("@peso", Convert.ToDecimal(item.cantidad_entregada));
+                        cmd.ExecuteNonQuery();
 
-                        if (CantBack != 1)
-                        {
-                            CajaDialogo.Error("No se puede devolver las unidades de la requisa " + item.barcode + " por que ya fueron consumidas.");
-
-                        }
-                        else
-                        {
-                            cmd = new SqlCommand("sp_insert_kardex_from_devoluciones_form", con);
-                            cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("@id_tarima", this.idTarima);
-                            cmd.Parameters.AddWithValue("@tipo_transaccion", 1);
-                            cmd.Parameters.AddWithValue("@cantidad", Convert.ToDecimal(item.cantidad_unidades));
-                            cmd.Parameters.AddWithValue("@id_usuario", Convert.ToInt32(item.cantidad_entregada));
-                            //cmd.Parameters.AddWithValue("@fecha", dp.Now());
-                            cmd.Parameters.AddWithValue("@peso", Convert.ToDecimal(txtPeso.Text));
-                            cmd.ExecuteNonQuery();
-
-                            Guardado = true;
-                        }
+                        //    Guardado = true;
+                        //}
 
                         con.Close();
                     }

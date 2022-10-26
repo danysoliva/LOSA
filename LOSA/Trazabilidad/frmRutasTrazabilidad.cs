@@ -85,7 +85,7 @@ namespace LOSA.Trazabilidad
 
             if (this.rutaActiva!=1)
             {
-            dsReportesTRZ.pt_list_trz.Clear();
+                //dsReportesTRZ.pt_list_trz.Clear();
             }
 
 
@@ -2092,27 +2092,137 @@ namespace LOSA.Trazabilidad
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
                         LoadLotesPT_Ruta1(frm.IdMP_Selected);
-                       lblLoteNameRuta1.Text = frm.NameMaterialselected;
+                        lblLoteNameRuta1.Text = frm.NameMaterialselected;
+                        LoadInventarioLotesRuta1();
+                        LoadRegistroIngresosLotesRuta1();
+                        lblLoteNameRuta1_Rotulo.Visible = lblLoteNameRuta1.Visible = true;
+                        errorProvider1.Clear();
                     }
                 }
                 else
                 {
                     LoadLotesPT_Ruta1(LoteMP_.IdMPSingle);
                     lblLoteNameRuta1.Text = LoteMP_.NombreComercialSingle;
+                    LoadInventarioLotesRuta1();
+                    LoadRegistroIngresosLotesRuta1();
+                    lblLoteNameRuta1_Rotulo.Visible = lblLoteNameRuta1.Visible = true;
+                    errorProvider1.Clear();
                 }
+            }
+            else
+            {
+                errorProvider1.SetError(txtLoteMPRuta1, "No se encontro ningun PT que haya utilizado este lote!");
+                lblLoteNameRuta1_Rotulo.Visible = lblLoteNameRuta1.Visible = false;
+            }
+        }
+
+
+        void LoadInventarioLotesRuta1()
+        {
+            //sp_get_kardex_by_lot_trz
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("[sp_get_kardex_by_lot_trz]", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lote", txtLoteMPRuta1.Text);
+                //cmd.Parameters.AddWithValue("@idrm", idMP_Selected);
+                dsReportesTRZ.Inventario_mp_lote_ruta1.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsReportesTRZ.Inventario_mp_lote_ruta1);
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
+        void LoadRegistroIngresosLotesRuta1()
+        {
+            //sp_get_kardex_by_lot_trz
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("[sp_get_ingresos_lotes_mp_ruta_trz1]", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lotemp", txtLoteMPRuta1.Text);
+                //cmd.Parameters.AddWithValue("@idrm", idMP_Selected);
+                dsReportesTRZ.ingresos_mp_lote_ruta1.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsReportesTRZ.ingresos_mp_lote_ruta1);
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
             }
         }
 
         private void btnHome_Ruta1_Click(object sender, EventArgs e)
         {
             this.navigationFrame1.SelectedPage = npMain;
-            this.dsReportesTRZ.pt_list_trz.Clear();
+            //this.dsReportesTRZ.pt_list_trz.Clear();
         }
 
         private void btnBorrarRuta1_Click(object sender, EventArgs e)
         {
-            txtLoteRuta1.Text = "";
-            txtLoteRuta1.Focus();
+            txtLoteMPRuta1.Text = "";
+            txtLoteMPRuta1.Focus();
+            dsReportesTRZ.pt_list_trz.Clear();
+            dsReportesTRZ.Inventario_mp_lote_ruta1.Clear();
+            dsReportesTRZ.reproceso_lote_pt_ruta1.Clear();
+            dsReportesTRZ.ingresos_mp_lote_ruta1.Clear();
+        }
+
+        private void cmdExportExcelClientes_lotes_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "Excel File (.xlsx)|*.xlsx";
+            dialog.FilterIndex = 0;
+
+            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                grDetalle.ExportToXlsx(dialog.FileName);
+        }
+
+        private void gvPT_Ruta1_RowClick(object sender, RowClickEventArgs e)
+        {
+            var gridView = (GridView)gcPT_Ruta1.FocusedView;
+            var row = (dsReportesTRZ.pt_list_trzRow)gridView.GetFocusedDataRow();
+
+            if (row.Lote_PT > 0)
+                LoadDetalleReproceso_lotePT_Ruta1(row.Lote_PT);
+        }
+
+        private void LoadDetalleReproceso_lotePT_Ruta1(int pt_lote)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("[sp_get_detalle_inv_reproces_trz_ruta1]", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lote_pt", pt_lote);
+                //cmd.Parameters.AddWithValue("@idrm", idMP_Selected);
+                dsReportesTRZ.reproceso_lote_pt_ruta1.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsReportesTRZ.reproceso_lote_pt_ruta1);
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
         }
     }
 }

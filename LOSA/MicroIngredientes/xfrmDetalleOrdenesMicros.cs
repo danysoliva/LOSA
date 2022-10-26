@@ -20,14 +20,16 @@ namespace LOSA.MicroIngredientes
     {
         int id = 0;
         string codigoOrden;
+        int IdOrder = 0;
         int LotePT;
         UserLogin UsuarioLogeado;
 
-        public xfrmDetalleOrdenesMicros(int _ID, string _CodigoOrden, int LotePt, UserLogin pUser)
+        public xfrmDetalleOrdenesMicros(int _ID, string _CodigoOrden, int LotePt, UserLogin pUser, int pIdOrder)
         {
             InitializeComponent();
             UsuarioLogeado = pUser;
             id = _ID;
+            IdOrder = pIdOrder;
             LotePT = LotePt;
             codigoOrden = _CodigoOrden;
             LoadData();
@@ -74,7 +76,7 @@ namespace LOSA.MicroIngredientes
                     dsMicros.DetalleOrdenesPesajeIndividual.Clear();
                     SqlDataAdapter da = new SqlDataAdapter("[sp_get_detalle_orden_pesaje_micros_interface_indiv_v2]", cnx);
                     da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                    da.SelectCommand.Parameters.AddWithValue("@orden_id", SqlDbType.Int).Value = id;
+                    da.SelectCommand.Parameters.AddWithValue("@orden_id", SqlDbType.Int).Value = IdOrder;
                     da.Fill(dsMicros.DetalleOrdenesPesajeIndividual);
                     cnx.Close();
 

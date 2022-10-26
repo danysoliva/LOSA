@@ -101,7 +101,7 @@ namespace LOSA.RecepcionMP
         {
             int id_salida_h =0;
             if (MessageBox.Show("Desea crear el ingreso con esta configuracion?. Debe definir los lotes que se han generado.",
-                                "Desea crear el ingreso con esta configuracion?.Debe definir los lotes que se han generado",
+                                "Confirmación",
                 MessageBoxButtons.OK, MessageBoxIcon.Question) == DialogResult.OK)
             {
                 if (dsWizard.informacionIngreso.Rows.Count ==0)
@@ -253,16 +253,22 @@ namespace LOSA.RecepcionMP
                             }
                             catch { }
 
+                            PresentacionX pres1 = new PresentacionX();
                             decimal PesoTotalTarima = 0;
+                            decimal pres_factor_actual  = 0;
                             try
                             {
-                                PesoTotalTarima = dp.ValidateNumberDecimal(row.factor) * CantUnidadesTarima;
+                                if (pres1.RecuperarRegistro(row.id_presentacion))
+                                {
+                                    PesoTotalTarima = dp.ValidateNumberDecimal(pres1.Factor) * CantUnidadesTarima;
+                                    pres_factor_actual = pres1.Factor;
+                                }
                             }
                             catch { }
 
                             cmd.Parameters.AddWithValue("@peso", PesoTotalTarima);
                             cmd.Parameters.AddWithValue("@idlotes", IdLoteInserted);
-                            cmd.Parameters.AddWithValue("@factor", row.factor);
+                            cmd.Parameters.AddWithValue("@factor", pres_factor_actual);
                             cmd.Parameters.AddWithValue("@bit_promedio", Tg_presentacion_promedio.IsOn ? 1 : 0);
                             cmd.Parameters.AddWithValue("@is_traslado_externo", Istraslado );
                             cmd.Parameters.AddWithValue("@id_salida_h", id_salida_h);
@@ -515,6 +521,12 @@ namespace LOSA.RecepcionMP
                 CajaDialogo.Error("No se puede registrar menos de una (1) tarima!");
                 return;
             }
+
+            int id_presentacion = dp.ValidateNumberInt32(gridLookUpEditPresentacion.EditValue);
+            PresentacionX pres2 = new PresentacionX();
+            if (pres2.RecuperarRegistro(id_presentacion))
+                factor = pres2.Factor;
+
             DataRow row = dsWizard.informacionIngreso.NewRow();
             row["id"] = 0;
             row["id_traslado"] = id_Traslado_a_Ingresar;
