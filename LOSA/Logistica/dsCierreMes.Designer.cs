@@ -6071,7 +6071,7 @@ namespace LOSA.Logistica {
             
             private global::System.Data.DataColumn columnCodigo;
             
-            private global::System.Data.DataColumn columnToma_Fisica;
+            private global::System.Data.DataColumn columnToma_Física_Kg;
             
             private global::System.Data.DataColumn columnBodega;
             
@@ -6184,9 +6184,9 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Toma_FisicaColumn {
+            public global::System.Data.DataColumn Toma_Física_KgColumn {
                 get {
-                    return this.columnToma_Fisica;
+                    return this.columnToma_Física_Kg;
                 }
             }
             
@@ -6243,7 +6243,7 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public LoadExcelRow AddLoadExcelRow(int id_mp, string descripcion, decimal peso, int id_bodega, decimal diferencia, decimal ExistenciaAprox, decimal seleccionado, int count_id, string Codigo, decimal Toma_Fisica, string Bodega, bool seleccion) {
+            public LoadExcelRow AddLoadExcelRow(int id_mp, string descripcion, decimal peso, int id_bodega, decimal diferencia, decimal ExistenciaAprox, decimal seleccionado, int count_id, string Codigo, decimal Toma_Física_Kg, string Bodega, bool seleccion) {
                 LoadExcelRow rowLoadExcelRow = ((LoadExcelRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_mp,
@@ -6255,7 +6255,7 @@ namespace LOSA.Logistica {
                         seleccionado,
                         count_id,
                         Codigo,
-                        Toma_Fisica,
+                        Toma_Física_Kg,
                         Bodega,
                         seleccion};
                 rowLoadExcelRow.ItemArray = columnValuesArray;
@@ -6289,7 +6289,7 @@ namespace LOSA.Logistica {
                 this.columnseleccionado = base.Columns["seleccionado"];
                 this.columncount_id = base.Columns["count_id"];
                 this.columnCodigo = base.Columns["Codigo"];
-                this.columnToma_Fisica = base.Columns["Toma Fisica"];
+                this.columnToma_Física_Kg = base.Columns["Toma Física Kg"];
                 this.columnBodega = base.Columns["Bodega"];
                 this.columnseleccion = base.Columns["seleccion"];
             }
@@ -6315,8 +6315,8 @@ namespace LOSA.Logistica {
                 base.Columns.Add(this.columncount_id);
                 this.columnCodigo = new global::System.Data.DataColumn("Codigo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCodigo);
-                this.columnToma_Fisica = new global::System.Data.DataColumn("Toma Fisica", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnToma_Fisica);
+                this.columnToma_Física_Kg = new global::System.Data.DataColumn("Toma Física Kg", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnToma_Física_Kg);
                 this.columnBodega = new global::System.Data.DataColumn("Bodega", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBodega);
                 this.columnseleccion = new global::System.Data.DataColumn("seleccion", typeof(bool), null, global::System.Data.MappingType.Element);
@@ -10308,17 +10308,17 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public decimal Toma_Fisica {
+            public decimal Toma_Física_Kg {
                 get {
                     try {
-                        return ((decimal)(this[this.tableLoadExcel.Toma_FisicaColumn]));
+                        return ((decimal)(this[this.tableLoadExcel.Toma_Física_KgColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Toma Fisica\' de la tabla \'LoadExcel\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Toma Física Kg\' de la tabla \'LoadExcel\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableLoadExcel.Toma_FisicaColumn] = value;
+                    this[this.tableLoadExcel.Toma_Física_KgColumn] = value;
                 }
             }
             
@@ -10464,14 +10464,14 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsToma_FisicaNull() {
-                return this.IsNull(this.tableLoadExcel.Toma_FisicaColumn);
+            public bool IsToma_Física_KgNull() {
+                return this.IsNull(this.tableLoadExcel.Toma_Física_KgColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetToma_FisicaNull() {
-                this[this.tableLoadExcel.Toma_FisicaColumn] = global::System.Convert.DBNull;
+            public void SetToma_Física_KgNull() {
+                this[this.tableLoadExcel.Toma_Física_KgColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

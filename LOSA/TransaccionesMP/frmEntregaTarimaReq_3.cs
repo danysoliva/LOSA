@@ -605,7 +605,7 @@ namespace LOSA.TransaccionesMP
 
                                 ExistenciaTM = dr.GetDecimal(2);
 
-                                if (ExistenciaTM <= 0)
+                                //if (ExistenciaTM <= 0)
                                 {
                                     mensaje = "Esta tarima ya fue entregada en Alimentación!" +
                                               "\nSi tiene la tarima en fisico, significa que ubico dos rotulos iguales \nen varias tarimas" +
