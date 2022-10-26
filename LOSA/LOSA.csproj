@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\aqfsvr003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>415</ApplicationRevision>
+    <ApplicationRevision>416</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -2552,6 +2552,11 @@
     <Compile Include="SplashForm.Designer.cs">
       <DependentUpon>SplashForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tools\dsTools.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsTools.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Tools\frmInputBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -4505,6 +4510,17 @@
     </None>
     <None Include="Requisiciones\dSReportes.xss">
       <DependentUpon>dSReportes.xsd</DependentUpon>
+    </None>
+    <None Include="Tools\dsTools.xsc">
+      <DependentUpon>dsTools.xsd</DependentUpon>
+    </None>
+    <None Include="Tools\dsTools.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsTools.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Tools\dsTools.xss">
+      <DependentUpon>dsTools.xsd</DependentUpon>
     </None>
     <None Include="TransaccionesMP\DataSet\dsLotesProxVencer.xsc">
       <DependentUpon>dsLotesProxVencer.xsd</DependentUpon>

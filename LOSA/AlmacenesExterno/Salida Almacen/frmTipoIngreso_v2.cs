@@ -669,11 +669,26 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
                             cmd.Parameters.AddWithValue("@fecha_produccion_materia_prima", dtFechaProduccion.EditValue);
                             cmd.Parameters.AddWithValue("@lote_materia_prima", txtLote.Text);
                             cmd.Parameters.AddWithValue("@id_presentacion", gridLookUpEditPresentacion.EditValue);
+
+                            PresentacionX pres1 = new PresentacionX();
+                            decimal PesoTotalTarima = 0;
+                            decimal pres_factor_actual = 0;
+                            try
+                            {
+                                if (pres1.RecuperarRegistro(Convert.ToInt32(gridLookUpEditPresentacion.EditValue)))
+                                {
+                                    PesoTotalTarima = dp.ValidateNumberDecimal(pres1.Factor) * dp.ValidateNumberInt32(txtUnidades.Text);
+                                    pres_factor_actual = pres1.Factor;
+                                }
+                            }
+                            catch
+                            { }
+
                             cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
                             cmd.Parameters.AddWithValue("@id_boleta", this.IdSerie);
                             cmd.Parameters.AddWithValue("@codigo_barra", barcode);
                             cmd.Parameters.AddWithValue("@cant", txtUnidades.Text);
-                            cmd.Parameters.AddWithValue("@peso", Convert.ToDecimal(txtPesoKg.Text));
+                            cmd.Parameters.AddWithValue("@peso", PesoTotalTarima/*Convert.ToDecimal(txtPesoKg.Text)*/);
                             cmd.Parameters.AddWithValue("@idlotes", idloteInserted);
                             vid_tarima = Convert.ToInt32(cmd.ExecuteScalar());
 

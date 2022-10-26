@@ -455,8 +455,8 @@ namespace LOSA.Logistica
             this.coldescripcion1.Name = "coldescripcion1";
             this.coldescripcion1.OptionsColumn.AllowEdit = false;
             this.coldescripcion1.Visible = true;
-            this.coldescripcion1.VisibleIndex = 1;
-            this.coldescripcion1.Width = 161;
+            this.coldescripcion1.VisibleIndex = 0;
+            this.coldescripcion1.Width = 125;
             // 
             // colExistenciaAprox1
             // 
@@ -472,16 +472,14 @@ namespace LOSA.Logistica
             this.collote1.Name = "collote1";
             this.collote1.OptionsColumn.AllowEdit = false;
             this.collote1.Visible = true;
-            this.collote1.VisibleIndex = 2;
-            this.collote1.Width = 114;
+            this.collote1.VisibleIndex = 1;
+            this.collote1.Width = 142;
             // 
             // colseleccionar1
             // 
             this.colseleccionar1.Caption = "Seleccionado";
             this.colseleccionar1.FieldName = "seleccionar";
             this.colseleccionar1.Name = "colseleccionar1";
-            this.colseleccionar1.Visible = true;
-            this.colseleccionar1.VisibleIndex = 0;
             this.colseleccionar1.Width = 132;
             // 
             // colutilizado1
@@ -491,8 +489,8 @@ namespace LOSA.Logistica
             this.colutilizado1.Name = "colutilizado1";
             this.colutilizado1.OptionsColumn.AllowEdit = false;
             this.colutilizado1.Visible = true;
-            this.colutilizado1.VisibleIndex = 3;
-            this.colutilizado1.Width = 119;
+            this.colutilizado1.VisibleIndex = 2;
+            this.colutilizado1.Width = 155;
             // 
             // colid_lote_alosy1
             // 
@@ -521,7 +519,8 @@ namespace LOSA.Logistica
             this.gridColumn1.ColumnEdit = this.repositorybtnDelete;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 4;
+            this.gridColumn1.VisibleIndex = 3;
+            this.gridColumn1.Width = 104;
             // 
             // repositorybtnDelete
             // 

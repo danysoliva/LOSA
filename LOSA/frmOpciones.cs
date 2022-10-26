@@ -17,6 +17,7 @@ using LOSA.RecepcionMP;
 using LOSA.RecuentoInventario;
 using LOSA.Reportes;
 using LOSA.Reproceso;
+using LOSA.Tools;
 using LOSA.TransaccionesMP;
 using LOSA.TransaccionesPT;
 using LOSA.Trazabilidad;
@@ -778,7 +779,11 @@ namespace LOSA
             try
             {
                 bool newVersion;
+                bool notificacionesSinLeer;
+
                 NotificacionesGenerales notifications = new NotificacionesGenerales();
+                xfrmPopup frm = new xfrmPopup(UsuarioLogeado);
+                //frm.MdiParent = this.MdiParent;
 
                 if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
                 {
@@ -797,8 +802,13 @@ namespace LOSA
                     notifications.Revision = ver.Revision;
                 }
 
-                newVersion = notifications.ValidarVersionBuild(notifications.Major, notifications.Minor, notifications.Build, notifications.Revision);
+                newVersion = notifications.ValidarVersionBuild(notifications.Major, notifications.Minor, notifications.Build, notifications.Revision, UsuarioLogeado.Id);
+                notificacionesSinLeer = notifications.ValidarNotificacionesSinLeer(UsuarioLogeado.Id);
 
+                if (notificacionesSinLeer)
+                {
+                    frm.Show();
+                }
             }
             catch (Exception ex)
             {

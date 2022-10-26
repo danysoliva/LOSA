@@ -81,7 +81,7 @@ namespace LOSA.RecepcionMP
             this.cmdGuardar.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdGuardar.Appearance.Options.UseFont = true;
             this.cmdGuardar.ImageOptions.Image = global::LOSA.Properties.Resources.floppy_disk32px1;
-            this.cmdGuardar.Location = new System.Drawing.Point(63, 186);
+            this.cmdGuardar.Location = new System.Drawing.Point(63, 249);
             this.cmdGuardar.Name = "cmdGuardar";
             this.cmdGuardar.Size = new System.Drawing.Size(135, 49);
             this.cmdGuardar.TabIndex = 45;
@@ -93,7 +93,7 @@ namespace LOSA.RecepcionMP
             this.cmdCancelar.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdCancelar.Appearance.Options.UseFont = true;
             this.cmdCancelar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdCancelar.ImageOptions.Image")));
-            this.cmdCancelar.Location = new System.Drawing.Point(222, 186);
+            this.cmdCancelar.Location = new System.Drawing.Point(222, 249);
             this.cmdCancelar.Name = "cmdCancelar";
             this.cmdCancelar.Size = new System.Drawing.Size(139, 49);
             this.cmdCancelar.TabIndex = 44;
@@ -116,7 +116,7 @@ namespace LOSA.RecepcionMP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(459, 259);
+            this.ClientSize = new System.Drawing.Size(459, 335);
             this.Controls.Add(this.txtLoteMP);
             this.Controls.Add(this.txtNumIngreso);
             this.Controls.Add(this.labelControl3);

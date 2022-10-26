@@ -353,7 +353,8 @@ namespace LOSA.Logistica
         {
             foreach (dsCierreMes.Recuento_mpRow item in dsCierreMes1.Recuento_mp.Rows)
             {
-                item.diferencia  = item.peso = item.ExistenciaAprox - item.toma_fisica; 
+                item.diferencia = item.ExistenciaAprox - item.toma_fisica;
+                item.peso /* Nueva Cantidad */ = item.toma_fisica;
             }
         
         }

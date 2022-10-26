@@ -1,6 +1,7 @@
 ﻿using ACS.Classes;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -17,11 +18,11 @@ namespace LOSA.Clases
         public int Revision { get; set; }
 
 
-        public bool ValidarVersionBuild(int major, int minor, int build, int revision )
+        public bool ValidarVersionBuild(int major, int minor, int build, int revision ,int id_user)
         {
             try
             {
-                string sql = "dbo.sp_get_versionBuild_notificaciones";
+                string sql = "dbo.sp_get_versionBuild_notificacionesV2";
                 DataOperations dp = new DataOperations();
 
                 using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringLOSA))
@@ -35,6 +36,7 @@ namespace LOSA.Clases
                     cmd.Parameters.Add("@minor", System.Data.SqlDbType.Int).Value = minor;
                     cmd.Parameters.Add("@build", System.Data.SqlDbType.Int).Value = build;
                     cmd.Parameters.Add("@revision", System.Data.SqlDbType.Int).Value = revision;
+                    cmd.Parameters.Add("@id_user", System.Data.SqlDbType.Int).Value = id_user;
 
                     Recuperado = (bool)cmd.ExecuteScalar();
                     cnx.Close();
@@ -46,6 +48,66 @@ namespace LOSA.Clases
             {
                 CajaDialogo.Error(ex.Message);
                 return false;
+            }
+        }
+
+        public bool ValidarNotificacionesSinLeer(int id_user)
+        {
+
+            try
+            {
+                DataOperations dp = new DataOperations();
+
+
+                using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringLOSA))
+                {
+                    cnx.Open();
+
+                    SqlCommand cmd = new SqlCommand("sp_ALOSY_getNewNotificaciones", cnx);
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@id_user", SqlDbType.Int).Value = id_user;
+
+                    Recuperado = (bool)cmd.ExecuteScalar();
+
+                    cnx.Close();
+
+                }
+
+                return Recuperado;
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+                return false;
+            }
+
+        }
+
+        public void MarcarComoLeido(int id)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+
+                using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringLOSA))
+                {
+                    cnx.Open();
+
+                    SqlCommand cmd = new SqlCommand("dbo.sp_set_notificaciones_marcar_como_leido", cnx);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+
+                    cmd.ExecuteNonQuery();
+
+                    cnx.Close();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
             }
         }
     }
