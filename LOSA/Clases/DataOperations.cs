@@ -911,9 +911,14 @@ namespace ACS.Classes
             int valor = 0;
             try
             {
-                valor = Convert.ToInt32(val);
+                valor = Convert.ToInt32(val);               
+                //valor = (int)val;
             }
-            catch { }
+            catch 
+            {
+                decimal valDecimal = Convert.ToDecimal(val);
+                valor = Decimal.ToInt32(valDecimal);
+            }
             return valor;
         }
 
