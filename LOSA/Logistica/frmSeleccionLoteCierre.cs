@@ -31,6 +31,7 @@ namespace LOSA.Logistica
         decimal diferenciaMP;
         int id_detalle_recuento;
         decimal acumulado;
+        bool IsExterno;
 
         public frmSeleccionLoteCierre(UserLogin puserLogin, DataTable pdata, int pid_detalle_recuento)
         {
@@ -269,37 +270,109 @@ namespace LOSA.Logistica
             var Row = from row in list
                       where row.seleccionar == true
                       select row;
-            foreach (var recorrido in Row)
-            {
-                DataRow dr = dsCierreMes.Aceptado_lote.NewRow();
-                dr["id_mp"] = recorrido.id_mp;
-                dr["descripcion"] = recorrido.descripcion;
-                dr["ExistenciaAprox"] = recorrido.ExistenciaAprox;
-                dr["lote"] = recorrido.lote;
-                dr["seleccionar"] = false;
-                dr["utilizado"] = recorrido.utilizado;
-                dr["id_lote_alosy"] = recorrido.id_lote_alosy;
-                dr["id_bodega"] = bodega;
-                dr["id_lote_count"] = id_count_selected;
 
-                dsCierreMes.Aceptado_lote.Rows.Add(dr);
-                DataRow drw = dsCierreMes.memory_config.NewRow();
-                drw["id_mp"] = recorrido.id_mp;
-                drw["descripcion"] = recorrido.descripcion;
-                drw["ExistenciaAprox"] = recorrido.ExistenciaAprox;
-                drw["lote"] = recorrido.lote;
-                drw["seleccionar"] = false;
-                drw["utilizado"] = recorrido.utilizado;
-                drw["id_lote_alosy"] = recorrido.id_lote_alosy;
-                drw["id_bodega"] = bodega;
-                drw["id_lote_count"] = id_count_selected;
-                dsCierreMes.memory_config.Rows.Add(drw);
-                btnDerecha.Enabled = false;
-                // +
-                btnConfirmar.Enabled = true;
+            for (int i = 0; i < grdv_mps.SelectedRowsCount; i++)
+            {
+                DataRow row2 = grdv_mps.GetDataRow(i);
+
+                //id_mp = Convert.ToInt32(row2["id_mp"]);
+                id_bodegaMP = Convert.ToInt32(row2["id_bodega"]);
             }
 
+            try
+            {
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("sp_get_tipo_ajuste", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_bodega", id_bodegaMP);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    IsExterno = Convert.ToBoolean(dr.GetValue(0));
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
 
+            if (IsExterno)
+            {
+                foreach (var recorrido in Row)
+                {
+                    DataRow dr = dsCierreMes.Aceptado_lote.NewRow();
+                    dr["id_mp"] = recorrido.id_mp;
+                    dr["descripcion"] = recorrido.descripcion;
+                    dr["ExistenciaAprox"] = recorrido.ExistenciaAprox;
+                    dr["lote"] = recorrido.lote;
+                    dr["seleccionar"] = false;
+                    dr["utilizado"] = recorrido.utilizado;
+                    dr["id_lote_alosy"] = recorrido.id_lote_alosy;
+                    dr["id_bodega"] = bodega;
+                    dr["id_lote_count"] = id_count_selected;
+                    dr["OC"] = recorrido.OC;
+                    dr["factura"] = recorrido.factura;
+                    dr["id_ingreso_lote"] = recorrido.id_ingreso_lote;
+                    dr["bodega_in"] = recorrido.bodega_in;
+                    dr["id_detalle"] = recorrido.id_detalle;
+                    dr["id_presentacion"] = recorrido.id_presentacion;
+
+                    dsCierreMes.Aceptado_lote.Rows.Add(dr);
+                    DataRow drw = dsCierreMes.memory_config.NewRow();
+                    drw["id_mp"] = recorrido.id_mp;
+                    drw["descripcion"] = recorrido.descripcion;
+                    drw["ExistenciaAprox"] = recorrido.ExistenciaAprox;
+                    drw["lote"] = recorrido.lote;
+                    drw["seleccionar"] = false;
+                    drw["utilizado"] = recorrido.utilizado;
+                    drw["id_lote_alosy"] = recorrido.id_lote_alosy;
+                    drw["id_bodega"] = bodega;
+                    drw["id_lote_count"] = id_count_selected;
+                    drw["OC"] = recorrido.OC;
+                    drw["factura"] = recorrido.factura;
+                    drw["id_ingreso_lote"] = recorrido.id_ingreso_lote;
+                    drw["bodega_in"] = recorrido.bodega_in;
+                    drw["id_detalle"] = recorrido.id_detalle;
+                    drw["id_presentacion"] = recorrido.id_presentacion;
+                    dsCierreMes.memory_config.Rows.Add(drw);
+                    btnDerecha.Enabled = false;
+                    // +
+                    btnConfirmar.Enabled = true;
+                }
+            }
+            else
+            {
+                foreach (var recorrido in Row)
+                {
+                    DataRow dr = dsCierreMes.Aceptado_lote.NewRow();
+                    dr["id_mp"] = recorrido.id_mp;
+                    dr["descripcion"] = recorrido.descripcion;
+                    dr["ExistenciaAprox"] = recorrido.ExistenciaAprox;
+                    dr["lote"] = recorrido.lote;
+                    dr["seleccionar"] = false;
+                    dr["utilizado"] = recorrido.utilizado;
+                    dr["id_lote_alosy"] = recorrido.id_lote_alosy;
+                    dr["id_bodega"] = bodega;
+                    dr["id_lote_count"] = id_count_selected;
+          
+                    dsCierreMes.Aceptado_lote.Rows.Add(dr);
+                    DataRow drw = dsCierreMes.memory_config.NewRow();
+                    drw["id_mp"] = recorrido.id_mp;
+                    drw["descripcion"] = recorrido.descripcion;
+                    drw["ExistenciaAprox"] = recorrido.ExistenciaAprox;
+                    drw["lote"] = recorrido.lote;
+                    drw["seleccionar"] = false;
+                    drw["utilizado"] = recorrido.utilizado;
+                    drw["id_lote_alosy"] = recorrido.id_lote_alosy;
+                    drw["id_bodega"] = bodega;
+                    drw["id_lote_count"] = id_count_selected;             
+                    dsCierreMes.memory_config.Rows.Add(drw);
+                    btnDerecha.Enabled = false;
+                    // +
+                    btnConfirmar.Enabled = true;
+                }
+            }
         }
 
         private void grdv_existencia_lote_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
@@ -321,6 +394,7 @@ namespace LOSA.Logistica
             }
             catch (Exception ex)
             {
+                CajaDialogo.Error(ex.Message);
             }
         }
 
@@ -396,39 +470,83 @@ namespace LOSA.Logistica
                 diferenciaMP = Convert.ToDecimal(row2["diferencia"]);//Diferencia = Existencia - Toma Fisica
 
             }
-
-            string query = @"sp_insert_kardex_general_inventario_final";
-            SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
-            conn.Open();
-            SqlCommand cmd = new SqlCommand(query, conn);
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            decimal AcumuladoUtilizado = 0;
-            decimal AcumuladoCentinela = 0;
-
+            try
+            {
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("sp_get_tipo_ajuste", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_bodega", id_bodegaMP);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    IsExterno = Convert.ToBoolean(dr.GetValue(0));
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+            dsCierreMes.Aceptado_lote.Clear();
             foreach (dsCierreMes.Aceptado_loteRow row in dsCierreMes.Aceptado_lote.Rows)
             {
-                cmd.Parameters.AddWithValue("@id_mp", IdMpSelected);
-                cmd.Parameters.AddWithValue("@id_bodega", id_bodegaMP);
-                cmd.Parameters.AddWithValue("@user_id", UsuarioLogeado.Id);
-                cmd.Parameters.AddWithValue("@existencia_anterior", existencia_anterior);
-                cmd.Parameters.AddWithValue("@existencia_nueva", existencia_nueva);
-                cmd.Parameters.AddWithValue("@diferenciaMP", diferenciaMP);
-                cmd.Parameters.AddWithValue("@id_detalle_recuento", id_detalle_recuento);
+                try
+                {
+                    if (IsExterno == true) //Ajuste en Bodega Externa
+                    {
+                        string query = @"sp_set_insert_ajuste_mp_almacen_externo_for_contabilizacion_inventario";
+                        SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                        conn.Open();
+                        SqlCommand cmd = new SqlCommand(query, conn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@peso", row.utilizado);
+                        //cmd.Parameters.AddWithValue("@unidades", );
+                        cmd.Parameters.AddWithValue("@user_creador", UsuarioLogeado.Id);
+                        cmd.Parameters.AddWithValue("@id_mp",IdMpSelected);
+                        cmd.Parameters.AddWithValue("@id_lote_externo", row.id_lote_alosy);
+                        cmd.Parameters.AddWithValue("@id_detalle", row.id_detalle);
+                        cmd.Parameters.AddWithValue("@bodega_in", row.bodega_in);
+                        cmd.Parameters.AddWithValue("@id_ingreso_lote", row.id_ingreso_lote);
+                        cmd.Parameters.AddWithValue("@id_presentacion", row.id_presentacion);
+                        cmd.Parameters.AddWithValue("@existencia_anterior", existencia_anterior);
+                        cmd.Parameters.AddWithValue("@existencia_nueva", existencia_nueva);
+                        cmd.Parameters.AddWithValue("@lote", row.lote);
+                        //cmd.ExecuteNonQuery();
+                    }
+                    else //Ajuste en Planta
+                    {
 
-                cmd.Parameters.AddWithValue("@lote",row.lote);
-                cmd.Parameters.AddWithValue("@id_lote_alosy", row.id_lote_alosy);
-                //cmd.Parameters.AddWithValue("@id_bodega", row.id_bodega);
+                        string query = @"sp_insert_kardex_general_inventario_final";
+                        SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                        conn.Open();
+                        SqlCommand cmd = new SqlCommand(query, conn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@id_mp", IdMpSelected);
+                        cmd.Parameters.AddWithValue("@id_bodega", id_bodegaMP);
+                        cmd.Parameters.AddWithValue("@user_id", UsuarioLogeado.Id);
+                        cmd.Parameters.AddWithValue("@existencia_anterior", existencia_anterior);
+                        cmd.Parameters.AddWithValue("@existencia_nueva", existencia_nueva);
+                        cmd.Parameters.AddWithValue("@diferenciaMP", diferenciaMP);
+                        cmd.Parameters.AddWithValue("@id_detalle_recuento", id_detalle_recuento);
+                        cmd.Parameters.AddWithValue("@lote", row.lote);
+                        cmd.Parameters.AddWithValue("@id_lote_alosy", row.id_lote_alosy);
+                        //cmd.Parameters.AddWithValue("@id_bodega", row.id_bodega);
 
-                cmd.Parameters.AddWithValue("@utilizado", row.utilizado); //Esto es el valor de lo que se va dar Salida/Entrada en Kardex
-                AcumuladoCentinela = row.utilizado;
-                AcumuladoUtilizado = AcumuladoUtilizado + AcumuladoCentinela;
-                cmd.ExecuteScalar();
-
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                        cmd.Parameters.AddWithValue("@utilizado", row.utilizado); 
+                        //Esto es el valor de lo que se va dar Salida/Entrada en Kardex
+                        //AcumuladoCentinela = row.utilizado;
+                        //AcumuladoUtilizado = AcumuladoUtilizado + AcumuladoCentinela;
+                        //cmd.ExecuteScalar();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    CajaDialogo.Error(ex.Message);
+                }
             }
-
+            CajaDialogo.Information("Materia Prima ajustada");
+            this.DialogResult = DialogResult.OK;
+            this.Close();
 
             //if (AcumuladoUtilizado < 0)
             //{
@@ -440,7 +558,7 @@ namespace LOSA.Logistica
             //    this.DialogResult = DialogResult.OK;
             //    this.Close();
             //}
-            
+
         }
 
         private void btnIzquierda_Click(object sender, EventArgs e)
@@ -526,7 +644,7 @@ namespace LOSA.Logistica
             try
             {
                 gridView1.DeleteRow(gridView1.FocusedRowHandle);
-                dsCierreMes.Aceptado_lote.Clear();
+                //dsCierreMes.Aceptado_lote.Clear();
             }
             catch (Exception ec)
             {

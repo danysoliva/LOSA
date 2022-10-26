@@ -223,7 +223,7 @@ namespace LOSA.RecepcionMP
                         cmd.Parameters.AddWithValue("@peso", Convert.ToDecimal(item.cantidad_entregada));
                         cmd.ExecuteNonQuery();
 
-                        //    Guardado = true;
+                            Guardado = true;
                         //}
 
                         con.Close();

@@ -373,7 +373,6 @@ namespace LOSA.RecuentoInventario
                         if (frm.ShowDialog() == DialogResult.OK)
                         {
                             tableOps.Clear();
-                            
                         }
 
                         //for (int i = 0; i < grdv_mps.SelectedRowsCount; i++)
@@ -421,11 +420,12 @@ namespace LOSA.RecuentoInventario
 
         private void grdv_mps_RowStyle(object sender, RowStyleEventArgs e)
         {
-            //GridView View = sender as GridView;
-            //if (e.RowHandle >= 0)
-            //{
-            //    //Si el valor que se agrego igual a la diferencia en 0!
-            //}
+            GridView View = sender as GridView;
+            if (e.RowHandle >= 0)
+            {
+                ////Si el valor que se agrego igual a la diferencia en 0!
+                //e.Appearance.BackColor = Color.Gray;
+            }
         }
     }
 }

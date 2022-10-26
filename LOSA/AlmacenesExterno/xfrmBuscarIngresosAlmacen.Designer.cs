@@ -49,10 +49,11 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfactura = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_presentacion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtCantIngresar = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.colid_presentacion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDocNum = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gcIngreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSalidasAlmacenesExternos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvIngreso)).BeginInit();
@@ -108,7 +109,8 @@
             this.gridColumn2,
             this.gridColumn3,
             this.colfactura,
-            this.colid_presentacion});
+            this.colid_presentacion,
+            this.colDocNum});
             this.gvIngreso.DetailHeight = 284;
             this.gvIngreso.GridControl = this.gcIngreso;
             this.gvIngreso.Name = "gvIngreso";
@@ -126,7 +128,7 @@
             this.colid.OptionsFilter.AllowFilter = false;
             this.colid.Visible = true;
             this.colid.VisibleIndex = 0;
-            this.colid.Width = 58;
+            this.colid.Width = 54;
             // 
             // colcardcode
             // 
@@ -138,7 +140,7 @@
             this.colcardcode.OptionsFilter.AllowFilter = false;
             this.colcardcode.Visible = true;
             this.colcardcode.VisibleIndex = 3;
-            this.colcardcode.Width = 95;
+            this.colcardcode.Width = 88;
             // 
             // colCardName
             // 
@@ -150,7 +152,7 @@
             this.colCardName.OptionsFilter.AllowFilter = false;
             this.colCardName.Visible = true;
             this.colCardName.VisibleIndex = 4;
-            this.colCardName.Width = 95;
+            this.colCardName.Width = 88;
             // 
             // colfecha_ingreso
             // 
@@ -162,7 +164,7 @@
             this.colfecha_ingreso.OptionsFilter.AllowFilter = false;
             this.colfecha_ingreso.Visible = true;
             this.colfecha_ingreso.VisibleIndex = 5;
-            this.colfecha_ingreso.Width = 95;
+            this.colfecha_ingreso.Width = 88;
             // 
             // colDocEntrySAP
             // 
@@ -172,8 +174,8 @@
             this.colDocEntrySAP.OptionsColumn.AllowEdit = false;
             this.colDocEntrySAP.OptionsFilter.AllowFilter = false;
             this.colDocEntrySAP.Visible = true;
-            this.colDocEntrySAP.VisibleIndex = 6;
-            this.colDocEntrySAP.Width = 95;
+            this.colDocEntrySAP.VisibleIndex = 7;
+            this.colDocEntrySAP.Width = 77;
             // 
             // colpeso
             // 
@@ -184,8 +186,8 @@
             this.colpeso.OptionsColumn.AllowEdit = false;
             this.colpeso.OptionsFilter.AllowFilter = false;
             this.colpeso.Visible = true;
-            this.colpeso.VisibleIndex = 8;
-            this.colpeso.Width = 78;
+            this.colpeso.VisibleIndex = 9;
+            this.colpeso.Width = 64;
             // 
             // colunidades
             // 
@@ -196,8 +198,8 @@
             this.colunidades.OptionsColumn.AllowEdit = false;
             this.colunidades.OptionsFilter.AllowFilter = false;
             this.colunidades.Visible = true;
-            this.colunidades.VisibleIndex = 9;
-            this.colunidades.Width = 78;
+            this.colunidades.VisibleIndex = 10;
+            this.colunidades.Width = 64;
             // 
             // colSeleccionar
             // 
@@ -207,8 +209,8 @@
             this.colSeleccionar.Name = "colSeleccionar";
             this.colSeleccionar.OptionsFilter.AllowFilter = false;
             this.colSeleccionar.Visible = true;
-            this.colSeleccionar.VisibleIndex = 11;
-            this.colSeleccionar.Width = 83;
+            this.colSeleccionar.VisibleIndex = 12;
+            this.colSeleccionar.Width = 88;
             // 
             // btnSeleccionar
             // 
@@ -230,7 +232,7 @@
             this.gridColumn1.OptionsFilter.AllowFilter = false;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 1;
-            this.gridColumn1.Width = 73;
+            this.gridColumn1.Width = 68;
             // 
             // gridColumn2
             // 
@@ -242,7 +244,7 @@
             this.gridColumn2.OptionsFilter.AllowFilter = false;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 2;
-            this.gridColumn2.Width = 119;
+            this.gridColumn2.Width = 111;
             // 
             // gridColumn3
             // 
@@ -252,8 +254,8 @@
             this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.OptionsFilter.AllowFilter = false;
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 10;
-            this.gridColumn3.Width = 82;
+            this.gridColumn3.VisibleIndex = 11;
+            this.gridColumn3.Width = 67;
             // 
             // colfactura
             // 
@@ -261,8 +263,13 @@
             this.colfactura.Name = "colfactura";
             this.colfactura.OptionsColumn.AllowEdit = false;
             this.colfactura.Visible = true;
-            this.colfactura.VisibleIndex = 7;
-            this.colfactura.Width = 150;
+            this.colfactura.VisibleIndex = 8;
+            this.colfactura.Width = 124;
+            // 
+            // colid_presentacion
+            // 
+            this.colid_presentacion.FieldName = "id_presentacion";
+            this.colid_presentacion.Name = "colid_presentacion";
             // 
             // txtCantIngresar
             // 
@@ -296,10 +303,15 @@
             this.labelControl1.TabIndex = 45;
             this.labelControl1.Text = "Seleccione la Materia Prima";
             // 
-            // colid_presentacion
+            // colDocNum
             // 
-            this.colid_presentacion.FieldName = "id_presentacion";
-            this.colid_presentacion.Name = "colid_presentacion";
+            this.colDocNum.Caption = "Orden de Compra SAP";
+            this.colDocNum.FieldName = "DocNum";
+            this.colDocNum.Name = "colDocNum";
+            this.colDocNum.OptionsColumn.AllowEdit = false;
+            this.colDocNum.Visible = true;
+            this.colDocNum.VisibleIndex = 6;
+            this.colDocNum.Width = 130;
             // 
             // xfrmBuscarIngresosAlmacen
             // 
@@ -344,5 +356,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraGrid.Columns.GridColumn colfactura;
         private DevExpress.XtraGrid.Columns.GridColumn colid_presentacion;
+        private DevExpress.XtraGrid.Columns.GridColumn colDocNum;
     }
 }

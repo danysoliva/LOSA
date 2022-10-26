@@ -97,6 +97,9 @@ namespace LOSA.RecuentoInventario
             // 
             // panelControl2
             // 
+            this.panelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControl2.Controls.Add(this.xtraTabControl1);
             this.panelControl2.Controls.Add(this.btnConfirmar);
             this.panelControl2.Controls.Add(this.cmdSelecLote);
@@ -107,7 +110,6 @@ namespace LOSA.RecuentoInventario
             this.panelControl2.Controls.Add(this.labelControl2);
             this.panelControl2.Controls.Add(this.grd_years);
             this.panelControl2.Controls.Add(this.cmdClose);
-            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl2.Location = new System.Drawing.Point(0, 0);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(1270, 668);
@@ -115,7 +117,9 @@ namespace LOSA.RecuentoInventario
             // 
             // xtraTabControl1
             // 
-            this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.xtraTabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.xtraTabControl1.Location = new System.Drawing.Point(2, 79);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPageMP;
@@ -136,9 +140,11 @@ namespace LOSA.RecuentoInventario
             // 
             // grd_mps
             // 
+            this.grd_mps.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_mps.DataMember = "Recuento_mp";
             this.grd_mps.DataSource = this.dsCierreMes1;
-            this.grd_mps.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grd_mps.Location = new System.Drawing.Point(0, 0);
             this.grd_mps.MainView = this.grdv_mps;
             this.grd_mps.Name = "grd_mps";
@@ -255,7 +261,7 @@ namespace LOSA.RecuentoInventario
             this.colExistencia.Caption = "Nueva Existencia";
             this.colExistencia.DisplayFormat.FormatString = "{0:0.##.##} Kg";
             this.colExistencia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colExistencia.FieldName = "peso";
+            this.colExistencia.FieldName = "toma_fisica";
             this.colExistencia.Name = "colExistencia";
             this.colExistencia.OptionsColumn.AllowEdit = false;
             this.colExistencia.Visible = true;
@@ -315,6 +321,7 @@ namespace LOSA.RecuentoInventario
             this.xtraTabPagePT.Appearance.Header.Options.UseFont = true;
             this.xtraTabPagePT.Controls.Add(this.grd_pt);
             this.xtraTabPagePT.Name = "xtraTabPagePT";
+            this.xtraTabPagePT.PageVisible = false;
             this.xtraTabPagePT.Size = new System.Drawing.Size(1260, 555);
             this.xtraTabPagePT.Text = "Producto Terminado";
             // 
@@ -322,7 +329,6 @@ namespace LOSA.RecuentoInventario
             // 
             this.grd_pt.DataMember = null;
             this.grd_pt.DataSource = this.dsCierreMes1;
-            this.grd_pt.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grd_pt.Location = new System.Drawing.Point(0, 0);
             this.grd_pt.MainView = this.gridView2;
             this.grd_pt.Name = "grd_pt";
@@ -394,7 +400,7 @@ namespace LOSA.RecuentoInventario
             // 
             // cmdSelecLote
             // 
-            this.cmdSelecLote.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdSelecLote.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdSelecLote.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdSelecLote.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
             this.cmdSelecLote.Appearance.Options.UseFont = true;

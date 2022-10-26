@@ -27,6 +27,7 @@
               <xs:element name="bodega" msprop:Generator_ColumnVarNameInTable="columnbodega" msprop:Generator_ColumnPropNameInRow="bodega" msprop:Generator_ColumnPropNameInTable="bodegaColumn" msprop:Generator_UserColumnName="bodega" type="xs:string" minOccurs="0" />
               <xs:element name="factura" msdata:Caption="Factura" msprop:Generator_ColumnVarNameInTable="columnfactura" msprop:Generator_ColumnPropNameInRow="factura" msprop:Generator_ColumnPropNameInTable="facturaColumn" msprop:Generator_UserColumnName="factura" type="xs:string" minOccurs="0" />
               <xs:element name="id_presentacion" msprop:Generator_ColumnVarNameInTable="columnid_presentacion" msprop:Generator_ColumnPropNameInRow="id_presentacion" msprop:Generator_ColumnPropNameInTable="id_presentacionColumn" msprop:Generator_UserColumnName="id_presentacion" type="xs:int" minOccurs="0" />
+              <xs:element name="DocNum" msprop:Generator_ColumnVarNameInTable="columnDocNum" msprop:Generator_ColumnPropNameInRow="DocNum" msprop:Generator_ColumnPropNameInTable="DocNumColumn" msprop:Generator_UserColumnName="DocNum" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -130,6 +131,7 @@
               <xs:element name="numero_transaccion" msprop:Generator_ColumnVarNameInTable="columnnumero_transaccion" msprop:Generator_ColumnPropNameInRow="numero_transaccion" msprop:Generator_ColumnPropNameInTable="numero_transaccionColumn" msprop:Generator_UserColumnName="numero_transaccion" type="xs:int" minOccurs="0" />
               <xs:element name="id_ingreso" msprop:Generator_ColumnVarNameInTable="columnid_ingreso" msprop:Generator_ColumnPropNameInRow="id_ingreso" msprop:Generator_ColumnPropNameInTable="id_ingresoColumn" msprop:Generator_UserColumnName="id_ingreso" type="xs:int" minOccurs="0" />
               <xs:element name="usuario" msprop:Generator_ColumnVarNameInTable="columnusuario" msprop:Generator_ColumnPropNameInRow="usuario" msprop:Generator_ColumnPropNameInTable="usuarioColumn" msprop:Generator_UserColumnName="usuario" type="xs:string" minOccurs="0" />
+              <xs:element name="DocNum" msprop:Generator_ColumnVarNameInTable="columnDocNum" msprop:Generator_ColumnPropNameInRow="DocNum" msprop:Generator_ColumnPropNameInTable="DocNumColumn" msprop:Generator_UserColumnName="DocNum" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

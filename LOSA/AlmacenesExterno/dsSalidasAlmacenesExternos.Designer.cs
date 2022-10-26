@@ -583,6 +583,8 @@ namespace LOSA.AlmacenesExterno {
             
             private global::System.Data.DataColumn columnid_presentacion;
             
+            private global::System.Data.DataColumn columnDocNum;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Ingresos_almacenes_externos_existentesDataTable() {
@@ -714,6 +716,14 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DocNumColumn {
+                get {
+                    return this.columnDocNum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -749,7 +759,7 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Ingresos_almacenes_externos_existentesRow AddIngresos_almacenes_externos_existentesRow(int id, string cardcode, string CardName, string fecha_ingreso, int DocEntrySAP, decimal peso, decimal unidades, string itemcode, string itemName, string bodega, string factura, int id_presentacion) {
+            public Ingresos_almacenes_externos_existentesRow AddIngresos_almacenes_externos_existentesRow(int id, string cardcode, string CardName, string fecha_ingreso, int DocEntrySAP, decimal peso, decimal unidades, string itemcode, string itemName, string bodega, string factura, int id_presentacion, string DocNum) {
                 Ingresos_almacenes_externos_existentesRow rowIngresos_almacenes_externos_existentesRow = ((Ingresos_almacenes_externos_existentesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -763,7 +773,8 @@ namespace LOSA.AlmacenesExterno {
                         itemName,
                         bodega,
                         factura,
-                        id_presentacion};
+                        id_presentacion,
+                        DocNum};
                 rowIngresos_almacenes_externos_existentesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowIngresos_almacenes_externos_existentesRow);
                 return rowIngresos_almacenes_externos_existentesRow;
@@ -798,6 +809,7 @@ namespace LOSA.AlmacenesExterno {
                 this.columnbodega = base.Columns["bodega"];
                 this.columnfactura = base.Columns["factura"];
                 this.columnid_presentacion = base.Columns["id_presentacion"];
+                this.columnDocNum = base.Columns["DocNum"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -827,6 +839,8 @@ namespace LOSA.AlmacenesExterno {
                 base.Columns.Add(this.columnfactura);
                 this.columnid_presentacion = new global::System.Data.DataColumn("id_presentacion", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_presentacion);
+                this.columnDocNum = new global::System.Data.DataColumn("DocNum", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDocNum);
                 this.columnfactura.Caption = "Factura";
             }
             
@@ -2951,6 +2965,8 @@ namespace LOSA.AlmacenesExterno {
             
             private global::System.Data.DataColumn columnusuario;
             
+            private global::System.Data.DataColumn columnDocNum;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Salida_Almacen_HeaderDataTable() {
@@ -3066,6 +3082,14 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DocNumColumn {
+                get {
+                    return this.columnDocNum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3101,7 +3125,7 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Salida_Almacen_HeaderRow AddSalida_Almacen_HeaderRow(int id, string bodega_in, string bodega_out, System.DateTime fecha, bool enable, int DocEntry, string user_creador, int numero_transaccion, int id_ingreso, string usuario) {
+            public Salida_Almacen_HeaderRow AddSalida_Almacen_HeaderRow(int id, string bodega_in, string bodega_out, System.DateTime fecha, bool enable, int DocEntry, string user_creador, int numero_transaccion, int id_ingreso, string usuario, string DocNum) {
                 Salida_Almacen_HeaderRow rowSalida_Almacen_HeaderRow = ((Salida_Almacen_HeaderRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -3113,7 +3137,8 @@ namespace LOSA.AlmacenesExterno {
                         user_creador,
                         numero_transaccion,
                         id_ingreso,
-                        usuario};
+                        usuario,
+                        DocNum};
                 rowSalida_Almacen_HeaderRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSalida_Almacen_HeaderRow);
                 return rowSalida_Almacen_HeaderRow;
@@ -3146,6 +3171,7 @@ namespace LOSA.AlmacenesExterno {
                 this.columnnumero_transaccion = base.Columns["numero_transaccion"];
                 this.columnid_ingreso = base.Columns["id_ingreso"];
                 this.columnusuario = base.Columns["usuario"];
+                this.columnDocNum = base.Columns["DocNum"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3171,6 +3197,8 @@ namespace LOSA.AlmacenesExterno {
                 base.Columns.Add(this.columnid_ingreso);
                 this.columnusuario = new global::System.Data.DataColumn("usuario", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnusuario);
+                this.columnDocNum = new global::System.Data.DataColumn("DocNum", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDocNum);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4280,6 +4308,23 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DocNum {
+                get {
+                    try {
+                        return ((string)(this[this.tableIngresos_almacenes_externos_existentes.DocNumColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DocNum\' de la tabla \'Ingresos_almacenes_externos_existent" +
+                                "es\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIngresos_almacenes_externos_existentes.DocNumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableIngresos_almacenes_externos_existentes.idColumn);
             }
@@ -4420,6 +4465,18 @@ namespace LOSA.AlmacenesExterno {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setid_presentacionNull() {
                 this[this.tableIngresos_almacenes_externos_existentes.id_presentacionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDocNumNull() {
+                return this.IsNull(this.tableIngresos_almacenes_externos_existentes.DocNumColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDocNumNull() {
+                this[this.tableIngresos_almacenes_externos_existentes.DocNumColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -6295,6 +6352,22 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DocNum {
+                get {
+                    try {
+                        return ((string)(this[this.tableSalida_Almacen_Header.DocNumColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DocNum\' de la tabla \'Salida_Almacen_Header\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSalida_Almacen_Header.DocNumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableSalida_Almacen_Header.idColumn);
             }
@@ -6411,6 +6484,18 @@ namespace LOSA.AlmacenesExterno {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetusuarioNull() {
                 this[this.tableSalida_Almacen_Header.usuarioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDocNumNull() {
+                return this.IsNull(this.tableSalida_Almacen_Header.DocNumColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDocNumNull() {
+                this[this.tableSalida_Almacen_Header.DocNumColumn] = global::System.Convert.DBNull;
             }
         }
         
