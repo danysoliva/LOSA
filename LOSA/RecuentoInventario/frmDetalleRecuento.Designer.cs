@@ -35,26 +35,10 @@ namespace LOSA.RecuentoInventario
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageMP = new DevExpress.XtraTab.XtraTabPage();
             this.grd_mps = new DevExpress.XtraGrid.GridControl();
-            this.dsCierreMes1 = new LOSA.Logistica.dsCierreMes();
-            this.grdv_mps = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colMP = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.id_mp = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.id_bodega = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.grd_bodega = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.bodegasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colExistencia = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colExistenciaAnterior = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coldiferencia = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSeleccionado = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcode_sap = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.count_id = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.xtraTabPagePT = new DevExpress.XtraTab.XtraTabPage();
             this.grd_pt = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.repositoryItemGridLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.btnConfirmar = new DevExpress.XtraEditors.SimpleButton();
             this.cmdSelecLote = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -71,28 +55,58 @@ namespace LOSA.RecuentoInventario
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colejercicio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdClose = new DevExpress.XtraEditors.SimpleButton();
+            this.dsCierreMes1 = new LOSA.Logistica.dsCierreMes();
+            this.grdv_mps = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMP = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.id_mp = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.id_bodega = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grd_bodega = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.bodegasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colExistencia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colExistenciaAnterior = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldiferencia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSeleccionado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcode_sap = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.count_id = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.repositoryItemGridLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPageMP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_mps)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsCierreMes1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdv_mps)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grd_bodega)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bodegasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             this.xtraTabPagePT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_pt)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_meses_disponibles.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mesesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_years.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yearsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsCierreMes1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_mps)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_bodega)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bodegasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl2
@@ -140,20 +154,275 @@ namespace LOSA.RecuentoInventario
             // 
             // grd_mps
             // 
-            //this.grd_mps.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            //| System.Windows.Forms.AnchorStyles.Left) 
-            //| System.Windows.Forms.AnchorStyles.Right)));
-            //this.grd_mps.DataMember = "Recuento_mp";
-            //this.grd_mps.DataSource = this.dsCierreMes1;
-            //this.grd_mps.Location = new System.Drawing.Point(0, 0);
-            //this.grd_mps.MainView = this.grdv_mps;
-            //this.grd_mps.Name = "grd_mps";
-            //this.grd_mps.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            //this.grd_bodega});
-            //this.grd_mps.Size = new System.Drawing.Size(1260, 555);
-            //this.grd_mps.TabIndex = 0;
-            //this.grd_mps.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            //this.grdv_mps});
+            this.grd_mps.DataMember = "Recuento_mp";
+            this.grd_mps.DataSource = this.dsCierreMes1;
+            this.grd_mps.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grd_mps.Location = new System.Drawing.Point(0, 0);
+            this.grd_mps.MainView = this.gridView3;
+            this.grd_mps.Name = "grd_mps";
+            this.grd_mps.Size = new System.Drawing.Size(1260, 555);
+            this.grd_mps.TabIndex = 0;
+            this.grd_mps.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView3,
+            this.grdv_mps});
+            // 
+            // gridView3
+            // 
+            this.gridView3.Appearance.Empty.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView3.Appearance.Empty.Options.UseFont = true;
+            this.gridView3.Appearance.FilterPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView3.Appearance.FilterPanel.Options.UseFont = true;
+            this.gridView3.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView3.Appearance.FocusedRow.Options.UseFont = true;
+            this.gridView3.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView3.Appearance.FooterPanel.Options.UseFont = true;
+            this.gridView3.Appearance.GroupFooter.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView3.Appearance.GroupFooter.Options.UseFont = true;
+            this.gridView3.Appearance.GroupPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView3.Appearance.GroupPanel.Options.UseFont = true;
+            this.gridView3.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.gridView3.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView3.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView3.Appearance.Preview.Options.UseFont = true;
+            this.gridView3.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView3.Appearance.Row.Options.UseFont = true;
+            this.gridView3.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView3.Appearance.TopNewRow.Options.UseFont = true;
+            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn5,
+            this.gridColumn6,
+            this.gridColumn7,
+            this.gridColumn8,
+            this.gridColumn9,
+            this.gridColumn10});
+            this.gridView3.GridControl = this.grd_mps;
+            this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsView.ShowAutoFilterRow = true;
+            this.gridView3.OptionsView.ShowGroupPanel = false;
+            // 
+            // xtraTabPagePT
+            // 
+            this.xtraTabPagePT.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.xtraTabPagePT.Appearance.Header.Options.UseFont = true;
+            this.xtraTabPagePT.Controls.Add(this.grd_pt);
+            this.xtraTabPagePT.Name = "xtraTabPagePT";
+            this.xtraTabPagePT.PageVisible = false;
+            this.xtraTabPagePT.Size = new System.Drawing.Size(1260, 555);
+            this.xtraTabPagePT.Text = "Producto Terminado";
+            // 
+            // grd_pt
+            // 
+            this.grd_pt.Location = new System.Drawing.Point(0, 0);
+            this.grd_pt.MainView = this.gridView5;
+            this.grd_pt.Name = "grd_pt";
+            this.grd_pt.Size = new System.Drawing.Size(400, 200);
+            this.grd_pt.TabIndex = 0;
+            this.grd_pt.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView5,
+            this.gridView2});
+            // 
+            // gridView5
+            // 
+            this.gridView5.GridControl = this.grd_pt;
+            this.gridView5.Name = "gridView5";
+            // 
+            // btnConfirmar
+            // 
+            this.btnConfirmar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnConfirmar.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmar.Appearance.Options.UseFont = true;
+            this.btnConfirmar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirmar.ImageOptions.Image")));
+            this.btnConfirmar.Location = new System.Drawing.Point(773, 12);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(159, 50);
+            this.btnConfirmar.TabIndex = 6;
+            this.btnConfirmar.Text = "Guardar Recuento";
+            this.btnConfirmar.Visible = false;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            // 
+            // cmdSelecLote
+            // 
+            this.cmdSelecLote.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdSelecLote.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdSelecLote.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.cmdSelecLote.Appearance.Options.UseFont = true;
+            this.cmdSelecLote.Appearance.Options.UseForeColor = true;
+            this.cmdSelecLote.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdSelecLote.ImageOptions.Image")));
+            this.cmdSelecLote.Location = new System.Drawing.Point(950, 12);
+            this.cmdSelecLote.Name = "cmdSelecLote";
+            this.cmdSelecLote.Size = new System.Drawing.Size(183, 50);
+            this.cmdSelecLote.TabIndex = 15;
+            this.cmdSelecLote.Text = "Seleccionar Lotes";
+            this.cmdSelecLote.Visible = false;
+            this.cmdSelecLote.Click += new System.EventHandler(this.cmdSelecLote_Click);
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(411, 26);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(74, 17);
+            this.labelControl1.TabIndex = 13;
+            this.labelControl1.Text = "Comentario:";
+            // 
+            // txtComentario
+            // 
+            this.txtComentario.Location = new System.Drawing.Point(491, 23);
+            this.txtComentario.Multiline = true;
+            this.txtComentario.Name = "txtComentario";
+            this.txtComentario.Size = new System.Drawing.Size(261, 47);
+            this.txtComentario.TabIndex = 12;
+            // 
+            // grd_meses_disponibles
+            // 
+            this.grd_meses_disponibles.EditValue = "";
+            this.grd_meses_disponibles.Enabled = false;
+            this.grd_meses_disponibles.Location = new System.Drawing.Point(218, 23);
+            this.grd_meses_disponibles.Name = "grd_meses_disponibles";
+            this.grd_meses_disponibles.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.grd_meses_disponibles.Properties.Appearance.Options.UseFont = true;
+            this.grd_meses_disponibles.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.grd_meses_disponibles.Properties.DataSource = this.mesesBindingSource;
+            this.grd_meses_disponibles.Properties.DisplayMember = "mes";
+            this.grd_meses_disponibles.Properties.PopupView = this.gridView1;
+            this.grd_meses_disponibles.Properties.ValueMember = "mes_numero";
+            this.grd_meses_disponibles.Size = new System.Drawing.Size(157, 24);
+            this.grd_meses_disponibles.TabIndex = 11;
+            // 
+            // gridView1
+            // 
+            this.gridView1.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView1.Appearance.ColumnFilterButton.Options.UseFont = true;
+            this.gridView1.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.FocusedRow.Options.UseFont = true;
+            this.gridView1.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView1.Appearance.FooterPanel.Options.UseFont = true;
+            this.gridView1.Appearance.GroupPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView1.Appearance.GroupPanel.Options.UseFont = true;
+            this.gridView1.Appearance.GroupRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView1.Appearance.GroupRow.Options.UseFont = true;
+            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView1.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView1.Appearance.Preview.Options.UseFont = true;
+            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView1.Appearance.Row.Options.UseFont = true;
+            this.gridView1.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView1.Appearance.TopNewRow.Options.UseFont = true;
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colmes_numero,
+            this.colmes});
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // colmes_numero
+            // 
+            this.colmes_numero.FieldName = "mes_numero";
+            this.colmes_numero.Name = "colmes_numero";
+            // 
+            // colmes
+            // 
+            this.colmes.Caption = "Meses Disponibles";
+            this.colmes.FieldName = "mes";
+            this.colmes.Name = "colmes";
+            this.colmes.Visible = true;
+            this.colmes.VisibleIndex = 0;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Location = new System.Drawing.Point(17, 26);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(28, 17);
+            this.labelControl3.TabIndex = 10;
+            this.labelControl3.Text = "Año:";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(184, 26);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(28, 17);
+            this.labelControl2.TabIndex = 8;
+            this.labelControl2.Text = "Mes:";
+            // 
+            // grd_years
+            // 
+            this.grd_years.EditValue = "";
+            this.grd_years.Enabled = false;
+            this.grd_years.Location = new System.Drawing.Point(51, 23);
+            this.grd_years.Name = "grd_years";
+            this.grd_years.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grd_years.Properties.Appearance.Options.UseFont = true;
+            this.grd_years.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.grd_years.Properties.DataSource = this.yearsBindingSource;
+            this.grd_years.Properties.DisplayMember = "ejercicio";
+            this.grd_years.Properties.PopupView = this.gridLookUpEdit1View;
+            this.grd_years.Properties.ValueMember = "ejercicio";
+            this.grd_years.Size = new System.Drawing.Size(112, 24);
+            this.grd_years.TabIndex = 9;
+            // 
+            // gridLookUpEdit1View
+            // 
+            this.gridLookUpEdit1View.Appearance.FilterPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridLookUpEdit1View.Appearance.FilterPanel.Options.UseFont = true;
+            this.gridLookUpEdit1View.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridLookUpEdit1View.Appearance.FocusedRow.Options.UseFont = true;
+            this.gridLookUpEdit1View.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridLookUpEdit1View.Appearance.FooterPanel.Options.UseFont = true;
+            this.gridLookUpEdit1View.Appearance.GroupFooter.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridLookUpEdit1View.Appearance.GroupFooter.Options.UseFont = true;
+            this.gridLookUpEdit1View.Appearance.GroupPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridLookUpEdit1View.Appearance.GroupPanel.Options.UseFont = true;
+            this.gridLookUpEdit1View.Appearance.GroupRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridLookUpEdit1View.Appearance.GroupRow.Options.UseFont = true;
+            this.gridLookUpEdit1View.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridLookUpEdit1View.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridLookUpEdit1View.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridLookUpEdit1View.Appearance.Preview.Options.UseFont = true;
+            this.gridLookUpEdit1View.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridLookUpEdit1View.Appearance.Row.Options.UseFont = true;
+            this.gridLookUpEdit1View.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridLookUpEdit1View.Appearance.TopNewRow.Options.UseFont = true;
+            this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colejercicio});
+            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
+            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit1View.OptionsView.ShowAutoFilterRow = true;
+            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // colejercicio
+            // 
+            this.colejercicio.Caption = "Ejercicio";
+            this.colejercicio.FieldName = "ejercicio";
+            this.colejercicio.Name = "colejercicio";
+            this.colejercicio.Visible = true;
+            this.colejercicio.VisibleIndex = 0;
+            // 
+            // cmdClose
+            // 
+            this.cmdClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdClose.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdClose.Appearance.Options.UseFont = true;
+            this.cmdClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdClose.ImageOptions.Image")));
+            this.cmdClose.Location = new System.Drawing.Point(1151, 13);
+            this.cmdClose.Name = "cmdClose";
+            this.cmdClose.Size = new System.Drawing.Size(97, 50);
+            this.cmdClose.TabIndex = 5;
+            this.cmdClose.Text = "Cancelar";
+            this.cmdClose.Click += new System.EventHandler(this.cmdClose_Click);
             // 
             // dsCierreMes1
             // 
@@ -238,11 +507,6 @@ namespace LOSA.RecuentoInventario
             this.grd_bodega.PopupView = this.repositoryItemGridLookUpEdit1View;
             this.grd_bodega.ValueMember = "id";
             // 
-            // bodegasBindingSource
-            // 
-            //this.bodegasBindingSource.DataMember = "bodegas";
-            //this.bodegasBindingSource.DataSource = this.dsCierreMes1;
-            //// 
             // repositoryItemGridLookUpEdit1View
             // 
             this.repositoryItemGridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
@@ -315,30 +579,6 @@ namespace LOSA.RecuentoInventario
             this.count_id.Name = "count_id";
             this.count_id.OptionsColumn.AllowEdit = false;
             // 
-            // xtraTabPagePT
-            // 
-            this.xtraTabPagePT.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.xtraTabPagePT.Appearance.Header.Options.UseFont = true;
-            this.xtraTabPagePT.Controls.Add(this.grd_pt);
-            this.xtraTabPagePT.Name = "xtraTabPagePT";
-            this.xtraTabPagePT.PageVisible = false;
-            this.xtraTabPagePT.Size = new System.Drawing.Size(1260, 555);
-            this.xtraTabPagePT.Text = "Producto Terminado";
-            // 
-            // grd_pt
-            //// 
-            //this.grd_pt.DataMember = null;
-            //this.grd_pt.DataSource = this.dsCierreMes1;
-            //this.grd_pt.Location = new System.Drawing.Point(0, 0);
-            //this.grd_pt.MainView = this.gridView2;
-            //this.grd_pt.Name = "grd_pt";
-            //this.grd_pt.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            //this.repositoryItemGridLookUpEdit1});
-            //this.grd_pt.Size = new System.Drawing.Size(1260, 555);
-            //this.grd_pt.TabIndex = 1;
-            //this.grd_pt.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            //this.gridView2});
-            // 
             // gridView2
             // 
             this.gridView2.Appearance.Empty.Font = new System.Drawing.Font("Segoe UI", 9.75F);
@@ -384,209 +624,95 @@ namespace LOSA.RecuentoInventario
             this.gridView4.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView4.OptionsView.ShowGroupPanel = false;
             // 
-            // btnConfirmar
+            // gridColumn1
             // 
-            this.btnConfirmar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnConfirmar.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmar.Appearance.Options.UseFont = true;
-            this.btnConfirmar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirmar.ImageOptions.Image")));
-            this.btnConfirmar.Location = new System.Drawing.Point(773, 12);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(159, 50);
-            this.btnConfirmar.TabIndex = 6;
-            this.btnConfirmar.Text = "Guardar Recuento";
-            this.btnConfirmar.Visible = false;
-            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            this.gridColumn1.Caption = "Materia Prima";
+            this.gridColumn1.FieldName = "descripcion";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 1;
             // 
-            // cmdSelecLote
+            // gridColumn2
             // 
-            this.cmdSelecLote.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmdSelecLote.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdSelecLote.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
-            this.cmdSelecLote.Appearance.Options.UseFont = true;
-            this.cmdSelecLote.Appearance.Options.UseForeColor = true;
-            this.cmdSelecLote.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdSelecLote.ImageOptions.Image")));
-            this.cmdSelecLote.Location = new System.Drawing.Point(950, 12);
-            this.cmdSelecLote.Name = "cmdSelecLote";
-            this.cmdSelecLote.Size = new System.Drawing.Size(183, 50);
-            this.cmdSelecLote.TabIndex = 15;
-            this.cmdSelecLote.Text = "Seleccionar Lotes";
-            this.cmdSelecLote.Visible = false;
-            this.cmdSelecLote.Click += new System.EventHandler(this.cmdSelecLote_Click);
+            this.gridColumn2.Caption = "idmp";
+            this.gridColumn2.FieldName = "id_mp";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
             // 
-            // labelControl1
+            // gridColumn3
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(411, 26);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(74, 17);
-            this.labelControl1.TabIndex = 13;
-            this.labelControl1.Text = "Comentario:";
+            this.gridColumn3.Caption = "Bodega";
+            this.gridColumn3.FieldName = "id_bodega";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.AllowEdit = false;
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
             // 
-            // txtComentario
+            // gridColumn4
             // 
-            this.txtComentario.Location = new System.Drawing.Point(491, 23);
-            this.txtComentario.Multiline = true;
-            this.txtComentario.Name = "txtComentario";
-            this.txtComentario.Size = new System.Drawing.Size(261, 47);
-            this.txtComentario.TabIndex = 12;
+            this.gridColumn4.Caption = "Bodega Cod";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.OptionsColumn.AllowEdit = false;
             // 
-            // grd_meses_disponibles
+            // gridColumn5
             // 
-            this.grd_meses_disponibles.EditValue = "";
-            this.grd_meses_disponibles.Enabled = false;
-            this.grd_meses_disponibles.Location = new System.Drawing.Point(218, 23);
-            this.grd_meses_disponibles.Name = "grd_meses_disponibles";
-            this.grd_meses_disponibles.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.grd_meses_disponibles.Properties.Appearance.Options.UseFont = true;
-            this.grd_meses_disponibles.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.grd_meses_disponibles.Properties.DataSource = this.mesesBindingSource;
-            this.grd_meses_disponibles.Properties.DisplayMember = "mes";
-            this.grd_meses_disponibles.Properties.PopupView = this.gridView1;
-            this.grd_meses_disponibles.Properties.ValueMember = "mes_numero";
-            this.grd_meses_disponibles.Size = new System.Drawing.Size(157, 24);
-            this.grd_meses_disponibles.TabIndex = 11;
+            this.gridColumn5.Caption = "Nueva Existencia";
+            this.gridColumn5.DisplayFormat.FormatString = "{0:0.##.##} Kg";
+            this.gridColumn5.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn5.FieldName = "toma_fisica";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.OptionsColumn.AllowEdit = false;
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 4;
             // 
-            // mesesBindingSource
+            // gridColumn6
             // 
-            //this.mesesBindingSource.DataMember = "meses";
-            //this.mesesBindingSource.DataSource = this.dsCierreMes1;
-            //// 
-            // gridView1
+            this.gridColumn6.Caption = "Existencia Anterior";
+            this.gridColumn6.DisplayFormat.FormatString = "{0:0.##.##} Kg";
+            this.gridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn6.FieldName = "ExistenciaAprox";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.OptionsColumn.AllowEdit = false;
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 3;
             // 
-            this.gridView1.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.gridView1.Appearance.ColumnFilterButton.Options.UseFont = true;
-            this.gridView1.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridView1.Appearance.FocusedRow.Options.UseFont = true;
-            this.gridView1.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.gridView1.Appearance.FooterPanel.Options.UseFont = true;
-            this.gridView1.Appearance.GroupPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.gridView1.Appearance.GroupPanel.Options.UseFont = true;
-            this.gridView1.Appearance.GroupRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.gridView1.Appearance.GroupRow.Options.UseFont = true;
-            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gridView1.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.gridView1.Appearance.Preview.Options.UseFont = true;
-            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.gridView1.Appearance.Row.Options.UseFont = true;
-            this.gridView1.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.gridView1.Appearance.TopNewRow.Options.UseFont = true;
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colmes_numero,
-            this.colmes});
-            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // gridColumn7
             // 
-            // colmes_numero
+            this.gridColumn7.Caption = "Diferencia";
+            this.gridColumn7.DisplayFormat.FormatString = "{0:0.##.##} Kg";
+            this.gridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn7.FieldName = "diferencia";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.OptionsColumn.AllowEdit = false;
+            this.gridColumn7.UnboundExpression = "[peso] - [seleccionado]";
+            this.gridColumn7.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 5;
             // 
-            this.colmes_numero.FieldName = "mes_numero";
-            this.colmes_numero.Name = "colmes_numero";
+            // gridColumn8
             // 
-            // colmes
+            this.gridColumn8.Caption = "gridColumn1";
+            this.gridColumn8.DisplayFormat.FormatString = "{0:0.##.##} Kg";
+            this.gridColumn8.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn8.FieldName = "seleccionado";
+            this.gridColumn8.Name = "gridColumn8";
             // 
-            this.colmes.Caption = "Meses Disponibles";
-            this.colmes.FieldName = "mes";
-            this.colmes.Name = "colmes";
-            this.colmes.Visible = true;
-            this.colmes.VisibleIndex = 0;
+            // gridColumn9
             // 
-            // labelControl3
+            this.gridColumn9.Caption = "Cod SAP";
+            this.gridColumn9.FieldName = "code_sap";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.OptionsColumn.AllowEdit = false;
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 0;
             // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(17, 26);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(28, 17);
-            this.labelControl3.TabIndex = 10;
-            this.labelControl3.Text = "Año:";
+            // gridColumn10
             // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(184, 26);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(28, 17);
-            this.labelControl2.TabIndex = 8;
-            this.labelControl2.Text = "Mes:";
-            // 
-            // grd_years
-            // 
-            this.grd_years.EditValue = "";
-            this.grd_years.Enabled = false;
-            this.grd_years.Location = new System.Drawing.Point(51, 23);
-            this.grd_years.Name = "grd_years";
-            this.grd_years.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grd_years.Properties.Appearance.Options.UseFont = true;
-            this.grd_years.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.grd_years.Properties.DataSource = this.yearsBindingSource;
-            this.grd_years.Properties.DisplayMember = "ejercicio";
-            this.grd_years.Properties.PopupView = this.gridLookUpEdit1View;
-            this.grd_years.Properties.ValueMember = "ejercicio";
-            this.grd_years.Size = new System.Drawing.Size(112, 24);
-            this.grd_years.TabIndex = 9;
-            // 
-            // yearsBindingSource
-            // 
-            //this.yearsBindingSource.DataMember = "years";
-            //this.yearsBindingSource.DataSource = this.dsCierreMes1;
-            // 
-            // gridLookUpEdit1View
-            // 
-            this.gridLookUpEdit1View.Appearance.FilterPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.gridLookUpEdit1View.Appearance.FilterPanel.Options.UseFont = true;
-            this.gridLookUpEdit1View.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.gridLookUpEdit1View.Appearance.FocusedRow.Options.UseFont = true;
-            this.gridLookUpEdit1View.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.gridLookUpEdit1View.Appearance.FooterPanel.Options.UseFont = true;
-            this.gridLookUpEdit1View.Appearance.GroupFooter.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.gridLookUpEdit1View.Appearance.GroupFooter.Options.UseFont = true;
-            this.gridLookUpEdit1View.Appearance.GroupPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.gridLookUpEdit1View.Appearance.GroupPanel.Options.UseFont = true;
-            this.gridLookUpEdit1View.Appearance.GroupRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.gridLookUpEdit1View.Appearance.GroupRow.Options.UseFont = true;
-            this.gridLookUpEdit1View.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridLookUpEdit1View.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gridLookUpEdit1View.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.gridLookUpEdit1View.Appearance.Preview.Options.UseFont = true;
-            this.gridLookUpEdit1View.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.gridLookUpEdit1View.Appearance.Row.Options.UseFont = true;
-            this.gridLookUpEdit1View.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.gridLookUpEdit1View.Appearance.TopNewRow.Options.UseFont = true;
-            this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colejercicio});
-            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
-            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridLookUpEdit1View.OptionsView.ShowAutoFilterRow = true;
-            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
-            // colejercicio
-            // 
-            this.colejercicio.Caption = "Ejercicio";
-            this.colejercicio.FieldName = "ejercicio";
-            this.colejercicio.Name = "colejercicio";
-            this.colejercicio.Visible = true;
-            this.colejercicio.VisibleIndex = 0;
-            // 
-            // cmdClose
-            // 
-            this.cmdClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmdClose.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdClose.Appearance.Options.UseFont = true;
-            this.cmdClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdClose.ImageOptions.Image")));
-            this.cmdClose.Location = new System.Drawing.Point(1151, 13);
-            this.cmdClose.Name = "cmdClose";
-            this.cmdClose.Size = new System.Drawing.Size(97, 50);
-            this.cmdClose.TabIndex = 5;
-            this.cmdClose.Text = "Cancelar";
-            this.cmdClose.Click += new System.EventHandler(this.cmdClose_Click);
+            this.gridColumn10.Caption = "count_id";
+            this.gridColumn10.FieldName = "count_id";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.OptionsColumn.AllowEdit = false;
             // 
             // frmDetalleRecuento
             // 
@@ -602,22 +728,24 @@ namespace LOSA.RecuentoInventario
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPageMP.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grd_mps)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsCierreMes1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdv_mps)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grd_bodega)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bodegasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             this.xtraTabPagePT.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grd_pt)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_meses_disponibles.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mesesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_years.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.yearsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsCierreMes1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_mps)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_bodega)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bodegasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -664,5 +792,17 @@ namespace LOSA.RecuentoInventario
         private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEdit1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
         private DevExpress.XtraGrid.Columns.GridColumn colcode_sap;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView5;
     }
 }
