@@ -140,26 +140,36 @@ namespace LOSA.TransaccionesMP
             {
                 if (!string.IsNullOrEmpty(txtRequisicion.Text))
                 {
-                    if (RequisicionActual.RecuperarRegistroFromBarcode(txtRequisicion.Text.Trim()))
+                    if (RequisicionActual.RecuperarRegistroFromBarcodeClass(txtRequisicion.Text.Trim()))
                     {
-                        //pictureBoxIndicadorOk.Visible = true;
-                        lblRequisicionEncontrada.Text = RequisicionActual.IdRequisicion.ToString();
-                        lblRequisicionEncontrada.BackColor = Color.FromArgb(0, 204, 204);
-                        load_tarimas_scan_v2();
-                        //load_bines_disponiblesByReq(RequisicionActual.IdRequisicion);
-                        txtTarima.Focus();
-
+                        if (RequisicionActual.Bit_finalizar)
+                        {
+                            Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, "Esta Requisicion está cerrada!");
+                            if (frm.ShowDialog() == DialogResult.Cancel)
+                            {
+                                lblRequisicionEncontrada.BackColor = Color.Transparent;
+                                lblRequisicionEncontrada.ResetText();
+                                txtRequisicion.Focus();
+                            }
+                        }
+                        else
+                        {
+                            lblRequisicionEncontrada.Text = RequisicionActual.IdRequisicion1.ToString() + 
+                                                            "    Estado: " + RequisicionActual.Descripcion_estado;
+                            lblRequisicionEncontrada.BackColor = Color.FromArgb(0, 204, 204);
+                            load_tarimas_scan_v2();
+                            txtTarima.Focus();
+                        }
                     }
                     else
                     {
-                        Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, "No se encontro la requisa");
+                        Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, "No se encontró la requisa");
                         if (frm.ShowDialog() == DialogResult.Cancel)
                         {
                             lblRequisicionEncontrada.BackColor = Color.Transparent;
                             lblRequisicionEncontrada.ResetText();
                             txtRequisicion.Focus();
                         }
-                        
                     }
                 }
                 else

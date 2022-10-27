@@ -35,6 +35,8 @@
             this.cmdPesarOrden = new DevExpress.XtraEditors.SimpleButton();
             this.cmdClose = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdAdicionEnMezcla = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdTolvasWL_ = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
             // 
             // cmdMicros
@@ -121,11 +123,43 @@
             this.simpleButton2.Text = "Materia Prima Micros";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
+            // cmdAdicionEnMezcla
+            // 
+            this.cmdAdicionEnMezcla.Appearance.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.cmdAdicionEnMezcla.Appearance.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.cmdAdicionEnMezcla.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdAdicionEnMezcla.Appearance.Options.UseBackColor = true;
+            this.cmdAdicionEnMezcla.Appearance.Options.UseBorderColor = true;
+            this.cmdAdicionEnMezcla.Appearance.Options.UseFont = true;
+            this.cmdAdicionEnMezcla.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdAdicionEnMezcla.Location = new System.Drawing.Point(50, 225);
+            this.cmdAdicionEnMezcla.Name = "cmdAdicionEnMezcla";
+            this.cmdAdicionEnMezcla.Size = new System.Drawing.Size(199, 59);
+            this.cmdAdicionEnMezcla.TabIndex = 23;
+            this.cmdAdicionEnMezcla.Text = "Adición en Mezclado";
+            // 
+            // cmdTolvasWL_
+            // 
+            this.cmdTolvasWL_.Appearance.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.cmdTolvasWL_.Appearance.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.cmdTolvasWL_.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdTolvasWL_.Appearance.Options.UseBackColor = true;
+            this.cmdTolvasWL_.Appearance.Options.UseBorderColor = true;
+            this.cmdTolvasWL_.Appearance.Options.UseFont = true;
+            this.cmdTolvasWL_.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdTolvasWL_.Location = new System.Drawing.Point(270, 225);
+            this.cmdTolvasWL_.Name = "cmdTolvasWL_";
+            this.cmdTolvasWL_.Size = new System.Drawing.Size(199, 59);
+            this.cmdTolvasWL_.TabIndex = 24;
+            this.cmdTolvasWL_.Text = "Adición a Tolvas WL";
+            // 
             // xfrmMenuMicros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(519, 231);
+            this.ClientSize = new System.Drawing.Size(519, 298);
+            this.Controls.Add(this.cmdTolvasWL_);
+            this.Controls.Add(this.cmdAdicionEnMezcla);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.cmdPesarOrden);
             this.Controls.Add(this.labelControl1);
@@ -152,5 +186,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.SimpleButton cmdPesarOrden;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton cmdAdicionEnMezcla;
+        private DevExpress.XtraEditors.SimpleButton cmdTolvasWL_;
     }
 }
