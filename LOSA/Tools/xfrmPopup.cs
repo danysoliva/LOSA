@@ -177,5 +177,10 @@ namespace LOSA.Tools
                 CajaDialogo.Error(ex.Message);
             }
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
