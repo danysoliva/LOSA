@@ -36,8 +36,6 @@ namespace LOSA.RecuentoInventario
             this.colnombre_comercial = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_mp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collote = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colnumero_transaccion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colfecha_ingreso = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcode_sap = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colentradas = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsalidas = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -48,6 +46,7 @@ namespace LOSA.RecuentoInventario
             this.cmdExcel = new System.Windows.Forms.Button();
             this.cmdCerrar = new System.Windows.Forms.Button();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.colbodega = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsReportesRecuentosINV1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -77,17 +76,20 @@ namespace LOSA.RecuentoInventario
             // 
             // gridView1
             // 
+            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.Row.Options.UseFont = true;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colexistencia,
             this.colnombre_comercial,
             this.colid_mp,
             this.collote,
-            this.colnumero_transaccion,
-            this.colfecha_ingreso,
             this.colcode_sap,
             this.colentradas,
             this.colsalidas,
-            this.colrow});
+            this.colrow,
+            this.colbodega});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
@@ -101,7 +103,7 @@ namespace LOSA.RecuentoInventario
             this.colexistencia.Name = "colexistencia";
             this.colexistencia.OptionsColumn.AllowEdit = false;
             this.colexistencia.Visible = true;
-            this.colexistencia.VisibleIndex = 8;
+            this.colexistencia.VisibleIndex = 7;
             this.colexistencia.Width = 92;
             // 
             // colnombre_comercial
@@ -129,24 +131,6 @@ namespace LOSA.RecuentoInventario
             this.collote.VisibleIndex = 3;
             this.collote.Width = 92;
             // 
-            // colnumero_transaccion
-            // 
-            this.colnumero_transaccion.FieldName = "numero_transaccion";
-            this.colnumero_transaccion.Name = "colnumero_transaccion";
-            this.colnumero_transaccion.OptionsColumn.AllowEdit = false;
-            this.colnumero_transaccion.Visible = true;
-            this.colnumero_transaccion.VisibleIndex = 4;
-            this.colnumero_transaccion.Width = 92;
-            // 
-            // colfecha_ingreso
-            // 
-            this.colfecha_ingreso.FieldName = "fecha_ingreso";
-            this.colfecha_ingreso.Name = "colfecha_ingreso";
-            this.colfecha_ingreso.OptionsColumn.AllowEdit = false;
-            this.colfecha_ingreso.Visible = true;
-            this.colfecha_ingreso.VisibleIndex = 5;
-            this.colfecha_ingreso.Width = 92;
-            // 
             // colcode_sap
             // 
             this.colcode_sap.FieldName = "code_sap";
@@ -164,7 +148,7 @@ namespace LOSA.RecuentoInventario
             this.colentradas.Name = "colentradas";
             this.colentradas.OptionsColumn.AllowEdit = false;
             this.colentradas.Visible = true;
-            this.colentradas.VisibleIndex = 6;
+            this.colentradas.VisibleIndex = 5;
             this.colentradas.Width = 92;
             // 
             // colsalidas
@@ -175,7 +159,7 @@ namespace LOSA.RecuentoInventario
             this.colsalidas.Name = "colsalidas";
             this.colsalidas.OptionsColumn.AllowEdit = false;
             this.colsalidas.Visible = true;
-            this.colsalidas.VisibleIndex = 7;
+            this.colsalidas.VisibleIndex = 6;
             this.colsalidas.Width = 99;
             // 
             // colrow
@@ -272,6 +256,14 @@ namespace LOSA.RecuentoInventario
             this.labelControl2.TabIndex = 6;
             this.labelControl2.Text = "Resumen de Inventario a la fecha";
             // 
+            // colbodega
+            // 
+            this.colbodega.FieldName = "bodega";
+            this.colbodega.Name = "colbodega";
+            this.colbodega.OptionsColumn.AllowEdit = false;
+            this.colbodega.Visible = true;
+            this.colbodega.VisibleIndex = 4;
+            // 
             // frmReporteInvPorLoteA_LaFecha
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -309,8 +301,6 @@ namespace LOSA.RecuentoInventario
         private DevExpress.XtraGrid.Columns.GridColumn colnombre_comercial;
         private DevExpress.XtraGrid.Columns.GridColumn colid_mp;
         private DevExpress.XtraGrid.Columns.GridColumn collote;
-        private DevExpress.XtraGrid.Columns.GridColumn colnumero_transaccion;
-        private DevExpress.XtraGrid.Columns.GridColumn colfecha_ingreso;
         private DevExpress.XtraGrid.Columns.GridColumn colcode_sap;
         private DevExpress.XtraGrid.Columns.GridColumn colentradas;
         private DevExpress.XtraGrid.Columns.GridColumn colsalidas;
@@ -321,5 +311,6 @@ namespace LOSA.RecuentoInventario
         private System.Windows.Forms.Button cmdExcel;
         private System.Windows.Forms.Button cmdCerrar;
         private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraGrid.Columns.GridColumn colbodega;
     }
 }
