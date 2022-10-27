@@ -29,7 +29,6 @@ namespace LOSA.Logistica
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNuevoRecuento));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -49,7 +48,7 @@ namespace LOSA.Logistica
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.grd_meses_disponibles = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.mesesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mesesBindingSource = new System.Windows.Forms.BindingSource();
             this.dsCierreMes1 = new LOSA.Logistica.dsCierreMes();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colmes_numero = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -58,7 +57,7 @@ namespace LOSA.Logistica
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.grd_years = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.yearsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.yearsBindingSource = new System.Windows.Forms.BindingSource();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colejercicio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
@@ -72,7 +71,7 @@ namespace LOSA.Logistica
             this.colpeso = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_bodega = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grd_bodegas = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.bodegasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bodegasBindingSource = new System.Windows.Forms.BindingSource();
             this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colwhs_code = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -546,8 +545,8 @@ namespace LOSA.Logistica
             // 
             // colpeso
             // 
-            this.colpeso.Caption = "Nueva cantidad";
-            this.colpeso.DisplayFormat.FormatString = "{0:0.##.##} Kg";
+            this.colpeso.Caption = "Nueva Cantidad Kg";
+            this.colpeso.DisplayFormat.FormatString = "n2";
             this.colpeso.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colpeso.FieldName = "peso";
             this.colpeso.Name = "colpeso";
@@ -614,8 +613,8 @@ namespace LOSA.Logistica
             // 
             this.coldiferencia.AppearanceCell.BackColor = System.Drawing.Color.Silver;
             this.coldiferencia.AppearanceCell.Options.UseBackColor = true;
-            this.coldiferencia.Caption = "Diferencia";
-            this.coldiferencia.DisplayFormat.FormatString = "{0:0.##.##} Kg";
+            this.coldiferencia.Caption = "Diferencia Kg";
+            this.coldiferencia.DisplayFormat.FormatString = "n2";
             this.coldiferencia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.coldiferencia.FieldName = "diferencia";
             this.coldiferencia.Name = "coldiferencia";
@@ -628,8 +627,8 @@ namespace LOSA.Logistica
             // 
             this.colExistenciaAprox.AppearanceCell.BackColor = System.Drawing.Color.Silver;
             this.colExistenciaAprox.AppearanceCell.Options.UseBackColor = true;
-            this.colExistenciaAprox.Caption = "Existencia Aproximada";
-            this.colExistenciaAprox.DisplayFormat.FormatString = "{0:0.##.##} Kg";
+            this.colExistenciaAprox.Caption = "Existencia Sistema Kg";
+            this.colExistenciaAprox.DisplayFormat.FormatString = "n2";
             this.colExistenciaAprox.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colExistenciaAprox.FieldName = "ExistenciaAprox";
             this.colExistenciaAprox.Name = "colExistenciaAprox";
@@ -677,8 +676,8 @@ namespace LOSA.Logistica
             // 
             // coltoma_fisica
             // 
-            this.coltoma_fisica.Caption = "Toma Fisica";
-            this.coltoma_fisica.DisplayFormat.FormatString = "{0:0.##.##} Kg";
+            this.coltoma_fisica.Caption = "Toma Física Kg";
+            this.coltoma_fisica.DisplayFormat.FormatString = "n2";
             this.coltoma_fisica.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.coltoma_fisica.FieldName = "toma_fisica";
             this.coltoma_fisica.Name = "coltoma_fisica";

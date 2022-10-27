@@ -13,6 +13,7 @@ namespace LOSA.Clases
     {
         public string BodegaIn;
         public int DocEntrySAP;
+
         public IngresoExternoD()
         {
             BodegaIn = "";
@@ -54,6 +55,13 @@ namespace LOSA.Clases
             }
             return val;
         }
+
+
+
+
+
+
+
     }
 
 

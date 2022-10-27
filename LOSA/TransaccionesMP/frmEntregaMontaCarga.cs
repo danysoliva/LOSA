@@ -42,8 +42,6 @@ namespace LOSA.TransaccionesMP
 
         private void cmdEntrega_Click(object sender, EventArgs e)
         {
-           
-
             SelectorFor path = new SelectorFor(3);
             if (path.Camino == 1)
             {

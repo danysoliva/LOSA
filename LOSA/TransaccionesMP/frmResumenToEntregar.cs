@@ -21,11 +21,13 @@ namespace LOSA.TransaccionesMP
         public decimal Solicitado = 0;
         public decimal RestanteReq = 0;
         public decimal RestanteTm = 0;
-        public decimal selecionado = 0;
+        public decimal ExistenciaKg = 0;
         public decimal pesoKg = 0;
         public int id_tm;
         public decimal factor;
         public decimal ud_enviar = 0;
+        public decimal kg_enviar = 0;
+
         DataOperations dp = new DataOperations();
         
         
@@ -34,16 +36,18 @@ namespace LOSA.TransaccionesMP
                                     decimal PEntregado,
                                     decimal psolicitado,
                                     DataTable Tarima,
-                                    int Pid_tm
-                                    ,decimal Pfactor)
+                                    int Pid_tm,
+                                    decimal Pfactor)
         {
 
             InitializeComponent();
-            gcTarima.DataSource = Tarima;
+            //gcTarima.DataSource = Tarima;
+            vGridControl1.DataSource = Tarima;
             this.ExistenciaTM = ExistenciaTM;
             ud_enviar = ExistenciaTM;
             factor = Pfactor;
-            selecionado = ExistenciaTM * factor;
+            ExistenciaKg = ExistenciaTM * factor;
+            lblTotalUd_en_tarima.Text = string.Format("{0:###,##0}", ExistenciaTM) + " Ud";
             entregado = PEntregado;
             Solicitado = psolicitado;
             id_tm = Pid_tm;
@@ -56,8 +60,9 @@ namespace LOSA.TransaccionesMP
             txtSolicitados.Text = string.Format("{0:###,##0.00}", Solicitado);
             txtPorEnviar.Text = string.Format("{0:###,##0.00}", ud_enviar);
             txtRestante.Text = string.Format("{0:###,##0.00}", RestanteReq);
-            textEdit1.Text = string.Format("{0:###,##0.00}", RestanteTm);
+            txtRestanteTarimasUnidades.Text = string.Format("{0:###,##0.00}", RestanteTm);
             obtener_factor();
+            CalcularKg(dp.ValidateNumberInt32(Math.Round(ud_enviar,0)));
         }
         public void Calculo()
         {
@@ -69,30 +74,27 @@ namespace LOSA.TransaccionesMP
             else
             {
                 decimal aux = 0;
-                aux  = RestanteReq - selecionado;
+                aux  = RestanteReq - ExistenciaKg;
 
                 if (aux < 0 || aux == 0)
                 {
-                    RestanteTm = selecionado - RestanteReq;
+                    RestanteTm = ExistenciaKg - RestanteReq;
                     RestanteReq = 0;
-                    if (factor > 0)
-                    {
-                        ud_enviar = Convert.ToInt32((selecionado - RestanteTm) / factor);
-                        RestanteTm = Convert.ToInt32(RestanteTm / factor);
-                    }
-                    else
-                    {
-                        ud_enviar = 0;
-                    }
-
-                    
+                    //if (factor > 0)
+                    //{
+                    //    ud_enviar = Convert.ToInt32((ExistenciaKg - RestanteTm) / factor);
+                    //    //RestanteTm = Convert.ToInt32(RestanteTm / factor);
+                    //}
+                    //else
+                    //{
+                    //    ud_enviar = 0;
+                    //}
                 }
                 else
                 {
-                   
-                    RestanteTm= ExistenciaTM - selecionado / factor;
+                    RestanteTm = ExistenciaTM - ExistenciaKg / factor;
                     RestanteReq = aux;
-                    ud_enviar = selecionado / factor;
+                    ud_enviar = ExistenciaKg / factor;
                 }
 
             }
@@ -134,47 +136,94 @@ namespace LOSA.TransaccionesMP
 
         private void btnUP_Click(object sender, EventArgs e)
         {
-            if (selecionado + factor > ExistenciaTM * factor)
-            {
+            //if (ExistenciaKg + factor > ExistenciaTM * factor)
+            //{
 
+            //}
+            //else
+            //{
+            //    ud_enviar = ud_enviar + 1;
+            //    ExistenciaKg = ExistenciaKg + factor;
+            //    CalculoUD();
+            //    txtPorEnviar.Text = string.Format("{0:###,##0.00}", ud_enviar);
+            //    txtRestante.Text = string.Format("{0:###,##0.00}", RestanteReq);
+            //    textEdit1.Text = string.Format("{0:###,##0.00}", RestanteTm);
+            //}
+            int ud_enviar = dp.ValidateNumberInt32(txtPorEnviar.Text);
+            if (ud_enviar == 0)
+            {
+                if (this.ExistenciaTM >= 1)
+                {
+                    txtPorEnviar.Text = "1";
+                    ud_enviar = 1;
+                }
             }
             else
             {
-                ud_enviar = ud_enviar + 1;
-                selecionado = selecionado + factor;
-                CalculoUD();
-                txtPorEnviar.Text = string.Format("{0:###,##0.00}", ud_enviar);
-                txtRestante.Text = string.Format("{0:###,##0.00}", RestanteReq);
-                textEdit1.Text = string.Format("{0:###,##0.00}", RestanteTm);
+                if (ud_enviar < this.ExistenciaTM)
+                {
+                    if (kg_enviar + entregado < Solicitado)
+                    {
+                        ud_enviar++;
+                        txtPorEnviar.Text = string.Format("{0:###,##0}", (ud_enviar));
+                    }
+                }
             }
+
+            CalcularKg(ud_enviar);
+        }
+
+        private void CalcularKg(int pudAenviar)
+        {
+            if (pudAenviar > 0)
+            {
+                if (this.Solicitado < factor)
+                    kg_enviar = this.Solicitado;
+                else
+                    kg_enviar = factor * pudAenviar;
+            }
+            else
+            {
+                kg_enviar = 0;
+            }
+
+            txtKgAEnviar.Text = string.Format("{0:###,##0.00}", kg_enviar);
+            txtRestanteTarimasUnidades.Text = string.Format("{0:###,##0.00}", (ExistenciaTM - pudAenviar));
         }
 
         public void CalculoUD() 
         {
-            selecionado = ud_enviar * factor;
-            RestanteReq = Solicitado - selecionado - entregado;
+            ExistenciaKg = ud_enviar * factor;
+            RestanteReq = Solicitado - ExistenciaKg - entregado;
             RestanteTm = ExistenciaTM - ud_enviar;
         } 
         private void btnDown_Click(object sender, EventArgs e)
         {
-            if (selecionado - factor < 0)
+            int UdEnviar = dp.ValidateNumberInt32(txtPorEnviar.Text);
+            if (UdEnviar > 0)
             {
+                //if (ExistenciaKg - factor < 0)
+                //{
 
+                //}
+                //else
+                //{
+                //    ud_enviar = ud_enviar - 1;
+                //    ExistenciaKg = ExistenciaKg - factor;
+                //    CalculoUD();
+                //    txtPorEnviar.Text = string.Format("{0:###,##0.00}", ud_enviar);
+                //    txtRestante.Text = string.Format("{0:###,##0.00}", RestanteReq);
+                //    textEdit1.Text = string.Format("{0:###,##0.00}", RestanteTm);
+                //}
+                UdEnviar--;
+                txtPorEnviar.Text = string.Format("{0:###,##0}", (UdEnviar));
             }
-            else
-            {
-                ud_enviar = ud_enviar - 1;
-                selecionado = selecionado - factor;
-                CalculoUD();
-                txtPorEnviar.Text = string.Format("{0:###,##0.00}", ud_enviar);
-                txtRestante.Text = string.Format("{0:###,##0.00}", RestanteReq);
-                textEdit1.Text = string.Format("{0:###,##0.00}", RestanteTm);
-            }
+            CalcularKg(UdEnviar);
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            if (selecionado ==0 )
+            if (ExistenciaKg == 0 )
             {
                 Utileria.frmMensaje frm = new Utileria.frmMensaje(Utileria.frmMensaje.TipoMsj.error, "Debe seleccionar aun que sea una unidad");
                 frm.ShowDialog();
@@ -189,7 +238,7 @@ namespace LOSA.TransaccionesMP
             if (chConsumirPendientes.Checked)
             {       //Vamos a consumir lo Pendiente
                 RestanteReq = Solicitado - entregado; // Aqui tenemos lo restante en KG.
-                selecionado = ExistenciaTM * factor; //AQui vemos los Kg que nos faltan.
+                ExistenciaKg = ExistenciaTM * factor; //AQui vemos los Kg que nos faltan.
                 ud_enviar = 0; // Bueno inicializamos a 0 las enviar.
                 decimal Validador = 0; // Es ayuda a llevar la cuenta de los kg que vamos a enviar.
                 while (Validador <= RestanteReq && ExistenciaTM > ud_enviar)
@@ -202,7 +251,7 @@ namespace LOSA.TransaccionesMP
 
                 txtPorEnviar.Text = string.Format("{0:###,##0.00}", ud_enviar);
                 txtRestante.Text = string.Format("{0:###,##0.00}", RestanteReq);
-                textEdit1.Text = string.Format("{0:###,##0.00}", RestanteTm);
+                txtRestanteTarimasUnidades.Text = string.Format("{0:###,##0.00}", RestanteTm);
 
 
             }
@@ -210,7 +259,7 @@ namespace LOSA.TransaccionesMP
 
         private void frmResumenToEntregar_Load(object sender, EventArgs e)
         {
-            chConsumirPendientes.Checked = true;
+            //chConsumirPendientes.Checked = true;
         }
     }
 }

@@ -146,7 +146,7 @@ namespace LOSA.TransaccionesMP
                         lblRequisicionEncontrada.Text = RequisicionActual.IdRequisicion.ToString();
                         lblRequisicionEncontrada.BackColor = Color.FromArgb(0, 204, 204);
                         load_tarimas_scan_v2();
-                        load_bines_disponiblesByReq(RequisicionActual.IdRequisicion);
+                        //load_bines_disponiblesByReq(RequisicionActual.IdRequisicion);
                         txtTarima.Focus();
 
                     }
@@ -605,7 +605,7 @@ namespace LOSA.TransaccionesMP
 
                                 ExistenciaTM = dr.GetDecimal(2);
 
-                                if (ExistenciaTM <= 0)
+                                //if (ExistenciaTM <= 0)
                                 {
                                     mensaje = "Esta tarima ya fue entregada en Alimentación!" +
                                               "\nSi tiene la tarima en fisico, significa que ubico dos rotulos iguales \nen varias tarimas" +
@@ -654,7 +654,7 @@ namespace LOSA.TransaccionesMP
                         //}
                         
 
-                        frmResumenToEntregar frms = new frmResumenToEntregar(ExistenciaTM
+                        frmResumenToEntregar frms = new frmResumenToEntregar( ExistenciaTM
                                                                             , Pentregado
                                                                             , Psolicitado
                                                                             , DT_Tarima
@@ -813,5 +813,22 @@ namespace LOSA.TransaccionesMP
             }
             
         }
+
+        private void xtraTabControl1_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
+        {
+            if (xtraTabControl1.SelectedTabPageIndex == 1)
+            {
+                if (RequisicionActual != null)
+                {
+                    if (RequisicionActual.Recuperado)
+                    {
+                        load_bines_disponiblesByReq(RequisicionActual.IdRequisicion);
+                    }
+                }
+            }
+        }
+
+
+
     }
 }

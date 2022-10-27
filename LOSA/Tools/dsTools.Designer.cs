@@ -322,6 +322,8 @@ namespace LOSA.Tools {
             
             private global::System.Data.DataColumn columnid_tipo_notificacion;
             
+            private global::System.Data.DataColumn columnfecha_creacion;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public NotificacionesDataTable() {
@@ -389,6 +391,14 @@ namespace LOSA.Tools {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn fecha_creacionColumn {
+                get {
+                    return this.columnfecha_creacion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -424,13 +434,14 @@ namespace LOSA.Tools {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public NotificacionesRow AddNotificacionesRow(int id, string Descripcion, bool leida, int id_tipo_notificacion) {
+            public NotificacionesRow AddNotificacionesRow(int id, string Descripcion, bool leida, int id_tipo_notificacion, System.DateTime fecha_creacion) {
                 NotificacionesRow rowNotificacionesRow = ((NotificacionesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
                         Descripcion,
                         leida,
-                        id_tipo_notificacion};
+                        id_tipo_notificacion,
+                        fecha_creacion};
                 rowNotificacionesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowNotificacionesRow);
                 return rowNotificacionesRow;
@@ -457,6 +468,7 @@ namespace LOSA.Tools {
                 this.columnDescripcion = base.Columns["Descripcion"];
                 this.columnleida = base.Columns["leida"];
                 this.columnid_tipo_notificacion = base.Columns["id_tipo_notificacion"];
+                this.columnfecha_creacion = base.Columns["fecha_creacion"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -470,6 +482,8 @@ namespace LOSA.Tools {
                 base.Columns.Add(this.columnleida);
                 this.columnid_tipo_notificacion = new global::System.Data.DataColumn("id_tipo_notificacion", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_tipo_notificacion);
+                this.columnfecha_creacion = new global::System.Data.DataColumn("fecha_creacion", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_creacion);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -609,6 +623,10 @@ namespace LOSA.Tools {
             
             private global::System.Data.DataColumn columnleida;
             
+            private global::System.Data.DataColumn columnid_tipo_notificacion;
+            
+            private global::System.Data.DataColumn columnfecha_creacion;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public NotificacionesLeidasDataTable() {
@@ -668,6 +686,22 @@ namespace LOSA.Tools {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_tipo_notificacionColumn {
+                get {
+                    return this.columnid_tipo_notificacion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn fecha_creacionColumn {
+                get {
+                    return this.columnfecha_creacion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -703,12 +737,14 @@ namespace LOSA.Tools {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public NotificacionesLeidasRow AddNotificacionesLeidasRow(int id, string Descripcion, bool leida) {
+            public NotificacionesLeidasRow AddNotificacionesLeidasRow(int id, string Descripcion, bool leida, int id_tipo_notificacion, System.DateTime fecha_creacion) {
                 NotificacionesLeidasRow rowNotificacionesLeidasRow = ((NotificacionesLeidasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
                         Descripcion,
-                        leida};
+                        leida,
+                        id_tipo_notificacion,
+                        fecha_creacion};
                 rowNotificacionesLeidasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowNotificacionesLeidasRow);
                 return rowNotificacionesLeidasRow;
@@ -734,6 +770,8 @@ namespace LOSA.Tools {
                 this.columnid = base.Columns["id"];
                 this.columnDescripcion = base.Columns["Descripcion"];
                 this.columnleida = base.Columns["leida"];
+                this.columnid_tipo_notificacion = base.Columns["id_tipo_notificacion"];
+                this.columnfecha_creacion = base.Columns["fecha_creacion"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -745,6 +783,10 @@ namespace LOSA.Tools {
                 base.Columns.Add(this.columnDescripcion);
                 this.columnleida = new global::System.Data.DataColumn("leida", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnleida);
+                this.columnid_tipo_notificacion = new global::System.Data.DataColumn("id_tipo_notificacion", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_tipo_notificacion);
+                this.columnfecha_creacion = new global::System.Data.DataColumn("fecha_creacion", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_creacion);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -951,6 +993,22 @@ namespace LOSA.Tools {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime fecha_creacion {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableNotificaciones.fecha_creacionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'fecha_creacion\' in table \'Notificaciones\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNotificaciones.fecha_creacionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableNotificaciones.idColumn);
             }
@@ -995,6 +1053,18 @@ namespace LOSA.Tools {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setid_tipo_notificacionNull() {
                 this[this.tableNotificaciones.id_tipo_notificacionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isfecha_creacionNull() {
+                return this.IsNull(this.tableNotificaciones.fecha_creacionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setfecha_creacionNull() {
+                this[this.tableNotificaciones.fecha_creacionColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1062,6 +1132,39 @@ namespace LOSA.Tools {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_tipo_notificacion {
+                get {
+                    try {
+                        return ((int)(this[this.tableNotificacionesLeidas.id_tipo_notificacionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'id_tipo_notificacion\' in table \'NotificacionesLeidas\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableNotificacionesLeidas.id_tipo_notificacionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime fecha_creacion {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableNotificacionesLeidas.fecha_creacionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'fecha_creacion\' in table \'NotificacionesLeidas\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNotificacionesLeidas.fecha_creacionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableNotificacionesLeidas.idColumn);
             }
@@ -1094,6 +1197,30 @@ namespace LOSA.Tools {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetleidaNull() {
                 this[this.tableNotificacionesLeidas.leidaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_tipo_notificacionNull() {
+                return this.IsNull(this.tableNotificacionesLeidas.id_tipo_notificacionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_tipo_notificacionNull() {
+                this[this.tableNotificacionesLeidas.id_tipo_notificacionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isfecha_creacionNull() {
+                return this.IsNull(this.tableNotificacionesLeidas.fecha_creacionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setfecha_creacionNull() {
+                this[this.tableNotificacionesLeidas.fecha_creacionColumn] = global::System.Convert.DBNull;
             }
         }
         

@@ -491,7 +491,7 @@ namespace LOSA.Logistica
                                 {
                                     if (row.code_sap == row2.Codigo && row.whs_equivalente == row2.Bodega)
                                     {
-                                        row.toma_fisica = row2.Toma_Fisica;
+                                        row.toma_fisica = row2.Toma_Física_Kg;
                                     }
                                 }
                             }
