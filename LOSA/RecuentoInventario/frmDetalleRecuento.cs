@@ -162,21 +162,6 @@ namespace LOSA.RecuentoInventario
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-
-            //DialogResult r = CajaDialogo.Pregunta("Desea Guardar los cambios?Se realizara un ajuste de cada Registro en Kardex.");
-            //if (r == DialogResult.Yes)
-
-
-            //if (string.IsNullOrEmpty(grd_years.Text))
-            //{
-            //    CajaDialogo.Error("Debe seleccionar el año!");
-            //    return;
-            //}
-            //if (string.IsNullOrEmpty(grd_meses_disponibles.Text))
-            //{
-            //    CajaDialogo.Error("Debe seleccionar el mes!");
-            //    return;
-            //}
             if (string.IsNullOrEmpty(txtComentario.Text))
             {
                 CajaDialogo.Error("Debe agregar un comentario de referencia");
@@ -186,12 +171,6 @@ namespace LOSA.RecuentoInventario
 
             using (SqlConnection connection = new SqlConnection(dp.ConnectionStringLOSA))
             {
-
-                //for (int i = 0; i < grdv_mps.SelectedRowsCount; i++)
-                //{
-                //    DataRow row = grdv_mps.GetDataRow(i);
-                //    
-                //}
 
                 connection.Open();
 
@@ -243,6 +222,7 @@ namespace LOSA.RecuentoInventario
                     
 
                     ////Insert en Detalle de Recuento Final PRODUCTO TERMINADO
+                    ///
                     //for (int i = 0; i < grdv_mps.SelectedRowsCount; i++)
                     //{
                     //    //DataRow row = grdv_mps.GetDataRow(i);
@@ -373,12 +353,7 @@ namespace LOSA.RecuentoInventario
                         if (frm.ShowDialog() == DialogResult.OK)
                         {
                             tableOps.Clear();
-                            for (int i = 0; i < grdv_mps.SelectedRowsCount; i++)
-                            {
-                                DataRow row2 = grdv_mps.GetFocusedDataRow();
-
-
-                            }
+                           
                         }
 
                         //for (int i = 0; i < grdv_mps.SelectedRowsCount; i++)
@@ -426,9 +401,16 @@ namespace LOSA.RecuentoInventario
 
         private void grdv_mps_RowStyle(object sender, RowStyleEventArgs e)
         {
+
             GridView View = sender as GridView;
             if (e.RowHandle >= 0)
             {
+
+                for (int i = 0; i < grdv_mps.SelectedRowsCount; i++)
+                {
+                    DataRow row2 = grdv_mps.GetFocusedDataRow();
+                    e.Appearance.BackColor = Color.GreenYellow;
+                }
                 ////Si el valor que se agrego igual a la diferencia en 0!
                 //e.Appearance.BackColor = Color.Gray;
             }
