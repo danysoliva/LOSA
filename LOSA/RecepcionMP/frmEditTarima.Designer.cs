@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEditTarima));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -39,7 +38,7 @@
             this.txtCantidadTarimasTotal = new DevExpress.XtraEditors.TextEdit();
             this.txtPesoKg = new DevExpress.XtraEditors.TextEdit();
             this.gridLookUpEditPresentacion = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource1 = new System.Windows.Forms.BindingSource();
             this.dsRecepcionMPx1 = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -68,7 +67,7 @@
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.txtMP_Name = new DevExpress.XtraEditors.ButtonEdit();
             this.glueProveedor = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.bindingSourceProveedores = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSourceProveedores = new System.Windows.Forms.BindingSource();
             this.dsLogistica21 = new LOSA.Logistica.dsLogistica2();
             this.gvProveedores = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -234,7 +233,6 @@
             // txtLote
             // 
             this.txtLote.EditValue = "";
-            this.txtLote.Enabled = false;
             this.txtLote.Location = new System.Drawing.Point(451, 330);
             this.txtLote.Name = "txtLote";
             this.txtLote.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

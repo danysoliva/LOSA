@@ -140,20 +140,20 @@ namespace LOSA.RecuentoInventario
             // 
             // grd_mps
             // 
-            this.grd_mps.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.grd_mps.DataMember = "Recuento_mp";
-            this.grd_mps.DataSource = this.dsCierreMes1;
-            this.grd_mps.Location = new System.Drawing.Point(0, 0);
-            this.grd_mps.MainView = this.grdv_mps;
-            this.grd_mps.Name = "grd_mps";
-            this.grd_mps.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.grd_bodega});
-            this.grd_mps.Size = new System.Drawing.Size(1260, 555);
-            this.grd_mps.TabIndex = 0;
-            this.grd_mps.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.grdv_mps});
+            //this.grd_mps.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            //| System.Windows.Forms.AnchorStyles.Left) 
+            //| System.Windows.Forms.AnchorStyles.Right)));
+            //this.grd_mps.DataMember = "Recuento_mp";
+            //this.grd_mps.DataSource = this.dsCierreMes1;
+            //this.grd_mps.Location = new System.Drawing.Point(0, 0);
+            //this.grd_mps.MainView = this.grdv_mps;
+            //this.grd_mps.Name = "grd_mps";
+            //this.grd_mps.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            //this.grd_bodega});
+            //this.grd_mps.Size = new System.Drawing.Size(1260, 555);
+            //this.grd_mps.TabIndex = 0;
+            //this.grd_mps.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            //this.grdv_mps});
             // 
             // dsCierreMes1
             // 
@@ -240,9 +240,9 @@ namespace LOSA.RecuentoInventario
             // 
             // bodegasBindingSource
             // 
-            this.bodegasBindingSource.DataMember = "bodegas";
-            this.bodegasBindingSource.DataSource = this.dsCierreMes1;
-            // 
+            //this.bodegasBindingSource.DataMember = "bodegas";
+            //this.bodegasBindingSource.DataSource = this.dsCierreMes1;
+            //// 
             // repositoryItemGridLookUpEdit1View
             // 
             this.repositoryItemGridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
@@ -326,18 +326,18 @@ namespace LOSA.RecuentoInventario
             this.xtraTabPagePT.Text = "Producto Terminado";
             // 
             // grd_pt
-            // 
-            this.grd_pt.DataMember = null;
-            this.grd_pt.DataSource = this.dsCierreMes1;
-            this.grd_pt.Location = new System.Drawing.Point(0, 0);
-            this.grd_pt.MainView = this.gridView2;
-            this.grd_pt.Name = "grd_pt";
-            this.grd_pt.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemGridLookUpEdit1});
-            this.grd_pt.Size = new System.Drawing.Size(1260, 555);
-            this.grd_pt.TabIndex = 1;
-            this.grd_pt.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
+            //// 
+            //this.grd_pt.DataMember = null;
+            //this.grd_pt.DataSource = this.dsCierreMes1;
+            //this.grd_pt.Location = new System.Drawing.Point(0, 0);
+            //this.grd_pt.MainView = this.gridView2;
+            //this.grd_pt.Name = "grd_pt";
+            //this.grd_pt.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            //this.repositoryItemGridLookUpEdit1});
+            //this.grd_pt.Size = new System.Drawing.Size(1260, 555);
+            //this.grd_pt.TabIndex = 1;
+            //this.grd_pt.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            //this.gridView2});
             // 
             // gridView2
             // 
@@ -451,9 +451,9 @@ namespace LOSA.RecuentoInventario
             // 
             // mesesBindingSource
             // 
-            this.mesesBindingSource.DataMember = "meses";
-            this.mesesBindingSource.DataSource = this.dsCierreMes1;
-            // 
+            //this.mesesBindingSource.DataMember = "meses";
+            //this.mesesBindingSource.DataSource = this.dsCierreMes1;
+            //// 
             // gridView1
             // 
             this.gridView1.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Segoe UI", 9.75F);
@@ -534,8 +534,8 @@ namespace LOSA.RecuentoInventario
             // 
             // yearsBindingSource
             // 
-            this.yearsBindingSource.DataMember = "years";
-            this.yearsBindingSource.DataSource = this.dsCierreMes1;
+            //this.yearsBindingSource.DataMember = "years";
+            //this.yearsBindingSource.DataSource = this.dsCierreMes1;
             // 
             // gridLookUpEdit1View
             // 

@@ -80,6 +80,7 @@ namespace LOSA.RecepcionMP
             // 
             this.cmdGuardar.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdGuardar.Appearance.Options.UseFont = true;
+            this.cmdGuardar.Enabled = false;
             this.cmdGuardar.ImageOptions.Image = global::LOSA.Properties.Resources.floppy_disk32px1;
             this.cmdGuardar.Location = new System.Drawing.Point(63, 249);
             this.cmdGuardar.Name = "cmdGuardar";

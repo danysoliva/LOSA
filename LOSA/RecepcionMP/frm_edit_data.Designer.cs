@@ -63,10 +63,10 @@ namespace LOSA.RecepcionMP
             this.collote = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnumero_transaccion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colseleccionado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButtonEditarLote = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.label4 = new System.Windows.Forms.Label();
             this.tgTodos = new DevExpress.XtraEditors.ToggleSwitch();
-            this.repositoryItemButtonEditarLote = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtmp.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnfindMP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtproveedor.Properties)).BeginInit();
@@ -75,8 +75,8 @@ namespace LOSA.RecepcionMP
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsingresos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tgTodos.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditarLote)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tgTodos.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl3
@@ -317,6 +317,21 @@ namespace LOSA.RecepcionMP
             this.colseleccionado.VisibleIndex = 2;
             this.colseleccionado.Width = 191;
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Editar Lote";
+            this.gridColumn1.Name = "gridColumn1";
+            // 
+            // repositoryItemButtonEditarLote
+            // 
+            this.repositoryItemButtonEditarLote.AutoHeight = false;
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            this.repositoryItemButtonEditarLote.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.repositoryItemButtonEditarLote.Name = "repositoryItemButtonEditarLote";
+            this.repositoryItemButtonEditarLote.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryItemButtonEditarLote.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditarLote_ButtonClick);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -338,24 +353,6 @@ namespace LOSA.RecepcionMP
             this.tgTodos.Size = new System.Drawing.Size(320, 30);
             this.tgTodos.TabIndex = 44;
             this.tgTodos.Toggled += new System.EventHandler(this.tgTodos_Toggled);
-            // 
-            // repositoryItemButtonEditarLote
-            // 
-            this.repositoryItemButtonEditarLote.AutoHeight = false;
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
-            this.repositoryItemButtonEditarLote.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.repositoryItemButtonEditarLote.Name = "repositoryItemButtonEditarLote";
-            this.repositoryItemButtonEditarLote.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.repositoryItemButtonEditarLote.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditarLote_ButtonClick);
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Editar Lote";
-            this.gridColumn1.ColumnEdit = this.repositoryItemButtonEditarLote;
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 3;
             // 
             // frm_edit_data
             // 
@@ -388,8 +385,8 @@ namespace LOSA.RecepcionMP
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsingresos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tgTodos.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditarLote)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tgTodos.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

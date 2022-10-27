@@ -511,7 +511,7 @@ namespace LOSA.Logistica
                         cmd.Parameters.AddWithValue("@existencia_anterior", existencia_anterior);
                         cmd.Parameters.AddWithValue("@existencia_nueva", existencia_nueva);
                         cmd.Parameters.AddWithValue("@lote", row.lote);
-                        //cmd.ExecuteNonQuery();
+                        cmd.ExecuteNonQuery();
                     }
                     else //Ajuste en Planta
                     {
@@ -530,10 +530,10 @@ namespace LOSA.Logistica
                         cmd.Parameters.AddWithValue("@id_detalle_recuento", id_detalle_recuento);
                         cmd.Parameters.AddWithValue("@lote", row.lote);
                         cmd.Parameters.AddWithValue("@id_lote_alosy", row.id_lote_alosy);
-                        //cmd.Parameters.AddWithValue("@id_bodega", row.id_bodega);
+                        cmd.Parameters.AddWithValue("@id_bodega", row.id_bodega);
 
-                        cmd.Parameters.AddWithValue("@utilizado", row.utilizado); 
-                        //Esto es el valor de lo que se va dar Salida/Entrada en Kardex
+                        cmd.Parameters.AddWithValue("@utilizado", row.utilizado); //Esto es el valor de lo que se va dar Salida/Entrada en Kardex
+                        
                         //AcumuladoCentinela = row.utilizado;
                         //AcumuladoUtilizado = AcumuladoUtilizado + AcumuladoCentinela;
                         //cmd.ExecuteScalar();
