@@ -136,7 +136,7 @@ namespace LOSA.TransaccionesMP
 
         private void txtRequisicion_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if(e.KeyCode == Keys.Enter)
             {
                 if (!string.IsNullOrEmpty(txtRequisicion.Text))
                 {
@@ -595,46 +595,28 @@ namespace LOSA.TransaccionesMP
                             if (dr.Read())
                             {
                                 disponible = dr.GetBoolean(0);
-                                //if (!disponible)
-                                //{
-                                //    error = true;
-                                //    mensaje = dr.GetString(1);
-                                //    Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
-                                //    if (frm.ShowDialog() == DialogResult.Cancel)
-                                //    {
-
-                                //    }
-
-                                //    lblMensaje.Text = mensaje;
-
-                                //    panelNotificacion.BackColor = Color.Red;
-                                //    timerLimpiarMensaje.Enabled = true;
-                                //    timerLimpiarMensaje.Start();
-                                //    return;
-                                //}
-
                                 ExistenciaTM = dr.GetDecimal(2);
-
-                                //if (ExistenciaTM <= 0)
-                                {
-                                    mensaje = "Esta tarima ya fue entregada en Alimentación!" +
-                                              "\nSi tiene la tarima en fisico, significa que ubico dos rotulos iguales \nen varias tarimas" +
-                                              "\nTip: Debe generar un nuevo rotulo para esta Tarima...";
-                                    frmVentanaMsjTarimaAlimentacion frm = 
-                                        new frmVentanaMsjTarimaAlimentacion(mensaje, tarimaEncontrada.CodigoBarra);
-                                    frm.ShowDialog();
-                                    lblMensaje.Text = mensaje;
-                                    panelNotificacion.BackColor = Color.Red;
-                                    timerLimpiarMensaje.Enabled = true;
-                                    timerLimpiarMensaje.Start();
-                                    return;
-                                }
-
                                 Pentregado = dr.GetDecimal(3);
                                 Psolicitado = dr.GetDecimal(4);
                                 factor = dr.GetDecimal(5);
                             }
                             dr.Close();
+
+                            if (ExistenciaTM <= 0)
+                            {
+                                mensaje = "Esta tarima ya fue entregada en Alimentación!" +
+                                          "\nSi tiene la tarima en fisico, significa que ubico dos rotulos iguales \nen varias tarimas" +
+                                          "\nTip: Debe generar un nuevo rotulo para esta Tarima...";
+                                frmVentanaMsjTarimaAlimentacion frm =
+                                    new frmVentanaMsjTarimaAlimentacion(mensaje, tarimaEncontrada.CodigoBarra);
+                                frm.ShowDialog();
+                                lblMensaje.Text = mensaje;
+                                panelNotificacion.BackColor = Color.Red;
+                                timerLimpiarMensaje.Enabled = true;
+                                timerLimpiarMensaje.Start();
+                                return;
+                            }
+
                             con.Close();
 
                         }
