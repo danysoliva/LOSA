@@ -68,7 +68,7 @@ namespace LOSA.Clases
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    _idRequisicion = dr.GetInt32(0);
+                    IdRequisicion = _idRequisicion = dr.GetInt32(0);
                     _id_usuario = dr.GetInt32(1);
                     
                     if (!dr.IsDBNull(dr.GetOrdinal("id_orden")))
