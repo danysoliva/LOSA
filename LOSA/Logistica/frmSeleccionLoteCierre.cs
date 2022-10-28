@@ -559,7 +559,7 @@ namespace LOSA.Logistica
                         
                         //AcumuladoCentinela = row.utilizado;
                         //AcumuladoUtilizado = AcumuladoUtilizado + AcumuladoCentinela;
-                        //cmd.ExecuteScalar();
+                        cmd.ExecuteScalar();
                     }
                 }
                 catch (Exception ex)
