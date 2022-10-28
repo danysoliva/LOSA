@@ -30,6 +30,7 @@ namespace LOSA.RecuentoInventario
         int Id_header;
         bool contabilizado;
         int id_detalle_recuento;
+        bool IsContabilizacion;
 
         public frmDetalleRecuento(DataTable pdata, UserLogin puserLogin,int pidyear,int pidmes, DateTime pfecha_recuento)
         {
@@ -51,11 +52,13 @@ namespace LOSA.RecuentoInventario
             grd_years.EditValue = id_year;
             grd_meses_disponibles.EditValue = id_mes;
             //mes = Convert.ToInt32(grd_meses_disponibles.EditValue);
+            IsContabilizacion = false;
         }
 
         public frmDetalleRecuento(UserLogin puserLogin, int pid_recuento, bool pcontabilizado)
         {
             InitializeComponent();
+
             dsCierreMes1.Recuento_mp.Clear();
             cmdSelecLote.Visible = true;
             btnConfirmar.Visible = false;
@@ -66,6 +69,7 @@ namespace LOSA.RecuentoInventario
             get_meses_by_year();
             get_bodegas();
             get_years();
+            IsContabilizacion = true;
             
         }
 
@@ -413,6 +417,100 @@ namespace LOSA.RecuentoInventario
                 }
                 ////Si el valor que se agrego igual a la diferencia en 0!
                 //e.Appearance.BackColor = Color.Gray;
+            }
+        }
+
+        private void gridView3_DoubleClick(object sender, EventArgs e)
+        {
+            if (IsContabilizacion)
+            {
+                var gv = (GridView)grd_mps.FocusedView;
+                var row = (dsCierreMes.Recuento_mpRow)gridViewMP.GetDataRow(gridViewMP.FocusedRowHandle);
+
+                try
+                {
+                    if (contabilizado == false)
+                    {
+                        using (SqlConnection connection = new SqlConnection(dp.ConnectionStringLOSA))
+                        {
+                            dsCierreMes.Recuento_mpDataTable tableOps = new dsCierreMes.Recuento_mpDataTable();
+
+
+                            DataTable TABLAOPSNew = new DataTable();
+
+                            //foreach (dsCierreMes.Recuento_mpRow item in dsCierreMes1.Recuento_mp.Rows)
+                            for (int i = 0; i < gridViewMP.SelectedRowsCount; i++)
+                            {
+                                DataRow row2 = gridViewMP.GetFocusedDataRow();
+
+                                dsCierreMes.Recuento_mpRow row1 = tableOps.NewRecuento_mpRow();
+
+                                row1.id_mp = Convert.ToInt32(gridViewMP.GetFocusedRowCellValue(id_mp));
+                                row1.descripcion = Convert.ToString(gridViewMP.GetFocusedRowCellValue(colMP));
+                                row1.id_bodega = Convert.ToInt32(gridViewMP.GetFocusedRowCellValue(id_bodega));
+                                row1.ExistenciaAprox = Convert.ToDecimal(gridViewMP.GetFocusedRowCellValue(colExistenciaAnterior));
+                                row1.toma_fisica = Convert.ToDecimal(gridViewMP.GetFocusedRowCellValue(colExistencia));
+                                row1.diferencia = Convert.ToDecimal(gridViewMP.GetFocusedRowCellValue(coldiferencia));
+                                id_detalle_recuento = Convert.ToInt32(gridViewMP.GetFocusedRowCellValue(count_id));
+
+                                tableOps.AddRecuento_mpRow(row1);
+                                tableOps.AcceptChanges();
+
+
+                                TABLAOPSNew = tableOps;
+                            }
+                            Logistica.frmSeleccionLoteCierre frm = new frmSeleccionLoteCierre(UsuarioLogeado, TABLAOPSNew, id_detalle_recuento);
+                            if (frm.ShowDialog() == DialogResult.OK)
+                            {
+                                tableOps.Clear();
+
+                            }
+
+                            //for (int i = 0; i < grdv_mps.SelectedRowsCount; i++)
+                            //{
+
+                            //    DataRow row2 = grdv_mps.GetDataRow(i);
+
+                            //    if (Convert.ToDecimal(row2["diferencia"]) > 0 || Convert.ToDecimal(row2["diferencia"]) < 0)
+                            //    {
+                            //        dsCierreMes.Recuento_mpRow row1 = tableOps.NewRecuento_mpRow();
+                            //        row1.id_mp = Convert.ToInt32(row2["id_mp"]);
+                            //        row1.descripcion = Convert.ToString(row2["descripcion"]);
+                            //        row1.peso = Convert.ToDecimal(row2["peso"]);
+                            //        row1.id_bodega = Convert.ToInt32(row2["id_bodega"]);
+                            //        row1.diferencia = Convert.ToDecimal(row2["diferencia"]);
+                            //        row1.ExistenciaAprox = Convert.ToDecimal(row2["ExistenciaAprox"]);
+                            //        row1.code_sap = Convert.ToString(row2["code_sap"]);
+                            //        //row1.lote = row.lote;
+                            //        row1.toma_fisica = Convert.ToDecimal(row2["toma_fisica"]);
+                            //        //row1.whs_equivalente = row.whs_equivalente;
+                            //        //row1.numero_transaccion = row.numero_transaccion;
+                            //        int id_detalle_recuento = row.id;
+
+                            //        tableOps.AddRecuento_mpRow(row1);
+                            //        tableOps.AcceptChanges();
+
+                            //        DataTable TABLEOPS = tableOps;
+                            //        //tableOps.Clear();
+
+                            //        Logistica.frmSeleccionLoteCierre frm = new Logistica.frmSeleccionLoteCierre(UsuarioLogeado, tableOps, id_detalle_recuento);
+                            //        if (frm.ShowDialog() == DialogResult.OK)
+                            //        {
+                            //            //tableOps.Clear();
+                            //        }
+                            //    }
+                            //}
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    CajaDialogo.Error(ex.Message);
+                }
+            }
+            else
+            {
+                //Pues nada.
             }
         }
     }
