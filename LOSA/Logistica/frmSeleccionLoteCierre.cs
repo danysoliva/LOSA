@@ -201,10 +201,33 @@ namespace LOSA.Logistica
                 id_count_selected = Convert.ToInt32(SelectedrOWS["count_id"]);
                 NuevaCantidad = Convert.ToDecimal(SelectedrOWS["toma_fisica"]);
                 sum = 0;
-                if (bodega == 17 || bodega == 18 || bodega == 19 || bodega == 20 || bodega == 21 || bodega == 28)
+
+                try
+                {
+                    SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("sp_get_tipo_ajuste", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id_bodega", id_bodegaMP);
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        IsExterno = Convert.ToBoolean(dr.GetValue(0));
+                    }
+                }
+                catch (Exception ex)
+                {
+                    CajaDialogo.Error(ex.Message);
+                }
+
+                if (IsExterno)
                 {
                     getlotes_ext(IdMpSelected, bodega);
                 }
+                //if (bodega == 17 || bodega == 18 || bodega == 19 || bodega == 20 || bodega == 21 || bodega == 28)
+                //{
+                    
+                //}
                 else
                 {
                     get_lotes(IdMpSelected, bodega);
