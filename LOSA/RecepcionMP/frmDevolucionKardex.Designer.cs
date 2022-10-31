@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDevolucionKardex));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -47,7 +46,7 @@
             this.gvTarima = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.grd_requisa = new DevExpress.XtraGrid.GridControl();
-            this.mpBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mpBindingSource = new System.Windows.Forms.BindingSource();
             this.dsDevoluciones = new LOSA.RecepcionMP.dsDevoluciones();
             this.grdv_requisa = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colbarcode = new DevExpress.XtraGrid.Columns.GridColumn();

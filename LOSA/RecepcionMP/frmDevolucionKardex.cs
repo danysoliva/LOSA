@@ -164,7 +164,7 @@ namespace LOSA.RecepcionMP
                 return;
             }
 
-            if (Convert.ToDecimal(txtCantidadT.Text) <= 0)
+            if (Convert.ToDecimal(txtPeso.Text) <= 0)
             {
                 CajaDialogo.Error("Debe ingresar una cantidad mayor que cero (0)");
                 return;

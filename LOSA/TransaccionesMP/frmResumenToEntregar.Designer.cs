@@ -45,7 +45,6 @@ namespace LOSA.TransaccionesMP
             this.btnDown = new DevExpress.XtraEditors.SimpleButton();
             this.btnUP = new DevExpress.XtraEditors.SimpleButton();
             this.chConsumirPendientes = new DevExpress.XtraEditors.CheckEdit();
-            this.dsTransaccionesMP1 = new LOSA.TransaccionesMP.dsTransaccionesMP();
             this.vGridControl1 = new DevExpress.XtraVerticalGrid.VGridControl();
             this.rowid = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rownombreTarima = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
@@ -64,15 +63,16 @@ namespace LOSA.TransaccionesMP
             this.lblTotalUd_en_tarima = new DevExpress.XtraEditors.LabelControl();
             this.txtKgAEnviar = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.dsTransaccionesMP1 = new LOSA.TransaccionesMP.dsTransaccionesMP();
             ((System.ComponentModel.ISupportInitialize)(this.txtSolicitados.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEnviados.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPorEnviar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRestante.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRestanteTarimasUnidades.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chConsumirPendientes.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vGridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKgAEnviar.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -178,7 +178,7 @@ namespace LOSA.TransaccionesMP
             this.txtPorEnviar.Name = "txtPorEnviar";
             this.txtPorEnviar.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.txtPorEnviar.Properties.Appearance.Options.UseFont = true;
-            this.txtPorEnviar.Size = new System.Drawing.Size(80, 36);
+            this.txtPorEnviar.Size = new System.Drawing.Size(62, 36);
             this.txtPorEnviar.TabIndex = 16;
             // 
             // txtRestante
@@ -248,11 +248,6 @@ namespace LOSA.TransaccionesMP
             this.chConsumirPendientes.Visible = false;
             this.chConsumirPendientes.CheckedChanged += new System.EventHandler(this.chConsumirPendientes_CheckedChanged);
             // 
-            // dsTransaccionesMP1
-            // 
-            this.dsTransaccionesMP1.DataSetName = "dsTransaccionesMP";
-            this.dsTransaccionesMP1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // vGridControl1
             // 
             this.vGridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -311,6 +306,8 @@ namespace LOSA.TransaccionesMP
             // 
             // rownumero_transaccion
             // 
+            this.rownumero_transaccion.Appearance.Options.UseTextOptions = true;
+            this.rownumero_transaccion.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.rownumero_transaccion.Name = "rownumero_transaccion";
             this.rownumero_transaccion.Properties.Caption = "# Ingreso";
             this.rownumero_transaccion.Properties.FieldName = "numero_transaccion";
@@ -372,7 +369,7 @@ namespace LOSA.TransaccionesMP
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(409, 340);
+            this.labelControl7.Location = new System.Drawing.Point(392, 340);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(10, 30);
             this.labelControl7.TabIndex = 114;
@@ -383,7 +380,7 @@ namespace LOSA.TransaccionesMP
             this.lblTotalUd_en_tarima.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalUd_en_tarima.Appearance.Options.UseFont = true;
             this.lblTotalUd_en_tarima.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblTotalUd_en_tarima.Location = new System.Drawing.Point(425, 340);
+            this.lblTotalUd_en_tarima.Location = new System.Drawing.Point(408, 340);
             this.lblTotalUd_en_tarima.Name = "lblTotalUd_en_tarima";
             this.lblTotalUd_en_tarima.Size = new System.Drawing.Size(115, 30);
             this.lblTotalUd_en_tarima.TabIndex = 115;
@@ -408,6 +405,11 @@ namespace LOSA.TransaccionesMP
             this.labelControl5.Size = new System.Drawing.Size(303, 30);
             this.labelControl5.TabIndex = 116;
             this.labelControl5.Text = "Por enviar de esta Tarima (Kg):";
+            // 
+            // dsTransaccionesMP1
+            // 
+            this.dsTransaccionesMP1.DataSetName = "dsTransaccionesMP";
+            this.dsTransaccionesMP1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // frmResumenToEntregar
             // 
@@ -444,9 +446,9 @@ namespace LOSA.TransaccionesMP
             ((System.ComponentModel.ISupportInitialize)(this.txtRestante.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRestanteTarimasUnidades.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chConsumirPendientes.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vGridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKgAEnviar.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

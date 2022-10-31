@@ -423,9 +423,9 @@ namespace LOSA.TransaccionesMP
             bool error = false;
             bool disponible = false;
             string mensaje = "";
-            decimal ExistenciaTM = 0;
-            decimal Pentregado = 0;
-            decimal Psolicitado = 0;
+            decimal ExistenciaTarimaKg = 0;
+            decimal PentregadoKg = 0;
+            decimal PsolicitadoKg  = 0;
             decimal factor = 0;
             //tarimaEncontrada = new Tarima();
             //tarimaEncontrada.RecuperarRegistro(0, txtTarima.Text);
@@ -595,14 +595,14 @@ namespace LOSA.TransaccionesMP
                             if (dr.Read())
                             {
                                 disponible = dr.GetBoolean(0);
-                                ExistenciaTM = dr.GetDecimal(2);
-                                Pentregado = dr.GetDecimal(3);
-                                Psolicitado = dr.GetDecimal(4);
+                                ExistenciaTarimaKg = dr.GetDecimal(2);
+                                PentregadoKg = dr.GetDecimal(3);
+                                PsolicitadoKg = dr.GetDecimal(4);
                                 factor = dr.GetDecimal(5);
                             }
                             dr.Close();
 
-                            if (ExistenciaTM <= 0)
+                            if (ExistenciaTarimaKg <= 0)
                             {
                                 mensaje = "Esta tarima ya fue entregada en Alimentación!" +
                                           "\nSi tiene la tarima en fisico, significa que ubico dos rotulos iguales \nen varias tarimas" +
@@ -646,9 +646,9 @@ namespace LOSA.TransaccionesMP
                         //}
                         
 
-                        frmResumenToEntregar frms = new frmResumenToEntregar( ExistenciaTM
-                                                                            , Pentregado
-                                                                            , Psolicitado
+                        frmResumenToEntregar frms = new frmResumenToEntregar( ExistenciaTarimaKg
+                                                                            , PentregadoKg
+                                                                            , PsolicitadoKg
                                                                             , DT_Tarima
                                                                             , idTarima
                                                                             , factor);
