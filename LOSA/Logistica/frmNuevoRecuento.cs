@@ -60,7 +60,7 @@ namespace LOSA.Logistica
                 da.Fill(dsCierreMes1.Recuento_mp);
                 cn.Close();
 
-                query = @"[sp_get_inizializar_grid_for_ptV2]";
+                query = @"sp_get_inizializar_grid_for_ptV2";
                 cn.Open();
                  cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;

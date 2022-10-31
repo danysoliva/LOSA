@@ -2076,23 +2076,25 @@ namespace LOSA.Logistica {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class Recuento_ptDataTable : global::System.Data.TypedTableBase<Recuento_ptRow> {
             
-            private global::System.Data.DataColumn columnid_mp;
+            private global::System.Data.DataColumn columnid_pt;
             
-            private global::System.Data.DataColumn columndescripcion;
+            private global::System.Data.DataColumn columnnombre_comercial;
             
-            private global::System.Data.DataColumn columnodoo;
+            private global::System.Data.DataColumn columnlote_pt;
             
-            private global::System.Data.DataColumn columnpeso;
+            private global::System.Data.DataColumn columnexistencia_unidades;
             
             private global::System.Data.DataColumn columnid_bodega;
             
             private global::System.Data.DataColumn columndiferencia;
             
-            private global::System.Data.DataColumn columnExistenciaAprox;
+            private global::System.Data.DataColumn columnexistencia_kg;
             
             private global::System.Data.DataColumn columncode_sap;
             
-            private global::System.Data.DataColumn columntoma_fisica;
+            private global::System.Data.DataColumn columntoma_fisica_kg;
+            
+            private global::System.Data.DataColumn columntoma_fisica_ud;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -2129,33 +2131,33 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn id_mpColumn {
+            public global::System.Data.DataColumn id_ptColumn {
                 get {
-                    return this.columnid_mp;
+                    return this.columnid_pt;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn descripcionColumn {
+            public global::System.Data.DataColumn nombre_comercialColumn {
                 get {
-                    return this.columndescripcion;
+                    return this.columnnombre_comercial;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn odooColumn {
+            public global::System.Data.DataColumn lote_ptColumn {
                 get {
-                    return this.columnodoo;
+                    return this.columnlote_pt;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn pesoColumn {
+            public global::System.Data.DataColumn existencia_unidadesColumn {
                 get {
-                    return this.columnpeso;
+                    return this.columnexistencia_unidades;
                 }
             }
             
@@ -2177,9 +2179,9 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ExistenciaAproxColumn {
+            public global::System.Data.DataColumn existencia_kgColumn {
                 get {
-                    return this.columnExistenciaAprox;
+                    return this.columnexistencia_kg;
                 }
             }
             
@@ -2193,9 +2195,17 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn toma_fisicaColumn {
+            public global::System.Data.DataColumn toma_fisica_kgColumn {
                 get {
-                    return this.columntoma_fisica;
+                    return this.columntoma_fisica_kg;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn toma_fisica_udColumn {
+                get {
+                    return this.columntoma_fisica_ud;
                 }
             }
             
@@ -2236,18 +2246,19 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Recuento_ptRow AddRecuento_ptRow(int id_mp, string descripcion, string odoo, decimal peso, int id_bodega, decimal diferencia, decimal ExistenciaAprox, string code_sap, decimal toma_fisica) {
+            public Recuento_ptRow AddRecuento_ptRow(int id_pt, string nombre_comercial, int lote_pt, decimal existencia_unidades, int id_bodega, decimal diferencia, decimal existencia_kg, string code_sap, decimal toma_fisica_kg, decimal toma_fisica_ud) {
                 Recuento_ptRow rowRecuento_ptRow = ((Recuento_ptRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        id_mp,
-                        descripcion,
-                        odoo,
-                        peso,
+                        id_pt,
+                        nombre_comercial,
+                        lote_pt,
+                        existencia_unidades,
                         id_bodega,
                         diferencia,
-                        ExistenciaAprox,
+                        existencia_kg,
                         code_sap,
-                        toma_fisica};
+                        toma_fisica_kg,
+                        toma_fisica_ud};
                 rowRecuento_ptRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRecuento_ptRow);
                 return rowRecuento_ptRow;
@@ -2270,38 +2281,41 @@ namespace LOSA.Logistica {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnid_mp = base.Columns["id_mp"];
-                this.columndescripcion = base.Columns["descripcion"];
-                this.columnodoo = base.Columns["odoo"];
-                this.columnpeso = base.Columns["peso"];
+                this.columnid_pt = base.Columns["id_pt"];
+                this.columnnombre_comercial = base.Columns["nombre_comercial"];
+                this.columnlote_pt = base.Columns["lote_pt"];
+                this.columnexistencia_unidades = base.Columns["existencia_unidades"];
                 this.columnid_bodega = base.Columns["id_bodega"];
                 this.columndiferencia = base.Columns["diferencia"];
-                this.columnExistenciaAprox = base.Columns["ExistenciaAprox"];
+                this.columnexistencia_kg = base.Columns["existencia_kg"];
                 this.columncode_sap = base.Columns["code_sap"];
-                this.columntoma_fisica = base.Columns["toma_fisica"];
+                this.columntoma_fisica_kg = base.Columns["toma_fisica_kg"];
+                this.columntoma_fisica_ud = base.Columns["toma_fisica_ud"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnid_mp = new global::System.Data.DataColumn("id_mp", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid_mp);
-                this.columndescripcion = new global::System.Data.DataColumn("descripcion", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndescripcion);
-                this.columnodoo = new global::System.Data.DataColumn("odoo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnodoo);
-                this.columnpeso = new global::System.Data.DataColumn("peso", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpeso);
+                this.columnid_pt = new global::System.Data.DataColumn("id_pt", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_pt);
+                this.columnnombre_comercial = new global::System.Data.DataColumn("nombre_comercial", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombre_comercial);
+                this.columnlote_pt = new global::System.Data.DataColumn("lote_pt", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlote_pt);
+                this.columnexistencia_unidades = new global::System.Data.DataColumn("existencia_unidades", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnexistencia_unidades);
                 this.columnid_bodega = new global::System.Data.DataColumn("id_bodega", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_bodega);
                 this.columndiferencia = new global::System.Data.DataColumn("diferencia", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndiferencia);
-                this.columnExistenciaAprox = new global::System.Data.DataColumn("ExistenciaAprox", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExistenciaAprox);
+                this.columnexistencia_kg = new global::System.Data.DataColumn("existencia_kg", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnexistencia_kg);
                 this.columncode_sap = new global::System.Data.DataColumn("code_sap", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncode_sap);
-                this.columntoma_fisica = new global::System.Data.DataColumn("toma_fisica", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntoma_fisica);
+                this.columntoma_fisica_kg = new global::System.Data.DataColumn("toma_fisica_kg", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntoma_fisica_kg);
+                this.columntoma_fisica_ud = new global::System.Data.DataColumn("toma_fisica_ud", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntoma_fisica_ud);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5240,6 +5254,8 @@ namespace LOSA.Logistica {
             
             private global::System.Data.DataColumn columnexistencia_fisica;
             
+            private global::System.Data.DataColumn columncontabilizado;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public recuentos_dDataTable() {
@@ -5387,6 +5403,14 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn contabilizadoColumn {
+                get {
+                    return this.columncontabilizado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5422,7 +5446,7 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public recuentos_dRow Addrecuentos_dRow(int id, int id_mp, string code_sap, string materia_prima, int id_bodega, string bodega, string lote, int id_lote_alosy, int id_header, decimal peso, System.DateTime Fecha_conteo, decimal diferencia_peso, decimal existencia_aprox, decimal existencia_fisica) {
+            public recuentos_dRow Addrecuentos_dRow(int id, int id_mp, string code_sap, string materia_prima, int id_bodega, string bodega, string lote, int id_lote_alosy, int id_header, decimal peso, System.DateTime Fecha_conteo, decimal diferencia_peso, decimal existencia_aprox, decimal existencia_fisica, bool contabilizado) {
                 recuentos_dRow rowrecuentos_dRow = ((recuentos_dRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -5438,7 +5462,8 @@ namespace LOSA.Logistica {
                         Fecha_conteo,
                         diferencia_peso,
                         existencia_aprox,
-                        existencia_fisica};
+                        existencia_fisica,
+                        contabilizado};
                 rowrecuentos_dRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowrecuentos_dRow);
                 return rowrecuentos_dRow;
@@ -5475,6 +5500,7 @@ namespace LOSA.Logistica {
                 this.columndiferencia_peso = base.Columns["diferencia_peso"];
                 this.columnexistencia_aprox = base.Columns["existencia_aprox"];
                 this.columnexistencia_fisica = base.Columns["existencia_fisica"];
+                this.columncontabilizado = base.Columns["contabilizado"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5508,6 +5534,8 @@ namespace LOSA.Logistica {
                 base.Columns.Add(this.columnexistencia_aprox);
                 this.columnexistencia_fisica = new global::System.Data.DataColumn("existencia_fisica", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnexistencia_fisica);
+                this.columncontabilizado = new global::System.Data.DataColumn("contabilizado", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncontabilizado);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7213,65 +7241,66 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int id_mp {
+            public int id_pt {
                 get {
                     try {
-                        return ((int)(this[this.tableRecuento_pt.id_mpColumn]));
+                        return ((int)(this[this.tableRecuento_pt.id_ptColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_mp\' de la tabla \'Recuento_pt\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_pt\' de la tabla \'Recuento_pt\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableRecuento_pt.id_mpColumn] = value;
+                    this[this.tableRecuento_pt.id_ptColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string descripcion {
+            public string nombre_comercial {
                 get {
                     try {
-                        return ((string)(this[this.tableRecuento_pt.descripcionColumn]));
+                        return ((string)(this[this.tableRecuento_pt.nombre_comercialColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'descripcion\' de la tabla \'Recuento_pt\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombre_comercial\' de la tabla \'Recuento_pt\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableRecuento_pt.descripcionColumn] = value;
+                    this[this.tableRecuento_pt.nombre_comercialColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string odoo {
+            public int lote_pt {
                 get {
                     try {
-                        return ((string)(this[this.tableRecuento_pt.odooColumn]));
+                        return ((int)(this[this.tableRecuento_pt.lote_ptColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'odoo\' de la tabla \'Recuento_pt\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'lote_pt\' de la tabla \'Recuento_pt\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableRecuento_pt.odooColumn] = value;
+                    this[this.tableRecuento_pt.lote_ptColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public decimal peso {
+            public decimal existencia_unidades {
                 get {
                     try {
-                        return ((decimal)(this[this.tableRecuento_pt.pesoColumn]));
+                        return ((decimal)(this[this.tableRecuento_pt.existencia_unidadesColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'peso\' de la tabla \'Recuento_pt\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'existencia_unidades\' de la tabla \'Recuento_pt\' es DBNull." +
+                                "", e);
                     }
                 }
                 set {
-                    this[this.tableRecuento_pt.pesoColumn] = value;
+                    this[this.tableRecuento_pt.existencia_unidadesColumn] = value;
                 }
             }
             
@@ -7309,17 +7338,17 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public decimal ExistenciaAprox {
+            public decimal existencia_kg {
                 get {
                     try {
-                        return ((decimal)(this[this.tableRecuento_pt.ExistenciaAproxColumn]));
+                        return ((decimal)(this[this.tableRecuento_pt.existencia_kgColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ExistenciaAprox\' de la tabla \'Recuento_pt\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'existencia_kg\' de la tabla \'Recuento_pt\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableRecuento_pt.ExistenciaAproxColumn] = value;
+                    this[this.tableRecuento_pt.existencia_kgColumn] = value;
                 }
             }
             
@@ -7341,66 +7370,82 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public decimal toma_fisica {
+            public decimal toma_fisica_kg {
                 get {
                     try {
-                        return ((decimal)(this[this.tableRecuento_pt.toma_fisicaColumn]));
+                        return ((decimal)(this[this.tableRecuento_pt.toma_fisica_kgColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'toma_fisica\' de la tabla \'Recuento_pt\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'toma_fisica_kg\' de la tabla \'Recuento_pt\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableRecuento_pt.toma_fisicaColumn] = value;
+                    this[this.tableRecuento_pt.toma_fisica_kgColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isid_mpNull() {
-                return this.IsNull(this.tableRecuento_pt.id_mpColumn);
+            public decimal toma_fisica_ud {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableRecuento_pt.toma_fisica_udColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'toma_fisica_ud\' de la tabla \'Recuento_pt\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRecuento_pt.toma_fisica_udColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setid_mpNull() {
-                this[this.tableRecuento_pt.id_mpColumn] = global::System.Convert.DBNull;
+            public bool Isid_ptNull() {
+                return this.IsNull(this.tableRecuento_pt.id_ptColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsdescripcionNull() {
-                return this.IsNull(this.tableRecuento_pt.descripcionColumn);
+            public void Setid_ptNull() {
+                this[this.tableRecuento_pt.id_ptColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetdescripcionNull() {
-                this[this.tableRecuento_pt.descripcionColumn] = global::System.Convert.DBNull;
+            public bool Isnombre_comercialNull() {
+                return this.IsNull(this.tableRecuento_pt.nombre_comercialColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsodooNull() {
-                return this.IsNull(this.tableRecuento_pt.odooColumn);
+            public void Setnombre_comercialNull() {
+                this[this.tableRecuento_pt.nombre_comercialColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetodooNull() {
-                this[this.tableRecuento_pt.odooColumn] = global::System.Convert.DBNull;
+            public bool Islote_ptNull() {
+                return this.IsNull(this.tableRecuento_pt.lote_ptColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IspesoNull() {
-                return this.IsNull(this.tableRecuento_pt.pesoColumn);
+            public void Setlote_ptNull() {
+                this[this.tableRecuento_pt.lote_ptColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetpesoNull() {
-                this[this.tableRecuento_pt.pesoColumn] = global::System.Convert.DBNull;
+            public bool Isexistencia_unidadesNull() {
+                return this.IsNull(this.tableRecuento_pt.existencia_unidadesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setexistencia_unidadesNull() {
+                this[this.tableRecuento_pt.existencia_unidadesColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7429,14 +7474,14 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsExistenciaAproxNull() {
-                return this.IsNull(this.tableRecuento_pt.ExistenciaAproxColumn);
+            public bool Isexistencia_kgNull() {
+                return this.IsNull(this.tableRecuento_pt.existencia_kgColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetExistenciaAproxNull() {
-                this[this.tableRecuento_pt.ExistenciaAproxColumn] = global::System.Convert.DBNull;
+            public void Setexistencia_kgNull() {
+                this[this.tableRecuento_pt.existencia_kgColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7453,14 +7498,26 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Istoma_fisicaNull() {
-                return this.IsNull(this.tableRecuento_pt.toma_fisicaColumn);
+            public bool Istoma_fisica_kgNull() {
+                return this.IsNull(this.tableRecuento_pt.toma_fisica_kgColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Settoma_fisicaNull() {
-                this[this.tableRecuento_pt.toma_fisicaColumn] = global::System.Convert.DBNull;
+            public void Settoma_fisica_kgNull() {
+                this[this.tableRecuento_pt.toma_fisica_kgColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Istoma_fisica_udNull() {
+                return this.IsNull(this.tableRecuento_pt.toma_fisica_udColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Settoma_fisica_udNull() {
+                this[this.tableRecuento_pt.toma_fisica_udColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -9644,6 +9701,22 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool contabilizado {
+                get {
+                    try {
+                        return ((bool)(this[this.tablerecuentos_d.contabilizadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'contabilizado\' de la tabla \'recuentos_d\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablerecuentos_d.contabilizadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tablerecuentos_d.idColumn);
             }
@@ -9808,6 +9881,18 @@ namespace LOSA.Logistica {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setexistencia_fisicaNull() {
                 this[this.tablerecuentos_d.existencia_fisicaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IscontabilizadoNull() {
+                return this.IsNull(this.tablerecuentos_d.contabilizadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetcontabilizadoNull() {
+                this[this.tablerecuentos_d.contabilizadoColumn] = global::System.Convert.DBNull;
             }
         }
         

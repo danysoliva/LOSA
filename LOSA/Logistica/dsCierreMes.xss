@@ -10,7 +10,7 @@
     <Shape ID="DesignTable:years" ZOrder="15" X="375" Y="330" Height="48" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="44" />
     <Shape ID="DesignTable:meses" ZOrder="14" X="583" Y="266" Height="67" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="63" />
     <Shape ID="DesignTable:Recuento_mp" ZOrder="13" X="763" Y="61" Height="296" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="292" />
-    <Shape ID="DesignTable:Recuento_pt" ZOrder="12" X="946" Y="218" Height="200" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="196" />
+    <Shape ID="DesignTable:Recuento_pt" ZOrder="12" X="946" Y="218" Height="219" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="215" />
     <Shape ID="DesignTable:articulos" ZOrder="11" X="631" Y="415" Height="105" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="101" />
     <Shape ID="DesignTable:bodegas" ZOrder="10" X="1125" Y="228" Height="86" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="82" />
     <Shape ID="DesignTable:lote_existencia" ZOrder="9" X="0" Y="0" Height="90" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="0" />

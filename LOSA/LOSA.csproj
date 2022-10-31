@@ -2280,6 +2280,12 @@
     <Compile Include="RecuentoInventario\frmDetalleRecuento.Designer.cs">
       <DependentUpon>frmDetalleRecuento.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecuentoInventario\frmEdtiarDetalleRecuento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecuentoInventario\frmEdtiarDetalleRecuento.Designer.cs">
+      <DependentUpon>frmEdtiarDetalleRecuento.cs</DependentUpon>
+    </Compile>
     <Compile Include="RecuentoInventario\frmRecuentoInventario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -3938,6 +3944,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RecuentoInventario\frmDetalleRecuento.resx">
       <DependentUpon>frmDetalleRecuento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecuentoInventario\frmEdtiarDetalleRecuento.resx">
+      <DependentUpon>frmEdtiarDetalleRecuento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RecuentoInventario\frmRecuentoInventario.resx">
       <DependentUpon>frmRecuentoInventario.cs</DependentUpon>
