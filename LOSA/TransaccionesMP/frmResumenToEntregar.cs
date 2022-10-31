@@ -136,6 +136,7 @@ namespace LOSA.TransaccionesMP
 
         private void btnUP_Click(object sender, EventArgs e)
         {
+            #region codigo old
             //if (ExistenciaKg + factor > ExistenciaTM * factor)
             //{
 
@@ -149,6 +150,7 @@ namespace LOSA.TransaccionesMP
             //    txtRestante.Text = string.Format("{0:###,##0.00}", RestanteReq);
             //    textEdit1.Text = string.Format("{0:###,##0.00}", RestanteTm);
             //}
+            #endregion
             int ud_enviar = dp.ValidateNumberInt32(txtPorEnviar.Text);
             if (ud_enviar == 0)
             {
