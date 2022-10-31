@@ -37,11 +37,11 @@ namespace LOSA.TransaccionesMP
                                     decimal psolicitado,
                                     DataTable Tarima,
                                     int Pid_tm,
-                                    decimal Pfactor)
+                                    decimal Pfactor
+                                    )
         {
 
             InitializeComponent();
-            //gcTarima.DataSource = Tarima;
             vGridControl1.DataSource = Tarima;
             this.ExistenciaTM = ExistenciaTM;
             ud_enviar = ExistenciaTM;
