@@ -474,5 +474,10 @@ namespace LOSA.TransaccionesMP
             }
 
         }
+
+        private void cmdActualizarResumenPorLote_Click(object sender, EventArgs e)
+        {
+            load_dataPorLotes();
+        }
     }
 }

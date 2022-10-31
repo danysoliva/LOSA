@@ -466,6 +466,7 @@ namespace LOSA.TransaccionesMP
                             cmd.Parameters.AddWithValue("@bodega_destino", gridLookUpEditDestino.EditValue);
                         else
                             cmd.Parameters.AddWithValue("@bodega_destino", DBNull.Value);
+
                         cmd.Parameters.AddWithValue("id_presentacion", gridLookUpEditPresentacion.EditValue);
                         cmd.Parameters.AddWithValue("@tipo_operacion", 1);//Forzosamente debe ser ajuste
                         cmd.ExecuteNonQuery();
