@@ -208,7 +208,7 @@ namespace LOSA.Logistica
                     conn.Open();
                     SqlCommand cmd = new SqlCommand("sp_get_tipo_ajuste", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@id_bodega", id_bodegaMP);
+                    cmd.Parameters.AddWithValue("@id_bodega", bodega);
                     SqlDataReader dr = cmd.ExecuteReader();
                     if (dr.Read())
                     {
@@ -375,7 +375,12 @@ namespace LOSA.Logistica
                     dr["lote"] = recorrido.lote;
                     dr["seleccionar"] = false;
                     dr["utilizado"] = recorrido.utilizado;
+                    //if (recorrido.id_lote_alosy == null)
+                    //{
+
+                    //}
                     dr["id_lote_alosy"] = recorrido.id_lote_alosy;
+
                     dr["id_bodega"] = bodega;
                     dr["id_lote_count"] = id_count_selected;
           
@@ -481,7 +486,6 @@ namespace LOSA.Logistica
                 }
             }
             
-            
             for (int i = 0; i < grdv_mps.SelectedRowsCount; i++)
             {
                 DataRow row2 = grdv_mps.GetDataRow(i);
@@ -491,7 +495,6 @@ namespace LOSA.Logistica
                 existencia_anterior = Convert.ToDecimal(row2["ExistenciaAprox"]);//Existencia en Bodega al momento del Recuento-Contabilizado
                 existencia_nueva = Convert.ToDecimal(row2["toma_fisica"]);//Nueva Cantidad - Toma Fisica
                 diferenciaMP = Convert.ToDecimal(row2["diferencia"]);//Diferencia = Existencia - Toma Fisica
-
             }
             try
             {
@@ -510,7 +513,7 @@ namespace LOSA.Logistica
             {
                 CajaDialogo.Error(ex.Message);
             }
-            dsCierreMes.Aceptado_lote.Clear();
+            //dsCierreMes.Aceptado_lote.Clear();
             foreach (dsCierreMes.Aceptado_loteRow row in dsCierreMes.Aceptado_lote.Rows)
             {
                 try
@@ -526,14 +529,36 @@ namespace LOSA.Logistica
                         //cmd.Parameters.AddWithValue("@unidades", );
                         cmd.Parameters.AddWithValue("@user_creador", UsuarioLogeado.Id);
                         cmd.Parameters.AddWithValue("@id_mp",IdMpSelected);
-                        cmd.Parameters.AddWithValue("@id_lote_externo", row.id_lote_alosy);
-                        cmd.Parameters.AddWithValue("@id_detalle", row.id_detalle);
-                        cmd.Parameters.AddWithValue("@bodega_in", row.bodega_in);
-                        cmd.Parameters.AddWithValue("@id_ingreso_lote", row.id_ingreso_lote);
-                        cmd.Parameters.AddWithValue("@id_presentacion", row.id_presentacion);
+
+                        if (row.id_lote_alosy == 0)
+                            cmd.Parameters.AddWithValue("@id_lote_externo", DBNull.Value);
+                        else
+                            cmd.Parameters.AddWithValue("@id_lote_externo", row.id_lote_alosy);
+
+                        if (row.id_detalle == 0)
+                            cmd.Parameters.AddWithValue("@id_detalle", DBNull.Value);
+                        else
+                            cmd.Parameters.AddWithValue("@id_detalle", row.id_detalle);
+
+                        if (string.IsNullOrEmpty(row.bodega_in))
+                            cmd.Parameters.AddWithValue("@bodega_in", DBNull.Value);
+                        else
+                            cmd.Parameters.AddWithValue("@bodega_in", row.bodega_in);
+
+                        if (row.id_ingreso_lote == 0)
+                            cmd.Parameters.AddWithValue("@id_ingreso_lote", DBNull.Value);
+                        else
+                            cmd.Parameters.AddWithValue("@id_ingreso_lote", row.id_ingreso_lote);
+
+                        if (row.id_presentacion == 0)
+                            cmd.Parameters.AddWithValue("@id_presentacion", DBNull.Value);
+                        else
+                            cmd.Parameters.AddWithValue("@id_presentacion", row.id_presentacion);
+
                         cmd.Parameters.AddWithValue("@existencia_anterior", existencia_anterior);
                         cmd.Parameters.AddWithValue("@existencia_nueva", existencia_nueva);
                         cmd.Parameters.AddWithValue("@lote", row.lote);
+                        cmd.Parameters.AddWithValue("@id_detalle_recuento", id_detalle_recuento);
                         cmd.ExecuteNonQuery();
                     }
                     else //Ajuste en Planta
@@ -552,8 +577,13 @@ namespace LOSA.Logistica
                         cmd.Parameters.AddWithValue("@diferenciaMP", diferenciaMP);
                         cmd.Parameters.AddWithValue("@id_detalle_recuento", id_detalle_recuento);
                         cmd.Parameters.AddWithValue("@lote", row.lote);
-                        cmd.Parameters.AddWithValue("@id_lote_alosy", row.id_lote_alosy);
-                        cmd.Parameters.AddWithValue("@id_bodega", row.id_bodega);
+
+                        if (row.id_lote_alosy == 0)
+                            cmd.Parameters.AddWithValue("@id_lote_alosy", DBNull.Value);
+                        else
+                            cmd.Parameters.AddWithValue("@id_lote_alosy", row.id_lote_alosy);
+
+                        //cmd.Parameters.AddWithValue("@id_bodega", row.id_bodega);
 
                         cmd.Parameters.AddWithValue("@utilizado", row.utilizado); //Esto es el valor de lo que se va dar Salida/Entrada en Kardex
                         
@@ -674,5 +704,7 @@ namespace LOSA.Logistica
                 CajaDialogo.Error(ec.Message);
             }
         }
+
+      
     }
 }

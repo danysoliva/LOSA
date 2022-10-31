@@ -1669,6 +1669,8 @@ namespace LOSA.Logistica {
             
             private global::System.Data.DataColumn columnid;
             
+            private global::System.Data.DataColumn columncontabilizado;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Recuento_mpDataTable() {
@@ -1808,6 +1810,14 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn contabilizadoColumn {
+                get {
+                    return this.columncontabilizado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1843,7 +1853,7 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Recuento_mpRow AddRecuento_mpRow(int id_mp, string descripcion, decimal peso, int id_bodega, decimal diferencia, decimal ExistenciaAprox, decimal seleccionado, int count_id, string code_sap, decimal toma_fisica, string whs_equivalente, bool seleccion, int id) {
+            public Recuento_mpRow AddRecuento_mpRow(int id_mp, string descripcion, decimal peso, int id_bodega, decimal diferencia, decimal ExistenciaAprox, decimal seleccionado, int count_id, string code_sap, decimal toma_fisica, string whs_equivalente, bool seleccion, int id, bool contabilizado) {
                 Recuento_mpRow rowRecuento_mpRow = ((Recuento_mpRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_mp,
@@ -1858,7 +1868,8 @@ namespace LOSA.Logistica {
                         toma_fisica,
                         whs_equivalente,
                         seleccion,
-                        id};
+                        id,
+                        contabilizado};
                 rowRecuento_mpRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRecuento_mpRow);
                 return rowRecuento_mpRow;
@@ -1894,6 +1905,7 @@ namespace LOSA.Logistica {
                 this.columnwhs_equivalente = base.Columns["whs_equivalente"];
                 this.columnseleccion = base.Columns["seleccion"];
                 this.columnid = base.Columns["id"];
+                this.columncontabilizado = base.Columns["contabilizado"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1925,6 +1937,8 @@ namespace LOSA.Logistica {
                 base.Columns.Add(this.columnseleccion);
                 this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid);
+                this.columncontabilizado = new global::System.Data.DataColumn("contabilizado", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncontabilizado);
                 this.columnseleccionado.DefaultValue = ((decimal)(0m));
                 this.columncount_id.DefaultValue = ((int)(0));
                 this.columnseleccion.Caption = "Ajuste de Lote";
@@ -7000,6 +7014,22 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool contabilizado {
+                get {
+                    try {
+                        return ((bool)(this[this.tableRecuento_mp.contabilizadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'contabilizado\' de la tabla \'Recuento_mp\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRecuento_mp.contabilizadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isid_mpNull() {
                 return this.IsNull(this.tableRecuento_mp.id_mpColumn);
             }
@@ -7152,6 +7182,18 @@ namespace LOSA.Logistica {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetidNull() {
                 this[this.tableRecuento_mp.idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IscontabilizadoNull() {
+                return this.IsNull(this.tableRecuento_mp.contabilizadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetcontabilizadoNull() {
+                this[this.tableRecuento_mp.contabilizadoColumn] = global::System.Convert.DBNull;
             }
         }
         

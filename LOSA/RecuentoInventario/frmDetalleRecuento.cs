@@ -34,9 +34,10 @@ namespace LOSA.RecuentoInventario
 
         public frmDetalleRecuento(DataTable pdata, UserLogin puserLogin,int pidyear,int pidmes, DateTime pfecha_recuento)
         {
+            //Guardar/Editar Recuento
             InitializeComponent();
             UsuarioLogeado = puserLogin;
-            cmdSelecLote.Visible = false;
+            
             btnConfirmar.Visible = true;
             //pidyear = Convert.ToInt32(grd_years.EditValue);
             //NuevoRecuento = new Recuento();
@@ -53,14 +54,16 @@ namespace LOSA.RecuentoInventario
             grd_meses_disponibles.EditValue = id_mes;
             //mes = Convert.ToInt32(grd_meses_disponibles.EditValue);
             IsContabilizacion = false;
+            btnFinContabilziacion.Visible = false;
         }
 
-        public frmDetalleRecuento(UserLogin puserLogin, int pid_recuento, bool pcontabilizado)
+        public frmDetalleRecuento(UserLogin puserLogin, int pid_recuento, bool pcontabilizado, int pyear, int pmes, string pcomentario)
         {
+            //Contabilizacion
             InitializeComponent();
 
             dsCierreMes1.Recuento_mp.Clear();
-            cmdSelecLote.Visible = true;
+       
             btnConfirmar.Visible = false;
             UsuarioLogeado = puserLogin;
             Id_header = pid_recuento;
@@ -69,8 +72,14 @@ namespace LOSA.RecuentoInventario
             get_meses_by_year();
             get_bodegas();
             get_years();
+            id_year = pyear;
+            id_mes = pmes;
+            grd_years.EditValue = id_year;
+            grd_meses_disponibles.EditValue = id_mes;
             IsContabilizacion = true;
+            btnFinContabilziacion.Visible = true;
             
+            txtComentario.Text = pcomentario;
         }
 
         public void load_data_contabilizar()
@@ -129,8 +138,6 @@ namespace LOSA.RecuentoInventario
                 dsCierreMes1.years.Clear();
                 da.Fill(dsCierreMes1.years);
                 cn.Close();
-
-
             }
             catch (Exception ex)
             {
@@ -151,7 +158,6 @@ namespace LOSA.RecuentoInventario
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dsCierreMes1.bodegas);
                 cn.Close();
-
             }
             catch (Exception ex)
             {
@@ -172,7 +178,6 @@ namespace LOSA.RecuentoInventario
                 return;
             }
 
-
             using (SqlConnection connection = new SqlConnection(dp.ConnectionStringLOSA))
             {
 
@@ -188,13 +193,11 @@ namespace LOSA.RecuentoInventario
                 //Must assign both transaction object and connection
                 //to Command object for a pending local transaction
 
-
                 command.Connection = connection;
                 command.Transaction = transaction;
 
                 try
                 {
-
                     command.CommandText = "sp_insert_encabezado_recuento_final_header";
                     command.Parameters.AddWithValue("@user_created", UsuarioLogeado.Id);
                     command.Parameters.AddWithValue("@mes", grd_meses_disponibles.EditValue);
@@ -205,9 +208,9 @@ namespace LOSA.RecuentoInventario
 
 
                     ////Insert en Detalle de Recuento Final MATERIA PRIMA
-                    for (int i = 0; i < grdv_mps.DataRowCount; i++)
+                    for (int i = 0; i < gridViewMP.DataRowCount; i++)
                     {
-                        DataRow row = grdv_mps.GetDataRow(i);
+                        DataRow row = gridViewMP.GetDataRow(i);
                         
                         command.Parameters.Clear();
                         command.CommandText = "sp_insert_inventario_final_detalle";
@@ -263,59 +266,7 @@ namespace LOSA.RecuentoInventario
             }
         }
 
-        private void cmdSelecLote_Click(object sender, EventArgs e)
-        {
-            //using (SqlConnection connection = new SqlConnection(dp.ConnectionStringLOSA))
-            //{
-
-            //    //for (int i = 0; i < grdv_mps.SelectedRowsCount; i++)
-            //    //{
-            //    //    DataRow row = grdv_mps.GetDataRow(i);
-
-            //    //    
-            //    //}
-
-            //    dsCierreMes.Recuento_mpDataTable tableOps = new dsCierreMes.Recuento_mpDataTable();
-
-            //    //foreach (dsCierreMes.recuentos_dRow row1 in dsCierreMes1.recuentos_d.Rows)
-            //    //{
-            //    //    DataRow row2 = grdv_mps.GetDataRow(i);
-            //    //}
-
-            //    for (int i = 0; i < grdv_mps.SelectedRowsCount; i++)
-            //    {
-
-            //        DataRow row2 = grdv_mps.GetDataRow(i);
-
-            //        if (Convert.ToDecimal(row2["diferencia"]) > 0 || Convert.ToDecimal(row2["diferencia"]) < 0)
-            //        {
-            //            dsCierreMes.Recuento_mpRow row1 = tableOps.NewRecuento_mpRow();
-            //            row1.id_mp = Convert.ToInt32(row2["id_mp"]);
-            //            row1.descripcion = Convert.ToString(row2["descripcion"]);
-            //            row1.peso = Convert.ToDecimal(row2["peso"]);
-            //            row1.id_bodega = Convert.ToInt32(row2["id_bodega"]);
-            //            row1.diferencia = Convert.ToDecimal(row2["diferencia"]);
-            //            row1.ExistenciaAprox = Convert.ToDecimal(row2["ExistenciaAprox"]);
-            //            row1.code_sap = Convert.ToString(row2["code_sap"]);
-            //            //row1.lote = row.lote;
-            //            row1.toma_fisica = Convert.ToDecimal(row2["toma_fisica"]);
-            //            //row1.whs_equivalente = row.whs_equivalente;
-            //            //row1.numero_transaccion = row.numero_transaccion;
-            //            tableOps.AddRecuento_mpRow(row1);
-            //            tableOps.AcceptChanges();
-
-            //            Logistica.frmSeleccionLoteCierre frm = new Logistica.frmSeleccionLoteCierre(UsuarioLogeado, tableOps);
-            //            if (frm.ShowDialog() == DialogResult.OK)
-            //            {
-
-            //            }
-
-            //            //Row Style - Vamos a Pintar de Verde si cumple los parametros
-            //        }
-            //    }
-            //}
-        }
-
+     
         private void grdv_mps_DoubleClick(object sender, EventArgs e)
         {
             var gv = (GridView)grd_mps.FocusedView;
@@ -353,11 +304,12 @@ namespace LOSA.RecuentoInventario
                             
                             TABLAOPSNew = tableOps;
                         }
-                        Logistica.frmSeleccionLoteCierre frm = new frmSeleccionLoteCierre(UsuarioLogeado, TABLAOPSNew, id_detalle_recuento);
+                        Logistica.frmSeleccionLoteCierre frm = new frmSeleccionLoteCierre(UsuarioLogeado, TABLAOPSNew, row.id);
                         if (frm.ShowDialog() == DialogResult.OK)
                         {
                             tableOps.Clear();
-                           
+                            dsCierreMes1.Recuento_mp.Clear();
+                            load_data_contabilizar();
                         }
 
                         //for (int i = 0; i < grdv_mps.SelectedRowsCount; i++)
@@ -403,21 +355,9 @@ namespace LOSA.RecuentoInventario
             }
         }
 
-        private void grdv_mps_RowStyle(object sender, RowStyleEventArgs e)
+        private void grdv_mps_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)
         {
-
-            GridView View = sender as GridView;
-            if (e.RowHandle >= 0)
-            {
-
-                for (int i = 0; i < grdv_mps.SelectedRowsCount; i++)
-                {
-                    DataRow row2 = grdv_mps.GetFocusedDataRow();
-                    e.Appearance.BackColor = Color.GreenYellow;
-                }
-                ////Si el valor que se agrego igual a la diferencia en 0!
-                //e.Appearance.BackColor = Color.Gray;
-            }
+            
         }
 
         private void gridView3_DoubleClick(object sender, EventArgs e)
@@ -459,11 +399,12 @@ namespace LOSA.RecuentoInventario
 
                                 TABLAOPSNew = tableOps;
                             }
-                            Logistica.frmSeleccionLoteCierre frm = new frmSeleccionLoteCierre(UsuarioLogeado, TABLAOPSNew, id_detalle_recuento);
+                            Logistica.frmSeleccionLoteCierre frm = new frmSeleccionLoteCierre(UsuarioLogeado, TABLAOPSNew, row.id);
                             if (frm.ShowDialog() == DialogResult.OK)
                             {
                                 tableOps.Clear();
-
+                                dsCierreMes1.Recuento_mp.Clear();
+                                load_data_contabilizar();
                             }
 
                             //for (int i = 0; i < grdv_mps.SelectedRowsCount; i++)
@@ -512,6 +453,58 @@ namespace LOSA.RecuentoInventario
             {
                 //Pues nada.
             }
+        }
+
+        private void btnFinContabilziacion_Click(object sender, EventArgs e)
+        {
+            DialogResult r = CajaDialogo.Pregunta("Desea cerrar este recuento de inventario?");
+            if (r != System.Windows.Forms.DialogResult.Yes)
+                return;
+
+            string query = @"sp_update_cerrar_contabilizacion";
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_h_recuento", Id_header);
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
+
+        private void gridViewMP_RowStyle(object sender, RowStyleEventArgs e)
+        {
+            //load_data_contabilizar();
+
+            GridView View = sender as GridView;
+            //string Estado = View.GetRowCellDisplayText(e.RowHandle, View.Columns["Estatus"]);
+            string Contabilizado = View.GetRowCellDisplayText(e.RowHandle, View.Columns["contabilizado"] /*["contabilizado"]*/);
+            if (Contabilizado == "Seleccionado")
+            {
+                e.Appearance.BackColor = Color.Green;
+            }
+            else //No seleccionado
+            {
+                e.Appearance.BackColor = Color.OrangeRed;
+            }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            dsCierreMes1.Recuento_mp.Clear();
+            load_data_contabilizar();
         }
     }
 }
