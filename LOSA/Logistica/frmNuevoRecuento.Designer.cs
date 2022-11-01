@@ -29,18 +29,17 @@ namespace LOSA.Logistica
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNuevoRecuento));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions7 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject25 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject26 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject27 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject28 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions8 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject29 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject30 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject31 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject32 = new DevExpress.Utils.SerializableAppearanceObject();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.cmdVerDetalle = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
@@ -49,7 +48,7 @@ namespace LOSA.Logistica
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.grd_meses_disponibles = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.mesesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mesesBindingSource = new System.Windows.Forms.BindingSource();
             this.dsCierreMes1 = new LOSA.Logistica.dsCierreMes();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colmes_numero = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -58,7 +57,7 @@ namespace LOSA.Logistica
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.grd_years = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.yearsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.yearsBindingSource = new System.Windows.Forms.BindingSource();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colejercicio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
@@ -72,7 +71,7 @@ namespace LOSA.Logistica
             this.colpeso = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_bodega = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grd_bodegas = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.bodegasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bodegasBindingSource = new System.Windows.Forms.BindingSource();
             this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colwhs_code = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -89,20 +88,20 @@ namespace LOSA.Logistica
             this.panel1 = new System.Windows.Forms.Panel();
             this.grd_data_pt = new DevExpress.XtraGrid.GridControl();
             this.grdv_data_pt = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grb_bodega_pt = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colEliminarPT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btneliminarpt = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.colcode_sap1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coltoma_fisica1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
+            this.colid_pt = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnombre_comercial = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collote_pt = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colexistencia_unidades = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_bodega1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldiferencia1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colexistencia_kg = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcode_sap1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltoma_fisica_kg = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltoma_fisica_ud = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
@@ -648,9 +647,9 @@ namespace LOSA.Logistica
             // btnEliminar
             // 
             this.btnEliminar.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions7.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions7.Image")));
             this.btnEliminar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions7, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject25, serializableAppearanceObject26, serializableAppearanceObject27, serializableAppearanceObject28, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -774,67 +773,21 @@ namespace LOSA.Logistica
             this.grdv_data_pt.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.grdv_data_pt.Appearance.TopNewRow.Options.UseFont = true;
             this.grdv_data_pt.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5,
-            this.gridColumn6,
-            this.gridColumn7,
-            this.colEliminarPT,
+            this.colid_pt,
+            this.colnombre_comercial,
+            this.collote_pt,
+            this.colexistencia_unidades,
+            this.colid_bodega1,
+            this.coldiferencia1,
+            this.colexistencia_kg,
             this.colcode_sap1,
-            this.coltoma_fisica1});
+            this.coltoma_fisica_kg,
+            this.coltoma_fisica_ud});
             this.grdv_data_pt.GridControl = this.grd_data_pt;
             this.grdv_data_pt.Name = "grdv_data_pt";
             this.grdv_data_pt.OptionsView.EnableAppearanceOddRow = true;
             this.grdv_data_pt.OptionsView.ShowAutoFilterRow = true;
             this.grdv_data_pt.OptionsView.ShowGroupPanel = false;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.FieldName = "id_mp";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.OptionsColumn.AllowEdit = false;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Producto";
-            this.gridColumn2.FieldName = "descripcion";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.OptionsColumn.AllowEdit = false;
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 190;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "Codigo";
-            this.gridColumn3.FieldName = "odoo";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.OptionsColumn.AllowEdit = false;
-            this.gridColumn3.Width = 189;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "Nueva cantidad";
-            this.gridColumn4.DisplayFormat.FormatString = "{0:0.##.##} Kg";
-            this.gridColumn4.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn4.FieldName = "peso";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.OptionsColumn.AllowEdit = false;
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 6;
-            this.gridColumn4.Width = 154;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Caption = "Bodega";
-            this.gridColumn5.ColumnEdit = this.grb_bodega_pt;
-            this.gridColumn5.FieldName = "id_bodega";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 2;
-            this.gridColumn5.Width = 190;
             // 
             // grb_bodega_pt
             // 
@@ -855,73 +808,15 @@ namespace LOSA.Logistica
             this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
-            // gridColumn6
-            // 
-            this.gridColumn6.AppearanceCell.BackColor = System.Drawing.Color.Silver;
-            this.gridColumn6.AppearanceCell.Options.UseBackColor = true;
-            this.gridColumn6.Caption = "Diferencia";
-            this.gridColumn6.DisplayFormat.FormatString = "{0:0.##.##} Kg";
-            this.gridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn6.FieldName = "diferencia";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.OptionsColumn.AllowEdit = false;
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 5;
-            this.gridColumn6.Width = 191;
-            // 
-            // gridColumn7
-            // 
-            this.gridColumn7.AppearanceCell.BackColor = System.Drawing.Color.Silver;
-            this.gridColumn7.AppearanceCell.Options.UseBackColor = true;
-            this.gridColumn7.Caption = "Existencia Aproximada";
-            this.gridColumn7.DisplayFormat.FormatString = "{0:0.##.##} Kg";
-            this.gridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn7.FieldName = "ExistenciaAprox";
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.OptionsColumn.AllowEdit = false;
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 3;
-            this.gridColumn7.Width = 235;
-            // 
-            // colEliminarPT
-            // 
-            this.colEliminarPT.Caption = "Eliminar";
-            this.colEliminarPT.ColumnEdit = this.btneliminarpt;
-            this.colEliminarPT.Name = "colEliminarPT";
-            this.colEliminarPT.Visible = true;
-            this.colEliminarPT.VisibleIndex = 7;
-            this.colEliminarPT.Width = 128;
-            // 
             // btneliminarpt
             // 
             this.btneliminarpt.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions8.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions8.Image")));
             this.btneliminarpt.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions8, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject29, serializableAppearanceObject30, serializableAppearanceObject31, serializableAppearanceObject32, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btneliminarpt.Name = "btneliminarpt";
             this.btneliminarpt.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btneliminarpt.Click += new System.EventHandler(this.btneliminarpt_Click);
-            // 
-            // colcode_sap1
-            // 
-            this.colcode_sap1.Caption = "Codigo SAP";
-            this.colcode_sap1.FieldName = "code_sap";
-            this.colcode_sap1.Name = "colcode_sap1";
-            this.colcode_sap1.OptionsColumn.AllowEdit = false;
-            this.colcode_sap1.Visible = true;
-            this.colcode_sap1.VisibleIndex = 0;
-            this.colcode_sap1.Width = 97;
-            // 
-            // coltoma_fisica1
-            // 
-            this.coltoma_fisica1.Caption = "Existencia Fisica";
-            this.coltoma_fisica1.DisplayFormat.FormatString = "{0:0.##.##} Kg";
-            this.coltoma_fisica1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.coltoma_fisica1.FieldName = "toma_fisica";
-            this.coltoma_fisica1.Name = "coltoma_fisica1";
-            this.coltoma_fisica1.Visible = true;
-            this.coltoma_fisica1.VisibleIndex = 4;
-            this.coltoma_fisica1.Width = 144;
             // 
             // xtraTabPage3
             // 
@@ -933,6 +828,103 @@ namespace LOSA.Logistica
             this.xtraTabPage3.PageVisible = false;
             this.xtraTabPage3.Size = new System.Drawing.Size(1362, 519);
             this.xtraTabPage3.Text = "Reproceso";
+            // 
+            // colid_pt
+            // 
+            this.colid_pt.FieldName = "id_pt";
+            this.colid_pt.Name = "colid_pt";
+            // 
+            // colnombre_comercial
+            // 
+            this.colnombre_comercial.Caption = "Nombre Comercial";
+            this.colnombre_comercial.FieldName = "nombre_comercial";
+            this.colnombre_comercial.Name = "colnombre_comercial";
+            this.colnombre_comercial.OptionsColumn.AllowEdit = false;
+            this.colnombre_comercial.Visible = true;
+            this.colnombre_comercial.VisibleIndex = 1;
+            this.colnombre_comercial.Width = 182;
+            // 
+            // collote_pt
+            // 
+            this.collote_pt.Caption = "Lote";
+            this.collote_pt.FieldName = "lote_pt";
+            this.collote_pt.Name = "collote_pt";
+            this.collote_pt.OptionsColumn.AllowEdit = false;
+            this.collote_pt.Visible = true;
+            this.collote_pt.VisibleIndex = 2;
+            this.collote_pt.Width = 104;
+            // 
+            // colexistencia_unidades
+            // 
+            this.colexistencia_unidades.Caption = "Existencia Sistema Und";
+            this.colexistencia_unidades.FieldName = "existencia_unidades";
+            this.colexistencia_unidades.Name = "colexistencia_unidades";
+            this.colexistencia_unidades.OptionsColumn.AllowEdit = false;
+            this.colexistencia_unidades.Visible = true;
+            this.colexistencia_unidades.VisibleIndex = 3;
+            this.colexistencia_unidades.Width = 191;
+            // 
+            // colid_bodega1
+            // 
+            this.colid_bodega1.FieldName = "id_bodega";
+            this.colid_bodega1.Name = "colid_bodega1";
+            // 
+            // coldiferencia1
+            // 
+            this.coldiferencia1.Caption = "Diferencia Kg";
+            this.coldiferencia1.DisplayFormat.FormatString = "n2";
+            this.coldiferencia1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.coldiferencia1.FieldName = "diferencia";
+            this.coldiferencia1.Name = "coldiferencia1";
+            this.coldiferencia1.OptionsColumn.AllowEdit = false;
+            this.coldiferencia1.Visible = true;
+            this.coldiferencia1.VisibleIndex = 7;
+            this.coldiferencia1.Width = 165;
+            // 
+            // colexistencia_kg
+            // 
+            this.colexistencia_kg.Caption = "Existencia Sistema Kg";
+            this.colexistencia_kg.DisplayFormat.FormatString = "n2";
+            this.colexistencia_kg.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colexistencia_kg.FieldName = "existencia_kg";
+            this.colexistencia_kg.Name = "colexistencia_kg";
+            this.colexistencia_kg.OptionsColumn.AllowEdit = false;
+            this.colexistencia_kg.Visible = true;
+            this.colexistencia_kg.VisibleIndex = 4;
+            this.colexistencia_kg.Width = 177;
+            // 
+            // colcode_sap1
+            // 
+            this.colcode_sap1.Caption = "Codigo Sap";
+            this.colcode_sap1.FieldName = "code_sap";
+            this.colcode_sap1.Name = "colcode_sap1";
+            this.colcode_sap1.OptionsColumn.AllowEdit = false;
+            this.colcode_sap1.Visible = true;
+            this.colcode_sap1.VisibleIndex = 0;
+            this.colcode_sap1.Width = 166;
+            // 
+            // coltoma_fisica_kg
+            // 
+            this.coltoma_fisica_kg.Caption = "Toma Fisica Kg";
+            this.coltoma_fisica_kg.DisplayFormat.FormatString = "n2";
+            this.coltoma_fisica_kg.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.coltoma_fisica_kg.FieldName = "toma_fisica_kg";
+            this.coltoma_fisica_kg.Name = "coltoma_fisica_kg";
+            this.coltoma_fisica_kg.OptionsColumn.AllowEdit = false;
+            this.coltoma_fisica_kg.Visible = true;
+            this.coltoma_fisica_kg.VisibleIndex = 5;
+            this.coltoma_fisica_kg.Width = 165;
+            // 
+            // coltoma_fisica_ud
+            // 
+            this.coltoma_fisica_ud.Caption = "Toma Fisica Ud";
+            this.coltoma_fisica_ud.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.coltoma_fisica_ud.FieldName = "toma_fisica_ud";
+            this.coltoma_fisica_ud.Name = "coltoma_fisica_ud";
+            this.coltoma_fisica_ud.OptionsColumn.AllowEdit = false;
+            this.coltoma_fisica_ud.Visible = true;
+            this.coltoma_fisica_ud.VisibleIndex = 6;
+            this.coltoma_fisica_ud.Width = 179;
             // 
             // frmNuevoRecuento
             // 
@@ -1011,14 +1003,6 @@ namespace LOSA.Logistica
         private DevExpress.XtraGrid.Columns.GridColumn colExistenciaAprox;
         private DevExpress.XtraGrid.Columns.GridColumn coleliminar;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnEliminar;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
-        private DevExpress.XtraGrid.Columns.GridColumn colEliminarPT;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btneliminarpt;
         private DevExpress.XtraGrid.Columns.GridColumn colmes_numero;
         private DevExpress.XtraGrid.Columns.GridColumn colmes;
@@ -1030,14 +1014,22 @@ namespace LOSA.Logistica
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraGrid.Columns.GridColumn colcode_sap;
         private DevExpress.XtraGrid.Columns.GridColumn colcount_id;
-        private DevExpress.XtraGrid.Columns.GridColumn colcode_sap1;
         private DevExpress.XtraGrid.Columns.GridColumn coltoma_fisica;
         private DevExpress.XtraGrid.Columns.GridColumn collote;
-        private DevExpress.XtraGrid.Columns.GridColumn coltoma_fisica1;
         private DevExpress.XtraGrid.Columns.GridColumn colwhs_code;
         private DevExpress.XtraGrid.Columns.GridColumn coldescripcion1;
         private DevExpress.XtraEditors.SimpleButton cmdVerDetalle;
         private DevExpress.XtraGrid.Columns.GridColumn colseleccion;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage3;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_pt;
+        private DevExpress.XtraGrid.Columns.GridColumn colnombre_comercial;
+        private DevExpress.XtraGrid.Columns.GridColumn collote_pt;
+        private DevExpress.XtraGrid.Columns.GridColumn colexistencia_unidades;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_bodega1;
+        private DevExpress.XtraGrid.Columns.GridColumn coldiferencia1;
+        private DevExpress.XtraGrid.Columns.GridColumn colexistencia_kg;
+        private DevExpress.XtraGrid.Columns.GridColumn colcode_sap1;
+        private DevExpress.XtraGrid.Columns.GridColumn coltoma_fisica_kg;
+        private DevExpress.XtraGrid.Columns.GridColumn coltoma_fisica_ud;
     }
 }

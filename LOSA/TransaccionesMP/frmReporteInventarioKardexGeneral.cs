@@ -479,5 +479,20 @@ namespace LOSA.TransaccionesMP
         {
             load_dataPorLotes();
         }
+
+        private void btnRefreshRptMP_Click(object sender, EventArgs e)
+        {
+            load_data_totales();
+        }
+
+        private void btnRptPRD_Click(object sender, EventArgs e)
+        {
+            load_dataPRD();
+        }
+
+        private void btnRptMPyBod_Click(object sender, EventArgs e)
+        {
+            load_dataResumenMP_por_bodega();
+        }
     }
 }
