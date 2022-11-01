@@ -485,9 +485,9 @@ namespace LOSA.Logistica
                         try
                         {
                             myCommand.Fill(dsCierre.LoadExcel);
-                            foreach (dsCierreMes.Recuento_mpRow row in dsCierreMes1.Recuento_mp.Rows)
+                            foreach (dsCierreMes.Recuento_mpRow row in dsCierreMes1.Recuento_mp.Rows)//Sistema
                             {
-                                foreach (dsCierreMes.LoadExcelRow row2 in dsCierre.LoadExcel.Rows)
+                                foreach (dsCierreMes.LoadExcelRow row2 in dsCierre.LoadExcel.Rows)//Excel
                                 {
                                     if (row.code_sap == row2.Codigo && row.whs_equivalente == row2.Bodega)
                                     {
