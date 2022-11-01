@@ -194,7 +194,7 @@ namespace LOSA.Logistica
                     DataRow dr = dsCierreMes1.Recuento_mp.NewRow();
                     dr["id_mp"] = frm.id;
                     dr["descripcion"] = frm.descripcion;
-                    dr["odoo"] = frm.codigo;
+                    //dr["odoo"] = frm.codigo;
                     dr["code_sap"] = frm.itemcode;
                     dr["peso"] = DEFAULT_VALUE;
                     dr["diferencia"] = DEFAULT_VALUE;
@@ -208,7 +208,7 @@ namespace LOSA.Logistica
                     DataRow dr = dsCierreMes1.Recuento_pt.NewRow();
                     dr["id_mp"] = frm.id;
                     dr["descripcion"] = frm.descripcion;
-                    dr["odoo"] = frm.codigo;
+                    //dr["odoo"] = frm.codigo;
                     dr["code_sap"] = frm.itemcode;
                     dr["peso"] = DEFAULT_VALUE;
                     dr["diferencia"] = DEFAULT_VALUE;
@@ -354,6 +354,7 @@ namespace LOSA.Logistica
             foreach (dsCierreMes.Recuento_mpRow item in dsCierreMes1.Recuento_mp.Rows)
             {
                 item.diferencia = item.ExistenciaAprox - item.toma_fisica;
+                
                 item.peso /* Nueva Cantidad */ = item.toma_fisica;
             }
         
@@ -482,12 +483,14 @@ namespace LOSA.Logistica
 
 
                         SplashForm frm = new SplashForm();
+
                         try
                         {
                             myCommand.Fill(dsCierre.LoadExcel);
-                            foreach (dsCierreMes.Recuento_mpRow row in dsCierreMes1.Recuento_mp.Rows)
+                            
+                            foreach (dsCierreMes.LoadExcelRow row2 in dsCierre.LoadExcel.Rows)
                             {
-                                foreach (dsCierreMes.LoadExcelRow row2 in dsCierre.LoadExcel.Rows)
+                                foreach (dsCierreMes.Recuento_mpRow row in dsCierreMes1.Recuento_mp.Rows)
                                 {
                                     if (row.code_sap == row2.Codigo && row.whs_equivalente == row2.Bodega)
                                     {
@@ -498,11 +501,34 @@ namespace LOSA.Logistica
                             dsCierreMes1.Recuento_mp.AcceptChanges();
 
                             CalculoExistencias();
+
+                            CajaDialogo.Information("Plantilla Cargada con Exito!");
                         }
                         catch (Exception ec)
                         {
                             CajaDialogo.Error(ec.Message);
                         }
+                        //try
+                        //{
+                        //    myCommand.Fill(dsCierre.LoadExcel);
+                        //    foreach (dsCierreMes.Recuento_mpRow row in dsCierreMes1.Recuento_mp.Rows)
+                        //    {
+                        //        foreach (dsCierreMes.LoadExcelRow row2 in dsCierre.LoadExcel.Rows)
+                        //        {
+                        //            if (row.code_sap == row2.Codigo && row.whs_equivalente == row2.Bodega)
+                        //            {
+                        //                row.toma_fisica = row2.Toma_Física_Kg;
+                        //            }
+                        //        }
+                        //    }
+                        //    dsCierreMes1.Recuento_mp.AcceptChanges();
+
+                        //    CalculoExistencias();
+                        //}
+                        //catch (Exception ec)
+                        //{
+                        //    CajaDialogo.Error(ec.Message);
+                        //}
 
                     }
                 }

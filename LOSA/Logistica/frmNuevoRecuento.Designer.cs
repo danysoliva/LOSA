@@ -230,7 +230,6 @@ namespace LOSA.Logistica
             this.simpleButton1.Size = new System.Drawing.Size(176, 44);
             this.simpleButton1.TabIndex = 9;
             this.simpleButton1.Text = "Adicionar Articulo";
-            this.simpleButton1.Visible = false;
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // dateEdit1
@@ -561,7 +560,6 @@ namespace LOSA.Logistica
             this.colid_bodega.ColumnEdit = this.grd_bodegas;
             this.colid_bodega.FieldName = "id_bodega";
             this.colid_bodega.Name = "colid_bodega";
-            this.colid_bodega.OptionsColumn.AllowEdit = false;
             this.colid_bodega.Visible = true;
             this.colid_bodega.VisibleIndex = 1;
             this.colid_bodega.Width = 146;
