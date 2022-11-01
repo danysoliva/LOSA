@@ -30,16 +30,16 @@ namespace LOSA.Logistica
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNuevoRecuento));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions7 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject25 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject26 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject27 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject28 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions8 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject29 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject30 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject31 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject32 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.cmdVerDetalle = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
@@ -88,10 +88,6 @@ namespace LOSA.Logistica
             this.panel1 = new System.Windows.Forms.Panel();
             this.grd_data_pt = new DevExpress.XtraGrid.GridControl();
             this.grdv_data_pt = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.grb_bodega_pt = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.btneliminarpt = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
             this.colid_pt = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnombre_comercial = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collote_pt = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -102,6 +98,10 @@ namespace LOSA.Logistica
             this.colcode_sap1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltoma_fisica_kg = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltoma_fisica_ud = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btneliminarpt = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.grb_bodega_pt = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
@@ -127,9 +127,9 @@ namespace LOSA.Logistica
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data_pt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data_pt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btneliminarpt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grb_bodega_pt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btneliminarpt)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerControl1
@@ -230,6 +230,7 @@ namespace LOSA.Logistica
             this.simpleButton1.Size = new System.Drawing.Size(176, 44);
             this.simpleButton1.TabIndex = 9;
             this.simpleButton1.Text = "Adicionar Articulo";
+            this.simpleButton1.Visible = false;
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // dateEdit1
@@ -647,9 +648,9 @@ namespace LOSA.Logistica
             // btnEliminar
             // 
             this.btnEliminar.AutoHeight = false;
-            editorButtonImageOptions7.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions7.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.btnEliminar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions7, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject25, serializableAppearanceObject26, serializableAppearanceObject27, serializableAppearanceObject28, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -789,46 +790,6 @@ namespace LOSA.Logistica
             this.grdv_data_pt.OptionsView.ShowAutoFilterRow = true;
             this.grdv_data_pt.OptionsView.ShowGroupPanel = false;
             // 
-            // grb_bodega_pt
-            // 
-            this.grb_bodega_pt.AutoHeight = false;
-            this.grb_bodega_pt.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.grb_bodega_pt.DataSource = this.bodegasBindingSource;
-            this.grb_bodega_pt.DisplayMember = "descripcion";
-            this.grb_bodega_pt.KeyMember = "id";
-            this.grb_bodega_pt.Name = "grb_bodega_pt";
-            this.grb_bodega_pt.PopupView = this.gridView2;
-            this.grb_bodega_pt.ValueMember = "id";
-            // 
-            // gridView2
-            // 
-            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView2.OptionsView.ShowGroupPanel = false;
-            // 
-            // btneliminarpt
-            // 
-            this.btneliminarpt.AutoHeight = false;
-            editorButtonImageOptions8.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions8.Image")));
-            this.btneliminarpt.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions8, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject29, serializableAppearanceObject30, serializableAppearanceObject31, serializableAppearanceObject32, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.btneliminarpt.Name = "btneliminarpt";
-            this.btneliminarpt.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.btneliminarpt.Click += new System.EventHandler(this.btneliminarpt_Click);
-            // 
-            // xtraTabPage3
-            // 
-            this.xtraTabPage3.Appearance.Header.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.xtraTabPage3.Appearance.Header.Options.UseFont = true;
-            this.xtraTabPage3.Appearance.HeaderActive.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.xtraTabPage3.Appearance.HeaderActive.Options.UseFont = true;
-            this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.PageVisible = false;
-            this.xtraTabPage3.Size = new System.Drawing.Size(1362, 519);
-            this.xtraTabPage3.Text = "Reproceso";
-            // 
             // colid_pt
             // 
             this.colid_pt.FieldName = "id_pt";
@@ -926,6 +887,46 @@ namespace LOSA.Logistica
             this.coltoma_fisica_ud.VisibleIndex = 6;
             this.coltoma_fisica_ud.Width = 179;
             // 
+            // btneliminarpt
+            // 
+            this.btneliminarpt.AutoHeight = false;
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            this.btneliminarpt.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btneliminarpt.Name = "btneliminarpt";
+            this.btneliminarpt.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btneliminarpt.Click += new System.EventHandler(this.btneliminarpt_Click);
+            // 
+            // grb_bodega_pt
+            // 
+            this.grb_bodega_pt.AutoHeight = false;
+            this.grb_bodega_pt.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.grb_bodega_pt.DataSource = this.bodegasBindingSource;
+            this.grb_bodega_pt.DisplayMember = "descripcion";
+            this.grb_bodega_pt.KeyMember = "id";
+            this.grb_bodega_pt.Name = "grb_bodega_pt";
+            this.grb_bodega_pt.PopupView = this.gridView2;
+            this.grb_bodega_pt.ValueMember = "id";
+            // 
+            // gridView2
+            // 
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
+            // xtraTabPage3
+            // 
+            this.xtraTabPage3.Appearance.Header.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.xtraTabPage3.Appearance.Header.Options.UseFont = true;
+            this.xtraTabPage3.Appearance.HeaderActive.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.xtraTabPage3.Appearance.HeaderActive.Options.UseFont = true;
+            this.xtraTabPage3.Name = "xtraTabPage3";
+            this.xtraTabPage3.PageVisible = false;
+            this.xtraTabPage3.Size = new System.Drawing.Size(1362, 519);
+            this.xtraTabPage3.Text = "Reproceso";
+            // 
             // frmNuevoRecuento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -961,9 +962,9 @@ namespace LOSA.Logistica
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grd_data_pt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data_pt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btneliminarpt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grb_bodega_pt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btneliminarpt)).EndInit();
             this.ResumeLayout(false);
 
         }

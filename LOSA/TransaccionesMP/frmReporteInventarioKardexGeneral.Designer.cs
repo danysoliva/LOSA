@@ -100,6 +100,7 @@ namespace LOSA.TransaccionesMP
             this.colentrada = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTIpoName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.btnRefreshRptMP = new DevExpress.XtraEditors.SimpleButton();
             this.grd_data_resumen = new DevExpress.XtraGrid.GridControl();
             this.grdv_data_resumen = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid_mp1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -110,6 +111,7 @@ namespace LOSA.TransaccionesMP
             this.colTipoId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTipoName1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tabNavigationPage3 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.btnRptPRD = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -132,6 +134,7 @@ namespace LOSA.TransaccionesMP
             this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.tabNavigationPage4 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.btnRptMPyBod = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -188,9 +191,6 @@ namespace LOSA.TransaccionesMP
             this.btnAjustePorLote = new DevExpress.XtraEditors.SimpleButton();
             this.backgroundWorkerPRD = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorkerResumenMP = new System.ComponentModel.BackgroundWorker();
-            this.btnRefreshRptMP = new DevExpress.XtraEditors.SimpleButton();
-            this.btnRptPRD = new DevExpress.XtraEditors.SimpleButton();
-            this.btnRptMPyBod = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
@@ -571,8 +571,24 @@ namespace LOSA.TransaccionesMP
             this.tabNavigationPage2.Name = "tabNavigationPage2";
             this.tabNavigationPage2.Size = new System.Drawing.Size(1362, 646);
             // 
+            // btnRefreshRptMP
+            // 
+            this.btnRefreshRptMP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRefreshRptMP.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnRefreshRptMP.Appearance.Options.UseFont = true;
+            this.btnRefreshRptMP.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnRefreshRptMP.ImageOptions.SvgImage")));
+            this.btnRefreshRptMP.Location = new System.Drawing.Point(1221, 6);
+            this.btnRefreshRptMP.Name = "btnRefreshRptMP";
+            this.btnRefreshRptMP.Size = new System.Drawing.Size(114, 39);
+            this.btnRefreshRptMP.TabIndex = 4;
+            this.btnRefreshRptMP.Text = "Actualizar";
+            this.btnRefreshRptMP.Click += new System.EventHandler(this.btnRefreshRptMP_Click);
+            // 
             // grd_data_resumen
             // 
+            this.grd_data_resumen.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_data_resumen.DataMember = "totales";
             this.grd_data_resumen.DataSource = this.dsTarima;
             this.grd_data_resumen.Location = new System.Drawing.Point(0, 48);
@@ -688,6 +704,19 @@ namespace LOSA.TransaccionesMP
             this.tabNavigationPage3.Controls.Add(this.gridControl1);
             this.tabNavigationPage3.Name = "tabNavigationPage3";
             this.tabNavigationPage3.Size = new System.Drawing.Size(1362, 646);
+            // 
+            // btnRptPRD
+            // 
+            this.btnRptPRD.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRptPRD.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnRptPRD.Appearance.Options.UseFont = true;
+            this.btnRptPRD.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnRptPRD.ImageOptions.SvgImage")));
+            this.btnRptPRD.Location = new System.Drawing.Point(1221, 6);
+            this.btnRptPRD.Name = "btnRptPRD";
+            this.btnRptPRD.Size = new System.Drawing.Size(114, 39);
+            this.btnRptPRD.TabIndex = 5;
+            this.btnRptPRD.Text = "Actualizar";
+            this.btnRptPRD.Click += new System.EventHandler(this.btnRptPRD_Click);
             // 
             // gridControl1
             // 
@@ -925,6 +954,19 @@ namespace LOSA.TransaccionesMP
             this.tabNavigationPage4.Controls.Add(this.gridControl2);
             this.tabNavigationPage4.Name = "tabNavigationPage4";
             this.tabNavigationPage4.Size = new System.Drawing.Size(1362, 646);
+            // 
+            // btnRptMPyBod
+            // 
+            this.btnRptMPyBod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRptMPyBod.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnRptMPyBod.Appearance.Options.UseFont = true;
+            this.btnRptMPyBod.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnRptMPyBod.ImageOptions.SvgImage")));
+            this.btnRptMPyBod.Location = new System.Drawing.Point(1218, 6);
+            this.btnRptMPyBod.Name = "btnRptMPyBod";
+            this.btnRptMPyBod.Size = new System.Drawing.Size(114, 39);
+            this.btnRptMPyBod.TabIndex = 6;
+            this.btnRptMPyBod.Text = "Actualizar";
+            this.btnRptMPyBod.Click += new System.EventHandler(this.btnRptMPyBod_Click);
             // 
             // gridControl2
             // 
@@ -1585,45 +1627,6 @@ namespace LOSA.TransaccionesMP
             // 
             this.backgroundWorkerResumenMP.WorkerSupportsCancellation = true;
             this.backgroundWorkerResumenMP.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerResumenMP_DoWork);
-            // 
-            // btnRefreshRptMP
-            // 
-            this.btnRefreshRptMP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRefreshRptMP.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.btnRefreshRptMP.Appearance.Options.UseFont = true;
-            this.btnRefreshRptMP.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
-            this.btnRefreshRptMP.Location = new System.Drawing.Point(1221, 6);
-            this.btnRefreshRptMP.Name = "btnRefreshRptMP";
-            this.btnRefreshRptMP.Size = new System.Drawing.Size(114, 39);
-            this.btnRefreshRptMP.TabIndex = 4;
-            this.btnRefreshRptMP.Text = "Actualizar";
-            this.btnRefreshRptMP.Click += new System.EventHandler(this.btnRefreshRptMP_Click);
-            // 
-            // btnRptPRD
-            // 
-            this.btnRptPRD.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRptPRD.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.btnRptPRD.Appearance.Options.UseFont = true;
-            this.btnRptPRD.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage1")));
-            this.btnRptPRD.Location = new System.Drawing.Point(1221, 6);
-            this.btnRptPRD.Name = "btnRptPRD";
-            this.btnRptPRD.Size = new System.Drawing.Size(114, 39);
-            this.btnRptPRD.TabIndex = 5;
-            this.btnRptPRD.Text = "Actualizar";
-            this.btnRptPRD.Click += new System.EventHandler(this.btnRptPRD_Click);
-            // 
-            // btnRptMPyBod
-            // 
-            this.btnRptMPyBod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRptMPyBod.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.btnRptMPyBod.Appearance.Options.UseFont = true;
-            this.btnRptMPyBod.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage2")));
-            this.btnRptMPyBod.Location = new System.Drawing.Point(1218, 6);
-            this.btnRptMPyBod.Name = "btnRptMPyBod";
-            this.btnRptMPyBod.Size = new System.Drawing.Size(114, 39);
-            this.btnRptMPyBod.TabIndex = 6;
-            this.btnRptMPyBod.Text = "Actualizar";
-            this.btnRptMPyBod.Click += new System.EventHandler(this.btnRptMPyBod_Click);
             // 
             // frmReporteInventarioKardexGeneral
             // 
