@@ -424,6 +424,7 @@ namespace LOSA.TransaccionesMP
             bool disponible = false;
             string mensaje = "";
             decimal ExistenciaTarimaKg = 0;
+            decimal ExistenciaTarimaUnidades = 0;
             decimal PentregadoKg = 0;
             decimal PsolicitadoKg  = 0;
             decimal factor = 0;
@@ -595,10 +596,11 @@ namespace LOSA.TransaccionesMP
                             if (dr.Read())
                             {
                                 disponible = dr.GetBoolean(0);
-                                ExistenciaTarimaKg = dr.GetDecimal(2);
+                                ExistenciaTarimaUnidades = dr.GetDecimal(2);
                                 PentregadoKg = dr.GetDecimal(3);
                                 PsolicitadoKg = dr.GetDecimal(4);
                                 factor = dr.GetDecimal(5);
+                                ExistenciaTarimaKg = dr.GetDecimal(6);
                             }
                             dr.Close();
 
@@ -647,6 +649,7 @@ namespace LOSA.TransaccionesMP
                         
 
                         frmResumenToEntregar frms = new frmResumenToEntregar( ExistenciaTarimaKg
+                                                                            , ExistenciaTarimaUnidades
                                                                             , PentregadoKg
                                                                             , PsolicitadoKg
                                                                             , DT_Tarima

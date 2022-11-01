@@ -17,6 +17,7 @@ namespace LOSA.TransaccionesMP
     public partial class frmResumenToEntregar : DevExpress.XtraEditors.XtraForm
     {
         public decimal ExistenciaTarimaKg = 0;
+        public decimal ExistenciaTarimaUnidades = 0;
         public decimal entregado = 0;
         public decimal Solicitado = 0;
         public decimal RestanteReq = 0;
@@ -33,6 +34,7 @@ namespace LOSA.TransaccionesMP
         
         public frmResumenToEntregar(
                                     decimal ExistenciaTarima_kg,//Kg
+                                    decimal pExistenciaTarima_Unidades,
                                     decimal PEntregado_Kg,
                                     decimal psolicitado_Kg,
                                     DataTable Tarima,
@@ -43,11 +45,12 @@ namespace LOSA.TransaccionesMP
 
             InitializeComponent();
             vGridControl1.DataSource = Tarima;
+            ExistenciaTarimaUnidades = pExistenciaTarima_Unidades;
             this.ExistenciaTarimaKg = ExistenciaTarima_kg;
             ud_enviar = ExistenciaTarimaKg;
             factor = Pfactor;
             ExistenciaKg = ExistenciaTarimaKg * factor;
-            lblTotalUd_en_tarima.Text = string.Format("{0:###,##0}", ExistenciaTarimaKg) + " Ud";
+            lblTotalUd_en_tarima.Text = string.Format("{0:###,##0}", pExistenciaTarima_Unidades) + " Ud";
             entregado = PEntregado_Kg;
             Solicitado = psolicitado_Kg;
             id_tm = Pid_tm;
@@ -70,13 +73,21 @@ namespace LOSA.TransaccionesMP
                 int ud_enviar_int32 = dp.ValidateNumberInt32(ud_enviar);
                 int ud_en_tarima_actual = dp.ValidateNumberInt32( ExistenciaTarimaKg /factor);
 
-                txtRestanteTarimasUnidades.Text = string.Format("{0:###,##0}", RestanteTm);
+                
 
-                if (ud_enviar_int32 <= ud_en_tarima_actual)
-                    ud_enviar = ud_enviar_int32;
+                if(ud_enviar_int32 == 0)
+                {
+                    ud_enviar = 1;
+                }
                 else
-                    ud_enviar = ud_en_tarima_actual;
+                {
+                    if (ud_enviar_int32 <= ud_en_tarima_actual)
+                        ud_enviar = ud_enviar_int32;
+                    else
+                        ud_enviar = ud_en_tarima_actual;
+                }
 
+                txtRestanteTarimasUnidades.Text = string.Format("{0:###,##0}", pExistenciaTarima_Unidades - ud_enviar);
                 txtPorEnviar.Text = string.Format("{0:###,##0.00}", ud_enviar);
                 CalcularKg(dp.ValidateNumberInt32(Math.Round(ud_enviar, 0)));
             }
@@ -214,7 +225,7 @@ namespace LOSA.TransaccionesMP
             }
 
             txtKgAEnviar.Text = string.Format("{0:###,##0.00}", kg_enviar);
-            txtRestanteTarimasUnidades.Text = string.Format("{0:###,##0.00}", (ExistenciaTarimaKg - pudAenviar));
+            txtRestanteTarimasUnidades.Text = string.Format("{0:###,##0.00}", (ExistenciaTarimaUnidades - pudAenviar));
         }
 
         public void CalculoUD() 
@@ -280,7 +291,7 @@ namespace LOSA.TransaccionesMP
 
                 txtPorEnviar.Text = string.Format("{0:###,##0.00}", ud_enviar);
                 txtRestante.Text = string.Format("{0:###,##0.00}", RestanteReq);
-                txtRestanteTarimasUnidades.Text = string.Format("{0:###,##0.00}", RestanteTm);
+                txtRestanteTarimasUnidades.Text = string.Format("{0:###,##0.00}", ExistenciaTarimaUnidades - ud_enviar);
 
 
             }
