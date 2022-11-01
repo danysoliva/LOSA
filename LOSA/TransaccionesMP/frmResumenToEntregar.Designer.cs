@@ -178,7 +178,7 @@ namespace LOSA.TransaccionesMP
             this.txtPorEnviar.Name = "txtPorEnviar";
             this.txtPorEnviar.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.txtPorEnviar.Properties.Appearance.Options.UseFont = true;
-            this.txtPorEnviar.Size = new System.Drawing.Size(62, 36);
+            this.txtPorEnviar.Size = new System.Drawing.Size(59, 36);
             this.txtPorEnviar.TabIndex = 16;
             // 
             // txtRestante
@@ -369,7 +369,7 @@ namespace LOSA.TransaccionesMP
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(392, 340);
+            this.labelControl7.Location = new System.Drawing.Point(388, 340);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(10, 30);
             this.labelControl7.TabIndex = 114;
@@ -380,7 +380,7 @@ namespace LOSA.TransaccionesMP
             this.lblTotalUd_en_tarima.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalUd_en_tarima.Appearance.Options.UseFont = true;
             this.lblTotalUd_en_tarima.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblTotalUd_en_tarima.Location = new System.Drawing.Point(408, 340);
+            this.lblTotalUd_en_tarima.Location = new System.Drawing.Point(399, 340);
             this.lblTotalUd_en_tarima.Name = "lblTotalUd_en_tarima";
             this.lblTotalUd_en_tarima.Size = new System.Drawing.Size(115, 30);
             this.lblTotalUd_en_tarima.TabIndex = 115;
