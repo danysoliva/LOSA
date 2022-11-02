@@ -919,10 +919,16 @@
       <DependentUpon>xrpCertificadoCalidad.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\BagsPT.cs" />
+    <Compile Include="Clases\Bodegas.cs" />
     <Compile Include="Clases\Boleta.cs" />
     <Compile Include="Clases\CajaDialogo.cs" />
     <Compile Include="Clases\CheckNewVersion.cs" />
     <Compile Include="Clases\DataOperations.cs" />
+    <Compile Include="Clases\dsColleccionesClases.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsColleccionesClases.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Clases\Globals.cs" />
     <Compile Include="Clases\IngresoExternoD.cs" />
     <Compile Include="Clases\IngresoExternoH.cs" />
@@ -1893,6 +1899,17 @@
     </None>
     <None Include="Calidad\Revision_Sanidad\dsSanidad.xss">
       <DependentUpon>dsSanidad.xsd</DependentUpon>
+    </None>
+    <None Include="Clases\dsColleccionesClases.xsc">
+      <DependentUpon>dsColleccionesClases.xsd</DependentUpon>
+    </None>
+    <None Include="Clases\dsColleccionesClases.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsColleccionesClases.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Clases\dsColleccionesClases.xss">
+      <DependentUpon>dsColleccionesClases.xsd</DependentUpon>
     </None>
     <None Include="Despachos\dsTransaccionesDespacho.xsc">
       <DependentUpon>dsTransaccionesDespacho.xsd</DependentUpon>
