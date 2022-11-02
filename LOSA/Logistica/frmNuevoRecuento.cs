@@ -20,6 +20,7 @@ using LOSA.RecuentoInventario;
 using System.Globalization;
 using System.Data.OleDb;
 using Huellas;
+using System.Collections;
 
 namespace LOSA.Logistica
 {
@@ -465,6 +466,12 @@ namespace LOSA.Logistica
         {
             try
             {
+                foreach (dsCierreMes.Recuento_mpRow row in dsCierreMes1.Recuento_mp.Rows)//DataTable
+                {
+                    row.loaded = false;
+                    row.delete = false;
+                }
+                
                 if (xtraTabControl1.SelectedTabPageIndex == 0)//Si estamos en MP
                 {
                     string file_name = string.Empty;
@@ -487,20 +494,156 @@ namespace LOSA.Logistica
                         try
                         {
                             myCommand.Fill(dsCierre.LoadExcel);
-                            
-                            foreach (dsCierreMes.LoadExcelRow row2 in dsCierre.LoadExcel.Rows)
+                            Bodegas bod1 = new Bodegas();
+                            Bodegas bod2 = new Bodegas();
+                            MateriaPrima mp1 = new MateriaPrima();
+
+
+                            foreach (dsCierreMes.LoadExcelRow rowExcel in dsCierre.LoadExcel.Rows)//Excel
                             {
-                                foreach (dsCierreMes.Recuento_mpRow row in dsCierreMes1.Recuento_mp.Rows)
+                                
+
+                                //bod1.RecuperarRegistro(rowExcel.Bodega);
+                                bod1.RecuperarRegistroPreLoaded(rowExcel.Bodega);
+                                rowExcel.id_bodega = bod1.id;
+
+                                //LoadExcel_work
+                                dsCierreMes.LoadExcel_workRow rowWork = dsCierreMes1.LoadExcel_work.NewLoadExcel_workRow();
+                                //if(mp1.RecuperarRegistroFromCode(rowExcel.Codigo))
+                                if(mp1.RecuperarRegistroPreLoaded(rowExcel.Codigo))
+                                    rowWork.descripcion = mp1.Name;
+                                else
+                                    rowWork.descripcion = "";
+
+                                rowWork.peso = 0;// rowExcel.peso;
+                                rowWork.diferencia = 0;// rowExcel.diferencia;
+                                rowWork.ExistenciaAprox = 0;//rowExcel.ExistenciaAprox;
+                                rowWork.seleccionado = rowExcel.seleccionado;
+                                rowWork.count_id = rowExcel.count_id;
+                                rowWork.Codigo = rowExcel.Codigo;
+                                rowWork.Toma_Física_Kg = rowExcel.Toma_Física_Kg;
+                                rowWork.Bodega = rowExcel.Bodega;
+                                rowWork.id_bodega = bod1.id;
+                                rowWork.seleccion = rowExcel.seleccion;
+                                rowWork.id_mp = mp1.IdMP_ACS;
+                                dsCierreMes1.LoadExcel_work.AddLoadExcel_workRow(rowWork);
+
+                                foreach (dsCierreMes.Recuento_mpRow row in dsCierreMes1.Recuento_mp.Rows)//DataTable
                                 {
-                                    if (row.code_sap == row2.Codigo && row.whs_equivalente == row2.Bodega)
+                                    if (row.loaded)
+                                        continue;
+
+                                    try
                                     {
-                                        row.toma_fisica = row2.Toma_Física_Kg;
+                                        bod2.whs_equivalente = row.whs_equivalente;
+                                    }
+                                    catch
+                                    {
+                                        bod2.whs_equivalente = "N/D";
+                                        row.loaded = true;
+                                        continue;
+                                    }
+
+                                    //if (row.code_sap == rowExcel.Codigo && row.whs_equivalente == rowExcel.Bodega)
+                                    if (row.code_sap == rowExcel.Codigo && bod2.whs_equivalente == rowExcel.Bodega.Trim())
+                                    {
+                                        row.toma_fisica = rowExcel.Toma_Física_Kg;
+                                        row.loaded = true;
+                                        continue;
                                     }
                                 }
                             }
+
+                            ArrayList ListaMP_adicional = new ArrayList();
+                            foreach (dsCierreMes.Recuento_mpRow row in dsCierreMes1.Recuento_mp.Rows)//DataTable
+                            {   
+                                try
+                                {
+                                    bod2.whs_equivalente = row.whs_equivalente;
+                                    if (row.whs_equivalente != "N/D")
+                                        continue;
+                                }
+                                catch
+                                {
+                                    bod2.whs_equivalente = "N/D";
+                                }
+
+                                //foreach (dsCierreMes.LoadExcelRow rowExcel in dsCierre.LoadExcel.Rows)//Excel
+                                foreach (dsCierreMes.LoadExcel_workRow rowExcel in dsCierreMes1.LoadExcel_work.Rows)//Excel
+                                {
+                                    if (row.code_sap == rowExcel.Codigo)
+                                    {
+                                        row.delete = true;
+                                        //rowExcel.Bodega
+                                        dsCierreMes.Recuento_mpRow rowNew = dsCierreMes1.Recuento_mp.NewRecuento_mpRow();
+                                        rowNew.id_mp = rowExcel.id_mp;
+                                        rowNew.descripcion = rowExcel.descripcion;
+                                        rowNew.peso = rowExcel.peso;
+                                        rowNew.id_bodega = rowExcel.id_bodega;
+                                        rowNew.diferencia = rowExcel.diferencia;
+                                        rowNew.ExistenciaAprox = rowExcel.ExistenciaAprox;
+                                        rowNew.seleccionado = rowExcel.seleccionado;
+                                        rowNew.count_id = rowExcel.count_id;
+                                        rowNew.code_sap = rowExcel.Codigo;
+                                        rowNew.toma_fisica = rowExcel.Toma_Física_Kg;
+                                        rowNew.whs_equivalente = rowExcel.Bodega;
+                                        rowNew.seleccion = rowExcel.seleccion;
+                                        //rowNew.id = rowExcel.id_mp;
+                                        rowNew.contabilizado = false;
+                                        rowNew.loaded = false;
+                                        rowNew.delete = false;
+                                        //dsCierreMes1.Recuento_mp.AddRecuento_mpRow(rowNew);
+                                        ListaMP_adicional.Add(rowNew);
+                                        //dsCierreMes1.AcceptChanges();
+                                    }
+                                }
+                            }
+
+                            foreach(dsCierreMes.Recuento_mpRow row in ListaMP_adicional)
+                            {
+                                dsCierreMes1.Recuento_mp.AddRecuento_mpRow(row);
+                                dsCierreMes1.AcceptChanges();
+                            }
+
+
+                            int conta = 0;
+                            foreach(dsCierreMes.Recuento_mpRow row in dsCierreMes1.Recuento_mp.Rows)
+                            {
+                                if (row.delete)
+                                    conta++;
+                            }
+
+                            while (conta > 0)
+                            {
+                                for (int r = 0; r <= dsCierreMes1.Recuento_mp.Rows.Count - 1; r++)
+                                {
+                                    var gridView1 = (GridView)grd_dataMp.FocusedView;
+                                    var row = (dsCierreMes.Recuento_mpRow)gridView1.GetDataRow(r);
+                                    if (row != null)
+                                    {
+                                        if (row.delete)
+                                        {
+                                            try
+                                            {
+                                                gridView1.DeleteRow(r);
+                                            }
+                                            catch (Exception ec)
+                                            {
+                                                CajaDialogo.Error(ec.Message);
+                                            }
+                                        }
+                                    }
+                                }
+                                conta--;
+                            }
+                            
+
+
                             dsCierreMes1.Recuento_mp.AcceptChanges();
 
                             CalculoExistencias();
+                            
+                            //CajaDialogo.Show(bodegas_);
 
                             CajaDialogo.Information("Plantilla Cargada con Exito!");
                         }
