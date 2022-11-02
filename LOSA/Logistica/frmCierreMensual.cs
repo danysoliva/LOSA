@@ -95,14 +95,14 @@ namespace LOSA.Logistica
             //    CajaDialogo.Error("Este Recuento ya fue contabilizado, cree uno nuevo!");
             //    return;
             //}
-            else
-            {
+            //else
+            //{
                 //frmCierreMensual_Detalle frm = new frmCierreMensual_Detalle(row.id, row.contabilizacion);
                 frmDetalleRecuento frm = new frmDetalleRecuento(UsuarioLogeado, row.id, row.contabilizacion, row.year, row.mes, row.comentario);
                 frm.MdiParent = this.MdiParent;
                 frm.Show();
                 
-            }
+            //}
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
