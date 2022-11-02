@@ -25,6 +25,7 @@ namespace LOSA.TransaccionesMP
         UserLogin UsuarioLogueado;
         private decimal FactorUnidades;
         MateriaPrima MateriaPrimaActual;
+        bool MostrarExterno;
         public frmAsjuteInventarioPorLote(UserLogin pUserLogin)
         {
             InitializeComponent();
@@ -84,26 +85,83 @@ namespace LOSA.TransaccionesMP
         {
             try
             {
+                MostrarExterno = false; //Si es Ajuste Entrada y Salida o Traslado no debe mostrar las Bodegas Externas
+
                 DataOperations dp = new DataOperations();
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_maestro_bodegas_ajuste_kardex", con);
+                SqlCommand cmd = new SqlCommand("sp_get_maestro_bodegas_ajuste_kardexV2", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                //cmd.Parameters.AddWithValue("@idbodega", idBodega);
+                cmd.Parameters.AddWithValue("@MostrarExterno", MostrarExterno);
                 dsTarima1.bodega_origen.Clear();
                 dsTarima1.bodega_destino.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 adat.Fill(dsTarima1.bodega_origen);
                 adat = new SqlDataAdapter(cmd);
                 adat.Fill(dsTarima1.bodega_destino);
-                
+
                 con.Close();
             }
-            catch (Exception ec)
+            catch (Exception ex)
             {
-                CajaDialogo.Error(ec.Message);
+                CajaDialogo.Error(ex.Message);
             }
+            //try
+            //{
+            //    if (toggleSwTipoOperacion.IsOn) //Ajuste
+            //    {
+            //        if (tsTipoTransaccion.IsOn)
+            //        {
+
+            //        }
+            //        else//Salida Bodegas Segun MP en esas bodegas
+            //        {
+            //            MostrarExterno = false; //Si es Ajuste Entrada y Salida o Traslado no debe mostrar las Bodegas Externas
+
+            //            DataOperations dp = new DataOperations();
+            //            SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+            //            con.Open();
+
+            //            SqlCommand cmd = new SqlCommand("sp_get_maestro_bodegas_ajuste_kardex_MP", con);
+            //            cmd.CommandType = CommandType.StoredProcedure;
+            //            cmd.Parameters.AddWithValue("@MostrarExterno", MostrarExterno);
+            //            cmd.Parameters.AddWithValue("@id_mp", Id_MP);
+            //            dsTarima1.bodega_destino.Clear();
+            //            SqlDataAdapter adat = new SqlDataAdapter(cmd);
+            //            adat.Fill(dsTarima1.bodega_destino);
+            //            con.Close();
+            //        }
+            //    }
+            //    else
+            //    {
+            //        MostrarExterno = false; //Si es Ajuste Entrada y Salida o Traslado no debe mostrar las Bodegas Externas
+
+            //        DataOperations dp = new DataOperations();
+            //        SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+            //        con.Open();
+
+            //        SqlCommand cmd = new SqlCommand("sp_get_maestro_bodegas_ajuste_kardexV2", con);
+            //        cmd.CommandType = CommandType.StoredProcedure;
+            //        cmd.Parameters.AddWithValue("@MostrarExterno", MostrarExterno);
+            //        dsTarima1.bodega_origen.Clear();
+            //        dsTarima1.bodega_destino.Clear();
+            //        SqlDataAdapter adat = new SqlDataAdapter(cmd);
+            //        adat.Fill(dsTarima1.bodega_origen);
+            //        adat = new SqlDataAdapter(cmd);
+            //        adat.Fill(dsTarima1.bodega_destino);
+
+            //        con.Close();
+            //    }
+
+            //}
+            //catch (Exception)
+            //{
+
+            //    throw;
+            //}
+
+
         }
 
         void SearchLoteAuto(int pidmp, string plote_)
@@ -262,6 +320,7 @@ namespace LOSA.TransaccionesMP
                     return;
                 }
             }
+            
 
 
             //Si es Ajuste lo vamos a obligar a poner la bodega de Origen

@@ -90,11 +90,11 @@ namespace LOSA.Logistica
             var gv = (GridView)grd_data.FocusedView;
             var row = (dsCierreMes.recuentos_hRow)gv.GetDataRow(gv.FocusedRowHandle);
 
-            if (row.contabilizacion == true)
-            {
-                CajaDialogo.Error("Este Recuento ya fue contabilizado, cree uno nuevo!");
-                return;
-            }
+            //if (row.contabilizacion == true)
+            //{
+            //    CajaDialogo.Error("Este Recuento ya fue contabilizado, cree uno nuevo!");
+            //    return;
+            //}
             else
             {
                 //frmCierreMensual_Detalle frm = new frmCierreMensual_Detalle(row.id, row.contabilizacion);
