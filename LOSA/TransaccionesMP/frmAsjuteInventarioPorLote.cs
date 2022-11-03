@@ -136,9 +136,21 @@ namespace LOSA.TransaccionesMP
             SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
             con.Open();
 
+            //SqlCommand cmd = new SqlCommand("sp_get_maestro_bodegas_ajuste_kardexV2", con);
             SqlCommand cmd = new SqlCommand("sp_get_maestro_bodegas_ajuste_kardexV2", con);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@MostrarExterno", MostrarExterno);
+            if (MateriaPrimaActual != null)
+            {
+                if(MateriaPrimaActual.Recuperado)
+                    cmd.Parameters.AddWithValue("@id_mp", MateriaPrimaActual.IdMP_ACS);
+                else
+                    cmd.Parameters.AddWithValue("@id_mp", 0);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@id_mp", 0);
+            }
             dsTarima1.bodega_origen.Clear();
             dsTarima1.bodega_destino.Clear();
             SqlDataAdapter adat = new SqlDataAdapter(cmd);
@@ -554,6 +566,10 @@ namespace LOSA.TransaccionesMP
                 txtMP_Name.Text = frm.ItemSeleccionado.ItemName;
                 ItemCode = frm.ItemSeleccionado.ItemCode;
                 Id_MP = frm.ItemSeleccionado.id;
+                if (MateriaPrimaActual == null)
+                    MateriaPrimaActual = new MateriaPrima();
+                if(MateriaPrimaActual.RecuperarRegistroFromID_RM(frm.ItemSeleccionado.id))
+                    LoadMaestrosBodegas();
                 MateriaPrima mp = new MateriaPrima();
                 if (mp.Get_if_mp_is_granel(Id_MP))
                 {
